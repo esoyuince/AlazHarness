@@ -93,3 +93,7 @@ Sosyal ağ, pazar, token/ödeme ekonomisi, çok ajanlı topluluk, sınırsız ö
 ## 8. Kaynak doğrulama ilkesi
 
 Resmî kaynaklar: https://github.com/openclaw/openclaw ve https://github.com/NousResearch/hermes-agent . Önceki sohbetlerdeki özellik iddiaları yerel sabit commit incelemesinin yerine geçmez. Kaynak/commit bilgisi sources.lock.json, bulgular docs/COMPONENT-MAP.md içinde tutulur.
+
+## 9. Ek kaynak inceleme kararı — 15 Ekim 2026
+
+Pi harness ve OpenCode, kullanıcının talebiyle bileşen karşılaştırmasına dahil edildi. Mevcut OpenClaw/Hermes hibrit karşılaştırma temeli korunur; bu ekleme iki yeni motoru paralel çalıştırma veya üretim bağımlılığı yapma kararı değildir. `docs/research/PI-OPENCODE-REVIEW.md` adayları, sözleşme farklarını ve ortak kabul matrisini; `config/research-sources.lock.json` yalnız inceleme pinlerini tutar. Pi Durable kesinti/tekrar prototipi ve OpenCode gömülü SDK/izin prototipi aynı testlerle değerlendirilecek. Kanıt üstünlüğü çıkarsa sorumluluk sahibi o zaman değiştirilir. M1 ve M2 kabul koşulları değişmedi.

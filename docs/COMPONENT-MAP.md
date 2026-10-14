@@ -64,3 +64,7 @@ The duplicate tree and old provenance checker were retired in this integration
 branch; original feature histories are preserved. HTTP contracts are documented
 in HYB-002-HTTP-CONTRACT.md. The real Hermes engine must own admission, transcript
 and tools. Two adapters must not independently drive the same live session.
+
+## Pi ve OpenCode inceleme adayları
+
+Pi Agent Core ve Pi Durable farklı katmanlar olarak; OpenCode gömülü SDK, izin hizmeti ve oturum gelen kutusu ise güncel sabit kaynaklarından incelendi. Henüz TAKE kararı veya çalışma zamanı değişikliği yok. Ortak kod kopyaları `packages/upstream/` altında on payload olarak kaldı. Kaynak/test satırları, bağımlılıklar, tekrar sözleşmesi farkları ve deney planı `research/PI-OPENCODE-REVIEW.md` içinde.

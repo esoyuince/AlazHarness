@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-15",
+  "integration_ci": [
+    {
+      "sha": "99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851",
+      "checkout_sha": "99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851",
+      "ref": "refs/heads/alaz/hyb-003-integration-46cc",
+      "delivery": "0f2f9ac0-c823-11f1-9f2b-c7c2745bd9be",
+      "status": "success",
+      "build_status": "success",
+      "ci2_suite_proof": {
+        "executed": 128,
+        "failed": 0,
+        "passed": 128,
+        "skipped": 0,
+        "suite_errors": 0,
+        "total": 128
+      },
+      "status_delivery": "posted",
+      "executions": [
+        {
+          "rc": 0,
+          "cleanup": "removed",
+          "oom": null,
+          "timeout": null
+        }
+      ]
+    }
+  ],
+  "research_runtime_executed": false,
+  "research_dependencies_installed": false,
+  "new_forks_created": false,
+  "production_source_lock_unchanged": true,
+  "sources": [
+    {
+      "name": "pi",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "inspected_file_count": 10,
+      "license": "MIT"
+    },
+    {
+      "name": "opencode",
+      "commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "inspected_file_count": 12,
+      "license": "MIT"
+    }
+  ],
+  "report_sha256": "e50340b60f7e501780365f9d6550bf4461b33231648c41f87bcba59655c4ed0b",
+  "scope": "static comparison and next acceptance plan; no Pi/OpenCode runtime acceptance",
+  "publication_validation": {
+    "existing_tests_passed": 128,
+    "new_project_tests_executed": 0,
+    "reference_file_hashes_verified": 22,
+    "production_source_locks_unchanged": true
+  }
+}

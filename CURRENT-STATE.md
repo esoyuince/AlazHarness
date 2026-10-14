@@ -100,3 +100,37 @@ New user scope: include Pi harness and OpenCode in the component review. This is
 not a decision to replace Hermes/OpenClaw or launch extra model loops. Review
 source identity, pinned components, ownership, dependencies and acceptance gaps
 before adopting code. See the subsequent docs/research checkpoint.
+
+## Recovered checkpoint and expanded review — 2026-10-15
+
+Recovery merge is committed/pushed as 99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851.
+Its exact-SHA alaz-server receipt and GitHub status are SUCCESS, 128/128 tests,
+zero skipped/errors. Native file-read and budget-summary proofs are separate
+prior local receipts; no new inference was run. Main remains untouched.
+
+User added Pi harness and OpenCode. Static review completed at pinned references:
+- Pi earendil-works/pi: b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6.
+- OpenCode anomalyco/opencode: 3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9.
+Reference-only sparse/shallow clones: scratch/research/20261015-pi-opencode-46cc
+under the DEFAULT workspace, not this worktree. Push disabled, no new forks,
+no install/runtime/model calls. They are NOT production submodules.
+
+Report: docs/research/PI-OPENCODE-REVIEW.md; reference lock:
+config/research-sources.lock.json; read-scope/CI evidence: evidence/research/.
+Pi Durable replay semantics are relevant but its API is experimental, storage
+is single-process-owned, and same requestId can reuse changed input. OpenCode
+SDK embeds its router in-process, default DB is memory, and permission code
+has broader service dependencies. Source review is not successful runtime testing.
+
+Next decision gate: REF-PI-001 isolated durable/replay probe; REF-OC-001 embedded
+SDK/permission probe. Keep current Hermes native experiment as baseline. Compare
+using the report's common acceptance matrix before replacing any owner. Current
+HYB-003 native Gateway qualification is still OPEN; no M1/M2 closure.
+
+During this review, an independent edit to evidence/hyb-003/recovery-20261015.json
+appeared after the recovery commit. It was read but not overwritten or staged
+with this package. The committed original receipt remains in Git history.
+
+Last read before publishing the research package: the transient independent
+recovery-receipt edit again matched HEAD. Only the explicit research/report
+paths and roadmap/state edits belong to this commit.

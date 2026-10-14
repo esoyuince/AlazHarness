@@ -23,3 +23,14 @@ suites are retained; common code has one owner. HYB-003 native-engine acceptance
 is tracked separately in CURRENT-STATE.md. Full OpenClaw ingress, real Hermes
 HTTP Gateway, crash recovery, isolation, budgeting, memory transfer and M2 are
 not closed by the merged mock suites.
+
+## Ek kaynak karşılaştırması — 2026-10-15
+
+| İş | Durum | Çıktı / kabul |
+|---|---|---|
+| REF-000 | STATİK İNCELEME TAMAM | Pi/OpenCode resmî kimliği, sabit kaynakları, seçili kod/test sözleşmeleri ve lisansları kaydedildi; uygulamalar çalıştırılmadı. |
+| REF-PI-001 | NOT RUN | Pi Durable gerçek kurucu + betiklenmiş model + gerçek zararsız araç; aynı/değişmiş içerik, güvenli/güvensiz tekrar, gözlem iptali ve tek depolama sahibi. |
+| REF-OC-001 | NOT RUN | OpenCode gömülü SDK + betiklenmiş model; gerçek izin reddi, kapanış ve yeniden açma; aynı kabul matrisi. |
+| REF-DEC-001 | AÇIK | Hermes/Pi/OpenCode deney sonuçlarını bağımlılık, gerekli yama, model isteği ve kesinti doğruluğuyla karşılaştır; tek yetkili motor seçimi gerekirse güncellensin. |
+
+Ayrıntı: `research/PI-OPENCODE-REVIEW.md`. HYB-003 Gateway zinciri ve HYB-004/005/006 kabulü bu incelemeyle kapanmadı.

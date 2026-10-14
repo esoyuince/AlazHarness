@@ -1,0 +1,372 @@
+{
+  "schema_version": 1,
+  "project": "AlazHarness",
+  "review_date": "2026-10-15",
+  "purpose": "reference component review, not adopted runtime sources",
+  "integration_checkpoint": "99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851",
+  "repositories": [
+    {
+      "name": "pi",
+      "repository": "earendil-works/pi",
+      "source_url": "https://github.com/earendil-works/pi",
+      "ref": "main",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "commit_date": "2026-10-14T22:23:59+02:00",
+      "license": "MIT",
+      "license_sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+      "checkout_relative_to_default_workspace": "scratch/research/20261015-pi-opencode-46cc/pi",
+      "shallow": true,
+      "sparse": true,
+      "sparse_paths": [
+        "packages/agent",
+        "packages/ai",
+        "packages/coding-agent/docs",
+        "packages/coding-agent/src/core",
+        "packages/coding-agent/test",
+        "packages/durable"
+      ],
+      "push_disabled": true,
+      "runtime_dependency": false,
+      "dependencies_installed": false,
+      "runtime_executed": false,
+      "inspected_files": [
+        {
+          "path": "LICENSE",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "line_count": 21,
+          "inspected_ranges": [
+            [
+              1,
+              21
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/agent/package.json",
+          "sha256": "2b4f9472716a5888fb77a5748d78900642fd82fe71c962728b1371498ebc235e",
+          "line_count": 50,
+          "inspected_ranges": [
+            [
+              1,
+              50
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/durable/package.json",
+          "sha256": "49997c2a63031d864c081016a5f4ea943c0280625319d6db85617fdc359f8222",
+          "line_count": 157,
+          "inspected_ranges": [
+            [
+              1,
+              157
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/agent/README.md",
+          "sha256": "37da6831566eb0385a59da2ee055e7a7efe3e8e7a4b50aab8745ce43559197fe",
+          "line_count": 564,
+          "inspected_ranges": [
+            [
+              1,
+              220
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "sha256": "28a2b03e34a7e32f004aa851e54d3b5be9dad71c392205614cbc9abdf3a9020a",
+          "line_count": 949,
+          "inspected_ranges": [
+            [
+              1,
+              170
+            ],
+            [
+              212,
+              230
+            ],
+            [
+              245,
+              263
+            ],
+            [
+              279,
+              305
+            ],
+            [
+              396,
+              414
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/durable/README.md",
+          "sha256": "08abf68a80468eb5f14ad497b6e044fc677217914b2f93ab5a35ddfe385c8d6a",
+          "line_count": 751,
+          "inspected_ranges": [
+            [
+              1,
+              220
+            ],
+            [
+              331,
+              407
+            ],
+            [
+              534,
+              580
+            ],
+            [
+              648,
+              693
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/durable/src/harness/tool.ts",
+          "sha256": "f84b6b0bb6b32f3c723a607972aa2644378a3770049ad860a71a059caded797c",
+          "line_count": 905,
+          "inspected_ranges": [
+            [
+              1,
+              170
+            ],
+            [
+              168,
+              200
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/durable/src/harness/submissions.ts",
+          "sha256": "19c817b0e1988d97b16f13fc24855dd90aac68776e083a000b211b32bc147599",
+          "line_count": 241,
+          "inspected_ranges": [
+            [
+              147,
+              190
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/durable/test/harness-tools-recovery.test.ts",
+          "sha256": "9bb1d8354d6167c7d4fa535a97c493bded87c68cc2fb06a44b93289d1361e4e7",
+          "line_count": 405,
+          "inspected_ranges": [
+            [
+              1,
+              165
+            ]
+          ],
+          "review": "static_read_only; tests_not_executed"
+        },
+        {
+          "path": "packages/durable/test/harness-submissions.test.ts",
+          "sha256": "ab49770da6814b343a2edde23b6894549b9e05e8aedaa80ddeb99ef817f34e05",
+          "line_count": 278,
+          "inspected_ranges": [
+            [
+              82,
+              148
+            ]
+          ],
+          "review": "static_read_only; tests_not_executed"
+        }
+      ]
+    },
+    {
+      "name": "opencode",
+      "repository": "anomalyco/opencode",
+      "source_url": "https://github.com/anomalyco/opencode",
+      "ref": "dev",
+      "commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "commit_date": "2026-10-15T08:41:49+10:00",
+      "license": "MIT",
+      "license_sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "checkout_relative_to_default_workspace": "scratch/research/20261015-pi-opencode-46cc/opencode",
+      "shallow": true,
+      "sparse": true,
+      "sparse_paths": [
+        "packages/core/src/config/plugin",
+        "packages/core/src/permission",
+        "packages/core/src/session",
+        "packages/core/src/tool",
+        "packages/core/test",
+        "packages/plugin/src",
+        "packages/protocol/src/groups",
+        "packages/schema/src",
+        "packages/sdk/src",
+        "packages/server/src/handlers",
+        "packages/util/src"
+      ],
+      "push_disabled": true,
+      "runtime_dependency": false,
+      "dependencies_installed": false,
+      "runtime_executed": false,
+      "inspected_files": [
+        {
+          "path": "LICENSE",
+          "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+          "line_count": 21,
+          "inspected_ranges": [
+            [
+              1,
+              21
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/core/package.json",
+          "sha256": "0e9a4c79e28afb605be8952c185d8936af3bb92410e860281d9e510a16b74821",
+          "line_count": 139,
+          "inspected_ranges": [
+            [
+              1,
+              139
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/server/package.json",
+          "sha256": "b0c14940bc56701c0c4412821105874cba9930dc8879cf65a45223ca9fc536f4",
+          "line_count": 46,
+          "inspected_ranges": [
+            [
+              1,
+              46
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/sdk/package.json",
+          "sha256": "bc7896079bd0adfefb8cfa68bfe949cd2915d8b49c41cf7e0e69d1522bfc4a2e",
+          "line_count": 47,
+          "inspected_ranges": [
+            [
+              1,
+              47
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/sdk/README.md",
+          "sha256": "046636d4dfb28a6bbe7a4f3263c4a6fdfae7eca000cec70b2eefa2b1586714fc",
+          "line_count": 143,
+          "inspected_ranges": [
+            [
+              1,
+              143
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/sdk/src/internal/host.ts",
+          "sha256": "7182e69193c74462ac604f85af24d16868140cee320f60ae81fe5afc1fbf8294",
+          "line_count": 73,
+          "inspected_ranges": [
+            [
+              1,
+              73
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/sdk/src/effect/opencode.ts",
+          "sha256": "70e8cb18576da3408e46cdf321bdd012ef569b2358b9a1968cc507c91b4596b6",
+          "line_count": 74,
+          "inspected_ranges": [
+            [
+              1,
+              49
+            ],
+            [
+              53,
+              74
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/core/src/permission.ts",
+          "sha256": "d69278896f9a541dac7cf46056c859834d840ecc16ac57a639cbabc1afdda9a5",
+          "line_count": 347,
+          "inspected_ranges": [
+            [
+              1,
+              69
+            ],
+            [
+              75,
+              347
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/core/src/permission/saved.ts",
+          "sha256": "be52e4ae1fb0e844bf438e55d91d46f4c8712833eef9708a16f2d2531bbda62c",
+          "line_count": 88,
+          "inspected_ranges": [
+            [
+              1,
+              88
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/core/src/session/inbox.ts",
+          "sha256": "e849cf92dd802282cba7739f50c7702d4c4e9c31b8299ee9c10353d05d81024a",
+          "line_count": 550,
+          "inspected_ranges": [
+            [
+              1,
+              180
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/core/src/session/runner/retry.ts",
+          "sha256": "9d8e9df044f5c60990997bf507b2e831d6ddf163db6fd38cd1ee5142e5dd6868",
+          "line_count": 115,
+          "inspected_ranges": [
+            [
+              1,
+              115
+            ]
+          ],
+          "review": "static_read_only"
+        },
+        {
+          "path": "packages/core/test/permission.test.ts",
+          "sha256": "0d00f2ac3079aef205c52f258cf6a94cc86f0194b50a6764bc9833ba4552d21c",
+          "line_count": 717,
+          "inspected_ranges": [
+            [
+              100,
+              335
+            ]
+          ],
+          "review": "static_read_only; tests_not_executed"
+        }
+      ]
+    }
+  ]
+}
