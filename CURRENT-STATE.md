@@ -100,3 +100,16 @@ New user scope: include Pi harness and OpenCode in the component review. This is
 not a decision to replace Hermes/OpenClaw or launch extra model loops. Review
 source identity, pinned components, ownership, dependencies and acceptance gaps
 before adopting code. See the subsequent docs/research checkpoint.
+
+## Pi/OpenCode source review checkpoint — 2026-10-15
+
+This review branch is `alaz/review-pi-opencode-46cc`, based on integrated `99d6fe1`.
+Its worktree is `scratch/worktrees/review-pi-opencode-46cc`; the original integration
+worktree remains unchanged. GitHub alaz/local-ci success for 99d6fe1 was read.
+Pi and OpenCode were cloned as detached, push-disabled reference sources, not
+forked or installed. See docs/research/PI-OPENCODE-REVIEW.md and
+config/research-sources.lock.json. Runtime source pins and two gitlinks unchanged.
+Review status: STATIC_REVIEW, no Pi/OpenCode runtime or upstream tests executed.
+Next review gates: REF-PI-001 equivalent native tool round, REF-PI-002 durable
+replay/crash admission, REF-OC-001 permission/event contracts. No engine
+replacement decision yet; full Gateway HYB-003/M1/M2 remain open.

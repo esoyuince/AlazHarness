@@ -23,3 +23,10 @@ suites are retained; common code has one owner. HYB-003 native-engine acceptance
 is tracked separately in CURRENT-STATE.md. Full OpenClaw ingress, real Hermes
 HTTP Gateway, crash recovery, isolation, budgeting, memory transfer and M2 are
 not closed by the merged mock suites.
+
+## Additional source review — 2026-10-15
+
+Pi and OpenCode are reference candidates only. Source-level assessment:
+`docs/research/PI-OPENCODE-REVIEW.md`. Follow REF-PI-001 (native tool parity),
+REF-PI-002 (durable crash/replay contract), REF-OC-001 (permission/event contracts)
+before adopting components. These are NOT RUN, not replacements for open HYB gates.

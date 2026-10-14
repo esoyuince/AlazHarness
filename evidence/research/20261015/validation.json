@@ -1,0 +1,24 @@
+{
+  "scope": "documentation and reference source registry; existing AlazHarness suite rerun",
+  "baseline_commit": "99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851",
+  "tests": {
+    "discovered": 128,
+    "passed": 128,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "elapsed_seconds": 31.889
+  },
+  "reference_source_pins_verified": 2,
+  "reference_file_hashes_verified": 22,
+  "runtime_locks_unchanged": true,
+  "pi_opencode_runtime_tested": false,
+  "pi_opencode_dependencies_installed": false,
+  "real_model_calls": 0,
+  "baseline_github_status": {
+    "context": "alaz/local-ci",
+    "state": "success",
+    "commit": "99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851",
+    "observed_via": "GitHub connector"
+  }
+}

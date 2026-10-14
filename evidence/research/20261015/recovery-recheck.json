@@ -1,0 +1,18 @@
+{
+  "event": "connection-interruption-recovery",
+  "branch": "alaz/hyb-003-integration-46cc",
+  "prior_head": "c637380706232eb49f835b45da7da1f4fa3573a0",
+  "merge_parent": "eb20b2e7559750db3c61f0b8450b393ae96f6368",
+  "recovery_tests": {
+    "passed": 128,
+    "failed": 0,
+    "skipped": 0
+  },
+  "native_probes": "prior local receipts preserved; not replayed",
+  "scope": "contracts plus source and launcher tests; not full Gateway/M1",
+  "new_review_requested": [
+    "Pi harness",
+    "OpenCode"
+  ],
+  "runtime_dependency_change": false
+}

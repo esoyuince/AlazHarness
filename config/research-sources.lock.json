@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "purpose": "reference_source_review_only",
+  "runtime_dependency": false,
+  "review_date": "2026-10-15",
+  "baseline_commit": "99d6fe16bea4a98ae72f0aff2ceb2ea235bf0851",
+  "sources": [
+    {
+      "name": "pi",
+      "repository": "earendil-works/pi",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "observed_default_branch": "main",
+      "license": "MIT",
+      "local_reference_path_from_default_workspace": "scratch/research-sources/20261015-pi-opencode-46cc/pi",
+      "shallow": true,
+      "detached": true,
+      "dependencies_installed": false,
+      "runtime_executed": false,
+      "upstream_tests_executed": false,
+      "files": [
+        {
+          "path": "packages/agent/README.md",
+          "sha256": "37da6831566eb0385a59da2ee055e7a7efe3e8e7a4b50aab8745ce43559197fe",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              170
+            ]
+          ],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/agent/README.md"
+        },
+        {
+          "path": "packages/agent/src/agent-loop.ts",
+          "sha256": "28a2b03e34a7e32f004aa851e54d3b5be9dad71c392205614cbc9abdf3a9020a",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              65
+            ],
+            [
+              207,
+              300
+            ]
+          ],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/agent/src/agent-loop.ts"
+        },
+        {
+          "path": "packages/durable/README.md",
+          "sha256": "08abf68a80468eb5f14ad497b6e044fc677217914b2f93ab5a35ddfe385c8d6a",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/durable/README.md"
+        },
+        {
+          "path": "packages/durable/src/harness/harness.ts",
+          "sha256": "e0e6d839a294edcf8f82355700aaebae867fd2538388f87932e0eb3d053bb319",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              85
+            ]
+          ],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/durable/src/harness/harness.ts"
+        },
+        {
+          "path": "packages/durable/src/harness/submissions.ts",
+          "sha256": "19c817b0e1988d97b16f13fc24855dd90aac68776e083a000b211b32bc147599",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              90
+            ],
+            [
+              171,
+              190
+            ]
+          ],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/durable/src/harness/submissions.ts"
+        },
+        {
+          "path": "packages/coding-agent/docs/sdk.md",
+          "sha256": "d9034ccbf2219a58712d8dd4fcdf47e687d77131e71dd5d119d8a71e9bd2a2e8",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/coding-agent/docs/sdk.md"
+        },
+        {
+          "path": "packages/coding-agent/src/core/sdk.ts",
+          "sha256": "61f398403c7510bec849583b2c46272df11ac5aa8d2e24b4ded97a108dd55b28",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              70
+            ]
+          ],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/coding-agent/src/core/sdk.ts"
+        },
+        {
+          "path": "packages/agent/package.json",
+          "sha256": "2b4f9472716a5888fb77a5748d78900642fd82fe71c962728b1371498ebc235e",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/agent/package.json"
+        },
+        {
+          "path": "packages/ai/package.json",
+          "sha256": "1297cdf902a2649b8f79fa2367a0a213d7b94ae81c0c4d9d13157bfe24112ac9",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/ai/package.json"
+        },
+        {
+          "path": "packages/durable/package.json",
+          "sha256": "49997c2a63031d864c081016a5f4ea943c0280625319d6db85617fdc359f8222",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/packages/durable/package.json"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              5
+            ]
+          ],
+          "source_url": "https://github.com/earendil-works/pi/blob/b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6/LICENSE"
+        }
+      ],
+      "test_anchors": [
+        {
+          "path": "packages/agent/test/agent-loop.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/durable/test/harness-generation-recovery.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/durable/test/harness-cancellation-barrier.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/durable/test/harness-nested-tools-restart.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/durable/test/harness-storage-failure.test.ts",
+          "status": "located_not_run"
+        }
+      ]
+    },
+    {
+      "name": "opencode",
+      "repository": "anomalyco/opencode",
+      "commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "observed_default_branch": "dev",
+      "license": "MIT",
+      "local_reference_path_from_default_workspace": "scratch/research-sources/20261015-pi-opencode-46cc/opencode",
+      "shallow": true,
+      "detached": true,
+      "dependencies_installed": false,
+      "runtime_executed": false,
+      "upstream_tests_executed": false,
+      "files": [
+        {
+          "path": "packages/core/src/permission.ts",
+          "sha256": "9a7ad5b124652a635048a0ffb3878df20b3c510703296c741c5db8333c87a54c",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              125
+            ]
+          ],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/core/src/permission.ts"
+        },
+        {
+          "path": "packages/server/src/event-feed.ts",
+          "sha256": "6988d912bc8be3fb2a32e18fb5c45509f0b4295ace1d8c9c00a66df9c7acae5c",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/server/src/event-feed.ts"
+        },
+        {
+          "path": "packages/server/src/handlers/session.ts",
+          "sha256": "35e8a2d3764b959612058025065d98667a9a697041368656347dcb181663990a",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              90
+            ]
+          ],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/server/src/handlers/session.ts"
+        },
+        {
+          "path": "packages/sdk/src/index.ts",
+          "sha256": "a9a377bd899c92de43c63c9a8161ca0cf32f83068def24b8a732437e51720eb7",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/sdk/src/index.ts"
+        },
+        {
+          "path": "packages/core/package.json",
+          "sha256": "2422430961077e58a3206668a82080c3f944a2a649154f45f71ec885698fe88b",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/core/package.json"
+        },
+        {
+          "path": "packages/server/package.json",
+          "sha256": "bce5f58aa89ad18281e2091cbb1e83f520d67e854a7ee2e0ce2add80df2e291f",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/server/package.json"
+        },
+        {
+          "path": "packages/sdk/package.json",
+          "sha256": "84d09812607736be62cf4220a9d2e7c1b47810949b2ed7eae099c37a5bb13145",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/sdk/package.json"
+        },
+        {
+          "path": "packages/client/package.json",
+          "sha256": "29f3a843c3ca7a51a3e1fa25610e20de122e89ef0720c1b4b360e0e33daad159",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/client/package.json"
+        },
+        {
+          "path": "packages/protocol/package.json",
+          "sha256": "4377929d0baf3fd02c8cf6cf8150a2245c45b983587367e045a732864e7a2645",
+          "review_scope": "document/source retrieved; not behavioral proof",
+          "reviewed_line_ranges": [],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/packages/protocol/package.json"
+        },
+        {
+          "path": "V2_HTTP_API_AUDIT.md",
+          "sha256": "bb1ba2ecc1c62cb75db102cdb12d7d8cb51cde44b68b871bf0b75651506a4031",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              120
+            ]
+          ],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/V2_HTTP_API_AUDIT.md"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "b5c625d157735f04e1b2b7ceccee849130b554bdb23cd58db55a38a257efbbdd",
+          "review_scope": "selected ranges; not a full source audit",
+          "reviewed_line_ranges": [
+            [
+              1,
+              5
+            ]
+          ],
+          "source_url": "https://github.com/anomalyco/opencode/blob/3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9/LICENSE"
+        }
+      ],
+      "test_anchors": [
+        {
+          "path": "packages/core/test/permission.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/server/test/event-feed.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/core/test/session-compaction.test.ts",
+          "status": "located_not_run"
+        },
+        {
+          "path": "packages/cli/test/acp/session.test.ts",
+          "status": "located_not_run"
+        }
+      ]
+    }
+  ]
+}
