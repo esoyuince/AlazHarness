@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "purpose": "native Pi experiment, not a production engine dependency",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "source_files": 1922,
+  "source_manifest_sha256": "654a3cf7f95705d2a584cd460401200de050a64985e2206aaf0bc4a7e1c70592",
+  "package_lock_sha256": "e56f77e5f423d2d2cd052dc90622d4c223cd81209a3b996cd4d43587a6a05deb",
+  "provider_dependency": {
+    "name": "openai",
+    "version": "7.19.0"
+  },
+  "npm_workspaces": [
+    "packages/agent",
+    "packages/coding-agent"
+  ],
+  "scripts_disabled": true,
+  "source_manifest_encoding": "JSON parsed mapping, sorted keys, ASCII, compact separators"
+}

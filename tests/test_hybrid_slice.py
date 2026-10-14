@@ -21,8 +21,10 @@ class HybridSliceTests(unittest.TestCase):
         self.assertIsNotNone(node)
         sources=[*ROOT.glob('packages/hybrid-runtime/*.mjs'),
                  *ROOT.glob('packages/upstream/openclaw/*.ts'),ROOT/'tests/hybrid/cases.mjs',
-                 ROOT/'scripts/check_node_syntax.mjs']
-        self.assertEqual(len(sources),10)
+                 ROOT/'scripts/check_node_syntax.mjs',ROOT/'scripts/probes/native-pi-worker.mjs',
+                 ROOT/'tests/node/provider-gate-cases.mjs']
+        # Original ten files plus the request gate and two Pi-probe support files.
+        self.assertEqual(len(sources),13)
         for source in sources:
             with self.subTest(source=source.name):
                 r=subprocess.run([node,str(ROOT/'scripts/check_node_syntax.mjs'),str(source)],capture_output=True,text=True,

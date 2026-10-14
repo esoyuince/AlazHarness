@@ -1,0 +1,1487 @@
+{
+  "scope": "Pi Agent core + native read + native HTTP provider, scripted model; not full SDK/Durable/M1",
+  "result": "PASS",
+  "validation": {
+    "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+    "source_files_verified": 1922,
+    "lock_sha256": "e56f77e5f423d2d2cd052dc90622d4c223cd81209a3b996cd4d43587a6a05deb"
+  },
+  "node": "v24.19.0",
+  "cases": [
+    {
+      "scenario": "file-read",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 1.371,
+      "receipt": {
+        "scenario": "file-read",
+        "result": "PASS",
+        "expectedOutcome": "completed",
+        "nativeStopReason": "stop",
+        "httpRequests": 2,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 1,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": true,
+        "fileNonceVerified": true,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted",
+            "toolResults": 1,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": false
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "54e2c5a3dc444d93c51ad126b9143612a241eecfe4c8c01ffc14f1ec75c0b67f",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "missing-file",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 1.342,
+      "receipt": {
+        "scenario": "missing-file",
+        "result": "PASS",
+        "expectedOutcome": "tool_failed",
+        "nativeStopReason": "stop",
+        "httpRequests": 2,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 0,
+        "nativeToolErrors": 1,
+        "toolResultSeenByModel": true,
+        "fileNonceVerified": false,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted",
+            "toolResults": 1,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": true
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "016a9412fc27dba91468d54c4940a3f7b7bfba1e36ea8578b37c13aadc39278e",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "cancelled-model",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 1.263,
+      "receipt": {
+        "scenario": "cancelled-model",
+        "result": "PASS",
+        "expectedOutcome": "cancelled",
+        "nativeStopReason": "aborted",
+        "httpRequests": 1,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 1,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 1,
+          "closed": false
+        },
+        "nativeReadResults": 0,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": false,
+        "fileNonceVerified": false,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 1,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 1,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "timeout-model",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 1.787,
+      "receipt": {
+        "scenario": "timeout-model",
+        "result": "PASS",
+        "expectedOutcome": "cancelled",
+        "nativeStopReason": "aborted",
+        "httpRequests": 1,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 1,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 1,
+          "closed": false
+        },
+        "nativeReadResults": 0,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": false,
+        "fileNonceVerified": false,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 1,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 1,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "budget-stop",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 1.77,
+      "receipt": {
+        "scenario": "budget-stop",
+        "result": "PASS",
+        "expectedOutcome": "budget_exhausted",
+        "nativeStopReason": "error",
+        "httpRequests": 1,
+        "gate": {
+          "maxRequests": 1,
+          "submitted": 1,
+          "denied": 1,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 1,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": false,
+        "fileNonceVerified": true,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": false
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 1,
+          "submitted": 1,
+          "denied": 1,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "retry-cap",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 2.337,
+      "receipt": {
+        "scenario": "retry-cap",
+        "result": "PASS",
+        "expectedOutcome": "budget_exhausted",
+        "nativeStopReason": "error",
+        "httpRequests": 1,
+        "gate": {
+          "maxRequests": 1,
+          "submitted": 1,
+          "denied": 1,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 0,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": false,
+        "fileNonceVerified": false,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 1,
+          "submitted": 1,
+          "denied": 1,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "truncated-stream",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 5.452,
+      "receipt": {
+        "scenario": "truncated-stream",
+        "result": "PASS",
+        "expectedOutcome": "provider_error",
+        "nativeStopReason": "error",
+        "httpRequests": 1,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 1,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 0,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": false,
+        "fileNonceVerified": false,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "061ddfe51113b4f0f174997fd28fa1ea84005fbd811b50f119ff6260addf9d09",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 1,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "model-switch",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 3.829,
+      "receipt": {
+        "scenario": "model-switch",
+        "result": "PASS",
+        "expectedOutcome": "completed",
+        "nativeStopReason": "stop",
+        "httpRequests": 3,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 3,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 1,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": true,
+        "fileNonceVerified": true,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted",
+            "toolResults": 1,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted-second",
+            "toolResults": 1,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": false
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          },
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "d24617e9113178914e12a75b288e2c5614ea9ef0665d7a4a716ec8fa192ff5df",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 3,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "event-barrier",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 3.298,
+      "receipt": {
+        "scenario": "event-barrier",
+        "result": "PASS",
+        "expectedOutcome": "completed",
+        "nativeStopReason": "stop",
+        "httpRequests": 2,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 1,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": true,
+        "fileNonceVerified": true,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted",
+            "toolResults": 1,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": false
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "35001dce4a3f6f888d318b96cca0099fea6044b779b5cea984520fd50257ce29",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "permission-denied",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 2.385,
+      "receipt": {
+        "scenario": "permission-denied",
+        "result": "PASS",
+        "expectedOutcome": "tool_failed",
+        "nativeStopReason": "stop",
+        "httpRequests": 2,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 0,
+        "nativeToolErrors": 1,
+        "toolResultSeenByModel": true,
+        "fileNonceVerified": false,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted",
+            "toolResults": 1,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": true
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "016a9412fc27dba91468d54c4940a3f7b7bfba1e36ea8578b37c13aadc39278e",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    },
+    {
+      "scenario": "concurrent-prompt",
+      "result": "PASS",
+      "exit_code": 0,
+      "timed_out": false,
+      "elapsed_seconds": 2.27,
+      "receipt": {
+        "scenario": "concurrent-prompt",
+        "result": "PASS",
+        "expectedOutcome": "completed",
+        "nativeStopReason": "stop",
+        "httpRequests": 2,
+        "gate": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": false
+        },
+        "nativeReadResults": 1,
+        "nativeToolErrors": 0,
+        "toolResultSeenByModel": true,
+        "fileNonceVerified": true,
+        "settled": true,
+        "modelCalls": [
+          {
+            "model": "alaz-scripted",
+            "toolResults": 0,
+            "stream": true
+          },
+          {
+            "model": "alaz-scripted",
+            "toolResults": 1,
+            "stream": true
+          }
+        ],
+        "events": [
+          {
+            "type": "agent_start",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_start",
+            "isError": null
+          },
+          {
+            "type": "tool_execution_end",
+            "isError": false
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "turn_start",
+            "isError": null
+          },
+          {
+            "type": "message_start",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_update",
+            "isError": null
+          },
+          {
+            "type": "message_end",
+            "isError": null
+          },
+          {
+            "type": "turn_end",
+            "isError": null
+          },
+          {
+            "type": "agent_end",
+            "isError": null
+          }
+        ],
+        "finalOutputSha256": "0744330127dcf0e31272cea917695ca6f5967a44f9b01d81209b3af105b9ff5f",
+        "nativeAgent": true,
+        "nativeReadTool": true,
+        "nativeHttpProvider": true,
+        "scriptedModel": true,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "requestCapOwner": "AlazHarness injected fetch gate",
+        "currencyBudgetTested": false,
+        "persistenceTested": false,
+        "fullCodingAgentSdk": false,
+        "autonomy": false,
+        "osSandboxClaimed": false,
+        "serverClosed": true,
+        "openServerSockets": 0,
+        "gateAfterCleanup": {
+          "maxRequests": 6,
+          "submitted": 2,
+          "denied": 0,
+          "blockedTargets": 0,
+          "failedTransports": 0,
+          "closed": true
+        }
+      }
+    }
+  ],
+  "native_cases": 11,
+  "worker_sha256": "07ef101bd45190a84ce88ac1548b13afb1fc5e088df2e0dd7b4d6805f8642b51",
+  "gate_sha256": "9d4aaf711e3728e2c39c0a5007e254698372361ea9ebd321c45961c9fcdea258"
+}

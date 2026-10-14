@@ -57,3 +57,9 @@ HTTP contract; `python -B scripts/demo_hybrid.py` exercises stdio.
 Ten upstream payloads (including two licenses) live under packages/upstream.
 See [integration decisions](docs/HYB-003-INTEGRATION.md). A scripted transport
 peer is not evidence of real AIAgent execution.
+
+## Pi reference runtime probe
+
+[Native Pi experiment](docs/research/REF-PI-001-NATIVE.md): real Agent core/read/HTTP
+provider with scripted loopback responses, separately from ordinary CI. Pi remains
+a component candidate, not a new production engine or an autonomy feature.

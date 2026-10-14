@@ -1,0 +1,11 @@
+{
+  "scope": "root contract/source/launcher unit tests; excludes separately executed native Pi scenarios",
+  "tests": 154,
+  "passed": 154,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "elapsed_seconds": 35.854,
+  "native_scenarios_recorded_separately": true,
+  "first_root_test_failure": "Source syntax inventory expected original ten files; retained all old checks and expanded to thirteen, including new gate/probe/test modules"
+}

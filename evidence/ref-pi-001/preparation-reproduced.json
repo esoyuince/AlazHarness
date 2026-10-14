@@ -1,0 +1,11 @@
+{
+  "scope": "isolated preparation only, not agent acceptance",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "files": 1922,
+  "lock_sha256": "e56f77e5f423d2d2cd052dc90622d4c223cd81209a3b996cd4d43587a6a05deb",
+  "exit_code": 0,
+  "timed_out": false,
+  "elapsed_seconds": 48.603,
+  "scripts_disabled": true,
+  "dev_dependencies_omitted": true
+}

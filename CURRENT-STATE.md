@@ -1,115 +1,77 @@
-# AlazHarness — integrated checkpoint
+# AlazHarness — REF-PI-001 checkpoint
 
 Date: 2026-10-15. Default workspace: C:\Antigravity\AlazHarness.
-Active integration branch: alaz/hyb-003-integration-46cc.
-Isolated worktree: scratch/worktrees/hyb-003-integration-46cc under that root.
-Always read current git status / HEAD / remote status; concurrent lanes may advance.
+Active branch: alaz/ref-pi-001.
+Active worktree: C:\Antigravity\AlazHarness\scratch\worktrees\review-pi-opencode-46cc.
+Base: 3bf5305f9cadab584429ca4d97a941f394c0522f (contains integration 99d6fe1).
+The old directory name is retained deliberately; no new worktree was necessary.
+Read live git status/HEAD before proceeding. Other lanes/worktrees are preserved.
 
-## Result and scope
+## Earned result
 
-The reviewed stdio and HTTP feature histories are reconciled in this worktree:
-c637380706232eb49f835b45da7da1f4fa3573a0 +
-eb20b2e7559750db3c61f0b8450b393ae96f6368.
-No edits or branch switches were made in the original dirty shared checkout.
-Its alaz/hyb-001-component-slice work and older evidence remain preserved.
-The integration branch is not main; publication/CI are verified separately.
+M0 bootstrap/publication accepted historically. Existing root suite 128 tests;
+this package adds 26 offline tests (16 HTTP gate + 10 Python guards), totaling154.
+Pi direct Agent core, native read and native HTTP provider: eleven distinct
+scenarios passed on Windows with scripted loopback model responses. No real
+model inference, paid calls, social network or autonomy loop ran.
 
-M0 remains accepted. HYB-001/002 components and contract suites are combined.
-HYB-003 direct native AIAgent + real read_file round is now PASS with scripted
-model HTTP responses. Full Gateway/ingress HYB-003 and full M1 remain OPEN.
-No model inference, paid-provider call or autonomy loop was run.
+Pi source pin: b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6.
+Runtime OpenClaw/Hermes submodule pins and their ten copied payloads unchanged.
+OpenCode reference pin remains3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9; not executed.
 
-## Single source owner
+## New files and ownership
 
-OpenClaw pin: 2dcbb6138d57dccfcd54f2f908ef9f38268b1229.
-Hermes pin: eb75627faf532fa6ffbdae59a0d14b0b385fc780.
-The unchanged original vendor trees remain in the default workspace; this
-integration worktree does not duplicate their full checkouts.
+- packages/hybrid-runtime/provider-request-gate.mjs: Alaz-owned per-fetch HTTP
+  request cap, used by the Pi probe only; not production currency/token enforcement.
+- scripts/probes/native-pi-worker.mjs: actual upstream constructor/loop/read/HTTP
+  imports through the upstream source resolver; only provider responses scripted.
+- scripts/prepare_native_pi.py: explicit isolated npm ci, dry-run by default.
+- scripts/run_native_pi_probe.py: fresh output/profile, exact source validation,
+  eleven independent bounded child runs, true cleanup and error evidence.
+- config/pi-native-probe.lock.json:1922 file manifest pin + npm lock + source pin.
+- docs/research/REF-PI-001-NATIVE.md and evidence/ref-pi-001/: scope and receipts.
 
-Both transports now use packages/upstream with TEN unique payloads (eight source
-modules/functions and two MIT licenses). Canonical lock: config/components.lock.json.
-Canonical checker: scripts/verify_components.py. Duplicate tree, old root lock and
-old checker retired; all behavioral test scenarios retained. Only one actual
-Hermes engine may own a live session. Adapters must not co-own its transcript.
+Native outcomes: read success; missing read; external cancel; test-controller
+100ms cancellation; one-HTTP cap; retry cap after503; truncated SSE error;
+same-process scripted-model-ID switch; awaited agent_end listener; denied read;
+concurrent prompt rejection. All native results require idle and zero open sockets.
+A normal stop with a failed tool does not prove task success. Native scenarios
+are separate from the154 default CI tests and are not added to that count.
 
-## Native evidence
+## Reproduce
 
-Prepared interpreter (local, Git-ignored):
-runtime/hermes-hyb003-46cc/env/Scripts/python.exe under the default workspace.
-Hermes's own pm.build_environment used frozen inputs, no extras and an isolated
-home/profile/cache/tool store. Existing personal profiles/keys were not used.
-
-- file-read: real public AIAgent constructor, conversation loop and native read_file;
-  one actual read result, two loopback model requests, completed=true.
-- budget-summary: max_iterations=1, one actual read, two model requests including
-  summary, completed=false and max_iterations_reached(1/1). This confirms native
-  exhaustion semantics but DOES NOT enforce a hard provider-request/currency cap.
-- Initial false assumption of one HTTP call under one iteration is preserved as
-  FAIL; an empty summary can be retried once, producing three HTTP requests.
-- Python socket audit rejects non-loopback connects; this is not an OS sandbox.
-- Native probes are local Windows evidence, not Linux CI engine acceptance.
-
-Sanitized native/preparation evidence: evidence/hyb-003/.
-Raw profile/log files remain in the original workspace's ignored runtime tree.
-
-## Verification commands
-
-```sh
 python -B -m unittest discover -s tests -v
 python -B scripts/ci_check.py
 python -B scripts/verify_components.py --with-vendor --source-workspace C:\Antigravity\AlazHarness
-python -B scripts/demo_hybrid.py
-python -B scripts/demo_hybrid_mock.py
-```
 
-Ordinary tests: Python3.11+, Node24+ and Git; no model keys or dependencies installed.
-Actual native probes: scripts/run_native_hermes_probe.py, explicit prepared Python
-3.14 and fresh output; docs/HYB-003-INTEGRATION.md gives exact commands and limits.
-The first unified suite passed122/122 before new launcher tests; final counts and
-scope are recorded in evidence/hyb-003/local-validation.json after the final run.
-A test count or receipt file alone is not exact-commit GitHub success evidence.
+Prepared local Pi runtime: C:\Antigravity\AlazHarness\runtime\ref-pi-001-4eb7.
+The scripted native runner requires --prepared-root plus a fresh --output.
+Read docs/research/REF-PI-001-NATIVE.md before installing/running. Personal model
+credentials, proxy and Node injection variables are not inherited.
+Preparation source-manifest serialization bug was fixed with a canonical map
+hash; all individual source-file checks remain. Failed initial root log retained.
 
-## Next work
+## Next
 
-Qualify the actual Hermes Gateway / SessionAuthority / APIServerAdapter entry
-with the scripted loopback model, then call it through HermesRunsClient. No new
-parallel transcript store or made-up Gateway API. Include keyed duplicate/lost
-admission and native stop semantics, then actual restart reconciliation.
+REF-PI-002: bounded native Pi Durable admission/restart/replay experiments,
+including same-key/different-input conflict and unknown side effects. Do not
+add it as a second writer to Hermes session state. REF-OC-001 stays queued for
+OpenCode permission/event contracts. Hybrid Gateway qualification also remains
+open. No engine replacement, main merge or M1/M2 acceptance is implied.
 
-HYB-005: a provider-dispatch request/token/currency budget must account for summary,
-retry and auxiliary calls. Do not substitute max_iterations for that cap.
-Full OpenClaw ingress, real process isolation, restart-safe identity, memory/skill
-transfer, real-model qualification and M2 autonomy are not accepted yet.
+## Git/CI
 
-## Git and CI custody
+Public MIT repository esoyuince/AlazHarness; existing alaz-server Local CI,
+GitHub Actions disabled. This package needs no server profile changes.
+Final commit/status must be checked live after push. Original dirty root on
+alaz/hyb-001-component-slice, other feature worktrees and all source refs remain
+untouched. No broad staging, source updates or force pushes.
 
-Public repository esoyuince/AlazHarness, MIT. Existing alaz-server Local CI and
-GitHub alaz/local-ci context unchanged; GitHub Actions remains disabled. No
-infrastructure policy, server secret or external service changed in this package.
-Historical evidence directories keep their original counts and source versions.
-Do not stage unrelated shared-checkout files or force-push any branch.
+## Local package acceptance
 
-## Connection interruption recovery
-
-The in-progress merge was found with all conflicts resolved and staged. Its
-128 root tests and gates were re-executed successfully; stored native probe
-worker hashes matched. No unknown operation was replayed. The integration
-checkpoint is being committed on this feature branch, not main.
-
-New user scope: include Pi harness and OpenCode in the component review. This is
-not a decision to replace Hermes/OpenClaw or launch extra model loops. Review
-source identity, pinned components, ownership, dependencies and acceptance gaps
-before adopting code. See the subsequent docs/research checkpoint.
-
-## Pi/OpenCode source review checkpoint — 2026-10-15
-
-This review branch is `alaz/review-pi-opencode-46cc`, based on integrated `99d6fe1`.
-Its worktree is `scratch/worktrees/review-pi-opencode-46cc`; the original integration
-worktree remains unchanged. GitHub alaz/local-ci success for 99d6fe1 was read.
-Pi and OpenCode were cloned as detached, push-disabled reference sources, not
-forked or installed. See docs/research/PI-OPENCODE-REVIEW.md and
-config/research-sources.lock.json. Runtime source pins and two gitlinks unchanged.
-Review status: STATIC_REVIEW, no Pi/OpenCode runtime or upstream tests executed.
-Next review gates: REF-PI-001 equivalent native tool round, REF-PI-002 durable
-replay/crash admission, REF-OC-001 permission/event contracts. No engine
-replacement decision yet; full Gateway HYB-003/M1/M2 remain open.
+154/154 root tests PASS. The packaged preparation helper completed from a fresh
+source archive with lifecycle scripts disabled; all eleven native cases were
+then rerun successfully in that independent environment. They remain eleven
+distinct scenarios, not twenty-two. Final local receipts: evidence/ref-pi-001/
+native-reproduced.json, preparation-reproduced.json, local-validation.json.
+Prepared reproduction: runtime/ref-pi-001-repro2-4eb7 under the default workspace.

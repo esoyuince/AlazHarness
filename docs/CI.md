@@ -82,3 +82,10 @@ The real AIAgent probe is explicitly separate: run_native_hermes_probe.py requir
 an already prepared Python environment and a fresh output directory. Default CI
 never installs Hermes dependencies or invokes a real model. A dependency-build
 receipt is not a runtime-acceptance receipt.
+
+## REF-PI-001 test split
+
+Default root suite now adds offline per-fetch request-cap and Pi launcher guards.
+The actual Pi import/tool/HTTP scenarios are opt-in via run_native_pi_probe.py
+and have separate Windows evidence under evidence/ref-pi-001. Default CI never
+installs npm/Pi dependencies; successful CI is not Linux native Pi acceptance.

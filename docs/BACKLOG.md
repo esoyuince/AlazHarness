@@ -30,3 +30,9 @@ Pi and OpenCode are reference candidates only. Source-level assessment:
 `docs/research/PI-OPENCODE-REVIEW.md`. Follow REF-PI-001 (native tool parity),
 REF-PI-002 (durable crash/replay contract), REF-OC-001 (permission/event contracts)
 before adopting components. These are NOT RUN, not replacements for open HYB gates.
+
+## REF-PI-001 direct-core checkpoint
+
+Pi native direct-core scenarios passed; see docs/research/REF-PI-001-NATIVE.md.
+This is not full Coding-agent SDK, Durable, OpenCode runtime or M1 acceptance.
+Next: REF-PI-002 native crash/admission/replay; REF-OC-001 permission/events.

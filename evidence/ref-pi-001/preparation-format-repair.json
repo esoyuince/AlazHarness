@@ -1,0 +1,9 @@
+{
+  "initial_helper_apply": "FAIL_CLOSED_BEFORE_NPM",
+  "cause": "Raw manifest JSON hash differed on CRLF versus LF serialization",
+  "source_file_hashes_compared": 1922,
+  "source_file_differences": 0,
+  "repair": "Canonical sorted JSON mapping hash, keeping every per-file SHA256 comparison",
+  "new_canonical_manifest_sha256": "654a3cf7f95705d2a584cd460401200de050a64985e2206aaf0bc4a7e1c70592",
+  "test_added": "test_manifest_hash_ignores_serialization_not_content"
+}
