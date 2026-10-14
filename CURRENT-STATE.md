@@ -21,10 +21,23 @@ Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`. Bu konuşmanın 
 
 Ajan bağımlılıkları kurulmadı; OpenClaw/Hermes build'i, gerçek model çağrısı, çalışan hibrit ve otonomi testi NOT RUN. Sürekli ajan/cron başlatılmadı; kişisel Hermes/OpenClaw profili kullanılmadı. Örnek ayarlar henüz bir runtime tarafından uygulanmıyor.
 
-Ana AlazHarness deposunun GitHub uzak adresi yok; iki public fork uzaktadır. Kök deponun son commit ve çalışma ağacı durumunu her yeni oturumda `git status` / `git log -1` ile yeniden kontrol et; eşzamanlı dosya eklemelerini topluca commit etme.
+Ana repo: `esoyuince/AlazHarness`, public / MIT. `origin` HTTPS GitHub remote, main dalı origin/main izler. Her yeni oturumda git status ve git log ile güncel durumu kontrol et; eşzamanlı dosyaları topluca commit etme.
 
 Windows PATH'inde Docker yok; WSL Ubuntu mevcut fakat WSL içi runtime ve sandbox kabulü henüz test edilmedi.
 
 ## Sıradaki işlem
 
 `HYB-001`: `docs/COMPONENT-MAP.md` başlangıç haritasını sabit kaynak kodundan ayrıntılandır; OpenClaw olay/harness girişi ile Hermes programatik yürütme sınırının dosya, sembol, bağımlılık, izin/iptal/oturum ve mevcut test kanıtlarını çıkar. En dar gerçek bileşen birleşimini seç; ardından sahte modelle tek işin uçtan uca turunu kur. Otonomi katmanı M1 çalışan hibrit kabulünden sonra (M2).
+
+## Public Git / CI acceptance — 2026-10-15
+
+- Existing bootstrap history is preserved; the main repository is public with a root MIT license.
+- Publication/preparation commit: `dcd809d7496f14427cf7cc9a1a1516071118705d`.
+- Actual GitHub push -> webhook -> existing alaz-server Local CI -> GitHub `alaz/local-ci`: SUCCESS on that exact SHA.
+- Root tests: 37/37 PASS on Windows and server Python 3.11.2. Offline source-lock/publication gate: PASS.
+- Per-project CI: immutable image, 1 CPU, 512 MiB memory, 768 MiB RAM+swap, 180-second test timeout. No model keys, package installs or agent loops.
+- Existing server-wide concurrency/memory limits are unchanged; only the AlazHarness policy and pull mirror were added. Operational evidence remains in the private infrastructure repo.
+- GitHub Actions disabled for this repository; private vulnerability reporting enabled. Fork/draft PRs are not automatically run on shared CI.
+- Public sanitized receipt: `evidence/publication/2026-10-15.json`; scope and local reproduction: `docs/CI.md`.
+- The pre-existing untracked `evidence/verification-20261014-a7a90059/` is preserved locally, not bundled into this publication.
+- This is M0 preparation/CI acceptance, not M1 hybrid or M2 autonomy acceptance. HYB-001 remains next.
