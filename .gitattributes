@@ -6,3 +6,4 @@
 *.ts text eol=lf
 *.mjs text eol=lf
 packages/upstream/**/LICENSE text eol=lf
+evidence/hyb-http/*.txt text eol=lf

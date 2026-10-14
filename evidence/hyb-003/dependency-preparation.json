@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 38.68,
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "builder": "pm.build_environment",
+  "frozen": true,
+  "extras": [],
+  "environment_created": true,
+  "scope": "dependency preparation, no agent executed"
+}

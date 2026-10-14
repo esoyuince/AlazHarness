@@ -26,8 +26,8 @@ It does not construct the real Hermes AIAgent or full OpenClaw Gateway. No pip/n
 installs, model calls, live tools, scheduler or autonomous goal loop are involved.
 
 The copied source files are root-tracked, license-preserving components. Their
-hashes and transformations are checked against components.lock.json in CI without
-initializing submodules. `verify_component_slices.py --full` separately checks the
+hashes and transformations are checked against config/components.lock.json in CI without
+initializing submodules. `verify_components.py --with-vendor` separately checks the
 original pinned local vendor bytes. Test status applies to this scoped component
 slice, not to full application, sandbox, persistent recovery or learning acceptance.
 Node tests are invoked one case per unittest so structured counts stay inspectable.
@@ -70,3 +70,15 @@ Windows and Linux binaries. `scripts/check_node_syntax.mjs` now parses erasable
 TypeScript with Node's built-in stripTypeScriptTypes and syntax-checks the result
 as ESM on stdin, without executing the source. This is a syntax check, not a
 TypeScript static type check. Runtime tests still execute the copied .ts modules.
+
+## Integrated stdio and HTTP tests
+
+Ten unique upstream payloads, including both licenses, are checked by the single
+verify_components.py implementation. Both suites report individual unittest
+cases. Use --with-vendor --source-workspace <original-workspace> to compare the
+original pinned files from an isolated worktree.
+
+The real AIAgent probe is explicitly separate: run_native_hermes_probe.py requires
+an already prepared Python environment and a fresh output directory. Default CI
+never installs Hermes dependencies or invokes a real model. A dependency-build
+receipt is not a runtime-acceptance receipt.

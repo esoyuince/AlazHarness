@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "scope": "actual push CI for the HTTP contract candidate, not native AIAgent acceptance",
+  "tested_commit": "d1471714ab82066a7a3ceb638704b6fcad910950",
+  "branch": "alaz/hyb-002-http-contract",
+  "github": {
+    "context": "alaz/local-ci",
+    "state": "success",
+    "description": "ALAZ Local CI passed",
+    "id": 56376067963
+  },
+  "server": {
+    "sha": "d1471714ab82066a7a3ceb638704b6fcad910950",
+    "checkout_sha": "d1471714ab82066a7a3ceb638704b6fcad910950",
+    "ref": "refs/heads/alaz/hyb-002-http-contract",
+    "delivery": "bfd5749a-c81d-11f1-8017-408f768c4a32",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 76,
+      "failed": 0,
+      "passed": 76,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 76
+    },
+    "status_delivery": "posted",
+    "started_unix": 1792016553,
+    "finished_unix": 1792016578,
+    "execution": [
+      {
+        "rc": 0,
+        "image": "sha256:6313d431d6288010c3122aa84dfa8cdcc8f5397ae20b14d170625b5e130b3cab",
+        "cleanup": "removed",
+        "oom": false,
+        "timeout": false
+      }
+    ]
+  },
+  "full_hermes_engine_tested": false,
+  "autonomy_tested": false,
+  "main_merged": false
+}

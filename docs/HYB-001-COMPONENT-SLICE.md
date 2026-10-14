@@ -11,7 +11,7 @@ From the repository root, with Node 24+ and Python 3.11+:
 python -B scripts/demo_hybrid.py
 python -B scripts/demo_hybrid.py --scenario echo --text "Merhaba AlazHarness"
 python -B -m unittest discover -s tests -v
-python -B scripts/verify_component_slices.py
+python -B scripts/verify_components.py
 ```
 
 The default demo returns the scripted 2 + 3 result and two consumed iterations.
@@ -22,7 +22,7 @@ profile is needed. Local demo state uses ignored runtime/component-demo/ folders
 With the full source submodules already present:
 
 ```sh
-python -B scripts/verify_component_slices.py --full
+python -B scripts/verify_components.py --with-vendor
 ```
 
 ## API in this slice

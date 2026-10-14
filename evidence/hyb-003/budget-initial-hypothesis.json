@@ -1,0 +1,96 @@
+{
+  "observation": {
+    "result": "FAIL",
+    "scope": "real_AIAgent_constructor_loop_and_file_tool_scripted_model_HTTP",
+    "scenario": "budget-stop",
+    "turn_exit_reason": "max_iterations_reached(1/1)",
+    "completed": false,
+    "native_tool": "read_file",
+    "tool_result_seen_by_model": true,
+    "model_http_calls": 3,
+    "model_inference_calls": 0,
+    "paid_model_calls": 0,
+    "profile_bound": true,
+    "non_loopback_attempts_blocked": 0,
+    "output_sha256": "76d3284b23c5d265238601da9093ec92e6f1e14f6b4b30f47776b9917774a8df",
+    "openclaw_gateway_tested": false,
+    "hermes_gateway_http_tested": false,
+    "os_sandbox_claimed": false,
+    "autonomy_tested": false,
+    "result_keys": [
+      "api_calls",
+      "base_url",
+      "cache_read_tokens",
+      "cache_write_tokens",
+      "completed",
+      "completion_tokens",
+      "cost_source",
+      "cost_status",
+      "current_turn_user_idx",
+      "estimated_cost_usd",
+      "failed",
+      "final_response",
+      "input_tokens",
+      "interrupted",
+      "last_prompt_tokens",
+      "last_reasoning",
+      "messages",
+      "model",
+      "output_tokens",
+      "partial",
+      "pre_transform_response",
+      "prompt_tokens",
+      "provider",
+      "reasoning_tokens",
+      "requested_model",
+      "response_previewed",
+      "response_reused",
+      "response_transformed",
+      "served_model",
+      "service_tier",
+      "session_id",
+      "total_tokens",
+      "turn_exit_reason",
+      "turn_id",
+      "user_intervened"
+    ],
+    "model_calls": [
+      {
+        "tool_names": [
+          "patch",
+          "read_file",
+          "search_files",
+          "write_file"
+        ],
+        "received_real_tool_result": false,
+        "stream": false
+      },
+      {
+        "tool_names": [
+          "patch",
+          "read_file",
+          "search_files",
+          "write_file"
+        ],
+        "received_real_tool_result": true,
+        "stream": false
+      },
+      {
+        "tool_names": [
+          "patch",
+          "read_file",
+          "search_files",
+          "write_file"
+        ],
+        "received_real_tool_result": true,
+        "stream": false
+      }
+    ]
+  },
+  "interpretation": "Initial hypothesis max_iterations=1 means one HTTP request was false. Native finalizer requests a summary and retries an empty summary once. This fixture returned tool-only summary content, giving three HTTP calls. Hard request/currency cap remains NOT IMPLEMENTED.",
+  "source_evidence": [
+    "agent/turn_finalizer.py:124-195",
+    "agent/chat_completion_helpers.py:2309-2363"
+  ],
+  "upstream_source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+}

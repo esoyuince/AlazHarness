@@ -56,3 +56,11 @@ writer to that engine's store.
 
 See ADR-0002 and HYB-001-COMPONENT-SLICE.md for runnable proof and explicit gaps.
 Source locations and copied-module checks are not full upstream suite acceptance.
+
+## Integrated ownership (HYB-003)
+
+The two candidates share packages/upstream and config/components.lock.json.
+The duplicate tree and old provenance checker were retired in this integration
+branch; original feature histories are preserved. HTTP contracts are documented
+in HYB-002-HTTP-CONTRACT.md. The real Hermes engine must own admission, transcript
+and tools. Two adapters must not independently drive the same live session.

@@ -1,0 +1,126 @@
+{
+  "scope": "merged mock contracts, component provenance and launcher tests; not full M1/M2",
+  "checks": [
+    {
+      "name": "root-tests",
+      "exit_code": 0,
+      "elapsed_seconds": 36.652,
+      "tests": 128
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0,
+      "elapsed_seconds": 0.259,
+      "result": {
+        "result": "PASS",
+        "components": 10,
+        "vendor_bytes_compared": true,
+        "scope": "selected source provenance; not complete upstream build acceptance"
+      }
+    },
+    {
+      "name": "stdio-demo",
+      "exit_code": 0,
+      "elapsed_seconds": 0.704,
+      "result": {
+        "scope": "OpenClaw/Hermes component slice; SCRIPTED peer, not AIAgent",
+        "capabilities": {
+          "mode": "scripted-component-slice",
+          "start": true,
+          "status": true,
+          "events": true,
+          "cancel": true,
+          "resume": false,
+          "durableIdempotency": false,
+          "realModel": false,
+          "actualAIAgent": false,
+          "fullOpenClawGateway": false,
+          "autonomousGoals": false,
+          "approvals": "deny",
+          "sandbox": false
+        },
+        "result": {
+          "runId": "4d8c3ccb-bb2f-4251-a48b-064f4bb39b14",
+          "state": "completed",
+          "code": null,
+          "sessionId": "fixture-4d8c3ccb-bb2f-4251-a48b-064f4bb39b14",
+          "response": "{\"value\": 5, \"iterations\": 2, \"model_calls\": 0, \"scripted\": true}",
+          "submitted": true,
+          "process": {
+            "reaped": true,
+            "exitCode": 0,
+            "signal": null,
+            "killSent": false
+          },
+          "mock": true,
+          "modelCalls": 0,
+          "events": [
+            {
+              "seq": 1,
+              "type": "queued"
+            },
+            {
+              "seq": 2,
+              "type": "running"
+            },
+            {
+              "seq": 3,
+              "type": "session_created"
+            },
+            {
+              "seq": 4,
+              "type": "accepted"
+            },
+            {
+              "seq": 5,
+              "type": "tool.start"
+            },
+            {
+              "seq": 6,
+              "type": "tool.complete"
+            },
+            {
+              "seq": 7,
+              "type": "native_terminal"
+            },
+            {
+              "seq": 8,
+              "type": "settling"
+            },
+            {
+              "seq": 9,
+              "type": "completed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "http-demo",
+      "exit_code": 0,
+      "elapsed_seconds": 0.988,
+      "result": {
+        "scenario": "success",
+        "result": "PASS",
+        "scope": "mock-wire-contract-not-full-Hermes",
+        "run_id": "run_55f522eb8cf3417595683bce0846c95d",
+        "events": [
+          "running",
+          "completed"
+        ],
+        "output": "42",
+        "backendConfirmed": true,
+        "real_model_calls": 0,
+        "full_hermes_engine": false,
+        "autonomy": false,
+        "endpoint": "ephemeral_loopback_fixture"
+      }
+    }
+  ],
+  "native_probes_reported_separately": [
+    "native-file-read.json",
+    "native-budget-summary.json"
+  ],
+  "upstream_build_acceptance": false,
+  "paid_model_calls": 0
+}

@@ -1,0 +1,36 @@
+{
+  "operation": "interrupted_chat_recovery",
+  "local_tests_reexecuted": [
+    {
+      "name": "root-tests",
+      "exit_code": 0,
+      "seconds": 31.111,
+      "tests": 128,
+      "skipped": 0
+    },
+    {
+      "name": "root-gate",
+      "exit_code": 0,
+      "seconds": 0.796
+    },
+    {
+      "name": "provenance",
+      "exit_code": 0,
+      "seconds": 0.135
+    },
+    {
+      "name": "diff",
+      "exit_code": 0,
+      "seconds": 0.086
+    }
+  ],
+  "previous_native_receipts_worker_hash_verified": true,
+  "native_probes_reexecuted": false,
+  "replayed_unknown_operations": false,
+  "merge_parents": [
+    "c637380706232eb49f835b45da7da1f4fa3573a0",
+    "eb20b2e7559750db3c61f0b8450b393ae96f6368"
+  ],
+  "scope": "recovered local integration; full Gateway/M1/M2 not accepted",
+  "new_user_scope": "include Pi harness and OpenCode in source/component review; no engine replacement yet"
+}

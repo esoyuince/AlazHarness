@@ -42,9 +42,18 @@ Source restore does not install or start agents.
 
 ```sh
 python -B scripts/demo_hybrid.py
-python -B scripts/verify_component_slices.py
+python -B scripts/verify_components.py
 ```
 
 This runs copied OpenClaw lifecycle code and Hermes transport/budget code across
 real Node/Python processes with an explicitly scripted test peer. No model or
 agent tool is called. [Scope, API and next boundary](docs/HYB-001-COMPONENT-SLICE.md).
+
+## Integrated transport candidates
+
+The reviewed stdio component slice and HTTP candidate now share one source tree
+and provenance manifest. `python -B scripts/demo_hybrid_mock.py` exercises the
+HTTP contract; `python -B scripts/demo_hybrid.py` exercises stdio.
+Ten upstream payloads (including two licenses) live under packages/upstream.
+See [integration decisions](docs/HYB-003-INTEGRATION.md). A scripted transport
+peer is not evidence of real AIAgent execution.

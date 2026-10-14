@@ -1,0 +1,10 @@
+{
+  "result": "REFUSED_EXPECTED_MINIMUM",
+  "stage": "AIAgent constructor",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "fixture_advertised_context": 32768,
+  "native_required_minimum": 64000,
+  "fixture_corrected_context": 131072,
+  "upstream_code_changed": false,
+  "interpretation": "The initial scripted provider advertised a context below the native minimum. The fixture metadata was corrected; the native guard was not bypassed. This does not assert the capability of any real model."
+}

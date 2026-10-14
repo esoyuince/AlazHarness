@@ -10,7 +10,12 @@ import threading
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from verify_component_slices import verify, transform
+from verify_components import inspect, materialize
+
+def transform(data, kind):
+    if kind == 'verbatim': return materialize(data, {'mode': 'copy'})
+    if kind != 'relocate-deadline-import': raise ValueError('Unknown transformation')
+    return materialize(data, {'mode': 'rewrite', 'replacements': [['"@openclaw/normalization-core/number-coercion"', '"./number-coercion.ts"']]})
 
 def load(name,path):
     spec=importlib.util.spec_from_file_location(name,ROOT/path)
@@ -20,7 +25,7 @@ budget=load('alaz_component_budget','packages/upstream/hermes/iteration_budget.p
 
 class ComponentProvenanceTests(unittest.TestCase):
     def test_copies_match_recorded_digests(self):
-        result=verify(ROOT);self.assertEqual(result['copies'],8);self.assertFalse(result['source_bytes_checked'])
+        result=inspect(ROOT);self.assertEqual(result['components'],10);self.assertFalse(result['vendor_bytes_compared'])
     def test_import_relocation_only(self):
         source=b'import x from "@openclaw/normalization-core/number-coercion";\nbody();'
         self.assertEqual(transform(source,'relocate-deadline-import'),b'import x from "./number-coercion.ts";\nbody();')
