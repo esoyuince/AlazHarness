@@ -1,0 +1,14 @@
+{
+  "scope": "actual four copied TS files checked in immutable Linux CI image",
+  "result": "PASS",
+  "exit_code": 0,
+  "node": "v24.21.0",
+  "image": "sha256:6313d431d6288010c3122aa84dfa8cdcc8f5397ae20b14d170625b5e130b3cab",
+  "file_sha256": {
+    "check_node_syntax.mjs": "ad1f2b30e2b9d800257fa954e17988076ab3cb401063c61147fb7cb63ccdb45f",
+    "attempt-cancellation.ts": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+    "attempt-deadlines.ts": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+    "number-coercion.ts": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+    "string-coerce.ts": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3"
+  }
+}

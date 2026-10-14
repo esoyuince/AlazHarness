@@ -74,3 +74,13 @@ M2 autonomy follows complete M1 acceptance, not helper/protocol test counts.
 - Evidence: evidence/hyb-001/windows-component-tests.json, component-provenance.json,
   scripted-demo.json. These are pre-commit local receipts; GitHub exact-SHA status
   is checked independently after push. A live CI success does not imply full M1.
+
+## Linux gate repair
+
+Initial feature commit ed674068922445d2345bd09f251eb8b8a9e90828 had 82/83 parent
+tests pass on Linux; the one syntax test had four failing .ts subcases because
+native --check treated the files as JavaScript. Behavior tests were not excluded.
+The portable gate explicitly strips types with Node's parser, then checks ESM.
+The same four source files passed in the immutable Linux CI image; Windows full
+suite remains 83/83. Failed and corrected preflight receipts are preserved under
+evidence/hyb-001/. Exact repaired-commit live CI must be read independently.

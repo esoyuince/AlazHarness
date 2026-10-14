@@ -62,3 +62,11 @@ live acceptance. A written profile alone is not proof of a successful live run.
 Do not assume this Docker job can safely execute hostile code: the trust gate is
 intentional. Before opening execution to public forks, use separate disposable
 workers with a separately reviewed isolation and network policy.
+
+## Portable Node syntax gate
+
+Node's file-extension handling for `--check file.ts` differed between the tested
+Windows and Linux binaries. `scripts/check_node_syntax.mjs` now parses erasable
+TypeScript with Node's built-in stripTypeScriptTypes and syntax-checks the result
+as ESM on stdin, without executing the source. This is a syntax check, not a
+TypeScript static type check. Runtime tests still execute the copied .ts modules.

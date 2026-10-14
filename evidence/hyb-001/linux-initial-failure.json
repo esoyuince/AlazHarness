@@ -1,0 +1,34 @@
+{
+  "delivery": "d3d5116c-c81d-11f1-98fa-aaa79f1c6391",
+  "sha": "ed674068922445d2345bd09f251eb8b8a9e90828",
+  "checkout_sha": "ed674068922445d2345bd09f251eb8b8a9e90828",
+  "event": "push",
+  "ref": "refs/heads/alaz/hyb-001-reviewed",
+  "status": "failure",
+  "build_status": "failure",
+  "ci2_suite_proof": null,
+  "status_delivery": "posted",
+  "started_unix": 1792016587,
+  "finished_unix": 1792016609,
+  "results": [
+    {
+      "rc": 1,
+      "image": "sha256:6313d431d6288010c3122aa84dfa8cdcc8f5397ae20b14d170625b5e130b3cab",
+      "container": {
+        "exit_code": 1,
+        "OOMKilled": false,
+        "cleanup": "removed",
+        "timeout": false
+      }
+    }
+  ],
+  "scope": "83-test scripted component slice; not full AIAgent/Gateway or autonomy acceptance",
+  "test_summary": {
+    "total": 83,
+    "passed": 82,
+    "failed": 1,
+    "failing_subcases": 4,
+    "test": "test_hybrid_slice.HybridSliceTests.test_node_sources_parse"
+  },
+  "cause": "Native Node --check treated .ts input as JavaScript in CI; behavior cases passed."
+}

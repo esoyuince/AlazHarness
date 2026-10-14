@@ -20,11 +20,12 @@ class HybridSliceTests(unittest.TestCase):
         node=shutil.which('node')
         self.assertIsNotNone(node)
         sources=[*ROOT.glob('packages/hybrid-runtime/*.mjs'),
-                 *ROOT.glob('packages/upstream/openclaw/*.ts'),ROOT/'tests/hybrid/cases.mjs']
-        self.assertEqual(len(sources),9)
+                 *ROOT.glob('packages/upstream/openclaw/*.ts'),ROOT/'tests/hybrid/cases.mjs',
+                 ROOT/'scripts/check_node_syntax.mjs']
+        self.assertEqual(len(sources),10)
         for source in sources:
             with self.subTest(source=source.name):
-                r=subprocess.run([node,'--check',str(source)],capture_output=True,text=True,
+                r=subprocess.run([node,str(ROOT/'scripts/check_node_syntax.mjs'),str(source)],capture_output=True,text=True,
                                  encoding='utf-8',errors='replace',timeout=10)
                 self.assertEqual(r.returncode,0,r.stdout+r.stderr)
 

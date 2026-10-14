@@ -1,0 +1,14 @@
+{
+  "scope": "scripted component slice after portable syntax-check repair",
+  "discovered": 83,
+  "executed": 83,
+  "passed": 83,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 12.2,
+  "python": "3.14.3",
+  "node": "v24.19.0",
+  "result": "PASS",
+  "real_model_calls": 0
+}
