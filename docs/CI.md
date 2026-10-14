@@ -1,6 +1,6 @@
 # AlazHarness continuous integration
 
-## Scope: M0 preparation, not M1/M2 acceptance
+## Scope: M0 preparation + selected-component mock tests, not full M1/M2 acceptance
 
 The `alaz/local-ci` GitHub commit status is produced by the existing maintainer
 Local CI service. GitHub is the canonical source. The service fetches a bare
@@ -18,10 +18,19 @@ exact allowed submodule URLs, required public documents, safe example settings,
 root Python syntax, JSON validity and secret/runtime file hygiene. Zero discovered
 tests fail the repository gate. Reports use `.alaz-ci/`, which is Git-ignored.
 
-This lightweight gate does NOT initialize, build, import or execute OpenClaw or
-Hermes. It verifies their exact commit references, not downloaded source bytes.
-There are no pip/npm installs, model calls or GitHub-hosted Actions jobs. Runtime,
-upstream build and autonomy tests will be added as real components are implemented.
+The root publication gate does not initialize or build full vendor applications.
+The test suite additionally executes copied OpenClaw cancellation/deadline helpers
+and Hermes StdioTransport/IterationBudget with a SCRIPTED Python peer. Node 24+
+is now required alongside Python 3.11+ and Git; the existing CI image supplies it.
+It does not construct the real Hermes AIAgent or full OpenClaw Gateway. No pip/npm
+installs, model calls, live tools, scheduler or autonomous goal loop are involved.
+
+The copied source files are root-tracked, license-preserving components. Their
+hashes and transformations are checked against components.lock.json in CI without
+initializing submodules. `verify_component_slices.py --full` separately checks the
+original pinned local vendor bytes. Test status applies to this scoped component
+slice, not to full application, sandbox, persistent recovery or learning acceptance.
+Node tests are invoked one case per unittest so structured counts stay inspectable.
 
 ## Reproduce locally
 

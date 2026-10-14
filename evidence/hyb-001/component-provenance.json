@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "scope": "component copy provenance",
+  "copies": 8,
+  "source_bytes_checked": true,
+  "upstream_runtime_tested": false,
+  "copied_manifest_sha256": "af706bf7bade6f34b1aa2f2bf0d3d1b3086b2cec44e34d191abc162184c226a2"
+}

@@ -3,3 +3,6 @@
 *.json text eol=lf
 *.py text eol=lf
 *.ps1 text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+packages/upstream/**/LICENSE text eol=lf

@@ -1,43 +1,76 @@
-# AlazHarness — Güncel durum
+# AlazHarness — current checkpoint
 
-Başlangıç: 2026-10-14. Aşama: M0 / kaynak ve çalışma alanı hazırlığı doğrulandı; çalışan hibrit henüz yok.
+Date: 2026-10-15. Default workspace remains C:\Antigravity\AlazHarness.
+Branch for this package: alaz/hyb-001-reviewed.
+Isolated worktree: scratch/worktrees/hyb-001-reviewed under the default workspace.
+Always confirm git status and HEAD before resuming; other work may have advanced.
 
-Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`. Bu konuşmanın yerel araç oturumu da bu klasöre ayarlandı.
+## Current scope
 
-## Doğrulananlar
+M0 bootstrap/publication is accepted at historical main 58b210a (37/37 tests).
+The repository is public / MIT; existing alaz-server Local CI posts alaz/local-ci.
+GitHub Actions remains disabled. No server policy or credentials changed here.
 
-- Çalışma klasörü bu görev için yeni oluşturuldu.
-- GitHub hesabı: esoyuince (bağlayıcı ve yerel CLI aynı hesabı bildirdi).
-- İlk MVP taslağı docs/MVP-v0.1.md içinde yazıldı.
-- `esoyuince/openclaw` ve `esoyuince/hermes-agent` public fork'larının doğru upstream parent ilişkileri doğrulandı; kanıt `evidence/bootstrap/forks.json`.
-- `vendor/openclaw`: `2dcbb6138d57dccfcd54f2f908ef9f38268b1229`; `vendor/hermes-agent`: `eb75627faf532fa6ffbdae59a0d14b0b385fc780`.
-- İki depo alt modül olarak bağlandı. Origin kullanıcı fork'u, upstream resmî kaynak; upstream push yerelde devre dışı. Kaynak kilidi `sources.lock.json`.
-- Toplam 75.516 izlenen kaynak dosyası mevcut; iki kaynak çalışma ağacı temiz; Git nesne bağlantısı ve lisans hash'leri kontrol edildi. Klonlar depth=1: HEAD dosyaları yerel, bütün tarihçe/branch/tag arşivi değil.
-- Node 24.19.0 ve Python 3.14.3 mevcut. OpenClaw için pnpm 12.9.0 `runtime/toolchains/` altında proje özelinde hazır, SHA512 kaynak piniyle eşleşiyor; genel pnpm 11.6.0 değiştirilmedi.
-- Bağımsız kaynak denetimi 24/24 kontrol PASS; çalışma alanı denetimi 65/65 PASS; hazırlık yardımcılarının 21/21 birim testi PASS. Kaynak geri yükleme aracı yalnız plan modunda doğrulandı.
-- Bu son doğrulama kanıtları: `evidence/verification-20261014-a7a90059/source-snapshot.json`, `workspace.json`, `commands.json`. Bunlar ürün veya gerçek-model testleri değildir.
+HYB-001 selected-component map and actual code copies are implemented.
+HYB-002 has a bounded first protocol/mock slice. HYB-003 full runtime is NOT RUN.
+No claim of M1 or M2 acceptance. The fixture is explicitly scripted, not AIAgent.
 
-## Henüz tamamlanmayanlar
+## Source custody
 
-Ajan bağımlılıkları kurulmadı; OpenClaw/Hermes build'i, gerçek model çağrısı, çalışan hibrit ve otonomi testi NOT RUN. Sürekli ajan/cron başlatılmadı; kişisel Hermes/OpenClaw profili kullanılmadı. Örnek ayarlar henüz bir runtime tarafından uygulanmıyor.
+- OpenClaw submodule pin: 2dcbb6138d57dccfcd54f2f908ef9f38268b1229.
+- Hermes submodule pin: eb75627faf532fa6ffbdae59a0d14b0b385fc780.
+- Both original vendor worktrees are unchanged. This isolated worktree does not
+  initialize them; six source modules + two licenses are tracked under packages/upstream.
+- components.lock.json records original/target hashes and one import relocation.
+- Original full-byte provenance was checked against the pinned local vendor tree.
 
-Ana repo: `esoyuince/AlazHarness`, public / MIT. `origin` HTTPS GitHub remote, main dalı origin/main izler. Her yeni oturumda git status ve git log ile güncel durumu kontrol et; eşzamanlı dosyaları topluca commit etme.
+## Implemented boundary
 
-Windows PATH'inde Docker yok; WSL Ubuntu mevcut fakat WSL içi runtime ve sandbox kabulü henüz test edilmedi.
+Node uses actual copied OpenClaw cancellation and execution/settlement deadlines.
+A fixed Python test child uses actual Hermes StdioTransport and IterationBudget.
+Our adapter handles correlation, one active run per instance, process-local
+idempotency, bounded frames, deny-only peer requests, cancellation, uncertain
+outcomes and verified direct-child closure. Resume is explicitly unsupported.
 
-## Sıradaki işlem
+No full Gateway, real AIAgent, persistent identity/session/memory, general shell,
+model inference, autonomous agenda, scheduler or OS sandbox was started.
+Initial mock config remains a design example, not an enforced production policy.
 
-`HYB-001`: `docs/COMPONENT-MAP.md` başlangıç haritasını sabit kaynak kodundan ayrıntılandır; OpenClaw olay/harness girişi ile Hermes programatik yürütme sınırının dosya, sembol, bağımlılık, izin/iptal/oturum ve mevcut test kanıtlarını çıkar. En dar gerçek bileşen birleşimini seç; ardından sahte modelle tek işin uçtan uca turunu kur. Otonomi katmanı M1 çalışan hibrit kabulünden sonra (M2).
+## Parallel-work preservation
 
-## Public Git / CI acceptance — 2026-10-15
+A second component implementation and modified CI gate appeared in the original
+checkout while this package was being tested. They were not authored in this lane.
+Those files were preserved, not merged, reset, deleted or bundled into this branch.
+The aggregate original-worktree test count is not this package's acceptance.
+This branch is based on 58b210a plus only the explicitly owned component slice.
+Do not switch/merge the shared root checkout while another writer may use it.
 
-- Existing bootstrap history is preserved; the main repository is public with a root MIT license.
-- Publication/preparation commit: `dcd809d7496f14427cf7cc9a1a1516071118705d`.
-- Actual GitHub push -> webhook -> existing alaz-server Local CI -> GitHub `alaz/local-ci`: SUCCESS on that exact SHA.
-- Root tests: 37/37 PASS on Windows and server Python 3.11.2. Offline source-lock/publication gate: PASS.
-- Per-project CI: immutable image, 1 CPU, 512 MiB memory, 768 MiB RAM+swap, 180-second test timeout. No model keys, package installs or agent loops.
-- Existing server-wide concurrency/memory limits are unchanged; only the AlazHarness policy and pull mirror were added. Operational evidence remains in the private infrastructure repo.
-- GitHub Actions disabled for this repository; private vulnerability reporting enabled. Fork/draft PRs are not automatically run on shared CI.
-- Public sanitized receipt: `evidence/publication/2026-10-15.json`; scope and local reproduction: `docs/CI.md`.
-- The pre-existing untracked `evidence/verification-20261014-a7a90059/` is preserved locally, not bundled into this publication.
-- This is M0 preparation/CI acceptance, not M1 hybrid or M2 autonomy acceptance. HYB-001 remains next.
+## Reproduce this package
+
+```sh
+python -B -m unittest discover -s tests -v
+python -B scripts/ci_check.py
+python -B scripts/verify_component_slices.py
+python -B scripts/demo_hybrid.py
+```
+
+Node 24+ and Python 3.11+ are required. No package installation or model key.
+Record exact commit CI evidence independently after push. Read docs/CI.md,
+docs/COMPONENT-MAP.md, ADR-0002 and docs/HYB-001-COMPONENT-SLICE.md for scope.
+
+## Next work
+
+First reconcile the two implementation branches without overwriting shared work.
+Then HYB-003: provision isolated Hermes runtime, use the real AIAgent public entry
+and replace only model I/O with a mock. Qualify a real tool round, native ownership,
+profile isolation and settlement. Do not call the scripted peer a completed agent.
+M2 autonomy follows complete M1 acceptance, not helper/protocol test counts.
+
+## This branch's local acceptance
+
+- Clean isolated package on Windows: 83/83 tests PASS, zero skipped/errors.
+- Original pinned source-byte comparison: 8/8 copied files PASS (six modules + two licenses).
+- One scripted demo: completed; real model calls 0; direct child reaped with exit 0.
+- Evidence: evidence/hyb-001/windows-component-tests.json, component-provenance.json,
+  scripted-demo.json. These are pre-commit local receipts; GitHub exact-SHA status
+  is checked independently after push. A live CI success does not imply full M1.

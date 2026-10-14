@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "scope": "HYB-001 selected component copies; not a full upstream runtime",
+  "files": [
+    {
+      "source_name": "openclaw",
+      "source_commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source_path": "src/agents/harness/attempt-cancellation.ts",
+      "source_sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+      "target_path": "packages/upstream/openclaw/attempt-cancellation.ts",
+      "target_sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+      "transformation": "verbatim"
+    },
+    {
+      "source_name": "openclaw",
+      "source_commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source_path": "src/agents/harness/attempt-deadlines.ts",
+      "source_sha256": "fbdee467e68b7ed20edce97ee817b4825fd9317070132873ae6b4853eefd669d",
+      "target_path": "packages/upstream/openclaw/attempt-deadlines.ts",
+      "target_sha256": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+      "transformation": "relocate-deadline-import"
+    },
+    {
+      "source_name": "openclaw",
+      "source_commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source_path": "packages/normalization-core/src/number-coercion.ts",
+      "source_sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+      "target_path": "packages/upstream/openclaw/number-coercion.ts",
+      "target_sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+      "transformation": "verbatim"
+    },
+    {
+      "source_name": "openclaw",
+      "source_commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source_path": "packages/normalization-core/src/string-coerce.ts",
+      "source_sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+      "target_path": "packages/upstream/openclaw/string-coerce.ts",
+      "target_sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+      "transformation": "verbatim"
+    },
+    {
+      "source_name": "openclaw",
+      "source_commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source_path": "LICENSE",
+      "source_sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "target_path": "packages/upstream/openclaw/LICENSE",
+      "target_sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "transformation": "verbatim"
+    },
+    {
+      "source_name": "hermes-agent",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source_path": "tui_gateway/transport.py",
+      "source_sha256": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+      "target_path": "packages/upstream/hermes/transport.py",
+      "target_sha256": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+      "transformation": "verbatim"
+    },
+    {
+      "source_name": "hermes-agent",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source_path": "agent/iteration_budget.py",
+      "source_sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+      "target_path": "packages/upstream/hermes/iteration_budget.py",
+      "target_sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+      "transformation": "verbatim"
+    },
+    {
+      "source_name": "hermes-agent",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source_path": "LICENSE",
+      "source_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "target_path": "packages/upstream/hermes/LICENSE",
+      "target_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "transformation": "verbatim"
+    }
+  ]
+}

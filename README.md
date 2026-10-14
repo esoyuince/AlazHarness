@@ -20,7 +20,7 @@ Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`.
 - `evidence/`: küçük, sır içermeyen doğrulama kayıtları.
 - `runtime/`, `artifacts/`, `scratch/`: Git dışı çalışma durumu, çıktılar ve geçici dosyalar.
 
-Durum: hazırlık aşaması. Henüz çalışan hibrit veya otonom ajan teslim edilmedi.
+Durum: ilk kaynak bileşeni / betiklenmiş mock protokol dilimi mevcut. Tam OpenClaw Gateway, gerçek Hermes AIAgent ve otonomi henüz kabul edilmedi.
 
 ## Open source / local setup
 
@@ -34,6 +34,17 @@ python -B -m unittest discover -s tests -v
 python -B scripts/ci_check.py
 ```
 
-Preparation checks require Python 3.11+ and Git, but no model key.
+Tests require Python 3.11+, Node 24+ and Git, but no model key.
 Source restore does not install or start agents.
 [CI scope](docs/CI.md) / [Contributing](CONTRIBUTING.md) / [Security](SECURITY.md).
+
+## First component demo (not an autonomous agent)
+
+```sh
+python -B scripts/demo_hybrid.py
+python -B scripts/verify_component_slices.py
+```
+
+This runs copied OpenClaw lifecycle code and Hermes transport/budget code across
+real Node/Python processes with an explicitly scripted test peer. No model or
+agent tool is called. [Scope, API and next boundary](docs/HYB-001-COMPONENT-SLICE.md).

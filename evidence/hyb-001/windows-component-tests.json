@@ -1,0 +1,16 @@
+{
+  "scope": "isolated HYB-001/002 package; SCRIPTED peer, not full runtime",
+  "discovered": 83,
+  "executed": 83,
+  "passed": 83,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 15.01,
+  "python": "3.14.3",
+  "node": "v24.19.0",
+  "result": "PASS",
+  "real_model_calls": 0,
+  "actual_aia_agent": false,
+  "source_mode": "isolated working tree before commit; exact source commit verified separately by live CI"
+}

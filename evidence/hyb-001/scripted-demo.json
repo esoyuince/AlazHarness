@@ -1,0 +1,72 @@
+{
+  "scope": "OpenClaw/Hermes component slice; SCRIPTED peer, not AIAgent",
+  "capabilities": {
+    "mode": "scripted-component-slice",
+    "start": true,
+    "status": true,
+    "events": true,
+    "cancel": true,
+    "resume": false,
+    "durableIdempotency": false,
+    "realModel": false,
+    "actualAIAgent": false,
+    "fullOpenClawGateway": false,
+    "autonomousGoals": false,
+    "approvals": "deny",
+    "sandbox": false
+  },
+  "result": {
+    "runId": "545e7803-b07c-48b5-af65-00ac6699a91a",
+    "state": "completed",
+    "code": null,
+    "sessionId": "fixture-545e7803-b07c-48b5-af65-00ac6699a91a",
+    "response": "{\"value\": 5, \"iterations\": 2, \"model_calls\": 0, \"scripted\": true}",
+    "submitted": true,
+    "process": {
+      "reaped": true,
+      "exitCode": 0,
+      "signal": null,
+      "killSent": false
+    },
+    "mock": true,
+    "modelCalls": 0,
+    "events": [
+      {
+        "seq": 1,
+        "type": "queued"
+      },
+      {
+        "seq": 2,
+        "type": "running"
+      },
+      {
+        "seq": 3,
+        "type": "session_created"
+      },
+      {
+        "seq": 4,
+        "type": "accepted"
+      },
+      {
+        "seq": 5,
+        "type": "tool.start"
+      },
+      {
+        "seq": 6,
+        "type": "tool.complete"
+      },
+      {
+        "seq": 7,
+        "type": "native_terminal"
+      },
+      {
+        "seq": 8,
+        "type": "settling"
+      },
+      {
+        "seq": 9,
+        "type": "completed"
+      }
+    ]
+  }
+}

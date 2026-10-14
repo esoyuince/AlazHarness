@@ -9,7 +9,7 @@ agent state, model keys, private infrastructure settings or unrelated files.
 New contributions are provided under the root MIT license; upstream files retain
 their original licenses and attribution.
 
-## Preparation checks (Python 3.11+ and Git)
+## Checks (Python 3.11+, Node 24+ and Git)
 
 ```sh
 python -B -m unittest discover -s tests -v

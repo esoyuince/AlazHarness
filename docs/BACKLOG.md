@@ -16,4 +16,16 @@ Ana hedef: docs/MVP-v0.1.md. Güncel gerçekleşen durum: CURRENT-STATE.md. Aşa
 | AUTO-001 | İhtiyaçtan hedef adayları ve öncelik | M1 sonrası; seçme/sürdürme/bırakma gerekçeleri |
 | AUTO-002 | Bağımsız öğrenme deneyi | Aynı model/bütçe ile baseline ve tutulmuş transfer görevleri |
 
-İlk uygulama işi HYB-001'dir. Kütüphane sınırı belirlenmeden bütün iki projeyi kurup sürekli ajan çalıştırma. Somut entegrasyon yolu bağımlılık, desteklenmeyen yetenek ve test kanıtlarıyla seçilecek.
+## 2026-10-15 component-slice checkpoint
+
+HYB-001: source/symbol/ownership map and first selected copies are implemented.
+HYB-002: start/events/status/cancel and explicit unsupported-resume are implemented
+for a bounded process-local SCRIPTED peer. This is a protocol slice, not full
+runtime acceptance. HYB-003 remains open: enter the real public AIAgent path with
+an isolated mock model and qualify full OpenClaw host integration. HYB-004/005/006
+are not closed by fixture cancellation or process-local idempotency tests.
+
+Work is on a separate reviewed branch because parallel changes appeared in the
+original checkout. Do not merge or delete that other implementation implicitly.
+Compare the branches and choose one owner per responsibility before integration.
+See docs/HYB-001-COMPONENT-SLICE.md and CURRENT-STATE.md.
