@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-14T21:08:41.890818+00:00",
+  "scope": "workspace_preparation_only",
+  "result": "PASS",
+  "checks": 65,
+  "passed": 65,
+  "failed": 0,
+  "product_runtime_tested": false,
+  "real_model_called": false,
+  "secret_scan_scope": "tracked root text <=1MB; private-key headers and GitHub token patterns only; not a complete secret audit",
+  "results": [
+    {
+      "check": "root.is_independent_git_repository",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.AGENTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.CURRENT-STATE.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.sources.lock.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file..gitmodules",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/MVP-v0.1.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/WORKSPACE-RULES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/BACKLOG.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/COMPONENT-MAP.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/BOOTSTRAP.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/THIRD-PARTY.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.docs/adr/0001-hybrid-first.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.config/development.example.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.scripts/restore_sources.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.tests/test_workspace_helpers.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.evidence/bootstrap/forks.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file.evidence/bootstrap/environment.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "manifest.schema",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "manifest.exact_sources",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.head_matches_lock",
+      "passed": true,
+      "detail": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229"
+    },
+    {
+      "check": "openclaw.origin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.upstream",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.lock_remotes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.gitlink_matches_lock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.gitmodules_url",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.worktree_clean",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.tracked_worktree_files_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.nested_submodules_pinned",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.fork_parent_receipt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.sha256.LICENSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.sha256.README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.sha256.package.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.sha256.pnpm-lock.yaml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.sha256.THIRD_PARTY_NOTICES.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "openclaw.git_object_connectivity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.head_matches_lock",
+      "passed": true,
+      "detail": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+    },
+    {
+      "check": "hermes-agent.origin",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.upstream",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.lock_remotes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.gitlink_matches_lock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.gitmodules_url",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.worktree_clean",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.tracked_worktree_files_present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.nested_submodules_pinned",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.fork_parent_receipt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.sha256.LICENSE",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.sha256.README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.sha256.pyproject.toml",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.sha256.uv.lock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "hermes-agent.git_object_connectivity",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ignore.runtime/probe.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ignore.artifacts/probe.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ignore.scratch/probe.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ignore..env",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ignore..env.local",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ignore.config/private.key",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "config.explicitly_non_runtime",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "config.no_automatic_agent_or_spend",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "root.has_staged_or_tracked_content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "root.no_tracked_runtime_or_secret_filenames",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "root.limited_secret_pattern_scan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "root.staged_whitespace",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

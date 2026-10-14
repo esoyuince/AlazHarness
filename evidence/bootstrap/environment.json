@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-14T21:07:42.240981+00:00",
+  "workspace": "C:\\Antigravity\\AlazHarness",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tools": {
+    "git": {
+      "exit_code": 0,
+      "version": "git version 2.56.0.windows.2"
+    },
+    "gh": {
+      "exit_code": 0,
+      "version": "gh version 2.90.0 (2026-04-16)"
+    },
+    "node": {
+      "exit_code": 0,
+      "version": "v24.19.0"
+    },
+    "pnpm_global": {
+      "exit_code": 0,
+      "version": "11.6.0"
+    },
+    "python": {
+      "exit_code": 0,
+      "version": "Python 3.14.3"
+    },
+    "uv": {
+      "exit_code": 0,
+      "version": "uv 0.12.13 (0ebbd9274 2026-09-10 x86_64-pc-windows-msvc)"
+    },
+    "pnpm_project": {
+      "entry_exists": true,
+      "entry": "runtime/toolchains/pnpm-12.9.0/node_modules/pnpm/pnpm",
+      "version": "12.9.0",
+      "source_integrity_match": true,
+      "exit_code": 0
+    }
+  },
+  "docker_on_windows_path": false,
+  "wsl_list_exit_code": 0,
+  "wsl_distributions": [
+    "Ubuntu"
+  ],
+  "wsl_runtime_tested": false,
+  "requirements": {
+    "openclaw_version": "2026.10.3",
+    "node": ">=24.16.0 <25 || >=26.1.0",
+    "package_manager": "pnpm@12.9.0+sha512.8f64efa0b792986ca98ae568791bcd7722807e274c4f0c1d9853c62116495c584119db98762a2a5343b1684d361b9ae26fdd16d551666d7635346d3fae830ddd",
+    "hermes_declared_python": ">=3.11,<3.15",
+    "hermes_documented_runtime_python": "3.14; lower bound retained for old updater compatibility"
+  },
+  "agent_dependencies_installed_by_this_bootstrap": false,
+  "agent_build_tested": false,
+  "model_called": false,
+  "global_config_changed": false
+}

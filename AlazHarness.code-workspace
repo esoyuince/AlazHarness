@@ -1,0 +1,17 @@
+{
+  "folders": [
+    { "name": "AlazHarness", "path": "." }
+  ],
+  "settings": {
+    "files.exclude": { "**/__pycache__": true },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.venv": true,
+      "runtime": true,
+      "artifacts": true,
+      "scratch": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+  }
+}

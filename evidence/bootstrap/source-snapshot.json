@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-14T21:08:12.189338+00:00",
+  "scope": "read_only_source_preparation_not_product_acceptance",
+  "repositories": [
+    {
+      "name": "openclaw",
+      "path": "vendor/openclaw",
+      "checks": [
+        {
+          "name": "independent_repository_root",
+          "passed": true
+        },
+        {
+          "name": "valid_head",
+          "passed": true
+        },
+        {
+          "name": "origin_matches",
+          "passed": true
+        },
+        {
+          "name": "upstream_matches",
+          "passed": true
+        },
+        {
+          "name": "clean_worktree",
+          "passed": true
+        },
+        {
+          "name": "no_deleted_tracked_files",
+          "passed": true
+        },
+        {
+          "name": "nonempty_source_tree",
+          "passed": true
+        },
+        {
+          "name": "all_tracked_paths_present",
+          "passed": true
+        },
+        {
+          "name": "mit_license_text_present",
+          "passed": true
+        },
+        {
+          "name": "no_unverified_nested_gitlinks",
+          "passed": true
+        },
+        {
+          "name": "git_object_connectivity",
+          "passed": true
+        },
+        {
+          "name": "head_unchanged_during_check",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "commit_time": "2026-10-14T13:55:01-07:00",
+      "shallow": true,
+      "branch": "main",
+      "origin": "esoyuince/openclaw",
+      "upstream": "openclaw/openclaw",
+      "tracked_files": 55843,
+      "missing_tracked_count": 0,
+      "license_sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "nested_gitlinks": [],
+      "status": "PASS"
+    },
+    {
+      "name": "hermes-agent",
+      "path": "vendor/hermes-agent",
+      "checks": [
+        {
+          "name": "independent_repository_root",
+          "passed": true
+        },
+        {
+          "name": "valid_head",
+          "passed": true
+        },
+        {
+          "name": "origin_matches",
+          "passed": true
+        },
+        {
+          "name": "upstream_matches",
+          "passed": true
+        },
+        {
+          "name": "clean_worktree",
+          "passed": true
+        },
+        {
+          "name": "no_deleted_tracked_files",
+          "passed": true
+        },
+        {
+          "name": "nonempty_source_tree",
+          "passed": true
+        },
+        {
+          "name": "all_tracked_paths_present",
+          "passed": true
+        },
+        {
+          "name": "mit_license_text_present",
+          "passed": true
+        },
+        {
+          "name": "no_unverified_nested_gitlinks",
+          "passed": true
+        },
+        {
+          "name": "git_object_connectivity",
+          "passed": true
+        },
+        {
+          "name": "head_unchanged_during_check",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "commit_time": "2026-10-14T13:20:01-07:00",
+      "shallow": true,
+      "branch": "main",
+      "origin": "esoyuince/hermes-agent",
+      "upstream": "NousResearch/hermes-agent",
+      "tracked_files": 19673,
+      "missing_tracked_count": 0,
+      "license_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "nested_gitlinks": [],
+      "status": "PASS"
+    }
+  ],
+  "limits": [
+    "No build or dependency installation",
+    "No model or paid API call",
+    "No hybrid/autonomy acceptance",
+    "Fork parent requires separate GitHub evidence",
+    "Root lock/gitlink consistency checked separately",
+    "No LFS payload audit"
+  ],
+  "status": "PASS"
+}

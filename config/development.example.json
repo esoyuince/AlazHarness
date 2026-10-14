@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "DESIGN_EXAMPLE_NOT_LOADED_BY_A_RUNTIME",
+  "project": "AlazHarness",
+  "agent_id": "alaz-dev-001",
+  "mode": "mock",
+  "autonomy_enabled": false,
+  "scheduler_enabled": false,
+  "network_exposure": "loopback-only",
+  "state_root": "runtime/agents/alaz-dev-001",
+  "work_root": "runtime/workspaces/alaz-dev-001",
+  "model_provider": "mock",
+  "model_api_key_env": "ALAZ_MODEL_API_KEY",
+  "max_concurrent_runs": 1,
+  "real_model_budget_usd": 0,
+  "note": "These are design defaults, not implemented enforcement or existing upstream config keys."
+}

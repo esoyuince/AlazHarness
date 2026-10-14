@@ -1,0 +1,6 @@
+[submodule "openclaw"]
+	path = vendor/openclaw
+	url = https://github.com/esoyuince/openclaw.git
+[submodule "hermes-agent"]
+	path = vendor/hermes-agent
+	url = https://github.com/esoyuince/hermes-agent.git

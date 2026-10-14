@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "project": "AlazHarness",
+  "workspace": "C:\\Antigravity\\AlazHarness",
+  "captured_at": "2026-10-14T21:05:32.635331+00:00",
+  "scope": "source_snapshot_not_runtime_acceptance",
+  "repositories": [
+    {
+      "name": "openclaw",
+      "path": "vendor/openclaw",
+      "submodule_name": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "commit_time": "2026-10-14T13:55:01-07:00",
+      "origin": "https://github.com/esoyuince/openclaw.git",
+      "upstream": "https://github.com/openclaw/openclaw.git",
+      "upstream_repository": "openclaw/openclaw",
+      "fork_repository": "esoyuince/openclaw",
+      "branch_at_bootstrap": "main",
+      "development_branch": "alaz/mvp-0.1",
+      "shallow": true,
+      "clone_depth": 1,
+      "tracked_files": 55843,
+      "file_sha256": {
+        "LICENSE": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+        "README.md": "322b322be5a2650ddaa2c0259721f0b71f5ec3f4634a230eb331962a5d8d2bc2",
+        "package.json": "9857d214e080b5953515e3ac17f13a8e89d604820f05ad23683fdf94fd74a248",
+        "pnpm-lock.yaml": "8b3b053ad9c2d65648b08ce4260b4c80d846d977cf3ff694a609ca36bb4e8141",
+        "THIRD_PARTY_NOTICES.md": "c1d1bbc550feee74853eba104e347341569cbbbe37a9f77659993ca0766277d5"
+      }
+    },
+    {
+      "name": "hermes-agent",
+      "path": "vendor/hermes-agent",
+      "submodule_name": "hermes-agent",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "commit_time": "2026-10-14T13:20:01-07:00",
+      "origin": "https://github.com/esoyuince/hermes-agent.git",
+      "upstream": "https://github.com/NousResearch/hermes-agent.git",
+      "upstream_repository": "NousResearch/hermes-agent",
+      "fork_repository": "esoyuince/hermes-agent",
+      "branch_at_bootstrap": "main",
+      "development_branch": "alaz/mvp-0.1",
+      "shallow": true,
+      "clone_depth": 1,
+      "tracked_files": 19673,
+      "file_sha256": {
+        "LICENSE": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+        "README.md": "c8c3009b1cf6e8d6e48e96a9b4c549d9ab0c86fdaffd91b19f3e9d9b37d93d9d",
+        "pyproject.toml": "ff41b097147124ff2eb51a437d5f44eddea35104900c1c79c7edfb8b7352d901",
+        "uv.lock": "16300cf807347b7fcfa3c19963f5fe950913fdb3e41e3c649ea724bc7dc997da"
+      }
+    }
+  ]
+}

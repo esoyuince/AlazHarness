@@ -1,0 +1,10 @@
+{
+  "captured_at": "2026-10-14T21:07:42.240981+00:00",
+  "scope": "project_local_package_manager_only",
+  "exit_code": 0,
+  "stdout": "PNPM_LOCAL_VERSION=12.9.0\nPNPM_LOCAL_ENTRY=C:\\Antigravity\\AlazHarness\\runtime\\toolchains\\pnpm-12.9.0\\node_modules\\pnpm\\pnpm\nSOURCE_INTEGRITY_MATCH=PASS\nGlobal package manager unchanged; OpenClaw dependencies not installed.\n",
+  "stderr": "",
+  "upstream_dependencies_installed": false,
+  "agent_started": false,
+  "global_package_manager_changed": false
+}
