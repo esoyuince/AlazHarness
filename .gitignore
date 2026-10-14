@@ -20,3 +20,5 @@
 *.db
 .DS_Store
 Thumbs.db
+/.alaz-ci/
+.coverage

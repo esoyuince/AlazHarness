@@ -9,4 +9,4 @@ Ana kaynaklar, orijinal Git geçmişleri ve lisans dosyaları korunarak vendor a
 
 OpenClaw THIRD_PARTY_NOTICES.md kaynakta korunur. Diğer dosya/paket bildirimleri de kaynak ağacıyla birlikte korunur. Bu kayıt bütün geçişli bağımlılıkların veya modellerin lisans incelemesinin tamamlandığı anlamına gelmez.
 
-AlazHarness'in yeni özgün koduna dağıtım lisansı henüz seçilmedi. Bu belge yeni bir toplu lisans vermez; upstream kaynakların kendi lisanslarını değiştirmez. Modül çıkarıldığında köken, kaynak commit'i, lisans bildirimi ve yapılan değişiklik birlikte taşınmalı.
+AlazHarness original contributions are licensed under the root MIT LICENSE. Upstream licenses and copyright notices remain unchanged. When extracting a module, preserve its source commit, license, attribution and change history.

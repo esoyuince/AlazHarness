@@ -21,3 +21,19 @@ Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`.
 - `runtime/`, `artifacts/`, `scratch/`: Git dışı çalışma durumu, çıktılar ve geçici dosyalar.
 
 Durum: hazırlık aşaması. Henüz çalışan hibrit veya otonom ajan teslim edilmedi.
+
+## Open source / local setup
+
+Original AlazHarness code is [MIT licensed](LICENSE). See [upstream notices](docs/THIRD-PARTY.md).
+
+```sh
+git clone https://github.com/esoyuince/AlazHarness.git
+cd AlazHarness
+python -B scripts/restore_sources.py --apply
+python -B -m unittest discover -s tests -v
+python -B scripts/ci_check.py
+```
+
+Preparation checks require Python 3.11+ and Git, but no model key.
+Source restore does not install or start agents.
+[CI scope](docs/CI.md) / [Contributing](CONTRIBUTING.md) / [Security](SECURITY.md).
