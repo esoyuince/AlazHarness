@@ -5,3 +5,4 @@
 *.ps1 text eol=lf
 *.mjs text eol=lf
 *.ts text eol=lf
+evidence/hyb-http/*.txt text eol=lf

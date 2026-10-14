@@ -56,7 +56,10 @@ This section supersedes the old HYB-001-next note FOR THIS FEATURE BRANCH ONLY.
 - Local suite: 76/76 PASS (37 existing + 26 wire + 13 component/provenance tests).
 - Selected source transforms reproduced: 9/9, including both MIT licenses.
 - Mock demo PASS; fixture output is deterministic, not an AIAgent accomplishment.
-- CI status for the forthcoming commit must be read back before claiming live PASS.
+- Actual push CI on `d1471714ab82066a7a3ceb638704b6fcad910950`: 76/76 PASS;
+  GitHub `alaz/local-ci` success id 56376067963. No OOM/timeout; container removed.
+  Receipt: `evidence/hyb-http/live-ci.json`. This documentation follow-up has
+  identical executable code and must have its own final GitHub status checked.
 - Full Hermes Gateway/AIAgent, full OpenClaw ingress, server restart persistence,
   tool/process isolation, token/currency enforcement, memory/skills and autonomy
   have NOT been accepted by this mock contract package.
