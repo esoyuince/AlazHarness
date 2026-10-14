@@ -53,3 +53,28 @@ live acceptance. A written profile alone is not proof of a successful live run.
 Do not assume this Docker job can safely execute hostile code: the trust gate is
 intentional. Before opening execution to public forks, use separate disposable
 workers with a separately reviewed isolation and network policy.
+
+## HTTP mock-contract branch
+
+New root tests in this branch also execute selected components and the HTTP client
+against a loopback fixture. The existing immutable server image contains Node
+24.21.0 and Python 3.11.2; Windows uses Node 24.19.0 and Python 3.14.3. No server
+image, shared profile, memory limit or webhook changes are needed. Node 24 is now
+required: its absence fails the suite, never silently skips the hybrid checks.
+
+Every wire scenario is a separate root unittest case for structured CI counting.
+The repository guard checks nine extracted source payload hashes. It does not
+install or initialize a complete upstream runtime, prove server durability, or
+constitute M1/learning acceptance.
+
+```sh
+python -B -m unittest discover -s tests -v
+python -B scripts/ci_check.py
+python -B scripts/verify_components.py --with-vendor
+python -B scripts/demo_hybrid_mock.py
+```
+
+For an isolated worktree without restored vendor, use `--with-vendor
+--source-workspace <original-workspace>` to read exact pinned source bytes without
+copying the source trees. The demo is an ephemeral loopback fixture only; it accepts
+no real agent endpoint or model key, and shuts down before returning.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline M0 CI gate. Does not import, clone, build or execute vendor agents."""
+"""Offline root/component gate. Does not bootstrap or run complete vendor agents."""
 from __future__ import annotations
 import argparse
 import configparser
@@ -141,7 +141,9 @@ def inspect(root: Path) -> dict:
         result = subprocess.run(['git', '-C', str(root), 'check-ignore', '--no-index', '--quiet', '--', path], timeout=15)
         if result.returncode != 0:
             errors.append('not ignored: ' + path)
-    return {'scope': 'M0_root_preparation_only', 'result': 'FAIL' if errors else 'PASS',
+    from verify_components import inspect as inspect_components
+    components = inspect_components(root)
+    return {'scope': 'M0_and_HYB_mock_contracts_not_full_runtime', 'selected_components': components['components'], 'result': 'FAIL' if errors else 'PASS',
             'root_files_checked': checked, 'source_gitlinks_checked': len(EXPECTED),
             'discovered_tests': suite.countTestCases(), 'errors': errors,
             'vendor_bytes_checked': False, 'runtime_tested': False, 'model_called': False,

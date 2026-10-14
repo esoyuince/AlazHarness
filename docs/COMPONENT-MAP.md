@@ -32,3 +32,10 @@ OpenClaw paketinin prepare/postinstall betikleri var. Hermes import/bootstrap yo
 ## HYB-001 çıktısı
 
 Her TAKE/ADAPT/OMIT seçimi için dosya, sembol, doğrudan bağımlılıklar, lisans, mevcut ilgili test ve bizim entegrasyon testini listele. Tek küçük fake-model turu için gereken en dar gerçek kaynak bileşenlerini seç. Yeni sosyal ağ veya sıfırdan yeni model döngüsü yazma.
+
+## HTTP contract candidate — isolated branch
+
+This branch investigates Hermes native `/v1/runs` as an alternative to the initial
+TUI candidate. See `docs/HYB-002-HTTP-CONTRACT.md` for exact wire symbols, source
+reuse, negative tests and limitations. It does not supersede work concurrently
+present on `alaz/hyb-001-component-slice` until the two candidates are reconciled.

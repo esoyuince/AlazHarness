@@ -34,6 +34,14 @@ python -B -m unittest discover -s tests -v
 python -B scripts/ci_check.py
 ```
 
-Preparation checks require Python 3.11+ and Git, but no model key.
+Preparation and mock contracts require Python 3.11+, Node 24 and Git, but no model key.
 Source restore does not install or start agents.
 [CI scope](docs/CI.md) / [Contributing](CONTRIBUTING.md) / [Security](SECURITY.md).
+
+## HTTP hybrid contract candidate
+
+[Source and contract decision](docs/HYB-002-HTTP-CONTRACT.md): selected OpenClaw
+lifecycle components and a Hermes native-runs client. Run `python -B
+scripts/demo_hybrid_mock.py` for a labelled loopback-only demonstration. This is
+**not** the full Hermes engine, OpenClaw Gateway, learning system or autonomous agent.
+This isolated feature branch has not been merged with the concurrent component slice.

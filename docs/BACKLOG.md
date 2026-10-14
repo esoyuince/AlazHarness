@@ -17,3 +17,12 @@ Ana hedef: docs/MVP-v0.1.md. Güncel gerçekleşen durum: CURRENT-STATE.md. Aşa
 | AUTO-002 | Bağımsız öğrenme deneyi | Aynı model/bütçe ile baseline ve tutulmuş transfer görevleri |
 
 İlk uygulama işi HYB-001'dir. Kütüphane sınırı belirlenmeden bütün iki projeyi kurup sürekli ajan çalıştırma. Somut entegrasyon yolu bağımlılık, desteklenmeyen yetenek ve test kanıtlarıyla seçilecek.
+
+## HTTP candidate checkpoint
+
+This feature branch contains source analysis and an implemented HYB-002 HTTP
+client/fixture boundary. It is not a merge of the concurrent component-slice
+branch. Compare the two and deduplicate selected upstream modules before choosing
+the final combined layout. HYB-003 native Hermes Gateway/AIAgent execution with a
+scripted loopback model is next; full M1, persistence, tools and autonomy are not
+accepted by this fixture. SSE and interactive control remain explicitly unsupported.

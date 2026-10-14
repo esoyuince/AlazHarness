@@ -41,3 +41,25 @@ Windows PATH'inde Docker yok; WSL Ubuntu mevcut fakat WSL içi runtime ve sandbo
 - Public sanitized receipt: `evidence/publication/2026-10-15.json`; scope and local reproduction: `docs/CI.md`.
 - The pre-existing untracked `evidence/verification-20261014-a7a90059/` is preserved locally, not bundled into this publication.
 - This is M0 preparation/CI acceptance, not M1 hybrid or M2 autonomy acceptance. HYB-001 remains next.
+
+## Current branch: HTTP contract candidate — 2026-10-15
+
+This section supersedes the old HYB-001-next note FOR THIS FEATURE BRANCH ONLY.
+- Branch: `alaz/hyb-002-http-contract`, based on `58b210a`.
+- Worktree: `<default-workspace>/scratch/worktrees/hyb-002-http-contract`.
+- A concurrent writer opened `alaz/hyb-001-component-slice` in the main workspace.
+  That branch and its files were preserved; only this turn's HTTP files and CI
+  hunk were moved to this separate worktree. No automatic main merge is authorized
+  by the presence of a test result; reconcile the two layouts first.
+- Candidate: actual OpenClaw cancellation/deadline/normalization code, Hermes pure
+  budget/identity/terminal helpers, and an Alaz client for native `/v1/runs`.
+- Local suite: 76/76 PASS (37 existing + 26 wire + 13 component/provenance tests).
+- Selected source transforms reproduced: 9/9, including both MIT licenses.
+- Mock demo PASS; fixture output is deterministic, not an AIAgent accomplishment.
+- CI status for the forthcoming commit must be read back before claiming live PASS.
+- Full Hermes Gateway/AIAgent, full OpenClaw ingress, server restart persistence,
+  tool/process isolation, token/currency enforcement, memory/skills and autonomy
+  have NOT been accepted by this mock contract package.
+- Next: reconcile component-slice vs HTTP candidate; then HYB-003 uses the real
+  pinned Hermes HTTP handler/AIAgent, isolated profile and scripted loopback model.
+- Details: `docs/HYB-002-HTTP-CONTRACT.md`; local proof: `evidence/hyb-http/`.

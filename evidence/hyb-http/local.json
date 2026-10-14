@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "branch": "alaz/hyb-002-http-contract",
+  "base": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+  "scope": "selected components and mock HTTP contract; not full upstream runtime",
+  "local_tests": {
+    "total": 76,
+    "passed": 76,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0
+  },
+  "test_log_sha256": "7bb9cd7d34bcfc0cd5c1d5afc65e56e06ef1d9832f5072a2c124b6a5acb08281",
+  "source_transforms": {
+    "checked": 9,
+    "matching": 9,
+    "upstream_pins_unchanged": true
+  },
+  "demo": "PASS",
+  "node": "v24.19.0",
+  "python": "3.14.3",
+  "real_model_calls": 0,
+  "full_hermes_engine": false,
+  "autonomy": false,
+  "main_merge_performed": false,
+  "concurrent_work_preserved": true,
+  "test_log_encoding": "UTF-8 LF"
+}

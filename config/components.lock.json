@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "scope": "HYB-001 selected source components; not full upstream runtime",
+  "entries": [
+    {
+      "repository": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source": "src/agents/harness/attempt-cancellation.ts",
+      "destination": "packages/claw-hermes/upstream/openclaw/attempt-cancellation.ts",
+      "source_sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+      "destination_sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+      "mode": "copy"
+    },
+    {
+      "repository": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source": "src/agents/harness/attempt-deadlines.ts",
+      "destination": "packages/claw-hermes/upstream/openclaw/attempt-deadlines.ts",
+      "source_sha256": "fbdee467e68b7ed20edce97ee817b4825fd9317070132873ae6b4853eefd669d",
+      "destination_sha256": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+      "mode": "rewrite",
+      "replacements": [
+        [
+          "@openclaw/normalization-core/number-coercion",
+          "./number-coercion.ts"
+        ]
+      ]
+    },
+    {
+      "repository": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source": "packages/normalization-core/src/number-coercion.ts",
+      "destination": "packages/claw-hermes/upstream/openclaw/number-coercion.ts",
+      "source_sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+      "destination_sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+      "mode": "copy"
+    },
+    {
+      "repository": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source": "packages/normalization-core/src/string-coerce.ts",
+      "destination": "packages/claw-hermes/upstream/openclaw/string-coerce.ts",
+      "source_sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+      "destination_sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+      "mode": "copy"
+    },
+    {
+      "repository": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "source": "LICENSE",
+      "destination": "packages/claw-hermes/upstream/openclaw/LICENSE",
+      "source_sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "destination_sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "mode": "copy"
+    },
+    {
+      "repository": "hermes-agent",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source": "LICENSE",
+      "destination": "packages/claw-hermes/upstream/hermes/LICENSE",
+      "source_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "destination_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "mode": "copy"
+    },
+    {
+      "repository": "hermes-agent",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source": "agent/iteration_budget.py",
+      "destination": "packages/claw-hermes/upstream/hermes/iteration_budget.py",
+      "source_sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+      "destination_sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+      "mode": "copy"
+    },
+    {
+      "repository": "hermes-agent",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source": "hermes_state_keys.py",
+      "destination": "packages/claw-hermes/upstream/hermes/hermes_state_keys.py",
+      "source_sha256": "00311a21ba6fd6388bfc9cbd1d507bef20b85e65ee35287a6c24a0dddfaa97a8",
+      "destination_sha256": "00311a21ba6fd6388bfc9cbd1d507bef20b85e65ee35287a6c24a0dddfaa97a8",
+      "mode": "copy"
+    },
+    {
+      "repository": "hermes-agent",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "source": "gateway/platforms/api_server_runs.py",
+      "destination": "packages/claw-hermes/upstream/hermes/terminal_status.py",
+      "source_sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+      "destination_sha256": "9579a4a50120e609f1b2c12deb77bf93bbd4011ecbb8d5ae7ba23a51626a5fb9",
+      "mode": "function",
+      "symbol": "terminal_run_status",
+      "prefix": "\"\"\"Extracted unchanged function; see ../../UPSTREAM.md and components.lock.json.\"\"\"\nfrom __future__ import annotations\nfrom typing import Any\n\n"
+    }
+  ]
+}
