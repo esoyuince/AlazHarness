@@ -1,0 +1,47 @@
+{
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "original_reference_unchanged": true,
+  "prepared_source_tracked_files_unchanged": true,
+  "openclaw_hermes_vendor_clean": true,
+  "inspected_entrypoint_files": [
+    {
+      "path": "package.json",
+      "sha256": "8f4bd471da2b70fca21276b519cb74e9e769218b0f2387af8c5b2007087eafd9"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "e56f77e5f423d2d2cd052dc90622d4c223cd81209a3b996cd4d43587a6a05deb"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "2f6fe2cfdb0f51ceee24eb91e21234cf56720028e1bcd5106ded4883ec21258d"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0457f5bcec3b3b211605dfb5d1a49042fd638f3686a410fe099c24a25af13c48"
+    },
+    {
+      "path": "packages/agent/src/agent.ts",
+      "sha256": "7024a3145a6ebc951a0f030164adb1dfb12d33d6e0dbbac15ef0efda49c87457"
+    },
+    {
+      "path": "packages/agent/src/agent-loop.ts",
+      "sha256": "28a2b03e34a7e32f004aa851e54d3b5be9dad71c392205614cbc9abdf3a9020a"
+    },
+    {
+      "path": "packages/ai/src/api/openai-completions.ts",
+      "sha256": "bddb09f395df6d5d29fbab4dd8039f89dea0c58f892dc4c15c73be74fe6e0b7d"
+    },
+    {
+      "path": "packages/coding-agent/src/core/tools/read.ts",
+      "sha256": "c3c64f7105599455d3066568074796e2ddb143cb210da4981b0eb632aa3d2811"
+    },
+    {
+      "path": "packages/coding-agent/src/experimental/source-resolver.ts",
+      "sha256": "c584d52fb68860c0c6ae5dfbbcb6052fa104d6e34c7ef231b9e6eb7e0ec5b2a6"
+    }
+  ],
+  "runtime_dependency_added_to_alazharness": false,
+  "upstream_code_changes": false,
+  "native_probe_scope": "low-level Pi Agent; not createAgentSession, Pi Durable or full CLI"
+}

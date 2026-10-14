@@ -1,0 +1,52 @@
+{
+  "scope": "root contracts and launcher guards only; actual Pi native suite is separate",
+  "checks": [
+    {
+      "name": "root-tests",
+      "exit_code": 0,
+      "elapsed_seconds": 50.432,
+      "passed": 146,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "copied-source-provenance",
+      "exit_code": 0,
+      "elapsed_seconds": 0.31
+    },
+    {
+      "name": "prepare-plan",
+      "exit_code": 0,
+      "elapsed_seconds": 0.713
+    }
+  ],
+  "native_suite_summary": "native-suite.json",
+  "no_new_pi_native_calls_in_root_tests": true,
+  "initial_publication_check": {
+    "result": "FAIL",
+    "reason": "credential-url pattern in synthetic negative-test input",
+    "actual_credential": false,
+    "guard_weakened": false,
+    "repair": "Construct synthetic userinfo through URL fields; preserve rejected-credential test."
+  },
+  "post_repair_checks": [
+    {
+      "name": "post-fixture-repair-full-tests",
+      "exit_code": 0,
+      "elapsed_seconds": 27.81,
+      "passed": 146,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "publication-gate",
+      "exit_code": 0,
+      "elapsed_seconds": 0.594
+    },
+    {
+      "name": "diff-check",
+      "exit_code": 0,
+      "elapsed_seconds": 0.047
+    }
+  ]
+}

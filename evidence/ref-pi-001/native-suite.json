@@ -1,0 +1,1252 @@
+{
+  "scope": "real Pi low-level Agent/provider/native read tool; scripted model, not production harness acceptance",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "scenario_count": 6,
+  "requested_repeats": 2,
+  "runs": [
+    {
+      "repeat": 1,
+      "scenario": "file-read",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "file-read",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 2,
+        "modelSawMarker": true,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 0,
+        "markerInToolResult": true,
+        "markerInFinal": true,
+        "stopReason": "stop",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 2,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "4646f9622ce0950f6adfb76867bd704084eef4d8888b65ac286d709c63139436",
+        "fixtureUnchanged": true,
+        "taskCompleted": true,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "model-request",
+            "number": 2
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "completed",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 1,
+      "scenario": "missing-file",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "missing-file",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 2,
+        "modelSawMarker": false,
+        "modelSawError": true,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 1,
+        "markerInToolResult": false,
+        "markerInFinal": false,
+        "stopReason": "stop",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 2,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "e22fbe128f9a0963f088f904f143ee37dd637f1575d74261c52a47b2178d0661",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "model-request",
+            "number": 2
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "tool_failed",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 1,
+      "scenario": "cancel-model",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "cancel-model",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 1,
+        "modelSawMarker": false,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 0,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": true,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 0,
+        "toolErrors": 0,
+        "markerInToolResult": false,
+        "markerInFinal": false,
+        "stopReason": "aborted",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 1,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": "Request aborted",
+        "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "cancelled",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 1,
+      "scenario": "one-round",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "one-round",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 1,
+        "modelSawMarker": false,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 1,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 0,
+        "markerInToolResult": true,
+        "markerInFinal": false,
+        "stopReason": "toolUse",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 1,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "stopped_at_host_boundary",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 1,
+      "scenario": "request-cap",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "request-cap",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 1,
+        "modelSawMarker": false,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 0,
+        "markerInToolResult": true,
+        "markerInFinal": false,
+        "stopReason": "error",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 1,
+          "budgetDenied": 1,
+          "endpointDenied": 0
+        },
+        "errorMessage": "Connection error.",
+        "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "request_budget_exhausted",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 1,
+      "scenario": "truncated-tool",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "truncated-tool",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 2,
+        "modelSawMarker": false,
+        "modelSawError": true,
+        "serverErrors": [],
+        "beforeToolCalls": 0,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 1,
+        "markerInToolResult": false,
+        "markerInFinal": false,
+        "stopReason": "stop",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 2,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "e22fbe128f9a0963f088f904f143ee37dd637f1575d74261c52a47b2178d0661",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "model-request",
+            "number": 2
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "invalid_tool_response",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 2,
+      "scenario": "file-read",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "file-read",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 2,
+        "modelSawMarker": true,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 0,
+        "markerInToolResult": true,
+        "markerInFinal": true,
+        "stopReason": "stop",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 2,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "4398728c092bae26b29c2a9fc03eec20ce589e7fed342c158986fc2b3fcb0515",
+        "fixtureUnchanged": true,
+        "taskCompleted": true,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "model-request",
+            "number": 2
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "completed",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 2,
+      "scenario": "missing-file",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "missing-file",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 2,
+        "modelSawMarker": false,
+        "modelSawError": true,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 1,
+        "markerInToolResult": false,
+        "markerInFinal": false,
+        "stopReason": "stop",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 2,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "e22fbe128f9a0963f088f904f143ee37dd637f1575d74261c52a47b2178d0661",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "model-request",
+            "number": 2
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "tool_failed",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 2,
+      "scenario": "cancel-model",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "cancel-model",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 1,
+        "modelSawMarker": false,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 0,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": true,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 0,
+        "toolErrors": 0,
+        "markerInToolResult": false,
+        "markerInFinal": false,
+        "stopReason": "aborted",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 1,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": "Request aborted",
+        "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "cancelled",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 2,
+      "scenario": "one-round",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "one-round",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 1,
+        "modelSawMarker": false,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 1,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 0,
+        "markerInToolResult": true,
+        "markerInFinal": false,
+        "stopReason": "toolUse",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 1,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "stopped_at_host_boundary",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 2,
+      "scenario": "request-cap",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "request-cap",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 1,
+        "modelSawMarker": false,
+        "modelSawError": false,
+        "serverErrors": [],
+        "beforeToolCalls": 1,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 0,
+        "markerInToolResult": true,
+        "markerInFinal": false,
+        "stopReason": "error",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 1,
+          "budgetDenied": 1,
+          "endpointDenied": 0
+        },
+        "errorMessage": "Connection error.",
+        "finalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "request_budget_exhausted",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    },
+    {
+      "repeat": 2,
+      "scenario": "truncated-tool",
+      "accepted": true,
+      "exit_code": 0,
+      "receipt": {
+        "scenario": "truncated-tool",
+        "scope": "real-pi-agent-provider-and-read-tool-scripted-model",
+        "modelRequests": 2,
+        "modelSawMarker": false,
+        "modelSawError": true,
+        "serverErrors": [],
+        "beforeToolCalls": 0,
+        "finishHookEnds": 0,
+        "agentEnds": 1,
+        "cancelSocketClosed": false,
+        "timedOut": false,
+        "modelInferenceCalls": 0,
+        "paidCalls": 0,
+        "toolResults": 1,
+        "toolErrors": 1,
+        "markerInToolResult": false,
+        "markerInFinal": false,
+        "stopReason": "stop",
+        "isStreaming": false,
+        "pendingTools": 0,
+        "gate": {
+          "admitted": 2,
+          "budgetDenied": 0,
+          "endpointDenied": 0
+        },
+        "errorMessage": null,
+        "finalSha256": "e22fbe128f9a0963f088f904f143ee37dd637f1575d74261c52a47b2178d0661",
+        "fixtureUnchanged": true,
+        "taskCompleted": false,
+        "statePersistenceTested": false,
+        "codingAgentSessionTested": false,
+        "durableHarnessTested": false,
+        "osSandboxClaimed": false,
+        "autonomyTested": false,
+        "trace": [
+          {
+            "event": "agent_start"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "model-request",
+            "number": 1
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "tool_execution_start"
+          },
+          {
+            "event": "tool_execution_end"
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "turn_start"
+          },
+          {
+            "event": "model-request",
+            "number": 2
+          },
+          {
+            "event": "message_start"
+          },
+          {
+            "event": "message_end"
+          },
+          {
+            "event": "turn_end"
+          },
+          {
+            "event": "agent_end"
+          }
+        ],
+        "normalizedOutcome": "invalid_tool_response",
+        "failures": [],
+        "result": "PASS"
+      },
+      "execution": {
+        "exit_code": 0,
+        "timed_out": false,
+        "direct_child_reaped": true,
+        "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+        "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+        "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9"
+      }
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "complete": true,
+  "worker_sha256": "b5131a6ebf7dce35d53cb88df64a8e05a8d0bdd835b52850bde06947045e2300",
+  "contract_sha256": "9b12680417629d7e0e15bc2b39460b61066ec900c7f74e578dc89e36a61e0ed9",
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "tested_environment": "Windows, Node v24.19.0; native Pi dependencies in isolated runtime snapshot"
+}

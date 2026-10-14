@@ -30,3 +30,9 @@ Pi and OpenCode are reference candidates only. Source-level assessment:
 `docs/research/PI-OPENCODE-REVIEW.md`. Follow REF-PI-001 (native tool parity),
 REF-PI-002 (durable crash/replay contract), REF-OC-001 (permission/event contracts)
 before adopting components. These are NOT RUN, not replacements for open HYB gates.
+
+## REF-PI-001 local runtime checkpoint
+
+The six low-level Pi Agent/provider/read-tool scenarios passed twice locally (12 runs).
+See docs/research/REF-PI-001-NATIVE.md. No Pi SDK-session/Durable or engine replacement
+acceptance. Next: REF-PI-002. Standard CI only runs host/launcher unit contracts.
