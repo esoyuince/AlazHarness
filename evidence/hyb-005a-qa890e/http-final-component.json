@@ -1,0 +1,86 @@
+{
+  "scope": "selected-component real loopback HTTP; synthetic adapter/SessionDB/native callback; provenance guard substituted at binding ONLY",
+  "native_gateway_executed": false,
+  "agent_executed": false,
+  "model_calls": 0,
+  "cases": [
+    {
+      "name": "no_auth_refuses",
+      "passed": true
+    },
+    {
+      "name": "wrong_auth_refuses",
+      "passed": true
+    },
+    {
+      "name": "duplicate_auth_refuses",
+      "passed": true
+    },
+    {
+      "name": "query_refuses",
+      "passed": true
+    },
+    {
+      "name": "foreign_session_header_refuses",
+      "passed": true
+    },
+    {
+      "name": "duplicate_json_key_refuses",
+      "passed": true
+    },
+    {
+      "name": "unissued_key_refuses",
+      "passed": true
+    },
+    {
+      "name": "issue_does_not_execute",
+      "passed": true
+    },
+    {
+      "name": "same_id_replays_no_write",
+      "passed": true
+    },
+    {
+      "name": "same_id_different_body_refuses",
+      "passed": true
+    },
+    {
+      "name": "raw_post_refuses_while_plugin_installed",
+      "passed": true
+    },
+    {
+      "name": "mutated_dispatch_refuses",
+      "passed": true
+    },
+    {
+      "name": "commit_precedes_callback",
+      "passed": true
+    },
+    {
+      "name": "duplicate_dispatch_refuses",
+      "passed": true
+    },
+    {
+      "name": "twenty_http_consumers_one_callback",
+      "passed": true
+    },
+    {
+      "name": "native_exception_never_refunds",
+      "passed": true
+    },
+    {
+      "name": "no_cost_or_sandbox_claim",
+      "passed": true
+    }
+  ],
+  "native_callback_count": 3,
+  "passed": 17,
+  "failed": 0,
+  "code_hashes": {
+    "packages\\claw-hermes\\host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages\\claw-hermes\\host_gate_plugin.py": "6dd5e699dbaf36ed87b12d4e7335f73e676a735b53e279dcbb2b6d7d465063d1",
+    "tests\\test_host_gate_qa.py": "a98f33ac7899f4a637e0c24b0b83d2ef075bb8a8a1c6b0e2af7a31816fee1129",
+    "scripts\\qa\\host_gate_http.py": "217fb3e463a007fdc7ccda820fa5c3d9467a10f5a1ac1dd953da8a4895e1c9b7"
+  },
+  "code_drift": []
+}

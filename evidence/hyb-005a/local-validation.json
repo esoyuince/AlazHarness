@@ -1,0 +1,15 @@
+{
+  "scope": "full standard suite; native Gateway and component HTTP evidence separate",
+  "base_commit": "b8ff44ff105965ba3f6f9fa9559ad96f2c084815",
+  "discovered": 669,
+  "exit_code": 0,
+  "no_skips_reported": true,
+  "code_drift": [],
+  "elapsed_seconds": 112.363,
+  "product_sha256": {
+    "packages/claw-hermes/host-gate-client.mjs": "4030ea617da2f9e1295df526d1eb9c8b035c8ae80962cb38db0e05f52043477c",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/host_gate_plugin.py": "6dd5e699dbaf36ed87b12d4e7335f73e676a735b53e279dcbb2b6d7d465063d1"
+  },
+  "native_runtime_executed_by_this_command": false
+}

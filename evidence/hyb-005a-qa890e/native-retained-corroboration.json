@@ -1,0 +1,42 @@
+{
+  "scope": "readonly independent review of four EXISTING native runs; NOT four additional native executions",
+  "count": 4,
+  "items": [
+    {
+      "scenario": "invalid-policy",
+      "record_sha256": "050b88c01fc0effe960b9d407cc8b72826abb1f97e355718dade9cd9eabcd349",
+      "result": "CORROBORATED",
+      "model_http_requests": 0,
+      "canonical_admissions": 0,
+      "tool_results": 0,
+      "closed_generations": 1
+    },
+    {
+      "scenario": "lost-ack",
+      "record_sha256": "bd671cac7b43cc41ec37b58316b82c6f817c90951c7df41557cce1ae3b02c134",
+      "result": "CORROBORATED",
+      "model_http_requests": 2,
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "closed_generations": 2
+    },
+    {
+      "scenario": "missing-plugin",
+      "record_sha256": "64e7c35c71498359718448a0b2aedc8bf966270d0b2ed8d1c5b167555fc09685",
+      "result": "CORROBORATED",
+      "model_http_requests": 0,
+      "canonical_admissions": 0,
+      "tool_results": 0,
+      "closed_generations": 1
+    },
+    {
+      "scenario": "normal",
+      "record_sha256": "7e07235229bad142f231b810ec59e8a64661092d7a6629a325425309851b12b7",
+      "result": "CORROBORATED",
+      "model_http_requests": 2,
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "closed_generations": 2
+    }
+  ]
+}

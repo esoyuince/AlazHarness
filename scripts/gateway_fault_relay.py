@@ -8,7 +8,8 @@ import socket
 import threading
 
 class LostAckRelay:
-    def __init__(self,port: int,key: str):
+    def __init__(self,port: int,key: str,*,path: str = "/v1/runs"):
+        if path not in ("/v1/runs", "/alaz/host/v1/dispatch"):raise ValueError("Unsupported fault path")
         self.records=[];self.dropped_run=None;self.lock=threading.Lock();owner=self
         class Handler(BaseHTTPRequestHandler):
             def log_message(self,*args):pass
@@ -24,7 +25,7 @@ class LostAckRelay:
                     if len(raw)>4_194_304:raise ValueError('Oversized native response')
                     with owner.lock:
                         owner.records.append({'method':self.command,'path':self.path,'status':res.status})
-                        drop=(owner.dropped_run is None and self.command=='POST' and self.path=='/v1/runs'
+                        drop=(owner.dropped_run is None and self.command=='POST' and self.path==path
                               and self.headers.get('Idempotency-Key')==key and res.status==202)
                         if drop:owner.dropped_run=json.loads(raw)['run_id']
                     if drop:

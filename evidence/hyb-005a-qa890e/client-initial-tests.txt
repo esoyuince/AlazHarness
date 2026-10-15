@@ -1,0 +1,67 @@
+test_abort_before_dispatch_does_not_consume (test_host_client_qa.HostClientIndependentTests.test_abort_before_dispatch_does_not_consume) ... ok
+test_consumed_document_cannot_dispatch (test_host_client_qa.HostClientIndependentTests.test_consumed_document_cannot_dispatch) ... ok
+test_contradictory_completed_admission_refused (test_host_client_qa.HostClientIndependentTests.test_contradictory_completed_admission_refused) ... FAIL
+test_foreign_client_permit_no_dispatch (test_host_client_qa.HostClientIndependentTests.test_foreign_client_permit_no_dispatch) ... ok
+test_foreign_permit_no_network (test_host_client_qa.HostClientIndependentTests.test_foreign_permit_no_network) ... ok
+test_invalid_key_binding_refused (test_host_client_qa.HostClientIndependentTests.test_invalid_key_binding_refused) ... ok
+test_invalid_output_type_refused (test_host_client_qa.HostClientIndependentTests.test_invalid_output_type_refused) ... FAIL
+test_missing_plugin_no_fallback (test_host_client_qa.HostClientIndependentTests.test_missing_plugin_no_fallback) ... ok
+test_mutation_after_prepare_snapshotted (test_host_client_qa.HostClientIndependentTests.test_mutation_after_prepare_snapshotted) ... ok
+test_one_permit_not_twice (test_host_client_qa.HostClientIndependentTests.test_one_permit_not_twice) ... ok
+test_transport_loss_never_refunds (test_host_client_qa.HostClientIndependentTests.test_transport_loss_never_refunds) ... ok
+test_two_permits_one_local_dispatch (test_host_client_qa.HostClientIndependentTests.test_two_permits_one_local_dispatch) ... ok
+
+======================================================================
+FAIL: test_contradictory_completed_admission_refused (test_host_client_qa.HostClientIndependentTests.test_contradictory_completed_admission_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_host_client_qa.py", line 15, in case
+    self.assertEqual(p.returncode,0,p.stdout+p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Missing expected rejection.
+    at async Object.contradictory_completed_admission_refused (file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/tests/node/host_gate_qa.mjs:55:5)
+    at async file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/tests/node/host_gate_qa.mjs:64:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: [Function (anonymous)],
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_invalid_output_type_refused (test_host_client_qa.HostClientIndependentTests.test_invalid_output_type_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_host_client_qa.py", line 15, in case
+    self.assertEqual(p.returncode,0,p.stdout+p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Missing expected rejection.
+    at async Object.invalid_output_type_refused (file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/tests/node/host_gate_qa.mjs:60:5)
+    at async file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/tests/node/host_gate_qa.mjs:64:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: [Function (anonymous)],
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.361s
+
+FAILED (failures=2)

@@ -1,0 +1,964 @@
+{
+  "scope": "FOUR final-code local Windows native Gateway scenarios; NOT standard CI executions",
+  "passed": 4,
+  "failed": 0,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "reports": [
+    {
+      "scope": "real plugin discovery, public Gateway, native SessionDB writer, actual read_file; scripted model",
+      "scenario": "missing-plugin",
+      "errors": [],
+      "product_sha256": {
+        "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+        "packages/claw-hermes/host_gate_plugin.py": "6dd5e699dbaf36ed87b12d4e7335f73e676a735b53e279dcbb2b6d7d465063d1",
+        "packages/claw-hermes/host-gate-client.mjs": "4030ea617da2f9e1295df526d1eb9c8b035c8ae80962cb38db0e05f52043477c",
+        "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+        "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+        "scripts/native_host_gate_client.mjs": "a9c482396eb0084408593b9d40f20cbed6b2312d08132e2272b23d51461924c9",
+        "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+        "scripts/run_gateway_gap_qa.py": "e825eff60036b163d952d3824d56d412a49fb53e6d07fa8d4ea73b37cd07cad0",
+        "scripts/gateway_fault_relay.py": "68708d461773125497d6a8aa2ebc9094002843b89233e5f070b52148acc13159",
+        "config/host-gate/source-lock.json": "3cfdd76a3998bc5a0f2be517cd6e810635541b7148d3a65beecdf841151e9bdb"
+      },
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "plugin_install": null,
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "os_sandbox_claimed": false,
+      "model_budget_enforced": false,
+      "first_ready": {
+        "pid": 65980,
+        "nonce": "c787204b0e78e3c65f48b2a9eded7f9a",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "1b2f2870f4ad4f6fbe784bd4ff66bcdd",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 57201
+      },
+      "client": {
+        "mode": "missing-plugin",
+        "nonce": "6a63720b928472d3aed51b7afddf75ca",
+        "result": "PASS",
+        "checks": [
+          {
+            "name": "missing-required-capability",
+            "code": "host_http_404",
+            "hostCode": null
+          },
+          {
+            "name": "no-raw-fallback",
+            "code": "host_http_404",
+            "hostCode": null
+          }
+        ],
+        "permit": null,
+        "final": null
+      },
+      "first_exit": {
+        "nonce": "c787204b0e78e3c65f48b2a9eded7f9a",
+        "launcher_pid": 57788,
+        "native_pid": 65980,
+        "ownership_chain": [
+          65980,
+          57788
+        ],
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "kill_requested": false,
+        "forced": false,
+        "shutdown": {
+          "pid": 65980,
+          "nonce": "c787204b0e78e3c65f48b2a9eded7f9a",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "before_restart": {
+        "admissions": [],
+        "messages": [],
+        "gate_rows": [],
+        "integrity": "ok"
+      },
+      "model_requests": 0,
+      "fixture_errors": [],
+      "code_drift": [],
+      "elapsed_seconds": 18.852,
+      "result": "PASS"
+    },
+    {
+      "scope": "real plugin discovery, public Gateway, native SessionDB writer, actual read_file; scripted model",
+      "scenario": "invalid-policy",
+      "errors": [],
+      "product_sha256": {
+        "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+        "packages/claw-hermes/host_gate_plugin.py": "6dd5e699dbaf36ed87b12d4e7335f73e676a735b53e279dcbb2b6d7d465063d1",
+        "packages/claw-hermes/host-gate-client.mjs": "4030ea617da2f9e1295df526d1eb9c8b035c8ae80962cb38db0e05f52043477c",
+        "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+        "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+        "scripts/native_host_gate_client.mjs": "a9c482396eb0084408593b9d40f20cbed6b2312d08132e2272b23d51461924c9",
+        "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+        "scripts/run_gateway_gap_qa.py": "e825eff60036b163d952d3824d56d412a49fb53e6d07fa8d4ea73b37cd07cad0",
+        "scripts/gateway_fault_relay.py": "68708d461773125497d6a8aa2ebc9094002843b89233e5f070b52148acc13159",
+        "config/host-gate/source-lock.json": "3cfdd76a3998bc5a0f2be517cd6e810635541b7148d3a65beecdf841151e9bdb"
+      },
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "plugin_install": {
+        "manifest_sha256": "ed16e49f7b42a3580701c27b918729c89657d7d30abb94199cd8519cb790c3ee",
+        "entrypoint_sha256": "4dc18a4b6d34d639f1c28cd92f38f984e9b78b59203699bc5d81e4b5ea27751e",
+        "method": "normal enabled user-plugin discovery; test shim points at the measured product checkout"
+      },
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "os_sandbox_claimed": false,
+      "model_budget_enforced": false,
+      "first_ready": {
+        "pid": 68548,
+        "nonce": "2ccaf3fcfe1946397f5db1489f154613",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "5bf07c6e1bb7463283d09d44303c6ba2",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 63584
+      },
+      "client": {
+        "mode": "invalid-policy",
+        "nonce": "85c30e4a42cfec8965303aeb88208661",
+        "result": "PASS",
+        "checks": [
+          {
+            "name": "missing-required-capability",
+            "code": "host_http_404",
+            "hostCode": null
+          },
+          {
+            "name": "no-raw-fallback",
+            "code": "host_http_404",
+            "hostCode": null
+          }
+        ],
+        "permit": null,
+        "final": null
+      },
+      "first_exit": {
+        "nonce": "2ccaf3fcfe1946397f5db1489f154613",
+        "launcher_pid": 50396,
+        "native_pid": 68548,
+        "ownership_chain": [
+          68548,
+          50396
+        ],
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "kill_requested": false,
+        "forced": false,
+        "shutdown": {
+          "pid": 68548,
+          "nonce": "2ccaf3fcfe1946397f5db1489f154613",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "before_restart": {
+        "admissions": [],
+        "messages": [],
+        "gate_rows": [],
+        "integrity": "ok"
+      },
+      "model_requests": 0,
+      "fixture_errors": [],
+      "code_drift": [],
+      "elapsed_seconds": 19.231,
+      "result": "PASS"
+    },
+    {
+      "scope": "real plugin discovery, public Gateway, native SessionDB writer, actual read_file; scripted model",
+      "scenario": "normal",
+      "errors": [],
+      "product_sha256": {
+        "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+        "packages/claw-hermes/host_gate_plugin.py": "6dd5e699dbaf36ed87b12d4e7335f73e676a735b53e279dcbb2b6d7d465063d1",
+        "packages/claw-hermes/host-gate-client.mjs": "4030ea617da2f9e1295df526d1eb9c8b035c8ae80962cb38db0e05f52043477c",
+        "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+        "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+        "scripts/native_host_gate_client.mjs": "a9c482396eb0084408593b9d40f20cbed6b2312d08132e2272b23d51461924c9",
+        "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+        "scripts/run_gateway_gap_qa.py": "e825eff60036b163d952d3824d56d412a49fb53e6d07fa8d4ea73b37cd07cad0",
+        "scripts/gateway_fault_relay.py": "68708d461773125497d6a8aa2ebc9094002843b89233e5f070b52148acc13159",
+        "config/host-gate/source-lock.json": "3cfdd76a3998bc5a0f2be517cd6e810635541b7148d3a65beecdf841151e9bdb"
+      },
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "plugin_install": {
+        "manifest_sha256": "ed16e49f7b42a3580701c27b918729c89657d7d30abb94199cd8519cb790c3ee",
+        "entrypoint_sha256": "4dc18a4b6d34d639f1c28cd92f38f984e9b78b59203699bc5d81e4b5ea27751e",
+        "method": "normal enabled user-plugin discovery; test shim points at the measured product checkout"
+      },
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "os_sandbox_claimed": false,
+      "model_budget_enforced": false,
+      "first_ready": {
+        "pid": 63404,
+        "nonce": "5ef460e859861f4f0cd650a2b38d1c15",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "7c5de7321a2d44c1add355d3643f847c",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 61046
+      },
+      "client": {
+        "mode": "normal",
+        "nonce": "40788f877014e105545c000161e27459",
+        "result": "PASS",
+        "checks": [
+          {
+            "name": "changed-input",
+            "code": "host_http_409",
+            "hostCode": "request_payload_conflict"
+          },
+          {
+            "name": "foreign-permit",
+            "code": "foreign_host_permit",
+            "hostCode": null
+          },
+          {
+            "name": "auth-refusal",
+            "status": 401
+          },
+          {
+            "name": "alternative-write-refused",
+            "path": "/v1/runs",
+            "status": 409
+          },
+          {
+            "name": "alternative-write-refused",
+            "path": "/v1/chat/completions",
+            "status": 409
+          },
+          {
+            "name": "alternative-write-refused",
+            "path": "/p/default/v1/runs",
+            "status": 409
+          },
+          {
+            "name": "scope-header-refused",
+            "status": 409
+          },
+          {
+            "name": "ten-concurrent-dispatches",
+            "accepted": 1,
+            "rejected": 9
+          },
+          {
+            "name": "consumed-id-cannot-be-prepared-again",
+            "code": "host_dispatch_already_attempted",
+            "hostCode": null
+          }
+        ],
+        "permit": {
+          "requestId": "634e17965df7dc983971cfbc672f0a0f",
+          "idempotencyKey": "ah1-d2a0efee66d443e2961654e8ec9d38db-634e17965df7dc983971cfbc672f0a0f",
+          "expiresAtMs": 1792097030778
+        },
+        "final": {
+          "run": {
+            "object": "hermes.run",
+            "model": "alaz-scripted",
+            "runtime": {
+              "provider": "",
+              "model": "",
+              "route_source": "raw_request",
+              "requested": {
+                "provider": "",
+                "model": "alaz-scripted"
+              }
+            },
+            "created_at": 1792096730.9862657,
+            "pending_controls": [],
+            "run_id": "run_a9c5161f4b5a400296946fb85b15eb55",
+            "status": "completed",
+            "session_id": "run_a9c5161f4b5a400296946fb85b15eb55",
+            "admission_id": "eef577f7c11041338505791a8b24ad0a",
+            "execution_generation": 1,
+            "output": "Native Gateway verified HOST_GATE_6a24a514eec712f44ad60b22253bafed",
+            "usage": {
+              "input_tokens": 240,
+              "output_tokens": 40,
+              "total_tokens": 280
+            }
+          },
+          "recoveryContractVersion": 1,
+          "classification": "canonical_terminal_reported",
+          "transportConfirmed": true,
+          "backendConfirmed": true,
+          "admissionReported": true,
+          "canonicalVerified": false,
+          "requiresOperator": false,
+          "retryAllowed": false,
+          "repairAllowed": false,
+          "nextAction": "retain_reported_outcome",
+          "stopRequested": false,
+          "hostReason": null
+        }
+      },
+      "first_exit": {
+        "nonce": "5ef460e859861f4f0cd650a2b38d1c15",
+        "launcher_pid": 44216,
+        "native_pid": 63404,
+        "ownership_chain": [
+          63404,
+          44216
+        ],
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "kill_requested": false,
+        "forced": false,
+        "shutdown": {
+          "pid": 63404,
+          "nonce": "5ef460e859861f4f0cd650a2b38d1c15",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "before_restart": {
+        "admissions": [
+          {
+            "request_id": "run_a9c5161f4b5a400296946fb85b15eb55",
+            "status": "terminal",
+            "outcome": "completed"
+          }
+        ],
+        "messages": [
+          {
+            "role": "user",
+            "tool_name": null,
+            "content": "Read input.txt using read_file and return its first line."
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": ""
+          },
+          {
+            "role": "tool",
+            "tool_name": "read_file",
+            "content": "{\"content\": \"1|HOST_GATE_6a24a514eec712f44ad60b22253bafed\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": "Native Gateway verified HOST_GATE_6a24a514eec712f44ad60b22253bafed"
+          },
+          {
+            "role": "session_meta",
+            "tool_name": null,
+            "content": null
+          }
+        ],
+        "gate_rows": [
+          [
+            "alaz.host_gate.config.v1.b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e",
+            {
+              "issued": 1,
+              "namespace": "d2a0efee66d443e2961654e8ec9d38db",
+              "profileBinding": "140eab16468a997d88f403d2b259c3216a211b8c0592ed1ba0177fb56240cb94",
+              "scope": "b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e",
+              "spent": 1,
+              "version": 1
+            }
+          ],
+          [
+            "alaz.host_gate.intent.v1.b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e.634e17965df7dc983971cfbc672f0a0f",
+            {
+              "consumedAtMs": 1792096730969,
+              "createdAtMs": 1792096730778,
+              "digest": "ad13e86e4150adddb10287b755b3a88e46af60a6b66333f09b88a0d11b2f8d46",
+              "dispatchState": "consumed",
+              "epoch": 1,
+              "expiresAtMs": 1792097030778,
+              "fingerprint": "f4ad48c84a7f979b7e522e49aadf867c10cb6590bbe8dcd8e5d1e92348b0c35d",
+              "instanceId": "7c5de7321a2d44c1add355d3643f847c",
+              "key": "ah1-d2a0efee66d443e2961654e8ec9d38db-634e17965df7dc983971cfbc672f0a0f",
+              "profileBinding": "140eab16468a997d88f403d2b259c3216a211b8c0592ed1ba0177fb56240cb94",
+              "requestId": "634e17965df7dc983971cfbc672f0a0f",
+              "scope": "b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e",
+              "version": 1
+            }
+          ]
+        ],
+        "integrity": "ok"
+      },
+      "second_ready": {
+        "pid": 49016,
+        "nonce": "24a7841fe38a2f8af4fcb73f7a96c672",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "f3296c1168744c81b2e35967252d200c",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 61046
+      },
+      "restart_client": {
+        "mode": "restart",
+        "nonce": "40788f877014e105545c000161e27459",
+        "result": "PASS",
+        "checks": [
+          {
+            "name": "consumed-after-native-reopen",
+            "code": "host_dispatch_already_attempted",
+            "hostCode": null
+          },
+          {
+            "name": "raw-repeat-after-reopen",
+            "status": 409,
+            "code": "dispatch_already_attempted"
+          }
+        ],
+        "permit": null,
+        "final": {
+          "run": {
+            "object": "hermes.run",
+            "pending_controls": [],
+            "run_id": "run_a9c5161f4b5a400296946fb85b15eb55",
+            "status": "completed",
+            "session_id": "run_a9c5161f4b5a400296946fb85b15eb55",
+            "admission_id": "eef577f7c11041338505791a8b24ad0a",
+            "execution_generation": 1,
+            "output": "Native Gateway verified HOST_GATE_6a24a514eec712f44ad60b22253bafed",
+            "usage": {
+              "input_tokens": 240,
+              "output_tokens": 40,
+              "total_tokens": 280
+            }
+          },
+          "recoveryContractVersion": 1,
+          "classification": "canonical_terminal_reported",
+          "transportConfirmed": true,
+          "backendConfirmed": true,
+          "admissionReported": true,
+          "canonicalVerified": false,
+          "requiresOperator": false,
+          "retryAllowed": false,
+          "repairAllowed": false,
+          "nextAction": "retain_reported_outcome",
+          "stopRequested": false,
+          "hostReason": null
+        }
+      },
+      "second_exit": {
+        "nonce": "24a7841fe38a2f8af4fcb73f7a96c672",
+        "launcher_pid": 26156,
+        "native_pid": 49016,
+        "ownership_chain": [
+          49016,
+          26156
+        ],
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "kill_requested": false,
+        "forced": false,
+        "shutdown": {
+          "pid": 49016,
+          "nonce": "24a7841fe38a2f8af4fcb73f7a96c672",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "admissions": [
+          {
+            "request_id": "run_a9c5161f4b5a400296946fb85b15eb55",
+            "status": "terminal",
+            "outcome": "completed"
+          }
+        ],
+        "messages": [
+          {
+            "role": "user",
+            "tool_name": null,
+            "content": "Read input.txt using read_file and return its first line."
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": ""
+          },
+          {
+            "role": "tool",
+            "tool_name": "read_file",
+            "content": "{\"content\": \"1|HOST_GATE_6a24a514eec712f44ad60b22253bafed\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": "Native Gateway verified HOST_GATE_6a24a514eec712f44ad60b22253bafed"
+          },
+          {
+            "role": "session_meta",
+            "tool_name": null,
+            "content": null
+          }
+        ],
+        "gate_rows": [
+          [
+            "alaz.host_gate.config.v1.b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e",
+            {
+              "issued": 1,
+              "namespace": "d2a0efee66d443e2961654e8ec9d38db",
+              "profileBinding": "140eab16468a997d88f403d2b259c3216a211b8c0592ed1ba0177fb56240cb94",
+              "scope": "b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e",
+              "spent": 1,
+              "version": 1
+            }
+          ],
+          [
+            "alaz.host_gate.intent.v1.b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e.634e17965df7dc983971cfbc672f0a0f",
+            {
+              "consumedAtMs": 1792096730969,
+              "createdAtMs": 1792096730778,
+              "digest": "ad13e86e4150adddb10287b755b3a88e46af60a6b66333f09b88a0d11b2f8d46",
+              "dispatchState": "consumed",
+              "epoch": 1,
+              "expiresAtMs": 1792097030778,
+              "fingerprint": "f4ad48c84a7f979b7e522e49aadf867c10cb6590bbe8dcd8e5d1e92348b0c35d",
+              "instanceId": "7c5de7321a2d44c1add355d3643f847c",
+              "key": "ah1-d2a0efee66d443e2961654e8ec9d38db-634e17965df7dc983971cfbc672f0a0f",
+              "profileBinding": "140eab16468a997d88f403d2b259c3216a211b8c0592ed1ba0177fb56240cb94",
+              "requestId": "634e17965df7dc983971cfbc672f0a0f",
+              "scope": "b19ffa5f3bafeace4b13eac76b8e9adcf57bc34e6fa99dc268f230a088c6c40e",
+              "version": 1
+            }
+          ]
+        ],
+        "integrity": "ok"
+      },
+      "model_requests": 2,
+      "fixture_errors": [],
+      "code_drift": [],
+      "elapsed_seconds": 47.275,
+      "result": "PASS"
+    },
+    {
+      "scope": "real plugin discovery, public Gateway, native SessionDB writer, actual read_file; scripted model",
+      "scenario": "lost-ack",
+      "errors": [],
+      "product_sha256": {
+        "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+        "packages/claw-hermes/host_gate_plugin.py": "6dd5e699dbaf36ed87b12d4e7335f73e676a735b53e279dcbb2b6d7d465063d1",
+        "packages/claw-hermes/host-gate-client.mjs": "4030ea617da2f9e1295df526d1eb9c8b035c8ae80962cb38db0e05f52043477c",
+        "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+        "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+        "scripts/native_host_gate_client.mjs": "a9c482396eb0084408593b9d40f20cbed6b2312d08132e2272b23d51461924c9",
+        "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+        "scripts/run_gateway_gap_qa.py": "e825eff60036b163d952d3824d56d412a49fb53e6d07fa8d4ea73b37cd07cad0",
+        "scripts/gateway_fault_relay.py": "68708d461773125497d6a8aa2ebc9094002843b89233e5f070b52148acc13159",
+        "config/host-gate/source-lock.json": "3cfdd76a3998bc5a0f2be517cd6e810635541b7148d3a65beecdf841151e9bdb"
+      },
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "plugin_install": {
+        "manifest_sha256": "ed16e49f7b42a3580701c27b918729c89657d7d30abb94199cd8519cb790c3ee",
+        "entrypoint_sha256": "4dc18a4b6d34d639f1c28cd92f38f984e9b78b59203699bc5d81e4b5ea27751e",
+        "method": "normal enabled user-plugin discovery; test shim points at the measured product checkout"
+      },
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "os_sandbox_claimed": false,
+      "model_budget_enforced": false,
+      "first_ready": {
+        "pid": 36656,
+        "nonce": "06fbada225f20aeace20110d8f2a2078",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "9e7408ac9a02408ebd56a5122eb2dfdc",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 53790
+      },
+      "client": {
+        "mode": "lost-ack",
+        "nonce": "50ea7a723eeb637d7c4d476989871f1f",
+        "result": "PASS",
+        "checks": [
+          {
+            "name": "changed-input",
+            "code": "host_http_409",
+            "hostCode": "request_payload_conflict"
+          },
+          {
+            "name": "foreign-permit",
+            "code": "foreign_host_permit",
+            "hostCode": null
+          },
+          {
+            "name": "auth-refusal",
+            "status": 401
+          },
+          {
+            "name": "alternative-write-refused",
+            "path": "/v1/runs",
+            "status": 409
+          },
+          {
+            "name": "alternative-write-refused",
+            "path": "/v1/chat/completions",
+            "status": 409
+          },
+          {
+            "name": "alternative-write-refused",
+            "path": "/p/default/v1/runs",
+            "status": 409
+          },
+          {
+            "name": "scope-header-refused",
+            "status": 409
+          },
+          {
+            "name": "accepted-ack-lost",
+            "code": "host_write_outcome_unknown",
+            "hostCode": null
+          },
+          {
+            "name": "no-automatic-resend",
+            "code": "host_dispatch_already_attempted",
+            "hostCode": null
+          },
+          {
+            "name": "new-client-cannot-resend",
+            "code": "host_dispatch_already_attempted",
+            "hostCode": null
+          }
+        ],
+        "permit": {
+          "requestId": "798b9e392e439ec2f2d003ddf681cce3",
+          "idempotencyKey": "ah1-b3f5b43354414dc69f14235e7a252384-798b9e392e439ec2f2d003ddf681cce3",
+          "expiresAtMs": 1792097077610
+        },
+        "final": {
+          "run": {
+            "object": "hermes.run",
+            "model": "alaz-scripted",
+            "created_at": 1792096778.0092475,
+            "pending_controls": [],
+            "run_id": "run_0ae5dd8be71a4c418953439b1a862c33",
+            "status": "completed",
+            "session_id": "run_0ae5dd8be71a4c418953439b1a862c33",
+            "admission_id": "2c716180e64b4e71aa6fd40ac22e058f",
+            "execution_generation": 1,
+            "output": "Native Gateway verified HOST_GATE_8d29916f4c9649a3cf96297e463dc4da",
+            "usage": {
+              "input_tokens": 240,
+              "output_tokens": 40,
+              "total_tokens": 280
+            }
+          },
+          "recoveryContractVersion": 1,
+          "classification": "canonical_terminal_reported",
+          "transportConfirmed": true,
+          "backendConfirmed": true,
+          "admissionReported": true,
+          "canonicalVerified": false,
+          "requiresOperator": false,
+          "retryAllowed": false,
+          "repairAllowed": false,
+          "nextAction": "retain_reported_outcome",
+          "stopRequested": false,
+          "hostReason": null
+        }
+      },
+      "first_exit": {
+        "nonce": "06fbada225f20aeace20110d8f2a2078",
+        "launcher_pid": 42116,
+        "native_pid": 36656,
+        "ownership_chain": [
+          36656,
+          42116
+        ],
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "kill_requested": false,
+        "forced": false,
+        "shutdown": {
+          "pid": 36656,
+          "nonce": "06fbada225f20aeace20110d8f2a2078",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "before_restart": {
+        "admissions": [
+          {
+            "request_id": "run_0ae5dd8be71a4c418953439b1a862c33",
+            "status": "terminal",
+            "outcome": "completed"
+          }
+        ],
+        "messages": [
+          {
+            "role": "user",
+            "tool_name": null,
+            "content": "Read input.txt using read_file and return its first line."
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": ""
+          },
+          {
+            "role": "tool",
+            "tool_name": "read_file",
+            "content": "{\"content\": \"1|HOST_GATE_8d29916f4c9649a3cf96297e463dc4da\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": "Native Gateway verified HOST_GATE_8d29916f4c9649a3cf96297e463dc4da"
+          },
+          {
+            "role": "session_meta",
+            "tool_name": null,
+            "content": null
+          }
+        ],
+        "gate_rows": [
+          [
+            "alaz.host_gate.config.v1.2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef",
+            {
+              "issued": 1,
+              "namespace": "b3f5b43354414dc69f14235e7a252384",
+              "profileBinding": "a60964382819210cce70c43ebccb9cf01c3773ab1b64b2fdda7ea6afc7050737",
+              "scope": "2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef",
+              "spent": 1,
+              "version": 1
+            }
+          ],
+          [
+            "alaz.host_gate.intent.v1.2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef.798b9e392e439ec2f2d003ddf681cce3",
+            {
+              "consumedAtMs": 1792096777971,
+              "createdAtMs": 1792096777610,
+              "digest": "f4477e521211958e26b9424e7420af8927bb596211f244f1492a4785436c154c",
+              "dispatchState": "consumed",
+              "epoch": 1,
+              "expiresAtMs": 1792097077610,
+              "fingerprint": "f4ad48c84a7f979b7e522e49aadf867c10cb6590bbe8dcd8e5d1e92348b0c35d",
+              "instanceId": "9e7408ac9a02408ebd56a5122eb2dfdc",
+              "key": "ah1-b3f5b43354414dc69f14235e7a252384-798b9e392e439ec2f2d003ddf681cce3",
+              "profileBinding": "a60964382819210cce70c43ebccb9cf01c3773ab1b64b2fdda7ea6afc7050737",
+              "requestId": "798b9e392e439ec2f2d003ddf681cce3",
+              "scope": "2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef",
+              "version": 1
+            }
+          ]
+        ],
+        "integrity": "ok"
+      },
+      "second_ready": {
+        "pid": 45556,
+        "nonce": "1fcc91c04a9d7d9ac379d1e27c5da52c",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "d112c6f23af342f68d78d92556c64516",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 53790
+      },
+      "restart_client": {
+        "mode": "restart",
+        "nonce": "50ea7a723eeb637d7c4d476989871f1f",
+        "result": "PASS",
+        "checks": [
+          {
+            "name": "consumed-after-native-reopen",
+            "code": "host_dispatch_already_attempted",
+            "hostCode": null
+          },
+          {
+            "name": "raw-repeat-after-reopen",
+            "status": 409,
+            "code": "dispatch_already_attempted"
+          }
+        ],
+        "permit": null,
+        "final": {
+          "run": {
+            "object": "hermes.run",
+            "pending_controls": [],
+            "run_id": "run_0ae5dd8be71a4c418953439b1a862c33",
+            "status": "completed",
+            "session_id": "run_0ae5dd8be71a4c418953439b1a862c33",
+            "admission_id": "2c716180e64b4e71aa6fd40ac22e058f",
+            "execution_generation": 1,
+            "output": "Native Gateway verified HOST_GATE_8d29916f4c9649a3cf96297e463dc4da",
+            "usage": {
+              "input_tokens": 240,
+              "output_tokens": 40,
+              "total_tokens": 280
+            }
+          },
+          "recoveryContractVersion": 1,
+          "classification": "canonical_terminal_reported",
+          "transportConfirmed": true,
+          "backendConfirmed": true,
+          "admissionReported": true,
+          "canonicalVerified": false,
+          "requiresOperator": false,
+          "retryAllowed": false,
+          "repairAllowed": false,
+          "nextAction": "retain_reported_outcome",
+          "stopRequested": false,
+          "hostReason": null
+        }
+      },
+      "second_exit": {
+        "nonce": "1fcc91c04a9d7d9ac379d1e27c5da52c",
+        "launcher_pid": 57568,
+        "native_pid": 45556,
+        "ownership_chain": [
+          45556,
+          57568
+        ],
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "kill_requested": false,
+        "forced": false,
+        "shutdown": {
+          "pid": 45556,
+          "nonce": "1fcc91c04a9d7d9ac379d1e27c5da52c",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "admissions": [
+          {
+            "request_id": "run_0ae5dd8be71a4c418953439b1a862c33",
+            "status": "terminal",
+            "outcome": "completed"
+          }
+        ],
+        "messages": [
+          {
+            "role": "user",
+            "tool_name": null,
+            "content": "Read input.txt using read_file and return its first line."
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": ""
+          },
+          {
+            "role": "tool",
+            "tool_name": "read_file",
+            "content": "{\"content\": \"1|HOST_GATE_8d29916f4c9649a3cf96297e463dc4da\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+          },
+          {
+            "role": "assistant",
+            "tool_name": null,
+            "content": "Native Gateway verified HOST_GATE_8d29916f4c9649a3cf96297e463dc4da"
+          },
+          {
+            "role": "session_meta",
+            "tool_name": null,
+            "content": null
+          }
+        ],
+        "gate_rows": [
+          [
+            "alaz.host_gate.config.v1.2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef",
+            {
+              "issued": 1,
+              "namespace": "b3f5b43354414dc69f14235e7a252384",
+              "profileBinding": "a60964382819210cce70c43ebccb9cf01c3773ab1b64b2fdda7ea6afc7050737",
+              "scope": "2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef",
+              "spent": 1,
+              "version": 1
+            }
+          ],
+          [
+            "alaz.host_gate.intent.v1.2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef.798b9e392e439ec2f2d003ddf681cce3",
+            {
+              "consumedAtMs": 1792096777971,
+              "createdAtMs": 1792096777610,
+              "digest": "f4477e521211958e26b9424e7420af8927bb596211f244f1492a4785436c154c",
+              "dispatchState": "consumed",
+              "epoch": 1,
+              "expiresAtMs": 1792097077610,
+              "fingerprint": "f4ad48c84a7f979b7e522e49aadf867c10cb6590bbe8dcd8e5d1e92348b0c35d",
+              "instanceId": "9e7408ac9a02408ebd56a5122eb2dfdc",
+              "key": "ah1-b3f5b43354414dc69f14235e7a252384-798b9e392e439ec2f2d003ddf681cce3",
+              "profileBinding": "a60964382819210cce70c43ebccb9cf01c3773ab1b64b2fdda7ea6afc7050737",
+              "requestId": "798b9e392e439ec2f2d003ddf681cce3",
+              "scope": "2f641baa1fae6fc7d786d739f752061f6429171d5728f3a1141bdeafe62d45ef",
+              "version": 1
+            }
+          ]
+        ],
+        "integrity": "ok"
+      },
+      "relay": {
+        "records": [
+          {
+            "method": "POST",
+            "path": "/alaz/host/v1/intents",
+            "status": 201
+          },
+          {
+            "method": "POST",
+            "path": "/alaz/host/v1/dispatch",
+            "status": 202
+          }
+        ],
+        "dropped_run": "run_0ae5dd8be71a4c418953439b1a862c33"
+      },
+      "model_requests": 2,
+      "fixture_errors": [],
+      "code_drift": [],
+      "elapsed_seconds": 64.244,
+      "result": "PASS"
+    }
+  ]
+}

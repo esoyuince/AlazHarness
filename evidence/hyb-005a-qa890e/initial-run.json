@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "seconds": 1.578272200000356,
+  "product_before": "90f665fcc1fd44a298f3e31cbcb912a24a18fe3e7224ed55f2548d73774384da",
+  "product_after": "90f665fcc1fd44a298f3e31cbcb912a24a18fe3e7224ed55f2548d73774384da",
+  "scope": "independent synthetic-owner SQLite tests; not native Gateway"
+}

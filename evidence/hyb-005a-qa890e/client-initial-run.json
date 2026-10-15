@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "client_sha256": "ddf1206517794907a7b02a7967cae4c0f28b512b262aea0790ce134c3e2ceabe",
+  "code_drift": false,
+  "scope": "12 real client cases, fixture fetch, not native Gateway"
+}

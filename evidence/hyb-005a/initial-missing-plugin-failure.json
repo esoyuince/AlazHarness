@@ -1,0 +1,11 @@
+{
+  "scope": "Initial native negative probe; no task executed",
+  "result": "FAIL",
+  "errors": [
+    "RuntimeError: Host client nonzero exit; see local stderr"
+  ],
+  "model_requests": 0,
+  "code_drift": [],
+  "reason": "Native unmatched route returns non-JSON404. Client rejected safely but used invalid_host_response rather than expected host_http_404. Status-first negative classification is corrected without any raw-start fallback.",
+  "source_receipt_sha256": "6d72a499d8c2518b629a59055ba79895d3a4bc5452ad73ab7e09573563cc8cd2"
+}

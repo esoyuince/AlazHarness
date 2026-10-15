@@ -144,3 +144,11 @@ SQLite/test-only lock substitute ile sınar; native ownership iddiası çıkarı
 Native Gateway-created profile probes, gerçek lock primitive koşulları ve
 sentetik DB üstündeki gerçek process-kill transaction testleri local evidence
 altında ayrı tutulur. CI bunları kurmaz, paid model çağırmaz.
+
+## HYB-005A host gate
+
+The root suite includes real ledger/client logic with synthetic owner/fetch or
+loopback fixtures. Native plugin/Gateway and selected aiohttp component probes
+are opt-in separate results. No Hermes/aiohttp install is added to standard CI.
+At-most-once dispatch is not token/currency budget or full M1 acceptance. See
+docs/HYB-005A-HOST-GATE.md and exact evidence/hyb-005a receipts.

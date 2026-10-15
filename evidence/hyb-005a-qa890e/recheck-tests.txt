@@ -1,0 +1,41 @@
+test_after_commit_ack_loss_does_not_refund (test_host_gate_qa.HostGateIndependentTests.test_after_commit_ack_loss_does_not_refund) ... ok
+test_before_commit_failure_rolls_back (test_host_gate_qa.HostGateIndependentTests.test_before_commit_failure_rolls_back) ... ok
+test_body_changed_after_issue_refused (test_host_gate_qa.HostGateIndependentTests.test_body_changed_after_issue_refused) ... ok
+test_changed_body_same_id_refused (test_host_gate_qa.HostGateIndependentTests.test_changed_body_same_id_refused) ... ok
+test_clock_rollback_refused (test_host_gate_qa.HostGateIndependentTests.test_clock_rollback_refused) ... ok
+test_closed_key_refuses_without_replay_row (test_host_gate_qa.HostGateIndependentTests.test_closed_key_refuses_without_replay_row) ... ok
+test_consumed_is_not_success (test_host_gate_qa.HostGateIndependentTests.test_consumed_is_not_success) ... ok
+test_consumed_record_refuses_duplicate (test_host_gate_qa.HostGateIndependentTests.test_consumed_record_refuses_duplicate) ... ok
+test_corrupt_history_refuses (test_host_gate_qa.HostGateIndependentTests.test_corrupt_history_refuses) ... ok
+test_count_limit_refuses_another_dispatch (test_host_gate_qa.HostGateIndependentTests.test_count_limit_refuses_another_dispatch) ... ok
+test_deleted_consumed_intent_not_reissued (test_host_gate_qa.HostGateIndependentTests.test_deleted_consumed_intent_not_reissued) ... ok
+test_digest_corruption_refused (test_host_gate_qa.HostGateIndependentTests.test_digest_corruption_refused) ... ok
+test_dishonest_counter_not_accepted (test_host_gate_qa.HostGateIndependentTests.test_dishonest_counter_not_accepted) ... ok
+test_expired_issued_document_refused (test_host_gate_qa.HostGateIndependentTests.test_expired_issued_document_refused) ... ok
+test_explicit_session_refused (test_host_gate_qa.HostGateIndependentTests.test_explicit_session_refused) ... ok
+test_foreign_model_refused (test_host_gate_qa.HostGateIndependentTests.test_foreign_model_refused) ... ok
+test_foreign_scope_refused (test_host_gate_qa.HostGateIndependentTests.test_foreign_scope_refused) ... ok
+test_forged_well_formed_unissued_key_refused (test_host_gate_qa.HostGateIndependentTests.test_forged_well_formed_unissued_key_refused) ... ok
+test_issue_count_limit_refused (test_host_gate_qa.HostGateIndependentTests.test_issue_count_limit_refused) ... ok
+test_issued_document_detached_from_stored_record (test_host_gate_qa.HostGateIndependentTests.test_issued_document_detached_from_stored_record) ... ok
+test_legacy_unissued_key_refused (test_host_gate_qa.HostGateIndependentTests.test_legacy_unissued_key_refused) ... ok
+test_missing_configuration_not_recreated_over_history (test_host_gate_qa.HostGateIndependentTests.test_missing_configuration_not_recreated_over_history) ... ok
+test_missing_model_refused (test_host_gate_qa.HostGateIndependentTests.test_missing_model_refused) ... ok
+test_missing_replay_db_does_not_create_it (test_host_gate_qa.HostGateIndependentTests.test_missing_replay_db_does_not_create_it) ... ok
+test_native_existing_key_refuses_dispatch (test_host_gate_qa.HostGateIndependentTests.test_native_existing_key_refuses_dispatch) ... ok
+test_new_epoch_does_not_revive_issued_intent (test_host_gate_qa.HostGateIndependentTests.test_new_epoch_does_not_revive_issued_intent) ... ok
+test_old_owner_context_refused (test_host_gate_qa.HostGateIndependentTests.test_old_owner_context_refused) ... ok
+test_policy_changed_model_rechecked_before_consume (test_host_gate_qa.HostGateIndependentTests.test_policy_changed_model_rechecked_before_consume) ... ok
+test_reopened_same_owner_cannot_consume_twice (test_host_gate_qa.HostGateIndependentTests.test_reopened_same_owner_cannot_consume_twice) ... ok
+test_replay_row_pruning_does_not_reenable_consumed (test_host_gate_qa.HostGateIndependentTests.test_replay_row_pruning_does_not_reenable_consumed) ... ok
+test_same_request_document_replays_without_write (test_host_gate_qa.HostGateIndependentTests.test_same_request_document_replays_without_write) ... ok
+test_twenty_concurrent_consumers_only_one_claim (test_host_gate_qa.HostGateIndependentTests.test_twenty_concurrent_consumers_only_one_claim) ... ok
+test_twenty_concurrent_issuers_only_one_issue (test_host_gate_qa.HostGateIndependentTests.test_twenty_concurrent_issuers_only_one_issue) ... ok
+test_unknown_request_fields_refused (test_host_gate_qa.HostGateIndependentTests.test_unknown_request_fields_refused) ... ok
+test_written_table_trigger_refused (test_host_gate_qa.HostGateIndependentTests.test_written_table_trigger_refused) ... ok
+test_wrong_namespace_refused (test_host_gate_qa.HostGateIndependentTests.test_wrong_namespace_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 2.309s
+
+OK

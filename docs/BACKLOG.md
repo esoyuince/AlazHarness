@@ -83,3 +83,11 @@ Native interrupted/key retention değişmedi. Sonraki HYB-005-HOST-GATE: tek hos
 start sınırı closed/unknown/retention kararını uygulamalı; ardından gerçek araç
 izinleri ve tüm provider çağrısı bütçesi. Yeni model motoru veya scheduler yok.
 Kapsam/kanıt status.md ve HYB-004C raporunda; Git/CI ayrıca doğrulanır.
+
+## HYB-005A continuation
+
+One-use host admission is implemented on the existing native owner; acceptance
+status is in status.md and docs/HYB-005A-HOST-GATE.md. Final native probe results
+and exact-commit CI must be checked, not inferred from the old604 test total.
+Next: HYB-005B execution-boundary model/tool permission and complete provider
+budget accounting. No optional-hook exception may be the sole veto.

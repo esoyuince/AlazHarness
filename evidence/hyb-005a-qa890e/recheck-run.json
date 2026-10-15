@@ -1,0 +1,9 @@
+{
+  "scope": "same36 independent synthetic-owner SQLite cases; NOT native Gateway",
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "tests/test_host_gate_qa.py": "a98f33ac7899f4a637e0c24b0b83d2ef075bb8a8a1c6b0e2af7a31816fee1129"
+  },
+  "code_drift": []
+}

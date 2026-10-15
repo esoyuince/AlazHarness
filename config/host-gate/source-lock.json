@@ -1,0 +1,26 @@
+{
+  "native_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "scope": "selected in-process source boundary, not whole dependency attestation",
+  "files": [
+    {
+      "path": "hermes_state.py",
+      "sha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577"
+    },
+    {
+      "path": "gateway/platforms/api_server.py",
+      "sha256": "74158a9bcac885e238508e0b36160bd6a676b0424894554d3674c67cfc7858f4"
+    },
+    {
+      "path": "gateway/platforms/api_server_runs.py",
+      "sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a"
+    },
+    {
+      "path": "gateway/platforms/base.py",
+      "sha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525"
+    },
+    {
+      "path": "hermes_cli/plugins.py",
+      "sha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568"
+    }
+  ]
+}
