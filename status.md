@@ -15,7 +15,7 @@ arasındaki kalıcı boşluk doğrulandı. Sıradaki iş HYB-004B.
 | Aktif çalışma ağacı | C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97 |
 | Aktif dal | alaz/hyb-004-recovery-208f |
 | Bu paketin tabanı | e6f596c2e73ba1db3b617b74f40423a531237cda |
-| Yayın | Yerel tamamlandı; bu yeni paketin commit/push/exact-SHA CI kontrolü PENDING. Teslim eki ayrıca kaydedilir. |
+| Yayın | Kod869626e54e9d73149176463ec21fbe6e562218da push edildi; aynı SHA alaz-server386/386 ve GitHub alaz/local-ci success. Son belge HEAD CI ayrı sorgulanır. |
 | Remote | esoyuince/AlazHarness public MIT |
 | main | Geliştirme paketleri henüz main ile birleştirilmedi. |
 
@@ -131,3 +131,23 @@ On gerçek process crash/reopen davranışı ve386 standart test doğrulandı.
 İki bağımsız rollback-only lock deneyi aynı orphan penceresini teyit etti.
 Bu paket source-characterization/test/kanıt teslimidir; orphan onarımı,
 genel otomatik recovery, M1/M2 kabulü değildir. Git/CI teslimi ayrı yazılır.
+
+### 2026-10-15 — HYB-004 — Git ve CI teslimi
+
+Kod commit: `869626e54e9d73149176463ec21fbe6e562218da`, uzak
+`alaz/hyb-004-recovery-208f`. Gerçek alaz-server aynı SHA'yı checkout edip
+386/386 standart testi çalıştırdı; failed/skipped/suite_errors0, status_delivery
+posted. GitHub alaz/local-ci success ayrıca doğrulandı. Kanıt:
+`evidence/hyb-004/code-ci.json`.
+
+Ana10 native kill/reopen ve ayrı2 bağımsız lock/kill/reopen bu386 sayısına
+eklenmez. QA5016 son olarak on ana koşunun tamamını readonly teyit etti;
+`evidence/hyb-004-qa/primary-store-final-corroboration.json` eski8 kapsamını
+10a tamamlar, yeni10 yürütme değildir. Eski8 kayıt korunur.
+
+Bu teslim orphan onarımını uygulamadı; test karakterizasyonu tamamlandı,
+genel otomatik kurtarma/M1/M2 NOT ACCEPTED. Sıradaki iş HYB-004B. Native
+kaynaklar, ürün adaptörü,32 eski kök dosya ve mevcut sunucu ayarları korunur.
+Aktif çalışma ağacı ile kök status kopyası eşitlendi; main birleşmedi.
+Bu belge güncellemesi native deneyleri tekrar çalıştırmadı; belge commit'inin
+CI'sı son HEAD üzerinden ayrıca kontrol edilir.

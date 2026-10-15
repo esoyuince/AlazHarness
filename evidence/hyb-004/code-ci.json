@@ -1,0 +1,36 @@
+{
+  "sha": "869626e54e9d73149176463ec21fbe6e562218da",
+  "server": {
+    "sha": "869626e54e9d73149176463ec21fbe6e562218da",
+    "matches": [
+      {
+        "sha": "869626e54e9d73149176463ec21fbe6e562218da",
+        "checkout_sha": "869626e54e9d73149176463ec21fbe6e562218da",
+        "status": "success",
+        "build_status": "success",
+        "ci2_suite_proof": {
+          "executed": 386,
+          "failed": 0,
+          "passed": 386,
+          "skipped": 0,
+          "suite_errors": 0,
+          "total": 386
+        },
+        "status_delivery": "posted",
+        "started_unix": 1792063782,
+        "finished_unix": 1792063829
+      }
+    ]
+  },
+  "github": [
+    {
+      "context": "alaz/local-ci",
+      "state": "success",
+      "description": "ALAZ Local CI passed",
+      "id": 56419946108
+    }
+  ],
+  "scope": "exact code-commit offline CI delivery only; ten primary native and two independent crash runs separate",
+  "native_gateway_run_on_ci": false,
+  "automatic_recovery_accepted": false
+}
