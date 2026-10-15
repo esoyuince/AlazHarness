@@ -1,0 +1,12 @@
+{
+  "tested_code_commit": "2c79dce64bde02b45104d42d909784bea370dc1e",
+  "main_before": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+  "method": "fast-forward",
+  "test_scope": "standard suite in clean main worktree; not new native runs",
+  "tests": 604,
+  "exit_code": 0,
+  "skips_reported": false,
+  "elapsed_seconds": 93.076,
+  "runtime_code_changed": false,
+  "native_runs_this_merge": 0
+}

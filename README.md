@@ -6,7 +6,7 @@ Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`.
 
 ## Başlangıç
 
-1. `CURRENT-STATE.md`: doğrulanmış durum, engeller ve sıradaki iş.
+1. `status.md`: güncel dal, çalışma ağacı, doğrulanmış durum ve kesin sonraki iş. CURRENT-STATE.md tarihseldir.
 2. `docs/MVP-v0.1.md`: ilk MVP kapsamı ve kabul koşulları.
 3. `docs/WORKSPACE-RULES.md`: dosya düzeni ve Git çalışma kuralları.
 4. `sources.lock.json`: kaynak commit'leri ve fork ilişkileri (hazırlık sırasında oluşturulur).
@@ -20,7 +20,7 @@ Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`.
 - `evidence/`: küçük, sır içermeyen doğrulama kayıtları.
 - `runtime/`, `artifacts/`, `scratch/`: Git dışı çalışma durumu, çıktılar ve geçici dosyalar.
 
-Durum: ilk kaynak bileşeni / betiklenmiş mock protokol dilimi mevcut. Tam OpenClaw Gateway, gerçek Hermes AIAgent ve otonomi henüz kabul edilmedi.
+Durum: deneysel geliştirme tabanı. Seçilmiş OpenClaw/Hermes bileşenleri, gerçek Hermes Agent/Gateway araç turu, kesinti incelemesi ve açık yerel operatör kapanışı dar kapsamlarıyla doğrulandı. Model yanıtları kontrollü test sağlayıcısıdır. Tam M1, üretim güvenliği, gerçek-model kabulü ve M2 otonomi henüz tamamlanmadı.
 
 ## Open source / local setup
 
@@ -57,3 +57,9 @@ HTTP contract; `python -B scripts/demo_hybrid.py` exercises stdio.
 Ten upstream payloads (including two licenses) live under packages/upstream.
 See [integration decisions](docs/HYB-003-INTEGRATION.md). A scripted transport
 peer is not evidence of real AIAgent execution.
+
+## Development baseline
+
+`main` is the reviewed integration baseline, not a production release. Keep new
+work in short feature branches; record exact test/CI scope before merging.
+See [integration workflow](docs/INTEGRATION-WORKFLOW.md) and [current status](status.md).
