@@ -1,0 +1,23 @@
+{
+  "scope": "169 offline root tests, including23 Durable evidence checks; native18 case runs separate",
+  "base_commit": "a39a1ea08e108246463c983cc210975c9012364b",
+  "checks": [
+    {
+      "name": "root-tests",
+      "exit_code": 0,
+      "elapsed_seconds": 29.195,
+      "passed": 169,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "component-provenance",
+      "exit_code": 0,
+      "elapsed_seconds": 0.223
+    }
+  ],
+  "native_suite": "native-suite.json",
+  "native_rerun_during_root_tests": false,
+  "adoption_accepted": false,
+  "strict_payload_conflict": "FAIL"
+}

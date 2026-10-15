@@ -1,0 +1,22 @@
+{
+  "expected": "reject foreign handle without writing B or returning unrelated A job",
+  "returnedId": 12,
+  "victimId": 12,
+  "rejected": null,
+  "aEntries": [
+    {
+      "text": "A-existing"
+    },
+    {
+      "text": "a"
+    }
+  ],
+  "bEntries": [
+    {
+      "text": "B-new"
+    },
+    {
+      "text": "b"
+    }
+  ]
+}

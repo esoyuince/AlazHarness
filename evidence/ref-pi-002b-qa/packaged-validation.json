@@ -1,0 +1,142 @@
+{
+  "scope": "independent real Pi SQLite passive admission; no model inference; graceful reopen and injected storage errors, not process-kill/powerloss qualification",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "candidate_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+  "candidate_unchanged": true,
+  "families": [
+    {
+      "family": "owner",
+      "exit_code": 0,
+      "result": "PASS",
+      "details": {
+        "scope": "independent native SQLite checks against concurrent candidate; no production edits",
+        "module_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+        "unchanged_during_run": true,
+        "model_calls": 0,
+        "tests": [
+          {
+            "name": "same-key-conflict-and-reuse",
+            "status": "PASS",
+            "details": {
+              "id": 9
+            }
+          },
+          {
+            "name": "concurrent-same-owner",
+            "status": "PASS",
+            "details": {
+              "requests": 12,
+              "admissions": 1
+            }
+          },
+          {
+            "name": "legacy-fails-closed",
+            "status": "PASS",
+            "details": {
+              "legacy": 8
+            }
+          },
+          {
+            "name": "foreign-harness-handle-isolation",
+            "status": "PASS",
+            "details": {
+              "expected": "reject foreign handle without writing B or returning unrelated A job",
+              "victimId": 12,
+              "rejected": {
+                "code": "invalid_conversation",
+                "message": "invalid_conversation"
+              },
+              "aEntries": [
+                {
+                  "text": "A-existing"
+                },
+                {
+                  "text": "a"
+                }
+              ],
+              "bEntries": [
+                {
+                  "text": "b"
+                }
+              ]
+            }
+          },
+          {
+            "name": "caller-mutation-snapshotted",
+            "status": "PASS",
+            "details": {
+              "stored": "initial"
+            }
+          },
+          {
+            "name": "scope-participates-in-fingerprint",
+            "status": "PASS"
+          }
+        ],
+        "passed": 6,
+        "failed": 0
+      }
+    },
+    {
+      "family": "atomic",
+      "exit_code": 0,
+      "result": "PASS",
+      "details": {
+        "module_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+        "unchanged_during_run": true,
+        "scope": "independent real native SQLite fault, snapshot and owner checks; graceful reopen not powerloss",
+        "model_calls": 0,
+        "tests": [
+          {
+            "name": "storage-before-commit-ack",
+            "status": "PASS",
+            "details": {
+              "before": 0,
+              "after": 1,
+              "reused": false
+            }
+          },
+          {
+            "name": "storage-after-commit-ack",
+            "status": "PASS",
+            "details": {
+              "before": 1,
+              "after": 1,
+              "reused": true
+            }
+          },
+          {
+            "name": "missing-conversation-fails-without-write",
+            "status": "PASS"
+          },
+          {
+            "name": "cancelled-context-no-admission",
+            "status": "PASS"
+          },
+          {
+            "name": "closed-owner-fails-without-replay",
+            "status": "PASS"
+          },
+          {
+            "name": "concurrent-conflicting-payloads",
+            "status": "PASS",
+            "details": {
+              "requests": 16,
+              "accepted": 8,
+              "conflict": 8,
+              "entries": 1
+            }
+          }
+        ],
+        "passed": 6,
+        "failed": 0
+      }
+    }
+  ],
+  "result": "PASS",
+  "launcher_sha256": "603f824e40b49c0d24dc177d84c5f3c4a8552879ae2b5cdf5563247b342a1d11",
+  "workers_sha256": {
+    "admission-atomic.mjs": "a959261ebbf93a1a7ef197ace1e739ce80681dc7bab1f7bef7981515996a8024",
+    "admission-owner.mjs": "c3cb6321ca276f99a0c6d356b0ee3f6adb39df91a80016ffe65672922e3bcf65"
+  }
+}

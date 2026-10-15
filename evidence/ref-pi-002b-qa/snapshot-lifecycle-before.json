@@ -1,0 +1,7 @@
+{
+  "snapshot_sha256": "187c293b984d9e7a77b94c7f715b6efdeb41e98f7d2872d36ed0ac453b191e60",
+  "connections": 1,
+  "left_open": 1,
+  "expected_left_open": 0,
+  "result": "FAIL"
+}

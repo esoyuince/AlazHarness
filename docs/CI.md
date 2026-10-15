@@ -99,3 +99,18 @@ real SQLite/Harness scenarios (18 runs) are opt-in local Windows evidence and
 are not included in the171 count. No server policy, dependency installer or
 secret mount was added. Exact commit CI status must still be read after push.
 See docs/research/REF-PI-002-SQLITE.md for scope, fault injection and limits.
+
+## REF-PI-002B reconciliation
+
+Both Durable characterization suites are retained with separate historical receipts.
+The 4c9f suite adds storage-after-commit/ack-loss and provider identity; the ac97
+suite adds a non-idempotent safe negative control and an independent SQLite effect
+counter. Prior 169/171 or native18 totals are not added into a new acceptance claim.
+All current standard tests will be rerun. status.md is the live handoff owner.
+
+## REF-PI-002B separation
+
+Root CI includes the reconciled previous validator tests and the new strict-JSON,
+owner identity and independent-evidence unit tests. Native Pi admission24 runs and
+independent SQLite QA12 cases are opt-in local gates, not part of the248 root tests.
+The CI image/profile, resource bounds and no-install rule were not changed.

@@ -1,0 +1,169 @@
+{
+  "scope": "single-owner real Pi native admission and SQLite, controlled model and local effects",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "scenario_count": 12,
+  "repeats": 2,
+  "passed": 24,
+  "failed": 0,
+  "process_kills": 6,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "power_loss_tested": false,
+  "multiple_writer_processes_tested": false,
+  "production_adoption_accepted": false,
+  "files_sha256": {
+    "packages/admission/strict-admission.mjs": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+    "scripts/native_admission_worker.mjs": "b110f14709274af2fa88bdb93917d436199501a2d4103a43c2ddc9816cbf51f3",
+    "scripts/run_native_admission.py": "5a0024b045a67a38bd62561211c157e1daa270affeb1800d8fcf93706a44ab6f",
+    "config/admission-compatibility.lock.json": "aace26648e1cdf9039d0ebc8896e96d017eda72105c2530d88e6dec19e32a083"
+  },
+  "exit_code": 0,
+  "raw_receipt_relative_to_default_workspace": "runtime/ref-pi-002b-ea51/native-recheck-01/suite.json",
+  "raw_receipt_sha256": "9ee77662be14c28d0913775640d50a93c515c8134501c34278559eabe45b212f",
+  "cases": [
+    {
+      "scenario": "canonical-write",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "canonical-input",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "concurrent-same",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "concurrent-conflict",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "snapshot-mutation",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "legacy-rejected",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "validation-rollback",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "fault-before",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "fault-after",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "kill-before",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "kill-after",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "kill-unsafe-effect",
+      "repeat": 1,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "canonical-write",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "canonical-input",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "concurrent-same",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "concurrent-conflict",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "snapshot-mutation",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "legacy-rejected",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "validation-rollback",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "fault-before",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "fault-after",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "kill-before",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "kill-after",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    },
+    {
+      "scenario": "kill-unsafe-effect",
+      "repeat": 2,
+      "result": "PASS",
+      "errors": []
+    }
+  ]
+}

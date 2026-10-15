@@ -1,0 +1,22 @@
+{
+  "native_trial_01": {
+    "passed": 1,
+    "failed": 11,
+    "cause": "Independent verifier compared plain kind text with JSON-encoded kind column. Native behavior assertions passed; independent count was false. Read record JSON instead; acceptance rerun in fresh directories."
+  },
+  "host_unit_initial": {
+    "passed": 34,
+    "failed": 2,
+    "issues": [
+      "Explicit null whenBusy was incorrectly defaulted. Now rejected.",
+      "Top-level escaped JSON byte size was unchecked. Now final encoded size is bounded."
+    ]
+  },
+  "previous_evidence_kept": "runtime/ref-pi-002b-1720/trial-01 and initial-host-tests.txt",
+  "upstream_changed": false,
+  "root_initial_cleanup_error": {
+    "tests": 248,
+    "errors": 1,
+    "cause": "Python sqlite3 transaction context did not close file handle; Windows temporary directory cleanup failed. Explicit contextlib.closing now used in the independent reader and its test."
+  }
+}

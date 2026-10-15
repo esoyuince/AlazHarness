@@ -1,0 +1,68 @@
+{
+  "scope": "independent native SQLite checks against concurrent candidate; no production edits",
+  "module_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+  "unchanged_during_run": true,
+  "model_calls": 0,
+  "tests": [
+    {
+      "name": "same-key-conflict-and-reuse",
+      "status": "PASS",
+      "details": {
+        "id": 9
+      }
+    },
+    {
+      "name": "concurrent-same-owner",
+      "status": "PASS",
+      "details": {
+        "requests": 12,
+        "admissions": 1
+      }
+    },
+    {
+      "name": "legacy-fails-closed",
+      "status": "PASS",
+      "details": {
+        "legacy": 8
+      }
+    },
+    {
+      "name": "foreign-harness-handle-isolation",
+      "status": "PASS",
+      "details": {
+        "expected": "reject foreign handle without writing B or returning unrelated A job",
+        "victimId": 12,
+        "rejected": {
+          "code": "invalid_conversation",
+          "message": "invalid_conversation"
+        },
+        "aEntries": [
+          {
+            "text": "A-existing"
+          },
+          {
+            "text": "a"
+          }
+        ],
+        "bEntries": [
+          {
+            "text": "b"
+          }
+        ]
+      }
+    },
+    {
+      "name": "caller-mutation-snapshotted",
+      "status": "PASS",
+      "details": {
+        "stored": "initial"
+      }
+    },
+    {
+      "name": "scope-participates-in-fingerprint",
+      "status": "PASS"
+    }
+  ],
+  "passed": 6,
+  "failed": 0
+}

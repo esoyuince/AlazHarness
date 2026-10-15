@@ -1,0 +1,50 @@
+{
+  "module_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+  "unchanged_during_run": true,
+  "scope": "independent real native SQLite fault, snapshot and owner checks; graceful reopen not powerloss",
+  "model_calls": 0,
+  "tests": [
+    {
+      "name": "storage-before-commit-ack",
+      "status": "PASS",
+      "details": {
+        "before": 0,
+        "after": 1,
+        "reused": false
+      }
+    },
+    {
+      "name": "storage-after-commit-ack",
+      "status": "PASS",
+      "details": {
+        "before": 1,
+        "after": 1,
+        "reused": true
+      }
+    },
+    {
+      "name": "missing-conversation-fails-without-write",
+      "status": "PASS"
+    },
+    {
+      "name": "cancelled-context-no-admission",
+      "status": "PASS"
+    },
+    {
+      "name": "closed-owner-fails-without-replay",
+      "status": "PASS"
+    },
+    {
+      "name": "concurrent-conflicting-payloads",
+      "status": "PASS",
+      "details": {
+        "requests": 16,
+        "accepted": 8,
+        "conflict": 8,
+        "entries": 1
+      }
+    }
+  ],
+  "passed": 6,
+  "failed": 0
+}

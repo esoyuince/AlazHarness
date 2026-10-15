@@ -1,0 +1,153 @@
+{
+  "scope": "independent real Pi SQLite passive admission; no model inference; graceful reopen and injected storage errors, not process-kill/powerloss qualification",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "candidate_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+  "candidate_unchanged": true,
+  "families": [
+    {
+      "family": "owner",
+      "exit_code": 0,
+      "result": "PASS",
+      "details": {
+        "scope": "independent native SQLite checks against concurrent candidate; no production edits",
+        "module_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+        "unchanged_during_run": true,
+        "model_calls": 0,
+        "tests": [
+          {
+            "name": "same-key-conflict-and-reuse",
+            "status": "PASS",
+            "details": {
+              "id": 9
+            }
+          },
+          {
+            "name": "concurrent-same-owner",
+            "status": "PASS",
+            "details": {
+              "requests": 12,
+              "admissions": 1
+            }
+          },
+          {
+            "name": "legacy-fails-closed",
+            "status": "PASS",
+            "details": {
+              "legacy": 8
+            }
+          },
+          {
+            "name": "foreign-harness-handle-isolation",
+            "status": "PASS",
+            "details": {
+              "expected": "reject foreign handle without writing B or returning unrelated A job",
+              "victimId": 12,
+              "rejected": {
+                "code": "invalid_conversation",
+                "message": "invalid_conversation"
+              },
+              "aEntries": [
+                {
+                  "text": "A-existing"
+                },
+                {
+                  "text": "a"
+                }
+              ],
+              "bEntries": [
+                {
+                  "text": "b"
+                }
+              ]
+            }
+          },
+          {
+            "name": "caller-mutation-snapshotted",
+            "status": "PASS",
+            "details": {
+              "stored": "initial"
+            }
+          },
+          {
+            "name": "scope-participates-in-fingerprint",
+            "status": "PASS"
+          }
+        ],
+        "passed": 6,
+        "failed": 0
+      }
+    },
+    {
+      "family": "atomic",
+      "exit_code": 0,
+      "result": "PASS",
+      "details": {
+        "module_sha256": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+        "unchanged_during_run": true,
+        "scope": "independent real native SQLite fault, snapshot and owner checks; graceful reopen not powerloss",
+        "model_calls": 0,
+        "tests": [
+          {
+            "name": "storage-before-commit-ack",
+            "status": "PASS",
+            "details": {
+              "before": 0,
+              "after": 1,
+              "reused": false
+            }
+          },
+          {
+            "name": "storage-after-commit-ack",
+            "status": "PASS",
+            "details": {
+              "before": 1,
+              "after": 1,
+              "reused": true
+            }
+          },
+          {
+            "name": "missing-conversation-fails-without-write",
+            "status": "PASS"
+          },
+          {
+            "name": "cancelled-context-no-admission",
+            "status": "PASS"
+          },
+          {
+            "name": "closed-owner-fails-without-replay",
+            "status": "PASS"
+          },
+          {
+            "name": "concurrent-conflicting-payloads",
+            "status": "PASS",
+            "details": {
+              "requests": 16,
+              "accepted": 8,
+              "conflict": 8,
+              "entries": 1
+            }
+          }
+        ],
+        "passed": 6,
+        "failed": 0
+      }
+    }
+  ],
+  "result": "PASS",
+  "rechecked_by": "implementation integration acceptance after reviewing independent scripts",
+  "reviewed_file_hashes": {
+    "scripts/qa/admission-owner.mjs": "c3cb6321ca276f99a0c6d356b0ee3f6adb39df91a80016ffe65672922e3bcf65",
+    "scripts/qa/admission-atomic.mjs": "a959261ebbf93a1a7ef197ace1e739ce80681dc7bab1f7bef7981515996a8024",
+    "scripts/run_independent_admission_qa.py": "603f824e40b49c0d24dc177d84c5f3c4a8552879ae2b5cdf5563247b342a1d11",
+    "docs/research/REF-PI-002B-INDEPENDENT-QA.md": "36a4a5f09f2bd4b38ec0a45f2864b388f59b6d87e05b616f0ad9be5c27e76a32",
+    "evidence/ref-pi-002b-qa/full-native-recheck.json": "67e06b6d97256175a4412adc54d59aac84500f4988e592905c8a5b89e91f4cce",
+    "evidence/ref-pi-002b-qa/native-atomic.json": "1b2344ba5275d703a2a6b0e5e28910b90ec027931e17ffe98811729b92be97ba",
+    "evidence/ref-pi-002b-qa/native-owner.json": "4564df5aed9a72eec9e2425c04e4fd18765cf4b80887c88512ade125240c5afc",
+    "evidence/ref-pi-002b-qa/original-owner-failure.json": "1f75a9741a28de67dee7ba212ca7c8eab799c56b66f1c331b88e9761823f3ec6",
+    "evidence/ref-pi-002b-qa/original-owner-observation.json": "fc42b6f2b1ddcde0033a2b3dfef1bd9b64bacc2267ff7b90bd8227ca380f7859",
+    "evidence/ref-pi-002b-qa/packaged-validation.json": "1c7aa36efb24d04a5c612e5326feaa15c241501db6a4db86f560fd7951db54cc",
+    "evidence/ref-pi-002b-qa/root-final-validation.json": "09610db9e49d96e3fe563b174bb0a61f83bbbd69a9bbb8d0368beeca26e84439",
+    "evidence/ref-pi-002b-qa/snapshot-lifecycle-after.json": "64c4f3290a9ac1a8cb124cdd69e567f7092abb8ab32a04857b90d51b833439a3",
+    "evidence/ref-pi-002b-qa/snapshot-lifecycle-before.json": "ed130e8d26f28f194c5c0f8adeb25d5304faf84e304b914ce9aa0399b0ca3a40"
+  }
+}

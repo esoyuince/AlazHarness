@@ -1,0 +1,27 @@
+{
+  "code_commit": "db277a36ef96b808c25ae00725224f9ad61a95db",
+  "github_status": {
+    "id": 56384554565,
+    "context": "alaz/local-ci",
+    "state": "success",
+    "description": "ALAZ Local CI passed"
+  },
+  "server": {
+    "sha": "db277a36ef96b808c25ae00725224f9ad61a95db",
+    "checkout_sha": "db277a36ef96b808c25ae00725224f9ad61a95db",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 169,
+      "failed": 0,
+      "passed": 169,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 169
+    },
+    "status_delivery": "posted",
+    "started_unix": 1792025141,
+    "finished_unix": 1792025186
+  },
+  "scope": "standard offline test suite; native Pi Durable runs were local Windows only"
+}

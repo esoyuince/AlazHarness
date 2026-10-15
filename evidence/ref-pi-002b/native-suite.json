@@ -1,0 +1,1798 @@
+{
+  "scope": "single-owner real Pi native admission and SQLite, controlled model and local effects",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "scenario_count": 12,
+  "repeats": 2,
+  "passed": 24,
+  "failed": 0,
+  "process_kills": 6,
+  "cases": [
+    {
+      "scenario": "canonical-write",
+      "repeat": 1,
+      "nonce": "2dd729feb747988f116ba42b61943022",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29686.7291835,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 4288,
+          "exit_code": 0,
+          "finished": 29688.3335864,
+          "receipt": {
+            "scenario": "canonical-write",
+            "phase": "single",
+            "nonce": "2dd729feb747988f116ba42b61943022",
+            "pid": 4288,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "request_payload_conflict",
+              "request_payload_conflict",
+              "canonical-order-same-id",
+              "scope-isolation"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          },
+          {
+            "conversationId": 10,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 17,
+            "id": 18
+          }
+        ],
+        "binding_count": 2,
+        "entry_kinds": [
+          "alaz.note",
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "canonical-input",
+      "repeat": 1,
+      "nonce": "2973d916aa613fd84d873fc65d78444b",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29688.3597791,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 15772,
+          "exit_code": 0,
+          "finished": 29689.6161229,
+          "receipt": {
+            "scenario": "canonical-input",
+            "phase": "single",
+            "nonce": "2973d916aa613fd84d873fc65d78444b",
+            "pid": 15772,
+            "modelCalls": 2,
+            "checks": [
+              "request_payload_conflict",
+              "input-conflict-no-model",
+              "busy-rollback-key-reusable"
+            ],
+            "reports": [],
+            "entryCount": 4,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "input",
+            "status": "done",
+            "entry": 8,
+            "id": 9,
+            "answer": 12
+          },
+          {
+            "conversationId": 1,
+            "requestId": "busy-key",
+            "type": "input",
+            "status": "done",
+            "entry": 14,
+            "id": 15,
+            "answer": 17
+          }
+        ],
+        "binding_count": 2,
+        "entry_kinds": [
+          "pi.user",
+          "pi.assistant",
+          "pi.user",
+          "pi.assistant"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "concurrent-same",
+      "repeat": 1,
+      "nonce": "4eb44f100f1666a838a7a33b4c092c88",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29689.648486,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 27388,
+          "exit_code": 0,
+          "finished": 29691.0838151,
+          "receipt": {
+            "scenario": "concurrent-same",
+            "phase": "single",
+            "nonce": "4eb44f100f1666a838a7a33b4c092c88",
+            "pid": 27388,
+            "modelCalls": 0,
+            "checks": [
+              "20-concurrent-calls-one-native-admission"
+            ],
+            "reports": [],
+            "accepted": 20,
+            "conflicts": 0,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "concurrent-conflict",
+      "repeat": 1,
+      "nonce": "186a4ad3d6c3acce98e9ea52b3a473e6",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29691.1045279,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 40148,
+          "exit_code": 0,
+          "finished": 29692.5655798,
+          "receipt": {
+            "scenario": "concurrent-conflict",
+            "phase": "single",
+            "nonce": "186a4ad3d6c3acce98e9ea52b3a473e6",
+            "pid": 40148,
+            "modelCalls": 0,
+            "checks": [
+              "20-concurrent-calls-one-native-admission"
+            ],
+            "reports": [],
+            "accepted": 10,
+            "conflicts": 10,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "snapshot-mutation",
+      "repeat": 1,
+      "nonce": "fbabe3734595e035ecbe9fb5569fc5eb",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29692.5922521,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 17792,
+          "exit_code": 0,
+          "finished": 29694.4399839,
+          "receipt": {
+            "scenario": "snapshot-mutation",
+            "phase": "single",
+            "nonce": "fbabe3734595e035ecbe9fb5569fc5eb",
+            "pid": 17792,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "caller-mutation-cannot-change-admitted-content"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "legacy-rejected",
+      "repeat": 1,
+      "nonce": "ec36da7f1553b9f98d1b20d922bc3c05",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29694.4662369,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 6456,
+          "exit_code": 0,
+          "finished": 29696.4350351,
+          "receipt": {
+            "scenario": "legacy-rejected",
+            "phase": "single",
+            "nonce": "ec36da7f1553b9f98d1b20d922bc3c05",
+            "pid": 6456,
+            "modelCalls": 0,
+            "checks": [
+              "unmanaged_or_inconsistent_admission",
+              "unmanaged_or_inconsistent_admission",
+              "no-legacy-backfill"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 7,
+            "id": 8
+          }
+        ],
+        "binding_count": 0,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "validation-rollback",
+      "repeat": 1,
+      "nonce": "b52ba33bed95cfbebee04b30f8ef41f7",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29696.4606488,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 32476,
+          "exit_code": 0,
+          "finished": 29697.6859714,
+          "receipt": {
+            "scenario": "validation-rollback",
+            "phase": "single",
+            "nonce": "b52ba33bed95cfbebee04b30f8ef41f7",
+            "pid": 32476,
+            "modelCalls": 0,
+            "checks": [
+              "native-validation-rolls-back-binding"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 9,
+            "id": 10
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "fault-before",
+      "repeat": 1,
+      "nonce": "afd9792fbeccd8549ee5af7dbb1a5640",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29697.7087884,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 24592,
+          "exit_code": 0,
+          "finished": 29698.7681256,
+          "receipt": {
+            "scenario": "fault-before",
+            "phase": "seed",
+            "nonce": "afd9792fbeccd8549ee5af7dbb1a5640",
+            "pid": 24592,
+            "modelCalls": 0,
+            "checks": [
+              "original-error-and-failed-session"
+            ],
+            "reports": [
+              "Error: ADMISSION_STORAGE_FAULT"
+            ],
+            "injectionBoundary": "before-commit",
+            "failedClosed": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        },
+        {
+          "phase": "resume",
+          "started": 29698.7852748,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 35824,
+          "exit_code": 0,
+          "finished": 29699.8664922,
+          "receipt": {
+            "scenario": "fault-before",
+            "phase": "resume",
+            "nonce": "afd9792fbeccd8549ee5af7dbb1a5640",
+            "pid": 35824,
+            "modelCalls": 0,
+            "checks": [
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": false,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [],
+        "binding_count": 0,
+        "entry_kinds": [],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "fault-after",
+      "repeat": 1,
+      "nonce": "ec182a4e8d54855d10a24558a5b661db",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29699.8881672,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 7676,
+          "exit_code": 0,
+          "finished": 29701.0712583,
+          "receipt": {
+            "scenario": "fault-after",
+            "phase": "seed",
+            "nonce": "ec182a4e8d54855d10a24558a5b661db",
+            "pid": 7676,
+            "modelCalls": 0,
+            "checks": [
+              "original-error-and-failed-session"
+            ],
+            "reports": [
+              "Error: ADMISSION_STORAGE_FAULT"
+            ],
+            "injectionBoundary": "after-commit-before-ack",
+            "failedClosed": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        },
+        {
+          "phase": "resume",
+          "started": 29701.0999309,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 32804,
+          "exit_code": 0,
+          "finished": 29702.4286595,
+          "receipt": {
+            "scenario": "fault-after",
+            "phase": "resume",
+            "nonce": "ec182a4e8d54855d10a24558a5b661db",
+            "pid": 32804,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": true,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "kill-before",
+      "repeat": 1,
+      "nonce": "8a5ee56ae20f2185da56ba91a6c454ec",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29702.4490946,
+          "timed_out": false,
+          "intentional_kill": true,
+          "reaped": true,
+          "pid": 23492,
+          "barrier": {
+            "scenario": "kill-before",
+            "phase": "seed",
+            "nonce": "8a5ee56ae20f2185da56ba91a6c454ec",
+            "pid": 23492,
+            "modelCalls": 0,
+            "checks": [],
+            "reports": [],
+            "injectionBoundary": "before-commit",
+            "boundary": "before-commit",
+            "rootId": 1,
+            "submissionId": 9
+          },
+          "exit_code": 1,
+          "finished": 29703.5295629
+        },
+        {
+          "phase": "resume",
+          "started": 29703.5527101,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 40732,
+          "exit_code": 0,
+          "finished": 29704.6021361,
+          "receipt": {
+            "scenario": "kill-before",
+            "phase": "resume",
+            "nonce": "8a5ee56ae20f2185da56ba91a6c454ec",
+            "pid": 40732,
+            "modelCalls": 0,
+            "checks": [
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": false,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [],
+        "binding_count": 0,
+        "entry_kinds": [],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "kill-after",
+      "repeat": 1,
+      "nonce": "d548f6773ea8ff562e60c28e46aacc05",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29704.6211801,
+          "timed_out": false,
+          "intentional_kill": true,
+          "reaped": true,
+          "pid": 26956,
+          "barrier": {
+            "scenario": "kill-after",
+            "phase": "seed",
+            "nonce": "d548f6773ea8ff562e60c28e46aacc05",
+            "pid": 26956,
+            "modelCalls": 0,
+            "checks": [],
+            "reports": [],
+            "injectionBoundary": "after-commit-before-ack",
+            "boundary": "after-commit-before-ack",
+            "rootId": 1,
+            "submissionId": 9
+          },
+          "exit_code": 1,
+          "finished": 29705.7537856
+        },
+        {
+          "phase": "resume",
+          "started": 29705.7927794,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 39460,
+          "exit_code": 0,
+          "finished": 29707.3294098,
+          "receipt": {
+            "scenario": "kill-after",
+            "phase": "resume",
+            "nonce": "d548f6773ea8ff562e60c28e46aacc05",
+            "pid": 39460,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": true,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "kill-unsafe-effect",
+      "repeat": 1,
+      "nonce": "886b1d805b2cbc84a8f35a6e2d94f3de",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29707.3551434,
+          "timed_out": false,
+          "intentional_kill": true,
+          "reaped": true,
+          "pid": 40404,
+          "barrier": {
+            "scenario": "kill-unsafe-effect",
+            "phase": "seed",
+            "nonce": "886b1d805b2cbc84a8f35a6e2d94f3de",
+            "pid": 40404,
+            "modelCalls": 1,
+            "checks": [],
+            "reports": [],
+            "boundary": "external-effect-no-result",
+            "rootId": 1,
+            "effects": 1
+          },
+          "exit_code": 1,
+          "finished": 29709.0533887
+        },
+        {
+          "phase": "resume",
+          "started": 29709.0940728,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 5000,
+          "exit_code": 0,
+          "finished": 29710.3256261,
+          "receipt": {
+            "scenario": "kill-unsafe-effect",
+            "phase": "resume",
+            "nonce": "886b1d805b2cbc84a8f35a6e2d94f3de",
+            "pid": 5000,
+            "modelCalls": 1,
+            "checks": [
+              "request_payload_conflict",
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": true,
+            "submissionId": 9,
+            "uncertainEffectPreserved": true,
+            "effects": 1,
+            "entryCount": 5,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "input",
+            "status": "placed",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "pi.user",
+          "pi.system",
+          "pi.assistant"
+        ],
+        "read_only": true,
+        "effects": 1
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "input",
+            "status": "done",
+            "entry": 8,
+            "id": 9,
+            "answer": 16
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "pi.user",
+          "pi.system",
+          "pi.assistant",
+          "pi.tool-result",
+          "pi.assistant"
+        ],
+        "read_only": true,
+        "effects": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "canonical-write",
+      "repeat": 2,
+      "nonce": "717c5bb57d1ca36a1ca172e9c5d7cbc5",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29710.3532541,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 21916,
+          "exit_code": 0,
+          "finished": 29711.6237865,
+          "receipt": {
+            "scenario": "canonical-write",
+            "phase": "single",
+            "nonce": "717c5bb57d1ca36a1ca172e9c5d7cbc5",
+            "pid": 21916,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "request_payload_conflict",
+              "request_payload_conflict",
+              "canonical-order-same-id",
+              "scope-isolation"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          },
+          {
+            "conversationId": 10,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 17,
+            "id": 18
+          }
+        ],
+        "binding_count": 2,
+        "entry_kinds": [
+          "alaz.note",
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "canonical-input",
+      "repeat": 2,
+      "nonce": "a1c77a4ff9ece6aa1c8cf83ef909394b",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29711.6487795,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 31776,
+          "exit_code": 0,
+          "finished": 29712.9515083,
+          "receipt": {
+            "scenario": "canonical-input",
+            "phase": "single",
+            "nonce": "a1c77a4ff9ece6aa1c8cf83ef909394b",
+            "pid": 31776,
+            "modelCalls": 2,
+            "checks": [
+              "request_payload_conflict",
+              "input-conflict-no-model",
+              "busy-rollback-key-reusable"
+            ],
+            "reports": [],
+            "entryCount": 4,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "input",
+            "status": "done",
+            "entry": 8,
+            "id": 9,
+            "answer": 12
+          },
+          {
+            "conversationId": 1,
+            "requestId": "busy-key",
+            "type": "input",
+            "status": "done",
+            "entry": 14,
+            "id": 15,
+            "answer": 17
+          }
+        ],
+        "binding_count": 2,
+        "entry_kinds": [
+          "pi.user",
+          "pi.assistant",
+          "pi.user",
+          "pi.assistant"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "concurrent-same",
+      "repeat": 2,
+      "nonce": "58ddcfb77c9e34f9f8ad942e3dfa0c5f",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29712.9714682,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 25292,
+          "exit_code": 0,
+          "finished": 29714.9887163,
+          "receipt": {
+            "scenario": "concurrent-same",
+            "phase": "single",
+            "nonce": "58ddcfb77c9e34f9f8ad942e3dfa0c5f",
+            "pid": 25292,
+            "modelCalls": 0,
+            "checks": [
+              "20-concurrent-calls-one-native-admission"
+            ],
+            "reports": [],
+            "accepted": 20,
+            "conflicts": 0,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "concurrent-conflict",
+      "repeat": 2,
+      "nonce": "818b62733ef28c16d73e48202463ae72",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29715.0111106,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 24156,
+          "exit_code": 0,
+          "finished": 29716.4400522,
+          "receipt": {
+            "scenario": "concurrent-conflict",
+            "phase": "single",
+            "nonce": "818b62733ef28c16d73e48202463ae72",
+            "pid": 24156,
+            "modelCalls": 0,
+            "checks": [
+              "20-concurrent-calls-one-native-admission"
+            ],
+            "reports": [],
+            "accepted": 10,
+            "conflicts": 10,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "snapshot-mutation",
+      "repeat": 2,
+      "nonce": "3437d68a54fe384d324f90b6a0189353",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29716.4630046,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 11204,
+          "exit_code": 0,
+          "finished": 29717.6945731,
+          "receipt": {
+            "scenario": "snapshot-mutation",
+            "phase": "single",
+            "nonce": "3437d68a54fe384d324f90b6a0189353",
+            "pid": 11204,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "caller-mutation-cannot-change-admitted-content"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "legacy-rejected",
+      "repeat": 2,
+      "nonce": "95e92cb42f944a6ba9fff9b8f0315bbd",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29717.714902,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 33980,
+          "exit_code": 0,
+          "finished": 29719.0884466,
+          "receipt": {
+            "scenario": "legacy-rejected",
+            "phase": "single",
+            "nonce": "95e92cb42f944a6ba9fff9b8f0315bbd",
+            "pid": 33980,
+            "modelCalls": 0,
+            "checks": [
+              "unmanaged_or_inconsistent_admission",
+              "unmanaged_or_inconsistent_admission",
+              "no-legacy-backfill"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 7,
+            "id": 8
+          }
+        ],
+        "binding_count": 0,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "validation-rollback",
+      "repeat": 2,
+      "nonce": "ab3eb79e1f3fd33f2d1dec550272926c",
+      "processes": [
+        {
+          "phase": "single",
+          "started": 29719.1118241,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 14660,
+          "exit_code": 0,
+          "finished": 29720.6018503,
+          "receipt": {
+            "scenario": "validation-rollback",
+            "phase": "single",
+            "nonce": "ab3eb79e1f3fd33f2d1dec550272926c",
+            "pid": 14660,
+            "modelCalls": 0,
+            "checks": [
+              "native-validation-rolls-back-binding"
+            ],
+            "reports": [],
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 9,
+            "id": 10
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "fault-before",
+      "repeat": 2,
+      "nonce": "f82a37d37690a1b8e28a469b903aeedf",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29720.6393463,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 37948,
+          "exit_code": 0,
+          "finished": 29721.8601584,
+          "receipt": {
+            "scenario": "fault-before",
+            "phase": "seed",
+            "nonce": "f82a37d37690a1b8e28a469b903aeedf",
+            "pid": 37948,
+            "modelCalls": 0,
+            "checks": [
+              "original-error-and-failed-session"
+            ],
+            "reports": [
+              "Error: ADMISSION_STORAGE_FAULT"
+            ],
+            "injectionBoundary": "before-commit",
+            "failedClosed": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        },
+        {
+          "phase": "resume",
+          "started": 29721.8796411,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 36668,
+          "exit_code": 0,
+          "finished": 29723.1258742,
+          "receipt": {
+            "scenario": "fault-before",
+            "phase": "resume",
+            "nonce": "f82a37d37690a1b8e28a469b903aeedf",
+            "pid": 36668,
+            "modelCalls": 0,
+            "checks": [
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": false,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [],
+        "binding_count": 0,
+        "entry_kinds": [],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "fault-after",
+      "repeat": 2,
+      "nonce": "365b8647c115fab8f47227b867a0f491",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29723.1501408,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 8400,
+          "exit_code": 0,
+          "finished": 29724.3498212,
+          "receipt": {
+            "scenario": "fault-after",
+            "phase": "seed",
+            "nonce": "365b8647c115fab8f47227b867a0f491",
+            "pid": 8400,
+            "modelCalls": 0,
+            "checks": [
+              "original-error-and-failed-session"
+            ],
+            "reports": [
+              "Error: ADMISSION_STORAGE_FAULT"
+            ],
+            "injectionBoundary": "after-commit-before-ack",
+            "failedClosed": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        },
+        {
+          "phase": "resume",
+          "started": 29724.3673166,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 32592,
+          "exit_code": 0,
+          "finished": 29725.6050502,
+          "receipt": {
+            "scenario": "fault-after",
+            "phase": "resume",
+            "nonce": "365b8647c115fab8f47227b867a0f491",
+            "pid": 32592,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": true,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "kill-before",
+      "repeat": 2,
+      "nonce": "0657beef4e750bf09e03d6a38b5acd22",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29725.622119,
+          "timed_out": false,
+          "intentional_kill": true,
+          "reaped": true,
+          "pid": 20988,
+          "barrier": {
+            "scenario": "kill-before",
+            "phase": "seed",
+            "nonce": "0657beef4e750bf09e03d6a38b5acd22",
+            "pid": 20988,
+            "modelCalls": 0,
+            "checks": [],
+            "reports": [],
+            "injectionBoundary": "before-commit",
+            "boundary": "before-commit",
+            "rootId": 1,
+            "submissionId": 9
+          },
+          "exit_code": 1,
+          "finished": 29727.4702523
+        },
+        {
+          "phase": "resume",
+          "started": 29727.4985061,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 26000,
+          "exit_code": 0,
+          "finished": 29728.8328345,
+          "receipt": {
+            "scenario": "kill-before",
+            "phase": "resume",
+            "nonce": "0657beef4e750bf09e03d6a38b5acd22",
+            "pid": 26000,
+            "modelCalls": 0,
+            "checks": [
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": false,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [],
+        "binding_count": 0,
+        "entry_kinds": [],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "kill-after",
+      "repeat": 2,
+      "nonce": "79088a97a35d43bbfc2a7f20dc0afe92",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29728.8522665,
+          "timed_out": false,
+          "intentional_kill": true,
+          "reaped": true,
+          "pid": 21320,
+          "barrier": {
+            "scenario": "kill-after",
+            "phase": "seed",
+            "nonce": "79088a97a35d43bbfc2a7f20dc0afe92",
+            "pid": 21320,
+            "modelCalls": 0,
+            "checks": [],
+            "reports": [],
+            "injectionBoundary": "after-commit-before-ack",
+            "boundary": "after-commit-before-ack",
+            "rootId": 1,
+            "submissionId": 9
+          },
+          "exit_code": 1,
+          "finished": 29730.3530342
+        },
+        {
+          "phase": "resume",
+          "started": 29730.3948699,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 38564,
+          "exit_code": 0,
+          "finished": 29731.8810484,
+          "receipt": {
+            "scenario": "kill-after",
+            "phase": "resume",
+            "nonce": "79088a97a35d43bbfc2a7f20dc0afe92",
+            "pid": 38564,
+            "modelCalls": 0,
+            "checks": [
+              "request_payload_conflict",
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": true,
+            "submissionId": 9,
+            "entryCount": 1,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "write",
+            "status": "done",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "alaz.note"
+        ],
+        "read_only": true,
+        "effects": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "kill-unsafe-effect",
+      "repeat": 2,
+      "nonce": "9a298e1a6d85fb4c73278ff3726d5751",
+      "processes": [
+        {
+          "phase": "seed",
+          "started": 29731.9068299,
+          "timed_out": false,
+          "intentional_kill": true,
+          "reaped": true,
+          "pid": 6860,
+          "barrier": {
+            "scenario": "kill-unsafe-effect",
+            "phase": "seed",
+            "nonce": "9a298e1a6d85fb4c73278ff3726d5751",
+            "pid": 6860,
+            "modelCalls": 1,
+            "checks": [],
+            "reports": [],
+            "boundary": "external-effect-no-result",
+            "rootId": 1,
+            "effects": 1
+          },
+          "exit_code": 1,
+          "finished": 29734.0284169
+        },
+        {
+          "phase": "resume",
+          "started": 29734.0733537,
+          "timed_out": false,
+          "intentional_kill": false,
+          "reaped": true,
+          "pid": 40208,
+          "exit_code": 0,
+          "finished": 29735.5668286,
+          "receipt": {
+            "scenario": "kill-unsafe-effect",
+            "phase": "resume",
+            "nonce": "9a298e1a6d85fb4c73278ff3726d5751",
+            "pid": 40208,
+            "modelCalls": 1,
+            "checks": [
+              "request_payload_conflict",
+              "same-owner-new-process-recovery"
+            ],
+            "reports": [],
+            "reused": true,
+            "submissionId": 9,
+            "uncertainEffectPreserved": true,
+            "effects": 1,
+            "entryCount": 5,
+            "idle": true,
+            "rootId": 1,
+            "result": "PASS"
+          }
+        }
+      ],
+      "interim_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "input",
+            "status": "placed",
+            "entry": 8,
+            "id": 9
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "pi.user",
+          "pi.system",
+          "pi.assistant"
+        ],
+        "read_only": true,
+        "effects": 1
+      },
+      "final_database": {
+        "integrity": "ok",
+        "submissions": [
+          {
+            "conversationId": 1,
+            "requestId": "key-1",
+            "type": "input",
+            "status": "done",
+            "entry": 8,
+            "id": 9,
+            "answer": 16
+          }
+        ],
+        "binding_count": 1,
+        "entry_kinds": [
+          "pi.user",
+          "pi.system",
+          "pi.assistant",
+          "pi.tool-result",
+          "pi.assistant"
+        ],
+        "read_only": true,
+        "effects": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    }
+  ],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "power_loss_tested": false,
+  "multiple_writer_processes_tested": false,
+  "production_adoption_accepted": false,
+  "files_sha256": {
+    "packages/admission/strict-admission.mjs": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+    "scripts/native_admission_worker.mjs": "b110f14709274af2fa88bdb93917d436199501a2d4103a43c2ddc9816cbf51f3",
+    "scripts/run_native_admission.py": "5a0024b045a67a38bd62561211c157e1daa270affeb1800d8fcf93706a44ab6f",
+    "config/admission-compatibility.lock.json": "aace26648e1cdf9039d0ebc8896e96d017eda72105c2530d88e6dec19e32a083"
+  }
+}

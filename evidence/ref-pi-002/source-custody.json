@@ -1,0 +1,121 @@
+{
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "prepared_runtime": "runtime/pi-ref001-ac97",
+  "preparation_reused": true,
+  "dependency_install_performed_this_task": false,
+  "files": [
+    {
+      "path": "packages/durable/README.md",
+      "sha256": "08abf68a80468eb5f14ad497b6e044fc677217914b2f93ab5a35ddfe385c8d6a",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/harness/submissions.ts",
+      "sha256": "19c817b0e1988d97b16f13fc24855dd90aac68776e083a000b211b32bc147599",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/harness/tool.ts",
+      "sha256": "f84b6b0bb6b32f3c723a607972aa2644378a3770049ad860a71a059caded797c",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/harness/harness.ts",
+      "sha256": "e0e6d839a294edcf8f82355700aaebae867fd2538388f87932e0eb3d053bb319",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/harness/provider.ts",
+      "sha256": "bf3d9815888d48f85bed50d1c4d5bc38fa71d46121d19b0669c78fc88e784f39",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/session/session.ts",
+      "sha256": "affe9694f4fda018b49736eae4ddd1e96cb8635981ba5ac7f5914d674d0fe61a",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/storage/sqlite/node.ts",
+      "sha256": "d3f058870a0a016359a64767fcfa33946c1e0f38b6ff5b7cf076eae5a0f78786",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/src/storage/sqlite/storage.ts",
+      "sha256": "5f45b2ba40028776e1797b078e1777fdbf0d2e2b23503fd7c39c041fd152cfd6",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/test/harness-submissions.test.ts",
+      "sha256": "ab49770da6814b343a2edde23b6894549b9e05e8aedaa80ddeb99ef817f34e05",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/test/harness-tools-recovery.test.ts",
+      "sha256": "9bb1d8354d6167c7d4fa535a97c493bded87c68cc2fb06a44b93289d1361e4e7",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/test/harness-generation-recovery.test.ts",
+      "sha256": "203d80ef098adceb28de1e8bcc5acd6bfa6bf1292306ff09c79c9ad262cc1c5e",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/test/harness-storage-failure.test.ts",
+      "sha256": "3d188ed3d18367cf0b66a627072a96f2a482b50c6574fe1dfadbe53551180d2f",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/test/chat-support.ts",
+      "sha256": "2f5d94405e012f9692d39630ca9418fc0b253acb83c00248967bbaea59d83b57",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/durable/test/session-support.ts",
+      "sha256": "0cb2b3a2c139cb283a1141e164993001a43a0c9938de293951f907997b55c863",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/ai/src/providers/faux.ts",
+      "sha256": "aeaa8df95399776587ad0cfccccd3b498891a20c5c5846f935e04d9d09dd84a1",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "packages/coding-agent/src/experimental/source-resolver.ts",
+      "sha256": "c584d52fb68860c0c6ae5dfbbcb6052fa104d6e34c7ef231b9e6eb7e0ec5b2a6",
+      "scope": "identity anchor, not full-file audit claim"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "e56f77e5f423d2d2cd052dc90622d4c223cd81209a3b996cd4d43587a6a05deb",
+      "scope": "identity anchor, not full-file audit claim"
+    }
+  ],
+  "repositories": [
+    {
+      "name": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "clean": true
+    },
+    {
+      "name": "hermes",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "clean": true
+    },
+    {
+      "name": "pi-reference",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "clean": true
+    },
+    {
+      "name": "opencode-reference",
+      "commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "clean": true
+    },
+    {
+      "name": "pi-prepared",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "clean": true
+    }
+  ],
+  "runtime_and_reference_locks_unchanged": true
+}

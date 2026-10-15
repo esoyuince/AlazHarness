@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "name": "openclaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "clean": true
+    },
+    {
+      "name": "hermes",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "clean": true
+    },
+    {
+      "name": "pi",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "clean": true
+    },
+    {
+      "name": "opencode",
+      "commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "clean": true
+    },
+    {
+      "name": "prepared-pi",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "clean": true
+    }
+  ],
+  "unchanged_preexisting_root_files": 32,
+  "source_and_component_locks_changed": false,
+  "source_installs": false,
+  "main_merged": false,
+  "merge_parents": [
+    "9b801bd93d116223d57320bee379321ab383a6fd",
+    "32654e4fbb403847ceec3cfbc94d3d046b84ec86"
+  ]
+}

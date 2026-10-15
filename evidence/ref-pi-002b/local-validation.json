@@ -1,0 +1,41 @@
+{
+  "scope": "full merged root unittest suite; native integration and independent QA are separate gates",
+  "standard_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "discovered": 248,
+    "passed": 248,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 32.709,
+    "exit_code": 0
+  },
+  "native_admission": {
+    "scenarios": 12,
+    "repeats": 2,
+    "passed": 24,
+    "failed": 0,
+    "exit_code": 0,
+    "owned_process_kills": 6,
+    "record": "native-suite.json"
+  },
+  "independent_qa": {
+    "families": 2,
+    "cases": 12,
+    "passed": 12,
+    "failed": 0,
+    "exit_code": 0,
+    "record": "independent-qa-recheck.json"
+  },
+  "source_hashes": {
+    "packages/admission/strict-admission.mjs": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+    "scripts/native_admission_worker.mjs": "b110f14709274af2fa88bdb93917d436199501a2d4103a43c2ddc9816cbf51f3",
+    "scripts/run_native_admission.py": "5a0024b045a67a38bd62561211c157e1daa270affeb1800d8fcf93706a44ab6f",
+    "config/admission-compatibility.lock.json": "aace26648e1cdf9039d0ebc8896e96d017eda72105c2530d88e6dec19e32a083"
+  },
+  "native_run_on_server": false,
+  "production_adoption": false,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "previous_native_suites": "retained as historical receipts, not rerun or added to the new admission total"
+}

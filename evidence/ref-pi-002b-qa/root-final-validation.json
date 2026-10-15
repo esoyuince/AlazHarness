@@ -1,0 +1,16 @@
+{
+  "scope": "independent full root unittest rerun after resource fix; not native runtime count",
+  "exit_code": 0,
+  "tests": 248,
+  "elapsed_seconds": 30.983,
+  "no_skips_reported": true,
+  "files_sha256": {
+    "packages/admission/strict-admission.mjs": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+    "scripts/native_admission_worker.mjs": "b110f14709274af2fa88bdb93917d436199501a2d4103a43c2ddc9816cbf51f3",
+    "scripts/run_native_admission.py": "5a0024b045a67a38bd62561211c157e1daa270affeb1800d8fcf93706a44ab6f",
+    "tests/test_admission_evidence.py": "e4431abe9923010390b67f9aa49119cc90eccf0019c87c20e8aa8a207d253efa",
+    "tests/test_strict_admission.py": "0523f6d4f02cccd555e885450a6d2f704d453e99b38bac42d2009ade7313ed63",
+    "tests/node/admission-cases.mjs": "2a3e4c7c5e268efa5286e0f5f5c5d904486e7dd3d60aa2a1091fc9dde2e9c116"
+  },
+  "no_drift": true
+}

@@ -1,155 +1,122 @@
 # AlazHarness — status
 
-Son güncelleme: **15 Ekim 2026**. Bu dosya iş başlangıcı, ara kontrol ve iş sonu için ana devam kaydıdır.
+Son güncelleme: **15 Ekim 2026**. Ana devam kaydı; işe başlarken canlı Git durumunu doğrula.
 
 ## Kaldığımız yer
 
-**REF-PI-002 ac97 deney paketi tamam: 9 senaryo × 2 = 18/18 native PASS; standart testler 171/171. Doğrudan ürün benimsemesi NOT ACCEPTED. Sıradaki iş REF-PI-002B: kalıcı payload conflict ve dış etki sözleşmesi.**
+**REF-PI-002B dar atomik kabul deneyi PASS.** Aynı anahtar/aynı içerik tek native işi
+buluyor; farklı içerik/tür/çalışma kapsamı açık `request_payload_conflict` alıyor.
+Parmak izi ve native kabul aynı kayıt işleminde tutuluyor. Genel ürün benimsemesi,
+tam M1 hibrit ve M2 otonomi **hâlâ açık**; motor değiştirilmedi.
 
-M0 hazırlık tamam; **tam M1 hibrit kabulü ve M2 otonomi hâlâ açık**. OpenClaw–Hermes yerine başka motor seçilmedi. Pi ve OpenCode, yararlı parçaları değerlendirmek için kapsama alındı. Dört ayrı ajan döngüsü kurmuyoruz; tek harness ve tek yetkili oturum sahibi hedefleniyor.
-
-## Doğru çalışma klasörü ve dal
-
-| Alan | Kayıt |
+| Alan | Güncel adres |
 |---|---|
 | Varsayılan çalışma alanı | `C:\Antigravity\AlazHarness` |
-| Bu devam zincirinin aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97` |
-| Aktif dal | `alaz/ref-pi-002-durable-ac97` |
-| Önceki doğrulanmış taban | `99e2a4f210ea713e2d121505f52272a40c6641e3`; bu paket a39a1ea üzerinden geliştirildi |
-| Repo | `esoyuince/AlazHarness` — public, MIT |
-| Bu paketin Git/CI durumu | Kod commit e062ab67fd41b858758d46150a8c2a4ce1d7d944; push doğrulandı; aynı SHA için alaz/local-ci success,171/171. Sonraki doküman HEAD ayrı kontrol edilir. |
-| `main` durumu | Geliştirme paketleri henüz `main` ile birleştirilmedi |
+| Aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97` |
+| Aktif dal | `alaz/ref-pi-002b-admission-1720` |
+| Birleştirilen iki Durable tabanı | `9b801bd93d116223d57320bee379321ab383a6fd` ve `32654e4fbb403847ceec3cfbc94d3d046b84ec86` |
+| Yeni paketin yayın durumu | Yerel kabul tamam; commit/push ve aynı-commit CI henüz bu kayıt anında PENDING. Teslim eki aşağıya yazılacak. |
+| Repo | `esoyuince/AlazHarness`, public / MIT |
+| main | Geliştirme paketleri main ile birleştirilmedi. |
 
-Kökteki eski `alaz/hyb-001-component-slice` çalışma ağacı, kullanıcıya/eşzamanlı çalışmalara ait commit edilmemiş dosyalar içeriyor. **Sırf eski CURRENT-STATE.md öyle diyor diye HYB-001'i yeniden başlatma; kökte reset/clean/stash veya toplu commit yapma.** Önce yukarıdaki aktif çalışma ağacının canlı durumunu doğrula.
+Kökteki eski `alaz/hyb-001-component-slice` kirli çalışma ağacını güncel sanma;
+reset/clean/stash veya toplu commit yapma. Bu dalın kodları aktif worktree'dedir.
+Kökteki status.md kolay erişim kopyasıdır; izlenen sürüm bu aktif dalın kökünde.
+Dış değişiklikleri ezmeden iki kopyayı eşitle. CURRENT-STATE.md tarihsel ayrıntıdır.
 
-Bu dosyanın Git'te izlenen sürümü aktif dalın kökündedir. Varsayılan kökteki `status.md`, aynı devam kaydının kolay erişim kopyasıdır. İş sonunda kendi güncellemeni doğrula ve iki kopyayı, dış değişiklik yoksa eşitle; sessizce başka bir işin kaydının üzerine yazma. Yeni bir aktif dal seçilirse bu tabloyu ve kökteki kopyayı birlikte güncelle.
+## Tamamlanan aşamalar
 
-## Yapılan işler
+| İş | Kapsam ve kanıt |
+|---|---|
+| M0 | Düzenli çalışma alanı, forklar/pinler, MIT yayın ve alaz-server CI; `evidence/publication/`. |
+| HYB-001/002 | Seçilmiş OpenClaw/Hermes kaynakları ve stdio/HTTP sözleşmeleri birleştirildi; `config/components.lock.json`. |
+| Hermes native | Gerçek AIAgent/read_file; model yanıtları yerel taklit; `evidence/hyb-003/`. |
+| REF-PI-001 | Gerçek Pi Agent/provider/read, önceki 6×2 yerel deney; `evidence/ref-pi-001/`. |
+| REF-PI-002 | İki ayrı Durable kesinti karakterizasyonu. Kendi tarihsel kanıtları `evidence/ref-pi-002/` ve `evidence/ref-pi-002-sqlite/` altında korundu. |
+| REF-PI-002B | İki Durable Git geçmişi uzlaştırıldı; tek native işlemde içerik-parmak-izi/kabul; `docs/research/REF-PI-002B-ADMISSION.md`. |
 
-| İş / kilometre taşı | Sonuç ve kapsam | Git / kanıt |
-|---|---|---|
-| M0 başlangıç | Çalışma alanı, ilk MVP taslağı, OpenClaw/Hermes forkları ve sabit kaynaklar hazır. | `bb86dc9`; `docs/MVP-v0.1.md`, `sources.lock.json` |
-| Açık kaynak ve sunucu CI | MIT yayın, GitHub remote ve alaz-server Local CI kuruldu. | `dcd809d`, `58b210a`; `evidence/publication/2026-10-15.json` |
-| HYB-001/002 bileşenleri | OpenClaw/Hermes kaynak dilimleri ve stdio/HTTP sözleşme testleri birleştirildi; tek kaynak ağacı ve kilit. | `99d6fe1`; `config/components.lock.json`, `evidence/hyb-003/` |
-| Gerçek Hermes araç turu | Gerçek AIAgent ve read_file çalıştı; model yanıtları kontrollü yerel HTTP taklidi. | `evidence/hyb-003/native-file-read.json`, `native-budget-summary.json` |
-| Pi/OpenCode incelemesi | Resmî kaynaklar indirildi, commit ve dosya hash'leri sabitlendi; ilk bileşen değerlendirmesi yazıldı. | `3bf5305`; `docs/research/PI-OPENCODE-REVIEW.md`, `config/research-sources.lock.json` |
-| REF-PI-001 | Gerçek Pi Agent + sağlayıcı ayrıştırması + yerleşik read; 6 senaryo × 2 tekrar = 12/12 yerel PASS. | `99e2a4f`; `docs/research/REF-PI-001-NATIVE.md`, `evidence/ref-pi-001/` |
+Önceki 169/171 standart veya 18/18 native toplamları yeni kabul sayısına eklenmedi.
+Paralel eski Pi Agent dalı `alaz/ref-pi-001` / `c31cf19260675cc991f9caf07af45442611085e6`
+bu iki Durable geçmişinin uzlaştırılması dışında kaldı; kanıt karşılaştırılmadan silinmez.
 
-Kanıt yolları aktif çalışma ağacına göredir. Başka bir daldaki aynı dosya adı aynı içeriği/sonucu garanti etmez. Eski başarı sayıları yeni deneye eklenmez.
+## Son yerel doğrulama
 
-## Son doğrulama ve sınırları
+- **248/248 standart test PASS**, fail/error/skip 0, exit0, 32.709 saniye.
+  Komut: `python -B -m unittest discover -s tests -v`.
+- **12 native senaryo ×2 =24/24 PASS**, exit0; altı gerçek sahipli child-process kill.
+  Yeni süreç açılmadan önce eski çocuk toplandı; SQLite ara/son kayıtları üst süreçte salt okunur doğrulandı.
+- **Bağımsız iki QA ailesi 12/12 PASS**, final aday üzerinde yeniden çalıştırıldı.
+  Bunlar graceful reopen/izinli yerel kayıt testleridir; native24 veya standart248 içine eklenmez.
+- Kayıtlar: `evidence/ref-pi-002b/local-validation.json`, `native-suite.json`,
+  `independent-qa-recheck.json`, `root-unittest.txt`, `source-custody.json`.
+- Son aday SHA256: `47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11`.
+  Native worker/runner/compatibility hash'leri suite.json ile eşleşir.
+- İlk SQL kind sayım hatası, null/byte-sınırı açıkları ve SQLite bağlantı ömrü sorunu
+  düzeltildi. Başarısız kayıtlar `initial-failures.json` ve ignored runtime içinde korunur.
+- İlk adayın yabancı Harness handle açığı kapandı: yalnız sayısal conversationId alınır,
+  handle bağlı Harness üzerinden çözülür. Bağımsız eski raporun P1 ve kaynak-ömrü
+  paragrafları tarihsel ara bulgulardır; final kontrol yukarıdaki kanıtta PASS.
 
-- **Standart testler:** son geliştirme paketinde yerel 146/146; aynı commit için sunucuda 146/146, başarısız ve atlanan test yok. Yerel kayıt `evidence/ref-pi-001/local-validation.json`; son sunucu/Git teslim özeti varsayılan kökün `runtime/pi-ref001-ac97/FINAL-STATE.json` dosyasında.
-- **Gerçek Pi deneyi:** 6 farklı senaryo, iki tekrar, 12 başarılı çalışma. Normal okuma, olmayan dosya, model beklerken iptal, tek tur, istek sınırı, kesilmiş araç çıktısı. `evidence/ref-pi-001/native-suite.json`.
-- **Ayrım:** 12 yerel Pi çalışması, 146 standart testin içinde değildir. Sunucu standart CI'sı gerçek Pi motorunu kurup çalıştırmadı.
-- Model yanıtları yerel taklit; gerçek model çıkarımı, ücretli model çağrısı veya otonom gündem döngüsü çalıştırılmadı. Test kontrolü üretim güvenlik/para garantisi değildir.
-- Hermes `max_iterations=1` sonrası özet/yeniden deneme çağrıları olabilir. Pi deneyindeki ekstra istek engellemesi genel bağlantı hatasına dönüşebiliyor; test kontrolünde `request_budget_exhausted` nedeni ayrıca korunuyor. Tur sayısı tek başına maliyet sınırı değildir.
+## Kabulün sınırı
 
-## Açık işler ve sıradaki kesin adım
+Mevcut hazırlanmış Pi `runtime/pi-ref001-ac97` kullanıldı. Upstream kodları/pinleri,
+kişisel profiller/anahtarlar ve sunucu CI profili değiştirilmedi. Yeni dependency
+kurulumu, model çıkarımı, ücretli çağrı veya otonom gündem çalıştırılmadı.
 
-**Öncelik REF-PI-002B — NOT RUN.** Önce docs/research/REF-PI-002-SQLITE.md sonucunu oku; yukarıdaki araştırma deneyleri artık tamamlandı. Önceki REF-PI-002 başlangıç planı: Sabitlenmiş Pi Durable API'sini ve ilgili upstream testleri oku; ayrı profil/depolama ile şu durumları test et: aynı requestId + değişmiş içerik, iş kabulü ile dış etki/sonuç kaydı arasındaki kesinti, güvenli olmayan tekrar, bekleyiciyi iptal ile işi iptal ayrımı, depolama hatası ve yeniden açma. Dış etki sayacını ajanın kendi beyanından bağımsız tut. Hermes'in oturumuna ikinci bir yazıcı ekleme.
+Atomiklik **tek canlı Harness sahibi** içindeki native mutation sırasındadır.
+20 eşzamanlı çağrı, çok-yazıcı süreç kilidi değildir. Parmak izi kaydı native
+conversation document family'dir; ikinci DB/queue/transcript yazarı eklenmedi.
+İç `admitSubmission` API'si commit/dosya hash'iyle sabitlenmiş deneysel bağlantıdır.
+Raw native submit yolu otomatik korunmaz; dış istekler host katmanından geçmelidir.
+ExecutionScope gerçek izin/model ayarlarıyla tutarlı şekilde host tarafından sağlanır.
 
-**Diğer açık kapılar:** OpenCode REF-OC-001 izin/olay testleri; gerçek Hermes Gateway / SessionAuthority / APIServerAdapter zinciri; tam OpenClaw girişi; bütün sağlayıcı/yardımcı çağrıları kapsayan istek-token-para bütçesi; işletim sistemi izolasyonu; hafıza/beceri transferi; sınırlı gerçek model kabulü. M2 bunların yerine geçen bir gösteriyle kapatılmaz.
+Etki belirsizken unsafe araç tekrar çalıştırılmadı; bu bütün dış servisler için
+exactly-once, yeni model tool taleplerini durdurma veya para bütçesi garantisi değildir.
+OS sandbox, güç kaybı, çok süreçli store kilidi, kalıcı kayıt temizliği/göç, gerçek
+Gateway ve sınırlı gerçek model kabulü açık. Standart sunucu CI native Pi kurmaz.
 
-**Bekleyen uzlaştırma:** Paralel bir Pi paketi `alaz/ref-pi-001` dalında, `c31cf19260675cc991f9caf07af45442611085e6` commit'inde görüldü; çalışma ağacı `scratch/worktrees/review-pi-opencode-46cc`. O dalın CURRENT-STATE.md kaydı 154 standart test ve 11 farklı yerel senaryo bildiriyor. Bunlar bu daldaki 146 / 12 sonuçlarıyla birleştirilmedi ve bu belge işi sırasında yeniden çalıştırılmadı. İlgili kod/kanıt farkını incelemeden merge, üzerine yazma veya toplama yapma. `alaz/hyb-003-integration-46cc` üzerindeki `26b1b90` da ayrı araştırma kaydıdır.
+## Sıradaki kesin iş
 
-## Kaynaklar ve yerel ortam
+**REF-OC-001 — NOT RUN:** sabit OpenCode kaynağının izin değerlendirmesi ve olay
+akışı/yeniden bağlanma sınırlarını, aynı şekilde kontrollü ve bağımsız gözlenen testlerle
+ölç. Ardından mevcut dört kaynaktan tek çekirdek/tek oturum sahibi için kanıta dayalı
+bileşen kararını yaz; sırf kapsama alındı diye dört motor birden ekleme.
 
-| Kaynak | Sabit commit | Varsayılan kökten konum |
-|---|---|---|
-| OpenClaw | `2dcbb6138d57dccfcd54f2f908ef9f38268b1229` | `vendor/openclaw` |
-| Hermes | `eb75627faf532fa6ffbdae59a0d14b0b385fc780` | `vendor/hermes-agent` |
-| Pi | `b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6` | `scratch/research-sources/20261015-pi-opencode-46cc/pi` |
-| OpenCode | `3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9` | `scratch/research-sources/20261015-pi-opencode-46cc/opencode` |
+Diğer açık kapılar: HYB-003 gerçek Hermes Gateway/SessionAuthority/APIServerAdapter,
+OpenClaw giriş zinciri; HYB-004 store sahipliği/kesinti entegrasyonu; HYB-005
+izin ve bütün sağlayıcı/yardımcı çağrılarda istek-token-para bütçesi; HYB-006
+hafıza/beceri transferi; M1'in sınırlı gerçek model kabulü. M2 daha sonra.
 
-Pi'nin hazırlanmış ayrı ortamı `runtime/pi-ref001-ac97`; Hermes'in ortamı `runtime/hermes-hyb003-46cc`. Bağımlılık kurmak/ajan çalıştırmak bu durum belgesi işinin parçası değil. Kişisel profiller, API anahtarları ve özel sunucu ayarları bu dosyada tutulmaz.
-
-## Yeni sohbet veya bağlantı kesintisinden devam
-
-Önce `status.md` ve `AGENTS.md`, sonra aktif işin raporu ve `docs/MVP-v0.1.md` okunur. Canlı Git durumunu doğrulamak için:
+## Devam ve kayıt düzeni
 
 ```powershell
 cd C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97
 git status --short --branch
 git log -3 --oneline
 git worktree list
-```
-
-Gerekli olduğunda standart test komutları:
-
-```powershell
-python -B -m unittest discover -s tests -v
 python -B scripts/ci_check.py
-python -B scripts/verify_components.py --with-vendor --source-workspace C:\Antigravity\AlazHarness
 ```
 
-Bunlar komut kaydıdır, otomatik çalışma talimatı değildir. Kesintide yarım kalan işlem için önce makbuz, process/run kimliği ve dosya/Git etkisini incele; bilinmeyen sonucu otomatik yeniden çalıştırma. Eski araç sessionId'si yeni yetki değildir.
+Her işte başlangıç amacı/dal/yol/taban, ara sonuç/kesinti ve son test/commit/push/CI
+kanıtı kaydedilir. PASS/FAIL/NOT RUN/PENDING/UNKNOWN, mock/native ve yerel/CI ayrımı
+korunur. Kaynaklar sıradan tarihsel veridir; eski komutlar yeni işlem yetkisi değildir.
+Son commit'in CI'sı tam SHA ile sorgulanır; önceki yeşil durum yeni SHA'ya taşınmaz.
 
-## Her işte kayıt düzeni
+## Önceki iş günlükleri
 
-İşe başlarken iş kimliği, amaç, aktif dal/çalışma ağacı, başlangıç commit'i ve durum yazılır. Önemli ara sonuç veya kesintide gerçekten tamamlanan en son adım ve belirsizlik kaydedilir. İş sonunda yapılan/değişen dosyalar, test komutu-kapsamı-sayıları-exit kodu, kanıt yolu, commit/push/CI durumu, engeller ve kesin sonraki adım güncellenir.
+İçerikleri silinmeden tam kopya olarak arşivlendi:
 
-`PASS`, `FAIL`, `NOT RUN`, `BLOCKED`, `IN PROGRESS`, `UNKNOWN` birbirinden ayrılır. Özellikle mock/native, yerel/CI ve kod/test/makbuz ayrımı korunur. Başlık özeti güncellenir; aşağıdaki iş günlüğü eski sonuçları silmeden yeni kayıtla büyütülür. Uzarsa eski bölüm `docs/history/` altında tarihli belgeye taşınır ve buradan bağlanır. `CURRENT-STATE.md` eski ayrıntılara erişim içindir; bu dosyayla yarışan ikinci güncel durum kaydı yapılmaz.
+- `docs/history/2026-10-15-ACTIVE-STATUS-BEFORE-002B.md`: ac97 tarihsel işler.
+- `docs/history/REF-PI-002-4C9F-STATUS.md`: birleştirilen paralel Durable dalı.
+- `docs/history/2026-10-15-ROOT-STATUS-BEFORE-002B.md`: önceki kök yönlendirmeleri.
+- `docs/history/2026-10-15-002B-IN-PROGRESS-STATUS.md`: bu işin başlangıç/ara QA günlüğü.
+- `docs/history/2026-10-15-002B-ROOT-IN-PROGRESS-STATUS.md`: kökteki bu iş ve paralel QA ekleri.
 
-## İş günlüğü
+### 2026-10-15 — REF-PI-002B — Yerel kabul / yayın öncesi
 
-### 2026-10-15 — STATUS-001 — Kalıcı devam kaydı
-
-**Durum: DONE — dokümantasyon ve yerel doğrulama.** Kullanıcının istediği kalıcı devam kaydı oluşturuldu. `status.md`, `AGENTS.md`, `CURRENT-STATE.md`, `docs/WORKSPACE-RULES.md` güncellendi; eski durum metinleri silinmedi. Aktif çalışma ağacı, ana devam zinciri, paralel paket uyarısı, kanıtlar ve REF-PI-002 sonraki adımı kaydedildi.
-
-Belge bağlantıları, temel commit referansları, iki status kopyasının eşitliği, eski metnin korunması, depo yayın kontrolü ve `git diff --check` PASS / exit 0. Bu belgelerin güncellenmesi için 146 ürün/yardımcı testi veya 12 native deney tekrar çalıştırılmadı; yukarıdaki sayılar son geliştirme paketinin kanıtlarıdır. Belge commit'inin push/CI sonucu gerektiğinde `git log -1 -- status.md` ile bulunan tam commit üzerinden sorgulanır; önceki yeşil sonuç yeni commit'e taşınmaz.
-
-Bu iş yalnız dört belgeyi kapsar. Yeni ürün kodu, model çağrısı, bağımlılık kurulumu, upstream güncellemesi veya main merge yok. Kökteki önceden mevcut 29 dosyanın içerik hash'leri korunmuştur. Sıradaki geliştirme işi REF-PI-002; paralel Pi paketi uyumluluğu okunmadan üzerine yazılmaz.
-
-### 2026-10-15 — REF-PI-002 — Başlangıç
-
-**IN PROGRESS.** Başlangıç commit a39a1ea08e108246463c983cc210975c9012364b. Aynı temiz çalışma ağacında yeni alaz/ref-pi-002-durable-ac97 dalı; ek worktree oluşturulmadı. Amaç: gerçek Durable kabul, aynı-anahtar uyuşmazlığı, kesinti/yan etki, bekleyici ve görev iptali, depolama hatası deneyleri. Mevcut hazırlanmış Pi kaynağı salt kaynak girdisi; deney verisi runtime/pi-durable-ref002-ac97 altında. Sonuçlar henüz NOT RUN; model çıkarımı ve ürün entegrasyonu yok.
-
-### 2026-10-15 — REF-PI-002 — Ara kontrol (ac97)
-
-İlk çalışma düzeneğinin Windows import URI ve sayısal TaskId varsayımları düzeltildi; upstream kodu değiştirilmedi, başarısız denemeler runtime içinde korundu. Gerçek Durable/SQLite ile 9 senaryonun ilk düzeltilmiş turu PASS. Beş senaryoda yalnız testin kendi alt süreci zorla kapatılıp yeni PID ile yeniden açıldı. Safe etiketi tek başına çift dış etkiyi önlemedi; aynı görev anahtarıyla dış tekilleştirme önledi. Şimdi giriş kabulü uyuşmazlığı ve bağımsız kesit sayaçları dahil, son iki tekrarlı doğrulama çalıştırılıyor. Kökte başka lane ref-pi-002-4c9f kendi status kaydını değiştirdiği için onun kaydı üzerine yazılmadı; sonuçlar otomatik toplanmayacak.
-
-### 2026-10-15 — REF-PI-002 — Sonuç (ac97)
-
-**DONE — dar native deney; benimseme NOT ACCEPTED.** Kök başlatıcı kontrolleri171/171
-PASS,25 yeni offline test; ayrı gerçek Durable/Harness/SQLite9 senaryo×2=18/18.
-10 gerçek child-process kill; her biri kimlik/nonce kontrolü ve exit bekleme sonrası
-yeni PID ile açıldı. Üst süreç dış DB'yi kill sonrası ve son durumda salt okunur
-sorguladı. Model faux; çıkarım/ücretli çağrı0. Yanlış URI/TaskId test düzeneği
-hataları ve ilk başarısız kayıtlar korundu; upstream kodu değişmedi.
-
-Aynı key + farklı write VE input eski submission'a döndü; Alaz strict conflict
-şartı sağlanmadı. Safe etiketi2 execute/2 etki; dış UNIQUE anahtarıyla2 execute/1 etki.
-Unsafe iş, kayıtsız dış etkiden sonra tekrar yürütülmedi; interrupted sonuç korundu.
-Bekleyici iptali işi iptal etmedi; conversation abort durdurdu. Enjekte commit
-hatası failed kapanma/sonraki red/hayalet yazı olmamasıyla sonuçlandı.
-
-Yeni dosyalar scripts/native_durable_sqlite_worker.mjs,
-scripts/run_durable_sqlite_probe.py, tests/test_durable_probe_contract.py,
-docs/research/REF-PI-002-SQLITE.md ve evidence/ref-pi-002-sqlite/.
-Backlog/CI/status güncellendi. Ham DB ve makbuzlar runtime/pi-durable-ref002-ac97.
-Kalıcı sonraki adım REF-PI-002B; no main merge, no engine replacement,
-M1/M2 açık. Elektrik kesintisi, fiziksel disk arızası ve çok-yazar güvenliği denenmedi.
-
-Paralel alaz/ref-pi-002-durable-4c9f kökte kendi status kaydını güncelledi.
-Onun metni silinmedi; bu ac97 sonuçları onun sayılarıyla toplanmadı.
-Bu konuşma için çalışma ağacı hâlâ scratch/worktrees/ref-pi-001-ac97,
-aktif dal alaz/ref-pi-002-durable-ac97. Bir sonraki iş önce canlı Git durumunu ve
-paralel paket farklarını okumalı; iki durum yazarı veya iki yürütme döngüsü eklememeli.
-
-### 2026-10-15 — REF-PI-002 — Git/CI teslimi (ac97)
-
-Kod commit'i `e062ab67fd41b858758d46150a8c2a4ce1d7d944` uzak dala gönderildi.
-Yerel171/171 ve alaz-server aynı SHA171/171 PASS; GitHub alaz/local-ci success.
-Kanıt evidence/ref-pi-002-sqlite/code-ci.json. Ayrı18 yerel native çalışma ve10
-kasıtlı process-kill bu171 standart testin içinde değildir. Benimseme hâlâ NOT ACCEPTED.
-
-Sonraki iş kimliği paralel kayıttaki adla birleştirildi: **REF-PI-002B**, yani
-kalıcı atomik payload-aware admission ve dış etki sözleşmesi. Bu iş henüz NOT RUN.
-Önce iki REF-PI-002 dalının kod/kanıt farkını tek bir takip çizgisinde uzlaştır;
-169/171 standart test veya18/18 native sayıları birbirine eklenmez. Paralel4c9f
-kaydı `db277a36ef96b808c25ae00725224f9ad61a95db` teslimi bildirdi; bu paket onun
-kodunu/testini benimsemedi veya değiştirmedi.
-
-Bu son ek yalnız durum/CI belgelemesidir; native testler tekrar çalıştırılmadı.
-Doküman commit'i için önceki kod commit'inin CI'sını otomatik taşımadan HEAD'i sorgula.
+**LOCAL ACCEPTANCE PASS; PUBLICATION PENDING.** Atomik admission katmanı, iç API
+sürüm kilidi, owned native worker/runner, fingerprint/kanıt testleri yazıldı.
+İki Durable geçmişinin çakışan üç belgesi uzlaştırıldı; diğer kaynaklar/kanıtlar korundu.
+Son248/248 standart,24/24 native ve bağımsız12/12 kontroller exit0. İlgili kaynak
+hash'leri değişmedi. Yeni katman üretim motoruna bağlanmadı; main merge yok.
+Bir sonraki kayıt gerçek commit/push/CI sonucunu, eski başarıyı taşımadan yazacak.

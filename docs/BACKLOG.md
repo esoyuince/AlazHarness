@@ -40,3 +40,18 @@ acceptance. Next: REF-PI-002. Standard CI only runs host/launcher unit contracts
 ## REF-PI-002 SQLite / ac97 sonucu
 
 Dokuz native senaryo iki tekrarda18/18 PASS;25 yeni offline guard ile171/171 kök test. Süreç kill/reopen ve bağımsız dış etki sayaçları: docs/research/REF-PI-002-SQLITE.md. Bu davranış incelemesidir; aynı-key farklı-payload conflict şartı FAIL ve safe işareti tek dış etki garantisi değil. Sonraki REF-PI-002B: kalıcı içerik parmak izi / dış etki sözleşmesi, tek oturum yazarı. Ürüne benimseme ve M1/M2 açık; paralel dal sonuçları otomatik birleştirilmez.
+
+## REF-PI-002B reconciliation
+
+Both Durable characterization suites are retained with separate historical receipts.
+The 4c9f suite adds storage-after-commit/ack-loss and provider identity; the ac97
+suite adds a non-idempotent safe negative control and an independent SQLite effect
+counter. Prior 169/171 or native18 totals are not added into a new acceptance claim.
+All current standard tests will be rerun. status.md is the live handoff owner.
+
+## REF-PI-002B yerel kabul — 2026-10-15
+
+Atomik içerik/iş-kabulü24/24 native ve248/248 birleştirilmiş standart test PASS;
+bağımsız owner/atomic QA12/12 ayrıca PASS. Üretim benimsemesi/M1/M2 açık.
+Güncel rapor REF-PI-002B-ADMISSION.md; sıradaki seçim kapısı REF-OC-001.
+Bu sayılar önceki karakterizasyonlara eklenmez; CI sonucu tam commit'te doğrulanır.

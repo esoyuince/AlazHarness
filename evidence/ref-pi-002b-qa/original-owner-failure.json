@@ -1,0 +1,52 @@
+{
+  "scope": "independent native SQLite checks against concurrent candidate; no production edits",
+  "module_sha256": "04803e7af88a7f89e5fda4c5aae7c55199e5d8832e5d0e3af08d5d5513d20a84",
+  "unchanged_during_run": true,
+  "model_calls": 0,
+  "tests": [
+    {
+      "name": "same-key-conflict-and-reuse",
+      "status": "PASS",
+      "details": {
+        "id": 9
+      }
+    },
+    {
+      "name": "concurrent-same-owner",
+      "status": "PASS",
+      "details": {
+        "requests": 12,
+        "admissions": 1
+      }
+    },
+    {
+      "name": "legacy-fails-closed",
+      "status": "PASS",
+      "details": {
+        "legacy": 8
+      }
+    },
+    {
+      "name": "foreign-harness-handle-isolation",
+      "status": "FAIL",
+      "error": {
+        "name": "AssertionError",
+        "message": "Foreign conversation was accepted; another store changed and an unrelated local submission was returned",
+        "code": "ERR_ASSERTION"
+      }
+    },
+    {
+      "name": "caller-mutation-snapshotted",
+      "status": "PASS",
+      "details": {
+        "stored": "initial"
+      }
+    },
+    {
+      "name": "scope-participates-in-fingerprint",
+      "status": "PASS"
+    }
+  ],
+  "passed": 5,
+  "failed": 1
+}
