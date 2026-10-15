@@ -1,0 +1,25 @@
+{
+  "scope": "three launcher refusal checks only; not native Gateway or additional middleware observations",
+  "checks": [
+    {
+      "case": "wrong_source_refused_before_execution",
+      "exit_code": 1,
+      "output_not_created": true,
+      "expected_diagnostic": true
+    },
+    {
+      "case": "existing_output_not_overwritten",
+      "exit_code": 1,
+      "original_preserved": true,
+      "expected_diagnostic": true
+    },
+    {
+      "case": "missing_source_no_install",
+      "exit_code": 1,
+      "output_not_created": true,
+      "expected_diagnostic": true
+    }
+  ],
+  "result": "PASS",
+  "script_sha256": "9cd008541c3e8ef23d309022c82a0be0f55e85668a3e77fd18363d9bbbda9418"
+}
