@@ -4,12 +4,14 @@ Son güncelleme: 15 Ekim 2026. Canlı Git durumunu bu kayıtla birlikte kontrol 
 
 ## Güncel çalışma noktası
 
-MAIN-INTEGRATION: LOCAL VERIFIED: kullanıcı HYB-004C dahil doğrulanmış dalın main'e
+MAIN-INTEGRATION: PUBLISHED, CI DELIVERY RECHECK: kullanıcı HYB-004C dahil doğrulanmış dalın main'e
 birleştirilmesini ve kalan işlerin sürdürülmesini onayladı. Yerel main,
 58b210ac9d400b84b028a2b57dcf1a4a396f089e ->
 2c79dce64bde02b45104d42d909784bea370dc1e fast-forward edildi; geçmiş korunuyor.
 Temiz main çalışma ağacında604/604 standart test PASS; kod değişmedi. Remote
-push ve aynı-commit CI sonucu ayrıca kontrol edilecek.
+push eccf8fc olarak tamamlandı. İlk GitHub webhook teslimi500/timeout aldı;
+aynı delivery kimliği kontrollü yeniden teslim edildi. Test FAIL değil; yeni
+main exact-SHA CI henüz gözlenmedi. Aşağıdaki kayıt bu belirsizliği korur.
 
 Varsayılan kök: C:\Antigravity\AlazHarness.
 Aktif temiz entegrasyon çalışma ağacı: scratch/worktrees/main-6f88.
@@ -59,3 +61,19 @@ eşzamanlılık retleri hazırlanıyor. Ana kontrol koduna ikinci yazar yok.
 604/604 standart test exit0/skip0. README ve status artık güncel kapsamı gösteriyor.
 Kaynak dal24 commit ilerideydi; 343 dosyalık mevcut paket içerik birleştirmesi
 yapılmadan fast-forward ile alındı. Bu ek belge commitinde runtime kodu değişmedi.
+
+### 15 Ekim 2026 — Bağımsız main doğrulaması QA72d4
+
+Birleşmiş2c79dce kodunda ayrı standart koşu604/604 PASS, exit0/skip0 ve kod
+drift0. evidence/main-integration-qa/validation.json ve unittest.txt; yalnız bu
+iki QA kanıt dosyası stage edildi. Native deneyler yeniden çalıştırılmadı.
+HYB005 QA taslağı runtime/main-host-qa-72d4/QA-PLAN.md; kapalı/unknown/retention
+ve kayıpACK için bağımsız ret senaryoları, tek ürün yazıcısı6f88 korunuyor.
+
+### 15 Ekim 2026 — Main yayın ve CI bağlantı incelemesi
+
+Main eccf8fc yayımlandı;604 yerel +604 bağımsız koşu ayrı PASS. İlk push
+webhook cevabı alınamadı, sunucuda matching iş yoktu; gerçek GitHub delivery
+aynı SHA/ref ile yeniden teslim istendi(202). Sunucu konfigürasyonu değiştirilmedi.
+Kanıt evidence/main-integration/webhook-redelivery.json. HYB005 yeni dalda
+ilerleyecek, CI belirsizliği yeşil sayılmayacak.

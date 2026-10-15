@@ -1,0 +1,9 @@
+{
+  "scope": "independent standard tests of ff main tree; native experiments not replayed",
+  "tests": 604,
+  "exit_code": 0,
+  "elapsed_seconds": 93.657,
+  "skips_reported": false,
+  "code_drift": [],
+  "head_after": "2c79dce64bde02b45104d42d909784bea370dc1e"
+}
