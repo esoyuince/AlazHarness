@@ -1,6 +1,6 @@
 # AlazHarness başlangıç iş sırası
 
-Ana hedef: docs/MVP-v0.1.md. Güncel gerçekleşen durum: CURRENT-STATE.md. Aşağıdaki sıra bir plan; tüm satırlar otomatik tamamlanmış değildir.
+Ana hedef: docs/MVP-v0.1.md. Güncel gerçekleşen durum: status.md. Aşağıdaki sıra bir plan; tüm satırlar otomatik tamamlanmış değildir.
 
 | İş | Çıktı | Kabul |
 |---|---|---|
@@ -36,3 +36,7 @@ before adopting components. These are NOT RUN, not replacements for open HYB gat
 The six low-level Pi Agent/provider/read-tool scenarios passed twice locally (12 runs).
 See docs/research/REF-PI-001-NATIVE.md. No Pi SDK-session/Durable or engine replacement
 acceptance. Next: REF-PI-002. Standard CI only runs host/launcher unit contracts.
+
+## REF-PI-002 SQLite / ac97 sonucu
+
+Dokuz native senaryo iki tekrarda18/18 PASS;25 yeni offline guard ile171/171 kök test. Süreç kill/reopen ve bağımsız dış etki sayaçları: docs/research/REF-PI-002-SQLITE.md. Bu davranış incelemesidir; aynı-key farklı-payload conflict şartı FAIL ve safe işareti tek dış etki garantisi değil. Sonraki REF-PI-002-ADAPTER: kalıcı içerik parmak izi / dış etki sözleşmesi, tek oturum yazarı. Ürüne benimseme ve M1/M2 açık; paralel dal sonuçları otomatik birleştirilmez.

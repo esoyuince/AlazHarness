@@ -90,3 +90,12 @@ It does NOT install or execute Pi. Actual pinned Pi native runs are an opt-in
 Windows gate via scripts/run_native_pi_suite.py and documented separately in
 docs/research/REF-PI-001-NATIVE.md. Six native scenarios were repeated twice; their
 12 receipts are not added to the root unittest count.
+
+## REF-PI-002 native versus default CI
+
+The default suite now contains171 root tests, including25 offline Durable
+evidence/identity/counter guards. It does not import or run native Pi. The9
+real SQLite/Harness scenarios (18 runs) are opt-in local Windows evidence and
+are not included in the171 count. No server policy, dependency installer or
+secret mount was added. Exact commit CI status must still be read after push.
+See docs/research/REF-PI-002-SQLITE.md for scope, fault injection and limits.

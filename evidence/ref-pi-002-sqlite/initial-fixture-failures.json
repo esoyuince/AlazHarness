@@ -1,0 +1,22 @@
+{
+  "scope": "development fixture failures, not accepted native runs",
+  "records": [
+    {
+      "run": "trial-01",
+      "native_passed": 0,
+      "native_failed": 1,
+      "cause": "Windows resolver passed as a drive path instead of a file URI; failed before Pi module load.",
+      "fix": "Use Path.as_uri for node --import."
+    },
+    {
+      "run": "trial-02",
+      "native_passed": 1,
+      "native_failed": 8,
+      "cause": "Host fixture asserted string taskId but pinned Pi record IDs are numeric. Control branches waited for a tool that failed before entry.",
+      "fix": "Check Number.isSafeInteger(api.taskId); serialize to text only for the external fixture key."
+    }
+  ],
+  "raw_logs_preserved_under_default_runtime": "pi-durable-ref002-ac97",
+  "source_patched": false,
+  "failed_runs_added_to_acceptance": false
+}

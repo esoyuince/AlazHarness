@@ -1,0 +1,48 @@
+{
+  "repository": "earendil-works/pi",
+  "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "source_clean_after_tests": true,
+  "copied_upstream_code": false,
+  "dependencies_installed_this_task": false,
+  "source_files": [
+    {
+      "path": "packages/durable/README.md",
+      "sha256": "08abf68a80468eb5f14ad497b6e044fc677217914b2f93ab5a35ddfe385c8d6a"
+    },
+    {
+      "path": "packages/durable/src/types.ts",
+      "sha256": "03875b4fcaa9e3cb85a12150b114747972c0944dd86f7967479b37ac4ab3a06e"
+    },
+    {
+      "path": "packages/durable/src/harness/types.ts",
+      "sha256": "5d308f63ffea57be068849cae7a50e30c5802fde8a4c7688d6adfc4274fb4b34"
+    },
+    {
+      "path": "packages/durable/src/harness/submissions.ts",
+      "sha256": "19c817b0e1988d97b16f13fc24855dd90aac68776e083a000b211b32bc147599"
+    },
+    {
+      "path": "packages/durable/src/harness/harness.ts",
+      "sha256": "e0e6d839a294edcf8f82355700aaebae867fd2538388f87932e0eb3d053bb319"
+    },
+    {
+      "path": "packages/durable/src/storage/sqlite/node.ts",
+      "sha256": "d3f058870a0a016359a64767fcfa33946c1e0f38b6ff5b7cf076eae5a0f78786"
+    },
+    {
+      "path": "packages/durable/test/harness-submissions.test.ts",
+      "sha256": "ab49770da6814b343a2edde23b6894549b9e05e8aedaa80ddeb99ef817f34e05"
+    },
+    {
+      "path": "packages/durable/test/harness-tools-recovery.test.ts",
+      "sha256": "9bb1d8354d6167c7d4fa535a97c493bded87c68cc2fb06a44b93289d1361e4e7"
+    },
+    {
+      "path": "packages/durable/test/harness-storage-failure.test.ts",
+      "sha256": "3d188ed3d18367cf0b66a627072a96f2a482b50c6574fe1dfadbe53551180d2f"
+    }
+  ],
+  "worker_sha256": "1fccb8b2625dde54e34a9bab2a5776dda60bd59a33338da18d002a689eee3d49",
+  "runner_sha256": "1b63104464fc103a06c0a284363d8a9410c87c6a9fa7ba5516bc5a5e2d1bcf8a",
+  "scope": "selected reviewed source identities, not all upstream tests executed"
+}

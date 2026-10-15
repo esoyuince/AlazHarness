@@ -1,0 +1,1546 @@
+{
+  "scope": "native Pi Durable/SQLite local experiments, scripted model, real bounded fixture effects",
+  "source_commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+  "worker_sha256": "1fccb8b2625dde54e34a9bab2a5776dda60bd59a33338da18d002a689eee3d49",
+  "runner_sha256": "1b63104464fc103a06c0a284363d8a9410c87c6a9fa7ba5516bc5a5e2d1bcf8a",
+  "scenario_count": 9,
+  "repeats": 2,
+  "passed": 18,
+  "failed": 0,
+  "complete": true,
+  "runs": [
+    {
+      "scenario": "duplicate-reopen",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 38744,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.313,
+          "post_exit_external": {
+            "attempts": 0,
+            "effects": 0,
+            "logical_keys": 0
+          },
+          "receipt": {
+            "scenario": "duplicate-reopen",
+            "phase": "seed",
+            "pid": 38744,
+            "nonce": "665abacea9382ce6848c634998a9398c",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "samePayloadSameId": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "note",
+              "pi.user",
+              "pi.system",
+              "pi.assistant"
+            ],
+            "toolResults": 0,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 0,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 9044,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.123,
+          "post_exit_external": {
+            "attempts": 0,
+            "effects": 0,
+            "logical_keys": 0
+          },
+          "receipt": {
+            "scenario": "duplicate-reopen",
+            "phase": "resume",
+            "pid": 9044,
+            "nonce": "665abacea9382ce6848c634998a9398c",
+            "modelCalls": 0,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "changedPayloadSameId": true,
+            "payloadConflictEnforced": false,
+            "typeMismatchRejected": true,
+            "inputChangedPayloadSameId": true,
+            "inputOriginalPreserved": true,
+            "newModelCallsOnInputRetry": 0,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "note",
+              "pi.user",
+              "pi.system",
+              "pi.assistant"
+            ],
+            "toolResults": 0,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 0,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 0,
+        "effects": 0,
+        "logical_keys": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "before-effect",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 34364,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.015,
+          "barrier": {
+            "scenario": "before-effect",
+            "phase": "seed",
+            "pid": 34364,
+            "nonce": "c3d414a1d85f2475e750a79a4aa62e2a",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "admitted-before-model-answer",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 0,
+            "effects": 0
+          },
+          "post_exit_external": {
+            "attempts": 0,
+            "effects": 0,
+            "logical_keys": 0
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 3528,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.137,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "before-effect",
+            "phase": "resume",
+            "pid": 3528,
+            "nonce": "c3d414a1d85f2475e750a79a4aa62e2a",
+            "modelCalls": 2,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "unsafe-effect",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 39716,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.225,
+          "barrier": {
+            "scenario": "unsafe-effect",
+            "phase": "seed",
+            "pid": 39716,
+            "nonce": "f821569df6d5a7d842dfc00bdb13d546",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "external-effect-before-native-result",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 40944,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.35,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "unsafe-effect",
+            "phase": "resume",
+            "pid": 40944,
+            "nonce": "f821569df6d5a7d842dfc00bdb13d546",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 1,
+            "interrupted": true,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "safe-effect",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 39868,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.223,
+          "barrier": {
+            "scenario": "safe-effect",
+            "phase": "seed",
+            "pid": 39868,
+            "nonce": "c82359ef1e61f4efdff768bb7eda8c7c",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "external-effect-before-native-result",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 32620,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.157,
+          "post_exit_external": {
+            "attempts": 2,
+            "effects": 2,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "safe-effect",
+            "phase": "resume",
+            "pid": 32620,
+            "nonce": "c82359ef1e61f4efdff768bb7eda8c7c",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 2,
+            "effects": 2,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 2,
+        "effects": 2,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "idempotent-effect",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 39176,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.243,
+          "barrier": {
+            "scenario": "idempotent-effect",
+            "phase": "seed",
+            "pid": 39176,
+            "nonce": "7846a1cae20984d7b991acc73b6eb923",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "external-effect-before-native-result",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 35208,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 0.977,
+          "post_exit_external": {
+            "attempts": 2,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "idempotent-effect",
+            "phase": "resume",
+            "pid": 35208,
+            "nonce": "7846a1cae20984d7b991acc73b6eb923",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 2,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 2,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "after-result",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 5272,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.219,
+          "barrier": {
+            "scenario": "after-result",
+            "phase": "seed",
+            "pid": 5272,
+            "nonce": "d14b1d92bad131b9e5c29f6881e2b09c",
+            "modelCalls": 2,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "native-result-before-final-answer",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 19092,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.013,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "after-result",
+            "phase": "resume",
+            "pid": 19092,
+            "nonce": "d14b1d92bad131b9e5c29f6881e2b09c",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "wait-cancel",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "single",
+          "pid": 36868,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 5.107,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "wait-cancel",
+            "phase": "single",
+            "pid": 36868,
+            "nonce": "386f3254c5787fb0d39ae97308a30474",
+            "modelCalls": 2,
+            "toolEntries": 1,
+            "toolAborts": 1,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "waitCancelledWorkSurvived": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "task-cancel",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "single",
+          "pid": 40888,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.234,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 0,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "task-cancel",
+            "phase": "single",
+            "pid": 40888,
+            "nonce": "baeb4ae39c0b864b9a505496eddea57f",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 1,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "submissionAbort": "already_placed",
+            "cancelledSubmission": {
+              "conversationId": 1,
+              "requestId": "request-1",
+              "type": "input",
+              "status": "unanswered",
+              "entry": 7,
+              "id": 8,
+              "reason": "aborted"
+            },
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "unanswered",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result"
+            ],
+            "toolResults": 1,
+            "toolErrors": 1,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 0,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "storage-failure",
+      "repeat": 1,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 30892,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.79,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 0,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "storage-failure",
+            "phase": "seed",
+            "pid": 30892,
+            "nonce": "30c41f156a905d7e356b6450048f2fe3",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 1,
+            "reports": [
+              "Error: ALAZ_INJECTED_COMMIT_FAILURE"
+            ],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "closedReason": "failed",
+            "rejectedAfterFailure": true,
+            "pendingWaitRejected": true,
+            "attempts": 1,
+            "effects": 0,
+            "result": "PASS",
+            "faultScope": "injected storage.commit rejection before SQLite commit, not physical disk failure"
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 38836,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 0.926,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 0,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "storage-failure",
+            "phase": "resume",
+            "pid": 38836,
+            "nonce": "30c41f156a905d7e356b6450048f2fe3",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "phantomWrite": false,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "recovery-note",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 1,
+            "interrupted": true,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 0,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "duplicate-reopen",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 24428,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.079,
+          "post_exit_external": {
+            "attempts": 0,
+            "effects": 0,
+            "logical_keys": 0
+          },
+          "receipt": {
+            "scenario": "duplicate-reopen",
+            "phase": "seed",
+            "pid": 24428,
+            "nonce": "eeec2e8dfd6e74cb9fea1bb69e222c35",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "samePayloadSameId": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "note",
+              "pi.user",
+              "pi.system",
+              "pi.assistant"
+            ],
+            "toolResults": 0,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 0,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 30236,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.002,
+          "post_exit_external": {
+            "attempts": 0,
+            "effects": 0,
+            "logical_keys": 0
+          },
+          "receipt": {
+            "scenario": "duplicate-reopen",
+            "phase": "resume",
+            "pid": 30236,
+            "nonce": "eeec2e8dfd6e74cb9fea1bb69e222c35",
+            "modelCalls": 0,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "changedPayloadSameId": true,
+            "payloadConflictEnforced": false,
+            "typeMismatchRejected": true,
+            "inputChangedPayloadSameId": true,
+            "inputOriginalPreserved": true,
+            "newModelCallsOnInputRetry": 0,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "note",
+              "pi.user",
+              "pi.system",
+              "pi.assistant"
+            ],
+            "toolResults": 0,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 0,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 0,
+        "effects": 0,
+        "logical_keys": 0
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "before-effect",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 31604,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 2.14,
+          "barrier": {
+            "scenario": "before-effect",
+            "phase": "seed",
+            "pid": 31604,
+            "nonce": "8b2c3ca3866c3ce130b107ee63f1aeef",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "admitted-before-model-answer",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 0,
+            "effects": 0
+          },
+          "post_exit_external": {
+            "attempts": 0,
+            "effects": 0,
+            "logical_keys": 0
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 37816,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 0.915,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "before-effect",
+            "phase": "resume",
+            "pid": 37816,
+            "nonce": "8b2c3ca3866c3ce130b107ee63f1aeef",
+            "modelCalls": 2,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "unsafe-effect",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 14104,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 0.992,
+          "barrier": {
+            "scenario": "unsafe-effect",
+            "phase": "seed",
+            "pid": 14104,
+            "nonce": "40d4eeedf3250b3715992364872e32c5",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "external-effect-before-native-result",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 15308,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.103,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "unsafe-effect",
+            "phase": "resume",
+            "pid": 15308,
+            "nonce": "40d4eeedf3250b3715992364872e32c5",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 1,
+            "interrupted": true,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "safe-effect",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 35324,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.566,
+          "barrier": {
+            "scenario": "safe-effect",
+            "phase": "seed",
+            "pid": 35324,
+            "nonce": "77c0245d0696b928dc255267d51a50ad",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "external-effect-before-native-result",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 19476,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 0.996,
+          "post_exit_external": {
+            "attempts": 2,
+            "effects": 2,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "safe-effect",
+            "phase": "resume",
+            "pid": 19476,
+            "nonce": "77c0245d0696b928dc255267d51a50ad",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 2,
+            "effects": 2,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 2,
+        "effects": 2,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "idempotent-effect",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 30612,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.093,
+          "barrier": {
+            "scenario": "idempotent-effect",
+            "phase": "seed",
+            "pid": 30612,
+            "nonce": "f12660363651fe01513fd392cd912922",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "external-effect-before-native-result",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 5060,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.07,
+          "post_exit_external": {
+            "attempts": 2,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "idempotent-effect",
+            "phase": "resume",
+            "pid": 5060,
+            "nonce": "f12660363651fe01513fd392cd912922",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 2,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 2,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "after-result",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 24752,
+          "exit_code": 1,
+          "intentional_kill": true,
+          "timed_out": false,
+          "elapsed_seconds": 1.199,
+          "barrier": {
+            "scenario": "after-result",
+            "phase": "seed",
+            "pid": 24752,
+            "nonce": "39bd10e2af7cc2638c2e32299d5ac51b",
+            "modelCalls": 2,
+            "toolEntries": 1,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "boundary": "native-result-before-final-answer",
+            "rootId": 1,
+            "submissionId": 8,
+            "attempts": 1,
+            "effects": 1
+          },
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 39272,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.226,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "after-result",
+            "phase": "resume",
+            "pid": 39272,
+            "nonce": "39bd10e2af7cc2638c2e32299d5ac51b",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "wait-cancel",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "single",
+          "pid": 7860,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.161,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 1,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "wait-cancel",
+            "phase": "single",
+            "pid": 7860,
+            "nonce": "b278394d7fd02fea858e8ce71da772f7",
+            "modelCalls": 2,
+            "toolEntries": 1,
+            "toolAborts": 1,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "waitCancelledWorkSurvived": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 0,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 1,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 1,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "task-cancel",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "single",
+          "pid": 10504,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.03,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 0,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "task-cancel",
+            "phase": "single",
+            "pid": 10504,
+            "nonce": "c128a69215c5687417e318715624b321",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 1,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "submissionAbort": "already_placed",
+            "cancelledSubmission": {
+              "conversationId": 1,
+              "requestId": "request-1",
+              "type": "input",
+              "status": "unanswered",
+              "entry": 7,
+              "id": 8,
+              "reason": "aborted"
+            },
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "unanswered",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "pi.tool-result"
+            ],
+            "toolResults": 1,
+            "toolErrors": 1,
+            "interrupted": false,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 0,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    },
+    {
+      "scenario": "storage-failure",
+      "repeat": 2,
+      "phases": [
+        {
+          "phase": "seed",
+          "pid": 20492,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.07,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 0,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "storage-failure",
+            "phase": "seed",
+            "pid": 20492,
+            "nonce": "e8bcc1faccba5e71f70f2cb1403cd98f",
+            "modelCalls": 1,
+            "toolEntries": 1,
+            "toolAborts": 1,
+            "reports": [
+              "Error: ALAZ_INJECTED_COMMIT_FAILURE"
+            ],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "closedReason": "failed",
+            "rejectedAfterFailure": true,
+            "pendingWaitRejected": true,
+            "attempts": 1,
+            "effects": 0,
+            "result": "PASS",
+            "faultScope": "injected storage.commit rejection before SQLite commit, not physical disk failure"
+          }
+        },
+        {
+          "phase": "resume",
+          "pid": 25380,
+          "exit_code": 0,
+          "intentional_kill": false,
+          "timed_out": false,
+          "elapsed_seconds": 1.203,
+          "post_exit_external": {
+            "attempts": 1,
+            "effects": 0,
+            "logical_keys": 1
+          },
+          "receipt": {
+            "scenario": "storage-failure",
+            "phase": "resume",
+            "pid": 25380,
+            "nonce": "e8bcc1faccba5e71f70f2cb1403cd98f",
+            "modelCalls": 1,
+            "toolEntries": 0,
+            "toolAborts": 0,
+            "reports": [],
+            "modelInferenceCalls": 0,
+            "paidCalls": 0,
+            "phantomWrite": false,
+            "sameSubmissionAfterReopen": true,
+            "rootId": 1,
+            "submissionId": 8,
+            "submissionStatus": "done",
+            "entryKinds": [
+              "pi.user",
+              "pi.system",
+              "pi.assistant",
+              "recovery-note",
+              "pi.tool-result",
+              "pi.assistant"
+            ],
+            "toolResults": 1,
+            "toolErrors": 1,
+            "interrupted": true,
+            "liveIdle": true,
+            "attempts": 1,
+            "effects": 0,
+            "result": "PASS",
+            "powerFailureTested": false,
+            "autonomyTested": false
+          }
+        }
+      ],
+      "external": {
+        "attempts": 1,
+        "effects": 0,
+        "logical_keys": 1
+      },
+      "errors": [],
+      "result": "PASS"
+    }
+  ],
+  "adoption_status": "NOT_ACCEPTED_without_host_payload_conflict_and_effect_policy",
+  "power_failure_tested": false,
+  "multi_process_writer_safety_tested": false,
+  "model_inference_calls": 0,
+  "paid_calls": 0
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "offline root contract/guard tests; native Durable cases are separate",
+  "exit_code": 0,
+  "elapsed_seconds": 30.374,
+  "tests": 171,
+  "failed": 0,
+  "skipped": 0
+}
