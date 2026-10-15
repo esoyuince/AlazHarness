@@ -1,0 +1,8 @@
+{
+  "scope": "full offline standard suite; actual native trials separate",
+  "exit_code": 0,
+  "tests": 386,
+  "elapsed_seconds": 33.349,
+  "no_skips_reported": true,
+  "observed_code_drift": []
+}

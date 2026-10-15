@@ -1,0 +1,179 @@
+{
+  "scope": "independent two-store process crash observation; not general recovery acceptance",
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "errors": [],
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "programs": {
+    "scripts\\run_gateway_gap_qa.py": "e825eff60036b163d952d3824d56d412a49fb53e6d07fa8d4ea73b37cd07cad0",
+    "scripts\\qa\\gateway_gap_client.mjs": "9dd53b924efa75ecf43e6e4a08dde0e7a6ada7bf7d714f9d8dac058b55d5310d",
+    "scripts\\native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+    "scripts\\gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts\\gateway_gap_contract.py": "d6ae0c44fee3ba462568cdb7556e4ad3d7bba150fedd424c5a59640137c79e0f",
+    "packages\\claw-hermes\\hermes-runs.mjs": "a89699baa24d7318a2ff770911580f031b40893970960680abc139fdb0236c21"
+  },
+  "first_ready": {
+    "pid": 3736,
+    "nonce": "980cb9b61a669e44c6e944c1221df9db",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "a8973fbd249f46608fd1e8220918c545",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 56969
+  },
+  "barrier": {
+    "read_only": true,
+    "integrity": "ok",
+    "admissions": [],
+    "messages": 0,
+    "journal_mode": "delete",
+    "reservations": [
+      {
+        "run_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+        "status_json": "{\"created_at\":1792063155.3066363,\"model\":\"hermes-agent\",\"object\":\"hermes.run\",\"run_id\":\"run_1bfa7ea63b7543e7b51005642d09b533\",\"session_id\":\"run_1bfa7ea63b7543e7b51005642d09b533\",\"status\":\"queued\",\"updated_at\":1792063155.3066468}",
+        "owner_pid": 3736,
+        "owner_started": 179206314409,
+        "fingerprint": "a768592b0eb541e4b7ad30d974eed235b98f96b906b27d92666b5be871861c5f"
+      }
+    ],
+    "reservation_integrity": "ok"
+  },
+  "first_exit": {
+    "nonce": "980cb9b61a669e44c6e944c1221df9db",
+    "launcher_pid": 8,
+    "native_pid": 3736,
+    "ownership_chain": [
+      3736,
+      8
+    ],
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": true,
+    "forced": true,
+    "shutdown": null
+  },
+  "first_request": {
+    "error_type": "ConnectionResetError"
+  },
+  "after_crash": {
+    "read_only": true,
+    "integrity": "ok",
+    "admissions": [],
+    "messages": 0,
+    "journal_mode": "delete",
+    "reservations": [
+      {
+        "run_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+        "status_json": "{\"created_at\":1792063155.3066363,\"model\":\"hermes-agent\",\"object\":\"hermes.run\",\"run_id\":\"run_1bfa7ea63b7543e7b51005642d09b533\",\"session_id\":\"run_1bfa7ea63b7543e7b51005642d09b533\",\"status\":\"queued\",\"updated_at\":1792063155.3066468}",
+        "owner_pid": 3736,
+        "owner_started": 179206314409,
+        "fingerprint": "a768592b0eb541e4b7ad30d974eed235b98f96b906b27d92666b5be871861c5f"
+      }
+    ],
+    "reservation_integrity": "ok"
+  },
+  "second_ready": {
+    "pid": 22640,
+    "nonce": "b7d7c5bde30a33c520ee3810d42d6f28",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 2,
+    "instance_id": "c96785a132d14a789828f4a9fd6d549a",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 56969
+  },
+  "client_exit": 0,
+  "client": {
+    "nonce": "b7d7c5bde30a33c520ee3810d42d6f28",
+    "status": {
+      "created_at": 1792063155.3066363,
+      "model": "hermes-agent",
+      "object": "hermes.run",
+      "run_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+      "session_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+      "status": "interrupted",
+      "updated_at": 1792063165.8609412,
+      "error": "The gateway restarted before this run settled.",
+      "last_event": "run.interrupted"
+    },
+    "replay": {
+      "run_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+      "status": "interrupted",
+      "replayed": true
+    },
+    "conflict": "http_409",
+    "observed": {
+      "run": {
+        "created_at": 1792063155.3066363,
+        "model": "hermes-agent",
+        "object": "hermes.run",
+        "run_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+        "session_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+        "status": "interrupted",
+        "updated_at": 1792063165.8609412,
+        "error": "The gateway restarted before this run settled.",
+        "last_event": "run.interrupted"
+      },
+      "backendConfirmed": true,
+      "stopRequested": false,
+      "hostReason": null,
+      "requiresOperator": false
+    }
+  },
+  "second_exit": {
+    "nonce": "b7d7c5bde30a33c520ee3810d42d6f28",
+    "launcher_pid": 23224,
+    "native_pid": 22640,
+    "ownership_chain": [
+      22640,
+      23224
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 22640,
+      "nonce": "b7d7c5bde30a33c520ee3810d42d6f28",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "after_recovery": {
+    "read_only": true,
+    "integrity": "ok",
+    "admissions": [],
+    "messages": 0,
+    "journal_mode": "delete",
+    "reservations": [
+      {
+        "run_id": "run_1bfa7ea63b7543e7b51005642d09b533",
+        "status_json": "{\"created_at\":1792063155.3066363,\"error\":\"The gateway restarted before this run settled.\",\"last_event\":\"run.interrupted\",\"model\":\"hermes-agent\",\"object\":\"hermes.run\",\"run_id\":\"run_1bfa7ea63b7543e7b51005642d09b533\",\"session_id\":\"run_1bfa7ea63b7543e7b51005642d09b533\",\"status\":\"interrupted\",\"updated_at\":1792063165.8609412}",
+        "owner_pid": 3736,
+        "owner_started": 179206314409,
+        "fingerprint": "a768592b0eb541e4b7ad30d974eed235b98f96b906b27d92666b5be871861c5f"
+      }
+    ],
+    "reservation_integrity": "ok"
+  },
+  "profile_config_unchanged": true,
+  "model_requests": 0,
+  "observation": "reservation_replayed_without_canonical_admission",
+  "product_recovery_accepted": false,
+  "fixture_errors": [],
+  "source_or_program_drift": false,
+  "elapsed_seconds": 24.049,
+  "result": "OBSERVATION_CONFIRMED"
+}

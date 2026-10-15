@@ -124,3 +124,11 @@ The supplementary independent OpenCode QA adds11 offline receipt tests. Its20 so
 ## Native Gateway opt-in
 
 `run_native_gateway.py` real Gateway boot/authority/API/read_file testidir; model sunucusu kontrollü localhosttur. `test_gateway_probe_contract.py` yalnız makbuz ve process sahiplik kurallarını offline sınar. Standart sunucu CI native Gateway ortamı kurmaz; native koşular ayrı kanıt dosyalarında tutulur. Rapor: docs/HYB-003-GATEWAY.md.
+
+## HYB-004 process recovery
+
+Gateway recovery native kill/reopen trials run explicitly on local Windows using
+the prepared Hermes environment. Standard CI executes only offline receipt,
+checkpoint, reader and launcher tests. It does not execute/kill a real Gateway.
+Characterization PASS is not general recovery acceptance; orphan-reservation
+semantics and arbitrary external-effect recovery remain open.

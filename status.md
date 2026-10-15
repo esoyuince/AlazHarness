@@ -1,133 +1,133 @@
 # AlazHarness — status
 
-Son güncelleme: 15 Ekim 2026. Her yeni işten önce bu kaydı ve canlı Git'i oku.
+15 Ekim 2026. Her yeni işte bu dosya ile canlı Git durumunu birlikte doğrula.
 
 ## Kaldığımız yer
 
-**HYB-003-GATEWAY dar native kabul PASS.** Mevcut HermesRunsClient, gerçek public
-Gateway başlangıcı, SessionAuthority/FIFO ve APIServerAdapter üzerinden yerleşik
-read_file aracını çalıştırdı. Normal/kayıp kabul yanıtı/model beklerken stop:
-3 senaryo ×2 ayrı profil ve süreç =6/6. Gerçek model çıkarımı ve ücretli çağrı0.
-Tam OpenClaw giriş zinciri, M1 ve otonomi M2 henüz kabul edilmedi.
+**HYB-004 seçilmiş Gateway kesinti davranışları: PASS.** Beş gerçek süreç
+kill/reopen senaryosu iki tekrarda10/10 geçti; fakat **genel otomatik kurtarma ve
+M1 kabulü NOT ACCEPTED**. İstek anahtarı rezervasyonu ile canonical iş kabulü
+arasındaki kalıcı boşluk doğrulandı. Sıradaki iş HYB-004B.
 
 | Alan | Güncel kayıt |
 |---|---|
 | Varsayılan kök | C:\Antigravity\AlazHarness |
 | Aktif çalışma ağacı | C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97 |
-| Aktif dal | alaz/hyb-003-gateway-5a5c |
-| Bu paketin tabanı | 45f7d0e9f1ebb7bd15dc846c0d0b7cf9276d758a |
-| Yayın | Kod c4a3f500eddc75d91c507ecb346af999237b32aa push edildi; aynı SHA alaz/local-ci success ve321/321 PASS. Son belge HEAD CI ayrıca sorgulanır. |
+| Aktif dal | alaz/hyb-004-recovery-208f |
+| Bu paketin tabanı | e6f596c2e73ba1db3b617b74f40423a531237cda |
+| Yayın | Yerel tamamlandı; bu yeni paketin commit/push/exact-SHA CI kontrolü PENDING. Teslim eki ayrıca kaydedilir. |
 | Remote | esoyuince/AlazHarness public MIT |
-| main | Bu geliştirme paketleri henüz main ile birleştirilmedi. |
+| main | Geliştirme paketleri henüz main ile birleştirilmedi. |
 
-Kökteki eski kirli alaz/hyb-001-component-slice dalı güncel ürün kodu değildir.
-Reset/clean/stash veya toplu commit yapma. Aktif status.md esas, kökteki dosya
-kolay erişim kopyasıdır. Eşzamanlı değişiklikleri okumadan üzerine yazma.
+Kök, eski kirli alaz/hyb-001-component-slice dalındadır; güncel ürün sanma.
+Aktif izlenen status.md esas; kök kopyası kolay erişim içindir. Reset/clean/stash,
+toplu commit veya eşzamanlı değişikliğin üzerine yazma yok. CURRENT-STATE.md
+önceki ayrıntıları korur, ikinci bağımsız güncel durum kaydı değildir.
 
-## Bu turda tamamlananlar
+## Bu turdaki somut sonuç
 
-Önce REF-OC-001 kod8117b0a için alaz-server/GitHub280/280 success doğrulandı;
-status teslim kaydı45f7d0e ile kapatıldı ve onun CI'sı da success okundu.
-Yeni Gateway deneyinin raporu docs/HYB-003-GATEWAY.md içindedir.
+- completed: tamamlanmış native sonuçtan sonra gerçek process kill; aynı profil
+  yeni epoch ile açılınca aynı run/admission/sonuç/usage. Yeni model/read çağrısı0.
+- before-model: bu isim ilk provider YANITI beklenirken kesintiyi ifade eder;
+  bir HTTP isteği vardır. started->unknown,0tool, aynı iş yeniden çalıştırılmadı.
+- after-tool: gerçek read_file sonucu kalıcı transcript ve ikinci model isteğinde;
+  kill sonrası1tool korunur, unknown kalır, ek model/araç yok, operatör gerekir.
+- before-reserve: iki kalıcı kayıt da yok. Eski geçici run_id404; deneyin açık
+  aynı-key yeniden gönderimi yeni bir işi1kez yürütür. Otomatik retry değildir.
+- after-reserve:1reservation/0canonical admission/0mesaj/0model/0tool. Reopen'da
+  aynı-key202 replay interrupted döner ama iş hiç kabul edilmemiştir.
 
-- Normal:1 native admission,1 user,1 gerçek read_file sonucu,2 scripted model HTTP.
-- Lost-ack: röle gerçek Gateway202'sini aldıktan sonra TCP yanıtını düşürür;
-  adapter sonucu unknown olarak bildirir. Deneyin AÇIK aynı-key tekrarı aynı
-  run_id'yi bulur;1 admission/1 tool/2 model HTTP. Otomatik POST retry eklenmedi.
-- Stop: gerçek provider isteği gözlendikten sonra native stop; ayrı terminal
-  sorgusu HTTPcancelled ve DBinterrupted gösterdi;1 admission/1 user/0 tool.
-- Üç senaryoda aynı-key tekrar, farklı payload409, yanlış auth401 ve salt-okuma
-  resume kontrolü var. Kapanış sonrası SQLite iki-store/kimlik/epoch ve transcript
-  bağımsız okunur; gerçek source dosyaları testte değiştirilmez.
-- Windows venv redirector+interpreter OS ancestry/held handle ile sahiplenilir.
-  İki süreç de exit0 ve native shutdown makbuzuyla kapandı. Bu bir OS sandbox değil.
-- Başarısız trial-01(aiohttp yok) ve trial-02(yanlış PID varsayımı) saklandı;
-  bu iki koşu6 kabul toplamına dahil edilmez.
+Son iki senaryoda test-only AST/line checkpoint795/799 ile zamanlama tutuldu;
+yerel değişkenler, native method/return veya veri değiştirilmedi. Diğer üçü
+trace kullanmadan public Gateway ve kontrollü model yanıtıyla yürür. Model0
+ifadesi gerçek inference içindir; bazı senaryolarda scripted HTTP çağrıları vardır.
 
-## Doğrulama ve ayrı kapsamlar
+## Sayılar ve kanıt kapsamı
 
-**321/321 offline kök testi PASS**, exit0, skip0.25 yeni Gateway kanıt/parent
-kontrolü ve16 bağımsız ret kanıt testi dahil. Bu sayı native6 veya ek9 ile toplanmaz.
-Ana native6 koşu yerel Windows/Python3.14/Node24 üzerinde geçti; CI bunları kurmaz.
-Ek bağımsız9 gerçek HTTP ret kontrolü ayrıca incelenip bu ana entegrasyon tarafından
-yeniden çalıştırıldı:0 admission/0tool, paylaşılan canonical store ve kapanış PASS.
-Ek QA programatik Gateway/authority kurar, public tam start_gateway yaşam döngüsünü
-sınamaz; ana6 koşu o yaşam döngüsünü gerçekten sınar.
+**386/386 standart offline test PASS**, exit0, skip0, ölçülen kod drift yok.
+Önceki321 +38 yeni primary kanıt/checkpoint testi +27 QA validator/reader testi.
+Bu standart sayı gerçek native koşu sayısı değildir ve aşağıdakilerle toplanmaz.
 
-Ana kanıt: evidence/hyb-003-gateway/native-suite.json, normal/lost-ack/stop-*.json,
-local-validation.json, initial-failures.json, independent-refusal-recheck.json.
-Ek bağımsız çalışma: evidence/hyb-gateway-qa ve
- docs/research/HYB-003-GATEWAY-INDEPENDENT-QA.md. Önceki280/70/20 sayıları tarihseldir.
+**10/10 primary native koşu:** beş senaryo×2,10owned hard kill ve20native
+incarnation. Her kill'de hem tutulan OS native handle hem venv launcher çıkışı
+beklendi; aynı profil/config/API key/port ile epoch1->2, ayrı instance/nonce.
+Replacement native kapanışları exit0; ilk kasıtlı kill nonzero. Her profile ait
+SQLite iki-store snapshot'ı süreçler kapandıktan sonra readonly doğrulandı.
+On koşunun final store'u paketleme aşamasında tekrar readonly okundu.
 
-## Kaynak/ortam
+**2 ayrı bağımsız QA kill/reopen:** external SQLite BEGIN IMMEDIATE rollback-only
+kilidi, trace veya native method değişimi OLMADAN aynı orphan boşluğunu gösterdi.
+İki profile de0model/0admission/0mesaj. QA'nın geçmişte sekiz primary store'a
+bakmış olması8 yeni yürütme değildir. Üç kanıt kapsamını ayrı tut.
 
-Hermes pin eb75627faf532fa6ffbdae59a0d14b0b385fc780; source-lock manifesti
-config/gateway-probe/source-lock.json. OpenClaw/Pi/OpenCode pinleri temiz ve aynı.
-HermesRunsClient ve10 seçilmiş upstream bileşeni değiştirilmedi. Kök32 eski
-ilgisiz dosya korundu; sunucu ayarı veya kişisel ajan profili değiştirilmedi.
+Ana kanıt: evidence/hyb-004/native-suite.json ve beş isim×iki JSON,
+local-validation.json, root-unittest.txt, source-custody.json,
+independent-qa-receipt-recheck.json. Ek QA: evidence/hyb-004-qa ve
+ docs/research/HYB-004-INDEPENDENT-QA.md. Ana rapor docs/HYB-004-GATEWAY-RECOVERY.md.
+İlk5 deneme gözlemleri tests/fixtures/gateway_recovery_receipts.json içinde
+offline fixture olarak korunur; final10 koşuya eklenmez veya tekrar sayılmaz.
 
-Mevcut minimal Hermes env API için aiohttp içermiyordu. Ayrı proje ortamı
-runtime/hyb-gateway-5a5c/prepared/env/Scripts/python.exe altında, Hermes'in kendi
-pm.build_environment frozen/sms extra ile hazırlandı. Bu pinli extra yalnız
-aiohttp3.14.3 içerir; SMS açılmadı. Eski environment/global araçlar korunur.
-Model yanıtları localhost scripted HTTP; API anahtarları yalnız bu yeni testlerin
-rastgele local değerleri. Runtime config/profil/log/sırlar Git'e eklenmez.
-Native SQLite koruması journal_mode=DELETE seçti; WAL/güç kaybı kabulü yok.
+## Açık ürün engeli — orphan reservation
 
-## Sıradaki kesin iş
+runs_idempotency.db ve state.db/session_admissions ayrı commit sınırlarıdır.
+Reservation varken hiç canonical iş yoksa restart fallback interrupted sunuyor.
+HermesRunsClient.backendConfirmed=true burada yalnız terminal HTTP etiketi;
+canonical execution kanıtı değil. requiresOperator=false sonucu da otomatik
+çözülmüş iş anlamına gelmez. Bu davranış karakterizasyon PASS'ini tam recovery
+başarısı diye sunma. Otomatik key silme/yeni POST veya operatör uzlaştırması
+bu pakette yazılmadı; kaynak motor/üretim adaptörü değişmedi.
 
-**HYB-004-GATEWAY-RECOVERY — NOT RUN.** Aynı native profil, API kimliği ve request
-anahtarını koruyarak farklı kalıcı kayıt sınırlarında owned process kill/reopen
-sına. Kabulden önce/sonra, gerçek araç sonucu ile terminal kayıt arasındaki boşluk,
-tamamlanmış cevabın yeni model çağrısız geri alınması ve yeni runtime epoch.
-Kayıtları her süreç exit'ten sonra readonly ölç; sonuç belirsizse tool'u otomatik
-tekrar başlatma. Hermes'in run_idempotency ve authority store'ları arasında crash
-atomikliği henüz kanıtlanmadı; Pi strict-admission sonucu Hermes'e taşınmaz.
+## Sıradaki kesin iş — HYB-004B
 
-Diğer açıklar: tam OpenClaw girişi; gerçek araç yetkileri ve tüm model/yardımcı
-çağrılarda istek/token/para bütçesi; OS izolasyonu; çok süreçli fencing; kalıcı
-hafıza/beceri transferi; sınırlı gerçek model M1 kabulü. M2 daha sonra.
+Canonical admission kanıtı olmayan terminal reservation için açık orphan/unknown
+sınıflandırma ve uzlaştırma sözleşmesi ekle. Sahiplik, aynı body fingerprint,
+run/session/admission/epoch ve authoritative store doğrulanmadan etkili retry yok.
+Missing HTTP cevabı veya yalnız terminal etiketiyle işi tamamlandı sayma.
+Kalıcı onarım/retention expiry ve gerçek dış etki sınırları ayrıca test edilmeli.
 
-## Devam komutları
+Gerçek write veya dış etki gerçekleşip tool sonucu henüz commit olmadan kesinti
+bu read_file paketinde SINANMADI. after-tool, kaydı ve ikinci model isteği görülmüş
+araç sonucundan SONRADIR. Pi dış etki/atomik kabul sonuçları Hermes'e taşınmaz.
+Çok süreçli fencing, disk/güç kaybı, WAL, OS sandbox, tam OpenClaw girişi,
+para/token bütçesi, hafıza/beceri transferi ve sınırlı gerçek model M1 açık.
+Otonom gündem M2 bunlar kapanmadan başlamaz.
+
+## Kaynak/ortam ve dosya koruması
+
+Hermes eb75627faf532fa6ffbdae59a0d14b0b385fc780, OpenClaw/Pi/OpenCode pinleri
+aynı ve temiz.32 eski kök dosya hash'i korundu. Asıl HermesRunsClient ve ürün
+kaynak kilitleri değişmedi. Yeni bağımlılık kurulmadı; mevcut
+runtime/hyb-gateway-5a5c/prepared/env/Scripts/python.exe kullanıldı.
+API key/config/private çıktılar ignored runtime/hyb004-208f altındadır;
+QA alanı runtime/hyb004-qa-5016. Gerçek model/ücretli çağrı0, üretim/sunucu
+ayar değişikliği0. Native journal_mode=DELETE; WAL/güç kaybı kanıtı yok.
 
 ```powershell
 cd C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97
 git status --short --branch
 git log -3 --oneline
-python -B scripts/ci_check.py
 python -B -m unittest discover -s tests -v
+python -B scripts/ci_check.py
 ```
 
-Native komutlar ve açık sınırlar docs/HYB-003-GATEWAY.md içinde; her output yeni
-olmalı. Önceki hazırlığı körlemesine tekrar kurma. Etkisi bilinmeyen çağrıyı yeniden
-göndermeden makbuzunu oku. Kod/push/aynı SHA CI ayrı doğrulanır.
+Native tekrar komutu ana rapordadır; her output yeni olmalı. Mevcut model
+ortamını veya sonucu belirsiz işi körlemesine tekrar çalıştırma. Native10+QA2
+Windows kanıtıdır; standart sunucu CI'sı bu native deneyleri kurup çalıştırmaz.
 
-## Korunan geçmiş ve bu işin günlüğü
+## Önceki işler ve korunan günlük
 
-Önceki status'un TAM kopyası:
-`docs/history/2026-10-15-STATUS-BEFORE-GATEWAY-DELIVERY.md`.
-O dosya REF-OC-001, bu Gateway işinin başlangıç/ara durumlarını ve QA208f kayıtlarını
-korur; daha eski iş günlüğü bağlantıları da kaybolmaz. CURRENT-STATE.md tarihseldir.
+M0 ve kaynak/CI hazırlığı; OpenClaw/Hermes bileşenleri; gerçek Hermes Agent/read;
+Pi Agent ve Durable/crash/strict admission; OpenCode permission/event araştırması;
+HYB-003 gerçek Gateway normal/lost-ack/stop önceki kapsamlarında korundu.
+Tek yürütücü karar ADR-0003: Hermes; Pi ikinci store/scheduler olarak eklenmez.
 
-### 2026-10-15 — HYB-003-GATEWAY — Yerel kapanış
+Önceki status'un TAM kopyası, bu işin başlangıç/ara ve QA günlükleriyle:
+`docs/history/2026-10-15-STATUS-BEFORE-HYB004-DELIVERY.md`.
+Önceki Gateway ve daha eski tarihsel günlük bağlantıları o dosyada korunur.
 
-Gerçek public Gateway/Authority/API yolu kuruldu ve6/6 native,321/321 standart,
-ek9/9 gerçek HTTP ret kontrolü ayrı kapsamlarda PASS. Kaynak gövdeleri veya
-prod adaptör değiştirilmedi; test model/röle/parent/kanıt scriptleri ve rapor yazıldı.
-Ücretli model ve otonom gündem yok. Yeni kodun Git/CI teslimi ayrıca eklenecek.
+### 2026-10-15 — HYB-004 — Yerel kapanış
 
-### 2026-10-15 — HYB-003-GATEWAY — Git / CI teslimi
-
-**DONE — dar native Gateway kabul paketi.** Kod commit'i
-`c4a3f500eddc75d91c507ecb346af999237b32aa` uzak alaz/hyb-003-gateway-5a5c dalında.
-Gerçek alaz-server aynı commit'i checkout ederek321/321 standart testi çalıştırdı;
-failed/skipped/suite_errors0, status_delivery posted. GitHub alaz/local-ci success
-ayrıca okundu. Makbuz: evidence/hyb-003-gateway/code-ci.json.
-
-Yerel6/6 public Gateway yaşam döngüsü ve ayrı9/9 programatik native HTTP ret
-kontrolü CI321'e eklenmez. Ücretli model veya otonomi yok; vendor, asıl adaptör,
-sunucu profili ve kişisel ayarlar korunur. Aktif iş günlüğü ve kök kolay erişim
-kopyası eşitlendi. Main merge yapılmadı. Bu son ek yalnız teslim kaydıdır;
-native deneyler bu belge güncellemesinde yeniden çalıştırılmadı.
-Sonraki kesin iş HYB-004-GATEWAY-RECOVERY; M1/M2 henüz kabul edilmedi.
-Belge commit'inin exact-CI durumu yeni HEAD üzerinden ayrıca kontrol edilmelidir.
+On gerçek process crash/reopen davranışı ve386 standart test doğrulandı.
+İki bağımsız rollback-only lock deneyi aynı orphan penceresini teyit etti.
+Bu paket source-characterization/test/kanıt teslimidir; orphan onarımı,
+genel otomatik recovery, M1/M2 kabulü değildir. Git/CI teslimi ayrı yazılır.

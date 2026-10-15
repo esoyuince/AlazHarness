@@ -1,0 +1,15 @@
+{
+  "scope": "primary read/validate of two existing independent QA receipts; not two new executions",
+  "observations": [
+    {
+      "receipt": "evidence/hyb-004-qa/gap-initial-observation.json",
+      "validator": "PASS",
+      "extra_native_execution": false
+    },
+    {
+      "receipt": "evidence/hyb-004-qa/gap-qualified-observation.json",
+      "validator": "PASS",
+      "extra_native_execution": false
+    }
+  ]
+}

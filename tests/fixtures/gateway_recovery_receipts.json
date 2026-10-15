@@ -1,0 +1,1297 @@
+{
+  "scope": "retained initial observations as offline validator fixtures; not rerun native evidence",
+  "cases": {
+    "completed": {
+      "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+      "scenario": "completed",
+      "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "errors": [],
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "files_sha256": {
+        "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+        "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+        "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+        "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+        "run_gateway_recovery.py": "f7be161483d2a38ea325e4a292f9f33c3cf5a4d516ada57492adcdb22a0a4f28",
+        "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279"
+      },
+      "os_sandbox_claimed": false,
+      "trace_checkpoint": false,
+      "first_ready": {
+        "pid": 33480,
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "e3b7062737b946009781c75e02dca648",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 63051
+      },
+      "first_admission": {
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "action": "start",
+        "value": {
+          "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+          "status": "started",
+          "replayed": false
+        },
+        "ok": true
+      },
+      "first_final": {
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "action": "resume",
+        "value": {
+          "run": {
+            "object": "hermes.run",
+            "model": "hermes-agent",
+            "runtime": {
+              "provider": "",
+              "model": "",
+              "route_source": "global"
+            },
+            "created_at": 1792062999.6638103,
+            "pending_controls": [],
+            "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "status": "completed",
+            "session_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "admission_id": "a08d9ba1c9c2430cb1080f595c691021",
+            "execution_generation": 1,
+            "output": "Recovered result ALAZ_RECOVERY_812cd4ede076bc5cc8bc52374b6e8651",
+            "usage": {
+              "input_tokens": 200,
+              "output_tokens": 40,
+              "total_tokens": 240
+            }
+          },
+          "backendConfirmed": true,
+          "stopRequested": false,
+          "hostReason": null,
+          "requiresOperator": false
+        },
+        "ok": true
+      },
+      "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+      "first_exit": {
+        "stage": "first",
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "launcher_pid": 40236,
+        "pid": 33480,
+        "chain": [
+          33480,
+          40236
+        ],
+        "ready": {
+          "pid": 33480,
+          "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 1,
+          "instance_id": "e3b7062737b946009781c75e02dca648",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 63051
+        },
+        "hard_kill": true,
+        "exit_code": 2,
+        "launcher_reaped": true,
+        "native_reaped": true
+      },
+      "before_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "a08d9ba1c9c2430cb1080f595c691021",
+            "request_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "target_session_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "status": "terminal",
+            "outcome": "completed",
+            "owner_epoch": 1,
+            "generation": 1,
+            "payload_digest": "857944cd497e0406d43bb80be8883d737570e738cbd9ce6a733a3b8cac656afd"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "completed"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 1,
+        "read_count": 1,
+        "tool_marker": true,
+        "marker_in_user": false,
+        "final_digests": [
+          "da7cfbc96bd1a3042f3c4ce700eba96a17d25872fdc383d48b7f8d80aa583928"
+        ]
+      },
+      "model_calls_before_restart": 2,
+      "second_ready": {
+        "pid": 4400,
+        "nonce": "9710992ac19c3a4e51798340893093ef",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "22630b376fa946c59e193f42160d7317",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 63051
+      },
+      "recovered_status": {
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "action": "status",
+        "value": {
+          "object": "hermes.run",
+          "pending_controls": [],
+          "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+          "status": "completed",
+          "session_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+          "admission_id": "a08d9ba1c9c2430cb1080f595c691021",
+          "execution_generation": 1,
+          "output": "Recovered result ALAZ_RECOVERY_812cd4ede076bc5cc8bc52374b6e8651",
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 40,
+            "total_tokens": 240
+          }
+        },
+        "ok": true
+      },
+      "reoffered": {
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "action": "start",
+        "value": {
+          "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+          "status": "completed",
+          "replayed": true
+        },
+        "ok": true
+      },
+      "resumed": {
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "action": "resume",
+        "value": {
+          "run": {
+            "object": "hermes.run",
+            "pending_controls": [],
+            "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "status": "completed",
+            "session_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "admission_id": "a08d9ba1c9c2430cb1080f595c691021",
+            "execution_generation": 1,
+            "output": "Recovered result ALAZ_RECOVERY_812cd4ede076bc5cc8bc52374b6e8651",
+            "usage": {
+              "input_tokens": 200,
+              "output_tokens": 40,
+              "total_tokens": 240
+            }
+          },
+          "backendConfirmed": true,
+          "stopRequested": false,
+          "hostReason": null,
+          "requiresOperator": false
+        },
+        "ok": true
+      },
+      "conflict": {
+        "nonce": "752e2471cbb3140a0e213ce1c2aea936",
+        "action": "start",
+        "ok": false,
+        "code": "http_409",
+        "mayHaveBeenAccepted": false
+      },
+      "second_exit": {
+        "stage": "second",
+        "nonce": "9710992ac19c3a4e51798340893093ef",
+        "launcher_pid": 36572,
+        "pid": 4400,
+        "chain": [
+          4400,
+          36572
+        ],
+        "ready": {
+          "pid": 4400,
+          "nonce": "9710992ac19c3a4e51798340893093ef",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 2,
+          "instance_id": "22630b376fa946c59e193f42160d7317",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 63051
+        },
+        "hard_kill": false,
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "shutdown": {
+          "pid": 4400,
+          "nonce": "9710992ac19c3a4e51798340893093ef",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "a08d9ba1c9c2430cb1080f595c691021",
+            "request_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "target_session_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "status": "terminal",
+            "outcome": "completed",
+            "owner_epoch": 1,
+            "generation": 1,
+            "payload_digest": "857944cd497e0406d43bb80be8883d737570e738cbd9ce6a733a3b8cac656afd"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_c4f78f51537247d6b52ca99a24416e2e",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "completed"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 1,
+        "read_count": 1,
+        "tool_marker": true,
+        "marker_in_user": false,
+        "final_digests": [
+          "da7cfbc96bd1a3042f3c4ce700eba96a17d25872fdc383d48b7f8d80aa583928"
+        ]
+      },
+      "model_calls": [
+        {
+          "tool_result": false,
+          "forbidden": false,
+          "stream": false
+        },
+        {
+          "tool_result": true,
+          "forbidden": false,
+          "stream": false
+        }
+      ],
+      "fixture_errors": [],
+      "profile_config_unchanged": true,
+      "program_drift": false,
+      "elapsed_seconds": 74.994,
+      "result": "OBSERVED"
+    },
+    "before-model": {
+      "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+      "scenario": "before-model",
+      "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "errors": [],
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "files_sha256": {
+        "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+        "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+        "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+        "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+        "run_gateway_recovery.py": "f7be161483d2a38ea325e4a292f9f33c3cf5a4d516ada57492adcdb22a0a4f28",
+        "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279"
+      },
+      "os_sandbox_claimed": false,
+      "trace_checkpoint": false,
+      "first_ready": {
+        "pid": 8660,
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "7055a211205c4ba3a1ae81a2f437b039",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 57611
+      },
+      "first_admission": {
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "action": "start",
+        "value": {
+          "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+          "status": "started",
+          "replayed": false
+        },
+        "ok": true
+      },
+      "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+      "first_exit": {
+        "stage": "first",
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "launcher_pid": 39300,
+        "pid": 8660,
+        "chain": [
+          8660,
+          39300
+        ],
+        "ready": {
+          "pid": 8660,
+          "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 1,
+          "instance_id": "7055a211205c4ba3a1ae81a2f437b039",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 57611
+        },
+        "hard_kill": true,
+        "exit_code": 2,
+        "launcher_reaped": true,
+        "native_reaped": true
+      },
+      "before_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "e85d31c55a0e4f58b265a0888064f490",
+            "request_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "target_session_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "status": "started",
+            "outcome": null,
+            "owner_epoch": 1,
+            "generation": 1,
+            "payload_digest": "a5b9bc3ba0bbbd4751186d0a6608373fb1ed5576cd12ca898d47d76209231f6c"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "running"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 0,
+        "read_count": 0,
+        "tool_marker": false,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls_before_restart": 1,
+      "second_ready": {
+        "pid": 37576,
+        "nonce": "f29b7252537ab4d92cbf4340fbd7ae4a",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "c040349b70844264b0ffe7a0b3b3e5e7",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 57611
+      },
+      "recovered_status": {
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "action": "status",
+        "value": {
+          "object": "hermes.run",
+          "pending_controls": [],
+          "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+          "status": "unknown",
+          "session_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+          "admission_id": "e85d31c55a0e4f58b265a0888064f490",
+          "execution_generation": 1,
+          "output": "",
+          "usage": {}
+        },
+        "ok": true
+      },
+      "reoffered": {
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "action": "start",
+        "value": {
+          "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+          "status": "unknown",
+          "replayed": true
+        },
+        "ok": true
+      },
+      "resumed": {
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "action": "resume",
+        "value": {
+          "run": {
+            "object": "hermes.run",
+            "pending_controls": [],
+            "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "status": "unknown",
+            "session_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "admission_id": "e85d31c55a0e4f58b265a0888064f490",
+            "execution_generation": 1,
+            "output": "",
+            "usage": {}
+          },
+          "backendConfirmed": false,
+          "stopRequested": false,
+          "hostReason": null,
+          "requiresOperator": true
+        },
+        "ok": true
+      },
+      "conflict": {
+        "nonce": "c66321971289bff04ea5e5acb0fc6e33",
+        "action": "start",
+        "ok": false,
+        "code": "http_409",
+        "mayHaveBeenAccepted": false
+      },
+      "second_exit": {
+        "stage": "second",
+        "nonce": "f29b7252537ab4d92cbf4340fbd7ae4a",
+        "launcher_pid": 36828,
+        "pid": 37576,
+        "chain": [
+          37576,
+          36828
+        ],
+        "ready": {
+          "pid": 37576,
+          "nonce": "f29b7252537ab4d92cbf4340fbd7ae4a",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 2,
+          "instance_id": "c040349b70844264b0ffe7a0b3b3e5e7",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 57611
+        },
+        "hard_kill": false,
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "shutdown": {
+          "pid": 37576,
+          "nonce": "f29b7252537ab4d92cbf4340fbd7ae4a",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "e85d31c55a0e4f58b265a0888064f490",
+            "request_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "target_session_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "status": "unknown",
+            "outcome": null,
+            "owner_epoch": 1,
+            "generation": 1,
+            "payload_digest": "a5b9bc3ba0bbbd4751186d0a6608373fb1ed5576cd12ca898d47d76209231f6c"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_d0b5e23dcc4a4ec8be24609178fb4a02",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "running"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 0,
+        "read_count": 0,
+        "tool_marker": false,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls": [
+        {
+          "tool_result": false,
+          "forbidden": false,
+          "stream": false
+        }
+      ],
+      "fixture_errors": [],
+      "profile_config_unchanged": true,
+      "program_drift": false,
+      "elapsed_seconds": 38.425,
+      "result": "OBSERVED"
+    },
+    "after-tool": {
+      "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+      "scenario": "after-tool",
+      "nonce": "f3699f1281599df31b1a20730cbec03e",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "errors": [],
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "files_sha256": {
+        "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+        "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+        "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+        "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+        "run_gateway_recovery.py": "f7be161483d2a38ea325e4a292f9f33c3cf5a4d516ada57492adcdb22a0a4f28",
+        "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279"
+      },
+      "os_sandbox_claimed": false,
+      "trace_checkpoint": false,
+      "first_ready": {
+        "pid": 37792,
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "c6e5a0280efa401ead34ff9c9a2c8a53",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 57550
+      },
+      "first_admission": {
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "action": "start",
+        "value": {
+          "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+          "status": "started",
+          "replayed": false
+        },
+        "ok": true
+      },
+      "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+      "first_exit": {
+        "stage": "first",
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "launcher_pid": 14832,
+        "pid": 37792,
+        "chain": [
+          37792,
+          14832
+        ],
+        "ready": {
+          "pid": 37792,
+          "nonce": "f3699f1281599df31b1a20730cbec03e",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 1,
+          "instance_id": "c6e5a0280efa401ead34ff9c9a2c8a53",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 57550
+        },
+        "hard_kill": true,
+        "exit_code": 2,
+        "launcher_reaped": true,
+        "native_reaped": true
+      },
+      "before_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "1ac7a71d38344ac4884cc44af3bb658f",
+            "request_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "target_session_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "status": "started",
+            "outcome": null,
+            "owner_epoch": 1,
+            "generation": 1,
+            "payload_digest": "729f878f76d61f21cdb3adaf85227501420c3afd73662b6012349fea05b0ae05"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "running"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 1,
+        "read_count": 1,
+        "tool_marker": true,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls_before_restart": 2,
+      "second_ready": {
+        "pid": 27600,
+        "nonce": "a0045f1e7ed6ca59390e8124624a8d6c",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "096921ea632040c8a7ba56653d910d51",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 57550
+      },
+      "recovered_status": {
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "action": "status",
+        "value": {
+          "object": "hermes.run",
+          "pending_controls": [],
+          "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+          "status": "unknown",
+          "session_id": "run_87c60cfa271643fc82456ca477ca49e4",
+          "admission_id": "1ac7a71d38344ac4884cc44af3bb658f",
+          "execution_generation": 1,
+          "output": "",
+          "usage": {}
+        },
+        "ok": true
+      },
+      "reoffered": {
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "action": "start",
+        "value": {
+          "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+          "status": "unknown",
+          "replayed": true
+        },
+        "ok": true
+      },
+      "resumed": {
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "action": "resume",
+        "value": {
+          "run": {
+            "object": "hermes.run",
+            "pending_controls": [],
+            "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "status": "unknown",
+            "session_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "admission_id": "1ac7a71d38344ac4884cc44af3bb658f",
+            "execution_generation": 1,
+            "output": "",
+            "usage": {}
+          },
+          "backendConfirmed": false,
+          "stopRequested": false,
+          "hostReason": null,
+          "requiresOperator": true
+        },
+        "ok": true
+      },
+      "conflict": {
+        "nonce": "f3699f1281599df31b1a20730cbec03e",
+        "action": "start",
+        "ok": false,
+        "code": "http_409",
+        "mayHaveBeenAccepted": false
+      },
+      "second_exit": {
+        "stage": "second",
+        "nonce": "a0045f1e7ed6ca59390e8124624a8d6c",
+        "launcher_pid": 37392,
+        "pid": 27600,
+        "chain": [
+          27600,
+          37392
+        ],
+        "ready": {
+          "pid": 27600,
+          "nonce": "a0045f1e7ed6ca59390e8124624a8d6c",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 2,
+          "instance_id": "096921ea632040c8a7ba56653d910d51",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 57550
+        },
+        "hard_kill": false,
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "shutdown": {
+          "pid": 27600,
+          "nonce": "a0045f1e7ed6ca59390e8124624a8d6c",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "1ac7a71d38344ac4884cc44af3bb658f",
+            "request_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "target_session_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "status": "unknown",
+            "outcome": null,
+            "owner_epoch": 1,
+            "generation": 1,
+            "payload_digest": "729f878f76d61f21cdb3adaf85227501420c3afd73662b6012349fea05b0ae05"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_87c60cfa271643fc82456ca477ca49e4",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "running"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 1,
+        "read_count": 1,
+        "tool_marker": true,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls": [
+        {
+          "tool_result": false,
+          "forbidden": false,
+          "stream": false
+        },
+        {
+          "tool_result": true,
+          "forbidden": false,
+          "stream": false
+        }
+      ],
+      "fixture_errors": [],
+      "profile_config_unchanged": true,
+      "program_drift": false,
+      "elapsed_seconds": 40.372,
+      "result": "OBSERVED"
+    },
+    "before-reserve": {
+      "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+      "scenario": "before-reserve",
+      "nonce": "a9f814068ac93f4403b101929e967a55",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "errors": [],
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "files_sha256": {
+        "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+        "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+        "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+        "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+        "run_gateway_recovery.py": "f7be161483d2a38ea325e4a292f9f33c3cf5a4d516ada57492adcdb22a0a4f28",
+        "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279"
+      },
+      "os_sandbox_claimed": false,
+      "trace_checkpoint": true,
+      "first_ready": {
+        "pid": 31732,
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "b7f3947fd412449882a780ad06e323ed",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 61891
+      },
+      "checkpoint": {
+        "phase": "before-reserve",
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "pid": 31732,
+        "run_id": "run_857a4317d61c4039853d0752146e68af",
+        "line": 795,
+        "source_sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+        "scope": "timing-only fault checkpoint; no HTTP ACK claimed"
+      },
+      "run_id": "run_857a4317d61c4039853d0752146e68af",
+      "first_exit": {
+        "stage": "first",
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "launcher_pid": 30580,
+        "pid": 31732,
+        "chain": [
+          31732,
+          30580
+        ],
+        "ready": {
+          "pid": 31732,
+          "nonce": "a9f814068ac93f4403b101929e967a55",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 1,
+          "instance_id": "b7f3947fd412449882a780ad06e323ed",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 61891
+        },
+        "hard_kill": true,
+        "exit_code": 2,
+        "launcher_reaped": true,
+        "native_reaped": true
+      },
+      "lost_response": {
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "action": "start",
+        "ok": false,
+        "code": "write_outcome_unknown",
+        "mayHaveBeenAccepted": true
+      },
+      "before_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [],
+        "runs": [],
+        "user_count": 0,
+        "tool_count": 0,
+        "read_count": 0,
+        "tool_marker": false,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls_before_restart": 0,
+      "second_ready": {
+        "pid": 34468,
+        "nonce": "675725a0b082f4539db4cd1d041b53fe",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "da2ba982f6784eccbf7959d252053c00",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 61891
+      },
+      "recovered_status": {
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "action": "status",
+        "ok": false,
+        "code": "http_404",
+        "mayHaveBeenAccepted": false
+      },
+      "reoffered": {
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "action": "start",
+        "value": {
+          "run_id": "run_003c77a2c9fc4adea8215700191266dc",
+          "status": "started",
+          "replayed": false
+        },
+        "ok": true
+      },
+      "new_run_id": "run_003c77a2c9fc4adea8215700191266dc",
+      "new_final": {
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "action": "resume",
+        "value": {
+          "run": {
+            "object": "hermes.run",
+            "model": "hermes-agent",
+            "runtime": {
+              "provider": "",
+              "model": "",
+              "route_source": "global"
+            },
+            "created_at": 1792063172.7371428,
+            "pending_controls": [],
+            "run_id": "run_003c77a2c9fc4adea8215700191266dc",
+            "status": "completed",
+            "session_id": "run_003c77a2c9fc4adea8215700191266dc",
+            "admission_id": "774d2995c6fb4b969dfc806053531e37",
+            "execution_generation": 1,
+            "output": "Recovered result ALAZ_RECOVERY_138730c635234326d47a73e0653818d7",
+            "usage": {
+              "input_tokens": 200,
+              "output_tokens": 40,
+              "total_tokens": 240
+            }
+          },
+          "backendConfirmed": true,
+          "stopRequested": false,
+          "hostReason": null,
+          "requiresOperator": false
+        },
+        "ok": true
+      },
+      "conflict": {
+        "nonce": "a9f814068ac93f4403b101929e967a55",
+        "action": "start",
+        "ok": false,
+        "code": "http_409",
+        "mayHaveBeenAccepted": false
+      },
+      "second_exit": {
+        "stage": "second",
+        "nonce": "675725a0b082f4539db4cd1d041b53fe",
+        "launcher_pid": 3224,
+        "pid": 34468,
+        "chain": [
+          34468,
+          3224
+        ],
+        "ready": {
+          "pid": 34468,
+          "nonce": "675725a0b082f4539db4cd1d041b53fe",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 2,
+          "instance_id": "da2ba982f6784eccbf7959d252053c00",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 61891
+        },
+        "hard_kill": false,
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "shutdown": {
+          "pid": 34468,
+          "nonce": "675725a0b082f4539db4cd1d041b53fe",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [
+          {
+            "admission_id": "774d2995c6fb4b969dfc806053531e37",
+            "request_id": "run_003c77a2c9fc4adea8215700191266dc",
+            "target_session_id": "run_003c77a2c9fc4adea8215700191266dc",
+            "status": "terminal",
+            "outcome": "completed",
+            "owner_epoch": 2,
+            "generation": 1,
+            "payload_digest": "3844676aff133b6ab24c08a498cc6ab2c7eaa525c122cd4bd578824e5b912bc2"
+          }
+        ],
+        "runs": [
+          {
+            "run_id": "run_003c77a2c9fc4adea8215700191266dc",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "completed"
+          }
+        ],
+        "user_count": 1,
+        "tool_count": 1,
+        "read_count": 1,
+        "tool_marker": true,
+        "marker_in_user": false,
+        "final_digests": [
+          "82fa3b20f5de45d4e0cf62d91bab416c5c8ffe97269753077f5e27583d2a415a"
+        ]
+      },
+      "model_calls": [
+        {
+          "tool_result": false,
+          "forbidden": false,
+          "stream": false
+        },
+        {
+          "tool_result": true,
+          "forbidden": false,
+          "stream": false
+        }
+      ],
+      "fixture_errors": [],
+      "profile_config_unchanged": true,
+      "program_drift": false,
+      "elapsed_seconds": 31.591,
+      "result": "OBSERVED"
+    },
+    "after-reserve": {
+      "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+      "scenario": "after-reserve",
+      "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+      "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "errors": [],
+      "model_inference_calls": 0,
+      "paid_calls": 0,
+      "files_sha256": {
+        "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+        "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+        "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+        "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+        "run_gateway_recovery.py": "f7be161483d2a38ea325e4a292f9f33c3cf5a4d516ada57492adcdb22a0a4f28",
+        "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+        "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279"
+      },
+      "os_sandbox_claimed": false,
+      "trace_checkpoint": true,
+      "first_ready": {
+        "pid": 41908,
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 1,
+        "instance_id": "35fa681e563b4a39a5254eddccb13a51",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 61970
+      },
+      "checkpoint": {
+        "phase": "after-reserve",
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "pid": 41908,
+        "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+        "line": 799,
+        "source_sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+        "scope": "timing-only fault checkpoint; no HTTP ACK claimed"
+      },
+      "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+      "first_exit": {
+        "stage": "first",
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "launcher_pid": 5224,
+        "pid": 41908,
+        "chain": [
+          41908,
+          5224
+        ],
+        "ready": {
+          "pid": 41908,
+          "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 1,
+          "instance_id": "35fa681e563b4a39a5254eddccb13a51",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 61970
+        },
+        "hard_kill": true,
+        "exit_code": 2,
+        "launcher_reaped": true,
+        "native_reaped": true
+      },
+      "lost_response": {
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "action": "start",
+        "ok": false,
+        "code": "write_outcome_unknown",
+        "mayHaveBeenAccepted": true
+      },
+      "before_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [],
+        "runs": [
+          {
+            "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "queued"
+          }
+        ],
+        "user_count": 0,
+        "tool_count": 0,
+        "read_count": 0,
+        "tool_marker": false,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls_before_restart": 0,
+      "second_ready": {
+        "pid": 38936,
+        "nonce": "e1015437c4cc90f6312bcc71db876988",
+        "runner": "gateway.run.GatewayRunner",
+        "adapter": "gateway.platforms.api_server.APIServerAdapter",
+        "authority": "gateway.session_authority.SessionAuthority",
+        "profile_bound": true,
+        "aiohttp_version": "3.14.3",
+        "epoch": 2,
+        "instance_id": "22fed0171bdd4f359392647ab82415e5",
+        "state": "ready",
+        "api_host": "127.0.0.1",
+        "api_port": 61970
+      },
+      "recovered_status": {
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "action": "status",
+        "value": {
+          "created_at": 1792063193.3882341,
+          "model": "hermes-agent",
+          "object": "hermes.run",
+          "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+          "session_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+          "status": "interrupted",
+          "updated_at": 1792063201.911562,
+          "error": "The gateway restarted before this run settled.",
+          "last_event": "run.interrupted"
+        },
+        "ok": true
+      },
+      "reoffered": {
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "action": "start",
+        "value": {
+          "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+          "status": "interrupted",
+          "replayed": true
+        },
+        "ok": true
+      },
+      "resumed": {
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "action": "resume",
+        "value": {
+          "run": {
+            "created_at": 1792063193.3882341,
+            "model": "hermes-agent",
+            "object": "hermes.run",
+            "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+            "session_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+            "status": "interrupted",
+            "updated_at": 1792063201.911562,
+            "error": "The gateway restarted before this run settled.",
+            "last_event": "run.interrupted"
+          },
+          "backendConfirmed": true,
+          "stopRequested": false,
+          "hostReason": null,
+          "requiresOperator": false
+        },
+        "ok": true
+      },
+      "conflict": {
+        "nonce": "3fcff18bee812f1fbc630fc2f715a10d",
+        "action": "start",
+        "ok": false,
+        "code": "http_409",
+        "mayHaveBeenAccepted": false
+      },
+      "second_exit": {
+        "stage": "second",
+        "nonce": "e1015437c4cc90f6312bcc71db876988",
+        "launcher_pid": 37460,
+        "pid": 38936,
+        "chain": [
+          38936,
+          37460
+        ],
+        "ready": {
+          "pid": 38936,
+          "nonce": "e1015437c4cc90f6312bcc71db876988",
+          "runner": "gateway.run.GatewayRunner",
+          "adapter": "gateway.platforms.api_server.APIServerAdapter",
+          "authority": "gateway.session_authority.SessionAuthority",
+          "profile_bound": true,
+          "aiohttp_version": "3.14.3",
+          "epoch": 2,
+          "instance_id": "22fed0171bdd4f359392647ab82415e5",
+          "state": "ready",
+          "api_host": "127.0.0.1",
+          "api_port": 61970
+        },
+        "hard_kill": false,
+        "exit_code": 0,
+        "launcher_reaped": true,
+        "native_reaped": true,
+        "shutdown": {
+          "pid": 38936,
+          "nonce": "e1015437c4cc90f6312bcc71db876988",
+          "native_result": true,
+          "lifecycle_completed": true,
+          "nonloopback_attempts_blocked": 0
+        }
+      },
+      "after_restart": {
+        "integrity": "ok",
+        "run_integrity": "ok",
+        "journal": "delete",
+        "read_only": true,
+        "admissions": [],
+        "runs": [
+          {
+            "run_id": "run_3aa6bdb52f0b4a4a833cdc51a403f71c",
+            "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+            "status": "interrupted"
+          }
+        ],
+        "user_count": 0,
+        "tool_count": 0,
+        "read_count": 0,
+        "tool_marker": false,
+        "marker_in_user": false,
+        "final_digests": []
+      },
+      "model_calls": [],
+      "fixture_errors": [],
+      "profile_config_unchanged": true,
+      "program_drift": false,
+      "elapsed_seconds": 22.709,
+      "result": "OBSERVED"
+    }
+  }
+}

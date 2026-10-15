@@ -1,0 +1,111 @@
+{
+  "scope": "independent retrospective readonly check of retained primary runs, NOT new process executions",
+  "count": 8,
+  "checks": [
+    {
+      "case": "accepted-after-tool-1",
+      "scenario": "after-tool",
+      "run_id": "run_1d7a902bdb4f4fc1874fea77befabce2",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "model_http_requests": 2,
+      "status": "unknown",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "de469b332763d0cc922479f5f1bb153410d1b566e91d68c929df003b4405ebf1",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-after-tool-2",
+      "scenario": "after-tool",
+      "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "model_http_requests": 2,
+      "status": "unknown",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "1b9bdaccb52d99469ed37d96d72ccec63cd1d8e50a86993be79735c88b291293",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-before-model-1",
+      "scenario": "before-model",
+      "run_id": "run_6d0e2d3316eb4a17abc508693496dd89",
+      "canonical_admissions": 1,
+      "tool_results": 0,
+      "model_http_requests": 1,
+      "status": "unknown",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "8a0f4e616ba124a0c013713ae31586937b2fe79933480010a778ed37d57b4ba1",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-before-model-2",
+      "scenario": "before-model",
+      "run_id": "run_4476fa72362f483fa0d34118abdf8c76",
+      "canonical_admissions": 1,
+      "tool_results": 0,
+      "model_http_requests": 1,
+      "status": "unknown",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "678d74f12ce0a413b138c3bb956e402e85cc6379194b946805271ada0b4c3d78",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-before-reserve-1",
+      "scenario": "before-reserve",
+      "run_id": "run_37fa69cf57624ac28d6819cefbc82b2e",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "model_http_requests": 2,
+      "status": "terminal",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "73f7797ca863a9c5c1ac09ac5afbf1ea89f8bf1a4202521e3e6229c75d2d1024",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-before-reserve-2",
+      "scenario": "before-reserve",
+      "run_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "model_http_requests": 2,
+      "status": "terminal",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "a80fc87ddce7e8cc1fd83861888fef7c8d0e369ef72914827012e9e9dd442bda",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-completed-1",
+      "scenario": "completed",
+      "run_id": "run_5d03c2026dcf450798a68951e6350e21",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "model_http_requests": 2,
+      "status": "terminal",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "4cc4a459874ef7457c9718552f428848c6f7183103e9178365778cdc9cbfcb26",
+      "result": "CORROBORATED"
+    },
+    {
+      "case": "accepted-completed-2",
+      "scenario": "completed",
+      "run_id": "run_93c10370b85e4314a8bfa6e338c09338",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "model_http_requests": 2,
+      "status": "terminal",
+      "runtime_epoch_before": 1,
+      "runtime_epoch_after": 2,
+      "source_receipt_sha256": "b59c69a1db5a8e0538d200209d6b934bfccc17e7494b4ddaafd19c56319a9435",
+      "result": "CORROBORATED"
+    }
+  ],
+  "model_inference_calls": 0
+}

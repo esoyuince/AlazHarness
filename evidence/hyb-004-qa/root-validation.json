@@ -1,0 +1,15 @@
+{
+  "scope": "independent full offline standard suite, separate from real Gateway kill/reopen experiments",
+  "tests": 386,
+  "exit_code": 0,
+  "no_skips_reported": true,
+  "elapsed_seconds": 42.761,
+  "observed_code_drift": [],
+  "head_at_finish": "e6f596c2e73ba1db3b617b74f40423a531237cda",
+  "own_program_hashes": {
+    "scripts/run_gateway_gap_qa.py": "e825eff60036b163d952d3824d56d412a49fb53e6d07fa8d4ea73b37cd07cad0",
+    "scripts/qa/gateway_gap_client.mjs": "9dd53b924efa75ecf43e6e4a08dde0e7a6ada7bf7d714f9d8dac058b55d5310d",
+    "scripts/gateway_gap_contract.py": "d6ae0c44fee3ba462568cdb7556e4ad3d7bba150fedd424c5a59640137c79e0f",
+    "tests/test_gateway_gap_qa.py": "acc175de9a87dfc33a1aab13513923052881791e634ceeea7154d6e68b479b64"
+  }
+}

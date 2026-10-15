@@ -1,0 +1,255 @@
+{
+  "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+  "scenario": "before-reserve",
+  "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "errors": [],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "files_sha256": {
+    "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+    "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+    "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+    "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+    "run_gateway_recovery.py": "f326bfabc38a5b46042f6f495b9fb0d54dd7e9095391cb702b2661a78c572151",
+    "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+    "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "gateway_recovery_contract.py": "fd8c8a2a18f721df9fd95368027641fdd79c33d461cd1d65a6a30b4c25c423a8"
+  },
+  "os_sandbox_claimed": false,
+  "trace_checkpoint": true,
+  "first_ready": {
+    "pid": 11672,
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "ed83d984c5704b3299e0fcba5dd2a008",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 64905
+  },
+  "checkpoint": {
+    "phase": "before-reserve",
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "pid": 11672,
+    "run_id": "run_83f344393e964320b878c5d27e801392",
+    "line": 795,
+    "source_sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+    "scope": "timing-only fault checkpoint; no HTTP ACK claimed"
+  },
+  "run_id": "run_83f344393e964320b878c5d27e801392",
+  "first_exit": {
+    "stage": "first",
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "launcher_pid": 14756,
+    "pid": 11672,
+    "chain": [
+      11672,
+      14756
+    ],
+    "ready": {
+      "pid": 11672,
+      "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "ed83d984c5704b3299e0fcba5dd2a008",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 64905
+    },
+    "hard_kill": true,
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true
+  },
+  "lost_response": {
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "action": "start",
+    "ok": false,
+    "code": "write_outcome_unknown",
+    "mayHaveBeenAccepted": true
+  },
+  "before_restart": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [],
+    "runs": [],
+    "user_count": 0,
+    "tool_count": 0,
+    "read_count": 0,
+    "tool_marker": false,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "model_calls_before_restart": 0,
+  "second_ready": {
+    "pid": 28720,
+    "nonce": "1694c356062ce7f8fea361d8884be142",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 2,
+    "instance_id": "a02d5630fdbf4328b9824f5553aca0a0",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 64905
+  },
+  "recovered_status": {
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "action": "status",
+    "ok": false,
+    "code": "http_404",
+    "mayHaveBeenAccepted": false
+  },
+  "reoffered": {
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "action": "start",
+    "value": {
+      "run_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+      "status": "started",
+      "replayed": false
+    },
+    "ok": true
+  },
+  "new_run_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+  "new_final": {
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "action": "resume",
+    "value": {
+      "run": {
+        "object": "hermes.run",
+        "model": "hermes-agent",
+        "runtime": {
+          "provider": "",
+          "model": "",
+          "route_source": "global"
+        },
+        "created_at": 1792063438.522659,
+        "pending_controls": [],
+        "run_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+        "status": "completed",
+        "session_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+        "admission_id": "4261d05bc2ea4b4f8eaa90e75faea7fd",
+        "execution_generation": 1,
+        "output": "Recovered result ALAZ_RECOVERY_c66a4cb1378fc7aae0a446c479013643",
+        "usage": {
+          "input_tokens": 200,
+          "output_tokens": 40,
+          "total_tokens": 240
+        }
+      },
+      "backendConfirmed": true,
+      "stopRequested": false,
+      "hostReason": null,
+      "requiresOperator": false
+    },
+    "ok": true
+  },
+  "conflict": {
+    "nonce": "bc54830f48dbc78fd8f1860badba46d0",
+    "action": "start",
+    "ok": false,
+    "code": "http_409",
+    "mayHaveBeenAccepted": false
+  },
+  "second_exit": {
+    "stage": "second",
+    "nonce": "1694c356062ce7f8fea361d8884be142",
+    "launcher_pid": 40720,
+    "pid": 28720,
+    "chain": [
+      28720,
+      40720
+    ],
+    "ready": {
+      "pid": 28720,
+      "nonce": "1694c356062ce7f8fea361d8884be142",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "a02d5630fdbf4328b9824f5553aca0a0",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 64905
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 28720,
+      "nonce": "1694c356062ce7f8fea361d8884be142",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "after_restart": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [
+      {
+        "admission_id": "4261d05bc2ea4b4f8eaa90e75faea7fd",
+        "request_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+        "target_session_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+        "status": "terminal",
+        "outcome": "completed",
+        "owner_epoch": 2,
+        "generation": 1,
+        "payload_digest": "36c538e77319694e1af068c278664a77df56f2d68f34f2ab8723019e863dcfa1"
+      }
+    ],
+    "runs": [
+      {
+        "run_id": "run_e5b2cfe7f9944c7da3826d0b5b5d54b2",
+        "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "status": "completed"
+      }
+    ],
+    "user_count": 1,
+    "tool_count": 1,
+    "read_count": 1,
+    "tool_marker": true,
+    "marker_in_user": false,
+    "final_digests": [
+      "84c49c75b8b2ca95f1c628ea0b4fd84a635b5f31390e48f8bb7230bf4bceb417"
+    ]
+  },
+  "model_calls": [
+    {
+      "tool_result": false,
+      "forbidden": false,
+      "stream": false
+    },
+    {
+      "tool_result": true,
+      "forbidden": false,
+      "stream": false
+    }
+  ],
+  "fixture_errors": [],
+  "profile_config_unchanged": true,
+  "program_drift": false,
+  "elapsed_seconds": 51.01,
+  "result": "PASS",
+  "product_adoption": false,
+  "acceptance_scope": "characterization, not automatic recovery or atomic admission",
+  "orphan_reservation_observed": false
+}

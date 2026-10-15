@@ -63,3 +63,11 @@ Selected source Permission/EventFeed behavior:35 cases x2 local passes, explicit
 ## HYB-003-GATEWAY
 
 Native Gateway/Authority/API sınırı için normal, lost-ack ve stop deneyleri eklendi. Exact sonuç: evidence/hyb-003-gateway. Tam M1 kapalı değil. Sonraki kapı HYB-004-GATEWAY-RECOVERY: aynı profilde kill/reopen, epoch ve belirsiz dış etkiyi yeniden uzlaştırma.
+
+## HYB-004 Gateway recovery
+
+Native process recovery characterization is in docs/HYB-004-GATEWAY-RECOVERY.md.
+A confirmed orphan reservation between the two native stores blocks general
+automatic recovery acceptance. HYB-004B: explicit canonical-admission proof and
+orphan/unknown reconciliation, without blind key deletion or POST replay.
+External-effect-before-result, retention expiry and multi-process fencing remain open.

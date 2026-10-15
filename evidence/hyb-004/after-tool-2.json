@@ -1,0 +1,261 @@
+{
+  "scope": "native public Gateway process kill/reopen with scripted provider; not M1",
+  "scenario": "after-tool",
+  "nonce": "ce7043395e96b48a603fd497583df156",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "errors": [],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "files_sha256": {
+    "gateway_recovery_worker.py": "5c06ec309a6035889533a49fae2d150d61c31a81b2b92fea2acad664501ace9c",
+    "gateway_recovery_client.mjs": "4a77af7862e1ac0b752d57ebb86be02a9fc3068e6aaea617cd65d98f58cda6e0",
+    "gateway_recovery_model.py": "54fef1e071f2d83f433f36f7d2ff9b4bfe651b292fce2eec658962667ad92430",
+    "gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+    "run_gateway_recovery.py": "f326bfabc38a5b46042f6f495b9fb0d54dd7e9095391cb702b2661a78c572151",
+    "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+    "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "gateway_recovery_contract.py": "fd8c8a2a18f721df9fd95368027641fdd79c33d461cd1d65a6a30b4c25c423a8"
+  },
+  "os_sandbox_claimed": false,
+  "trace_checkpoint": false,
+  "first_ready": {
+    "pid": 30260,
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "e67fdc0d1dc04b61848c02ccb6316348",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 61254
+  },
+  "first_admission": {
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "action": "start",
+    "value": {
+      "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+      "status": "started",
+      "replayed": false
+    },
+    "ok": true
+  },
+  "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+  "first_exit": {
+    "stage": "first",
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "launcher_pid": 33484,
+    "pid": 30260,
+    "chain": [
+      30260,
+      33484
+    ],
+    "ready": {
+      "pid": 30260,
+      "nonce": "ce7043395e96b48a603fd497583df156",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "e67fdc0d1dc04b61848c02ccb6316348",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 61254
+    },
+    "hard_kill": true,
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true
+  },
+  "before_restart": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [
+      {
+        "admission_id": "7ddbd74a277c4b59bd66bdb992c83ac9",
+        "request_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "target_session_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "status": "started",
+        "outcome": null,
+        "owner_epoch": 1,
+        "generation": 1,
+        "payload_digest": "3d6958c92eb262f2ebf2690794ad0d05760b3a822c35462e70a2c044821baba0"
+      }
+    ],
+    "runs": [
+      {
+        "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "status": "running"
+      }
+    ],
+    "user_count": 1,
+    "tool_count": 1,
+    "read_count": 1,
+    "tool_marker": true,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "model_calls_before_restart": 2,
+  "second_ready": {
+    "pid": 25104,
+    "nonce": "c39b35c5cf4c6e138d73ab0e610a56f5",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 2,
+    "instance_id": "d2cea89a7aaf46f4aa3fc36245dfbcaa",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 61254
+  },
+  "recovered_status": {
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "action": "status",
+    "value": {
+      "object": "hermes.run",
+      "pending_controls": [],
+      "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+      "status": "unknown",
+      "session_id": "run_cecbdb5d603547218204fb7d59b872ba",
+      "admission_id": "7ddbd74a277c4b59bd66bdb992c83ac9",
+      "execution_generation": 1,
+      "output": "",
+      "usage": {}
+    },
+    "ok": true
+  },
+  "reoffered": {
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "action": "start",
+    "value": {
+      "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+      "status": "unknown",
+      "replayed": true
+    },
+    "ok": true
+  },
+  "resumed": {
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "action": "resume",
+    "value": {
+      "run": {
+        "object": "hermes.run",
+        "pending_controls": [],
+        "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "status": "unknown",
+        "session_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "admission_id": "7ddbd74a277c4b59bd66bdb992c83ac9",
+        "execution_generation": 1,
+        "output": "",
+        "usage": {}
+      },
+      "backendConfirmed": false,
+      "stopRequested": false,
+      "hostReason": null,
+      "requiresOperator": true
+    },
+    "ok": true
+  },
+  "conflict": {
+    "nonce": "ce7043395e96b48a603fd497583df156",
+    "action": "start",
+    "ok": false,
+    "code": "http_409",
+    "mayHaveBeenAccepted": false
+  },
+  "second_exit": {
+    "stage": "second",
+    "nonce": "c39b35c5cf4c6e138d73ab0e610a56f5",
+    "launcher_pid": 39436,
+    "pid": 25104,
+    "chain": [
+      25104,
+      39436
+    ],
+    "ready": {
+      "pid": 25104,
+      "nonce": "c39b35c5cf4c6e138d73ab0e610a56f5",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "d2cea89a7aaf46f4aa3fc36245dfbcaa",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 61254
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 25104,
+      "nonce": "c39b35c5cf4c6e138d73ab0e610a56f5",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "after_restart": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [
+      {
+        "admission_id": "7ddbd74a277c4b59bd66bdb992c83ac9",
+        "request_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "target_session_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "status": "unknown",
+        "outcome": null,
+        "owner_epoch": 1,
+        "generation": 1,
+        "payload_digest": "3d6958c92eb262f2ebf2690794ad0d05760b3a822c35462e70a2c044821baba0"
+      }
+    ],
+    "runs": [
+      {
+        "run_id": "run_cecbdb5d603547218204fb7d59b872ba",
+        "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "status": "running"
+      }
+    ],
+    "user_count": 1,
+    "tool_count": 1,
+    "read_count": 1,
+    "tool_marker": true,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "model_calls": [
+    {
+      "tool_result": false,
+      "forbidden": false,
+      "stream": false
+    },
+    {
+      "tool_result": true,
+      "forbidden": false,
+      "stream": false
+    }
+  ],
+  "fixture_errors": [],
+  "profile_config_unchanged": true,
+  "program_drift": false,
+  "elapsed_seconds": 37.914,
+  "result": "PASS",
+  "product_adoption": false,
+  "acceptance_scope": "characterization, not automatic recovery or atomic admission",
+  "orphan_reservation_observed": false
+}
