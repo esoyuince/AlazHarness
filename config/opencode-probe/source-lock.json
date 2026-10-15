@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "scope": "selected OpenCode components; fixture dependencies, not full server",
+  "source_commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+  "effect_version": "4.0.1",
+  "effect_integrity": "sha512-b1VlQG9g8fwxE5QnIZuPoOP/0MsqHJSRKxUijjoM80E5q95FXrX5yWtY5XI8G+GJsBQAVSDbLS458z9a++uVvw==",
+  "files": {
+    "packages/core/src/permission.ts": "9a7ad5b124652a635048a0ffb3878df20b3c510703296c741c5db8333c87a54c",
+    "packages/core/src/util/wildcard.ts": "4c4dc570f519f0cc7c01c94501541bea470f883361fb613b01c6d0b23c07f6ea",
+    "packages/core/src/session/error.ts": "27fff36cbac4974fe0f00e4f87c822511238e35d6cbfa926d9b1c000dc282609",
+    "packages/server/src/event-feed.ts": "6988d912bc8be3fb2a32e18fb5c45509f0b4295ace1d8c9c00a66df9c7acae5c",
+    "packages/server/src/handlers/permission.ts": "b1498c74c96beece34176cb2dcad0a4ba1b59aff23ca72f59296a0bf2ee7f659",
+    "packages/protocol/src/groups/event.ts": "e64a643413dc6a16ffd6f3a334ba1d2cd8ff1fd55416d89930096873095d0dee",
+    "packages/protocol/src/errors.ts": "7b0aea520a99524e029cceb4ba54ef1a06f729b9271b819998fbc34fce056727",
+    "packages/core/test/permission.test.ts": "bf0604c2507cdf917f6fb15e44d2c6139595168b4f587c154d81c8c46f22bf70",
+    "packages/server/test/event-feed.test.ts": "f6a160db60bff69b9f965f413784f0f117c2c73aa6fe6bc83f6e4de5ddeca358",
+    "package.json": "19b0b9749326794996a268dc97c586c1474920f01fa5f481fb2b8e25f678af8b",
+    "bun.lock": "ffae6584145d99fb0dbeda0fd99b88d455c62a5a7914d97f1fc219cedff844c0",
+    "LICENSE": "b5c625d157735f04e1b2b7ceccee849130b554bdb23cd58db55a38a257efbbdd"
+  }
+}

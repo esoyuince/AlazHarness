@@ -1,0 +1,28 @@
+{
+  "scope": "combined offline root tests after reviewing and integrating supplementary QA",
+  "total": 280,
+  "passed": 280,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "elapsed_seconds": 29.455,
+  "files_sha256": {
+    "scripts/opencode_component_worker.mjs": "277e893cdc16aced92ebcf744a5f64d0f4fa0c260f37bb1133c6c397e6f844a0",
+    "scripts/opencode_probe_support.py": "594864ebf4107eb72001dd4f8c18966d0d10a0d10e6524360330083b2d2d4ece",
+    "scripts/opencode_services.mjs": "0528346743e7c767116a647fd7e0aa417692f7814614e7f5e4e700af9b7238d8",
+    "scripts/prepare_opencode_components.py": "171cd6bf2e75853ee7f0645d3088f6ef2277c347d3cba3eccc3ac13415ced895",
+    "scripts/run_independent_opencode_qa.py": "fffa049dd138503a2ab2f8c01301b8696d3d1a8feb92c0ee24d7d49addfed3bd",
+    "scripts/run_opencode_components.py": "05b62926e2a8bbb83b148b24aba6de01738cbf556bd4e3c18605d365935666b1",
+    "scripts/qa/opencode-independent/event-edge-cases.mjs": "8b9c95e03aa014bb0c0b27851882894e339736d31723592ca5effbc768fc0f36",
+    "scripts/qa/opencode-independent/permission-edge-cases.mjs": "11ff34d011bad256a8e386bb36ee69f5f28066ff07ca3cc2dc5daf34c1c1f2bb",
+    "scripts/qa/opencode-independent/ports.mjs": "05c69a63bf72f8b41ceaf88054291556b731db5b3c04d37d60d3782a4f6e31cf",
+    "scripts/qa/opencode-independent/source-loader.mjs": "5d3c9c4a6331d2f8b5ec9069d9f322ec406afab9e513eab6a10b81238a0af634",
+    "tests/test_opencode_independent_qa.py": "0dfa91059acb343cf46e626e41a197442b566fae7399035790104a523b3ccec8",
+    "tests/test_opencode_probe_contract.py": "817180e46dfeb75124252149d662ee10e63bd420059cfb185894812e514ed3f0"
+  },
+  "source_drift": false,
+  "selected_component_gate": "35 scenarios x 2 separate; prior acceptance-01 receipt unchanged",
+  "independent_component_gate": "20 supplementary observations rerun, not added to root count",
+  "full_OpenCode_or_real_model_tested": false,
+  "preparation_dry_run_no_writes": true
+}

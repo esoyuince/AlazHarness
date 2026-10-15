@@ -19,3 +19,7 @@ commit, original hash, target hash and the single import-path relocation.
 `packages/upstream/README.md` documents the supported subset and unused optional
 transport path. This is not a claim that full upstream applications or every
 transitive dependency have been licensed/audited by the component tests.
+
+## OpenCode component review
+
+REF-OC-001 produces a local, Git-ignored selected-source projection from the already pinned MIT OpenCode reference. Its original LICENSE is included in that projection. Effect4.0.1 is installed only in the explicit local probe preparation; its bundled notices remain in node_modules. The project does not vendor or relicense the complete OpenCode/Effect tree. Review recipe, package-lock and source hashes are versioned under config/opencode-probe and scripts/opencode_probe_support.py.

@@ -1,0 +1,16 @@
+{
+  "scope": "AlazHarness full offline root tests; OpenCode component runs separate",
+  "tests": 269,
+  "passed": 269,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "elapsed_seconds": 39.256,
+  "component_scenarios": 35,
+  "component_repeats": 2,
+  "component_runs": 70,
+  "component_native_on_server": false,
+  "full_opencode_tested": false,
+  "model_inference_calls": 0,
+  "source_and_fixtures_unchanged_during_component_run": true
+}

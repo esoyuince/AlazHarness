@@ -1,0 +1,452 @@
+{
+  "scope": "selected OpenCode source-owned Permission/EventFeed components with explicit external dependency fixtures",
+  "source_commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+  "scenario_count": 35,
+  "repeats": 2,
+  "passed": 70,
+  "all_repeats_passed": true,
+  "source_drift": false,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "full_opencode_acceptance": false,
+  "product_adoption": false,
+  "files_sha256": {
+    "opencode_component_worker.mjs": "277e893cdc16aced92ebcf744a5f64d0f4fa0c260f37bb1133c6c397e6f844a0",
+    "opencode_services.mjs": "0528346743e7c767116a647fd7e0aa417692f7814614e7f5e4e700af9b7238d8",
+    "opencode_probe_support.py": "594864ebf4107eb72001dd4f8c18966d0d10a0d10e6524360330083b2d2d4ece",
+    "run_opencode_components.py": "05b62926e2a8bbb83b148b24aba6de01738cbf556bd4e3c18605d365935666b1"
+  },
+  "projection_sha256": "6ce87e9cd5c7754e3afda1257d10e9ca41b64d618001753322ce660813370c28",
+  "runs": [
+    {
+      "repeat": 1,
+      "pid": 9376,
+      "exit_code": 0,
+      "timed_out": false,
+      "reaped": true,
+      "elapsed_seconds": 1.906,
+      "result": "PASS",
+      "errors": [],
+      "receipt": {
+        "scope": "original selected OpenCode bodies + real Effect/schema; external dependency fixtures",
+        "nonce": "0449b435642ea5354294b2a75aebb636",
+        "pid": 9376,
+        "platform": "win32",
+        "cases": [
+          {
+            "name": "rules-default-ask",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "rules-last-match",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "rules-action-and-resource",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "wildcard-platform-path",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "wildcard-not-path-sandbox",
+            "result": "PASS",
+            "elapsed_ms": 0,
+            "details": {
+              "scope": "matching does not canonicalize filesystem paths"
+            }
+          },
+          {
+            "name": "permission-allow-deny-no-pending",
+            "result": "PASS",
+            "elapsed_ms": 6
+          },
+          {
+            "name": "permission-session-rule-precedence",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-deny-before-saved-and-hook",
+            "result": "PASS",
+            "elapsed_ms": 4
+          },
+          {
+            "name": "permission-any-resource-denied",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-partial-resources-ask",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "permission-empty-resource-characterization",
+            "result": "PASS",
+            "elapsed_ms": 1,
+            "details": {
+              "host_requirement": "nonempty resource list before tool execution; component alone allows empty list"
+            }
+          },
+          {
+            "name": "permission-missing-agent-denies",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-missing-session",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-explicit-agent",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-hook-can-resolve-ask",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-once-consumed",
+            "result": "PASS",
+            "elapsed_ms": 4
+          },
+          {
+            "name": "permission-reject-session-batch",
+            "result": "PASS",
+            "elapsed_ms": 6
+          },
+          {
+            "name": "permission-feedback-typed",
+            "result": "PASS",
+            "elapsed_ms": 7
+          },
+          {
+            "name": "permission-always-project-wide",
+            "result": "PASS",
+            "elapsed_ms": 1,
+            "details": {
+              "observed": "always approval can satisfy another session in the same project"
+            }
+          },
+          {
+            "name": "permission-always-preserves-new-deny",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-foreign-session-guard",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-aborted-wait-cleans-pending",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-close-fails-closed",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-publish-failure-cleans-pending",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-duplicate-pending-id",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "event-frame-json",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-encode-once-many-subscribers",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-internal-filter-before-capacity",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-fifo",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-only-lagging-subscriber-fails",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-encoding-error-and-new-subscriber",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-no-replay-after-reconnect",
+            "result": "PASS",
+            "elapsed_ms": 0,
+            "details": {
+              "replay": false,
+              "reconciliation_required": true
+            }
+          },
+          {
+            "name": "event-no-encode-without-subscribers",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-rpc-public-type",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-owner-scope-unsubscribes",
+            "result": "PASS",
+            "elapsed_ms": 0
+          }
+        ],
+        "total": 35,
+        "passed": 35,
+        "failed": 0,
+        "model_inference_calls": 0,
+        "paid_calls": 0,
+        "full_server_tested": false,
+        "http_routing_tested": false,
+        "persistent_database_tested": false,
+        "os_sandbox_claimed": false
+      }
+    },
+    {
+      "repeat": 2,
+      "pid": 31852,
+      "exit_code": 0,
+      "timed_out": false,
+      "reaped": true,
+      "elapsed_seconds": 1.792,
+      "result": "PASS",
+      "errors": [],
+      "receipt": {
+        "scope": "original selected OpenCode bodies + real Effect/schema; external dependency fixtures",
+        "nonce": "5a9b227d4898b8504cbeaf207c66510a",
+        "pid": 31852,
+        "platform": "win32",
+        "cases": [
+          {
+            "name": "rules-default-ask",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "rules-last-match",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "rules-action-and-resource",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "wildcard-platform-path",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "wildcard-not-path-sandbox",
+            "result": "PASS",
+            "elapsed_ms": 0,
+            "details": {
+              "scope": "matching does not canonicalize filesystem paths"
+            }
+          },
+          {
+            "name": "permission-allow-deny-no-pending",
+            "result": "PASS",
+            "elapsed_ms": 9
+          },
+          {
+            "name": "permission-session-rule-precedence",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-deny-before-saved-and-hook",
+            "result": "PASS",
+            "elapsed_ms": 3
+          },
+          {
+            "name": "permission-any-resource-denied",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "permission-partial-resources-ask",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-empty-resource-characterization",
+            "result": "PASS",
+            "elapsed_ms": 0,
+            "details": {
+              "host_requirement": "nonempty resource list before tool execution; component alone allows empty list"
+            }
+          },
+          {
+            "name": "permission-missing-agent-denies",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "permission-missing-session",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-explicit-agent",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "permission-hook-can-resolve-ask",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-once-consumed",
+            "result": "PASS",
+            "elapsed_ms": 3
+          },
+          {
+            "name": "permission-reject-session-batch",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "permission-feedback-typed",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-always-project-wide",
+            "result": "PASS",
+            "elapsed_ms": 1,
+            "details": {
+              "observed": "always approval can satisfy another session in the same project"
+            }
+          },
+          {
+            "name": "permission-always-preserves-new-deny",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-foreign-session-guard",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-aborted-wait-cleans-pending",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-close-fails-closed",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-publish-failure-cleans-pending",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "permission-duplicate-pending-id",
+            "result": "PASS",
+            "elapsed_ms": 1
+          },
+          {
+            "name": "event-frame-json",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-encode-once-many-subscribers",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-internal-filter-before-capacity",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-fifo",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-only-lagging-subscriber-fails",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-encoding-error-and-new-subscriber",
+            "result": "PASS",
+            "elapsed_ms": 4
+          },
+          {
+            "name": "event-no-replay-after-reconnect",
+            "result": "PASS",
+            "elapsed_ms": 1,
+            "details": {
+              "replay": false,
+              "reconciliation_required": true
+            }
+          },
+          {
+            "name": "event-no-encode-without-subscribers",
+            "result": "PASS",
+            "elapsed_ms": 2
+          },
+          {
+            "name": "event-rpc-public-type",
+            "result": "PASS",
+            "elapsed_ms": 0
+          },
+          {
+            "name": "event-owner-scope-unsubscribes",
+            "result": "PASS",
+            "elapsed_ms": 0
+          }
+        ],
+        "total": 35,
+        "passed": 35,
+        "failed": 0,
+        "model_inference_calls": 0,
+        "paid_calls": 0,
+        "full_server_tested": false,
+        "http_routing_tested": false,
+        "persistent_database_tested": false,
+        "os_sandbox_claimed": false
+      }
+    }
+  ]
+}

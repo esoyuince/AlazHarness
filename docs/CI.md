@@ -114,3 +114,9 @@ Root CI includes the reconciled previous validator tests and the new strict-JSON
 owner identity and independent-evidence unit tests. Native Pi admission24 runs and
 independent SQLite QA12 cases are opt-in local gates, not part of the248 root tests.
 The CI image/profile, resource bounds and no-install rule were not changed.
+
+## REF-OC-001 scope
+
+The offline suite adds21 launcher/projection/receipt tests without installing Effect or OpenCode. The35 selected-source component scenarios run twice only through the explicit prepare_opencode_components.py / run_opencode_components.py flow, using pinned Effect and fixture external services. Neither these local70 runs nor TypeScript runtime transpilation are a full OpenCode application build/typecheck/HTTP authorization test. See REF-OC-001-COMPONENTS.md.
+
+The supplementary independent OpenCode QA adds11 offline receipt tests. Its20 source-component observations use explicit fixture ports and are a separate opt-in gate; standard CI does not run them. The final combined root suite count is recorded per exact commit, not inferred by adding native experiment totals.

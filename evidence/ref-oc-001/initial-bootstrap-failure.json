@@ -1,0 +1,10 @@
+{
+  "scope": "test bootstrap issue, zero component scenarios executed",
+  "attempt": "trial-01",
+  "exit_code": 1,
+  "reason": "Node default strip-only mode cannot load upstream TypeScript runtime namespace",
+  "fix": "Use installed Node experimental-transform-types; source bodies unchanged",
+  "source_changed": false,
+  "excluded_from_acceptance": true,
+  "stderr_sha256": "d69ac218bc4ecc42b198c3bdef13022750c71b0468ac6baf0af7f90e7deaeb13"
+}

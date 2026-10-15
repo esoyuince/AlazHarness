@@ -55,3 +55,7 @@ Atomik içerik/iş-kabulü24/24 native ve248/248 birleştirilmiş standart test 
 bağımsız owner/atomic QA12/12 ayrıca PASS. Üretim benimsemesi/M1/M2 açık.
 Güncel rapor REF-PI-002B-ADMISSION.md; sıradaki seçim kapısı REF-OC-001.
 Bu sayılar önceki karakterizasyonlara eklenmez; CI sonucu tam commit'te doğrulanır.
+
+## REF-OC-001 component checkpoint
+
+Selected source Permission/EventFeed behavior:35 cases x2 local passes, explicit fixture dependencies. Full OpenCode HTTP/server/DB acceptance remains open. Report: docs/research/REF-OC-001-COMPONENTS.md. MVP direction: docs/adr/0003-mvp-single-runtime.md. Next HYB-003-GATEWAY uses existing Hermes as the sole runtime, not four stacked agent loops.

@@ -1,0 +1,11 @@
+{
+  "scope": "one pinned dependency and selected-source fixture preparation",
+  "exit_code": 0,
+  "elapsed_seconds": 12.331,
+  "model_calls": 0,
+  "source_commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+  "package_lock_sha256": "716d88086d912cb8f9c4daeccb0c3791e54d8c056738e9472e8a888ac3350aaa",
+  "source_inputs": 94,
+  "projection_files": 96,
+  "verified": true
+}

@@ -1,139 +1,122 @@
 # AlazHarness — status
 
-Son güncelleme: **15 Ekim 2026**. Ana devam kaydı; işe başlarken canlı Git durumunu doğrula.
+Son güncelleme: **15 Ekim 2026**. Ana devam kaydı; yeni işte canlı Git durumunu doğrula.
 
 ## Kaldığımız yer
 
-**REF-PI-002B dar atomik kabul deneyi PASS.** Aynı anahtar/aynı içerik tek native işi
-buluyor; farklı içerik/tür/çalışma kapsamı açık `request_payload_conflict` alıyor.
-Parmak izi ve native kabul aynı kayıt işleminde tutuluyor. Genel ürün benimsemesi,
-tam M1 hibrit ve M2 otonomi **hâlâ açık**; motor değiştirilmedi.
+**REF-OC-001 seçilmiş kaynak bileşeni karakterizasyonu PASS.** Gerçek OpenCode
+Permission/EventFeed davranış gövdeleri ve Effect/şemalar çalıştı; dış servisler
+kontrollü fixture. Tam OpenCode HTTP/DB/uygulama veya ürün benimsemesi kabul edilmedi.
+İlk M1 yolu tek Hermes yürütücüsü olarak korundu; Pi ikinci oturum yazarı değil.
+Karar: `docs/adr/0003-mvp-single-runtime.md`. Tam M1 ve M2 otonomi açık.
 
-| Alan | Güncel adres |
+| Alan | Güncel kayıt |
 |---|---|
 | Varsayılan çalışma alanı | `C:\Antigravity\AlazHarness` |
 | Aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97` |
-| Aktif dal | `alaz/ref-pi-002b-admission-1720` |
-| Birleştirilen iki Durable tabanı | `9b801bd93d116223d57320bee379321ab383a6fd` ve `32654e4fbb403847ceec3cfbc94d3d046b84ec86` |
-| Yeni paketin yayın durumu | Kod commit 01acd2e19db14642b5fc345ec93b8f272090a4da push edildi; aynı SHA alaz/local-ci success,248/248 PASS. Son belge HEAD için CI ayrıca sorgulanır. |
+| Aktif dal | `alaz/ref-oc-001-8ea1` |
+| Başlangıç commit'i | `b461d4c805c7291f91899edd0d2028c7e00dbf4b` |
+| Bu paketin yayını | LOCAL PASS; commit/push/aynı-commit CI PENDING. Sonraki teslim eki güncelleyecek. |
 | Repo | `esoyuince/AlazHarness`, public / MIT |
-| main | Geliştirme paketleri main ile birleştirilmedi. |
+| main | Geliştirme paketleri henüz main ile birleştirilmedi. |
 
-Kökteki eski `alaz/hyb-001-component-slice` kirli çalışma ağacını güncel sanma;
-reset/clean/stash veya toplu commit yapma. Bu dalın kodları aktif worktree'dedir.
-Kökteki status.md kolay erişim kopyasıdır; izlenen sürüm bu aktif dalın kökünde.
-Dış değişiklikleri ezmeden iki kopyayı eşitle. CURRENT-STATE.md tarihsel ayrıntıdır.
+Kökteki `alaz/hyb-001-component-slice` kirli tarihsel ağacını güncel sanma.
+Reset/clean/stash veya toplu commit yapma. İzlenen status aktif worktree'dedir;
+kök kopyasını yalnız dış değişikliği ezmediğini doğrulayarak eşitle.
+CURRENT-STATE.md önceki ayrıntıları korur; ikinci güncel kayıt sahibi değildir.
 
-## Tamamlanan aşamalar
+## Son doğrulama
 
-| İş | Kapsam ve kanıt |
-|---|---|
-| M0 | Düzenli çalışma alanı, forklar/pinler, MIT yayın ve alaz-server CI; `evidence/publication/`. |
-| HYB-001/002 | Seçilmiş OpenClaw/Hermes kaynakları ve stdio/HTTP sözleşmeleri birleştirildi; `config/components.lock.json`. |
-| Hermes native | Gerçek AIAgent/read_file; model yanıtları yerel taklit; `evidence/hyb-003/`. |
-| REF-PI-001 | Gerçek Pi Agent/provider/read, önceki 6×2 yerel deney; `evidence/ref-pi-001/`. |
-| REF-PI-002 | İki ayrı Durable kesinti karakterizasyonu. Kendi tarihsel kanıtları `evidence/ref-pi-002/` ve `evidence/ref-pi-002-sqlite/` altında korundu. |
-| REF-PI-002B | İki Durable Git geçmişi uzlaştırıldı; tek native işlemde içerik-parmak-izi/kabul; `docs/research/REF-PI-002B-ADMISSION.md`. |
+- **280/280 standart test PASS**, exit0; fail/error/skip0. Son tam tur29.137s.
+  `python -B -m unittest discover -s tests -v`.
+- **35 ana bileşen senaryosu ×2 süreç =70/70 PASS.** Kaynak gövdeleri gerçek;
+  oturum/agent/saved/bus/plugin servislerinin verileri açıkça fixture.
+- **20 ek bağımsız bileşen gözlemi PASS** (izin12, olay8). Kaynak doğrudan
+  resolver ile yüklendi; aynı uygulama gövdesini testte yeniden yazmadı.
+  Paketleme sırasında bu20 kontrol ayrıca tekrar çalıştırılıp doğrulandı.
+- Üç sayı ayrı kapsamlardır. Standart alaz-server CI Effect kurmaz veya bu
+  yerel OpenCode bileşen senaryolarını çalıştırmaz. Eski native sayılar eklenmez.
+- Kanıt: `evidence/ref-oc-001/component-suite.json`, `final-validation.json`,
+  `final-root-unittest.txt`, `independent-recheck.json`, `projection.json`.
+  Bağımsız rapor/kanıt: `docs/research/REF-OC-001-INDEPENDENT-QA.md` ve
+  `evidence/ref-oc-001-qa/`. Önceki269 testi ilk ara turdur; final280 ayrıdır.
+- Gerçek model çıkarımı, ücretli çağrı, tam OpenCode servis/HTTP/DB veya
+  işletim sistemi sandbox kabulü yok. Gerçek TCP kopması sınanmadı.
+- Source/projection/Effect hashleri koşular boyunca değişmedi. Root'ta önceden
+  bulunan32 ilgisiz dosyanın hashleri korundu; vendor/research/runtime pinleri aynı.
 
-Önceki 169/171 standart veya 18/18 native toplamları yeni kabul sayısına eklenmedi.
-Paralel eski Pi Agent dalı `alaz/ref-pi-001` / `c31cf19260675cc991f9caf07af45442611085e6`
-bu iki Durable geçmişinin uzlaştırılması dışında kaldı; kanıt karşılaştırılmadan silinmez.
+## REF-OC-001'in kararları
 
-## Son yerel doğrulama
+İzin sırası son eşleşmeye dayanır; yapılandırılmış etkin deny, saved allow/plugin
+öncesinde uygulanır. Always onayı aynı projedeki diğer session'a da yayılabilir.
+Boş kaynak listesi doğrudan servis çağrısında allow olabilir; wildcard gerçek
+filesystem/symlink sınırını çözmez. Bekleyen request/save nesnesi mutable;
+seçilmiş once onayı sonradan değişen deny'ı yeniden değerlendirmez. Explicit
+izin IDsi tamamlandıktan sonra aynı session'da başka isteğe tekrar verilebilir.
+Bunlar tam üründe uzaktan açığın kanıtı değildir; Alaz host sınırının şartlarıdır.
 
-- **248/248 standart test PASS**, fail/error/skip 0, exit0, 32.709 saniye.
-  Komut: `python -B -m unittest discover -s tests -v`.
-- **12 native senaryo ×2 =24/24 PASS**, exit0; altı gerçek sahipli child-process kill.
-  Yeni süreç açılmadan önce eski çocuk toplandı; SQLite ara/son kayıtları üst süreçte salt okunur doğrulandı.
-- **Bağımsız iki QA ailesi 12/12 PASS**, final aday üzerinde yeniden çalıştırıldı.
-  Bunlar graceful reopen/izinli yerel kayıt testleridir; native24 veya standart248 içine eklenmez.
-- Kayıtlar: `evidence/ref-pi-002b/local-validation.json`, `native-suite.json`,
-  `independent-qa-recheck.json`, `root-unittest.txt`, `source-custody.json`.
-- Son aday SHA256: `47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11`.
-  Native worker/runner/compatibility hash'leri suite.json ile eşleşir.
-- İlk SQL kind sayım hatası, null/byte-sınırı açıkları ve SQLite bağlantı ömrü sorunu
-  düzeltildi. Başarısız kayıtlar `initial-failures.json` ve ignored runtime içinde korunur.
-- İlk adayın yabancı Harness handle açığı kapandı: yalnız sayısal conversationId alınır,
-  handle bağlı Harness üzerinden çözülür. Bağımsız eski raporun P1 ve kaynak-ömrü
-  paragrafları tarihsel ara bulgulardır; final kontrol yukarıdaki kanıtta PASS.
+Alaz için immutable approval snapshot, benzersiz onay nesli, doğru session/iş
+bağı, gerçek araç noktasında güncel değiştirilemez politika ve nonempty trusted
+resources gerekir. Bu tur üretim izin servisi yazılmadı.
 
-## Kabulün sınırı
+EventFeed volatile: yavaş abone açık hata alır; kodlama hatası mevcut aboneleri
+kapatır; yeni abone sonraki olayı alabilir. Kopuklukta yayımlanan olaylar otomatik
+geri gelmez. Bu OpenCode'un ayrı durable session-log API'si olmadığı anlamına
+gelmez; o API bu pakette test edilmedi. Yetkili durum yeniden sorgulanmadan
+kayıp bildirim üzerinden araç etkisi tekrar edilmez.
 
-Mevcut hazırlanmış Pi `runtime/pi-ref001-ac97` kullanıldı. Upstream kodları/pinleri,
-kişisel profiller/anahtarlar ve sunucu CI profili değiştirilmedi. Yeni dependency
-kurulumu, model çıkarımı, ücretli çağrı veya otonom gündem çalıştırılmadı.
+## Kullanılan ortam ve kaynaklar
 
-Atomiklik **tek canlı Harness sahibi** içindeki native mutation sırasındadır.
-20 eşzamanlı çağrı, çok-yazıcı süreç kilidi değildir. Parmak izi kaydı native
-conversation document family'dir; ikinci DB/queue/transcript yazarı eklenmedi.
-İç `admitSubmission` API'si commit/dosya hash'iyle sabitlenmiş deneysel bağlantıdır.
-Raw native submit yolu otomatik korunmaz; dış istekler host katmanından geçmelidir.
-ExecutionScope gerçek izin/model ayarlarıyla tutarlı şekilde host tarafından sağlanır.
+OpenCode pin `3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9`.
+Effect4.0.1, kaynak bun.lock ile aynı archive integrity; tek bağımlılık olarak
+`runtime/ref-oc-001-8ea1/qualified` içine sabit npm lock ve ignore-scripts ile
+kuruldu. Global Node/npm, Bun, kişisel profil/anahtar veya servis değiştirilmedi.
+Kaynak projeksiyonu94 source /96 output hash içerir; bu test sayısı değildir.
+Import yönlendirmesi ve küçük işlev seçimi dışında hedef davranış gövdeleri
+korunur. Ayrıntı `docs/research/REF-OC-001-COMPONENTS.md`.
 
-Etki belirsizken unsafe araç tekrar çalıştırılmadı; bu bütün dış servisler için
-exactly-once, yeni model tool taleplerini durdurma veya para bütçesi garantisi değildir.
-OS sandbox, güç kaybı, çok süreçli store kilidi, kalıcı kayıt temizliği/göç, gerçek
-Gateway ve sınırlı gerçek model kabulü açık. Standart sunucu CI native Pi kurmaz.
+Hazırlık `scripts/prepare_opencode_components.py` plan kipinde yazmaz; --apply
+kurar. Çalıştırma `scripts/run_opencode_components.py`, ek QA
+`scripts/run_independent_opencode_qa.py`; her output yeni olmalı.
+Node runtime namespace için mevcut --experimental-transform-types kullanıldı.
+İlk strip-only yükleme hatası kabul sayısına katılmadan kaydedildi.
+
+## Önceki tamamlanan işler
+
+M0: kaynak/fork/pin/MIT/CI. HYB-001/002: seçilmiş OpenClaw/Hermes ve taşıma
+sözleşmesi. Hermes gerçek AIAgent/read_file yerel taklit modelle çalıştı.
+REF-PI-001 Agent/read, REF-PI-002 Durable kesinti ve REF-PI-002B atomik içerik
+kabulü ayrı kanıtlarıyla korundu. 002B iki Durable geçmişini birleştirdi;
+strict-admission sahibi binding/transaction sorunları düzeltildi. Motorların
+bütün çalışma özellikleri veya M1/M2 tamamlandı denmedi.
+Paralel eski Pi Agent c31cf19 paketi otomatik birleştirilmedi/silinmedi.
 
 ## Sıradaki kesin iş
 
-**REF-OC-001 — NOT RUN:** sabit OpenCode kaynağının izin değerlendirmesi ve olay
-akışı/yeniden bağlanma sınırlarını, aynı şekilde kontrollü ve bağımsız gözlenen testlerle
-ölç. Ardından mevcut dört kaynaktan tek çekirdek/tek oturum sahibi için kanıta dayalı
-bileşen kararını yaz; sırf kapsama alındı diye dört motor birden ekleme.
+**HYB-003-GATEWAY — NOT RUN.** Mevcut HermesRunsClient'ı sabit kaynakta gerçek
+Hermes Gateway / SessionAuthority / APIServerAdapter zincirine, tek kontrollü
+model ve gerçek araç ile bağla. Duplicate/conflict/lost-ack/cancel/resume
+sınırlarını native kayıtla ölç. Yeni mock HTTP sunucusu gerçek Gateway kabulü
+sayılmaz. Hermes tek yürütücü/oturum sahibi kalsın; Pi Durable yan veritabanı
+olarak eklenmez. Dört aday kaynak dört çalışan ajan döngüsü değildir.
 
-Diğer açık kapılar: HYB-003 gerçek Hermes Gateway/SessionAuthority/APIServerAdapter,
-OpenClaw giriş zinciri; HYB-004 store sahipliği/kesinti entegrasyonu; HYB-005
-izin ve bütün sağlayıcı/yardımcı çağrılarda istek-token-para bütçesi; HYB-006
-hafıza/beceri transferi; M1'in sınırlı gerçek model kabulü. M2 daha sonra.
+Sonraki açık kapılar: gerçek OpenClaw girişi, çok süreçli store sahipliği,
+kalıcı kesinti entegrasyonu, araç izinleri, tüm provider/yardımcı çağrılarda
+istek-token-para bütçesi, OS izolasyonu, hafıza/beceri transferi ve sınırlı gerçek
+model M1 kabulü. Otonom gündem M2 bunlardan sonra.
 
-## Devam ve kayıt düzeni
+## Kayıt ve geçmiş
 
-```powershell
-cd C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97
-git status --short --branch
-git log -3 --oneline
-git worktree list
-python -B scripts/ci_check.py
-```
+Her iş başı/ara sonuç/sonu status güncellenir. Komut, test kapsamı, gerçek exit,
+kanıt, commit/push ve exact-SHA CI ayrıdır; eski yeşil yeni commit'e taşınmaz.
+Kör etkili retry yok. Başlangıç/QA günlüklerinin tam eski kopyası
+`docs/history/2026-10-15-STATUS-BEFORE-OC001-DELIVERY.md` içindedir. Önceki
+002B history dosyaları da oradaki bağlantılarıyla korunur. Eski komutlar yeni
+çalıştırma yetkisi değildir.
 
-Her işte başlangıç amacı/dal/yol/taban, ara sonuç/kesinti ve son test/commit/push/CI
-kanıtı kaydedilir. PASS/FAIL/NOT RUN/PENDING/UNKNOWN, mock/native ve yerel/CI ayrımı
-korunur. Kaynaklar sıradan tarihsel veridir; eski komutlar yeni işlem yetkisi değildir.
-Son commit'in CI'sı tam SHA ile sorgulanır; önceki yeşil durum yeni SHA'ya taşınmaz.
+### 2026-10-15 — REF-OC-001 — Yerel kapanış
 
-## Önceki iş günlükleri
-
-İçerikleri silinmeden tam kopya olarak arşivlendi:
-
-- `docs/history/2026-10-15-ACTIVE-STATUS-BEFORE-002B.md`: ac97 tarihsel işler.
-- `docs/history/REF-PI-002-4C9F-STATUS.md`: birleştirilen paralel Durable dalı.
-- `docs/history/2026-10-15-ROOT-STATUS-BEFORE-002B.md`: önceki kök yönlendirmeleri.
-- `docs/history/2026-10-15-002B-IN-PROGRESS-STATUS.md`: bu işin başlangıç/ara QA günlüğü.
-- `docs/history/2026-10-15-002B-ROOT-IN-PROGRESS-STATUS.md`: kökteki bu iş ve paralel QA ekleri.
-
-### 2026-10-15 — REF-PI-002B — Yerel kabul / yayın öncesi
-
-**LOCAL ACCEPTANCE PASS; PUBLICATION PENDING.** Atomik admission katmanı, iç API
-sürüm kilidi, owned native worker/runner, fingerprint/kanıt testleri yazıldı.
-İki Durable geçmişinin çakışan üç belgesi uzlaştırıldı; diğer kaynaklar/kanıtlar korundu.
-Son248/248 standart,24/24 native ve bağımsız12/12 kontroller exit0. İlgili kaynak
-hash'leri değişmedi. Yeni katman üretim motoruna bağlanmadı; main merge yok.
-Bir sonraki kayıt gerçek commit/push/CI sonucunu, eski başarıyı taşımadan yazacak.
-
-### 2026-10-15 — REF-PI-002B — Kod / Git / CI teslimi
-
-**DONE — dar atomik kabul paketi.** Kod commit'i
-`01acd2e19db14642b5fc345ec93b8f272090a4da`, iki Durable ebeveyni koruyan merge'dür.
-Uzak `alaz/ref-pi-002b-admission-1720` dalına gönderildi. alaz-server aynı SHA'yı
-checkout ederek248/248 standart testi çalıştırdı; failed/skipped/suite_errors0,
-GitHub alaz/local-ci success ve status_delivery posted. Kanıt: code-ci.json.
-24/24 gerçek yerel admission ve bağımsız12/12 kontroller bu CI sayısının dışındadır.
-
-Sahiplik P1'i ve SQLite bağlantı ömrü bulguları final kaynak ve yeniden testle
-kapandı; eski FAIL makbuzları silinmedi. status geçmişleri docs/history'de ve
-bağımsız QA raporu korunur. Kök kolay erişim kaydı aktif sürümle eşitlendi.
-Sunucu profili/upstream/kişisel ayarlar değiştirilmedi; main merge yapılmadı.
-Sonraki iş REF-OC-001; geniş ürün benimsemesi, tam M1/M2 hâlâ açık.
-Bu teslim eki için native programlar yeniden değiştirilmedi veya çalıştırılmadı.
-Belge commit'inin CI sonucu git log ile bulunan gerçek HEAD'e göre kontrol edilir.
+İzin/olay araştırma sınırı tamamlandı; bütün280 standart test ve ayrı70 ana
+bileşen /20 ek bağımsız gözlem PASS. Kaynak/app graph'ı değiştirilmedi;
+fixture ve tekrar üretim helperları ile kanıt/ADR/status eklendi. Tam ürün
+benimsemesi açık. Sonraki kayıt commit/push/CI'ı kanıtla güncelleyecek.
