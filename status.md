@@ -15,7 +15,7 @@ tam M1 hibrit ve M2 otonomi **hâlâ açık**; motor değiştirilmedi.
 | Aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97` |
 | Aktif dal | `alaz/ref-pi-002b-admission-1720` |
 | Birleştirilen iki Durable tabanı | `9b801bd93d116223d57320bee379321ab383a6fd` ve `32654e4fbb403847ceec3cfbc94d3d046b84ec86` |
-| Yeni paketin yayın durumu | Yerel kabul tamam; commit/push ve aynı-commit CI henüz bu kayıt anında PENDING. Teslim eki aşağıya yazılacak. |
+| Yeni paketin yayın durumu | Kod commit 01acd2e19db14642b5fc345ec93b8f272090a4da push edildi; aynı SHA alaz/local-ci success,248/248 PASS. Son belge HEAD için CI ayrıca sorgulanır. |
 | Repo | `esoyuince/AlazHarness`, public / MIT |
 | main | Geliştirme paketleri main ile birleştirilmedi. |
 
@@ -120,3 +120,20 @@ sürüm kilidi, owned native worker/runner, fingerprint/kanıt testleri yazıld�
 Son248/248 standart,24/24 native ve bağımsız12/12 kontroller exit0. İlgili kaynak
 hash'leri değişmedi. Yeni katman üretim motoruna bağlanmadı; main merge yok.
 Bir sonraki kayıt gerçek commit/push/CI sonucunu, eski başarıyı taşımadan yazacak.
+
+### 2026-10-15 — REF-PI-002B — Kod / Git / CI teslimi
+
+**DONE — dar atomik kabul paketi.** Kod commit'i
+`01acd2e19db14642b5fc345ec93b8f272090a4da`, iki Durable ebeveyni koruyan merge'dür.
+Uzak `alaz/ref-pi-002b-admission-1720` dalına gönderildi. alaz-server aynı SHA'yı
+checkout ederek248/248 standart testi çalıştırdı; failed/skipped/suite_errors0,
+GitHub alaz/local-ci success ve status_delivery posted. Kanıt: code-ci.json.
+24/24 gerçek yerel admission ve bağımsız12/12 kontroller bu CI sayısının dışındadır.
+
+Sahiplik P1'i ve SQLite bağlantı ömrü bulguları final kaynak ve yeniden testle
+kapandı; eski FAIL makbuzları silinmedi. status geçmişleri docs/history'de ve
+bağımsız QA raporu korunur. Kök kolay erişim kaydı aktif sürümle eşitlendi.
+Sunucu profili/upstream/kişisel ayarlar değiştirilmedi; main merge yapılmadı.
+Sonraki iş REF-OC-001; geniş ürün benimsemesi, tam M1/M2 hâlâ açık.
+Bu teslim eki için native programlar yeniden değiştirilmedi veya çalıştırılmadı.
+Belge commit'inin CI sonucu git log ile bulunan gerçek HEAD'e göre kontrol edilir.

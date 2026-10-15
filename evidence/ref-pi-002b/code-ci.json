@@ -1,0 +1,34 @@
+{
+  "sha": "01acd2e19db14642b5fc345ec93b8f272090a4da",
+  "server": {
+    "sha": "01acd2e19db14642b5fc345ec93b8f272090a4da",
+    "receipts": [
+      {
+        "sha": "01acd2e19db14642b5fc345ec93b8f272090a4da",
+        "checkout_sha": "01acd2e19db14642b5fc345ec93b8f272090a4da",
+        "status": "success",
+        "ci2_suite_proof": {
+          "executed": 248,
+          "failed": 0,
+          "passed": 248,
+          "skipped": 0,
+          "suite_errors": 0,
+          "total": 248
+        },
+        "status_delivery": "posted"
+      }
+    ]
+  },
+  "github": {
+    "state": "success",
+    "statuses": [
+      {
+        "context": "alaz/local-ci",
+        "state": "success",
+        "description": "ALAZ Local CI passed",
+        "id": 56404296655
+      }
+    ]
+  },
+  "scope": "exact code commit standard Linux CI; 24 native and 12 supplemental cases are separate local evidence"
+}
