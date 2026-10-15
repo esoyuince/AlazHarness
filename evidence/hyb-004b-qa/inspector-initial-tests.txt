@@ -1,0 +1,119 @@
+test_admission_from_future_epoch_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_admission_from_future_epoch_rejected) ... ok
+test_archive_identity_wrong_run (test_reconciliation_inspector_qa.InspectorIndependentQA.test_archive_identity_wrong_run) ... ok
+test_archive_missing_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_archive_missing_rejected) ... ok
+test_archived_terminal_not_orphan (test_reconciliation_inspector_qa.InspectorIndependentQA.test_archived_terminal_not_orphan) ... ok
+test_changed_native_scope_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_changed_native_scope_rejected) ... ok
+test_changed_output_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_changed_output_rejected) ... ok
+test_changed_payload_requires_conflict (test_reconciliation_inspector_qa.InspectorIndependentQA.test_changed_payload_requires_conflict) ... ok
+test_changed_selected_model_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_changed_selected_model_rejected) ... FAIL
+test_changed_usage_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_changed_usage_rejected) ... ok
+test_corrupt_second_store_still_closes_connection (test_reconciliation_inspector_qa.InspectorIndependentQA.test_corrupt_second_store_still_closes_connection) ... ok
+test_corrupt_stored_fingerprint_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_corrupt_stored_fingerprint_rejected) ... ok
+test_duplicate_json_key_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_duplicate_json_key_rejected) ... ok
+test_duplicate_live_and_archive_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_duplicate_live_and_archive_rejected) ... ok
+test_expired_ack_not_deleted (test_reconciliation_inspector_qa.InspectorIndependentQA.test_expired_ack_not_deleted) ... ok
+test_expired_retention_not_deleted (test_reconciliation_inspector_qa.InspectorIndependentQA.test_expired_retention_not_deleted) ... ok
+test_missing_database_not_recreated (test_reconciliation_inspector_qa.InspectorIndependentQA.test_missing_database_not_recreated) ... ok
+test_missing_key_not_new_work (test_reconciliation_inspector_qa.InspectorIndependentQA.test_missing_key_not_new_work) ... ok
+test_missing_terminal_result_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_missing_terminal_result_rejected) ... ok
+test_nested_api_array_returns_unverified_not_exception (test_reconciliation_inspector_qa.InspectorIndependentQA.test_nested_api_array_returns_unverified_not_exception) ... ERROR
+test_nested_api_null_returns_unverified_not_exception (test_reconciliation_inspector_qa.InspectorIndependentQA.test_nested_api_null_returns_unverified_not_exception) ... ERROR
+test_no_admission_is_snapshot_only (test_reconciliation_inspector_qa.InspectorIndependentQA.test_no_admission_is_snapshot_only) ... ok
+test_observed_bool_generation_not_integer (test_reconciliation_inspector_qa.InspectorIndependentQA.test_observed_bool_generation_not_integer) ... ok
+test_observed_float_generation_not_integer (test_reconciliation_inspector_qa.InspectorIndependentQA.test_observed_float_generation_not_integer) ... ok
+test_payload_json_array_returns_unverified_not_exception (test_reconciliation_inspector_qa.InspectorIndependentQA.test_payload_json_array_returns_unverified_not_exception) ... ERROR
+test_query_failure_reader_is_closed (test_reconciliation_inspector_qa.InspectorIndependentQA.test_query_failure_reader_is_closed) ... ok
+test_success_reader_is_readonly_and_closed (test_reconciliation_inspector_qa.InspectorIndependentQA.test_success_reader_is_readonly_and_closed) ... ok
+test_unknown_keeps_operator_and_no_retry (test_reconciliation_inspector_qa.InspectorIndependentQA.test_unknown_keeps_operator_and_no_retry) ... ok
+test_valid_terminal_is_information_not_repair_permission (test_reconciliation_inspector_qa.InspectorIndependentQA.test_valid_terminal_is_information_not_repair_permission) ... ok
+test_wrong_admission_digest_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_wrong_admission_digest_rejected) ... ok
+test_wrong_context_scope_refuses_without_private_data (test_reconciliation_inspector_qa.InspectorIndependentQA.test_wrong_context_scope_refuses_without_private_data) ... ok
+test_wrong_epoch_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_wrong_epoch_rejected) ... ok
+test_wrong_observed_session_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_wrong_observed_session_rejected) ... ok
+test_wrong_runtime_instance_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_wrong_runtime_instance_rejected) ... ok
+
+======================================================================
+ERROR: test_nested_api_array_returns_unverified_not_exception (test_reconciliation_inspector_qa.InspectorIndependentQA.test_nested_api_array_returns_unverified_not_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 81, in test_nested_api_array_returns_unverified_not_exception
+    self.f.sql('UPDATE session_admissions SET payload_json=?',(encode({'text':self.f.body['input'],'api_turn_v1':[]}),));self.rejected()
+                                                                                                                         ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 62, in rejected
+    before=self.f.hashes();r=self.f.inspect(**kw)
+                             ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 46, in inspect
+    def inspect(self,**kw):return self.inspector.inspect(body=kw.get('body',self.body),idempotency_key=kw.get('key',self.key),observed=kw.get('observed',self.http))
+                                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 123, in inspect
+    result=self._read(body,idempotency_key,fingerprint,observed)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 178, in _read
+    evidence=self._classify(conn,row,reservation,saved,body,observed,target)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 211, in _classify
+    payload=_load(row['payload_json']);scope=payload.get('api_turn_v1',{}).get('run_owner_scope')
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+======================================================================
+ERROR: test_nested_api_null_returns_unverified_not_exception (test_reconciliation_inspector_qa.InspectorIndependentQA.test_nested_api_null_returns_unverified_not_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 83, in test_nested_api_null_returns_unverified_not_exception
+    self.f.sql('UPDATE session_admissions SET payload_json=?',(encode({'text':self.f.body['input'],'api_turn_v1':None}),));self.rejected()
+                                                                                                                           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 62, in rejected
+    before=self.f.hashes();r=self.f.inspect(**kw)
+                             ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 46, in inspect
+    def inspect(self,**kw):return self.inspector.inspect(body=kw.get('body',self.body),idempotency_key=kw.get('key',self.key),observed=kw.get('observed',self.http))
+                                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 123, in inspect
+    result=self._read(body,idempotency_key,fingerprint,observed)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 178, in _read
+    evidence=self._classify(conn,row,reservation,saved,body,observed,target)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 211, in _classify
+    payload=_load(row['payload_json']);scope=payload.get('api_turn_v1',{}).get('run_owner_scope')
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+
+======================================================================
+ERROR: test_payload_json_array_returns_unverified_not_exception (test_reconciliation_inspector_qa.InspectorIndependentQA.test_payload_json_array_returns_unverified_not_exception)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 79, in test_payload_json_array_returns_unverified_not_exception
+    self.f.sql('UPDATE session_admissions SET payload_json=?',('[]',));self.rejected()
+                                                                       ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 62, in rejected
+    before=self.f.hashes();r=self.f.inspect(**kw)
+                             ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 46, in inspect
+    def inspect(self,**kw):return self.inspector.inspect(body=kw.get('body',self.body),idempotency_key=kw.get('key',self.key),observed=kw.get('observed',self.http))
+                                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 123, in inspect
+    result=self._read(body,idempotency_key,fingerprint,observed)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 178, in _read
+    evidence=self._classify(conn,row,reservation,saved,body,observed,target)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\packages\claw-hermes\recovery_inspector.py", line 211, in _classify
+    payload=_load(row['payload_json']);scope=payload.get('api_turn_v1',{}).get('run_owner_scope')
+                                             ^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+======================================================================
+FAIL: test_changed_selected_model_rejected (test_reconciliation_inspector_qa.InspectorIndependentQA.test_changed_selected_model_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 87, in test_changed_selected_model_rejected
+    payload=json.loads(encode(self.f.payload));payload['api_turn_v1']['settings']['requested_model']='other-model';self.f.change_payload(payload);self.rejected()
+                                                                                                                                                  ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_inspector_qa.py", line 63, in rejected
+    self.assertEqual(r['classification'],'unverified',r);self.assertIs(r['canonicalVerified'],False)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'canonical_terminal_verified' != 'unverified'
+- canonical_terminal_verified
++ unverified
+ : {'contractVersion': 1, 'classification': 'canonical_terminal_verified', 'canonicalVerified': True, 'requiresOperator': False, 'retryAllowed': False, 'repairAllowed': False, 'writesPerformed': False, 'taskSucceeded': True, 'snapshotOnly': True, 'sourceCommit': 'eb75627faf532fa6ffbdae59a0d14b0b385fc780', 'profileBinding': '92dd7bc1eaefd5515d89c5f15b5e9f1aef856e44c97217866d67beed1e541fba', 'epoch': 2, 'nextAction': 'retain_verified_outcome', 'runId': 'run_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'requestFingerprint': 'a0a3695a5d6d24dd291e471610820c95b296eb58df5f99d528715620ede53787', 'admissionId': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', 'sessionId': 'run_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'executionGeneration': 1, 'outcome': 'completed', 'resultDigest': 'e481969086fc8c5a4ed5c919309e7b4fbdd93c8b87bbd146b0a5ec4201425091'}
+
+----------------------------------------------------------------------
+Ran 33 tests in 1.679s
+
+FAILED (failures=1, errors=3)

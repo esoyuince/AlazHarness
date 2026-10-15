@@ -65,6 +65,14 @@ def validate_gap(r: dict) -> list[str]:
         observed=client['observed']
         if observed['run']['run_id']!=rid or observed['run']['status']!='interrupted':errors.append('wrong observed run')
         # Characterize this gap; these transport flags are NOT canonical admission proof.
-        if observed['backendConfirmed'] is not True or observed['requiresOperator'] is not False:errors.append('transport observation changed')
+        if 'recoveryContractVersion' not in observed:
+            if observed['backendConfirmed'] is not True or observed['requiresOperator'] is not False:
+                errors.append('legacy transport observation changed')
+        elif type(observed['recoveryContractVersion']) is int and observed['recoveryContractVersion']==1:
+            if (observed.get('classification')!='terminal_unverified' or observed.get('transportConfirmed') is not True
+                or observed.get('backendConfirmed') is not False or observed.get('requiresOperator') is not True
+                or observed.get('canonicalVerified') is not False or observed.get('retryAllowed') is not False
+                or observed.get('repairAllowed') is not False):errors.append('unsafe recovery projection')
+        else:errors.append('unsupported recovery projection')
         return errors
     except (KeyError,IndexError,TypeError,ValueError,AttributeError):return errors+['malformed observation']

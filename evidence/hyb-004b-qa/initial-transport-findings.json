@@ -1,0 +1,25 @@
+{
+  "status": "REPRODUCED_IN_INITIAL_CANDIDATE",
+  "source_sha256": "20dc8230aa93a7342e4aae68b60409224d7396ca5b393bd594323fa87e813105",
+  "findings": [
+    {
+      "name": "contradictory-classifier",
+      "input": "completed with failed=true",
+      "observed": "canonical_terminal_reported/backendConfirmed=true",
+      "limit": "HTTP snapshot already rejects this; public pure classifier does not."
+    },
+    {
+      "name": "blank-session-classifier",
+      "input": "session_id one space",
+      "observed": "admissionReported/backendConfirmed=true",
+      "limit": "Whitespace-only session should not be a native identity."
+    },
+    {
+      "name": "coerced-id-classifier",
+      "input": "run_id object with toString",
+      "observed": "admissionReported/backendConfirmed=true",
+      "limit": "Direct public API input; not plain network JSON exploit."
+    }
+  ],
+  "model_calls": 0
+}

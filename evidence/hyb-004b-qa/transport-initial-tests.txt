@@ -1,0 +1,193 @@
+test_approval (test_reconciliation_transport_qa.TransportReconciliationQA.test_approval) ... ok
+test_blank_session_classifier (test_reconciliation_transport_qa.TransportReconciliationQA.test_blank_session_classifier) ... FAIL
+test_classifier_no_retry (test_reconciliation_transport_qa.TransportReconciliationQA.test_classifier_no_retry) ... ok
+test_coerced_id_classifier (test_reconciliation_transport_qa.TransportReconciliationQA.test_coerced_id_classifier) ... FAIL
+test_contradictory_classifier (test_reconciliation_transport_qa.TransportReconciliationQA.test_contradictory_classifier) ... FAIL
+test_contradictory_http (test_reconciliation_transport_qa.TransportReconciliationQA.test_contradictory_http) ... FAIL
+test_denied_run (test_reconciliation_transport_qa.TransportReconciliationQA.test_denied_run) ... ok
+test_invalid_generation (test_reconciliation_transport_qa.TransportReconciliationQA.test_invalid_generation) ... ok
+test_malformed_response (test_reconciliation_transport_qa.TransportReconciliationQA.test_malformed_response) ... ok
+test_missing_run (test_reconciliation_transport_qa.TransportReconciliationQA.test_missing_run) ... ok
+test_observer_cannot_resolve (test_reconciliation_transport_qa.TransportReconciliationQA.test_observer_cannot_resolve) ... ok
+test_partial_native_tuple (test_reconciliation_transport_qa.TransportReconciliationQA.test_partial_native_tuple) ... ok
+test_preaborted_resume (test_reconciliation_transport_qa.TransportReconciliationQA.test_preaborted_resume) ... ok
+test_queued_single_read (test_reconciliation_transport_qa.TransportReconciliationQA.test_queued_single_read) ... ok
+test_resume_abort_no_post (test_reconciliation_transport_qa.TransportReconciliationQA.test_resume_abort_no_post) ... ok
+test_resume_deadline_no_post (test_reconciliation_transport_qa.TransportReconciliationQA.test_resume_deadline_no_post) ... ok
+test_retained_failed (test_reconciliation_transport_qa.TransportReconciliationQA.test_retained_failed) ... ok
+test_server_failure_no_retry (test_reconciliation_transport_qa.TransportReconciliationQA.test_server_failure_no_retry) ... ok
+test_terminal_without_proof (test_reconciliation_transport_qa.TransportReconciliationQA.test_terminal_without_proof) ... ok
+test_unknown (test_reconciliation_transport_qa.TransportReconciliationQA.test_unknown) ... ok
+test_valid_terminal (test_reconciliation_transport_qa.TransportReconciliationQA.test_valid_terminal) ... ok
+test_wrong_run_id (test_reconciliation_transport_qa.TransportReconciliationQA.test_wrong_run_id) ... FAIL
+
+======================================================================
+FAIL: test_blank_session_classifier (test_reconciliation_transport_qa.TransportReconciliationQA.test_blank_session_classifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_transport_qa.py", line 18, in check
+    self.assertEqual(completed.returncode,0,completed.stdout+completed.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+true !== false
+
+    at blank-session-classifier (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:11:41)
+    at file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:16:38
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: true,
+  expected: false,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_coerced_id_classifier (test_reconciliation_transport_qa.TransportReconciliationQA.test_coerced_id_classifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_transport_qa.py", line 18, in check
+    self.assertEqual(completed.returncode,0,completed.stdout+completed.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3221226505 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Missing expected exception.
+    at coerced-id-classifier (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:12:38)
+    at file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:16:38
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'throws',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 94
+
+
+======================================================================
+FAIL: test_contradictory_classifier (test_reconciliation_transport_qa.TransportReconciliationQA.test_contradictory_classifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_transport_qa.py", line 18, in check
+    self.assertEqual(completed.returncode,0,completed.stdout+completed.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Missing expected exception.
+    at contradictory-classifier (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:10:41)
+    at file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:16:38
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: undefined,
+  expected: undefined,
+  operator: 'throws',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_contradictory_http (test_reconciliation_transport_qa.TransportReconciliationQA.test_contradictory_http)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_transport_qa.py", line 18, in check
+    self.assertEqual(completed.returncode,0,completed.stdout+completed.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+
+Caught error:
+
+HarnessError: contradictory_terminal_response
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:60:4 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: HarnessError: contradictory_terminal_response
+      at fail (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:19:38)
+      at snapshot (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:39:5)
+      at HermesRunsClient.status (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:122:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async HermesRunsClient.reconcile (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:137:17)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:60:4 {
+    code: 'contradictory_terminal_response'
+  },
+  expected: [Function (anonymous)],
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_wrong_run_id (test_reconciliation_transport_qa.TransportReconciliationQA.test_wrong_run_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_reconciliation_transport_qa.py", line 18, in check
+    self.assertEqual(completed.returncode,0,completed.stdout+completed.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+
+Caught error:
+
+HarnessError: invalid_run_response
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:60:4 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: HarnessError: invalid_run_response
+      at fail (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:19:38)
+      at snapshot (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:35:39)
+      at HermesRunsClient.status (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:122:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async HermesRunsClient.reconcile (file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/packages/claw-hermes/hermes-runs.mjs:137:17)
+      at async waitForActual (node:assert:646:5)
+      at async strict.rejects (node:assert:769:25)
+      at async file:///C:/Antigravity/AlazHarness/scratch/worktrees/ref-pi-001-ac97/scripts/qa/reconciliation_transport.mjs:60:4 {
+    code: 'invalid_run_response'
+  },
+  expected: [Function (anonymous)],
+  operator: 'rejects',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+
+
+----------------------------------------------------------------------
+Ran 22 tests in 4.575s
+
+FAILED (failures=5)

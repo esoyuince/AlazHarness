@@ -132,3 +132,7 @@ the prepared Hermes environment. Standard CI executes only offline receipt,
 checkpoint, reader and launcher tests. It does not execute/kill a real Gateway.
 Characterization PASS is not general recovery acceptance; orphan-reservation
 semantics and arbitrary external-effect recovery remain open.
+
+## HYB-004B scope
+
+Standard CI tests the production recovery projection, read-only resume, local SQLite inspector and malformed/scoped evidence using synthetic stores and loopback HTTP. It does not launch the native Gateway recovery scenarios. Final native post-QA evidence is evidence/hyb-004b/final-native-suite.json; pre-QA native-suite.json remains separately versioned historical evidence. Exact standard count and commit status must be read from the actual run receipt.

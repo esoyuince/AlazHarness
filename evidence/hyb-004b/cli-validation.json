@@ -1,0 +1,32 @@
+{
+  "scope": "four actual local CLI calls on retained prior native stores; no new Gateway executions",
+  "checks": [
+    {
+      "scenario": "completed",
+      "exit_code": 0,
+      "classification": "canonical_terminal_verified",
+      "no_secret_echo": true
+    },
+    {
+      "scenario": "completed-stale",
+      "exit_code": 2,
+      "classification": "unverified",
+      "reason": "stale_epoch",
+      "no_secret_echo": true
+    },
+    {
+      "scenario": "after-reserve",
+      "exit_code": 0,
+      "classification": "reservation_without_admission_observed",
+      "no_secret_echo": true
+    },
+    {
+      "scenario": "after-reserve-stale",
+      "exit_code": 2,
+      "classification": "unverified",
+      "reason": "stale_epoch",
+      "no_secret_echo": true
+    }
+  ],
+  "model_calls": 0
+}

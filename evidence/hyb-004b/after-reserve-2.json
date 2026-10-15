@@ -1,0 +1,120 @@
+{
+  "scope": "native recovery plus new host projection and readonly inspector; no repair or M1 acceptance",
+  "scenario": "after-reserve",
+  "errors": [],
+  "native_result": "PASS",
+  "new_native_incarnations": 2,
+  "new_owned_kills": 1,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "files_sha256": {
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/run-recovery.mjs": "20dc8230aa93a7342e4aae68b60409224d7396ca5b393bd594323fa87e813105",
+    "packages/claw-hermes/recovery_inspector.py": "54c13f67c54d7c999cf6d9450e605b54014001501a682cca68474454af8358f4",
+    "scripts/run_gateway_reconciliation.py": "9e68379b454f5d3041264fd9880f79e94cc1e97bf03d3c28f4388fbf24c6d42f",
+    "scripts/inspect_gateway_recovery.py": "82a0a34b482dca453db1564aae21c4535aaece43fb5cb3e329faf02a84f08a49"
+  },
+  "inspection": {
+    "classification": {
+      "contractVersion": 1,
+      "classification": "reservation_without_admission_observed",
+      "canonicalVerified": false,
+      "requiresOperator": true,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "writesPerformed": false,
+      "taskSucceeded": false,
+      "snapshotOnly": true,
+      "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "profileBinding": "080d57c8722206f50f738c8f02a3627807aa4c260e01df32ea0194f25cd1bad0",
+      "epoch": 2,
+      "nextAction": "operator_reconcile_reservation",
+      "runId": "run_96518a528c864753a74e34f99197e006",
+      "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+      "reason": "canonical_admission_absent_at_snapshot",
+      "canonicalAbsentAtSnapshot": true
+    },
+    "http_projection": {
+      "recoveryContractVersion": 1,
+      "classification": "terminal_unverified",
+      "requiresOperator": true,
+      "backendConfirmed": false,
+      "transportConfirmed": true,
+      "canonicalVerified": false,
+      "retryAllowed": false
+    },
+    "negative_reasons": [
+      "lookup_unavailable",
+      "stale_epoch",
+      "request_payload_conflict"
+    ],
+    "database_bytes_unchanged": true,
+    "additional_model_requests": 0
+  },
+  "model_http_calls": 0,
+  "first_exit": {
+    "stage": "first",
+    "nonce": "2016a6c2f3055f2e2df7b67632e54e68",
+    "launcher_pid": 19204,
+    "pid": 44824,
+    "chain": [
+      44824,
+      19204
+    ],
+    "ready": {
+      "pid": 44824,
+      "nonce": "2016a6c2f3055f2e2df7b67632e54e68",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "867f0a0ed98f4015837c0e83cb535d49",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 58829
+    },
+    "hard_kill": true,
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true
+  },
+  "second_exit": {
+    "stage": "second",
+    "nonce": "cef0264adcef2358a0326c16763559f1",
+    "launcher_pid": 14408,
+    "pid": 36740,
+    "chain": [
+      36740,
+      14408
+    ],
+    "ready": {
+      "pid": 36740,
+      "nonce": "cef0264adcef2358a0326c16763559f1",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "2f2aeee1f7d348ecb9c29d87704e5e75",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 58829
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 36740,
+      "nonce": "cef0264adcef2358a0326c16763559f1",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "native_receipt_sha256": "d803d5ebdab31af161cda5afe6eb554ce5e057498f3fe1a465a483e57f9cd6b6",
+  "result": "PASS"
+}

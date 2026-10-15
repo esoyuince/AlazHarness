@@ -1,0 +1,12 @@
+{
+  "scope": "QA defects and stricter validation introduced after initial native8 success",
+  "initial_native_file": "native-suite.json",
+  "initial_native_final_release_acceptance": false,
+  "next": "Final native cases rerun on post-QA hashes; initial8 retained, not relabelled.",
+  "fixes": [
+    "public classifier strict ID type, nonblank session, contradictory completion flags",
+    "malformed admission and retired records return unverified instead of leaking exceptions",
+    "direct body.model matches requested_model; unsupported routes/providers/options fail closed",
+    "legacy gap receipts remain valid under versioned observation contract"
+  ]
+}

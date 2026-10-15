@@ -1,0 +1,12 @@
+{
+  "scope": "independent scripted HTTP adapter and pure classifier checks",
+  "exit_code": 1,
+  "elapsed_seconds": 4.756,
+  "hashes": {
+    "packages/claw-hermes/run-recovery.mjs": "20dc8230aa93a7342e4aae68b60409224d7396ca5b393bd594323fa87e813105",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "scripts/qa/reconciliation_transport.mjs": "115605e63e424711eac5d286d703a61e824d9f30d120b3744ae2dad6699b1b7b",
+    "tests/test_reconciliation_transport_qa.py": "908210f5e6fdee37e688f05af12f705888279531a46f0df78e4b86f595982055"
+  },
+  "drift": []
+}

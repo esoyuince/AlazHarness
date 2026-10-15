@@ -21,6 +21,14 @@ def fixture():
 class GapEvidenceTests(unittest.TestCase):
     def test_complete_characterization_not_product_acceptance(self):
         data=fixture();self.assertEqual(validate_gap(data),[]);self.assertIs(data['product_recovery_accepted'],False)
+    def test_new_projection_preserves_orphan_without_legacy_success_flag(self):
+        data=fixture();data['client']['observed'].update(recoveryContractVersion=1,classification='terminal_unverified',
+            backendConfirmed=False,requiresOperator=True,transportConfirmed=True,canonicalVerified=False,retryAllowed=False,repairAllowed=False)
+        self.assertEqual(validate_gap(data),[])
+    def test_new_projection_rejects_unsafe_legacy_flag(self):
+        data=fixture();data['client']['observed']['recoveryContractVersion']=1;self.assertTrue(validate_gap(data))
+    def test_unknown_projection_version_rejected(self):
+        data=fixture();data['client']['observed']['recoveryContractVersion']=2;self.assertTrue(validate_gap(data))
     def test_nonobject_rejected(self):self.assertTrue(validate_gap([]))
     def test_missing_recovery_rejected(self):
         data=fixture();del data['after_recovery'];self.assertTrue(validate_gap(data))

@@ -1,0 +1,14 @@
+{
+  "scope": "complete offline root suite, separate from native Gateway executions",
+  "tests": 506,
+  "exit_code": 0,
+  "skips_reported": false,
+  "elapsed_seconds": 51.492,
+  "program_drift": [],
+  "code_hashes": {
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/recovery_inspector.py": "8695b480311d5dd1b35228ea26d68fb6bf0d07a88f4762199482ccaf97870949",
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191"
+  },
+  "baseline_commit": "ebc81a50350c2fdc3d32dc88d3e834adfaffedba"
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "independent full offline suite; not native execution",
+  "exit_code": 1,
+  "tests": 503,
+  "elapsed_seconds": 55.586,
+  "skips_reported": false,
+  "drift": [
+    "scripts/gateway_gap_contract.py",
+    "tests/test_gateway_gap_qa.py",
+    "packages/claw-hermes/recovery_inspector.py",
+    "packages/claw-hermes/run-recovery.mjs"
+  ],
+  "programs": {
+    "packages/claw-hermes/run-recovery.mjs": "20dc8230aa93a7342e4aae68b60409224d7396ca5b393bd594323fa87e813105",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/recovery_inspector.py": "54c13f67c54d7c999cf6d9450e605b54014001501a682cca68474454af8358f4"
+  }
+}

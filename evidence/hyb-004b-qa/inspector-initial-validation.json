@@ -1,0 +1,6 @@
+{
+  "scope": "independent synthetic SQLite corruption/identity checks; no native execution",
+  "exit_code": 1,
+  "inspector_sha256": "54c13f67c54d7c999cf6d9450e605b54014001501a682cca68474454af8358f4",
+  "inspector_drift": false
+}

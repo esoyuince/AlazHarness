@@ -1,0 +1,41 @@
+{
+  "scope": "FINAL post-QA-hash native Gateway kill/reopen plus readonly inspection; four scenarios once each",
+  "cases": [
+    {
+      "case": "final-after-reserve",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "reservation_without_admission_observed",
+      "source_receipt_sha256": "5d547b2333dbd8218ac388f78562198106bed4f434b1b3921554876858965000"
+    },
+    {
+      "case": "final-completed",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "canonical_terminal_verified",
+      "source_receipt_sha256": "dc7455013f6202e096e5155615e0d43f2452b4dc7d0945ace0d4d1c6ea69f656"
+    },
+    {
+      "case": "final-before-model",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "execution_unknown",
+      "source_receipt_sha256": "e1dafeea1b469f7b7c112c535ba1ce3da8e9cb16e923bfd10ca09724363a691e"
+    },
+    {
+      "case": "final-after-tool",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "execution_unknown",
+      "source_receipt_sha256": "5703a1ac6c0c70ce105fe9f00349a4e6306ad00ad5c275a44861ea46c0bf0f26"
+    }
+  ],
+  "passed": 4,
+  "failed": 0,
+  "new_owned_kills": 4,
+  "new_native_incarnations": 8,
+  "pre_fix_native_runs_separate": 8,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "repair_implemented": false
+}

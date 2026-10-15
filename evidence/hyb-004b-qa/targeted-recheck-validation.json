@@ -1,0 +1,11 @@
+{
+  "scope": "independent targeted QA: synthetic SQLite + real loopback client; no native Gateway",
+  "tests": 55,
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
+    "packages/claw-hermes/recovery_inspector.py": "8695b480311d5dd1b35228ea26d68fb6bf0d07a88f4762199482ccaf97870949",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7"
+  },
+  "drift": []
+}

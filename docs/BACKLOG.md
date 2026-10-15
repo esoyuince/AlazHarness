@@ -71,3 +71,7 @@ A confirmed orphan reservation between the two native stores blocks general
 automatic recovery acceptance. HYB-004B: explicit canonical-admission proof and
 orphan/unknown reconciliation, without blind key deletion or POST replay.
 External-effect-before-result, retention expiry and multi-process fencing remain open.
+
+## HYB-004B host reconciliation
+
+Readonly host projection and scoped local inspection: docs/HYB-004B-RECONCILIATION.md. No automatic repair; orphan reservation remains an operational blocker. HYB-004C is explicit owner-bound operator reconciliation, never an implicit POST or key deletion.

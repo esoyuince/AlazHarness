@@ -19,3 +19,5 @@ only the adapter and new tests. Upstream full test suites have NOT been run.
 
 The OpenClaw helpers are private upstream contracts. Updates require explicit
 pin review and our contract suite, not an automatic moving SDK dependency.
+
+HYB-004B adds Alaz-owned run-recovery.mjs and recovery_inspector.py. They do not modify upstream bytes; the local inspector reuses the selected Hermes identity and terminal helpers. Schema provenance is config/recovery-inspector/source-lock.json. The host contract is version1, readonly and does not authorize retries or data repair.

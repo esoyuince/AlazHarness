@@ -36,13 +36,13 @@ class Fixture:
                 pass
             def handle(self):
                 try: super().handle()
-                except (ConnectionResetError, BrokenPipeError): pass  # deliberate client-abort scenarios
+                except (ConnectionResetError, ConnectionAbortedError, BrokenPipeError): pass  # deliberate client-abort scenarios
             def send_json(self, status, body):
                 raw = json.dumps(body).encode()
                 self.send_response(status); self.send_header('Content-Type', 'application/json')
                 self.send_header('Content-Length', str(len(raw))); self.end_headers()
                 try: self.wfile.write(raw)
-                except (BrokenPipeError, ConnectionResetError): pass
+                except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError): pass
             def authorized(self):
                 if self.headers.get('Authorization') != 'Bearer ' + TOKEN:
                     self.send_json(401, {'error': {'code': 'unauthorized'}}); return False
@@ -105,7 +105,10 @@ class Fixture:
                         row['status'], row['fields'] = mapper.terminal_run_status(response)
                         row['output'] = str(6 * 7) if row['status'] == 'completed' else ''
                     payload = {'object': 'hermes.run', 'run_id': rid, 'status': row['status'], 'output': row['output'],
-                               'session_id': 'fixture-session', 'created_at': 0.0, 'model': 'scripted-fixture', **row['fields']}
+                               'session_id': 'fixture-session', 'admission_id': rid[4:], 'execution_generation': 1,
+                               'created_at': 0.0, 'model': 'scripted-fixture', **row['fields']}
+                    if mode == 'unverified-terminal':
+                        payload.update(status='interrupted'); payload.pop('admission_id'); payload.pop('execution_generation')
                     if mode == 'wrong-id': payload['run_id'] = 'run_' + 'f' * 32
                     if mode == 'contradictory': payload.update(status='completed', completed=False, partial=True)
                     self.send_json(200, payload)

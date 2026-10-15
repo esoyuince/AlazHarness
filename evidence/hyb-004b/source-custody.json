@@ -1,0 +1,31 @@
+{
+  "scope": "unchanged original workspace and source custody; not full security audit",
+  "baseline": "ebc81a50350c2fdc3d32dc88d3e834adfaffedba",
+  "root_original_files_preserved": 32,
+  "source_trees": [
+    {
+      "name": "OpenClaw",
+      "commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "clean": true
+    },
+    {
+      "name": "Hermes",
+      "commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "clean": true
+    },
+    {
+      "name": "Pi",
+      "commit": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "clean": true
+    },
+    {
+      "name": "OpenCode",
+      "commit": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "clean": true
+    }
+  ],
+  "runtime_source_locks_unchanged": true,
+  "inspector_schema_source_files_matched": 8,
+  "new_dependencies_installed": false,
+  "paid_model_calls": 0
+}

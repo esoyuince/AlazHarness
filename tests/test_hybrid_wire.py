@@ -15,7 +15,8 @@ SPEC.loader.exec_module(FIXTURE)
 SCENARIOS = ('success', 'duplicate', 'conflict', 'lost-ack', 'partial', 'budget', 'cancel', 'timeout',
              'unconfirmed', 'unknown', 'approval', 'resume', 'oversized', 'wrong-id', 'contradictory',
              'redirect', 'preaborted', 'bad-input', 'bad-endpoint', 'not-found', 'observer-failure',
-             'terminal-freeze', 'cancel-idempotent', 'settlement-no-extension', 'disposed-no-revival', 'unsupported')
+             'terminal-freeze', 'cancel-idempotent', 'settlement-no-extension', 'disposed-no-revival', 'unsupported', 'unverified-terminal', 'reconcile-live',
+             'resume-timeout-readonly', 'resume-abort-readonly')
 
 class HybridWireTests(unittest.TestCase):
     @classmethod
@@ -48,6 +49,10 @@ class HybridWireTests(unittest.TestCase):
                     self.assertEqual(posts.count('/v1/runs'), 1)
                 if name in ('preaborted', 'bad-input', 'bad-endpoint', 'terminal-freeze', 'cancel-idempotent', 'settlement-no-extension', 'disposed-no-revival', 'unsupported'):
                     self.assertEqual(fixture.request_log, [])
+                if name in ('unverified-terminal','reconcile-live','resume-timeout-readonly','resume-abort-readonly'):
+                    self.assertEqual(rows[0]['stops'],0);self.assertEqual(posts.count('/v1/runs'),1)
+                    if name in ('unverified-terminal','reconcile-live'):
+                        self.assertEqual(sum(method=='GET' for method,_ in fixture.request_log),1)
                 self.assertEqual(fixture.foreign_hits, 0)
 
 for scenario in SCENARIOS:

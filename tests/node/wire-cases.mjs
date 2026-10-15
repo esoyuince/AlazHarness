@@ -12,6 +12,22 @@ const errorCode = (code) => (error) => error instanceof HarnessError && error.co
 let proof = {};
 
 switch (scenario) {
+  case 'unverified-terminal': {
+    const a=await client.start(request('unverified-terminal'));const r=await client.reconcile(a.run_id);
+    assert.equal(r.classification,'terminal_unverified');assert.equal(r.transportConfirmed,true);
+    assert.equal(r.backendConfirmed,false);assert.equal(r.canonicalVerified,false);
+    assert.equal(r.requiresOperator,true);assert.equal(r.retryAllowed,false);break;
+  }
+  case 'reconcile-live': {
+    const a=await client.start(request('hold'));const r=await client.reconcile(a.run_id);
+    assert.equal(r.run.status,'running');assert.equal(r.stopRequested,false);break;
+  }
+  case 'resume-timeout-readonly': case 'resume-abort-readonly': {
+    const a=await client.start(request('hold'));const abort=new AbortController();
+    const r=client.resume(a.run_id,{...opts,executionTimeoutMs:40,signal:abort.signal,
+      onStatus:()=>{if(scenario==='resume-abort-readonly')abort.abort();}});
+    await assert.rejects(r,e=>e.code==='observation_interrupted'&&e.stopRequested===false);break;
+  }
   case 'success': {
     const admission = await client.start(request()); const events = [];
     const result = await client.observe(admission.run_id, { ...opts, onStatus: (s) => events.push(s.status) });

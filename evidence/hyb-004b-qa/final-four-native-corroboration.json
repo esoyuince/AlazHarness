@@ -1,0 +1,53 @@
+{
+  "scope": "independent retrospective readonly corroboration of primary FINAL FOUR native runs; no new executions",
+  "count": 4,
+  "checks": [
+    {
+      "scenario": "completed",
+      "classification": "canonical_terminal_verified",
+      "native_admissions": 1,
+      "native_tool_results": 1,
+      "recorded_model_requests": 2,
+      "final_native_program_hashes_match": true,
+      "profile_bytes_unchanged": true,
+      "source_reconciliation_sha256": "dc7455013f6202e096e5155615e0d43f2452b4dc7d0945ace0d4d1c6ea69f656",
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "before-model",
+      "classification": "execution_unknown",
+      "native_admissions": 1,
+      "native_tool_results": 0,
+      "recorded_model_requests": 1,
+      "final_native_program_hashes_match": true,
+      "profile_bytes_unchanged": true,
+      "source_reconciliation_sha256": "e1dafeea1b469f7b7c112c535ba1ce3da8e9cb16e923bfd10ca09724363a691e",
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "after-tool",
+      "classification": "execution_unknown",
+      "native_admissions": 1,
+      "native_tool_results": 1,
+      "recorded_model_requests": 2,
+      "final_native_program_hashes_match": true,
+      "profile_bytes_unchanged": true,
+      "source_reconciliation_sha256": "5703a1ac6c0c70ce105fe9f00349a4e6306ad00ad5c275a44861ea46c0bf0f26",
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "after-reserve",
+      "classification": "reservation_without_admission_observed",
+      "native_admissions": 0,
+      "native_tool_results": 0,
+      "recorded_model_requests": 0,
+      "final_native_program_hashes_match": true,
+      "profile_bytes_unchanged": true,
+      "source_reconciliation_sha256": "5d547b2333dbd8218ac388f78562198106bed4f434b1b3921554876858965000",
+      "result": "CORROBORATED"
+    }
+  ],
+  "new_gateway_processes": 0,
+  "model_calls": 0,
+  "result": "PASS"
+}

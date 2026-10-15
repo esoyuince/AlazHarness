@@ -1,0 +1,26 @@
+{
+  "scope": "independent synthetic malformed/cross-store consistency tests",
+  "inspector_sha256": "54c13f67c54d7c999cf6d9450e605b54014001501a682cca68474454af8358f4",
+  "result": "DEFECTS_REPRODUCED",
+  "tests_run": 33,
+  "failures": 1,
+  "errors": 3,
+  "findings": [
+    {
+      "category": "malformed_evidence_not_contained",
+      "cases": [
+        "payload=[]",
+        "api_turn_v1=[]",
+        "api_turn_v1=null"
+      ],
+      "observed": "uncaught AttributeError, rather than unverified informational refusal"
+    },
+    {
+      "category": "cross_store_selected_model_mismatch",
+      "observed": "canonical_terminal_verified/taskSucceeded=true when native requested_model differs from matching replay body.model",
+      "limit": "Corruption/inconsistent-record fixture; not a demonstrated normal upstream failure."
+    }
+  ],
+  "original_native_profiles_modified": false,
+  "model_calls": 0
+}

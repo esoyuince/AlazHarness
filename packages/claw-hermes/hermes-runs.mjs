@@ -1,5 +1,6 @@
 /** Alaz-owned local Hermes wire adapter; no model loop, scheduler or transcript writer. */
 import { setTimeout as sleep } from 'node:timers/promises';
+import { classifyRunRecovery } from './run-recovery.mjs';
 import { createAgentHarnessAttemptCancellation } from '../upstream/openclaw/attempt-cancellation.ts';
 import { createAgentHarnessAttemptDeadlineController } from '../upstream/openclaw/attempt-deadlines.ts';
 import { MAX_TIMER_TIMEOUT_MS } from '../upstream/openclaw/number-coercion.ts';
@@ -57,7 +58,8 @@ export class HermesRunsClient {
   }
   capabilities() {
     return Object.freeze({ protocol: 'hermes-runs-pinned-v1', start: true, status: true,
-      stopRequest: true, observe: true, resumeReadOnly: true,
+      stopRequest: true, observe: true, resumeReadOnly: true, reconcileReadOnly: true,
+      recoveryContractVersion: 1, canonicalDatabaseInspection: false, automaticRepair: false,
       sse: false, interactiveApproval: false, resolveUnknown: false,
       ownScheduler: false, ownModelLoop: false, ownTranscript: false,
       tokenOrCostBudgetEnforced: false, serverDurabilityVerified: false });
@@ -128,10 +130,16 @@ export class HermesRunsClient {
   resolveUnknown() { fail('operator_reconciliation_required'); }
   async resume(id, options = {}) {
     // Reattach to an existing run; never resubmit a prompt or resolve an unknown effect.
-    return this.observe(id, options);
+    return this.#observe(id, options, true);
   }
-  async observe(id, { signal, executionTimeoutMs = 30000, settlementTimeoutMs = 5000,
-      pollIntervalMs = 100, onStatus } = {}) {
+  async reconcile(id, { signal } = {}) {
+    // One authenticated GET; no retries, waiting, cancellation or storage repair.
+    const run = await this.status(id, { signal });
+    return { run, ...classifyRunRecovery(run), stopRequested: false, hostReason: null };
+  }
+  async observe(id, options = {}) { return this.#observe(id, options, false); }
+  async #observe(id, { signal, executionTimeoutMs = 30000, settlementTimeoutMs = 5000,
+      pollIntervalMs = 100, onStatus } = {}, readOnly = false) {
     runId(id);
     bounded(executionTimeoutMs, 10, 600000, 'execution_timeout');
     bounded(settlementTimeoutMs, 10, 60000, 'settlement_timeout');
@@ -146,13 +154,17 @@ export class HermesRunsClient {
       onTimeout: () => cancellation.abortExplicitly('execution_timeout'),
     });
     let settlement; let settlementAbort; let stopRequested = false; let stopError = null;
-    const result = (value) => ({ run: value, backendConfirmed: TERMINAL.has(value.status),
+    const result = (value) => ({ run: value, ...classifyRunRecovery(value),
       stopRequested, hostReason: state.explicitCancellationObserved
         ? (state.explicitCancellationReason === 'execution_timeout' ? 'execution_timeout' : 'cancelled') : null,
-      requiresOperator: value.status === 'unknown' || value.status === 'waiting_for_approval',
       ...(stopError ? { stopError } : {}) });
     try {
       while (true) {
+        if (readOnly && state.explicitCancellationObserved) {
+          fail('observation_interrupted', { runId: id, backendConfirmed: false,
+            mayHaveBeenAccepted: false, stopRequested: false,
+            hostReason: state.explicitCancellationReason === 'execution_timeout' ? 'execution_timeout' : 'cancelled' });
+        }
         if (state.explicitCancellationObserved && !stopRequested) {
           stopRequested = true;
           execution.dispose();

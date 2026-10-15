@@ -1,0 +1,19 @@
+{
+  "scope": "independent final full offline standard suite; native runs and retained-store reads separate",
+  "tests": 506,
+  "exit_code": 0,
+  "elapsed_seconds": 55.815,
+  "no_skips_reported": true,
+  "code_drift": [],
+  "qa_code_sha256": {
+    "scripts/qa/reconciliation_native_records.py": "8d0a72691e2b1f07bf3f1bb04f8f9ba478ca4d1d1deadbb665228b935db3d74d",
+    "scripts/qa/reconciliation_transport.mjs": "5fd72f2d77d11dc3709475cac8491517d3b9983ea4604687ac7dd4838c701626",
+    "tests/test_reconciliation_transport_qa.py": "908210f5e6fdee37e688f05af12f705888279531a46f0df78e4b86f595982055",
+    "tests/test_reconciliation_inspector_qa.py": "0052a5845707f3e8368d3b3c2f0efe5bb9cbfe2c1d5a6e45504b20daec91e260"
+  },
+  "product_sha256": {
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/recovery_inspector.py": "8695b480311d5dd1b35228ea26d68fb6bf0d07a88f4762199482ccaf97870949",
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191"
+  }
+}

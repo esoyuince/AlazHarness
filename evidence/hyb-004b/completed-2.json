@@ -1,0 +1,123 @@
+{
+  "scope": "native recovery plus new host projection and readonly inspector; no repair or M1 acceptance",
+  "scenario": "completed",
+  "errors": [],
+  "native_result": "PASS",
+  "new_native_incarnations": 2,
+  "new_owned_kills": 1,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "files_sha256": {
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/run-recovery.mjs": "20dc8230aa93a7342e4aae68b60409224d7396ca5b393bd594323fa87e813105",
+    "packages/claw-hermes/recovery_inspector.py": "54c13f67c54d7c999cf6d9450e605b54014001501a682cca68474454af8358f4",
+    "scripts/run_gateway_reconciliation.py": "9e68379b454f5d3041264fd9880f79e94cc1e97bf03d3c28f4388fbf24c6d42f",
+    "scripts/inspect_gateway_recovery.py": "82a0a34b482dca453db1564aae21c4535aaece43fb5cb3e329faf02a84f08a49"
+  },
+  "inspection": {
+    "classification": {
+      "contractVersion": 1,
+      "classification": "canonical_terminal_verified",
+      "canonicalVerified": true,
+      "requiresOperator": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "writesPerformed": false,
+      "taskSucceeded": true,
+      "snapshotOnly": true,
+      "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "profileBinding": "397c722f2d9241e6d5e2b6508b8ee4cb5ded1e6c697b15dc2741b218548c861e",
+      "epoch": 2,
+      "nextAction": "retain_verified_outcome",
+      "runId": "run_b79c4887e9fc46b8aa13199612cef826",
+      "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+      "admissionId": "aaaf41e430e246f5b24e5ccc3739a934",
+      "sessionId": "run_b79c4887e9fc46b8aa13199612cef826",
+      "executionGeneration": 1,
+      "outcome": "completed",
+      "resultDigest": "c9d47eb27d67ba85cbc7c17ecc48aba1ff61d284556b32aa34caffa97df3814d"
+    },
+    "http_projection": {
+      "recoveryContractVersion": 1,
+      "classification": "canonical_terminal_reported",
+      "requiresOperator": false,
+      "backendConfirmed": true,
+      "transportConfirmed": true,
+      "canonicalVerified": false,
+      "retryAllowed": false
+    },
+    "negative_reasons": [
+      "lookup_unavailable",
+      "stale_epoch",
+      "request_payload_conflict"
+    ],
+    "database_bytes_unchanged": true,
+    "additional_model_requests": 0
+  },
+  "model_http_calls": 2,
+  "first_exit": {
+    "stage": "first",
+    "nonce": "80bf553c816463386f005ced9ff9874a",
+    "launcher_pid": 3532,
+    "pid": 44928,
+    "chain": [
+      44928,
+      3532
+    ],
+    "ready": {
+      "pid": 44928,
+      "nonce": "80bf553c816463386f005ced9ff9874a",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "5e2a0d78414e48c69f1f832fc20d4258",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 55921
+    },
+    "hard_kill": true,
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true
+  },
+  "second_exit": {
+    "stage": "second",
+    "nonce": "6453e76d86cf3c6a46c04e53f62ed13d",
+    "launcher_pid": 30516,
+    "pid": 24880,
+    "chain": [
+      24880,
+      30516
+    ],
+    "ready": {
+      "pid": 24880,
+      "nonce": "6453e76d86cf3c6a46c04e53f62ed13d",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "9059f7c8e1d441dd89dfa0646f3fffe1",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 55921
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 24880,
+      "nonce": "6453e76d86cf3c6a46c04e53f62ed13d",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "native_receipt_sha256": "780ded2752d2bc8e5000cb28edf45e33d569604bfa0b3b8fbbee9ad93d990e87",
+  "result": "PASS"
+}

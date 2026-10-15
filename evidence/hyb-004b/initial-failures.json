@@ -1,0 +1,19 @@
+{
+  "scope": "preserved implementation/test-authoring failures; no native acceptance inferred",
+  "events": [
+    {
+      "stage": "test-file packaging command",
+      "exit_code": 1,
+      "effect": "Syntax error before any write; triple-quote collision corrected."
+    },
+    {
+      "stage": "first scoped regression run",
+      "inspector_tests": 39,
+      "inspector_exit": 0,
+      "wire_tests": 30,
+      "wire_failed": 4,
+      "wire_exit": 1,
+      "cause": "New network cases accidentally added to the zero-network assertion group by a broad textual replacement. Node assertions passed; parent grouping corrected. Old zero-network checks retained."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "scope": "NEW native Gateway kill/reopen plus new host/readonly-inspector tests; standard CI does not execute these",
+  "cases": [
+    {
+      "case": "accepted-after-reserve-1",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "reservation_without_admission_observed",
+      "elapsed_seconds": 53.593,
+      "receipt_sha256": "b456ef032b4a1780a037de728321dee434606d1bfbb33c6a206e95e7d51a2d71"
+    },
+    {
+      "case": "accepted-after-reserve-2",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "reservation_without_admission_observed",
+      "elapsed_seconds": 33.79,
+      "receipt_sha256": "c2fbe7f68b72a632137100209ec19b825b3b47094d7e84b0442cc838b4b84257"
+    },
+    {
+      "case": "accepted-completed-1",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "canonical_terminal_verified",
+      "elapsed_seconds": 36.725,
+      "receipt_sha256": "1f2810f6883526117afbf1eb6a84ae197ec1d79edc4ef20f57a32d1c90e460d3"
+    },
+    {
+      "case": "accepted-completed-2",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "canonical_terminal_verified",
+      "elapsed_seconds": 32.951,
+      "receipt_sha256": "4d22ad9e196406dac99d083276887ef707ec7df2134ffd1a5277599ed746c6df"
+    },
+    {
+      "case": "accepted-before-model-1",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "execution_unknown",
+      "elapsed_seconds": 32.209,
+      "receipt_sha256": "75c34636ab3c4df7b9abcd521b2ad7c35ce05f4b45c5dbaa5877182367545ee7"
+    },
+    {
+      "case": "accepted-before-model-2",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "execution_unknown",
+      "elapsed_seconds": 31.854,
+      "receipt_sha256": "237ab92fe5fe2bbeb59f33760cf06137fc93aa5ad80f03c27f76a47864642a76"
+    },
+    {
+      "case": "accepted-after-tool-1",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "execution_unknown",
+      "elapsed_seconds": 34.954,
+      "receipt_sha256": "1b50c75b3315639045bffb9a96f52faa48af968f569c83c34a591b97ba6d37fe"
+    },
+    {
+      "case": "accepted-after-tool-2",
+      "exit_code": 0,
+      "result": "PASS",
+      "classification": "execution_unknown",
+      "elapsed_seconds": 35.639,
+      "receipt_sha256": "e808ccf0956e997f5dd5bf32a5405512a01cf8828ed4f3823bf930252d06c6cf"
+    }
+  ],
+  "passed": 8,
+  "failed": 0,
+  "new_owned_kills": 8,
+  "new_native_incarnations": 16,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "repair_implemented": false
+}
