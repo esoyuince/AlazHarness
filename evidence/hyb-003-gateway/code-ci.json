@@ -1,0 +1,23 @@
+{
+  "scope": "exact code-commit alaz-server standard CI; native Gateway suite remains separate",
+  "github_context": "alaz/local-ci",
+  "github_state": "success",
+  "server": {
+    "sha": "c4a3f500eddc75d91c507ecb346af999237b32aa",
+    "checkout_sha": "c4a3f500eddc75d91c507ecb346af999237b32aa",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 321,
+      "failed": 0,
+      "passed": 321,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 321
+    },
+    "status_delivery": "posted"
+  },
+  "native_gateway_run_by_ci": false,
+  "native_local_runs": 6,
+  "independent_local_refusal_cases": 9
+}

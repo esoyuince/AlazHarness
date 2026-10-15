@@ -16,7 +16,7 @@ Tam OpenClaw giriş zinciri, M1 ve otonomi M2 henüz kabul edilmedi.
 | Aktif çalışma ağacı | C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97 |
 | Aktif dal | alaz/hyb-003-gateway-5a5c |
 | Bu paketin tabanı | 45f7d0e9f1ebb7bd15dc846c0d0b7cf9276d758a |
-| Yayın | Yerel doğrulandı; yeni kod commit/push/exact-CI henüz bu kayıt anında PENDING. Son teslim eki aşağıya eklenecek. |
+| Yayın | Kod c4a3f500eddc75d91c507ecb346af999237b32aa push edildi; aynı SHA alaz/local-ci success ve321/321 PASS. Son belge HEAD CI ayrıca sorgulanır. |
 | Remote | esoyuince/AlazHarness public MIT |
 | main | Bu geliştirme paketleri henüz main ile birleştirilmedi. |
 
@@ -115,3 +115,19 @@ Gerçek public Gateway/Authority/API yolu kuruldu ve6/6 native,321/321 standart,
 ek9/9 gerçek HTTP ret kontrolü ayrı kapsamlarda PASS. Kaynak gövdeleri veya
 prod adaptör değiştirilmedi; test model/röle/parent/kanıt scriptleri ve rapor yazıldı.
 Ücretli model ve otonom gündem yok. Yeni kodun Git/CI teslimi ayrıca eklenecek.
+
+### 2026-10-15 — HYB-003-GATEWAY — Git / CI teslimi
+
+**DONE — dar native Gateway kabul paketi.** Kod commit'i
+`c4a3f500eddc75d91c507ecb346af999237b32aa` uzak alaz/hyb-003-gateway-5a5c dalında.
+Gerçek alaz-server aynı commit'i checkout ederek321/321 standart testi çalıştırdı;
+failed/skipped/suite_errors0, status_delivery posted. GitHub alaz/local-ci success
+ayrıca okundu. Makbuz: evidence/hyb-003-gateway/code-ci.json.
+
+Yerel6/6 public Gateway yaşam döngüsü ve ayrı9/9 programatik native HTTP ret
+kontrolü CI321'e eklenmez. Ücretli model veya otonomi yok; vendor, asıl adaptör,
+sunucu profili ve kişisel ayarlar korunur. Aktif iş günlüğü ve kök kolay erişim
+kopyası eşitlendi. Main merge yapılmadı. Bu son ek yalnız teslim kaydıdır;
+native deneyler bu belge güncellemesinde yeniden çalıştırılmadı.
+Sonraki kesin iş HYB-004-GATEWAY-RECOVERY; M1/M2 henüz kabul edilmedi.
+Belge commit'inin exact-CI durumu yeni HEAD üzerinden ayrıca kontrol edilmelidir.
