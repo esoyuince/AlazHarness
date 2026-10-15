@@ -16,7 +16,7 @@ belirsiz iş otomatik tekrarlanmaz. Orphan REPAIR uygulanmadı; M1/M2 açık.
 | Aktif dal | alaz/hyb-004b-reconciliation-7c8b |
 | Bu paketin tabanı | ebc81a50350c2fdc3d32dc88d3e834adfaffedba |
 | Yerel sonuç | 506/506 standart, son kod4/4native, bağımsız55targeted dahil PASS |
-| Git/CI | Bu kaydın yazımında yeni commit/push/exact-SHA CI PENDING; teslim eki aşağıya eklenecek. |
+| Git/CI | Kod8fa0300 yayımlandı; aynı SHA506/506 server PASS ve GitHub success. Son belge HEAD CI ayrıca okunur. |
 | Remote | esoyuince/AlazHarness, public MIT |
 | main | Geliştirme paketleri henüz main ile birleştirilmedi. |
 
@@ -138,3 +138,24 @@ Daha eski history bağlantıları da aynı içerikte kalır. Geçmiş komutlar y
 506standart ve final4native/55targeted ayrı kapsamlarla doğrulandı. Readonly host
 sözleşmesi uygulandı; orphan veritabanı onarımı uygulanmadı. M1/M2 NOT ACCEPTED.
 Yeni kod commit/push/exact-SHA CI sonucu ayrıca eklenecek. main birleşmedi.
+
+### 2026-10-15 — HYB-004B-QA4cff — Final native teyit
+
+Son kod hashlerinde yeniden çalıştırılan4 primary native kill/reopen koşusu
+ayrı olarak readonly DB, süreç çıkışları ve yeni inspector ile teyit edildi:
+4/4 CORROBORATED; bu4 yeni yürütme değildir. Final-native-suite dört SON KOD
+koşusudur; ilk8 öncekihash koşusu bununla aynı finalkabul sayısına eklenmez.
+Kanıt evidence/hyb-004b-qa/final-four-native-corroboration.json. QA toplam21
+dosya stage edilmiş, kaynak/test kodları son506 koşusuyla aynı.7c8b tek final
+commit/push/CI sahibi; bağımsız QA yerel kapanışı tamam. Onarım yok.
+
+### 2026-10-15 — HYB-004B — Git ve aynı-commit CI teslimi
+
+Kod `8fa03004dff3def30637988227cf1c534e825182`, uzak dal
+`alaz/hyb-004b-reconciliation-7c8b` yayımlandı. Gerçek alaz-server aynı SHA
+checkout ile506/506 çalıştırdı; failed/skipped/suite_errors0, posted. GitHub
+alaz/local-ci success ayrıca doğrulandı. Kanıt evidence/hyb-004b/code-ci.json.
+Final native4 ve bağımsız55/retained10/CLI4 kapsamları CI toplamına eklenmez.
+Readonly sınıflandırma kabul edildi, orphan onarımı uygulanmadı. Sonraki HYB-004C.
+main birleşmedi; kök32 eski dosya ve4upstream değişmedi. Bu belge commitinin
+CI sonucu son HEAD üzerinden ayrıca okunmalıdır; kod CI o belgeye varsayılmaz.

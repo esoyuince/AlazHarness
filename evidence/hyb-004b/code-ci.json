@@ -1,0 +1,26 @@
+{
+  "scope": "exact-SHA offline server CI; native4 and independent55 not additional CI totals",
+  "commit": "8fa03004dff3def30637988227cf1c534e825182",
+  "server": {
+    "sha": "8fa03004dff3def30637988227cf1c534e825182",
+    "checkout_sha": "8fa03004dff3def30637988227cf1c534e825182",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 506,
+      "failed": 0,
+      "passed": 506,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 506
+    },
+    "status_delivery": "posted"
+  },
+  "github": {
+    "context": "alaz/local-ci",
+    "state": "success",
+    "description": "ALAZ Local CI passed",
+    "id": 56438758306
+  },
+  "native_gateway_executed_by_ci": false
+}
