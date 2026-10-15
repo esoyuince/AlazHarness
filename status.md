@@ -18,7 +18,7 @@ Bu yerel audit kapanışıdır; native status onarımı, anahtar silme, otomatik
 | Başlangıç commit'i | 21321cf2df520b7dca2d976dfd089a8322ff56b5 |
 | Yerel standart test | 604/604 PASS, exit0, skip0, ölçülen kod drift0 |
 | Gerçek Gateway son-kod senaryoları | 3/3 PASS, üç Gateway kill ve yedi Gateway süreç nesli |
-| Git/CI | Yeni paket commit/push/aynı-SHA CI bu kayıt anında PENDING; final teslim eki ayrıca yazılır. |
+| Git/CI | Kod30b56a3 yayımlandı; aynı SHA alaz-server604/604 ve GitHub alaz/local-ci success. Son belge HEAD CI ayrıca okunur. |
 | Remote | esoyuince/AlazHarness, public MIT |
 | main | Bu geliştirme paketleri main ile birleştirilmedi. |
 
@@ -149,3 +149,18 @@ kapsamları ayrı PASS. Eksik arşiv index'i ve değişmiş canonical replay dur
 iki QA bulgusu düzeltildi; final kod hashleri deneylerle eşleşiyor. Yeni kodun
 commit/push/exact-SHA CI kapanışı ayrı kaydedilecek. Native status repair veya
 reoffer yok; M1/M2 kabul edilmedi. main birleşmedi.
+
+### 2026-10-15 — HYB-004C — Git ve aynı-commit CI teslimi
+
+Kod `30b56a33fe5eef4af0b91e672a166771003adf4c`, uzak
+`alaz/hyb-004c-resolution-4cff` yayımlandı. Gerçek alaz-server aynı SHA'yı
+checkout ederek604/604 offline testi çalıştırdı; failed/skipped/suite_errors0,
+status_delivery posted. GitHub alaz/local-ci success ayrıca okundu. Kanıt:
+`evidence/hyb-004c/code-ci.json`.
+
+Final3 Gateway profil deneyi,2sentetik-DB gerçek transaction crash ve13native
+ownership assertion farklı kapsamlardır;604'e eklenmez. QA üç gerçek profilin
+kalıcı kayıtlarını ayrı readonly teyit etti, yeni3koşu değildir. Audit closure
+uygulandı; yeniden gönderim, key deletion, native status repair veya M1/M2 yok.
+32eski kök dosya/4upstream korundu, main birleşmedi. Sonraki iş HYB-005-HOST-GATE.
+Bu belge commit'inin CI'sı son HEAD üzerinden ayrıca kontrol edilir.
