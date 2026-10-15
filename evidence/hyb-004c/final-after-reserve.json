@@ -1,0 +1,344 @@
+{
+  "scope": "native Gateway crash and explicit operator closure; not reexecution or full M1",
+  "scenario": "after-reserve",
+  "errors": [],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "code_sha256": {
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/resolve_gateway_reservation.py": "5d652a003d742b10458568002175d61a8b9970476930d13a69e911a3c26c89af",
+    "scripts/run_operator_resolution_probe.py": "cf3c41769b9acdd722ac478d86f1a1a7cc7e53db549904b54a2cff0d5fc4a992"
+  },
+  "native_setup_result": "PASS",
+  "native_setup_receipt_sha256": "8a35ee77e774d1da0d0e6a20a864ae81cb3e892b3116ad0dd6d14ccfbf538282",
+  "preview": {
+    "exit_code": 0,
+    "value": {
+      "status": "preview",
+      "plan": {
+        "planVersion": 1,
+        "commandId": "1d8349d908fd76bb4ad49f18973d3da5",
+        "action": "abandon_unadmitted",
+        "profileBinding": "e6194c0ffdb3e9b829ae4a99c692a2178bb09c56dd6830ed3eb9ced3e3361b7e",
+        "scopeHash": "616299e557b242ada27c95c5fb2ad8403302ef2fba82139fae68064660819b83",
+        "runId": "run_04c063ae1ea04818bc252376e1c6e426",
+        "keyHash": "89459861b51023e140031364f72d702475d53a6ec20c40e7cc7dcf2462f8198b",
+        "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "epoch": 2,
+        "instanceId": "a22313db076a4811b9d1241ac0e29020",
+        "snapshotDigest": "855f23155cb6547c68aa986a96617f1148adebc717d8395277ef0a6734b63c68",
+        "createdAtMs": 1792080545324,
+        "expiresAtMs": 1792080845324,
+        "confirmationDigest": "b5c81d0d25e2d987f0c266b54a8de5beab549e32edf433f6067db3e10f8e6fe5"
+      },
+      "writesPerformed": false,
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "requiresExplicitConfirmation": true
+    }
+  },
+  "wrong_confirmation": {
+    "exit_code": 2,
+    "value": {
+      "status": "refused",
+      "reason": "explicit_confirmation_required",
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "effect": "not_applied"
+    }
+  },
+  "applied": {
+    "exit_code": 0,
+    "value": {
+      "resolutionVersion": 1,
+      "status": "recorded",
+      "receipt": {
+        "receiptVersion": 1,
+        "commandId": "1d8349d908fd76bb4ad49f18973d3da5",
+        "action": "abandon_unadmitted",
+        "profileBinding": "e6194c0ffdb3e9b829ae4a99c692a2178bb09c56dd6830ed3eb9ced3e3361b7e",
+        "scopeHash": "616299e557b242ada27c95c5fb2ad8403302ef2fba82139fae68064660819b83",
+        "runId": "run_04c063ae1ea04818bc252376e1c6e426",
+        "keyHash": "89459861b51023e140031364f72d702475d53a6ec20c40e7cc7dcf2462f8198b",
+        "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "epoch": 2,
+        "instanceId": "a22313db076a4811b9d1241ac0e29020",
+        "snapshotDigest": "855f23155cb6547c68aa986a96617f1148adebc717d8395277ef0a6734b63c68",
+        "planDigest": "b5c81d0d25e2d987f0c266b54a8de5beab549e32edf433f6067db3e10f8e6fe5",
+        "recordedAtMs": 1792080546215,
+        "recordDigest": "9d5e40bb2600af049d009b1bd166f7c4adc3bbfddec730f9e752e18bec886ee3"
+      },
+      "writesPerformed": true,
+      "stateMetaRowsAdded": 2,
+      "requestClosed": true,
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "admissionCreated": false,
+      "reservationDeleted": false,
+      "modelCalls": 0
+    }
+  },
+  "repeated": {
+    "exit_code": 0,
+    "value": {
+      "resolutionVersion": 1,
+      "status": "already_recorded",
+      "receipt": {
+        "action": "abandon_unadmitted",
+        "commandId": "1d8349d908fd76bb4ad49f18973d3da5",
+        "epoch": 2,
+        "instanceId": "a22313db076a4811b9d1241ac0e29020",
+        "keyHash": "89459861b51023e140031364f72d702475d53a6ec20c40e7cc7dcf2462f8198b",
+        "planDigest": "b5c81d0d25e2d987f0c266b54a8de5beab549e32edf433f6067db3e10f8e6fe5",
+        "profileBinding": "e6194c0ffdb3e9b829ae4a99c692a2178bb09c56dd6830ed3eb9ced3e3361b7e",
+        "receiptVersion": 1,
+        "recordDigest": "9d5e40bb2600af049d009b1bd166f7c4adc3bbfddec730f9e752e18bec886ee3",
+        "recordedAtMs": 1792080546215,
+        "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "runId": "run_04c063ae1ea04818bc252376e1c6e426",
+        "scopeHash": "616299e557b242ada27c95c5fb2ad8403302ef2fba82139fae68064660819b83",
+        "snapshotDigest": "855f23155cb6547c68aa986a96617f1148adebc717d8395277ef0a6734b63c68"
+      },
+      "writesPerformed": false,
+      "stateMetaRowsAdded": 0,
+      "requestClosed": true,
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "admissionCreated": false,
+      "reservationDeleted": false,
+      "modelCalls": 0
+    }
+  },
+  "inspection": {
+    "contractVersion": 1,
+    "classification": "reservation_abandoned_verified",
+    "canonicalVerified": false,
+    "requiresOperator": false,
+    "retryAllowed": false,
+    "repairAllowed": false,
+    "writesPerformed": false,
+    "taskSucceeded": false,
+    "snapshotOnly": true,
+    "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "profileBinding": "e6194c0ffdb3e9b829ae4a99c692a2178bb09c56dd6830ed3eb9ced3e3361b7e",
+    "epoch": 2,
+    "nextAction": "retain_closed_request_no_reoffer",
+    "runId": "run_04c063ae1ea04818bc252376e1c6e426",
+    "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+    "resolutionVerified": true,
+    "resolutionCommandId": "1d8349d908fd76bb4ad49f18973d3da5",
+    "requestClosed": true,
+    "canonicalAbsentAtSnapshot": true
+  },
+  "third_ready": {
+    "pid": 38976,
+    "nonce": "f63b51e5748a77c900d7009c73a64a09",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 3,
+    "instance_id": "a6783a076d6d43dfbd53ed02614b2b4e",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 51894
+  },
+  "active_owner_refusal": {
+    "exit_code": 2,
+    "value": {
+      "status": "refused",
+      "reason": "gateway_or_maintenance_active",
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "effect": "not_applied"
+    }
+  },
+  "native_same_key_replay": {
+    "run_id": "run_04c063ae1ea04818bc252376e1c6e426",
+    "status": "interrupted",
+    "replayed": true
+  },
+  "third_exit": {
+    "stage": "third",
+    "nonce": "f63b51e5748a77c900d7009c73a64a09",
+    "launcher_pid": 23364,
+    "pid": 38976,
+    "chain": [
+      38976,
+      23364
+    ],
+    "ready": {
+      "pid": 38976,
+      "nonce": "f63b51e5748a77c900d7009c73a64a09",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 3,
+      "instance_id": "a6783a076d6d43dfbd53ed02614b2b4e",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 51894
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 38976,
+      "nonce": "f63b51e5748a77c900d7009c73a64a09",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "new_epoch_replay": {
+    "exit_code": 0,
+    "value": {
+      "resolutionVersion": 1,
+      "status": "already_recorded",
+      "receipt": {
+        "action": "abandon_unadmitted",
+        "commandId": "1d8349d908fd76bb4ad49f18973d3da5",
+        "epoch": 2,
+        "instanceId": "a22313db076a4811b9d1241ac0e29020",
+        "keyHash": "89459861b51023e140031364f72d702475d53a6ec20c40e7cc7dcf2462f8198b",
+        "planDigest": "b5c81d0d25e2d987f0c266b54a8de5beab549e32edf433f6067db3e10f8e6fe5",
+        "profileBinding": "e6194c0ffdb3e9b829ae4a99c692a2178bb09c56dd6830ed3eb9ced3e3361b7e",
+        "receiptVersion": 1,
+        "recordDigest": "9d5e40bb2600af049d009b1bd166f7c4adc3bbfddec730f9e752e18bec886ee3",
+        "recordedAtMs": 1792080546215,
+        "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "runId": "run_04c063ae1ea04818bc252376e1c6e426",
+        "scopeHash": "616299e557b242ada27c95c5fb2ad8403302ef2fba82139fae68064660819b83",
+        "snapshotDigest": "855f23155cb6547c68aa986a96617f1148adebc717d8395277ef0a6734b63c68"
+      },
+      "writesPerformed": false,
+      "stateMetaRowsAdded": 0,
+      "requestClosed": true,
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "admissionCreated": false,
+      "reservationDeleted": false,
+      "modelCalls": 0
+    }
+  },
+  "final_inspection": {
+    "contractVersion": 1,
+    "classification": "reservation_abandoned_verified",
+    "canonicalVerified": false,
+    "requiresOperator": false,
+    "retryAllowed": false,
+    "repairAllowed": false,
+    "writesPerformed": false,
+    "taskSucceeded": false,
+    "snapshotOnly": true,
+    "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "profileBinding": "e6194c0ffdb3e9b829ae4a99c692a2178bb09c56dd6830ed3eb9ced3e3361b7e",
+    "epoch": 3,
+    "nextAction": "retain_closed_request_no_reoffer",
+    "runId": "run_04c063ae1ea04818bc252376e1c6e426",
+    "requestFingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+    "resolutionVerified": true,
+    "resolutionCommandId": "1d8349d908fd76bb4ad49f18973d3da5",
+    "requestClosed": true,
+    "canonicalAbsentAtSnapshot": true
+  },
+  "asserted": "explicit_closure_retained_across_native_restart_without_execution",
+  "final_snapshot": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [],
+    "runs": [
+      {
+        "run_id": "run_04c063ae1ea04818bc252376e1c6e426",
+        "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "status": "interrupted"
+      }
+    ],
+    "user_count": 0,
+    "tool_count": 0,
+    "read_count": 0,
+    "tool_marker": false,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "cli_calls": 6,
+  "original_model_http_calls": 0,
+  "new_model_http_calls": 0,
+  "native_first_exit": {
+    "stage": "first",
+    "nonce": "802ac771d4972ff3cb4354f83c2d5291",
+    "launcher_pid": 49856,
+    "pid": 43892,
+    "chain": [
+      43892,
+      49856
+    ],
+    "ready": {
+      "pid": 43892,
+      "nonce": "802ac771d4972ff3cb4354f83c2d5291",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "e94875e889054263897698a795a1eae1",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 51894
+    },
+    "hard_kill": true,
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true
+  },
+  "native_second_exit": {
+    "stage": "second",
+    "nonce": "0ee520bcbc4eeb5510782dfb26911195",
+    "launcher_pid": 19252,
+    "pid": 21164,
+    "chain": [
+      21164,
+      19252
+    ],
+    "ready": {
+      "pid": 21164,
+      "nonce": "0ee520bcbc4eeb5510782dfb26911195",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "a22313db076a4811b9d1241ac0e29020",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 51894
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 21164,
+      "nonce": "0ee520bcbc4eeb5510782dfb26911195",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "result": "PASS"
+}

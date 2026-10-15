@@ -1,0 +1,230 @@
+{
+  "scope": "actual native profile ownership locks plus public Gateway; no operator transaction tested",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "checks": [
+    {
+      "name": "live_gateway_excludes_maintenance",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "7b495e39d80a55f2955bbcaaf536175b",
+        "pid": 50696,
+        "result": "refused",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "stopped_gateway_allows_maintenance",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "07fae285528eb03d5fab53640499a3ea",
+        "pid": 51164,
+        "result": "acquired",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "lock_acquisition_does_not_modify_managed_db",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "nested_same_thread_canonical_alias",
+      "passed": true,
+      "details": {
+        "mode": "nested",
+        "nonce": "4de2fe1b2cd7cfc483017614606c3b88",
+        "pid": 51628,
+        "result": "acquired",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "nested_same_canonical_home": true,
+        "independent_owner_refused": true,
+        "lock_released": true
+      }
+    },
+    {
+      "name": "independent_owner_in_same_process_refused",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "other_maintenance_process_refused",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "586e2a09aa8bcd41f44c246de517ecbe",
+        "pid": 47736,
+        "result": "refused",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "maintenance_excludes_public_gateway",
+      "passed": true,
+      "details": {
+        "exit_code": 1,
+        "failure_type": "RuntimeError"
+      }
+    },
+    {
+      "name": "owned_maintenance_kill_reaped",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "process_death_releases_native_lock",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "1bcc668ea16e91d1e38220973330172d",
+        "pid": 19692,
+        "result": "acquired",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "lock_inode_preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "managed_databases_unchanged_through_contention",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "same_gateway_restarts_after_lock_release",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no_admissions_or_tools",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "errors": [],
+  "model_inference_calls": 0,
+  "program_hashes": {
+    "scripts/run_maintenance_ownership_qa.py": "481846d9535b0a6147ddff6d8ebe90e61ff460d059bed186ba9d8ea75c45cc98",
+    "scripts/qa/maintenance_lock_worker.py": "d958c96f937bb387a103feb5dd8dbeedf88dd70e5bf89499edb8e1e1ef40103f",
+    "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts/gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+    "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a"
+  },
+  "gateway_exit": {
+    "stage": "gateway-live",
+    "nonce": "7335a14a12275ba98f8b49d1936e25cd",
+    "launcher_pid": 24856,
+    "pid": 35632,
+    "chain": [
+      35632,
+      24856
+    ],
+    "ready": {
+      "pid": 35632,
+      "nonce": "7335a14a12275ba98f8b49d1936e25cd",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "0497defa1176469f96918edbed32f67b",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 52094
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 35632,
+      "nonce": "7335a14a12275ba98f8b49d1936e25cd",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "blocked_gateway_exit": {
+    "launcher_pid": 50700,
+    "native_pid": 50604,
+    "chain": [
+      50604,
+      50700
+    ],
+    "native_reaped": true,
+    "launcher_reaped": true,
+    "exit_code": 1
+  },
+  "maintenance_kill": {
+    "launcher_pid": 51980,
+    "native_pid": 23032,
+    "chain": [
+      23032,
+      51980
+    ],
+    "exit_code": 2,
+    "native_reaped": true,
+    "launcher_reaped": true
+  },
+  "restarted_gateway_exit": {
+    "stage": "gateway-after-maintenance",
+    "nonce": "ba98d3298e699c9663912c62a6d5b23d",
+    "launcher_pid": 49588,
+    "pid": 49016,
+    "chain": [
+      49016,
+      49588
+    ],
+    "ready": {
+      "pid": 49016,
+      "nonce": "ba98d3298e699c9663912c62a6d5b23d",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "8fc11fcc4cb44ac1b9e8e94a3ed1495a",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 52094
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 49016,
+      "nonce": "ba98d3298e699c9663912c62a6d5b23d",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "snapshot": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [],
+    "runs": [],
+    "user_count": 0,
+    "tool_count": 0,
+    "read_count": 0,
+    "tool_marker": false,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "model_http_calls": 0,
+  "fixture_errors": [],
+  "code_drift": [],
+  "result": "PASS"
+}

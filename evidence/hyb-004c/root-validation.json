@@ -1,0 +1,16 @@
+{
+  "scope": "complete offline standard suite; native Gateway/maintenance/crash experiments separately reported",
+  "tests": 604,
+  "exit_code": 0,
+  "skipped": false,
+  "elapsed_seconds": 64.572,
+  "code_drift": [],
+  "baseline_commit": "21321cf2df520b7dca2d976dfd089a8322ff56b5",
+  "product_sha256": {
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "scripts/resolve_gateway_reservation.py": "5d652a003d742b10458568002175d61a8b9970476930d13a69e911a3c26c89af",
+    "scripts/run_operator_resolution_probe.py": "cf3c41769b9acdd722ac478d86f1a1a7cc7e53db549904b54a2cff0d5fc4a992"
+  }
+}

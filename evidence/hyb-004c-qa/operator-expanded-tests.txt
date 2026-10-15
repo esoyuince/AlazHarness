@@ -1,0 +1,74 @@
+test_apply_only_two_audit_rows (test_operator_resolution_independent_qa.OperatorIndependentQA.test_apply_only_two_audit_rows) ... ok
+test_bad_receipt_action_even_self_consistent_rejected (test_operator_resolution_independent_qa.OperatorIndependentQA.test_bad_receipt_action_even_self_consistent_rejected) ... ok
+test_bad_reservation_json (test_operator_resolution_independent_qa.OperatorIndependentQA.test_bad_reservation_json) ... ok
+test_bool_plan_epoch_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_bool_plan_epoch_refused) ... ok
+test_canonical_appears_after_closure_replay_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_canonical_appears_after_closure_replay_refused) ... FAIL
+test_canonical_appears_after_preview (test_operator_resolution_independent_qa.OperatorIndependentQA.test_canonical_appears_after_preview) ... ok
+test_closure_inspector_never_says_task_succeeded (test_operator_resolution_independent_qa.OperatorIndependentQA.test_closure_inspector_never_says_task_succeeded) ... ok
+test_command_identity_reused_for_other_run_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_command_identity_reused_for_other_run_refused) ... ok
+test_committed_but_ack_lost_is_replayed (test_operator_resolution_independent_qa.OperatorIndependentQA.test_committed_but_ack_lost_is_replayed) ... ok
+test_completed_never_closed (test_operator_resolution_independent_qa.OperatorIndependentQA.test_completed_never_closed) ... ok
+test_deleted_key_not_recreated (test_operator_resolution_independent_qa.OperatorIndependentQA.test_deleted_key_not_recreated) ... ok
+test_expired_confirmation (test_operator_resolution_independent_qa.OperatorIndependentQA.test_expired_confirmation) ... ok
+test_expired_retention_not_removed (test_operator_resolution_independent_qa.OperatorIndependentQA.test_expired_retention_not_removed) ... ok
+test_explicit_session_not_adopted (test_operator_resolution_independent_qa.OperatorIndependentQA.test_explicit_session_not_adopted) ... ok
+test_future_confirmation (test_operator_resolution_independent_qa.OperatorIndependentQA.test_future_confirmation) ... ok
+test_index_without_command_receipt_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_index_without_command_receipt_refused) ... ok
+test_insert_failure_rolls_back_both_receipt_rows (test_operator_resolution_independent_qa.OperatorIndependentQA.test_insert_failure_rolls_back_both_receipt_rows) ... ok
+test_inspector_rejects_canonical_conflict_after_closure (test_operator_resolution_independent_qa.OperatorIndependentQA.test_inspector_rejects_canonical_conflict_after_closure) ... ok
+test_live_previous_pid_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_live_previous_pid_refused) ... ok
+test_missing_confirmation (test_operator_resolution_independent_qa.OperatorIndependentQA.test_missing_confirmation) ... ok
+test_missing_previous_pid_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_missing_previous_pid_refused) ... ok
+test_missing_receipt_index_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_missing_receipt_index_refused) ... ok
+test_missing_second_db_not_recreated (test_operator_resolution_independent_qa.OperatorIndependentQA.test_missing_second_db_not_recreated) ... ok
+test_modified_preview_snapshot (test_operator_resolution_independent_qa.OperatorIndependentQA.test_modified_preview_snapshot) ... ok
+test_new_owner_can_read_prior_receipt_without_write (test_operator_resolution_independent_qa.OperatorIndependentQA.test_new_owner_can_read_prior_receipt_without_write) ... ok
+test_new_runtime_instance_same_epoch (test_operator_resolution_independent_qa.OperatorIndependentQA.test_new_runtime_instance_same_epoch) ... ok
+test_preview_no_native_write_or_secret (test_operator_resolution_independent_qa.OperatorIndependentQA.test_preview_no_native_write_or_secret) ... ok
+test_receipt_user_mutation_not_persisted (test_operator_resolution_independent_qa.OperatorIndependentQA.test_receipt_user_mutation_not_persisted) ... ok
+test_related_history_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_related_history_refused) ... ok
+test_related_session_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_related_session_refused) ... ok
+test_related_worker_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_related_worker_refused) ... ok
+test_replay_after_plan_expiry_is_read_only (test_operator_resolution_independent_qa.OperatorIndependentQA.test_replay_after_plan_expiry_is_read_only) ... ok
+test_reservation_changed_after_preview (test_operator_resolution_independent_qa.OperatorIndependentQA.test_reservation_changed_after_preview) ... ok
+test_retired_row_without_identity_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_retired_row_without_identity_refused) ... FAIL
+test_same_command_changed_body (test_operator_resolution_independent_qa.OperatorIndependentQA.test_same_command_changed_body) ... ok
+test_same_confirmation_replays_one_receipt (test_operator_resolution_independent_qa.OperatorIndependentQA.test_same_confirmation_replays_one_receipt) ... ok
+test_second_command_same_run_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_second_command_same_run_refused) ... ok
+test_stale_runtime_after_preview (test_operator_resolution_independent_qa.OperatorIndependentQA.test_stale_runtime_after_preview) ... ok
+test_statement_log_never_updates_replay (test_operator_resolution_independent_qa.OperatorIndependentQA.test_statement_log_never_updates_replay) ... ok
+test_tampered_stored_receipt_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_tampered_stored_receipt_refused) ... ok
+test_terminal_archive_identity_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_terminal_archive_identity_refused) ... ok
+test_trigger_refused_before_audit_write (test_operator_resolution_independent_qa.OperatorIndependentQA.test_trigger_refused_before_audit_write) ... ok
+test_unknown_action (test_operator_resolution_independent_qa.OperatorIndependentQA.test_unknown_action) ... ok
+test_unknown_execution_never_closed (test_operator_resolution_independent_qa.OperatorIndependentQA.test_unknown_execution_never_closed) ... ok
+test_wrong_confirmation (test_operator_resolution_independent_qa.OperatorIndependentQA.test_wrong_confirmation) ... ok
+
+======================================================================
+FAIL: test_canonical_appears_after_closure_replay_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_canonical_appears_after_closure_replay_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_operator_resolution_independent_qa.py", line 175, in test_canonical_appears_after_closure_replay_refused
+    self.refused(lambda:self.apply(p))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_operator_resolution_independent_qa.py", line 53, in refused
+    with self.assertRaises(op.ResolutionError) as cm:callback()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: ResolutionError not raised
+
+======================================================================
+FAIL: test_retired_row_without_identity_refused (test_operator_resolution_independent_qa.OperatorIndependentQA.test_retired_row_without_identity_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_operator_resolution_independent_qa.py", line 113, in test_retired_row_without_identity_refused
+    self.refused(self.plan)
+    ~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97\tests\test_operator_resolution_independent_qa.py", line 53, in refused
+    with self.assertRaises(op.ResolutionError) as cm:callback()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: ResolutionError not raised
+
+----------------------------------------------------------------------
+Ran 45 tests in 5.921s
+
+FAILED (failures=2)

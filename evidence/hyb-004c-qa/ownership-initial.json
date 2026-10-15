@@ -1,0 +1,179 @@
+{
+  "scope": "actual native profile ownership locks plus public Gateway; no operator transaction tested",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "checks": [
+    {
+      "name": "live_gateway_excludes_maintenance",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "a16bb1ad4a51a3082970ec2f64709286",
+        "pid": 34400,
+        "result": "refused",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "stopped_gateway_allows_maintenance",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "a003ccb16dfa2eeaffef12ffdc142e0c",
+        "pid": 11420,
+        "result": "acquired",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "lock_acquisition_does_not_modify_managed_db",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "nested_same_thread_canonical_alias",
+      "passed": true,
+      "details": {
+        "mode": "nested",
+        "nonce": "57550e93b6824a3f42babb49401a9a05",
+        "pid": 47232,
+        "result": "acquired",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "nested_same_canonical_home": true,
+        "independent_owner_refused": true,
+        "lock_released": true
+      }
+    },
+    {
+      "name": "independent_owner_in_same_process_refused",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "other_maintenance_process_refused",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "5fb239416f5d44811096d38875bb7e5b",
+        "pid": 52208,
+        "result": "refused",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "maintenance_excludes_public_gateway",
+      "passed": true,
+      "details": {
+        "exit_code": 1,
+        "failure_type": "RuntimeError"
+      }
+    },
+    {
+      "name": "owned_maintenance_kill_reaped",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "process_death_releases_native_lock",
+      "passed": true,
+      "details": {
+        "mode": "try",
+        "nonce": "2156790ce3fa6e0db240d9f4e7fbc3e4",
+        "pid": 44828,
+        "result": "acquired",
+        "source": "gateway.runtime_ownership.exclusive_maintenance",
+        "lock_released": true
+      }
+    },
+    {
+      "name": "lock_inode_preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "managed_databases_unchanged_through_contention",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no_admissions_or_tools",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "errors": [],
+  "model_inference_calls": 0,
+  "program_hashes": {
+    "scripts/run_maintenance_ownership_qa.py": "31e6dc37d6adefc48e23eadb6022221762b07050d1b828b2943aba199fc5d19b",
+    "scripts/qa/maintenance_lock_worker.py": "d958c96f937bb387a103feb5dd8dbeedf88dd70e5bf89499edb8e1e1ef40103f",
+    "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts/gateway_recovery_support.py": "c8c55f4e18dec2dd938f2b5e662f7435102023b9891bc63be06bfeab6d25ae52",
+    "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a"
+  },
+  "gateway_exit": {
+    "stage": "gateway-live",
+    "nonce": "1f9d200d58faff28febeac2dabc0db50",
+    "launcher_pid": 33032,
+    "pid": 48300,
+    "chain": [
+      48300,
+      33032
+    ],
+    "ready": {
+      "pid": 48300,
+      "nonce": "1f9d200d58faff28febeac2dabc0db50",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "26188bfa862545d48848b7fff3fd7382",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 56448
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 48300,
+      "nonce": "1f9d200d58faff28febeac2dabc0db50",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "maintenance_kill": {
+    "launcher_pid": 50736,
+    "native_pid": 49116,
+    "chain": [
+      49116,
+      50736
+    ],
+    "exit_code": 2,
+    "native_reaped": true,
+    "launcher_reaped": true
+  },
+  "snapshot": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [],
+    "runs": [],
+    "user_count": 0,
+    "tool_count": 0,
+    "read_count": 0,
+    "tool_marker": false,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "model_http_calls": 0,
+  "fixture_errors": [],
+  "code_drift": [],
+  "result": "PASS"
+}

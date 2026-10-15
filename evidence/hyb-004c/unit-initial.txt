@@ -1,0 +1,44 @@
+test_active_native_maintenance_refusal (test_operator_resolution.OperatorResolutionTests.test_active_native_maintenance_refusal) ... ok
+test_bad_command_id (test_operator_resolution.OperatorResolutionTests.test_bad_command_id) ... ok
+test_clock_rollback (test_operator_resolution.OperatorResolutionTests.test_clock_rollback) ... ok
+test_closed_request_does_not_prepare_again (test_operator_resolution.OperatorResolutionTests.test_closed_request_does_not_prepare_again) ... ok
+test_commit_failure_before_publication_rolls_back (test_operator_resolution.OperatorResolutionTests.test_commit_failure_before_publication_rolls_back) ... ok
+test_context_epoch_changes_after_preview (test_operator_resolution.OperatorResolutionTests.test_context_epoch_changes_after_preview) ... ok
+test_expired_confirmation (test_operator_resolution.OperatorResolutionTests.test_expired_confirmation) ... ok
+test_explicit_session_target_unsupported (test_operator_resolution.OperatorResolutionTests.test_explicit_session_target_unsupported) ... ok
+test_first_insert_failure_rolls_back (test_operator_resolution.OperatorResolutionTests.test_first_insert_failure_rolls_back) ... ok
+test_inspector_distinguishes_explicit_abandonment (test_operator_resolution.OperatorResolutionTests.test_inspector_distinguishes_explicit_abandonment) ... ok
+test_live_old_pid_refused (test_operator_resolution.OperatorResolutionTests.test_live_old_pid_refused) ... ok
+test_lost_commit_acknowledgement_recovers_same_receipt (test_operator_resolution.OperatorResolutionTests.test_lost_commit_acknowledgement_recovers_same_receipt) ... ok
+test_missing_confirmation (test_operator_resolution.OperatorResolutionTests.test_missing_confirmation) ... ok
+test_missing_original_owner_refused (test_operator_resolution.OperatorResolutionTests.test_missing_original_owner_refused) ... ok
+test_no_store_created_when_missing (test_operator_resolution.OperatorResolutionTests.test_no_store_created_when_missing) ... ok
+test_only_audit_and_index_written_not_replay (test_operator_resolution.OperatorResolutionTests.test_only_audit_and_index_written_not_replay) ... ok
+test_other_principal_record_is_not_absence (test_operator_resolution.OperatorResolutionTests.test_other_principal_record_is_not_absence) ... ok
+test_plan_tamper (test_operator_resolution.OperatorResolutionTests.test_plan_tamper) ... ok
+test_preview_is_readonly_and_does_not_claim_auth (test_operator_resolution.OperatorResolutionTests.test_preview_is_readonly_and_does_not_claim_auth) ... ok
+test_reader_rejects_missing_audit_record (test_operator_resolution.OperatorResolutionTests.test_reader_rejects_missing_audit_record) ... ok
+test_reader_rejects_modified_audit_digest (test_operator_resolution.OperatorResolutionTests.test_reader_rejects_modified_audit_digest) ... ok
+test_reader_rejects_related_history_after_closure (test_operator_resolution.OperatorResolutionTests.test_reader_rejects_related_history_after_closure) ... ok
+test_recorded_reply_can_be_recovered_after_plan_expiry (test_operator_resolution.OperatorResolutionTests.test_recorded_reply_can_be_recovered_after_plan_expiry) ... ok
+test_recorded_reply_rechecked_after_new_native_epoch (test_operator_resolution.OperatorResolutionTests.test_recorded_reply_rechecked_after_new_native_epoch) ... ok
+test_refuse_trigger_in_written_table (test_operator_resolution.OperatorResolutionTests.test_refuse_trigger_in_written_table) ... ok
+test_related_history_refused (test_operator_resolution.OperatorResolutionTests.test_related_history_refused) ... ok
+test_related_session_refused (test_operator_resolution.OperatorResolutionTests.test_related_session_refused) ... ok
+test_related_worker_refused (test_operator_resolution.OperatorResolutionTests.test_related_worker_refused) ... ok
+test_retention_expired_not_pruned (test_operator_resolution.OperatorResolutionTests.test_retention_expired_not_pruned) ... ok
+test_same_confirmation_replay_has_no_write (test_operator_resolution.OperatorResolutionTests.test_same_confirmation_replay_has_no_write) ... ok
+test_snapshot_change_before_commit (test_operator_resolution.OperatorResolutionTests.test_snapshot_change_before_commit) ... ok
+test_stale_epoch (test_operator_resolution.OperatorResolutionTests.test_stale_epoch) ... ok
+test_two_callers_one_receipt (test_operator_resolution.OperatorResolutionTests.test_two_callers_one_receipt) ... ok
+test_unknown_canonical_work_never_abandoned (test_operator_resolution.OperatorResolutionTests.test_unknown_canonical_work_never_abandoned) ... ok
+test_unsupported_action_even_rehashed (test_operator_resolution.OperatorResolutionTests.test_unsupported_action_even_rehashed) ... ok
+test_wrong_body (test_operator_resolution.OperatorResolutionTests.test_wrong_body) ... ok
+test_wrong_confirmation (test_operator_resolution.OperatorResolutionTests.test_wrong_confirmation) ... ok
+test_wrong_key (test_operator_resolution.OperatorResolutionTests.test_wrong_key) ... ok
+test_wrong_run (test_operator_resolution.OperatorResolutionTests.test_wrong_run) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 2.236s
+
+OK

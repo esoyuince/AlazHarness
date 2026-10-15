@@ -136,3 +136,11 @@ semantics and arbitrary external-effect recovery remain open.
 ## HYB-004B scope
 
 Standard CI tests the production recovery projection, read-only resume, local SQLite inspector and malformed/scoped evidence using synthetic stores and loopback HTTP. It does not launch the native Gateway recovery scenarios. Final native post-QA evidence is evidence/hyb-004b/final-native-suite.json; pre-QA native-suite.json remains separately versioned historical evidence. Exact standard count and commit status must be read from the actual run receipt.
+
+## HYB-004C
+
+Standart suite operator prepare/apply ve inspector ret kurallarını sentetik
+SQLite/test-only lock substitute ile sınar; native ownership iddiası çıkarılmaz.
+Native Gateway-created profile probes, gerçek lock primitive koşulları ve
+sentetik DB üstündeki gerçek process-kill transaction testleri local evidence
+altında ayrı tutulur. CI bunları kurmaz, paid model çağırmaz.

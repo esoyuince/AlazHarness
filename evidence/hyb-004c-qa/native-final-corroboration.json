@@ -1,0 +1,45 @@
+{
+  "scope": "retrospective readonly corroboration of THREE existing final primary native operator runs, not new executions",
+  "count": 3,
+  "checks": [
+    {
+      "scenario": "after-reserve",
+      "classification": "reservation_abandoned_verified",
+      "canonical_admissions": 0,
+      "tool_results": 0,
+      "operator_receipts": 1,
+      "operator_indexes": 1,
+      "new_model_requests": 0,
+      "profile_bytes_unchanged": true,
+      "source_receipt_sha256": "c14b88c503811fe3fa1b59d57b04fab3659198959701b64de67aef42a5cee69d",
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "completed",
+      "classification": "canonical_terminal_verified",
+      "canonical_admissions": 1,
+      "tool_results": 1,
+      "operator_receipts": 0,
+      "operator_indexes": 0,
+      "new_model_requests": 0,
+      "profile_bytes_unchanged": true,
+      "source_receipt_sha256": "889588d9b46a3bdd1a8e3bcb930d03a2d24a3eba4a521f29ebad5051137ac548",
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "before-model",
+      "classification": "execution_unknown",
+      "canonical_admissions": 1,
+      "tool_results": 0,
+      "operator_receipts": 0,
+      "operator_indexes": 0,
+      "new_model_requests": 0,
+      "profile_bytes_unchanged": true,
+      "source_receipt_sha256": "07cb0a3391f3486a389e43001460f732e60257f342f972b94b9754cb9e2cdc10",
+      "result": "CORROBORATED"
+    }
+  ],
+  "new_gateway_processes": 0,
+  "model_calls": 0,
+  "result": "PASS"
+}

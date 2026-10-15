@@ -1,0 +1,13 @@
+{
+  "status": "REPRODUCED_NOT_FIXED_AT_OBSERVATION",
+  "severity_scope": "inconsistent local store guard, not remote exploit or normal native state claim",
+  "operator_source_sha256": "710945322d8e1b13f6dc6c329899ecf91c231a29ddea06bcfb7e975780f768d6",
+  "tests": 39,
+  "passed": 38,
+  "failed": 1,
+  "issue": "Native terminal_admission archive row exists for request but its terminal_identity index is absent; prepare wrongly returns an abandon plan",
+  "required_behavior": "refuse inconsistent archive/identity state before any operator write",
+  "repro": "tests/test_operator_resolution_independent_qa.py:test_retired_row_without_identity_refused",
+  "source_mutated": false,
+  "original_profiles_mutated": false
+}

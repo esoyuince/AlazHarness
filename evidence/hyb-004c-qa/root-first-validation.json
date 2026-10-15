@@ -1,0 +1,13 @@
+{
+  "scope": "independent complete offline suite; native lock and process-crash tests are separate",
+  "tests": 604,
+  "exit_code": 0,
+  "elapsed_seconds": 64.771,
+  "no_skips_reported": true,
+  "code_drift": [],
+  "product_sha256": {
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba"
+  }
+}

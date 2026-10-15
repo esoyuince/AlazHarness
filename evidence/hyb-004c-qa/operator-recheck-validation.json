@@ -1,0 +1,12 @@
+{
+  "scope": "post-fix 45 independent synthetic SQLite operator/receipt checks",
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "tests/test_operator_resolution_independent_qa.py": "8af3e2e832b3c1e82ef90acc8d583a943be50ca9a6e432f4f57d6de0bd8cd935"
+  },
+  "drift": [],
+  "elapsed_seconds": 10.197
+}

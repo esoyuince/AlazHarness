@@ -1,0 +1,12 @@
+{
+  "scope": "independent synthetic SQLite transaction/operator API tests; native maintenance replaced explicitly",
+  "exit_code": 1,
+  "elapsed_seconds": 11.526,
+  "hashes": {
+    "packages/claw-hermes/operator_resolution.py": "710945322d8e1b13f6dc6c329899ecf91c231a29ddea06bcfb7e975780f768d6",
+    "packages/claw-hermes/resolution_receipts.py": "7eccf7e755e9f893c58a711a789d7c8921efbc597901a294abf52f5d2ed515b9",
+    "packages/claw-hermes/recovery_inspector.py": "c3cc38f2adda3bb0d1ac1be3410ef5f9bda694086dcc651352de1770961d4e8f",
+    "tests/test_operator_resolution_independent_qa.py": "cdc4a5c53e182501b95e094b5278c706f449f1f75c9753cc2738e2dda65a2f2c"
+  },
+  "drift": []
+}

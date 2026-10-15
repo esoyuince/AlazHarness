@@ -1,0 +1,40 @@
+{
+  "scope": "FINAL native Gateway-created profiles plus explicit operator CLI/native maintenance, three scenarios once each",
+  "cases": [
+    {
+      "scenario": "after-reserve",
+      "result": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 57.889,
+      "receipt_sha256": "c14b88c503811fe3fa1b59d57b04fab3659198959701b64de67aef42a5cee69d",
+      "asserted": "explicit_closure_retained_across_native_restart_without_execution"
+    },
+    {
+      "scenario": "completed",
+      "result": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 35.23,
+      "receipt_sha256": "889588d9b46a3bdd1a8e3bcb930d03a2d24a3eba4a521f29ebad5051137ac548",
+      "asserted": "canonical_work_refused_no_write"
+    },
+    {
+      "scenario": "before-model",
+      "result": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 29.61,
+      "receipt_sha256": "07cb0a3391f3486a389e43001460f732e60257f342f972b94b9754cb9e2cdc10",
+      "asserted": "canonical_work_refused_no_write"
+    }
+  ],
+  "passed": 3,
+  "failed": 0,
+  "owned_gateway_kills": 3,
+  "gateway_incarnations": 7,
+  "operator_cli_calls": 8,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "new_model_calls_after_operator": 0,
+  "initial_pre_fix_orphan_separate": true,
+  "operation": "abandon_unadmitted",
+  "reexecution_or_key_deletion_implemented": false
+}

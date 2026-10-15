@@ -198,10 +198,20 @@ class LocalRecoveryInspector:
 
     def _classify(self,conn,row,reservation,saved,body,http,target):
         rid=http['run_id'];base={'runId':rid,'requestFingerprint':reservation['fingerprint']}
+        from resolution_receipts import read_resolution,assert_no_recorded_work
+        resolution=read_resolution(conn,context=self.context,reservation=reservation,run_id=rid,decode=_load)
+        if resolution is not None and row is not None:raise EvidenceError('resolution_state_conflict')
         if row is None:
             # This includes a transient live reservation. No dead-owner/atomicity claim.
             if http.get('status')!=saved.get('status'):raise EvidenceError('projection_mismatch')
             if http.get('admission_id') is not None:raise EvidenceError('projection_mismatch')
+            if resolution is not None:
+                if http.get('status')!='interrupted':raise EvidenceError('resolution_state_conflict')
+                assert_no_recorded_work(conn,rid,_load)
+                return {**base,'classification':'reservation_abandoned_verified','resolutionVerified':True,
+                        'resolutionCommandId':resolution['commandId'],'requestClosed':True,
+                        'canonicalAbsentAtSnapshot':True,'canonicalVerified':False,'requiresOperator':False,
+                        'taskSucceeded':False,'nextAction':'retain_closed_request_no_reoffer'}
             return {**base,'classification':'reservation_without_admission_observed',
                     'reason':'canonical_admission_absent_at_snapshot','nextAction':'operator_reconcile_reservation',
                     'canonicalAbsentAtSnapshot':True,'canonicalVerified':False}

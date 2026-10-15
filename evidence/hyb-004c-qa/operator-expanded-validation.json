@@ -1,0 +1,12 @@
+{
+  "scope": "45 synthetic SQLite QA cases; real transactions, mocked native ownership boundary",
+  "exit_code": 1,
+  "hashes": {
+    "packages/claw-hermes/operator_resolution.py": "710945322d8e1b13f6dc6c329899ecf91c231a29ddea06bcfb7e975780f768d6",
+    "packages/claw-hermes/resolution_receipts.py": "7eccf7e755e9f893c58a711a789d7c8921efbc597901a294abf52f5d2ed515b9",
+    "packages/claw-hermes/recovery_inspector.py": "c3cc38f2adda3bb0d1ac1be3410ef5f9bda694086dcc651352de1770961d4e8f",
+    "tests/test_operator_resolution_independent_qa.py": "8af3e2e832b3c1e82ef90acc8d583a943be50ca9a6e432f4f57d6de0bd8cd935"
+  },
+  "drift": [],
+  "elapsed_seconds": 6.555
+}

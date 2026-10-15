@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "native_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "purpose": "pinned native ownership reuse; not full binary attestation",
+  "files": [
+    {
+      "path": "gateway/__init__.py",
+      "sha256": "c69d534d5d7acdd52b71bf168c09071402feb7352a0dca58c2f9efd0175fcded"
+    },
+    {
+      "path": "gateway/runtime_ownership.py",
+      "sha256": "5f481c81470256282132d3337309cd9f075dfe242566fa126471a465a9448a5d"
+    },
+    {
+      "path": "gateway/status.py",
+      "sha256": "d7d77ec01c30135b5164c0e78c2529711ec1ac1f67f36390d950258c72566b41"
+    },
+    {
+      "path": "gateway/platforms/api_server_runs.py",
+      "sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a"
+    },
+    {
+      "path": "gateway/platforms/api_server_run_idempotency.py",
+      "sha256": "4ad0c20dfe220cf0aac8b340702b54621f7ecdb075799816407406c5cd733c03"
+    },
+    {
+      "path": "hermes_state_terminal.py",
+      "sha256": "fdc020dc2c7315677678594e2aa6a61261ccfd77ce68c1e2c891c566bf919352"
+    }
+  ]
+}

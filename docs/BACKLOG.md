@@ -75,3 +75,11 @@ External-effect-before-result, retention expiry and multi-process fencing remain
 ## HYB-004B host reconciliation
 
 Readonly host projection and scoped local inspection: docs/HYB-004B-RECONCILIATION.md. No automatic repair; orphan reservation remains an operational blocker. HYB-004C is explicit owner-bound operator reconciliation, never an implicit POST or key deletion.
+
+## HYB-004C explicit closure — 2026-10-15
+
+Dar operator abandon_unadmitted closure uygulandı;604 offline/3native ayrı PASS.
+Native interrupted/key retention değişmedi. Sonraki HYB-005-HOST-GATE: tek host
+start sınırı closed/unknown/retention kararını uygulamalı; ardından gerçek araç
+izinleri ve tüm provider çağrısı bütçesi. Yeni model motoru veya scheduler yok.
+Kapsam/kanıt status.md ve HYB-004C raporunda; Git/CI ayrıca doğrulanır.

@@ -1,0 +1,126 @@
+{
+  "scope": "native Gateway crash and explicit operator closure; not reexecution or full M1",
+  "scenario": "completed",
+  "errors": [],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "code_sha256": {
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/resolve_gateway_reservation.py": "5d652a003d742b10458568002175d61a8b9970476930d13a69e911a3c26c89af",
+    "scripts/run_operator_resolution_probe.py": "cf3c41769b9acdd722ac478d86f1a1a7cc7e53db549904b54a2cff0d5fc4a992"
+  },
+  "native_setup_result": "PASS",
+  "native_setup_receipt_sha256": "09636d565b510da4ebac992be5c8042282851b4706d148b27fdf405ac06a9287",
+  "preview": {
+    "exit_code": 2,
+    "value": {
+      "status": "refused",
+      "reason": "not_an_unadmitted_reservation",
+      "taskSucceeded": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "effect": "not_applied"
+    }
+  },
+  "asserted": "canonical_work_refused_no_write",
+  "final_snapshot": {
+    "integrity": "ok",
+    "run_integrity": "ok",
+    "journal": "delete",
+    "read_only": true,
+    "admissions": [
+      {
+        "admission_id": "a16de2b8fff64e13a2747d7f5facbee3",
+        "request_id": "run_1568260550b44504bf1742f8b3577ec2",
+        "target_session_id": "run_1568260550b44504bf1742f8b3577ec2",
+        "status": "terminal",
+        "outcome": "completed",
+        "owner_epoch": 1,
+        "generation": 1,
+        "payload_digest": "ed0fd52e93ef1c3edf860c362f93bad14a1f444368f3092eceaffdab0e9c1a42"
+      }
+    ],
+    "runs": [
+      {
+        "run_id": "run_1568260550b44504bf1742f8b3577ec2",
+        "fingerprint": "7779fc49e0115ad5abae451713250f87110d95b3e3d8f6f8f1ac4490f214f3e6",
+        "status": "completed"
+      }
+    ],
+    "user_count": 1,
+    "tool_count": 1,
+    "read_count": 1,
+    "tool_marker": false,
+    "marker_in_user": false,
+    "final_digests": []
+  },
+  "cli_calls": 1,
+  "original_model_http_calls": 2,
+  "new_model_http_calls": 0,
+  "native_first_exit": {
+    "stage": "first",
+    "nonce": "02f60a4548155e98084a1f7343a9799d",
+    "launcher_pid": 23356,
+    "pid": 49600,
+    "chain": [
+      49600,
+      23356
+    ],
+    "ready": {
+      "pid": 49600,
+      "nonce": "02f60a4548155e98084a1f7343a9799d",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 1,
+      "instance_id": "127a1027e54a46f3967b66a40e22dfa4",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 51976
+    },
+    "hard_kill": true,
+    "exit_code": 2,
+    "launcher_reaped": true,
+    "native_reaped": true
+  },
+  "native_second_exit": {
+    "stage": "second",
+    "nonce": "3524c4950120e33624d76e4267864f90",
+    "launcher_pid": 47664,
+    "pid": 40956,
+    "chain": [
+      40956,
+      47664
+    ],
+    "ready": {
+      "pid": 40956,
+      "nonce": "3524c4950120e33624d76e4267864f90",
+      "runner": "gateway.run.GatewayRunner",
+      "adapter": "gateway.platforms.api_server.APIServerAdapter",
+      "authority": "gateway.session_authority.SessionAuthority",
+      "profile_bound": true,
+      "aiohttp_version": "3.14.3",
+      "epoch": 2,
+      "instance_id": "aede26984839424c9b23e63c94b99ef1",
+      "state": "ready",
+      "api_host": "127.0.0.1",
+      "api_port": 51976
+    },
+    "hard_kill": false,
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "shutdown": {
+      "pid": 40956,
+      "nonce": "3524c4950120e33624d76e4267864f90",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0
+    }
+  },
+  "result": "PASS"
+}

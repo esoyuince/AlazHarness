@@ -1,0 +1,140 @@
+{
+  "scope": "actual operator and native maintenance with process kills on synthetic SQLite, NOT Gateway admission runs",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "operator_sha256": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+  "program_hashes": {
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/run_operator_crash_qa.py": "93ee5e30d517355297bd7070b4dd8605236a0f66bbbc4de856c29d3d58043b9c",
+    "scripts/qa/operator_crash_worker.py": "68c84bd2d67663c2b1e670ff462a8e5450179ee538a100eda1bbb2e15ece4b22"
+  },
+  "cases": [
+    {
+      "phase": "before-index",
+      "first": {
+        "phase": "before-index",
+        "launcher_pid": 51492,
+        "native_pid": 37132,
+        "ownership_chain": [
+          37132,
+          51492
+        ],
+        "checkpoint": {
+          "pid": 37132,
+          "nonce": "33d65201c8c1221cca36fbe71fb419c5",
+          "phase": "before-index",
+          "line": 220,
+          "source_sha256": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b"
+        },
+        "exit_code": 2,
+        "native_reaped": true,
+        "launcher_reaped": true,
+        "result_received": false
+      },
+      "repeat": {
+        "phase": "none",
+        "exit_code": 0,
+        "native_result": {
+          "resolutionVersion": 1,
+          "status": "recorded",
+          "receipt": {
+            "receiptVersion": 1,
+            "commandId": "d8f0220eca900c4adc9ecb12e287bca1",
+            "action": "abandon_unadmitted",
+            "profileBinding": "d201f525cec5c04797eb76af291482d9ec14c3bd820b72cd212533d46f3825ee",
+            "scopeHash": "26136152198a4990611b8f1dc47726d1ec053848afcc2cb6e80aa46f205a02e0",
+            "runId": "run_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "keyHash": "2e2053071f16c12ede0aca2fc804367c8f16afa63442149df5fa799019c348a8",
+            "requestFingerprint": "a0a3695a5d6d24dd291e471610820c95b296eb58df5f99d528715620ede53787",
+            "epoch": 2,
+            "instanceId": "owner-two",
+            "snapshotDigest": "425006a07693e3327d96cb38bd9374b25d0505c742abc3541bcaae6313a1252d",
+            "planDigest": "fcfcd343003aa7ee82e8c409a0a4d17adc3c5099e8e65f4991e3a7dbe5fc66a9",
+            "recordedAtMs": 1792080595792,
+            "recordDigest": "b544b28203def3da2d245c948b88dd2ea9396d733ef2a2b945967d4032b334f2"
+          },
+          "writesPerformed": true,
+          "stateMetaRowsAdded": 2,
+          "requestClosed": true,
+          "taskSucceeded": false,
+          "retryAllowed": false,
+          "repairAllowed": false,
+          "admissionCreated": false,
+          "reservationDeleted": false,
+          "modelCalls": 0
+        },
+        "launcher_reaped": true
+      },
+      "rows_after_kill": 0,
+      "rows_final": 2,
+      "replay_db_unchanged": true,
+      "result": "PASS"
+    },
+    {
+      "phase": "after-commit",
+      "first": {
+        "phase": "after-commit",
+        "launcher_pid": 51640,
+        "native_pid": 42768,
+        "ownership_chain": [
+          42768,
+          51640
+        ],
+        "checkpoint": {
+          "pid": 42768,
+          "nonce": "3c8f469694f919f32abfd0c731e71219",
+          "phase": "after-commit",
+          "line": 223,
+          "source_sha256": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b"
+        },
+        "exit_code": 2,
+        "native_reaped": true,
+        "launcher_reaped": true,
+        "result_received": false
+      },
+      "repeat": {
+        "phase": "none",
+        "exit_code": 0,
+        "native_result": {
+          "resolutionVersion": 1,
+          "status": "already_recorded",
+          "receipt": {
+            "action": "abandon_unadmitted",
+            "commandId": "c73d82ef807254670e5a1c3cfffca977",
+            "epoch": 2,
+            "instanceId": "owner-two",
+            "keyHash": "2e2053071f16c12ede0aca2fc804367c8f16afa63442149df5fa799019c348a8",
+            "planDigest": "787958dbc9448c45e22e72ae7c4fe02baf8c813149934502a5b6e5ba471f917d",
+            "profileBinding": "49706fe34eef7ac4f78ab2f962bb4140b6d0021730c5997fd14af2e465ef1e4c",
+            "receiptVersion": 1,
+            "recordDigest": "fee29df6f768bee4b55be4f082f5efcf43f4275b190be969e51064489280ba16",
+            "recordedAtMs": 1792080596992,
+            "requestFingerprint": "a0a3695a5d6d24dd291e471610820c95b296eb58df5f99d528715620ede53787",
+            "runId": "run_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "scopeHash": "26136152198a4990611b8f1dc47726d1ec053848afcc2cb6e80aa46f205a02e0",
+            "snapshotDigest": "2005775920ac8b26dab0948c262653c4ac879978990048dc3c8ce2a448c83301"
+          },
+          "writesPerformed": false,
+          "stateMetaRowsAdded": 0,
+          "requestClosed": true,
+          "taskSucceeded": false,
+          "retryAllowed": false,
+          "repairAllowed": false,
+          "admissionCreated": false,
+          "reservationDeleted": false,
+          "modelCalls": 0
+        },
+        "launcher_reaped": true
+      },
+      "rows_after_kill": 2,
+      "rows_final": 2,
+      "replay_db_unchanged": true,
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "model_calls": 0,
+  "program_drift": [],
+  "result": "PASS"
+}
