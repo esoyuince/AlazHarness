@@ -4,7 +4,7 @@ Son güncelleme:15 Ekim2026. Canlı Git HEAD/status/remote/CI her devamda kontro
 
 ## Güncel nokta
 
-HYB-005A HOST DISPATCH: LOCAL/NATIVE NARROW ACCEPTANCE PASS; PUBLICATION IN PROGRESS.
+HYB-005A HOST DISPATCH: LOCAL/NATIVE NARROW ACCEPTANCE PASS; CODE PUBLISHED, EXACT-COMMIT CI PASS.
 Mevcut b8ff44f main tabanında kesintiden kalan iki ürün taslağı sürdürüldü.
 HostGateLedger, native state_meta yazma sahibi üzerinden izin üretir/tüketir;
 HostGateClient yalnız /alaz/host/v1/dispatch kullanır, ham native başlangıca
@@ -38,7 +38,7 @@ Main birleşimi yeniden yapılmadı. Kaynak pinleri ve özel sunucu ayarları de
 Yerel TAM standart suite669/669 PASS, exit0/skip0/code-drift0:
 evidence/hyb-005a/local-validation.json ve unittest.txt.
 65yeni standart test669 içindedir:36ledger +17loopback-client +12client QA.
-Bunlar native Gateway çalışmaları değildir. Server CI aynı commit sonra okunacak.
+Bunlar native Gateway çalışmaları değildir. Kod2263c79 aynı-SHA server suite669/669 PASS.
 
 Son ürün koduyla4/4 gerçek Gateway senaryosu PASS:
 1) missing-plugin:0admission/0tool/0providerHTTP.
@@ -72,7 +72,8 @@ bu katmanın tespit garantisi değildir. Kaynak sürümü ve tek native owner ş
 
 ## Kesin sonraki adım
 
-Önce bu dalın commit/push/exact-SHA CI kapanışını doğrula. Ardından HYB-005B:
+Kod2263c793419cf004ce73147529cb382a9f1c3895 yayımlandı ve exact-SHA CI success.
+Yeni oturumda son belge HEAD/CI ve temizliği kontrol et; sıradaki iş HYB-005B:
 gerçek model/araç yürütme sınırında zorunlu izin + tüm sağlayıcı istek/token/para
 bütçesi; özet/retry/auxiliary çağrı dahil. Optional hook exception fail-open
 olduğu için tek başına güvenlik mekanizması yapılmaz. Ana hedef tek runtime,
@@ -99,3 +100,16 @@ kayıt teyidi ayrıca scope taşır. docs/research/HYB-005A-QA890e.md ve kendi
 seçilmiş QA dosyaları stage edildi. 9897 tek commit/push sahibi kalır;bu kayıt
 exact-SHA CI kabulü değildir. Geri kalan: tüm model çıkışlarında bütçe, gerçek
 araç izinleri ve host operatör yetki politikası; tamM1/M2 açık.
+
+### HYB-005A9897 — yayın ve aynı-commit CI kapanışı
+
+Kod2263c793419cf004ce73147529cb382a9f1c3895 origin dalına gönderildi. GitHub
+alaz/local-ci success ve alaz-server tam aynı checkout SHA makbuzu669/669,
+failed0/skipped0/suite_errors0/status_delivery=posted bağımsız okundu.
+Sanitize makbuz evidence/hyb-005a/code-ci.json. Bu ek commit yalnız durum ve
+kanıt belgesidir; ürün/test kodları yeniden değiştirilmedi. Bu belge commit'inin
+son CI durumu yayın sonrası ayrıca sorgulanır, kod SHA yeşili ona taşınmaz.
+Son kontrol öncesi aktif worktree temiz ve yerel/remote kod SHA eşitti.
+Main bu feature paketine ilerletilmedi; önceki b8ff44f ortak tabanı korunuyor.
+Sıradaki HYB-005B henüz başlamadı. Model/araç izinleri, bütün provider çağrılarının
+bütçesi, izolasyon ve M1/M2 kabulü bu tek-kullanım kapısından ayrı açık işlerdir.

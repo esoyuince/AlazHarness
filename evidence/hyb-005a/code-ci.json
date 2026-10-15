@@ -1,0 +1,28 @@
+{
+  "code_commit": "2263c793419cf004ce73147529cb382a9f1c3895",
+  "github_status": {
+    "context": "alaz/local-ci",
+    "state": "success",
+    "description": "ALAZ Local CI passed",
+    "id": 56469052980
+  },
+  "server_receipt": {
+    "sha": "2263c793419cf004ce73147529cb382a9f1c3895",
+    "checkout_sha": "2263c793419cf004ce73147529cb382a9f1c3895",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 669,
+      "failed": 0,
+      "passed": 669,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 669
+    },
+    "status_delivery": "posted"
+  },
+  "scope": "same-SHA standard suite only; local four native Gateway scenarios are separately recorded",
+  "native_gateway_executed_by_ci": false,
+  "model_inference_calls": 0,
+  "paid_calls": 0
+}
