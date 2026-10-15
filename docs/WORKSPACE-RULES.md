@@ -10,5 +10,5 @@
 - Üretim veya kişisel ajan state'ine, API anahtarlarına ve mevcut servis ayarlarına dokunma.
 - runtime/, artifacts/, scratch/, .env ve sırlar Git dışıdır. Paylaşılacak kanıt sır içermemelidir.
 - Çıktılar tarihli/iş-kimlikli alt dizinlere gider. Otomatik temizlik kullanıcı verisi silmez.
-- İş bitiminde CURRENT-STATE.md güncellenir: yapılanlar, kesin commit'ler, test kapsamı, engeller, sıradaki komut/adım.
+- Her işin başında, önemli ara sonucunda/kesintide ve sonunda status.md güncellenir: aktif dal/yol, amaç, yapılanlar, kesin commit, test kapsamı/exit kodu, kanıt, engel ve sıradaki adım. Günlük önceki kayıtları silmeden ilerler. CURRENT-STATE.md eski ayrıntıları koruyan bağlantılı belgedir; ikinci bağımsız güncel durum kaydı yapılmaz.
 - Hazırlık, entegrasyon ve ürün kabul durumları ayrı tutulur; DRAFT/NOT RUN ile PASS karıştırılmaz.

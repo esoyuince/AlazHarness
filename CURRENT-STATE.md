@@ -1,3 +1,5 @@
+> **Güncel devam kaydı: [status.md](status.md).** Aşağıdaki içerik önceki kontrol noktasını korur. Aktif dal, son doğrulama ve sıradaki iş için önce status.md okuyup canlı Git durumunu kontrol et.
+
 # AlazHarness — REF-PI-001 checkpoint
 
 Date: 2026-10-15. Default workspace: C:\Antigravity\AlazHarness.
