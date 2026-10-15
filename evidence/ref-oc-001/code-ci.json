@@ -1,0 +1,18 @@
+{
+  "scope": "REF-OC-001 exact code-commit publication verification",
+  "sha": "8117b0a611dab5d96acdd658a78365ebbbae2920",
+  "checkout_sha": "8117b0a611dab5d96acdd658a78365ebbbae2920",
+  "status": "success",
+  "build_status": "success",
+  "ci2_suite_proof": {
+    "executed": 280,
+    "failed": 0,
+    "passed": 280,
+    "skipped": 0,
+    "suite_errors": 0,
+    "total": 280
+  },
+  "status_delivery": "posted",
+  "source": "read-only alaz-server artifact and GitHub connector",
+  "native_components_run_by_ci": false
+}

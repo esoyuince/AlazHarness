@@ -16,7 +16,7 @@ Karar: `docs/adr/0003-mvp-single-runtime.md`. Tam M1 ve M2 otonomi açık.
 | Aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97` |
 | Aktif dal | `alaz/ref-oc-001-8ea1` |
 | Başlangıç commit'i | `b461d4c805c7291f91899edd0d2028c7e00dbf4b` |
-| Bu paketin yayını | LOCAL PASS; commit/push/aynı-commit CI PENDING. Sonraki teslim eki güncelleyecek. |
+| Bu paketin yayını | Kod8117b0a push edildi; exact-SHA alaz/local-ci success,280/280 PASS. Belge HEAD CI ayrı doğrulanır. |
 | Repo | `esoyuince/AlazHarness`, public / MIT |
 | main | Geliştirme paketleri henüz main ile birleştirilmedi. |
 
@@ -120,3 +120,7 @@ Kör etkili retry yok. Başlangıç/QA günlüklerinin tam eski kopyası
 bileşen /20 ek bağımsız gözlem PASS. Kaynak/app graph'ı değiştirilmedi;
 fixture ve tekrar üretim helperları ile kanıt/ADR/status eklendi. Tam ürün
 benimsemesi açık. Sonraki kayıt commit/push/CI'ı kanıtla güncelleyecek.
+
+### 2026-10-15 — REF-OC-001 — Yayın kapanışı
+
+Kod8117b0a611dab5d96acdd658a78365ebbbae2920 uzak dalda; alaz-server aynı SHA280/280, fail/skip/suite_error0 ve GitHub alaz/local-ci success doğrulandı. Kanıt evidence/ref-oc-001/code-ci.json. Önceki PENDING kayıt tarihsel; native70 ve bağımsız20 bu CI toplamına eklenmez. Sonraki iş HYB-003-GATEWAY; main birleşmedi.
