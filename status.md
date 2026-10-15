@@ -15,7 +15,7 @@ M0 hazırlık tamam; **tam M1 hibrit kabulü ve M2 otonomi hâlâ açık**. Open
 | Varsayılan çalışma alanı | `C:\Antigravity\AlazHarness` |
 | Bu devam zincirinin aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-002-4c9f` |
 | Aktif dal | `alaz/ref-pi-002-durable-4c9f` |
-| Son doğrulanmış geliştirme commit'i | `99e2a4f210ea713e2d121505f52272a40c6641e3` |
+| Son doğrulanmış geliştirme commit'i | `db277a36ef96b808c25ae00725224f9ad61a95db` |
 | Repo | `esoyuince/AlazHarness` — public, MIT |
 | Son geliştirme commit'inin CI durumu | `alaz/local-ci: success`; bu kayıt yazılırken GitHub API'den yeniden okundu |
 | `main` durumu | Geliştirme paketleri henüz `main` ile birleştirilmedi |
@@ -37,7 +37,15 @@ Bu dosyanın Git'te izlenen sürümü aktif dalın kökündedir. Varsayılan kö
 
 Kanıt yolları aktif çalışma ağacına göredir. Başka bir daldaki aynı dosya adı aynı içeriği/sonucu garanti etmez. Eski başarı sayıları yeni deneye eklenmez.
 
-## Son doğrulama ve sınırları
+## Son REF-PI-002 doğrulaması
+
+- Kod commit'i `db277a36ef96b808c25ae00725224f9ad61a95db` push edildi; aynı SHA için alaz-server 169/169 PASS ve GitHub `alaz/local-ci: success` doğrulandı. Başarısız/atlanmış standart test yok; native deneyler CI sayısında değil.
+- Gerçek Durable / SQLite deneyi: 9 senaryo, 2 tekrar, 18/18 davranış kontrolü; sekiz kontrollü process-kill/reopen çifti. Kaynak motor taklit edilmedi; yalnız faux model cevapları ve yerel test aracı kullanıldı.
+- Strict aynı requestId/değişmiş içerik koşulu: FAIL (write ve input). Ürüne benimseme NOT ACCEPTED. Tam M1/M2, genel bütçe ve izolasyon kabul edilmedi.
+- Kanıtlar: `evidence/ref-pi-002/native-suite.json`, `local-validation.json`, `source-custody.json`, `live-ci.json`. Rapor: `docs/research/REF-PI-002-DURABLE.md`.
+- Yeni kurulum, ücretli çağrı, kaynak pin değişimi veya main merge yok. Hazır Pi ortamı tekrar kullanıldı.
+
+## Önceki REF-PI-001 doğrulaması (tarihsel)
 
 - **Standart testler:** son geliştirme paketinde yerel 146/146; aynı commit için sunucuda 146/146, başarısız ve atlanan test yok. Yerel kayıt `evidence/ref-pi-001/local-validation.json`; son sunucu/Git teslim özeti varsayılan kökün `runtime/pi-ref001-ac97/FINAL-STATE.json` dosyasında.
 - **Gerçek Pi deneyi:** 6 farklı senaryo, iki tekrar, 12 başarılı çalışma. Normal okuma, olmayan dosya, model beklerken iptal, tek tur, istek sınırı, kesilmiş araç çıktısı. `evidence/ref-pi-001/native-suite.json`.
@@ -129,3 +137,18 @@ Makbuz `evidence/ref-pi-002/native-suite.json`; kaynak kökeni `source-custody.j
 Ürün M1/M2, para bütçesi ve genel sandbox açık. Rapor, yeni launcher/worker/validator ve
 bağımlılıksız negatif testler hazır. Standart yerel test ve aynı-commit CI ayrıca
 çalıştırılıp kaydedilecek; henüz bu pakete eski yeşil CI sonucu taşınmıyor.
+
+### 2026-10-15 — REF-PI-002 — Teslim
+
+**DONE: deney ve kanıt paketi. Benimseme: NOT ACCEPTED.** Geliştirme commit'i
+`db277a36ef96b808c25ae00725224f9ad61a95db` uzak dala gönderildi. Yerel169/169,
+alaz-server aynı commit169/169 PASS; GitHub alaz/local-ci success. Yerel18 native
+çalışma bu sayıdan ayrı. Kod/provenance/yayın kontrolleri exit0; upstream kaynakları
+ve runtime/research kilitleri korunuyor. Test programlarının hash'leri nihai native
+makbuzla eşleşiyor. Sunucu profili değiştirilmedi, main'e merge yapılmadı.
+
+Sıradaki kesin iş REF-PI-002B: kalıcı, atomik payload-aware admission deneyi.
+Aynı anahtar+aynı içerik mevcut işi döndürmeli; farklı içerik açık conflict vermeli;
+kontrol ile admission arasında kesinti/eşzamanlılık boşluğu olmamalı. Bu ek koruma
+henüz yazılmadı. Araç etkisi belirsizken otomatik yeniden çalıştırma yapılmamalı.
+Bu son kayıt yalnız durum ve CI kanıtıdır; native motor yeniden çalıştırılmadı.
