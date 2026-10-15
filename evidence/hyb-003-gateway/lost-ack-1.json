@@ -1,0 +1,506 @@
+{
+  "scope": "native Gateway/Authority/API + real tool, scripted provider",
+  "nonce": "f2d8645f37bba8541a9598cf4eaf2606",
+  "scenario": "lost-ack",
+  "errors": [],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "os_sandbox_claimed": false,
+  "ownership_chain": [
+    32376,
+    30172
+  ],
+  "launcher_pid": 30172,
+  "ready": {
+    "pid": 32376,
+    "nonce": "f2d8645f37bba8541a9598cf4eaf2606",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "2dd23c00dab646ff9f08e90e9dbb4c7a",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 51128
+  },
+  "client_exit": 0,
+  "client": {
+    "nonce": "f2d8645f37bba8541a9598cf4eaf2606",
+    "scenario": "lost-ack",
+    "result": "PASS",
+    "run_id": "run_f7f163da00e242b790879db7c2c23bc0",
+    "admission": {
+      "run_id": "run_f7f163da00e242b790879db7c2c23bc0",
+      "status": "running",
+      "replayed": true
+    },
+    "final": {
+      "object": "hermes.run",
+      "model": "hermes-agent",
+      "created_at": 1792058942.455663,
+      "pending_controls": [],
+      "run_id": "run_f7f163da00e242b790879db7c2c23bc0",
+      "status": "completed",
+      "session_id": "run_f7f163da00e242b790879db7c2c23bc0",
+      "admission_id": "7ef978faf83145dd92731a066a576fe9",
+      "execution_generation": 1,
+      "output": "Native Gateway verified ALAZ_GATEWAY_37a4a7d66001f710d9ad4daf53a984f7",
+      "usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      }
+    },
+    "checks": [
+      "lost-ack-is-unknown-not-failure",
+      "real-tool-result",
+      "duplicate-same-id",
+      "changed-payload-409",
+      "read-only-resume",
+      "unauthorized-401"
+    ],
+    "lost_error": "write_outcome_unknown"
+  },
+  "child_exit": 0,
+  "child_reaped": true,
+  "gateway_reaped": true,
+  "relay": {
+    "dropped_run": "run_f7f163da00e242b790879db7c2c23bc0",
+    "records": [
+      {
+        "method": "POST",
+        "path": "/v1/runs",
+        "status": 202
+      },
+      {
+        "method": "POST",
+        "path": "/v1/runs",
+        "status": 202
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/v1/runs",
+        "status": 202
+      },
+      {
+        "method": "POST",
+        "path": "/v1/runs",
+        "status": 409
+      },
+      {
+        "method": "GET",
+        "path": "/v1/runs/run_f7f163da00e242b790879db7c2c23bc0",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/v1/runs",
+        "status": 401
+      }
+    ]
+  },
+  "shutdown": {
+    "pid": 32376,
+    "nonce": "f2d8645f37bba8541a9598cf4eaf2606",
+    "native_result": true,
+    "lifecycle_completed": true,
+    "nonloopback_attempts_blocked": 0
+  },
+  "files_sha256": {
+    "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+    "native_gateway_client.mjs": "5fd456e5cf9061ddd91af5f492b5f8d256a6f1ebeb676fae71c1b9bf96c337f4",
+    "run_native_gateway.py": "10210cffa886d2acafae46a378b8110987dbf78ffd99495e6803c49fe50c41ec",
+    "gateway_scripted_model.py": "e016b3314c253c5e4132145b0ad81fffccef2534545157135e7f045e6697a926",
+    "gateway_fault_relay.py": "07d614015c57682d372aa95168ef45c03a045d2dcc6456aef9d321a5b0d6ed31",
+    "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "gateway_probe_contract.py": "6c0be16ea57d6ab55d48f77dc9fcdd46cd92eab4527133b2daa3e8d6b6f4d7bc"
+  },
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "source_or_program_drift": false,
+  "database": {
+    "read_only": true,
+    "after_process_exit": true,
+    "integrity": "ok",
+    "journal_mode": "delete",
+    "admissions": [
+      {
+        "admission_id": "7ef978faf83145dd92731a066a576fe9",
+        "request_id": "run_f7f163da00e242b790879db7c2c23bc0",
+        "target_session_id": "run_f7f163da00e242b790879db7c2c23bc0",
+        "status": "terminal",
+        "outcome": "completed",
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "run_records": [
+      {
+        "run_id": "run_f7f163da00e242b790879db7c2c23bc0"
+      }
+    ],
+    "user_messages": 1,
+    "tool_results": 1,
+    "tool_names": [
+      "read_file"
+    ],
+    "tool_contains_marker": true,
+    "assistant_contains_marker": true
+  },
+  "model_calls": [
+    {
+      "tool_result": false,
+      "tool_names": [
+        "patch",
+        "read_file",
+        "search_files",
+        "write_file"
+      ],
+      "stream": false
+    },
+    {
+      "tool_result": true,
+      "tool_names": [
+        "patch",
+        "read_file",
+        "search_files",
+        "write_file"
+      ],
+      "stream": false
+    }
+  ],
+  "fixture_errors": [],
+  "elapsed_seconds": 17.915,
+  "result": "PASS"
+}

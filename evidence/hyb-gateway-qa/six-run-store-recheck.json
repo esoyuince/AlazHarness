@@ -1,0 +1,79 @@
+{
+  "scope": "independent exact-store recheck of retained six primary native runs; NOT six additional executions",
+  "checks": [
+    {
+      "case": "accepted-normal-1",
+      "scenario": "normal",
+      "run_id": "run_6f5914786315491591863a5baf78c920",
+      "admission_id": "62b55cbf1689491ebce4ea81439c7a60",
+      "status": "completed",
+      "native_outcome": "completed",
+      "tool_results": 1,
+      "model_http_calls": 2,
+      "source_receipt_sha256": "591af94cf0ee08568313b4760b6ad0825f3ce36b724f03ab75f34aed55624c8a",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-normal-2",
+      "scenario": "normal",
+      "run_id": "run_755ef3d9cd5442d08c2b1ff0b69c0002",
+      "admission_id": "8c9c626d4bfc4f70a1d90f9d9dddbbe6",
+      "status": "completed",
+      "native_outcome": "completed",
+      "tool_results": 1,
+      "model_http_calls": 2,
+      "source_receipt_sha256": "c9ee5a5de266fdaa2a1b33340a5ae7ed9c9d6f2e24749431535683f9470580e6",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-lost-ack-1",
+      "scenario": "lost-ack",
+      "run_id": "run_f7f163da00e242b790879db7c2c23bc0",
+      "admission_id": "7ef978faf83145dd92731a066a576fe9",
+      "status": "completed",
+      "native_outcome": "completed",
+      "tool_results": 1,
+      "model_http_calls": 2,
+      "source_receipt_sha256": "b90adb37ccf8fb3d48a3b0e67a82f39b082dd7a8f779f354bf6b75946a7e1e27",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-lost-ack-2",
+      "scenario": "lost-ack",
+      "run_id": "run_7a93e0cb0f584895a6d349fea83f501c",
+      "admission_id": "9436eea9549a44dbb90bbea64f961710",
+      "status": "completed",
+      "native_outcome": "completed",
+      "tool_results": 1,
+      "model_http_calls": 2,
+      "source_receipt_sha256": "81f301d1cfe91b59860dd714aaa1d26aa2c4c9e4543134a2d2eec3e5dcc85f8c",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-stop-1",
+      "scenario": "stop",
+      "run_id": "run_5b923521287540f380e79bfdd9fc09c5",
+      "admission_id": "c4a0251788824f0a99689b24d394c674",
+      "status": "cancelled",
+      "native_outcome": "interrupted",
+      "tool_results": 0,
+      "model_http_calls": 1,
+      "source_receipt_sha256": "019aa22bce704de87d533c53ed8c41ea198bc81b776da609713877e20c499800",
+      "result": "PASS"
+    },
+    {
+      "case": "accepted-stop-2",
+      "scenario": "stop",
+      "run_id": "run_481c96bb93644f7798eab0ab94e615bd",
+      "admission_id": "ebd3a85f68764c199157207cfac15776",
+      "status": "cancelled",
+      "native_outcome": "interrupted",
+      "tool_results": 0,
+      "model_http_calls": 1,
+      "source_receipt_sha256": "5ad67afa5ba833f919ccc3ec89293137fd7b1ed64eeae34e0e05c3ec2cba57f1",
+      "result": "PASS"
+    }
+  ],
+  "model_inference_calls": 0,
+  "result": "PASS"
+}

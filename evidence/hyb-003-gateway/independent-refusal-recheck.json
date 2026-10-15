@@ -1,0 +1,112 @@
+{
+  "scope": "independent programmatic native Gateway/Authority/API HTTP refusals, no model execution",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nonce": "8ae746d6a53a1da1db51d8b08dd7efb0",
+  "errors": [],
+  "files_sha256": {
+    "scripts\\qa\\hermes_gateway_refusals.py": "cde3914dbec4dfa725f1763e727cc3f7c52f052a3e74fca52bd6a26f32c7134e",
+    "scripts\\run_gateway_refusal_qa.py": "6f21ad68b0c1a0cf23cb24274b81457c96a4a7794fc7596c43404055f64b9355",
+    "scripts\\gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279"
+  },
+  "ownership_chain": [
+    41104,
+    26688
+  ],
+  "launcher_pid": 26688,
+  "native_pid": 41104,
+  "exit_code": 0,
+  "launcher_reaped": true,
+  "native_reaped": true,
+  "timed_out": false,
+  "receipt": {
+    "result": "PASS",
+    "scope": "native GatewayRunner SessionAuthority APIServerAdapter real HTTP refusal boundary; zero agent execution",
+    "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "pid": 41104,
+    "nonce": "8ae746d6a53a1da1db51d8b08dd7efb0",
+    "cases": [
+      {
+        "name": "missing-auth",
+        "http_status": 401,
+        "code": "gateway_auth_failed",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "wrong-auth",
+        "http_status": 401,
+        "code": "gateway_auth_failed",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "unicode-auth",
+        "http_status": 401,
+        "code": "gateway_auth_failed",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "invalid-idempotency-size",
+        "http_status": 400,
+        "code": "invalid_idempotency_key",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "invalid-idempotency-space",
+        "http_status": 400,
+        "code": "invalid_idempotency_key",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "native-owner-first-refusal",
+        "http_status": 409,
+        "code": "permission_denied",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "native-owner-keyed-retry-refusal",
+        "http_status": 409,
+        "code": "permission_denied",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "unknown-status-no-creation",
+        "http_status": 404,
+        "code": "run_not_found",
+        "no_admission_or_active_run_change": true
+      },
+      {
+        "name": "unknown-stop-no-creation",
+        "http_status": 404,
+        "code": "run_not_found",
+        "no_admission_or_active_run_change": true
+      }
+    ],
+    "passed": 9,
+    "failed": 0,
+    "native_store_identity_shared": true,
+    "before": {
+      "native_admissions": 0,
+      "memory_run_statuses": 0,
+      "active_runs": 0
+    },
+    "after": {
+      "native_admissions": 0,
+      "memory_run_statuses": 0,
+      "active_runs": 0
+    },
+    "model_inference_calls": 0,
+    "unexpected_network_connections": [],
+    "runtime_socketpair_connections": 1,
+    "aiohttp_version": "3.14.3",
+    "full_gateway_lifecycle_tested": false,
+    "os_sandbox_claimed": false,
+    "owned_cleanup_completed": true
+  },
+  "database": {
+    "integrity": "ok",
+    "admissions": 0,
+    "tool_messages": 0,
+    "journal_mode": "delete",
+    "read_only": true
+  },
+  "result": "PASS"
+}

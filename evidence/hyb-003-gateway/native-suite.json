@@ -1,0 +1,81 @@
+{
+  "scope": "actual public Hermes Gateway lifecycle, native authority/API/Agent/file tool, scripted model responses",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "scenarios": 3,
+  "repeats": 2,
+  "passed": 6,
+  "failed": 0,
+  "native_on_ci": false,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "full_m1_accepted": false,
+  "crash_restart_tested": false,
+  "cases": [
+    {
+      "scenario": "normal",
+      "repeat": 1,
+      "result": "PASS",
+      "evidence": "normal-1.json",
+      "sha256": "591af94cf0ee08568313b4760b6ad0825f3ce36b724f03ab75f34aed55624c8a",
+      "native_run_id": "run_6f5914786315491591863a5baf78c920",
+      "model_requests": 2,
+      "tool_results": 1,
+      "shutdown_confirmed": true
+    },
+    {
+      "scenario": "normal",
+      "repeat": 2,
+      "result": "PASS",
+      "evidence": "normal-2.json",
+      "sha256": "c9ee5a5de266fdaa2a1b33340a5ae7ed9c9d6f2e24749431535683f9470580e6",
+      "native_run_id": "run_755ef3d9cd5442d08c2b1ff0b69c0002",
+      "model_requests": 2,
+      "tool_results": 1,
+      "shutdown_confirmed": true
+    },
+    {
+      "scenario": "lost-ack",
+      "repeat": 1,
+      "result": "PASS",
+      "evidence": "lost-ack-1.json",
+      "sha256": "b90adb37ccf8fb3d48a3b0e67a82f39b082dd7a8f779f354bf6b75946a7e1e27",
+      "native_run_id": "run_f7f163da00e242b790879db7c2c23bc0",
+      "model_requests": 2,
+      "tool_results": 1,
+      "shutdown_confirmed": true
+    },
+    {
+      "scenario": "lost-ack",
+      "repeat": 2,
+      "result": "PASS",
+      "evidence": "lost-ack-2.json",
+      "sha256": "81f301d1cfe91b59860dd714aaa1d26aa2c4c9e4543134a2d2eec3e5dcc85f8c",
+      "native_run_id": "run_7a93e0cb0f584895a6d349fea83f501c",
+      "model_requests": 2,
+      "tool_results": 1,
+      "shutdown_confirmed": true
+    },
+    {
+      "scenario": "stop",
+      "repeat": 1,
+      "result": "PASS",
+      "evidence": "stop-1.json",
+      "sha256": "019aa22bce704de87d533c53ed8c41ea198bc81b776da609713877e20c499800",
+      "native_run_id": "run_5b923521287540f380e79bfdd9fc09c5",
+      "model_requests": 1,
+      "tool_results": 0,
+      "shutdown_confirmed": true
+    },
+    {
+      "scenario": "stop",
+      "repeat": 2,
+      "result": "PASS",
+      "evidence": "stop-2.json",
+      "sha256": "5ad67afa5ba833f919ccc3ec89293137fd7b1ed64eeae34e0e05c3ec2cba57f1",
+      "native_run_id": "run_481c96bb93644f7798eab0ab94e615bd",
+      "model_requests": 1,
+      "tool_results": 0,
+      "shutdown_confirmed": true
+    }
+  ]
+}

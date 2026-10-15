@@ -1,0 +1,128 @@
+{
+  "scope": "native Gateway/Authority/API + real tool, scripted provider",
+  "nonce": "c3ea0d6e7a6246a284818de24ddb58e6",
+  "scenario": "stop",
+  "errors": [],
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "os_sandbox_claimed": false,
+  "ownership_chain": [
+    11288,
+    7320
+  ],
+  "launcher_pid": 7320,
+  "ready": {
+    "pid": 11288,
+    "nonce": "c3ea0d6e7a6246a284818de24ddb58e6",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "108aaac1c436412088ef8ac378d65c53",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 55767
+  },
+  "client_exit": 0,
+  "client": {
+    "nonce": "c3ea0d6e7a6246a284818de24ddb58e6",
+    "scenario": "stop",
+    "result": "PASS",
+    "run_id": "run_5b923521287540f380e79bfdd9fc09c5",
+    "admission": {
+      "run_id": "run_5b923521287540f380e79bfdd9fc09c5",
+      "status": "started",
+      "replayed": false
+    },
+    "final": {
+      "object": "hermes.run",
+      "model": "hermes-agent",
+      "created_at": 1792058979.546585,
+      "pending_controls": [],
+      "run_id": "run_5b923521287540f380e79bfdd9fc09c5",
+      "status": "cancelled",
+      "session_id": "run_5b923521287540f380e79bfdd9fc09c5",
+      "admission_id": "c4a0251788824f0a99689b24d394c674",
+      "execution_generation": 1,
+      "output": "Operation interrupted: waiting for model response (0.6s elapsed).",
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "checks": [
+      "stop-request-reached-native",
+      "terminal-stop-separately-confirmed",
+      "duplicate-same-id",
+      "changed-payload-409",
+      "read-only-resume",
+      "unauthorized-401"
+    ]
+  },
+  "child_exit": 0,
+  "child_reaped": true,
+  "gateway_reaped": true,
+  "shutdown": {
+    "pid": 11288,
+    "nonce": "c3ea0d6e7a6246a284818de24ddb58e6",
+    "native_result": true,
+    "lifecycle_completed": true,
+    "nonloopback_attempts_blocked": 0
+  },
+  "files_sha256": {
+    "native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+    "native_gateway_client.mjs": "5fd456e5cf9061ddd91af5f492b5f8d256a6f1ebeb676fae71c1b9bf96c337f4",
+    "run_native_gateway.py": "10210cffa886d2acafae46a378b8110987dbf78ffd99495e6803c49fe50c41ec",
+    "gateway_scripted_model.py": "e016b3314c253c5e4132145b0ad81fffccef2534545157135e7f045e6697a926",
+    "gateway_fault_relay.py": "07d614015c57682d372aa95168ef45c03a045d2dcc6456aef9d321a5b0d6ed31",
+    "gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "gateway_probe_contract.py": "6c0be16ea57d6ab55d48f77dc9fcdd46cd92eab4527133b2daa3e8d6b6f4d7bc"
+  },
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "source_or_program_drift": false,
+  "database": {
+    "read_only": true,
+    "after_process_exit": true,
+    "integrity": "ok",
+    "journal_mode": "delete",
+    "admissions": [
+      {
+        "admission_id": "c4a0251788824f0a99689b24d394c674",
+        "request_id": "run_5b923521287540f380e79bfdd9fc09c5",
+        "target_session_id": "run_5b923521287540f380e79bfdd9fc09c5",
+        "status": "terminal",
+        "outcome": "interrupted",
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "run_records": [
+      {
+        "run_id": "run_5b923521287540f380e79bfdd9fc09c5"
+      }
+    ],
+    "user_messages": 1,
+    "tool_results": 0,
+    "tool_names": [],
+    "tool_contains_marker": false,
+    "assistant_contains_marker": false
+  },
+  "model_calls": [
+    {
+      "tool_result": false,
+      "tool_names": [
+        "patch",
+        "read_file",
+        "search_files",
+        "write_file"
+      ],
+      "stream": false
+    }
+  ],
+  "fixture_errors": [],
+  "elapsed_seconds": 15.262,
+  "result": "PASS"
+}

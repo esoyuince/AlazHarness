@@ -1,0 +1,13 @@
+{
+  "scope": "independent full offline standard suite, not native HTTP case count",
+  "exit_code": 0,
+  "tests": 321,
+  "elapsed_seconds": 31.203,
+  "no_skips_reported": true,
+  "observed_code_drift": [],
+  "qa_sources_sha256": {
+    "scripts/run_gateway_refusal_qa.py": "6f21ad68b0c1a0cf23cb24274b81457c96a4a7794fc7596c43404055f64b9355",
+    "scripts/qa/hermes_gateway_refusals.py": "cde3914dbec4dfa725f1763e727cc3f7c52f052a3e74fca52bd6a26f32c7134e",
+    "tests/test_gateway_refusal_qa.py": "f9f687dc0680f853777c71c8f996193f6b6df3e437221f6f44468f595b4af69c"
+  }
+}

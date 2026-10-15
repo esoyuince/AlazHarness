@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "scope": "native Gateway experiment; immutable upstream, no alternative runtime",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "files": {
+    "gateway/run.py": "b06201243d8750ee5b2391826f90d4f2a9d98100701fba0b53f358141c6ce8f9",
+    "gateway/run_bootstrap.py": "15be619b9369d4227ca818af716410f83387a77c08c87be625ba4ed074fd5bc3",
+    "gateway/run_runtime.py": "7d830a57d870b09af041333e95fdf912b0ffc4f38f8adea984f96443e764bc89",
+    "gateway/session_authority.py": "035d5a5dee4090bbd85b275a9b33981d8d1378730b9400319a8cf7bf5a0bdff8",
+    "gateway/session_api_turn.py": "feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f",
+    "gateway/platforms/api_server.py": "74158a9bcac885e238508e0b36160bd6a676b0424894554d3674c67cfc7858f4",
+    "gateway/platforms/api_server_runs.py": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+    "agent/conversation_loop.py": "5a2b1973189300f0f07a990e39c6f5ddf200288aaec1032205685bef3437e4bf",
+    "tools/file_tools.py": "1a23773abe410feb5dd99276d08b6c0837624309ea489c508d683c6965408f94",
+    "pyproject.toml": "ff41b097147124ff2eb51a437d5f44eddea35104900c1c79c7edfb8b7352d901",
+    "uv.lock": "16300cf807347b7fcfa3c19963f5fe950913fdb3e41e3c649ea724bc7dc997da"
+  },
+  "dependency_preparation": "pm.build_environment frozen extras sms; pinned sms only contains aiohttp==3.14.3; no SMS enabled",
+  "adapter_path": "packages/claw-hermes/hermes-runs.mjs",
+  "adapter_sha256": "a89699baa24d7318a2ff770911580f031b40893970960680abc139fdb0236c21"
+}

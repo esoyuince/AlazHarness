@@ -59,3 +59,7 @@ Bu sayılar önceki karakterizasyonlara eklenmez; CI sonucu tam commit'te doğru
 ## REF-OC-001 component checkpoint
 
 Selected source Permission/EventFeed behavior:35 cases x2 local passes, explicit fixture dependencies. Full OpenCode HTTP/server/DB acceptance remains open. Report: docs/research/REF-OC-001-COMPONENTS.md. MVP direction: docs/adr/0003-mvp-single-runtime.md. Next HYB-003-GATEWAY uses existing Hermes as the sole runtime, not four stacked agent loops.
+
+## HYB-003-GATEWAY
+
+Native Gateway/Authority/API sınırı için normal, lost-ack ve stop deneyleri eklendi. Exact sonuç: evidence/hyb-003-gateway. Tam M1 kapalı değil. Sonraki kapı HYB-004-GATEWAY-RECOVERY: aynı profilde kill/reopen, epoch ve belirsiz dış etkiyi yeniden uzlaştırma.

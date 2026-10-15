@@ -1,0 +1,7 @@
+{
+  "scope": "offline root suite; native Gateway tests are separate",
+  "tests": 321,
+  "exit_code": 0,
+  "elapsed_seconds": 31.261,
+  "no_skips_reported": true
+}

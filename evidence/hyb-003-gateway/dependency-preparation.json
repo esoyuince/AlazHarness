@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 58.69,
+  "builder": "pm.build_environment",
+  "frozen": true,
+  "extras": [
+    "sms"
+  ],
+  "scope": "dependency preparation only; not native-agent acceptance"
+}

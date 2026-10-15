@@ -1,0 +1,30 @@
+{
+  "failed_development_attempts": [
+    {
+      "trial": "trial-01",
+      "result": "FAIL",
+      "errors": [
+        "TimeoutError: Gateway readiness deadline",
+        "Gateway nonzero exit"
+      ],
+      "model_requests": 0,
+      "child_exit": 1,
+      "child_reaped": true,
+      "raw_receipt_sha256": "8681c17313276595af056856fe3d5e39727bf12a9f2fabea1d8f12d7f1cae03c"
+    },
+    {
+      "trial": "trial-02",
+      "result": "FAIL",
+      "errors": [
+        "RuntimeError: Readiness identity mismatch",
+        "Gateway nonzero exit"
+      ],
+      "model_requests": 0,
+      "child_exit": 1,
+      "child_reaped": true,
+      "raw_receipt_sha256": "a1a685b8df575d7d07f9b6d9167668d419400010aa6eb9aa387d06ad4effa5eb"
+    }
+  ],
+  "counted_as_acceptance": false,
+  "native_source_changed": false
+}

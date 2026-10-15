@@ -1,0 +1,14 @@
+{
+  "scope": "isolated dependency preparation only",
+  "builder": "pinned Hermes pm.build_environment",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "frozen": true,
+  "extras": [
+    "sms"
+  ],
+  "reason": "pinned sms extra declares only aiohttp==3.14.3; no SMS service enabled",
+  "no_install_project": true,
+  "elapsed_seconds": 73.91,
+  "exit_code": 0,
+  "model_calls": 0
+}

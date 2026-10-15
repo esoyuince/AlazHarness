@@ -1,0 +1,18 @@
+{
+  "scope": "development-only fixture/preparation failures, not counted as successful native cases",
+  "records": [
+    {
+      "run": "refusals-01",
+      "exit_code": 1,
+      "reason": "missing aiohttp before Gateway construction"
+    },
+    {
+      "run": "refusals-02/refusals-03/refusals-04",
+      "exit_code": 1,
+      "reason": "over-strict test network assertion misclassified measured Windows asyncio _fallback_socketpair as unexpected service connection",
+      "fix": "specific source-stack runtime-selfpipe classification, provider port9 remains blocked; original failure logs preserved"
+    }
+  ],
+  "raw_location": "runtime/hyb-gateway-qa-208f",
+  "native_source_modified": false
+}

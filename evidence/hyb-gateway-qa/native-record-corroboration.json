@@ -1,0 +1,24 @@
+{
+  "scope": "independent read-only corroboration of retained primary trial-03; not a new runtime execution",
+  "primary_suite_sha256": "59b0f47e5d85d35173dfa4f643f150b51c77562f1955af0e383944bc955f04fa",
+  "primary_shutdown_sha256": "c96d40e18b614cdd5d0f938d12c335c9c60074f018715704a2aaaf5d1c9ce38e",
+  "canonical_admission": {
+    "admission_id": "470a14e097a24e188b107f17fd7525a2",
+    "request_id": "run_ee57bac34bb14534a12cc4c02ba795fc",
+    "target_session_id": "run_ee57bac34bb14534a12cc4c02ba795fc",
+    "status": "terminal",
+    "outcome": "completed",
+    "principal_id": "api",
+    "generation": 1
+  },
+  "native_tool_results": 1,
+  "native_tool": "read_file",
+  "marker_in_tool_not_user": true,
+  "final_output_matches_recorded_assistant": true,
+  "model_http_calls": 2,
+  "model_inference_calls": 0,
+  "database_integrity": "ok",
+  "native_shutdown_identity_matches": true,
+  "reported_parent_and_native_reaped": true,
+  "result": "PASS"
+}
