@@ -36,3 +36,12 @@ before adopting components. These are NOT RUN, not replacements for open HYB gat
 The six low-level Pi Agent/provider/read-tool scenarios passed twice locally (12 runs).
 See docs/research/REF-PI-001-NATIVE.md. No Pi SDK-session/Durable or engine replacement
 acceptance. Next: REF-PI-002. Standard CI only runs host/launcher unit contracts.
+
+## REF-PI-002 — real Durable checkpoint
+
+Nine native behavioral scenarios, twice each, passed locally using real SQLite
+and parent-owned child process crash/reopen. Strict same-key/changed-payload
+conflict is FAIL for both write and input. Do not mark Durable adoption/M1/M2
+accepted. Next REF-PI-002B: atomic, persisted payload-aware admission design and
+qualification; see docs/research/REF-PI-002-DURABLE.md. No second transcript owner.
+OpenCode REF-OC-001 and full hybrid Gateway qualification remain open.

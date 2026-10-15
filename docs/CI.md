@@ -90,3 +90,12 @@ It does NOT install or execute Pi. Actual pinned Pi native runs are an opt-in
 Windows gate via scripts/run_native_pi_suite.py and documented separately in
 docs/research/REF-PI-001-NATIVE.md. Six native scenarios were repeated twice; their
 12 receipts are not added to the root unittest count.
+
+## REF-PI-002 boundary
+
+The default suite includes pure Durable evidence validators, not native Pi or
+SQLite crash runs. run_native_pi_durable.py is an explicit opt-in local command
+using a pre-existing pinned Pi environment; it never installs dependencies.
+Nine native scenarios repeated twice are separate evidence, not eighteen more
+standard CI tests. A passing characterization of upstream duplicate admission
+still records the AlazHarness strict-payload-conflict acceptance as FAIL.

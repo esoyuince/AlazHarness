@@ -4,7 +4,7 @@ Son güncelleme: **15 Ekim 2026**. Bu dosya iş başlangıcı, ara kontrol ve i�
 
 ## Kaldığımız yer
 
-**REF-PI-001 dar kapsamlı gerçek Pi çalıştırma deneyi tamamlandı. Sıradaki iş REF-PI-002: Pi Durable kabul / kesinti / yeniden oynatma deneyi.**
+**REF-PI-002: dokuz gerçek Durable davranış deneyi tamamlandı, iki tekrarda 18/18 PASS. Aynı anahtar/değişmiş içerik şartımız FAIL; Durable benimsemesi NOT ACCEPTED. Sıradaki iş REF-PI-002B.**
 
 M0 hazırlık tamam; **tam M1 hibrit kabulü ve M2 otonomi hâlâ açık**. OpenClaw–Hermes yerine başka motor seçilmedi. Pi ve OpenCode, yararlı parçaları değerlendirmek için kapsama alındı. Dört ayrı ajan döngüsü kurmuyoruz; tek harness ve tek yetkili oturum sahibi hedefleniyor.
 
@@ -13,8 +13,8 @@ M0 hazırlık tamam; **tam M1 hibrit kabulü ve M2 otonomi hâlâ açık**. Open
 | Alan | Kayıt |
 |---|---|
 | Varsayılan çalışma alanı | `C:\Antigravity\AlazHarness` |
-| Bu devam zincirinin aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97` |
-| Aktif dal | `alaz/ref-pi-001-native-ac97` |
+| Bu devam zincirinin aktif çalışma ağacı | `C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-002-4c9f` |
+| Aktif dal | `alaz/ref-pi-002-durable-4c9f` |
 | Son doğrulanmış geliştirme commit'i | `99e2a4f210ea713e2d121505f52272a40c6641e3` |
 | Repo | `esoyuince/AlazHarness` — public, MIT |
 | Son geliştirme commit'inin CI durumu | `alaz/local-ci: success`; bu kayıt yazılırken GitHub API'den yeniden okundu |
@@ -47,7 +47,7 @@ Kanıt yolları aktif çalışma ağacına göredir. Başka bir daldaki aynı do
 
 ## Açık işler ve sıradaki kesin adım
 
-**Öncelik REF-PI-002 — NOT RUN.** Sabitlenmiş Pi Durable API'sini ve ilgili upstream testleri oku; ayrı profil/depolama ile şu durumları test et: aynı requestId + değişmiş içerik, iş kabulü ile dış etki/sonuç kaydı arasındaki kesinti, güvenli olmayan tekrar, bekleyiciyi iptal ile işi iptal ayrımı, depolama hatası ve yeniden açma. Dış etki sayacını ajanın kendi beyanından bağımsız tut. Hermes'in oturumuna ikinci bir yazıcı ekleme.
+**Öncelik REF-PI-002B — NOT RUN.** Aynı conversation/requestId için kalıcı ve atomik içerik parmak izi kontrolü: aynı içerik eski işi bulmalı, farklı içerik conflict dönmeli; kabul/yan etki arasındaki kesinti yeni iş oluşturmamalı. REF-PI-002 davranış deneyi tamamlandı; rapor `docs/research/REF-PI-002-DURABLE.md`. Önceki REF-PI-002 planı (artık tarihsel): Sabitlenmiş Pi Durable API'sini ve ilgili upstream testleri oku; ayrı profil/depolama ile şu durumları test et: aynı requestId + değişmiş içerik, iş kabulü ile dış etki/sonuç kaydı arasındaki kesinti, güvenli olmayan tekrar, bekleyiciyi iptal ile işi iptal ayrımı, depolama hatası ve yeniden açma. Dış etki sayacını ajanın kendi beyanından bağımsız tut. Hermes'in oturumuna ikinci bir yazıcı ekleme.
 
 **Diğer açık kapılar:** OpenCode REF-OC-001 izin/olay testleri; gerçek Hermes Gateway / SessionAuthority / APIServerAdapter zinciri; tam OpenClaw girişi; bütün sağlayıcı/yardımcı çağrıları kapsayan istek-token-para bütçesi; işletim sistemi izolasyonu; hafıza/beceri transferi; sınırlı gerçek model kabulü. M2 bunların yerine geçen bir gösteriyle kapatılmaz.
 
@@ -69,7 +69,7 @@ Pi'nin hazırlanmış ayrı ortamı `runtime/pi-ref001-ac97`; Hermes'in ortamı 
 Önce `status.md` ve `AGENTS.md`, sonra aktif işin raporu ve `docs/MVP-v0.1.md` okunur. Canlı Git durumunu doğrulamak için:
 
 ```powershell
-cd C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-001-ac97
+cd C:\Antigravity\AlazHarness\scratch\worktrees\ref-pi-002-4c9f
 git status --short --branch
 git log -3 --oneline
 git worktree list
@@ -100,3 +100,32 @@ Bunlar komut kaydıdır, otomatik çalışma talimatı değildir. Kesintide yar�
 Belge bağlantıları, temel commit referansları, iki status kopyasının eşitliği, eski metnin korunması, depo yayın kontrolü ve `git diff --check` PASS / exit 0. Bu belgelerin güncellenmesi için 146 ürün/yardımcı testi veya 12 native deney tekrar çalıştırılmadı; yukarıdaki sayılar son geliştirme paketinin kanıtlarıdır. Belge commit'inin push/CI sonucu gerektiğinde `git log -1 -- status.md` ile bulunan tam commit üzerinden sorgulanır; önceki yeşil sonuç yeni commit'e taşınmaz.
 
 Bu iş yalnız dört belgeyi kapsar. Yeni ürün kodu, model çağrısı, bağımlılık kurulumu, upstream güncellemesi veya main merge yok. Kökteki önceden mevcut 29 dosyanın içerik hash'leri korunmuştur. Sıradaki geliştirme işi REF-PI-002; paralel Pi paketi uyumluluğu okunmadan üzerine yazılmaz.
+
+### 2026-10-15 — REF-PI-002 — Başlangıç
+
+IN PROGRESS. Başlangıç commit: a39a1ea08e108246463c983cc210975c9012364b. Ayrı çalışma ağacı ref-pi-002-4c9f. Mevcut hazırlanmış Pi kaynağı yalnız okunarak kullanılıyor; yeni kurulum, model çağrısı, upstream değişimi ve main merge yok. Kabul/yan etki/sonuç kaydı ayrımı gerçek kalıcı storage ile ölçülecek. Paralel c31cf19 paketi korunuyor; bu işte birleştirilmedi.
+
+### 2026-10-15 — REF-PI-002 — Ara kontrol
+
+Gerçek Harness + SQLite ile dokuz davranış senaryosu ilk iki tekrarda çalıştı.
+Zorla kapatma ve yeniden açma arasında üst süreç veritabanını salt okunur kontrol ediyor;
+araç intent/kayıt sınırı ve bağımsız etki sayacı eşleştiriliyor. Yan etki var ama sonuç yok
+kesitinde unsafe iş tekrarlanmadı; safe/idempotent örnekte iki execute, tek dış etki görüldü.
+Aynı anahtar + farklı write içeriği eski işi döndürdü: bizim strict conflict şartımız FAIL.
+Şimdi aynı durum gerçek input kabulünde de ölçülüyor. Benimseme NOT ACCEPTED; test
+PASS sayıları genel M1/M2 başarısı değildir. Henüz commit/push yok.
+
+### 2026-10-15 — REF-PI-002 — Native sonuç / yayın öncesi
+
+Dokuz senaryo iki tekrar: 18/18 davranış kontrolü PASS, sekiz gerçek process-kill/reopen çifti.
+SQLite bağımsız salt-okunur kontrolü intent/sonuç kesitlerini ve integrity=ok durumunu
+kanıtladı; güvenli olmayan yarım işlem yeniden yürütülmedi. Yerel anahtarlı safe örnek
+iki execute/tek etki üretti. Kayıt tamamlandıktan sonraki yeniden açmada ek çağrı yok.
+Aynı requestId/değişmiş write VE input içeriklerinin eski işi döndürmesi ölçüldü;
+strict payload conflict FAIL, bu nedenle Durable benimsemesi NOT ACCEPTED.
+
+Kaynak kodlara ve kilitlere dokunulmadı. Model yanıtı faux, model çıkarımı/ücret sıfır.
+Makbuz `evidence/ref-pi-002/native-suite.json`; kaynak kökeni `source-custody.json`.
+Ürün M1/M2, para bütçesi ve genel sandbox açık. Rapor, yeni launcher/worker/validator ve
+bağımlılıksız negatif testler hazır. Standart yerel test ve aynı-commit CI ayrıca
+çalıştırılıp kaydedilecek; henüz bu pakete eski yeşil CI sonucu taşınmıyor.
