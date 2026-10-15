@@ -4,7 +4,7 @@ Son güncelleme: **15 Ekim 2026**. Bu dosya iş başlangıcı, ara kontrol ve i�
 
 ## Kaldığımız yer
 
-**REF-PI-002 ac97 deney paketi tamam: 9 senaryo × 2 = 18/18 native PASS; standart testler 171/171. Doğrudan ürün benimsemesi NOT ACCEPTED. Sıradaki iş REF-PI-002-ADAPTER: kalıcı payload conflict ve dış etki sözleşmesi.**
+**REF-PI-002 ac97 deney paketi tamam: 9 senaryo × 2 = 18/18 native PASS; standart testler 171/171. Doğrudan ürün benimsemesi NOT ACCEPTED. Sıradaki iş REF-PI-002B: kalıcı payload conflict ve dış etki sözleşmesi.**
 
 M0 hazırlık tamam; **tam M1 hibrit kabulü ve M2 otonomi hâlâ açık**. OpenClaw–Hermes yerine başka motor seçilmedi. Pi ve OpenCode, yararlı parçaları değerlendirmek için kapsama alındı. Dört ayrı ajan döngüsü kurmuyoruz; tek harness ve tek yetkili oturum sahibi hedefleniyor.
 
@@ -17,7 +17,7 @@ M0 hazırlık tamam; **tam M1 hibrit kabulü ve M2 otonomi hâlâ açık**. Open
 | Aktif dal | `alaz/ref-pi-002-durable-ac97` |
 | Önceki doğrulanmış taban | `99e2a4f210ea713e2d121505f52272a40c6641e3`; bu paket a39a1ea üzerinden geliştirildi |
 | Repo | `esoyuince/AlazHarness` — public, MIT |
-| Bu paketin Git/CI durumu | Yerel testler tamam. Commit/push sonrası tam HEAD ile alaz/local-ci yeniden sorgulanmalı; önceki yeşil sonuç taşınmaz. |
+| Bu paketin Git/CI durumu | Kod commit e062ab67fd41b858758d46150a8c2a4ce1d7d944; push doğrulandı; aynı SHA için alaz/local-ci success,171/171. Sonraki doküman HEAD ayrı kontrol edilir. |
 | `main` durumu | Geliştirme paketleri henüz `main` ile birleştirilmedi |
 
 Kökteki eski `alaz/hyb-001-component-slice` çalışma ağacı, kullanıcıya/eşzamanlı çalışmalara ait commit edilmemiş dosyalar içeriyor. **Sırf eski CURRENT-STATE.md öyle diyor diye HYB-001'i yeniden başlatma; kökte reset/clean/stash veya toplu commit yapma.** Önce yukarıdaki aktif çalışma ağacının canlı durumunu doğrula.
@@ -47,7 +47,7 @@ Kanıt yolları aktif çalışma ağacına göredir. Başka bir daldaki aynı do
 
 ## Açık işler ve sıradaki kesin adım
 
-**Öncelik REF-PI-002-ADAPTER — NOT RUN.** Önce docs/research/REF-PI-002-SQLITE.md sonucunu oku; yukarıdaki araştırma deneyleri artık tamamlandı. Önceki REF-PI-002 başlangıç planı: Sabitlenmiş Pi Durable API'sini ve ilgili upstream testleri oku; ayrı profil/depolama ile şu durumları test et: aynı requestId + değişmiş içerik, iş kabulü ile dış etki/sonuç kaydı arasındaki kesinti, güvenli olmayan tekrar, bekleyiciyi iptal ile işi iptal ayrımı, depolama hatası ve yeniden açma. Dış etki sayacını ajanın kendi beyanından bağımsız tut. Hermes'in oturumuna ikinci bir yazıcı ekleme.
+**Öncelik REF-PI-002B — NOT RUN.** Önce docs/research/REF-PI-002-SQLITE.md sonucunu oku; yukarıdaki araştırma deneyleri artık tamamlandı. Önceki REF-PI-002 başlangıç planı: Sabitlenmiş Pi Durable API'sini ve ilgili upstream testleri oku; ayrı profil/depolama ile şu durumları test et: aynı requestId + değişmiş içerik, iş kabulü ile dış etki/sonuç kaydı arasındaki kesinti, güvenli olmayan tekrar, bekleyiciyi iptal ile işi iptal ayrımı, depolama hatası ve yeniden açma. Dış etki sayacını ajanın kendi beyanından bağımsız tut. Hermes'in oturumuna ikinci bir yazıcı ekleme.
 
 **Diğer açık kapılar:** OpenCode REF-OC-001 izin/olay testleri; gerçek Hermes Gateway / SessionAuthority / APIServerAdapter zinciri; tam OpenClaw girişi; bütün sağlayıcı/yardımcı çağrıları kapsayan istek-token-para bütçesi; işletim sistemi izolasyonu; hafıza/beceri transferi; sınırlı gerçek model kabulü. M2 bunların yerine geçen bir gösteriyle kapatılmaz.
 
@@ -128,7 +128,7 @@ Yeni dosyalar scripts/native_durable_sqlite_worker.mjs,
 scripts/run_durable_sqlite_probe.py, tests/test_durable_probe_contract.py,
 docs/research/REF-PI-002-SQLITE.md ve evidence/ref-pi-002-sqlite/.
 Backlog/CI/status güncellendi. Ham DB ve makbuzlar runtime/pi-durable-ref002-ac97.
-Kalıcı sonraki adım REF-PI-002-ADAPTER; no main merge, no engine replacement,
+Kalıcı sonraki adım REF-PI-002B; no main merge, no engine replacement,
 M1/M2 açık. Elektrik kesintisi, fiziksel disk arızası ve çok-yazar güvenliği denenmedi.
 
 Paralel alaz/ref-pi-002-durable-4c9f kökte kendi status kaydını güncelledi.
@@ -136,3 +136,20 @@ Onun metni silinmedi; bu ac97 sonuçları onun sayılarıyla toplanmadı.
 Bu konuşma için çalışma ağacı hâlâ scratch/worktrees/ref-pi-001-ac97,
 aktif dal alaz/ref-pi-002-durable-ac97. Bir sonraki iş önce canlı Git durumunu ve
 paralel paket farklarını okumalı; iki durum yazarı veya iki yürütme döngüsü eklememeli.
+
+### 2026-10-15 — REF-PI-002 — Git/CI teslimi (ac97)
+
+Kod commit'i `e062ab67fd41b858758d46150a8c2a4ce1d7d944` uzak dala gönderildi.
+Yerel171/171 ve alaz-server aynı SHA171/171 PASS; GitHub alaz/local-ci success.
+Kanıt evidence/ref-pi-002-sqlite/code-ci.json. Ayrı18 yerel native çalışma ve10
+kasıtlı process-kill bu171 standart testin içinde değildir. Benimseme hâlâ NOT ACCEPTED.
+
+Sonraki iş kimliği paralel kayıttaki adla birleştirildi: **REF-PI-002B**, yani
+kalıcı atomik payload-aware admission ve dış etki sözleşmesi. Bu iş henüz NOT RUN.
+Önce iki REF-PI-002 dalının kod/kanıt farkını tek bir takip çizgisinde uzlaştır;
+169/171 standart test veya18/18 native sayıları birbirine eklenmez. Paralel4c9f
+kaydı `db277a36ef96b808c25ae00725224f9ad61a95db` teslimi bildirdi; bu paket onun
+kodunu/testini benimsemedi veya değiştirmedi.
+
+Bu son ek yalnız durum/CI belgelemesidir; native testler tekrar çalıştırılmadı.
+Doküman commit'i için önceki kod commit'inin CI'sını otomatik taşımadan HEAD'i sorgula.

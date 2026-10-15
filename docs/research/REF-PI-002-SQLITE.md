@@ -125,7 +125,7 @@ kanıtı ayrıdır. Son commit'in CI sonucu push sonrası ayrıca okunur.
 
 ## Sıradaki adım
 
-REF-PI-002-ADAPTER: native kabulün üzerine küçük, kalıcı içerik-çakışma denetimi
+REF-PI-002B: native kabulün üzerine küçük, kalıcı içerik-çakışma denetimi
 ve dış etki sözleşmesi; aynı testler bu kez Alaz şartına göre çalışmalı. Benimseme
 ancak doğru conflict, belirsiz etki koruması, kaynak sınırı ve tek-yazar sahipliğiyle
 kararlaştırılır. OpenCode REF-OC-001 ve gerçek hibrit Gateway kapıları açık kalır.

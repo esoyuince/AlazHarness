@@ -39,4 +39,4 @@ acceptance. Next: REF-PI-002. Standard CI only runs host/launcher unit contracts
 
 ## REF-PI-002 SQLite / ac97 sonucu
 
-Dokuz native senaryo iki tekrarda18/18 PASS;25 yeni offline guard ile171/171 kök test. Süreç kill/reopen ve bağımsız dış etki sayaçları: docs/research/REF-PI-002-SQLITE.md. Bu davranış incelemesidir; aynı-key farklı-payload conflict şartı FAIL ve safe işareti tek dış etki garantisi değil. Sonraki REF-PI-002-ADAPTER: kalıcı içerik parmak izi / dış etki sözleşmesi, tek oturum yazarı. Ürüne benimseme ve M1/M2 açık; paralel dal sonuçları otomatik birleştirilmez.
+Dokuz native senaryo iki tekrarda18/18 PASS;25 yeni offline guard ile171/171 kök test. Süreç kill/reopen ve bağımsız dış etki sayaçları: docs/research/REF-PI-002-SQLITE.md. Bu davranış incelemesidir; aynı-key farklı-payload conflict şartı FAIL ve safe işareti tek dış etki garantisi değil. Sonraki REF-PI-002B: kalıcı içerik parmak izi / dış etki sözleşmesi, tek oturum yazarı. Ürüne benimseme ve M1/M2 açık; paralel dal sonuçları otomatik birleştirilmez.

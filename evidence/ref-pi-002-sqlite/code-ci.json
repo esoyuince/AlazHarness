@@ -1,0 +1,34 @@
+{
+  "scope": "exact code commit standard Local CI, not native Pi execution on server",
+  "commit": "e062ab67fd41b858758d46150a8c2a4ce1d7d944",
+  "server": {
+    "sha": "e062ab67fd41b858758d46150a8c2a4ce1d7d944",
+    "checkout_sha": "e062ab67fd41b858758d46150a8c2a4ce1d7d944",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 171,
+      "failed": 0,
+      "passed": 171,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 171
+    },
+    "status_delivery": "posted",
+    "started_unix": 1792025483,
+    "finished_unix": 1792025527
+  },
+  "github": {
+    "sha": "e062ab67fd41b858758d46150a8c2a4ce1d7d944",
+    "state": "success",
+    "statuses": [
+      {
+        "context": "alaz/local-ci",
+        "state": "success",
+        "description": "ALAZ Local CI passed",
+        "id": 56384828447
+      }
+    ]
+  },
+  "native_experiments_are_separate": true
+}
