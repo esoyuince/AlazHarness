@@ -1,0 +1,69 @@
+{
+  "scope": "actual pinned Hermes tools.interrupt module with real threads/contextvars; not Gateway/Docker integration",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "source_files": {
+    "tools/__init__.py": "7bca460f476ac9ace706c8cfd07e98f8aae34d839862f0f68abafc3a8397cf35",
+    "tools/interrupt.py": "3127f53b4ca1431df828015a3eb06d29ffd43ea9b6a51954d3a45bc69483917b",
+    "utils.py": "394b44230f13ba608c6ce9b2d143563b2554a73a219567b03884637776a4859a",
+    "hermes_yaml.py": "f97f0f08b6474c52434d0cffaa7ba0ecaa5b9279c4abcbb35c11d15f9c89db76"
+  },
+  "observations": [
+    {
+      "case": "initial_thread_clear",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "own_thread_mark_visible",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "own_thread_atomic_callback_blocked",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "unrelated_thread_not_cancelled",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "acting_for_interrupt_visible",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "atomic_helper_ignores_acting_for_tid",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "direct_worker_mark_blocks_callback",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    },
+    {
+      "case": "all_owned_threads_closed_and_main_clear",
+      "observed": true,
+      "expected": true,
+      "matched": true
+    }
+  ],
+  "matched": 8,
+  "count": 8,
+  "source_unchanged": true,
+  "finding": "is_interrupted_checks_acting_for_tid_but_run_if_not_interrupted_only_current_thread",
+  "native_tool_executions": 0,
+  "gateway_executions": 0,
+  "model_calls": 0,
+  "paid_calls": 0,
+  "result": "OBSERVATIONS_CONFIRMED"
+}

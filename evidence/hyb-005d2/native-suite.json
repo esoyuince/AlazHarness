@@ -1,0 +1,23 @@
+{
+  "scope": "eight distinct Linux public Gateway lifecycles; scripted model provider, actual native registry/read/OS tool path",
+  "native_cases": 8,
+  "passed_cases": 8,
+  "physical_tool_containers": 4,
+  "case_names": [
+    "cancel-native",
+    "live-revoke",
+    "missing-image",
+    "missing-isolation",
+    "normal",
+    "timeout",
+    "tool-limit",
+    "wrong-backend"
+  ],
+  "real_model_inference_calls": 0,
+  "paid_calls": 0,
+  "source_unchanged": true,
+  "standard_tests": 1163,
+  "standard_tests_do_not_run_native_suite": true,
+  "general_harness_isolation_accepted": false,
+  "task_goal_success_distinct_from_native_terminal": true
+}

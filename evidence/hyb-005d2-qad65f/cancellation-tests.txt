@@ -1,0 +1,19 @@
+test_acting_thread_stop_is_seen (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_acting_thread_stop_is_seen) ... ok
+test_authority_failure_latches_cancel (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_authority_failure_latches_cancel) ... ok
+test_boolean_acting_thread_is_not_identity (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_boolean_acting_thread_is_not_identity) ... ok
+test_cancellation_is_sticky_after_native_flag_clears (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_cancellation_is_sticky_after_native_flag_clears) ... ok
+test_context_change_does_not_replace_captured_actor (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_context_change_does_not_replace_captured_actor) ... ok
+test_current_thread_stop_is_seen (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_current_thread_stop_is_seen) ... ok
+test_missing_call_context_is_refused (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_missing_call_context_is_refused) ... ok
+test_native_context_without_parent_agent_is_supported (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_native_context_without_parent_agent_is_supported) ... ok
+test_other_polling_thread_still_sees_owner_stop (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_other_polling_thread_still_sees_owner_stop) ... ok
+test_real_dispatch_kwargs_acting_stop_blocks_runner (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_real_dispatch_kwargs_acting_stop_blocks_runner) ... ok
+test_real_dispatch_kwargs_shape_reaches_bridge_without_fabricated_parent (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_real_dispatch_kwargs_shape_reaches_bridge_without_fabricated_parent) ... ok
+test_real_dispatch_kwargs_wrong_native_scope_blocks_runner (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_real_dispatch_kwargs_wrong_native_scope_blocks_runner) ... ok
+test_unrelated_thread_stop_does_not_cancel (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_unrelated_thread_stop_does_not_cancel) ... ok
+test_wrong_session_context_is_refused (test_isolated_interrupt_qad65f.NativeCancellationBridgeTests.test_wrong_session_context_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.168s
+
+OK

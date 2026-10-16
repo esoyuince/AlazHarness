@@ -1,0 +1,8 @@
+{
+  "scope": "cleanup only the exact test-derived image after its owned containers exited",
+  "image": "sha256:3de21298fef372c757dc1e77295c958a4d891d95ca0c164aec1d98dfdd05b22d",
+  "owner": "94b2a3110db44219bc8e97d32f201878",
+  "no_remaining_containers": true,
+  "removed": true,
+  "base_image_preserved": true
+}

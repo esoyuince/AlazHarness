@@ -40,7 +40,8 @@ def scoped_file(path,allowed):
 
 
 class GuardedFileTools:
-    def __init__(self,allowed_files,ledger):
+    def __init__(self,allowed_files,ledger,*,isolation=None):
+        self.isolation=isolation
         if type(allowed_files) is not list or not 1<=len(allowed_files)<=32 or any(type(x) is not str for x in allowed_files):
             raise ExecutionDenied('explicit_read_allowlist_required')
         self.allowed=frozenset(Path(x) for x in allowed_files)
@@ -82,7 +83,10 @@ class GuardedFileTools:
                     fingerprint=hashlib.sha256(_json({'name':'read_file','args':value,'session_id':sid}).encode()).hexdigest()
                     ticket=ledger.claim('read_file',fingerprint)
                     # Core handler, not an imitation file reader. Guards run after request rewriting.
-                    result=self.originals['read_file'].handler(value|{'path':canonical},**kwargs)
+                    if self.isolation is None:
+                        result=self.originals['read_file'].handler(value|{'path':canonical},**kwargs)
+                    else:
+                        result=self.isolation.invoke(self.originals['read_file'].handler,value,canonical,kwargs,ledger,ticket)
                     ledger.settle(ticket['ticket'],None,'tool_return')
                     return result
                 except Exception as exc:
@@ -104,7 +108,7 @@ class GuardedFileTools:
 class ExecutionBoundary:
     def __init__(self,settings):
         required={'policy','upstream_base_url','provider_bearer','allowed_read_files'}
-        if type(settings) is not dict or set(settings)!=required:raise ExecutionDenied('explicit_execution_settings_required')
+        if type(settings) is not dict or not required<=set(settings) or not set(settings)<=required|{'isolated_read'}:raise ExecutionDenied('explicit_execution_settings_required')
         value=settings['policy']
         if type(value) is not dict:raise ExecutionDenied('explicit_execution_policy_required')
         try:self.policy=ExecutionPolicy(**value)
@@ -117,12 +121,17 @@ class ExecutionBoundary:
         if type(token) is not str or not re.fullmatch(r'[\x21-\x7e]{32,256}',token):raise ExecutionDenied('invalid_provider_credential')
         self.token=token;self.adapter=None
         self._settings_digest=hashlib.sha256(_json(settings).encode()).hexdigest()
-        self.tools=GuardedFileTools(settings['allowed_read_files'],self.ledger)
+        self.isolation=None
+        if 'isolated_read' in settings:
+            from isolated_read import NativeReadIsolation
+            self.isolation=NativeReadIsolation(settings['isolated_read'],self.ledger)
+        self.tools=GuardedFileTools(settings['allowed_read_files'],self.ledger,isolation=self.isolation)
 
     def register(self,ctx):
         # Native plugin discovery can run on a worker while core imports wait.
         # Attach the reviewed file handlers only at the native pre-freeze factory.
         self.context=ctx
+        if self.isolation is not None:self.isolation.register(ctx)
 
     def ledger(self):
         if self.adapter is None:raise ExecutionDenied('execution_boundary_not_bound')
@@ -154,6 +163,11 @@ class ExecutionBoundary:
             raise ExecutionDenied('unqualified_tool_family')
         if cfg.get('gateway',{}).get('multiplex_profiles') is not False:raise ExecutionDenied('multiple_profiles_not_qualified')
         if self.upstream_port==self.adapter._port:raise ExecutionDenied('provider_routing_cycle')
+        if self.isolation is not None:
+            from isolated_read import BACKEND
+            if cfg.get('terminal',{}).get('backend')!=BACKEND or cfg.get('terminal',{}).get('cwd')!='/workspace':
+                raise ExecutionDenied('isolated_terminal_required')
+            self.isolation.verify()
         self.tools.verify()
 
     async def require_ready(self):

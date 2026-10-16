@@ -113,13 +113,18 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None):
             if execution is not None:await execution.require_ready()
             return web.json_response({'hostGateVersion':1,'dispatchPath':BASE+'/dispatch','nativeStoreOwner':True,
                 'dispatchAtMostOnce':True,'automaticRetry':False,'modelTokenOrCostBudget':False,
-                'toolSandbox':False,'scope':'default_profile_new_run','executionBoundaryVersion':1 if execution is not None else None})
+                'toolSandbox':False,'scope':'default_profile_new_run','executionBoundaryVersion':1 if execution is not None else None,
+                'isolatedReadBoundaryVersion':1 if execution is not None and getattr(execution,'isolation',None) is not None else None,
+                'isolatedReadBackend':'linux_docker_native_terminal' if execution is not None and getattr(execution,'isolation',None) is not None else None})
         except Exception as exc:return error(exc)
 
     @web.middleware
     async def gate(request,handler):
         # An installed extension also refuses alternative native write paths. This
         # does not claim to gate raw upstream when the extension is not installed.
+        isolated=request.headers.getall('X-Alaz-Isolated-Read-Version',[])
+        if isolated and (isolated!=['1'] or execution is None or getattr(execution,'isolation',None) is None):
+            return error(HostGateError('isolated_read_boundary_required'))
         required=request.headers.getall('X-Alaz-Execution-Version',[])
         if required and (required!=['1'] or execution is None):
             return error(HostGateError('execution_boundary_required'))

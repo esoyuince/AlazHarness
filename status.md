@@ -1,158 +1,198 @@
 # AlazHarness — status
 
-Son güncelleme: 16 Ekim 2026. Canlı dal/HEAD/CI doğrulanmadan eski sonuç aktarılmaz.
+Son güncelleme: 16 Ekim 2026. Her devamda canlı dal/HEAD/CI kontrol edilir.
 
 ## Güncel nokta
 
-**HYB-005D1 Linux araç-süreci prototipi yayımlandı; kodun aynı-SHA CI sonucu başarılı.**
-Tam HYB-005D, gerçek Hermes bağlama ve Windows ağ kabulü AÇIK.
-Aktif dal: alaz/hyb-005d-isolation-247a.
+HYB-005D2 dar Linux .txt entegrasyonu yerelde kabul edildi; Git/CI kapanışı sürüyor.
+Gerçek Hermes araç çağrısını mevcut admission/izin/bütçe
+sınırından sonra Linux izole araç sürecine bağlamak. Tek entegrasyon/yayın sahibi247a.
+Aktif dal: alaz/hyb-005d2-native-tool-247a.
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88.
-Başlangıç HEAD fadb48acf6ada154497ec7f88b612b0e0fbb54e0; temiz, exact CI success.
-247a bu turun entegrasyon/yayın sahibidir. Önceki HYB005C tam kaydı
- docs/history/2026-10-16-STATUS-BEFORE-HYB005D-247a.md altında korunur.
-Kök eski korunmuş dalda; yalnız status.md erişim kopyası kontrollü eşitlenir.
+Başlangıç HEAD fb3d7ca7fec3b5e0242a8e7c174b553dbfe366d8; temiz ve exact CI success.
+Önceki tam durum docs/history/2026-10-16-STATUS-BEFORE-HYB005D2-247a.md.
+Kök eski korunmuş dalda; yalnız status.md erişim kopyası eşitlenir. Main değişmez.
 
-## İlk adım ve sınırlar
+## Kabul ve sınırlar
 
-Mevcut OS/çalıştırma araçları ve upstream sandbox parçaları salt okunur inceleniyor.
-Uygulanmamış ağ ayarına veya Python audit hookuna sandbox kabulü yazılmaz.
-Kişisel profil/sırlar, host firewall, servis veya kurulum değişikliği yok.
-Test için yalnız yeni proje alanı ve sentetik sırlar; ücretli/model çağrısı yok.
-Tek canonical ledger/runtime korundu. Linux araç süreci6son-kod Docker
-senaryosunda doğrulandı; bütün harness izolasyonu veya M1/M2 kabulü değildir.
+D1 altı Docker senaryosu ve1062standart test önceki kapsamdır. Yeni native bağlama
+henüz sınanmadı. Mevcut ledger/oturum sahibi korunur; ek kuyruk/motor yok.
+İptal/izin geri çekme/limit, hatalı backend, host-fallback yokluğu ve doğru araç
+sonucu doğrulanmadan D2 kapanmaz. Sadece kontrollü test girdileri/sentetik anahtarlar;
+ücretli model, kişisel profil, host firewall veya daemon değişikliği yok.
+Windows strict ağ kabulü, parent hard-crash, provider credential/egress ve M1/M2 açık.
 
-## Başlangıç kaydı
+## Başlangıç
 
-HYB005C964 PASS eski kapsamdır; bu turun sonucu değil. Başlangıç custody
-runtime/hyb005d-247a/start.json. Main ve upstream pinler değiştirilmedi.
+Mevcut kaynakların araç/iptal entegrasyon noktaları ve hazırlanmış Linux çalışma
+imkanları okunuyor. Agent list kontrolünde bu projeye bağlı uygun çalışır ajan yok;
+başka proje ajanlarının iptal edilmiş izinleri canlandırılmadı. Testler NOT RUN.
 
-### 2026-10-16T21:17:35.547457+03:00 — HYB005D QA4023 Windows seçeneği
+### 2026-10-16T22:01:43.825241+03:00 — HYB005D2 QA d65f başlangıç
 
-Canlı247a entegrasyon işi başladı; QA4023 ikinci ürün yazıcısı/branch olmayacak.
-Yalnız yeni scripts/qa/*appcontainer* dosyaları ve QA4023 kanıtları: mevcut
-Windows/.NET compiler ile sıfır network capability AppContainer fizibilitesi.
-Sentetik sır/loopback sentinel, parent token/exit teyidi, yalnız yeni test alanı
-ACL ve geçici adı eşsiz AppContainer profili; var olan profile/firewall/exemption
-dokunulmaz. Hermes/Gateway, gerçek anahtar/model, otomatik scheduler yok.
-Bu test gelecekteki zorunlu sınır için aday kanıtıdır, ürün izolasyonu kabulü değil.
-Başlangıç NOT RUN. Ürün/CI yayın sahibi247a kalır.
+Canlı247a entegrasyon/yayın sahibi korunuyor;d65f yalnız ayrı QA test/rapor/kanıtı
+üretecek, ürün dalı/native batch/commit açmayacak. Öncelik: gerçek native handler
+paritesi; canonical admission+scope+generation; izin/bütçe reddinde hiçbir host
+fallback olmaması; native tools/interrupt.py thread ve acting_for_tid iptalinin
+doğru taşınması. İlk plan docs/research/HYB-005D2-QAD65F.md. Testler NOT RUN.
+Kök32dosya başlangıç hashleri runtime/hyb005d2-qad65f/start.json; sır/model0.
 
-### 2026-10-16T21:26:37.995646+03:00 — HYB005D QA4023 ilk native sınır
+### 2026-10-16T22:03:55.567750+03:00 — HYB005D2 QA d65f native iptal bulgusu
 
-Gerçek Windows AppContainer token pre-resume doğrulandı:capabilities0/LowIL;
-sentetik secret env yok, private read/write ve parent VM_READ ERROR_ACCESS_DENIED5;
-izinli read başarılı/write ret.192.0.2.1 TCP WSAEACCES10013. Ancak IPv4/IPv6
-loopback1500ms timeout10060, sentinel yalnız baseline1paket: explicit denial
-şartı PASS değil. Bütün paket bu yüzden FAIL kalır; gözlemi başarıya çevirmeyiz.
-SetLowLabel5/eksik LOCALAPPDATA203 önceki hazırlık hataları ayrı korundu;
-geçici test profilleri silindi. Sıradaki QA yalnız lifecycle timeout testini
-network assertinden önce ölçmek; ürün/Gateway/para/ağ ayarı değişmeyecek.
+Gerçek pinned tools.interrupt modülü mevcut prepared Python ile8senaryoda
+çalıştı;8beklenen gözlem eşleşti. is_interrupted acting_for_tid kontrol eder,
+run_if_not_interrupted yalnız kendi threadini kontrol eder: aktarılan worker
+iptali görse de callback çalışabilir. Bu D2 bug kanıtı değil, bağlamada dikkat
+edilecek upstream davranışı; sole veto olarak kullanma. Kanıt
+evidence/hyb-005d2-qad65f/native-interrupt-observation.json; yeni Gateway/tool/
+container/model0, bütün QA threadleri kapandı. Ürün247a tek yazıcı korunuyor.
 
-### 2026-10-16T21:29:41.767967+03:00 — HYB005D QA4023 son-kaynak gözlemleri
+### 2026-10-16T22:09:08.457551+03:00 — HYB005D2 QA d65f gerçek dispatch imzası
 
-Aynı son C# ve launcher hashleriyle2native tekrar:private read/write/parent
-VM_READ ret5, sentetik secret env yok, allowed read0/write5, TESTNET10013.
-Her tekrarda ayrı timeout child job ile exit91, üç süreç reaped. Loopback
-v4/v6 timeout10060 kaldı; sentinel ek mesaj0. İki strict native makbuz FAIL,
-kanıtları değiştirilmedi. Beş denemede oluşan5benzersiz profil S_OK silindi,
-folder kalmadığı ayrıca görüldü.33offline validator/env testi PASS; bunlar
-Windows çalışması veya ürün kabulü değil. Rapor docs/research/HYB-005D-QA4023-WINDOWS.md;
-evidence/hyb-005d-qa4023. Ürün/Gateway entegrasyonu ve tam izolasyon AÇIK.
+Kaynak ön bulgusu: pinned model_tools._execute_tool satır827–839 read_file
+için registry.dispatch kwargs yalnız task_id/session_id/user_task veriyor;
+parent_agent göndermiyor. Yeni isolated_read.invoke parent_agent zorunlu
+tuttuğundan gerçek yol native_cancellation_unavailable reddi üretebilir.
+Test fixture parent_agent eklemiş; gerçek native çağrı imzasıyla doğrulama
+gerekiyor. İptal thread-context kaynağı kullanılmalı; ürün247a düzeltir.
+Ayrıca reserved ticket sonrası quarantine ve generation değişimi retleri
+QA tarafından test ediliyor; henüz bu son ikisi doğrulanmış bulgu değil.
 
-### 2026-10-16T21:31:40.393850+03:00 — HYB005D QA4023 seçilmiş teslim
+### 2026-10-16T22:09:50.794197+03:00 — D2 ilk bağlama
 
-Windows QA kaynak/runner/33offline test/rapor/kanıtları ayrı adlarla stage edildi;
-ürün isolated_tool.py ve diğer yazar dosyaları değişmedi/stage edilmedi. Hijyen
-kontrolü geçti; full suite sonucu bundan çıkarılmaz. Native2final koşu v4/v6
-explicit denial eksikliğiyle FAIL kalır; dosya/process/deadline bulguları ayrı.
-Yeni5test profilinin klasörlerinin de silindiği doğrulandı,32kök dosya korundu.
-Ürün247a Linux izolasyon uygulaması ve Git/CI teslimi sürüyor; QA ikinci
-container/native batch başlatmaz. Ayrı Windows bulgusu tüm platform kabulü değildir.
+Native terminal-environment provider yolu seçildi; isolated_read.py ve optional
+execution_boundary entegrasyonu yazıldı. Mevcut native file handler/canonical
+ledger yeniden kullanılıyor.37 yeni synthetic-port sözleşme testi37/37 PASS,
+kaynak drift0; gerçek Hermes/Docker aynı zincir henüz NOT RUN. Sonuçlar
+evidence/hyb-005d2/read-initial*. Kişisel state/anahtar/host ayarı değiştirilmedi.
 
-### 2026-10-16T21:34:33.146739+03:00 — HYB005D Linux araç sınırı adayı
+### 2026-10-16T22:10:55.406827+03:00 — HYB005D2 QA d65f 7 regresyon
 
-Tek kullanımlık Docker adapteri isolated_tool.py ve53offline ret testi eklendi;53/53 PASS.
-Mevcut Docker29.8.1 ve önceden kurulu sha256:64af3819... imajıyla alaz-server
-üstünde6 gerçek konteyner senaryosu başlatılıyor. Kaynaklar ayrı /tmp/alaz-hyb005d-247a-code-v1
-altında hashle aynı; probe output /tmp/alaz-hyb005d-247a-probe-v1. Makbuz
-ef49d31b-81dd-482f-b61e-80c315a28a24 lane247a. Kurulum/pull/firewall/daemon değişimi yok.
-Bu yalnız araç alt süreç prototipidir; gerçek Hermes dispatch izolasyonu veya tüm
-provider credential/egress kabulü DEĞİL. Sonuç alınmadan native PASS yazılmaz.
+Gerçek isolated_read/ledger + sentetik SQLite/native/Docker portları30test:
+23PASS/7FAIL exit1/drift0. I01(2):reserved ticket sonrası quarantine kontrol
+edilmiyor. I02(3):admission_id biçimi ve çağrı başı id/generation sabitleme yok;
+entry sonrası id/generation değişse de execute oluyor. I03(2):completed+exit1
+ve tool_failed+exit0 çelişkileri kabul ediliyor. Değişmeyen testler
+tests/test_isolated_read_qad65f.py; kanıt evidence/hyb-005d2-qad65f/initial-*.
+Ürün247a düzeltmesi bekleniyor; bu testler gerçek native/Docker kabulü değil.
+Önceki parent_agent eksik gerçek dispatcher kwargs uyarısı da raporda.
 
-### 2026-10-16T21:35:49.248933+03:00 — HYB005D QA4023 standart tur kapsamı
+### 2026-10-16T22:12:31.836620+03:00 — QA d65f native dispatcher gözlemi
 
-1050/1050 unittest exit0/skip0. Fakat koşu sırasında scripts/run_isolated_tool_probe.py
-eklendi; hiçbir eski source değişmese de ölçülen set farklı olduğundan snapshot
-kabulü NOT_ACCEPTED kaydedildi. evidence/hyb-005d-qa4023/full-standard.json/.txt.
-Native Windows strict FAIL ayrı. Final birleşik kaynakla tam suite yeniden
-koşulmadan bu1050 eski koşusu exact final CI yerine kullanılamaz. QA ürün
-yaması yapmadı; yeni probe primary247a çalışmasıdır.
+Gerçek model_tools._execute_tool + native approval ContextVars + kayıtçı registry
+portu:kwargs gerçekten task_id/session_id/user_task;parent_agent yok. ID/context
+eşleşti,restore edildi. Fakat modül importu7subprocess denemesi yaptı ve guard
+hepsini engelledi;genel deney FAIL olarak korunur. Bu sonuç imza gözlemini
+destekler,temiz full native kabulü değildir. Çalışan tool/Gateway/network/model0.
+Kanıt native-dispatch-observation.json; önceki8native interrupt gözlemi ayrıdır.
 
-### 2026-10-16T21:37:36.970030+03:00 — ilk Docker deneyi ve lifecycle düzeltmesi
+### 2026-10-16T22:14:24.294796+03:00 — QA d65f değişmeyen7regresyon kapandı
 
-6gerçek Docker araç senaryosu PASS; ancak iki ek sentetik start/attach-failure
-regresyonu10PASS/2FAIL buldu. İlk çıktı/evidence korundu. Ürün: hiç başlamayan
-konteyner0exit varsayımı başarı sayılmaz; attach/engine çelişkisi UNKNOWN. Aynı
-testler dahil65/65 hedefli PASS. Final ürünle Docker6senaryo tekrar koşulacak;
-ilk6başarı son sürüme aktarılmaz. Tam Hermes entegrasyonu hâlâ NOT RUN.
+Ürün247a düzeltmesiyle aynı30QA testi30/30 PASS,exit0/drift0. Test/fixture SHA
+722b7876... ilk7FAILle birebir aynı. Quarantine,admission id/generation
+sabitlemesi ve exit/outcome çelişkileri ret. Kanıt recheck-run.json/.txt; ilk
+FAIL korunur. parent_agent gerçek dispatch uyuşmazlığı ayrı açık başlıktır.
+Bu recheck gerçek Gateway/Docker değil; ürün yazıcısı yine247a.
 
-### 2026-10-16T21:43:25.277381+03:00 — HYB005D1 yerel teslim ve QA bütünleşmesi
+### 2026-10-16T22:16:35.845632+03:00 — QA d65f native-imzalı iptal köprüsü
 
-Son Linux ürün88fd6d1... ile6/6 gerçek Docker kontrolü PASS; dört terminal durum
-ve iki dosya/ağ/sır alt-süreç kontrolü. Engine inspect prestart koşulları ve
-bitişte exactID stop/remove makbuzları eşleşti, altı konteyner kalmadı. Ağ
-none; UID65534/caps0/NoNewPrivs/seccomp2; canary/proxy/Docker socket erişimi yok.
-Read-only capsule/root, scratch çalışır; cgroup128MiB/pids32/CPU0.5 gözlendi.
-İki simulated-start false-success hatası değişmeyen testlerle düzeltildi.
-Final65 hedefli ve tam1062/1062 PASS exit0/skip0/drift0. 65+33 yeni test1062içinde.
+Ürün _NativeInterruptSource eklendi;gerçek dispatcherda eksik parent_agent yerine
+approval session/call context ve yakalanmış current/acting threadID kullanıyor.
+14ek sentetik-port test14/14 PASS exit0/drift0:parent olmadan dispatch shape,
+acting iptal,yabancı context,başka thread polling,sibling ayrımı,kalıcı iptal.
+Önceki30test aynı hashle korunur. QA kaynakları sabitlendi;44offline QA testi,
+8native interrupt gözlemi ve dispatch-import-guard FAILi ayrı kapsamlar.
+Tam Gateway/container bağlaması henüz bu sonuçlarla kabul edilmez.
 
-Bağımsız QA4023 Windows kaynak/kanıt/testleri okundu; aynı dalda korunarak
-bütünleştiriliyor. İki native AppContainer sonucu strict loopback10060 nedeniyle
-FAIL kalır; sır/file/parent-memory/timeout olumlu alt kapsam ayrı.33offline
-kontrat testini Windows kabulü sayma. QA1062 ikinci tam tur PASS; eski1050set-
-değişimi makbuzu kabul dışı. Linux'u QA4023 bağımsız incelemiş diye sunma.
+### 2026-10-16T22:17:40.936977+03:00 — QA d65f tam standart kontrol
 
-Dosyalar:packages/claw-hermes/isolated_tool.py, scripts/run_isolated_tool_probe.py;
-rapor docs/HYB-005D-TOOL-ISOLATION.md; kanıt evidence/hyb-005d ve QA4023 dizini.
-Mevcut Gateway, ledger, native read_file ve kaynak pinleri değişmedi. Linux
-prototip henüz gerçek Hermes dispatch'e bağlı değil. Next HYB-005D2: bütçe/izin
-kontrolünden sonra gerçek tool bağlama, iptal aktarımı ve host-fallback yokluğu;
-ardından model-provider credential/egress sınırı. Parent hard-crash cleanup,
-Windows native ağ, gerçek tarife/model ve M1/M2 AÇIK. Kurulum/ücretli çağrı0.
-Main değiştirilmedi. Commit/push/aynı-SHA CI henüz başarılı sayılmaz.
+44QA testi ve kaynak-iptal gözlemleri hazır;yalnız QA dosyaları stage edildi.
+Bağımsız tam discovery şimdi başlıyor;code/config dosya seti+hashleri baş/son
+karşılaştırılacak. Bu anda henüz PASS değil. Makbuz354bb8cc-f6d6-4386-a7a0-61b792ab56db
+lane d65f180c-d7d6-4fc4-9533-5ecd8a943745. Yeni native script eklenirse final
+snapshot sayılmaz; eski sayılar taşınmaz. Product/Git247a tek sahibi.
 
-### 2026-10-16T21:44:58.071556+03:00 — HYB005D QA4023 final teyit
+### 2026-10-16T22:19:18.566584+03:00 — QA d65f tam tur kaynak değişimi
 
-Sabit son kaynakla1062/1062standart PASS,exit0/skip0;184code/config dosyası
-değişmedi/yeni0. Önceki1050tur source-set eklemesi nedeniyle NOT_ACCEPTED
-korundu.33Windows offline test bu1062içinde. Linux final6native araç koşusu
-serverdaki gerçek kaynak/prestart/exit/capsule kayıtlarıyla readonly6/6
-CORROBORATED; yeni container0. Modül88fd6d1a/probe7bd87920, kanıt
-evidence/hyb-005d-qa4023/linux-final-corroboration.json. Bu Windows2strict
-FAILini veya tam Hermes/provider izolasyonunu kapatmaz. QA dosyaları seçilerek
-stage edildi, ürün/runtime/main değişmedi; tek Git yayın sahibi247a kalır.
+1143/1143 unittest exit0/skip0; ancak koşuda host-gate-client.mjs ve
+host_gate_plugin.py değiştiğinden full-standard.json NOT_ACCEPTED. Eski yeşil
+son-kaynak kabulüne taşınmaz.44QA testi bu1143içinde. Gerçek native entegrasyon
+ve yeni istemci şartları tamamlanınca sabit kaynakla tam tur gerekecek.
 
-### 2026-10-16T21:49:27.087609+03:00 — HYB005D1 yayın ve aynı-commit CI kapanışı
+### 2026-10-16T22:19:29.484598+03:00 — D2 özel Linux ortamı
 
-Kod commit: `4aaa27f3b6ec9d3da12247b3535c651d43086e51`. Feature dalına push,
-yerel/remote eşit ve temiz çalışma ağacı doğrulandı. GitHub alaz/local-ci success;
-alaz-server sha==checkout_sha aynı commit1062/1062 PASS, failed0/skipped0/
-suite_errors0/status_delivery posted. Kanıt evidence/hyb-005d/code-ci.json.
-Bu standart suite65Linux+33Windows yeni offline testi içerir; Docker6native
-ve Windows2strictFAIL sunucu CI içinde yeniden koşulmadı ve toplama eklenmez.
+İlk geniş kaynak arşivi120s deadline doldu; etkiler okundu, remote klasör yoktu.
+Daha dar3724 public Python/config dosyası v2 arşiviyle aktarıldı ve hashleri aynı.
+Native PM frozen build yalnız /tmp/alaz-hyb005d2-247a/prepared altında özel
+Python/bağımlılık ortamı kuruyor; sistem paketleri/kişisel HOME/daemon değişmez.
+Hazırlık makbuzu edb9d5a5-2b9d-4efd-8821-9f309c01f0b8; model/ajan çalıştırmaz.
 
-QA4023 sonradan Linux6eski koşuyu server source/ownership/prestart/exit/capsule
-kayıtlarıyla bağımsız readonly teyit etti; linux-final-corroboration.json bu
-scope ile okundu ve yayınlandı. Yeni6container veya Linux ürün-kodu auditinin
-bittiği iddiası yok. İlk native/fault-test başarısız makbuzlar ve Windows strict
-FAIL kayıtları aynen korundu; Windows için ekstra loopback yetkisi verilmedi.
+### 2026-10-16T22:21:12.928225+03:00 — QA d65f zorunlu izolasyon istemcisi
 
-Bu kapanış yalnız belge/CI makbuzu değiştirir;1062PASS ile aynı kod/config
-korunur. Son belge commit SHA kendi CI sonucuyla ayrıca doğrulanır. Kök erişim
-status.md eşittir;32legacy dosya/upstream pinler/main korunur. Mevcut Hermes
-Gateway/dispatch/provider/ledger/read_file hattı henüz bu prototipe bağlı DEĞİL.
-Sıradaki kesin iş HYB-005D2: yetkili admission+policy+budget sınırında gerçek
-araç bağlama; iptal ve belirsiz sonucu doğru aktar; Docker yoksa host fallback
-olmasın. Parent-hard-crash/container takeover ve model credential/egress ayrı
-açık kabul işleridir. TamHYB005D/M1/M2 kapanmadı. Yeni kurulum/ücretli model0.
+Gerçek HostGateClient+loopback fetch8/8 bağımsız kontrol PASS:eksik/yanlış/bool
+izolasyon bildirimi ve dispatch öncesi downgrade reddediliyor;iki required header
+gidiyor,tek dispatch,ham/v1/runs fallback0. Kanıt client-run.json/.txt; native
+Gateway değil. QA artık52 benzersiz offline test;eski1143tura bu8eklenmez.
+Yalnız yeni QA dosyaları stage edildi;nihai tam suite/code-commit247a sahibinde.
+
+### 2026-10-16T22:21:55.858584+03:00 — QA d65f Linux hazırlık salt-okuma bulgusu
+
+Server prepared/build-receipt.json exit1,parent_reaped=true. stderr gerçek
+native pm/runtime.py _inputs içinde source/pm/uv.lock FileNotFoundError gösteriyor.
+Dar source arşivinde nested lock dosyası eksik;native PM pinini değiştirmek veya
+frozen kapatmak yerine orijinal pinned pm/uv.lock ve gereken kaynak veri
+dosyalarını manifestli aktarmak gerekir. QA serverda yalnız makbuz okudu,
+hazırlığı tekrar başlatmadı veya native kaynak değiştirmedi.
+
+### 2026-10-16T22:25:30.244682+03:00 — QA d65f ikinci tam tur
+
+1163test exit0/skip0;koşuda isolated_read.py ve execution_model_fixture.py
+değişti,second-full-standard.json yine NOT_ACCEPTED. Final native/probe+ürün
+kaynakları sabitlenince tam suite gerekecek;QA tekrar tekrar aktif kod üstünde
+full tur başlatmayacak.52QA ret testi önceki hedefli makbuzları ayrı korunur.
+
+### 2026-10-16T22:30:15.837426+03:00 — D2 Linux native başlangıç
+
+Eksik orijinal pm/uv.lock eklendikten sonra frozen hazırlık exit0; Python ve
+bağımlılıklar yalnız özel prepared-v2 altında. İlk gerçek Linux Gateway hazır
+oldu ve temiz kapandı; test fixture plugin entries/settings yolunu yanlış
+yazdığı için dedicated route404 verdi, iş kabulü yok. Fixture mevcut native
+kontrata düzeltildi; ilk FAIL saklanır. Yeni native normal denemesi başlamış
+durumda; ürün/test dosyaları hâlâ değişiyor, full-suite freeze ilan edilmedi.
+
+### 2026-10-16T22:30:20.604016+03:00 — QA d65f ilk native deneme teşhisi
+
+trial-normal-1 gerçek Gateway hazır,pid83504,çıktı0/reaped;client capabilities
+host_http_404. Native stderr explicit_host_policy_required ve bilinmeyen
+alaz_isolated_read backend. Kaynak hermes_cli.plugins.PluginContext.get_config
+plugins.entries.<id>.settings.<key> okuyor. Yeni probe ise plugins.<id> altına
+yazıyor. Mevcut run_native_execution_gate.py:40 doğru entries/allow_tool_override
+True/settings(policy,execution) şekliyle yeniden kullanılmalı. Deneme sonucu
+FAIL korunur;fallback yapılmamış. QA serverda yalnız hata makbuzu/kaynak okudu.
+
+### 2026-10-16T22:44:19.712764+03:00 — D2 native son-aday matrisi
+
+trial-normal-2 gerçek Gateway+native dosya aracı+Docker PASS;1iş/1read budget/
+1konteyner/2kontrollü sağlayıcı isteği;native result+admission+ticket eşleşti.
+Yeni v3 matrisi8senaryo sıralı:normal,tool-limit,missing-isolation,wrong-backend,
+missing-image,cancel-native,timeout,live-revoke. Son üçü test için mevcut imajdan
+ağsız üretilen8s gecikmeli Python imajıyla çalışır;ürün fallback değildir.
+Makbuz f950fe59-711c-4473-b48a-616f4f1aa3d4; snapshot integration-v3.
+Bu matriste ürün kodu sabit;tam suite henüz final kabul değil.
+
+### 2026-10-16T22:48:48.633983+03:00 — D2 son-aday yerel/native kabul
+
+Son sabit kod/config/test197dosya:1163/1163 PASS exit0/skip0/drift0.101yeni test
+(37bridge+12client+52bağımsızQA)1163içinde. Native integration-v3 sekiz gerçek
+Gateway koşusu8/8beklenen davranış:normal,tool-limit,eksik izolasyon,yanlış
+backend,eksik imaj,native stop,deadline,canlı allowlist iptali.4fiziksel araç
+konteyneri kapandı/kaldırıldı;diğer retler konteyner açmadı. Native stop interrupted,
+canlı revocation failed;timeout/ret sonrası açıklama completed olabilir ama araç
+başarısı DEĞİL. Bütçe iadeleri yok. Sekiz eski koşu ayrıca SQLite/transcript/
+container exactID ile readonly8/8teyit;bu8yeni koşu değildir. Kanıt evidence/hyb-005d2.
+Test türetilmiş slowimage exactID kaldırıldı,baseimaj korundu. Native PM ile
+yeni bağımlılıklar yalnız özel Linux prepared-v2 alanına kuruldu;ücretli/model0.
+32legacy kök dosya ve4pinli upstream temiz/korundu. Main değişmedi. Rapor
+docs/HYB-005D2-NATIVE-TOOL.md. Git/CI için tek yayın sahibi247a; henüz exact
+commit CI PASS iddiası yok. Sıradaki D3: provider credential/egress sınırı;
+parent-hard-crash takeover,Windows native ağ,hafıza-transfer,M1/M2 açık.

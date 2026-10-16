@@ -1,0 +1,42 @@
+test_alternate_canonical_file_refused (test_isolated_read.IsolatedReadContracts.test_alternate_canonical_file_refused) ... ok
+test_another_bridge_cannot_take_context (test_isolated_read.IsolatedReadContracts.test_another_bridge_cannot_take_context) ... ok
+test_cancel_before_execution (test_isolated_read.IsolatedReadContracts.test_cancel_before_execution) ... ok
+test_canonical_ids_not_rewritten (test_isolated_read.IsolatedReadContracts.test_canonical_ids_not_rewritten) ... ok
+test_changed_fingerprint_refused (test_isolated_read.IsolatedReadContracts.test_changed_fingerprint_refused) ... ok
+test_context_removed_after_exception (test_isolated_read.IsolatedReadContracts.test_context_removed_after_exception) ... ok
+test_current_epoch_change_refused (test_isolated_read.IsolatedReadContracts.test_current_epoch_change_refused) ... ok
+test_foreign_scope_refused (test_isolated_read.IsolatedReadContracts.test_foreign_scope_refused) ... ok
+test_large_input_refused (test_isolated_read.IsolatedReadContracts.test_large_input_refused) ... ok
+test_missing_cancel_source (test_isolated_read.IsolatedReadContracts.test_missing_cancel_source) ... ok
+test_missing_ticket_refused (test_isolated_read.IsolatedReadContracts.test_missing_ticket_refused) ... ok
+test_native_error_does_not_become_host_fallback (test_isolated_read.IsolatedReadContracts.test_native_error_does_not_become_host_fallback) ... ok
+test_native_guard_blocks_original_host_path (test_isolated_read.IsolatedReadContracts.test_native_guard_blocks_original_host_path) ... ok
+test_no_admission_refused (test_isolated_read.IsolatedReadContracts.test_no_admission_refused) ... ok
+test_no_stdin_or_extra_command_parameters (test_isolated_read.IsolatedReadContracts.test_no_stdin_or_extra_command_parameters) ... ok
+test_nonbool_cancel_source (test_isolated_read.IsolatedReadContracts.test_nonbool_cancel_source) ... ok
+test_nonlinux_refuses (test_isolated_read.IsolatedReadContracts.test_nonlinux_refuses) ... ok
+test_old_claimed_owner_refused (test_isolated_read.IsolatedReadContracts.test_old_claimed_owner_refused) ... ok
+test_only_snapshot_input_and_fixed_program_are_staged (test_isolated_read.IsolatedReadContracts.test_only_snapshot_input_and_fixed_program_are_staged) ... ok
+test_operator_roots_cannot_overlap (test_isolated_read.IsolatedReadContracts.test_operator_roots_cannot_overlap) ... ok
+test_original_never_executes_is_not_success (test_isolated_read.IsolatedReadContracts.test_original_never_executes_is_not_success) ... ok
+test_outside_context_never_runs (test_isolated_read.IsolatedReadContracts.test_outside_context_never_runs) ... ok
+test_qualified_read_calls_one_runner (test_isolated_read.IsolatedReadContracts.test_qualified_read_calls_one_runner) ... ok
+test_queued_admission_refused (test_isolated_read.IsolatedReadContracts.test_queued_admission_refused) ... ok
+test_read_outside_registered_native_provider_refused (test_isolated_read.IsolatedReadContracts.test_read_outside_registered_native_provider_refused) ... ok
+test_returned_failure_keeps_budget (test_isolated_read.IsolatedReadContracts.test_returned_failure_keeps_budget) ... ok
+test_second_shell_probe_refused (test_isolated_read.IsolatedReadContracts.test_second_shell_probe_refused) ... ok
+test_settled_ticket_cannot_execute (test_isolated_read.IsolatedReadContracts.test_settled_ticket_cannot_execute) ... ok
+test_tampered_payload_refused (test_isolated_read.IsolatedReadContracts.test_tampered_payload_refused) ... ok
+test_terminal_admission_refused (test_isolated_read.IsolatedReadContracts.test_terminal_admission_refused) ... ok
+test_ticket_cannot_be_used_twice (test_isolated_read.IsolatedReadContracts.test_ticket_cannot_be_used_twice) ... ok
+test_unknown_admission_refused (test_isolated_read.IsolatedReadContracts.test_unknown_admission_refused) ... ok
+test_unknown_settings_refused (test_isolated_read.IsolatedReadContracts.test_unknown_settings_refused) ... ok
+test_unremoved_container_never_success (test_isolated_read.IsolatedReadContracts.test_unremoved_container_never_success) ... ok
+test_wrong_cwd_is_not_host_cwd (test_isolated_read.IsolatedReadContracts.test_wrong_cwd_is_not_host_cwd) ... ok
+test_wrong_principal_refused (test_isolated_read.IsolatedReadContracts.test_wrong_principal_refused) ... ok
+test_wrong_target_refused (test_isolated_read.IsolatedReadContracts.test_wrong_target_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 2.680s
+
+OK

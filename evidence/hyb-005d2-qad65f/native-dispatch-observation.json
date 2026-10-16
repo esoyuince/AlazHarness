@@ -1,0 +1,41 @@
+{
+  "scope": "actual pinned model_tools._execute_tool and approval ContextVars; only registry.dispatch is recording port; not full agent integration",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "source_files": {
+    "model_tools.py": "fbb40d0058e3edd6c4e1608b8db9e922aaf38d2c9d0438c3811c6d6b01b45340",
+    "tools/registry.py": "eecf43c6578e2a0bb78e5d795cba150e00e704395d37490bf2217ab55a923296",
+    "tools/approval_context.py": "9ffa125caadc2253165b069375bcae0065949131baa92a7f2b13fea4c2827ae4"
+  },
+  "observations": [
+    {
+      "name": "read_file",
+      "argument_fields": [
+        "limit",
+        "offset",
+        "path"
+      ],
+      "kwargs_fields": [
+        "session_id",
+        "task_id",
+        "user_task"
+      ],
+      "session_matches": true,
+      "task_matches": true,
+      "parent_agent_supplied": false,
+      "context_session_matches": true,
+      "context_call_matches": true
+    }
+  ],
+  "context_restored": true,
+  "source_unchanged": true,
+  "blocked_attempt_types": [
+    "subprocess.Popen"
+  ],
+  "blocked_attempt_count": 7,
+  "actual_registry_handler_calls": 0,
+  "gateway_executions": 0,
+  "container_runs": 0,
+  "provider_calls": 0,
+  "paid_calls": 0,
+  "result": "FAIL"
+}

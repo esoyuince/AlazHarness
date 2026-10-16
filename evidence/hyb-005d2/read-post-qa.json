@@ -1,0 +1,11 @@
+{
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/isolated_read.py": "139aa8ecba8f4b1c333d87776189617d2d4c92a70d3b0729586a6ab438c0b8ce",
+    "packages/claw-hermes/execution_boundary.py": "e59c862dad61377f73864ea83ffad53a7d82b89ab8ac23e263394d0021b3010c",
+    "tests/test_isolated_read.py": "8eb86737546983928def568b43716a4fb093bbb35c80ccad964607bc783bb993",
+    "tests/test_isolated_read_qad65f.py": "722b7876a0fcd31406c2eeb8cd5dca1bb37bc1212d011defd2bb2df06b8f4b50"
+  },
+  "scope": "bridge synthetic-port tests including unchanged independent QA cases",
+  "drift": []
+}

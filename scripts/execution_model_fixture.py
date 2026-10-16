@@ -26,8 +26,10 @@ class ExecutionModel:
                         msg={'role':'assistant','content':None,'tool_calls':[{'id':'execution-tool-1','type':'function','function':{'name':tool,'arguments':json.dumps(args)}}]};finish='tool_calls'
                     else:
                         contents=str(tools[-1].get('content',''))
-                        if scenario in ('denied-write','tool-limit'):
-                            if 'tool_not_allowed' not in contents and 'tool_attempt_limit' not in contents:raise RuntimeError('Expected guard rejection absent')
+                        if scenario in ('denied-write','tool-limit','isolated-backend-refusal'):
+                            if scenario=='isolated-backend-refusal':
+                                if 'error' not in contents or marker in contents:raise RuntimeError('Expected isolated backend refusal absent')
+                            elif 'tool_not_allowed' not in contents and 'tool_attempt_limit' not in contents:raise RuntimeError('Expected guard rejection absent')
                             msg={'role':'assistant','content':'Guard refusal observed'}
                         else:
                             if marker not in contents:raise RuntimeError('Actual file marker missing')

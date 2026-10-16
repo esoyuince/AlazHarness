@@ -10,11 +10,14 @@ function plain(value) { return value && typeof value==='object' && !Array.isArra
 function text(value,limit) {return typeof value==='string' && value.trim().length>0 && Buffer.byteLength(value)<=limit;}
 
 export class HostGateClient {
-  #base; #token; #timeout; #limit; #runs; #permits=new WeakMap(); #attempted=new Set(); #executionRequired;
+  #base; #token; #timeout; #limit; #runs; #permits=new WeakMap(); #attempted=new Set(); #executionRequired; #isolatedReadRequired;
   constructor(options={}) {
     // Reuse the proven endpoint/credential/timeout guards and readonly run observer.
     if(options.requireExecution!==undefined&&typeof options.requireExecution!=='boolean')fail('invalid_execution_requirement');
-    this.#executionRequired=options.requireExecution===true;
+    if(options.requireIsolatedRead!==undefined&&typeof options.requireIsolatedRead!=='boolean')fail('invalid_isolation_requirement');
+    this.#isolatedReadRequired=options.requireIsolatedRead===true;
+    if(this.#isolatedReadRequired&&options.requireExecution===false)fail('isolation_requires_execution_boundary');
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired;
     this.#runs=new HermesRunsClient(options);
     this.#base=new URL(options.baseUrl).origin;this.#token=options.token;
     this.#timeout=options.requestTimeoutMs??5000;this.#limit=options.maxResponseBytes??1048576;
@@ -28,6 +31,7 @@ export class HostGateClient {
         signal:signal?AbortSignal.any([signal,timeout.signal]):timeout.signal,
         headers:{Authorization:'Bearer '+this.#token,Accept:'application/json',
           ...(this.#executionRequired?{'X-Alaz-Execution-Version':'1'}:{}),
+          ...(this.#isolatedReadRequired?{'X-Alaz-Isolated-Read-Version':'1'}:{}),
           ...(body===undefined?{}:{'Content-Type':'application/json'}),...(key?{'Idempotency-Key':key}:{})},
         ...(body===undefined?{}:{body:JSON.stringify(body)})});
       const reader=response.body?.getReader();const chunks=[];let total=0;
@@ -63,6 +67,7 @@ export class HostGateClient {
     if(!plain(c)||c.hostGateVersion!==1||c.dispatchPath!==BASE+'/dispatch'||c.nativeStoreOwner!==true
       ||c.dispatchAtMostOnce!==true||c.automaticRetry!==false||c.scope!=='default_profile_new_run')fail('host_gate_required');
     if(this.#executionRequired&&c.executionBoundaryVersion!==1)fail('execution_boundary_required');
+    if(this.#isolatedReadRequired&&(c.isolatedReadBoundaryVersion!==1||c.isolatedReadBackend!=='linux_docker_native_terminal'))fail('isolated_read_boundary_required');
     return Object.freeze(structuredClone(c));
   }
   async prepare(request,{signal}={}) {

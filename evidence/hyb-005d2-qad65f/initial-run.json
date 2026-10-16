@@ -1,0 +1,17 @@
+{
+  "scope": "independent real bridge/ledger with temporary SQLite and synthetic native/Docker ports; not Gateway isolation",
+  "exit_code": 1,
+  "count": 30,
+  "failures": 7,
+  "errors": 0,
+  "hashes": {
+    "packages/claw-hermes/isolated_read.py": "caa5c966cf85483fed6e1ea69930663b62429e6e55fa86199dc8559937234d7f",
+    "packages/claw-hermes/execution_boundary.py": "e59c862dad61377f73864ea83ffad53a7d82b89ab8ac23e263394d0021b3010c",
+    "packages/claw-hermes/isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc",
+    "tests/test_isolated_read_qad65f.py": "722b7876a0fcd31406c2eeb8cd5dca1bb37bc1212d011defd2bb2df06b8f4b50"
+  },
+  "code_drift": [],
+  "elapsed_seconds": 2.706,
+  "model_calls": 0,
+  "container_runs": 0
+}

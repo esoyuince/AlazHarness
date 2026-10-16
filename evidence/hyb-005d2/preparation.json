@@ -1,0 +1,64 @@
+{
+  "prepared": {
+    "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "scope": "frozen dependency preparation only, not native Gateway or isolation acceptance",
+    "exit_code": 1,
+    "timed_out": false,
+    "parent_reaped": true,
+    "elapsed_seconds": 26.241,
+    "environment_names": [
+      "HERMES_HOME",
+      "HERMES_RUNTIME_DIR",
+      "HOME",
+      "LANG",
+      "PATH",
+      "PYTHONDONTWRITEBYTECODE",
+      "PYTHONUNBUFFERED",
+      "TMPDIR",
+      "UV_CACHE_DIR",
+      "UV_PYTHON_INSTALL_DIR",
+      "XDG_CACHE_HOME",
+      "XDG_CONFIG_HOME",
+      "XDG_DATA_HOME"
+    ],
+    "expected_python": "/tmp/alaz-hyb005d2-247a/prepared/env/bin/python",
+    "model_calls": 0,
+    "system_packages_modified": false
+  },
+  "prepared-v2": {
+    "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "scope": "frozen dependency preparation only, not native Gateway or isolation acceptance",
+    "exit_code": 0,
+    "timed_out": false,
+    "parent_reaped": true,
+    "elapsed_seconds": 35.169,
+    "environment_names": [
+      "HERMES_HOME",
+      "HERMES_RUNTIME_DIR",
+      "HOME",
+      "LANG",
+      "PATH",
+      "PYTHONDONTWRITEBYTECODE",
+      "PYTHONUNBUFFERED",
+      "TMPDIR",
+      "UV_CACHE_DIR",
+      "UV_PYTHON_INSTALL_DIR",
+      "XDG_CACHE_HOME",
+      "XDG_CONFIG_HOME",
+      "XDG_DATA_HOME"
+    ],
+    "expected_python": "/tmp/alaz-hyb005d2-247a/prepared-v2/env/bin/python",
+    "model_calls": 0,
+    "system_packages_modified": false
+  },
+  "slow-image": {
+    "base_image": "sha256:64af3819f9275802414d7cdc38c27e9d82bd564dec4d4da87d008255d36c63b4",
+    "image": "sha256:3de21298fef372c757dc1e77295c958a4d891d95ca0c164aec1d98dfdd05b22d",
+    "owner": "94b2a3110db44219bc8e97d32f201878",
+    "downloaded": false,
+    "test_only": true,
+    "delay_seconds": 8,
+    "preparation_source_sha256": "a8ebb10ea5f074ddd38c5bb5c6a79cb2c506ac52c000d1604f596642d9b0855d",
+    "preparation_container_removed": true
+  }
+}

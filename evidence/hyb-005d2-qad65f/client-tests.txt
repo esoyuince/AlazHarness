@@ -1,0 +1,13 @@
+test_boolean_is_not_version (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_boolean_is_not_version) ... ok
+test_disabling_execution_conflicts_with_isolation (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_disabling_execution_conflicts_with_isolation) ... ok
+test_downgrade_between_prepare_dispatch_refused (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_downgrade_between_prepare_dispatch_refused) ... ok
+test_isolation_also_requires_execution_gate (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_isolation_also_requires_execution_gate) ... ok
+test_missing_isolation_has_no_intent_or_dispatch (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_missing_isolation_has_no_intent_or_dispatch) ... ok
+test_required_headers_one_dispatch_and_no_raw_fallback (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_required_headers_one_dispatch_and_no_raw_fallback) ... ok
+test_untyped_requirement_refused (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_untyped_requirement_refused) ... ok
+test_wrong_backend_has_no_intent (test_isolation_required_qad65f.IsolatedRequiredIndependentTests.test_wrong_backend_has_no_intent) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.762s
+
+OK

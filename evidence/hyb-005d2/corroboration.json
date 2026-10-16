@@ -1,0 +1,96 @@
+{
+  "scope": "separate retrospective readonly checks of existing eight runs, NOT eight new native executions",
+  "checks": [
+    {
+      "scenario": "normal",
+      "canonical_status": "terminal",
+      "canonical_outcome": "completed",
+      "read_reservations": 1,
+      "read_states": [
+        "settled"
+      ],
+      "native_tool_results": 1,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "tool-limit",
+      "canonical_status": "terminal",
+      "canonical_outcome": "completed",
+      "read_reservations": 0,
+      "read_states": [],
+      "native_tool_results": 1,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "missing-isolation",
+      "canonical_status": null,
+      "canonical_outcome": null,
+      "read_reservations": 0,
+      "read_states": [],
+      "native_tool_results": 0,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "wrong-backend",
+      "canonical_status": null,
+      "canonical_outcome": null,
+      "read_reservations": 0,
+      "read_states": [],
+      "native_tool_results": 0,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "missing-image",
+      "canonical_status": "terminal",
+      "canonical_outcome": "completed",
+      "read_reservations": 1,
+      "read_states": [
+        "reserved"
+      ],
+      "native_tool_results": 1,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "cancel-native",
+      "canonical_status": "terminal",
+      "canonical_outcome": "interrupted",
+      "read_reservations": 1,
+      "read_states": [
+        "reserved"
+      ],
+      "native_tool_results": 1,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "timeout",
+      "canonical_status": "terminal",
+      "canonical_outcome": "completed",
+      "read_reservations": 1,
+      "read_states": [
+        "reserved"
+      ],
+      "native_tool_results": 1,
+      "result": "CORROBORATED"
+    },
+    {
+      "scenario": "live-revoke",
+      "canonical_status": "terminal",
+      "canonical_outcome": "failed",
+      "read_reservations": 1,
+      "read_states": [
+        "reserved"
+      ],
+      "native_tool_results": 1,
+      "result": "CORROBORATED"
+    }
+  ],
+  "exact_containers_absent": [
+    "a13aef29dea39ffe4bb812e941863712a12692c6867253a22b52ae004e53326f",
+    "302787d8af2627df172382974766766a60558559f5f955ca73dce00492628ce3",
+    "6878ad0da50f26898cc7b03efcd4326f5358a645ebb2ce41a11d4b40a1854aa1",
+    "78c9ea315fb87f6cebe8f5108e70c30b21223bbf26c0f739a7c78692b4f3577a"
+  ],
+  "native_source_files": 3725,
+  "native_source_unchanged": true,
+  "integration_unchanged": true
+}

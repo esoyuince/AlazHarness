@@ -1,0 +1,12 @@
+{
+  "scope": "actual read bridge and ExecutionLedger with synthetic native handler, registry and Docker ports",
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/isolated_read.py": "caa5c966cf85483fed6e1ea69930663b62429e6e55fa86199dc8559937234d7f",
+    "packages/claw-hermes/execution_boundary.py": "e59c862dad61377f73864ea83ffad53a7d82b89ab8ac23e263394d0021b3010c",
+    "tests/test_isolated_read.py": "8eb86737546983928def568b43716a4fb093bbb35c80ccad964607bc783bb993",
+    "config/isolated-read/source-lock.json": "5880bd05daa43b9470ba7eb53bac91c743a48013c676a526c55a3d192a26d9d5"
+  },
+  "drift": [],
+  "elapsed_seconds": 3.662
+}

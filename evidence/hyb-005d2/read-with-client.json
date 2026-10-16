@@ -1,0 +1,6 @@
+{
+  "scope": "read-with-client",
+  "tests": 79,
+  "exit_code": 0,
+  "code_drift": []
+}

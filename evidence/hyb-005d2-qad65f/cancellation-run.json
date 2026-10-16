@@ -1,0 +1,12 @@
+{
+  "scope": "actual cancellation bridge with synthetic native-thread/context/runner ports; not Gateway/native source execution",
+  "count": 14,
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/isolated_read.py": "139aa8ecba8f4b1c333d87776189617d2d4c92a70d3b0729586a6ab438c0b8ce",
+    "tests/test_isolated_interrupt_qad65f.py": "789256caec7febc8a54920a2f9055bee9908e05f5aab7855519b25ba7a852183",
+    "tests/test_isolated_read_qad65f.py": "722b7876a0fcd31406c2eeb8cd5dca1bb37bc1212d011defd2bb2df06b8f4b50"
+  },
+  "code_drift": [],
+  "elapsed_seconds": 0.47
+}

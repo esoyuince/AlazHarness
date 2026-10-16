@@ -1,0 +1,78 @@
+{
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "scope": "native registered file/environment integration",
+  "files": [
+    {
+      "path": "agent/terminal_env_provider.py",
+      "sha256": "a1b0b9d13cb2da3fbecc04a802da3523cc1c8e93384441320db0a458be67dda4"
+    },
+    {
+      "path": "agent/terminal_env_registry.py",
+      "sha256": "cbc025aaf523faa5a0a89fc96330c73b23781776f2f2507d440c3e8fd17d0789"
+    },
+    {
+      "path": "agent/provider_registry.py",
+      "sha256": "7c39ae4f391b00039e14891bc12f621426f801198cc773453a457cd794948b98"
+    },
+    {
+      "path": "agent/provider_base.py",
+      "sha256": "feda095934b604b19a07a30afddb493f60f46f57712454bb717cc5d67d6068a5"
+    },
+    {
+      "path": "tools/terminal_tool_backends.py",
+      "sha256": "e597ab85bb3d602eeb085908bc4b854a9aa34de5bdaa1028b4ffa81abbabc7d9"
+    },
+    {
+      "path": "tools/terminal_tool_config.py",
+      "sha256": "89c5cc844c75f0c42a078038a98eb8a594e0ee6e49e5f96dfb292ca33fdd8f75"
+    },
+    {
+      "path": "tools/terminal_tool_lifecycle.py",
+      "sha256": "4952fc0e1c49cd693d6228350abad7ea3bba20e6a3fef495aea3d575eb0c4dd6"
+    },
+    {
+      "path": "tools/file_tools_paths.py",
+      "sha256": "147c6d864e967686871a076013a05e3678a4a17798a5f4cc2ab59e018245abd3"
+    },
+    {
+      "path": "tools/file_tools.py",
+      "sha256": "1a23773abe410feb5dd99276d08b6c0837624309ea489c508d683c6965408f94"
+    },
+    {
+      "path": "tools/file_operations.py",
+      "sha256": "d06baa1f47591f730e5c8d40a2f71d898c1e3eff4cb0ce14c050102a4b3131f1"
+    },
+    {
+      "path": "tools/registry.py",
+      "sha256": "eecf43c6578e2a0bb78e5d795cba150e00e704395d37490bf2217ab55a923296"
+    },
+    {
+      "path": "run_agent.py",
+      "sha256": "2bd45c545c2cf0dec95702e71232f026b1265b54bf234a1c03c8cf83f5236f10"
+    },
+    {
+      "path": "agent/redact.py",
+      "sha256": "a4df6020830c204ad7b8245991ad4bdb8115aebcb3b1c8831c7a487a74ee99b6"
+    },
+    {
+      "path": "agent/file_safety.py",
+      "sha256": "90515fb80bcf85c5b153370071f3d85bd945d838e0423d29e11e951f95833f6f"
+    },
+    {
+      "path": "tools/interrupt.py",
+      "sha256": "3127f53b4ca1431df828015a3eb06d29ffd43ea9b6a51954d3a45bc69483917b"
+    },
+    {
+      "path": "tools/approval_context.py",
+      "sha256": "9ffa125caadc2253165b069375bcae0065949131baa92a7f2b13fea4c2827ae4"
+    },
+    {
+      "path": "model_tools.py",
+      "sha256": "fbb40d0058e3edd6c4e1608b8db9e922aaf38d2c9d0438c3811c6d6b01b45340"
+    },
+    {
+      "path": "hermes_cli/plugins.py",
+      "sha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568"
+    }
+  ]
+}
