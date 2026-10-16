@@ -5,28 +5,37 @@ Son güncelleme: 16 Ekim 2026. Her devamda canlı dal/HEAD/CI kontrol edilir.
 ## Güncel nokta
 
 **HYB-005D2 dar Linux .txt entegrasyonu yayımlandı; exact-code CI1163/1163 PASS.**
-Gerçek Hermes araç çağrısını mevcut admission/izin/bütçe
-sınırından sonra Linux izole araç sürecine bağlamak. Tek entegrasyon/yayın sahibi247a.
+Gerçek Hermes dosya okuma yolu mevcut admission/izin/bütçe denetimlerinden sonra
+Linux izole araç sürecine bağlandı. Son kodla8/8 native senaryo,4fiziksel araç
+konteyneri ve yerel+sunucu1163/1163standart test doğrulandı. Kod e6cb7f1;
+ana kodun CI sonucu success. Son belge HEAD/CI her devamda canlı sorgulanır.
+Tek entegrasyon/yayın sahibi247a.
 Aktif dal: alaz/hyb-005d2-native-tool-247a.
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88.
 Başlangıç HEAD fb3d7ca7fec3b5e0242a8e7c174b553dbfe366d8; temiz ve exact CI success.
 Önceki tam durum docs/history/2026-10-16-STATUS-BEFORE-HYB005D2-247a.md.
 Kök eski korunmuş dalda; yalnız status.md erişim kopyası eşitlenir. Main değişmez.
 
-## Kabul ve sınırlar
+## Güncel kabul ve sınırlar
 
-D1 altı Docker senaryosu ve1062standart test önceki kapsamdır. Yeni native bağlama
-henüz sınanmadı. Mevcut ledger/oturum sahibi korunur; ek kuyruk/motor yok.
-İptal/izin geri çekme/limit, hatalı backend, host-fallback yokluğu ve doğru araç
-sonucu doğrulanmadan D2 kapanmaz. Sadece kontrollü test girdileri/sentetik anahtarlar;
-ücretli model, kişisel profil, host firewall veya daemon değişikliği yok.
-Windows strict ağ kabulü, parent hard-crash, provider credential/egress ve M1/M2 açık.
+D2 kabulü yalnız açıkça yapılandırılmış Linux .txt okuma yolu içindir. Son
+native8senaryo ve1163standart test ayrıdır;101yeni test1163içindedir. Başarı,
+ret,iptal,zaman aşımı ve yalnız açıklama üreten completed görevler ayrılır.
+İzolasyon eksik veya yanlışsa required-client görev göndermez;imaj yoksa host
+fallback olmaz. Native durdurma/canlı izin iptali çalışan konteyneri kapatır;
+rezervasyonlar otomatik iade edilmez. Mevcut ledger/oturum sahibi korunur.
 
-## Başlangıç
+Provider kimlik bilgisi/ağ sınırı,Windows ağ kabulü,parent-hard-crash takeover,
+gerçek sağlayıcı token/fiyat doğrulaması,hafıza/beceri transferi ve tamM1/M2 açık.
+Sistem paketleri/kişisel profil/firewall/daemon ayarı değiştirilmedi;özel Linux
+test ortamında native PM frozen bağımlılık hazırlığı yapıldı. Ücretli/model0.
 
-Mevcut kaynakların araç/iptal entegrasyon noktaları ve hazırlanmış Linux çalışma
-imkanları okunuyor. Agent list kontrolünde bu projeye bağlı uygun çalışır ajan yok;
-başka proje ajanlarının iptal edilmiş izinleri canlandırılmadı. Testler NOT RUN.
+## Başlangıç günlüğü — aşağıdaki eski NOT RUN/FAIL kayıtları tarihsel kanıttır
+
+İlk kaynak incelemesinde mevcut agent list kontrol edildi;bu projeye bağlı uygun
+çalışır ajan yoktu. Başka proje ajanlarının iptal edilmiş izinleri canlandırılmadı.
+İlk NOT RUN ve başarısız deneyler sonraki kabulün yerine geçmez;aynı şekilde
+son başarı da eski başarısız makbuzları silmez. Güncel özet yukarıdadır.
 
 ### 2026-10-16T22:01:43.825241+03:00 — HYB005D2 QA d65f başlangıç
 
@@ -213,3 +222,9 @@ Kesin sonraki iş HYB-005D3 provider kimlik bilgisi ve zorunlu dış ağ sınır
 Parent hard-crash/container takeover,Windows ağ,gerçek sağlayıcı token/fiyat,
 hafıza/beceri transferi,tamM1/M2 AÇIK. Gateway ana süreci henüz güvenilmeyen
 koda karşı izole edilmiş sayılmaz;bu kabul yalnız bounded native read yoludur.
+
+### 2026-10-16T22:54:31.408505+03:00 — Durum belgesi üst özeti
+
+Başlangıçtaki NOT RUN koşulları tarihsel günlük başlığına ayrıldı;üst bölüm
+güncelD2 kabulünü ve açıkD3/M1/M2 sınırlarını gösteriyor. Bu yalnız belge
+düzeltmesidir;kod/config/test/kanıt sayıları değişmedi.
