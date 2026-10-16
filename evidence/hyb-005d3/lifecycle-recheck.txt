@@ -1,0 +1,8 @@
+test_active_request_cancelled_before_server_wait (test_broker_lifecycle.BrokerLifecycle.test_active_request_cancelled_before_server_wait) ... ok
+test_empty_close_has_no_dispatch (test_broker_lifecycle.BrokerLifecycle.test_empty_close_has_no_dispatch) ... ok
+test_late_handler_closed_without_read_or_response (test_broker_lifecycle.BrokerLifecycle.test_late_handler_closed_without_read_or_response) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.042s
+
+OK

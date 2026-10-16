@@ -1,0 +1,20 @@
+{
+  "checked_on": "2026-10-16",
+  "scope": "official API semantics, not evidence of local acceptance or a dependency upgrade",
+  "sources": [
+    {
+      "url": "https://docs.python.org/3.14/library/asyncio-eventloop.html",
+      "use": "Server.close stops acceptance; active connections must be handled before waiting for closure"
+    },
+    {
+      "url": "https://docs.python.org/3.14/library/asyncio-stream.html",
+      "use": "bounded framed reads, Unix stream lifecycle and writer closure"
+    },
+    {
+      "url": "https://docs.aiohttp.org/en/stable/client_reference.html",
+      "use": "trust_env=false, allow_redirects=false, explicit timeout/response handling"
+    }
+  ],
+  "dependency_install_performed": false,
+  "native_environment": "existing D2 prepared environment, exact runtime recorded separately"
+}

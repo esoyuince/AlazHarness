@@ -1,0 +1,19 @@
+{
+  "scope": "existing primary provider selection plus independent snapshot9; repeated cases not additional unique tests",
+  "tests": 81,
+  "exit_code": 0,
+  "skipped": false,
+  "code_drift": [],
+  "hashes": {
+    "packages/claw-hermes/provider_broker.py": "849e28c98bd82824ac427bb6a0b53c6a2e7c2858d8233373f1ae1194c25bc126",
+    "packages/claw-hermes/provider_egress.py": "0ef894c8c3da711844c29e55d28081658627e414bc5f81677a49363dad7b6d9b",
+    "tests/test_broker_identity_qa7e1b.py": "dd7ef5430095ee4e8f94020901e132a617c0b2d9769ddd92ab490a0eee082303",
+    "tests/test_broker_response_guard.py": "4bc937525371616f9a923b840876f1c7c5284458f95929ae8d2ce70008845da9",
+    "tests/test_provider_broker_client.py": "f88f1462f19323235c06df4a2a13ee50ba3ce1908ac17fd2e904a44abff9b99a",
+    "tests/test_provider_broker_protocol.py": "46b6d4d73f87f7575f2d012480868f4be3ca31072a74646a0d4f014229501e4d",
+    "tests/test_provider_egress.py": "842ad0337e47b7c98fcaf4fb70dff614edb1c25dc4eb59e37bcc095caf6a603c",
+    "tests/test_provider_snapshot_qa7e1b.py": "a704d597f5574077a360c0bf798fde40e6f78510a8440620974ab2e686fd7bee"
+  },
+  "elapsed_seconds": 4.319,
+  "model_calls": 0
+}

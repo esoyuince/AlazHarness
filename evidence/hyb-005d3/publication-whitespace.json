@@ -1,0 +1,9 @@
+{
+  "scope": "one terminal blank-line removal; exact Python AST including source positions unchanged",
+  "path": "packages/claw-hermes/provider_egress.py",
+  "before_sha256": "0ef894c8c3da711844c29e55d28081658627e414bc5f81677a49363dad7b6d9b",
+  "after_sha256": "fa1d568d3a44e25dd6b8b36cd11e136b2911177474041e74105d84b9932302d1",
+  "removed_bytes": 1,
+  "ast_including_positions_equal": true,
+  "will_requalify_final_source": true
+}

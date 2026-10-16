@@ -1,0 +1,86 @@
+{
+  "scope": "readonly verification of FIVE retained native runs, not additional executions",
+  "checks": [
+    {
+      "scenario": "normal",
+      "provider_claims": 2,
+      "egress_grants": 2,
+      "tool_claims": 1,
+      "admissions": 1,
+      "origin_authorized_requests": 2,
+      "task_status": "completed",
+      "reserved_unknown_usage": 0,
+      "database_unchanged": true,
+      "socket_absent": true,
+      "containers_absent": true,
+      "gateway_and_broker_exit": 0,
+      "replay": {
+        "refused": true,
+        "reason": "broker_replay_refused",
+        "extra_origin_requests": 0
+      }
+    },
+    {
+      "scenario": "missing-broker",
+      "provider_claims": 0,
+      "egress_grants": 0,
+      "tool_claims": 0,
+      "admissions": 0,
+      "origin_authorized_requests": 0,
+      "task_status": null,
+      "reserved_unknown_usage": 0,
+      "database_unchanged": true,
+      "socket_absent": true,
+      "containers_absent": true,
+      "gateway_and_broker_exit": 0,
+      "replay": null
+    },
+    {
+      "scenario": "stale-broker",
+      "provider_claims": 0,
+      "egress_grants": 0,
+      "tool_claims": 0,
+      "admissions": 0,
+      "origin_authorized_requests": 0,
+      "task_status": null,
+      "reserved_unknown_usage": 0,
+      "database_unchanged": true,
+      "socket_absent": true,
+      "containers_absent": true,
+      "gateway_and_broker_exit": 0,
+      "replay": null
+    },
+    {
+      "scenario": "provider-limit",
+      "provider_claims": 1,
+      "egress_grants": 1,
+      "tool_claims": 1,
+      "admissions": 1,
+      "origin_authorized_requests": 1,
+      "task_status": "failed",
+      "reserved_unknown_usage": 0,
+      "database_unchanged": true,
+      "socket_absent": true,
+      "containers_absent": true,
+      "gateway_and_broker_exit": 0,
+      "replay": null
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "provider_claims": 1,
+      "egress_grants": 1,
+      "tool_claims": 0,
+      "admissions": 1,
+      "origin_authorized_requests": 1,
+      "task_status": "failed",
+      "reserved_unknown_usage": 1,
+      "database_unchanged": true,
+      "socket_absent": true,
+      "containers_absent": true,
+      "gateway_and_broker_exit": 0,
+      "replay": null
+    }
+  ],
+  "exact_source_manifest": true,
+  "paid_calls": 0
+}

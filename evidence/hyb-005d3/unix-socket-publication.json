@@ -1,0 +1,19 @@
+{
+  "scope": "real Unix-socket broker with idle client, no provider/Gateway",
+  "prompt_close": true,
+  "deadline_seconds": 0.3,
+  "cleanup": {
+    "brokerId": "dc825c6cc8654505aa36f491a3c3c0b3",
+    "pid": 109947,
+    "socketRemoved": true,
+    "activeRequests": 0,
+    "counters": {
+      "physicalAttempts": 0,
+      "refused": 0,
+      "pings": 0,
+      "responses": 0
+    }
+  },
+  "provider_calls": 0,
+  "python": "3.14.7"
+}

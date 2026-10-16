@@ -1,0 +1,16 @@
+{
+  "scope": "same20 QA authored offline tests against corrected product; no broker/Gateway execution",
+  "tests": 20,
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/provider_broker.py": "9ece51c0f1bdcd1b05c9abdf346d9b8d0d73d68976555acfdd62f5f258cf7a1d",
+    "packages/claw-hermes/provider_egress.py": "0ef894c8c3da711844c29e55d28081658627e414bc5f81677a49363dad7b6d9b",
+    "tests/test_provider_egress.py": "842ad0337e47b7c98fcaf4fb70dff614edb1c25dc4eb59e37bcc095caf6a603c",
+    "tests/test_provider_snapshot_qa7e1b.py": "a704d597f5574077a360c0bf798fde40e6f78510a8440620974ab2e686fd7bee",
+    "tests/test_broker_identity_qa7e1b.py": "dd7ef5430095ee4e8f94020901e132a617c0b2d9769ddd92ab490a0eee082303"
+  },
+  "test_assertions_unchanged": true,
+  "code_drift": [],
+  "elapsed_seconds": 1.024,
+  "model_calls": 0
+}

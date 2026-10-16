@@ -1,0 +1,13 @@
+{
+  "scope": "eleven real reply-verifier tests with synthetic in-memory IPC streams; no socket/Gateway/provider execution",
+  "tests": 11,
+  "exit_code": 0,
+  "hashes": {
+    "packages/claw-hermes/provider_broker.py": "bf60572415ddb62d7275ce7b87f26267da9ee75cb40a03fe7ee8d455eec14216",
+    "packages/claw-hermes/provider_egress.py": "60ed089c9381481af6e43354e406b3b9099e2b5bac9322b9bbe8858e37abb695",
+    "tests/test_broker_identity_qa7e1b.py": "dd7ef5430095ee4e8f94020901e132a617c0b2d9769ddd92ab490a0eee082303"
+  },
+  "code_drift": [],
+  "elapsed_seconds": 0.976,
+  "model_calls": 0
+}

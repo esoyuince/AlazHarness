@@ -178,3 +178,12 @@ Standard discovery includes offline Docker-plan/inspect/capsule/lifecycle tests.
 It does NOT require Docker or run the opt-in container probe. Native Docker
 acceptance is separately recorded under evidence/hyb-005d; no Hermes Gateway,
 paid model or whole-runtime credential perimeter acceptance follows from it.
+
+## HYB-005D3A
+
+Standard CI runs ledger/grant, replay, expiry, scoped read, client, framing,
+response and lifecycle contracts with temporary stores and synthetic I/O ports.
+Real Unix-socket close and native Gateway/broker/isolated-read cases run only via
+explicit Linux probes against an authenticated scripted origin. They are separate
+from standard suite counts; no install, Docker, paid call or new daemon is added
+to ordinary CI. Final counts and exact-SHA receipts are recorded in status.md.

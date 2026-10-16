@@ -1,0 +1,15 @@
+{
+  "scope": "nine independent temporary-SQLite grant reader contracts; no broker process/network/native Gateway/model",
+  "tests": 9,
+  "exit_code": 1,
+  "hashes": {
+    "packages/claw-hermes/provider_egress.py": "60ed089c9381481af6e43354e406b3b9099e2b5bac9322b9bbe8858e37abb695",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "tests/test_provider_egress.py": "842ad0337e47b7c98fcaf4fb70dff614edb1c25dc4eb59e37bcc095caf6a603c",
+    "tests/test_provider_snapshot_qa7e1b.py": "a704d597f5574077a360c0bf798fde40e6f78510a8440620974ab2e686fd7bee"
+  },
+  "code_drift": [],
+  "elapsed_seconds": 0.708,
+  "model_calls": 0,
+  "new_broker_processes": 0
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "test launcher import failed before creating Gateway or broker; no native acceptance",
+  "exit_code": 1,
+  "cause": "isolated Python removes script directory; explicit project script import path missing",
+  "new_gateway_runs": 0,
+  "new_broker_runs": 0
+}

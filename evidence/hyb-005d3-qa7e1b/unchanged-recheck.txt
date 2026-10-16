@@ -1,0 +1,25 @@
+test_bool_protocol_version_is_not_one (test_broker_identity_qa7e1b.BrokerIdentityQA.test_bool_protocol_version_is_not_one) ... ok
+test_bounded_known_server_refusal_preserved (test_broker_identity_qa7e1b.BrokerIdentityQA.test_bounded_known_server_refusal_preserved) ... ok
+test_cancelled_read_not_silently_retried (test_broker_identity_qa7e1b.BrokerIdentityQA.test_cancelled_read_not_silently_retried) ... ok
+test_exact_signed_response_accepted (test_broker_identity_qa7e1b.BrokerIdentityQA.test_exact_signed_response_accepted) ... ok
+test_numeric_ok_not_boolean (test_broker_identity_qa7e1b.BrokerIdentityQA.test_numeric_ok_not_boolean) ... ok
+test_other_nonce_refused_and_stream_closed (test_broker_identity_qa7e1b.BrokerIdentityQA.test_other_nonce_refused_and_stream_closed) ... ok
+test_peer_denied_before_any_write (test_broker_identity_qa7e1b.BrokerIdentityQA.test_peer_denied_before_any_write) ... ok
+test_previous_broker_id_refused (test_broker_identity_qa7e1b.BrokerIdentityQA.test_previous_broker_id_refused) ... ok
+test_request_domain_signature_not_reply (test_broker_identity_qa7e1b.BrokerIdentityQA.test_request_domain_signature_not_reply) ... ok
+test_socket_replacement_before_any_write (test_broker_identity_qa7e1b.BrokerIdentityQA.test_socket_replacement_before_any_write) ... ok
+test_unknown_server_error_text_not_echoed (test_broker_identity_qa7e1b.BrokerIdentityQA.test_unknown_server_error_text_not_echoed) ... ok
+test_connections_query_only_and_closed (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_connections_query_only_and_closed) ... ok
+test_exact_expiry_boundary_not_still_authorized (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_exact_expiry_boundary_not_still_authorized) ... ok
+test_expired_grant_rechecked_at_authority_read (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_expired_grant_rechecked_at_authority_read) ... ok
+test_grant_removed_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_grant_removed_before_reader_returns) ... ok
+test_instance_changes_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_instance_changes_before_reader_returns) ... ok
+test_missing_grant_never_restores_budget (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_missing_grant_never_restores_budget) ... ok
+test_owner_changes_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_owner_changes_before_reader_returns) ... ok
+test_reader_never_calls_native_write_owner (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_reader_never_calls_native_write_owner) ... ok
+test_valid_snapshot_preserves_source_bytes (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_valid_snapshot_preserves_source_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.571s
+
+OK

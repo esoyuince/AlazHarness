@@ -1,0 +1,68 @@
+test_active_request_cancelled_before_server_wait (test_broker_lifecycle.BrokerLifecycle.test_active_request_cancelled_before_server_wait) ... ERROR
+test_empty_close_has_no_dispatch (test_broker_lifecycle.BrokerLifecycle.test_empty_close_has_no_dispatch) ... ok
+test_late_handler_closed_without_read_or_response (test_broker_lifecycle.BrokerLifecycle.test_late_handler_closed_without_read_or_response) ... FAIL
+
+======================================================================
+ERROR: test_active_request_cancelled_before_server_wait (test_broker_lifecycle.BrokerLifecycle.test_active_request_cancelled_before_server_wait)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\packages\claw-hermes\provider_broker.py", line 250, in close
+    self.server.close();await self.server.wait_closed()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_lifecycle.py", line 31, in wait_closed
+    called.append('wait');await stopped.wait()
+                          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_lifecycle.py", line 36, in test_active_request_cancelled_before_server_wait
+    result=await asyncio.wait_for(self.broker.close(),.5)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 487, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+======================================================================
+FAIL: test_late_handler_closed_without_read_or_response (test_broker_lifecycle.BrokerLifecycle.test_late_handler_closed_without_read_or_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_lifecycle.py", line 45, in test_late_handler_closed_without_read_or_response
+    self.assertTrue(writer.closed);self.assertEqual(writer.parts,[]);self.assertEqual(self.broker.counts['refused'],0)
+                                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [b'\x00\x00\x00\xc1{"brokerId":"d0fae267d1[167 chars]:1}'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+b'\x00\x00\x00\xc1{"brokerId":"d0fae267d1c3488d9ea54b66574e48e5","error":"broker_request_refused","nonce":"","ok":false,"signature":"afe81ec644b88ec5a8f2d683c44b65bbdd01782dfa4a3e7c0555dc434bb1d087","version":1}'
+
++ []
+- [b'\x00\x00\x00\xc1{"brokerId":"d0fae267d1c3488d9ea54b66574e48e5","error":"brok'
+-  b'er_request_refused","nonce":"","ok":false,"signature":"afe81ec644b88ec5a8f2d'
+-  b'683c44b65bbdd01782dfa4a3e7c0555dc434bb1d087","version":1}']
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.558s
+
+FAILED (failures=1, errors=1)

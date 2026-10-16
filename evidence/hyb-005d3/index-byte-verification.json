@@ -1,0 +1,23 @@
+{
+  "scope": "tested working-tree bytes versus Git index; no source rewritten",
+  "measured_files": 210,
+  "exact_index_files": 209,
+  "preexisting_unchanged_eol_differences": [
+    {
+      "path": "config/isolated-read/source-lock.json",
+      "working_sha256": "526ec9e4a6a1464f995a8450f98137445f7fb2dc0716f5dd1ade42b1b08060c4",
+      "index_sha256": "6e10825357c71abfa34bb0d5dee026bb869bb48dd173e3ef4e2903deed10deed",
+      "working_bytes": 2683,
+      "index_bytes": 2605,
+      "working_crlf": 78,
+      "index_crlf": 0,
+      "exact_after_crlf_to_lf": true,
+      "staged_change": false,
+      "index_equals_base": true,
+      "git_eol": "i/lf    w/crlf  attr/text eol=lf      \tconfig/isolated-read/source-lock.json"
+    }
+  ],
+  "base_commit": "2ee705ec6427d9af9bd695e132d82e198dc20b0a",
+  "new_or_modified_code_byte_mismatch": false,
+  "real_native_or_standard_tests_rerun": false
+}

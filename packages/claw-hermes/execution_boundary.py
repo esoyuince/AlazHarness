@@ -107,18 +107,26 @@ class GuardedFileTools:
 
 class ExecutionBoundary:
     def __init__(self,settings):
-        required={'policy','upstream_base_url','provider_bearer','allowed_read_files'}
-        if type(settings) is not dict or not required<=set(settings) or not set(settings)<=required|{'isolated_read'}:raise ExecutionDenied('explicit_execution_settings_required')
+        required={'policy','provider_bearer','allowed_read_files'}
+        if type(settings) is not dict or not required<=set(settings) or not set(settings)<=required|{'isolated_read','upstream_base_url','provider_broker'}:raise ExecutionDenied('explicit_execution_settings_required')
         value=settings['policy']
         if type(value) is not dict:raise ExecutionDenied('explicit_execution_policy_required')
         try:self.policy=ExecutionPolicy(**value)
         except TypeError:raise ExecutionDenied('invalid_execution_policy') from None
-        u=urlsplit(settings['upstream_base_url'])
-        if u.scheme!='http' or u.hostname!='127.0.0.1' or u.username or u.password or u.query or u.fragment or u.path!='/v1' or not u.port:
-            raise ExecutionDenied('unsupported_upstream_endpoint')
-        self.upstream=settings['upstream_base_url'];self.upstream_port=u.port
+        self.broker=None;self.upstream=None;self.upstream_port=None
+        if ('upstream_base_url' in settings)==('provider_broker' in settings):
+            raise ExecutionDenied('exactly_one_provider_transport_required')
+        if 'provider_broker' in settings:
+            from provider_broker import ProviderBrokerClient
+            self.broker=ProviderBrokerClient(settings['provider_broker'])
+        else:
+            u=urlsplit(settings['upstream_base_url'])
+            if u.scheme!='http' or u.hostname!='127.0.0.1' or u.username or u.password or u.query or u.fragment or u.path!='/v1' or not u.port:
+                raise ExecutionDenied('unsupported_upstream_endpoint')
+            self.upstream=settings['upstream_base_url'];self.upstream_port=u.port
         token=settings['provider_bearer']
         if type(token) is not str or not re.fullmatch(r'[\x21-\x7e]{32,256}',token):raise ExecutionDenied('invalid_provider_credential')
+        if self.broker is not None and token==self.broker.link.signing_key:raise ExecutionDenied('separate_broker_key_required')
         self.token=token;self.adapter=None
         self._settings_digest=hashlib.sha256(_json(settings).encode()).hexdigest()
         self.isolation=None
@@ -141,6 +149,7 @@ class ExecutionBoundary:
         if desc.get('state')!='ready' or getattr(authority,'retired',False) or getattr(authority,'retiring',False):raise ExecutionDenied('execution_owner_unavailable')
         token=self.adapter._expected_api_key()
         if token==self.token:raise ExecutionDenied('separate_provider_credential_required')
+        if self.broker is not None and token==self.broker.link.signing_key:raise ExecutionDenied('separate_broker_key_required')
         context=LocalRecoveryContext(Path(authority.db.db_path).resolve().parent,token,authority.epoch,desc['instance_id'])
         return ExecutionLedger(authority.db,context,self.policy)
 
@@ -172,6 +181,7 @@ class ExecutionBoundary:
 
     async def require_ready(self):
         self.validate_profile()
+        if self.broker is not None:await self.broker.ready()
         ledger=self.ledger()
         await asyncio.to_thread(ledger.initialize)
         state=await asyncio.to_thread(ledger.snapshot)
@@ -220,16 +230,19 @@ class ExecutionBoundary:
                     if type(message) is not dict or message.get('role') not in ('system','developer','user','assistant','tool') or (message.get('content') is not None and type(message['content']) is not str):
                         raise ExecutionDenied('unsupported_message_content')
                 ledger=self.ledger();ticket=await asyncio.to_thread(ledger.claim,'provider',hashlib.sha256(_json(body).encode()).hexdigest())
-                # One physical HTTP call per durable reservation. No SDK/proxy retries.
-                async with ClientSession(timeout=ClientTimeout(total=30),trust_env=False,auto_decompress=False) as client:
-                    async with client.post(self.upstream+'/chat/completions',json=body,headers={'Authorization':'Bearer '+self.token},allow_redirects=False) as response:
-                        pieces=[];size=0
-                        async for chunk in response.content.iter_chunked(65536):
-                            size+=len(chunk)
-                            if size>4_194_304:raise ExecutionDenied('provider_response_too_large')
-                            pieces.append(chunk)
-                        raw=b''.join(pieces);status=response.status;content_type=response.headers.get('Content-Type','')
-                        if 300<=status<400:raise ExecutionDenied('provider_redirect_refused')
+                if self.broker is not None:
+                    raw,status,content_type=await self.broker.send(ledger,ticket['ticket'],body)
+                else:
+                    # One physical HTTP call per durable reservation. No SDK/proxy retries.
+                    async with ClientSession(timeout=ClientTimeout(total=30),trust_env=False,auto_decompress=False) as client:
+                        async with client.post(self.upstream+'/chat/completions',json=body,headers={'Authorization':'Bearer '+self.token},allow_redirects=False) as response:
+                            pieces=[];size=0
+                            async for chunk in response.content.iter_chunked(65536):
+                                size+=len(chunk)
+                                if size>4_194_304:raise ExecutionDenied('provider_response_too_large')
+                                pieces.append(chunk)
+                            raw=b''.join(pieces);status=response.status;content_type=response.headers.get('Content-Type','')
+                            if 300<=status<400:raise ExecutionDenied('provider_redirect_refused')
                 usage=None
                 if status==200:
                     if body.get('stream') and not content_type.lower().startswith('text/event-stream'):raise ExecutionDenied('invalid_provider_response')

@@ -120,3 +120,11 @@ and publication in status.md and HYB-005D-TOOL-ISOLATION.md. Not yet wired to
 Hermes native dispatch. Next HYB-005D2: existing admission/budget/tool binding,
 no host fallback, cancellation and separate provider credential/egress custody.
 Parent hard-crash cleanup, Windows native and full M1/M2 remain OPEN.
+
+## HYB-005D3A local provider broker
+
+Private Unix credential broker and native-owner one-use egress grants implemented;
+exact acceptance/publication is in status.md and HYB-005D3-PROVIDER-BROKER.md.
+This does not claim whole-Gateway OS/network isolation. Next D3B is the explicit
+OS credential/egress boundary, then real-provider model/tariff/token qualification.
+Legacy direct mode is not brokered. No new autonomous scheduler starts.

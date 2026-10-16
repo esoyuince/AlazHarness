@@ -1,0 +1,75 @@
+{
+  "scope": "independent retrospective readonly SQL/source/receipt comparison for FIVE already-completed v4 native scenarios; not five new runs",
+  "checks": [
+    {
+      "scenario": "normal",
+      "result": "CORROBORATED",
+      "providers": 2,
+      "grants": 2,
+      "tool_reservations": 1,
+      "admissions": 1,
+      "db_bytes_unchanged": true,
+      "native_receipt_unchanged": true,
+      "canonical_receipt_sha256": "181befeffbb1df1a40bfb6763e376d6e1d2cd6c2954788bc0fb1d6f7ae6e49c3",
+      "retained_v4_source_matches": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "missing-broker",
+      "result": "CORROBORATED",
+      "providers": 0,
+      "grants": 0,
+      "tool_reservations": 0,
+      "admissions": 0,
+      "db_bytes_unchanged": true,
+      "native_receipt_unchanged": true,
+      "canonical_receipt_sha256": "a51921a2e573c4f80d682c5b91352f6bae7a81f942caf6986dcec4ce59c778c4",
+      "retained_v4_source_matches": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "stale-broker",
+      "result": "CORROBORATED",
+      "providers": 0,
+      "grants": 0,
+      "tool_reservations": 0,
+      "admissions": 0,
+      "db_bytes_unchanged": true,
+      "native_receipt_unchanged": true,
+      "canonical_receipt_sha256": "7f61c01e276e41e3e136987312807805577460018cb623cab46adb343fae079d",
+      "retained_v4_source_matches": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "CORROBORATED",
+      "providers": 1,
+      "grants": 1,
+      "tool_reservations": 1,
+      "admissions": 1,
+      "db_bytes_unchanged": true,
+      "native_receipt_unchanged": true,
+      "canonical_receipt_sha256": "93983a12ba540a48fd9c4249e441f6201637d0d8adde0a8cbea391687e66409b",
+      "retained_v4_source_matches": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "result": "CORROBORATED",
+      "providers": 1,
+      "grants": 1,
+      "tool_reservations": 0,
+      "admissions": 1,
+      "db_bytes_unchanged": true,
+      "native_receipt_unchanged": true,
+      "canonical_receipt_sha256": "f69a635ea1d00e71adb88fcae01067d963e20efbbfc4b958a405f3caa8a4cc71",
+      "retained_v4_source_matches": true,
+      "new_execution": false
+    }
+  ],
+  "count": 5,
+  "result": "CORROBORATED",
+  "new_gateway_runs": 0,
+  "new_broker_runs": 0,
+  "model_calls": 0
+}

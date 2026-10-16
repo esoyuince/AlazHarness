@@ -1,0 +1,447 @@
+test_bool_version (test_provider_broker_client.BrokerClientContracts.test_bool_version) ... FAIL
+test_broker_and_execution_headers (test_provider_broker_client.BrokerClientContracts.test_broker_and_execution_headers) ... FAIL
+test_explicit_execution_false (test_provider_broker_client.BrokerClientContracts.test_explicit_execution_false) ... FAIL
+test_invalid_option (test_provider_broker_client.BrokerClientContracts.test_invalid_option) ... FAIL
+test_legacy_not_claimed_brokered (test_provider_broker_client.BrokerClientContracts.test_legacy_not_claimed_brokered) ... FAIL
+test_missing_execution (test_provider_broker_client.BrokerClientContracts.test_missing_execution) ... FAIL
+test_missing_no_post (test_provider_broker_client.BrokerClientContracts.test_missing_no_post) ... FAIL
+test_no_raw_fallback_on_network_error (test_provider_broker_client.BrokerClientContracts.test_no_raw_fallback_on_network_error) ... FAIL
+test_recheck_before_dispatch (test_provider_broker_client.BrokerClientContracts.test_recheck_before_dispatch) ... FAIL
+test_required_capability (test_provider_broker_client.BrokerClientContracts.test_required_capability) ... FAIL
+test_string_version (test_provider_broker_client.BrokerClientContracts.test_string_version) ... FAIL
+test_wrong_backend_no_post (test_provider_broker_client.BrokerClientContracts.test_wrong_backend_no_post) ... FAIL
+test_duplicate_json_fields_refused (test_provider_broker_protocol.BrokerFrames.test_duplicate_json_fields_refused) ... ok
+test_invalid_utf8 (test_provider_broker_protocol.BrokerFrames.test_invalid_utf8) ... ok
+test_nonfinite_json (test_provider_broker_protocol.BrokerFrames.test_nonfinite_json) ... ok
+test_oversized_header_before_body (test_provider_broker_protocol.BrokerFrames.test_oversized_header_before_body) ... ok
+test_truncated_body (test_provider_broker_protocol.BrokerFrames.test_truncated_body) ... ok
+test_valid_json_frame (test_provider_broker_protocol.BrokerFrames.test_valid_json_frame) ... ok
+test_write_size_guard_before_write (test_provider_broker_protocol.BrokerFrames.test_write_size_guard_before_write) ... ok
+test_zero_length_refused (test_provider_broker_protocol.BrokerFrames.test_zero_length_refused) ... ok
+test_bool_http_status_refused (test_provider_broker_protocol.BrokerReplyContracts.test_bool_http_status_refused) ... ok
+test_exact_raw_body (test_provider_broker_protocol.BrokerReplyContracts.test_exact_raw_body) ... ok
+test_extra_response_data_refused (test_provider_broker_protocol.BrokerReplyContracts.test_extra_response_data_refused) ... ok
+test_header_injection_refused (test_provider_broker_protocol.BrokerReplyContracts.test_header_injection_refused) ... ok
+test_invalid_base64_refused (test_provider_broker_protocol.BrokerReplyContracts.test_invalid_base64_refused) ... ok
+test_missing_socket_does_not_network_fallback (test_provider_broker_protocol.BrokerReplyContracts.test_missing_socket_does_not_network_fallback) ... ERROR
+test_redirect_status_refused (test_provider_broker_protocol.BrokerReplyContracts.test_redirect_status_refused) ... ok
+test_request_sender_uses_grant_once (test_provider_broker_protocol.BrokerReplyContracts.test_request_sender_uses_grant_once) ... ok
+test_unknown_commit_never_reaches_socket (test_provider_broker_protocol.BrokerReplyContracts.test_unknown_commit_never_reaches_socket) ... ok
+test_already_settled_ticket_refused (test_provider_egress.EgressContracts.test_already_settled_ticket_refused) ... ok
+test_authority_row_required (test_provider_egress.EgressContracts.test_authority_row_required) ... ok
+test_bad_route_variants_refused (test_provider_egress.EgressContracts.test_bad_route_variants_refused) ... ok
+test_bool_epoch_not_one (test_provider_egress.EgressContracts.test_bool_epoch_not_one) ... ok
+test_bool_expiry_not_integer (test_provider_egress.EgressContracts.test_bool_expiry_not_integer) ... ok
+test_broker_duplicate_refused (test_provider_egress.EgressContracts.test_broker_duplicate_refused) ... ok
+test_changed_payload_invalidates_signature (test_provider_egress.EgressContracts.test_changed_payload_invalidates_signature) ... ok
+test_changed_request_refused (test_provider_egress.EgressContracts.test_changed_request_refused) ... ok
+test_endpoint_change_changes_route_identity (test_provider_egress.EgressContracts.test_endpoint_change_changes_route_identity) ... ok
+test_epoch_after_authorization_prevents_egress (test_provider_egress.EgressContracts.test_epoch_after_authorization_prevents_egress) ... ok
+test_expired_grant (test_provider_egress.EgressContracts.test_expired_grant) ... ok
+test_future_grant (test_provider_egress.EgressContracts.test_future_grant) ... ok
+test_immutable_link (test_provider_egress.EgressContracts.test_immutable_link) ... ok
+test_lost_authorization_ack_never_reissued (test_provider_egress.EgressContracts.test_lost_authorization_ack_never_reissued) ... ok
+test_malformed_signature (test_provider_egress.EgressContracts.test_malformed_signature) ... ok
+test_missing_db_never_created (test_provider_egress.EgressContracts.test_missing_db_never_created) ... ok
+test_missing_reservation_refused (test_provider_egress.EgressContracts.test_missing_reservation_refused) ... ok
+test_native_epoch_changed_before_authorization (test_provider_egress.EgressContracts.test_native_epoch_changed_before_authorization) ... ok
+test_new_broker_rejects_old_lifetime (test_provider_egress.EgressContracts.test_new_broker_rejects_old_lifetime) ... ok
+test_no_arbitrary_envelope_destination (test_provider_egress.EgressContracts.test_no_arbitrary_envelope_destination) ... ok
+test_no_provider_secret_in_grant_or_repr (test_provider_egress.EgressContracts.test_no_provider_secret_in_grant_or_repr) ... ok
+test_nonfinite_clock (test_provider_egress.EgressContracts.test_nonfinite_clock) ... ok
+test_old_ticket_cannot_be_authorized_in_new_epoch (test_provider_egress.EgressContracts.test_old_ticket_cannot_be_authorized_in_new_epoch) ... ok
+test_precommit_failure_leaves_no_grant (test_provider_egress.EgressContracts.test_precommit_failure_leaves_no_grant) ... ok
+test_quarantine_after_authorization_prevents_egress (test_provider_egress.EgressContracts.test_quarantine_after_authorization_prevents_egress) ... ok
+test_quarantine_before_authorization_refused (test_provider_egress.EgressContracts.test_quarantine_before_authorization_refused) ... ok
+test_raw_ticket_is_not_send_permission (test_provider_egress.EgressContracts.test_raw_ticket_is_not_send_permission) ... ok
+test_re_signed_payload_still_must_match_grant (test_provider_egress.EgressContracts.test_re_signed_payload_still_must_match_grant) ... ok
+test_readonly_authority_no_bytes_changed (test_provider_egress.EgressContracts.test_readonly_authority_no_bytes_changed) ... ok
+test_request_reply_signatures_not_interchangeable (test_provider_egress.EgressContracts.test_request_reply_signatures_not_interchangeable) ... ok
+test_reservation_then_irrevocable_grant (test_provider_egress.EgressContracts.test_reservation_then_irrevocable_grant) ... ok
+test_returned_permit_not_stored_object (test_provider_egress.EgressContracts.test_returned_permit_not_stored_object) ... ok
+test_scope_report_budget_validation_preserved (test_provider_egress.EgressContracts.test_scope_report_budget_validation_preserved) ... ok
+test_second_authorization_rejected_no_new_budget (test_provider_egress.EgressContracts.test_second_authorization_rejected_no_new_budget) ... ok
+test_separate_upstream_key_required (test_provider_egress.EgressContracts.test_separate_upstream_key_required) ... ok
+test_settlement_after_authorization_prevents_egress (test_provider_egress.EgressContracts.test_settlement_after_authorization_prevents_egress) ... ok
+test_socket_invalid_paths (test_provider_egress.EgressContracts.test_socket_invalid_paths) ... ok
+test_tool_ticket_not_provider_grant (test_provider_egress.EgressContracts.test_tool_ticket_not_provider_grant) ... ok
+test_twenty_authorizations_only_one (test_provider_egress.EgressContracts.test_twenty_authorizations_only_one) ... ok
+test_unbounded_broker_history_refused (test_provider_egress.EgressContracts.test_unbounded_broker_history_refused) ... ok
+test_wrong_policy (test_provider_egress.EgressContracts.test_wrong_policy) ... ok
+test_wrong_route (test_provider_egress.EgressContracts.test_wrong_route) ... ok
+test_wrong_scope (test_provider_egress.EgressContracts.test_wrong_scope) ... ok
+
+======================================================================
+ERROR: test_missing_socket_does_not_network_fallback (test_provider_broker_protocol.BrokerReplyContracts.test_missing_socket_does_not_network_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_protocol.py", line 73, in test_missing_socket_does_not_network_fallback
+    with patch('provider_broker.private_socket',side_effect=FileNotFoundError),patch('asyncio.open_unix_connection',new_callable=AsyncMock) as opened:
+                                                                               ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1503, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1473, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'asyncio' from 'C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\asyncio\\__init__.py'> does not have the attribute 'open_unix_connection'
+
+======================================================================
+FAIL: test_bool_version (test_provider_broker_client.BrokerClientContracts.test_bool_version)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 26, in test_bool_version
+    def test_bool_version(self):self.js("cap.providerBrokerVersion=true;await assert.rejects(new HostGateClient(options).capabilities(),{code:'provider_broker_required'});")
+                                ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_broker_and_execution_headers (test_provider_broker_client.BrokerClientContracts.test_broker_and_execution_headers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 23, in test_broker_and_execution_headers
+    def test_broker_and_execution_headers(self):self.js("await new HostGateClient(options).capabilities();assert.equal(calls[0].headers['X-Alaz-Execution-Version'],'1');assert.equal(calls[0].headers['X-Alaz-Provider-Broker-Version'],'1');")
+                                                ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_explicit_execution_false (test_provider_broker_client.BrokerClientContracts.test_explicit_execution_false)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 29, in test_explicit_execution_false
+    def test_explicit_execution_false(self):self.js("assert.throws(()=>new HostGateClient({...options,requireExecution:false}),{code:'broker_requires_execution_boundary'});assert.equal(calls.length,0);")
+                                            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_invalid_option (test_provider_broker_client.BrokerClientContracts.test_invalid_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 30, in test_invalid_option
+    def test_invalid_option(self):self.js("for(const v of [1,'true',{},null])assert.throws(()=>new HostGateClient({...options,requireProviderBroker:v}),{code:'invalid_provider_broker_requirement'});")
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_legacy_not_claimed_brokered (test_provider_broker_client.BrokerClientContracts.test_legacy_not_claimed_brokered)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 31, in test_legacy_not_claimed_brokered
+    def test_legacy_not_claimed_brokered(self):self.js("delete cap.providerBrokerVersion;await new HostGateClient({...options,requireProviderBroker:false}).capabilities();assert.equal(calls[0].headers['X-Alaz-Provider-Broker-Version'],undefined);")
+                                               ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_missing_execution (test_provider_broker_client.BrokerClientContracts.test_missing_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 28, in test_missing_execution
+    def test_missing_execution(self):self.js("cap.executionBoundaryVersion=null;await assert.rejects(new HostGateClient(options).capabilities(),{code:'execution_boundary_required'});")
+                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_missing_no_post (test_provider_broker_client.BrokerClientContracts.test_missing_no_post)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 24, in test_missing_no_post
+    def test_missing_no_post(self):self.js("delete cap.providerBrokerVersion;await assert.rejects(new HostGateClient(options).prepare(request),{code:'provider_broker_required'});assert.equal(calls.length,1);")
+                                   ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_no_raw_fallback_on_network_error (test_provider_broker_client.BrokerClientContracts.test_no_raw_fallback_on_network_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 32, in test_no_raw_fallback_on_network_error
+    def test_no_raw_fallback_on_network_error(self):self.js("globalThis.fetch=async(url,o)=>{calls.push({url:String(url),...o});throw Error('offline');};await assert.rejects(new HostGateClient(options).prepare(request),{code:'host_transport_error'});assert.equal(calls.length,1);assert.ok(calls[0].url.endsWith('/capabilities'));")
+                                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_recheck_before_dispatch (test_provider_broker_client.BrokerClientContracts.test_recheck_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 33, in test_recheck_before_dispatch
+    def test_recheck_before_dispatch(self):self.js("let n=0;globalThis.fetch=async(url,o)=>{calls.push({url:String(url),...o});let v=cap,status=200;if(o.method==='POST'){assert.ok(String(url).endsWith('/intents'));status=201;v={hostGateVersion:1,requestId:request.requestId,idempotencyKey:'ah1-'+ 'b'.repeat(32)+'-'+request.requestId,retryAllowed:false,replayed:false,expiresAtMs:999999,dispatchState:'issued'};}return new Response(JSON.stringify(v),{status,headers:{'Content-Type':'application/json'}});};const c=new HostGateClient(options);const p=await c.prepare(request);cap.providerBrokerVersion=null;await assert.rejects(c.dispatch(p),{code:'provider_broker_required'});assert.equal(calls.filter(x=>x.method==='POST').length,1);")
+                                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_required_capability (test_provider_broker_client.BrokerClientContracts.test_required_capability)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 22, in test_required_capability
+    def test_required_capability(self):self.js("assert.equal((await new HostGateClient(options).capabilities()).providerBrokerVersion,1);")
+                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_string_version (test_provider_broker_client.BrokerClientContracts.test_string_version)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 27, in test_string_version
+    def test_string_version(self):self.js("cap.providerBrokerVersion='1';await assert.rejects(new HostGateClient(options).capabilities(),{code:'provider_broker_required'});")
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+======================================================================
+FAIL: test_wrong_backend_no_post (test_provider_broker_client.BrokerClientContracts.test_wrong_backend_no_post)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 25, in test_wrong_backend_no_post
+    def test_wrong_backend_no_post(self):self.js("cap.providerBrokerBackend='direct';await assert.rejects(new HostGateClient(options).prepare(request),{code:'provider_broker_required'});")
+                                         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_broker_client.py", line 21, in js
+    self.assertEqual(p.returncode,0,p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : file:///C:/Antigravity/AlazHarness/scratch/worktrees/main-6f88/packages/claw-hermes/host-gate-client.mjs:23
+    this.#executionRequired=options.requireExecution===true||this.#isolatedReadRequired||this.#providerBrokerRequired; #providerBrokerRequired;
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected identifier '#providerBrokerRequired'
+    at compileSourceTextModule (node:internal/modules/esm/utils:318:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:434:20)
+    at afterLoad (node:internal/modules/esm/loader:502:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:507:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:560:36)
+    at afterResolve (node:internal/modules/esm/loader:607:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:613:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:163:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:253:17)
+
+Node.js v24.19.0
+
+
+----------------------------------------------------------------------
+Ran 72 tests in 3.267s
+
+FAILED (failures=12, errors=1)

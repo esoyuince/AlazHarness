@@ -1,0 +1,87 @@
+{
+  "scope": "readonly recheck of five publication-source native runs, NOT five additional runs",
+  "checks": [
+    {
+      "scenario": "normal",
+      "provider_claims": 2,
+      "grants": 2,
+      "tool_claims": 1,
+      "native_admissions": 1,
+      "task_status": "completed",
+      "unknown_usage_claims": 0,
+      "budget_tokens": 327680,
+      "budget_cost_microusd": 393216,
+      "database_bytes_unchanged": true,
+      "sockets_and_containers_absent": true,
+      "gateway_and_broker_exited": true,
+      "explicit_replay": {
+        "refused": true,
+        "reason": "broker_replay_refused",
+        "extra_origin_requests": 0
+      }
+    },
+    {
+      "scenario": "missing-broker",
+      "provider_claims": 0,
+      "grants": 0,
+      "tool_claims": 0,
+      "native_admissions": 0,
+      "task_status": null,
+      "unknown_usage_claims": 0,
+      "budget_tokens": null,
+      "budget_cost_microusd": null,
+      "database_bytes_unchanged": true,
+      "sockets_and_containers_absent": true,
+      "gateway_and_broker_exited": true,
+      "explicit_replay": null
+    },
+    {
+      "scenario": "stale-broker",
+      "provider_claims": 0,
+      "grants": 0,
+      "tool_claims": 0,
+      "native_admissions": 0,
+      "task_status": null,
+      "unknown_usage_claims": 0,
+      "budget_tokens": null,
+      "budget_cost_microusd": null,
+      "database_bytes_unchanged": true,
+      "sockets_and_containers_absent": true,
+      "gateway_and_broker_exited": true,
+      "explicit_replay": null
+    },
+    {
+      "scenario": "provider-limit",
+      "provider_claims": 1,
+      "grants": 1,
+      "tool_claims": 1,
+      "native_admissions": 1,
+      "task_status": "failed",
+      "unknown_usage_claims": 0,
+      "budget_tokens": 163840,
+      "budget_cost_microusd": 196608,
+      "database_bytes_unchanged": true,
+      "sockets_and_containers_absent": true,
+      "gateway_and_broker_exited": true,
+      "explicit_replay": null
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "provider_claims": 1,
+      "grants": 1,
+      "tool_claims": 0,
+      "native_admissions": 1,
+      "task_status": "failed",
+      "unknown_usage_claims": 1,
+      "budget_tokens": 163840,
+      "budget_cost_microusd": 196608,
+      "database_bytes_unchanged": true,
+      "sockets_and_containers_absent": true,
+      "gateway_and_broker_exited": true,
+      "explicit_replay": null
+    }
+  ],
+  "native_source_files_verified": true,
+  "source_manifest_sha256": "9e8a24b775db45cd378d22be8e8c87048f32abe0fe580975b7bdd54e64723925",
+  "model_calls": 0
+}

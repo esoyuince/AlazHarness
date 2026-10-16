@@ -1,0 +1,48 @@
+test_already_settled_ticket_refused (test_provider_egress.EgressContracts.test_already_settled_ticket_refused) ... ok
+test_authority_row_required (test_provider_egress.EgressContracts.test_authority_row_required) ... ok
+test_bad_route_variants_refused (test_provider_egress.EgressContracts.test_bad_route_variants_refused) ... ok
+test_bool_epoch_not_one (test_provider_egress.EgressContracts.test_bool_epoch_not_one) ... ok
+test_bool_expiry_not_integer (test_provider_egress.EgressContracts.test_bool_expiry_not_integer) ... ok
+test_broker_duplicate_refused (test_provider_egress.EgressContracts.test_broker_duplicate_refused) ... ok
+test_changed_payload_invalidates_signature (test_provider_egress.EgressContracts.test_changed_payload_invalidates_signature) ... ok
+test_changed_request_refused (test_provider_egress.EgressContracts.test_changed_request_refused) ... ok
+test_endpoint_change_changes_route_identity (test_provider_egress.EgressContracts.test_endpoint_change_changes_route_identity) ... ok
+test_epoch_after_authorization_prevents_egress (test_provider_egress.EgressContracts.test_epoch_after_authorization_prevents_egress) ... ok
+test_expired_grant (test_provider_egress.EgressContracts.test_expired_grant) ... ok
+test_future_grant (test_provider_egress.EgressContracts.test_future_grant) ... ok
+test_immutable_link (test_provider_egress.EgressContracts.test_immutable_link) ... ok
+test_lost_authorization_ack_never_reissued (test_provider_egress.EgressContracts.test_lost_authorization_ack_never_reissued) ... ok
+test_malformed_signature (test_provider_egress.EgressContracts.test_malformed_signature) ... ok
+test_missing_db_never_created (test_provider_egress.EgressContracts.test_missing_db_never_created) ... ok
+test_missing_reservation_refused (test_provider_egress.EgressContracts.test_missing_reservation_refused) ... ok
+test_native_epoch_changed_before_authorization (test_provider_egress.EgressContracts.test_native_epoch_changed_before_authorization) ... ok
+test_new_broker_rejects_old_lifetime (test_provider_egress.EgressContracts.test_new_broker_rejects_old_lifetime) ... ok
+test_no_arbitrary_envelope_destination (test_provider_egress.EgressContracts.test_no_arbitrary_envelope_destination) ... ok
+test_no_provider_secret_in_grant_or_repr (test_provider_egress.EgressContracts.test_no_provider_secret_in_grant_or_repr) ... ok
+test_nonfinite_clock (test_provider_egress.EgressContracts.test_nonfinite_clock) ... ok
+test_old_ticket_cannot_be_authorized_in_new_epoch (test_provider_egress.EgressContracts.test_old_ticket_cannot_be_authorized_in_new_epoch) ... ok
+test_precommit_failure_leaves_no_grant (test_provider_egress.EgressContracts.test_precommit_failure_leaves_no_grant) ... ok
+test_quarantine_after_authorization_prevents_egress (test_provider_egress.EgressContracts.test_quarantine_after_authorization_prevents_egress) ... ok
+test_quarantine_before_authorization_refused (test_provider_egress.EgressContracts.test_quarantine_before_authorization_refused) ... ok
+test_raw_ticket_is_not_send_permission (test_provider_egress.EgressContracts.test_raw_ticket_is_not_send_permission) ... ok
+test_re_signed_payload_still_must_match_grant (test_provider_egress.EgressContracts.test_re_signed_payload_still_must_match_grant) ... ok
+test_readonly_authority_no_bytes_changed (test_provider_egress.EgressContracts.test_readonly_authority_no_bytes_changed) ... ok
+test_request_reply_signatures_not_interchangeable (test_provider_egress.EgressContracts.test_request_reply_signatures_not_interchangeable) ... ok
+test_reservation_then_irrevocable_grant (test_provider_egress.EgressContracts.test_reservation_then_irrevocable_grant) ... ok
+test_returned_permit_not_stored_object (test_provider_egress.EgressContracts.test_returned_permit_not_stored_object) ... ok
+test_scope_report_budget_validation_preserved (test_provider_egress.EgressContracts.test_scope_report_budget_validation_preserved) ... ok
+test_second_authorization_rejected_no_new_budget (test_provider_egress.EgressContracts.test_second_authorization_rejected_no_new_budget) ... ok
+test_separate_upstream_key_required (test_provider_egress.EgressContracts.test_separate_upstream_key_required) ... ok
+test_settlement_after_authorization_prevents_egress (test_provider_egress.EgressContracts.test_settlement_after_authorization_prevents_egress) ... ok
+test_socket_invalid_paths (test_provider_egress.EgressContracts.test_socket_invalid_paths) ... ok
+test_tool_ticket_not_provider_grant (test_provider_egress.EgressContracts.test_tool_ticket_not_provider_grant) ... ok
+test_twenty_authorizations_only_one (test_provider_egress.EgressContracts.test_twenty_authorizations_only_one) ... ok
+test_unbounded_broker_history_refused (test_provider_egress.EgressContracts.test_unbounded_broker_history_refused) ... ok
+test_wrong_policy (test_provider_egress.EgressContracts.test_wrong_policy) ... ok
+test_wrong_route (test_provider_egress.EgressContracts.test_wrong_route) ... ok
+test_wrong_scope (test_provider_egress.EgressContracts.test_wrong_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 3.511s
+
+OK

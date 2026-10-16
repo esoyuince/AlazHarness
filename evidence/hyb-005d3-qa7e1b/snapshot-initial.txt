@@ -1,0 +1,68 @@
+test_connections_query_only_and_closed (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_connections_query_only_and_closed) ... ok
+test_exact_expiry_boundary_not_still_authorized (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_exact_expiry_boundary_not_still_authorized) ... FAIL
+test_expired_grant_rechecked_at_authority_read (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_expired_grant_rechecked_at_authority_read) ... FAIL
+test_grant_removed_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_grant_removed_before_reader_returns) ... FAIL
+test_instance_changes_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_instance_changes_before_reader_returns) ... FAIL
+test_missing_grant_never_restores_budget (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_missing_grant_never_restores_budget) ... ok
+test_owner_changes_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_owner_changes_before_reader_returns) ... FAIL
+test_reader_never_calls_native_write_owner (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_reader_never_calls_native_write_owner) ... ok
+test_valid_snapshot_preserves_source_bytes (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_valid_snapshot_preserves_source_bytes) ... ok
+
+======================================================================
+FAIL: test_exact_expiry_boundary_not_still_authorized (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_exact_expiry_boundary_not_still_authorized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 48, in test_exact_expiry_boundary_not_still_authorized
+    with self.assertRaisesRegex(ExecutionDenied,'egress_grant_expired'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_expired_grant_rechecked_at_authority_read (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_expired_grant_rechecked_at_authority_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 45, in test_expired_grant_rechecked_at_authority_read
+    with self.assertRaisesRegex(ExecutionDenied,'egress_grant_expired'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_grant_removed_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_grant_removed_before_reader_returns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 67, in test_grant_removed_before_reader_returns
+    self.changed_on_close('DELETE FROM state_meta WHERE key=?',(EGRESS+self.source.config.scope+'.'+self.grant['ticket'],))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 60, in changed_on_close
+    with self.assertRaises(ExecutionDenied):self.check()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_instance_changes_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_instance_changes_before_reader_returns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 65, in test_instance_changes_before_reader_returns
+    self.changed_on_close("UPDATE runtime_epoch SET instance_id='next-instance'")
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 60, in changed_on_close
+    with self.assertRaises(ExecutionDenied):self.check()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_owner_changes_before_reader_returns (test_provider_snapshot_qa7e1b.ProviderSnapshotQA.test_owner_changes_before_reader_returns)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 63, in test_owner_changes_before_reader_returns
+    self.changed_on_close('UPDATE runtime_epoch SET epoch=epoch+1')
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_provider_snapshot_qa7e1b.py", line 60, in changed_on_close
+    with self.assertRaises(ExecutionDenied):self.check()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.371s
+
+FAILED (failures=5)

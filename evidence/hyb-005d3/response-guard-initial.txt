@@ -1,0 +1,125 @@
+test_encoded_upstream_refused (test_broker_response_guard.ReplyTests.test_encoded_upstream_refused) ... ok
+test_error_body_and_headers_not_forwarded (test_broker_response_guard.ReplyTests.test_error_body_and_headers_not_forwarded) ... ok
+test_escaped_json_credential_not_returned (test_broker_response_guard.ReplyTests.test_escaped_json_credential_not_returned) ... FAIL
+test_escaped_json_key_not_returned (test_broker_response_guard.ReplyTests.test_escaped_json_key_not_returned) ... FAIL
+test_escaped_sse_credential_not_returned (test_broker_response_guard.ReplyTests.test_escaped_sse_credential_not_returned) ... FAIL
+test_fixed_credential_and_target_only (test_broker_response_guard.ReplyTests.test_fixed_credential_and_target_only) ... ok
+test_incomplete_sse_refused (test_broker_response_guard.ReplyTests.test_incomplete_sse_refused) ... FAIL
+test_invalid_json_refused (test_broker_response_guard.ReplyTests.test_invalid_json_refused) ... FAIL
+test_json_duplicate_keys_refused (test_broker_response_guard.ReplyTests.test_json_duplicate_keys_refused) ... FAIL
+test_normal_json_unchanged (test_broker_response_guard.ReplyTests.test_normal_json_unchanged) ... ok
+test_normal_sse_unchanged (test_broker_response_guard.ReplyTests.test_normal_sse_unchanged) ... ok
+test_raw_credential_not_returned (test_broker_response_guard.ReplyTests.test_raw_credential_not_returned) ... ok
+test_redirect_refused_no_second_call (test_broker_response_guard.ReplyTests.test_redirect_refused_no_second_call) ... ok
+test_sse_split_content_not_returned (test_broker_response_guard.ReplyTests.test_sse_split_content_not_returned) ... FAIL
+test_unrecognized_type_refused (test_broker_response_guard.ReplyTests.test_unrecognized_type_refused) ... ok
+
+======================================================================
+FAIL: test_escaped_json_credential_not_returned (test_broker_response_guard.ReplyTests.test_escaped_json_credential_not_returned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 44, in test_escaped_json_credential_not_returned
+    with self.assertRaisesRegex(ExecutionDenied,'broker_sensitive_response'):await self.invoke(raw)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_escaped_json_key_not_returned (test_broker_response_guard.ReplyTests.test_escaped_json_key_not_returned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 47, in test_escaped_json_key_not_returned
+    with self.assertRaisesRegex(ExecutionDenied,'broker_sensitive_response'):await self.invoke(raw)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_escaped_sse_credential_not_returned (test_broker_response_guard.ReplyTests.test_escaped_sse_credential_not_returned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 50, in test_escaped_sse_credential_not_returned
+    with self.assertRaisesRegex(ExecutionDenied,'broker_sensitive_response'):await self.invoke(raw,ctype='text/event-stream')
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_incomplete_sse_refused (test_broker_response_guard.ReplyTests.test_incomplete_sse_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 77, in test_incomplete_sse_refused
+    with self.assertRaises(ExecutionDenied):await self.invoke(b'data: {"x":"a"}\n\n',ctype='text/event-stream')
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_invalid_json_refused (test_broker_response_guard.ReplyTests.test_invalid_json_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 73, in test_invalid_json_refused
+    with self.assertRaises(ExecutionDenied):await self.invoke(b'{broken')
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_json_duplicate_keys_refused (test_broker_response_guard.ReplyTests.test_json_duplicate_keys_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 75, in test_json_duplicate_keys_refused
+    with self.assertRaises(ExecutionDenied):await self.invoke(b'{"x":"a","x":"b"}')
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_sse_split_content_not_returned (test_broker_response_guard.ReplyTests.test_sse_split_content_not_returned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_broker_response_guard.py", line 53, in test_sse_split_content_not_returned
+    with self.assertRaisesRegex(ExecutionDenied,'broker_sensitive_response'):await self.invoke(raw.encode(),ctype='text/event-stream')
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.147s
+
+FAILED (failures=7)

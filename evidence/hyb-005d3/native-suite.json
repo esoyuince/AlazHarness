@@ -1,0 +1,45 @@
+{
+  "scope": "five real Gateway/broker runs, separate live Unix-socket closure check; fixture origin, zero inference",
+  "rows": [
+    {
+      "scenario": "normal",
+      "exit_code": 0,
+      "result": "PASS",
+      "errors": [],
+      "receipt": "/tmp/alaz-hyb005d3-247a/final-v4-normal/broker-native-result.json"
+    },
+    {
+      "scenario": "missing-broker",
+      "exit_code": 0,
+      "result": "PASS",
+      "errors": [],
+      "receipt": "/tmp/alaz-hyb005d3-247a/final-v4-missing-broker/broker-native-result.json"
+    },
+    {
+      "scenario": "stale-broker",
+      "exit_code": 0,
+      "result": "PASS",
+      "errors": [],
+      "receipt": "/tmp/alaz-hyb005d3-247a/final-v4-stale-broker/broker-native-result.json"
+    },
+    {
+      "scenario": "provider-limit",
+      "exit_code": 0,
+      "result": "PASS",
+      "errors": [],
+      "receipt": "/tmp/alaz-hyb005d3-247a/final-v4-provider-limit/broker-native-result.json"
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "exit_code": 0,
+      "result": "PASS",
+      "errors": [],
+      "receipt": "/tmp/alaz-hyb005d3-247a/final-v4-upstream-disconnect/broker-native-result.json"
+    }
+  ],
+  "expected": 5,
+  "socket_close_exit": 0,
+  "source_drift": false,
+  "new_paid_calls": 0,
+  "result": "PASS"
+}

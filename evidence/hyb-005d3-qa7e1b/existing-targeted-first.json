@@ -1,0 +1,21 @@
+{
+  "scope": "independent execution of existing primary provider tests; no additional test cases or real broker/Gateway/model runs",
+  "tests": 72,
+  "exit_code": 1,
+  "skipped": false,
+  "code_drift": [],
+  "hashes": {
+    "packages/claw-hermes/execution_boundary.py": "4a7680566dbca2ab2469c73527c6e96652496c1c00f1eb4812c19be6a750f8aa",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/host-gate-client.mjs": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+    "packages/claw-hermes/host_gate_plugin.py": "0be304f4ea59a3050cfb37426955cfbb00c9d48a834d6ac5a520f234908ef416",
+    "packages/claw-hermes/provider_broker.py": "bf60572415ddb62d7275ce7b87f26267da9ee75cb40a03fe7ee8d455eec14216",
+    "packages/claw-hermes/provider_egress.py": "60ed089c9381481af6e43354e406b3b9099e2b5bac9322b9bbe8858e37abb695",
+    "scripts/run_provider_broker.py": "0205461b7bdea2989ebf48ccd5325919cfef2ef4bbf32cb5ed3ca1df636d733b",
+    "tests/test_provider_broker_client.py": "f88f1462f19323235c06df4a2a13ee50ba3ce1908ac17fd2e904a44abff9b99a",
+    "tests/test_provider_broker_protocol.py": "3e7c0f36d8ec131f76818dff64d054cc489ea242bcdbd52be4def89477c47cee",
+    "tests/test_provider_egress.py": "206b99441ccad2bab3104817ab2b20b7054385a12b0b70e818a7d54ea64adb53"
+  },
+  "elapsed_seconds": 3.951,
+  "model_calls": 0
+}

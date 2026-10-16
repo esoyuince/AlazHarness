@@ -1,0 +1,1 @@
+{"scope": "real local Unix-socket broker close with idle connected client, no provider/Gateway", "prompt_close": false, "cleanup": {"brokerId": "dfced8817a9346dfa78d241397b86cf1", "pid": 105124, "socketRemoved": true, "activeRequests": 0, "counters": {"physicalAttempts": 0, "refused": 0, "pings": 0, "responses": 0}}, "provider_calls": 0, "python": "3.14.7"}
