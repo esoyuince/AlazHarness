@@ -5,8 +5,7 @@ ağacı ve aynı commit'in CI sonucunu yeniden doğrula. Ana kayıt bu dosyadır
 
 ## Güncel nokta
 
-**HYB-005B dar yerel yürütme/bütçe paketi doğrulandı; Git/CI yayını bu kayıt
-oluşturulurken henüz kapanmadı.** Genel HYB-005, tam M1 ve otonomi M2 açık.
+**HYB-005B dar yerel yürütme/bütçe paketi yayımlandı; kodun aynı-SHA CI sonucu başarılı.** Genel HYB-005, tam M1 ve otonomi M2 açık.
 
 Aktif dal: `alaz/hyb-005b-execution-0d37`.
 Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88`.
@@ -123,3 +122,29 @@ completed alanını görev başarısı sayan strict beklenti yanlıştı; mevcut
 inspector hatası veya native bozulma kanıtlanmadı. Eski strict FAIL gizlenmedi.
 Kalan gerçek ayrım physical usage240/40 ile native aggregate120/20: HYB-005C
 bunu görünür kılıp mevcut doğru inspector semantiğini kullanacak.
+
+### 2026-10-16T03:28:27.009640+03:00 — kod yayımlandı, CI sonucu bekleniyor
+
+Kod commit: `ca121ce036855b83f3e39735cc9d78aae96f70b6`. Mevcut feature dalına
+push başarılı; yerel/remote eşit, o kontrol anında çalışma ağacı temiz.
+GitHub alaz/local-ci şu an pending; eski commit yeşili aktarılmıyor.
+169 ölçülen kod/config dosyası881 PASS koşusuyla aynı. Tarihsel unified-diff
+evidence dosyasının zorunlu tek-space context satırı için yalnız o dosyaya
+blank-at-eol niteliği verildi; eski patch byte/hashleri korundu, ürün koduna
+whitespace muafiyeti yok. Commit110 dosyayı (kod, önceki/final kanıtlar, tarihçe)
+içeriyor; vendorlar ve main değişmedi. Bu günlük CI bitince sonuçla tamamlanır.
+
+### 2026-10-16T03:29:46.683288+03:00 — yayın ve aynı-commit CI kapanışı
+
+Kod `ca121ce036855b83f3e39735cc9d78aae96f70b6` GitHub feature dalında.
+GitHub alaz/local-ci success bağımsız sorgulandı. Alaz-server artifactinde
+sha==checkout_sha==aynı kod SHA,881/881 PASS,failed0/skipped0/suite_errors0,
+status_delivery=posted doğrulandı. Kanıt evidence/hyb-005b-close-3156/code-ci.json.
+Bu testler standart pakettir;7native Gateway/SDK senaryosu serverda tekrar
+çalıştırılmadı.881 bağımsız local QA ve881server sayıları ayrı koşular, toplanmaz.
+
+Kod yayını sonrası kontrol:yerel/remote eşit, yalnız bu durum kaydı değişiyordu;
+canlı AlazHarness native/test süreci görülmedi. Bu son commit yalnız belge/CI
+kanıtlarını günceller. Onun CI sonucu push sonrası ayrıca sorgulanır; kod SHA
+yeşili yeni belge SHA için varsayılmaz. Main birleşimi yapılmadı. Kesin sonraki
+iş HYB-005C usage/outcome görünümü; genel izolasyon, gerçek tarife ve M1/M2 açık.

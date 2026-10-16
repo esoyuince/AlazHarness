@@ -1,6 +1,7 @@
 # HYB-005B — physical provider and guarded file execution
 
-Status: local scoped verification complete; publication/CI pending; continuation3156. Base30b205f.
+Status: CODE PUBLISHED / SAME-COMMIT STANDARD CI PASS; scoped execution only.
+Continuation3156; base30b205f; full M1/M2 and provider isolation remain open.
 Prior0d37/3723 receipts keep their historical scopes; no acceptance is inherited.
 
 ## First implemented slice (not general all-provider M1 acceptance)
@@ -156,3 +157,13 @@ separately and reuse the already correct inspector's task outcome. Evidence:
 docs/research/HYB-005B-QA545b.md and evidence/hyb-005b-qa545b/summary-terminal-semantics.json,
 summary-inspector-observation.json, full-standard.json. No primary product or
 upstream file was changed by that independent reviewer.
+
+## Published code and exact-commit CI
+
+Code ca121ce036855b83f3e39735cc9d78aae96f70b6 was pushed on
+alaz/hyb-005b-execution-0d37. GitHub alaz/local-ci success and the server artifact
+confirm the same checkout SHA with881/881 standard tests,failed0/skipped0/suite_errors0
+and status_delivery=posted. Evidence: evidence/hyb-005b-close-3156/code-ci.json.
+The native Gateway scenarios were NOT run by this standard CI. Main was not merged.
+A documentation-only follow-up commit records this evidence; its status is checked
+separately after push. No product/test code changed after final native/full tests.
