@@ -39,15 +39,22 @@ def register(ctx):
     if type(models) is not list or any(type(m) is not str for m in models) or len(set(models))!=len(models):
         raise ValueError('invalid_model_allowlist')
     policy=HostGatePolicy(frozenset(models),value['max_issued'],value['max_dispatches'],value['validity_seconds'])
-    ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(app,adapter,policy))
+    execution_settings=ctx.get_config('execution')
+    execution=None
+    if execution_settings is not None:
+        from execution_boundary import ExecutionBoundary
+        execution=ExecutionBoundary(execution_settings)
+        execution.register(ctx)
+    ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(app,adapter,policy,execution=execution))
 
 
-def bind_host_gate(app, adapter, policy: HostGatePolicy):
+def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None):
     from aiohttp import web
     validate_native_adapter(adapter)
     if type(policy) is not HostGatePolicy or app.frozen or adapter._host!='127.0.0.1':
         raise ValueError('unsupported_host_listener')
     if 'alaz_host_gate_v1' in app:raise ValueError('duplicate_host_gate')
+    if execution is not None:execution.bind(app,adapter)
 
     def current(request):
         # Never infer privilege from a room token, profile prefix, cookie or session header.
@@ -81,6 +88,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy):
     async def issue(request):
         try:
             ledger=current(request);value=await body(request)
+            if execution is not None:await execution.require_ready()
             if type(value) is not dict or set(value)!={'requestId','body'}:raise HostGateError('invalid_intent_request')
             row=await asyncio.to_thread(ledger.issue,value['requestId'],value['body'])
             return web.json_response({'hostGateVersion':1,'requestId':row['requestId'],'idempotencyKey':row['key'],
@@ -91,6 +99,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy):
     async def dispatch(request):
         try:
             ledger=current(request);frozen=await body(request)
+            if execution is not None:await execution.require_ready()
             if len(request.headers.getall('Idempotency-Key',[]))!=1:raise HostGateError('host_intent_required')
             await asyncio.to_thread(ledger.consume,request.headers['Idempotency-Key'],frozen)
             # Returning from _execute_write proves COMMIT. No forward on unknown commit.
@@ -101,16 +110,21 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy):
     async def capabilities(request):
         try:
             current(request)
+            if execution is not None:await execution.require_ready()
             return web.json_response({'hostGateVersion':1,'dispatchPath':BASE+'/dispatch','nativeStoreOwner':True,
                 'dispatchAtMostOnce':True,'automaticRetry':False,'modelTokenOrCostBudget':False,
-                'toolSandbox':False,'scope':'default_profile_new_run'})
+                'toolSandbox':False,'scope':'default_profile_new_run','executionBoundaryVersion':1 if execution is not None else None})
         except Exception as exc:return error(exc)
 
     @web.middleware
     async def gate(request,handler):
         # An installed extension also refuses alternative native write paths. This
         # does not claim to gate raw upstream when the extension is not installed.
+        required=request.headers.getall('X-Alaz-Execution-Version',[])
+        if required and (required!=['1'] or execution is None):
+            return error(HostGateError('execution_boundary_required'))
         if request.method in ('GET','HEAD','OPTIONS'):return await handler(request)
+        if execution is not None and request.method=='POST' and request.path=='/alaz/provider/v1/chat/completions':return await handler(request)
         if request.method=='POST' and request.path in (BASE+'/intents',BASE+'/dispatch'):
             return await handler(request)
         try:

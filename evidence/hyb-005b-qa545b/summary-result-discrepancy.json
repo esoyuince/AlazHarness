@@ -1,0 +1,31 @@
+{
+  "scope": "existing native summary result discrepancy, NOT product success or a new run",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "source_receipt_sha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67",
+  "native_runtime_summary_nudge_matches_pinned_constant": true,
+  "native_log_reports_iteration_budget": "1/1",
+  "http_status": "failed",
+  "canonical_admission": {
+    "request_id": "run_bb60c75ac78349f3991f9c9b00c5f8eb",
+    "status": "terminal",
+    "outcome": "completed"
+  },
+  "http_reported_usage": {
+    "input_tokens": 120,
+    "output_tokens": 20,
+    "total_tokens": 140
+  },
+  "provider_observed_usage": [
+    {
+      "input_tokens": 120,
+      "output_tokens": 20
+    },
+    {
+      "input_tokens": 120,
+      "output_tokens": 20
+    }
+  ],
+  "provider_requests": 2,
+  "declared_task_success": false,
+  "automatic_retry_allowed": false
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "actual response parser and file guard, no native Gateway",
+  "exit_code": 0,
+  "hashes": {
+    "tests\\test_execution_response_qa.py": "a5ab05501b574ec87f7d3c0a79b9c8d57a6145055e4390843613bc29047c5f56",
+    "packages\\claw-hermes\\execution_boundary.py": "b989895c285164939f53ded5320f104c8af8d8b73d298a7e22109f4910f1d809"
+  },
+  "code_drift": []
+}

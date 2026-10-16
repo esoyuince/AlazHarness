@@ -1,0 +1,28 @@
+{
+  "scope": "existing readonly recovery inspector on retained native summary profile; no new execution or state mutation",
+  "result": {
+    "contractVersion": 1,
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "retryAllowed": false,
+    "repairAllowed": false,
+    "writesPerformed": false,
+    "taskSucceeded": false,
+    "snapshotOnly": true,
+    "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "profileBinding": "5151cd72f5b19161d491ec2c5c5ba5efcee033fe858c7c98e9d1a90466e76035",
+    "epoch": 1,
+    "nextAction": "retain_verified_outcome",
+    "runId": "run_bb60c75ac78349f3991f9c9b00c5f8eb",
+    "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+    "admissionId": "1b0ffd435d6b4bd5821c5310c24b4d32",
+    "sessionId": "run_bb60c75ac78349f3991f9c9b00c5f8eb",
+    "executionGeneration": 1,
+    "outcome": "failed",
+    "resultDigest": "e1e4ff2795c4392f9c3a7042c2c91498bf9aba344c2a73735b79553ae66f39ac"
+  },
+  "databases_hash_unchanged": true,
+  "request_credential_recorded": false,
+  "source_receipt_sha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67"
+}

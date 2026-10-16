@@ -91,3 +91,15 @@ status is in status.md and docs/HYB-005A-HOST-GATE.md. Final native probe result
 and exact-commit CI must be checked, not inferred from the old604 test total.
 Next: HYB-005B execution-boundary model/tool permission and complete provider
 budget accounting. No optional-hook exception may be the sole veto.
+
+## HYB-005B final qualification — 2026-10-16
+
+Physical local-provider attempt reservations and guarded native file tools are
+implemented. Applied live-config drift correction and final native evidence are
+in docs/HYB-005B-EXECUTION-GATE.md. Seven narrow budget/tool scenarios; six strict
+outcome rechecks plus one explicitly incomplete iteration-summary characterization.
+Full standard and same-commit CI are recorded in status.md after they complete.
+Next HYB-005C: distinguish ledger physical usage/reservation from native run
+aggregate and incomplete-task outcome; then qualify isolated provider credentials,
+remote model/tariff/capability, egress and remaining M1 permission limits.
+No new autonomous scheduling starts before M1; memory transfer HYB-006 remains open.

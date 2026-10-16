@@ -1,0 +1,19 @@
+{
+  "scope": "actual installed product source and unchanged eight configuration-port fixture tests; not native Gateway",
+  "before": {
+    "passed": 4,
+    "failed": 4,
+    "exit_code": 1,
+    "source_sha256": "b989895c285164939f53ded5320f104c8af8d8b73d298a7e22109f4910f1d809"
+  },
+  "after": {
+    "passed": 8,
+    "failed": 0,
+    "exit_code": 0,
+    "source_sha256": "6c3551297676635764cd464dc1159b12a8ba34799faa8bd96a7106cd909a348f"
+  },
+  "test_sha256": "4241f4621cd78b5385bba6ada5c979a175cc8a4f48220a6ad03910269aa87192",
+  "proposal_applied_to_product": true,
+  "final_tool_ledger_path_rechecks_profile": true,
+  "paid_calls": 0
+}

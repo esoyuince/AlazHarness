@@ -1,0 +1,29 @@
+{
+  "scope": "independent retrospective exact native store/owner/receipt corroboration; NOT a new execution",
+  "check": {
+    "scenario": "normal",
+    "result": "CORROBORATED",
+    "blocked_nonloopback_attempts": 0,
+    "clean_network_accepted": true,
+    "blocked_destination_attribution": null,
+    "receipt_sha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+    "startup_seconds": 78.221,
+    "startup_budget_seconds": 180,
+    "provider_wire_requests": 2,
+    "native_read_claims": 1,
+    "native_admissions": 1,
+    "reserved_tokens": 327680,
+    "reserved_cost_microusd": 393216,
+    "read_only_post_run_check": true,
+    "new_native_execution": false
+  },
+  "database_sha256_unchanged": true,
+  "run_id": "run_5336c4d00cc44a03b9e3f19b5b50c96e",
+  "admission_id": "e47f6f8db06f4943a1d44c04f0140286",
+  "exact_owner_epoch": 2,
+  "source_receipt_sha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+  "all_message_session_ids_match": true,
+  "stored_final_equals_reported": true,
+  "paid_calls": 0,
+  "inference_calls": 0
+}

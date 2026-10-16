@@ -1,0 +1,178 @@
+{
+  "scope": "real aiohttp/ExecutionBoundary/provider route; synthetic adapter/SessionDB owner, config and registry verifier explicitly substituted. NOT native Gateway",
+  "cases": [
+    {
+      "name": "normal",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "unknown-usage",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "missing-auth",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "wrong-auth",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "foreign-query",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "foreign-header",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "wrong-model",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "no-messages",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "multimodal-content",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "unknown-role",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "multiple-completions",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "bool-completions",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "nonbool-stream",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "above-output-cap",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "null-output-cap",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "bool-output-cap",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "float-output-cap",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "two-output-caps",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "missing-output-cap",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "duplicate-json",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "provider-503",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "provider-redirect",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "provider-bool-usage",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "provider-over-usage",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "wrong-response-model",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "stream-over-then-lower",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    },
+    {
+      "name": "stream-compact-wrong-model",
+      "passed": false,
+      "exception_type": "AttributeError",
+      "error": "'ExecutionBoundary' object has no attribute 'context'"
+    }
+  ],
+  "passed": 0,
+  "failed": 27,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "hashes": {
+    "packages\\claw-hermes\\execution_boundary.py": "689df1a6693e6a958392ef017c6830e24ec3f22b64605cb7c805e6c196485740",
+    "packages\\claw-hermes\\execution_budget.py": "46d7326584731d016f681f9f7b299e74cdba8d71802dbebb3bf86e7322d2b262",
+    "tests\\test_execution_gate_qa.py": "2a5eb2c44557290c372b6a9e0b50ff551a326ccfa91853b92ec0e504d4630daf",
+    "scripts\\qa\\execution_http_matrix.py": "ffc26b33512b4db461de0c1ba466fa574e0eb4fa548f7e574da996a7054c80d0"
+  },
+  "code_drift": []
+}

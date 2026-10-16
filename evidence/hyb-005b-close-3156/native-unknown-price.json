@@ -1,0 +1,94 @@
+{
+  "scenario": "unknown-price",
+  "scope": "native public Gateway + real SDK/registry/file handler + physical HTTP gate; upstream model scripted",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "errors": [],
+  "product_sha256": {
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/execution_boundary.py": "6c3551297676635764cd464dc1159b12a8ba34799faa8bd96a7106cd909a348f",
+    "packages/claw-hermes/host_gate_plugin.py": "4db9c429b93bf71a10b06fb319ed65695e164f30a53d0f7185cf7fbd1a5cfa24",
+    "packages/claw-hermes/host-gate-client.mjs": "324bf51df5a639c1249d45edf3379803caba7d673375dcf406d9e69a7710a246",
+    "scripts/run_native_execution_gate.py": "17156b2b012375684bac7a60923eff972884b80e519abca272f29a9ef7eb7f80",
+    "scripts/native_execution_client.mjs": "39b0d9105d932df5e6df76de30bf6335bbb402555ccd7401336f9294b2db98aa",
+    "scripts/execution_model_fixture.py": "4813ba81dbcae073c00bb9868d0c84618bdc6dccf94f7bd6450cf1d3b43e7678",
+    "scripts/native_execution_sdk.py": "dad836cc16c25415524073886d8074769f5d153213b38ec9689bb321085fc11f",
+    "scripts/execution_gateway_worker.py": "6ccc81c4253a8605e5ffd6c4dc05799cd7b61b327de832782c37ba54fbf7d516",
+    "scripts/run_gateway_gap_qa.py": "188ab1009bb7be8e662c0abe2ed443f83d4ab800b04ec76e4d12bb6bb95e66d2",
+    "config/execution-gate/source-lock.json": "4a43e5fcd6effc5bc4525a6cf13c1d1d50ca26d05c64f4f3c8b4e7a68351069e",
+    "scripts/native_gateway_worker.py": "2dc615adb5e94cc296c84ab4dc3ab7c14968bec6ad9792ca7d1280973eabbe2c",
+    "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+    "scripts/run_native_hermes_probe.py": "2f8f1097ed2e506c807cd9eb6870ca3a8772b93f411dcc579ba1b72aceb62a87",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7"
+  },
+  "paid_calls": 0,
+  "inference_calls": 0,
+  "tariff_is_fixture": true,
+  "actual_billing_verified": false,
+  "os_sandbox_claimed": false,
+  "ready": {
+    "pid": 39648,
+    "nonce": "b0faa02b40f92dddc2b2c9d4ce862d40",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "1963574084fe4239b60a0d19872b47b5",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 63716
+  },
+  "startup_seconds": 31.166,
+  "ready_deadline_seconds": 180,
+  "sdk_preload": {
+    "nonce": "b0faa02b40f92dddc2b2c9d4ce862d40",
+    "pid": 39648,
+    "class": "openai.OpenAI",
+    "elapsed_seconds": 3.713,
+    "client_constructed": false,
+    "model_requests": 0
+  },
+  "client_exit": 0,
+  "client": {
+    "nonce": "a3391ac1326201f61d3080204fdb6ad1",
+    "refusal": "host_http_404"
+  },
+  "exit": {
+    "nonce": "b0faa02b40f92dddc2b2c9d4ce862d40",
+    "launcher_pid": 37884,
+    "native_pid": 39648,
+    "ownership_chain": [
+      39648,
+      37884
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 39648,
+      "nonce": "b0faa02b40f92dddc2b2c9d4ce862d40",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0,
+      "blocked_destinations": []
+    }
+  },
+  "native_store": {
+    "admissions": [],
+    "messages": [],
+    "gate_rows": [],
+    "integrity": "ok"
+  },
+  "budget_store": [],
+  "wire_calls": [],
+  "fixture_errors": [],
+  "write_target_exists": false,
+  "code_drift": [],
+  "result": "PASS",
+  "elapsed_seconds": 35.624
+}

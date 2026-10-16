@@ -1,0 +1,24 @@
+--- a/packages/claw-hermes/execution_boundary.py
++++ b/packages/claw-hermes/execution_boundary.py
+@@ -116,6 +116,7 @@
+         token=settings['provider_bearer']
+         if type(token) is not str or not re.fullmatch(r'[\x21-\x7e]{32,256}',token):raise ExecutionDenied('invalid_provider_credential')
+         self.token=token;self.adapter=None
++        self._settings_digest=hashlib.sha256(_json(settings).encode()).hexdigest()
+         self.tools=GuardedFileTools(settings['allowed_read_files'],self.ledger)
+ 
+     def register(self,ctx):
+@@ -135,6 +136,13 @@
+     def validate_profile(self):
+         from hermes_cli.config import load_config_readonly
+         cfg=load_config_readonly()
++        try:
++            current=self.context.get_config('execution')
++            current_digest=hashlib.sha256(_json(current).encode()).hexdigest()
++        except Exception:
++            raise ExecutionDenied('execution_settings_unavailable') from None
++        if current_digest!=self._settings_digest:
++            raise ExecutionDenied('execution_settings_changed')
+         model=cfg.get('model',{})
+         expected=f'http://127.0.0.1:{self.adapter._port}'+PROVIDER_BASE
+         if model.get('base_url')!=expected or model.get('provider')!='custom' or model.get('default')!=self.policy.model:

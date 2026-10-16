@@ -1,0 +1,34 @@
+{
+  "scenario": "normal",
+  "result": "CORROBORATED",
+  "blocked_nonloopback_attempts": 0,
+  "clean_network_accepted": true,
+  "blocked_destination_attribution": null,
+  "receipt_sha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+  "startup_seconds": 78.221,
+  "startup_budget_seconds": 180,
+  "provider_wire_requests": 2,
+  "native_read_claims": 1,
+  "native_admissions": 1,
+  "reserved_tokens": 327680,
+  "reserved_cost_microusd": 393216,
+  "read_only_post_run_check": true,
+  "new_native_execution": false,
+  "live_revocation": {
+    "checks": [
+      {
+        "path": "/alaz/host/v1/capabilities",
+        "http_status": 503,
+        "code": "host_gate_unavailable"
+      },
+      {
+        "path": "/alaz/provider/v1/models",
+        "http_status": 403,
+        "code": "execution_boundary_unavailable"
+      }
+    ],
+    "no_new_reservation": true,
+    "no_new_model_request": true
+  },
+  "native_database_hash_unchanged": true
+}

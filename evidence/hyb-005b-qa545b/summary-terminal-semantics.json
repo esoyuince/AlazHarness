@@ -1,0 +1,28 @@
+{
+  "scope": "native terminal RESULT record resolves distinction from admission outcome; not a new execution",
+  "admission_outcome": "completed",
+  "native_terminal_fields": {
+    "completed": false,
+    "partial": false,
+    "failed": false,
+    "error": null,
+    "interrupted": false,
+    "final_response": "Native execution verified EXECUTION_2fc0b4090789ffc712d85a60f0126b3b",
+    "turn_exit_reason": "max_iterations_reached(1/1)",
+    "api_calls": 1
+  },
+  "native_terminal_usage": {
+    "input_tokens": 120,
+    "output_tokens": 20,
+    "total_tokens": 140
+  },
+  "http_status": "failed",
+  "derived_native_status": "failed",
+  "database_hash_unchanged": true,
+  "provider_claim_usage_sum": {
+    "input_tokens": 240,
+    "output_tokens": 40,
+    "total_tokens": 280
+  },
+  "task_succeeded": false
+}

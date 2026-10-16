@@ -50,29 +50,33 @@ def read_state(home: Path) -> dict:
 
 
 class Generation:
-    def __init__(self,python,source,out,env,number):
+    def __init__(self,python,source,out,env,number,*,worker=None,ready_timeout=70):
+        if type(ready_timeout) is not int or not 1<=ready_timeout<=180:
+            raise ValueError('Bounded integer startup timeout required')
         self.out=out;self.logdir=out/('generation-'+str(number));self.logdir.mkdir()
         if number>1:
             previous=out/('generation-'+str(number-1))
-            for name in CONTROL_FILES:
+            for name in (*CONTROL_FILES,'sdk-preload.json'):
                 p=out/name
                 if p.exists():
                     target=previous/name
                     if target.exists():raise FileExistsError('Refuse overwriting previous control evidence')
                     p.rename(target)
+        self.boot_started=time.monotonic()
         self.nonce=secrets.token_hex(16);self.owned=None;self.closed=False
         self.stdout=(self.logdir/'stdout.txt').open('w',encoding='utf-8')
         self.stderr=(self.logdir/'stderr.txt').open('w',encoding='utf-8')
-        self.child=subprocess.Popen([str(python),'-I','-B',str(ROOT/'scripts/native_gateway_worker.py'),str(source),str(out),self.nonce],
+        self.child=subprocess.Popen([str(python),'-I','-B',str(worker if worker is not None else ROOT/'scripts/native_gateway_worker.py'),str(source),str(out),self.nonce],
             cwd=out,env=env,stdin=subprocess.DEVNULL,stdout=self.stdout,stderr=self.stderr)
         try:
             self.wait_file('spawn.json',20)
             born=load(out/'spawn.json')
             if born.get('nonce')!=self.nonce:raise ValueError('Wrong process nonce')
             self.owned=OwnedGatewayProcess(self.child,born['pid'])
-            self.wait_file('ready.json',70);self.ready=load(out/'ready.json')
+            self.wait_file('ready.json',ready_timeout);self.ready=load(out/'ready.json')
             if self.ready['pid']!=self.owned.pid or self.ready['nonce']!=self.nonce:raise ValueError('Wrong native ready identity')
             if not self.ready['profile_bound']:raise ValueError('Wrong profile')
+            self.startup_seconds=round(time.monotonic()-self.boot_started,3)
         except BaseException:
             self.finish(kill=True);raise
     def wait_file(self,name,seconds):
@@ -103,6 +107,8 @@ class Generation:
               'ownership_chain':self.owned.chain if self.owned else [],'exit_code':self.child.returncode,
               'launcher_reaped':self.child.poll() is not None,'native_reaped':native_exited,'kill_requested':kill,
               'forced':forced,'shutdown':shutdown}
+            with (self.logdir/'exit-observation.json').open('x',encoding='utf-8') as record:
+                record.write(json.dumps(self.exit,indent=2)+'\n')
             return self.exit
         finally:
             if self.owned:self.owned.close()

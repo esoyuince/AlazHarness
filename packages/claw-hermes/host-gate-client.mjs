@@ -10,9 +10,11 @@ function plain(value) { return value && typeof value==='object' && !Array.isArra
 function text(value,limit) {return typeof value==='string' && value.trim().length>0 && Buffer.byteLength(value)<=limit;}
 
 export class HostGateClient {
-  #base; #token; #timeout; #limit; #runs; #permits=new WeakMap(); #attempted=new Set();
+  #base; #token; #timeout; #limit; #runs; #permits=new WeakMap(); #attempted=new Set(); #executionRequired;
   constructor(options={}) {
     // Reuse the proven endpoint/credential/timeout guards and readonly run observer.
+    if(options.requireExecution!==undefined&&typeof options.requireExecution!=='boolean')fail('invalid_execution_requirement');
+    this.#executionRequired=options.requireExecution===true;
     this.#runs=new HermesRunsClient(options);
     this.#base=new URL(options.baseUrl).origin;this.#token=options.token;
     this.#timeout=options.requestTimeoutMs??5000;this.#limit=options.maxResponseBytes??1048576;
@@ -25,6 +27,7 @@ export class HostGateClient {
       const response=await fetch(this.#base+path,{method,redirect:'error',
         signal:signal?AbortSignal.any([signal,timeout.signal]):timeout.signal,
         headers:{Authorization:'Bearer '+this.#token,Accept:'application/json',
+          ...(this.#executionRequired?{'X-Alaz-Execution-Version':'1'}:{}),
           ...(body===undefined?{}:{'Content-Type':'application/json'}),...(key?{'Idempotency-Key':key}:{})},
         ...(body===undefined?{}:{body:JSON.stringify(body)})});
       const reader=response.body?.getReader();const chunks=[];let total=0;
@@ -59,6 +62,7 @@ export class HostGateClient {
     const c=await this.#request('GET',BASE+'/capabilities',{signal});
     if(!plain(c)||c.hostGateVersion!==1||c.dispatchPath!==BASE+'/dispatch'||c.nativeStoreOwner!==true
       ||c.dispatchAtMostOnce!==true||c.automaticRetry!==false||c.scope!=='default_profile_new_run')fail('host_gate_required');
+    if(this.#executionRequired&&c.executionBoundaryVersion!==1)fail('execution_boundary_required');
     return Object.freeze(structuredClone(c));
   }
   async prepare(request,{signal}={}) {
@@ -70,6 +74,7 @@ export class HostGateClient {
     if(typeof requestId!=='string'||!ID.test(requestId)||!text(body.input,65536)||!text(body.model,200))
       fail('invalid_host_intent',{mayHaveBeenAccepted:false});
     if(this.#attempted.has(requestId))fail('host_dispatch_already_attempted',{mayHaveBeenAccepted:true});
+    if(this.#executionRequired)await this.capabilities({signal});
     const row=await this.#request('POST',BASE+'/intents',{body:{requestId,body},signal,expected:201});
     if(!plain(row)||row.hostGateVersion!==1||row.requestId!==requestId||typeof row.idempotencyKey!=='string'
       ||!KEY.test(row.idempotencyKey)||!row.idempotencyKey.endsWith('-'+requestId)||row.retryAllowed!==false
@@ -84,6 +89,7 @@ export class HostGateClient {
     if(!value)fail('foreign_host_permit',{mayHaveBeenAccepted:false});
     if(signal?.aborted)fail('aborted_before_request',{mayHaveBeenAccepted:false});
     if(this.#attempted.has(value.requestId))fail('host_dispatch_already_attempted',{mayHaveBeenAccepted:true,retryAllowed:false});
+    if(this.#executionRequired)await this.capabilities({signal});
     // A per-client guard adds no retry authority: durable enforcement is server-owned.
     this.#attempted.add(value.requestId);
     const result=await this.#request('POST',BASE+'/dispatch',{body:value.body,key:value.key,signal,expected:202});

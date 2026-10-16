@@ -1,0 +1,10 @@
+{
+  "scope": "14 offline synthetic manifest/client-receipt checks, not native runs",
+  "exit_code": 0,
+  "elapsed_seconds": 1.198,
+  "source_sha256": {
+    "tests\\test_execution_retained_qa3156.py": "3c884e8f60b832997344260ef3f218b00efba58d594a54e85345c7148accc33f",
+    "scripts\\qa\\execution_retained_qa3156.py": "01394d61b3ccf49346282900857b942d345d41704f550f837a1846cacf91cd27"
+  },
+  "code_drift": []
+}

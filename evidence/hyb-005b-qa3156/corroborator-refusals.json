@@ -1,0 +1,23 @@
+{
+  "scope": "corroborator refusal checks only; no new Gateway/provider test",
+  "checks": [
+    {
+      "name": "failed-native-not-accepted",
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 0
+    },
+    {
+      "name": "nonruntime-source-refused",
+      "exit_code": 1,
+      "failed": 1,
+      "passed": 0
+    },
+    {
+      "name": "existing-evidence-not-overwritten",
+      "exit_code": 1,
+      "file_unchanged": true
+    }
+  ],
+  "script_sha256": "5cf038a8dfb6ec0c390d58d6b0721fb64e6bead8f0e09f021af2a8565e7039d8"
+}

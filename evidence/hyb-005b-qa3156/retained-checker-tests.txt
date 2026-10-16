@@ -1,0 +1,19 @@
+test_any_403_not_accepted_as_budget_limit (test_execution_retained_qa3156.ClientIdentityTests.test_any_403_not_accepted_as_budget_limit) ... ok
+test_connection_failure_not_unknown_price_acceptance (test_execution_retained_qa3156.ClientIdentityTests.test_connection_failure_not_unknown_price_acceptance) ... ok
+test_exact_sdk_limit_receipt (test_execution_retained_qa3156.ClientIdentityTests.test_exact_sdk_limit_receipt) ... ok
+test_exact_unknown_price_refusal (test_execution_retained_qa3156.ClientIdentityTests.test_exact_unknown_price_refusal) ... ok
+test_missing_nonce_refuses (test_execution_retained_qa3156.ClientIdentityTests.test_missing_nonce_refuses) ... ok
+test_repeated_invocation_not_single_sdk_retry (test_execution_retained_qa3156.ClientIdentityTests.test_repeated_invocation_not_single_sdk_retry) ... ok
+test_success_not_accepted_as_retry_denial (test_execution_retained_qa3156.ClientIdentityTests.test_success_not_accepted_as_retry_denial) ... ok
+test_wrong_nonce_refuses (test_execution_retained_qa3156.ClientIdentityTests.test_wrong_nonce_refuses) ... ok
+test_changed_measured_source_refuses (test_execution_retained_qa3156.MeasuredProgramsTests.test_changed_measured_source_refuses) ... ok
+test_complete_unchanged_manifest (test_execution_retained_qa3156.MeasuredProgramsTests.test_complete_unchanged_manifest) ... ok
+test_empty_manifest_is_not_acceptance (test_execution_retained_qa3156.MeasuredProgramsTests.test_empty_manifest_is_not_acceptance) ... ok
+test_escape_path_refuses (test_execution_retained_qa3156.MeasuredProgramsTests.test_escape_path_refuses) ... ok
+test_malformed_sha_refuses (test_execution_retained_qa3156.MeasuredProgramsTests.test_malformed_sha_refuses) ... ok
+test_missing_measured_dependency_refuses (test_execution_retained_qa3156.MeasuredProgramsTests.test_missing_measured_dependency_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.511s
+
+OK

@@ -1,0 +1,11 @@
+test_changed_provider_token_is_not_implicitly_adopted (test_execution_live_gate.FinalBoundaryConfigurationTests.test_changed_provider_token_is_not_implicitly_adopted) ... ok
+test_ledger_rechecks_lowered_budget_before_owner_access (test_execution_live_gate.FinalBoundaryConfigurationTests.test_ledger_rechecks_lowered_budget_before_owner_access) ... ok
+test_nonfinite_policy_refuses_before_ledger (test_execution_live_gate.FinalBoundaryConfigurationTests.test_nonfinite_policy_refuses_before_ledger) ... ok
+test_reordered_settings_do_not_revoke_equal_policy (test_execution_live_gate.FinalBoundaryConfigurationTests.test_reordered_settings_do_not_revoke_equal_policy) ... ok
+test_tool_ledger_rechecks_revoked_allowlist (test_execution_live_gate.FinalBoundaryConfigurationTests.test_tool_ledger_rechecks_revoked_allowlist) ... ok
+test_unavailable_settings_are_not_default_permission (test_execution_live_gate.FinalBoundaryConfigurationTests.test_unavailable_settings_are_not_default_permission) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.045s
+
+OK

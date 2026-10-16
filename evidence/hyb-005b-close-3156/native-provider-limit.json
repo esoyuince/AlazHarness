@@ -1,0 +1,251 @@
+{
+  "scenario": "provider-limit",
+  "scope": "native public Gateway + real SDK/registry/file handler + physical HTTP gate; upstream model scripted",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "errors": [],
+  "product_sha256": {
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/execution_boundary.py": "6c3551297676635764cd464dc1159b12a8ba34799faa8bd96a7106cd909a348f",
+    "packages/claw-hermes/host_gate_plugin.py": "4db9c429b93bf71a10b06fb319ed65695e164f30a53d0f7185cf7fbd1a5cfa24",
+    "packages/claw-hermes/host-gate-client.mjs": "324bf51df5a639c1249d45edf3379803caba7d673375dcf406d9e69a7710a246",
+    "scripts/run_native_execution_gate.py": "17156b2b012375684bac7a60923eff972884b80e519abca272f29a9ef7eb7f80",
+    "scripts/native_execution_client.mjs": "39b0d9105d932df5e6df76de30bf6335bbb402555ccd7401336f9294b2db98aa",
+    "scripts/execution_model_fixture.py": "4813ba81dbcae073c00bb9868d0c84618bdc6dccf94f7bd6450cf1d3b43e7678",
+    "scripts/native_execution_sdk.py": "dad836cc16c25415524073886d8074769f5d153213b38ec9689bb321085fc11f",
+    "scripts/execution_gateway_worker.py": "6ccc81c4253a8605e5ffd6c4dc05799cd7b61b327de832782c37ba54fbf7d516",
+    "scripts/run_gateway_gap_qa.py": "188ab1009bb7be8e662c0abe2ed443f83d4ab800b04ec76e4d12bb6bb95e66d2",
+    "config/execution-gate/source-lock.json": "4a43e5fcd6effc5bc4525a6cf13c1d1d50ca26d05c64f4f3c8b4e7a68351069e",
+    "scripts/native_gateway_worker.py": "2dc615adb5e94cc296c84ab4dc3ab7c14968bec6ad9792ca7d1280973eabbe2c",
+    "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+    "scripts/run_native_hermes_probe.py": "2f8f1097ed2e506c807cd9eb6870ca3a8772b93f411dcc579ba1b72aceb62a87",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7"
+  },
+  "paid_calls": 0,
+  "inference_calls": 0,
+  "tariff_is_fixture": true,
+  "actual_billing_verified": false,
+  "os_sandbox_claimed": false,
+  "ready": {
+    "pid": 11420,
+    "nonce": "da2451e64abb251764f51c7735f4e28d",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "ba689044c0a54a3f92197af61c882938",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 50553
+  },
+  "startup_seconds": 34.528,
+  "ready_deadline_seconds": 180,
+  "sdk_preload": {
+    "nonce": "da2451e64abb251764f51c7735f4e28d",
+    "pid": 11420,
+    "class": "openai.OpenAI",
+    "elapsed_seconds": 2.812,
+    "client_constructed": false,
+    "model_requests": 0
+  },
+  "client_exit": 0,
+  "client": {
+    "nonce": "f8e8ee6d707b6ef8f9bfd2adf34e12db",
+    "runId": "run_071e146fed69434dac7ef108c7bfa906",
+    "final": {
+      "run": {
+        "object": "hermes.run",
+        "model": "alaz-scripted",
+        "created_at": 1792109439.7253015,
+        "pending_controls": [],
+        "run_id": "run_071e146fed69434dac7ef108c7bfa906",
+        "status": "failed",
+        "session_id": "run_071e146fed69434dac7ef108c7bfa906",
+        "admission_id": "c88fb0065edb492bacd7877a53a0ec45",
+        "execution_generation": 1,
+        "output": "custom rejected your API key, so the model can't be reached. Update it in Settings \u2192 Providers, or run `hermes setup` in a terminal.\n\nProvider said: HTTP 403: provider_attempt_limit",
+        "usage": {
+          "input_tokens": 120,
+          "output_tokens": 20,
+          "total_tokens": 140
+        }
+      },
+      "recoveryContractVersion": 1,
+      "classification": "canonical_terminal_reported",
+      "transportConfirmed": true,
+      "backendConfirmed": true,
+      "admissionReported": true,
+      "canonicalVerified": false,
+      "requiresOperator": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "nextAction": "retain_reported_outcome",
+      "stopRequested": false,
+      "hostReason": null
+    }
+  },
+  "exit": {
+    "nonce": "da2451e64abb251764f51c7735f4e28d",
+    "launcher_pid": 76248,
+    "native_pid": 11420,
+    "ownership_chain": [
+      11420,
+      76248
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 11420,
+      "nonce": "da2451e64abb251764f51c7735f4e28d",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0,
+      "blocked_destinations": []
+    }
+  },
+  "native_store": {
+    "admissions": [
+      {
+        "request_id": "run_071e146fed69434dac7ef108c7bfa906",
+        "status": "terminal",
+        "outcome": "failed"
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "tool_name": null,
+        "content": "Use the indicated file tool and report its result."
+      },
+      {
+        "role": "assistant",
+        "tool_name": null,
+        "content": ""
+      },
+      {
+        "role": "tool",
+        "tool_name": "read_file",
+        "content": "{\"content\": \"1|EXECUTION_827bc21b1f5d8e892cace0ec147c36df\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+      },
+      {
+        "role": "session_meta",
+        "tool_name": null,
+        "content": null
+      }
+    ],
+    "gate_rows": [
+      [
+        "alaz.host_gate.config.v1.e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+        {
+          "issued": 1,
+          "namespace": "7be7f8dc252241c0aeba7b1cd006b874",
+          "profileBinding": "73a184baa8d16bcea00c98c4b3cc3c963601634cbe3e6073f975cf83d35fcddf",
+          "scope": "e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+          "spent": 1,
+          "version": 1
+        }
+      ],
+      [
+        "alaz.host_gate.intent.v1.e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9.4cdd48e4b0bd5f51660cfcbc1007824c",
+        {
+          "consumedAtMs": 1792109439690,
+          "createdAtMs": 1792109439604,
+          "digest": "2cb7cd2fa6bf26e33e1b276f9c04f4551de08cbecf415a2a74c04152ac00a59f",
+          "dispatchState": "consumed",
+          "epoch": 1,
+          "expiresAtMs": 1792109739604,
+          "fingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+          "instanceId": "ba689044c0a54a3f92197af61c882938",
+          "key": "ah1-7be7f8dc252241c0aeba7b1cd006b874-4cdd48e4b0bd5f51660cfcbc1007824c",
+          "profileBinding": "73a184baa8d16bcea00c98c4b3cc3c963601634cbe3e6073f975cf83d35fcddf",
+          "requestId": "4cdd48e4b0bd5f51660cfcbc1007824c",
+          "scope": "e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+          "version": 1
+        }
+      ]
+    ],
+    "integrity": "ok"
+  },
+  "budget_store": [
+    [
+      "alaz.execution.claim.v1.e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9.673929c9606d4b60a0202509e3ebb99e",
+      {
+        "binding": "73a184baa8d16bcea00c98c4b3cc3c963601634cbe3e6073f975cf83d35fcddf",
+        "costMicrousd": 0,
+        "digest": "97ea7574220236bf3a141187a874eaee0091a9aa188c4ce3d045d50f0d9ec481",
+        "epoch": 1,
+        "fingerprint": "6774bb7f0cb1e0dde67490b0d283f6127c20acf0041cd5318f049cd6d577463f",
+        "instance": "ba689044c0a54a3f92197af61c882938",
+        "kind": "read_file",
+        "outcome": "tool_return",
+        "policy": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+        "scope": "e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+        "state": "settled",
+        "ticket": "673929c9606d4b60a0202509e3ebb99e",
+        "tokens": 0,
+        "usage": null,
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.claim.v1.e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9.c5db8ddf705f472f8a225fdfcd4a2ef4",
+      {
+        "binding": "73a184baa8d16bcea00c98c4b3cc3c963601634cbe3e6073f975cf83d35fcddf",
+        "costMicrousd": 196608,
+        "digest": "94338191f7e66ffad3c49233a741627edefb5e5dde40477e6858f38fd28978c6",
+        "epoch": 1,
+        "fingerprint": "4c41fd530b50bc2709506bb743cd61d5af73c34739a0fbe999e367dacc0ff1e5",
+        "instance": "ba689044c0a54a3f92197af61c882938",
+        "kind": "provider",
+        "outcome": "response",
+        "policy": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+        "scope": "e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+        "state": "settled",
+        "ticket": "c5db8ddf705f472f8a225fdfcd4a2ef4",
+        "tokens": 163840,
+        "usage": {
+          "input_tokens": 120,
+          "output_tokens": 20
+        },
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.config.v1.e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+      {
+        "binding": "73a184baa8d16bcea00c98c4b3cc3c963601634cbe3e6073f975cf83d35fcddf",
+        "digest": "a1a2231d383640cfa91b1a0d5c303b79d4d0ade7b1fa5107bf8d1912fc2b6b64",
+        "policy": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+        "providerCalls": 1,
+        "quarantined": false,
+        "reservedCostMicrousd": 196608,
+        "reservedTokens": 163840,
+        "scope": "e43f42189ef925662eef08c5c32e701caaecf612265f1718a73947bafdfd3cf9",
+        "toolCalls": 1,
+        "version": 1
+      }
+    ]
+  ],
+  "wire_calls": [
+    {
+      "path": "/v1/chat/completions",
+      "stream": false,
+      "model": "alaz-scripted",
+      "tool_result": false,
+      "tool_choice": null,
+      "tools_present": true,
+      "max_tokens": 32768
+    }
+  ],
+  "fixture_errors": [],
+  "write_target_exists": false,
+  "code_drift": [],
+  "result": "PASS",
+  "elapsed_seconds": 55.026
+}

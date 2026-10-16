@@ -152,3 +152,13 @@ loopback fixtures. Native plugin/Gateway and selected aiohttp component probes
 are opt-in separate results. No Hermes/aiohttp install is added to standard CI.
 At-most-once dispatch is not token/currency budget or full M1 acceptance. See
 docs/HYB-005A-HOST-GATE.md and exact evidence/hyb-005a receipts.
+
+## HYB-005B execution slice
+
+Default CI runs the actual policy/ledger/parser/client logic with synthetic owners
+and local fixtures. It does not install Hermes/aiohttp or run native Gateway, SDK
+wire-count controls or the opt-in27-case aiohttp matrix. The seven final native
+scenarios and eight graceful Gateway process lifetimes are local evidence only.
+An iteration-limit summary can be charged correctly while the job is incomplete;
+its failed strict task-success assertion is preserved, not part of an offline
+unittest failure count. Exact suite count is taken from each run receipt.

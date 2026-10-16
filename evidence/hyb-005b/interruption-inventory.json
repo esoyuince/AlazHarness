@@ -1,0 +1,100 @@
+{
+  "scope": "retrospective interruption inventory, no prior failures promoted to PASS",
+  "previous_owner_receipts": "RESULT_UNAVAILABLE after lane expiry",
+  "last_published_commit": "30b205fa271d40956f02090896afdd1878377f57",
+  "prior_records": [
+    {
+      "directory": "normal-trial-01",
+      "result": "FAIL",
+      "errors": [
+        "TimeoutError: ready.json"
+      ],
+      "wire_requests": 0,
+      "code_drift": [],
+      "receipt_sha256": "20d053cbb7206cbbc1ab6c50c4e35583d7f6a095b018c17af5a82e1d977b5ff7"
+    },
+    {
+      "directory": "normal-trial-02",
+      "result": "FAIL",
+      "errors": [
+        "AssertionError: (0, 0, 2)"
+      ],
+      "wire_requests": 0,
+      "code_drift": [],
+      "receipt_sha256": "0818f290df2fed6e63b088b46beca5a1e625ce908239b5e7df113a1e95acc404"
+    },
+    {
+      "directory": "qualified-normal",
+      "result": "FAIL",
+      "errors": [
+        "Fixture error or program drift"
+      ],
+      "wire_requests": 2,
+      "code_drift": [
+        "packages/claw-hermes/execution_budget.py",
+        "packages/claw-hermes/execution_boundary.py"
+      ],
+      "receipt_sha256": "6c4425e077cf6693ee7664a8d48039ca0cbaf74d79266a2d97f584d2c3bbd0b5"
+    },
+    {
+      "directory": "final-provider-limit",
+      "result": "FAIL",
+      "errors": [
+        "TimeoutError: ready.json"
+      ],
+      "wire_requests": 0,
+      "code_drift": [],
+      "receipt_sha256": "b1b3291bafb871fff1c3077416a3bdebb6dee0b661de8dcab57febc83ca3782f"
+    },
+    {
+      "directory": "final-normal",
+      "result": "FAIL",
+      "errors": [
+        "TimeoutError: ready.json"
+      ],
+      "wire_requests": 0,
+      "code_drift": [],
+      "receipt_sha256": "4af5a2b6dbbcbb6d479439390b41c5c93361c71f3dc81ff3370e41af495df9fd"
+    },
+    {
+      "directory": "final-denied-write",
+      "result": "FAIL",
+      "errors": [
+        "TimeoutError: ready.json"
+      ],
+      "wire_requests": 0,
+      "code_drift": [],
+      "receipt_sha256": "418432107cbe6f778dd8f89418116662a13d2a2bc58df9708ad51d95be9c0eb8"
+    },
+    {
+      "directory": "final-tool-limit",
+      "result": "FAIL",
+      "errors": [
+        "TimeoutError: ready.json"
+      ],
+      "wire_requests": 0,
+      "code_drift": [],
+      "receipt_sha256": "2b7d016db814b3516162c10e73464801924760f802ff3c84a3648f9b7decdbec"
+    },
+    {
+      "directory": "final-sdk-retry-limit",
+      "result": "UNKNOWN",
+      "receipt_present": false,
+      "reexecuted_in_place": false
+    },
+    {
+      "directory": "final-summary",
+      "result": "UNKNOWN",
+      "receipt_present": false,
+      "reexecuted_in_place": false
+    },
+    {
+      "directory": "final-unknown-price",
+      "result": "NOT_RUN",
+      "receipt_present": false,
+      "reexecuted_in_place": false
+    }
+  ],
+  "prior_live_project_processes_at_resume": 0,
+  "prior_full_suite_result": "UNCONFIRMED"
+}

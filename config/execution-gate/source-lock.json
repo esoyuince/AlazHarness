@@ -1,0 +1,26 @@
+{
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "scope": "selected physical client/tool boundary files; not whole runtime attestation",
+  "files": [
+    {
+      "path": "tools/registry.py",
+      "sha256": "eecf43c6578e2a0bb78e5d795cba150e00e704395d37490bf2217ab55a923296"
+    },
+    {
+      "path": "tools/file_tools.py",
+      "sha256": "1a23773abe410feb5dd99276d08b6c0837624309ea489c508d683c6965408f94"
+    },
+    {
+      "path": "model_tools.py",
+      "sha256": "fbb40d0058e3edd6c4e1608b8db9e922aaf38d2c9d0438c3811c6d6b01b45340"
+    },
+    {
+      "path": "agent/turn_api_call.py",
+      "sha256": "2897575995d8dcbe94bba666ef66043a64c52a6c99e72c45e7da64a5fbdf576b"
+    },
+    {
+      "path": "agent/auxiliary_client.py",
+      "sha256": "1b0a5da07f8c90152110ba2e77f413f204f6a6f6fe2971ad115cfd8acfb59fa0"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "scope": "prior sequential functional observation exceeded its60-second bound; NOT a PASS",
+  "scenario": "normal",
+  "errors": [
+    "RuntimeError: Native client failed; inspect local stderr"
+  ],
+  "startup_seconds": 140.671,
+  "ready_deadline_seconds": 180,
+  "client_exit": 1,
+  "cleanup_exit": {
+    "nonce": "d27fa73802c185e77ac55d99c5d69b56",
+    "launcher_pid": 72000,
+    "native_pid": 61712,
+    "ownership_chain": [
+      61712,
+      72000
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 61712,
+      "nonce": "d27fa73802c185e77ac55d99c5d69b56",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 6
+    }
+  },
+  "wire_requests": 1,
+  "product_sha256": {
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/execution_boundary.py": "b989895c285164939f53ded5320f104c8af8d8b73d298a7e22109f4910f1d809",
+    "packages/claw-hermes/host_gate_plugin.py": "4db9c429b93bf71a10b06fb319ed65695e164f30a53d0f7185cf7fbd1a5cfa24",
+    "packages/claw-hermes/host-gate-client.mjs": "324bf51df5a639c1249d45edf3379803caba7d673375dcf406d9e69a7710a246",
+    "scripts/run_native_execution_gate.py": "d0052d502d9b7176f6d57d1710b222e32e824aa078b0ffbe32c328b8fbd786c8",
+    "scripts/native_execution_client.mjs": "39b0d9105d932df5e6df76de30bf6335bbb402555ccd7401336f9294b2db98aa",
+    "scripts/execution_model_fixture.py": "4813ba81dbcae073c00bb9868d0c84618bdc6dccf94f7bd6450cf1d3b43e7678",
+    "scripts/native_execution_sdk.py": "dad836cc16c25415524073886d8074769f5d153213b38ec9689bb321085fc11f",
+    "scripts/execution_gateway_worker.py": "0efc1269068b80d9574401bd39a6df0bbf1f5347660df98ee61e5f71ae7029d6",
+    "scripts/run_gateway_gap_qa.py": "e706d1c5189a5aa26096d40c63e9b4ace3f451b9b3c493a68bc6012b2b636aa1",
+    "config/execution-gate/source-lock.json": "4a43e5fcd6effc5bc4525a6cf13c1d1d50ca26d05c64f4f3c8b4e7a68351069e",
+    "scripts/native_gateway_worker.py": "cc163a9da783c403f627984cf8f61d8ab6353c82fc0959435ef2561a8843a41a",
+    "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+    "scripts/run_native_hermes_probe.py": "2f8f1097ed2e506c807cd9eb6870ca3a8772b93f411dcc579ba1b72aceb62a87",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7"
+  },
+  "code_drift": [],
+  "interpretation": "Installed SDK model types were still importing after Gateway readiness. The next fresh probe preloads only the SDK class during test startup, without constructing a client, bypassing native functions or changing60s task/30s provider limits."
+}

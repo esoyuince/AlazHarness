@@ -1,0 +1,9 @@
+{
+  "scope": "QA custody snapshot; does not establish final Git or runtime acceptance",
+  "root_files_preserved": 32,
+  "root_drift": [],
+  "our_product_code_changes": false,
+  "new_dependencies_installed": false,
+  "native_runs_launched_by_qa545b": 0,
+  "paid_calls": 0
+}

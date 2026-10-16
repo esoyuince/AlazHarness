@@ -1,0 +1,14 @@
+{
+  "scope": "MEMORY-ONLY PROPOSED PATCH + 8 detached-profile component tests; NOT installed product acceptance",
+  "proposal_only": true,
+  "source_file_unchanged": true,
+  "base_sha256": "b989895c285164939f53ded5320f104c8af8d8b73d298a7e22109f4910f1d809",
+  "proposed_utf8_sha256": "8e767163c1f98d0275ac1bd6bd908e30aa23b33311474aa94772d975c5fdb03f",
+  "discovered": 8,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 0.065,
+  "test_sha256": "4241f4621cd78b5385bba6ada5c979a175cc8a4f48220a6ad03910269aa87192",
+  "native_gateway": false
+}

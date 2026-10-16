@@ -1,0 +1,50 @@
+test_before_commit_failure_rolls_back_claim (test_execution_gate_qa.BudgetIndependentTests.test_before_commit_failure_rolls_back_claim) ... ok
+test_bool_usage_is_not_one_token (test_execution_gate_qa.BudgetIndependentTests.test_bool_usage_is_not_one_token) ... ok
+test_changed_settlement_conflicts_without_refund (test_execution_gate_qa.BudgetIndependentTests.test_changed_settlement_conflicts_without_refund) ... ok
+test_concurrent_twenty_requests_only_three_claims (test_execution_gate_qa.BudgetIndependentTests.test_concurrent_twenty_requests_only_three_claims) ... ok
+test_cost_ceiling_stops_before_claim (test_execution_gate_qa.BudgetIndependentTests.test_cost_ceiling_stops_before_claim) ... ok
+test_deleted_claim_cannot_recreate_budget (test_execution_gate_qa.BudgetIndependentTests.test_deleted_claim_cannot_recreate_budget) ... ok
+test_dishonest_counter_not_trusted_even_with_valid_digest (test_execution_gate_qa.BudgetIndependentTests.test_dishonest_counter_not_trusted_even_with_valid_digest) ... ok
+test_dishonest_token_total_refused (test_execution_gate_qa.BudgetIndependentTests.test_dishonest_token_total_refused) ... ok
+test_float_nan_infinite_limits_refused (test_execution_gate_qa.BudgetIndependentTests.test_float_nan_infinite_limits_refused) ... ok
+test_foreign_database_refused (test_execution_gate_qa.BudgetIndependentTests.test_foreign_database_refused) ... ok
+test_full_exposure_reserved_before_settlement (test_execution_gate_qa.BudgetIndependentTests.test_full_exposure_reserved_before_settlement) ... ok
+test_initialize_cannot_reset_live_counters (test_execution_gate_qa.BudgetIndependentTests.test_initialize_cannot_reset_live_counters) ... ok
+test_invalid_fingerprint_does_not_claim (test_execution_gate_qa.BudgetIndependentTests.test_invalid_fingerprint_does_not_claim) ... ok
+test_invalid_kind_does_not_claim (test_execution_gate_qa.BudgetIndependentTests.test_invalid_kind_does_not_claim) ... ok
+test_lost_commit_ack_is_permanent_exposure (test_execution_gate_qa.BudgetIndependentTests.test_lost_commit_ack_is_permanent_exposure) ... ok
+test_lost_settlement_ack_can_read_same_settlement (test_execution_gate_qa.BudgetIndependentTests.test_lost_settlement_ack_can_read_same_settlement) ... ok
+test_low_usage_never_refunds_reservation (test_execution_gate_qa.BudgetIndependentTests.test_low_usage_never_refunds_reservation) ... ok
+test_missing_budget_refuses_claim (test_execution_gate_qa.BudgetIndependentTests.test_missing_budget_refuses_claim) ... ok
+test_missing_config_over_retained_claims_refused (test_execution_gate_qa.BudgetIndependentTests.test_missing_config_over_retained_claims_refused) ... ok
+test_missing_history_no_implicit_initialize_on_claim (test_execution_gate_qa.BudgetIndependentTests.test_missing_history_no_implicit_initialize_on_claim) ... ok
+test_modified_digest_refused (test_execution_gate_qa.BudgetIndependentTests.test_modified_digest_refused) ... ok
+test_negative_usage_does_not_restore_budget (test_execution_gate_qa.BudgetIndependentTests.test_negative_usage_does_not_restore_budget) ... ok
+test_new_epoch_preserves_reserved_exposure (test_execution_gate_qa.BudgetIndependentTests.test_new_epoch_preserves_reserved_exposure) ... ok
+test_overreported_usage_quarantines_future_claims (test_execution_gate_qa.BudgetIndependentTests.test_overreported_usage_quarantines_future_claims) ... ok
+test_policy_change_refuses_old_budget (test_execution_gate_qa.BudgetIndependentTests.test_policy_change_refuses_old_budget) ... ok
+test_previous_epoch_claim_not_settled_by_new_owner (test_execution_gate_qa.BudgetIndependentTests.test_previous_epoch_claim_not_settled_by_new_owner) ... ok
+test_provider_cannot_settle_as_tool_return (test_execution_gate_qa.BudgetIndependentTests.test_provider_cannot_settle_as_tool_return) ... ok
+test_returned_claim_is_not_stored_object (test_execution_gate_qa.BudgetIndependentTests.test_returned_claim_is_not_stored_object) ... ok
+test_rounding_is_up_not_down (test_execution_gate_qa.BudgetIndependentTests.test_rounding_is_up_not_down) ... ok
+test_same_settlement_replay_unchanged (test_execution_gate_qa.BudgetIndependentTests.test_same_settlement_replay_unchanged) ... ok
+test_stale_epoch_refuses (test_execution_gate_qa.BudgetIndependentTests.test_stale_epoch_refuses) ... ok
+test_three_provider_attempts_not_four (test_execution_gate_qa.BudgetIndependentTests.test_three_provider_attempts_not_four) ... ok
+test_token_ceiling_stops_before_claim (test_execution_gate_qa.BudgetIndependentTests.test_token_ceiling_stops_before_claim) ... ok
+test_tool_cannot_settle_as_provider_response (test_execution_gate_qa.BudgetIndependentTests.test_tool_cannot_settle_as_provider_response) ... ok
+test_tool_claim_separate_and_zero_model_exposure (test_execution_gate_qa.BudgetIndependentTests.test_tool_claim_separate_and_zero_model_exposure) ... ok
+test_tools_hit_their_own_cap (test_execution_gate_qa.BudgetIndependentTests.test_tools_hit_their_own_cap) ... ok
+test_transport_failure_never_refunds (test_execution_gate_qa.BudgetIndependentTests.test_transport_failure_never_refunds) ... ok
+test_trigger_refused (test_execution_gate_qa.BudgetIndependentTests.test_trigger_refused) ... ok
+test_unknown_price_is_not_free (test_execution_gate_qa.BudgetIndependentTests.test_unknown_price_is_not_free) ... ok
+test_unknown_ticket_refused (test_execution_gate_qa.BudgetIndependentTests.test_unknown_ticket_refused) ... ok
+test_unknown_usage_field_is_not_silently_ignored (test_execution_gate_qa.BudgetIndependentTests.test_unknown_usage_field_is_not_silently_ignored) ... ok
+test_unknown_usage_stays_full_exposure (test_execution_gate_qa.BudgetIndependentTests.test_unknown_usage_stays_full_exposure) ... ok
+test_wrong_reservation_token_value_refused (test_execution_gate_qa.BudgetIndependentTests.test_wrong_reservation_token_value_refused) ... ok
+test_zero_call_allowance_does_not_mean_unlimited (test_execution_gate_qa.BudgetIndependentTests.test_zero_call_allowance_does_not_mean_unlimited) ... ok
+test_zero_explicit_tariff_can_represent_free_fixture (test_execution_gate_qa.BudgetIndependentTests.test_zero_explicit_tariff_can_represent_free_fixture) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 4.974s
+
+OK

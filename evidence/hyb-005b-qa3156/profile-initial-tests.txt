@@ -1,0 +1,49 @@
+test_changed_live_upstream_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_live_upstream_is_not_silently_ignored) ... FAIL
+test_changed_main_credential_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_main_credential_refuses) ... ok
+test_changed_main_route_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_main_route_refuses) ... ok
+test_lowered_live_budget_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_lowered_live_budget_is_not_silently_ignored) ... FAIL
+test_missing_live_execution_settings_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_live_execution_settings_refuses) ... FAIL
+test_missing_registry_guard_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_registry_guard_refuses) ... ok
+test_revoked_live_file_allowlist_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_revoked_live_file_allowlist_is_not_silently_ignored) ... FAIL
+test_unchanged_profile_is_accepted (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_unchanged_profile_is_accepted) ... ok
+
+======================================================================
+FAIL: test_changed_live_upstream_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_live_upstream_is_not_silently_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_execution_profile_qa3156.py", line 64, in test_changed_live_upstream_is_not_silently_ignored
+    with self.assertRaises(ExecutionDenied):self.boundary.validate_profile()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_lowered_live_budget_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_lowered_live_budget_is_not_silently_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_execution_profile_qa3156.py", line 58, in test_lowered_live_budget_is_not_silently_ignored
+    with self.assertRaises(ExecutionDenied):self.boundary.validate_profile()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_missing_live_execution_settings_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_live_execution_settings_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_execution_profile_qa3156.py", line 67, in test_missing_live_execution_settings_refuses
+    with self.assertRaises(ExecutionDenied):self.boundary.validate_profile()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_revoked_live_file_allowlist_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_revoked_live_file_allowlist_is_not_silently_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88\tests\test_execution_profile_qa3156.py", line 61, in test_revoked_live_file_allowlist_is_not_silently_ignored
+    with self.assertRaises(ExecutionDenied):self.boundary.validate_profile()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.098s
+
+FAILED (failures=4)

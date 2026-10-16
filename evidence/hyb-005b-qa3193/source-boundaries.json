@@ -1,0 +1,98 @@
+{
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "scope": "selected source boundary review, not dynamic acceptance",
+  "files": [
+    {
+      "path": "agent/agent_runtime_helpers.py",
+      "sha256": "295bd0adcb698ddeb87966f77a79ef1c8016702641db401bfe692ffb63e0dd49",
+      "reviewed_ranges": [
+        [
+          2072,
+          2080
+        ]
+      ],
+      "finding": "Primary OpenAI constructor uses setdefault(max_retries,0); an explicit override is not forced to zero. Adjacent comment saying auxiliaries keep SDK retries is stale relative to auxiliary_client code.",
+      "classification": "static_source_not_executed_here"
+    },
+    {
+      "path": "agent/auxiliary_client.py",
+      "sha256": "1b0a5da07f8c90152110ba2e77f413f204f6a6f6fe2971ad115cfd8acfb59fa0",
+      "reviewed_ranges": [
+        [
+          181,
+          196
+        ]
+      ],
+      "finding": "Auxiliary OpenAI constructor also setdefault(max_retries,0), but explicit override allowed. Do not claim default hidden SDK retries without a wire test.",
+      "classification": "static_source_not_executed_here"
+    },
+    {
+      "path": "agent/relay_runtime.py",
+      "sha256": "d784442a61844306ce5769e9065243b8670a67b18d6d929446bfbef021c77725",
+      "reviewed_ranges": [
+        [
+          933,
+          950
+        ]
+      ],
+      "finding": "Managed callback guard marks nested work unmanaged; Relay presence alone is not complete physical-attempt coverage.",
+      "classification": "static_source_not_executed_here"
+    },
+    {
+      "path": "agent/relay_llm.py",
+      "sha256": "9a2a0242bdafdf33c1bf8f38219a7aba318d87c6ea65657b7d888c55ae9b85ea",
+      "reviewed_ranges": [
+        [
+          59,
+          71
+        ],
+        [
+          181,
+          189
+        ]
+      ],
+      "finding": "Missing execution context/disabled Relay can call provider directly. Generic Relay callback not a mandatory host perimeter.",
+      "classification": "static_source_not_executed_here"
+    },
+    {
+      "path": "agent/relay_tools.py",
+      "sha256": "33c6ce0518746628a3d3045057d2d3a1f61da6f4fcddb4abbae6e79db2c4fa2c",
+      "reviewed_ranges": [
+        [
+          16,
+          35
+        ]
+      ],
+      "finding": "Tool path unmanaged without context, and nested tool work may bypass managed Relay.",
+      "classification": "static_source_not_executed_here"
+    },
+    {
+      "path": "agent/tool_executor.py",
+      "sha256": "6a24abd8bb5dfa518f215782eaace3aabf4b0c3c869d93856513604db6d4ac5c",
+      "reviewed_ranges": [
+        [
+          671,
+          685
+        ],
+        [
+          688,
+          734
+        ]
+      ],
+      "finding": "pre_tool_call exceptions return no block; actual final arguments may be modified by pre-hooks after request middleware.",
+      "classification": "static_source_not_executed_here"
+    },
+    {
+      "path": "hermes_cli/plugins.py",
+      "sha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568",
+      "reviewed_ranges": [
+        [
+          1981,
+          2033
+        ]
+      ],
+      "finding": "Explicit block needs nonempty message. Modify returns merge args; one valid block wins, but absence/irrelevant result is not refusal.",
+      "classification": "static_source_not_executed_here"
+    }
+  ]
+}

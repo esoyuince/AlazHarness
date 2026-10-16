@@ -1,0 +1,11 @@
+{
+  "scope": "independent real ExecutionLedger/Policy with synthetic SQLite owner, not native Gateway",
+  "exit_code": 1,
+  "hashes": {
+    "packages\\claw-hermes\\execution_budget.py": "2e48b4d0f831a2bc3f5db20b5457802cecb64e0bfcf9ee28faa3d8f3ed482abd",
+    "tests\\test_execution_gate_qa.py": "2a5eb2c44557290c372b6a9e0b50ff551a326ccfa91853b92ec0e504d4630daf"
+  },
+  "code_drift": [],
+  "elapsed_seconds": 4.843,
+  "tests": 45
+}

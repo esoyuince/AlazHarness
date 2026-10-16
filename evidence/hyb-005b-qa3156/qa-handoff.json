@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-16T02:15:57.614845+03:00",
+  "head": "30b205fa271d40956f02090896afdd1878377f57",
+  "scope": "QA3156 evidence handoff, not HYB005B product acceptance",
+  "current_selected_tests": {
+    "discovered": 22,
+    "passed": 18,
+    "failed": 4,
+    "errors": 0,
+    "exit_code": 1
+  },
+  "proposal_only_tests": {
+    "discovered": 8,
+    "failed": 0,
+    "applied_to_product": false
+  },
+  "root_preserved_file_count": 32,
+  "root_drift": [],
+  "status_mirror": "synced",
+  "files_sha256": {
+    "tests/test_execution_profile_qa3156.py": "4241f4621cd78b5385bba6ada5c979a175cc8a4f48220a6ad03910269aa87192",
+    "tests/test_execution_retained_qa3156.py": "3c884e8f60b832997344260ef3f218b00efba58d594a54e85345c7148accc33f",
+    "scripts/qa/execution_retained_qa3156.py": "01394d61b3ccf49346282900857b942d345d41704f550f837a1846cacf91cd27",
+    "docs/research/HYB-005B-QA3156.md": "bb61d2072ba977f3ed20b00008de3491ff9288893efffa0a8bee61072b6f1502",
+    "evidence/hyb-005b-qa3156/c01-memory-only-proposal-run.json": "248368d040620f51244181162ac0cd427d9ecfdee9fe3ea27d421622bb14e499",
+    "evidence/hyb-005b-qa3156/c01-memory-only-proposal-tests.txt": "1546bd7b0a6a1c2d7226bf284ad67a923e3818bb1b7f9a64755458fe3148c312",
+    "evidence/hyb-005b-qa3156/c01-memory-only-proposal.patch": "98184ba2e51fb1902a4dd871ce198f53400e924b2e382ebe866af53bbe5c7170",
+    "evidence/hyb-005b-qa3156/corroborator-refusals.json": "89f0c4ec28230e13186b8f7773b836b2434490a0fba5569926e4aaa6b39ef9e8",
+    "evidence/hyb-005b-qa3156/profile-initial-run.json": "d18f3ad8f57ac61760f453a162fa13d888cb7b38bc4d9759c05f8f0f62ca78cf",
+    "evidence/hyb-005b-qa3156/profile-initial-tests.txt": "3251a64055c22467d6df9e551d2e0bbb553c26cefdd19e58d05f4e64f9604276",
+    "evidence/hyb-005b-qa3156/retained-checker-run.json": "da39c5c4e556eb6b2ce1e16007c7aaf83af2207ba0705f3b50d691de2a319ddd",
+    "evidence/hyb-005b-qa3156/retained-checker-tests.txt": "bca1f09cb3fe307aa8b136f39e680d860b80c041d47cfcdc821e44d8c7417dc9",
+    "evidence/hyb-005b-qa3156/selection-current-run.json": "c7d9798adba978f8d7915f20a2470c3b85a2afe826ff6780c93c3a600f2872d9",
+    "evidence/hyb-005b-qa3156/selection-current-tests.txt": "b621fb2f8fa529a4b606d3b8431386360f0074943ae941b724de1a5fbab24f46"
+  }
+}

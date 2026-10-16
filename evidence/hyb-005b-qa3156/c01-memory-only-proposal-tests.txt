@@ -1,0 +1,13 @@
+test_changed_live_upstream_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_live_upstream_is_not_silently_ignored) ... ok
+test_changed_main_credential_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_main_credential_refuses) ... ok
+test_changed_main_route_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_main_route_refuses) ... ok
+test_lowered_live_budget_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_lowered_live_budget_is_not_silently_ignored) ... ok
+test_missing_live_execution_settings_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_live_execution_settings_refuses) ... ok
+test_missing_registry_guard_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_registry_guard_refuses) ... ok
+test_revoked_live_file_allowlist_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_revoked_live_file_allowlist_is_not_silently_ignored) ... ok
+test_unchanged_profile_is_accepted (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_unchanged_profile_is_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.064s
+
+OK

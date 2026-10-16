@@ -1,0 +1,8 @@
+{
+  "scope": "independent probe overwrite guard only; not host budget",
+  "exit_code": 1,
+  "observed": "FileExistsError",
+  "sentinel_preserved": true,
+  "provider_calls": 0,
+  "source_code_sha256": "f87079b987303ec02d4c601814ca663a6703ce3092319708e58ee2dc76ef9105"
+}

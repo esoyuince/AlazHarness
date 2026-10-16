@@ -1,0 +1,218 @@
+{
+  "scope": "qualified first work completed but reopen failed; overall FAIL preserved",
+  "whole_scenario_result": "FAIL",
+  "errors": [
+    "RuntimeError: Native child exited before ready.json"
+  ],
+  "first_exit": {
+    "nonce": "e6c17a8ca3317af18ddb8b52595a97d9",
+    "launcher_pid": 23116,
+    "native_pid": 64456,
+    "ownership_chain": [
+      64456,
+      23116
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 64456,
+      "nonce": "e6c17a8ca3317af18ddb8b52595a97d9",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 6
+    }
+  },
+  "first_native_store": {
+    "admissions": [
+      {
+        "request_id": "run_38a9151b153c4281962c122cf5f0585d",
+        "status": "terminal",
+        "outcome": "completed"
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "tool_name": null,
+        "content": "Use the indicated file tool and report its result."
+      },
+      {
+        "role": "assistant",
+        "tool_name": null,
+        "content": ""
+      },
+      {
+        "role": "tool",
+        "tool_name": "read_file",
+        "content": "{\"content\": \"1|EXECUTION_4dc1c6234af05c3111d54a38ca49b167\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+      },
+      {
+        "role": "assistant",
+        "tool_name": null,
+        "content": "Native execution verified EXECUTION_4dc1c6234af05c3111d54a38ca49b167"
+      },
+      {
+        "role": "session_meta",
+        "tool_name": null,
+        "content": null
+      }
+    ],
+    "gate_rows": [
+      [
+        "alaz.host_gate.config.v1.9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+        {
+          "issued": 1,
+          "namespace": "e0625be5b2ac4ad7912cba628e865292",
+          "profileBinding": "8914a0393bad44ed3273556afaa45e7270940cee642ad0f9f4c9743e501536b1",
+          "scope": "9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+          "spent": 1,
+          "version": 1
+        }
+      ],
+      [
+        "alaz.host_gate.intent.v1.9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335.324160c06a9e3b608b67c556fd6eef77",
+        {
+          "consumedAtMs": 1792105823456,
+          "createdAtMs": 1792105823371,
+          "digest": "e3e824f1e31d6f9b3721a4f47bc0fa0e56e7ca2a6247e9e94e2e4e3c5b71c560",
+          "dispatchState": "consumed",
+          "epoch": 1,
+          "expiresAtMs": 1792106123371,
+          "fingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+          "instanceId": "8d8a4e697fcf4b939305822d32439b5d",
+          "key": "ah1-e0625be5b2ac4ad7912cba628e865292-324160c06a9e3b608b67c556fd6eef77",
+          "profileBinding": "8914a0393bad44ed3273556afaa45e7270940cee642ad0f9f4c9743e501536b1",
+          "requestId": "324160c06a9e3b608b67c556fd6eef77",
+          "scope": "9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+          "version": 1
+        }
+      ]
+    ],
+    "integrity": "ok"
+  },
+  "first_budget_store": [
+    [
+      "alaz.execution.claim.v1.9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335.39316ed5074b4360aa269db013af254a",
+      {
+        "binding": "8914a0393bad44ed3273556afaa45e7270940cee642ad0f9f4c9743e501536b1",
+        "costMicrousd": 196608,
+        "digest": "671c1f4ad2a8160cba660423c3446f1efa76932c89ef31a4f0a5428297721b5e",
+        "epoch": 1,
+        "fingerprint": "b46af5addfc386fa7ede3fdc128725ea6de483958d9ed1e026fd81c74fb183a5",
+        "instance": "8d8a4e697fcf4b939305822d32439b5d",
+        "kind": "provider",
+        "outcome": "response",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "scope": "9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+        "state": "settled",
+        "ticket": "39316ed5074b4360aa269db013af254a",
+        "tokens": 163840,
+        "usage": {
+          "input_tokens": 120,
+          "output_tokens": 20
+        },
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.claim.v1.9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335.5f1aaaf2e8f84809ad8379ca678ecd04",
+      {
+        "binding": "8914a0393bad44ed3273556afaa45e7270940cee642ad0f9f4c9743e501536b1",
+        "costMicrousd": 196608,
+        "digest": "2ee4b925e6b0b6bd81e0e3ca0a2f986af0fed2d1959ea492df87aabb13dd6913",
+        "epoch": 1,
+        "fingerprint": "34752f19ae6985d2d36b57bbf2dd8bb1c1e69455108b8bb7a6b577daa32d7b7a",
+        "instance": "8d8a4e697fcf4b939305822d32439b5d",
+        "kind": "provider",
+        "outcome": "response",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "scope": "9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+        "state": "settled",
+        "ticket": "5f1aaaf2e8f84809ad8379ca678ecd04",
+        "tokens": 163840,
+        "usage": {
+          "input_tokens": 120,
+          "output_tokens": 20
+        },
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.claim.v1.9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335.62874e226e6a4019a56c480fa9ecb078",
+      {
+        "binding": "8914a0393bad44ed3273556afaa45e7270940cee642ad0f9f4c9743e501536b1",
+        "costMicrousd": 0,
+        "digest": "cb1ecbed05920c389bebb375ad3a201e773eb44dee27de23eda8f39b62d50c69",
+        "epoch": 1,
+        "fingerprint": "e8b863e8cc2ed0d7b7b60e63f55e432746cd7511538eb64004ddee080535de2b",
+        "instance": "8d8a4e697fcf4b939305822d32439b5d",
+        "kind": "read_file",
+        "outcome": "tool_return",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "scope": "9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+        "state": "settled",
+        "ticket": "62874e226e6a4019a56c480fa9ecb078",
+        "tokens": 0,
+        "usage": null,
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.config.v1.9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+      {
+        "binding": "8914a0393bad44ed3273556afaa45e7270940cee642ad0f9f4c9743e501536b1",
+        "digest": "a93cf4ec64f7cc61ceadbda66cf0576b95ea624c0fab218f9118fd2496c52f25",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "providerCalls": 2,
+        "quarantined": false,
+        "reservedCostMicrousd": 393216,
+        "reservedTokens": 327680,
+        "scope": "9ac94f94c330ec419df925635a54fa609904699e85788cadde40b202bef77335",
+        "toolCalls": 1,
+        "version": 1
+      }
+    ]
+  ],
+  "wire_calls": [
+    {
+      "path": "/v1/chat/completions",
+      "stream": false,
+      "model": "alaz-scripted",
+      "tool_result": false,
+      "tool_choice": null,
+      "tools_present": true,
+      "max_tokens": 32768
+    },
+    {
+      "path": "/v1/chat/completions",
+      "stream": false,
+      "model": "alaz-scripted",
+      "tool_result": true,
+      "tool_choice": null,
+      "tools_present": true,
+      "max_tokens": 32768
+    }
+  ],
+  "second_exit": {
+    "nonce": "9c88250611445df9e752ff2869cd3f8a",
+    "launcher_pid": 48604,
+    "native_pid": 47464,
+    "ownership_chain": [
+      47464,
+      48604
+    ],
+    "exit_code": 3221225477,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": true,
+    "forced": true,
+    "shutdown": null
+  },
+  "windows_exit_hex": "0xc0000005",
+  "second_stderr": "Timeout (0:00:30)!\nThread 0x000039a4 [plugin-load:browser/browser_use] (most recent call first):\n  File \"<frozen importlib._bootstrap_external>\", line ",
+  "root_cause": "not established",
+  "next_experiment": "disable only optional periodic stack dump; do not weaken ownership, output, budget or native-lifecycle assertions"
+}

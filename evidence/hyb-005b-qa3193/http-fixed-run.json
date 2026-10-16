@@ -1,0 +1,316 @@
+{
+  "scope": "real aiohttp/ExecutionBoundary/provider route; synthetic adapter/SessionDB owner, config and registry verifier explicitly substituted. NOT native Gateway",
+  "cases": [
+    {
+      "name": "normal",
+      "expected_http_status": 200,
+      "http_status": 200,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": false,
+      "response_error": null,
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "unknown-usage",
+      "expected_http_status": 200,
+      "http_status": 200,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": false,
+      "response_error": null,
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "missing-auth",
+      "expected_http_status": 401,
+      "http_status": 401,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": null,
+      "response_error": "provider_authentication_required"
+    },
+    {
+      "name": "wrong-auth",
+      "expected_http_status": 401,
+      "http_status": 401,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": null,
+      "response_error": "provider_authentication_required"
+    },
+    {
+      "name": "foreign-query",
+      "expected_http_status": 401,
+      "http_status": 401,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": null,
+      "response_error": "provider_scope_not_supported"
+    },
+    {
+      "name": "foreign-header",
+      "expected_http_status": 401,
+      "http_status": 401,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": null,
+      "response_error": "provider_scope_not_supported"
+    },
+    {
+      "name": "wrong-model",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_provider_request"
+    },
+    {
+      "name": "no-messages",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_provider_request"
+    },
+    {
+      "name": "multimodal-content",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_message_content"
+    },
+    {
+      "name": "unknown-role",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_message_content"
+    },
+    {
+      "name": "multiple-completions",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_provider_multiplicity"
+    },
+    {
+      "name": "bool-completions",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_provider_multiplicity"
+    },
+    {
+      "name": "nonbool-stream",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "unsupported_provider_multiplicity"
+    },
+    {
+      "name": "above-output-cap",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "output_ceiling_exceeded"
+    },
+    {
+      "name": "null-output-cap",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "output_ceiling_exceeded"
+    },
+    {
+      "name": "bool-output-cap",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "output_ceiling_exceeded"
+    },
+    {
+      "name": "float-output-cap",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "output_ceiling_exceeded"
+    },
+    {
+      "name": "two-output-caps",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "ambiguous_output_ceiling"
+    },
+    {
+      "name": "missing-output-cap",
+      "expected_http_status": 200,
+      "http_status": 200,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": false,
+      "response_error": null,
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "duplicate-json",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 0,
+      "upstream_http_calls": 0,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "execution_boundary_unavailable"
+    },
+    {
+      "name": "provider-503",
+      "expected_http_status": 503,
+      "http_status": 503,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": false,
+      "response_error": "upstream_provider_refused",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "provider-redirect",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": true,
+      "response_error": "provider_redirect_refused",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "provider-bool-usage",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": true,
+      "response_error": "invalid_provider_usage",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "provider-over-usage",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": true,
+      "response_error": "provider_usage_out_of_contract",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "wrong-response-model",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": true,
+      "response_error": "provider_response_model_mismatch",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "stream-over-then-lower",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": true,
+      "response_error": "provider_usage_out_of_contract",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    },
+    {
+      "name": "stream-compact-wrong-model",
+      "expected_http_status": 403,
+      "http_status": 403,
+      "provider_reservations": 1,
+      "upstream_http_calls": 1,
+      "passed": true,
+      "quarantined": true,
+      "response_error": "provider_response_model_mismatch",
+      "forwarded_output_ceiling": {
+        "max_tokens": 20
+      }
+    }
+  ],
+  "passed": 27,
+  "failed": 0,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "hashes": {
+    "packages\\claw-hermes\\execution_boundary.py": "b989895c285164939f53ded5320f104c8af8d8b73d298a7e22109f4910f1d809",
+    "packages\\claw-hermes\\execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "tests\\test_execution_gate_qa.py": "2a5eb2c44557290c372b6a9e0b50ff551a326ccfa91853b92ec0e504d4630daf",
+    "scripts\\qa\\execution_http_matrix.py": "54a34f3c65923afae971e2252173dc13e2cd40cdeeb285bde71d1f83c02af2f1"
+  },
+  "code_drift": []
+}

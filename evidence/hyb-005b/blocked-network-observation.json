@@ -1,0 +1,31 @@
+{
+  "scope": "strict post-run network-cleanliness check, separate from provider budget result",
+  "strict_result": "FAIL",
+  "provider_limit_functional_result": "PASS",
+  "blocked_nonloopback_attempts": 6,
+  "destination_and_origin": "not recorded; do not guess ancillary/model classification",
+  "external_connection_succeeded": "not demonstrated; Python audit raises before attempted connect/name resolution",
+  "clean_egress_accepted": false,
+  "preserved_exit": {
+    "nonce": "cfe94b705774dba09ae9db2430a95289",
+    "launcher_pid": 73128,
+    "native_pid": 61980,
+    "ownership_chain": [
+      61980,
+      73128
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 61980,
+      "nonce": "cfe94b705774dba09ae9db2430a95289",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 6
+    }
+  },
+  "followup": "Qualified local model-route checks may be corroborated with explicit warning. Global egress/credential separation remains NOT ACCEPTED. Instrument origin/host without exposing credentials in a separate controlled probe."
+}

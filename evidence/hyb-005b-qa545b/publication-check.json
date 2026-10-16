@@ -1,0 +1,7 @@
+{
+  "scope": "local repository publication hygiene gate; not full tests/native/remote CI",
+  "exit_code": 0,
+  "stdout": "{\n  \"scope\": \"M0_and_HYB_mock_contracts_not_full_runtime\",\n  \"selected_components\": 10,\n  \"result\": \"PASS\",\n  \"root_files_checked\": 443,\n  \"source_gitlinks_checked\": 2,\n  \"discovered_tests\": 881,\n  \"errors\": [],\n  \"vendor_bytes_checked\": false,\n  \"runtime_tested\": false,\n  \"model_called\": false,\n  \"secret_scan\": \"bounded root tracked text patterns; not a complete security audit\"\n}\n",
+  "stderr": "",
+  "ci_check_sha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8"
+}

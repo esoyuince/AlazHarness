@@ -1,0 +1,24 @@
+{
+  "scope": "retrospective read-only checks; NOT additional native runs or provider-price qualification",
+  "records": [
+    {
+      "scenario": "provider-limit",
+      "result": "CORROBORATED",
+      "source_receipt_sha256": "ec948769b13abe1da19c5512ea901761b70bf69d88c3efe5a1b4ada80a60174d",
+      "read_only_state_hash_unchanged": true,
+      "native_admissions": 1,
+      "provider_claims": 1,
+      "read_claims": 1,
+      "reported_wire_requests": 1,
+      "reserved_tokens": 163840,
+      "reserved_cost_microusd": 196608,
+      "startup_seconds": 81.691,
+      "readiness_deadline_seconds": 180,
+      "sdk_preload_seconds": 7.204,
+      "tariff_is_fixture": true,
+      "new_native_execution": false
+    }
+  ],
+  "passed": 1,
+  "failed": 0
+}

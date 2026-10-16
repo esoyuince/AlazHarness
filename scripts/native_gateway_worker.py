@@ -10,12 +10,16 @@ source, work, nonce = Path(sys.argv[1]).resolve(), Path(sys.argv[2]).resolve(), 
 assert work == Path.cwd().resolve() and Path(os.environ['HERMES_HOME']).resolve() == work/'profile'
 assert len(nonce)==32 and all(c in '0123456789abcdef' for c in nonce)
 blocked=[]
+blocked_destinations=[]
 def audit(event,args):
     host=None
     if event=='socket.connect' and isinstance(args[1],tuple):host=args[1][0]
     elif event=='socket.getaddrinfo':host=args[0]
     if host is not None and host not in ('127.0.0.1','::1','localhost',b'localhost'):
         blocked.append(event)
+        if len(blocked_destinations)<32:
+            safe_host=host.decode('ascii','replace') if isinstance(host,bytes) else str(host)
+            blocked_destinations.append({'event':event,'host':safe_host[:255]})
         raise PermissionError('Native Gateway probe denies non-loopback Python networking')
 sys.addaudithook(audit)
 sys.path.insert(0,str(source))
@@ -26,6 +30,18 @@ def record(name,value):
 
 async def run():
     record('spawn.json',{'nonce':nonce,'pid':os.getpid(),'ppid':os.getppid()})
+    # Optional TEST setup only: materialize the already installed SDK class while
+    # cold startup is still being measured, before the public Gateway declares ready.
+    # No SDK client is constructed, no model request or native method is replaced.
+    prewarm=os.environ.get('ALAZ_PROBE_PRELOAD_OPENAI','0')
+    if prewarm not in ('0','1'):raise ValueError('Invalid probe preload flag')
+    if prewarm=='1':
+        import time
+        started=time.monotonic()
+        from openai import OpenAI
+        record('sdk-preload.json',{'nonce':nonce,'pid':os.getpid(),
+            'class':OpenAI.__module__+'.'+OpenAI.__name__,
+            'elapsed_seconds':round(time.monotonic()-started,3),'client_constructed':False,'model_requests':0})
     from gateway import run as native
     from gateway.config import Platform
     # Dependency guard precedes all owned Gateway state and sockets.
@@ -68,7 +84,7 @@ async def run():
                 await asyncio.sleep(.05)
         async with asyncio.timeout(35):result=await lifecycle
         record('shutdown.json',{'pid':os.getpid(),'nonce':nonce,'native_result':result,
-               'lifecycle_completed':True,'nonloopback_attempts_blocked':len(blocked)})
+               'lifecycle_completed':True,'nonloopback_attempts_blocked':len(blocked),'blocked_destinations':blocked_destinations})
         return 0 if result else 1
     finally:
         if not lifecycle.done():
@@ -86,7 +102,7 @@ if __name__=='__main__':
     try:code=asyncio.run(run())
     except Exception as exc:
         record('failure.json',{'type':type(exc).__name__,'message':str(exc),'pid':os.getpid(),'nonce':nonce,
-                             'nonloopback_attempts_blocked':len(blocked)})
+                             'nonloopback_attempts_blocked':len(blocked),'blocked_destinations':blocked_destinations})
         raise
     finally:sys.stdout.flush();sys.stderr.flush()
     raise SystemExit(code)

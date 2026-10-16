@@ -1,0 +1,341 @@
+{
+  "scenario": "normal",
+  "scope": "native public Gateway + real SDK/registry/file handler + physical HTTP gate; upstream model scripted",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "errors": [],
+  "product_sha256": {
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/execution_boundary.py": "6c3551297676635764cd464dc1159b12a8ba34799faa8bd96a7106cd909a348f",
+    "packages/claw-hermes/host_gate_plugin.py": "4db9c429b93bf71a10b06fb319ed65695e164f30a53d0f7185cf7fbd1a5cfa24",
+    "packages/claw-hermes/host-gate-client.mjs": "324bf51df5a639c1249d45edf3379803caba7d673375dcf406d9e69a7710a246",
+    "scripts/run_native_execution_gate.py": "17156b2b012375684bac7a60923eff972884b80e519abca272f29a9ef7eb7f80",
+    "scripts/native_execution_client.mjs": "39b0d9105d932df5e6df76de30bf6335bbb402555ccd7401336f9294b2db98aa",
+    "scripts/execution_model_fixture.py": "4813ba81dbcae073c00bb9868d0c84618bdc6dccf94f7bd6450cf1d3b43e7678",
+    "scripts/native_execution_sdk.py": "dad836cc16c25415524073886d8074769f5d153213b38ec9689bb321085fc11f",
+    "scripts/execution_gateway_worker.py": "6ccc81c4253a8605e5ffd6c4dc05799cd7b61b327de832782c37ba54fbf7d516",
+    "scripts/run_gateway_gap_qa.py": "188ab1009bb7be8e662c0abe2ed443f83d4ab800b04ec76e4d12bb6bb95e66d2",
+    "config/execution-gate/source-lock.json": "4a43e5fcd6effc5bc4525a6cf13c1d1d50ca26d05c64f4f3c8b4e7a68351069e",
+    "scripts/native_gateway_worker.py": "2dc615adb5e94cc296c84ab4dc3ab7c14968bec6ad9792ca7d1280973eabbe2c",
+    "scripts/gateway_process.py": "4239217fb1c40ace7ab5959eff243b02ca492cbe27d0d0af30a76e3840412279",
+    "scripts/run_native_host_gate.py": "04f663b712dcc3111e8411a4ff471577f9cc2021f943c8bab335eb844794c78a",
+    "scripts/run_native_hermes_probe.py": "2f8f1097ed2e506c807cd9eb6870ca3a8772b93f411dcc579ba1b72aceb62a87",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7"
+  },
+  "paid_calls": 0,
+  "inference_calls": 0,
+  "tariff_is_fixture": true,
+  "actual_billing_verified": false,
+  "os_sandbox_claimed": false,
+  "ready": {
+    "pid": 60396,
+    "nonce": "d80878c8b0644f0b9cebf5af9ffdc471",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 1,
+    "instance_id": "895c5420636544ad8e9ae0576c758978",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 53915
+  },
+  "startup_seconds": 78.221,
+  "ready_deadline_seconds": 180,
+  "sdk_preload": {
+    "nonce": "d80878c8b0644f0b9cebf5af9ffdc471",
+    "pid": 60396,
+    "class": "openai.OpenAI",
+    "elapsed_seconds": 8.567,
+    "client_constructed": false,
+    "model_requests": 0
+  },
+  "client_exit": 0,
+  "client": {
+    "nonce": "3e74dd538b445e62ca90bf755bb7dea6",
+    "runId": "run_5336c4d00cc44a03b9e3f19b5b50c96e",
+    "final": {
+      "run": {
+        "object": "hermes.run",
+        "model": "alaz-scripted",
+        "created_at": 1792109317.1515398,
+        "pending_controls": [],
+        "run_id": "run_5336c4d00cc44a03b9e3f19b5b50c96e",
+        "status": "completed",
+        "session_id": "run_5336c4d00cc44a03b9e3f19b5b50c96e",
+        "admission_id": "e47f6f8db06f4943a1d44c04f0140286",
+        "execution_generation": 1,
+        "output": "Native execution verified EXECUTION_c532c935ba6eb9fac8e26156bf9e435c",
+        "usage": {
+          "input_tokens": 240,
+          "output_tokens": 40,
+          "total_tokens": 280
+        }
+      },
+      "recoveryContractVersion": 1,
+      "classification": "canonical_terminal_reported",
+      "transportConfirmed": true,
+      "backendConfirmed": true,
+      "admissionReported": true,
+      "canonicalVerified": false,
+      "requiresOperator": false,
+      "retryAllowed": false,
+      "repairAllowed": false,
+      "nextAction": "retain_reported_outcome",
+      "stopRequested": false,
+      "hostReason": null
+    }
+  },
+  "live_revocation": {
+    "checks": [
+      {
+        "path": "/alaz/host/v1/capabilities",
+        "http_status": 503,
+        "code": "host_gate_unavailable"
+      },
+      {
+        "path": "/alaz/provider/v1/models",
+        "http_status": 403,
+        "code": "execution_boundary_unavailable"
+      }
+    ],
+    "no_new_reservation": true,
+    "no_new_model_request": true
+  },
+  "exit": {
+    "nonce": "d80878c8b0644f0b9cebf5af9ffdc471",
+    "launcher_pid": 57496,
+    "native_pid": 60396,
+    "ownership_chain": [
+      60396,
+      57496
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 60396,
+      "nonce": "d80878c8b0644f0b9cebf5af9ffdc471",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0,
+      "blocked_destinations": []
+    }
+  },
+  "native_store": {
+    "admissions": [
+      {
+        "request_id": "run_5336c4d00cc44a03b9e3f19b5b50c96e",
+        "status": "terminal",
+        "outcome": "completed"
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "tool_name": null,
+        "content": "Use the indicated file tool and report its result."
+      },
+      {
+        "role": "assistant",
+        "tool_name": null,
+        "content": ""
+      },
+      {
+        "role": "tool",
+        "tool_name": "read_file",
+        "content": "{\"content\": \"1|EXECUTION_c532c935ba6eb9fac8e26156bf9e435c\\n2|\u0131\u015f\u0131k:42\", \"total_lines\": 2, \"file_size\": 56, \"truncated\": false, \"is_binary\": false, \"is_image\": false, \"not_found\": false}"
+      },
+      {
+        "role": "assistant",
+        "tool_name": null,
+        "content": "Native execution verified EXECUTION_c532c935ba6eb9fac8e26156bf9e435c"
+      },
+      {
+        "role": "session_meta",
+        "tool_name": null,
+        "content": null
+      }
+    ],
+    "gate_rows": [
+      [
+        "alaz.host_gate.config.v1.734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+        {
+          "issued": 1,
+          "namespace": "ab29e300ac3e4ee59174edbdc05889dc",
+          "profileBinding": "e4b287c170df0ed67d0a2765e12c005841e315482c061bcf9de49b6130826913",
+          "scope": "734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+          "spent": 1,
+          "version": 1
+        }
+      ],
+      [
+        "alaz.host_gate.intent.v1.734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e.8e0da0e66b9c0ec84c651a00b7386aec",
+        {
+          "consumedAtMs": 1792109317119,
+          "createdAtMs": 1792109317070,
+          "digest": "5b08f2d9e92e96ad3a04688f6289a787d32bb4c6bf62cc13c270eede68f04f83",
+          "dispatchState": "consumed",
+          "epoch": 1,
+          "expiresAtMs": 1792109617070,
+          "fingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+          "instanceId": "895c5420636544ad8e9ae0576c758978",
+          "key": "ah1-ab29e300ac3e4ee59174edbdc05889dc-8e0da0e66b9c0ec84c651a00b7386aec",
+          "profileBinding": "e4b287c170df0ed67d0a2765e12c005841e315482c061bcf9de49b6130826913",
+          "requestId": "8e0da0e66b9c0ec84c651a00b7386aec",
+          "scope": "734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+          "version": 1
+        }
+      ]
+    ],
+    "integrity": "ok"
+  },
+  "budget_store": [
+    [
+      "alaz.execution.claim.v1.734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e.10a868889c5d4968930fc89cad87cdc2",
+      {
+        "binding": "e4b287c170df0ed67d0a2765e12c005841e315482c061bcf9de49b6130826913",
+        "costMicrousd": 196608,
+        "digest": "e18f89457366fce1e18b5179a17bd5602865a1b58ac78dea5cb66477bbebc6b2",
+        "epoch": 1,
+        "fingerprint": "2fd6e4bc9a75aecdc407b421aaf0e788e13a046ba57365ff8890a916e819b1b1",
+        "instance": "895c5420636544ad8e9ae0576c758978",
+        "kind": "provider",
+        "outcome": "response",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "scope": "734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+        "state": "settled",
+        "ticket": "10a868889c5d4968930fc89cad87cdc2",
+        "tokens": 163840,
+        "usage": {
+          "input_tokens": 120,
+          "output_tokens": 20
+        },
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.claim.v1.734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e.299c77527f034d3d808037b13f6f0c68",
+      {
+        "binding": "e4b287c170df0ed67d0a2765e12c005841e315482c061bcf9de49b6130826913",
+        "costMicrousd": 196608,
+        "digest": "1ad986b0bcf67250a7bf49cdfd57bb3af06919a49da26d15950c03faa230b9ed",
+        "epoch": 1,
+        "fingerprint": "18fcf469ed78a5fe3617605015591b913c614f41504b5c90b45bfee4b7b69420",
+        "instance": "895c5420636544ad8e9ae0576c758978",
+        "kind": "provider",
+        "outcome": "response",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "scope": "734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+        "state": "settled",
+        "ticket": "299c77527f034d3d808037b13f6f0c68",
+        "tokens": 163840,
+        "usage": {
+          "input_tokens": 120,
+          "output_tokens": 20
+        },
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.claim.v1.734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e.ca3ee27c96de41c58950b939d5418467",
+      {
+        "binding": "e4b287c170df0ed67d0a2765e12c005841e315482c061bcf9de49b6130826913",
+        "costMicrousd": 0,
+        "digest": "44d5ce8c90ef1a59baff99284764e5188fd7307bddc3961d26b079d3e18e89ae",
+        "epoch": 1,
+        "fingerprint": "d58e61033eb3781f3041dc6dd8e03a636ccd4876cc18413922105f715b2d787f",
+        "instance": "895c5420636544ad8e9ae0576c758978",
+        "kind": "read_file",
+        "outcome": "tool_return",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "scope": "734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+        "state": "settled",
+        "ticket": "ca3ee27c96de41c58950b939d5418467",
+        "tokens": 0,
+        "usage": null,
+        "version": 1
+      }
+    ],
+    [
+      "alaz.execution.config.v1.734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+      {
+        "binding": "e4b287c170df0ed67d0a2765e12c005841e315482c061bcf9de49b6130826913",
+        "digest": "31967203ad958e754fc5d5dd5e0475afaaac0b1960054ce96bbb18e2bfa0e857",
+        "policy": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+        "providerCalls": 2,
+        "quarantined": false,
+        "reservedCostMicrousd": 393216,
+        "reservedTokens": 327680,
+        "scope": "734b159ee2931293c2eaf85d6e6e3ff166d9d2f55f589749ce0b5460e5fcc66e",
+        "toolCalls": 1,
+        "version": 1
+      }
+    ]
+  ],
+  "restart_ready": {
+    "pid": 73704,
+    "nonce": "695f2ade092be02bd158e40400edcd23",
+    "runner": "gateway.run.GatewayRunner",
+    "adapter": "gateway.platforms.api_server.APIServerAdapter",
+    "authority": "gateway.session_authority.SessionAuthority",
+    "profile_bound": true,
+    "aiohttp_version": "3.14.3",
+    "epoch": 2,
+    "instance_id": "f5d386f2985a4030ae71e146b6454044",
+    "state": "ready",
+    "api_host": "127.0.0.1",
+    "api_port": 53915
+  },
+  "restart_exit": {
+    "nonce": "695f2ade092be02bd158e40400edcd23",
+    "launcher_pid": 49536,
+    "native_pid": 73704,
+    "ownership_chain": [
+      73704,
+      49536
+    ],
+    "exit_code": 0,
+    "launcher_reaped": true,
+    "native_reaped": true,
+    "kill_requested": false,
+    "forced": false,
+    "shutdown": {
+      "pid": 73704,
+      "nonce": "695f2ade092be02bd158e40400edcd23",
+      "native_result": true,
+      "lifecycle_completed": true,
+      "nonloopback_attempts_blocked": 0,
+      "blocked_destinations": []
+    }
+  },
+  "restart_no_refund": true,
+  "wire_calls": [
+    {
+      "path": "/v1/chat/completions",
+      "stream": false,
+      "model": "alaz-scripted",
+      "tool_result": false,
+      "tool_choice": null,
+      "tools_present": true,
+      "max_tokens": 32768
+    },
+    {
+      "path": "/v1/chat/completions",
+      "stream": false,
+      "model": "alaz-scripted",
+      "tool_result": true,
+      "tool_choice": null,
+      "tools_present": true,
+      "max_tokens": 32768
+    }
+  ],
+  "fixture_errors": [],
+  "write_target_exists": false,
+  "code_drift": [],
+  "result": "PASS",
+  "elapsed_seconds": 165.443
+}

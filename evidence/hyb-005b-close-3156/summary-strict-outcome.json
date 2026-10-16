@@ -1,0 +1,17 @@
+{
+  "scope": "strict task-completion check, distinct from provider budget/summary-call characterization",
+  "result": "FAIL",
+  "reason": "summary HTTP status is failed despite preserved summary text and canonical admission outcome completed",
+  "run_status": "failed",
+  "admission_outcome": "completed",
+  "gateway_reported_usage": {
+    "input_tokens": 120,
+    "output_tokens": 20,
+    "total_tokens": 140
+  },
+  "budget_provider_claims": 2,
+  "provider_wire_calls": 2,
+  "source_receipt_sha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67",
+  "product_or_test_assertions_modified": false,
+  "next_gate": "qualify task-outcome and usage projection on iteration-limited terminal responses; never relabel as successful work"
+}

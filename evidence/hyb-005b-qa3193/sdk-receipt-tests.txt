@@ -1,0 +1,17 @@
+test_bad_root (test_execution_sdk_qa.SDKWireReceiptTests.test_bad_root) ... ok
+test_boolean_counter (test_execution_sdk_qa.SDKWireReceiptTests.test_boolean_counter) ... ok
+test_complete_observation (test_execution_sdk_qa.SDKWireReceiptTests.test_complete_observation) ... ok
+test_extra_case (test_execution_sdk_qa.SDKWireReceiptTests.test_extra_case) ... ok
+test_failed_control (test_execution_sdk_qa.SDKWireReceiptTests.test_failed_control) ... ok
+test_missing_case (test_execution_sdk_qa.SDKWireReceiptTests.test_missing_case) ... ok
+test_not_retried (test_execution_sdk_qa.SDKWireReceiptTests.test_not_retried) ... ok
+test_paid_call (test_execution_sdk_qa.SDKWireReceiptTests.test_paid_call) ... ok
+test_program_drift (test_execution_sdk_qa.SDKWireReceiptTests.test_program_drift) ... ok
+test_report_omission (test_execution_sdk_qa.SDKWireReceiptTests.test_report_omission) ... ok
+test_swapped_case (test_execution_sdk_qa.SDKWireReceiptTests.test_swapped_case) ... ok
+test_wrong_invocation_count (test_execution_sdk_qa.SDKWireReceiptTests.test_wrong_invocation_count) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.012s
+
+OK

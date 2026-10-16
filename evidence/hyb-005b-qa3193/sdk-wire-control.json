@@ -1,0 +1,30 @@
+{
+  "scope": "native auxiliary OpenAI client factory + real SDK + loopback503 fixture; not Gateway, AIAgent, host-budget or inference acceptance",
+  "source_commit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "source_sha256": "1b0a5da07f8c90152110ba2e77f413f204f6a6f6fe2971ad115cfd8acfb59fa0",
+  "cases": [
+    {
+      "scenario": "native-default",
+      "sdk_method_invocations": 1,
+      "server_http_requests": 1,
+      "success": false,
+      "exception_type": "InternalServerError",
+      "passed": true
+    },
+    {
+      "scenario": "explicit-sdk-retry",
+      "sdk_method_invocations": 1,
+      "server_http_requests": 2,
+      "success": true,
+      "exception_type": null,
+      "passed": true
+    }
+  ],
+  "passed": 2,
+  "failed": 0,
+  "source_changed": false,
+  "nonloopback_attempts_blocked": 0,
+  "model_inference_calls": 0,
+  "paid_calls": 0,
+  "interpretation": "Native default retries are off. Explicit SDK retry override yields two physical requests from one SDK invocation; a logical-call counter alone is insufficient."
+}

@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-16T03:12:38.854704+03:00",
+  "root_preserved_files": 32,
+  "root_drift": [],
+  "upstream_sources": [
+    {
+      "name": "openclaw",
+      "head": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+      "clean": true
+    },
+    {
+      "name": "hermes",
+      "head": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "clean": true
+    },
+    {
+      "name": "pi",
+      "head": "b06c1f2cf1dea6af8748ddeee18c23587d2cb7c6",
+      "clean": true
+    },
+    {
+      "name": "opencode",
+      "head": "3943b84ef00e83dbc3c48e6a92b02f0d88fb35f9",
+      "clean": true
+    }
+  ],
+  "runtime_source_locks_unchanged": [
+    "sources.lock.json",
+    ".gitmodules",
+    "config/components.lock.json"
+  ],
+  "own_product_mutations": false,
+  "new_dependencies_installed_by_qa": false
+}

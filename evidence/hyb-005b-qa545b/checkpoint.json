@@ -1,0 +1,16 @@
+{
+  "scope": "offline real boundary with synthetic config/registry; not native execution",
+  "pattern": "test_execution_policy_checkpoint_qa545b.py",
+  "tests": 12,
+  "exit_code": 0,
+  "elapsed_seconds": 0.821,
+  "hashes": {
+    "tests/test_execution_policy_checkpoint_qa545b.py": "5ec323a4904646ba0f4ef4e2c8f39ed4a9a9b7f296c0f0c0dc747910fe2069d3",
+    "tests/test_execution_profile_qa3156.py": "4241f4621cd78b5385bba6ada5c979a175cc8a4f48220a6ad03910269aa87192",
+    "tests/test_execution_retained_qa3156.py": "3c884e8f60b832997344260ef3f218b00efba58d594a54e85345c7148accc33f",
+    "packages/claw-hermes/execution_boundary.py": "6c3551297676635764cd464dc1159b12a8ba34799faa8bd96a7106cd909a348f",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78"
+  },
+  "code_drift": [],
+  "inference_calls": 0
+}
