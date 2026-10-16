@@ -1,0 +1,24 @@
+{
+  "scope": "same-code-commit alaz-server standard CI, not native Gateway execution",
+  "observed_at": "2026-10-16T20:37:21.949117+03:00",
+  "github_context": "alaz/local-ci",
+  "github_state": "success",
+  "observed_via": "GitHub connector and read-only alaz-server receipt",
+  "server": {
+    "sha": "a77b729f35a7bda794fe4af41f5fcdced1da7dbd",
+    "checkout_sha": "a77b729f35a7bda794fe4af41f5fcdced1da7dbd",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 964,
+      "failed": 0,
+      "passed": 964,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 964
+    },
+    "status_delivery": "posted"
+  },
+  "new_gateway_runs": 0,
+  "model_calls": 0
+}

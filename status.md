@@ -4,7 +4,7 @@ Son güncelleme: 16 Ekim 2026. Canlı Git/HEAD/CI her devamda doğrulanır.
 
 ## Güncel nokta
 
-**HYB-005C yerel rapor/CLI doğrulandı; Git/CI yayını henüz kapanmadı.**
+**HYB-005C yerel salt-okunur rapor/CLI yayımlandı; kodun aynı-commit CI sonucu başarılı.**
 Görev sonucu, native usage ve scope-wide rezervasyon/kullanım ayrı tutulur. Tek uygulama/yayın sahibi247a.
 Aktif dal: alaz/hyb-005c-report-247a.
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88.
@@ -91,3 +91,18 @@ ayrı açık kapsam. Main ilerletilmedi, M1/M2 açık. Commit/push/CI henüz do�
 ### 2026-10-16T20:33:04.502004+03:00 — HYB005C QA9256 belge kapsamı
 
 Ek sentetik readonly gözlem: doğru scope/key rezervasyonu var ama admission yoksa task canonicalVerified=false, partial_snapshot; ayrı doğrulanan profile budget görünür. Bu beklenen kapsam, execution izni yok. Ana rapordaki “If canonical identity cannot be verified, no execution totals...” ifadesi scoped reservation identity olarak daraltılmalı; gerçek davranışla çelişmesin. orphan-scope-semantics.json ve QA raporu stage edildi. Ürün/test kodu değişmedi;964tam test makbuzu korunuyor.
+
+### 2026-10-16T20:37:21.950002+03:00 — HYB005C yayın ve aynı-SHA CI
+
+Kod commit: `a77b729f35a7bda794fe4af41f5fcdced1da7dbd`; feature dalına push edildi. GitHub
+alaz/local-ci success ve alaz-server aynı sha==checkout_sha makbuzu964/964,
+failed0/skipped0/suite_errors0/status_delivery posted doğrulandı. Kanıt
+evidence/hyb-005c/code-ci.json. Bu sunucu koşusu standart suite; eski7native
+profil yalnız yeni okuyucuyla yerelde sınandı, yeni Gateway/model yürütümü yok.
+
+Bu son belge commit öncesi HEAD/remote eşit, çalışma ağacı temizdi.177 ölçülen
+kod/config son964PASS ile aynı; bu kapanışta yalnız belge ve CI makbuzu değişir.
+Yeni belge SHA kendi CI sonucuyla ayrıca kontrol edilir. Kök status.md eşitlenir.
+Main birleştirilmedi; mevcut native yazıcı/izin/bütçe motoru değişmedi.
+Kesin sonraki iş HYB-005D credential/egress izolasyonu; per-run usage binding,
+gerçek tarife/tokenizer ve HYB-006 hafıza/beceri kabulü ayrı. M1/M2 AÇIK.

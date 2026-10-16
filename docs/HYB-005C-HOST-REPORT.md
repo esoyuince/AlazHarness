@@ -1,7 +1,8 @@
 # HYB-005C — read-only host usage and outcome report
 
-Status: implemented; targeted/retained-record checks passed. Full root suite and
-exact-commit publication are recorded in status.md when actually completed.
+Status: local reporting slice published;964/964 standard tests passed locally
+and on alaz-server for code commit a77b729f35a7bda794fe4af41f5fcdced1da7dbd.
+Final documentation commit CI is checked separately. M1/M2 remain open.
 Base: aaf29d46b6496942c01a38f7373a9d56931c7cd0. Native contract remains pinned to
 Hermes eb75627faf532fa6ffbdae59a0d14b0b385fc780. No existing runtime, provider,
 recovery, host dispatch or ledger writer code is changed by this package.
@@ -156,3 +157,11 @@ host/provider credentials and request keys from the test profiles were checked
 against the selected text and were absent. This bounded check is not a complete
 security audit. Same-commit server CI is read only after push; no old CI result is
 inherited. The existing runtime enforcement and source pins remain unchanged.
+
+## Exact-code-commit server CI
+
+The GitHub alaz/local-ci status for a77b729f35a7bda794fe4af41f5fcdced1da7dbd
+is success. The read-only server receipt has that exact checkout SHA,964 passed,
+zero failed/skipped/suite errors, and posted status delivery. See
+evidence/hyb-005c/code-ci.json. It did not execute new native Gateway/model runs.
+The final documentation SHA is verified independently after its publication.
