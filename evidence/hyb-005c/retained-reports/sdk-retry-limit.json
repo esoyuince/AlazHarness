@@ -1,0 +1,93 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_scope_snapshot",
+  "scopeOnly": true,
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "7ff73ebcbf18328d502199f288678d89254ef97d1a2f6e519a5eb7ce310091a2",
+  "epoch": 1,
+  "task": {
+    "classification": "not_selected",
+    "canonicalVerified": false,
+    "taskSucceeded": false,
+    "requiresOperator": false,
+    "goalAchievementIndependentlyVerified": false
+  },
+  "nativeReportedUsage": {
+    "available": false,
+    "coverage": "no_task_selected"
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+    "model": "alaz-scripted",
+    "snapshotDigest": "c855291cbc6b3a5eb24762ecad5f99ceb1f62a32e44531cd92b4a29ffff1e08f",
+    "quarantined": false,
+    "providerAttempts": {
+      "reserved": 1,
+      "settled": 1,
+      "unsettled": 0,
+      "usageKnown": 0,
+      "usageUnknown": 1,
+      "transportErrors": 1,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": null,
+      "outputTokens": null,
+      "totalTokens": null,
+      "coverage": "unknown",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 0,
+      "handlerReturns": 0,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 163840,
+      "costMicrousd": 196608,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 1,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 0,
+      "toolCalls": 1,
+      "tokens": 327680,
+      "costMicrousd": 803392,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "no_task_selected",
+    "numericDifference": null
+  },
+  "warnings": [
+    "scope_only_no_task_selected",
+    "reserved_exposure_is_not_an_invoice",
+    "some_reserved_attempts_have_unknown_usage"
+  ]
+}

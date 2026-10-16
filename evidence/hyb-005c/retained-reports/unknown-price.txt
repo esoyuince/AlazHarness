@@ -1,0 +1,10 @@
+AlazHarness host report v1
+Snapshot: unverified
+Native task result: UNKNOWN; nativeCompleted=false
+Task evidence: unverified
+Completion reason: UNKNOWN
+Native run usage (input/output/total): UNKNOWN/UNKNOWN/UNKNOWN
+Execution usage/budget: UNKNOWN (unverified)
+Native completion is NOT independent verification of the requested goal.
+Scope totals are NOT attributed to this task; numeric comparison unavailable.
+Read-only snapshot. No execution permission, retry, repair or automatic refund.

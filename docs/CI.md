@@ -162,3 +162,12 @@ scenarios and eight graceful Gateway process lifetimes are local evidence only.
 An iteration-limit summary can be charged correctly while the job is incomplete;
 its failed strict task-success assertion is preserved, not part of an offline
 unittest failure count. Exact suite count is taken from each run receipt.
+
+## HYB-005C read-only reporting
+
+Root discovery exercises real report/ledger/recovery code against fresh synthetic
+SQLite stores and private CLI inputs. Existing native profiles are NOT required.
+The opt-in retained HYB005B profile reader is a separate check, not a new Gateway
+execution. No provider call, dependency installation or sandbox guarantee is added.
+Task completion, scope-wide observed usage, unknown measurements and reserved
+exposure remain distinct in every report. Exact final counts/CI belong in status.md.

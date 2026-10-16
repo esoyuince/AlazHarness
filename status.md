@@ -1,150 +1,93 @@
 # AlazHarness — status
 
-Son güncelleme: 16 Ekim 2026. Devam etmeden önce canlı Git dalı, HEAD, çalışma
-ağacı ve aynı commit'in CI sonucunu yeniden doğrula. Ana kayıt bu dosyadır.
+Son güncelleme: 16 Ekim 2026. Canlı Git/HEAD/CI her devamda doğrulanır.
 
 ## Güncel nokta
 
-**HYB-005B dar yerel yürütme/bütçe paketi yayımlandı; kodun aynı-SHA CI sonucu başarılı.** Genel HYB-005, tam M1 ve otonomi M2 açık.
+**HYB-005C yerel rapor/CLI doğrulandı; Git/CI yayını henüz kapanmadı.**
+Görev sonucu, native usage ve scope-wide rezervasyon/kullanım ayrı tutulur. Tek uygulama/yayın sahibi247a.
+Aktif dal: alaz/hyb-005c-report-247a.
+Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88.
+Başlangıç HEAD aaf29d46b6496942c01a38f7373a9d56931c7cd0; temiz ve CI success.
+Varsayılan kök eski korunmuş dalda; yalnız status.md erişim kopyası eşitlenir.
+Main değiştirilmedi. Önceki kayıt docs/history/2026-10-16-STATUS-BEFORE-HYB005C-247a.md.
 
-Aktif dal: `alaz/hyb-005b-execution-0d37`.
-Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88`.
-Başlangıç commit'i: `30b205fa271d40956f02090896afdd1878377f57`.
-Bu teslimin uygulama ve yayın sahibi: 3156. Önceki bağımsız QA3193/3156 ile
-uygulama0d37/3723 kayıtları tarihsel kapsamlarını korur. Bu turdaki uygulama
-ve kontroller aynı yazarın çalışmasıdır; ayrı bağımsız inceleme diye sunulmaz.
+## Kapsam ve kabul
 
-Varsayılan kök `C:\Antigravity\AlazHarness` eski korunmuş kirli daldadır;
-geliştirme orada yapılmaz. Kökteki status.md yalnız kontrollü erişim kopyasıdır.
-Main bu feature paketine ilerletilmedi; son ortak taban b8ff44f olarak korunuyor.
+Mevcut LocalRecoveryInspector ve ExecutionLedger kullanılır; ikinci DB/kuyruk,
+ajan döngüsü, scheduler veya para iadesi oluşturulmaz. Fiziksel sağlayıcı usage
+ve native görev özeti ayrı kaynak/kapsam taşır; v1 ledger çağrıları runId taşımadığı
+için scope toplamını tek görevin kesin maliyeti gibi sunma. Bütçe rezervasyonu fatura değildir.
+Eksik/kısmi kullanım sıfır sayılmaz. Özet metni görev başarısı değildir.
+İlk hedef: kaynak/CLI sözleşmesi, ret testleri, eski native kayıtların salt-okuma
+karşılaştırması tamamlandı. Bu tur yeni native Gateway çalıştırılmadı.
+Tam standart964/964 PASS;7eski profilin okuyucu/CLI kontrolü7/7 PASS.
+Model çıkarımı/ücretli çağrı/kurulum yok. Genel izolasyon ve M1/M2 AÇIK.
 
-## Yapılanlar
+## Başlangıç
 
-ExecutionLedger, Hermes'in mevcut state_meta yazma sahibiyle sağlayıcı isteğinden
-ÖNCE çağrı/token/microUSD risk rezervasyonu tutar. Hata, kayıp yanıt, bilinmeyen
-usage veya yeniden açılış otomatik iade oluşturmaz. İkinci DB/kuyruk/motor yok.
-ExecutionBoundary aynı native HTTP uygulamasında tek literal-loopback sağlayıcı
-ve tek açık model için çalışır; dosya araçları native registry üzerinden korunur.
-Yalnız açık allowlistteki düz .txt dosyaları gerçek Hermes read_file ile okunur.
-Write/patch/search dar kapsamda reddedilir. requireExecution istemci modu yoksa
-veya kapı hazır değilse host-only moda otomatik dönüş yapmaz.
+247a yeni kısa dalı aynı temiz worktree üzerinde açtı. Başlangıç custody
+runtime/hyb005c-247a/start.json. Değişiklik öncesi status tam arşivlendi.
 
-QA-C01 ürüne uygulandı: başlangıç execution ayarlarının değişmez özeti güncel
-native PluginContext ayarıyla eşleşmeden readiness/ledger erişimi yok. Bütçe
-azaltılması, allowlistin kaldırılması, provider/key değişimi veya eksik ayarlar
-reddedilir. Gerçek araç ledger yolu da yeniden kontrol eder. Önce4PASS/4FAIL olan
-aynı8 test artık8PASS; ek6 final-boundary testi PASS. İlk FAIL kayıtları korundu.
+### 2026-10-16T20:17:37.832474+03:00 — HYB-005C QA9256
 
-Önceki kind/outcome, yanlış model ve çelişkili SSE kullanım bulguları da korunmuş
-negatif testlerle kapanmıştır. Tüm değişiklikler mevcut kaynak pinlerini korur.
+Canlı247a tek uygulama/yayın sahibi görüldü;9256 önceki hash/cleanliness koşulunda çakışmayı yazmadan yakaladı.9256 yalnız ayrı QA9256 test/rapor/kanıtlarına bakacak, ürün/branch/native batch/commit yapmayacak. İnceleme hedefi: v1 ledger kapsamını run maliyeti saymama; rezervasyonu fiziksel gönderim/fatura sanmama; eksik usage sıfır değil; task outcome mevcut inspector ile; salt-okuma/kimlik/epoch/malformed retleri. QA başlangıç NOT RUN; yeni model/ücretli çağrı yok.
 
-## Doğrulamalar — sayılar ayrı kapsamlar
+### 2026-10-16T20:19:53.110104+03:00 — HYB005C QA9256 baseline
 
-- Tam yerel standart discovery: **881/881 PASS**, exit0, skip0;169 ölçülen
-  script/test/paket/konfigürasyon dosyasında drift0. full-validation.json ve
-  full-unittest.txt; bu sayı native Gateway koşularını içermez.
-- Son ürün koduyla **7 native bütçe/araç senaryosu** kendi dar beklentilerini
-  sağladı.6 senaryo ayrıca strict outcome/ret teyidinden geçti. Iteration-limit
-  summary bir başarılı görev değildir; aşağıdaki ayrı bulgu geçerlidir.
-- Normal iş:2provider/1read; aynı profilde yeni epoch ile clean reopen, değişmeyen
-  sonuç ve bütçe. İzin geri çekme: gerçek capabilities503/provider metadata403,
-  yeni rezervasyon/model0; yalnız TEST profili restore edilip tekrar açıldı.
-- Provider-limit:1upstream istek/1read; ikinci istek provider_attempt_limit.
-  Tool-limit:read0 ve gerçek ret. Denied-write:hedef dosya oluşmadı.
-  SDK-retry-limit:gerçek native auxiliary factory+SDK tek invoke; ikinci fiziksel
-  deneme bütçe kapısında durdu,1upstream/0admission. Unknown-price:0iş/0rezervasyon/0model.
-- Toplam8 final Gateway süreç yaşamı normal kapandı; finalde zorla sonlandırma,
-  kod değişimi, fixture hatası veya engellenmiş dış ağ girişimi yok.
-- Ayrı opt-in gerçek aiohttp bileşen matrisi: **27/27 PASS**, sentetik owner/config/
-  registry portları; tam Gateway ve881 standart testin parçası değildir.
+Yedi eski final native profilin claim toplamları doğrudan SQL ile okundu; native task sonuçları mevcut inspector ile doğrulandı, iki DB byte/hashleri aynı. Yeni Gateway/model yok. Evidence/hyb-005c-qa9256/baseline-oracle.json: summary240/40 vs native120/20; SDK retry1reservation/unknown usage. Önemli: tool-limit/denied-write native completed olsa da araç ret; bu bağımsız görev başarı kanıtı değil. V1 profile toplamını tek run maliyeti/teslim sayısı sayma. Rapor henüz sınanmadı, baseline ayrı kapsam.
 
-Kanıt kökü: `evidence/hyb-005b-close-3156/`. Kaynak+process+SQLite teyitleri
-final-native-suite.json, native-<senaryo>.json, normal-store-corroboration.json;
-HTTP matrisi http-final-matrix.json; custody-final.json. Read-only teyitler yeni
-native koşu sayılmaz. Gerçek model çıkarımı, ücretli çağrı ve yeni kurulum yok.
+### 2026-10-16T20:22:56.562818+03:00 — HYB005C QA9256 iki bulgu
 
-## Özet görevi ve kullanım görünümü — açık kalan ayrım
+Gerçek host_report+sentetik SQLite30test26PASS/4FAIL exit1/drift0. QA-R01: in_progress/unknown canonical identity true olsa da usage native RESULT ile doğrulanmıyor; dış observed usage999/888 raporda complete_fields oluyor. Terminal-verified dışını unavailable/unverified tut. QA-R02: orphan status ve active admission outcome serbest metinleri JSON/textte aynen sızıyor; known enum doğrula/withhold. Tests/test_host_report_qa9256.py değişmeden korunur; rapor docs/research/HYB-005C-QA9256.md, ilk makbuzlar evidence/hyb-005c-qa9256. Ürün247a düzeltmesi beklenir;9256 ürün değiştirmedi.
 
-Tur sınırı nedeniyle özet dönen native iş API'de failed, admission kaydında
-terminal/completed. Metin gerçekten saklı, fakat strict başarılı görev kontrolü
-FAIL verdi; assertion veya ham kayıt değiştirilmedi. Native API kaynak kodu
-incomplete/iteration-limit işlerini özellikle failed olarak sınıflandırıyor.
+### 2026-10-16T20:25:34.171877+03:00 — HYB005C ilk rapor ve QA kapanışı
 
-Aynı özetin iki fiziksel çağrısı execution ledger'da240girdi/40çıktı token,
-Gateway aggregate'inde120/20 olarak göründü. Her iki tam risk rezervasyonu korunur;
-bütçe denetimi küçük aggregate'e dayanmaz. final-native-suite.json bu sonucu
-ITERATION_LIMIT_SUMMARY_BUDGET_CORROBORATED_NOT_TASK_SUCCESS olarak ayırır;
-summary-strict-outcome.json başarısız strict beklentiyi aynen korur.
+39 ilk test PASS. QA9256 iki bulgusu ürün kodunda düzeltildi: nonterminal usage
+verileri doğrulanmış sayılmıyor; serbest status/outcome metni dışarı yansımıyor.
+Aynı30 QA testiyle birleşik69/69 PASS, drift0. Native completion bağımsız
+hedef başarısı diye sunulmuyor. SDK/yardımcı çağrılar için açık scope-only
+salt-okuma modu eklendi; bu modu test etmeden kabul yazma. Rapor eski native
+state/ledger okuyucularını yeniden kullanır; runtime writer kaynakları değişmedi.
 
-## Sınırlar ve kesin sonraki iş
+### 2026-10-16T20:27:49.851545+03:00 — HYB005C QA9256 düzeltme/CLI teyidi
 
-**HYB-005C:** host görünümünde fiziksel usage, ayrılmış risk bütçesi, native rapor
-ve görevin tamamlanma durumunu ayrı göstermek; özet/partial/limit senaryolarını
-aynı kanıta bağlamak. Ardından credential/egress izolasyonu ve gerçek sağlayıcı
-model/tarife/token sınırı kabulü. Mevcut operatör-bearer güven modelini ajanın
-kendi izinleriyle karıştırma. HYB-006 hafıza/beceri transferi ve gerçek model M1
-kabulü henüz yapılmadı; otonom scheduler açılmayacak.
+Aynı30QA testi30/30 PASS (test SHA değişmedi, drift0). İki bulgu ürün247a düzeltmesiyle kapandı; ilk26/30FAIL makbuzu korunur. Beş eski gerçek native görev profilinde yeni rapor direct-SQL oracle ile aynı; gerçek CLI JSON+text10/10 eşleşti. DB byte/hashleri aynı, yeni Gateway/model0. Ledger scope/usage/reservation ile native task/usage ayrı; summary failed, native120/20 vs scope240/40. Retained-report-qa.json ve sanitize summary örneği evidence/hyb-005c-qa9256 altında. Bu5eski profil/10CLI koşusu yeni native kabul değildir.
 
-Fixture fiyatı gerçek fatura veya kesin tokenizer kanıtı değildir. Tek yerel
-chat-completions/read-only alt küme; global OS sandbox, bütün auxiliary yollar,
-remote HTTPS, low-latency stream/cancel, TOCTOU ve irreversible write kabulü yok.
-Yeni deneyler explicit180s ready sınırı/SDK-class preload ile koştu; legacy70s
-cold-start performansı geçti denmez. Eski70s timeout/crash/drift/blocked-network
-kayıtları evidence/hyb-005b ve eski QA dizinlerinde korunur.
+### 2026-10-16T20:28:19.158647+03:00 — HYB005C QA9256 tam standart tur
 
-## Belgeler ve tarihçe
+Aynı30ret testi ve5eski native profil/10CLI doğrulaması tamamlandı.9256 şimdi tüm standart discoveryyi bağımsız çalıştırıyor; başlangıç/sonda kod/test/config dosya seti ve hash kontrolü var. Henüz bu full tur PASS sayılmaz. Model/Gateway/kurulum yok;247a tek uygulama/yayın sahibi. Makbuz7f8ab426-370a-4217-baad-ab5d5b599be4 lane92566938-2fd3-42cf-814b-1807134eb066.
 
-Ana rapor: docs/HYB-005B-EXECUTION-GATE.md. Önceki incelemeler:
-docs/research/HYB-005B-QA3193.md, HYB-005B-QA3156.md,
-HYB-005B-CONTINUATION-3723.md. CI kapsamı docs/CI.md.
-Önceki tam durum günlüğü:
-`docs/history/2026-10-16-STATUS-BEFORE-HYB005B-DELIVERY-3156.md`.
-69 başlangıç dosyası runtime/hyb005b-close-3156/before altında hashli korundu;
-32 eski kök dosya ve4upstream kaynak ağacında değişiklik yok.
+### 2026-10-16T20:28:37.101062+03:00 — HYB005C son-kod kabul turu
 
-### 16 Ekim 2026 — yerel teslim kapanışı
+83 hedefli standart test PASS; eski7native profil üstünde yeni report/CLI
+7/7 PASS (yeni Gateway çalışması DEĞİL). Scope-only SDK1reservation/usageUNKNOWN;
+unknown-price CLI exit2/bilgi doğrulanmadı. Kaynak ve iki DB değişmedi. Son
+ürün kodu artık sabit: full root unittest başlatılıyor. Bu aşamada ürün/test
+dosyası eklenirse yeniden tam doğrulama gerekir. Makbuz a9a74ad6-b663-4f97-bdd0-f8a5947ca2b2, lane247a055b-2607-49e2-9b48-8658ebc54345.
 
-C01 gerçek üründe kapandı.881standart/27HTTP PASS;7native dar beklenti,6strict
-outcome teyidi ve1eksik özet işi ayrımı yukarıda. Aynı kaynak seti Git/CI için
-hazırlanıyor. Commit/push/aynı-SHA CI tamamlanmadan yayın başarılı sayılmaz.
+### 2026-10-16T20:30:54.928467+03:00 — HYB005C QA9256 teslim
 
-### Bağımsız QA545b bütünleşmesi ve özet anlamı
+Bağımsız tam standart964/964 PASS exit0/skip0;177ölçülen code/config dosyası drift0/yeni0. Aynı30ret testi bu964içinde. Toplam7eski native profil readonly teyit:5taskreport/API/CLI +2scope-only;14CLI çağrısı, yeni Gateway/model0. SDK usageUNKNOWN/rezervasyon korunur; unknown-price doğru exit2. Tüm DB hashleri aynı. QA9256 rapor/test/kanıtları seçilerek stage edildi; ürün247a tek Git teslim sahibi. Önce26PASS/4FAIL ve başarısız iddialar silinmedi. Kök32dosya/dört upstream/mevcut ledger-inspector-pinler değişmedi. Exact-SHA CI yerel PASS sayısından çıkarılmaz.
 
-Ayrı QA545b dosyaları stage edilmiş bulundu; üzerine yazılmadan okundu.12 yeni
-checkpoint testi zaten881 standart testin içindeydi, hash eşitliği doğrulandı.
-Bağımsız881/881 koşu da PASS; sonuç toplamları iki katına çıkarılmaz. Rapor
-HYB-005B-QA545b.md ve evidence/hyb-005b-qa545b aynı teslimde korunur.
+### 2026-10-16T20:32:21.471967+03:00 — HYB005C yerel kapanış ve yayın hazırlığı
 
-Özetin canonical terminal RESULT kaydı completed=false ve max_iterations_reached(1/1)
-diyor. Mevcut LocalRecoveryInspector sonucu doğrulayıp outcome=failed,
-taskSucceeded=false, retryAllowed=false döndürüyor. Dolayısıyla admission
-completed alanını görev başarısı sayan strict beklenti yanlıştı; mevcut recovery
-inspector hatası veya native bozulma kanıtlanmadı. Eski strict FAIL gizlenmedi.
-Kalan gerçek ayrım physical usage240/40 ile native aggregate120/20: HYB-005C
-bunu görünür kılıp mevcut doğru inspector semantiğini kullanacak.
+Son ürün/test koduyla964/964 standart test PASS, exit0/skip0;177 ölçülen
+kod/config dosyasında değişiklik/yeni dosya0. Aynı83 hedefli test964 içindedir.
+7eski native profil:5görev+scope,SDK scope-only,unknown-price ret; okuyucu ve
+CLI7/7 beklenen sonuç, kaynakDB/config/makbuz hashleri aynı. Yeni native/inference0.
+QA9256 aynı30 testin4ilkFAILini doğruladı; son30/30 ve bağımsız964/964 PASS.
+QA test/rapor/kanıtları okunarak aynı teslimde birleştirilir; sayılar toplanmaz.
 
-### 2026-10-16T03:28:27.009640+03:00 — kod yayımlandı, CI sonucu bekleniyor
+Rapor:docs/HYB-005C-HOST-REPORT.md. Uygulama:packages/claw-hermes/host_report.py;
+komut:scripts/inspect_host_report.py (--request veya --scope-only, JSON/text).
+Kanıt:evidence/hyb-005c/full-validation.json ve retained-verification.json;
+örnekler retained-reports/. Eski yazıcı/dispatch/inspector kodu değiştirilmedi.
+32kök dosya ve4upstream kaynak korundu. Yeni bağımlılık, model, sunucu ayarı yok.
+Sonraki HYB-005D: credential/egress izolasyonu; ardından gerçek sağlayıcı
+model/tarife/token sınırı ve HYB-006 hafıza/beceri. HTTP raporu/per-run bağlama
+ayrı açık kapsam. Main ilerletilmedi, M1/M2 açık. Commit/push/CI henüz doğrulanmadı.
 
-Kod commit: `ca121ce036855b83f3e39735cc9d78aae96f70b6`. Mevcut feature dalına
-push başarılı; yerel/remote eşit, o kontrol anında çalışma ağacı temiz.
-GitHub alaz/local-ci şu an pending; eski commit yeşili aktarılmıyor.
-169 ölçülen kod/config dosyası881 PASS koşusuyla aynı. Tarihsel unified-diff
-evidence dosyasının zorunlu tek-space context satırı için yalnız o dosyaya
-blank-at-eol niteliği verildi; eski patch byte/hashleri korundu, ürün koduna
-whitespace muafiyeti yok. Commit110 dosyayı (kod, önceki/final kanıtlar, tarihçe)
-içeriyor; vendorlar ve main değişmedi. Bu günlük CI bitince sonuçla tamamlanır.
+### 2026-10-16T20:33:04.502004+03:00 — HYB005C QA9256 belge kapsamı
 
-### 2026-10-16T03:29:46.683288+03:00 — yayın ve aynı-commit CI kapanışı
-
-Kod `ca121ce036855b83f3e39735cc9d78aae96f70b6` GitHub feature dalında.
-GitHub alaz/local-ci success bağımsız sorgulandı. Alaz-server artifactinde
-sha==checkout_sha==aynı kod SHA,881/881 PASS,failed0/skipped0/suite_errors0,
-status_delivery=posted doğrulandı. Kanıt evidence/hyb-005b-close-3156/code-ci.json.
-Bu testler standart pakettir;7native Gateway/SDK senaryosu serverda tekrar
-çalıştırılmadı.881 bağımsız local QA ve881server sayıları ayrı koşular, toplanmaz.
-
-Kod yayını sonrası kontrol:yerel/remote eşit, yalnız bu durum kaydı değişiyordu;
-canlı AlazHarness native/test süreci görülmedi. Bu son commit yalnız belge/CI
-kanıtlarını günceller. Onun CI sonucu push sonrası ayrıca sorgulanır; kod SHA
-yeşili yeni belge SHA için varsayılmaz. Main birleşimi yapılmadı. Kesin sonraki
-iş HYB-005C usage/outcome görünümü; genel izolasyon, gerçek tarife ve M1/M2 açık.
+Ek sentetik readonly gözlem: doğru scope/key rezervasyonu var ama admission yoksa task canonicalVerified=false, partial_snapshot; ayrı doğrulanan profile budget görünür. Bu beklenen kapsam, execution izni yok. Ana rapordaki “If canonical identity cannot be verified, no execution totals...” ifadesi scoped reservation identity olarak daraltılmalı; gerçek davranışla çelişmesin. orphan-scope-semantics.json ve QA raporu stage edildi. Ürün/test kodu değişmedi;964tam test makbuzu korunuyor.

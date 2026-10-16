@@ -1,0 +1,13 @@
+{
+  "scope": "real host-report code with synthetic SQLite stores; no new Gateway/provider/model execution",
+  "exit_code": 1,
+  "elapsed_seconds": 9.935,
+  "tests": 30,
+  "hashes": {
+    "tests/test_host_report_qa9256.py": "17a55765dda95274c6b2740660dc7f6396ef4c83d2033ed622625a0b94930489",
+    "packages/claw-hermes/host_report.py": "34feb6f10979f7840da3a64e4295855c8822ef72de4568d79d8e38bf9ce7190c",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50"
+  },
+  "code_drift": []
+}

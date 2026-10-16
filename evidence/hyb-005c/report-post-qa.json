@@ -1,0 +1,12 @@
+{
+  "scope": "real report and synthetic SQLite unit/CLI checks, not new Gateway",
+  "exit_code": 0,
+  "elapsed_seconds": 8.812,
+  "hashes": {
+    "packages/claw-hermes/host_report.py": "f9a06e6f87a7b5c5044203225d7906319b00ceb11839c30543515840c6161d97",
+    "scripts/inspect_host_report.py": "9463d568ad137042719df0e177493b1892d3ec815b97b94bd1ea2632e6b1e103",
+    "tests/test_host_report.py": "fc162818598a77e354a56eb4d6b263fae6fda00680d7cfb5789e309b6e342a2a",
+    "tests/test_host_report_qa9256.py": "17a55765dda95274c6b2740660dc7f6396ef4c83d2033ed622625a0b94930489"
+  },
+  "code_drift": []
+}

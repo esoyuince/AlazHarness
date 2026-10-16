@@ -1,0 +1,13 @@
+AlazHarness host report v1
+Snapshot: verified_scope_snapshot
+Native task result: UNKNOWN; nativeCompleted=false
+Task evidence: not_selected
+Completion reason: UNKNOWN
+Native run usage (input/output/total): UNKNOWN/UNKNOWN/UNKNOWN
+Profile/principal observed usage (input/output/total): UNKNOWN/UNKNOWN/UNKNOWN
+Usage coverage: unknown; unknown attempts=1
+Reserved provider attempts: 1; wire delivery count: UNKNOWN
+Reserved exposure: 163840 tokens; 196608 micro-USD (NOT an invoice)
+Native completion is NOT independent verification of the requested goal.
+Scope totals are NOT attributed to this task; numeric comparison unavailable.
+Read-only snapshot. No execution permission, retry, repair or automatic refund.

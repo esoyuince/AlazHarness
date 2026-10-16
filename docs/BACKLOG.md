@@ -103,3 +103,12 @@ Next HYB-005C: distinguish ledger physical usage/reservation from native run
 aggregate and incomplete-task outcome; then qualify isolated provider credentials,
 remote model/tariff/capability, egress and remaining M1 permission limits.
 No new autonomous scheduling starts before M1; memory transfer HYB-006 remains open.
+
+## HYB-005C local reporting — 2026-10-16
+
+Read-only task/native usage/profile-ledger exposure report and explicit scope-only
+CLI are implemented in docs/HYB-005C-HOST-REPORT.md. V1 claims are NOT retroactively
+attributed to runs. Missing usage remains unknown; reports grant no action/refund.
+Final test/publication status is in status.md. Next HYB-005D: credential/egress
+isolation and qualified provider capabilities/tariffs, not an autonomous scheduler.
+Future HTTP reporting and trusted per-run call binding are explicit follow-ups.

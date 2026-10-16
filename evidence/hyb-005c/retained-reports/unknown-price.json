@@ -1,0 +1,27 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "unverified",
+  "reason": "invalid_local_input",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "task": {
+    "classification": "unverified",
+    "canonicalVerified": false,
+    "taskSucceeded": false,
+    "requiresOperator": true
+  },
+  "nativeReportedUsage": {
+    "available": false
+  },
+  "execution": {
+    "available": false
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "evidence_unverified"
+  },
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+}

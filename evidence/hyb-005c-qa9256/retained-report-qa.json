@@ -1,0 +1,208 @@
+{
+  "scope": "independent report/API/CLI validation against five existing real native profiles, not new Gateway executions",
+  "results": [
+    {
+      "scenario": "normal",
+      "result": "CORROBORATED",
+      "task_outcome": "completed",
+      "native_task_succeeded": true,
+      "independent_goal_achievement_verified": false,
+      "scope_provider_reservations": 2,
+      "scope_known_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "native_run_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "scope_reserved_tokens": 327680,
+      "scope_reserved_cost_microusd": 393216,
+      "per_run_attribution": false,
+      "wire_count_proven_by_ledger": false,
+      "cli": [
+        {
+          "format": "json",
+          "exit_code": 0,
+          "matches_api": true
+        },
+        {
+          "format": "text",
+          "exit_code": 0,
+          "matches_api": true
+        }
+      ],
+      "source_database_bytes_unchanged": true,
+      "native_baseline_receipt_sha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+      "report_sha256": "b353dad25027b8ed682e351c6cd83030d35f59abf6ea7475a75fae63c5acbdc1",
+      "new_native_execution": false
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "CORROBORATED",
+      "task_outcome": "failed",
+      "native_task_succeeded": false,
+      "independent_goal_achievement_verified": false,
+      "scope_provider_reservations": 1,
+      "scope_known_usage": {
+        "input_tokens": 120,
+        "output_tokens": 20,
+        "total_tokens": 140
+      },
+      "native_run_usage": {
+        "input_tokens": 120,
+        "output_tokens": 20,
+        "total_tokens": 140
+      },
+      "scope_reserved_tokens": 163840,
+      "scope_reserved_cost_microusd": 196608,
+      "per_run_attribution": false,
+      "wire_count_proven_by_ledger": false,
+      "cli": [
+        {
+          "format": "json",
+          "exit_code": 0,
+          "matches_api": true
+        },
+        {
+          "format": "text",
+          "exit_code": 0,
+          "matches_api": true
+        }
+      ],
+      "source_database_bytes_unchanged": true,
+      "native_baseline_receipt_sha256": "909c9e8cd9439e0b6dba36174167c912a8bffa4702a118bb68ded7941e6fa36a",
+      "report_sha256": "370733154cd31860bffbdbd9e35f63c0490bf5719c10070792b23d36df503046",
+      "new_native_execution": false
+    },
+    {
+      "scenario": "tool-limit",
+      "result": "CORROBORATED",
+      "task_outcome": "completed",
+      "native_task_succeeded": true,
+      "independent_goal_achievement_verified": false,
+      "scope_provider_reservations": 2,
+      "scope_known_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "native_run_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "scope_reserved_tokens": 327680,
+      "scope_reserved_cost_microusd": 393216,
+      "per_run_attribution": false,
+      "wire_count_proven_by_ledger": false,
+      "cli": [
+        {
+          "format": "json",
+          "exit_code": 0,
+          "matches_api": true
+        },
+        {
+          "format": "text",
+          "exit_code": 0,
+          "matches_api": true
+        }
+      ],
+      "source_database_bytes_unchanged": true,
+      "native_baseline_receipt_sha256": "9248d8b64e4a3f1af00e7e7dc3230c19d97179d50a5a726242fc553464edf346",
+      "report_sha256": "65fb510ce9f9efb726308cb154cd7714ed6cd5c81c27a26d7b85f1bdebe5e782",
+      "new_native_execution": false
+    },
+    {
+      "scenario": "denied-write",
+      "result": "CORROBORATED",
+      "task_outcome": "completed",
+      "native_task_succeeded": true,
+      "independent_goal_achievement_verified": false,
+      "scope_provider_reservations": 2,
+      "scope_known_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "native_run_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "scope_reserved_tokens": 327680,
+      "scope_reserved_cost_microusd": 393216,
+      "per_run_attribution": false,
+      "wire_count_proven_by_ledger": false,
+      "cli": [
+        {
+          "format": "json",
+          "exit_code": 0,
+          "matches_api": true
+        },
+        {
+          "format": "text",
+          "exit_code": 0,
+          "matches_api": true
+        }
+      ],
+      "source_database_bytes_unchanged": true,
+      "native_baseline_receipt_sha256": "0a7f977e43c6d5364406fbabda5e6879e405fe453e906f1a0d098ee2090cfcf7",
+      "report_sha256": "9ddeea9318c612b479a61b239c14041d3a095b8ea4d4c822cbc79ad03d90e448",
+      "new_native_execution": false
+    },
+    {
+      "scenario": "summary",
+      "result": "CORROBORATED",
+      "task_outcome": "failed",
+      "native_task_succeeded": false,
+      "independent_goal_achievement_verified": false,
+      "scope_provider_reservations": 2,
+      "scope_known_usage": {
+        "input_tokens": 240,
+        "output_tokens": 40,
+        "total_tokens": 280
+      },
+      "native_run_usage": {
+        "input_tokens": 120,
+        "output_tokens": 20,
+        "total_tokens": 140
+      },
+      "scope_reserved_tokens": 327680,
+      "scope_reserved_cost_microusd": 393216,
+      "per_run_attribution": false,
+      "wire_count_proven_by_ledger": false,
+      "cli": [
+        {
+          "format": "json",
+          "exit_code": 0,
+          "matches_api": true
+        },
+        {
+          "format": "text",
+          "exit_code": 0,
+          "matches_api": true
+        }
+      ],
+      "source_database_bytes_unchanged": true,
+      "native_baseline_receipt_sha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67",
+      "report_sha256": "40d7de85ad1dbb59e9cc05312548a1bc7aa052b3999c5d46aad46ddf4b74b621",
+      "new_native_execution": false
+    }
+  ],
+  "count": 5,
+  "errors": [],
+  "hashes": {
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "scripts/inspect_host_report.py": "97a018087f4b7f1a55a2d83ab89d0cc1a502a88c1651c99c73ea4a2c2e3cec27",
+    "scripts/qa/host_report_retained_9256.py": "a7f4d3bdab8350915be87c1f31ff9d420dc0893af9ce877e5eea6384d93880b4"
+  },
+  "code_drift": [],
+  "paid_calls": 0,
+  "inference_calls": 0,
+  "result": "PASS"
+}

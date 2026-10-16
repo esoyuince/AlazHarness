@@ -1,0 +1,102 @@
+{
+  "scope": "current report/CLI against seven historical native profiles; NOT seven new Gateway runs",
+  "checks": [
+    {
+      "scenario": "normal",
+      "result": "PASS",
+      "mode": "run_and_scope",
+      "native_receipt_sha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+      "reportStatus": "verified_snapshot",
+      "report_sha256": "cf40f3f2ac06aa8fcc38851f69b9ffeb6047423c8f83984c09caced85068ffb7",
+      "cli_exit": 0,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "PASS",
+      "mode": "run_and_scope",
+      "native_receipt_sha256": "909c9e8cd9439e0b6dba36174167c912a8bffa4702a118bb68ded7941e6fa36a",
+      "reportStatus": "verified_snapshot",
+      "report_sha256": "9b5ffa5f79ebc579ffe48fc107221357f995fb7a6e405dbf60601c870bde9832",
+      "cli_exit": 0,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    },
+    {
+      "scenario": "tool-limit",
+      "result": "PASS",
+      "mode": "run_and_scope",
+      "native_receipt_sha256": "9248d8b64e4a3f1af00e7e7dc3230c19d97179d50a5a726242fc553464edf346",
+      "reportStatus": "verified_snapshot",
+      "report_sha256": "f175f20bbafbb7f95226ab9cce0924d2a7a16753a588b25b1f083fa056675eb7",
+      "cli_exit": 0,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    },
+    {
+      "scenario": "denied-write",
+      "result": "PASS",
+      "mode": "run_and_scope",
+      "native_receipt_sha256": "0a7f977e43c6d5364406fbabda5e6879e405fe453e906f1a0d098ee2090cfcf7",
+      "reportStatus": "verified_snapshot",
+      "report_sha256": "04c44f9c41401273733231ee201eaa66759818f4e16faa3aa8561246e854628d",
+      "cli_exit": 0,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    },
+    {
+      "scenario": "sdk-retry-limit",
+      "result": "PASS",
+      "mode": "scope_only",
+      "native_receipt_sha256": "9265056c843651540fec3f0e525c30c541ab99d0169d33b2464e3dc099dfee3a",
+      "reportStatus": "verified_scope_snapshot",
+      "report_sha256": "55de78194a3889d09969cf3a30dfc66499d6a61a06e17eff466f3b4ecbc7f048",
+      "cli_exit": 0,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    },
+    {
+      "scenario": "summary",
+      "result": "PASS",
+      "mode": "run_and_scope",
+      "native_receipt_sha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67",
+      "reportStatus": "verified_snapshot",
+      "report_sha256": "19572c4a78665111a42148290632b786f8d95a3b0e423d4b4f7b5a529efdef93",
+      "cli_exit": 0,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    },
+    {
+      "scenario": "unknown-price",
+      "result": "PASS",
+      "mode": "scope_only",
+      "native_receipt_sha256": "c644d56ad6d5a4fcf375bfa27a55c322236aa7d422e1932e043e85c915f5a851",
+      "reportStatus": "unverified",
+      "report_sha256": "08c0326a3a25199d1b72112af52755ab5fd532a0f01e4235c0bd4941453eeb0e",
+      "cli_exit": 2,
+      "source_files_unchanged": true,
+      "new_gateway_executions": 0,
+      "model_calls": 0
+    }
+  ],
+  "passed": 7,
+  "errors": [],
+  "code_drift": [],
+  "programs": {
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "scripts/inspect_host_report.py": "97a018087f4b7f1a55a2d83ab89d0cc1a502a88c1651c99c73ea4a2c2e3cec27",
+    "scripts/verify_host_report_retained.py": "a123ff0b94e89faf737da1f932acafae1bdfa986328ec664e9e94d4f90509a4c",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78"
+  },
+  "new_gateway_executions": 0,
+  "inference_calls": 0,
+  "paid_calls": 0
+}

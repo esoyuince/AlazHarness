@@ -1,0 +1,11 @@
+{
+  "scope": "one independent synthetic orphan report observation, not a Gateway scenario or standard test count",
+  "report_status": "partial_snapshot",
+  "task_canonical_verified": false,
+  "scoped_reservation_lookup_verified": true,
+  "profile_budget_available": true,
+  "provider_reservations": 1,
+  "usage_coverage": "unknown",
+  "no_execution_authority": true,
+  "source_bytes_unchanged": true
+}

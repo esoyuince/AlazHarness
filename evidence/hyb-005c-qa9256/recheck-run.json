@@ -1,0 +1,13 @@
+{
+  "scope": "same unchanged 30 independent temporary-SQLite report tests; no native process/model",
+  "exit_code": 0,
+  "elapsed_seconds": 2.379,
+  "tests": 30,
+  "hashes": {
+    "tests/test_host_report_qa9256.py": "17a55765dda95274c6b2740660dc7f6396ef4c83d2033ed622625a0b94930489",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50"
+  },
+  "code_drift": []
+}

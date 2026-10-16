@@ -1,0 +1,14 @@
+{
+  "scope": "independent complete standard unittest suite; not new Gateway execution",
+  "head_at_start": "aaf29d46b6496942c01a38f7373a9d56931c7cd0",
+  "tests": 964,
+  "exit_code": 0,
+  "skips_reported": false,
+  "elapsed_seconds": 85.411,
+  "measured_files": 177,
+  "changed_or_removed": [],
+  "added_code_or_config": [],
+  "inference_calls": 0,
+  "paid_calls": 0,
+  "result": "PASS"
+}

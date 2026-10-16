@@ -1,0 +1,44 @@
+test_arbitrary_terminal_reason_not_exposed (test_host_report.HostReportTests.test_arbitrary_terminal_reason_not_exposed) ... ok
+test_bool_native_token_not_one (test_host_report.HostReportTests.test_bool_native_token_not_one) ... ok
+test_budget_is_not_invoice (test_host_report.HostReportTests.test_budget_is_not_invoice) ... ok
+test_cancelled_task (test_host_report.HostReportTests.test_cancelled_task) ... ok
+test_cli_report_has_no_secret_and_exit_matches_evidence (test_host_report.HostReportTests.test_cli_report_has_no_secret_and_exit_matches_evidence) ... ok
+test_complete_task_and_scoped_usage_are_separate (test_host_report.HostReportTests.test_complete_task_and_scoped_usage_are_separate) ... ok
+test_completed_output_not_disclosed (test_host_report.HostReportTests.test_completed_output_not_disclosed) ... ok
+test_database_connections_closed_no_dml (test_host_report.HostReportTests.test_database_connections_closed_no_dml) ... ok
+test_error_claim_with_usage_not_reported_as_success (test_host_report.HostReportTests.test_error_claim_with_usage_not_reported_as_success) ... ok
+test_expired_retention_does_not_publish_usage (test_host_report.HostReportTests.test_expired_retention_does_not_publish_usage) ... ok
+test_fake_counter_refused (test_host_report.HostReportTests.test_fake_counter_refused) ... ok
+test_invalid_trusted_types_refused (test_host_report.HostReportTests.test_invalid_trusted_types_refused) ... ok
+test_missing_budget_not_zero (test_host_report.HostReportTests.test_missing_budget_not_zero) ... ok
+test_missing_claim_with_retained_counter_refused (test_host_report.HostReportTests.test_missing_claim_with_retained_counter_refused) ... ok
+test_missing_db_not_created (test_host_report.HostReportTests.test_missing_db_not_created) ... ok
+test_missing_native_usage_not_zero (test_host_report.HostReportTests.test_missing_native_usage_not_zero) ... ok
+test_missing_usage_preserves_exposure (test_host_report.HostReportTests.test_missing_usage_preserves_exposure) ... ok
+test_no_state_or_replay_bytes_changed (test_host_report.HostReportTests.test_no_state_or_replay_bytes_changed) ... ok
+test_partial_task_is_not_success (test_host_report.HostReportTests.test_partial_task_is_not_success) ... ok
+test_partial_usage_keeps_known_sum_and_unknown_count (test_host_report.HostReportTests.test_partial_usage_keeps_known_sum_and_unknown_count) ... ok
+test_policy_change_does_not_reprice_or_reset (test_host_report.HostReportTests.test_policy_change_does_not_reprice_or_reset) ... ok
+test_quarantine_visible_but_never_reset (test_host_report.HostReportTests.test_quarantine_visible_but_never_reset) ... ok
+test_read_only_adapter_never_invokes_write (test_host_report.HostReportTests.test_read_only_adapter_never_invokes_write) ... ok
+test_read_snapshot_invalidated_by_concurrent_epoch_change (test_host_report.HostReportTests.test_read_snapshot_invalidated_by_concurrent_epoch_change) ... ok
+test_remaining_capacity_is_not_permission (test_host_report.HostReportTests.test_remaining_capacity_is_not_permission) ... ok
+test_reservation_never_reported_as_wire_delivery (test_host_report.HostReportTests.test_reservation_never_reported_as_wire_delivery) ... ok
+test_reserved_without_response_usage_is_unknown_not_zero (test_host_report.HostReportTests.test_reserved_without_response_usage_is_unknown_not_zero) ... ok
+test_returned_report_mutation_does_not_affect_storage (test_host_report.HostReportTests.test_returned_report_mutation_does_not_affect_storage) ... ok
+test_stale_epoch (test_host_report.HostReportTests.test_stale_epoch) ... ok
+test_summary_text_does_not_imply_completed_task (test_host_report.HostReportTests.test_summary_text_does_not_imply_completed_task) ... ok
+test_text_explains_scope_and_unknown (test_host_report.HostReportTests.test_text_explains_scope_and_unknown) ... ok
+test_tool_handler_return_not_claimed_successful_effect (test_host_report.HostReportTests.test_tool_handler_return_not_claimed_successful_effect) ... ok
+test_unknown_execution_never_grants_retry (test_host_report.HostReportTests.test_unknown_execution_never_grants_retry) ... ok
+test_wrong_bearer_discloses_no_execution (test_host_report.HostReportTests.test_wrong_bearer_discloses_no_execution) ... ok
+test_wrong_key (test_host_report.HostReportTests.test_wrong_key) ... ok
+test_wrong_request (test_host_report.HostReportTests.test_wrong_request) ... ok
+test_wrong_run (test_host_report.HostReportTests.test_wrong_run) ... ok
+test_zero_known_usage_is_distinct_from_unknown (test_host_report.HostReportTests.test_zero_known_usage_is_distinct_from_unknown) ... ok
+test_zero_retained_claims_not_global_no_calls (test_host_report.HostReportTests.test_zero_retained_claims_not_global_no_calls) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 11.560s
+
+OK
