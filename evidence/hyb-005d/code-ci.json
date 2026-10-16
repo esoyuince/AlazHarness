@@ -1,0 +1,25 @@
+{
+  "scope": "same-code-commit alaz-server standard CI; Docker and Windows native probes were NOT rerun by CI",
+  "observed_at": "2026-10-16T21:49:27.087609+03:00",
+  "github_context": "alaz/local-ci",
+  "github_state": "success",
+  "observed_via": "GitHub connector, local gh and read-only server receipt",
+  "server": {
+    "sha": "4aaa27f3b6ec9d3da12247b3535c651d43086e51",
+    "checkout_sha": "4aaa27f3b6ec9d3da12247b3535c651d43086e51",
+    "status": "success",
+    "build_status": "success",
+    "ci2_suite_proof": {
+      "executed": 1062,
+      "failed": 0,
+      "passed": 1062,
+      "skipped": 0,
+      "suite_errors": 0,
+      "total": 1062
+    },
+    "status_delivery": "posted"
+  },
+  "native_docker_runs_by_ci": 0,
+  "native_windows_runs_by_ci": 0,
+  "model_calls": 0
+}

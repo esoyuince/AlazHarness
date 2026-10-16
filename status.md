@@ -4,7 +4,7 @@ Son güncelleme: 16 Ekim 2026. Canlı dal/HEAD/CI doğrulanmadan eski sonuç akt
 
 ## Güncel nokta
 
-HYB-005D1 Linux araç-süreci prototipi yerelde doğrulandı; Git/CI yayını IN PROGRESS.
+**HYB-005D1 Linux araç-süreci prototipi yayımlandı; kodun aynı-SHA CI sonucu başarılı.**
 Tam HYB-005D, gerçek Hermes bağlama ve Windows ağ kabulü AÇIK.
 Aktif dal: alaz/hyb-005d-isolation-247a.
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88.
@@ -132,3 +132,27 @@ CORROBORATED; yeni container0. Modül88fd6d1a/probe7bd87920, kanıt
 evidence/hyb-005d-qa4023/linux-final-corroboration.json. Bu Windows2strict
 FAILini veya tam Hermes/provider izolasyonunu kapatmaz. QA dosyaları seçilerek
 stage edildi, ürün/runtime/main değişmedi; tek Git yayın sahibi247a kalır.
+
+### 2026-10-16T21:49:27.087609+03:00 — HYB005D1 yayın ve aynı-commit CI kapanışı
+
+Kod commit: `4aaa27f3b6ec9d3da12247b3535c651d43086e51`. Feature dalına push,
+yerel/remote eşit ve temiz çalışma ağacı doğrulandı. GitHub alaz/local-ci success;
+alaz-server sha==checkout_sha aynı commit1062/1062 PASS, failed0/skipped0/
+suite_errors0/status_delivery posted. Kanıt evidence/hyb-005d/code-ci.json.
+Bu standart suite65Linux+33Windows yeni offline testi içerir; Docker6native
+ve Windows2strictFAIL sunucu CI içinde yeniden koşulmadı ve toplama eklenmez.
+
+QA4023 sonradan Linux6eski koşuyu server source/ownership/prestart/exit/capsule
+kayıtlarıyla bağımsız readonly teyit etti; linux-final-corroboration.json bu
+scope ile okundu ve yayınlandı. Yeni6container veya Linux ürün-kodu auditinin
+bittiği iddiası yok. İlk native/fault-test başarısız makbuzlar ve Windows strict
+FAIL kayıtları aynen korundu; Windows için ekstra loopback yetkisi verilmedi.
+
+Bu kapanış yalnız belge/CI makbuzu değiştirir;1062PASS ile aynı kod/config
+korunur. Son belge commit SHA kendi CI sonucuyla ayrıca doğrulanır. Kök erişim
+status.md eşittir;32legacy dosya/upstream pinler/main korunur. Mevcut Hermes
+Gateway/dispatch/provider/ledger/read_file hattı henüz bu prototipe bağlı DEĞİL.
+Sıradaki kesin iş HYB-005D2: yetkili admission+policy+budget sınırında gerçek
+araç bağlama; iptal ve belirsiz sonucu doğru aktar; Docker yoksa host fallback
+olmasın. Parent-hard-crash/container takeover ve model credential/egress ayrı
+açık kabul işleridir. TamHYB005D/M1/M2 kapanmadı. Yeni kurulum/ücretli model0.

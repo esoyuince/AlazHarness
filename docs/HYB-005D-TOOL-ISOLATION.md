@@ -1,6 +1,7 @@
 # HYB-005D1 — Linux isolated tool process prototype
 
-Status: implementation and final native Docker checks are recorded in status.md.
+Status: Linux tool-process prototype published; exact-code standard CI1062/1062 PASS.
+Native Docker6/6 and Windows strict-network NOT ACCEPTED remain separate scopes.
 Base: fadb48acf6ada154497ec7f88b612b0e0fbb54e0. This is the first bounded
 HYB-005D slice, NOT full credential/egress isolation of the Hermes runtime.
 
@@ -149,3 +150,15 @@ A separate exact-ID Docker query verifies all six are absent after recorded
 shutdown/removal. The initial six runs belong to the earlier code revision.
 The final Docker probe performs no Hermes Gateway or model execution. Publication
 and same-commit server CI are recorded only after push in status.md.
+
+## Publication and exact-code CI
+
+Code4aaa27f3b6ec9d3da12247b3535c651d43086e51 was pushed to the feature branch.
+The server checkout SHA matches it exactly:1062 passed, zero failed/skipped/suite
+errors; GitHub alaz/local-ci reports success. Evidence:code-ci.json. Standard CI
+does not rerun either native OS experiment. The independent QA4023 final record
+also corroborates the six retained Linux server cases, without new containers or
+an independent full source audit. All historical failures remain distinct.
+
+The next gate is actual Hermes admission/budget/tool integration, then provider
+credential/egress custody. This module alone is not the live harness perimeter.
