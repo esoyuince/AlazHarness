@@ -1,0 +1,17 @@
+{
+  "scope": "independent complete offline standard suite on current working tree; Windows native FAIL observations remain separate",
+  "base": "fadb48acf6ada154497ec7f88b612b0e0fbb54e0",
+  "count": 1050,
+  "exit_code": 0,
+  "skipped": false,
+  "observed_at": "2026-10-16T21:35:01.380241+03:00",
+  "elapsed_seconds": 133.722,
+  "measured_files": 182,
+  "changed_or_removed": [],
+  "added_code": [
+    "scripts/run_isolated_tool_probe.py"
+  ],
+  "native_os_runs": 0,
+  "model_calls": 0,
+  "result": "NOT_ACCEPTED"
+}

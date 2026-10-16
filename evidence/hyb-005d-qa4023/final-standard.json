@@ -1,0 +1,15 @@
+{
+  "scope": "second full offline standard suite after Linux probe source existed; Windows strict native FAIL retained separately",
+  "base": "fadb48acf6ada154497ec7f88b612b0e0fbb54e0",
+  "count": 1062,
+  "exit_code": 0,
+  "skipped": false,
+  "observed_at": "2026-10-16T21:39:44.328087+03:00",
+  "elapsed_seconds": 94.219,
+  "measured_files": 184,
+  "changed_or_removed": [],
+  "added_code": [],
+  "native_os_runs": 0,
+  "model_calls": 0,
+  "result": "PASS"
+}

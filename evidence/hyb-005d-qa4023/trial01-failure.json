@@ -1,0 +1,15 @@
+{
+  "scope": "historical candidate failure, not final source or full isolation acceptance",
+  "case": "trial01",
+  "errors": [
+    "Win32:5:SetLowLabel"
+  ],
+  "profile_created": true,
+  "profile_cleanup_hr": 0,
+  "listeners_stopped": true,
+  "source_record_sha256": "27d3f853811d22b725b2e14173d7f6ee419b9df2bd49aa8de938b90dcd0666e3",
+  "code_hashes": {
+    "initial_source": "8df07c37e24105c4afa8533bed2870baeb5fa4a6f5ba762c4d97ebba56cd162e"
+  },
+  "declared_result": "FAIL_RETAINED"
+}

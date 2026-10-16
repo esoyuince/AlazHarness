@@ -1,0 +1,15 @@
+{
+  "scope": "offline synthetic Windows-evidence conformance and environment allowlist; NOT native OS isolation tests",
+  "count": 33,
+  "exit_code": 0,
+  "skip_reported": false,
+  "code_drift": [],
+  "elapsed_seconds": 0.63,
+  "hashes": {
+    "scripts/qa/windows_appcontainer_probe.cs": "4c1050700bd01dfb73468ac3a266e8d2edf07212a9f75641379a59b3a02f7f8c",
+    "scripts/qa/run_windows_appcontainer_probe.py": "4bd3ff844cb21c84757c35865e7452e58bd0db86dbc74803e9763a6abf08262d",
+    "tests/test_windows_appcontainer_contract_qa4023.py": "b194b41d522c5d703df46dd5ac255e94eab08656958bd277c7c1ed2bc9714270"
+  },
+  "native_full_isolation_accepted": false,
+  "new_native_runs": 0
+}

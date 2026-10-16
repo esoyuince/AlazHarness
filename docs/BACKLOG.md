@@ -112,3 +112,11 @@ attributed to runs. Missing usage remains unknown; reports grant no action/refun
 Final test/publication status is in status.md. Next HYB-005D: credential/egress
 isolation and qualified provider capabilities/tariffs, not an autonomous scheduler.
 Future HTTP reporting and trusted per-run call binding are explicit follow-ups.
+
+## HYB-005D1 Linux tool-process slice
+
+Opt-in credential-free/network-none Docker tool backend implemented; exact tests
+and publication in status.md and HYB-005D-TOOL-ISOLATION.md. Not yet wired to
+Hermes native dispatch. Next HYB-005D2: existing admission/budget/tool binding,
+no host fallback, cancellation and separate provider credential/egress custody.
+Parent hard-crash cleanup, Windows native and full M1/M2 remain OPEN.

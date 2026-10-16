@@ -1,0 +1,301 @@
+{
+  "scope": "real Docker/Linux isolated TOOL processes on alaz-server; not native Hermes or provider integration",
+  "results": [
+    {
+      "scenario": "isolation-1",
+      "result": "PASS",
+      "checks": {
+        "no_errors": true,
+        "capsule_unchanged": true,
+        "native_exit_confirmed": true,
+        "owned_container_removed": true,
+        "no_secret_in_output": true,
+        "isolated_namespace": true,
+        "marker_read": true,
+        "nonroot": true,
+        "no_inherited_secrets": true,
+        "socket_not_mounted": true,
+        "host_canary_hidden": true,
+        "read_only_capsule": true,
+        "root_write_denied": true,
+        "scratch_works": true,
+        "only_loopback": true,
+        "network_unreachable": true,
+        "descendant_isolated": true,
+        "raw_socket_denied": true,
+        "cannot_elevate": true,
+        "no_new_privileges": true,
+        "capabilities_empty": true,
+        "seccomp_enabled": true,
+        "memory_bound": true,
+        "pids_bound": true,
+        "cpu_bound": true,
+        "host_listener_not_reached": true
+      },
+      "runner_outcome": "completed",
+      "errors": [],
+      "exit": {
+        "containerId": "2e6b0420f1204f2477431b4d17be044a47d378e5491c6c80263224749d4ef514",
+        "exited": true,
+        "exitCode": 0,
+        "oomKilled": false,
+        "neverStarted": false,
+        "runningBeforeCleanup": false,
+        "removed": true
+      },
+      "new_model_calls": 0,
+      "hermes_gateway_executed": false,
+      "observed_container": {
+        "marker": "ISOLATED_7c6e69636d4e1d90e8d14178",
+        "uid": 65534,
+        "gid": 65534,
+        "namespace": {
+          "net": "net:[4026532435]",
+          "pid": "pid:[4026532433]",
+          "mnt": "mnt:[4026532430]"
+        },
+        "interfaces": [
+          "lo"
+        ],
+        "privilege": {
+          "NoNewPrivs": "1",
+          "CapEff": "0000000000000000",
+          "Seccomp": "2"
+        },
+        "environment_canary_absent": true,
+        "parent_proxy_absent": true,
+        "docker_endpoint_absent": true,
+        "docker_socket_absent": true,
+        "host_canary_read": 2,
+        "capsule_write": 30,
+        "root_write": 13,
+        "private_scratch_writable": true,
+        "connections": {
+          "host_loopback": 111,
+          "external_v4": 101,
+          "external_v6": 101,
+          "udp_v4": 101
+        },
+        "raw_socket": 1,
+        "setuid_root_result": -1,
+        "setuid_root_errno": 1,
+        "descendant_connection_errno": 111,
+        "descendant_exit": 0,
+        "cgroups": {
+          "memory.max": "134217728",
+          "pids.max": "32",
+          "cpu.max": "50000 100000"
+        }
+      }
+    },
+    {
+      "scenario": "isolation-2",
+      "result": "PASS",
+      "checks": {
+        "no_errors": true,
+        "capsule_unchanged": true,
+        "native_exit_confirmed": true,
+        "owned_container_removed": true,
+        "no_secret_in_output": true,
+        "isolated_namespace": true,
+        "marker_read": true,
+        "nonroot": true,
+        "no_inherited_secrets": true,
+        "socket_not_mounted": true,
+        "host_canary_hidden": true,
+        "read_only_capsule": true,
+        "root_write_denied": true,
+        "scratch_works": true,
+        "only_loopback": true,
+        "network_unreachable": true,
+        "descendant_isolated": true,
+        "raw_socket_denied": true,
+        "cannot_elevate": true,
+        "no_new_privileges": true,
+        "capabilities_empty": true,
+        "seccomp_enabled": true,
+        "memory_bound": true,
+        "pids_bound": true,
+        "cpu_bound": true,
+        "host_listener_not_reached": true
+      },
+      "runner_outcome": "completed",
+      "errors": [],
+      "exit": {
+        "containerId": "0cbc1aeb13e59bbc4a5405425fd1c94feb73925f25222a7924b62c139b2819fd",
+        "exited": true,
+        "exitCode": 0,
+        "oomKilled": false,
+        "neverStarted": false,
+        "runningBeforeCleanup": false,
+        "removed": true
+      },
+      "new_model_calls": 0,
+      "hermes_gateway_executed": false,
+      "observed_container": {
+        "marker": "ISOLATED_9f80f17e5b17664a17b7f9f8",
+        "uid": 65534,
+        "gid": 65534,
+        "namespace": {
+          "net": "net:[4026532435]",
+          "pid": "pid:[4026532433]",
+          "mnt": "mnt:[4026532430]"
+        },
+        "interfaces": [
+          "lo"
+        ],
+        "privilege": {
+          "NoNewPrivs": "1",
+          "CapEff": "0000000000000000",
+          "Seccomp": "2"
+        },
+        "environment_canary_absent": true,
+        "parent_proxy_absent": true,
+        "docker_endpoint_absent": true,
+        "docker_socket_absent": true,
+        "host_canary_read": 2,
+        "capsule_write": 30,
+        "root_write": 13,
+        "private_scratch_writable": true,
+        "connections": {
+          "host_loopback": 111,
+          "external_v4": 101,
+          "external_v6": 101,
+          "udp_v4": 101
+        },
+        "raw_socket": 1,
+        "setuid_root_result": -1,
+        "setuid_root_errno": 1,
+        "descendant_connection_errno": 111,
+        "descendant_exit": 0,
+        "cgroups": {
+          "memory.max": "134217728",
+          "pids.max": "32",
+          "cpu.max": "50000 100000"
+        }
+      }
+    },
+    {
+      "scenario": "timeout",
+      "result": "PASS",
+      "checks": {
+        "no_errors": true,
+        "capsule_unchanged": true,
+        "native_exit_confirmed": true,
+        "owned_container_removed": true,
+        "no_secret_in_output": true,
+        "expected_outcome": true,
+        "descendant_was_started": true,
+        "host_listener_not_reached": true
+      },
+      "runner_outcome": "timeout",
+      "errors": [],
+      "exit": {
+        "containerId": "7454e2133b3a3d693411064813590a32410097285050c34cc02f0a01ae5c92db",
+        "exited": true,
+        "exitCode": 137,
+        "oomKilled": false,
+        "neverStarted": false,
+        "runningBeforeCleanup": true,
+        "removed": true
+      },
+      "new_model_calls": 0,
+      "hermes_gateway_executed": false
+    },
+    {
+      "scenario": "cancel",
+      "result": "PASS",
+      "checks": {
+        "no_errors": true,
+        "capsule_unchanged": true,
+        "native_exit_confirmed": true,
+        "owned_container_removed": true,
+        "no_secret_in_output": true,
+        "expected_outcome": true,
+        "descendant_was_started": true,
+        "host_listener_not_reached": true
+      },
+      "runner_outcome": "cancelled",
+      "errors": [],
+      "exit": {
+        "containerId": "dcbdadc52112d1cbd21558ac381f59f0f17e407502eb9d472f6f3b112eea0c63",
+        "exited": true,
+        "exitCode": 137,
+        "oomKilled": false,
+        "neverStarted": false,
+        "runningBeforeCleanup": true,
+        "removed": true
+      },
+      "new_model_calls": 0,
+      "hermes_gateway_executed": false
+    },
+    {
+      "scenario": "output-limit",
+      "result": "PASS",
+      "checks": {
+        "no_errors": true,
+        "capsule_unchanged": true,
+        "native_exit_confirmed": true,
+        "owned_container_removed": true,
+        "no_secret_in_output": true,
+        "expected_outcome": true,
+        "bounded_output": true,
+        "host_listener_not_reached": true
+      },
+      "runner_outcome": "output_limit",
+      "errors": [],
+      "exit": {
+        "containerId": "d03df9e32d8bfab8f800fffc7ac77be35e3c8f7f87ecae4ee2c9deac380ad2d1",
+        "exited": true,
+        "exitCode": 0,
+        "oomKilled": false,
+        "neverStarted": false,
+        "runningBeforeCleanup": false,
+        "removed": true
+      },
+      "new_model_calls": 0,
+      "hermes_gateway_executed": false
+    },
+    {
+      "scenario": "tool-failure",
+      "result": "PASS",
+      "checks": {
+        "no_errors": true,
+        "capsule_unchanged": true,
+        "native_exit_confirmed": true,
+        "owned_container_removed": true,
+        "no_secret_in_output": true,
+        "expected_outcome": true,
+        "host_listener_not_reached": true
+      },
+      "runner_outcome": "tool_failed",
+      "errors": [],
+      "exit": {
+        "containerId": "2d3292687cc951db84611c249c7b6d1106d02aa761c85706c094ed3de9f05717",
+        "exited": true,
+        "exitCode": 1,
+        "oomKilled": false,
+        "neverStarted": false,
+        "runningBeforeCleanup": false,
+        "removed": true
+      },
+      "new_model_calls": 0,
+      "hermes_gateway_executed": false
+    }
+  ],
+  "passed": 6,
+  "expected": 6,
+  "source_hashes": {
+    "run_isolated_tool_probe.py": "7bd8792074880585a7470638384581c7fbacbaa3bbf9c9ed05eb6799d26f9cda",
+    "isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc"
+  },
+  "source_drift": [],
+  "host_canary_unchanged": true,
+  "host_listener_positive_control": true,
+  "real_model_calls": 0,
+  "paid_calls": 0,
+  "pulled_or_built_images": false,
+  "firewall_or_daemon_changed": false,
+  "secret_value_recorded": false,
+  "result": "PASS"
+}

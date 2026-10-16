@@ -1,0 +1,42 @@
+{
+  "scope": "pinned source review and official mechanism documentation, not upstream runtime acceptance",
+  "openclaw_commit": "2dcbb6138d57dccfcd54f2f908ef9f38268b1229",
+  "references": [
+    {
+      "path": "src/agents/sandbox/validate-sandbox-security.ts",
+      "sha256": "f5b09ee0d0a1fd9da144768d5597adfd249fab10649ea7b111de9224a80493ec",
+      "copied_into_product": false,
+      "executed_this_package": false
+    },
+    {
+      "path": "src/agents/sandbox/network-mode.ts",
+      "sha256": "4df1af002d9e6a4d50999ebba45ee8764b5db6f7e1ea1a1a8fdf58f2f89a0bc2",
+      "copied_into_product": false,
+      "executed_this_package": false
+    },
+    {
+      "path": "src/agents/sandbox/sanitize-env-vars.ts",
+      "sha256": "1bd468985143fe6a0425560b7f79b1d1fc03b6d18326c738db1d63ac6db1bafe",
+      "copied_into_product": false,
+      "executed_this_package": false
+    },
+    {
+      "path": "src/agents/sandbox/docker.ts",
+      "sha256": "009153e0bbc466148967700f4667c66bd75df48e7b0efdae35e37e329d2d8f5c",
+      "copied_into_product": false,
+      "executed_this_package": false
+    },
+    {
+      "path": "src/agents/sandbox/container-lifecycle.ts",
+      "sha256": "ed29784bef429bd13a6a0934c3cf526f680604f1ba0cf4a1f35e64ba3d52d3b5",
+      "copied_into_product": false,
+      "executed_this_package": false
+    }
+  ],
+  "documentation": [
+    "https://docs.docker.com/engine/containers/run/",
+    "https://docs.docker.com/engine/network/drivers/none/",
+    "https://docs.openclaw.ai/sandboxing"
+  ],
+  "mechanism": "existing Docker Engine; no daemon or firewall setting changed"
+}

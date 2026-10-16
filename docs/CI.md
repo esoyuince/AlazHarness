@@ -171,3 +171,10 @@ The opt-in retained HYB005B profile reader is a separate check, not a new Gatewa
 execution. No provider call, dependency installation or sandbox guarantee is added.
 Task completion, scope-wide observed usage, unknown measurements and reserved
 exposure remain distinct in every report. Exact final counts/CI belong in status.md.
+
+## HYB-005D1 validation scope
+
+Standard discovery includes offline Docker-plan/inspect/capsule/lifecycle tests.
+It does NOT require Docker or run the opt-in container probe. Native Docker
+acceptance is separately recorded under evidence/hyb-005d; no Hermes Gateway,
+paid model or whole-runtime credential perimeter acceptance follows from it.

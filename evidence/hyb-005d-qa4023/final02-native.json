@@ -1,0 +1,120 @@
+{
+  "scope": "Windows OS probe, not full Hermes/Gateway isolation",
+  "code": {
+    "scripts/qa/windows_appcontainer_probe.cs": "4c1050700bd01dfb73468ac3a266e8d2edf07212a9f75641379a59b3a02f7f8c",
+    "scripts/qa/run_windows_appcontainer_probe.py": "4bd3ff844cb21c84757c35865e7452e58bd0db86dbc74803e9763a6abf08262d"
+  },
+  "environment_names": [
+    "LOCALAPPDATA",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "WINDIR"
+  ],
+  "inference_calls": 0,
+  "paid_calls": 0,
+  "compile_exit": 0,
+  "executable_sha256": "ec3efbb4b21df72631c7692aab291113ef85b35d58099cc05e9329d2d9215f0c",
+  "native_exit": 1,
+  "observation": {
+    "errors": [
+      "InvalidOperationException:isolation_ipv4Error"
+    ],
+    "scope": "Windows OS feasibility probe only; no Hermes process or real credential",
+    "profileName": "AlazHarness.QA.cfd184b76abb412784c118ac65398312",
+    "baseline": {
+      "identityBeforeResume": {
+        "isAppContainer": false,
+        "capabilityCount": 0,
+        "appContainerSid": null,
+        "integritySid": "S-1-16-8192"
+      },
+      "pid": 34924,
+      "mode": "baseline",
+      "jobAssignedBeforeResume": true,
+      "handlesInherited": false,
+      "exitCode": 0,
+      "timedOut": false,
+      "processReaped": true,
+      "child": {
+        "isAppContainer": false,
+        "capabilityCount": 0,
+        "appContainerSid": null,
+        "integritySid": "S-1-16-8192",
+        "parentSecretInEnvironment": true,
+        "privateReadError": 0,
+        "privateWriteError": 0,
+        "allowedReadError": 0,
+        "allowedWriteError": 0,
+        "ipv4Error": 0,
+        "ipv6Error": 0,
+        "parentMemoryOpenError": 0
+      }
+    },
+    "appContainerSid": "S-1-15-2-3350017835-1420329948-3371354644-2362159260-1003911166-2573767294-4287454324",
+    "isolated": {
+      "identityBeforeResume": {
+        "isAppContainer": true,
+        "capabilityCount": 0,
+        "appContainerSid": "S-1-15-2-3350017835-1420329948-3371354644-2362159260-1003911166-2573767294-4287454324",
+        "integritySid": "S-1-16-4096"
+      },
+      "pid": 33216,
+      "mode": "isolated",
+      "jobAssignedBeforeResume": true,
+      "handlesInherited": false,
+      "exitCode": 0,
+      "timedOut": false,
+      "processReaped": true,
+      "child": {
+        "isAppContainer": true,
+        "capabilityCount": 0,
+        "appContainerSid": "S-1-15-2-3350017835-1420329948-3371354644-2362159260-1003911166-2573767294-4287454324",
+        "integritySid": "S-1-16-4096",
+        "parentSecretInEnvironment": false,
+        "privateReadError": 5,
+        "privateWriteError": 5,
+        "allowedReadError": 0,
+        "allowedWriteError": 5,
+        "ipv4Error": 10060,
+        "ipv6Error": 10060,
+        "testNetError": 10013,
+        "parentMemoryOpenError": 5
+      }
+    },
+    "timeoutProbe": {
+      "identityBeforeResume": {
+        "isAppContainer": true,
+        "capabilityCount": 0,
+        "appContainerSid": "S-1-15-2-3350017835-1420329948-3371354644-2362159260-1003911166-2573767294-4287454324",
+        "integritySid": "S-1-16-4096"
+      },
+      "pid": 18784,
+      "mode": "timeout",
+      "jobAssignedBeforeResume": true,
+      "handlesInherited": false,
+      "exitCode": 91,
+      "timedOut": true,
+      "processReaped": true
+    },
+    "fixtureSecretUnchanged": true,
+    "ipv4ListenerMessages": 1,
+    "ipv6ListenerMessages": 1,
+    "listenersStopped": true,
+    "profileDeleteHresult": 0,
+    "result": "FAIL",
+    "hermesIsolationAccepted": false,
+    "firewallModified": false,
+    "loopbackExemptionAdded": false,
+    "modelCalls": 0
+  },
+  "validation_errors": [
+    "result",
+    "errors",
+    "isolated_ipv4Error",
+    "isolated_ipv6Error"
+  ],
+  "result": "FAIL",
+  "elapsed_seconds": 4.609,
+  "code_drift": []
+}

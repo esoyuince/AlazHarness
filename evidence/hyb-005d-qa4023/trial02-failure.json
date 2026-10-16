@@ -1,0 +1,16 @@
+{
+  "scope": "historical candidate failure, not final source or full isolation acceptance",
+  "case": "trial02",
+  "errors": [
+    "Win32:203:CreateProcess"
+  ],
+  "profile_created": true,
+  "profile_cleanup_hr": 0,
+  "listeners_stopped": true,
+  "source_record_sha256": "c92c65e0e1adeba4e68304db423bcc46eae8eec6d7a15dca63bf1db6670bbfba",
+  "code_hashes": {
+    "scripts/qa/windows_appcontainer_probe.cs": "264d8357cb58db6c941491d24790736d23c98f73bb06fc7c4255903f12a16aaf",
+    "scripts/qa/run_windows_appcontainer_probe.py": "3ffa22dcc5710138fc7bb25de8c59fd4e0e56880b4a3178d1e6875e72759a5dc"
+  },
+  "declared_result": "FAIL_RETAINED"
+}

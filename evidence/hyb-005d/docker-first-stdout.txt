@@ -1,0 +1,7 @@
+{"scenario": "isolation-1", "result": "PASS", "failed_checks": []}
+{"scenario": "isolation-2", "result": "PASS", "failed_checks": []}
+{"scenario": "timeout", "result": "PASS", "failed_checks": []}
+{"scenario": "cancel", "result": "PASS", "failed_checks": []}
+{"scenario": "output-limit", "result": "PASS", "failed_checks": []}
+{"scenario": "tool-failure", "result": "PASS", "failed_checks": []}
+{"result": "PASS", "passed": 6, "expected": 6}

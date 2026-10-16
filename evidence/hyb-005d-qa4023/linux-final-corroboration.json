@@ -1,0 +1,63 @@
+{
+  "scope": "retrospective independent read of SIX already completed final Linux native tool runs; no extra native executions",
+  "result": "CORROBORATED",
+  "count": 6,
+  "checks": [
+    {
+      "scenario": "isolation-1",
+      "source_and_retained_records_consistent": true,
+      "container_exited_and_removed_as_recorded": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "isolation-2",
+      "source_and_retained_records_consistent": true,
+      "container_exited_and_removed_as_recorded": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "timeout",
+      "source_and_retained_records_consistent": true,
+      "container_exited_and_removed_as_recorded": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "cancel",
+      "source_and_retained_records_consistent": true,
+      "container_exited_and_removed_as_recorded": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "output-limit",
+      "source_and_retained_records_consistent": true,
+      "container_exited_and_removed_as_recorded": true,
+      "new_execution": false
+    },
+    {
+      "scenario": "tool-failure",
+      "source_and_retained_records_consistent": true,
+      "container_exited_and_removed_as_recorded": true,
+      "new_execution": false
+    }
+  ],
+  "source_proofs": [
+    {
+      "directory": "alaz-hyb005d-247a-code-v2",
+      "files": {
+        "run_isolated_tool_probe.py": "scripts/run_isolated_tool_probe.py",
+        "isolated_tool.py": "packages/claw-hermes/isolated_tool.py"
+      }
+    }
+  ],
+  "source_hashes": {
+    "run_isolated_tool_probe.py": "7bd8792074880585a7470638384581c7fbacbaa3bbf9c9ed05eb6799d26f9cda",
+    "isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc"
+  },
+  "canonical_record_sha256": "07a11f0f6103c5d3450b6b137aa2c3be3e4a7138e37dba73321bed944f7e588c",
+  "remote_raw_record_sha256": "684aa1f182cac83b135b98e8050bc5769f77ce23a7e308d1f956226c62ee6616",
+  "source_record_unchanged": true,
+  "new_container_runs": 0,
+  "model_calls": 0,
+  "local_raw_record_sha256": "b60eff52e7cbeca0a7c773ae79a845aa0807b335505869961744902557c98dd5",
+  "reader_sha256": "79259b45d1cdfe9e307a68d4888f69f2c6357f89b365601c8cecb5a5bab16a9a"
+}

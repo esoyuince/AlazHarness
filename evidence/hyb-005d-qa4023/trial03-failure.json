@@ -1,0 +1,16 @@
+{
+  "scope": "historical candidate failure, not final source or full isolation acceptance",
+  "case": "trial03",
+  "errors": [
+    "InvalidOperationException:isolation_ipv4Error"
+  ],
+  "profile_created": true,
+  "profile_cleanup_hr": 0,
+  "listeners_stopped": true,
+  "source_record_sha256": "4dd0ec48018d2f37f4732b39392f3d27eabdd9eeae6ac2ba24d4b054495d9a05",
+  "code_hashes": {
+    "scripts/qa/windows_appcontainer_probe.cs": "fa8cc9905efe4019e6aeaf733ed021ce52f289a3828488a5fa4b9451e6aa528e",
+    "scripts/qa/run_windows_appcontainer_probe.py": "4bd3ff844cb21c84757c35865e7452e58bd0db86dbc74803e9763a6abf08262d"
+  },
+  "declared_result": "FAIL_RETAINED"
+}
