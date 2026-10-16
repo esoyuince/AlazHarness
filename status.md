@@ -4,7 +4,7 @@ Son güncelleme: 16 Ekim 2026. Her devamda canlı dal/HEAD/CI kontrol edilir.
 
 ## Güncel nokta
 
-HYB-005D2 dar Linux .txt entegrasyonu yerelde kabul edildi; Git/CI kapanışı sürüyor.
+**HYB-005D2 dar Linux .txt entegrasyonu yayımlandı; exact-code CI1163/1163 PASS.**
 Gerçek Hermes araç çağrısını mevcut admission/izin/bütçe
 sınırından sonra Linux izole araç sürecine bağlamak. Tek entegrasyon/yayın sahibi247a.
 Aktif dal: alaz/hyb-005d2-native-tool-247a.
@@ -196,3 +196,20 @@ yeni bağımlılıklar yalnız özel Linux prepared-v2 alanına kuruldu;ücretli
 docs/HYB-005D2-NATIVE-TOOL.md. Git/CI için tek yayın sahibi247a; henüz exact
 commit CI PASS iddiası yok. Sıradaki D3: provider credential/egress sınırı;
 parent-hard-crash takeover,Windows native ağ,hafıza-transfer,M1/M2 açık.
+
+### 2026-10-16T22:53:13.222236+03:00 — D2 yayın ve aynı-kod CI kapanışı
+
+Kod commit: e6cb7f16016548c8bea7275f4ac3c987d6fad71b. Feature dalına push ve
+yerel/remote eşitlik doğrulandı;GitHub alaz/local-ci success. Server makbuzu
+sha==checkout_sha bu exactcommit:executed1163/passed1163/failed0/skipped0/
+suite_errors0,status_delivery posted. Kanıt evidence/hyb-005d2/code-ci.json.
+Sekiz Linux native Gateway koşusu ve4gerçek araç konteyneri ayrı opt-in
+deneylerdir,standart CI içinde tekrar çalışmadı. Tam1163suite ile aynı197
+kod/config/test dosyası korunuyor; bu kapanış belge/makbuz değiştirir.
+
+Son belge commit kendi CI ile ayrıca doğrulanır. Ana dal değiştirilmedi;32kök
+legacy dosya ve4upstream pin temiz/korundu. status.md kök erişim kopyası eşit.
+Kesin sonraki iş HYB-005D3 provider kimlik bilgisi ve zorunlu dış ağ sınırı.
+Parent hard-crash/container takeover,Windows ağ,gerçek sağlayıcı token/fiyat,
+hafıza/beceri transferi,tamM1/M2 AÇIK. Gateway ana süreci henüz güvenilmeyen
+koda karşı izole edilmiş sayılmaz;bu kabul yalnız bounded native read yoludur.

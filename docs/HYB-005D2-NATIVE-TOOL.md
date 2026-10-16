@@ -1,6 +1,6 @@
 # HYB-005D2 — native Hermes read isolation
 
-Status: local bounded Linux read binding qualified; exact-code CI publication pending.
+Status: bounded Linux native read binding published; exact-code CI1163/1163 PASS.
 The implementation is not the complete harness security perimeter.
 Base: fb3d7ca7fec3b5e0242a8e7c174b553dbfe366d8.
 
@@ -172,3 +172,16 @@ python -B -m unittest discover -s tests -v.
 
 Exact publication/CI receipts and the next provider-credential boundary are recorded
 in status.md. Parent-hard-crash takeover is still a separate unresolved gate.
+
+
+## Exact-code publication
+
+Code commit e6cb7f16016548c8bea7275f4ac3c987d6fad71b is published on the feature
+branch. GitHub alaz/local-ci is success. The alaz-server receipt verifies
+sha==checkout_sha at that exact commit, executed1163/passed1163/failed0/skipped0/
+suite_errors0, with status delivery posted. Evidence: evidence/hyb-005d2/code-ci.json.
+No native Gateway or Docker experiment is silently attributed to standard CI.
+The documentation receipt commit changes no tested code/config; its own CI status
+must be checked independently, never inferred from this code-commit result.
+Next: provider credentials and mandatory network egress boundary (HYB-005D3).
+The existing parent-hard-crash and Windows network gates remain separate and open.

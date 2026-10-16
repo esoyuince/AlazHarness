@@ -1,0 +1,15 @@
+{
+  "sha": "e6cb7f16016548c8bea7275f4ac3c987d6fad71b",
+  "checkout_sha": "e6cb7f16016548c8bea7275f4ac3c987d6fad71b",
+  "status": "success",
+  "build_status": "success",
+  "ci2_suite_proof": {
+    "executed": 1163,
+    "failed": 0,
+    "passed": 1163,
+    "skipped": 0,
+    "suite_errors": 0,
+    "total": 1163
+  },
+  "status_delivery": "posted"
+}
