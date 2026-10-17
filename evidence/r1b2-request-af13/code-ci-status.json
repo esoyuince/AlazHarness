@@ -1,0 +1,14 @@
+{
+  "commit": "d8628aa614236b80022780ea1d79c05cf9fb72cb",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 56589060219,
+  "githubUpdatedAt": "2026-10-17T10:06:44Z",
+  "observedAt": "2026-10-17T13:08:14.323885+03:00",
+  "source": "GitHub combined status and commit status API",
+  "remoteTestCount": null,
+  "localStandardTests": 1595,
+  "separateOptInQATests": 35,
+  "nativeScenarios": 6,
+  "nativeRunsAreNotCI": true
+}

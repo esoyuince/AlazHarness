@@ -189,3 +189,25 @@ A local outer-wrapper NameError after the remote successful saved result and a
 LF/CRLF transport copy mismatch are explicitly retained in the QA report. Original
 remote bytes, JSON-equivalent local copy, and failure diagnostics remain separate.
 Neither changes the actual native verdict nor constitutes a product bug fix.
+
+## Exact-code publication and continuation — 2026-10-17T13:08:14.323885+03:00
+
+Code commit `d8628aa614236b80022780ea1d79c05cf9fb72cb` is published on
+`alaz/r1b2-request-view-af13`. Its GitHub `alaz/local-ci` status is SUCCESS,
+status56589060219 updated2026-10-17T10:06:44Z, observed through both status APIs.
+The GitHub response does not contain a server test count; none is inferred.
+Local1595 standard and35 separate opt-in QA counts retain their own receipts.
+All235 measured source files match the published commit blobs, without exceptions.
+
+This final document/status/CI-observation commit contains no runtime or test
+changes; its own CI must be checked after push, not borrowed from the code SHA.
+The worktree/root status mirror and upstream branch were verified equal at code
+publication. Main remains b8ff44ff105965ba3f6f9fa9559ad96f2c084815 and no merge is
+performed. Old worktrees and upstream pins remain untouched.
+
+Next implementation: D3B OS-level Gateway/broker credential and egress separation,
+then explicit bounded real-provider acceptance. R2 independent goal assessment
+and HYB006 memory/skill transfer can use the now-linked evidence but must not
+convert request inclusion, transport observation, or model statements into goal
+success. Initiating-request run attribution, raw-source output range mapping,
+G01 filesystem silence and full M1/M2 remain open. No new model/paid call here.

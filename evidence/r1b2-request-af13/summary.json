@@ -3,7 +3,7 @@
   "observedAt": "2026-10-17T12:57:19.038201+03:00",
   "baseCommit": "e2a5b300568425358e181954cffb697ace2d032b",
   "branch": "alaz/r1b2-request-view-af13",
-  "result": "LOCAL_NATIVE_SCOPED_PASS_PENDING_PUBLICATION",
+  "result": "SCOPED_PASS_PUBLISHED",
   "standard": {
     "scope": "standard offline discovery; separate native and opt-in QA not included",
     "tests": 1595,
@@ -38,10 +38,13 @@
   "inferenceCalls": 0,
   "paidCalls": 0,
   "mainMerged": false,
-  "codeCommit": null,
-  "ciState": "NOT_YET_PUBLISHED",
+  "codeCommit": "d8628aa614236b80022780ea1d79c05cf9fb72cb",
+  "ciState": "success",
   "nativeScope": "real Gateway/SDK/Unix broker/Docker, scripted authenticated loopback origin",
   "exploratoryNativeCasesRetainedSeparately": 2,
   "independentFinalNativeCorroboration": 6,
-  "independentNativeRunsStarted": 0
+  "independentNativeRunsStarted": 0,
+  "publicationObservedAt": "2026-10-17T13:08:14.323885+03:00",
+  "remoteTestCount": null,
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }

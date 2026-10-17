@@ -1,10 +1,13 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T12:57:19.038201+03:00
+Son güncelleme: 2026-10-17T13:08:14.323885+03:00
 
 ## Güncel nokta
 
-R1B2-REQUEST-AF13 yerel/gerçek Linux dar kabul PASS; commit/push/CI AÇIK.
+R1B2-REQUEST-AF13 yerel/gerçek Linux dar kabul PASS; commit/push tamam.
+Kod commit: d8628aa614236b80022780ea1d79c05cf9fb72cb
+Kod alaz/local-ci SUCCESS (GitHub status56589060219,10:06:44Z).
+Bu son belge/durum commitinin kendi CI kontrolü yayından sonra ayrıca yapılır.
 Aktif dal: alaz/r1b2-request-view-af13
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\request-r1b2-af13
 Başlangıç commit: e2a5b300568425358e181954cffb697ace2d032b.
@@ -164,3 +167,24 @@ ve6native makbuz hashleri primarykopyaylaeşit.16baseline+35optin ayrımı korun
 235source değişmedi. Seçili106dosya stage edildi; whitespacecheck0. Rootgate ve
 exact-index bayt karşılaştırması şimdi çalışır; ardından yalnız seçilmişpaket
 commit/push. Çalışma tekrar/nativesayısı artmadı, main/önceki ağaçlar korunur.
+
+### 2026-10-17T13:06:59.779972+03:00 — kod yayımlandı, exact CI sürüyor
+
+Kod d8628aa614236b80022780ea1d79c05cf9fb72cb origin/alaz/r1b2-request-view-af13
+üzerinde;235acceptedkaynakGitcommitobjeleriylebyteeşit. Commit108seçilmişdosya.
+Rootgate1033text/2gitlink/10component ve1595discovery PASS. Gerçek remoteCI
+56588998282 statusu pending; öncekiCI bucommite aktarılmaz. Finaldoc/status
+kaydı codeCI sonucu alındıktan sonra yayımlanacak. Main/sourcepins değişmedi.
+
+### 2026-10-17T13:08:14.323885+03:00 — exact-code CI başarılı ve son durum kaydı
+
+Kod d8628aa614236b80022780ea1d79c05cf9fb72cb alaz/local-ci SUCCESS;
+GitHub56589060219,2026-10-17T10:06:44Z; ikiAPIyle doğrulandı. APIde sunucu
+sayısı yok, yerel1595 sonucu server1595 diye yazılmadı.235sourcecommitblobları
+frozenkaynaklaeşit.35optinQA/6native ve bağımsız6corroboration ayrı kalır.
+R1B2 kaynak→araçdönüşü→normalizeistekteiçerik bağı bu dar kapsamda kapanmıştır.
+Handoffwriteahead fiziksel-send garantisi değildir; originatingrun ve model
+understanding/processing UNKNOWN/false. G01/D3B/realmodel/R2/HYB006/M1/M2 açık.
+Sonraki uygulama D3B OSkimlik/egress sınırı, ardından kontrollü gerçeksağlayıcı
+kabulü. YeniDB/kuyruk/izinsizaraç/model/ücret/servisinstall/mainmerge yapılmadı.
+Bu finaldocs/summary/status/CIreceipt dışında hiçbirürün/test değişmez.
