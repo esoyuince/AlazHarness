@@ -1,8 +1,12 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T22:38:23.600731+03:00
+Son güncelleme: 2026-10-18T00:27:40.158885+03:00
 
 ## Güncel nokta
+
+DREAM-D2B1-8D20 sealed heldout offline scorer: 1771/1771 standard + root static PASS; Git/CI delivery OPEN, real model and skill transfer NOT RUN.
+Branch alaz/dream-d2b-eval-8d20; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b-eval-8d20; base eb674ee6b319a9309b0b46df6cf9868956092735.
+
 
 DREAM-D2A-4B83 manuel aday inceleme/CAS/net-diff/loopback CLI: 1714/1714 standart PASS; kod7a4c4d3 origin push PASS, alaz/local-ci SUCCESS; held-out D2B NOT RUN.
 Dal alaz/dream-d2-4b83; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2-4b83; base d3df140f38e15a34f7962c3338391413dd64514b.
@@ -454,3 +458,34 @@ Bu adım yalnız doc/status/CI makbuzu; ürün/araç/aktif hafıza değişmiyor.
 Son belge commitinin kendi CI sonucu yayından sonra kontrol edilecek.
 Kesin sonraki iş: D2B gerçek held-out bağımsız transfer; D3B/realprovider
 bütçe/token ön-kapısı ve cross-epoch review recovery ayrıca AÇIK.
+
+### 2026-10-18T00:12:21.470160+03:00 — DREAM-D2B-8D20 başlangıcı
+
+D2A complete (code7a4c4d3, doc eb674ee, both CI SUCCESS). Yeni iş
+C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b-eval-8d20; base eb674ee6b319a9309b0b46df6cf9868956092735. Önce insan reviewed candidate +
+private held-out truth/plan lock, sonra aynı görevde baseline/candidate
+model output eşlemesi, pure deterministic independent scorer.
+Gerçek provider/D3B kapıları açılmadığından offline/scripted trial
+başarı çıktısı learned skill veya active memory promotion sayılmaz.
+Kök dirty değişiklikler korunur; yalnız D2B worktree kaynakları yazılır.
+
+### 2026-10-18T00:23:29.134095+03:00 — D2B1 full-regression preflight
+
+57yeni test (39pure,18CLI) dar PASS; ilk CLI1OSsymlink privilege skip
+sonrasında aynı kontrol path mocku ile skip0 hâle getirildi. Scripted
+12-case score8/12→12/12 output yalnız synthetic, gerçek model başarısı değil.
+HMAC-private key ve grader source-hash plan kilidi var; D2A revizyonu
+seal ve score anında GET ile tazelenir. 251 source SHA freeze kaydedildi.
+Tam1714+57=1771 standart şimdi yeniden çalışır; sonuç görülmeden PASS
+yazılmaz. D3B/broker/heldout gerçek yürütme AÇIK.
+
+### 2026-10-18T00:27:40.158885+03:00 — D2B1 yerel acceptance hazır
+
+Full 1771/1771 PASS exit0,skip0,251source byte unchanged. Root ci_check
+static PASS,1771discovered,1169root,2gitlink; ayrı runtime test değil.
+57yeni test (39evaluator,18CLI) full1771 içinde. 12scripted case8→12
+ancak model result proof/independent transfer FALSE. Gold-private HMAC ve
+evaluator code hash plan kilidi; stale/revoked D2A review ret, zero memory
+write/skill/autonomy/tool privileges. Doküman docs/DREAM-D2B-HELDOUT-EVAL.md,
+kanıt evidence/dream-d2b-eval-8d20/; Git/CI teslimi şimdi yapılacak.
+D3B/real-model/held-out independent source verification AÇIK.

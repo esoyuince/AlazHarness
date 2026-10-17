@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-18T00:26:23.475383+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1771,
+  "expected": 1771,
+  "skipsReported": false,
+  "measuredSourceFiles": 251,
+  "changedSourceFiles": [],
+  "elapsedSeconds": 150.5,
+  "logSha256": "0fb1c9c80a8b13ac7e6aa45f2a3a1d688bd5107a89cd42a6b226a1b03c56215b",
+  "scope": "full offline unittest discovery, no real model/native Gateway/Docker for D2B1",
+  "modelCalls": 0,
+  "nativeD2BCalls": 0
+}

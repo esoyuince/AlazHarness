@@ -1,0 +1,22 @@
+{
+  "sourceIndexSha256Verified": 251,
+  "textLogChanges": [
+    {
+      "path": "evidence/dream-d2b-eval-8d20/full-standard.txt",
+      "rawSha256": "0fb1c9c80a8b13ac7e6aa45f2a3a1d688bd5107a89cd42a6b226a1b03c56215b",
+      "rawBytes": 219213,
+      "indexedSha256": "9edf78b49a0ae9bbc142250af85ba43eaa7fb8eaccecfeacaec91643082b7258",
+      "indexedBytes": 217437,
+      "onlyLineEndingsChanged": true
+    },
+    {
+      "path": "evidence/dream-d2b-eval-8d20/root-static.txt",
+      "rawSha256": "0c5d4ca1004ad62a2fcb6fbdd32e1fbfe162ec916273cde2f13aa7c3b2789ebb",
+      "rawBytes": 399,
+      "indexedSha256": "dfaa146587f31dfb5426a5c422c75d6b965a883eacbb411582aa4eb6fbde8cb0",
+      "indexedBytes": 386,
+      "onlyLineEndingsChanged": true
+    }
+  ],
+  "rawLogBytesKeptLocally": true
+}

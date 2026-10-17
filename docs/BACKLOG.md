@@ -191,3 +191,12 @@ an evidence of truth, independent evaluation, memory adoption or learned skill.
 See docs/DREAM-D2-REVIEW.md. Next D2B: locked held-out evaluation, measured
 transfer on unseen task, memory conflict reconciliation; D3B OS/network
 boundary and provider price/token verification remain open.
+
+## DREAM-D2B1 — paired held-out offline scorer (18 October 2026)
+
+Implemented manual private oracle-key→sealed held-out plan→paired baseline/candidate
+answer scoring without new model, DB or scheduler. D2A review revision is reread
+from local authenticated Gateway before sealing and scoring; model-response JSON
+is explicitly UNVERIFIED. See docs/DREAM-D2B-HELDOUT-EVAL.md. Next D2B2
+requires provider provenance and D3B OS egress, then D2B3 actual transfer on
+new held-out tasks; no automatic memory/skill promotion.

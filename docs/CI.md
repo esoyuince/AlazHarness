@@ -232,3 +232,11 @@ only: no external model, no real Gateway/Docker, no autonomous scheduler, no
 active memory/skills edits. Exact test counts, source SHA, exit and CI reported
 in status.md/evidence/dream-d2-4b83. D2B independent task/real-model test
 remains NOT RUN. `ci_check.py` static discovery != full test execution.
+
+## DREAM-D2B1 offline evaluation
+
+Default unittest suite adds39 pure scorer contracts +18 manual CLI/loopback
+checks (57 new cases) on top of D2A 1714. No real Gateway, model or paid API
+required. `ci_check.py` discovers test count but its static check is not full
+unittest execution. The synthetic 8→12 result is only scripted numeric QA, not
+real learning. Full source, test and CI receipts: evidence/dream-d2b-eval-8d20/.

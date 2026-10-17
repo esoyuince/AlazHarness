@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-18T00:21:51.957734+03:00",
+  "sourceSha256": {
+    "packages/claw-hermes/dream_eval.py": "354b98d46c650b6094b61bb12341e8d4b4bcf320de11a7bd2aa98eec8801e16a",
+    "scripts/dream_eval_once.py": "8a14e1b2bae6de188b55c1c8a5e09eb9b67adbed350721c4271515984897c76f",
+    "tests/test_dream_eval.py": "cdef8860f0d0fb3c890e06cc3b44abb9513ed7a2465952df77e4f2e5267aafd8",
+    "tests/test_dream_eval_cli.py": "c957a5a17f6e15de7f7cf4053bcc8689827448cf89ec6f071ecd08f984a8415b"
+  },
+  "newTestsExpected": 57,
+  "baselineTests": 1714,
+  "fullTestsExpected": 1771,
+  "modelRequests": 0,
+  "syntheticOnly": true
+}
