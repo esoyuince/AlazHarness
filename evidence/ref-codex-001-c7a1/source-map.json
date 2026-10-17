@@ -1,0 +1,84 @@
+{
+  "observedAt": "2026-10-17T20:02:06.140277+03:00",
+  "pin": "ce0323f2f2d3b25e82806cd555237da3db4e1897",
+  "files": [
+    {
+      "id": "THREAD",
+      "path": "codex-rs/thread-store/README.md",
+      "gitBlobSha1": "c6a51d3c8b62c8c3acb99671b99d8a819323d112",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/thread-store/README.md",
+      "observation": "History append and metadata update separated; LiveThread and SQLite/JSONL"
+    },
+    {
+      "id": "THREAD-WRITER",
+      "path": "codex-rs/thread-store/src/local/live_writer.rs",
+      "gitBlobSha1": "e1b49e82b70490d056427abe87eeddb421464616",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/thread-store/src/local/live_writer.rs",
+      "observation": "per-thread writer lock and validated resume history revision"
+    },
+    {
+      "id": "APP-SERVER",
+      "path": "codex-rs/app-server/README.md",
+      "gitBlobSha1": "2c4d9a70e79865780120b76030234008b25c12c9",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/app-server/README.md",
+      "observation": "readState expectedRevision and shutdown/no exhaustion semantics"
+    },
+    {
+      "id": "MEMORY",
+      "path": "codex-rs/memories/README.md",
+      "gitBlobSha1": "9195e89ada8c450e9252f2fc63a95801b9254f3c",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/memories/README.md",
+      "observation": "two-phase memory pipeline and startup eligibility, git workspace diff"
+    },
+    {
+      "id": "MEMORY-P1",
+      "path": "codex-rs/memories/write/src/phase1.rs",
+      "gitBlobSha1": "cddb20dadcc62eac3896666b585fa851c7f00cfb",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/memories/write/src/phase1.rs",
+      "observation": "bounded claim and per-rollout stage1 extraction"
+    },
+    {
+      "id": "MEMORY-P2",
+      "path": "codex-rs/memories/write/src/phase2.rs",
+      "gitBlobSha1": "d6d245f5917da5ad610119400df92efa2ac41a42",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/memories/write/src/phase2.rs",
+      "observation": "global lease, git diff no-change fast path, consolidation subagent"
+    },
+    {
+      "id": "MEMORY-STATE",
+      "path": "codex-rs/state/src/runtime/memories.rs",
+      "gitBlobSha1": "f11a779fb65a55119bfaedcde7b9aec643e55016",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/state/src/runtime/memories.rs",
+      "observation": "SQLite phase1 job claim and global lease"
+    },
+    {
+      "id": "AGENTS",
+      "path": "codex-rs/core/src/agent/api.rs",
+      "gitBlobSha1": "622c45134301c64024afde9603241212730a86cd",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/agent/api.rs",
+      "observation": "agent send/queue-only mail vs wake; accepted not consumed"
+    },
+    {
+      "id": "AGENTS-TOOLS",
+      "path": "codex-rs/core/src/tools/handlers/multi_agents_spec.rs",
+      "gitBlobSha1": "edc9467b4d02cc023d8961373637116cf8ba6f6f",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/tools/handlers/multi_agents_spec.rs",
+      "observation": "spawn/send/wait tools, agent choices and result schemas"
+    },
+    {
+      "id": "SANDBOX",
+      "path": "codex-rs/core/src/tools/sandboxing.rs",
+      "gitBlobSha1": "d49273beb37fadf1dda778ef5ba8a047438dff69",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/tools/sandboxing.rs",
+      "observation": "permission and sandbox boundary"
+    },
+    {
+      "id": "ORCHESTRATOR",
+      "path": "codex-rs/core/src/tools/orchestrator.rs",
+      "gitBlobSha1": "a1a88e445449e55f3f8038adef48e0457df9a534",
+      "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/tools/orchestrator.rs",
+      "observation": "approval, sandbox choice, network approval, retry scope"
+    }
+  ],
+  "notes": "GitHub blob SHA1 values; do not substitute for local file SHA256; source implementation reviewed selectively"
+}

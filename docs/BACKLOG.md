@@ -170,3 +170,15 @@ See docs/DREAM-D1-CANDIDATES.md. Reuses one native owner and budgeted broker.
 Next DREAM-D2 qualifies real synthesis/candidate review and only then memory
 adoption; no automatic triggers or M2 goal selection enabled. D3B, actual
 model/price/token bounds and HYB006 transfer remain open. Git/CI in status.md.
+
+## REF-CODEX-001 static Codex desktop/CLI reference — 2026-10-17
+
+Sixth external harness reference, NOT a new runtime adoption. Installed stable
+Codex 26.1013.3656.0 and open-source codex Rust pinned source were reviewed
+separately. Report: docs/research/REF-CODEX-001-APP-REVIEW.md; metadata evidence:
+evidence/ref-codex-001-c7a1/. Main insight for Dream D2 is two-stage
+rollout extraction + serialized diff-based consolidation, with an independent
+verification and candidate promotion gate unique to Alaz. Also relevant:
+ThreadStore single writer and agent mail accepted/consumed/wake distinctions.
+No product/CLI/dependency/scheduler changes; candidate acceptance scenarios
+are NOT RUN. Continue Dream-D2 minimal usable learning loop, D3B and HYB006.

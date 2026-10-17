@@ -1,8 +1,15 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T15:59:53.686836+03:00
+Son güncelleme: 2026-10-17T20:11:46.798091+03:00
 
 ## Güncel nokta
+
+REF-CODEX-001 statik Codex Desktop/CLI araştırması: SCOPED LOCAL PASS, Git/CI bekliyor.
+Aktif dal alaz/ref-codex-001-c7a1; worktree C:\Antigravity\AlazHarness\scratch\worktrees\codex-review-c7a1; başlangıç 5b1f2dd12820434a257bb9709293195a36b6f18f.
+Ürün Dream-D1 durumu ve önceki makbuzlar değişmez; araştırma yalnız doküman/kanıt.
+
+
+## Önceki ürün kontrol noktası — DREAM-D1
 
 DREAM-D1 manuel aday-not uygulaması yayımlandı; kodun aynı-commit CI sonucu SUCCESS.
 Kod commit: 0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033
@@ -327,3 +334,47 @@ yayımlananGit ile byteaynı. Bu commit yalnız doc/status/özet/CImakbuzu;
 ürün/test/model/araç/ana hafıza/main değişmiyor. Otomatik trigger yok.
 Dream-D1 teslimi manuel candidate-only: bir sonraki aşama gerçekmodel
 sentez kalitesi, aday inceleme ve bağımsız doğrulama; M1/M2 ilan edilmedi.
+
+### 2026-10-17T19:54:03.588492+03:00 — REF-CODEX-001 statik inceleme başlangıcı
+
+Uygulamanın kurulu kararlı paketi 26.1013.3656.0, eski beta 26.727.4816.0;
+kurulu npm CLI0.159.2 ayrıca. Çalışma alanı C:\Antigravity\AlazHarness\scratch\worktrees\codex-review-c7a1. Yeni dal alaz/ref-codex-001-c7a1,
+başlangıç 5b1f2dd12820434a257bb9709293195a36b6f18f. Özel yalnız statik paket çalışma kopyası
+C:\Antigravity\AlazHarness\scratch\research-sources\20261017-codex-app-c7a1. Kimlik bilgilerinin, kullanıcı oturum/chat kayıtlarının
+ve üretim agent verisinin okunması yok; uygulama başlatılmayacak.
+ASAR ve CLI çekirdeği, resmî açık kaynak Codex app-server/threads/memories/
+approvals/subagents ile karşılaştırılacak. Bulgu MIT AlazHarness'e kopya kod
+değil özgün sözleşme/test önerisi olacak. Ürün/main/pin değişmeyecek,
+yeni ajan/model/ücretli çağrı yapılmayacak. Git/CI sonuçları bitişte ayrı.
+
+### 2026-10-17T20:06:18.319309+03:00 — REF-CODEX-001 inceleme tamam, yayın öncesi
+
+KuruluCodexstable26.1013.3656.0/olderBeta26.727,kurulunpmCLI0.159.2
+tespit edildi. 7kuruludosyası/1.062.328.381bayt SHA256 kopyalandı,
+ASAR21.070girdi/15.107JS,0map/40seçilmişJS güvenliincelendi.
+Public openai/codex sabit ce0323f, 11 Rust/README kanıt kaydı. En önemli
+öneri Dream-D2 iki aşamalı aday→tek yazıcı/diff uzlaştırma ve bağımsız
+verification gate. İletişim accepted≠consumed≠turnstarted; app-server
+readRevision/multiagent/worktree sandbox fikirleri ikincil.
+Rapor docs/research/REF-CODEX-001-APP-REVIEW.md; metadata evidence/ref-codex-001-c7a1/.
+Kod/sourcepin/MIT ürün davranışı değişmedi. Codex uygulaması/CLI/modelleri
+çalıştırılmadı, kişisel profil/oturum/hesap okunmadı; proprietary raw kod/
+binary Git dışı scratch'ta kaldı. Önerilen12kabul senaryosu NOT RUN.
+Git/dokümanCI ayrı; main değiştirilmedi.
+
+### 2026-10-17T20:09:42.067015+03:00 — REF-CODEX-001 kabul kapsamı sabitlendi
+
+Statik kaynak ve paket copy/hash kontrolleri PASS. Resmî Rust reposundaki
+11anchor ile installedASAR UI protokol markerları ayrı kanıt. 12öneri TEST
+PLAN, ürün/runtime test DEĞİL. Ürün kodu/main/upstream değişmez.
+Rapor ve iki metadata evidence dosyası dışında vendor blobs gitignored.
+Yayın adımları git commit/push ve exact-SHA CI sonuçları ayrıca kaydedilecek.
+
+### 2026-10-17T20:11:46.798091+03:00 — REF-CODEX-001 yerel statik kapı PASS
+
+`python -B scripts/ci_check.py` exit0;1151root dosya kontrolü,2gitlink,
+1657test DISCOVERED (1657testin tümü burada çalıştırılmadı).
+Bu iş ürün/runtime testi değil, statik inceleme ve rapor paketidir.
+7packagecopy hashleri ve seçili40ASAR dosya SHA256 doğrulandı.
+Yalnız rapor/metadata/status/backlog seçiliyor; kökün diğer sahipli
+değişiklikleri ve ürün kodu korunacak, model/ajan yok. Git CI ayrı.

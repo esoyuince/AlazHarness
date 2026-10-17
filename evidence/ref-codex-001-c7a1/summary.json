@@ -1,0 +1,393 @@
+{
+  "id": "REF-CODEX-001-C7A1",
+  "observedAt": "2026-10-17T20:02:06.140277+03:00",
+  "scope": "installed Codex stable package statics plus pinned public Rust source; no live session/profile access",
+  "installed": {
+    "stable": "26.1013.3656.0",
+    "betaOlder": "26.727.4816.0",
+    "npmCli": "0.159.2"
+  },
+  "packageCopy": {
+    "status": "VERIFIED",
+    "selectedFiles": 7,
+    "bytes": 1062328381,
+    "fileSha256": [
+      {
+        "relativePath": "AppxManifest.xml",
+        "bytes": 8671,
+        "sha256": "a4696f89a28e40f200893b6ec73e6bfce955143fb5f265cafa0d189409e2f4b1"
+      },
+      {
+        "relativePath": "app/resources/owl-electron-app.json",
+        "bytes": 215,
+        "sha256": "afe9cd146d55929852da50b349a55274cd8e61c560841d36925801e71cf23732"
+      },
+      {
+        "relativePath": "app/resources/app.asar",
+        "bytes": 582042823,
+        "sha256": "163a18c84db57ad5c50222b313dc4d11d45febc03ec065b516ba9f0380f2eb3f"
+      },
+      {
+        "relativePath": "app/resources/codex.exe",
+        "bytes": 341312816,
+        "sha256": "9ecb9df2ecafcc00542ef0966c6f1737a81397dc9531b0a4b178238e2bf4a46d"
+      },
+      {
+        "relativePath": "app/resources/codex-code-mode-host.exe",
+        "bytes": 74921776,
+        "sha256": "b1b21c0dc7f2cb72d27970479403ae8a10fef6ef4af417fe7fe9f960f8c2755a"
+      },
+      {
+        "relativePath": "app/resources/codex-windows-sandbox-service.exe",
+        "bytes": 55824688,
+        "sha256": "8862030e6b6d53a9c4bfaac4ff6aa1000501587a8024c15c1eb02b6fbb8bef45"
+      },
+      {
+        "relativePath": "app/resources/codex-command-runner.exe",
+        "bytes": 8217392,
+        "sha256": "0de2b882d1f763ecdf4fcc3873fec18ddcf20646b6291dac54d33a9f9116d4c4"
+      }
+    ]
+  },
+  "asar": {
+    "bytes": 582042823,
+    "sha256": "163a18c84db57ad5c50222b313dc4d11d45febc03ec065b516ba9f0380f2eb3f",
+    "entries": 21070,
+    "jsEntries": 15107,
+    "sourceMaps": 0,
+    "selectedJsExtracted": 40,
+    "uiMarkers": [
+      {
+        "term": "thread/start",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 33,
+            "firstByteOffset": 2136367,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 9,
+            "firstByteOffset": 97588,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 26,
+            "firstByteOffset": 125219,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          },
+          {
+            "path": ".vite/build/worker.js",
+            "count": 1,
+            "firstByteOffset": 977724,
+            "sha256": "a23348d825dfa28e9b7b90cea45363ba09cb5192eab4ecc0febe12c808e3d930"
+          }
+        ]
+      },
+      {
+        "term": "thread/resume",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 9,
+            "firstByteOffset": 2141404,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 1,
+            "firstByteOffset": 97615,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 11,
+            "firstByteOffset": 692549,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          }
+        ]
+      },
+      {
+        "term": "thread/fork",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 3,
+            "firstByteOffset": 2136411,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 3,
+            "firstByteOffset": 97643,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 8,
+            "firstByteOffset": 125263,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          }
+        ]
+      },
+      {
+        "term": "thread/queue/add",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 3,
+            "firstByteOffset": 2136457,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 2,
+            "firstByteOffset": 125309,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          }
+        ]
+      },
+      {
+        "term": "thread/queue/reorder",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 2,
+            "firstByteOffset": 2141288,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          }
+        ]
+      },
+      {
+        "term": "thread/readState/update",
+        "matches": []
+      },
+      {
+        "term": "thread/metadata/update",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 4,
+            "firstByteOffset": 2140997,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 3,
+            "firstByteOffset": 1083554,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 2,
+            "firstByteOffset": 887140,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          }
+        ]
+      },
+      {
+        "term": "turn/start",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 42,
+            "firstByteOffset": 2136508,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 10,
+            "firstByteOffset": 216577,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 36,
+            "firstByteOffset": 70978,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          },
+          {
+            "path": ".vite/build/worker.js",
+            "count": 1,
+            "firstByteOffset": 978046,
+            "sha256": "a23348d825dfa28e9b7b90cea45363ba09cb5192eab4ecc0febe12c808e3d930"
+          }
+        ]
+      },
+      {
+        "term": "turn/steer",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 6,
+            "firstByteOffset": 2136526,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 1,
+            "firstByteOffset": 740064,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 6,
+            "firstByteOffset": 125378,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          }
+        ]
+      },
+      {
+        "term": "AppServerRequestDeliveryError",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 1,
+            "firstByteOffset": 2136799,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 1,
+            "firstByteOffset": 125613,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          }
+        ]
+      },
+      {
+        "term": "worktree",
+        "matches": [
+          {
+            "path": "webview/assets/app-initial-df84a35d942d.js",
+            "count": 540,
+            "firstByteOffset": 30041,
+            "sha256": "d7659a96f7d0cfe2249e089ef19675d09d04d6dd9569b550ddaa64722d4f13f3"
+          },
+          {
+            "path": ".vite/build/main-C4DYk222.js",
+            "count": 381,
+            "firstByteOffset": 44751,
+            "sha256": "c8a2af504b21314fa6a64ad1b4ec83dbad80033ede902caf9978fd9c74a2c175"
+          },
+          {
+            "path": ".vite/build/src-DsLVGakC.js",
+            "count": 58,
+            "firstByteOffset": 540647,
+            "sha256": "28a0918f01c50b0eb17676e894998ad7182f119d978adf0467ccaac3583f259c"
+          },
+          {
+            "path": ".vite/build/worker.js",
+            "count": 424,
+            "firstByteOffset": 900837,
+            "sha256": "a23348d825dfa28e9b7b90cea45363ba09cb5192eab4ecc0febe12c808e3d930"
+          }
+        ]
+      }
+    ]
+  },
+  "openSource": {
+    "repository": "openai/codex",
+    "pin": "ce0323f2f2d3b25e82806cd555237da3db4e1897",
+    "license": "Apache-2.0; desktop packaged app source NOT assumed identical licensing",
+    "anchors": [
+      {
+        "id": "THREAD",
+        "path": "codex-rs/thread-store/README.md",
+        "gitBlobSha1": "c6a51d3c8b62c8c3acb99671b99d8a819323d112",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/thread-store/README.md",
+        "observation": "History append and metadata update separated; LiveThread and SQLite/JSONL"
+      },
+      {
+        "id": "THREAD-WRITER",
+        "path": "codex-rs/thread-store/src/local/live_writer.rs",
+        "gitBlobSha1": "e1b49e82b70490d056427abe87eeddb421464616",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/thread-store/src/local/live_writer.rs",
+        "observation": "per-thread writer lock and validated resume history revision"
+      },
+      {
+        "id": "APP-SERVER",
+        "path": "codex-rs/app-server/README.md",
+        "gitBlobSha1": "2c4d9a70e79865780120b76030234008b25c12c9",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/app-server/README.md",
+        "observation": "readState expectedRevision and shutdown/no exhaustion semantics"
+      },
+      {
+        "id": "MEMORY",
+        "path": "codex-rs/memories/README.md",
+        "gitBlobSha1": "9195e89ada8c450e9252f2fc63a95801b9254f3c",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/memories/README.md",
+        "observation": "two-phase memory pipeline and startup eligibility, git workspace diff"
+      },
+      {
+        "id": "MEMORY-P1",
+        "path": "codex-rs/memories/write/src/phase1.rs",
+        "gitBlobSha1": "cddb20dadcc62eac3896666b585fa851c7f00cfb",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/memories/write/src/phase1.rs",
+        "observation": "bounded claim and per-rollout stage1 extraction"
+      },
+      {
+        "id": "MEMORY-P2",
+        "path": "codex-rs/memories/write/src/phase2.rs",
+        "gitBlobSha1": "d6d245f5917da5ad610119400df92efa2ac41a42",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/memories/write/src/phase2.rs",
+        "observation": "global lease, git diff no-change fast path, consolidation subagent"
+      },
+      {
+        "id": "MEMORY-STATE",
+        "path": "codex-rs/state/src/runtime/memories.rs",
+        "gitBlobSha1": "f11a779fb65a55119bfaedcde7b9aec643e55016",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/state/src/runtime/memories.rs",
+        "observation": "SQLite phase1 job claim and global lease"
+      },
+      {
+        "id": "AGENTS",
+        "path": "codex-rs/core/src/agent/api.rs",
+        "gitBlobSha1": "622c45134301c64024afde9603241212730a86cd",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/agent/api.rs",
+        "observation": "agent send/queue-only mail vs wake; accepted not consumed"
+      },
+      {
+        "id": "AGENTS-TOOLS",
+        "path": "codex-rs/core/src/tools/handlers/multi_agents_spec.rs",
+        "gitBlobSha1": "edc9467b4d02cc023d8961373637116cf8ba6f6f",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/tools/handlers/multi_agents_spec.rs",
+        "observation": "spawn/send/wait tools, agent choices and result schemas"
+      },
+      {
+        "id": "SANDBOX",
+        "path": "codex-rs/core/src/tools/sandboxing.rs",
+        "gitBlobSha1": "d49273beb37fadf1dda778ef5ba8a047438dff69",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/tools/sandboxing.rs",
+        "observation": "permission and sandbox boundary"
+      },
+      {
+        "id": "ORCHESTRATOR",
+        "path": "codex-rs/core/src/tools/orchestrator.rs",
+        "gitBlobSha1": "a1a88e445449e55f3f8038adef48e0457df9a534",
+        "url": "https://github.com/openai/codex/blob/ce0323f2f2d3b25e82806cd555237da3db4e1897/codex-rs/core/src/tools/orchestrator.rs",
+        "observation": "approval, sandbox choice, network approval, retry scope"
+      }
+    ]
+  },
+  "noModelCalls": true,
+  "noAppExecuted": true,
+  "noCodeFromDesktopInProduct": true,
+  "noProductModification": true,
+  "noTestsRunOnCodex": true,
+  "noInstalledBinaryCorrespondenceProven": true,
+  "mainUnchanged": true,
+  "plannedAcceptanceTestsRun": 0,
+  "result": "SCOPED_STATIC_REVIEW_PASS_PENDING_GIT_CI",
+  "report": "docs/research/REF-CODEX-001-APP-REVIEW.md",
+  "reportSha256": "6dc2b28d2686873cceedf207394416ab1a6c91d1738623e12caabdbe4dff7da1",
+  "researchAt": "2026-10-17T20:06:18.319309+03:00",
+  "plannedAcceptanceTests": 12,
+  "openSourcePinBinaryMatchVerified": false,
+  "rootStaticGate": "PASS",
+  "rootStaticGateReceipt": "evidence/ref-codex-001-c7a1/local-static-gate.json",
+  "rootStaticGateObservedAt": "2026-10-17T20:10:25.465044+03:00",
+  "gitPublication": "NOT_YET_PUBLISHED",
+  "rootStandardTestsActuallyRun": false
+}

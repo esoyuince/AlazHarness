@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-17T20:10:25.465044+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+  "discoveredTests": 1657,
+  "testsExecutedByThisCommand": "scoped root static/component gate, NOT full standard test execution",
+  "sourceGitlinksChecked": 2,
+  "rootFilesChecked": 1151,
+  "vendorBytesChecked": false,
+  "modelCalled": false,
+  "outputSha256": "d01ec5c8def244cd87d10fc59c58f7b00216a9faf3ed688685274b3ee3b98eac",
+  "noProductRuntime": true
+}
