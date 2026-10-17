@@ -1,0 +1,19 @@
+{
+  "scope": "live GitHub exact-code commit status; remote individual test count not provided by this API",
+  "code_commit": "d56aa994a4372149c232864c014f7c134dafc01d",
+  "branch": "alaz/r1-evidence-view-724a",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "description": "ALAZ Local CI passed",
+  "status_id": 56583893661,
+  "status_created_at": "2026-10-17T06:32:35Z",
+  "observed_at": "2026-10-17T09:34:00.498972+03:00",
+  "source": "GitHub.get_commit_combined_status and GitHub.fetch commit status endpoint",
+  "local_full_tests": 1374,
+  "local_full_receipt": "evidence/r1-evidence-724a/full-standard.json",
+  "native_positive_inventory": "OPEN",
+  "expired_historical_profile_denials": 5,
+  "new_native_runs": 0,
+  "new_model_calls": 0,
+  "main_changed": false
+}

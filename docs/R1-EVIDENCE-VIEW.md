@@ -1,7 +1,7 @@
 # R1A — Read-only retained-evidence view
 
-Status: implementation and targeted acceptance complete; full-suite/publication
-status is recorded in `status.md` and the evidence receipts. This is the FIRST
+Status: R1A implementation, full local standard suite and exact-code CI verified.
+The limited scope and remaining native/source/wire acceptance are below. This is the FIRST
 narrow R1 slice, not the complete source-capture/context-dispatch roadmap.
 Base: `214f1dcd7ba7a83a0d13afdb7adfb221bfa21fa8` (D3A provider broker).
 
@@ -177,3 +177,14 @@ files stayed unchanged and no new files entered that set. The ordinary root
 gate and published commit status are recorded separately; a local pass does
 not imply remote CI success. The initial UTF-8 diagnostic failure and all five
 expired positive-profile attempts remain preserved.
+
+## Exact-code publication
+
+Code commit `d56aa994a4372149c232864c014f7c134dafc01d` was published on
+`alaz/r1-evidence-view-724a`; its GitHub `alaz/local-ci` status is
+`success` (status56583893661, 2026-10-17T06:32:35Z). The API reports status,
+not an individual remote test count. Local1374/1374 and independent full1374
+are separate measured runs; no native count is inferred from CI. Evidence:
+`evidence/r1-evidence-724a/ci-code-status.json`. This documentation-only
+checkpoint retains the identical code/test source; its own CI is checked
+separately after publication.

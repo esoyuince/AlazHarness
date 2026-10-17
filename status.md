@@ -4,7 +4,7 @@ Son güncelleme: 2026-10-17T09:06:56.733595+03:00
 
 ## Güncel nokta
 
-R1A-EVIDENCE-724a: ürün ve yerel testler tamam; Git/CI yayını IN PROGRESS.
+R1A-EVIDENCE-724a: dar metadata uygulaması, yerel tam test ve kod CI tamamlandı.
 Aktif dal: alaz/r1-evidence-view-724a
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\evidence-r1-724a
 Başlangıç commit: 214f1dcd7ba7a83a0d13afdb7adfb221bfa21fa8; GitHub alaz/local-ci success canlı doğrulandı.
@@ -20,7 +20,10 @@ Araştırma belgeleri eski main-6f88 çalışma ağacında korunur; topluca comm
 edilmez. Eski kök dosyalar/vendor kaynakları değişmez; main değişmez.
 Agent list kontrolünde bu projeye uygun ajan yok, başka proje/revoked
 ajanlar değiştirilmedi. Yerel tam standart1374/1374 PASS; yeni101test toplamın içinde.
-Git/CI kapanışı beklenir; in-retention pozitif native R1 kabulü AÇIK.
+Kod commit: d56aa994a4372149c232864c014f7c134dafc01d — alaz/local-ci SUCCESS.
+In-retention pozitif native R1 kabulü, orijinal kaynak kapsamı ve provider
+görünüm bağlaması AÇIK. Son belge commit kontrolü yayımlandıktan sonra ayrıca
+sorgulanır; önceki ürün CI yeni commit için otomatik kabul sayılmaz.
 
 ## İş günlüğü
 
@@ -134,3 +137,26 @@ Rapor docs/R1-EVIDENCE-VIEW.md; kanıt evidence/r1-evidence-724a ve QA-E03E.
 Yalnız bu paketin seçilmiş dosyaları yayımlanacak; eskiClaude araştırmaları
 eskiworktreede korunur. Main/kaynakpin/runtime yetkileri değişmez.
 Sıradaki R1B gerçek kaynak-capture/provider-görünüm bağı; D3B/M1/M2 açıktır.
+
+### 2026-10-17T09:31:49.344268+03:00 — R1A kod yayımlandı
+
+Kod commit d56aa994a4372149c232864c014f7c134dafc01d; origin/alaz/r1-evidence-view-724a aynıSHA
+ve çalışma ağacı temiz doğrulandı. GitHub alaz/local-ci canlı sorguda pending,
+çalışma başladı; başarı henüz ilan edilmez. Yerel full1374PASS/rootgatePASS.
+Yayın index229test kaynağının227si byteeşit,iki değişmeyen eski dosyada yalnız
+checkoutCRLF; yeni/değişmiş kod ve testlerin tamamı exactindex. Kanıt
+evidence/r1-evidence-724a/index-source-check.json.
+Yeni aşama başlatılmadan önce buSHA CI ve durum-belge teslimi kapatılacak.
+
+### 2026-10-17T09:34:00.498972+03:00 — R1A exact-code CI kapandı / belge teslimi
+
+GitHub d56aa994a4372149c232864c014f7c134dafc01d alaz/local-ci SUCCESS
+canlı iki yoldan doğrulandı; status56583893661 17Ekim09:32:35TR. API test
+sayısını vermiyor; yerel1374PASS ve bağımsız1374PASS ayrı ölçümdür.
+Code/test/source229dosya son freeze ile aynı. Bu son kayıt yalnız rapor/durum/CI
+kanıtı commitidir; özgün/QA testler ve ilkFAILler değişmez.
+Tamamlanan: EvidenceViewInspector, EvidenceSelection, opt-inCLI; UNKNOWNlar
+asla görülmüş/tamdosya/hakikat sayılmaz. Yeni DB/kuyruk/model/izneksi yok.
+Kalan kesin iş: R1B trusted source-capture ve gerçek provider request-view bağı,
+süresi dolmamış native profil üstünde pozitif doğrulama. D3B OSsınırı, gerçek
+model/tarife/token, HYB006 ve M1/M2 ayrı AÇIK. Main b8ff44f değişmedi.
