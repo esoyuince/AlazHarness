@@ -182,3 +182,12 @@ verification and candidate promotion gate unique to Alaz. Also relevant:
 ThreadStore single writer and agent mail accepted/consumed/wake distinctions.
 No product/CLI/dependency/scheduler changes; candidate acceptance scenarios
 are NOT RUN. Continue Dream-D2 minimal usable learning loop, D3B and HYB006.
+
+## DREAM-D2A manual review and net-delta — 2026-10-17
+
+Opt-in candidate review, decision event CAS, no-change diff and loopback CLI
+implemented on the existing D1 native state owner. `accept_for_testing` is not
+an evidence of truth, independent evaluation, memory adoption or learned skill.
+See docs/DREAM-D2-REVIEW.md. Next D2B: locked held-out evaluation, measured
+transfer on unseen task, memory conflict reconciliation; D3B OS/network
+boundary and provider price/token verification remain open.

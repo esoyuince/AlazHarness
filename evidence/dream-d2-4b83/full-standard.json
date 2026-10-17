@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-17T22:29:01.261031+03:00",
+  "result": "PASS",
+  "scope": "offline entire unittest discovery, no native Gateway or model",
+  "tests": 1714,
+  "expected": 1714,
+  "exitCode": 0,
+  "seconds": 117.508,
+  "sourceFiles": 247,
+  "sourceDrift": [],
+  "skipReported": false,
+  "logSha256": "2407435dc5c37d0d060a1feb336a9132c5c78435bb503795a92a897789d5cee0",
+  "modelCalls": 0,
+  "nativeRuns": 0
+}

@@ -51,10 +51,18 @@ def register(ctx):
         # Preload while the native registration's temporary import path is active.
         from dream import DreamService
         dream=DreamService(dream_settings,execution,config_reader=lambda:ctx.get_config('dream'))
-    ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(app,adapter,policy,execution=execution,dream=dream))
+    review=None
+    review_settings=ctx.get_config('dream_review')
+    if review_settings is not None:
+        # Load while the native temporary plugin import path is still active.
+        from dream_review import DreamReviewService
+        review=DreamReviewService(review_settings,dream,
+            config_reader=lambda:ctx.get_config('dream_review'))
+    ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(
+        app,adapter,policy,execution=execution,dream=dream,review=review))
 
 
-def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None):
+def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None, review=None):
     from aiohttp import web
     validate_native_adapter(adapter)
     if type(policy) is not HostGatePolicy or app.frozen or adapter._host!='127.0.0.1':
@@ -137,12 +145,50 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
             reason=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
             return error(HostGateError(reason) if reason else exc)
 
+    async def review_decide(request):
+        try:
+            current(request)
+            value=await body(request)
+            if type(value) is not dict or set(value)!={'batchId','candidateId','decision','reasonCode','expectedRevision'}:
+                raise HostGateError('dream_review_request_required')
+            result=await asyncio.to_thread(review.decide,value['batchId'],value['candidateId'],
+                value['decision'],value['reasonCode'],value['expectedRevision'])
+            return web.json_response(result,status=200)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            code=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(code) if code else exc)
+
+    async def review_status(request):
+        try:
+            current(request)
+            result=await asyncio.to_thread(review.inspect,request.match_info['batch_id'])
+            return web.json_response(result,status=200)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            code=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(code) if code else exc)
+
+    async def review_diff(request):
+        try:
+            current(request)
+            value=await body(request)
+            if type(value) is not dict or set(value)!={'batchId','baseRevision'}:
+                raise HostGateError('dream_review_diff_required')
+            result=await asyncio.to_thread(review.diff,value['batchId'],value['baseRevision'])
+            return web.json_response(result,status=200)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            code=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(code) if code else exc)
+
     async def capabilities(request):
         try:
             current(request)
             if execution is not None:await execution.require_ready()
             return web.json_response({'hostGateVersion':1,'dispatchPath':BASE+'/dispatch','nativeStoreOwner':True,
                 **({'dreamVersion':1,'dreamMode':'manual_candidates_only'} if dream is not None and dream.policy.enabled else {}),
+                **({'dreamReviewVersion':1,'dreamReviewMode':'manual_for_testing_only'} if review is not None and review.policy.enabled else {}),
                 'dispatchAtMostOnce':True,'automaticRetry':False,'modelTokenOrCostBudget':False,
                 'toolSandbox':False,'scope':'default_profile_new_run','executionBoundaryVersion':1 if execution is not None else None,
                 'providerBrokerVersion':1 if execution is not None and getattr(execution,'broker',None) is not None else None,
@@ -168,6 +214,8 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
         if execution is not None and request.method=='POST' and request.path=='/alaz/provider/v1/chat/completions':return await handler(request)
         if dream is not None and dream.policy.enabled and request.method=='POST' and request.path==BASE+'/dream':
             return await handler(request)
+        if review is not None and review.policy.enabled and request.method=='POST' and request.path in (BASE+'/dream/review',BASE+'/dream/review/diff'):
+            return await handler(request)
         if request.method=='POST' and request.path in (BASE+'/intents',BASE+'/dispatch'):
             return await handler(request)
         try:
@@ -184,4 +232,8 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
     if dream is not None and dream.policy.enabled:
         app.router.add_post(BASE+'/dream',dream_run)
         app.router.add_get(BASE+'/dream/{batch_id}',dream_status)
+    if review is not None and review.policy.enabled:
+        app.router.add_post(BASE+'/dream/review',review_decide)
+        app.router.add_post(BASE+'/dream/review/diff',review_diff)
+        app.router.add_get(BASE+'/dream/review/{batch_id}',review_status)
     app['alaz_host_gate_v1']=True

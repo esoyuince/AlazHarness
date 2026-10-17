@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-10-17T22:26:33.416515+03:00",
+  "scope": "D2 initial focused tests separate 25 service,18 HTTP,14 CLI",
+  "services": 25,
+  "http": 18,
+  "cli": 14,
+  "focusedPass": 57,
+  "fullStatus": "IN_PROGRESS",
+  "sourceSha256": {
+    "packages/claw-hermes/dream_review.py": "04320b57f5673e7e3dac7cadb8407869e17832dfac3af877152e28d90bfb9281",
+    "packages/claw-hermes/host_gate_plugin.py": "1b986c9678bc5099ef849d0b3e2b3b5fc0d553912234cf9fb17bb06645c3a685",
+    "scripts/dream_review_once.py": "620e1d2f97e77a767d7301d5530e086d0a5ece96ee831ec9154266e2d653c33a",
+    "tests/test_dream_review.py": "87113c2c3278776f05a12dead9c990740bbfc376c5d2774669cb45d2582dcc7c",
+    "tests/test_dream_review_http.py": "322933ef105b6bcac34f6536f11a37feefe508d0e0e5881e60b33eed8cdafdea",
+    "tests/test_dream_review_cli.py": "3636346d95268114e503a4e1d0166b8038b47e4d2018887e8ef457d8f0ec4bbc"
+  },
+  "fullBaseTestCount": 1657,
+  "realModelCalls": 0,
+  "nativeRuns": 0,
+  "activeMemoryEdits": 0
+}

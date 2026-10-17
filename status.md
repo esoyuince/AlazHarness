@@ -1,8 +1,13 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T20:15:54.743600+03:00
+Son güncelleme: 2026-10-17T22:32:37.617840+03:00
 
 ## Güncel nokta
+
+DREAM-D2A-4B83 manuel aday inceleme/CAS/net-diff/loopback CLI: 1714/1714 standart PASS, Git/CI AÇIK; held-out D2B NOT RUN.
+Dal alaz/dream-d2-4b83; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2-4b83; base d3df140f38e15a34f7962c3338391413dd64514b.
+Dream D1 ve Codex araştırması ürün/provenance tabanıdır; test/commit/CI bekleniyor.
+
 
 REF-CODEX-001 Codex Desktop/CLI statik araştırması: PUBLISHED, code CI SUCCESS. Belge commit CI ayrıca kontrol edilir.
 Aktif dal alaz/ref-codex-001-c7a1; worktree C:\Antigravity\AlazHarness\scratch\worktrees\codex-review-c7a1; başlangıç 5b1f2dd12820434a257bb9709293195a36b6f18f.
@@ -387,3 +392,47 @@ Rapor docs/research/REF-CODEX-001-APP-REVIEW.md; 11pinned publicanchor,
 ASAR40seçilmişdosya ve7kurulu paket copy hash kontrollü. 12kabul önerisi
 NOT RUN; gerçekCodex runtime/model yok. Yeni docs/status/ci makbuzu yayımlanacak.
 Sıradaki kod işi DREAM-D2 doğrulanabilir fayda ve held-out transfer testi.
+
+### 2026-10-17T21:36:29.873347+03:00 — DREAM-D2-4B83 başlangıcı
+
+Yeni bağımsız ürün worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2-4b83; sabit baz d3df140f38e15a34f7962c3338391413dd64514b.
+Codex iki aşamalı hafıza incelemesi D2 tasarımını yönlendirdi ancak
+Codex executable/kapalı kod kopyalama yok. D1 adayları yalnız inceleme için,
+`accept_for_testing` aktif hafıza/skill izni değildir.
+İlk dar dilim: mevcut Dream native state sahibi ve HTTP bearer ile
+insan inceleme kararı, event hash/CAS, deterministic no-change diff;
+sonra bağımsız görev faydası için kilitli evaluator kontratı.
+Tam gerçek model D3B/provider ölçümü bekler; sentetik test kabulünü
+gerçek öğrenme başarısı sayma. Yeni DB/scheduler veya ücretli çağrı yok.
+Kök eski dirty dosyalar korunur; status kök aynası CAS ile eşitlenir.
+
+### 2026-10-17T22:26:33.416515+03:00 — DREAM-D2-4B83 local focused test checkpoint
+
+Cihazdan 25service+18HTTP+14CLI =57 yeni dar test PASS (üç ayrı komut),
+ürün/test dosyaları kaynak SHA ile sabitlendi. Review state D1 terminal
+kaydı ve gerçek native owner üzerinden, accept_for_testing yalnız aday;
+auto memory/skill/yetki/scheduler hiçbir yerde açılmadı.
+3manuel route + loopback CLI var; CAS revision ve no-change delta yerel.
+Tam standart bağımsız test şimdi ayrı makbuzla başlayacak; önceki tam
+toplam1657. Full test sonucu okunmadan tekrar başlatılmayacak.
+Held-out yeni görevde gerçekmodel öğrenme ölçümü AÇIK, yapılmış sayılmayacak.
+
+### 2026-10-17T22:31:03.819657+03:00 — DREAM-D2A yerel tam kapsam PASS
+
+Tam1714/1714standart PASS exit0 skip0;247ölçülen kod/test/config SHA
+aynı. 57yeni test (25review,18HTTP,14CLI) bu1714içinde, ayrıca eklenmez.
+Ürün D2A manuel accept_for_testing/reject/defer; CAS revision ve
+net diff + no-change sıfır ek model isteği; D1 adayları read-only korunuyor.
+Yeni native Gateway/real model/ücretli istek/öğrenilmiş beceri testi YOK.
+D2B yeni görev bağımsız transfer ve mevcut hafıza semantik çatışması
+AÇIK. Kaynak freeze evidence/dream-d2-4b83/source-final.json.
+Bir sonraki adım root statik CI kapısı, exact-source stage/commit/push/CI.
+
+### 2026-10-17T22:32:37.617840+03:00 — D2A full + root statik kapı tamamlandı
+
+Full1714/1714 exit0 skip0 PASS; 247source unchanged; root static PASS
+(1714 discovered, 1153root,2gitlinks). Dokümante edilen sınırlar:
+D2A frozen D1 adayı inceler, orijinal terminal retentionı tekrar
+doğrulamaz, native owner epoch değişince eski review row yeniden açılması
+şu dilimde garanti değil. D2B bağımsız held-out model/skill/aktif memory
+terfi kesinlikle NOT RUN; üretime yetki artırma yok. Git/CI teslimi açık.

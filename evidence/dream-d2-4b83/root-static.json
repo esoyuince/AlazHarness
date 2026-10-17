@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-17T22:31:45.784086+03:00",
+  "scope": "root static component check, not native Docker or real model",
+  "exitCode": 0,
+  "discoveredTests": 1714,
+  "rootFilesChecked": 1153,
+  "sourceGitlinksChecked": 2,
+  "nativeRuntimeTested": false,
+  "modelCalled": false,
+  "result": "PASS",
+  "outputSha256": "248b83fc23412b2f14d19b74425803d62427953d8becb5be72e6f2165d6a709f"
+}

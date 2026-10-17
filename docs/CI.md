@@ -223,3 +223,12 @@ and test_dream_http_61a9.py under scripts/qa, with ALAZ_DREAM_QA_SOURCE set.
 Four final Linux Gateway/broker/Docker trials use scripted synthesis and are
 separate acceptance evidence. Exact counts/freeze/CI are in status.md and
 docs/DREAM-D1-CANDIDATES.md, not inferred from old test totals.
+
+## DREAM-D2A tests and accepted scope
+
+Default Python unittest discovery includes25Review state,18host HTTP handler
+and14manual loopback CLI tests (57 new cases). These run synthetic state/ports
+only: no external model, no real Gateway/Docker, no autonomous scheduler, no
+active memory/skills edits. Exact test counts, source SHA, exit and CI reported
+in status.md/evidence/dream-d2-4b83. D2B independent task/real-model test
+remains NOT RUN. `ci_check.py` static discovery != full test execution.

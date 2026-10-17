@@ -1,0 +1,22 @@
+{
+  "verifiedSourceFiles": 247,
+  "logDiff": [
+    {
+      "path": "evidence/dream-d2-4b83/full-standard.txt",
+      "rawSha256": "2407435dc5c37d0d060a1feb336a9132c5c78435bb503795a92a897789d5cee0",
+      "rawBytes": 212515,
+      "indexedSha256": "1a6d484358fff84facf4e3076498b187f479ccc54bd6fb2123a45490ef600f64",
+      "indexedBytes": 210796,
+      "eolOnly": true
+    },
+    {
+      "path": "evidence/dream-d2-4b83/root-static.txt",
+      "rawSha256": "248b83fc23412b2f14d19b74425803d62427953d8becb5be72e6f2165d6a709f",
+      "rawBytes": 399,
+      "indexedSha256": "c6ac873f03cc1c3fcede33069e2ba00875d9b515f75ec4de5f4ab4dbff70c54a",
+      "indexedBytes": 386,
+      "eolOnly": true
+    }
+  ],
+  "rawLogsKeptInWorktree": true
+}
