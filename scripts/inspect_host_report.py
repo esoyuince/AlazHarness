@@ -27,19 +27,29 @@ def main()->int:
     selection.add_argument('--request',type=Path,help='Original body/idempotency_key/observed run record')
     selection.add_argument('--scope-only',action='store_true',help='Read profile/principal budget without selecting or inventing a task')
     parser.add_argument('--format',choices=('json','text'),default='json')
+    parser.add_argument('--include-evidence',action='store_true',help='Metadata-only retained evidence; no provider visibility proof')
+    parser.add_argument('--evidence-selection',type=Path,help='Local evidence_id/content_sha256/start_byte/end_byte selection; requires --include-evidence and --request')
     args=parser.parse_args()
+    selection=None
+    renderer=render_text
     try:
         context=read_object(args.context,32768);policy=read_object(args.policy,32768)
         if set(context)!={'profile_home','api_token','epoch','instance_id'}:raise ValueError('invalid_local_input')
-        inspector=HostReportInspector(LocalRecoveryContext(**context),ExecutionPolicy(**policy))
+        inspector_type=HostReportInspector
+        if args.evidence_selection and (not args.include_evidence or args.scope_only):raise ValueError('invalid_local_input')
+        if args.include_evidence:
+            from evidence_view import EvidenceViewInspector,EvidenceSelection,render_evidence_text
+            inspector_type=EvidenceViewInspector;renderer=render_evidence_text
+            if args.evidence_selection:selection=EvidenceSelection(**read_object(args.evidence_selection,4096))
+        inspector=inspector_type(LocalRecoveryContext(**context),ExecutionPolicy(**policy))
         if args.scope_only:report=inspector.inspect_scope()
         else:
             request=read_object(args.request,2097152)
             if set(request)!={'body','idempotency_key','observed'}:raise ValueError('invalid_local_input')
-            report=inspector.inspect(**request)
+            report=inspector.inspect(**request,selection=selection) if args.include_evidence else inspector.inspect(**request)
     except (OSError,ValueError,TypeError,KeyError,RecursionError,OverflowError):
         report=unavailable_report('invalid_local_input')
-    print(render_text(report),end='') if args.format=='text' else print(json.dumps(report,indent=2,ensure_ascii=False))
+    print(renderer(report),end='') if args.format=='text' else print(json.dumps(report,indent=2,ensure_ascii=False))
     # Verification status, not task success. An accurately reported failed task
     # may be a valid report; incomplete evidence gets a nonzero exit code.
     return 0 if report['reportStatus'] in ('verified_snapshot','verified_scope_snapshot') else 2

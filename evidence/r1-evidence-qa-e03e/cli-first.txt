@@ -1,0 +1,13 @@
+test_duplicate_json_key_selection_refused (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_duplicate_json_key_selection_refused) ... ok
+test_invalid_source_record_never_cli_success (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_invalid_source_record_never_cli_success) ... ok
+test_legacy_default_remains_without_extra_section (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_legacy_default_remains_without_extra_section) ... ok
+test_opt_in_json_has_unknown_wire_and_no_content (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_opt_in_json_has_unknown_wire_and_no_content) ... ok
+test_scope_only_explains_missing_task_not_empty_proof (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_scope_only_explains_missing_task_not_empty_proof) ... ok
+test_selected_view_text_says_not_dispatched (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_selected_view_text_says_not_dispatched) ... ok
+test_selection_and_scope_only_refused (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_selection_and_scope_only_refused) ... ok
+test_selection_without_opt_in_rejected (test_evidence_cli_qa_e03e.EvidenceCliIndependentTests.test_selection_without_opt_in_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.951s
+
+OK

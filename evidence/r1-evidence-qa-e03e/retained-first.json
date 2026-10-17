@@ -1,0 +1,42 @@
+{
+  "scope": "independent read-only projection of FIVE already completed native test profiles; NOT five new Gateway/model runs",
+  "at": "2026-10-17T09:20:06.554360+03:00",
+  "rows": [],
+  "errors": [
+    {
+      "scenario": "normal",
+      "exception": "AssertionError",
+      "reason": "retention_expired"
+    },
+    {
+      "scenario": "provider-limit",
+      "exception": "AssertionError",
+      "reason": "retention_expired"
+    },
+    {
+      "scenario": "tool-limit",
+      "exception": "AssertionError",
+      "reason": "retention_expired"
+    },
+    {
+      "scenario": "denied-write",
+      "exception": "AssertionError",
+      "reason": "retention_expired"
+    },
+    {
+      "scenario": "summary",
+      "exception": "AssertionError",
+      "reason": "retention_expired"
+    }
+  ],
+  "source_drift": [],
+  "programs": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78"
+  },
+  "new_native_runs": 0,
+  "new_inference_calls": 0,
+  "result": "NOT_ACCEPTED"
+}

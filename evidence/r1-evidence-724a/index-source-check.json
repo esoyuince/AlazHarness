@@ -1,0 +1,20 @@
+{
+  "scope": "tested working files compared to exact publication index",
+  "measured": 229,
+  "byteIdentical": 227,
+  "unchangedLegacyNormalization": [
+    {
+      "path": ".gitmodules",
+      "reason": "unchanged base Git blob; existing checkout CRLF only",
+      "worktreeSha256": "fb344c935c9097bd1a533a2b651eafb3647c73e976fb98a789bba1e585a152fb",
+      "indexSha256": "24993ccdb429e2632da11f0a64d59ee94df8acd90afb6ce375deb49d6a760dbe"
+    },
+    {
+      "path": "scripts/qa/windows_appcontainer_probe.cs",
+      "reason": "unchanged base Git blob; existing checkout CRLF only",
+      "worktreeSha256": "b6ca63ae024ae42fd237a18442a75effd65603dfba03954a801ea23e41ba7025",
+      "indexSha256": "4c1050700bd01dfb73468ac3a266e8d2edf07212a9f75641379a59b3a02f7f8c"
+    }
+  ],
+  "newOrChangedCodeExact": true
+}

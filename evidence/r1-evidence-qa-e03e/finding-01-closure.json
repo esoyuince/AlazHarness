@@ -1,0 +1,16 @@
+{
+  "finding": "E03E-01",
+  "status": "CLOSED_IN_PRODUCT",
+  "closed_by_product_writer": "724a",
+  "independent_unchanged_tests": 50,
+  "test_exit_code": 0,
+  "test_source_hashes": {
+    "tests/test_evidence_cli_qa_e03e.py": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330",
+    "tests/test_evidence_view_qa_e03e.py": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f",
+    "tests/test_report_evidence_invariants_qa_e03e.py": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+  },
+  "product_sha256": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+  "original_failure_preserved": true,
+  "scope": "P2 denial diagnostic; original range was already correctly refused",
+  "at": "2026-10-17T09:22:49.207954+03:00"
+}

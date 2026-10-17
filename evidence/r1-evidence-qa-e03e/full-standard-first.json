@@ -1,0 +1,14 @@
+{
+  "scope": "independent complete standard suite on measured candidate source; not native/provider acceptance",
+  "observed_at": "2026-10-17T09:25:28.387007+03:00",
+  "tests": 1374,
+  "exit_code": 0,
+  "skip_reported": false,
+  "measured_files": 216,
+  "changed_or_removed": [],
+  "added_files": [],
+  "elapsed_seconds": 101.676,
+  "test_scope": "E03E50 included in full total, not added again",
+  "result": "PASS",
+  "model_calls": 0
+}

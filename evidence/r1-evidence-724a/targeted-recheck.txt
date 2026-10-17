@@ -1,0 +1,56 @@
+test_selection_frozen (test_evidence_view.EvidenceSelectionTests.test_selection_frozen) ... ok
+test_strict_identity_types (test_evidence_view.EvidenceSelectionTests.test_strict_identity_types) ... ok
+test_strict_range_types (test_evidence_view.EvidenceSelectionTests.test_strict_range_types) ... ok
+test_unavailable_reason_redacted (test_evidence_view.EvidenceSelectionTests.test_unavailable_reason_redacted) ... ok
+test_cli_include_and_selection (test_evidence_view.EvidenceViewTests.test_cli_include_and_selection) ... ok
+test_content_is_utf8_bytes_not_char_count (test_evidence_view.EvidenceViewTests.test_content_is_utf8_bytes_not_char_count) ... ok
+test_duplicate_call_id_is_ambiguous (test_evidence_view.EvidenceViewTests.test_duplicate_call_id_is_ambiguous) ... ok
+test_duplicate_result_id_is_ambiguous (test_evidence_view.EvidenceViewTests.test_duplicate_result_id_is_ambiguous) ... ok
+test_empty_retained_text_distinguished_from_missing (test_evidence_view.EvidenceViewTests.test_empty_retained_text_distinguished_from_missing) ... ok
+test_empty_slice_of_nonempty_text_rejected (test_evidence_view.EvidenceViewTests.test_empty_slice_of_nonempty_text_rejected) ... ok
+test_expired_retention_no_evidence (test_evidence_view.EvidenceViewTests.test_expired_retention_no_evidence) ... ok
+test_full_local_view_is_not_original_or_wire_coverage (test_evidence_view.EvidenceViewTests.test_full_local_view_is_not_original_or_wire_coverage) ... ok
+test_future_call_does_not_pair (test_evidence_view.EvidenceViewTests.test_future_call_does_not_pair) ... ok
+test_history_suffix_flag_does_not_bind_execution (test_evidence_view.EvidenceViewTests.test_history_suffix_flag_does_not_bind_execution) ... ok
+test_legacy_report_unchanged (test_evidence_view.EvidenceViewTests.test_legacy_report_unchanged) ... ok
+test_live_observer_messages_not_promoted (test_evidence_view.EvidenceViewTests.test_live_observer_messages_not_promoted) ... ok
+test_malformed_calls_section_rejected (test_evidence_view.EvidenceViewTests.test_malformed_calls_section_rejected) ... ok
+test_malformed_messages_section_is_unavailable (test_evidence_view.EvidenceViewTests.test_malformed_messages_section_is_unavailable) ... ok
+test_missing_db_not_created (test_evidence_view.EvidenceViewTests.test_missing_db_not_created) ... ok
+test_missing_id_not_valid_pair (test_evidence_view.EvidenceViewTests.test_missing_id_not_valid_pair) ... ok
+test_missing_tool_content_not_zero (test_evidence_view.EvidenceViewTests.test_missing_tool_content_not_zero) ... ok
+test_no_database_bytes_or_budget_changed (test_evidence_view.EvidenceViewTests.test_no_database_bytes_or_budget_changed) ... ok
+test_no_messages_not_no_tools_executed (test_evidence_view.EvidenceViewTests.test_no_messages_not_no_tools_executed) ... ok
+test_no_source_files_opened (test_evidence_view.EvidenceViewTests.test_no_source_files_opened) ... ok
+test_no_visibility_inferred_from_terminal_or_usage (test_evidence_view.EvidenceViewTests.test_no_visibility_inferred_from_terminal_or_usage) ... ok
+test_non_object_message_rejected (test_evidence_view.EvidenceViewTests.test_non_object_message_rejected) ... ok
+test_nonzero_start (test_evidence_view.EvidenceViewTests.test_nonzero_start) ... ok
+test_old_reference_cannot_read_modified_record (test_evidence_view.EvidenceViewTests.test_old_reference_cannot_read_modified_record) ... ok
+test_out_of_bounds_rejected (test_evidence_view.EvidenceViewTests.test_out_of_bounds_rejected) ... ok
+test_pairing_is_not_execution_proof (test_evidence_view.EvidenceViewTests.test_pairing_is_not_execution_proof) ... ok
+test_partial_local_view (test_evidence_view.EvidenceViewTests.test_partial_local_view) ... ok
+test_primitive_selection_not_accepted (test_evidence_view.EvidenceViewTests.test_primitive_selection_not_accepted) ... ok
+test_proof_in_tool_text_is_not_authority (test_evidence_view.EvidenceViewTests.test_proof_in_tool_text_is_not_authority) ... ok
+test_recheck_invalidates_entire_evidence_snapshot (test_evidence_view.EvidenceViewTests.test_recheck_invalidates_entire_evidence_snapshot) ... ok
+test_reference_identity_changes_with_content (test_evidence_view.EvidenceViewTests.test_reference_identity_changes_with_content) ... ok
+test_retained_record_not_original_file_digest (test_evidence_view.EvidenceViewTests.test_retained_record_not_original_file_digest) ... ok
+test_returned_mutation_not_persisted (test_evidence_view.EvidenceViewTests.test_returned_mutation_not_persisted) ... ok
+test_same_connection_and_no_dml (test_evidence_view.EvidenceViewTests.test_same_connection_and_no_dml) ... ok
+test_scope_only_invents_no_task (test_evidence_view.EvidenceViewTests.test_scope_only_invents_no_task) ... ok
+test_secret_names_ids_and_content_not_echoed (test_evidence_view.EvidenceViewTests.test_secret_names_ids_and_content_not_echoed) ... ok
+test_snapshot_digest_not_old_output_only_digest (test_evidence_view.EvidenceViewTests.test_snapshot_digest_not_old_output_only_digest) ... ok
+test_split_unicode_boundary_rejected (test_evidence_view.EvidenceViewTests.test_split_unicode_boundary_rejected) ... ok
+test_too_many_references_rejected_no_partial_list (test_evidence_view.EvidenceViewTests.test_too_many_references_rejected_no_partial_list) ... ok
+test_unknown_task_messages_not_promoted (test_evidence_view.EvidenceViewTests.test_unknown_task_messages_not_promoted) ... ok
+test_unrelated_observer_metadata_ignored (test_evidence_view.EvidenceViewTests.test_unrelated_observer_metadata_ignored) ... ok
+test_unsupported_rich_content_not_guessed (test_evidence_view.EvidenceViewTests.test_unsupported_rich_content_not_guessed) ... ok
+test_wrong_bearer_no_evidence (test_evidence_view.EvidenceViewTests.test_wrong_bearer_no_evidence) ... ok
+test_wrong_digest_selection_rejected (test_evidence_view.EvidenceViewTests.test_wrong_digest_selection_rejected) ... ok
+test_wrong_generation_no_evidence (test_evidence_view.EvidenceViewTests.test_wrong_generation_no_evidence) ... ok
+test_wrong_reference_rejected (test_evidence_view.EvidenceViewTests.test_wrong_reference_rejected) ... ok
+test_wrong_run_no_evidence (test_evidence_view.EvidenceViewTests.test_wrong_run_no_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 3.701s
+
+OK

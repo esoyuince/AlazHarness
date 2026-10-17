@@ -1,0 +1,12 @@
+{
+  "id": "E03E-01",
+  "severity": "P2 diagnostic contract",
+  "status": "OPEN",
+  "test": "test_split_multibyte_boundary_is_refused",
+  "actual": "evidence_unavailable",
+  "expected": "split_utf8_boundary",
+  "basis": "42 tests executed:41 PASS/1FAIL, source drift0",
+  "root_cause": "unavailable_evidence accepts only [a-z_]{1,80}, while product emits split_utf8_boundary containing digit8",
+  "security_impact": "No bypass observed; range was correctly refused, only diagnostic specificity lost",
+  "test_expectations_changed": false
+}

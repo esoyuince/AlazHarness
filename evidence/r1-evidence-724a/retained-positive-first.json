@@ -1,0 +1,38 @@
+{
+  "scope": "new read-only R1 reports/CLI against five past native fixture stores; NO new native execution",
+  "checks": [],
+  "errors": [
+    {
+      "scenario": "normal",
+      "errorType": "ValueError"
+    },
+    {
+      "scenario": "provider-limit",
+      "errorType": "ValueError"
+    },
+    {
+      "scenario": "tool-limit",
+      "errorType": "ValueError"
+    },
+    {
+      "scenario": "denied-write",
+      "errorType": "ValueError"
+    },
+    {
+      "scenario": "summary",
+      "errorType": "ValueError"
+    }
+  ],
+  "sourceSha256": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/inspect_host_report.py": "8e9dcc2e67742d793b032818699ad332517d4e4768dfef9daf8c7b013e47d74c",
+    "scripts/verify_evidence_view_retained.py": "16eaa56dde9aa52e257d2652c1edae2ac358009a897897f6080b75ada712a245"
+  },
+  "changed": [],
+  "newGatewayRuns": 0,
+  "newModelCalls": 0,
+  "paidCalls": 0,
+  "result": "FAIL"
+}

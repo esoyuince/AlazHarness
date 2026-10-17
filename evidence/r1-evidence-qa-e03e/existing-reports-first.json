@@ -1,0 +1,9 @@
+{
+  "scope": "existing report tests, before new evidence API; not new QA cases or native acceptance",
+  "tests": 83,
+  "exit_code": 0,
+  "elapsed_seconds": 5.697,
+  "changed_files": [],
+  "added_files": [],
+  "model_calls": 0
+}

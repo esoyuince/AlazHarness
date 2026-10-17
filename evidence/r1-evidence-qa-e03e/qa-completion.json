@@ -1,0 +1,28 @@
+{
+  "id": "R1-QA-E03E",
+  "status": "QA_COMPLETE_PUBLICATION_SEPARATE",
+  "observed_at": "2026-10-17T09:26:58.700211+03:00",
+  "head_observed": "214f1dcd7ba7a83a0d13afdb7adfb221bfa21fa8",
+  "branch": "alaz/r1-evidence-view-724a",
+  "qa_tests": 50,
+  "qa_result": "PASS",
+  "full_standard_tests": 1374,
+  "full_result": "PASS",
+  "measured_source_files": 216,
+  "source_drift": [],
+  "new_tests_included_in_full": true,
+  "initial_failure_preserved": true,
+  "finding_01": "closed_with_unchanged_tests",
+  "retained_native_profiles": {
+    "positive_inventory": "NOT_ACCEPTED_RETENTION_EXPIRED",
+    "negative_expiration_checks": 5,
+    "clock_override_used": false
+  },
+  "new_native_executions": 0,
+  "new_model_calls": 0,
+  "product_edits_by_e03e": false,
+  "commit_or_push_by_e03e": false,
+  "publication_owner": "724a",
+  "evidence_view_sha256": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+  "report_sha256": "dc59beff7e235c4b381e7705a72ed6d6a07c3365becf4d08d69b796f993b0a0c"
+}

@@ -1,0 +1,10 @@
+{
+  "scope": "characterize existing canonical summary digest vs full stored result; synthetic SQLite, not native proof",
+  "summary_digest_first": "b521d9e4093e6720f2020a782d6fb3118eb0c61e68bcb9dc22d4ec06113f8337",
+  "summary_digest_second": "b521d9e4093e6720f2020a782d6fb3118eb0c61e68bcb9dc22d4ec06113f8337",
+  "summary_digests_equal": true,
+  "stored_result_changed": true,
+  "classification": "canonical_terminal_verified",
+  "note": "Existing resultDigest covers final output+usage, not intermediate messages. New per-evidence digest must not reuse this as a full-history digest.",
+  "new_model_calls": 0
+}

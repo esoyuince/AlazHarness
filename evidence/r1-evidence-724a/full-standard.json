@@ -1,0 +1,17 @@
+{
+  "scope": "complete offline standard suite; native Gateway/OS/model NOT executed",
+  "observed_at": "2026-10-17T09:26:45.100714+03:00",
+  "head": "214f1dcd7ba7a83a0d13afdb7adfb221bfa21fa8",
+  "tests": 1374,
+  "exit_code": 0,
+  "timed_out": false,
+  "skips_reported": false,
+  "seconds": 120.367,
+  "measured_files": 229,
+  "changed_or_removed": [],
+  "added": [],
+  "head_unchanged": true,
+  "new_gateway_runs": 0,
+  "paid_calls": 0,
+  "result": "PASS"
+}

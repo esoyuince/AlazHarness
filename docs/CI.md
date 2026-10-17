@@ -187,3 +187,12 @@ Real Unix-socket close and native Gateway/broker/isolated-read cases run only vi
 explicit Linux probes against an authenticated scripted origin. They are separate
 from standard suite counts; no install, Docker, paid call or new daemon is added
 to ordinary CI. Final counts and exact-SHA receipts are recorded in status.md.
+
+## R1A retained-evidence views
+
+Standard discovery exercises exact R1 metadata and CLI behavior with fresh
+synthetic SQLite fixtures. It does not need historical profiles or start an
+agent/provider. Existing-report tests remain intact. The opt-in historical
+verifier has explicit positive and retention-refusal expectations; a correct
+expiration denial is not positive native inventory acceptance. See
+docs/R1-EVIDENCE-VIEW.md and exact evidence/r1-evidence-724a receipts.

@@ -1,0 +1,59 @@
+{
+  "scope": "current-clock rejection of five expired historical native profiles; negative read-only check, not positive/native acceptance",
+  "at": "2026-10-17T09:20:59.897182+03:00",
+  "result": "PASS",
+  "checks": [
+    {
+      "scenario": "normal",
+      "result": "EXPIRED_DENIAL_CONFIRMED",
+      "reason": "retention_expired",
+      "source_bytes_unchanged": true,
+      "native_receipt_sha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+      "current_positive_inventory_accepted": false,
+      "clock_override_used": false,
+      "new_native_execution": false
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "EXPIRED_DENIAL_CONFIRMED",
+      "reason": "retention_expired",
+      "source_bytes_unchanged": true,
+      "native_receipt_sha256": "909c9e8cd9439e0b6dba36174167c912a8bffa4702a118bb68ded7941e6fa36a",
+      "current_positive_inventory_accepted": false,
+      "clock_override_used": false,
+      "new_native_execution": false
+    },
+    {
+      "scenario": "tool-limit",
+      "result": "EXPIRED_DENIAL_CONFIRMED",
+      "reason": "retention_expired",
+      "source_bytes_unchanged": true,
+      "native_receipt_sha256": "9248d8b64e4a3f1af00e7e7dc3230c19d97179d50a5a726242fc553464edf346",
+      "current_positive_inventory_accepted": false,
+      "clock_override_used": false,
+      "new_native_execution": false
+    },
+    {
+      "scenario": "denied-write",
+      "result": "EXPIRED_DENIAL_CONFIRMED",
+      "reason": "retention_expired",
+      "source_bytes_unchanged": true,
+      "native_receipt_sha256": "0a7f977e43c6d5364406fbabda5e6879e405fe453e906f1a0d098ee2090cfcf7",
+      "current_positive_inventory_accepted": false,
+      "clock_override_used": false,
+      "new_native_execution": false
+    },
+    {
+      "scenario": "summary",
+      "result": "EXPIRED_DENIAL_CONFIRMED",
+      "reason": "retention_expired",
+      "source_bytes_unchanged": true,
+      "native_receipt_sha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67",
+      "current_positive_inventory_accepted": false,
+      "clock_override_used": false,
+      "new_native_execution": false
+    }
+  ],
+  "new_gateway_runs": 0,
+  "model_calls": 0
+}

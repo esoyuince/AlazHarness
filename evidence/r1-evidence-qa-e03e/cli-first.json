@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-17T09:18:01.244395+03:00",
+  "scope": "8 independent real CLI subprocess checks on temporary synthetic profiles; not native Gateway",
+  "tests": 8,
+  "exit_code": 0,
+  "changed_or_removed": [],
+  "elapsed_seconds": 3.623,
+  "test_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330",
+  "model_calls": 0
+}

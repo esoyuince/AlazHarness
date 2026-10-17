@@ -1,0 +1,10 @@
+{
+  "tests": 50,
+  "files": {
+    "tests/test_evidence_cli_qa_e03e.py": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330",
+    "tests/test_evidence_view_qa_e03e.py": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f",
+    "tests/test_report_evidence_invariants_qa_e03e.py": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+  },
+  "scope": "unchanged independent tests; not acceptance",
+  "at": "2026-10-17T09:18:54.312847+03:00"
+}

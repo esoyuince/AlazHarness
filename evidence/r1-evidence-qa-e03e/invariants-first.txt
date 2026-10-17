@@ -1,0 +1,15 @@
+test_an_unpaired_unicode_tool_never_creates_execution_permission (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_an_unpaired_unicode_tool_never_creates_execution_permission) ... ok
+test_boolean_generation_discloses_no_extra_evidence (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_boolean_generation_discloses_no_extra_evidence) ... ok
+test_embedded_result_path_is_never_opened (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_embedded_result_path_is_never_opened) ... ok
+test_foreign_session_discloses_no_extra_evidence (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_foreign_session_discloses_no_extra_evidence) ... ok
+test_hidden_tool_error_not_independent_goal_success (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_hidden_tool_error_not_independent_goal_success) ... ok
+test_model_goal_claim_does_not_verify_goal (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_model_goal_claim_does_not_verify_goal) ... ok
+test_observer_evidence_fields_are_not_authority (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_observer_evidence_fields_are_not_authority) ... ok
+test_returned_nested_report_not_a_live_state_alias (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_returned_nested_report_not_a_live_state_alias) ... ok
+test_unknown_and_error_do_not_refund_prior_reservation (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_unknown_and_error_do_not_refund_prior_reservation) ... ok
+test_untrusted_identifiers_not_plaintext_report_content (test_report_evidence_invariants_qa_e03e.EvidenceReportAuthorityInvariants.test_untrusted_identifiers_not_plaintext_report_content) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.508s
+
+OK

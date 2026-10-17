@@ -1,0 +1,12 @@
+{
+  "scope": "same 51 original R1 assertions, code-only reason-label correction",
+  "tests": 51,
+  "exit_code": 0,
+  "source_sha256": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "scripts/inspect_host_report.py": "8e9dcc2e67742d793b032818699ad332517d4e4768dfef9daf8c7b013e47d74c",
+    "tests/test_evidence_view.py": "29a95a83d0d350f72cc048892d7c5776780477ed5a160d49790bade498d20342"
+  },
+  "changed": [],
+  "seconds": 4.147
+}

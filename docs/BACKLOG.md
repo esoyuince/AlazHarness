@@ -128,3 +128,13 @@ exact acceptance/publication is in status.md and HYB-005D3-PROVIDER-BROKER.md.
 This does not claim whole-Gateway OS/network isolation. Next D3B is the explicit
 OS credential/egress boundary, then real-provider model/tariff/token qualification.
 Legacy direct mode is not brokered. No new autonomous scheduler starts.
+
+## R1A retained-evidence reporting — 2026-10-17
+
+Opt-in metadata over verified native terminal records is implemented;
+see docs/R1-EVIDENCE-VIEW.md. No source-file or provider-wire coverage is
+invented. Model visibility remains unknown; selection is local metadata only.
+Targeted reader/CLI tests and historical-expiration denials are separate
+from fresh native/real-model acceptance. R1B trusted capture/request linkage
+and in-retention native evidence remain OPEN. Current full-suite/Git/CI
+status is in status.md; D3B/HYB006/M1/M2 are not closed by this slice.

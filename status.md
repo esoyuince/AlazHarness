@@ -1,195 +1,136 @@
 # AlazHarness — status
 
-Son güncelleme: 16 Ekim 2026. Her devamda canlı dal/HEAD/CI doğrulanır.
+Son güncelleme: 2026-10-17T09:06:56.733595+03:00
 
 ## Güncel nokta
 
-**HYB-005D3A dar Linux provider broker yerelde kabul edildi; Git/CI yayını sürüyor.**
-D3B tüm Gateway için OS kimlik/ağ izolasyonu ve M1/M2 AÇIK.
-Aktif dal: alaz/hyb-005d3-provider-247a.
-Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\main-6f88.
-Başlangıç: 2ee705ec6427d9af9bd695e132d82e198dc20b0a; temiz, exact CI success.
-D2 tamamlanmış bulundu; tekrarlanmayacak. Önceki tam durum
- docs/history/2026-10-16-STATUS-BEFORE-HYB005D3-247a.md altında korundu.
-247a tek uygulama/yayın sahibi. Agent list kontrolünde bu projeye uygun ajan yok;
-başka proje/revoked ajanlarına dokunulmadı. Sonradan gelen QA7e1b test/kanıtları
-okunarak aynı teslimde korundu; kendi uygulama/native çalışması bağımsız QA sayılmaz.
+R1A-EVIDENCE-724a: ürün ve yerel testler tamam; Git/CI yayını IN PROGRESS.
+Aktif dal: alaz/r1-evidence-view-724a
+Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\evidence-r1-724a
+Başlangıç commit: 214f1dcd7ba7a83a0d13afdb7adfb221bfa21fa8; GitHub alaz/local-ci success canlı doğrulandı.
+D3A kodu yayımlanmış durumda; D3B OS ayrımı/gerçek model/M1/M2 hâlâ AÇIK.
 
-## İlk başlangıç kapsamı — aşağıdaki günlükte sonuçlandırıldı
+Araştırma sonrası ilk dar paket: mevcut kayıt otoritesini değiştirmeden elde
+edilen kanıt ile modele sunulması arasındaki kapsam farkını göstermek. Yeni
+DB/kuyruk/otonomi/araç yetkisi veya ücretli çağrı yok. Eski kayıtta görünüm
+gönderimi ispatı yoksa UNKNOWN, hiçbir şekilde gönderildi varsayılmaz.
 
-Mevcut canonical admission/ExecutionLedger tek yazar korunur; ikinci DB veya
-scheduler yok. Önce mevcut provider/D2 kaynak sınırı ve özel Linux ortamı okunur.
-Kişisel sır/model çağrısı, host firewall/daemon değişikliği yapılmaz. Testler yeni
-proje alanı/sentetik credential ile. D3 için test/native/CI henüz NOT RUN.
-Main ve kökteki32korunmuş dosya değişmez; yalnız status erişim kopyası eşitlenir.
-Tam M1/M2, gerçek fiyat/tokenizer, Windows ağ ve crash-takeover AÇIK.
+Önceki tam durum: docs/history/2026-10-17-STATUS-BEFORE-R1-724a.md.
+Araştırma belgeleri eski main-6f88 çalışma ağacında korunur; topluca commit
+edilmez. Eski kök dosyalar/vendor kaynakları değişmez; main değişmez.
+Agent list kontrolünde bu projeye uygun ajan yok, başka proje/revoked
+ajanlar değiştirilmedi. Yerel tam standart1374/1374 PASS; yeni101test toplamın içinde.
+Git/CI kapanışı beklenir; in-retention pozitif native R1 kabulü AÇIK.
 
-### 2026-10-16T23:07:39.807307+03:00 — D3 QA7e1b başlangıç
+## İş günlüğü
 
-Eşzamanlı247a başlangıcı precondition ile görülüp hiçbir ürün/branch yazısı
-yapılmadı. QA7e1b ayrı test/rapor/kanıt işi: credential ayrımı, hedef/header/
-redirect/proxy retleri ve ön-rezervasyon/belirsiz yanıt. Ürün/Git247a tek
-sahibi korunur. Yeni kodu hayal ederek test yazma; gerçek API okunacak.
-Windows/root network/kişisel anahtar/model yok. Başlangıç NOT RUN.
+### 2026-10-17T09:06:56.733595+03:00 — başlangıç
 
-### 2026-10-16T23:13:30.269786+03:00 — D3 QA7e1b kaynak incelemesi
+Kaynak/plan/çalışma kuralları okundu, ayrı temiz dal ve worktree kuruldu.
+İlk iş mevcut host_report/recovery/read kayıtlarının desteklediği kanıtı
+saptamak; gözlenmeyen alanları varsayarak doldurmamak.
 
-Yeni broker kaynakları okundu. Ham response substring kontrolü JSON/akışın
-çözümlenmiş metninde credential gizliliğini tek başına kanıtlamaz; semantik
-yanıt incelemesi açık. check_authority transaction sonrası epoch/data_version
-teyidi yok; snapshot/future-lease ayrımı açıkça tanımlanmalı. Bunlar henüz
-çalıştırılmış negatif test değil; kaynak inceleme sorularıdır. Ek HTTP test
-dosyası yazısı araçça engellendi ve dosya yok; tekrar gönderilmedi. QA şimdi
-mevcut test_provider*.py dosyalarını kaynak hashleriyle bağımsız çalıştırır.
+### 2026-10-17T09:08:01.858931+03:00 — R1 bağımsız QA E03E başladı
 
-### 2026-10-16T23:14:19.909593+03:00 — D3 QA7e1b mevcut test turu
+E03E aynı kullanıcı isteğinde canlı724a çalışma ağacını gördü; yeni ürün dalı
+veya ikinci evidence_view uygulaması OLUŞTURMADI. Ürün/entegrasyon/Git724a
+tek sahibi. E03E yalnız tests/*qa_e03e*, docs/research/R1-EVIDENCE-QA-E03E.md
+ve evidence/r1-evidence-qa-e03e altında bağımsız test/kanıt yazacak.
+İlk kontroller: eksik/kısmi çıktı tam kanıt değildir; model görünümü gerçek
+istek kanıtı olmadan UNKNOWN; başka run/admission/generation reddi; string/JSON
+alanlarından kullanıcı metni veya sır rapora yansımasın; mevcut budget/state
+byte değişmesin. Ürün API henüz okunmadan hayali test yazılmayacak.
+Mevcut host_report/recovery test düzeni okunuyor. Test/native/model henüz0.
 
-Mevcut72provider testi71PASS/1ERROR,exit1/source-drift0. Hata Windows üzerinde
-asyncio.open_unix_connection var olmayan simgesini patch(create=False) ile
-kurmaya çalışırken oluşuyor; ürün ağ çağrısı değil, test port kurulum hatası.
-Testin not-called assertionını koruyarak explicit synthetic port kurulmalı.
-Kanıt evidence/hyb-005d3-qa7e1b/existing-targeted-first.json/.txt. Bu72 yeni
-QA testi değildir; gerçek Gateway/broker/model çağrısı yok.
+### 2026-10-17T09:13:26.378814+03:00 — R1 ilk uygulama
 
-### 2026-10-16T23:15:53.765353+03:00 — D3 QA7e1b beş regresyon
+EvidenceViewInspector ve EvidenceSelection API yazıldı. Yeni okuma mevcut
+HostReportInspector transactionı içinde; yalnız canonical terminal record
+içindeki tool text ve final_response üyeliği/hash/bayt boyutu raporlanır.
+Geçmiş message eşleşmesi yalnız yapısal; run yürütme atfı/orijinal dosya
+kapsamı/model görünümü UNKNOWN. Prose/JSON proof alanı yorumlanmaz, path açılmaz.
+İsteğe bağlı selection(evidence_id,content_sha256,start_byte,end_byte) yerel
+gönderilmemiş metadata görünümü hesaplar, içerik döndürmez. CLI --include-evidence.
+Testler henüz NOT RUN; E03E QA ürün API artık mevcut.
 
-Yeni9synthetic SQLite/read testi4PASS/5FAIL exit1/drift0. G01(2): consume sonrası
-queued check_authority grant expiry yeniden kontrol etmiyor; tamexpiry ve21s
-sonrası kabul ediyor. G02(3):snapshot rollback sonrası epoch/instance/grant
-değişse de check_authority dönüyor. Bunlar gerçek ağda istek gönderildi kanıtı
-değil; okuma aşaması ret kontratları. Aynı testler tests/test_provider_snapshot_qa7e1b.py
-SHAa704d597... değişmeden korunur; ilk sonuç evidence/hyb-005d3-qa7e1b/snapshot-initial.*.
-Ürün247a düzeltecek; QA ürün dosyasına dokunmadı.
+### 2026-10-17T09:16:47.057776+03:00 — R1 QA E03E ilk42test sonucu
 
-### 2026-10-16T23:18:14.102276+03:00 — D3 QA7e1b IPC kimliği
+32yeni evidence API +10legacy invariant toplam42:41PASS/1FAIL,exit1,drift0.
+İlk sonuç evidence/r1-evidence-qa-e03e/projection-first.json/.txt. E03E-01:
+UTF8çokbayt aralığı doğru reddediliyor ama split_utf8_boundary tanı kodu
+unavailable_evidence [a-z_] filtresinden geçmiyor; genel hataya dönüşüyor.
+Bu ret kaybı değil P2tanılama hatası. Test beklentisi değişmeyecek; ürün724a
+düzeltmesi beklenir. Diğer41 vaka yetki/görünüm/kaynak sınırlarını doğruladı.
+QA raporuna bulgu ve42kapsam yazıldı; ürün/commit/push/paid/native0.
 
-Gerçek _exchange/framing/signature kodu ve yalnız bellekteki sentetik IPC
-portlarıyla11/11 PASS,drift0. Yanlışnonce/broker/domain/type,peer ret,socket
-değişimi ve iptal/stream close retleri doğrulandı. Gerçek ağ/broker/OS testi
-değil. QA toplam20yeni offline vaka:9snapshot+11identity. Beş snapshot FAIL
-ürün düzeltmesi ve değişmeyen test rechecki olmadan kapanmış sayılmaz.
+### 2026-10-17T09:18:54.319872+03:00 — R1 QA E03E test seti sabitlendi
 
-### 2026-10-16T23:20:21.377310+03:00 — D3 QA7e1b değişmeyen testlerle kapanış
+Ek8gerçek CLI subprocess kontrolü8/8PASS,drift0. E03E toplam50yeni test:
+32projection+10legacy+8CLI; ilk42den1tanılamaFAIL korunur. Test dosyası hashleri
+evidence/r1-evidence-qa-e03e/test-custody.json. Bu QA diliminde artık yeni test
+eklenmeyecek; ürün düzeltmesi sonrası aynı50test tekrar edilecek. Native/paid0.
+Ürün724a; test seti full discoveryye dahil edilebilir,50üstüne altkümeler eklenmez.
 
-G01/G02 ürün247a tarafından düzeltildi: expiry başta/sonda, snapshot sonrası
-epoch+instance+data_version ve dosya kimliği yeniden denetleniyor. Aynı9snapshot
-ve11IPC testi20/20 PASS; ilk5FAIL assertion/test hashleri değişmedi,source drift0.
-unchanged-recheck.json/.txt kanıt. Hamyanıt/JSON semantic reflection kaynak
-sorusu ayrı; bu testler onu veya gerçek ağ yarışı/OS izolasyonunu kapatmaz.
+### 2026-10-17T09:20:59.899848+03:00 — R1 QA E03E tarihi profil sınırı
 
-### 2026-10-16T23:21:01.863786+03:00 — D3 QA7e1b tam standart tur
+Eski HYB005B beş profil güncel saatte retention_expired: ilk pozitif görünüm
+denemesi NOT_ACCEPTED korundu. Ayrı5ret kontrolü PASS: referans yok, yetki yok,
+DB/config/native makbuz byte değişimi0. Saat geri alınmadı, retention uzatılmadı.
+Bu yeni native5run veya pozitif envanter kabulü değil. Kanıt retained-first.json
+ve expired-denial-corroboration.json. Sonraki pozitif okuma için süresi dolmamış
+profil gerekir; yeni model çağrısı yetkisi doğmaz. Ürün724a, E03E-testset50sabit.
 
-Aynı20 bağımsız test PASS. Mevcutprovider+9snapshot seçimi81/81 PASS; Windows
-port hazırlık hatası düzeldi. QA şimdi bütün standart discoveryyi kaynak seti
-ve hashleri başta/sonda kontrol ederek çalıştırıyor. Sonuç henüz yok; yeni
-broker/Gateway/native ağ deneyi başlatılmayacak. Makbuz539ca4eb-9bd1-4cd4-80a1-a38f75569c26.
+### 2026-10-17T09:22:49.217088+03:00 — R1 QA E03E aynı50test PASS
 
-### 2026-10-16T23:21:10.159529+03:00 — D3 düzeltmeler ve Linux deneyi
+E03E-01 ürün724a tarafından explicit split_utf8_boundary tanı koduyla düzeltildi.
+Aynı50/50test PASS exit0/skip0, dosya hashleri test-custody ile birebir aynı,
+source drift0. İlk41/42FAIL makbuzu korunur. QAürüne dokunmadı; kanıt
+unchanged-recheck.json/.txt ve finding-01-closure.json.
+50test + rapor + ilk başarısızlık/expired-profile retleri entegrasyona hazır;
+724a test/full/Git/CI kapanışına dahil edebilir. Artık E03E yeni test eklemez.
+Bu sonuç kaynak coverage/wire-delivery/M1/M2 kabulü değil; hepsi UNKNOWN/açık.
+Full-suite öncesi ürün/test/script kaynak seti sabitlenmeli.
 
-QA7e1b ek20test/raporu okunarak aynı çalışmaya dahil ediliyor; ürün yazıcısı
-247a kalır. G01/G02 expiry/snapshot5FAIL kapandı; aynı9test yeşil. Ek15 yanıt
-koruma testinin7ilkFAILi JSON/SSE decoded credential ve malformed yanıt kontrolü
-ile düzeltildi.55broker/81provider seçimleri PASS; kesişimli altkümeler toplanmaz.
-Yeni code-v2 hashli snapshot eski özel Linux prepared ortamına aktarılıp normal
-Gateway+ayrı broker+gerçek read Docker senaryosu başlatılıyor. Makbuz bu yeni
-komutun sonucu; henüz native PASS değil. Upstream sentetik credential yalnız
-broker özel dosyasında; Gateway arbitrary same-UID koduna karşı OS izolasyonu
-iddaa edilmiyor. Ağsız araç sınırı D2 korunur.
+### 2026-10-17T09:24:13.578550+03:00 — R1 QA E03E bağımsız tam standart tur
 
-### 2026-10-16T23:24:20.134158+03:00 — D3 QA7e1b cevap koruma ve full tur
+50testin değişmeyen tekrarından sonra tüm standart discovery başlatıldı.
+Kaynak/test/config216dosya SHA önce/sonra ölçülüyor. İş makbuzu
+a57a9d87-65e5-4fb7-a9ce-55521cc52c33; evidence/r1-evidence-qa-e03e/full-standard-first.*.
+Henüz sonuç YOK. Koşu sırasında ürün/script/test değişirse sonuç yeni sürüme
+taşınmaz. Bu native Gateway veya provider deneyi değil. E03E test dosyaları
+artık değişmeyecek; metadata/rapor yazımı test kaynağı değildir.
 
-Primary decoded JSON/SSE response guardı ve testleri okundu; tekrar koşulan
-seçimin makbuzu response-and-identity-recheck.json. Kaynak sorusu bu desteklenen
-representasyon sınırında ele alındı; gerçek HTTP test iddiası yok. İlk full
-1270test exit0/skip0 ama run_native_provider_broker.py koşu sırasında değişti:
-full-standard-first snapshot NOT_ACCEPTED korundu. Son sabit kaynak full turu
-beklenir; ilk başarı yeni sürüme taşınmaz.
+### 2026-10-17T09:24:44.515630+03:00 — R1 kaynak sabitleme ve tam test
 
-### 2026-10-16T23:27:03.801812+03:00 — D3 son kaynak kabul başlangıcı
+51özgün ve aynı50E03E test PASS, tanılama hatası ürün düzeltmesiyle kapandı;
+test beklentileri gevşetilmedi. Eski beş native profil güncel saatte süresi
+dolmuş: ilk pozitif envanter girişimi FAIL korunur, ayrı5ret testi PASS.
+Orijinal DB/config/makbuz hashleri değişmedi; yeni native/model/ücretli çağrı0.
+Bu sonuç pozitif native R1 kabulü değildir; yerel sentetik kabul ayrı.
+Tüm ürün/test/script/config dosyaları şimdi başta/sonda hashlenerek full
+standart tur çalıştırılıyor; bu tur boyunca kaynak/test eklenmeyecek.
+Makbuz8d90d8a4-f723-4e81-ac52-bbc67ce8c492; sonuç henüz IN PROGRESS.
 
-Normal v3 gerçek Gateway/broker/read zinciri PASS:2origin/2grant/1read,3yanlış
-credential401. Sonrasında gerçek Unix idle-close testi gecikme gösterdi;
-shutdown sırası düzeltildi,3aynı lifecycle testi PASS. Önceki1270tam suite
-PASS aday sürümdür; son kaynak daha yenidir. Yeni code-v4 tüm code/config/test
-hashleri runtime/hyb005d3-247a/transfer-v4.json ile sabitlenmiştir. Bundan
-sonra ürün/test eklenirse final kabul yenilenecek. 5native senaryo seri ve
-Unix close testi başlatılacak; diğer QA dosyaları yeni uygulama yazıcısı olmaz.
-Gerçek model0/ücret0; tüm Gateway için OS firewall/aynıUID izolasyon iddiası yok.
+### 2026-10-17T09:26:58.700211+03:00 — R1 QA E03E tam standart kabul ve teslim
 
-### 2026-10-16T23:31:15.471301+03:00 — D3 QA7e1b seçilmiş teslim
+Bağımsız full1374/1374 PASS exit0/skip0;216ölçülen source/config/test dosyası
+aynı, eklenen0. E03E50test bu1374içinde; altkümeler tekrar toplanmaz.
+Kanıt evidence/r1-evidence-qa-e03e/full-standard-first.json/.txt ve
+full-source-before.json. Son canlı hash karşılaştırması da aynı.
+QA raporu ve qa-completion.json tamamlandı; ilk41/42FAIL korunur ve
+ürün düzeltmesi sonrası aynı50PASS. Eski5profilin süresi dolmuş olduğundan
+pozitif native-report kabulü açık; ayrı5ret doğrulaması var, yeni native0.
+E03E ürün/commit/push yapmadı. Entegrasyon/Git/CI724a; QA dosyaları teslim hazır.
 
-20yeni QA testi sabit hashli;5ilk snapshot ret hatası üründe kapandı, aynı20/20
-PASS. Seçilmiş QA rapor/test/kanıt dosyaları stage edildi; ürün/native/Git
-yayın247a tek sahibi. İkinci full1273test exit0/skip0 ama native launcher
-değişimi ve verify_broker_socket_shutdown.py eklemesi var: NOT_ACCEPTED
-snapshot aynen korundu. Son sabitfull/native/CI sonucu bu iki koşudan çıkarılmaz.
-Ek gerçek HTTP test dosyası yok; engellenen yazı başka yoldan tekrarlanmadı.
+### 2026-10-17T09:29:09.352287+03:00 — R1A yerel kabul / yayın hazırlığı
 
-### 2026-10-16T23:33:49.375111+03:00 — D3A yerel kabul ve yayın hazırlığı
-
-Final-v4 aynı source set:1273/1273 standart PASS exit0/skip0;210ölçülen dosya
-aynı/yeni0. Beş gerçek Gateway+ayrı broker senaryosu PASS,10süreç exit0; normal
-2origin/2grant/1read ve aynı-grant replay ret/ekorigin0. Missing/stale0job/0claim;
-provider-limit1origin/1read failed; disconnect1origin/reservedunknown/no-tool.
-İki gerçek Docker read konteyneri exactID yok;5profil SQLite/grant/claim ve
-broker socket kapanışı ayrıca readonly teyit edildi. Aynı0.3s Unix idle-close
-son sürümde PASS. Bu teyitler yeni5yürütme veya gerçek model sayılmaz.
-
-QA7e1b20yeni test aynı iddia/hashlerle okundu,5ilk readerFAIL üründe kapandı.
-Onların iki fulltur dosya değişimi nedeniyle NOT_ACCEPTED olarak korunur;
-final1273 bizim sabit-v4 koşumuzdur.15responseguard ve3lifecycle kendi testlerimiz;
-bütün110yeni vaka1273içindedir. İlk syntax/mock/reader/yanıt/close FAILler silinmedi.
-
-Mevcut ledger, recovery, izole runner ve kaynak pinleri değişmedi;32eski kök dosya
-ve4upstream temiz korundu. Yeni provider_egress.py/provider_broker.py + özel
-launcher; execution_boundary ve required HostGateClient bağlandı. Ana rapor
- docs/HYB-005D3-PROVIDER-BROKER.md; kanıt evidence/hyb-005d3 ve QA7e1b dizini.
-Bu yalnız trusted host üstünde yerel brokered route; sameUID kötü niyetli kod,
-remote HTTPS/gerçektarife/tokenizer ve tümOSegress kabulü değil. Legacy direct
-mod broker sayılmıyor. Sıradaki D3B OS boundary; M1/M2/hafıza AÇIK.
-Commit/push/aynı-SHA CI henüz kapanmadı. Main değiştirilmez.
-
-### 2026-10-16T23:37:18.068867+03:00 — D3 QA7e1b sabit full ve yayın farkı
-
-Üçüncü bağımsız full1273/1273 PASS exit0/skip0,211code/config dosyası drift0.
-full-standard-final.json/.txt;20QA testi bu1273içinde. Sonrasında publication
-hygiene provider_egress.py EOF boş satırı kaldırıldı:0ef894c8..→fa1d568d... .
-Tek fark son boş satır; AST eşitliği ayrıca okundu. Eski native/full makbuz
-hashleri DEĞİŞTİRİLMEZ; yeni bytehashin test/CI durumu ayrı kayıt edilmeli
-veya test edilen byte korunmalı. Bu bulgu ürün mantığı değişimi değil.
-
-### 2026-10-16T23:38:01.815450+03:00 — D3 QA7e1b final teslim
-
-Sabit-v4 bağımsız1273/1273 PASS exit0/skip0,211ölçülen dosya drift0.20yeni
-QA testi bunun içinde; önceki iki NOT_ACCEPTED makbuz korunur. Beş gerçek
-native-v4 koşu server source/SQLite/origin/lifecycle kayıtlarıyla readonly
-5/5 CORROBORATED; yeni native0, kaynak kayıtları değişmedi. QA rapor/test/
-kanıtlar seçilerek stage edildi. EOF tek boşsatır yayınnormalizasyonu ayrı
-belgelendi, native/full eski SHA değiştirilmedi; exact-byte CI kapanışı
-entegrasyon247a işi. QA ürün/kaynakpin/private-state dosyası değiştirmedi.
-
-### 2026-10-16T23:41:58.821150+03:00 — D3A yayın baytları doğrulandı
-
-Yayın hijyeninde provider_egress.py sonda1boş satır kaldırıldı; Python AST ve
-kaynak konumları eşit olsa da tüm kabul son v5 baytlarıyla tekrarlandı.
-Full-publication1273/1273 PASS exit0/skip0,210dosya drift0/yeni0. Native final-v5
-5/5 PASS; Unix idle-close0.3s PASS. Final-native claim/grant/bütçe ve iki Docker
-ID/soket yokluğu ayrıca readonly teyit; bu5ek çalışma sayılmaz. Önceki v4,
-1270aday/QA değişmişset/JSimport/reader/response/close hataları korunur.
-Finalkanıtlar evidence/hyb-005d3/full-publication.json, native-suite-final.json,
-native-final-*.json, publication-native-corroboration.json. Ücretli/model0.
-Kod feature commit/push için hazır; main değişmez, exact-SHA CI henüz beklenir.
-
-### 2026-10-16T23:47:11.713639+03:00 — D3A son Git kimliği kontrolü
-
-210test-edilen kaynak/index karşılaştırmasında209dosya birebir aynı. Yalnız
-önceki D2config/isolated-read/source-lock.json çalışma kopyasıCRLF/indexLF;
-78satırsonu dışında bytefark0, Gitblob base ile aynı, staged değişim değil.
-Kaynak kilidi veya eski çalışma kopyası değiştirilmedi. Kanıt
-index-byte-verification.json. Yeni/değişmiş bütün ürün/test kodları exactindex.
-
-QA7e1b sonradan sabit-v4 üçüncü tam1273PASS ve5native kaydın readonly teyidini
-getirdi; okunarak kaydedildi. İlk iki NOT_ACCEPTED tur aynen korunur. Bizim
-sonv5 full-publication1273PASS ve5finalnative ayrı kapsam; sayılar toplanmaz.
-Yalnız bu teslimin seçilmiş dosyaları commit/push ediliyor. CI eskiHEADden
-aktarılmayacak. Main ve32kök eski dosya/upstreamler değişmiyor.
+1374/1374tam standart PASS exit0/skip0,229ölçülen dosyada drift0/yeni0.
+51kendi +50E03E yeni test toplamın içinde; ilk tanılamaFAIL kayıtları korundu.
+Mevcut nativeB profilleri ~30saatlik: ayrı5ret kontrolü/CLIexit2 PASS;
+pozitif native envanter hâlâ AÇIK. GüncelD3 sunucu profiline salt-okunur
+SSH denemesi exit255/çıktısız olduğundan o yönden yeni kanıt çıkarılmadı.
+Hiçbir eski saate dönüş/retention uzatma/DByazma/model veya ücretli çağrı yok.
+Rapor docs/R1-EVIDENCE-VIEW.md; kanıt evidence/r1-evidence-724a ve QA-E03E.
+Yalnız bu paketin seçilmiş dosyaları yayımlanacak; eskiClaude araştırmaları
+eskiworktreede korunur. Main/kaynakpin/runtime yetkileri değişmez.
+Sıradaki R1B gerçek kaynak-capture/provider-görünüm bağı; D3B/M1/M2 açıktır.

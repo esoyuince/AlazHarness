@@ -1,0 +1,378 @@
+{
+  "scope": "QA definition inventory, not50 extra executions",
+  "tests": [
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_opt_in_json_has_unknown_wire_and_no_content",
+      "line": 48,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_legacy_default_remains_without_extra_section",
+      "line": 52,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_selected_view_text_says_not_dispatched",
+      "line": 55,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_selection_without_opt_in_rejected",
+      "line": 60,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_selection_and_scope_only_refused",
+      "line": 63,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_duplicate_json_key_selection_refused",
+      "line": 66,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_invalid_source_record_never_cli_success",
+      "line": 70,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_cli_qa_e03e.py",
+      "class": "EvidenceCliIndependentTests",
+      "test": "test_scope_only_explains_missing_task_not_empty_proof",
+      "line": 74,
+      "source_sha256": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_stored_utf8_digest_and_size_are_exact",
+      "line": 54,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_partial_selection_is_local_not_model_delivery",
+      "line": 59,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_complete_stored_selection_not_complete_original_file",
+      "line": 66,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_split_multibyte_boundary_is_refused",
+      "line": 71,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_split_start_boundary_is_refused",
+      "line": 75,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_empty_retained_string_is_not_missing",
+      "line": 78,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_missing_content_is_not_empty_string",
+      "line": 83,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_object_content_never_interpreted_as_proof",
+      "line": 87,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_json_string_proof_fields_are_opaque_content",
+      "line": 91,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_duplicate_call_ids_are_ambiguous",
+      "line": 97,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_duplicate_result_ids_are_ambiguous",
+      "line": 100,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_future_call_does_not_pair_previous_result",
+      "line": 105,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_missing_call_id_is_not_synthetic_execution",
+      "line": 108,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_historical_pair_only_proves_structure",
+      "line": 111,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_changed_message_changes_record_identity_not_legacy_summary",
+      "line": 114,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_same_text_different_admission_has_different_reference",
+      "line": 121,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_wrong_content_digest_rejected_without_echo",
+      "line": 128,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_range_outside_content_rejected",
+      "line": 133,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_bool_range_not_integer",
+      "line": 136,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_selection_dict_not_trusted_typed_request",
+      "line": 139,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_expired_retention_never_returns_old_references",
+      "line": 144,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_missing_terminal_record_never_becomes_empty_complete",
+      "line": 149,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_scope_only_cannot_fabricate_a_task_or_references",
+      "line": 152,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_live_task_ignores_old_terminal_record",
+      "line": 156,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_oversized_history_not_silently_partial_inventory",
+      "line": 160,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_more_than_reference_limit_not_silently_omitted",
+      "line": 164,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_malformed_assistant_calls_discard_inventory",
+      "line": 168,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_metadata_reflects_no_user_paths_text_or_call_names",
+      "line": 172,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_new_section_lost_on_concurrent_epoch_change",
+      "line": 178,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_projection_never_uses_ledger_write_methods",
+      "line": 190,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_mutated_returned_references_are_not_persisted",
+      "line": 195,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_evidence_view_qa_e03e.py",
+      "class": "EvidenceViewIndependentTests",
+      "test": "test_same_canonical_record_different_json_whitespace_same_digest",
+      "line": 198,
+      "source_sha256": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_model_goal_claim_does_not_verify_goal",
+      "line": 40,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_observer_evidence_fields_are_not_authority",
+      "line": 44,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_hidden_tool_error_not_independent_goal_success",
+      "line": 50,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_untrusted_identifiers_not_plaintext_report_content",
+      "line": 54,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_an_unpaired_unicode_tool_never_creates_execution_permission",
+      "line": 62,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_boolean_generation_discloses_no_extra_evidence",
+      "line": 65,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_foreign_session_discloses_no_extra_evidence",
+      "line": 69,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_returned_nested_report_not_a_live_state_alias",
+      "line": 73,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_embedded_result_path_is_never_opened",
+      "line": 79,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    },
+    {
+      "file": "tests/test_report_evidence_invariants_qa_e03e.py",
+      "class": "EvidenceReportAuthorityInvariants",
+      "test": "test_unknown_and_error_do_not_refund_prior_reservation",
+      "line": 96,
+      "source_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+    }
+  ],
+  "requirements": {
+    "retained_bytes_vs_original_source": "stored UTF8 hash/size; complete local selection still original coverage unknown",
+    "model_visibility": "always unknown without native provider-request manifest; no content inclusion",
+    "identity": "canonical record/admission-bound IDs; mutation invalidates old selection",
+    "history": "duplicate/unpaired/future tool IDs are structural classifications only",
+    "permissions": "metadata requests do not change execution/retry/refund permissions",
+    "bounds": "strict typed ranges, UTF8 boundaries, inventory/message cap and malformed shapes",
+    "readonly": "same snapshots, epoch invalidation, no ledger write paths or output-path reads",
+    "cli": "8real CLI tests use synthetic profiles; legacy default preserved"
+  },
+  "excluded": [
+    "original-file digest verification",
+    "wire-delivery attestation",
+    "model comprehension",
+    "independent goal verification",
+    "new native Gateway execution",
+    "full M1/M2"
+  ],
+  "test_hashes": {
+    "tests/test_evidence_cli_qa_e03e.py": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330",
+    "tests/test_evidence_view_qa_e03e.py": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f",
+    "tests/test_report_evidence_invariants_qa_e03e.py": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+  }
+}

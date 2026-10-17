@@ -1,0 +1,11 @@
+{
+  "scope": "10 new independent legacy report invariants on synthetic SQLite; not new native Gateway acceptance",
+  "tests": 10,
+  "exit_code": 0,
+  "elapsed_seconds": 0.872,
+  "changed_files": [],
+  "added_files": [],
+  "model_calls": 0,
+  "at": "2026-10-17T09:14:11.939942+03:00",
+  "test_sha256": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+}

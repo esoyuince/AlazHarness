@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-17T09:21:32.938102+03:00",
+  "scope": "same50 independent test definitions after product diagnostic fix; no native run",
+  "tests": 50,
+  "exit_code": 0,
+  "skip_reported": false,
+  "elapsed_seconds": 5.124,
+  "changed_files": [],
+  "added_files": [],
+  "test_hashes": {
+    "tests/test_evidence_cli_qa_e03e.py": "6aca20ed34924a40f8d8ea8c20b8c1c5ee04d1431acd152ddd909c4b178c7330",
+    "tests/test_evidence_view_qa_e03e.py": "6c068562ae8e3786a65268173d354a3777967274bef63dfb314f07bb91e8753f",
+    "tests/test_report_evidence_invariants_qa_e03e.py": "8b405d9e5378c98bbcd3680d4dd958f67d0be8b5b4ad21ce0edfbfee6f3f64db"
+  },
+  "product_hashes": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "packages/claw-hermes/execution_boundary.py": "4a7680566dbca2ab2469c73527c6e96652496c1c00f1eb4812c19be6a750f8aa",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/host-gate-client.mjs": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/host_gate_plugin.py": "0be304f4ea59a3050cfb37426955cfbb00c9d48a834d6ac5a520f234908ef416",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/isolated_read.py": "131c9610835d0539f070cd378429039aadf348e334a7e63863a33cdca52927bc",
+    "packages/claw-hermes/isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc",
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/package.json": "c68b7ffc274b9217ed60907218adc56ca0d9378175340621c6ce81d1ad0d0328",
+    "packages/claw-hermes/provider_broker.py": "487c0fd2e58d103cf74cc01c358cfc19d9298bca71ac3719e61584a0084c248b",
+    "packages/claw-hermes/provider_egress.py": "fa1d568d3a44e25dd6b8b36cd11e136b2911177474041e74105d84b9932302d1",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191"
+  },
+  "model_calls": 0
+}
