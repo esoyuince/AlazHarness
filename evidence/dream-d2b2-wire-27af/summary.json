@@ -3,7 +3,7 @@
   "observedAt": "2026-10-18T01:12:59.117592+03:00",
   "baseCommit": "5a5744d93a96c25b72aece441bdebded66f8b36a",
   "branch": "alaz/dream-d2b2-wire-27af",
-  "result": "SCOPED_LOCAL_PASS_GIT_CI_NOT_YET_PUBLISHED",
+  "result": "SCOPED_PASS_PUBLISHED_CODE_CI_SUCCESS",
   "fullStandard": {
     "observedAt": "2026-10-18T01:11:27.143652+03:00",
     "result": "PASS",
@@ -51,7 +51,10 @@
   "activeMemoryChanged": false,
   "skillTransferVerified": false,
   "mainMerged": false,
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED",
-  "next": "D2B2 native Linux broker server acceptance, D3B OS/network and real provider tariff, then D2B3 independent heldout transfer"
+  "codeCommit": "5534bc1bfad92a3388dabd410552b17af4a4a618",
+  "codeCI": "success",
+  "next": "D2B2 native Linux broker server acceptance, D3B OS/network and real provider tariff, then D2B3 independent heldout transfer",
+  "publicationObservedAt": "2026-10-18T01:18:47.258893+03:00",
+  "codeCIReceipt": "evidence/dream-d2b2-wire-27af/code-ci-status.json",
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }

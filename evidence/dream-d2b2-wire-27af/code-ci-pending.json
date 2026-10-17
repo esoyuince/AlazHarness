@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-18T01:17:46.105032+03:00",
+  "commit": "5534bc1bfad92a3388dabd410552b17af4a4a618",
+  "context": "alaz/local-ci",
+  "state": "pending",
+  "note": "observed from live GitHub status, not success",
+  "remoteTestCount": null
+}

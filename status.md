@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T01:12:59.117592+03:00
+Son güncelleme: 2026-10-18T01:18:47.258893+03:00
 
 ## Güncel nokta
 
-DREAM-D2B2-27AF paired broker request-view pilot: full1836/1836, 65new focused, rootstatic PASS, 256source exact; Git/CI OPEN. Real model/native socket/skill transfer NOT RUN.
+DREAM-D2B2-27AF paired broker pilot:1836/1836 offline PASS,256source exact, code5534bc1 pushed, alaz/local-ci SUCCESS. Real broker socket/model/skill transfer NOT RUN.
 Branch alaz/dream-d2b2-wire-27af, worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af, base 5a5744d93a96c25b72aece441bdebded66f8b36a. Prior D2B1 code & doc exact CI SUCCESS.
 
 
@@ -538,3 +538,23 @@ backend proof, not real Linux socket/model. WSL no aiohttp/Docker;
 native D2B2 acceptance NOT RUN. D3B and true heldout learned skill OPEN.
 Code index SHA, Git push, exact CI next. Docs/DREAM-D2B2-PAIRED-BROKER.md
 and evidence/dream-d2b2-wire-27af/.
+
+### 2026-10-18T01:17:46.105032+03:00 — D2B2 code commit published, CI pending
+
+5534bc1bfad92a3388dabd410552b17af4a4a618 origin push PASS,
+256 accepted source Git blob SHA identical, worktree clean+remote equal,
+root status mirror. GitHub alaz/local-ci PENDING (not success).
+Local1836 full PASS and staticPASS remain separate evidence; initial
+FAIL retained. Neither real Linux broker nor actual model inference done.
+No merge/main change, no active memory promotion. Final docs receipt once
+CI observed, else mark pending honestly.
+
+### 2026-10-18T01:18:47.258893+03:00 — D2B2 code same-SHA CI SUCCESS; doc closure
+
+5534bc1bfad92a3388dabd410552b17af4a4a618 GitHub alaz/local-ci
+SUCCESS (status56609305472,2026-10-17T22:17:41Z). API remote tests
+sayısı vermiyor. Yerel full1836 PASS (65 dahil) ve256source SHA
+ayrı kabul kanıtı. Bu commit yalnız docs/status/CI makbuzunu taşır;
+ürün/agent/model/test/budget/main değişmiyor. D2B2 native Linux
+Gateway/signed socket execution ve D3B dış sağlayıcı model capability
+NOT RUN. Son doc commit CI ayrıca doğrulanacak.

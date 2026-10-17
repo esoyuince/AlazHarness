@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T01:18:47.258893+03:00",
+  "source": "GitHub exact commit status API",
+  "commit": "5534bc1bfad92a3388dabd410552b17af4a4a618",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 56609305472,
+  "updatedAtUtc": "2026-10-17T22:17:41Z",
+  "remoteTestCount": null,
+  "scope": "D2B2 code static/full local tests qualified separately; does not prove native Linux broker/real model"
+}

@@ -163,3 +163,13 @@ files, 2 source gitlinks,1836 tests DISCOVERED (not extra execution).
 Initial 27-test red retained independently. No real Linux broker socket/native
 Gateway, external/paid model, learned skill or active memory was run.
 Exact code and CI status are appended only after actual Git publication.
+
+## Publication/CI — 2026-10-18T01:18:47.258893+03:00
+
+Code commit `5534bc1bfad92a3388dabd410552b17af4a4a618` was pushed to `alaz/dream-d2b2-wire-27af`.
+GitHub `alaz/local-ci` **SUCCESS**, status 56609305472,
+2026-10-17T22:17:41Z; remote status API publishes no exact test count.
+Local full1836/1836, 256 frozen source byte matches and synthetic 65-case
+new tests are independent receipts. The post-code doc/status-only commit has
+its own CI checked after publication. The pilot does not close actual Linux
+broker process or real model skill transfer. No main merge performed.
