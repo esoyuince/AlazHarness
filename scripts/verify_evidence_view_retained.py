@@ -1,6 +1,6 @@
-"""Read R1 reports from five retained HYB005B native fixture profiles.
+"""Read R1 reports from recorded HYB005B native fixture profiles.
 
-NOT five new Gateway/tool/model runs. The past execution code may differ from
+No new Gateway/tool/model runs; explicit single-fixture input is also supported. The past execution code may differ from
 current report code: it is retained state, never attributed to current execution.
 Writes only new reports/private CLI input under an explicitly fresh runtime dir.
 """
@@ -35,14 +35,72 @@ def object_file(path):
     obj=_load(path.read_text(encoding='utf-8'));require(type(obj)is dict,'invalid_evidence_shape');return obj
 
 
-def check_case(workspace,out,scenario,expect_expired=False):
-    case=workspace/'runtime/hyb005b-close-3156'/('final-'+scenario)
+def _unlinked(path):
+    return not any(p.is_symlink() or getattr(p,'is_junction',lambda:False)()
+                   for p in (path,*path.parents))
+
+
+def validate_paths(workspace,out,fixture=None):
+    """Operator-selected fixture only; never follow a path embedded in a receipt."""
+    require(_unlinked(workspace) and _unlinked(out),'linked_verification_path')
+    workspace=workspace.resolve();out=out.resolve()
+    source=workspace/'runtime/hyb005b-close-3156'
+    require(out.is_relative_to(workspace/'runtime') and out!=workspace/'runtime'
+            and not out.is_relative_to(source) and not out.exists(),
+            'fresh_distinct_runtime_output_required')
+    if fixture is not None:
+        require(fixture.is_absolute() and _unlinked(fixture),'linked_fixture_path')
+        fixture=fixture.resolve()
+        require(fixture.is_dir() and fixture.is_relative_to(workspace/'runtime')
+                and fixture!=workspace/'runtime' and not out.is_relative_to(fixture)
+                and not fixture.is_relative_to(out),'separate_runtime_fixture_required')
+    return workspace,out,fixture
+
+
+def validate_execution_receipt(record,scenario):
+    """Qualification of a recorded fixture, NOT authentication of its producer."""
+    require(scenario in CASES and type(record)is dict and
+            record.get('source_commit')==PIN and record.get('scenario')==scenario,
+            'wrong_retained_fixture')
+    require(record.get('result')=='PASS' and all(record.get(k)==[] for k in
+            ('errors','fixture_errors','code_drift')),'historical_run_not_qualified')
+    require(all(type(record.get(k))is int and record[k]==0 for k in
+            ('paid_calls','inference_calls','client_exit')),'unsupported_fixture_execution')
+    exits=['exit','restart_exit'] if scenario=='normal' else ['exit']
+    for name in exits:
+        end=record.get(name)
+        require(type(end)is dict and type(end.get('exit_code'))is int and
+                end['exit_code']==0 and end.get('native_reaped')is True and
+                end.get('launcher_reaped')is True and end.get('forced')is False and
+                end.get('kill_requested')is False,'fixture_lifecycle_not_closed')
+    if scenario=='normal':
+        require(record.get('restart_no_refund')is True,'fixture_restart_not_qualified')
+    require(type(record.get('client'))is dict,'fixture_client_missing')
+    return record
+
+
+def read_execution_receipt(path,scenario,expected_sha256=None):
+    require(path.is_file() and _unlinked(path) and path.stat().st_size<=2097152,
+            'invalid_evidence_file')
+    if expected_sha256 is not None:
+        require(type(expected_sha256)is str and len(expected_sha256)==64 and
+                all(c in '0123456789abcdef' for c in expected_sha256),'invalid_receipt_digest')
+    with path.open('rb') as stream:raw=stream.read(2097153)
+    require(len(raw)<=2097152,'invalid_evidence_file')
+    sha=hashlib.sha256(raw).hexdigest()
+    require(expected_sha256 is None or sha==expected_sha256,'fixture_receipt_digest_mismatch')
+    record=validate_execution_receipt(_load(raw.decode('utf-8')),scenario)
+    return record,sha
+
+
+def check_case(workspace,out,scenario,expect_expired=False,*,fixture=None,receipt_sha256=None):
+    case=fixture if fixture is not None else workspace/'runtime/hyb005b-close-3156'/('final-'+scenario)
     home=case/'profile';receipt=case/'execution-result.json'
-    record=object_file(receipt)
-    require(record['source_commit']==PIN and record['scenario']==scenario,'wrong_retained_fixture')
-    require(record['errors']==[] and record['fixture_errors']==[] and record['code_drift']==[],'historical_run_not_qualified')
+    record,read_sha=read_execution_receipt(receipt,scenario,receipt_sha256)
     paths=[home/'state.db',home/'runs_idempotency.db',home/'config.yaml',receipt]
+    require(all(p.is_file() and _unlinked(p) for p in paths),'invalid_fixture_storage')
     before={p.name:digest(p) for p in paths}
+    require(before[receipt.name]==read_sha,'fixture_receipt_changed')
     cfg=object_file(home/'config.yaml')
     with closing(sqlite3.connect((home/'state.db').as_uri()+'?mode=ro',uri=True)) as db:
         db.execute('PRAGMA query_only=ON')
@@ -113,6 +171,8 @@ def check_case(workspace,out,scenario,expect_expired=False):
     cli=subprocess.run(cmd,capture_output=True,text=True,encoding='utf-8',timeout=15)
     require(cli.returncode==0 and not cli.stderr and json.loads(cli.stdout)==projected,'cli_mismatch')
     text=render_evidence_text(projected)
+    cli_text=subprocess.run(cmd+['--format','text'],capture_output=True,text=True,encoding='utf-8',timeout=15)
+    require(cli_text.returncode==0 and not cli_text.stderr and cli_text.stdout==text,'text_cli_mismatch')
     secrets=[token,str(home),request['idempotency_key'],request['body']['input'],ep['provider_bearer'],request['observed'].get('output','')]
     require(not any(s and s in cli.stdout+text for s in secrets),'private_value_in_report')
     require(all(projected[k] is False for k in ('writesPerformed','executionAllowed','retryAllowed','repairAllowed')),'report_granted_authority')
@@ -123,7 +183,7 @@ def check_case(workspace,out,scenario,expect_expired=False):
             'recordedToolTexts':len(refs),'toolTextBytes':[ref['content']['utf8Bytes'] for ref in refs],
             'localViewBytes':1,'localViewCoverage':'partial','modelVisibility':'unknown',
             'sourceDatabaseAndReceiptUnchanged':True,'historicalReceiptSha256':before[receipt.name],
-            'reportSha256':digest(own/'report.json'),'cliExit':cli.returncode,
+            'reportSha256':digest(own/'report.json'),'cliExit':cli.returncode,'textCliExit':cli_text.returncode,
             'newGatewayRuns':0,'newModelCalls':0}
 
 
@@ -132,24 +192,29 @@ def main():
     parser.add_argument('--source-workspace',required=True,type=Path)
     parser.add_argument('--output',required=True,type=Path)
     parser.add_argument('--expect-expired',action='store_true',help='Require retention refusal instead of a positive current snapshot; never changes clocks/stores')
-    args=parser.parse_args();workspace=args.source_workspace.resolve();out=args.output.resolve()
-    source=workspace/'runtime/hyb005b-close-3156'
-    require(out.is_relative_to(workspace/'runtime') and not out.is_relative_to(source)
-            and not out.exists(),'fresh_distinct_runtime_output_required')
+    parser.add_argument('--fixture',type=Path,help='One explicit native execution fixture under source-workspace/runtime; no execution is started')
+    parser.add_argument('--scenario',choices=CASES,help='Required with --fixture')
+    parser.add_argument('--receipt-sha256',help='Required with --fixture; pins the existing execution-result.json bytes, not producer authenticity')
+    args=parser.parse_args()
+    require((args.fixture is not None)==(args.scenario is not None)==(args.receipt_sha256 is not None),
+            'explicit_fixture_identity_required')
+    workspace,out,fixture=validate_paths(args.source_workspace,args.output,args.fixture)
     out.mkdir(parents=True)
     programs=['packages/claw-hermes/evidence_view.py','packages/claw-hermes/host_report.py',
               'packages/claw-hermes/recovery_inspector.py','scripts/inspect_host_report.py',
               'scripts/verify_evidence_view_retained.py']
     before={n:digest(ROOT/n) for n in programs};rows=[];errors=[]
-    for case in CASES:
-        try:rows.append(check_case(workspace,out,case,args.expect_expired))
+    cases=(args.scenario,) if fixture is not None else CASES
+    for case in cases:
+        try:rows.append(check_case(workspace,out,case,args.expect_expired,fixture=fixture,receipt_sha256=args.receipt_sha256))
         except Exception as exc:errors.append({'scenario':case,'errorType':type(exc).__name__})
     changed=[n for n,h in before.items() if digest(ROOT/n)!=h]
-    result={'scope':'new read-only R1 reports/CLI against five past native fixture stores; NO new native execution',
+    result={'scope':'read-only R1 reports/CLI against recorded native fixtures; this verifier executes no Gateway or model',
+            'expectedCases':len(cases),
             'expectation':'retention_refusal' if args.expect_expired else 'current_retained_evidence',
             'checks':rows,'errors':errors,'sourceSha256':before,'changed':changed,
             'newGatewayRuns':0,'newModelCalls':0,'paidCalls':0,
-            'result':'PASS' if len(rows)==5 and not errors and not changed else 'FAIL'}
+            'result':'PASS' if len(rows)==len(cases) and not errors and not changed else 'FAIL'}
     (out/'verification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(result,indent=2));return 0 if result['result']=='PASS' else 1
 

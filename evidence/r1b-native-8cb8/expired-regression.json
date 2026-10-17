@@ -1,0 +1,75 @@
+{
+  "scope": "read-only R1 reports/CLI against recorded native fixtures; this verifier executes no Gateway or model",
+  "expectedCases": 5,
+  "expectation": "retention_refusal",
+  "checks": [
+    {
+      "scenario": "normal",
+      "result": "PASS_EXPECTED_RETENTION_REFUSAL",
+      "cliExit": 2,
+      "evidenceReferences": 0,
+      "modelVisibility": "unknown",
+      "sourceDatabaseAndReceiptUnchanged": true,
+      "historicalReceiptSha256": "e2a39c2aeb70837b129c403bbad9f9595e8e39f9acd7c492cca0e1d7cc386a72",
+      "newGatewayRuns": 0,
+      "newModelCalls": 0
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "PASS_EXPECTED_RETENTION_REFUSAL",
+      "cliExit": 2,
+      "evidenceReferences": 0,
+      "modelVisibility": "unknown",
+      "sourceDatabaseAndReceiptUnchanged": true,
+      "historicalReceiptSha256": "909c9e8cd9439e0b6dba36174167c912a8bffa4702a118bb68ded7941e6fa36a",
+      "newGatewayRuns": 0,
+      "newModelCalls": 0
+    },
+    {
+      "scenario": "tool-limit",
+      "result": "PASS_EXPECTED_RETENTION_REFUSAL",
+      "cliExit": 2,
+      "evidenceReferences": 0,
+      "modelVisibility": "unknown",
+      "sourceDatabaseAndReceiptUnchanged": true,
+      "historicalReceiptSha256": "9248d8b64e4a3f1af00e7e7dc3230c19d97179d50a5a726242fc553464edf346",
+      "newGatewayRuns": 0,
+      "newModelCalls": 0
+    },
+    {
+      "scenario": "denied-write",
+      "result": "PASS_EXPECTED_RETENTION_REFUSAL",
+      "cliExit": 2,
+      "evidenceReferences": 0,
+      "modelVisibility": "unknown",
+      "sourceDatabaseAndReceiptUnchanged": true,
+      "historicalReceiptSha256": "0a7f977e43c6d5364406fbabda5e6879e405fe453e906f1a0d098ee2090cfcf7",
+      "newGatewayRuns": 0,
+      "newModelCalls": 0
+    },
+    {
+      "scenario": "summary",
+      "result": "PASS_EXPECTED_RETENTION_REFUSAL",
+      "cliExit": 2,
+      "evidenceReferences": 0,
+      "modelVisibility": "unknown",
+      "sourceDatabaseAndReceiptUnchanged": true,
+      "historicalReceiptSha256": "7444eb5cded433467e980d8d14310782e81a4f4f204d6cb9ebea2b00ee29fd67",
+      "newGatewayRuns": 0,
+      "newModelCalls": 0
+    }
+  ],
+  "errors": [],
+  "sourceSha256": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/inspect_host_report.py": "8e9dcc2e67742d793b032818699ad332517d4e4768dfef9daf8c7b013e47d74c",
+    "scripts/verify_evidence_view_retained.py": "e28904cbfef5155bf0f229bbfd8d8ae4a3d771684aaf004e58c6df0790b080dc"
+  },
+  "changed": [],
+  "newGatewayRuns": 0,
+  "newModelCalls": 0,
+  "paidCalls": 0,
+  "result": "PASS"
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "read-only R1 reports/CLI against recorded native fixtures; this verifier executes no Gateway or model",
+  "expectedCases": 1,
+  "expectation": "current_retained_evidence",
+  "checks": [
+    {
+      "scenario": "provider-limit",
+      "result": "PASS",
+      "nativeStatus": "failed",
+      "recordedToolTexts": 1,
+      "toolTextBytes": [
+        187
+      ],
+      "localViewBytes": 1,
+      "localViewCoverage": "partial",
+      "modelVisibility": "unknown",
+      "sourceDatabaseAndReceiptUnchanged": true,
+      "historicalReceiptSha256": "02eb63f8b6467f853cdc6dbbaa090c6f8c0d7d37c1bbe4ea8d2b6d37f9229814",
+      "reportSha256": "6f5c481e49e33c8f7d408bc88ce7ed79e1b38d249dd1e9b87d4ba95a0a58a52e",
+      "cliExit": 0,
+      "textCliExit": 0,
+      "newGatewayRuns": 0,
+      "newModelCalls": 0
+    }
+  ],
+  "errors": [],
+  "sourceSha256": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/inspect_host_report.py": "8e9dcc2e67742d793b032818699ad332517d4e4768dfef9daf8c7b013e47d74c",
+    "scripts/verify_evidence_view_retained.py": "e25133fb6a37f7c3b059e3501536266f1564ba6c20c2d6ac39fdbbe62c797317"
+  },
+  "changed": [],
+  "newGatewayRuns": 0,
+  "newModelCalls": 0,
+  "paidCalls": 0,
+  "result": "PASS"
+}

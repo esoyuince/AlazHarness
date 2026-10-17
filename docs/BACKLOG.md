@@ -138,3 +138,10 @@ Targeted reader/CLI tests and historical-expiration denials are separate
 from fresh native/real-model acceptance. R1B trusted capture/request linkage
 and in-retention native evidence remain OPEN. Current full-suite/Git/CI
 status is in status.md; D3B/HYB006/M1/M2 are not closed by this slice.
+
+## R1B0 fresh native evidence qualification
+
+R1A positive inventory is qualified on two fresh, in-retention Windows native
+profiles; metadata does not establish source coverage or wire visibility.
+See docs/R1B0-NATIVE-EVIDENCE-ACCEPTANCE.md. Next R1B1 source-capture binding,
+then R1B2 normalized provider-view binding; D3B and M1/M2 remain open.

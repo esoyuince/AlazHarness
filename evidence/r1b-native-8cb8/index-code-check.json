@@ -1,0 +1,12 @@
+[
+  {
+    "path": "scripts/verify_evidence_view_retained.py",
+    "sha256": "e25133fb6a37f7c3b059e3501536266f1564ba6c20c2d6ac39fdbbe62c797317",
+    "indexMatchesTestedBytes": true
+  },
+  {
+    "path": "tests/test_evidence_fixture_verifier.py",
+    "sha256": "03fc5985496a28cc155eb489437232133c496651c8a8a80d283c72f7bae32a55",
+    "indexMatchesTestedBytes": true
+  }
+]

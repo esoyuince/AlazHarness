@@ -1,0 +1,12 @@
+{
+  "scope": "complete offline standard suite; fresh native runs qualified separately",
+  "observedAt": "2026-10-17T10:25:30.026076+03:00",
+  "tests": 1403,
+  "exitCode": 0,
+  "skipReported": false,
+  "measuredFiles": 217,
+  "changedOrRemoved": [],
+  "added": [],
+  "elapsedSeconds": 126.923,
+  "result": "PASS"
+}

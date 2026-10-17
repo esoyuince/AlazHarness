@@ -1,0 +1,10 @@
+{
+  "scope": "29 offline new qualifier guards, not Gateway execution",
+  "exitCode": 1,
+  "sourceBefore": {
+    "scripts/verify_evidence_view_retained.py": "0f58615d3867d2d17a3a4ee9f6b60e6b8ecc62d84ff31eae69e839a2ab326e36",
+    "tests/test_evidence_fixture_verifier.py": "03fc5985496a28cc155eb489437232133c496651c8a8a80d283c72f7bae32a55"
+  },
+  "changed": [],
+  "elapsedSeconds": 1.0604144999961136
+}

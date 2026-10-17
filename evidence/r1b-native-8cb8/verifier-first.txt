@@ -1,0 +1,43 @@
+test_cli_requires_all_explicit_identity_fields_before_writing (test_evidence_fixture_verifier.FixturePathGuards.test_cli_requires_all_explicit_identity_fields_before_writing) ... ok
+test_existing_output_not_overwritten (test_evidence_fixture_verifier.FixturePathGuards.test_existing_output_not_overwritten) ... ok
+test_explicit_sibling_fixture_accepted (test_evidence_fixture_verifier.FixturePathGuards.test_explicit_sibling_fixture_accepted) ... ok
+test_fixture_outside_runtime_rejected (test_evidence_fixture_verifier.FixturePathGuards.test_fixture_outside_runtime_rejected) ... ok
+test_legacy_default_supported (test_evidence_fixture_verifier.FixturePathGuards.test_legacy_default_supported) ... ok
+test_linked_fixture_path_rejected (test_evidence_fixture_verifier.FixturePathGuards.test_linked_fixture_path_rejected) ... ok
+test_linked_output_parent_rejected (test_evidence_fixture_verifier.FixturePathGuards.test_linked_output_parent_rejected) ... ok
+test_output_cannot_be_inside_fixture (test_evidence_fixture_verifier.FixturePathGuards.test_output_cannot_be_inside_fixture) ... ok
+test_parent_traversal_cannot_escape_runtime (test_evidence_fixture_verifier.FixturePathGuards.test_parent_traversal_cannot_escape_runtime) ... FAIL
+test_bool_is_not_success_exit_code (test_evidence_fixture_verifier.FixtureReceiptGuards.test_bool_is_not_success_exit_code) ... ok
+test_bool_is_not_zero_execution_count (test_evidence_fixture_verifier.FixtureReceiptGuards.test_bool_is_not_zero_execution_count) ... ok
+test_client_record_required (test_evidence_fixture_verifier.FixtureReceiptGuards.test_client_record_required) ... ok
+test_duplicate_json_key_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_duplicate_json_key_rejected) ... ok
+test_errors_and_source_drift_are_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_errors_and_source_drift_are_rejected) ... ok
+test_failed_task_can_be_correctly_qualified (test_evidence_fixture_verifier.FixtureReceiptGuards.test_failed_task_can_be_correctly_qualified) ... ok
+test_malformed_digest_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_malformed_digest_rejected) ... ok
+test_malformed_json_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_malformed_json_rejected) ... ok
+test_missing_positive_result_is_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_missing_positive_result_is_rejected) ... ok
+test_missing_receipt_not_created (test_evidence_fixture_verifier.FixtureReceiptGuards.test_missing_receipt_not_created) ... ok
+test_normal_requires_budget_preserved_after_restart (test_evidence_fixture_verifier.FixtureReceiptGuards.test_normal_requires_budget_preserved_after_restart) ... ok
+test_normal_requires_restart_evidence (test_evidence_fixture_verifier.FixtureReceiptGuards.test_normal_requires_restart_evidence) ... ok
+test_oversized_receipt_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_oversized_receipt_rejected) ... ok
+test_paid_or_nonzero_client_execution_is_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_paid_or_nonzero_client_execution_is_rejected) ... ok
+test_receipt_hash_matches_exact_bytes (test_evidence_fixture_verifier.FixtureReceiptGuards.test_receipt_hash_matches_exact_bytes) ... ok
+test_unclosed_or_forced_process_is_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_unclosed_or_forced_process_is_rejected) ... ok
+test_valid_normal_receipt (test_evidence_fixture_verifier.FixtureReceiptGuards.test_valid_normal_receipt) ... ok
+test_wrong_receipt_hash_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_wrong_receipt_hash_rejected) ... ok
+test_wrong_scenario_is_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_wrong_scenario_is_rejected) ... ok
+test_wrong_source_pin_is_rejected (test_evidence_fixture_verifier.FixtureReceiptGuards.test_wrong_source_pin_is_rejected) ... ok
+
+======================================================================
+FAIL: test_parent_traversal_cannot_escape_runtime (test_evidence_fixture_verifier.FixturePathGuards.test_parent_traversal_cannot_escape_runtime)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\evidence-r1b-8cb8\tests\test_evidence_fixture_verifier.py", line 109, in test_parent_traversal_cannot_escape_runtime
+    with self.assertRaises(ValueError):v.validate_paths(self.root,self.root/'runtime/../outside/report',self.fixture)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.537s
+
+FAILED (failures=1)

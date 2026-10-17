@@ -1,0 +1,14 @@
+{
+  "scope": "failed preparatory launch, not accepted Gateway",
+  "receiptSha256": "49081aaafc00c14f1392663bf522cff129ffb8a42ef3dd3679db91dbfabb9731",
+  "result": "FAIL",
+  "errors": [
+    "RuntimeError: Native child exited before ready.json"
+  ],
+  "missingDependency": "aiohttp",
+  "wireRequests": 0,
+  "sourceDrift": [],
+  "nativeReaped": true,
+  "launcherReaped": true,
+  "newInstall": false
+}

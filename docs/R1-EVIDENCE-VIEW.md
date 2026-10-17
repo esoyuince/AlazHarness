@@ -188,3 +188,11 @@ are separate measured runs; no native count is inferred from CI. Evidence:
 `evidence/r1-evidence-724a/ci-code-status.json`. This documentation-only
 checkpoint retains the identical code/test source; its own CI is checked
 separately after publication.
+
+## Subsequent positive native qualification — 17 October 2026
+
+The in-retention inventory gap described above is now qualified by two fresh
+Windows native fixture profiles (normal/restart and provider-limit), with
+unchanged product readers and real JSON/text CLI comparison. See
+`R1B0-NATIVE-EVIDENCE-ACCEPTANCE.md`. The original-source capture and actual
+provider request-view bindings remain OPEN; no Linux isolation is inferred.

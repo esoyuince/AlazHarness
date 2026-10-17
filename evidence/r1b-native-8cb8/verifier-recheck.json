@@ -1,0 +1,7 @@
+{
+  "scope": "same 29 offline qualifier tests, unchanged test bytes",
+  "exitCode": 0,
+  "testSha256": "03fc5985496a28cc155eb489437232133c496651c8a8a80d283c72f7bae32a55",
+  "scriptSha256": "e28904cbfef5155bf0f229bbfd8d8ae4a3d771684aaf004e58c6df0790b080dc",
+  "fix": "resolve operator output path before runtime containment check; first failure retained"
+}
