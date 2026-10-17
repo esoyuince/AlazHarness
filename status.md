@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T20:11:46.798091+03:00
+Son güncelleme: 2026-10-17T20:15:54.743600+03:00
 
 ## Güncel nokta
 
-REF-CODEX-001 statik Codex Desktop/CLI araştırması: SCOPED LOCAL PASS, Git/CI bekliyor.
+REF-CODEX-001 Codex Desktop/CLI statik araştırması: PUBLISHED, code CI SUCCESS. Belge commit CI ayrıca kontrol edilir.
 Aktif dal alaz/ref-codex-001-c7a1; worktree C:\Antigravity\AlazHarness\scratch\worktrees\codex-review-c7a1; başlangıç 5b1f2dd12820434a257bb9709293195a36b6f18f.
 Ürün Dream-D1 durumu ve önceki makbuzlar değişmez; araştırma yalnız doküman/kanıt.
 
@@ -378,3 +378,12 @@ Bu iş ürün/runtime testi değil, statik inceleme ve rapor paketidir.
 7packagecopy hashleri ve seçili40ASAR dosya SHA256 doğrulandı.
 Yalnız rapor/metadata/status/backlog seçiliyor; kökün diğer sahipli
 değişiklikleri ve ürün kodu korunacak, model/ajan yok. Git CI ayrı.
+
+### 2026-10-17T20:15:54.743600+03:00 — REF-CODEX-001 ürün değil, araştırma kodu yayımlandı
+
+0254a14bfe4bd4737f4b75244d1ad7506b3ff5b1 GitHub alaz/local-ci
+SUCCESS, yalnız6doc/metadata/status dosyası; ürün kodu/main değişmedi.
+Rapor docs/research/REF-CODEX-001-APP-REVIEW.md; 11pinned publicanchor,
+ASAR40seçilmişdosya ve7kurulu paket copy hash kontrollü. 12kabul önerisi
+NOT RUN; gerçekCodex runtime/model yok. Yeni docs/status/ci makbuzu yayımlanacak.
+Sıradaki kod işi DREAM-D2 doğrulanabilir fayda ve held-out transfer testi.

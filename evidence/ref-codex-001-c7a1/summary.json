@@ -379,7 +379,7 @@
   "noInstalledBinaryCorrespondenceProven": true,
   "mainUnchanged": true,
   "plannedAcceptanceTestsRun": 0,
-  "result": "SCOPED_STATIC_REVIEW_PASS_PENDING_GIT_CI",
+  "result": "SCOPED_STATIC_REVIEW_PUBLISHED_CODE_CI_SUCCESS",
   "report": "docs/research/REF-CODEX-001-APP-REVIEW.md",
   "reportSha256": "6dc2b28d2686873cceedf207394416ab1a6c91d1738623e12caabdbe4dff7da1",
   "researchAt": "2026-10-17T20:06:18.319309+03:00",
@@ -389,5 +389,10 @@
   "rootStaticGateReceipt": "evidence/ref-codex-001-c7a1/local-static-gate.json",
   "rootStaticGateObservedAt": "2026-10-17T20:10:25.465044+03:00",
   "gitPublication": "NOT_YET_PUBLISHED",
-  "rootStandardTestsActuallyRun": false
+  "rootStandardTestsActuallyRun": false,
+  "codeCommit": "0254a14bfe4bd4737f4b75244d1ad7506b3ff5b1",
+  "codeCI": "success",
+  "codeCIReceipt": "evidence/ref-codex-001-c7a1/code-ci-status.json",
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION",
+  "publicationObservedAt": "2026-10-17T20:15:54.743600+03:00"
 }

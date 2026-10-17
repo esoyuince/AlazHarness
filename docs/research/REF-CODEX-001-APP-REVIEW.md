@@ -248,3 +248,14 @@ veya oturum verilerini incelemedik, Alaz ürün kodunu değiştirmedik, model/ü
 çağrı yapmadık. Tam kaynak Rust build'i, binary/source kesin eşlemesi, cihaz
 sandbox penetrasyon testi ve gerçek Codex oturum lifecycle deneyi **NOT RUN**.
 Son commit/CI bilgisi çalışma `status.md` dosyasına ayrıca kaydedilir.
+
+## Araştırma yayını — 2026-10-17T20:15:54.743600+03:00
+
+Yalnız rapor/metadata/status/backlog içeren commit: `0254a14bfe4bd4737f4b75244d1ad7506b3ff5b1`,
+`alaz/ref-codex-001-c7a1` dalına gönderildi; GitHub `alaz/local-ci`
+**SUCCESS**. Yerel `ci_check.py` kök statik kapı PASS; 1.657 test
+**keşfedildi**, bu araştırma turunda hepsi ayrıca koşturulmadı.
+Kurulu Codex uygulamasında gerçek model, oturum, sandbox, ürün kodu veya
+aktif kullanıcı yeteneği deneyi yapılmadı. On iki öneri testi NOT RUN.
+Bu kayıt sonrası yalnız dokümantasyon commit'i yapılır; onun kendi CI durumu
+yayından sonra bağımsız doğrulanır.

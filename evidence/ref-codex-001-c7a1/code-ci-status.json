@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-17T20:15:54.743600+03:00",
+  "source": "GitHub get_commit_combined_status API",
+  "context": "alaz/local-ci",
+  "result": "success",
+  "commit": "0254a14bfe4bd4737f4b75244d1ad7506b3ff5b1",
+  "remoteTestCount": null,
+  "scope": "same-source research-doc commit; tests are project CI scope, NOT new Codex runtime or model experiments"
+}
