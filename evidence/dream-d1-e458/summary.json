@@ -3,7 +3,7 @@
   "observedAt": "2026-10-17T15:48:30.022785+03:00",
   "baseCommit": "f23079dc7c3312da93b00139f15ef89717cccf16",
   "branch": "alaz/dream-d1-e458",
-  "result": "SCOPED_ACCEPTANCE_READY_FOR_PUBLICATION",
+  "result": "SCOPED_PASS_PUBLISHED",
   "standard": {
     "scope": "full standard offline discovery",
     "observedAt": "2026-10-17T15:45:53.699896+03:00",
@@ -38,7 +38,10 @@
   "learnedSkillsVerified": false,
   "priorCandidateComparisonOnly": true,
   "qaPublishedCommit": "9f9a759e8c0de49c77c45a19a1c3f7d8265469a8",
-  "codeCommit": null,
-  "ciState": "NOT_YET_PUBLISHED",
-  "mainMerged": false
+  "codeCommit": "0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033",
+  "ciState": "success",
+  "mainMerged": false,
+  "publicationObservedAt": "2026-10-17T15:59:53.686836+03:00",
+  "remoteTestCount": null,
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }

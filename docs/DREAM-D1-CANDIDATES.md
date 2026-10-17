@@ -196,3 +196,19 @@ local files are additionally preserved losslessly as UTF-8 strings, original
 lengths and SHA256 in recovery-98f0/verbatim-evidence-eol.json under the primary
 evidence directory. Their normalized Git versions retain identical values;
 source/test code, assertions and actual outcomes were not changed.
+
+## Exact-code publication — 2026-10-17T15:59:53.686836+03:00
+
+Product commit `0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033` was published to `alaz/dream-d1-e458`.
+GitHub alaz/local-ci is SUCCESS (status56593314782,2026-10-17T12:58:06Z).
+The status API supplies no remote test count; local1657standard and48opt-in
+results retain their measured scopes. All243accepted product/test/script/config
+files match the published commit bytes. Same-source four final native scenarios
+were qualified separately before this recovery, with no native replay here.
+
+Evidence: code-ci-status.json and recovery-98f0 standard/API/HTTP/index receipts
+under evidence/dream-d1-e458. This documentation-only follow-up preserves code,
+original failure receipts and source pins; its own CI is checked after push.
+Root status mirror remains equal; main stays unchanged. Next is DREAM-D2:
+real-model synthesis quality and explicit candidate review/verification, not
+an automatic scheduler or active-memory promotion disguised as a finished task.

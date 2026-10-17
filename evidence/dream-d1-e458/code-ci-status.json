@@ -1,0 +1,11 @@
+{
+  "commit": "0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 56593314782,
+  "githubUpdatedAt": "2026-10-17T12:58:06Z",
+  "observedAt": "2026-10-17T15:59:53.686836+03:00",
+  "source": "GitHub commit status API",
+  "remoteTestCount": null,
+  "scope": "exact Dream product commit CI; not native or real-model acceptance"
+}

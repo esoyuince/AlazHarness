@@ -1,23 +1,33 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T15:48:30.022785+03:00
+Son güncelleme: 2026-10-17T15:59:53.686836+03:00
 
 ## Güncel nokta
 
-DREAM-D1 manuel aday-not uygulaması: 1657 standart +48opt-in +4finalnative dar kabul PASS; ürün Git/CI teslimi yapılıyor.
+DREAM-D1 manuel aday-not uygulaması yayımlandı; kodun aynı-commit CI sonucu SUCCESS.
+Kod commit: 0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033
 Aktif dal: alaz/dream-d1-e458
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\dream-d1-e458
 Başlangıç commit: f23079dc7c3312da93b00139f15ef89717cccf16
 
-Kapsam: elle başlatılan, geçmiş terminal işlerden kaynaklı aday hafıza notları.
-Mevcut Hermes yürütücüsü/izin/bütçe/kanıt sınırları yeniden kullanılacak.
-Otomatik scheduler, hedef seçimi, eski hafıza silme/terfi ve gerçek ücretli çağrı yok.
-D3B/gerçekmodel/HYB006 transfer ve M1/M2 açık kalır. Son kaynakta bağımsız
-1657/1657 standart +48opt-in PASS;4yeni gerçek Gateway scripted-Dream PASS.
-243source aynı; inference/paid0. 3bulgu düzeldi; adaylar aktif hafıza değildir.
-Ürün kodu mevcut çalışma ağacında; HEAD halen f23079d, ürün commit/push yok.
-QA code7b2aeb4/doc477e317 CI SUCCESS; sonkanıt9f9a759 yayımlandı, CI SUCCESS.
-Kesin sonraki iş: ürünü bu sourcefreeze kabulüyle Git/CIye teslim etmek.
+Elle seçilen sonuçlanmış işlerden kanıta bağlı aday ders/gözlem/uyarı üretimi,
+önceki Dream adaylarıyla karşılaştırma, kalıcı aday kayıtları ve CLI mevcut.
+Sentez mevcut broker/ExecutionLedger bütçesinden tek çağrı yapar. Yeni DB,
+ajan motoru veya araç yetkisi yok. Varsayılan kapalı; yalnız manuel opt-in.
+Aktif hafıza/skill yazımı, gerçekmodel kalitesi ve otomatik tetikleme kabulü yok.
+
+Son kaynakta 1657/1657 standart PASS; ayrı32API+16HTTP PASS, standart sayısına eklenmez.
+243 kaynak byte aynı. Önceki QA61A9 final4native PASS aynı kaynakla kabul edildi;
+11scripted provider(3Dream),4read,8process clean,4DockerID/4socket yok.
+Bu recovery native/model/ücret çağrısı başlatmadı; adaylar doğrulanmış beceri değil.
+Kaynakta geçerli alıntı, dersin doğruluğunu/genellemesini tek başına kanıtlamaz.
+Önceki3ürün bulgusu düzeltildi; ilkFAIL ve QAfixture hataları ayrı korunur.
+
+Rapor docs/DREAM-D1-CANDIDATES.md; kanıt evidence/dream-d1-e458 ve dream-qa-61a9.
+KodCI SUCCESS; bu belge commitinin kendi CI sonucu yayından sonra ayrıca kontrol edilir.
+Kesin sonraki iş: DREAM-D2 kısıtlı gerçekmodel sentezi ve adaynot inceleme/doğrulama. D3B OS sınırı,
+gerçek sağlayıcı/fiyat/token, HYB006 transfer ve tam M1/M2 açık.
+Main, kaynak pinleri, eski çalışma ağaçları ve44root dosya değişmedi.
 Önceki kayıt docs/history/2026-10-17-STATUS-BEFORE-DREAM-E458.md.
 
 ## İş günlüğü
@@ -299,3 +309,21 @@ Son not okundu: tek yayın sahibi98F0, 2ED0 yazımı tamamlandı. 243sourceaynı
 1657/48 tekrarlı kontroller ayrı makbuzlardır, toplam arttırılmaz. Yeni
 resume-completion-2ed0.json ve korunmuş status birlikte seçilerek teslim
 edilecek. Önceki günlükler/kanıtlar silinmez; ürün dosyaları değişmedi.
+
+### 2026-10-17T15:58:34.772654+03:00 — Dream ürün kodu yayımlandı, CI henüz bekleniyor
+
+0a12d3d commit ve origin/alaz/dream-d1-e458 eşit. Yayımlanan243source
+kabulfreeze ile byteaynı;54QA içeaktarım exact commitbytes korundu. Kök
+44dosya/main aynı. GitHub alaz/local-ci pending; status56593247213,
+2026-10-17T12:55:30Z. Pending başarı değildir, sunucu test sayısı APIde yok.
+İşleyen Dream manuel candidate-only; gerçek çıkarım kalitesi açık.
+
+### 2026-10-17T15:59:53.686836+03:00 — Dream ürün kodu same-SHA CI PASS, belge teslimi
+
+0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033 alaz/local-ci SUCCESS.
+GitHubstatus56593314782,2026-10-17T12:58:06Z. API uzak test sayısını
+sağlamaz; yerel1657ve48optin/nativescope ayrı kalır. Ürün243dosya
+yayımlananGit ile byteaynı. Bu commit yalnız doc/status/özet/CImakbuzu;
+ürün/test/model/araç/ana hafıza/main değişmiyor. Otomatik trigger yok.
+Dream-D1 teslimi manuel candidate-only: bir sonraki aşama gerçekmodel
+sentez kalitesi, aday inceleme ve bağımsız doğrulama; M1/M2 ilan edilmedi.
