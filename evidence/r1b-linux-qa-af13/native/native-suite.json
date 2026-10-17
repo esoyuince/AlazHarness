@@ -1,0 +1,58 @@
+{
+  "source_commit": "b96a83f545ae12885f025ee0085cb018dad14511",
+  "scope": "three fresh actual Linux Gateway/broker scenarios; scripted authenticated provider, not real inference",
+  "rows": [
+    {
+      "scenario": "normal",
+      "result": "PASS",
+      "errors": [],
+      "source_drift": [],
+      "gateway_exit": 0,
+      "broker_exit": 0,
+      "origin_accepted": 2,
+      "origin_rejected": 3,
+      "provider_reservations": 2,
+      "tool_reservations": 1,
+      "egress_grants": 2,
+      "native_admissions": 1,
+      "elapsed_seconds": 16.319,
+      "exit_code": 0,
+      "receipt_sha256": "be135350e5ba167a7d41e446924591b64b5afac1d24e49dbc7bcdad268bfc604"
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "PASS",
+      "errors": [],
+      "source_drift": [],
+      "gateway_exit": 0,
+      "broker_exit": 0,
+      "origin_accepted": 1,
+      "origin_rejected": 3,
+      "provider_reservations": 1,
+      "tool_reservations": 1,
+      "egress_grants": 1,
+      "native_admissions": 1,
+      "elapsed_seconds": 16.111,
+      "exit_code": 0,
+      "receipt_sha256": "82aeae20d2d7d50025a04df0add53cd2443c70b86b3f0241a07efb3231173ac9"
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "result": "PASS",
+      "errors": [],
+      "source_drift": [],
+      "gateway_exit": 0,
+      "broker_exit": 0,
+      "origin_accepted": 1,
+      "origin_rejected": 3,
+      "provider_reservations": 1,
+      "tool_reservations": 0,
+      "egress_grants": 1,
+      "native_admissions": 1,
+      "elapsed_seconds": 14.309,
+      "exit_code": 0,
+      "receipt_sha256": "05b389ee88b89531a3d256ea07166c7daa0f2f525e92247a4ec2f2f488d947b5"
+    }
+  ],
+  "model_inference_calls": 0
+}

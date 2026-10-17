@@ -1,0 +1,23 @@
+{
+  "normal": {
+    "own_read_delta": {},
+    "idempotency_read_delta": {},
+    "report_delta": {},
+    "reportStatus": "verified_snapshot",
+    "sqlite": "3.53.1"
+  },
+  "provider-limit": {
+    "own_read_delta": {},
+    "idempotency_read_delta": {},
+    "report_delta": {},
+    "reportStatus": "verified_snapshot",
+    "sqlite": "3.53.1"
+  },
+  "upstream-disconnect": {
+    "own_read_delta": {},
+    "idempotency_read_delta": {},
+    "report_delta": {},
+    "reportStatus": "verified_snapshot",
+    "sqlite": "3.53.1"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_snapshot",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "0eba17d57e5b81ba4b3af30b31d4fb0e3c5ed6d5d47b9931aebbfdaa41895755",
+  "epoch": 1,
+  "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+  "task": {
+    "runId": "run_92a47d57158246d49b06fe09f7adb8be",
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "admissionId": "c3b1023a357f4d55849d2a3b8cd92656",
+    "sessionId": "run_92a47d57158246d49b06fe09f7adb8be",
+    "executionGeneration": 1,
+    "outcome": "failed",
+    "resultDigest": "24225048de850697f7310192f4a634e12ade151291e7c564f3e4eda9af7df895",
+    "taskSucceeded": false,
+    "successBasis": "native_terminal_contract",
+    "goalAchievementIndependentlyVerified": false,
+    "nativeStatus": "failed",
+    "nativeAdmissionOutcome": "failed",
+    "admissionOutcomeIsTaskSuccess": false,
+    "completionReason": null
+  },
+  "nativeReportedUsage": {
+    "source": "native_run_aggregate",
+    "scope": "run",
+    "coverage": "complete_fields",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 0,
+    "physicalAttemptCoverageVerified": false,
+    "billedAmount": null
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+    "model": "alaz-scripted",
+    "snapshotDigest": "a576ba73cb48c3ad79ca1631021e5de741a11a6b300f9a6d72ef1b2d6453b931",
+    "quarantined": true,
+    "providerAttempts": {
+      "reserved": 1,
+      "settled": 0,
+      "unsettled": 1,
+      "usageKnown": 0,
+      "usageUnknown": 1,
+      "transportErrors": 0,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": null,
+      "outputTokens": null,
+      "totalTokens": null,
+      "coverage": "unknown",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 0,
+      "handlerReturns": 0,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 163840,
+      "costMicrousd": 196608,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 1,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 0,
+      "toolCalls": 1,
+      "tokens": 327680,
+      "costMicrousd": 803392,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "v1_claims_have_no_trusted_run_binding",
+    "numericDifference": null
+  },
+  "warnings": [
+    "execution_totals_not_attributed_to_run",
+    "reserved_exposure_is_not_an_invoice",
+    "native_completion_is_not_independent_goal_verification",
+    "some_reserved_attempts_have_unknown_usage",
+    "execution_budget_quarantined"
+  ],
+  "evidenceView": {
+    "evidenceViewVersion": 1,
+    "status": "verified_record_snapshot",
+    "available": true,
+    "inventoryScope": "retained_tool_text_and_final_response",
+    "recordDigest": "4d258b5dbc10227724f945b6bb60024fc337e3ea4eddff617e83af1c63ccb8cd",
+    "recordDigestBasis": "canonical_current_terminal_record_json",
+    "historyAvailability": "retained",
+    "historyCompleteness": "not_proven",
+    "references": [
+      {
+        "evidenceId": "ev_5463031eba8a2974196501c13b1ee3764d869e88b3a00e3231272d50bced80cc",
+        "kind": "native_final_response",
+        "messageIndex": null,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "f1a49b35c356637977731c2d6e6c5a24605a90101cfbfed73df49554359b49df",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 183
+        },
+        "pairing": "not_applicable",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "localView": null,
+    "modelVisibility": "unknown",
+    "writesPerformed": false,
+    "grantsExecutionPermission": false,
+    "goalAchievementVerified": false,
+    "warnings": [
+      "record_membership_is_not_independent_content_verification",
+      "retained_text_is_not_original_file_coverage",
+      "no_provider_request_view_manifest",
+      "historical_tool_messages_not_attributed_to_this_execution"
+    ]
+  }
+}

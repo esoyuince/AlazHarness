@@ -1,0 +1,205 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_snapshot",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "63ed0f28e1718515d77f0577911d42e45a665b0c642711aca1b508e53d7ee0d8",
+  "epoch": 1,
+  "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+  "task": {
+    "runId": "run_2c6f153b477a47efb927ab4cc4515613",
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "admissionId": "0501630b496f481891b79b795cad872e",
+    "sessionId": "run_2c6f153b477a47efb927ab4cc4515613",
+    "executionGeneration": 1,
+    "outcome": "completed",
+    "resultDigest": "68e4f1beb783fb31b4b4af241c36102899d96d2db7dcea7d92cd18881a3b8c61",
+    "taskSucceeded": true,
+    "successBasis": "native_terminal_contract",
+    "goalAchievementIndependentlyVerified": false,
+    "nativeStatus": "completed",
+    "nativeAdmissionOutcome": "completed",
+    "admissionOutcomeIsTaskSuccess": false,
+    "completionReason": null
+  },
+  "nativeReportedUsage": {
+    "source": "native_run_aggregate",
+    "scope": "run",
+    "coverage": "complete_fields",
+    "inputTokens": 240,
+    "outputTokens": 40,
+    "totalTokens": 280,
+    "physicalAttemptCoverageVerified": false,
+    "billedAmount": null
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+    "model": "alaz-scripted",
+    "snapshotDigest": "6731d864cc2aa4c0c2457bd629bd803b6c2bbd98ff5067c4f612ea644767612f",
+    "quarantined": false,
+    "providerAttempts": {
+      "reserved": 2,
+      "settled": 2,
+      "unsettled": 0,
+      "usageKnown": 2,
+      "usageUnknown": 0,
+      "transportErrors": 0,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": 240,
+      "outputTokens": 40,
+      "totalTokens": 280,
+      "coverage": "complete_for_retained_claims",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 1,
+      "handlerReturns": 1,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 327680,
+      "costMicrousd": 393216,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 3,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "tokens": 163840,
+      "costMicrousd": 606784,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "v1_claims_have_no_trusted_run_binding",
+    "numericDifference": null
+  },
+  "warnings": [
+    "execution_totals_not_attributed_to_run",
+    "reserved_exposure_is_not_an_invoice",
+    "native_completion_is_not_independent_goal_verification"
+  ],
+  "evidenceView": {
+    "evidenceViewVersion": 1,
+    "status": "verified_record_snapshot",
+    "available": true,
+    "inventoryScope": "retained_tool_text_and_final_response",
+    "recordDigest": "303c7b44863e515aa200d21c6ec74e6b574da56f085281f2902d5a5141944218",
+    "recordDigestBasis": "canonical_current_terminal_record_json",
+    "historyAvailability": "retained",
+    "historyCompleteness": "not_proven",
+    "references": [
+      {
+        "evidenceId": "ev_7411e2c5fc73a14f4c847543aef3f36b794c96006200a7a8f2928c6db0bc973d",
+        "kind": "retained_tool_result",
+        "messageIndex": 1,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "042d99b965be01f183a392213cd62fa0f168807e755371c8405c85c2da6187dc",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 171
+        },
+        "pairing": "structurally_paired_not_execution_proof",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      },
+      {
+        "evidenceId": "ev_bf50fc3e6a2587207b3fa9806df25d7f73578ccff2c869409bf116f8f36fe18f",
+        "kind": "native_final_response",
+        "messageIndex": null,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "80bbed1c6810b8510e0db10052b42e8d92f2c293c005bbf9c144d56e1b48cbb2",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 64
+        },
+        "pairing": "not_applicable",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "localView": {
+      "evidenceId": "ev_7411e2c5fc73a14f4c847543aef3f36b794c96006200a7a8f2928c6db0bc973d",
+      "status": "computed_locally_not_dispatched",
+      "range": {
+        "unit": "utf8_bytes",
+        "start": 0,
+        "end": 1,
+        "endExclusive": true
+      },
+      "contentSha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "utf8Bytes": 1,
+      "coverageOfStoredContent": "partial",
+      "originalSourceCoverage": "unknown",
+      "modelVisibility": "unknown",
+      "payloadIncluded": false,
+      "grantsExecutionPermission": false
+    },
+    "modelVisibility": "unknown",
+    "writesPerformed": false,
+    "grantsExecutionPermission": false,
+    "goalAchievementVerified": false,
+    "warnings": [
+      "record_membership_is_not_independent_content_verification",
+      "retained_text_is_not_original_file_coverage",
+      "no_provider_request_view_manifest",
+      "historical_tool_messages_not_attributed_to_this_execution"
+    ]
+  }
+}

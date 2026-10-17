@@ -1,0 +1,210 @@
+{
+  "scope": "R1 metadata/CLI on three already-completed fresh native Linux Gateway/broker stores; not three additional runs",
+  "productBaseCommit": "b96a83f545ae12885f025ee0085cb018dad14511",
+  "observedAtUnix": 1792221979.666134,
+  "checks": [
+    {
+      "scenario": "normal",
+      "result": "PASS",
+      "nativeStatus": "completed",
+      "providers": 2,
+      "isolatedReads": 1,
+      "evidenceReferences": 2,
+      "toolOutputBytes": [
+        171
+      ],
+      "recordMembershipVerified": true,
+      "sourceCoverageInProduct": "unknown",
+      "modelVisibilityInProduct": "unknown",
+      "modelUnderstandingVerified": false,
+      "sourceCorroboration": [
+        {
+          "sourceSha256": "6fa2eb7e69f54225e6553741560d5d5dea7353f0bcd3258ef04244d7883a2183",
+          "sourceBytes": 51,
+          "capsuleBytesMatch": true,
+          "containerAbsent": true,
+          "basis": "separate_operator_QA_not_product_EvidenceRef"
+        }
+      ],
+      "selections": [
+        {
+          "coverage": "partial",
+          "bytes": 1,
+          "cliExit": 0
+        },
+        {
+          "coverage": "complete",
+          "bytes": 171,
+          "cliExit": 0
+        }
+      ],
+      "negativeControls": [
+        {
+          "name": "wrong_bearer",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "lookup_unavailable"
+        },
+        {
+          "name": "wrong_owner_generation",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "stale_epoch"
+        },
+        {
+          "name": "wrong_request",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "request_payload_conflict"
+        },
+        {
+          "name": "wrong_run",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "run_identity_mismatch"
+        },
+        {
+          "name": "wrong_content_digest",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "evidence_digest_mismatch"
+        },
+        {
+          "name": "range_beyond_stored_output",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "invalid_evidence_range"
+        }
+      ],
+      "forgedObserverMetadataIgnored": true,
+      "nativeFilesUnchanged": 66,
+      "nativeManifestSha256": "04d07fe724f038ec09e47f393483457dd2cefc49c84e664246430fb3d40b75e8",
+      "nativeReceiptSha256": "be135350e5ba167a7d41e446924591b64b5afac1d24e49dbc7bcdad268bfc604",
+      "cliJsonExit": 0,
+      "cliTextExit": 0,
+      "newGatewayRunsDuringInspection": 0,
+      "newModelCallsDuringInspection": 0
+    },
+    {
+      "scenario": "provider-limit",
+      "result": "PASS",
+      "nativeStatus": "failed",
+      "providers": 1,
+      "isolatedReads": 1,
+      "evidenceReferences": 2,
+      "toolOutputBytes": [
+        171
+      ],
+      "recordMembershipVerified": true,
+      "sourceCoverageInProduct": "unknown",
+      "modelVisibilityInProduct": "unknown",
+      "modelUnderstandingVerified": false,
+      "sourceCorroboration": [
+        {
+          "sourceSha256": "bbeee142f07472867238e59d1968780b367b1766b43312d5fada158823d38681",
+          "sourceBytes": 51,
+          "capsuleBytesMatch": true,
+          "containerAbsent": true,
+          "basis": "separate_operator_QA_not_product_EvidenceRef"
+        }
+      ],
+      "selections": [
+        {
+          "coverage": "partial",
+          "bytes": 1,
+          "cliExit": 0
+        },
+        {
+          "coverage": "complete",
+          "bytes": 171,
+          "cliExit": 0
+        }
+      ],
+      "negativeControls": [
+        {
+          "name": "wrong_bearer",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "lookup_unavailable"
+        },
+        {
+          "name": "wrong_owner_generation",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "stale_epoch"
+        },
+        {
+          "name": "wrong_request",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "request_payload_conflict"
+        },
+        {
+          "name": "wrong_run",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "run_identity_mismatch"
+        },
+        {
+          "name": "wrong_content_digest",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "evidence_digest_mismatch"
+        },
+        {
+          "name": "range_beyond_stored_output",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "invalid_evidence_range"
+        }
+      ],
+      "forgedObserverMetadataIgnored": true,
+      "nativeFilesUnchanged": 67,
+      "nativeManifestSha256": "2779d6a7cae947d61a45dc652a2b35c307a8b85dbdb84bb9bf57e8dfea2f60c0",
+      "nativeReceiptSha256": "82aeae20d2d7d50025a04df0add53cd2443c70b86b3f0241a07efb3231173ac9",
+      "cliJsonExit": 0,
+      "cliTextExit": 0,
+      "newGatewayRunsDuringInspection": 0,
+      "newModelCallsDuringInspection": 0
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "result": "PASS",
+      "nativeStatus": "failed",
+      "providers": 1,
+      "isolatedReads": 0,
+      "evidenceReferences": 1,
+      "toolOutputBytes": [],
+      "recordMembershipVerified": true,
+      "sourceCoverageInProduct": "unknown",
+      "modelVisibilityInProduct": "unknown",
+      "modelUnderstandingVerified": false,
+      "sourceCorroboration": [],
+      "selections": [],
+      "negativeControls": [
+        {
+          "name": "wrong_bearer",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "lookup_unavailable"
+        },
+        {
+          "name": "wrong_owner_generation",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "stale_epoch"
+        },
+        {
+          "name": "wrong_request",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "request_payload_conflict"
+        },
+        {
+          "name": "wrong_run",
+          "result": "REFUSED_AS_EXPECTED",
+          "reason": "run_identity_mismatch"
+        }
+      ],
+      "forgedObserverMetadataIgnored": true,
+      "nativeFilesUnchanged": 58,
+      "nativeManifestSha256": "4f187d1a1d8a7e27f88d0b99617828752b53c3dd4f4454093f7448838821cca4",
+      "nativeReceiptSha256": "05b389ee88b89531a3d256ea07166c7daa0f2f525e92247a4ec2f2f488d947b5",
+      "cliJsonExit": 0,
+      "cliTextExit": 0,
+      "newGatewayRunsDuringInspection": 0,
+      "newModelCallsDuringInspection": 0
+    }
+  ],
+  "errors": [],
+  "sourceChanged": false,
+  "modelInferenceCalls": 0,
+  "paidCalls": 0,
+  "sourceManifestSha256": "b43d2848640957efa7818e2def593aba1b76c75660d1138ac92ae5f75ebd7e4f",
+  "result": "PASS"
+}

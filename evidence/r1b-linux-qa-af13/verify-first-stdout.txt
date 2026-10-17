@@ -1,0 +1,4 @@
+VERIFIER_EXIT 1
+{"scenario": "normal", "reason": "native_evidence_changed_during_readonly_check"}
+{"scenario": "provider-limit", "reason": "native_evidence_changed_during_readonly_check"}
+{"scenario": "upstream-disconnect", "reason": "native_evidence_changed_during_readonly_check"}

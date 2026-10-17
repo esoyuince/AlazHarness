@@ -1,0 +1,25 @@
+{
+  "scope": "R1 metadata/CLI on three already-completed fresh native Linux Gateway/broker stores; not three additional runs",
+  "productBaseCommit": "b96a83f545ae12885f025ee0085cb018dad14511",
+  "observedAtUnix": 1792221867.0042448,
+  "checks": [],
+  "errors": [
+    {
+      "scenario": "normal",
+      "reason": "native_evidence_changed_during_readonly_check"
+    },
+    {
+      "scenario": "provider-limit",
+      "reason": "native_evidence_changed_during_readonly_check"
+    },
+    {
+      "scenario": "upstream-disconnect",
+      "reason": "native_evidence_changed_during_readonly_check"
+    }
+  ],
+  "sourceChanged": false,
+  "modelInferenceCalls": 0,
+  "paidCalls": 0,
+  "sourceManifestSha256": "b43d2848640957efa7818e2def593aba1b76c75660d1138ac92ae5f75ebd7e4f",
+  "result": "FAIL"
+}

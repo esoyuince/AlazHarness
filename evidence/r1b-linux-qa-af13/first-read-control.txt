@@ -1,0 +1,3 @@
+FIRST_READ {"result": "FAIL", "reason": "native_evidence_changed_during_readonly_check", "error_type": "ValueError"}
+DIFFERENCES {"profile/runs_idempotency.db-wal": {"before": null, "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}, "profile/runs_idempotency.db-shm": {"before": null, "after": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"}}
+NATIVE {"scenario": "normal", "tool_reservations": 1, "origin_accepted": 2, "gateway_exit": 0, "broker_exit": 0, "result": "PASS"}

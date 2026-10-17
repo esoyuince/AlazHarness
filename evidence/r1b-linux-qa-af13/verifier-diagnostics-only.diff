@@ -1,0 +1,13 @@
+--- initial-verifier
++++ diagnostic-verifier
+@@ -253,6 +253,10 @@
+                    request['body']['input'], observed.get('output', '')):
+         require(not secret or secret not in public, 'private_value_in_report')
+     after = snapshot(directory)
++    differences = {name: {'before': before.get(name), 'after': after.get(name)}
++                   for name in before.keys() | after.keys() if before.get(name) != after.get(name)}
++    (own / 'read-only-diff.json').write_text(json.dumps({'before': before, 'after': after,
++        'differences': differences}, indent=2) + '\n', encoding='utf-8')
+     require(before == after, 'native_evidence_changed_during_readonly_check')
+     (own / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+     (own / 'report.txt').write_text(text.stdout, encoding='utf-8')

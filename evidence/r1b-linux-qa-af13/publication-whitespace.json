@@ -1,0 +1,16 @@
+[
+  {
+    "path": "verify-first-stdout.txt",
+    "rawSha256": "73b4d8f9675d8496756298265f729024223ebbdc975e34c4b221211f030d24e3",
+    "publicationSha256": "e93460271c8046642c25024f474e7bdecc4912b85000049f93db77f9285e0649",
+    "change": "trailing whitespace only in shell wrapper transcript",
+    "rawPreserved": "runtime/r1b-af13/verify-first-stdout.txt"
+  },
+  {
+    "path": "verify-second-stdout.txt",
+    "rawSha256": "28a308db1da37cb7f7b267cb4bda46a369eaa3d0b9c6adc7fa60307200765829",
+    "publicationSha256": "ec4457c713b541430314124b46b27e46cd51332ce526f3481bf277919cd5ca33",
+    "change": "trailing whitespace only in shell wrapper transcript",
+    "rawPreserved": "runtime/r1b-af13/verify-second-stdout.txt"
+  }
+]

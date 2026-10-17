@@ -1,0 +1,189 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_snapshot",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "0c2919c7b40cd3faafa3e9f909e56e7d6008cb0f7ba341ba5ed89bb8d7f8c320",
+  "epoch": 1,
+  "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+  "task": {
+    "runId": "run_372892bb1862415e8da7d1770c7ade7b",
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "admissionId": "e09e6e9f29534c92abd013740d055df9",
+    "sessionId": "run_372892bb1862415e8da7d1770c7ade7b",
+    "executionGeneration": 1,
+    "outcome": "failed",
+    "resultDigest": "498e01d7ce70142bb24b4fca5325a51a88029f3069b5c6d5c286eb55a0a79bd8",
+    "taskSucceeded": false,
+    "successBasis": "native_terminal_contract",
+    "goalAchievementIndependentlyVerified": false,
+    "nativeStatus": "failed",
+    "nativeAdmissionOutcome": "failed",
+    "admissionOutcomeIsTaskSuccess": false,
+    "completionReason": null
+  },
+  "nativeReportedUsage": {
+    "source": "native_run_aggregate",
+    "scope": "run",
+    "coverage": "complete_fields",
+    "inputTokens": 120,
+    "outputTokens": 20,
+    "totalTokens": 140,
+    "physicalAttemptCoverageVerified": false,
+    "billedAmount": null
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+    "model": "alaz-scripted",
+    "snapshotDigest": "5d8af1056287e8757f4c458bb41521965f817778c789d04e58d57da8c5ddae93",
+    "quarantined": false,
+    "providerAttempts": {
+      "reserved": 1,
+      "settled": 1,
+      "unsettled": 0,
+      "usageKnown": 1,
+      "usageUnknown": 0,
+      "transportErrors": 0,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": 120,
+      "outputTokens": 20,
+      "totalTokens": 140,
+      "coverage": "complete_for_retained_claims",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 1,
+      "handlerReturns": 1,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 163840,
+      "costMicrousd": 196608,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 1,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "tokens": 327680,
+      "costMicrousd": 803392,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "v1_claims_have_no_trusted_run_binding",
+    "numericDifference": null
+  },
+  "warnings": [
+    "execution_totals_not_attributed_to_run",
+    "reserved_exposure_is_not_an_invoice",
+    "native_completion_is_not_independent_goal_verification"
+  ],
+  "evidenceView": {
+    "evidenceViewVersion": 1,
+    "status": "verified_record_snapshot",
+    "available": true,
+    "inventoryScope": "retained_tool_text_and_final_response",
+    "recordDigest": "e950695065756d51e972e76a3b0b57c11e4176921be0e0580b4a642844c42d27",
+    "recordDigestBasis": "canonical_current_terminal_record_json",
+    "historyAvailability": "retained",
+    "historyCompleteness": "not_proven",
+    "references": [
+      {
+        "evidenceId": "ev_6160f68b984e481debd6beef2e5612b4f29875637e93cc8191dba8f8f67473a7",
+        "kind": "retained_tool_result",
+        "messageIndex": 1,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "91cbd095448ca17c9362405352364c83aa36338828c14bb5467272afc8335a14",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 171
+        },
+        "pairing": "structurally_paired_not_execution_proof",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      },
+      {
+        "evidenceId": "ev_ad88e81549f415477c07fb9c0815f118486e302b7cab8b5e1de13098f99c0772",
+        "kind": "native_final_response",
+        "messageIndex": null,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "6143f1bfe40fa25cd1f2a21faab8e1ed2d2dcad56b4072b28816f250b391f0a6",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 183
+        },
+        "pairing": "not_applicable",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "localView": null,
+    "modelVisibility": "unknown",
+    "writesPerformed": false,
+    "grantsExecutionPermission": false,
+    "goalAchievementVerified": false,
+    "warnings": [
+      "record_membership_is_not_independent_content_verification",
+      "retained_text_is_not_original_file_coverage",
+      "no_provider_request_view_manifest",
+      "historical_tool_messages_not_attributed_to_this_execution"
+    ]
+  }
+}

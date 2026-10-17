@@ -1,0 +1,30 @@
+{
+  "scenario": "normal",
+  "result": "PASS",
+  "errors": [],
+  "gateway_exit": 0,
+  "broker_exit": 0,
+  "source_drift": [],
+  "origin_accepted": 2,
+  "origin_rejected": 3,
+  "provider_reservations": 2,
+  "tool_reservations": 1,
+  "egress_grants": 2,
+  "native_admissions": 1,
+  "bindings": [
+    {
+      "admissionId": "75938ffd301c4b8b93237cb95d8df8c3",
+      "commandDigest": "ab446cc3f149cd5fad86190ee5720c3f8c7720e6fc4ccd926c55b5e4e3b06e24",
+      "containerId": "fb130599d5daf6737054f2a18a5f522776f1985c1f9e8a56dd0d07d03721f526",
+      "executionGeneration": 1,
+      "exited": true,
+      "inputDigest": "7ab107138152e4f2feee8c200ff2057eef09a2b1d81c29821ac1930e8ee7df65",
+      "outcome": "completed",
+      "removed": true,
+      "retryAllowed": false,
+      "runId": "run_9b534c379fc041c6a9ef6751e47498f2",
+      "ticket": "85ba5b9bf3404c12af5fffb33920c466",
+      "version": 1
+    }
+  ]
+}
