@@ -1,0 +1,7 @@
+{
+  "exitCode": 0,
+  "stdoutSha256": "45571da7667e6f70021f13780d6034a48c6b85504a15325e2702ecd21b4e059f",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "4 new QA-owned final fixed-source native runs, separate from original v1",
+  "observedAt": "2026-10-17T14:48:10.712532+03:00"
+}

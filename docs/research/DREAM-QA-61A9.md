@@ -1,6 +1,6 @@
 # DREAM-D1 independent QA 61A9
 
-Status: API/HTTP and standard review complete; final native publication source still awaits corroboration. Product owner E458; independent QA worktree dream-qa-61a9.
+Status: final fixed-source standard/API/HTTP/native QA PASS. Product Git/CI publication remains owned by E458. Product owner E458; independent QA worktree dream-qa-61a9.
 No second Dream product implementation and no changes to product source.
 
 ## Planned review, not acceptance
@@ -51,3 +51,13 @@ The raw fix-v2 unified diff contains meaningful context whitespace. It is retain
 ## QA publication
 
 QA commit7b2aeb425c789f2f55f53099adb4c1f897f44c25 is published; alaz/local-ci SUCCESS at2026-10-17T11:42:37Z. This is the independent baseline/test/report branch, not Dream product code publication. Exact remote test count is not provided by the status API. The product remains under E458 ownership; its final fixed-source native rerun and full publication/CI are separate open checkpoints. Manual candidates-only behavior and the three repaired defects are qualified at the reviewed scopes above. Actual inference quality, automatic triggers, active-memory integration and transferable skill validation are NOT closed.
+
+## Final fixed-source acceptance, separate from the early v1 runs
+
+After the explicitly recorded scope expansion from read-only corroboration, QA61A9 launched FOUR new bounded native trials in fresh qa61-* profiles using copied fixed product dream07283756. No product source, existing profile, key, model endpoint, image or system configuration was changed. Prepared dependencies and existing image were reused. All4passed: valid completed with1candidate, invalid-citation rejected with0, disconnect unknown with0, disabled with0Dream calls. Across these4there were11scripted origin requests (3extra Dream requests),4isolated file reads,4Gateway and4broker lifetimes. These are not real model inference; paid/inference remain0.
+
+The SAME independently authored stdlib corroborator was then run unchanged over the4new profiles. It verified151program/config hashes, source/record/quote/candidate identities, reconstructed3110-byte Dream requests against actual-origin SHA256 and claim/request-view records. Four exact container IDs and4sockets were absent. The three enabled scenarios also exercised the real dream_once CLI status GET. Watched application files and the memory sentinel stayed unchanged during inspection; no whole-filesystem silence guarantee is implied. Original4v1trials remain historical, not4additional unique acceptance scenarios.
+
+An independent full standard run on the final copied product tree, now including primary40Dream,12CLI and10input cases, passed1657/1657,exit0,skip0. All243source/test/script/config/pin files remained unchanged, including the live primary source set at the end. The48opt-in API/HTTP tests passed again unchanged on this final source; they are not part of1657. Earlier1635andQA1605counts remain their own historical scopes, never added. Evidence: full-final-product.json, final-product-source.json, publication-optin.json, native-final-controller.json/.txt, native-final-transfer.json and native-final-corroboration.json.
+
+The running path is manual and candidate-only. Prior-note comparison covers previous Dream CANDIDATES, not a complete reconciliation of existing trusted memory. The source quote check proves exact quotation membership, NOT that the proposed lesson logically follows or generalizes. The real model's synthesis quality, active-memory adoption, independent skill transfer and automatic triggers remain unqualified.

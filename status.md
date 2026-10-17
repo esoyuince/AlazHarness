@@ -1,17 +1,16 @@
 # Dream independent QA61A9
 
-Son güncelleme: 2026-10-17T14:39:06.585317+03:00
+Son güncelleme: 2026-10-17T14:52:25.974894+03:00
 
-Bu QA ağacı root devam adresi DEĞİLDİR. Ürün yazıcısı E458, dream-d1-e458.
-QA dalı alaz/dream-qa-61a9, baz f23079d.
-
-48opt-in32API+16HTTP PASS;10sourceinput standard içinde, QAfull1605PASS.
-Ayrı detached productfixedv2 full1635PASS (sonradan CLI12/input10 hariç).
-İlk3ürün kusuru gerçek sourcefix ile kapandı; ilkFAILler ve testfixture
-düzeltmeleri docs/research/DREAM-QA-61A9.md ve evidence/dream-qa-61a9 içinde.
-Erken v1native4profil readonlyteyit edildi; finalfixednative henüz beklenir.
-Yeni model/tool/native/scheduler/ürün/pin değişikliği yok.
-Kesin sonraki adım E458 finalkaynak/nativeprofillerini aynıcorroboratorla
-okuyup sonQA kabulünü kaydetmek. Bu dalın Git/CI teslimi ayrı yürütülür.
-
-2026-10-17T14:44:24.043416+03:00 QA code7b2aeb4 published, alaz/local-ci SUCCESS. Final native/publication source remains pending on product owner. No active-memory edits or inference.
+QA TAMAMLANDI / scoped pass. Bu ağacın kodu ana Dream ürün kodu DEĞİLDİR.
+Ürün sahibi E458: scratch/worktrees/dream-d1-e458.
+QA dal alaz/dream-qa-61a9; bazf23079d; code7b2aeb4 CI PASS,doc477e317 CI PASS.
+Sonürünkopyası1657/1657PASS/243source;48optinPASS dahildeğil. QA kendi
+baseline1605PASS; önceki1635 sadeceeskitestsnapshot. Üçürünkusururegclosed.
+4yeni fixedsource QA-nativePASS +aynıscript4readonlycorroborationPASS;
+11scriptedprovider(3Dream),4isoleokuma,8gateway/brokerprocess temizkapandı.
+Model inference/paid0. GerçekCLI status3doğrulandı. Otomatiktrigger/active
+memory/skillpromotion kapalı; semanticders/transfer kalitesi henüzkanıtlanmadı.
+Kesin sonraki iş: E458 ürün Git/CI teslimini bu exactkaynak kabulüne bağlamak;
+sonra bounded real-model Dream kalitesini doğrulamak. Yeni iş/araç başlamaz.
+Kanıt docs/research/DREAM-QA-61A9.md,evidence/dream-qa-61a9.

@@ -1,0 +1,22 @@
+{
+  "scope": "same independent48cases on final transferred product version, not48newtests",
+  "results": [
+    {
+      "script": "test_dream_61a9.py",
+      "tests": 32,
+      "exitCode": 0,
+      "scriptSha256": "ace01e92a5d2aacff2b2207a3df0b6dfe8adf72c1269a4d589179bae8b93e9f0"
+    },
+    {
+      "script": "test_dream_http_61a9.py",
+      "tests": 16,
+      "exitCode": 0,
+      "scriptSha256": "8c9d723630287df838a4d93b9828b9b36d514b6d02f25ab53301bc9ec738ad4f"
+    }
+  ],
+  "sourceFiles": 243,
+  "sourceChanged": [],
+  "dreamSha256": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a",
+  "observedAt": "2026-10-17T14:50:49.627544+03:00",
+  "result": "PASS"
+}
