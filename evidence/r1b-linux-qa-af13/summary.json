@@ -17,10 +17,13 @@
   "paidCalls": 0,
   "modelInferenceCalls": 0,
   "standardSuiteStatus": "PASS",
-  "ownCommitPush": "NOT_YET",
+  "ownCommitPush": "PUBLISHED",
   "observedAt": "2026-10-17T10:33:01.589647+03:00",
   "standardTests": 1374,
   "standardSkip": 0,
   "standardMeasuredFiles": 217,
-  "reportSha256": "962878d7b3b4799d92aa4b6b38a59fe28d53dff786b52806ee2d958f3e35f1fb"
+  "reportSha256": "962878d7b3b4799d92aa4b6b38a59fe28d53dff786b52806ee2d958f3e35f1fb",
+  "ownCodeCommit": "0786d2e0f6947722407380a4cd85c70bd2dd3843",
+  "ownCodeCI": "pending",
+  "productCommitUnmodified": "ee5580ded751c8fc22c9d09984b8f14cc72b58e5"
 }

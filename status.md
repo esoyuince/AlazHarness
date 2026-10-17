@@ -22,4 +22,15 @@ Native private: /tmp/alaz-r1b-af13
 Bu QA dalı ürün yazıcısı değildir;8cb8 ürün/yayın sahibi korunur.
 Kaynak capture ve provider request-view UYGULANMADI; sıradaki R1B1/R1B2.
 Ana ürün pointer: scratch/worktrees/evidence-r1b-8cb8/status.md.
-Main ve upstreamler değişmez; seçilmiş QA dosyaları commit/push aşamasında.
+Main ve upstreamler değişmedi. QA kod/rapor/kanıt commit 0786d2e0f6947722407380a4cd85c70bd2dd3843 yayımlandı; canlı CI pending. Son belge kaydı ayrıca yayımlanacak; onun CI sonucu bu kayıtta tahmin edilmez.
+
+### 2026-10-17T10:39:07.598979+03:00 — teslim ve doğru devam adresi
+
+QA raporu/test programı/metadata GitHubda.217sabit kaynakla1374test PASS.
+Dört Docker container exactID bulunamıyor;5Gateway ve5broker yaşamı clean
+exit ve5socket yokluğu final-cleanup.json ile readonly tekrar doğrulandı.
+Bu5ekagent çalışması değil; toplam3ana+2diagnostic native çalışma.
+R1B0 ürün kod3b2d037 ve belgeee5580d CI success canlı teyit; ayrıQA0786d2e
+CI pending. Ürün ile QA test sayıları toplanmaz. G01 ana DB değişmeksizin
+WAL/SHM oluşturma tekrarı açık; source capture/requestview hâlâ uygulanmadı.
+Rapor docs/research/R1B-LINUX-EVIDENCE-QA-AF13.md. Ana ürün pointer8cb8 korunur.

@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-17T10:39:07.598979+03:00",
+  "productCode": {
+    "commit": "3b2d037a98f84139d1bd787063e0213799638544",
+    "alaz/local-ci": "success"
+  },
+  "productDoc": {
+    "commit": "ee5580ded751c8fc22c9d09984b8f14cc72b58e5",
+    "alaz/local-ci": "success"
+  },
+  "supplementalQA": {
+    "commit": "0786d2e0f6947722407380a4cd85c70bd2dd3843",
+    "alaz/local-ci": "pending"
+  },
+  "source": "live GitHub connector status checks; counts not inferred from statuses"
+}

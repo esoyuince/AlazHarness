@@ -1,0 +1,49 @@
+{
+  "scope": "readonly final cleanup check of five existing experiment profiles; no new native runs",
+  "rows": [
+    {
+      "case": "normal",
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "ownedContainersAbsent": [
+        "c2d34ab75d19801f56d9730ff0d0234ff452b7ecc5a8121388cf2bedd94ed4e9"
+      ],
+      "brokerSocketAbsent": true
+    },
+    {
+      "case": "provider-limit",
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "ownedContainersAbsent": [
+        "fa471be055cdc733d78109d8c2a5358facf1498142dd3176c518e5f16126fad2"
+      ],
+      "brokerSocketAbsent": true
+    },
+    {
+      "case": "upstream-disconnect",
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "ownedContainersAbsent": [],
+      "brokerSocketAbsent": true
+    },
+    {
+      "case": "first-read-control/normal",
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "ownedContainersAbsent": [
+        "fb130599d5daf6737054f2a18a5f522776f1985c1f9e8a56dd0d07d03721f526"
+      ],
+      "brokerSocketAbsent": true
+    },
+    {
+      "case": "direct-first-read/normal",
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "ownedContainersAbsent": [
+        "0fb92ae34ebe0cb6cc5d0094f8374943a966a2d0ba92a41a418c0833c2822ed9"
+      ],
+      "brokerSocketAbsent": true
+    }
+  ],
+  "result": "PASS"
+}
