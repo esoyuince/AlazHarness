@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T22:32:37.617840+03:00
+Son güncelleme: 2026-10-17T22:38:23.600731+03:00
 
 ## Güncel nokta
 
-DREAM-D2A-4B83 manuel aday inceleme/CAS/net-diff/loopback CLI: 1714/1714 standart PASS, Git/CI AÇIK; held-out D2B NOT RUN.
+DREAM-D2A-4B83 manuel aday inceleme/CAS/net-diff/loopback CLI: 1714/1714 standart PASS; kod7a4c4d3 origin push PASS, alaz/local-ci SUCCESS; held-out D2B NOT RUN.
 Dal alaz/dream-d2-4b83; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2-4b83; base d3df140f38e15a34f7962c3338391413dd64514b.
 Dream D1 ve Codex araştırması ürün/provenance tabanıdır; test/commit/CI bekleniyor.
 
@@ -436,3 +436,21 @@ D2A frozen D1 adayı inceler, orijinal terminal retentionı tekrar
 doğrulamaz, native owner epoch değişince eski review row yeniden açılması
 şu dilimde garanti değil. D2B bağımsız held-out model/skill/aktif memory
 terfi kesinlikle NOT RUN; üretime yetki artırma yok. Git/CI teslimi açık.
+
+### 2026-10-17T22:37:09.405100+03:00 — DREAM-D2A kodu yayımlandı, CI pending
+
+7a4c4d300cebd763464b1fecb076b54998fcb435 push PASS; worktree temiz
+ve origin eşit. 247 ürün/test/config dosyası remote commit ile SHA-eşit,
+root status mirror eşit. GitHub alaz/local-ci son sorguda PENDING, bu
+başarı sayılmıyor. Tam1714 standard ve root static yerel PASS, nativeD2
+Gateway/gerçekmodel/heldout transfer NOT RUN. Belge/CI kapanışı ayrı.
+
+### 2026-10-17T22:38:23.600731+03:00 — D2A kaynak commit CI SUCCESS, belge teslimi
+
+7a4c4d300cebd763464b1fecb076b54998fcb435 GitHub alaz/local-ci SUCCESS (56604836585,
+2026-10-17T19:37:31Z). CI API uzak test sayısı vermez. Yerel
+1714/1714 standart+57dahil, root static PASS ve 247indexsource aynıdır.
+Bu adım yalnız doc/status/CI makbuzu; ürün/araç/aktif hafıza değişmiyor.
+Son belge commitinin kendi CI sonucu yayından sonra kontrol edilecek.
+Kesin sonraki iş: D2B gerçek held-out bağımsız transfer; D3B/realprovider
+bütçe/token ön-kapısı ve cross-epoch review recovery ayrıca AÇIK.

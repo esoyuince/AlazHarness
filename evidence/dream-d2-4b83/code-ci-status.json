@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-17T22:38:23.600731+03:00",
+  "codeCommit": "7a4c4d300cebd763464b1fecb076b54998fcb435",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "githubStatusId": 56604836585,
+  "githubUpdatedAt": "2026-10-17T19:37:31Z",
+  "remoteTestCount": null,
+  "source": "GitHub commit statuses API",
+  "scope": "exact source commit CI; not a real-model/native D2 Gateway acceptance"
+}

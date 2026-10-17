@@ -3,7 +3,7 @@
   "observedAt": "2026-10-17T22:31:03.819657+03:00",
   "baseCommit": "d3df140f38e15a34f7962c3338391413dd64514b",
   "branch": "alaz/dream-d2-4b83",
-  "status": "SCOPED_LOCAL_PASS_GIT_CI_PENDING",
+  "status": "SCOPED_PASS_PUBLISHED_CODE_CI_SUCCESS",
   "fullStandard": {
     "observedAt": "2026-10-17T22:29:01.261031+03:00",
     "result": "PASS",
@@ -40,6 +40,10 @@
   "hasAutoPromotion": false,
   "mainMerged": false,
   "planRemaining": "D2B held-out real-model evaluation and independent skill transfer after D3B/provider gate",
-  "codeCommit": null,
-  "codeCI": "PENDING_PUBLICATION"
+  "codeCommit": "7a4c4d300cebd763464b1fecb076b54998fcb435",
+  "codeCI": "success",
+  "codeCIReceipt": "evidence/dream-d2-4b83/code-ci-status.json",
+  "publicationObservedAt": "2026-10-17T22:37:09.405100+03:00",
+  "codeCIObservedAt": "2026-10-17T22:38:23.600731+03:00",
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }

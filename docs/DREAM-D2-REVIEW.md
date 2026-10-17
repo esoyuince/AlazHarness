@@ -146,3 +146,12 @@ code/test/config files byte-identical before/after the run; 57 D2A tests
 are INCLUDED in 1714 once. No actual native Gateway/paid model inference,
 no held-out new task and no independent learned-skill verification. Detailed
 local log and source hashes are in evidence/dream-d2-4b83/.
+
+## Exact-source code publication — 2026-10-17T22:38:23.600731+03:00
+
+Code commit `7a4c4d300cebd763464b1fecb076b54998fcb435` was pushed on `alaz/dream-d2-4b83`.
+GitHub `alaz/local-ci` SUCCESS (status 56604836585; 2026-10-17T19:37:31Z).
+Remote status API does not supply a test count; local 1714/1714, 247 source
+byte hashes and 57 new test identities remain separately evidenced.
+No new native D2 Gateway, real inference, paid call or held-out evaluation.
+The accompanying documentation-only follow-up must pass its own exact-SHA CI.
