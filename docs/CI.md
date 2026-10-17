@@ -203,3 +203,13 @@ Standard tests cover the opt-in writer/reader and plugin bootstrap using synthet
 ports. Real Linux Gateway/broker/Docker reads remain separate opt-in evidence. No
 native installation, real model or source permission is added to CI. Exact source
 freeze/counts are in docs/R1B1-SOURCE-CAPTURE.md and status.md.
+
+## R1B2 request-view scope
+
+Standard discovery adds68 primary request/edge cases and16 independent baseline
+cases.35 independent opt-in API/HTTP-handler cases are outside the standard total;
+run scripts/qa/test_request_view_9b08.py and test_request_boundary_view_9b08.py with
+ALAZ_R1B2_QA_SOURCE explicitly set to the reviewed checkout. Native six-case Linux
+runs require the already-prepared opt-in environment and are separate from CI.
+No model, SDK/Gateway installation, Docker invocation or new permission is added
+to default CI. Counts/source freeze/exact commit status are recorded per run.

@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "scenario": "upstream-disconnect",
+  "requestViewEnabled": true,
+  "nativeReceiptSha256": "f1c16c4d49af8265406a8f6563ce88cc47cc115fd2a5bb8282161d3a65b6aa72",
+  "originRequests": 1,
+  "manifestRows": 1,
+  "requests": [
+    {
+      "requestDigest": "15252d94f523673c5eaa70e77880bcd663fea9276aef815c49675fea470ace79",
+      "requestBytes": 10777,
+      "state": "handoff_armed",
+      "toolMessages": 0,
+      "selectedInclusions": 0
+    }
+  ],
+  "actualPartialRead": false,
+  "sourceBytes": 54,
+  "toolOutputBytes": [],
+  "nativeStatus": "failed",
+  "modelVisibility": "unknown",
+  "initiatingRunVerified": false,
+  "mainStoresUnchanged": true,
+  "auxiliaryFilesChanged": [
+    "runs_idempotency.db-wal",
+    "runs_idempotency.db-shm"
+  ],
+  "newNativeRuns": 0,
+  "inferenceCalls": 0,
+  "paidCalls": 0,
+  "cliFormats": [
+    "json",
+    "text"
+  ]
+}

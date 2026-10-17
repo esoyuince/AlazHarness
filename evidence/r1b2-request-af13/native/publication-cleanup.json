@@ -1,0 +1,79 @@
+{
+  "result": "PASS",
+  "scope": "read-only post-run cleanup of six final and two separately retained exploratory profiles; no new runs",
+  "rows": [
+    {
+      "case": "pub-normal",
+      "containerIdsAbsent": [
+        "cce76e41c4b6e7a0e7dbfedfb83056e33fcbcc7bfc6b53a4204fe80afa81e2af"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "pub-partial",
+      "containerIdsAbsent": [
+        "55eff7f83de88dfcea49f0882e508f0ef689921368d3c03404a23ac537de7851"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "pub-limit",
+      "containerIdsAbsent": [
+        "5af72111fc2438742b922d500ef6cb60aeafe51ffdc51efa741b5e9fb2115a08"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "pub-disconnect",
+      "containerIdsAbsent": [],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "pub-after-tool",
+      "containerIdsAbsent": [
+        "1d6946240c074a95e224ac2a5774bf30bd779f601eecab820269d80c7fbcb266"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "pub-optout",
+      "containerIdsAbsent": [
+        "12e3476b122d9e9fab0fe4ab864b1cde4394ed58c2ba1a1f7b435561130f5551"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "v1-normal",
+      "containerIdsAbsent": [
+        "5c300ad0d090f08b301bcd514dfd2a35f3301a784e065f2516067a5d02faba67"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    },
+    {
+      "case": "v1-disconnect-after-tool",
+      "containerIdsAbsent": [
+        "a1d39ef8efa9bd354e846b6c584cea90ec1c8a4623e4ee6413cce4c69826b3a4"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0
+    }
+  ],
+  "sourceFilesUnchanged": 147,
+  "newNativeRuns": 0,
+  "paidCalls": 0
+}

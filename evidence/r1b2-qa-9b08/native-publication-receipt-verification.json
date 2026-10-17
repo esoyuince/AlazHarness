@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-17T12:54:30.382861+03:00",
+  "remoteVerbatimSha256": "be778d827df18fafb0f64ea7295b66933da1fa93075b13d7c0fdce27a49e4b7b",
+  "localReformattedSha256": "a50869a2d6adc3b38952873cf4d56186acb98fc77f6ddb50ba6512df7ad2314b",
+  "jsonValuesIdentical": true,
+  "newlineOnlyDifference": true,
+  "scope": "read existing successful corroboration only; preserve original remote bytes separately",
+  "priorRemoteCorroboratorExit": 0,
+  "priorLocalOuterWrapperExit": 1,
+  "priorLocalOuterWrapperError": "NameError sys after successful receipt persistence, final exit propagation only",
+  "priorComparisonRejected": "expected byte equality; Windows write_text had changed LF to CRLF. Values checked equal; originals preserved.",
+  "assertionsOrNativeResultsChanged": false,
+  "newNativeRuns": 0
+}

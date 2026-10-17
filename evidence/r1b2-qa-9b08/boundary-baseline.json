@@ -1,0 +1,13 @@
+{
+  "scope": "6 independently authored actual provider-handler tests; synthetic web/IPC ports, no native model",
+  "tests": 6,
+  "exitCode": 0,
+  "source": {
+    "tests/test_request_boundary_qa_9b08.py": "f989f2b614d9a681e197732829a1069531cff974b9ef5cb5501488d3f5f42e49",
+    "packages/claw-hermes/execution_boundary.py": "4a7680566dbca2ab2469c73527c6e96652496c1c00f1eb4812c19be6a750f8aa",
+    "packages/claw-hermes/provider_broker.py": "487c0fd2e58d103cf74cc01c358cfc19d9298bca71ac3719e61584a0084c248b"
+  },
+  "changed": [],
+  "observedAt": "2026-10-17T12:27:55.488818+03:00",
+  "nativeRuns": 0
+}

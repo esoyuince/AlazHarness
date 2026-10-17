@@ -1,0 +1,14 @@
+{
+  "scope": "offline real ledger/metadata/client with synthetic native owner and IPC",
+  "exitCode": 0,
+  "source": {
+    "packages\\claw-hermes\\request_view.py": "2cfd1f9df359d4cea20240a955678f209dedc15775a046f7df35df7a61508760",
+    "packages\\claw-hermes\\provider_broker.py": "14bbe7eb17dd64843ee7d6a1656c04669488e608b7265e7c09c77ce2cc7ffe63",
+    "packages\\claw-hermes\\provider_egress.py": "0890fa935db3e0309c078cf39a03b9eee4182711cd0a9aa0e24efd9f73653e14",
+    "packages\\claw-hermes\\execution_boundary.py": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+    "packages\\claw-hermes\\evidence_view.py": "77d9ed1387f6d88697711953c0993f91b9adad0e25915da7a3438bdca549fc04",
+    "tests\\test_request_view.py": "a1247a1f4c908e34866193241ece600fc96a820d2b7f53e55da73ae59c9e54f7"
+  },
+  "changed": [],
+  "observedAt": "2026-10-17T12:33:09.153185+03:00"
+}

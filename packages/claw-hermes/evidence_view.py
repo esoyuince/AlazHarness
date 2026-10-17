@@ -183,9 +183,11 @@ class _EvidenceSnapshot(HostReportInspector):
             retained = _load(record[0])
             section = _record_projection(retained, checked, self.context, self.selection)
             from source_capture import enrich_source_captures
+            from request_view import enrich_request_views
             from execution_budget import ExecutionDenied
             try:
                 enrich_source_captures(conn, section, retained, row, self.context, self.policy)
+                enrich_request_views(conn, section, self.context, self.policy)
             except ExecutionDenied as exc:
                 raise EvidenceError(str(exc)) from None
         except EvidenceError as exc:
@@ -222,7 +224,9 @@ def render_evidence_text(report: dict) -> str:
     lines = [render_text(report).rstrip('\n')]
     section = report.get('evidenceView', unavailable_evidence('not_requested'))
     lines += ['Evidence: ' + section['status'],
-              'Model-visible ranges: UNKNOWN (no provider request view manifest).']
+              ('Provider request inclusion is recorded; model processing/understanding: UNKNOWN.'
+               if 'providerRequestViews' in section else
+               'Model-visible ranges: UNKNOWN (no provider request view manifest).')]
     if section['available']:
         lines.append('Retained text references: ' + str(len(section['references'])))
         for ref in section['references']:
@@ -238,6 +242,12 @@ def render_evidence_text(report: dict) -> str:
     for capture in section.get('sourceCaptures', []):
         lines.append('Captured input snapshot: ' + str(capture['sourceBytes']) +
                      ' raw bytes; status=' + capture['status'] + '; tool coverage=UNKNOWN; model view=UNKNOWN')
+    views=section.get('providerRequestViews',{})
+    for request in views.get('requests',[]):
+        lines.append('Profile provider request: '+request['state']+'; bytes='+str(request['requestBytes'])+
+                     '; selected evidence inclusions='+str(len(request['selectedEvidenceInclusions']))+
+                     '; initiating run=UNKNOWN; HTTP response observed='+str(request['brokerHttpResponseObserved']))
+    if views:lines.append('Handoff intent is not a send receipt; source provenance is not request ownership or goal success.')
     lines.append('Application state is not written; SQLite auxiliary filesystem files may be created.')
     lines.append('Retained content and local views do NOT verify an effect, comprehension or goal.')
     return '\n'.join(lines) + '\n'

@@ -1,224 +1,166 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T12:06:45.708443+03:00
+Son güncelleme: 2026-10-17T12:57:19.038201+03:00
 
 ## Güncel nokta
 
-R1B1-SOURCE-AF13 dar kabul ve kod Git/CI teslimi TAMAMLANDI.
-Kod commit: 15eca31e3522ee4c2215b3a3d4f8df9b217e7559 — alaz/local-ci SUCCESS.
-Son belge commitinin kendi CI sonucu yayından sonra ayrıca kontrol edilir.
-Aktif dal: alaz/r1b1-source-capture-af13
-Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13
-Başlangıç commit: ee5580ded751c8fc22c9d09984b8f14cc72b58e5.
-Tam1511/1511 PASS exit0/skip0;227kod/test/config aynı,yeni0.108yeni test
-45kendi+63C72E dahil. Son5native PASS,4read/8scriptedprovider/10süreç cleanexit.
-250satır4166raw bayt capture→açık limit20→594bayt toolreturn;20var21/250yok.
-Fullsource != fulltool != modelview. ModelviewUNKNOWN. Missingbounds NULL.
-Aynı native DB owner,opt-in record_source:true; yeniDB/kuyruk/motor/izinyok.
-Gerçekmodel/ücret0. R1B2,D3B,gerçekmodel/fiyat/token,HYB006,M1/M2 AÇIK.
-G01 filesystem-silence AÇIK; SQL/state yazmama auxiliary dosya yokluğu değildir.
-Rapor docs/R1B1-SOURCE-CAPTURE.md; evidence/r1b1-source-af13 ve r1b1-qa-c72e.
-Önceki durum docs/history/2026-10-17-STATUS-BEFORE-R1B1-AF13.md.
-Main/kaynakpinleri/diğer çalışma ağaçları/Claude hamaraştırması değişmedi.
+R1B2-REQUEST-AF13 yerel/gerçek Linux dar kabul PASS; commit/push/CI AÇIK.
+Aktif dal: alaz/r1b2-request-view-af13
+Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\request-r1b2-af13
+Başlangıç commit: e2a5b300568425358e181954cffb697ace2d032b.
+1595/1595standart PASS exit0/skip0;235ölçülen kaynak aynı/yeni0.
+84yeni standart=68primary+16independent;35optinQA ayrı PASS/toplama eklenmez.
+6finalnative PASS:5Dockerread,10scriptedprovider,12process clean;5container/6socketyok.
+8manifest/3kaynak-inclusion;250satır4166raw→20satır594tool→11679byte gerçekrequest.
+prepared→handoff_armed→broker_response_observed; handoff niyet fiziksel-send kanıtıdeğil.
+After-tool bağlantıkopunca kaynak-inclusionkalır ama response/validatedfalse.
+InitiatingRunIdNULL/modelProcessingfalse; profile request taskcost değildir.
+Aynı DBowner/claim/egress,record_request_view:true optin; yeniDB/kuyruk/izinyok.
+G01filesystemsilence,D3BOSsınırı,realmodel/fiyat/token,R2,HYB006,M1/M2 AÇIK.
+Rapor docs/R1B2-REQUEST-VIEW.md; evidence/r1b2-request-af13 ve r1b2-qa-9b08.
+Ana dal/pinler/önceki araştırmalar ve çalışma ağaçları değiştirilmedi.
 
 ## İş günlüğü
 
-### 2026-10-17T11:17:51.783937+03:00 — başlangıç
+### 2026-10-17T12:20:57.284640+03:00 — başlangıç
 
-Canlı root pointer/R1B0 ve QA CI teyit edildi. Ayrı worktree açıldı.
-Plan: kaynak kayıt sözleşmesi, mevcut izole okuyucu ve metadata raporuna opt-in
-bağlama; negatif testler, sabit kaynak full ve taze Linux kabulü, sonra Git/CI.
-Üretim servisleri/kişisel profiller/sırlar/ücretli çağrılar kullanılmaz.
+Canlı status/Git kontrolüyle temiz e2a5b30 bazından ayrı worktree açıldı.
+Agent listte uygun Alaz ajanı yok; diğer projelerin/revoked ajanları kullanılmaz.
+Önce provider boundary/egress/source-capture gerçek APIleri incelenecek.
+Ürün yazıcısı AF13; test sırasında kaynaklar sabitlenir, doc/evidence ayrı kalır.
+Main ve önceki çalışma ağaçları değiştirilmez.
 
-### 2026-10-17T11:19:02.652551+03:00 — R1B1 bağımsız QA C72E
+### 2026-10-17T12:22:11.426733+03:00 — R1B2 bağımsız QA 9B08
 
-Eşzamanlı source-r1b1-af13 ürün yazıcısı görüldü; ikinci kaynak-capture
-uygulaması veya rakip ürün dalı açılmadı. C72E yalnız tests/*qa_c72e*,
-docs/research/R1B1-SOURCE-QA-C72E.md ve evidence/r1b1-qa-c72e altında
-bağımsız test/kanıt yazacak. Önce gerçek ürün API okunacak; henüz varsayılan
-APIye test yazılmayacak. Ürün yazıcısıAF13, C72E ürün koduna/pinlere dokunmaz.
-Odak tam snapshot != tam tool görünümü, kayıt kaybı/commitACK/yabancı run,
-metadatadan sahte ispat, eski kayıt UNKNOWN ve iptal sınırları.
+AF13 ürün alanı eşzamanlı açılırken 9B08 başlangıç preconditionı ret verdi;
+hiçbir eski durum üzerine yazılmadı. 9B08 ayrı alaz/r1b2-qa-9b08 dalı
+ve scratch/worktrees/request-r1b2-qa-9b08 alanında yalnız test/kanıt/rapor
+hazırlayacak; ürün APIyi okur, ürün kaynakları ve mevcut63QA testler değişmez.
+Ürün/yayın sahibi AF13 kalır; 9B08 root devam adresini değiştirmez.
 
-### 2026-10-17T11:21:14.026933+03:00 — C72E ham snapshot18/18 PASS
+### 2026-10-17T12:23:52.431541+03:00 — 9B08 R1B2 sözleşme incelemesi
 
-Mevcut _snapshot_input gerçek fonksiyonu18 bağımsız geçici-dosya testinde
-PASS/exit0/drift0: UTF8/CRLF/BOM/undecodable baytlar korunur; boş/64KiB tam,
-64KiB+1 ret; hardlink/ancestorlink/inode/stat-değişimi ret; hataFDkapanışı.
-Bu source capture kalıcılığı veya native kabulü DEĞİL. Testhashi
-85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e.
-API hazır olunca C72E commitACK/kayıp kayıt/yanlışrun/rapor bağlamını ayrıca
-sınayacak. Native approval_context session/tool_call IDs pin içinde mevcut;
-metin hash eşitliği tek başına belirli tool çağrısının çalıştığını ispatlamaz.
-Model görünümü, orijinal dosyanın halen varlığı ve semantic coverage UNKNOWN.
+Mevcut provider HTTP sınırı profil-scoped; body.user/modelmessage kendi
+başına request-run authority değildir. QA, source→payload inclusion ile
+provider-request job ownership ayrımını özellikle denetleyecek. Send/commitACK/
+unknown/refund ve duplicate sameID+content ambiguity negatifleri bekler.
+Ayrı rapor request-r1b2-qa-9b08/docs/research/R1B2-REQUEST-QA-9B08.md.
+Yeni API henüz yok; test uydurulmadı. Product AF13 tek sahibi kalır.
 
-### 2026-10-17T11:25:45.406892+03:00 — C72E baseline full regression
+### 2026-10-17T12:26:16.168174+03:00 — 9B08 baseline transport10/10 PASS
 
-Mevcut taban+18snapshot testinin bütün standart paketi çalışıyor; request
-bb650829-90f6-4dea-bbdf-af8d09a98dbe. Bu henüz yeni-source capture final
-kabulü değildir. Ürün yazıcısı devam edebilir; source set değişirse baseline
-NOT_ACCEPTED olarak korunur ve final recheck ayrı yapılır.
+Ayrı QA dalında test_request_transport_qa_9b08.py hazır: nested caller mutasyonu,
+Unicode/CRLF exact digest, sahte proof opaque, commitfail/lostACK/cancel/IPC
+kaybı ve aynı ticket replay kontrolleri10/10PASS. Bu R1B1 tabanı gerçek
+ledger/client +sentetikIPC kapsamı; henüz R1B2 kabulü değil. Ürün API hazır
+olunca onun üstüne ayrı testler yazılacak. Test dosyası QA ağacında, primary
+tests veya ürün dosyalarına müdahale edilmedi.
 
-### 2026-10-17T11:27:24.061711+03:00 — R1B1 ilk ürün API hazır, testler sırada
+### 2026-10-17T12:31:02.555362+03:00 — R1B2 ilk ürün API hazır, NOT TESTED
 
-source_capture.py: begin_capture(call,args,tool_call_id), finish_capture(call,captured,output),
-enrich_source_captures(conn,section,record,admission,context,policy). İzole ayarda
-record_source:true opt-in; gerçek approval_context kimliği helperdan alınır.
-Tam input bytes metadata native state_meta tek sahibine original çağrıdan önce;
-redaksiyon sonrası return ikinci kayda bağlanır, her iki commit belirsizliğinde
-yeniden yürütme yok. Reader aynı transactionda admission/ticket/toolIDhash/çıktı
-bayt eşleşmesi arar; raw path/sourcecontent yok. sourceCaptures yalnız kayıt varsa;
-legacy/modelVisibility/goal unknown korunur. Yeni API henüz NOT TESTED.
-C72E kendi QA dosyalarında kalır; ürün/test bağımsızlaştırılması korunur.
+request_view.py prepare_in_transaction(conn,ledger,grant,payload), arm_handoff(ledger,ticket),
+observe_response(ledger,armed,raw,status,content_type), enrich_request_views(conn,section,context,policy).
+Execution setting record_request_view:true strict bool, broker şart; default false.
+BrokerClient.send(...,record_view=True); egress authorize aynıtxde prepare kaydı.
+prepared→handoff_armed→broker_response_observed. Handoff write-ahead NIYET, fiziksel
+send kanıtı DEĞİL. Başarılı signed broker reply sonrası rawresponse hash kaydı;
+provider body-validation/settlement ayrıca. Commit/lostACK rezervasyonu geri vermez.
+Profile-scoped request; initiatingRunId=None. Kaynak exact toolID/hash/bytes ancak
+prepare sırasında tek trusted returned+settled capture ile bağlanır. Report:
+providerRequestViews ve refs.providerRequestInclusions; modelVisibility UNKNOWN.
+9B08 ayrı QA APIyi artık okuyabilir; eski63test değişmez, ürün tek yazıcısı AF13.
+Bu aday henüz syntax compile dışında NOT TESTED; native/CI/PASS iddiası yok.
 
-### 2026-10-17T11:30:23.271759+03:00 — C72E 58test sabit / 40 yeni API testi PASS
+### 2026-10-17T12:39:56.137550+03:00 — R1B2 birim/native hazırlığı
 
-18ham snapshot +40capture/invoke/report bağımsız testin tamamı PASS,exit0.
-Actual API okunarak test edildi; owner/native/Docker portları sentetik.
-Begin/finish precommit ve lostACK, değiştirme/silme/yanlışrun/epoch/scope,
-kapalı/archived kayıt, duplicate attribution ve UNKNOWN sınırları doğrulandı.
-Testset artık SABİT; yeni test eklenmeyecek, iki custodyJSON hashleri mevcut.
-İlk full1421exit0 ama source değişti: NOT_ACCEPTED makbuzu korunur.
-Son sabitfull/nativeGitCI ayrı bekler. ÜrünAF13, QA C72E ürün değiştirmedi.
-Rapor docs/research/R1B1-SOURCE-QA-C72E.md; evidence/r1b1-qa-c72e.
+İlk46yeni request/capture/broker test PASS; eski81provider regression PASS.
+Bunlar sentetikowner/IPC, native değildir. Gerçek origin rawrequest hash/byte
+ölçümü eklendi; after-tool-disconnect senaryosu ikinci ağyanıtını koparıyor.
+Linux candidate-v1 kaynakları hashli transfer edildi. İki native koşu başlıyor:
+normal ve after-tool-disconnect; makbuz d25a3b75-2b21-4148-924e-7c840476a318.
+Yol /tmp/alaz-r1b2-af13/v1-*. Bu adayın native sonucu henüz NOT RUN;
+tekrar başlatmadan makbuz/sonuçlar okunmalı. 9B08 ayrı QA yeniAPIyi okuyabilir.
 
-### 2026-10-17T11:31:11.126894+03:00 — R1B1 ilk test ve gerçek kayıt
+### 2026-10-17T12:40:51.076000+03:00 — 9B08 request-view29/29 bağımsız QA PASS
 
-Kendi40test ilk39PASS/1fixtureFAIL: Windows write_text satırsonu 750bayt üretirken
-fixture500bekliyordu. Girdi write_bytes ile500sabitlendi; beklenti500 değişmedi.
-40/40PASS; ilk test/FAIL ve normalization kaydı evidence/r1b1-source-af13.
-Linux candidate-v1 exact143kod/config kaynağı hazır. İlk gerçek normal250satır
-Gateway/broker/Dockerread ve yeni report/CLI karşılaştırması başladı. Makbuz
-e931f0e7-bb4f-48c7-a821-573ef9b5e435; /tmp/alaz-r1b1-af13/v1-normal.
-Sonuç henüz yok; aynı iş tekrar başlatılmaz. Scripted model/ücret0. Native
-sonuçlar final-kaynak/standart CI kabulünün yerine geçmez.
+Candidate-v1 exact ürünkopyası üstünde gerçek API29test PASS. Test scripti
+scratch/worktrees/request-r1b2-qa-9b08/scripts/qa/test_request_view_9b08.py;
+ALAZ_R1B2_QA_SOURCE ile hedef seçilir. İlk27PASS/2FAIL test injection COMMITten
+önce kapanıyordu; yalnızhelperdüzeltildi,29testAST/assertionaynı. İlkFAILkaydı
+ve eskihelperkorundu; ürün kusuru diye sunulmaz. Baseline16+API29 ayrıdır.
+Primary bu testleri final frozen source üstünde aynıscriptle tekrar edebilir;
+9B08 ürün/pin/source değişikliği yapmadı. Final native/CI henüz bizim QA kabulü değil.
 
-### 2026-10-17T11:32:07.002022+03:00 — C72E yeni kaynakla full tur
+### 2026-10-17T12:42:47.189008+03:00 — ilk native iki durum PASS
 
-58QA test sabit. Yeni source_capture ve mevcut test/launcher setiyle full
-standard request f4f2a317-31af-40ce-ade3-81dfad2cf78d başladı.
-Önce/sonra hash farkı varsa aday kabul edilmez; native sonuç ayrı kalır.
+Candidate-v1 normal ve after-tool-disconnect PASS; iki rapor JSON/textCLI
+PASS. Her ikisi2provider/1izoleread, toplam4realprocess cleanexit. İlk normal
+174bayttoolçıktısı ikinci gerçek wire isteğinin metadatahashine bağlandı;
+aynıikinciistek bağlantıkoptuğunda handoff_armed ve responsefalse/usageunknown.
+Origin-side rawrequesthash kayıtları ürün requestDigest/byteCount ile eşit.
+Yeni68ownoffline test PASS (46+22); eski81providerregression ayrı.
+9B08 gerçekAPI29PASS notu okundu; dosyası ayrıQAağacında, final kaynakta ayrıca
+çalıştırılacak. Şimdi final6native kapsamı/tamstandart ve yayın sabitlemesi.
+Bu iki koşu sonraki finaltekrarın toplamına eklenmez; modelçıkarımı/ücret0.
 
-### 2026-10-17T11:37:16.630473+03:00 — R1B1 native v2 ve final freeze
+### 2026-10-17T12:46:17.819306+03:00 — 9B08 35API/HTTP QA ve2native bağımsız teyit
 
-İlk native v1 FAIL: plugin temporary sys.path kapanınca lazy source_capture
-import edilemiyor; konteyner0/capture0, otomatik host fallback yok. Aynı sorun
-yeni bootstrap regressionda FAIL olarak yakalandı; import kayıt sırasında
-yüklenerek düzeltildi, aynıtest PASS. Kendi41 + C72E40capture +18snapshot
-ayrı testlerdir. C72E kaynakları ve custodyleri okundu, değiştirilmedi.
-Nativev2 beş durum PASS: normal54bayt,250satır4166bayt,limit,disconnect,optout.
-Rapor/JSON/textCLI geçiyor; ilk üçcapture bound,disconnect/optout0capture.
-ModelVisibility UNKNOWN; asılbayt/çıktıbaytı/modelgörünümü ayrı.
-Son rapor metninde output-range UNKNOWN ve unmatched-history uyarısı
-netleştirildi; bu nedenle bütün kabul yeni final kaynaklarla tekrarlanacak.
-Artık ürün/test/script eklenmez. Source freeze +tamstandart ve5final native
-sırada. Testler snapshot-PASS diye otomatik native/CI sayılmaz.
+AyrıQAda29API+6actualHTTP-handler opt-in test35/35PASS, frozen-v1kaynak.
+16baselineQA1527full içinde;35opt-inhenüzprimarytoplamınaparçadeğil.
+İki v1Linux profili ürünproofhelperkullanmadan nativeDB/sourcecapsule/actual
+originbytehash/174bayttoolID eşleşmesiyle CORROBORATED;144sourcepin ve
+2DockerexactID/2socketkapanışteyidi. Normalresponseobs,aftertooldisconnect
+handoff_armed/responsefalse. YeniNative/model0. QAkarşılaştırıcı
+request-r1b2-qa-9b08/scripts/qa/corroborate_request_native_9b08.py.
+Testler final-test-custody.json ile51toplam(16baseline+35opt-in)sabit.
+İlk2injectionfixtureFAILkorundu, ürünkusuru değil. Finalprimarykaynağı/native
+profillerhazıroluncasamescriptlerle9B08ayrıteyit; ürüntekAF13yazıcısı.
 
-### 2026-10-17T11:39:17.576915+03:00 — son kabul işlemleri
+### 2026-10-17T12:46:53.269327+03:00 — R1B2 final kaynak sabitlemesi
 
-Final225ürün/test/config/script kaynak hashleri final-source-freeze.json içinde.
-Tamstandart request d11b7c06-e560-4448-8876-987446f8dbee; native5final senaryo
-request6a1cf039-1680-491d-9bcd-fdd6e4a78c32 /tmp/alaz-r1b1-af13/final-v3.
-Önceki v2 beşPASS yeni kaynak kabulü olarak devralınmadı. Bu iki işlem
-sonuçlanmadan aynısı tekrar çalıştırılmayacak. Ürün kaynakları sabit; yalnız
-doc/evidence/status yazılabilir. C72E58QA kaynağı okunup hashleri sabit tutuldu.
-R1B2/source→provider wire binding ve D3B/M1/M2 hâlâ açık.
+68primary yeni test ve16bağımsızbaseline standart keşfinde;9B08 opt-in29API+6HTTP
+ayrı çalıştırıldı35/35PASS, assertion kaynağı değiştirilmedi. Opt-in35ana
+standart sayısına dahil değildir. Yeni ürün/kaynak testleri artık sabitlenecek.
+publication-source-freeze.json kapsamıyla full standart ve6nativefinal sırada.
+Ürünsha request_view29cc8a80, providerprobe5b8bffd7. 9B08 son nativeyi kendi
+read-only scriptiyle kontrol edebilir; ekstra koşu modeli başlatmak yok.
+Sonraki geçici Linuxcode /tmp/alaz-r1b2-af13/publication-v2 ve pub-* olacaktır.
+Önceki2nativePASS ayrı adaykanıtı olarak korunur, final6ile8senaryo denmez.
 
-### 2026-10-17T11:39:38.253148+03:00 — C72E60QA final freeze ve loader karşılaştırması
+### 2026-10-17T12:48:44.261319+03:00 — final kabul işlemleri
 
-İlk58QA hiç değişmedi. Gerçek native import kusuru için ayrı2fresh-process
-regression eklendi; C72Etoplam60. İlk yeni2test düzeltme sonrası2PASS; aynı
-testler retained-v1 privatecopy ile1FAIL/1PASS. Bu sonradan pre-fix karakterizasyonu,
-geçmiş ilkred-test iddiası değil. Actual shim sys.path removal ile import
-ModuleNotFoundError doğrulandı. ÜrünAF13 bootstrap-load düzeltmesi kullanılır.
-Son60QA recheck exit0, drift0; final-targeted.*. İki eski full
-source-change NOT_ACCEPTED korunur. Final standard ayrı başlatılacak; test
-seti artık60sabit, yeni test/script/ürün C72E tarafından eklenmeyecek.
+235source freeze ile fullstandard39c7d7e9-23e8-4212-a0b8-a5894a1c1a67 çalışıyor.
+Native6case fe2edca5-aa49-4d48-bc1d-4987cf70ade3; code publication-v2,outputs pub-*.
+Yeni native tekrar göndermeden makbuz okunmalı. Yalnız docs/evidence/status değişir;
+ürün/test/script/config sabit. 9B08finalcorroboration bu6son profile yapılabilir.
 
-### 2026-10-17T11:44:38.738204+03:00 — C72E-G03 OPEN, final partial native kabulü durdur
+### 2026-10-17T12:54:30.382861+03:00 — 9B08 final35QA ve6native bağımsız kabul tamamlandı
 
-Bağımsız actual terminal read: final-partial250satır dosyada toolcall args
-yalnızpath; offset/limit YOK. Capture requestedLimit200 ama native sonucunda
-total_lines250/truncatedfalse ve line201/250 içerikteVAR; output5426bayt.
-Guard default200ü original handlera eklemeden geçiriyor, native default farklı.
-Kanıt evidence/r1b1-qa-c72e/native-pagination-observation.txt +finding-g03.json.
-BeşprobePASS bu yeni sınırı kapatmaz; partial default kapsam NOT_ACCEPTED.
-QAürün değiştirmedi. Default/effective limit gerçek çağrıya bağlanıp taze
-partialnative yeniden sınanmalı. Full1504/1504 stablePASS(224filesdrift0) bu
-kapsam hatasını yakalamadı; regresyon eklenip final source tekrar sabitlenecek.
+Son request_view29cc8a80 üstünde değişmeyen35QA PASS/234source drift0.
+Readonlyscript publication-v2 pub-normal/partial/limit/disconnect/after-tool/
+optout6profile CORROBORATED;146programhashsame. originbytehash/claim/egress/
+sourcecapsule/terminaltext eşleşmesi,5DockerIDyok/6socketyok. Partial4166→594
+→11679requestbytes. Yanıtkayıpları handoff_armed kalır. YeniQA native/model0.
+Primaryfull1595makbuzuokundu;QAroot1527ve35optinsayısıyla toplanmaz.
+QA alanında native-publication-remote-verbatim.json gerçekremote baytları;
+öncekiJSONkopyasındakiLF/CRLFfarkı açık tutuldu. Wrapper sonsysNameError
+remotePASSsavedsonrasıydı; hiçbirnative tekrarçalıştırılmadı. Ürünkodudeğişmedi.
 
-### 2026-10-17T11:45:28.112532+03:00 — ilave gerçek kontrol: G03
+### 2026-10-17T12:57:19.038201+03:00 — son kabul ve yayın hazırlığı
 
-Finalv3 beşscript/CLI PASS ve1504tamtest PASS tarihsel olarak korunur; ilave
-partial-output kontrolü FAIL: yeni capture kaydı limit belirtilmeyince200
-varsaymış, gerçek native handler250satırın hepsini döndürmüş. Bu yüzden
-partial semantik kabulü henüz yok. G03 çözümü: eksik offset/limit NULL, yalnız
-açık args kaydedilir; explicit null yine reddedilir. Yeni3regresyonun ilk
-1FAILi korunur, aynıtestle fix tekrar ediliyor. Native model fixture açık
-read-limit20 göndererek250satırın gerçekten kısmi okunmasını sınayacak.
-Önceki makbuzlar/saatler/test beklentileri silinmez. Yeni son kaynak+full+native
-tekrarı gerekiyor; eski1504 sonucu sonraki sürüme taşınmaz.
+Tamstandart39c7d7e9-23e8-4212-a0b8-a5894a1c1a67 1595PASS; native6final
+fe2edca5-aa49-4d48-bc1d-4987cf70ade3 PASS,source değişmedi. 29safe dosya
+SSHüzerinden bytehashle geldi; actual request/bodytoolmetadata eşleşmesi ve
+DockerexactID/socketyokluğu read-only teyit edildi. Önceki2candidate korunur.
+9B08 report/51testkökeni korunur;16standart+35optin ayrı. Son9B08native6teyidi
+ayrıca okunacak, önceki2teyit altısonprofili kapatmış sayılmıyor.
+Şimdi yalnız buişin seçilmiş dosyaları exactindexkontrol+rootgate ardından
+commit/push; localPASS CIbaşarısı değildir. Mainmerge yok.
 
-### 2026-10-17T11:47:06.792869+03:00 — C72E G03 sözleşme ayrımı
+### 2026-10-17T13:03:14.811539+03:00 — bağımsız son kabul ve exact-index yayın kontrolü
 
-Primary ham requestedOffset/Limit alanında omittedNULL düzeltmesi seçti; native
-varsayılan değiştirilmez. C72E ilk3taslak testi bu yeniAPIyi görmeden
-requested=effective beklediğinden2FAIL, testtaslağı ve gerekçe aynen korundu.
-Doğru sözleşme omittedNULL/explicitdeğer/hamfingerprint üçtesti yeniüründe3PASS;
-aynıtestler gerçek retained-v3 privatecopy üzerinde2FAIL/1PASS (yanlış200ve1
-varsayımları). Bu sonradan pre-fix deneyi; geçmiş red-test iddiası değil.
-İlk60QA değişmedi. C72Etoplam63; yeni test eklenmeyecek. Kritik native gerçek
-kısmi çıktı limiti20 ve250satırtesti bağımsız yeniden okunacak.
-
-### 2026-10-17T11:49:46.487499+03:00 — C72E G03 sonrası full başlatıldı
-
-63QA kaynağı publication-test-custody.json ile sabit. Full standard işlem
-6d811202-83cd-4f9a-9537-a6433105ed21; publication-full-source-before.json.
-G03 taslaktestte requested/effective yanlış varsayımı ayrı belgelenerek
-düzeltildi; eski60test hiç değişmedi, retained-v3 gerçek yanlışdefaultu aynı
-son3test2FAILle gösteriyor. Yeni native bağımsız teyit henüz beklenir.
-
-### 2026-10-17T11:53:12.325729+03:00 — C72E final teslim63QA/1511full/5native teyit
-
-G03 sonrası bağımsız full1511/1511 PASS exit0/skip0;226source/config/test
-dosyasında drift0/yeni0.63QA bunun içinde. İlk60test unchanged; ham-request
-sözleşmesine düzeltilen3yeni testin ilk taslağı/sonradan retained-v3FAILleri
-ayrı belgelenir. Yeni native0; primarypublication-v4 beşkoşu aynıfinalcode
-hashleriyle SQLite/capture/sourcecapsule/terminaltext/toolID düzeyinde readonly
-5/5CORROBORATED. DörtDockerexactIDyok,beşsocketyok. Partial250satır4166bayt
-input→açıklimit20→594baytoutput; line21/250yok,truncatedtrue. G03closed.
-ModelVisibility UNKNOWN, G01FSsilent hâlâ iddia değil. Eski full1421/1501
-source-drift NOT_ACCEPTED ve G03öncesi1504PASS korunur.
-QA raporu+63test+evidence/r1b1-qa-c72e hazır; QAartık yeni dosya/testeklemeyecek.
-ÜrünGitCI AF13 tek sahibi; buQA ürün/commit/push yapmadı.
-
-### 2026-10-17T11:57:50.871397+03:00 — final kabul ve yayın hazırlığı
-
-Fullfaf7b139-7371-4b17-b11e-a27dcebdcf2e1511PASS; native66a87290-fe24-42c2-8d19-20b10fa73b85v4beşPASS.
-Ekreadonlycheck4containerexactIDyok/5socketyok/20,21,250sınırını doğruladı.
-26arındırılmış dosya hashli geldi; DB/sır/privateCLI kopyalanmadı. İlkG02FAIL,
-G03darPASS/semantikFAIL ve eski1504sonuçlar korundu. Yeni1530gibi toplama yok.
-Docupdateec1392df-4d51-4f6d-b92f-34beec8c5eea queue deadline/not_started idi;
-etki olmadığı doğrulandıktan sonra bu yeni preconditionlı yazı yapıldı.
-Şimdi yalnız buR1B1 dosyaları yayımlanacak; main merge yok.
-
-### 2026-10-17T12:01:08.277314+03:00 — R1B1 exact-index teslim
-
-1511PASS ve5nativev4PASS kaynaklarının227si indexle byteeşit; newline farkı0.
-BağımsızC72E63test/tam1511PASS ve5native readonlycorroboration/G03closure
-raporları okundu; subsetler toplanmadı. RootgatePASS,2sourcegitlink/10component
-korundu. HamQAterminal/patch2dosya whitespace değiştirmeden UTF8JSON string
-olarak verbatim-qa-publication-texts.json içinde yayımlanır; aynıraworiginal
-ignoredruntime/r1b1-publication-verbatim altında. Kod/test/sonuç değiştirilmedi.
-Seçilmiş bu paketin commit/push işlemi yapılıyor; exact CI henüz PENDING/NOTRUN.
-
-### 2026-10-17T12:06:45.708443+03:00 — kod CI kapanışı ve durum teslimi
-
-Kod 15eca31e3522ee4c2215b3a3d4f8df9b217e7559 yayımlandı; local/origin eşit ve temiz.
-GitHub exactSHA alaz/local-ci SUCCESS iki okuma ile doğrulandı; statusID
-56587531642,2026-10-17T09:03:38Z. API remote test sayısı sağlamaz.
-227son source hash aynı. Bu commit yalnız doc/status/CI/özet günceller;
-yeni ürün/test/native/model çalışması yok. Önceki bütün FAIL/sınırlı PASS
-kanıtları korunur. Main b8ff44ff105965ba3f6f9fa9559ad96f2c084815 aynı.
-Kesin sonraki uygulama R1B2 provider request-view; R1B1 source/return
-bağlaması modelgördü/başardı iddiası değildir. G01/D3B/HYB006/M1/M2 açık.
+9B08 altı finalprofilCORROBORATED raporu doğrudan okundu; remoteverbatim hash
+ve6native makbuz hashleri primarykopyaylaeşit.16baseline+35optin ayrımı korunur.
+235source değişmedi. Seçili106dosya stage edildi; whitespacecheck0. Rootgate ve
+exact-index bayt karşılaştırması şimdi çalışır; ardından yalnız seçilmişpaket
+commit/push. Çalışma tekrar/nativesayısı artmadı, main/önceki ağaçlar korunur.

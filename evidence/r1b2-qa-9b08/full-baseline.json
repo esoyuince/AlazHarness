@@ -1,0 +1,13 @@
+{
+  "scope": "full standard on immutable R1B1 base e2a5b30 plus 16 independently authored QA cases; NOT R1B2 feature acceptance",
+  "baseCommit": "e2a5b300568425358e181954cffb697ace2d032b",
+  "tests": 1527,
+  "exitCode": 0,
+  "skippedReported": false,
+  "sourceFiles": 228,
+  "changed": [],
+  "added": [],
+  "seconds": 123.592,
+  "observedAt": "2026-10-17T12:31:10.451621+03:00",
+  "result": "PASS"
+}

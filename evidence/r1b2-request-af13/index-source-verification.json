@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-17T13:03:14.811539+03:00",
+  "sourceFiles": 235,
+  "workingTreeMatchesFreeze": true,
+  "gitIndexBytesMatchFreeze": true,
+  "mismatches": [],
+  "scope": "all measured product/script/test/config and source-lock bytes, not documentation/transcript newline identity"
+}

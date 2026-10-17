@@ -1,0 +1,23 @@
+AlazHarness host report v1
+Snapshot: verified_snapshot
+Native task result: failed; nativeCompleted=false
+Task evidence: canonical_terminal_verified
+Completion reason: UNKNOWN
+Native run usage (input/output/total): 120/20/140
+Profile/principal observed usage (input/output/total): 120/20/140
+Usage coverage: complete_for_retained_claims; unknown attempts=0
+Reserved provider attempts: 1; wire delivery count: UNKNOWN
+Reserved exposure: 163840 tokens; 196608 micro-USD (NOT an invoice)
+Native completion is NOT independent verification of the requested goal.
+Scope totals are NOT attributed to this task; numeric comparison unavailable.
+Read-only snapshot. No execution permission, retry, repair or automatic refund.
+Evidence: verified_record_snapshot
+Provider request inclusion is recorded; model processing/understanding: UNKNOWN.
+Retained text references: 2
+ev_263861a2d66f3b97122579c1e97b960112693eb802fef9d2803b09c164787023 retained_tool_result stored UTF-8 bytes=174; tool-output coverage of original source=UNKNOWN
+ev_d25f3a178bc131113d511ced8ee2296a61ebbe9a057074395a979b0db783580e native_final_response stored UTF-8 bytes=183; tool-output coverage of original source=UNKNOWN
+Captured input snapshot: 54 raw bytes; status=returned; tool coverage=UNKNOWN; model view=UNKNOWN
+Profile provider request: broker_response_observed; bytes=10772; selected evidence inclusions=0; initiating run=UNKNOWN; HTTP response observed=True
+Handoff intent is not a send receipt; source provenance is not request ownership or goal success.
+Application state is not written; SQLite auxiliary filesystem files may be created.
+Retained content and local views do NOT verify an effect, comprehension or goal.

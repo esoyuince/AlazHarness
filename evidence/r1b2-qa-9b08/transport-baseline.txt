@@ -1,0 +1,15 @@
+test_cancellation_after_preparation_is_not_delivery_or_refund (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_cancellation_after_preparation_is_not_delivery_or_refund) ... ok
+test_crlf_and_lf_are_different_payloads (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_crlf_and_lf_are_different_payloads) ... ok
+test_json_key_order_does_not_change_canonical_fingerprint (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_json_key_order_does_not_change_canonical_fingerprint) ... ok
+test_lost_commit_ack_never_reaches_ipc_and_no_second_authorization (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_lost_commit_ack_never_reaches_ipc_and_no_second_authorization) ... ok
+test_lost_ipc_reply_retains_one_grant_one_reservation (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_lost_ipc_reply_retains_one_grant_one_reservation) ... ok
+test_model_generated_proof_remains_opaque_payload_not_authority (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_model_generated_proof_remains_opaque_payload_not_authority) ... ok
+test_nested_caller_mutation_after_preparation_does_not_change_frozen_request (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_nested_caller_mutation_after_preparation_does_not_change_frozen_request) ... ok
+test_precommit_failure_never_reaches_ipc (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_precommit_failure_never_reaches_ipc) ... ok
+test_tool_identity_change_invalidates_reserved_request (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_tool_identity_change_invalidates_reserved_request) ... ok
+test_unicode_normalization_is_not_silently_applied (test_request_transport_qa_9b08.RequestTransportIndependentQA.test_unicode_normalization_is_not_silently_applied) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.419s
+
+OK

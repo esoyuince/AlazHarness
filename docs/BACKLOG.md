@@ -152,3 +152,12 @@ Opt-in isolated source snapshot and redacted return binding use the existing
 native state owner. Acceptance is in docs/R1B1-SOURCE-CAPTURE.md. Next R1B2 is
 provider request-view binding; full capture is not full output or model visibility.
 D3B, real provider, HYB006, M1/M2 remain open. Git/CI is tracked in status.md.
+
+## R1B2 normalized provider request views
+
+Opt-in broker request metadata is implemented; see docs/R1B2-REQUEST-VIEW.md.
+Prepared canonical content, write-ahead handoff intent, signed broker HTTP response
+observation and provider validation are distinct. Source provenance does not
+establish request initiator or model processing. Continue D3B OS credential/egress
+and qualified real-provider acceptance; R2 independent goal verification and
+HYB006 skill transfer must preserve these evidence boundaries. Full M1/M2 open.

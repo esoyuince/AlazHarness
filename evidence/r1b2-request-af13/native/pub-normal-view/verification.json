@@ -1,0 +1,44 @@
+{
+  "result": "PASS",
+  "scenario": "normal",
+  "requestViewEnabled": true,
+  "nativeReceiptSha256": "41e117997aa373e1056d4e64d20916d0277a5d460e507e34cae93d67d4a1da26",
+  "originRequests": 2,
+  "manifestRows": 2,
+  "requests": [
+    {
+      "requestDigest": "9df647b58fb63bae19a86cf93cfada8236b62ee438338e4a10d949832ca6f242",
+      "requestBytes": 11222,
+      "state": "broker_response_observed",
+      "toolMessages": 1,
+      "selectedInclusions": 1
+    },
+    {
+      "requestDigest": "36af902f37b0d8bcf7ad2655f5d195b2fbfc9f31276ccb7afec06a2efa76e989",
+      "requestBytes": 10773,
+      "state": "broker_response_observed",
+      "toolMessages": 0,
+      "selectedInclusions": 0
+    }
+  ],
+  "actualPartialRead": false,
+  "sourceBytes": 54,
+  "toolOutputBytes": [
+    174
+  ],
+  "nativeStatus": "completed",
+  "modelVisibility": "unknown",
+  "initiatingRunVerified": false,
+  "mainStoresUnchanged": true,
+  "auxiliaryFilesChanged": [
+    "runs_idempotency.db-shm",
+    "runs_idempotency.db-wal"
+  ],
+  "newNativeRuns": 0,
+  "inferenceCalls": 0,
+  "paidCalls": 0,
+  "cliFormats": [
+    "json",
+    "text"
+  ]
+}

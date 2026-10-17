@@ -15,6 +15,7 @@ import sqlite3
 import time
 from execution_budget import ExecutionLedger, ExecutionDenied, CONFIG, CLAIM, seal
 from recovery_inspector import _json, _load
+import request_view
 
 EGRESS='alaz.execution.egress.v1.'
 HEX32=re.compile(r'[a-f0-9]{32}\Z')
@@ -68,7 +69,8 @@ class BrokerLink:
                 and not any(c in s for c in '\x00\r\n') and '..' not in s.split('/'),'invalid_broker_socket')
 
 
-def authorize_egress(ledger:ExecutionLedger,link:BrokerLink,ticket:str,payload:dict,*,clock=time.time)->dict:
+def authorize_egress(ledger:ExecutionLedger,link:BrokerLink,ticket:str,payload:dict,*,clock=time.time,record_view=False)->dict:
+    require(type(record_view) is bool,'invalid_request_view_setting')
     require(type(ledger) is ExecutionLedger and type(link) is BrokerLink,'trusted_egress_owner_required')
     _hex(ticket,HEX32,'invalid_execution_ticket')
     frozen=_load(_json(payload),2_000_000)
@@ -92,6 +94,7 @@ def authorize_egress(ledger:ExecutionLedger,link:BrokerLink,ticket:str,payload:d
         key=EGRESS+ledger.context.scope+'.'+ticket
         require(c.execute('SELECT 1 FROM state_meta WHERE key=?',(key,)).fetchone() is None,'egress_already_authorized')
         c.execute('INSERT INTO state_meta(key,value) VALUES(?,?)',(key,_json(seal(grant))))
+        if record_view:request_view.prepare_in_transaction(c,ledger,grant,frozen)
         return grant
     durable=ledger._write(commit)
     # No signature or sendable object is returned on an unknown COMMIT response.

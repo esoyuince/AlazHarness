@@ -1,0 +1,8 @@
+{
+  "scope": "unchanged independent 9B08 opt-in cases on current product, synthetic owner/native/IPC",
+  "exitCode": 0,
+  "tests": 29,
+  "observedAt": "2026-10-17T12:44:40.645443+03:00",
+  "testSha256": "062614c161b277792123647dc42ac84f81217d91f4b12741a5f7061f455732c0",
+  "notAddedToStandardTotal": true
+}

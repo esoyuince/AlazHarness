@@ -1,0 +1,264 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_snapshot",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "a48c1e2903cf7c0f9b86b1e337792d6729c1ec975474c943474e758e098c4772",
+  "epoch": 1,
+  "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+  "task": {
+    "runId": "run_c56fe1af55bb40bf982044bd2f82d2a4",
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "admissionId": "52dc81f1d12f48428cfd354f38d7c283",
+    "sessionId": "run_c56fe1af55bb40bf982044bd2f82d2a4",
+    "executionGeneration": 1,
+    "outcome": "failed",
+    "resultDigest": "498e01d7ce70142bb24b4fca5325a51a88029f3069b5c6d5c286eb55a0a79bd8",
+    "taskSucceeded": false,
+    "successBasis": "native_terminal_contract",
+    "goalAchievementIndependentlyVerified": false,
+    "nativeStatus": "failed",
+    "nativeAdmissionOutcome": "failed",
+    "admissionOutcomeIsTaskSuccess": false,
+    "completionReason": null
+  },
+  "nativeReportedUsage": {
+    "source": "native_run_aggregate",
+    "scope": "run",
+    "coverage": "complete_fields",
+    "inputTokens": 120,
+    "outputTokens": 20,
+    "totalTokens": 140,
+    "physicalAttemptCoverageVerified": false,
+    "billedAmount": null
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+    "model": "alaz-scripted",
+    "snapshotDigest": "09b602c1803627f749679eac9e8f93738bbcdeb95749dc0a19cfc3a0b6344ee6",
+    "quarantined": false,
+    "providerAttempts": {
+      "reserved": 1,
+      "settled": 1,
+      "unsettled": 0,
+      "usageKnown": 1,
+      "usageUnknown": 0,
+      "transportErrors": 0,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": 120,
+      "outputTokens": 20,
+      "totalTokens": 140,
+      "coverage": "complete_for_retained_claims",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 1,
+      "handlerReturns": 1,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 163840,
+      "costMicrousd": 196608,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 1,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 0,
+      "toolCalls": 0,
+      "tokens": 327680,
+      "costMicrousd": 803392,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "v1_claims_have_no_trusted_run_binding",
+    "numericDifference": null
+  },
+  "warnings": [
+    "execution_totals_not_attributed_to_run",
+    "reserved_exposure_is_not_an_invoice",
+    "native_completion_is_not_independent_goal_verification"
+  ],
+  "evidenceView": {
+    "evidenceViewVersion": 1,
+    "status": "verified_record_snapshot",
+    "available": true,
+    "inventoryScope": "retained_tool_text_and_final_response",
+    "recordDigest": "9040db4477c8c69978ab717f4d23dc53b41c159e5a05bc9c24e2827733a3b30c",
+    "recordDigestBasis": "canonical_current_terminal_record_json",
+    "historyAvailability": "retained",
+    "historyCompleteness": "not_proven",
+    "references": [
+      {
+        "evidenceId": "ev_263861a2d66f3b97122579c1e97b960112693eb802fef9d2803b09c164787023",
+        "kind": "retained_tool_result",
+        "messageIndex": 1,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "3c6094f97495ab89a487c87475b93705c8c726b2503bb21b1dbfd0a8f147338f",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 174
+        },
+        "pairing": "structurally_paired_not_execution_proof",
+        "executionAttribution": "isolated_return_bound_to_admission",
+        "originalSource": {
+          "sha256": "6959775b111adb7d238482ec869debaca33752f8216f9cf175faed79b54a8852",
+          "coverage": "captured_snapshot_complete",
+          "availability": "unknown",
+          "captureId": "sc_1821d57d9fd64fc64a25b7f40abcf6e00a585f48ea8142dc4bce19d79daf737c",
+          "bytes": 54,
+          "toolOutputCoverage": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      },
+      {
+        "evidenceId": "ev_d25f3a178bc131113d511ced8ee2296a61ebbe9a057074395a979b0db783580e",
+        "kind": "native_final_response",
+        "messageIndex": null,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "6143f1bfe40fa25cd1f2a21faab8e1ed2d2dcad56b4072b28816f250b391f0a6",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 183
+        },
+        "pairing": "not_applicable",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "localView": null,
+    "modelVisibility": "unknown",
+    "writesPerformed": false,
+    "grantsExecutionPermission": false,
+    "goalAchievementVerified": false,
+    "warnings": [
+      "record_membership_is_not_independent_content_verification",
+      "retained_text_is_not_original_file_coverage",
+      "no_provider_request_view_manifest",
+      "unmatched_tool_messages_not_attributed_to_this_execution"
+    ],
+    "sourceCaptures": [
+      {
+        "captureId": "sc_1821d57d9fd64fc64a25b7f40abcf6e00a585f48ea8142dc4bce19d79daf737c",
+        "status": "returned",
+        "captureBasis": "trusted_isolated_input_snapshot",
+        "sourceSha256": "6959775b111adb7d238482ec869debaca33752f8216f9cf175faed79b54a8852",
+        "sourceBytes": 54,
+        "capturedRange": {
+          "unit": "raw_bytes",
+          "start": 0,
+          "end": 54,
+          "endExclusive": true
+        },
+        "snapshotCoverage": "complete",
+        "currentSourceAvailability": "unknown",
+        "requestedLines": {
+          "offset": null,
+          "limit": null,
+          "basis": "explicit_arguments_only",
+          "actualOutputCoverage": "unknown"
+        },
+        "returnedOutput": {
+          "sha256": "3c6094f97495ab89a487c87475b93705c8c726b2503bb21b1dbfd0a8f147338f",
+          "utf8Bytes": 174,
+          "processOutcome": "completed",
+          "deliveryVerified": false
+        },
+        "matchedEvidenceId": "ev_263861a2d66f3b97122579c1e97b960112693eb802fef9d2803b09c164787023",
+        "modelVisibility": "unknown",
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "sourceCaptureVersion": 1,
+    "storageEffects": {
+      "applicationStateWrites": false,
+      "filesystemSilenceGuaranteed": false,
+      "sqliteAuxiliaryFilesMayBeCreated": true
+    },
+    "providerRequestViews": {
+      "version": 1,
+      "inventoryScope": "profile_provider_requests",
+      "requests": [
+        {
+          "requestViewId": "rv_93d6098a560d6c3744439dcb59b4cf7bf6f2acae3d5e5f5682120b19d7c1c039",
+          "requestDigest": "82a1ff9ec2757345f8616c31bf4ec16000ec613885cb050d18ab4123a05f00c8",
+          "requestBytes": 10772,
+          "serialization": "canonical_json_utf8",
+          "messageCount": 2,
+          "toolMessageCount": 0,
+          "state": "broker_response_observed",
+          "httpStatus": 200,
+          "responseSha256": "23f056d6cdb6cb9393ab47945303ce555eebf27028cbb3ab773ed6922b5bc579",
+          "responseBytes": 455,
+          "brokerHttpResponseObserved": true,
+          "providerResponseValidated": true,
+          "initiatingRunId": null,
+          "initiatingRunVerified": false,
+          "selectedEvidenceInclusions": [],
+          "modelProcessingVerified": false
+        }
+      ],
+      "selectedTaskCostAttribution": "not_proven",
+      "writesPerformed": false,
+      "grantsExecutionPermission": false,
+      "modelProcessingVerified": false,
+      "warnings": [
+        "handoff_intent_is_not_physical_send_proof",
+        "http_response_is_not_model_processing_or_downstream_delivery",
+        "source_provenance_does_not_identify_request_initiator"
+      ]
+    }
+  }
+}

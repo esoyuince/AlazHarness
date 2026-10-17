@@ -1,0 +1,231 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_snapshot",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "fefe1e42a3a8778f93cb0fabb1eb8136e1f0740b5c75a4f93aad9e76d4171e64",
+  "epoch": 1,
+  "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+  "task": {
+    "runId": "run_6a6d1fb345ce4b6799bdf57990183682",
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "admissionId": "466dafc7887c456d8d613e25b2af7cc2",
+    "sessionId": "run_6a6d1fb345ce4b6799bdf57990183682",
+    "executionGeneration": 1,
+    "outcome": "completed",
+    "resultDigest": "fd74cf6d294e1a30920a286b9765eec20ab6b1ff6e9f545fde62d7f93c44abf8",
+    "taskSucceeded": true,
+    "successBasis": "native_terminal_contract",
+    "goalAchievementIndependentlyVerified": false,
+    "nativeStatus": "completed",
+    "nativeAdmissionOutcome": "completed",
+    "admissionOutcomeIsTaskSuccess": false,
+    "completionReason": null
+  },
+  "nativeReportedUsage": {
+    "source": "native_run_aggregate",
+    "scope": "run",
+    "coverage": "complete_fields",
+    "inputTokens": 240,
+    "outputTokens": 40,
+    "totalTokens": 280,
+    "physicalAttemptCoverageVerified": false,
+    "billedAmount": null
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "ef71a5e1cc496c944fd138c44e6b543e47403a8802da4de1d3ba57acaf2699ed",
+    "model": "alaz-scripted",
+    "snapshotDigest": "652b5c2951bf0a6a6859ac48887a89a7ecfa3b5252d50c0a84c7f760c6e724d4",
+    "quarantined": false,
+    "providerAttempts": {
+      "reserved": 2,
+      "settled": 2,
+      "unsettled": 0,
+      "usageKnown": 2,
+      "usageUnknown": 0,
+      "transportErrors": 0,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": 240,
+      "outputTokens": 40,
+      "totalTokens": 280,
+      "coverage": "complete_for_retained_claims",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 1,
+      "handlerReturns": 1,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 327680,
+      "costMicrousd": 393216,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 3,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 1,
+      "toolCalls": 0,
+      "tokens": 163840,
+      "costMicrousd": 606784,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "v1_claims_have_no_trusted_run_binding",
+    "numericDifference": null
+  },
+  "warnings": [
+    "execution_totals_not_attributed_to_run",
+    "reserved_exposure_is_not_an_invoice",
+    "native_completion_is_not_independent_goal_verification"
+  ],
+  "evidenceView": {
+    "evidenceViewVersion": 1,
+    "status": "verified_record_snapshot",
+    "available": true,
+    "inventoryScope": "retained_tool_text_and_final_response",
+    "recordDigest": "950dd4c3dec0032e61d7e10ed8a982ac299e4a729273d5e82e9ee9bd6d079ac4",
+    "recordDigestBasis": "canonical_current_terminal_record_json",
+    "historyAvailability": "retained",
+    "historyCompleteness": "not_proven",
+    "references": [
+      {
+        "evidenceId": "ev_fc87fb5caa14b6e2d4a186bd470a0d5047a9d7502a0076aad2de0facf73422b7",
+        "kind": "retained_tool_result",
+        "messageIndex": 1,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "f291dbfed2c617b68ef99244f8bb8cb442877ef94d5e8e901e3dfd285a4f4917",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 174
+        },
+        "pairing": "structurally_paired_not_execution_proof",
+        "executionAttribution": "isolated_return_bound_to_admission",
+        "originalSource": {
+          "sha256": "a61b8f54a6013ff68dec8fbc91d303ae59a62bca55334890b37e942d242cd9fe",
+          "coverage": "captured_snapshot_complete",
+          "availability": "unknown",
+          "captureId": "sc_36af494552e0d2e1230c758763ebdb36a12838663a8df7217184ab5f43efc88e",
+          "bytes": 54,
+          "toolOutputCoverage": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      },
+      {
+        "evidenceId": "ev_746c40ba62120d9f9e0e1907a9d2cfa32c06b7cff4354eb888cd89ce3ea9a9c4",
+        "kind": "native_final_response",
+        "messageIndex": null,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "07446e486dd738d6fc05fb50e873f60e75b18fd46a5ebd81123b25bd136c7147",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 64
+        },
+        "pairing": "not_applicable",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "localView": null,
+    "modelVisibility": "unknown",
+    "writesPerformed": false,
+    "grantsExecutionPermission": false,
+    "goalAchievementVerified": false,
+    "warnings": [
+      "record_membership_is_not_independent_content_verification",
+      "retained_text_is_not_original_file_coverage",
+      "no_provider_request_view_manifest",
+      "unmatched_tool_messages_not_attributed_to_this_execution"
+    ],
+    "sourceCaptures": [
+      {
+        "captureId": "sc_36af494552e0d2e1230c758763ebdb36a12838663a8df7217184ab5f43efc88e",
+        "status": "returned",
+        "captureBasis": "trusted_isolated_input_snapshot",
+        "sourceSha256": "a61b8f54a6013ff68dec8fbc91d303ae59a62bca55334890b37e942d242cd9fe",
+        "sourceBytes": 54,
+        "capturedRange": {
+          "unit": "raw_bytes",
+          "start": 0,
+          "end": 54,
+          "endExclusive": true
+        },
+        "snapshotCoverage": "complete",
+        "currentSourceAvailability": "unknown",
+        "requestedLines": {
+          "offset": null,
+          "limit": null,
+          "basis": "explicit_arguments_only",
+          "actualOutputCoverage": "unknown"
+        },
+        "returnedOutput": {
+          "sha256": "f291dbfed2c617b68ef99244f8bb8cb442877ef94d5e8e901e3dfd285a4f4917",
+          "utf8Bytes": 174,
+          "processOutcome": "completed",
+          "deliveryVerified": false
+        },
+        "matchedEvidenceId": "ev_fc87fb5caa14b6e2d4a186bd470a0d5047a9d7502a0076aad2de0facf73422b7",
+        "modelVisibility": "unknown",
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "sourceCaptureVersion": 1,
+    "storageEffects": {
+      "applicationStateWrites": false,
+      "filesystemSilenceGuaranteed": false,
+      "sqliteAuxiliaryFilesMayBeCreated": true
+    }
+  }
+}

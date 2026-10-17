@@ -1,0 +1,152 @@
+{
+  "files": [
+    {
+      "path": "publication-suite.json",
+      "bytes": 8119,
+      "sha256": "b2583f115c1740b9f4772a259a1ee41020c3b87fba1b993f168bbe34779207f0"
+    },
+    {
+      "path": "candidate-v1-suite.json",
+      "bytes": 3071,
+      "sha256": "0ddf8ccc059341a68f7f5930d258f5137b72f8f65e93afb6f0bbef46c6565240"
+    },
+    {
+      "path": "pub-normal/broker-native-result.json",
+      "bytes": 21306,
+      "sha256": "41e117997aa373e1056d4e64d20916d0277a5d460e507e34cae93d67d4a1da26"
+    },
+    {
+      "path": "pub-normal-view/report.json",
+      "bytes": 12550,
+      "sha256": "2d39da0d6acf6332ae7263177a13ea9d8926c913c6ec419d6f32fe821b9dbbb3"
+    },
+    {
+      "path": "pub-normal-view/report.txt",
+      "bytes": 1842,
+      "sha256": "57982fa4dc4bb001f02e036627ac824dddcb9c97984f5182e621db3b31d34748"
+    },
+    {
+      "path": "pub-normal-view/verification.json",
+      "bytes": 1115,
+      "sha256": "f8fe63fd7d7882ac3059189cb09e955abface23b8295cf631a8832c4431000d1"
+    },
+    {
+      "path": "pub-partial/broker-native-result.json",
+      "bytes": 21307,
+      "sha256": "79e2d932b17e7f2acb9f9f94ef01b04e8d624c5e76e8653d916bdb4185b538da"
+    },
+    {
+      "path": "pub-partial-view/report.json",
+      "bytes": 12554,
+      "sha256": "3b101ec87ba324eab2fde7604195c6cdb24775b2dbe46032f90b84cc4d1ccb17"
+    },
+    {
+      "path": "pub-partial-view/report.txt",
+      "bytes": 1844,
+      "sha256": "9c257a08eede0f14c20b5ecd1b4121cfb2d864dc02ae2e0b4d74a230893b5730"
+    },
+    {
+      "path": "pub-partial-view/verification.json",
+      "bytes": 1116,
+      "sha256": "a37b60325e599d1baa3d109ba967458ebbb929e15669626f2ddfd07c4674d1b5"
+    },
+    {
+      "path": "pub-limit/broker-native-result.json",
+      "bytes": 20637,
+      "sha256": "54e00d9188b2a8b69019a68d38aacc109ba9deef15d2970b7aa1538b097ce01c"
+    },
+    {
+      "path": "pub-limit-view/report.json",
+      "bytes": 9290,
+      "sha256": "1c70e527c3704ff84e4ef608431ccb9291dfbade94b6ca62d0b4972cba37e8bb"
+    },
+    {
+      "path": "pub-limit-view/report.txt",
+      "bytes": 1692,
+      "sha256": "4207585afb028ed9fb381bd98c10c58638f2e282a6027722a99dcca486323ef6"
+    },
+    {
+      "path": "pub-limit-view/verification.json",
+      "bytes": 889,
+      "sha256": "92da3388984a950ff5eff8a2fbd4b3ef9db58a5f79aa39f11a134073f3805661"
+    },
+    {
+      "path": "pub-disconnect/broker-native-result.json",
+      "bytes": 20043,
+      "sha256": "f1c16c4d49af8265406a8f6563ce88cc47cc115fd2a5bb8282161d3a65b6aa72"
+    },
+    {
+      "path": "pub-disconnect-view/report.json",
+      "bytes": 6636,
+      "sha256": "5d7c1c62f7a20b4bdebf5c7754c76e5e2523eaae077f4b312ffb6e62d1f42afa"
+    },
+    {
+      "path": "pub-disconnect-view/report.txt",
+      "bytes": 1410,
+      "sha256": "fb582dc5fb2a5d80a63961d655ff1a891d76ab481811105c97a74b0a20cc1157"
+    },
+    {
+      "path": "pub-disconnect-view/verification.json",
+      "bytes": 872,
+      "sha256": "abffd49b434584b2efd93014f1ce48d57ec7898efb30a6c9b7944760b0918ee6"
+    },
+    {
+      "path": "pub-after-tool/broker-native-result.json",
+      "bytes": 21107,
+      "sha256": "1ab7731cf056e46d7020bd1ddba11c5abcd50507fd0f026c65a85a8db69ddc38"
+    },
+    {
+      "path": "pub-after-tool-view/report.json",
+      "bytes": 12541,
+      "sha256": "fc7260aae28dcac6e730c589cdbe037d1d209b4710cb911197df29a1a6cb305f"
+    },
+    {
+      "path": "pub-after-tool-view/report.txt",
+      "bytes": 1810,
+      "sha256": "c24a22b10db762198fce4a0fb5625932caccd932b39b894e6caee4bfaa02b272"
+    },
+    {
+      "path": "pub-after-tool-view/verification.json",
+      "bytes": 1116,
+      "sha256": "281b8db8c44f2d36c1484ac1d714afb7a0dcceab2272bf94d3df5337da0710fa"
+    },
+    {
+      "path": "pub-optout/broker-native-result.json",
+      "bytes": 21307,
+      "sha256": "3f68d8a566e10709b7940662df06a34718ef8fcca221b5169f60b1ba853d35cc"
+    },
+    {
+      "path": "pub-optout-view/report.json",
+      "bytes": 7959,
+      "sha256": "6c391e657e8c7047efbe95afb150b9600d85f06e93b926dd2b09bdbd2dbed47b"
+    },
+    {
+      "path": "pub-optout-view/report.txt",
+      "bytes": 1432,
+      "sha256": "b63dfbe3100dc51996deef01acd2796a7e9068ef7d11c8f96a0bf4e6bee13a6c"
+    },
+    {
+      "path": "pub-optout-view/verification.json",
+      "bytes": 652,
+      "sha256": "e25e6eebc834a660db0e47b3ccd431eb56fc093da6a3c1d7d0b19f64a79447d3"
+    },
+    {
+      "path": "v1-normal/broker-native-result.json",
+      "bytes": 21071,
+      "sha256": "1e956362816ca912d24a262465955f99f80f02c994ead69e605070cbea4bd6c2"
+    },
+    {
+      "path": "v1-disconnect-after-tool/broker-native-result.json",
+      "bytes": 20884,
+      "sha256": "f5bcb8e1ad5c7604a64365c3973a09fcb6b5f831c0b0c421a875516146606051"
+    },
+    {
+      "path": "publication-cleanup.json",
+      "bytes": 2045,
+      "sha256": "7c98257581140c500ea2dc232a8a0e420af9297c1415cc403be2e5bfec382a51"
+    }
+  ],
+  "observedAt": "2026-10-17T12:54:20.836178+03:00",
+  "sourceCredentialCanariesAbsent": true,
+  "dbOrPrivateConfigCopied": false
+}

@@ -1,0 +1,8 @@
+{
+  "tests": 6,
+  "exitCode": 0,
+  "scope": "actual ExecutionBoundary handler to real ledger/egress/request-view, synthetic web/IPC. Not native.",
+  "testSha256": "7322ffe286bc47bb14c711c0601efbfab94c260eb0b86e81ee28e5b2919cac76",
+  "observedAt": "2026-10-17T12:42:24.284518+03:00",
+  "sourceManifest": "candidate-v1-source.json"
+}

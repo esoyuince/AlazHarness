@@ -1,0 +1,51 @@
+test_already_settled_provider_cannot_arm (test_request_view.RequestViewContracts.test_already_settled_provider_cannot_arm) ... ok
+test_arm_is_intent_before_exchange (test_request_view.RequestViewContracts.test_arm_is_intent_before_exchange) ... ok
+test_arm_lost_ack_still_no_ipc (test_request_view.RequestViewContracts.test_arm_lost_ack_still_no_ipc) ... ok
+test_arm_precommit_failure_no_ipc (test_request_view.RequestViewContracts.test_arm_precommit_failure_no_ipc) ... ok
+test_body_nested_mutation_does_not_change_prepared_document (test_request_view.RequestViewContracts.test_body_nested_mutation_does_not_change_prepared_document) ... ok
+test_cancel_does_not_recover_or_mark_response (test_request_view.RequestViewContracts.test_cancel_does_not_recover_or_mark_response) ... ok
+test_changed_grant_refused (test_request_view.RequestViewContracts.test_changed_grant_refused) ... ok
+test_changed_record_between_arm_and_finish_refused (test_request_view.RequestViewContracts.test_changed_record_between_arm_and_finish_refused) ... ok
+test_changed_scope_not_accepted (test_request_view.RequestViewContracts.test_changed_scope_not_accepted) ... ok
+test_complete_reply_metadata_precedes_settlement (test_request_view.RequestViewContracts.test_complete_reply_metadata_precedes_settlement) ... ok
+test_disabled_is_exact_legacy_no_manifest (test_request_view.RequestViewContracts.test_disabled_is_exact_legacy_no_manifest) ... ok
+test_discoverable_after_plugin_path_removed (test_request_view.RequestViewContracts.test_discoverable_after_plugin_path_removed) ... ok
+test_duplicate_arm_refused (test_request_view.RequestViewContracts.test_duplicate_arm_refused) ... ok
+test_error_status_is_observation_not_model_success (test_request_view.RequestViewContracts.test_error_status_is_observation_not_model_success) ... ok
+test_exact_canonical_utf8_bytes (test_request_view.RequestViewContracts.test_exact_canonical_utf8_bytes) ... ok
+test_finish_lost_ack_does_not_deliver_or_replay (test_request_view.RequestViewContracts.test_finish_lost_ack_does_not_deliver_or_replay) ... ok
+test_finish_precommit_retains_armed_and_budget (test_request_view.RequestViewContracts.test_finish_precommit_retains_armed_and_budget) ... ok
+test_malformed_response_not_recorded (test_request_view.RequestViewContracts.test_malformed_response_not_recorded) ... ok
+test_missing_manifest_not_recreated (test_request_view.RequestViewContracts.test_missing_manifest_not_recreated) ... ok
+test_network_error_stays_armed_unknown (test_request_view.RequestViewContracts.test_network_error_stays_armed_unknown) ... ok
+test_no_raw_content_or_api_secret_in_rows (test_request_view.RequestViewContracts.test_no_raw_content_or_api_secret_in_rows) ... ok
+test_nonbool_record_flag_rejected_before_grant (test_request_view.RequestViewContracts.test_nonbool_record_flag_rejected_before_grant) ... ok
+test_payload_claim_mismatch_refused (test_request_view.RequestViewContracts.test_payload_claim_mismatch_refused) ... ok
+test_precommit_failure_no_grant_or_manifest (test_request_view.RequestViewContracts.test_precommit_failure_no_grant_or_manifest) ... ok
+test_preparation_lost_ack_keeps_both_and_no_ipc (test_request_view.RequestViewContracts.test_preparation_lost_ack_keeps_both_and_no_ipc) ... ok
+test_prepared_and_grant_share_transaction (test_request_view.RequestViewContracts.test_prepared_and_grant_share_transaction) ... ok
+test_quarantine_prevents_handoff (test_request_view.RequestViewContracts.test_quarantine_prevents_handoff) ... ok
+test_schema_and_boolean_corruption_refused (test_request_view.RequestViewContracts.test_schema_and_boolean_corruption_refused) ... ok
+test_stale_owner_cannot_arm (test_request_view.RequestViewContracts.test_stale_owner_cannot_arm) ... ok
+test_wrong_state_response_rejected (test_request_view.RequestViewContracts.test_wrong_state_response_rejected) ... ok
+test_absent_preceding_call_not_matched (test_request_view.SourceRequestBinding.test_absent_preceding_call_not_matched) ... ok
+test_changed_content_no_fuzzy_match (test_request_view.SourceRequestBinding.test_changed_content_no_fuzzy_match) ... ok
+test_duplicate_id_does_not_gain_source_match (test_request_view.SourceRequestBinding.test_duplicate_id_does_not_gain_source_match) ... ok
+test_exact_source_return_is_bound_at_preparation (test_request_view.SourceRequestBinding.test_exact_source_return_is_bound_at_preparation) ... ok
+test_forged_observer_proof_does_not_upgrade (test_request_view.SourceRequestBinding.test_forged_observer_proof_does_not_upgrade) ... ok
+test_local_selection_not_a_request_dispatch (test_request_view.SourceRequestBinding.test_local_selection_not_a_request_dispatch) ... ok
+test_matching_does_not_identify_initiating_run (test_request_view.SourceRequestBinding.test_matching_does_not_identify_initiating_run) ... ok
+test_new_epoch_reads_history_without_resending (test_request_view.SourceRequestBinding.test_new_epoch_reads_history_without_resending) ... ok
+test_old_profile_without_request_records_stays_legacy (test_request_view.SourceRequestBinding.test_old_profile_without_request_records_stays_legacy) ... ok
+test_same_text_different_id_no_source_match (test_request_view.SourceRequestBinding.test_same_text_different_id_no_source_match) ... ok
+test_source_deletion_does_not_reopen_file (test_request_view.SourceRequestBinding.test_source_deletion_does_not_reopen_file) ... ok
+test_source_not_present_at_preparation_is_not_backfilled (test_request_view.SourceRequestBinding.test_source_not_present_at_preparation_is_not_backfilled) ... ok
+test_sql_reader_does_not_mutate_state_or_budget (test_request_view.SourceRequestBinding.test_sql_reader_does_not_mutate_state_or_budget) ... ok
+test_unsettled_source_never_included (test_request_view.SourceRequestBinding.test_unsettled_source_never_included) ... ok
+test_validated_response_is_distinct_from_observation (test_request_view.SourceRequestBinding.test_validated_response_is_distinct_from_observation) ... ok
+test_wrong_function_does_not_match_source (test_request_view.SourceRequestBinding.test_wrong_function_does_not_match_source) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 3.652s
+
+OK

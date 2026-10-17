@@ -1,0 +1,15 @@
+{
+  "scope": "10 independently authored baseline transport/identity tests, real ledger/client with synthetic IPC; not R1B2 feature acceptance",
+  "exitCode": 0,
+  "tests": 10,
+  "source": {
+    "tests/test_request_transport_qa_9b08.py": "1bb4f99216fd27ddb9016a3543421f30aecf5e93445e9ef77017a2ffddd38dd4",
+    "packages/claw-hermes/provider_broker.py": "487c0fd2e58d103cf74cc01c358cfc19d9298bca71ac3719e61584a0084c248b",
+    "packages/claw-hermes/provider_egress.py": "fa1d568d3a44e25dd6b8b36cd11e136b2911177474041e74105d84b9932302d1",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78"
+  },
+  "changed": [],
+  "observedAt": "2026-10-17T12:25:13.289725+03:00",
+  "nativeRuns": 0,
+  "paidCalls": 0
+}

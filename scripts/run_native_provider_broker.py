@@ -29,24 +29,35 @@ from execution_model_fixture import ExecutionModel
 from provider_egress import BrokerConfig,hashed,signed
 from provider_broker import ProviderBrokerClient
 
-CASES=('normal','missing-broker','stale-broker','provider-limit','upstream-disconnect')
+CASES=('normal','missing-broker','stale-broker','provider-limit','upstream-disconnect','after-tool-disconnect')
 
 class AuthenticatedModel(ExecutionModel):
     def __init__(self,fixture,marker,scenario,secret,target,*,read_limit=None):
         super().__init__(fixture,marker,'normal',target,read_limit=read_limit);original=self.server.RequestHandlerClass;owner=self
-        self.rejected=0;self.accepted=0;self.received_payloads=[]
+        self.rejected=0;self.accepted=0;self.received_payloads=[];self.request_metadata=[]
         class Guarded(original):
             def do_POST(self):
                 if self.headers.get('Authorization')!='Bearer '+secret:
                     self.rfile.read(min(int(self.headers.get('Content-Length','0')),2000000))
                     owner.rejected+=1;self.send({'error':'unauthorized'},401);return
                 owner.accepted+=1
-                if scenario=='upstream-disconnect':
-                    self.rfile.read(min(int(self.headers.get('Content-Length','0')),2000000))
+                raw=self.rfile.read(min(int(self.headers.get('Content-Length','0')),2000000))
+                body=json.loads(raw);owner.received_payloads.append(body)
+                # Independent origin-side byte observation; no product inventory helper.
+                details=[]
+                for index,message in enumerate(body.get('messages',[])):
+                    if message.get('role')=='tool':
+                        text=message.get('content');identifier=message.get('tool_call_id')
+                        details.append({'index':index,
+                            'toolCallHash':hashlib.sha256(identifier.encode()).hexdigest() if type(identifier)is str else None,
+                            'contentSha256':hashlib.sha256(text.encode()).hexdigest() if type(text)is str else None,
+                            'contentBytes':len(text.encode()) if type(text)is str else None})
+                owner.request_metadata.append({'requestSha256':hashlib.sha256(raw).hexdigest(),
+                    'requestBytes':len(raw),'messageCount':len(body.get('messages',[])), 'toolMessages':details})
+                if scenario=='upstream-disconnect' or (scenario=='after-tool-disconnect' and owner.accepted==2):
                     owner.calls.append({'path':self.path,'authenticated':True,'response':'disconnected'})
                     self.connection.shutdown(socket.SHUT_RDWR);self.connection.close();return
-                raw=self.rfile.read(min(int(self.headers.get('Content-Length','0')),2000000))
-                owner.received_payloads.append(json.loads(raw));self.rfile=io.BytesIO(raw)
+                self.rfile=io.BytesIO(raw)
                 return super().do_POST()
         self.server.RequestHandlerClass=Guarded
 
@@ -56,6 +67,7 @@ def main():
     for name in ('source','python','node','output'):p.add_argument('--'+name,required=True,type=Path)
     p.add_argument('--image',required=True);p.add_argument('--scenario',choices=CASES,required=True)
     p.add_argument('--record-source',action='store_true',help='Opt in to trusted input capture; not model visibility')
+    p.add_argument('--record-request-view',action='store_true',help='Opt in to normalized broker request metadata, not model comprehension')
     p.add_argument('--fixture-lines',type=int,default=2,help='Bounded native pagination fixture, 2..500')
     p.add_argument('--read-limit',type=int,default=None,help='Explicit read_file limit; omitted native default is not assumed')
     a=p.parse_args()
@@ -100,6 +112,8 @@ def main():
                    'isolated_read':{'capsule_root':str(out/'capsules'),'receipt_root':str(out/'receipts'),
                       'policy':asdict(ToolSandboxPolicy(a.image)),'use_sudo':True}}
         if a.record_source:execution['isolated_read']['record_source']=True
+        if a.record_request_view:execution['record_request_view']=True
+        report['record_request_view']=a.record_request_view
         report['record_source']=a.record_source;report['fixture_lines']=a.fixture_lines;report['read_limit']=a.read_limit
         hp={'allowed_models':['alaz-scripted'],'max_issued':4,'max_dispatches':1,'validity_seconds':300}
         cfg={'model':{'provider':'custom','base_url':f'http://127.0.0.1:{port}/alaz/provider/v1','default':'alaz-scripted','context_length':163840,'streaming':False,'api_key':sdk},
@@ -172,6 +186,10 @@ def main():
         elif a.scenario=='provider-limit':
             assert len(providers)==1 and len(tools)==1 and len(data['admissions'])==1 and len(bindings)==1
             assert result['final']['run']['status']!='completed'
+        elif a.scenario=='after-tool-disconnect':
+            assert len(providers)==2 and len(grants)==2 and len(tools)==1 and len(bindings)==1
+            assert len(data['admissions'])==1 and result['final']['run']['status']!='completed'
+            assert sum(x['state']=='reserved' and x['usage'] is None for x in providers)==1
         else:
             assert len(providers)==1 and len(grants)==1 and not tools and not bindings and len(data['admissions'])==1
             assert providers[0]['state']=='reserved' and providers[0]['usage'] is None and result['final']['run']['status']!='completed'
@@ -193,6 +211,7 @@ def main():
             except subprocess.TimeoutExpired:broker.kill();broker.wait(timeout=5);report['forced_broker_cleanup']=True
         for f in files:f.close()
         provider.close()
+    report['origin_request_views']=provider.request_metadata
     report['gateway_exit']=child.returncode if child else None;report['broker_exit']=broker.returncode if broker else None
     report['source_drift']=[n for n,h in programs.items() if digest(ROOT/n)!=h]
     report['elapsed_seconds']=round(time.monotonic()-start,3)

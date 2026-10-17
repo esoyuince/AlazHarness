@@ -1,0 +1,196 @@
+{
+  "hostReportVersion": 1,
+  "reportStatus": "verified_snapshot",
+  "snapshotOnly": true,
+  "writesPerformed": false,
+  "retryAllowed": false,
+  "repairAllowed": false,
+  "executionAllowed": false,
+  "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "profileBinding": "2b416b94f39a0ffab671e43dcf2b6fe512d8803cae6a9fea439bd9dbc34c8137",
+  "epoch": 1,
+  "requestFingerprint": "24a7a6726d848ff4c8d70998657f81f151835a26324d77bf340b06b44df4f108",
+  "task": {
+    "runId": "run_48d421396624479db8246aa9b75ed053",
+    "classification": "canonical_terminal_verified",
+    "canonicalVerified": true,
+    "requiresOperator": false,
+    "admissionId": "384961578ea344dfb2c5d42ddb72b828",
+    "sessionId": "run_48d421396624479db8246aa9b75ed053",
+    "executionGeneration": 1,
+    "outcome": "failed",
+    "resultDigest": "24225048de850697f7310192f4a634e12ade151291e7c564f3e4eda9af7df895",
+    "taskSucceeded": false,
+    "successBasis": "native_terminal_contract",
+    "goalAchievementIndependentlyVerified": false,
+    "nativeStatus": "failed",
+    "nativeAdmissionOutcome": "failed",
+    "admissionOutcomeIsTaskSuccess": false,
+    "completionReason": null
+  },
+  "nativeReportedUsage": {
+    "source": "native_run_aggregate",
+    "scope": "run",
+    "coverage": "complete_fields",
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 0,
+    "physicalAttemptCoverageVerified": false,
+    "billedAmount": null
+  },
+  "execution": {
+    "available": true,
+    "source": "execution_ledger_v1",
+    "scope": "profile_principal",
+    "runAttribution": "unavailable",
+    "attributedToThisRun": false,
+    "validatedRetainedHistory": true,
+    "policyFingerprint": "871095ff67501652a144b184bcaa853c21ac56b12143236cf124776f29e5b1fe",
+    "model": "alaz-scripted",
+    "snapshotDigest": "5feb99e155adda1e27b6eb3c05b862bb0f331c7b6cdcfbf780e19a696c01f44f",
+    "quarantined": true,
+    "providerAttempts": {
+      "reserved": 1,
+      "settled": 0,
+      "unsettled": 1,
+      "usageKnown": 0,
+      "usageUnknown": 1,
+      "transportErrors": 0,
+      "wireDeliveryCount": null,
+      "wireDeliveryProof": "reservation_is_not_delivery"
+    },
+    "observedUsage": {
+      "inputTokens": null,
+      "outputTokens": null,
+      "totalTokens": null,
+      "coverage": "unknown",
+      "source": "provider_reported_usage_in_retained_claims",
+      "tokenizerVerified": false,
+      "includesUnconfiguredProviders": false
+    },
+    "toolAttempts": {
+      "reserved": 0,
+      "handlerReturns": 0,
+      "successfulEffects": null
+    },
+    "reservedExposure": {
+      "tokens": 163840,
+      "costMicrousd": 196608,
+      "currency": "USD",
+      "basis": "configured_maximum_per_attempt",
+      "isInvoice": false,
+      "actualBilledMicrousd": null,
+      "tariffVerified": false,
+      "automaticRefund": false
+    },
+    "configuredLimits": {
+      "providerCalls": 1,
+      "toolCalls": 1,
+      "tokens": 491520,
+      "costMicrousd": 1000000
+    },
+    "remainingReservedCapacity": {
+      "providerCalls": 0,
+      "toolCalls": 1,
+      "tokens": 327680,
+      "costMicrousd": 803392,
+      "grantsExecutionPermission": false
+    }
+  },
+  "usageComparison": {
+    "comparable": false,
+    "reason": "v1_claims_have_no_trusted_run_binding",
+    "numericDifference": null
+  },
+  "warnings": [
+    "execution_totals_not_attributed_to_run",
+    "reserved_exposure_is_not_an_invoice",
+    "native_completion_is_not_independent_goal_verification",
+    "some_reserved_attempts_have_unknown_usage",
+    "execution_budget_quarantined"
+  ],
+  "evidenceView": {
+    "evidenceViewVersion": 1,
+    "status": "verified_record_snapshot",
+    "available": true,
+    "inventoryScope": "retained_tool_text_and_final_response",
+    "recordDigest": "dc7157cfc17dd39f9a20f4ae303384c7f366cd2675f166a6d7ebd485ca4b4c5f",
+    "recordDigestBasis": "canonical_current_terminal_record_json",
+    "historyAvailability": "retained",
+    "historyCompleteness": "not_proven",
+    "references": [
+      {
+        "evidenceId": "ev_fe0b25d54d7cc2e30b73bd0e01aeba9d44db6259cef22c401a9cce886fc599b1",
+        "kind": "native_final_response",
+        "messageIndex": null,
+        "source": "native_terminal_record",
+        "recordMembershipVerified": true,
+        "content": {
+          "availability": "retained",
+          "sha256": "f1a49b35c356637977731c2d6e6c5a24605a90101cfbfed73df49554359b49df",
+          "digestBasis": "stored_content_utf8",
+          "utf8Bytes": 183
+        },
+        "pairing": "not_applicable",
+        "executionAttribution": "not_proven",
+        "originalSource": {
+          "sha256": null,
+          "coverage": "unknown",
+          "availability": "unknown"
+        },
+        "modelView": {
+          "status": "unknown",
+          "requestDigest": null,
+          "ranges": null,
+          "understandingVerified": false
+        },
+        "claimTruthVerified": false,
+        "grantsExecutionPermission": false
+      }
+    ],
+    "localView": null,
+    "modelVisibility": "unknown",
+    "writesPerformed": false,
+    "grantsExecutionPermission": false,
+    "goalAchievementVerified": false,
+    "warnings": [
+      "record_membership_is_not_independent_content_verification",
+      "retained_text_is_not_original_file_coverage",
+      "no_provider_request_view_manifest",
+      "historical_tool_messages_not_attributed_to_this_execution"
+    ],
+    "providerRequestViews": {
+      "version": 1,
+      "inventoryScope": "profile_provider_requests",
+      "requests": [
+        {
+          "requestViewId": "rv_8113187df7e35f43db1a735207ca3b4385562694e203297a4342c4b5d08b78ae",
+          "requestDigest": "15252d94f523673c5eaa70e77880bcd663fea9276aef815c49675fea470ace79",
+          "requestBytes": 10777,
+          "serialization": "canonical_json_utf8",
+          "messageCount": 2,
+          "toolMessageCount": 0,
+          "state": "handoff_armed",
+          "httpStatus": null,
+          "responseSha256": null,
+          "responseBytes": null,
+          "brokerHttpResponseObserved": false,
+          "providerResponseValidated": false,
+          "initiatingRunId": null,
+          "initiatingRunVerified": false,
+          "selectedEvidenceInclusions": [],
+          "modelProcessingVerified": false
+        }
+      ],
+      "selectedTaskCostAttribution": "not_proven",
+      "writesPerformed": false,
+      "grantsExecutionPermission": false,
+      "modelProcessingVerified": false,
+      "warnings": [
+        "handoff_intent_is_not_physical_send_proof",
+        "http_response_is_not_model_processing_or_downstream_delivery",
+        "source_provenance_does_not_identify_request_initiator"
+      ]
+    }
+  }
+}

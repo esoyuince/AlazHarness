@@ -17,6 +17,7 @@ from execution_budget import ExecutionDenied
 from provider_egress import (BrokerLink,BrokerConfig,PermitVerifier,REQUEST_LIMIT,RESPONSE_LIMIT,
                              authorize_egress,signed,verified,require)
 from recovery_inspector import _json,_load
+import request_view
 
 BACKEND='linux_unix_credential_broker'
 
@@ -135,9 +136,14 @@ class ProviderBrokerClient:
         require(set(reply)=={'version','brokerId','nonce','ok','routeFingerprint'} and reply['routeFingerprint']==self.link.route_fingerprint,'broker_reply_mismatch')
         return True
 
-    async def send(self,ledger,ticket,payload):
+    async def send(self,ledger,ticket,payload,*,record_view=False):
         # All IPC errors retain this native grant and the original full reservation.
-        document=await asyncio.to_thread(authorize_egress,ledger,self.link,ticket,payload)
+        require(type(record_view) is bool,'invalid_request_view_setting')
+        if record_view:
+            document=await asyncio.to_thread(authorize_egress,ledger,self.link,ticket,payload,record_view=True)
+            armed=await asyncio.to_thread(request_view.arm_handoff,ledger,ticket)
+        else:
+            document=await asyncio.to_thread(authorize_egress,ledger,self.link,ticket,payload)
         reply=await self._exchange(document,ticket)
         require(set(reply)=={'version','brokerId','nonce','ok','status','contentType','dataBase64'},'invalid_broker_reply')
         status=reply['status'];ctype=reply['contentType'];encoded=reply['dataBase64']
@@ -147,6 +153,8 @@ class ProviderBrokerClient:
         try:raw=base64.b64decode(encoded,validate=True)
         except (ValueError,TypeError):raise ExecutionDenied('invalid_broker_body') from None
         require(len(raw)<=4_194_304,'broker_frame_too_large')
+        if record_view:
+            await asyncio.to_thread(request_view.observe_response,ledger,armed,raw,status,ctype)
         return raw,status,ctype
 
 

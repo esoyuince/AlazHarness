@@ -1,0 +1,10 @@
+{
+  "scope": "29 independent R1B2 request-view/atomicity/source-binding tests on frozen v1 candidate, synthetic ports",
+  "exitCode": 1,
+  "testSha256": "eca07a2e79db485fa6f0eb9c3d500b77ad259e4960acb39e689473e2cac86fbe",
+  "sourceManifest": "candidate-v1-source.json",
+  "sourceChanged": [],
+  "observedAt": "2026-10-17T12:39:14.300580+03:00",
+  "nativeRuns": 0,
+  "paidCalls": 0
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "independent same35 tests against primary frozen final R1B2 source; synthetic ports, no native run",
+  "tests": 35,
+  "rows": [
+    {
+      "name": "test_request_view_9b08.py",
+      "tests": 29,
+      "exitCode": 0,
+      "testSha256": "062614c161b277792123647dc42ac84f81217d91f4b12741a5f7061f455732c0"
+    },
+    {
+      "name": "test_request_boundary_view_9b08.py",
+      "tests": 6,
+      "exitCode": 0,
+      "testSha256": "7322ffe286bc47bb14c711c0601efbfab94c260eb0b86e81ee28e5b2919cac76"
+    }
+  ],
+  "measuredFiles": 234,
+  "changed": [],
+  "added": [],
+  "observedAt": "2026-10-17T12:48:00.049692+03:00",
+  "nativeRuns": 0,
+  "result": "PASS"
+}

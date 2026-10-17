@@ -1,0 +1,97 @@
+{
+  "scope": "independent closed-native metadata/source/wire corroboration; no new native/model runs",
+  "observedAt": "2026-10-17T12:44:54.084934+03:00",
+  "result": "PASS",
+  "cases": [
+    {
+      "case": "v1-normal",
+      "scenario": "normal",
+      "result": "CORROBORATED",
+      "nativeReceiptSha256": "1e956362816ca912d24a262465955f99f80f02c994ead69e605070cbea4bd6c2",
+      "sourceRevisionFilesChecked": 144,
+      "providerRequests": 2,
+      "isolatedReads": 1,
+      "manifestRows": 2,
+      "sourceCaptures": 1,
+      "sourceToRequestInclusions": 1,
+      "details": [
+        {
+          "requestBytes": 10772,
+          "state": "broker_response_observed",
+          "toolMessages": 0,
+          "inclusions": 0,
+          "boundSources": [],
+          "brokerResponseObserved": true
+        },
+        {
+          "requestBytes": 11220,
+          "state": "broker_response_observed",
+          "toolMessages": 1,
+          "inclusions": 1,
+          "boundSources": [
+            {
+              "inputBytes": 54,
+              "toolBytes": 174,
+              "sourceDigest": "fddcabe4f8217f6bf22c19dcd6975e711d60498f165e0321cdfc55af79b20c8d",
+              "sourceToActualRequestBound": true
+            }
+          ],
+          "brokerResponseObserved": true
+        }
+      ],
+      "actualPartialReadConfirmed": false,
+      "ownedContainersAbsent": 1,
+      "brokerSocketAbsent": true,
+      "mainStoresAndInputUnchanged": true,
+      "newNativeRuns": 0,
+      "paidCalls": 0,
+      "filesystemSilenceClaim": false
+    },
+    {
+      "case": "v1-disconnect-after-tool",
+      "scenario": "after-tool-disconnect",
+      "result": "CORROBORATED",
+      "nativeReceiptSha256": "f5bcb8e1ad5c7604a64365c3973a09fcb6b5f831c0b0c421a875516146606051",
+      "sourceRevisionFilesChecked": 144,
+      "providerRequests": 2,
+      "isolatedReads": 1,
+      "manifestRows": 2,
+      "sourceCaptures": 1,
+      "sourceToRequestInclusions": 1,
+      "details": [
+        {
+          "requestBytes": 10787,
+          "state": "broker_response_observed",
+          "toolMessages": 0,
+          "inclusions": 0,
+          "boundSources": [],
+          "brokerResponseObserved": true
+        },
+        {
+          "requestBytes": 11250,
+          "state": "handoff_armed",
+          "toolMessages": 1,
+          "inclusions": 1,
+          "boundSources": [
+            {
+              "inputBytes": 54,
+              "toolBytes": 174,
+              "sourceDigest": "7e90bda4d8b34d5a82a768ea8a279dc45ac66bcc9ff31c9b10d00c440f6d8356",
+              "sourceToActualRequestBound": true
+            }
+          ],
+          "brokerResponseObserved": false
+        }
+      ],
+      "actualPartialReadConfirmed": false,
+      "ownedContainersAbsent": 1,
+      "brokerSocketAbsent": true,
+      "mainStoresAndInputUnchanged": true,
+      "newNativeRuns": 0,
+      "paidCalls": 0,
+      "filesystemSilenceClaim": false
+    }
+  ],
+  "newNativeRuns": 0,
+  "paidCalls": 0
+}

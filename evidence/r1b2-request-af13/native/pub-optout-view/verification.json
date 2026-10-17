@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "scenario": "normal",
+  "requestViewEnabled": false,
+  "nativeReceiptSha256": "3f68d8a566e10709b7940662df06a34718ef8fcca221b5169f60b1ba853d35cc",
+  "originRequests": 2,
+  "manifestRows": 0,
+  "requests": [],
+  "actualPartialRead": false,
+  "sourceBytes": 54,
+  "toolOutputBytes": [
+    174
+  ],
+  "nativeStatus": "completed",
+  "modelVisibility": "unknown",
+  "initiatingRunVerified": false,
+  "mainStoresUnchanged": true,
+  "auxiliaryFilesChanged": [
+    "runs_idempotency.db-shm",
+    "runs_idempotency.db-wal"
+  ],
+  "newNativeRuns": 0,
+  "inferenceCalls": 0,
+  "paidCalls": 0,
+  "cliFormats": [
+    "json",
+    "text"
+  ]
+}

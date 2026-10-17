@@ -1,0 +1,12 @@
+{
+  "scope": "standard offline discovery; separate native and opt-in QA not included",
+  "tests": 1595,
+  "exitCode": 0,
+  "skippedReported": false,
+  "sourceFiles": 235,
+  "changed": [],
+  "added": [],
+  "seconds": 142.15,
+  "observedAt": "2026-10-17T12:49:57.333290+03:00",
+  "result": "PASS"
+}

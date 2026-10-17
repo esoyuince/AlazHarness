@@ -108,7 +108,7 @@ class GuardedFileTools:
 class ExecutionBoundary:
     def __init__(self,settings):
         required={'policy','provider_bearer','allowed_read_files'}
-        if type(settings) is not dict or not required<=set(settings) or not set(settings)<=required|{'isolated_read','upstream_base_url','provider_broker'}:raise ExecutionDenied('explicit_execution_settings_required')
+        if type(settings) is not dict or not required<=set(settings) or not set(settings)<=required|{'isolated_read','upstream_base_url','provider_broker','record_request_view'}:raise ExecutionDenied('explicit_execution_settings_required')
         value=settings['policy']
         if type(value) is not dict:raise ExecutionDenied('explicit_execution_policy_required')
         try:self.policy=ExecutionPolicy(**value)
@@ -124,6 +124,9 @@ class ExecutionBoundary:
             if u.scheme!='http' or u.hostname!='127.0.0.1' or u.username or u.password or u.query or u.fragment or u.path!='/v1' or not u.port:
                 raise ExecutionDenied('unsupported_upstream_endpoint')
             self.upstream=settings['upstream_base_url'];self.upstream_port=u.port
+        self.record_request_view=settings.get('record_request_view',False)
+        if type(self.record_request_view) is not bool:raise ExecutionDenied('invalid_request_view_setting')
+        if self.record_request_view and self.broker is None:raise ExecutionDenied('request_view_requires_broker')
         token=settings['provider_bearer']
         if type(token) is not str or not re.fullmatch(r'[\x21-\x7e]{32,256}',token):raise ExecutionDenied('invalid_provider_credential')
         if self.broker is not None and token==self.broker.link.signing_key:raise ExecutionDenied('separate_broker_key_required')
@@ -231,7 +234,10 @@ class ExecutionBoundary:
                         raise ExecutionDenied('unsupported_message_content')
                 ledger=self.ledger();ticket=await asyncio.to_thread(ledger.claim,'provider',hashlib.sha256(_json(body).encode()).hexdigest())
                 if self.broker is not None:
-                    raw,status,content_type=await self.broker.send(ledger,ticket['ticket'],body)
+                    if self.record_request_view:
+                        raw,status,content_type=await self.broker.send(ledger,ticket['ticket'],body,record_view=True)
+                    else:
+                        raw,status,content_type=await self.broker.send(ledger,ticket['ticket'],body)
                 else:
                     # One physical HTTP call per durable reservation. No SDK/proxy retries.
                     async with ClientSession(timeout=ClientTimeout(total=30),trust_env=False,auto_decompress=False) as client:

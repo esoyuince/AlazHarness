@@ -1,0 +1,8 @@
+{
+  "scope": "unchanged independent 9B08 HTTP-handler tests, synthetic web and IPC",
+  "tests": 6,
+  "exitCode": 0,
+  "observedAt": "2026-10-17T12:46:53.213891+03:00",
+  "testSha256": "7322ffe286bc47bb14c711c0601efbfab94c260eb0b86e81ee28e5b2919cac76",
+  "notAddedToStandardTotal": true
+}
