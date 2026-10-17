@@ -1,0 +1,21 @@
+{
+  "scope": "first original SQLite touch is the actual EvidenceViewInspector; preparatory lookup uses exact closed replay copy only",
+  "reportStatus": "verified_snapshot",
+  "productClaimWritesPerformed": false,
+  "originalDifferences": {
+    "profile/runs_idempotency.db-shm": {
+      "before": null,
+      "after": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    "profile/runs_idempotency.db-wal": {
+      "before": null,
+      "after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "mainDatabaseBytesUnchanged": true,
+  "otherOriginalFilesUnchanged": true,
+  "firstReadFilesystemNoChange": "FAIL",
+  "newNativeRuns": 1,
+  "modelInferenceCalls": 0,
+  "paidCalls": 0
+}

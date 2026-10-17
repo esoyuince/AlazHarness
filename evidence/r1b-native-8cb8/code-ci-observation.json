@@ -1,0 +1,10 @@
+{
+  "codeCommit": "3b2d037a98f84139d1bd787063e0213799638544",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "source": "GitHub.get_commit_combined_status live connector response in this turn",
+  "recordedAt": "2026-10-17T10:34:03.488255+03:00",
+  "localStandardTests": 1403,
+  "serverTestCountIndependentlyRead": false,
+  "nativeRunsPartOfStandardCI": false
+}

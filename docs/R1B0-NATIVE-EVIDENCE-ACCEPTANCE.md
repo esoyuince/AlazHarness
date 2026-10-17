@@ -89,7 +89,7 @@ oluşturulmadı ve harness'in araç sandbox'ı hakkında bir ihlal iddiası değ
 
 Tam standart testin ve aynı commit CI'ın sonucu kendi makbuzunda kaydedilir;
 29 test ana toplamın içindedir. Native çalıştırmalar standart CI kapsamına
-otomatik eklenmez. Bu tur ayrı bir insan/ajan QA yazarı kullanılmadı.
+otomatik eklenmez. Bu paketin29testi entegrasyon yazarı tarafından üretildi; aşağıdaki AF13 Linux kontrolü ayrı QA çalışmasıdır.
 
 ## Tekrar üretme
 
@@ -121,3 +121,34 @@ korundu. Bu paket main birleşimi veya yeni ürün yetkisi içermez.
 2026-10-17T10:26:35.129507+03:00: 1403/1403 standart test PASS, exit0, skip0. Ölçülen217kod/test/config
 dosyasında değişim veya ekleme yok. Yeni29test bu toplamın içindedir.
 Yayın ve CI sonucu bu yerel başarıdan çıkarılmaz; ayrıca kaydedilir.
+
+## G01 — ayrı Linux ilk-okuma kontrolü
+
+AF13, gerçek EvidenceViewInspector ilk kez orijinal SQLite dosyasına
+dokunacak şekilde hazırlık sorgusunu ayrı kapalı kopyada yürüttü. Rapor
+verified_snapshot döndü ve ana veritabanı/diğer kaynak dosyaları değişmedi;
+ancak runs_idempotency.db için boş -wal ve -shm dosyaları oluştu.
+`firstReadFilesystemNoChange=FAIL` aynen korunur. Okuduğumuz makbuz
+evidence/r1b-native-8cb8/af13-direct-reader-control.json, kimliği ve aynı
+ürün baytları teyidi af13-finding-review.json içindedir.
+
+Bu nedenle `writesPerformed=false`, sıfır DML/uygulama veri yazımı
+sözleşmesidir; mutlak dosya sistemi değişmezliği garantisi olarak
+okunmamalıdır. Kendi verifierimizin dört ana dosya hash kabulü bunu
+kapatmaz. G01 AÇIK; uygun rapor alanı veya güvenli offline snapshot
+seçeneği ayrı tasarlanıp sınanmalıdır. Canlı DB için immutable=true
+eklenmedi ve ilk başarısız beklenti sonradan gevşetilmedi.
+
+SQLite resmi WAL belgesi salt-okunur WAL veritabanının yardımcı dosyalar
+mevcutsa veya oluşturulabiliyorsa açılabildiğini açıklar:
+https://sqlite.org/wal.html#read_only_databases (17 Ekim 2026'da okundu).
+Bu özellik, aynı anda değişen DB'nin immutable kabul edilebileceği
+anlamına gelmez. AF13'ün diğer Linux koşuları kendi raporunda kalır;
+burada yalnız okunan bulgu kaydı kullanıldı, Windows sayısına eklenmedi.
+
+## Git ve CI teslimi
+
+Kod `3b2d037a98f84139d1bd787063e0213799638544` yayımlandı; alaz/local-ci sonucu canlı
+GitHub sorgusunda success. Kayıt: code-ci-observation.json. Sunucunun test
+sayısı ayrıca okunmadı; yerel1403 server makbuzu olarak sunulmaz.
+Son belge commitinin CI kontrolü ayrı sorgulanır.

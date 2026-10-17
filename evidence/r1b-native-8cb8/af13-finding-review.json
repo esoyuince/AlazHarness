@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-10-17T10:34:03.488255+03:00",
+  "status": "G01_OPEN_STRICT_ZERO_FILESYSTEM_WRITE_NOT_ACCEPTED",
+  "basis": "AF13 separate native first-reader control, inspected in this turn",
+  "sourceFile": "evidence/r1b-linux-qa-af13/direct-reader-control.txt",
+  "sourceFileSha256": "1cfe38cd85c3241bc0e861f8661adec460756c5111cb8388922e85e73a5db16c",
+  "qaBaseCommit": "b96a83f545ae12885f025ee0085cb018dad14511",
+  "readerBytesMatchCurrentProduct": {
+    "packages/claw-hermes/evidence_view.py": "aabc3fd11c1a93f12807159cd711d429625672c9a70f2b2248c15294254d2fd2",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "scripts/inspect_host_report.py": "8e9dcc2e67742d793b032818699ad332517d4e4768dfef9daf8c7b013e47d74c"
+  },
+  "newRunsByThisReview": 0,
+  "mainDatabaseDataMutationObserved": false,
+  "sqliteAuxiliaryFilesCreated": [
+    "runs_idempotency.db-wal",
+    "runs_idempotency.db-shm"
+  ],
+  "productPatchedForG01": false,
+  "reference": "https://sqlite.org/wal.html#read_only_databases"
+}

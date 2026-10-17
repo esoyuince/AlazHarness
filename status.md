@@ -4,7 +4,10 @@ Son güncelleme: 2026-10-17T10:26:35.129507+03:00
 
 ## Güncel nokta
 
-R1B0-NATIVE-8cb8 yerel kabul PASS; seçilmiş kod/kanıt yayını ve CI kapanışı sürüyor.
+R1B0-NATIVE-8cb8 metadata/native kabulü yayımlandı; kod CI success.
+Kod commit: 3b2d037a98f84139d1bd787063e0213799638544
+G01: ilk SQLite okumada auxiliary dosya oluşumu; strict filesystem-zero-write AÇIK.
+Bu son belge kaydının kendi CI sonucu ayrıca canlı kontrol edilir.
 Aktif dal: alaz/r1b-evidence-capture-8cb8
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\evidence-r1b-8cb8
 Başlangıç commit: b96a83f545ae12885f025ee0085cb018dad14511 (R1A belge CI success).
@@ -66,3 +69,37 @@ aynı29testle PASS, testhashi korunur. İlk yanlış environment aiohttpyok laun
 FAIL ayrı; native/launcher kapanış teyidi var, yeni kurulum0.
 Paket R1B0 native qualification; R1Bsourcecapture/request-view uygulanmadı.
 Yeni native çalıştırma bitti; full-suite ve commit/CI sırada.
+
+### 2026-10-17T10:28:52.514098+03:00 — AF13 Linux sonuç ve ilk-okuma yan etkisi
+
+B96a83f exact Git byte ile üç fresh Linux Gateway+broker senaryosu PASS:
+normal2provider/1Dockerread, provider-limit1provider/1read failed, disconnect
+1provider/0read reservedunknown. Üç current native profile R1/JSON/textCLI/
+partial-full seçimi ve16negatif kontrol recheck PASS. Source/model/wire
+UNKNOWN aynen; raw input51bayt ve native tool sonucu171bayt farklı nesneler.
+
+G01: ilk strict tüm-dosya değişmezliği3FAIL korundu. Taze dördüncü normal
+kontrolünde runs_idempotency.db-wal boş ve -shm ilk readonly açılışta oluştu;
+ana DB/log/input/receipt hashleri değişmedi. Sonraki okumada delta0. Bu
+SQLite-WAL yan etkisi; veri/DML yazımı veya güvenlik aşımı değil. İlk strict
+FAILi PASSa çevirmedik; mode=ro filesystem-zero-write garantisi değildir.
+Kaynak: sqlite.org/wal.html#read_only_databases. Product inspector çağrısını
+QA hazırlık okumasından ayrı sınayan yeni kontrol sırada. 8cb8 ürün sahibi
+korunur; report için data-write/aux-file ayrımı ve yeni offline snapshot
+yolu değerlendirilmeden immutable=1 canlı DBye eklenmemeli.
+QA yolu C:\Antigravity\AlazHarness\scratch\worktrees\r1b-linux-qa-af13; rapor/kapanış birazdan aynı günlükte.
+
+### 2026-10-17T10:34:03.488255+03:00 — kod CI ve paralel QA bulgusu birlikte kaydedildi
+
+Kod 3b2d037a98f84139d1bd787063e0213799638544 alaz/local-ci=success canlı sorgulandı.
+Yerel1403PASS ayrı; server test sayısı ayrıca okunmadı. AF13 paralel status
+eki saptandı, eski durumla ezilmedi. AF13 actual inspector first-reader
+control raw makbuzu okundu; ana DB değişmeden boş WAL ve SHM oluşumu doğrulanmış.
+İlk strictFAIL korunur. Dört product reader dosyası AF13 base ile byteeşit.
+Kendi pozitif Windows rapor kabulü dört ana dosyanın byte değişmezliğidir;
+filesystem-zero-write garantisi değildir. Yeni open G01 açıklama/okuma-snapshot
+sözleşmesi değerlendirilmeden kapatılmaz; canlı DBye immutable eklenmedi.
+AF13 kod/testlerine dokunulmadı, yalnız okunmuş metadata/provenance bu
+pakete alındı. Linux ek koşuları kendi Windows2run toplamımıza eklenmez.
+Sonraki iş G01 storage-effect contract, R1B1 source capture ve R1B2 wire-view.
+Bu belge dışındaki kod/test kaynaklarında değişiklik yok; main korunur.
