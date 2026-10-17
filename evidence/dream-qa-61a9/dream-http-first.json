@@ -1,0 +1,8 @@
+{
+  "scope": "actual handler/middleware, synthetic app/native/service; not HTTP server or model",
+  "tests": 16,
+  "exitCode": 0,
+  "testSha256": "8c9d723630287df838a4d93b9828b9b36d514b6d02f25ab53301bc9ec738ad4f",
+  "testSourceUnchanged": true,
+  "observedAt": "2026-10-17T14:21:19.325645+03:00"
+}

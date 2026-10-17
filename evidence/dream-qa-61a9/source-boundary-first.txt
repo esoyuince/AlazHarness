@@ -1,0 +1,15 @@
+test_byte_selected_excerpt_not_full_source_or_provider_read (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_byte_selected_excerpt_not_full_source_or_provider_read) ... ok
+test_credential_like_history_is_not_reflected_in_metadata (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_credential_like_history_is_not_reflected_in_metadata) ... ok
+test_duplicate_history_not_independent_execution_evidence (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_duplicate_history_not_independent_execution_evidence) ... ok
+test_false_generalization_with_real_source_stays_unverified (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_false_generalization_with_real_source_stays_unverified) ... ok
+test_forged_observer_membership_cannot_resurrect_missing_record (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_forged_observer_membership_cannot_resurrect_missing_record) ... ok
+test_instruction_like_history_remains_text_not_a_capability (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_instruction_like_history_remains_text_not_a_capability) ... ok
+test_model_supplied_source_url_is_not_opened (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_model_supplied_source_url_is_not_opened) ... ok
+test_old_snapshot_cannot_override_current_expiry (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_old_snapshot_cannot_override_current_expiry) ... ok
+test_self_attested_success_inside_tool_text_never_verifies_goal (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_self_attested_success_inside_tool_text_never_verifies_goal) ... ok
+test_unchanged_final_response_does_not_hide_changed_learning_evidence (test_dream_inputs_qa_61a9.DreamSourceBoundaryQA.test_unchanged_final_response_does_not_hide_changed_learning_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.626s
+
+OK

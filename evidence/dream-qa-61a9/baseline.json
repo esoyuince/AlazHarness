@@ -1,0 +1,10 @@
+{
+  "scope": "independent baseline f23079d standard; NOT Dream product acceptance",
+  "tests": 1595,
+  "exitCode": 0,
+  "seconds": 118.854,
+  "sourceFiles": 234,
+  "changed": [],
+  "observedAt": "2026-10-17T14:06:54.754326+03:00",
+  "result": "PASS"
+}

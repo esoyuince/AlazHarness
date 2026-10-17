@@ -1,0 +1,11 @@
+{
+  "scope": "independent full suite on detached reviewed product-v2 copy; not native/model/CI",
+  "tests": 1635,
+  "exitCode": 0,
+  "skipsReported": false,
+  "sourceFiles": 239,
+  "changed": [],
+  "seconds": 121.349,
+  "observedAt": "2026-10-17T14:35:15.769112+03:00",
+  "result": "PASS"
+}

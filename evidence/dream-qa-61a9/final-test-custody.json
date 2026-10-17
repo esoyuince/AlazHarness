@@ -1,0 +1,10 @@
+{
+  "scope": "10 standard input tests and48 opt-in Dream API/HTTP tests; native corroborator is not extra test execution",
+  "sourceFiles": {
+    "tests/test_dream_inputs_qa_61a9.py": "280f588d8ffe902c806129fb4a4a1c6a026906ea6509311e6e98e0005495b467",
+    "scripts/qa/test_dream_61a9.py": "ace01e92a5d2aacff2b2207a3df0b6dfe8adf72c1269a4d589179bae8b93e9f0",
+    "scripts/qa/test_dream_http_61a9.py": "8c9d723630287df838a4d93b9828b9b36d514b6d02f25ab53301bc9ec738ad4f",
+    "scripts/qa/corroborate_dream_61a9.py": "1ec2856682ba6e59f2e8e1c53c618568ef44de89f58bc6777a7fbe2ef20b964f"
+  },
+  "noMoreTestsPlanned": true
+}

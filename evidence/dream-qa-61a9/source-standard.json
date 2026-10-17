@@ -1,0 +1,11 @@
+{
+  "scope": "QA baseline plus10 existing-reader input tests; not Dream product/runtime acceptance",
+  "tests": 1605,
+  "exitCode": 0,
+  "skipsReported": false,
+  "sourceFiles": 235,
+  "changed": [],
+  "seconds": 116.149,
+  "observedAt": "2026-10-17T14:15:18.565605+03:00",
+  "result": "PASS"
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "unchanged independent Dream API/HTTP tests; synthetic ports, no inference",
+  "sourceFiles": 239,
+  "sourceUnchanged": true,
+  "dreamSha256": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a",
+  "results": [
+    {
+      "testFile": "test_dream_61a9.py",
+      "sha256": "aa7011fa64ccfe2d745c16703f2c7658ce5cdd4458b1c4ccc7eb27a60f2375e2",
+      "exitCode": 1,
+      "tests": 31
+    },
+    {
+      "testFile": "test_dream_http_61a9.py",
+      "sha256": "8c9d723630287df838a4d93b9828b9b36d514b6d02f25ab53301bc9ec738ad4f",
+      "exitCode": 0,
+      "tests": 16
+    }
+  ],
+  "observedAt": "2026-10-17T14:24:16.114565+03:00",
+  "result": "FAIL"
+}
