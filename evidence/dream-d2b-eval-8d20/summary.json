@@ -3,7 +3,7 @@
   "observedAt": "2026-10-18T00:27:40.158885+03:00",
   "baseCommit": "eb674ee6b319a9309b0b46df6cf9868956092735",
   "branch": "alaz/dream-d2b-eval-8d20",
-  "result": "SCOPED_LOCAL_PASS_GIT_CI_PENDING",
+  "result": "SCOPED_PASS_PUBLISHED_CODE_CI_SUCCESS",
   "scope": "manual private HMAC oracle sealed plan and deterministic paired offline scorer; no model caller, not real learned skill",
   "fullStandard": {
     "observedAt": "2026-10-18T00:26:23.475383+03:00",
@@ -49,6 +49,9 @@
   "promotableSkillVerified": false,
   "syntheticDemo": "8/12 to 12/12 scripted; not inference evidence",
   "mainMerged": false,
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCommit": "d421e75e58c0a6e2db4cf0b8ca8f304fe677337d",
+  "codeCI": "success",
+  "codeCiReceipt": "evidence/dream-d2b-eval-8d20/code-ci-status.json",
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION",
+  "codeCIObservedAt": "2026-10-18T00:32:57.331505+03:00"
 }

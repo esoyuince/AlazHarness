@@ -165,3 +165,13 @@ The 12-example 8→12 local demo uses scripted answer files. Real-model trials,
 native D2B Gateway, provider attribution and held-out real skill verification
 remain NOT RUN. See evidence/dream-d2b-eval-8d20/full-standard.json,
 root-static.json, source-freeze-before-full.json and synthetic-demonstration.json.
+
+## Publication and CI — 2026-10-18T00:32:57.331505+03:00
+
+Code commit `d421e75e58c0a6e2db4cf0b8ca8f304fe677337d` pushed to `alaz/dream-d2b-eval-8d20`.
+GitHub `alaz/local-ci` **SUCCESS** (status 56608074524,
+2026-10-17T21:32:01Z). The status API does not expose the remote test count.
+The independently observed local full1771/1771 result,251 source SHA values
+and scripted trial are bound to the published code commit; doc-only follow-up
+CI will be checked as a SEPARATE commit. This does not close D3B or certify
+real model learning. `main` unchanged; user worktrees preserved.

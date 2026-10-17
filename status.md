@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T00:27:40.158885+03:00
+Son güncelleme: 2026-10-18T00:32:57.331505+03:00
 
 ## Güncel nokta
 
-DREAM-D2B1-8D20 sealed heldout offline scorer: 1771/1771 standard + root static PASS; Git/CI delivery OPEN, real model and skill transfer NOT RUN.
+DREAM-D2B1-8D20 offline paired scorer: 1771/1771 standard PASS, code commit d421e75 CI SUCCESS; final docs CI to verify. Real-model/skill transfer NOT RUN.
 Branch alaz/dream-d2b-eval-8d20; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b-eval-8d20; base eb674ee6b319a9309b0b46df6cf9868956092735.
 
 
@@ -489,3 +489,13 @@ evaluator code hash plan kilidi; stale/revoked D2A review ret, zero memory
 write/skill/autonomy/tool privileges. Doküman docs/DREAM-D2B-HELDOUT-EVAL.md,
 kanıt evidence/dream-d2b-eval-8d20/; Git/CI teslimi şimdi yapılacak.
 D3B/real-model/held-out independent source verification AÇIK.
+
+### 2026-10-18T00:32:57.331505+03:00 — D2B1 kodu exact SHA CI başarılı
+
+d421e75e58c0a6e2db4cf0b8ca8f304fe677337d commit origin push PASS, GitHub alaz/local-ci SUCCESS
+(56608074524 / 2026-10-17T21:32:01Z). 251 kaynak commit
+blob SHA eşit; worktree clean ve remote eşit. Test 1771/1771,
+root static PASS; scripted12result positive AMA inferred skill FALSE.
+Kod dokunulmadan docs/status/CI makbuzu commit edilecek; kendi CI ayrı.
+D2B2 gerçek broker provider evidence, D3B OS egress + held-out gerçek
+model kalite deneyleri açık.
