@@ -58,11 +58,18 @@ def register(ctx):
         from dream_review import DreamReviewService
         review=DreamReviewService(review_settings,dream,
             config_reader=lambda:ctx.get_config('dream_review'))
+    trial=None
+    trial_settings=ctx.get_config('dream_trial')
+    if trial_settings is not None:
+        # Preload while the native plugin's temporary path is active.
+        from dream_trial import DreamTrialService
+        trial=DreamTrialService(trial_settings,review,
+            config_reader=lambda:ctx.get_config('dream_trial'))
     ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(
-        app,adapter,policy,execution=execution,dream=dream,review=review))
+        app,adapter,policy,execution=execution,dream=dream,review=review,trial=trial))
 
 
-def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None, review=None):
+def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None, review=None, trial=None):
     from aiohttp import web
     validate_native_adapter(adapter)
     if type(policy) is not HostGatePolicy or app.frozen or adapter._host!='127.0.0.1':
@@ -182,6 +189,30 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
             code=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
             return error(HostGateError(code) if code else exc)
 
+    async def trial_run(request):
+        try:
+            current(request)
+            value=await body(request)
+            if type(value) is not dict or set(value)!={'plan'}:
+                raise HostGateError('dream_trial_plan_required')
+            result=await trial.run(value['plan'])
+            status=200 if result['state']=='completed' else 202
+            return web.json_response(result,status=status)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            code=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(code) if code else exc)
+
+    async def trial_status(request):
+        try:
+            current(request)
+            result=await asyncio.to_thread(trial.status,request.match_info['plan_id'])
+            return web.json_response(result,status=200)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            code=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(code) if code else exc)
+
     async def capabilities(request):
         try:
             current(request)
@@ -189,6 +220,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
             return web.json_response({'hostGateVersion':1,'dispatchPath':BASE+'/dispatch','nativeStoreOwner':True,
                 **({'dreamVersion':1,'dreamMode':'manual_candidates_only'} if dream is not None and dream.policy.enabled else {}),
                 **({'dreamReviewVersion':1,'dreamReviewMode':'manual_for_testing_only'} if review is not None and review.policy.enabled else {}),
+                **({'dreamTrialVersion':1,'dreamTrialMode':'manual_paired_broker_evidence_only'} if trial is not None and trial.policy.enabled else {}),
                 'dispatchAtMostOnce':True,'automaticRetry':False,'modelTokenOrCostBudget':False,
                 'toolSandbox':False,'scope':'default_profile_new_run','executionBoundaryVersion':1 if execution is not None else None,
                 'providerBrokerVersion':1 if execution is not None and getattr(execution,'broker',None) is not None else None,
@@ -216,6 +248,8 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
             return await handler(request)
         if review is not None and review.policy.enabled and request.method=='POST' and request.path in (BASE+'/dream/review',BASE+'/dream/review/diff'):
             return await handler(request)
+        if trial is not None and trial.policy.enabled and request.method=='POST' and request.path==BASE+'/dream/trial':
+            return await handler(request)
         if request.method=='POST' and request.path in (BASE+'/intents',BASE+'/dispatch'):
             return await handler(request)
         try:
@@ -236,4 +270,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
         app.router.add_post(BASE+'/dream/review',review_decide)
         app.router.add_post(BASE+'/dream/review/diff',review_diff)
         app.router.add_get(BASE+'/dream/review/{batch_id}',review_status)
+    if trial is not None and trial.policy.enabled:
+        app.router.add_post(BASE+'/dream/trial',trial_run)
+        app.router.add_get(BASE+'/dream/trial/{plan_id}',trial_status)
     app['alaz_host_gate_v1']=True

@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-10-18T01:06:40.672642+03:00",
+  "exitCode": 0,
+  "tests": 65,
+  "skipsReported": false,
+  "result": "PASS",
+  "scope": "64? manually authored 34 service,17 HTTP,14 CLI =65, synthetic broker; no real Gateway/model",
+  "logSha256": "e80c1e76a49b10e4c2c1535ab5fdd9be477935eaae7fba455297d994a83aa1de",
+  "sourceSha256": {
+    "packages/claw-hermes/dream_trial.py": "dda1cfac23dd16fe1f18cddb79bd26b5492910820d763fa64ca7162ab286701b",
+    "packages/claw-hermes/host_gate_plugin.py": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+    "scripts/dream_trial_once.py": "0d07cc25709d6b8cc4b747e56955e2d53ebdde8a946f156cc147368db4c7534e",
+    "tests/test_dream_trial.py": "f6aa2684e045b42175aad9f847a50f5b794140ead9ba482eb00812e5a6205263",
+    "tests/test_dream_trial_cli.py": "5389bbbcd099e3ee2587cb791c52fc6f707a5ff34ef25ab19255147c46356ee2",
+    "tests/test_dream_trial_http.py": "a88b834297f4d519c6262d796f72522e65095555063084ba34a570fc85389e13"
+  }
+}

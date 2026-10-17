@@ -1,0 +1,38 @@
+{
+  "verifiedIndexSourceFiles": 256,
+  "logs": [
+    {
+      "path": "evidence/dream-d2b2-wire-27af/full-standard.txt",
+      "originalSha256": "34c4f7767229fe1ba692c80af1326b4b71b8f41e0fa4f4ee3f5d2318e0edc3be",
+      "originalBytes": 227283,
+      "indexedSha256": "8826b39b5299e93c4cd170f4f1dccd8fb38dbadc086dd8debfe7df8cb6de7c9e",
+      "indexedBytes": 225442,
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/dream-d2b2-wire-27af/root-static.txt",
+      "originalSha256": "b31771710720e70e8f03a9f3258d22b78a5b7c0d21d6f55c43f662c81efae8de",
+      "originalBytes": 399,
+      "indexedSha256": "b53b6b161ad6508bbe6709c5dce631ec9dc4c2c4981b4ad093dec317a6615334",
+      "indexedBytes": 386,
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/dream-d2b2-wire-27af/focused-fixed.txt",
+      "originalSha256": "e80c1e76a49b10e4c2c1535ab5fdd9be477935eaae7fba455297d994a83aa1de",
+      "originalBytes": 8175,
+      "indexedSha256": "50ee89cb2d3efc3206b07cb9d05374efc89b7dd985520d8772b96af8be3821c6",
+      "indexedBytes": 8105,
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/dream-d2b2-wire-27af/initial-red.txt",
+      "originalSha256": "860fa3370dcfc06ed46c5cd639b21090def3e921bbda35f4a26a79b6069437b7",
+      "originalBytes": 6693,
+      "indexedSha256": "37e2f8a3e6bd1fff386c5db354f8b94411c90d8ab41c3a5e50a9a70411f62237",
+      "indexedBytes": 6614,
+      "onlyLineEndings": true
+    }
+  ],
+  "originalRawLogsRetainedLocally": true
+}

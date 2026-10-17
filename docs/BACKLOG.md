@@ -200,3 +200,11 @@ from local authenticated Gateway before sealing and scoring; model-response JSON
 is explicitly UNVERIFIED. See docs/DREAM-D2B-HELDOUT-EVAL.md. Next D2B2
 requires provider provenance and D3B OS egress, then D2B3 actual transfer on
 new held-out tasks; no automatic memory/skill promotion.
+
+## DREAM-D2B2 local-broker paired evidence pilot — 2026-10-18
+
+New opt-in trial service reuses existing native ExecutionLedger and request-view
+broker response receipts for baseline/candidate two-arm cases, and a private
+operator score client. No new model inference truth claims or active memory.
+See docs/DREAM-D2B2-PAIRED-BROKER.md. Next: actual Linux native socket and
+Gateway acceptance, then D3B/real provider bounded learning/heldout transfer.

@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-18T01:12:16.926315+03:00",
+  "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+  "result": "PASS",
+  "exitCode": 0,
+  "discoveredTests": 1836,
+  "rootFilesChecked": 1185,
+  "sourceGitlinksChecked": 2,
+  "runtimeTested": false,
+  "modelCalled": false,
+  "elapsedSec": 15.51,
+  "outputSha256": "b31771710720e70e8f03a9f3258d22b78a5b7c0d21d6f55c43f662c81efae8de",
+  "sourceDrift": []
+}

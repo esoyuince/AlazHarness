@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-10-18T00:55:44.722557+03:00",
+  "result": "FAIL",
+  "exitCode": 1,
+  "tests": 27,
+  "failures": 2,
+  "errors": 1,
+  "sourceSha256": "a30a69abff31b905b52dc0a51a7942f2305b4a94c6e4f734bd9aa426e83abb1b",
+  "testsSha256": "595ad83ed5310137a09b863e4f2aeef752d346c6e29162f248d506656dfbb74b",
+  "logSha256": "860fa3370dcfc06ed46c5cd639b21090def3e921bbda35f4a26a79b6069437b7",
+  "knownFindings": [
+    "source_revoke_while_inflight_cannot_mark_unknown",
+    "invalid_overmax_config_expected_wrong_error",
+    "mutated_mock_bypasses_signed_transport_verification"
+  ],
+  "notAnAcceptedVersion": true
+}

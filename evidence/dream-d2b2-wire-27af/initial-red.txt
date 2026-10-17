@@ -1,0 +1,79 @@
+test_changed_config_after_install_refused (test_dream_trial.TrialContracts.test_changed_config_after_install_refused) ... ok
+test_context_bounded_and_same_token_ceiling (test_dream_trial.TrialContracts.test_context_bounded_and_same_token_ceiling) ... ok
+test_deletion_of_request_view_blocks_status (test_dream_trial.TrialContracts.test_deletion_of_request_view_blocks_status) ... ok
+test_disabled_by_default_no_new_claim (test_dream_trial.TrialContracts.test_disabled_by_default_no_new_claim) ... ok
+test_forged_tool_calls_refused (test_dream_trial.TrialContracts.test_forged_tool_calls_refused) ... ok
+test_invalid_answer_refused_no_second_send (test_dream_trial.TrialContracts.test_invalid_answer_refused_no_second_send) ... ok
+test_max_cases_12_prevents_13 (test_dream_trial.TrialContracts.test_max_cases_12_prevents_13) ... ok
+test_missing_case_refused (test_dream_trial.TrialContracts.test_missing_case_refused) ... ok
+test_mutated_broker_response_document_refused (test_dream_trial.TrialContracts.test_mutated_broker_response_document_refused) ... FAIL
+test_new_plan_after_completed_is_separate_batch (test_dream_trial.TrialContracts.test_new_plan_after_completed_is_separate_batch) ... ok
+test_no_oracle_truth_in_requests (test_dream_trial.TrialContracts.test_no_oracle_truth_in_requests) ... ok
+test_output_ceiling_requires_policy (test_dream_trial.TrialContracts.test_output_ceiling_requires_policy) ... FAIL
+test_plan_cannot_change_after_commit (test_dream_trial.TrialContracts.test_plan_cannot_change_after_commit) ... ok
+test_provider_http_500_not_validated (test_dream_trial.TrialContracts.test_provider_http_500_not_validated) ... ok
+test_reject_missing_d2a_permission (test_dream_trial.TrialContracts.test_reject_missing_d2a_permission) ... ok
+test_replayed_idempotently_without_additional_provider_calls (test_dream_trial.TrialContracts.test_replayed_idempotently_without_additional_provider_calls) ... ok
+test_review_revised_between_arms_no_candidate_send (test_dream_trial.TrialContracts.test_review_revised_between_arms_no_candidate_send) ... ERROR
+test_review_withdrawn_before_trial_refuses (test_dream_trial.TrialContracts.test_review_withdrawn_before_trial_refuses) ... ok
+test_status_response_without_usage_does_not_claim_real_inference (test_dream_trial.TrialContracts.test_status_response_without_usage_does_not_claim_real_inference) ... ok
+test_tampered_resealed_trial_answer_must_not_be_accepted (test_dream_trial.TrialContracts.test_tampered_resealed_trial_answer_must_not_be_accepted) ... ok
+test_truncated_completion_refused (test_dream_trial.TrialContracts.test_truncated_completion_refused) ... ok
+test_two_parallel_identical_calls_at_most_once (test_dream_trial.TrialContracts.test_two_parallel_identical_calls_at_most_once) ... ok
+test_two_scripted_broker_requests_and_exact_view_proof (test_dream_trial.TrialContracts.test_two_scripted_broker_requests_and_exact_view_proof) ... ok
+test_unknown_config_field_refused (test_dream_trial.TrialContracts.test_unknown_config_field_refused) ... ok
+test_unknown_first_broker_transport_no_replay (test_dream_trial.TrialContracts.test_unknown_first_broker_transport_no_replay) ... ok
+test_unknown_second_broker_transport_retains_first_proof (test_dream_trial.TrialContracts.test_unknown_second_broker_transport_retains_first_proof) ... ok
+test_wrong_provider_model_refused (test_dream_trial.TrialContracts.test_wrong_provider_model_refused) ... ok
+
+======================================================================
+ERROR: test_review_revised_between_arms_no_candidate_send (test_dream_trial.TrialContracts.test_review_revised_between_arms_no_candidate_send)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af\tests\test_dream_trial.py", line 190, in test_review_revised_between_arms_no_candidate_send
+    result=self.t.run()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af\tests\test_dream_trial.py", line 95, in run
+    return asyncio.run(self.service.run(self.plan if plan is None else plan))
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af\packages\claw-hermes\dream_trial.py", line 444, in run
+    raise ExecutionDenied("dream_trial_storage_outcome_unknown") from None
+execution_budget.ExecutionDenied: dream_trial_storage_outcome_unknown
+
+======================================================================
+FAIL: test_mutated_broker_response_document_refused (test_dream_trial.TrialContracts.test_mutated_broker_response_document_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af\tests\test_dream_trial.py", line 317, in test_mutated_broker_response_document_refused
+    self.assertEqual(result["state"],"unknown")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'completed' != 'unknown'
+- completed
++ unknown
+
+
+======================================================================
+FAIL: test_output_ceiling_requires_policy (test_dream_trial.TrialContracts.test_output_ceiling_requires_policy)
+----------------------------------------------------------------------
+execution_budget.ExecutionDenied: invalid_trial_output_tokens
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af\tests\test_dream_trial.py", line 282, in test_output_ceiling_requires_policy
+    with self.assertRaisesRegex(ExecutionDenied,"dream_trial_exceeds_token_policy"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "dream_trial_exceeds_token_policy" does not match "invalid_trial_output_tokens"
+
+----------------------------------------------------------------------
+Ran 27 tests in 4.793s
+
+FAILED (failures=2, errors=1)

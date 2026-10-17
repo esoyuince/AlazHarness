@@ -1,8 +1,12 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T00:32:57.331505+03:00
+Son güncelleme: 2026-10-18T01:12:59.117592+03:00
 
 ## Güncel nokta
+
+DREAM-D2B2-27AF paired broker request-view pilot: full1836/1836, 65new focused, rootstatic PASS, 256source exact; Git/CI OPEN. Real model/native socket/skill transfer NOT RUN.
+Branch alaz/dream-d2b2-wire-27af, worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af, base 5a5744d93a96c25b72aece441bdebded66f8b36a. Prior D2B1 code & doc exact CI SUCCESS.
+
 
 DREAM-D2B1-8D20 offline paired scorer: 1771/1771 standard PASS, code commit d421e75 CI SUCCESS; final docs CI to verify. Real-model/skill transfer NOT RUN.
 Branch alaz/dream-d2b-eval-8d20; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b-eval-8d20; base eb674ee6b319a9309b0b46df6cf9868956092735.
@@ -499,3 +503,38 @@ root static PASS; scripted12result positive AMA inferred skill FALSE.
 Kod dokunulmadan docs/status/CI makbuzu commit edilecek; kendi CI ayrı.
 D2B2 gerçek broker provider evidence, D3B OS egress + held-out gerçek
 model kalite deneyleri açık.
+
+### 2026-10-18T00:47:13.162370+03:00 — DREAM-D2B2-27AF start
+
+Separate worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af from 5a5744d93a96c25b72aece441bdebded66f8b36a. First inspect existing
+provider broker, ExecutionLedger, request_view and D2B1 plan/score contracts.
+Implement exact attribution of paired trials to existing broker evidence
+without inferring model inference from untrusted JSON. D3B whole Gateway OS
+egress and real tariff/cost remain OPEN; external inference NOT RUN until
+those gates. Preserve root dirty tree, status mirror CAS and all earlier
+receipts. Baseline D2B1 doc final CI SUCCESS checked live.
+
+### 2026-10-18T01:08:38.976128+03:00 — D2B2 focused test checkpoint, full preflight
+
+Initial red27tests/2fail+1error evidence/dream-d2b2-wire-27af/initial-red.*
+preserved. Fixed in-flight review revocation marking UNKNOWN, test broker
+signature simulation and output-token policy expectation. Final65 focused
+(34SQL,17HTTP,14CLI) PASS skip0, including synthetic loopback score.
+New opt-in D2B2 paired responses use existing shared ExecutionLedger, broker
+request-view and D2A review binding; no oracle input or auto retry.
+256source/test/config SHA frozen for full1836 offline standard.
+Real Linux broker socket and external provider NOT RUN (WSL dependency
+missing). Native D3B/price/token/independent learnt-skill remains OPEN.
+
+### 2026-10-18T01:12:59.117592+03:00 — D2B2 scoped offline acceptance
+
+D2B2 code/trial CLI/manual bearer endpoints PASS locally: full1836/1836
+exit0,skip0;256source SHA unchanged. 65new (34service,17HTTP,14CLI)
+in full count once; root ci_check PASS 1185root/2gitlinks/1836 discovered.
+Initial27test/2fail+1error preserved exact red; repaired in-flight
+review revocation and fixture assumptions. Two broker arms with durable
+ExecutionLedger ticket and request-view/response hash have scripted
+backend proof, not real Linux socket/model. WSL no aiohttp/Docker;
+native D2B2 acceptance NOT RUN. D3B and true heldout learned skill OPEN.
+Code index SHA, Git push, exact CI next. Docs/DREAM-D2B2-PAIRED-BROKER.md
+and evidence/dream-d2b2-wire-27af/.

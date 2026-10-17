@@ -240,3 +240,10 @@ checks (57 new cases) on top of D2A 1714. No real Gateway, model or paid API
 required. `ci_check.py` discovers test count but its static check is not full
 unittest execution. The synthetic 8→12 result is only scripted numeric QA, not
 real learning. Full source, test and CI receipts: evidence/dream-d2b-eval-8d20/.
+
+## DREAM-D2B2 offline trial tests
+
+Current new test scope:34 service SQL +17 HTTP +14 CLI =65 tests (included
+in full unittest count ONCE). Synthetic broker `_exchange` and existing ledger
+contracts, without real native Linux socket/model billing. Initial red log
+preserved. Full tests and source SHA in evidence/dream-d2b2-wire-27af/.

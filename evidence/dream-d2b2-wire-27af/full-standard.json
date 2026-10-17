@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-18T01:11:27.143652+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1836,
+  "expected": 1836,
+  "skipReported": false,
+  "sourceFiles": 256,
+  "sourceDrift": [],
+  "seconds": 144.629,
+  "logSha256": "34c4f7767229fe1ba692c80af1326b4b71b8f41e0fa4f4ee3f5d2318e0edc3be",
+  "scope": "entire offline unittest suite, NO native D2B2 Linux broker or real model execution",
+  "realModelCalls": 0,
+  "nativeD2B2Trials": 0,
+  "newTestsIncludedOnce": 65
+}
