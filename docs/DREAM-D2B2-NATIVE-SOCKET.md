@@ -124,3 +124,15 @@ Root static gate PASS,1848 discovered (not additional execution),
 1205 checked root files,2 gitlinks. No paid/model or native Hermes Gateway.
 Exact logs, source SHA and output counts in evidence/dream-d2b2-native-9c31.
 Git branch CI is verified only after an actual exact-source publication.
+
+## Exact code publication and CI — 2026-10-18T02:03:59.284874+03:00
+
+The opt-in Linux acceptance code and complete scoped evidence were pushed
+on branch alaz/dream-d2b2-native-9c31 at code commit
+670485068209b91742b0d08ff4a632b458c041c2.
+The exact commit GitHub alaz/local-ci state is SUCCESS (status ID
+56610431537, updated 2026-10-17T23:01:38Z). The GitHub status API has
+no remote test count. Local1848/1848 and 258 frozen source files are
+independent acceptance receipts; 3 native Unix IPC scenarios are separate.
+Product packages and main were unchanged. The final documentation-only
+follow-up has a separate CI status checked after publication.

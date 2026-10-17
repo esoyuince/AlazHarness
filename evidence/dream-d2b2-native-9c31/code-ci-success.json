@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T02:03:59.284874+03:00",
+  "source": "GitHub exact commit status API",
+  "commit": "670485068209b91742b0d08ff4a632b458c041c2",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 56610431537,
+  "githubUpdatedAt": "2026-10-17T23:01:38Z",
+  "remoteTestCount": null,
+  "scope": "exact native broker QA code commit; not real Hermes Gateway/paid model acceptance"
+}

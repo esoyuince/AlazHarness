@@ -3,7 +3,7 @@
   "observedAt": "2026-10-18T01:57:03.892919+03:00",
   "baseCommit": "7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140",
   "branch": "alaz/dream-d2b2-native-9c31",
-  "result": "SCOPED_NATIVE_UNIX_IPC_PASS_GIT_CI_NOT_YET_PUBLISHED",
+  "result": "SCOPED_NATIVE_UNIX_IPC_PUBLISHED_CODE_CI_SUCCESS",
   "native": {
     "linuxRealUnixBrokerProcess": true,
     "sameUid": true,
@@ -91,7 +91,10 @@
     "real-model/provider tariffs",
     "held-out actual skill improvement"
   ],
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED",
-  "mainMerged": false
+  "codeCommit": "670485068209b91742b0d08ff4a632b458c041c2",
+  "codeCI": "success",
+  "mainMerged": false,
+  "codeCiReceipt": "evidence/dream-d2b2-native-9c31/code-ci-success.json",
+  "codeCiObservedAt": "2026-10-18T02:03:59.284874+03:00",
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }

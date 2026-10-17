@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T01:57:03.892919+03:00
+Son güncelleme: 2026-10-18T02:03:59.284874+03:00
 
 ## Güncel nokta
 
-DREAM-D2B2-NATIVE-9C31: 3 scoped real Linux broker IPC PASS +1848/1848 standard + root static PASS; Git/CI OPEN. Hermes Gateway/original aiohttp/real model NOT RUN.
+DREAM-D2B2-NATIVE-9C31:3 native Linux Unix IPC PASS +1848/1848 standard +rootstatic PASS; code6704850 CI SUCCESS. Docs CI separately. Hermes Gateway/aiohttp/real model NOT RUN.
 Worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-native-9c31 branch alaz/dream-d2b2-native-9c31 base 7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140.
 
 
@@ -600,3 +600,13 @@ PASS1205root/2gitlinks/1848 discovered. No autowake/memory/skill.
 See docs/DREAM-D2B2-NATIVE-SOCKET.md; evidence/dream-d2b2-native-9c31.
 Native full Hermes Gateway acceptance and D3B still OPEN. Next exact
 Git staged source/index, commit/push/CI; user root dirty protected.
+
+### 2026-10-18T02:03:59.284874+03:00 — Exact code CI SUCCESS, native broker acceptance docs delivery
+
+670485068209b91742b0d08ff4a632b458c041c2 code commit GitHub
+alaz/local-ci SUCCESS status56610431537 at 2026-10-17T23:01:38Z.
+Local full1848 PASS, root static PASS, 258 source SHA exact published;
+3 native Linux broker IPC scenarios separate, not actual Gateway/model.
+Only docs/status/CI receipt follow-up staged; production package, tool
+privileges, model settings and main left unchanged. Final documentation
+commit CI will be checked individually after push.
