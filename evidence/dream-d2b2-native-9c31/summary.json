@@ -1,0 +1,97 @@
+{
+  "id": "DREAM-D2B2-NATIVE-9C31",
+  "observedAt": "2026-10-18T01:57:03.892919+03:00",
+  "baseCommit": "7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140",
+  "branch": "alaz/dream-d2b2-native-9c31",
+  "result": "SCOPED_NATIVE_UNIX_IPC_PASS_GIT_CI_NOT_YET_PUBLISHED",
+  "native": {
+    "linuxRealUnixBrokerProcess": true,
+    "sameUid": true,
+    "signedSocketFrames": true,
+    "realOriginLoopbackHttp": true,
+    "productionUpstreamAiohttpExercised": false,
+    "hermesGatewayExecuted": false,
+    "nativeSourceReadDockerExecuted": false,
+    "scriptedOrigin": true,
+    "scriptedTerminal": true,
+    "scenarios": {
+      "normal": {
+        "path": "evidence/dream-d2b2-native-9c31/normal-initial.json",
+        "sha256": "d3c314f090b44ce8b1d12296ae5be8c047b0f6c25de75d23e851ed9a35e27d5b",
+        "bytes": 2418,
+        "trial": "completed",
+        "socketRemoved": true,
+        "brokerExit": 0,
+        "rawRequestDigestMatches": 3,
+        "physicalOriginHttpRequests": 3
+      },
+      "candidate-disconnect": {
+        "path": "evidence/dream-d2b2-native-9c31/candidate-disconnect-initial.json",
+        "sha256": "25a38b50478edca0fd002071d538a8f2399d294ef48e2c505e3a8c765d905d1c",
+        "bytes": 2182,
+        "trial": "unknown",
+        "socketRemoved": true,
+        "brokerExit": 0,
+        "rawRequestDigestMatches": 3,
+        "physicalOriginHttpRequests": 3
+      },
+      "review-revoked": {
+        "path": "evidence/dream-d2b2-native-9c31/review-revoked-initial.json",
+        "sha256": "51b36b4642290834dda20134435c02e1c4e47f86fca6a92cef7321a717abc1db",
+        "bytes": 1971,
+        "trial": "unknown",
+        "socketRemoved": true,
+        "brokerExit": 0,
+        "rawRequestDigestMatches": 2,
+        "physicalOriginHttpRequests": 2
+      }
+    },
+    "count": 3
+  },
+  "standard": {
+    "tests": 1848,
+    "newCustodyTests": 12,
+    "custodyTestsAlreadyIncluded": true,
+    "exitCode": 0,
+    "skipped": 0,
+    "measuredSourceFiles": 258,
+    "logSha256": "c81d5a10aa24b2ec37871cad3bf39048b3b7b5c5bc3daa0a283dd8b7b66f744e"
+  },
+  "rootStatic": {
+    "observedAt": "2026-10-18T01:55:52.956517+03:00",
+    "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+    "exitCode": 0,
+    "result": "PASS",
+    "discoveredTests": 1848,
+    "rootFilesChecked": 1205,
+    "sourceGitlinksChecked": 2,
+    "runtimeTested": false,
+    "modelCalled": false,
+    "elapsedSeconds": 10.234,
+    "rawOutputSha256": "07d4bb7f9c62bc1988a684cf1e9a3cc744e95e39d92669c95f587b85ad7d54b2",
+    "sourceDrift": []
+  },
+  "realModelCalls": 0,
+  "paidCalls": 0,
+  "modelQualityVerified": false,
+  "skillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "newScheduler": false,
+  "newPermissions": false,
+  "publicDataExcluded": [
+    "broker key",
+    "origin bearer",
+    "gold HMAC key",
+    "private profile",
+    "raw origin requests"
+  ],
+  "remaining": [
+    "full Hermes Gateway and original aiohttp native acceptance",
+    "D3B OS identity/egress",
+    "real-model/provider tariffs",
+    "held-out actual skill improvement"
+  ],
+  "codeCommit": null,
+  "codeCI": "NOT_YET_PUBLISHED",
+  "mainMerged": false
+}

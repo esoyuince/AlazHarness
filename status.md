@@ -1,8 +1,12 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T01:18:47.258893+03:00
+Son güncelleme: 2026-10-18T01:57:03.892919+03:00
 
 ## Güncel nokta
+
+DREAM-D2B2-NATIVE-9C31: 3 scoped real Linux broker IPC PASS +1848/1848 standard + root static PASS; Git/CI OPEN. Hermes Gateway/original aiohttp/real model NOT RUN.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-native-9c31 branch alaz/dream-d2b2-native-9c31 base 7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140.
+
 
 DREAM-D2B2-27AF paired broker pilot:1836/1836 offline PASS,256source exact, code5534bc1 pushed, alaz/local-ci SUCCESS. Real broker socket/model/skill transfer NOT RUN.
 Branch alaz/dream-d2b2-wire-27af, worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-wire-27af, base 5a5744d93a96c25b72aece441bdebded66f8b36a. Prior D2B1 code & doc exact CI SUCCESS.
@@ -558,3 +562,41 @@ ayrı kabul kanıtı. Bu commit yalnız docs/status/CI makbuzunu taşır;
 ürün/agent/model/test/budget/main değişmiyor. D2B2 native Linux
 Gateway/signed socket execution ve D3B dış sağlayıcı model capability
 NOT RUN. Son doc commit CI ayrıca doğrulanacak.
+
+### 2026-10-18T01:34:12.043590+03:00 — DREAM-D2B2-NATIVE-9C31 start
+
+New dedicated worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-native-9c31 from 7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140. Prior D2B2
+code/full1836/CI unchanged; GitHub doc exact7991172 alaz/local-ci SUCCESS
+verified. Need real Unix broker process + real Hermes Gateway lifecycle,
+paired baseline/candidate request/response ticket binding to scripted localhost
+origin, and independent receipt/process cleanup. No personal profiles/secrets;
+no external model, no automatic memory promotion. If unavailable dependencies,
+report BLOCKED and limit to independent offline tests; do not fabricate native
+pass. Native process/test scripts only in this own branch; main/root dirty
+protected. D3B OS isolation still OPEN.
+
+### 2026-10-18T01:52:23.431466+03:00 — Native Linux broker3scoped PASS, full regression preflight
+
+Real WSL Linux subprocess+Unix peer/HMAC socket and native SQLite ledger
+with test-only stdlib 127.0.0.1 HTTP adapter: normal, candidate-disconnect,
+review-revoked 3/3 PASS. Broker PID separate, socket removed/exit0;
+request-view raw SHA matched each origin HTTP request; D1/D2A/D2B2
+with scripted source and answers, not real Hermes Gateway/model.
+12 offline receipt custody checks PASS. 258 project source/test/config files frozen;
+full 1836+12=1848 standard next. WSL lacks Linux Node,aiohttp,Docker
+and prepared vendor manifest, no package install/personal credentials.
+Full Gateway and D3B remain OPEN. See docs/DREAM-D2B2-NATIVE-SOCKET.md
+and evidence/dream-d2b2-native-9c31/native-scenarios-summary.json.
+
+### 2026-10-18T01:57:03.892919+03:00 — D2B2 native Unix IPC acceptance and full tests
+
+Normal/candidate-disconnect/review-revoked:3 real Linux broker subprocess
++Unix socket +stdlib local HTTP scripted origin PASSED, broker exit0,
+socket removed, typed egress grant,request view and ledger SHA matched.
+Original product _upstream aiohttp NOT RUN; no Hermes Gateway and no
+Docker/real model inference. 12 offline read-only custody tests in
+full1848/1848 PASS exit0 skips0,258source hash unchanged; root static
+PASS1205root/2gitlinks/1848 discovered. No autowake/memory/skill.
+See docs/DREAM-D2B2-NATIVE-SOCKET.md; evidence/dream-d2b2-native-9c31.
+Native full Hermes Gateway acceptance and D3B still OPEN. Next exact
+Git staged source/index, commit/push/CI; user root dirty protected.

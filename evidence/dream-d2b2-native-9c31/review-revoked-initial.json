@@ -1,0 +1,74 @@
+{
+  "scenario": "review-revoked",
+  "result": "PASS",
+  "errors": [],
+  "broker": {
+    "pidSeparate": true,
+    "exitCode": 0,
+    "socketRemoved": true,
+    "activeRequests": 0,
+    "counters": {
+      "physicalAttempts": 2,
+      "refused": 0,
+      "pings": 1,
+      "responses": 2
+    }
+  },
+  "origin": {
+    "authenticatedRequests": 2,
+    "rejectedNonProviderCredentials": 0,
+    "kinds": [
+      "dream",
+      "baseline"
+    ],
+    "requestSha256": [
+      "6c051bb692ad3a7b081cc90efc8d01fee13a6cb897ebdcfd47e310333afcb6dc",
+      "d4c7d150079355287144172a59cfdc0873de432ea11f25ecea6b1a75deb66045"
+    ],
+    "requestBytes": [
+      2002,
+      1965
+    ],
+    "originExceptions": []
+  },
+  "trial": {
+    "state": "unknown",
+    "recordedArmCount": 0,
+    "requestedArms": [],
+    "ticketHashes": [],
+    "ledgerLinkagePreserved": true,
+    "evaluatorTruthSent": false,
+    "providerInferenceVerified": false,
+    "skillTransferVerified": false
+  },
+  "budget": {
+    "providerReservations": 2,
+    "separateBudget": false
+  },
+  "provenance": {
+    "preparedRequestRows": 2,
+    "observedResponseRows": 2,
+    "exactWireHashMatches": 2,
+    "nativeEgressGrantCount": 2,
+    "requestViewTiedToProviderClaim": true,
+    "textStreamOnly": true,
+    "modelProcessingVerified": false
+  },
+  "scope": "real Linux private Unix-socket broker IPC/native SQLite/loopback HTTP with overridden stdlib _upstream; synthetic terminal and no Hermes Gateway",
+  "nativeBrokerSocket": true,
+  "nativeGateway": false,
+  "originalAiohttpUpstream": false,
+  "docker": false,
+  "physicalModelInferenceVerified": false,
+  "modelComprehensionVerified": false,
+  "independentSkillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "paidCalls": 0,
+  "actualModelCalls": 0,
+  "dreamState": "completed",
+  "candidateCount": 1,
+  "operatorActualHumanReviewVerified": false,
+  "memoryAndSkillUnchanged": true,
+  "elapsedSeconds": 2.259,
+  "privateTemporaryProfileRemoved": true
+}

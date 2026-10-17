@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-18T01:55:04.030907+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1848,
+  "expected": 1848,
+  "skipReported": false,
+  "sourceFiles": 258,
+  "sourceDrift": [],
+  "elapsedSeconds": 127.851,
+  "logSha256": "c81d5a10aa24b2ec37871cad3bf39048b3b7b5c5bc3daa0a283dd8b7b66f744e",
+  "scope": "full Windows offline regression incl12 native receipt-custody tests; no WSL subprocess replay during unittest",
+  "nativeLinuxUnixCasesAlreadyMeasured": 3,
+  "realHermesGatewayExecuted": false,
+  "realModelCalls": 0
+}

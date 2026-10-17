@@ -1,0 +1,81 @@
+{
+  "scenario": "candidate-disconnect",
+  "result": "PASS",
+  "errors": [],
+  "broker": {
+    "pidSeparate": true,
+    "exitCode": 0,
+    "socketRemoved": true,
+    "activeRequests": 0,
+    "counters": {
+      "physicalAttempts": 3,
+      "refused": 1,
+      "pings": 1,
+      "responses": 2
+    }
+  },
+  "origin": {
+    "authenticatedRequests": 3,
+    "rejectedNonProviderCredentials": 0,
+    "kinds": [
+      "dream",
+      "baseline",
+      "candidate"
+    ],
+    "requestSha256": [
+      "a2841be8758516c2f40bb21aa86a4c4c8cbdebf5ed469708a0018f7b0d686c92",
+      "d4c7d150079355287144172a59cfdc0873de432ea11f25ecea6b1a75deb66045",
+      "67a7def483a4e0694d30843eea03b9f1c06f25bf908245982ad49fe5faecad37"
+    ],
+    "requestBytes": [
+      2002,
+      1965,
+      2087
+    ],
+    "originExceptions": []
+  },
+  "trial": {
+    "state": "unknown",
+    "recordedArmCount": 1,
+    "requestedArms": [
+      "baseline"
+    ],
+    "ticketHashes": [
+      "d0591558fe50e86904030dbd25130dd508f9b18ca4826f414c8f2d78391dc090"
+    ],
+    "ledgerLinkagePreserved": true,
+    "evaluatorTruthSent": false,
+    "providerInferenceVerified": false,
+    "skillTransferVerified": false
+  },
+  "budget": {
+    "providerReservations": 3,
+    "separateBudget": false
+  },
+  "provenance": {
+    "preparedRequestRows": 3,
+    "observedResponseRows": 2,
+    "exactWireHashMatches": 3,
+    "nativeEgressGrantCount": 3,
+    "requestViewTiedToProviderClaim": true,
+    "textStreamOnly": true,
+    "modelProcessingVerified": false
+  },
+  "scope": "real Linux private Unix-socket broker IPC/native SQLite/loopback HTTP with overridden stdlib _upstream; synthetic terminal and no Hermes Gateway",
+  "nativeBrokerSocket": true,
+  "nativeGateway": false,
+  "originalAiohttpUpstream": false,
+  "docker": false,
+  "physicalModelInferenceVerified": false,
+  "modelComprehensionVerified": false,
+  "independentSkillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "paidCalls": 0,
+  "actualModelCalls": 0,
+  "dreamState": "completed",
+  "candidateCount": 1,
+  "operatorActualHumanReviewVerified": false,
+  "memoryAndSkillUnchanged": true,
+  "elapsedSeconds": 2.187,
+  "privateTemporaryProfileRemoved": true
+}

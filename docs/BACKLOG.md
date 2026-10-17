@@ -208,3 +208,12 @@ broker response receipts for baseline/candidate two-arm cases, and a private
 operator score client. No new model inference truth claims or active memory.
 See docs/DREAM-D2B2-PAIRED-BROKER.md. Next: actual Linux native socket and
 Gateway acceptance, then D3B/real provider bounded learning/heldout transfer.
+
+## DREAM-D2B2-NATIVE-9C31 — scoped Linux broker acceptance (18 October 2026)
+
+Real Linux Unix-socket broker subprocess, native SQLite ledger and D1/D2A/D2B1/D2B2;
+test-only stdlib local HTTP upstream: normal, candidate disconnect and revoked review
+PASS. Real Hermes Gateway, production aiohttp upstream, Docker and real model
+remain NOT RUN because WSL lacks dependencies and vendor checkout. See
+docs/DREAM-D2B2-NATIVE-SOCKET.md. Next: source-pinned isolated native Hermes
+Linux environment, full Gateway and production broker acceptance.

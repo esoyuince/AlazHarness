@@ -247,3 +247,11 @@ Current new test scope:34 service SQL +17 HTTP +14 CLI =65 tests (included
 in full unittest count ONCE). Synthetic broker `_exchange` and existing ledger
 contracts, without real native Linux socket/model billing. Initial red log
 preserved. Full tests and source SHA in evidence/dream-d2b2-wire-27af/.
+
+## DREAM-D2B2-NATIVE-9C31 receipt custody and CI
+
+Default unittest discovery adds 12 read-only JSON custody checks for three
+WSL native Unix socket/local HTTP scenarios, NOT 12 more native socket runs.
+Opt-in runner uses test-only stdlib HTTP upstream, not product aiohttp; actual
+product Unix broker/client and native ledger/request-view remain in use.
+See evidence/dream-d2b2-native-9c31/ for run and source receipts.

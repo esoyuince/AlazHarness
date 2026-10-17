@@ -1,0 +1,89 @@
+{
+  "scenario": "normal",
+  "result": "PASS",
+  "errors": [],
+  "broker": {
+    "pidSeparate": true,
+    "exitCode": 0,
+    "socketRemoved": true,
+    "activeRequests": 0,
+    "counters": {
+      "physicalAttempts": 3,
+      "refused": 1,
+      "pings": 1,
+      "responses": 3
+    }
+  },
+  "origin": {
+    "authenticatedRequests": 3,
+    "rejectedNonProviderCredentials": 0,
+    "kinds": [
+      "dream",
+      "baseline",
+      "candidate"
+    ],
+    "requestSha256": [
+      "d7be091c1b4f039a056dd467a537f8ddbff908dc04b13d540eee0f7a1e5655ca",
+      "d4c7d150079355287144172a59cfdc0873de432ea11f25ecea6b1a75deb66045",
+      "67a7def483a4e0694d30843eea03b9f1c06f25bf908245982ad49fe5faecad37"
+    ],
+    "requestBytes": [
+      2002,
+      1965,
+      2087
+    ],
+    "originExceptions": []
+  },
+  "trial": {
+    "state": "completed",
+    "recordedArmCount": 2,
+    "requestedArms": [
+      "baseline",
+      "candidate"
+    ],
+    "ticketHashes": [
+      "fbf9b444129e3d95f9ae09310c236cc7d0a21818fda2e1d839fd9246fb74a657",
+      "eb749701932d48e612ca25cbf90282bdec16f3d1dd40dbfc11b05a168beae5d2"
+    ],
+    "ledgerLinkagePreserved": true,
+    "evaluatorTruthSent": false,
+    "providerInferenceVerified": false,
+    "skillTransferVerified": false,
+    "syntheticLocalScore": {
+      "baselineCorrect": 8,
+      "candidateCorrect": 12,
+      "learnedSkillProven": false
+    }
+  },
+  "budget": {
+    "providerReservations": 3,
+    "separateBudget": false
+  },
+  "provenance": {
+    "preparedRequestRows": 3,
+    "observedResponseRows": 3,
+    "exactWireHashMatches": 3,
+    "nativeEgressGrantCount": 3,
+    "requestViewTiedToProviderClaim": true,
+    "textStreamOnly": true,
+    "modelProcessingVerified": false,
+    "replayRefused": true
+  },
+  "scope": "real Linux private Unix-socket broker IPC/native SQLite/loopback HTTP with overridden stdlib _upstream; synthetic terminal and no Hermes Gateway",
+  "nativeBrokerSocket": true,
+  "nativeGateway": false,
+  "originalAiohttpUpstream": false,
+  "docker": false,
+  "physicalModelInferenceVerified": false,
+  "modelComprehensionVerified": false,
+  "independentSkillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "paidCalls": 0,
+  "actualModelCalls": 0,
+  "dreamState": "completed",
+  "candidateCount": 1,
+  "operatorActualHumanReviewVerified": false,
+  "memoryAndSkillUnchanged": true,
+  "elapsedSeconds": 2.286,
+  "privateTemporaryProfileRemoved": true
+}

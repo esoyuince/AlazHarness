@@ -1,0 +1,43 @@
+{
+  "observedAt": "2026-10-18T01:52:23.431466+03:00",
+  "scopedResult": "PASS_LINUX_UNIX_IPC_NOT_GATEWAY",
+  "realNativeSocketCases": 3,
+  "notAdditionalInferenceOrHumanReview": true,
+  "stdLibUpstreamReplacedOriginal": true,
+  "noDockerNoNodeNoAiohttpNoHermesGateway": true,
+  "runtimeTemporaryProfilesDeleted": true,
+  "caseEvidence": {
+    "normal": {
+      "path": "evidence/dream-d2b2-native-9c31/normal-initial.json",
+      "sha256": "d3c314f090b44ce8b1d12296ae5be8c047b0f6c25de75d23e851ed9a35e27d5b",
+      "bytes": 2418,
+      "trial": "completed",
+      "socketRemoved": true,
+      "brokerExit": 0,
+      "rawRequestDigestMatches": 3,
+      "physicalOriginHttpRequests": 3
+    },
+    "candidate-disconnect": {
+      "path": "evidence/dream-d2b2-native-9c31/candidate-disconnect-initial.json",
+      "sha256": "25a38b50478edca0fd002071d538a8f2399d294ef48e2c505e3a8c765d905d1c",
+      "bytes": 2182,
+      "trial": "unknown",
+      "socketRemoved": true,
+      "brokerExit": 0,
+      "rawRequestDigestMatches": 3,
+      "physicalOriginHttpRequests": 3
+    },
+    "review-revoked": {
+      "path": "evidence/dream-d2b2-native-9c31/review-revoked-initial.json",
+      "sha256": "51b36b4642290834dda20134435c02e1c4e47f86fca6a92cef7321a717abc1db",
+      "bytes": 1971,
+      "trial": "unknown",
+      "socketRemoved": true,
+      "brokerExit": 0,
+      "rawRequestDigestMatches": 2,
+      "physicalOriginHttpRequests": 2
+    }
+  },
+  "runScriptSha256": "eea7ae8b21a61dc69489574ca5e4800172bf7185da3c443d4cb002fc5de12f23",
+  "custodyTestSha256": "188cbeb4990323015ac42d0f4487b1cc5f826276a4e8a4f9b2b136f160350630"
+}
