@@ -47,3 +47,7 @@ Full1635/1635 PASS, exit0,skip0,239 measured files unchanged. This detached sour
 ## Lossless review-diff publication
 
 The raw fix-v2 unified diff contains meaningful context whitespace. It is retained unchanged under ignored runtime/publication-verbatim and published as exact UTF-8 text with its original length/SHA256 in evidence/dream-qa-61a9/fix-v2-review-verbatim.json. Neither product/test source nor historical result was normalized to satisfy whitespace checks.
+
+## QA publication
+
+QA commit7b2aeb425c789f2f55f53099adb4c1f897f44c25 is published; alaz/local-ci SUCCESS at2026-10-17T11:42:37Z. This is the independent baseline/test/report branch, not Dream product code publication. Exact remote test count is not provided by the status API. The product remains under E458 ownership; its final fixed-source native rerun and full publication/CI are separate open checkpoints. Manual candidates-only behavior and the three repaired defects are qualified at the reviewed scopes above. Actual inference quality, automatic triggers, active-memory integration and transferable skill validation are NOT closed.

@@ -13,3 +13,5 @@ Erken v1native4profil readonlyteyit edildi; finalfixednative henüz beklenir.
 Yeni model/tool/native/scheduler/ürün/pin değişikliği yok.
 Kesin sonraki adım E458 finalkaynak/nativeprofillerini aynıcorroboratorla
 okuyup sonQA kabulünü kaydetmek. Bu dalın Git/CI teslimi ayrı yürütülür.
+
+2026-10-17T14:44:24.043416+03:00 QA code7b2aeb4 published, alaz/local-ci SUCCESS. Final native/publication source remains pending on product owner. No active-memory edits or inference.

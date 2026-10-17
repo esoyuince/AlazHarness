@@ -22,5 +22,8 @@
   "productSourceChangedByQA": false,
   "concurrencyTestFixtureAdjustment": "30 original test methods unchanged; dedup barrier scheduling adjusted; one new snapshot-invalidation guard test",
   "nativeVerifierFixtureCorrection": "read only known JSON prefixes, not unrelated scalar state_meta values",
-  "gitPublication": "NOT_YET_PUBLISHED"
+  "gitPublication": "PUBLISHED",
+  "qaCodeCommit": "7b2aeb425c789f2f55f53099adb4c1f897f44c25",
+  "qaCodeCI": "success",
+  "publicationObservedAt": "2026-10-17T14:44:24.043416+03:00"
 }
