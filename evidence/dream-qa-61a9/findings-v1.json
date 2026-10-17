@@ -1,0 +1,33 @@
+{
+  "scope": "candidate-v1 real Dream code with synthetic fixtures, not hostile-OS isolation claim",
+  "observedAt": "2026-10-17T14:18:29.409834+03:00",
+  "dreamSha256": "59c4ed82cc302f42e4dc7c69e7211466d8eec103468aa7bd9ddf4e0eb4118939",
+  "tests": 31,
+  "passed": 28,
+  "failed": 3,
+  "testSha256": "aa7011fa64ccfe2d745c16703f2c7658ce5cdd4458b1c4ccc7eb27a60f2375e2",
+  "testPath": "scripts/qa/test_dream_61a9.py",
+  "findings": [
+    {
+      "id": "D61-G01",
+      "severity": "P1",
+      "test": "test_json_escaped_secret_in_candidate_is_also_rejected",
+      "finding": "Known SDK bearer contains a backslash between nonempty prefix/suffix. Candidate statement repeats the exact decoded bearer. Checking secret in serialized _json(notes) misses escaping; batch is completed with that decoded secret stored. Test uses synthetic valid printable bearer, not personal key.",
+      "repair": "Scan decoded strings recursively or compare appropriately serialized secrets in every string; bounded tree traversal, no raw secret diagnostics."
+    },
+    {
+      "id": "D61-G02",
+      "severity": "P2",
+      "test": "test_record_with_unknown_provider_ticket_is_not_accepted_as_completed",
+      "finding": "Completed row with re-sealed nonexistent providerTicket is returned by status(); _history validates only ticket shape, not actual provider claim/request fingerprint/outcome.",
+      "repair": "Validate ticket against existing ledger claim kind/epoch/instance/fingerprint and completion-compatible state. Unknown unfinished claim remains distinct. This is consistency defense, not a signature against privileged rewrites."
+    },
+    {
+      "id": "D61-G03",
+      "severity": "P2",
+      "test": "test_candidate_identity_is_checked_against_persisted_content",
+      "finding": "Candidate statement changed while candidateId unchanged and outer digest re-sealed is accepted. Deterministic content-based candidate identity is not rechecked.",
+      "repair": "Recompute candidateId from normalized kind/statement/condition and checked citation metadata exactly as writer, reject mismatch. No model truth/authority inference."
+    }
+  ]
+}

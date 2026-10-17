@@ -1,0 +1,11 @@
+{
+  "commit": "7b2aeb425c789f2f55f53099adb4c1f897f44c25",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 56591378953,
+  "updatedAt": "2026-10-17T11:42:37Z",
+  "observedAt": "2026-10-17T14:44:24.043416+03:00",
+  "source": "GitHub commit status API",
+  "remoteTestCount": null,
+  "scope": "independent QA branch default tests, NOT product Dream publication/native acceptance"
+}

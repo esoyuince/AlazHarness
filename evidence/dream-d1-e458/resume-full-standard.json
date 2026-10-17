@@ -1,0 +1,14 @@
+{
+  "scope": "resumed full standard on existing Dream D1 product; no native or model inference",
+  "tests": 1657,
+  "exitCode": 0,
+  "skipsReported": false,
+  "sourceFiles": 243,
+  "changed": [],
+  "seconds": 120.022,
+  "observedAt": "2026-10-17T15:44:54.508258+03:00",
+  "result": "PASS",
+  "newNativeRuns": 0,
+  "inferenceCalls": 0,
+  "paidCalls": 0
+}

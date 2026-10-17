@@ -1,0 +1,13 @@
+{
+  "scope": "independent opt-in synthetic API/HTTP; not standard count",
+  "observedAt": "2026-10-17T15:45:59.103016+03:00",
+  "tests": 16,
+  "expectedTests": 16,
+  "exitCode": 0,
+  "skipsReported": false,
+  "sourceFiles": 243,
+  "changed": [],
+  "seconds": 1.121,
+  "logSha256": "99437278104cfe654ea334e8b6aeba82849169f47bc6dceb42b58c6ca5d91535",
+  "result": "PASS"
+}

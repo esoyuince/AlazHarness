@@ -1,0 +1,7 @@
+{
+  "scope": "read-only corroboration process, no new Gateway/model/tools",
+  "exitCode": 1,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scriptSha256": "b37ddd083c2194018c66fc50a63d1af4675a179f6d7e6c288eede4f5f0819b89",
+  "observedAt": "2026-10-17T14:31:15.914231+03:00"
+}

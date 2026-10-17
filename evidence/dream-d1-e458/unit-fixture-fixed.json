@@ -1,0 +1,9 @@
+{
+  "scope": "test fixture sqlite connection closure only; all40 test AST/assertions unchanged",
+  "exitCode": 0,
+  "testMethodsUnchanged": true,
+  "tests": 40,
+  "sourceSha256": "59c4ed82cc302f42e4dc7c69e7211466d8eec103468aa7bd9ddf4e0eb4118939",
+  "testSha256": "545139c1eb919024e43bf377a1b145bb6b4a615149a134b17e31ad6dce10bd62",
+  "observedAt": "2026-10-17T14:16:00.864487+03:00"
+}

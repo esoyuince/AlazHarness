@@ -1,0 +1,8 @@
+{
+  "scope": "read same four new fixed-source QA fixtures; not another native run",
+  "exitCode": 0,
+  "scriptSha256": "1ec2856682ba6e59f2e8e1c53c618568ef44de89f58bc6777a7fbe2ef20b964f",
+  "stdoutSha256": "f9bee25b38f6756da76b28de6d8f6fea8b68849f31a6d64f497c11085ebe2eb2",
+  "outputFile": "native-final-corroboration.json",
+  "observedAt": "2026-10-17T14:49:20.630128+03:00"
+}

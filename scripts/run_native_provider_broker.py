@@ -28,11 +28,12 @@ from run_native_host_gate import install_probe_plugin
 from execution_model_fixture import ExecutionModel
 from provider_egress import BrokerConfig,hashed,signed
 from provider_broker import ProviderBrokerClient
+from dream_probe_support import scripted_dream,exercise_dream
 
 CASES=('normal','missing-broker','stale-broker','provider-limit','upstream-disconnect','after-tool-disconnect')
 
 class AuthenticatedModel(ExecutionModel):
-    def __init__(self,fixture,marker,scenario,secret,target,*,read_limit=None):
+    def __init__(self,fixture,marker,scenario,secret,target,*,read_limit=None,dream_case=None):
         super().__init__(fixture,marker,'normal',target,read_limit=read_limit);original=self.server.RequestHandlerClass;owner=self
         self.rejected=0;self.accepted=0;self.received_payloads=[];self.request_metadata=[]
         class Guarded(original):
@@ -57,6 +58,7 @@ class AuthenticatedModel(ExecutionModel):
                 if scenario=='upstream-disconnect' or (scenario=='after-tool-disconnect' and owner.accepted==2):
                     owner.calls.append({'path':self.path,'authenticated':True,'response':'disconnected'})
                     self.connection.shutdown(socket.SHUT_RDWR);self.connection.close();return
+                if scripted_dream(self,body,owner,dream_case):return
                 self.rfile=io.BytesIO(raw)
                 return super().do_POST()
         self.server.RequestHandlerClass=Guarded
@@ -70,7 +72,9 @@ def main():
     p.add_argument('--record-request-view',action='store_true',help='Opt in to normalized broker request metadata, not model comprehension')
     p.add_argument('--fixture-lines',type=int,default=2,help='Bounded native pagination fixture, 2..500')
     p.add_argument('--read-limit',type=int,default=None,help='Explicit read_file limit; omitted native default is not assumed')
+    p.add_argument('--dream-case',choices=('valid','invalid-citation','disconnect','disabled'))
     a=p.parse_args()
+    assert a.dream_case is None or a.scenario=='normal'
     assert 2 <= a.fixture_lines <= 500
     assert a.read_limit is None or 1 <= a.read_limit <= 1000
     out=a.output.absolute();source=a.source.resolve()
@@ -83,7 +87,7 @@ def main():
     token=secrets.token_hex(32);sdk=secrets.token_hex(32);signer=secrets.token_hex(32);origin_secret=secrets.token_hex(32);nonce=secrets.token_hex(16)
     assert len({token,sdk,signer,origin_secret})==4
     marker='BROKER_NATIVE_'+secrets.token_hex(12);fixture=out/'input.txt';fixture.write_bytes((marker+'\n'+''.join('line '+str(i)+' ışık\n' for i in range(2,a.fixture_lines+1))).encode('utf-8'))
-    provider=AuthenticatedModel(fixture,marker,a.scenario,origin_secret,out/'must-not-exist.txt',read_limit=a.read_limit);provider.start()
+    provider=AuthenticatedModel(fixture,marker,a.scenario,origin_secret,out/'must-not-exist.txt',read_limit=a.read_limit,dream_case=a.dream_case);provider.start()
     policy=ExecutionPolicy('alaz-scripted',1 if a.scenario in ('provider-limit','upstream-disconnect') else 3,1,131072,32768,491520,1000000,1000000,2000000)
     context=LocalRecoveryContext(out/'profile',token,1,'unused-before-boot')
     private=BrokerConfig(provider.base_url,'alaz-scripted',origin_secret,signer,str(out/'profile/state.db'),context.scope,context.binding,policy.fingerprint)
@@ -124,6 +128,7 @@ def main():
              'auxiliary':{'title_generation':{'enabled':False}},'security':{'allow_lazy_installs':False},'memory':{'provider':'none'},
              'checkpoints':{'enabled':False},'sessions':{'auto_archive':False,'auto_prune':False},'approvals':{'mode':'manual'},
              'terminal':{'backend':'alaz_isolated_read','cwd':'/workspace'},'telemetry':{'shared_metrics':{'enabled':False,'send':False}}}
+        if a.dream_case and a.dream_case!='disabled':cfg['plugins']['entries']['alaz-host-gate']['settings']['dream']={'enabled':True,'output_tokens':2048}
         assert origin_secret not in json.dumps(cfg)+json.dumps(env)
         (out/'profile/config.yaml').write_text(json.dumps(cfg));install_probe_plugin(out/'profile',hp)
         # The actual origin rejects all three non-provider keys before reading a model request.
@@ -146,6 +151,7 @@ def main():
         (out/'client-stderr.txt').write_bytes(cli.stderr);report['client_exit']=cli.returncode
         assert cli.returncode==0,'native client failed'
         result=read(out/'client-result.json');assert result['nonce']==nonce;report['client']=result
+        if a.dream_case:report['dream']=exercise_dream(out,port,token,a.dream_case,result,provider)
         (out/'stop.json').write_text(json.dumps({'nonce':nonce,'pid':child.pid}));child.wait(timeout=40)
         shutdown=read(out/'shutdown.json');assert child.returncode==0 and shutdown['native_result'] is True and shutdown['nonloopback_attempts_blocked']==0
         report['shutdown']=shutdown
@@ -180,9 +186,9 @@ def main():
         if a.scenario in ('missing-broker','stale-broker'):
             assert not providers and not tools and not grants and not data['admissions'] and not provider.accepted and not bindings and 'error' in result
         elif a.scenario=='normal':
-            assert len(providers)==2 and len(tools)==1 and len(data['admissions'])==1 and len(messages)==1 and len(bindings)==1
+            assert len(providers)==(3 if a.dream_case and a.dream_case!='disabled' else 2) and len(tools)==1 and len(data['admissions'])==1 and len(messages)==1 and len(bindings)==1
             assert marker in messages[0]['content'] and result['final']['run']['status']=='completed'
-            assert all(x['state']=='settled' for x in providers) and bindings[0]['outcome']=='completed'
+            assert sum(x['state']=='settled' for x in providers)==(2 if a.dream_case=='disconnect' else len(providers)) and bindings[0]['outcome']=='completed'
         elif a.scenario=='provider-limit':
             assert len(providers)==1 and len(tools)==1 and len(data['admissions'])==1 and len(bindings)==1
             assert result['final']['run']['status']!='completed'

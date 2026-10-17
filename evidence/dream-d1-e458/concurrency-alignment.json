@@ -1,0 +1,6 @@
+{
+  "reason": "align existing dedup fixture after both protected reads; concurrent DB writes invalidate snapshots by design",
+  "assertionsUnchanged": true,
+  "oldHash": "545139c1eb919024e43bf377a1b145bb6b4a615149a134b17e31ad6dce10bd62",
+  "newHash": "691de5e0ca403877e71436c94e5d3159800dfe1224f4fe7b59e6e8eeb082dd81"
+}

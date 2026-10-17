@@ -1,0 +1,8 @@
+{
+  "scope": "existing source reader with synthetic Dream-adversarial histories; not Dream API acceptance",
+  "tests": 10,
+  "exitCode": 0,
+  "testSha256": "280f588d8ffe902c806129fb4a4a1c6a026906ea6509311e6e98e0005495b467",
+  "testSourceUnchanged": true,
+  "observedAt": "2026-10-17T14:12:25.671338+03:00"
+}

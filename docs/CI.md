@@ -213,3 +213,13 @@ ALAZ_R1B2_QA_SOURCE explicitly set to the reviewed checkout. Native six-case Lin
 runs require the already-prepared opt-in environment and are separate from CI.
 No model, SDK/Gateway installation, Docker invocation or new permission is added
 to default CI. Counts/source freeze/exact commit status are recorded per run.
+
+## DREAM-D1 scope
+
+Default discovery adds40Dream,12CLI and10input tests (62total) with synthetic
+SQLite/IPC and loopback fixtures; no native installation/inference/model billing.
+32API+16HTTP independent tests are separate opt-in scripts test_dream_61a9.py
+and test_dream_http_61a9.py under scripts/qa, with ALAZ_DREAM_QA_SOURCE set.
+Four final Linux Gateway/broker/Docker trials use scripted synthesis and are
+separate acceptance evidence. Exact counts/freeze/CI are in status.md and
+docs/DREAM-D1-CANDIDATES.md, not inferred from old test totals.

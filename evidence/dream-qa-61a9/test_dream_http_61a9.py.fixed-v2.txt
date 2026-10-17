@@ -1,0 +1,21 @@
+test_authorized_explicit_post_reaches_service_once (__main__.DreamHTTPIndependentQA.test_authorized_explicit_post_reaches_service_once) ... ok
+test_capability_explicitly_reports_manual_candidate_mode (__main__.DreamHTTPIndependentQA.test_capability_explicitly_reports_manual_candidate_mode) ... ok
+test_compressed_body_is_rejected (__main__.DreamHTTPIndependentQA.test_compressed_body_is_rejected) ... ok
+test_disabled_service_registers_no_dream_routes (__main__.DreamHTTPIndependentQA.test_disabled_service_registers_no_dream_routes) ... ok
+test_duplicate_auth_headers_are_rejected (__main__.DreamHTTPIndependentQA.test_duplicate_auth_headers_are_rejected) ... ok
+test_duplicate_json_fields_are_rejected (__main__.DreamHTTPIndependentQA.test_duplicate_json_fields_are_rejected) ... ok
+test_extra_settings_in_payload_cannot_enable_memory_writes (__main__.DreamHTTPIndependentQA.test_extra_settings_in_payload_cannot_enable_memory_writes) ... ok
+test_oversized_body_is_rejected_before_read (__main__.DreamHTTPIndependentQA.test_oversized_body_is_rejected_before_read) ... ok
+test_profile_header_cannot_select_other_memory (__main__.DreamHTTPIndependentQA.test_profile_header_cannot_select_other_memory) ... ok
+test_query_parameters_are_not_accepted_as_authority (__main__.DreamHTTPIndependentQA.test_query_parameters_are_not_accepted_as_authority) ... ok
+test_rejected_candidate_is_422_not_completion (__main__.DreamHTTPIndependentQA.test_rejected_candidate_is_422_not_completion) ... ok
+test_retired_owner_cannot_start_dream (__main__.DreamHTTPIndependentQA.test_retired_owner_cannot_start_dream) ... ok
+test_room_grant_is_not_host_authority (__main__.DreamHTTPIndependentQA.test_room_grant_is_not_host_authority) ... ok
+test_status_endpoint_also_requires_host_bearer (__main__.DreamHTTPIndependentQA.test_status_endpoint_also_requires_host_bearer) ... ok
+test_unknown_outcome_is_202_not_completion (__main__.DreamHTTPIndependentQA.test_unknown_outcome_is_202_not_completion) ... ok
+test_wrong_bearer_cannot_start_dream (__main__.DreamHTTPIndependentQA.test_wrong_bearer_cannot_start_dream) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.760s
+
+OK

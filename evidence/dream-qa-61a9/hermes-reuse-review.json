@@ -1,0 +1,28 @@
+{
+  "pinnedHermesCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "scope": "static pinned source reuse review, not runtime test",
+  "observations": [
+    {
+      "path": "agent/memory_manager.py",
+      "sha256": "d30c9a637c20ce32300ca1b0fa5bed210f33612306fff3b779f901592bfce2ad",
+      "symbol": "build_memory_context_block",
+      "startLine": 372,
+      "endLine": 388
+    },
+    {
+      "path": "agent/background_review.py",
+      "sha256": "b177b1cfe8b06f9e787e37920fd9a7b023a038ecbac951bde4e81535d88aa4dc",
+      "symbol": "_review_tool_whitelist",
+      "startLine": 1088,
+      "endLine": 1128
+    },
+    {
+      "path": "agent/background_review.py",
+      "sha256": "b177b1cfe8b06f9e787e37920fd9a7b023a038ecbac951bde4e81535d88aa4dc",
+      "symbol": "spawn_background_review_thread",
+      "startLine": 1310,
+      "endLine": 1338
+    }
+  ],
+  "keyConstraint": "Candidate review must not be registered as recalled authoritative memory or enabled memory/skill writer. Existing background-review whitelist can expose memory/skill_manage and needs a dedicated narrowed path."
+}

@@ -161,3 +161,12 @@ observation and provider validation are distinct. Source provenance does not
 establish request initiator or model processing. Continue D3B OS credential/egress
 and qualified real-provider acceptance; R2 independent goal verification and
 HYB006 skill transfer must preserve these evidence boundaries. Full M1/M2 open.
+
+## DREAM-D1 manual candidate maintenance
+
+User-prioritized first Dream slice: manual bounded terminal-history synthesis,
+exact evidence citations, persistent candidates and no active-memory promotion.
+See docs/DREAM-D1-CANDIDATES.md. Reuses one native owner and budgeted broker.
+Next DREAM-D2 qualifies real synthesis/candidate review and only then memory
+adoption; no automatic triggers or M2 goal selection enabled. D3B, actual
+model/price/token bounds and HYB006 transfer remain open. Git/CI in status.md.

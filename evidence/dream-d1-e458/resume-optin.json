@@ -1,0 +1,28 @@
+{
+  "scope": "same 48 independent QA cases rerun on unchanged Dream D1 source; not new tests or native runs",
+  "observedAt": "2026-10-17T15:44:18.871113+03:00",
+  "results": [
+    {
+      "script": "test_dream_61a9.py",
+      "tests": 32,
+      "expectedTests": 32,
+      "exitCode": 0,
+      "sha256": "ace01e92a5d2aacff2b2207a3df0b6dfe8adf72c1269a4d589179bae8b93e9f0",
+      "result": "PASS"
+    },
+    {
+      "script": "test_dream_http_61a9.py",
+      "tests": 16,
+      "expectedTests": 16,
+      "exitCode": 0,
+      "sha256": "8c9d723630287df838a4d93b9828b9b36d514b6d02f25ab53301bc9ec738ad4f",
+      "result": "PASS"
+    }
+  ],
+  "sourceFiles": 243,
+  "sourceDrift": [],
+  "newNativeRuns": 0,
+  "inferenceCalls": 0,
+  "paidCalls": 0,
+  "result": "PASS"
+}

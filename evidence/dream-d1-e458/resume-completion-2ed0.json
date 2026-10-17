@@ -1,0 +1,45 @@
+{
+  "id": "DREAM-D1-RESUME-2ED0-COMPLETE",
+  "observedAt": "2026-10-17T15:53:11.935046+03:00",
+  "scope": "independent resumption verification of existing E458 code; publication is single-writer 98F0",
+  "standardTests": 1657,
+  "standardExitCode": 0,
+  "optInTests": 48,
+  "optInIncludedInStandard": false,
+  "sourceFiles": 243,
+  "sourceDrift": [],
+  "logs": [
+    {
+      "file": "resume-full-standard.txt",
+      "rawSha256": "7a7cba77fb3fd140f4d95fc0423e76344583fa3b1d092cd4f6a3fd3f4efe45ea",
+      "gitBlobSha256": "cafb378705cd393e7987c932120c24b5dc280bb967ca257627e3726a814eb130",
+      "rawBytes": 205531,
+      "gitBlobBytes": 203869,
+      "newlineOnlyDifference": true
+    },
+    {
+      "file": "resume-test_dream_61a9.py.txt",
+      "rawSha256": "b2517e490f160e0512e36ee1064d117f5313e7ffebf5c90c603832af165d46ed",
+      "gitBlobSha256": "7679501f50b6ea10884ced85bcf32e8ccea5d7bd2811e3ea27bccbc483082341",
+      "rawBytes": 4702,
+      "gitBlobBytes": 4665,
+      "newlineOnlyDifference": true
+    },
+    {
+      "file": "resume-test_dream_http_61a9.py.txt",
+      "rawSha256": "5a4765e2347984939184cecc57aade4d1f9affed88935d769e7d3be6822de7d6",
+      "gitBlobSha256": "75ea6538594cde97ab84c243f47e4c3dc926d0b776038eefe0d810513bac1562",
+      "rawBytes": 2218,
+      "gitBlobBytes": 2197,
+      "newlineOnlyDifference": true
+    }
+  ],
+  "newNativeRuns": 0,
+  "inferenceCalls": 0,
+  "paidCalls": 0,
+  "productEditsBy2ED0": false,
+  "commitPushBy2ED0": false,
+  "guardedReportWrite": "0957e04b failed before any write because concurrently created document existed; not replayed",
+  "publicationOwner": "98F0",
+  "next": "observe existing product publication and exact commit CI; no duplicate stage or commit"
+}

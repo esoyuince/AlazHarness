@@ -1,0 +1,8 @@
+{
+  "scope": "real candidate-v1 Dream APIs/ledger/broker client; synthetic SQLite owner/IPC/model, no inference",
+  "exitCode": 1,
+  "testSha256": "aa7011fa64ccfe2d745c16703f2c7658ce5cdd4458b1c4ccc7eb27a60f2375e2",
+  "testSourceUnchanged": true,
+  "dreamSha256": "59c4ed82cc302f42e4dc7c69e7211466d8eec103468aa7bd9ddf4e0eb4118939",
+  "observedAt": "2026-10-17T14:17:43.256072+03:00"
+}

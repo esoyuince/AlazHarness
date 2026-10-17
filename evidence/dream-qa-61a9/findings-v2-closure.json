@@ -1,0 +1,16 @@
+{
+  "status": "CLOSED_IN_FIXED_V2_UNIT_SCOPE",
+  "findings": [
+    "D61-G01",
+    "D61-G02",
+    "D61-G03"
+  ],
+  "dreamSha256": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a",
+  "apiTests": 32,
+  "httpTests": 16,
+  "testMethodsOriginalUnchanged": 30,
+  "concurrencyFixtureAligned": true,
+  "newPostSnapshotGuardTest": true,
+  "nativeFinalAcceptance": false,
+  "observedAt": "2026-10-17T14:29:09.606050+03:00"
+}

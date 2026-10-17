@@ -1,0 +1,11 @@
+{
+  "scope": "actual reader/ledger/client with synthetic native owner and IPC",
+  "exitCode": 1,
+  "source": {
+    "packages/claw-hermes/dream.py": "59c4ed82cc302f42e4dc7c69e7211466d8eec103468aa7bd9ddf4e0eb4118939",
+    "packages/claw-hermes/host_gate_plugin.py": "5fc8b94f847a7897c0b52d352ce9c4c6291c010672734d0bf66fcf5d32322f87",
+    "tests/test_dream.py": "03d66e8cad1ddeeae43989ca638917a1132116d7f176216aeac3e219035d3fcb"
+  },
+  "changed": [],
+  "observedAt": "2026-10-17T14:15:13.552705+03:00"
+}

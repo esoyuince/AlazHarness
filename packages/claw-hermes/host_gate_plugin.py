@@ -45,10 +45,16 @@ def register(ctx):
         from execution_boundary import ExecutionBoundary
         execution=ExecutionBoundary(execution_settings)
         execution.register(ctx)
-    ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(app,adapter,policy,execution=execution))
+    dream=None
+    dream_settings=ctx.get_config('dream')
+    if dream_settings is not None:
+        # Preload while the native registration's temporary import path is active.
+        from dream import DreamService
+        dream=DreamService(dream_settings,execution,config_reader=lambda:ctx.get_config('dream'))
+    ctx.register_platform_handler('api_server',lambda app,adapter:bind_host_gate(app,adapter,policy,execution=execution,dream=dream))
 
 
-def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None):
+def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None):
     from aiohttp import web
     validate_native_adapter(adapter)
     if type(policy) is not HostGatePolicy or app.frozen or adapter._host!='127.0.0.1':
@@ -107,11 +113,36 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None):
             return await adapter._handle_runs(request)
         except Exception as exc:return error(exc)
 
+    async def dream_run(request):
+        try:
+            current(request)
+            value=await body(request)
+            if type(value) is not dict or set(value)!={'sources'}:
+                raise HostGateError('dream_sources_required')
+            result=await dream.run(value['sources'])
+            status=422 if result['state']=='rejected' else (202 if result['state'] in ('prepared','running','unknown') else 200)
+            return web.json_response(result,status=status)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            reason=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(reason) if reason else exc)
+
+    async def dream_status(request):
+        try:
+            current(request)
+            result=await asyncio.to_thread(dream.status,request.match_info['batch_id'])
+            return web.json_response(result)
+        except Exception as exc:
+            from execution_budget import ExecutionDenied
+            reason=str(exc) if isinstance(exc,ExecutionDenied) and re.fullmatch('[a-z_]{1,80}',str(exc)) else None
+            return error(HostGateError(reason) if reason else exc)
+
     async def capabilities(request):
         try:
             current(request)
             if execution is not None:await execution.require_ready()
             return web.json_response({'hostGateVersion':1,'dispatchPath':BASE+'/dispatch','nativeStoreOwner':True,
+                **({'dreamVersion':1,'dreamMode':'manual_candidates_only'} if dream is not None and dream.policy.enabled else {}),
                 'dispatchAtMostOnce':True,'automaticRetry':False,'modelTokenOrCostBudget':False,
                 'toolSandbox':False,'scope':'default_profile_new_run','executionBoundaryVersion':1 if execution is not None else None,
                 'providerBrokerVersion':1 if execution is not None and getattr(execution,'broker',None) is not None else None,
@@ -135,6 +166,8 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None):
             return error(HostGateError('execution_boundary_required'))
         if request.method in ('GET','HEAD','OPTIONS'):return await handler(request)
         if execution is not None and request.method=='POST' and request.path=='/alaz/provider/v1/chat/completions':return await handler(request)
+        if dream is not None and dream.policy.enabled and request.method=='POST' and request.path==BASE+'/dream':
+            return await handler(request)
         if request.method=='POST' and request.path in (BASE+'/intents',BASE+'/dispatch'):
             return await handler(request)
         try:
@@ -148,4 +181,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None):
     app.router.add_post(BASE+'/intents',issue)
     app.router.add_post(BASE+'/dispatch',dispatch)
     app.router.add_get(BASE+'/capabilities',capabilities)
+    if dream is not None and dream.policy.enabled:
+        app.router.add_post(BASE+'/dream',dream_run)
+        app.router.add_get(BASE+'/dream/{batch_id}',dream_status)
     app['alaz_host_gate_v1']=True

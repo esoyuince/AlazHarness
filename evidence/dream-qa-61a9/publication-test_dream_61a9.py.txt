@@ -1,0 +1,37 @@
+test_cancellation_does_not_accept_candidates_or_refund (__main__.DreamIndependentQA.test_cancellation_does_not_accept_candidates_or_refund) ... ok
+test_candidate_complete_is_not_active_memory_or_verified_skill (__main__.DreamIndependentQA.test_candidate_complete_is_not_active_memory_or_verified_skill) ... ok
+test_candidate_identity_is_checked_against_persisted_content (__main__.DreamIndependentQA.test_candidate_identity_is_checked_against_persisted_content) ... ok
+test_changed_source_after_provider_prevents_candidate_commit (__main__.DreamIndependentQA.test_changed_source_after_provider_prevents_candidate_commit) ... ok
+test_concurrent_same_sources_have_only_one_synthesis (__main__.DreamIndependentQA.test_concurrent_same_sources_have_only_one_synthesis) ... ok
+test_database_change_after_snapshot_discards_all_derived_excerpts (__main__.DreamIndependentQA.test_database_change_after_snapshot_discards_all_derived_excerpts) ... ok
+test_duplicate_note_is_rejected_not_counted_twice (__main__.DreamIndependentQA.test_duplicate_note_is_rejected_not_counted_twice) ... ok
+test_duplicate_source_run_is_rejected_before_model (__main__.DreamIndependentQA.test_duplicate_source_run_is_rejected_before_model) ... ok
+test_empty_selection_is_idle_without_budget (__main__.DreamIndependentQA.test_empty_selection_is_idle_without_budget) ... ok
+test_exact_batch_repeat_returns_existing_without_extra_charge (__main__.DreamIndependentQA.test_exact_batch_repeat_returns_existing_without_extra_charge) ... ok
+test_expired_source_never_enters_dream (__main__.DreamIndependentQA.test_expired_source_never_enters_dream) ... ok
+test_forged_observer_text_is_not_a_learning_source (__main__.DreamIndependentQA.test_forged_observer_text_is_not_a_learning_source) ... ok
+test_json_escaped_secret_in_candidate_is_also_rejected (__main__.DreamIndependentQA.test_json_escaped_secret_in_candidate_is_also_rejected) ... ok
+test_known_secret_is_redacted_from_actual_review_input (__main__.DreamIndependentQA.test_known_secret_is_redacted_from_actual_review_input) ... ok
+test_literal_secret_in_candidate_is_rejected (__main__.DreamIndependentQA.test_literal_secret_in_candidate_is_rejected) ... ok
+test_live_dream_configuration_revocation_prevents_completion (__main__.DreamIndependentQA.test_live_dream_configuration_revocation_prevents_completion) ... ok
+test_lost_prepare_commit_ack_never_calls_model (__main__.DreamIndependentQA.test_lost_prepare_commit_ack_never_calls_model) ... ok
+test_lost_transport_is_unknown_no_refund_no_repeat (__main__.DreamIndependentQA.test_lost_transport_is_unknown_no_refund_no_repeat) ... ok
+test_model_cannot_supply_verified_or_permission_flags (__main__.DreamIndependentQA.test_model_cannot_supply_verified_or_permission_flags) ... ok
+test_prepare_precommit_failure_leaves_no_batch (__main__.DreamIndependentQA.test_prepare_precommit_failure_leaves_no_batch) ... ok
+test_previous_candidate_is_comparison_material_without_promotion (__main__.DreamIndependentQA.test_previous_candidate_is_comparison_material_without_promotion) ... ok
+test_quote_must_be_in_visible_excerpt_not_hidden_suffix (__main__.DreamIndependentQA.test_quote_must_be_in_visible_excerpt_not_hidden_suffix) ... ok
+test_record_with_unknown_provider_ticket_is_not_accepted_as_completed (__main__.DreamIndependentQA.test_record_with_unknown_provider_ticket_is_not_accepted_as_completed) ... ok
+test_replayed_status_does_not_open_source_file (__main__.DreamIndependentQA.test_replayed_status_does_not_open_source_file) ... ok
+test_single_budgeted_request_without_tools (__main__.DreamIndependentQA.test_single_budgeted_request_without_tools) ... ok
+test_source_excerpt_is_bounded_without_splitting_utf8 (__main__.DreamIndependentQA.test_source_excerpt_is_bounded_without_splitting_utf8) ... ok
+test_tool_call_reply_is_rejected_never_executed (__main__.DreamIndependentQA.test_tool_call_reply_is_rejected_never_executed) ... ok
+test_truncated_model_completion_is_rejected (__main__.DreamIndependentQA.test_truncated_model_completion_is_rejected) ... ok
+test_unknown_evidence_id_is_rejected (__main__.DreamIndependentQA.test_unknown_evidence_id_is_rejected) ... ok
+test_unknown_prior_candidate_cannot_be_cited (__main__.DreamIndependentQA.test_unknown_prior_candidate_cannot_be_cited) ... ok
+test_untrusted_claim_with_valid_citation_never_becomes_truth (__main__.DreamIndependentQA.test_untrusted_claim_with_valid_citation_never_becomes_truth) ... ok
+test_wrong_provider_model_never_creates_candidate (__main__.DreamIndependentQA.test_wrong_provider_model_never_creates_candidate) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 8.274s
+
+OK

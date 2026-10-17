@@ -1,0 +1,13 @@
+{
+  "scope": "full standard offline discovery",
+  "observedAt": "2026-10-17T15:45:53.699896+03:00",
+  "tests": 1657,
+  "expectedTests": 1657,
+  "exitCode": 0,
+  "skipsReported": false,
+  "sourceFiles": 243,
+  "changed": [],
+  "seconds": 121.489,
+  "logSha256": "3f23e63f9fc3e291adb9ea8190f412314891c36e850657647fe685b41c220a32",
+  "result": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "independent full standard on exact latest product copy; no native/inference/CI",
+  "tests": 1657,
+  "exitCode": 0,
+  "skipsReported": false,
+  "sourceFiles": 243,
+  "changed": [],
+  "primarySourceDrift": [],
+  "seconds": 142.9,
+  "observedAt": "2026-10-17T14:50:04.899837+03:00",
+  "result": "PASS"
+}

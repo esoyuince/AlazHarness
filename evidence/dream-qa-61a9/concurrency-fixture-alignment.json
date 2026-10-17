@@ -1,0 +1,11 @@
+{
+  "reason": "original concurrent test allowed batch writes to invalidate the other source snapshot; that refusal is required not a product bug. Barrier moves both calls to intended dedup boundary without changing assertions. Added separate deterministic post-rollback invalidation test.",
+  "oldSha256": "aa7011fa64ccfe2d745c16703f2c7658ce5cdd4458b1c4ccc7eb27a60f2375e2",
+  "newSha256": "ace01e92a5d2aacff2b2207a3df0b6dfe8adf72c1269a4d589179bae8b93e9f0",
+  "testMethodsUnchanged": 30,
+  "testMethodFixtureAdjusted": [
+    "test_concurrent_same_sources_have_only_one_synthesis"
+  ],
+  "newTest": "test_database_change_after_snapshot_discards_all_derived_excerpts",
+  "oldFailurePreserved": true
+}

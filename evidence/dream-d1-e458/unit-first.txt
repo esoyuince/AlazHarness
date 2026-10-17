@@ -1,0 +1,298 @@
+test_begin_lost_ack_never_reoffers (test_dream.DreamContracts.test_begin_lost_ack_never_reoffers) ... ERROR
+test_begin_precommit_failure_no_charge (test_dream.DreamContracts.test_begin_precommit_failure_no_charge) ... ERROR
+test_cancellation_preserves_budget_and_pending_evidence (test_dream.DreamContracts.test_cancellation_preserves_budget_and_pending_evidence) ... ERROR
+test_changed_config_before_run_no_charge (test_dream.DreamContracts.test_changed_config_before_run_no_charge) ... ok
+test_changed_config_during_reply_no_candidates (test_dream.DreamContracts.test_changed_config_during_reply_no_candidates) ... ok
+test_changed_sources_cannot_escape_unknown (test_dream.DreamContracts.test_changed_sources_cannot_escape_unknown) ... ok
+test_concurrent_same_batch_at_most_one_synthesis (test_dream.DreamContracts.test_concurrent_same_batch_at_most_one_synthesis) ... ok
+test_disabled_makes_no_call (test_dream.DreamContracts.test_disabled_makes_no_call) ... ok
+test_duplicate_notes_rejected (test_dream.DreamContracts.test_duplicate_notes_rejected) ... ok
+test_duplicate_source_job_rejected (test_dream.DreamContracts.test_duplicate_source_job_rejected) ... ok
+test_echoed_sdk_secret_not_retained (test_dream.DreamContracts.test_echoed_sdk_secret_not_retained) ... ERROR
+test_empty_response_notes_valid (test_dream.DreamContracts.test_empty_response_notes_valid) ... ok
+test_extra_memory_write_field_rejected (test_dream.DreamContracts.test_extra_memory_write_field_rejected) ... ok
+test_history_cannot_promote_candidate (test_dream.DreamContracts.test_history_cannot_promote_candidate) ... ERROR
+test_incomplete_model_reply_never_completed (test_dream.DreamContracts.test_incomplete_model_reply_never_completed) ... ok
+test_literal_known_secrets_redacted_before_send (test_dream.DreamContracts.test_literal_known_secrets_redacted_before_send) ... ok
+test_metadata_does_not_copy_source_text (test_dream.DreamContracts.test_metadata_does_not_copy_source_text) ... ERROR
+test_no_citations_rejected (test_dream.DreamContracts.test_no_citations_rejected) ... ok
+test_no_sources_no_provider_or_journal (test_dream.DreamContracts.test_no_sources_no_provider_or_journal) ... ERROR
+test_no_tool_definitions_or_tool_calls (test_dream.DreamContracts.test_no_tool_definitions_or_tool_calls) ... ok
+test_optin_requires_broker (test_dream.DreamContracts.test_optin_requires_broker) ... ok
+test_partial_utf8_source_view_not_complete_claim (test_dream.DreamContracts.test_partial_utf8_source_view_not_complete_claim) ... ok
+test_policy_limits (test_dream.DreamContracts.test_policy_limits) ... ok
+test_prior_candidate_comparison_without_active_memory (test_dream.DreamContracts.test_prior_candidate_comparison_without_active_memory) ... ok
+test_prompt_injection_stays_data_no_tool (test_dream.DreamContracts.test_prompt_injection_stays_data_no_tool) ... ok
+test_quote_not_in_source_rejected (test_dream.DreamContracts.test_quote_not_in_source_rejected) ... ok
+test_read_status_no_more_charge (test_dream.DreamContracts.test_read_status_no_more_charge) ... C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8D563B50>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8D5626B0>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8D562890>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8D5DF1F0>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8D5DE020>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8DECC5E0>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\json\encoder.py:263: ResourceWarning: unclosed database in <sqlite3.Connection object at 0x0000026C8DECC7C0>
+  return _iterencode(o, 0)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_reordered_input_is_stable (test_dream.DreamContracts.test_reordered_input_is_stable) ... ok
+test_same_sources_return_same_batch_without_second_call (test_dream.DreamContracts.test_same_sources_return_same_batch_without_second_call) ... ok
+test_source_changed_after_synthesis_no_candidate (test_dream.DreamContracts.test_source_changed_after_synthesis_no_candidate) ... ok
+test_source_expired_no_call (test_dream.DreamContracts.test_source_expired_no_call) ... ok
+test_source_output_mismatch_no_journal (test_dream.DreamContracts.test_source_output_mismatch_no_journal) ... ERROR
+test_source_unknown_not_a_finished_job (test_dream.DreamContracts.test_source_unknown_not_a_finished_job) ... ok
+test_strict_bool_config (test_dream.DreamContracts.test_strict_bool_config) ... ok
+test_too_many_sources (test_dream.DreamContracts.test_too_many_sources) ... ok
+test_transport_unknown_no_second_call (test_dream.DreamContracts.test_transport_unknown_no_second_call) ... ok
+test_unknown_config_cannot_enable_scheduler (test_dream.DreamContracts.test_unknown_config_cannot_enable_scheduler) ... ok
+test_unknown_prior_note_refused (test_dream.DreamContracts.test_unknown_prior_note_refused) ... ok
+test_unknown_source_id_rejected_no_memory (test_dream.DreamContracts.test_unknown_source_id_rejected_no_memory) ... ok
+test_valid_candidate_persisted_not_active_memory (test_dream.DreamContracts.test_valid_candidate_persisted_not_active_memory) ... ok
+
+======================================================================
+ERROR: test_begin_lost_ack_never_reoffers (test_dream.DreamContracts.test_begin_lost_ack_never_reoffers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp8k8i_nil\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp8k8i_nil\\state.db'
+
+======================================================================
+ERROR: test_begin_precommit_failure_no_charge (test_dream.DreamContracts.test_begin_precommit_failure_no_charge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpgcpxg0k9\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpgcpxg0k9\\state.db'
+
+======================================================================
+ERROR: test_cancellation_preserves_budget_and_pending_evidence (test_dream.DreamContracts.test_cancellation_preserves_budget_and_pending_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp8ypdej92\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp8ypdej92\\state.db'
+
+======================================================================
+ERROR: test_echoed_sdk_secret_not_retained (test_dream.DreamContracts.test_echoed_sdk_secret_not_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpc_j4aeob\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpc_j4aeob\\state.db'
+
+======================================================================
+ERROR: test_history_cannot_promote_candidate (test_dream.DreamContracts.test_history_cannot_promote_candidate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpdlx5o96i\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpdlx5o96i\\state.db'
+
+======================================================================
+ERROR: test_metadata_does_not_copy_source_text (test_dream.DreamContracts.test_metadata_does_not_copy_source_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp2u6vn8ew\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp2u6vn8ew\\state.db'
+
+======================================================================
+ERROR: test_no_sources_no_provider_or_journal (test_dream.DreamContracts.test_no_sources_no_provider_or_journal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpnu9tunrh\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpnu9tunrh\\state.db'
+
+======================================================================
+ERROR: test_source_output_mismatch_no_journal (test_dream.DreamContracts.test_source_output_mismatch_no_journal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp5_xpf8z7\\state.db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmp5_xpf8z7\\state.db'
+
+----------------------------------------------------------------------
+Ran 40 tests in 4.889s
+
+FAILED (errors=8)

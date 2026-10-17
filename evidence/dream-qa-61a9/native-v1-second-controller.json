@@ -1,0 +1,9 @@
+{
+  "scope": "same existing four profiles; no new native task, read-only verifier correction",
+  "correction": "Filter state_meta to only relevant known JSON row prefixes; unrelated native scalar metadata must not be parsed as JSON. No product or native verdict changed.",
+  "exitCode": 0,
+  "scriptSha256": "1ec2856682ba6e59f2e8e1c53c618568ef44de89f58bc6777a7fbe2ef20b964f",
+  "stdoutSha256": "b9be7fdd5cf9846d4292b971ba5799d25be9010e7ab39312bd621af9c1bec255",
+  "stdoutFile": "native-v1-checked.json",
+  "observedAt": "2026-10-17T14:31:58.997359+03:00"
+}
