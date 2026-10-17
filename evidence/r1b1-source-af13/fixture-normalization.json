@@ -1,0 +1,6 @@
+{
+  "before": "9bcf27c9d35bdb3c039d541fbdb7c7853511c68778bbbbe13ad70b2368e5411a",
+  "after": "d8abaee29ad9ba27f2a3a46326c0e40e825e112886ee3192c33ae84753da6190",
+  "change": "write_text platform newline replaced by explicit test write_bytes; 500 byte expectation unchanged",
+  "product_change": false
+}

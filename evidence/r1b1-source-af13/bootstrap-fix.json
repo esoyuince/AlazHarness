@@ -1,0 +1,7 @@
+{
+  "beforeExit": 1,
+  "afterExit": 0,
+  "testSha256": "e8958316d093212630e94ff3959e7e5db4b6783d15e713ce29beffd23a97614b",
+  "productChange": "preload source_capture at native plugin bootstrap; no permanent sys.path modification or fallback",
+  "nativeFirstFailureRetained": "/tmp/alaz-r1b1-af13/v1-normal/broker-native-result.json"
+}

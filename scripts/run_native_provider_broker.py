@@ -32,8 +32,8 @@ from provider_broker import ProviderBrokerClient
 CASES=('normal','missing-broker','stale-broker','provider-limit','upstream-disconnect')
 
 class AuthenticatedModel(ExecutionModel):
-    def __init__(self,fixture,marker,scenario,secret,target):
-        super().__init__(fixture,marker,'normal',target);original=self.server.RequestHandlerClass;owner=self
+    def __init__(self,fixture,marker,scenario,secret,target,*,read_limit=None):
+        super().__init__(fixture,marker,'normal',target,read_limit=read_limit);original=self.server.RequestHandlerClass;owner=self
         self.rejected=0;self.accepted=0;self.received_payloads=[]
         class Guarded(original):
             def do_POST(self):
@@ -54,7 +54,13 @@ class AuthenticatedModel(ExecutionModel):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('source','python','node','output'):p.add_argument('--'+name,required=True,type=Path)
-    p.add_argument('--image',required=True);p.add_argument('--scenario',choices=CASES,required=True);a=p.parse_args()
+    p.add_argument('--image',required=True);p.add_argument('--scenario',choices=CASES,required=True)
+    p.add_argument('--record-source',action='store_true',help='Opt in to trusted input capture; not model visibility')
+    p.add_argument('--fixture-lines',type=int,default=2,help='Bounded native pagination fixture, 2..500')
+    p.add_argument('--read-limit',type=int,default=None,help='Explicit read_file limit; omitted native default is not assumed')
+    a=p.parse_args()
+    assert 2 <= a.fixture_lines <= 500
+    assert a.read_limit is None or 1 <= a.read_limit <= 1000
     out=a.output.absolute();source=a.source.resolve()
     assert os.name=='posix' and not out.exists() and len(str(out/'broker/egress.sock').encode())<=100
     manifest=read(source/'alaz-source-manifest.json');assert manifest['sourceCommit']==PIN
@@ -64,8 +70,8 @@ def main():
     for name in ('home','profile','temp','locks','tools','capsules','receipts','xdg-data','xdg-config','xdg-cache'):(out/name).mkdir()
     token=secrets.token_hex(32);sdk=secrets.token_hex(32);signer=secrets.token_hex(32);origin_secret=secrets.token_hex(32);nonce=secrets.token_hex(16)
     assert len({token,sdk,signer,origin_secret})==4
-    marker='BROKER_NATIVE_'+secrets.token_hex(12);fixture=out/'input.txt';fixture.write_text(marker+'\nsecond line\n')
-    provider=AuthenticatedModel(fixture,marker,a.scenario,origin_secret,out/'must-not-exist.txt');provider.start()
+    marker='BROKER_NATIVE_'+secrets.token_hex(12);fixture=out/'input.txt';fixture.write_bytes((marker+'\n'+''.join('line '+str(i)+' ışık\n' for i in range(2,a.fixture_lines+1))).encode('utf-8'))
+    provider=AuthenticatedModel(fixture,marker,a.scenario,origin_secret,out/'must-not-exist.txt',read_limit=a.read_limit);provider.start()
     policy=ExecutionPolicy('alaz-scripted',1 if a.scenario in ('provider-limit','upstream-disconnect') else 3,1,131072,32768,491520,1000000,1000000,2000000)
     context=LocalRecoveryContext(out/'profile',token,1,'unused-before-boot')
     private=BrokerConfig(provider.base_url,'alaz-scripted',origin_secret,signer,str(out/'profile/state.db'),context.scope,context.binding,policy.fingerprint)
@@ -93,6 +99,8 @@ def main():
         execution={'policy':asdict(policy),'provider_bearer':sdk,'provider_broker':link,'allowed_read_files':[str(fixture)],
                    'isolated_read':{'capsule_root':str(out/'capsules'),'receipt_root':str(out/'receipts'),
                       'policy':asdict(ToolSandboxPolicy(a.image)),'use_sudo':True}}
+        if a.record_source:execution['isolated_read']['record_source']=True
+        report['record_source']=a.record_source;report['fixture_lines']=a.fixture_lines;report['read_limit']=a.read_limit
         hp={'allowed_models':['alaz-scripted'],'max_issued':4,'max_dispatches':1,'validity_seconds':300}
         cfg={'model':{'provider':'custom','base_url':f'http://127.0.0.1:{port}/alaz/provider/v1','default':'alaz-scripted','context_length':163840,'streaming':False,'api_key':sdk},
              'platforms':{'api_server':{'enabled':True,'host':'127.0.0.1','port':port,'key':token}},'platform_toolsets':{'api_server':['file']},

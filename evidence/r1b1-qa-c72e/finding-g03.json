@@ -1,0 +1,22 @@
+{
+  "id": "C72E-G03",
+  "status": "OPEN",
+  "observedAt": "2026-10-17T11:44:38.738204+03:00",
+  "severity": "source-capture metadata/probe acceptance mismatch",
+  "evidence": "native-pagination-observation.txt",
+  "nativeCase": "/tmp/alaz-r1b1-af13/final-partial",
+  "inputLines": 250,
+  "inputBytes": 4166,
+  "actualArgsFields": [
+    "path"
+  ],
+  "actualToolTotalLines": 250,
+  "actualToolTruncated": false,
+  "actualOutputContainsLine250": true,
+  "captureRequestedLimit": 200,
+  "requestDefaultNotPassedToHandler": true,
+  "productChangedByQA": false,
+  "nativeReexecutions": 0,
+  "finalPartialCoverageAcceptance": "NOT_ACCEPTED",
+  "modelVisibilityStillUnknown": true
+}

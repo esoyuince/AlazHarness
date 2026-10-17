@@ -1,0 +1,6 @@
+{
+  "path": "tests/test_source_capture_qa_c72e.py",
+  "sha256": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563",
+  "tests": 40,
+  "basis": "actual current source_capture API; synthetic native/runner ports"
+}

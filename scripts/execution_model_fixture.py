@@ -4,7 +4,9 @@ import json
 import threading
 
 class ExecutionModel:
-    def __init__(self,fixture,marker,scenario,target):
+    def __init__(self,fixture,marker,scenario,target,*,read_limit=None):
+        if read_limit is not None and (type(read_limit) is not int or not 1<=read_limit<=1000):
+            raise ValueError('Invalid explicit fixture read limit')
         self.calls=[];self.errors=[];owner=self
         class Handler(BaseHTTPRequestHandler):
             def log_message(self,*args):pass
@@ -23,6 +25,7 @@ class ExecutionModel:
                     elif not tools:
                         tool='write_file' if scenario=='denied-write' else 'read_file'
                         args={'path':str(target),'content':marker} if tool=='write_file' else {'path':str(fixture)}
+                        if tool=='read_file' and read_limit is not None:args['limit']=read_limit
                         msg={'role':'assistant','content':None,'tool_calls':[{'id':'execution-tool-1','type':'function','function':{'name':tool,'arguments':json.dumps(args)}}]};finish='tool_calls'
                     else:
                         contents=str(tools[-1].get('content',''))

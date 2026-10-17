@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-10-17T11:34:43.103589+03:00",
+  "tests": 2,
+  "exitCode": 0,
+  "sourceBefore": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "9d5207683deaf8ad5512403365bf1cef58a77ab3eb8752ca87b9ea5eb45ce16e",
+    "tests/test_source_loader_qa_c72e.py": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28"
+  },
+  "sourceAfter": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "9d5207683deaf8ad5512403365bf1cef58a77ab3eb8752ca87b9ea5eb45ce16e",
+    "tests/test_source_loader_qa_c72e.py": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28"
+  },
+  "nativeReceiptSha256": "c402f7b2e4ea63a75ae92ca81121afbfbc1d9ad7575b04dc31c6c86d646f95c6",
+  "scope": "fresh Python subprocess regression of native shim import-path removal; native failed separately"
+}

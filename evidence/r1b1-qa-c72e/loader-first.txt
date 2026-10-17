@@ -1,0 +1,7 @@
+test_capture_after_plugin_registration_path_is_removed (test_source_loader_qa_c72e.SourceLoaderIndependentQA.test_capture_after_plugin_registration_path_is_removed) ... ok
+test_legacy_optout_after_registration_path_is_removed (test_source_loader_qa_c72e.SourceLoaderIndependentQA.test_legacy_optout_after_registration_path_is_removed) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.798s
+
+OK

@@ -1,0 +1,15 @@
+{
+  "scope": "18 independent file-snapshot cases, no new runtime/model",
+  "observedAt": "2026-10-17T11:20:26.612611+03:00",
+  "exitCode": 0,
+  "sourceBefore": {
+    "packages/claw-hermes/isolated_read.py": "131c9610835d0539f070cd378429039aadf348e334a7e63863a33cdca52927bc",
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e"
+  },
+  "sourceAfter": {
+    "packages/claw-hermes/isolated_read.py": "131c9610835d0539f070cd378429039aadf348e334a7e63863a33cdca52927bc",
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e"
+  },
+  "changed": [],
+  "seconds": 0.7419096000085119
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "58 independently authored offline QA cases, synthetic owner/ports",
+  "tests": 58,
+  "snapshot": {
+    "tests": 18,
+    "result": "PASS"
+  },
+  "capture": {
+    "tests": 40,
+    "result": "PASS"
+  },
+  "baselineFull": "NOT_ACCEPTED_SOURCE_DRIFT",
+  "finalFull": "NOT_RUN",
+  "nativeByThisQA": 0,
+  "productModifiedByThisQA": false,
+  "testFiles": {
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563"
+  }
+}

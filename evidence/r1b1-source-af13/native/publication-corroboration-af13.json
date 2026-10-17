@@ -1,0 +1,65 @@
+{
+  "result": "PASS",
+  "scope": "read-only corroboration after five publication native runs, not new runs",
+  "rows": [
+    {
+      "name": "full",
+      "containersAbsent": [
+        "b957cde4192bf0d8ff4ea57d8bafbcd60514f35b6f17a0cb1fd543dc421bf967"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "partialReadCheck": {}
+    },
+    {
+      "name": "partial",
+      "containersAbsent": [
+        "c578cc4b5139937f764d19c33e22562ef635cd5ee6899a2e5b8e7fdb963e840c"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "partialReadCheck": {
+        "reportedTotalLines": 250,
+        "line20Present": true,
+        "line21Absent": true,
+        "line250Absent": true,
+        "inputLines": 250,
+        "sourceBytes": 4166,
+        "storedOutputBytes": 594,
+        "actualPartialReadVerified": true
+      }
+    },
+    {
+      "name": "limit",
+      "containersAbsent": [
+        "bdd737994cd7bb6613e9ac9965e35920dd5f2e8e3be3e4acf7b7c83825aefd16"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "partialReadCheck": {}
+    },
+    {
+      "name": "disconnect",
+      "containersAbsent": [],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "partialReadCheck": {}
+    },
+    {
+      "name": "optout",
+      "containersAbsent": [
+        "a6670922926999e43850540e6157e2dae2025f0e41a8baf3ed519de1c5dc2933"
+      ],
+      "brokerSocketAbsent": true,
+      "gatewayExit": 0,
+      "brokerExit": 0,
+      "partialReadCheck": {}
+    }
+  ],
+  "sourceHashesUnchanged": true,
+  "initialCorroborationDiagnosticFailure": "Earlier helper matched Docker No such case-sensitively; exact lowercase no such object/ID/exit/empty JSON checked here"
+}

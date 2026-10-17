@@ -1,0 +1,25 @@
+test_capture_after_plugin_registration_path_is_removed (test_source_loader_qa_c72e.SourceLoaderIndependentQA.test_capture_after_plugin_registration_path_is_removed) ... FAIL
+test_legacy_optout_after_registration_path_is_removed (test_source_loader_qa_c72e.SourceLoaderIndependentQA.test_legacy_optout_after_registration_path_is_removed) ... ok
+
+======================================================================
+FAIL: test_capture_after_plugin_registration_path_is_removed (test_source_loader_qa_c72e.SourceLoaderIndependentQA.test_capture_after_plugin_registration_path_is_removed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-loader-retained-v1\tests\test_source_loader_qa_c72e.py", line 46, in test_capture_after_plugin_registration_path_is_removed
+    self.assertEqual(result.returncode,0,result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 20, in <module>
+    result=case.invoke()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-loader-retained-v1\tests\test_isolated_read.py", line 63, in invoke
+    return self.iso.invoke(**values)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-loader-retained-v1\packages\claw-hermes\isolated_read.py", line 334, in invoke
+    from source_capture import begin_capture, native_tool_identity
+ModuleNotFoundError: No module named 'source_capture'
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.004s
+
+FAILED (failures=1)

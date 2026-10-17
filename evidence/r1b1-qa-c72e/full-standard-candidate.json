@@ -1,0 +1,16 @@
+{
+  "scope": "independent C72E full standard discovery; native and paid model separate",
+  "observedAt": "2026-10-17T11:33:16.755164+03:00",
+  "tests": 1501,
+  "exitCode": 0,
+  "skipReported": false,
+  "measuredFiles": 222,
+  "changedOrRemoved": [
+    "packages/claw-hermes/isolated_read.py"
+  ],
+  "added": [
+    "tests/test_source_capture_bootstrap.py"
+  ],
+  "seconds": 99.096,
+  "result": "NOT_ACCEPTED"
+}

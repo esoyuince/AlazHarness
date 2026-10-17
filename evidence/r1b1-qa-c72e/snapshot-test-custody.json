@@ -1,0 +1,6 @@
+{
+  "path": "tests/test_source_snapshot_qa_c72e.py",
+  "sha256": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e",
+  "testMethods": 18,
+  "scope": "real snapshot primitive; temp files and controlled fd/stat ports; no Gateway/model/OS sandbox acceptance"
+}

@@ -1,0 +1,24 @@
+{
+  "tests": 60,
+  "exitCode": 0,
+  "skipReported": false,
+  "sourceBefore": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "195bea0657ac233322d81a53290bbfddb52f08641452101a57cdc74791ffa607",
+    "packages/claw-hermes/evidence_view.py": "883894db237c5c3adb8cdca1d57710ca32bffceae089775ddd73d3287ba05996",
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563",
+    "tests/test_source_loader_qa_c72e.py": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28"
+  },
+  "sourceAfter": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "195bea0657ac233322d81a53290bbfddb52f08641452101a57cdc74791ffa607",
+    "packages/claw-hermes/evidence_view.py": "883894db237c5c3adb8cdca1d57710ca32bffceae089775ddd73d3287ba05996",
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563",
+    "tests/test_source_loader_qa_c72e.py": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28"
+  },
+  "drift": [],
+  "observedAt": "2026-10-17T11:39:38.253148+03:00",
+  "scope": "independent actual-code tests; controlled SQLite/native/Docker ports; no native/model/paid call"
+}

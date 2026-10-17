@@ -1,0 +1,17 @@
+{
+  "scope": "C72E baseline full regression, not final new-source acceptance",
+  "observedAt": "2026-10-17T11:26:45.776011+03:00",
+  "baseCommit": "ee5580ded751c8fc22c9d09984b8f14cc72b58e5",
+  "tests": 1421,
+  "exitCode": 0,
+  "measuredFiles": 218,
+  "changedOrRemoved": [
+    "packages/claw-hermes/evidence_view.py",
+    "packages/claw-hermes/isolated_read.py"
+  ],
+  "added": [
+    "packages/claw-hermes/source_capture.py"
+  ],
+  "seconds": 96.066,
+  "result": "NOT_ACCEPTED"
+}

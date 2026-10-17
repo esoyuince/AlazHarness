@@ -1,0 +1,6 @@
+{
+  "path": "tests/test_source_pagination_qa_c72e.py",
+  "sha256": "d5a2841b9e23f8ed1a54940d15fae3150775a05042599d38e23c5ebdb6e94fa8",
+  "tests": 3,
+  "reason": "actual native G03 regression; first60 unchanged"
+}

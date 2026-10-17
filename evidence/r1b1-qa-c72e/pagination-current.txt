@@ -1,0 +1,8 @@
+test_explicit_maximum_is_not_replaced_by_native_default (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_explicit_maximum_is_not_replaced_by_native_default) ... ok
+test_explicit_offset_and_limit_preserved (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_explicit_offset_and_limit_preserved) ... ok
+test_omitted_pagination_matches_effective_native_values (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_omitted_pagination_matches_effective_native_values) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.406s
+
+OK

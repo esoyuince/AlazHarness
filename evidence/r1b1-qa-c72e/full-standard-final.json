@@ -1,0 +1,12 @@
+{
+  "scope": "independent C72E full standard discovery after final freeze; native acceptance separate",
+  "observedAt": "2026-10-17T11:42:40.317344+03:00",
+  "tests": 1504,
+  "exitCode": 0,
+  "skipReported": false,
+  "measuredFiles": 224,
+  "changedOrRemoved": [],
+  "added": [],
+  "seconds": 171.095,
+  "result": "PASS"
+}

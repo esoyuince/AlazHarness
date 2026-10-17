@@ -1,0 +1,54 @@
+test_ambiguous_tool_history_not_matched (test_source_capture.CaptureContracts.test_ambiguous_tool_history_not_matched) ... ok
+test_authority_changed_after_return_does_not_finish (test_source_capture.CaptureContracts.test_authority_changed_after_return_does_not_finish) ... ok
+test_cancelled_before_execution_creates_no_return (test_source_capture.CaptureContracts.test_cancelled_before_execution_creates_no_return) ... ok
+test_capture_is_committed_before_original (test_source_capture.CaptureContracts.test_capture_is_committed_before_original) ... ok
+test_changed_output_not_fuzzy_matched (test_source_capture.CaptureContracts.test_changed_output_not_fuzzy_matched) ... ok
+test_corrupt_capture_does_not_get_overwritten (test_source_capture.CaptureContracts.test_corrupt_capture_does_not_get_overwritten) ... ok
+test_different_tool_id_not_matched (test_source_capture.CaptureContracts.test_different_tool_id_not_matched) ... ok
+test_disabled_retains_exact_legacy_behavior (test_source_capture.CaptureContracts.test_disabled_retains_exact_legacy_behavior) ... ok
+test_does_not_reopen_original_source (test_source_capture.CaptureContracts.test_does_not_reopen_original_source) ... ok
+test_duplicate_ticket_persistent_begin_refused (test_source_capture.CaptureContracts.test_duplicate_ticket_persistent_begin_refused) ... ok
+test_empty_snapshot_is_not_missing (test_source_capture.CaptureContracts.test_empty_snapshot_is_not_missing) ... ok
+test_failed_begin_commit_never_executes (test_source_capture.CaptureContracts.test_failed_begin_commit_never_executes) ... ok
+test_failed_finish_retains_charge_and_no_return_claim (test_source_capture.CaptureContracts.test_failed_finish_retains_charge_and_no_return_claim) ... ok
+test_failure_after_begin_keeps_capture_no_output (test_source_capture.CaptureContracts.test_failure_after_begin_keeps_capture_no_output) ... ok
+test_filesystem_silence_not_claimed (test_source_capture.CaptureContracts.test_filesystem_silence_not_claimed) ... ok
+test_flag_exact_boolean (test_source_capture.CaptureContracts.test_flag_exact_boolean) ... ok
+test_foreign_extra_field_refused (test_source_capture.CaptureContracts.test_foreign_extra_field_refused) ... ok
+test_full_capture_not_full_requested_read (test_source_capture.CaptureContracts.test_full_capture_not_full_requested_read) ... FAIL
+test_invalid_capture_integer_refused (test_source_capture.CaptureContracts.test_invalid_capture_integer_refused) ... ok
+test_lost_begin_ack_never_executes_or_reuses (test_source_capture.CaptureContracts.test_lost_begin_ack_never_executes_or_reuses) ... ok
+test_lost_finish_ack_not_delivery (test_source_capture.CaptureContracts.test_lost_finish_ack_not_delivery) ... ok
+test_missing_native_identity_blocks_before_container (test_source_capture.CaptureContracts.test_missing_native_identity_blocks_before_container) ... ok
+test_old_capture_survives_runtime_reopen (test_source_capture.CaptureContracts.test_old_capture_survives_runtime_reopen) ... ok
+test_opt_in_setting_and_default (test_source_capture.CaptureContracts.test_opt_in_setting_and_default) ... ok
+test_output_hash_is_after_redaction (test_source_capture.CaptureContracts.test_output_hash_is_after_redaction) ... ok
+test_raw_content_path_and_identity_not_reflected (test_source_capture.CaptureContracts.test_raw_content_path_and_identity_not_reflected) ... ok
+test_reader_does_not_write_sql_or_budget (test_source_capture.CaptureContracts.test_reader_does_not_write_sql_or_budget) ... ok
+test_report_binds_exact_return_to_source (test_source_capture.CaptureContracts.test_report_binds_exact_return_to_source) ... ok
+test_report_does_not_claim_model_visibility_or_truth (test_source_capture.CaptureContracts.test_report_does_not_claim_model_visibility_or_truth) ... ok
+test_snapshot_and_output_digests_not_conflated (test_source_capture.CaptureContracts.test_snapshot_and_output_digests_not_conflated) ... ok
+test_snapshot_hash_and_count_exact (test_source_capture.CaptureContracts.test_snapshot_hash_and_count_exact) ... ok
+test_tampered_source_digest_refused (test_source_capture.CaptureContracts.test_tampered_source_digest_refused) ... ok
+test_unknown_source_when_no_capture_record (test_source_capture.CaptureContracts.test_unknown_source_when_no_capture_record) ... ok
+test_unsettled_ticket_not_bound (test_source_capture.CaptureContracts.test_unsettled_ticket_not_bound) ... ok
+test_wrong_generation_capture_refused (test_source_capture.CaptureContracts.test_wrong_generation_capture_refused) ... ok
+test_wrong_instance_capture_refused (test_source_capture.CaptureContracts.test_wrong_instance_capture_refused) ... ok
+test_wrong_payload_capture_refused (test_source_capture.CaptureContracts.test_wrong_payload_capture_refused) ... ok
+test_wrong_policy_capture_refused (test_source_capture.CaptureContracts.test_wrong_policy_capture_refused) ... ok
+test_wrong_run_capture_refused (test_source_capture.CaptureContracts.test_wrong_run_capture_refused) ... ok
+test_wrong_ticket_capture_refused (test_source_capture.CaptureContracts.test_wrong_ticket_capture_refused) ... ok
+
+======================================================================
+FAIL: test_full_capture_not_full_requested_read (test_source_capture.CaptureContracts.test_full_capture_not_full_requested_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\tests\test_source_capture.py", line 198, in test_full_capture_not_full_requested_read
+    self.assertEqual(c['sourceBytes'],500);self.assertEqual(c['requestedLines']['limit'],20)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 750 != 500
+
+----------------------------------------------------------------------
+Ran 40 tests in 4.137s
+
+FAILED (failures=1)

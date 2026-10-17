@@ -1,0 +1,136 @@
+{
+  "files": [
+    {
+      "path": "publication-suite.json",
+      "bytes": 22117,
+      "sha256": "15de5fc57becf304d3866dfcbbe75f608b359a724490d4ef0135bc8999fdcbd3"
+    },
+    {
+      "path": "publication-corroboration-af13.json",
+      "bytes": 1805,
+      "sha256": "e7d8a5a256dc0472ce18dff831c3b7478638fff86d4f41ab018e77e564bf7d46"
+    },
+    {
+      "path": "final-suite.json",
+      "bytes": 21842,
+      "sha256": "8c6b429d1e4ad37d1da63002e3a460eb98955d6ada3623da1dba3a3484941ac3"
+    },
+    {
+      "path": "v2-suite.json",
+      "bytes": 21825,
+      "sha256": "e32806fbafe47ffd539e610d0e54f3ec2125fc705b0fe8e48d35d85778e9738f"
+    },
+    {
+      "path": "v1-normal/broker-native-result.json",
+      "bytes": 19491,
+      "sha256": "c402f7b2e4ea63a75ae92ca81121afbfbc1d9ad7575b04dc31c6c86d646f95c6"
+    },
+    {
+      "path": "final-partial/broker-native-result.json",
+      "bytes": 20133,
+      "sha256": "9e3cdbbf72fffdee800daa39bd380888518f965a3f517a59da739957c718f02b"
+    },
+    {
+      "path": "pub-full/broker-native-result.json",
+      "bytes": 20148,
+      "sha256": "927b8978a0fab01f576ccf6755d5f9cbaa5b8a967c7eb08877964b3dab273da2"
+    },
+    {
+      "path": "pub-full-view/report.json",
+      "bytes": 7959,
+      "sha256": "d0164fde5ba12262c105b0fae565924fb2aa264d061c4394b169ff7e9571ade1"
+    },
+    {
+      "path": "pub-full-view/report.txt",
+      "bytes": 1432,
+      "sha256": "22c2d6cd653669ac552cec980fb99a17ffcc870b9fadcfae7d65ec65a559d056"
+    },
+    {
+      "path": "pub-full-view/verification.json",
+      "bytes": 734,
+      "sha256": "f11f908ed55fb74f8de7fbad6c71491d2682169eb6629d421434b920d4db1aed"
+    },
+    {
+      "path": "pub-partial/broker-native-result.json",
+      "bytes": 20151,
+      "sha256": "4422c2b737f480cc718c4103dbeee8a2d27a17a8937bff4c4913f2e58773dbe9"
+    },
+    {
+      "path": "pub-partial-view/report.json",
+      "bytes": 7963,
+      "sha256": "1bf5d411b2e3bf4a2f48154dd1e3988a961287c44087dada6e1bf21ea663bea7"
+    },
+    {
+      "path": "pub-partial-view/report.txt",
+      "bytes": 1434,
+      "sha256": "93e427b6f34b0e0aef5bd108ea69645021ada34589d35b958b24a8e701559c4f"
+    },
+    {
+      "path": "pub-partial-view/verification.json",
+      "bytes": 735,
+      "sha256": "d71c7599e2aa50b88a3f08f8cfccbc85ef3dd57d763caae14cc4ad08bd1332d7"
+    },
+    {
+      "path": "pub-limit/broker-native-result.json",
+      "bytes": 19932,
+      "sha256": "3c69010a18693dbd4ec628ba97e5ba0fa0190fa503672a1b9b41283321dcbda9"
+    },
+    {
+      "path": "pub-limit-view/report.json",
+      "bytes": 7952,
+      "sha256": "53ddd639247aa83d172c745b0dbd5ba74755cf1e67570daff469a8acc3e707b7"
+    },
+    {
+      "path": "pub-limit-view/report.txt",
+      "bytes": 1431,
+      "sha256": "ba82dc378db688fb6557c7fd2cd9618fcda0be5f958467353f352c81ab2e6ec3"
+    },
+    {
+      "path": "pub-limit-view/verification.json",
+      "bytes": 739,
+      "sha256": "b2173285c9a17e105367a129f58f98e0185666eb2b66ae6bd4b831b4e9dd76a0"
+    },
+    {
+      "path": "pub-disconnect/broker-native-result.json",
+      "bytes": 19339,
+      "sha256": "21524e5fd503325b7c20e48858ee005c53998a177448fac2cdfc9cc038cbc539"
+    },
+    {
+      "path": "pub-disconnect-view/report.json",
+      "bytes": 5367,
+      "sha256": "e0f0fd1bebdb0fca47d8485c78a8aa0ab989c01694c20b40e54673806f9f9aa9"
+    },
+    {
+      "path": "pub-disconnect-view/report.txt",
+      "bytes": 1159,
+      "sha256": "77b54f6a0b44a52d7acede548b839ddc3c82a33752d0c98d020fd25bd1ed2864"
+    },
+    {
+      "path": "pub-disconnect-view/verification.json",
+      "bytes": 734,
+      "sha256": "315a1a3f259931e96042fb736adb7218a5f1e260939e1d5e1bba052322b616c7"
+    },
+    {
+      "path": "pub-optout/broker-native-result.json",
+      "bytes": 20151,
+      "sha256": "81ca6242bc9b681dc43e0f7f8b33db28d21585f6050c72fb512f63a328d46bd9"
+    },
+    {
+      "path": "pub-optout-view/report.json",
+      "bytes": 6295,
+      "sha256": "b074b9f0658c58fab80501c2884b2188d497a116e061fa342f087f68b51bdc64"
+    },
+    {
+      "path": "pub-optout-view/report.txt",
+      "bytes": 1334,
+      "sha256": "3322d169630eb37d35188c0518c405139cbd2ff481d9acae76bed84c9aff1997"
+    },
+    {
+      "path": "pub-optout-view/verification.json",
+      "bytes": 736,
+      "sha256": "81555f6e0151ed4d198860c9c6b8293fcf604a4269a7ec9f7100d490544d73c5"
+    }
+  ],
+  "archiveSha256": "d7f51811d81d67475f67cd544c99fd9cb2c1703ce42c2d65377ccd3d5a687113",
+  "credentialScan": "explicit synthetic test credentials absent from selected files; not a universal secret scanner"
+}

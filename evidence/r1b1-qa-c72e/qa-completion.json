@@ -1,0 +1,24 @@
+{
+  "status": "QA_COMPLETE",
+  "observedAt": "2026-10-17T11:53:12.325729+03:00",
+  "independentTests": 63,
+  "fullStandardTests": 1511,
+  "fullExitCode": 0,
+  "skipped": 0,
+  "sourceFiles": 226,
+  "sourceDrift": [],
+  "nativeScenariosCorroborated": 5,
+  "newNativeRunsByThisQA": 0,
+  "paidCalls": 0,
+  "productModifiedByThisQA": false,
+  "G03": "closed_for_new_capture_writer_and_actual_partial_case",
+  "G01": "filesystem_silence_open_explicitly_not_claimed",
+  "rawSourceProviderBinding": "NOT_IMPLEMENTED_R1B2",
+  "testSources": {
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563",
+    "tests/test_source_loader_qa_c72e.py": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28",
+    "tests/test_source_pagination_qa_c72e.py": "25052dacd827bcb0dd5574b5ccfcf2750d2363549db3ed9169d39187044d38b1"
+  },
+  "publicationCommit": "owned_by_AF13_not_yet_observed"
+}

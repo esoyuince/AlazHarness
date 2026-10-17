@@ -1,0 +1,11 @@
+{
+  "scope": "same new two loader tests executed after correction against retained pre-correction source; NOT an earlier chronological test run",
+  "observedAt": "2026-10-17T11:35:33.222999+03:00",
+  "tests": 2,
+  "exitCode": 1,
+  "retainedIsolatedReadSha256": "dcc0f8518a22bae7e6f6deade7ac6a3178712f9c44a970274a4f9e46060ae1b5",
+  "testSha256": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28",
+  "productionSourceModified": false,
+  "nativeRuns": 0,
+  "expectedFailure": "ModuleNotFoundError: source_capture"
+}

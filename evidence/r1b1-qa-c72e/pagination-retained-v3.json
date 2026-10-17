@@ -1,0 +1,8 @@
+{
+  "tests": 3,
+  "exitCode": 1,
+  "testSha256": "25052dacd827bcb0dd5574b5ccfcf2750d2363549db3ed9169d39187044d38b1",
+  "sourceSha256": "195bea0657ac233322d81a53290bbfddb52f08641452101a57cdc74791ffa607",
+  "scope": "same corrected-contract tests on retained real prior source; evaluated after fix, not historical earlier test",
+  "productFilesChanged": false
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "full standard offline publication qualification after G03; no native or inference",
+  "tests": 1511,
+  "exitCode": 0,
+  "skipsReported": false,
+  "measuredFiles": 227,
+  "changed": [],
+  "added": [],
+  "seconds": 141.271,
+  "observedAt": "2026-10-17T11:50:36.429402+03:00",
+  "result": "PASS"
+}

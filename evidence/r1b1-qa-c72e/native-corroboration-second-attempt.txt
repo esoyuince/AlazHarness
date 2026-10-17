@@ -1,0 +1,6 @@
+
+Traceback (most recent call last):
+  File "<string>", line 39, in <module>
+    if name=='partial':assert output.get('total_lines')==250 and output.get('truncated') is True and c['requestedLimit']==200
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

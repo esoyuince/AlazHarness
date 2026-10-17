@@ -16,6 +16,7 @@ import stat
 import threading
 import uuid
 from execution_budget import ExecutionDenied, ExecutionLedger
+import source_capture  # Load while the native plugin bootstrap path is active.
 from isolated_tool import IsolatedToolRunner, ToolSandboxPolicy
 from recovery_inspector import _json, _load, _KEYS
 
@@ -232,7 +233,8 @@ class _Environment:
 
 class NativeReadIsolation:
     def __init__(self, settings, ledger_factory):
-        require(type(settings) is dict and set(settings) == {'capsule_root','receipt_root','policy','use_sudo'},
+        require(type(settings) is dict and {'capsule_root','receipt_root','policy','use_sudo'} <= set(settings)
+                and set(settings) <= {'capsule_root','receipt_root','policy','use_sudo','record_source'},
                 'explicit_isolation_settings_required')
         require(type(settings['policy']) is dict and type(settings['use_sudo']) is bool,
                 'invalid_isolation_policy')
@@ -244,6 +246,8 @@ class NativeReadIsolation:
         self.receipt_root = directory(settings['receipt_root'])
         require(not self.receipt_root.is_relative_to(self.capsule_root) and
                 not self.capsule_root.is_relative_to(self.receipt_root), 'overlapping_isolation_directories')
+        self.record_source = settings.get('record_source', False)
+        require(type(self.record_source) is bool, 'invalid_source_capture_setting')
         self.use_sudo = settings['use_sudo']
         self.ledger_factory = ledger_factory
         self.provider = None
@@ -326,6 +330,10 @@ class NativeReadIsolation:
             require(ticket['ticket'] not in self._tickets, 'isolated_ticket_already_attempted')
             self._tickets.add(ticket['ticket'])
         call.input_data = _snapshot_input(canonical)
+        captured = None
+        if self.record_source:
+            self.check_call(call)
+            captured = source_capture.begin_capture(call, args, source_capture.native_tool_identity(sid))
         require(_ACTIVE.get() is None, 'nested_isolated_read')
         token = _ACTIVE.set(call)
         try:
@@ -336,6 +344,10 @@ class NativeReadIsolation:
                 raise ExecutionDenied(call.failure)
             require(type(result) is str, 'invalid_native_read_result')
             require(call.used and call.receipt is not None, 'native_read_without_isolated_execution')
-            return native_redact_result(result, canonical)
+            output = native_redact_result(result, canonical)
+            if captured is not None:
+                self.check_call(call)
+                source_capture.finish_capture(call, captured, output)
+            return output
         finally:
             _ACTIVE.reset(token)

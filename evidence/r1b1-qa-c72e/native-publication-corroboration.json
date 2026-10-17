@@ -1,0 +1,130 @@
+{
+  "scope": "independent read-only C72E corroboration of five primary post-G03 native runs; no replay/new task/model",
+  "observedAt": "2026-10-17T11:51:42.491063+03:00",
+  "sourceDirectoryName": "publication-v4",
+  "sourceSha256": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211",
+    "packages/claw-hermes/evidence_view.py": "883894db237c5c3adb8cdca1d57710ca32bffceae089775ddd73d3287ba05996",
+    "scripts/run_native_provider_broker.py": "1928339ac814d9304c04a7e8dd87047444c8130c9f68b32cc925e02fca21a4c5",
+    "scripts/qa/verify_source_capture_af13.py": "b109c2fb9344ff83004eab24b6cdb4690cc0bf584b530e1baec48a143ae9c414"
+  },
+  "rows": [
+    {
+      "case": "full",
+      "result": "CORROBORATED",
+      "providerAttempts": 2,
+      "isolatedReads": 1,
+      "captureRows": 1,
+      "details": [
+        {
+          "sourceBytes": 54,
+          "sourceSha256": "4967e2ec5fa171ed26b8573201bc6c2b79890d62cf6b21609036a8782e91e44f",
+          "outputBytes": 174,
+          "requestedOffset": null,
+          "requestedLimit": null,
+          "requestedFieldsMatchNativeCall": true,
+          "actualNativeTotalLines": 2,
+          "actualNativeTruncated": false,
+          "exactTerminalOutputAndToolIdentityMatched": true,
+          "exactStagedInputMatched": true
+        }
+      ],
+      "containersAbsent": 1,
+      "socketAbsent": true,
+      "nativeReceiptSha256": "927b8978a0fab01f576ccf6755d5f9cbaa5b8a967c7eb08877964b3dab273da2",
+      "viewReceiptSha256": "f11f908ed55fb74f8de7fbad6c71491d2682169eb6629d421434b920d4db1aed",
+      "sourceAndMainStoresUnchanged": true,
+      "newNativeRuns": 0
+    },
+    {
+      "case": "partial",
+      "result": "CORROBORATED",
+      "providerAttempts": 2,
+      "isolatedReads": 1,
+      "captureRows": 1,
+      "details": [
+        {
+          "sourceBytes": 4166,
+          "sourceSha256": "cb79dfbca01a1a7e27d9ca8900de3a4c94ea01b2e38939f0bdb0d0002312323a",
+          "outputBytes": 594,
+          "requestedOffset": null,
+          "requestedLimit": 20,
+          "requestedFieldsMatchNativeCall": true,
+          "actualNativeTotalLines": 250,
+          "actualNativeTruncated": true,
+          "exactTerminalOutputAndToolIdentityMatched": true,
+          "exactStagedInputMatched": true,
+          "actualPartialReadConfirmed": true
+        }
+      ],
+      "containersAbsent": 1,
+      "socketAbsent": true,
+      "nativeReceiptSha256": "4422c2b737f480cc718c4103dbeee8a2d27a17a8937bff4c4913f2e58773dbe9",
+      "viewReceiptSha256": "d71c7599e2aa50b88a3f08f8cfccbc85ef3dd57d763caae14cc4ad08bd1332d7",
+      "sourceAndMainStoresUnchanged": true,
+      "newNativeRuns": 0
+    },
+    {
+      "case": "limit",
+      "result": "CORROBORATED",
+      "providerAttempts": 1,
+      "isolatedReads": 1,
+      "captureRows": 1,
+      "details": [
+        {
+          "sourceBytes": 54,
+          "sourceSha256": "9595b2c1e455ada0241fc0b157db5c0cd68ea03a64c56ec24f73ef1236ff1e84",
+          "outputBytes": 174,
+          "requestedOffset": null,
+          "requestedLimit": null,
+          "requestedFieldsMatchNativeCall": true,
+          "actualNativeTotalLines": 2,
+          "actualNativeTruncated": false,
+          "exactTerminalOutputAndToolIdentityMatched": true,
+          "exactStagedInputMatched": true
+        }
+      ],
+      "containersAbsent": 1,
+      "socketAbsent": true,
+      "nativeReceiptSha256": "3c69010a18693dbd4ec628ba97e5ba0fa0190fa503672a1b9b41283321dcbda9",
+      "viewReceiptSha256": "b2173285c9a17e105367a129f58f98e0185666eb2b66ae6bd4b831b4e9dd76a0",
+      "sourceAndMainStoresUnchanged": true,
+      "newNativeRuns": 0
+    },
+    {
+      "case": "disconnect",
+      "result": "CORROBORATED",
+      "providerAttempts": 1,
+      "isolatedReads": 0,
+      "captureRows": 0,
+      "details": [],
+      "containersAbsent": 0,
+      "socketAbsent": true,
+      "nativeReceiptSha256": "21524e5fd503325b7c20e48858ee005c53998a177448fac2cdfc9cc038cbc539",
+      "viewReceiptSha256": "315a1a3f259931e96042fb736adb7218a5f1e260939e1d5e1bba052322b616c7",
+      "sourceAndMainStoresUnchanged": true,
+      "newNativeRuns": 0
+    },
+    {
+      "case": "optout",
+      "result": "CORROBORATED",
+      "providerAttempts": 2,
+      "isolatedReads": 1,
+      "captureRows": 0,
+      "details": [],
+      "containersAbsent": 1,
+      "socketAbsent": true,
+      "nativeReceiptSha256": "81ca6242bc9b681dc43e0f7f8b33db28d21585f6050c72fb512f63a328d46bd9",
+      "viewReceiptSha256": "81555f6e0151ed4d198860c9c6b8293fcf604a4269a7ec9f7100d490544d73c5",
+      "sourceAndMainStoresUnchanged": true,
+      "newNativeRuns": 0
+    }
+  ],
+  "result": "PASS",
+  "newGatewayRuns": 0,
+  "newModelCalls": 0,
+  "paidCalls": 0,
+  "filesystemSilenceClaim": false,
+  "G03": "corrected explicit request metadata and separately verified 20-of-250 actual partial output"
+}

@@ -1,0 +1,6 @@
+
+Traceback (most recent call last):
+  File "<string>", line 51, in <module>
+    assert cmd.returncode==1 and 'No such object' in cmd.stderr
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

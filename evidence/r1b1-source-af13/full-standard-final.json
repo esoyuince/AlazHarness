@@ -1,0 +1,12 @@
+{
+  "scope": "full standard offline tests; native and inference separate",
+  "tests": 1504,
+  "exitCode": 0,
+  "skipsReported": false,
+  "measuredFiles": 225,
+  "changed": [],
+  "added": [],
+  "seconds": 152.623,
+  "observedAt": "2026-10-17T11:40:16.271100+03:00",
+  "result": "PASS"
+}

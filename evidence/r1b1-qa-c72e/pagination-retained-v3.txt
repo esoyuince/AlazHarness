@@ -1,0 +1,32 @@
+test_explicit_maximum_is_not_replaced_by_native_default (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_explicit_maximum_is_not_replaced_by_native_default) ... FAIL
+test_explicit_offset_and_limit_preserved (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_explicit_offset_and_limit_preserved) ... ok
+test_omitted_pagination_matches_effective_native_values (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_omitted_pagination_matches_effective_native_values) ... FAIL
+
+======================================================================
+FAIL: test_explicit_maximum_is_not_replaced_by_native_default (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_explicit_maximum_is_not_replaced_by_native_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-pagination-retained-v3\tests\test_source_pagination_qa_c72e.py", line 48, in test_explicit_maximum_is_not_replaced_by_native_default
+    self.check({'path':str(self.file),'limit':1000})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-pagination-retained-v3\tests\test_source_pagination_qa_c72e.py", line 35, in check
+    self.assertEqual(row['requestedOffset'],raw.get('offset'))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != None
+
+======================================================================
+FAIL: test_omitted_pagination_matches_effective_native_values (test_source_pagination_qa_c72e.SourcePaginationIndependentQA.test_omitted_pagination_matches_effective_native_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-pagination-retained-v3\tests\test_source_pagination_qa_c72e.py", line 42, in test_omitted_pagination_matches_effective_native_values
+    self.check({'path':str(self.file)})
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\runtime\qa-c72e-pagination-retained-v3\tests\test_source_pagination_qa_c72e.py", line 34, in check
+    self.assertEqual(row['requestedLimit'],raw.get('limit'),'omitted request must remain null, not a guessed native default')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 200 != None : omitted request must remain null, not a guessed native default
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.374s
+
+FAILED (failures=2)

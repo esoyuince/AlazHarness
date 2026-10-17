@@ -196,3 +196,10 @@ agent/provider. Existing-report tests remain intact. The opt-in historical
 verifier has explicit positive and retention-refusal expectations; a correct
 expiration denial is not positive native inventory acceptance. See
 docs/R1-EVIDENCE-VIEW.md and exact evidence/r1-evidence-724a receipts.
+
+## R1B1 source capture
+
+Standard tests cover the opt-in writer/reader and plugin bootstrap using synthetic
+ports. Real Linux Gateway/broker/Docker reads remain separate opt-in evidence. No
+native installation, real model or source permission is added to CI. Exact source
+freeze/counts are in docs/R1B1-SOURCE-CAPTURE.md and status.md.

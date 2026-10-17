@@ -1,0 +1,12 @@
+{
+  "exitCode": 1,
+  "source": {
+    "packages/claw-hermes/source_capture.py": "9d5207683deaf8ad5512403365bf1cef58a77ab3eb8752ca87b9ea5eb45ce16e",
+    "packages/claw-hermes/isolated_read.py": "dcc0f8518a22bae7e6f6deade7ac6a3178712f9c44a970274a4f9e46060ae1b5",
+    "packages/claw-hermes/evidence_view.py": "9e8931832e3965e5e981d326f672ce11fd6c67598b89398110822015fd51763f",
+    "tests/test_source_capture.py": "9bcf27c9d35bdb3c039d541fbdb7c7853511c68778bbbbe13ad70b2368e5411a"
+  },
+  "changed": [],
+  "scope": "real capture/SQLite reader with synthetic native ports",
+  "observedAt": "2026-10-17T11:27:44.119088+03:00"
+}

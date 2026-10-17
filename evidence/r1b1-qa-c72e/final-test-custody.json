@@ -1,0 +1,10 @@
+{
+  "tests": 60,
+  "files": {
+    "tests/test_source_snapshot_qa_c72e.py": "85e0b62ab6b0cfd7f16fd522499459bfc6b745f1c8227c13f66e8bad52eedb2e",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563",
+    "tests/test_source_loader_qa_c72e.py": "0ef64ca5c25f7378af574f48a3a1ad7c521ab40dfd8758276a0413565239bd28"
+  },
+  "scope": "first58 unchanged plus2 actual-native-error regression tests",
+  "newTestsFrozen": true
+}

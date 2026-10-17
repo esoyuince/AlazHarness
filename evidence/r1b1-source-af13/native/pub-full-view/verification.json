@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "scenario": "normal",
+  "recordSourceEnabled": true,
+  "nativeReceiptSha256": "927b8978a0fab01f576ccf6755d5f9cbaa5b8a967c7eb08877964b3dab273da2",
+  "sourceCaptureRows": 1,
+  "sourceBytes": 54,
+  "fixtureLines": 2,
+  "requestedLimit": null,
+  "storedOutputBytes": [
+    174
+  ],
+  "actualPartialReadVerified": false,
+  "matchedSource": true,
+  "nativeStatus": "completed",
+  "modelVisibility": "unknown",
+  "understandingVerified": false,
+  "applicationStateUnchanged": true,
+  "sqliteAuxiliaryFilesChanged": [
+    "profile/runs_idempotency.db-wal",
+    "profile/runs_idempotency.db-shm"
+  ],
+  "newGatewayRuns": 0,
+  "newModelCalls": 0,
+  "paidCalls": 0,
+  "cliFormatsVerified": [
+    "json",
+    "text"
+  ]
+}

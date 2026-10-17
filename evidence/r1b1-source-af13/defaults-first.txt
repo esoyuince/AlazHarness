@@ -1,0 +1,17 @@
+test_explicit_limit_is_preserved (test_source_capture_defaults.RequestedBounds.test_explicit_limit_is_preserved) ... ok
+test_explicit_null_does_not_mean_omitted (test_source_capture_defaults.RequestedBounds.test_explicit_null_does_not_mean_omitted) ... ok
+test_omitted_bounds_are_not_guessed (test_source_capture_defaults.RequestedBounds.test_omitted_bounds_are_not_guessed) ... FAIL
+
+======================================================================
+FAIL: test_omitted_bounds_are_not_guessed (test_source_capture_defaults.RequestedBounds.test_omitted_bounds_are_not_guessed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13\tests\test_source_capture_defaults.py", line 17, in test_omitted_bounds_are_not_guessed
+    self.assertIsNone(entry['requestedLines']['offset']);self.assertIsNone(entry['requestedLines']['limit'])
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 is not None
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.358s
+
+FAILED (failures=1)

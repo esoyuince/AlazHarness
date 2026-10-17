@@ -1,0 +1,9 @@
+{
+  "firstExit": 1,
+  "secondExit": 0,
+  "testSha256": "f8637c3f7d81d350897d862014d1e65a09a1c525bf80f0273ad794f8996c2589",
+  "finding": "capture guessed omitted native limit=200; real native 250-line fixture returned all250",
+  "decision": "only explicit requested bounds recorded; omitted bounds null, no effective native default guessed",
+  "previousNativePartialQualification": "NOT_ACCEPTED_FOR_PARTIAL_SEMANTICS",
+  "previous1504Suite": "historical candidate, not new source qualification"
+}

@@ -1,0 +1,5 @@
+{
+  "oldSha256": "d5a2841b9e23f8ed1a54940d15fae3150775a05042599d38e23c5ebdb6e94fa8",
+  "newSha256": "25052dacd827bcb0dd5574b5ccfcf2750d2363549db3ed9169d39187044d38b1",
+  "reason": "Primary API had changed to exact request fields before draft tests ran; requested is not effective. Correct assertion preserves omitted as null; original unsafe guessed200 still fails. Previous2FAIL are draft-contract mismatch, not product regression closure. First60tests unchanged."
+}

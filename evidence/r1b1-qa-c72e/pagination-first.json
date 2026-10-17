@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-17T11:45:35.567405+03:00",
+  "tests": 3,
+  "exitCode": 1,
+  "sourceBefore": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "57106fb3a53310ed5213da3fa9c368f89db1696a439f1f1614225aea5b0bf6c5",
+    "tests/test_source_pagination_qa_c72e.py": "d5a2841b9e23f8ed1a54940d15fae3150775a05042599d38e23c5ebdb6e94fa8"
+  },
+  "sourceAfter": {
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/source_capture.py": "57106fb3a53310ed5213da3fa9c368f89db1696a439f1f1614225aea5b0bf6c5",
+    "tests/test_source_pagination_qa_c72e.py": "d5a2841b9e23f8ed1a54940d15fae3150775a05042599d38e23c5ebdb6e94fa8"
+  },
+  "scope": "actual Alaz invoke/capture with inspected native pagination default=2000; native ports synthetic; G03"
+}

@@ -180,7 +180,14 @@ class _EvidenceSnapshot(HostReportInspector):
             record = conn.execute('SELECT value FROM state_meta WHERE key=?',
                                   (RESULT + checked['admissionId'],)).fetchone()
             _require(record is not None, 'terminal_evidence_missing')
-            section = _record_projection(_load(record[0]), checked, self.context, self.selection)
+            retained = _load(record[0])
+            section = _record_projection(retained, checked, self.context, self.selection)
+            from source_capture import enrich_source_captures
+            from execution_budget import ExecutionDenied
+            try:
+                enrich_source_captures(conn, section, retained, row, self.context, self.policy)
+            except ExecutionDenied as exc:
+                raise EvidenceError(str(exc)) from None
         except EvidenceError as exc:
             section = unavailable_evidence(str(exc))
         except (ValueError, TypeError, KeyError, IndexError, UnicodeError, OverflowError, RecursionError):
@@ -221,12 +228,16 @@ def render_evidence_text(report: dict) -> str:
         for ref in section['references']:
             content = ref['content']; size = content['utf8Bytes']
             lines.append(ref['evidenceId'] + ' ' + ref['kind'] + ' stored UTF-8 bytes=' +
-                         ('UNKNOWN' if size is None else str(size)) + '; original source coverage=UNKNOWN')
+                         ('UNKNOWN' if size is None else str(size)) + '; tool-output coverage of original source=UNKNOWN')
         view = section['localView']
         if view is not None:
             lines.append('Local metadata view: ' + view['coverageOfStoredContent'] +
                          '; NOT DISPATCHED; bytes=' + str(view['utf8Bytes']))
     else:
         lines.append('Evidence reason: ' + section['reason'])
+    for capture in section.get('sourceCaptures', []):
+        lines.append('Captured input snapshot: ' + str(capture['sourceBytes']) +
+                     ' raw bytes; status=' + capture['status'] + '; tool coverage=UNKNOWN; model view=UNKNOWN')
+    lines.append('Application state is not written; SQLite auxiliary filesystem files may be created.')
     lines.append('Retained content and local views do NOT verify an effect, comprehension or goal.')
     return '\n'.join(lines) + '\n'

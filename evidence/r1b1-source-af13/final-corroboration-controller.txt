@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 12, in <module>
+    assert d.returncode!=0 and 'No such' in d.stderr;containers.append(cid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

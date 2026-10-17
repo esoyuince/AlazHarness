@@ -1,0 +1,20 @@
+{
+  "scope": "Verbatim original UTF-8 bytes encoded as JSON strings, not edited/normalized patches or results",
+  "reason": "Unified diff trailing blank context and raw terminal EOF whitespace cannot satisfy git diff --check unchanged; exact originals preserved here and under ignored runtime",
+  "files": [
+    {
+      "originalPath": "evidence/r1b1-qa-c72e/native-pagination-observation.txt",
+      "bytes": 483,
+      "sha256": "a9363a7230e765936eb9cc9468b1bb92e1a40451b5dd83a53545b9398883d201",
+      "utf8ContentVerbatim": "CALL_BOUND {\"tool\": \"read_file\", \"offset\": null, \"limit\": null, \"keys\": [\"path\"]}\r\nTOOL_FIELDS {\"file_size\": 4166, \"is_binary\": false, \"is_image\": false, \"not_found\": false, \"total_lines\": 250, \"truncated\": false}\r\nCONTENT_SHAPE {\"utf8Bytes\": 5057, \"newlineCount\": 249, \"containsLine200\": true, \"containsLine201\": true, \"containsLine250\": true, \"startsWithNumberedFirstLine\": false}\r\nCAPTURE {\"sourceBytes\": 4166, \"requestedOffset\": 1, \"requestedLimit\": 200, \"outputBytes\": 5426}\r\n\r\n",
+      "retainedLocalOriginal": "runtime/r1b1-publication-verbatim/native-pagination-observation.txt"
+    },
+    {
+      "originalPath": "evidence/r1b1-qa-c72e/pagination-contract-alignment.diff",
+      "bytes": 1095,
+      "sha256": "0fe1ea518640fa892cd82488d1586c3581de063f9b56a0eb5f4cf8de62a34616",
+      "utf8ContentVerbatim": "--- draft\r\n+++ requested-not-effective-contract\r\n@@ -31,9 +31,10 @@\r\n             return self.original(args,**kwargs)\r\n         self.invoke(native)\r\n         row=self.captures()[0][1]\r\n-        self.assertEqual(row['requestedLimit'],called['limit'],'capture limit must match actual native effective argument')\r\n-        self.assertEqual(row['requestedOffset'],called['offset'])\r\n-        self.assertLessEqual(called['limit'],1000,'qualified Alaz limit must not silently become native 2000')\r\n+        self.assertEqual(row['requestedLimit'],raw.get('limit'),'omitted request must remain null, not a guessed native default')\r\n+        self.assertEqual(row['requestedOffset'],raw.get('offset'))\r\n+        self.assertEqual(called['limit'],raw.get('limit',2000),'do not silently change original native call while recording it')\r\n+        self.assertEqual(called['offset'],raw.get('offset',1))\r\n         self.assertEqual(row['fingerprint'],self.fp,'bind original omitted/explicit request identity')\r\n         self.assertEqual(self.args,raw,'do not mutate caller request to hide default mismatch')\r\n \r\n",
+      "retainedLocalOriginal": "runtime/r1b1-publication-verbatim/pagination-contract-alignment.diff"
+    }
+  ]
+}

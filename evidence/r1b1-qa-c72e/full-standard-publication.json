@@ -1,0 +1,12 @@
+{
+  "scope": "independent C72E full discovery after G03 exact-request correction; earlier1504 belongs to previous source",
+  "observedAt": "2026-10-17T11:51:07.653702+03:00",
+  "tests": 1511,
+  "exitCode": 0,
+  "skipReported": false,
+  "measuredFiles": 226,
+  "changedOrRemoved": [],
+  "added": [],
+  "seconds": 151.463,
+  "result": "PASS"
+}

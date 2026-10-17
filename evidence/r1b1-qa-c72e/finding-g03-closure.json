@@ -1,0 +1,17 @@
+{
+  "id": "C72E-G03",
+  "status": "CLOSED_FOR_NEW_WRITER_AND_EXPLICIT_PARTIAL_NATIVE_CASE",
+  "observedAt": "2026-10-17T11:53:12.325729+03:00",
+  "sourceCaptureSha256": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211",
+  "omittedRequestedFields": "null_not_invented",
+  "explicitRequestedLimit": 20,
+  "sourceLines": 250,
+  "sourceBytes": 4166,
+  "outputBytes": 594,
+  "line21Absent": true,
+  "sameFinalSourceCorroboration": "native-publication-corroboration.json",
+  "earlierRecordsPreserved": true,
+  "nativeRunsByThisQA": 0,
+  "modelVisibility": "unknown",
+  "filesystemSilenceClaim": false
+}

@@ -145,3 +145,10 @@ R1A positive inventory is qualified on two fresh, in-retention Windows native
 profiles; metadata does not establish source coverage or wire visibility.
 See docs/R1B0-NATIVE-EVIDENCE-ACCEPTANCE.md. Next R1B1 source-capture binding,
 then R1B2 normalized provider-view binding; D3B and M1/M2 remain open.
+
+## R1B1 trusted input capture
+
+Opt-in isolated source snapshot and redacted return binding use the existing
+native state owner. Acceptance is in docs/R1B1-SOURCE-CAPTURE.md. Next R1B2 is
+provider request-view binding; full capture is not full output or model visibility.
+D3B, real provider, HYB006, M1/M2 remain open. Git/CI is tracked in status.md.

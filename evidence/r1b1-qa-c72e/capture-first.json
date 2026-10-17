@@ -1,0 +1,20 @@
+{
+  "scope": "actual capture/isolation/ledger/report with synthetic ports; no native Gateway or paid calls",
+  "observedAt": "2026-10-17T11:29:02.869634+03:00",
+  "tests": 40,
+  "exitCode": 0,
+  "sourceBefore": {
+    "packages/claw-hermes/source_capture.py": "9d5207683deaf8ad5512403365bf1cef58a77ab3eb8752ca87b9ea5eb45ce16e",
+    "packages/claw-hermes/isolated_read.py": "dcc0f8518a22bae7e6f6deade7ac6a3178712f9c44a970274a4f9e46060ae1b5",
+    "packages/claw-hermes/evidence_view.py": "9e8931832e3965e5e981d326f672ce11fd6c67598b89398110822015fd51763f",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563"
+  },
+  "sourceAfter": {
+    "packages/claw-hermes/source_capture.py": "9d5207683deaf8ad5512403365bf1cef58a77ab3eb8752ca87b9ea5eb45ce16e",
+    "packages/claw-hermes/isolated_read.py": "dcc0f8518a22bae7e6f6deade7ac6a3178712f9c44a970274a4f9e46060ae1b5",
+    "packages/claw-hermes/evidence_view.py": "9e8931832e3965e5e981d326f672ce11fd6c67598b89398110822015fd51763f",
+    "tests/test_source_capture_qa_c72e.py": "301c92c6b9a1c1fa82d1df9ff0185007a610b10d9c0bdf49b8087502d57c9563"
+  },
+  "changed": [],
+  "seconds": 4.328
+}

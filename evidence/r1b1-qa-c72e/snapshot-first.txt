@@ -1,0 +1,23 @@
+test_actual_raw_bytes_not_newline_normalized (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_actual_raw_bytes_not_newline_normalized) ... ok
+test_bom_and_undecodable_bytes_are_capture_not_text_claim (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_bom_and_undecodable_bytes_are_capture_not_text_claim) ... ok
+test_changed_inode_from_open_descriptor_refused (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_changed_inode_from_open_descriptor_refused) ... ok
+test_descriptor_closed_when_read_is_rejected (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_descriptor_closed_when_read_is_rejected) ... ok
+test_directory_named_txt_rejected (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_directory_named_txt_rejected) ... ok
+test_empty_source_is_captured_not_absent (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_empty_source_is_captured_not_absent) ... ok
+test_exact_bound_is_not_truncated (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_exact_bound_is_not_truncated) ... ok
+test_hardlinked_input_rejected (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_hardlinked_input_rejected) ... ok
+test_in_place_change_during_read_refused (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_in_place_change_during_read_refused) ... ok
+test_input_mutation_between_stat_and_open_refused (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_input_mutation_between_stat_and_open_refused) ... ok
+test_missing_source_not_created (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_missing_source_not_created) ... ok
+test_other_extension_rejected_before_open (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_other_extension_rejected_before_open) ... ok
+test_over_bound_rejected_before_open (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_over_bound_rejected_before_open) ... ok
+test_relative_input_rejected (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_relative_input_rejected) ... ok
+test_returned_bytes_do_not_track_later_file_changes (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_returned_bytes_do_not_track_later_file_changes) ... ok
+test_source_content_not_changed_by_capture (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_source_content_not_changed_by_capture) ... ok
+test_symlink_ancestor_refused_without_traversing (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_symlink_ancestor_refused_without_traversing) ... ok
+test_uppercase_txt_uses_same_byte_contract (test_source_snapshot_qa_c72e.SourceSnapshotIndependentQA.test_uppercase_txt_uses_same_byte_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.153s
+
+OK
