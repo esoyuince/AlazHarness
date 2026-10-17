@@ -1,0 +1,12 @@
+{
+  "scope": "final QA branch offline suite on R1B1 base+16newbaseline cases, opt-in R1B2 35 cases separate",
+  "tests": 1527,
+  "exitCode": 0,
+  "skippedReported": false,
+  "sourceFiles": 231,
+  "changed": [],
+  "added": [],
+  "seconds": 130.446,
+  "observedAt": "2026-10-17T12:49:10.834645+03:00",
+  "result": "PASS"
+}

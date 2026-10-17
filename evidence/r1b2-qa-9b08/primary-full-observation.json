@@ -1,0 +1,18 @@
+{
+  "scope": "observed primary full result, not an additional QA execution",
+  "source": "request-r1b2-af13/evidence/r1b2-request-af13/full-publication.json",
+  "sha256": "362316dfca6b929d54a563c9e2a4c55616b42980e2d43e2d4229029863455d10",
+  "result": {
+    "scope": "standard offline discovery; separate native and opt-in QA not included",
+    "tests": 1595,
+    "exitCode": 0,
+    "skippedReported": false,
+    "sourceFiles": 235,
+    "changed": [],
+    "added": [],
+    "seconds": 142.15,
+    "observedAt": "2026-10-17T12:49:57.333290+03:00",
+    "result": "PASS"
+  },
+  "observedAt": "2026-10-17T12:54:30.382861+03:00"
+}

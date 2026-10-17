@@ -1,0 +1,12 @@
+{
+  "tests": 29,
+  "exitCode": 0,
+  "fixtureCorrection": "Injection moved from prepare callback to enclosing authorize transaction so failure remains active at COMMIT. First two failures are test harness defects, not product defects. Product unmodified; all29test function AST/assertions identical.",
+  "beforeTestSha256": "eca07a2e79db485fa6f0eb9c3d500b77ad259e4960acb39e689473e2cac86fbe",
+  "afterTestSha256": "062614c161b277792123647dc42ac84f81217d91f4b12741a5f7061f455732c0",
+  "sourceManifest": "candidate-v1-source.json",
+  "sourceChanged": [],
+  "observedAt": "2026-10-17T12:39:56.809925+03:00",
+  "nativeRuns": 0,
+  "paidCalls": 0
+}

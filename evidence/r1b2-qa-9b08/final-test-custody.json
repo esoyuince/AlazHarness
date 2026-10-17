@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-17T12:46:17.819306+03:00",
+  "files": {
+    "tests/test_request_transport_qa_9b08.py": "1bb4f99216fd27ddb9016a3543421f30aecf5e93445e9ef77017a2ffddd38dd4",
+    "tests/test_request_boundary_qa_9b08.py": "f989f2b614d9a681e197732829a1069531cff974b9ef5cb5501488d3f5f42e49",
+    "scripts/qa/test_request_view_9b08.py": "062614c161b277792123647dc42ac84f81217d91f4b12741a5f7061f455732c0",
+    "scripts/qa/test_request_boundary_view_9b08.py": "7322ffe286bc47bb14c711c0601efbfab94c260eb0b86e81ee28e5b2919cac76",
+    "scripts/qa/corroborate_request_native_9b08.py": "d6effac6640a6f5c541dd643f99e3668e83298f80ac23a70185c385b0b5a994e"
+  },
+  "baselineStandardAddedTests": 16,
+  "optInFeatureTests": 35,
+  "nativeCorroboratorNotAStandardTest": true,
+  "newNativeRunsByQA": 0
+}

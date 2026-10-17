@@ -1,0 +1,11 @@
+test_auth_rejection_has_no_preparation_or_claim (test_request_boundary_qa_9b08.RequestBoundaryIndependentQA.test_auth_rejection_has_no_preparation_or_claim) ... ok
+test_default_output_ceiling_is_in_actual_authorized_payload (test_request_boundary_qa_9b08.RequestBoundaryIndependentQA.test_default_output_ceiling_is_in_actual_authorized_payload) ... ok
+test_duplicate_json_keys_refused_before_provider_claim (test_request_boundary_qa_9b08.RequestBoundaryIndependentQA.test_duplicate_json_keys_refused_before_provider_claim) ... ok
+test_explicit_ceiling_not_silently_replaced (test_request_boundary_qa_9b08.RequestBoundaryIndependentQA.test_explicit_ceiling_not_silently_replaced) ... ok
+test_hidden_multimodal_fetch_refused_without_claim (test_request_boundary_qa_9b08.RequestBoundaryIndependentQA.test_hidden_multimodal_fetch_refused_without_claim) ... ok
+test_provider_payload_preserves_exact_tool_text (test_request_boundary_qa_9b08.RequestBoundaryIndependentQA.test_provider_payload_preserves_exact_tool_text) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.223s
+
+OK

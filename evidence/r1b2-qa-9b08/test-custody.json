@@ -1,0 +1,8 @@
+{
+  "tests": 16,
+  "files": {
+    "tests/test_request_boundary_qa_9b08.py": "f989f2b614d9a681e197732829a1069531cff974b9ef5cb5501488d3f5f42e49",
+    "tests/test_request_transport_qa_9b08.py": "1bb4f99216fd27ddb9016a3543421f30aecf5e93445e9ef77017a2ffddd38dd4"
+  },
+  "scope": "10 transport and 6 provider-handler baseline tests; new R1B2 behavior not yet tested"
+}

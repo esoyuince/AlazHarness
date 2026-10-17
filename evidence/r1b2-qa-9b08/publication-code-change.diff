@@ -1,0 +1,35 @@
+--- initial-candidate/request_view.py
++++ publication-candidate/request_view.py
+@@ -99,7 +99,8 @@
+         content = message.get('content')
+         require(content is None or type(content) is str, 'request_view_message_invalid')
+         if message['role'] == 'assistant':
+-            raw = message.get('tool_calls') or []
++            raw = message.get('tool_calls', [])
++            if raw is None:raw = []
+             require(type(raw) is list and len(raw) <= 256, 'request_view_call_limit')
+             for call in raw:
+                 require(type(call) is dict, 'request_view_call_invalid')
+@@ -256,6 +257,8 @@
+     selected = {item['captureId'][3:]:item for item in section.get('sourceCaptures', [])
+                 if item['matchedEvidenceId'] is not None}
+     refmap = {item['evidenceId']:item for item in section['references']}
++    candidate_signatures = ({digest:signature for signature,digests in _capture_candidates(conn,ledger).items()
++                             for digest in digests} if selected else {})
+     requests = []; assignments = {}; total = 0
+     for key, raw in found:
+         require(type(raw) is str)
+@@ -281,11 +284,8 @@
+                     'request_source_output_mismatch')
+             eid = capture['matchedEvidenceId']; ref = refmap[eid]
+             # Bind the persisted native tool identity again, not just equal text.
+-            caprows = conn.execute('SELECT value FROM state_meta WHERE key GLOB ? LIMIT 1001',
+-                (source_capture.PREFIX+context.scope+'.*',)).fetchall()
+-            matches = [source_capture._validate(_load(v,16384),context,policy) for (v,) in caprows
+-                       if _load(v,16384).get('digest') == item['sourceCaptureDigest']]
+-            require(len(matches) == 1 and matches[0]['toolCallHash'] == item['toolCallHash'],
++            require(candidate_signatures.get(item['sourceCaptureDigest']) ==
++                    (item['toolCallHash'],item['contentSha256'],item['contentBytes']),
+                     'request_source_identity_mismatch')
+             require(ref['executionAttribution'] == 'isolated_return_bound_to_admission')
+             inclusion = {'evidenceId':eid, 'captureId':capture['captureId'], 'messageIndex':item['index'],
