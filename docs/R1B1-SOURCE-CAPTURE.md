@@ -178,3 +178,21 @@ evidence/r1b1-source-af13/verbatim-qa-publication-texts.json. Their exact raw lo
 originals remain under ignored runtime/r1b1-publication-verbatim. This preserves
 unified-diff context whitespace and original terminal EOF rather than silently
 normalizing them. Test sources, assertions and recorded outcomes are unchanged.
+
+## Exact-code publication and continuation — 2026-10-17T12:06:45.708443+03:00
+
+Code commit `15eca31e3522ee4c2215b3a3d4f8df9b217e7559` is published on
+`alaz/r1b1-source-capture-af13`. GitHub `alaz/local-ci` is SUCCESS,
+status56587531642 at2026-10-17T09:03:38Z, observed by both status tools. The API
+reports status, not remote test counts. Local1511/1511 and independent1511/1511
+remain separately measured standard runs; native five-case acceptance is separate.
+All227 frozen source files match published Git index bytes, with no exceptions.
+Evidence: evidence/r1b1-source-af13/code-ci-status.json.
+
+This documentation/summary/status-only commit does not modify runtime code,
+tests, original failure receipts or source pins. Its own CI is checked only
+after publication. Main remains b8ff44ff105965ba3f6f9fa9559ad96f2c084815.
+Next: R1B2 actual normalized provider request-view binding. R1B1 captures source
+and exact redacted tool return, NOT provider delivery, understanding or goal
+success. D3B OS perimeter, real models/tariffs/token bounds, HYB006 and M1/M2
+remain open. No independent source database, scheduler or extra tool permission.

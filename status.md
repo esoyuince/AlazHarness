@@ -1,10 +1,12 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-17T11:57:50.871397+03:00
+Son güncelleme: 2026-10-17T12:06:45.708443+03:00
 
 ## Güncel nokta
 
-R1B1-SOURCE-AF13 yerel/gerçek Linux dar kabul PASS; commit/push/CI AÇIK.
+R1B1-SOURCE-AF13 dar kabul ve kod Git/CI teslimi TAMAMLANDI.
+Kod commit: 15eca31e3522ee4c2215b3a3d4f8df9b217e7559 — alaz/local-ci SUCCESS.
+Son belge commitinin kendi CI sonucu yayından sonra ayrıca kontrol edilir.
 Aktif dal: alaz/r1b1-source-capture-af13
 Aktif çalışma ağacı: C:\Antigravity\AlazHarness\scratch\worktrees\source-r1b1-af13
 Başlangıç commit: ee5580ded751c8fc22c9d09984b8f14cc72b58e5.
@@ -209,3 +211,14 @@ korundu. HamQAterminal/patch2dosya whitespace değiştirmeden UTF8JSON string
 olarak verbatim-qa-publication-texts.json içinde yayımlanır; aynıraworiginal
 ignoredruntime/r1b1-publication-verbatim altında. Kod/test/sonuç değiştirilmedi.
 Seçilmiş bu paketin commit/push işlemi yapılıyor; exact CI henüz PENDING/NOTRUN.
+
+### 2026-10-17T12:06:45.708443+03:00 — kod CI kapanışı ve durum teslimi
+
+Kod 15eca31e3522ee4c2215b3a3d4f8df9b217e7559 yayımlandı; local/origin eşit ve temiz.
+GitHub exactSHA alaz/local-ci SUCCESS iki okuma ile doğrulandı; statusID
+56587531642,2026-10-17T09:03:38Z. API remote test sayısı sağlamaz.
+227son source hash aynı. Bu commit yalnız doc/status/CI/özet günceller;
+yeni ürün/test/native/model çalışması yok. Önceki bütün FAIL/sınırlı PASS
+kanıtları korunur. Main b8ff44ff105965ba3f6f9fa9559ad96f2c084815 aynı.
+Kesin sonraki uygulama R1B2 provider request-view; R1B1 source/return
+bağlaması modelgördü/başardı iddiası değildir. G01/D3B/HYB006/M1/M2 açık.

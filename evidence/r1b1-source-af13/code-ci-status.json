@@ -1,0 +1,12 @@
+{
+  "repository": "esoyuince/AlazHarness",
+  "sha": "15eca31e3522ee4c2215b3a3d4f8df9b217e7559",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 56587531642,
+  "createdAt": "2026-10-17T09:03:38Z",
+  "observedAt": "2026-10-17T12:06:45.708443+03:00",
+  "source": "GitHub get_commit_combined_status and exact commit status API fetch",
+  "remoteTestCount": null,
+  "scope": "GitHub commit status; not a native suite or inferred server test count"
+}

@@ -3,7 +3,7 @@
   "observedAt": "2026-10-17T11:57:50.871397+03:00",
   "baseCommit": "ee5580ded751c8fc22c9d09984b8f14cc72b58e5",
   "branch": "alaz/r1b1-source-capture-af13",
-  "result": "LOCAL_AND_NATIVE_SCOPED_PASS",
+  "result": "SCOPED_PASS_PUBLISHED",
   "standard": {
     "scope": "full standard offline publication qualification after G03; no native or inference",
     "tests": 1511,
@@ -33,6 +33,9 @@
   "paidCalls": 0,
   "wholeGatewayOSIsolation": false,
   "mainMerged": false,
-  "codeCommit": null,
-  "ciState": "NOT_YET_PUBLISHED"
+  "codeCommit": "15eca31e3522ee4c2215b3a3d4f8df9b217e7559",
+  "ciState": "success",
+  "publicationObservedAt": "2026-10-17T12:06:45.708443+03:00",
+  "remoteTestCount": null,
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }
