@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-18T21:49:17.748975+03:00",
+  "result": "PASS",
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "runId": "18d3-normal-v2",
+      "result": "PASS",
+      "requestCount": 4,
+      "responseCount": 4,
+      "publishedArms": [
+        "baseline",
+        "candidate"
+      ],
+      "trialState": "completed",
+      "duplicateRequestStatus": 200,
+      "kernelCheckTypes": 15,
+      "samePid": true,
+      "receiptSha256": "ba0d9229eb796a4678a6c54884981b69cb80a356d34c2c6604883dc66db6c4b8",
+      "cleanExit": true
+    },
+    {
+      "scenario": "budget-limit",
+      "runId": "18d3-budget-final",
+      "result": "PASS",
+      "requestCount": 3,
+      "responseCount": 3,
+      "publishedArms": [
+        "baseline"
+      ],
+      "trialState": "unknown",
+      "duplicateRequestStatus": 202,
+      "kernelCheckTypes": 15,
+      "samePid": true,
+      "receiptSha256": "e8274f8f9d15040eeacdf4a13bff7a6ff6d38c32d391a2f123339b5fdaec1697",
+      "cleanExit": true
+    },
+    {
+      "scenario": "candidate-disconnect",
+      "runId": "18d3-disconnect-final",
+      "result": "PASS",
+      "requestCount": 4,
+      "responseCount": 3,
+      "publishedArms": [
+        "baseline"
+      ],
+      "trialState": "unknown",
+      "duplicateRequestStatus": 202,
+      "kernelCheckTypes": 15,
+      "samePid": true,
+      "receiptSha256": "363dfdfaf718e17bea619dad497b93789de95b4cd5f025a5c2d945caebc540fd",
+      "cleanExit": true
+    },
+    {
+      "scenario": "review-revoked",
+      "runId": "18d3-revoked-final",
+      "result": "PASS",
+      "requestCount": 3,
+      "responseCount": 3,
+      "publishedArms": [],
+      "trialState": "unknown",
+      "duplicateRequestStatus": 409,
+      "kernelCheckTypes": 15,
+      "samePid": true,
+      "receiptSha256": "00e2d4741129c09fed8f314b29fcd60d4c81d0441972db7575fe783b78b08518",
+      "cleanExit": true
+    }
+  ],
+  "sameSourceManifest": true,
+  "snapshotFiles": 183,
+  "distinctKernelCheckTypes": 15,
+  "realModelCalls": 0,
+  "fullD3B": false
+}

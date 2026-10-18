@@ -255,3 +255,7 @@ policy-only sandbox Alaz'a taşınmaz. Ortak D3B önceliği korunur.
 ## D3B1 network namespace — 18 October 2026
 
 Opt-in rootless user/network namespace, zero capabilities, no_new_privs and inherited seccomp added. Direct TCP/UDP/alternate-family and exec-child tests; actual Gateway with original host broker requalified. Host UID/filesystem/path Unix services remain shared: complete D3B NOT ACCEPTED. Next deny-by-default filesystem/PID/credential separation. See docs/D3B1-NETWORK-NAMESPACE.md.
+
+## D3B-JOINT-18D3 — ortak koruma kabulü
+
+Ağ namespace/seccomp ve credential Landlock aynı Gateway sürecinde4/4 native PASS;15 canary türü her koşuda ayrı ölçüldü. Full regresyon/published CI aşağıdaki iş kaydından takip edilir. Primitive kodları değişmedi; rapor docs/D3B-JOINT-BOUNDARY.md. Sonraki kritik iş: Gateway-writable durumdan bağımsız broker bütçe otoritesi; UnixIPC/PID/hostUID sınırları ayrı. WrongStack anti-loop sonraki küçük davranış adayı; fullD3B/gerçekmodel henüz kabul değil.

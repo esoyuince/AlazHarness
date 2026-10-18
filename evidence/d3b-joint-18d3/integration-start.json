@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-18T21:33:14.000879+03:00",
+  "networkCommit": "7915c77c6cf0f48fcae6a13e08cd7fd997cda4f2",
+  "jointMergeCommit": "6c679bd3da66ad407f342259a5fdd140062c6853",
+  "resolvedDocs": [
+    "docs/BACKLOG.md",
+    "docs/CI.md",
+    "status.md"
+  ],
+  "resolution": "both additive histories retained; single current status header",
+  "networkFilesByteIdentical": 5,
+  "credentialPrimitiveFilesByteIdentical": 2,
+  "credentialBase": "b3197e2f2266bfd998920f7b2c1400c39bbc6195",
+  "priorCI": {
+    "research": "success",
+    "networkDoc": "success",
+    "credentialDoc": "success"
+  },
+  "jointTestsRun": false,
+  "rootStatusMirrorChangedByThisWork": false,
+  "mainMerged": false
+}

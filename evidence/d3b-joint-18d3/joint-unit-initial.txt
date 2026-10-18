@@ -1,0 +1,25 @@
+test_aggregate_argument_budget_refuses (test_joint_boundary.JointLaunchContracts.test_aggregate_argument_budget_refuses) ... ok
+test_disabled_policy_refuses_without_mock (test_joint_boundary.JointLaunchContracts.test_disabled_policy_refuses_without_mock) ... ok
+test_duplicate_json_refuses_before_translation (test_joint_boundary.JointLaunchContracts.test_duplicate_json_refuses_before_translation) ... ok
+test_empty_command_refuses (test_joint_boundary.JointLaunchContracts.test_empty_command_refuses) ... ok
+test_exec_failure_never_retries_or_calls_target (test_joint_boundary.JointLaunchContracts.test_exec_failure_never_retries_or_calls_target) ... ok
+test_existing_receipt_preserved (test_joint_boundary.JointLaunchContracts.test_existing_receipt_preserved) ... ok
+test_large_argument_refuses (test_joint_boundary.JointLaunchContracts.test_large_argument_refuses) ... ok
+test_missing_credential_launcher_refuses (test_joint_boundary.JointLaunchContracts.test_missing_credential_launcher_refuses) ... ok
+test_missing_executable_refuses (test_joint_boundary.JointLaunchContracts.test_missing_executable_refuses) ... ok
+test_missing_receipt_parent_refuses (test_joint_boundary.JointLaunchContracts.test_missing_receipt_parent_refuses) ... ok
+test_network_precedes_credential_and_original_target (test_joint_boundary.JointLaunchContracts.test_network_precedes_credential_and_original_target) ... ok
+test_no_disable_mode_or_fallback_argv (test_joint_boundary.JointLaunchContracts.test_no_disable_mode_or_fallback_argv) ... ok
+test_nonstring_argument_refuses (test_joint_boundary.JointLaunchContracts.test_nonstring_argument_refuses) ... ok
+test_null_argument_refuses (test_joint_boundary.JointLaunchContracts.test_null_argument_refuses) ... ok
+test_receipt_collision_refuses (test_joint_boundary.JointLaunchContracts.test_receipt_collision_refuses) ... ok
+test_receipt_outside_grant_refuses (test_joint_boundary.JointLaunchContracts.test_receipt_outside_grant_refuses) ... ok
+test_relative_executable_refuses (test_joint_boundary.JointLaunchContracts.test_relative_executable_refuses) ... ok
+test_target_in_writable_tree_refuses (test_joint_boundary.JointLaunchContracts.test_target_in_writable_tree_refuses) ... ok
+test_too_many_arguments_refuse (test_joint_boundary.JointLaunchContracts.test_too_many_arguments_refuse) ... ok
+test_unknown_policy_field_refuses_without_mock (test_joint_boundary.JointLaunchContracts.test_unknown_policy_field_refuses_without_mock) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.199s
+
+OK

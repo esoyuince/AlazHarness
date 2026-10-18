@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-18T21:53:55.224973+03:00",
+  "records": [
+    {
+      "path": "evidence/d3b-joint-18d3/full-standard.txt",
+      "rawSha256": "f9130aa009c8201298878c46f022b2a403edc213ac26de793f11e9ab43b3f1e9",
+      "indexedSha256": "90b68f1ac5a0c8c52950227173b469a0cd1316a7eeb21fe32ce040089c5af240",
+      "rawBytes": 240715,
+      "indexedBytes": 238770,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-joint-18d3/joint-unit-initial.txt",
+      "rawSha256": "664cf18301eef3bd3e957d43afb631a4f020dfe330c569da3856ac674a4b6635",
+      "indexedSha256": "a560034331b9876408fcdf4942976e618468749b13740e807d0549e0cd1f2264",
+      "rawBytes": 2596,
+      "indexedBytes": 2571,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-joint-18d3/root-static.txt",
+      "rawSha256": "5e9396a82b5849a658d7b0ab13decc4baa04c3407591ea592c68d9846ea70f89",
+      "indexedSha256": "8c41a6846ca584088168fd842cc43584e398da5003415650ea3958e286417cb1",
+      "rawBytes": 399,
+      "indexedBytes": 386,
+      "lineEndingsOnly": true
+    }
+  ],
+  "workingRawLogsRetained": true
+}

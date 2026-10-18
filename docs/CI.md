@@ -282,3 +282,7 @@ ayrı runtime yürütme değildir. evidence/d3b-credential-fix-a613/.
 ## D3B1 scope
 
 17 offline tests added; native network probe (21 checks) and four Gateway experiments are separate. No namespace creation or model call in default unittest discovery. Complete D3B and real model gates remain open. Evidence: evidence/d3b-netns-4e62/.
+
+## D3B-JOINT-18D3 kapsamı
+
+20 yeni çevrimdışı composition/refusal testi; network17 ve credential1903 testleri tek keşifte birleşir. Beklenen benzersiz toplam1940; gerçek full log ve exit sonucu evidence/d3b-joint-18d3/full-standard.json içinde ayrıca ölçülür. Aynı PID üzerinde4 gerçek Gateway deneyi ve15 kernel kontrol türü unittest sayısına eklenmez. Windows path choreography testlerindeki sınırlı mock, gerçek Linux kabulünün yerine geçmez.

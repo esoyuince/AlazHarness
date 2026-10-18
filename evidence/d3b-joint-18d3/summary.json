@@ -1,0 +1,123 @@
+{
+  "id": "D3B-JOINT-18D3",
+  "observedAt": "2026-10-18T21:53:55.224973+03:00",
+  "result": "SCOPED_JOINT_GATEWAY_PASS_GIT_CI_NOT_YET_PUBLISHED",
+  "mergeCommit": "6c679bd3da66ad407f342259a5fdd140062c6853",
+  "branch": "alaz/d3b-joint-18d3",
+  "native": {
+    "observedAt": "2026-10-18T21:49:17.748975+03:00",
+    "result": "PASS",
+    "scenarios": [
+      {
+        "scenario": "normal",
+        "runId": "18d3-normal-v2",
+        "result": "PASS",
+        "requestCount": 4,
+        "responseCount": 4,
+        "publishedArms": [
+          "baseline",
+          "candidate"
+        ],
+        "trialState": "completed",
+        "duplicateRequestStatus": 200,
+        "kernelCheckTypes": 15,
+        "samePid": true,
+        "receiptSha256": "ba0d9229eb796a4678a6c54884981b69cb80a356d34c2c6604883dc66db6c4b8",
+        "cleanExit": true
+      },
+      {
+        "scenario": "budget-limit",
+        "runId": "18d3-budget-final",
+        "result": "PASS",
+        "requestCount": 3,
+        "responseCount": 3,
+        "publishedArms": [
+          "baseline"
+        ],
+        "trialState": "unknown",
+        "duplicateRequestStatus": 202,
+        "kernelCheckTypes": 15,
+        "samePid": true,
+        "receiptSha256": "e8274f8f9d15040eeacdf4a13bff7a6ff6d38c32d391a2f123339b5fdaec1697",
+        "cleanExit": true
+      },
+      {
+        "scenario": "candidate-disconnect",
+        "runId": "18d3-disconnect-final",
+        "result": "PASS",
+        "requestCount": 4,
+        "responseCount": 3,
+        "publishedArms": [
+          "baseline"
+        ],
+        "trialState": "unknown",
+        "duplicateRequestStatus": 202,
+        "kernelCheckTypes": 15,
+        "samePid": true,
+        "receiptSha256": "363dfdfaf718e17bea619dad497b93789de95b4cd5f025a5c2d945caebc540fd",
+        "cleanExit": true
+      },
+      {
+        "scenario": "review-revoked",
+        "runId": "18d3-revoked-final",
+        "result": "PASS",
+        "requestCount": 3,
+        "responseCount": 3,
+        "publishedArms": [],
+        "trialState": "unknown",
+        "duplicateRequestStatus": 409,
+        "kernelCheckTypes": 15,
+        "samePid": true,
+        "receiptSha256": "00e2d4741129c09fed8f314b29fcd60d4c81d0441972db7575fe783b78b08518",
+        "cleanExit": true
+      }
+    ],
+    "sameSourceManifest": true,
+    "snapshotFiles": 183,
+    "distinctKernelCheckTypes": 15,
+    "realModelCalls": 0,
+    "fullD3B": false
+  },
+  "fullStandard": {
+    "observedAt": "2026-10-18T21:52:03.019468+03:00",
+    "result": "PASS",
+    "exitCode": 0,
+    "tests": 1940,
+    "skippedReported": false,
+    "sourceFiles": 278,
+    "sourceDrift": [],
+    "elapsedSeconds": 164.239,
+    "logSha256": "f9130aa009c8201298878c46f022b2a403edc213ac26de793f11e9ab43b3f1e9",
+    "scope": "full offline unittest; native4scenarios and15kernel check types were measured separately, not replayed here"
+  },
+  "rootStatic": {
+    "observedAt": "2026-10-18T21:52:16.875649+03:00",
+    "result": "PASS",
+    "exitCode": 0,
+    "discoveredTests": 1940,
+    "rootFilesChecked": 1394,
+    "sourceGitlinksChecked": 2,
+    "errors": [],
+    "logSha256": "5e9396a82b5849a658d7b0ab13decc4baa04c3407591ea592c68d9846ea70f89",
+    "scope": "tracked root static scan/discovery, no native/model execution"
+  },
+  "uniqueOfflineTests": 1940,
+  "newTests": 20,
+  "importedNetworkTests": 17,
+  "linuxRepeatOfSame20Tests": "PASS",
+  "sourceFiles": 278,
+  "primitiveFilesUnchanged": 4,
+  "samePidBeforeOriginalGateway": true,
+  "upstreamHermesPin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "modelCalls": 0,
+  "paidCalls": 0,
+  "fullD3BAccepted": false,
+  "independentBrokerBudgetAuthority": false,
+  "allUnixSocketAuthorityIsolated": false,
+  "separateHostUid": false,
+  "automaticMemoryOrSkillPromotion": false,
+  "wrongstackProductCodeImported": false,
+  "mainMerged": false,
+  "report": "docs/D3B-JOINT-BOUNDARY.md",
+  "next": "broker-owned independent reservation/grant authority, then scoped UnixIPC/PID/hostUID acceptance; result-aware loop detector remains separate candidate"
+}

@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-10-18T21:50:24.231752+03:00",
+  "ownedProfileCount": 5,
+  "profiles": [
+    {
+      "runId": "18d3-normal-pilot",
+      "profileExists": true,
+      "metadataFiles": [],
+      "activeMemoryFileExists": false,
+      "brokerBootstrapInGatewayDirectory": false
+    },
+    {
+      "runId": "18d3-normal-v2",
+      "profileExists": true,
+      "metadataFiles": [
+        "ready.json",
+        "shutdown.json",
+        "network-boundary.json",
+        "credential-guard.json",
+        "joint-probe.json"
+      ],
+      "activeMemoryFileExists": false,
+      "brokerBootstrapInGatewayDirectory": false
+    },
+    {
+      "runId": "18d3-budget-final",
+      "profileExists": true,
+      "metadataFiles": [
+        "ready.json",
+        "shutdown.json",
+        "network-boundary.json",
+        "credential-guard.json",
+        "joint-probe.json"
+      ],
+      "activeMemoryFileExists": false,
+      "brokerBootstrapInGatewayDirectory": false
+    },
+    {
+      "runId": "18d3-disconnect-final",
+      "profileExists": true,
+      "metadataFiles": [
+        "ready.json",
+        "shutdown.json",
+        "network-boundary.json",
+        "credential-guard.json",
+        "joint-probe.json"
+      ],
+      "activeMemoryFileExists": false,
+      "brokerBootstrapInGatewayDirectory": false
+    },
+    {
+      "runId": "18d3-revoked-final",
+      "profileExists": true,
+      "metadataFiles": [
+        "ready.json",
+        "shutdown.json",
+        "network-boundary.json",
+        "credential-guard.json",
+        "joint-probe.json"
+      ],
+      "activeMemoryFileExists": false,
+      "brokerBootstrapInGatewayDirectory": false
+    }
+  ],
+  "knownTestCredentialCount": 15,
+  "publicFilesScanned": 19,
+  "knownCredentialMatches": [],
+  "ownActiveGatewayPids": [],
+  "privateProfilesRetained": true,
+  "scope": "only newly created task fixtures and known test credentials; not a complete host audit"
+}

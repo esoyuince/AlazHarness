@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T21:30:44.992142+03:00
+Son güncelleme: 2026-10-18T21:53:55.224973+03:00
 
 ## Güncel nokta
 
-D3B-JOINT-18D3 IN PROGRESS: existing network namespace/seccomp and Landlock credential guard in the SAME pinned Hermes Gateway. Branch alaz/d3b-joint-18d3; worktree scratch/worktrees/d3b-joint-18d3; base ab68dac5d9b9803719255810ef73f20ef6dd9e3d. Original worktrees/root mirror/main preserved. WrongStack review/code-parent/network docs CI each SUCCESS observed. No real model, user credentials, scheduler, permission expansion or main merge.
+D3B-JOINT-18D3 SCOPED PASS: aynı PID ağ+Landlock korumalı gerçek Gateway4/4;15 kernel türü her koşuda PASS; full1940/1940 benzersiz skip0,278sha eşit,rootstaticPASS. Dal alaz/d3b-joint-18d3; çalışma scratch/worktrees/d3b-joint-18d3. Yerel kabul tamam; Git push/exact CI ayrı. TamD3B,bağımsız broker bütçe otoritesi,UnixIPC/hostUID ve gerçekmodel OPEN. WrongStack analiz korunuyor; ürün kodu alınmadı. Kök status/diğer dallara yazılmıyor.
 
 
 WRONGSTACK-REVIEW-AAC6 STATIC REVIEW COMPLETE: ffbd572d MIT/workspace1.1.8 incelendi; docs/WRONGSTACK-REVIEW.md seçici uyarlama kararı. Ürün/test/ayar/inference değişikliği yok, upstream çalıştırılmadı. Ortak D3B işi bu araştırma için duraklatılmış; diğer kaynaklar korunuyor. Yayın/CI ayrı, inceleme runtime kabulü değildir.
@@ -771,3 +771,15 @@ Kernel network probe21/21 and real Gateway normal PASS after sendmsg compatibili
 ### 2026-10-18T11:54:39.352557+03:00 — D3B1 publication and bounded handoff
 
 Code 1b8beb5fabfa973d9bef999a466021e8bf9bb355 pushed,266 source blobs exact; local1876/1876 PASS,21 kernel checks and4 native Gateway cases PASS. GitHub alaz/local-ci pending on last query; not inherited from local success. This follow-up touches only docs/status/CI/proof. Next confirm exact code and docs CI, then implement deny-by-default mount/PID/credential and Unix socket visibility. Same host UID/filesystem remains shared; full D3B is NOT ACCEPTED. No model call or automatic memory. Root main unchanged and protected files hash verified.
+
+### 2026-10-18T21:44:47.760688+03:00 — Ortak ağ/dosya koruması normal Gateway PASS
+
+D3B-JOINT-18D3 aynı PID exec zincirinde network namespace/seccomp ve Landlock etkin. 18d3-normal-v2:15/15 canary kontrolü, gerçek Gateway/orijinal broker normal zincir PASS;183 code snapshot hash aynı ve geçici kopya kaldırıldı. İlk pilot yanlış test config alanı base_url nedeniyle FAIL; upstream_base_url eşlemesi düzeltildi, eski kayıt korundu. İki koruma primitive kodu değişmedi. Yeni20 çevrimdışı birim test PASS. Şimdi üç olumsuz Gateway senaryosu ölçülüyor; henüz ortak4/4 veya full regresyon kabulü yok. Kök status/diğer dallara yazılmadı; main ve gerçek model açık değil.
+
+### 2026-10-18T21:49:17.748975+03:00 — Ortak Gateway4/4 PASS; full regresyon başlıyor
+
+Aynı183-kaynak snapshot manifestiyle normal4/4,limit3/3,disconnect4/3,revoked3/3 fiziksel istek/yanıt; her koşuda15 kernel kontrolü PASS ve aynı PID. Revoked denemede yayımlanan kol yok, tekrar409; yeni rezervasyon0. Tüm Gateway/broker kapanışları exit0,soket kaldırıldı,aktif0. 20 yeni unit PASS. Şimdi full1940 beklenen discovery (1903+17network+20new), gerçek sonuç henüz yok. Aktif uzun komut request18d3bc71-0a37-4cd9-aeb5-e978fc7a0018; belirsiz kesintide önce makbuz/log kontrol et. D3B tamamı, bağımsız broker otoritesi/UnixIPC/hostUID ve gerçek model açık.
+
+### 2026-10-18T21:53:55.224973+03:00 — Ortak kapsam kabulü tamam; yayın öncesi byte proof
+
+full1940/1940 benzersiz PASS exit0 skip0,278 kaynak hash değişmedi; rootstatic1394root/2gitlinks/1940discovered PASS. Aynı20 yeni birim testi Linux’ta PASS. Native4/4 ortak Gateway senaryosu,15kernel türü ayrı;183 kaynak snapshot manifesti aynı. İnceleme iptalinde public arms0/replay409. Çalışma ve index278blob eşit; primitive4dosya önceki kabulle aynı. Rapor docs/D3B-JOINT-BOUNDARY.md. Sonraki: broker otoritesini Gateway-writable DB’den bağımsızlaştır; UnixIPC/PID/hostUID tam sınırları açık. Bu teslimde main/kişiselservis/gerçekmodel/hafıza terfisi yok.

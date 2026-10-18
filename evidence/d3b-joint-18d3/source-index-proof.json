@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-18T21:51:45.952319+03:00",
+  "sourceFiles": 278,
+  "workingAndIndexMatch": true,
+  "sourceDrift": [],
+  "existingBoundariesByteIdentical": {
+    "packages/claw-hermes/linux_netns.py": true,
+    "scripts/run_in_network_namespace.py": true,
+    "packages/claw-hermes/credential_guard.py": true,
+    "scripts/run_credential_guard.py": true
+  },
+  "mainCommit": "b8ff44ff105965ba3f6f9fa9559ad96f2c084815",
+  "rootStatusNotWrittenByThisWork": true,
+  "scope": "frozen code/test/config Git-index equality; does not imply full test success before receipt"
+}

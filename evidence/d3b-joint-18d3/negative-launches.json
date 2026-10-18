@@ -1,0 +1,143 @@
+{
+  "observedAt": "2026-10-18T21:46:54.398063+03:00",
+  "records": [
+    {
+      "scenario": "budget-limit",
+      "runId": "18d3-budget-final",
+      "exitCode": 0,
+      "result": "PASS",
+      "seconds": 32.652,
+      "samePid": true,
+      "checks": 15,
+      "trial": {
+        "state": "unknown",
+        "arms": [
+          "baseline"
+        ],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": "token_exposure_limit",
+        "duplicateRequestStatus": 202
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 3,
+        "nativeToolCalls": 0,
+        "egressGrants": 3,
+        "requestViewRows": 3,
+        "originRawByteMatches": 3,
+        "brokerResponsesObserved": 3,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "broker": {
+        "separatePid": true,
+        "exitCode": 0,
+        "socketRemoved": true,
+        "activeRequests": 0,
+        "counters": {
+          "physicalAttempts": 3,
+          "refused": 0,
+          "pings": 9,
+          "responses": 3
+        }
+      },
+      "sourceFiles": 183,
+      "logSha256": "e3391c3071f013064ed65298d9e5020c6ace99e1e499ae74617542915e0026ff"
+    },
+    {
+      "scenario": "candidate-disconnect",
+      "runId": "18d3-disconnect-final",
+      "exitCode": 0,
+      "result": "PASS",
+      "seconds": 32.645,
+      "samePid": true,
+      "checks": 15,
+      "trial": {
+        "state": "unknown",
+        "arms": [
+          "baseline"
+        ],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": "broker_request_refused",
+        "duplicateRequestStatus": 202
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 4,
+        "nativeToolCalls": 0,
+        "egressGrants": 4,
+        "requestViewRows": 4,
+        "originRawByteMatches": 4,
+        "brokerResponsesObserved": 3,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "broker": {
+        "separatePid": true,
+        "exitCode": 0,
+        "socketRemoved": true,
+        "activeRequests": 0,
+        "counters": {
+          "physicalAttempts": 4,
+          "refused": 1,
+          "pings": 9,
+          "responses": 3
+        }
+      },
+      "sourceFiles": 183,
+      "logSha256": "ccd70cbe489914a324a328fd9f6cb04f817d5ec9d4b862493db33b8b4d561137"
+    },
+    {
+      "scenario": "review-revoked",
+      "runId": "18d3-revoked-final",
+      "exitCode": 0,
+      "result": "PASS",
+      "seconds": 30.992,
+      "samePid": true,
+      "checks": 15,
+      "trial": {
+        "state": "unknown",
+        "arms": [],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": "dream_trial_review_unverified",
+        "duplicateRequestStatus": 409
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 3,
+        "nativeToolCalls": 0,
+        "egressGrants": 3,
+        "requestViewRows": 3,
+        "originRawByteMatches": 3,
+        "brokerResponsesObserved": 3,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "broker": {
+        "separatePid": true,
+        "exitCode": 0,
+        "socketRemoved": true,
+        "activeRequests": 0,
+        "counters": {
+          "physicalAttempts": 3,
+          "refused": 0,
+          "pings": 9,
+          "responses": 3
+        }
+      },
+      "sourceFiles": 183,
+      "logSha256": "68b1d752a02926fad6f6272f67f02a5963e0242c6de936eccfcef37cf9e98e0c"
+    }
+  ],
+  "allRequestedCompleted": true,
+  "realModelCalls": 0
+}

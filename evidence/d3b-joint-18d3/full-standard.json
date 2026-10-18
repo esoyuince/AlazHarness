@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-18T21:52:03.019468+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1940,
+  "skippedReported": false,
+  "sourceFiles": 278,
+  "sourceDrift": [],
+  "elapsedSeconds": 164.239,
+  "logSha256": "f9130aa009c8201298878c46f022b2a403edc213ac26de793f11e9ab43b3f1e9",
+  "scope": "full offline unittest; native4scenarios and15kernel check types were measured separately, not replayed here"
+}

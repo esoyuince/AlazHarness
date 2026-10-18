@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-18T21:53:55.224973+03:00",
+  "result": "PASS",
+  "executedCaseLines": 1940,
+  "uniqueIds": 1940,
+  "duplicateIds": [],
+  "scope": "verbose successful full unittest case identities; subtests not multiplied"
+}

@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-18T21:50:25.157546+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 20,
+  "logSha256": "29aff78fdf227b80bab9d04e7fb11d438c0475b1974e733c4dd3d762e21e4421",
+  "scope": "same20new offline tests on Linux, not added again to1940full"
+}
