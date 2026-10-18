@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-18T11:50:35.066981+03:00",
+  "exitCode": 0,
+  "tests": 1876,
+  "expected": 1876,
+  "skipReported": false,
+  "sourceDrift": [],
+  "sourceFiles": 266,
+  "elapsedSeconds": 146.119,
+  "logSha256": "cd4ae37b8461f0e4ae1216e5658a27930f3cf6bcff465bf5b9666587219ac964",
+  "scope": "offline unittest; native Linux kernel and Gateway runs are separate",
+  "result": "PASS"
+}

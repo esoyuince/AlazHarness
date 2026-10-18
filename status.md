@@ -15,6 +15,15 @@ D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full190
 
 D3B-CREDENTIAL-6E42 filesystem component PASS, guarded Gateway integration FAIL; code999ffab pushed and CI SUCCESS. Documentation CI separately; concurrent root mirror left untouched. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
 
+### Imported D3B network snapshot (historical, not current)
+
+Network snapshot update: 2026-10-18T11:54:39.352557+03:00
+
+Network branch snapshot:
+
+D3B-NETNS-4E62: opt-in kernel network launch primitive,21/21 native checks +4/4 Gateway cases +1876/1876 offline tests PASS. Branch alaz/d3b-netns-4e62; worktree scratch/worktrees/d3b-netns-4e62. Code1b8beb5 pushed; code CI PENDING on last query, documentation CI separate. Complete D3B OPEN: host filesystem/UID/path Unix authority shared; no real model.
+
+
 
 DREAM-D2B2-GATEWAY-AF21: actual Hermes Gateway + original aiohttp broker 4/4 native PASS;1859/1859 standard PASS;261 source bytes exact; code35099bd GitHub alaz/local-ci SUCCESS. Documentation CI separately. Real model/learning/D3B/Docker/cross-epoch Dream recovery NOT RUN.
 
@@ -744,3 +753,21 @@ ağ/credential çalışma ağaçları korunur. Rapor ve kanıt yayını ayrı.
 ### 2026-10-18T21:30:44.992142+03:00 — Ortak D3B kabulü başladı
 
 Önce ağ sınırı, ardından dar dosya kuralı, sonra Gateway. Bileşen kodu önce mevcut sürümlerden aynen birleştirilir; yalnız belge çatışmaları kayıtları koruyarak uzlaştırılır. Yeni özel profiller ve yerel programlanmış HTTP yanıtları kullanılır. 4 Gateway senaryosu, birlikte kernel canary kontrolleri, yeni sözleşme testleri ve full regression ölçülmeden kabul yok. Broker bütçe otoritesi, path-based Unix IPC ve ayrı host UID tam D3B için açık kalır. WrongStack anti-loop adayı sonraki küçük davranış dilimi; bu turda üçüncü motor yok.
+
+## Imported network branch history — 7915c77
+
+### 2026-10-18T11:27:54.759462+03:00 — D3B network boundary implementation start
+
+Current Linux supports unprivileged user+network namespaces; prepared source/env retained. Implement fail-closed per-process network confinement, preserving private loopback and explicit Unix broker path. Test direct sockets, alternate processes and namespace reentry. Same host UID/filesystem and Unix-socket authority remain separate risks; do not close all D3B from network-only acceptance. Root dirty files protected; only owned new worktree changes.
+
+### 2026-10-18T11:44:25.303777+03:00 — D3B1 native checkpoint
+
+Kernel network probe21/21 and real Gateway normal PASS after sendmsg compatibility correction; initial fail retained. Gateway new network namespace with zero capabilities, NoNewPrivs1 and Seccomp2; original broker stays host-side. Remaining negative Gateway scenarios request7e5af2d3-c421-4e10-a6b4-d3b200000016; do not replay unknown work. 17 offline tests and full1876 planned, NOT accepted yet. Full D3B remains OPEN (same host UID/filesystem/Unix paths).
+
+### 2026-10-18T11:51:45.714629+03:00 — D3B1 local scoped acceptance
+
+21 kernel checks and4 native Gateway cases PASS; full1876/1876 (17new included) exit0 skip0,266source unchanged; staticPASS separately. Native normal completed4calls; budget-limit unknown3,disconnect unknown4/replies3,review-revoked unknown3 no candidate. New network-only launcher opt-in; no default personal/production activation. Initial sendmsg compatibility failure retained. No owned Gateway/broker active; private test profiles retained and known credential values absent from public evidence. Next exact-source stage/commit/push/CI, then filesystem/PID/credential isolation. Full D3B NOT ACCEPTED.
+
+### 2026-10-18T11:54:39.352557+03:00 — D3B1 publication and bounded handoff
+
+Code 1b8beb5fabfa973d9bef999a466021e8bf9bb355 pushed,266 source blobs exact; local1876/1876 PASS,21 kernel checks and4 native Gateway cases PASS. GitHub alaz/local-ci pending on last query; not inherited from local success. This follow-up touches only docs/status/CI/proof. Next confirm exact code and docs CI, then implement deny-by-default mount/PID/credential and Unix socket visibility. Same host UID/filesystem remains shared; full D3B is NOT ACCEPTED. No model call or automatic memory. Root main unchanged and protected files hash verified.

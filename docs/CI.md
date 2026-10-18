@@ -278,3 +278,7 @@ Full1903/1903 PASS,18 yeni benzersiz test dahil;269 kaynak byte-eşit.
 4 native Gateway senaryosu,metadata13+17 ve eski kernel13+3 kontrolleri
 ayrı çalışmalardır; unittest toplamına eklenmez. Rootstatic1903 discovery
 ayrı runtime yürütme değildir. evidence/d3b-credential-fix-a613/.
+
+## D3B1 scope
+
+17 offline tests added; native network probe (21 checks) and four Gateway experiments are separate. No namespace creation or model call in default unittest discovery. Complete D3B and real model gates remain open. Evidence: evidence/d3b-netns-4e62/.
