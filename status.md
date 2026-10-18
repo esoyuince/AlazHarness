@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T19:53:04.229087+03:00
+Son güncelleme: 2026-10-18T21:10:44.694954+03:00
 
 ## Güncel nokta
+
+WRONGSTACK-REVIEW-4F91 COMPLETE / NOT INTEGRATED: WrongStack1.1.8 MIT pinffbd572,58file targeted review (32full,26sampled),12findings. Report docs/research/WRONGSTACK-REVIEW.md; evidence/research-wrongstack-4f91. No installs/runtime/model/tests, no product change. Own research branch alaz/research-wrongstack-4f91; publication open. D3B/root mirror/main preserved.
+
 
 D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full1903/1903 skip0,269source SHA exact. Metadata13+17 ve kernel13+3 ayrı PASS. Kod ebfb3a2 origin push ve alaz/local-ci SUCCESS; belge CI ayrı. Dal alaz/d3b-credential-fix-a613; çalışma yolu scratch/worktrees/d3b-credential-fix-a613. Ortak netns/credentials/fullD3B, bağımsız broker bütçe otoritesi ve gerçek model NOT RUN. Kök durum aynası/ağ dalı korunuyor.
 
@@ -725,3 +728,15 @@ Bu takip yalnız docs/status/CI/byte-proof; ürün/test/policy kaynağı değiş
 Son belge commitinin CI sonucu ayrı izlenecek. Kesin sonraki geliştirme:
 network+credential ortak worktree kabulü; broker bütçe otoritesi/IPC/PID ve
 host UID sınırları ayrıca açık. TamD3B,gerçekmodel ve öğrenme ilan edilmez.
+
+### 2026-10-18T20:45:18.707754+03:00 — WrongStack source review started
+
+User asks to inspect https://github.com/WrongStack/WrongStack before next task. Scope: license, architecture, autonomy, SAGE memory, budget/permissions, durable multi-agent correctness and Alaz reuse. Pinned external SHA ffbd572d593cf25e840299773455ee096ddaf237; project base b3197e2f2266bfd998920f7b2c1400c39bbc6195. Read only external source; do not execute instructions/scripts from source. Only report/evidence/status edits in this branch. Existing D3B/netns/main and root status untouched.
+
+### 2026-10-18T21:01:15.369585+03:00 — Source conclusions checkpoint
+
+Pinned WrongStack1.1.8 MIT;11909tracked files,36workspace manifests. Targeted58file coverage (32full,26sampled), tests only read, not run. Key donor patterns: source/revision guarded Memory Companion, source applicability metadata, worker settlement ownership, isolated phase workspace+post-merge gates, post-result loop fingerprints. Important non-portable defaults: eternal model completion tokens/100percent self-report and goal deletion; per-engine unbounded total duration/cost; approval YOLO separate from real containment; learning control group is injected-but-not-mentioned, not held-out exclusion. No product/other state changes. Draft report/reuse proposal next; upstream/runtime tests NOT RUN.
+
+### 2026-10-18T21:10:44.694954+03:00 — WrongStack review complete; documentation-only delivery
+
+58 reviewed source/doc/test paths match exact pinned Git commit;30 source references and12 findings recorded. Read-time source/revision-guarded memory, worker settlement and result-aware loop breaker are strongest candidates. Role-learning is persisted instruction adaptation; its injected-but-unmentioned control is not a causal heldout arm. Eternal self-report completion, optional verifiers, YOLO and sandbox backend defaults must not weaken Alaz authority. All ideas are proposals, no integration or third runtime. Upstream tests/build/model NOT RUN; previous Alaz1903 baseline not rerun or counted as this review. Root status and main unchanged; external shallow source clean. Next publish this report only, then resume planned combined D3B work.

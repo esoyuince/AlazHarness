@@ -1,0 +1,1130 @@
+{
+  "sourceCommit": "ffbd572d593cf25e840299773455ee096ddaf237",
+  "files": [
+    {
+      "path": "LICENSE",
+      "reviewDepth": "full_text",
+      "lineCount": 21,
+      "gitBlob": "dbb4c2df1d92eed81571a0aa522442545b50603c",
+      "gitBlobSha256": "e0a23b24778bcf25dd3b7749d6a3aee95cb9666098224703e7070052c13ee753",
+      "workingCopySha256": "e0a23b24778bcf25dd3b7749d6a3aee95cb9666098224703e7070052c13ee753",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/LICENSE"
+    },
+    {
+      "path": "package.json",
+      "reviewDepth": "full_text",
+      "lineCount": 168,
+      "gitBlob": "ae7517c6735e61af7f1cc7f7d14b8fc4c5fb381e",
+      "gitBlobSha256": "4513ba7af9b5f44d53085bfa1c8bd5b5809dc4114fa82b5d3be241a56aa4cb0d",
+      "workingCopySha256": "4513ba7af9b5f44d53085bfa1c8bd5b5809dc4114fa82b5d3be241a56aa4cb0d",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/package.json"
+    },
+    {
+      "path": "docs/slash/goal.md",
+      "reviewDepth": "full_text",
+      "lineCount": 137,
+      "gitBlob": "efacde004b06a973941c641572cff886ed1efb1c",
+      "gitBlobSha256": "d2a7fb6b68a2e15f933ee8b980978906b99dd3325dddc6290ee6b2d9565d1d7d",
+      "workingCopySha256": "d2a7fb6b68a2e15f933ee8b980978906b99dd3325dddc6290ee6b2d9565d1d7d",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/slash/goal.md"
+    },
+    {
+      "path": "docs/slash/autonomy.md",
+      "reviewDepth": "full_text",
+      "lineCount": 109,
+      "gitBlob": "f61ce172108ef13d50a9a46bc85f571d32fc16cc",
+      "gitBlobSha256": "39bc047f96b8475ea62b32d1b6adbb15aea3163e1d02b5936daaf36a73068835",
+      "workingCopySha256": "39bc047f96b8475ea62b32d1b6adbb15aea3163e1d02b5936daaf36a73068835",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/slash/autonomy.md"
+    },
+    {
+      "path": "docs/agent-feedback.md",
+      "reviewDepth": "full_text",
+      "lineCount": 72,
+      "gitBlob": "c4890c325969a36f29b6b1be95bf4d9d775d01de",
+      "gitBlobSha256": "b375d9812edca873496aad3c35b7534b9e69773a5d017830d1d160e4360d4b3c",
+      "workingCopySha256": "b375d9812edca873496aad3c35b7534b9e69773a5d017830d1d160e4360d4b3c",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/agent-feedback.md"
+    },
+    {
+      "path": "docs/architecture/project-goals.md",
+      "reviewDepth": "full_text",
+      "lineCount": 101,
+      "gitBlob": "e053fdffe55ad963d43eb188c5525a8c68b7a7c0",
+      "gitBlobSha256": "f630f594aa85528f561068c445b54f3940a36fa364cda85c83ff563fe6006097",
+      "workingCopySha256": "f630f594aa85528f561068c445b54f3940a36fa364cda85c83ff563fe6006097",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/architecture/project-goals.md"
+    },
+    {
+      "path": "architecture/README.md",
+      "reviewDepth": "full_text",
+      "lineCount": 47,
+      "gitBlob": "6b5617956151043b594ab543eae2be890f809131",
+      "gitBlobSha256": "bdd7391097f06137ba3047196e6f3b3654e2cecdf0f992ff68fe286a117608fa",
+      "workingCopySha256": "bdd7391097f06137ba3047196e6f3b3654e2cecdf0f992ff68fe286a117608fa",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/architecture/README.md"
+    },
+    {
+      "path": "packages/core/src/execution/eternal-completion.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 149,
+      "gitBlob": "d97d67adb11e32286a945a59a15754da1140ea93",
+      "gitBlobSha256": "cdd68d792b4f7ca4ec64b904218c4d2e4a44f6b3089e8fba2ac39526e3adfea0",
+      "workingCopySha256": "cdd68d792b4f7ca4ec64b904218c4d2e4a44f6b3089e8fba2ac39526e3adfea0",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/execution/eternal-completion.ts"
+    },
+    {
+      "path": "packages/core/src/goal/goal-assessor.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 163,
+      "gitBlob": "0db5c27f00132ba86c813731362fb25d5dbca5b2",
+      "gitBlobSha256": "b5cf84f6c4a11cd0de26373f5c9c18fecff7f7b84e55e090a4a00320901e493a",
+      "workingCopySha256": "b5cf84f6c4a11cd0de26373f5c9c18fecff7f7b84e55e090a4a00320901e493a",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/goal-assessor.ts"
+    },
+    {
+      "path": "packages/core/src/goal/goal-run-lifecycle.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 89,
+      "gitBlob": "fb60b12fb64e6a888cb7b55854fdc6371a2cbecf",
+      "gitBlobSha256": "6467f91b8136a371b20d571efa45d3c53d2009a857273480143656bad9c9a581",
+      "workingCopySha256": "6467f91b8136a371b20d571efa45d3c53d2009a857273480143656bad9c9a581",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/goal-run-lifecycle.ts"
+    },
+    {
+      "path": "packages/core/src/goal/goal-workspace.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 22,
+      "gitBlob": "cb7308267cd26a0ec8d1957ac51a0bfc525272e9",
+      "gitBlobSha256": "844df7e4dcd7b2e828b7f5a4d64e6c2bd668281553ae7bb9788bbf6aff5a4d3a",
+      "workingCopySha256": "844df7e4dcd7b2e828b7f5a4d64e6c2bd668281553ae7bb9788bbf6aff5a4d3a",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/goal-workspace.ts"
+    },
+    {
+      "path": "packages/core/src/goal/task-execution-ownership.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 71,
+      "gitBlob": "c613477df3f2a8630b0e17583ce16caece140ef3",
+      "gitBlobSha256": "80f204ea3d0836de784b99a3badb466f40020f3e110b99d06e831aeadecd2555",
+      "workingCopySha256": "80f204ea3d0836de784b99a3badb466f40020f3e110b99d06e831aeadecd2555",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/task-execution-ownership.ts"
+    },
+    {
+      "path": "packages/core/src/goal/phase-orchestrator-gates.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 116,
+      "gitBlob": "708d4a1517d4993350f12f7e62db1df9eba451b1",
+      "gitBlobSha256": "8bf2f299e9e06aaf873fc3c3e2d87a73f317eb1249a47f4fc4f11a87129670e8",
+      "workingCopySha256": "8bf2f299e9e06aaf873fc3c3e2d87a73f317eb1249a47f4fc4f11a87129670e8",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/phase-orchestrator-gates.ts"
+    },
+    {
+      "path": "packages/core/src/goal/phase-orchestrator-runtime.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 33,
+      "gitBlob": "e1adb2aaec282499bbf51ef763769f9903515c83",
+      "gitBlobSha256": "2d3884126d695555d87e87dd1f29317eb6f5e39a3c7c83dd90124946bae763a3",
+      "workingCopySha256": "2d3884126d695555d87e87dd1f29317eb6f5e39a3c7c83dd90124946bae763a3",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/phase-orchestrator-runtime.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-learning-policy.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 113,
+      "gitBlob": "ed1ba7dce8a7f4e80c3e8e066415fcb51acf1e03",
+      "gitBlobSha256": "cc453cc884a4a864aef95e27824c0cbd26f52b13e4b2c10b8c40fc9a6f61fb67",
+      "workingCopySha256": "cc453cc884a4a864aef95e27824c0cbd26f52b13e4b2c10b8c40fc9a6f61fb67",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-learning-policy.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/brain-risk.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 29,
+      "gitBlob": "a6e6ccdc91651562e35341d70237bb16be5c69f8",
+      "gitBlobSha256": "1e867b286c2cced1e38f3f182a997f113f7c3314c206d2dc3d5b2fcb6fdba6da",
+      "workingCopySha256": "1e867b286c2cced1e38f3f182a997f113f7c3314c206d2dc3d5b2fcb6fdba6da",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/brain-risk.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/brain-quick-decision.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 63,
+      "gitBlob": "2ef2d06ba2fabda938a4d5b6ff7761d635722ab2",
+      "gitBlobSha256": "df2354873e53be41991a8e0c3faf7e0469aed3197885d6b914fdabb449fabd60",
+      "workingCopySha256": "df2354873e53be41991a8e0c3faf7e0469aed3197885d6b914fdabb449fabd60",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/brain-quick-decision.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/global-mailbox-completion.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 21,
+      "gitBlob": "55a10dcb1a4502abfb293e521c324263f2689980",
+      "gitBlobSha256": "e0052fa7377c2647a76462ea9bfa593c9dc103a4acb4422c604fe57950d95443",
+      "workingCopySha256": "e0052fa7377c2647a76462ea9bfa593c9dc103a4acb4422c604fe57950d95443",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/global-mailbox-completion.ts"
+    },
+    {
+      "path": "packages/core/src/sandbox/types.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 150,
+      "gitBlob": "b515eae699e5771416e6a2405b4e31d1e6a029e4",
+      "gitBlobSha256": "290a33fc0d205ac8ac1204b0780fa2cc24cf11bfe89262e4a39bab7c6f37f1ea",
+      "workingCopySha256": "290a33fc0d205ac8ac1204b0780fa2cc24cf11bfe89262e4a39bab7c6f37f1ea",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/types.ts"
+    },
+    {
+      "path": "packages/core/src/sandbox/backends/policy-only.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 13,
+      "gitBlob": "650518f757bec8c8e8a632fe0880b2a65b33b6aa",
+      "gitBlobSha256": "c3b0492b1c809b64ee8be46cee10d70697ed3858d27830b388adf242abfd431b",
+      "workingCopySha256": "c3b0492b1c809b64ee8be46cee10d70697ed3858d27830b388adf242abfd431b",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/backends/policy-only.ts"
+    },
+    {
+      "path": "packages/core/src/sandbox/manager.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 32,
+      "gitBlob": "46d19007381ad2ae01681530f7889cd6853673b6",
+      "gitBlobSha256": "e0be851e0f681a2c5d1a50f9e7b8fd3eff48db4fb7f962e2cd382e65d816ee80",
+      "workingCopySha256": "e0be851e0f681a2c5d1a50f9e7b8fd3eff48db4fb7f962e2cd382e65d816ee80",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/manager.ts"
+    },
+    {
+      "path": "packages/core/src/sandbox/backends/container.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 143,
+      "gitBlob": "8aef5081f7a28b53d4bfc58209affce7fe84d9ce",
+      "gitBlobSha256": "c3d354446ec6a1109dc919511885e86c45a34c085a48aa649bedfdd54aceef75",
+      "workingCopySha256": "c3d354446ec6a1109dc919511885e86c45a34c085a48aa649bedfdd54aceef75",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/backends/container.ts"
+    },
+    {
+      "path": "packages/core/src/sandbox/backends/windows-native.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 136,
+      "gitBlob": "e9d32f4bbbb611b6b2d127ca13b3173b6833ea9b",
+      "gitBlobSha256": "e55722d0722275d34412523c1b231c228a697052f5b657d12a0f52d46142c27a",
+      "workingCopySha256": "e55722d0722275d34412523c1b231c228a697052f5b657d12a0f52d46142c27a",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/backends/windows-native.ts"
+    },
+    {
+      "path": "packages/cli/src/fleet/host-budget.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 65,
+      "gitBlob": "9e9c619c44b7ad9ac14a8de3fd4d8bdc7962c17f",
+      "gitBlobSha256": "25a928776ab6527839054cd3556de316e57be8b2606a04dd1ccbd56c00456de4",
+      "workingCopySha256": "25a928776ab6527839054cd3556de316e57be8b2606a04dd1ccbd56c00456de4",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/fleet/host-budget.ts"
+    },
+    {
+      "path": "packages/cli/src/fleet/memory-companion-policy.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 53,
+      "gitBlob": "f44237f8d83790fcdcb2bcb2f9a7a8468367390a",
+      "gitBlobSha256": "fda0d59ecffc047e3eefb9e8a8bbfb82a4549f7d0dd243da68c46fb0152487cd",
+      "workingCopySha256": "fda0d59ecffc047e3eefb9e8a8bbfb82a4549f7d0dd243da68c46fb0152487cd",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/fleet/memory-companion-policy.ts"
+    },
+    {
+      "path": "packages/sage/src/shared/model-feedback.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 60,
+      "gitBlob": "0e8cac021c91494e37a016b032edd6db0598224e",
+      "gitBlobSha256": "ba91e4c8839a1c222a83534ae81e5e6f7589dd95ad73815d948b250ecdd836b8",
+      "workingCopySha256": "ba91e4c8839a1c222a83534ae81e5e6f7589dd95ad73815d948b250ecdd836b8",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/shared/model-feedback.ts"
+    },
+    {
+      "path": "packages/sage/src/shared/candidate-lifecycle.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 177,
+      "gitBlob": "8a3428e3c850f543f9f394728dabc3520afef5f4",
+      "gitBlobSha256": "67db66b96050ebb1696cdb1214083b57b5cd95e5730da92bb873dceb6fe03e40",
+      "workingCopySha256": "67db66b96050ebb1696cdb1214083b57b5cd95e5730da92bb873dceb6fe03e40",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/shared/candidate-lifecycle.ts"
+    },
+    {
+      "path": "packages/sage/src/retrieval/validity-checks.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 60,
+      "gitBlob": "ce7dded35a2b3254ad0ad34d5e475fc5b62d3696",
+      "gitBlobSha256": "84ebef3e04a6d32f41cd97f5c43263567b52a6dc4de406b5155ce8c70fb24c57",
+      "workingCopySha256": "84ebef3e04a6d32f41cd97f5c43263567b52a6dc4de406b5155ce8c70fb24c57",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/retrieval/validity-checks.ts"
+    },
+    {
+      "path": "packages/core/src/utils/tool-result-fingerprint.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 29,
+      "gitBlob": "9e12115a704496dea61f134e01d932e5225edb3e",
+      "gitBlobSha256": "b9f427c6d0381cd07944c7fe1e284accbdab62c526f9b9ac90e7e057b24dcd8e",
+      "workingCopySha256": "b9f427c6d0381cd07944c7fe1e284accbdab62c526f9b9ac90e7e057b24dcd8e",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/utils/tool-result-fingerprint.ts"
+    },
+    {
+      "path": "packages/kanban/src/verification/evidence-validator.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 99,
+      "gitBlob": "56738609ccd6a632f8446845186e0e8202457549",
+      "gitBlobSha256": "fe07d4282681ac55d340c80d4520a0dd0198776167adfd804c97bbf58455a60b",
+      "workingCopySha256": "fe07d4282681ac55d340c80d4520a0dd0198776167adfd804c97bbf58455a60b",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/kanban/src/verification/evidence-validator.ts"
+    },
+    {
+      "path": "packages/cli/tests/fleet/memory-companion-policy.test.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 35,
+      "gitBlob": "cf242749cd04de40f2cc5aaa3219f3735ab37e88",
+      "gitBlobSha256": "d6c6c2b061392e1ca7c17aafd6f1741bbbcba22358d7277c343a60c0ad5e8606",
+      "workingCopySha256": "d6c6c2b061392e1ca7c17aafd6f1741bbbcba22358d7277c343a60c0ad5e8606",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/tests/fleet/memory-companion-policy.test.ts"
+    },
+    {
+      "path": "packages/core/tests/goal/goal-run-lifecycle.test.ts",
+      "reviewDepth": "full_text",
+      "lineCount": 103,
+      "gitBlob": "68fa0a47f9f74aca4a189d6f90ae8ce8fcb554f7",
+      "gitBlobSha256": "7133b705a4b70db27cea3c94d417671bb8fff5e3ef7ec8f79750b4930c07fb5b",
+      "workingCopySha256": "7133b705a4b70db27cea3c94d417671bb8fff5e3ef7ec8f79750b4930c07fb5b",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/tests/goal/goal-run-lifecycle.test.ts"
+    },
+    {
+      "path": "README.md",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 456,
+      "gitBlob": "00f38a189cc527222ce34fa89a776da55ffb1bbf",
+      "gitBlobSha256": "62d6c8e9a8c7dfc4a21e165c95023c9783279205571fe4d81afc277d1fafc2da",
+      "workingCopySha256": "62d6c8e9a8c7dfc4a21e165c95023c9783279205571fe4d81afc277d1fafc2da",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/README.md"
+    },
+    {
+      "path": "SECURITY.md",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 468,
+      "gitBlob": "b56f8f4d620be3f01ce68f397d457f0104c89d1c",
+      "gitBlobSha256": "93ec2875b86ceb8ae36a85cdcb521615e94bca90e9e3b9507fb38f5cb10953c5",
+      "workingCopySha256": "93ec2875b86ceb8ae36a85cdcb521615e94bca90e9e3b9507fb38f5cb10953c5",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/SECURITY.md"
+    },
+    {
+      "path": "docs/autonomous-coordinator.md",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 601,
+      "gitBlob": "4fab23a387cfbb67634115731802dec9ca23b44c",
+      "gitBlobSha256": "c10ac0f6274d66cdbf275815b8fc2134acd67847b290f15ddb52b0ca7efdbba7",
+      "workingCopySha256": "c10ac0f6274d66cdbf275815b8fc2134acd67847b290f15ddb52b0ca7efdbba7",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/autonomous-coordinator.md"
+    },
+    {
+      "path": "docs/sage-feedback-lifecycle.md",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 252,
+      "gitBlob": "f1fb3a840dcad9d504e08ea96d4bfa6b7abe4b16",
+      "gitBlobSha256": "2ac0c45ff6cbcc71e5735e5fdb7a89218c362382c8f68f4d513eb46b34ed160b",
+      "workingCopySha256": "2ac0c45ff6cbcc71e5735e5fdb7a89218c362382c8f68f4d513eb46b34ed160b",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/sage-feedback-lifecycle.md"
+    },
+    {
+      "path": "packages/core/src/execution/eternal-autonomy.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 687,
+      "gitBlob": "505be74cd29a15886f075216fa5465c2a955b07d",
+      "gitBlobSha256": "e01328a09be2652b6be32b2ec06f13aa235b7e82fc2a6168919d9c21b0c81ff0",
+      "workingCopySha256": "e01328a09be2652b6be32b2ec06f13aa235b7e82fc2a6168919d9c21b0c81ff0",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/execution/eternal-autonomy.ts"
+    },
+    {
+      "path": "packages/core/src/core/agent-loop-detector.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 310,
+      "gitBlob": "42e683794df012053a0963275c5824f55e2dde4d",
+      "gitBlobSha256": "87ced2358f5c03934e440c95e3a642265d24177dff64c43a551e76f6136e4f26",
+      "workingCopySha256": "87ced2358f5c03934e440c95e3a642265d24177dff64c43a551e76f6136e4f26",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/core/agent-loop-detector.ts"
+    },
+    {
+      "path": "packages/core/src/goal/phase-orchestrator.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 681,
+      "gitBlob": "6300df8b1c7eedfbd3e569f1dce7ede3f0f0795b",
+      "gitBlobSha256": "5c64384395634503f4025baffb458bf97897e2e763b63df61a6d227f131b21c2",
+      "workingCopySha256": "5c64384395634503f4025baffb458bf97897e2e763b63df61a6d227f131b21c2",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/phase-orchestrator.ts"
+    },
+    {
+      "path": "packages/core/src/goal/goal-runner.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 298,
+      "gitBlob": "92b0ac55b733f6d7f8c01e75e74b2dfbcbc4c463",
+      "gitBlobSha256": "1a1836c2af1bd87be92e5ffe4c9ef515b01ea58a2c15d7a45e17019f9c2090cf",
+      "workingCopySha256": "1a1836c2af1bd87be92e5ffe4c9ef515b01ea58a2c15d7a45e17019f9c2090cf",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/goal-runner.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/brain.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 607,
+      "gitBlob": "d550a247eb6c943c1a31322593d1372a1b0f145d",
+      "gitBlobSha256": "6e77971a61e3f65aad38bf8dbe0734a42abfd6d31a74c9da47b9a9ca5ffb5ad7",
+      "workingCopySha256": "6e77971a61e3f65aad38bf8dbe0734a42abfd6d31a74c9da47b9a9ca5ffb5ad7",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/brain.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/subagent-budget.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 697,
+      "gitBlob": "bf5e35b32cbe7d97cef3aa47a64cc9273f29c3df",
+      "gitBlobSha256": "e05900db9eb22a9243821c370d00075b1ca42c3c994f161c8caa0a363541ed8a",
+      "workingCopySha256": "e05900db9eb22a9243821c370d00075b1ca42c3c994f161c8caa0a363541ed8a",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/subagent-budget.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-capture.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 456,
+      "gitBlob": "4454dc3fa836bbdbedc562e56d01f32881b0f761",
+      "gitBlobSha256": "5981995463876952ec832dc01fef52d3b329f41cec658ed03f59b78f85fb7a13",
+      "workingCopySha256": "5981995463876952ec832dc01fef52d3b329f41cec658ed03f59b78f85fb7a13",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-capture.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-skill-layer.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 653,
+      "gitBlob": "f6e7a3dba5b538b7d3d6df11d53c6fe0f4eacd5c",
+      "gitBlobSha256": "b3d80255104fe40ec5d408974c3b174f9a54259f39464c96ee583c5b4c5e30f1",
+      "workingCopySha256": "b3d80255104fe40ec5d408974c3b174f9a54259f39464c96ee583c5b4c5e30f1",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-skill-layer.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-consolidation.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 352,
+      "gitBlob": "60cc509f5356cdee86366453f20708cce9875213",
+      "gitBlobSha256": "0551eb09baf7e08d08811a6bd14df948f3327d90f5de08ae99c96ba1f77956e7",
+      "workingCopySha256": "0551eb09baf7e08d08811a6bd14df948f3327d90f5de08ae99c96ba1f77956e7",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-consolidation.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-directive-outcome.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 322,
+      "gitBlob": "b278d0c72b8e6353a22351fb91c41fa5abfe0028",
+      "gitBlobSha256": "74782adf8b14e60e75dda3a8a8dc7f83bd8bf3f6aee6e41142a8af2c77edbd80",
+      "workingCopySha256": "74782adf8b14e60e75dda3a8a8dc7f83bd8bf3f6aee6e41142a8af2c77edbd80",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-directive-outcome.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-learning-structured.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 598,
+      "gitBlob": "33f6830ba9e7cd3153ad2438e2085360d827e5cb",
+      "gitBlobSha256": "6ba91d74db9af6a5391d26fd4388bfa3674d4639447872fffadbd7851acfc55d",
+      "workingCopySha256": "6ba91d74db9af6a5391d26fd4388bfa3674d4639447872fffadbd7851acfc55d",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-learning-structured.ts"
+    },
+    {
+      "path": "packages/core/src/coordination/agents/project-agent-auto-optimize.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 334,
+      "gitBlob": "3864f7b1ad9a31f5a9298a3d6f8cca1b0c68fbef",
+      "gitBlobSha256": "17694004926d302a119eb646460c385969cc37d66193337a95a75fecc64f399d",
+      "workingCopySha256": "17694004926d302a119eb646460c385969cc37d66193337a95a75fecc64f399d",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/agents/project-agent-auto-optimize.ts"
+    },
+    {
+      "path": "packages/core/src/sandbox/wrap.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 272,
+      "gitBlob": "9946c995e4f459395f170d4e933e893a648d7d05",
+      "gitBlobSha256": "2d846cca8da1d1581b7695164858b8e21fd3ce8c6c6e8064db82f0dfc46cd33a",
+      "workingCopySha256": "2d846cca8da1d1581b7695164858b8e21fd3ce8c6c6e8064db82f0dfc46cd33a",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/wrap.ts"
+    },
+    {
+      "path": "packages/governance/src/credential-lease-controller.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 395,
+      "gitBlob": "904a11b1f3b083c937381f84e6c9c3dd4bcacc7f",
+      "gitBlobSha256": "8e1177e00238aac7e405020d4e99c8d127195631a9736b043fa7a190879f484d",
+      "workingCopySha256": "8e1177e00238aac7e405020d4e99c8d127195631a9736b043fa7a190879f484d",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/src/credential-lease-controller.ts"
+    },
+    {
+      "path": "packages/kanban/src/verification/completion-gate.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 344,
+      "gitBlob": "0fc36249e204fc0359d924de6f68fe7701831162",
+      "gitBlobSha256": "3433835fc80f2a45bd3a5ebd07ff23290ee046a0257d96cc7314d06981c740c6",
+      "workingCopySha256": "3433835fc80f2a45bd3a5ebd07ff23290ee046a0257d96cc7314d06981c740c6",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/kanban/src/verification/completion-gate.ts"
+    },
+    {
+      "path": "packages/sage/src/service-contract.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 346,
+      "gitBlob": "df2d54f02d12c62af64dff09f6f59539aa313683",
+      "gitBlobSha256": "b6fce488d6eac50740753944789b798a539461bdc64a1c599a3463224bbe5eb8",
+      "workingCopySha256": "b6fce488d6eac50740753944789b798a539461bdc64a1c599a3463224bbe5eb8",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/service-contract.ts"
+    },
+    {
+      "path": "packages/cli/src/fleet/host-memory-companion.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 416,
+      "gitBlob": "fadf4bfbcb1d79e63849819f24a76ae6d452d6bf",
+      "gitBlobSha256": "da36f00e293be99304382f1b2197cb070830ff8726bef97470222c668104ffa9",
+      "workingCopySha256": "da36f00e293be99304382f1b2197cb070830ff8726bef97470222c668104ffa9",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/fleet/host-memory-companion.ts"
+    },
+    {
+      "path": "packages/cli/src/fleet/memory-companion-evidence.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 59,
+      "gitBlob": "4b72f3aae26a14c03d817246117af36f66e524eb",
+      "gitBlobSha256": "f6de04f2902a987347124eaceb37ec4de9967c83ba0e364e49fa23b5a0d0ffe0",
+      "workingCopySha256": "f6de04f2902a987347124eaceb37ec4de9967c83ba0e364e49fa23b5a0d0ffe0",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/fleet/memory-companion-evidence.ts"
+    },
+    {
+      "path": "packages/cli/src/slash-commands/autonomy.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 273,
+      "gitBlob": "6766f4fa511acd0c60d45e7f30284287b7f32774",
+      "gitBlobSha256": "66ef8246037fcb8df0e68333af9bfa98c05fe3bfe361826824a1bf61cb5cb145",
+      "workingCopySha256": "66ef8246037fcb8df0e68333af9bfa98c05fe3bfe361826824a1bf61cb5cb145",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/slash-commands/autonomy.ts"
+    },
+    {
+      "path": "packages/cli/tests/fleet/memory-companion.test.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 382,
+      "gitBlob": "f84f1e3a9c8366c79c15ae1f84964b760d46cff0",
+      "gitBlobSha256": "69fb192a9f48b760463de3ea4a992f305b7473a215a69e35923fc0b99fa73ff5",
+      "workingCopySha256": "69fb192a9f48b760463de3ea4a992f305b7473a215a69e35923fc0b99fa73ff5",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/tests/fleet/memory-companion.test.ts"
+    },
+    {
+      "path": "packages/core/tests/execution/eternal-autonomy-extra.test.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 519,
+      "gitBlob": "10a8bca1c3bb3ea641d2f44f5d8017e8486d93fc",
+      "gitBlobSha256": "426e04789d7c400f11f8cfe9f793df5b308a9bb884f451f1222b511c1a8db758",
+      "workingCopySha256": "426e04789d7c400f11f8cfe9f793df5b308a9bb884f451f1222b511c1a8db758",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/tests/execution/eternal-autonomy-extra.test.ts"
+    },
+    {
+      "path": "packages/core/tests/goal/phase-orchestrator-extra.test.ts",
+      "reviewDepth": "selected_ranges_or_symbol_scan",
+      "lineCount": 658,
+      "gitBlob": "13a487c5da7514cbe2c2a5e76a64db5d7d48247a",
+      "gitBlobSha256": "fe4d49f6290232fb6ad69eee41c060768a6c050578a861dcd280dce5c18c96f0",
+      "workingCopySha256": "fe4d49f6290232fb6ad69eee41c060768a6c050578a861dcd280dce5c18c96f0",
+      "byteExact": true,
+      "lineEndingOnlyDifference": false,
+      "sourceUrl": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/tests/goal/phase-orchestrator-extra.test.ts"
+    }
+  ],
+  "metadataOnlyWorkspaceManifests": {
+    "@wrongstack/acp": {
+      "directory": "acp",
+      "license": "MIT",
+      "dependencies": [
+        "@agentclientprotocol/sdk",
+        "@wrongstack/core",
+        "@wrongstack/primitives"
+      ]
+    },
+    "@wrongstack/bench": {
+      "directory": "bench",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core"
+      ]
+    },
+    "@wrongstack/cli": {
+      "directory": "cli",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/acp",
+        "@wrongstack/bench",
+        "@wrongstack/codebase-index-mcp",
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/kanban-mcp",
+        "@wrongstack/mailbox-mcp",
+        "@wrongstack/mcp",
+        "@wrongstack/persistence",
+        "@wrongstack/plug-lsp",
+        "@wrongstack/plugins",
+        "@wrongstack/primitives",
+        "@wrongstack/providers",
+        "@wrongstack/requirement-intake",
+        "@wrongstack/requirement-intake-mcp",
+        "@wrongstack/runtime",
+        "@wrongstack/sage",
+        "@wrongstack/sage-mcp",
+        "@wrongstack/sdd",
+        "@wrongstack/security-scanner",
+        "@wrongstack/simpleui",
+        "@wrongstack/vibeui",
+        "@wrongstack/techstack",
+        "@wrongstack/telegram",
+        "@wrongstack/tools",
+        "@wrongstack/tui",
+        "@wrongstack/vector-memory",
+        "@wrongstack/webui",
+        "@wrongstack/webui-hq",
+        "@wrongstack/webui-protocol",
+        "@wrongstack/webui-server",
+        "@wrongstack/wrongtrace",
+        "ws"
+      ]
+    },
+    "@wrongstack/client": {
+      "directory": "client",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/webui-protocol"
+      ]
+    },
+    "@wrongstack/codebase-index-mcp": {
+      "directory": "codebase-index-mcp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/mcp",
+        "@wrongstack/tools"
+      ]
+    },
+    "@wrongstack/core": {
+      "directory": "core",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/kanban",
+        "@wrongstack/persistence",
+        "@wrongstack/primitives",
+        "yaml",
+        "zod"
+      ]
+    },
+    "@wrongstack/governance": {
+      "directory": "governance",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/persistence"
+      ]
+    },
+    "@wrongstack/kanban": {
+      "directory": "kanban",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/persistence",
+        "@wrongstack/primitives"
+      ]
+    },
+    "@wrongstack/kanban-mcp": {
+      "directory": "kanban-mcp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/mcp",
+        "@wrongstack/primitives",
+        "@wrongstack/tools"
+      ]
+    },
+    "@wrongstack/mailbox-mcp": {
+      "directory": "mailbox-mcp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/mcp"
+      ]
+    },
+    "@wrongstack/mcp": {
+      "directory": "mcp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "undici"
+      ]
+    },
+    "@wrongstack/persistence": {
+      "directory": "persistence",
+      "license": "MIT",
+      "dependencies": []
+    },
+    "@wrongstack/plug-lsp": {
+      "directory": "plug-lsp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/tools",
+        "vscode-languageserver-protocol"
+      ]
+    },
+    "@wrongstack/plugin-sdk": {
+      "directory": "plugin-sdk",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/tools"
+      ]
+    },
+    "@wrongstack/plugins": {
+      "directory": "plugins",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/plugin-sdk",
+        "@wrongstack/primitives",
+        "@wrongstack/tools",
+        "jsonc-parser",
+        "yaml"
+      ]
+    },
+    "@wrongstack/primitives": {
+      "directory": "primitives",
+      "license": "MIT",
+      "dependencies": []
+    },
+    "@wrongstack/providers": {
+      "directory": "providers",
+      "license": "MIT",
+      "dependencies": [
+        "@ai-sdk/amazon-bedrock",
+        "@ai-sdk/anthropic",
+        "@ai-sdk/azure",
+        "@ai-sdk/cohere",
+        "@ai-sdk/google",
+        "@ai-sdk/google-vertex",
+        "@ai-sdk/openai",
+        "@ai-sdk/openai-compatible",
+        "@ai-sdk/provider",
+        "@wrongstack/core",
+        "ai",
+        "ws",
+        "zod"
+      ]
+    },
+    "@wrongstack/requirement-intake": {
+      "directory": "requirement-intake",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "zod"
+      ]
+    },
+    "@wrongstack/requirement-intake-mcp": {
+      "directory": "requirement-intake-mcp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/mcp",
+        "@wrongstack/requirement-intake"
+      ]
+    },
+    "@wrongstack/runtime": {
+      "directory": "runtime",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/governance",
+        "@wrongstack/kanban",
+        "@wrongstack/primitives",
+        "@wrongstack/sage",
+        "@wrongstack/tools",
+        "@wrongstack/vector-memory",
+        "@wrongstack/webui-protocol",
+        "cron-parser"
+      ]
+    },
+    "@wrongstack/sage": {
+      "directory": "sage",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/persistence",
+        "@wrongstack/primitives"
+      ]
+    },
+    "@wrongstack/sage-mcp": {
+      "directory": "sage-mcp",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/mcp",
+        "@wrongstack/sage"
+      ]
+    },
+    "@wrongstack/sdd": {
+      "directory": "sdd",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/primitives",
+        "@wrongstack/requirement-intake"
+      ]
+    },
+    "@wrongstack/security-scanner": {
+      "directory": "security-scanner",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core"
+      ]
+    },
+    "@wrongstack/simpleui": {
+      "directory": "simpleui",
+      "license": "MIT",
+      "dependencies": [
+        "@fontsource-variable/inter",
+        "@fontsource/ibm-plex-mono",
+        "@wrongstack/kanban",
+        "@wrongstack/tools",
+        "@wrongstack/webui-protocol",
+        "@wrongstack/webui-server",
+        "lucide-react",
+        "react",
+        "react-dom",
+        "react-markdown",
+        "rehype-pretty-code",
+        "remark-gfm",
+        "shiki"
+      ]
+    },
+    "@wrongstack/techstack": {
+      "directory": "techstack",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/persistence",
+        "@wrongstack/tools"
+      ]
+    },
+    "@wrongstack/telegram": {
+      "directory": "telegram",
+      "license": "MIT",
+      "dependencies": []
+    },
+    "@wrongstack/tools": {
+      "directory": "tools",
+      "license": "MIT",
+      "dependencies": [
+        "@jitl/quickjs-singlefile-mjs-release-sync",
+        "@msgpack/msgpack",
+        "@playwright/test",
+        "@typescript/typescript6",
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/persistence",
+        "@wrongstack/primitives",
+        "quickjs-emscripten-core",
+        "tree-sitter-wasm",
+        "turndown",
+        "undici",
+        "unpdf",
+        "web-tree-sitter"
+      ]
+    },
+    "@wrongstack/tui": {
+      "directory": "tui",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/runtime",
+        "@wrongstack/sage",
+        "@wrongstack/sdd",
+        "@wrongstack/tools",
+        "string-width",
+        "wrap-ansi"
+      ]
+    },
+    "@wrongstack/vector-memory": {
+      "directory": "vector-memory",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/persistence",
+        "@wrongstack/sage"
+      ]
+    },
+    "@wrongstack/vibeui": {
+      "directory": "vibeui",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/webui-protocol",
+        "@xyflow/react",
+        "lucide-react",
+        "lowlight",
+        "radix-ui",
+        "react",
+        "react-dom",
+        "react-markdown",
+        "remark-gfm"
+      ]
+    },
+    "@wrongstack/webui": {
+      "directory": "webui",
+      "license": "MIT",
+      "dependencies": [
+        "@fontsource-variable/atkinson-hyperlegible-next",
+        "@fontsource-variable/cascadia-code",
+        "@fontsource-variable/dm-sans",
+        "@fontsource-variable/figtree",
+        "@fontsource-variable/fira-code",
+        "@fontsource-variable/fraunces",
+        "@fontsource-variable/geist",
+        "@fontsource-variable/geist-mono",
+        "@fontsource-variable/ibm-plex-sans",
+        "@fontsource-variable/inter",
+        "@fontsource-variable/jetbrains-mono",
+        "@fontsource-variable/lexend",
+        "@fontsource-variable/literata",
+        "@fontsource-variable/manrope",
+        "@fontsource-variable/martian-mono",
+        "@fontsource-variable/noto-sans-mono",
+        "@fontsource-variable/nunito-sans",
+        "@fontsource-variable/onest",
+        "@fontsource-variable/outfit",
+        "@fontsource-variable/plus-jakarta-sans",
+        "@fontsource-variable/red-hat-mono",
+        "@fontsource-variable/roboto-mono",
+        "@fontsource-variable/source-code-pro",
+        "@fontsource-variable/source-sans-3",
+        "@fontsource-variable/source-serif-4",
+        "@fontsource-variable/space-grotesk",
+        "@fontsource-variable/victor-mono",
+        "@fontsource/commit-mono",
+        "@fontsource/ibm-plex-mono",
+        "@fontsource/ibm-plex-serif",
+        "@fontsource/intel-one-mono",
+        "@fontsource/iosevka",
+        "@fontsource/space-mono",
+        "@fontsource/ubuntu-mono",
+        "@monaco-editor/react",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-scroll-area",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-tabs",
+        "@tanstack/react-virtual",
+        "@uiw/react-textarea-code-editor",
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/plugins",
+        "@wrongstack/providers",
+        "@wrongstack/tools",
+        "@wrongstack/webui-protocol",
+        "@xterm/addon-fit",
+        "@xterm/xterm",
+        "@xyflow/react",
+        "class-variance-authority",
+        "clsx",
+        "i18next",
+        "i18next-resources-to-backend",
+        "lucide-react",
+        "monaco-editor",
+        "qrcode",
+        "react",
+        "react-dom",
+        "react-i18next",
+        "react-markdown",
+        "rehype-highlight",
+        "remark-gfm",
+        "tailwind-merge",
+        "virtua",
+        "zustand"
+      ]
+    },
+    "@wrongstack/webui-hq": {
+      "directory": "webui-hq",
+      "license": "MIT",
+      "dependencies": [
+        "@fontsource-variable/ibm-plex-sans",
+        "@fontsource-variable/manrope",
+        "@fontsource-variable/space-grotesk",
+        "@fontsource/ibm-plex-mono",
+        "@radix-ui/react-alert-dialog",
+        "@radix-ui/react-checkbox",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-label",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-slot",
+        "@radix-ui/react-switch",
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-tooltip",
+        "@types/qrcode",
+        "@wrongstack/core",
+        "@wrongstack/tools",
+        "@wrongstack/webui-protocol",
+        "@wrongstack/webui-server",
+        "@xyflow/react",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "qrcode",
+        "react",
+        "react-dom",
+        "react-markdown",
+        "rehype-highlight",
+        "remark-gfm",
+        "tailwind-merge",
+        "virtua",
+        "zustand"
+      ]
+    },
+    "@wrongstack/webui-protocol": {
+      "directory": "webui-protocol",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core"
+      ]
+    },
+    "@wrongstack/webui-server": {
+      "directory": "webui-server",
+      "license": "MIT",
+      "dependencies": [
+        "@wrongstack/core",
+        "@wrongstack/kanban",
+        "@wrongstack/mcp",
+        "@wrongstack/primitives",
+        "@wrongstack/providers",
+        "@wrongstack/requirement-intake",
+        "@wrongstack/runtime",
+        "@wrongstack/sage",
+        "@wrongstack/sdd",
+        "@wrongstack/techstack",
+        "@wrongstack/tools",
+        "@wrongstack/vector-memory",
+        "@wrongstack/webui-protocol",
+        "@wrongstack/wrongtrace",
+        "ws"
+      ]
+    },
+    "@wrongstack/wrongtrace": {
+      "directory": "wrongtrace",
+      "license": "MIT",
+      "dependencies": [
+        "undici-types"
+      ]
+    }
+  }
+}

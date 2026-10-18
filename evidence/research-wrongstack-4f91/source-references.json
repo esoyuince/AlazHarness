@@ -1,0 +1,155 @@
+{
+  "pin": "ffbd572d593cf25e840299773455ee096ddaf237",
+  "references": {
+    "S01": {
+      "path": "LICENSE",
+      "startLine": 1,
+      "endLine": 21
+    },
+    "S02": {
+      "path": "package.json",
+      "startLine": null,
+      "endLine": null
+    },
+    "S03": {
+      "path": "docs/architecture/project-goals.md",
+      "startLine": null,
+      "endLine": null
+    },
+    "S04": {
+      "path": "packages/core/src/goal/goal-run-lifecycle.ts",
+      "startLine": 1,
+      "endLine": 89
+    },
+    "S05": {
+      "path": "packages/core/src/goal/task-execution-ownership.ts",
+      "startLine": 1,
+      "endLine": 71
+    },
+    "S06": {
+      "path": "packages/core/src/utils/tool-result-fingerprint.ts",
+      "startLine": 1,
+      "endLine": 29
+    },
+    "S07": {
+      "path": "packages/core/src/core/agent-loop-detector.ts",
+      "startLine": 1,
+      "endLine": 170
+    },
+    "S08": {
+      "path": "packages/cli/src/fleet/host-memory-companion.ts",
+      "startLine": 155,
+      "endLine": 345
+    },
+    "S09": {
+      "path": "packages/cli/src/fleet/memory-companion-policy.ts",
+      "startLine": 1,
+      "endLine": 53
+    },
+    "S10": {
+      "path": "packages/sage/src/shared/model-feedback.ts",
+      "startLine": 1,
+      "endLine": 60
+    },
+    "S11": {
+      "path": "packages/sage/src/retrieval/validity-checks.ts",
+      "startLine": 1,
+      "endLine": 60
+    },
+    "S12": {
+      "path": "packages/core/src/coordination/agents/project-agent-directive-outcome.ts",
+      "startLine": 160,
+      "endLine": 245
+    },
+    "S13": {
+      "path": "packages/core/src/coordination/agents/project-agent-learning-structured.ts",
+      "startLine": 90,
+      "endLine": 165
+    },
+    "S14": {
+      "path": "packages/core/src/coordination/agents/project-agent-capture.ts",
+      "startLine": null,
+      "endLine": null
+    },
+    "S15": {
+      "path": "packages/core/src/coordination/agents/project-agent-skill-layer.ts",
+      "startLine": 1,
+      "endLine": 43
+    },
+    "S16": {
+      "path": "packages/core/src/coordination/agents/project-agent-consolidation.ts",
+      "startLine": 153,
+      "endLine": 245
+    },
+    "S17": {
+      "path": "packages/core/src/execution/eternal-autonomy.ts",
+      "startLine": 325,
+      "endLine": 395
+    },
+    "S18": {
+      "path": "packages/core/src/execution/eternal-completion.ts",
+      "startLine": 65,
+      "endLine": 149
+    },
+    "S19": {
+      "path": "packages/core/src/goal/phase-orchestrator-gates.ts",
+      "startLine": 67,
+      "endLine": 115
+    },
+    "S20": {
+      "path": "packages/core/src/goal/phase-orchestrator.ts",
+      "startLine": 185,
+      "endLine": 270
+    },
+    "S21": {
+      "path": "packages/kanban/src/verification/completion-gate.ts",
+      "startLine": null,
+      "endLine": null
+    },
+    "S22": {
+      "path": "packages/core/src/sandbox/types.ts",
+      "startLine": 1,
+      "endLine": 46
+    },
+    "S23": {
+      "path": "packages/core/src/sandbox/backends/policy-only.ts",
+      "startLine": 1,
+      "endLine": 13
+    },
+    "S24": {
+      "path": "packages/core/src/sandbox/backends/container.ts",
+      "startLine": 14,
+      "endLine": 143
+    },
+    "S25": {
+      "path": "packages/core/src/sandbox/backends/windows-native.ts",
+      "startLine": 96,
+      "endLine": 136
+    },
+    "S26": {
+      "path": "packages/cli/src/slash-commands/autonomy.ts",
+      "startLine": 34,
+      "endLine": 59
+    },
+    "S27": {
+      "path": "packages/kanban/src/verification/evidence-validator.ts",
+      "startLine": 54,
+      "endLine": 98
+    },
+    "S28": {
+      "path": "packages/core/src/coordination/brain-quick-decision.ts",
+      "startLine": 1,
+      "endLine": 63
+    },
+    "S29": {
+      "path": "packages/core/src/coordination/agents/project-agent-learning-policy.ts",
+      "startLine": null,
+      "endLine": null
+    },
+    "S30": {
+      "path": "packages/core/src/goal/phase-orchestrator-runtime.ts",
+      "startLine": 1,
+      "endLine": 17
+    }
+  }
+}

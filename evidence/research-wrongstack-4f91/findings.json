@@ -1,0 +1,145 @@
+{
+  "sourceCommit": "ffbd572d593cf25e840299773455ee096ddaf237",
+  "evidenceClass": "STATIC_SOURCE_REVIEW_NOT_RUNTIME_TEST",
+  "findings": [
+    {
+      "id": "WS-01",
+      "class": "REUSE_CANDIDATE",
+      "title": "Source-bound memory validity and read-only companion",
+      "sources": [
+        "S08",
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "alaz": "Dream source revision and applicability plus bounded review task; no extra memory owner or automatic promotion",
+      "priority": "P1/P2"
+    },
+    {
+      "id": "WS-02",
+      "class": "REUSE_CANDIDATE",
+      "title": "Worker settlement ownership and resumable goal workspaces",
+      "sources": [
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "alaz": "Existing authoritative state: goal/run/attempt/workspace and receipt reconciliation; timeout is not settlement",
+      "priority": "P1"
+    },
+    {
+      "id": "WS-03",
+      "class": "REUSE_CANDIDATE",
+      "title": "Result-aware repeat and cycle detection",
+      "sources": [
+        "S06",
+        "S07"
+      ],
+      "alaz": "Canonical tool request plus actual scrubbed output digest, not spool paths or fluent narration",
+      "priority": "P1"
+    },
+    {
+      "id": "WS-04",
+      "class": "COMPATIBILITY_RISK",
+      "title": "Legacy eternal self-reported completion",
+      "sources": [
+        "S17",
+        "S18"
+      ],
+      "alaz": "Do not let model completion marker or100percent progress close a verified mission",
+      "priority": "BLOCK_DIRECT_PORT"
+    },
+    {
+      "id": "WS-05",
+      "class": "COMPATIBILITY_RISK",
+      "title": "Optional phase verifiers and soft/off completion policies",
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ],
+      "alaz": "Missing verification must remain NOT_RUN, not PASS",
+      "priority": "BLOCK_DIRECT_PORT"
+    },
+    {
+      "id": "WS-06",
+      "class": "MEASUREMENT_LIMIT",
+      "title": "Directive control group still received the directive",
+      "sources": [
+        "S12",
+        "S13"
+      ],
+      "alaz": "Observational usefulness/ranking only; keep real without-lesson and with-lesson heldout design",
+      "priority": "P1"
+    },
+    {
+      "id": "WS-07",
+      "class": "REUSE_WITH_ADAPTATION",
+      "title": "Role instruction capture and skill addenda",
+      "sources": [
+        "S14",
+        "S15",
+        "S16",
+        "S29"
+      ],
+      "alaz": "Useful persisted procedural context design; require explicit experiment-gated promotion and immutable evidence",
+      "priority": "P3"
+    },
+    {
+      "id": "WS-08",
+      "class": "SCOPE_LIMIT",
+      "title": "Tool sandbox is opt-in and backend-dependent",
+      "sources": [
+        "S22",
+        "S23",
+        "S24",
+        "S25",
+        "S26"
+      ],
+      "alaz": "Do not replace combined Gateway filesystem/network and broker authority acceptance",
+      "priority": "BLOCK_DIRECT_PORT"
+    },
+    {
+      "id": "WS-09",
+      "class": "SCOPE_LIMIT",
+      "title": "Structural evidence references are not independently executed proof",
+      "sources": [
+        "S27"
+      ],
+      "alaz": "Preserve authenticated run/broker/test receipts beyond ref shape and textual summary validation",
+      "priority": "P1"
+    },
+    {
+      "id": "WS-10",
+      "class": "REUSE_CANDIDATE",
+      "title": "Cheap deterministic decisions before model arbitration",
+      "sources": [
+        "S28"
+      ],
+      "alaz": "Next-action proposals only; risk labels cannot extend limits or permission",
+      "priority": "P2"
+    },
+    {
+      "id": "WS-11",
+      "class": "ADOPTION_COST",
+      "title": "Standalone SAGE has workspace dependencies",
+      "sources": [
+        "S02"
+      ],
+      "evidence": "source-pin.json/packageMetadataDependencyClosure",
+      "alaz": "Selective modules/contracts over wholesale third runtime; compare before any foundation change",
+      "priority": "DESIGN_DECISION"
+    },
+    {
+      "id": "WS-12",
+      "class": "LICENSE_VERIFIED_ROOT_ONLY",
+      "title": "MIT repository and36 MIT workspace package declarations",
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "alaz": "Preserve copyright/license notices when copying substantial code; third-party dependency audit remains open",
+      "priority": "PRECONDITION"
+    }
+  ]
+}
