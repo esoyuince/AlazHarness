@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T22:01:41.616485+03:00
+Son güncelleme: 2026-10-19 (D3B-BUDGET-C84F local acceptance)
 
 ## Güncel nokta
+
+D3B-BUDGET-C84F LOCAL SCOPED PASS (yayin/CI ayri): 4/4 native Hermes Gateway + ayni-PID netns/Landlock + broker-private kalici butce, 188 kaynak SHA sabit; normal4/4, limit3/3, disconnect4 rezervasyon/3 HTTP yaniti, revoke3/3. Windows full1980/1980 exit0 skip5 (Linux-only); Linux broker42/42 exit0 skip0; static1980 PASS. Tarihi D2B2 makbuzu ozgun 35099bd Git commitine sabitlendi, yeni butce makbuzlari guncel kaynak SHA'sina sabitlendi. Dal alaz/d3b-budget-c84f; scratch/worktrees/d3b-budget-c84f; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. IPC-A731 baska dalda; root mirror, main, onceki agaclar degismedi. TamD3B/ayri host UID/gercek model/odenen cagri/otonom hafiza KAPALI. Rapor docs/D3B-BROKER-PRIVATE-BUDGET.md.
+
 
 D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Kod9a87838 origin push PASS; alaz/local-ci SUCCESS. Belge CI ayrı. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
 
@@ -789,3 +792,11 @@ Son takip yalnız belge/status/CI kayıtları; kendi CI sonucu ayrı okunur.
 Sonraki kesin iş: pathname Unix IPC sadece broker uçlarıyla sınırlandırma
 ve Gateway tarafından değiştirilemeyen broker bütçe/tek-kullanımlık izin
 otoritesi. Üretim varsayılanı, tamD3B ve otomatik öğrenme açılmaz.
+
+### 2026-10-19T00:23:42.178391+03:00 — D3B bağımsız bütçe başlangıcı
+
+IPC-A731 başka canlı dalda başladı; çakışan mount/combined_guard değişikliği yapılmadı. Bu dal provider broker private authority: güvenilir bootstrap limitleri, fiziksel HTTP öncesi kalıcı rezervasyon ve restart sonrası replay reddi. Gateway SQLite denetimleri korunacak ama bütçe otoritesi sayılmayacak. Native ve negatif testler tam-commit kabulüne bağlanacak. FullD3B ve ortakIPC birleştirmesi ayrı.
+
+### 2026-10-19 — D3B-BUDGET-C84F yerel kabul
+
+Dort gercek Hermes Gateway/native ext4 senaryosu PASS (normal4/4, butce3/3, disconnect4/3, revoke3/3), 188 kod kaynagi SHA stabil, broker-private rezervasyonlari HTTP oncesi ve yeniden baslatmadan sonra kalici. Ilk uc basarisiz tanilama makbuzu saklandi, basari sayilmiyor. Windows1980 test PASS skip5 platforma ozel; Linux42 hedefli test PASS skip0; root static1980 PASS. Historik D2B2 kabulunun kod referansi sabit onceki Git commitine baglandi, guncel kabulun source SHA'lari yeni testle denetlendi. Linux full gecmis tanilama FAIL (Node26/Node24 ortam uyusmazligi ve o zaman henuz duzeltilmemis tarihi SHA testi); Linux full yeniden PASS iddia edilmiyor. Bir sonraki adim exact code commit/push ve ayri CI; sonra IPC-A731 ile yeni izolasyon worktree birlestirmesi ve native4/4+kernel negatif kabul. Full D3B ve gercek ucretli model NOT ACCEPTED.

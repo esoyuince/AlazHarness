@@ -1,0 +1,49 @@
+test_changed_budget_id_or_route_refused (test_broker_budget.BrokerBudgetTests.test_changed_budget_id_or_route_refused) ... ok
+test_changed_payload_same_ticket_not_new_authority (test_broker_budget.BrokerBudgetTests.test_changed_payload_same_ticket_not_new_authority) ... ok
+test_changed_policy_cannot_reopen_or_raise_limit (test_broker_budget.BrokerBudgetTests.test_changed_policy_cannot_reopen_or_raise_limit) ... ok
+test_commit_ack_lost_retains_reservation (test_broker_budget.BrokerBudgetTests.test_commit_ack_lost_retains_reservation) ... ok
+test_conflicting_observation_refused (test_broker_budget.BrokerBudgetTests.test_conflicting_observation_refused) ... ok
+test_deleted_database_never_recreated (test_broker_budget.BrokerBudgetTests.test_deleted_database_never_recreated) ... ok
+test_deleted_reservation_breaks_private_chain (test_broker_budget.BrokerBudgetTests.test_deleted_reservation_breaks_private_chain) ... ok
+test_duplicate_ticket_refused (test_broker_budget.BrokerBudgetTests.test_duplicate_ticket_refused) ... ok
+test_empty_explicitly_initialized_budget (test_broker_budget.BrokerBudgetTests.test_empty_explicitly_initialized_budget) ... ok
+test_explicit_init_never_reuses_directory (test_broker_budget.BrokerBudgetTests.test_explicit_init_never_reuses_directory) ... ok
+test_fake_private_trigger_or_table_rejected (test_broker_budget.BrokerBudgetTests.test_fake_private_trigger_or_table_rejected) ... ok
+test_full_conservative_reservation_not_measured_invoice (test_broker_budget.BrokerBudgetTests.test_full_conservative_reservation_not_measured_invoice) ... ok
+test_gateway_alternative_token_ceiling_stays_bounded (test_broker_budget.BrokerBudgetTests.test_gateway_alternative_token_ceiling_stays_bounded) ... ok
+test_gateway_database_rewrite_does_not_reset_budget (test_broker_budget.BrokerBudgetTests.test_gateway_database_rewrite_does_not_reset_budget) ... ok
+test_input_bytes_not_four_to_one_token_heuristic (test_broker_budget.BrokerBudgetTests.test_input_bytes_not_four_to_one_token_heuristic) ... ok
+test_new_scope_binding_not_accepted (test_broker_budget.BrokerBudgetTests.test_new_scope_binding_not_accepted) ... ok
+test_no_automatic_refund_on_http_error (test_broker_budget.BrokerBudgetTests.test_no_automatic_refund_on_http_error) ... ok
+test_no_implicit_create_missing_authority (test_broker_budget.BrokerBudgetTests.test_no_implicit_create_missing_authority) ... ok
+test_no_multiple_completions_or_unknown_provider_knobs (test_broker_budget.BrokerBudgetTests.test_no_multiple_completions_or_unknown_provider_knobs) ... ok
+test_observation_is_idempotent_but_not_refund (test_broker_budget.BrokerBudgetTests.test_observation_is_idempotent_but_not_refund) ... ok
+test_omitted_or_excessive_output_ceiling_refused (test_broker_budget.BrokerBudgetTests.test_omitted_or_excessive_output_ceiling_refused) ... ok
+test_oversize_serialized_input_refused (test_broker_budget.BrokerBudgetTests.test_oversize_serialized_input_refused) ... ok
+test_precommit_error_no_reservation (test_broker_budget.BrokerBudgetTests.test_precommit_error_no_reservation) ... ok
+test_replay_survives_new_broker_and_new_object (test_broker_budget.BrokerBudgetTests.test_replay_survives_new_broker_and_new_object) ... ok
+test_three_calls_cap_fourth_refused (test_broker_budget.BrokerBudgetTests.test_three_calls_cap_fourth_refused) ... ok
+test_twelve_parallel_connections_still_three_reservations (test_broker_budget.BrokerBudgetTests.test_twelve_parallel_connections_still_three_reservations) ... ok
+test_unreserved_observation_refused (test_broker_budget.BrokerBudgetTests.test_unreserved_observation_refused) ... ok
+test_wrong_model_or_body_fingerprint_refused (test_broker_budget.BrokerBudgetTests.test_wrong_model_or_body_fingerprint_refused) ... ok
+test_closed_settings_no_implicit_defaults (test_broker_budget.PrivateBudgetConfigTests.test_closed_settings_no_implicit_defaults) ... ok
+test_gateway_policy_and_private_contract_must_match (test_broker_budget.PrivateBudgetConfigTests.test_gateway_policy_and_private_contract_must_match) ... ok
+test_optional_mode_absent_keeps_legacy_explicit (test_broker_budget.PrivateBudgetConfigTests.test_optional_mode_absent_keeps_legacy_explicit) ... ok
+test_private_policy_input_is_copied (test_broker_budget.PrivateBudgetConfigTests.test_private_policy_input_is_copied) ... ok
+test_separate_path_required (test_broker_budget.PrivateBudgetConfigTests.test_separate_path_required) ... ok
+test_token_and_cost_limits_independently_enforced (test_broker_budget.PrivateBudgetConfigTests.test_token_and_cost_limits_independently_enforced) ... ok
+test_failed_receipts_retained_not_passed_off_as_success (test_broker_budget_acceptance.PrivateBudgetNativeEvidence.test_failed_receipts_retained_not_passed_off_as_success) ... ok
+test_four_gateway_scenarios_and_independent_authority (test_broker_budget_acceptance.PrivateBudgetNativeEvidence.test_four_gateway_scenarios_and_independent_authority) ... ok
+test_new_native_receipts_pin_current_code_source (test_broker_budget_acceptance.PrivateBudgetNativeEvidence.test_new_native_receipts_pin_current_code_source) ... ok
+test_http_500_is_observed_without_refund (test_broker_budget_native.NativeBudgetTransport.test_http_500_is_observed_without_refund) ... Executing <Task pending name='Task-5' coro=<ProviderBrokerServer._handle() running at /mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-budget-c84f/packages/claw-hermes/provider_broker.py:248> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done()(), Task.task_wakeup()] created at /home/ender/alaz-harness-d2b2-gateway-af21/tools/python/cpython-3.14.3-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:459> cb=[StreamReaderProtocol.connection_made.<locals>.callback() at /home/ender/alaz-harness-d2b2-gateway-af21/tools/python/cpython-3.14.3-linux-x86_64-gnu/lib/python3.14/asyncio/streams.py:242] created at /home/ender/alaz-harness-d2b2-gateway-af21/tools/python/cpython-3.14.3-linux-x86_64-gnu/lib/python3.14/asyncio/streams.py:255> took 0.384 seconds
+ok
+test_missing_private_authority_never_opens_socket (test_broker_budget_native.NativeBudgetTransport.test_missing_private_authority_never_opens_socket) ... ok
+test_private_cap_survives_broker_restart (test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_broker_restart) ... ok
+test_private_cap_survives_gateway_ledger_reset (test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_gateway_ledger_reset) ... ok
+test_unknown_commit_ack_does_not_send_http (test_broker_budget_native.NativeBudgetTransport.test_unknown_commit_ack_does_not_send_http) ... Executing <Task pending name='Task-64' coro=<NativeBudgetTransport.asyncSetUp() running at /mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-budget-c84f/tests/test_broker_budget_native.py:54> cb=[_run_until_complete_cb() at /home/ender/alaz-harness-d2b2-gateway-af21/tools/python/cpython-3.14.3-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py:181] created at /home/ender/alaz-harness-d2b2-gateway-af21/tools/python/cpython-3.14.3-linux-x86_64-gnu/lib/python3.14/asyncio/runners.py:109> took 0.103 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 6.455s
+
+OK

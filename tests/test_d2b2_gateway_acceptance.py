@@ -5,11 +5,26 @@ These offline tests never start a Gateway, call a model or replay broker traffic
 import hashlib
 import importlib.util
 import json
+from functools import lru_cache
 from pathlib import Path
+import subprocess
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "evidence/d2b2-gateway-af21"
+# This is historical D2B2 acceptance, not an assertion that every future
+# development branch must retain byte-identical current sources. New code has
+# its own source-frozen native acceptance and SHA checks.
+ACCEPTED_CODE_COMMIT = '35099bda644ebe042a4fab40649604fb837bb367'
+
+@lru_cache(maxsize=128)
+def historical_sha256(relative):
+    path=Path(relative)
+    if (path.is_absolute() or '..' in path.parts or not relative.startswith(('packages/','scripts/'))):
+        raise AssertionError('invalid_historical_source_path')
+    raw=subprocess.check_output(['git','show',ACCEPTED_CODE_COMMIT+':'+relative],
+                                cwd=ROOT,stderr=subprocess.DEVNULL)
+    return hashlib.sha256(raw).hexdigest()
 SPEC = importlib.util.spec_from_file_location("gateway_qa_acceptance", ROOT / "scripts/qa/native_d2b2_full_gateway.py")
 qa = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(qa)
@@ -72,7 +87,7 @@ class GatewayAcceptanceTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(raw).hexdigest(), launch["reportSha256"])
                 self.assertEqual(record["codeDrift"], [])
                 for relative, expected in record["programSha256"].items():
-                    self.assertEqual(hashlib.sha256((ROOT/relative).read_bytes()).hexdigest(), expected, relative)
+                    self.assertEqual(historical_sha256(relative), expected, relative)
 
     def test_origin_wire_hash_counts_match_existing_ledger(self):
         for name in qa.SCENARIOS:

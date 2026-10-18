@@ -118,6 +118,7 @@ class BrokerConfig:
     scope: str
     binding: str
     policy_fingerprint: str
+    budget_authority: dict | None = field(default=None,repr=False)
 
     def __post_init__(self):
         route_fingerprint(self.upstream_base_url,self.model)
@@ -127,6 +128,10 @@ class BrokerConfig:
         require(type(token) is str and re.fullmatch(r'[\x21-\x7e]{32,256}',token),'invalid_upstream_credential')
         require(token!=self.signing_key,'separate_upstream_credential_required')
         require(type(self.state_db) is str and Path(self.state_db).is_absolute() and Path(self.state_db).name=='state.db','invalid_broker_database')
+        if self.budget_authority is not None:
+            from broker_budget import validate_settings,binding_for
+            object.__setattr__(self,'budget_authority',validate_settings(self.budget_authority))
+            binding_for(self)
 
     @property
     def route(self):return route_fingerprint(self.upstream_base_url,self.model)

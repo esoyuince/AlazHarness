@@ -1,0 +1,29 @@
+{
+  "result": "FAIL",
+  "scenario": "normal",
+  "localScriptedProviderOnly": true,
+  "actualHermesGatewayWithDualGuard": false,
+  "nativeCombinedResult": "FAIL",
+  "actualBrokerPersistentBudget": true,
+  "privateBudget": {
+    "version": 1,
+    "budgetId": "ce18f26e0b0647cbae68acaeb7f30302",
+    "bindingSha256": "7af2c74fb742d1c1fd435881a50f07f3922e7221ca8a6f3cfa997b5cbe408994",
+    "providerReservations": 0,
+    "reservedTokens": 0,
+    "reservedCostMicrousd": 0,
+    "observedHttpResponses": 0,
+    "noAutomaticRefunds": true,
+    "gatewayDatabaseIsBudgetAuthority": false,
+    "measuredInvoiceVerified": false,
+    "hostFilesystemConfinementVerified": false,
+    "head": "7af2c74fb742d1c1fd435881a50f07f3922e7221ca8a6f3cfa997b5cbe408994"
+  },
+  "expectedPhysicalAttempts": 4,
+  "expectedObservedHttpResponses": 4,
+  "gatewayDatabaseBudgetAuthority": false,
+  "ipcProjectionVerified": false,
+  "separateHostUidVerified": false,
+  "completeD3B": false,
+  "realModelCalls": 0
+}

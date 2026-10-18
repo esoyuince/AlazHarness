@@ -116,7 +116,12 @@ class ProviderBrokerClient:
                     require(type(code) is str and code in {'broker_replay_refused','stale_broker_identity','egress_grant_expired',
                         'stale_egress_owner','unconfirmed_egress_grant','broker_budget_unavailable','broker_claim_unavailable',
                         'broker_sensitive_response','provider_redirect_refused','broker_upstream_error','broker_request_refused',
-                        'broker_lifetime_limit'},'broker_request_refused')
+                        'broker_lifetime_limit','broker_private_budget_replay',
+                        'broker_private_budget_attempt_limit','broker_private_budget_token_limit',
+                        'broker_private_budget_cost_limit','broker_private_budget_storage_unconfirmed',
+                        'broker_private_budget_payload','broker_private_budget_output_limit',
+                        'broker_private_budget_single_completion','broker_private_budget_input_bytes',
+                        'broker_private_budget_scope','broker_private_budget_grant'},'broker_request_refused')
                     raise ExecutionDenied(code)
                 return reply
         except asyncio.CancelledError:raise
@@ -170,12 +175,16 @@ class ProviderBrokerServer:
         self.path=self.directory/'egress.sock';self.verifier=PermitVerifier(config,self.identifier)
         self.server=None;self.tasks=set();self.connections=set();self.started=False;self.socket_identity=None;self.closing=False
         self.counts={'physicalAttempts':0,'refused':0,'pings':0,'responses':0}
+        self.budget=None
 
     async def start(self):
         require(os.name=='posix' and hasattr(socket,'SO_PEERCRED'),'linux_broker_required')
         require(not self.started,'broker_already_started');self.started=True
         require(self.directory.is_absolute() and not self.directory.exists() and len(str(self.path).encode())<=100,'fresh_broker_directory_required')
         require(not any(p.is_symlink() for p in self.directory.parents),'linked_broker_directory')
+        if self.config.budget_authority is not None:
+            from broker_budget import BrokerBudget
+            self.budget=BrokerBudget(self.config)  # Existing private state only, never initialize.
         self.directory.mkdir(mode=0o700)
         # Do not unlink/adopt any existing server. Expose no socket before permissions.
         self.server=await asyncio.start_unix_server(self._handle,path=str(self.path),start_serving=False,backlog=8,limit=65536)
@@ -231,8 +240,15 @@ class ProviderBrokerServer:
                     value=self.verifier.consume(envelope)
                     await asyncio.to_thread(self.verifier.check_authority,value['grant'])
                     self.verifier.check_expiry(value['grant'])
+                    if self.budget is not None:
+                        # Trusted-host limits and persistent tickets, not Gateway-writable DB,
+                        # decide whether another physical provider attempt is permitted.
+                        await asyncio.to_thread(self.budget.reserve,value['grant'],value['payload'])
+                        self.verifier.check_expiry(value['grant'])
                     raw,status,ctype=await self._upstream(value['payload'])
                     self.counts['responses']+=1
+                    if self.budget is not None:
+                        await asyncio.to_thread(self.budget.observe,nonce,raw,status,ctype)
                     reply={'version':1,'brokerId':self.identifier,'nonce':nonce,'ok':True,
                            'status':status,'contentType':ctype,'dataBase64':base64.b64encode(raw).decode('ascii')}
                 await write_frame(writer,signed(reply,self.config.signing_key,'reply'),RESPONSE_LIMIT)
@@ -241,7 +257,13 @@ class ProviderBrokerServer:
             self.counts['refused']+=1
             allowed={'broker_replay_refused','stale_broker_identity','egress_grant_expired','stale_egress_owner',
                      'unconfirmed_egress_grant','broker_budget_unavailable','broker_claim_unavailable',
-                     'broker_sensitive_response','provider_redirect_refused','broker_upstream_error','broker_lifetime_limit'}
+                     'broker_sensitive_response','provider_redirect_refused','broker_upstream_error','broker_lifetime_limit',
+                     'broker_private_budget_replay','broker_private_budget_attempt_limit',
+                     'broker_private_budget_token_limit','broker_private_budget_cost_limit',
+                     'broker_private_budget_storage_unconfirmed',
+                     'broker_private_budget_payload','broker_private_budget_output_limit',
+                     'broker_private_budget_single_completion','broker_private_budget_input_bytes',
+                     'broker_private_budget_scope','broker_private_budget_grant'}
             code=str(exc) if isinstance(exc,ExecutionDenied) and str(exc) in allowed else 'broker_request_refused'
             reply={'version':1,'brokerId':self.identifier,'nonce':nonce if type(nonce) is str and len(nonce)<=32 else '', 'ok':False,'error':code}
             try:
@@ -267,4 +289,5 @@ class ProviderBrokerServer:
             require(self.socket_identity==private_socket(self.path),'broker_cleanup_identity_changed')
             self.path.unlink()
         return {'brokerId':self.identifier,'pid':os.getpid(),'socketRemoved':not self.path.exists(),
-                'activeRequests':len(self.tasks),'counters':dict(self.counts)}
+                'activeRequests':len(self.tasks),'counters':dict(self.counts),
+                **({'privateBudget':self.budget.snapshot()} if self.budget is not None else {})}

@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-19T00:33:59.394391+03:00",
+  "exitCode": 0,
+  "tests": 32,
+  "result": "PASS",
+  "scope": "unit offline private budget tests",
+  "sourceSha256": "9cb5d5bf677421e97e9fbc1cdafe203206bdaf1a2a2f0b31e4a8d8fdeda2d71b",
+  "logSha256": "c24ff8d4d1d518fe52f30b5cba39f27255bb2b4a572b5425703f95309a127703"
+}

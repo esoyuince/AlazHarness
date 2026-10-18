@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "scope": "D3B-BUDGET-C84F",
+  "date": "2026-10-19",
+  "decision": "SCOPED_PASS_LOCAL",
+  "branch": "alaz/d3b-budget-c84f",
+  "nativeGatewayScenarios": [
+    {
+      "scenario": "normal",
+      "runId": "bgta19-normal4",
+      "result": "PASS",
+      "sourceFiles": 188,
+      "sourceManifestSha256": "8d73a3d5fbf4d0f2f4e1fbf97b2530ca9b8fa901a2358eedcab4b849c809049c",
+      "privateReservations": 4,
+      "observedResponses": 4,
+      "realModelCalls": 0
+    },
+    {
+      "scenario": "budget-limit",
+      "runId": "bgta19-limit1",
+      "result": "PASS",
+      "sourceFiles": 188,
+      "sourceManifestSha256": "8d73a3d5fbf4d0f2f4e1fbf97b2530ca9b8fa901a2358eedcab4b849c809049c",
+      "privateReservations": 3,
+      "observedResponses": 3,
+      "realModelCalls": 0
+    },
+    {
+      "scenario": "candidate-disconnect",
+      "runId": "bgta19-disconnect1",
+      "result": "PASS",
+      "sourceFiles": 188,
+      "sourceManifestSha256": "8d73a3d5fbf4d0f2f4e1fbf97b2530ca9b8fa901a2358eedcab4b849c809049c",
+      "privateReservations": 4,
+      "observedResponses": 3,
+      "realModelCalls": 0
+    },
+    {
+      "scenario": "review-revoked",
+      "runId": "bgta19-revoke1",
+      "result": "PASS",
+      "sourceFiles": 188,
+      "sourceManifestSha256": "8d73a3d5fbf4d0f2f4e1fbf97b2530ca9b8fa901a2358eedcab4b849c809049c",
+      "privateReservations": 3,
+      "observedResponses": 3,
+      "realModelCalls": 0
+    }
+  ],
+  "windowsFull": {
+    "file": "full-standard-windows.txt",
+    "sha256": "a526efcce31f2954370b94a31c5f3a8c289c8d1f6c61caa6a44fde8c961b1a76",
+    "runTests": 1980,
+    "lastLine": "OK (skipped=5)"
+  },
+  "linuxBrokerFocused": {
+    "file": "linux-budget-unit-final.txt",
+    "sha256": "c9ba2d8d51039f544cb7599c7f689f08630dff0875d17edea71d10121e39cc8c",
+    "runTests": 42,
+    "lastLine": "OK"
+  },
+  "staticResult": "PASS",
+  "staticDiscoveredTests": 1980,
+  "priorLinuxFullDiagnostic": {
+    "result": "FAIL",
+    "file": "full-standard-linux.txt",
+    "reason": "Node 26 vs Node 24, plus historic D2B2 current-source assertion fixed afterward"
+  },
+  "realPaidProviderCalls": 0,
+  "ipcViewMerged": false,
+  "separateHostUidVerified": false,
+  "completeD3B": false
+}
