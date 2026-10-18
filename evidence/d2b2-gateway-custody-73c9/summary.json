@@ -3,7 +3,7 @@
   "observedAt": "2026-10-18T10:53:46.154147+03:00",
   "branch": "alaz/dream-d2b2-gateway-custody-73c9",
   "baseCommit": "d7f97ffc45d2cbf9907590effec672154ad1518c",
-  "result": "SCOPED_RECOVERED_RECORD_QA_PASS_PUBLICATION_PENDING",
+  "result": "SCOPED_RECOVERED_RECORD_QA_PASS_PUBLISHED",
   "fullTests": 1866,
   "newTestsIncludedOnce": 18,
   "testExitCode": 0,
@@ -20,5 +20,8 @@
   "parallelAF21RunnerIncluded": false,
   "sharedStatusUpdatedAfterSeparation": false,
   "mainMergePerformed": false,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCI": "NOT_REPORTED",
+  "codeCommit": "e564b606e605cfa66dab7fe9d7eba0f0746012a4",
+  "codeCIReceipt": "evidence/d2b2-gateway-custody-73c9/code-ci-observation.json",
+  "publicationObservedAt": "2026-10-18T10:57:32.221713+03:00"
 }

@@ -4,7 +4,7 @@ Son guncelleme: 2026-10-18T10:53:46.154147+03:00
 
 ## Güncel nokta
 
-DREAM-D2B2-GATEWAY-CUSTODY-73C9: recovered native record audit PASS; own full1866/1866 +root static PASS,260source exact. Publication/CI pending. Parallel AF21 development remains separate; no main merge.
+DREAM-D2B2-GATEWAY-CUSTODY-73C9: recovered native record audit PASS; own full1866/1866 +root static PASS,260source exact. Code e564b60 pushed; GitHub CI NOT_REPORTED as last observed. Parallel AF21 development remains separate; no main merge.
 Own branch alaz/dream-d2b2-gateway-custody-73c9; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-gateway-custody-73c9.
 The active AF21 runner is concurrently edited elsewhere; not copied, staged or modified. The shared root status mirror is intentionally not overwritten.
 
@@ -641,3 +641,14 @@ zero skips and260 source hashes stable. Root static PASS (1866 discovered,
 tests, evidence and docs selected; no concurrent AF21 runner or root
 status writes. Git/CI exact SHA to check after publication. No new
 Gateway/provider/model runs and no memory/skill activation.
+
+### 2026-10-18T10:57:32.221713+03:00 -- Published independent recovery QA
+
+Source commit e564b606e605cfa66dab7fe9d7eba0f0746012a4 pushed to
+alaz/dream-d2b2-gateway-custody-73c9; local1866/1866+root static PASS.
+GitHub returned empty statuses: NOT_REPORTED, not a CI success/failure.
+260 source hashes match; no product changes and no new Gateway/provider
+run. Shared AF21 runner was not committed or changed after separation.
+A documentation-only follow-up records this checkpoint; its CI has not
+been observed. Reconcile this QA branch with final AF21 source+evidence
+without overwriting concurrent changes. Shared root status not updated.

@@ -123,3 +123,11 @@ icinde bir kez yer alir. Atlanan test yok,260 kaynak/test/konfigurasyon
 dosyasi once-sonra SHA-256 esit. Statik kontrol PASS, test kesfi ayri.
 Iki mevcut native profil salt-okunur dogrulandi; yeni native/model
 calismasi yapilmadi. Kaynak/CI yayini bu dal icin ayrica kontrol edilir.
+
+## Git yayini - 2026-10-18T10:57:32.221713+03:00
+
+QA kod commit: `e564b606e605cfa66dab7fe9d7eba0f0746012a4`; dal
+`alaz/dream-d2b2-gateway-custody-73c9`; origin push tamamlandi.
+GitHub API son kontrolde bos statuses dondurdu: CI NOT_REPORTED;
+CI basarisi iddia edilmez. Bu son belge guncellemesi urun/test kodunu
+degistirmez. Ortak AF21 dalina veya main dalina merge yapilmadi.
