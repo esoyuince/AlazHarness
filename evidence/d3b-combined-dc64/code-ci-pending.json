@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-10-18T21:59:05.133732+03:00",
+  "codeCommit": "9a87838ebf382fe8b71c299a5867c479383fc5b6",
+  "state": "pending",
+  "context": "alaz/local-ci",
+  "statusId": 56641283586,
+  "githubUpdatedAt": "2026-10-18T18:56:46Z",
+  "source": "GitHub exact commit status API",
+  "remoteTestCount": null
+}

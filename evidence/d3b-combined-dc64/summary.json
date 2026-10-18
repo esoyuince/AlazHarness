@@ -98,7 +98,11 @@
   "wrongStackCodeImported": false,
   "rootStatusReconciled": true,
   "mainMerged": false,
-  "codeCommit": null,
-  "codeCI": "NOT_PUBLISHED",
-  "next": "isolate pathname Unix authority and broker-owned budget/one-time admission; do not enable autonomous paid calls"
+  "codeCommit": "9a87838ebf382fe8b71c299a5867c479383fc5b6",
+  "codeCI": "success",
+  "next": "isolate pathname Unix authority and broker-owned budget/one-time admission; do not enable autonomous paid calls",
+  "committedSourceProof": "evidence/d3b-combined-dc64/committed-source-verified.json",
+  "codeCiReceipt": "evidence/d3b-combined-dc64/code-ci-success.json",
+  "codeCiObservedAt": "2026-10-18T22:01:41.616485+03:00",
+  "documentationCI": "CHECK_AFTER_PUBLICATION"
 }

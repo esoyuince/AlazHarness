@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-18T21:59:05.133732+03:00",
+  "codeCommit": "9a87838ebf382fe8b71c299a5867c479383fc5b6",
+  "exactCommittedSourceFiles": 280,
+  "sourceDrift": [],
+  "sourceFullTestCount": 1938,
+  "nativeGatewayCases": 4,
+  "reportRemoteBlobMatches": true,
+  "fullTestReceiptRemoteBlobMatches": true,
+  "rootStatusMirror": true,
+  "predecessorHistoriesMerged": true,
+  "mainUnchanged": true,
+  "scope": "exact published code source, independent local acceptance and fetched GitHub report/receipt blobs"
+}

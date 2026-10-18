@@ -183,3 +183,13 @@ Gateway/broker0; 12 üretilmiş test kimlik bilgisi için 23 kamuya açık dosya
 eşleşme bulunmadı. Bu genel sır taraması veya tam sandbox sertifikası değildir.
 Kaynak, günlük ve senaryo özetleri `evidence/d3b-combined-dc64/` altında.
 Git commit/push/CI ayrıca doğrulanır. `main`e birleştirme yapılmadı.
+
+### Exact kod yayını ve CI — 2026-10-18T22:01:41.616485+03:00
+
+Kod merge commit: `9a87838ebf382fe8b71c299a5867c479383fc5b6`, origin dalı `alaz/d3b-combined-dc64`.
+GitHub `alaz/local-ci` **SUCCESS**, durum kimliği56641376354,
+2026-10-18T18:59:43Z. API uzak test sayısı bildirmez; yerel1938/1938 ve
+native4/4 bağımsız makbuzlardır. 280 kaynak Git blobu test edilen baytlarla
+eşleşti; GitHub rapor/full-standard blobları da doğrulandı.
+Bu takip yalnız rapor/status/yayın kanıtıdır; kod ve testler değişmedi.
+Son belge commitinin CI durumu ayrı kontrol edilir. Ana dal değişmedi.

@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T21:52:26.506160+03:00
+Son güncelleme: 2026-10-18T22:01:41.616485+03:00
 
 ## Güncel nokta
 
-D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Git/CI OPEN. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
+D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Kod9a87838 origin push PASS; alaz/local-ci SUCCESS. Belge CI ayrı. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
 
 WRONGSTACK-REVIEW-AAC6 STATIC REVIEW COMPLETE: ffbd572d MIT/workspace1.1.8 incelendi; docs/WRONGSTACK-REVIEW.md seçici uyarlama kararı. Ürün/test/ayar/inference değişikliği yok, upstream çalıştırılmadı. Ortak D3B işi bu araştırma için duraklatılmış; diğer kaynaklar korunuyor. Yayın/CI ayrı, inceleme runtime kabulü değildir.
 
@@ -773,3 +773,19 @@ Normal/limit/disconnect/revoked4/4 PASS, aynı184 native kaynak. Kernel24+5 PASS
 ### 2026-10-18T21:52:26.506160+03:00 — Birleşik yerel kabul tamamlandı
 
 Full1938/1938 PASS,exit0,skip0;280 frozen source same. Native4/4 aynı184 snapshot, kernel24+5 ayrı PASS; izin dışındaki SADECE test Unix soketi erişilebilir kaldı. Eski netns/Landlock kaynakları birebir korundu. Root static PASS1938 discovery. summary.json ve docs/D3B-COMBINED.md kapsam/sınırlar/yeniden üretimi içerir. Sıradaki teslim exact source/index/commit/push/CI; main ve önceki ağaçlar değiştirilmez. Ardından IPC allowlist/mount kimliği ve Gateway dışı broker bütçe otoritesi; canlı model ve otomatik hafıza yok.
+
+### 2026-10-18T21:59:05.133732+03:00 — Ortak merge kodu yayımlandı; CI devam ediyor
+
+9a87838ebf382fe8b71c299a5867c479383fc5b6 iki-parent merge commit (ab68dac +7915c77). 280 kaynak Git blobu çalışma/test SHA ile birebir; rapor ve full test makbuzu GitHub blob eşleşmesi doğrulandı. GitHub alaz/local-ci PENDING status56641283586,2026-10-18T18:56:46Z. Kod yerel1938PASS; uzak CI başarı ilan edilmedi. Bu noktadan sonra yalnız belge/status/kanıt takip değişiklikleri. Root mirror aynı, main değişmedi.
+
+### 2026-10-18T22:01:41.616485+03:00 — Ortak kod exact-SHA CI SUCCESS ve kapanış
+
+9a87838ebf382fe8b71c299a5867c479383fc5b6 GitHub alaz/local-ci SUCCESS
+(status56641376354,2026-10-18T18:59:43Z). Full1938/1938 PASS skip0,280
+kaynak Git/test baytları eşit. Native aynı-PID Gateway4/4 ve kernel24+5
+ayrı PASS; ücretli/gerçek model0. Kökte status aynası bu dalı gösterir;
+iki öncülün geçmişi korunur. Main/önceki worktree değişmedi.
+Son takip yalnız belge/status/CI kayıtları; kendi CI sonucu ayrı okunur.
+Sonraki kesin iş: pathname Unix IPC sadece broker uçlarıyla sınırlandırma
+ve Gateway tarafından değiştirilemeyen broker bütçe/tek-kullanımlık izin
+otoritesi. Üretim varsayılanı, tamD3B ve otomatik öğrenme açılmaz.
