@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-10-18T21:13:14.069630+03:00",
+  "researchCommit": "b58414bbbeb211273cf88a872f5e2316ebb29a8a",
+  "branch": "alaz/research-wrongstack-4f91",
+  "publication": "PUSH_CONFIRMED",
+  "CI": {
+    "context": "alaz/local-ci",
+    "state": "pending",
+    "source": "GitHub.get_commit_combined_status",
+    "runtimeAcceptance": false
+  },
+  "upstreamTestRuns": 0,
+  "productCodeModified": false,
+  "mainMerged": false,
+  "rootStatusProtected": true,
+  "scope": "research report only; CI not evidence that upstream harness works"
+}

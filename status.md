@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T21:10:44.694954+03:00
+Son güncelleme: 2026-10-18T21:13:14.069630+03:00
 
 ## Güncel nokta
 
-WRONGSTACK-REVIEW-4F91 COMPLETE / NOT INTEGRATED: WrongStack1.1.8 MIT pinffbd572,58file targeted review (32full,26sampled),12findings. Report docs/research/WRONGSTACK-REVIEW.md; evidence/research-wrongstack-4f91. No installs/runtime/model/tests, no product change. Own research branch alaz/research-wrongstack-4f91; publication open. D3B/root mirror/main preserved.
+WRONGSTACK-REVIEW-4F91 COMPLETE / NOT INTEGRATED: WrongStack1.1.8 MIT pinffbd572,58file targeted review (32full,26sampled),12findings. Report docs/research/WRONGSTACK-REVIEW.md; evidence/research-wrongstack-4f91. No installs/runtime/model/tests, no product change. Own research branch alaz/research-wrongstack-4f91; report commit b58414b pushed, documentation CI pending (not upstream runtime acceptance). D3B/root mirror/main preserved.
 
 
 D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full1903/1903 skip0,269source SHA exact. Metadata13+17 ve kernel13+3 ayrı PASS. Kod ebfb3a2 origin push ve alaz/local-ci SUCCESS; belge CI ayrı. Dal alaz/d3b-credential-fix-a613; çalışma yolu scratch/worktrees/d3b-credential-fix-a613. Ortak netns/credentials/fullD3B, bağımsız broker bütçe otoritesi ve gerçek model NOT RUN. Kök durum aynası/ağ dalı korunuyor.
@@ -740,3 +740,7 @@ Pinned WrongStack1.1.8 MIT;11909tracked files,36workspace manifests. Targeted58f
 ### 2026-10-18T21:10:44.694954+03:00 — WrongStack review complete; documentation-only delivery
 
 58 reviewed source/doc/test paths match exact pinned Git commit;30 source references and12 findings recorded. Read-time source/revision-guarded memory, worker settlement and result-aware loop breaker are strongest candidates. Role-learning is persisted instruction adaptation; its injected-but-unmentioned control is not a causal heldout arm. Eternal self-report completion, optional verifiers, YOLO and sandbox backend defaults must not weaken Alaz authority. All ideas are proposals, no integration or third runtime. Upstream tests/build/model NOT RUN; previous Alaz1903 baseline not rerun or counted as this review. Root status and main unchanged; external shallow source clean. Next publish this report only, then resume planned combined D3B work.
+
+### 2026-10-18T21:13:14.069630+03:00 — WrongStack research publication
+
+Report,58file source coverage and12 findings pushed as b58414bbbeb211273cf88a872f5e2316ebb29a8a. GitHub alaz/local-ci pending on this research commit; no WrongStack tests, models or runtime were started. This follow-up only records publication/status; report and product sources unchanged. Native source retained at scratch/research-sources/wrongstack-ffbd572; Alaz branch clean after delivery. Root status/netns/credential trees and main are unchanged. D3B task deliberately not resumed within the research request.

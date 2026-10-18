@@ -24,6 +24,9 @@
   "reportSha256": "910850fa88e30d784abb1b2322136c68e02b19a99fba45ce881b786b8e0e9f70",
   "implementation": "NOT_STARTED",
   "recommendation": "Select bounded memory review, worker settlement/resume, and output-aware loop detection; do not adopt whole third engine or weaker success gates",
-  "publication": "NOT_YET_PUBLISHED",
-  "next": "Return to planned combined D3B acceptance; implement chosen review-derived contracts only as a separately accepted task"
+  "publication": "PUSH_CONFIRMED",
+  "next": "Return to planned combined D3B acceptance; implement chosen review-derived contracts only as a separately accepted task",
+  "researchCommit": "b58414bbbeb211273cf88a872f5e2316ebb29a8a",
+  "reportCI": "pending",
+  "publicationReceipt": "evidence/research-wrongstack-4f91/publication.json"
 }
