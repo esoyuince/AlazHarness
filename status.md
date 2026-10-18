@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T21:10:19.777054+03:00
+Son güncelleme: 2026-10-18T21:30:44.992142+03:00
 
 ## Güncel nokta
+
+D3B-JOINT-18D3 IN PROGRESS: existing network namespace/seccomp and Landlock credential guard in the SAME pinned Hermes Gateway. Branch alaz/d3b-joint-18d3; worktree scratch/worktrees/d3b-joint-18d3; base ab68dac5d9b9803719255810ef73f20ef6dd9e3d. Original worktrees/root mirror/main preserved. WrongStack review/code-parent/network docs CI each SUCCESS observed. No real model, user credentials, scheduler, permission expansion or main merge.
+
 
 WRONGSTACK-REVIEW-AAC6 STATIC REVIEW COMPLETE: ffbd572d MIT/workspace1.1.8 incelendi; docs/WRONGSTACK-REVIEW.md seçici uyarlama kararı. Ürün/test/ayar/inference değişikliği yok, upstream çalıştırılmadı. Ortak D3B işi bu araştırma için duraklatılmış; diğer kaynaklar korunuyor. Yayın/CI ayrı, inceleme runtime kabulü değildir.
 
@@ -737,3 +740,7 @@ uygulanmış sınırlar ayrıldı; tam yeni motor yerine sınırlı uyarlama ön
 Ürün, runtime, test, model veya izin değişikliği yok. Rapordaki kabul
 testleri öneridir; upstream testleri çalıştırılmadı. Kök status/main ve
 ağ/credential çalışma ağaçları korunur. Rapor ve kanıt yayını ayrı.
+
+### 2026-10-18T21:30:44.992142+03:00 — Ortak D3B kabulü başladı
+
+Önce ağ sınırı, ardından dar dosya kuralı, sonra Gateway. Bileşen kodu önce mevcut sürümlerden aynen birleştirilir; yalnız belge çatışmaları kayıtları koruyarak uzlaştırılır. Yeni özel profiller ve yerel programlanmış HTTP yanıtları kullanılır. 4 Gateway senaryosu, birlikte kernel canary kontrolleri, yeni sözleşme testleri ve full regression ölçülmeden kabul yok. Broker bütçe otoritesi, path-based Unix IPC ve ayrı host UID tam D3B için açık kalır. WrongStack anti-loop adayı sonraki küçük davranış dilimi; bu turda üçüncü motor yok.
