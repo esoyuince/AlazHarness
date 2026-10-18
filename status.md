@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T19:53:04.229087+03:00
+Son güncelleme: 2026-10-18T21:10:19.777054+03:00
 
 ## Güncel nokta
+
+WRONGSTACK-REVIEW-AAC6 STATIC REVIEW COMPLETE: ffbd572d MIT/workspace1.1.8 incelendi; docs/WRONGSTACK-REVIEW.md seçici uyarlama kararı. Ürün/test/ayar/inference değişikliği yok, upstream çalıştırılmadı. Ortak D3B işi bu araştırma için duraklatılmış; diğer kaynaklar korunuyor. Yayın/CI ayrı, inceleme runtime kabulü değildir.
+
 
 D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full1903/1903 skip0,269source SHA exact. Metadata13+17 ve kernel13+3 ayrı PASS. Kod ebfb3a2 origin push ve alaz/local-ci SUCCESS; belge CI ayrı. Dal alaz/d3b-credential-fix-a613; çalışma yolu scratch/worktrees/d3b-credential-fix-a613. Ortak netns/credentials/fullD3B, bağımsız broker bütçe otoritesi ve gerçek model NOT RUN. Kök durum aynası/ağ dalı korunuyor.
 
@@ -725,3 +728,12 @@ Bu takip yalnız docs/status/CI/byte-proof; ürün/test/policy kaynağı değiş
 Son belge commitinin CI sonucu ayrı izlenecek. Kesin sonraki geliştirme:
 network+credential ortak worktree kabulü; broker bütçe otoritesi/IPC/PID ve
 host UID sınırları ayrıca açık. TamD3B,gerçekmodel ve öğrenme ilan edilmez.
+
+### 2026-10-18T21:10:19.777054+03:00 — WrongStack kaynak incelemesi tamamlandı
+
+Sabit pin üzerinde eternal/Goal, anti-loop, SAGE/Companion, governance
+lease ve mailbox sahipliği kaynakları karşılaştırıldı. Varsayılanlar ile
+uygulanmış sınırlar ayrıldı; tam yeni motor yerine sınırlı uyarlama önerildi.
+Ürün, runtime, test, model veya izin değişikliği yok. Rapordaki kabul
+testleri öneridir; upstream testleri çalıştırılmadı. Kök status/main ve
+ağ/credential çalışma ağaçları korunur. Rapor ve kanıt yayını ayrı.

@@ -1,0 +1,307 @@
+{
+  "id": "WRONGSTACK-REVIEW-AAC6",
+  "observedAt": "2026-10-18T21:11:53.798828+03:00",
+  "kind": "STATIC_SOURCE_REVIEW_NOT_RUNTIME_ACCEPTANCE",
+  "upstreamRepository": "WrongStack/WrongStack",
+  "upstreamCommit": "ffbd572d593cf25e840299773455ee096ddaf237",
+  "upstreamVersion": "1.1.8",
+  "license": "MIT",
+  "licenseCopyright": "2026 ECOSTACK TECHNOLOGY OÜ",
+  "trackedFiles": 11909,
+  "packageDirectories": 36,
+  "testFilenames": 4503,
+  "testFilenameScope": "git tracked .test/.spec filenames, not cases or passed tests",
+  "upstreamTestsRun": false,
+  "upstreamBuildRun": false,
+  "upstreamInstallRun": false,
+  "realModelCalls": 0,
+  "forkCreated": false,
+  "sourceUnmodified": true,
+  "alazBase": "b3197e2f2266bfd998920f7b2c1400c39bbc6195",
+  "alazProductFilesChanged": false,
+  "mainMerged": false,
+  "rootStatusUnchanged": true,
+  "reviewFileCount": 44,
+  "sourceFiles": {
+    "LICENSE": {
+      "sha256": "e0a23b24778bcf25dd3b7749d6a3aee95cb9666098224703e7070052c13ee753",
+      "bytes": 1080,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/LICENSE",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "package.json": {
+      "sha256": "4513ba7af9b5f44d53085bfa1c8bd5b5809dc4114fa82b5d3be241a56aa4cb0d",
+      "bytes": 9515,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/package.json",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/architecture.md": {
+      "sha256": "2143f52da7613de6911ea8aeb2adcfaa3a0889de89740bdb7a498b45604bda59",
+      "bytes": 22419,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/architecture.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/autonomous-coordinator.md": {
+      "sha256": "c10ac0f6274d66cdbf275815b8fc2134acd67847b290f15ddb52b0ca7efdbba7",
+      "bytes": 23444,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/autonomous-coordinator.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/slash/autonomy.md": {
+      "sha256": "39bc047f96b8475ea62b32d1b6adbb15aea3163e1d02b5936daaf36a73068835",
+      "bytes": 5822,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/slash/autonomy.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/slash/goal.md": {
+      "sha256": "d2a7fb6b68a2e15f933ee8b980978906b99dd3325dddc6290ee6b2d9565d1d7d",
+      "bytes": 6635,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/slash/goal.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/agent-feedback.md": {
+      "sha256": "b375d9812edca873496aad3c35b7534b9e69773a5d017830d1d160e4360d4b3c",
+      "bytes": 4203,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/agent-feedback.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/sage-feedback-lifecycle.md": {
+      "sha256": "2ac0c45ff6cbcc71e5735e5fdb7a89218c362382c8f68f4d513eb46b34ed160b",
+      "bytes": 14154,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/sage-feedback-lifecycle.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/sage/retrieval.md": {
+      "sha256": "0d5a51e7c36d421b832371a4ed563f651421b0ba530b53d13755838d4f9a17ea",
+      "bytes": 1931,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/sage/retrieval.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/mailbox-architecture.md": {
+      "sha256": "5384a6f8e44ee8c7bdefbcd2e949818fed8fff45fb9374318188053f236d02e0",
+      "bytes": 13116,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/mailbox-architecture.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/slash/sandbox.md": {
+      "sha256": "fe7581229267b43c3cb49f01ea89d2b34ac65ecfee7a290a9b4d4b0697bbedaa",
+      "bytes": 1282,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/slash/sandbox.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/architecture/harness-adoption.md": {
+      "sha256": "d78af036bdf996ac7b8e91f2fe306bc93bd67f7e23d63325769b5e28d0108337",
+      "bytes": 5350,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/architecture/harness-adoption.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "docs/reports/architecture-health-current.md": {
+      "sha256": "edad2ff3f612de62ca10210882d6fe574c9629ea6c6e4b34c4be0db7844d5284",
+      "bytes": 11586,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/docs/reports/architecture-health-current.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/cli/src/slash-commands/autonomy.ts": {
+      "sha256": "66ef8246037fcb8df0e68333af9bfa98c05fe3bfe361826824a1bf61cb5cb145",
+      "bytes": 13223,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/slash-commands/autonomy.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/cli/src/wiring/eternal-command-handlers.ts": {
+      "sha256": "5c8e63e4aaa597807f59968927b9b60c445f19f7a64b0873c0f5bc47c503c2ec",
+      "bytes": 3405,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/wiring/eternal-command-handlers.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/execution/eternal-autonomy.ts": {
+      "sha256": "e01328a09be2652b6be32b2ec06f13aa235b7e82fc2a6168919d9c21b0c81ff0",
+      "bytes": 24895,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/execution/eternal-autonomy.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/execution/eternal-autonomy-types.ts": {
+      "sha256": "5569a7e76e1e9c4d05bbbf2bcc1c325f6faa2c4895c12ad24c3d9b8f6bb3359a",
+      "bytes": 6443,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/execution/eternal-autonomy-types.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/execution/eternal-completion.ts": {
+      "sha256": "cdd68d792b4f7ca4ec64b904218c4d2e4a44f6b3089e8fba2ac39526e3adfea0",
+      "bytes": 5121,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/execution/eternal-completion.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/core/agent-loop-detector.ts": {
+      "sha256": "87ced2358f5c03934e440c95e3a642265d24177dff64c43a551e76f6136e4f26",
+      "bytes": 12936,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/core/agent-loop-detector.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/utils/tool-result-fingerprint.ts": {
+      "sha256": "b9f427c6d0381cd07944c7fe1e284accbdab62c526f9b9ac90e7e057b24dcd8e",
+      "bytes": 1232,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/utils/tool-result-fingerprint.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/goal/phase-orchestrator-gates.ts": {
+      "sha256": "8bf2f299e9e06aaf873fc3c3e2d87a73f317eb1249a47f4fc4f11a87129670e8",
+      "bytes": 4219,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/phase-orchestrator-gates.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/goal/phase-orchestrator-integration.ts": {
+      "sha256": "7923fd30dd1a2fa0917aab02f7f09f819164128b63ccaa6016576c87481741b8",
+      "bytes": 11150,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/phase-orchestrator-integration.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/goal/task-execution-ownership.ts": {
+      "sha256": "80f204ea3d0836de784b99a3badb466f40020f3e110b99d06e831aeadecd2555",
+      "bytes": 2270,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/goal/task-execution-ownership.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/cli/src/fleet/memory-companion-policy.ts": {
+      "sha256": "fda0d59ecffc047e3eefb9e8a8bbfb82a4549f7d0dd243da68c46fb0152487cd",
+      "bytes": 1662,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/fleet/memory-companion-policy.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/cli/src/fleet/memory-companion-evidence.ts": {
+      "sha256": "f6de04f2902a987347124eaceb37ec4de9967c83ba0e364e49fa23b5a0d0ffe0",
+      "bytes": 1692,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/fleet/memory-companion-evidence.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/sage/src/memory-model.ts": {
+      "sha256": "ea6d9fafeb5f54a0eb30e5ceac5294e636a646a4ff693e42fd7cef3f684fa350",
+      "bytes": 9063,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/memory-model.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/sage/src/shared/model-feedback.ts": {
+      "sha256": "ba91e4c8839a1c222a83534ae81e5e6f7589dd95ad73815d948b250ecdd836b8",
+      "bytes": 2121,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/shared/model-feedback.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/sage/src/sqlite-store-update.ts": {
+      "sha256": "196eec18cf6ef72d8a494128555f38b823e6a2a577d59dc79ee7a8d3817ea590",
+      "bytes": 10704,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/src/sqlite-store-update.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/governance/README.md": {
+      "sha256": "327d6861e0f83e681ca873e4d2d24a9577f982d5bea6f9a4fd4b179d810fd986",
+      "bytes": 14328,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/README.md",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/governance/src/autonomy-envelope.ts": {
+      "sha256": "8f574c455166a1f1f386d0a9e32be423707d0e490581fbae6f588602b529b44d",
+      "bytes": 3407,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/src/autonomy-envelope.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/governance/src/task-contract.ts": {
+      "sha256": "8fdbd56c69df08448a75150ead1247aababa33aefcb72490f0e125d7b2b665d5",
+      "bytes": 12612,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/src/task-contract.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/governance/src/verification-tool-gateway.ts": {
+      "sha256": "cd75ada7d9ab10677e65dca9bb5b86d3c304b80be138822cb4dbaf72962fe3ee",
+      "bytes": 8288,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/src/verification-tool-gateway.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/governance/src/verification-execution-lease.ts": {
+      "sha256": "78ca11f7d3bcee3e1d6e9723d5ffa7f67d1e2e769ccb976c5ab333a82e492d9d",
+      "bytes": 4493,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/src/verification-execution-lease.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/runtime/src/governance-bootstrap.ts": {
+      "sha256": "be1931071f832ac5d26c8a71667d920fefdfc69b2d0e0bac7158f2afa8788d07",
+      "bytes": 16622,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/runtime/src/governance-bootstrap.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/cli/src/cli-main-helpers.ts": {
+      "sha256": "5912bb5e85fb620657285a0e4ad098a2315535729405a80cc9896ff76b6dd7ff",
+      "bytes": 9162,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/cli/src/cli-main-helpers.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/coordination/mailbox-project-server.ts": {
+      "sha256": "d5e4113801d9465fb87a8178a761447590e0cc5e716f0c13726f15fc98cd1c02",
+      "bytes": 24117,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/mailbox-project-server.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/coordination/subagent-budget-limits.ts": {
+      "sha256": "0404d06a373cfa73570362a54bc4a879b71fc5e410e71164259f79398bd5273e",
+      "bytes": 3502,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/coordination/subagent-budget-limits.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/sandbox/backends/policy-only.ts": {
+      "sha256": "c3b0492b1c809b64ee8be46cee10d70697ed3858d27830b388adf242abfd431b",
+      "bytes": 392,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/backends/policy-only.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/core/src/sandbox/wrap.ts": {
+      "sha256": "2d846cca8da1d1581b7695164858b8e21fd3ce8c6c6e8064db82f0dfc46cd33a",
+      "bytes": 11696,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/core/src/sandbox/wrap.ts",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/governance/package.json": {
+      "sha256": "44a79b10de06246b50fbe602ff9a848f2e0958178465d61e9fd9647f52e50191",
+      "bytes": 1307,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/governance/package.json",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/sage/package.json": {
+      "sha256": "bfe3e5d42e3ce83a586b64bd9266b3f012471c1da6f0691411cee1b18d753e24",
+      "bytes": 1565,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/sage/package.json",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/mailbox-mcp/package.json": {
+      "sha256": "3e6b4012a802a1b83243e8da8f609807b6e78156eb4c87837f3bb088a16cea1e",
+      "bytes": 1572,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/mailbox-mcp/package.json",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/primitives/package.json": {
+      "sha256": "fcf6c9d7cc2615640b9285938211bb6b28d24b4dcf835fec5954330001d0cfdf",
+      "bytes": 1161,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/primitives/package.json",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    },
+    "packages/persistence/package.json": {
+      "sha256": "8e92a304753172781c0c5067e2f255e5ae78ab5e72b608c7c9c1581a354945ff",
+      "bytes": 1272,
+      "url": "https://github.com/WrongStack/WrongStack/blob/ffbd572d593cf25e840299773455ee096ddaf237/packages/persistence/package.json",
+      "inspection": "selected_text_or_callsite; full-file hash is custody only, not claim every line audited"
+    }
+  },
+  "recommendation": "selective adaptation, not third full harness engine",
+  "priorityCandidates": [
+    "result-aware repetition detector",
+    "TaskContract and verifier lease",
+    "mission/phase/settlement ownership",
+    "SAGE validity and advisory feedback",
+    "durable mailbox receipts when multi-agent is needed"
+  ],
+  "doNotPortBlindly": [
+    "automatic YOLO on autonomy mode",
+    "GOAL_COMPLETE shortcut as success proof",
+    "default-off governance as if universally enforced",
+    "policy-only backend as OS isolation"
+  ],
+  "report": "docs/WRONGSTACK-REVIEW.md",
+  "reportSha256": "e3956a4a21e23db4a50a674f4749cd83fe32a9f12c389c4266c000bbebfc0de0"
+}

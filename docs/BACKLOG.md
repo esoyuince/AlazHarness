@@ -243,3 +243,11 @@ kopyasından çalıştırma, isteğe bağlı dar self metadata, özel XDG socket
 dizini ve salt-okunur MIME tablosu; önceki FAIL kanıtları korunur.
 Sonraki: network+filesystem ortak entegrasyon ve broker-ledger otoritesi.
 Tam D3B/gerçek model/öğrenme NOT ACCEPTED. docs/D3B-CREDENTIAL-STARTUP.md.
+
+## WRONGSTACK-REVIEW-AAC6 — seçici uyarlama önerileri (18 Ekim 2026)
+
+Rapor docs/WRONGSTACK-REVIEW.md; upstream ffbd572d,MIT,workspace1.1.8.
+Runtime/test/model çalıştırılmadı; üçüncü temel motor eklenmedi. Anti-loop,
+mission/plan/settlement ownership, koşullu SAGE geri bildirimi ve verifier
+lease aday. Otomatik YOLO yetki artışı, doğrulamasız hedef kapanışı ve
+policy-only sandbox Alaz'a taşınmaz. Ortak D3B önceliği korunur.
