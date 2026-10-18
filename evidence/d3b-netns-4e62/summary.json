@@ -1,7 +1,7 @@
 {
   "id": "D3B-NETNS-4E62",
   "observedAt": "2026-10-18T11:51:45.714629+03:00",
-  "result": "SCOPED_D3B1_LOCAL_PASS_GIT_CI_PENDING",
+  "result": "SCOPED_D3B1_PUBLISHED_CODE_CI_PENDING",
   "base": "2bffac9aaf482363d335bdbd3c76cc687be83533",
   "branch": "alaz/d3b-netns-4e62",
   "productAdded": [
@@ -60,6 +60,8 @@
   "learningVerified": false,
   "mainMerged": false,
   "next": "deny-by-default filesystem/PID/credential isolation and qualified broker peer contract; do not infer full D3B from network-only qualification",
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCommit": "1b8beb5fabfa973d9bef999a466021e8bf9bb355",
+  "codeCI": "pending",
+  "codeCIReceipt": "evidence/d3b-netns-4e62/code-ci-observed.json",
+  "documentationCI": "CHECK_SEPARATELY_AFTER_PUBLICATION"
 }

@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T11:51:45.714629+03:00
+Son güncelleme: 2026-10-18T11:54:39.352557+03:00
 
 ## Güncel nokta
 
-D3B-NETNS-4E62: opt-in kernel network launch primitive,21/21 native checks +4/4 Gateway cases +1876/1876 offline tests PASS. Branch alaz/d3b-netns-4e62; worktree scratch/worktrees/d3b-netns-4e62. Git/CI pending. Complete D3B OPEN: host filesystem/UID/path Unix authority shared; no real model.
+D3B-NETNS-4E62: opt-in kernel network launch primitive,21/21 native checks +4/4 Gateway cases +1876/1876 offline tests PASS. Branch alaz/d3b-netns-4e62; worktree scratch/worktrees/d3b-netns-4e62. Code1b8beb5 pushed; code CI PENDING on last query, documentation CI separate. Complete D3B OPEN: host filesystem/UID/path Unix authority shared; no real model.
 
 
 DREAM-D2B2-GATEWAY-AF21: actual Hermes Gateway + original aiohttp broker 4/4 native PASS;1859/1859 standard PASS;261 source bytes exact; code35099bd GitHub alaz/local-ci SUCCESS. Documentation CI separately. Real model/learning/D3B/Docker/cross-epoch Dream recovery NOT RUN.
@@ -661,3 +661,7 @@ Kernel network probe21/21 and real Gateway normal PASS after sendmsg compatibili
 ### 2026-10-18T11:51:45.714629+03:00 — D3B1 local scoped acceptance
 
 21 kernel checks and4 native Gateway cases PASS; full1876/1876 (17new included) exit0 skip0,266source unchanged; staticPASS separately. Native normal completed4calls; budget-limit unknown3,disconnect unknown4/replies3,review-revoked unknown3 no candidate. New network-only launcher opt-in; no default personal/production activation. Initial sendmsg compatibility failure retained. No owned Gateway/broker active; private test profiles retained and known credential values absent from public evidence. Next exact-source stage/commit/push/CI, then filesystem/PID/credential isolation. Full D3B NOT ACCEPTED.
+
+### 2026-10-18T11:54:39.352557+03:00 — D3B1 publication and bounded handoff
+
+Code 1b8beb5fabfa973d9bef999a466021e8bf9bb355 pushed,266 source blobs exact; local1876/1876 PASS,21 kernel checks and4 native Gateway cases PASS. GitHub alaz/local-ci pending on last query; not inherited from local success. This follow-up touches only docs/status/CI/proof. Next confirm exact code and docs CI, then implement deny-by-default mount/PID/credential and Unix socket visibility. Same host UID/filesystem remains shared; full D3B is NOT ACCEPTED. No model call or automatic memory. Root main unchanged and protected files hash verified.

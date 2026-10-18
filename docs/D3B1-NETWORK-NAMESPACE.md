@@ -126,3 +126,14 @@ Gateway/broker bulunmadı. 25 oluşturulmuş test kimlik bilgisiyle yapılan
 kontrolde 27 taranmış kamuya açık dosyada eşleşme yoktu. Özel teşhis
 profilleri tutulmaktadır. Bu kontrol genel sır veya tam OS izolasyon
 sertifikası değildir. Kod yayını ve CI ayrı takip edilir.
+
+## Git teslimi — 2026-10-18T11:54:39.352557+03:00
+
+Ürün kodu, testler ve kanıtlar `1b8beb5fabfa973d9bef999a466021e8bf9bb355` commit’iyle
+`alaz/d3b-netns-4e62` dalına gönderildi. Yayımlanan 266 kaynak dosyası
+test edilen sürümle aynı. Son GitHub sorgusunda `alaz/local-ci` PENDING
+idi; bu durum PASS sayılmıyor. Tam 1.876 yerel test, 21 native kontrol ve
+dört Gateway koşusu bağımsız yerel kabul kanıtlarıdır.
+
+Bu teslim kaydını içeren yalnız-belge commit’inin CI’si de ayrıca
+doğrulanmalıdır. `main` ve korunmuş kök değişiklikleri aynı kaldı.
