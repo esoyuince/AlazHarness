@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T10:39:01.878770+03:00",
+  "exitCode": 0,
+  "sourceSha256": "f40d41fe5d99b892530c3f83df52aaa2b7ee75823f130f92a030500b2d7b1804",
+  "scenario": "normal",
+  "report": "normal-final.json",
+  "reportExists": true,
+  "logSha256": "5bb98941fac1e0736a75345746ceccceee1a9977d9ed18a982e54fcb6f789270",
+  "result": "PASS",
+  "reportSha256": "8ab9cf41a42ef9dec93ee06bef613523c4201fc756ace6a2156f7a6e3402151c"
+}

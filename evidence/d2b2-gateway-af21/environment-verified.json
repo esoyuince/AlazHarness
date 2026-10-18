@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-18T10:39:58.854624+03:00",
+  "sourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "verifiedPinnedSourceFileSha256": {
+    "LICENSE": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+    "README.md": "c8c3009b1cf6e8d6e48e96a9b4c549d9ab0c86fdaffd91b19f3e9d9b37d93d9d",
+    "pyproject.toml": "ff41b097147124ff2eb51a437d5f44eddea35104900c1c79c7edfb8b7352d901",
+    "uv.lock": "16300cf807347b7fcfa3c19963f5fe950913fdb3e41e3c649ea724bc7dc997da"
+  },
+  "dependencyBuild": {
+    "exit_code": 0,
+    "elapsed_seconds": 33.54,
+    "builder": "pm.build_environment",
+    "frozen": true,
+    "extras": [
+      "sms"
+    ],
+    "scope": "dependency preparation only; not native-agent acceptance"
+  },
+  "runtimePython": "3.14.3",
+  "dependencyVersions": {
+    "aiohttp": "3.14.3",
+    "openai": "2.24.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.13.4",
+    "psutil": "7.2.2"
+  },
+  "nodeVersion": "v26.7.0",
+  "assetSha256": {
+    "bootstrapUvArchive": "745765a3b6e360ad76743599ae5c42e9278c7edf8bbff9fc76d05bf2623a04dd",
+    "nodeArchive": "982aa24dd8be4c889c6a8ab337ddff3b0896645b20f4239356e80552c16277ee",
+    "privateLibatomicDeb": "fe49cbbc7be753528380c724a8eef5f1e31dffa9221f692c5069048d81c7449d",
+    "nodeWrapper": "17712073269f01e91b53ef292fbba1487f2e3073c90bdcd59fee8f7cfa51e268",
+    "runtimeInterpreterCopy": "3c5fd2caadada58c68c7ad95ca9003b32602aa81e5ea606caeb3e5da55bf7169"
+  },
+  "systemWideInstallPerformed": false,
+  "dockerInstalledForThisWork": false,
+  "toolchainLocation": "dedicated /home/ender/alaz-harness-d2b2-gateway-af21 directory, not personal Hermes profile",
+  "earlierNativeHostGateSmoke": {
+    "result": "PASS",
+    "sourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "firstEpoch": 1,
+    "secondEpoch": 2,
+    "firstExit": 0,
+    "secondExit": 0,
+    "paidCalls": 0,
+    "modelInferenceCalls": 0,
+    "scope": "earlier basic HostGate read_file+restart smoke; NOT a D2B2 cross-epoch recovery claim"
+  }
+}

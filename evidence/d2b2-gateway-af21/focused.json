@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-18T10:42:39.549941+03:00",
+  "exitCode": 0,
+  "tests": 11,
+  "expectedTests": 11,
+  "skipReported": false,
+  "sourceDrift": [],
+  "sourceFiles": 261,
+  "elapsedSeconds": 0.362,
+  "logSha256": "89c4e5805666b91b65bc34aedede3458292a64b1f59e4f594e1cb66617bc97ee",
+  "scope": "offline unittest; does not rerun native Gateway experiments",
+  "result": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T10:39:30.331913+03:00",
+  "exitCode": 0,
+  "sourceSha256": "f40d41fe5d99b892530c3f83df52aaa2b7ee75823f130f92a030500b2d7b1804",
+  "scenario": "candidate-disconnect",
+  "report": "candidate-disconnect-final.json",
+  "reportExists": true,
+  "logSha256": "e381726430188443a457ef2ec31fa00f8113b702b6b874b16227604c3eb7ddd7",
+  "result": "PASS",
+  "reportSha256": "7cac77b9569b8086ce78ff5acda52cabcfe9df4eff5572d18c0787f9eb0610ab"
+}

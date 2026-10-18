@@ -217,3 +217,13 @@ PASS. Real Hermes Gateway, production aiohttp upstream, Docker and real model
 remain NOT RUN because WSL lacks dependencies and vendor checkout. See
 docs/DREAM-D2B2-NATIVE-SOCKET.md. Next: source-pinned isolated native Hermes
 Linux environment, full Gateway and production broker acceptance.
+
+## DREAM-D2B2-GATEWAY-AF21 — 18 October 2026
+
+Actual pinned Hermes Gateway + unchanged aiohttp broker now passes normal,
+budget-limit, candidate-disconnect and review-revoked scripted localhost
+scenarios. D1 source is an actual native terminal response, no seeded DB.
+See docs/DREAM-D2B2-FULL-GATEWAY.md and evidence/d2b2-gateway-af21/.
+Next: D3B OS/network and real provider contract, controlled actual model
+held-out experiment; cross-epoch Dream recovery and Docker combined path
+remain OPEN. No active memory/skill promotion.

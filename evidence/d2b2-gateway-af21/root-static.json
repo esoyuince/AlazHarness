@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-10-18T10:45:42.294123+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "discoveredTests": 1859,
+  "rootFilesChecked": 1222,
+  "sourceGitlinksChecked": 2,
+  "scope": "static gate, not another full unittest run",
+  "rawOutputSha256": "2f8d75ddbccd0b1cb47b8152d43e41f85e674f542986ebb76af8f47693033933"
+}

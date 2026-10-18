@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T10:39:16.196408+03:00",
+  "exitCode": 0,
+  "sourceSha256": "f40d41fe5d99b892530c3f83df52aaa2b7ee75823f130f92a030500b2d7b1804",
+  "scenario": "budget-limit",
+  "report": "budget-limit-final.json",
+  "reportExists": true,
+  "logSha256": "5e596dff948eac1516200e8c766ad2f158af6df4d04910a20995ce23431370c3",
+  "result": "PASS",
+  "reportSha256": "b1b01ebd41ba86fc640677e85aea9f05ecf10851643e03d7ef95192c64207449"
+}

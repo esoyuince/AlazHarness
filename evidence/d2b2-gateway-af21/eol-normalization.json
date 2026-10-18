@@ -1,0 +1,111 @@
+{
+  "sourceFilesIndexVerified": 261,
+  "normalizedTextFiles": [
+    {
+      "path": "evidence/d2b2-gateway-af21/budget-limit-launch.json",
+      "rawSha256": "189e964bb350dae0d2440086bb4a52745bd8fb8bc49747614e1dd8f03e5cea98",
+      "indexSha256": "de9a0d9b7f5f69b9adc93723a90c0b0d0459df3efd7ebc8be47a536eacd1c558",
+      "rawBytes": 451,
+      "indexBytes": 440,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/candidate-disconnect-launch.json",
+      "rawSha256": "499bebab6245d6c5c6b3c1c76bb169d5dc1dc4c826ebbb04c796fcf86a559f90",
+      "indexSha256": "5c5ce49e5dab7739a34f439fb9e402ad81168d7bb5370a367c50172582699de1",
+      "rawBytes": 467,
+      "indexBytes": 456,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/focused.json",
+      "rawSha256": "fce6837dd33cf38289b6b9480af637f12d496ee88e2cf39118e6e16c4f6f0aad",
+      "indexSha256": "ad859974b8a07aac11e58a1c152a1a2645bcee9b4e68f87a9bcbe096954c1e6f",
+      "rawBytes": 395,
+      "indexBytes": 382,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/focused.txt",
+      "rawSha256": "89c4e5805666b91b65bc34aedede3458292a64b1f59e4f594e1cb66617bc97ee",
+      "indexSha256": "4123927cb7ecd9bf0c0f4d76b5497728b92a620352b8ee9309fdad7a57a8351a",
+      "rawBytes": 1860,
+      "indexBytes": 1844,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/full-standard.json",
+      "rawSha256": "53c6fbf6b512be177fb9c6ed16d9660f5d3b54ad636deba103be927dcf1d6ba0",
+      "indexSha256": "5a1462e634f07d4d067f3a8ebdc41a48d6ac6718b9d802fb411556cbbb710450",
+      "rawBytes": 401,
+      "indexBytes": 388,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/full-standard.txt",
+      "rawSha256": "6bff70df8cd0bb228f12c12f66b3b5e2811b1cd54774ce6959f76f94a1b8467a",
+      "indexSha256": "43bc19be9d88c1f3aae4b91170e734385e28ec69061d7f0f64717c9d35f2ae76",
+      "rawBytes": 230861,
+      "indexBytes": 228997,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/normal-launch.json",
+      "rawSha256": "4f098fcbab559c935a632929720828d3825b021cf976a3de588e108e1fc1e94a",
+      "indexSha256": "0e9bfa3cba6cc1afa279dba79523e9ff6a88f0cf9999f6f803fb2f1bc3f393ea",
+      "rawBytes": 439,
+      "indexBytes": 428,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/resume-checkpoint.json",
+      "rawSha256": "24844b9be4cc1d8efc3e6fa73943a56544b2f13ac046dfc815a7405098612a73",
+      "indexSha256": "9c3fbc79f53647d5129acd6bd0d7a3a18f799bd3895b66831678afcfdc50c70b",
+      "rawBytes": 741,
+      "indexBytes": 727,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/review-revoked-launch.json",
+      "rawSha256": "8d5bdd9e95aa2f0e0367ef4580d1175999eb96aefec9dbd9ed5d57bd09f8528d",
+      "indexSha256": "106c9bbaaae7cb0265f1cce132f83d1dc35b33209a74135738df832662ae2dd4",
+      "rawBytes": 455,
+      "indexBytes": 444,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/root-static.json",
+      "rawSha256": "45229a15f4ef809479885b4b7b8b8987467402d4b95d84a217d28779cec0bca7",
+      "indexSha256": "899634f3128b6055dde168af1d228b809a933c0e6d455368936d348a76f5efbe",
+      "rawBytes": 333,
+      "indexBytes": 323,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/root-static.txt",
+      "rawSha256": "2f8d75ddbccd0b1cb47b8152d43e41f85e674f542986ebb76af8f47693033933",
+      "indexSha256": "72bd4e63b99cec4ce80ccbe67b2b577059d67c43c10d260e349dc798bd59b7eb",
+      "rawBytes": 399,
+      "indexBytes": 386,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/source-freeze.json",
+      "rawSha256": "2f1b6373500dfc1f7daffd543387095923f3aeadd2a5a2f622656f798fc3d31b",
+      "indexSha256": "33a4b727ac7ab75e8e0d673b20df29ada117d74386523347c88b1dad3c98c8b8",
+      "rawBytes": 29439,
+      "indexBytes": 29168,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d2b2-gateway-af21/summary.json",
+      "rawSha256": "f3f74bc068360345bec558ace7d8cbce86d84a1547709f36a0eda3b6b1cc0b08",
+      "indexSha256": "c46362dc94924498b8e76d3bc6c69b664804df3a1684b5c6fc4f2e85b2bcc0c2",
+      "rawBytes": 3023,
+      "indexBytes": 2931,
+      "lineEndingsOnly": true
+    }
+  ],
+  "rawBytesRetainedInWorkingCopy": true,
+  "nativeFinalJsonReportBytesUnchanged": true
+}

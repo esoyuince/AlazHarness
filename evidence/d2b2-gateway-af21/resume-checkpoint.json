@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-18T10:36:17.686976+03:00",
+  "resumedAfterDeliveryTimeout": true,
+  "existingHappyPathResult": "PASS",
+  "receipt": "evidence/d2b2-gateway-af21/normal-budget4-4.json",
+  "receiptSha256": "fbc17ec78436a85c8d23f58f58f02a3d3f47354ab6ef208b68d9492d4bf3d490",
+  "existingQaSources": {
+    "scripts/qa/native_d2b2_full_gateway.py": "50f16bff68c05efea285d1daed61897d603e5e5b9e7ebafe184d5ef999e1bffa",
+    "scripts/qa/d2b2_gateway_task_client.mjs": "8efa323ec86eca50cacb59be904f976a89a74880756a1a2df5152cf7c41ca684"
+  },
+  "baseCommit": "d7f97ffc45d2cbf9907590effec672154ad1518c",
+  "next": "run actual Gateway failure cases; original broker/core stay unchanged",
+  "paidInferenceAllowedByThisWork": false
+}

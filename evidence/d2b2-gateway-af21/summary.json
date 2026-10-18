@@ -1,0 +1,92 @@
+{
+  "id": "DREAM-D2B2-GATEWAY-AF21",
+  "observedAt": "2026-10-18T10:50:35.433372+03:00",
+  "baseCommit": "d7f97ffc45d2cbf9907590effec672154ad1518c",
+  "branch": "alaz/dream-d2b2-gateway-af21",
+  "result": "SCOPED_NATIVE_GATEWAY_PASS_PENDING_PUBLICATION",
+  "actualFinalNativeScenarios": {
+    "normal": {
+      "receipt": "normal-final.json",
+      "sha256": "8ab9cf41a42ef9dec93ee06bef613523c4201fc756ace6a2156f7a6e3402151c",
+      "trialState": "completed",
+      "trialArms": [
+        "baseline",
+        "candidate"
+      ],
+      "providerRequests": 4,
+      "observedResponses": 4,
+      "gatewayExitCode": 0,
+      "brokerExitCode": 0
+    },
+    "budget-limit": {
+      "receipt": "budget-limit-final.json",
+      "sha256": "b1b01ebd41ba86fc640677e85aea9f05ecf10851643e03d7ef95192c64207449",
+      "trialState": "unknown",
+      "trialArms": [
+        "baseline"
+      ],
+      "providerRequests": 3,
+      "observedResponses": 3,
+      "gatewayExitCode": 0,
+      "brokerExitCode": 0
+    },
+    "candidate-disconnect": {
+      "receipt": "candidate-disconnect-final.json",
+      "sha256": "7cac77b9569b8086ce78ff5acda52cabcfe9df4eff5572d18c0787f9eb0610ab",
+      "trialState": "unknown",
+      "trialArms": [
+        "baseline"
+      ],
+      "providerRequests": 4,
+      "observedResponses": 3,
+      "gatewayExitCode": 0,
+      "brokerExitCode": 0
+    },
+    "review-revoked": {
+      "receipt": "review-revoked-final.json",
+      "sha256": "c363e02968f28cec25c7448c491538d1393db7a8df42488e8faf4df6e228348a",
+      "trialState": "unknown",
+      "trialArms": [],
+      "providerRequests": 3,
+      "observedResponses": 3,
+      "gatewayExitCode": 0,
+      "brokerExitCode": 0
+    }
+  },
+  "realGatewayOriginalBrokerVerified": true,
+  "providerIsScriptedLocalhost": true,
+  "nativeSourceIsAuthenticTerminalResponse": true,
+  "fullStandardTests": 1859,
+  "newOfflineTestsIncludedOnce": 11,
+  "sourceFiles": 261,
+  "sourceDrift": [],
+  "rootStatic": {
+    "observedAt": "2026-10-18T10:45:42.294123+03:00",
+    "result": "PASS",
+    "exitCode": 0,
+    "discoveredTests": 1859,
+    "rootFilesChecked": 1222,
+    "sourceGitlinksChecked": 2,
+    "scope": "static gate, not another full unittest run",
+    "rawOutputSha256": "2f8d75ddbccd0b1cb47b8152d43e41f85e674f542986ebb76af8f47693033933"
+  },
+  "processPrivacyReceipt": "process-and-privacy-check.json",
+  "initialFailureReceiptsPreserved": [
+    "normal-initial.json",
+    "normal-brokerpath-2.json",
+    "normal-auth-3.json"
+  ],
+  "preTimeoutHappyPathPreserved": "normal-budget4-4.json",
+  "modelInferenceVerified": false,
+  "realModelCalls": 0,
+  "paidCalls": 0,
+  "independentSkillTransferVerified": false,
+  "activeMemoryPromotion": false,
+  "dockerToolExecuted": false,
+  "osEgressIsolationQualified": false,
+  "d2b2CrossEpochRecoveryQualified": false,
+  "productPackagesChanged": false,
+  "mainMerged": false,
+  "codeCommit": null,
+  "codeCI": "NOT_YET_PUBLISHED"
+}

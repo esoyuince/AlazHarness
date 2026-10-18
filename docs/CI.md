@@ -255,3 +255,12 @@ WSL native Unix socket/local HTTP scenarios, NOT 12 more native socket runs.
 Opt-in runner uses test-only stdlib HTTP upstream, not product aiohttp; actual
 product Unix broker/client and native ledger/request-view remain in use.
 See evidence/dream-d2b2-native-9c31/ for run and source receipts.
+
+## DREAM-D2B2-GATEWAY-AF21 acceptance
+
+11 offline QA policy/custody tests accompany four separately executed real
+Linux Hermes Gateway + original aiohttp broker cases. They do not replay
+Gateways during default unittest discovery. Test providers are scripted;
+not actual model inference. Evidence and exact source hashes are under
+evidence/d2b2-gateway-af21/. Full expected baseline1848+11=1859; use
+full-standard.json and root-static.json for actual observed results.

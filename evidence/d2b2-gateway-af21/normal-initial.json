@@ -1,0 +1,23 @@
+{
+  "scenario": "normal",
+  "result": "FAIL",
+  "errors": [
+    "RuntimeError:native_process_exited_before_ready"
+  ],
+  "scope": "actual pinned Hermes Gateway+SessionAuthority and original aiohttp broker; scripted localhost origin, no isolated Docker read or real model",
+  "sourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeHermesGateway": false,
+  "originalAiohttpBroker": false,
+  "nodeVersion": "26.7.0",
+  "scriptedLocalOrigin": true,
+  "isolatedToolExecuted": false,
+  "newModelInferenceVerified": false,
+  "paidCalls": 0,
+  "independentSkillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "runtimeDepsInstalledSystemWide": false,
+  "lockedHostModules": 5,
+  "errorType": "RuntimeError",
+  "brokerExit": 2,
+  "elapsedSeconds": 0.528
+}

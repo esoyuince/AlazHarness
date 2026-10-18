@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T10:39:44.231662+03:00",
+  "exitCode": 0,
+  "sourceSha256": "f40d41fe5d99b892530c3f83df52aaa2b7ee75823f130f92a030500b2d7b1804",
+  "scenario": "review-revoked",
+  "report": "review-revoked-final.json",
+  "reportExists": true,
+  "logSha256": "94783c4dbae9dd0023bca871acdbf5b2b53a4c8ad54e20102307f382e319835b",
+  "result": "PASS",
+  "reportSha256": "c363e02968f28cec25c7448c491538d1393db7a8df42488e8faf4df6e228348a"
+}

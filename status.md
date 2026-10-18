@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T02:03:59.284874+03:00
+Son güncelleme: 2026-10-18T10:51:55.359047+03:00
 
 ## Güncel nokta
+
+DREAM-D2B2-GATEWAY-AF21: actual pinned Hermes Gateway + original aiohttp broker 4/4 final native scenarios PASS; full1859/1859 + root static PASS;261 measured source hashes unchanged. Exact Git/CI publication IN PROGRESS. Real model, D3B and learned-skill transfer NOT RUN. Worktree scratch/worktrees/dream-d2b2-gateway-af21; base d7f97ffc.
+
 
 DREAM-D2B2-NATIVE-9C31:3 native Linux Unix IPC PASS +1848/1848 standard +rootstatic PASS; code6704850 CI SUCCESS. Docs CI separately. Hermes Gateway/aiohttp/real model NOT RUN.
 Worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-native-9c31 branch alaz/dream-d2b2-native-9c31 base 7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140.
@@ -610,3 +613,32 @@ Local full1848 PASS, root static PASS, 258 source SHA exact published;
 Only docs/status/CI receipt follow-up staged; production package, tool
 privileges, model settings and main left unchanged. Final documentation
 commit CI will be checked individually after push.
+
+### 2026-10-18T02:44:50.213064+03:00 — D2B2 Gateway isolated native attempt begins
+
+Exact prior docs CI success checked (d7f97ffc45d2cbf9907590effec672154ad1518c). Root dirty items protected. Clone user-owned public Hermes fork at pin eb75627faf532fa6ffbdae59a0d14b0b385fc780 only into ignored scratch. Probe Linux dependency availability (aiohttp, Node, Docker, Python3.14) without installing into the user/production environment. If isolated pinned environment is possible, run real Hermes Gateway plus original aiohttp broker and scripted localhost origin. No external or paid model inference; no skill or memory promotion. If blocked, preserve pin, package details, scope and exact next step. CI and source pin status recorded separately.
+
+### 2026-10-18T10:36:17.686976+03:00 — Delivery timeout recovery
+
+normal-budget4-4.json already PASS before interruption: one actual native task, D1 note, D2A review, two trial arms, four original-broker HTTP observations. No pending worker found. Initial token_exposure_limit was test budget 3x163840; happy-path fixture now explicitly 4x163840=655360 and max_provider_calls=4. Existing limits/production modules unchanged. Preserve initial FAIL records. Next: full-Gateway negative cases and final exact-source test/publication.
+
+### 2026-10-18T10:37:16.230084+03:00 -- Delivery-timeout recovery
+
+Found normal-budget4-4.json PASS already persisted; did not resubmit the
+old trial. Native DB and task/shutdown records match:1admission,4provider
+claims/egress grants/response views,2trial arms complete. Budget used
+4x(131072+32768)=655360 reserved tokens; previous491520 refusal retained
+in normal-auth-3.json. This is declared exposure, not a measured invoice.
+Pinned Linux Hermes source eb75627 clean; Python3.14.3/aiohttp3.14.3/
+Node26.7.0 available only in owned Linux workspace. No active owned Gateway
+or broker remains. New work: strengthen acceptance-source/memory checks,
+freeze sources and finish tests+docs+Git/CI; retain first3FAIL records.
+No personal/production state touched, no root/main merge.
+
+### 2026-10-18T10:42:39.187050+03:00 — Native Gateway scenario acceptance checkpoint
+
+Final normal/budget-limit/candidate-disconnect/review-revoked all PASS with the SAME measured QA runner and original Gateway/broker modules. No production changes. 11 new offline policy/custody tests now being checked; full expected1859 starts next. Full results not yet accepted. Evidence: evidence/d2b2-gateway-af21/*-final.json; source-freeze.json.
+
+### 2026-10-18T10:51:55.359047+03:00 — Native Gateway scoped acceptance complete; Git delivery
+
+Four final same-source cases PASS: normal completed4/4HTTP; budget-limit unknown3/3; candidate-disconnect unknown4/3; review-revoked unknown3/3 with no candidate request. Full1859/1859 exit0 skip0 (11new tests included),261source stable; root static PASS. Original packages and source locks unchanged. No live owned Gateway/broker; four clean shutdowns, sentinels unchanged. Preserve all prior recovery journal entries and initial FAIL reports. Model replies scripted; no paid call/learning/Docker/OS egress claim. Docs/DREAM-D2B2-FULL-GATEWAY.md and evidence/d2b2-gateway-af21/summary.json. Next verify code CI, then D3B real-provider gates and independent held-out model experiment; cross-epoch Dream recovery remains OPEN.

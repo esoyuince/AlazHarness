@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-10-18T10:46:28.416076+03:00",
+  "ownedGatewayBrokerProcessesStillRunning": [],
+  "finalGatewayShutdownsConfirmed": 4,
+  "privateProfileDirectoriesRetainedForDebugging": true,
+  "knownTestCredentialValuesChecked": 30,
+  "publicFilesScanned": 25,
+  "credentialMatchesInPublicFiles": [],
+  "scope": "exact owned program argv and known generated test credentials only; not general OS sandbox/secret-scanner proof"
+}
