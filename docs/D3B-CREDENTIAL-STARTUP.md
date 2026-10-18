@@ -156,3 +156,25 @@ kontrol ayrı başarılı deneylerdir. 38 dar politika testi ve tam
 **1897/1897 unittest PASS**, exit0/skip0; yeni12 tam toplamın içindedir.
 268 ölçülen kaynak dosyası değişmedi; statik kapı PASS. Gerçek model
 yoktur; ağ katmanıyla birleşik kabul ve tam D3B hâlâ açık.
+
+## Yayın ve kaynak doğrulaması — 2026-10-18T16:03:36.978074+03:00
+
+Kod commit’i `fa94cd27344efa26275ef931fa36f0883a3dc2b8`, `alaz/d3b-credential-startup-b71e`
+dalına gönderildi. 268 test edilmiş kaynak dosyası, çalışma ağacı ve bu
+commit içindeki Git nesneleri arasında bayt/hash eşleşmesiyle doğrulandı.
+Aynı 38 politika testi hazırlanmış Linux Python’unda da PASS; bunlar
+12 yeni test veya 1897 toplamının üzerine eklenmez.
+
+GitHub alaz/local-ci bu gözlemde PENDING (status56630436648). Başarı
+yerel testlerden türetilmez. Son durum, exact kod commit’i için canlı
+GitHub sorgusu ve varsa runtime/d3b-startup-b71e/final-ci.json makbuzuyla
+okunur. Bu bölümü taşıyan doküman commit’inin CI durumu ayrıdır.
+Ağ dalı, kök durum aynası ve main değiştirilmedi.
+
+### Takip CI gözlemi — 2026-10-18T16:04:31.662422+03:00
+
+Kod commit’i `fa94cd27344efa26275ef931fa36f0883a3dc2b8` için GitHub `alaz/local-ci`
+**SUCCESS** olarak doğrulandı. Önceki PENDING makbuzu tarihsel gözlem
+olarak saklandı. Uzak API test sayısı vermiyor; 1897 yerel test ve dört
+korumalı Gateway koşusunun kanıtları ayrı. Son doküman commit’inin CI
+durumu yayından sonra ayrıca okunur.

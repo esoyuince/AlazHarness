@@ -3,7 +3,7 @@
   "at": "2026-10-18T15:57:54.402732+03:00",
   "baseCommit": "7632784c1238fdb5ebd09ee1131cb6a52ba5a4a1",
   "branch": "alaz/d3b-credential-startup-b71e",
-  "result": "SCOPED_GUARDED_GATEWAY_PASS_PUBLICATION_PENDING",
+  "result": "SCOPED_GUARDED_GATEWAY_PASS_CODE_CI_SUCCESS",
   "fullTests": 1897,
   "newTestsIncluded": 12,
   "sourceFiles": 268,
@@ -76,5 +76,10 @@
   "activeMemoryChanged": false,
   "mainMerged": false,
   "rootMirrorWritten": false,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCI": "success",
+  "codeCommit": "fa94cd27344efa26275ef931fa36f0883a3dc2b8",
+  "codeCiReceipt": "evidence/d3b-startup-b71e/code-ci-success.json",
+  "documentationCI": "separate exact-SHA check after publication",
+  "finalCiRuntimeReceipt": "runtime/d3b-startup-b71e/final-ci.json",
+  "codeCiObservedAt": "2026-10-18T16:04:31.662422+03:00"
 }

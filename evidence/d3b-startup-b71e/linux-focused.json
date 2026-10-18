@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-18T16:02:05.322539+03:00",
+  "exitCode": 0,
+  "tests": 38,
+  "result": "PASS",
+  "scope": "same38 already counted policy tests on prepared Linux Python; not new unique tests and no Gateway replay",
+  "logSha256": "bb1735fa9cab8b4e370749f6542cf39a5749e28169f9e1a310acc7bc6fac8060",
+  "codeCommit": "fa94cd27344efa26275ef931fa36f0883a3dc2b8"
+}

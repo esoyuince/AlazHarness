@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T15:57:54.402732+03:00
+Son güncelleme: 2026-10-18T16:04:31.662422+03:00
 
 ## Güncel nokta
 
-D3B-CREDENTIAL-STARTUP-B71E GUARDED GATEWAY 4/4 PASS, full1897/1897 PASS, 268source stable; Git/CI pending: diagnose prepared Python/Gateway startup under unchanged filesystem boundaries; minimal justified permissions, original failures retained. Branch alaz/d3b-credential-startup-b71e; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-startup-b71e; base 7632784c1238fdb5ebd09ee1131cb6a52ba5a4a1. Network branch and root mirror are not owned by this fix and remain untouched. No live provider/model or memory promotion.
+D3B-CREDENTIAL-STARTUP-B71E: guarded real Gateway 4/4 PASS, full1897/1897 PASS,268source exact; code fa94cd27344efa26275ef931fa36f0883a3dc2b8 published. Code CI SUCCESS verified; final docs CI separate, inspect runtime/d3b-startup-b71e/final-ci.json or live exact SHA. Branch alaz/d3b-credential-startup-b71e, worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-startup-b71e. Network composition/real model/main merge NOT RUN; root mirror untouched.
 
 
 D3B-CREDENTIAL-6E42 filesystem component PASS, guarded Gateway integration FAIL; code999ffab pushed and CI SUCCESS. Documentation CI separately; concurrent root mirror left untouched. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
@@ -703,3 +703,11 @@ Fresh diagnostics: identical worker bytes denied on this WSL Windows mount but r
 ### 2026-10-18T15:57:54.402732+03:00 — B71E final scoped acceptance
 
 Four real guarded Gateway/original broker cases PASS on unchanged source snapshot; own PID leaf metadata allowed, full proc/secret/memory/other PID remain denied. Prepared interpreter native check16 assertions PASS; original13+3 native regression PASS. Full1897/1897 exit0 skips0,12new included once,268source same; staticPASS. Windows mount access differential and initial FAILs retained. No blanket grants, no network combined claim or model learning. Next publish this isolated branch, record exact CI, then coordinate common netns/filesystem acceptance. Root/netns/main untouched.
+
+### 2026-10-18T16:03:36.978074+03:00 — Published code; docs handoff and CI observation
+
+Code fa94cd27344efa26275ef931fa36f0883a3dc2b8 pushed; worktree and upstream equal. 268 code/test/config Git blobs match frozen bytes. Full1897 and four guarded Gateway/native cases PASS; same38 policy checks also pass prepared Linux. GitHub alaz/local-ci pending at last explicit query, not failure/success inferred. Final ignored runtime CI receipt can update the last observation without recursive docs commits. Current doc work changes only status/report/evidence. Exact next job: compose with existing netns branch on isolated new source, maintain protected credential, authority/IPC and no-fallback checks; do not claim all D3B, paid model or learning.
+
+### 2026-10-18T16:04:31.662422+03:00 — B71E exact-code CI SUCCESS
+
+fa94cd27344efa26275ef931fa36f0883a3dc2b8 GitHub alaz/local-ci SUCCESS. Four final guarded native Gateway/original broker cases and full1897 independently PASS;268code/test/config bytes exact. This follow-up only publishes docs/status/CI and Linux38 recheck; source unchanged. Historical FAIL and pending reports remain. Final docs CI checked separately without recursive code updates. Main/root/network owner unchanged.

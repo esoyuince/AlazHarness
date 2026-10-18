@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-18T16:04:31.662422+03:00",
+  "commit": "fa94cd27344efa26275ef931fa36f0883a3dc2b8",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "source": "live GitHub get_commit_combined_status",
+  "remoteTestCount": null,
+  "scope": "exact code CI; native Gateway and full1897 independently recorded"
+}
