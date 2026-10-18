@@ -24,6 +24,9 @@
   "activeMemoryPromotion": false,
   "primaryNetworkWorktree": "scratch/worktrees/d3b-netns-4e62",
   "rootStatusMirrorOwnership": "left untouched; primary concurrent work owns it",
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCommit": "999ffab86ab9736b5f46a9bbb9c76dc099a308c7",
+  "codeCI": "success",
+  "codeCIReceipt": "evidence/d3b-credential-6e42/code-ci-success.json",
+  "codeCIObservedAt": "2026-10-18T12:04:32.512464+03:00",
+  "documentationCommitCI": "CHECK_AFTER_PUBLICATION"
 }

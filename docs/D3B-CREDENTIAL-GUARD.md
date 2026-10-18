@@ -146,3 +146,16 @@ bu toplamın içinde; 266 ölçülen kaynak dosyası değişmedi. Ayrı Linux ke
 çalışması 13 erişim kontrolünü ve 3 başlangıç reddini geçti. Statik kapı
 PASS. Bunlar koruma altındaki Gateway başlangıcındaki FAIL kayıtlarını
 kapatmaz. Bu dal bileşen pilotudur; tam D3B kabulü açık kalır.
+
+## Git ve CI teslimi — 2026-10-18T12:04:32.512464+03:00
+
+Kod commit’i `999ffab86ab9736b5f46a9bbb9c76dc099a308c7`, `alaz/d3b-credential-6e42`
+dalına gönderildi. Aynı commit için GitHub `alaz/local-ci` **SUCCESS**
+olarak doğrulandı; API uzak test sayısı vermez. Yerel 1885/1885 test,
+266 eşleşen kaynak dosyası ve ayrı Linux erişim deneyleri kendi kanıtlarıyla
+kayıtlıdır. Koruma altındaki Gateway başlangıcı **FAIL / kabul edilmedi**
+olarak kalır; başarılı CI bunu değiştirmez.
+
+Bu bölüm ve CI makbuzunu ekleyen yalnız-belge commit’inin durumu yayından
+sonra ayrıca kontrol edilir. Eşzamanlı ağ çalışmasının kök durum aynasına
+yazılmadı; devam kaydı bu çalışma ağacının izlenen `status.md` dosyasıdır.

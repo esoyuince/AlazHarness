@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T11:58:34.760689+03:00
+Son güncelleme: 2026-10-18T12:04:32.512464+03:00
 
 ## Güncel nokta
 
-D3B-CREDENTIAL-6E42 filesystem component PASS, Gateway integration FAIL; Git/CI closure IN PROGRESS. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
+D3B-CREDENTIAL-6E42 filesystem component PASS, guarded Gateway integration FAIL; code999ffab pushed and CI SUCCESS. Documentation CI separately; concurrent root mirror left untouched. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
 
 
 DREAM-D2B2-GATEWAY-AF21: actual Hermes Gateway + original aiohttp broker 4/4 native PASS;1859/1859 standard PASS;261 source bytes exact; code35099bd GitHub alaz/local-ci SUCCESS. Documentation CI separately. Real model/learning/D3B/Docker/cross-epoch Dream recovery NOT RUN.
@@ -679,3 +679,12 @@ Four guarded prepared-Gateway attempts remain FAIL; no provider attempts.
 Do not claim native fullGateway or network sandbox. All original failures
 retained, docs/D3B-CREDENTIAL-GUARD.md records exact scope and remaining work.
 Concurrent root status/netns files not touched. Publishing only this own branch.
+
+### 2026-10-18T12:04:32.512464+03:00 — Code exact-SHA CI SUCCESS, scoped component delivery
+
+999ffab86ab9736b5f46a9bbb9c76dc099a308c7 code commit and origin match; GitHub alaz/local-ci SUCCESS.
+266 accepted source blobs match worktree; full1885/1885 tests independently PASS.
+Guarded full Gateway remains FAIL, no real model/no network claim. Only docs,
+status and CI/provenance receipts updated now. Main and concurrent network
+worktree/root status are not modified. Next: resolve prepared runtime startup
+under the guard with narrowly justified permissions, then joint netns acceptance.

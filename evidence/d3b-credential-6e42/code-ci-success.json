@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-18T12:04:32.512464+03:00",
+  "commit": "999ffab86ab9736b5f46a9bbb9c76dc099a308c7",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "source": "GitHub.get_commit_combined_status live API",
+  "remoteTestCount": null,
+  "scope": "exact source commit CI; does not accept guarded Gateway startup"
+}
