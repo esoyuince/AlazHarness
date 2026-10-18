@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T21:53:55.224973+03:00
+Son güncelleme: 2026-10-18T21:58:04.701480+03:00
 
 ## Güncel nokta
 
-D3B-JOINT-18D3 SCOPED PASS: aynı PID ağ+Landlock korumalı gerçek Gateway4/4;15 kernel türü her koşuda PASS; full1940/1940 benzersiz skip0,278sha eşit,rootstaticPASS. Dal alaz/d3b-joint-18d3; çalışma scratch/worktrees/d3b-joint-18d3. Yerel kabul tamam; Git push/exact CI ayrı. TamD3B,bağımsız broker bütçe otoritesi,UnixIPC/hostUID ve gerçekmodel OPEN. WrongStack analiz korunuyor; ürün kodu alınmadı. Kök status/diğer dallara yazılmıyor.
+D3B-JOINT-18D3 SCOPED PASS: aynı PID ağ+Landlock korumalı gerçek Gateway4/4;15 kernel türü her koşuda PASS; full1940/1940 benzersiz skip0,278sha eşit,rootstaticPASS. Dal alaz/d3b-joint-18d3; çalışma scratch/worktrees/d3b-joint-18d3. Yerel kabul ve94ad295 origin push tamam; exact code CI SUCCESS. Son belge commit CI ayrı. TamD3B,bağımsız broker bütçe otoritesi,UnixIPC/hostUID ve gerçekmodel OPEN. WrongStack analiz korunuyor; ürün kodu alınmadı. Kök status/diğer dallara yazılmıyor.
 
 
 WRONGSTACK-REVIEW-AAC6 STATIC REVIEW COMPLETE: ffbd572d MIT/workspace1.1.8 incelendi; docs/WRONGSTACK-REVIEW.md seçici uyarlama kararı. Ürün/test/ayar/inference değişikliği yok, upstream çalıştırılmadı. Ortak D3B işi bu araştırma için duraklatılmış; diğer kaynaklar korunuyor. Yayın/CI ayrı, inceleme runtime kabulü değildir.
@@ -783,3 +783,17 @@ Aynı183-kaynak snapshot manifestiyle normal4/4,limit3/3,disconnect4/3,revoked3/
 ### 2026-10-18T21:53:55.224973+03:00 — Ortak kapsam kabulü tamam; yayın öncesi byte proof
 
 full1940/1940 benzersiz PASS exit0 skip0,278 kaynak hash değişmedi; rootstatic1394root/2gitlinks/1940discovered PASS. Aynı20 yeni birim testi Linux’ta PASS. Native4/4 ortak Gateway senaryosu,15kernel türü ayrı;183 kaynak snapshot manifesti aynı. İnceleme iptalinde public arms0/replay409. Çalışma ve index278blob eşit; primitive4dosya önceki kabulle aynı. Rapor docs/D3B-JOINT-BOUNDARY.md. Sonraki: broker otoritesini Gateway-writable DB’den bağımsızlaştır; UnixIPC/PID/hostUID tam sınırları açık. Bu teslimde main/kişiselservis/gerçekmodel/hafıza terfisi yok.
+
+### 2026-10-18T21:56:51.245403+03:00 — Kod yayımlandı; exact CI pending gözlemi
+
+94ad295ec6bf34c18e00c167b31e39f3be612335 origin ile eşit, çalışma temiz. Yayımlanan278 Git blobu ölçülen kaynak baytlarıyla aynı. GitHub alaz/local-ci PENDING,status56641198615,updated18:54:02Z; yerel1940PASS uzakCI sonucu yerine kullanılmadı. Önceki araştırma/credential/network HEAD değişmedi,main b8ff44f aynı. Kök status eşzamanlı değişti; bu görev oraya yazmadı veya üzerine eşitlemedi. TamD3B/gerçekmodel açılmadı.
+
+### 2026-10-18T21:58:04.701480+03:00 — Exact kod CI SUCCESS, son belge teslimi
+
+94ad295ec6bf34c18e00c167b31e39f3be612335 GitHub alaz/local-ci SUCCESS
+status56641282756,2026-10-18T18:56:44Z. Ortak Gateway4/4,15kernel türü ve
+full1940/1940 ayrı ölçümlerle PASS.278source yayınlananblob byte-eşit.
+Bu takip6 belge/kanıt dosyası; üretim/test/policy kaynağı değişmedi.
+Belge CI’si kendi SHA’sında takip edilir. Sonraki teknik adım bağımsız
+broker bütçe/izin otoritesi ve tek tüketim; sonrasında UnixIPC/PID/hostUID
+kabulü. TamD3B,gerçekmodel,otomatik hafıza ve main merge yapılmadı.

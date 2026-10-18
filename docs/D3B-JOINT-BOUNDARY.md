@@ -158,3 +158,18 @@ Beş özel profil ve15 bilinen test kimlik bilgisi için19 yayımlanabilir dosya
 taramasında eşleşme yok. Bu profillere ait canlı Gateway görülmedi;
 özel teşhis profilleri saklandı. Genel sır veya tam host güvenlik denetimi değil.
 Kod yayını ve exact-SHA CI bundan sonraki ayrı teslim kaydıdır.
+
+## Exact kod yayını ve CI — 2026-10-18T21:58:04.701480+03:00
+
+Kod `94ad295ec6bf34c18e00c167b31e39f3be612335` commit’iyle
+`alaz/d3b-joint-18d3` dalına gönderildi. GitHub `alaz/local-ci`
+**SUCCESS**: status56641282756, güncelleme2026-10-18T18:56:44Z.
+GitHub durum API’si uzak test adedini vermiyor; yerel1940 benzersiz test
+ve dört ortak Gateway ölçümü kendi makbuzlarıyla ayrıca doğrulandı.
+
+Yayımlanan278 kaynak/test/konfigürasyon Git blobu test edilen baytlarla aynı.
+Diğer araştırma/ağ/credential dallarının HEAD’leri ve main b8ff44f korundu.
+Kök status başka çalışma tarafından eşzamanlı güncellendi; bu görev oraya
+yazmadı. Aktif devam adresi bu ortak dalın izlenen status.md dosyasıdır.
+Bu son takip yalnız belge/status/CI/byte-proof kaydı; kod ve test değişmez.
+Belge commit’inin kendi CI’si yayın sonrasında ayrıca kontrol edilir.

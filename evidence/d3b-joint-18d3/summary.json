@@ -1,7 +1,7 @@
 {
   "id": "D3B-JOINT-18D3",
   "observedAt": "2026-10-18T21:53:55.224973+03:00",
-  "result": "SCOPED_JOINT_GATEWAY_PASS_GIT_CI_NOT_YET_PUBLISHED",
+  "result": "SCOPED_JOINT_GATEWAY_PASS_PUBLISHED_CODE_CI_SUCCESS",
   "mergeCommit": "6c679bd3da66ad407f342259a5fdd140062c6853",
   "branch": "alaz/d3b-joint-18d3",
   "native": {
@@ -119,5 +119,12 @@
   "wrongstackProductCodeImported": false,
   "mainMerged": false,
   "report": "docs/D3B-JOINT-BOUNDARY.md",
-  "next": "broker-owned independent reservation/grant authority, then scoped UnixIPC/PID/hostUID acceptance; result-aware loop detector remains separate candidate"
+  "next": "broker-owned independent reservation/grant authority, then scoped UnixIPC/PID/hostUID acceptance; result-aware loop detector remains separate candidate",
+  "codeCommit": "94ad295ec6bf34c18e00c167b31e39f3be612335",
+  "codeCI": "success",
+  "publicationObservedAt": "2026-10-18T21:56:51.245403+03:00",
+  "sourceProof": "evidence/d3b-joint-18d3/published-source-proof.json",
+  "codeCIObservedAt": "2026-10-18T21:58:04.701480+03:00",
+  "codeCIReceipt": "evidence/d3b-joint-18d3/code-ci-success.json",
+  "documentationCI": "CHECK_SEPARATELY_AFTER_PUBLICATION"
 }
