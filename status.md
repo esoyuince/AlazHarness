@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T19:46:28.666713+03:00
+Son güncelleme: 2026-10-18T19:53:04.229087+03:00
 
 ## Güncel nokta
 
-D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full1903/1903 skip0,269source SHA exact. Metadata13+17 ve kernel13+3 ayrı PASS. Git/CI teslimi AÇIK. Dal alaz/d3b-credential-fix-a613; çalışma yolu scratch/worktrees/d3b-credential-fix-a613. Ortak netns/credentials/fullD3B, bağımsız broker bütçe otoritesi ve gerçek model NOT RUN. Kök durum aynası/ağ dalı korunuyor.
+D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full1903/1903 skip0,269source SHA exact. Metadata13+17 ve kernel13+3 ayrı PASS. Kod ebfb3a2 origin push ve alaz/local-ci SUCCESS; belge CI ayrı. Dal alaz/d3b-credential-fix-a613; çalışma yolu scratch/worktrees/d3b-credential-fix-a613. Ortak netns/credentials/fullD3B, bağımsız broker bütçe otoritesi ve gerçek model NOT RUN. Kök durum aynası/ağ dalı korunuyor.
 
 
 D3B-CREDENTIAL-6E42 filesystem component PASS, guarded Gateway integration FAIL; code999ffab pushed and CI SUCCESS. Documentation CI separately; concurrent root mirror left untouched. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
@@ -714,3 +714,14 @@ işi yalnız rapor/kanıt/Git/CI kapanışı; yeni model veya izin açılmıyor.
 ### 2026-10-18T19:46:28.666713+03:00 — Kesinti sonrası kabul geri kazanıldı; yayın hazırlığı
 
 Son uzun komutun günlüğü dosyaya yazılmış: full1903/1903 PASS,1903 farklı kimlik,skip0;rootstaticPASS1903discovered/1287root/2gitlinks. 269 kaynak SHA yeniden eşit. Dört korumalı Gateway koşusu aynı176-kaynak manifestiyle PASS; normal4/4,limit3/3,disconnect4/3,revoked3/3. Broker gizli dosyası açılamadı; kapanışlar exit0,soket kaldırıldı. Metadata13+17 ve eski kernel13+3 ayrı PASS. Kod değiştirilmeden logs/manifest doğrulandı, son komut körlemesine tekrarlanmadı. Rapor docs/D3B-CREDENTIAL-STARTUP.md;resume-verification.json ve summary.json. Kök status/network/main aynı; yayın/CI henüz açık. Kesin sonraki geliştirme: iki korumayı ayrı ortak worktree içinde birlikte test et; tam D3B ve gerçek model açma.
+
+### 2026-10-18T19:53:04.229087+03:00 — Kod exact-SHA CI SUCCESS; belge teslimi
+
+ebfb3a20f472bdd6be6e5b86ed9d102ebab126d8 push PASS,GitHub alaz/local-ci SUCCESS
+(status56637349043,2026-10-18T16:51:27Z). 269 kaynak Git blobu test edilen
+baytlarla aynı;1903 benzersiz test PASS ve4 korumalı Gateway kabulü ayrı.
+Yayın sonrası bu işe ait test süreci0,root status/network/main değişmedi.
+Bu takip yalnız docs/status/CI/byte-proof; ürün/test/policy kaynağı değişmez.
+Son belge commitinin CI sonucu ayrı izlenecek. Kesin sonraki geliştirme:
+network+credential ortak worktree kabulü; broker bütçe otoritesi/IPC/PID ve
+host UID sınırları ayrıca açık. TamD3B,gerçekmodel ve öğrenme ilan edilmez.

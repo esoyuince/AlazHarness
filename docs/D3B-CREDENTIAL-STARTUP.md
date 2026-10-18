@@ -138,3 +138,15 @@ wsl.exe --exec python3 -B /mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-c
 Diğer seçenekler `budget-limit`, `candidate-disconnect`, `review-revoked`.
 Çevrimdışı kontrol: `python -B -m unittest discover -s tests -v`.
 Git/CI sonuçları yalnız yayımlanan kesin commit gözlendikten sonra kaydedilir.
+
+## Yayın ve CI kapanışı — 2026-10-18T19:53:04.229087+03:00
+
+Kod ve kabul kanıtları `ebfb3a20f472bdd6be6e5b86ed9d102ebab126d8` commit kimliğiyle
+`alaz/d3b-credential-fix-a613` dalına gönderildi. 269 kaynak Git blobu test
+edilen baytlarla eşit. Aynı commit için GitHub `alaz/local-ci` **SUCCESS**
+(status 56637349043, 2026-10-18T16:51:27Z) gözlendi. API uzak test sayısı
+vermez; yerel 1903/1903 ve dört korumalı Gateway kabulü ayrı kanıtlardır.
+
+Bu rapor/durum/makbuz takibi yalnız belgedir; onun CI sonucu kendi commit
+kimliğiyle ayrıca incelenir. Ürün ve test kaynakları değişmemiştir. Kök
+durum aynası, ağ dalı ve main korunur. Ortak D3B ve gerçek model NOT RUN.
