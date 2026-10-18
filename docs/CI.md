@@ -255,3 +255,10 @@ WSL native Unix socket/local HTTP scenarios, NOT 12 more native socket runs.
 Opt-in runner uses test-only stdlib HTTP upstream, not product aiohttp; actual
 product Unix broker/client and native ledger/request-view remain in use.
 See evidence/dream-d2b2-native-9c31/ for run and source receipts.
+
+## Gateway checkpoint custody 73C9
+
+Own branch adds18 synthetic read-only audit contracts to1848 base tests;
+expected full1866, not additional native Gateway executions. Runtime native
+SQLite revalidation is opt-in with the existing private AF21 profiles.
+No AF21 concurrent runner change is included. Evidence: d2b2-gateway-custody-73c9.

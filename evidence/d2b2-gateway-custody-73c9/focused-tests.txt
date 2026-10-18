@@ -1,0 +1,23 @@
+test_admission_status_distinct_from_outcome (test_gateway_checkpoint_audit.AuditContracts.test_admission_status_distinct_from_outcome) ... ok
+test_answer_file_mutation_rejected (test_gateway_checkpoint_audit.AuditContracts.test_answer_file_mutation_rejected) ... ok
+test_complete_chain_is_consistent_not_learning (test_gateway_checkpoint_audit.AuditContracts.test_complete_chain_is_consistent_not_learning) ... ok
+test_duplicate_json_key_rejected (test_gateway_checkpoint_audit.AuditContracts.test_duplicate_json_key_rejected) ... ok
+test_fake_learning_flag_rejected (test_gateway_checkpoint_audit.AuditContracts.test_fake_learning_flag_rejected) ... ok
+test_missing_claim_rejected (test_gateway_checkpoint_audit.AuditContracts.test_missing_claim_rejected) ... ok
+test_origin_wire_hash_mismatch_rejected (test_gateway_checkpoint_audit.AuditContracts.test_origin_wire_hash_mismatch_rejected) ... ok
+test_previous_budget_refusal_stays_unknown (test_gateway_checkpoint_audit.AuditContracts.test_previous_budget_refusal_stays_unknown) ... ok
+test_quote_not_in_native_terminal_rejected (test_gateway_checkpoint_audit.AuditContracts.test_quote_not_in_native_terminal_rejected) ... ok
+test_recovered_source_receipts_are_unchanged (test_gateway_checkpoint_audit.AuditContracts.test_recovered_source_receipts_are_unchanged) ... ok
+test_request_grant_fingerprint_mismatch_rejected (test_gateway_checkpoint_audit.AuditContracts.test_request_grant_fingerprint_mismatch_rejected) ... ok
+test_resealed_wrong_exposure_rejected (test_gateway_checkpoint_audit.AuditContracts.test_resealed_wrong_exposure_rejected) ... ok
+test_response_hash_substitution_rejected (test_gateway_checkpoint_audit.AuditContracts.test_response_hash_substitution_rejected) ... ok
+test_review_revision_mismatch_rejected (test_gateway_checkpoint_audit.AuditContracts.test_review_revision_mismatch_rejected) ... ok
+test_unknown_cannot_be_upgraded (test_gateway_checkpoint_audit.AuditContracts.test_unknown_cannot_be_upgraded) ... ok
+test_unsealed_record_rejected (test_gateway_checkpoint_audit.AuditContracts.test_unsealed_record_rejected) ... ok
+test_wrong_epoch_rejected (test_gateway_checkpoint_audit.AuditContracts.test_wrong_epoch_rejected) ... ok
+test_wrong_shutdown_nonce_rejected (test_gateway_checkpoint_audit.AuditContracts.test_wrong_shutdown_nonce_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.014s
+
+OK

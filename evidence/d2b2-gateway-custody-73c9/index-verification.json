@@ -1,0 +1,24 @@
+{
+  "indexedSourceMatches": 260,
+  "textLogNormalization": [
+    {
+      "path": "evidence/d2b2-gateway-custody-73c9/focused-tests.txt",
+      "rawSha256": "c27f24b08cbb0c2f071f2e8926e12ec79ec28fdc175afb436e7431abbed2187e",
+      "indexedSha256": "0eb1f38433dc51832cb0900fee6e28b7cdee3d16dbfa825bb5e54af9d0c5bfba",
+      "change": "line-endings-only"
+    },
+    {
+      "path": "evidence/d2b2-gateway-custody-73c9/full-standard.txt",
+      "rawSha256": "89fae20c510ebe259fa0ca371397379956135f040d951011abbdbbda26ce8329",
+      "indexedSha256": "388882494b11c17b26bd61fb2495017a67e3da7da6de4dabbdd3840aeeaa6b58",
+      "change": "line-endings-only"
+    },
+    {
+      "path": "evidence/d2b2-gateway-custody-73c9/root-static.txt",
+      "rawSha256": "69307ecd6aaac029bf2d1eda0f5453116f57a26a4d9c1a66e02a49d4d849aa56",
+      "indexedSha256": "185bfc8458ca7527e0f10341fb90659635e14ff6175de17cd7bb53329e4fd21f",
+      "change": "line-endings-only"
+    }
+  ],
+  "nativeInputReceiptsUnmodified": true
+}

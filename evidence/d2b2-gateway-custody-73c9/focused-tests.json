@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-18T10:46:47.920196+03:00",
+  "result": "PASS",
+  "tests": 18,
+  "exitCode": 0,
+  "scope": "18 synthetic audit contracts and frozen original receipt hashes; no native Gateway/provider run",
+  "logSha256": "c27f24b08cbb0c2f071f2e8926e12ec79ec28fdc175afb436e7431abbed2187e"
+}

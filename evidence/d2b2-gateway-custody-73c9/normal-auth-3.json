@@ -1,0 +1,61 @@
+{
+  "scenario": "normal",
+  "result": "FAIL",
+  "errors": [
+    "AssertionError:('trial_failed', 202, None, 'token_exposure_limit')"
+  ],
+  "scope": "actual pinned Hermes Gateway+SessionAuthority and original aiohttp broker; scripted localhost origin, no isolated Docker read or real model",
+  "sourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeHermesGateway": true,
+  "originalAiohttpBroker": true,
+  "nodeVersion": "26.7.0",
+  "scriptedLocalOrigin": true,
+  "isolatedToolExecuted": false,
+  "newModelInferenceVerified": false,
+  "paidCalls": 0,
+  "independentSkillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "runtimeDepsInstalledSystemWide": false,
+  "lockedHostModules": 5,
+  "brokerSeparatePid": true,
+  "plugin": {
+    "manifest_sha256": "8dd2dfdf793b038aef3b85937ef239a1e01ec0987ef428323ed8d5e8b559068b",
+    "entrypoint_sha256": "1349726ab92b1822d70565ecd86ebfaa74d8106aec8e088a91c6f83053b39090",
+    "method": "normal enabled user-plugin discovery; test shim points at the measured product checkout"
+  },
+  "gateway": {
+    "pidSeparate": true,
+    "apiHost": "127.0.0.1",
+    "versionEpoch": 1,
+    "sourceReady": true,
+    "nativeApiAdapter": "gateway.platforms.api_server.APIServerAdapter",
+    "aiohttpVersion": "3.14.3"
+  },
+  "task": {
+    "nativeTerminalVerified": true,
+    "runIdSha256": "3e4dccf87df80728045a71b0f4c30960f881435c6172322a4888a1e8f925caf3",
+    "providerWasToolFree": true
+  },
+  "dream": {
+    "state": "completed",
+    "candidateCount": 1,
+    "sourceRefCount": 1,
+    "quoteFromActualNativeFinal": true
+  },
+  "errorType": "AssertionError",
+  "gatewayForced": false,
+  "brokerExit": 0,
+  "broker": {
+    "separatePid": true,
+    "exitCode": 0,
+    "socketRemoved": true,
+    "activeRequests": 0,
+    "counters": {
+      "physicalAttempts": 3,
+      "refused": 0,
+      "pings": 8,
+      "responses": 3
+    }
+  },
+  "elapsedSeconds": 13.098
+}

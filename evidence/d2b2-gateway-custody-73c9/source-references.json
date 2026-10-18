@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-18T10:39:51.254678+03:00",
+  "branch": "alaz/dream-d2b2-gateway-custody-73c9",
+  "baseCommit": "d7f97ffc45d2cbf9907590effec672154ad1518c",
+  "originalWorktree": "scratch/worktrees/dream-d2b2-gateway-af21",
+  "originalRunnerHashAtInitialResume": "50f16bff68c05efea285d1daed61897d603e5e5b9e7ebafe184d5ef999e1bffa",
+  "originalRunnerLaterHash": "f40d41fe5d99b892530c3f83df52aaa2b7ee75823f130f92a030500b2d7b1804",
+  "originalPublicSha256": {
+    "normal-budget4-4.json": "fbc17ec78436a85c8d23f58f58f02a3d3f47354ab6ef208b68d9492d4bf3d490",
+    "normal-auth-3.json": "aa95398ec9dbe7b0783110038e9ffa22b9cc2d5e629ae110867a30addea83a36"
+  },
+  "noSharedSourceWrites": true,
+  "noNewModelOrGatewayRun": true,
+  "sharedStatusMirrorUpdated": false
+}

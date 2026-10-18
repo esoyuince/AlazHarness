@@ -1,8 +1,13 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T02:03:59.284874+03:00
+Son guncelleme: 2026-10-18T10:53:46.154147+03:00
 
 ## Güncel nokta
+
+DREAM-D2B2-GATEWAY-CUSTODY-73C9: recovered native record audit PASS; own full1866/1866 +root static PASS,260source exact. Publication/CI pending. Parallel AF21 development remains separate; no main merge.
+Own branch alaz/dream-d2b2-gateway-custody-73c9; worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-gateway-custody-73c9.
+The active AF21 runner is concurrently edited elsewhere; not copied, staged or modified. The shared root status mirror is intentionally not overwritten.
+
 
 DREAM-D2B2-NATIVE-9C31:3 native Linux Unix IPC PASS +1848/1848 standard +rootstatic PASS; code6704850 CI SUCCESS. Docs CI separately. Hermes Gateway/aiohttp/real model NOT RUN.
 Worktree C:\Antigravity\AlazHarness\scratch\worktrees\dream-d2b2-native-9c31 branch alaz/dream-d2b2-native-9c31 base 7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140.
@@ -610,3 +615,29 @@ Local full1848 PASS, root static PASS, 258 source SHA exact published;
 Only docs/status/CI receipt follow-up staged; production package, tool
 privileges, model settings and main left unchanged. Final documentation
 commit CI will be checked individually after push.
+
+### 2026-10-18T10:39:51.254678+03:00 -- Separate acceptance lane to preserve parallel writes
+
+Read existing normal-budget4-4 PASS and normal-auth-3 budget refusal.
+Validate the original independent runtime records, native DB claims, grants,
+request views, task IDs and stopped processes. Source-runner changes after
+the stored run cannot be treated as retrospectively tested. Product packages
+and upstream pinned Hermes remain unchanged. No shared root status edits.
+Source status snapshot SHA: 8ee83b37a73c7c349ba1635daef89925064bcd63f1d96d3a48c9dc21fa1ad62f.
+
+### 2026-10-18T10:47:51.045196+03:00 -- Independent QA full regression started
+
+Recovered native DB checks PASS for successful4-call and refused3-call
+cases; no new Gateway/model run. New18 audit tests PASS. Own260 source
+files frozen for full1866 regression, no AF21 source edits or shared
+root status updates. Complete result must be read before reporting PASS.
+
+### 2026-10-18T10:53:46.154147+03:00 -- Independent acceptance ready for publication
+
+Native completed4/budget-refused3 stored rows verified read-only.
+Full1866/1866 own-branch tests PASS,18 new contracts included once,
+zero skips and260 source hashes stable. Root static PASS (1866 discovered,
+1222root files,2gitlinks); not additional executions. Only own audit code,
+tests, evidence and docs selected; no concurrent AF21 runner or root
+status writes. Git/CI exact SHA to check after publication. No new
+Gateway/provider/model runs and no memory/skill activation.

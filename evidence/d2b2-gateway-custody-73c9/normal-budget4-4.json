@@ -1,0 +1,111 @@
+{
+  "scenario": "normal",
+  "result": "PASS",
+  "errors": [],
+  "scope": "actual pinned Hermes Gateway+SessionAuthority and original aiohttp broker; scripted localhost origin, no isolated Docker read or real model",
+  "sourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeHermesGateway": true,
+  "originalAiohttpBroker": true,
+  "nodeVersion": "26.7.0",
+  "scriptedLocalOrigin": true,
+  "isolatedToolExecuted": false,
+  "newModelInferenceVerified": false,
+  "paidCalls": 0,
+  "independentSkillTransferVerified": false,
+  "activeMemoryChanged": false,
+  "runtimeDepsInstalledSystemWide": false,
+  "lockedHostModules": 5,
+  "brokerSeparatePid": true,
+  "plugin": {
+    "manifest_sha256": "8dd2dfdf793b038aef3b85937ef239a1e01ec0987ef428323ed8d5e8b559068b",
+    "entrypoint_sha256": "1349726ab92b1822d70565ecd86ebfaa74d8106aec8e088a91c6f83053b39090",
+    "method": "normal enabled user-plugin discovery; test shim points at the measured product checkout"
+  },
+  "gateway": {
+    "pidSeparate": true,
+    "apiHost": "127.0.0.1",
+    "versionEpoch": 1,
+    "sourceReady": true,
+    "nativeApiAdapter": "gateway.platforms.api_server.APIServerAdapter",
+    "aiohttpVersion": "3.14.3",
+    "exitCode": 0,
+    "cleanShutdown": true
+  },
+  "task": {
+    "nativeTerminalVerified": true,
+    "runIdSha256": "e358d037cfe5ba1f07433b9c2c0088833165e64326b012c21f6f254dcce6a51d",
+    "providerWasToolFree": true
+  },
+  "dream": {
+    "state": "completed",
+    "candidateCount": 1,
+    "sourceRefCount": 1,
+    "quoteFromActualNativeFinal": true
+  },
+  "trial": {
+    "state": "completed",
+    "arms": [
+      "baseline",
+      "candidate"
+    ],
+    "localScore": {
+      "baselineCorrect": 8,
+      "candidateCorrect": 12
+    },
+    "brokerRequestCount": 2,
+    "replayAddedReservations": 0,
+    "realModelInferenceVerified": false
+  },
+  "origin": {
+    "accepted": 4,
+    "kinds": [
+      "native_agent",
+      "dream",
+      "baseline",
+      "candidate"
+    ],
+    "rejectedWrongCredentials": 3,
+    "requestSha256": [
+      "370702a6018b3beac98545083468baa5e0fd0ea0e3d028159aaf0e57300e8744",
+      "81b332e8eec5b92e03c856a1863c8af54322fedcc3e32c4ac5d4f9913f0508ea",
+      "2fb48f4610334cce5000a152f531e4286a83e0d24517ba3ef00df1b9ef003b5b",
+      "fdf0ab7bcea49b86d2293ce9fd2191c6a03b760f8e73d10c3781044f0ec0e610"
+    ],
+    "requestBytes": [
+      11587,
+      2078,
+      1932,
+      2086
+    ]
+  },
+  "modelInferenceCalls": 0,
+  "humanReviewVerified": false,
+  "skillsOrMemoryPromotion": false,
+  "provenance": {
+    "nativeAdmissions": 1,
+    "providerReservations": 4,
+    "nativeToolCalls": 0,
+    "egressGrants": 4,
+    "requestViewRows": 4,
+    "originRawByteMatches": 4,
+    "brokerResponsesObserved": 4,
+    "d1CandidateRows": 1,
+    "d2aReviewRows": 1,
+    "d2b2TrialRows": 1,
+    "canonicalDBIntegrity": "ok"
+  },
+  "brokerExit": 0,
+  "broker": {
+    "separatePid": true,
+    "exitCode": 0,
+    "socketRemoved": true,
+    "activeRequests": 0,
+    "counters": {
+      "physicalAttempts": 4,
+      "refused": 0,
+      "pings": 9,
+      "responses": 4
+    }
+  },
+  "elapsedSeconds": 12.935
+}

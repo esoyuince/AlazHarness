@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T10:44:33.525603+03:00",
+  "initialAuditResult": "REJECTED",
+  "reason": "native_task_join_mismatch",
+  "cause": "auditor confused native admission status terminal with outcome completed",
+  "nativeStoredEvidenceChanged": false,
+  "correction": "require exact status terminal plus outcome completed; task observed status stays completed",
+  "beforeAuditorSha256": "cc6e161759006db83e31fddffe2f067f07f7a86ebec4b1a674e8b6093cdc3aa8",
+  "afterAuditorSha256": "014380dbf43e72d515a35aa82716733d080b6f33877d9b928e3f07acf7827897",
+  "modelOrGatewayRuns": 0
+}

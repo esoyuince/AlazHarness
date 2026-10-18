@@ -217,3 +217,11 @@ PASS. Real Hermes Gateway, production aiohttp upstream, Docker and real model
 remain NOT RUN because WSL lacks dependencies and vendor checkout. See
 docs/DREAM-D2B2-NATIVE-SOCKET.md. Next: source-pinned isolated native Hermes
 Linux environment, full Gateway and production broker acceptance.
+
+## DREAM-D2B2-GATEWAY-CUSTODY-73C9 (18 October 2026)
+
+Independent read-only recovery audit of AF21 normal4 and budget3 native records.
+Own branch avoids concurrent AF21 source edits. No new model/Gateway run.
+18 validator contracts; results are not learned-skill proof.
+See docs/DREAM-D2B2-GATEWAY-CUSTODY-73C9.md. Reconcile with final AF21
+source/CI only after its separate owner closes its tests.

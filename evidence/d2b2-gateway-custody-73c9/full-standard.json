@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-18T10:49:59.278098+03:00",
+  "result": "PASS",
+  "tests": 1866,
+  "exitCode": 0,
+  "skipReported": false,
+  "seconds": 128.222,
+  "sourceFiles": 260,
+  "sourceDrift": [],
+  "logSha256": "89fae20c510ebe259fa0ca371397379956135f040d951011abbdbbda26ce8329",
+  "scope": "full offline own QA branch, 18 new tests included once; no native AF21 rerun",
+  "newGatewayRuns": 0,
+  "newProviderCalls": 0
+}

@@ -1,0 +1,62 @@
+{
+  "auditVersion": 1,
+  "observedAt": "2026-10-18T07:44:48.908304+00:00",
+  "result": "PASS_RECOVERED_RECORD_CONSISTENCY",
+  "cases": {
+    "completed": {
+      "scenario": "completed",
+      "storedChainConsistent": true,
+      "providerClaims": 4,
+      "retainedArms": 2,
+      "reservedTokens": 655360,
+      "reservedCostMicrousd": 786432,
+      "budgetIsDeclaredExposureNotInvoice": true,
+      "nativeTaskAndQuoteJoinVerified": true,
+      "nativeRowDigestAndOwnerJoinsVerified": true,
+      "dbTrialState": "completed",
+      "responseBytesRehashedFromOriginalWire": false,
+      "numericScoreIndependentlyRegraded": false,
+      "realModelInferenceVerified": false,
+      "independentLearningVerified": false,
+      "nativeInputSha256": {
+        "profile/state.db": "fb779132eabd9f2ee2915d8b24b58c6a0da97c0edf29c0bc09feff42cc9e424a",
+        "ready.json": "ce343f2d83b4de8837f06901523ed45737eb51f53180f9109f4a73e1d9651465",
+        "shutdown.json": "15f4314fccf343aba4a474b2e31702e75e33a4e964768d42034528c7436a151a",
+        "task-result.json": "c3b7629c6a7b4417995c41977e7ecd172435341820db1a39ab6da92277bff83f"
+      },
+      "nativeInputsByteUnchanged": true,
+      "originalReceiptSha256": "fbc17ec78436a85c8d23f58f58f02a3d3f47354ab6ef208b68d9492d4bf3d490"
+    },
+    "budget-refused": {
+      "scenario": "budget-refused",
+      "storedChainConsistent": true,
+      "providerClaims": 3,
+      "retainedArms": 1,
+      "reservedTokens": 491520,
+      "reservedCostMicrousd": 589824,
+      "budgetIsDeclaredExposureNotInvoice": true,
+      "nativeTaskAndQuoteJoinVerified": true,
+      "nativeRowDigestAndOwnerJoinsVerified": true,
+      "dbTrialState": "unknown",
+      "responseBytesRehashedFromOriginalWire": false,
+      "numericScoreIndependentlyRegraded": false,
+      "realModelInferenceVerified": false,
+      "independentLearningVerified": false,
+      "nativeInputSha256": {
+        "profile/state.db": "948d4c177a43b09a647d971017a748d2f6c6f06c6b997b1caa3ed34b32da1db4",
+        "ready.json": "f37878643774501516bff05cfdec27f901c6e6b9d607026edfd5c4c06d3cb4a8",
+        "shutdown.json": "190c750d120c44a58188105f22d22bd0b2677c8e05e6d2e2f152284634336756",
+        "task-result.json": "903226bd5137154f728946de82795d20fd78d156a14afb52704445b75375e302"
+      },
+      "nativeInputsByteUnchanged": true,
+      "originalReceiptSha256": "aa95398ec9dbe7b0783110038e9ffa22b9cc2d5e629ae110867a30addea83a36"
+    }
+  },
+  "newGatewayRuns": 0,
+  "newProviderCalls": 0,
+  "productSourceModified": false,
+  "sourceRunnerAtOriginalExecutionIndependentlyAttested": false,
+  "databaseHashesAreConsistencyNotCryptographicAttestation": true,
+  "personalMemoryOrSkillFilesInspected": false,
+  "verifierSha256": "014380dbf43e72d515a35aa82716733d080b6f33877d9b928e3f07acf7827897"
+}
