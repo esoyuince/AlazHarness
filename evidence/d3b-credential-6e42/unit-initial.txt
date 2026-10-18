@@ -1,0 +1,28 @@
+test_abi3_required_and_supported (test_credential_guard.PolicyTests.test_abi3_required_and_supported) ... ok
+test_bit_layout_no_device_or_exec_creation (test_credential_guard.PolicyTests.test_bit_layout_no_device_or_exec_creation) ... ok
+test_bool_version_refused (test_credential_guard.PolicyTests.test_bool_version_refused) ... ok
+test_broad_paths_refused (test_credential_guard.PolicyTests.test_broad_paths_refused) ... ok
+test_device_grants_refused_except_null (test_credential_guard.PolicyTests.test_device_grants_refused_except_null) ... ok
+test_duplicate_paths_refused (test_credential_guard.PolicyTests.test_duplicate_paths_refused) ... ok
+test_explicit_valid_policy (test_credential_guard.PolicyTests.test_explicit_valid_policy) ... ok
+test_json_duplicate_key_refused (test_credential_guard.PolicyTests.test_json_duplicate_key_refused) ... ok
+test_json_nonfinite_and_oversize_refused (test_credential_guard.PolicyTests.test_json_nonfinite_and_oversize_refused) ... ok
+test_kernel_unsupported_rejects_before_cdll (test_credential_guard.PolicyTests.test_kernel_unsupported_rejects_before_cdll) ... ok
+test_missing_protected_refused (test_credential_guard.PolicyTests.test_missing_protected_refused) ... ok
+test_no_extra_keys (test_credential_guard.PolicyTests.test_no_extra_keys) ... ok
+test_noncanonical_paths_refused (test_credential_guard.PolicyTests.test_noncanonical_paths_refused) ... ok
+test_nonlist_paths_refused (test_credential_guard.PolicyTests.test_nonlist_paths_refused) ... ok
+test_old_or_disabled_kernel_refused (test_credential_guard.PolicyTests.test_old_or_disabled_kernel_refused) ... ok
+test_optin_required (test_credential_guard.PolicyTests.test_optin_required) ... ok
+test_policy_digest_stable_order (test_credential_guard.PolicyTests.test_policy_digest_stable_order) ... ok
+test_read_write_ancestor_overlap_refused (test_credential_guard.PolicyTests.test_read_write_ancestor_overlap_refused) ... ok
+test_read_write_descendant_overlap_refused (test_credential_guard.PolicyTests.test_read_write_descendant_overlap_refused) ... ok
+test_secret_cannot_be_under_readable_root (test_credential_guard.PolicyTests.test_secret_cannot_be_under_readable_root) ... ok
+test_secret_cannot_be_under_writable_root (test_credential_guard.PolicyTests.test_secret_cannot_be_under_writable_root) ... ok
+test_system_writes_refused (test_credential_guard.PolicyTests.test_system_writes_refused) ... ok
+test_unknown_arch_refused (test_credential_guard.PolicyTests.test_unknown_arch_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.005s
+
+OK

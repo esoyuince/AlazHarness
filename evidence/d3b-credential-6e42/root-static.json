@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-18T11:56:22.908001+03:00",
+  "exitCode": 0,
+  "result": "PASS",
+  "discoveredTests": 1885,
+  "rootFilesChecked": 1258,
+  "rawSha256": "a8549006dddb3532d896031e9032f4d4313da8ab7f32b1408a11fd6cd95fb8b2",
+  "scope": "static gate only"
+}

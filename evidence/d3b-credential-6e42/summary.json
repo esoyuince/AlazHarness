@@ -1,0 +1,29 @@
+{
+  "id": "D3B-CREDENTIAL-6E42",
+  "observedAt": "2026-10-18T11:58:34.760689+03:00",
+  "baseCommit": "2bffac9aaf482363d335bdbd3c76cc687be83533",
+  "branch": "alaz/d3b-credential-6e42",
+  "result": "FILESYSTEM_COMPONENT_PASS_GATEWAY_INTEGRATION_FAIL",
+  "fullTests": 1885,
+  "newUniqueTests": 26,
+  "sourceFiles": 266,
+  "sourceDrift": [],
+  "nativeKernelProbe": "PASS",
+  "nativeChildAssertions": 13,
+  "nativeStartupRefusals": 3,
+  "protectedFullGatewayAccepted": false,
+  "nativeGatewayAttemptReports": [
+    "gateway-initial.json",
+    "gateway-diagnostic2.json",
+    "gateway-fdclosed3.json",
+    "gateway-entropy4.json"
+  ],
+  "networkBoundaryVerified": false,
+  "separateHostUid": false,
+  "realModelCalls": 0,
+  "activeMemoryPromotion": false,
+  "primaryNetworkWorktree": "scratch/worktrees/d3b-netns-4e62",
+  "rootStatusMirrorOwnership": "left untouched; primary concurrent work owns it",
+  "codeCommit": null,
+  "codeCI": "NOT_YET_PUBLISHED"
+}

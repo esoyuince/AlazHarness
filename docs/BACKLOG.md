@@ -227,3 +227,10 @@ See docs/DREAM-D2B2-FULL-GATEWAY.md and evidence/d2b2-gateway-af21/.
 Next: D3B OS/network and real provider contract, controlled actual model
 held-out experiment; cross-epoch Dream recovery and Docker combined path
 remain OPEN. No active memory/skill promotion.
+
+## D3B-CREDENTIAL-6E42 — complementary filesystem pilot
+
+Opt-in ABI3 Landlock guard, native child denial/read/write checks and isolated
+launcher implemented. Prepared full Gateway under guard still FAIL at startup.
+Do not conflate with concurrent D3B-NETNS-4E62 network work; own root mirror
+not overwritten. See docs/D3B-CREDENTIAL-GUARD.md. Full D3B remains OPEN.

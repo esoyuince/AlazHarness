@@ -1,0 +1,59 @@
+{
+  "sourceFilesVerified": 266,
+  "files": [
+    {
+      "path": "evidence/d3b-credential-6e42/focused.json",
+      "workingSha256": "d53c5da79080a84ff2b0bf6e357f1f1999931619528900056ec985f4e71e27c6",
+      "gitSha256": "c462c72e9fb2c5eb4f4dbea839b0693303f6d8260f17fa290989681e61f59127",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/focused.txt",
+      "workingSha256": "2821a6ad4ff36264682659a166ff4d0fb1bba6358d29222c327134c0fe54bd89",
+      "gitSha256": "59f05ea7b96456c6073a1a8f27a50854f04c6f3f41ff5924071a47ff55555d6a",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/full-standard.json",
+      "workingSha256": "d0eac3d1b87a18e2807476a829ba8e813f9ee5e95a168afbe12052590d16fa6c",
+      "gitSha256": "e7ad0ec7e61122f6ae4135772ad8d8b372008544e7fe067dea3d92803b8a7963",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/full-standard.txt",
+      "workingSha256": "67c6a53835e0a401ce8fa1a3f6964b944adb3fbfa29d62c258aff654ca77f195",
+      "gitSha256": "f7c29af24968c851da07c6aeb216d2acedaf6bc17dac9f6d81dc7e63fc8124a0",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/root-static.json",
+      "workingSha256": "f328cc71d1f1303f16ef5ed3ed82bd30f54fa5f4b261a7ca3317fdb4817763f2",
+      "gitSha256": "69c62822ea156d3d1c3d2e6bb2380b3913f150ce70bd2d848f8c6b669780caed",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/root-static.txt",
+      "workingSha256": "a8549006dddb3532d896031e9032f4d4313da8ab7f32b1408a11fd6cd95fb8b2",
+      "gitSha256": "79354869de06133a5b56b33703e1b048744e8707cd95a15c33f474385ee8f59f",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/source-freeze.json",
+      "workingSha256": "30f03e281076b58abd50e0bb52c704f123db7661ac3de474c6e484b907e1bad5",
+      "gitSha256": "481c6f43941f85eb7f766df8b35c019ee876cb9debcdacf4b3217e09307bd1a5",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/summary.json",
+      "workingSha256": "aa10be7194ce5128263934ff93fc9dbcf8f82f7a7952c81119ae89fadb13b479",
+      "gitSha256": "5903abe53e65ef1043e5d8ce56ae7ec924e13f0f54166b5621bf8f32157f7955",
+      "onlyCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-credential-6e42/unit-initial.txt",
+      "workingSha256": "b66c2d556d48c4b941ca7d0ed61d9f159a4754f2bc08bb8d61b36a201ae5a8d8",
+      "gitSha256": "6730229a608875c87a8e95618ab6b7f461f718ed6509d7e459f08cb448a12536",
+      "onlyCRLFtoLF": true
+    }
+  ]
+}

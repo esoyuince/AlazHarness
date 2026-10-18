@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T10:58:05.757705+03:00
+Son güncelleme: 2026-10-18T11:58:34.760689+03:00
 
 ## Güncel nokta
+
+D3B-CREDENTIAL-6E42 filesystem component PASS, Gateway integration FAIL; Git/CI closure IN PROGRESS. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
+
 
 DREAM-D2B2-GATEWAY-AF21: actual Hermes Gateway + original aiohttp broker 4/4 native PASS;1859/1859 standard PASS;261 source bytes exact; code35099bd GitHub alaz/local-ci SUCCESS. Documentation CI separately. Real model/learning/D3B/Docker/cross-epoch Dream recovery NOT RUN.
 
@@ -646,3 +649,33 @@ Four final same-source cases PASS: normal completed4/4HTTP; budget-limit unknown
 ### 2026-10-18T10:58:05.757705+03:00 — AF21 exact-code CI SUCCESS and final documentation
 
 35099bda644ebe042a4fab40649604fb837bb367 pushed, GitHub alaz/local-ci success. Four final real Gateway/original broker cases PASS, full1859/1859 incl11new,261source exact in commit; same11 offline checks additionally PASS on prepared Linux, not 11 extra unique tests. No live owned processes, four shutdowns verified, private generated tokens absent from scanned public evidence. Doc follow-up limited to report/status/CI/proof, no product changes. Root mirror preserved. Exact next work: D3B OS/network boundary and explicit real-provider budget contract, then actual model held-out evaluation; Dream cross-epoch and Docker combined path still OPEN. Do not claim scripted8-to12 score proves learning.
+
+### 2026-10-18T11:30:18.524326+03:00 — Complementary credential boundary start
+
+The root status changed concurrently to D3B-NETNS-4E62 and was preserved.
+No duplicate network engine. Test Linux inherited filesystem denial of private
+broker credentials with permitted runtime/native SQLite and readonly sources.
+Keep all writes in this dedicated worktree/private Linux test directory;
+no global install/accounts/firewall, external model, root/main or primary netns edits.
+
+### 2026-10-18T11:52:29.984296+03:00 — Credential guard kernel PASS; Gateway integration still FAIL
+
+Own Landlock ABI3 guard blocks new credential opens and inherited child opens;
+13 native assertions passed under system Linux Python, allowed file and SQLite
+writes intact. 23 policy-only unit tests initially PASS. Added explicit refusal
+checks for inherited secret FD, socket stdio and preexisting hardlink alias.
+Actual prepared Gateway launch failed; original broker closed cleanly without
+provider attempts. First unknown extra FD was the interpreter ELF, now verified
+and closed; direct entrypoint enforcement succeeds, but native Gateway startup
+is still unqualified. Last diagnostic-log read was blocked; did not retry it
+through other tools/paths. No claim of Gateway PASS. Public receipts retain FAIL.
+Primary netns work/root status remain untouched; no merge/network/paid model.
+
+### 2026-10-18T11:58:34.760689+03:00 — Scoped filesystem acceptance, full regression PASS
+
+Full1885/1885 exit0 skip0,26new included,266source unchanged; staticPASS.
+Native system-Python Landlock probe 13child assertions+3startup refusals PASS.
+Four guarded prepared-Gateway attempts remain FAIL; no provider attempts.
+Do not claim native fullGateway or network sandbox. All original failures
+retained, docs/D3B-CREDENTIAL-GUARD.md records exact scope and remaining work.
+Concurrent root status/netns files not touched. Publishing only this own branch.

@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-18T11:53:52.032745+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 26,
+  "expected": 26,
+  "skippedReported": false,
+  "sourceFiles": 266,
+  "sourceDrift": [],
+  "elapsedSeconds": 0.377,
+  "logSha256": "2821a6ad4ff36264682659a166ff4d0fb1bba6358d29222c327134c0fe54bd89",
+  "scope": "offline unittest; does not rerun Linux guards or Gateway"
+}

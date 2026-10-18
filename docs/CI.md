@@ -264,3 +264,10 @@ Gateways during default unittest discovery. Test providers are scripted;
 not actual model inference. Evidence and exact source hashes are under
 evidence/d2b2-gateway-af21/. Full expected baseline1848+11=1859; use
 full-standard.json and root-static.json for actual observed results.
+
+## D3B credential guard checks
+
+26 policy-only unittest cases; separate explicit Linux kernel probe with
+13 child checks +3 refusal checks. No real model, no network sandbox claim.
+Gateway-under-guard failed attempts retained; a passing offline CI does not
+turn them into native acceptance. Evidence: evidence/d3b-credential-6e42/.
