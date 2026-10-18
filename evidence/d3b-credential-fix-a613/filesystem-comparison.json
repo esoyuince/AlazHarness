@@ -1,0 +1,60 @@
+{
+  "observedAt": "2026-10-18T15:41:44.554543+03:00",
+  "scope": "same content, identical Landlock rights; readonly directory on two filesystems",
+  "records": [
+    {
+      "location": "windows-mounted",
+      "filesystem": "v9fs",
+      "exitCode": 0,
+      "data": {
+        "guard": {
+          "version": 1,
+          "state": "enforced",
+          "landlockAbi": 3,
+          "handledFilesystemRights": 32767,
+          "noNewPrivs": true,
+          "closedSelfExecutableFds": 0,
+          "protectedReadDenials": 1,
+          "policySha256": "6fdd8d748cad88cd18508e8766d2866473e2b1331f904de65db0a619ad486f0a",
+          "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+          "networkConfinementVerified": false,
+          "separateHostUid": false
+        },
+        "reading": {
+          "read": false,
+          "errno": 13
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "location": "linux-native",
+      "filesystem": "ext2/ext3",
+      "exitCode": 0,
+      "data": {
+        "guard": {
+          "version": 1,
+          "state": "enforced",
+          "landlockAbi": 3,
+          "handledFilesystemRights": 32767,
+          "noNewPrivs": true,
+          "closedSelfExecutableFds": 0,
+          "protectedReadDenials": 1,
+          "policySha256": "ed3060639e879807bac43d129e3e1216953f70a057475b10c082b07edb19de62",
+          "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+          "networkConfinementVerified": false,
+          "separateHostUid": false
+        },
+        "reading": {
+          "read": true,
+          "bytes": 36,
+          "matches": true
+        }
+      },
+      "stderr": ""
+    }
+  ],
+  "sampleSha256": "d2db30b5484cc7cbec5298a771e334393b2ce71cab3bf616f44fc6c702b6e609",
+  "protectedUnchanged": true,
+  "guardSourceSha256": "a0b410d30e7b902a40c8510fe589ce2bf92eb86033637c8cde4d03b44e64efa7"
+}

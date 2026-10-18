@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-10-18T19:47:32.792011+03:00",
+  "sourceFilesIndexExact": 269,
+  "textNormalizations": [
+    {
+      "path": "evidence/d3b-credential-fix-a613/focused-initial.txt",
+      "workingSha256": "13521f7d05177db2bf9d302b5ed375f0bd41aef3cf5309c2055c523d49d3e8b2",
+      "indexedSha256": "dad2833264c45610bdbbcce564d6dab9391a88b0f42c694c98aea3aa1b6283b7",
+      "workingBytes": 5254,
+      "indexedBytes": 5205,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/full-standard.json",
+      "workingSha256": "bf263711c9b32c2330a5a896063fe82afc0a99ce56dcece80007e79751708358",
+      "indexedSha256": "f12da870e02788963f940cfb6ed338943b7e4286648a59607c9cea500251705b",
+      "workingBytes": 393,
+      "indexedBytes": 381,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/full-standard.txt",
+      "workingSha256": "2474e0fd419a632e72a7ab3a9d57700f7805005209830d4b787fbcfc9ddcb4b5",
+      "indexedSha256": "9989faaa4b70d2d4b538b4cb2e2b6e4ab705e833a124a1b11a08bc52ab56218e",
+      "workingBytes": 236011,
+      "indexedBytes": 234103,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/resume-verification.json",
+      "workingSha256": "b7ef9c07531d18454f943e4b1f3afd1fb6a70c7664123a2de199a1750756024e",
+      "indexedSha256": "807886a0e3f9dce5e62aedf992817caaeb872aea93a22cabbe32a7c114edc711",
+      "workingBytes": 4064,
+      "indexedBytes": 3936,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/root-static.json",
+      "workingSha256": "c06f7ad9597f0cfea82a6338924c8a897e72cb153cea4c0c0bc80d245b9bb081",
+      "indexedSha256": "7b82259bad490d624dd98f86b3c6d1f1578a34105e5d17370e704ccea5fa5e8d",
+      "workingBytes": 352,
+      "indexedBytes": 342,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/root-static.txt",
+      "workingSha256": "82a01204cec7f99f5efe0b43d11a2c3dfab789dd2f3a6b005da603aa9c11ca68",
+      "indexedSha256": "92ccf9e5f7322a1e84a85d3f4e8e16daacd0d7aad3dae4b864a4c46b72651bbf",
+      "workingBytes": 399,
+      "indexedBytes": 386,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/source-freeze.json",
+      "workingSha256": "a1f1b1f456ef8699bc5b9be6a8bcfd97b9a733a312ef6c6d660785ade59d89f1",
+      "indexedSha256": "114311b8e7bac3331527ac428c0d7913a316d243d9263abf04b5b40f37504b6d",
+      "workingBytes": 30376,
+      "indexedBytes": 30097,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-credential-fix-a613/summary.json",
+      "workingSha256": "f80f3c5fc94e558cadb4d6c76fccd097d1691f22adcc34892ab3df2e8fe24a7e",
+      "indexedSha256": "54d93ed20242836a89b8b40f5b1a3c572bba5cda0b11a5045a5d67c18f60e907",
+      "workingBytes": 3815,
+      "indexedBytes": 3696,
+      "lineEndingsOnly": true
+    }
+  ],
+  "originalRawFilesRetainedLocally": true
+}

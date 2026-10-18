@@ -1,5 +1,10 @@
 # D3B — Dosya ve broker kimlik bilgisi koruması
 
+> Güncel devam kabulü (18 Ekim 2026): `D3B-CREDENTIAL-FIX-A613` dosya koruması
+> açıkken dört gerçek Gateway senaryosunu geçti. Ayrıntılar
+> `docs/D3B-CREDENTIAL-STARTUP.md` içinde. Aşağıdaki 6E42 raporu önceki
+> sürümün tarihsel durumudur; özgün FAIL kanıtları korunur.
+
 İş: D3B-CREDENTIAL-6E42. Tarih: 18 Ekim 2026.
 Dal: `alaz/d3b-credential-6e42`.
 Başlangıç: `2bffac9aaf482363d335bdbd3c76cc687be83533`.

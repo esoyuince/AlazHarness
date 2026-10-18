@@ -234,3 +234,12 @@ Opt-in ABI3 Landlock guard, native child denial/read/write checks and isolated
 launcher implemented. Prepared full Gateway under guard still FAIL at startup.
 Do not conflate with concurrent D3B-NETNS-4E62 network work; own root mirror
 not overwritten. See docs/D3B-CREDENTIAL-GUARD.md. Full D3B remains OPEN.
+
+## D3B-CREDENTIAL-FIX-A613 — korumalı Gateway kabulü
+
+4/4 gerçek Gateway+orijinal broker senaryosu dosya koruması açık PASS;
+1903/1903 çevrimdışı test (18 yeni dahil). Kaynakları bayt-eşit Linux
+kopyasından çalıştırma, isteğe bağlı dar self metadata, özel XDG socket
+dizini ve salt-okunur MIME tablosu; önceki FAIL kanıtları korunur.
+Sonraki: network+filesystem ortak entegrasyon ve broker-ledger otoritesi.
+Tam D3B/gerçek model/öğrenme NOT ACCEPTED. docs/D3B-CREDENTIAL-STARTUP.md.

@@ -1,0 +1,128 @@
+{
+  "observedAt": "2026-10-18T19:46:28.666713+03:00",
+  "result": "VERIFIED_AFTER_INTERRUPTED_RESPONSE",
+  "priorToolReceiptReadableInCurrentLane": false,
+  "priorCommandRerun": false,
+  "fullStandard": {
+    "observedAt": "2026-10-18T16:12:25.174445+03:00",
+    "result": "PASS",
+    "exitCode": 0,
+    "tests": 1903,
+    "skippedReported": false,
+    "sourceFiles": 269,
+    "sourceDrift": [],
+    "seconds": 116.538,
+    "rawLogSha256": "2474e0fd419a632e72a7ab3a9d57700f7805005209830d4b787fbcfc9ddcb4b5",
+    "scope": "offline unittest; does not replay4 native Gateway scenarios or kernel controls"
+  },
+  "fullLogUniqueTests": 1903,
+  "rootStatic": {
+    "observedAt": "2026-10-18T16:12:32.555550+03:00",
+    "result": "PASS",
+    "exitCode": 0,
+    "discoveredTests": 1903,
+    "rootFilesChecked": 1287,
+    "sourceGitlinksChecked": 2,
+    "rawLogSha256": "82a01204cec7f99f5efe0b43d11a2c3dfab789dd2f3a6b005da603aa9c11ca68",
+    "scope": "root static check and discovery, not another full test execution"
+  },
+  "frozenSourceFiles": 269,
+  "frozenSourceDrift": [],
+  "gatewayCases": {
+    "normal": {
+      "receipt": "gateway-a613-native-mime4.json",
+      "sha256": "ee672acd72798c4596a240eb75cf3d07c9da50c5e2707297c7db2c1d06b28e9e",
+      "guardEnforced": true,
+      "protectedReadDenials": 1,
+      "sourceFilesVerified": 176,
+      "nativeGateway": true,
+      "originalAiohttpBroker": true,
+      "trialState": "completed",
+      "arms": [
+        "baseline",
+        "candidate"
+      ],
+      "physicalAttempts": 4,
+      "brokerResponses": 4,
+      "reservations": 4,
+      "originHashMatches": 4,
+      "gatewayCleanShutdown": true,
+      "brokerExitCode": 0,
+      "socketRemoved": true,
+      "activeRequests": 0
+    },
+    "budget-limit": {
+      "receipt": "gateway-a613-final-budget.json",
+      "sha256": "78155a6a166f497d318fb7ad44764ef7f1345e0df6b65f65b0a2402d4ee2a90e",
+      "guardEnforced": true,
+      "protectedReadDenials": 1,
+      "sourceFilesVerified": 176,
+      "nativeGateway": true,
+      "originalAiohttpBroker": true,
+      "trialState": "unknown",
+      "arms": [
+        "baseline"
+      ],
+      "physicalAttempts": 3,
+      "brokerResponses": 3,
+      "reservations": 3,
+      "originHashMatches": 3,
+      "gatewayCleanShutdown": true,
+      "brokerExitCode": 0,
+      "socketRemoved": true,
+      "activeRequests": 0
+    },
+    "candidate-disconnect": {
+      "receipt": "gateway-a613-final-disconnect.json",
+      "sha256": "d4903523a721f76c58c11cf72a490e12b5ec6d1577d828482c785a0edbed9409",
+      "guardEnforced": true,
+      "protectedReadDenials": 1,
+      "sourceFilesVerified": 176,
+      "nativeGateway": true,
+      "originalAiohttpBroker": true,
+      "trialState": "unknown",
+      "arms": [
+        "baseline"
+      ],
+      "physicalAttempts": 4,
+      "brokerResponses": 3,
+      "reservations": 4,
+      "originHashMatches": 4,
+      "gatewayCleanShutdown": true,
+      "brokerExitCode": 0,
+      "socketRemoved": true,
+      "activeRequests": 0
+    },
+    "review-revoked": {
+      "receipt": "gateway-a613-final-revoke.json",
+      "sha256": "3af67de466dcc57966a95e678f6ab949d2e09ad9c49755f8de2a4d6b4f32c8a2",
+      "guardEnforced": true,
+      "protectedReadDenials": 1,
+      "sourceFilesVerified": 176,
+      "nativeGateway": true,
+      "originalAiohttpBroker": true,
+      "trialState": "unknown",
+      "arms": [],
+      "physicalAttempts": 3,
+      "brokerResponses": 3,
+      "reservations": 3,
+      "originHashMatches": 3,
+      "gatewayCleanShutdown": true,
+      "brokerExitCode": 0,
+      "socketRemoved": true,
+      "activeRequests": 0
+    }
+  },
+  "metadataChecksPerChild": [
+    13,
+    17
+  ],
+  "originalKernelAccessChecks": 13,
+  "originalKernelStartupRefusals": 3,
+  "rootStatusUnchanged": true,
+  "rootGitWorkingStatusUnchanged": true,
+  "networkBranchUnchanged": true,
+  "mainUnchanged": true,
+  "networkBoundaryClaimed": false,
+  "realModelCalls": 0
+}

@@ -1,0 +1,128 @@
+{
+  "observedAt": "2026-10-18T15:45:25.042687+03:00",
+  "runId": "a613-native-normal1",
+  "scenario": "normal",
+  "result": "FAIL",
+  "exitCode": 1,
+  "snapshotFilesystem": "ext2/ext3",
+  "sourceFiles": 176,
+  "sourceUnchanged": true,
+  "snapshotBytesMatch": true,
+  "guardSourceSha256": "a0b410d30e7b902a40c8510fe589ce2bf92eb86033637c8cde4d03b44e64efa7",
+  "launcherSourceSha256": "03acd35b406ba730e547c41b117420ad9213cba0ca7f05553e4836444ca6e60d",
+  "sourceManifestSha256": "bdf594f7cad06cb40f2517ad8a0f46e729be7373e02af5cb2a490e5ed6035137",
+  "guardedGateway": {
+    "result": "FAIL",
+    "scenario": "normal",
+    "native": {
+      "scenario": "normal",
+      "result": "FAIL",
+      "errors": [
+        "RuntimeError:native_process_exited_before_ready"
+      ],
+      "scope": "actual pinned Hermes Gateway+SessionAuthority and original aiohttp broker; scripted localhost origin, no isolated Docker read or real model",
+      "sourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+      "nativeHermesGateway": false,
+      "originalAiohttpBroker": true,
+      "nodeVersion": "v26.7.0",
+      "scriptedLocalOrigin": true,
+      "isolatedToolExecuted": false,
+      "newModelInferenceVerified": false,
+      "paidCalls": 0,
+      "independentSkillTransferVerified": false,
+      "activeMemoryChanged": false,
+      "runtimeDepsInstalledSystemWide": false,
+      "lockedHostModules": 5,
+      "testBudget": {
+        "tokensPerReservation": 163840,
+        "tokenExposureLimit": 655360,
+        "maxProviderCalls": 4,
+        "reservedExposureNotMeasuredTokens": true
+      },
+      "programSha256": {
+        "scripts/qa/native_d2b2_full_gateway.py": "f40d41fe5d99b892530c3f83df52aaa2b7ee75823f130f92a030500b2d7b1804",
+        "scripts/qa/d2b2_gateway_task_client.mjs": "8efa323ec86eca50cacb59be904f976a89a74880756a1a2df5152cf7c41ca684",
+        "scripts/native_gateway_worker.py": "2dc615adb5e94cc296c84ab4dc3ab7c14968bec6ad9792ca7d1280973eabbe2c",
+        "scripts/run_provider_broker.py": "0205461b7bdea2989ebf48ccd5325919cfef2ef4bbf32cb5ed3ca1df636d733b",
+        "packages/claw-hermes/credential_guard.py": "a0b410d30e7b902a40c8510fe589ce2bf92eb86033637c8cde4d03b44e64efa7",
+        "packages/claw-hermes/dream.py": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a",
+        "packages/claw-hermes/dream_eval.py": "354b98d46c650b6094b61bb12341e8d4b4bcf320de11a7bd2aa98eec8801e16a",
+        "packages/claw-hermes/dream_review.py": "04320b57f5673e7e3dac7cadb8407869e17832dfac3af877152e28d90bfb9281",
+        "packages/claw-hermes/dream_trial.py": "dda1cfac23dd16fe1f18cddb79bd26b5492910820d763fa64ca7162ab286701b",
+        "packages/claw-hermes/evidence_view.py": "77d9ed1387f6d88697711953c0993f91b9adad0e25915da7a3438bdca549fc04",
+        "packages/claw-hermes/execution_boundary.py": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+        "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+        "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+        "packages/claw-hermes/host_gate_plugin.py": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+        "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+        "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+        "packages/claw-hermes/isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc",
+        "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+        "packages/claw-hermes/provider_broker.py": "14bbe7eb17dd64843ee7d6a1656c04669488e608b7265e7c09c77ce2cc7ffe63",
+        "packages/claw-hermes/provider_egress.py": "0890fa935db3e0309c078cf39a03b9eee4182711cd0a9aa0e24efd9f73653e14",
+        "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+        "packages/claw-hermes/request_view.py": "29cc8a80fe84a8a31fc51c9cbe011b215dbcd20f65d73b14b26fb2d059765d9e",
+        "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+        "packages/claw-hermes/source_capture.py": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211"
+      },
+      "pythonVersion": "3.14.3",
+      "brokerSeparatePid": true,
+      "plugin": {
+        "manifest_sha256": "8dd2dfdf793b038aef3b85937ef239a1e01ec0987ef428323ed8d5e8b559068b",
+        "entrypoint_sha256": "f088fbb8f54f63a891bbd9e9b7ce08516ab9d37bec4c1d076ba58448c796cba9",
+        "method": "normal enabled user-plugin discovery; test shim points at the measured product checkout"
+      },
+      "errorType": "RuntimeError",
+      "brokerExit": 0,
+      "broker": {
+        "separatePid": true,
+        "exitCode": 0,
+        "socketRemoved": true,
+        "activeRequests": 0,
+        "counters": {
+          "physicalAttempts": 0,
+          "refused": 0,
+          "pings": 0,
+          "responses": 0
+        }
+      },
+      "elapsedSeconds": 11.191
+    },
+    "guard": {
+      "closedSelfExecutableFds": 1,
+      "handledFilesystemRights": 32767,
+      "landlockAbi": 3,
+      "networkConfinementVerified": false,
+      "noNewPrivs": true,
+      "policySha256": "1a5884c8813294e430a56e309ec481e6fb9472c80be50c313dc2b1c2968de002",
+      "protectedReadDenials": 1,
+      "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+      "separateHostUid": false,
+      "state": "enforced",
+      "version": 1
+    },
+    "wrapping": [
+      "owned_broker_bootstrap_outside_grant",
+      "gateway_wrapped_before_native_imports"
+    ],
+    "publicInnerReceipt": "evidence/d2b2-gateway-af21/credential-6e42-a613-native-normal1.json",
+    "sourceSha256": {
+      "packages/claw-hermes/credential_guard.py": "a0b410d30e7b902a40c8510fe589ce2bf92eb86033637c8cde4d03b44e64efa7",
+      "scripts/run_credential_guard.py": "03acd35b406ba730e547c41b117420ad9213cba0ca7f05553e4836444ca6e60d",
+      "scripts/qa/native_credential_gateway.py": "73c8bd0e7dfe0659924d60f3a49a6e92f29b6aed7473953e29734e7bbb852d50"
+    },
+    "networkBoundaryVerified": false,
+    "separateHostUid": false,
+    "realModelInferenceVerified": false,
+    "protectedCredentialPrinted": false
+  },
+  "childStdoutSha256": "fa96ba1623d532f97af4c52b22ec0819a840b4f291ffc311965ce2a3ed2a1cf2",
+  "childStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "filesystemRulesBroadened": false,
+  "networkBoundaryVerified": false,
+  "kernelOrSystemConfigChanged": false,
+  "realModelInferenceVerified": false,
+  "paidCalls": 0,
+  "mainMerged": false,
+  "temporaryCodeSnapshotRemoved": true
+}

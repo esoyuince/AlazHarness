@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-18T15:33:59.545716+03:00",
+  "scope": "same policy imports aiohttp under prepared and system guard launchers",
+  "records": [
+    {
+      "launcher": "prepared",
+      "exitCode": 0,
+      "stdout": "BOOT_IMPORT_OK 3.14.3 16 3.14.3\n",
+      "stderr": "",
+      "guard": {
+        "closedSelfExecutableFds": 1,
+        "handledFilesystemRights": 32767,
+        "landlockAbi": 3,
+        "networkConfinementVerified": false,
+        "noNewPrivs": true,
+        "policySha256": "d0dde83f127e2957337fbcbae128380aea84353f2d11f807c6b32b6ee6600345",
+        "protectedReadDenials": 1,
+        "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+        "separateHostUid": false,
+        "state": "enforced",
+        "version": 1
+      }
+    },
+    {
+      "launcher": "system",
+      "exitCode": 0,
+      "stdout": "BOOT_IMPORT_OK 3.14.3 16 3.14.3\n",
+      "stderr": "",
+      "guard": {
+        "closedSelfExecutableFds": 0,
+        "handledFilesystemRights": 32767,
+        "landlockAbi": 3,
+        "networkConfinementVerified": false,
+        "noNewPrivs": true,
+        "policySha256": "e1efffeccbf99a2cb76bdd452f70f2945625b3e0fb617c1f6e5e730b97d0fe06",
+        "protectedReadDenials": 1,
+        "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+        "separateHostUid": false,
+        "state": "enforced",
+        "version": 1
+      }
+    }
+  ],
+  "protectedUnchanged": true
+}

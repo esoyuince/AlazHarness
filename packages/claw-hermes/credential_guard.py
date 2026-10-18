@@ -55,12 +55,15 @@ def beneath(child, parent):
 
 
 def validate_policy(value):
-    require(type(value) is dict and set(value) == FIELDS,
+    require(type(value) is dict and set(value) in (FIELDS, FIELDS | {'self_process_metadata'}),
             'credential_guard_policy_fields')
     require(type(value['version']) is int and value['version'] == 1,
             'credential_guard_version')
     require(value['enabled'] is True, 'credential_guard_optin_required')
     out = {'version': 1, 'enabled': True}
+    if 'self_process_metadata' in value:
+        require(type(value['self_process_metadata']) is bool, 'credential_guard_metadata_boolean')
+        out['self_process_metadata'] = value['self_process_metadata']
     for name, limit in (('readonly', 64), ('writable', 16), ('protected', 16)):
         paths = value[name]
         require(type(paths) is list and 1 <= len(paths) <= limit,
@@ -173,6 +176,17 @@ def _preflight(policy):
     return closed_executable_fds
 
 
+def self_metadata_paths(pid):
+    """Fixed self-only process identity files plus system boot-time statistics.
+
+    Never expose /proc directories, arbitrary PIDs, environ, mem, fd or exe.
+    Evaluated at launch; exec keeps the PID. A descendant gets no new grant.
+    """
+    require(type(pid) is int and pid > 0, 'credential_guard_metadata_pid')
+    return tuple('/proc/' + str(pid) + '/' + name
+                 for name in ('stat', 'status', 'statm', 'cmdline')) + ('/proc/stat',)
+
+
 def apply(policy):
     """Irreversibly restrict only this fresh process and future descendants.
 
@@ -204,6 +218,19 @@ def apply(policy):
                     require(rc == 0, 'credential_guard_add_rule_failed')
                 finally:
                     os.close(fd)
+        metadata = self_metadata_paths(os.getpid()) if policy.get('self_process_metadata', False) else ()
+        for value in metadata:
+            require(value not in policy['protected'], 'credential_guard_protected_metadata')
+            fd = os.open(value, os.O_PATH | os.O_CLOEXEC | os.O_NOFOLLOW)
+            try:
+                require(stat.S_ISREG(os.fstat(fd).st_mode), 'credential_guard_metadata_file')
+                # READ_FILE only: no executable, writable, directory or process-memory grant.
+                rule = PathRule(1 << 2, fd)
+                rc = libc.syscall(ctypes.c_long(445), ctypes.c_int(handle),
+                                  ctypes.c_int(1), ctypes.byref(rule), ctypes.c_uint32(0))
+                require(rc == 0, 'credential_guard_metadata_rule_failed')
+            finally:
+                os.close(fd)
         require(libc.prctl(38, 1, 0, 0, 0) == 0, 'credential_guard_no_new_privs_failed')
         require(libc.syscall(ctypes.c_long(446), ctypes.c_int(handle), ctypes.c_uint32(0)) == 0,
                 'credential_guard_enforcement_failed')
@@ -227,4 +254,6 @@ def apply(policy):
             'closedSelfExecutableFds': closed_executable_fds,
             'protectedReadDenials': denied, 'policySha256': policy_digest(policy),
             'scope': 'Landlock ABI3 filesystem opens; not network/UID/metadata isolation',
+            'selfProcessMetadata': bool(policy.get('self_process_metadata', False)),
+            'metadataReadFileCount': len(metadata),
             'networkConfinementVerified': False, 'separateHostUid': False}

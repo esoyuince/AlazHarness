@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-18T16:12:25.174445+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1903,
+  "skippedReported": false,
+  "sourceFiles": 269,
+  "sourceDrift": [],
+  "seconds": 116.538,
+  "rawLogSha256": "2474e0fd419a632e72a7ab3a9d57700f7805005209830d4b787fbcfc9ddcb4b5",
+  "scope": "offline unittest; does not replay4 native Gateway scenarios or kernel controls"
+}

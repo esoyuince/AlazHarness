@@ -1,0 +1,93 @@
+{
+  "observedAt": "2026-10-18T16:07:14.174079+03:00",
+  "result": "PASS",
+  "records": [
+    {
+      "enabled": false,
+      "exitCode": 0,
+      "result": {
+        "result": "PASS",
+        "checks": {
+          "metadata_0_stat": true,
+          "metadata_1_status": true,
+          "metadata_2_statm": true,
+          "metadata_3_cmdline": true,
+          "metadata_4_stat": true,
+          "protected_denied": true,
+          "own_environ_denied": true,
+          "own_mem_denied": true,
+          "parent_mem_denied": true,
+          "parent_status_denied": true,
+          "proc_listing_denied": true,
+          "child_secret_denied": true,
+          "child_self_metadata_denied": true
+        },
+        "guard": {
+          "version": 1,
+          "state": "enforced",
+          "landlockAbi": 3,
+          "handledFilesystemRights": 32767,
+          "noNewPrivs": true,
+          "closedSelfExecutableFds": 1,
+          "protectedReadDenials": 1,
+          "policySha256": "d5c7a476b9f9fcd845846f58ba22d0e952ee57b5288be73e594dbbea8fdae839",
+          "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+          "selfProcessMetadata": false,
+          "metadataReadFileCount": 0,
+          "networkConfinementVerified": false,
+          "separateHostUid": false
+        }
+      },
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrDiagnostic": []
+    },
+    {
+      "enabled": true,
+      "exitCode": 0,
+      "result": {
+        "result": "PASS",
+        "checks": {
+          "metadata_0_stat": true,
+          "metadata_1_status": true,
+          "metadata_2_statm": true,
+          "metadata_3_cmdline": true,
+          "metadata_4_stat": true,
+          "protected_denied": true,
+          "own_environ_denied": true,
+          "own_mem_denied": true,
+          "parent_mem_denied": true,
+          "parent_status_denied": true,
+          "proc_listing_denied": true,
+          "psutil_pid_exists": true,
+          "psutil_status": true,
+          "psutil_start_time": true,
+          "psutil_cmdline": true,
+          "child_secret_denied": true,
+          "child_self_metadata_denied": true
+        },
+        "guard": {
+          "version": 1,
+          "state": "enforced",
+          "landlockAbi": 3,
+          "handledFilesystemRights": 32767,
+          "noNewPrivs": true,
+          "closedSelfExecutableFds": 1,
+          "protectedReadDenials": 1,
+          "policySha256": "1926e6f472b2e9f9e90a7d079031b22663379adce7e5fefe898c37d5793a5f6b",
+          "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+          "selfProcessMetadata": true,
+          "metadataReadFileCount": 5,
+          "networkConfinementVerified": false,
+          "separateHostUid": false
+        }
+      },
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrDiagnostic": []
+    }
+  ],
+  "protectedUnchanged": true,
+  "temporaryDataRemoved": true,
+  "guardSourceSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+  "realModelCalls": 0,
+  "scope": "two fresh Linux children, self metadata opt-in; no Gateway or network test"
+}

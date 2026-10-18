@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T12:04:32.512464+03:00
+Son güncelleme: 2026-10-18T19:46:28.666713+03:00
 
 ## Güncel nokta
+
+D3B-CREDENTIAL-FIX-A613 SCOPED PASS: dosya korumalı gerçek Gateway4/4, full1903/1903 skip0,269source SHA exact. Metadata13+17 ve kernel13+3 ayrı PASS. Git/CI teslimi AÇIK. Dal alaz/d3b-credential-fix-a613; çalışma yolu scratch/worktrees/d3b-credential-fix-a613. Ortak netns/credentials/fullD3B, bağımsız broker bütçe otoritesi ve gerçek model NOT RUN. Kök durum aynası/ağ dalı korunuyor.
+
 
 D3B-CREDENTIAL-6E42 filesystem component PASS, guarded Gateway integration FAIL; code999ffab pushed and CI SUCCESS. Documentation CI separately; concurrent root mirror left untouched. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
 
@@ -688,3 +691,26 @@ Guarded full Gateway remains FAIL, no real model/no network claim. Only docs,
 status and CI/provenance receipts updated now. Main and concurrent network
 worktree/root status are not modified. Next: resolve prepared runtime startup
 under the guard with narrowly justified permissions, then joint netns acceptance.
+
+### 2026-10-18T15:31:37.595994+03:00 — Korumali Gateway baslangicini duzeltme
+
+Read-only source review confirms existing guard enforced before exec, private broker outside allowlists. Previous failed runs and source bytes retained in predecessor branch. First use a fresh owned minimal startup probe to identify exact resource/access failure; no re-read of previously blocked diagnostic target. No production credentials/system permission changes, no unguarded fallback. Kernel docs reference Linux6.6 Landlock. Native gateway and full regression acceptance to be recorded only after measured results.
+
+### 2026-10-18T15:53:45.904909+03:00 — Startup causes isolated; same-byte native-filesystem test
+
+Prepared Python and aiohttp start under unchanged guard in two fresh minimal launcher tests. Same readonly file test on v9fs denies errno13 while native Linux filesystem read passes; protected canary denied in both. Fresh original Gateway reproduces source-script EACCES on /mnt/c. Byte-verified native source snapshot passes this stage. Then Hermes requires its own PID identity metadata and short control-socket folder. Added explicit default-OFF self_process_metadata: only self stat/status/statm/cmdline and /proc/stat READ_FILE, no proc directory/environ/mem grants. New metadata-run advances beyond process checks and stops at only its /tmp/hermes-gw-<profilehash> socket directory; keep FAIL receipt. Next add exact owned socket directory, not broad /tmp. Unit result exit 0. Root mirror/network work unchanged; no real model or main merge.
+
+### 2026-10-18T19:44:03.381216+03:00 — Thinking-failed kesintisinden devam, test sonucu kurtarıldı
+
+Son b1af7962-3dbe-4ab7-8303-c53093c00035 işlemi exit0 tamamlanmış.
+Full1903/1903 PASS, atlanan0, statik1903 discovery PASS;269 kaynak
+SHA güncel dosyalarla eşit. Eski testi tekrar çalıştırmadık. Dört gerçek
+Landlock korumalı Gateway senaryosunun her176 kaynak dosyası aynı: normal,
+bütçe sınırı, candidate-disconnect, review-revoked. Çekirdek metadata
+opt-in 13+17 kontrol PASS; eski kernel deneyi13+3 ret tekrar PASS.
+Aktif dal/worktree korunuyor; kök durum ve ağ dalı değişmedi. Bu devam
+işi yalnız rapor/kanıt/Git/CI kapanışı; yeni model veya izin açılmıyor.
+
+### 2026-10-18T19:46:28.666713+03:00 — Kesinti sonrası kabul geri kazanıldı; yayın hazırlığı
+
+Son uzun komutun günlüğü dosyaya yazılmış: full1903/1903 PASS,1903 farklı kimlik,skip0;rootstaticPASS1903discovered/1287root/2gitlinks. 269 kaynak SHA yeniden eşit. Dört korumalı Gateway koşusu aynı176-kaynak manifestiyle PASS; normal4/4,limit3/3,disconnect4/3,revoked3/3. Broker gizli dosyası açılamadı; kapanışlar exit0,soket kaldırıldı. Metadata13+17 ve eski kernel13+3 ayrı PASS. Kod değiştirilmeden logs/manifest doğrulandı, son komut körlemesine tekrarlanmadı. Rapor docs/D3B-CREDENTIAL-STARTUP.md;resume-verification.json ve summary.json. Kök status/network/main aynı; yayın/CI henüz açık. Kesin sonraki geliştirme: iki korumayı ayrı ortak worktree içinde birlikte test et; tam D3B ve gerçek model açma.

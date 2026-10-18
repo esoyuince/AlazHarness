@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-18T15:33:10.168304+03:00",
+  "scope": "fresh system-Python launcher to prepared-Python minimal exec; not old blocked logs",
+  "exitCode": 0,
+  "stdout": "BOOT_OK 3.14.3 16\n",
+  "stderr": "",
+  "guard": {
+    "closedSelfExecutableFds": 0,
+    "handledFilesystemRights": 32767,
+    "landlockAbi": 3,
+    "networkConfinementVerified": false,
+    "noNewPrivs": true,
+    "policySha256": "f9c79d8b89031ebc0468b519bf2f3b644a7a62bc69c69c37fd267fd8de481ae1",
+    "protectedReadDenials": 1,
+    "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+    "separateHostUid": false,
+    "state": "enforced",
+    "version": 1
+  },
+  "protectedUnchanged": true,
+  "guardSourceSha256": "a0b410d30e7b902a40c8510fe589ce2bf92eb86033637c8cde4d03b44e64efa7"
+}

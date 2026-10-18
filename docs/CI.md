@@ -271,3 +271,10 @@ full-standard.json and root-static.json for actual observed results.
 13 child checks +3 refusal checks. No real model, no network sandbox claim.
 Gateway-under-guard failed attempts retained; a passing offline CI does not
 turn them into native acceptance. Evidence: evidence/d3b-credential-6e42/.
+
+## D3B-CREDENTIAL-FIX-A613 doğrulaması
+
+Full1903/1903 PASS,18 yeni benzersiz test dahil;269 kaynak byte-eşit.
+4 native Gateway senaryosu,metadata13+17 ve eski kernel13+3 kontrolleri
+ayrı çalışmalardır; unittest toplamına eklenmez. Rootstatic1903 discovery
+ayrı runtime yürütme değildir. evidence/d3b-credential-fix-a613/.

@@ -24,6 +24,7 @@ PY_BASE=LINUX/'tools/python/cpython-3.14.3-linux-x86_64-gnu'
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--run-id',required=True)
+    parser.add_argument('--scenario', choices=('normal','budget-limit','candidate-disconnect','review-revoked'), default='normal')
     args=parser.parse_args()
     import re
     assert re.fullmatch('[a-z0-9-]{4,40}',args.run_id)
@@ -39,6 +40,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix='alaz-gw-credential-') as temp:
         controller=Path(temp);controller.chmod(0o700)
         protected=controller/'broker-private.json'
+        control=controller/'sockets';control.mkdir(mode=0o700)
         def confined_popen(command,*a,**kw):
             argv=list(command)
             if any(str(x).endswith('/scripts/run_provider_broker.py') for x in argv):
@@ -51,20 +53,21 @@ def main():
                 ro=[Path('/usr'),Path('/dev/urandom'),ROOT/'packages',ROOT/'scripts',ROOT/'config',
                     LINUX/'source-workspace/vendor/hermes-agent',PREPARED,PY_BASE]
                 for file in ('/etc/ld.so.cache','/etc/hosts','/etc/nsswitch.conf','/etc/resolv.conf',
-                             '/etc/passwd','/etc/group','/etc/localtime','/etc/ssl/certs'):
+                             '/etc/passwd','/etc/group','/etc/localtime','/etc/ssl/certs','/etc/mime.types'):
                     if Path(file).exists():ro.append(Path(file).resolve())
                 # Remove nested duplicate read roots; grants are explicit and additive.
                 roots=sorted(set(str(p.resolve()) for p in ro))
                 roots=[p for p in roots if not any(p!=q and Path(p).is_relative_to(q) for q in roots)]
-                policy={'version':1,'enabled':True,'readonly':roots,
-                        'writable':[str(out),'/dev/null'],'protected':[str(protected)]}
+                policy={'version':1,'enabled':True,'self_process_metadata':True,'readonly':roots,
+                        'writable':[str(out),str(control),'/dev/null'],'protected':[str(protected)]}
                 cfg=controller/'guard-policy.json';cfg.write_text(json.dumps(policy));cfg.chmod(0o600)
                 argv=[str(PYTHON),'-I','-B',str(ROOT/'scripts/run_credential_guard.py'),
                       '--policy',str(cfg),'--receipt',str(guardfile),'--',*argv]
+                kw['env']={**kw['env'],'XDG_RUNTIME_DIR':str(control)}
                 moves.append('gateway_wrapped_before_native_imports')
             return original_popen(argv,*a,**kw)
         previous=sys.argv
-        sys.argv=[str(ROOT/'scripts/qa/native_d2b2_full_gateway.py'),'--scenario','normal',
+        sys.argv=[str(ROOT/'scripts/qa/native_d2b2_full_gateway.py'),'--scenario',args.scenario,
             '--source-workspace',str(LINUX/'source-workspace'),'--python',str(PYTHON),
             '--node',str(NODE),'--output',str(out),'--public-receipt',str(inner)]
         try:
@@ -74,10 +77,12 @@ def main():
         native=json.loads(inner.read_text()) if inner.exists() else {}
         guard=json.loads(guardfile.read_text()) if guardfile.exists() else {}
         if not guard:
-            print('GUARD_DIAGNOSTIC', (out/'gateway-stderr.log').read_text()[-1200:])
+            diagnostic=out/'gateway-stderr.log'
+            print('GUARD_DIAGNOSTIC_SHA256',hashlib.sha256(diagnostic.read_bytes()).hexdigest() if diagnostic.exists() else 'missing')
         value={'result':'PASS' if result==0 and native.get('result')=='PASS'
             and guard.get('state')=='enforced' and guard.get('protectedReadDenials')==1 else 'FAIL',
-            'native':native,'guard':guard,'wrapping':moves,
+            'scenario':args.scenario,'native':native,'guard':guard,'wrapping':moves,
+            'privateControlSocketDirectory':True,'broadTmpGrant':False,
             'publicInnerReceipt':inner.relative_to(ROOT).as_posix(),
             'sourceSha256':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in
                 [ROOT/'packages/claw-hermes/credential_guard.py',ROOT/'scripts/run_credential_guard.py',Path(__file__)]},

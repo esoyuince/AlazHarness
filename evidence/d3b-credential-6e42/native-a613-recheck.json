@@ -1,0 +1,50 @@
+{
+  "result": "PASS",
+  "exitCode": 0,
+  "startupRefusals": {
+    "preopened_secret_fd_refused": true,
+    "socket_stdio_refused": true,
+    "preexisting_secret_hardlink_refused": true
+  },
+  "probe": {
+    "checks": {
+      "allowed_read": true,
+      "allowed_write": true,
+      "sqlite_native_write": true,
+      "secret_read": true,
+      "secret_write": true,
+      "readonly_write": true,
+      "readonly_truncate": true,
+      "symlink_secret_read": true,
+      "hardlink_secret": true,
+      "parent_memory": true,
+      "exec_descendant_secret_denied": true,
+      "no_new_privs": true,
+      "cannot_unset_no_new_privs": true
+    },
+    "result": "PASS",
+    "errors": [],
+    "secretPrinted": false
+  },
+  "guard": {
+    "closedSelfExecutableFds": 0,
+    "handledFilesystemRights": 32767,
+    "landlockAbi": 3,
+    "metadataReadFileCount": 0,
+    "networkConfinementVerified": false,
+    "noNewPrivs": true,
+    "policySha256": "dfc1948be15561099834a9c58ad2093bb2000a46e4db472d06341319b14aa7ef",
+    "protectedReadDenials": 1,
+    "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+    "selfProcessMetadata": false,
+    "separateHostUid": false,
+    "state": "enforced",
+    "version": 1
+  },
+  "stderr": "",
+  "protectedOriginalUnchanged": true,
+  "readonlyOriginalUnchanged": true,
+  "networkBoundaryClaimed": false,
+  "sameHostUid": true,
+  "realModelCalls": 0
+}
