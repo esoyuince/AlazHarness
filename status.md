@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-19T00:48:55.920603+03:00
+Son güncelleme: 2026-10-19T00:53:51.782087+03:00
 
 ## Güncel nokta
 
-D3B-IPC-A731 SCOPED PASS: selected pathname IPC projection; native Gateway4/4, kernel24+5, full1967/1967 skip0,283source exact. Git/CI pending; independent broker authority and fullD3B OPEN. Branch alaz/d3b-ipc-a731; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-a731; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. Combined predecessor code/doc CI SUCCESS. No real model, paid call, authority widening or main merge.
+D3B-IPC-A731 SCOPED PASS: selected pathname IPC projection; native Gateway4/4, kernel24+5, full1967/1967 skip0,283source exact. Code7a96233 published, GitHub CI PENDING at last observation; independent broker authority and fullD3B OPEN. Branch alaz/d3b-ipc-a731; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-a731; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. Combined predecessor code/doc CI SUCCESS. No real model, paid call, authority widening or main merge.
 
 
 D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Kod9a87838 origin push PASS; alaz/local-ci SUCCESS. Belge CI ayrı. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
@@ -818,3 +818,14 @@ Unix uçları erişilemez. Host köklerinin dış yazıcısı güvenilir varsay�
 same-hostUID ve broker bağımsız bütçe NOT ACCEPTED. Landlock modülü
 birebir korundu. Rapor docs/D3B-IPC-PROJECTION.md; evidence/d3b-ipc-a731/.
 Yalnız bu dal kaynaklarını commit/push; main ve eski ağaçlar korunur.
+
+### 2026-10-19T00:53:51.782087+03:00 — D3B-IPC code yayımlandı; belge kapanışı
+
+7a9623321cc5b3296f48f45b99312cf89424203d source/test code origin
+push PASS;283 source blobu eşleşir, full1967/1967 ve native4/4+kernel24/5
+yerel PASS. GitHub alaz/local-ci PENDING son gözlem56646653273. Bu
+commit yalnız doc/status/yayın makbuzu; ürün kaynakları değişmez.
+Root mirror eşitlendi,main ve önceki ağaçlar korunur. Sonraki kesin iş
+broker-private durable budget/one-use authority: Gateway tarafından
+değiştirilen kayıtlara güvenmeden maliyet ve tekrar sınırını uygulama.
+Nihai CI gözlemi runtime/d3b-ipc-a731/final-ci.json içinde tutulabilir.

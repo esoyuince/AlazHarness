@@ -149,3 +149,19 @@ PASS1967 keşif,1395root dosya,2gitlink; bu ek test yürütmesi değildir.
 Kontrollü12 test kimlik bilgisi,21 kamu dosyasında bulunmadı; ilgili
 Gateway/broker0 çalışıyor. Bu genel sır taraması değildir.
 Kodun exact SHA yayın/CI bilgisi aşağıda veya status.md içinde ayrı tutulur.
+
+## Git teslimi — 2026-10-19T00:53:51.782087+03:00
+
+Kod `7a9623321cc5b3296f48f45b99312cf89424203d`, `alaz/d3b-ipc-a731` dalında yayımlandı.
+283 kaynak Git blobu test edilen baytlarla eşleşir; uzak dal eşit ve
+çalışma ağacı temiz doğrulandı. GitHub alaz/local-ci bu kayıt anında
+PENDING (56646653273); yerel1967 PASS uzakCI başarı diye yazılmaz.
+Son belge/status commitinin CI durumu ayrıdır. Geç gelen nihai CI sonucu
+varsa runtime/d3b-ipc-a731/final-ci.json yerel makbuzunda ayrıca kaydedilir.
+Main ve önceki çalışma ağaçları değiştirilmedi.
+
+Sonraki dar kabul: broker yalnız kendisinin yazabildiği kalıcı bütçe ve
+tek-kullanımlık istek kayıtlarıyla karar vermeli. Gateway DB üzerinde
+ticket/limit/state değiştirme, broker restart ve kayıp yanıt deneyleri
+ek provider izni veya bütçe sıfırlaması yaratmamalı. Bu belge tasarımdır,
+uygulanmış yeni otorite değildir.

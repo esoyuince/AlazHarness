@@ -1,7 +1,7 @@
 {
   "id": "D3B-IPC-A731",
   "observedAt": "2026-10-19T00:48:55.920603+03:00",
-  "result": "SCOPED_PATHNAME_IPC_PASS_PUBLICATION_PENDING",
+  "result": "SCOPED_PATHNAME_IPC_PASS_PUBLISHED_CI_PENDING",
   "baseCommit": "5e7a14ebfa2111e9301d3cd50ee62733810f5f99",
   "branch": "alaz/d3b-ipc-a731",
   "implemented": "optional explicit filesystem projection plus original network and Landlock on same Gateway; exact broker socket mount",
@@ -47,6 +47,9 @@
   "earlierSetupFailureReceiptsRetained": 4,
   "mainMerged": false,
   "next": "broker-owned budget and one-use authorization isolated from Gateway-writable state",
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCommit": "7a9623321cc5b3296f48f45b99312cf89424203d",
+  "codeCI": "pending",
+  "codeCIObservedAt": "2026-10-19T00:53:51.782087+03:00",
+  "publicationObservedAt": "2026-10-19T00:53:51.782087+03:00",
+  "documentationCI": "CHECK_AFTER_PUBLICATION"
 }
