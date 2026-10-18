@@ -1,8 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T21:10:19.777054+03:00
+Son güncelleme: 2026-10-18T21:52:26.506160+03:00
 
 ## Güncel nokta
+
+D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Git/CI OPEN. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
 
 WRONGSTACK-REVIEW-AAC6 STATIC REVIEW COMPLETE: ffbd572d MIT/workspace1.1.8 incelendi; docs/WRONGSTACK-REVIEW.md seçici uyarlama kararı. Ürün/test/ayar/inference değişikliği yok, upstream çalıştırılmadı. Ortak D3B işi bu araştırma için duraklatılmış; diğer kaynaklar korunuyor. Yayın/CI ayrı, inceleme runtime kabulü değildir.
 
@@ -737,3 +739,37 @@ uygulanmış sınırlar ayrıldı; tam yeni motor yerine sınırlı uyarlama ön
 Ürün, runtime, test, model veya izin değişikliği yok. Rapordaki kabul
 testleri öneridir; upstream testleri çalıştırılmadı. Kök status/main ve
 ağ/credential çalışma ağaçları korunur. Rapor ve kanıt yayını ayrı.
+
+## Korunan ağ dalı iş günlüğü (entegrasyon öncesi kayıt)
+
+### 2026-10-18T11:27:54.759462+03:00 — D3B network boundary implementation start
+
+Current Linux supports unprivileged user+network namespaces; prepared source/env retained. Implement fail-closed per-process network confinement, preserving private loopback and explicit Unix broker path. Test direct sockets, alternate processes and namespace reentry. Same host UID/filesystem and Unix-socket authority remain separate risks; do not close all D3B from network-only acceptance. Root dirty files protected; only owned new worktree changes.
+
+### 2026-10-18T11:44:25.303777+03:00 — D3B1 native checkpoint
+
+Kernel network probe21/21 and real Gateway normal PASS after sendmsg compatibility correction; initial fail retained. Gateway new network namespace with zero capabilities, NoNewPrivs1 and Seccomp2; original broker stays host-side. Remaining negative Gateway scenarios request7e5af2d3-c421-4e10-a6b4-d3b200000016; do not replay unknown work. 17 offline tests and full1876 planned, NOT accepted yet. Full D3B remains OPEN (same host UID/filesystem/Unix paths).
+
+### 2026-10-18T11:51:45.714629+03:00 — D3B1 local scoped acceptance
+
+21 kernel checks and4 native Gateway cases PASS; full1876/1876 (17new included) exit0 skip0,266source unchanged; staticPASS separately. Native normal completed4calls; budget-limit unknown3,disconnect unknown4/replies3,review-revoked unknown3 no candidate. New network-only launcher opt-in; no default personal/production activation. Initial sendmsg compatibility failure retained. No owned Gateway/broker active; private test profiles retained and known credential values absent from public evidence. Next exact-source stage/commit/push/CI, then filesystem/PID/credential isolation. Full D3B NOT ACCEPTED.
+
+### 2026-10-18T11:54:39.352557+03:00 — D3B1 publication and bounded handoff
+
+Code 1b8beb5fabfa973d9bef999a466021e8bf9bb355 pushed,266 source blobs exact; local1876/1876 PASS,21 kernel checks and4 native Gateway cases PASS. GitHub alaz/local-ci pending on last query; not inherited from local success. This follow-up touches only docs/status/CI/proof. Next confirm exact code and docs CI, then implement deny-by-default mount/PID/credential and Unix socket visibility. Same host UID/filesystem remains shared; full D3B is NOT ACCEPTED. No model call or automatic memory. Root main unchanged and protected files hash verified.
+
+### 2026-10-18T21:30:01.609418+03:00 — Ortak koruma kabulü başlatıldı
+
+Separate worktree; only documentation conflicts reconciled by preserving both histories. Compose existing network primitive before Landlock, no broad paths or unguarded fallback. Add typed launch contract, source-bound receipts, fresh scripted Gateway tests. WrongStack selective ideas remain proposal backlog, not an added runtime. Complete D3B still OPEN: Unix authority, shared canonical budget DB, separate host identity and real provider acceptance.
+
+### 2026-10-18T21:44:45.406381+03:00 — Ortak başlatıcı ve native kabul ara kaydı
+
+Network ve Landlock eski kaynakları byte-identical kaldı. Yeni strict opt-in launch contract/argv digest ve aynı PIDde network->filesystem->exec yolu eklendi. Normal ve budget-limit, candidate-disconnect Gateway makbuzları PASS; review-revoked native request dc647fa7-3f63-4c61-92f5-f5b845150014 son makbuzuyla uzlaştırılacak, körlemesine tekrar yok. Native kernel24 kontrol+5 başlangıç reddi PASS. Önemli açık test: dosya grantları dışındaki SADECE bize ait pathname Unix soketi hâlâ erişilebilir; tam IPC izolasyonu iddiası yok. Yeni18 contract/order unittest PASS; full regression NOT RUN. Root mirror iki dal günlüğü korunarak birleştirildi,main/önceki ağaçlar korunur.
+
+### 2026-10-18T21:46:01.457801+03:00 — Dört ortak Gateway ve çekirdek kabulü; full regression başladı
+
+Normal/limit/disconnect/revoked4/4 PASS, aynı184 native kaynak. Kernel24+5 PASS,pathname Unix erişim açığı açık ölçüldü. Tam regresyon request dc647fa7-3f63-4c61-92f5-f5b845150016, kaynak freeze 280 dosya, beklenen1938 (1903+17merge+18yeni). Tam test sonucu henüz bilinmiyor; kesintide full-standard.json ve job sonucu okunmalı, komut tekrar edilmemeli.
+
+### 2026-10-18T21:52:26.506160+03:00 — Birleşik yerel kabul tamamlandı
+
+Full1938/1938 PASS,exit0,skip0;280 frozen source same. Native4/4 aynı184 snapshot, kernel24+5 ayrı PASS; izin dışındaki SADECE test Unix soketi erişilebilir kaldı. Eski netns/Landlock kaynakları birebir korundu. Root static PASS1938 discovery. summary.json ve docs/D3B-COMBINED.md kapsam/sınırlar/yeniden üretimi içerir. Sıradaki teslim exact source/index/commit/push/CI; main ve önceki ağaçlar değiştirilmez. Ardından IPC allowlist/mount kimliği ve Gateway dışı broker bütçe otoritesi; canlı model ve otomatik hafıza yok.

@@ -251,3 +251,11 @@ Runtime/test/model çalıştırılmadı; üçüncü temel motor eklenmedi. Anti-
 mission/plan/settlement ownership, koşullu SAGE geri bildirimi ve verifier
 lease aday. Otomatik YOLO yetki artışı, doğrulamasız hedef kapanışı ve
 policy-only sandbox Alaz'a taşınmaz. Ortak D3B önceliği korunur.
+
+## D3B1 network namespace — 18 October 2026
+
+Opt-in rootless user/network namespace, zero capabilities, no_new_privs and inherited seccomp added. Direct TCP/UDP/alternate-family and exec-child tests; actual Gateway with original host broker requalified. Host UID/filesystem/path Unix services remain shared: complete D3B NOT ACCEPTED. Next deny-by-default filesystem/PID/credential separation. See docs/D3B1-NETWORK-NAMESPACE.md.
+
+## D3B-COMBINED-DC64 — aynı süreçte iki sınır
+
+Aynı Gateway altında ağ+dosya4/4 ve native kernel24+5 PASS. Pathname Unix soketi izinleri dışında erişim KONTROLLÜ TESTTE gözlendi; sıradaki dar iş bu otoriteyi sınırlandırmak ve broker bütçe DB/izinini Gateway yazımından ayırmak. WrongStack kaynağı eklenmedi; tekrar tespiti/koşullu Dream ayrı pilot. docs/D3B-COMBINED.md.

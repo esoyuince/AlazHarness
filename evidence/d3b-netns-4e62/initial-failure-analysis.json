@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-10-18T11:39:23.796460+03:00",
+  "initialGatewayResult": "FAIL",
+  "originalSourceSha256": "baa155804e48de20da3c0ae0606558b9b17be10c88acf0c55688ac3f14d4047a",
+  "fixedSourceSha256": "bea10fe4d2295265fc9c6cdd91a41514a96ea5bc4d5cfcdc0736851772c639a6",
+  "finding": "Python3.14 asyncio._write_sendmsg requires sendmsg for normal responses; initial broad filter broke API delivery after D1 commit",
+  "change": "allow sendmsg and sendmmsg on existing namespace-local sockets; recvmsg,recvmmsg,pidfd_getfd,io_uring restriction and network namespace retained",
+  "initialReceiptPreserved": true,
+  "completeD3B": false
+}

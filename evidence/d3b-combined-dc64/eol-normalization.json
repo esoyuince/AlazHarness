@@ -1,0 +1,30 @@
+{
+  "logs": [
+    {
+      "path": "evidence/d3b-combined-dc64/focused-initial.txt",
+      "rawSha256": "2b2847c4af6aaea5c5c047cad2e5077f48c7ec4f9d1af4e9cee41e7258414da2",
+      "indexedSha256": "d1cbb5a566812940522a149eacd42d11a58cb1cc80ee922a6cd54a521ce998ed",
+      "rawBytes": 2704,
+      "indexedBytes": 2681,
+      "onlyLineEndingNormalization": true
+    },
+    {
+      "path": "evidence/d3b-combined-dc64/full-standard.txt",
+      "rawSha256": "12e32d4c124314f9d111f3afc6f5f45a47f372102cd066b2f7380c1887ea3229",
+      "indexedSha256": "9ea9180279178c2aba6c6709699583e95fbc3a90bfe99c09f9fd9c462eb2f34e",
+      "rawBytes": 240823,
+      "indexedBytes": 238880,
+      "onlyLineEndingNormalization": true
+    },
+    {
+      "path": "evidence/d3b-combined-dc64/root-static.txt",
+      "rawSha256": "5afa3a8ec7a07f2f89f588c053626c8fbc5cf85ae6aea4807cb3aeabfd28e48e",
+      "indexedSha256": "877dca554ce6adf9cad994b77dfa2164d5dd3565b5cd4fedf5ecd109fd2e3bc4",
+      "rawBytes": 399,
+      "indexedBytes": 386,
+      "onlyLineEndingNormalization": true
+    }
+  ],
+  "exactSourceFiles": 280,
+  "rawLogsRetainedInWorkingTree": true
+}

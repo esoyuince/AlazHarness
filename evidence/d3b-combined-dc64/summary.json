@@ -1,0 +1,104 @@
+{
+  "id": "D3B-COMBINED-DC64",
+  "observedAt": "2026-10-18T21:52:26.506160+03:00",
+  "result": "SCOPED_COMBINED_NATIVE_PASS_FULL_D3B_OPEN",
+  "parents": {
+    "credentialAndReview": "ab68dac5d9b9803719255810ef73f20ef6dd9e3d",
+    "network": "7915c77c6cf0f48fcae6a13e08cd7fd997cda4f2"
+  },
+  "native": {
+    "scenarios": {
+      "budget-limit": {
+        "receipt": "evidence/d3b-combined-dc64/gateway-dc64-budget-final.json",
+        "receiptSha256": "3b9fcfd32b0f5c5b009f71a7cf290cb6ea7c4d8d574b2bd5eb2e5aa12bf389db",
+        "requests": 3,
+        "responses": 3,
+        "trialState": "unknown",
+        "arms": [
+          "baseline"
+        ],
+        "replayAddedReservations": 0,
+        "duplicateRequestStatus": 202
+      },
+      "candidate-disconnect": {
+        "receipt": "evidence/d3b-combined-dc64/gateway-dc64-disconnect-final.json",
+        "receiptSha256": "fd18370cd95d118d261ffba0a3d6a629ca784bb420a4a7ce441a44834cb23051",
+        "requests": 4,
+        "responses": 3,
+        "trialState": "unknown",
+        "arms": [
+          "baseline"
+        ],
+        "replayAddedReservations": 0,
+        "duplicateRequestStatus": 202
+      },
+      "normal": {
+        "receipt": "evidence/d3b-combined-dc64/gateway-dc64-normal-initial.json",
+        "receiptSha256": "4b9e6dbb8d19ef4c2476522e8f10f33c7bbba4a03479ba7de74569a57e9db272",
+        "requests": 4,
+        "responses": 4,
+        "trialState": "completed",
+        "arms": [
+          "baseline",
+          "candidate"
+        ],
+        "replayAddedReservations": 0,
+        "duplicateRequestStatus": 200
+      },
+      "review-revoked": {
+        "receipt": "evidence/d3b-combined-dc64/gateway-dc64-revoke-final.json",
+        "receiptSha256": "b1c47dad52b926636daae7db20cd394aa70efda089c73b603fdd139eefc355c4",
+        "requests": 3,
+        "responses": 3,
+        "trialState": "unknown",
+        "arms": [],
+        "replayAddedReservations": 0,
+        "duplicateRequestStatus": 409
+      }
+    },
+    "count": 4,
+    "sameSourceFiles": 184,
+    "kernelControls": 24,
+    "startupRefusals": 5,
+    "bothLayersSameGatewayPid": true,
+    "originalBrokerAiohttp": true,
+    "scriptedOrigin": true
+  },
+  "fullStandard": {
+    "observedAt": "2026-10-18T21:49:20.606401+03:00",
+    "result": "PASS",
+    "tests": 1938,
+    "expected": 1938,
+    "exitCode": 0,
+    "skippedReported": false,
+    "sourceFiles": 280,
+    "sourceDrift": [],
+    "elapsedSeconds": 199.132,
+    "rawLogSha256": "12e32d4c124314f9d111f3afc6f5f45a47f372102cd066b2f7380c1887ea3229",
+    "scope": "full offline regression; 18 new +17 merged tests included; native Gateway4 and kernel24+5 are separate"
+  },
+  "rootStatic": {
+    "observedAt": "2026-10-18T21:52:26.504416+03:00",
+    "result": "PASS",
+    "exitCode": 0,
+    "discoveredTests": 1938,
+    "rootFilesChecked": 1366,
+    "sourceGitlinksChecked": 2,
+    "elapsedSeconds": 8.674,
+    "rawLogSha256": "5afa3a8ec7a07f2f89f588c053626c8fbc5cf85ae6aea4807cb3aeabfd28e48e",
+    "scope": "static root gate and test discovery, not repeated execution"
+  },
+  "residualPathUnixReachable": true,
+  "completeD3B": false,
+  "independentBrokerBudgetAuthority": false,
+  "separateHostUid": false,
+  "realModelCalls": 0,
+  "skillTransferVerified": false,
+  "activeMemoryPromotion": false,
+  "wrongStackCodeImported": false,
+  "rootStatusReconciled": true,
+  "mainMerged": false,
+  "codeCommit": null,
+  "codeCI": "NOT_PUBLISHED",
+  "next": "isolate pathname Unix authority and broker-owned budget/one-time admission; do not enable autonomous paid calls"
+}

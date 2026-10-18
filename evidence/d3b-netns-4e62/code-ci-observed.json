@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-18T11:54:39.352557+03:00",
+  "commit": "1b8beb5fabfa973d9bef999a466021e8bf9bb355",
+  "context": "alaz/local-ci",
+  "state": "pending",
+  "source": "GitHub get_commit_combined_status",
+  "remoteTestCount": null,
+  "note": "Last actual query pending; local test success is not remote CI success"
+}

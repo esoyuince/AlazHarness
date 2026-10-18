@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-18T21:52:26.504416+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "discoveredTests": 1938,
+  "rootFilesChecked": 1366,
+  "sourceGitlinksChecked": 2,
+  "elapsedSeconds": 8.674,
+  "rawLogSha256": "5afa3a8ec7a07f2f89f588c053626c8fbc5cf85ae6aea4807cb3aeabfd28e48e",
+  "scope": "static root gate and test discovery, not repeated execution"
+}

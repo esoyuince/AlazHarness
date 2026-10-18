@@ -1,0 +1,46 @@
+{
+  "sourceFilesExact": 266,
+  "logConversions": [
+    {
+      "path": "evidence/d3b-netns-4e62/focused.txt",
+      "rawSha256": "ad8a04048e54a48d1152cfa7134c0bc92372bc818e3ba317ab764000a760431e",
+      "indexSha256": "b8d8bdc52cd0461a9afaf0682d65a4470358c7098b1a09cef6231a4078a3e601",
+      "rawBytes": 2316,
+      "indexBytes": 2294,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-netns-4e62/full-standard.txt",
+      "rawSha256": "cd4ae37b8461f0e4ae1216e5658a27930f3cf6bcff465bf5b9666587219ac964",
+      "indexSha256": "8686f0f6cb22a94546853db46ae6f64a7df6179c8286d7e6fdfeb4fdb5366e8d",
+      "rawBytes": 233073,
+      "indexBytes": 231192,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-netns-4e62/initial-failure-analysis.json",
+      "rawSha256": "92b1773950dc321505fececd3ef56e2acaec9b9b70da16b88bb01d24c5b10e93",
+      "indexSha256": "0306e5fcc91f21b0935373724cc232086f43672b908380d8e9eb4601f743475b",
+      "rawBytes": 648,
+      "indexBytes": 638,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-netns-4e62/negative-scenario-launches.json",
+      "rawSha256": "b6c3a2754997bd5f0885c685bda2fced810fc0396c9da9179a31b212565762a5",
+      "indexSha256": "0f573f3183db8ec2b41abb0c515643ee96ccf0d8ef35cbbda9efe1737e1f2b22",
+      "rawBytes": 627,
+      "indexBytes": 607,
+      "lineEndingsOnly": true
+    },
+    {
+      "path": "evidence/d3b-netns-4e62/root-static.txt",
+      "rawSha256": "57998e9fe78aa52f71ccaf126430ac698c5174b6793d648ed96363fddc8d6653",
+      "indexSha256": "b9b420295d19f0fc3309e2c94d2e436753c298763ce680a2a5b17020fbbe8692",
+      "rawBytes": 399,
+      "indexBytes": 386,
+      "lineEndingsOnly": true
+    }
+  ],
+  "rawLogsRetainedLocally": true
+}

@@ -1,0 +1,23 @@
+test_command_fingerprint_changes_for_any_argument (test_combined_guard.CombinedContractTests.test_command_fingerprint_changes_for_any_argument) ... ok
+test_command_hash_requires_lowercase_sha256 (test_combined_guard.CombinedContractTests.test_command_hash_requires_lowercase_sha256) ... ok
+test_command_shape_and_bounds (test_combined_guard.CombinedContractTests.test_command_shape_and_bounds) ... ok
+test_contract_digest_is_deterministic_and_policy_bound (test_combined_guard.CombinedContractTests.test_contract_digest_is_deterministic_and_policy_bound) ... ok
+test_disabled_or_single_layer_contract_is_refused (test_combined_guard.CombinedContractTests.test_disabled_or_single_layer_contract_is_refused) ... ok
+test_explicit_both_layers_validates_without_mutating_input (test_combined_guard.CombinedContractTests.test_explicit_both_layers_validates_without_mutating_input) ... ok
+test_filesystem_broad_grants_remain_refused (test_combined_guard.CombinedContractTests.test_filesystem_broad_grants_remain_refused) ... ok
+test_filesystem_failure_cannot_become_network_only_success (test_combined_guard.CombinedContractTests.test_filesystem_failure_cannot_become_network_only_success) ... ok
+test_launch_identity_is_bounded (test_combined_guard.CombinedContractTests.test_launch_identity_is_bounded) ... ok
+test_missing_layers_refused (test_combined_guard.CombinedContractTests.test_missing_layers_refused) ... ok
+test_network_before_filesystem_in_same_pid (test_combined_guard.CombinedContractTests.test_network_before_filesystem_in_same_pid) ... ok
+test_network_failure_cannot_become_filesystem_only_success (test_combined_guard.CombinedContractTests.test_network_failure_cannot_become_filesystem_only_success) ... ok
+test_network_receipt_for_different_pid_refused (test_combined_guard.CombinedContractTests.test_network_receipt_for_different_pid_refused) ... ok
+test_partial_or_missing_secret_denial_is_refused (test_combined_guard.CombinedContractTests.test_partial_or_missing_secret_denial_is_refused) ... ok
+test_secret_may_not_move_inside_any_grant (test_combined_guard.CombinedContractTests.test_secret_may_not_move_inside_any_grant) ... ok
+test_unknown_contract_fields_are_not_authority (test_combined_guard.CombinedContractTests.test_unknown_contract_fields_are_not_authority) ... ok
+test_version_boolean_or_future_not_accepted (test_combined_guard.CombinedContractTests.test_version_boolean_or_future_not_accepted) ... ok
+test_wrong_command_refused_before_any_enforcement (test_combined_guard.CombinedContractTests.test_wrong_command_refused_before_any_enforcement) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.007s
+
+OK

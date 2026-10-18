@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-18T21:50:26.612828+03:00",
+  "result": "PASS",
+  "knownGeneratedCredentialValues": 12,
+  "publicFilesScanned": 23,
+  "matchingPaths": [],
+  "ownedLiveGatewayBrokerCount": 0,
+  "profiles": [
+    {
+      "runId": "dc64-normal-initial",
+      "nativeShutdown": true
+    },
+    {
+      "runId": "dc64-budget-final",
+      "nativeShutdown": true
+    },
+    {
+      "runId": "dc64-disconnect-final",
+      "nativeShutdown": true
+    },
+    {
+      "runId": "dc64-revoke-final",
+      "nativeShutdown": true
+    }
+  ],
+  "upstreamPin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "upstreamTrackedFilesUnchanged": true,
+  "scope": "remaining generated test profile credentials only; not general secret certification; transient origin secret not retained",
+  "rootStatusMatchesCombined": true
+}

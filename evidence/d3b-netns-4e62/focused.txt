@@ -1,0 +1,22 @@
+test_launch_never_executes_on_boundary_failure (test_linux_netns.AdmissionContracts.test_launch_never_executes_on_boundary_failure) ... ok
+test_multithread_process_refused (test_linux_netns.AdmissionContracts.test_multithread_process_refused) ... ok
+test_non_linux_refused_before_any_syscall (test_linux_netns.AdmissionContracts.test_non_linux_refused_before_any_syscall) ... ok
+test_root_identity_refused (test_linux_netns.AdmissionContracts.test_root_identity_refused) ... ok
+test_wrong_architecture_refused (test_linux_netns.AdmissionContracts.test_wrong_architecture_refused) ... ok
+test_clone3_returns_enosys_for_safe_thread_fallback (test_linux_netns.FilterContracts.test_clone3_returns_enosys_for_safe_thread_fallback) ... ok
+test_clone_namespace_flags_are_blocked (test_linux_netns.FilterContracts.test_clone_namespace_flags_are_blocked) ... ok
+test_filter_load_failure_is_fail_closed (test_linux_netns.FilterContracts.test_filter_load_failure_is_fail_closed) ... ok
+test_missing_library_is_not_optional (test_linux_netns.FilterContracts.test_missing_library_is_not_optional) ... ok
+test_non_ip_and_unix_socket_families_are_refused (test_linux_netns.FilterContracts.test_non_ip_and_unix_socket_families_are_refused) ... ok
+test_restricts_namespace_reentry_and_fd_acquisition (test_linux_netns.FilterContracts.test_restricts_namespace_reentry_and_fd_acquisition) ... ok
+test_rule_failure_is_fail_closed (test_linux_netns.FilterContracts.test_rule_failure_is_fail_closed) ... ok
+test_uring_cannot_create_unfiltered_sockets (test_linux_netns.FilterContracts.test_uring_cannot_create_unfiltered_sockets) ... ok
+test_failed_first_attempt_is_preserved (test_linux_netns.NativeEvidenceCustody.test_failed_first_attempt_is_preserved) ... ok
+test_negative_gateway_outcomes_stay_unconfirmed (test_linux_netns.NativeEvidenceCustody.test_negative_gateway_outcomes_stay_unconfirmed) ... ok
+test_real_gateway_uses_same_filter_with_original_broker (test_linux_netns.NativeEvidenceCustody.test_real_gateway_uses_same_filter_with_original_broker) ... ok
+test_real_kernel_probe_and_exec_inheritance_passed (test_linux_netns.NativeEvidenceCustody.test_real_kernel_probe_and_exec_inheritance_passed) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.023s
+
+OK

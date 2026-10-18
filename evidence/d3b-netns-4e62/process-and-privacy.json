@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-18T11:49:17.318892+03:00",
+  "ownedActiveGatewayBrokerPids": [],
+  "profilesInspected": 5,
+  "shutdowns": [
+    {
+      "profile": "d3b-netns-normal-final-4e62",
+      "native_result": true,
+      "lifecycle_completed": true
+    },
+    {
+      "profile": "d3b-netns-candidate-disconnect-4e62",
+      "native_result": true,
+      "lifecycle_completed": true
+    },
+    {
+      "profile": "d3b-netns-budget-limit-4e62",
+      "native_result": true,
+      "lifecycle_completed": true
+    },
+    {
+      "profile": "d3b-netns-normal-4e62",
+      "native_result": true,
+      "lifecycle_completed": true
+    },
+    {
+      "profile": "d3b-netns-review-revoked-4e62",
+      "native_result": true,
+      "lifecycle_completed": true
+    }
+  ],
+  "knownTestSecretsChecked": 25,
+  "publicFilesScanned": 27,
+  "credentialMatches": [],
+  "privateProfilesRetainedForDebug": true,
+  "scope": "owned runtime identities and generated canaries only; not general host sandbox proof",
+  "result": "PASS"
+}

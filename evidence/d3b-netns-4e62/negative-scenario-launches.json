@@ -1,0 +1,20 @@
+[
+  {
+    "scenario": "budget-limit",
+    "exitCode": 0,
+    "observedAt": "2026-10-18T11:42:16.665215+03:00",
+    "logSha256": "a6cb435b0983f687396b228f8f8dbb93959c135aaca0b70e64d866519135176b"
+  },
+  {
+    "scenario": "candidate-disconnect",
+    "exitCode": 0,
+    "observedAt": "2026-10-18T11:42:37.817842+03:00",
+    "logSha256": "5f08abba6ba4cee9409d801ceefc0487dd59e0825219ef22bec8be865dca562f"
+  },
+  {
+    "scenario": "review-revoked",
+    "exitCode": 0,
+    "observedAt": "2026-10-18T11:43:00.461800+03:00",
+    "logSha256": "eeefc1d54dd439f025b1310c77d30e7597a3d0f6e6c8d5fdcd63e3b8c0d27204"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "id": "D3B-NETNS-4E62",
+  "observedAt": "2026-10-18T11:51:45.714629+03:00",
+  "result": "SCOPED_D3B1_PUBLISHED_CODE_CI_PENDING",
+  "base": "2bffac9aaf482363d335bdbd3c76cc687be83533",
+  "branch": "alaz/d3b-netns-4e62",
+  "productAdded": [
+    "packages/claw-hermes/linux_netns.py",
+    "scripts/run_in_network_namespace.py"
+  ],
+  "uniqueOfflineTests": 1876,
+  "newOfflineTests": 17,
+  "sourceFiles": 266,
+  "nativeKernelChecks": 21,
+  "nativeGatewayCases": {
+    "normal": {
+      "receipt": "gateway-normal-final.json",
+      "sha256": "430065156b872a6c168a5667678ff66b3353204d2d3d173bafd204a03919a815",
+      "boundaryReceipt": "gateway-normal-final-boundary.json",
+      "result": "PASS",
+      "trialState": "completed",
+      "requests": 4,
+      "boundarySamples": 8
+    },
+    "budget-limit": {
+      "receipt": "gateway-budget-limit-final.json",
+      "sha256": "02a4a92798a92d9c5fee3e434903930dc6075145881f3e1e386a809bf1870d00",
+      "boundaryReceipt": "gateway-budget-limit-final-boundary.json",
+      "result": "PASS",
+      "trialState": "unknown",
+      "requests": 3,
+      "boundarySamples": 7
+    },
+    "candidate-disconnect": {
+      "receipt": "gateway-candidate-disconnect-final.json",
+      "sha256": "c8d262c7246f3b35e99b32145211937f77ca22086a92f1a821fb9d9793d431cf",
+      "boundaryReceipt": "gateway-candidate-disconnect-final-boundary.json",
+      "result": "PASS",
+      "trialState": "unknown",
+      "requests": 4,
+      "boundarySamples": 7
+    },
+    "review-revoked": {
+      "receipt": "gateway-review-revoked-final.json",
+      "sha256": "3d0a1e8fbcf4369aa25065ca7d428231f24280ed4e04d50ba0ff536b58494ab0",
+      "boundaryReceipt": "gateway-review-revoked-final-boundary.json",
+      "result": "PASS",
+      "trialState": "unknown",
+      "requests": 3,
+      "boundarySamples": 9
+    }
+  },
+  "initialGatewayFailurePreserved": true,
+  "completeD3B": false,
+  "hostFilesystemIsolated": false,
+  "separateHostUid": false,
+  "pathUnixSocketAuthorityIsolated": false,
+  "realModelCalls": 0,
+  "paidCalls": 0,
+  "learningVerified": false,
+  "mainMerged": false,
+  "next": "deny-by-default filesystem/PID/credential isolation and qualified broker peer contract; do not infer full D3B from network-only qualification",
+  "codeCommit": "1b8beb5fabfa973d9bef999a466021e8bf9bb355",
+  "codeCI": "pending",
+  "codeCIReceipt": "evidence/d3b-netns-4e62/code-ci-observed.json",
+  "documentationCI": "CHECK_SEPARATELY_AFTER_PUBLICATION"
+}

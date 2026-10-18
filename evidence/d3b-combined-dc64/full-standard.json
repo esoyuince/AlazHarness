@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-18T21:49:20.606401+03:00",
+  "result": "PASS",
+  "tests": 1938,
+  "expected": 1938,
+  "exitCode": 0,
+  "skippedReported": false,
+  "sourceFiles": 280,
+  "sourceDrift": [],
+  "elapsedSeconds": 199.132,
+  "rawLogSha256": "12e32d4c124314f9d111f3afc6f5f45a47f372102cd066b2f7380c1887ea3229",
+  "scope": "full offline regression; 18 new +17 merged tests included; native Gateway4 and kernel24+5 are separate"
+}

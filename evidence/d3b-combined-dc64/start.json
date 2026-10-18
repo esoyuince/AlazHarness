@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-18T21:29:59.316385+03:00",
+  "base": "ab68dac5d9b9803719255810ef73f20ef6dd9e3d",
+  "networkParent": "7915c77c6cf0f48fcae6a13e08cd7fd997cda4f2",
+  "commonBase": "2bffac9aaf482363d335bdbd3c76cc687be83533",
+  "main": "b8ff44ff105965ba3f6f9fa9559ad96f2c084815",
+  "rootStatusBeforeSha256": "8c76d36c3cc89e4c00968d72534935e4f57d1198d95e4a937b2f23e7f062e06c",
+  "rootStatusGit": "M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py",
+  "predecessors": {
+    "wrongstack-review-aac6": {
+      "head": "ab68dac5d9b9803719255810ef73f20ef6dd9e3d",
+      "statusSha256": "2eefb6c52c51756ffde3bd7a265a7451d7934a3e558b63f05145cf8c5a124bfd"
+    },
+    "d3b-netns-4e62": {
+      "head": "7915c77c6cf0f48fcae6a13e08cd7fd997cda4f2",
+      "statusSha256": "8c76d36c3cc89e4c00968d72534935e4f57d1198d95e4a937b2f23e7f062e06c"
+    },
+    "d3b-credential-fix-a613": {
+      "head": "b3197e2f2266bfd998920f7b2c1400c39bbc6195",
+      "statusSha256": "63cfc3428e66c6fa534b3b5320b0c7fbfb3ef8934cc67dedaaf480cea9cdf34e"
+    }
+  }
+}
