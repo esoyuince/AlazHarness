@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T10:58:05.757705+03:00
+Son güncelleme: 2026-10-18T11:51:45.714629+03:00
 
 ## Güncel nokta
+
+D3B-NETNS-4E62: opt-in kernel network launch primitive,21/21 native checks +4/4 Gateway cases +1876/1876 offline tests PASS. Branch alaz/d3b-netns-4e62; worktree scratch/worktrees/d3b-netns-4e62. Git/CI pending. Complete D3B OPEN: host filesystem/UID/path Unix authority shared; no real model.
+
 
 DREAM-D2B2-GATEWAY-AF21: actual Hermes Gateway + original aiohttp broker 4/4 native PASS;1859/1859 standard PASS;261 source bytes exact; code35099bd GitHub alaz/local-ci SUCCESS. Documentation CI separately. Real model/learning/D3B/Docker/cross-epoch Dream recovery NOT RUN.
 
@@ -646,3 +649,15 @@ Four final same-source cases PASS: normal completed4/4HTTP; budget-limit unknown
 ### 2026-10-18T10:58:05.757705+03:00 — AF21 exact-code CI SUCCESS and final documentation
 
 35099bda644ebe042a4fab40649604fb837bb367 pushed, GitHub alaz/local-ci success. Four final real Gateway/original broker cases PASS, full1859/1859 incl11new,261source exact in commit; same11 offline checks additionally PASS on prepared Linux, not 11 extra unique tests. No live owned processes, four shutdowns verified, private generated tokens absent from scanned public evidence. Doc follow-up limited to report/status/CI/proof, no product changes. Root mirror preserved. Exact next work: D3B OS/network boundary and explicit real-provider budget contract, then actual model held-out evaluation; Dream cross-epoch and Docker combined path still OPEN. Do not claim scripted8-to12 score proves learning.
+
+### 2026-10-18T11:27:54.759462+03:00 — D3B network boundary implementation start
+
+Current Linux supports unprivileged user+network namespaces; prepared source/env retained. Implement fail-closed per-process network confinement, preserving private loopback and explicit Unix broker path. Test direct sockets, alternate processes and namespace reentry. Same host UID/filesystem and Unix-socket authority remain separate risks; do not close all D3B from network-only acceptance. Root dirty files protected; only owned new worktree changes.
+
+### 2026-10-18T11:44:25.303777+03:00 — D3B1 native checkpoint
+
+Kernel network probe21/21 and real Gateway normal PASS after sendmsg compatibility correction; initial fail retained. Gateway new network namespace with zero capabilities, NoNewPrivs1 and Seccomp2; original broker stays host-side. Remaining negative Gateway scenarios request7e5af2d3-c421-4e10-a6b4-d3b200000016; do not replay unknown work. 17 offline tests and full1876 planned, NOT accepted yet. Full D3B remains OPEN (same host UID/filesystem/Unix paths).
+
+### 2026-10-18T11:51:45.714629+03:00 — D3B1 local scoped acceptance
+
+21 kernel checks and4 native Gateway cases PASS; full1876/1876 (17new included) exit0 skip0,266source unchanged; staticPASS separately. Native normal completed4calls; budget-limit unknown3,disconnect unknown4/replies3,review-revoked unknown3 no candidate. New network-only launcher opt-in; no default personal/production activation. Initial sendmsg compatibility failure retained. No owned Gateway/broker active; private test profiles retained and known credential values absent from public evidence. Next exact-source stage/commit/push/CI, then filesystem/PID/credential isolation. Full D3B NOT ACCEPTED.

@@ -264,3 +264,7 @@ Gateways during default unittest discovery. Test providers are scripted;
 not actual model inference. Evidence and exact source hashes are under
 evidence/d2b2-gateway-af21/. Full expected baseline1848+11=1859; use
 full-standard.json and root-static.json for actual observed results.
+
+## D3B1 scope
+
+17 offline tests added; native network probe (21 checks) and four Gateway experiments are separate. No namespace creation or model call in default unittest discovery. Complete D3B and real model gates remain open. Evidence: evidence/d3b-netns-4e62/.

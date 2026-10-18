@@ -227,3 +227,7 @@ See docs/DREAM-D2B2-FULL-GATEWAY.md and evidence/d2b2-gateway-af21/.
 Next: D3B OS/network and real provider contract, controlled actual model
 held-out experiment; cross-epoch Dream recovery and Docker combined path
 remain OPEN. No active memory/skill promotion.
+
+## D3B1 network namespace — 18 October 2026
+
+Opt-in rootless user/network namespace, zero capabilities, no_new_privs and inherited seccomp added. Direct TCP/UDP/alternate-family and exec-child tests; actual Gateway with original host broker requalified. Host UID/filesystem/path Unix services remain shared: complete D3B NOT ACCEPTED. Next deny-by-default filesystem/PID/credential separation. See docs/D3B1-NETWORK-NAMESPACE.md.

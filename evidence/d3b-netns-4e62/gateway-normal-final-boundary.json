@@ -1,0 +1,62 @@
+{
+  "result": "PASS",
+  "gatewayNetworkBoundarySamples": [
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    },
+    {
+      "networkNamespaceSeparate": true,
+      "noNewPrivs": true,
+      "seccomp": true,
+      "capabilitiesZero": true
+    }
+  ],
+  "gatewayInSeparateNetworkNamespace": true,
+  "productionBrokerAndOriginInHostNamespace": true,
+  "controllerJoinsForLocalApiOnly": true,
+  "originalGatewayResult": "PASS",
+  "completeD3B": false,
+  "hostFilesystemSeparated": false,
+  "separateHostUid": false,
+  "realModelCalls": 0,
+  "errors": []
+}
