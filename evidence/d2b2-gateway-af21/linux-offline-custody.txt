@@ -1,0 +1,16 @@
+test_failure_controls_have_no_extra_dispatch_on_repeat (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_failure_controls_have_no_extra_dispatch_on_repeat) ... ok
+test_failure_expectations_never_promote_pair (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_failure_expectations_never_promote_pair) ... ok
+test_four_final_runs_use_real_gateway_and_original_broker (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_four_final_runs_use_real_gateway_and_original_broker) ... ok
+test_initial_failures_preserved_as_failures (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_initial_failures_preserved_as_failures) ... ok
+test_negative_budget_preserves_per_attempt_limits (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_negative_budget_preserves_per_attempt_limits) ... ok
+test_normal_policy_accounts_for_four_reservations (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_normal_policy_accounts_for_four_reservations) ... ok
+test_origin_wire_hash_counts_match_existing_ledger (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_origin_wire_hash_counts_match_existing_ledger) ... ok
+test_private_dependencies_pinned_and_not_system_installed (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_private_dependencies_pinned_and_not_system_installed) ... ok
+test_receipts_remain_bound_to_exact_measured_source (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_receipts_remain_bound_to_exact_measured_source) ... ok
+test_shutdown_and_nonpromotion_are_explicit (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_shutdown_and_nonpromotion_are_explicit) ... ok
+test_unknown_scenario_refused (test_d2b2_gateway_acceptance.GatewayAcceptanceTests.test_unknown_scenario_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.336s
+
+OK

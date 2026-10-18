@@ -3,7 +3,7 @@
   "observedAt": "2026-10-18T10:50:35.433372+03:00",
   "baseCommit": "d7f97ffc45d2cbf9907590effec672154ad1518c",
   "branch": "alaz/dream-d2b2-gateway-af21",
-  "result": "SCOPED_NATIVE_GATEWAY_PASS_PENDING_PUBLICATION",
+  "result": "SCOPED_NATIVE_GATEWAY_PUBLISHED_CODE_CI_SUCCESS",
   "actualFinalNativeScenarios": {
     "normal": {
       "receipt": "normal-final.json",
@@ -87,6 +87,9 @@
   "d2b2CrossEpochRecoveryQualified": false,
   "productPackagesChanged": false,
   "mainMerged": false,
-  "codeCommit": null,
-  "codeCI": "NOT_YET_PUBLISHED"
+  "codeCommit": "35099bda644ebe042a4fab40649604fb837bb367",
+  "codeCI": "success",
+  "codeCIReceipt": "code-ci-success.json",
+  "same11TestsAlsoPassOnPreparedLinux": true,
+  "documentationCommitCI": "VERIFY_SEPARATELY_AFTER_PUBLICATION"
 }

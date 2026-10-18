@@ -1,10 +1,10 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T10:51:55.359047+03:00
+Son güncelleme: 2026-10-18T10:58:05.757705+03:00
 
 ## Güncel nokta
 
-DREAM-D2B2-GATEWAY-AF21: actual pinned Hermes Gateway + original aiohttp broker 4/4 final native scenarios PASS; full1859/1859 + root static PASS;261 measured source hashes unchanged. Exact Git/CI publication IN PROGRESS. Real model, D3B and learned-skill transfer NOT RUN. Worktree scratch/worktrees/dream-d2b2-gateway-af21; base d7f97ffc.
+DREAM-D2B2-GATEWAY-AF21: actual Hermes Gateway + original aiohttp broker 4/4 native PASS;1859/1859 standard PASS;261 source bytes exact; code35099bd GitHub alaz/local-ci SUCCESS. Documentation CI separately. Real model/learning/D3B/Docker/cross-epoch Dream recovery NOT RUN.
 
 
 DREAM-D2B2-NATIVE-9C31:3 native Linux Unix IPC PASS +1848/1848 standard +rootstatic PASS; code6704850 CI SUCCESS. Docs CI separately. Hermes Gateway/aiohttp/real model NOT RUN.
@@ -642,3 +642,7 @@ Final normal/budget-limit/candidate-disconnect/review-revoked all PASS with the 
 ### 2026-10-18T10:51:55.359047+03:00 — Native Gateway scoped acceptance complete; Git delivery
 
 Four final same-source cases PASS: normal completed4/4HTTP; budget-limit unknown3/3; candidate-disconnect unknown4/3; review-revoked unknown3/3 with no candidate request. Full1859/1859 exit0 skip0 (11new tests included),261source stable; root static PASS. Original packages and source locks unchanged. No live owned Gateway/broker; four clean shutdowns, sentinels unchanged. Preserve all prior recovery journal entries and initial FAIL reports. Model replies scripted; no paid call/learning/Docker/OS egress claim. Docs/DREAM-D2B2-FULL-GATEWAY.md and evidence/d2b2-gateway-af21/summary.json. Next verify code CI, then D3B real-provider gates and independent held-out model experiment; cross-epoch Dream recovery remains OPEN.
+
+### 2026-10-18T10:58:05.757705+03:00 — AF21 exact-code CI SUCCESS and final documentation
+
+35099bda644ebe042a4fab40649604fb837bb367 pushed, GitHub alaz/local-ci success. Four final real Gateway/original broker cases PASS, full1859/1859 incl11new,261source exact in commit; same11 offline checks additionally PASS on prepared Linux, not 11 extra unique tests. No live owned processes, four shutdowns verified, private generated tokens absent from scanned public evidence. Doc follow-up limited to report/status/CI/proof, no product changes. Root mirror preserved. Exact next work: D3B OS/network boundary and explicit real-provider budget contract, then actual model held-out evaluation; Dream cross-epoch and Docker combined path still OPEN. Do not claim scripted8-to12 score proves learning.

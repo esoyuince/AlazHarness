@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-18T10:56:03.252037+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 11,
+  "scope": "same11 policy/custody tests additionally executed on prepared Linux Python3.14; not extra unique cases or native Gateway runs",
+  "logSha256": "5b142ae5160c44167a08930c2789b87ce631cf23508816dc2eb83291f350d410",
+  "codeCommit": "35099bda644ebe042a4fab40649604fb837bb367"
+}

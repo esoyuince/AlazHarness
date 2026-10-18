@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-18T10:55:07.997766+03:00",
+  "commit": "35099bda644ebe042a4fab40649604fb837bb367",
+  "sourceFilesMatched": 261,
+  "nativeEvidenceCommitHashes": {
+    "normal": "8ab9cf41a42ef9dec93ee06bef613523c4201fc756ace6a2156f7a6e3402151c",
+    "budget-limit": "b1b01ebd41ba86fc640677e85aea9f05ecf10851643e03d7ef95192c64207449",
+    "candidate-disconnect": "7cac77b9569b8086ce78ff5acda52cabcfe9df4eff5572d18c0787f9eb0610ab",
+    "review-revoked": "c363e02968f28cec25c7448c491538d1393db7a8df42488e8faf4df6e228348a"
+  },
+  "packagesConfigSourceLocksUnchanged": true,
+  "worktreeClean": true,
+  "upstreamEqual": true,
+  "rootMirrorEqual": true,
+  "mainUnchanged": true
+}

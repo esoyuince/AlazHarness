@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-18T10:58:05.757705+03:00",
+  "source": "GitHub get_commit_combined_status",
+  "commit": "35099bda644ebe042a4fab40649604fb837bb367",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "remoteTestCount": null,
+  "scope": "exact QA code commit; native Gateway runs and local full test counts evidenced separately"
+}

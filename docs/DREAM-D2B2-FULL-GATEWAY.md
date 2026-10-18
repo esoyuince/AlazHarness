@@ -150,3 +150,17 @@ Bu dar kontrol genel sır taraması veya OS izolasyon sertifikası değildir.
 Özel teşhis profilleri özel Linux runtime alanında tutulmaktadır.
 
 Git/CI yayını bu yerel kanıttan ayrı doğrulanacaktır.
+
+## Git yayını ve aynı-kaynak CI — 2026-10-18T10:58:05.757705+03:00
+
+Kabul kodu ve kanıtlar `35099bda644ebe042a4fab40649604fb837bb367` commit’iyle
+`alaz/dream-d2b2-gateway-af21` dalına gönderildi. GitHub `alaz/local-ci`
+**SUCCESS** olarak doğrulandı; API uzak test sayısını raporlamaz. Yerel
+1.859/1.859 test ve dört native koşu ayrı kanıtlardır. Aynı 11 yeni
+çevrimdışı kontrol hazırlanmış Linux Python ortamında da geçti; bunlar
+yeni benzersiz testler veya yeni Gateway koşuları değildir.
+
+Yayımlanan commit içindeki 261 kaynak dosyası ve dört native JSON makbuzu
+test edilen baytlarla eşleşir. Ürün paketleri, konfigürasyon kilitleri ve
+`main` değişmedi. Bu bölümün eklendiği yalnız-belge commit’inin CI durumu
+yayından sonra ayrı kontrol edilir; kod CI başarısı onun yerine sayılmaz.
