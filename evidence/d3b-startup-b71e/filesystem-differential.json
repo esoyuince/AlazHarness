@@ -1,0 +1,24 @@
+{
+  "exitCode": 0,
+  "stderr": "",
+  "sameSourceBytes": true,
+  "sourceSha256": "2dc615adb5e94cc296c84ab4dc3ab7c14968bec6ad9792ca7d1280973eabbe2c",
+  "access": [
+    {
+      "readable": false,
+      "errno": 13,
+      "location": "windows-mounted"
+    },
+    {
+      "readable": true,
+      "bytes": 5795,
+      "location": "linux-local"
+    },
+    {
+      "readable": false,
+      "errno": 13,
+      "location": "windows-mounted"
+    }
+  ],
+  "linuxKernel": "6.6.87.2-microsoft-standard-WSL2"
+}

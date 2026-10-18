@@ -1,0 +1,9 @@
+{
+  "ownedGatewayOrBrokerProcessesLive": 0,
+  "sourceSnapshotExactFiles": 176,
+  "testCredentialValuesChecked": 12,
+  "publicFilesScanned": 34,
+  "credentialMatches": [],
+  "notUniversalSecretScan": true,
+  "userCredentialsRead": false
+}

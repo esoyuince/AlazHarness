@@ -21,6 +21,8 @@ FILE_READ = (1 << 0) | (1 << 2)
 WRITE = HANDLED & ~((1 << 0) | (1 << 6) | (1 << 11))
 FILE_WRITE = (1 << 1) | (1 << 2) | (1 << 14)
 FIELDS = {'version', 'enabled', 'readonly', 'writable', 'protected'}
+# Opt-in metadata for this exact launcher PID; no proc tree, memory or environment.
+SELF_METADATA = frozenset({'status', 'stat', 'cmdline'})
 BROAD = {'/', '/home', '/mnt', '/tmp', '/var', '/run', '/root', '/etc', '/dev'}
 
 class GuardRejected(ValueError):
@@ -55,7 +57,7 @@ def beneath(child, parent):
 
 
 def validate_policy(value):
-    require(type(value) is dict and set(value) == FIELDS,
+    require(type(value) is dict and set(value) in (FIELDS, FIELDS | {'self_metadata'}),
             'credential_guard_policy_fields')
     require(type(value['version']) is int and value['version'] == 1,
             'credential_guard_version')
@@ -90,7 +92,21 @@ def validate_policy(value):
     for ro in out['readonly']:
         require(not any(beneath(ro, rw) or beneath(rw, ro) for rw in out['writable']),
                 'credential_guard_overlapping_access')
+    if 'self_metadata' in value:
+        names = value['self_metadata']
+        require(type(names) is list and 1 <= len(names) <= len(SELF_METADATA)
+                and all(type(n) is str and n in SELF_METADATA for n in names),
+                'credential_guard_self_metadata')
+        require(len(set(names)) == len(names), 'credential_guard_duplicate_self_metadata')
+        out['self_metadata'] = sorted(names)
     return out
+
+
+def self_metadata_paths(policy):
+    # Resolve only after entering the fresh launcher, not in its controller.
+    # These are file-inode grants, not /proc/self directory permissions.
+    return [Path('/proc') / str(os.getpid()) / name
+            for name in policy.get('self_metadata', [])]
 
 
 def policy_digest(policy):
@@ -204,6 +220,23 @@ def apply(policy):
                     require(rc == 0, 'credential_guard_add_rule_failed')
                 finally:
                     os.close(fd)
+        metadata = self_metadata_paths(policy)
+        for path in metadata:
+            require(path.is_file() and not path.is_symlink() and path == path.resolve(),
+                    'credential_guard_self_metadata_changed')
+            fd = os.open(path, os.O_PATH | os.O_CLOEXEC | os.O_NOFOLLOW)
+            try:
+                info = os.fstat(fd)
+                current = path.stat()
+                require(stat.S_ISREG(info.st_mode) and info.st_uid == os.getuid()
+                        and (info.st_dev, info.st_ino) == (current.st_dev, current.st_ino),
+                        'credential_guard_self_metadata_changed')
+                rule = PathRule(1 << 2, fd)  # READ_FILE only, not EXECUTE or READ_DIR.
+                require(libc.syscall(ctypes.c_long(445), ctypes.c_int(handle),
+                                    ctypes.c_int(1), ctypes.byref(rule), ctypes.c_uint32(0)) == 0,
+                        'credential_guard_self_metadata_rule_failed')
+            finally:
+                os.close(fd)
         require(libc.prctl(38, 1, 0, 0, 0) == 0, 'credential_guard_no_new_privs_failed')
         require(libc.syscall(ctypes.c_long(446), ctypes.c_int(handle), ctypes.c_uint32(0)) == 0,
                 'credential_guard_enforcement_failed')
@@ -225,6 +258,8 @@ def apply(policy):
     return {'version': 1, 'state': 'enforced', 'landlockAbi': abi,
             'handledFilesystemRights': HANDLED, 'noNewPrivs': True,
             'closedSelfExecutableFds': closed_executable_fds,
+            'selfMetadataReadonly': policy.get('self_metadata', []),
+            'procDirectoryGranted': False,
             'protectedReadDenials': denied, 'policySha256': policy_digest(policy),
             'scope': 'Landlock ABI3 filesystem opens; not network/UID/metadata isolation',
             'networkConfinementVerified': False, 'separateHostUid': False}

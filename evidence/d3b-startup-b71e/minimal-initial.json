@@ -1,0 +1,19 @@
+{
+  "scope": "new isolated subprocess reproduction; no Gateway/model, old blocked log not read",
+  "records": [
+    {
+      "target": "system",
+      "exitCode": 0,
+      "stdout": "BOOT_OK 3.12.3 16\n",
+      "stderr": "",
+      "guardEnforced": true
+    },
+    {
+      "target": "prepared",
+      "exitCode": 0,
+      "stdout": "BOOT_OK 3.14.3 16\n",
+      "stderr": "",
+      "guardEnforced": true
+    }
+  ]
+}

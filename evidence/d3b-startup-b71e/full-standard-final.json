@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-18T15:56:25.308830+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1897,
+  "expected": 1897,
+  "newTestsIncludedOnce": 12,
+  "sourceFiles": 268,
+  "sourceDrift": [],
+  "skipsReported": false,
+  "seconds": 137.086,
+  "logSha256": "9c0fbeea51a46b2912dbd37d5b5ee44de61781923b88a36f21d346935b455d3e",
+  "scope": "full offline unittest, does not execute the four live Linux Gateway cases"
+}

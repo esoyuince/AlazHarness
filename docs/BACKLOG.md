@@ -234,3 +234,12 @@ Opt-in ABI3 Landlock guard, native child denial/read/write checks and isolated
 launcher implemented. Prepared full Gateway under guard still FAIL at startup.
 Do not conflate with concurrent D3B-NETNS-4E62 network work; own root mirror
 not overwritten. See docs/D3B-CREDENTIAL-GUARD.md. Full D3B remains OPEN.
+
+## D3B-CREDENTIAL-STARTUP-B71E
+
+Korumalı Gateway başlangıcı: Windows bağlı kaynak yerine SHA-eşit Linux
+kopyası; kendi PID status/stat/cmdline dosyalarına opt-in READ_FILE; özel
+XDG kontrol soketi dizini; salt-okunur MIME türleri dosyası. Önceki dar
+koruma kuralları korunur. Dört gerçek Gateway senaryosu ve iki ayrı kernel
+probe sonucu evidence/d3b-startup-b71e/ içinde. Ağ dalıyla birleşik kabul,
+UID/otorite ayrımı ve gerçek model öğrenmesi ayrı açık işler.

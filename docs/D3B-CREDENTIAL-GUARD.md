@@ -159,3 +159,11 @@ olarak kalır; başarılı CI bunu değiştirmez.
 Bu bölüm ve CI makbuzunu ekleyen yalnız-belge commit’inin durumu yayından
 sonra ayrıca kontrol edilir. Eşzamanlı ağ çalışmasının kök durum aynasına
 yazılmadı; devam kaydı bu çalışma ağacının izlenen `status.md` dosyasıdır.
+
+## Başlangıç onarımı devam çalışması — B71E
+
+Önceki 6E42 FAIL kayıtları tarihsel kanıt olarak korunur. Yeni B71E
+çalışması, Linux yerel kaynak kopyası, yalnız kendi PID metaverisi, özel
+kontrol soketi dizini ve salt-okunur MIME tablosuyla korumalı Gateway
+başlangıcını yeniden sınar. Güncel kapsam ve nihai testler
+docs/D3B-CREDENTIAL-STARTUP.md ve evidence/d3b-startup-b71e/ altındadır.

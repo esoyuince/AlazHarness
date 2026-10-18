@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T12:04:32.512464+03:00
+Son güncelleme: 2026-10-18T15:57:54.402732+03:00
 
 ## Güncel nokta
+
+D3B-CREDENTIAL-STARTUP-B71E GUARDED GATEWAY 4/4 PASS, full1897/1897 PASS, 268source stable; Git/CI pending: diagnose prepared Python/Gateway startup under unchanged filesystem boundaries; minimal justified permissions, original failures retained. Branch alaz/d3b-credential-startup-b71e; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-startup-b71e; base 7632784c1238fdb5ebd09ee1131cb6a52ba5a4a1. Network branch and root mirror are not owned by this fix and remain untouched. No live provider/model or memory promotion.
+
 
 D3B-CREDENTIAL-6E42 filesystem component PASS, guarded Gateway integration FAIL; code999ffab pushed and CI SUCCESS. Documentation CI separately; concurrent root mirror left untouched. Active NETWORK work is separately owned by D3B-NETNS-4E62; do not modify its tree or root status mirror. This branch alaz/d3b-credential-6e42 at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-credential-6e42 starts from 2bffac9aaf482363d335bdbd3c76cc687be83533. Root mirror intentionally not overwritten during concurrent work.
 
@@ -688,3 +691,15 @@ Guarded full Gateway remains FAIL, no real model/no network claim. Only docs,
 status and CI/provenance receipts updated now. Main and concurrent network
 worktree/root status are not modified. Next: resolve prepared runtime startup
 under the guard with narrowly justified permissions, then joint netns acceptance.
+
+### 2026-10-18T15:29:43.731935+03:00 — Prepared-runtime startup repair begins
+
+Read live credential branch status and guard code. Fresh isolated reproduction only; old blocked diagnostic read is not retried. First reproduce the startup failure with a minimal command, identify exact denied resource, then qualify actual Gateway and security refusal probes. Main and network worktree unchanged.
+
+### 2026-10-18T15:50:22.875505+03:00 — Guarded Gateway first full PASS; final acceptance pending
+
+Fresh diagnostics: identical worker bytes denied on this WSL Windows mount but readable on native Linux; moved only verified code snapshot (175 tracked files) to Linux filesystem. Prepared Python starts under unchanged guard. Native Hermes needed its own PID status/stat/cmdline leaves (explicit optional READ_FILE-only metadata, no proc directory/environment/memory), a private short XDG_RUNTIME_DIR for control socket, and readonly /etc/mime.types. Guard core still rejects broad grants and credential aliases. First real Gateway + original aiohttp broker + D1/D2A/D2B1/D2B2 now PASS with 4 requests/4 responses, broker exit0/socket removed, protected broker file denied. Provider replies remain scripted, not learning. Requalify all four scenarios and new metadata negative checks on frozen bytes before publication. Root/netns untouched.
+
+### 2026-10-18T15:57:54.402732+03:00 — B71E final scoped acceptance
+
+Four real guarded Gateway/original broker cases PASS on unchanged source snapshot; own PID leaf metadata allowed, full proc/secret/memory/other PID remain denied. Prepared interpreter native check16 assertions PASS; original13+3 native regression PASS. Full1897/1897 exit0 skips0,12new included once,268source same; staticPASS. Windows mount access differential and initial FAILs retained. No blanket grants, no network combined claim or model learning. Next publish this isolated branch, record exact CI, then coordinate common netns/filesystem acceptance. Root/netns/main untouched.

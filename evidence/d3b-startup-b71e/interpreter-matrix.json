@@ -1,0 +1,62 @@
+{
+  "scope": "new minimal exec startup, no Gateway/model",
+  "cases": [
+    {
+      "case": "system-system",
+      "exit": 0,
+      "stdout": "BOOT_OK 3.12.3 16\n",
+      "stderr": "",
+      "guard": {
+        "closedSelfExecutableFds": 0,
+        "handledFilesystemRights": 32767,
+        "landlockAbi": 3,
+        "networkConfinementVerified": false,
+        "noNewPrivs": true,
+        "policySha256": "d6c40ec3b48a293860e4137f7ccf98d36ebeb476db05521c781cfb7b9429db5b",
+        "protectedReadDenials": 1,
+        "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+        "separateHostUid": false,
+        "state": "enforced",
+        "version": 1
+      }
+    },
+    {
+      "case": "prepared-system",
+      "exit": 0,
+      "stdout": "BOOT_OK 3.12.3 16\n",
+      "stderr": "",
+      "guard": {
+        "closedSelfExecutableFds": 1,
+        "handledFilesystemRights": 32767,
+        "landlockAbi": 3,
+        "networkConfinementVerified": false,
+        "noNewPrivs": true,
+        "policySha256": "d6c40ec3b48a293860e4137f7ccf98d36ebeb476db05521c781cfb7b9429db5b",
+        "protectedReadDenials": 1,
+        "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+        "separateHostUid": false,
+        "state": "enforced",
+        "version": 1
+      }
+    },
+    {
+      "case": "prepared-prepared",
+      "exit": 0,
+      "stdout": "BOOT_OK 3.14.3 16\n",
+      "stderr": "",
+      "guard": {
+        "closedSelfExecutableFds": 1,
+        "handledFilesystemRights": 32767,
+        "landlockAbi": 3,
+        "networkConfinementVerified": false,
+        "noNewPrivs": true,
+        "policySha256": "d6c40ec3b48a293860e4137f7ccf98d36ebeb476db05521c781cfb7b9429db5b",
+        "protectedReadDenials": 1,
+        "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+        "separateHostUid": false,
+        "state": "enforced",
+        "version": 1
+      }
+    }
+  ]
+}

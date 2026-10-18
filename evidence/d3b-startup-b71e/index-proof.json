@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-18T15:59:45.137726+03:00",
+  "sourceFilesVerified": 268,
+  "stagedCountBeforeReceipt": 44,
+  "evidenceNormalization": [
+    {
+      "path": "evidence/d3b-startup-b71e/existing-tests-first.txt",
+      "originalSha256": "2821a6ad4ff36264682659a166ff4d0fb1bba6358d29222c327134c0fe54bd89",
+      "indexSha256": "59f05ea7b96456c6073a1a8f27a50854f04c6f3f41ff5924071a47ff55555d6a",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/focused-first.txt",
+      "originalSha256": "4cfdec41b3e92ae19ab0b96497e56af225cebe61de7fc39516cd46878d1bb83c",
+      "indexSha256": "64d49dcccf0da9af7a3f27c5268c4f36c994d9adb9115fdf88c96f95a05e8b65",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/full-standard-final.json",
+      "originalSha256": "c24d3b618ddef4042f4fa98decde6780d95c6b5b13f7aadc569a6bd9e600b90e",
+      "indexSha256": "0373eb20f4341b5362d4352d1f96af0b2f0cdf9ce3aaba754fcca8d1e9c27bdc",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/full-standard-final.txt",
+      "originalSha256": "9c0fbeea51a46b2912dbd37d5b5ee44de61781923b88a36f21d346935b455d3e",
+      "indexSha256": "242e1625f003bc460c2fcdac7fc93d5169bf7924e41b57e58eb34f52cf6e2f84",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/root-static-final.json",
+      "originalSha256": "8c42a21a604e078c3b4e517032f7bac0f8c0f55be4b54dab82f62eafded9efe3",
+      "indexSha256": "2bc9c91195c6db3e11ded8f889db0d8c0f221a300a673b7301ba032acdfcdae9",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/root-static-final.txt",
+      "originalSha256": "dc21086972b8368b36401f990d9033e7c7979b27ea826e65d76fae9f0fb4d007",
+      "indexSha256": "07c831bb2a02a90e2e94ffbe6b40dabd46f4eb1b1e4e81608ef55e16cceae3a3",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/source-freeze-final.json",
+      "originalSha256": "6d2350fe3b719e09135f02c0f44f29dc7885b38271bdbb220bdcafc926c65ab6",
+      "indexSha256": "02dbafd194a9c57f6c829299cc3a9c00fc6fa9d78f2f4864ff2e585c0a4ad88d",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-startup-b71e/summary.json",
+      "originalSha256": "65c7b452288218a4a1190ca196515ee377f819a868c71c7a9f654c1acfcb3b6f",
+      "indexSha256": "5ff2a3349d1a6e693da03025f9b79cddbd019a26e30b28d8d98e065b96633fe5",
+      "onlyLineEndings": true
+    }
+  ],
+  "rawEvidenceBytesKeptLocally": true,
+  "allNewPathsOwned": true,
+  "rootMirrorWritten": false,
+  "firstPreflightRejectedJsonCRLFOnly": true
+}

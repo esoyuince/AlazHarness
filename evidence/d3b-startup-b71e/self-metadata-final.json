@@ -1,0 +1,52 @@
+{
+  "result": "PASS",
+  "exitCode": 0,
+  "probe": {
+    "checks": {
+      "own_status_readable": true,
+      "own_stat_readable": true,
+      "own_cmdline_readable": true,
+      "proc_directory_denied": true,
+      "self_environ_denied": true,
+      "self_memory_denied": true,
+      "parent_status_denied": true,
+      "parent_memory_denied": true,
+      "secret_read_denied": true,
+      "secret_write_denied": true,
+      "allowed_read": true,
+      "allowed_write": true,
+      "sqlite_write": true,
+      "no_new_privs": true,
+      "no_new_privs_irreversible": true,
+      "descendant_not_granted_own_metadata_or_secret": true
+    },
+    "result": "PASS",
+    "valuesNotPublished": true
+  },
+  "guard": {
+    "closedSelfExecutableFds": 1,
+    "handledFilesystemRights": 32767,
+    "landlockAbi": 3,
+    "networkConfinementVerified": false,
+    "noNewPrivs": true,
+    "policySha256": "7089a14ae3b4c414501d6ec6d45d06dd85b5dd9b96fb63db7c38c3bc34c00dbd",
+    "procDirectoryGranted": false,
+    "protectedReadDenials": 1,
+    "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+    "selfMetadataReadonly": [
+      "cmdline",
+      "stat",
+      "status"
+    ],
+    "separateHostUid": false,
+    "state": "enforced",
+    "version": 1
+  },
+  "protectedOriginalUnchanged": true,
+  "realModelCalls": 0,
+  "separateHostUid": false,
+  "networkBoundaryVerified": false,
+  "preparedInterpreterExecuted": true,
+  "stderr": "",
+  "privateTemporaryFilesRemoved": true
+}

@@ -271,3 +271,10 @@ full-standard.json and root-static.json for actual observed results.
 13 child checks +3 refusal checks. No real model, no network sandbox claim.
 Gateway-under-guard failed attempts retained; a passing offline CI does not
 turn them into native acceptance. Evidence: evidence/d3b-credential-6e42/.
+
+## B71E dosya koruması başlangıç regresyonu
+
+12 yeni self-metadata politika testi tam unittest toplamına bir kez dahildir.
+38 testlik dar seçim eski26+yeni12 içerir. Dört canlı Linux Gateway koşusu
+ve ayrı iki kernel deneyi unittest ile karıştırılmaz. Kaynak sabitleme ve
+sonuçlar evidence/d3b-startup-b71e/ altında; ağ birleşik kabulü değildir.
