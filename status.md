@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-18T22:01:41.616485+03:00
+Son güncelleme: 2026-10-19T00:48:55.920603+03:00
 
 ## Güncel nokta
+
+D3B-IPC-A731 SCOPED PASS: selected pathname IPC projection; native Gateway4/4, kernel24+5, full1967/1967 skip0,283source exact. Git/CI pending; independent broker authority and fullD3B OPEN. Branch alaz/d3b-ipc-a731; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-a731; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. Combined predecessor code/doc CI SUCCESS. No real model, paid call, authority widening or main merge.
+
 
 D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Kod9a87838 origin push PASS; alaz/local-ci SUCCESS. Belge CI ayrı. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
 
@@ -789,3 +792,29 @@ Son takip yalnız belge/status/CI kayıtları; kendi CI sonucu ayrı okunur.
 Sonraki kesin iş: pathname Unix IPC sadece broker uçlarıyla sınırlandırma
 ve Gateway tarafından değiştirilemeyen broker bütçe/tek-kullanımlık izin
 otoritesi. Üretim varsayılanı, tamD3B ve otomatik öğrenme açılmaz.
+
+### 2026-10-19T00:20:46.226137+03:00 — D3B-IPC-A731 başlangıcı
+
+Önceki combined dal ve root status eşleşti; uncommitted kaynak yok. İlk ürün hedefi IPC: yalnız açıkça verilen broker socket ve özel runtime ağaçlarını görünür kılmak. Host servislerine bağlanma testi yok, yalnız tarafımızdan oluşturulan kontrol soketleri. Kernel mekanizması + gerçek Gateway kabulü birlikte hedeflenir; bileşen PASS tamD3B değildir. Bağımsız broker bütçe otoritesi ve gerçek-model kabulü ayrı açık kalır.
+
+### 2026-10-19T00:33:20.892584+03:00 — IPC kernel acceptance checkpoint
+
+24 owned-socket/kernel controls PASS in kernel-flags5.json: explicit broker and private runtime IPC work; unknown pathname, alias, parent proc root, host abstract/TCP and inherited descriptors denied. Earlier4 setup FAIL receipts retained; corrections masked inherited WSL submounts and preserved locked source flags, without host changes. Real Gateway integration now uses same original launcher with opt-in --ipc and exact source snapshot. Budget authority is still shared; no real model or fullD3B claim.
+
+### 2026-10-19T00:39:28.605918+03:00 — IPC görünümü gerçek Gateway normal PASS
+
+185-file Linux source snapshot, same Gateway PID, four broker/source hashes matched; native normal PASS. Final hardening refuses overlapping exports and incomplete scans; final native probes must be rerun for these exact bytes. Original normal and four kernel setup failures retained. No fullD3B/real-model claim.
+
+### 2026-10-19T00:46:14.075564+03:00 — Final IPC native4/4 ve kernel24+5 PASS
+
+Aynı185 kaynaklık Linux snapshot ile normal/budget/disconnect/revoke4/4, aynı Gateway PID üzerinde mount+netns+Landlock doğrulandı; broker/socket cleanup4/4. Kernel24 erişim+5 başlangıç reddi ayrı PASS; yalnız test broker2 bağlantı, izin dışı tüm test uçları0. Son source-freeze283 dosya; full1967 komutu a7312604-98fa-4db2-ae10-d6b500000025 devam ediyor, sonucu görülmeden başarı yazılmayacak. TamD3B, bağımsız broker otoritesi/gerçek model açık.
+
+### 2026-10-19T00:48:55.920603+03:00 — IPC yerel kabul ve teslim hazırlığı
+
+Güncel kaynakta full1967/1967 PASS,29yeni dahil; Linux aynı29 PASS.
+283 test/kod/config SHA değişmedi; dört nativeGateway aynı185source,
+24kernel+5ret ayrı PASS. Explicit broker korunurken kontrollü başka
+Unix uçları erişilemez. Host köklerinin dış yazıcısı güvenilir varsayılır;
+same-hostUID ve broker bağımsız bütçe NOT ACCEPTED. Landlock modülü
+birebir korundu. Rapor docs/D3B-IPC-PROJECTION.md; evidence/d3b-ipc-a731/.
+Yalnız bu dal kaynaklarını commit/push; main ve eski ağaçlar korunur.

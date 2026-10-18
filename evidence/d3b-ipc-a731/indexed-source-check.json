@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-10-19T00:49:55.646330+03:00",
+  "matchedSourceFiles": 283,
+  "lineEndingOnlyLogs": [
+    {
+      "path": "evidence/d3b-ipc-a731/full-standard.txt",
+      "originalSha256": "60199cae99f137b8bf8f1a230a5254495f12659adfabdc3dce7b50b2d47f718a",
+      "indexedSha256": "2ff524697c57dc05f990fd9c28e7589716bf36d56fa932fb75c0d55883bd4cc3",
+      "onlyLineEndings": true
+    },
+    {
+      "path": "evidence/d3b-ipc-a731/root-static.txt",
+      "originalSha256": "bc2033601d5e36d6ad9142edb0984177a5afb881be56e96500ef92258a065f7e",
+      "indexedSha256": "a29f28d3899f673c7fc6552aac483b0c85e528bdc7cae8e2a71b9319d6fdd64b",
+      "onlyLineEndings": true
+    }
+  ],
+  "rawLogsRetained": true
+}

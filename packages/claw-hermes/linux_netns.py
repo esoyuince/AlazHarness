@@ -99,7 +99,7 @@ class CapData(ctypes.Structure):
     _fields_=[('effective',ctypes.c_uint32),('permitted',ctypes.c_uint32),
               ('inheritable',ctypes.c_uint32)]
 
-def enter():
+def enter(*, filesystem_view=None):
     """Irreversible for this process. Caller MUST exit on any failure.
 
     This is a launch primitive, not authorization to invoke an arbitrary task.
@@ -111,6 +111,12 @@ def enter():
             'unprivileged_same_identity_required')
     require(threading.active_count()==1 and len(list(Path('/proc/self/task').iterdir()))==1,
             'fresh_single_thread_required')
+    mount_plan=None
+    if filesystem_view is not None:
+        import ipc_view
+        require(type(filesystem_view) is dict and set(filesystem_view)=={'ipc','filesystem'},
+                'network_mount_view_contract')
+        mount_plan=ipc_view.prepare(filesystem_view['ipc'],filesystem_view['filesystem'])
     before=status()
     require(before.get('NoNewPrivs')=='0','already_restricted_process')
     lib=_load_seccomp()
@@ -139,6 +145,9 @@ def enter():
         req=struct.pack('16sH',b'lo',0)
         flags=struct.unpack('16sH',fcntl.ioctl(ctl.fileno(),0x8913,req))[1]
         fcntl.ioctl(ctl.fileno(),0x8914,struct.pack('16sH',b'lo',flags|1))
+    # Mount projection needs the fresh user namespace capabilities; do not
+    # perform it after the immutable capability/seccomp drop.
+    mount_receipt=ipc_view.project(mount_plan) if mount_plan is not None else None
     _check_rc(libc.prctl(38,1,0,0,0),'no_new_privs_failed')
     for cap in range(64):
         valid=libc.prctl(23,cap,0,0,0)
@@ -157,4 +166,5 @@ def enter():
     return {'version':VERSION,'mode':'linux_netns_loopback_only',
             'before':before,'after':after,'inheritedRestrictions':True,
             'hostFilesystemIsolated':False,'separateHostUid':False,
-            'unixSocketAuthorityIsolated':False,'completeD3BAcceptance':False}
+            'unixSocketAuthorityIsolated':False,'completeD3BAcceptance':False,
+            **({'filesystemView':mount_receipt} if mount_receipt is not None else {})}

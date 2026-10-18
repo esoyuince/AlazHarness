@@ -1,0 +1,245 @@
+{
+  "observedAt": "2026-10-19T00:46:14.074515+03:00",
+  "id": "D3B-IPC-A731",
+  "scope": "selected pathname mount view with native Gateway; trusted host roots, no separate budget authority",
+  "gatewayFinalScenarios": [
+    {
+      "scenario": "normal",
+      "runId": "a731-final-normal",
+      "result": "PASS",
+      "evidence": "evidence/d3b-ipc-a731/gateway-a731-final-normal.json",
+      "sha256": "3a2ddc0508e5a6ce33df68afa0bf00eba52f3fc807a3017c26b3c19d9bf3786a",
+      "sourceFiles": 185,
+      "samePid": true,
+      "socketProjection": {
+        "bindCount": 23,
+        "explicitHostSocketCount": 1,
+        "filesystemRootsTrustedNotImmutable": true,
+        "fullD3B": false,
+        "hiddenNestedMountCount": 3,
+        "independentBrokerBudgetAuthority": false,
+        "mountNamespaceChanged": true,
+        "oldRootDetached": true,
+        "pid": 436,
+        "procView": "launching_pid_only",
+        "sameHostUid": true,
+        "scannedEntries": 80438,
+        "state": "projected",
+        "version": 1
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 4,
+        "nativeToolCalls": 0,
+        "egressGrants": 4,
+        "requestViewRows": 4,
+        "originRawByteMatches": 4,
+        "brokerResponsesObserved": 4,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "trial": {
+        "state": "completed",
+        "arms": [
+          "baseline",
+          "candidate"
+        ],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": null,
+        "duplicateRequestStatus": 200,
+        "localScore": {
+          "baselineCorrect": 8,
+          "candidateCorrect": 12,
+          "scriptedNotLearning": true
+        }
+      },
+      "brokerCounters": {
+        "physicalAttempts": 4,
+        "refused": 0,
+        "pings": 9,
+        "responses": 4
+      },
+      "cleanGatewayAndBroker": true
+    },
+    {
+      "scenario": "budget-limit",
+      "runId": "a731-final-budget",
+      "result": "PASS",
+      "evidence": "evidence/d3b-ipc-a731/gateway-a731-final-budget.json",
+      "sha256": "dde9ee50df5b053387417462204c481a5592e647a6d9ea3a1957c7ff63457630",
+      "sourceFiles": 185,
+      "samePid": true,
+      "socketProjection": {
+        "bindCount": 23,
+        "explicitHostSocketCount": 1,
+        "filesystemRootsTrustedNotImmutable": true,
+        "fullD3B": false,
+        "hiddenNestedMountCount": 3,
+        "independentBrokerBudgetAuthority": false,
+        "mountNamespaceChanged": true,
+        "oldRootDetached": true,
+        "pid": 621,
+        "procView": "launching_pid_only",
+        "sameHostUid": true,
+        "scannedEntries": 80438,
+        "state": "projected",
+        "version": 1
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 3,
+        "nativeToolCalls": 0,
+        "egressGrants": 3,
+        "requestViewRows": 3,
+        "originRawByteMatches": 3,
+        "brokerResponsesObserved": 3,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "trial": {
+        "state": "unknown",
+        "arms": [
+          "baseline"
+        ],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": "token_exposure_limit",
+        "duplicateRequestStatus": 202
+      },
+      "brokerCounters": {
+        "physicalAttempts": 3,
+        "refused": 0,
+        "pings": 9,
+        "responses": 3
+      },
+      "cleanGatewayAndBroker": true
+    },
+    {
+      "scenario": "candidate-disconnect",
+      "runId": "a731-final-disconnect",
+      "result": "PASS",
+      "evidence": "evidence/d3b-ipc-a731/gateway-a731-final-disconnect.json",
+      "sha256": "5595a1a1efb8cad7b58913223ace5abedcf47fccd5af1b1ea1ba5de197cccd37",
+      "sourceFiles": 185,
+      "samePid": true,
+      "socketProjection": {
+        "bindCount": 23,
+        "explicitHostSocketCount": 1,
+        "filesystemRootsTrustedNotImmutable": true,
+        "fullD3B": false,
+        "hiddenNestedMountCount": 3,
+        "independentBrokerBudgetAuthority": false,
+        "mountNamespaceChanged": true,
+        "oldRootDetached": true,
+        "pid": 822,
+        "procView": "launching_pid_only",
+        "sameHostUid": true,
+        "scannedEntries": 80438,
+        "state": "projected",
+        "version": 1
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 4,
+        "nativeToolCalls": 0,
+        "egressGrants": 4,
+        "requestViewRows": 4,
+        "originRawByteMatches": 4,
+        "brokerResponsesObserved": 3,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "trial": {
+        "state": "unknown",
+        "arms": [
+          "baseline"
+        ],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": "broker_request_refused",
+        "duplicateRequestStatus": 202
+      },
+      "brokerCounters": {
+        "physicalAttempts": 4,
+        "refused": 1,
+        "pings": 9,
+        "responses": 3
+      },
+      "cleanGatewayAndBroker": true
+    },
+    {
+      "scenario": "review-revoked",
+      "runId": "a731-final-revoke",
+      "result": "PASS",
+      "evidence": "evidence/d3b-ipc-a731/gateway-a731-final-revoke.json",
+      "sha256": "e31cd33dc6c4e06ce9f56243c25e1612b9d1bb976b3cdf94aa4edce2bee71558",
+      "sourceFiles": 185,
+      "samePid": true,
+      "socketProjection": {
+        "bindCount": 23,
+        "explicitHostSocketCount": 1,
+        "filesystemRootsTrustedNotImmutable": true,
+        "fullD3B": false,
+        "hiddenNestedMountCount": 3,
+        "independentBrokerBudgetAuthority": false,
+        "mountNamespaceChanged": true,
+        "oldRootDetached": true,
+        "pid": 1001,
+        "procView": "launching_pid_only",
+        "sameHostUid": true,
+        "scannedEntries": 80438,
+        "state": "projected",
+        "version": 1
+      },
+      "provenance": {
+        "nativeAdmissions": 1,
+        "providerReservations": 3,
+        "nativeToolCalls": 0,
+        "egressGrants": 3,
+        "requestViewRows": 3,
+        "originRawByteMatches": 3,
+        "brokerResponsesObserved": 3,
+        "d1CandidateRows": 1,
+        "d2aReviewRows": 1,
+        "d2b2TrialRows": 1,
+        "canonicalDBIntegrity": "ok"
+      },
+      "trial": {
+        "state": "unknown",
+        "arms": [],
+        "replayAddedReservations": 0,
+        "realModelInferenceVerified": false,
+        "reason": "dream_trial_review_unverified",
+        "duplicateRequestStatus": 409
+      },
+      "brokerCounters": {
+        "physicalAttempts": 3,
+        "refused": 0,
+        "pings": 9,
+        "responses": 3
+      },
+      "cleanGatewayAndBroker": true
+    }
+  ],
+  "nativeGatewayPasses": 4,
+  "gatewaySourceFiles": 185,
+  "kernelChecks": 24,
+  "kernelStartupRefusals": 5,
+  "kernelSourceMatchesFinal": true,
+  "nativeKernelEvidence": "evidence/d3b-ipc-a731/kernel-final.json",
+  "landlockUnmodifiedSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+  "knownEarlierSetupFailures": 4,
+  "fullStandard": "PENDING_SEPARATE_RUN",
+  "realModelCalls": 0,
+  "paidCalls": 0,
+  "fullD3B": false,
+  "independentBrokerBudgetAuthority": false,
+  "next": "independent broker-owned budget and one-use admission outside Gateway-writable records"
+}

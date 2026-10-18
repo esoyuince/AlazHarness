@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-19T00:28:06.648914+03:00",
+  "result": "FAIL",
+  "exitCode": 1,
+  "probe": {},
+  "ownedServerCounts": {
+    "broker": 0,
+    "blocked": 0,
+    "tcp": 0,
+    "abstract": 0
+  },
+  "positiveControlsAllLive": true,
+  "protectedUnchanged": true,
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/combined_guard.py\", line 64, in enforce\n    net = network.enter(filesystem_view={'ipc':value['ipc'],'filesystem':value['filesystem']}) if 'ipc' in value else network.enter()\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/linux_netns.py\", line 150, in enter\n    mount_receipt=ipc_view.project(mount_plan) if mount_plan is not None else None\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/ipc_view.py\", line 114, in project\n    require(identity(path)==tuple(expected) and str(Path(path).resolve())==path,'ipc_export_changed')\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/ipc_view.py\", line 27, in require\n    if not ok:raise IPCViewRejected(reason)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nipc_view.IPCViewRejected: ipc_export_changed\n",
+  "completeD3B": false,
+  "realModelCalls": 0,
+  "sourceSha256": {
+    "packages/claw-hermes/ipc_view.py": "3ad39dff97775298d65a99562d366a8abfdb5dd661ce33978d06c2abf257b1da",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+  },
+  "temporaryRootsRemoved": true
+}

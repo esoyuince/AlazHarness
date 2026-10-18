@@ -286,3 +286,10 @@ ayrı runtime yürütme değildir. evidence/d3b-credential-fix-a613/.
 ## D3B combined scope
 
 Existing credential1903 plus network17 plus new18 yields expected1938 unique offline tests. Four SAME-process Gateway experiments and24 kernel checks +5 startup refusals are separate. Full result is not inherited from parent CIs; source-freeze and full-standard.json must match. Native code snapshots184 files; full source/test/config manifest separately counted.
+
+## D3B-IPC-A731 test boundaries
+
+29 new default-discovered IPC contract/scan/composition tests. Native kernel
+24 checks +5 launch refusals and four actual Gateway scenarios run explicitly;
+not added into unittest counts. Previous mount-setup failures preserved.
+Exact sources/exit/Git evidence in evidence/d3b-ipc-a731/.

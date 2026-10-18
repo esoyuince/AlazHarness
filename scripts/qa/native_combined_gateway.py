@@ -24,29 +24,31 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run-id',required=True)
     parser.add_argument('--scenario',choices=base.SCENARIOS,default='normal')
+    parser.add_argument('--ipc',action='store_true')
     args=parser.parse_args()
     import re
     assert sys.platform=='linux' and re.fullmatch('[a-z0-9-]{4,40}',args.run_id)
-    out=LINUX/'source-workspace/runtime'/('combined-dc64-'+args.run_id)
+    out=LINUX/'source-workspace/runtime'/(('ipc-a731-' if args.ipc else 'combined-dc64-')+args.run_id)
     inner=ROOT/'evidence/d2b2-gateway-af21'/('combined-'+args.run_id+'.json')
-    target=ROOT/'evidence/d3b-combined-dc64'/('inner-'+args.run_id+'.json')
+    target=ROOT/('evidence/d3b-ipc-a731' if args.ipc else 'evidence/d3b-combined-dc64')/('inner-'+args.run_id+'.json')
     assert not out.exists() and not inner.exists() and not target.exists()
     original_popen=subprocess.Popen
     controller.GATEWAY_PID=None;controller.SAMPLES.clear()
-    moves=[];bound_command=None;contract=None;protected_hash=None
+    moves=[];bound_command=None;contract=None;protected_hash=None;broker_socket=None
     guardfile=out/'combined-guard.json'
-    with tempfile.TemporaryDirectory(prefix='alaz-dual-private-') as temporary:
+    with tempfile.TemporaryDirectory(prefix='alaz-dual-private-') as temporary, tempfile.TemporaryDirectory(prefix='alaz-ipc-root-') as ipc_root:
         private=Path(temporary);private.chmod(0o700)
         protected=private/'broker-private.json'
         sockets=private/'sockets';sockets.mkdir(mode=0o700)
         def launch(command,*a,**kw):
-            nonlocal bound_command,contract,protected_hash
+            nonlocal bound_command,contract,protected_hash,broker_socket
             argv=list(command)
             if str(ROOT/'scripts/run_provider_broker.py') in argv:
                 index=argv.index('--config')+1;source=Path(argv[index])
                 assert source==out/'broker-private.json' and not protected.exists()
                 source.rename(protected);protected.chmod(0o600);argv[index]=str(protected)
                 protected_hash=hashlib.sha256(protected.read_bytes()).hexdigest()
+                broker_socket=str(Path(argv[argv.index('--output')+1])/'egress.sock')
                 moves.append('broker_bootstrap_moved_outside_gateway_grants')
             elif str(ROOT/'scripts/native_gateway_worker.py') in argv:
                 assert protected.is_file() and len(moves)==1 and controller.GATEWAY_PID is None
@@ -62,6 +64,9 @@ def main():
                         'writable':[str(out),str(sockets),'/dev/null'],'protected':[str(protected)]}
                 contract=validate_contract({'version':1,'enabled':True,'launchId':args.run_id,
                     'network':'loopback_only','filesystem':policy,'commandSha256':command_digest(bound_command)})
+                if args.ipc:
+                    assert broker_socket and Path(broker_socket).is_socket()
+                    contract=validate_contract({**contract,'ipc':{'version':1,'mode':'projected_root','root':ipc_root,'brokerSocket':broker_socket}})
                 cfg=private/'combined-contract.json';cfg.write_text(json.dumps(contract));cfg.chmod(0o600)
                 wrapped=[str(PYTHON),'-I','-B',str(ROOT/'scripts/run_combined_guard.py'),
                          '--contract',str(cfg),'--receipt',str(guardfile),'--',*bound_command]
@@ -95,7 +100,10 @@ def main():
         passed=(result==0 and native.get('result')=='PASS' and identities and bindings and unchanged
             and combined.get('state')=='enforced' and fs.get('protectedReadDenials')==1
             and fs.get('state')=='enforced' and bool(controller.SAMPLES))
+        projected=combined.get('pathnameIpcView') or {}
+        if args.ipc:passed=passed and projected.get('state')=='projected' and projected.get('explicitHostSocketCount')==1 and projected.get('oldRootDetached') is True
         report={'result':'PASS' if passed else 'FAIL','scenario':args.scenario,
+            'pathnameSocketProjection':bool(args.ipc and passed),'projectedRoot':projected,
             'native':native,'combined':combined,'sameGatewayPidVerified':identities,
             'launchContractAndCommandBound':bindings,'protectedCredentialUnchanged':unchanged,
             'liveNetworkSamples':list(controller.SAMPLES),'wrapping':moves,
