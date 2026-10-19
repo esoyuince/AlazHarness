@@ -79,6 +79,9 @@ node tests/node/platform-cases.mjs all
 The inspector returns NOT_ACCEPTED and **does not start any agent,
 VM, WSL bridge, real provider or sandbox**. Test scenarios for macOS
 and ARM64 simulate host descriptions, not physical-device acceptance.
+PLAT-002A read-only Windows/WSL2 bridge is developed but its final
+native acceptance is **BLOCKED by an unknown WSL process timeout**; see
+[the scoped no-go report](docs/PLAT-002A-WINDOWS-WSL2-READONLY.md).
 Architecture: [ADR-0004](docs/adr/0004-portable-core-linux-security.md);
 [platform support matrix](docs/PLATFORM-COMPATIBILITY.md).
 Full D3B and multi-OS deployment remain future acceptance gates.

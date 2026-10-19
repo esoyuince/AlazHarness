@@ -361,3 +361,14 @@ The original Windows/WSL inspector evidence is immutable and anchored
 to the original b0178b5 source commit, not relabelled as proof for the
 optimized runner. No host CI timeout, privilege, model, service, or
 production configuration changes here.
+
+## PLAT-002A fixed WSL read-only protocol contracts
+
+The default Python unittest suite executes a Node24+ offline fixture
+(36 individual named scenario results plus syntax check), guest Python
+input/negative tests and immutable native evidence QA. No WSL guest
+starts in the default CI. The recorded native FAIL is an expected
+failure *receipt*, not a waived CI failure: its tests must reject any
+attempt to call it a PASS or imply sandbox acceptance.
+CI does not use a real provider, service, privileged command or
+Windows/WSL account change. See docs/PLAT-002A-WINDOWS-WSL2-READONLY.md.

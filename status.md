@@ -4,6 +4,33 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
+PLAT-002A NATIVE GATE BLOCKED (19 October 2026):
+Windows->WSL fixed read-only identity probe passed once exploratorily
+before final source, but final native 5-case run failed: positive
+GUEST_PROCESS_OUTCOME_UNKNOWN_TIMEOUT, four negative refusals PASS.
+A separate Linux guest process inspection timed out at 35s (exit124)
+and Windows tasklist process query timed out at 10s. Existing
+test-owned process closure UNKNOWN. Do not issue more WSL commands,
+privileged recovery/restart or blind native retries. All native
+receipts retained under evidence/plat-002a-wsl-19oct. Continue
+offline contracts and docs only. Full PLAT-002, D3B, macOS,
+real model and M1/M2 NOT ACCEPTED; root/main untouched.
+
+PLAT-002A Windows -> WSL2 read-only bound identity bridge IN PROGRESS
+(19 October 2026): clean worktree
+scratch/worktrees/plat-002-wsl-19oct on
+alaz/plat-002-wsl-readonly-19oct; base
+90074e12cf6edbf3e00b7319af6b1bf4f174dfb2
+(previous optimized PLAT-001 code CI SUCCESS status56711359499).
+Implement fixed read-only host/guest nonce, source provenance, OS/UID/
+namespace observation, bounded protocol and refusals with no user-supplied
+shell/command, no provider/model/permission grant, no automatic retry.
+Native Windows->Ubuntu WSL2 probe allowed only as explicit test;
+no privileged operation, user account change, VM setup, production
+process, or host service alteration. Real full D3B, WSL2 process
+confinement and macOS adapters NOT ACCEPTED. Old working trees/main
+remain unchanged.
+
 PLAT-001 CI-TIMEOUT FOLLOWUP IN PROGRESS (19 October 2026): code b0178b5 GitHub CI SUCCESS, docs-only 47fea6c GitHub alaz/local-ci FAILURE rc124 status56703328815 at 2026-10-19T15:32:28Z. Local full 2096/2096 PASS skip5, root static PASS. 180s CI job and 27 independent Node scenario process launches likely timing risk, not proven failing test. Fix test harness overhead without reducing 27 scenario coverage, rerun scope/full suite, publish with fresh exact SHA CI. No host server changes.
 
 PLAT-001 CODE CI SUCCESS / FINAL LOCAL PASS — Windows full2096/2096 exit0 skip5, root static2096 discovered/1503 inspected/2 gitlinks PASS; Windows and WSL2 actual host labels correct, Node27/27 each; source custody 5/5 exact Git LF digest matches. No model/agent process launched. Branch alaz/platform-routing-001-19oct, worktree scratch/worktrees/platform-routing-19oct base46766be. Guarded adapter and full D3B NOT ACCEPTED; actual Mac/ARM64 NOT TESTED; own GitHub CI PENDING. See ADR-0004 and docs/PLATFORM-COMPATIBILITY.md.
@@ -1186,3 +1213,45 @@ the 180-second timeout is permanently solved. Linux WSL platform
 Historical Native Windows/WSL data pinned to b0178b5 and CI failure
 47fea6c preserved. New branch commit/CI still PENDING. No server
 configuration or production security boundary changed.
+
+### 2026-10-19 — PLAT-002A guarded bridge preflight start
+
+New isolated branch alaz/plat-002-wsl-readonly-19oct from clean
+90074e1 PLAT-001 optimized CI-success. Plan: read-only host
+Windows Node->explicit Ubuntu WSL2 Python guest probe with bound
+one-time nonce, independent file identity, fixed script and no
+arbitrary user arguments. Validate correct OS/arch/UID/userns,
+stop/timeout without replay and invalid request refusals.
+The probe must explicitly refuse secure execution authority.
+No host user/group changes or real/paid provider calls.
+
+### 2026-10-19 — PLAT-002A unknown guest responsiveness, fail-closed
+
+Explicit read-only Windows Node -> WSL2 identity probe once returned
+self-reported Linux-x64 UID1000 with nonce/request/source checks and
+hostFilesystemIsolated:false. After source hardening, five-case
+one-shot Windows native acceptance recorded FAIL in
+evidence/plat-002a-wsl-19oct/native-win-wsl-identity-01.json:
+positive unknown WSL process outcome timeout 15s; wrong UID and
+three no-optin/arbitrary-input negatives refused.
+Read-only guest process inspection via WSL timed out 35s exit124,
+and Windows tasklist query timed out 10s. Neither can confirm
+whether earlier owned guest probe is still active. No kill/restart/
+blind replay or host/security setting change attempted. Precise
+diagnostic in evidence/plat-002a-wsl-19oct/native-stability-observed.json.
+Continue offline tests only; native acceptance BLOCKED.
+
+### 2026-10-19 — PLAT-002A offline contract and native evidence journal
+
+Fixed Windows absolute WSL host script + Linux -I/-B bounded JSON
+guest responder written; no arbitrary command, disk tool or real
+provider accepted. tests/test_wsl2_bridge.py 37/37 PASS:
+36 Node source/negative cases plus syntax test in one Node process.
+tests/test_wsl2_guest_protocol.py 20/20 PASS including duplicate
+JSON, unknown fields, NUL, malformed UTF8 and native-Windows
+refusals. tests/test_plat002_readonly_receipt.py 6/6 PASS, verifying
+the final native FAIL, four denial controls and seven source bytes.
+No WSL process or account creation inside default CI.
+Report docs/PLAT-002A-WINDOWS-WSL2-READONLY.md. Windows full root,
+static and branch GitHub CI NOT RUN yet; native PLAT-002 remains
+BLOCKED due unknown prior guest process state.

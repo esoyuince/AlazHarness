@@ -110,3 +110,14 @@ subprocess. Per-scenario unittest names remain discoverable; any failed
 JS assertion rejects the group. Original native observations stay
 pinned to their code SHA. No full D3B, Mac-native adapter or production
 launch is authorized by this update.
+
+## PLAT-002A fixed read-only WSL bridge (19 October)
+
+A fixed, shell-free Windows Node -> WSL2 Python identity probe exists
+as an opt-in QA component. Its pure protocol and refusal contracts
+are testable on Windows CI without invoking WSL. A prior exploratory
+identity query succeeded, but final native 5-case acceptance **FAILED**
+on an unknown WSL guest timeout; later guest process inspection and
+Windows tasklist checks also timed out. Native acceptance remains
+**BLOCKED/UNKNOWN**. Do not relabel this as a working agent runtime
+or a secure WSL2 launcher. Read docs/PLAT-002A-WINDOWS-WSL2-READONLY.md.

@@ -15,6 +15,7 @@ Ana hedef: docs/MVP-v0.1.md. Güncel gerçekleşen durum: status.md. Aşağıdak
 | HYB-008 | M1 kabul paketi | Tüm M1 senaryoları; ayrı mock ve gerçek-model raporları |
 | PLAT-001 | Platform-neutral Node route planning, fail-closed inspector | Windows and WSL2 Node cases plus simulated macOS/ARM64; no guarded start |
 | PLAT-002 | Windows host to verified WSL2 isolated worker bridge | Real guest identity/path/socket/process and cancellation native proof; no fallback |
+| PLAT-002A | Fixed read-only Windows/WSL identity bridge and explicit native NO-GO | Offline strict protocol and immutable FAIL receipt; guest process exit remains UNKNOWN |
 | PLAT-003 | Linux native secure adapter bound to D3B full guards | Distinct broker/Gateway host UID and IPC/root/FD/network/budget native acceptance |
 | PLAT-004 | Apple Silicon coordinator and trusted Linux worker | Physical Mac ARM64 tests; authenticated remote/VM proof; native ARM64 guard separate |
 | PLAT-005 | Portable run identity and state/permission parity | Cross-host deterministic real Gateway local-scripted acceptance, then paid model gate |
@@ -284,3 +285,18 @@ authorization. Read-only inspector and no-fallback tests: see
 docs/adr/0004-portable-core-linux-security.md and
 docs/PLATFORM-COMPATIBILITY.md. Full D3B and actual Mac ARM64
 acceptance are NOT implied by a platform simulation.
+
+
+## PLAT-002A read-only WSL host/guest checkpoint (2026-10-19)
+
+A fixed shell-free identity query and strict host/guest protocol have
+been implemented on branch alaz/plat-002-wsl-readonly-19oct.
+36 Node scenarios and 20 guest wire negatives run as offline
+contracts; 6 custody checks protect the native failed receipt.
+One exploratory identity handshake reported Linux x64 UID1000
+and matched nonce/source, but final-source native 5-case receipt is
+FAIL (WSL timeout). Subsequent process inspection also timed out;
+cannot claim guest process teardown or Windows file isolation.
+Do not start a production or model-facing bridge, auto-retry WSL,
+or close PLAT-002/full D3B. Details:
+docs/PLAT-002A-WINDOWS-WSL2-READONLY.md.

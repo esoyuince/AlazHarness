@@ -1,0 +1,43 @@
+{
+  "gate": "PLAT-002A_Native_Stability_Review",
+  "date": "2026-10-19",
+  "result": "NOT_ACCEPTED_WSL2_GUEST_RESPONSIVENESS_UNKNOWN",
+  "readOnlyPilotExploratoryPrior": {
+    "result": "PASS_READ_ONLY_GUEST_SELF_REPORT",
+    "scope": "earlier_probe_before_final_sandbox_source",
+    "guestUidObserved": 1000,
+    "secureExecutionAccepted": false
+  },
+  "exactNativeBatch": {
+    "file": "native-win-wsl-identity-01.json",
+    "result": "FAIL",
+    "attemptedCases": 5,
+    "positiveCode": "GUEST_PROCESS_OUTCOME_UNKNOWN_TIMEOUT",
+    "otherRefusalCases": 4,
+    "refusalsObserved": true,
+    "receiptRawSha256": "7600ec4ec48fa0a6f016b469b0847e8589788ca7efb65b7e974a2c8b3d83c026"
+  },
+  "independentGuestProcessInspection": {
+    "result": "UNKNOWN",
+    "reason": "WSL_READONLY_PROCESS_QUERY_DEADLINE_EXCEEDED",
+    "timeoutSeconds": 35,
+    "exitCode": 124,
+    "existingProcessesTerminatedConfirmed": false
+  },
+  "windowsTasklistInspection": {
+    "result": "UNKNOWN",
+    "reason": "WINDOWS_TASKLIST_TIMEOUT",
+    "timeoutSeconds": 10
+  },
+  "retainedOriginalFailure": true,
+  "noBlindNativeRetry": true,
+  "guestCancelKillNativeVerified": false,
+  "hostFilesystemIsolated": false,
+  "separateHostUidVerified": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "hostSystemAccountsAltered": false,
+  "hostServicesAltered": false,
+  "productionDeployment": false,
+  "nextNativeAction": "Only after host/WSL responsiveness and prior test-owned process state can be independently inspected."
+}
