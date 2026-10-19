@@ -4,6 +4,24 @@ Son güncelleme: 2026-10-19 (PLAT-002B Linux test-owned lifecycle IN PROGRESS)
 
 ## Güncel nokta
 
+PLAT-002B NATIVE OWNED-LINUX-CHILD SCOPED PASS, CODE CI SUCCESS:
+One rootless Windows->WSL2 test-owned process pilot PASS8/8 with
+source exact SHA copied into native Linux private /tmp, child
+exit0/TERM/KILL/reap and independent post-run 0 processes/0 temp
+roots. Windows full 2186 discovered, 2181 executed plus 5 Linux-only
+skipped, exit0 (238.704s). Root source static PASS1530 tracked
+text/2 gitlinks, code commit
+242a92dbec2adfd606e99cbe9065aed866666fd4 GitHub
+alaz/local-ci SUCCESS status56730161201
+2026-10-19T20:33:08Z. Dedicated branch
+alaz/plat-002b-lifecycle-19oct in worktree
+scratch/worktrees/plat-002b-lifecycle-19oct.
+Prior PLAT-002A native FAIL unchanged; Windows WSL-wrapper
+mid-flight cancellation, host filesystem isolation, separate
+real broker UID, budget, full D3B/M1/M2 NOT ACCEPTED.
+Real model calls0, root/main untouched. Docs-only followup CI
+still PENDING. Report docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.
+
 PLAT-002B SCOPED REAL WSL CHILD LIFECYCLE PASS:
 One rootless Windows->WSL2 QA run with fixed source SHA copied
 to private Linux /tmp (GNU stat ext2/ext3 family) returned native
@@ -1388,3 +1406,17 @@ zero errors. Native WSL owned-test one-shot8/8 PASS, post-run
 Windows WSL-wrapper mid-flight cancellation, full D3B and actual
 model remain UNVERIFIED. Git stage/code commit, push and independent
 exact-code CI still PENDING.
+
+### 2026-10-19T23:33:08+03:00 — PLAT-002B exact-code CI SUCCESS
+
+Code 242a92dbec2adfd606e99cbe9065aed866666fd4 published only
+to origin/alaz/plat-002b-lifecycle-19oct, immutable code source
+manifests match original native source SHA. GitHub alaz/local-ci
+SUCCESS id56730161201 at 2026-10-19T20:33:08Z.
+Root Windows2186/2186 exit0 with 5 Linux-only skipped;
+static2186 discovered/1530 files PASS.
+One-shot test-owned Linux child lifecycle native8/8 PASS;
+independent WSL post-run 0 matching processes/0 temp roots.
+Full PLAT-002/D3B, host wrapper cancel/guest-leasing and M1/M2
+NOT ACCEPTED. Recorded scoped CI in code-ci-observed.json.
+This documentation/status-only follow-up must independently pass CI.

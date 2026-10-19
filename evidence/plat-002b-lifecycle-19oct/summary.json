@@ -53,5 +53,13 @@
     "ignoredLocalLog": "runtime/plat-002b-lifecycle-19oct/full-standard-windows.txt",
     "logSha256": "bdade04498191b2f6a963575e3d58fa0e5086e32b49d8aa7a58711d910e58823"
   },
-  "exactCodeCi": "PENDING"
+  "exactCodeCi": {
+    "codeCommit": "242a92dbec2adfd606e99cbe9065aed866666fd4",
+    "result": "SUCCESS",
+    "context": "alaz/local-ci",
+    "statusId": 56730161201,
+    "statusUtc": "2026-10-19T20:33:08Z",
+    "docsFollowup": "PENDING"
+  },
+  "codeCiReceipt": "code-ci-observed.json"
 }

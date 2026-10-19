@@ -1,0 +1,29 @@
+{
+  "gate": "PLAT-002B_SCOPED_OWNED_LINUX_CHILD_LIFECYCLE",
+  "codeCommit": "242a92dbec2adfd606e99cbe9065aed866666fd4",
+  "branch": "alaz/plat-002b-lifecycle-19oct",
+  "context": "alaz/local-ci",
+  "result": "SUCCESS",
+  "statusId": 56730161201,
+  "description": "ALAZ Local CI passed",
+  "updatedAtUtc": "2026-10-19T20:33:08Z",
+  "native": {
+    "result": "PASS_SCOPED_TEST_OWNED_CHILDREN",
+    "eightChecksPass": 8,
+    "linuxSourceShaCopied": true,
+    "postRunMatchedProcesses": 0,
+    "postRunTempRoots": 0
+  },
+  "windowsFull": {
+    "result": "PASS",
+    "discovered": 2186,
+    "linuxOnlySkipped": 5,
+    "exitCode": 0
+  },
+  "modelCalls": 0,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "hostWslWrapperCancelVerified": false,
+  "mainMerged": false,
+  "docsFollowupCi": "PENDING"
+}

@@ -97,3 +97,20 @@ own ignored runtime/plat-002b-lifecycle-19oct directory, with its
 SHA-256 in the evidence summary. Root static check PASS: 2,186
 discovered, 1,530 tracked files and two pinned upstream links.
 Exact-code GitHub CI is pending and is distinct from these local tests. Do not call scoped native PASS full D3B PASS.
+
+
+## Exact PLAT-002B code CI status
+
+The native evidence/source code commit
+242a92dbec2adfd606e99cbe9065aed866666fd4 on the isolated
+alaz/plat-002b-lifecycle-19oct branch has GitHub alaz/local-ci
+**SUCCESS**, status ID 56730161201 at 2026-10-19T20:33:08Z.
+The exact original Git source hashes match the one-shot native
+Windows->WSL2 scope and saved evidence. Native 8/8 owned subprocess
+checks, Windows full 2186 exit0 skipped5, and source static
+2186 discovered/1530 tracked text files/2 gitlinks PASS.
+
+This CI does NOT qualify Windows-wrapper mid-flight cancel, full D3B,
+Windows host filesystem confinement, a separate broker host UID,
+or real agent/model execution. The following docs/evidence-only
+commit will need its own independent CI observation.
