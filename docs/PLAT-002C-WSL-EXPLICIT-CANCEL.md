@@ -128,3 +128,19 @@ PASS, 2,229 tests discovered, 1,540 tracked files, two upstream
 source gitlinks and zero errors. These are code-quality checks,
 not a new model invocation or a complete Linux confinement pass.
 Branch exact-code GitHub local-ci status still PENDING.
+
+
+## GitHub exact-code CI observation
+
+The code and native evidence were committed as
+08bc69f61379e0f4c2e744954eeee1b3d872cd66 on
+origin/alaz/plat-002c-cancel-20oct.
+GitHub alaz/local-ci: **SUCCESS**, status ID 56740857051
+at 2026-10-19T22:55:45Z. Three source files' tracked LF
+Git blob SHA values matched their accepted test-source manifest;
+the native Windows checkout source SHA matches the exact
+LF->CRLF byte mapping. Worktree remained clean.
+This CI success is for the explicit test-owned cancellation slice,
+not Windows wrapper forced kill, unknown-outcome replay, paid-model
+operation or full D3B confinement. A docs-only follow-up needs its
+own independent CI result.

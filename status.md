@@ -4,6 +4,22 @@ Son güncelleme: 2026-10-20 (PLAT-002C cancel protocol IN PROGRESS)
 
 ## Güncel nokta
 
+PLAT-002C SCOPED IN-BAND CANCEL CODE CI SUCCESS (2026-10-20):
+One rootless fixed Windows->WSL2 test-only native
+START/READY/CANCEL/CANCELLED PASS, source SHA/run nonce/worker
+PID matched, owned child killed/reaped, source/dir removed,
+independent guest post-scan 72 cmdlines/0 matching processes/roots.
+Windows root2229 tests exit0 skip5, local static
+PASS2229/1540 files/2 links, code
+08bc69f61379e0f4c2e744954eeee1b3d872cd66 on
+alaz/plat-002c-cancel-20oct GitHub local-ci SUCCESS
+status56740857051 2026-10-19T22:55:45Z.
+Worktree scratch/worktrees/plat-002c-cancel-20oct.
+Not Windows WSL wrapper force-kill, separate real broker UID,
+host filesystem confinement or full D3B/M1/M2. Model calls0.
+Documentation-only CI follow-up pending; main unchanged.
+See docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.
+
 PLAT-002C SCOPED REAL EXPLICIT CANCEL HANDSHAKE PASS (2026-10-20):
 Dedicated branch alaz/plat-002c-cancel-20oct in worktree
 scratch/worktrees/plat-002c-cancel-20oct, base 4be011b
@@ -1498,3 +1514,16 @@ No real model/tool. Next: freeze staged code blobs, commit to
 isolated branch, push and check exact GitHub alaz/local-ci.
 The in-band cancel test must never be presented as
 Windows wrapper force-kill/disconnect or D3B PASS.
+
+### 2026-10-20T01:55:45+03:00 — PLAT-002C code CI SUCCESS
+
+Code 08bc69f61379e0f4c2e744954eeee1b3d872cd66 independently
+GitHub alaz/local-ci SUCCESS id56740857051 at
+2026-10-19T22:55:45Z. Its actual Windows test2229 exit0
+skip5 and SHA-bounded native explicit cancel PASS remain valid.
+Evidence code-ci-observed.json added to tracked repo. This is
+only test-owned in-band cancellation, not WSL wrapper forced
+termination, guest orphan/lease fencing, production agent
+model, D3B/full PLAT-002 acceptance.
+Documentation-only follow-up pending its own CI; no product source
+bytes changed since accepted code.

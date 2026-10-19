@@ -1,0 +1,26 @@
+{
+  "gate": "PLAT-002C_SCOPED_NATIVE_INBAND_CANCEL",
+  "branch": "alaz/plat-002c-cancel-20oct",
+  "codeCommit": "08bc69f61379e0f4c2e744954eeee1b3d872cd66",
+  "githubContext": "alaz/local-ci",
+  "githubStatus": "SUCCESS",
+  "statusId": 56740857051,
+  "statusUtc": "2026-10-19T22:55:45Z",
+  "description": "ALAZ Local CI passed",
+  "nativeInBandCancel": "PASS_EXPLICIT_CANCEL_HANDSHAKE_TEST_OWNED",
+  "guestProcPostflightMatches": 0,
+  "ownedTempRootsRemaining": 0,
+  "windowsFull": {
+    "discovered": 2229,
+    "nonSkipped": 2224,
+    "linuxOnlySkipped": 5,
+    "exitCode": 0
+  },
+  "sourceBytesFrozen": true,
+  "hostWrapperForcedKillNotTested": true,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "mainMerged": false,
+  "docsFollowupCommitStatus": "PENDING"
+}

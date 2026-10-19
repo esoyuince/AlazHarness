@@ -61,5 +61,13 @@
     "exitCode": 0,
     "notFullNativeGatewayAcceptance": true
   },
-  "codeCommitCi": "PENDING"
+  "codeCommitCi": {
+    "sha": "08bc69f61379e0f4c2e744954eeee1b3d872cd66",
+    "state": "SUCCESS",
+    "context": "alaz/local-ci",
+    "statusId": 56740857051,
+    "statusUtc": "2026-10-19T22:55:45Z",
+    "docsFollowupCi": "PENDING"
+  },
+  "codeCiReceipt": "code-ci-observed.json"
 }
