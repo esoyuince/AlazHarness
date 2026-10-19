@@ -1,0 +1,22 @@
+{
+  "scope": "PLAT-001_EXACT_CODE_COMMIT_OFFLINE_ROUTING_NOT_SECURE_EXECUTION",
+  "codeCommit": "b0178b58714871c63a37ecc3a9af7972e45699a5",
+  "parentCommit": "46766bef55e0fb3f3a93dfb1356536400ba2b4d7",
+  "branch": "alaz/platform-routing-001-19oct",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "description": "ALAZ Local CI passed",
+  "statusId": 56702830465,
+  "statusUtc": "2026-10-19T15:26:59Z",
+  "hostInspectorWindows": "win32/x64 NOT_ACCEPTED",
+  "hostInspectorWsl": "linux/x64 linux-wsl2-guest NOT_ACCEPTED",
+  "windowsCaseSuite": 27,
+  "wslCaseSuite": 27,
+  "windowsStandardRootTests": 2096,
+  "platformLinuxOnlySkipped": 5,
+  "guardedRouteAuthorized": false,
+  "actualMacRun": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "mainMerged": false
+}

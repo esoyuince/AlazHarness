@@ -62,6 +62,13 @@
     "paidModelCalls": 0,
     "scope": "M0_HYB_MOCK_STATIC_NOT_RUNTIME_TEST"
   },
-  "codeCommitGitHubCi": "PENDING",
-  "fullD3BAccepted": false
+  "codeCommitGitHubCi": {
+    "commit": "b0178b58714871c63a37ecc3a9af7972e45699a5",
+    "context": "alaz/local-ci",
+    "result": "SUCCESS",
+    "statusId": 56702830465,
+    "statusUtc": "2026-10-19T15:26:59Z"
+  },
+  "fullD3BAccepted": false,
+  "docsFollowupCommitCi": "PENDING"
 }

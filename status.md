@@ -4,7 +4,7 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
-PLAT-001 FINAL LOCAL PASS — Windows full2096/2096 exit0 skip5, root static2096 discovered/1503 inspected/2 gitlinks PASS; Windows and WSL2 actual host labels correct, Node27/27 each; source custody 5/5 exact Git LF digest matches. No model/agent process launched. Branch alaz/platform-routing-001-19oct, worktree scratch/worktrees/platform-routing-19oct base46766be. Guarded adapter and full D3B NOT ACCEPTED; actual Mac/ARM64 NOT TESTED; own GitHub CI PENDING. See ADR-0004 and docs/PLATFORM-COMPATIBILITY.md.
+PLAT-001 CODE CI SUCCESS / FINAL LOCAL PASS — Windows full2096/2096 exit0 skip5, root static2096 discovered/1503 inspected/2 gitlinks PASS; Windows and WSL2 actual host labels correct, Node27/27 each; source custody 5/5 exact Git LF digest matches. No model/agent process launched. Branch alaz/platform-routing-001-19oct, worktree scratch/worktrees/platform-routing-19oct base46766be. Guarded adapter and full D3B NOT ACCEPTED; actual Mac/ARM64 NOT TESTED; own GitHub CI PENDING. See ADR-0004 and docs/PLATFORM-COMPATIBILITY.md.
 
 PLAT-001 SCOPED LOCAL FULL TEST PASS (19 Ekim 2026): branch alaz/platform-routing-001-19oct, dedicated worktree scratch/worktrees/platform-routing-19oct, base 46766be (GitHub CI previously SUCCESS). Windows and actual WSL2 inspectors NOT_ACCEPTED guarded; Windows Node27/27 and WSL2 Node27/27 offline PASS. New Python routing28/28 and receipt5/5, Windows full2096/2096 exit0 skip5. Mock/agent engine unchanged, model calls0. Mac/ARM64 native NOT RUN, guarded adapter remains prohibited; full D3B and M1/M2 NOT ACCEPTED. README/ADR-0004 and docs/PLATFORM-COMPATIBILITY.md updated, branch commit/CI pending.
 
@@ -1128,3 +1128,15 @@ Node Windows27/27 and WSL2 Linux27/27, 0 model calls.
 One code+evidence commit to own feature branch next, then separately
 verify exact GitHub alaz/local-ci. Do not merge main or launch guard
 based on this read-only host planner.
+
+### 2026-10-19T18:26:59+03:00 — PLAT-001 exact code CI SUCCESS
+
+Published code b0178b58714871c63a37ecc3a9af7972e45699a5 on
+origin/alaz/platform-routing-001-19oct, unchanged old parent
+46766bef55e0fb3f3a93dfb1356536400ba2b4d7. GitHub
+alaz/local-ci exact-code SUCCESS id56702830465 at
+2026-10-19T15:26:59Z. Repo-local clean, five Git source blob SHAs
+matched original tests. This is PLAT-001 planner/read-only inspector
+acceptance ONLY: not an OS process launcher or full M1/D3B.
+Adding separate code-CI observation to evidence and status; docs-only
+followup must be committed/pushed and checked for its own exact CI.

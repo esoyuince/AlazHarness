@@ -84,3 +84,15 @@ SHA-256 is included in evidence/plat-001-19oct/summary.json.
 Final staged-root static gate: PASS, 2,096 tests discovered,
 1,503 tracked files checked, two upstream gitlinks preserved, exit0.
 This is not a full native sandbox or model/provider acceptance.
+
+## Exact code commit and CI observation
+
+Published on origin/alaz/platform-routing-001-19oct:
+b0178b58714871c63a37ecc3a9af7972e45699a5.
+Parent remains 46766bef55e0fb3f3a93dfb1356536400ba2b4d7.
+GitHub alaz/local-ci: **SUCCESS**, status id 56702830465 at
+2026-10-19T15:26:59Z. Its source manifest has 5 exact matching Git
+source blobs. Windows full 2096 tests exit0 skip5, two 27-case
+Windows/WSL2 Node read-only suites PASS. No model/guard activation,
+real Mac native test, remote dispatch or whole M1/M2 certificate
+follows from this status. Follow-up documentation CI is separate.
