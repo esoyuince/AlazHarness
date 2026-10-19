@@ -1,0 +1,49 @@
+{
+  "scope": "PLAT-001_CI_TIMEOUT_REMEDIATION_NO_TEST_REMOVAL",
+  "date": "2026-10-19",
+  "failedDocsFollowupCommit": "47fea6c9ad354c7b1f7ccf9951c1efc88adc4e43",
+  "originalPassedCodeCommit": "b0178b58714871c63a37ecc3a9af7972e45699a5",
+  "failedCiId": 56703328815,
+  "failedCiResult": "failure rc124",
+  "rootCause": "TIMEOUT_SUSPECTED_NOT_CONFIRMED_FROM_PER_TEST_LOG",
+  "mitigation": "27 JS assertions executed by one real Node all-mode group and verified by 27 named Python tests",
+  "skippedScenarioCount": 0,
+  "windowsRoutingFocused": {
+    "unittestCount": 28,
+    "exitCode": 0,
+    "observedSeconds": 1.472,
+    "nodeMajor": 24
+  },
+  "linuxRoutingFocused": {
+    "unittestCount": 28,
+    "exitCode": 0,
+    "observedSeconds": 2.036,
+    "nodeVersion": "v26.7.0"
+  },
+  "linuxHistoricalEvidence": {
+    "unittestCount": 5,
+    "exitCode": 0,
+    "observedSeconds": 5.979
+  },
+  "originalReadOnlyEvidencePinnedTo": "b0178b58714871c63a37ecc3a9af7972e45699a5",
+  "sourceCanonicalLfSha256": {
+    "tests/test_platform_routing.py": "57c96c951416387ff724eae2959dfe11ba05782d0fcf45bfeb989be782982f77",
+    "tests/test_platform_receipt.py": "d49a91b2e50b377a989bc93e47ae00c667137bcba8550866e67e6b32d0f7d747"
+  },
+  "realModelCalls": 0,
+  "guardedLaunchAuthorized": false,
+  "hostCiTimeoutRaised": false,
+  "mainMerged": false,
+  "wholeD3BAccepted": false,
+  "fullWindowsRegression": {
+    "result": "PASS",
+    "tests": 2096,
+    "linuxOnlySkipped": 5,
+    "exitCode": 0,
+    "unittestSeconds": 227.45,
+    "log": "full-standard-windows-ci-remediation.txt",
+    "logSha256": "88f61feafc0cee1ead67bf362b595b132e9170a0939752b69d7963234b06fd32",
+    "localWallTimeAbove180SecondServerLimit": true
+  },
+  "exactNewGitHubCi": "PENDING"
+}

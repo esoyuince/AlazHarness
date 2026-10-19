@@ -4,6 +4,8 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
+PLAT-001 CI-TIMEOUT FOLLOWUP IN PROGRESS (19 October 2026): code b0178b5 GitHub CI SUCCESS, docs-only 47fea6c GitHub alaz/local-ci FAILURE rc124 status56703328815 at 2026-10-19T15:32:28Z. Local full 2096/2096 PASS skip5, root static PASS. 180s CI job and 27 independent Node scenario process launches likely timing risk, not proven failing test. Fix test harness overhead without reducing 27 scenario coverage, rerun scope/full suite, publish with fresh exact SHA CI. No host server changes.
+
 PLAT-001 CODE CI SUCCESS / FINAL LOCAL PASS — Windows full2096/2096 exit0 skip5, root static2096 discovered/1503 inspected/2 gitlinks PASS; Windows and WSL2 actual host labels correct, Node27/27 each; source custody 5/5 exact Git LF digest matches. No model/agent process launched. Branch alaz/platform-routing-001-19oct, worktree scratch/worktrees/platform-routing-19oct base46766be. Guarded adapter and full D3B NOT ACCEPTED; actual Mac/ARM64 NOT TESTED; own GitHub CI PENDING. See ADR-0004 and docs/PLATFORM-COMPATIBILITY.md.
 
 PLAT-001 SCOPED LOCAL FULL TEST PASS (19 Ekim 2026): branch alaz/platform-routing-001-19oct, dedicated worktree scratch/worktrees/platform-routing-19oct, base 46766be (GitHub CI previously SUCCESS). Windows and actual WSL2 inspectors NOT_ACCEPTED guarded; Windows Node27/27 and WSL2 Node27/27 offline PASS. New Python routing28/28 and receipt5/5, Windows full2096/2096 exit0 skip5. Mock/agent engine unchanged, model calls0. Mac/ARM64 native NOT RUN, guarded adapter remains prohibited; full D3B and M1/M2 NOT ACCEPTED. README/ADR-0004 and docs/PLATFORM-COMPATIBILITY.md updated, branch commit/CI pending.
@@ -1140,3 +1142,47 @@ matched original tests. This is PLAT-001 planner/read-only inspector
 acceptance ONLY: not an OS process launcher or full M1/D3B.
 Adding separate code-CI observation to evidence and status; docs-only
 followup must be committed/pushed and checked for its own exact CI.
+
+### 2026-10-19 — PLAT-001 docs-only exact-CI timeout
+
+Resumed interrupted CI observation: code b0178b5 alaz/local-ci SUCCESS,
+docs-only 47fea6c alaz/local-ci FAILURE (rc124, status56703328815,
+2026-10-19T15:32:28Z). Existing CI documented 180s job cap.
+No authoritative per-test CI trace returned, so precise cause UNKNOWN.
+Retained failure receipt evidence/plat-001-19oct/docs-ci-timeout-observed.json.
+Engineer optimization of PLAT-001 Node case harness: execute all 27
+assertions once in one Node subprocess with 27 separately inspectable
+Python unittest test methods, without skips/fallback/budget changes.
+Requalify full suite and exact new commit GitHub CI. Existing main and
+older feature branches unaffected.
+
+### 2026-10-19 — PLAT-001 no-skip Node process consolidation
+
+Preserved original GitHub docs-only CI failure rc124. Optimized
+tests/test_platform_routing.py: all 27 actual Node JS assertions run
+once per unittest class with exact emitted scenario list, result and
+zero-model/privileged checks. Python discovery still 28 tests (27 named
+scenarios + source syntax). A missing/failed scenario rejects the whole
+group. Windows focused28/28 PASS in 1.472s; WSL Node v26.7.0 focused
+28/28 PASS in 2.036s, Node24+ minimum; original read-only receipt
+WSL5/5 PASS in 5.979s. Previous evidence five source SHAs now anchored
+to immutable original successful code b0178b5, not falsely attributed
+to optimized source. New remediation evidence:
+evidence/plat-001-19oct/ci-timeout-remediation.json.
+No host server CI changes, new provider calls or privilege widening.
+Full local regression and exact new GitHub CI remain PENDING.
+
+### 2026-10-19 — PLAT-001 CI runtime variability remains OPEN
+
+After consolidated one-Node-process 27-assertion test orchestration,
+Windows Python full default unittest 2096/2096 exit0, 5 Linux-only
+skips, 227.450s. Exact fresh log SHA256:
+88f61feafc0cee1ead67bf362b595b132e9170a0939752b69d7963234b06fd32.
+Previous full Windows run on accepted code was 171.127s; current
+run variance exceeds 180s maintainer CI job cap even though focused
+platform tests dropped from about 3s to 1.472s. Do not claim that
+the 180-second timeout is permanently solved. Linux WSL platform
+28/28 PASS with prepared Node v26.7.0 and original receipt5/5 PASS.
+Historical Native Windows/WSL data pinned to b0178b5 and CI failure
+47fea6c preserved. New branch commit/CI still PENDING. No server
+configuration or production security boundary changed.

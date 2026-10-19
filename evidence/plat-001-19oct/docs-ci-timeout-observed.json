@@ -1,0 +1,14 @@
+{
+  "scope": "PLAT-001_DOCUMENTATION_FOLLOWUP_CI_FAILURE",
+  "sha": "47fea6c9ad354c7b1f7ccf9951c1efc88adc4e43",
+  "context": "alaz/local-ci",
+  "state": "failure",
+  "description": "ALAZ Local CI failed (rc=124)",
+  "statusId": 56703328815,
+  "updatedAtUtc": "2026-10-19T15:32:28Z",
+  "suspectedReason": "180-second CI job time limit; exact individual test unknown; detailed job log unavailable",
+  "codeParent": "b0178b58714871c63a37ecc3a9af7972e45699a5",
+  "codeParentCi": "success",
+  "docsOnlyDiff": true,
+  "notFullPlatformAcceptance": true
+}

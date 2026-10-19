@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import shutil
+import re
 import subprocess
 import unittest
 
@@ -25,22 +26,36 @@ class PlatformRouteContract(unittest.TestCase):
         if not cls.node:
             raise RuntimeError('Node 24 required for cross-platform route tests')
         version = subprocess.check_output([cls.node,'--version'],text=True).strip()
-        if not version.startswith('v24.'):
-            raise RuntimeError('Node 24 required: ' + version)
+        found=re.fullmatch(r'v([0-9]+)\.[0-9]+\.[0-9]+',version)
+        if not found or int(found.group(1))<24:
+            raise RuntimeError('Node 24+ required: ' + version)
+        result = subprocess.run(
+            [cls.node,str(ROOT/'tests/node/platform-cases.mjs'),'all'],
+            cwd=ROOT,capture_output=True,text=True,encoding='utf-8',
+            errors='replace',timeout=25)
+        if result.returncode!=0:
+            raise RuntimeError('PLAT-001 27-case Node assertion group failed: ' +
+                               (result.stdout+result.stderr)[-3000:])
+        obj=json.loads(result.stdout.strip())
+        if (obj.get('result')!='PASS' or obj.get('suite')!='PLAT-001_NO_LAUNCH'
+                or obj.get('cases')!=len(SCENARIOS)
+                or obj.get('scenarios')!=list(SCENARIOS)
+                or obj.get('realModelCalls')!=0
+                or obj.get('privilegedActions')!=0
+                or obj.get('secureAdapterAccepted') is not False):
+            raise RuntimeError('PLAT-001 Node assertion group proof invalid')
+        cls.all_proof=obj
+        cls.all_scenarios=frozenset(obj['scenarios'])
 
     def scenario(self, name):
-        result = subprocess.run([self.node,str(ROOT/'tests/node/platform-cases.mjs'),name],
-            cwd=ROOT,capture_output=True,text=True,encoding='utf-8',
-            errors='replace',timeout=15)
-        self.assertEqual(result.returncode,0,
-                         (result.stdout+result.stderr)[-6000:])
-        obj=json.loads(result.stdout.strip())
-        self.assertEqual(obj['result'],'PASS')
-        self.assertEqual(obj['cases'],1)
-        self.assertEqual(obj['scenarios'],[name])
-        self.assertEqual(obj['realModelCalls'],0)
-        self.assertEqual(obj['privilegedActions'],0)
-        self.assertIs(obj['secureAdapterAccepted'],False)
+        # Every one of the 27 JS assertions actually executes. Keeping one
+        # Node process for their shared, pure scenario group avoids repeated
+        # startup under the 180-second CI worker budget.
+        self.assertIn(name, self.all_scenarios)
+        self.assertEqual(self.all_proof['result'],'PASS')
+        self.assertEqual(self.all_proof['realModelCalls'],0)
+        self.assertEqual(self.all_proof['privilegedActions'],0)
+        self.assertIs(self.all_proof['secureAdapterAccepted'],False)
 
     def test_new_node_sources_parse(self):
         sources=[

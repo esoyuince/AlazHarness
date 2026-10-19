@@ -340,3 +340,24 @@ Extra request fields, OS overrides, fake kernel/UID evidence and
 unknown WSL release refuse or remain explicitly unaccepted.
 Native kernel, privileged host, account, server, real model and M1/M2
 are not part of this gate. Full-D3B/Gateway tests are independent.
+
+### PLAT-001 CI timeout follow-up (19 October 2026)
+
+Original PLAT-001 code b0178b5 passed exact alaz/local-ci. The subsequent
+docs-only 47fea6c failed rc=124 (status 56703328815), matching the
+180-second CI job limit; detailed per-test server logs were unavailable,
+so the precise slow test is unknown. Preserve that failure as evidence.
+
+The 27 pure Node scenario assertions now run through the existing
+platform-cases.mjs all mode in one fresh Node process per Python suite,
+instead of starting a new Node process for every scenario. Python still
+discovers and reports 27 named methods, each requiring the exact list of
+27 performed JS assertions and result PASS. If any JS assertion fails,
+the Node group exits nonzero and the suite fails closed. The direct
+per-case Node CLI remains available for diagnostic reproduction; no
+assertion is skipped or accepted from mock host data.
+
+The original Windows/WSL inspector evidence is immutable and anchored
+to the original b0178b5 source commit, not relabelled as proof for the
+optimized runner. No host CI timeout, privilege, model, service, or
+production configuration changes here.

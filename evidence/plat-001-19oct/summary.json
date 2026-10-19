@@ -70,5 +70,29 @@
     "statusUtc": "2026-10-19T15:26:59Z"
   },
   "fullD3BAccepted": false,
-  "docsFollowupCommitCi": "PENDING"
+  "docsFollowupCommitCi": {
+    "commit": "47fea6c9ad354c7b1f7ccf9951c1efc88adc4e43",
+    "context": "alaz/local-ci",
+    "result": "FAILURE",
+    "returnCode": 124,
+    "statusId": 56703328815,
+    "statusUtc": "2026-10-19T15:32:28Z",
+    "reason": "TIME_LIMIT_SUSPECTED_NOT_PROVEN"
+  },
+  "ciTimingRemediation": {
+    "failureReceipt": "docs-ci-timeout-observed.json",
+    "remediationReceipt": "ci-timeout-remediation.json",
+    "codeState": "LOCAL_PASS_EXACT_NEW_CI_PENDING",
+    "noScenariosSkipped": true,
+    "pythonTestCountPreserved": 2096,
+    "linuxNode26PlatformUnitTests": 28,
+    "windowsFullAfterChange": {
+      "tests": 2096,
+      "skipped": 5,
+      "exitCode": 0,
+      "unittestSeconds": 227.45,
+      "sourceLogSha256": "88f61feafc0cee1ead67bf362b595b132e9170a0939752b69d7963234b06fd32"
+    },
+    "fullD3BAccepted": false
+  }
 }

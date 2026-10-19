@@ -96,3 +96,17 @@ source blobs. Windows full 2096 tests exit0 skip5, two 27-case
 Windows/WSL2 Node read-only suites PASS. No model/guard activation,
 real Mac native test, remote dispatch or whole M1/M2 certificate
 follows from this status. Follow-up documentation CI is separate.
+
+
+## PLAT-001 CI follow-up: 180-second budget
+
+The code commit b0178b5 has scoped local-ci SUCCESS; the docs-only
+47fea6c failed rc124, consistent with a 180-second timeout. The saved
+failure status remains in evidence/plat-001-19oct/docs-ci-timeout-observed.json.
+
+The new test orchestration reduces repeated Node process startup,
+while still running all 27 JS scenario assertions in one real Node
+subprocess. Per-scenario unittest names remain discoverable; any failed
+JS assertion rejects the group. Original native observations stay
+pinned to their code SHA. No full D3B, Mac-native adapter or production
+launch is authorized by this update.

@@ -4,12 +4,18 @@ CI does not rerun physical host observations; it pins their precise
 source and data and never calls an external provider or privileged API.
 """
 import hashlib
+import io
+import os
+import re
+import subprocess
+import tarfile
 import json
 from pathlib import Path
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 EVIDENCE=ROOT/'evidence/plat-001-19oct'
+ORIGINAL_CODE='b0178b58714871c63a37ecc3a9af7972e45699a5'
 
 def read(name):
     return json.loads((EVIDENCE/name).read_text(encoding='utf-8'))
@@ -33,23 +39,44 @@ class PlatformEvidence(unittest.TestCase):
             self.assertIs(record[field],False,field)
         self.assertEqual(record['realModelCalls'],0)
 
-    def test_current_five_source_sha_match_normalized_lf(self):
+    def test_original_five_source_shas_match_exact_accepted_code(self):
+        # Historical native observations remain bound to the original
+        # accepted code commit even when later test harness code improves.
         manifest=self.summary['sourceCanonicalLfSha256']
         self.assertEqual(set(manifest),{
             'packages/hybrid-runtime/platform-routing.mjs',
             'scripts/inspect_platform.mjs','tests/node/platform-cases.mjs',
             'tests/test_platform_routing.py','tests/test_hybrid_slice.py'})
-        for name,digest in manifest.items():
-            with self.subTest(source=name):
-                self.assertEqual(len(digest),64)
-                p=ROOT/name
-                self.assertTrue(p.is_file() and not p.is_symlink())
-                data=p.read_bytes()
-                # One exact newline representation difference between
-                # Windows CRLF checkout and Git LF. Stray CR is forbidden.
-                self.assertNotIn(b'\r',data.replace(b'\r\n',b''),name)
-                self.assertEqual(hashlib.sha256(
-                    data.replace(b'\r\n',b'\n')).hexdigest(),digest,name)
+        cmd=['git','archive','--format=tar',ORIGINAL_CODE,*sorted(manifest)]
+        record=subprocess.run(cmd,cwd=ROOT,capture_output=True,timeout=30)
+        if record.returncode and os.name=='posix' and (ROOT/'.git').is_file():
+            # WSL cannot parse a Windows worktree .git pointer without
+            # an explicit read-only validated mapping into /mnt/<drive>.
+            pointer=(ROOT/'.git').read_text(encoding='utf-8').strip()
+            match=re.fullmatch(r'gitdir: ([A-Za-z]):/(.+)',pointer)
+            if match:
+                mapped=Path('/mnt')/match.group(1).lower()/match.group(2)
+                expected=ROOT.parents[2]/'.git'/'worktrees'/ROOT.name
+                if (ROOT.parent.name=='worktrees'
+                        and ROOT.parent.parent.name=='scratch'
+                        and mapped.resolve()==expected.resolve()
+                        and expected.is_dir()):
+                    cmd=['git','--git-dir='+str(expected),'archive',
+                         '--format=tar',ORIGINAL_CODE,*sorted(manifest)]
+                    record=subprocess.run(cmd,cwd=ROOT,capture_output=True,timeout=30)
+        self.assertEqual(record.returncode,0,
+                         'original_PLAT001_code_archive_unavailable')
+        with tarfile.open(fileobj=io.BytesIO(record.stdout),mode='r:') as archive:
+            names={item.name for item in archive.getmembers() if item.isfile()}
+            self.assertEqual(names,set(manifest))
+            for name,digest in manifest.items():
+                with self.subTest(source=name):
+                    self.assertEqual(len(digest),64)
+                    member=archive.extractfile(name)
+                    self.assertIsNotNone(member)
+                    data=member.read()
+                    self.assertNotIn(b'\r',data,name)
+                    self.assertEqual(hashlib.sha256(data).hexdigest(),digest,name)
 
     def test_two_real_readonly_observed_hosts(self):
         expected={
