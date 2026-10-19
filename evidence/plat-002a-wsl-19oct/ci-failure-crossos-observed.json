@@ -1,0 +1,37 @@
+{
+  "gate": "PLAT-002A_CI_RECONCILIATION",
+  "failedCommit": "aff4689546b90d0602016b0698626b4a59c16b3c",
+  "githubContext": "alaz/local-ci",
+  "githubState": "failure",
+  "description": "ALAZ Local CI failed (rc=1)",
+  "statusId": 56722358622,
+  "updatedAtUtc": "2026-10-19T19:04:58Z",
+  "ciPerTestLogsAvailable": false,
+  "confirmedCrossOsMismatch": {
+    "path": "evidence/plat-002a-wsl-19oct/native-win-wsl-identity-01.json",
+    "originalWindowsRawSha256": "7600ec4ec48fa0a6f016b469b0847e8589788ca7efb65b7e974a2c8b3d83c026",
+    "gitCanonicalLfSha256": "44aa6d7434d634b6bb15d03f041441afe5e78d9c9f477caf8284f56ece9b614d",
+    "exactGitLfToCrlfReconstructsOriginalSha256": true,
+    "nativeFailureReceiptRetained": true
+  },
+  "potentialOtherCiFailures": "UNKNOWN_UNTIL_NEW_CI",
+  "localOriginalFullSuite": {
+    "tests": 2159,
+    "exitCode": 0,
+    "linuxOnlySkipped": 5,
+    "unittestSeconds": 241.012,
+    "ignoredLog": "runtime/plat-002a-wsl-19oct/full-standard-windows.txt",
+    "sha256": "5907d5f467f0588bc4b584a193ad8db9bca0c731384483c6d1977d2f9a72b2ee"
+  },
+  "localReceiptTestsAfterFix": {
+    "windowsCrlf": 6,
+    "simulatedLinuxLf": 6,
+    "exitCode": 0
+  },
+  "actualLinuxCiFix": "PENDING",
+  "nativeWslPositiveAccepted": false,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "mainMerged": false
+}

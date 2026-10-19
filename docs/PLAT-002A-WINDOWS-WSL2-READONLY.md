@@ -110,3 +110,29 @@ M2/autonomous learning remains disabled until M1 accepted.
 
 The native read-only CLI requires explicit QA opt-in and is NOT to
 be automatically rerun while WSL process state is unknown.
+
+
+## GitHub Linux canonical LF compatibility — scoped QA fix
+
+The first published code commit aff4689546b90d0602016b0698626b4a59c16b3c
+was rejected by GitHub alaz/local-ci (rc=1, status56722358622 at
+2026-10-19T19:04:58Z). Per-test logs are unavailable, so do not assert
+this was its only failing test.
+
+One definite Linux checkout incompatibility was found in the
+native FAIL evidence verifier: the retained Windows original file
+native-win-wsl-identity-01.json is CRLF, while Git commits/CI check out
+LF. The two raw SHA256 values differ, but exactly converting every LF
+byte in that ONE canonical file back to CRLF reproduces the original
+Windows hash. The verifier now allows ONLY that one bounded exact
+transformation, refusing stray CR bytes, missing line breaks and all
+other content changes. The original native FAIL evidence and hash
+remain immutable. Linux LF simulation of the six evidence tests PASS;
+the Windows CRLF six tests PASS. This does NOT repair actual WSL
+responsiveness or claim any secure process isolation.
+
+Windows default full suite on the first commit 2159/2159 exit0,
+5 Linux-only skips, 241.012s; static check 2159 discovered, 1519
+tracked files, 2 gitlinks, exit0. Exact CI of the follow-up QA
+repair remains independently pending. See
+evidence/plat-002a-wsl-19oct/ci-failure-crossos-observed.json.

@@ -4,6 +4,21 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
+PLAT-002A CROSS-OS CI FIX IN PROGRESS (19 October 2026):
+native Windows->WSL2 READ-ONLY pilot is BLOCKED (5-case receipt FAIL,
+positive WSL timeout, guest process state UNKNOWN). Code commit
+aff4689546b90d0602016b0698626b4a59c16b3c pushed to
+origin/alaz/plat-002-wsl-readonly-19oct; GitHub alaz/local-ci
+FAILURE rc1 status56722358622. Windows full2159/2159 exit0 skip5,
+static 2159 discovered/1519 files/2 upstream PASS. Exact Git Linux
+LF vs Windows CRLF mismatch located in native FAIL SHA verifier;
+one-file exact LF->CRLF exception installed, six Windows and six
+simulated LF evidence tests PASS. Other CI failures UNKNOWN until
+new commit CI. Same branch/worktree
+scratch/worktrees/plat-002-wsl-19oct. Do not replay WSL/native,
+change server, use real model or merge main. PLAT-002/full D3B
+NOT ACCEPTED.
+
 PLAT-002A NATIVE GATE BLOCKED (19 October 2026):
 Windows->WSL fixed read-only identity probe passed once exploratorily
 before final source, but final native 5-case run failed: positive
@@ -1255,3 +1270,19 @@ No WSL process or account creation inside default CI.
 Report docs/PLAT-002A-WINDOWS-WSL2-READONLY.md. Windows full root,
 static and branch GitHub CI NOT RUN yet; native PLAT-002 remains
 BLOCKED due unknown prior guest process state.
+
+### 2026-10-19 — PLAT-002A exact canonical LF CI fix QA
+
+GitHub aff4689 alaz/local-ci FAILURE rc1, 2026-10-19T19:04:58Z,
+status56722358622. Windows full unittest2159/2159 exit0 skip5
+and root static2159 discovered/1519 files/2 links PASS.
+Confirmed cross-platform original native FAIL evidence CRLF raw
+digest differs from Git tracked LF; exact full-file LF->CRLF
+transformation reconstitutes the single original SHA.
+Updated tests/test_plat002_readonly_receipt.py to accept only
+this exact byte pairing; no other changed evidence allowed.
+Native FAIL receipt remains untouched. Windows CRLF 6/6 and
+simulated Git LF 6/6 tests PASS. New scoped CI evidence at
+evidence/plat-002a-wsl-19oct/ci-failure-crossos-observed.json.
+Next exact code commit/push and independent GitHub CI check;
+do not claim other potential Linux CI errors already resolved.

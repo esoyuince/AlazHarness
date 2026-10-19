@@ -27,13 +27,33 @@
     "tests/test_wsl2_guest_protocol.py": "37c3d4654c94cc4e898eb8c455d802fb6a97056b304edbc5a320f6869d134675"
   },
   "sourceFiles": 7,
-  "windowsFullUnit": "PENDING",
-  "rootStatic": "PENDING",
-  "exactCodeGitHubCi": "PENDING",
+  "windowsFullUnit": {
+    "result": "PASS",
+    "tests": 2159,
+    "skippedLinuxOnly": 5,
+    "unittestSeconds": 241.012,
+    "exitCode": 0
+  },
+  "rootStatic": {
+    "result": "PASS",
+    "filesChecked": 1519,
+    "discoveredTests": 2159,
+    "gitlinks": 2
+  },
+  "exactCodeGitHubCi": {
+    "commit": "aff4689546b90d0602016b0698626b4a59c16b3c",
+    "result": "FAILURE",
+    "statusId": 56722358622,
+    "updatedAtUtc": "2026-10-19T19:04:58Z",
+    "crossOsShaFailureLikely": true,
+    "otherFailuresUnverified": true
+  },
   "fullPLAT002Accepted": false,
   "fullD3BAccepted": false,
   "realModelCalls": 0,
   "macOsTested": false,
   "hostAccountOrServicesChanged": false,
-  "noAutomaticRetry": true
+  "noAutomaticRetry": true,
+  "ciCrossOsEvidence": "ci-failure-crossos-observed.json",
+  "ciRepairExactCommitStatus": "PENDING"
 }

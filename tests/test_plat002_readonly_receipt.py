@@ -62,12 +62,21 @@ class WslReadonlyCustody(unittest.TestCase):
         self.assertEqual(r['realModelCalls'],0)
 
     def test_native_failure_immutable_sha(self):
-        actual=hashlib.sha256(
-            (EVIDENCE/'native-win-wsl-identity-01.json').read_bytes()).hexdigest()
-        self.assertEqual(self.review['exactNativeBatch']['receiptRawSha256'],
-                         actual)
-        self.assertEqual(self.review['exactNativeBatch']['file'],
-                         'native-win-wsl-identity-01.json')
+        # The original FAILED WSL receipt was measured on Windows with
+        # CRLF; Git stores its identical tracked text as LF on Linux.
+        # Permit ONLY this one exact LF -> CRLF representation change.
+        # Never alter or relabel the failure receipt itself.
+        name='native-win-wsl-identity-01.json'
+        raw=(EVIDENCE/name).read_bytes()
+        original=self.review['exactNativeBatch']['receiptRawSha256']
+        actual=hashlib.sha256(raw).hexdigest()
+        if actual!=original:
+            self.assertNotIn(b'\r',raw,name)
+            self.assertGreater(raw.count(b'\n'),0,name)
+            self.assertEqual(
+                hashlib.sha256(raw.replace(b'\n',b'\r\n')).hexdigest(),
+                original,name)
+        self.assertEqual(self.review['exactNativeBatch']['file'],name)
 
     def test_canonical_source_manifest_pin(self):
         manifest=self.native['sourceCanonicalLfSha256']
