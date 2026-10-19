@@ -1,0 +1,86 @@
+{
+  "scope": "D3B_IPC_BROKER_PRIVATE_BUDGET_SCOPED_NATIVE_NOT_FULL_D3B",
+  "date": "2026-10-19",
+  "branch": "alaz/d3b-integration-19oct",
+  "predecessor_budget": "4d96b5ff45677907a8fb5ca215187de015f83e05",
+  "predecessor_ipc": "436f3f792f50950b2f0984269d36627327441c52",
+  "current_source_files": 189,
+  "current_source_manifest_sha256": "a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4",
+  "native_gateway": [
+    {
+      "scenario": "normal",
+      "run_id": "int19-normal2",
+      "result": "PASS",
+      "persisted_broker_reservations": 4,
+      "observed_http_responses": 4,
+      "outer_receipt_sha256": "f47c3c8b8e1159decbac85c9a5310ca39428a5538bb511ebd043abc4278cc8ec",
+      "manifest_sha256": "a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4"
+    },
+    {
+      "scenario": "budget-limit",
+      "run_id": "int19-limit2",
+      "result": "PASS",
+      "persisted_broker_reservations": 3,
+      "observed_http_responses": 3,
+      "outer_receipt_sha256": "850b3275687047e81c98c2446f286ed395d8388ec8fee976b62746c14bbbf031",
+      "manifest_sha256": "a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4"
+    },
+    {
+      "scenario": "candidate-disconnect",
+      "run_id": "int19-disconnect2",
+      "result": "PASS",
+      "persisted_broker_reservations": 4,
+      "observed_http_responses": 3,
+      "outer_receipt_sha256": "38bca1ce454e8d19ad6e86601bc3d6cf0a961d1942896ae09900775c959b578d",
+      "manifest_sha256": "a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4"
+    },
+    {
+      "scenario": "review-revoked",
+      "run_id": "int19-revoke2",
+      "result": "PASS",
+      "persisted_broker_reservations": 3,
+      "observed_http_responses": 3,
+      "outer_receipt_sha256": "d398849157a78639f91687e40b032077de85ec2b030932bf8e7e58fe843741c1",
+      "manifest_sha256": "a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4"
+    }
+  ],
+  "first_false_positive": {
+    "run_id": "int19-normal1",
+    "original_result": "PASS",
+    "ipc_verified": false,
+    "excluded_from_acceptance": true
+  },
+  "owned_kernel": {
+    "result": "PASS",
+    "access_checks": 24,
+    "startup_refusals": 5,
+    "broker_connections": 2,
+    "blocked_extra_connections": 0,
+    "report_sha256": "0cb2fa99d98161293b8b91c2889ce30a0aaa83a189b79974f142b3c0b58ef62e"
+  },
+  "windows_standard": {
+    "tests": 2019,
+    "skips_linux_only": 5,
+    "exit_code": 0,
+    "log_sha256": "1e51725ec20aadf9da08b2f68d145a139b0c095e75b84be78882673aee4a1f77"
+  },
+  "linux_broker_opt_in": {
+    "tests": 42,
+    "skips": 0,
+    "exit_code": 0,
+    "log_sha256": "bd695d03d717d6ac9e0639de78490a856ebdf404a6dafdece1e63be81a02c648"
+  },
+  "static_gate": {
+    "result": "PASS",
+    "discovered_tests": 2019,
+    "checked_tracked_root_files": 1476,
+    "source_gitlinks": 2,
+    "exit_code": 0,
+    "scope": "offline_check_not_native_runtime"
+  },
+  "git_and_exact_ci": "PENDING",
+  "real_model_calls": 0,
+  "main_merged": false,
+  "full_d3b_accepted": false,
+  "separate_host_uid_verified": false
+}

@@ -299,3 +299,10 @@ separately with their exact runtime version and result.
 One historical Windows CRLF source manifest differs from Linux canonical
 LF (text=auto). The test pins two exact hashes for only that known C-sharp
 file; every other frozen entry continues to require an exact digest match.
+
+## D3B-IPC-A731 test boundaries
+
+29 new default-discovered IPC contract/scan/composition tests. Native kernel
+24 checks +5 launch refusals and four actual Gateway scenarios run explicitly;
+not added into unittest counts. Previous mount-setup failures preserved.
+Exact sources/exit/Git evidence in evidence/d3b-ipc-a731/.

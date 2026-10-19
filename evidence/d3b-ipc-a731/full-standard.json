@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-19T00:45:35.324878+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "tests": 1967,
+  "skipReported": false,
+  "sourceFiles": 283,
+  "sourceDrift": [],
+  "seconds": 180.25,
+  "rawLogSha256": "60199cae99f137b8bf8f1a230a5254495f12659adfabdc3dce7b50b2d47f718a",
+  "scope": "full offline unittest; does not start4 native Gateway runs or owned kernel experiment"
+}

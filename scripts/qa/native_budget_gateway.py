@@ -25,10 +25,11 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run-id',required=True)
     p.add_argument('--scenario',choices=base.SCENARIOS,default='normal')
+    p.add_argument('--ipc',action='store_true')
     args=p.parse_args()
     assert re.fullmatch(r'[a-z0-9-]{4,40}',args.run_id)
     assert sys.platform=='linux'
-    evidence=ROOT/'evidence/d3b-budget-c84f'
+    evidence=ROOT/('evidence/d3b-integration-19oct' if args.ipc else 'evidence/d3b-budget-c84f')
     assert evidence.is_dir()
     target=evidence/('native-'+args.run_id+'.json')
     assert not target.exists()
@@ -54,22 +55,29 @@ def main():
             return previous(path,body)
         argv=sys.argv
         sys.argv=[str(ROOT/'scripts/qa/native_combined_gateway.py'),
-                  '--run-id',args.run_id,'--scenario',args.scenario]
+                  '--run-id',args.run_id,'--scenario',args.scenario,*(['--ipc'] if args.ipc else [])]
         try:
             with patch.object(base,'safe_json',side_effect=trusted_config):
                 inner_result=combined.main()
         finally:
             sys.argv=argv
-        inner=evidence.parent/'d3b-combined-dc64'/('inner-'+args.run_id+'.json')
+        combined_dir='d3b-ipc-a731' if args.ipc else 'd3b-combined-dc64'
+        inner=evidence.parent/combined_dir/('inner-'+args.run_id+'.json')
         prior=json.loads(inner.read_text(encoding='utf-8')) if inner.exists() else {}
         snapshot=BrokerBudget(private_config[0]).snapshot() if private_config else {}
         expected=base.expected_scenario(args.scenario)
+        projected=prior.get('projectedRoot') or {}
+        ipc_verified=(args.ipc and prior.get('pathnameSocketProjection') is True
+                      and projected.get('state')=='projected'
+                      and projected.get('explicitHostSocketCount')==1
+                      and projected.get('oldRootDetached') is True)
         pass_result=(inner_result==0 and prior.get('result')=='PASS'
                      and len(initialized)==1
                      and snapshot.get('providerReservations')==expected[1]
                      and snapshot.get('observedHttpResponses')==expected[2]
                      and snapshot.get('gatewayDatabaseIsBudgetAuthority') is False
-                     and snapshot.get('measuredInvoiceVerified') is False)
+                     and snapshot.get('measuredInvoiceVerified') is False
+                     and (not args.ipc or ipc_verified))
         report={'result':'PASS' if pass_result else 'FAIL',
                 'scenario':args.scenario,'localScriptedProviderOnly':True,
                 'actualHermesGatewayWithDualGuard':prior.get('bothLayersOnSameGateway',False),
@@ -79,7 +87,14 @@ def main():
                 'expectedPhysicalAttempts':expected[1],
                 'expectedObservedHttpResponses':expected[2],
                 'gatewayDatabaseBudgetAuthority':False,
-                'ipcProjectionVerified':False,'separateHostUidVerified':False,
+                'ipcProjectionVerified':bool(ipc_verified),
+                'pathnameSocketProjection':prior.get('pathnameSocketProjection') is True,
+                'projectedRootProof':{
+                    key:projected.get(key) for key in
+                    ('state','explicitHostSocketCount','oldRootDetached')},
+                'explicitSelectedBrokerSocketOnly':bool(ipc_verified),
+                'brokerBudgetIndependentFromGateway':snapshot.get('gatewayDatabaseIsBudgetAuthority') is False,
+                'separateHostUidVerified':False,
                 'completeD3B':False,'realModelCalls':0}
         with target.open('x',encoding='utf-8') as stream:
             json.dump(report,stream,indent=2)
@@ -89,7 +104,8 @@ def main():
                           'combined':report['nativeCombinedResult'],
                           'privateReservations':snapshot.get('providerReservations'),
                           'httpObservations':snapshot.get('observedHttpResponses'),
-                          'expectedAttempts':expected[1]}),flush=True)
+                          'expectedAttempts':expected[1],
+                          'ipcProjectionVerified':bool(ipc_verified)}),flush=True)
         return 0 if pass_result else 1
 
 if __name__=='__main__':

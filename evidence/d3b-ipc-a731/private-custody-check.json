@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-19T00:47:27.044438+03:00",
+  "scope": "generated credentials from only four owned test profiles against own public artifacts; not general user secret scan",
+  "fixtureSecretValuesChecked": 12,
+  "publicFilesChecked": 21,
+  "matchingPublicFiles": [],
+  "ownedGatewayBrokerStillRunning": [],
+  "passed": true
+}

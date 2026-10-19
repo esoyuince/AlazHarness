@@ -1,14 +1,19 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-19 (D3B-BUDGET-C84F local acceptance)
+Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRESS)
 
 ## Güncel nokta
+
+D3B-IPC-BUDGET-INTEGRATION-19OCT LOCAL SCOPED 4/4 PASS; kernel24+5 PASS; private broker native42/42 PASS. Windows full2019/2019 exit0 skip5 and Linux broker42/42 PASS; GitHub exact-code CI PENDING. Branch alaz/d3b-integration-19oct, worktree scratch/worktrees/d3b-integration-19oct, budget base 4d96b5f, IPC 436f3f7. Four 189-file identical native source manifests SHA a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4. Old int19-normal1 false-PASS EXCLUDED. Full D3B, separate host UID, real/paid model, host-sandbox and autonomous memory NOT ACCEPTED. Report docs/D3B-IPC-BUDGET-INTEGRATION.md.
 
 D3B-IPC-BUDGET-INTEGRATION-19OCT IN PROGRESS (19 Ekim 2026): ayri worktree scratch/worktrees/d3b-integration-19oct, branch alaz/d3b-integration-19oct, base 4d96b5ff45677907a8fb5ca215187de015f83e05 (CI SUCCESS). IPC dalı 436f3f792f50950b2f0984269d36627327441c52 (CI SUCCESS), birlesim test edilmeden kabul degil. Gercek provider, user profil, host server ve memory DISABLED. Root/main/oncul worktree temizlenmez veya degistirilmez.
 
 D3B-BUDGET-CI-EOL-FIX LOCAL PASS / EXACT CI PENDING (19 Ekim 2026): published 4baca22 CI FAILURE rc1 (GitHub status56649957140); Windows native manifest and Git canonical content differ ONLY for scripts/qa/windows_appcontainer_probe.cs: CRLF vs LF. Testing a narrowly pinned exact Git-blob/CRLF pair without changing original evidence, runtime permissions, model/price, or main. Verify CI and tests before acceptance; integration IPC remains separate.
 
 D3B-BUDGET-C84F LOCAL SCOPED PASS (yayin/CI ayri): 4/4 native Hermes Gateway + ayni-PID netns/Landlock + broker-private kalici butce, 188 kaynak SHA sabit; normal4/4, limit3/3, disconnect4 rezervasyon/3 HTTP yaniti, revoke3/3. Windows full1980/1980 exit0 skip5 (Linux-only); Linux broker42/42 exit0 skip0; static1980 PASS. Tarihi D2B2 makbuzu ozgun 35099bd Git commitine sabitlendi, yeni butce makbuzlari guncel kaynak SHA'sina sabitlendi. Dal alaz/d3b-budget-c84f; scratch/worktrees/d3b-budget-c84f; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. IPC-A731 baska dalda; root mirror, main, onceki agaclar degismedi. TamD3B/ayri host UID/gercek model/odenen cagri/otonom hafiza KAPALI. Rapor docs/D3B-BROKER-PRIVATE-BUDGET.md.
+
+D3B-IPC-A731 SCOPED PASS:selected pathname IPC projection; native Gateway4/4, kernel24+5, full1967/1967 skip0,283source exact. Code7a96233 published, GitHub CI PENDING at last observation; independent broker authority and fullD3B OPEN. Branch alaz/d3b-ipc-a731; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-a731; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. Combined predecessor code/doc CI SUCCESS. No real model, paid call, authority widening or main merge.
+
 
 
 D3B-COMBINED-DC64 SCOPED PASS: netns+Landlock aynı Gateway PID üzerinde4/4; kernel24+5; full1938/1938 skip0,280source SHA stable. Dal alaz/d3b-combined-dc64, scratch/worktrees/d3b-combined-dc64. Kod9a87838 origin push PASS; alaz/local-ci SUCCESS. Belge CI ayrı. Pathname Unix erişimi kontrollü testte hâlâ açık; broker bütçe otoritesi/fullD3B/gerçekmodel NOT ACCEPTED. Kök status iki geçmiş korunarak uzlaştırıldı.
@@ -845,3 +850,85 @@ and host private budget in four local-scripted scenarios, plus socket/mount/
 private-budget negatives. Preserve previous source commitments; do not
 retroactively relabel predecessor receipts. No main/root/live profiles/
 real model/paid calls/auto-memory. This IN PROGRESS does not claim D3B.
+
+### 2026-10-19T00:20:46.226137+03:00 — D3B-IPC-A731 başlangıcı
+
+Önceki combined dal ve root status eşleşti; uncommitted kaynak yok. İlk ürün hedefi IPC: yalnız açıkça verilen broker socket ve özel runtime ağaçlarını görünür kılmak. Host servislerine bağlanma testi yok, yalnız tarafımızdan oluşturulan kontrol soketleri. Kernel mekanizması + gerçek Gateway kabulü birlikte hedeflenir; bileşen PASS tamD3B değildir. Bağımsız broker bütçe otoritesi ve gerçek-model kabulü ayrı açık kalır.
+
+### 2026-10-19T00:33:20.892584+03:00 — IPC kernel acceptance checkpoint
+
+24 owned-socket/kernel controls PASS in kernel-flags5.json: explicit broker and private runtime IPC work; unknown pathname, alias, parent proc root, host abstract/TCP and inherited descriptors denied. Earlier4 setup FAIL receipts retained; corrections masked inherited WSL submounts and preserved locked source flags, without host changes. Real Gateway integration now uses same original launcher with opt-in --ipc and exact source snapshot. Budget authority is still shared; no real model or fullD3B claim.
+
+### 2026-10-19T00:39:28.605918+03:00 — IPC görünümü gerçek Gateway normal PASS
+
+185-file Linux source snapshot, same Gateway PID, four broker/source hashes matched; native normal PASS. Final hardening refuses overlapping exports and incomplete scans; final native probes must be rerun for these exact bytes. Original normal and four kernel setup failures retained. No fullD3B/real-model claim.
+
+### 2026-10-19T00:46:14.075564+03:00 — Final IPC native4/4 ve kernel24+5 PASS
+
+Aynı185 kaynaklık Linux snapshot ile normal/budget/disconnect/revoke4/4, aynı Gateway PID üzerinde mount+netns+Landlock doğrulandı; broker/socket cleanup4/4. Kernel24 erişim+5 başlangıç reddi ayrı PASS; yalnız test broker2 bağlantı, izin dışı tüm test uçları0. Son source-freeze283 dosya; full1967 komutu a7312604-98fa-4db2-ae10-d6b500000025 devam ediyor, sonucu görülmeden başarı yazılmayacak. TamD3B, bağımsız broker otoritesi/gerçek model açık.
+
+### 2026-10-19T00:48:55.920603+03:00 — IPC yerel kabul ve teslim hazırlığı
+
+Güncel kaynakta full1967/1967 PASS,29yeni dahil; Linux aynı29 PASS.
+283 test/kod/config SHA değişmedi; dört nativeGateway aynı185source,
+24kernel+5ret ayrı PASS. Explicit broker korunurken kontrollü başka
+Unix uçları erişilemez. Host köklerinin dış yazıcısı güvenilir varsayılır;
+same-hostUID ve broker bağımsız bütçe NOT ACCEPTED. Landlock modülü
+birebir korundu. Rapor docs/D3B-IPC-PROJECTION.md; evidence/d3b-ipc-a731/.
+Yalnız bu dal kaynaklarını commit/push; main ve eski ağaçlar korunur.
+
+### 2026-10-19T00:53:51.782087+03:00 — D3B-IPC code yayımlandı; belge kapanışı
+
+7a9623321cc5b3296f48f45b99312cf89424203d source/test code origin
+push PASS;283 source blobu eşleşir, full1967/1967 ve native4/4+kernel24/5
+yerel PASS. GitHub alaz/local-ci PENDING son gözlem56646653273. Bu
+commit yalnız doc/status/yayın makbuzu; ürün kaynakları değişmez.
+Root mirror eşitlendi,main ve önceki ağaçlar korunur. Sonraki kesin iş
+broker-private durable budget/one-use authority: Gateway tarafından
+değiştirilen kayıtlara güvenmeden maliyet ve tekrar sınırını uygulama.
+Nihai CI gözlemi runtime/d3b-ipc-a731/final-ci.json içinde tutulabilir.
+
+
+
+### 2026-10-19 - Predecessor merge resolved without evidence mutation
+
+No overlap in executable product changes: IPC branch adds projected IPC mount
+root and preserves existing netns/Landlock, budget branch adds private
+durable spend authority. CI documentation and status were the two textual
+conflicts. Preserved BOTH source scopes, details and original separate
+journals; original native evidence blobs remain unchanged and each receipt
+still applies ONLY to its predecessor commit. New merged Gateway source
+requires fresh integrated native acceptance before any upgrade.
+
+### 2026-10-19 - Four new merged Gateway runs + Linux kernel proof
+
+Normal2 4/4, limit2 3/3, disconnect2 4 reservations/3 responses,
+revoke2 3/3 PASS in actual pinned Hermes Gateway with single-selected
+broker Unix IPC view, netns, Landlock, and independent broker budget.
+Four source manifest sets identical, 189 files; old normal1 false
+positive preserved/EXCLUDED. Fresh owned kernel test 24 checks+5
+startup refusals PASS, blocked extra socket/TCP/abstract 0 accepted.
+Linux opt-in broker suite42/42 PASS, skip0, WSL native Git-path fix
+read-only and scoped. Local full and exact-commit CI not yet accepted.
+No real model, production change, main merge or host policy change.
+
+### 2026-10-19 - Joint regression complete, Git publication preparation
+
+Current merged Windows Node24/Python3.14 full unittest2019/2019 exit0,
+5 Linux-only skips; evidence/d3b-integration-19oct/full-standard-windows.txt.
+Prepared Linux broker42/42 exit0 skip0 with new saved full log, including
+five native Unix socket/localhost tests. Four real Gateway and kernel24+5
+previously PASS on the same 189 source manifest. Root static previously
+2019 discovered PASS; final staged evidence check and exact Git SHA still
+required. No paid model, user profile, live server setting, main change.
+
+### 2026-10-19 - Exact indexed-source and final static verification
+
+All 189 frozen native source/config bytes compared to current staged Git
+index; zero unqualified divergences (single known Windows CS CRLF vs Git
+LF pairing SHA verified). Merge index has no unmerged paths; staged and
+unstaged diff --check both exit0. After new full/native logs, docs and
+summary staged, root static check PASS:2019 discovery,1476 root files,
+2 gitlinks,exit0. No native/real model inferred from static check.
+Next commit (merge parents must be budget code + IPC), push own branch
+and independently observe GitHub alaz/local-ci exact SHA.

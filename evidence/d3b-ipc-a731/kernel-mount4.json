@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-19T00:30:23.163034+03:00",
+  "result": "FAIL",
+  "exitCode": 1,
+  "probe": {},
+  "ownedServerCounts": {
+    "broker": 0,
+    "blocked": 0,
+    "tcp": 0,
+    "abstract": 0
+  },
+  "positiveControlsAllLive": true,
+  "protectedUnchanged": true,
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/combined_guard.py\", line 64, in enforce\n    net = network.enter(filesystem_view={'ipc':value['ipc'],'filesystem':value['filesystem']}) if 'ipc' in value else network.enter()\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/linux_netns.py\", line 150, in enter\n    mount_receipt=ipc_view.project(mount_plan) if mount_plan is not None else None\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/ipc_view.py\", line 154, in project\n    bind('/proc/'+str(pid));bind('/proc/stat')\n    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/ipc_view.py\", line 137, in bind\n    mount(None,target,flags=flags)\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/ipc_view.py\", line 121, in mount\n    check(libc.mount(os.fsencode(src) if src else None,os.fsencode(dest),\n  File \"/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-ipc-a731/packages/claw-hermes/ipc_view.py\", line 119, in check\n    if rc<0:raise IPCViewRejected(where+':'+str(ctypes.get_errno()))\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nipc_view.IPCViewRejected: ipc_mount:1\n",
+  "completeD3B": false,
+  "realModelCalls": 0,
+  "sourceSha256": {
+    "packages/claw-hermes/ipc_view.py": "50c44d8ee7ad50a36626a87fad17cdb5b1745f2919564cd18f114e1e4b10fcc7",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+  },
+  "temporaryRootsRemoved": true
+}

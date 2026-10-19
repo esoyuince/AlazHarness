@@ -259,3 +259,11 @@ Opt-in rootless user/network namespace, zero capabilities, no_new_privs and inhe
 ## D3B-COMBINED-DC64 — aynı süreçte iki sınır
 
 Aynı Gateway altında ağ+dosya4/4 ve native kernel24+5 PASS. Pathname Unix soketi izinleri dışında erişim KONTROLLÜ TESTTE gözlendi; sıradaki dar iş bu otoriteyi sınırlandırmak ve broker bütçe DB/izinini Gateway yazımından ayırmak. WrongStack kaynağı eklenmedi; tekrar tespiti/koşullu Dream ayrı pilot. docs/D3B-COMBINED.md.
+
+## D3B-IPC-A731 — seçilmiş pathname IPC görünümü
+
+Opt-in mount-root projection: existing netns/credential guards retain required
+filesystem roots and exact broker socket; undeclared host socket paths hidden.
+See docs/D3B-IPC-PROJECTION.md. Real Gateway4 scenarios and kernel checks
+tracked separately from unit suite. Next independent broker-owned budget and
+one-use authority outside Gateway-writable DB; fullD3B/model learning open.

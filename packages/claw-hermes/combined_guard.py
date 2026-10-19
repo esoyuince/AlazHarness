@@ -38,7 +38,7 @@ def command_digest(command):
 
 
 def validate_contract(value):
-    require(type(value) is dict and set(value) == FIELDS, 'combined_contract_fields')
+    require(type(value) is dict and set(value) in (FIELDS, FIELDS | {'ipc'}), 'combined_contract_fields')
     require(type(value['version']) is int and value['version'] == 1, 'combined_contract_version')
     require(value['enabled'] is True and value['network'] == 'loopback_only',
             'combined_both_layers_required')
@@ -48,7 +48,11 @@ def validate_contract(value):
     require(type(value['commandSha256']) is str and
             re.fullmatch(r'[a-f0-9]{64}', value['commandSha256']) is not None,
             'combined_command_digest')
-    return {**value, 'filesystem':filesystem.validate_policy(value['filesystem'])}
+    fs=filesystem.validate_policy(value['filesystem'])
+    if 'ipc' in value:
+        import ipc_view
+        ipc_view.validate(value['ipc'],fs)
+    return {**value, 'filesystem':fs}
 
 
 def enforce(contract, command):
@@ -57,9 +61,13 @@ def enforce(contract, command):
     require(command_digest(command) == value['commandSha256'], 'combined_command_mismatch')
     # Namespace setup must precede Landlock: it needs temporary /proc writes,
     # and then irrevocably drops capabilities and installs inherited seccomp.
-    net = network.enter()
+    net = network.enter(filesystem_view={'ipc':value['ipc'],'filesystem':value['filesystem']}) if 'ipc' in value else network.enter()
     require(net.get('mode') == 'linux_netns_loopback_only' and
             net.get('after', {}).get('pid') == os.getpid(), 'combined_network_receipt')
+    if 'ipc' in value:
+        mount=net.get('filesystemView',{})
+        require(mount.get('state')=='projected' and mount.get('oldRootDetached') is True
+                and mount.get('explicitHostSocketCount')==1,'combined_ipc_receipt')
     fs = filesystem.apply(value['filesystem'])
     require(fs.get('state') == 'enforced' and fs.get('noNewPrivs') is True and
             fs.get('protectedReadDenials') == len(value['filesystem']['protected']),
@@ -71,4 +79,6 @@ def enforce(contract, command):
         'scope':'same-process direct network and filesystem-open restrictions',
         'completeD3B':False, 'unixSocketAuthorityIsolated':False,
         'independentBrokerBudgetAuthority':False, 'separateHostUid':False,
-        'targetExecutionVerified':False, 'fallback':False}
+        'targetExecutionVerified':False, 'fallback':False,
+        'pathnameIpcView':net.get('filesystemView'),
+        'explicitBrokerMountOnly':'ipc' in value}
