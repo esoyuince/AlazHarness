@@ -1,0 +1,29 @@
+{
+  "result": "PASS_DENIAL_ONLY",
+  "sourceSha256": {
+    "packages/claw-hermes/host_principal.py": "e3e4e895c067ebb4bcc8f3b73c73d0f1e0d66fbe9ee1ea87fce0e22ba628b0a1",
+    "packages/claw-hermes/provider_broker.py": "b0e17f0188e7c2ad7c60a3200f9a448a661f312ab14ebe8cca2481c391dea0f1",
+    "packages/claw-hermes/provider_egress.py": "5d30dd232a3158988c163098d022dd3f6b22f3d3b3073da3e423786ac87e1688",
+    "scripts/qa/principal_denial_linux.py": "c84cef8dacbd1caeea5dd6eca28e57a3748ba44a433cb58334600ba313569d8f"
+  },
+  "scope": "rootless_same_host_uid_negative_only_not_2_uid_native",
+  "checks": {
+    "same_uid_budget_file_rejected": true,
+    "same_uid_socket_owner_rejected": true,
+    "same_uid_peer_rejected": true,
+    "symlink_budget_refused": true,
+    "broker_start_fails_closed_same_uid": true,
+    "no_broker_socket_created": true,
+    "no_physical_provider_attempt": true,
+    "owned_temp_removed": true
+  },
+  "checkCount": 8,
+  "observedUid": 1000,
+  "observedGid": 1000,
+  "brokerUidDemanded": 65534,
+  "separateHostUidVerified": false,
+  "nativeTwoUidGatewayBrokerTested": false,
+  "realModelCalls": 0,
+  "fullD3BAccepted": false,
+  "mainMerged": false
+}

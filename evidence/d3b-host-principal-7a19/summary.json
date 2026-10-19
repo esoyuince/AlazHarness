@@ -1,0 +1,74 @@
+{
+  "project": "AlazHarness",
+  "gate": "D3B-HOST-PRINCIPAL-001",
+  "status": "PARTIAL_NEGATIVE_ONLY_COMPONENT_PASS",
+  "source_base": "62a0fc9062408ec21bf5f4a8b17f7702e1499c57",
+  "branch": "alaz/d3b-host-principal-7a19",
+  "date": "2026-10-19",
+  "new_contract_tests": 30,
+  "new_broker_wiring_tests": 10,
+  "new_receipt_tests": 4,
+  "linux_negative_denial_tests": 8,
+  "linux_negative_receipt": "native-denial-hp7a19b.json",
+  "linux_negative_source_sha256": {
+    "packages/claw-hermes/host_principal.py": "e3e4e895c067ebb4bcc8f3b73c73d0f1e0d66fbe9ee1ea87fce0e22ba628b0a1",
+    "packages/claw-hermes/provider_broker.py": "b0e17f0188e7c2ad7c60a3200f9a448a661f312ab14ebe8cca2481c391dea0f1",
+    "packages/claw-hermes/provider_egress.py": "5d30dd232a3158988c163098d022dd3f6b22f3d3b3073da3e423786ac87e1688",
+    "scripts/qa/principal_denial_linux.py": "c84cef8dacbd1caeea5dd6eca28e57a3748ba44a433cb58334600ba313569d8f"
+  },
+  "linux_legacy_broker_native_tests": 42,
+  "separate_host_uid_verified": false,
+  "two_host_uid_real_gateway_executed": false,
+  "full_d3b_accepted": false,
+  "real_provider_calls": 0,
+  "main_merged": false,
+  "current_exact_ci": "PENDING",
+  "limitations": [
+    "two-host-UID positive test not run",
+    "ipc_view projection expects same-UID legacy socket",
+    "privileged alternate-UID test process denied by safety check"
+  ],
+  "windows_standard": {
+    "tests": 2063,
+    "windows_skips_linux_only": 5,
+    "exitCode": 0,
+    "unittestSeconds": 210.215,
+    "log": "full-standard-windows-final.txt",
+    "logSha256": "55c2f44825aed11161a161881e2957e26ce274ea6bd2ad52b752b80393e5e931",
+    "sourcePhase": "post-strict-crossOS-custody-fix"
+  },
+  "native_denial_source_sha256": {
+    "packages/claw-hermes/host_principal.py": "e3e4e895c067ebb4bcc8f3b73c73d0f1e0d66fbe9ee1ea87fce0e22ba628b0a1",
+    "packages/claw-hermes/provider_broker.py": "b0e17f0188e7c2ad7c60a3200f9a448a661f312ab14ebe8cca2481c391dea0f1",
+    "packages/claw-hermes/provider_egress.py": "5d30dd232a3158988c163098d022dd3f6b22f3d3b3073da3e423786ac87e1688",
+    "scripts/qa/principal_denial_linux.py": "c84cef8dacbd1caeea5dd6eca28e57a3748ba44a433cb58334600ba313569d8f"
+  },
+  "native_denial_receipt_sha256": "06bc17d0ab5470211ffcd61372b78e46f8b0560048b6eab6799e768e30e4cf9f",
+  "windows_standard_previous": {
+    "tests": 2063,
+    "windows_skips_linux_only": 5,
+    "exitCode": 0,
+    "unittestSeconds": 187.916,
+    "log": "full-standard-windows.txt",
+    "logSha256": "5be7c64c2779afcbf455e87bf42d739b898800ea137a27dd6e64a76b1d7a53ca"
+  },
+  "cross_os_custody": {
+    "sourcePaths": 4,
+    "nativeRawCrlfAndGitLfShaProof": "verified_from_index",
+    "simulatedAllLfReceiptAssertions": 4,
+    "result": "PASS",
+    "historicalNativeReceiptUntouched": true,
+    "index_pair_file": "source-custody.json",
+    "index_pairs_verified": true,
+    "source_checkout_unchanged_after_native_denial": true
+  },
+  "final_staged_static": {
+    "result": "PASS",
+    "discoveredTests": 2063,
+    "rootTextFilesChecked": 1489,
+    "gitlinks": 2,
+    "exitCode": 0,
+    "runtimeTested": false,
+    "realModelCalled": false
+  }
+}

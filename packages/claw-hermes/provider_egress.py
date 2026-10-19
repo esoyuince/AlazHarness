@@ -59,6 +59,7 @@ class BrokerLink:
     broker_id: str
     route_fingerprint: str
     signing_key: str = field(repr=False)
+    principal_contract: dict | None = field(default=None,repr=False)
 
     def __post_init__(self):
         _hex(self.broker_id,HEX32,'invalid_broker_identity')
@@ -67,6 +68,10 @@ class BrokerLink:
         s=self.socket_path
         require(type(s) is str and s.startswith('/') and len(s.encode())<=100
                 and not any(c in s for c in '\x00\r\n') and '..' not in s.split('/'),'invalid_broker_socket')
+        if self.principal_contract is not None:
+            from host_principal import policy as principal_policy
+            object.__setattr__(self,'principal_contract',
+                               principal_policy(self.principal_contract))
 
 
 def authorize_egress(ledger:ExecutionLedger,link:BrokerLink,ticket:str,payload:dict,*,clock=time.time,record_view=False)->dict:
@@ -119,6 +124,7 @@ class BrokerConfig:
     binding: str
     policy_fingerprint: str
     budget_authority: dict | None = field(default=None,repr=False)
+    principal_contract: dict | None = field(default=None,repr=False)
 
     def __post_init__(self):
         route_fingerprint(self.upstream_base_url,self.model)
@@ -132,6 +138,10 @@ class BrokerConfig:
             from broker_budget import validate_settings,binding_for
             object.__setattr__(self,'budget_authority',validate_settings(self.budget_authority))
             binding_for(self)
+        if self.principal_contract is not None:
+            from host_principal import policy as principal_policy
+            object.__setattr__(self,'principal_contract',
+                               principal_policy(self.principal_contract))
 
     @property
     def route(self):return route_fingerprint(self.upstream_base_url,self.model)

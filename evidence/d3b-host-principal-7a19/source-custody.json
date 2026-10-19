@@ -1,0 +1,38 @@
+{
+  "scope": "D3B-HOST-PRINCIPAL-001_NEGATIVE_ONLY",
+  "current_stage_source_pairs": {
+    "packages/claw-hermes/host_principal.py": {
+      "measured_native_crlf_sha256": "e3e4e895c067ebb4bcc8f3b73c73d0f1e0d66fbe9ee1ea87fce0e22ba628b0a1",
+      "git_canonical_lf_sha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "native_crlf_lines": 129,
+      "index_lf_lines": 129,
+      "exact_pair_verified": true
+    },
+    "packages/claw-hermes/provider_broker.py": {
+      "measured_native_crlf_sha256": "b0e17f0188e7c2ad7c60a3200f9a448a661f312ab14ebe8cca2481c391dea0f1",
+      "git_canonical_lf_sha256": "4a45adfed4aad9d4c82ac49de8ff8cc83865ff7942a50492664cc184166a6f5d",
+      "native_crlf_lines": 315,
+      "index_lf_lines": 315,
+      "exact_pair_verified": true
+    },
+    "packages/claw-hermes/provider_egress.py": {
+      "measured_native_crlf_sha256": "5d30dd232a3158988c163098d022dd3f6b22f3d3b3073da3e423786ac87e1688",
+      "git_canonical_lf_sha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "native_crlf_lines": 220,
+      "index_lf_lines": 220,
+      "exact_pair_verified": true
+    },
+    "scripts/qa/principal_denial_linux.py": {
+      "measured_native_crlf_sha256": "c84cef8dacbd1caeea5dd6eca28e57a3748ba44a433cb58334600ba313569d8f",
+      "git_canonical_lf_sha256": "fe347fee90b6bc61e02e54d760cba07c5ff0a0e82fe100540dec3bd29e896b21",
+      "native_crlf_lines": 102,
+      "index_lf_lines": 102,
+      "exact_pair_verified": true
+    }
+  },
+  "sourcePairsCount": 4,
+  "historicalNativeEvidenceImmutable": true,
+  "twoUidPositiveAcceptance": false,
+  "mainMerged": false,
+  "realModelCalls": 0
+}

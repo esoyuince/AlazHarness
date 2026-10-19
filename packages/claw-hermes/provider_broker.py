@@ -22,8 +22,11 @@ import request_view
 BACKEND='linux_unix_credential_broker'
 
 
-def private_socket(path):
+def private_socket(path,principal_contract=None):
     require(os.name=='posix' and hasattr(socket,'SO_PEERCRED'),'linux_broker_required')
+    if principal_contract is not None:
+        from host_principal import socket_identity
+        return socket_identity(principal_contract,str(path))['socket'][:2]
     p=Path(path)
     require(not any(x.is_symlink() for x in (p,*p.parents)),'linked_broker_socket')
     parent=p.parent.stat();info=p.stat()
@@ -32,9 +35,12 @@ def private_socket(path):
     return (info.st_dev,info.st_ino)
 
 
-def peer(writer):
+def peer(writer,principal_contract=None,*,role='broker'):
     sock=writer.get_extra_info('socket')
     require(sock is not None,'broker_peer_unavailable')
+    if principal_contract is not None:
+        from host_principal import socket_peer
+        return socket_peer(sock,principal_contract,role=role)['pid']
     pid,uid,gid=struct.unpack('3i',sock.getsockopt(socket.SOL_SOCKET,socket.SO_PEERCRED,12))
     require(pid>0 and uid==os.getuid(),'broker_peer_mismatch')
     return pid
@@ -102,10 +108,11 @@ class ProviderBrokerClient:
         writer=None
         try:
             async with asyncio.timeout(35):
-                before=private_socket(self.link.socket_path)
+                principal=self.link.principal_contract
+                before=private_socket(self.link.socket_path,principal)
                 reader,writer=await asyncio.open_unix_connection(self.link.socket_path,limit=65536)
-                peer(writer)
-                require(before==private_socket(self.link.socket_path),'broker_socket_replaced')
+                peer(writer,principal,role='gateway')
+                require(before==private_socket(self.link.socket_path,principal),'broker_socket_replaced')
                 await write_frame(writer,document,REQUEST_LIMIT)
                 reply=verified(await read_frame(reader,RESPONSE_LIMIT),self.link.signing_key,'reply')
                 require(type(reply.get('version')) is int and reply['version']==1 and reply.get('brokerId')==self.link.broker_id
@@ -180,15 +187,30 @@ class ProviderBrokerServer:
     async def start(self):
         require(os.name=='posix' and hasattr(socket,'SO_PEERCRED'),'linux_broker_required')
         require(not self.started,'broker_already_started');self.started=True
-        require(self.directory.is_absolute() and not self.directory.exists() and len(str(self.path).encode())<=100,'fresh_broker_directory_required')
-        require(not any(p.is_symlink() for p in self.directory.parents),'linked_broker_directory')
+        principal=self.config.principal_contract
+        require(self.directory.is_absolute() and len(str(self.path).encode())<=100,
+                'fresh_broker_directory_required')
+        require(not any(p.is_symlink() for p in self.directory.parents),
+                'linked_broker_directory')
+        if principal is None:
+            require(not self.directory.exists(),'fresh_broker_directory_required')
+        else:
+            # A trusted host must pre-provision this exact owned/group-traverse
+            # directory. Never mkdir/chown/chmod as a guessed fallback.
+            from host_principal import broker_identity,regular,SOCKET_DIR_MODE
+            broker_identity(principal)
+            require(not self.path.exists() and not self.path.is_symlink(),
+                    'principal_fresh_socket_required')
+            regular(str(self.directory),'dir',principal['brokerUid'],
+                    principal['socketGroupGid'],SOCKET_DIR_MODE)
         if self.config.budget_authority is not None:
             from broker_budget import BrokerBudget
             self.budget=BrokerBudget(self.config)  # Existing private state only, never initialize.
-        self.directory.mkdir(mode=0o700)
+        if principal is None:self.directory.mkdir(mode=0o700)
         # Do not unlink/adopt any existing server. Expose no socket before permissions.
         self.server=await asyncio.start_unix_server(self._handle,path=str(self.path),start_serving=False,backlog=8,limit=65536)
-        self.path.chmod(0o600);self.socket_identity=private_socket(self.path)
+        self.path.chmod(0o600 if principal is None else 0o660)
+        self.socket_identity=private_socket(self.path,principal)
         await self.server.start_serving()
         return {'brokerId':self.identifier,'socketPath':str(self.path),'routeFingerprint':self.config.route,'pid':os.getpid(),'backend':BACKEND}
 
@@ -225,7 +247,7 @@ class ProviderBrokerServer:
         self.tasks.add(task);self.connections.add(writer);nonce=''
         try:
             async with asyncio.timeout(30):
-                peer(writer)
+                peer(writer,self.config.principal_contract,role='broker')
                 envelope=await asyncio.wait_for(read_frame(reader,REQUEST_LIMIT),5)
                 doc=verified(envelope,self.config.signing_key,'request')
                 if doc.get('operation')=='ping':
@@ -286,7 +308,7 @@ class ProviderBrokerServer:
         if self.server is not None:await asyncio.wait_for(self.server.wait_closed(),3)
         # Python 3.13+ may already remove its own Unix socket on server close.
         if self.path.exists():
-            require(self.socket_identity==private_socket(self.path),'broker_cleanup_identity_changed')
+            require(self.socket_identity==private_socket(self.path,self.config.principal_contract),'broker_cleanup_identity_changed')
             self.path.unlink()
         return {'brokerId':self.identifier,'pid':os.getpid(),'socketRemoved':not self.path.exists(),
                 'activeRequests':len(self.tasks),'counters':dict(self.counts),

@@ -1,14 +1,21 @@
-"""Independent custody of four merged native Gateway/broker/IPC receipts.
+"""Immutable historical custody of four combined native Gateway receipts.
 
-Only checks saved reports and current frozen code. Does not run a provider.
+New branches must verify the originally measured Git source commit;
+current host-principal work is NOT retroactive IPC/Gateway acceptance.
 """
 import hashlib
+import io
+import os
+import re
+import subprocess
+import tarfile
 import json
 from pathlib import Path
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 EVIDENCE=ROOT/'evidence/d3b-integration-19oct'
+ACCEPTED_CODE_COMMIT='29f6a353799dcdf0279ebcabf44593fbcbcfa160'
 CASES={
     'normal':('int19-normal2',4,4),
     'budget-limit':('int19-limit2',3,3),
@@ -54,7 +61,7 @@ class D3BIntegrationEvidence(unittest.TestCase):
                 self.assertIs(record['separateHostUidVerified'],False)
                 self.assertIs(record['completeD3B'],False)
                 self.assertEqual(record['realModelCalls'],0)
-    def test_four_runs_bind_same_current_189_sources(self):
+    def test_four_runs_pin_original_189_git_sources(self):
         shared=None
         for run_id,*_ in CASES.values():
             record=read('gateway-'+run_id+'.json')
@@ -67,26 +74,50 @@ class D3BIntegrationEvidence(unittest.TestCase):
             self.assertEqual(digest,record['sourceManifestSha256'])
             if shared is None:shared=files
             else:self.assertEqual(shared,files)
-        for name,digest in shared.items():
-            with self.subTest(source=name):
-                path=Path(name)
-                self.assertFalse(path.is_absolute())
-                self.assertNotIn('..',path.parts)
-                self.assertTrue(name=='sources.lock.json' or
-                                name.startswith(('packages/','scripts/','config/')))
-                actual=ROOT/path
-                self.assertTrue(actual.is_file() and not actual.is_symlink())
-                raw=actual.read_bytes()
-                if name=='scripts/qa/windows_appcontainer_probe.cs':
-                    # One exact Windows checkout CRLF / CI Git LF pairing.
+        for name in shared:
+            path=Path(name)
+            self.assertFalse(path.is_absolute())
+            self.assertNotIn('..',path.parts)
+            self.assertTrue(name=='sources.lock.json' or
+                            name.startswith(('packages/','scripts/','config/')))
+        cmd=['git','archive','--format=tar',ACCEPTED_CODE_COMMIT,*sorted(shared)]
+        record=subprocess.run(cmd,cwd=ROOT,capture_output=True,timeout=30)
+        if record.returncode and os.name=='posix' and (ROOT/'.git').is_file():
+            # Windows-authored .git worktree pointer is unreadable to Linux Git
+            # on WSL. Resolve only this own exact verified Git metadata path.
+            pointer=(ROOT/'.git').read_text(encoding='utf-8').strip()
+            match=re.fullmatch(r'gitdir: ([A-Za-z]):/(.+)',pointer)
+            if match:
+                mapped=Path('/mnt')/match.group(1).lower()/match.group(2)
+                expected=ROOT.parents[2]/'.git'/'worktrees'/ROOT.name
+                if (ROOT.parent.name=='worktrees' and ROOT.parent.parent.name=='scratch'
+                        and mapped.resolve()==expected.resolve() and expected.is_dir()):
+                    cmd=['git','--git-dir='+str(expected),
+                         'archive','--format=tar',ACCEPTED_CODE_COMMIT,*sorted(shared)]
+                    record=subprocess.run(cmd,cwd=ROOT,capture_output=True,timeout=30)
+        self.assertEqual(record.returncode,0,'original_integrated_git_commit_unavailable')
+        with tarfile.open(fileobj=io.BytesIO(record.stdout),mode='r:') as archive:
+            names={m.name for m in archive.getmembers() if m.isfile()}
+            self.assertEqual(names,set(shared))
+            for name,digest in shared.items():
+                with self.subTest(source=name):
+                    item=archive.extractfile(name)
+                    self.assertIsNotNone(item,name)
+                    raw=item.read()
                     current=hashlib.sha256(raw).hexdigest()
-                    if current!=digest:
-                        self.assertEqual(current,
-                          '4c1050700bd01dfb73468ac3a266e8d2edf07212a9f75641379a59b3a02f7f8c')
-                        self.assertEqual(
-                          hashlib.sha256(raw.replace(b'\n',b'\r\n')).hexdigest(),digest)
-                else:
-                    self.assertEqual(hashlib.sha256(raw).hexdigest(),digest)
+                    if name=='scripts/qa/windows_appcontainer_probe.cs':
+                        expected_lf='4c1050700bd01dfb73468ac3a266e8d2edf07212a9f75641379a59b3a02f7f8c'
+                        if current==digest:
+                            self.assertEqual(hashlib.sha256(
+                                raw.replace(b'\r\n',b'\n')).hexdigest(),
+                                expected_lf,name)
+                        else:
+                            self.assertEqual(current,expected_lf,name)
+                            self.assertEqual(hashlib.sha256(
+                                raw.replace(b'\n',b'\r\n')).hexdigest(),
+                                digest,name)
+                    else:
+                        self.assertEqual(current,digest,name)
     def test_owned_kernel_socket_and_mount_negatives(self):
         record=read('kernel-int19-final1.json')
         self.assertEqual(record['result'],'PASS')

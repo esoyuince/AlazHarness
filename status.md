@@ -4,6 +4,20 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
+D3B-HOST-PRINCIPAL-001 FINAL LOCAL NEGATIVE-ONLY COMPONENT PASS: full Windows2063/2063 exit0 skip5, Linux rootless denial8/8, Linux legacy broker native42/42, stage static PASS2063; 4 exact native-CRLF/Git-LF source pairs verified. Host principal branch alaz/d3b-host-principal-7a19, worktree scratch/worktrees/d3b-host-principal-7a19, base62a0fc9. Real separate two-host-UID Gateway/broker NOT RUN (privileged test invocation blocked); full D3B, main merge, paid provider DISABLED/NOT ACCEPTED. Exact-code branch CI PENDING. Report docs/D3B-HOST-PRINCIPAL-001.md.
+
+D3B-HOST-PRINCIPAL-001 PARTIAL NEGATIVE-ONLY COMPONENT PASS (19 Ekim 2026): branch alaz/d3b-host-principal-7a19; own scratch/worktrees/d3b-host-principal-7a19 base 62a0fc9. Strict default-OFF split OS principal/host user-namespace and peer/owned-budget/socket gates implemented. Windows44 new tests PASS, unprivileged Linux native denial8/8 PASS, prepared Linux legacy broker42/42 PASS. Real two-host-UID positive Gateway + broker NOT RUN (privileged test safety-blocked), ipc_view split-principal integration OPEN; full regression + own CI pending. Root/main/production unchanged. Report docs/D3B-HOST-PRINCIPAL-001.md.
+
+D3B-HOST-PRINCIPAL-001 IN PROGRESS (19 Ekim 2026): branch alaz/d3b-host-principal-7a19,
+worktree scratch/worktrees/d3b-host-principal-7a19, base 62a0fc9062408ec21bf5f4a8b17f7702e1499c57
+(exact local-ci SUCCESS). Rootless network namespace maps host UID1000
+to same host UID1000; native map helpers absent. New opt-in separate-host-UID
+owned-temp Linux principal and socket/DAC negative pilot, NOT real Gateway
+or full D3B acceptance. WSL privileged test-controller is allowed ONLY for
+ephemeral existing-identity subprocesses/temp files under owned /tmp roots.
+No system account creation, server process, host service, production profile,
+main/earlier worktree edits or paid models.
+
 D3B-IPC-BUDGET-INTEGRATION-19OCT LOCAL SCOPED 4/4 PASS; kernel24+5 PASS; private broker native42/42 PASS. Windows full2019/2019 exit0 skip5 and Linux broker42/42 PASS; GitHub exact-code CI SUCCESS 29f6a353 status56667429890 at 2026-10-19T07:31:09Z. Branch alaz/d3b-integration-19oct, worktree scratch/worktrees/d3b-integration-19oct, budget base 4d96b5f, IPC 436f3f7. Four 189-file identical native source manifests SHA a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4. Old int19-normal1 false-PASS EXCLUDED. Full D3B, separate host UID, real/paid model, host-sandbox and autonomous memory NOT ACCEPTED. Report docs/D3B-IPC-BUDGET-INTEGRATION.md.
 
 D3B-IPC-BUDGET-INTEGRATION-19OCT IN PROGRESS (19 Ekim 2026): ayri worktree scratch/worktrees/d3b-integration-19oct, branch alaz/d3b-integration-19oct, base 4d96b5ff45677907a8fb5ca215187de015f83e05 (CI SUCCESS). IPC dalı 436f3f792f50950b2f0984269d36627327441c52 (CI SUCCESS), birlesim test edilmeden kabul degil. Gercek provider, user profil, host server ve memory DISABLED. Root/main/oncul worktree temizlenmez veya degistirilmez.
@@ -956,3 +970,82 @@ Use a NEW isolated worktree with only owned temporary Linux identities;
 do not alter production accounts, host firewall or user credentials.
 Then qualify real provider model/token/tariff/cost in a separately approved
 bounded live experiment. HYB-006 learning transfer and M1/M2 remain OPEN.
+
+### 2026-10-19 - D3B-HOST-PRINCIPAL-001 start
+
+Own clean worktree from exact green 62a0fc9. Current Linux6.6 WSL effective
+user UID/GID1000, no newuidmap/newgidmap executables, subordinate-ID
+entries alone do not provide actual delegation. Existing nobody UID65534
+is available for owned ephemeral test. Separate host-UID storage/socket
+path must have physical DAC/kernel evidence, with fail-closed start if
+independent principal is missing. Existing Gateway, personal accounts,
+server, root mirror and prior D3B receipt files untouched. Product-wide
+integration is explicitly NOT RUN.
+
+### 2026-10-19 — Host-principal default-OFF component checkpoint
+
+New host_principal.py exact host UID + initial host user namespace binding,
+0700 broker private budget, 0710 parent / 0660 selected socket group
+permissions and SO_PEERCRED split contract added only in optional
+BrokerLink/BrokerConfig/provider_broker. Windows30 policy+10 wiring+4
+saved-native receipt tests PASS, existing broker targeted75 PASS.
+Unprivileged Linux owned-temp negative 8/8 PASS_DENIAL_ONLY with four
+current source SHA frozen; original prepared Linux legacy native42/42
+PASS skip0. Privileged two-UID process test was BLOCKED by execution safety
+check: no workaround. No separate two-UID positive test or actual model.
+Current IPC projection still expects legacy 0600/0700 same-UID socket,
+so full combined 2UID Gateway NOT RUN. Report
+docs/D3B-HOST-PRINCIPAL-001.md. Full standard/static/Git CI pending.
+
+### 2026-10-19 — Host-principal negative-only full regression PASS
+
+Windows full unittest2063/2063 exit0, five Linux-only skipped,
+187.916s, evidence/d3b-host-principal-7a19/full-standard-windows.txt.
+44 new host-principal offline tests incl 4 native negative-receipt
+checks; unprivileged Linux8/8 refusal-only and original Linux broker
+native42/42 separately PASS. This does not prove two-host-UID integration.
+Old Gateway four-receipt QA remains pinned to historical code commit.
+Static 2063 discovery PASS prior to full-log staging; source byte and
+final static/Git/exact-SHA CI still to be verified.
+
+### 2026-10-19 — Windows CRLF versus Git/Linux LF evidence correction
+
+Four source SHA entries from negative-only WSL worktree show CRLF raw
+bytes; their Git index versions are identical content with LF (four
+checked, exact LF->CRLF digest matched each; no mismatches otherwise).
+Offline receipt checker now permits that specific exact canonical LF
+or native CRLF under four whitelisted filenames, not arbitrary drifts.
+Original native receipts kept immutable; full suite must rerun after
+test-code update and new exact-code Git CI still pending.
+
+### 2026-10-19 — Cross-OS custody and final full regression PASS
+
+One diagnostic mock LF-only receipt assertion caught test-only NameError
+in newly added canonical branch. Fixed the variable name and reran
+simulated Git/Linux all-LF checks: 4/4 PASS. Actual Windows 44 host
+principal tests PASS, original Linux negative proof unchanged.
+A SECOND final full Windows unittest run now 2063/2063 exit0, skipped5,
+210.215s, evidence/d3b-host-principal-7a19/full-standard-windows-final.txt.
+First full log and diagnostic retained. Only whitelist four current negative
+source files for exact CRLF-native/LF-Git digest equivalence. Full D3B and
+two-host-UID positive integration remain NOT RUN. Next stage, source
+custody, static check, commit/push and exact local-ci status.
+
+### 2026-10-19 — Final strict code custody (negative-only scope)
+
+Four native negative source SHA files compared byte-for-byte to current
+Git index, all four exact LF-index to original CRLF-Windows SHA pairings
+PASS. No arbitrary SHA bypass: values/path whitelist remain exact.
+Evidence in evidence/d3b-host-principal-7a19/source-custody.json.
+Pre-final and final full test logs preserved separately. Staged
+source/CI check, branch code commit/push and exact-code CI remain OPEN.
+
+### 2026-10-19 — Staged-source static gate SUCCESS, publishing only scoped slice
+
+Current 17 scoped staged paths, git diff --cached --check exit0, after
+two final full suite logs, four native source SHA pair proof and negative
+native receipt. Root static gate PASS2063 discovered,1489 tracked text
+files,2gitlinks,exit0; NOT a runtime security certificate. Full local
+Windows2063/2063 exit0 skip5, prepared Linux legacy broker42/42 and
+negative Linux8/8 separately. Ready for exact-code commit/push/CI,
+full separate host UID acceptance remains open. Root and main untouched.

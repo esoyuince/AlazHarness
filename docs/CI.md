@@ -306,3 +306,18 @@ file; every other frozen entry continues to require an exact digest match.
 24 checks +5 launch refusals and four actual Gateway scenarios run explicitly;
 not added into unittest counts. Previous mount-setup failures preserved.
 Exact sources/exit/Git evidence in evidence/d3b-ipc-a731/.
+
+
+## D3B host principal negative-only gate
+
+Default unittest discovery includes new strict opt-in host-principal
+contracts and offline broker wiring assertions. No host UID transition,
+privileged command, system account, SUID helper, new network daemon,
+or two-real-principal Gateway/broker acceptance is run by standard CI.
+The separate opt-in Linux negative runner is invoked only against
+owned temporary paths; it proves wrong same UID/file/socket/peer
+conditions refuse, NOT that a distinct host UID can communicate.
+Historical merged Gateway evidence is pinned to its original code
+commit, not required to match this experimental new branch code.
+No real model/provider, invoices or automatic learning.
+See docs/D3B-HOST-PRINCIPAL-001.md.

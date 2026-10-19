@@ -1,0 +1,23 @@
+{
+  "result": "PASS_DENIAL_ONLY",
+  "scope": "rootless_same_host_uid_negative_only_not_2_uid_native",
+  "checks": {
+    "same_uid_budget_file_rejected": true,
+    "same_uid_socket_owner_rejected": true,
+    "same_uid_peer_rejected": true,
+    "symlink_budget_refused": true,
+    "broker_start_fails_closed_same_uid": true,
+    "no_broker_socket_created": true,
+    "no_physical_provider_attempt": true,
+    "owned_temp_removed": true
+  },
+  "checkCount": 8,
+  "observedUid": 1000,
+  "observedGid": 1000,
+  "brokerUidDemanded": 65534,
+  "separateHostUidVerified": false,
+  "nativeTwoUidGatewayBrokerTested": false,
+  "realModelCalls": 0,
+  "fullD3BAccepted": false,
+  "mainMerged": false
+}
