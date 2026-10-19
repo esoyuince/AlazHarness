@@ -4,6 +4,8 @@ Son güncelleme: 2026-10-19 (D3B-BUDGET-C84F local acceptance)
 
 ## Güncel nokta
 
+D3B-IPC-BUDGET-INTEGRATION-19OCT IN PROGRESS (19 Ekim 2026): ayri worktree scratch/worktrees/d3b-integration-19oct, branch alaz/d3b-integration-19oct, base 4d96b5ff45677907a8fb5ca215187de015f83e05 (CI SUCCESS). IPC dalı 436f3f792f50950b2f0984269d36627327441c52 (CI SUCCESS), birlesim test edilmeden kabul degil. Gercek provider, user profil, host server ve memory DISABLED. Root/main/oncul worktree temizlenmez veya degistirilmez.
+
 D3B-BUDGET-CI-EOL-FIX LOCAL PASS / EXACT CI PENDING (19 Ekim 2026): published 4baca22 CI FAILURE rc1 (GitHub status56649957140); Windows native manifest and Git canonical content differ ONLY for scripts/qa/windows_appcontainer_probe.cs: CRLF vs LF. Testing a narrowly pinned exact Git-blob/CRLF pair without changing original evidence, runtime permissions, model/price, or main. Verify CI and tests before acceptance; integration IPC remains separate.
 
 D3B-BUDGET-C84F LOCAL SCOPED PASS (yayin/CI ayri): 4/4 native Hermes Gateway + ayni-PID netns/Landlock + broker-private kalici butce, 188 kaynak SHA sabit; normal4/4, limit3/3, disconnect4 rezervasyon/3 HTTP yaniti, revoke3/3. Windows full1980/1980 exit0 skip5 (Linux-only); Linux broker42/42 exit0 skip0; static1980 PASS. Tarihi D2B2 makbuzu ozgun 35099bd Git commitine sabitlendi, yeni butce makbuzlari guncel kaynak SHA'sina sabitlendi. Dal alaz/d3b-budget-c84f; scratch/worktrees/d3b-budget-c84f; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. IPC-A731 baska dalda; root mirror, main, onceki agaclar degismedi. TamD3B/ayri host UID/gercek model/odenen cagri/otonom hafiza KAPALI. Rapor docs/D3B-BROKER-PRIVATE-BUDGET.md.
@@ -832,3 +834,14 @@ No paid model, production daemon or new native Gateway run. Previous
 4 Gateway receipts remain historical and immutable; code changes limited
 to two QA files and two scope/CI documents. Next Git exact-code
 publication and CI check, then new IPC+budget integration worktree.
+
+### 2026-10-19 - D3B-IPC-BUDGET-INTEGRATION-19OCT started
+
+New clean dedicated worktree alaz/d3b-integration-19oct from exact green
+budget commit 4d96b5f; IPC predecessor 436f3f7 likewise has GitHub
+alaz/local-ci SUCCESS. Merge their code and preserve both original evidence
+histories, then qualify one-Gateway netns+Landlock+projected pathname IPC
+and host private budget in four local-scripted scenarios, plus socket/mount/
+private-budget negatives. Preserve previous source commitments; do not
+retroactively relabel predecessor receipts. No main/root/live profiles/
+real model/paid calls/auto-memory. This IN PROGRESS does not claim D3B.
