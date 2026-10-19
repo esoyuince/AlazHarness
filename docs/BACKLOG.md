@@ -311,3 +311,14 @@ process detected at a later independent snapshot. Not full
 PLAT-002/D3B; next PLAT-002C must prove cancellation of Windows
 wrapper and Linux-owned child/grandchild reconciliation.
 See docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.
+
+
+## PLAT-002C explicit cancel handshake / next D
+
+One fixed Windows->Ubuntu test-only start/cancel handshake passed,
+with exact source SHA/nonce/run ID and worker-owned TERM/KILL/reap
+plus independent post-run 0 matching processes and roots. Native
+wrapper midflight force-stop and lease fencing remain **NOT RUN**.
+Next PLAT-002D: test-owned wrapper interruption and guest lease/
+reconciliation; then full D3B principal, IPC and broker budget.
+Read docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.

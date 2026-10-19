@@ -386,3 +386,14 @@ Linux guest UID, ext-family /tmp source freeze and post-run process
 cleanup are inspectable in scoped evidence. Host-wrapper cancellation
 and real D3B security remain NOT ACCEPTED.
 See docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.
+
+
+## PLAT-002C fixed explicit cancel QA contract
+
+The default Python unittest suite verifies strict Windows/guest
+start/ready/cancel/done protocol parsing and native one-shot
+source/receipt custody without invoking WSL or any real provider.
+An explicitly opted-in and fixed QA script was run independently
+on one Windows+Ubuntu host; its result does NOT certify WSL
+wrapper interruption or full D3B. Citable source/evidence and
+limitations: docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.

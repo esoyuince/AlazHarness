@@ -135,3 +135,15 @@ qualifies only rootless test-owned Linux child lifecycle, NOT
 Windows-wrapper cancellation, Windows host file isolation, a
 separate broker host UID, full D3B or actual agent execution.
 See docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.
+
+
+## PLAT-002C explicit WSL2 cancellation (20 October 2026)
+
+A single Windows->WSL2 QA-only START/READY/CANCEL/CANCELLED handshake
+executed a SHA-frozen test-owned Linux worker and proved explicit
+cancellation, reaping and private root removal in-band. A separate
+read-only guest process and temporary-root scan found zero remnants.
+This is **NOT** a general WSL bridge or a secure Hermes execution
+adapter. Killing the Windows wrapper unexpectedly, actual Windows
+host-file isolation, separate broker UID and full D3B are open.
+See docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.

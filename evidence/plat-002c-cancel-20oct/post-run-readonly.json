@@ -1,0 +1,9 @@
+{
+  "scope": "PLAT002C_POST_NATIVE_READONLY",
+  "guestUid": 1000,
+  "scannedProc": 72,
+  "unreadable": 0,
+  "matchingTestProcesses": 0,
+  "ownedTempRoots": 0,
+  "result": "PASS_ZERO_MATCHES"
+}

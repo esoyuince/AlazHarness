@@ -1,0 +1,19 @@
+{
+  "result": "PASS_EXPLICIT_CANCEL_HANDSHAKE_TEST_OWNED",
+  "hostWslWrapperExit": 0,
+  "readyRunNonceSourceMatched": true,
+  "cancelAckRunNonceSourceMatched": true,
+  "guestUid": 1000,
+  "workerPid": 415,
+  "workerIgnoredTerm": true,
+  "workerKilled": true,
+  "workerReaped": true,
+  "nativeCopyRemoved": true,
+  "nativeRootRemoved": true,
+  "realModelCalls": 0,
+  "hostWslWrapperForcedCancelVerified": false,
+  "hostFileIsolationAccepted": false,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "automaticRetry": false
+}

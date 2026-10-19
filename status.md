@@ -1,8 +1,41 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-19 (PLAT-002B Linux test-owned lifecycle IN PROGRESS)
+Son güncelleme: 2026-10-20 (PLAT-002C cancel protocol IN PROGRESS)
 
 ## Güncel nokta
+
+PLAT-002C SCOPED REAL EXPLICIT CANCEL HANDSHAKE PASS (2026-10-20):
+Dedicated branch alaz/plat-002c-cancel-20oct in worktree
+scratch/worktrees/plat-002c-cancel-20oct, base 4be011b
+(previous PLAT-002B code+docs CI SUCCESS).
+One native Windows->Ubuntu WSL2 test-only
+START/READY/CANCEL/CANCELLED succeeded, run ID/nonce/source SHA
+and worker PID verified; child ignored TERM, killed and reaped,
+private source copy/root removed, host wrapper exit0.
+Read-only preflight: 72 procs, 0 old test processes, 0 roots.
+Postflight: 72 procs, 0 matching processes, 0 roots.
+34 pure host/guest protocol tests + 9 native receipt QA tests
+PASS, real model0, no automatic retry. **Not** wrapper force
+kill, Windows host filesystem isolation, separate broker host UID,
+Hermes, D3B or M1/M2 acceptance. Full root tests, static,
+commit/CI still PENDING. Report
+docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.
+
+PLAT-002C TEST-OWNED WSL CANCEL PROTOCOL IN PROGRESS (2026-10-20):
+One common agent core on Windows/WSL/Linux/macOS, Linux-first
+native secure adapter. Separate clean worktree
+scratch/worktrees/plat-002c-cancel-20oct, branch
+alaz/plat-002c-cancel-20oct, base
+4be011b3224ae9b94b5b7f8d0c07583a8f133764
+(GitHub alaz/local-ci SUCCESS id56730692895 at
+2026-10-19T20:39:16Z). PLAT-002B real Linux fixed owned
+subprocess exit/TERM/KILL/reap 8/8 PASS; prior broken PLAT-002A
+native receipt immutable. Next: explicit one-run test-only
+Windows->WSL stdin cancel with nonce/source/UID lease,
+bounded ACK/UNKNOWN and exact temp/process closure; no
+Windows wrapper midflight kill, unrelated PID, restart WSL,
+full D3B or model/provider execution. Product real agent
+adapter still NOT ACCEPTED; root/main/prior worktrees intact.
 
 PLAT-002B NATIVE OWNED-LINUX-CHILD SCOPED PASS, CODE CI SUCCESS:
 One rootless Windows->WSL2 test-owned process pilot PASS8/8 with
@@ -1420,3 +1453,48 @@ independent WSL post-run 0 matching processes/0 temp roots.
 Full PLAT-002/D3B, host wrapper cancel/guest-leasing and M1/M2
 NOT ACCEPTED. Recorded scoped CI in code-ci-observed.json.
 This documentation/status-only follow-up must independently pass CI.
+
+### 2026-10-20 — PLAT-002C independent test-only guest cancel handshake start
+
+New worktree alaz/plat-002c-cancel-20oct at code+docs-success base
+4be011b3224ae9b94b5b7f8d0c07583a8f133764. Prior PLAT-002B
+final-CI receipt is kept only in its ignored runtime directory.
+Plan: fixed, exactly-sourced guest script staged onto private
+native ext-family Linux /tmp, mock worker in its owned session,
+one bounded start/ready/cancel/ack protocol over the trusted
+host-owned WSL wrapper stdin/stdout. No arbitrary shell, WSL
+distribution, commands, network, provider, account, or fallback.
+Timeout/unknown closure fail closed. Explicit host wrapper
+cancellation remains NOT RUN in first narrow PLAT-002C slice.
+
+### 2026-10-20 — PLAT-002C native one-shot in-band cancel PASS
+
+After read-only WSL preflight (72 process entries, no match/no
+unreadable/no matching /tmp roots), one opt-in bounded Windows
+controller passed SHA-frozen guest script to WSL2. Linux copied
+the fixed source into private /tmp, worker ran in owned process
+group and sent READY. Windows verified run ID, nonce, guest UID,
+source SHA, worker PID before sending CANCEL. Guest killed owned
+SIGTERM-ignoring worker with SIGKILL and reaped, removed its
+source and temp root before CANCELLED. Windows validated matching
+ACK and saw WSL wrapper exit0. Independent post-scan 72 process
+entries, 0 matches/unreadable, 0 temp roots. 43/43 new offline
+Python/native receipt assertions PASS, no paid model/service.
+Evidence evidence/plat-002c-cancel-20oct. Force-kill Windows
+wrapper/disconnect lease recovery/full D3B remain NOT ACCEPTED.
+Full regression/static/GitHub CI still PENDING.
+
+### 2026-10-20 — PLAT-002C Windows full regression and static PASS
+
+Windows full Python unittest2229/2229 exit0 with five Linux-only
+SKIP (2224 non-skipped), duration245.578s; log ignored at
+runtime/plat-002c-cancel-20oct/full-standard-windows.txt
+SHA256 804f54ca6258f4a8c5a8cda5828bd8bbcace537b6cbd555da31b0619d00e9bf3.
+Root static PASS2229 discovered,1540 tracked text files,2 upstream
+gitlinks. New PLAT-002C offline43 PASS and separately executed
+one real Windows->WSL2 explicit test-owned cancellation PASS;
+guest separate read-only post-scan 0 test processes/roots.
+No real model/tool. Next: freeze staged code blobs, commit to
+isolated branch, push and check exact GitHub alaz/local-ci.
+The in-band cancel test must never be presented as
+Windows wrapper force-kill/disconnect or D3B PASS.

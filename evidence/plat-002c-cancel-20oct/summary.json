@@ -1,0 +1,65 @@
+{
+  "gate": "PLAT-002C_EXPLICIT_TEST_OWNED_CANCEL",
+  "date": "2026-10-20",
+  "branch": "alaz/plat-002c-cancel-20oct",
+  "baseCommit": "4be011b3224ae9b94b5b7f8d0c07583a8f133764",
+  "status": "SCOPED_NATIVE_EXPLICIT_CANCEL_AND_CLEANUP_PASS",
+  "nativeOneShot": "native-cancel-handshake-01.json",
+  "nativeGuestRawSha256": "45b4f06720372636389e0bb649bf9a6969adf0dbbf489f2d6d1a39ae0d63b20b",
+  "nativeResult": "PASS_EXPLICIT_CANCEL_HANDSHAKE_TEST_OWNED",
+  "sourceCanonicalLfSha256": {
+    "scripts/qa/wsl2_cancel_guest.py": "54bc087aee354ace3f08ecca4e4098d31ad35ac7eda47150890efe68a920d27c",
+    "scripts/qa/wsl2_cancel_windows_once.py": "f57727601858a2d5204b9f7961b20daf63a970c15a406dacae95533797c7c783",
+    "tests/test_plat002c_cancel.py": "443eddeaebec868201e0ee0454bd118f3e39e9335e4689a08496806d4653f227"
+  },
+  "sourceCount": 3,
+  "nativePreflight": {
+    "file": "preflight-readonly.json",
+    "oldProcessCount": 0,
+    "rootCount": 0,
+    "procEntriesRead": 72,
+    "unreadable": 0
+  },
+  "nativePostflight": {
+    "file": "post-run-readonly.json",
+    "matchingProcesses": 0,
+    "remainingTempRoots": 0,
+    "procEntriesRead": 72,
+    "unreadable": 0
+  },
+  "guestUid": 1000,
+  "hostWrapperExit": 0,
+  "sameNonceAndRequestVerified": true,
+  "sourceShaMatched": true,
+  "ownedWorkerTermIgnoredAndKillReaped": true,
+  "sourceAndRootRemoved": true,
+  "offlineProtocolCaseCount": 34,
+  "hostWslWrapperForceCancelNativeTested": false,
+  "disconnectAfterReadyNativeTested": false,
+  "lostAckAutomaticReplayAllowed": false,
+  "liveModelCalls": 0,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "hostFilesystemIsolated": false,
+  "separateBrokerHostUidVerified": false,
+  "mainMerged": false,
+  "defaultFullTest": {
+    "result": "PASS",
+    "discoveredTests": 2229,
+    "linuxOnlySkipped": 5,
+    "executedNonSkippedTests": 2224,
+    "exitCode": 0,
+    "unittestSeconds": 245.578,
+    "ignoredFullLog": "runtime/plat-002c-cancel-20oct/full-standard-windows.txt",
+    "sha256": "804f54ca6258f4a8c5a8cda5828bd8bbcace537b6cbd555da31b0619d00e9bf3"
+  },
+  "staticCi": {
+    "result": "PASS",
+    "discoveredTests": 2229,
+    "rootTrackedTextFiles": 1540,
+    "upstreamGitlinks": 2,
+    "exitCode": 0,
+    "notFullNativeGatewayAcceptance": true
+  },
+  "codeCommitCi": "PENDING"
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "PLAT002C_BEFORE_ONE_SHOT_READ_ONLY",
+  "seenProc": 72,
+  "unreadable": 0,
+  "matchingPriorTestProcesses": 0,
+  "matchingTempRoots": 0,
+  "uid": 1000,
+  "safeToStart": true
+}
