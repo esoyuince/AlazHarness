@@ -1,0 +1,38 @@
+{
+  "gate": "PLAT-002B_READ_ONLY_RECOVERY_PREFLIGHT",
+  "date": "2026-10-19",
+  "newBranch": "alaz/plat-002b-lifecycle-19oct",
+  "baseCommit": "bac4d1b2730e7f97ac630a45372a898a1b905d21",
+  "windowsFixedNativeProcessListing": {
+    "wslExeCount": 0,
+    "wslHostExeCount": 0,
+    "vmmemWslCount": 0,
+    "wslServiceCount": 1,
+    "readOnly": true
+  },
+  "wslListRunning": {
+    "ubuntuRunning": true,
+    "exitCode": 0,
+    "readOnly": true
+  },
+  "wslGuestProcSnapshot": {
+    "scanEntries": 72,
+    "unreadable": 0,
+    "oldBridgeProbeMatches": 0,
+    "queryExitCode": 0,
+    "readOnly": true,
+    "currentUid": 1000
+  },
+  "wslTmpFs": {
+    "statType": "ext2/ext3",
+    "readOnly": true,
+    "exitCode": 0
+  },
+  "oldGuestTerminationProvenAtSnapshot": true,
+  "linuxGuestProcessTeardownHistoryFullyKnown": false,
+  "priorNativeFailStillValid": true,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "hostAccountsOrServicesChanged": false
+}

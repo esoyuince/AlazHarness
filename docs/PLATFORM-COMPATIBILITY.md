@@ -121,3 +121,17 @@ on an unknown WSL guest timeout; later guest process inspection and
 Windows tasklist checks also timed out. Native acceptance remains
 **BLOCKED/UNKNOWN**. Do not relabel this as a working agent runtime
 or a secure WSL2 launcher. Read docs/PLAT-002A-WINDOWS-WSL2-READONLY.md.
+
+
+## PLAT-002B Linux owned-child native lifecycle (19 October 2026)
+
+A read-only Ubuntu /proc preflight confirmed zero old probe PIDs at
+the inspected snapshot. One new, explicitly authorized QA-only
+Windows -> WSL2 execution verified the fixed source SHA, copied it
+into owned native Linux /tmp, and completed eight test-owned child
+exit/TERM/KILL/reap checks. A second read-only snapshot found no
+matching test processes or owned temporary directories. This
+qualifies only rootless test-owned Linux child lifecycle, NOT
+Windows-wrapper cancellation, Windows host file isolation, a
+separate broker host UID, full D3B or actual agent execution.
+See docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.

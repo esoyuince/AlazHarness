@@ -300,3 +300,14 @@ cannot claim guest process teardown or Windows file isolation.
 Do not start a production or model-facing bridge, auto-retry WSL,
 or close PLAT-002/full D3B. Details:
 docs/PLAT-002A-WINDOWS-WSL2-READONLY.md.
+
+
+## PLAT-002B rootless guest lifecycle
+
+Source frozen into rootless WSL2 /tmp and eight test-owned child
+termination/reap assertions passed in one real, nonprivileged
+Windows->Ubuntu QA run. No left-over matching temporary root or
+process detected at a later independent snapshot. Not full
+PLAT-002/D3B; next PLAT-002C must prove cancellation of Windows
+wrapper and Linux-owned child/grandchild reconciliation.
+See docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.

@@ -1,0 +1,57 @@
+{
+  "gate": "PLAT-002B_WSL_TEST_OWNED_LIFECYCLE",
+  "branch": "alaz/plat-002b-lifecycle-19oct",
+  "baseCommit": "bac4d1b2730e7f97ac630a45372a898a1b905d21",
+  "date": "2026-10-19",
+  "state": "SCOPED_NATIVE_TEST_OWNED_CHILDREN_PASS_NOT_FULL_WSL_ADAPTER",
+  "preflightResult": "READ_ONLY_PREVIOUS_GUEST_PROCESS_ABSENT_AT_SNAPSHOT",
+  "nativeOneShot": "native-owned-lifecycle-01.json",
+  "nativeResult": "PASS_SCOPED_TEST_OWNED_CHILDREN",
+  "nativeWindowsWslWrapperExit": 0,
+  "nativeLinuxGuestUid": 1000,
+  "nativeGuestChecks": 8,
+  "nativeGuestChecksPass": 8,
+  "nativeSourceCopyShaVerified": true,
+  "nativeExtFilesystemType": "ext2/ext3",
+  "nativeCopiedSourceCleaned": true,
+  "postRunProcessCount": 0,
+  "postRunTempRootsRemaining": 0,
+  "postRunReadOnlyReceipt": "post-run-readonly.json",
+  "guestScriptNativeRawSha256": "dfbd054f0f689c0a1c411c715edccdf70dda3e888c3bf2265ce054283bad2d22",
+  "sourceCanonicalLfSha256": {
+    "scripts/qa/wsl2_owned_lifecycle.py": "5e31a9bd7994175538a2672774e10cdf263b65411b6cb7887aeb21be9e47060a",
+    "scripts/qa/run_plat002b_windows_once.py": "a4e18f33b67c2d03d8468ad23efd00bd7870205d9ecd3df1a2fb88ed9fbb825b",
+    "tests/test_plat002b_lifecycle.py": "f6234bdd2142b70492d17b37298ae7fc49efde302301aa42521fd61ae34bcf8e"
+  },
+  "offlineTests": {
+    "test_plat002b_lifecycle.py": 19
+  },
+  "priorPlat002aNativeFailurePreserved": true,
+  "hostWslWrapperCancellationVerified": false,
+  "hostFilesystemIsolated": false,
+  "separateHostUidVerified": false,
+  "brokerBudgetAuthorityJoined": false,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "modelCalls": 0,
+  "mainMerged": false,
+  "rootStatic": {
+    "result": "PASS",
+    "discoveredTests": 2186,
+    "rootFilesChecked": 1530,
+    "gitlinks": 2,
+    "exitCode": 0,
+    "mode": "offline_source_validation_not_full_runtime"
+  },
+  "windowsFull": {
+    "result": "PASS",
+    "testsDiscovered": 2186,
+    "testsExecutedNonSkipped": 2181,
+    "linuxOnlySkipped": 5,
+    "exitCode": 0,
+    "unittestDurationSeconds": 238.704,
+    "ignoredLocalLog": "runtime/plat-002b-lifecycle-19oct/full-standard-windows.txt",
+    "logSha256": "bdade04498191b2f6a963575e3d58fa0e5086e32b49d8aa7a58711d910e58823"
+  },
+  "exactCodeCi": "PENDING"
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS_SCOPED_TEST_OWNED_CHILDREN",
+  "windowsWslWrapperExit": 0,
+  "guestReport": {
+    "automaticRetry": false,
+    "fullD3BAccepted": false,
+    "guestChildChecks": {
+      "all_children_reaped": true,
+      "clean_exit_reaped": true,
+      "clean_exit_zero": true,
+      "kill_exit_code": true,
+      "kill_reaped": true,
+      "kill_required_after_ignored_term": true,
+      "term_exit_code": true,
+      "term_reaped": true
+    },
+    "guestChildChecksCount": 8,
+    "guestOwnedChildrenReaped": true,
+    "guestUid": 1000,
+    "hostFilesystemIsolated": false,
+    "hostWslWrapperCancelVerified": false,
+    "linuxFilesystem": "ext2/ext3",
+    "realModelCalls": 0,
+    "result": "PASS_SCOPED_LINUX_OWNED_CHILD_LIFECYCLE",
+    "runId": "c22edc3e080f",
+    "secureAdapterActivated": false,
+    "separateHostUidVerified": false,
+    "sourceCopyExt4ShaVerified": true,
+    "sourceCopyRemoved": true,
+    "sourceSha256": "dfbd054f0f689c0a1c411c715edccdf70dda3e888c3bf2265ce054283bad2d22"
+  },
+  "guestSourceSha256": "dfbd054f0f689c0a1c411c715edccdf70dda3e888c3bf2265ce054283bad2d22",
+  "realModelCalls": 0,
+  "guestChildLifeCycleVerified": true,
+  "wslWrapperCancellationNativeVerified": false,
+  "fullD3BAccepted": false,
+  "noAutomaticRetry": true,
+  "mainMerged": false
+}

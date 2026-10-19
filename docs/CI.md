@@ -372,3 +372,17 @@ failure *receipt*, not a waived CI failure: its tests must reject any
 attempt to call it a PASS or imply sandbox acceptance.
 CI does not use a real provider, service, privileged command or
 Windows/WSL account change. See docs/PLAT-002A-WINDOWS-WSL2-READONLY.md.
+
+
+## PLAT-002B one-shot owned Linux child process QA
+
+Default-discovered Python tests validate the opt-in Windows wrapper,
+strict fixed source/command identity, native receipt SHA and Linux
+child exit/TERM/KILL cleanup evidence. The default CI does NOT
+launch WSL, kill unrelated processes or call a model. The eight
+native lifecycle assertions were executed separately on the
+developer's running Ubuntu guest with one explicit QA opt-in.
+Linux guest UID, ext-family /tmp source freeze and post-run process
+cleanup are inspectable in scoped evidence. Host-wrapper cancellation
+and real D3B security remain NOT ACCEPTED.
+See docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.

@@ -1,0 +1,16 @@
+{
+  "gate": "PLAT-002B_POST_RUN_NATIVE_READ_ONLY_PROCESS_INSPECTION",
+  "date": "2026-10-19",
+  "afterOnlyOneNativeOwnedLifecycleRun": true,
+  "readOnly": true,
+  "method": "wsl.exe --distribution Ubuntu --exec /usr/bin/python3 -B -c fixed /proc and /tmp query",
+  "result": "PASS_NO_OWNED_PROCESS_OR_TEMP_ROOT_AT_SNAPSHOT",
+  "matchedOldOrNewLifecycleProcesses": 0,
+  "ownedTempRootsRemaining": 0,
+  "procCmdlinesRead": 72,
+  "guestUid": 1000,
+  "queryExitCode": 0,
+  "hostWslWrapperCancelVerified": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0
+}

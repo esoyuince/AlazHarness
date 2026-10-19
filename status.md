@@ -1,8 +1,39 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRESS)
+Son güncelleme: 2026-10-19 (PLAT-002B Linux test-owned lifecycle IN PROGRESS)
 
 ## Güncel nokta
+
+PLAT-002B SCOPED REAL WSL CHILD LIFECYCLE PASS:
+One rootless Windows->WSL2 QA run with fixed source SHA copied
+to private Linux /tmp (GNU stat ext2/ext3 family) returned native
+child lifecycle checks 8/8 PASS for exit0, TERM, ignored TERM,
+KILL, reaping; Windows wrapper exit0. Independent read-only
+post-run Ubuntu scan saw 0 matching processes, 0 temp roots,
+72 cmdlines inspected. Prior PLAT-002A native FAIL unchanged.
+Branch alaz/plat-002b-lifecycle-19oct in worktree
+scratch/worktrees/plat-002b-lifecycle-19oct based on bac4d1b
+(GitHub code CI SUCCESS). Host WSL-wrapper mid-flight cancel,
+Windows-host filesystem isolation, separate host UID, D3B
+broker budget and M1/M2 NOT ACCEPTED. New 27 offline tests PASS;
+full root/CI publication pending. Report
+docs/PLAT-002B-WSL-OWNED-LIFECYCLE.md.
+
+PLAT-002B TEST-OWNED WSL LIFECYCLE IN PROGRESS (19 October 2026):
+New clean branch alaz/plat-002b-lifecycle-19oct, own worktree
+scratch/worktrees/plat-002b-lifecycle-19oct based exactly on
+bac4d1b2730e7f97ac630a45372a898a1b905d21
+(GitHub alaz/local-ci SUCCESS, PLAT-002A offline only).
+Verified host process enumerator: 0 wsl.exe/wslhost.exe/
+VmmemWSL at snapshot, 1 wslservice.exe. Non-starting
+wsl --list --running reported Ubuntu running. A read-only guest
+/proc scan read 72 process entries, 0 inaccessible, and 0 existing
+wsl2_bridge_guest_probe.py processes. Rootless UID1000, /tmp
+native Linux filesystem type ext2/ext3 (stat naming for ext4).
+No restart, sudo, production changes, existing process kill
+or real model. Next strict fixed small ext4 owned-temp subprocess
+cancel/reap test; full D3B, host UID separation and WSL host-file
+confinement remain OPEN. Previous native FAIL preserved.
 
 PLAT-002A SCOPED CODE CI SUCCESS / NATIVE WSL BLOCKED
 (19 October 2026): branch alaz/plat-002-wsl-readonly-19oct,
@@ -1314,3 +1345,46 @@ privileged host operation, model provider, or main changes.
 New CI observation in evidence/plat-002a-wsl-19oct/
 ci-repair-code-ci-observed.json; docs-only followup commit and
 same-SHA CI to be verified separately.
+
+### 2026-10-19 — PLAT-002B start and safe read-only WSL inspection
+
+From prior PLAT-002A head bac4d1b with clean own branch. Windows
+native process listing successful with 0 Windows wsl.exe, 0 wslhost,
+0 VmmemWSL but one WslService. WSL native --list --running returned
+Ubuntu as RUNNING, demonstrating that no Windows wsl.exe does NOT
+mean stopped Ubuntu. Fixed no-write guest /proc scan of 72 entries
+reported 0 previous wsl2_bridge_guest_probe.py PIDs, 0 inaccessible.
+Linux /tmp mounted as ext-family filesystem (stat -f says ext2/ext3)
+and available for single-use owned snapshot/child lifecycle QA.
+No additional native WSL test until source and own-subprocess cleanup
+are fail-closed. Prior 5-case native WSL FAIL remains historical;
+this inspection is a fresh independent snapshot, not retroactive PASS.
+
+### 2026-10-19 — PLAT-002B native one-shot PASS, narrower than full D3B
+
+Trusted Windows fixed WSL executable called once on Ubuntu with
+test-only opt-in and exact guest code SHA. Self-owned Linux source
+copy on ext-family /tmp had identical SHA, native subchildren group
+SIGTERM/SIGKILL/exit0 and reap: 8/8 PASS, uid1000, no
+real-provider/model, 0 unknown leftover child by guest report.
+Independent /proc read-only snapshot 72 cmdlines -> 0 matching
+PLAT002B processes; /tmp -> 0 test roots. Evidence:
+evidence/plat-002b-lifecycle-19oct/native-owned-lifecycle-01.json,
+post-run-readonly.json, summary.json.
+Source/contract offline tests 19 + 8 PASS. Windows wrapper itself
+was NOT interrupted mid-flight; no full D3B or real multi-OS
+agent launch accepted. Root/main untouched, branch CI pending.
+
+### 2026-10-19 — PLAT-002B local full root regression PASS
+
+Current dedicated worktree Windows Python full unittest 2186
+discovered, 2181 executed + five Linux-only skipped,
+exit0, 238.704 seconds. Local log:
+runtime/plat-002b-lifecycle-19oct/full-standard-windows.txt
+SHA256 bdade04498191b2f6a963575e3d58fa0e5086e32b49d8aa7a58711d910e58823.
+Static source check PASS2186 discovered/1530 root text/2 gitlinks,
+zero errors. Native WSL owned-test one-shot8/8 PASS, post-run
+0 matching processes/0 temp roots, new 27 offline tests PASS.
+Windows WSL-wrapper mid-flight cancellation, full D3B and actual
+model remain UNVERIFIED. Git stage/code commit, push and independent
+exact-code CI still PENDING.
