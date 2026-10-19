@@ -78,7 +78,15 @@
     "exit_code": 0,
     "scope": "offline_check_not_native_runtime"
   },
-  "git_and_exact_ci": "PENDING",
+  "git_and_exact_ci": {
+    "code_commit": "29f6a353799dcdf0279ebcabf44593fbcbcfa160",
+    "pushed": true,
+    "context": "alaz/local-ci",
+    "state": "success",
+    "github_status_id": 56667429890,
+    "status_updated_at_utc": "2026-10-19T07:31:09Z",
+    "followup_docs_commit_ci": "PENDING"
+  },
   "real_model_calls": 0,
   "main_merged": false,
   "full_d3b_accepted": false,

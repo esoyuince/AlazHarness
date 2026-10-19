@@ -1,0 +1,19 @@
+{
+  "scope": "exact-code-github-local-ci",
+  "commit": "29f6a353799dcdf0279ebcabf44593fbcbcfa160",
+  "branch": "alaz/d3b-integration-19oct",
+  "source_manifest_sha256": "a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4",
+  "github_status_context": "alaz/local-ci",
+  "github_status_state": "success",
+  "github_status_description": "ALAZ Local CI passed",
+  "github_status_id": 56667429890,
+  "github_status_updated_at_utc": "2026-10-19T07:31:09Z",
+  "original_code_tests": 2019,
+  "windows_skips": 5,
+  "native_gateway_accepted_runs": 4,
+  "native_kernel_checks": 24,
+  "native_kernel_startup_refusals": 5,
+  "real_model_calls": 0,
+  "full_d3b_accepted": false,
+  "main_merged": false
+}

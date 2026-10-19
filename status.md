@@ -4,7 +4,7 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
-D3B-IPC-BUDGET-INTEGRATION-19OCT LOCAL SCOPED 4/4 PASS; kernel24+5 PASS; private broker native42/42 PASS. Windows full2019/2019 exit0 skip5 and Linux broker42/42 PASS; GitHub exact-code CI PENDING. Branch alaz/d3b-integration-19oct, worktree scratch/worktrees/d3b-integration-19oct, budget base 4d96b5f, IPC 436f3f7. Four 189-file identical native source manifests SHA a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4. Old int19-normal1 false-PASS EXCLUDED. Full D3B, separate host UID, real/paid model, host-sandbox and autonomous memory NOT ACCEPTED. Report docs/D3B-IPC-BUDGET-INTEGRATION.md.
+D3B-IPC-BUDGET-INTEGRATION-19OCT LOCAL SCOPED 4/4 PASS; kernel24+5 PASS; private broker native42/42 PASS. Windows full2019/2019 exit0 skip5 and Linux broker42/42 PASS; GitHub exact-code CI SUCCESS 29f6a353 status56667429890 at 2026-10-19T07:31:09Z. Branch alaz/d3b-integration-19oct, worktree scratch/worktrees/d3b-integration-19oct, budget base 4d96b5f, IPC 436f3f7. Four 189-file identical native source manifests SHA a3ecb25c2778db24763627baafe3c6ee26168e02a8f39d89087397848037d2e4. Old int19-normal1 false-PASS EXCLUDED. Full D3B, separate host UID, real/paid model, host-sandbox and autonomous memory NOT ACCEPTED. Report docs/D3B-IPC-BUDGET-INTEGRATION.md.
 
 D3B-IPC-BUDGET-INTEGRATION-19OCT IN PROGRESS (19 Ekim 2026): ayri worktree scratch/worktrees/d3b-integration-19oct, branch alaz/d3b-integration-19oct, base 4d96b5ff45677907a8fb5ca215187de015f83e05 (CI SUCCESS). IPC dalı 436f3f792f50950b2f0984269d36627327441c52 (CI SUCCESS), birlesim test edilmeden kabul degil. Gercek provider, user profil, host server ve memory DISABLED. Root/main/oncul worktree temizlenmez veya degistirilmez.
 
@@ -932,3 +932,27 @@ summary staged, root static check PASS:2019 discovery,1476 root files,
 2 gitlinks,exit0. No native/real model inferred from static check.
 Next commit (merge parents must be budget code + IPC), push own branch
 and independently observe GitHub alaz/local-ci exact SHA.
+
+### 2026-10-19T10:31:09+03:00 - Joint D3B scoped exact-code CI SUCCESS
+
+Merge code29f6a353799dcdf0279ebcabf44593fbcbcfa160 (parents
+360da97+436f3f7) pushed to origin/alaz/d3b-integration-19oct.
+Clean tree and all189 frozen current source Git blob hashes qualified.
+GitHub alaz/local-ci SUCCESS status56667429890 at
+2026-10-19T07:31:09Z. This is exact code CI, not a model/provider
+sandbox certificate; full D3B / separate host UID / provider tariff
+and actual model / full M1 / autonomous M2 remain OPEN.
+New CI observation and original four PASS+kernel24+5 evidence in
+evidence/d3b-integration-19oct. Follow-up docs commit must receive
+its own exact-SHA CI review. Root, main, old worktrees unchanged.
+
+### Next explicit engineering gate — D3B-HOST-PRINCIPAL-001 (NOT RUN)
+
+Before declaring all D3B: separate real broker and Gateway OS authority
+(UID/process/FD/IPC lifetime), prove malicious same-UID Gateway cannot
+rewrite/replace broker-private budget files or grant storage, mount/
+namespace rollback and broker socket rebind behavior, and audit cancellation.
+Use a NEW isolated worktree with only owned temporary Linux identities;
+do not alter production accounts, host firewall or user credentials.
+Then qualify real provider model/token/tariff/cost in a separately approved
+bounded live experiment. HYB-006 learning transfer and M1/M2 remain OPEN.

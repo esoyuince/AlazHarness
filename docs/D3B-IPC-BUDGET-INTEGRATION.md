@@ -67,9 +67,22 @@ Final staged-source static root CI: PASS, 2019 tests discovered,
 1476 tracked root files inspected, 2 source gitlinks, exit0. The summary JSON retains SHA-256 for these
 logs and all four acceptance receipts.
 
-**PENDING:** exact Git commit SHA/source blob proof, branch push
-and its own GitHub alaz/local-ci. Parent green CIs do not qualify
-the merged code. Any rerun requires FRESH unique run IDs.
+## Git publication and exact-code CI
+
+Merge code commit 29f6a353799dcdf0279ebcabf44593fbcbcfa160;
+parents 360da97698e33aa4fa3a8a211723247f294ee062 and
+436f3f792f50950b2f0984269d36627327441c52.
+All 189 source/config Git blobs match frozen native source bytes,
+with only the explicitly SHA-verified C# CRLF/LF representation exception.
+Clean dedicated worktree was pushed to origin on the own feature branch;
+main and original user root worktree unchanged.
+
+GitHub context alaz/local-ci: SUCCESS (status 56667429890,
+2026-10-19T07:31:09Z) for that exact merge code commit. This result
+is separate from both predecessor CIs. Any documentation follow-up
+commit is tracked and verified separately, not silently assumed green.
+Native tests never contacted a real/paid provider. No whole-product
+acceptance follows from this narrow code CI.
 
 ## Deliberate open risks
 
