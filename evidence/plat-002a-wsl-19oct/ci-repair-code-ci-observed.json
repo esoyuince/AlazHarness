@@ -1,0 +1,31 @@
+{
+  "gate": "PLAT-002A_NATIVE_BLOCKED_OFFLINE_CODE_CI_SUCCESS",
+  "codeCommit": "8088b11e722377cb8988ccb03583648030bc1fa3",
+  "branch": "alaz/plat-002-wsl-readonly-19oct",
+  "context": "alaz/local-ci",
+  "result": "SUCCESS",
+  "description": "ALAZ Local CI passed",
+  "statusId": 56723417225,
+  "updatedAtUtc": "2026-10-19T19:16:55Z",
+  "originalCodeCi": {
+    "commit": "aff4689546b90d0602016b0698626b4a59c16b3c",
+    "state": "FAILURE",
+    "statusId": 56722358622
+  },
+  "preservedNativeReceipt": "native-win-wsl-identity-01.json",
+  "preservedNativeResult": "FAIL",
+  "fixedSinglePathLineEndingCustody": true,
+  "windowsRootRegression": {
+    "tests": 2159,
+    "skipLinuxOnly": 5,
+    "exitCode": 0
+  },
+  "linuxCanonicalLfSimulationReceiptTests": 6,
+  "actualTwoHostUidVerified": false,
+  "nativeWslProcessClosureVerified": false,
+  "fullD3BAccepted": false,
+  "fullPLAT002Accepted": false,
+  "realModelCalls": 0,
+  "mainMerged": false,
+  "documentationFollowupCi": "PENDING"
+}

@@ -4,6 +4,20 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
+PLAT-002A SCOPED CODE CI SUCCESS / NATIVE WSL BLOCKED
+(19 October 2026): branch alaz/plat-002-wsl-readonly-19oct,
+worktree scratch/worktrees/plat-002-wsl-19oct, code commit
+8088b11e722377cb8988ccb03583648030bc1fa3 GitHub
+alaz/local-ci SUCCESS status56723417225 at
+2026-10-19T19:16:55Z. First aff4689 CI failure rc1 from
+Linux CRLF/LF evidence conflict retained, exact single-file
+transformation corrected with Windows6/6 and simulated Linux6/6.
+Windows full2159 tests exit0 skip5, static2159/1520 tracked
+PASS. Actual WSL native five-case receipt remains FAIL, WSL
+process closure UNKNOWN: no more WSL restarts/probes until safe
+inspection. Full PLAT-002/D3B/M1/M2 NOT ACCEPTED, model calls0,
+main/root unchanged. Final docs-only CI observation pending.
+
 PLAT-002A CROSS-OS CI FIX IN PROGRESS (19 October 2026):
 native Windows->WSL2 READ-ONLY pilot is BLOCKED (5-case receipt FAIL,
 positive WSL timeout, guest process state UNKNOWN). Code commit
@@ -1286,3 +1300,17 @@ simulated Git LF 6/6 tests PASS. New scoped CI evidence at
 evidence/plat-002a-wsl-19oct/ci-failure-crossos-observed.json.
 Next exact code commit/push and independent GitHub CI check;
 do not claim other potential Linux CI errors already resolved.
+
+### 2026-10-19T22:16:55+03:00 — PLAT-002A code CI SUCCESS, native gate remains BLOCKED
+
+Cross-OS single native-failure-receipt exact CRLF/LF repair committed as
+8088b11e722377cb8988ccb03583648030bc1fa3, independently tested
+GitHub alaz/local-ci SUCCESS id56723417225,
+2026-10-19T19:16:55Z. Earlier aff4689 CI rc1 status56722358622
+remains retained with original WSL 5-case FAIL.
+Windows full 2159 tests exit0 skip5 and same-source static PASS.
+No actual WSL guest replay, no verified process teardown, no
+privileged host operation, model provider, or main changes.
+New CI observation in evidence/plat-002a-wsl-19oct/
+ci-repair-code-ci-observed.json; docs-only followup commit and
+same-SHA CI to be verified separately.

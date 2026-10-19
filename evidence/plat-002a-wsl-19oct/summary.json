@@ -55,5 +55,13 @@
   "hostAccountOrServicesChanged": false,
   "noAutomaticRetry": true,
   "ciCrossOsEvidence": "ci-failure-crossos-observed.json",
-  "ciRepairExactCommitStatus": "PENDING"
+  "ciRepairExactCommitStatus": {
+    "commit": "8088b11e722377cb8988ccb03583648030bc1fa3",
+    "result": "SUCCESS",
+    "context": "alaz/local-ci",
+    "statusId": 56723417225,
+    "statusUtc": "2026-10-19T19:16:55Z",
+    "docsFollowupCi": "PENDING"
+  },
+  "ciRepairCodeReceipt": "ci-repair-code-ci-observed.json"
 }

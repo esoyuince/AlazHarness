@@ -136,3 +136,17 @@ Windows default full suite on the first commit 2159/2159 exit0,
 tracked files, 2 gitlinks, exit0. Exact CI of the follow-up QA
 repair remains independently pending. See
 evidence/plat-002a-wsl-19oct/ci-failure-crossos-observed.json.
+
+
+## Exact PLAT-002A repair code CI observation
+
+The cross-OS native FAIL evidence verifier repair was published as
+8088b11e722377cb8988ccb03583648030bc1fa3 on the isolated
+alaz/plat-002-wsl-readonly-19oct branch. GitHub alaz/local-ci
+**SUCCESS**, status id 56723417225 at 2026-10-19T19:16:55Z.
+This CI qualifies default-discovered/offline code contracts, NOT
+the separate WSL native 5-case acceptance (still FAIL) or full D3B.
+The first aff4689 CI failure remains an immutable historical record.
+Production bridge, real model and host principal isolation remain
+NOT ACCEPTED. The documentation-only follow-up commit requires its
+own exact CI observation.
