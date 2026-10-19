@@ -13,6 +13,11 @@ Ana hedef: docs/MVP-v0.1.md. Güncel gerçekleşen durum: status.md. Aşağıdak
 | HYB-006 | Yeni oturumda hafıza/beceri kullanımı | Kayıt + bağımsız yeniden kullanım kanıtı |
 | HYB-007 | Yerel ve sağlayıcı model adaptörü | Model değişse de kimlik/hedef/hafıza devamı |
 | HYB-008 | M1 kabul paketi | Tüm M1 senaryoları; ayrı mock ve gerçek-model raporları |
+| PLAT-001 | Platform-neutral Node route planning, fail-closed inspector | Windows and WSL2 Node cases plus simulated macOS/ARM64; no guarded start |
+| PLAT-002 | Windows host to verified WSL2 isolated worker bridge | Real guest identity/path/socket/process and cancellation native proof; no fallback |
+| PLAT-003 | Linux native secure adapter bound to D3B full guards | Distinct broker/Gateway host UID and IPC/root/FD/network/budget native acceptance |
+| PLAT-004 | Apple Silicon coordinator and trusted Linux worker | Physical Mac ARM64 tests; authenticated remote/VM proof; native ARM64 guard separate |
+| PLAT-005 | Portable run identity and state/permission parity | Cross-host deterministic real Gateway local-scripted acceptance, then paid model gate |
 | AUTO-001 | İhtiyaçtan hedef adayları ve öncelik | M1 sonrası; seçme/sürdürme/bırakma gerekçeleri |
 | AUTO-002 | Bağımsız öğrenme deneyi | Aynı model/bütçe ile baseline ve tutulmuş transfer görevleri |
 
@@ -267,3 +272,15 @@ filesystem roots and exact broker socket; undeclared host socket paths hidden.
 See docs/D3B-IPC-PROJECTION.md. Real Gateway4 scenarios and kernel checks
 tracked separately from unit suite. Next independent broker-owned budget and
 one-use authority outside Gateway-writable DB; fullD3B/model learning open.
+
+
+## Platform-portable control plane (PLAT-001)
+
+User decision on 19 October 2026: one cross-platform AlazHarness
+orchestrator, Linux-native guarded execution initially, with explicit
+Windows/WSL2 and macOS execution adapters as separately validated
+targets. Route planning is pure and offline, never a code-execution
+authorization. Read-only inspector and no-fallback tests: see
+docs/adr/0004-portable-core-linux-security.md and
+docs/PLATFORM-COMPATIBILITY.md. Full D3B and actual Mac ARM64
+acceptance are NOT implied by a platform simulation.

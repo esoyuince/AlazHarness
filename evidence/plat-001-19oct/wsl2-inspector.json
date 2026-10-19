@@ -1,0 +1,34 @@
+{
+  "result": "NOT_ACCEPTED",
+  "observedHost": {
+    "schemaVersion": 1,
+    "platform": "linux",
+    "arch": "x64",
+    "environment": "linux-wsl2-guest",
+    "linuxX64Candidate": true,
+    "kernelAttested": false,
+    "realHostUidIsolationAccepted": false
+  },
+  "executionPlan": {
+    "schemaVersion": 1,
+    "requestMode": "guarded",
+    "hostPlatform": "linux",
+    "hostArchitecture": "x64",
+    "hostEnvironment": "linux-wsl2-guest",
+    "route": "linux-x64-wsl2-guest-candidate",
+    "readiness": "guarded-not-accepted",
+    "processLaunchAuthorized": false,
+    "realModelCallAuthorized": false,
+    "modelBudgetUsdAuthorized": 0,
+    "noFallback": true,
+    "requirements": [
+      "WSL2_GUEST_BOUNDARY_NOT_ACCEPTED",
+      "FULL_D3B_NOT_ACCEPTED",
+      "NATIVE_GUARD_AND_BROKER_ACCEPTANCE_REQUIRED",
+      "PER_RUN_AUTHORITY_AND_BUDGET_REQUIRED",
+      "NO_UNGUARDED_FALLBACK"
+    ]
+  },
+  "readOnlyInspector": true,
+  "processStarted": false
+}

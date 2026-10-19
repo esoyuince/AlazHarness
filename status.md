@@ -4,6 +4,24 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
+PLAT-001 FINAL LOCAL PASS — Windows full2096/2096 exit0 skip5, root static2096 discovered/1503 inspected/2 gitlinks PASS; Windows and WSL2 actual host labels correct, Node27/27 each; source custody 5/5 exact Git LF digest matches. No model/agent process launched. Branch alaz/platform-routing-001-19oct, worktree scratch/worktrees/platform-routing-19oct base46766be. Guarded adapter and full D3B NOT ACCEPTED; actual Mac/ARM64 NOT TESTED; own GitHub CI PENDING. See ADR-0004 and docs/PLATFORM-COMPATIBILITY.md.
+
+PLAT-001 SCOPED LOCAL FULL TEST PASS (19 Ekim 2026): branch alaz/platform-routing-001-19oct, dedicated worktree scratch/worktrees/platform-routing-19oct, base 46766be (GitHub CI previously SUCCESS). Windows and actual WSL2 inspectors NOT_ACCEPTED guarded; Windows Node27/27 and WSL2 Node27/27 offline PASS. New Python routing28/28 and receipt5/5, Windows full2096/2096 exit0 skip5. Mock/agent engine unchanged, model calls0. Mac/ARM64 native NOT RUN, guarded adapter remains prohibited; full D3B and M1/M2 NOT ACCEPTED. README/ADR-0004 and docs/PLATFORM-COMPATIBILITY.md updated, branch commit/CI pending.
+
+PLAT-001 MULTI-OS CORE ROUTING IN PROGRESS (19 Ekim 2026):
+User decision: platform-neutral AlazHarness control/core; Linux-first
+secure execution adapter, Windows host/WSL2 guest and macOS host/Linux-VM
+or remote Linux worker as distinct future adapters. Linux x86_64 is
+the only currently implemented D3B partial boundary, not full M1/D3B.
+New clean branch alaz/platform-routing-001-19oct, worktree
+scratch/worktrees/platform-routing-19oct, base
+46766bef55e0fb3f3a93dfb1356536400ba2b4d7
+(exact GitHub local-ci SUCCESS). First slice pure Node planning and
+fail-closed capability contract; no host commands, VPN/remote daemon,
+paid provider, privileged launch, personal runtime, or production
+configuration. Root/main/prior D3B worktrees untouched. No macOS
+or ARM64 native sandbox acceptance claimed.
+
 D3B-HOST-PRINCIPAL-001 FINAL LOCAL NEGATIVE-ONLY COMPONENT PASS: full Windows2063/2063 exit0 skip5, Linux rootless denial8/8, Linux legacy broker native42/42, stage static PASS2063; 4 exact native-CRLF/Git-LF source pairs verified. Host principal branch alaz/d3b-host-principal-7a19, worktree scratch/worktrees/d3b-host-principal-7a19, base62a0fc9. Real separate two-host-UID Gateway/broker NOT RUN (privileged test invocation blocked); full D3B, main merge, paid provider DISABLED/NOT ACCEPTED. Exact-code GitHub CI SUCCESS at code a5e9afc status56697273855 2026-10-19T14:29:19Z. Report docs/D3B-HOST-PRINCIPAL-001.md.
 
 D3B-HOST-PRINCIPAL-001 PARTIAL NEGATIVE-ONLY COMPONENT PASS (19 Ekim 2026): branch alaz/d3b-host-principal-7a19; own scratch/worktrees/d3b-host-principal-7a19 base 62a0fc9. Strict default-OFF split OS principal/host user-namespace and peer/owned-budget/socket gates implemented. Windows44 new tests PASS, unprivileged Linux native denial8/8 PASS, prepared Linux legacy broker42/42 PASS. Real two-host-UID positive Gateway + broker NOT RUN (privileged test safety-blocked), ipc_view split-principal integration OPEN; full regression + own CI pending. Root/main/production unchanged. Report docs/D3B-HOST-PRINCIPAL-001.md.
@@ -1062,3 +1080,51 @@ prove independent host UID execution; split-UID Gateway/IPC mount
 positive acceptance, paid-provider and full D3B remain OPEN. Current
 new followup files only docs/status/CI record/summary; followup commit
 must receive separate exact GitHub CI check.
+
+### 2026-10-19 — PLAT-001 separate multi-OS core/secure adapter design start
+
+User explicitly chose Windows/Linux/macOS portable control plane with
+isolated Linux secure execution backend; Apple Silicon must NOT be
+misreported as x86_64 Linux support. Own clean branch
+alaz/platform-routing-001-19oct from 46766be
+in scratch/worktrees/platform-routing-19oct. Planned pure Node versioned
+host classification, read-only platform inspection CLI, absolute
+fail-closed sandbox plan, real Windows/WSL check and platform-matrix/ADR
+docs with offline tests. No launch orchestration or model calls.
+Current upstream, main, source pins and existing D3B worktrees retained.
+
+### 2026-10-19 — PLAT-001 read-only Windows and WSL evidence checkpoint
+
+New Node v1 route contract + inspector + ADR-0004 + platform matrix
+implemented on own clean worktree branch. Real Windows process classified
+win32/x64/windows-host; real prepared Linux Node inside WSL2 classified
+linux/x64/linux-wsl2-guest. Both guarded NOT_ACCEPTED,
+processLaunchAuthorized false, real model calls0. Windows Node27/27 and
+WSL2 Linux Node27/27 simulated routing/negative cases PASS separately;
+Python default-discovered platform routing28/28 and evidence custody5/5
+PASS. Existing hybrid mock slice33/33 and original D3B Gateway evidence
+QA3/3 PASS. Saved receipts evidence/plat-001-19oct; 5 current source
+canonical LF SHA entries. Mac/ARM64 real tests NOT RUN. Main and old
+D3B worktrees unmodified. Full root regression/static/branch CI pending.
+
+### 2026-10-19 — PLAT-001 Windows root full regression completed
+
+Root Python3.14.3 default-discovered 2096 unittest PASS exit0 with
+5 Linux-only SKIP (2091 executed), runtime 171.127 sec.
+Log evidence/plat-001-19oct/full-standard-windows.txt SHA256
+8ad463c9f8207aa0370a6471a3ecb1925574c32e1b341625c82cfe23cdd37026. Actual Windows read-only inspector and WSL2 Node guest
+report NOT_ACCEPTED guarded, direct 27/27 Node scenario sets each PASS,
+0 real model calls. No GUI/native Apple Silicon tested; full D3B
+and WSL2 launch bridge remain independent. Next stage final indexed
+static checks, exact commit/push and same-SHA GitHub local-ci.
+
+### 2026-10-19 — PLAT-001 final staged root static PASS
+
+Eighteen selected stage files only; git diff --cached --check and
+unstaged diff --check exit0. All five frozen current source LF SHA
+values match staged Git blobs, zero drift. Root static discovery2096,
+root text1503, upstream gitlinks2, exit0. Windows full2096 PASS skip5,
+Node Windows27/27 and WSL2 Linux27/27, 0 model calls.
+One code+evidence commit to own feature branch next, then separately
+verify exact GitHub alaz/local-ci. Do not merge main or launch guard
+based on this read-only host planner.

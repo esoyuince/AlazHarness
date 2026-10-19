@@ -321,3 +321,22 @@ Historical merged Gateway evidence is pinned to its original code
 commit, not required to match this experimental new branch code.
 No real model/provider, invoices or automatic learning.
 See docs/D3B-HOST-PRINCIPAL-001.md.
+
+
+## PLAT-001 portable routing test boundaries
+
+The Python root unittest suite discovers individual Node24 ESM
+side-effect-free platform routing tests. Each case runs actual Node
+code without a network, model/provider, privilege or WSL guest spawn.
+The Windows x64 and WSL2 Linux x64 read-only inspector results are
+separately saved as native developer observations; the CI job cannot
+infer actual macOS/Apple Silicon acceptance from simulated host facts.
+
+New Node module: packages/hybrid-runtime/platform-routing.mjs.
+Read-only CLI: scripts/inspect_platform.mjs.
+Tests: tests/test_platform_routing.py and tests/node/platform-cases.mjs.
+PLAT-001 guarded plan must never set processLaunchAuthorized true.
+Extra request fields, OS overrides, fake kernel/UID evidence and
+unknown WSL release refuse or remain explicitly unaccepted.
+Native kernel, privileged host, account, server, real model and M1/M2
+are not part of this gate. Full-D3B/Gateway tests are independent.

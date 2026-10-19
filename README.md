@@ -58,6 +58,31 @@ Ten upstream payloads (including two licenses) live under packages/upstream.
 See [integration decisions](docs/HYB-003-INTEGRATION.md). A scripted transport
 peer is not evidence of real AIAgent execution.
 
+## Platform design: portable core, Linux-first sandbox (PLAT-001)
+
+The hybrid control plane is intended to run on Windows, Linux and macOS,
+with Linux-native isolated execution supplied by explicit platform
+adapters. Node 24 is the portable integration layer; the selected
+Hermes engine remains the first M1 runtime. Windows/WSL2 uses a
+separately verified Linux guest rather than silently running tools on
+Windows. On Apple Silicon, a trusted remote Linux x86_64 worker or a
+separately ported Linux ARM64 guest is a future option, not current
+support: the existing security guard requires Linux x86_64.
+
+A side-effect-free route inspector is available today:
+
+~~~sh
+node scripts/inspect_platform.mjs --mode=guarded
+node tests/node/platform-cases.mjs all
+~~~
+
+The inspector returns NOT_ACCEPTED and **does not start any agent,
+VM, WSL bridge, real provider or sandbox**. Test scenarios for macOS
+and ARM64 simulate host descriptions, not physical-device acceptance.
+Architecture: [ADR-0004](docs/adr/0004-portable-core-linux-security.md);
+[platform support matrix](docs/PLATFORM-COMPATIBILITY.md).
+Full D3B and multi-OS deployment remain future acceptance gates.
+
 ## Development baseline
 
 `main` is the reviewed integration baseline, not a production release. Keep new

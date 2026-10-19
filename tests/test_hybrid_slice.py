@@ -22,7 +22,7 @@ class HybridSliceTests(unittest.TestCase):
         sources=[*ROOT.glob('packages/hybrid-runtime/*.mjs'),
                  *ROOT.glob('packages/upstream/openclaw/*.ts'),ROOT/'tests/hybrid/cases.mjs',
                  ROOT/'scripts/check_node_syntax.mjs']
-        self.assertEqual(len(sources),10)
+        self.assertEqual(len(sources),11)
         for source in sources:
             with self.subTest(source=source.name):
                 r=subprocess.run([node,str(ROOT/'scripts/check_node_syntax.mjs'),str(source)],capture_output=True,text=True,

@@ -1,0 +1,67 @@
+{
+  "gate": "PLAT-001",
+  "status": "SCOPED_OFFLINE_ROUTER_AND_ACTUAL_WIN_WSL_INSPECTOR_PASS",
+  "date": "2026-10-19",
+  "branch": "alaz/platform-routing-001-19oct",
+  "baseCommit": "46766bef55e0fb3f3a93dfb1356536400ba2b4d7",
+  "observations": {
+    "windows-inspector": {
+      "result": "NOT_ACCEPTED",
+      "exitCode": 0,
+      "filename": "windows-inspector.json"
+    },
+    "windows-node-cases": {
+      "result": "PASS",
+      "exitCode": 0,
+      "filename": "windows-node-cases.json"
+    },
+    "wsl2-inspector": {
+      "result": "NOT_ACCEPTED",
+      "exitCode": 0,
+      "filename": "wsl2-inspector.json"
+    },
+    "wsl2-node-cases": {
+      "result": "PASS",
+      "exitCode": 0,
+      "filename": "wsl2-node-cases.json"
+    }
+  },
+  "sourceCanonicalLfSha256": {
+    "packages/hybrid-runtime/platform-routing.mjs": "ab9ddee76138dba3c5f6c6a66f24b883c515eb4abe3980234455123d37924b79",
+    "scripts/inspect_platform.mjs": "3140443799a488be903243369c66da4a7fd859c3ed0900f3ecebe8cf441cf338",
+    "tests/node/platform-cases.mjs": "9b9eea0d3c4ed381af52dce6bb22fa55919e98512a676d52b35885a802a42ccf",
+    "tests/test_platform_routing.py": "f06603bd8b914e09b38035e6a38e61ed457d4d8a325fe6de853a12f64521d796",
+    "tests/test_hybrid_slice.py": "76d3de06e9e10c39ee12c6762f04120a9b96ea41ab243f0cfeabd34bd2e75bd9"
+  },
+  "windowsNodeScenarioCases": 27,
+  "wsl2NodeScenarioCases": 27,
+  "physicalMacOrLinuxArmNativeTested": false,
+  "realD3BGatewayRunWithNewRouter": false,
+  "guardedAdapterLaunchAuthorized": false,
+  "realModelCalls": 0,
+  "hostServicesChanged": false,
+  "testOwnedNativeLinuxNamespaceCreated": false,
+  "M1Accepted": false,
+  "M2Accepted": false,
+  "windowsFullStandard": {
+    "result": "PASS",
+    "discovered": 2096,
+    "exitCode": 0,
+    "linuxOnlySkipped": 5,
+    "unittestSeconds": 171.127,
+    "log": "full-standard-windows.txt",
+    "logBytes": 261165,
+    "logSha256": "8ad463c9f8207aa0370a6471a3ecb1925574c32e1b341625c82cfe23cdd37026"
+  },
+  "finalStagedStatic": {
+    "result": "PASS",
+    "exitCode": 0,
+    "testsDiscovered": 2096,
+    "trackedRootFiles": 1503,
+    "gitSourceLinks": 2,
+    "paidModelCalls": 0,
+    "scope": "M0_HYB_MOCK_STATIC_NOT_RUNTIME_TEST"
+  },
+  "codeCommitGitHubCi": "PENDING",
+  "fullD3BAccepted": false
+}
