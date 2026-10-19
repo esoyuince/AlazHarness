@@ -153,3 +153,21 @@ and CI evidence; then create a NEW integration worktree combining accepted
 IPC restrictions and this broker-private budget authority, rerun real
 Gateway 4/4 plus negative mount/socket/kernel tests, and only then consider
 a higher D3B acceptance decision.
+
+## CI portability repair - 19 October 2026
+
+Published code commit 4baca22 received exact-commit alaz/local-ci FAILURE
+(status 56649957140, rc=1). This historical status remains a failure.
+Independent Git inspection of all 188 frozen native-source entries identified
+one cross-OS representation mismatch: native Windows checkout of
+scripts/qa/windows_appcontainer_probe.cs had 229 CRLF endings while
+Git text=auto and Linux checkout use 229 LF endings. Acceptance now pins
+only two explicitly known SHA-256 representations for that exact one path.
+Original native receipts and source snapshots remain immutable.
+
+A Linux default-Python diagnostic also exposed absent aiohttp, causing four
+native HTTP transport refusals among five implicitly discovered Linux tests.
+Those five are now explicit opt-in with ALAZ_BROKER_NATIVE_TESTS=1 and an
+already prepared Linux Python with aiohttp. No default CI dependency install.
+Do not call that earlier diagnostic native acceptance. A new exact-commit CI
+result must be independently confirmed after publication.

@@ -75,7 +75,25 @@ class PrivateBudgetNativeEvidence(unittest.TestCase):
                             relative.startswith(('packages/','scripts/','config/')))
             actual=ROOT/path
             self.assertTrue(actual.is_file() and not actual.is_symlink(),relative)
-            self.assertEqual(hashlib.sha256(actual.read_bytes()).hexdigest(),digest,relative)
+            source_bytes=actual.read_bytes()
+            if relative=='scripts/qa/windows_appcontainer_probe.cs':
+                # The original evidence is the Windows CRLF checkout.
+                # The canonical Git/Linux checkout stores LF (text=auto).
+                # Two exact, known content hashes, and this path ONLY.
+                current=hashlib.sha256(source_bytes).hexdigest()
+                if current!=digest:
+                    self.assertEqual(
+                        current,
+                        '4c1050700bd01dfb73468ac3a266e8d2edf07212a9f75641379a59b3a02f7f8c',
+                        relative)
+                    self.assertEqual(hashlib.sha256(
+                        source_bytes.replace(b'\n',b'\r\n')).hexdigest(),
+                        digest,relative)
+                else:
+                    self.assertEqual(source_bytes.count(b'\r\n'),
+                                     source_bytes.count(b'\n'),relative)
+            else:
+                self.assertEqual(hashlib.sha256(source_bytes).hexdigest(),digest,relative)
 
     def test_failed_receipts_retained_not_passed_off_as_success(self):
         self.assertEqual(read('gateway-bgta19-normal2.json')['result'],'FAIL')

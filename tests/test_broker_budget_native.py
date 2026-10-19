@@ -27,8 +27,10 @@ from recovery_inspector import _json
 from broker_budget import BrokerBudget, initialize
 
 
-@unittest.skipUnless(os.name == 'posix' and hasattr(socket, 'SO_PEERCRED'),
-                     'Linux SO_PEERCRED is required')
+@unittest.skipUnless(
+    os.name == 'posix' and hasattr(socket, 'SO_PEERCRED')
+    and os.environ.get('ALAZ_BROKER_NATIVE_TESTS') == '1',
+    'native IPC/HTTP requires explicit opt-in and a prepared Linux runtime')
 class NativeBudgetTransport(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
         self.tmp = tempfile.TemporaryDirectory(prefix='alaz-budget-native-')

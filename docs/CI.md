@@ -286,3 +286,16 @@ ayrı runtime yürütme değildir. evidence/d3b-credential-fix-a613/.
 ## D3B combined scope
 
 Existing credential1903 plus network17 plus new18 yields expected1938 unique offline tests. Four SAME-process Gateway experiments and24 kernel checks +5 startup refusals are separate. Full result is not inherited from parent CIs; source-freeze and full-standard.json must match. Native code snapshots184 files; full source/test/config manifest separately counted.
+
+## D3B native broker opt-in
+
+Default no-install CI discovers the five Linux Unix-socket/loopback-HTTP
+tests but skips them unless ALAZ_BROKER_NATIVE_TESTS=1. They require a
+separately prepared Linux Python with aiohttp and SO_PEERCRED. A default
+skip never counts as native acceptance. Broker-policy and frozen-source
+receipt tests remain in the regular suite. Opted-in runs must be reported
+separately with their exact runtime version and result.
+
+One historical Windows CRLF source manifest differs from Linux canonical
+LF (text=auto). The test pins two exact hashes for only that known C-sharp
+file; every other frozen entry continues to require an exact digest match.

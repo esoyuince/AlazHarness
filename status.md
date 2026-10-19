@@ -4,6 +4,8 @@ Son güncelleme: 2026-10-19 (D3B-BUDGET-C84F local acceptance)
 
 ## Güncel nokta
 
+D3B-BUDGET-CI-EOL-FIX LOCAL PASS / EXACT CI PENDING (19 Ekim 2026): published 4baca22 CI FAILURE rc1 (GitHub status56649957140); Windows native manifest and Git canonical content differ ONLY for scripts/qa/windows_appcontainer_probe.cs: CRLF vs LF. Testing a narrowly pinned exact Git-blob/CRLF pair without changing original evidence, runtime permissions, model/price, or main. Verify CI and tests before acceptance; integration IPC remains separate.
+
 D3B-BUDGET-C84F LOCAL SCOPED PASS (yayin/CI ayri): 4/4 native Hermes Gateway + ayni-PID netns/Landlock + broker-private kalici butce, 188 kaynak SHA sabit; normal4/4, limit3/3, disconnect4 rezervasyon/3 HTTP yaniti, revoke3/3. Windows full1980/1980 exit0 skip5 (Linux-only); Linux broker42/42 exit0 skip0; static1980 PASS. Tarihi D2B2 makbuzu ozgun 35099bd Git commitine sabitlendi, yeni butce makbuzlari guncel kaynak SHA'sina sabitlendi. Dal alaz/d3b-budget-c84f; scratch/worktrees/d3b-budget-c84f; base 5e7a14ebfa2111e9301d3cd50ee62733810f5f99. IPC-A731 baska dalda; root mirror, main, onceki agaclar degismedi. TamD3B/ayri host UID/gercek model/odenen cagri/otonom hafiza KAPALI. Rapor docs/D3B-BROKER-PRIVATE-BUDGET.md.
 
 
@@ -800,3 +802,33 @@ IPC-A731 başka canlı dalda başladı; çakışan mount/combined_guard değişi
 ### 2026-10-19 — D3B-BUDGET-C84F yerel kabul
 
 Dort gercek Hermes Gateway/native ext4 senaryosu PASS (normal4/4, butce3/3, disconnect4/3, revoke3/3), 188 kod kaynagi SHA stabil, broker-private rezervasyonlari HTTP oncesi ve yeniden baslatmadan sonra kalici. Ilk uc basarisiz tanilama makbuzu saklandi, basari sayilmiyor. Windows1980 test PASS skip5 platforma ozel; Linux42 hedefli test PASS skip0; root static1980 PASS. Historik D2B2 kabulunun kod referansi sabit onceki Git commitine baglandi, guncel kabulun source SHA'lari yeni testle denetlendi. Linux full gecmis tanilama FAIL (Node26/Node24 ortam uyusmazligi ve o zaman henuz duzeltilmemis tarihi SHA testi); Linux full yeniden PASS iddia edilmiyor. Bir sonraki adim exact code commit/push ve ayri CI; sonra IPC-A731 ile yeni izolasyon worktree birlestirmesi ve native4/4+kernel negatif kabul. Full D3B ve gercek ucretli model NOT ACCEPTED.
+
+### 2026-10-19 — D3B-BUDGET-CI-EOL-FIX başlangıcı
+
+4baca22 local PASS but exact GitHub alaz/local-ci FAILURE rc1. Hash custody inspection: 188 manifest entries versus Git HEAD; only Windows CS file differs, and the entire difference is 229 CRLF-to-LF substitutions. Keep original native receipt immutable; add an explicit single-path canonical-Git-vs-native-CRLF proof. No main/root/IPC edits, no provider traffic.
+
+### 2026-10-19 - CI platform recovery second checkpoint
+
+Windows 1980/1980 exit0, skipped5, log runtime/d3b-budget-ci-eol-20261019.txt.
+Focused evidence3+historical11 PASS; static1980 PASS. WSL Python3.12.3
+has no aiohttp: default 42-target diagnostic failed with 5 errors,
+including Git unsafe-ownership and four broker HTTP refusals; this is
+not a native PASS. Patched the accepted single-file CRLF/LF exact hashes
+without invoking git subprocess from Linux tests. The five Linux native
+IPC tests now opt in explicitly to prepared runtime. Reverify default
+CI and opt-in native independently; remote exact-code CI pending.
+No host credentials/provider, server settings, main/root/IPC tree touched.
+
+### 2026-10-19 - D3B-BUDGET-CI-EOL-FIX exact local verification complete
+
+Current candidate Windows full1980/1980 exit0, skipped5, duration193.228s,
+log runtime/d3b-budget-ci-eol-final-20261019.txt. Windows broker native
+source evidence3/3 PASS; historical D2B2 receipt11/11 PASS;
+root static CI PASS1980; git diff --check clean.
+Default WSL Linux Python3.12.3 native-focused discovery42, executed37,
+skipped5 explicitly, exit0. Prepared private Linux Python3.14.3 with
+ALAZ_BROKER_NATIVE_TESTS=1 ran all42/42 PASS, skip0, exit0.
+No paid model, production daemon or new native Gateway run. Previous
+4 Gateway receipts remain historical and immutable; code changes limited
+to two QA files and two scope/CI documents. Next Git exact-code
+publication and CI check, then new IPC+budget integration worktree.
