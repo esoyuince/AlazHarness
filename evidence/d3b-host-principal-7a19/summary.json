@@ -22,7 +22,14 @@
   "full_d3b_accepted": false,
   "real_provider_calls": 0,
   "main_merged": false,
-  "current_exact_ci": "PENDING",
+  "current_exact_ci": {
+    "commit": "a5e9afca5e5d24e5422b251a11c3e642b933e68d",
+    "state": "success",
+    "context": "alaz/local-ci",
+    "statusId": 56697273855,
+    "statusUtc": "2026-10-19T14:29:19Z",
+    "followupDocsCommitCi": "PENDING"
+  },
   "limitations": [
     "two-host-UID positive test not run",
     "ipc_view projection expects same-UID legacy socket",
@@ -70,5 +77,10 @@
     "exitCode": 0,
     "runtimeTested": false,
     "realModelCalled": false
+  },
+  "linux_host_principal_offline": {
+    "tests": 44,
+    "exitCode": 0,
+    "hostUidSwitchPerformed": false
   }
 }

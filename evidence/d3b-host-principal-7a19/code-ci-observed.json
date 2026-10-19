@@ -1,0 +1,19 @@
+{
+  "scope": "D3B-HOST-PRINCIPAL-001_EXACT_CODE_COMMIT",
+  "branch": "alaz/d3b-host-principal-7a19",
+  "code_commit": "a5e9afca5e5d24e5422b251a11c3e642b933e68d",
+  "github_status_context": "alaz/local-ci",
+  "github_status_state": "success",
+  "github_status_description": "ALAZ Local CI passed",
+  "github_status_id": 56697273855,
+  "status_utc": "2026-10-19T14:29:19Z",
+  "full_windows_tests": 2063,
+  "linux_only_skips": 5,
+  "linux_host_principal_offline_tests": 44,
+  "unprivileged_linux_negative_controls": 8,
+  "native_legacy_broker_tests": 42,
+  "two_uid_positive_native_gateway_tested": false,
+  "real_model_calls": 0,
+  "main_merged": false,
+  "full_d3b_accepted": false
+}

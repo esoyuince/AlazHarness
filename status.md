@@ -4,7 +4,7 @@ Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRES
 
 ## Güncel nokta
 
-D3B-HOST-PRINCIPAL-001 FINAL LOCAL NEGATIVE-ONLY COMPONENT PASS: full Windows2063/2063 exit0 skip5, Linux rootless denial8/8, Linux legacy broker native42/42, stage static PASS2063; 4 exact native-CRLF/Git-LF source pairs verified. Host principal branch alaz/d3b-host-principal-7a19, worktree scratch/worktrees/d3b-host-principal-7a19, base62a0fc9. Real separate two-host-UID Gateway/broker NOT RUN (privileged test invocation blocked); full D3B, main merge, paid provider DISABLED/NOT ACCEPTED. Exact-code branch CI PENDING. Report docs/D3B-HOST-PRINCIPAL-001.md.
+D3B-HOST-PRINCIPAL-001 FINAL LOCAL NEGATIVE-ONLY COMPONENT PASS: full Windows2063/2063 exit0 skip5, Linux rootless denial8/8, Linux legacy broker native42/42, stage static PASS2063; 4 exact native-CRLF/Git-LF source pairs verified. Host principal branch alaz/d3b-host-principal-7a19, worktree scratch/worktrees/d3b-host-principal-7a19, base62a0fc9. Real separate two-host-UID Gateway/broker NOT RUN (privileged test invocation blocked); full D3B, main merge, paid provider DISABLED/NOT ACCEPTED. Exact-code GitHub CI SUCCESS at code a5e9afc status56697273855 2026-10-19T14:29:19Z. Report docs/D3B-HOST-PRINCIPAL-001.md.
 
 D3B-HOST-PRINCIPAL-001 PARTIAL NEGATIVE-ONLY COMPONENT PASS (19 Ekim 2026): branch alaz/d3b-host-principal-7a19; own scratch/worktrees/d3b-host-principal-7a19 base 62a0fc9. Strict default-OFF split OS principal/host user-namespace and peer/owned-budget/socket gates implemented. Windows44 new tests PASS, unprivileged Linux native denial8/8 PASS, prepared Linux legacy broker42/42 PASS. Real two-host-UID positive Gateway + broker NOT RUN (privileged test safety-blocked), ipc_view split-principal integration OPEN; full regression + own CI pending. Root/main/production unchanged. Report docs/D3B-HOST-PRINCIPAL-001.md.
 
@@ -1049,3 +1049,16 @@ files,2gitlinks,exit0; NOT a runtime security certificate. Full local
 Windows2063/2063 exit0 skip5, prepared Linux legacy broker42/42 and
 negative Linux8/8 separately. Ready for exact-code commit/push/CI,
 full separate host UID acceptance remains open. Root and main untouched.
+
+### 2026-10-19T17:29:19+03:00 — Host-principal negative-only exact-code CI SUCCESS
+
+Code a5e9afca5e5d24e5422b251a11c3e642b933e68d pushed to dedicated
+origin/alaz/d3b-host-principal-7a19; parent 62a0fc9 unchanged, main
+and root protected. GitHub alaz/local-ci SUCCESS id56697273855 at
+2026-10-19T14:29:19Z for exact code. 2063 Windows unit PASS skip5,
+44 new tests also run on unprivileged WSL Linux exit0, negative native
+8/8 and prepared legacy broker42/42 separately PASS. This does NOT
+prove independent host UID execution; split-UID Gateway/IPC mount
+positive acceptance, paid-provider and full D3B remain OPEN. Current
+new followup files only docs/status/CI record/summary; followup commit
+must receive separate exact GitHub CI check.

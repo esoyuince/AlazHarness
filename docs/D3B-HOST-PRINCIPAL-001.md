@@ -103,3 +103,16 @@ original digest. The entire remainder of the historical evidence
 retains unchanged exact-source checks; unknown source drift still
 fails. This is a content-equivalence exception for newline bytes,
 not a two-UID positive test or a changed native receipt.
+
+## Exact-code GitHub CI observation
+
+Published code commit a5e9afca5e5d24e5422b251a11c3e642b933e68d
+on origin/alaz/d3b-host-principal-7a19. Its parent is the independently
+accepted IPC+budget slice 62a0fc9062408ec21bf5f4a8b17f7702e1499c57.
+All four current negative-source Git blobs were checked against their
+precisely SHA-matched native CRLF/Git LF representations; working tree clean.
+GitHub alaz/local-ci exact-code status **SUCCESS** (id 56697273855,
+2026-10-19T14:29:19Z). New 44 offline tests independently PASS on both
+Windows and unprivileged Ubuntu Linux. No positive separate-host-UID
+Gateway/broker process test was run. A later docs/status-only follow-up
+commit needs its own independent GitHub CI observation.
