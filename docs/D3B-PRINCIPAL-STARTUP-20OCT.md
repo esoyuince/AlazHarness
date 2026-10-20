@@ -99,3 +99,7 @@ The older `principal_readiness.py` reports NOT_READY unconditionally on Linux;
 it inventories the current process/tools but does not inspect a supplied
 multi-principal deployment. Its output must not be used as proof no such
 deployment exists, or as a positive readiness gate.
+
+## Local delivery
+
+Code and tested evidence commit: `456e6f3466c115bcaf62767e3b37d92d4de9e3f5`. No push or GitHub CI. The subsequent documentation/static-receipt commit carries the same runtime sources.
