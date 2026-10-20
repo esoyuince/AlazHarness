@@ -1,0 +1,44 @@
+{
+  "job": "D3B-JOINT-21OCT-4C21",
+  "result": "LOCAL_SCOPED_PASS",
+  "updatedAt": "2026-10-21T00:33:43.330334+03:00",
+  "branch": "alaz/d3b-joint-21oct-4c21",
+  "startupParent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+  "custodyParent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+  "windowsFull": {
+    "exitCode": 0,
+    "testsRun": 2125,
+    "skipped": 5,
+    "elapsedSeconds": 246.394,
+    "sourceFileCount": 317,
+    "sourceUnchanged": true,
+    "completedAt": "2026-10-21T00:31:34.420708+03:00",
+    "passed": 2120
+  },
+  "linuxSelection": {
+    "passed": 175,
+    "skipped": 0,
+    "nativeBudgetTransportCases": 5,
+    "fullLinuxSuite": false
+  },
+  "native": {
+    "cli": 23,
+    "metadata": 7,
+    "principalDenials": 8,
+    "kernelChecks": 24,
+    "kernelStartupRefusals": 5,
+    "allPass": true
+  },
+  "sourceFileCount": 317,
+  "sourceUnchanged": true,
+  "inheritedEvidenceFilesPreserved": 50,
+  "twoHostUidTested": false,
+  "ipcV2MountTested": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "productionChanges": false,
+  "mainMerged": false,
+  "pushed": false,
+  "remoteCI": "NOT_RUN",
+  "overlappingSelectionsNotAddedToFullTotal": true
+}

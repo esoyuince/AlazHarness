@@ -1,0 +1,32 @@
+{
+  "originalCommit": "29f6a353799dcdf0279ebcabf44593fbcbcfa160",
+  "files": [
+    {
+      "path": "packages/claw-hermes/ipc_view.py",
+      "expected": "9559b569dc1fa02acdbbc4e7aed2dce16788123d6315f41c29e00249dda89fc5",
+      "originalGitSha256": "9559b569dc1fa02acdbbc4e7aed2dce16788123d6315f41c29e00249dda89fc5",
+      "matched": true
+    },
+    {
+      "path": "packages/claw-hermes/combined_guard.py",
+      "expected": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "originalGitSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "matched": true
+    },
+    {
+      "path": "packages/claw-hermes/linux_netns.py",
+      "expected": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "originalGitSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "matched": true
+    }
+  ],
+  "allMatch": true,
+  "fullRunCorrection": {
+    "testsRun": 2092,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 5,
+    "passed": 2086,
+    "note": "Original full wrapper parsed skipped only from OK; raw FAILED summary reports skipped=5. Original receipt kept, not rewritten."
+  }
+}

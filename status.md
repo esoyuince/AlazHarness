@@ -1,6 +1,6 @@
 # AlazHarness — status
 
-## D3B-JOINT-21OCT-4C21 — IN PROGRESS
+## D3B-JOINT-21OCT-4C21 — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-joint-21oct-4c21`. Worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-joint-21oct-4c21`.
 Start: `c03351b5f976fc527270f95376384d7e54e4e99d` (broker startup); merge candidate `95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115` (IPC custody).
@@ -8,6 +8,14 @@ Start: `c03351b5f976fc527270f95376384d7e54e4e99d` (broker startup); merge candid
 Task: integrate both tested corrections with complete source history/evidence; retain historical kernel custody and add separately source-bound current integration checks. Re-run native CLI, principal denial, IPC metadata and kernel isolation plus full regression on the combined code. Previous per-branch results are not combined-code acceptance. Full D3B and positive two-host-UID Gateway/broker NOT ACCEPTED. IPC v2 mount gate stays closed; no account or privileged operation, no paid model, main merge or push. Root and both previous worktrees remain unchanged.
 
 Evidence: `evidence/d3b-joint-21oct-4c21/`. All new actions belong to this worktree. Resolve merge conflicts explicitly without replacing current proof with a historical record. Next: inspect and reconcile the merge, then requalify current source.
+
+## Current integration result — 2026-10-21T00:33:43.330334+03:00
+
+Full Windows2125 = 2120 PASS / 5 SKIP / 0 FAIL, exit0. Linux selection175/175 PASS skip0 includes all five actual IPC/HTTP budget tests skipped on Windows. Fresh native CLI23, metadata7, principal denial8, kernel24+5 PASS; source freeze317 unchanged. Historical and current-source acceptance are separate; 50 original parent evidence files preserved exactly. Report `docs/D3B-JOINT-21OCT-4C21.md`, machine summary `evidence/d3b-joint-21oct-4c21/summary.json`.
+
+Windows full request e6d5e207-3c69-450d-bd76-0f5444ae9c26 and Linux request 29deab70-7f88-4fca-9fb7-d2382b4e6c36 completed exit0. Native request 2f3cd733-c7c2-4476-82f1-97d0f9da5fd4 completed exit0; owned fixtures/processes cleaned. No pending test, no source change after full test. Local staged static gate PASS2125; final merge/evidence recording follows.
+
+Exact next product work: trusted, pre-provisioned two-host-principal launch/projection integration; preserve host identity checks and selected-socket ownership, then qualify real Gateway/broker and denied budget-file access/restart/rebind/replay. IPC v2 remains CLOSED; no root/account provisioning, main merge, paid model or push. Do not repeat readiness inventory or delete the mount gate as a substitute. This joint worktree is the continuation point; the two earlier worktrees are retained.
 
 ## Preserved prior status
 
@@ -21,6 +29,15 @@ Completed: actual broker CLI/pre-provisioned principal-directory contradiction r
 Confirmed starting state: clean 4d86f30; root worktree has unrelated preserved changes. `run_provider_broker.serve()` rejects existing output while `ProviderBrokerServer.start()` requires an existing directory for opt-in principal mode. Kernel UID mapping currently includes Gateway only; do not loosen socket identity checks to accommodate an unmapped broker.
 
 The historical records below are retained, not the active branch pointer.
+
+### Preserved parallel IPC custody checkpoint
+
+## D3B-IPC-CUSTODY-CF57 — LOCAL SCOPED PASS (2026-10-21T00:03:38+03:00)
+
+Active branch: alaz/d3b-ipc-custody-cf57. Worktree: scratch/worktrees/d3b-ipc-custody-cf57. Base: 4d86f3081791c1f444d1de256d7b266eec4af6f7.
+Code-only commit: bbc0df06b8964c4851d12ed2ae915d71c1c9161f; local only, no push/remote CI/main merge. Final full2094:2089PASS/5SKIP/0FAIL, exit0,313 source bytes unchanged. IPC56/56 Windows+Linux; host-principal44/44; new15 subset unchanged; native owned-socket metadata7/7; historical custody5/5 Windows+Linux. These are overlapping scopes, not additive totals.
+Fixed detached v2 principal policy and inconsistent socket metadata snapshots. First failing offline/native/full outputs retained; historical kernel checks pinned to original29f6a353 with exact source hashes and corruption tests. v1 prepare/project AST unchanged, v2 mount gate remains closed. Two-host-UID Gateway/broker and full D3B NOT ACCEPTED.
+Report docs/D3B-IPC-CUSTODY-CF57.md; evidence/d3b-ipc-custody-cf57/summary.json. Primary D3B-PRINCIPAL-STARTUP-20OCT worktree and dirty root mirror are untouched. Review code commit with primary after its edits complete, rerun on integrated source; never copy this status over primary. Evidence/docs finalized as a separate local commit; final staged static handoff PASS2094,1528files. No pending test operation. See Git HEAD for the evidence commit and preceding bbc0df0 for code.
 
 
 Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRESS)
@@ -1100,3 +1117,31 @@ Full regression request bac066c6-d92c-4b64-8fbb-14bd09c71a8c completed exit0 (20
 ### Local delivery recorded
 
 Code commit `456e6f3466c115bcaf62767e3b37d92d4de9e3f5`; parent `4d86f30`. Runtime/test sources match the 314-file full-regression manifest. This documentation receipt is a separate follow-up commit; no code rerun or stronger two-UID acceptance is inferred from it.
+
+### Preserved parallel IPC custody checkpoint
+
+### 2026-10-20T23:58:59+03:00 — CF57 focused/native PASS, first full historical-custody failure preserved
+
+15 unchanged new tests PASS; IPC56/56 Windows and Linux; host-principal44/44; native owned-socket metadata7/7 PASS, not two UID. Original failures preserved. First full2092:2086PASS/5SKIP/1FAIL due to historic kernel source hash; original three Git blobs29f6a353 verified. Historical test corrected, five tests incl missing/corrupt source negatives PASS. Final full running receipt aa966cf4-8c2e-4b45-aed1-aa49dbe6f7c6, output evidence/d3b-ipc-custody-cf57/full-final-windows.txt; poll existing receipt, do not replay. Other writer untouched.
+
+
+### 2026-10-21T00:03:38+03:00 — CF57 final full PASS and code checkpoint
+
+Code bbc0df06b8964c4851d12ed2ae915d71c1c9161f; final full2094 discovered/2089PASS/5SKIP, exit0, zero drift across313files. Windows+LinuxIPC56PASS, host44PASS, native7 scoped, historical5 on both platforms. No fullD3B/twoUID/model acceptance. Own code commit has five explicitly selected paths, no concurrent writer files. Code-static PASS2094. Evidence/docs finalization follows without source changes.
+
+
+### 2026-10-21T00:06:23+03:00 — CF57 handoff finalized
+
+Final staged static gate PASS2094,1528files; working/index evidence bytes exact under evidence-only attributes. All original failures retained; first-full skip parser discrepancy corrected additively. Code bbc0df0 unchanged since final2094test run. Five code paths and only own docs/status/evidence staged for separate checkpoints. No automatic integration into concurrently edited primary tree; next review/code-only integration and native twoUID qualification remain OPEN.
+
+### Joint native runs active
+
+Source frozen before four bounded unprivileged Linux probes. Bridge request `2f3cd733-c7c2-4476-82f1-97d0f9da5fd4`; reconcile its terminal outcome and `evidence/d3b-joint-21oct-4c21/native-run-summary.json` before repeating. No runtime source edits during this run.
+
+### Joint Windows full regression active
+
+Native CLI23, socket metadata7, identity denials8, kernel24+5 all PASS on the combined source; 317 source files stable. Focused Windows groups passed. Full standard run request `e6d5e207-3c69-450d-bd76-0f5444ae9c26`, log `evidence/d3b-joint-21oct-4c21/full-windows.txt`. No source edits until terminal receipt; full result is not yet accepted.
+
+### Joint qualification completed — 2026-10-21T00:33:43.330334+03:00
+
+Both feature histories integrated in the dedicated joint tree. Current tests are pinned to new native observations, not inferred from predecessor receipts. Full and selected runs are terminal and passing; local merge commit will identify the tested integrated content.

@@ -1,0 +1,32 @@
+{
+  "packages/claw-hermes/ipc_view.py": {
+    "from": "95e80ac",
+    "identicalNormalizedSource": true,
+    "sha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e"
+  },
+  "scripts/run_provider_broker.py": {
+    "from": "c03351b",
+    "identicalNormalizedSource": true,
+    "sha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e"
+  },
+  "packages/claw-hermes/provider_broker.py": {
+    "from": "c03351b",
+    "identicalNormalizedSource": true,
+    "sha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b"
+  },
+  "packages/claw-hermes/host_principal.py": {
+    "from": "c03351b",
+    "identicalNormalizedSource": true,
+    "sha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0"
+  },
+  "packages/claw-hermes/combined_guard.py": {
+    "from": "c03351b",
+    "identicalNormalizedSource": true,
+    "sha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67"
+  },
+  "packages/claw-hermes/linux_netns.py": {
+    "from": "c03351b",
+    "identicalNormalizedSource": true,
+    "sha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+  }
+}

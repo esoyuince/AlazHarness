@@ -1,0 +1,12 @@
+{
+  "resolvedAt": "2026-10-21T00:23:52.489714+03:00",
+  "originalConflictSha256": {
+    "tests/test_d3b_integration_acceptance.py": "215c99e9202066040acbee4d35833e3bf7cc1e9ab2feebacac80c6a00b5f23aa",
+    "status.md": "28ac2c939309a5fd3bf37db49ee8b1e0c41205deab26b845c0e0d9db0699a4af"
+  },
+  "statusConflictBlocks": 2,
+  "resolution": "retain both status narratives; use CF57 exact historical checker; current integration acceptance is separate",
+  "historicalTestSha256": "b26dfc0afe357dc2951dbff93ab2cb05ac919170ce6b36b90600f48dbcc059d2",
+  "newCurrentAcceptance": "tests/test_d3b_joint_acceptance.py",
+  "productSourceChangedByResolution": false
+}

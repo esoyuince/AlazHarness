@@ -1,0 +1,32 @@
+[
+  {
+    "pattern": "test_d3b_joint_acceptance.py",
+    "exitCode": 0,
+    "testsRun": 9,
+    "log": "focused-windows-1.txt"
+  },
+  {
+    "pattern": "test_ipc*.py",
+    "exitCode": 0,
+    "testsRun": 56,
+    "log": "focused-windows-2.txt"
+  },
+  {
+    "pattern": "test_broker_principal_startup.py",
+    "exitCode": 0,
+    "testsRun": 19,
+    "log": "focused-windows-3.txt"
+  },
+  {
+    "pattern": "test_host_principal*.py",
+    "exitCode": 0,
+    "testsRun": 44,
+    "log": "focused-windows-4.txt"
+  },
+  {
+    "pattern": "test_d3b_integration_acceptance.py",
+    "exitCode": 0,
+    "testsRun": 5,
+    "log": "focused-windows-5.txt"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "label": "kernel",
+  "receipt": "evidence/d3b-integration-19oct/kernel-joint-4c21.json",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--",
+    "python3",
+    "-I",
+    "-B",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-joint-21oct-4c21/tests/ipc_view_linux.py",
+    "--output",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-joint-21oct-4c21/evidence/d3b-integration-19oct/kernel-joint-4c21.json",
+    "--evidence-scope",
+    "d3b-integration-19oct"
+  ],
+  "startedAt": "2026-10-21T00:26:22.375678+03:00",
+  "exitCode": 0,
+  "elapsedSeconds": 7.899,
+  "timedOut": false,
+  "result": "PASS",
+  "checkCount": 24,
+  "receiptSha256": "f55ce5865fbaaba15c7f4286a96e1eb52de27ee4a4c672e335d24dc855068a3c"
+}

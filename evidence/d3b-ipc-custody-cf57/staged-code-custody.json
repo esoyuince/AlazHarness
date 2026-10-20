@@ -1,0 +1,36 @@
+{
+  "scope": "five changed code/test paths only",
+  "files": [
+    {
+      "path": "packages/claw-hermes/ipc_view.py",
+      "workingSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+      "indexSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+      "bytesExact": true
+    },
+    {
+      "path": "scripts/qa/ipc_principal_custody_linux.py",
+      "workingSha256": "0f8d39012e39b8027bf7187731d5e031c23ec70b39228475e6abb8295e72f046",
+      "indexSha256": "0f8d39012e39b8027bf7187731d5e031c23ec70b39228475e6abb8295e72f046",
+      "bytesExact": true
+    },
+    {
+      "path": "tests/test_d3b_integration_acceptance.py",
+      "workingSha256": "b26dfc0afe357dc2951dbff93ab2cb05ac919170ce6b36b90600f48dbcc059d2",
+      "indexSha256": "b26dfc0afe357dc2951dbff93ab2cb05ac919170ce6b36b90600f48dbcc059d2",
+      "bytesExact": true
+    },
+    {
+      "path": "tests/test_ipc_principal_contract.py",
+      "workingSha256": "645a5fcd2ca85b6cb0696a93160a86aa6bd481592cc911b6173e41ef77e6cc9d",
+      "indexSha256": "645a5fcd2ca85b6cb0696a93160a86aa6bd481592cc911b6173e41ef77e6cc9d",
+      "bytesExact": true
+    },
+    {
+      "path": "tests/test_ipc_principal_custody.py",
+      "workingSha256": "e9d7b525e553e732d4817d76ff336dec772cf1191d6ce91ac58dc976859528ce",
+      "indexSha256": "e9d7b525e553e732d4817d76ff336dec772cf1191d6ce91ac58dc976859528ce",
+      "bytesExact": true
+    }
+  ],
+  "allMatch": true
+}

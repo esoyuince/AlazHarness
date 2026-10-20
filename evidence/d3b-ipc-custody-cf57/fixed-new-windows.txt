@@ -1,0 +1,20 @@
+test_callback_mutation_cannot_retarget_frozen_principal (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_callback_mutation_cannot_retarget_frozen_principal) ... ok
+test_consistent_proof_does_not_authorize_mount (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_consistent_proof_does_not_authorize_mount) ... ok
+test_disappearance_during_middle_read_is_normalized (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_disappearance_during_middle_read_is_normalized) ... ok
+test_inode_rebind_between_identity_reads_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_inode_rebind_between_identity_reads_is_refused) ... ok
+test_io_failure_on_final_read_is_normalized (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_io_failure_on_final_read_is_normalized) ... ok
+test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) ... ok
+test_mode_denial_on_final_read_is_not_ignored (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_mode_denial_on_final_read_is_not_ignored) ... ok
+test_mutated_same_proof_object_between_reads_is_detected (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_mutated_same_proof_object_between_reads_is_detected) ... ok
+test_no_silent_retry_after_changed_snapshot (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_no_silent_retry_after_changed_snapshot) ... ok
+test_parent_directory_rebind_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_parent_directory_rebind_is_refused) ... ok
+test_rebind_after_middle_read_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_rebind_after_middle_read_is_refused) ... ok
+test_returned_proof_is_detached_from_source_object (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_returned_proof_is_detached_from_source_object) ... ok
+test_successful_inspection_cannot_open_v2_runtime_gate (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_successful_inspection_cannot_open_v2_runtime_gate) ... ok
+test_validated_principal_is_not_aliased_to_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_is_not_aliased_to_caller) ... ok
+test_validated_principal_mutation_does_not_change_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_mutation_does_not_change_caller) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.042s
+
+OK

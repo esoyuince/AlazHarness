@@ -1,0 +1,18 @@
+{
+  "scope": "15 new offline snapshot consistency tests, before product fix",
+  "command": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_ipc_principal_custody.py",
+    "-v"
+  ],
+  "exitCode": 1,
+  "sourceSha256": "3603a4a72be49a01c3f31f181e242eca176ad06fa87a5230b7ec770a564a444d",
+  "testSha256": "e9d7b525e553e732d4817d76ff336dec772cf1191d6ce91ac58dc976859528ce"
+}

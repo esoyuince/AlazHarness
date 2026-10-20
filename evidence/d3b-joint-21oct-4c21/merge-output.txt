@@ -1,0 +1,5 @@
+Auto-merging status.md
+CONFLICT (content): Merge conflict in status.md
+Auto-merging tests/test_d3b_integration_acceptance.py
+CONFLICT (content): Merge conflict in tests/test_d3b_integration_acceptance.py
+Automatic merge failed; fix conflicts and then commit the result.

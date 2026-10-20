@@ -1,0 +1,21 @@
+{
+  "unchangedFunctions": {
+    "canonical": true,
+    "identity": true,
+    "_regular_path": true,
+    "inspect_tree": true,
+    "prepare": true,
+    "project": true
+  },
+  "newRegressionFileUnchangedSinceBeforeFix": true,
+  "nativeRunnerUnchangedSinceBeforeFix": true,
+  "unmodifiedRuntimePaths": {
+    "packages/claw-hermes/host_principal.py": true,
+    "packages/claw-hermes/linux_netns.py": true,
+    "packages/claw-hermes/combined_guard.py": true,
+    "packages/claw-hermes/provider_broker.py": true,
+    "packages/claw-hermes/provider_egress.py": true,
+    "scripts/run_provider_broker.py": true,
+    "scripts/qa/principal_readiness.py": true
+  }
+}

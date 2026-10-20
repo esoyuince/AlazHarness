@@ -1,0 +1,306 @@
+{
+  "result": "PASS",
+  "filesChecked": 50,
+  "files": [
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-host-principal-7a19/native-denial-startup-20oct.json",
+      "sha256": "19943fbba42a7267911da6c6e935a1ab033d0bbc14292f66ccedc67372097b91",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-integration-19oct/kernel-principal-startup-20oct.json",
+      "sha256": "7339a25cc497118fc120cf7ef43c07d4b4e42f315658d2fb93161a551de33cd4",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/baseline-sources.json",
+      "sha256": "80bbb8d918e39563c55afd8329c729aaf1abcb31c1f0fa61d19ec0cc41149056",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/fixture-correction.json",
+      "sha256": "1df66feb52ab46c21764feeabe90ea596fd58788fa92564aebbb43f645e1466b",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/full-windows-result.json",
+      "sha256": "bda5579b2f2629f6327842559253d1cdb9a0135a3b12972c10892f647102b6a8",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/full-windows.txt",
+      "sha256": "b4af703c1e51a3e9543f12498101fb7b21629b37e976295607181e12a8519638",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/kernel-source-refresh.json",
+      "sha256": "4d2604b34a944598f71e8dce663316cb4fd8b2602f52bdd6fef8c9b98823e174",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/native-cli-001.json",
+      "sha256": "cdaf836326d090ef40aff639729484c71671b5e737bded21dd4c63404d38c6ad",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/native-denial-current.txt",
+      "sha256": "a2b52e3dc276569c3515ff135487efa3ca8ac5ce598b46684bbf3cb1e256a1c7",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/regression-after-fix-linux.txt",
+      "sha256": "e6c86f048279ca1acd950f9ef73fe219cde9c139c8dfe02197e097612b5a57e8",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/regression-after-fix-windows.txt",
+      "sha256": "13d11dd175379cc7f609cf34acb389fa2799f4f1de4648410a8952420499c9e0",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/regression-before-fix-portable.txt",
+      "sha256": "c193ab1ab54d88f6f4ece93b978ed091437ce4416ac1d7019701cbe2e469415c",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/regression-before-fix.txt",
+      "sha256": "84f086d61ccf43aa4bd6f7c15bf75f6ba2d7dc2ad3b4ff883f692afb76d152dd",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/staged-native-source-custody.json",
+      "sha256": "78c103cd1f39fdc8c7a28bacd8caa45e160efee56ae5ac013f6ec7f33bb5f3ca",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/static-ci-final.txt",
+      "sha256": "915a656dedfc1e0bc269fcbaa5d8c98407ae8118baf1b31feca73ff9fb785c74",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "path": "evidence/d3b-principal-startup-20oct/static-ci-staged.txt",
+      "sha256": "e1b5884d23c2611fdd0fdb22bbeb4b8ed7b59d91e7b8e6bc1124b2b6028cb9c6",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/.gitattributes",
+      "sha256": "2b0d509d96593d87cd05767abc6e57eb83f44621c978242f1ecf9e26ba14e8cd",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/before-fix-linux.json",
+      "sha256": "ed9af907ebe9a96b16bb2af012c58ef2c4ce96b1f928d17fcf8f1442e123c17d",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/before-fix-linux.txt",
+      "sha256": "b926c5a9739e45af90fc89dee3a0599e22b28598217a65f0412d8128827ddbfd",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/before-fix-windows.json",
+      "sha256": "4fde3baf823884a5813b632bb9a41ab2a6482f7c471e9d87e544e15bf569406c",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/before-fix-windows.txt",
+      "sha256": "cc2c569f8ebd83788e8e04f9fc387e718a008a84a15af1ffbda57d3c0bb27843",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/code-commit.json",
+      "sha256": "99c1c6f496dfa089350e4bf5852bbea6af1e8899f52df83a072f735afe778364",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/files.sha256.json",
+      "sha256": "fcc5ae4b55f05e08d1379d01def9898f540109890589da58cf667debbbc7cf5a",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-focused-windows.json",
+      "sha256": "3c918c45739d4da00752ccc1dc04e7c46b711baa3d0af7272cc25d9c117cfdd9",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-host-principal-windows.txt",
+      "sha256": "a2d6c6da44b819a95422ec5aa7d78601ec0b638deab3436f1dbd19bdd1a6f9c1",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-ipc-windows.txt",
+      "sha256": "0f8485f1dac7973b73459aa070d052fe78645da34c31c554b865fbd765bd8668",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-linux-ipc.txt",
+      "sha256": "cb064dd6a9227372485375df1c0417a984d4f81baf913373398fda82bd638c52",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-linux-native.json",
+      "sha256": "58bc724043dfaa0881d3b8f74308750d768f8340b793bfb28f8b1c9d23b49163",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-linux-native.txt",
+      "sha256": "387df1124bcd6bdee4bddc2b39c35d9fde9963a4d63518c442f9d5c0ea6c6fc0",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/fixed-new-windows.txt",
+      "sha256": "bae1bac48824ba7e4eeba3d433bb979d43179a0e13334050609b3fc0eb467c04",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-final-source-after.json",
+      "sha256": "4c11277bfabe7c1dab70c5b160235a20c65d6724ba5c18dee0714f2d849e76ef",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-final-source-before.json",
+      "sha256": "4c11277bfabe7c1dab70c5b160235a20c65d6724ba5c18dee0714f2d849e76ef",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-final-windows.json",
+      "sha256": "11e0e143b25ba3046131a05efe062451bd7249e87b8bd68a785eaf95bd683417",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-final-windows.txt",
+      "sha256": "f97b8f2678faf3721c5e1545a0651fc5bd7c52deb3ca2288c626177552eb55fb",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-source-after.json",
+      "sha256": "6758c31c0ad3a45d30129f8690878ed2f6fa398f873d0129cd9d8af9a84ce5f3",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-source-before.json",
+      "sha256": "6758c31c0ad3a45d30129f8690878ed2f6fa398f873d0129cd9d8af9a84ce5f3",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-standard-windows.json",
+      "sha256": "01d040d5d2e82cdd79502cce53de5a815996819212d6546999a439201dae9576",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/full-standard-windows.txt",
+      "sha256": "c538e9a5a7aff0b2492f7da7e1323042d14140b1c2c9c89adc8d456bd2102a91",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/historical-custody-fixed-linux.txt",
+      "sha256": "58f4416e84dc2bcdcd110adf5945b904e88c8c30199c596cb07a19bb643c0274",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/historical-custody-fixed-windows.txt",
+      "sha256": "de2dc85d0c8f05fcfc80564f8fe57e19fa2ed4aa13e4d0b840345db25ec0722e",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/historical-kernel-git-custody.json",
+      "sha256": "bdb62941dbbb38b31c57a5149d7aefceb219c56daefb84dd9fe8cc030976e1b6",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/ipc_view.before.py.txt",
+      "sha256": "3603a4a72be49a01c3f31f181e242eca176ad06fa87a5230b7ec770a564a444d",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/linux-commands.json",
+      "sha256": "1c73811f22df70c891b5b13c57af210141983cab3fb6d2813c4d0fb18a46b39d",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/staged-code-custody.json",
+      "sha256": "28834b2dc850820413364be654142a88045836a6bfb970ccda70897f6c2b13d9",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/static-code-gate.json",
+      "sha256": "382634db92c81a3edf434567e0787dee327f928ccfe61d939c84d2dfeff64407",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/static-code-gate.txt",
+      "sha256": "584a26e3e54cdf40fa98ee50dbdee238d16ff01e149ced17cf6316fbb70acb3c",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/static-handoff-gate.json",
+      "sha256": "51a3f288752e70c6765e902f171f96f85021a15d779156c6cf735754610b3afb",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/static-handoff-gate.txt",
+      "sha256": "2ec9f90a47309f3e461642272f8f760ff16aace8782654a593aa9447c0163295",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/summary.json",
+      "sha256": "faf89913015716e3f5e51cfd51343c347ad94604c5e43f80943e57cd32b65814",
+      "indexMatchesOriginal": true
+    },
+    {
+      "parent": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "path": "evidence/d3b-ipc-custody-cf57/unchanged-runtime-audit.json",
+      "sha256": "d6781f1a2ac5ecca62239b377edfff8bea91b504d6ea0c70aabb25612468e54b",
+      "indexMatchesOriginal": true
+    }
+  ]
+}

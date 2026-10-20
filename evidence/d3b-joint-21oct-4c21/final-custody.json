@@ -1,0 +1,133 @@
+{
+  "result": "PASS",
+  "sourceEntries": 16,
+  "sourceChecks": [
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-joint-4c21.json",
+      "path": "scripts/run_provider_broker.py",
+      "nativeSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "indexSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-joint-4c21.json",
+      "path": "packages/claw-hermes/provider_broker.py",
+      "nativeSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "indexSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-joint-4c21.json",
+      "path": "packages/claw-hermes/provider_egress.py",
+      "nativeSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "indexSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-joint-4c21.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "indexSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-joint-4c21.json",
+      "path": "scripts/qa/native_principal_startup.py",
+      "nativeSha256": "77025e6e3c22109b23749188d88344fa9c8a1ddc2e342e65274c2a6b1e9f1917",
+      "indexSha256": "77025e6e3c22109b23749188d88344fa9c8a1ddc2e342e65274c2a6b1e9f1917",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-ipc-custody-cf57/joint-native-4c21.json",
+      "path": "packages/claw-hermes/ipc_view.py",
+      "nativeSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+      "indexSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-ipc-custody-cf57/joint-native-4c21.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "indexSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-ipc-custody-cf57/joint-native-4c21.json",
+      "path": "scripts/qa/ipc_principal_custody_linux.py",
+      "nativeSha256": "0f8d39012e39b8027bf7187731d5e031c23ec70b39228475e6abb8295e72f046",
+      "indexSha256": "0f8d39012e39b8027bf7187731d5e031c23ec70b39228475e6abb8295e72f046",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-ipc-custody-cf57/joint-native-4c21.json",
+      "path": "tests/test_ipc_principal_custody.py",
+      "nativeSha256": "e9d7b525e553e732d4817d76ff336dec772cf1191d6ce91ac58dc976859528ce",
+      "indexSha256": "e9d7b525e553e732d4817d76ff336dec772cf1191d6ce91ac58dc976859528ce",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-joint-4c21.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "indexSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-joint-4c21.json",
+      "path": "packages/claw-hermes/provider_broker.py",
+      "nativeSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "indexSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-joint-4c21.json",
+      "path": "packages/claw-hermes/provider_egress.py",
+      "nativeSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "indexSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-joint-4c21.json",
+      "path": "scripts/qa/principal_denial_linux.py",
+      "nativeSha256": "fe347fee90b6bc61e02e54d760cba07c5ff0a0e82fe100540dec3bd29e896b21",
+      "indexSha256": "fe347fee90b6bc61e02e54d760cba07c5ff0a0e82fe100540dec3bd29e896b21",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-integration-19oct/kernel-joint-4c21.json",
+      "path": "packages/claw-hermes/ipc_view.py",
+      "nativeSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+      "indexSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-integration-19oct/kernel-joint-4c21.json",
+      "path": "packages/claw-hermes/combined_guard.py",
+      "nativeSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "indexSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-integration-19oct/kernel-joint-4c21.json",
+      "path": "packages/claw-hermes/linux_netns.py",
+      "nativeSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "indexSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "representation": "exact"
+    }
+  ],
+  "previousWorktrees": [
+    {
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-ipc-principal-20oct",
+      "head": "c03351b5f976fc527270f95376384d7e54e4e99d",
+      "clean": true
+    },
+    {
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-ipc-custody-cf57",
+      "head": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115",
+      "clean": true
+    }
+  ],
+  "rootHeadPreserved": true,
+  "rootStatusPreserved": true,
+  "sourceFilesUnchanged": 317
+}

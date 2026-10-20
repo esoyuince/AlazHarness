@@ -1,0 +1,182 @@
+test_callback_mutation_cannot_retarget_frozen_principal (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_callback_mutation_cannot_retarget_frozen_principal) ... FAIL
+test_consistent_proof_does_not_authorize_mount (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_consistent_proof_does_not_authorize_mount) ... ok
+test_disappearance_during_middle_read_is_normalized (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_disappearance_during_middle_read_is_normalized) ... ERROR
+test_inode_rebind_between_identity_reads_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_inode_rebind_between_identity_reads_is_refused) ... FAIL
+test_io_failure_on_final_read_is_normalized (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_io_failure_on_final_read_is_normalized) ... FAIL
+test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) ... 
+  test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=0) ... FAIL
+  test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=2) ... FAIL
+  test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=3) ... FAIL
+  test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=4) ... FAIL
+test_mode_denial_on_final_read_is_not_ignored (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_mode_denial_on_final_read_is_not_ignored) ... FAIL
+test_mutated_same_proof_object_between_reads_is_detected (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_mutated_same_proof_object_between_reads_is_detected) ... FAIL
+test_no_silent_retry_after_changed_snapshot (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_no_silent_retry_after_changed_snapshot) ... FAIL
+test_parent_directory_rebind_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_parent_directory_rebind_is_refused) ... FAIL
+test_rebind_after_middle_read_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_rebind_after_middle_read_is_refused) ... FAIL
+test_returned_proof_is_detached_from_source_object (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_returned_proof_is_detached_from_source_object) ... FAIL
+test_successful_inspection_cannot_open_v2_runtime_gate (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_successful_inspection_cannot_open_v2_runtime_gate) ... ok
+test_validated_principal_is_not_aliased_to_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_is_not_aliased_to_caller) ... FAIL
+test_validated_principal_mutation_does_not_change_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_mutation_does_not_change_caller) ... FAIL
+
+======================================================================
+ERROR: test_disappearance_during_middle_read_is_normalized (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_disappearance_during_middle_read_is_normalized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 82, in test_disappearance_during_middle_read_is_normalized
+    ipc.inspect_principal_socket(value, fs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\packages\claw-hermes\ipc_view.py", line 112, in inspect_principal_socket
+    return {'socketIdentity':identity(ipc['brokerSocket']),
+                             ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+FileNotFoundError: owned fixture
+
+======================================================================
+FAIL: test_callback_mutation_cannot_retarget_frozen_principal (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_callback_mutation_cannot_retarget_frozen_principal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 123, in test_callback_mutation_cannot_retarget_frozen_principal
+    self.assertEqual(set(inspected), {1001})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+1002
+Items in the second set but not the first:
+1001
+
+======================================================================
+FAIL: test_inode_rebind_between_identity_reads_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_inode_rebind_between_identity_reads_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 45, in test_inode_rebind_between_identity_reads_is_refused
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_io_failure_on_final_read_is_normalized (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_io_failure_on_final_read_is_normalized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 97, in test_io_failure_on_final_read_is_normalized
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_invalid'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 74, in test_middle_observation_must_match_type_owner_group_and_device
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 74, in test_middle_observation_must_match_type_owner_group_and_device
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 74, in test_middle_observation_must_match_type_owner_group_and_device
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_middle_observation_must_match_type_owner_group_and_device (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_middle_observation_must_match_type_owner_group_and_device) (field=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 74, in test_middle_observation_must_match_type_owner_group_and_device
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_mode_denial_on_final_read_is_not_ignored (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_mode_denial_on_final_read_is_not_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 89, in test_mode_denial_on_final_read_is_not_ignored
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_invalid'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_mutated_same_proof_object_between_reads_is_detected (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_mutated_same_proof_object_between_reads_is_detected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 140, in test_mutated_same_proof_object_between_reads_is_detected
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_no_silent_retry_after_changed_snapshot (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_no_silent_retry_after_changed_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 149, in test_no_silent_retry_after_changed_snapshot
+    with self.assertRaises(ipc.IPCViewRejected):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_parent_directory_rebind_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_parent_directory_rebind_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 63, in test_parent_directory_rebind_is_refused
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_rebind_after_middle_read_is_refused (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_rebind_after_middle_read_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 54, in test_rebind_after_middle_read_is_refused
+    with self.assertRaisesRegex(ipc.IPCViewRejected, 'ipc_principal_socket_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IPCViewRejected not raised
+
+======================================================================
+FAIL: test_returned_proof_is_detached_from_source_object (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_returned_proof_is_detached_from_source_object)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 131, in test_returned_proof_is_detached_from_source_object
+    self.assertEqual(result['socketPrincipal']['socket'][1], 3)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 3
+
+======================================================================
+FAIL: test_validated_principal_is_not_aliased_to_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_is_not_aliased_to_caller)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 104, in test_validated_principal_is_not_aliased_to_caller
+    self.assertEqual(validated['principalContract']['brokerUid'], 1001)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1002 != 1001
+
+======================================================================
+FAIL: test_validated_principal_mutation_does_not_change_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_mutation_does_not_change_caller)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-custody-cf57\tests\test_ipc_principal_custody.py", line 110, in test_validated_principal_mutation_does_not_change_caller
+    self.assertEqual(value['principalContract']['brokerUid'], 1001)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1002 != 1001
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.030s
+
+FAILED (failures=15, errors=1)

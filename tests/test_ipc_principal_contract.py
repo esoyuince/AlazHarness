@@ -2,7 +2,7 @@
 from pathlib import Path
 import sys
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, call
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'packages/claw-hermes'))
 import ipc_view as ipc
@@ -56,7 +56,8 @@ class IPCPrincipalContractTests(unittest.TestCase):
         with (patch('host_principal.socket_identity',return_value=proof) as check,
               patch.object(ipc,'identity',return_value=identity)):
             result=ipc.inspect_principal_socket(V,FS)
-        check.assert_called_once_with(P,V['brokerSocket'])
+        self.assertEqual(check.call_args_list, [call(P,V['brokerSocket']),
+                                               call(P,V['brokerSocket'])])
         self.assertEqual(result['socketPrincipal'],proof)
         self.assertEqual(result['socketIdentity'],identity)
         self.assertIs(result['mountAuthorized'],False)

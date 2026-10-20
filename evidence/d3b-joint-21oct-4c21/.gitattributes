@@ -1,0 +1,2 @@
+# Preserve captured raw log bytes; product formatting checks are unchanged.
+*.txt -text -whitespace
