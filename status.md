@@ -1,5 +1,19 @@
 # AlazHarness — status
 
+## D3B-LAUNCH-QA-B72D — LOCAL SCOPED PASS
+
+Active branch: `alaz/d3b-launch-qa-b72d`; worktree `scratch/worktrees/d3b-launch-qa-b72d`; base `47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139`.
+
+Independent validation lane. Primary `d3b-principal-launch-21oct` is concurrently implementing D3B-POSTEXEC-21OCT; its status/tests/evidence are uncommitted and must not be overwritten, staged or merged. This lane reviews the existing launch trust boundary and adds independent no-privilege regression/real-kernel observations; it will examine the primary post-exec source only from an explicit source snapshot. No root command, account provisioning, model call, production/main change or privilege-denial bypass.
+
+Evidence: `evidence/d3b-launch-qa-b72d/`. Keep original executions, source pinning and limits explicit. Full two-UID/D3B remains NOT ACCEPTED.
+
+Final scoped result: native file/descriptor26/26 PASS on base and again on primary source (same cases); independent post-exec22/22 Windows and22/22 Linux PASS with explicitly mocked privileged state. Nine primary sources pinned and byte-snapshotted; own scripts/evidence only. Primary product source unchanged by this lane. Original QA fixture failure24/26 retained and corrected; no product fix from these cases. No new full-standard execution claimed; local static PASS2167 discovered. All 322 existing source Git blobs unchanged. Report docs/D3B-LAUNCH-QA-B72D.md; summary evidence/d3b-launch-qa-b72d/summary.json.
+
+Next: primary post-exec writer completes regression/commit; compare its exact source to the9-file QA snapshot, then integrate the QA payload without replacing primary status. Real privileged two-UID acceptance remains blocked on an explicitly authorized trusted installation. No root/account/provisioning, main merge, push, production or model call.
+
+## Preserved primary checkpoint
+
 ## D3B-PRINCIPAL-LAUNCH-21OCT — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Base/main: `cc7ceba8f850da7652a647e984cbae2c45c8fdea`. This feature commit is local only; no push, remote CI or main merge. Read Git HEAD for the exact checkpoint.
@@ -1181,3 +1195,8 @@ Both feature histories integrated in the dedicated joint tree. Current tests are
 ### Exact local delivery
 
 Integrated source/evidence commit `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6` preserves both histories. All test/native operations are terminal and passing in their stated scope. This handoff adds no runtime change. Active worktree remains `scratch/worktrees/d3b-joint-21oct-4c21`; all previous worktrees are preserved.
+
+
+### B72D delivery — 2026-10-21T02:50:38.759962+03:00
+
+Independent native26/26 on both source selections; post-exec22/22 Windows and22/22 Linux, all operation receipts terminal. Nine source hashes unchanged at final read; primary HEAD 47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139 with ongoing work. QA branch is separate and local only. Exact commit: Git HEAD after selected-file commit. Full two-UID/D3B remains NOT ACCEPTED.

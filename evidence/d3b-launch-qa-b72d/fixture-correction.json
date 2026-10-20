@@ -1,0 +1,9 @@
+{
+  "firstReceipt": "native-files-fds-001.json",
+  "firstPassed": 24,
+  "firstFailed": 2,
+  "cause": "stdio-only child parsed absent fd_identity argument before invoking product function",
+  "change": "parse fd_identity only when present; no product change or assertion removed",
+  "runnerBeforeSha256": "f6c7597b8ef407421d2379fb73267e544f752f8f304dd033e8808166b4c5728f",
+  "runnerAfterSha256": "9833a918c4a3891a79877f0794cb0c6d5a2cbdaf64fe393962a2264a42f7c085"
+}

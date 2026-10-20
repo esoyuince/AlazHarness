@@ -1,0 +1,224 @@
+"""Independent native file/FD checks; unprivileged, no UID or mount transition.
+
+Use a fresh output under this worktree's evidence/d3b-launch-qa-b72d.
+Owned temporary fixtures live below HOME because /tmp is intentionally refused
+by the production trusted-ancestor check. No pre-existing file is modified.
+"""
+from __future__ import annotations
+import argparse
+import datetime
+import errno
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import socket
+import subprocess
+import sys
+import tempfile
+import time
+from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[2]
+SOURCE_PATHS = ('packages/claw-hermes/principal_launch.py',
+                'packages/claw-hermes/host_principal.py',
+                'packages/claw-hermes/linux_netns.py',
+                'packages/claw-hermes/combined_guard.py',
+                'packages/claw-hermes/credential_guard.py')
+PAYLOAD = b'{"fixture":"owned-no-secret"}\n'
+
+
+def load(source):
+    sys.path.insert(0, str(source / 'packages/claw-hermes'))
+    import principal_launch
+    return principal_launch
+
+
+def signature(source):
+    return {n: hashlib.sha256((source / n).read_bytes()).hexdigest() for n in SOURCE_PATHS}
+
+
+def child(args):
+    source = Path(args.source_root).resolve()
+    launch = load(source)
+    expected = json.loads(args.fd_identity)
+    if args.child == 'close':
+        launch.close_ambient_fds()
+        for fd in expected:
+            try: os.fstat(int(fd))
+            except OSError as exc:
+                if exc.errno != errno.EBADF: raise
+            else: raise RuntimeError('owned_inherited_fd_not_closed')
+        command = [sys.executable, '-I', '-B', str(Path(__file__).resolve()),
+                   '--source-root', str(source), '--child', 'verify',
+                   '--fd-identity', args.fd_identity, '--expected-pid', str(os.getpid())]
+        os.execve(command[0], command, {'PATH': '/usr/bin:/bin', 'HOME': '/',
+                                      'PYTHONNOUSERSITE': '1'})
+        raise RuntimeError('exec_returned')
+    if args.child == 'verify':
+        wanted = {tuple(v) for v in expected.values()}
+        inherited = []
+        for item in os.listdir('/proc/self/fd'):
+            try: info = os.fstat(int(item))
+            except OSError as exc:
+                if exc.errno == errno.EBADF: continue
+                raise
+            if (info.st_dev, info.st_ino) in wanted: inherited.append(int(item))
+        print(json.dumps({'absentAfterExec': not inherited,
+                          'samePid': os.getpid() == args.expected_pid,
+                          'uid': os.getuid(), 'gid': os.getgid()}))
+        return 0
+    try: launch.close_ambient_fds()
+    except launch.LaunchRejected as exc:
+        print(json.dumps({'refused': str(exc) == 'launch_stdio_must_be_pipe_or_devnull'}))
+        return 0
+    print(json.dumps({'refused': False}))
+    return 1
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--source-root', type=Path, default=ROOT)
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--child', choices=('close', 'verify', 'stdio'))
+    parser.add_argument('--fd-identity')
+    parser.add_argument('--expected-pid', type=int)
+    args = parser.parse_args()
+    if sys.platform != 'linux' or os.getuid() == 0 or os.getgid() == 0:
+        raise SystemExit('unprivileged_linux_required')
+    if args.child: return child(args)
+    source = args.source_root.resolve()
+    destination = args.output.resolve() if args.output else None
+    expected_directory = (ROOT / 'evidence/d3b-launch-qa-b72d').resolve()
+    if (destination is None or destination.parent != expected_directory
+            or destination.exists() or args.output.is_symlink()):
+        raise SystemExit('fresh_owned_evidence_required')
+    before = signature(source)
+    launch = load(source)
+    checks, errors, durations = {}, {}, {}
+    original_identity = (os.getresuid(), os.getresgid(), os.getgroups(),
+                         os.readlink('/proc/self/ns/user'))
+    initial_fds = set(os.listdir('/proc/self/fd'))
+    def check(name, fn):
+        start = time.monotonic()
+        try: checks[name] = fn() is True
+        except Exception as exc:
+            checks[name] = False; errors[name] = type(exc).__name__
+        durations[name] = round(time.monotonic() - start, 6)
+    def rejected(fn):
+        try: fn()
+        except (launch.LaunchRejected, OSError, ValueError): return True
+        return False
+    uid = os.getuid()
+    home = Path.home().resolve()
+    if home.stat().st_uid != uid or not home.is_dir():
+        raise SystemExit('owned_home_fixture_parent_required')
+    with tempfile.TemporaryDirectory(prefix='.alaz-launch-qa-b72d-', dir=home) as tmp:
+        root = Path(tmp)
+        def fresh(label):
+            case = root / label; case.mkdir(mode=0o700)
+            path = case / 'contract.json'; path.write_bytes(PAYLOAD); path.chmod(0o600)
+            return case, path
+        def normal():
+            _, p = fresh('valid')
+            return launch.file_bytes(str(p), uid, 0o600, 128) == PAYLOAD
+        check('valid_real_owned_file_read', normal)
+        def altered(label, mutate):
+            case, p = fresh(label); mutate(case, p)
+            return rejected(lambda: launch.file_bytes(str(p), uid, 0o600, 128))
+        check('world_readable_file_refused', lambda: altered('mode', lambda c,p: p.chmod(0o644)))
+        check('hardlinked_file_refused', lambda: altered('hardlink', lambda c,p: os.link(p,c/'alias')))
+        def symlink(c,p):
+            p.rename(c/'real'); p.symlink_to(c/'real')
+        check('leaf_symlink_refused', lambda: altered('symlink', symlink))
+        def parent_link():
+            case,p = fresh('parent-link'); link = root/'linked-parent'; link.symlink_to(case,target_is_directory=True)
+            return rejected(lambda: launch.file_bytes(str(link/p.name),uid,0o600,128))
+        check('parent_symlink_refused', parent_link)
+        def fifo(c,p): p.unlink(); os.mkfifo(p,0o600)
+        check('fifo_nonblocking_refusal', lambda: altered('fifo',fifo))
+        def directory(c,p): p.unlink();p.mkdir(mode=0o700)
+        check('directory_instead_of_file_refused', lambda: altered('directory',directory))
+        def socket_file():
+            _,p = fresh('socket'); p.unlink()
+            with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as sock:
+                sock.bind(str(p));p.chmod(0o600)
+                return rejected(lambda: launch.file_bytes(str(p),uid,0o600,128))
+        check('socket_instead_of_file_refused',socket_file)
+        check('empty_file_refused', lambda: altered('empty',lambda c,p:p.write_bytes(b'')))
+        check('oversize_file_refused', lambda: altered('large',lambda c,p:p.write_bytes(b'x'*129)))
+        check('group_writable_parent_refused',lambda:altered('group-parent',lambda c,p:c.chmod(0o720)))
+        check('world_writable_parent_refused',lambda:altered('world-parent',lambda c,p:c.chmod(0o702)))
+        def race(kind):
+            case,p = fresh('race-'+kind); real_read = os.read; fired=[]
+            def injected(fd,size):
+                value = real_read(fd,size)
+                if value and not fired:
+                    fired.append(True)
+                    if kind=='rebind':
+                        p.rename(case/'detached');p.write_bytes(PAYLOAD);p.chmod(0o600)
+                    elif kind=='mode': p.chmod(0o640)
+                    elif kind=='truncate': p.write_bytes(b'x')
+                    else:
+                        st=p.stat();os.utime(p,ns=(st.st_atime_ns,st.st_mtime_ns+1000000))
+                return value
+            with patch.object(launch.os,'read',side_effect=injected):
+                denied = rejected(lambda:launch.file_bytes(str(p),uid,0o600,128))
+            return bool(fired) and denied
+        for kind in ('rebind','mode','truncate','mtime'):
+            check('actual_'+kind+'_during_read_refused',lambda kind=kind:race(kind))
+        _,p=fresh('fd-leaks')
+        counts=[]
+        for _ in range(8):
+            counts.append(len(os.listdir('/proc/self/fd')))
+            launch.file_bytes(str(p),uid,0o600,128)
+            p.chmod(0o644)
+            if not rejected(lambda:launch.file_bytes(str(p),uid,0o600,128)):raise RuntimeError('bad_mode_accepted')
+            p.chmod(0o600)
+        check('success_and_failure_do_not_leak_fds',lambda:len(set(counts))==1
+              and len(os.listdir('/proc/self/fd'))==counts[0])
+        left,right=socket.socketpair(); handle=os.open(p,os.O_RDONLY)
+        try:
+            identity={str(fd):(os.fstat(fd).st_dev,os.fstat(fd).st_ino) for fd in (left.fileno(),handle)}
+            env={'PATH':'/usr/bin:/bin','HOME':'/','PYTHONNOUSERSITE':'1'}
+            argv=[sys.executable,'-I','-B',str(Path(__file__).resolve()),'--source-root',str(source)]
+            r=subprocess.run(argv+['--child','close','--fd-identity',json.dumps(identity)],
+                pass_fds=(left.fileno(),handle),stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,env=env,cwd='/',timeout=15)
+            proof=json.loads(r.stdout) if r.returncode==0 else {}
+            check('real_socket_and_file_absent_after_exec',lambda:r.returncode==0 and proof.get('absentAfterExec') is True)
+            check('real_exec_keeps_pid_and_original_uid',lambda:proof.get('samePid') is True
+                  and proof.get('uid')==os.getuid() and proof.get('gid')==os.getgid())
+            def stdio(stream):
+                r=subprocess.run(argv+['--child','stdio'],stdin=stream,stdout=subprocess.PIPE,
+                                 stderr=subprocess.PIPE,env=env,cwd='/',timeout=15)
+                return r.returncode==0 and json.loads(r.stdout).get('refused') is True
+            check('socket_stdio_refused_in_real_child',lambda:stdio(left))
+            check('regular_file_stdio_refused_in_real_child',lambda:stdio(handle))
+            right.sendall(b'owned');left.settimeout(2)
+            check('parent_socket_and_file_preserved',lambda:left.recv(5)==b'owned' and os.fstat(handle).st_ino>0)
+        finally:
+            os.close(handle);left.close();right.close()
+    check('owned_home_fixture_removed',lambda:not root.exists())
+    check('observer_identity_namespace_groups_unchanged',lambda:original_identity==(
+        os.getresuid(),os.getresgid(),os.getgroups(),os.readlink('/proc/self/ns/user')))
+    check('observer_descriptor_set_unchanged',lambda:set(os.listdir('/proc/self/fd'))==initial_fds)
+    after=signature(source)
+    check('source_bytes_unchanged',lambda:before==after)
+    report={'result':'PASS_SCOPED_FILES_AND_FDS' if all(checks.values()) else 'FAIL',
+        'job':'D3B-LAUNCH-QA-B72D','observedAt':datetime.datetime.now().astimezone().isoformat(),
+        'checks':checks,'checkCount':len(checks),'errors':errors,'durationsSeconds':durations,
+        'sourceRoot':str(source),'sourceSha256':before,'sourceAfterSha256':after,
+        'runnerSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'observerUid':uid,'observerGid':os.getgid(),
+        'timingInjection':'os.read callback triggers real rename/chmod/truncate/utime; no stat/open/kernel return mocked',
+        'privilegedSyscallsExecuted':False,'positiveUidTransitionTested':False,
+        'twoHostUidTested':False,'fullD3BAccepted':False,'realModelCalls':0}
+    with destination.open('x',encoding='utf-8') as f:json.dump(report,f,indent=2);f.write('\n')
+    print(json.dumps({'result':report['result'],'checks':len(checks),'failed':[k for k,v in checks.items() if not v],
+                      'errors':errors,'privilegedSyscallsExecuted':False}))
+    return 0 if all(checks.values()) else 1
+
+
+if __name__=='__main__':raise SystemExit(main())

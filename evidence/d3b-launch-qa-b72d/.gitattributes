@@ -1,0 +1,3 @@
+* -text
+*.txt -whitespace
+postexec-primary-windows.json -whitespace

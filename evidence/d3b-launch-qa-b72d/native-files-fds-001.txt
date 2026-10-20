@@ -1,0 +1,1 @@
+{"result": "FAIL", "checks": 26, "failed": ["socket_stdio_refused_in_real_child", "regular_file_stdio_refused_in_real_child"], "errors": {}, "privilegedSyscallsExecuted": false}

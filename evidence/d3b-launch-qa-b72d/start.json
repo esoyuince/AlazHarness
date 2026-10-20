@@ -1,0 +1,7 @@
+{
+  "base": "47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139",
+  "observedAt": "2026-10-21T02:41:44.660395+03:00",
+  "reason": "live concurrent primary post-exec writer detected before any attempted product edit",
+  "primaryUntouched": true,
+  "role": "independent QA"
+}
