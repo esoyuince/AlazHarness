@@ -1,0 +1,16 @@
+{
+  "gate": "PLAT002D_SOURCE_CUSTODY_CROSSOS_FIX",
+  "codeCommit": "0fb821bc027892085bfe716372f13d7347420cbc",
+  "context": "alaz/local-ci",
+  "result": "SUCCESS",
+  "statusId": 56747876688,
+  "updatedAtUtc": "2026-10-20T01:02:05Z",
+  "description": "ALAZ Local CI passed",
+  "previousFailedCommit": "f18da79d43da6dcafa71ddf43ae9a9a400fe8ad6",
+  "previousFailedStatusId": 56746778531,
+  "historicalNativeWrapperLoss": "NO_GO_UNKNOWN_GUEST_CLOSURE",
+  "realModelCalls": 0,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "docsFollowupCi": "PENDING"
+}

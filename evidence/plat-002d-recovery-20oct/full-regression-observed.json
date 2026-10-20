@@ -1,0 +1,25 @@
+{
+  "scope": "PLAT002D_CI_RECOVERY_NEW_FULL_WINDOWS_UNITTTEST",
+  "testedCodeCommit": "0fb821bc027892085bfe716372f13d7347420cbc",
+  "result": "PASS",
+  "exitCode": 0,
+  "testsDiscovered": 2291,
+  "linuxOnlySkipped": 5,
+  "nonSkipped": 2286,
+  "unittestSeconds": 386.436,
+  "logSha256": "b8f9579cf6c7d3dcf06f0fa2ac928976bdece99a23c4bbb4405836cf94e8d7e2",
+  "ignoredLog": "runtime/plat-002d-ci-recovery-20oct/full-standard-windows.txt",
+  "rootStatic": {
+    "result": "PASS",
+    "discoveredTests": 2291,
+    "trackedTextFiles": 1560,
+    "sourceGitlinks": 2,
+    "exitCode": 0
+  },
+  "focusedWindows": 62,
+  "focusedSimulatedLinuxLF": 62,
+  "realModelCalls": 0,
+  "linuxWSLNativeRun": false,
+  "fullD3BAccepted": false,
+  "oldNativeFailPreserved": true
+}

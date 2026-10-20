@@ -59,3 +59,27 @@ The prior base code had 2,286 full Windows unit tests PASS, with
 five Linux-only skips, but the recovery branch has not yet
 rerun a new full 2,291-test local Windows suite at this point.
 Exact new GitHub CI is therefore still required.
+
+
+## Exact recovery code CI and full Windows regression
+
+Recovery code 0fb821bc027892085bfe716372f13d7347420cbc
+was published only to the isolated recovery branch. Its
+GitHub alaz/local-ci returned **SUCCESS** (status ID
+56747876688, 2026-10-20T01:02:05Z). Original failed
+f18da79 rc1 result remains preserved separately.
+This verifies the source/CI compatibility repair, NOT
+a native WSL lease or guardian acceptance.
+
+A new complete Windows root unittest run on that same
+recovery code executed 2,291 discovered tests, exit0,
+five Linux-only skips, 386.436 seconds. SHA256 of
+the full ignored log is recorded in
+evidence/plat-002d-recovery-20oct/full-regression-observed.json.
+Root static: PASS, 2,291 discovered, 1,560 tracked files,
+two Git source links. A new real WSL native experiment was
+NOT RUN because earlier Linux process closure is UNKNOWN
+and Ubuntu had no running distro at last non-starting check.
+
+The subsequent documentation/status observation commit is
+independent and requires its own exact GitHub CI result.

@@ -4,6 +4,24 @@ Son güncelleme: 2026-10-20 (PLAT-002D CI source custody recovery IN PROGRESS)
 
 ## Güncel nokta
 
+PLAT-002D CROSS-OS CI RECOVERY CODE CI SUCCESS (2026-10-20):
+Isolated branch alaz/plat-002d-ci-recovery-20oct with source
+code commit 0fb821bc027892085bfe716372f13d7347420cbc
+GitHub alaz/local-ci SUCCESS status56747876688 at
+2026-10-20T01:02:05Z. Prior f18da79 FAIL rc1 still
+recorded; source failure reproduced as Windows CRLF vs
+Git Linux LF SHA mismatch and fixed by one exact
+normalization plus frozen original commit source custody.
+Current PLAT002D-focused 62/62 PASS on Windows and
+simulated Linux LF; complete Windows full2291 exit0
+skip5 (386.436s), static2291/1560 files/2 gitlinks PASS.
+All prior two native WSL wrapper-loss experiments remain
+FAIL/UNKNOWN, Ubuntu last non-starting query reported no
+running distros, real guest guardian shutdown/reaping
+NOT PROVEN. No third native trial, WSL service/restart,
+real model, broker, or main/root changes. Document-only
+CI followup pending. See docs/PLAT-002D-CI-RECOVERY.md.
+
 PLAT-002D CI CROSS-OS EVIDENCE FIX — LOCAL FOCUSED PASS (2026-10-20):
 Own clean recovery branch alaz/plat-002d-ci-recovery-20oct,
 worktree scratch/worktrees/plat-002d-ci-recovery-20oct
@@ -1737,3 +1755,18 @@ native FAIL receipts not edited. Root static PASS: 2291 tests discovered,
 The parent had Windows full2286 PASS but the recovery branch full2291
 is NOT RUN yet. New code commit/push/exact GitHub CI PENDING.
 Main/root and the original dirty PLAT-002D worktree untouched.
+
+### 2026-10-20T04:02:05+03:00 — PLAT-002D recovery exact code CI SUCCESS
+
+New feature commit 0fb821bc027892085bfe716372f13d7347420cbc
+GitHub alaz/local-ci SUCCESS id56747876688 at
+2026-10-20T01:02:05Z. Source original Windows CRLF/Git-LF SHA
+fix and frozen f18da79 historical native QA bound PASS.
+Complete Windows default suite 2291/2291 exit0 skip5,
+386.436s, log SHA256 b8f9579cf6c7d3dcf06f0fa2ac928976bdece99a23c4bbb4405836cf94e8d7e2.
+Root static2291 tests, 1560 files, two gitlinks PASS;
+focused PLAT002D62 and Linux-LF simulation62 PASS.
+No actual WSL guest started or native wrapper experiment rerun.
+Both earlier native FAIL/UNKNOWN unchanged; full D3B/M1/M2 NO-GO.
+Evidence code-ci-observed.json and full-regression-observed.json.
+Docs-only CI followup requires independent verification.

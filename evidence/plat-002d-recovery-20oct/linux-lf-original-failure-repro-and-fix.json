@@ -34,7 +34,12 @@
       "errors": 0
     },
     "shaMutationMustFail": true,
-    "globalGitHubFixResult": "PENDING",
+    "globalGitHubFixResult": {
+      "commit": "0fb821bc027892085bfe716372f13d7347420cbc",
+      "result": "SUCCESS",
+      "statusId": 56747876688,
+      "updatedAtUtc": "2026-10-20T01:02:05Z"
+    },
     "staticSourceCheck": {
       "result": "PASS",
       "discoveredTests": 2291,
@@ -48,7 +53,16 @@
       "tests/test_plat002d_second_pilot.py": "2910ea677446424e6697e8125060b1e53fdeb71a81d4ed9bfb734f1a1cbe2172",
       "tests/test_plat002d_receipt.py": "e84bbb7d3b47acee1a444526d2bad89b7998aaeb8e369785eaa5881e95c4b317",
       "tests/test_plat002d_ci_recovery.py": "1e5dce48e63af1fa421ad7e5976cd6f29ab6935a6a88666e2416d0745d428eeb"
-    }
+    },
+    "recoveryBranchFullWindows": {
+      "result": "PASS",
+      "tests": 2291,
+      "skippedLinux": 5,
+      "exitCode": 0,
+      "unittestSeconds": 386.436,
+      "logSha256": "b8f9579cf6c7d3dcf06f0fa2ac928976bdece99a23c4bbb4405836cf94e8d7e2"
+    },
+    "documentationFollowupCI": "PENDING"
   },
   "WSLGuestState": {
     "nonStartingListRunningResult": "NO_RUNNING_DISTRIBUTIONS_REPORTED",
