@@ -1,0 +1,49 @@
+test_expected_owner_mode_not_widened (test_host_principal.PathContract.test_expected_owner_mode_not_widened) ... ok
+test_inode_or_alias_change_rejected (test_host_principal.PathContract.test_inode_or_alias_change_rejected) ... ok
+test_overlong_refused (test_host_principal.PathContract.test_overlong_refused) ... ok
+test_regular_rejects_missing_file (test_host_principal.PathContract.test_regular_rejects_missing_file) ... ok
+test_relative_traversal_alias_refused (test_host_principal.PathContract.test_relative_traversal_alias_refused) ... ok
+test_socket_is_one_named_endpoint (test_host_principal.PathContract.test_socket_is_one_named_endpoint) ... ok
+test_socket_path_length_refused (test_host_principal.PathContract.test_socket_path_length_refused) ... ok
+test_socket_requires_group_traversal_without_group_write (test_host_principal.PathContract.test_socket_requires_group_traversal_without_group_write) ... ok
+test_stable_inode_accepted (test_host_principal.PathContract.test_stable_inode_accepted) ... ok
+test_valid_canonical (test_host_principal.PathContract.test_valid_canonical) ... ok
+test_wrong_socket_name_refused (test_host_principal.PathContract.test_wrong_socket_name_refused) ... ok
+test_bool_or_false_version_refused (test_host_principal.PolicyContract.test_bool_or_false_version_refused) ... ok
+test_default_absent_refused (test_host_principal.PolicyContract.test_default_absent_refused) ... ok
+test_disabled_refused (test_host_principal.PolicyContract.test_disabled_refused) ... ok
+test_exact_optin (test_host_principal.PolicyContract.test_exact_optin) ... ok
+test_missing_fields_refused (test_host_principal.PolicyContract.test_missing_fields_refused) ... ok
+test_noninteger_and_overflow_refused (test_host_principal.PolicyContract.test_noninteger_and_overflow_refused) ... ok
+test_policy_does_not_mutate_input (test_host_principal.PolicyContract.test_policy_does_not_mutate_input) ... ok
+test_unknown_permissions_refused (test_host_principal.PolicyContract.test_unknown_permissions_refused) ... ok
+test_zero_root_and_same_host_uid_refused (test_host_principal.PolicyContract.test_zero_root_and_same_host_uid_refused) ... ok
+test_bad_role_refused (test_host_principal.PrincipalProcessContract.test_bad_role_refused) ... ok
+test_broker_supplementary_groups_refused (test_host_principal.PrincipalProcessContract.test_broker_supplementary_groups_refused) ... ok
+test_broker_uid_and_empty_supplementary_groups_required (test_host_principal.PrincipalProcessContract.test_broker_uid_and_empty_supplementary_groups_required) ... ok
+test_forged_userns_identity_refused (test_host_principal.PrincipalProcessContract.test_forged_userns_identity_refused) ... ok
+test_gateway_is_distinct (test_host_principal.PrincipalProcessContract.test_gateway_is_distinct) ... ok
+test_gateway_wrong_uid_refused (test_host_principal.PrincipalProcessContract.test_gateway_wrong_uid_refused) ... ok
+test_peer_cred_mismatch_refused (test_host_principal.PrincipalProcessContract.test_peer_cred_mismatch_refused) ... ok
+test_peer_root_refused (test_host_principal.PrincipalProcessContract.test_peer_root_refused) ... ok
+test_untrusted_userns_fields_refused (test_host_principal.PrincipalProcessContract.test_untrusted_userns_fields_refused) ... ok
+test_wrong_broker_uid_refused (test_host_principal.PrincipalProcessContract.test_wrong_broker_uid_refused) ... ok
+test_broker_lifetime_never_initializes_private_budget_implicitly (test_host_principal_broker.WiringPolicy.test_broker_lifetime_never_initializes_private_budget_implicitly) ... ok
+test_broker_peer_checks_real_credential_for_gateway (test_host_principal_broker.WiringPolicy.test_broker_peer_checks_real_credential_for_gateway) ... ok
+test_broker_socket_uses_principal_identity_only_in_optin (test_host_principal_broker.WiringPolicy.test_broker_socket_uses_principal_identity_only_in_optin) ... ok
+test_default_legacy_config_is_none (test_host_principal_broker.WiringPolicy.test_default_legacy_config_is_none) ... ok
+test_optin_round_trips_immutable_copy (test_host_principal_broker.WiringPolicy.test_optin_round_trips_immutable_copy) ... ok
+test_principal_is_not_automatic_global_setting (test_host_principal_broker.WiringPolicy.test_principal_is_not_automatic_global_setting) ... ok
+test_root_peer_refused_even_when_socket_is_group_accessible (test_host_principal_broker.WiringPolicy.test_root_peer_refused_even_when_socket_is_group_accessible) ... ok
+test_same_uid_rejected_at_configuration (test_host_principal_broker.WiringPolicy.test_same_uid_rejected_at_configuration) ... ok
+test_unknown_fields_denied_not_ignored (test_host_principal_broker.WiringPolicy.test_unknown_fields_denied_not_ignored) ... ok
+test_wrong_uid_broker_cannot_initialize_principal_transport (test_host_principal_broker.WiringPolicy.test_wrong_uid_broker_cannot_initialize_principal_transport) ... ok
+test_all_explicit_denials_recorded (test_host_principal_native_receipt.PrincipalNegativeReceipt.test_all_explicit_denials_recorded) ... ok
+test_current_policy_and_client_source_bytes_pinned (test_host_principal_native_receipt.PrincipalNegativeReceipt.test_current_policy_and_client_source_bytes_pinned) ... ok
+test_different_host_uid_not_claimed (test_host_principal_native_receipt.PrincipalNegativeReceipt.test_different_host_uid_not_claimed) ... ok
+test_previous_no_source_manifest_remains_diagnostic_only (test_host_principal_native_receipt.PrincipalNegativeReceipt.test_previous_no_source_manifest_remains_diagnostic_only) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.085s
+
+OK

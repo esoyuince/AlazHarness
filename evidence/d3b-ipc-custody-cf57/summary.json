@@ -1,0 +1,63 @@
+{
+  "job": "D3B-IPC-CUSTODY-CF57",
+  "result": "LOCAL_SCOPED_PASS",
+  "updated": "2026-10-21T00:03:38+03:00",
+  "codeCommit": "bbc0df06b8964c4851d12ed2ae915d71c1c9161f",
+  "branch": "alaz/d3b-ipc-custody-cf57",
+  "base": "4d86f3081791c1f444d1de256d7b266eec4af6f7",
+  "fullWindows": {
+    "discovered": 2094,
+    "passed": 2089,
+    "skipped": 5,
+    "failures": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "sourceFiles": 313,
+    "sourceBytesUnchanged": true
+  },
+  "focused": {
+    "ipcWindows": 56,
+    "ipcLinux": 56,
+    "hostPrincipalWindows": 44,
+    "newCustodyTestsSubsetOfIPC": 15,
+    "historicalCustodyWindows": 5,
+    "historicalCustodyLinux": 5
+  },
+  "native": {
+    "scope": "owned Linux socket metadata with injected mutation timing, not two identities",
+    "checks": 7,
+    "passed": 7,
+    "initialMutationFailures": 3,
+    "runnerAndNewTestsUnchanged": true,
+    "twoHostUid": false,
+    "gatewayBrokerTransport": false,
+    "mountPerformed": false
+  },
+  "firstFull": {
+    "discovered": 2092,
+    "passed": 2086,
+    "skipped": 5,
+    "failures": 1,
+    "reason": "historical kernel evidence compared to current source; original Git custody now exact",
+    "originalFailureRetained": true
+  },
+  "sourceSnapshotReceipt": "full-final-windows.json",
+  "codeStaticGate": "static-code-gate.json",
+  "primaryConcurrentWorktreeUntouched": true,
+  "realModelCalls": 0,
+  "privilegedOperations": 0,
+  "productionChanges": false,
+  "published": false,
+  "remoteCI": "NOT RUN",
+  "mainMerged": false,
+  "fullD3BAccepted": false,
+  "next": "Review/cherry-pick code commit into finished primary startup work; then requalify integrated source before opening v2 mount. Do not copy this status over primary status.",
+  "handoffStaticGate": {
+    "file": "static-handoff-gate.json",
+    "result": "PASS",
+    "discovered": 2094,
+    "rootFilesChecked": 1528
+  },
+  "handoffFinalized": "2026-10-21T00:06:23+03:00",
+  "evidenceStorage": "Exact original bytes; local evidence-only Git attributes preserve CRLF/LF and raw progress spaces. No product formatting exemption."
+}

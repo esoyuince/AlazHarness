@@ -1,0 +1,21 @@
+{
+  "sourceSha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+  "unchangedNewTestSha256": "e9d7b525e553e732d4817d76ff336dec772cf1191d6ce91ac58dc976859528ce",
+  "runs": [
+    {
+      "label": "fixed-new-windows",
+      "exitCode": 0,
+      "tail": "cessful_inspection_cannot_open_v2_runtime_gate) ... ok\ntest_validated_principal_is_not_aliased_to_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_is_not_aliased_to_caller) ... ok\ntest_validated_principal_mutation_does_not_change_caller (test_ipc_principal_custody.PrincipalSnapshotCustodyTests.test_validated_principal_mutation_does_not_change_caller) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.042s\n\nOK\n"
+    },
+    {
+      "label": "fixed-ipc-windows",
+      "exitCode": 0,
+      "tail": "test_incomplete_tree_scan_rejected) ... ok\ntest_nested_directory_mount_is_masked_not_scanned (test_ipc_view.IPCScanTests.test_nested_directory_mount_is_masked_not_scanned) ... ok\ntest_real_regular_tree_counted (test_ipc_view.IPCScanTests.test_real_regular_tree_counted) ... ok\ntest_scan_limit_is_a_failure_not_truncation (test_ipc_view.IPCScanTests.test_scan_limit_is_a_failure_not_truncation) ... ok\n\n----------------------------------------------------------------------\nRan 56 tests in 0.059s\n\nOK\n"
+    },
+    {
+      "label": "fixed-host-principal-windows",
+      "exitCode": 0,
+      "tail": "alNegativeReceipt.test_current_policy_and_client_source_bytes_pinned) ... ok\ntest_different_host_uid_not_claimed (test_host_principal_native_receipt.PrincipalNegativeReceipt.test_different_host_uid_not_claimed) ... ok\ntest_previous_no_source_manifest_remains_diagnostic_only (test_host_principal_native_receipt.PrincipalNegativeReceipt.test_previous_no_source_manifest_remains_diagnostic_only) ... ok\n\n----------------------------------------------------------------------\nRan 44 tests in 0.085s\n\nOK\n"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "commit": "bbc0df06b8964c4851d12ed2ae915d71c1c9161f",
+  "base": "4d86f3081791c1f444d1de256d7b266eec4af6f7",
+  "branch": "alaz/d3b-ipc-custody-cf57",
+  "paths": [
+    "packages/claw-hermes/ipc_view.py",
+    "scripts/qa/ipc_principal_custody_linux.py",
+    "tests/test_d3b_integration_acceptance.py",
+    "tests/test_ipc_principal_contract.py",
+    "tests/test_ipc_principal_custody.py"
+  ],
+  "published": false,
+  "mainMerged": false,
+  "codeUnchangedSinceFinalFull": true
+}

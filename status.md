@@ -1,5 +1,13 @@
 # AlazHarness — status
 
+## D3B-IPC-CUSTODY-CF57 — LOCAL SCOPED PASS (2026-10-21T00:03:38+03:00)
+
+Active branch: alaz/d3b-ipc-custody-cf57. Worktree: scratch/worktrees/d3b-ipc-custody-cf57. Base: 4d86f3081791c1f444d1de256d7b266eec4af6f7.
+Code-only commit: bbc0df06b8964c4851d12ed2ae915d71c1c9161f; local only, no push/remote CI/main merge. Final full2094:2089PASS/5SKIP/0FAIL, exit0,313 source bytes unchanged. IPC56/56 Windows+Linux; host-principal44/44; new15 subset unchanged; native owned-socket metadata7/7; historical custody5/5 Windows+Linux. These are overlapping scopes, not additive totals.
+Fixed detached v2 principal policy and inconsistent socket metadata snapshots. First failing offline/native/full outputs retained; historical kernel checks pinned to original29f6a353 with exact source hashes and corruption tests. v1 prepare/project AST unchanged, v2 mount gate remains closed. Two-host-UID Gateway/broker and full D3B NOT ACCEPTED.
+Report docs/D3B-IPC-CUSTODY-CF57.md; evidence/d3b-ipc-custody-cf57/summary.json. Primary D3B-PRINCIPAL-STARTUP-20OCT worktree and dirty root mirror are untouched. Review code commit with primary after its edits complete, rerun on integrated source; never copy this status over primary. Evidence/docs finalized as a separate local commit; final staged static handoff PASS2094,1528files. No pending test operation. See Git HEAD for the evidence commit and preceding bbc0df0 for code.
+
+
 Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRESS)
 
 ## Güncel nokta
@@ -1062,3 +1070,18 @@ prove independent host UID execution; split-UID Gateway/IPC mount
 positive acceptance, paid-provider and full D3B remain OPEN. Current
 new followup files only docs/status/CI record/summary; followup commit
 must receive separate exact GitHub CI check.
+
+
+### 2026-10-20T23:58:59+03:00 — CF57 focused/native PASS, first full historical-custody failure preserved
+
+15 unchanged new tests PASS; IPC56/56 Windows and Linux; host-principal44/44; native owned-socket metadata7/7 PASS, not two UID. Original failures preserved. First full2092:2086PASS/5SKIP/1FAIL due to historic kernel source hash; original three Git blobs29f6a353 verified. Historical test corrected, five tests incl missing/corrupt source negatives PASS. Final full running receipt aa966cf4-8c2e-4b45-aed1-aa49dbe6f7c6, output evidence/d3b-ipc-custody-cf57/full-final-windows.txt; poll existing receipt, do not replay. Other writer untouched.
+
+
+### 2026-10-21T00:03:38+03:00 — CF57 final full PASS and code checkpoint
+
+Code bbc0df06b8964c4851d12ed2ae915d71c1c9161f; final full2094 discovered/2089PASS/5SKIP, exit0, zero drift across313files. Windows+LinuxIPC56PASS, host44PASS, native7 scoped, historical5 on both platforms. No fullD3B/twoUID/model acceptance. Own code commit has five explicitly selected paths, no concurrent writer files. Code-static PASS2094. Evidence/docs finalization follows without source changes.
+
+
+### 2026-10-21T00:06:23+03:00 — CF57 handoff finalized
+
+Final staged static gate PASS2094,1528files; working/index evidence bytes exact under evidence-only attributes. All original failures retained; first-full skip parser discrepancy corrected additively. Code bbc0df0 unchanged since final2094test run. Five code paths and only own docs/status/evidence staged for separate checkpoints. No automatic integration into concurrently edited primary tree; next review/code-only integration and native twoUID qualification remain OPEN.

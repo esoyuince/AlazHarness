@@ -1,0 +1,10 @@
+test_four_live_merged_gateway_cases_and_private_budget (test_d3b_integration_acceptance.D3BIntegrationEvidence.test_four_live_merged_gateway_cases_and_private_budget) ... ok
+test_four_runs_pin_original_189_git_sources (test_d3b_integration_acceptance.D3BIntegrationEvidence.test_four_runs_pin_original_189_git_sources) ... ok
+test_kernel_custody_rejects_changed_original_git_bytes (test_d3b_integration_acceptance.D3BIntegrationEvidence.test_kernel_custody_rejects_changed_original_git_bytes) ... ok
+test_kernel_custody_rejects_missing_source (test_d3b_integration_acceptance.D3BIntegrationEvidence.test_kernel_custody_rejects_missing_source) ... ok
+test_owned_kernel_socket_and_mount_negatives (test_d3b_integration_acceptance.D3BIntegrationEvidence.test_owned_kernel_socket_and_mount_negatives) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 27.738s
+
+OK

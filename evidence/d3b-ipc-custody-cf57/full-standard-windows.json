@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "scope": "full standard unittest discovery; opt-in native separately",
+  "exitCode": 1,
+  "timedOut": false,
+  "elapsedSeconds": 302.345,
+  "testsRun": 2092,
+  "skipped": 0,
+  "passed": null,
+  "sourceFiles": 313,
+  "sourceBytesUnchanged": true,
+  "sourceDrift": [],
+  "node": "v24.19.0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "started": "2026-10-20T23:50:19.260645+03:00",
+  "terminalSummary": "t_private_file_read_leak_refused) ... ok\ntest_private_file_write_leak_refused (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_private_file_write_leak_refused) ... ok\ntest_profile_cleanup_error_refused (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_profile_cleanup_error_refused) ... ok\ntest_reused_pid_is_not_three_lifetimes (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_reused_pid_is_not_three_lifetimes) ... ok\ntest_secret_environment_leak_refused (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_secret_environment_leak_refused) ... ok\ntest_unenforced_deadline_refused (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_unenforced_deadline_refused) ... ok\ntest_unreaped_process_refused (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_unreaped_process_refused) ... ok\ntest_unrestricted_token_cannot_be_success (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_unrestricted_token_cannot_be_success) ... ok\ntest_wrong_timeout_exit_refused (test_windows_appcontainer_contract_qa4023.WindowsReceiptContracts.test_wrong_timeout_exit_refused) ... ok\ntest_accepts_gitlink (test_workspace_helpers.GitlinkTests.test_accepts_gitlink) ... ok\ntest_rejects_conflict_stage (test_workspace_helpers.GitlinkTests.test_rejects_conflict_stage) ... ok\ntest_rejects_empty (test_workspace_helpers.GitlinkTests.test_rejects_empty) ... ok\ntest_rejects_multiple_entries (test_workspace_helpers.GitlinkTests.test_rejects_multiple_entries) ... ok\ntest_rejects_normal_file (test_workspace_helpers.GitlinkTests.test_rejects_normal_file) ... ok\ntest_rejects_absolute (test_workspace_helpers.PathTests.test_rejects_absolute) ... ok\ntest_rejects_backslash (test_workspace_helpers.PathTests.test_rejects_backslash) ... ok\ntest_rejects_drive (test_workspace_helpers.PathTests.test_rejects_drive) ... ok\ntest_rejects_empty (test_workspace_helpers.PathTests.test_rejects_empty) ... ok\ntest_rejects_git_internals (test_workspace_helpers.PathTests.test_rejects_git_internals) ... ok\ntest_rejects_parent_traversal (test_workspace_helpers.PathTests.test_rejects_parent_traversal) ... ok\ntest_rejects_root (test_workspace_helpers.PathTests.test_rejects_root) ... ok\ntest_valid_path (test_workspace_helpers.PathTests.test_valid_path) ... ok\n\n======================================================================\nFAIL: test_owned_kernel_socket_and_mount_negatives (test_d3b_integration_acceptance.D3BIntegrationEvidence.test_owned_kernel_socket_and_mount_negatives)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-ipc-custody-cf57\\tests\\test_d3b_integration_acceptance.py\", line 138, in test_owned_kernel_socket_and_mount_negatives\n    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e' != '9559b569dc1fa02acdbbc4e7aed2dce16788123d6315f41c29e00249dda89fc5'\n- 1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e\n+ 9559b569dc1fa02acdbbc4e7aed2dce16788123d6315f41c29e00249dda89fc5\n : packages/claw-hermes/ipc_view.py\n\n----------------------------------------------------------------------\nRan 2092 tests in 300.573s\n\nFAILED (failures=1, skipped=5)\n"
+}
