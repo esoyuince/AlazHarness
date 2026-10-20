@@ -44,7 +44,7 @@ def validate(value,filesystem):
         require(set(value)==PRINCIPAL_FIELDS and value.get('mode')=='projected_root_principal',
                 'ipc_principal_contract_fields')
         from host_principal import policy as principal_policy
-        principal_policy(value['principalContract'])
+        principal=principal_policy(value['principalContract'])
     else:
         require(set(value)==FIELDS,'ipc_contract_fields')
         require(type(version) is int and version==1 and
@@ -67,7 +67,9 @@ def validate(value,filesystem):
                 not PurePosixPath(root).is_relative_to(path),'ipc_root_overlap')
         require(not PurePosixPath(sock).is_relative_to(path) and
                 not PurePosixPath(path).is_relative_to(sock),'ipc_socket_overlap')
-    return {**value},fs
+    result={**value}
+    if version==2:result['principalContract']=principal
+    return result,fs
 
 
 def identity(path):
@@ -101,16 +103,30 @@ def inspect_tree(root):
 
 
 def inspect_principal_socket(value,filesystem):
-    """Read-only strict host identity preflight; does not authorize a mount."""
+    """Return consistent, detached observations; never grant mount authority.
+
+    Recheck full directory/socket ownership and modes around the inode read.
+    This is not an atomic filesystem snapshot, held descriptor or lease: an
+    ABA change or a later change still needs checks at the actual point of use.
+    No retries can turn a changed observation into a successful admission.
+    """
     ipc,fs=validate(value,filesystem)
     require(ipc['version']==2,'ipc_principal_version_required')
     from host_principal import socket_identity
-    try:
+    def snapshot():
         proof=socket_identity(ipc['principalContract'],ipc['brokerSocket'])
-    except (ValueError,OSError) as exc:
+        return {key:tuple(proof[key]) for key in ('directory','socket')}
+    try:
+        before=snapshot()
+        observed=identity(ipc['brokerSocket'])
+        after=snapshot()
+        pinned=before['socket']
+        expected=(pinned[0],pinned[1],stat.S_IFSOCK,pinned[2],pinned[3])
+        require(before==after and observed==expected,'ipc_principal_socket_changed')
+    except (ValueError,OSError,KeyError,TypeError,IndexError) as exc:
         raise IPCViewRejected('ipc_principal_socket_invalid') from exc
-    return {'socketIdentity':identity(ipc['brokerSocket']),
-            'socketPrincipal':proof, 'mountAuthorized':False}
+    return {'socketIdentity':observed,
+            'socketPrincipal':before, 'mountAuthorized':False}
 
 
 def prepare(value,filesystem):
