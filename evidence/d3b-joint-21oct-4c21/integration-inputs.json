@@ -1,0 +1,11 @@
+{
+  "job": "d3b-joint-21oct-4c21",
+  "startedAt": "2026-10-21T00:22:38.233130+03:00",
+  "parents": {
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-ipc-principal-20oct": "c03351b5f976fc527270f95376384d7e54e4e99d",
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-ipc-custody-cf57": "95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115"
+  },
+  "rootHead": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+  "rootStatus": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n",
+  "scope": "combine tested broker startup and IPC observation corrections; v2 mounts remain closed"
+}

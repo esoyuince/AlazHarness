@@ -1,5 +1,17 @@
 # AlazHarness — status
 
+## D3B-JOINT-21OCT-4C21 — IN PROGRESS
+
+Active branch: `alaz/d3b-joint-21oct-4c21`. Worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-joint-21oct-4c21`.
+Start: `c03351b5f976fc527270f95376384d7e54e4e99d` (broker startup); merge candidate `95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115` (IPC custody).
+
+Task: integrate both tested corrections with complete source history/evidence; retain historical kernel custody and add separately source-bound current integration checks. Re-run native CLI, principal denial, IPC metadata and kernel isolation plus full regression on the combined code. Previous per-branch results are not combined-code acceptance. Full D3B and positive two-host-UID Gateway/broker NOT ACCEPTED. IPC v2 mount gate stays closed; no account or privileged operation, no paid model, main merge or push. Root and both previous worktrees remain unchanged.
+
+Evidence: `evidence/d3b-joint-21oct-4c21/`. All new actions belong to this worktree. Resolve merge conflicts explicitly without replacing current proof with a historical record. Next: inspect and reconcile the merge, then requalify current source.
+
+## Preserved prior status
+
+
 ## D3B-PRINCIPAL-STARTUP-20OCT — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-ipc-principal-20oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct`; starting commit: `4d86f30`.
