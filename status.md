@@ -4,6 +4,27 @@ Son güncelleme: 2026-10-20 (PLAT-002D-RECOVERY persistent journal offline IN PR
 
 ## Güncel nokta
 
+PLAT-002D-RECOVERY PERSISTENT JOURNAL CODE CI SUCCESS,
+NATIVE NOT RUN (2026-10-20):
+Own branch alaz/plat-002d-persistent-20oct,
+worktree scratch/worktrees/plat-002d-persistent-20oct,
+code2aa91ed1ca6598a2ada7e748b1686d2fe55f41ff,
+GitHub alaz/local-ci SUCCESS status56770801971 at
+2026-10-20T09:00:36Z. Persistent test-only Linux ext4-home
+PREPARED schema/writer and read-only conservative auditor;
+no READY/TERMINAL writer, no WSL guest launch/model.
+60 new tests: 48 Windows PASS+12 POSIX skipped on Windows;
+Linux CI total PASS, individual POSIX case transcripts
+not separately retrieved. Windows root2351/2351 exit0 with
+17 skips (135.925s); static2351 discovered/1567 tracked
+files/2 Git links PASS. Boot/PID and nonce/source binding,
+O_EXCL/NOFOLLOW/fsync, no automatic effect retry; even known
+PIDs absent cannot establish orphan closure. Historical two
+PLAT002D native FAIL/UNKNOWN unchanged. Full PLAT002/D3B,
+M1/M2 NO-GO. Docs-only CI followup pending, main/root and
+other worktrees untouched. Report
+docs/PLAT-002D-PERSISTENT-JOURNAL.md.
+
 PLAT-002D-RECOVERY PERSISTENT TEST-ONLY JOURNAL IN PROGRESS
 (2026-10-20): New clean worktree
 scratch/worktrees/plat-002d-persistent-20oct, branch
@@ -1831,3 +1852,14 @@ three current source canonical Git-LF SHA256 match staged blobs.
 WSL itself not started, no persistent real user home writes
 or child process. Native PLAT-002D still FAIL/UNKNOWN.
 Next exact code commit/GitHub CI and full Windows root regression.
+
+### 2026-10-20 — PLAT-002D test-only persistent journal code GitHub CI SUCCESS
+
+Exact code2aa91ed GitHub alaz/local-ci SUCCESS id56770801971 at
+2026-10-20T09:00:36Z. Full Windows root test2351 discovered, exit0,
+17 skips, 135.925s; test log SHA256 2e1c1130671da2ddc864acd76defab7bd520ab437c744b70ed9fb0f0f8515594.
+Static2351/1567 files/2 upstream gitlinks PASS. Existing
+two native WSL wrapper-loss FAIL/UNKNOWN receipts not modified.
+No real WSL ext4 home write/prepare, terminal writer, guardian
+launch, model, privileged operation or server/production changes.
+The pending documentation observation commit needs a separate CI.

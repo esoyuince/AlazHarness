@@ -44,13 +44,30 @@
     "fullNativeRuntimeTested": false,
     "realModelCalls": 0
   },
-  "windowsFull": "PENDING",
-  "codeCI": "PENDING",
+  "windowsFull": {
+    "result": "PASS",
+    "tests": 2351,
+    "skipped": 17,
+    "nonSkipped": 2334,
+    "exitCode": 0,
+    "pythonSeconds": 135.925,
+    "logSha256": "2e1c1130671da2ddc864acd76defab7bd520ab437c744b70ed9fb0f0f8515594"
+  },
+  "codeCI": {
+    "result": "SUCCESS",
+    "sha": "2aa91ed1ca6598a2ada7e748b1686d2fe55f41ff",
+    "context": "alaz/local-ci",
+    "statusId": 56770801971,
+    "utc": "2026-10-20T09:00:36Z",
+    "docsFollowup": "PENDING"
+  },
   "mainMerged": false,
   "localFocusedLastCheck": {
     "total": 60,
     "windowsPass": 48,
     "posixSkip": 12,
     "exitCode": 0
-  }
+  },
+  "codeCiReceipt": "code-ci-observed.json",
+  "fullRootReceipt": "full-windows-regression-observed.json"
 }

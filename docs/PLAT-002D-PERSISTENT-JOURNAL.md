@@ -129,3 +129,30 @@ Python journal and two test modules are bound in the local evidence.
 Native Linux POSIX temp-fixture tests will be independently validated
 on GitHub Linux CI; this is not evidence of actual WSL home writes.
 Exact code CI and full local root test are separate subsequent gates.
+
+
+## Exact code CI and full Windows verification
+
+Code 2aa91ed1ca6598a2ada7e748b1686d2fe55f41ff
+was published on the isolated branch
+alaz/plat-002d-persistent-20oct. GitHub alaz/local-ci
+**SUCCESS**, status ID 56770801971,
+2026-10-20T09:00:36Z. Per docs/CI.md, the configured
+Linux maintainer job runs root Python unittest plus source/lock
+checks. The per-case Linux temporary-fixture transcript has
+not been independently retrieved; only the overall exact
+commit CI SUCCESS is directly verified.
+
+Full Windows default-discovered unittest for this same code:
+**2,351 tests, exit0, 17 skips** (12 POSIX file fixture
+and five previous Linux-only cases), 135.925 Python seconds.
+The full log's SHA-256 is recorded in
+evidence/plat-002d-persistent-20oct/full-windows-regression-observed.json.
+Source static PASS: 2,351 tests discovered, 1,567 tracked
+files, two upstream gitlinks.
+
+These verifications do **not** attest actual WSL ext4 home,
+durable terminal writer, orphaned descendants after host loss
+or full D3B; the two historical native wrapper-loss FAIL
+receipts remain unchanged. The documentation-only follow-up
+commit needs its own exact GitHub CI.

@@ -1,0 +1,28 @@
+{
+  "gate": "PLAT-002D_PERSISTENT_ROOT_UNITTEST",
+  "codeCommit": "2aa91ed1ca6598a2ada7e748b1686d2fe55f41ff",
+  "result": "PASS",
+  "exitCode": 0,
+  "testsDiscovered": 2351,
+  "linuxOnlySkipped": 17,
+  "executedNotSkipped": 2334,
+  "unittestSeconds": 135.925,
+  "logSha256": "2e1c1130671da2ddc864acd76defab7bd520ab437c744b70ed9fb0f0f8515594",
+  "ignoredLog": "runtime/plat-002d-persistent-20oct/full-standard-windows.txt",
+  "staticSource": {
+    "result": "PASS",
+    "testsDiscovered": 2351,
+    "trackedFilesChecked": 1567,
+    "upstreamGitlinks": 2
+  },
+  "targetedWindows": {
+    "total": 60,
+    "passed": 48,
+    "posixOnlySkipped": 12
+  },
+  "defaultLinuxCI": "SUCCESS",
+  "nativeWSLJournalPrepared": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "oldNativeFailPreserved": true
+}
