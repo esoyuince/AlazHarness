@@ -1,0 +1,40 @@
+[
+  {
+    "label": "native-postexec",
+    "exitCode": 0,
+    "elapsedSeconds": 5.651,
+    "command": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu",
+      "--",
+      "python3",
+      "-I",
+      "-B",
+      "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/scripts/qa/principal_postexec_linux.py",
+      "--output",
+      "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/evidence/d3b-postexec-21oct/native-postexec-001.json"
+    ],
+    "completedAt": "2026-10-21T02:45:51.518829+03:00",
+    "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json"
+  },
+  {
+    "label": "native-launch-current",
+    "exitCode": 0,
+    "elapsedSeconds": 1.005,
+    "command": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu",
+      "--",
+      "python3",
+      "-I",
+      "-B",
+      "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/scripts/qa/principal_launch_linux.py",
+      "--output",
+      "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json"
+    ],
+    "completedAt": "2026-10-21T02:45:52.525066+03:00",
+    "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json"
+  }
+]

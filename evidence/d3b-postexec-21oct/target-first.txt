@@ -1,0 +1,29 @@
+test_malformed_principal_never_reaches_prepare (test_principal_target.EntryPoint.test_malformed_principal_never_reaches_prepare) ... ok
+test_only_admitted_configuration_reaches_broker_lifecycle (test_principal_target.EntryPoint.test_only_admitted_configuration_reaches_broker_lifecycle) ... ok
+test_refusal_never_starts_event_loop_or_broker (test_principal_target.EntryPoint.test_refusal_never_starts_event_loop_or_broker) ... ok
+test_each_capability_set_must_be_zero (test_principal_target.KernelGate.test_each_capability_set_must_be_zero) ... ok
+test_each_real_effective_saved_filesystem_id_is_required (test_principal_target.KernelGate.test_each_real_effective_saved_filesystem_id_is_required) ... ok
+test_exact_restricted_kernel_observation_passes (test_principal_target.KernelGate.test_exact_restricted_kernel_observation_passes) ... ok
+test_groups_threads_and_no_new_privs_required (test_principal_target.KernelGate.test_groups_threads_and_no_new_privs_required) ... ok
+test_incomplete_or_boolean_capability_sets_rejected (test_principal_target.KernelGate.test_incomplete_or_boolean_capability_sets_rejected) ... ok
+test_initial_namespace_and_both_maps_are_required (test_principal_target.KernelGate.test_initial_namespace_and_both_maps_are_required) ... ok
+test_missing_strict_or_boolean_filter_mode_refused (test_principal_target.KernelGate.test_missing_strict_or_boolean_filter_mode_refused) ... ok
+test_prctl_failure_is_not_filter_success (test_principal_target.KernelGate.test_prctl_failure_is_not_filter_success) ... ok
+test_python_thread_count_also_required (test_principal_target.KernelGate.test_python_thread_count_also_required) ... ok
+test_detached_principal_survives_caller_mutation (test_principal_target.Preparation.test_detached_principal_survives_caller_mutation) ... ok
+test_digest_mismatch_refuses_before_config_parse (test_principal_target.Preparation.test_digest_mismatch_refuses_before_config_parse) ... ok
+test_duplicate_json_keys_rejected_even_with_matching_hash (test_principal_target.Preparation.test_duplicate_json_keys_rejected_even_with_matching_hash) ... ok
+test_exact_order_kernel_filter_config_deployment_recheck (test_principal_target.Preparation.test_exact_order_kernel_filter_config_deployment_recheck) ... ok
+test_filter_setup_or_fd_cleanup_failure_prevents_config_read (test_principal_target.Preparation.test_filter_setup_or_fd_cleanup_failure_prevents_config_read) ... ok
+test_hash_matching_wrong_principal_refused (test_principal_target.Preparation.test_hash_matching_wrong_principal_refused) ... ok
+test_invalid_config_still_uses_actual_config_validator (test_principal_target.Preparation.test_invalid_config_still_uses_actual_config_validator) ... ok
+test_kernel_change_after_deployment_prevents_return (test_principal_target.Preparation.test_kernel_change_after_deployment_prevents_return) ... ok
+test_kernel_change_after_filter_prevents_config_read (test_principal_target.Preparation.test_kernel_change_after_filter_prevents_config_read) ... ok
+test_paths_digests_and_overlap_checked_before_kernel_calls (test_principal_target.Preparation.test_paths_digests_and_overlap_checked_before_kernel_calls) ... ok
+test_private_budget_or_output_rejection_is_fatal (test_principal_target.Preparation.test_private_budget_or_output_rejection_is_fatal) ... ok
+test_unrestricted_process_cannot_read_config_or_install_filter (test_principal_target.Preparation.test_unrestricted_process_cannot_read_config_or_install_filter) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.068s
+
+OK

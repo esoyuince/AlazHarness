@@ -10,6 +10,7 @@ from __future__ import annotations
 import ctypes
 import errno
 import hashlib
+import json
 import os
 from pathlib import Path
 import platform
@@ -38,8 +39,10 @@ def require(ok, reason):
 
 
 def command(value):
-    return [value['python'], '-I', '-B', str(ROOT / 'scripts/run_provider_broker.py'),
-            '--config', value['config'], '--output', value['output']]
+    return [value['python'], '-I', '-B', str(ROOT / 'scripts/run_principal_broker_target.py'),
+            '--principal', json.dumps(value['principalContract'], sort_keys=True, separators=(',', ':')),
+            '--config', value['config'], '--config-sha256', value['configSha256'],
+            '--output', value['output']]
 
 
 def validate(value):
@@ -149,10 +152,10 @@ def load_contract(path):
 def trusted_install(value):
     """The invoking Python runtime/dependencies remain a supervisor trust input."""
     files = [Path(value['python']), ROOT / 'scripts/run_principal_broker.py',
-             ROOT / 'scripts/run_provider_broker.py']
+             ROOT / 'scripts/run_provider_broker.py', ROOT / 'scripts/run_principal_broker_target.py']
     package = ROOT / 'packages/claw-hermes'
     files.extend(package.glob('*.py'))
-    require(package.is_dir() and len(files) > 3, 'launch_install_missing')
+    require(package.is_dir() and len(files) > 4, 'launch_install_missing')
     for p in files:
         trusted_ancestors(p, {0})
         s = p.lstat()

@@ -1,0 +1,11 @@
+test_changing_digest_without_rebinding_command_is_refused (test_principal_postexec_binding.PostexecBinding.test_changing_digest_without_rebinding_command_is_refused) ... ok
+test_changing_principal_without_rebinding_command_is_refused (test_principal_postexec_binding.PostexecBinding.test_changing_principal_without_rebinding_command_is_refused) ... ok
+test_equivalent_principal_key_order_has_stable_command (test_principal_postexec_binding.PostexecBinding.test_equivalent_principal_key_order_has_stable_command) ... ok
+test_exact_principal_reaches_new_image (test_principal_postexec_binding.PostexecBinding.test_exact_principal_reaches_new_image) ... ok
+test_expected_config_digest_reaches_new_image (test_principal_postexec_binding.PostexecBinding.test_expected_config_digest_reaches_new_image) ... ok
+test_fixed_target_is_postexec_gate_not_legacy_cli (test_principal_postexec_binding.PostexecBinding.test_fixed_target_is_postexec_gate_not_legacy_cli) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

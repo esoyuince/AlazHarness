@@ -1,0 +1,6 @@
+{
+  "oldReceiptPreserved": "evidence/d3b-principal-launch-21oct/native-unprivileged-001.json",
+  "newActualReceipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+  "reason": "launcher command and exact test bytes changed; rerun required, no old hash rewritten",
+  "oldTestHash": "fcfb9b45793bb743d8695f33bdff8f87ef30d31ea48d457ecc65e35c871787ff"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "label": "focused-windows",
+    "exitCode": 0,
+    "testsRun": 80,
+    "elapsedSeconds": 0.918
+  },
+  {
+    "label": "focused-linux",
+    "exitCode": 0,
+    "testsRun": 80,
+    "elapsedSeconds": 0.913
+  }
+]

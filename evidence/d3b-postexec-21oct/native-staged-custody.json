@@ -1,0 +1,121 @@
+{
+  "result": "PASS",
+  "nativeSourceChecks": [
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "packages/claw-hermes/principal_launch.py",
+      "nativeSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "stagedSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "packages/claw-hermes/principal_target.py",
+      "nativeSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "stagedSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "stagedSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "packages/claw-hermes/linux_netns.py",
+      "nativeSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "stagedSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "scripts/run_principal_broker_target.py",
+      "nativeSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "stagedSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "scripts/run_principal_broker.py",
+      "nativeSha256": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+      "stagedSha256": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "scripts/run_provider_broker.py",
+      "nativeSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "stagedSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "scripts/qa/principal_postexec_linux.py",
+      "nativeSha256": "ac9675d3cdfeb5499ab9e855e198441ff0666f02493abb412cc9c93437889e0c",
+      "stagedSha256": "ac9675d3cdfeb5499ab9e855e198441ff0666f02493abb412cc9c93437889e0c",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "tests/test_principal_target.py",
+      "nativeSha256": "4fae75a5d606fdb0bd625419e6f36863da2b24c2dede9e463915d823f2440379",
+      "stagedSha256": "4fae75a5d606fdb0bd625419e6f36863da2b24c2dede9e463915d823f2440379",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+      "path": "tests/test_principal_postexec_binding.py",
+      "nativeSha256": "4f27e24f51284510e79eef0252539a5eee37115f60a62e10591e9595fbb02269",
+      "stagedSha256": "4f27e24f51284510e79eef0252539a5eee37115f60a62e10591e9595fbb02269",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+      "path": "packages/claw-hermes/principal_launch.py",
+      "nativeSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "stagedSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+      "path": "scripts/run_principal_broker.py",
+      "nativeSha256": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+      "stagedSha256": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+      "path": "tests/test_principal_launch.py",
+      "nativeSha256": "b4e88014dc1ac35b7e349c9af32ccd86ceb5fe5d8f01b67dc1c93a41ba43b3f4",
+      "stagedSha256": "b4e88014dc1ac35b7e349c9af32ccd86ceb5fe5d8f01b67dc1c93a41ba43b3f4",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+      "path": "scripts/qa/principal_launch_linux.py",
+      "nativeSha256": "c8b2c758f69e40c100032bf77346bb870dc1b20208fdb5bd30538342a8ef584b",
+      "stagedSha256": "c8b2c758f69e40c100032bf77346bb870dc1b20208fdb5bd30538342a8ef584b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "stagedSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json",
+      "path": "packages/claw-hermes/linux_netns.py",
+      "nativeSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "stagedSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "representation": "exact"
+    }
+  ],
+  "oldNativeReceiptUnchanged": true,
+  "oldNativeReceiptGitSha256": "564eb34daa980b753002abed9c825ad69a5e4fe8132c29638cf0230f11be50f1",
+  "beforeAfterBindingTestBytesIdentical": true,
+  "testSourceSha256": "4f27e24f51284510e79eef0252539a5eee37115f60a62e10591e9595fbb02269"
+}

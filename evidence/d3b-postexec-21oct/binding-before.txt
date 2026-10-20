@@ -1,0 +1,59 @@
+test_changing_digest_without_rebinding_command_is_refused (test_principal_postexec_binding.PostexecBinding.test_changing_digest_without_rebinding_command_is_refused) ... FAIL
+test_changing_principal_without_rebinding_command_is_refused (test_principal_postexec_binding.PostexecBinding.test_changing_principal_without_rebinding_command_is_refused) ... FAIL
+test_equivalent_principal_key_order_has_stable_command (test_principal_postexec_binding.PostexecBinding.test_equivalent_principal_key_order_has_stable_command) ... ok
+test_exact_principal_reaches_new_image (test_principal_postexec_binding.PostexecBinding.test_exact_principal_reaches_new_image) ... FAIL
+test_expected_config_digest_reaches_new_image (test_principal_postexec_binding.PostexecBinding.test_expected_config_digest_reaches_new_image) ... FAIL
+test_fixed_target_is_postexec_gate_not_legacy_cli (test_principal_postexec_binding.PostexecBinding.test_fixed_target_is_postexec_gate_not_legacy_cli) ... FAIL
+
+======================================================================
+FAIL: test_changing_digest_without_rebinding_command_is_refused (test_principal_postexec_binding.PostexecBinding.test_changing_digest_without_rebinding_command_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct\tests\test_principal_postexec_binding.py", line 36, in test_changing_digest_without_rebinding_command_is_refused
+    with self.assertRaisesRegex(launch.LaunchRejected,'command_mismatch'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: LaunchRejected not raised
+
+======================================================================
+FAIL: test_changing_principal_without_rebinding_command_is_refused (test_principal_postexec_binding.PostexecBinding.test_changing_principal_without_rebinding_command_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct\tests\test_principal_postexec_binding.py", line 41, in test_changing_principal_without_rebinding_command_is_refused
+    with self.assertRaisesRegex(launch.LaunchRejected,'command_mismatch'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: LaunchRejected not raised
+
+======================================================================
+FAIL: test_exact_principal_reaches_new_image (test_principal_postexec_binding.PostexecBinding.test_exact_principal_reaches_new_image)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct\tests\test_principal_postexec_binding.py", line 32, in test_exact_principal_reaches_new_image
+    self.assertIn('--principal',argv)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: '--principal' not found in ['/usr/bin/python3.14', '-I', '-B', 'C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct\\scripts\\run_provider_broker.py', '--config', '/srv/alaz/private/broker.json', '--output', '/srv/alaz/socket']
+
+======================================================================
+FAIL: test_expected_config_digest_reaches_new_image (test_principal_postexec_binding.PostexecBinding.test_expected_config_digest_reaches_new_image)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct\tests\test_principal_postexec_binding.py", line 27, in test_expected_config_digest_reaches_new_image
+    self.assertIn('--config-sha256',argv)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '--config-sha256' not found in ['/usr/bin/python3.14', '-I', '-B', 'C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct\\scripts\\run_provider_broker.py', '--config', '/srv/alaz/private/broker.json', '--output', '/srv/alaz/socket']
+
+======================================================================
+FAIL: test_fixed_target_is_postexec_gate_not_legacy_cli (test_principal_postexec_binding.PostexecBinding.test_fixed_target_is_postexec_gate_not_legacy_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct\tests\test_principal_postexec_binding.py", line 22, in test_fixed_target_is_postexec_gate_not_legacy_cli
+    self.assertEqual(Path(argv[3]).name,'run_principal_broker_target.py')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'run_provider_broker.py' != 'run_principal_broker_target.py'
+- run_provider_broker.py
++ run_principal_broker_target.py
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+FAILED (failures=5)

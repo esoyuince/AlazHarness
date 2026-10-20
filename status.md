@@ -1,5 +1,20 @@
 # AlazHarness — status
 
+## D3B-POSTEXEC-21OCT — LOCAL SCOPED PASS
+
+Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Base code `47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139`; published main stays `cc7ceba`. Read Git HEAD for the new local checkpoint. No push/remote CI/main merge.
+
+Implemented fixed post-exec broker target, command binding of expected principal/config hash, actual kernel UID/GID/maps/caps/groups/NNP/filter admission before config reads, known-filter reinstall, bounded private config hash validation, existing deployment revalidation, and event-loop creation only after FD cleanup/admission. Legacy broker and all nine audited existing isolation/transport modules unchanged; IPC v2 gates stay closed. Old launcher command digests must be regenerated; no fallback.
+
+Full Windows2200 =2195 PASS /5 SKIP /0 FAIL /0 ERROR, exit0; source freeze328 unchanged. Focused Windows80/80 and Linux80/80 PASS;33 new tests, overlapping scopes not summed. Native actual unprivileged exec/filter/refusal16/16 PASS and fresh launcher admission13/13 PASS. Original five failing binding tests and unchanged test-byte proof retained; old native record preserved, current checker uses a NEW execution. Local static PASS2200 discovered, not runtime or remote CI. All submitted test requests terminal (full `5a6221a7-e090-4c76-9c72-6f9c4c2316e8`).
+
+Report `docs/D3B-POSTEXEC-21OCT.md`; evidence `evidence/d3b-postexec-21oct/summary.json`, `full-windows-result.json`, `native-postexec-001.json`; refreshed13-check proof `evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json`. No source modifications after full regression.
+
+OPEN / NOT ACCEPTED: successful root-to-broker UID transition and successful post-exec broker target in an authorized pre-provisioned trusted install; actual two-host-UID Gateway/broker; Gateway socket projection and private-budget file access denials; full D3B. This native16 run used current UID1000 and a deliberately wrong DECLARED expected broker UID; it is not a positive second identity. Exact next work: obtain the separately authorized/trusted isolated installation and execute that positive gate, then implement/qualify Gateway projection. Do not treat this developer-writable checkout as privileged installation, bypass prior denied privilege, create system accounts or delete the closed IPC v2 gates. Main, root worktree and production preserved; no paid model.
+
+## Preserved principal-launch checkpoint
+
+
 ## D3B-PRINCIPAL-LAUNCH-21OCT — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Base/main: `cc7ceba8f850da7652a647e984cbae2c45c8fdea`. This feature commit is local only; no push, remote CI or main merge. Read Git HEAD for the exact checkpoint.
@@ -1181,3 +1196,8 @@ Both feature histories integrated in the dedicated joint tree. Current tests are
 ### Exact local delivery
 
 Integrated source/evidence commit `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6` preserves both histories. All test/native operations are terminal and passing in their stated scope. This handoff adds no runtime change. Active worktree remains `scratch/worktrees/d3b-joint-21oct-4c21`; all previous worktrees are preserved.
+
+
+### D3B-POSTEXEC-21OCT completion — 2026-10-21T02:51:42.644982+03:00
+
+Current top section and summary.json carry observed scoped counts, pending positive gates and terminal request ids. No background test is pending. Runtime sources match the completed full-run manifest; local feature commit follows.

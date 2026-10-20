@@ -1,0 +1,7 @@
+{
+  "base": "47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139",
+  "observedAt": "2026-10-21T02:40:31.861367+03:00",
+  "scope": "postexec admission; no privilege elevation",
+  "sourceBeforeSha256": "c04e6de26dc25f0ff09bddb4eb399209b83aa2304350a8271216a77d8f3a34ce",
+  "testSha256": "4f27e24f51284510e79eef0252539a5eee37115f60a62e10591e9595fbb02269"
+}

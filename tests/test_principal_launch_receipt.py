@@ -18,7 +18,7 @@ CHECKS = {'kernel_ids_match_current_process', 'current_user_not_accepted_as_cont
 class PrincipalLaunchReceipt(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.r = json.loads((ROOT/'evidence/d3b-principal-launch-21oct/native-unprivileged-001.json').read_text(encoding='utf-8'))
+        cls.r = json.loads((ROOT/'evidence/d3b-principal-launch-21oct/native-unprivileged-postexec-001.json').read_text(encoding='utf-8'))
 
     def test_current_source_pins(self):
         r = self.r

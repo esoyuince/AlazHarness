@@ -87,8 +87,8 @@ class Contract(unittest.TestCase):
     def test_command_is_fixed_isolated_python_broker(self):
         argv = launch.command(fixture())
         self.assertEqual(argv[1:3], ['-I', '-B'])
-        self.assertTrue(argv[3].endswith('run_provider_broker.py'))
-        self.assertEqual(argv[4::2], ['--config', '--output'])
+        self.assertTrue(argv[3].endswith('run_principal_broker_target.py'))
+        self.assertEqual(argv[4::2], ['--principal', '--config', '--config-sha256', '--output'])
 
 
 class ControllerAdmission(unittest.TestCase):

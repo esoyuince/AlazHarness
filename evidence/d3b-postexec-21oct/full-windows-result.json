@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-21T02:46:59.511073+03:00",
+  "completedAt": "2026-10-21T02:50:51.196992+03:00",
+  "exitCode": 0,
+  "testsRun": 2200,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "passed": 2195,
+  "timedOut": false,
+  "elapsedSeconds": 231.686,
+  "sourceFileCount": 328,
+  "sourceUnchanged": true,
+  "scope": "full standard unittest; not privileged UID transition"
+}
