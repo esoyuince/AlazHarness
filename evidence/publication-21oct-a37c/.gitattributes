@@ -1,0 +1,2 @@
+# Preserve the exact GitHub push output, including its progress whitespace.
+branch-push.txt -text -whitespace

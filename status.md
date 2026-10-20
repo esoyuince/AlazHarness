@@ -1,8 +1,16 @@
 # AlazHarness — status
 
-## PUBLICATION-21OCT-A37C — IN PROGRESS
+## PUBLICATION-21OCT-A37C — PUBLISHED / MAIN FAST-FORWARDED
 
-User approved publishing the qualified joint branch, followed by a history-preserving main fast-forward ONLY after exact-SHA alaz/local-ci SUCCESS and fresh remote-main verification. Starting HEAD b133627028b1b52e9feb90d358e091595d6f3580; branch alaz/d3b-joint-21oct-4c21; worktree scratch/worktrees/d3b-joint-21oct-4c21. Review the entire pending main range for private paths/credentials and source provenance. No force push, squash, branch deletion, production activation or privilege change. IPC v2 remains closed; full D3B/M1/M2 are not accepted. Evidence: evidence/publication-21oct-a37c/. Preserve the dirty default-root worktree and other lanes. No remote write has occurred at this checkpoint.
+Current development baseline is **main**. Clean continuation worktree:
+`C:\Antigravity\AlazHarness\scratch\worktrees\main-published-21oct-a37c`.
+Runtime delivery: `03df7d482a11b61482ca5ff84316f8f0995a6c47`, containing tested joint merge `144a7d1`. Remote main advanced from `b8ff44f` only after exact-SHA GitHub `alaz/local-ci` SUCCESS (status 56836960491, 2026-10-20T22:12:42Z). Local main matched the remote by `merge --ff-only`; no squash/force/delete. Both old feature worktrees and the dirty default root are preserved.
+
+Publication review: 61 preceding commits, 1367 blob versions / 20698582 bytes scanned without configured credential-pattern or private-path findings; 10 copied upstream components reproduced. 317 runtime/config/test sources still match the qualified snapshot. Windows full2125 =2120PASS/5SKIP; Linux selected175PASS/0SKIP including the five real local IPC/HTTP budget tests. These are prior qualified executions, not rerun or counted again during publication. GitHub CI is independently successful for the published delivery above.
+
+This record is a documentation-only follow-up. Its own commit/CI and the live main head must be read from Git; the runtime delivery and observed CI above are immutable evidence, not a claim about an unknown future SHA. Report `docs/PUBLICATION-21OCT-A37C.md`; receipts `evidence/publication-21oct-a37c/`.
+
+**Still open:** trusted two-host-UID launcher and IPC v2 projection, real Gateway/broker two-UID acceptance, broker budget-file access denials. IPC v2 stays CLOSED; full D3B/M1/M2 and production release are NOT ACCEPTED. No privileged provisioning, production activation or paid model call. Next development should start in a new narrow feature branch from the verified live main, not the old dirty root.
 
 ## Preserved joint-integration checkpoint
 

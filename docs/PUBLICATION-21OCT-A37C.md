@@ -43,3 +43,9 @@ the baseline for subsequent two-host-UID launcher/projection development.
 
 At preparation time push and main update have NOT RUN. Their actual receipts
 and final status must be recorded separately, not inferred from this plan.
+
+## Actual delivery
+
+Branch push completed at `03df7d482a11b61482ca5ff84316f8f0995a6c47`. GitHub `alaz/local-ci` status 56836960491 was SUCCESS at 2026-10-20T22:12:42Z. After a fresh remote-main read, a non-forced expected-SHA update fast-forwarded remote main from `b8ff44ff105965ba3f6f9fa9559ad96f2c084815` to that exact commit. Local main was advanced using `git merge --ff-only` in `scratch/worktrees/main-published-21oct-a37c`; its tree was clean. The default root was not overwritten. Evidence: `ci-before-main.json`, `branch-push.json`, `main-publication-result.json`.
+
+The subsequent documentation-only commit records this completed event. Its own exact CI must pass before it too is fast-forwarded onto main. No production readiness or two-UID acceptance is inferred.
