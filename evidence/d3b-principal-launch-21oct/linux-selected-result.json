@@ -1,0 +1,22 @@
+{
+  "exitCode": 0,
+  "testsRun": 42,
+  "skipped": 0,
+  "scope": "39 mocked transition/contract tests plus 3 receipt verification tests, not actual UID change",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--",
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/tests",
+    "-p",
+    "test_principal_launch*.py",
+    "-v"
+  ]
+}

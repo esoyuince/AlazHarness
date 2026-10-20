@@ -1,0 +1,42 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "path": "packages/claw-hermes/principal_launch.py",
+      "nativeSha256": "c04e6de26dc25f0ff09bddb4eb399209b83aa2304350a8271216a77d8f3a34ce",
+      "stagedSha256": "c04e6de26dc25f0ff09bddb4eb399209b83aa2304350a8271216a77d8f3a34ce",
+      "representation": "exact"
+    },
+    {
+      "path": "scripts/run_principal_broker.py",
+      "nativeSha256": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+      "stagedSha256": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+      "representation": "exact"
+    },
+    {
+      "path": "tests/test_principal_launch.py",
+      "nativeSha256": "2aedb55905920ff1b67cf0552c0b0c58808a56d931b57bda1c1c743ac7bfc0a1",
+      "stagedSha256": "2aedb55905920ff1b67cf0552c0b0c58808a56d931b57bda1c1c743ac7bfc0a1",
+      "representation": "exact"
+    },
+    {
+      "path": "scripts/qa/principal_launch_linux.py",
+      "nativeSha256": "c8b2c758f69e40c100032bf77346bb870dc1b20208fdb5bd30538342a8ef584b",
+      "stagedSha256": "c8b2c758f69e40c100032bf77346bb870dc1b20208fdb5bd30538342a8ef584b",
+      "representation": "exact"
+    },
+    {
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "stagedSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "path": "packages/claw-hermes/linux_netns.py",
+      "nativeSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "stagedSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "representation": "exact"
+    }
+  ],
+  "scope": "native evidence source bytes vs staged source"
+}

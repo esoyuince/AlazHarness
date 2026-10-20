@@ -1,5 +1,20 @@
 # AlazHarness — status
 
+## D3B-PRINCIPAL-LAUNCH-21OCT — LOCAL SCOPED PASS
+
+Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Base/main: `cc7ceba8f850da7652a647e984cbae2c45c8fdea`. This feature commit is local only; no push, remote CI or main merge. Read Git HEAD for the exact checkpoint.
+
+Implemented a broker-only one-shot trusted launcher: strict fixed argv/config digest and distinct-UID contract; authorized host-root/initial-namespace admission; existing prepared config/budget/socket geometry; ambient descriptor closure; supplementary-group/capability/all-UID-GID reduction; kernel postcondition checks; unchanged-deployment verification; existing seccomp filter; isolated fixed broker exec. Gateway role is refused. No pre-existing product module changed; both IPC v2 mount gates remain closed.
+
+Final Windows standard2167 =2162 PASS /5 SKIP /0 FAIL, exit0. Linux selected42/42 PASS skip0 (39 mocked boundary cases +3 evidence validators). Native unprivileged Linux13/13 PASS, six exact source pins; no actual privileged UID transition. All322 sources unchanged during full execution and rechecked afterward. Local static PASS2167; discovery is not execution. Three earlier fixture-only failures retained with correction notes.
+
+Evidence: `evidence/d3b-principal-launch-21oct/summary.json`, `full-windows-result.json`, `native-unprivileged-001.json`, original logs and source manifests. Report: `docs/D3B-PRINCIPAL-LAUNCH-21OCT.md`. Full request `f9ae4123-ef82-4810-b5de-cb1bb5c597b6` and Linux selection `c4b6d9f8-1b5b-44c7-b54e-72d07866a2a1` completed exit0. No pending test operation.
+
+OPEN / NOT ACCEPTED: positive real host-root to broker UID transition and post-exec identity/capabilities; trusted Gateway network/mount projection preserving the host user namespace; actual two-UID Gateway/broker and private-budget access-denial acceptance. Exact next gate: review the new broker launch path in an explicitly authorized, pre-provisioned isolated trusted install, then implement/qualify the matching Gateway projection. Do not use this developer-writable checkout as a privileged install, bypass earlier denied execution, create system users or delete the IPC v2 gates. Main/old worktrees/dirty root preserved; no privileged execution, account/service changes, paid models or production activation.
+
+## Preserved publication checkpoint
+
+
 ## PUBLICATION-21OCT-A37C — PUBLISHED / MAIN FAST-FORWARDED
 
 Current development baseline is **main**. Clean continuation worktree:

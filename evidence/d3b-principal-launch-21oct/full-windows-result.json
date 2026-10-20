@@ -1,0 +1,11 @@
+{
+  "exitCode": 0,
+  "testsRun": 2167,
+  "skipped": 5,
+  "passed": 2162,
+  "elapsedSeconds": 260.272,
+  "sourceFiles": 322,
+  "sourceUnchanged": true,
+  "completedAt": "2026-10-21T02:22:30.884517+03:00",
+  "scope": "full standard unittest; privileged execution not tested"
+}

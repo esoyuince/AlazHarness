@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-10-21T02:20:56.962410+03:00",
+  "branch": "alaz/d3b-principal-launch-21oct",
+  "base": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "mainStillAtBase": true,
+  "mainWorktreeClean": true,
+  "ipcV2MountGateStillClosed": true,
+  "scope": "Only the new launcher, CLI, own QA and tests were staged; no pre-existing product file edited.",
+  "newSourcePaths": [
+    "packages/claw-hermes/principal_launch.py",
+    "scripts/qa/principal_launch_linux.py",
+    "scripts/run_principal_broker.py",
+    "tests/test_principal_launch.py",
+    "tests/test_principal_launch_receipt.py"
+  ],
+  "existingRuntimeUntouched": true
+}

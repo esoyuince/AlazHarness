@@ -1,0 +1,5 @@
+{
+  "correction": "The third log unit-final-windows.txt is a FAILED fixture run: pathlib expected representation adjusted with str(self.out); exact path/UID/GID/mode assertions remain. Final green outputs are unit-pass-windows.txt and unit-pass-linux.txt.",
+  "productSourceModified": false,
+  "originalFailureLogsRetained": true
+}

@@ -1,0 +1,47 @@
+test_non_linux_observation_fails_without_proc_access (test_principal_launch.AdditionalOrdering.test_non_linux_observation_fails_without_proc_access) ... ok
+test_root_owned_nonwritable_ancestors_accepted (test_principal_launch.AdditionalOrdering.test_root_owned_nonwritable_ancestors_accepted) ... ok
+test_second_deployment_change_blocks_exec (test_principal_launch.AdditionalOrdering.test_second_deployment_change_blocks_exec) ... ok
+test_untrusted_ancestor_rejected (test_principal_launch.AdditionalOrdering.test_untrusted_ancestor_rejected) ... ok
+test_changed_command_refused (test_principal_launch.Contract.test_changed_command_refused) ... ok
+test_command_is_fixed_isolated_python_broker (test_principal_launch.Contract.test_command_is_fixed_isolated_python_broker) ... ok
+test_config_not_inside_socket_directory (test_principal_launch.Contract.test_config_not_inside_socket_directory) ... ok
+test_fields_are_closed (test_principal_launch.Contract.test_fields_are_closed) ... ok
+test_invalid_digest_and_long_socket_refused (test_principal_launch.Contract.test_invalid_digest_and_long_socket_refused) ... ok
+test_noncanonical_paths_refused (test_principal_launch.Contract.test_noncanonical_paths_refused) ... ok
+test_only_explicit_broker_role (test_principal_launch.Contract.test_only_explicit_broker_role) ... ok
+test_same_uid_rejected (test_principal_launch.Contract.test_same_uid_rejected) ... ok
+test_valid_contract_is_detached (test_principal_launch.Contract.test_valid_contract_is_detached) ... ok
+test_version_and_optin_strict (test_principal_launch.Contract.test_version_and_optin_strict) ... ok
+test_nonroot_cli_does_not_read_contract (test_principal_launch.ControllerAdmission.test_nonroot_cli_does_not_read_contract) ... ok
+test_nonroot_or_saved_root_mix_refused (test_principal_launch.ControllerAdmission.test_nonroot_or_saved_root_mix_refused) ... ok
+test_remapped_root_is_not_host_root (test_principal_launch.ControllerAdmission.test_remapped_root_is_not_host_root) ... ok
+test_root_with_initial_map_can_reach_preflight_only (test_principal_launch.ControllerAdmission.test_root_with_initial_map_can_reach_preflight_only) ... ok
+test_threads_or_missing_capabilities_refused (test_principal_launch.ControllerAdmission.test_threads_or_missing_capabilities_refused) ... ok
+test_budget_cannot_live_under_exported_socket_directory (test_principal_launch.Deployment.test_budget_cannot_live_under_exported_socket_directory) ... ok
+test_changed_config_bytes_are_not_parsed_or_adopted (test_principal_launch.Deployment.test_changed_config_bytes_are_not_parsed_or_adopted) ... ok
+test_different_principal_refused (test_principal_launch.Deployment.test_different_principal_refused) ... ok
+test_independent_private_budget_is_required (test_principal_launch.Deployment.test_independent_private_budget_is_required) ... ok
+test_old_socket_or_receipt_directory_never_adopted (test_principal_launch.Deployment.test_old_socket_or_receipt_directory_never_adopted) ... ok
+test_prepared_deployment_uses_existing_exact_owner_checks (test_principal_launch.Deployment.test_prepared_deployment_uses_existing_exact_owner_checks) ... ok
+test_wrong_budget_or_socket_owner_is_fatal (test_principal_launch.Deployment.test_wrong_budget_or_socket_owner_is_fatal) ... ok
+test_caller_mutation_does_not_change_selected_uid (test_principal_launch.EndToEndOrdering.test_caller_mutation_does_not_change_selected_uid) ... ok
+test_every_admission_or_enforcement_failure_blocks_exec (test_principal_launch.EndToEndOrdering.test_every_admission_or_enforcement_failure_blocks_exec) ... ok
+test_exec_occurs_only_after_postdrop_revalidation_and_filter (test_principal_launch.EndToEndOrdering.test_exec_occurs_only_after_postdrop_revalidation_and_filter) ... ok
+test_gateway_never_reaches_controller (test_principal_launch.EndToEndOrdering.test_gateway_never_reaches_controller) ... ok
+test_changed_fd_or_rebound_path_rejected (test_principal_launch.FileCustody.test_changed_fd_or_rebound_path_rejected) ... ok
+test_file_type_owner_mode_link_count_and_size_are_required_before_read (test_principal_launch.FileCustody.test_file_type_owner_mode_link_count_and_size_are_required_before_read) ... ok
+test_read_pins_fd_and_path_and_closes (test_principal_launch.FileCustody.test_read_pins_fd_and_path_and_closes) ... ok
+test_exact_post_drop_identity_passes_without_exec (test_principal_launch.KernelTransition.test_exact_post_drop_identity_passes_without_exec) ... ok
+test_failed_critical_steps_never_continue_transition (test_principal_launch.KernelTransition.test_failed_critical_steps_never_continue_transition) ... ok
+test_no_new_privs_groups_bounding_gid_uid_capset_order (test_principal_launch.KernelTransition.test_no_new_privs_groups_bounding_gid_uid_capset_order) ... ok
+test_post_drop_requires_all_saved_and_filesystem_ids (test_principal_launch.KernelTransition.test_post_drop_requires_all_saved_and_filesystem_ids) ... ok
+test_post_drop_requires_every_capability_set_zero (test_principal_launch.KernelTransition.test_post_drop_requires_every_capability_set_zero) ... ok
+test_post_drop_requires_namespace_pid_nnp_groups_and_threads (test_principal_launch.KernelTransition.test_post_drop_requires_namespace_pid_nnp_groups_and_threads) ... ok
+test_current_source_pins (test_principal_launch_receipt.PrincipalLaunchReceipt.test_current_source_pins) ... ok
+test_exact_native_check_set_passed (test_principal_launch_receipt.PrincipalLaunchReceipt.test_exact_native_check_set_passed) ... ok
+test_no_privileged_or_two_uid_claim (test_principal_launch_receipt.PrincipalLaunchReceipt.test_no_privileged_or_two_uid_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.171s
+
+OK

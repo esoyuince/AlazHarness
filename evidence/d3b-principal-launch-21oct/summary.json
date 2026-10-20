@@ -1,0 +1,44 @@
+{
+  "job": "D3B-PRINCIPAL-LAUNCH-21OCT",
+  "result": "LOCAL_SCOPED_PASS",
+  "base": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "branch": "alaz/d3b-principal-launch-21oct",
+  "observedAt": "2026-10-21T02:23:16.968187+03:00",
+  "windowsFull": {
+    "exitCode": 0,
+    "testsRun": 2167,
+    "skipped": 5,
+    "passed": 2162,
+    "elapsedSeconds": 260.272,
+    "sourceFiles": 322,
+    "sourceUnchanged": true,
+    "completedAt": "2026-10-21T02:22:30.884517+03:00",
+    "scope": "full standard unittest; privileged execution not tested"
+  },
+  "linuxSelected": {
+    "testsRun": 42,
+    "passed": 42,
+    "skipped": 0,
+    "scope": "39 mocked validation/transition cases and 3 evidence checks"
+  },
+  "native": {
+    "checks": 13,
+    "result": "PASS_SCOPED_UNPRIVILEGED",
+    "privilegedTransitionTested": false,
+    "sourcePinCount": 6
+  },
+  "existingRuntimeFilesChanged": false,
+  "newSourceFileCount": 5,
+  "sourceFilesUnchanged": 322,
+  "ipcV2GateClosed": true,
+  "positiveBrokerUidExecTested": false,
+  "twoUidGatewayBrokerTested": false,
+  "fullD3BAccepted": false,
+  "mainModified": false,
+  "pushed": false,
+  "remoteCI": "NOT_RUN",
+  "realModelCalls": 0,
+  "productionChanges": false,
+  "earlierFixtureFailuresRetained": true,
+  "pendingOperations": []
+}

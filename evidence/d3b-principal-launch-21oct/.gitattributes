@@ -1,0 +1,2 @@
+# Keep raw process output unchanged; product whitespace policy is unaffected.
+*.txt -text -whitespace

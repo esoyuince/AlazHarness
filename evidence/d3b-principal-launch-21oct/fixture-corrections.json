@@ -1,0 +1,10 @@
+{
+  "first": "Windows mocked getuid also requires mocked geteuid",
+  "second": "Use actual pathlib path, not Mock wrapping Path, for lexical overlap comparison; directory iteration alone is mocked",
+  "productChangedForCorrections": false,
+  "assertionsRemoved": false,
+  "originalOutputs": [
+    "unit-first.txt",
+    "unit-expanded.txt"
+  ]
+}
