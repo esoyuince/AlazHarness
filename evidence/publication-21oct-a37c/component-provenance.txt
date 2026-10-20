@@ -1,0 +1,6 @@
+{
+  "result": "PASS",
+  "components": 10,
+  "vendor_bytes_compared": true,
+  "scope": "selected source provenance; not complete upstream build acceptance"
+}

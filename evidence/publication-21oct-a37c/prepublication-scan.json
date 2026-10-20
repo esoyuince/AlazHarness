@@ -1,0 +1,20 @@
+{
+  "job": "PUBLICATION-21OCT-A37C",
+  "observedAt": "2026-10-21T01:07:43.022947+03:00",
+  "sourceHead": "b133627028b1b52e9feb90d358e091595d6f3580",
+  "remoteMain": "b8ff44ff105965ba3f6f9fa9559ad96f2c084815",
+  "commitsAhead": 61,
+  "scanScope": "all new reachable blob/commit/tag objects in remote-main..sourceHead; private-path inventory across all pending commit trees",
+  "objectsScanned": {
+    "commit": 61,
+    "blob": 1367
+  },
+  "bytesScanned": 20698582,
+  "historicalPathsInspected": 1605,
+  "credentialPatternFindings": [],
+  "privatePaths": [],
+  "largeOrBinaryForReview": [],
+  "unsupportedModes": {},
+  "limitations": "Pattern-based review, not proof all possible secrets absent. Vendor gitlink contents are not newly published root blobs.",
+  "remoteWrites": false
+}

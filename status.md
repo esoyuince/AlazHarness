@@ -1,5 +1,12 @@
 # AlazHarness — status
 
+## PUBLICATION-21OCT-A37C — IN PROGRESS
+
+User approved publishing the qualified joint branch, followed by a history-preserving main fast-forward ONLY after exact-SHA alaz/local-ci SUCCESS and fresh remote-main verification. Starting HEAD b133627028b1b52e9feb90d358e091595d6f3580; branch alaz/d3b-joint-21oct-4c21; worktree scratch/worktrees/d3b-joint-21oct-4c21. Review the entire pending main range for private paths/credentials and source provenance. No force push, squash, branch deletion, production activation or privilege change. IPC v2 remains closed; full D3B/M1/M2 are not accepted. Evidence: evidence/publication-21oct-a37c/. Preserve the dirty default-root worktree and other lanes. No remote write has occurred at this checkpoint.
+
+## Preserved joint-integration checkpoint
+
+
 ## D3B-JOINT-21OCT-4C21 — LOCAL SCOPED PASS
 
 Tested merge commit: `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6`. The later handoff commit changes only documentation/evidence. GitHub push and remote CI NOT RUN; full D3B still OPEN.

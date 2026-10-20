@@ -1,0 +1,61 @@
+2263c793419cf004ce73147529cb382a9f1c3895 feat(host): persist one-use dispatch and require dedicated admission routes
+30b205fa271d40956f02090896afdd1878377f57 docs: record host-gate exact-commit CI and execution-budget handoff
+ca121ce036855b83f3e39735cc9d78aae96f70b6 feat(execution): enforce durable provider budgets and live file policy
+aaf29d46b6496942c01a38f7373a9d56931c7cd0 docs: record execution-gate exact-commit CI and scoped handoff
+a77b729f35a7bda794fe4af41f5fcdced1da7dbd feat(report): separate native outcome, scoped usage and reserved exposure
+fadb48acf6ada154497ec7f88b612b0e0fbb54e0 docs: record host-report exact-commit CI and next isolation gate
+4aaa27f3b6ec9d3da12247b3535c651d43086e51 feat(isolation): add no-network Linux tool process boundary
+fb3d7ca7fec3b5e0242a8e7c174b553dbfe366d8 docs: record isolated-tool CI and native-integration handoff
+e6cb7f16016548c8bea7275f4ac3c987d6fad71b feat(isolation): bind native Hermes reads to one-shot tool containers
+000a1c3aae41e722aef4a6ee808f0a1d6321ec92 docs: record native read isolation acceptance and exact-code CI
+2ee705ec6427d9af9bd695e132d82e198dc20b0a docs: distinguish current D2 acceptance from historical startup notes
+214f1dcd7ba7a83a0d13afdb7adfb221bfa21fa8 feat(provider): add private credential broker and durable one-use egress grants
+d56aa994a4372149c232864c014f7c134dafc01d feat(report): add read-only retained-evidence views
+b96a83f545ae12885f025ee0085cb018dad14511 docs: record R1A evidence acceptance and exact-code CI
+3b2d037a98f84139d1bd787063e0213799638544 test(evidence): qualify fresh native report snapshots and pinned fixtures
+ee5580ded751c8fc22c9d09984b8f14cc72b58e5 docs: record native evidence CI and open SQLite first-read limitation
+15eca31e3522ee4c2215b3a3d4f8df9b217e7559 feat(evidence): bind isolated source snapshots to native tool returns
+e2a5b300568425358e181954cffb697ace2d032b docs: record R1B1 source-capture acceptance and exact-code CI
+d8628aa614236b80022780ea1d79c05cf9fb72cb feat(evidence): record normalized broker request views and response phases
+f23079dc7c3312da93b00139f15ef89717cccf16 docs: record R1B2 request-view acceptance and exact-code CI
+0a12d3dc20fafcd0e5ea77c12ef9cd7184b13033 feat(dream): add manual evidence-linked candidate memory review
+5b1f2dd12820434a257bb9709293195a36b6f18f docs: close Dream D1 acceptance and exact-code CI delivery
+0254a14bfe4bd4737f4b75244d1ad7506b3ff5b1 docs(research): review Codex app and memory architecture
+d3df140f38e15a34f7962c3338391413dd64514b docs(research): record Codex review exact-code CI
+7a4c4d300cebd763464b1fecb076b54998fcb435 feat(dream): add manual candidate review and net-delta inspection
+eb674ee6b319a9309b0b46df6cf9868956092735 docs(dream): record D2A acceptance and exact-code CI
+d421e75e58c0a6e2db4cf0b8ca8f304fe677337d feat(dream): add sealed paired offline evaluation for candidate lessons
+5a5744d93a96c25b72aece441bdebded66f8b36a docs(dream): record D2B1 exact-code acceptance and CI
+5534bc1bfad92a3388dabd410552b17af4a4a618 feat(dream): record paired local broker trials with request-view evidence
+7991172a6fc1ac4ec64eb2cdf3cf653bf51f2140 docs(dream): close D2B2 scoped acceptance and code CI
+670485068209b91742b0d08ff4a632b458c041c2 test(dream): qualify scoped native Linux broker IPC and failure cases
+d7f97ffc45d2cbf9907590effec672154ad1518c docs(dream): record native broker acceptance and exact code CI
+35099bda644ebe042a4fab40649604fb837bb367 test(dream): qualify full native Gateway and broker failure cases
+2bffac9aaf482363d335bdbd3c76cc687be83533 docs(dream): record full Gateway acceptance and exact code CI
+1b8beb5fabfa973d9bef999a466021e8bf9bb355 feat(isolation): add opt-in rootless Gateway network namespace
+7915c77c6cf0f48fcae6a13e08cd7fd997cda4f2 docs(isolation): record D3B1 network acceptance and publication
+999ffab86ab9736b5f46a9bbb9c76dc099a308c7 feat(isolation): add opt-in Landlock credential guard pilot
+7632784c1238fdb5ebd09ee1131cb6a52ba5a4a1 docs(isolation): record credential pilot acceptance and exact code CI
+ebfb3a20f472bdd6be6e5b86ed9d102ebab126d8 fix(guard): qualify credential-confined native Gateway startup
+b3197e2f2266bfd998920f7b2c1400c39bbc6195 docs(guard): close A613 recovery and exact-source CI
+ab68dac5d9b9803719255810ef73f20ef6dd9e3d docs(research): review pinned WrongStack reuse candidates
+9a87838ebf382fe8b71c299a5867c479383fc5b6 feat(sandbox): compose network and filesystem launch guards
+5e7a14ebfa2111e9301d3cd50ee62733810f5f99 docs(sandbox): record combined guard acceptance and exact code CI
+7a9623321cc5b3296f48f45b99312cf89424203d feat(guard): project explicit broker IPC and selected filesystem roots
+436f3f792f50950b2f0984269d36627327441c52 docs(guard): record IPC scope and source acceptance
+4baca22aacadd972789aec29e2703ad93e3b5e2e feat(broker): enforce independent durable budget authority
+4d96b5ff45677907a8fb5ca215187de015f83e05 fix(ci): reconcile native budget evidence across checkout platforms
+360da97698e33aa4fa3a8a211723247f294ee062 chore(sandbox): open dedicated IPC budget integration lane
+29f6a353799dcdf0279ebcabf44593fbcbcfa160 feat(isolation): combine broker IPC projection with durable private budget
+62a0fc9062408ec21bf5f4a8b17f7702e1499c57 docs(isolation): record D3B scoped CI and next host-principal gate
+a5e9afca5e5d24e5422b251a11c3e642b933e68d feat(broker): gate optional separate-host-principal transport
+46766bef55e0fb3f3a93dfb1356536400ba2b4d7 docs(broker): record host-principal scoped code CI
+c0de9e280564d32dcbdb0e4571e47b432bfae9ed test(ipc): gate separate-principal v2 contract before mount
+4d86f3081791c1f444d1de256d7b266eec4af6f7 test(d3b): report read-only two-uid Linux readiness
+456e6f3466c115bcaf62767e3b37d92d4de9e3f5 fix(broker): reconcile principal startup and close owned listeners on failure
+c03351b5f976fc527270f95376384d7e54e4e99d docs(d3b): record scoped startup acceptance and source custody
+bbc0df06b8964c4851d12ed2ae915d71c1c9161f fix(ipc): reject inconsistent principal socket observations
+95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115 docs(ipc): preserve CF57 before-after evidence and scoped handoff
+4141163790cd79f88474ac56ea17dc433e97f9f6 docs(d3b): begin scoped startup and IPC joint integration
+144a7d1f8d31e5767babfcbd2b583d7d7518f3f6 merge(d3b): integrate broker startup and IPC custody with fresh native acceptance
+b133627028b1b52e9feb90d358e091595d6f3580 docs(d3b): record qualified joint merge and exact continuation

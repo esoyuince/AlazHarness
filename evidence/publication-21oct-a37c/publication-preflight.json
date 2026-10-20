@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-21T01:08:52.220096+03:00",
+  "testedBaseline": "b133627028b1b52e9feb90d358e091595d6f3580",
+  "runtimeSourcesChecked": 317,
+  "allRuntimeSourcesUnchanged": true,
+  "localWindows": {
+    "total": 2125,
+    "passed": 2120,
+    "skipped": 5
+  },
+  "linuxSelection": {
+    "passed": 175,
+    "skipped": 0
+  },
+  "upstreamComponentsReproduced": 10,
+  "fullD3BAccepted": false,
+  "ipcV2MountEnabled": false,
+  "publicationAuthorized": true,
+  "mainAdvanceCondition": "same-SHA alaz/local-ci success and current remote-main is an ancestor; no force",
+  "githubPush": "NOT_RUN",
+  "mainUpdated": false
+}
