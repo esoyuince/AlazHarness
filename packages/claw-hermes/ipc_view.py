@@ -17,6 +17,7 @@ from credential_guard import validate_policy
 BIND=4096; REMOUNT=32; RDONLY=1; NOSUID=2; NODEV=4; NOEXEC=8
 REC=16384; PRIVATE=1<<18; NEWNS=0x00020000; DETACH=2
 FIELDS={'version','mode','root','brokerSocket'}
+PRINCIPAL_FIELDS=FIELDS|{'principalContract'}
 MAX_ENTRIES=200000
 
 class IPCViewRejected(RuntimeError):
@@ -37,9 +38,17 @@ def canonical(value):
 
 
 def validate(value,filesystem):
-    require(type(value) is dict and set(value)==FIELDS,'ipc_contract_fields')
-    require(type(value['version']) is int and value['version']==1 and
-            value['mode']=='projected_root','ipc_mode')
+    require(type(value) is dict,'ipc_contract_fields')
+    version=value.get('version')
+    if type(version) is int and version==2:
+        require(set(value)==PRINCIPAL_FIELDS and value.get('mode')=='projected_root_principal',
+                'ipc_principal_contract_fields')
+        from host_principal import policy as principal_policy
+        principal_policy(value['principalContract'])
+    else:
+        require(set(value)==FIELDS,'ipc_contract_fields')
+        require(type(version) is int and version==1 and
+                value['mode']=='projected_root','ipc_mode')
     fs=validate_policy(filesystem)
     root=canonical(value['root']);sock=canonical(value['brokerSocket'])
     require(root.startswith('/tmp/alaz-ipc-') and len(PurePosixPath(root).parts)==3,
@@ -91,8 +100,24 @@ def inspect_tree(root):
     return count,hidden
 
 
+def inspect_principal_socket(value,filesystem):
+    """Read-only strict host identity preflight; does not authorize a mount."""
+    ipc,fs=validate(value,filesystem)
+    require(ipc['version']==2,'ipc_principal_version_required')
+    from host_principal import socket_identity
+    try:
+        proof=socket_identity(ipc['principalContract'],ipc['brokerSocket'])
+    except (ValueError,OSError) as exc:
+        raise IPCViewRejected('ipc_principal_socket_invalid') from exc
+    return {'socketIdentity':identity(ipc['brokerSocket']),
+            'socketPrincipal':proof, 'mountAuthorized':False}
+
+
 def prepare(value,filesystem):
     ipc,fs=validate(value,filesystem)
+    # A principal-specific projection requires a trusted two-UID launcher.
+    # Reject before inspecting or mounting anything until that integration exists.
+    require(ipc['version']==1,'ipc_principal_runtime_not_integrated')
     root=_regular_path(ipc['root']);info=root.stat()
     require(root.is_dir() and info.st_uid==os.getuid() and stat.S_IMODE(info.st_mode)==0o700
             and not any(root.iterdir()),'ipc_anchor_not_owned_empty')
@@ -115,7 +140,9 @@ def prepare(value,filesystem):
 
 def project(plan):
     """Only called after user+network namespaces, while mount capabilities exist."""
-    ipc,fs=validate(plan['ipc'],plan['filesystem']);root=Path(ipc['root'])
+    ipc,fs=validate(plan['ipc'],plan['filesystem'])
+    require(ipc['version']==1,'ipc_principal_runtime_not_integrated')
+    root=Path(ipc['root'])
     require(identity(root)==tuple(plan['anchorIdentity']) and not any(root.iterdir()),'ipc_anchor_changed')
     require(identity(ipc['brokerSocket'])==tuple(plan['socketIdentity']),'ipc_broker_changed')
     for path,expected in plan['objects'].items():
