@@ -1,0 +1,28 @@
+{
+  "scope": "PLAT-002D_CI_RECOVERY_READONLY_STOPPED_DISTRO_AND_TEST_CUSTODY",
+  "date": "2026-10-20",
+  "branch": "alaz/plat-002d-ci-recovery-20oct",
+  "baseCommit": "f18da79d43da6dcafa71ddf43ae9a9a400fe8ad6",
+  "originalBranch": "alaz/plat-002d-wrapper-loss-20oct",
+  "originalBranchDirtyWorktreePreserved": true,
+  "originalCiState": "FAILURE",
+  "originalCiStatusId": 56746778531,
+  "originalCiDescription": "ALAZ Local CI failed (rc=1)",
+  "originalCiTimeUtc": "2026-10-20T00:40:04Z",
+  "originalNativeAttempts": 2,
+  "nativeAccepted": false,
+  "latestReadOnlyNonStartingWslQuery": {
+    "argv": [
+      "wsl.exe",
+      "--list",
+      "--running"
+    ],
+    "outcome": "NO_RUNNING_DISTRIBUTIONS_REPORTED",
+    "exitCode": -1,
+    "ubuntuWasNotStartedForInspection": true,
+    "linuxGuestProcessDispositionIndependentlyVerified": false
+  },
+  "automaticGuestReplay": false,
+  "realModelCalls": 0,
+  "next": "Resolve Linux/Git LF vs Windows native CRLF frozen evidence in offline tests without WSL native invocation."
+}

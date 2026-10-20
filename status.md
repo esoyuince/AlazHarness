@@ -1,8 +1,44 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-20 (PLAT-002D test-owned Windows wrapper loss IN PROGRESS)
+Son güncelleme: 2026-10-20 (PLAT-002D CI source custody recovery IN PROGRESS)
 
 ## Güncel nokta
+
+PLAT-002D CI CROSS-OS EVIDENCE FIX — LOCAL FOCUSED PASS (2026-10-20):
+Own clean recovery branch alaz/plat-002d-ci-recovery-20oct,
+worktree scratch/worktrees/plat-002d-ci-recovery-20oct
+at base f18da79d43da6dcafa71ddf43ae9a9a400fe8ad6.
+Prior f18da79 GitHub alaz/local-ci FAIL rc1 status56746778531.
+Reproduced raw-SHA failure: Windows CRLF original native source
+compared to Git Linux LF. One of 8 old tests failed under
+simulated Linux LF. Fixed one-file LF->CRLF reconstruction and
+pinned historical QA source to original f18da79 (native receipts
+unchanged). New 5 recovery QA tests; whole PLAT002D focused
+62/62 PASS on Windows and simulated Git/Linux LF.
+Non-starting WSL list reports NO RUNNING DISTRIBUTIONS;
+NOT proof that previously detached guardian reaped descendants.
+PLAT002D native FAIL/UNKNOWN, full D3B NO-GO. No WSL restart or
+third native test. Root/main and older dirty worktree untouched.
+Full Windows regression, commit/CI pending.
+See docs/PLAT-002D-CI-RECOVERY.md.
+
+PLAT-002D CI SOURCE-CUSTODY RECOVERY IN PROGRESS (2026-10-20):
+Separate clean worktree scratch/worktrees/plat-002d-ci-recovery-20oct
+on branch alaz/plat-002d-ci-recovery-20oct at base
+f18da79d43da6dcafa71ddf43ae9a9a400fe8ad6.
+Code/negative test evidence of 2 prior wrapper loss trials is frozen;
+full Windows 2286/2286 exit0 skip5 and static PASS, but GitHub
+alaz/local-ci FAILED rc1 status56746778531
+2026-10-20T00:40:04Z. An unrelated prior branch's
+tests/test_plat002d_second_pilot.py has uncommitted CRLF/Linux
+QA edits: DO NOT overwrite that worktree. Non-starting
+wsl.exe --list --running currently reported NO RUNNING
+DISTRIBUTIONS (exit -1). This means earlier independent
+guest closure is still UNKNOWN; WSL must not be started or
+native wrapper test replayed. Target: offline exact historical
+Git source custody and CRLF/LF compatibility, then GitHub CI.
+Full PLAT-002D and D3B/M1/M2 remain NOT ACCEPTED.
+No server, account, main or production changes.
 
 PLAT-002D NEGATIVE NATIVE GATE + FULL LOCAL TEST PASS:
 Both real Windows WSL-wrapper-loss experiments retained
@@ -1662,3 +1698,42 @@ NO-GO; second Linux audit absent and later read-only guest
 query timed out. Full root local regression PASS does not
 change native execution acceptance. Code/status/evidence
 branch commit and exact GitHub CI PENDING.
+
+### 2026-10-20 — PLAT-002D recovery branch start
+
+Earlier feature branch f18da79 has exact remote CI FAILURE rc1,
+despite Windows full2286 PASS. Current previous worktree
+has a concurrent uncommitted change to historical second
+pilot QA, preserved untouched. New isolated branch/worktree
+from exact f18da79.
+WSL non-starting read-only query reports NO RUNNING DISTROS
+(exit -1). Do not infer guest kernel TTL proved. Do not
+start Ubuntu to inspect unknown old PIDs or invoke a third
+wrapper-loss attempt. First distinguish Git LF source SHA from
+original Windows CRLF receipts and freeze historical source
+against original f18da79 commit.
+Evidence: evidence/plat-002d-recovery-20oct/
+no-running-distro-and-ci-observed.json.
+
+### 2026-10-20 — PLAT-002D confirmed Linux LF historical-test failure
+
+Original Windows native source SHA differs from canonical Git/Linux
+LF SHA, but strict whole-file LF->CRLF transformation reproduces it.
+Unmodified old test failed 1/8 in Linux LF simulation.
+New branch permits only bounded path normalization and pins
+historical second pilot test source to exact original f18da79
+Git blob. Focused PLAT002D Windows62 PASS, simulated LF62 PASS,
+content mutation rejected. Evidence linux-lf-original-failure-repro-and-fix.json.
+Do NOT reinterpret frozen native NO-GO, unknown guest cleanup or
+currently stopped WSL as a guarded execution success.
+GitHub CI for recovery branch pending.
+
+### 2026-10-20 — PLAT-002D CI recovery static and source custody PASS
+
+Separate recovery worktree strict historical Git SHA baseline f18da79,
+focused 62/62 Windows and 62/62 simulated Git-LF PASS, 5 new QA tests,
+native FAIL receipts not edited. Root static PASS: 2291 tests discovered,
+1560 root tracked text files, 2 upstream gitlinks and zero errors.
+The parent had Windows full2286 PASS but the recovery branch full2291
+is NOT RUN yet. New code commit/push/exact GitHub CI PENDING.
+Main/root and the original dirty PLAT-002D worktree untouched.

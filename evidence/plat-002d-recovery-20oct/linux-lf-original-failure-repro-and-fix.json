@@ -1,0 +1,66 @@
+{
+  "scope": "PLAT002D_READONLY_CROSSOS_TEST_RECONCILIATION",
+  "date": "2026-10-20",
+  "originalFailingCode": "f18da79d43da6dcafa71ddf43ae9a9a400fe8ad6",
+  "originalGitHubStatus": {
+    "context": "alaz/local-ci",
+    "state": "FAILURE",
+    "statusId": 56746778531,
+    "exitDescription": "rc=1"
+  },
+  "remotePerTestLogsAvailable": false,
+  "confirmedCrossOSFailure": {
+    "test": "tests/test_plat002d_second_pilot.py::test_original_seven_second_source_frozen",
+    "originalWindowsRawSha256": "f9c8eb81b3748965a90f94ea9007e803b93887d6fb6ddb321e899e9c6cf67877",
+    "canonicalGitLinuxLfSha256": "558665289ab973f9f047d592f16f2254ad89ebbeb409393f72a3ee13e5d6ac82",
+    "exactLfToCrlfShaReconstruction": true,
+    "unmodifiedOldTestFailedInSimulatedLinuxLf": true,
+    "oldTestSimulationCaseCount": 8,
+    "oldTestSimulationFailureCount": 1
+  },
+  "fix": {
+    "newBranch": "alaz/plat-002d-ci-recovery-20oct",
+    "historicalTestSourcePinnedToOriginalCodeSha": true,
+    "singleExactLFtoCRLFAllowedOnlyForNativePath": true,
+    "nativeFailedReceiptsModified": false,
+    "newRecoveryOfflineTests": 5,
+    "PLAT002DFocusedWindows": {
+      "tests": 62,
+      "exitCode": 0
+    },
+    "PLAT002DFocusedSimulatedLinuxLf": {
+      "tests": 62,
+      "failures": 0,
+      "errors": 0
+    },
+    "shaMutationMustFail": true,
+    "globalGitHubFixResult": "PENDING",
+    "staticSourceCheck": {
+      "result": "PASS",
+      "discoveredTests": 2291,
+      "rootTextFiles": 1560,
+      "upstreamGitlinks": 2,
+      "exitCode": 0,
+      "modelCalled": false,
+      "wholeRuntimeTested": false
+    },
+    "currentSourcesCanonicalLFsha256": {
+      "tests/test_plat002d_second_pilot.py": "2910ea677446424e6697e8125060b1e53fdeb71a81d4ed9bfb734f1a1cbe2172",
+      "tests/test_plat002d_receipt.py": "e84bbb7d3b47acee1a444526d2bad89b7998aaeb8e369785eaa5881e95c4b317",
+      "tests/test_plat002d_ci_recovery.py": "1e5dce48e63af1fa421ad7e5976cd6f29ab6935a6a88666e2416d0745d428eeb"
+    }
+  },
+  "WSLGuestState": {
+    "nonStartingListRunningResult": "NO_RUNNING_DISTRIBUTIONS_REPORTED",
+    "readOnly": "YES",
+    "sourceReceipt": "no-running-distro-and-ci-observed.json",
+    "guestChildGrandchildReapingConfirmed": false,
+    "noGuestProcessInspectionOrRestartPerformed": true
+  },
+  "priorNativeWrapperLoss": "NO_GO_UNKNOWN_GUEST_CLOSURE",
+  "modelProviderCalls": 0,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "serverChanges": false,
+  "mainMerged": false
+}

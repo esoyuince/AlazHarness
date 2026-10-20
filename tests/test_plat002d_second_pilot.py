@@ -31,10 +31,18 @@ class TwoIndependentPilots(unittest.TestCase):
         self.assertLessEqual(V2.READY_TIMEOUT_SECONDS,20)
 
     def test_original_seven_second_source_frozen(self):
+        # Frozen native FAIL measured original Windows CRLF source bytes.
+        # In Linux CI, the exact same tracked source is checked out as LF.
+        # Allow only one full-file LF -> CRLF reconstruction.
         doc=json.loads((EVIDENCE/'native01-failure-custody.json').read_text(encoding='utf-8'))
-        sha=hashlib.sha256(ORIGINAL.read_bytes()).hexdigest()
-        self.assertEqual(doc['firstSourceHashes'][
-            'scripts/qa/run_plat002d_windows_once.py']['windowsRawSha256'],sha)
+        wanted=doc['firstSourceHashes'][
+            'scripts/qa/run_plat002d_windows_once.py']['windowsRawSha256']
+        raw=ORIGINAL.read_bytes()
+        if hashlib.sha256(raw).hexdigest()!=wanted:
+            self.assertNotIn(b'\r',raw)
+            self.assertGreater(raw.count(b'\n'),0)
+            self.assertEqual(hashlib.sha256(
+                raw.replace(b'\n',b'\r\n')).hexdigest(),wanted)
         self.assertEqual(doc['readyTimeoutSeconds'],7)
 
     def test_original_native_failure_still_fail(self):

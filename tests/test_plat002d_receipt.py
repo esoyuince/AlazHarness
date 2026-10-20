@@ -5,11 +5,13 @@ native test during standard CI. Windows CRLF->Git LF is exactly bounded.
 """
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 EV=ROOT/'evidence/plat-002d-wrapperloss-20oct'
+FROZEN_NATIVE_CODE_COMMIT='f18da79d43da6dcafa71ddf43ae9a9a400fe8ad6'
 def read(name):
     return json.loads((EV/name).read_text(encoding='utf-8'))
 
@@ -119,6 +121,23 @@ class WrapperLossNoGoEvidence(unittest.TestCase):
         self.assertEqual(set(m),expected)
         for name,entry in m.items():
             with self.subTest(file=name):
+                if name=='tests/test_plat002d_second_pilot.py':
+                    # This test itself had to change for Linux CI.
+                    # Native-source custody still refers to the ORIGINAL
+                    # exact Git commit, not rewritten receipt/source bytes.
+                    r=subprocess.run(['git','show',
+                        FROZEN_NATIVE_CODE_COMMIT+':'+name],
+                        cwd=ROOT,capture_output=True,timeout=15)
+                    self.assertEqual(r.returncode,0,
+                                     'historical_git_source_unavailable')
+                    raw=r.stdout
+                    self.assertNotIn(b'\r',raw)
+                    self.assertEqual(hashlib.sha256(raw).hexdigest(),
+                                     entry['gitCanonicalLfSha256'])
+                    self.assertEqual(hashlib.sha256(
+                        raw.replace(b'\n',b'\r\n')).hexdigest(),
+                        entry['windowsRawSha256'])
+                    continue
                 raw=(ROOT/name).read_bytes()
                 self.assertEqual(
                     hashlib.sha256(raw.replace(b'\r\n',b'\n')).hexdigest(),
