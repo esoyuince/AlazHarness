@@ -411,3 +411,16 @@ cleanup. The later WSL guest query timed out. These negative
 outcomes are required evidence, not waived failures. A normal
 green source CI MUST NOT be represented as native PLAT-002D,
 full D3B or production agent acceptance.
+
+
+## PLAT-002D-RECOVERY persistent test-only journal QA
+
+The default Python suite includes pure lease-schema/unknown-outcome
+reconciliation and guarded Linux POSIX disposable temp-dir fixture
+tests. On Windows POSIX-only tests are marked SKIP. On Linux CI
+they operate ONLY inside a TemporaryDirectory() owned by the test;
+they never mount, start WSL or touch a user's home.
+No PREPARED record is written to an actual WSL user home by CI.
+PREPARED is the only CLI-enabled native write phase; READY and
+TERMINAL schemas are for future, separately accepted guardian work.
+See docs/PLAT-002D-PERSISTENT-JOURNAL.md.

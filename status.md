@@ -1,8 +1,28 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-20 (PLAT-002D CI source custody recovery IN PROGRESS)
+Son güncelleme: 2026-10-20 (PLAT-002D-RECOVERY persistent journal offline IN PROGRESS)
 
 ## Güncel nokta
+
+PLAT-002D-RECOVERY PERSISTENT TEST-ONLY JOURNAL IN PROGRESS
+(2026-10-20): New clean worktree
+scratch/worktrees/plat-002d-persistent-20oct, branch
+alaz/plat-002d-persistent-20oct from exact
+177d05e260072bd57dcc35a3ee0ae5b24aa734c3
+(GitHub alaz/local-ci SUCCESS status56748400256 and
+its code parent0fb821b also SUCCESS).
+Scope: Linux unprivileged WSL2 QA-only persistent lease/journal
+protocol outside /tmp, bound runId/nonce digest/source SHA,
+boot identity, PID birth ticks, boottime-based expiry,
+exclusive fsynced records, deny symlinks, deterministic
+fail-closed independent observational reconstruction.
+First delivery OFFLINE design, fixture writer + tests only.
+Do NOT start WSL, install a daemon, change Linux account/home,
+kill processes, call provider/models, change existing host
+state or retry PLAT-002D native wrapper-loss experiment.
+Historical two native runs remain FAIL/UNKNOWN and full D3B,
+M1/M2 NO-GO. Original dirty PLAT-002D worktree, main/root
+and prior branches untouched. Root/static/full/CI pending.
 
 PLAT-002D CROSS-OS CI RECOVERY CODE CI SUCCESS (2026-10-20):
 Isolated branch alaz/plat-002d-ci-recovery-20oct with source
@@ -1770,3 +1790,44 @@ No actual WSL guest started or native wrapper experiment rerun.
 Both earlier native FAIL/UNKNOWN unchanged; full D3B/M1/M2 NO-GO.
 Evidence code-ci-observed.json and full-regression-observed.json.
 Docs-only CI followup requires independent verification.
+
+### 2026-10-20 — PLAT-002D-RECOVERY persistent ledger start
+
+Prior recovery code0fb821b and docs177d05e exact alaz/local-ci
+SUCCESS; parent Windows root2291 exit0 with 5 Linux-only skips.
+New independent worktree branch rooted at docs177d05e;
+only strict offline test-owned Linux lease journal and
+read-only auditor schema planned. No WSL guest launch or
+native test after prior two fail/unknown wrapper-loss attempts.
+Acceptance plan: bootId, runId, nonceSha, sourceSha,
+PID+birth tick, monotonic BOOTTIME lease, atomic O_EXCL
+file + fsync directory, no symlink, no guest resident
+daemon, no replay. Incomplete/unknown disposition never
+becomes a success. No product agent/hybrid loop changes.
+
+### 2026-10-20 — PLAT-002D persistent offline schema and POSIX fixture QA
+
+Implemented strict test-only PREPARED/READY/TERMINAL source schema,
+fixed 7s boot-time lease, no automatic replay, PID birth ticks and
+boot binding, directory-fd based Linux ext4-home open/create,
+O_EXCL/NOFOLLOW + file/directory fsync, optional read-only
+inspection. Only PREPARED can be written from CLI under opt-in;
+no live child/guardian or terminal writer. Even all tracked PIDs
+absent => RECORDED_PIDS_ABSENT_ORPHAN_CLOSURE_UNPROVEN, not task
+success. Local Windows targeted test discovery60: 48 PASS,
+12 POSIX test-owned temp-dir tests SKIP on Windows.
+New docs/PLAT-002D-PERSISTENT-JOURNAL.md and frozen source
+manifest evidence/plat-002d-persistent-20oct/offline-source-and-scope.json.
+Prior native wrapper-loss two FAIL untouched, WSL not started.
+Static/root full/branch GitHub CI still PENDING.
+
+### 2026-10-20 — PLAT-002D persistent code initial static PASS
+
+Persistent offline test source+docs journal staged on own branch.
+60 new Python tests discovered: 48 Windows PASS, 12 POSIX-only
+Linux temp-dir QA SKIP on Windows. Static source validator PASS:
+2351 tests discovered, 1567 root files and two Git source links;
+three current source canonical Git-LF SHA256 match staged blobs.
+WSL itself not started, no persistent real user home writes
+or child process. Native PLAT-002D still FAIL/UNKNOWN.
+Next exact code commit/GitHub CI and full Windows root regression.

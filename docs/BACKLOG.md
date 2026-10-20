@@ -339,3 +339,16 @@ guest query health, a bounded durable *test-owned* ledger outside
 before reattempting the native gate. Do not enable production
 worker or M2, or claim full D3B accepted. Report:
 docs/PLAT-002D-WRAPPER-LOSS-NO-GO.md.
+
+
+## PLAT-002D-RECOVERY test-owned persistent journal
+
+Implemented an offline schema and exact private-dirfd Linux
+prepare/read-only inspect contract for a test-only, ext4-home
+persistent lease journal. Scope excludes live WSL preparation,
+terminal writer, child/grandchild cleanup and genuine D3B.
+Next: first establish guest query health without a blind WSL
+restart; separately authorize a source-bounded native prepare,
+record recovery and guardian integration. Never claim success
+for the two earlier native wrapper-loss FAIL receipts.
+Report docs/PLAT-002D-PERSISTENT-JOURNAL.md.

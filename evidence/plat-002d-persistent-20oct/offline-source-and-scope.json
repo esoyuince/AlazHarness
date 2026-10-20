@@ -1,0 +1,56 @@
+{
+  "gate": "PLAT-002D-RECOVERY-PERSISTENT-JOURNAL-OFFLINE",
+  "date": "2026-10-20",
+  "baseCommit": "177d05e260072bd57dcc35a3ee0ae5b24aa734c3",
+  "branch": "alaz/plat-002d-persistent-20oct",
+  "status": "OFFLINE_SCHEMA_AND_POSIX_FIXTURE_NOT_NATIVE_ACCEPTANCE",
+  "sourceCanonicalLfSha256": {
+    "scripts/qa/wsl2_persistent_lease.py": "7a242ad76735d2e840f0a8510d07a198ab379032117177356f8b73d714ed0f6b",
+    "tests/test_plat002d_persistent_lease.py": "e13d3a81f33e42458fb05bc6d3fc031c2aa262d2f08d3bd36e6f62fa43df8b18",
+    "tests/test_plat002d_persistent_io.py": "94f3800ced9d3d2dd05bd40ae40a314b80013819e8c58ab6dda31f069f2b65ae"
+  },
+  "currentSourceFiles": 3,
+  "windowsDefaultTargeted": {
+    "testCasesDiscovered": 60,
+    "pass": 48,
+    "posixOnlySkipped": 12,
+    "exitCode": 0
+  },
+  "linuxPosixTempFixtureTests": "NOT_RUN_UNTIL_LINUX_CI",
+  "nativeWSLGuestHomePrepared": false,
+  "nativeWSLGuestStarted": false,
+  "newRealModelCalls": 0,
+  "qaOnlyWriteMode": "PREPARED_ONLY_WITH_EXPLICIT_OPTIN",
+  "readyWriterImplemented": false,
+  "terminalWriterImplemented": false,
+  "sameUidAdversaryResistant": false,
+  "independentOrphanClosureVerified": false,
+  "automaticRetryEnabled": false,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "M1Accepted": false,
+  "M2Accepted": false,
+  "previousNativeWrapperLoss": {
+    "attemptCount": 2,
+    "result": "NO_GO_UNKNOWN_GUEST_CLOSURE",
+    "priorEvidenceUnchanged": true
+  },
+  "rootStatic": {
+    "result": "PASS",
+    "testsDiscovered": 2351,
+    "filesChecked": 1567,
+    "sourceGitlinks": 2,
+    "exitCode": 0,
+    "fullNativeRuntimeTested": false,
+    "realModelCalls": 0
+  },
+  "windowsFull": "PENDING",
+  "codeCI": "PENDING",
+  "mainMerged": false,
+  "localFocusedLastCheck": {
+    "total": 60,
+    "windowsPass": 48,
+    "posixSkip": 12,
+    "exitCode": 0
+  }
+}

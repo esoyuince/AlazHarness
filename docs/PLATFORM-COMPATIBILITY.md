@@ -163,3 +163,16 @@ external task result remains UNKNOWN_DO_NOT_REPLAY. No third
 native run, WSL reset, model, account or service change.
 PLAT-002D native is NO-GO, full Windows/WSL and D3B remain
 NOT ACCEPTED. See docs/PLAT-002D-WRAPPER-LOSS-NO-GO.md.
+
+
+## PLAT-002D-RECOVERY persistent guest lease design (20 October)
+
+A test-only Linux ext4-home lease journal schema and fail-closed
+independent snapshot checker have been implemented and tested
+offline. Exact run/nonce/source/boot/PID-birth identities and fsynced
+exclusive file writes are intended to improve evidence after host loss.
+**The original two native PLAT-002D wrapper-loss trials remain
+FAIL/UNKNOWN.** The persistent journal has NOT yet been exercised
+inside the actual WSL guest; it neither repairs historical missing
+terminal evidence nor enables full D3B/agent execution.
+See docs/PLAT-002D-PERSISTENT-JOURNAL.md.
