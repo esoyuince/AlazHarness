@@ -2,6 +2,8 @@
 
 ## D3B-JOINT-21OCT-4C21 — LOCAL SCOPED PASS
 
+Tested merge commit: `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6`. The later handoff commit changes only documentation/evidence. GitHub push and remote CI NOT RUN; full D3B still OPEN.
+
 Active branch: `alaz/d3b-joint-21oct-4c21`. Worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-joint-21oct-4c21`.
 Start: `c03351b5f976fc527270f95376384d7e54e4e99d` (broker startup); merge candidate `95e80ac9ff75844e7d4a46dc6c64b13b2cf0f115` (IPC custody).
 
@@ -1145,3 +1147,7 @@ Native CLI23, socket metadata7, identity denials8, kernel24+5 all PASS on the co
 ### Joint qualification completed — 2026-10-21T00:33:43.330334+03:00
 
 Both feature histories integrated in the dedicated joint tree. Current tests are pinned to new native observations, not inferred from predecessor receipts. Full and selected runs are terminal and passing; local merge commit will identify the tested integrated content.
+
+### Exact local delivery
+
+Integrated source/evidence commit `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6` preserves both histories. All test/native operations are terminal and passing in their stated scope. This handoff adds no runtime change. Active worktree remains `scratch/worktrees/d3b-joint-21oct-4c21`; all previous worktrees are preserved.

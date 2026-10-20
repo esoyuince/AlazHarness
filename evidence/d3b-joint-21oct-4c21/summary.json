@@ -40,5 +40,10 @@
   "mainMerged": false,
   "pushed": false,
   "remoteCI": "NOT_RUN",
-  "overlappingSelectionsNotAddedToFullTotal": true
+  "overlappingSelectionsNotAddedToFullTotal": true,
+  "mergeCommit": "144a7d1f8d31e5767babfcbd2b583d7d7518f3f6",
+  "localMergeCompleted": true,
+  "localStaticGate": "PASS",
+  "localStaticDiscoveredTests": 2125,
+  "allRunReceiptsTerminal": true
 }

@@ -89,3 +89,7 @@ run real Gateway + separate broker, budget-file access denial, selected socket,
 peer credentials, restart/rebind and ACK-loss/replay cases on the exact source.
 This job creates no privileged bootstrap, system account, production service,
 real model request, automatic agent loop, main merge or GitHub push.
+
+## Exact local delivery
+
+Tested merge commit: `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6`. Both code histories and their evidence are retained. The following handoff commit modifies only report/status/summary and the handoff static receipt; the same 317 source files still match the full-regression snapshot. No GitHub push, remote CI or main merge was performed.
