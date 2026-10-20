@@ -1,0 +1,49 @@
+{
+  "gate": "PLAT-002D_WRAPPERLOSS_SOURCE_AND_NATIVE_NEGATIVE",
+  "date": "2026-10-20",
+  "branch": "alaz/plat-002d-wrapper-loss-20oct",
+  "baseCommit": "03717f73fa57e9722a39f5180f6198794fce4ec9",
+  "status": "OFFLINE_AND_ROOT_REGRESSION_PASS_NATIVE_NO_GO",
+  "newOfflineTests": 57,
+  "newOfflineExitCode": 0,
+  "allWindowsUnittest": {
+    "discovered": 2286,
+    "nonSkipped": 2281,
+    "linuxOnlySkipped": 5,
+    "exitCode": 0,
+    "unittestSeconds": 368.72,
+    "ignoredLog": "runtime/plat-002d-wrapperloss-20oct/full-standard-windows.txt",
+    "logSha256": "8c8d39eb7a0390c9e91c807fee636623bc1b8ad20d7c15842dd2d6b9426c9c61"
+  },
+  "rootStatic": {
+    "result": "PASS",
+    "discoveredTests": 2286,
+    "trackedTextFiles": 1555,
+    "submoduleGitlinks": 2,
+    "exitCode": 0,
+    "scope": "M0_and_HYB_mock_not_real_runtime"
+  },
+  "native": {
+    "state": "NO_GO_UNKNOWN_GUEST_CLOSURE",
+    "attemptCount": 2,
+    "firstResult": "FAIL_READY_TIMEOUT",
+    "secondResult": "FAIL_MISSING_GUEST_LEASE_RESULT",
+    "secondReadyReceived": true,
+    "secondOwnWindowsWrapperStopped": true,
+    "secondWindowsWrapperExit": 1,
+    "globalAfterSecondGuestInspection": "UNKNOWN_TIMEOUT_22S",
+    "modelCalls": 0,
+    "automaticReplay": false,
+    "source": "native-no-go-summary.json"
+  },
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "hostFilesystemIsolated": false,
+  "independentBrokerHostUidAccepted": false,
+  "M1Accepted": false,
+  "M2Accepted": false,
+  "realModelCalls": 0,
+  "mainMerged": false,
+  "codeCommitCi": "PENDING",
+  "next": "PLAT-002D-RECOVERY: establish guest query health and approve a persistent test-owned Linux journal before further native experiments."
+}

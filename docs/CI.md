@@ -397,3 +397,17 @@ An explicitly opted-in and fixed QA script was run independently
 on one Windows+Ubuntu host; its result does NOT certify WSL
 wrapper interruption or full D3B. Citable source/evidence and
 limitations: docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.
+
+
+## PLAT-002D WSL wrapper loss negative evidence QA
+
+The default Python root tests exercise Windows/guest fixed-source
+parsers, run/nonce/UID claims, one-time opt-in, strict source hashes,
+and the immutable two FAIL native receipts. They neither run WSL
+nor replay native wrapper termination. First pilot READY timed out,
+second pilot observed test-owned Windows wrapper termination after
+READY but did NOT independently prove Linux guardian/descendant
+cleanup. The later WSL guest query timed out. These negative
+outcomes are required evidence, not waived failures. A normal
+green source CI MUST NOT be represented as native PLAT-002D,
+full D3B or production agent acceptance.

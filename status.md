@@ -1,8 +1,82 @@
 # AlazHarness — status
 
-Son güncelleme: 2026-10-20 (PLAT-002C cancel protocol IN PROGRESS)
+Son güncelleme: 2026-10-20 (PLAT-002D test-owned Windows wrapper loss IN PROGRESS)
 
 ## Güncel nokta
+
+PLAT-002D NEGATIVE NATIVE GATE + FULL LOCAL TEST PASS:
+Both real Windows WSL-wrapper-loss experiments retained
+as separate immutable FAIL/UNKNOWN receipts. V1 READY_TIMEOUT
+7s; independent first read-only WSL scan proved no test
+process/root. V2 received READY and terminated only its own
+Windows WSL wrapper exit1; required Linux guardian terminal
+receipt absent, later global WSL /proc scan timed out22s,
+so guest descendant closure UNKNOWN, no automatic replay.
+Windows fixed native process list 0 wsl.exe/0 wslhost,
+1 WslService NOT proof of Linux closure. All new
+PLAT002D tests57/57 PASS, Windows full2286/2286 exit0
+five Linux-only skip, 368.720s, root static PASS
+2286 discovered/1555 files/2 gitlinks.
+Own branch alaz/plat-002d-wrapper-loss-20oct, worktree
+scratch/worktrees/plat-002d-wrapper-loss-20oct,
+base 03717f7 CI SUCCESS; commit/push/own GitHub CI PENDING.
+No paid model, WSL restart, user account, server or
+main change. PLAT-002D native / full D3B/M1/M2 NO-GO.
+See docs/PLAT-002D-WRAPPER-LOSS-NO-GO.md.
+
+PLAT-002D NATIVE WRAPPER-LOSS NO-GO / OFFLINE QA PASS (2026-10-20):
+New branch alaz/plat-002d-wrapper-loss-20oct in
+scratch/worktrees/plat-002d-wrapper-loss-20oct, base
+03717f73fa57e9722a39f5180f6198794fce4ec9
+(both PLAT-002C code/docs CI SUCCESS).
+First WSL native pilot FAIL after READY_TIMEOUT_UNKNOWN(7s);
+independent Ubuntu /proc scan 72 entries, 0 unreadable and
+0 PLAT002D processes/roots. Second new pilot with READY(20s)
+received verified READY and terminated only its own Windows
+WSL wrapper (exit1), but source-bound observer saw
+NO_OWNED_ROOT/NO TERMINAL LEASE RECORD. Subsequent independent
+global Linux read-only scan TIMEOUT(22s), so descendant
+closure UNKNOWN. Windows native process snapshots 0 wsl.exe,
+0 wslhost.exe, 1 WslService are NOT Linux process proof.
+Original two FAIL receipts and exact source SHA frozen in
+evidence/plat-002d-wrapperloss-20oct; no third native pilot
+and no WSL shutdown/reset. External outcome UNKNOWN_DO_NOT_REPLAY,
+no model calls. New 57 pure/native-receipt QA tests PASS;
+root full/static and own commit CI PENDING. Full Windows–WSL,
+D3B/M1/M2 remain NO-GO. Report
+docs/PLAT-002D-WRAPPER-LOSS-NO-GO.md.
+
+PLAT-002D FIRST ONE-SHOT NATIVE FAIL / INDEPENDENTLY NO RESIDUE:
+First test-owned Windows WSL wrapper-loss pilot returned
+FAIL_OR_UNKNOWN_GUEST_LEASE. READY not received within
+7 seconds; wrapper had NOT been interrupted after READY,
+no Linux test root was created/observed. Independent WSL
+read-only postfailure sweep: 72 /proc cmdlines, 0 unreadable,
+0 PLAT002D processes, 0 PLAT002D temp roots. Original
+native-wrapperloss-01.json and exact 4 first-source digests
+frozen under evidence/plat-002d-wrapperloss-20oct/.
+No agent/model, no auto replay, D3B NOT ACCEPTED.
+A separate second *new* test code path with bounded 20-second
+cold READY allowance may be evaluated only after this
+clean-snapshot evidence; do not modify original pilot or
+relabel its native result.
+
+PLAT-002D TEST-OWNED WSL WRAPPER INTERRUPTION IN PROGRESS
+(2026-10-20): clean branch alaz/plat-002d-wrapper-loss-20oct,
+worktree scratch/worktrees/plat-002d-wrapper-loss-20oct,
+base 03717f73fa57e9722a39f5180f6198794fce4ec9
+(PLAT-002C in-band native cancel + both code/docs GitHub
+alaz/local-ci SUCCESS). Test scope: only a new owned Windows
+wsl.exe process, unprivileged Linux worker + grandchild, private
+Linux /tmp, bounded lease/self-expiry, exact run id/nonce/source
+SHA, read-only reconciliation after interrupt. Do NOT terminate
+unrelated host processes or restart WSL, invoke a provider/model,
+change user accounts, merge main, or report lost-ACK as successful
+work. First implement offline guards, verify all historical test-owned
+processes are absent; then single opt-in native test with exact
+immutable receipt. No arbitrary user-supplied command or launcher.
+Full PLAT-002, D3B broker host UID, mount, budget and M1/M2
+remain NOT ACCEPTED.
 
 PLAT-002C SCOPED IN-BAND CANCEL CODE CI SUCCESS (2026-10-20):
 One rootless fixed Windows->WSL2 test-only native
@@ -1527,3 +1601,64 @@ termination, guest orphan/lease fencing, production agent
 model, D3B/full PLAT-002 acceptance.
 Documentation-only follow-up pending its own CI; no product source
 bytes changed since accepted code.
+
+### 2026-10-20 — PLAT-002D start on independent worktree
+
+Scoped prior evidence: PLAT-002C Windows->Ubuntu in-band
+START/READY/CANCEL/CANCELLED, test-owned child killed/reaped
+and post-run native process/temp absence PASS; code 08bc69f
+and docs 03717f7 local-ci SUCCESS. New branch from exact docs
+commit 03717f7 with no root/main alterations. New narrow gate
+will prove whether external termination of one *test-owned*
+Windows WSL wrapper causes UNKNOWN operation outcome and
+eventual Linux owned parent/descendant/temp cleanup, using
+explicit bounded lease and independent guest observation.
+This is not authorization to implement production launch or
+to erase previous PLAT-002A timeout failure.
+
+### 2026-10-20 — PLAT-002D first native failure custody
+
+Offline host/guardian/observer tests 34 PASS. Read-only guest
+preflight 73 /proc entries, 0 inaccessible/process/tmp roots.
+One explicit Windows->WSL2 first run FAIL before READY
+(timeout 7s). Guest ledger NOT produced; independent observer
+returned NO_OWNED_ROOT, zero PID. A separate read-only
+global guest inspection returned 72 readable /proc entries,
+0 other PLAT002D processes/roots. This does NOT test
+post-READY Windows wrapper force stop; external effect
+UNKNOWN_DO_NOT_REPLAY. Immutable original failure +
+exact source SHA record at evidence/plat-002d-wrapperloss-20oct/
+native01-failure-custody.json. Do not replay that first run.
+
+### 2026-10-20 — PLAT-002D native no-go and no blind retry
+
+Version1 test-owned WSL wrapper controller READY_TIMEOUT(7s);
+own guest observer NO_ROOT, later global Ubuntu read-only scan
+72 entries/zero process or root/zero inaccessible. Separate v2
+ready bound20s returned READY, Windows test-owned wrapper
+terminated with exit1; guest observer again NO_ROOT, no
+persistent closure journal. Another global guest scan timed
+out 22s, so no verified worker/grandchild cleanup. Windows
+native wsl/wslhost process absence cannot prove Linux closure.
+Source and both Windows raw native FAIL receipt SHAs pinned.
+Code includes default-off rootless TTL guardian and read-only
+observer, but effectiveness under wrapper loss NOT ACCEPTED.
+Tests/test_plat002d_wrapperloss.py 34,
+test_plat002d_second_pilot.py 8, test_plat002d_receipt.py 15,
+total 57/57 PASS offline. Root test suite/code CI pending.
+NO extra WSL native calls or production/model state changes.
+Next PLAT-002D-RECOVERY is read-only guest health +
+durable test-only ledger, then separate native admission.
+
+### 2026-10-20 — PLAT-002D full Windows and static source QA PASS
+
+Windows default suite discovered2286, 2281 non-skipped,
+five Linux-only skips, exit0, 368.720s. Log SHA256
+8c8d39eb7a0390c9e91c807fee636623bc1b8ad20d7c15842dd2d6b9426c9c61.
+Root static PASS2286 discovered,1555 text,2 gitlinks.
+PLAT002D no-launch guard and both native FAIL evidence
+custody tests 57/57 PASS. Two native attempts remain
+NO-GO; second Linux audit absent and later read-only guest
+query timed out. Full root local regression PASS does not
+change native execution acceptance. Code/status/evidence
+branch commit and exact GitHub CI PENDING.

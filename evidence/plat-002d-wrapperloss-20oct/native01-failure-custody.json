@@ -1,0 +1,43 @@
+{
+  "gate": "PLAT-002D_WRAPPERLOSS_FIRST_NATIVE_REFUSAL",
+  "state": "FAIL_NATIVE_READINESS_TIMEOUT_NOT_ACCEPTED",
+  "originalNativeFile": "native-wrapperloss-01.json",
+  "originalNativeRawSha256": "87bcd41efb7c3963fab9301296710324864e9113c163dd9e671b4320d341484c",
+  "runId": "bcd0f02edfd09960cc1f760e",
+  "readyTimeoutSeconds": 7,
+  "readyBindingVerified": false,
+  "wrapperForceStopAfterReadyTested": false,
+  "originalGuestRootWasSeen": false,
+  "firstReadOnlyResult": "NO_OWNED_ROOT",
+  "independentGlobalPostFailure": {
+    "path": "postfail-readonly.json",
+    "procEntriesRead": 72,
+    "matchingProcesses": 0,
+    "matchingTemporaryRoots": 0,
+    "unreadable": 0,
+    "noResidues": true
+  },
+  "firstSourceHashes": {
+    "scripts/qa/wsl2_wrapperloss_guest.py": {
+      "windowsRawSha256": "2ef688fb4ad419d1ab784d09a51e3a85759ae20dbc840025a512de868686699e",
+      "canonicalGitLfSha256": "04dad3d8532036171fade79ba32039a4990cb08eddbe6665457153a49e74c105"
+    },
+    "scripts/qa/wsl2_wrapperloss_observe.py": {
+      "windowsRawSha256": "6c62f989bb2ad486f00942dd2773d56ccde28d9d7846b6c6a1b49e0a7ec94016",
+      "canonicalGitLfSha256": "b557f160c03eb70e9b9b9bea4850ca3956e73cfbfa50d108f1504c94a0044ef8"
+    },
+    "scripts/qa/run_plat002d_windows_once.py": {
+      "windowsRawSha256": "f9c8eb81b3748965a90f94ea9007e803b93887d6fb6ddb321e899e9c6cf67877",
+      "canonicalGitLfSha256": "558665289ab973f9f047d592f16f2254ad89ebbeb409393f72a3ee13e5d6ac82"
+    },
+    "tests/test_plat002d_wrapperloss.py": {
+      "windowsRawSha256": "717fe7d1967b65528d474ce1ddf72078f6407f47c8c22fa5f4764beb77c12052",
+      "canonicalGitLfSha256": "7d0b35a948819be728aef625dd853f244f9150155b0ff22e8f3501b496213d15"
+    }
+  },
+  "originalFirstRunResultChanged": false,
+  "unknownOutcomeNotReplayed": true,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "modelCalls": 0
+}

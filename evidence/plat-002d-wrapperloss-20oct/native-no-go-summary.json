@@ -1,0 +1,92 @@
+{
+  "gate": "PLAT-002D_HOST_WRAPPER_LOSS_NATIVE_NO_GO",
+  "date": "2026-10-20",
+  "branch": "alaz/plat-002d-wrapper-loss-20oct",
+  "base": "03717f73fa57e9722a39f5180f6198794fce4ec9",
+  "status": "NO_GO_UNKNOWN_GUEST_CLOSURE",
+  "attemptCount": 2,
+  "noAutomaticRetry": true,
+  "first": {
+    "file": "native-wrapperloss-01.json",
+    "windowsRawSha256": "87bcd41efb7c3963fab9301296710324864e9113c163dd9e671b4320d341484c",
+    "runId": "bcd0f02edfd09960cc1f760e",
+    "status": "FAIL_OR_UNKNOWN_GUEST_LEASE",
+    "errorCode": "READY_TIMEOUT_UNKNOWN",
+    "readyReceived": false,
+    "wrapperInterruptedAfterReady": false,
+    "observerState": "NO_OWNED_ROOT"
+  },
+  "second": {
+    "file": "native-wrapperloss-02.json",
+    "windowsRawSha256": "34c0f0b2ff373913a157df996bf880c6a4a93f4b218c7a17ea499dd0f7552e84",
+    "runId": "c43660ec58e71cc0930b1e47",
+    "status": "FAIL_OR_UNKNOWN_GUEST_LEASE",
+    "readyReceived": true,
+    "wrapperInterruptedAfterReady": true,
+    "wrapperExitCode": 1,
+    "observerState": "NO_OWNED_ROOT",
+    "independentLinuxLeaseJournalFound": false,
+    "externalEffectOutcome": "UNKNOWN_DO_NOT_REPLAY",
+    "consoleReceiptPathTextStale": true,
+    "actualSavedReceiptFile": "native-wrapperloss-02.json"
+  },
+  "globalAfterFirst": {
+    "file": "postfail-readonly.json",
+    "result": "NO_MATCHES",
+    "procRecordsRead": 72,
+    "unreadable": 0
+  },
+  "globalAfterSecond": {
+    "attempted": true,
+    "result": "UNKNOWN_TIMEOUT",
+    "method": "read-only Ubuntu /proc+tmp scan",
+    "deadlineSeconds": 22,
+    "resultFileWritten": false,
+    "noBlindRetry": true
+  },
+  "windowsProcessSnapshotAfterSecond": {
+    "wslExeCount": 0,
+    "wslHostExeCount": 0,
+    "wslServiceCount": 1,
+    "scope": "Windows process snapshot; not independent Linux proof",
+    "readOnly": true
+  },
+  "firstAndSecondNativeSources": {
+    "scripts/qa/wsl2_wrapperloss_guest.py": {
+      "windowsRawSha256": "2ef688fb4ad419d1ab784d09a51e3a85759ae20dbc840025a512de868686699e",
+      "gitCanonicalLfSha256": "04dad3d8532036171fade79ba32039a4990cb08eddbe6665457153a49e74c105"
+    },
+    "scripts/qa/wsl2_wrapperloss_observe.py": {
+      "windowsRawSha256": "6c62f989bb2ad486f00942dd2773d56ccde28d9d7846b6c6a1b49e0a7ec94016",
+      "gitCanonicalLfSha256": "b557f160c03eb70e9b9b9bea4850ca3956e73cfbfa50d108f1504c94a0044ef8"
+    },
+    "scripts/qa/run_plat002d_windows_once.py": {
+      "windowsRawSha256": "f9c8eb81b3748965a90f94ea9007e803b93887d6fb6ddb321e899e9c6cf67877",
+      "gitCanonicalLfSha256": "558665289ab973f9f047d592f16f2254ad89ebbeb409393f72a3ee13e5d6ac82"
+    },
+    "scripts/qa/run_plat002d_windows_once_v2.py": {
+      "windowsRawSha256": "413e6b801bb5a6918ff9cb670b10f970b128231e16286a6669396adafd39529d",
+      "gitCanonicalLfSha256": "7a063a3584aba6111603243dadd744fead6eaf653ff61ea4e6c77576f604624c"
+    },
+    "tests/test_plat002d_wrapperloss.py": {
+      "windowsRawSha256": "717fe7d1967b65528d474ce1ddf72078f6407f47c8c22fa5f4764beb77c12052",
+      "gitCanonicalLfSha256": "7d0b35a948819be728aef625dd853f244f9150155b0ff22e8f3501b496213d15"
+    },
+    "tests/test_plat002d_second_pilot.py": {
+      "windowsRawSha256": "ff7dab62087d43637f1b671a51964796858f501f7eac2991d229b36b831af311",
+      "gitCanonicalLfSha256": "36ba8271839bbfd1f7a859fbfd13c81922a7ed3884a57615c323e2085b389d5e"
+    }
+  },
+  "guestLeaseExpiredVerified": false,
+  "guestProcessTreeReapedVerified": false,
+  "testTempRootRemovedVerified": false,
+  "unknownExternalEffectReplayed": false,
+  "fullPLAT002Accepted": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "privilegedOperations": 0,
+  "productionChanged": false,
+  "mainMerged": false,
+  "codeAndOfflineCi": "PENDING",
+  "requiredNext": "First restore independent WSL process-query responsiveness without restarting/changing existing host; then design durable host-independent test-only guest ledger outside volatile /tmp with strict ownership and bounded TTL. Never substitute missing ledger with a successful task result."
+}

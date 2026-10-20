@@ -147,3 +147,19 @@ This is **NOT** a general WSL bridge or a secure Hermes execution
 adapter. Killing the Windows wrapper unexpectedly, actual Windows
 host-file isolation, separate broker UID and full D3B are open.
 See docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.
+
+
+## PLAT-002D failed wrapper-loss native gate (20 October 2026)
+
+A test-owned Windows WSL wrapper-loss pilot was attempted exactly
+twice under separate run identifiers. First READY timed out at 7s;
+a subsequent independent Ubuntu scan found no matching process or
+temporary root. A second bounded 20s pilot received READY and
+terminated only its own Windows WSL wrapper (exit1). The guest
+auditor found no Linux lease journal/root, and a later independent
+Ubuntu /proc query timed out after 22s. It is not known whether
+the detached guest watchdog reaped its worker/grandchild; the
+external task result remains UNKNOWN_DO_NOT_REPLAY. No third
+native run, WSL reset, model, account or service change.
+PLAT-002D native is NO-GO, full Windows/WSL and D3B remain
+NOT ACCEPTED. See docs/PLAT-002D-WRAPPER-LOSS-NO-GO.md.

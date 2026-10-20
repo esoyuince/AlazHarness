@@ -322,3 +322,20 @@ wrapper midflight force-stop and lease fencing remain **NOT RUN**.
 Next PLAT-002D: test-owned wrapper interruption and guest lease/
 reconciliation; then full D3B principal, IPC and broker budget.
 Read docs/PLAT-002C-WSL-EXPLICIT-CANCEL.md.
+
+
+## PLAT-002D — native no-go / bounded test-owned recovery
+
+A seven-second READY native attempt FAILED before READY; no
+test-owned process/temp root remained at first independent scan.
+A separate 20-second READY attempt received READY, then the
+own Windows wrapper was deliberately terminated (exit1), but
+its Linux terminal ledger was NOT found and later independent
+Linux inspection timed out. UNKNOWN_DO_NOT_REPLAY retained,
+no third effectful pilot. Offline guards and exact source custody
+still available for CI. Next PLAT-002D-RECOVERY must establish
+guest query health, a bounded durable *test-owned* ledger outside
+/tmp, and independent orphan/process/birth identity observation
+before reattempting the native gate. Do not enable production
+worker or M2, or claim full D3B accepted. Report:
+docs/PLAT-002D-WRAPPER-LOSS-NO-GO.md.

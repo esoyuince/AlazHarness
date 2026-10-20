@@ -1,0 +1,12 @@
+{
+  "gate": "PLAT002D_NATIVE_READONLY_PREFLIGHT",
+  "system": "Linux",
+  "machine": "x86_64",
+  "guestUid": 1000,
+  "wsl2Kernel": true,
+  "procEntriesRead": 73,
+  "unreadable": 0,
+  "matchingTestProcesses": 0,
+  "testRootsPresent": 0,
+  "safeToAttemptOnce": true
+}

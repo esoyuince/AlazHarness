@@ -1,0 +1,9 @@
+{
+  "kind": "PLAT002D_GLOBAL_READONLY_POSTFAIL",
+  "uid": 1000,
+  "scannedProcEntries": 72,
+  "unreadable": 0,
+  "matchingLegacyTestProcesses": [],
+  "testOwnedRootsPresent": [],
+  "noResidues": true
+}
