@@ -1,0 +1,89 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-001.json",
+      "path": "scripts/run_provider_broker.py",
+      "nativeSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "stagedSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-001.json",
+      "path": "packages/claw-hermes/provider_broker.py",
+      "nativeSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "stagedSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-001.json",
+      "path": "packages/claw-hermes/provider_egress.py",
+      "nativeSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "stagedSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-001.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "stagedSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-principal-startup-20oct/native-cli-001.json",
+      "path": "scripts/qa/native_principal_startup.py",
+      "nativeSha256": "77025e6e3c22109b23749188d88344fa9c8a1ddc2e342e65274c2a6b1e9f1917",
+      "stagedSha256": "77025e6e3c22109b23749188d88344fa9c8a1ddc2e342e65274c2a6b1e9f1917",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-startup-20oct.json",
+      "path": "packages/claw-hermes/host_principal.py",
+      "nativeSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "stagedSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-startup-20oct.json",
+      "path": "packages/claw-hermes/provider_broker.py",
+      "nativeSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "stagedSha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-startup-20oct.json",
+      "path": "packages/claw-hermes/provider_egress.py",
+      "nativeSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "stagedSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-host-principal-7a19/native-denial-startup-20oct.json",
+      "path": "scripts/qa/principal_denial_linux.py",
+      "nativeSha256": "fe347fee90b6bc61e02e54d760cba07c5ff0a0e82fe100540dec3bd29e896b21",
+      "stagedSha256": "fe347fee90b6bc61e02e54d760cba07c5ff0a0e82fe100540dec3bd29e896b21",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-integration-19oct/kernel-principal-startup-20oct.json",
+      "path": "packages/claw-hermes/ipc_view.py",
+      "nativeSha256": "3603a4a72be49a01c3f31f181e242eca176ad06fa87a5230b7ec770a564a444d",
+      "stagedSha256": "3603a4a72be49a01c3f31f181e242eca176ad06fa87a5230b7ec770a564a444d",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-integration-19oct/kernel-principal-startup-20oct.json",
+      "path": "packages/claw-hermes/combined_guard.py",
+      "nativeSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "stagedSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "representation": "exact"
+    },
+    {
+      "receipt": "evidence/d3b-integration-19oct/kernel-principal-startup-20oct.json",
+      "path": "packages/claw-hermes/linux_netns.py",
+      "nativeSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "stagedSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "representation": "exact"
+    }
+  ]
+}

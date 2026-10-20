@@ -1,0 +1,24 @@
+test_legacy_does_not_require_principal_or_namespace (test_broker_principal_startup.ClientIdentity.test_legacy_does_not_require_principal_or_namespace) ... ok
+test_same_numeric_uid_in_other_namespace_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_same_numeric_uid_in_other_namespace_refuses_before_any_socket) ... ok
+test_unreadable_namespace_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_unreadable_namespace_refuses_before_any_socket) ... ok
+test_valid_identity_reaches_transport_without_claiming_connection (test_broker_principal_startup.ClientIdentity.test_valid_identity_reaches_transport_without_claiming_connection) ... ok
+test_wrong_local_gateway_identity_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_wrong_local_gateway_identity_refuses_before_any_socket) ... ok
+test_legacy_existing_directory_remains_refused (test_broker_principal_startup.Startup.test_legacy_existing_directory_remains_refused) ... ok
+test_legacy_fresh_directory_still_starts_and_stops (test_broker_principal_startup.Startup.test_legacy_fresh_directory_still_starts_and_stops) ... ok
+test_partial_start_failure_closes_acquired_server (test_broker_principal_startup.Startup.test_partial_start_failure_closes_acquired_server) ... ok
+test_principal_directory_permissions_checked_before_start (test_broker_principal_startup.Startup.test_principal_directory_permissions_checked_before_start) ... ok
+test_principal_identity_checked_before_server_construction (test_broker_principal_startup.Startup.test_principal_identity_checked_before_server_construction) ... ok
+test_principal_missing_directory_is_not_auto_created (test_broker_principal_startup.Startup.test_principal_missing_directory_is_not_auto_created) ... ok
+test_principal_nonempty_directory_is_never_adopted (test_broker_principal_startup.Startup.test_principal_nonempty_directory_is_never_adopted) ... ok
+test_principal_preprovisioned_directory_reaches_real_entrypoint (test_broker_principal_startup.Startup.test_principal_preprovisioned_directory_reaches_real_entrypoint) ... ok
+test_ready_collision_is_not_overwritten_and_owned_server_closes (test_broker_principal_startup.Startup.test_ready_collision_is_not_overwritten_and_owned_server_closes) ... ok
+test_ready_publication_failure_closes_owned_server (test_broker_principal_startup.Startup.test_ready_publication_failure_closes_owned_server) ... ok
+test_shutdown_collision_is_not_overwritten (test_broker_principal_startup.Startup.test_shutdown_collision_is_not_overwritten) ... ok
+test_signal_setup_failure_closes_and_removes_installed_handler (test_broker_principal_startup.Startup.test_signal_setup_failure_closes_and_removes_installed_handler) ... ok
+test_success_removes_only_installed_handlers (test_broker_principal_startup.Startup.test_success_removes_only_installed_handlers) ... ok
+test_unacquired_start_failure_does_not_clean_foreign_socket (test_broker_principal_startup.Startup.test_unacquired_start_failure_does_not_clean_foreign_socket) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.370s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "testBeforeSha256": "c262f041e7ed8a2ef6c7316431dda73a60f709853fc594b354c65a8ddb984970",
+  "testAfterSha256": "a0a4227ae72ee770d7dabef09f9ff6799a35ab1795ce1655dabfece826d05e1d",
+  "newCurrentReceipt": "evidence/d3b-integration-19oct/kernel-principal-startup-20oct.json",
+  "originalReceiptRetained": "evidence/d3b-integration-19oct/kernel-int19-final1.json",
+  "assertionsRelaxed": false,
+  "currentKernelChecks": 24,
+  "startupRefusals": 5
+}

@@ -1,5 +1,16 @@
 # AlazHarness — status
 
+## D3B-PRINCIPAL-STARTUP-20OCT — LOCAL SCOPED PASS
+
+Active branch: `alaz/d3b-ipc-principal-20oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct`; starting commit: `4d86f30`.
+
+Completed: actual broker CLI/pre-provisioned principal-directory contradiction repaired; acquired-listener cleanup covers startup/receipt/signal failures; ready/shutdown metadata is atomic no-clobber; Gateway identity and host namespace are checked before IPC. Windows full 2099 total = 2094 PASS / 5 Linux-only SKIP, exit0; 314 source files stable. New Windows19 + Linux19 regression PASS (subsets, not additive to full suite). Native CLI23 checks PASS_SCOPED; fresh rootless principal denial8 PASS; current legacy kernel24+5 PASS. Local static CI PASS, 2099 discovered; 12 exact staged/native source representation checks PASS. Report docs/D3B-PRINCIPAL-STARTUP-20OCT.md. GitHub push/CI NOT RUN; local commit being recorded. Existing IPC v2 mount gate stays closed; no privileged command, user provisioning, main merge, push, production service or paid model call. The prior readiness helper reports fixed NOT_READY values rather than inspecting a supplied two-principal deployment; do not treat it as proof no deployment exists. Current sources and first failures will be retained under `evidence/d3b-principal-startup-20oct/`.
+
+Confirmed starting state: clean 4d86f30; root worktree has unrelated preserved changes. `run_provider_broker.serve()` rejects existing output while `ProviderBrokerServer.start()` requires an existing directory for opt-in principal mode. Kernel UID mapping currently includes Gateway only; do not loosen socket identity checks to accommodate an unmapped broker.
+
+The historical records below are retained, not the active branch pointer.
+
+
 Son güncelleme: 2026-10-19 (D3B IPC + independent budget integration IN PROGRESS)
 
 ## Güncel nokta
@@ -1062,3 +1073,13 @@ prove independent host UID execution; split-UID Gateway/IPC mount
 positive acceptance, paid-provider and full D3B remain OPEN. Current
 new followup files only docs/status/CI record/summary; followup commit
 must receive separate exact GitHub CI check.
+
+
+### D3B-PRINCIPAL-STARTUP-20OCT checkpoint — 2026-10-20T23:55:05.827004+03:00
+
+Actual CLI contradiction and startup cleanup repaired; client local identity bound. Windows19 and Linux19 new regressions PASS. Native CLI23/23 PASS_SCOPED, rootless principal denial8/8 PASS, current legacy IPC kernel24+5 PASS. Full Windows regression in progress under Bridge request bac066c6-d92c-4b64-8fbb-14bd09c71a8c; output evidence/d3b-principal-startup-20oct/full-windows.txt. No product/test source edits while this run is active. No privileged action, v2 mount opening, paid provider, main merge or push.
+
+
+### D3B-PRINCIPAL-STARTUP-20OCT completed — 2026-10-20T23:58:47.612248+03:00
+
+Full regression request bac066c6-d92c-4b64-8fbb-14bd09c71a8c completed exit0 (2099 total, 5 SKIP); static request 79bc83d0-5f88-4c51-aec4-953e6e98c0c5 completed exit0. All command receipts terminal; native test-owned processes stopped and temporary roots removed. Exact next work: trusted two-host-principal launch/projection integration including host UID namespace mapping and socket-parent identity. Do not repeat the readiness inventory as a substitute, widen v1 permissions, accept overflow UID or bypass the prior privileged-operation denial. No real Gateway/model, account provisioning, production changes, main merge or push in this slice.

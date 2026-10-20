@@ -1,0 +1,193 @@
+{
+  "observedAt": "2026-10-20T23:52:22.991484+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "probe": {
+    "result": "PASS",
+    "pid": 687,
+    "checks": {
+      "source_read": true,
+      "runtime_write": true,
+      "parent_process_hidden": true,
+      "host_mounts_hidden": true,
+      "old_root_detached": true,
+      "broker_parent_private": true,
+      "secret_unreadable": true,
+      "original_path_blocked": true,
+      "proc_parent_root_blocked": true,
+      "symlink_blocked": true,
+      "explicit_broker_works": true,
+      "host_abstract_blocked": true,
+      "host_tcp_blocked": true,
+      "private_loopback_works": true,
+      "runtime_socket_works": true,
+      "mount_forbidden": true,
+      "chroot_forbidden": true,
+      "namespace_join_forbidden": true,
+      "fd_receive_forbidden": true,
+      "raw_connect_blocked": true,
+      "inherited_secret_closed": true,
+      "inherited_host_socket_closed": true,
+      "exec_child_host_denied": true,
+      "exec_child_broker_allowed": true
+    },
+    "guard": {
+      "version": 1,
+      "state": "enforced",
+      "launchId": "ipc-kernel-owned",
+      "pid": 687,
+      "contractSha256": "1713814744ea723b37fb18928d790eeae9d04f23ac7aecb82dee15f7d5ddac62",
+      "commandSha256": "585db2aab81d8698edc6e1101828754fb4f3faa88b542f3f6b8d681d711ca12d",
+      "order": [
+        "network",
+        "filesystem"
+      ],
+      "network": {
+        "version": 1,
+        "mode": "linux_netns_loopback_only",
+        "before": {
+          "pid": 687,
+          "uid": 1000,
+          "gid": 1000,
+          "netNamespace": "net:[4026531840]",
+          "userNamespace": "user:[4026531837]",
+          "CapInh": "0000000000000000",
+          "CapPrm": "0000000000000000",
+          "CapEff": "0000000000000000",
+          "CapBnd": "000001ffffffffff",
+          "CapAmb": "0000000000000000",
+          "NoNewPrivs": "0",
+          "Seccomp": "0"
+        },
+        "after": {
+          "pid": 687,
+          "uid": 1000,
+          "gid": 1000,
+          "netNamespace": "net:[4026532230]",
+          "userNamespace": "user:[4026532229]",
+          "CapInh": "0000000000000000",
+          "CapPrm": "0000000000000000",
+          "CapEff": "0000000000000000",
+          "CapBnd": "0000000000000000",
+          "CapAmb": "0000000000000000",
+          "NoNewPrivs": "1",
+          "Seccomp": "2"
+        },
+        "inheritedRestrictions": true,
+        "hostFilesystemIsolated": false,
+        "separateHostUid": false,
+        "unixSocketAuthorityIsolated": false,
+        "completeD3BAcceptance": false,
+        "filesystemView": {
+          "version": 1,
+          "state": "projected",
+          "pid": 687,
+          "mountNamespaceChanged": true,
+          "oldRootDetached": true,
+          "explicitHostSocketCount": 1,
+          "procView": "launching_pid_only",
+          "bindCount": 10,
+          "scannedEntries": 45158,
+          "hiddenNestedMountCount": 3,
+          "filesystemRootsTrustedNotImmutable": true,
+          "sameHostUid": true,
+          "independentBrokerBudgetAuthority": false,
+          "fullD3B": false
+        }
+      },
+      "filesystem": {
+        "version": 1,
+        "state": "enforced",
+        "landlockAbi": 3,
+        "handledFilesystemRights": 32767,
+        "noNewPrivs": true,
+        "closedSelfExecutableFds": 0,
+        "protectedReadDenials": 1,
+        "policySha256": "3038314dadb4724726af9a2d0c5dc9d3706dbab7aeea0d7a4eb74b0029660d07",
+        "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+        "selfProcessMetadata": false,
+        "metadataReadFileCount": 0,
+        "networkConfinementVerified": false,
+        "separateHostUid": false
+      },
+      "scope": "same-process direct network and filesystem-open restrictions",
+      "completeD3B": false,
+      "unixSocketAuthorityIsolated": false,
+      "independentBrokerBudgetAuthority": false,
+      "separateHostUid": false,
+      "targetExecutionVerified": false,
+      "fallback": false,
+      "pathnameIpcView": {
+        "version": 1,
+        "state": "projected",
+        "pid": 687,
+        "mountNamespaceChanged": true,
+        "oldRootDetached": true,
+        "explicitHostSocketCount": 1,
+        "procView": "launching_pid_only",
+        "bindCount": 10,
+        "scannedEntries": 45158,
+        "hiddenNestedMountCount": 3,
+        "filesystemRootsTrustedNotImmutable": true,
+        "sameHostUid": true,
+        "independentBrokerBudgetAuthority": false,
+        "fullD3B": false
+      },
+      "explicitBrokerMountOnly": true
+    }
+  },
+  "ownedServerCounts": {
+    "broker": 2,
+    "blocked": 0,
+    "tcp": 0,
+    "abstract": 0
+  },
+  "positiveControlsAllLive": true,
+  "protectedUnchanged": true,
+  "startupRefusals": {
+    "extra_socket_in_runtime": {
+      "refused": true,
+      "exitCode": 1,
+      "reason": [
+        "ipc_view.IPCViewRejected: ipc_special_file_in_export"
+      ]
+    },
+    "symlink_broker": {
+      "refused": true,
+      "exitCode": 1,
+      "reason": [
+        "ipc_view.IPCViewRejected: ipc_path_changed"
+      ]
+    },
+    "wide_broker_permissions": {
+      "refused": true,
+      "exitCode": 1,
+      "reason": [
+        "ipc_view.IPCViewRejected: ipc_broker_identity_or_permissions"
+      ]
+    },
+    "nonempty_anchor": {
+      "refused": true,
+      "exitCode": 1,
+      "reason": [
+        "ipc_view.IPCViewRejected: ipc_anchor_not_owned_empty"
+      ]
+    },
+    "command_mismatch": {
+      "refused": true,
+      "exitCode": 1,
+      "reason": [
+        "combined_guard.CombinedGuardRejected: combined_command_mismatch"
+      ]
+    }
+  },
+  "stderr": "",
+  "completeD3B": false,
+  "realModelCalls": 0,
+  "sourceSha256": {
+    "packages/claw-hermes/ipc_view.py": "3603a4a72be49a01c3f31f181e242eca176ad06fa87a5230b7ec770a564a444d",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+  },
+  "temporaryRootsRemoved": true
+}

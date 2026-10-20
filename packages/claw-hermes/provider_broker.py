@@ -109,6 +109,17 @@ class ProviderBrokerClient:
         try:
             async with asyncio.timeout(35):
                 principal=self.link.principal_contract
+                if principal is not None:
+                    # Numeric IDs in another user namespace are not host
+                    # identity. Reject before observing, connecting or sending.
+                    from host_principal import gateway_identity,PrincipalRejected
+                    try:
+                        gateway_identity(principal)
+                        namespace=os.readlink('/proc/self/ns/user')
+                    except (PrincipalRejected,OSError):
+                        raise ExecutionDenied('broker_gateway_principal_refused') from None
+                    require(namespace==principal['hostUserNamespace'],
+                            'broker_gateway_principal_refused')
                 before=private_socket(self.link.socket_path,principal)
                 reader,writer=await asyncio.open_unix_connection(self.link.socket_path,limit=65536)
                 peer(writer,principal,role='gateway')

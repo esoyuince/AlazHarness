@@ -1,0 +1,6 @@
+{
+  "correction": "create=True for mocked Unix-only asyncio entrypoint absent on Windows",
+  "assertionsChanged": false,
+  "firstRun": "regression-before-fix.txt",
+  "testSha256": "34729516f940d1b79ee8107d903ff162be3bcbc380c8d2333dc332482df2b926"
+}

@@ -119,7 +119,8 @@ class D3BIntegrationEvidence(unittest.TestCase):
                     else:
                         self.assertEqual(current,digest,name)
     def test_owned_kernel_socket_and_mount_negatives(self):
-        record=read('kernel-int19-final1.json')
+        # New execution against current v1 code; original kernel receipt retained.
+        record=read('kernel-principal-startup-20oct.json')
         self.assertEqual(record['result'],'PASS')
         self.assertEqual(record['exitCode'],0)
         self.assertTrue(record['positiveControlsAllLive'])
@@ -135,6 +136,13 @@ class D3BIntegrationEvidence(unittest.TestCase):
         self.assertIs(record['completeD3B'],False)
         self.assertEqual(record['realModelCalls'],0)
         for name,digest in record['sourceSha256'].items():
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+            raw=(ROOT/name).read_bytes()
+            actual=hashlib.sha256(raw).hexdigest()
+            if actual!=digest:
+                # Exact current receipt's unchanged Windows CRLF/Git LF pair.
+                self.assertIn(name,{'packages/claw-hermes/combined_guard.py',
+                                    'packages/claw-hermes/linux_netns.py'})
+                self.assertNotIn(b'\r',raw,name)
+                self.assertEqual(hashlib.sha256(raw.replace(b'\n',b'\r\n')).hexdigest(),digest,name)
 
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,301 @@
+test_legacy_does_not_require_principal_or_namespace (test_broker_principal_startup.ClientIdentity.test_legacy_does_not_require_principal_or_namespace) ... ok
+test_same_numeric_uid_in_other_namespace_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_same_numeric_uid_in_other_namespace_refuses_before_any_socket) ... FAIL
+test_unreadable_namespace_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_unreadable_namespace_refuses_before_any_socket) ... FAIL
+test_valid_identity_reaches_transport_without_claiming_connection (test_broker_principal_startup.ClientIdentity.test_valid_identity_reaches_transport_without_claiming_connection) ... FAIL
+test_wrong_local_gateway_identity_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_wrong_local_gateway_identity_refuses_before_any_socket) ... FAIL
+test_legacy_existing_directory_remains_refused (test_broker_principal_startup.Startup.test_legacy_existing_directory_remains_refused) ... ok
+test_legacy_fresh_directory_still_starts_and_stops (test_broker_principal_startup.Startup.test_legacy_fresh_directory_still_starts_and_stops) ... ok
+test_partial_start_failure_closes_acquired_server (test_broker_principal_startup.Startup.test_partial_start_failure_closes_acquired_server) ... FAIL
+test_principal_directory_permissions_checked_before_start (test_broker_principal_startup.Startup.test_principal_directory_permissions_checked_before_start) ... ERROR
+test_principal_identity_checked_before_server_construction (test_broker_principal_startup.Startup.test_principal_identity_checked_before_server_construction) ... ERROR
+test_principal_missing_directory_is_not_auto_created (test_broker_principal_startup.Startup.test_principal_missing_directory_is_not_auto_created) ... FAIL
+test_principal_nonempty_directory_is_never_adopted (test_broker_principal_startup.Startup.test_principal_nonempty_directory_is_never_adopted) ... ok
+test_principal_preprovisioned_directory_reaches_real_entrypoint (test_broker_principal_startup.Startup.test_principal_preprovisioned_directory_reaches_real_entrypoint) ... ERROR
+test_ready_collision_is_not_overwritten_and_owned_server_closes (test_broker_principal_startup.Startup.test_ready_collision_is_not_overwritten_and_owned_server_closes) ... FAIL
+test_ready_publication_failure_closes_owned_server (test_broker_principal_startup.Startup.test_ready_publication_failure_closes_owned_server) ... FAIL
+test_shutdown_collision_is_not_overwritten (test_broker_principal_startup.Startup.test_shutdown_collision_is_not_overwritten) ... FAIL
+test_signal_setup_failure_closes_and_removes_installed_handler (test_broker_principal_startup.Startup.test_signal_setup_failure_closes_and_removes_installed_handler) ... FAIL
+test_success_removes_only_installed_handlers (test_broker_principal_startup.Startup.test_success_removes_only_installed_handlers) ... FAIL
+test_unacquired_start_failure_does_not_clean_foreign_socket (test_broker_principal_startup.Startup.test_unacquired_start_failure_does_not_clean_foreign_socket) ... ok
+
+======================================================================
+ERROR: test_principal_directory_permissions_checked_before_start (test_broker_principal_startup.Startup.test_principal_directory_permissions_checked_before_start)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 117, in test_principal_directory_permissions_checked_before_start
+    await self.invoke(split=True)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 74, in invoke
+    await asyncio.wait_for(cli.serve(self.config(split),self.output),1)
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\scripts\run_provider_broker.py", line 26, in serve
+    require(not output.exists() and output.is_absolute(),'fresh_broker_output_required')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\packages\claw-hermes\provider_egress.py", line 30, in require
+    if not value:raise ExecutionDenied(code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+execution_budget.ExecutionDenied: fresh_broker_output_required
+
+======================================================================
+ERROR: test_principal_identity_checked_before_server_construction (test_broker_principal_startup.Startup.test_principal_identity_checked_before_server_construction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 109, in test_principal_identity_checked_before_server_construction
+    await self.invoke(split=True)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 74, in invoke
+    await asyncio.wait_for(cli.serve(self.config(split),self.output),1)
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\scripts\run_provider_broker.py", line 26, in serve
+    require(not output.exists() and output.is_absolute(),'fresh_broker_output_required')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\packages\claw-hermes\provider_egress.py", line 30, in require
+    if not value:raise ExecutionDenied(code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+execution_budget.ExecutionDenied: fresh_broker_output_required
+
+======================================================================
+ERROR: test_principal_preprovisioned_directory_reaches_real_entrypoint (test_broker_principal_startup.Startup.test_principal_preprovisioned_directory_reaches_real_entrypoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 96, in test_principal_preprovisioned_directory_reaches_real_entrypoint
+    with self.allowed_principal():await self.invoke(split=True)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 74, in invoke
+    await asyncio.wait_for(cli.serve(self.config(split),self.output),1)
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\scripts\run_provider_broker.py", line 26, in serve
+    require(not output.exists() and output.is_absolute(),'fresh_broker_output_required')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\packages\claw-hermes\provider_egress.py", line 30, in require
+    if not value:raise ExecutionDenied(code)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+execution_budget.ExecutionDenied: fresh_broker_output_required
+
+======================================================================
+FAIL: test_same_numeric_uid_in_other_namespace_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_same_numeric_uid_in_other_namespace_refuses_before_any_socket)
+----------------------------------------------------------------------
+execution_budget.ExecutionDenied: broker_transport_outcome_unknown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 192, in test_same_numeric_uid_in_other_namespace_refuses_before_any_socket
+    await self.refused(namespace='user:[99]')
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 183, in refused
+    self.assertRaisesRegex(ExecutionDenied,'broker_gateway_principal_refused')):
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "broker_gateway_principal_refused" does not match "broker_transport_outcome_unknown"
+
+======================================================================
+FAIL: test_unreadable_namespace_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_unreadable_namespace_refuses_before_any_socket)
+----------------------------------------------------------------------
+execution_budget.ExecutionDenied: broker_transport_outcome_unknown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 195, in test_unreadable_namespace_refuses_before_any_socket
+    await self.refused(ns_error=PermissionError('unreadable'))
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 183, in refused
+    self.assertRaisesRegex(ExecutionDenied,'broker_gateway_principal_refused')):
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "broker_gateway_principal_refused" does not match "broker_transport_outcome_unknown"
+
+======================================================================
+FAIL: test_valid_identity_reaches_transport_without_claiming_connection (test_broker_principal_startup.ClientIdentity.test_valid_identity_reaches_transport_without_claiming_connection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 205, in test_valid_identity_reaches_transport_without_claiming_connection
+    own.assert_called_once_with(principal());connect.assert_called_once()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 996, in assert_called_once_with
+    raise AssertionError(msg)
+AssertionError: Expected 'gateway_identity' to be called once. Called 0 times.
+
+======================================================================
+FAIL: test_wrong_local_gateway_identity_refuses_before_any_socket (test_broker_principal_startup.ClientIdentity.test_wrong_local_gateway_identity_refuses_before_any_socket)
+----------------------------------------------------------------------
+execution_budget.ExecutionDenied: broker_transport_outcome_unknown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 189, in test_wrong_local_gateway_identity_refuses_before_any_socket
+    await self.refused(own_error=hp.PrincipalRejected('wrong_uid'))
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 183, in refused
+    self.assertRaisesRegex(ExecutionDenied,'broker_gateway_principal_refused')):
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "broker_gateway_principal_refused" does not match "broker_transport_outcome_unknown"
+
+======================================================================
+FAIL: test_partial_start_failure_closes_acquired_server (test_broker_principal_startup.Startup.test_partial_start_failure_closes_acquired_server)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 143, in test_partial_start_failure_closes_acquired_server
+    self.assertEqual(self.events,['start','close'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['start'] != ['start', 'close']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'close'
+
+- ['start']
++ ['start', 'close']
+
+======================================================================
+FAIL: test_principal_missing_directory_is_not_auto_created (test_broker_principal_startup.Startup.test_principal_missing_directory_is_not_auto_created)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 100, in test_principal_missing_directory_is_not_auto_created
+    with self.allowed_principal(),self.assertRaises(ExecutionDenied):
+                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: ExecutionDenied not raised
+
+======================================================================
+FAIL: test_ready_collision_is_not_overwritten_and_owned_server_closes (test_broker_principal_startup.Startup.test_ready_collision_is_not_overwritten_and_owned_server_closes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 129, in test_ready_collision_is_not_overwritten_and_owned_server_closes
+    with self.assertRaises(FileExistsError):await self.invoke()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: FileExistsError not raised
+
+======================================================================
+FAIL: test_ready_publication_failure_closes_owned_server (test_broker_principal_startup.Startup.test_ready_publication_failure_closes_owned_server)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 137, in test_ready_publication_failure_closes_owned_server
+    self.assertIn('close',self.events)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'close' not found in ['start']
+
+======================================================================
+FAIL: test_shutdown_collision_is_not_overwritten (test_broker_principal_startup.Startup.test_shutdown_collision_is_not_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 166, in test_shutdown_collision_is_not_overwritten
+    with self.assertRaises(FileExistsError):await self.invoke()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: FileExistsError not raised
+
+======================================================================
+FAIL: test_signal_setup_failure_closes_and_removes_installed_handler (test_broker_principal_startup.Startup.test_signal_setup_failure_closes_and_removes_installed_handler)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 155, in test_signal_setup_failure_closes_and_removes_installed_handler
+    self.assertIn('close',self.events)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'close' not found in ['start', ('add', <Signals.SIGINT: 2>), ('add', <Signals.SIGTERM: 15>)]
+
+======================================================================
+FAIL: test_success_removes_only_installed_handlers (test_broker_principal_startup.Startup.test_success_removes_only_installed_handlers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-ipc-principal-20oct\tests\test_broker_principal_startup.py", line 161, in test_success_removes_only_installed_handlers
+    self.assertEqual([x[1] for x in self.events if isinstance(x,tuple) and x[0]=='remove'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     [signal.SIGINT,signal.SIGTERM])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [<Signals.SIGINT: 2>, <Signals.SIGTERM: 15>]
+
+Second list contains 2 additional elements.
+First extra element 0:
+<Signals.SIGINT: 2>
+
+- []
++ [<Signals.SIGINT: 2>, <Signals.SIGTERM: 15>]
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.508s
+
+FAILED (failures=11, errors=3)

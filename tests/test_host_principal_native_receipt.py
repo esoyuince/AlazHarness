@@ -10,7 +10,8 @@ EVIDENCE=ROOT/'evidence/d3b-host-principal-7a19'
 class PrincipalNegativeReceipt(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.report=json.loads((EVIDENCE/'native-denial-hp7a19b.json').read_text(encoding='utf-8'))
+        # Fresh unprivileged run against current sources; original hp7a19b is retained.
+        cls.report=json.loads((EVIDENCE/'native-denial-startup-20oct.json').read_text(encoding='utf-8'))
     def test_all_explicit_denials_recorded(self):
         r=self.report
         self.assertEqual(r['result'],'PASS_DENIAL_ONLY')

@@ -1,0 +1,11 @@
+{
+  "base": "4d86f30",
+  "observedAt": "2026-10-20T23:46:38.023219+03:00",
+  "sourceSha256": {
+    "scripts/run_provider_broker.py": "0205461b7bdea2989ebf48ccd5325919cfef2ef4bbf32cb5ed3ca1df636d733b",
+    "packages/claw-hermes/provider_broker.py": "4a45adfed4aad9d4c82ac49de8ff8cc83865ff7942a50492664cc184166a6f5d",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "tests/test_broker_principal_startup.py": "567c07c9c393d8fa6f79906a1af4eeaa4710b51cd94236894e3f623d594c62ec"
+  },
+  "scope": "pre-fix sources; new regression tests"
+}
