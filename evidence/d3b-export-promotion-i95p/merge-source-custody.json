@@ -1,0 +1,19 @@
+{
+  "result": "PASS_SCOPED_MERGE_CUSTODY",
+  "base": "916f5290981f5cc4775c930fb4674d046cb3cc67",
+  "integratedHead": "80d85488b02b3b8cb4023f41d666b043b356e9a6",
+  "existingSources": 344,
+  "unchangedExistingSources": 343,
+  "modified": [
+    "scripts/qa/export_principal_source.py"
+  ],
+  "added": [
+    "tests/test_principal_export_replace_refs.py"
+  ],
+  "removed": [],
+  "codeCommit": "bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2",
+  "runtimePackagesUnchanged": true,
+  "storageR91FMerged": false,
+  "newGatewayExecution": false,
+  "mainUpdated": false
+}

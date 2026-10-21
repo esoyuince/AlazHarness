@@ -1,5 +1,22 @@
 # AlazHarness — status
 
+## D3B-EXPORT-PROMOTION-I95P — FULL PRIMARY REGRESSION PASS
+
+Active development branch: `alaz/d3b-principal-launch-21oct`; worktree `scratch/worktrees/d3b-principal-launch-21oct`.
+Starting point916f529; independently reviewed exporter branch80d8548 has been fast-forward integrated, preserving original bfaa32b code and all source/evidence history. Only existing source change is exporter git --no-replace-objects; new file adds four inert temporary-Git fixture tests. No namespace, UID, launch, persistence or provider change.
+
+R91F storage remains at85f7470 and NOT ACCEPTED: blocked collector correction is neither applied, rerun, delegated nor replaced. Its known missing-source test is not removed from its branch. G82C remains failed/blocked at e1bc877. G84E native proof remains historical, not rerun here. Root/companion worktrees and maincc7ceba stay unchanged. No lab, model, external network, publication or main merge.
+
+Current task: fresh full regression on promoted primary source; separately run unchanged local static check AFTER runtime tests to avoid concurrent checker load. Source freeze/intent and receipts: evidence/d3b-export-promotion-i95p/. The primary source intentionally has2273 tests and does not contain the still-unqualified R91F storage branch's26 tests. No aggregation of passing subsets across branches. Finish with exact status and local documentation commit only.
+
+Completed primary integration: original bfaa32b code and80d8548 report/evidence are fast-forward incorporated. Fresh full primary Windows2273=2268PASS/5SKIP/0FAIL/0ERROR, exit0,408.974s;345 source hashes unchanged. No test/deadline/source changes during verification; zero old files removed. Final static terminal outcome is recorded in evidence/d3b-export-promotion-i95p/static-final.txt and summary.json; it runs after the full suite. No fresh Linux/Gateway/provider test.
+
+R91F STORAGE remains85f7470, full2295 FAIL with blocked provenance correction; it is NOT merged or certified. G82C remains e1bc877 failed/blocked. Their HEADs/status and blocked source/receipt hashes were rechecked unchanged. Local maincc7ceba unchanged. No push, main merge, lab boot, privileged command, account/service or paid model action. Independent R92S work is not modified.
+
+Continuation: this clean primary is now the integrated G84E plus exporter integrity baseline. The outstanding substantive runtime work is fixed trusted Gateway entrypoint and persistent paired-store lifecycle; G84E writable state remains ephemeral, legacy IPCv2 closed. The separate R91F blocked correction still needs legitimate resolution before any promotion; do not repeat the old triage or treat this different2273 suite as a repair of R91F. Report docs/D3B-EXPORT-PROMOTION-I95P.md. No runtime job remains pending; local documentation/evidence checkpoint follows.
+
+## Preserved exporter branch delivery
+
 ## D3B-EXPORT-INTEGRITY-R91F — SCOPED PASS
 
 Active branch: `alaz/d3b-export-integrity-r91f`; worktree `scratch/worktrees/d3b-export-integrity-r91f`. Base is the committed G84E projection `916f5290981f5cc4775c930fb4674d046cb3cc67` (not the failed G82C candidate).
@@ -1405,3 +1422,13 @@ Original valid-fixture run4FAIL, fixed run31/31PASS. Repaired exporter matches57
 ### R91F terminal result — 2026-10-21T15:11:40.742142+03:00
 
 FullWindows2273 terminal result PASS; code-only commit bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2. Raw first fixture error and four-failure regression retained. Same tests passed after source correction. No code changes after full source freeze; final static gate follows. No lab process started; no denied action replayed.
+
+
+### I95P fresh full suite started — 2026-10-21T16:20:36.985026+03:00
+
+Request90300e3d-7eda-4ca2-b069-a795190173bb running; testedHEAD80d8548;345 sources frozen. No other runtime or static job started. Exact before/after object comparison:343 old sources unchanged, exporter helper changed, one test file added, zero removals. R91F85f7470 NOT merged, blocked collector unchanged. Inspect receipt before rerun; do not repeat pending work.
+
+
+### I95P terminal full verification — 2026-10-21T16:27:38.686450+03:00
+
+Full request90300e3d-7eda-4ca2-b069-a795190173bb completed exit0. Primary sources80d8548 qualified in this working directory. Exact unchanged-source and companion preservation recorded. Main/publication untouched.
