@@ -19,7 +19,7 @@ CHECKS={'actual_target_cli_refused','bounded_diagnostic_no_fallback','owned_exec
 class PostexecReceipt(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.record=json.loads((ROOT/'evidence/d3b-postexec-21oct/native-postexec-001.json').read_text(encoding='utf-8'))
+        cls.record=json.loads((ROOT/'evidence/d3b-postexec-21oct/native-postexec-import-r52a.json').read_text(encoding='utf-8'))
 
     def test_exact_current_source_custody(self):
         r=self.record
