@@ -1,0 +1,54 @@
+{
+  "job": "D3B-LAUNCH-INTEGRATED-C91A",
+  "result": "LOCAL_SCOPED_PASS",
+  "recordedAt": "2026-10-21T04:44:20.889455+03:00",
+  "branch": "alaz/d3b-principal-launch-21oct",
+  "primaryCommit": "9469d58bf1aa9b12fed059fae8df6c51282b4644",
+  "qaCommit": "d0414e24358a4b632080272d799296e40ae1bf94",
+  "sourceSnapshotMatchesFinalPrimary": 9,
+  "windowsFull": {
+    "startedAt": "2026-10-21T04:36:58.739715+03:00",
+    "completedAt": "2026-10-21T04:41:35.184401+03:00",
+    "exitCode": 0,
+    "testsRun": 2200,
+    "skipped": 5,
+    "failures": 0,
+    "errors": 0,
+    "passed": 2195,
+    "timedOut": false,
+    "elapsedSeconds": 276.445,
+    "sourceFileCount": 330,
+    "sourceUnchanged": true,
+    "scope": "fresh full Windows standard suite on merged postexec+QA tree; no privileged execution"
+  },
+  "independentMockedPostexec": {
+    "windows": 22,
+    "linux": 22
+  },
+  "nativeUnprivileged": {
+    "filesAndDescriptors": 26,
+    "postExecRefusalAndInheritance": 16,
+    "launcherDenial": 13
+  },
+  "linuxStandardPrincipalSelection": {
+    "passed": 80,
+    "skipped": 0,
+    "fullLinuxSuite": false
+  },
+  "sourceFilesUnchanged": 330,
+  "existingSourceGitBlobsUnchanged": 328,
+  "inheritedQaEvidenceBlobsUnchanged": 32,
+  "defaultSuiteCountNotIncreasedByMerge": true,
+  "countsNotAdditiveAcrossRuns": true,
+  "localStatic": "PASS",
+  "privilegedExecution": false,
+  "positiveUidTransitionTested": false,
+  "twoHostUidTransportTested": false,
+  "ipcV2Enabled": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "pushed": false,
+  "mainChanged": false,
+  "allSubmittedTestsTerminal": true,
+  "nextGate": "explicitly authorized pre-provisioned isolated trusted installation; real broker UID transition/post-exec then separately implement and qualify Gateway projection"
+}

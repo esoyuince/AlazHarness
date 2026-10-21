@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "existingSourceBlobsUnchanged": 328,
+  "frozenSourcesUnchanged": 330,
+  "qaEvidenceBlobsUnchanged": 32,
+  "newRawReceipts": [
+    {
+      "path": "evidence/d3b-launch-qa-b72d/integrated-c91a-windows.json",
+      "sha256": "c786e1043be77f86648d039b8f98f7a367f9ea5f1512492a4a1a74a5461b0f72"
+    },
+    {
+      "path": "evidence/d3b-launch-qa-b72d/integrated-c91a-linux.json",
+      "sha256": "f621e95a25eabacded067c351f9a8f97fa7bbb68a3ec9c7e89097b0d27f91b6a"
+    },
+    {
+      "path": "evidence/d3b-launch-qa-b72d/integrated-c91a-files-fds.json",
+      "sha256": "e3f6432e2574d09df89002a97fd63115fe852f9c90b818199a677ae24fd8826b"
+    },
+    {
+      "path": "evidence/d3b-postexec-21oct/native-integrated-c91a.json",
+      "sha256": "b69e47bbc6577c43d21399eb801fbe90e1bbb8a5ff2ae88b547b52db6ae7cd76"
+    },
+    {
+      "path": "evidence/d3b-principal-launch-21oct/native-integrated-c91a.json",
+      "sha256": "f1cf13fd59b79eaa1ea8abdb2ab106faac495f69b78282b95701b2dde3dba8f5"
+    }
+  ],
+  "mainAndQaCleanUnchanged": true,
+  "rootNotWritten": true
+}

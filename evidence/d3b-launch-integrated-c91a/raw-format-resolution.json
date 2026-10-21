@@ -1,0 +1,14 @@
+{
+  "firstCheckExit": 2,
+  "cause": "raw Windows CRLF recorded with -text; all reported lines verified to have no trailing spaces/tabs",
+  "changedRules": "evidence-only whitespace=cr-at-eol for own JSON and one new QA JSON",
+  "productWhitespaceRulesChanged": false,
+  "inheritedQaAttributesUnmodified": true,
+  "rawEvidenceModified": false,
+  "reportedPaths": [
+    "evidence/d3b-launch-integrated-c91a/merge-resolution.json",
+    "evidence/d3b-launch-integrated-c91a/selected-native-summary.json",
+    "evidence/d3b-launch-integrated-c91a/sources-frozen.json",
+    "evidence/d3b-launch-qa-b72d/integrated-c91a-windows.json"
+  ]
+}

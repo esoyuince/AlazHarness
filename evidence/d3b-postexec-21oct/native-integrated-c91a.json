@@ -1,0 +1,61 @@
+{
+  "result": "PASS_SCOPED_POSTEXEC",
+  "scope": "unprivileged real exec, NNP/seccomp inheritance, target refusal before config/socket; NOT positive UID reduction",
+  "observedAt": "2026-10-21T04:38:09.602758+03:00",
+  "checks": {
+    "actual_target_cli_refused": true,
+    "bounded_diagnostic_no_fallback": true,
+    "owned_exec_child_completed": true,
+    "same_pid_across_exec": true,
+    "same_real_host_identity_across_exec": true,
+    "same_namespace_across_exec": true,
+    "no_new_privs_inherited": true,
+    "seccomp_filter_mode_inherited": true,
+    "known_recvmsg_deny_inherited": true,
+    "target_rejects_wrong_host_uid_after_exec": true,
+    "private_config_not_opened": true,
+    "broker_directory_never_created": true,
+    "fixture_bytes_unchanged": true,
+    "temporary_fixture_removed": true,
+    "parent_identity_privileges_unchanged": true,
+    "source_bytes_unchanged": true
+  },
+  "checkCount": 16,
+  "details": {
+    "pid": 475,
+    "uid": 1000,
+    "recvmsgErrno": 1
+  },
+  "errorType": null,
+  "sourceSha256": {
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/principal_target.py": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "scripts/run_principal_broker_target.py": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+    "scripts/run_principal_broker.py": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+    "scripts/run_provider_broker.py": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+    "scripts/qa/principal_postexec_linux.py": "ac9675d3cdfeb5499ab9e855e198441ff0666f02493abb412cc9c93437889e0c",
+    "tests/test_principal_target.py": "4fae75a5d606fdb0bd625419e6f36863da2b24c2dede9e463915d823f2440379",
+    "tests/test_principal_postexec_binding.py": "4f27e24f51284510e79eef0252539a5eee37115f60a62e10591e9595fbb02269"
+  },
+  "sourceAfterSha256": {
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/principal_target.py": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "scripts/run_principal_broker_target.py": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+    "scripts/run_principal_broker.py": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+    "scripts/run_provider_broker.py": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+    "scripts/qa/principal_postexec_linux.py": "ac9675d3cdfeb5499ab9e855e198441ff0666f02493abb412cc9c93437889e0c",
+    "tests/test_principal_target.py": "4fae75a5d606fdb0bd625419e6f36863da2b24c2dede9e463915d823f2440379",
+    "tests/test_principal_postexec_binding.py": "4f27e24f51284510e79eef0252539a5eee37115f60a62e10591e9595fbb02269"
+  },
+  "observerUid": 1000,
+  "positiveUidTransitionTested": false,
+  "brokerStarted": false,
+  "gatewayBrokerTwoUidTested": false,
+  "ipcV2MountTested": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "label": "independent-target-windows",
+    "exitCode": 0
+  },
+  {
+    "label": "independent-target-linux",
+    "exitCode": 0
+  },
+  {
+    "label": "native-fd-primary",
+    "exitCode": 0
+  }
+]

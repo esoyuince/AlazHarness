@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "conflictPath": "status.md",
+  "conflictBlocks": 2,
+  "conflictOriginalSha256": "41853ac76ddc4b4ced6b21860834bdc9b56ad0dc43d936c4ce04842438d4b9bf",
+  "statusResolution": "retain both complete narratives and tail logs",
+  "existingSourceBlobsUnchanged": 328,
+  "inheritedQaEvidenceBlobsIdentical": 32,
+  "productChangeByMerge": false,
+  "firstResolutionGuard": "expected one conflict block; detected two and stopped before writes; both blocks then inspected"
+}

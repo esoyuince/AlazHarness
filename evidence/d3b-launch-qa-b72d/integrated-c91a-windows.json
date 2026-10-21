@@ -1,0 +1,39 @@
+{
+  "result": "PASS_SCOPED_MOCKED_BOUNDARIES",
+  "testsRun": 22,
+  "passed": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "observedAt": "2026-10-21T04:37:39.275227+03:00",
+  "sourceRoot": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "sourceSha256": {
+    "packages/claw-hermes/principal_target.py": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/credential_guard.py": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+    "packages/claw-hermes/provider_egress.py": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+    "scripts/run_principal_broker_target.py": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+    "scripts/run_provider_broker.py": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e"
+  },
+  "sourceAfterSha256": {
+    "packages/claw-hermes/principal_target.py": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/credential_guard.py": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+    "packages/claw-hermes/provider_egress.py": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+    "scripts/run_principal_broker_target.py": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+    "scripts/run_provider_broker.py": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e"
+  },
+  "sourceUnchanged": true,
+  "runnerSha256": "d57cf1b505482cceeb8e66d8b5635b6ad1bc0446c0f6d81470653a6ce81e96da",
+  "privilegedKernelStateMocked": true,
+  "targetSourceModified": false,
+  "positiveUidTransitionTested": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0
+}

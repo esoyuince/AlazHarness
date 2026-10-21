@@ -1,0 +1,33 @@
+{
+  "job": "D3B-LAUNCH-QA-B72D",
+  "result": "LOCAL_SCOPED_PASS",
+  "updatedAt": "2026-10-21T02:48:21.679246+03:00",
+  "base": "47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139",
+  "branch": "alaz/d3b-launch-qa-b72d",
+  "nativeCaseCount": 26,
+  "nativeRuns": [
+    "native-files-fds-002.json",
+    "native-primary-files-fds.json"
+  ],
+  "independentPostexecWindows": 22,
+  "independentPostexecLinux": 22,
+  "kernelIdentityMockedInPostexecTests": true,
+  "primarySourceFilesPinned": 9,
+  "primarySourceWasUncommitted": true,
+  "primaryChangedByThisLane": false,
+  "runtimeProductModified": false,
+  "privilegedExecution": false,
+  "twoUidAcceptance": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "mainChanged": false,
+  "pushed": false,
+  "countsNotAdditiveToDefaultSuite": true,
+  "firstFailureRetained": "native-files-fds-001.json",
+  "firstFailureCause": "QA child optional argument parsing, corrected without product edits",
+  "localStaticResult": "PASS",
+  "staticDiscoveredTests": 2167,
+  "existingSourceBlobsUnchanged": 322,
+  "primaryLatestObservedHead": "47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139",
+  "primaryWasStillDirtyAtDelivery": true
+}

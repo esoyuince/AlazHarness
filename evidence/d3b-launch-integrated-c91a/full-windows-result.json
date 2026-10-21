@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-21T04:36:58.739715+03:00",
+  "completedAt": "2026-10-21T04:41:35.184401+03:00",
+  "exitCode": 0,
+  "testsRun": 2200,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "passed": 2195,
+  "timedOut": false,
+  "elapsedSeconds": 276.445,
+  "sourceFileCount": 330,
+  "sourceUnchanged": true,
+  "scope": "fresh full Windows standard suite on merged postexec+QA tree; no privileged execution"
+}

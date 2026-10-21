@@ -1,0 +1,45 @@
+{
+  "result": "PASS_SCOPED_UNPRIVILEGED",
+  "observedAt": "2026-10-21T04:38:14.569505+03:00",
+  "checks": {
+    "kernel_ids_match_current_process": true,
+    "current_user_not_accepted_as_controller": true,
+    "gateway_role_cannot_bypass_projection": true,
+    "contract_not_read_without_host_root": true,
+    "real_cli_refuses_without_target_exec": true,
+    "real_inherited_socket_fd_closed_in_child": true,
+    "real_socket_stdio_refused": true,
+    "parent_owns_socket_after_child_cleanup": true,
+    "untrusted_directory_is_not_adopted": true,
+    "fixture_bytes_unchanged": true,
+    "owned_temporary_directory_removed": true,
+    "observer_identity_and_namespace_unchanged": true,
+    "source_bytes_unchanged": true
+  },
+  "checkCount": 13,
+  "errors": {},
+  "sourceSha256": {
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "scripts/run_principal_broker.py": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+    "tests/test_principal_launch.py": "b4e88014dc1ac35b7e349c9af32ccd86ceb5fe5d8f01b67dc1c93a41ba43b3f4",
+    "scripts/qa/principal_launch_linux.py": "c8b2c758f69e40c100032bf77346bb870dc1b20208fdb5bd30538342a8ef584b",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+  },
+  "sourceAfterSha256": {
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "scripts/run_principal_broker.py": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+    "tests/test_principal_launch.py": "b4e88014dc1ac35b7e349c9af32ccd86ceb5fe5d8f01b67dc1c93a41ba43b3f4",
+    "scripts/qa/principal_launch_linux.py": "c8b2c758f69e40c100032bf77346bb870dc1b20208fdb5bd30538342a8ef584b",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+  },
+  "observedUid": 1000,
+  "observedGid": 1000,
+  "privilegedSyscallsExecuted": false,
+  "positiveUidTransitionTested": false,
+  "gatewayBrokerTwoUidTested": false,
+  "ipcV2MountTested": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0
+}

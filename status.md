@@ -1,12 +1,14 @@
 # AlazHarness — status
 
-## D3B-LAUNCH-INTEGRATED-C91A — IN PROGRESS
+## D3B-LAUNCH-INTEGRATED-C91A — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`.
 Starting post-exec commit: `9469d58bf1aa9b12fed059fae8df6c51282b4644`; independent QA input: `d0414e24358a4b632080272d799296e40ae1bf94`.
 Completed prerequisite: prior full regression is terminal PASS2200/skip5; all nine independent QA source snapshots match the committed post-exec implementation byte-for-byte in this checkout. Integrate both histories/evidence, preserve both status narratives, and qualify the combined tree. Do not inherit acceptance without explicit source matching.
 Scope: local integration and unprivileged tests only; no root/account provisioning, service changes, IPC v2 activation, paid provider, push or main merge. Existing main remains cc7ceba; dirty default root remains untouched.
 Evidence: `evidence/d3b-launch-integrated-c91a/`. Next: merge QA input, inspect conflicts and rerun selected/native QA plus full standard tests on frozen combined sources.
+
+Completed fresh merged-tree tests: full Windows2200=2195PASS/5SKIP/0FAIL/0ERROR; independent22 Windows+Linux; actual Linux file-FD26, post-exec16, launcher-denial13; Linux selected principal80. Source freeze330 unchanged; all328 existing source Git blobs and32 QA evidence blobs preserved. Local static PASS2200; all tests terminal. Merge records both parent histories; read Git HEAD for final integration commit. No push, remote CI or main merge. Report docs/D3B-LAUNCH-INTEGRATED-C91A.md; machine summary evidence/d3b-launch-integrated-c91a/summary.json. No positive UID transition, privileged install or full D3B acceptance.
 
 ## Preserved post-exec checkpoint
 
@@ -24,6 +26,22 @@ OPEN / NOT ACCEPTED: successful root-to-broker UID transition and successful pos
 
 ## Preserved principal-launch checkpoint
 
+
+### Preserved independent QA narrative (historical)
+
+## D3B-LAUNCH-QA-B72D — LOCAL SCOPED PASS
+
+Active branch: `alaz/d3b-launch-qa-b72d`; worktree `scratch/worktrees/d3b-launch-qa-b72d`; base `47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139`.
+
+Independent validation lane. Primary `d3b-principal-launch-21oct` is concurrently implementing D3B-POSTEXEC-21OCT; its status/tests/evidence are uncommitted and must not be overwritten, staged or merged. This lane reviews the existing launch trust boundary and adds independent no-privilege regression/real-kernel observations; it will examine the primary post-exec source only from an explicit source snapshot. No root command, account provisioning, model call, production/main change or privilege-denial bypass.
+
+Evidence: `evidence/d3b-launch-qa-b72d/`. Keep original executions, source pinning and limits explicit. Full two-UID/D3B remains NOT ACCEPTED.
+
+Final scoped result: native file/descriptor26/26 PASS on base and again on primary source (same cases); independent post-exec22/22 Windows and22/22 Linux PASS with explicitly mocked privileged state. Nine primary sources pinned and byte-snapshotted; own scripts/evidence only. Primary product source unchanged by this lane. Original QA fixture failure24/26 retained and corrected; no product fix from these cases. No new full-standard execution claimed; local static PASS2167 discovered. All 322 existing source Git blobs unchanged. Report docs/D3B-LAUNCH-QA-B72D.md; summary evidence/d3b-launch-qa-b72d/summary.json.
+
+Next: primary post-exec writer completes regression/commit; compare its exact source to the9-file QA snapshot, then integrate the QA payload without replacing primary status. Real privileged two-UID acceptance remains blocked on an explicitly authorized trusted installation. No root/account/provisioning, main merge, push, production or model call.
+
+## Preserved primary checkpoint
 
 ## D3B-PRINCIPAL-LAUNCH-21OCT — LOCAL SCOPED PASS
 
@@ -1211,3 +1229,24 @@ Integrated source/evidence commit `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6` pre
 ### D3B-POSTEXEC-21OCT completion — 2026-10-21T02:51:42.644982+03:00
 
 Current top section and summary.json carry observed scoped counts, pending positive gates and terminal request ids. No background test is pending. Runtime sources match the completed full-run manifest; local feature commit follows.
+
+### Preserved independent QA narrative (historical)
+
+### B72D delivery — 2026-10-21T02:50:38.759962+03:00
+
+Independent native26/26 on both source selections; post-exec22/22 Windows and22/22 Linux, all operation receipts terminal. Nine source hashes unchanged at final read; primary HEAD 47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139 with ongoing work. QA branch is separate and local only. Exact commit: Git HEAD after selected-file commit. Full two-UID/D3B remains NOT ACCEPTED.
+
+
+### C91A regression started — 2026-10-21T04:36:58.736542+03:00
+
+Merge conflict resolved preserving both narratives; existing328 source Git blobs unchanged, QA32 inherited evidence blobs unchanged. Full Windows request fa715b27-6019-44c6-9a45-0d1a3b439261 is IN PROGRESS; log evidence/d3b-launch-integrated-c91a/full-windows.txt. Frozen330 sources must not be edited while it runs. Do not repeat a nonterminal test.
+
+
+### C91A selected/native terminal — 2026-10-21T04:41:25.423360+03:00
+
+Request ea6558a4-21a3-4ad5-9e41-d8df1949b6c3 completed exit0: independent22 Windows+Linux, native files26/postexec16/launcher13, Linux standard principal80. All330 source bytes unchanged; wrong-identity/refusal and mocked privilege scope only. Full Windows request fa715b27-6019-44c6-9a45-0d1a3b439261 remains IN PROGRESS at this checkpoint. Positive UID transition requires the explicit isolated trusted installation described in docs/D3B-LAUNCH-INTEGRATED-C91A.md; no root or provisioning attempted.
+
+
+### C91A local completion — 2026-10-21T04:44:20.890874+03:00
+
+Full request fa715b27-6019-44c6-9a45-0d1a3b439261 and selected/native request ea6558a4-21a3-4ad5-9e41-d8df1949b6c3 terminal exit0. Full2200=2195PASS/5SKIP; independent22 each platform; Linux80 selection; native26/16/13. Static staged gate exit0; raw evidence retains original line endings, product checks unchanged. No pending test. Exact next work is positive execution in an explicitly authorized isolated root-controlled installation, not more readiness-only checks; broker stateDB read access and private-budget denial are distinct acceptance gates. IPC v2 remains closed. Main cc7ceba and QA d0414e2 are clean and unchanged; default root not edited.
