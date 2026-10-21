@@ -1,0 +1,26 @@
+{
+  "testedMerge": "58d5b4cf669661b111ffb5980a822c2a698906aa",
+  "mergeParents": [
+    "836a29aecbd545914acb199522a299342d138b10",
+    "0e89518d9438824b6ef6b8a962f4a40392ecff52"
+  ],
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "integrationBranch": "alaz/d3b-lease-joint-j100c",
+  "promotedBy": "fast-forward",
+  "sourceCount": 360,
+  "currentSourceHashesMatchFullSuite": true,
+  "finalFullWindows": {
+    "total": 2369,
+    "passed": 2346,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "push": false,
+  "runtimeSupervisorImplemented": false,
+  "mountedVolumeTested": false,
+  "fullD3BAccepted": false,
+  "recordedAt": "2026-10-21T21:46:02.663221+03:00"
+}

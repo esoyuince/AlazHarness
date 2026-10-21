@@ -1,5 +1,18 @@
 # AlazHarness — status
 
+## D3B-LEASE-JOINT-J100C — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested consolidated merge58d5b4cf669661b111ffb5980a822c2a698906aa joins independent836a29a and prior primary0e89518. Fast-forward promotion complete. Original feature/QA histories and raw evidence remain preserved; no product implementation was rewritten. This follow-up changes documentation/delivery only.
+
+Fresh final fullWindows2369=2346PASS/23SKIP/0FAIL/0ERROR, exit0;360 exact source hashes stable. Own actual Linux79/79 and joint28/28 on ordinary P71C UID23001/GID23003: two profile-owner child lifetimes,11 contenders, live-writer retention, profile released while child remains alive, image retained through normal/abrupt child exit. Concurrent J01C controller-death counterexample is preserved and source-verified, not reexecuted here. Native predicates overlap; never sum them into a single larger trial. Eight offline receipt methods are included in full total.18 Windows skips executed in Linux79; five prior broker opt-in cases were not rerun.
+
+Own first joint27/28 provenance FAIL preserved; new PID-bound child inventory and a fresh native002 yield28/28 PASS. No product, assertion or timeout relaxation. No R91F collector/G82C change. Report docs/D3B-LEASE-JOINT-J100C.md; evidence/d3b-lease-joint-j100c/summary.json, union-full-result.json and delivery.json. Maincc7ceba, unresolved R91F85f7470 and remote refs unchanged by this task; no push. All owned native/full jobs terminal; own temporary fixtures removed and named lab stopped, Ubuntu untouched.
+
+Exact remaining implementation: a real outer volume supervisor must reconcile surviving users/loops/mounts, attach the image only in its private state domain, hold the image lease until every user is reaped and attachment detached, then compose native database/epoch/recovery and actual fixed Hermes admission. The current proofs use SEPARATE inert image and dummy profile fixtures; they are NOT a mounted-image supervisor or persistence acceptance. Successful lock acquisition never alone authorizes reuse. IPCv2 CLOSED/fullD3B OPEN; no root/mount/provider/model/production action occurred here. Do not repeat closed prerequisite tests as substitute implementation work.
+
+## Preserved combined QA qualification
+
+
 ## D3B-LEASE-JOINT-J100C — COMBINED QA QUALIFIED
 
 Active branch alaz/d3b-lease-joint-j100c, worktree scratch/worktrees/d3b-lease-joint-j100c. Inputs independent836a29a and concurrently completed primary0e89518. Both contain identical product implementations; only independent QA and evidence are being joined. Keep J01C orphan-controller counterexample and J100C release-before-process-exit evidence distinct; never add their overlapping counts as one native trial.

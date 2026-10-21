@@ -133,3 +133,7 @@ remain preserved. The final sequential local static gate is recorded separately.
 Once that gate passes, this exact commit may be fast-forwarded to the still
 clean primary at0e89518. A documentation-only delivery records canonical paths
 and the tested merge. No main/push action or additional runtime activation.
+
+## Canonical delivery
+
+Tested consolidated merge `58d5b4cf669661b111ffb5980a822c2a698906aa` was fast-forwarded from0e89518 into `alaz/d3b-principal-launch-21oct`. Canonical worktree is `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Original integration branch remains clean at that tested merge. The following documentation/delivery commit keeps all360 source hashes exact and changes no runtime setting. No push/main update; current status is the newest top entry in status.md.
