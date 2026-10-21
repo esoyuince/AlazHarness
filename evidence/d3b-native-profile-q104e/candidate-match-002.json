@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-22T01:05:53.563278+03:00",
+  "files": {
+    "packages/claw-hermes/credential_guard.py": {
+      "snapshotSha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+      "liveSha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "snapshotSha256": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443",
+      "liveSha256": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443"
+    }
+  },
+  "equal": true,
+  "sourceStillInProgress": true
+}

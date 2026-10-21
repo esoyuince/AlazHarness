@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-22T01:03:33.071319+03:00",
+  "bootstrapSha256": "75a4f1e1de18a1c3ffdb7c7530a9cef342c60590d5a829fbccbea0405c075cba",
+  "files": {
+    "scripts/qa/q104e_metadata_probe.py": "606cc8bac46ff82a250dd16c3aa649f3ffda7650baf89f89a0a5d57962a69a14",
+    "tests/test_q104e_metadata_rules.py": "115e026a9c62014c9f7627fade0706b01e0bc55fcee4aa75a0cab7cbe354fac6",
+    "evidence/d3b-native-profile-q104e/candidate-001.json": "b88627271018eb4862b86e92504d89c5254dcee0ba797cad5366bd693946a932",
+    "evidence/d3b-native-profile-q104e/credential_guard.candidate.py.txt": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+    "evidence/d3b-native-profile-q104e/gateway_state_projection.candidate.py.txt": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443"
+  },
+  "scope": "ordinaryUID23001 own temporary metadata tests only; no root/mount/namespace/Gateway/broker/provider",
+  "sharedLabStop": false
+}

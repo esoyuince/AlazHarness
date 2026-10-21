@@ -1,0 +1,17 @@
+{
+  "observedAt": "2026-10-22T00:58:48.128681+03:00",
+  "sourceWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-profile-admission-f104x",
+  "sourceCommit": "1207d37b5bb92bd107e5ec419cd3b4cac46d12f9",
+  "uncommittedCandidate": true,
+  "files": {
+    "packages/claw-hermes/credential_guard.py": {
+      "sha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+      "snapshot": "credential_guard.candidate.py.txt"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "sha256": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443",
+      "snapshot": "gateway_state_projection.candidate.py.txt"
+    }
+  },
+  "scope": "independent exact-source QA only; no alteration of the implementing feature"
+}

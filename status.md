@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-NATIVE-PROFILE-Q104E — INDEPENDENT QA SCOPED PASS
+
+Branch alaz/d3b-native-profile-q104e; worktree scratch/worktrees/d3b-native-profile-q104e; base1207d37. Preserve canonical P102 fixed-profile projection; do not merge alternative P102X runtime. Implement narrow explicitly opted-in READ_FILE for only launch-PID mountinfo, with existing metadata/proc restrictions unchanged by default. Then use unchanged native Hermes ProfileOwnership/ProfileLease AFTER final exec, including real observer, live writer refusal, lock contention/release and persistence across image remount.
+
+Only approved disposable P71C and NEW unique /opt/alaz-q104e /srv/alaz-q104e /sys/fs/cgroup/alaz-q104e fixtures. No account/package/service/defaultUbuntu/production/CI change, automatic recovery, model send, main or push. Preserve earlier blocked R91F/G82C actions. Exact sources frozen in evidence/d3b-native-profile-q104e/baseline.json. No new test yet; no owned Linux process started. Inspect concurrent work before privileged run; never stop shared lab or overwrite existing fixtures.
+
+Completed independent permission/failure audit of F104X candidate, NOT another runtime implementation. Exact snapshot guard12/12 Windows and Linux; actual ordinary-user P71C three real-exec cases each21 overlapping checks, three fork plus three exec descendants (nine process instances). Default/false deny mountinfo; opt-in reads original launch-PID mountinfo only; descendants do not gain their new self-PID grant, but inherit original numeric grant. Sensitive proc controls and present canary deny after positive open controls; metadata contents were not read. Temporary code/data/process audit clean. No root/mount/namespace/network-sandbox/Hermes/model action by this task.
+
+Own fullWindows2444=2421PASS/23SKIP/0ERROR/0FAIL, exit0;376 source hashes stable and ALL373 prior source files unchanged. Four offline receipts included. First Windows3PASS/9FAIL synthetic-path fixture mismatch retained and fixed only in test double; assertions/candidate unchanged. F104X native002 concurrently completed41 parent/two38-condition profile proofs;87 source records verified against current feature bytes, immutable Hermes pin and prior verified ruamel pins. Our two snapshots match those permission files. That read-only review is NOT our native execution and does not replace final F104X full regression/commit.
+
+Report docs/D3B-METADATA-INDEPENDENT-Q104E.md; evidence/d3b-native-profile-q104e/summary.json. All own jobs terminal; local commit/static follows. Keep canonical P102/F104X single runtime; merge only QA/evidence when F104X terminal and source equality reconfirmed. No alternativeP102X merge, R91F/G82C repair, main/push or fullD3B claim. Maincc7ceba; legacyIPCv2 CLOSED. P71C was started by ordinary test invocation from Stopped; left for concurrent work, no terminate/defaultUbuntu command.
+
+## Preserved canonical P102 record
+
+# AlazHarness — status
+
 ## D3B-STATE-PROJECTION-P102 — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested code cef1cb20fcab605d7b97b8de944e3d96ba1071d9 fast-forwarded from b0b6731; feature alaz/d3b-state-projection-p102 remains preserved/clean. All373 tested source hashes match. This follow-up changes documentation and final static/delivery evidence only.
@@ -3131,3 +3147,18 @@ Fresh native003 actual projection32/32 and two post-exec26/26 cycles PASS; Linux
 ### P102 full regression terminal — 2026-10-22T00:43:46.856251+03:00
 
 Bridge request74339148-6f5a-43d5-bc63-a3bda4100016 completed exit0;2428 tests,23 skips,373 sources stable. Own Linux native003 and cleanup requests are terminal. Final local static precedes commit; no uncertain running test to replay.
+
+
+### Concurrent ownership resolved — 2026-10-22T00:57:19.376116+03:00
+
+F104X is actively implementing the SAME canonical metadata/native-profile integration. Our branch has changed NO product or test code. Do not duplicate or overwrite its work. Scope now independent frozen-source metadata permission QA: default-deny/opt-in/read-only/foreign metadata/descendant behavior in ordinary-user fresh exec; distinguish real kernel tests from mocked unit policy tests. Preserve canonical1207d37 and alternativeP102X; no merge or direct edits to F104X. Observe its final source/acceptance before integration claims. Only ordinary-user temporary fixtures needed for our native QA; shared P71C must not be stopped.
+
+
+### Q104E native permission audit complete — 2026-10-22T01:05:53.584675+03:00
+
+Actual ordinaryUID23001/GID23003 P71C Landlock: three fresh exec cases (default, false, true), each21/21 overlapping checks; fork and exec descendant each deny their own new-PID mountinfo and inherit only original numeric grant. Nine process instances total, not63 unique runs. Linux12/12 rule-failure tests PASS; Windows12/12 after fixture-only path correction. Four offline receipt methods PASS. No root/mount/network sandbox/Gateway/native profile operation. Own temporary code/data removed and separate same-UID process audit clean. P71C was initially Stopped; ordinary QA started it, shared concurrentF104X work means no stop requested. FullWindows request7991de21-13fb-4908-a8be-33af10400015 still being checked; do not edit script/tests while it runs. Candidate hashes matched concurrent files at last read; do not infer completed native profile acceptance from that equality.
+
+
+### Q104E final checkpoint — 2026-10-22T01:10:43.305601+03:00
+
+Full request7991de21-13fb-4908-a8be-33af10400015 terminal exit0; own native001 and receipt jobs terminal. Current376 sources still exact. F104X integration is not overwritten, adopted or claimed complete by this checkpoint. Read own GitHEAD for final QA commit and canonical status before next task.

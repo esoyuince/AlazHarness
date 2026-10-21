@@ -1,0 +1,9 @@
+test_default_false_optin_after_actual_exec (test_q104e_metadata_receipt.MetadataInheritanceReceipt.test_default_false_optin_after_actual_exec) ... ok
+test_descendants_retain_only_original_numeric_grant (test_q104e_metadata_receipt.MetadataInheritanceReceipt.test_descendants_retain_only_original_numeric_grant) ... ok
+test_scoped_limits_and_cleanup (test_q104e_metadata_receipt.MetadataInheritanceReceipt.test_scoped_limits_and_cleanup) ... ok
+test_terminal_result_and_exact_sources (test_q104e_metadata_receipt.MetadataInheritanceReceipt.test_terminal_result_and_exact_sources) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.057s
+
+OK

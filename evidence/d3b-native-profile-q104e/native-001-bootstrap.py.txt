@@ -1,0 +1,25 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,tempfile,subprocess,sys
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+payload=json.load(sys.stdin);files=payload['files'];assert 1<len(files)<10
+with tempfile.TemporaryDirectory(prefix='alaz-q104e-code-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,item in files.items():
+  path=PurePosixPath(name);assert not path.is_absolute() and '..' not in path.parts
+  assert path.parts[0] in ('scripts','tests','evidence')
+  data=item['text'].encode();assert hashlib.sha256(data).hexdigest()==item['sha256']
+  target=root/name;target.parent.mkdir(parents=True,exist_ok=True)
+  with target.open('xb') as f:f.write(data)
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root),'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+ tests=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_q104e_metadata_rules.py','-v'],cwd=root,env=env,capture_output=True,text=True,timeout=35)
+ result={'unitExitCode':tests.returncode,'unitStdout':tests.stdout,'unitStderr':tests.stderr,'sourceSha256':{n:v['sha256'] for n,v in files.items()}}
+ if tests.returncode==0:
+  r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/q104e_metadata_probe.py')],cwd=root,env=env,capture_output=True,text=True,timeout=130)
+  result.update(nativeExitCode=r.returncode,nativeStdout=r.stdout,nativeStderr=r.stderr)
+ result['sourcesUnchanged']=all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items())
+result['temporaryCodeRemoved']=not root.exists()
+result['rootUsed']=False
+print(json.dumps(result),flush=True)
+sys.exit(0 if result.get('nativeExitCode')==0 and tests.returncode==0 and result['sourcesUnchanged'] and result['temporaryCodeRemoved'] else 1)
