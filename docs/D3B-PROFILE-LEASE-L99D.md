@@ -158,3 +158,7 @@ Local static is executed after full tests, not concurrently. Production/main,
 prior failed drafts, vendor and default Ubuntu configuration are untouched.
 
 Initial static checker failed JSONDecodeError because native001 shell stdout was plain text incorrectly named .json. The identical raw bytes now reside in native-001-stdout.txt; raw-output-extension-review.json records both paths and SHA256. No scanner rule, test or product source was changed. The first static-final.txt remains the failed output; static-after-format.txt is the separate terminal rerun.
+
+## Local integration delivery
+
+Qualified code/evidence commit `f71df7b1410a52ca1ed4fda83b9d558ffc8721f5` was fast-forward promoted to `alaz/d3b-principal-launch-21oct`. All353 tested source bytes match in the primary worktree. Feature branch is preserved. The subsequent commit contains only this exact handoff and final primary static evidence. Main remainscc7ceba; no push/GitHub CI occurred.
