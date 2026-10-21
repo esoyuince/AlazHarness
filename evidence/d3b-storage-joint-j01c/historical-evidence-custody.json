@@ -1,0 +1,8 @@
+{
+  "result": "PASS_GIT_BLOB_CUSTODY",
+  "unchangedEvidenceFiles": {
+    "profile": 36,
+    "image": 37
+  },
+  "noOriginalReceiptRewritten": true
+}

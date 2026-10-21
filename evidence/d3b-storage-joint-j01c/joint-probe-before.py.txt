@@ -1,0 +1,163 @@
+"""Merged image/profile ownership interaction, in ordinary-user owned fixtures.
+
+The image is INERT and NOT mounted. The profile uses pinned native Hermes
+ownership and dummy SQLite tables. This is NOT a storage supervisor, actual
+Gateway, orphan-mount reconciliation or persistent-volume acceptance.
+"""
+from __future__ import annotations
+import argparse
+from contextlib import closing
+from dataclasses import asdict
+import hashlib
+import json
+import os
+from pathlib import Path
+import selectors
+import sqlite3
+import subprocess
+import sys
+import tempfile
+
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts/qa'))
+import l99d_profile_lease_probe as profile_probe
+
+
+def identity():
+    return {'uids':os.getresuid(),'gids':os.getresgid(),'groups':os.getgroups(),
+            'user':os.readlink('/proc/self/ns/user'),'mount':os.readlink('/proc/self/ns/mnt')}
+
+
+def image_child(home,path,mode):
+    assert path.parent.parent==Path('/tmp') and path.parent.name.startswith('alaz-j01c-image-')
+    assert (path.parent/'.j01c-owned').read_text()=='inert-fixture-only'
+    assert path.name=='inert.img'
+    profile_probe.setup(home)
+    import state_image_lease as image
+    pin_data=json.loads(sys.stdin.readline());pin=image.ImagePin(**pin_data)
+    assert pin.path==str(path)
+    try:held=image.acquire_image_lease(pin)
+    except image.VolumeLeaseRejected as exc:
+        print(json.dumps({'state':'REFUSED','reason':str(exc),'pid':os.getpid()}),flush=True)
+        return 77
+    print(json.dumps({'state':'ACQUIRED','pid':os.getpid(),'imageInode':path.stat().st_ino}),flush=True)
+    if mode=='image-hold':
+        assert sys.stdin.readline()=='ABRUPT\n'
+        os._exit(73)
+    held.close();return 0
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mode',choices=('main','image-try','image-hold'),default='main')
+    parser.add_argument('--home',type=Path);parser.add_argument('--image',type=Path)
+    args=parser.parse_args()
+    if args.mode!='main':return image_child(args.home,args.image,args.mode)
+    assert sys.platform=='linux' and os.getuid()==os.geteuid()==23001 and os.getgid()==23003
+    initial=identity();mount_before=Path('/proc/self/mountinfo').read_bytes()
+    checks={};children=[];attempts=[];error=None;forced=[];outer=None;manifest=None
+    with tempfile.TemporaryDirectory(prefix='alaz-j01c-image-',dir='/tmp') as volume_tmp,          tempfile.TemporaryDirectory(prefix='alaz-l99d-profile-',dir='/tmp') as profile_tmp:
+        volume=Path(volume_tmp).resolve();home=Path(profile_tmp).resolve()
+        volume.chmod(0o700);home.chmod(0o700)
+        (volume/'.j01c-owned').write_text('inert-fixture-only')
+        (home/'.l99d-owned').write_text('owned-fixture-only')
+        path=volume/'inert.img';path.write_bytes(b'\0'*65536);path.chmod(0o600)
+        (home/'gateway.lock').write_bytes(b'');(home/'gateway.lock').chmod(0o600)
+        for name in ('state.db','runs_idempotency.db'):
+            with closing(sqlite3.connect(home/name)) as db:
+                db.execute('CREATE TABLE owned_fixture(marker TEXT)')
+                db.execute("INSERT INTO owned_fixture VALUES ('j01c')");db.commit()
+            (home/name).chmod(0o600)
+        native,profile,mounts,manifest=profile_probe.setup(home)
+        import state_image_lease as image
+        s=path.stat();d=volume.stat()
+        pin=image.ImagePin(str(path),s.st_dev,s.st_ino,s.st_size,s.st_uid,s.st_gid,d.st_dev,d.st_ino)
+        serialized=json.dumps(asdict(pin))+'\n'
+        expected=profile_probe.expected_for(home,mounts)
+        before_db=profile_probe.stats(home);image_hash=hashlib.sha256(path.read_bytes()).hexdigest()
+        lock_inode=(home/'gateway.lock').stat().st_ino
+        env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(ROOT),'HERMES_HOME':str(home)}
+        profile_cmd=[sys.executable,'-I','-B',str(ROOT/'scripts/qa/l99d_profile_lease_probe.py'),'--home',str(home)]
+        image_cmd=[sys.executable,'-I','-B',str(Path(__file__).resolve()),'--home',str(home),'--image',str(path)]
+        def one(kind):
+            command=profile_cmd+['--mode','contend'] if kind=='profile' else image_cmd+['--mode','image-try']
+            r=subprocess.run(command,input=serialized if kind=='image' else None,
+                cwd=ROOT,env=env,text=True,capture_output=True,timeout=12)
+            row=json.loads(r.stdout);assert not r.stderr
+            attempts.append({'kind':kind,'exitCode':r.returncode,**row})
+            return r.returncode,row
+        def start(kind):
+            command=profile_cmd+['--mode','hold'] if kind=='profile' else image_cmd+['--mode','image-hold']
+            proc=subprocess.Popen(command,cwd=ROOT,env=env,text=True,
+                stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            children.append(proc)
+            if kind=='image':proc.stdin.write(serialized);proc.stdin.flush()
+            with selectors.DefaultSelector() as selector:
+                selector.register(proc.stdout,selectors.EVENT_READ)
+                assert selector.select(12),'owned_child_ready_timeout'
+                ready=json.loads(proc.stdout.readline())
+            assert ready['state']=='ACQUIRED' and ready['pid']==proc.pid
+            return proc
+        def abrupt(proc):
+            rest,stderr=proc.communicate('ABRUPT\n',timeout=12)
+            assert not rest and not stderr and proc.returncode==73
+        try:
+            outer=image.acquire_image_lease(pin)
+            checks['outer_image_acquired']=outer.confirm()['state']=='EXCLUSIVE_IMAGE_LEASE_HELD'
+            holder=start('profile')
+            checks['native_profile_child_started']=holder.poll() is None
+            code,value=one('image');checks['image_contender_refused_during_profile']=code==77 and value['reason']=='volume_busy'
+            code,value=one('profile');checks['profile_contender_refused_during_image']=code==77 and value['reason']=='profile_already_owned'
+            abrupt(holder);checks['profile_child_abrupt_exit_reaped']=holder.returncode==73
+            checks['image_lease_survives_profile_exit']=outer.confirm()['state']=='EXCLUSIVE_IMAGE_LEASE_HELD'
+            code,value=one('image');checks['image_contender_still_refused_after_profile_exit']=code==77 and value['reason']=='volume_busy'
+            code,value=one('profile');checks['new_profile_owner_after_old_exit']=code==0 and value['state']=='ACQUIRED'
+            checks['outer_lease_independent_of_profile_restart']=outer.confirm()['state']=='EXCLUSIVE_IMAGE_LEASE_HELD'
+            outer.close();outer=None
+            code,value=one('image');checks['new_image_owner_only_after_release']=code==0 and value['state']=='ACQUIRED'
+            # Independent supervised children model surviving users. This is
+            # NOT a mounted-volume orphan or a parent-child production topology.
+            survivor=start('profile');controller=start('image')
+            code,value=one('image');checks['second_image_owner_excludes_contender']=code==77 and value['reason']=='volume_busy'
+            abrupt(controller);checks['image_controller_abrupt_exit_reaped']=controller.returncode==73
+            code,value=one('image');checks['image_available_after_controller_death']=code==0 and value['state']=='ACQUIRED'
+            code,value=one('profile');checks['profile_still_owned_when_image_available']=survivor.poll() is None and code==77 and value['reason']=='profile_already_owned'
+            abrupt(survivor);checks['remaining_profile_child_reaped']=survivor.returncode==73
+            code,value=one('profile');checks['profile_reacquired_after_actual_owner_exit']=code==0 and value['state']=='ACQUIRED'
+            checks['database_contents_and_inodes_unchanged']=profile_probe.stats(home)==before_db
+            checks['image_content_and_inode_unchanged']=hashlib.sha256(path.read_bytes()).hexdigest()==image_hash and path.stat().st_ino==pin.inode
+            checks['native_profile_lock_inode_preserved']=(home/'gateway.lock').stat().st_ino==lock_inode
+            checks['all_children_reaped']=all(p.poll() is not None for p in children)
+        except BaseException as exc:error=type(exc).__name__+':'+str(exc)[:200]
+        finally:
+            for proc in children:
+                if proc.poll() is None:
+                    forced.append(proc.pid);proc.kill();proc.communicate(timeout=5)
+            if outer is not None:outer.close()
+        imported={}
+        for module in list(sys.modules.values()):
+            filename=getattr(module,'__file__',None)
+            if filename:
+                f=Path(filename).resolve()
+                if f.is_relative_to(ROOT) and f.suffix=='.py':
+                    name=f.relative_to(ROOT).as_posix();h=hashlib.sha256(f.read_bytes()).hexdigest()
+                    assert manifest['files'][name]==h;imported[name]=h
+        checks['both_native_and_image_sources_imported']=all(n in imported for n in (
+            'packages/claw-hermes/state_image_lease.py','packages/claw-hermes/gateway_profile_lease.py',
+            'vendor-native/gateway/runtime_ownership.py','vendor-native/gateway/status.py'))
+        checks['source_bytes_unchanged']=all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest['files'].items())
+    checks['owned_fixture_directories_removed']=not Path(volume_tmp).exists() and not Path(profile_tmp).exists()
+    checks['identity_and_mounts_unchanged']=identity()==initial and Path('/proc/self/mountinfo').read_bytes()==mount_before
+    checks['no_forced_cleanup']=not forced
+    report={'result':'PASS_JOINT_LEASE_INTERACTION' if error is None and all(checks.values()) else 'FAIL',
+        'checks':checks,'checkCount':len(checks),'error':error,'attempts':attempts,
+        'childExitCodes':[p.returncode for p in children],'sourceSha256':manifest['files'],
+        'importedSources':imported,'uid':os.getuid(),'gid':os.getgid(),'lockingMocked':False,
+        'counterexampleObserved':'image lease available while independent native profile owner still lives',
+        'controllerReconciliationImplemented':False,'imageMounted':False,'rootCommand':False,
+        'realHermesGatewayStarted':False,'fullD3BAccepted':False,'providerCalls':0,
+        'scope':'two complementary real leases on separate dummy fixtures; not mounted-image persistence'}
+    print(json.dumps(report,sort_keys=True))
+    return 0 if report['result']=='PASS_JOINT_LEASE_INTERACTION' else 1
+
+if __name__=='__main__':raise SystemExit(main())

@@ -1,0 +1,3 @@
+# Keep exact process logs and JSON bytes.
+*.txt -text -diff
+*.json -text whitespace=cr-at-eol

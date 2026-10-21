@@ -1,0 +1,10 @@
+{
+  "cause": "joint parent did not acquire a native profile and therefore did not import gateway.status; the original assertion confused parent and child inventories",
+  "beforeSha256": "c7ba58ced908991dafdfc2bc713c049dc419b76a8d6770ba55cd98e283a46d0e",
+  "afterSha256": "c8e6a28a93fe02788c082ef282fd08b3e7fc2d9d12bb349c71171b4447c1f12d",
+  "change": "each owned native profile/image worker now emits its actual acquired-state source inventory and PID; parent verifies exact per-process manifest entries",
+  "firstRunPreserved": "native-001.json",
+  "priorR91FCodeChanged": false,
+  "productCodeChanged": false,
+  "newLinuxRunRequired": true
+}

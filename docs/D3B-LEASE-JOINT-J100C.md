@@ -111,3 +111,25 @@ Current status: status.md. Final tested merge commit is recorded on delivery.
 ## Independent full result and concurrent primary
 
 Current complete Windows execution2365 total=2342PASS/23SKIP/0FAIL/0ERROR, exit0;358 sources unchanged. The previous native79 and28-condition records apply to exact current product/QA bytes, not a reconstructed result. Primary separately completed the same product merge plus J01C QA at0e89518. Its code/evidence are not overwritten or counted as this trial. Independent merge is checkpointed first; a fresh final regression is required when joining both QA contributions.
+
+## Final union qualification
+
+Independent merge836a29a (our qualified2365 suite) is joined with concurrently
+completed primary0e89518 (J01C). Products are byte-identical; incoming new source
+consists only of the other QA runner and its four receipt methods. The J01C
+controller-death counterexample and our ordered child-teardown proof complement
+each other. Preserve both raw first failures and separately executed successes;
+never sum native predicates into a fictitious larger single trial.
+
+NEW final full execution:2369 total =2346 PASS /23 SKIP /0 errors /0 failures,
+exit0,203.615s, all360 source hashes stable. Both sets of receipt tests are in
+that total. Eight offline receipt methods are not eight new Linux executions.
+The final48 copied native sources for our Linux trial still match this union.
+No further native run was performed after the evidence-only union, and no old
+Windows result was relabeled as its regression. All34 incoming J01C and27 prior
+J100C evidence blobs match their input commits; the earlier73 L99D/V98R files
+remain preserved. The final sequential local static gate is recorded separately.
+
+Once that gate passes, this exact commit may be fast-forwarded to the still
+clean primary at0e89518. A documentation-only delivery records canonical paths
+and the tested merge. No main/push action or additional runtime activation.

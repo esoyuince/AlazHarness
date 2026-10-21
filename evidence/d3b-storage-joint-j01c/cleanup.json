@@ -1,0 +1,17 @@
+{
+  "audit": {
+    "uid": 23001,
+    "ownedPrefixEntries": [],
+    "matchingProcessIds": [],
+    "otherUserPythonPids": []
+  },
+  "stoppedByThisTask": true,
+  "stopExitCode": 0,
+  "finalList": {
+    "encoding": "utf-16-le",
+    "text": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Stopped         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n",
+    "sha256": "36d2d349020c01993f757bf10558175c67ae8504365ac588b61251b4801867c4"
+  },
+  "unrelatedUbuntuAction": false,
+  "completedAt": "2026-10-21T21:30:19.091913+03:00"
+}

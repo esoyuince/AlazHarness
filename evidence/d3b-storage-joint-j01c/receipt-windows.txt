@@ -1,0 +1,9 @@
+test_acquired_child_pid_and_executed_sources_are_bound (test_joint_lease_j01c_receipt.JointLeaseReceipt.test_acquired_child_pid_and_executed_sources_are_bound) ... ok
+test_counterexample_never_claims_reconciliation_or_persistence (test_joint_lease_j01c_receipt.JointLeaseReceipt.test_counterexample_never_claims_reconciliation_or_persistence) ... ok
+test_first_failure_and_source_correction_preserved (test_joint_lease_j01c_receipt.JointLeaseReceipt.test_first_failure_and_source_correction_preserved) ... ok
+test_terminal_counts_and_current_sources (test_joint_lease_j01c_receipt.JointLeaseReceipt.test_terminal_counts_and_current_sources) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.037s
+
+OK

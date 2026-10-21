@@ -1,5 +1,48 @@
 # AlazHarness — status
 
+## D3B-LEASE-JOINT-J100C — COMBINED QA QUALIFIED
+
+Active branch alaz/d3b-lease-joint-j100c, worktree scratch/worktrees/d3b-lease-joint-j100c. Inputs independent836a29a and concurrently completed primary0e89518. Both contain identical product implementations; only independent QA and evidence are being joined. Keep J01C orphan-controller counterexample and J100C release-before-process-exit evidence distinct; never add their overlapping counts as one native trial.
+
+New complete union regression is required. All input sources/receipts are preserved. No root, mount, provider, actual Gateway, R91F correction, production or main/push action. The user-lab code and own fixtures are already removed and P71C stopped. No new native run is necessary to assert byte identity, nor is one claimed. Final supervisor/attached-image/admission integration remains unimplemented. Evidence evidence/d3b-lease-joint-j100c/.
+
+Completed new final union fullWindows2369=2346PASS/23SKIP/0FAIL/0ERROR, exit0;360 hashes stable. Fresh own Linux79/79 and joint28/28 with two real child owner lifetimes,11 contenders; no forced cleanup. Parent image lock persists after native profile release and after normal/abrupt child exit. Concurrent J01C controller-death counterexample retained, not rerun. Existing product sources unchanged. First own27/28 provenance FAIL and corrected new run remain separate. Source-tested independent merge836a29a +primary0e89518; final static precedes local fast-forward. No code/test deadline weakened; no mounted volume, real Gateway, production supervisor, R91F fix, main or push.
+
+## Concurrent primary J01C record (preserved)
+
+# AlazHarness — status
+
+## D3B-STORAGE-JOINT-J01C — QUALIFIED AND DEVELOPMENT-INTEGRATED
+
+Active branch `alaz/d3b-principal-launch-21oct`; canonical worktree `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Tested two-parent merge `a528b725f865f28284c10c92654346cee3ea0b48` joins primary L99D f7f12ed and image V98R681ddd9. Fast-forward promotion complete; original integration and feature branches/evidence are retained. This follow-up changes only documentation/delivery/static receipts.
+
+Fresh merged full Windows2365=2342PASS/23SKIP/0FAIL/0ERROR, exit0. Linux79/79 selected methods with0 skips; fresh native profile26 and joint interaction25 predicates PASS. Four offline receipt tests included in full count. All358 current source files stable; all356 old union sources unchanged;73 historical evidence Git blobs preserved. Source/test assertions and deadlines not weakened.18 image-native Windows skips executed on Linux;5 old broker opt-in cases NOT rerun. Final integration static PASS2365; promoted-source static is recorded separately. Report docs/D3B-STORAGE-JOINT-J01C.md; evidence/d3b-storage-joint-j01c/summary.json and delivery.json.
+
+The first joint source-inventory assertion failed24/25 because it confused parent and child import inventories. Preserve native001 and before-source; QA now records actual acquired child PID/source inventories. A NEW native002 passed, not reinterpretation. R91F's blocked collector is untouched/unresolved and excluded; this merge is not its repair.
+
+Important observed boundary: image flock becomes available after the image owner dies while an independent native profile owner can still live. QA used separate inert image and dummy SQLite profile fixtures, NOT a mounted image or real Gateway process topology. The merged primitives are NOT an outer volume supervisor. Exact next: implement explicit surviving-user/loop/mount reconciliation and retain image lease until users are reaped and attachment detached, then connect actual database/epoch/recovery checks before Gateway admission. No automatic retry of unknown storage effects. Full D3B OPEN; legacy IPCv2 CLOSED.
+
+Own P71C code/fixtures removed and lab stopped; Ubuntu only observed, not changed. No root/format/mount/namespace/account/service/provider/model/main/push action. All owned native/full/statics are terminal. Local maincc7ceba and R91F85f7470 remain unchanged. Read Git HEAD for the documentation-only final checkpoint.
+
+## Preserved integration execution record
+
+
+## D3B-STORAGE-JOINT-J01C — TESTED; FINAL LOCAL GATE
+
+Active integration branch `alaz/d3b-storage-joint-j01c`; worktree `scratch/worktrees/d3b-storage-joint-j01c`. Parents: primary f7f12ed (native profile ownership L99D) + image lease681ddd9 (V98R); common baselinebb30a99. Preserve both histories and original receipts. Only status.md conflicts; both prior records follow intact. No product change is implied by merging complementary leases.
+
+Task: verify merged code with fresh full Windows regression and existing approved P71C ordinary-user Linux tests; add a bounded cross-process interaction test only if needed. No root/format/mount/namespace/account/provider action, real Gateway, R91F collector edit/rerun, G82C denied edit, main update or push. No complete persistent-volume/admission claim. Existing code/evidence frozen. Evidence: evidence/d3b-storage-joint-j01c/. Never replay pending jobs; record terminal receipts before promotion. Primary stays unchanged until reviewed fast-forward.
+
+Completed fresh Linux002:79/79 selected methods, native profile26 predicates, joint25 predicates, ordinary P71C UID23001/GID23003; actual acquired child PID/source inventories, no mocked locking. First joint24/25 source-inventory assertion failure retained; corrected QA and a NEW successful native run, no old receipt rewriting. Full Windows2365=2342PASS/23SKIP/0FAIL/0ERROR, exit0;358 source hashes stable,356 original input sources unchanged.73 input evidence Git blobs preserved. All own tests terminal, fixtures gone, lab stopped. Report docs/D3B-STORAGE-JOINT-J01C.md; evidence/d3b-storage-joint-j01c/summary.json. Final sequential static gate precedes commit/promotion.
+
+Key observed boundary: an image controller can exit and free its flock while an independent native profile owner still lives. The QA uses separate inert image/profile fixtures, NOT a mounted volume or actual Gateway topology. Next implement trusted outer image-user/attachment lifecycle and detach-before-unlock; actual persistent-domain startup/recovery/admission remains NOT RUN. R91F remains separate/unqualified; no blocked edit rerun. Main and remote unchanged.
+
+
+
+## Independent J100C record (preserved)
+
+# AlazHarness — status
+
 ## D3B-LEASE-JOINT-J100C — INDEPENDENT MERGE QUALIFIED
 
 Active branch alaz/d3b-lease-joint-j100c; worktree scratch/worktrees/d3b-lease-joint-j100c. Inputs: primary f7f12ed (qualified native profile lifecycle L99D) and volume681ddd9 (qualified controller image lease V98R), common basebb30a99. Merge preserves both histories; no unqualified R91F/G82C changes. Goal: one current-source test baseline and cross-process ownership/teardown checks without inventing mounted-volume or Hermes admission acceptance.
@@ -2986,3 +3029,8 @@ Fresh native002 exit0:79/79 Linux methods and28/28 joint conditions, two actual 
 ### J100C current-source full result
 
 Full Windows2365=2342PASS/23SKIP/0FAIL/0ERROR, exit0.358 source hashes unchanged;73 input evidence Git blobs preserved. Fresh Linux79 and joint28 passed after own QA provenance correction; first failure retained. Primary independently integrated same products at0e89518 with complementary J01C QA. It is NOT overwritten. This checkpoint is the independent tested merge; next combine the two QA histories and qualify that exact union. No new product, mount or Gateway acceptance.
+
+
+### J100C terminal union result — 2026-10-21T21:44:48.323888+03:00
+
+Full request6ce1a405-5bf6-4ae3-a092-4d0fffe30015 terminal exit0. Both tested histories and input evidence preserved. Exact next: real outer volume-user/attachment lifecycle and detach-before-unlock, not another lease-only readiness declaration. Legacy IPCv2 CLOSED/fullD3B OPEN. Final source/merge/static proof in evidence/d3b-lease-joint-j100c/.

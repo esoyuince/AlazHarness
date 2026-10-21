@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "total": 2369,
+  "discovered": 2369,
+  "passed": 2346,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 360,
+  "sourcesUnchanged": true,
+  "elapsedSeconds": 203.615,
+  "completedAt": "2026-10-21T21:43:37.157111+03:00",
+  "mergeInputs": [
+    "836a29aecbd545914acb199522a299342d138b10",
+    "0e89518d9438824b6ef6b8a962f4a40392ecff52"
+  ],
+  "collection": "new full unittest result object; includes both independent receipt modules",
+  "newNativeRun": false
+}

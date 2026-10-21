@@ -1,0 +1,49 @@
+{
+  "job": "D3B-LEASE-JOINT-J100C",
+  "result": "PASS_COMBINED_QA_DEVELOPMENT_BASELINE",
+  "completedAt": "2026-10-21T21:44:48.323888+03:00",
+  "mergeInputs": [
+    "836a29aecbd545914acb199522a299342d138b10",
+    "0e89518d9438824b6ef6b8a962f4a40392ecff52"
+  ],
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2369,
+    "discovered": 2369,
+    "passed": 2346,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "expectedFailures": 0,
+    "unexpectedSuccesses": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 360,
+    "sourcesUnchanged": true,
+    "elapsedSeconds": 203.615,
+    "completedAt": "2026-10-21T21:43:37.157111+03:00",
+    "mergeInputs": [
+      "836a29aecbd545914acb199522a299342d138b10",
+      "0e89518d9438824b6ef6b8a962f4a40392ecff52"
+    ],
+    "collection": "new full unittest result object; includes both independent receipt modules",
+    "newNativeRun": false
+  },
+  "currentSourceCount": 360,
+  "ourFreshLinuxMethods": 79,
+  "ourFreshNativeJointConditions": 28,
+  "ourActualChildOwnerLifetimes": 2,
+  "ourContenders": 11,
+  "concurrentNativeEvidence": "J01C retained and source-verified, not rerun by this lane",
+  "independentFirstFailurePreserved": true,
+  "oldProductSourcesUnchanged": true,
+  "productionTeardownGuardImplemented": false,
+  "imageMounted": false,
+  "realGatewayTested": false,
+  "physicalDurabilityTested": false,
+  "R91FRepaired": false,
+  "mainChanged": false,
+  "push": false,
+  "paidModelCalls": 0,
+  "fullD3BAccepted": false
+}

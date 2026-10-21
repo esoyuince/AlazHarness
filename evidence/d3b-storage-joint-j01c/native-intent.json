@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-21T21:27:43.876400+03:00",
+  "commandPrefix": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "alazgateway",
+    "--cd",
+    "/tmp",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c"
+  ],
+  "bootstrapSha256": "9c8e9ad3d4c24cb6ee92b174e7749646e9b161d515bc8b3ba2f2567dba3705ad",
+  "fileCount": 48,
+  "noRootOrMount": true,
+  "existingR91FCodeUsed": false
+}
