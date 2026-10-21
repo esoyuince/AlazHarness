@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-PROFILE-ADMISSION-F104X — QUALIFIED NATIVE-PROFILE SLICE
+
+Branch alaz/d3b-profile-admission-f104x; worktree scratch/worktrees/d3b-profile-admission-f104x; base1207d37. Keep canonical P102 fixed target/strict profile inventory and baseline G84E path; do NOT merge alternative P102X runtime or blocked R91F/G82C work. Qualify only explicit READ_FILE access to own numeric-PID mountinfo and native Hermes ProfileLease after final exec in the existing canonical confined volume path. No broad proc, foreign process, environment, memory, descriptor, writer or executable metadata grant.
+
+Only approved disposable P71C and new owned /opt/alaz-f104x, /srv/alaz-f104x and cgroup fixtures may be used; no existing images/repositories/accounts/services/default Ubuntu/CI changes. Existing native ownership and mount observer must be used unchanged. Actual Hermes Gateway/provider/model/paired-store recovery remain outside this slice; IPCv2 remains closed. First code paths/test failures retained. Evidence evidence/d3b-profile-admission-f104x/. No test underway at start.
+
+Completed current native002 on canonical P102 runtime: explicit READ_FILE-only launch-PID mountinfo; default stays denied. Unchanged native Hermes ProfileLease/ownership/mount observer run AFTER final exec as real UID23001/GID23003. Two final target lifetimes,41 parent predicates/38 each target allPASS;4 native contenders prove exclusion then post-release acquisition; live writer keeps native lock and live process keeps image lease even after native profile release. Two authenticated broker pings/0 provider sends. First transport missed existing helper dependency, not a product permission bug; first failed image/output archived unchanged and new native002 follows complete source closure.
+
+Fresh fullWindows2445=2422PASS/23SKIP/0FAIL/0ERROR,exit0;378 source hashes stable;370 prior sources unchanged. Linux55/55 selected methods PASS;new contract10/receipt7 are full-suite subsets. Separate independent Q104E rule12/12 against exact same guard snapshot PASS, not added to own full count. PriorP102 native receipt still binds original immutable source; newF104X current-source proof is separate. Two product files changed, no existing owner/observer implementation rewritten. Report docs/D3B-PROFILE-ADMISSION-F104X.md; evidence/d3b-profile-admission-f104x/summary.json.
+
+Owned lab cleanup audit has no live process/loop/fence/cgroup/socket/anchor; two64MiB images/code generations retained unattached. Do not stop shared lab while independent Q104E may be active; no defaultUbuntu/account/service/production/CI changes. No paid model/provider dispatch, main or push. Exact next: native database connection/schema and epoch/recovery checks in final admitted process, then actual fixed Hermes request/broker ledger path. QA currently uses dummy SQLite schema; full Gateway/paired atomic recovery/power-loss NOT accepted. LegacyIPCv2 CLOSED/fullD3B OPEN. Final static/local code commit before safe development promotion. All own runtime and full test operations terminal.
+
+## Preserved canonical P102
+
+# AlazHarness — status
+
 ## D3B-STATE-PROJECTION-P102 — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested code cef1cb20fcab605d7b97b8de944e3d96ba1071d9 fast-forwarded from b0b6731; feature alaz/d3b-state-projection-p102 remains preserved/clean. All373 tested source hashes match. This follow-up changes documentation and final static/delivery evidence only.
@@ -3131,3 +3147,18 @@ Fresh native003 actual projection32/32 and two post-exec26/26 cycles PASS; Linux
 ### P102 full regression terminal — 2026-10-22T00:43:46.856251+03:00
 
 Bridge request74339148-6f5a-43d5-bc63-a3bda4100016 completed exit0;2428 tests,23 skips,373 sources stable. Own Linux native003 and cleanup requests are terminal. Final local static precedes commit; no uncertain running test to replay.
+
+
+### F104X native002 terminal — 2026-10-22T01:02:13.643051+03:00
+
+Actual canonical-path final-exec native ProfileLease works. Native002 exit0; Linux55/55 methods PASS;41 parent predicates plus38 in each of two confined target lifetimes PASS. Default mountinfo/read+native reservation remains denied; enabled exact self mountinfo succeeds; all six forbidden metadata opens EACCES. Native contender refused while registered writer holds lock, acquires after profile release; volume supervisor still refuses live process after profile release. Dummy stores persist across remount;2 pings/0 provider sends. Existing ownership/mount-observer bytes unchanged. Own live processes/loops/fence/scopes/socket/anchors absent in separate audit; two unattached64MiB generations retained. First missing-helper transport FAIL retained; no product code changed to fix that QA closure. Full regression/receipt tests still pending.
+
+
+### F104X full regression underway
+
+New full request8c324ea4-8540-4565-a136-9183b0110017 has frozen current source/test/config bytes; do not change sources while active. Actual native002 is terminalPASS, independent rule12/12 and new receipt7/7 PASS. HistoricalP102 original source proof retained, not repointed to new hashes. Report docs/D3B-PROFILE-ADMISSION-F104X.md. Concurrent Q104E branch is independent QA, no second product runtime introduced; do not overwrite it.
+
+
+### F104X complete standard regression — 2026-10-22T01:11:12.228733+03:00
+
+Full request8c324ea4-8540-4565-a136-9183b0110017 completed exit0;2445 total,2422PASS,23SKIP. All378 source hashes still exact; no pending native execution. Selected Linux55 did not rerun the23 earlier platform/opt-in skips. Independent Q104E evidence remains in its own branch, untouched; the actual native profile implementation is single canonical P102 path, not P102X.

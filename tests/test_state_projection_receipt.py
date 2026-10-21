@@ -1,4 +1,4 @@
-"""Offline current-source P102 proof checks; no new privileged/native run."""
+"""Offline historical P102 proof checks; no new privileged/native run."""
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +15,7 @@ class StateProjectionReceipt(unittest.TestCase):
         cls.outer=json.loads((E/'native-003-stdout.txt').read_text(encoding='utf-8'))
         cls.r=json.loads(cls.outer['nativeStdout'])
         cls.targets=[v for v in cls.r['events'] if v.get('state')=='RESULT']
-    def test_terminal_current_source_trial(self):
+    def test_terminal_historical_source_trial(self):
         terminal=json.loads((E/'native-003-result.json').read_text(encoding='utf-8'))
         self.assertEqual(terminal['exitCode'],0)
         self.assertEqual((self.outer['unitExitCode'],self.outer['nativeExitCode']),(0,0))
@@ -29,7 +29,11 @@ class StateProjectionReceipt(unittest.TestCase):
         intended=json.loads((E/'native-003-intent.json').read_text())['sources']
         self.assertEqual(intended,self.r['sourceSha256'])
         for name in NEW_SOURCES:
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),intended[name],name)
+            # The original P102 receipt stays bound to its original Git blob.
+            # F104X has a fresh current-source execution and independent receipt.
+            source=(ROOT/'evidence/d3b-profile-admission-f104x/gateway_state_projection.py.before.txt'
+                    if name=='packages/claw-hermes/gateway_state_projection.py' else ROOT/name)
+            self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),intended[name],name)
     def test_two_confined_processes_and_persistent_rows(self):
         self.assertEqual([r['mode'] for r in self.targets],['write','read'])
         self.assertNotEqual(self.targets[0]['pid'],self.targets[1]['pid'])

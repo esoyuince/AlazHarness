@@ -1,0 +1,15 @@
+test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) ... ok
+test_default_metadata_unchanged (test_self_mount_metadata.SelfMountMetadata.test_default_metadata_unchanged) ... ok
+test_false_is_exact_default (test_self_mount_metadata.SelfMountMetadata.test_false_is_exact_default) ... ok
+test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) ... ok
+test_json_policy_does_not_accept_extra_permission_field (test_self_mount_metadata.SelfMountMetadata.test_json_policy_does_not_accept_extra_permission_field) ... ok
+test_no_directory_fd_environment_or_other_process_grant (test_self_mount_metadata.SelfMountMetadata.test_no_directory_fd_environment_or_other_process_grant) ... ok
+test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) ... ok
+test_optin_adds_only_numeric_self_mountinfo (test_self_mount_metadata.SelfMountMetadata.test_optin_adds_only_numeric_self_mountinfo) ... ok
+test_requires_existing_process_metadata_optin (test_self_mount_metadata.SelfMountMetadata.test_requires_existing_process_metadata_optin) ... ok
+test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+OK

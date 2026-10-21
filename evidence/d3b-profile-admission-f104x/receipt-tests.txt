@@ -1,0 +1,12 @@
+test_dummy_store_persistence_and_bounded_claims (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_dummy_store_persistence_and_bounded_claims) ... ok
+test_exact_native_dependency_pin_and_each_target_imports (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_exact_native_dependency_pin_and_each_target_imports) ... ok
+test_first_failure_historical_proof_and_own_cleanup_retained (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_first_failure_historical_proof_and_own_cleanup_retained) ... ok
+test_optin_is_one_read_file_and_default_remains_denied (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_optin_is_one_read_file_and_default_remains_denied) ... ok
+test_profile_ownership_occurs_after_final_uid_and_exec (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_profile_ownership_occurs_after_final_uid_and_exec) ... ok
+test_real_contenders_and_volume_retention_after_profile_release (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_real_contenders_and_volume_retention_after_profile_release) ... ok
+test_terminal_outcomes_and_exact_current_transport (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_terminal_outcomes_and_exact_current_transport) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.987s
+
+OK

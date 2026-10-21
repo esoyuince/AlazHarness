@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-22T01:06:30.763762+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/credential_guard.py": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+    "packages/claw-hermes/gateway_state_projection.py": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443",
+    "packages/claw-hermes/gateway_profile_lease.py": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95",
+    "packages/claw-hermes/gateway_storage_mounts.py": "cd468f68c6b916dada4bfce1897c3ddd9507596b48137e026ee94f06e3e5e3c1"
+  },
+  "nativeResult": "PASS_SCOPED_NATIVE_PROFILE_ADMISSION",
+  "parentPredicates": 41,
+  "targetPredicatesEach": 38,
+  "targetLifetimes": 2,
+  "normalImportedNativeSourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "transportFileCount": 87,
+  "currentFullRequest": "8c324ea4-8540-4565-a136-9183b0110017",
+  "fullNotYetClaimed": true,
+  "independentRuleTests": 12,
+  "nativeProfileImplementationUnchanged": true,
+  "productionAdmissionImplemented": false
+}

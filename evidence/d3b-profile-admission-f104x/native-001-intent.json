@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-22T00:57:37.363171+03:00",
+  "bootstrapSha256": "614c8a8a8b97da6ee869a18e0f2a8ba20e232a61b302d63cc3a7ab77d9402434",
+  "sourceCount": 83,
+  "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "freshImage": "/srv/alaz-f104x/images/state.img",
+  "scope": "existing approved disposable P71C; new fixture only; native profile ownership, no real Gateway or provider"
+}
