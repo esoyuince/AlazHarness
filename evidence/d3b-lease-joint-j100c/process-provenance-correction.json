@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-21T21:32:10.272388+03:00",
+  "cause": "Only child reserves the profile, lazily importing gateway.status. Parent does not import status. Original predicate searched the wrong interpreter.",
+  "correction": "Record both owner child import inventories in their own PID-bound PROFILE_HELD messages; require exact two expected native hashes from each child and runtime_ownership in parent.",
+  "beforeSha256": "dea2b261e73eafa7a3770d2fdf90731780db7eb0dd83f2be0f89d3127a604861",
+  "afterSha256": "1a78d8f802b70b433427e4e4585db3180a923c0de386be99cd4706e2128aedf2",
+  "priorOutcome": "FAIL 27/28 preserved",
+  "productCodeChanged": false,
+  "R91FModified": false,
+  "newNativeExecutionRequired": true
+}

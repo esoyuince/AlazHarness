@@ -1,0 +1,112 @@
+{
+  "result": "PASS",
+  "total": 2365,
+  "discovered": 2365,
+  "passed": 2342,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "skippedTests": [
+    {
+      "id": "test_broker_budget_native.NativeBudgetTransport.test_http_500_is_observed_without_refund",
+      "reason": "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    },
+    {
+      "id": "test_broker_budget_native.NativeBudgetTransport.test_missing_private_authority_never_opens_socket",
+      "reason": "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    },
+    {
+      "id": "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_broker_restart",
+      "reason": "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    },
+    {
+      "id": "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_gateway_ledger_reset",
+      "reason": "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    },
+    {
+      "id": "test_broker_budget_native.NativeBudgetTransport.test_unknown_commit_ack_does_not_send_http",
+      "reason": "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_abrupt_owner_exit_releases_kernel_lock",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_actual_child_contends_then_acquires_after_close",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_closed_lease_cannot_be_reused",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_exception_releases_owned_lease_without_unlink",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_exec_does_not_inherit_image_or_parent_descriptors",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_fork_child_cannot_release_parent_lock",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_hardlink_refused_without_repair",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_image_mode_must_be_private",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_missing_file_not_created",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_no_content_read_write_or_unlink",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_parent_mode_must_be_private",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_parent_path_replacement_rejected",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_real_acquisition_preserves_bytes_and_metadata",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_replaced_image_not_adopted",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_resize_during_lease_refuses_confirmation",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_same_process_second_owner_refused",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_symlink_is_never_followed",
+      "reason": "real Linux flock/dirfd/fork required"
+    },
+    {
+      "id": "test_state_image_lease.NativeImageLeaseTests.test_wrong_identity_rejected",
+      "reason": "real Linux flock/dirfd/fork required"
+    }
+  ],
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 358,
+  "sourcesUnchanged": true,
+  "elapsedSeconds": 199.139,
+  "completedAt": "2026-10-21T21:37:50.304691+03:00",
+  "collection": "unittest result object; new combined complete suite; not composed old results"
+}

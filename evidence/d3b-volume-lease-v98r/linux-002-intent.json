@@ -1,0 +1,22 @@
+{
+  "commandPrefix": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "alazgateway",
+    "--cd",
+    "/tmp",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c"
+  ],
+  "bootstrapSha256": "add9515979b27e461314f157e8ee570f11deda9a0fb953379317f70119ad38e5",
+  "sourceHashes": {
+    "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+    "tests/test_state_image_lease.py": "3ccb01503abd02f4a37db0fd2a170be035fd9076808619e16efd9f6d2965daec"
+  },
+  "startedAt": "2026-10-21T20:44:28.648432+03:00"
+}

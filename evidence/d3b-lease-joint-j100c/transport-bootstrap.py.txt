@@ -1,0 +1,32 @@
+from pathlib import Path,PurePosixPath
+import hashlib,json,os,subprocess,sys,tempfile,unittest,time
+assert os.getuid()==os.geteuid()==23001 and os.getgid()==23003
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+payload=json.load(sys.stdin);files=payload['files'];manifest=payload['manifest']
+assert 1<len(files)<100 and set(files)==set(manifest['files'])
+assert sum(len(v['text'].encode('utf-8')) for v in files.values())<3000000
+identity=(os.getresuid(),os.getresgid(),tuple(os.getgroups()),os.readlink('/proc/self/ns/mnt'),os.readlink('/proc/self/ns/user'))
+mounts=Path('/proc/self/mountinfo').read_bytes()
+report={'uid':os.getuid(),'gid':os.getgid(),'lab':'AlazHarness-D3B-P71C','scope':'combined ordinary-user lease selection and joint-process experiment; not a mounted domain'}
+with tempfile.TemporaryDirectory(prefix='alaz-l99d-code-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,item in files.items():
+  path=PurePosixPath(name)
+  assert not path.is_absolute() and '..' not in path.parts and str(path)==name
+  assert path.parts[0] in ('packages','tests','scripts','vendor-native','dependencies')
+  data=item['text'].encode('utf-8');assert hashlib.sha256(data).hexdigest()==manifest['files'][name]==item['sha256']
+  dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(data)
+ (root/'input-manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root)}
+ testcode="import unittest,sys,json; s=unittest.defaultTestLoader.discover(sys.argv[1]); n=s.countTestCases(); r=unittest.TextTestRunner(verbosity=2).run(s); print(json.dumps({'total':r.testsRun,'discovered':n,'passed':r.testsRun-len(r.errors)-len(r.failures)-len(r.skipped),'skipped':len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),'success':r.wasSuccessful()})); sys.exit(0 if n and n==r.testsRun and r.wasSuccessful() else 1)"
+ unit=subprocess.run([sys.executable,'-I','-B','-c',testcode,str(root/'tests')],cwd=root,env=env,capture_output=True,text=True,timeout=60)
+ report.update(unitExitCode=unit.returncode,unitStdout=unit.stdout,unitStderr=unit.stderr)
+ native=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/j100c_joint_lease_probe.py')],cwd=root,env=env,capture_output=True,text=True,timeout=90)
+ report.update(nativeExitCode=native.returncode,nativeStdout=native.stdout,nativeStderr=native.stderr)
+ report['sourceHashes']={n:hashlib.sha256((root/n).read_bytes()).hexdigest() for n in manifest['files']}
+ report['sourcesUnchanged']=report['sourceHashes']==manifest['files']
+report['temporaryCodeRemoved']=not root.exists()
+report['identityUnchanged']=identity==(os.getresuid(),os.getresgid(),tuple(os.getgroups()),os.readlink('/proc/self/ns/mnt'),os.readlink('/proc/self/ns/user'))
+report['mountTableUnchanged']=mounts==Path('/proc/self/mountinfo').read_bytes()
+print(json.dumps(report));sys.exit(0 if unit.returncode==native.returncode==0 and report['sourcesUnchanged'] and report['temporaryCodeRemoved'] and report['identityUnchanged'] and report['mountTableUnchanged'] else 1)

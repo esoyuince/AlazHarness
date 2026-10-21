@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-21T20:43:27.754894+03:00",
+  "distro": "AlazHarness-D3B-P71C",
+  "user": "alazgateway",
+  "cwd": "/tmp",
+  "sourceHashes": {
+    "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+    "tests/test_state_image_lease.py": "3ccb01503abd02f4a37db0fd2a170be035fd9076808619e16efd9f6d2965daec"
+  },
+  "scope": "fresh temporary inert images and ordinary user tests; no mounts or privileged command"
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-21T21:32:41.787231+03:00",
+  "commandPrefix": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "alazgateway",
+    "--cd",
+    "/tmp",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c"
+  ],
+  "bootstrapSha256": "91bb4d7c13e46c6c4a285718615d514b23840dd80a6067dc822c8758ff6ccb3c",
+  "sourceCount": 48,
+  "priorRunTerminal": true,
+  "scope": "fresh owned temporary fixtures; corrected PID-bound QA provenance only"
+}

@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-21T20:48:50.978415+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+    "tests/test_state_image_lease.py": "3ccb01503abd02f4a37db0fd2a170be035fd9076808619e16efd9f6d2965daec",
+    "tests/test_state_image_lease_receipt.py": "d9cc8c9fccf359ebe4578f041d266f56d184b048b5c798801b87d39c124a32b2"
+  },
+  "existingNativeProfileOwner": "vendor/hermes-agent/gateway/runtime_ownership.py at eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "newProfileLockImplemented": false,
+  "noImageCreationTruncationContentReadWrite": true,
+  "advisoryOnly": true,
+  "outerSupervisorIntegrationImplemented": false,
+  "attachmentExclusionImplemented": false,
+  "realGatewayStarted": false,
+  "R91FCorrectionReplayed": false
+}

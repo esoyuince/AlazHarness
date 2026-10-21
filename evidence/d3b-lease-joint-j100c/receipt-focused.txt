@@ -1,0 +1,9 @@
+test_limited_scope_and_terminal_cleanup (test_joint_lease_receipt.JointLeaseReceipt.test_limited_scope_and_terminal_cleanup) ... ok
+test_original_failed_provenance_trial_remains_failed (test_joint_lease_receipt.JointLeaseReceipt.test_original_failed_provenance_trial_remains_failed) ... ok
+test_terminal_runs_and_current_source_pins (test_joint_lease_receipt.JointLeaseReceipt.test_terminal_runs_and_current_source_pins) ... ok
+test_two_owner_lifetimes_and_per_process_imports (test_joint_lease_receipt.JointLeaseReceipt.test_two_owner_lifetimes_and_per_process_imports) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.123s
+
+OK

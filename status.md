@@ -1,5 +1,37 @@
 # AlazHarness — status
 
+## D3B-LEASE-JOINT-J100C — INDEPENDENT MERGE QUALIFIED
+
+Active branch alaz/d3b-lease-joint-j100c; worktree scratch/worktrees/d3b-lease-joint-j100c. Inputs: primary f7f12ed (qualified native profile lifecycle L99D) and volume681ddd9 (qualified controller image lease V98R), common basebb30a99. Merge preserves both histories; no unqualified R91F/G82C changes. Goal: one current-source test baseline and cross-process ownership/teardown checks without inventing mounted-volume or Hermes admission acceptance.
+
+No root, image format/attachment/mount, account/service, provider, production, main or push action in this slice. Prior blocked collector action remains untouched. Tests use owned temporary inert image/profile fixtures; actual pinned Hermes ownership code is reused when the existing approved lab is used. Sources are frozen per execution. Evidence evidence/d3b-lease-joint-j100c/. Stop on uncertainty; do not replay unknown operations.
+
+## Preserved V98R-specific record
+
+# AlazHarness — status
+
+## D3B-VOLUME-LEASE-V98R — QUALIFIED LOCAL CONTROLLER LEASE
+
+Tested code/evidence commit: `16946567c2e7d1a890c541637caa1b1c7a73f4e3`. Canonical continuation for this slice is the independent V98R worktree. The follow-up changes only documentation and gate receipt;352 runtime/test source hashes remain unchanged.
+
+Current evidence: evidence/d3b-volume-lease-v98r/summary-final.json. Final current-source fullWindows2335=2312PASS/23SKIP/0FAIL/0ERROR, exit0;352 source hashes stable,349 prior sources unchanged. Actual P71C ordinary-user26/26 PASS with0 skips;3 offline receipt checks included in full total. New18 Windows-native skips passed separately in Linux;5 prior broker native methods not rerun here. Final raw-format correction changed ONLY offline receipt filename reference; original first full PASS/static FAIL and raw bytes retained. No product/native-test changes after the successful26-method Linux trial.
+
+Concurrent primary advanced to f7f12ed with L99D native profile lifecycle adapter. We did not write/reset/merge it, and do not combine its test counts with V98R. Own branch remains based on bb30a99; independent integration review still required. Maincc7ceba and R91F85f7470 preserved. Only own lab stopped; existing Ubuntu observed Running and untouched. No image format/mount, real Gateway, root command, provider/model, R91F correction or push. Next: compose outer image-controller lifetime with native profile ownership; reconcile existing/orphaned users/attachments and keep lease until detach before real admission. Successful flock alone does NOT prove no surviving mount/writer.
+
+
+Active branch alaz/d3b-volume-lease-v98r; worktree scratch/worktrees/d3b-volume-lease-v98r; base bb30a99. Implement the missing controller-side exclusive lease for a future dedicated filesystem image, not a second Hermes profile lock. Reuse kernel flock, verify explicit inode/owner/mode/size, retain stable lock inode, reject competing controllers without waiting, and prevent fork/exec descriptor leakage. No writes/format/mount inside lease acquisition. The already-existing Hermes ProfileOwnership remains the profile writer authority.
+Choose a dedicated image as the persistent storage-domain direction: never expose an ambient host writable profile tree and never replace native SQLite with a new database. Actual volume formatting/attachment/private mount integration and pre-admission Hermes lifecycle remain separate NOT RUN work. Test only new ordinary-user owned dummy image files. No R91F blocked collector edit/replay/substitute, no G82C edit, root/UID/mount/network/provider/main/push actions. Only approved P71C ordinary user may run fresh temporary fixtures; default Ubuntu untouched. Evidence evidence/d3b-volume-lease-v98r/. Preserve originals; failures are never relabeled PASS.
+
+Completed: existing-image exclusive advisory controller lease implemented; no native Hermes profile lock replacement. Actual approved P71C ordinary-user26/26 tests PASS (8 validation +18 real flock/child/fork/exec cases), no skips. Windows focused8PASS/18SKIP; receipt3PASS. Fresh fullWindows2335=2312PASS/23SKIP/0FAIL/0ERROR, exit0.352 source hashes stable;349 original sources unchanged. Test image bytes are inert64KiB fixtures, NOT an attached or formatted filesystem. No image content writes by acquisition/confirmation, no format/mount/Gateway/provider/root/UID action.
+
+Only own P71C was stopped after fixture cleanup. Existing Ubuntu was observed Running in final list; this task did not start or stop it. Original wrong-shell invocation and overbroad cleanup-wrapper assertion are retained; the actual source/test run is independently terminal PASS. Report docs/D3B-VOLUME-LEASE-V98R.md; evidence/d3b-volume-lease-v98r/. Final static scan runs after full completion. Main and blocked branches unchanged; no push. Native ProfileOwnership, orphaned-user/loop/mount reconciliation, persistent-image private attachment and actual pre-admission integration remain NOT RUN. Do not treat available flock after controller death as proof there is no surviving volume user.
+
+
+
+## Preserved primary profile lifecycle record
+
+# AlazHarness — status
+
 ## D3B-PROFILE-LEASE-L99D — QUALIFIED AND DEVELOPMENT-INTEGRATED
 
 Active development branch alaz/d3b-principal-launch-21oct; worktree scratch/worktrees/d3b-principal-launch-21oct. Qualified source commit f71df7b1410a52ca1ed4fda83b9d558ffc8721f5 fast-forward promoted from feature branch alaz/d3b-profile-lease-l99d; base bb30a99. Feature source/evidence remains clean and preserved. Add a narrow lifecycle adapter reusing pinned Hermes gateway.runtime_ownership.process_ownership, not another lock/database engine. Require a prepared private profile/lock and configured mount before reservation; keep the native lock across validation and work; refuse early release while registered writers live, changed lock identity, inherited lease or foreign reservations. The adapter is not a security boundary against same-process code or a complete fixed Gateway entrypoint.
@@ -2939,3 +2971,18 @@ First static exit1 JSONDecodeError: the failed shell stdout was plain text with 
 ### L99D exact development delivery — 2026-10-21T20:58:14.057177+03:00
 
 Qualified code/evidence commit f71df7b1410a52ca1ed4fda83b9d558ffc8721f5 promoted by fast-forward to primary development; current353 source bytes match the tested freeze. Final follow-up is documentation/evidence only. Native26 actual conditions,23 unit methods each OS,3 offline receipt checks, full2332=2327PASS/5SKIP; counts not additive. No pending own test/native action. Maincc7ceba, R91F85f7470, G82Ce1bc877 and vendor preserved. Next is fixed same-process Gateway lifecycle composition above a qualified persistent storage domain, not another lock implementation or permission widening.
+
+
+### J100C first native run
+
+79 Linux methods passed; joint experiment27/28 FAIL only because parent import audit expected gateway.status loaded by child. Both owner lifetimes and cleanup completed. Original logs preserved. Own J100C probe now records PID-bound child source hashes; no product or R91F changes. Fresh native002 required, no old outcome relabeled.
+
+
+### J100C native acceptance complete — 2026-10-21T21:35:48.360488+03:00
+
+Fresh native002 exit0:79/79 Linux methods and28/28 joint conditions, two actual child lifetimes,11 contenders. Parent retains image after profile close and after child normal/abrupt exit. QA ordering only, not production supervisor; inert image and dummy profile separate. Original native00127/28 FAIL preserved with per-process provenance correction. P71C stopped; temp fixtures gone. Full Windows request6ce1a405-5bf6-4ae3-a092-4d0fffe30010 currently IN PROGRESS; no source edits until terminal.
+
+
+### J100C current-source full result
+
+Full Windows2365=2342PASS/23SKIP/0FAIL/0ERROR, exit0.358 source hashes unchanged;73 input evidence Git blobs preserved. Fresh Linux79 and joint28 passed after own QA provenance correction; first failure retained. Primary independently integrated same products at0e89518 with complementary J01C QA. It is NOT overwritten. This checkpoint is the independent tested merge; next combine the two QA histories and qualify that exact union. No new product, mount or Gateway acceptance.

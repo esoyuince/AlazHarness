@@ -1,0 +1,45 @@
+from pathlib import Path
+import hashlib,json,os,subprocess,sys,tempfile
+assert os.getuid()==os.geteuid()==23001 and os.getgid()==os.getegid()==23003
+payload=json.load(sys.stdin)
+allowed={'packages/claw-hermes/state_image_lease.py','tests/test_state_image_lease.py'}
+assert set(payload)=={'files'} and set(payload['files'])==allowed
+assert sum(len(v['text']) for v in payload['files'].values())<150000
+before={'uid':os.getuid(),'euid':os.geteuid(),'gid':os.getgid(),'groups':os.getgroups(),
+        'mnt':os.readlink('/proc/self/ns/mnt'),'user':os.readlink('/proc/self/ns/user')}
+mounts=Path('/proc/self/mountinfo').read_bytes()
+prior={p.name for p in Path('/tmp').glob('alaz-v98r-*')}
+result={'scope':'ordinary user in approved P71C lab; inert dummy image files, no format/mount/Gateway',
+        'identityBefore':before,'mountinfoSha256':hashlib.sha256(mounts).hexdigest()}
+with tempfile.TemporaryDirectory(prefix='alaz-v98r-code-',dir='/tmp') as tmp:
+    root=Path(tmp)
+    for name,item in payload['files'].items():
+        data=item['text'].encode('utf-8');assert hashlib.sha256(data).hexdigest()==item['sha256']
+        p=root/name;p.parent.mkdir(parents=True,exist_ok=True)
+        with p.open('xb') as output:output.write(data)
+    env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root),'TMPDIR':'/tmp'}
+    runner="""import json,sys,unittest,time
+suite=unittest.defaultTestLoader.discover(sys.argv[1],pattern='test_state_image_lease.py')
+start=time.monotonic();count=suite.countTestCases()
+r=unittest.TextTestRunner(verbosity=2).run(suite)
+record={'total':r.testsRun,'discovered':count,'passed':r.testsRun-len(r.skipped)-len(r.errors)-len(r.failures),
+        'skipped':len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),
+        'errorIds':[t.id() for t,_ in r.errors],'failureIds':[t.id() for t,_ in r.failures],
+        'elapsedSeconds':round(time.monotonic()-start,3),'success':r.wasSuccessful()}
+print(json.dumps(record));raise SystemExit(0 if count==26 and r.testsRun==26 and r.wasSuccessful() and not r.skipped else 1)
+"""
+    tests=subprocess.run([sys.executable,'-I','-B','-c',runner,str(root/'tests')],
+                         cwd=root,env=env,capture_output=True,text=True,timeout=80)
+    result['unitExitCode']=tests.returncode;result['unitStdout']=tests.stdout;result['unitStderr']=tests.stderr
+    result['sourceHashes']={n:hashlib.sha256((root/n).read_bytes()).hexdigest() for n in allowed}
+    result['sourcesUnchanged']=all(result['sourceHashes'][n]==v['sha256'] for n,v in payload['files'].items())
+result['temporaryCodeRemoved']=not root.exists()
+result['ownedFixturesRemoved']={p.name for p in Path('/tmp').glob('alaz-v98r-*')}==prior
+result['identityAfter']={'uid':os.getuid(),'euid':os.geteuid(),'gid':os.getgid(),'groups':os.getgroups(),
+                         'mnt':os.readlink('/proc/self/ns/mnt'),'user':os.readlink('/proc/self/ns/user')}
+result['identityUnchanged']=before==result['identityAfter']
+result['mountTableUnchanged']=Path('/proc/self/mountinfo').read_bytes()==mounts
+result.update(rootCommand=False,formatPerformed=False,mountPerformed=False,gatewayStarted=False,
+              brokerStarted=False,paidModelCalls=0,fullD3BAccepted=False)
+print(json.dumps(result))
+raise SystemExit(0 if tests.returncode==0 and all(result[k] for k in ('temporaryCodeRemoved','ownedFixturesRemoved','sourcesUnchanged','identityUnchanged','mountTableUnchanged')) else 1)

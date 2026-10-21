@@ -1,0 +1,31 @@
+{
+  "audit": {
+    "uid": 23001,
+    "ownedTemporaryEntries": [],
+    "ownedProbeProcessIds": [],
+    "clean": true
+  },
+  "stopExitCode": 0,
+  "stopStdout": {
+    "encoding": "utf-16-le",
+    "text": "\u0130\u015flem ba\u015far\u0131yla tamamland\u0131. \r\n",
+    "bytes": 60,
+    "sha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f"
+  },
+  "stopStderr": {
+    "encoding": "utf-8",
+    "text": "",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "listExitCode": 0,
+  "finalList": {
+    "encoding": "utf-16-le",
+    "text": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Stopped         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n",
+    "bytes": 282,
+    "sha256": "36d2d349020c01993f757bf10558175c67ae8504365ac588b61251b4801867c4"
+  },
+  "at": "2026-10-21T21:33:22.269825+03:00",
+  "onlyNamedLabStopped": true,
+  "defaultUbuntuCommandIssued": false
+}
