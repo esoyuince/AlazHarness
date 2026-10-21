@@ -1,0 +1,36 @@
+{
+  "result": "QUALIFIED_DEVELOPMENT_INTEGRATION",
+  "recordedAt": "2026-10-21T18:50:44.417969+03:00",
+  "testedMergeCommit": "e5cb7f076a966dd559384d75dcb7888214ecce1c",
+  "mergeParents": [
+    "db25f2549e0cb7ec44b7aa1af09ea77a92f0446d",
+    "e12ff5937bbac22dc0f53fdcecc0ed5eeb17a837"
+  ],
+  "promotedDevelopmentBranch": "alaz/d3b-principal-launch-21oct",
+  "developmentWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotionMode": "fast-forward from e12ff5937bbac22dc0f53fdcecc0ed5eeb17a837",
+  "integrationWorktreePreserved": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-storage-mounts-m96q",
+  "rawUtf16OriginalOwnerWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-storage-mounts-m96q",
+  "rawUtf16RelativeDirectory": "scratch/n97k-raw-output",
+  "sourceHashesIdenticalToFullRun": true,
+  "sourceFileCount": 349,
+  "fullWindows": {
+    "total": 2306,
+    "passed": 2301,
+    "skipped": 5,
+    "errors": 0,
+    "failures": 0
+  },
+  "userLabLinuxUnitMethods": 30,
+  "actualNativeObserverConditions": 21,
+  "newOfflineReceiptMethods": 3,
+  "mainCommitUnchanged": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "R91FCommitUnchanged": "85f747001a75613135f7548cb35dbe71f9147a1c",
+  "R91FFailureFixed": false,
+  "fullD3BAccepted": false,
+  "persistentGatewayIntegration": false,
+  "push": false,
+  "remoteCI": "NOT_RUN",
+  "paidModelCalls": 0,
+  "next": "dedicated persistent storage domain plus fixed Gateway admission/lifecycle; R91F provenance boundary remains separate"
+}

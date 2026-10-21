@@ -73,6 +73,10 @@
   "staticOriginalFailureRetained": true,
   "evidenceFormatRoundTripVerified": true,
   "completedAt": "2026-10-21T18:49:22.258544+03:00",
-  "developmentPromotion": "qualified; commit and fast-forward follow",
-  "testSourceCount": 349
+  "developmentPromotion": "COMPLETED_FAST_FORWARD",
+  "testSourceCount": 349,
+  "testedMergeCommit": "e5cb7f076a966dd559384d75dcb7888214ecce1c",
+  "activeBranch": "alaz/d3b-principal-launch-21oct",
+  "activeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "deliveryRecord": "delivery.json"
 }

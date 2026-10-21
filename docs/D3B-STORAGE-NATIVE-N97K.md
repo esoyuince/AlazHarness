@@ -166,3 +166,14 @@ checking that its source HEAD and working tree are unchanged. Main and origin
 are not touched. A following documentation checkpoint records the exact merge
 commit and active continuation; no additional runtime result is inferred from
 that checkpoint. R91F remains unqualified on its separate branch.
+
+## Recorded delivery
+
+Tested merge commit `e5cb7f076a966dd559384d75dcb7888214ecce1c` is fast-forward integrated into
+`alaz/d3b-principal-launch-21oct`. Canonical active worktree is
+`C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
+The former M96Q worktree remains at that merge and owns the original ignored
+UTF16 files in its scratch/n97k-raw-output, while reversible tracked JSON
+representations are present in both worktrees. A documentation-only follow-up
+records this handoff and the final static check without changing349 tested
+source files. Maincc7ceba and unresolved R91F85f7470 stay unchanged; no push.

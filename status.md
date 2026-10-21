@@ -1,5 +1,20 @@
 # AlazHarness — status
 
+## D3B-STORAGE-NATIVE-N97K — INTEGRATED; SCOPED PASS
+
+Active branch: `alaz/d3b-principal-launch-21oct`. Active worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
+Tested merge: `e5cb7f076a966dd559384d75dcb7888214ecce1c`, preserving parents db25f25 (M96Q) and e12ff59 (primary). Fast-forward promotion completed; original integration worktree remains clean at the tested merge. This follow-up changes documentation/evidence only, not the tested349 source files.
+
+New actual approved-user-lab execution:30/30 unit methods plus21/21 native ext4/tmpfs/owned SQLite observer conditions PASS, exit0, ordinary UID23001/GID23003. No privilege transition, mounts, namespaces, configuration, existing state, Gateway, broker or provider was changed/run. All temp fixtures removed; the named P71C lab stopped and default Ubuntu stayed stopped. Native source pins match current product/test/QA exactly. Three offline receipt methods PASS (included in full suite, not extra runtime launches).
+Fresh combined full Windows2306 =2301PASS /5SKIP /0FAIL /0ERROR, exit0. All349 source files frozen; all345 former primary source blobs unchanged. Final unchanged local static PASS2306 after reversible UTF16 artifact formatting. Original static binary-scan FAIL retained; original UTF16 bytes remain in d3b-storage-mounts-m96q/scratch/n97k-raw-output, with exact reversible JSON copies tracked in both trees. Do not treat absent relative scratch files in the promoted tree as lost original evidence.
+
+Report: docs/D3B-STORAGE-NATIVE-N97K.md. Terminal delivery/evidence: evidence/d3b-storage-native-n97k/delivery.json and summary.json. Main remains cc7ceba; no push or remote CI. R91F remains85f7470 and NOT ACCEPTED; neither blocked collector nor G82C denied edit was modified/replayed. This observer integration is NOT persistent Gateway admission or full D3B. Legacy IPCv2 remains closed.
+
+Exact next runtime work: select/implement a dedicated persistent state domain that preserves the existing no-ambient-host-socket boundary, then connect both qualified native stores and exclusive writer/epoch/crash reconciliation to a fixed trusted Gateway entrypoint BEFORE admission. Do not equate ext4 label or a snapshot with physical/power-loss durability. R91F source-coverage failure remains a separate blocked-action boundary, not cured by this different passing selection. No test/native job remains pending.
+
+## Preserved N97K integration record
+
+
 ## D3B-STORAGE-NATIVE-N97K — QUALIFIED DEVELOPMENT INTEGRATION
 
 Active branch alaz/d3b-storage-mounts-m96q; worktree scratch/worktrees/d3b-storage-mounts-m96q. Integrate clean primary e12ff59 with M96Q db25f25 preserving both histories and evidence. No prior source code change is expected. First native observation is limited to existing approved disposable AlazHarness-D3B-P71C, ordinary Gateway test user, own temporary files and current proc mount metadata. No root, remount, namespace, UID/account, existing data, package or production change; default Ubuntu stays stopped. Do not replay or modify blocked R91F collector or G82C projection.
