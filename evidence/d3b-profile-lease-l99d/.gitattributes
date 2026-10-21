@@ -1,0 +1,4 @@
+# Preserve raw evidence bytes without changing product rules.
+.gitattributes text eol=lf
+*.txt -text -diff
+*.json -text whitespace=cr-at-eol

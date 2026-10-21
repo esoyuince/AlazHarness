@@ -1,0 +1,8 @@
+{
+  "worktreeCreated": true,
+  "baselineWritten": true,
+  "initialCommandExit": 1,
+  "initialFailure": "UnicodeEncodeError while printing an already-read vendor header after worktree creation; no repeated creation",
+  "source": "packages/claw-hermes/gateway_profile_lease.py",
+  "sha256": "99f07d844773d1c6face685f4d7106d2c60a3fad36a287557d5725f03308fbc8"
+}

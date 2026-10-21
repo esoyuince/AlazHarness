@@ -1,0 +1,26 @@
+test_non_linux_refused_without_user_calls (test_gateway_profile_lease.ObjectChecks.test_non_linux_refused_without_user_calls) ... ok
+test_private_regular_and_directory_shapes (test_gateway_profile_lease.ObjectChecks.test_private_regular_and_directory_shapes) ... ok
+test_wrong_owner_group_mode_type_and_link_count_rejected (test_gateway_profile_lease.ObjectChecks.test_wrong_owner_group_mode_type_and_link_count_rejected) ... ok
+test_additional_reserved_home_blocks_bulk_cleanup (test_gateway_profile_lease.ProfileLeaseTests.test_additional_reserved_home_blocks_bulk_cleanup) ... ok
+test_changed_process_cannot_release_parent_reservation (test_gateway_profile_lease.ProfileLeaseTests.test_changed_process_cannot_release_parent_reservation) ... ok
+test_conflict_never_closes_other_owner (test_gateway_profile_lease.ProfileLeaseTests.test_conflict_never_closes_other_owner) ... ok
+test_fd_inheritance_refused_and_acquired_handle_closed (test_gateway_profile_lease.ProfileLeaseTests.test_fd_inheritance_refused_and_acquired_handle_closed) ... ok
+test_finish_is_idempotent_and_check_after_finish_refused (test_gateway_profile_lease.ProfileLeaseTests.test_finish_is_idempotent_and_check_after_finish_refused) ... ok
+test_finished_writer_is_cleared_by_native_close (test_gateway_profile_lease.ProfileLeaseTests.test_finished_writer_is_cleared_by_native_close) ... ok
+test_live_registered_writer_prevents_early_release (test_gateway_profile_lease.ProfileLeaseTests.test_live_registered_writer_prevents_early_release) ... ok
+test_lock_file_bytes_not_touched_by_adapter (test_gateway_profile_lease.ProfileLeaseTests.test_lock_file_bytes_not_touched_by_adapter) ... ok
+test_missing_lock_never_created (test_gateway_profile_lease.ProfileLeaseTests.test_missing_lock_never_created) ... ok
+test_mount_failure_before_reservation_does_not_open_lock (test_gateway_profile_lease.ProfileLeaseTests.test_mount_failure_before_reservation_does_not_open_lock) ... ok
+test_native_fd_closed_by_other_code_refused (test_gateway_profile_lease.ProfileLeaseTests.test_native_fd_closed_by_other_code_refused) ... ok
+test_other_thread_cannot_release_reservation (test_gateway_profile_lease.ProfileLeaseTests.test_other_thread_cannot_release_reservation) ... ok
+test_permission_error_is_bounded (test_gateway_profile_lease.ProfileLeaseTests.test_permission_error_is_bounded) ... ok
+test_post_acquire_mount_failure_closes_only_new_reservation (test_gateway_profile_lease.ProfileLeaseTests.test_post_acquire_mount_failure_closes_only_new_reservation) ... ok
+test_preexisting_same_process_reservation_never_adopted (test_gateway_profile_lease.ProfileLeaseTests.test_preexisting_same_process_reservation_never_adopted) ... ok
+test_relative_profile_refused (test_gateway_profile_lease.ProfileLeaseTests.test_relative_profile_refused) ... ok
+test_reservation_wraps_mount_validation_and_releases_native_handle (test_gateway_profile_lease.ProfileLeaseTests.test_reservation_wraps_mount_validation_and_releases_native_handle) ... ok
+test_wrong_environment_has_no_native_side_effect (test_gateway_profile_lease.ProfileLeaseTests.test_wrong_environment_has_no_native_side_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.134s
+
+OK

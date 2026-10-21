@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "total": 2332,
+  "discovered": 2332,
+  "passed": 2327,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "sourceFiles": 353,
+  "sourceUnchanged": true,
+  "elapsedSeconds": 234.895,
+  "completedAt": "2026-10-21T20:53:24.196061+03:00",
+  "scope": "Windows standard suite; native receipt reviewed not re-executed; no live Gateway/provider",
+  "collection": "unittest result object, no footer parsing"
+}

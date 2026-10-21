@@ -1,0 +1,9 @@
+{
+  "toolRequestExitCode": 1,
+  "linuxInvocationExitCode": 1,
+  "jsonParsingFailed": true,
+  "stdoutSha256": "32a9a606ae7609b23d10194854c39fa72897cc961ad9c1dfec727e91956f5a6e",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "wslListText": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Running         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n",
+  "sourcesUnchanged": true
+}

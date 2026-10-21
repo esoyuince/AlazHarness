@@ -1,0 +1,8 @@
+test_no_full_gateway_or_privileged_acceptance_claim (test_profile_lease_native_receipt.ProfileLeaseReceipt.test_no_full_gateway_or_privileged_acceptance_claim) ... ok
+test_real_process_outcomes_and_unchanged_store_bytes (test_profile_lease_native_receipt.ProfileLeaseReceipt.test_real_process_outcomes_and_unchanged_store_bytes) ... ok
+test_terminal_native_result_and_current_own_sources (test_profile_lease_native_receipt.ProfileLeaseReceipt.test_terminal_native_result_and_current_own_sources) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

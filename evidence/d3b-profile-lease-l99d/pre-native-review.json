@@ -1,0 +1,7 @@
+{
+  "finding": "Native profile may legitimately create directories after reservation; profile directory nlink is not invariant. Lock file still single-linked.",
+  "beforeSha256": "99f07d844773d1c6face685f4d7106d2c60a3fad36a287557d5725f03308fbc8",
+  "afterSha256": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95",
+  "newRegressionMethods": 2,
+  "oldSourcesChanged": false
+}

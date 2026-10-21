@@ -1,0 +1,22 @@
+{
+  "commandPrefix": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "alazgateway",
+    "--cd",
+    "/tmp",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c"
+  ],
+  "bootstrapSha256": "7dc555edeae6a7b26da8d38665f69c2c7c65509b80352154c3fc6bedbf179ee7",
+  "sourceManifestSha256": "d13963ccdb3b5bb2f6b114ed422d7355b3d94aaaa762f610aebf7caefca29482",
+  "correction": "previous invocation requested the non-login account default shell, not direct execution. This uses the same supported direct executable invocation documented by prior N97K and local wsl --help; no shell/account/authorization change.",
+  "priorShellInvocationExited": 1,
+  "newFixture": true,
+  "at": "2026-10-21T20:47:28.432746+03:00"
+}

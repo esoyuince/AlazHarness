@@ -1,5 +1,17 @@
 # AlazHarness — status
 
+## D3B-PROFILE-LEASE-L99D — NATIVE + FULL REGRESSION PASS
+
+Active branch alaz/d3b-profile-lease-l99d; worktree scratch/worktrees/d3b-profile-lease-l99d; base bb30a99. Add a narrow lifecycle adapter reusing pinned Hermes gateway.runtime_ownership.process_ownership, not another lock/database engine. Require a prepared private profile/lock and configured mount before reservation; keep the native lock across validation and work; refuse early release while registered writers live, changed lock identity, inherited lease or foreign reservations. The adapter is not a security boundary against same-process code or a complete fixed Gateway entrypoint.
+
+Tests: ordinary owned fixtures and isolated subprocesses only; optional existing P71C lab UID23001 (no root, accounts, mount/namespace changes). No R91F collector edit/rerun, G82C blocked action, provider/model, production, push or main merge. Existing sources/receipts remain unchanged. Preserve first failures; run current-source full regression after focused/native proof. Evidence evidence/d3b-profile-lease-l99d/. Product is NOT yet a complete persistent storage domain; IPCv2 and full D3B remain open.
+
+Completed: unmodified pinned Hermes singleton used by new profile lifecycle adapter. Actual P71C native26/26 PASS with four denied contenders, two successful post-release contenders, fork-child refusal, registered live-writer lock retention and actual owner abrupt exit73. Both dummy DBs unchanged; all temp code/profile removed; named lab stopped. Windows23/Linux23 focused PASS; offline3 PASS. Fresh fullWindows2332=2327PASS/5SKIP/0FAIL/0ERROR, exit0,353 source hashes stable;349 existing sources unchanged. Maincc7ceba and R91F85f7470 unchanged. No Gateway/provider/root/mount/persistent-volume qualification. Local static and scoped local commit/promotion follow; evidence evidence/d3b-profile-lease-l99d/, report docs/D3B-PROFILE-LEASE-L99D.md.
+
+Exact remaining runtime gate: compose this post-final-exec profile reservation with a qualified durable storage domain, native database/recovery validation and actual fixed Gateway entrypoint. Drain all work before finish; native thread registration alone is not total writer inventory. R91F blocked collector remains unresolved; no substitute/replay or assertion weakening. Full D3B OPEN, legacy IPCv2 CLOSED.
+
+## Preserved N97K development checkpoint
+
 ## D3B-STORAGE-NATIVE-N97K — INTEGRATED; SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`. Active worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
@@ -2907,3 +2919,18 @@ N97K first static FAIL: two WSL UTF16 artifacts unscanned. Originals retained in
 ### N97K validation complete — 2026-10-21T18:49:22.258544+03:00
 
 Native/full/static receipts all terminal. Product/test sources still match full freeze. Local merge/promotion only; no running lab job, network/provider, main or push. Original raw UTF16 retained under scratch with exact text/hash representation tracked.
+
+
+### L99D native terminal / full regression in progress — 2026-10-21T20:50:54.241626+03:00
+
+Actual native ownership26/26 PASS; Windows23 and lab Linux23 focused PASS. Native002 request57ab913e-4ac6-48b1-8e94-97daaf010017 terminal exit0. Lab audit clean, named lab stopped; Ubuntu not operated on. Full standard request57ab913e-4ac6-48b1-8e94-97daaf010019 pending; expected2332 tests/353 frozen source files. No code edits until completion. Three offline native receipt checks included; no fake combined PASS. Report docs/D3B-PROFILE-LEASE-L99D.md.
+
+
+### L99D full terminal — 2026-10-21T20:54:54.546647+03:00
+
+Full request57ab913e-4ac6-48b1-8e94-97daaf010019 terminal exit0,2332 total. Native request017 terminal exit0; cleanup018 terminal exit0. Only static/commit recording remains; no live test process.
+
+
+### L99D static publication format correction
+
+First static exit1 JSONDecodeError: the failed shell stdout was plain text with .json extension. Renamed only this own raw artifact to native-001-stdout.txt with identical SHA256; no old/native002 receipt or source changed. First static output preserved; unchanged scanner rerun follows. Runtime full2332 PASS remains unchanged.

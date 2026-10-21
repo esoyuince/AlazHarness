@@ -1,0 +1,26 @@
+from pathlib import Path,PurePosixPath
+import hashlib,json,os,subprocess,sys,tempfile
+assert os.getuid()==os.geteuid()==23001 and os.getgid()==23003
+payload=json.load(sys.stdin);manifest=payload['manifest'];files=payload['files']
+assert 1<len(files)<100 and set(files)==set(manifest['files'])
+assert sum(len(v['text'].encode('utf-8')) for v in files.values())<3000000
+result={'uid':os.getuid(),'gid':os.getgid(),'scope':'L99D owned native profile lock only','lab':'AlazHarness-D3B-P71C'}
+with tempfile.TemporaryDirectory(prefix='alaz-l99d-code-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,item in files.items():
+  p=PurePosixPath(name)
+  assert not p.is_absolute() and '..' not in p.parts and str(p)==name
+  assert p.parts[0] in ('packages','scripts','tests','vendor-native','dependencies')
+  data=item['text'].encode('utf-8');assert hashlib.sha256(data).hexdigest()==manifest['files'][name]==item['sha256']
+  output=root/name;output.parent.mkdir(parents=True,exist_ok=True)
+  with output.open('xb') as stream:stream.write(data)
+ (root/'input-manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root)}
+ tests=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_gateway_profile_lease.py','-v'],cwd=root,env=env,capture_output=True,text=True,timeout=45)
+ result.update(unitExitCode=tests.returncode,unitStdout=tests.stdout,unitStderr=tests.stderr)
+ native=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/l99d_profile_lease_probe.py')],cwd=root,env=env,capture_output=True,text=True,timeout=90)
+ result.update(nativeExitCode=native.returncode,nativeStdout=native.stdout,nativeStderr=native.stderr)
+ result['sourcesUnchanged']=all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v for n,v in manifest['files'].items())
+result['temporaryCodeRemoved']=not root.exists()
+print(json.dumps(result))
+sys.exit(0 if result['unitExitCode']==result['nativeExitCode']==0 and result['sourcesUnchanged'] and result['temporaryCodeRemoved'] else 1)

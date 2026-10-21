@@ -1,0 +1,12 @@
+{
+  "reason": "The first failed shell call returned plain text, not JSON. Its raw stdout had an incorrect .json extension; exact bytes moved to .txt, not edited or discarded.",
+  "oldPath": "evidence/d3b-profile-lease-l99d/native-001-stdout.json",
+  "newPath": "evidence/d3b-profile-lease-l99d/native-001-stdout.txt",
+  "sha256": "32a9a606ae7609b23d10194854c39fa72897cc961ad9c1dfec727e91956f5a6e",
+  "bytes": 41,
+  "byteIdentical": true,
+  "firstStatic": "static-final.txt retained FAIL_JSONDecodeError",
+  "productOrTestChanged": false,
+  "scannerChanged": false,
+  "at": "2026-10-21T20:55:49.036572+03:00"
+}
