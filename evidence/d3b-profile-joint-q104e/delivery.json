@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-22T01:21:53.070378+03:00",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "fromCommit": "032f2fd432f233647f5f689666b7dc14c02d1b6e",
+  "testedMerge": "5001f1a0a2102520ba609d5e0f7d094297e87adf",
+  "fastForward": true,
+  "fullWindows": {
+    "total": 2463,
+    "passed": 2440,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "sourceCount": 382,
+  "allTestedSourcesIdentical": true,
+  "allInputEvidenceBlobsPreserved": 69,
+  "runtimeImplementationModifiedByUnion": false,
+  "noNewNativeRunAtDelivery": true,
+  "independentNativeMetadataAudit": "Q104E three real-exec cases each21 conditions plus six descendants",
+  "nativeProfileProof": "F104X native002 exact-source review;41 parent/two38-condition targets",
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "pushed": false,
+  "mainChanged": false,
+  "fullD3BAccepted": false,
+  "rootWorktreeStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf"
+}

@@ -89,3 +89,7 @@ Linux by this task. Native F104X ownership proof and ordinary-user Q104E
 permission proof apply to the exact unchanged implementation, with distinct
 scope. Full Gateway/real store schema/epoch/provider/atomic recovery remains
 unqualified. Final local static and delivery are recorded separately.
+
+## Canonical development delivery
+
+Qualified two-parent merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` was fast-forwarded from032f2fd into `alaz/d3b-principal-launch-21oct`. Canonical worktree is `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. All382 source hashes remain exact; independent integration/QA/feature branches are preserved. The follow-up delivery commit changes documentation and final static record only. No main/push or new runtime activation. FullD3B remains OPEN.

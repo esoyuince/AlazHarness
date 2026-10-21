@@ -1,6 +1,8 @@
 # AlazHarness — status
 
-## D3B-PROFILE-JOINT-Q104E — COMBINED SCOPED PASS; DELIVERY GATE
+## D3B-PROFILE-JOINT-Q104E — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested two-parent merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` fast-forwarded from032f2fd. F104X implementation/native ownership and Q104E independent permission QA are now ONE qualified development baseline. Original feature/QA branches,69 evidence blobs and first failures preserved. This follow-up changes documentation/static delivery only;382 tested source hashes exact.
 
 Integration branch alaz/d3b-profile-joint-q104e; worktree scratch/worktrees/d3b-profile-joint-q104e. Qualified F104X product/native-profile source and independent Q104E metadata audit joined without changing either implementation. Preserve both histories, original first failures and own native-permission proof versus concurrent native-profile proof. Only status.md conflicted and both histories remain below.
 
@@ -6367,3 +6369,8 @@ Full request8c324ea4-8540-4565-a136-9183b0110017 completed exit0;2445 total,2422
 ### Joint regression running
 
 New fullWindows request7991de21-13fb-4908-a8be-33af10400023 runs2463 methods with382-source freeze. Product source unchanged from qualifiedF104X; independentQ104E source unchanged. Both input evidence sets verified as 69 exact original Git blobs; no old receipt rewrite. Two added offline equality tests connect current runtime files to independent permission snapshot/native proof. Only status.md conflicted; both histories retained. No new Linux/root/lab/provider execution. Do not edit sources or promote until terminal full/static results.
+
+
+### Canonical delivery completed
+
+Tested merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` promoted by fast-forward only; current382 sources match fresh unionfull2463=2440PASS/23SKIP/0FAIL/0ERROR. Local integration staticPASS2463; primary documentation-only static recorded separately. No new privileged/WSL/provider/model, main or push action. Independent/native counts remain scoped and nonadditive. Next actual native Hermes DB/epoch/recovery and fixed request admission; no duplicate projection/lock implementation.
