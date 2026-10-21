@@ -1,0 +1,20 @@
+{
+  "testedCommit": "d9296de5e7180363c1487fcc627c51fbd09740d8",
+  "parent": "0e170951b25de89dceae64b837997435b393243a",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "featurePreserved": true,
+  "sourceCount": 367,
+  "sourceHashesUnchanged": true,
+  "fullWindowsPassed": 2379,
+  "fullWindowsSkipped": 23,
+  "linuxFocusedPassed": 29,
+  "nativeMainConditions": 33,
+  "nativeOrphanConditions": 19,
+  "countsNotAdditive": true,
+  "actualMountSupervisor": true,
+  "fixedHermesGatewayIntegrated": false,
+  "mainUpdated": false,
+  "push": false,
+  "recordedAt": "2026-10-21T22:35:45.988373+03:00"
+}

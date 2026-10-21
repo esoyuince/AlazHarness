@@ -209,3 +209,7 @@ first native results remain preserved. This final result follows the correction,
 not an edited/reinterpreted earlier receipt. Native stop-pipe failure is tested
 through an explicit transport double; the mounted tests exercise real kernel
 state. Local static runs after the complete standard execution, independently.
+
+## Canonical development delivery
+
+Tested source/evidence commit `d9296de5e7180363c1487fcc627c51fbd09740d8` was fast-forwarded from0e17095 into `alaz/d3b-principal-launch-21oct`. Canonical path is `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Feature branch/tree remains clean at that commit. All367 sources match final full/native proof. Local static feature PASS2402; following primary static verifies documentation-only delivery. No main/push or new runtime activation; R101 stays a separate feature.

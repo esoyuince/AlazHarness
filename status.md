@@ -1,5 +1,23 @@
 # AlazHarness — status
 
+## D3B-VOLUME-SUPERVISOR-S101 — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Qualified code/evidence commit d9296de5e7180363c1487fcc627c51fbd09740d8 fast-forward promoted from the independent S101 feature branch, parent0e17095. Feature tree and first failed/passing evidence remain preserved. This follow-up is documentation/static only;367 tested source files identical.
+
+Implemented real trusted-root outer image supervisor and fixed private ext4 mount worker. Crash fence fsynced before possible attach; exact global loop identities; root-controlled cgroup population; lease release only after worker reaped, users gone, loop detached and fence removal synced. A stale fence refuses restart even when flock/loop is free. No automatic crash recovery, arbitrary workload dispatcher, or full Gateway confinement is provided. Fixed mount worker currently has120s command-idle bound.
+
+Actual corrected-source P71C mounted-image33/33 and controller-death-with-surviving-reader19/19 predicates PASS (separate overlapping trials, not52 Gateway runs); Windows29/Linux29 focused PASS and offline4 PASS. Final fullWindows2402=2379PASS/23SKIP/0FAIL/0ERROR, exit0.367 source hashes stable,360 preexisting sources unchanged. The23 preexisting platform/opt-in skips were not rerun by this task. Final feature static PASS2402; promoted-path static recorded separately. First full2400 PASS and two subsequently reproduced STOP transport failures remain visible; source now marks uncertainty BEFORE write/flush and NEW native002/orphan002 and full-final prove that correction.
+
+Only approved disposable P71C was used with bounded root operations on new owned /opt/alaz-s101, /srv/alaz-s101 and cgroups; existing accounts, services, original P71C/G84E private state and defaultUbuntu untouched. Two owned64MiB images/code generations retained unattached: original archived to -original after verified idle, current at original test prefix. Final audit had no matching processes/loop/cgroup/fence/host mounts; P71C stopped. No provider/model, production, main or push action. R91F/G82C blocked work unchanged. Concurrent R101 loop-inventory feature remains independent and is NOT merged or claimed covered.
+
+Current report docs/D3B-VOLUME-SUPERVISOR-S101.md; evidence/d3b-volume-supervisor-s101/summary.json, full-final-windows-result.json, native-002-stdout.txt, orphan-002-stdout.txt, cleanup-final.json and delivery.json. All native/full jobs terminal. Maincc7ceba unchanged; legacyIPCv2 CLOSED and fullD3B OPEN.
+
+Exact next: compose this actual persistent image domain and enforced user membership with G84E isolation, final-UID native profile lease, qualified native databases/epoch/recovery and fixed Hermes admission. Current dummy SQLite persistence does NOT prove real Hermes replay, paired-store atomic recovery, power-loss durability or live provider behavior. Do not run arbitrary Gateway code with the mount worker's unrestricted host-root view.
+
+## Preserved S101 feature execution record
+
+# AlazHarness — status
+
 ## D3B-VOLUME-SUPERVISOR-S101 — NATIVE SCOPED PASS; FINAL LOCAL GATE
 
 Active branch alaz/d3b-volume-supervisor-s101; worktree scratch/worktrees/d3b-volume-supervisor-s101; base0e17095. Implement the outer state-volume lifetime beyond advisory leases: refuse preexisting or unknown attachments/users, preserve image lock until owned users exit and attachment is verified gone, fail closed on uncertainty. Review current Linux interfaces before implementation. Keep existing runtime primitives and original evidence unchanged. Root operations, if needed, are limited to the already user-approved disposable P71C lab and newly named test fixtures; no production/default Ubuntu/account/security-policy changes. No replay of denied R91F/G82C actions. No provider/model, push or main update. Full D3B remains OPEN; legacy IPCv2 remains CLOSED.
