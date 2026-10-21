@@ -191,3 +191,7 @@ new32-predicate and two26-condition claims. Private original broker configuratio
 and budget remain unchanged; source/file/profile checks do not assert native
 Hermes replay, physical media guarantees or production admission. The final
 sequential local static result is in static-final.txt. No background test remains.
+
+## Canonical local development delivery
+
+Tested code commit `cef1cb20fcab605d7b97b8de944e3d96ba1071d9` was fast-forward promoted from b0b6731 to alaz/d3b-principal-launch-21oct. Canonical worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Original feature branch and raw failed/successful generations are preserved. All373 tested source bytes match in primary. The subsequent delivery/static documentation commit does not change product or test source. No main update or push.

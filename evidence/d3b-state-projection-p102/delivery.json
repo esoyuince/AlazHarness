@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-22T00:45:12.737820+03:00",
+  "testedCodeCommit": "cef1cb20fcab605d7b97b8de944e3d96ba1071d9",
+  "previousPrimary": "b0b673111b3cb793e70c2f2cb1f0951652a10fb0",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotion": "fast-forward",
+  "sourceCount": 373,
+  "exactTestedSourceBytesInPrimary": true,
+  "fullWindowsPassed": 2405,
+  "fullWindowsSkipped": 23,
+  "nativeSupervisorPredicates": 32,
+  "nativeConfinedProcesses": 2,
+  "nativePredicatesPerProcess": [
+    26,
+    26
+  ],
+  "linuxFocusedPassed": 22,
+  "featurePreserved": true,
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "push": false,
+  "realHermesGatewayTested": false,
+  "legacyIpcV2Activated": false,
+  "fullD3BAccepted": false,
+  "followingCommitScope": "docs/delivery/local-static only"
+}

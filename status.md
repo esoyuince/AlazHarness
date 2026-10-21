@@ -1,5 +1,18 @@
 # AlazHarness — status
 
+## D3B-STATE-PROJECTION-P102 — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested code cef1cb20fcab605d7b97b8de944e3d96ba1071d9 fast-forwarded from b0b6731; feature alaz/d3b-state-projection-p102 remains preserved/clean. All373 tested source hashes match. This follow-up changes documentation and final static/delivery evidence only.
+
+New actual P71C native00332/32 parent observations and two confined final-UID processes26/26 each PASS, Linux22/22 unit methods, offline4/4. Fresh fullWindows2428=2405PASS/23SKIP/0FAIL/0ERROR, exit0;373 sources stable and367 preexisting source files unchanged.45 transported Python files exact current bytes. Two dummy SQLite store commits/inodes survive full detach/reattach; scratch is fresh; actual broker signed ping twice and zero physical provider attempts. Live confined child prevents stop until exit/reap. The counts overlap and are not additive.
+
+First two native QA setup failures (command-root mismatch; missing component import helper) remain recorded failures. New complete native003 used a fresh image/install, no weak checks or old-receipt edits. Original G84E/S101/product code untouched. Own final root audit clean, all three unattached64MiB code/image generations retained, only P71C stopped; no defaultUbuntu/production/account/service/CI configuration changes. Maincc7ceba unchanged, no push, no model/provider send, no blocked R91F/G82C action.
+
+Exact next gate: final confinement still DENIES /proc/self/mountinfo, required by native ProfileLease's existing mount observer. Qualify narrow self-mount observation without broad proc/foreign-FD access or skipping the observer, then reserve native Hermes profile AFTER final exec and verify actual native stores/epoch/recovery before fixed admission. Dummy schemas/PK checks are not Hermes idempotency acceptance. Production child join/exec, live broker ledger read path and provider dispatch also remain unqualified. LegacyIPCv2 CLOSED/fullD3B OPEN. Report docs/D3B-STATE-PROJECTION-P102.md; evidence/d3b-state-projection-p102/summary.json and delivery.json. All task runs terminal.
+
+## Preserved P102 feature qualification
+
+
 ## D3B-STATE-PROJECTION-P102 — QUALIFIED SCOPED PERSISTENT PROJECTION
 
 Active branch alaz/d3b-state-projection-p102; worktree scratch/worktrees/d3b-state-projection-p102; base b0b673111b3cb793e70c2f2cb1f0951652a10fb0. Compose the qualified S101 ext4 domain with the existing G84E confinement by exposing only one validated profile subtree, leaving scratch tmpfs and unrelated host paths isolated. Preserve existing source/receipts; new opt-in module/QA, no G82C/R91F denied action or old source-proof rewrite.
