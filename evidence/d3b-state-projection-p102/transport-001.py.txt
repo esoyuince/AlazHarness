@@ -1,0 +1,31 @@
+from pathlib import Path,PurePosixPath
+import hashlib,json,os,subprocess,sys
+assert os.getresuid()==(0,)*3 and os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+assert not Path('/mnt/c/Windows').exists()
+assert Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295']
+root=Path('/opt/alaz-p102');assert not root.exists() and not Path('/srv/alaz-p102').exists()
+payload=json.load(sys.stdin);files=payload['files'];assert 5<len(files)<100
+assert sum(len(v['text'].encode('utf-8')) for v in files.values())<3000000
+for name,v in files.items():
+ p=PurePosixPath(name);assert str(p)==name and not p.is_absolute() and '..' not in p.parts
+ assert p.parts[0] in ('packages','scripts','tests') and name.endswith('.py')
+ assert hashlib.sha256(v['text'].encode('utf-8')).hexdigest()==v['sha256']
+ compile(v['text'],name,'exec')
+root.mkdir(mode=0o755)
+for name,v in files.items():
+ p=root/name;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(v['text'].encode('utf-8'))
+ p.chmod(0o644)
+manifest={'sources':{n:v['sha256'] for n,v in files.items()}}
+(root/'input-manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+r=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_gateway_state_projection.py','-v'],env=env,cwd='/',capture_output=True,text=True,timeout=30)
+result={'unitExitCode':r.returncode,'unitStdout':r.stdout,'unitStderr':r.stderr}
+if r.returncode==0:
+ r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/p102_projection_accept.py')],env=env,cwd='/',capture_output=True,text=True,timeout=130)
+ result.update(nativeExitCode=r.returncode,nativeStdout=r.stdout,nativeStderr=r.stderr)
+result['sourceHashes']={n:hashlib.sha256((root/n).read_bytes()).hexdigest() for n in files}
+result['sourceUnchanged']=result['sourceHashes']==manifest['sources']
+print(json.dumps(result),flush=True)
+raise SystemExit(0 if result.get('nativeExitCode')==0 and result['unitExitCode']==0 and result['sourceUnchanged'] else 1)

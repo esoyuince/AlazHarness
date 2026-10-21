@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-22T00:41:37.975746+03:00",
+  "existingSourcesUnchanged": 367,
+  "frozenCurrentSources": 373,
+  "nativeTransportSourceCount": 45,
+  "nativeTransportExactRawBytesMatchCurrent": true,
+  "productFilesChangedFromBaseline": [],
+  "newProductFile": "packages/claw-hermes/gateway_state_projection.py",
+  "fullSuiteStillInProgress": true,
+  "permissionChange": "only exact persistent profile path receives existing writable Landlock rights; metadata rules unchanged",
+  "unqualifiedBoundaries": [
+    "native Hermes profile reservation after exec",
+    "native database/replay schemas and connections",
+    "epoch/recovery",
+    "paired-store consistency",
+    "live broker Gateway-ledger read path",
+    "production child entrypoint"
+  ]
+}

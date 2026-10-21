@@ -1,5 +1,22 @@
 # AlazHarness — status
 
+## D3B-STATE-PROJECTION-P102 — QUALIFIED SCOPED PERSISTENT PROJECTION
+
+Active branch alaz/d3b-state-projection-p102; worktree scratch/worktrees/d3b-state-projection-p102; base b0b673111b3cb793e70c2f2cb1f0951652a10fb0. Compose the qualified S101 ext4 domain with the existing G84E confinement by exposing only one validated profile subtree, leaving scratch tmpfs and unrelated host paths isolated. Preserve existing source/receipts; new opt-in module/QA, no G82C/R91F denied action or old source-proof rewrite.
+
+Only the already approved disposable P71C lab and new /opt/alaz-p102, /srv/alaz-p102 fixtures may be used for bounded root preparation/projection; no existing image reformat, user/account/service/defaultUbuntu/CI changes, provider/model/main/push. Check current lab state before use and retain first failures. A successful projected dummy SQLite experiment is not real Hermes/replay/profile/epoch acceptance. Existing Landlock metadata policy lacks mountinfo access for post-exec profile checks; that remains a separate explicit integration constraint, not permission to weaken it.
+
+Evidence evidence/d3b-state-projection-p102/. Next implement and test strict mounted-image/cgroup proof, then verify fresh post-exec confinement and persistence across complete detach/reattach with current-source hashes.
+
+Completed actual native003:22 Linux unit methods,32 parent observations and26 post-exec conditions in each of two real UID23001 processes PASS. Both dummy SQLite stores preserve rows/inodes and refuse duplicate PKs after complete detach/reattach; private scratch resets. Real native broker ping twice,0 physical provider attempts. Live confined child blocks S101 stop until exit/reap; source image root/host routes remain hidden. Existing G84E metadata policy unchanged: mountinfo denial was explicitly observed, so native ProfileLease/Hermes stores/epoch admission are NOT claimed.
+
+Fresh fullWindows2428=2405PASS/23SKIP/0FAIL/0ERROR, exit0;373 source hashes stable,367 old sources unchanged. Windows22 and offline4 are subsets; Linux22 is platform repeat;32/26 predicates overlap.45 native transport files match exact current bytes. First two QA install/closure failures retained; no old PASS rewrite. Final own audit clean; only P71C stopped;3 unattached64MiB image/code generations retained. No root/defaultUbuntu/account/service/CI/production changes outside this bounded lab task, no provider/model/main/push. Report docs/D3B-STATE-PROJECTION-P102.md and evidence/d3b-state-projection-p102/summary.json. Local static sequential gate follows; read Git HEAD for feature commit.
+
+Exact next gate: explicitly qualify narrow self mount-metadata observation under final confinement, then native ProfileOwnership AFTER exec/FD cleanup plus actual native database connections/recovery/epoch and fixed admission. Do not bypass existing mount observer or open broad /proc. Current lab-only join/seed/exec path is not production child admission. Broker read-only live Gateway-ledger access remains untested by ping. R91F remains separate/unresolved; legacyIPCv2 CLOSED/fullD3B OPEN.
+
+## Preserved S101 delivery
+
+
 ## D3B-VOLUME-SUPERVISOR-S101 — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Qualified code/evidence commit d9296de5e7180363c1487fcc627c51fbd09740d8 fast-forward promoted from the independent S101 feature branch, parent0e17095. Feature tree and first failed/passing evidence remain preserved. This follow-up is documentation/static only;367 tested source files identical.
@@ -3091,3 +3108,13 @@ New concrete supervisor and fixed mount worker implemented; no old product edits
 ### S101 corrected-source acceptance — 2026-10-21T22:29:54.892918+03:00
 
 First full2400 PASS retained, then independent two-case STOP pipe failure reproduced and corrected BEFORE publication. New source commits STOPPING before possible write/flush effect; Windows29 and actualLinux29 PASS. Fresh native002 main33 and orphan00219 PASS, not reused old source proofs. Original own code/image archived byte-preserving after verified idle; fresh second owned image used. Final live audit clean, P71C stopped; no other project tasks present at stop. Final full request086a1169-ccf5-4bcf-a30e-943782b10021 IN PROGRESS. Do not change367 frozen sources. No unrelated product, R91F/G82C, account, provider, defaultUbuntu, main or push operation.
+
+
+### P102 native qualification completed — 2026-10-22T00:39:25.326123+03:00
+
+Fresh native003 actual projection32/32 and two post-exec26/26 cycles PASS; Linux22/22 and offline4/4 PASS. Both dummy store commits/inodes survive complete S101 detach/reattach; scratch resets; actual broker two pings, zero provider attempts. First two packaging/command-binding failures preserved, not reclassified. Three unattached64MiB generations retained; own root audit clean and only P71C stopped. Existing367 sources unchanged. Full current-source Windows request74339148-6f5a-43d5-bc63-a3bda4100016 IN PROGRESS; no source edits until terminal. Native profile lease/Hermes stores/epoch admission NOT RUN; mountinfo remains denied.
+
+
+### P102 full regression terminal — 2026-10-22T00:43:46.856251+03:00
+
+Bridge request74339148-6f5a-43d5-bc63-a3bda4100016 completed exit0;2428 tests,23 skips,373 sources stable. Own Linux native003 and cleanup requests are terminal. Final local static precedes commit; no uncertain running test to replay.

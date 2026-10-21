@@ -1,0 +1,1 @@
+{"validate": {"type": "LaunchRejected", "reason": "launch_command_mismatch"}, "trusted_install": "PASS", "deployment": "PASS", "controller": "PASS", "outputEntries": [], "cgroupSubdirectories": [], "labMatchingProcesses": []}

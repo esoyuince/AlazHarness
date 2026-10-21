@@ -1,0 +1,7 @@
+{
+  "firstCompileFailed": true,
+  "reason": "nested string newline in host-positive-control snippet",
+  "firstSourcePublished": false,
+  "nativeRunStarted": false,
+  "repair": "join child source lines with chr(10), no product change"
+}

@@ -1,0 +1,27 @@
+test_adding_profile_does_not_mutate_original_policy (test_gateway_state_projection.Contracts.test_adding_profile_does_not_mutate_original_policy) ... ok
+test_broker_parent_overlap_refused (test_gateway_state_projection.Contracts.test_broker_parent_overlap_refused) ... ok
+test_canonical_paths_reject_aliases (test_gateway_state_projection.Contracts.test_canonical_paths_reject_aliases) ... ok
+test_dead_or_reused_pid_refused (test_gateway_state_projection.Contracts.test_dead_or_reused_pid_refused) ... ok
+test_dictionary_not_authority (test_gateway_state_projection.Contracts.test_dictionary_not_authority) ... ok
+test_identity_bool_zero_float_rejected (test_gateway_state_projection.Contracts.test_identity_bool_zero_float_rejected) ... ok
+test_immutable_and_no_io (test_gateway_state_projection.Contracts.test_immutable_and_no_io) ... ok
+test_loop_bounds_and_same_pid (test_gateway_state_projection.Contracts.test_loop_bounds_and_same_pid) ... ok
+test_non_root_image_rejected (test_gateway_state_projection.Contracts.test_non_root_image_rejected) ... ok
+test_profile_and_source_overlaps_refused (test_gateway_state_projection.Contracts.test_profile_and_source_overlaps_refused) ... ok
+test_scope_has_exact_token_and_parent (test_gateway_state_projection.Contracts.test_scope_has_exact_token_and_parent) ... ok
+test_scope_identity_must_be_immutable_positive_pair (test_gateway_state_projection.Contracts.test_scope_identity_must_be_immutable_positive_pair) ... ok
+test_token_and_digest_bounds (test_gateway_state_projection.Contracts.test_token_and_digest_bounds) ... ok
+test_zombie_and_start_field (test_gateway_state_projection.Contracts.test_zombie_and_start_field) ... ok
+test_failed_projection_does_not_start_security_drop_or_work (test_gateway_state_projection.Sequence.test_failed_projection_does_not_start_security_drop_or_work) ... ok
+test_filter_missing_never_applies_guard_or_returns_success (test_gateway_state_projection.Sequence.test_filter_missing_never_applies_guard_or_returns_success) ... ok
+test_final_profile_changed_rejected (test_gateway_state_projection.Sequence.test_final_profile_changed_rejected) ... ok
+test_landlock_failure_not_swallowed (test_gateway_state_projection.Sequence.test_landlock_failure_not_swallowed) ... ok
+test_missing_profile_projection_rejected (test_gateway_state_projection.Sequence.test_missing_profile_projection_rejected) ... ok
+test_order_and_narrow_return (test_gateway_state_projection.Sequence.test_order_and_narrow_return) ... ok
+test_overlap_fails_before_volume_probe (test_gateway_state_projection.Sequence.test_overlap_fails_before_volume_probe) ... ok
+test_rejected_volume_never_unshares_or_drops (test_gateway_state_projection.Sequence.test_rejected_volume_never_unshares_or_drops) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.020s
+
+OK

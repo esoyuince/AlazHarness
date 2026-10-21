@@ -1,0 +1,64 @@
+"""Fixed P102 lab-only seed/projection child; no arbitrary workload target."""
+from contextlib import closing
+import ctypes
+from dataclasses import asdict
+import json
+import os
+from pathlib import Path
+import sqlite3
+import stat
+import sys
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import gateway_state_projection as state
+import state_volume_supervisor as volume
+from state_image_lease import ImagePin
+
+
+def main():
+    assert ROOT==Path('/opt/alaz-p102')
+    assert os.getresuid()==(0,)*3 and os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+    assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    assert not Path('/mnt/c/Windows').exists()
+    line=sys.stdin.buffer.readline(32769);assert len(line)<=32768
+    data=state.gp.fs_guard.unique_json(line.decode())
+    assert data['mode'] in ('seed','write','read','reject')
+    scope=Path(data['binding']['scope']);target=Path(data['binding']['mountpoint'])
+    assert scope.parent==Path('/sys/fs/cgroup/alaz-p102')
+    assert target.parent==Path('/srv/alaz-p102') and target.name in ('mount-a','mount-b')
+    assert volume.trusted(scope,directory=True)==tuple(data['binding']['scope_identity'])
+    assert volume.fs_type(scope)==volume.CGROUP2_MAGIC
+    fd=data['namespace_fd'];assert type(fd) is int and fd>=3
+    assert os.fstat(fd).st_ino==data['binding']['namespace_inode']
+    with (scope/'cgroup.procs').open('w') as f:f.write(str(os.getpid()))
+    lib=ctypes.CDLL(None,use_errno=True);lib.setns.argtypes=[ctypes.c_int,ctypes.c_int];lib.setns.restype=ctypes.c_int
+    assert lib.setns(fd,0x00020000)==0
+    os.close(fd)
+    assert os.stat('/proc/self/ns/mnt').st_ino==data['binding']['namespace_inode']
+    assert target.stat().st_dev==os.makedev(7,data['binding']['loop_number']),'lab_volume_device_mismatch'
+    assert volume.fs_type(target)==0xEF53
+    home=target/'profile'
+    if data['mode']=='seed':
+        assert not home.exists();home.mkdir(mode=0o700);os.chown(home,23001,23003)
+        (target/'image-root-secret').write_text('owned image-root canary')
+        os.setgroups([]);os.setresgid(23003,23003,23003);os.setresuid(23001,23001,23001);os.umask(0o077)
+        (home/'gateway.lock').touch(mode=0o600,exist_ok=False)
+        for name in ('state.db','runs_idempotency.db'):
+            with closing(sqlite3.connect(home/name)) as db:
+                db.execute('PRAGMA journal_mode=PERSIST');db.execute('PRAGMA synchronous=FULL')
+                db.execute('CREATE TABLE owned_record(id TEXT PRIMARY KEY,value TEXT NOT NULL)');db.commit()
+        print(json.dumps({'state':'SEEDED','profileInode':home.stat().st_ino,'uid':os.getuid()}),flush=True)
+        return 0
+    value=dict(data['binding']);value['image']=ImagePin(**value['image']);value['scope_identity']=tuple(value['scope_identity'])
+    binding=state.VolumeBinding(**value)
+    receipt=state.enter(data['ipc'],data['filesystem'],binding)
+    assert data['mode']!='reject','invalid_binding_was_accepted'
+    env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':state.TARGET,
+         'P102_RECEIPT':json.dumps(receipt),'P102_TEST':json.dumps(data['probe']|{'mode':data['mode']})}
+    os.execve('/usr/bin/python3.12',['/usr/bin/python3.12','-I','-B',str(ROOT/'scripts/qa/p102_confined.py')],env)
+
+if __name__=='__main__':
+    try:raise SystemExit(main())
+    except Exception as exc:
+        print(json.dumps({'state':'REFUSED','type':type(exc).__name__,'reason':str(exc)[:200]}),file=sys.stderr,flush=True)
+        raise SystemExit(2)

@@ -1,0 +1,9 @@
+test_failures_preserved_and_scoped_lab_cleanup (test_state_projection_receipt.StateProjectionReceipt.test_failures_preserved_and_scoped_lab_cleanup) ... ok
+test_no_stronger_acceptance_or_permission_claim (test_state_projection_receipt.StateProjectionReceipt.test_no_stronger_acceptance_or_permission_claim) ... ok
+test_terminal_current_source_trial (test_state_projection_receipt.StateProjectionReceipt.test_terminal_current_source_trial) ... ok
+test_two_confined_processes_and_persistent_rows (test_state_projection_receipt.StateProjectionReceipt.test_two_confined_processes_and_persistent_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.076s
+
+OK

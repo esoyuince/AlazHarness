@@ -1,0 +1,7 @@
+{
+  "reason": "Broker import closure also needs tracked Python component helpers under packages/upstream; first transport copied only packages/claw-hermes.",
+  "productChanged": false,
+  "oldNativeAttemptsRetained": true,
+  "newImportPreflightBeforeFixtureCreation": true,
+  "negativeGuardClarification": "wrong_loop rejected even earlier by exact source-device guard; require its exact labelled error and empty projection anchor"
+}

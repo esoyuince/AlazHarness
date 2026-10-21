@@ -1,0 +1,9 @@
+{
+  "cause": "QA computed fixed target command for /opt/alaz-p102 but invoked the /opt/alazharness-broker/802fade launcher. Actual launch correctly refused hash mismatch.",
+  "repair": "include all three unchanged broker entry scripts and execute from same exact new trusted install",
+  "oldOutcomeRetained": true,
+  "productChanged": false,
+  "cgroupAuditCorrection": "only child directories represent nested cgroups; require populated false independently; kernel pseudo-files are not live child groups",
+  "beforeSha256": "c8b19ce8907c2dfd90948bf468cce330b9dbcc3c36d1ae90eb3dc18a7bfd7a0c",
+  "afterSha256": "61d50528a1d8c0359c38ed1e3557dd2a3fc7ad16102d57fc4579aa1d5b9e9c89"
+}
