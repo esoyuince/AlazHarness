@@ -1,0 +1,75 @@
+test_blob_replacement_cannot_change_pinned_archive_bytes (test_principal_export_replace_refs.ExportReplacementRefs.test_blob_replacement_cannot_change_pinned_archive_bytes) ... FAIL
+test_commit_replacement_cannot_change_pinned_tree (test_principal_export_replace_refs.ExportReplacementRefs.test_commit_replacement_cannot_change_pinned_tree) ... FAIL
+test_custom_replacement_namespace_does_not_change_pinned_blob (test_principal_export_replace_refs.ExportReplacementRefs.test_custom_replacement_namespace_does_not_change_pinned_blob) ... FAIL
+test_empty_disable_environment_does_not_reenable_replacements (test_principal_export_replace_refs.ExportReplacementRefs.test_empty_disable_environment_does_not_reenable_replacements) ... FAIL
+
+======================================================================
+FAIL: test_blob_replacement_cannot_change_pinned_archive_bytes (test_principal_export_replace_refs.ExportReplacementRefs.test_blob_replacement_cannot_change_pinned_archive_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 58, in test_blob_replacement_cannot_change_pinned_archive_bytes
+    self.assert_original_export()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 45, in assert_original_export
+    self.assertEqual(result['fileManifest'][self.name]['sha256'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     hashlib.sha256(self.original).hexdigest())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '70e0567a7df0378d54605cf9a7d447d082585341e4833258e4f01a9e3a5c1f6a' != '7c91cbd8ee1ae6cf5c6eb3778389ac24b3caddfd1d4b85b60caed3f283a137f2'
+- 70e0567a7df0378d54605cf9a7d447d082585341e4833258e4f01a9e3a5c1f6a
++ 7c91cbd8ee1ae6cf5c6eb3778389ac24b3caddfd1d4b85b60caed3f283a137f2
+
+
+======================================================================
+FAIL: test_commit_replacement_cannot_change_pinned_tree (test_principal_export_replace_refs.ExportReplacementRefs.test_commit_replacement_cannot_change_pinned_tree)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 83, in test_commit_replacement_cannot_change_pinned_tree
+    self.assert_original_export()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 44, in assert_original_export
+    self.assertEqual(result['fileManifest'][self.name]['gitBlob'],self.oid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '0c58d8c06cec64193dc8aa1e83fe94d60a494945' != 'e00ca9e0ee03c5f1a37d87a53ff48b7ebaf810b5'
+- 0c58d8c06cec64193dc8aa1e83fe94d60a494945
++ e00ca9e0ee03c5f1a37d87a53ff48b7ebaf810b5
+
+
+======================================================================
+FAIL: test_custom_replacement_namespace_does_not_change_pinned_blob (test_principal_export_replace_refs.ExportReplacementRefs.test_custom_replacement_namespace_does_not_change_pinned_blob)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 66, in test_custom_replacement_namespace_does_not_change_pinned_blob
+    self.assert_original_export()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 45, in assert_original_export
+    self.assertEqual(result['fileManifest'][self.name]['sha256'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     hashlib.sha256(self.original).hexdigest())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '0d2f481f65ba766a206d806d99392221a3d676d5ae2b09ea4b632857dca87581' != '7c91cbd8ee1ae6cf5c6eb3778389ac24b3caddfd1d4b85b60caed3f283a137f2'
+- 0d2f481f65ba766a206d806d99392221a3d676d5ae2b09ea4b632857dca87581
++ 7c91cbd8ee1ae6cf5c6eb3778389ac24b3caddfd1d4b85b60caed3f283a137f2
+
+
+======================================================================
+FAIL: test_empty_disable_environment_does_not_reenable_replacements (test_principal_export_replace_refs.ExportReplacementRefs.test_empty_disable_environment_does_not_reenable_replacements)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 75, in test_empty_disable_environment_does_not_reenable_replacements
+    self.assert_original_export()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-export-integrity-r91f\tests\test_principal_export_replace_refs.py", line 45, in assert_original_export
+    self.assertEqual(result['fileManifest'][self.name]['sha256'],
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     hashlib.sha256(self.original).hexdigest())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '98751e62371b8fd1f9b79a88b43313762a6c74fc9514716e9f2fe320a2e7c245' != '7c91cbd8ee1ae6cf5c6eb3778389ac24b3caddfd1d4b85b60caed3f283a137f2'
+- 98751e62371b8fd1f9b79a88b43313762a6c74fc9514716e9f2fe320a2e7c245
++ 7c91cbd8ee1ae6cf5c6eb3778389ac24b3caddfd1d4b85b60caed3f283a137f2
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 20.821s
+
+FAILED (failures=4)

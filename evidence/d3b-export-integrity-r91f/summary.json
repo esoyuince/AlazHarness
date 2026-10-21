@@ -1,0 +1,76 @@
+{
+  "job": "D3B-EXPORT-INTEGRITY-R91F",
+  "result": "PASS_SCOPED_EXPORT_INTEGRITY",
+  "completedAt": "2026-10-21T15:11:40.742142+03:00",
+  "base": "916f5290981f5cc4775c930fb4674d046cb3cc67",
+  "codeCommit": "bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2",
+  "priorFinding": "P83C; credited and reproduced, original worktree untouched",
+  "beforeFixValidFixture": {
+    "tests": 4,
+    "failures": 4,
+    "errors": 0
+  },
+  "afterFixFocused": {
+    "total": 31,
+    "passed": 31,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "success": true,
+    "elapsedSeconds": 25.674,
+    "scope": "4 real Git replacement regressions +17 source exporter controls +10 existing G84E receipt/cleanup checks; not a new Linux projection run"
+  },
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2273,
+    "passed": 2268,
+    "skipped": 5,
+    "failures": 0,
+    "errors": 0,
+    "elapsedSeconds": 341.822,
+    "sourceCount": 345,
+    "sourceUnchanged": true,
+    "completedAt": "2026-10-21T15:11:33.160272+03:00",
+    "scope": "Windows standard suite incl real owned Git exporter fixtures and offline prior Linux receipt checks; no Linux launch"
+  },
+  "archives": {
+    "results": [
+      {
+        "result": "PASS_ARCHIVE_CONTENT_ONLY",
+        "revision": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+        "archiveSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451",
+        "filesChecked": 57,
+        "sourceBytes": 505793,
+        "archiveBytes": 563200,
+        "oldCandidateByteIdentical": true
+      },
+      {
+        "result": "PASS_ARCHIVE_CONTENT_ONLY",
+        "revision": "916f5290981f5cc4775c930fb4674d046cb3cc67",
+        "archiveSha256": "8838d83b215f8a8f676c38b5f1e8d2ed395e39839afc35d070fcb7c2bec277f9",
+        "filesChecked": 58,
+        "sourceBytes": 519331,
+        "archiveBytes": 573440,
+        "oldCandidateByteIdentical": false
+      }
+    ],
+    "sharedReplacementRefsUnchanged": true,
+    "independentVerifierOrigin": "9a1b74f",
+    "installed": false,
+    "exportedCodeExecuted": false,
+    "linuxLabStarted": false
+  },
+  "unchangedPreexistingSources": 343,
+  "sourceFreezeCount": 345,
+  "G84EReceiptChecks": "PASS current source pins, not a new native run",
+  "G82CBlockedEditReplayed": false,
+  "gatewayProjectionModified": false,
+  "linuxLabStarted": false,
+  "persistentStateImplemented": false,
+  "providerDispatchTested": false,
+  "legacyIpcV2Activated": false,
+  "mainChanged": false,
+  "push": false,
+  "realModelCalls": 0,
+  "fullD3BAccepted": false
+}

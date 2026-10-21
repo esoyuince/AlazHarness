@@ -1,0 +1,27 @@
+{
+  "results": [
+    {
+      "result": "PASS_ARCHIVE_CONTENT_ONLY",
+      "revision": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+      "archiveSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451",
+      "filesChecked": 57,
+      "sourceBytes": 505793,
+      "archiveBytes": 563200,
+      "oldCandidateByteIdentical": true
+    },
+    {
+      "result": "PASS_ARCHIVE_CONTENT_ONLY",
+      "revision": "916f5290981f5cc4775c930fb4674d046cb3cc67",
+      "archiveSha256": "8838d83b215f8a8f676c38b5f1e8d2ed395e39839afc35d070fcb7c2bec277f9",
+      "filesChecked": 58,
+      "sourceBytes": 519331,
+      "archiveBytes": 573440,
+      "oldCandidateByteIdentical": false
+    }
+  ],
+  "sharedReplacementRefsUnchanged": true,
+  "independentVerifierOrigin": "9a1b74f",
+  "installed": false,
+  "exportedCodeExecuted": false,
+  "linuxLabStarted": false
+}

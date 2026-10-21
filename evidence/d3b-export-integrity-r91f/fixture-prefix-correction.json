@@ -1,0 +1,8 @@
+{
+  "beforeTestSha256": "98989c410bb0f278d7b6552e97530434ee5ab747f50f18469f5010821263bc7e",
+  "afterTestSha256": "abeeade9f6c45c8fe50bbf27a6af4905d0902ae7aca7864556aeaf1bc4ea8ba6",
+  "change": "custom replacement ref prefix terminated with slash",
+  "firstAttempt": "regression-before.txt: three real exporter failures and one fixture Git command exit3221226505",
+  "productSourceChanged": false,
+  "assertionsRelaxed": false
+}

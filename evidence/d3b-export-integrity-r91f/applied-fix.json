@@ -1,0 +1,10 @@
+{
+  "beforeSha256": "c1c94ebdf9ce1fc9d304a454a584f7430beb067016620a405d20fe969244c009",
+  "afterSha256": "dd50e38e7aae86b2d8d66feb8b0156d9db0bbf42d2bcdaade38987b6afa5eb88",
+  "change": {
+    "old": "['git', '-C', str(repo), *args]",
+    "new": "['git', '--no-replace-objects', '-C', str(repo), *args]"
+  },
+  "origin": "P83C independently reproduced correction; applied only in own R91F worktree",
+  "projectionOrPrivilegeCodeChanged": false
+}

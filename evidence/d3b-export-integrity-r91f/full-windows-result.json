@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "total": 2273,
+  "passed": 2268,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "elapsedSeconds": 341.822,
+  "sourceCount": 345,
+  "sourceUnchanged": true,
+  "completedAt": "2026-10-21T15:11:33.160272+03:00",
+  "scope": "Windows standard suite incl real owned Git exporter fixtures and offline prior Linux receipt checks; no Linux launch"
+}

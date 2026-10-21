@@ -1,0 +1,12 @@
+{
+  "priorQaWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-install-qa-p83c",
+  "priorQaTestSha256": "9153061a92cbd111ef8f07527d51c24cb626df56aead02b606e365f32f1d7c22",
+  "newTestSha256": "98989c410bb0f278d7b6552e97530434ee5ab747f50f18469f5010821263bc7e",
+  "existingP83cAssertionsPreserved": true,
+  "addedCases": [
+    "custom replacement namespace",
+    "empty GIT_NO_REPLACE_OBJECTS variable"
+  ],
+  "productBeforeSha256": "c1c94ebdf9ce1fc9d304a454a584f7430beb067016620a405d20fe969244c009",
+  "priorQaWorktreeModified": false
+}

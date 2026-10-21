@@ -1,0 +1,10 @@
+{
+  "total": 31,
+  "passed": 31,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "success": true,
+  "elapsedSeconds": 25.674,
+  "scope": "4 real Git replacement regressions +17 source exporter controls +10 existing G84E receipt/cleanup checks; not a new Linux projection run"
+}

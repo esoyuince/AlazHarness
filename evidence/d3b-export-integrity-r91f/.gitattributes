@@ -1,0 +1,3 @@
+# Preserve raw process outputs; no product scanner exception.
+*.txt -text -diff
+*.json text eol=lf

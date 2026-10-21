@@ -1,5 +1,18 @@
 # AlazHarness — status
 
+## D3B-EXPORT-INTEGRITY-R91F — SCOPED PASS
+
+Active branch: `alaz/d3b-export-integrity-r91f`; worktree `scratch/worktrees/d3b-export-integrity-r91f`. Base is the committed G84E projection `916f5290981f5cc4775c930fb4674d046cb3cc67` (not the failed G82C candidate).
+Scope: integrate P83C's already-reproduced exporter replacement-ref correction into the current development lineage, reproduce before/after in owned nonprivileged temporary Git repositories, verify exported original content and existing G84E receipts, and run regression. Primary/P83C dirty or concurrent work stays untouched. The denied G82C edit is not applied, replayed, merged or routed through another tool. No mount, root, WSL start, account/service, real provider/model, main or push operation.
+Evidence `evidence/d3b-export-integrity-r91f/`. Exact next: reproduce source replacement acceptance, add disable flag to export Git calls only, retain failure evidence and verify all unaffected runtime sources.
+
+Completed: code-only commit `bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2`; four original exporter failures reproduced, same four PASS after one-line disable-replacements fix. Focused31PASS (subset), fresh fullWindows2273=2268PASS/5SKIP/0FAIL/0ERROR,345 source hashes stable.343 previous sources unchanged; only exporter helper modified. Independent read-only verification confirms original57-file802fade archive unchanged and58-file916f529 archive exact. Existing G84E source/receipt checks PASS offline; no new Linux or projection execution. G82C failed/blocked draft remains unchanged. Report docs/D3B-EXPORT-INTEGRITY-R91F.md; summary evidence/d3b-export-integrity-r91f/summary.json.
+
+Next: safe development-line integration of code-only fix, then durable state and fixed Hermes entrypoint; no snapshot-only crash-durability claim or writable-host-tree workaround. Main/push/production/model/privileged actions NOT performed. Read current Git HEAD for the documentation/evidence follow-up.
+
+## Preserved G84E source record
+
+
 ## D3B-GATEWAY-PROJECTION-G84E — SCOPED NATIVE PROJECTION PASS
 
 Base69d72e9; branch alaz/d3b-principal-launch-21oct; this worktree remains the active continuation. Implement a separate trusted root-to-Gateway confinement primitive preserving the initial host UID namespace, private mount/network/IPC namespaces, one pinned broker inode, synthetic broker parent, fresh ephemeral writable trees, zero caps, existing seccomp and Landlock. Reuse existing validators, identity/FD/drop primitives; legacy ipc_view v1/v2 gates and broker code remain unchanged. This is not yet a production Gateway CLI or Hermes integration.
@@ -1382,3 +1395,13 @@ Fresh n03 exit0:18 supervisor +23 target checks PASS (overlapping scopes), actua
 ### G84E final terminal checkpoint — 2026-10-21T14:23:44.554897+03:00
 
 Full request a0e58a99-d8bb-4d82-936d-3da93e9d06c4 terminal exit0. Native n03 ea954d9a-e735-4f3e-89c4-b6c14188c19e terminal exit0. Lab cleanup04732a59-537a-4c52-b50f-e62e7db2edbe terminal exit0; final distro list confirms both stopped. Exact new primitive source hash 304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660. Source freeze344 and old338 unchanged. Final local static/commit recorded next; no background execution or publication.
+
+
+### R91F focused checkpoint — 2026-10-21T15:07:18.227005+03:00
+
+Original valid-fixture run4FAIL, fixed run31/31PASS. Repaired exporter matches57-file original802fade archive and independently verifies58-file G84E916f529 archive. FullWindows2273 run in progress, request9a89388f-c1e8-49d3-b5bd-5316b5021faa;345 sources frozen. Do not modify sources or replay the full run. No WSL/root/mount/provider/main/push action.
+
+
+### R91F terminal result — 2026-10-21T15:11:40.742142+03:00
+
+FullWindows2273 terminal result PASS; code-only commit bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2. Raw first fixture error and four-failure regression retained. Same tests passed after source correction. No code changes after full source freeze; final static gate follows. No lab process started; no denied action replayed.
