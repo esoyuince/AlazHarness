@@ -1,0 +1,8 @@
+test_actual_successful_linux_selection_and_source_custody (test_state_image_lease_receipt.ImageLeaseReceipt.test_actual_successful_linux_selection_and_source_custody) ... ok
+test_failed_invocation_and_scoped_cleanup_records_retained (test_state_image_lease_receipt.ImageLeaseReceipt.test_failed_invocation_and_scoped_cleanup_records_retained) ... ok
+test_ordinary_identity_cleanup_and_limited_scope (test_state_image_lease_receipt.ImageLeaseReceipt.test_ordinary_identity_cleanup_and_limited_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.067s
+
+OK

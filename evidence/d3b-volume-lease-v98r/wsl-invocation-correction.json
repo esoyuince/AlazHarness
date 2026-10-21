@@ -1,0 +1,10 @@
+{
+  "firstInvocationExitCode": 1,
+  "firstOutput": "This account is currently not available.",
+  "firstInvocationRanTests": false,
+  "correction": "Use previously qualified WSL --exec /usr/bin/python3.12 rather than requesting the account default shell with --. Same already-authorized ordinary identity and code; no shell/account/permissions or root change.",
+  "reference": "evidence/d3b-storage-native-n97k/lab-preflight-intent.json",
+  "previousOutcomeRetained": true,
+  "toolSafetyDenial": false,
+  "observedHelp": "--exec runs specified program without default Linux shell"
+}

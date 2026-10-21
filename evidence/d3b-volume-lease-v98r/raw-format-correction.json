@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-21T20:54:17.457501+03:00",
+  "originalStaticFailure": "static-final.txt",
+  "jsonErrors": [
+    {
+      "path": "evidence/d3b-volume-lease-v98r/linux-001-stdout.json",
+      "type": "JSONDecodeError",
+      "line": 1,
+      "column": 1,
+      "sha256": "32a9a606ae7609b23d10194854c39fa72897cc961ad9c1dfec727e91956f5a6e"
+    }
+  ],
+  "rawMovedFrom": "evidence/d3b-volume-lease-v98r/linux-001-stdout.json",
+  "rawMovedTo": "evidence/d3b-volume-lease-v98r/linux-001-stdout.txt",
+  "rawSha256": "32a9a606ae7609b23d10194854c39fa72897cc961ad9c1dfec727e91956f5a6e",
+  "rawBytesUnchanged": true,
+  "onlyReceiptReferenceChanged": true,
+  "receiptTestBeforeSha256": "d9cc8c9fccf359ebe4578f041d266f56d184b048b5c798801b87d39c124a32b2",
+  "receiptTestAfterSha256": "2e7192ddc6244ad9e24752a26e72edb313bc24935d6b961b67c4914e3c7d3911",
+  "nativeSourcesChanged": false,
+  "scannerModified": false,
+  "assertionsRelaxed": false,
+  "newNativeRun": false,
+  "firstFullResultRemainsBeforeReceiptPathCorrection": true
+}
