@@ -1,7 +1,7 @@
 {
   "job": "D3B-LAUNCH-IMPORT-MERGE-V61E",
   "result": "LOCAL_SCOPED_PASS",
-  "updatedAt": "2026-10-21T11:18:19.534025+03:00",
+  "updatedAt": "2026-10-21T11:20:57.378597+03:00",
   "branch": "alaz/d3b-principal-launch-21oct",
   "base": "edb4ae1262b082b9bf358e04ff4c6565b09fde10",
   "incoming": "01791c1ff485d9950a72728b00de83c2b520c748",
@@ -47,6 +47,13 @@
   "ipcV2MountEnabled": false,
   "realModelCalls": 0,
   "allTestRequestsTerminal": true,
-  "mergeCommit": "PENDING_LOCAL_COMMIT",
-  "countsOverlapNotAdded": true
+  "mergeCommit": "655a7a238aba7957ee2a436851a06ba150ed41eb",
+  "countsOverlapNotAdded": true,
+  "mergeParents": [
+    "e8164b0153c27905a01dc167e91655eaeaacd5fd",
+    "01791c1ff485d9950a72728b00de83c2b520c748"
+  ],
+  "localMergeComplete": true,
+  "nativeSourcePinsVerified": 15,
+  "freshNativeReceiptFilesExactInGit": 5
 }

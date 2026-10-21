@@ -97,3 +97,7 @@ evidence/.gitattributes was extended by one exact-filename cr-at-eol rule, leavi
 all inherited rules and every raw receipt unchanged. This is the only intentionally
 modified inherited evidence configuration; all inherited evidence payload blobs
 remain exact. Original diagnostic and before/after attribute hashes are retained.
+
+## Recorded local delivery
+
+Tested history-preserving merge: `655a7a238aba7957ee2a436851a06ba150ed41eb`. Parents: e8164b0 (completed launcher/QA with integration start) and01791c1 (isolated-import fix/evidence). The following handoff commit changes only this report, status, summary and final static receipt. No code changes after the measured331-file test snapshot; no push, remote CI, main or production update.
