@@ -1,0 +1,21 @@
+test_failures_preserved_and_scoped_lab_cleanup (test_state_projection_receipt.StateProjectionReceipt.test_failures_preserved_and_scoped_lab_cleanup) ... ok
+test_no_stronger_acceptance_or_permission_claim (test_state_projection_receipt.StateProjectionReceipt.test_no_stronger_acceptance_or_permission_claim) ... ok
+test_terminal_current_source_trial (test_state_projection_receipt.StateProjectionReceipt.test_terminal_current_source_trial) ... FAIL
+test_two_confined_processes_and_persistent_rows (test_state_projection_receipt.StateProjectionReceipt.test_two_confined_processes_and_persistent_rows) ... ok
+
+======================================================================
+FAIL: test_terminal_current_source_trial (test_state_projection_receipt.StateProjectionReceipt.test_terminal_current_source_trial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_state_projection_receipt.py", line 32, in test_terminal_current_source_trial
+    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),intended[name],name)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443' != '52573a963d3129656d3ab30dd6bd7358d623e2c4c7e5f1b221375be498de3980'
+- da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443
++ 52573a963d3129656d3ab30dd6bd7358d623e2c4c7e5f1b221375be498de3980
+ : packages/claw-hermes/gateway_state_projection.py
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.099s
+
+FAILED (failures=1)

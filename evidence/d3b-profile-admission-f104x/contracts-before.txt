@@ -1,0 +1,220 @@
+test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) ... 
+  test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) (value=1) ... ERROR
+  test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) (value=None) ... ERROR
+  test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) (value='yes') ... ERROR
+test_default_metadata_unchanged (test_self_mount_metadata.SelfMountMetadata.test_default_metadata_unchanged) ... ok
+test_false_is_exact_default (test_self_mount_metadata.SelfMountMetadata.test_false_is_exact_default) ... ERROR
+test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) ... 
+  test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=True) ... ERROR
+  test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=0) ... ERROR
+  test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=-1) ... ERROR
+  test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value='42') ... ERROR
+  test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=42.0) ... ERROR
+test_json_policy_does_not_accept_extra_permission_field (test_self_mount_metadata.SelfMountMetadata.test_json_policy_does_not_accept_extra_permission_field) ... ok
+test_no_directory_fd_environment_or_other_process_grant (test_self_mount_metadata.SelfMountMetadata.test_no_directory_fd_environment_or_other_process_grant) ... ERROR
+test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) ... 
+  test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=1) ... ERROR
+  test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=0) ... ERROR
+  test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=None) ... ERROR
+  test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value='true') ... ERROR
+  test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=[]) ... ERROR
+  test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value={}) ... ERROR
+test_optin_adds_only_numeric_self_mountinfo (test_self_mount_metadata.SelfMountMetadata.test_optin_adds_only_numeric_self_mountinfo) ... ERROR
+test_requires_existing_process_metadata_optin (test_self_mount_metadata.SelfMountMetadata.test_requires_existing_process_metadata_optin) ... ERROR
+test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) ... 
+  test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) (value=1) ... ERROR
+  test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) (value=None) ... ERROR
+  test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) (value='true') ... ERROR
+
+======================================================================
+ERROR: test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) (value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 38, in test_apply_option_checked_before_kernel
+    guard.apply(POLICY,self_mount_metadata=value)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: apply() got an unexpected keyword argument 'self_mount_metadata'
+
+======================================================================
+ERROR: test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) (value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 38, in test_apply_option_checked_before_kernel
+    guard.apply(POLICY,self_mount_metadata=value)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: apply() got an unexpected keyword argument 'self_mount_metadata'
+
+======================================================================
+ERROR: test_apply_option_checked_before_kernel (test_self_mount_metadata.SelfMountMetadata.test_apply_option_checked_before_kernel) (value='yes')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 38, in test_apply_option_checked_before_kernel
+    guard.apply(POLICY,self_mount_metadata=value)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: apply() got an unexpected keyword argument 'self_mount_metadata'
+
+======================================================================
+ERROR: test_false_is_exact_default (test_self_mount_metadata.SelfMountMetadata.test_false_is_exact_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 20, in test_false_is_exact_default
+    self.assertEqual(guard.self_metadata_paths(42,mountinfo=False),guard.self_metadata_paths(42))
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 24, in test_invalid_pids_rejected
+    guard.self_metadata_paths(value,mountinfo=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 24, in test_invalid_pids_rejected
+    guard.self_metadata_paths(value,mountinfo=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 24, in test_invalid_pids_rejected
+    guard.self_metadata_paths(value,mountinfo=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value='42')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 24, in test_invalid_pids_rejected
+    guard.self_metadata_paths(value,mountinfo=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_invalid_pids_rejected (test_self_mount_metadata.SelfMountMetadata.test_invalid_pids_rejected) (value=42.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 24, in test_invalid_pids_rejected
+    guard.self_metadata_paths(value,mountinfo=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_no_directory_fd_environment_or_other_process_grant (test_self_mount_metadata.SelfMountMetadata.test_no_directory_fd_environment_or_other_process_grant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 30, in test_no_directory_fd_environment_or_other_process_grant
+    paths=guard.self_metadata_paths(42,mountinfo=True)
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 28, in test_nonboolean_metadata_flag_refused
+    guard.self_metadata_paths(42,mountinfo=value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 28, in test_nonboolean_metadata_flag_refused
+    guard.self_metadata_paths(42,mountinfo=value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 28, in test_nonboolean_metadata_flag_refused
+    guard.self_metadata_paths(42,mountinfo=value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 28, in test_nonboolean_metadata_flag_refused
+    guard.self_metadata_paths(42,mountinfo=value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 28, in test_nonboolean_metadata_flag_refused
+    guard.self_metadata_paths(42,mountinfo=value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_nonboolean_metadata_flag_refused (test_self_mount_metadata.SelfMountMetadata.test_nonboolean_metadata_flag_refused) (value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 28, in test_nonboolean_metadata_flag_refused
+    guard.self_metadata_paths(42,mountinfo=value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_optin_adds_only_numeric_self_mountinfo (test_self_mount_metadata.SelfMountMetadata.test_optin_adds_only_numeric_self_mountinfo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 18, in test_optin_adds_only_numeric_self_mountinfo
+    self.assertEqual(guard.self_metadata_paths(42,mountinfo=True),default+('/proc/42/mountinfo',))
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: self_metadata_paths() got an unexpected keyword argument 'mountinfo'
+
+======================================================================
+ERROR: test_requires_existing_process_metadata_optin (test_self_mount_metadata.SelfMountMetadata.test_requires_existing_process_metadata_optin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 43, in test_requires_existing_process_metadata_optin
+    guard.apply(policy,self_mount_metadata=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: apply() got an unexpected keyword argument 'self_mount_metadata'
+
+======================================================================
+ERROR: test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) (value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 50, in test_state_enter_rejects_nonbool_before_observation
+    state.enter({},POLICY,object(),observe_self_mount=value)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: enter() got an unexpected keyword argument 'observe_self_mount'
+
+======================================================================
+ERROR: test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) (value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 50, in test_state_enter_rejects_nonbool_before_observation
+    state.enter({},POLICY,object(),observe_self_mount=value)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: enter() got an unexpected keyword argument 'observe_self_mount'
+
+======================================================================
+ERROR: test_state_enter_rejects_nonbool_before_observation (test_self_mount_metadata.SelfMountMetadata.test_state_enter_rejects_nonbool_before_observation) (value='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-profile-admission-f104x\tests\test_self_mount_metadata.py", line 50, in test_state_enter_rejects_nonbool_before_observation
+    state.enter({},POLICY,object(),observe_self_mount=value)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: enter() got an unexpected keyword argument 'observe_self_mount'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.007s
+
+FAILED (errors=21)

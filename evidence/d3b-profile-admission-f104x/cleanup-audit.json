@@ -1,0 +1,33 @@
+{
+  "exitCode": 0,
+  "audit": {
+    "ownLivePids": [],
+    "otherLabRuntimePids": [],
+    "images": [
+      {
+        "base": "/srv/alaz-f104x",
+        "bytes": 67108864,
+        "loops": [],
+        "fencePresent": false,
+        "brokerSocketPresent": false,
+        "hostMounts": [],
+        "mountpointsEmpty": true
+      },
+      {
+        "base": "/srv/alaz-f104x-first",
+        "bytes": 67108864,
+        "loops": [],
+        "fencePresent": false,
+        "brokerSocketPresent": false,
+        "hostMounts": [],
+        "mountpointsEmpty": true
+      }
+    ],
+    "scopeParentPresent": false,
+    "anchorsAbsent": true,
+    "installedSourcesUnchanged": true,
+    "onlyReadOperations": true,
+    "labStopRequested": false,
+    "ownClean": true
+  }
+}

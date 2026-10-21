@@ -223,13 +223,14 @@ class _ProfileMounts(gp.Mounts):
         super().pivot(root)
 
 
-def enter(value, filesystem, binding):
+def enter(value, filesystem, binding, *, observe_self_mount=False):
     """Confine one joined root child; only its checked image profile persists.
 
     Caller joins the root-controlled S101 cgroup BEFORE the volume namespace.
     A complete production child launcher/admission pipeline is still required.
     Do not run a workload after any exception or return to the host caller.
     """
+    require(type(observe_self_mount) is bool, 'state_projection_mount_observation_boolean')
     plan = gp.inspect(value, filesystem)
     full_policy = validate_exports(binding, plan['ipc'], plan['filesystem'])
     p = plan['ipc']['principalContract']
@@ -249,7 +250,8 @@ def enter(value, filesystem, binding):
     gp.net._filter(seccomp)
     require(gp.net.status()['Seccomp'] == '2', 'state_projection_filter_missing')
     gp.launch.close_ambient_fds()
-    landlock = gp.fs_guard.apply(full_policy)
+    landlock = (gp.fs_guard.apply(full_policy, self_mount_metadata=True) if observe_self_mount
+                else gp.fs_guard.apply(full_policy))
     return {'version':1,'state':'confined_state_profile','pid':os.getpid(),
             'profile':TARGET,'profileDevice':observed['profile'][0],'profileInode':binding.profile_inode,
             'persistentProfileProjected':True,'stateDirectoryCount':1,'ambientHostDirectoriesBound':0,

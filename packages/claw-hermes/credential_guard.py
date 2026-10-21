@@ -176,24 +176,29 @@ def _preflight(policy):
     return closed_executable_fds
 
 
-def self_metadata_paths(pid):
+def self_metadata_paths(pid, *, mountinfo=False):
     """Fixed self-only process identity files plus system boot-time statistics.
 
     Never expose /proc directories, arbitrary PIDs, environ, mem, fd or exe.
     Evaluated at launch; exec keeps the PID. A descendant gets no new grant.
     """
     require(type(pid) is int and pid > 0, 'credential_guard_metadata_pid')
+    require(type(mountinfo) is bool, 'credential_guard_mount_metadata_boolean')
     return tuple('/proc/' + str(pid) + '/' + name
-                 for name in ('stat', 'status', 'statm', 'cmdline')) + ('/proc/stat',)
+                 for name in ('stat', 'status', 'statm', 'cmdline')) + ('/proc/stat',) + (
+                     ('/proc/' + str(pid) + '/mountinfo',) if mountinfo else ())
 
 
-def apply(policy):
+def apply(policy, *, self_mount_metadata=False):
     """Irreversibly restrict only this fresh process and future descendants.
 
     Any failure is fatal to the caller: do not continue the intended workload.
     Does not try to revoke already-open descriptors in sibling processes.
     """
+    require(type(self_mount_metadata) is bool, 'credential_guard_mount_metadata_boolean')
     policy = validate_policy(policy)
+    require(not self_mount_metadata or policy.get('self_process_metadata') is True,
+            'credential_guard_mount_metadata_requires_self')
     libc = kernel()
     abi = abi_version(libc)
     closed_executable_fds = _preflight(policy)
@@ -218,7 +223,7 @@ def apply(policy):
                     require(rc == 0, 'credential_guard_add_rule_failed')
                 finally:
                     os.close(fd)
-        metadata = self_metadata_paths(os.getpid()) if policy.get('self_process_metadata', False) else ()
+        metadata = self_metadata_paths(os.getpid(), mountinfo=self_mount_metadata) if policy.get('self_process_metadata', False) else ()
         for value in metadata:
             require(value not in policy['protected'], 'credential_guard_protected_metadata')
             fd = os.open(value, os.O_PATH | os.O_CLOEXEC | os.O_NOFOLLOW)
@@ -252,8 +257,9 @@ def apply(policy):
     return {'version': 1, 'state': 'enforced', 'landlockAbi': abi,
             'handledFilesystemRights': HANDLED, 'noNewPrivs': True,
             'closedSelfExecutableFds': closed_executable_fds,
-            'protectedReadDenials': denied, 'policySha256': policy_digest(policy),
+            'protectedReadDenials': denied,
+            'policySha256': policy_digest(policy | {'self_mount_metadata': True}) if self_mount_metadata else policy_digest(policy),
             'scope': 'Landlock ABI3 filesystem opens; not network/UID/metadata isolation',
             'selfProcessMetadata': bool(policy.get('self_process_metadata', False)),
-            'metadataReadFileCount': len(metadata),
+            'metadataReadFileCount': len(metadata), 'selfMountMetadata': self_mount_metadata,
             'networkConfinementVerified': False, 'separateHostUid': False}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-22T01:13:12.373542+03:00",
+  "qaCommit": "b8044f2493f712175aeee7715a91d9db6c8e6014",
+  "featureCommit": "8fdd717e16b334f39f8241037be44551b85d5f74",
+  "incomingCommit": "032f2fd432f233647f5f689666b7dc14c02d1b6e",
+  "canonicalObserved": "032f2fd432f233647f5f689666b7dc14c02d1b6e",
+  "runtimeSourceCount": 378,
+  "scope": "QA-only union with qualified canonical runtime; no new privileged execution",
+  "onlyConflict": [
+    "status.md"
+  ]
+}

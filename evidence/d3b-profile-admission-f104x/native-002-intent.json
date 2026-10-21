@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-22T00:59:02.202639+03:00",
+  "reason": "missing reviewed upstream Hermes helper in QA transport; include exact helper source closure",
+  "productChangedSinceNative001": false,
+  "firstFailedRunArchivedNotDeleted": true,
+  "bootstrapSha256": "1df909aabad0646abb49f9c825971a29f5c63ac38497e4473a6eed6773ed4e5d",
+  "sourceCount": 87
+}

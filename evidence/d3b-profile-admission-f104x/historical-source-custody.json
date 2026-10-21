@@ -1,0 +1,7 @@
+{
+  "base": "1207d37b5bb92bd107e5ec419cd3b4cac46d12f9",
+  "path": "packages/claw-hermes/gateway_state_projection.py",
+  "sha256": "52573a963d3129656d3ab30dd6bd7358d623e2c4c7e5f1b221375be498de3980",
+  "snapshot": "gateway_state_projection.py.before.txt",
+  "oldNativeReceiptUnmodified": true
+}

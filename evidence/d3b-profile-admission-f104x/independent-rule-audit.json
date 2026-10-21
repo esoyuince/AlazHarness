@@ -1,0 +1,13 @@
+{
+  "exitCode": 0,
+  "candidateSha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+  "currentProductExactMatch": true,
+  "filesBeforeAfter": {
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-native-profile-q104e\\evidence\\d3b-native-profile-q104e\\credential_guard.candidate.py.txt": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-native-profile-q104e\\tests\\test_q104e_metadata_rules.py": "115e026a9c62014c9f7627fade0706b01e0bc55fcee4aa75a0cab7cbe354fac6",
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-native-profile-q104e\\evidence\\d3b-native-profile-q104e\\candidate-001.json": "b88627271018eb4862b86e92504d89c5254dcee0ba797cad5366bd693946a932"
+  },
+  "sourceUnchanged": true,
+  "scope": "independent12 syscall-rule/failure tests against exact candidate snapshot; not native kernel invocation",
+  "otherBranchModified": false
+}
