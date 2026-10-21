@@ -1,0 +1,6 @@
+{
+  "reason": "Keep original LF/CRLF process-side JSON bytes in Git as well as disk. Only evidence-scoped cr-at-eol recognition; no actual spaces/tabs at line ends.",
+  "previousAttributeSha256": "84168987267cd3abf149206350127691ae79e5947ee467b2ed77aab14bdb3956",
+  "newAttributeSha256": "d495f9b920d682fe467afd59653e804e9e2f6f4f53857ad6ab9fb8628a445a5d",
+  "rawFilesModified": false
+}

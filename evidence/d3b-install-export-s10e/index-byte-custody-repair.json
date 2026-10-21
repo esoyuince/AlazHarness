@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-10-21T12:05:45.015031+03:00",
+  "firstPrecommitStoppedBeforeCommit": true,
+  "cause": "Files staged under previous text policy retained normalized index blobs until explicit restaging with current evidence-only attributes.",
+  "affected": [
+    {
+      "path": "evidence/d3b-install-export-s10e/existing-sources.json",
+      "indexBeforeSha256": "f40da83c23c0cc21502ebe0bf387b2cb025635b6983d92326e5b46a8fa10ecf2",
+      "originalRawSha256": "249ee5d8ddad3588fca33fdc0362d595eedea40777b7a58175569f5d4a987ada",
+      "exactCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-install-export-s10e/first-export-diagnostic.json",
+      "indexBeforeSha256": "44f45b26036204090ffa7e29dae452a11230e0432f379564e9793bdc43f8186d",
+      "originalRawSha256": "b9e28c9238ac627bcdfccff6dab77af8f568eafa0fc85eaf5292f23edf488100",
+      "exactCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-install-export-s10e/line-ending-repair.json",
+      "indexBeforeSha256": "d6093546249782bafe1aaabce9d986dd52a0d01e6044aeb218d0e9b71554cef6",
+      "originalRawSha256": "922e5b6c2fe5942d4c4273bc1412add2e04a2c3833d5be82e6633f0397d021a0",
+      "exactCRLFtoLF": true
+    },
+    {
+      "path": "evidence/d3b-install-export-s10e/start.json",
+      "indexBeforeSha256": "db2226ac972b3cbef137d190342641ef992d39aaac0eb323631a4dbdc04ab554",
+      "originalRawSha256": "797abf1b45eceeee0edbaac8248bfff29262800e4aead67ed09442692d7c5061",
+      "exactCRLFtoLF": true
+    }
+  ],
+  "repair": "git add --renormalize restricted to this task evidence directory",
+  "rawWorkingFilesUnmodified": true,
+  "allEvidenceNowExactInIndex": true,
+  "productSourcesUnmodified": true
+}

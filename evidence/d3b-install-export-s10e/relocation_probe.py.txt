@@ -1,0 +1,79 @@
+"""Owned unprivileged source relocation/import check, NOT installation/launch."""
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tarfile
+import tempfile
+ROOT=Path(__file__).resolve().parents[2]
+E=ROOT/'evidence/d3b-install-export-s10e'
+if sys.platform!='linux' or os.getuid()==0:raise SystemExit('ordinary_linux_user_required')
+sys.path.insert(0,str(ROOT/'scripts/qa'))
+import export_principal_source as exp
+bundle=ROOT/'scratch/principal-install/802fade-s10e-a'
+raw=(bundle/'broker-source.tar').read_bytes()
+manifest=json.loads((bundle/'manifest.json').read_text(encoding='utf-8'))
+revision='802fade74d5b08b26f975738d4aa8d7546dc9cac'
+assert manifest['sourceCommit']==revision
+proof=exp.verify_archive(raw,manifest['fileManifest'],revision)
+assert proof['archiveSha256']==manifest['archiveSha256']
+identity=(os.getresuid(),os.getresgid(),tuple(os.getgroups()),os.readlink('/proc/self/ns/user'))
+checks={};details={}
+with tempfile.TemporaryDirectory(prefix='alaz-broker-export-') as tmp:
+    temporary=Path(tmp);installation=temporary/exp.PREFIX.rstrip('/')
+    with tarfile.open(fileobj=io.BytesIO(raw),mode='r:') as archive:
+        for name,wanted in manifest['fileManifest'].items():
+            destination=installation/name
+            destination.parent.mkdir(parents=True,exist_ok=True)
+            with archive.extractfile(exp.PREFIX+name) as handle:data=handle.read()
+            assert hashlib.sha256(data).hexdigest()==wanted['sha256']
+            with destination.open('xb') as stream:stream.write(data)
+            destination.chmod(0o644)
+    checks['all_57_files_exact_git_blobs']=len(manifest['fileManifest'])==57 and all(
+        hashlib.sha256((installation/n).read_bytes()).hexdigest()==v['sha256']
+        for n,v in manifest['fileManifest'].items())
+    checks['no_symlinks_or_hardlinks_adopted']=all(not p.is_symlink() and p.stat().st_nlink==1
+        for p in installation.rglob('*') if p.is_file())
+    child=r"""
+from pathlib import Path
+import importlib,json,sys
+root=Path(sys.argv[1]).resolve()
+assert sys.flags.isolated==1
+sys.path[:0]=[str(root/'packages/claw-hermes'),str(root/'scripts')]
+def audit(event,args):
+    if event in ('socket.__new__','subprocess.Popen','os.exec','os.system'):
+        raise AssertionError('no_runtime_side_effect_allowed')
+sys.addaudithook(audit)
+names=('principal_launch','principal_target','provider_broker','run_principal_broker_target','run_provider_broker')
+modules={name:importlib.import_module(name) for name in names}
+locations={name:str(Path(module.__file__).resolve().relative_to(root)) for name,module in modules.items()}
+assert modules['principal_launch'].ROOT==root
+assert modules['run_principal_broker_target'].ROOT==root
+print(json.dumps({'isolated':sys.flags.isolated,'moduleCount':len(modules),'locations':locations,
+                  'installationRootsCorrect':True,'mainOrLaunchCalled':False,'brokerStarted':False}))
+"""
+    r=subprocess.run([sys.executable,'-I','-B','-c',child,str(installation)],
+        cwd=temporary,stdin=subprocess.DEVNULL,capture_output=True,timeout=20,
+        env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(temporary)})
+    checks['fresh_isolated_import_child_exit_zero']=r.returncode==0 and not r.stderr
+    details=json.loads(r.stdout) if r.returncode==0 else {'exitCode':r.returncode,'diagnostic':r.stderr.decode('utf-8','replace')[:1500]}
+    checks['five_modules_from_relocated_install']=details.get('moduleCount')==5 and details.get('installationRootsCorrect') is True
+    checks['no_broker_or_privileged_path_run']=details.get('mainOrLaunchCalled') is False and details.get('brokerStarted') is False
+    checks['no_bytecode_created']=not list(installation.rglob('__pycache__'))
+    checks['all_extracted_source_unchanged']=all(hashlib.sha256((installation/n).read_bytes()).hexdigest()==v['sha256'] for n,v in manifest['fileManifest'].items())
+checks['owned_temp_tree_removed']=not temporary.exists()
+checks['observer_identity_unchanged']=identity==(os.getresuid(),os.getresgid(),tuple(os.getgroups()),os.readlink('/proc/self/ns/user'))
+checks['archive_unchanged']=(bundle/'broker-source.tar').read_bytes()==raw
+record={'result':'PASS_SOURCE_RELOCATION_ONLY' if all(checks.values()) else 'FAIL',
+        'checks':checks,'checkCount':len(checks),'details':details,'sourceCommit':revision,
+        'archiveSha256':proof['archiveSha256'],'helperSha256':hashlib.sha256((ROOT/'scripts/qa/export_principal_source.py').read_bytes()).hexdigest(),
+        'probeSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'observerUid':os.getuid(),'installed':False,'positiveUidTransitionTested':False,
+        'gatewayBrokerTwoUidTested':False,'brokerStarted':False,'ipcV2Enabled':False,'realModelCalls':0}
+with (E/'linux-relocation.json').open('x',encoding='utf-8',newline='\n') as stream:
+    json.dump(record,stream,indent=2);stream.write('\n')
+print(json.dumps(record))
+raise SystemExit(0 if all(checks.values()) else 1)

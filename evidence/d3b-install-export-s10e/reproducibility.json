@@ -1,0 +1,15 @@
+{
+  "result": "PASS_SOURCE_EXPORT_ONLY",
+  "checks": {
+    "broker-source.tar": true,
+    "manifest.json": true
+  },
+  "sourceCommit": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+  "archiveSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451",
+  "files": 57,
+  "bytes": 505793,
+  "archiveBytes": 563200,
+  "installationPerformed": false,
+  "positiveUidTransitionTested": false,
+  "output": "C:/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/scratch/principal-install/802fade-s10e-a"
+}

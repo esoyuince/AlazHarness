@@ -1,0 +1,14 @@
+[
+  {
+    "log": "focused-linux.txt",
+    "exitCode": 0
+  },
+  {
+    "log": "relocation-linux.txt",
+    "exitCode": 0
+  },
+  {
+    "log": "export-linux.txt",
+    "exitCode": 2
+  }
+]

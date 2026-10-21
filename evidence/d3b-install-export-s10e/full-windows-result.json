@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2220,
+  "discovered": 2220,
+  "passed": 2215,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "elapsedSeconds": 334.805,
+  "sourceFiles": 333,
+  "sourceUnchanged": true,
+  "completedAt": "2026-10-21T12:03:02.285165+03:00",
+  "collection": "unittest result object; no text footer parsing",
+  "positiveUidTransitionTested": false,
+  "installationPerformed": false
+}

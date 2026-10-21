@@ -1,0 +1,21 @@
+{
+  "cause": "Git archive used local autocrlf for auto-text paths. Export now pins autocrlf=false and eol=lf; exact raw blob comparison remains mandatory.",
+  "differences": [
+    {
+      "path": "LICENSE",
+      "archiveBytes": 1102,
+      "gitBytes": 1081,
+      "exactCRLFConversion": true
+    }
+  ],
+  "newVerification": {
+    "files": 57,
+    "sourceBytes": 505793,
+    "archiveBytes": 563200,
+    "archiveSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451"
+  },
+  "sourceBefore": "38d324b9767a980488e917fb9767118238c3b28f1fc3f181aed0f79385dfe2af",
+  "sourceAfter": "c1c94ebdf9ce1fc9d304a454a584f7430beb067016620a405d20fe969244c009",
+  "productSourcesChanged": false,
+  "firstFailureRetained": true
+}

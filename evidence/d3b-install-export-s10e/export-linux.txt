@@ -1,0 +1,1 @@
+{"result": "REFUSED", "reasonType": "ExportRejected", "installationPerformed": false}

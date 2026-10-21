@@ -1,5 +1,18 @@
 # AlazHarness — status
 
+## D3B-INSTALL-EXPORT-S10E — LOCAL SOURCE-EXPORT PASS
+
+Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`; base `802fade74d5b08b26f975738d4aa8d7546dc9cac`.
+Task: prepare a reproducible exact-commit, source-only broker installation candidate using Git archive; verify every archived blob, reject links/private payloads and preserve existing source/acceptance. No install, root command, account, service, privileged execution, alternate-connector bypass, IPC gate activation, push or model call.
+Targeted current Ubuntu observation: UID/GID1000; no AlazHarness-named entry in /opt or /srv and no alaz/broker-named account. This is not an exhaustive search or a claim of deployment readiness. A dedicated test environment and explicit provisioning/execution scope remain unresolved; current developer checkout is not a privileged install.
+Evidence: `evidence/d3b-install-export-s10e/`. Existing full2203 execution remains historical; only export/relocation checks will be newly claimed here. Product source pinned to base; output bundle goes under ignored scratch. Next: build and independently reproduce archive, verify relocation/imports unprivileged, and record the exact operator acceptance gate.
+
+Completed: reproducible57-file source candidate pinned to802fade, archive SHA2568c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451. Two Windows archives/manifests identical; native Linux Git common-object-store archive byte-identical. New Windows17/Linux17 tests PASS; unprivileged relocated import/source checks10/10 PASS (five modules, NO broker run). New fullWindows2220=2215PASS/5SKIP/0FAIL, exit0 from unittest result object;333 source hashes stable,331 existing source files unchanged. Original export/EOL and Linux worktree-path failures retained and explained. Report docs/D3B-INSTALL-EXPORT-S10E.md; machine summary evidence/d3b-install-export-s10e/summary.json. No source edits after full run.
+
+**Next required decision:** designate and explicitly authorize disposable isolated Linux setup and the bounded positive root-to-broker test. No such scope is established. This source archive is not installed/trusted runtime; Python/dependencies and separate identities/config/budget/socket remain prerequisites. Do not bypass the prior privileged-operation denial or keep repeating readiness checks. No root/account/service/main/push/model/IPC-v2 action occurred. Read Git HEAD for this local commit; candidate source remains802fade.
+
+## Preserved import integration
+
 ## D3B-LAUNCH-IMPORT-MERGE-V61E — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`.
@@ -1308,3 +1321,13 @@ All tests terminal: full request ae82ee85-22bb-4c7b-b741-f40a3778f91f underlying
 ### V61E local merge recorded — 2026-10-21T11:20:57.295043+03:00
 
 Merge `655a7a238aba7957ee2a436851a06ba150ed41eb` preserves e8164b0 and01791c1 parents; import correction797b4aa is included. Full2203=2198PASS/5SKIP with explicit collector CRLF review; focused83 and independent22 bothOS, native26/16/13, all terminal. Source331 unchanged,15 native sources pinned,5 fresh JSON receipts byte-exact in index. Main cc7ceba and other worktrees preserved. No push or remoteCI; next positive two-host-UID environment remains unestablished and IPCv2 CLOSED.
+
+
+### S10E export prepared — 2026-10-21T11:59:37.762787+03:00
+
+Windows focused17/17 PASS. Two independent exports byte-identical:57 source files,tar SHA256 8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451. Source-only candidate, NOT installation. Full suite request ed189b86-b497-4da7-b204-b0f874182c31 IN PROGRESS; frozen333 sources. Linux selected/relocation/export request 2b15d9b7-a277-46a9-9306-6d069b195c5c IN PROGRESS. Do not change sources or replay these operations. Missing authority is designated isolated Linux setup and explicit provisioning/positive-execution scope; no root action attempted.
+
+
+### S10E terminal checkpoint — 2026-10-21T12:04:14.268285+03:00
+
+Full request ed189b86-b497-4da7-b204-b0f874182c31 terminal exit0; Linux selection/relocation passed before a known Git-path refusal in2b15d9b7. Independent Linux archive comparison9b280946 terminal exit0. Source code unchanged during tests. Local static final follows; no background test or positive UID transition pending.

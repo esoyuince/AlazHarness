@@ -1,0 +1,22 @@
+test_absolute_dotdot_backslash_and_alias_rejected (test_principal_source_export.ArchiveContracts.test_absolute_dotdot_backslash_and_alias_rejected) ... ok
+test_changed_bytes_rejected (test_principal_source_export.ArchiveContracts.test_changed_bytes_rejected) ... ok
+test_changed_commit_rejected (test_principal_source_export.ArchiveContracts.test_changed_commit_rejected) ... ok
+test_duplicate_and_case_collision_rejected (test_principal_source_export.ArchiveContracts.test_duplicate_and_case_collision_rejected) ... ok
+test_empty_and_non_tar_rejected (test_principal_source_export.ArchiveContracts.test_empty_and_non_tar_rejected) ... ok
+test_exact_owned_archive_passes_without_extracting (test_principal_source_export.ArchiveContracts.test_exact_owned_archive_passes_without_extracting) ... ok
+test_extra_trailing_payload_rejected (test_principal_source_export.ArchiveContracts.test_extra_trailing_payload_rejected) ... ok
+test_missing_file_rejected (test_principal_source_export.ArchiveContracts.test_missing_file_rejected) ... ok
+test_only_canonical_ancestor_directories_accepted (test_principal_source_export.ArchiveContracts.test_only_canonical_ancestor_directories_accepted) ... ok
+test_symlink_hardlink_fifo_and_device_rejected (test_principal_source_export.ArchiveContracts.test_symlink_hardlink_fifo_and_device_rejected) ... ok
+test_unexpected_file_rejected (test_principal_source_export.ArchiveContracts.test_unexpected_file_rejected) ... ok
+test_writeable_or_setuid_archive_mode_rejected (test_principal_source_export.ArchiveContracts.test_writeable_or_setuid_archive_mode_rejected) ... ok
+test_branch_or_short_revision_never_reaches_git (test_principal_source_export.PublicationContracts.test_branch_or_short_revision_never_reaches_git) ... ok
+test_existing_output_is_never_overwritten (test_principal_source_export.PublicationContracts.test_existing_output_is_never_overwritten) ... ok
+test_only_selected_runtime_paths (test_principal_source_export.PublicationContracts.test_only_selected_runtime_paths) ... ok
+test_outside_scratch_cannot_be_written (test_principal_source_export.PublicationContracts.test_outside_scratch_cannot_be_written) ... ok
+test_real_git_export_ignores_autocrlf_and_untracked_private_files (test_principal_source_export.PublicationContracts.test_real_git_export_ignores_autocrlf_and_untracked_private_files) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.384s
+
+OK

@@ -1,0 +1,10 @@
+{
+  "windowsGitCommonDir": "C:/Antigravity/AlazHarness/.git",
+  "linuxExitCode": 128,
+  "linuxStdout": "",
+  "linuxStderr": "fatal: not a git repository: /mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/C:/Antigravity/AlazHarness/.git/worktrees/d3b-principal-launch-21oct\n",
+  "worktreeGitPointer": "gitdir: C:/Antigravity/AlazHarness/.git/worktrees/d3b-principal-launch-21oct",
+  "failedOutputExists": false,
+  "sourceChanged": false,
+  "gitConfigurationChanged": false
+}

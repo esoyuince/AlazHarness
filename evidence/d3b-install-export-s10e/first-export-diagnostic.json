@@ -1,0 +1,102 @@
+{
+  "inventoryCount": 57,
+  "archiveFailure": "export_member_metadata",
+  "pax": {
+    "comment": "802fade74d5b08b26f975738d4aa8d7546dc9cac"
+  },
+  "firstMembers": [
+    {
+      "name": "alazharness-broker",
+      "mode": "0o755",
+      "type": "5",
+      "size": 0
+    },
+    {
+      "name": "alazharness-broker/LICENSE",
+      "mode": "0o644",
+      "type": "0",
+      "size": 1102
+    },
+    {
+      "name": "alazharness-broker/SECURITY.md",
+      "mode": "0o644",
+      "type": "0",
+      "size": 1323
+    },
+    {
+      "name": "alazharness-broker/config",
+      "mode": "0o755",
+      "type": "5",
+      "size": 0
+    },
+    {
+      "name": "alazharness-broker/config/components.lock.json",
+      "mode": "0o644",
+      "type": "0",
+      "size": 4818
+    },
+    {
+      "name": "alazharness-broker/docs",
+      "mode": "0o755",
+      "type": "5",
+      "size": 0
+    },
+    {
+      "name": "alazharness-broker/docs/THIRD-PARTY.md",
+      "mode": "0o644",
+      "type": "0",
+      "size": 2042
+    },
+    {
+      "name": "alazharness-broker/packages",
+      "mode": "0o755",
+      "type": "5",
+      "size": 0
+    },
+    {
+      "name": "alazharness-broker/packages/README.md",
+      "mode": "0o644",
+      "type": "0",
+      "size": 358
+    },
+    {
+      "name": "alazharness-broker/packages/admission",
+      "mode": "0o755",
+      "type": "5",
+      "size": 0
+    },
+    {
+      "name": "alazharness-broker/packages/admission/strict-admission.mjs",
+      "mode": "0o644",
+      "type": "0",
+      "size": 7569
+    },
+    {
+      "name": "alazharness-broker/packages/claw-hermes",
+      "mode": "0o755",
+      "type": "5",
+      "size": 0
+    },
+    {
+      "name": "alazharness-broker/packages/claw-hermes/UPSTREAM.md",
+      "mode": "0o644",
+      "type": "0",
+      "size": 1599
+    },
+    {
+      "name": "alazharness-broker/packages/claw-hermes/broker_budget.py",
+      "mode": "0o644",
+      "type": "0",
+      "size": 16433
+    },
+    {
+      "name": "alazharness-broker/packages/claw-hermes/combined_guard.py",
+      "mode": "0o644",
+      "type": "0",
+      "size": 4021
+    }
+  ],
+  "trailingNonzeroBytes": 0,
+  "trailingBytes": 5632,
+  "outputExists": false
+}

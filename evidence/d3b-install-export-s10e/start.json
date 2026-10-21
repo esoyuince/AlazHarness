@@ -1,0 +1,16 @@
+{
+  "base": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+  "observedAt": "2026-10-21T11:49:34.474254+03:00",
+  "task": "deterministic reviewed broker source export; no privileged install",
+  "linuxReadOnlyObservation": {
+    "uid": 1000,
+    "gid": 1000,
+    "namespace": "user:[4026531837]",
+    "alazOrHarnessEntriesInOpt": [],
+    "alazOrHarnessEntriesInSrv": [],
+    "alazOrBrokerNamedAccounts": []
+  },
+  "observationScope": "named paths/accounts only, not an exhaustive host inventory",
+  "privilegedInvocation": false,
+  "productionChanged": false
+}
