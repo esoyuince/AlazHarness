@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-21T21:36:46.369499+03:00",
+  "testedMerge": "a528b725f865f28284c10c92654346cee3ea0b48",
+  "parents": [
+    "f7f12edcbda7e3876aaf0e98fb3d91d9ea99af86",
+    "681ddd9fe94a81d25e75edcd9dea8df9fb59c6d4"
+  ],
+  "activeDevelopmentBranch": "alaz/d3b-principal-launch-21oct",
+  "activeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "integrationBranchPreserved": "alaz/d3b-storage-joint-j01c",
+  "integration": "fast-forward promotion after fresh full and static PASS",
+  "currentSourceFiles": 358,
+  "currentSourcesMatchTestedFreeze": true,
+  "fullWindows": {
+    "total": 2365,
+    "passed": 2342,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "linuxSelectedPassed": 79,
+  "nativeProfileChecks": 26,
+  "nativeJointChecks": 25,
+  "historicalEvidencePreserved": 73,
+  "mountedImageSupervisorImplemented": false,
+  "R91FQualified": false,
+  "fullD3BAccepted": false,
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "pushed": false
+}

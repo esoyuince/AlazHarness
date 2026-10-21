@@ -151,3 +151,13 @@ P71C is stopped and no command changed default Ubuntu.73 historical input
 receipt files retain original Git blobs. Local static runs AFTER full tests.
 The next gated implementation is actual volume-user/attachment supervision,
 not a claim that the current independent leases already provide that runtime.
+
+## Recorded integration delivery
+
+Tested two-parent merge `a528b725f865f28284c10c92654346cee3ea0b48` is fast-forward
+promoted to `alaz/d3b-principal-launch-21oct`. Canonical continuation is
+`C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
+The integration worktree remains at the tested merge. The following commit
+updates only these delivery records and the primary's static result. All358
+source bytes remain the tested bytes. Integration static PASS2365 exit0.
+No push, GitHub CI, main update or runtime volume activation has occurred.

@@ -1,5 +1,20 @@
 # AlazHarness — status
 
+## D3B-STORAGE-JOINT-J01C — QUALIFIED AND DEVELOPMENT-INTEGRATED
+
+Active branch `alaz/d3b-principal-launch-21oct`; canonical worktree `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Tested two-parent merge `a528b725f865f28284c10c92654346cee3ea0b48` joins primary L99D f7f12ed and image V98R681ddd9. Fast-forward promotion complete; original integration and feature branches/evidence are retained. This follow-up changes only documentation/delivery/static receipts.
+
+Fresh merged full Windows2365=2342PASS/23SKIP/0FAIL/0ERROR, exit0. Linux79/79 selected methods with0 skips; fresh native profile26 and joint interaction25 predicates PASS. Four offline receipt tests included in full count. All358 current source files stable; all356 old union sources unchanged;73 historical evidence Git blobs preserved. Source/test assertions and deadlines not weakened.18 image-native Windows skips executed on Linux;5 old broker opt-in cases NOT rerun. Final integration static PASS2365; promoted-source static is recorded separately. Report docs/D3B-STORAGE-JOINT-J01C.md; evidence/d3b-storage-joint-j01c/summary.json and delivery.json.
+
+The first joint source-inventory assertion failed24/25 because it confused parent and child import inventories. Preserve native001 and before-source; QA now records actual acquired child PID/source inventories. A NEW native002 passed, not reinterpretation. R91F's blocked collector is untouched/unresolved and excluded; this merge is not its repair.
+
+Important observed boundary: image flock becomes available after the image owner dies while an independent native profile owner can still live. QA used separate inert image and dummy SQLite profile fixtures, NOT a mounted image or real Gateway process topology. The merged primitives are NOT an outer volume supervisor. Exact next: implement explicit surviving-user/loop/mount reconciliation and retain image lease until users are reaped and attachment detached, then connect actual database/epoch/recovery checks before Gateway admission. No automatic retry of unknown storage effects. Full D3B OPEN; legacy IPCv2 CLOSED.
+
+Own P71C code/fixtures removed and lab stopped; Ubuntu only observed, not changed. No root/format/mount/namespace/account/service/provider/model/main/push action. All owned native/full/statics are terminal. Local maincc7ceba and R91F85f7470 remain unchanged. Read Git HEAD for the documentation-only final checkpoint.
+
+## Preserved integration execution record
+
+
 ## D3B-STORAGE-JOINT-J01C — TESTED; FINAL LOCAL GATE
 
 Active integration branch `alaz/d3b-storage-joint-j01c`; worktree `scratch/worktrees/d3b-storage-joint-j01c`. Parents: primary f7f12ed (native profile ownership L99D) + image lease681ddd9 (V98R); common baselinebb30a99. Preserve both histories and original receipts. Only status.md conflicts; both prior records follow intact. No product change is implied by merging complementary leases.
