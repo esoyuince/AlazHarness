@@ -1,0 +1,25 @@
+{
+  "completedAt": "2026-10-21T20:45:43.085033+03:00",
+  "cleanupExitCode": 0,
+  "stopExitCode": 0,
+  "listExitCode": 0,
+  "stopStdout": {
+    "encoding": "utf-16-le",
+    "text": "İşlem başarıyla tamamlandı. \r\n",
+    "bytes": 60,
+    "sha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f"
+  },
+  "stopStderr": {
+    "encoding": "utf-8",
+    "text": "",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finalList": {
+    "encoding": "utf-16-le",
+    "text": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Running         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n",
+    "bytes": 282,
+    "sha256": "815a146e68fc35db5928f498a343ce97e16e982a2cbfe0183b93c785d500c10e"
+  },
+  "onlyNamedLabStopped": true
+}

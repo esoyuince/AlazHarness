@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-VOLUME-LEASE-V98R — QUALIFIED LOCAL CONTROLLER LEASE
+
+Current evidence: evidence/d3b-volume-lease-v98r/summary-final.json. Final current-source fullWindows2335=2312PASS/23SKIP/0FAIL/0ERROR, exit0;352 source hashes stable,349 prior sources unchanged. Actual P71C ordinary-user26/26 PASS with0 skips;3 offline receipt checks included in full total. New18 Windows-native skips passed separately in Linux;5 prior broker native methods not rerun here. Final raw-format correction changed ONLY offline receipt filename reference; original first full PASS/static FAIL and raw bytes retained. No product/native-test changes after the successful26-method Linux trial.
+
+Concurrent primary advanced to f7f12ed with L99D native profile lifecycle adapter. We did not write/reset/merge it, and do not combine its test counts with V98R. Own branch remains based on bb30a99; independent integration review still required. Maincc7ceba and R91F85f7470 preserved. Only own lab stopped; existing Ubuntu observed Running and untouched. No image format/mount, real Gateway, root command, provider/model, R91F correction or push. Next: compose outer image-controller lifetime with native profile ownership; reconcile existing/orphaned users/attachments and keep lease until detach before real admission. Successful flock alone does NOT prove no surviving mount/writer.
+
+
+Active branch alaz/d3b-volume-lease-v98r; worktree scratch/worktrees/d3b-volume-lease-v98r; base bb30a99. Implement the missing controller-side exclusive lease for a future dedicated filesystem image, not a second Hermes profile lock. Reuse kernel flock, verify explicit inode/owner/mode/size, retain stable lock inode, reject competing controllers without waiting, and prevent fork/exec descriptor leakage. No writes/format/mount inside lease acquisition. The already-existing Hermes ProfileOwnership remains the profile writer authority.
+Choose a dedicated image as the persistent storage-domain direction: never expose an ambient host writable profile tree and never replace native SQLite with a new database. Actual volume formatting/attachment/private mount integration and pre-admission Hermes lifecycle remain separate NOT RUN work. Test only new ordinary-user owned dummy image files. No R91F blocked collector edit/replay/substitute, no G82C edit, root/UID/mount/network/provider/main/push actions. Only approved P71C ordinary user may run fresh temporary fixtures; default Ubuntu untouched. Evidence evidence/d3b-volume-lease-v98r/. Preserve originals; failures are never relabeled PASS.
+
+Completed: existing-image exclusive advisory controller lease implemented; no native Hermes profile lock replacement. Actual approved P71C ordinary-user26/26 tests PASS (8 validation +18 real flock/child/fork/exec cases), no skips. Windows focused8PASS/18SKIP; receipt3PASS. Fresh fullWindows2335=2312PASS/23SKIP/0FAIL/0ERROR, exit0.352 source hashes stable;349 original sources unchanged. Test image bytes are inert64KiB fixtures, NOT an attached or formatted filesystem. No image content writes by acquisition/confirmation, no format/mount/Gateway/provider/root/UID action.
+
+Only own P71C was stopped after fixture cleanup. Existing Ubuntu was observed Running in final list; this task did not start or stop it. Original wrong-shell invocation and overbroad cleanup-wrapper assertion are retained; the actual source/test run is independently terminal PASS. Report docs/D3B-VOLUME-LEASE-V98R.md; evidence/d3b-volume-lease-v98r/. Final static scan runs after full completion. Main and blocked branches unchanged; no push. Native ProfileOwnership, orphaned-user/loop/mount reconciliation, persistent-image private attachment and actual pre-admission integration remain NOT RUN. Do not treat available flock after controller death as proof there is no surviving volume user.
+
+## Preserved qualified baseline
+
 ## D3B-STORAGE-NATIVE-N97K — INTEGRATED; SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`. Active worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
@@ -2907,3 +2923,18 @@ N97K first static FAIL: two WSL UTF16 artifacts unscanned. Originals retained in
 ### N97K validation complete — 2026-10-21T18:49:22.258544+03:00
 
 Native/full/static receipts all terminal. Product/test sources still match full freeze. Local merge/promotion only; no running lab job, network/provider, main or push. Original raw UTF16 retained under scratch with exact text/hash representation tracked.
+
+
+### V98R native result and full run — 2026-10-21T20:47:04.469955+03:00
+
+Actual P71C ordinary-user26/26 PASS with kernel flock/process/fork/exec, zero skips, exact source hashes. Windows contract8PASS/18Linux-onlySKIP; offline receipt3PASS. Own fixtures removed and P71C stopped. Default Ubuntu was separately observed Running; this task did not launch or stop it. First invocation used wrong WSL shell form and failed before tests; fixed using previously qualified --exec, same user/code. Original outputs retained. Full Windows request f7d01380-e6c4-4be2-a97e-83db11c20014 IN PROGRESS,2335 discovered,352 frozen sources. No source edits while running.
+
+
+### V98R raw format repair — 2026-10-21T20:54:17.457501+03:00
+
+First full2335 PASS remains immutable. Static then failed JSONDecodeError: first failed WSL shell output was plain text wrongly named linux-001-stdout.json. Renamed to .txt with identical raw hash; only the offline receipt path reference changed, assertions/scanner/native source unchanged. Corrected receipt3PASS. New full current-source validation required; original full/static/raw outcomes retained. No new lab or product operation.
+
+
+### V98R corrected-artifact regression — 2026-10-21T20:55:22.347900+03:00
+
+Unmodified static scanner now PASS after .json-to-.txt raw rename. Current source differs from first full only by offline receipt filename reference; assertions identical. Full current rerun f7d01380-e6c4-4be2-a97e-83db11c20020 IN PROGRESS, no further source edits. Original first full PASS and static FAIL retained.

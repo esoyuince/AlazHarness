@@ -1,0 +1,8 @@
+{
+  "scope": "M0_root_preparation_only",
+  "result": "FAIL",
+  "error_type": "JSONDecodeError",
+  "errors": [
+    "Gate failed; inspect local code without exposing secret values."
+  ]
+}

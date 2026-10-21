@@ -1,0 +1,31 @@
+test_empty_inode_and_unaligned_sizes (test_state_image_lease.ImagePinContracts.test_empty_inode_and_unaligned_sizes) ... ok
+test_identifiers_reject_bool_float_negative_or_unbounded (test_state_image_lease.ImagePinContracts.test_identifiers_reject_bool_float_negative_or_unbounded) ... ok
+test_noncanonical_paths (test_state_image_lease.ImagePinContracts.test_noncanonical_paths) ... ok
+test_nonlinux_rejected_before_io (test_state_image_lease.ImagePinContracts.test_nonlinux_rejected_before_io) ... ok
+test_pin_construction_does_no_io (test_state_image_lease.ImagePinContracts.test_pin_construction_does_no_io) ... ok
+test_rejection_has_no_path_contents (test_state_image_lease.ImagePinContracts.test_rejection_has_no_path_contents) ... ok
+test_untrusted_dictionary_rejected_before_io (test_state_image_lease.ImagePinContracts.test_untrusted_dictionary_rejected_before_io) ... ok
+test_valid_pin_is_immutable (test_state_image_lease.ImagePinContracts.test_valid_pin_is_immutable) ... ok
+test_abrupt_owner_exit_releases_kernel_lock (test_state_image_lease.NativeImageLeaseTests.test_abrupt_owner_exit_releases_kernel_lock) ... skipped 'real Linux flock/dirfd/fork required'
+test_actual_child_contends_then_acquires_after_close (test_state_image_lease.NativeImageLeaseTests.test_actual_child_contends_then_acquires_after_close) ... skipped 'real Linux flock/dirfd/fork required'
+test_closed_lease_cannot_be_reused (test_state_image_lease.NativeImageLeaseTests.test_closed_lease_cannot_be_reused) ... skipped 'real Linux flock/dirfd/fork required'
+test_exception_releases_owned_lease_without_unlink (test_state_image_lease.NativeImageLeaseTests.test_exception_releases_owned_lease_without_unlink) ... skipped 'real Linux flock/dirfd/fork required'
+test_exec_does_not_inherit_image_or_parent_descriptors (test_state_image_lease.NativeImageLeaseTests.test_exec_does_not_inherit_image_or_parent_descriptors) ... skipped 'real Linux flock/dirfd/fork required'
+test_fork_child_cannot_release_parent_lock (test_state_image_lease.NativeImageLeaseTests.test_fork_child_cannot_release_parent_lock) ... skipped 'real Linux flock/dirfd/fork required'
+test_hardlink_refused_without_repair (test_state_image_lease.NativeImageLeaseTests.test_hardlink_refused_without_repair) ... skipped 'real Linux flock/dirfd/fork required'
+test_image_mode_must_be_private (test_state_image_lease.NativeImageLeaseTests.test_image_mode_must_be_private) ... skipped 'real Linux flock/dirfd/fork required'
+test_missing_file_not_created (test_state_image_lease.NativeImageLeaseTests.test_missing_file_not_created) ... skipped 'real Linux flock/dirfd/fork required'
+test_no_content_read_write_or_unlink (test_state_image_lease.NativeImageLeaseTests.test_no_content_read_write_or_unlink) ... skipped 'real Linux flock/dirfd/fork required'
+test_parent_mode_must_be_private (test_state_image_lease.NativeImageLeaseTests.test_parent_mode_must_be_private) ... skipped 'real Linux flock/dirfd/fork required'
+test_parent_path_replacement_rejected (test_state_image_lease.NativeImageLeaseTests.test_parent_path_replacement_rejected) ... skipped 'real Linux flock/dirfd/fork required'
+test_real_acquisition_preserves_bytes_and_metadata (test_state_image_lease.NativeImageLeaseTests.test_real_acquisition_preserves_bytes_and_metadata) ... skipped 'real Linux flock/dirfd/fork required'
+test_replaced_image_not_adopted (test_state_image_lease.NativeImageLeaseTests.test_replaced_image_not_adopted) ... skipped 'real Linux flock/dirfd/fork required'
+test_resize_during_lease_refuses_confirmation (test_state_image_lease.NativeImageLeaseTests.test_resize_during_lease_refuses_confirmation) ... skipped 'real Linux flock/dirfd/fork required'
+test_same_process_second_owner_refused (test_state_image_lease.NativeImageLeaseTests.test_same_process_second_owner_refused) ... skipped 'real Linux flock/dirfd/fork required'
+test_symlink_is_never_followed (test_state_image_lease.NativeImageLeaseTests.test_symlink_is_never_followed) ... skipped 'real Linux flock/dirfd/fork required'
+test_wrong_identity_rejected (test_state_image_lease.NativeImageLeaseTests.test_wrong_identity_rejected) ... skipped 'real Linux flock/dirfd/fork required'
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.003s
+
+OK (skipped=18)

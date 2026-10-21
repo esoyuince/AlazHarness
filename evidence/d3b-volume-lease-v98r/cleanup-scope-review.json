@@ -1,0 +1,14 @@
+{
+  "originalOutcomePreserved": true,
+  "priorWrapperExitCode": 1,
+  "failure": "post-cleanup assertion wrongly required unrelated default Ubuntu to remain stopped",
+  "ownedFixtureCleanupExitCode": 0,
+  "namedLabStopExitCode": 0,
+  "namedLabObservedStopped": true,
+  "defaultUbuntuObservedRunning": true,
+  "defaultUbuntuStoppedByThisTask": false,
+  "defaultUbuntuStartReason": "UNKNOWN; this task issued no Ubuntu launch",
+  "scopeCorrection": "Only our named lab cleanup is an acceptance predicate. Never stop unrelated distro to satisfy a test.",
+  "newNativeRun": false,
+  "observedAt": "2026-10-21T20:46:31.200332+03:00"
+}
