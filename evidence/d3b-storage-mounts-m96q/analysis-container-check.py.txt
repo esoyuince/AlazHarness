@@ -1,0 +1,82 @@
+"""ChatGPT analysis-container checks only; NOT the user's Linux/WSL instance."""
+from pathlib import Path
+import datetime
+import hashlib
+import io
+import json
+import os
+import sys
+import tempfile
+import unittest
+ROOT = Path('/mnt/data/alaz_m96q_dev')
+assert os.getuid() == os.geteuid() != 0
+sys.path.insert(0, str(ROOT / 'packages/claw-hermes'))
+import gateway_storage_mounts as module
+sources = {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in (
+    'packages/claw-hermes/gateway_storage_mounts.py', 'tests/test_gateway_storage_mounts.py')}
+stream = io.StringIO()
+suite = unittest.defaultTestLoader.discover(str(ROOT/'tests'))
+result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
+mountinfo = Path('/proc/self/mountinfo').read_bytes()
+namespace = os.readlink('/proc/self/ns/mnt')
+ids = (os.getresuid(), os.getresgid(), os.getgroups())
+entries = module.parse_mountinfo(mountinfo)
+negative = []
+for parent, expected_fs, reason in (
+    ('/dev/shm', 'tmpfs', 'storage_volatile_filesystem'),
+    ('/tmp', 'overlay', 'storage_filesystem_unqualified')):
+    with tempfile.TemporaryDirectory(prefix='alaz-m96q-owned-', dir=parent) as tmp:
+        profile = Path(tmp)
+        for name in module.DATABASE_NAMES:
+            (profile/name).write_bytes(b'owned inert file fixture\n')
+        found = module.select_mount(entries, str(profile))
+        assert found.filesystem == expected_fs
+        assert found.device == module._device(profile.stat())
+        before = {name: hashlib.sha256((profile/name).read_bytes()).hexdigest()
+                  for name in module.DATABASE_NAMES}
+        expectation = module.ExpectedMount(found.mount_id, found.device,
+                                           found.root, found.mount_point, 'ext4')
+        try:
+            module.observe_profile_mounts(profile, expectation)
+        except module.StorageMountRejected as exc:
+            observed = str(exc)
+        else:
+            observed = 'UNEXPECTED_ACCEPT'
+        after = {name: hashlib.sha256((profile/name).read_bytes()).hexdigest()
+                 for name in module.DATABASE_NAMES}
+        negative.append({'actualFilesystem': found.filesystem,
+                         'mountDeviceMatchesStat': True,
+                         'reason': observed,
+                         'expectedReason': reason,
+                         'passed': observed == reason,
+                         'fixtureBytesUnchanged': before == after,
+                         'regularFilesPresent': all((profile/n).is_file() for n in module.DATABASE_NAMES),
+                         'databaseContentsAreDummy': True})
+    negative[-1]['ownedFixtureRemoved'] = not profile.exists()
+checks = {
+    'nonprivilegedObserver': os.getuid() == 1000,
+    'mountTableUnchanged': Path('/proc/self/mountinfo').read_bytes() == mountinfo,
+    'mountNamespaceUnchanged': os.readlink('/proc/self/ns/mnt') == namespace,
+    'identityUnchanged': ids == (os.getresuid(), os.getresgid(), os.getgroups()),
+    'sourcesUnchanged': all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest() == s for n,s in sources.items()),
+    'allDenialsExplicit': all(r['passed'] for r in negative),
+    'dummyFilesUnchanged': all(r['fixtureBytesUnchanged'] for r in negative),
+    'dummyDirectoriesRemoved': all(r['ownedFixtureRemoved'] for r in negative),
+}
+report = {
+    'environment': 'CHATGPT_ANALYSIS_CONTAINER_NOT_USER_WSL',
+    'result': 'PASS_SCOPED_OBSERVER' if result.wasSuccessful() and all(checks.values()) else 'FAIL',
+    'observedAt': datetime.datetime.now().astimezone().isoformat(),
+    'unitTests': {'total': result.testsRun, 'failures': len(result.failures), 'errors':len(result.errors),
+                  'skipped':len(result.skipped), 'scope': 'synthetic mount records with real temporary files'},
+    'actualLinuxDenials': negative, 'observerChecks': checks, 'sourceSha256': sources,
+    'observerUid': os.getuid(), 'actualDurableFilesystemPositiveTested': False,
+    'userLabStarted': False, 'mountOperationsPerformed': False, 'namespaceChanged': False,
+    'realGatewayExecuted': False, 'R91FCollectorRepairedOrRun': False,
+}
+out = Path('/tmp/alaz-m96q-container-evidence')
+out.mkdir(exist_ok=False)
+(out/'focused-linux-analysis-container.txt').write_text(stream.getvalue(),encoding='utf-8')
+(out/'analysis-container-result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+print(json.dumps(report))
+raise SystemExit(0 if report['result']=='PASS_SCOPED_OBSERVER' else 1)

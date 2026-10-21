@@ -1,0 +1,4 @@
+# Preserve raw test observations, including their original line endings.
+.gitattributes text eol=lf
+*.txt -text -diff
+*.json -text whitespace=cr-at-eol

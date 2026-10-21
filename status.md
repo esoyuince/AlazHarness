@@ -1,5 +1,13 @@
 # AlazHarness — status
 
+## D3B-STORAGE-MOUNTS-M96Q — FOCUSED PASS / NOT INTEGRATED
+
+Active branch alaz/d3b-storage-mounts-m96q; worktree scratch/worktrees/d3b-storage-mounts-m96q; base80d85488b02b3b8cb4023f41d666b043b356e9a6. Independent slice: read-only Linux mount-topology observation for BOTH state.db and runs_idempotency.db plus existing SQLite sidecars. Refuse tmpfs/ramfs, unqualified filesystem types, unexpected devices, overmount ambiguity and changed observations. Do not claim physical durability, exclusive ownership, paired-transaction consistency or admission authority.
+No R91F collector correction, new native storage probe, old-receipt/test modification, namespace/mount/UID operation, WSL start, model/provider/main/push. R91F remains85f7470 with unresolved provenance; R92S reviewer and primary I95P promotion are concurrent and untouched. Existing mount tree scanner checks special files but does not expose a filesystem-medium observation; keep it unchanged and add only the missing observer.
+Completed Windows30/30 and analysis-container Linux30/30 focused tests. Two ACTUAL analysis-container denials: tmpfs/volatile and overlay/unqualified. Same source hashes, no user WSL or Gateway execution, no positive physical-medium proof.345 prior sources unchanged; full standard suite NOT RUN for this slice. Local static PASS,2303 discovered (NOT executed total); full-standard regression NOT RUN. All own commands terminal. Report docs/D3B-STORAGE-MOUNTS-M96Q.md. Test only fresh owned dummy files. Windows fixtures simulate Linux mount records; any actual sandbox Linux check must be labeled as the ChatGPT analysis container, NOT the user's WSL lab. All pre-existing sources frozen. Evidence evidence/d3b-storage-mounts-m96q/; next: implement bounded parser/observer, exercise denials and no-write contract, then record exact scope and sources.
+
+## Preserved exporter baseline
+
 ## D3B-EXPORT-INTEGRITY-R91F — SCOPED PASS
 
 Active branch: `alaz/d3b-export-integrity-r91f`; worktree `scratch/worktrees/d3b-export-integrity-r91f`. Base is the committed G84E projection `916f5290981f5cc4775c930fb4674d046cb3cc67` (not the failed G82C candidate).
@@ -1405,3 +1413,13 @@ Original valid-fixture run4FAIL, fixed run31/31PASS. Repaired exporter matches57
 ### R91F terminal result — 2026-10-21T15:11:40.742142+03:00
 
 FullWindows2273 terminal result PASS; code-only commit bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2. Raw first fixture error and four-failure regression retained. Same tests passed after source correction. No code changes after full source freeze; final static gate follows. No lab process started; no denied action replayed.
+
+
+### M96Q focused completion - 2026-10-21T16:36:14.989958+03:00
+
+New read-only mount observer and30 tests; no existing source or blocked collector changed. Actual Linux results originate ONLY from ChatGPT analysis container, not user lab. Windows focused receipt4e0a21b7-fcd2-4d69-9976-42021e5a0009 terminal exit0. Primary exporter promotion and R92S work untouched. Static and exact selected-file commit follow; do not infer full runtime acceptance.
+
+
+### M96Q local delivery - 2026-10-21T16:38:49.380904+03:00
+
+New read-only helper and30 tests recorded on this separate branch; Windows30 and analysis-container Linux30 PASS, two real analysis-container mount denials PASS. Prior345 sources and new2 source hashes exact. Static PASS2303 discovery only. No full-standard test claim, no WSL lab, no Gateway startup/persistence acceptance, no blocked collector action, main update or push. Read Git HEAD for this local scoped checkpoint. Exact next gate remains approved-runtime positive storage observation and coupled lifecycle integration, with combined regression before promotion.

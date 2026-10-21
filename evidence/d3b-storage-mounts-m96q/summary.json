@@ -1,0 +1,94 @@
+{
+  "job": "D3B-STORAGE-MOUNTS-M96Q",
+  "status": "FOCUSED_OBSERVER_TESTS_PASS_NOT_INTEGRATED",
+  "base": "80d85488b02b3b8cb4023f41d666b043b356e9a6",
+  "newModule": "packages/claw-hermes/gateway_storage_mounts.py",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_storage_mounts.py": "cd468f68c6b916dada4bfce1897c3ddd9507596b48137e026ee94f06e3e5e3c1",
+    "tests/test_gateway_storage_mounts.py": "c706f379898a2109c01bd9e8d22f12edac0fc9a03327fea93f3ff7e8f01eda25"
+  },
+  "windowsFocused": {
+    "total": 30,
+    "passed": 30,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "scope": "synthetic Linux records; actual owned temporary files"
+  },
+  "analysisContainerLinux": {
+    "environment": "CHATGPT_ANALYSIS_CONTAINER_NOT_USER_WSL",
+    "result": "PASS_SCOPED_OBSERVER",
+    "observedAt": "2026-10-21T13:33:06.866208+00:00",
+    "unitTests": {
+      "total": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "scope": "synthetic mount records with real temporary files"
+    },
+    "actualLinuxDenials": [
+      {
+        "actualFilesystem": "tmpfs",
+        "mountDeviceMatchesStat": true,
+        "reason": "storage_volatile_filesystem",
+        "expectedReason": "storage_volatile_filesystem",
+        "passed": true,
+        "fixtureBytesUnchanged": true,
+        "regularFilesPresent": true,
+        "databaseContentsAreDummy": true,
+        "ownedFixtureRemoved": true
+      },
+      {
+        "actualFilesystem": "overlay",
+        "mountDeviceMatchesStat": true,
+        "reason": "storage_filesystem_unqualified",
+        "expectedReason": "storage_filesystem_unqualified",
+        "passed": true,
+        "fixtureBytesUnchanged": true,
+        "regularFilesPresent": true,
+        "databaseContentsAreDummy": true,
+        "ownedFixtureRemoved": true
+      }
+    ],
+    "observerChecks": {
+      "nonprivilegedObserver": true,
+      "mountTableUnchanged": true,
+      "mountNamespaceUnchanged": true,
+      "identityUnchanged": true,
+      "sourcesUnchanged": true,
+      "allDenialsExplicit": true,
+      "dummyFilesUnchanged": true,
+      "dummyDirectoriesRemoved": true
+    },
+    "sourceSha256": {
+      "packages/claw-hermes/gateway_storage_mounts.py": "cd468f68c6b916dada4bfce1897c3ddd9507596b48137e026ee94f06e3e5e3c1",
+      "tests/test_gateway_storage_mounts.py": "c706f379898a2109c01bd9e8d22f12edac0fc9a03327fea93f3ff7e8f01eda25"
+    },
+    "observerUid": 1000,
+    "actualDurableFilesystemPositiveTested": false,
+    "userLabStarted": false,
+    "mountOperationsPerformed": false,
+    "namespaceChanged": false,
+    "realGatewayExecuted": false,
+    "R91FCollectorRepairedOrRun": false
+  },
+  "preexistingSourcesUnchanged": 345,
+  "fullWindowsRegression": "NOT_RUN_THIS_SLICE",
+  "userWSLLinuxAcceptance": "NOT_RUN",
+  "physicalStorageDurability": "NOT_VERIFIED",
+  "runtimeGatewayIntegration": false,
+  "R91FRepair": false,
+  "blockedCorrectionRetried": false,
+  "mainChanged": false,
+  "pushed": false,
+  "paidModelCalls": 0,
+  "static": {
+    "result": "PASS",
+    "discoveredTests": 2303,
+    "runtimeTested": false
+  },
+  "finalSourceCount": 347,
+  "fullRegressionRun": false,
+  "finalizedAt": "2026-10-21T16:38:49.380904+03:00"
+}
