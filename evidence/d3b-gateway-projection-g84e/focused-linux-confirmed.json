@@ -1,0 +1,12 @@
+{
+  "result": "PASS",
+  "tests": 33,
+  "exitCode": 0,
+  "nativeProjectionRerun": false,
+  "evidence": "linux-unit-diagnostic.txt",
+  "firstInvocationExitCode": 1,
+  "firstInvocationHadNoOutput": true,
+  "firstFailureReason": "UNKNOWN_NO_OUTPUT",
+  "actualFreshSecondExecution": true,
+  "sourcesAndCopiedFixturesUnchanged": true
+}

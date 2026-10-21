@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "total": 2269,
+  "discovered": 2269,
+  "passed": 2264,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "sourceCount": 344,
+  "sourceUnchanged": true,
+  "elapsedSeconds": 287.922,
+  "completedAt": "2026-10-21T14:21:51.776005+03:00",
+  "collection": "unittest result object, no footer parsing",
+  "fullD3BAccepted": false
+}

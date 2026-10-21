@@ -1,0 +1,19 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "AlazHarness-D3B-P71C",
+    "-u",
+    "root",
+    "--",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "/opt/alazharness-gateway-g84e/g84e_accept.py",
+    "--run",
+    "n01"
+  ],
+  "startedAt": "2026-10-21T14:09:40.678437+03:00",
+  "freshRunOnly": true,
+  "scope": "approved lab confinement primitive, not Hermes Gateway"
+}

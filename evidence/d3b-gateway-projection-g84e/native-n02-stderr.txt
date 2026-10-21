@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/opt/alazharness-gateway-g84e/g84e_accept.py", line 196, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/opt/alazharness-gateway-g84e/g84e_accept.py", line 163, in main
+    gerr=gateway.stderr.read();gateway_stderr=gerr.decode('utf-8','replace')
+         ^^^^^^^^^^^^^^^^^^^^^
+ValueError: I/O operation on closed file

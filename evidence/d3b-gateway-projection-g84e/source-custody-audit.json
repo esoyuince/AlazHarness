@@ -1,0 +1,19 @@
+{
+  "result": "PASS_SOURCE_CUSTODY",
+  "at": "2026-10-21T14:22:14.312628+03:00",
+  "base": "69d72e9c7d9846f27c61ec85b0dd15dcccae11ab",
+  "unchangedPreexistingFiles": 338,
+  "preexistingModifiedPathsInIndex": [
+    "status.md"
+  ],
+  "actualN03SourcesMatchCurrentAndStaged": true,
+  "newProductHashIdenticalAcrossAllThreeNativeAttempts": "304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660",
+  "nativeSuccessWasNewN03Execution": true,
+  "legacyIpcViewUnchanged": true,
+  "currentSourcePins": {
+    "packages/claw-hermes/gateway_projection.py": "304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660",
+    "scripts/qa/g84e_accept.py": "099b2d3eb19fcf67c2e1a6cf6753dc22cfdf5808e9bb419e7ee85c86ab795e17",
+    "scripts/qa/g84e_child.py": "a7e01b67b8df22c08ffcadf5cb18c55335441790e64de7a8fc3ee82fe67182fc",
+    "scripts/qa/g84e_target.py": "b3608bd8c2bcbfc23c5a3b1df00d54c71fb461c7d08b51996b6a0611926c7ffb"
+  }
+}

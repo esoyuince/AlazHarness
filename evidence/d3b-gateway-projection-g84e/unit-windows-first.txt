@@ -1,0 +1,28 @@
+test_broker_identity_cannot_be_mislabeled_gateway (test_gateway_projection.Identity.test_broker_identity_cannot_be_mislabeled_gateway) ... ok
+test_each_retained_capability_is_rejected (test_gateway_projection.Identity.test_each_retained_capability_is_rejected) ... ok
+test_exact_gateway_state_accepted (test_gateway_projection.Identity.test_exact_gateway_state_accepted) ... ok
+test_saved_root_uid_is_rejected (test_gateway_projection.Identity.test_saved_root_uid_is_rejected) ... ok
+test_supplementary_group_is_rejected (test_gateway_projection.Identity.test_supplementary_group_is_rejected) ... ok
+test_uid_mapping_change_is_rejected (test_gateway_projection.Identity.test_uid_mapping_change_is_rejected) ... ok
+test_unchanged_mount_network_or_ipc_namespace_is_rejected (test_gateway_projection.Identity.test_unchanged_mount_network_or_ipc_namespace_is_rejected) ... ok
+test_user_namespace_remap_is_rejected (test_gateway_projection.Identity.test_user_namespace_remap_is_rejected) ... ok
+test_any_setup_failure_prevents_later_steps (test_gateway_projection.Order.test_any_setup_failure_prevents_later_steps) ... ok
+test_mount_before_drop_and_filters_before_return (test_gateway_projection.Order.test_mount_before_drop_and_filters_before_return) ... ok
+test_broad_opt_and_srv_export_refused (test_gateway_projection.Validation.test_broad_opt_and_srv_export_refused) ... ok
+test_controller_requires_mount_and_network_capabilities (test_gateway_projection.Validation.test_controller_requires_mount_and_network_capabilities) ... ok
+test_legacy_gate_stays_closed (test_gateway_projection.Validation.test_legacy_gate_stays_closed) ... ok
+test_metadata_opt_in_required (test_gateway_projection.Validation.test_metadata_opt_in_required) ... ok
+test_parent_directory_cannot_be_exported (test_gateway_projection.Validation.test_parent_directory_cannot_be_exported) ... ok
+test_proc_and_sys_cannot_enter_through_protected (test_gateway_projection.Validation.test_proc_and_sys_cannot_enter_through_protected) ... ok
+test_real_workspace_required (test_gateway_projection.Validation.test_real_workspace_required) ... ok
+test_same_uid_rejected (test_gateway_projection.Validation.test_same_uid_rejected) ... ok
+test_sibling_file_below_socket_parent_cannot_be_exported (test_gateway_projection.Validation.test_sibling_file_below_socket_parent_cannot_be_exported) ... ok
+test_unprivileged_refuses_before_path_access (test_gateway_projection.Validation.test_unprivileged_refuses_before_path_access) ... ok
+test_user_namespace_flag_is_never_requested (test_gateway_projection.Validation.test_user_namespace_flag_is_never_requested) ... ok
+test_v1_is_not_a_principal_projection (test_gateway_projection.Validation.test_v1_is_not_a_principal_projection) ... ok
+test_valid_contract_is_detached (test_gateway_projection.Validation.test_valid_contract_is_detached) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.035s
+
+OK

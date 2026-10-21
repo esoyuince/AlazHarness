@@ -1,0 +1,7 @@
+{
+  "before": "391643416cb723f07d53c08ed86ef0907f02d6e3c5d5d5d04212a3e71de81074",
+  "after": "191899d851a43ace368c5bdefa3a28c39adff40240ce3cb91d1570571ecee085",
+  "cause": "Full /usr exports contain three WSL submounts; keep product nested-mount rejection and instead select verified submount-free Python runtime roots",
+  "productChanged": false,
+  "n01Preserved": true
+}

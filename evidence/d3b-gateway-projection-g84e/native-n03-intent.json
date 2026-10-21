@@ -1,0 +1,17 @@
+{
+  "command": [
+    "wsl.exe",
+    "-d",
+    "AlazHarness-D3B-P71C",
+    "-u",
+    "root",
+    "--",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "/opt/alazharness-gateway-g84e/g84e_accept.py",
+    "--run",
+    "n03"
+  ],
+  "at": "2026-10-21T14:15:14.184941+03:00"
+}

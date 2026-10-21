@@ -1,0 +1,3 @@
+  NAME                    STATE           VERSION
+* Ubuntu                  Stopped         2
+  AlazHarness-D3B-P71C    Stopped         2

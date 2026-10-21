@@ -1,0 +1,8 @@
+{
+  "before": "191899d851a43ace368c5bdefa3a28c39adff40240ce3cb91d1570571ecee085",
+  "after": "099b2d3eb19fcf67c2e1a6cf6753dc22cfdf5808e9bb419e7ee85c86ab795e17",
+  "productChanged": false,
+  "n02Preserved": true,
+  "cause": "communicate closed the empty stderr stream; diagnostic read must not abort owned broker cleanup",
+  "nativeN02CleanupEvidence": "n02-cleanup-diagnostic.txt"
+}

@@ -1,0 +1,6 @@
+{
+  "packages/claw-hermes/gateway_projection.py": "304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660",
+  "scripts/qa/g84e_accept.py": "191899d851a43ace368c5bdefa3a28c39adff40240ce3cb91d1570571ecee085",
+  "scripts/qa/g84e_child.py": "a7e01b67b8df22c08ffcadf5cb18c55335441790e64de7a8fc3ee82fe67182fc",
+  "scripts/qa/g84e_target.py": "b3608bd8c2bcbfc23c5a3b1df00d54c71fb461c7d08b51996b6a0611926c7ffb"
+}

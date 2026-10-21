@@ -1,5 +1,20 @@
 # AlazHarness — status
 
+## D3B-GATEWAY-PROJECTION-G84E — SCOPED NATIVE PROJECTION PASS
+
+Base69d72e9; branch alaz/d3b-principal-launch-21oct; this worktree remains the active continuation. Implement a separate trusted root-to-Gateway confinement primitive preserving the initial host UID namespace, private mount/network/IPC namespaces, one pinned broker inode, synthetic broker parent, fresh ephemeral writable trees, zero caps, existing seccomp and Landlock. Reuse existing validators, identity/FD/drop primitives; legacy ipc_view v1/v2 gates and broker code remain unchanged. This is not yet a production Gateway CLI or Hermes integration.
+
+Native acceptance is limited to the previously approved stopped AlazHarness-D3B-P71C lab, NEW /opt/alazharness-gateway-g84e and /srv/alaz-g84e paths, existing lab accounts23001/23002/group23003. Preserve old /srv/alaz-p71c receipts/budget, /opt/alazharness-broker/802fade and default Ubuntu. No account changes, package installation, provider send, real model, main or push. Stop on a permission denial. No global WSL shutdown. Test private tmpfs workspace explicitly; do not claim persisted Hermes state or complete D3B.
+Evidence evidence/d3b-gateway-projection-g84e/. Next: implement pure validation + narrow irreversible primitive, regression tests, then real isolated-lab socket/network/file-denial and clean-exec probes. Record every failed run without replaying used paths.
+
+Completed: new gateway_projection.py preserves initial host UID namespace while creating private network/mount/IPC views, binding only the selected broker inode, using a synthetic socket parent and private ephemeral workspace, dropping to Gateway23001 then applying existing seccomp/Landlock. Original broker23002 remains unchanged. Fresh native n03 exit0:18 supervisor +23 target checks (overlapping), two real authenticated pings; host TCP/abstract/path/sibling/late-workspace sockets blocked with successful host controls, present canary read/write EACCES, inheritedFD closed, runtime private socket/loopback work. n01 nested-mount refusal and n02 QA-finalizer failure retained; targeted n02 cleanup and fresh n03 prove closure. No outcome reclassification substituted for native n03.
+
+Full Windows2269=2264PASS/5SKIP/0FAIL/0ERROR exit0; focused33 each OS (subset).344 source hashes stable;338 existing sources unchanged. Local static PASS2269; remoteCI NOT RUN. First Linux focused wrapper silent exit1 remains UNKNOWN, separate unchanged-source actual Linux33 run passes. All owned processes/sockets and anchors are gone, P71C stopped, Ubuntu default/stopped, old P71C source/evidence/config/budget preserved. No account/package change, main update, push, paid model or production action. Report docs/D3B-GATEWAY-PROJECTION-G84E.md; evidence/d3b-gateway-projection-g84e/summary.json. Read Git HEAD for this local delivery.
+
+**Exact next work:** fixed trusted Gateway entrypoint and safe persistent-state integration above this primitive, then actual pinned Hermes Gateway acceptance. Current writable tmpfs is deliberately ephemeral, NOT persisted Hermes sessions. Existing ipc_view v2 gates remain closed; do not simply expose host-writable trees or claim fullD3B. Dummy-provider dispatch/read-only Gateway state.db authority remains a distinct untested gate. No running native or full test task remains.
+
+## Preserved broker positive acceptance
+
 ## D3B-POSITIVE-LAB-P71C — SCOPED REAL TWO-UID BROKER PASS
 
 Base2358d5d, branch alaz/d3b-principal-launch-21oct. User approved the preceding explicit offer to prepare a separate disposable Linux environment and run real two-test-user/root-controller UID-transition acceptance. New scope: only new WSL2 distribution AlazHarness-D3B-P71C, image/state under this worktree scratch/principal-lab-p71c; trusted /opt/alazharness-broker/802fade, test state /srv/alaz-p71c, gateway23001/broker23002/group23003. Existing Ubuntu, production server, default distro, global WSL config and old user state remain untouched. No helper/elevation bypass, model inference, main/push or IPC v2 activation. A new tool/OS permission denial stops the affected action. Separate distro shares the WSL kernel and is a controlled benign test installation, NOT a hypervisor security certification.
@@ -1357,3 +1372,13 @@ Approved fresh distro AlazHarness-D3B-P71C was provisioned; real installed root-
 ### P71C local completion — 2026-10-21T13:18:08.201346+03:00
 
 Full request5c2c74ce-f281-49e9-b06a-396fd96f79b4 terminal exit0,2236 total2231PASS5SKIP. Static reviewed requestf6c4a85e-e2c7-462e-a15e-55f47e1670de terminal exit0. Native executed report/trace reconciled read-only with16 controls, original collector exit1 preserved. Cleanup requeste0b039b4-a377-472c-806d-51ce0138b5ae terminal exit0: own brokers/sockets removed, named distro stopped, original Ubuntu default/stopped. No pending test/source edit; local selected-file commit follows.
+
+
+### G84E native completion / full regression running — 2026-10-21T14:20:27.693583+03:00
+
+Fresh n03 exit0:18 supervisor +23 target checks PASS (overlapping scopes), actual Gateway UID23001 exec, original broker23002, two authenticated pings, private network/mount/IPC namespace and present canary EACCES read/write; late host-workspace socket hidden. n01 safely rejected WSL submounts; n02 QA finalizer failed and owned cleanup was verified separately; neither is claimed PASS. Windows33 and separately executed Linux33 PASS; first Linux wrapper silent exit1 retained UNKNOWN. Full Windows request a0e58a99-d8bb-4d82-936d-3da93e9d06c4 IN PROGRESS;344 files frozen. Final lab cleanup request04732a59-537a-4c52-b50f-e62e7db2edbe pending at this checkpoint; poll before continuing. New primitive not wired to legacy IPCv2; no Hermes or persistent state acceptance.
+
+
+### G84E final terminal checkpoint — 2026-10-21T14:23:44.554897+03:00
+
+Full request a0e58a99-d8bb-4d82-936d-3da93e9d06c4 terminal exit0. Native n03 ea954d9a-e735-4f3e-89c4-b6c14188c19e terminal exit0. Lab cleanup04732a59-537a-4c52-b50f-e62e7db2edbe terminal exit0; final distro list confirms both stopped. Exact new primitive source hash 304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660. Source freeze344 and old338 unchanged. Final local static/commit recorded next; no background execution or publication.

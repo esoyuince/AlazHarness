@@ -1,0 +1,15 @@
+{
+  "exitCode": 1,
+  "expectedTests": 33,
+  "scope": "ordinary UID23001 unit/receipt tests on copied unchanged files, not another native projection run",
+  "inputSha256": {
+    "packages/claw-hermes/gateway_projection.py": "304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660",
+    "scripts/qa/g84e_accept.py": "099b2d3eb19fcf67c2e1a6cf6753dc22cfdf5808e9bb419e7ee85c86ab795e17",
+    "scripts/qa/g84e_child.py": "a7e01b67b8df22c08ffcadf5cb18c55335441790e64de7a8fc3ee82fe67182fc",
+    "scripts/qa/g84e_target.py": "b3608bd8c2bcbfc23c5a3b1df00d54c71fb461c7d08b51996b6a0611926c7ffb",
+    "tests/test_gateway_projection.py": "8a5a5701ad6e77fa3db54be20074c1f63ac6455775149c0775d5f7468e75239d",
+    "tests/test_gateway_projection_receipt.py": "3cf4d7b17a55bde232415fc4750f4f67adbfe41442697b1fe939750811347470",
+    "evidence/d3b-gateway-projection-g84e/native-n03.json": "da2df4df9313e26606158fd069ac4f208169fa2300203777b1af0387120b0caa",
+    "evidence/d3b-gateway-projection-g84e/native-n03-source.json": "beacde2442a29da4e96126f4422356049d30e13ebf042f37653a0aa35efe5a13"
+  }
+}
