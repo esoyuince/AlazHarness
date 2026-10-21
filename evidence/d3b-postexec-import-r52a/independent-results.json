@@ -1,0 +1,25 @@
+{
+  "runnerOriginalCommit": "d0414e24358a4b632080272d799296e40ae1bf94",
+  "runnerPath": "scripts/qa/principal_target_independent_b72d.py",
+  "exactRunnerSha256": "d57cf1b505482cceeb8e66d8b5635b6ad1bc0446c0f6d81470653a6ce81e96da",
+  "runs": [
+    {
+      "platform": "windows",
+      "testsRun": 22,
+      "exitCode": 0,
+      "runnerSha256": "d57cf1b505482cceeb8e66d8b5635b6ad1bc0446c0f6d81470653a6ce81e96da",
+      "sourceCount": 9
+    },
+    {
+      "platform": "linux",
+      "testsRun": 22,
+      "exitCode": 0,
+      "runnerSha256": "d57cf1b505482cceeb8e66d8b5635b6ad1bc0446c0f6d81470653a6ce81e96da",
+      "sourceCount": 9
+    }
+  ],
+  "temporaryCopyRemoved": true,
+  "originalQaWorktreeWritten": false,
+  "kernelStateMocked": true,
+  "positiveUidTransitionTested": false
+}

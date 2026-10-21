@@ -1,0 +1,27 @@
+test_changed_broker_identity_requires_new_command_binding (__main__.BindingQA.test_changed_broker_identity_requires_new_command_binding) ... ok
+test_changed_config_digest_requires_new_command_binding (__main__.BindingQA.test_changed_config_digest_requires_new_command_binding) ... ok
+test_fixed_target_and_isolated_interpreter (__main__.BindingQA.test_fixed_target_and_isolated_interpreter) ... ok
+test_hash_and_principal_in_exact_bound_argv (__main__.BindingQA.test_hash_and_principal_in_exact_bound_argv) ... ok
+test_no_arbitrary_gateway_or_shell_role (__main__.BindingQA.test_no_arbitrary_gateway_or_shell_role) ... ok
+test_reordered_policy_keys_not_a_new_command (__main__.BindingQA.test_reordered_policy_keys_not_a_new_command) ... ok
+test_any_capability_or_incomplete_capability_inventory_refused (__main__.KernelQA.test_any_capability_or_incomplete_capability_inventory_refused) ... ok
+test_each_of_eight_identity_slots_rejects_root_wrong_uid_and_bool (__main__.KernelQA.test_each_of_eight_identity_slots_rejects_root_wrong_uid_and_bool) ... ok
+test_groups_threads_nnp_and_pid_fail_closed (__main__.KernelQA.test_groups_threads_nnp_and_pid_fail_closed) ... ok
+test_identity_maps_and_namespace_must_be_host_initial (__main__.KernelQA.test_identity_maps_and_namespace_must_be_host_initial) ... ok
+test_positive_mock_observation (__main__.KernelQA.test_positive_mock_observation) ... ok
+test_seccomp_modes_and_missing_mode_not_accepted (__main__.KernelQA.test_seccomp_modes_and_missing_mode_not_accepted) ... ok
+test_admitted_sequence_is_exact (__main__.PreparationQA.test_admitted_sequence_is_exact) ... ok
+test_changed_final_kernel_state_prevents_admission (__main__.PreparationQA.test_changed_final_kernel_state_prevents_admission) ... ok
+test_every_early_failure_prevents_secret_read (__main__.PreparationQA.test_every_early_failure_prevents_secret_read) ... ok
+test_hash_correct_duplicate_json_keys_still_refused (__main__.PreparationQA.test_hash_correct_duplicate_json_keys_still_refused) ... ok
+test_matching_hash_wrong_principal_is_not_adopted (__main__.PreparationQA.test_matching_hash_wrong_principal_is_not_adopted) ... ok
+test_mismatched_digest_is_rejected_before_parsing (__main__.PreparationQA.test_mismatched_digest_is_rejected_before_parsing) ... ok
+test_reprovisioning_is_not_a_fallback (__main__.PreparationQA.test_reprovisioning_is_not_a_fallback) ... ok
+test_unknown_filter_mode_is_not_enough_known_filter_must_load (__main__.PreparationQA.test_unknown_filter_mode_is_not_enough_known_filter_must_load) ... ok
+test_error_diagnostic_never_contains_secret_or_calls_broker (__main__.CLIQA.test_error_diagnostic_never_contains_secret_or_calls_broker) ... ok
+test_only_returned_configuration_reaches_existing_lifecycle (__main__.CLIQA.test_only_returned_configuration_reaches_existing_lifecycle) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.280s
+
+OK

@@ -1,0 +1,6 @@
+{
+  "reason": "Original Windows JSON receipts use CRLF; exact bytes retained, Git JSON whitespace interprets CR as EOL within this evidence folder only. No source/test whitespace policy altered.",
+  "productChange": false,
+  "testChange": false,
+  "originalOutput": "raw-evidence-format-first.txt"
+}

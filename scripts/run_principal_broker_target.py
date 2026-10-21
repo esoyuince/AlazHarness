@@ -21,6 +21,8 @@ def main():
         # No asyncio event loop (and its internal sockets) exists before FD cleanup.
         config = target.prepare(unique_json(args.principal), args.config,
                                 args.config_sha256, args.output)
+        # Isolated Python omits the script directory; use only this trusted install.
+        sys.path.insert(0, str(ROOT/'scripts'))
         from run_provider_broker import serve
         asyncio.run(serve(config, Path(args.output)))
     except Exception as exc:

@@ -1,0 +1,52 @@
+{
+  "job": "D3B-LAUNCH-IMPORT-MERGE-V61E",
+  "result": "LOCAL_SCOPED_PASS",
+  "updatedAt": "2026-10-21T11:18:19.534025+03:00",
+  "branch": "alaz/d3b-principal-launch-21oct",
+  "base": "edb4ae1262b082b9bf358e04ff4c6565b09fde10",
+  "incoming": "01791c1ff485d9950a72728b00de83c2b520c748",
+  "incomingFix": "797b4aabd17fdc80f52c24949307050496ca6c79",
+  "windowsFull": {
+    "total": 2203,
+    "passed": 2198,
+    "skipped": 5,
+    "failures": 0,
+    "errors": 0,
+    "testProcessExitCode": 0,
+    "unittestSeconds": 193.247
+  },
+  "collectorReview": "Original wrapper exit1 retained; CRLF-only status parsing reconciled with all2203 named outcomes, terminal OK and exit0. See full-windows-reviewed.json; no raw output rewritten or test rerun.",
+  "principalSelection": {
+    "windows": 83,
+    "linux": 83,
+    "skipped": 0
+  },
+  "independentQa": {
+    "windows": 22,
+    "linux": 22,
+    "privilegedStateMocked": true
+  },
+  "linuxNativeChecks": {
+    "filesAndFds": 26,
+    "postExecRefusalAndFilter": 16,
+    "launcherAdmissionRefusal": 13
+  },
+  "sourceFiles": 331,
+  "sourceUnchanged": true,
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "remoteMainVerified": true,
+  "rootDirtyFilesPreserved": 33,
+  "localStaticResult": "PASS",
+  "localStaticDiscovered": 2203,
+  "remoteCI": "NOT_RUN",
+  "pushed": false,
+  "mainMerged": false,
+  "positiveUidTransitionTested": false,
+  "twoHostUidTested": false,
+  "fullD3BAccepted": false,
+  "ipcV2MountEnabled": false,
+  "realModelCalls": 0,
+  "allTestRequestsTerminal": true,
+  "mergeCommit": "PENDING_LOCAL_COMMIT",
+  "countsOverlapNotAdded": true
+}

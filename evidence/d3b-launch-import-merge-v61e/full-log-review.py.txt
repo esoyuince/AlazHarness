@@ -1,0 +1,31 @@
+"""Read-only strict unittest verbose-log review; accepts LF or CRLF framing."""
+import re
+
+def inspect_log(raw, *, exit_code, timed_out):
+    if type(exit_code) is not int or exit_code != 0 or timed_out is not False:
+        raise ValueError('nonzero_or_nonterminal_execution')
+    text=raw.decode('utf-8',errors='strict')
+    lines=[line for line in text.splitlines() if line]
+    totals=[re.fullmatch(r'Ran (\d+) tests in ([0-9.]+)s',line) for line in lines]
+    totals=[m for m in totals if m]
+    if len(totals)!=1 or len(lines)<2 or lines[-2]!=totals[0][0]:
+        raise ValueError('missing_or_ambiguous_terminal_total')
+    ok=re.fullmatch(r'OK(?: \(skipped=(\d+)\))?',lines[-1])
+    if ok is None:raise ValueError('missing_terminal_ok')
+    count=int(totals[0][1]);skipped=int(ok[1] or 0)
+    if count<=0:raise ValueError('empty_suite')
+    outcomes=[]
+    for line in lines:
+        if line.startswith(('FAILED','FAIL:','ERROR:')):
+            raise ValueError('failure_marker')
+        if line.startswith('test_'):
+            match=re.fullmatch(r'(.+) \.\.\. (ok|skipped .+)',line)
+            if match is None:raise ValueError('unfinished_or_failed_test')
+            outcomes.append((match[1],match[2]))
+    if len(outcomes)!=count or len({name for name,_ in outcomes})!=count:
+        raise ValueError('test_inventory_incomplete_or_duplicate')
+    observed_skips=sum(v.startswith('skipped ') for _,v in outcomes)
+    if observed_skips!=skipped:raise ValueError('skip_count_mismatch')
+    return {'total':count,'passed':count-skipped,'skipped':skipped,
+            'failures':0,'errors':0,'unittestSeconds':float(totals[0][2]),
+            'namedTerminalOutcomes':len(outcomes)}

@@ -1,0 +1,4 @@
+* -text
+.gitattributes text eol=lf
+*.txt whitespace=-blank-at-eol
+*.json whitespace=cr-at-eol

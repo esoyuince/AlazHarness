@@ -1,0 +1,54 @@
+{
+  "base": "9469d58bf1aa9b12fed059fae8df6c51282b4644",
+  "startedAt": "2026-10-21T04:37:06.363259+03:00",
+  "qaCommit": "d0414e24358a4b632080272d799296e40ae1bf94",
+  "sourceCrosscheck": {
+    "packages/claw-hermes/principal_target.py": {
+      "qaRawSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "baseGitBlobSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "packages/claw-hermes/principal_launch.py": {
+      "qaRawSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "baseGitBlobSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "packages/claw-hermes/host_principal.py": {
+      "qaRawSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "baseGitBlobSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "packages/claw-hermes/linux_netns.py": {
+      "qaRawSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "baseGitBlobSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "packages/claw-hermes/combined_guard.py": {
+      "qaRawSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "baseGitBlobSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "packages/claw-hermes/credential_guard.py": {
+      "qaRawSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+      "baseGitBlobSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "packages/claw-hermes/provider_egress.py": {
+      "qaRawSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "baseGitBlobSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "scripts/run_principal_broker_target.py": {
+      "qaRawSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "baseGitBlobSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "sameTextExactLFCRLFOnly": true
+    },
+    "scripts/run_provider_broker.py": {
+      "qaRawSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "baseGitBlobSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "sameTextExactLFCRLFOnly": true
+    }
+  },
+  "primaryOwnsParallelMerge": true,
+  "priorPrewriteGuardStoppedBeforeAnyWrite": true
+}

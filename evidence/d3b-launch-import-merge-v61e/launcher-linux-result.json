@@ -1,0 +1,28 @@
+{
+  "label": "launcher-linux",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--",
+    "python3",
+    "-I",
+    "-B",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/scripts/qa/principal_launch_linux.py",
+    "--output",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/evidence/d3b-principal-launch-21oct/native-integrated-v61e.json"
+  ],
+  "expectedCount": 13,
+  "expectedResult": "PASS_SCOPED_UNPRIVILEGED",
+  "receipt": "evidence/d3b-principal-launch-21oct/native-integrated-v61e.json",
+  "startedAt": "2026-10-21T11:12:44.716774+03:00",
+  "exitCode": 0,
+  "timedOut": false,
+  "elapsedSeconds": 2.412,
+  "logSha256": "754d75ede06bb3d0122e4f6c5010d2a84da43780c3ffe789aaddf0f4dfcc3cee",
+  "observedResult": "PASS_SCOPED_UNPRIVILEGED",
+  "observedCount": 13,
+  "receiptSha256": "d5b344082b452dec2da0909e0fe924ba34c1ec8ada065e7e4c26b0fbb4ef9c63",
+  "sourcePinsMatch": true,
+  "qualified": true
+}

@@ -1,0 +1,25 @@
+{
+  "label": "principal-windows",
+  "command": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_principal*.py",
+    "-v"
+  ],
+  "expectedCount": 83,
+  "expectedResult": "PASS",
+  "receipt": null,
+  "startedAt": "2026-10-21T11:12:13.478175+03:00",
+  "exitCode": 0,
+  "timedOut": false,
+  "elapsedSeconds": 1.701,
+  "logSha256": "a918fb9c18f4e3c55e8e7b7f1c6eb30236a51c256217e82e9d959532a8c1e2c0",
+  "observedCount": 83,
+  "qualified": true
+}

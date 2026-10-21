@@ -1,0 +1,29 @@
+{
+  "label": "principal-linux",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--",
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/tests",
+    "-p",
+    "test_principal*.py",
+    "-v"
+  ],
+  "expectedCount": 83,
+  "expectedResult": "PASS",
+  "receipt": null,
+  "startedAt": "2026-10-21T11:12:15.221507+03:00",
+  "exitCode": 0,
+  "timedOut": false,
+  "elapsedSeconds": 22.692,
+  "logSha256": "dcd21ae402bf551a0d7649ad7344acdd92f1cea60b1ea864f285d28cd43d5d30",
+  "observedCount": 83,
+  "qualified": true
+}

@@ -1,0 +1,11 @@
+{
+  "reason": "Only CRLF framing in one newly generated Windows raw receipt; no trailing spaces or tabs. Explicit cr-at-eol rule for that exact evidence filename, no product-file exception.",
+  "affected": "evidence/d3b-launch-qa-b72d/integrated-v61e-independent-windows.json",
+  "rawSha256": "b3b6320db79dfd425818b902980732264132471ab369c8ca6a0448a84c9aeb3c",
+  "rawBytesChanged": false,
+  "attributePath": "evidence/.gitattributes",
+  "beforeSha256": "f1dcb1c72333423169194fe7af9cfb1f8c955ca01aa81927d5e98fcd1e24606f",
+  "afterSha256": "aee301d15b11d12cc3bc30509ec1bb01a79557afe80ee4b9f9c389eb9094229f",
+  "exactAppendedRule": "d3b-launch-qa-b72d/integrated-v61e-independent-windows.json whitespace=cr-at-eol",
+  "firstDiagnostic": "staged-format-first.txt"
+}

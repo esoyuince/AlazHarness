@@ -1,0 +1,21 @@
+{
+  "before": {
+    "targetSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+    "regressionSha256": "25fc3a84f36454459d6f06edfe80f18e8c82e2a593e83caa18d8911e9bcaec0d"
+  },
+  "afterTargetSha256": "64cc90209a570264cf20851cb11f34e4897958ed4808842952905697d9bbf6c6",
+  "unchangedRegressionSha256": "25fc3a84f36454459d6f06edfe80f18e8c82e2a593e83caa18d8911e9bcaec0d",
+  "repair": "Explicit installation-relative scripts import only after successful admission; -I retained",
+  "runs": [
+    {
+      "platform": "windows",
+      "exitCode": 0
+    },
+    {
+      "platform": "linux",
+      "exitCode": 0
+    }
+  ],
+  "privilegedAdmissionMocked": true,
+  "brokerExecuted": false
+}

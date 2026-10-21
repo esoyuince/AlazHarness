@@ -1,0 +1,30 @@
+{
+  "label": "independent-linux",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--",
+    "python3",
+    "-I",
+    "-B",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/scripts/qa/principal_target_independent_b72d.py",
+    "--source-root",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct",
+    "--output",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/evidence/d3b-launch-qa-b72d/integrated-v61e-independent-linux.json"
+  ],
+  "expectedCount": 22,
+  "expectedResult": "PASS_SCOPED_MOCKED_BOUNDARIES",
+  "receipt": "evidence/d3b-launch-qa-b72d/integrated-v61e-independent-linux.json",
+  "startedAt": "2026-10-21T11:12:38.987436+03:00",
+  "exitCode": 0,
+  "timedOut": false,
+  "elapsedSeconds": 1.162,
+  "logSha256": "3186f33e48bb32da717cbbe9d9f75c265d3fe37b67893373d0e0c4f39826f174",
+  "observedResult": "PASS_SCOPED_MOCKED_BOUNDARIES",
+  "observedCount": 22,
+  "receiptSha256": "f06d11e4c7ed3f3efb9b4b76f186988a36c8009af058f43d2541d9ba6cc367de",
+  "sourcePinsMatch": true,
+  "qualified": true
+}

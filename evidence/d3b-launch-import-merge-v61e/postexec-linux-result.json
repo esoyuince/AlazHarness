@@ -1,0 +1,28 @@
+{
+  "label": "postexec-linux",
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu",
+    "--",
+    "python3",
+    "-I",
+    "-B",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/scripts/qa/principal_postexec_linux.py",
+    "--output",
+    "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-principal-launch-21oct/evidence/d3b-postexec-21oct/native-integrated-v61e.json"
+  ],
+  "expectedCount": 16,
+  "expectedResult": "PASS_SCOPED_POSTEXEC",
+  "receipt": "evidence/d3b-postexec-21oct/native-integrated-v61e.json",
+  "startedAt": "2026-10-21T11:12:42.120371+03:00",
+  "exitCode": 0,
+  "timedOut": false,
+  "elapsedSeconds": 2.411,
+  "logSha256": "85538fc21f38916c5d01d9ba4481d2533aacaba44a84f2864dce3bc200cecbf6",
+  "observedResult": "PASS_SCOPED_POSTEXEC",
+  "observedCount": 16,
+  "receiptSha256": "1e723b32fab5eb88ed888a266127463c17c412bcacc862e0df2c877198459bf2",
+  "sourcePinsMatch": true,
+  "qualified": true
+}

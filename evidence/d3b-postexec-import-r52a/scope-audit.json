@@ -1,0 +1,22 @@
+{
+  "base": "9469d58bf1aa9b12fed059fae8df6c51282b4644",
+  "sourceFiles": 329,
+  "sourceUnchanged": true,
+  "unchangedExistingSources": 326,
+  "codeCommitPaths": [
+    "evidence/d3b-postexec-21oct/native-postexec-import-r52a.json",
+    "scripts/run_principal_broker_target.py",
+    "tests/test_principal_postexec_receipt.py",
+    "tests/test_principal_target_isolated_import.py"
+  ],
+  "stagedSha256": {
+    "evidence/d3b-postexec-21oct/native-postexec-import-r52a.json": "cd4a1a02e67cd738cb4b5946c69c11ce66192fb8aff4fc1f62994b1ceeef0673",
+    "scripts/run_principal_broker_target.py": "64cc90209a570264cf20851cb11f34e4897958ed4808842952905697d9bbf6c6",
+    "tests/test_principal_postexec_receipt.py": "574a568b02b58c8c1456684cf433ed48c8d979ea297ef861cc825925e5413774",
+    "tests/test_principal_target_isolated_import.py": "25fc3a84f36454459d6f06edfe80f18e8c82e2a593e83caa18d8911e9bcaec0d"
+  },
+  "sameBeforeAfterRegressionBytes": true,
+  "ipcV2GatesClosed": true,
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "auditHarnessCorrection": "git diff HEAD includes newly staged paths; earlier local expected-set assertion omitted them. No product or test assertion was changed."
+}

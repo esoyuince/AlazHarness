@@ -1,0 +1,11 @@
+{
+  "scope": "merge source review; not runtime acceptance",
+  "targetFixExactlyTwoAddedLines": true,
+  "appliedAfterPrepareBeforeLifecycleImport": true,
+  "unchangedIdentityFilterProjectionModules": true,
+  "ipcV2GatesStillClosed": true,
+  "independentQaRunnersUnchanged": true,
+  "sourceCount": 331,
+  "sourceUnchangedAtReview": true,
+  "mainUnchanged": true
+}

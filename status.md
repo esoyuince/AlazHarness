@@ -1,12 +1,14 @@
 # AlazHarness — status
 
-## D3B-LAUNCH-IMPORT-MERGE-V61E — IN PROGRESS
+## D3B-LAUNCH-IMPORT-MERGE-V61E — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`.
 Base: `edb4ae1262b082b9bf358e04ff4c6565b09fde10`. Merge input: `01791c1ff485d9950a72728b00de83c2b520c748`, including isolated-target import fix `797b4aa` and immutable before/after evidence.
 
 Task: integrate the actual isolated-import correction into completed launcher/QA work, preserve both histories and all raw failures, and requalify the combined source. Existing historical results do not certify this merge. Run fresh Windows/Linux principal and independent QA, owned Linux refusal/FD/filter checks, full Windows standard suite and local static gate. No root command, account/provisioning, IPC v2 activation, main update, paid model or push. Main remains `cc7ceba`.
-Evidence: `evidence/d3b-launch-import-merge-v61e/`. Do not modify code while tests are running. Current next action: merge exact input, resolve only inspected conflicts, and execute current-source acceptance.
+Evidence: `evidence/d3b-launch-import-merge-v61e/`; report `docs/D3B-LAUNCH-IMPORT-MERGE-V61E.md`. Completed fresh full Windows2203=2198PASS/5SKIP/0FAIL/0ERROR, unittest exit0;331 source hashes unchanged. Principal83 each OS; independent22 each OS; actual Linux files26/postexec16/launcher13 PASS. Local static PASS2203; no remote CI. The enclosing full collector initially exited1 due solely to CRLF footer parsing; original log/result retained and independently reconciled in full-windows-reviewed.json (all2203 named results, zero subprocess exit,11 reviewer controls). No product source or test assertion changed. All test requests terminal.
+
+The isolated-import correction is now integrated with the launcher/QA tree; both histories and original failures are preserved. Main/root/other worktrees unchanged. Next: successful broker transition/post-exec/peer and private-budget access tests in an explicitly authorized pre-provisioned isolated trusted Linux installation, then Gateway IPC v2 projection. No such positive environment has been established; do not repeat readiness checks as a substitute or bypass a prior privilege denial. Full D3B remains OPEN; IPC v2 CLOSED. Local merge recording follows; read Git HEAD for the final checkpoint.
 
 ## Preserved previous integration
 
@@ -21,6 +23,25 @@ Evidence: `evidence/d3b-launch-integrated-c91a/`. Tested history-preserving loca
 Completed fresh merged-tree tests: full Windows2200=2195PASS/5SKIP/0FAIL/0ERROR; independent22 Windows+Linux; actual Linux file-FD26, post-exec16, launcher-denial13; Linux selected principal80. Source freeze330 unchanged; all328 existing source Git blobs and32 QA evidence blobs preserved. Local static PASS2200; all tests terminal. Merge records both parent histories; read Git HEAD for final integration commit. No push, remote CI or main merge. Report docs/D3B-LAUNCH-INTEGRATED-C91A.md; machine summary evidence/d3b-launch-integrated-c91a/summary.json. No positive UID transition, privileged install or full D3B acceptance.
 
 ## Preserved post-exec checkpoint
+
+### Preserved isolated-import branch narrative (historical)
+
+## D3B-POSTEXEC-IMPORT-R52A — LOCAL SCOPED PASS
+
+Active branch `alaz/d3b-postexec-import-r52a`; worktree `scratch/worktrees/d3b-postexec-import-r52a`; base `9469d58`.
+Primary `d3b-principal-launch-21oct` concurrently owns D3B-LAUNCH-INTEGRATED-C91A (observed HEAD b55cc83, QA merge in progress). Do not edit, stage or resolve anything in that worktree. This independent code-fix lane reproduces the isolated-Python post-exec lifecycle import path. Identity admission and asyncio execution are mocked in the positive-path regression; no UID switch, broker/provider process, privileged operation, account or mount is authorized or executed.
+
+The nine B72D source snapshots match the immutable base commit (only exact LF/CRLF representation accounted for). Existing evidence is retained. If the isolated import fails, make only the required explicit installation-relative path repair and add a fresh-process regression; rerun relevant unprivileged evidence with source hashes. Main/primary/QA/E6A2/dirty root unchanged. Evidence `evidence/d3b-postexec-import-r52a/`.
+
+## Completed scoped result
+
+Confirmed and repaired the isolated post-exec lifecycle import gap. Code-only commit `797b4aabd17fdc80f52c24949307050496ca6c79`; target changed by only 2 lines after successful admission. Before Windows/Linux each1PASS2FAIL; identical regression bytes after3/3PASS each. Full Windows2203 =2198PASS/5SKIP/0FAIL, exit0; 329 source files unchanged. Focused83 Windows/Linux; independent unchanged B72D22 each; fresh actual unprivileged postexec16/16. These scopes overlap; no privileged positive/broker execution claim.
+
+Primary is owned by concurrent C91A; it was not edited or merged by this lane. Nine QA snapshots matched immutable base9469d58; this two-line fix has its own fresh evidence. Published main remains cc7ceba. No push/remoteCI/main write/account/root/production/model/v2 change. All own tests are terminal. Report docs/D3B-POSTEXEC-IMPORT-R52A.md; evidence/d3b-postexec-import-r52a/summary.json. Exact next action: primary owner integrates code-only commit797b4aa and runs combined regression before publication; do not overwrite primary status or assume older source receipts certify new code.
+
+## Preserved primary history
+
+# AlazHarness — status
 
 ## D3B-POSTEXEC-21OCT — LOCAL SCOPED PASS
 
@@ -1260,3 +1281,25 @@ Request ea6558a4-21a3-4ad5-9e41-d8df1949b6c3 completed exit0: independent22 Wind
 ### C91A local completion — 2026-10-21T04:44:20.890874+03:00
 
 Full request fa715b27-6019-44c6-9a45-0d1a3b439261 and selected/native request ea6558a4-21a3-4ad5-9e41-d8df1949b6c3 terminal exit0. Full2200=2195PASS/5SKIP; independent22 each platform; Linux80 selection; native26/16/13. Static staged gate exit0; raw evidence retains original line endings, product checks unchanged. No pending test. Exact next work is positive execution in an explicitly authorized isolated root-controlled installation, not more readiness-only checks; broker stateDB read access and private-budget denial are distinct acceptance gates. IPC v2 remains closed. Main cc7ceba and QA d0414e2 are clean and unchanged; default root not edited.
+
+### Preserved isolated-import branch narrative (historical)
+
+
+### R52A confirmed repair / full regression in progress
+
+Fresh isolated import regressions before edit: Windows and Linux each 1 PASS / 2 FAIL (ModuleNotFoundError). SAME test bytes after the explicit trusted scripts path: both 3/3 PASS. Focused principal suite83/83 Windows and83/83 Linux PASS. Fresh unprivileged native postexec16/16 PASS with 10 current source hashes. Original evidence retained. Full Windows run request `f9bb16f9-05f0-4dab-9eaa-caf33a5cf583`; raw log evidence/d3b-postexec-import-r52a/full-windows.txt. No source/test edits while this run is active. Identity admission and lifecycle execution in isolated positive-import tests are mocked; no positive UID claim.
+
+
+### Final R52A handoff
+
+2026-10-21T04:48:44.580580+03:00 — Code797b4aa, all tests terminal, full/focused/native source manifest verified. Local report/evidence checkpoint only. Concurrent primary read-only observed edb4ae1262b082b9bf358e04ff4c6565b09fde10; dirty=false. No primary/main/root changes.
+
+
+### V61E full regression started — 2026-10-21T11:11:27.387508+03:00
+
+Windows full request `ae82ee85-22bb-4c7b-b741-f40a3778f91f` IN PROGRESS; raw output evidence/d3b-launch-import-merge-v61e/full-windows.txt. 331 source/config/test hashes frozen; no source edits until terminal result. Merge conflicts resolved; only status history conflicted. Main/root/other worktrees unchanged.
+
+
+### V61E validation completed — 2026-10-21T11:18:19.538306+03:00
+
+All tests terminal: full request ae82ee85-22bb-4c7b-b741-f40a3778f91f underlying unittest exit0/full2203, outer collector exit1 CRLF review recorded separately; selected request4ad3d9a7-953d-4ba0-a026-7fc64ae54dd2 exit0; static3d323c6b-ff18-4103-9443-eeb69a05467c exit0. No repeated full test or changed source. Current331-file freeze matches; main cc7ceba, root and other lanes preserved. No root, account, v2 mount, production, provider, publication or main write.

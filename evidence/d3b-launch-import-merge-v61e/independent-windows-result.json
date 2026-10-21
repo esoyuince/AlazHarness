@@ -1,0 +1,26 @@
+{
+  "label": "independent-windows",
+  "command": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-I",
+    "-B",
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct/scripts/qa/principal_target_independent_b72d.py",
+    "--source-root",
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+    "--output",
+    "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct/evidence/d3b-launch-qa-b72d/integrated-v61e-independent-windows.json"
+  ],
+  "expectedCount": 22,
+  "expectedResult": "PASS_SCOPED_MOCKED_BOUNDARIES",
+  "receipt": "evidence/d3b-launch-qa-b72d/integrated-v61e-independent-windows.json",
+  "startedAt": "2026-10-21T11:12:38.161668+03:00",
+  "exitCode": 0,
+  "timedOut": false,
+  "elapsedSeconds": 0.701,
+  "logSha256": "593aa4cd7bc74d551bdba961a1422cc7f70b0eeaca54da16d5a5473d1b05194c",
+  "observedResult": "PASS_SCOPED_MOCKED_BOUNDARIES",
+  "observedCount": 22,
+  "receiptSha256": "b3b6320db79dfd425818b902980732264132471ab369c8ca6a0448a84c9aeb3c",
+  "sourcePinsMatch": true,
+  "qualified": true
+}

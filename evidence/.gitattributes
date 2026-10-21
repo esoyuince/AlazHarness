@@ -1,2 +1,3 @@
 # Preserve this exact raw Windows JSON receipt; keep all other whitespace checks.
 d3b-launch-qa-b72d/integrated-c91a-windows.json whitespace=cr-at-eol
+d3b-launch-qa-b72d/integrated-v61e-independent-windows.json whitespace=cr-at-eol

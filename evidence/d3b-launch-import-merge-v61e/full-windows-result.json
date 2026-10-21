@@ -1,0 +1,25 @@
+{
+  "result": "FAIL_OR_INCOMPLETE",
+  "command": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "exitCode": 0,
+  "timedOut": false,
+  "total": 2203,
+  "passed": null,
+  "skipped": 5,
+  "elapsedSeconds": 194.834,
+  "unittestSeconds": 193.247,
+  "sourceFileCount": 331,
+  "sourceUnchanged": true,
+  "logSha256": "1a3a6099305f2c8907f513c7b7a6407c659f5dd68da62f410eb16f85c88680a7",
+  "completedAt": "2026-10-21T11:14:42.223318+03:00",
+  "scope": "full standard Windows suite; not positive UID or native two-principal acceptance"
+}

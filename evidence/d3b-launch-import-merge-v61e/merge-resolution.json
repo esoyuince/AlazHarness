@@ -1,0 +1,30 @@
+{
+  "resolvedAt": "2026-10-21T11:10:56.769172+03:00",
+  "conflictedPaths": [
+    "status.md"
+  ],
+  "conflictBlocks": [
+    {
+      "leftSha256": "367e3223afaabe44fd889efe77d2871edd12477c5a9c5f94cd4b8a3b72af05d2",
+      "rightSha256": "8449164a02549bc3b5874174d6f881f83e01bc096ae24f81544de9c0b95ba4d2"
+    },
+    {
+      "leftSha256": "6289308b4ad13b8f56b192c069ea3d0a2820abc87e47951db47886ed44169cf3",
+      "rightSha256": "ef4508383528ecface03ca15ec1059b671f6a32f640d0eaf96e17f1c5c8c4678"
+    }
+  ],
+  "statusBeforeSha256": "9ae2eb2752f31613dadc604660d4a967b0ed211a65da2eeb2cb1c23dbcecfc92",
+  "resolution": "both narratives preserved; active V61E pointer first",
+  "productConflict": false,
+  "changedSourcePaths": [
+    "scripts/run_principal_broker_target.py",
+    "tests/test_principal_postexec_receipt.py",
+    "tests/test_principal_target_isolated_import.py"
+  ],
+  "changedPathsMatchIncomingGitBlobs": true,
+  "inheritedEvidenceBlobsPreserved": {
+    "edb4ae1262b082b9bf358e04ff4c6565b09fde10": 1297,
+    "01791c1ff485d9950a72728b00de83c2b520c748": 1268
+  },
+  "sourceFileCount": 331
+}

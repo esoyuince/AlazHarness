@@ -1,0 +1,3 @@
+Auto-merging status.md
+CONFLICT (content): Merge conflict in status.md
+Automatic merge failed; fix conflicts and then commit the result.
