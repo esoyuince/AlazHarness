@@ -188,3 +188,7 @@ modify that primary; its tests are not added to this branch's results.
 The V98R implementation remains independently based on bb30a99. Compose the two
 complementary leases only after separate review and a fresh combined regression.
 Maincc7ceba and unresolved R91F85f7470 remain unchanged.
+
+## Local commit
+
+Tested implementation/evidence commit: `16946567c2e7d1a890c541637caa1b1c7a73f4e3`. Following documentation checkpoint retains identical352 source files. No push, main or concurrent-primary update.

@@ -2,6 +2,8 @@
 
 ## D3B-VOLUME-LEASE-V98R — QUALIFIED LOCAL CONTROLLER LEASE
 
+Tested code/evidence commit: `16946567c2e7d1a890c541637caa1b1c7a73f4e3`. Canonical continuation for this slice is the independent V98R worktree. The follow-up changes only documentation and gate receipt;352 runtime/test source hashes remain unchanged.
+
 Current evidence: evidence/d3b-volume-lease-v98r/summary-final.json. Final current-source fullWindows2335=2312PASS/23SKIP/0FAIL/0ERROR, exit0;352 source hashes stable,349 prior sources unchanged. Actual P71C ordinary-user26/26 PASS with0 skips;3 offline receipt checks included in full total. New18 Windows-native skips passed separately in Linux;5 prior broker native methods not rerun here. Final raw-format correction changed ONLY offline receipt filename reference; original first full PASS/static FAIL and raw bytes retained. No product/native-test changes after the successful26-method Linux trial.
 
 Concurrent primary advanced to f7f12ed with L99D native profile lifecycle adapter. We did not write/reset/merge it, and do not combine its test counts with V98R. Own branch remains based on bb30a99; independent integration review still required. Maincc7ceba and R91F85f7470 preserved. Only own lab stopped; existing Ubuntu observed Running and untouched. No image format/mount, real Gateway, root command, provider/model, R91F correction or push. Next: compose outer image-controller lifetime with native profile ownership; reconcile existing/orphaned users/attachments and keep lease until detach before real admission. Successful flock alone does NOT prove no surviving mount/writer.
@@ -2938,3 +2940,8 @@ First full2335 PASS remains immutable. Static then failed JSONDecodeError: first
 ### V98R corrected-artifact regression — 2026-10-21T20:55:22.347900+03:00
 
 Unmodified static scanner now PASS after .json-to-.txt raw rename. Current source differs from first full only by offline receipt filename reference; assertions identical. Full current rerun f7d01380-e6c4-4be2-a97e-83db11c20020 IN PROGRESS, no further source edits. Original first full PASS and static FAIL retained.
+
+
+### V98R exact local delivery
+
+Implementation commit `16946567c2e7d1a890c541637caa1b1c7a73f4e3`; both full executions terminal; current full-final run exit0 and Linux26 terminal PASS. Final static receipt static-qualified.txt. No pending own test/native job. Primary f7f12ed is separate concurrent L99D work; do not overwrite its handoff. Full persistence and fullD3B remain open.

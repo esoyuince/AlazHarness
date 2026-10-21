@@ -1,0 +1,16 @@
+{
+  "codeCommit": "16946567c2e7d1a890c541637caa1b1c7a73f4e3",
+  "base": "bb30a99c7f6e02c5e054ba27451a55358c2348a1",
+  "branch": "alaz/d3b-volume-lease-v98r",
+  "worktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-volume-lease-v98r",
+  "controllingSummary": "summary-final.json",
+  "sourceCount": 352,
+  "sourceUnchanged": true,
+  "observedPrimary": "f7f12edcbda7e3876aaf0e98fb3d91d9ea99af86",
+  "primaryNotModifiedByThisTask": true,
+  "combinedWithL99D": false,
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "mainNotModifiedByThisTask": true,
+  "pushed": false,
+  "fullD3BAccepted": false
+}
