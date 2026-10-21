@@ -1,5 +1,22 @@
 # AlazHarness — status
 
+## D3B-POSTEXEC-IMPORT-R52A — LOCAL SCOPED PASS
+
+Active branch `alaz/d3b-postexec-import-r52a`; worktree `scratch/worktrees/d3b-postexec-import-r52a`; base `9469d58`.
+Primary `d3b-principal-launch-21oct` concurrently owns D3B-LAUNCH-INTEGRATED-C91A (observed HEAD b55cc83, QA merge in progress). Do not edit, stage or resolve anything in that worktree. This independent code-fix lane reproduces the isolated-Python post-exec lifecycle import path. Identity admission and asyncio execution are mocked in the positive-path regression; no UID switch, broker/provider process, privileged operation, account or mount is authorized or executed.
+
+The nine B72D source snapshots match the immutable base commit (only exact LF/CRLF representation accounted for). Existing evidence is retained. If the isolated import fails, make only the required explicit installation-relative path repair and add a fresh-process regression; rerun relevant unprivileged evidence with source hashes. Main/primary/QA/E6A2/dirty root unchanged. Evidence `evidence/d3b-postexec-import-r52a/`.
+
+## Completed scoped result
+
+Confirmed and repaired the isolated post-exec lifecycle import gap. Code-only commit `797b4aabd17fdc80f52c24949307050496ca6c79`; target changed by only 2 lines after successful admission. Before Windows/Linux each1PASS2FAIL; identical regression bytes after3/3PASS each. Full Windows2203 =2198PASS/5SKIP/0FAIL, exit0; 329 source files unchanged. Focused83 Windows/Linux; independent unchanged B72D22 each; fresh actual unprivileged postexec16/16. These scopes overlap; no privileged positive/broker execution claim.
+
+Primary is owned by concurrent C91A; it was not edited or merged by this lane. Nine QA snapshots matched immutable base9469d58; this two-line fix has its own fresh evidence. Published main remains cc7ceba. No push/remoteCI/main write/account/root/production/model/v2 change. All own tests are terminal. Report docs/D3B-POSTEXEC-IMPORT-R52A.md; evidence/d3b-postexec-import-r52a/summary.json. Exact next action: primary owner integrates code-only commit797b4aa and runs combined regression before publication; do not overwrite primary status or assume older source receipts certify new code.
+
+## Preserved primary history
+
+# AlazHarness — status
+
 ## D3B-POSTEXEC-21OCT — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Base code `47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139`; published main stays `cc7ceba`. Read Git HEAD for the new local checkpoint. No push/remote CI/main merge.
@@ -1201,3 +1218,13 @@ Integrated source/evidence commit `144a7d1f8d31e5767babfcbd2b583d7d7518f3f6` pre
 ### D3B-POSTEXEC-21OCT completion — 2026-10-21T02:51:42.644982+03:00
 
 Current top section and summary.json carry observed scoped counts, pending positive gates and terminal request ids. No background test is pending. Runtime sources match the completed full-run manifest; local feature commit follows.
+
+
+### R52A confirmed repair / full regression in progress
+
+Fresh isolated import regressions before edit: Windows and Linux each 1 PASS / 2 FAIL (ModuleNotFoundError). SAME test bytes after the explicit trusted scripts path: both 3/3 PASS. Focused principal suite83/83 Windows and83/83 Linux PASS. Fresh unprivileged native postexec16/16 PASS with 10 current source hashes. Original evidence retained. Full Windows run request `f9bb16f9-05f0-4dab-9eaa-caf33a5cf583`; raw log evidence/d3b-postexec-import-r52a/full-windows.txt. No source/test edits while this run is active. Identity admission and lifecycle execution in isolated positive-import tests are mocked; no positive UID claim.
+
+
+### Final R52A handoff
+
+2026-10-21T04:48:44.580580+03:00 — Code797b4aa, all tests terminal, full/focused/native source manifest verified. Local report/evidence checkpoint only. Concurrent primary read-only observed edb4ae1262b082b9bf358e04ff4c6565b09fde10; dirty=false. No primary/main/root changes.

@@ -1,0 +1,19 @@
+{
+  "focused": [
+    {
+      "platform": "windows",
+      "exitCode": 0,
+      "testsRun": 83
+    },
+    {
+      "platform": "linux",
+      "exitCode": 0,
+      "testsRun": 83
+    }
+  ],
+  "nativeChecks": 16,
+  "newReceipt": "evidence/d3b-postexec-21oct/native-postexec-import-r52a.json",
+  "oldReceiptRetained": "evidence/d3b-postexec-21oct/native-postexec-001.json",
+  "assertionsRelaxed": false,
+  "positiveUidTransitionTested": false
+}

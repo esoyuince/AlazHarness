@@ -1,0 +1,28 @@
+test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission) ... FAIL
+test_isolated_target_resolves_existing_lifecycle_after_mocked_admission (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_isolated_target_resolves_existing_lifecycle_after_mocked_admission) ... FAIL
+test_refused_admission_does_not_import_lifecycle_or_create_loop (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_refused_admission_does_not_import_lifecycle_or_create_loop) ... ok
+
+======================================================================
+FAIL: test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-postexec-import-r52a/tests/test_principal_target_isolated_import.py", line 98, in test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission
+    self.assert_admitted_import(self.probe(shadow=True))
+  File "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-postexec-import-r52a/tests/test_principal_target_isolated_import.py", line 81, in assert_admitted_import
+    self.assertEqual(record['exitCode'],0,record)
+AssertionError: 2 != 0 : {'exitCode': 2, 'events': ['admission'], 'observed': {}, 'moduleFile': None, 'diagnostic': {'result': 'REFUSED', 'phase': 'principal_broker_target', 'reasonType': 'ModuleNotFoundError', 'fallback': False}, 'isolated': 1, 'admissionMocked': True, 'brokerExecuted': False}
+
+======================================================================
+FAIL: test_isolated_target_resolves_existing_lifecycle_after_mocked_admission (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_isolated_target_resolves_existing_lifecycle_after_mocked_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-postexec-import-r52a/tests/test_principal_target_isolated_import.py", line 95, in test_isolated_target_resolves_existing_lifecycle_after_mocked_admission
+    self.assert_admitted_import(self.probe())
+  File "/mnt/c/Antigravity/AlazHarness/scratch/worktrees/d3b-postexec-import-r52a/tests/test_principal_target_isolated_import.py", line 81, in assert_admitted_import
+    self.assertEqual(record['exitCode'],0,record)
+AssertionError: 2 != 0 : {'exitCode': 2, 'events': ['admission'], 'observed': {}, 'moduleFile': None, 'diagnostic': {'result': 'REFUSED', 'phase': 'principal_broker_target', 'reasonType': 'ModuleNotFoundError', 'fallback': False}, 'isolated': 1, 'admissionMocked': True, 'brokerExecuted': False}
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.614s
+
+FAILED (failures=2)

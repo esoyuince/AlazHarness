@@ -1,0 +1,8 @@
+test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_cwd_and_pythonpath_cannot_shadow_lifecycle_or_admission) ... ok
+test_isolated_target_resolves_existing_lifecycle_after_mocked_admission (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_isolated_target_resolves_existing_lifecycle_after_mocked_admission) ... ok
+test_refused_admission_does_not_import_lifecycle_or_create_loop (test_principal_target_isolated_import.IsolatedBrokerTargetImports.test_refused_admission_does_not_import_lifecycle_or_create_loop) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.886s
+
+OK

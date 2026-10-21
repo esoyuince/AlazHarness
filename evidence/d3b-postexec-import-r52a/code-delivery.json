@@ -1,0 +1,30 @@
+{
+  "codeCommit": "797b4aabd17fdc80f52c24949307050496ca6c79",
+  "base": "9469d58bf1aa9b12fed059fae8df6c51282b4644",
+  "paths": [
+    "evidence/d3b-postexec-21oct/native-postexec-import-r52a.json",
+    "scripts/run_principal_broker_target.py",
+    "tests/test_principal_postexec_receipt.py",
+    "tests/test_principal_target_isolated_import.py"
+  ],
+  "fullRegression": {
+    "exitCode": 0,
+    "testsRun": 2203,
+    "skipped": 5,
+    "passed": 2198,
+    "sourceFiles": 329,
+    "sourceUnchanged": true,
+    "elapsedSeconds": 294.514,
+    "startedAt": "2026-10-21T04:41:07.141449+03:00",
+    "completedAt": "2026-10-21T04:46:01.657750+03:00",
+    "scope": "full standard Windows regression, privileged calls not executed"
+  },
+  "stagedSourcePins": {
+    "evidence/d3b-postexec-21oct/native-postexec-import-r52a.json": "cd4a1a02e67cd738cb4b5946c69c11ce66192fb8aff4fc1f62994b1ceeef0673",
+    "scripts/run_principal_broker_target.py": "64cc90209a570264cf20851cb11f34e4897958ed4808842952905697d9bbf6c6",
+    "tests/test_principal_postexec_receipt.py": "574a568b02b58c8c1456684cf433ed48c8d979ea297ef861cc825925e5413774",
+    "tests/test_principal_target_isolated_import.py": "25fc3a84f36454459d6f06edfe80f18e8c82e2a593e83caa18d8911e9bcaec0d"
+  },
+  "noStatusInCodeCommit": true,
+  "pushed": false
+}

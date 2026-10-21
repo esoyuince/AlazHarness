@@ -1,0 +1,12 @@
+{
+  "exitCode": 0,
+  "testsRun": 2203,
+  "skipped": 5,
+  "passed": 2198,
+  "sourceFiles": 329,
+  "sourceUnchanged": true,
+  "elapsedSeconds": 294.514,
+  "startedAt": "2026-10-21T04:41:07.141449+03:00",
+  "completedAt": "2026-10-21T04:46:01.657750+03:00",
+  "scope": "full standard Windows regression, privileged calls not executed"
+}
