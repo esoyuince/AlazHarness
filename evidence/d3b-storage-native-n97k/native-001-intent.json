@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-21T18:39:46.153817+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_storage_mounts.py": "cd468f68c6b916dada4bfce1897c3ddd9507596b48137e026ee94f06e3e5e3c1",
+    "tests/test_gateway_storage_mounts.py": "c706f379898a2109c01bd9e8d22f12edac0fc9a03327fea93f3ff7e8f01eda25",
+    "scripts/qa/n97k_storage_mount_probe.py": "0dd9d23b8018719ee850cf09bb2eb889632bd3942a4fbb51bc9dcb5dff869246"
+  },
+  "expected": {
+    "mount_id": 80,
+    "device": [
+      8,
+      48
+    ],
+    "root": "/",
+    "mount_point": "/",
+    "filesystem": "ext4"
+  },
+  "user": "alazgateway",
+  "distro": "AlazHarness-D3B-P71C",
+  "bootstrapSha256": "5dc87b6dcb60cfc2f8ad4e3b811fa048e8109a8a62b54c98591f93c81f3789c2",
+  "noRootOrMountChange": true
+}

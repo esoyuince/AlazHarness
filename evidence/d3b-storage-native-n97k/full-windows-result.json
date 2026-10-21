@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "total": 2306,
+  "discovered": 2306,
+  "passed": 2301,
+  "skipped": 5,
+  "errors": 0,
+  "failures": 0,
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 349,
+  "sourceUnchanged": true,
+  "elapsedSeconds": 195.48,
+  "completedAt": "2026-10-21T18:44:34.717202+03:00",
+  "collection": "unittest result object; fresh full standard selection, no text parsing",
+  "scope": "Windows standard development suite; NOT a Hermes or full-D3B execution"
+}

@@ -1,0 +1,4 @@
+# Keep raw test bytes exact; no product rule changes.
+.gitattributes text eol=lf
+*.txt -text -diff
+*.json -text whitespace=cr-at-eol

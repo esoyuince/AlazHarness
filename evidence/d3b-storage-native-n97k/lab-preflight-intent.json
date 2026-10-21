@@ -1,0 +1,17 @@
+{
+  "command": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "alazgateway",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c",
+    "import os,json,subprocess\nfrom pathlib import Path\nassert os.getuid()==os.geteuid()==23001 and os.getgid()==23003\nr=subprocess.run(['/usr/bin/findmnt','--json','--target','/tmp','--output','ID,MAJ:MIN,FSROOT,TARGET,FSTYPE'],capture_output=True,text=True,timeout=5)\nprint(json.dumps({'uid':os.getuid(),'gid':os.getgid(),'groups':os.getgroups(),'mountNamespace':os.readlink('/proc/self/ns/mnt'),'userNamespace':os.readlink('/proc/self/ns/user'),'findmntExit':r.returncode,'findmnt':r.stdout,'tmpExists':Path('/tmp').is_dir(),'shmExists':Path('/dev/shm').is_dir(),'mountinfo':Path('/proc/self/mountinfo').read_text()}))\n"
+  ],
+  "at": "2026-10-21T18:37:50.119377+03:00",
+  "scope": "ordinary user read-only preflight in user-approved disposable lab; no configuration or privileged action"
+}

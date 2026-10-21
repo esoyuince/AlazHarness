@@ -1,0 +1,8 @@
+test_actual_terminal_and_current_source_custody (test_storage_native_n97k_receipt.NativeMountReceipt.test_actual_terminal_and_current_source_custody) ... ok
+test_native_mount_metadata_and_no_content_open (test_storage_native_n97k_receipt.NativeMountReceipt.test_native_mount_metadata_and_no_content_open) ... ok
+test_scope_cleanup_and_no_durability_or_launch_claim (test_storage_native_n97k_receipt.NativeMountReceipt.test_scope_cleanup_and_no_durability_or_launch_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.009s
+
+OK

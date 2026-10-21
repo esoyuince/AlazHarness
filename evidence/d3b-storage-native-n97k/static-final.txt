@@ -1,0 +1,16 @@
+{
+  "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+  "selected_components": 10,
+  "result": "FAIL",
+  "root_files_checked": 2050,
+  "source_gitlinks_checked": 2,
+  "discovered_tests": 2306,
+  "errors": [
+    "evidence/d3b-storage-native-n97k/lab-final-list.bin.txt: unscanned large/binary file; explicit review required",
+    "evidence/d3b-storage-native-n97k/lab-stop-stdout.bin.txt: unscanned large/binary file; explicit review required"
+  ],
+  "vendor_bytes_checked": false,
+  "runtime_tested": false,
+  "model_called": false,
+  "secret_scan": "bounded root tracked text patterns; not a complete security audit"
+}

@@ -1,0 +1,24 @@
+from pathlib import Path
+import hashlib,json,os,subprocess,sys,tempfile
+assert os.getuid()==os.geteuid()==23001 and os.getgid()==23003
+payload=json.load(sys.stdin)
+allowed={'packages/claw-hermes/gateway_storage_mounts.py','tests/test_gateway_storage_mounts.py','scripts/qa/n97k_storage_mount_probe.py'}
+assert set(payload['files'])==allowed
+assert sum(len(v['text']) for v in payload['files'].values())<150000
+result={'scope':'ordinary-user in approved P71C lab; temporary code/fixtures only','uid':os.getuid()}
+with tempfile.TemporaryDirectory(prefix='alaz-n97k-code-',dir='/tmp') as tmp:
+    root=Path(tmp)
+    for name,item in payload['files'].items():
+        data=item['text'].encode('utf-8');assert hashlib.sha256(data).hexdigest()==item['sha256']
+        p=root/name;p.parent.mkdir(parents=True,exist_ok=True)
+        with p.open('xb') as output:output.write(data)
+    env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root)}
+    tests=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_gateway_storage_mounts.py','-v'],cwd=root,env=env,capture_output=True,text=True,timeout=40)
+    result['unitExitCode']=tests.returncode;result['unitStdout']=tests.stdout;result['unitStderr']=tests.stderr
+    native=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/n97k_storage_mount_probe.py'),'--expected',json.dumps(payload['expected'])],cwd=root,env=env,capture_output=True,text=True,timeout=45)
+    result['nativeExitCode']=native.returncode;result['nativeStdout']=native.stdout;result['nativeStderr']=native.stderr
+    result['sourceHashes']={n:hashlib.sha256((root/n).read_bytes()).hexdigest() for n in allowed}
+    result['sourcesUnchanged']=all(result['sourceHashes'][n]==v['sha256'] for n,v in payload['files'].items())
+result['temporaryCodeRemoved']=not root.exists()
+print(json.dumps(result))
+sys.exit(0 if result['unitExitCode']==result['nativeExitCode']==0 and result['sourcesUnchanged'] and result['temporaryCodeRemoved'] else 1)

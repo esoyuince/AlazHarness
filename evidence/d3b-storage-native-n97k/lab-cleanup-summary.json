@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "audit": {
+    "uid": 23001,
+    "ownedTemporaryEntries": [],
+    "matchingLabProcessIds": []
+  },
+  "stopExitCode": 0,
+  "wslListExitCode": 0,
+  "onlyNamedLabStopped": true,
+  "defaultUbuntuStayedStopped": true,
+  "rootOrMountOperation": false,
+  "completedAt": "2026-10-21T18:40:45.376251+03:00"
+}

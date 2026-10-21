@@ -1,0 +1,31 @@
+{
+  "result": "PASS_EXACT_BINARY_TEXT_CUSTODY",
+  "at": "2026-10-21T18:48:10.562815+03:00",
+  "priorStaticResult": "static-final.txt remains original FAIL for unscanned UTF16 artifacts",
+  "artifacts": [
+    {
+      "originalEvidenceName": "lab-final-list.bin.txt",
+      "encoding": "utf-16-le",
+      "decodedText": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Stopped         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n",
+      "rawByteLength": 282,
+      "rawSha256": "36d2d349020c01993f757bf10558175c67ae8504365ac588b61251b4801867c4",
+      "roundTripVerified": true,
+      "rawRetainedAt": "scratch/n97k-raw-output/lab-final-list.bin.txt",
+      "scope": "exact reversible representation of original WSL diagnostic, not new execution"
+    },
+    {
+      "originalEvidenceName": "lab-stop-stdout.bin.txt",
+      "encoding": "utf-16-le",
+      "decodedText": "İşlem başarıyla tamamlandı. \r\n",
+      "rawByteLength": 60,
+      "rawSha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f",
+      "roundTripVerified": true,
+      "rawRetainedAt": "scratch/n97k-raw-output/lab-stop-stdout.bin.txt",
+      "scope": "exact reversible representation of original WSL diagnostic, not new execution"
+    }
+  ],
+  "allRawOutputsRetained": true,
+  "allDecodedTextReencodesToExactOriginal": true,
+  "checkerRulesChanged": false,
+  "productOrTestSourcesChanged": false
+}

@@ -1,0 +1,10 @@
+{
+  "originalEvidenceName": "lab-stop-stdout.bin.txt",
+  "encoding": "utf-16-le",
+  "decodedText": "İşlem başarıyla tamamlandı. \r\n",
+  "rawByteLength": 60,
+  "rawSha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f",
+  "roundTripVerified": true,
+  "rawRetainedAt": "scratch/n97k-raw-output/lab-stop-stdout.bin.txt",
+  "scope": "exact reversible representation of original WSL diagnostic, not new execution"
+}

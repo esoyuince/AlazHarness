@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "testedCommit": "80d85488b02b3b8cb4023f41d666b043b356e9a6",
+  "total": 2273,
+  "discovered": 2273,
+  "passed": 2268,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "expectedFailures": 0,
+  "unexpectedSuccesses": 0,
+  "elapsedSeconds": 408.974,
+  "sourceFiles": 345,
+  "sourceUnchanged": true,
+  "collection": "unittest result object, no text parsing",
+  "scope": "Full primary-branch standard Windows tests; excludes separate blocked R91F branch, not a new Linux or Hermes run",
+  "completedAt": "2026-10-21T16:26:27.900001+03:00",
+  "errorTestIds": [],
+  "failureTestIds": []
+}
