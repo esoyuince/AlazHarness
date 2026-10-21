@@ -1,5 +1,15 @@
 # AlazHarness — status
 
+## D3B-LAUNCH-INTEGRATED-C91A — IN PROGRESS
+
+Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`.
+Starting post-exec commit: `9469d58bf1aa9b12fed059fae8df6c51282b4644`; independent QA input: `d0414e24358a4b632080272d799296e40ae1bf94`.
+Completed prerequisite: prior full regression is terminal PASS2200/skip5; all nine independent QA source snapshots match the committed post-exec implementation byte-for-byte in this checkout. Integrate both histories/evidence, preserve both status narratives, and qualify the combined tree. Do not inherit acceptance without explicit source matching.
+Scope: local integration and unprivileged tests only; no root/account provisioning, service changes, IPC v2 activation, paid provider, push or main merge. Existing main remains cc7ceba; dirty default root remains untouched.
+Evidence: `evidence/d3b-launch-integrated-c91a/`. Next: merge QA input, inspect conflicts and rerun selected/native QA plus full standard tests on frozen combined sources.
+
+## Preserved post-exec checkpoint
+
 ## D3B-POSTEXEC-21OCT — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`. Base code `47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139`; published main stays `cc7ceba`. Read Git HEAD for the new local checkpoint. No push/remote CI/main merge.

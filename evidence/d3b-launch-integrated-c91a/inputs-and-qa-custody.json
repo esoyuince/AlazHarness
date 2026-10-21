@@ -1,0 +1,89 @@
+{
+  "job": "D3B-LAUNCH-INTEGRATED-C91A",
+  "observedAt": "2026-10-21T04:34:35.471806+03:00",
+  "postexecCommit": "9469d58bf1aa9b12fed059fae8df6c51282b4644",
+  "qaCommit": "d0414e24358a4b632080272d799296e40ae1bf94",
+  "scope": "verify completed postexec commit matches independent then-uncommitted QA bytes before integration",
+  "sourceChecks": {
+    "packages/claw-hermes/principal_target.py": {
+      "workingSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "originalSnapshotSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "gitBlobSha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "packages/claw-hermes/principal_launch.py": {
+      "workingSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "originalSnapshotSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "gitBlobSha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "packages/claw-hermes/host_principal.py": {
+      "workingSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "originalSnapshotSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "gitBlobSha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "packages/claw-hermes/linux_netns.py": {
+      "workingSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "originalSnapshotSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "gitBlobSha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "packages/claw-hermes/combined_guard.py": {
+      "workingSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "originalSnapshotSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "gitBlobSha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "packages/claw-hermes/credential_guard.py": {
+      "workingSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+      "originalSnapshotSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+      "gitBlobSha256": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "packages/claw-hermes/provider_egress.py": {
+      "workingSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "originalSnapshotSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "gitBlobSha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "scripts/run_principal_broker_target.py": {
+      "workingSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "originalSnapshotSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "gitBlobSha256": "1dcffd5e62b771c83456b4e40522202938a4b8f5a2d37868f835499aed27bf9e",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    },
+    "scripts/run_provider_broker.py": {
+      "workingSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "originalSnapshotSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "gitBlobSha256": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+      "gitExact": true,
+      "gitLfEquivalent": true
+    }
+  },
+  "previousFullRegression": {
+    "startedAt": "2026-10-21T02:46:59.511073+03:00",
+    "completedAt": "2026-10-21T02:50:51.196992+03:00",
+    "exitCode": 0,
+    "testsRun": 2200,
+    "skipped": 5,
+    "failures": 0,
+    "errors": 0,
+    "passed": 2195,
+    "timedOut": false,
+    "elapsedSeconds": 231.686,
+    "sourceFileCount": 328,
+    "sourceUnchanged": true,
+    "scope": "full standard unittest; not privileged UID transition"
+  },
+  "privilegedExecution": false,
+  "mainModified": false
+}
