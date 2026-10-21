@@ -1,0 +1,8 @@
+{
+  "cause": "WSL empty route table is zero bytes, not header-only; no route entries permitted in either format",
+  "beforeSha256": "d9af9378b0e988c770096fbc38292ef05840502f5ed3b5541853b35e8f0e2228",
+  "afterSha256": "6c66f0ae75382c005fc1194741a985c61f4a298e6ed1697c93149a715da53656",
+  "productChanged": false,
+  "firstFailureRetained": true,
+  "brokerPreviouslyStarted": false
+}

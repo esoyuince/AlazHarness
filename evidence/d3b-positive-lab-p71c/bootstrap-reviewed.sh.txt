@@ -1,0 +1,19 @@
+set -eu
+[ "$(cat /etc/alaz-p71c-lab-id)" = "AlazHarness-D3B-P71C" ]
+[ "${WSL_DISTRO_NAME:-}" = "AlazHarness-D3B-P71C" ]
+[ "$(id -u)" = 0 ]
+[ ! -e /mnt/c/Windows ]
+[ ! -e /srv/alaz-p71c ]
+printf 'LAB_INITIAL_IDENTITY
+'; id
+printf 'LAB_CONFIG
+'; cat /etc/wsl.conf
+printf 'LAB_NAMESPACE
+'; readlink /proc/self/ns/user; cat /proc/self/uid_map
+printf 'LAB_MOUNTS
+'; cat /proc/self/mountinfo
+export DEBIAN_FRONTEND=noninteractive
+apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=40 update
+apt-get -o Acquire::Retries=1 -o Acquire::http::Timeout=40 install -y --no-install-recommends python3 libseccomp2 strace ca-certificates
+printf 'LAB_PACKAGES
+'; dpkg-query -W python3 libseccomp2 strace ca-certificates

@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "executedNativeRunnerSha256": "6c66f0ae75382c005fc1194741a985c61f4a298e6ed1697c93149a715da53656",
+  "reusableRunnerAfterParserFixSha256": "e626f113f61ec7b84fa0b753e031ac1ee53ba51b6f2b014b7ef83497ee007a8b",
+  "nativeProductSourceCommit": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+  "executedRunnerSnapshotExact": true,
+  "rawReceiptAndTraceUnmodified": true,
+  "sameRuntimeExecutionReviewedNotRepeated": true
+}

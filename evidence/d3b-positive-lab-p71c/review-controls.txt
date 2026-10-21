@@ -1,0 +1,21 @@
+test_changed_private_file_not_accepted (test_p71c_native_review.PositiveLabReview.test_changed_private_file_not_accepted) ... ok
+test_failed_actual_syscall_not_accepted (test_p71c_native_review.PositiveLabReview.test_failed_actual_syscall_not_accepted) ... ok
+test_failed_owner_control_not_accepted (test_p71c_native_review.PositiveLabReview.test_failed_owner_control_not_accepted) ... ok
+test_missing_file_is_not_access_denial (test_p71c_native_review.PositiveLabReview.test_missing_file_is_not_access_denial) ... ok
+test_missing_filter_not_accepted (test_p71c_native_review.PositiveLabReview.test_missing_filter_not_accepted) ... ok
+test_nonempty_groups_not_accepted (test_p71c_native_review.PositiveLabReview.test_nonempty_groups_not_accepted) ... ok
+test_null_and_empty_array_are_equivalent_zero_group_renderings (test_p71c_native_review.PositiveLabReview.test_null_and_empty_array_are_equivalent_zero_group_renderings) ... ok
+test_other_original_failure_cannot_be_reconciled_as_parser_issue (test_p71c_native_review.PositiveLabReview.test_other_original_failure_cannot_be_reconciled_as_parser_issue) ... ok
+test_provider_attempt_not_accepted (test_p71c_native_review.PositiveLabReview.test_provider_attempt_not_accepted) ... ok
+test_real_native_observations_pass_strict_review (test_p71c_native_review.PositiveLabReview.test_real_native_observations_pass_strict_review) ... ok
+test_remaining_capability_not_accepted (test_p71c_native_review.PositiveLabReview.test_remaining_capability_not_accepted) ... ok
+test_remapped_user_namespace_not_accepted (test_p71c_native_review.PositiveLabReview.test_remapped_user_namespace_not_accepted) ... ok
+test_stale_broker_identity_must_be_refused (test_p71c_native_review.PositiveLabReview.test_stale_broker_identity_must_be_refused) ... ok
+test_trace_order_must_match_actual_identity_drop_then_exec (test_p71c_native_review.PositiveLabReview.test_trace_order_must_match_actual_identity_drop_then_exec) ... ok
+test_wrong_observed_uid_not_accepted (test_p71c_native_review.PositiveLabReview.test_wrong_observed_uid_not_accepted) ... ok
+test_wrong_server_observed_gateway_pid_not_accepted (test_p71c_native_review.PositiveLabReview.test_wrong_server_observed_gateway_pid_not_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.010s
+
+OK

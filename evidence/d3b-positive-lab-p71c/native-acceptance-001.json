@@ -1,0 +1,1038 @@
+{
+  "result": "FAIL",
+  "scope": "actual installed broker/controller and test IPC client, not Hermes Gateway/projection/provider dispatch",
+  "checks": {
+    "fresh_network_namespace_without_route": true,
+    "initial_user_namespace_preserved": true,
+    "sock1_real_uid_exec_and_restrictions": true,
+    "sock1_authenticated_two_uid_ping": true,
+    "sock1_wrong_identity_denied_both_sides": true,
+    "sock1_private_config_and_budget_denied_read_write": true,
+    "sock1_owner_positive_controls": true,
+    "sock1_clean_shutdown_zero_provider_calls": true,
+    "sock2_real_uid_exec_and_restrictions": true,
+    "sock2_authenticated_two_uid_ping": true,
+    "sock2_wrong_identity_denied_both_sides": true,
+    "sock2_private_config_and_budget_denied_read_write": true,
+    "sock2_owner_positive_controls": true,
+    "sock2_clean_shutdown_zero_provider_calls": true,
+    "fresh_broker_lifetime_rejects_previous_id": true,
+    "native_trace_proves_actual_transition_and_both_peers": false,
+    "private_files_present_unchanged": true,
+    "installed_57_source_files_unchanged": true,
+    "all_owned_processes_reaped": true,
+    "controller_ids_and_capabilities_unchanged": true
+  },
+  "checkCount": 20,
+  "error": null,
+  "lifetimes": [
+    {
+      "name": "sock1",
+      "traced": false,
+      "launcherPid": 49,
+      "ready": {
+        "backend": "linux_unix_credential_broker",
+        "brokerId": "4e7801081dc44a53b535d38f0199d7fe",
+        "pid": 49,
+        "routeFingerprint": "61e0e2bdf65dd7d98212606b4f4f34d4ce397324e6a010cfcf58df056cf4815b",
+        "socketPath": "/srv/alaz-p71c/sock1/egress.sock"
+      },
+      "postexec": {
+        "pid": 49,
+        "fields": {
+          "Uid": [
+            "23002",
+            "23002",
+            "23002",
+            "23002"
+          ],
+          "Gid": [
+            "23003",
+            "23003",
+            "23003",
+            "23003"
+          ],
+          "Groups": [],
+          "Threads": [
+            "1"
+          ],
+          "CapInh": [
+            "0000000000000000"
+          ],
+          "CapPrm": [
+            "0000000000000000"
+          ],
+          "CapEff": [
+            "0000000000000000"
+          ],
+          "CapBnd": [
+            "0000000000000000"
+          ],
+          "CapAmb": [
+            "0000000000000000"
+          ],
+          "NoNewPrivs": [
+            "1"
+          ],
+          "Seccomp": [
+            "2"
+          ]
+        },
+        "userns": "user:[4026531837]",
+        "netns": "net:[4026532224]",
+        "uidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "gidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "exe": "/usr/bin/python3.12",
+        "cmdline": [
+          "/usr/bin/python3.12",
+          "-I",
+          "-B",
+          "/opt/alazharness-broker/802fade/scripts/run_principal_broker_target.py",
+          "--principal",
+          "{\"brokerUid\":23002,\"enabled\":true,\"gatewayUid\":23001,\"hostUserNamespace\":\"user:[4026531837]\",\"socketGroupGid\":23003,\"version\":1}",
+          "--config",
+          "/srv/alaz-p71c/private/config.json",
+          "--config-sha256",
+          "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f",
+          "--output",
+          "/srv/alaz-p71c/sock1"
+        ],
+        "starttime": "24173"
+      },
+      "positiveClient": {
+        "self": {
+          "pid": 52,
+          "uid": 23001,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23001",
+              "23001",
+              "23001",
+              "23001"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "positive",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "peer": {
+            "pid": 49,
+            "uid": 23002,
+            "gid": 23003
+          },
+          "reply": {
+            "brokerId": "4e7801081dc44a53b535d38f0199d7fe",
+            "nonce": "95a90c075cfa46789555ace30dbb074a",
+            "ok": true,
+            "routeFingerprint": "61e0e2bdf65dd7d98212606b4f4f34d4ce397324e6a010cfcf58df056cf4815b",
+            "version": 1
+          },
+          "requestedNonce": "95a90c075cfa46789555ace30dbb074a",
+          "actualProviderBrokerClientReady": true
+        }
+      },
+      "wrongPeerClient": {
+        "self": {
+          "pid": 53,
+          "uid": 23002,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23002",
+              "23002",
+              "23002",
+              "23002"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "wrong_peer",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "peer": {
+            "pid": 49,
+            "uid": 23002,
+            "gid": 23003
+          },
+          "reply": {
+            "brokerId": "4e7801081dc44a53b535d38f0199d7fe",
+            "error": "broker_request_refused",
+            "nonce": "",
+            "ok": false,
+            "version": 1
+          },
+          "requestedNonce": "f12562996d2241ab9edca3108a4a66f2"
+        }
+      },
+      "wrongLocalClient": {
+        "self": {
+          "pid": 54,
+          "uid": 23002,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23002",
+              "23002",
+              "23002",
+              "23002"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "client_denial",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "localClientReason": "broker_gateway_principal_refused"
+        }
+      },
+      "gatewayDenials": {
+        "self": {
+          "pid": 55,
+          "uid": 23001,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23001",
+              "23001",
+              "23001",
+              "23001"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "access",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "accesses": [
+          {
+            "path": "private/config.json",
+            "action": "read",
+            "opened": false,
+            "errno": 13
+          },
+          {
+            "path": "private/config.json",
+            "action": "write_open_only",
+            "opened": false,
+            "errno": 13
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "read",
+            "opened": false,
+            "errno": 13
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "write_open_only",
+            "opened": false,
+            "errno": 13
+          }
+        ]
+      },
+      "brokerOwnerControls": {
+        "self": {
+          "pid": 56,
+          "uid": 23002,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23002",
+              "23002",
+              "23002",
+              "23002"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "access",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "accesses": [
+          {
+            "path": "private/config.json",
+            "action": "read",
+            "opened": true,
+            "errno": null,
+            "readSha256": "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f"
+          },
+          {
+            "path": "private/config.json",
+            "action": "write_open_only",
+            "opened": true,
+            "errno": null,
+            "readSha256": null
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "read",
+            "opened": true,
+            "errno": null,
+            "readSha256": "f93b4344378e2e09ca01475fce24c96fbdebcf90ad294ec67f2bb4309b87892f"
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "write_open_only",
+            "opened": true,
+            "errno": null,
+            "readSha256": null
+          }
+        ]
+      },
+      "staleClient": null,
+      "shutdown": {
+        "activeRequests": 0,
+        "brokerId": "4e7801081dc44a53b535d38f0199d7fe",
+        "counters": {
+          "physicalAttempts": 0,
+          "pings": 2,
+          "refused": 1,
+          "responses": 0
+        },
+        "pid": 49,
+        "privateBudget": {
+          "bindingSha256": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+          "budgetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "gatewayDatabaseIsBudgetAuthority": false,
+          "head": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+          "hostFilesystemConfinementVerified": false,
+          "measuredInvoiceVerified": false,
+          "noAutomaticRefunds": true,
+          "observedHttpResponses": 0,
+          "providerReservations": 0,
+          "reservedCostMicrousd": 0,
+          "reservedTokens": 0,
+          "version": 1
+        },
+        "socketRemoved": true
+      },
+      "exitCode": 0,
+      "traceChecks": null
+    },
+    {
+      "name": "sock2",
+      "traced": true,
+      "launcherPid": 57,
+      "ready": {
+        "backend": "linux_unix_credential_broker",
+        "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+        "pid": 60,
+        "routeFingerprint": "61e0e2bdf65dd7d98212606b4f4f34d4ce397324e6a010cfcf58df056cf4815b",
+        "socketPath": "/srv/alaz-p71c/sock2/egress.sock"
+      },
+      "postexec": {
+        "pid": 60,
+        "fields": {
+          "Uid": [
+            "23002",
+            "23002",
+            "23002",
+            "23002"
+          ],
+          "Gid": [
+            "23003",
+            "23003",
+            "23003",
+            "23003"
+          ],
+          "Groups": [],
+          "Threads": [
+            "1"
+          ],
+          "CapInh": [
+            "0000000000000000"
+          ],
+          "CapPrm": [
+            "0000000000000000"
+          ],
+          "CapEff": [
+            "0000000000000000"
+          ],
+          "CapBnd": [
+            "0000000000000000"
+          ],
+          "CapAmb": [
+            "0000000000000000"
+          ],
+          "NoNewPrivs": [
+            "1"
+          ],
+          "Seccomp": [
+            "2"
+          ]
+        },
+        "userns": "user:[4026531837]",
+        "netns": "net:[4026532224]",
+        "uidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "gidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "exe": "/usr/bin/python3.12",
+        "cmdline": [
+          "/usr/bin/python3.12",
+          "-I",
+          "-B",
+          "/opt/alazharness-broker/802fade/scripts/run_principal_broker_target.py",
+          "--principal",
+          "{\"brokerUid\":23002,\"enabled\":true,\"gatewayUid\":23001,\"hostUserNamespace\":\"user:[4026531837]\",\"socketGroupGid\":23003,\"version\":1}",
+          "--config",
+          "/srv/alaz-p71c/private/config.json",
+          "--config-sha256",
+          "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f",
+          "--output",
+          "/srv/alaz-p71c/sock2"
+        ],
+        "starttime": "24687"
+      },
+      "positiveClient": {
+        "self": {
+          "pid": 63,
+          "uid": 23001,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23001",
+              "23001",
+              "23001",
+              "23001"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "positive",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "peer": {
+            "pid": 60,
+            "uid": 23002,
+            "gid": 23003
+          },
+          "reply": {
+            "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+            "nonce": "45fa46f84d484524a5e9ae5ca8baa550",
+            "ok": true,
+            "routeFingerprint": "61e0e2bdf65dd7d98212606b4f4f34d4ce397324e6a010cfcf58df056cf4815b",
+            "version": 1
+          },
+          "requestedNonce": "45fa46f84d484524a5e9ae5ca8baa550",
+          "actualProviderBrokerClientReady": true
+        }
+      },
+      "wrongPeerClient": {
+        "self": {
+          "pid": 64,
+          "uid": 23002,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23002",
+              "23002",
+              "23002",
+              "23002"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "wrong_peer",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "peer": {
+            "pid": 60,
+            "uid": 23002,
+            "gid": 23003
+          },
+          "reply": {
+            "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+            "error": "broker_request_refused",
+            "nonce": "",
+            "ok": false,
+            "version": 1
+          },
+          "requestedNonce": "13ae9bdaa9ff4e528b00452e653c6dce"
+        }
+      },
+      "wrongLocalClient": {
+        "self": {
+          "pid": 65,
+          "uid": 23002,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23002",
+              "23002",
+              "23002",
+              "23002"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "client_denial",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "localClientReason": "broker_gateway_principal_refused"
+        }
+      },
+      "gatewayDenials": {
+        "self": {
+          "pid": 66,
+          "uid": 23001,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23001",
+              "23001",
+              "23001",
+              "23001"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "access",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "accesses": [
+          {
+            "path": "private/config.json",
+            "action": "read",
+            "opened": false,
+            "errno": 13
+          },
+          {
+            "path": "private/config.json",
+            "action": "write_open_only",
+            "opened": false,
+            "errno": 13
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "read",
+            "opened": false,
+            "errno": 13
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "write_open_only",
+            "opened": false,
+            "errno": 13
+          }
+        ]
+      },
+      "brokerOwnerControls": {
+        "self": {
+          "pid": 67,
+          "uid": 23002,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23002",
+              "23002",
+              "23002",
+              "23002"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "access",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "accesses": [
+          {
+            "path": "private/config.json",
+            "action": "read",
+            "opened": true,
+            "errno": null,
+            "readSha256": "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f"
+          },
+          {
+            "path": "private/config.json",
+            "action": "write_open_only",
+            "opened": true,
+            "errno": null,
+            "readSha256": null
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "read",
+            "opened": true,
+            "errno": null,
+            "readSha256": "f93b4344378e2e09ca01475fce24c96fbdebcf90ad294ec67f2bb4309b87892f"
+          },
+          {
+            "path": "private/budget/budget.sqlite3",
+            "action": "write_open_only",
+            "opened": true,
+            "errno": null,
+            "readSha256": null
+          }
+        ]
+      },
+      "staleClient": {
+        "self": {
+          "pid": 68,
+          "uid": 23001,
+          "gid": 23003,
+          "fields": {
+            "Uid": [
+              "23001",
+              "23001",
+              "23001",
+              "23001"
+            ],
+            "Gid": [
+              "23003",
+              "23003",
+              "23003",
+              "23003"
+            ],
+            "Groups": [],
+            "CapEff": [
+              "0000000000000000"
+            ],
+            "NoNewPrivs": [
+              "0"
+            ]
+          },
+          "userns": "user:[4026531837]"
+        },
+        "mode": "stale",
+        "writesPerformed": false,
+        "modelCalls": 0,
+        "transport": {
+          "peer": {
+            "pid": 60,
+            "uid": 23002,
+            "gid": 23003
+          },
+          "reply": {
+            "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+            "error": "stale_broker_identity",
+            "nonce": "d20a69dcee3b4339be5f6e3a17c04392",
+            "ok": false,
+            "version": 1
+          },
+          "requestedNonce": "d20a69dcee3b4339be5f6e3a17c04392"
+        }
+      },
+      "shutdown": {
+        "activeRequests": 0,
+        "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+        "counters": {
+          "physicalAttempts": 0,
+          "pings": 2,
+          "refused": 2,
+          "responses": 0
+        },
+        "pid": 60,
+        "privateBudget": {
+          "bindingSha256": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+          "budgetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "gatewayDatabaseIsBudgetAuthority": false,
+          "head": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+          "hostFilesystemConfinementVerified": false,
+          "measuredInvoiceVerified": false,
+          "noAutomaticRefunds": true,
+          "observedHttpResponses": 0,
+          "providerReservations": 0,
+          "reservedCostMicrousd": 0,
+          "reservedTokens": 0,
+          "version": 1
+        },
+        "socketRemoved": true
+      },
+      "exitCode": 0,
+      "traceChecks": {
+        "actual_setresuid": true,
+        "actual_setresgid": true,
+        "actual_setgroups_empty": false,
+        "server_observed_gateway_peer": true,
+        "server_observed_wrong_peer": true,
+        "actual_target_exec": true
+      }
+    }
+  ],
+  "controllerBefore": {
+    "pid": 48,
+    "fields": {
+      "Uid": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Gid": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "Groups": [
+        "0"
+      ],
+      "Threads": [
+        "1"
+      ],
+      "CapInh": [
+        "0000000000000000"
+      ],
+      "CapPrm": [
+        "000001ffffffffff"
+      ],
+      "CapEff": [
+        "000001ffffffffff"
+      ],
+      "CapBnd": [
+        "000001ffffffffff"
+      ],
+      "CapAmb": [
+        "0000000000000000"
+      ],
+      "NoNewPrivs": [
+        "0"
+      ],
+      "Seccomp": [
+        "0"
+      ]
+    },
+    "userns": "user:[4026531837]",
+    "netns": "net:[4026532224]",
+    "uidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "gidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "exe": "/usr/bin/python3.12",
+    "cmdline": [
+      "/usr/bin/python3.12",
+      "-I",
+      "-B",
+      "/opt/alazharness-lab-p71c/p71c_accept.py",
+      "--parent-net",
+      "net:[4026531840]"
+    ],
+    "starttime": "24155"
+  },
+  "privateFilesBefore": {
+    "/srv/alaz-p71c/private/config.json": {
+      "sha256": "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f",
+      "dev": 2096,
+      "ino": 6008,
+      "uid": 23002,
+      "gid": 23003,
+      "mode": 384,
+      "size": 1119
+    },
+    "/srv/alaz-p71c/private/budget/budget.sqlite3": {
+      "sha256": "f93b4344378e2e09ca01475fce24c96fbdebcf90ad294ec67f2bb4309b87892f",
+      "dev": 2096,
+      "ino": 6010,
+      "uid": 23002,
+      "gid": 23003,
+      "mode": 384,
+      "size": 24576
+    }
+  },
+  "privateFilesAfter": {
+    "/srv/alaz-p71c/private/config.json": {
+      "sha256": "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f",
+      "dev": 2096,
+      "ino": 6008,
+      "uid": 23002,
+      "gid": 23003,
+      "mode": 384,
+      "size": 1119
+    },
+    "/srv/alaz-p71c/private/budget/budget.sqlite3": {
+      "sha256": "f93b4344378e2e09ca01475fce24c96fbdebcf90ad294ec67f2bb4309b87892f",
+      "dev": 2096,
+      "ino": 6010,
+      "uid": 23002,
+      "gid": 23003,
+      "mode": 384,
+      "size": 24576
+    }
+  },
+  "installedSourceBefore": {
+    "LICENSE": "f124b0474189e3cade42b6efec680e515f38908341eb909a4bad1a2012607e40",
+    "SECURITY.md": "f3c6027eabba1de3b5e8ab75a192a88b522c5772ff5f390aa136f71b80ab68d8",
+    "config/components.lock.json": "6bc6caf69c3a9f9f7618a2d787ff493a5e8e58039196224423e05ae0383fd646",
+    "docs/THIRD-PARTY.md": "d12d3b7aa0da6d6c0baa06020cdfe9b22a54aaf0974dd596328cff4db570588c",
+    "packages/README.md": "14fd68532b3f2f0d4831805e9a121425d90e2a73eb554a7ce4b8ef6ec4cfd45f",
+    "packages/admission/strict-admission.mjs": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+    "packages/claw-hermes/UPSTREAM.md": "a136295274f2960032231b5c12d050ce5f424560a165dc740227659ebe9120ba",
+    "packages/claw-hermes/broker_budget.py": "57654ee6ea31eddc6c985756db23fb1bfa077f135bc1a2c2e71bbac925a8efcb",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/credential_guard.py": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+    "packages/claw-hermes/dream.py": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a",
+    "packages/claw-hermes/dream_eval.py": "354b98d46c650b6094b61bb12341e8d4b4bcf320de11a7bd2aa98eec8801e16a",
+    "packages/claw-hermes/dream_review.py": "04320b57f5673e7e3dac7cadb8407869e17832dfac3af877152e28d90bfb9281",
+    "packages/claw-hermes/dream_trial.py": "dda1cfac23dd16fe1f18cddb79bd26b5492910820d763fa64ca7162ab286701b",
+    "packages/claw-hermes/evidence_view.py": "77d9ed1387f6d88697711953c0993f91b9adad0e25915da7a3438bdca549fc04",
+    "packages/claw-hermes/execution_boundary.py": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/host-gate-client.mjs": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/host_gate_plugin.py": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/ipc_view.py": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/package.json": "c68b7ffc274b9217ed60907218adc56ca0d9378175340621c6ce81d1ad0d0328",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/principal_target.py": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+    "packages/claw-hermes/provider_broker.py": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+    "packages/claw-hermes/provider_egress.py": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/request_view.py": "29cc8a80fe84a8a31fc51c9cbe011b215dbcd20f65d73b14b26fb2d059765d9e",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
+    "packages/claw-hermes/source_capture.py": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211",
+    "packages/hybrid-runtime/common.mjs": "2d4208071bc0871a9ef261f7987e7a19b45e8547d479efe4b4b8b2733bf4eaf6",
+    "packages/hybrid-runtime/demo.mjs": "79016ee81e0aa8100adcefe35c676baf4c48375591dd163b97ae504d6708a90f",
+    "packages/hybrid-runtime/mock-harness.mjs": "6d14dea142beb5c37d74a0083f26ff3cdb1f1cce6bdead4599f648b7d1c34b68",
+    "packages/hybrid-runtime/stdio-peer.mjs": "0ba4bc013b4855cdad616d262de20576c31b80d8c79e459233b87ae6ab679c29",
+    "packages/upstream/README.md": "9804f56b2034bb2129d9e54efe2b508f7152d4ff68eb8cdda1597614f1283485",
+    "packages/upstream/hermes/LICENSE": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+    "packages/upstream/hermes/hermes_state_keys.py": "00311a21ba6fd6388bfc9cbd1d507bef20b85e65ee35287a6c24a0dddfaa97a8",
+    "packages/upstream/hermes/iteration_budget.py": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+    "packages/upstream/hermes/terminal_status.py": "9290a3d8ebba3dd9e10788323e712300b5c5aa7b78e1821bd9e84b4513831371",
+    "packages/upstream/hermes/transport.py": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+    "packages/upstream/openclaw/LICENSE": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+    "packages/upstream/openclaw/attempt-cancellation.ts": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+    "packages/upstream/openclaw/attempt-deadlines.ts": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+    "packages/upstream/openclaw/number-coercion.ts": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+    "packages/upstream/openclaw/string-coerce.ts": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+    "scripts/run_principal_broker.py": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+    "scripts/run_principal_broker_target.py": "64cc90209a570264cf20851cb11f34e4897958ed4808842952905697d9bbf6c6",
+    "scripts/run_provider_broker.py": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+    "sources.lock.json": "a4a66c6ad75cfd9d53635f7e436564b8c72c42a8d98592312057184d41bb95ff"
+  },
+  "installedSourceAfter": {
+    "LICENSE": "f124b0474189e3cade42b6efec680e515f38908341eb909a4bad1a2012607e40",
+    "SECURITY.md": "f3c6027eabba1de3b5e8ab75a192a88b522c5772ff5f390aa136f71b80ab68d8",
+    "config/components.lock.json": "6bc6caf69c3a9f9f7618a2d787ff493a5e8e58039196224423e05ae0383fd646",
+    "docs/THIRD-PARTY.md": "d12d3b7aa0da6d6c0baa06020cdfe9b22a54aaf0974dd596328cff4db570588c",
+    "packages/README.md": "14fd68532b3f2f0d4831805e9a121425d90e2a73eb554a7ce4b8ef6ec4cfd45f",
+    "packages/admission/strict-admission.mjs": "47c8aaed0d2c8ab3603aa5ecd3a1861b06a0ebda31139af80c454d211f19bf11",
+    "packages/claw-hermes/UPSTREAM.md": "a136295274f2960032231b5c12d050ce5f424560a165dc740227659ebe9120ba",
+    "packages/claw-hermes/broker_budget.py": "57654ee6ea31eddc6c985756db23fb1bfa077f135bc1a2c2e71bbac925a8efcb",
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/credential_guard.py": "a0c02a0b7e85342010f4ec7f7c0b4e537291d37244afe60d857a477e1b1497e1",
+    "packages/claw-hermes/dream.py": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a",
+    "packages/claw-hermes/dream_eval.py": "354b98d46c650b6094b61bb12341e8d4b4bcf320de11a7bd2aa98eec8801e16a",
+    "packages/claw-hermes/dream_review.py": "04320b57f5673e7e3dac7cadb8407869e17832dfac3af877152e28d90bfb9281",
+    "packages/claw-hermes/dream_trial.py": "dda1cfac23dd16fe1f18cddb79bd26b5492910820d763fa64ca7162ab286701b",
+    "packages/claw-hermes/evidence_view.py": "77d9ed1387f6d88697711953c0993f91b9adad0e25915da7a3438bdca549fc04",
+    "packages/claw-hermes/execution_boundary.py": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+    "packages/claw-hermes/execution_budget.py": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78",
+    "packages/claw-hermes/hermes-runs.mjs": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+    "packages/claw-hermes/host-gate-client.mjs": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+    "packages/claw-hermes/host_gate.py": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+    "packages/claw-hermes/host_gate_plugin.py": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/host_report.py": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632",
+    "packages/claw-hermes/ipc_view.py": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e",
+    "packages/claw-hermes/isolated_read.py": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033",
+    "packages/claw-hermes/isolated_tool.py": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "packages/claw-hermes/operator_resolution.py": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b",
+    "packages/claw-hermes/package.json": "c68b7ffc274b9217ed60907218adc56ca0d9378175340621c6ce81d1ad0d0328",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/principal_target.py": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf",
+    "packages/claw-hermes/provider_broker.py": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+    "packages/claw-hermes/provider_egress.py": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d",
+    "packages/claw-hermes/recovery_inspector.py": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50",
+    "packages/claw-hermes/request_view.py": "29cc8a80fe84a8a31fc51c9cbe011b215dbcd20f65d73b14b26fb2d059765d9e",
+    "packages/claw-hermes/resolution_receipts.py": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba",
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
+    "packages/claw-hermes/source_capture.py": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211",
+    "packages/hybrid-runtime/common.mjs": "2d4208071bc0871a9ef261f7987e7a19b45e8547d479efe4b4b8b2733bf4eaf6",
+    "packages/hybrid-runtime/demo.mjs": "79016ee81e0aa8100adcefe35c676baf4c48375591dd163b97ae504d6708a90f",
+    "packages/hybrid-runtime/mock-harness.mjs": "6d14dea142beb5c37d74a0083f26ff3cdb1f1cce6bdead4599f648b7d1c34b68",
+    "packages/hybrid-runtime/stdio-peer.mjs": "0ba4bc013b4855cdad616d262de20576c31b80d8c79e459233b87ae6ab679c29",
+    "packages/upstream/README.md": "9804f56b2034bb2129d9e54efe2b508f7152d4ff68eb8cdda1597614f1283485",
+    "packages/upstream/hermes/LICENSE": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+    "packages/upstream/hermes/hermes_state_keys.py": "00311a21ba6fd6388bfc9cbd1d507bef20b85e65ee35287a6c24a0dddfaa97a8",
+    "packages/upstream/hermes/iteration_budget.py": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+    "packages/upstream/hermes/terminal_status.py": "9290a3d8ebba3dd9e10788323e712300b5c5aa7b78e1821bd9e84b4513831371",
+    "packages/upstream/hermes/transport.py": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+    "packages/upstream/openclaw/LICENSE": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+    "packages/upstream/openclaw/attempt-cancellation.ts": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+    "packages/upstream/openclaw/attempt-deadlines.ts": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+    "packages/upstream/openclaw/number-coercion.ts": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+    "packages/upstream/openclaw/string-coerce.ts": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+    "scripts/run_principal_broker.py": "986e09190e2ee7fd75c8328003d34b02aec92f55d176a80c451943c0b708e703",
+    "scripts/run_principal_broker_target.py": "64cc90209a570264cf20851cb11f34e4897958ed4808842952905697d9bbf6c6",
+    "scripts/run_provider_broker.py": "e5c8ddfb68fabf3d92abf3e3499711a52b32c36ba372774fe3fc97de6daae96e",
+    "sources.lock.json": "a4a66c6ad75cfd9d53635f7e436564b8c72c42a8d98592312057184d41bb95ff"
+  },
+  "forcedCleanup": false,
+  "sourceCommit": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+  "archiveSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451",
+  "positiveUidTransitionTested": true,
+  "realHermesGatewayTested": false,
+  "ipcV2MountTested": false,
+  "providerDispatchTested": false,
+  "realModelCalls": 0,
+  "fullD3BAccepted": false
+}

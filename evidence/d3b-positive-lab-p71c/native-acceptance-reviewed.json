@@ -1,0 +1,18 @@
+{
+  "result": "PASS_REVIEWED_NATIVE_TWO_UID_BROKER",
+  "nativeChecks": 20,
+  "nativeLifetimes": 2,
+  "nativeSuccessfulPings": 4,
+  "privateReadWriteDenials": 8,
+  "positiveOwnerAccesses": 8,
+  "traceChecks": 6,
+  "originalNativeCollectorExit": 1,
+  "newNativeExecution": false,
+  "realHermesGatewayTested": false,
+  "ipcV2MountTested": false,
+  "providerDispatchTested": false,
+  "fullD3BAccepted": false,
+  "realModelCalls": 0,
+  "nativeReceiptSha256": "871239cf3ec1b504cf470356d176f284fe0434854648015f12a84ce6e9b47f88",
+  "traceSha256": "f329cc284b17961a7f630ae121801f4c65bbf4e3f47a986fe6c4b371b78312ba"
+}

@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "total": 2236,
+  "passed": 2231,
+  "skipped": 5,
+  "failures": 0,
+  "errors": 0,
+  "elapsedSeconds": 376.23,
+  "sourceFiles": 338,
+  "sourceUnchanged": true,
+  "completedAt": "2026-10-21T13:13:48.751317+03:00",
+  "scope": "standard Windows suite including offline native-receipt review; not another Linux privileged run"
+}

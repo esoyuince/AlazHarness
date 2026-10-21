@@ -1,0 +1,10 @@
+{
+  "url": "https://cdimage.ubuntu.com/ubuntu-base/releases/noble/release/ubuntu-base-24.04.5-base-amd64.tar.gz",
+  "sha256": "e77b6f10c2590cef872b33ee9f635a0e3fd1f57fb074c0e52b5c7f56147a0c86",
+  "bytes": 30028293,
+  "checksumSource": "https://cdimage.ubuntu.com/ubuntu-base/releases/noble/release/SHA256SUMS",
+  "httpsChecksumMatched": true,
+  "detachedGpgSignatureVerified": false,
+  "scope": "official HTTPS rootfs and independently retrieved web checksum; no signature-authenticity claim",
+  "sourceBundleSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451"
+}

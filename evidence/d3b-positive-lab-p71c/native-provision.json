@@ -1,0 +1,87 @@
+{
+  "result": "PROVISIONED_TEST_ONLY",
+  "distro": "AlazHarness-D3B-P71C",
+  "sourceCommit": "802fade74d5b08b26f975738d4aa8d7546dc9cac",
+  "archiveSha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451",
+  "installedFiles": 57,
+  "installPath": "/opt/alazharness-broker/802fade",
+  "python": "/usr/bin/python3.12",
+  "pythonSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "principal": {
+    "version": 1,
+    "enabled": true,
+    "gatewayUid": 23001,
+    "brokerUid": 23002,
+    "socketGroupGid": 23003,
+    "hostUserNamespace": "user:[4026531837]"
+  },
+  "contracts": {
+    "sock1": {
+      "path": "/srv/alaz-p71c/control/sock1-contract.json",
+      "sha256": "6be9ae0aabba7616ee41f3bfe544cdb4058a215078b2198ddf6c44c7b82dde51"
+    },
+    "sock2": {
+      "path": "/srv/alaz-p71c/control/sock2-contract.json",
+      "sha256": "b3b5fe54a80be914d13d773da5f928d24e512dc3b6aeb8b2ae4fce1c07056ccd"
+    }
+  },
+  "initialBudget": {
+    "version": 1,
+    "budgetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "bindingSha256": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+    "providerReservations": 0,
+    "reservedTokens": 0,
+    "reservedCostMicrousd": 0,
+    "observedHttpResponses": 0,
+    "noAutomaticRefunds": true,
+    "gatewayDatabaseIsBudgetAuthority": false,
+    "measuredInvoiceVerified": false,
+    "hostFilesystemConfinementVerified": false,
+    "head": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f"
+  },
+  "controller": {
+    "pid": 9,
+    "uids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "gids": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "groups": [
+      0
+    ],
+    "threads": 1,
+    "nnp": 0,
+    "caps": {
+      "CapInh": 0,
+      "CapPrm": 2199023255551,
+      "CapEff": 2199023255551,
+      "CapBnd": 2199023255551,
+      "CapAmb": 0
+    },
+    "userns": "user:[4026531837]",
+    "uidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "gidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ]
+  },
+  "provisionedUids": [
+    23001,
+    23002
+  ],
+  "provisionedGid": 23003,
+  "brokerLaunched": false,
+  "providerCallsAllowed": 0
+}

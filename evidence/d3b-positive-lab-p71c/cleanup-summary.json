@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "allOwnedBrokerProcessesGone": true,
+  "ownedSocketsRemoved": true,
+  "testDistroStopped": true,
+  "testDistroDiskRetained": true,
+  "existingUbuntuStillDefaultAndStopped": true,
+  "usedGlobalShutdown": false,
+  "productionAccessed": false,
+  "at": "2026-10-21T13:08:03.792137+03:00"
+}

@@ -1,0 +1,27 @@
+{
+  "distro": "AlazHarness-D3B-P71C",
+  "modifiedRootfsSha256": "eb5ad889a170c7ab1561f0ddc7dd9f6b6ac16c7b0aed4d0f756d29940407dc92",
+  "overlay": {
+    "etc/wsl.conf": {
+      "sha256": "b3850deb26f217b3c789a6e594d2b772def1f31dfa7e891449d8db0790e5115b",
+      "mode": "0o644"
+    },
+    "etc/alaz-p71c-lab-id": {
+      "sha256": "f285ce52583ad5dbb6716673a317b885532b768409c56b36a420571e72850254",
+      "mode": "0o644"
+    },
+    "usr/sbin/policy-rc.d": {
+      "sha256": "c2bcd9decf63ff2c0d9f473f38bc3607900530aad80f99139855d56678456230",
+      "mode": "0o755"
+    },
+    "root/p71c-input/broker-source.tar": {
+      "sha256": "8c0bbad498ccc877edbce85af535dd0fcd68b2dbf21b72858487577942424451",
+      "mode": "0o600"
+    },
+    "root/p71c-input/manifest.json": {
+      "sha256": "7bc150bfcdc79506c3f54b12aadbb49311bcef381cca8b35e35a08b831b313f9",
+      "mode": "0o600"
+    }
+  },
+  "scope": "new disposable distro only; distro-specific automount/interop disabled before first boot"
+}

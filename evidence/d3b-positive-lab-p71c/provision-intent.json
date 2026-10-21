@@ -1,0 +1,14 @@
+{
+  "sourcePath": "scripts\\qa\\p71c_provision.py",
+  "sha256": "29c16e05b342211eef2d476dd69e6bc990d9304805981288aded8ce5d9b610cf",
+  "distro": "AlazHarness-D3B-P71C",
+  "startedAt": "2026-10-21T13:00:47.357055+03:00",
+  "createsOnly": [
+    "/opt/alazharness-broker/802fade",
+    "/srv/alaz-p71c",
+    "alazgateway23001",
+    "alazbroker23002",
+    "alazipc23003"
+  ],
+  "modelCallsAllowed": 0
+}

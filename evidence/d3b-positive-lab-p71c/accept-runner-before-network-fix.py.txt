@@ -1,0 +1,207 @@
+"""Real root-to-broker/peer/private-file QA in the approved disposable P71C lab.
+
+No product monkeypatches. Actual launcher/target, kernel observations, signed
+Unix IPC and two real host UIDs. No provider send or Hermes Gateway execution.
+"""
+import argparse
+import errno
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import signal
+import stat
+import subprocess
+import sys
+import time
+
+INSTALL=Path('/opt/alazharness-broker/802fade')
+STATE=Path('/srv/alaz-p71c')
+QA=Path('/opt/alazharness-lab-p71c')
+CAPS=('CapInh','CapPrm','CapEff','CapBnd','CapAmb')
+PY='/usr/bin/python3.12'
+ENV={'PATH':'/usr/bin:/bin','HOME':'/','LANG':'C.UTF-8','PYTHONNOUSERSITE':'1',
+     'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+
+def require(ok,reason):
+    if not ok:raise RuntimeError(reason)
+
+def dump(path,obj):
+    with path.open('x',encoding='utf-8') as f:json.dump(obj,f,indent=2);f.write('\n')
+    os.chmod(path,0o600)
+
+def file_proof(path):
+    s=path.stat()
+    return {'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'dev':s.st_dev,'ino':s.st_ino,
+            'uid':s.st_uid,'gid':s.st_gid,'mode':stat.S_IMODE(s.st_mode),'size':s.st_size}
+
+def observed(pid):
+    root=Path('/proc')/str(pid);fields={}
+    for line in (root/'status').read_text().splitlines():
+        key,_,value=line.partition(':')
+        if key in ('Uid','Gid','Groups','Threads','NoNewPrivs','Seccomp',*CAPS):fields[key]=value.split()
+    return {'pid':pid,'fields':fields,'userns':os.readlink(root/'ns/user'),
+            'netns':os.readlink(root/'ns/net'),'uidMap':(root/'uid_map').read_text().split(),
+            'gidMap':(root/'gid_map').read_text().split(),
+            'exe':os.readlink(root/'exe'),'cmdline':(root/'cmdline').read_bytes().split(b'\0')[:-1],
+            'starttime':(root/'stat').read_text().split()[21]}
+
+def json_observation(value):
+    return value|{'cmdline':[n.decode('utf-8') for n in value['cmdline']]}
+
+def client(uid,mode,settings=None):
+    value={'mode':mode}
+    if settings is not None:value['settings']=settings
+    p=subprocess.Popen([PY,'-I','-B',str(QA/'p71c_client.py')],user=uid,group=23003,extra_groups=[],
+        stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,cwd='/',env=ENV)
+    try:out,err=p.communicate(json.dumps(value).encode(),timeout=15)
+    except subprocess.TimeoutExpired:
+        p.kill();p.communicate();raise RuntimeError('owned_client_timeout')
+    require(p.returncode==0 and not err,'owned_client_failed')
+    report=json.loads(out);require(report['self']['pid']==p.pid and report['self']['uid']==uid,'client_identity')
+    return report
+
+def main():
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--parent-net',required=True)
+    args=ap.parse_args()
+    require(os.getuid()==os.geteuid()==0 and os.getgid()==0,'root_controller')
+    require(Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C','lab_marker')
+    require(os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C','distro_guard')
+    require(not Path('/mnt/c/Windows').exists(),'no_windows_drive')
+    require(os.readlink('/proc/self/ns/net')!=args.parent_net,'new_network_namespace_required')
+    require([x.split(':')[0].strip() for x in Path('/proc/net/dev').read_text().splitlines()[2:]]==['lo'],'network_not_empty')
+    require(len(Path('/proc/net/route').read_text().splitlines())==1,'routes_present')
+    require(Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295'],'host_identity_map')
+    control=STATE/'control';result_path=control/'acceptance-001.json'
+    require(not result_path.exists() and not (STATE/'sock1/ready.json').exists()
+            and not (STATE/'sock2/ready.json').exists(),'fresh_acceptance_required')
+    provision=json.loads((control/'provision.json').read_text());principal=provision['principal']
+    manifest=json.loads(Path('/root/p71c-input/manifest.json').read_text())
+    source_before={n:hashlib.sha256((INSTALL/n).read_bytes()).hexdigest() for n in manifest['fileManifest']}
+    require(all(h==manifest['fileManifest'][n]['sha256'] for n,h in source_before.items()),'source_precondition')
+    private=[STATE/'private/config.json',STATE/'private/budget/budget.sqlite3']
+    files_before={str(p):file_proof(p) for p in private}
+    checks={};lifetimes=[];error=None;owned=[];forced=False
+    before_controller=json_observation(observed(os.getpid()))
+    checks['fresh_network_namespace_without_route']=True
+    checks['initial_user_namespace_preserved']=principal['hostUserNamespace']==before_controller['userns']
+    try:
+        for index,name in enumerate(('sock1','sock2'),1):
+            traced=index==2
+            contract=control/(name+'-contract.json')
+            require(hashlib.sha256(contract.read_bytes()).hexdigest()==provision['contracts'][name]['sha256'],'contract_changed')
+            args=[PY,'-I','-B',str(INSTALL/'scripts/run_principal_broker.py'),'--contract',str(contract)]
+            trace=control/'broker2-strace.txt'
+            if traced:
+                args=['/usr/bin/strace','-f','-qq','-s','256','-e',
+                      'trace=execve,setresuid,setresgid,setgroups,prctl,capset,getsockopt','-o',str(trace),*args]
+            process=subprocess.Popen(args,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE,cwd='/',env=ENV,start_new_session=True)
+            owned.append(process)
+            ready_path=STATE/name/'ready.json';deadline=time.monotonic()+15
+            while not ready_path.exists():
+                if process.poll() is not None:
+                    out,err=process.communicate()
+                    dump(control/(name+'-startup-error.json'),{'exitCode':process.returncode,
+                        'stdout':out.decode('utf-8','replace'),'stderr':err.decode('utf-8','replace')})
+                    raise RuntimeError(name+'_actual_launcher_failed')
+                if time.monotonic()>deadline:raise RuntimeError(name+'_ready_timeout')
+                time.sleep(.05)
+            ready=json.loads(ready_path.read_text());pid=ready['pid'];state=observed(pid)
+            if not traced:require(pid==process.pid,'pid_not_preserved_across_exec')
+            require(state['fields']['Uid']==['23002']*4 and state['fields']['Gid']==['23003']*4,'postexec_ids')
+            require(not state['fields']['Groups'],'postexec_groups')
+            require(all(int(state['fields'][k][0],16)==0 for k in CAPS),'postexec_caps')
+            require(state['fields']['NoNewPrivs']==['1'] and state['fields']['Seccomp']==['2'],'postexec_restrictions')
+            require(state['userns']==principal['hostUserNamespace'] and state['netns']==before_controller['netns']
+                    and state['uidMap']==state['gidMap']==['0','0','4294967295'],'postexec_namespaces')
+            require(state['exe']==PY and str(INSTALL/'scripts/run_principal_broker_target.py').encode() in state['cmdline'],
+                    'fixed_postexec_image')
+            s=(STATE/name/'egress.sock').stat();d=(STATE/name).stat()
+            require((s.st_uid,s.st_gid,stat.S_IMODE(s.st_mode))==(23002,23003,0o660)
+                    and (d.st_uid,d.st_gid,stat.S_IMODE(d.st_mode))==(23002,23003,0o710),'socket_geometry')
+            settings={'socket_path':ready['socketPath'],'broker_id':ready['brokerId'],
+                      'route_fingerprint':ready['routeFingerprint'],'signing_key':'b'*64,
+                      'principal_contract':principal}
+            positive=client(23001,'positive',settings)
+            require(positive['transport']['peer']=={'pid':pid,'uid':23002,'gid':23003},'gateway_observed_wrong_peer')
+            require(positive['transport']['actualProviderBrokerClientReady'] is True,'real_client_ping')
+            wrong=client(23002,'wrong_peer',settings)
+            require(wrong['transport']['reply'].get('ok') is False
+                    and wrong['transport']['reply'].get('error')=='broker_request_refused','server_wrong_uid_not_refused')
+            local=client(23002,'client_denial',settings)
+            require(local['transport']['localClientReason']=='broker_gateway_principal_refused','client_wrong_uid_not_refused')
+            denied=client(23001,'access');owner=client(23002,'access')
+            require(len(denied['accesses'])==4 and all(not x['opened'] and x['errno'] in (errno.EACCES,errno.EPERM)
+                    for x in denied['accesses']),'gateway_private_file_access')
+            require(len(owner['accesses'])==4 and all(x['opened'] for x in owner['accesses']),'broker_owner_control')
+            stale=None
+            if index==2:
+                require(ready['brokerId']!=lifetimes[0]['ready']['brokerId'],'restart_id_reused')
+                stale=client(23001,'stale',settings|{'broker_id':lifetimes[0]['ready']['brokerId']})
+                require(stale['transport']['reply'].get('error')=='stale_broker_identity'
+                        and stale['transport']['reply'].get('ok') is False,'stale_identity_not_refused')
+            require(observed(pid)['starttime']==state['starttime'],'pid_reused')
+            os.kill(pid,signal.SIGTERM)
+            try:out,err=process.communicate(timeout=8)
+            except subprocess.TimeoutExpired:
+                process.kill();process.communicate();forced=True;raise RuntimeError('broker_shutdown_timeout')
+            require(process.returncode==0 and not out and not err,'clean_lifecycle_exit')
+            shutdown=json.loads((STATE/name/'shutdown.json').read_text())
+            require(shutdown['pid']==pid and shutdown['socketRemoved'] and shutdown['activeRequests']==0
+                    and shutdown['counters']['physicalAttempts']==0 and shutdown['counters']['pings']==2,'shutdown_receipt')
+            require(not (STATE/name/'egress.sock').exists(),'socket_not_removed')
+            require(shutdown['privateBudget']==provision['initialBudget'],'budget_changed')
+            trace_checks=None
+            if traced:
+                text=trace.read_text()
+                def trace_has(pattern):return re.search(pattern,text,re.MULTILINE) is not None
+                trace_checks={
+                    'actual_setresuid':trace_has(r'^'+str(pid)+r'\s+setresuid\(23002, 23002, 23002\)\s+= 0'),
+                    'actual_setresgid':trace_has(r'^'+str(pid)+r'\s+setresgid\(23003, 23003, 23003\)\s+= 0'),
+                    'actual_setgroups_empty':trace_has(r'^'+str(pid)+r'\s+setgroups\(0, NULL\)\s+= 0'),
+                    'server_observed_gateway_peer':('pid='+str(positive['self']['pid'])+', uid=23001, gid=23003') in text,
+                    'server_observed_wrong_peer':('pid='+str(wrong['self']['pid'])+', uid=23002, gid=23003') in text,
+                    'actual_target_exec':trace_has(r'^'+str(pid)+r'\s+execve\("/usr/bin/python3.12",.*run_principal_broker_target.py.*= 0')}
+            life={'name':name,'traced':traced,'launcherPid':process.pid,'ready':ready,'postexec':json_observation(state),
+                  'positiveClient':positive,'wrongPeerClient':wrong,'wrongLocalClient':local,
+                  'gatewayDenials':denied,'brokerOwnerControls':owner,'staleClient':stale,
+                  'shutdown':shutdown,'exitCode':process.returncode,'traceChecks':trace_checks}
+            lifetimes.append(life);dump(control/(name+'-lifetime.json'),life)
+            checks[name+'_real_uid_exec_and_restrictions']=True
+            checks[name+'_authenticated_two_uid_ping']=True
+            checks[name+'_wrong_identity_denied_both_sides']=True
+            checks[name+'_private_config_and_budget_denied_read_write']=True
+            checks[name+'_owner_positive_controls']=True
+            checks[name+'_clean_shutdown_zero_provider_calls']=True
+        checks['fresh_broker_lifetime_rejects_previous_id']=True
+        checks['native_trace_proves_actual_transition_and_both_peers']=all(lifetimes[1]['traceChecks'].values())
+    except Exception as exc:
+        error={'type':type(exc).__name__,'reason':str(exc)[:500]}
+    finally:
+        for p in owned:
+            if p.poll() is None:
+                os.killpg(p.pid,signal.SIGTERM)
+                try:p.communicate(timeout=5)
+                except subprocess.TimeoutExpired:os.killpg(p.pid,signal.SIGKILL);p.communicate();forced=True
+    files_after={str(p):file_proof(p) for p in private}
+    source_after={n:hashlib.sha256((INSTALL/n).read_bytes()).hexdigest() for n in manifest['fileManifest']}
+    checks['private_files_present_unchanged']=files_before==files_after
+    checks['installed_57_source_files_unchanged']=source_before==source_after
+    checks['all_owned_processes_reaped']=all(p.poll() is not None for p in owned) and not forced
+    checks['controller_ids_and_capabilities_unchanged']=observed(os.getpid())['fields']==before_controller['fields']
+    report={'result':'PASS_SCOPED_TWO_UID_BROKER' if error is None and all(checks.values()) else 'FAIL',
+        'scope':'actual installed broker/controller and test IPC client, not Hermes Gateway/projection/provider dispatch',
+        'checks':checks,'checkCount':len(checks),'error':error,'lifetimes':lifetimes,
+        'controllerBefore':before_controller,'privateFilesBefore':files_before,'privateFilesAfter':files_after,
+        'installedSourceBefore':source_before,'installedSourceAfter':source_after,
+        'forcedCleanup':forced,'sourceCommit':provision['sourceCommit'],'archiveSha256':provision['archiveSha256'],
+        'positiveUidTransitionTested':bool(lifetimes),'realHermesGatewayTested':False,
+        'ipcV2MountTested':False,'providerDispatchTested':False,'realModelCalls':0,'fullD3BAccepted':False}
+    dump(result_path,report)
+    print(json.dumps({'result':report['result'],'checks':len(checks),'failedChecks':[k for k,v in checks.items() if not v],
+                      'error':error,'completedLifetimes':len(lifetimes),'forcedCleanup':forced}))
+    return 0 if report['result']=='PASS_SCOPED_TWO_UID_BROKER' else 1
+
+if __name__=='__main__':raise SystemExit(main())

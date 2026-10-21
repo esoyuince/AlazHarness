@@ -1,0 +1,6 @@
+{
+  "distro": "AlazHarness-D3B-P71C",
+  "scriptSha256": "d9af9378b0e988c770096fbc38292ef05840502f5ed3b5541853b35e8f0e2228",
+  "networkNamespace": "new net only; no user namespace",
+  "providerLimit": 0
+}

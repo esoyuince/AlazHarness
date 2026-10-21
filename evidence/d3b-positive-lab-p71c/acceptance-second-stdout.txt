@@ -1,0 +1,1 @@
+{"result": "FAIL", "checks": 20, "failedChecks": ["native_trace_proves_actual_transition_and_both_peers"], "error": null, "completedLifetimes": 2, "forcedCleanup": false}

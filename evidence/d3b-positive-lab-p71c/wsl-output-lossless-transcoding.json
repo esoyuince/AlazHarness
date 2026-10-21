@@ -1,0 +1,32 @@
+{
+  "reason": "Static scanner required explicit review of three UTF16 WSL stdout buffers; decoded UTF8 views plus lossless original bytes preserved as Base64 and ignored raw copies. No scanner exemption, product rule or native acceptance receipt changed.",
+  "originals": [
+    {
+      "path": "distro-stop-stdout.txt",
+      "originalEncoding": "utf-16-le",
+      "originalBytes": 60,
+      "originalSha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f",
+      "originalBase64": "MAFfAWwAZQBtACAAYgBhAF8BYQByADEBeQBsAGEAIAB0AGEAbQBhAG0AbABhAG4AZAAxAS4AIAANAAoA",
+      "decodedUtf8Sha256": "1bc9d2964242880515dd35a029b40cdafc84f22942f505c97b0de37f5bc9c72a",
+      "decodedText": "\u0130\u015flem ba\u015far\u0131yla tamamland\u0131. \r\n"
+    },
+    {
+      "path": "import-stdout.bin.txt",
+      "originalEncoding": "utf-16-le",
+      "originalBytes": 60,
+      "originalSha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f",
+      "originalBase64": "MAFfAWwAZQBtACAAYgBhAF8BYQByADEBeQBsAGEAIAB0AGEAbQBhAG0AbABhAG4AZAAxAS4AIAANAAoA",
+      "decodedUtf8Sha256": "1bc9d2964242880515dd35a029b40cdafc84f22942f505c97b0de37f5bc9c72a",
+      "decodedText": "\u0130\u015flem ba\u015far\u0131yla tamamland\u0131. \r\n"
+    },
+    {
+      "path": "wsl-final-list.txt",
+      "originalEncoding": "utf-16-le",
+      "originalBytes": 282,
+      "originalSha256": "36d2d349020c01993f757bf10558175c67ae8504365ac588b61251b4801867c4",
+      "originalBase64": "IAAgAE4AQQBNAEUAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFMAVABBAFQARQAgACAAIAAgACAAIAAgACAAIAAgACAAVgBFAFIAUwBJAE8ATgANAAoAKgAgAFUAYgB1AG4AdAB1ACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFMAdABvAHAAcABlAGQAIAAgACAAIAAgACAAIAAgACAAMgANAAoAIAAgAEEAbABhAHoASABhAHIAbgBlAHMAcwAtAEQAMwBCAC0AUAA3ADEAQwAgACAAIAAgAFMAdABvAHAAcABlAGQAIAAgACAAIAAgACAAIAAgACAAMgANAAoA",
+      "decodedUtf8Sha256": "1fe32122d077b77726e03a7e79dd4da5799310a13b5a34db653af1af77d46621",
+      "decodedText": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Stopped         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n"
+    }
+  ]
+}

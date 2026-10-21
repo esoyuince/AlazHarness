@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-POSITIVE-LAB-P71C — SCOPED REAL TWO-UID BROKER PASS
+
+Base2358d5d, branch alaz/d3b-principal-launch-21oct. User approved the preceding explicit offer to prepare a separate disposable Linux environment and run real two-test-user/root-controller UID-transition acceptance. New scope: only new WSL2 distribution AlazHarness-D3B-P71C, image/state under this worktree scratch/principal-lab-p71c; trusted /opt/alazharness-broker/802fade, test state /srv/alaz-p71c, gateway23001/broker23002/group23003. Existing Ubuntu, production server, default distro, global WSL config and old user state remain untouched. No helper/elevation bypass, model inference, main/push or IPC v2 activation. A new tool/OS permission denial stops the affected action. Separate distro shares the WSL kernel and is a controlled benign test installation, NOT a hypervisor security certification.
+
+Plan: official hash-verified Ubuntu Base archive with initial distro-only automount/Windows interop disabled; import once under unique name; minimal signed distro packages; copy exact57-file source candidate and explicitly provision only fresh test accounts/config/budget/socket; real root-to-broker exec, process/peer observations, access denials and owned cleanup. No positive result until actual kernel/process proof. Evidence evidence/d3b-positive-lab-p71c/. On interruption inspect receipts and named distro before rerun.
+
+Completed real positive gate in the explicitly approved fresh distro: actual root-to-broker UID23002 exec, Gateway-identity QA client UID23001, primary GID23003, all UID/GID slots verified, supplementary groups empty, all five capabilities zero, NNP1/seccomp2, initial user namespace/maps preserved. Two actual broker lifetimes,4 authenticated pings,8 private config/budget read/write-open denials with8 owner-open controls, wrong identities/stale restart ID refused, clean shutdown and zero provider attempts. Installed57 product blobs unchanged. The client is NOT the Hermes Gateway process; no provider send or IPCv2 projection acceptance is claimed.
+
+Original collector FAIL19/20/exit1 is retained: successful setgroups was printed [] rather than NULL by strace. A separate strict read-only reviewer confirms20/20 using PID-bound syscall/peer observations and all native state/file checks;16 offline reviewer controls PASS. No new native rerun or product fix was invented. Earlier empty-route-header QA failure and static UTF16 output issue are also retained with exact source/byte explanations. Controlling report docs/D3B-POSITIVE-LAB-P71C.md; summary/evidence evidence/d3b-positive-lab-p71c/.
+
+Final Windows2236=2231PASS/5SKIP/0FAIL/0ERROR, exit0;338 source hashes stable,333 pre-existing sources untouched. The16 offline controls are a subset, not additive. Local static PASS2236 discovered; remote CI NOT RUN. All processes/sockets from the test are gone; only the new distro was stopped. Original Ubuntu is still default/stopped. Dummy test accounts/state and stopped disk are retained ONLY in AlazHarness-D3B-P71C under ignored scratch/principal-lab-p71c. No global WSL shutdown, production access, main update, push or model call. Read Git HEAD for this local checkpoint.
+
+**Exact next work:** implement/qualify the trusted Gateway network/mount projection without changing the host user namespace; run real Hermes Gateway against the now-positively-tested broker, then separately prepare read-only access to live Gateway state.db/epoch/grants for dummy-provider dispatch/accounting. IPCv2 prepare/project gates stay CLOSED until matching acceptance. FullD3B remains OPEN. The previous missing positive broker environment/UID-transition gate is now closed for the scoped source/runtime above; do not repeat readiness-only inventories as a substitute for the next engineering work.
+
+## Preserved source export
+
 ## D3B-INSTALL-EXPORT-S10E — LOCAL SOURCE-EXPORT PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`; base `802fade74d5b08b26f975738d4aa8d7546dc9cac`.
@@ -1331,3 +1347,13 @@ Windows focused17/17 PASS. Two independent exports byte-identical:57 source file
 ### S10E terminal checkpoint — 2026-10-21T12:04:14.268285+03:00
 
 Full request ed189b86-b497-4da7-b204-b0f874182c31 terminal exit0; Linux selection/relocation passed before a known Git-path refusal in2b15d9b7. Independent Linux archive comparison9b280946 terminal exit0. Source code unchanged during tests. Local static final follows; no background test or positive UID transition pending.
+
+
+### P71C native positive result — 2026-10-21T13:09:48.118615+03:00
+
+Approved fresh distro AlazHarness-D3B-P71C was provisioned; real installed root-to-broker UID23002 and Gateway-identity client UID23001 ran in new network namespace, initial user map preserved. Two lifetimes (PID49/60),4 signed pings,8 private read/write-open denials with8 positive owner controls, restart stale-ID denial,zero provider attempts,clean shutdown. Original collector19/20 FAIL retained: strace [] vs NULL rendering. Strict read-only review confirms20/20 from original trace/observations,16 reviewer controls PASS; no new native rerun claimed. Named distro now STOPPED; original Ubuntu stays default/stopped. Root-owned dummy test state retained in ignored scratch. Full Windows request5c2c74ce-f281-49e9-b06a-396fd96f79b4 still IN PROGRESS at this checkpoint; do not mutate338 frozen sources or replay. Product files unchanged.
+
+
+### P71C local completion — 2026-10-21T13:18:08.201346+03:00
+
+Full request5c2c74ce-f281-49e9-b06a-396fd96f79b4 terminal exit0,2236 total2231PASS5SKIP. Static reviewed requestf6c4a85e-e2c7-462e-a15e-55f47e1670de terminal exit0. Native executed report/trace reconciled read-only with16 controls, original collector exit1 preserved. Cleanup requeste0b039b4-a377-472c-806d-51ce0138b5ae terminal exit0: own brokers/sockets removed, named distro stopped, original Ubuntu default/stopped. No pending test/source edit; local selected-file commit follows.

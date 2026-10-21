@@ -1,0 +1,5 @@
+{
+  "distro": "AlazHarness-D3B-P71C",
+  "action": "new distro only: verify marker and absence host Windows mount; signed apt package setup",
+  "startedAt": "2026-10-21T12:55:43.268024+03:00"
+}

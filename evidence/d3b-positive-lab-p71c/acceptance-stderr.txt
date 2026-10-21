@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/opt/alazharness-lab-p71c/p71c_accept.py", line 207, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/opt/alazharness-lab-p71c/p71c_accept.py", line 74, in main
+    require(len(Path('/proc/net/route').read_text().splitlines())==1,'routes_present')
+  File "/opt/alazharness-lab-p71c/p71c_accept.py", line 28, in require
+    if not ok:raise RuntimeError(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: routes_present

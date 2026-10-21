@@ -1,0 +1,13 @@
+{
+  "base": "2358d5dad7c7a0b98c1c494f30d69fc0572977c2",
+  "userApproval": "deavm edelim in reply to explicit disposable Linux setup and two-user/root-controller acceptance offer",
+  "distro": "AlazHarness-D3B-P71C",
+  "existingDistros": [
+    "Ubuntu"
+  ],
+  "createdAt": "2026-10-21T12:54:00.526385+03:00",
+  "noExistingUbuntuMutation": true,
+  "noProductionAccess": true,
+  "noGlobalWslConfiguration": true,
+  "noLiveCredentialsOrModel": true
+}

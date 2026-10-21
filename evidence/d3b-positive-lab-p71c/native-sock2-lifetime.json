@@ -1,0 +1,414 @@
+{
+  "name": "sock2",
+  "traced": true,
+  "launcherPid": 57,
+  "ready": {
+    "backend": "linux_unix_credential_broker",
+    "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+    "pid": 60,
+    "routeFingerprint": "61e0e2bdf65dd7d98212606b4f4f34d4ce397324e6a010cfcf58df056cf4815b",
+    "socketPath": "/srv/alaz-p71c/sock2/egress.sock"
+  },
+  "postexec": {
+    "pid": 60,
+    "fields": {
+      "Uid": [
+        "23002",
+        "23002",
+        "23002",
+        "23002"
+      ],
+      "Gid": [
+        "23003",
+        "23003",
+        "23003",
+        "23003"
+      ],
+      "Groups": [],
+      "Threads": [
+        "1"
+      ],
+      "CapInh": [
+        "0000000000000000"
+      ],
+      "CapPrm": [
+        "0000000000000000"
+      ],
+      "CapEff": [
+        "0000000000000000"
+      ],
+      "CapBnd": [
+        "0000000000000000"
+      ],
+      "CapAmb": [
+        "0000000000000000"
+      ],
+      "NoNewPrivs": [
+        "1"
+      ],
+      "Seccomp": [
+        "2"
+      ]
+    },
+    "userns": "user:[4026531837]",
+    "netns": "net:[4026532224]",
+    "uidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "gidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "exe": "/usr/bin/python3.12",
+    "cmdline": [
+      "/usr/bin/python3.12",
+      "-I",
+      "-B",
+      "/opt/alazharness-broker/802fade/scripts/run_principal_broker_target.py",
+      "--principal",
+      "{\"brokerUid\":23002,\"enabled\":true,\"gatewayUid\":23001,\"hostUserNamespace\":\"user:[4026531837]\",\"socketGroupGid\":23003,\"version\":1}",
+      "--config",
+      "/srv/alaz-p71c/private/config.json",
+      "--config-sha256",
+      "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f",
+      "--output",
+      "/srv/alaz-p71c/sock2"
+    ],
+    "starttime": "24687"
+  },
+  "positiveClient": {
+    "self": {
+      "pid": 63,
+      "uid": 23001,
+      "gid": 23003,
+      "fields": {
+        "Uid": [
+          "23001",
+          "23001",
+          "23001",
+          "23001"
+        ],
+        "Gid": [
+          "23003",
+          "23003",
+          "23003",
+          "23003"
+        ],
+        "Groups": [],
+        "CapEff": [
+          "0000000000000000"
+        ],
+        "NoNewPrivs": [
+          "0"
+        ]
+      },
+      "userns": "user:[4026531837]"
+    },
+    "mode": "positive",
+    "writesPerformed": false,
+    "modelCalls": 0,
+    "transport": {
+      "peer": {
+        "pid": 60,
+        "uid": 23002,
+        "gid": 23003
+      },
+      "reply": {
+        "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+        "nonce": "45fa46f84d484524a5e9ae5ca8baa550",
+        "ok": true,
+        "routeFingerprint": "61e0e2bdf65dd7d98212606b4f4f34d4ce397324e6a010cfcf58df056cf4815b",
+        "version": 1
+      },
+      "requestedNonce": "45fa46f84d484524a5e9ae5ca8baa550",
+      "actualProviderBrokerClientReady": true
+    }
+  },
+  "wrongPeerClient": {
+    "self": {
+      "pid": 64,
+      "uid": 23002,
+      "gid": 23003,
+      "fields": {
+        "Uid": [
+          "23002",
+          "23002",
+          "23002",
+          "23002"
+        ],
+        "Gid": [
+          "23003",
+          "23003",
+          "23003",
+          "23003"
+        ],
+        "Groups": [],
+        "CapEff": [
+          "0000000000000000"
+        ],
+        "NoNewPrivs": [
+          "0"
+        ]
+      },
+      "userns": "user:[4026531837]"
+    },
+    "mode": "wrong_peer",
+    "writesPerformed": false,
+    "modelCalls": 0,
+    "transport": {
+      "peer": {
+        "pid": 60,
+        "uid": 23002,
+        "gid": 23003
+      },
+      "reply": {
+        "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+        "error": "broker_request_refused",
+        "nonce": "",
+        "ok": false,
+        "version": 1
+      },
+      "requestedNonce": "13ae9bdaa9ff4e528b00452e653c6dce"
+    }
+  },
+  "wrongLocalClient": {
+    "self": {
+      "pid": 65,
+      "uid": 23002,
+      "gid": 23003,
+      "fields": {
+        "Uid": [
+          "23002",
+          "23002",
+          "23002",
+          "23002"
+        ],
+        "Gid": [
+          "23003",
+          "23003",
+          "23003",
+          "23003"
+        ],
+        "Groups": [],
+        "CapEff": [
+          "0000000000000000"
+        ],
+        "NoNewPrivs": [
+          "0"
+        ]
+      },
+      "userns": "user:[4026531837]"
+    },
+    "mode": "client_denial",
+    "writesPerformed": false,
+    "modelCalls": 0,
+    "transport": {
+      "localClientReason": "broker_gateway_principal_refused"
+    }
+  },
+  "gatewayDenials": {
+    "self": {
+      "pid": 66,
+      "uid": 23001,
+      "gid": 23003,
+      "fields": {
+        "Uid": [
+          "23001",
+          "23001",
+          "23001",
+          "23001"
+        ],
+        "Gid": [
+          "23003",
+          "23003",
+          "23003",
+          "23003"
+        ],
+        "Groups": [],
+        "CapEff": [
+          "0000000000000000"
+        ],
+        "NoNewPrivs": [
+          "0"
+        ]
+      },
+      "userns": "user:[4026531837]"
+    },
+    "mode": "access",
+    "writesPerformed": false,
+    "modelCalls": 0,
+    "accesses": [
+      {
+        "path": "private/config.json",
+        "action": "read",
+        "opened": false,
+        "errno": 13
+      },
+      {
+        "path": "private/config.json",
+        "action": "write_open_only",
+        "opened": false,
+        "errno": 13
+      },
+      {
+        "path": "private/budget/budget.sqlite3",
+        "action": "read",
+        "opened": false,
+        "errno": 13
+      },
+      {
+        "path": "private/budget/budget.sqlite3",
+        "action": "write_open_only",
+        "opened": false,
+        "errno": 13
+      }
+    ]
+  },
+  "brokerOwnerControls": {
+    "self": {
+      "pid": 67,
+      "uid": 23002,
+      "gid": 23003,
+      "fields": {
+        "Uid": [
+          "23002",
+          "23002",
+          "23002",
+          "23002"
+        ],
+        "Gid": [
+          "23003",
+          "23003",
+          "23003",
+          "23003"
+        ],
+        "Groups": [],
+        "CapEff": [
+          "0000000000000000"
+        ],
+        "NoNewPrivs": [
+          "0"
+        ]
+      },
+      "userns": "user:[4026531837]"
+    },
+    "mode": "access",
+    "writesPerformed": false,
+    "modelCalls": 0,
+    "accesses": [
+      {
+        "path": "private/config.json",
+        "action": "read",
+        "opened": true,
+        "errno": null,
+        "readSha256": "7234c548f1024fb983b27a4c60e63b0b6463dcff1cc3c69c91db800f8753180f"
+      },
+      {
+        "path": "private/config.json",
+        "action": "write_open_only",
+        "opened": true,
+        "errno": null,
+        "readSha256": null
+      },
+      {
+        "path": "private/budget/budget.sqlite3",
+        "action": "read",
+        "opened": true,
+        "errno": null,
+        "readSha256": "f93b4344378e2e09ca01475fce24c96fbdebcf90ad294ec67f2bb4309b87892f"
+      },
+      {
+        "path": "private/budget/budget.sqlite3",
+        "action": "write_open_only",
+        "opened": true,
+        "errno": null,
+        "readSha256": null
+      }
+    ]
+  },
+  "staleClient": {
+    "self": {
+      "pid": 68,
+      "uid": 23001,
+      "gid": 23003,
+      "fields": {
+        "Uid": [
+          "23001",
+          "23001",
+          "23001",
+          "23001"
+        ],
+        "Gid": [
+          "23003",
+          "23003",
+          "23003",
+          "23003"
+        ],
+        "Groups": [],
+        "CapEff": [
+          "0000000000000000"
+        ],
+        "NoNewPrivs": [
+          "0"
+        ]
+      },
+      "userns": "user:[4026531837]"
+    },
+    "mode": "stale",
+    "writesPerformed": false,
+    "modelCalls": 0,
+    "transport": {
+      "peer": {
+        "pid": 60,
+        "uid": 23002,
+        "gid": 23003
+      },
+      "reply": {
+        "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+        "error": "stale_broker_identity",
+        "nonce": "d20a69dcee3b4339be5f6e3a17c04392",
+        "ok": false,
+        "version": 1
+      },
+      "requestedNonce": "d20a69dcee3b4339be5f6e3a17c04392"
+    }
+  },
+  "shutdown": {
+    "activeRequests": 0,
+    "brokerId": "2ec8dce4f44647caa00f449552dc13b1",
+    "counters": {
+      "physicalAttempts": 0,
+      "pings": 2,
+      "refused": 2,
+      "responses": 0
+    },
+    "pid": 60,
+    "privateBudget": {
+      "bindingSha256": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+      "budgetId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "gatewayDatabaseIsBudgetAuthority": false,
+      "head": "f24c49ed1bd29fd42cb6a0798f054676e104c91798072cb55265a6f329ad1b0f",
+      "hostFilesystemConfinementVerified": false,
+      "measuredInvoiceVerified": false,
+      "noAutomaticRefunds": true,
+      "observedHttpResponses": 0,
+      "providerReservations": 0,
+      "reservedCostMicrousd": 0,
+      "reservedTokens": 0,
+      "version": 1
+    },
+    "socketRemoved": true
+  },
+  "exitCode": 0,
+  "traceChecks": {
+    "actual_setresuid": true,
+    "actual_setresgid": true,
+    "actual_setgroups_empty": false,
+    "server_observed_gateway_peer": true,
+    "server_observed_wrong_peer": true,
+    "actual_target_exec": true
+  }
+}
