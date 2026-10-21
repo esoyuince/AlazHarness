@@ -1,0 +1,16 @@
+{
+  "integrationCommit": "cb258bbb571306f1e3994deb7e96f64956025a9b",
+  "observedAt": "2026-10-21T04:45:16.428951+03:00",
+  "result": "LOCAL_MERGE_VERIFIED",
+  "parents": [
+    "b55cc832a41de189d2f2dfe3eae2972dbe9e26e5",
+    "d0414e24358a4b632080272d799296e40ae1bf94"
+  ],
+  "existingRuntimeProductUnmodifiedByIntegration": true,
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "pushed": false,
+  "remoteCI": "NOT_RUN",
+  "fullD3BAccepted": false,
+  "positiveUidTransitionTested": false,
+  "allTestRequestsTerminal": true
+}
