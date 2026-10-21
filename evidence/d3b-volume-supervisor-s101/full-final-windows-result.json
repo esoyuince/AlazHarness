@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "total": 2402,
+  "discovered": 2402,
+  "passed": 2379,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 367,
+  "sourcesUnchanged": true,
+  "elapsedSeconds": 238.951,
+  "completedAt": "2026-10-21T22:32:59.733018+03:00",
+  "collection": "new complete unittest result object after STOP-intent correction and fresh native002 proofs",
+  "originalFullRetained": true
+}

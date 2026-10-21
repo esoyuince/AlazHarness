@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-21T22:21:01.915290+03:00",
+  "scope": "exact S101 owned image; new fourth mount; controller crash while a separate owned reader lives; no original lab data",
+  "sourceSha256": "08cc11675bc214280dc8c4759916e710584ce1dd8ed5bcc69382ea243bc8491f",
+  "bootstrapSha256": "0ddbcbab5e4b46a19068fd34b4294d4731e7fcbda40af529407ba9af34b7ee72"
+}

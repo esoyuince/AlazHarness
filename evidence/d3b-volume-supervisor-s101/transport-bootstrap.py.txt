@@ -1,0 +1,27 @@
+from pathlib import Path
+import os,json,hashlib,subprocess,sys,stat
+D='AlazHarness-D3B-P71C';root=Path('/opt/alaz-s101')
+assert os.getuid()==os.geteuid()==0 and os.getgid()==0
+assert os.environ.get('WSL_DISTRO_NAME')==D and Path('/etc/alaz-p71c-lab-id').read_text().strip()==D
+assert not Path('/mnt/c/Windows').exists() and not root.exists() and not Path('/srv/alaz-s101').exists()
+assert Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295']
+payload=json.load(sys.stdin)
+allowed={'packages/claw-hermes/state_image_lease.py','packages/claw-hermes/state_volume_supervisor.py','scripts/run_state_volume_worker.py','scripts/qa/s101_volume_user.py','scripts/qa/s101_volume_accept.py','tests/test_state_volume_supervisor.py'}
+assert set(payload['files'])==allowed and sum(len(v['text']) for v in payload['files'].values())<150000
+root.mkdir(mode=0o755)
+for n,v in payload['files'].items():
+ b=v['text'].encode('utf-8');assert hashlib.sha256(b).hexdigest()==v['sha256']
+ p=root/n;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(b)
+ p.chmod(0o644)
+manifest={'files':{n:v['sha256'] for n,v in payload['files'].items()},'scope':'S101 exact owned lab code'}
+with (root/'input-manifest.json').open('x',encoding='utf-8') as f:json.dump(manifest,f,indent=2);f.write('\n')
+env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':D}
+units=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_state_volume_supervisor.py','-v'],cwd='/',env=env,capture_output=True,text=True,timeout=30)
+report={'unitExitCode':units.returncode,'unitStdout':units.stdout,'unitStderr':units.stderr,'sourceSha256':manifest['files']}
+if units.returncode==0:
+ run=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/s101_volume_accept.py')],cwd='/',env=env,capture_output=True,text=True,timeout=150)
+ report.update(nativeExitCode=run.returncode,nativeStdout=run.stdout,nativeStderr=run.stderr)
+report['sourceUnchanged']=all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in manifest['files'].items())
+print(json.dumps(report),flush=True)
+sys.exit(0 if report.get('nativeExitCode')==0 and report['unitExitCode']==0 and report['sourceUnchanged'] else 1)

@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-VOLUME-SUPERVISOR-S101 — NATIVE SCOPED PASS; FINAL LOCAL GATE
+
+Active branch alaz/d3b-volume-supervisor-s101; worktree scratch/worktrees/d3b-volume-supervisor-s101; base0e17095. Implement the outer state-volume lifetime beyond advisory leases: refuse preexisting or unknown attachments/users, preserve image lock until owned users exit and attachment is verified gone, fail closed on uncertainty. Review current Linux interfaces before implementation. Keep existing runtime primitives and original evidence unchanged. Root operations, if needed, are limited to the already user-approved disposable P71C lab and newly named test fixtures; no production/default Ubuntu/account/security-policy changes. No replay of denied R91F/G82C actions. No provider/model, push or main update. Full D3B remains OPEN; legacy IPCv2 remains CLOSED.
+
+Evidence evidence/d3b-volume-supervisor-s101/. No test launched yet. Next inspect approved lab capabilities, then choose a bounded actual backend and negative lifecycle tests. Do not infer live safety from mock/source-only checks. Preserve partial effects and never replay unknown commands.
+
+Completed actual root-supervised dedicated ext4 image lifecycle: durable-before-effect crash fence, exact loop identity, fixed private mount worker, root cgroup population checks and detach-before-last lease release. Actual corrected-source P71C main33/33 and supplemental orphan19/19 PASS; both commands exit0. Real dummy state/replay SQLite commits survive detach/reattach; surviving user prevents teardown after worker/controller death; stale fence prevents automatic reuse. No native Hermes Gateway/database schema, G84E composition, paired-store atomicity or power-cut claim.
+
+Final Windows2402=2379PASS/23SKIP/0FAIL/0ERROR, exit0;367 sources stable,360 preexisting files unchanged. New Windows29/Linux29 and offline4 PASS (subsets/repeats, not additive). Two STOP write/flush uncertainty regressions first FAIL, then PASS after recording state before effect; fresh native002/orphan002 proofs follow that fix. First code/image/evidence retained; own original installation renamed -original after verified idle, new64MiB image used. Final audit has no matching process/loop/cgroup/fence/host mount; named lab stopped. Both unmounted test images retained. No other lab install/account/service/defaultUbuntu/provider/main/push action.
+
+Report docs/D3B-VOLUME-SUPERVISOR-S101.md; current evidence summary.json, full-final-windows-result.json, native-002-stdout.txt, orphan-002-stdout.txt, cleanup-final.json under evidence/d3b-volume-supervisor-s101. All native/full jobs terminal. Final staged static precedes local commit. Exact next: qualified dev-line integration, then compose this image domain with G84E confinement and native profile/DB/epoch checks BEFORE actual Hermes admission; worker currently only bounded120s mount-holder, no workload dispatch. R91F/G82C remain untouched; IPCv2 CLOSED/fullD3B OPEN.
+
+## Preserved prior development record
+
+# AlazHarness — status
+
 ## D3B-LEASE-JOINT-J100C — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested consolidated merge58d5b4cf669661b111ffb5980a822c2a698906aa joins independent836a29a and prior primary0e89518. Fast-forward promotion complete. Original feature/QA histories and raw evidence remain preserved; no product implementation was rewritten. This follow-up changes documentation/delivery only.
@@ -3047,3 +3063,13 @@ Full Windows2365=2342PASS/23SKIP/0FAIL/0ERROR, exit0.358 source hashes unchanged
 ### J100C terminal union result — 2026-10-21T21:44:48.323888+03:00
 
 Full request6ce1a405-5bf6-4ae3-a092-4d0fffe30015 terminal exit0. Both tested histories and input evidence preserved. Exact next: real outer volume-user/attachment lifecycle and detach-before-unlock, not another lease-only readiness declaration. Legacy IPCv2 CLOSED/fullD3B OPEN. Final source/merge/static proof in evidence/d3b-lease-joint-j100c/.
+
+
+### S101 live acceptance checkpoint — 2026-10-21T22:24:06.373546+03:00
+
+New concrete supervisor and fixed mount worker implemented; no old product edits. P71C actual64MiBext4 main33/33 predicates and supplemental controller-crash19/19 PASS, both command exit0. Real dummy SQLite commits survive complete detach/reattach. Native27 unit methods PASS; Windows27 and offline4 PASS. Root commands were limited to exact approved disposable P71C new /opt/alaz-s101, /srv/alaz-s101 and cgroup parent only; no accounts or original state touched. Owned process/loop/cgroup/fence cleanup audited; image/code retained; lab stopped. Full Windows request086a1169-ccf5-4bcf-a30e-943782b10014 IN PROGRESS, source freeze367 expected. No source modifications during that run. Product remains not a full Gateway launcher; R91F/G82C untouched, IPCv2 closed, main/push/model unchanged.
+
+
+### S101 corrected-source acceptance — 2026-10-21T22:29:54.892918+03:00
+
+First full2400 PASS retained, then independent two-case STOP pipe failure reproduced and corrected BEFORE publication. New source commits STOPPING before possible write/flush effect; Windows29 and actualLinux29 PASS. Fresh native002 main33 and orphan00219 PASS, not reused old source proofs. Original own code/image archived byte-preserving after verified idle; fresh second owned image used. Final live audit clean, P71C stopped; no other project tasks present at stop. Final full request086a1169-ccf5-4bcf-a30e-943782b10021 IN PROGRESS. Do not change367 frozen sources. No unrelated product, R91F/G82C, account, provider, defaultUbuntu, main or push operation.

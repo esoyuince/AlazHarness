@@ -1,0 +1,10 @@
+{
+  "reason": "A partial STOP write or failed flush left RUNNING and permitted resend; set STOPPING before any transport effect.",
+  "beforeSha256": "14f755b10249fe12950d842f0ba443db806d74df61e1589a6a01cc47c28c3dec",
+  "afterSha256": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080",
+  "oldFullPassPreserved": true,
+  "newRegressionFailuresBefore": 2,
+  "focusedAfter": 29,
+  "requiresNewNativeAcceptance": true,
+  "noOldPrimitiveModified": true
+}

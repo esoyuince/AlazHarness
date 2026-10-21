@@ -1,0 +1,56 @@
+{
+  "audit": {
+    "matchingLivePids": [],
+    "otherProjectTaskPids": [],
+    "remainingImageLoops": [],
+    "fencePresent": false,
+    "cgroupParentPresent": false,
+    "parentMounts": [],
+    "mountpointNonempty": [],
+    "sourceHashes": {
+      "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+      "packages/claw-hermes/state_volume_supervisor.py": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080",
+      "scripts/run_state_volume_worker.py": "835593ff0e5bffc3a421761e443777cc563f198ff5aaea3a29986746f7f7b97f",
+      "scripts/qa/s101_volume_user.py": "0cdb1c41f495d8f5ab7853798a3abd2589b7b7a26833853b81a4fe7b5414d632",
+      "scripts/qa/s101_volume_accept.py": "516ff1259a850afabbe3afedfdefd926bd22a952fa2e48879afc3b2a76516e8a",
+      "tests/test_state_volume_supervisor.py": "76e4651b56989d901ec30b0e43df7c165f88c8940f6704cba56a2b14393d36e9",
+      "scripts/qa/s101_orphan_accept.py": "08cc11675bc214280dc8c4759916e710584ce1dd8ed5bcc69382ea243bc8491f"
+    },
+    "expectedSourceHashes": {
+      "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+      "packages/claw-hermes/state_volume_supervisor.py": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080",
+      "scripts/run_state_volume_worker.py": "835593ff0e5bffc3a421761e443777cc563f198ff5aaea3a29986746f7f7b97f",
+      "scripts/qa/s101_volume_user.py": "0cdb1c41f495d8f5ab7853798a3abd2589b7b7a26833853b81a4fe7b5414d632",
+      "scripts/qa/s101_volume_accept.py": "516ff1259a850afabbe3afedfdefd926bd22a952fa2e48879afc3b2a76516e8a",
+      "tests/test_state_volume_supervisor.py": "76e4651b56989d901ec30b0e43df7c165f88c8940f6704cba56a2b14393d36e9",
+      "scripts/qa/s101_orphan_accept.py": "08cc11675bc214280dc8c4759916e710584ce1dd8ed5bcc69382ea243bc8491f"
+    },
+    "imageRetained": true,
+    "imageBytes": 67108864,
+    "originalImageRetained": true
+  },
+  "auditExitCode": 0,
+  "at": "2026-10-21T22:28:52.705822+03:00",
+  "onlyNamedLabStopped": true,
+  "stopExitCode": 0,
+  "stopStdout": {
+    "encoding": "utf-16-le",
+    "text": "\u0130\u015flem ba\u015far\u0131yla tamamland\u0131. \r\n",
+    "sha256": "cb9e6c5ab7a1ae782e255aaf2c4263e6db141b4d7b62fc6aef39933a5900f33f",
+    "bytes": 60
+  },
+  "stopStderr": {
+    "encoding": "utf-8",
+    "text": "",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "listExitCode": 0,
+  "finalList": {
+    "encoding": "utf-16-le",
+    "text": "  NAME                    STATE           VERSION\r\n* Ubuntu                  Stopped         2\r\n  AlazHarness-D3B-P71C    Stopped         2\r\n",
+    "sha256": "36d2d349020c01993f757bf10558175c67ae8504365ac588b61251b4801867c4",
+    "bytes": 282
+  },
+  "defaultUbuntuCommandIssued": false
+}

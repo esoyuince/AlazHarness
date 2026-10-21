@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-21T22:07:17.786178+03:00",
+  "scope": "read-only exact approved P71C lab capabilities; no account,mount,filesystem or service changes",
+  "command": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "root",
+    "--cd",
+    "/",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport os,json,stat,shutil,subprocess\nD='AlazHarness-D3B-P71C'\nassert os.environ.get('WSL_DISTRO_NAME')==D and Path('/etc/alaz-p71c-lab-id').read_text().strip()==D\nassert os.getuid()==os.geteuid()==0 and not Path('/mnt/c/Windows').exists()\nassert Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295']\nreport={'uid':os.getuid(),'gid':os.getgid(),'distro':D,'uname':list(os.uname()),'tools':{},'loopNodes':[],'cgroupRoot':{},'mountNamespace':os.readlink('/proc/self/ns/mnt')}\nfor name in ('unshare','mount','umount','losetup','mkfs.ext4','findmnt'):\n path=shutil.which(name);report['tools'][name]=path\n if path:\n  s=Path(path).resolve().stat();report['tools'][name]={'path':path,'resolved':str(Path(path).resolve()),'uid':s.st_uid,'mode':oct(stat.S_IMODE(s.st_mode))}\nfor p in sorted(Path('/dev').glob('loop*')):\n s=p.stat();report['loopNodes'].append({'name':p.name,'mode':oct(s.st_mode),'dev':[os.major(s.st_rdev),os.minor(s.st_rdev)]})\nreport['loopSysNames']=[p.name for p in sorted(Path('/sys/class/block').glob('loop*'))]\nfor name in ('cgroup.controllers','cgroup.type','cgroup.events'):\n p=Path('/sys/fs/cgroup')/name;report['cgroupRoot'][name]=p.read_text() if p.is_file() else None\nreport['privateNewPathsAbsent']={str(p):not p.exists() for p in (Path('/opt/alaz-s101'),Path('/srv/alaz-s101'))}\nprint(json.dumps(report))\n"
+  ]
+}

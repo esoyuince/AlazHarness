@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,os,hashlib,subprocess,sys
+D='AlazHarness-D3B-P71C';root=Path('/opt/alaz-s101')
+assert os.environ.get('WSL_DISTRO_NAME')==D and Path('/etc/alaz-p71c-lab-id').read_text().strip()==D and os.getuid()==os.geteuid()==0
+assert not Path('/mnt/c/Windows').exists()
+payload=json.load(sys.stdin);name='scripts/qa/s101_orphan_accept.py'
+original=json.loads((root/'input-manifest.json').read_text())['files']
+assert original==payload['baseline'] and all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in original.items())
+data=payload['text'].encode('utf-8');assert len(data)<25000 and hashlib.sha256(data).hexdigest()==payload['sha256']
+assert not (root/name).exists() and not (root/'supplemental-manifest.json').exists()
+with (root/name).open('xb') as f:f.write(data)
+(root/name).chmod(0o644)
+with (root/'supplemental-manifest.json').open('x',encoding='utf-8') as f:json.dump({'files':{name:payload['sha256']}},f);f.write('\n')
+r=subprocess.run([sys.executable,'-I','-B',str(root/name)],cwd='/',env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':D},capture_output=True,text=True,timeout=90)
+print(json.dumps({'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sourceUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in (original|{name:payload['sha256']}).items())}),flush=True)
+sys.exit(r.returncode)

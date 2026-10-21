@@ -1,0 +1,65 @@
+"""Offline current-source S101 receipts, not a new native execution."""
+import hashlib
+import json
+from pathlib import Path
+import unittest
+ROOT=Path(__file__).resolve().parents[1]
+E=ROOT/'evidence/d3b-volume-supervisor-s101'
+
+class MountedVolumeReceipt(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.outer=json.loads((E/'native-001-stdout.txt').read_text(encoding='utf-8'))
+        cls.native=json.loads(cls.outer['nativeStdout'])
+        cls.extra=json.loads((E/'orphan-001-stdout.txt').read_text(encoding='utf-8'))
+        cls.orphan=json.loads(cls.extra['stdout'])
+    def test_actual_terminal_runs_and_exact_current_source(self):
+        self.assertEqual(json.loads((E/'native-001-result.json').read_text())['exitCode'],0)
+        self.assertEqual(json.loads((E/'orphan-001-result.json').read_text())['exitCode'],0)
+        self.assertEqual((self.outer['unitExitCode'],self.outer['nativeExitCode'],self.extra['exitCode']),(0,0,0))
+        self.assertTrue(self.outer['sourceUnchanged']);self.assertTrue(self.extra['sourceUnchanged'])
+        for record,result,count in ((self.native,'PASS_SCOPED_MOUNTED_VOLUME',33),(self.orphan,'PASS_SCOPED_ORPHAN_REFUSAL',19)):
+            self.assertEqual(record['result'],result);self.assertIsNone(record['error'])
+            self.assertEqual((record['checkCount'],len(record['checks'])),(count,count))
+            self.assertTrue(all(v is True for v in record['checks'].values()))
+            for name,digest in record['sourceSha256'].items():
+                self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+    def test_real_two_store_detach_reattach_preserves_commits(self):
+        events={e['phase']:e for e in self.native['events']}
+        self.assertEqual(self.native['imageBytes'],64*1024*1024)
+        self.assertTrue(self.native['realImageFormatted']);self.assertTrue(self.native['realExt4Mounted'])
+        writes=events['write'];reads=events['read-after-new-mount']
+        self.assertEqual(writes['uid'],23001);self.assertEqual(reads['uid'],23001)
+        self.assertEqual(set(writes['stores']),{'state.db','runs_idempotency.db'})
+        for name,written in writes['stores'].items():
+            self.assertEqual(written['rows'],reads['stores'][name]['rows'])
+            self.assertEqual(written['inode'],reads['stores'][name]['inode'])
+            self.assertTrue(reads['stores'][name]['duplicateRefused'])
+        pids=[events[phase]['pid'] for phase in ('first-mounted','second-mounted','third-mounted')]
+        self.assertEqual(len(set(pids)),3)
+        self.assertTrue(events['first-closed']['leaseReleasedLast'])
+    def test_controller_death_with_surviving_user_refuses_reuse(self):
+        self.assertEqual(self.orphan['controllerExitCode'],74)
+        for name in ('reader_survives_both_controller_and_worker','surviving_mount_still_globally_attached',
+                     'advisory_lease_alone_is_available','new_supervisor_refuses_live_old_attachment',
+                     'stale_fence_still_refuses_after_loop_gone','rejected_restart_did_not_change_fence'):
+            self.assertIs(self.orphan['checks'][name],True)
+        self.assertFalse(self.orphan['automaticRecoveryImplemented'])
+        self.assertEqual(self.orphan['cleanup'],[])
+    def test_scoped_claims_and_live_cleanup(self):
+        for record in (self.native,self.orphan):
+            self.assertFalse(record['realHermesGatewayStarted']);self.assertFalse(record['fullD3BAccepted'])
+            self.assertEqual(record['providerCalls'],0)
+        self.assertFalse(self.native['powerLossTested'])
+        c=json.loads((E/'cleanup.json').read_text(encoding='utf-8'))
+        self.assertEqual((c['auditExitCode'],c['stopExitCode'],c['listExitCode']),(0,0,0))
+        for name in ('matchingLivePids','remainingImageLoops','parentMounts','mountpointNonempty'):
+            self.assertEqual(c['audit'][name],[])
+        self.assertFalse(c['audit']['fencePresent']);self.assertFalse(c['audit']['cgroupParentPresent'])
+        self.assertEqual(c['audit']['sourceHashes'],self.orphan['sourceSha256'])
+        self.assertTrue(c['audit']['imageRetained']);self.assertFalse(c['defaultUbuntuCommandIssued'])
+        for name in ('stopStdout','stopStderr','finalList'):
+            item=c[name];raw=item['text'].encode(item['encoding'])
+            self.assertEqual((len(raw),hashlib.sha256(raw).hexdigest()),(item['bytes'],item['sha256']))
+
+if __name__=='__main__':unittest.main()

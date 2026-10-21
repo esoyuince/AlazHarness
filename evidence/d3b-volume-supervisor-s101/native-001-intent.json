@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-21T22:19:28.193602+03:00",
+  "commandPrefix": [
+    "wsl.exe",
+    "--distribution",
+    "AlazHarness-D3B-P71C",
+    "--user",
+    "root",
+    "--cd",
+    "/",
+    "--exec",
+    "/usr/bin/python3.12",
+    "-I",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport os,json,hashlib,subprocess,sys,stat\nD='AlazHarness-D3B-P71C';root=Path('/opt/alaz-s101')\nassert os.getuid()==os.geteuid()==0 and os.getgid()==0\nassert os.environ.get('WSL_DISTRO_NAME')==D and Path('/etc/alaz-p71c-lab-id').read_text().strip()==D\nassert not Path('/mnt/c/Windows').exists() and not root.exists() and not Path('/srv/alaz-s101').exists()\nassert Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295']\npayload=json.load(sys.stdin)\nallowed={'packages/claw-hermes/state_image_lease.py','packages/claw-hermes/state_volume_supervisor.py','scripts/run_state_volume_worker.py','scripts/qa/s101_volume_user.py','scripts/qa/s101_volume_accept.py','tests/test_state_volume_supervisor.py'}\nassert set(payload['files'])==allowed and sum(len(v['text']) for v in payload['files'].values())<150000\nroot.mkdir(mode=0o755)\nfor n,v in payload['files'].items():\n b=v['text'].encode('utf-8');assert hashlib.sha256(b).hexdigest()==v['sha256']\n p=root/n;p.parent.mkdir(parents=True,exist_ok=True)\n with p.open('xb') as f:f.write(b)\n p.chmod(0o644)\nmanifest={'files':{n:v['sha256'] for n,v in payload['files'].items()},'scope':'S101 exact owned lab code'}\nwith (root/'input-manifest.json').open('x',encoding='utf-8') as f:json.dump(manifest,f,indent=2);f.write('\\n')\nenv={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':D}\nunits=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_state_volume_supervisor.py','-v'],cwd='/',env=env,capture_output=True,text=True,timeout=30)\nreport={'unitExitCode':units.returncode,'unitStdout':units.stdout,'unitStderr':units.stderr,'sourceSha256':manifest['files']}\nif units.returncode==0:\n run=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/s101_volume_accept.py')],cwd='/',env=env,capture_output=True,text=True,timeout=150)\n report.update(nativeExitCode=run.returncode,nativeStdout=run.stdout,nativeStderr=run.stderr)\nreport['sourceUnchanged']=all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in manifest['files'].items())\nprint(json.dumps(report),flush=True)\nsys.exit(0 if report.get('nativeExitCode')==0 and report['unitExitCode']==0 and report['sourceUnchanged'] else 1)\n"
+  ],
+  "bootstrapSha256": "d1e8d18b9ed93f12e3e27f96bf8a5becafe7532a9401c640871bc5d15dd5e0d7",
+  "scope": "new /opt/alaz-s101 code, /srv/alaz-s101 owned64MiB image and /sys/fs/cgroup/alaz-s101 only; existing P71C lab",
+  "defaultUbuntuTouched": false
+}

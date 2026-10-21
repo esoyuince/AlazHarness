@@ -1,0 +1,46 @@
+from pathlib import Path
+import os,json,hashlib,subprocess,sys
+D='AlazHarness-D3B-P71C';root=Path('/opt/alaz-s101');state=Path('/srv/alaz-s101')
+assert os.getuid()==os.geteuid()==0 and os.environ.get('WSL_DISTRO_NAME')==D and Path('/etc/alaz-p71c-lab-id').read_text().strip()==D
+assert not Path('/mnt/c/Windows').exists()
+payload=json.load(sys.stdin)
+old=json.loads((root/'input-manifest.json').read_text())['files']|json.loads((root/'supplemental-manifest.json').read_text())['files']
+assert old==payload['previous'] and set(old)==set(payload['files'])
+assert all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in old.items())
+sys.path.insert(0,str(root/'packages/claw-hermes'))
+import state_volume_supervisor as old_supervisor
+from state_image_lease import ImagePin
+pin=ImagePin(**json.loads((state/'acceptance.json').read_text())['imagePin'])
+assert not old_supervisor.attachments(pin) and not Path(pin.path+'.volume-owner.json').exists()
+assert not Path('/sys/fs/cgroup/alaz-s101').exists()
+assert not any(os.path.ismount(p) or any(p.iterdir()) for p in state.glob('mount-*'))
+for p in Path('/proc').iterdir():
+ if not p.name.isdigit() or int(p.name)==os.getpid():continue
+ try:argv=(p/'cmdline').read_bytes().split(b'\0')
+ except FileNotFoundError:continue
+ assert not any(a.startswith(b'/opt/alaz-s101/scripts/') for a in argv),'owned_process_still_live'
+arch_root=Path('/opt/alaz-s101-original');arch_state=Path('/srv/alaz-s101-original')
+assert not arch_root.exists() and not arch_state.exists()
+image_hash=hashlib.sha256((state/'images/state.img').read_bytes()).hexdigest()
+root.rename(arch_root);state.rename(arch_state)
+assert hashlib.sha256((arch_state/'images/state.img').read_bytes()).hexdigest()==image_hash
+root.mkdir(mode=0o755)
+for name,item in payload['files'].items():
+ data=item['text'].encode('utf-8');assert hashlib.sha256(data).hexdigest()==item['sha256']
+ p=root/name;p.parent.mkdir(parents=True,exist_ok=True)
+ with p.open('xb') as f:f.write(data)
+ p.chmod(0o644)
+manifest={'files':{n:v['sha256'] for n,v in payload['files'].items()}}
+with (root/'input-manifest.json').open('x',encoding='utf-8') as f:json.dump(manifest,f,indent=2);f.write('\n')
+extra='scripts/qa/s101_orphan_accept.py'
+with (root/'supplemental-manifest.json').open('x',encoding='utf-8') as f:json.dump({'files':{extra:manifest['files'][extra]}},f);f.write('\n')
+env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':D}
+units=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_state_volume_supervisor.py','-v'],cwd='/',env=env,capture_output=True,text=True,timeout=30)
+report={'unitExitCode':units.returncode,'unitStdout':units.stdout,'unitStderr':units.stderr,'sourceSha256':manifest['files'],
+ 'firstRunArchive':{'install':str(arch_root),'state':str(arch_state),'imageSha256':image_hash,'firstRunBytesRetained':True}}
+if units.returncode==0:
+ r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/s101_volume_accept.py')],cwd='/',env=env,capture_output=True,text=True,timeout=150)
+ report.update(nativeExitCode=r.returncode,nativeStdout=r.stdout,nativeStderr=r.stderr)
+report['sourceUnchanged']=all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in manifest['files'].items())
+print(json.dumps(report),flush=True)
+sys.exit(0 if report.get('nativeExitCode')==0 and report['unitExitCode']==0 and report['sourceUnchanged'] else 1)

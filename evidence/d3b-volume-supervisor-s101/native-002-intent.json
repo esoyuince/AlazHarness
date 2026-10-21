@@ -1,0 +1,5 @@
+{
+  "at": "2026-10-21T22:27:28.445936+03:00",
+  "scope": "verify exact idle own S101 installation; archive own first run without deleting bytes; create fresh final-source test fixture; no other lab change",
+  "bootstrapSha256": "aa62bbf7d635d577b7cb47483c2deb32e95cfa37e2659dad1fdebc0f09f571aa"
+}

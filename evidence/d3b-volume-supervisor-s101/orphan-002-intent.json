@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-21T22:28:05.145678+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+    "packages/claw-hermes/state_volume_supervisor.py": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080",
+    "scripts/run_state_volume_worker.py": "835593ff0e5bffc3a421761e443777cc563f198ff5aaea3a29986746f7f7b97f",
+    "scripts/qa/s101_volume_user.py": "0cdb1c41f495d8f5ab7853798a3abd2589b7b7a26833853b81a4fe7b5414d632",
+    "scripts/qa/s101_volume_accept.py": "516ff1259a850afabbe3afedfdefd926bd22a952fa2e48879afc3b2a76516e8a",
+    "tests/test_state_volume_supervisor.py": "76e4651b56989d901ec30b0e43df7c165f88c8940f6704cba56a2b14393d36e9",
+    "scripts/qa/s101_orphan_accept.py": "08cc11675bc214280dc8c4759916e710584ce1dd8ed5bcc69382ea243bc8491f"
+  },
+  "scope": "fresh mounted controller-death trial with corrected supervisor; no old output rewrite"
+}

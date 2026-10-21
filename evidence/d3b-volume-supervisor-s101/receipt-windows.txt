@@ -1,0 +1,9 @@
+test_actual_terminal_runs_and_exact_current_source (test_state_volume_supervisor_receipt.MountedVolumeReceipt.test_actual_terminal_runs_and_exact_current_source) ... ok
+test_controller_death_with_surviving_user_refuses_reuse (test_state_volume_supervisor_receipt.MountedVolumeReceipt.test_controller_death_with_surviving_user_refuses_reuse) ... ok
+test_real_two_store_detach_reattach_preserves_commits (test_state_volume_supervisor_receipt.MountedVolumeReceipt.test_real_two_store_detach_reattach_preserves_commits) ... ok
+test_scoped_claims_and_live_cleanup (test_state_volume_supervisor_receipt.MountedVolumeReceipt.test_scoped_claims_and_live_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.184s
+
+OK

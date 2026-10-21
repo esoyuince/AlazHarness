@@ -1,0 +1,21 @@
+{
+  "result": "FAIL",
+  "scope": "mocked pipe write/flush failure; product source unchanged",
+  "cases": [
+    {
+      "failureAt": "write",
+      "stateAfter": "RUNNING",
+      "expectedState": "STOPPING",
+      "passed": false,
+      "writeCalls": 1
+    },
+    {
+      "failureAt": "flush",
+      "stateAfter": "RUNNING",
+      "expectedState": "STOPPING",
+      "passed": false,
+      "writeCalls": 1
+    }
+  ],
+  "sourceSha256": "14f755b10249fe12950d842f0ba443db806d74df61e1589a6a01cc47c28c3dec"
+}
