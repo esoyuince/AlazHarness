@@ -1,5 +1,15 @@
 # AlazHarness — status
 
+## D3B-LAUNCH-IMPORT-MERGE-V61E — IN PROGRESS
+
+Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`.
+Base: `edb4ae1262b082b9bf358e04ff4c6565b09fde10`. Merge input: `01791c1ff485d9950a72728b00de83c2b520c748`, including isolated-target import fix `797b4aa` and immutable before/after evidence.
+
+Task: integrate the actual isolated-import correction into completed launcher/QA work, preserve both histories and all raw failures, and requalify the combined source. Existing historical results do not certify this merge. Run fresh Windows/Linux principal and independent QA, owned Linux refusal/FD/filter checks, full Windows standard suite and local static gate. No root command, account/provisioning, IPC v2 activation, main update, paid model or push. Main remains `cc7ceba`.
+Evidence: `evidence/d3b-launch-import-merge-v61e/`. Do not modify code while tests are running. Current next action: merge exact input, resolve only inspected conflicts, and execute current-source acceptance.
+
+## Preserved previous integration
+
 ## D3B-LAUNCH-INTEGRATED-C91A — LOCAL SCOPED PASS
 
 Active branch: `alaz/d3b-principal-launch-21oct`; worktree: `scratch/worktrees/d3b-principal-launch-21oct`.
