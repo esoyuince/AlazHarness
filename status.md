@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-PROFILE-ADMISSION-F104X — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Qualified code/evidence commit8fdd717e16b334f39f8241037be44551b85d5f74 fast-forwarded from1207d37. Original F104X feature tree remains clean at the tested commit. All378 source hashes match qualified full/native execution. This follow-up changes docs/static/delivery only, not runtime.
+
+Native profile ownership is now qualified inside canonical fixed-profile confinement after final exec: explicit READ_FILE-only own-PID mountinfo, unchanged native Hermes owner/adapter/mount observer, two UID23001 target lifetimes. Actual native00241/41 parent conditions and38/38 per target PASS; four real native contenders refused-before/reacquired-after; writer and live-process teardown boundaries verified. Default mountinfo remains denied with no native lock mutation. Two broker pings/zero provider sends; old private state unchanged. Dummy databases survive detach/reattach, NOT actual Hermes store/epoch acceptance.
+
+Fresh fullWindows2445=2422PASS/23SKIP/0FAIL/0ERROR,exit0;378 source hashes stable,370 prior files unchanged. Linux55 selected methods passed (no rerun of old23 skipped Windows methods); contract10 and receipt7 are full subsets. Independent Q104E12 rule tests pass against exact guard snapshot; that independent QA branch is retained and NOT modified/merged here. First missing-helper transport failure and image preserved, native002 uses fresh image with completed source closure; no product permission/timeout relaxation to pass. HistoricalP102 receipt pinned to original Git source, current proof separate.
+
+Own separate cleanup audit found no F104X users/loops/fences/scopes/sockets/anchors. Two64MiB images/code generations retained unattached. Shared lab not terminated while independent QA may be active; its observed state is in delivery.json. DefaultUbuntu/accounts/services/CI/production and old broker data untouched. Maincc7ceba unchanged, no push. Report docs/D3B-PROFILE-ADMISSION-F104X.md; evidence/d3b-profile-admission-f104x/summary.json, delivery.json, full-windows-result.json and native-002-stdout.txt. All owned native/full operations terminal.
+
+Exact next: fixed final-UID admission must open and validate real Hermes native state/idempotency databases, epoch and recovery, then qualify actual request/broker read-only ledger/provider accounting. Current native-owner test has dummySQLite schemas; no actual full Gateway, paired-store crash consistency, power-loss or production admission acceptance. No R91F/G82C denied-action retry; legacyIPCv2 CLOSED/fullD3B OPEN. Continue from canonical worktree, not P102X alternative.
+
+## Preserved F104X feature record
+
+# AlazHarness — status
+
 ## D3B-PROFILE-ADMISSION-F104X — QUALIFIED NATIVE-PROFILE SLICE
 
 Branch alaz/d3b-profile-admission-f104x; worktree scratch/worktrees/d3b-profile-admission-f104x; base1207d37. Keep canonical P102 fixed target/strict profile inventory and baseline G84E path; do NOT merge alternative P102X runtime or blocked R91F/G82C work. Qualify only explicit READ_FILE access to own numeric-PID mountinfo and native Hermes ProfileLease after final exec in the existing canonical confined volume path. No broad proc, foreign process, environment, memory, descriptor, writer or executable metadata grant.
