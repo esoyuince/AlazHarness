@@ -41,7 +41,7 @@ def require(ok, reason):
 
 
 def git(repo, *args):
-    result = subprocess.run(['git', '-C', str(repo), *args], capture_output=True,
+    result = subprocess.run(['git', '--no-replace-objects', '-C', str(repo), *args], capture_output=True,
                             timeout=60, check=False)
     require(result.returncode == 0, 'export_git_failed')
     return result.stdout
