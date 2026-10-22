@@ -39,3 +39,8 @@ Interrupted draft00026 had no receipt or full-run artifacts. Read-only00027 veri
 ### Combined standard regression terminal
 
 Request00028 exit0:2918=2895PASS/23SKIP/0ERROR/0FAIL.446 source/config hashes and both native patches unchanged.427 original source files unchanged;3product+4historical receipt tests deliberately changed;2512 old evidence files exact. Native0029targets/83nested checks and cold47 checks remain separate nonadditive scopes. No replay of blocked00021/native003; no full three-store confinement or healthy-busy/listener activation. Local static/selected commit00033 follows.
+
+
+### Independent preflight review ancestry retained
+
+Documentation-only review 7ce8213310c4f5d78d3f1eb1de5c4e308260fc22 merged without source/test/patch changes. Original cold preflight parent and our tested common-startup commit 9d383cf506dbb516b052d5b266c0562a2628e9f9 remain ancestors. Both statuses archived independently. All446 source hashes and2patch hashes remain the completed2918-method/native002 source set. No new native execution or blocked-action replay. Canonical ancestry must still be rechecked before fast-forward.

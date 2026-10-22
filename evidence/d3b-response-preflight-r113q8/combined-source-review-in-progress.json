@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T00:47:58.413159+03:00",
+  "baselineSourceCount": 434,
+  "combinedFrozenSourceCount": 446,
+  "intentionalExistingSourceChanges": [
+    "packages/claw-hermes/gateway_http_readiness.py",
+    "packages/claw-hermes/gateway_native_layout.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/test_confined_http_receipt_f111e274.py",
+    "tests/test_http_readiness_receipt_h110e.py",
+    "tests/test_native_layout_receipt_l106r.py",
+    "tests/test_store_startup_receipt_a109.py"
+  ],
+  "newSources": [
+    "packages/claw-hermes/gateway_response_live.py",
+    "packages/claw-hermes/gateway_response_preopen.py",
+    "scripts/qa/l113f6_native_startup.py",
+    "scripts/qa/r113q8_response_preflight_probe.py",
+    "scripts/run_response_preopen.py",
+    "tests/historical_sources_l113f6.py",
+    "tests/test_gateway_response_live.py",
+    "tests/test_gateway_response_preopen.py",
+    "tests/test_response_preflight_receipt_r113q8.py",
+    "tests/test_three_store_layout_l113f6.py",
+    "tests/test_three_store_lifecycle_l113f6.py",
+    "tests/test_three_store_receipt_l113f6.py"
+  ],
+  "unchangedBaselineSourceCount": 427,
+  "ownProductAndQaExact": true,
+  "allCurrentSourcesMatchRunStart": true,
+  "wholeSuiteTerminal": false,
+  "scope": "source review during other branch complete regression; no files there modified and no claim of PASS"
+}
