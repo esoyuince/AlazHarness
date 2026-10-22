@@ -83,3 +83,8 @@ Independent cold/source review evidence/d3b-response-preflight-r113q8/.
 Prior handoffs archived docs/status-history/j113q8-*.md and l113f6-*.md.
 All native/full operations terminal. Final source-identical Git promotion is
 checked by delivery operation048; no pending native replay or activation.
+
+
+### Interrupted-response recovery verified
+
+The earlier full request00028 was already terminal0 (2918 total,2895 PASS,23 SKIP); it was read, not replayed. Current canonical446 source hashes and2 patch hashes equal the tested9d383cf/native002 set;60 original parent evidence blobs verified against immutable Git. The full native/common-startup result is retained, not a new execution. No blocked refinement or native003 attempted. This follow-up changes only the status and evidence; full three-store isolation/HTTP readiness and native feature activation remain open/disabled. Recovery record: evidence/d3b-response-startup-joint-j113q8/resume-verification.json.
