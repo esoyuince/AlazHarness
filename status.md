@@ -1,6 +1,9 @@
 # AlazHarness — status
 
-## D3B-STORE-JOINT-H105E — SCOPED QA UNION PASS; LOCAL DELIVERY PENDING
+## D3B-STORE-JOINT-H105E — DEVELOPMENT-INTEGRATED; SCOPED QA PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested two-parent merge `762fe6f32ddd7dcd55bf7caec9f513aec50be6f1` fast-forward promoted; original H105E/N105D branches and76 evidence blobs retained. All389 tested sources exact, all382 baseline sources unchanged. This follow-up changes documentation/static delivery only. No new runtime implementation or broader Gateway acceptance.
+
 
 Branch alaz/d3b-store-joint-h105e; worktree scratch/worktrees/d3b-store-joint-h105e. Join terminal H105E/N105D independent native crash proofs on common30604df canonical product. No product implementation change, new root/native run, permission grant, blocked R91F/G82C action, main/push/model/production operation. Exact parents in evidence/d3b-store-joint-h105e/inputs.json. Only status.md conflict; both histories retained below.
 
@@ -12862,3 +12865,8 @@ Request c80b15ef-982a-4e63-94d8-722205100027.389 sources frozen; both parent sou
 ### Joint terminal checkpoint — 2026-10-22T04:28:04.178825+03:00
 
 Full c80b15ef-982a-4e63-94d8-722205100027 terminal result0 recorded; parent data/source receipts unchanged. Finalizer029 verifies exact sources and staged scope before static/merge commit. No pending native job or privileged operation.
+
+
+### Canonical delivery recorded — 2026-10-22T04:29:38.115889+03:00
+
+Tested merge762fe6f fast-forward promoted from30604df. New full2517=2494PASS/23SKIP remains exact389-source baseline. Existing product code unchanged, old histories retained. Maincc7ceba/no push. Documentation-only final commit records delivery. Next is actual native profile layout/live-connection gate, NOT repeating old crash tests as a substitute.

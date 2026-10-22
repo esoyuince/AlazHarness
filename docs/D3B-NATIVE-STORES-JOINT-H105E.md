@@ -88,3 +88,7 @@ local merge/receipt commits after successful full/static gates.
 ## Final joint regression
 
 NEW fullWindows2517=2494PASS/23SKIP/0ERROR/0FAIL, exit0;389 source hashes identical before/after. The54 parent receipt methods are subsets, not extra native cases. All382 baseline sources unchanged.76 original parent evidence blobs exactly preserved in merge index. Final static output follows in static-final.txt; no native rerun was performed by the merge. Full run elapsedSeconds=165.377.
+
+## Canonical local delivery
+
+Tested merge `762fe6f32ddd7dcd55bf7caec9f513aec50be6f1` fast-forwarded to `alaz/d3b-principal-launch-21oct` from `30604dfcbb53d76b24bcf2a21996828d18afca49`. All389 sources match the full run; this follow-up changes only docs/static receipts. Both original feature branches and76 evidence blobs remain. No main publication, push or new native trial. Current status.md is the canonical continuation.
