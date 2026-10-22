@@ -1,22 +1,62 @@
 # AlazHarness — status
 
-## D3B-HTTP-FULL-JOINT-J111X84 — SCOPED PASS; LOCAL DELIVERY PENDING
+## D3B-HTTP-FULL-JOINT-J111X84 — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
-Join terminal F111E274 actual full-confinement HTTP QA with independent F111X84 raw-proof/source/tamper validator. No product/runtime changes: existing H110E/A109/P102 only. Exact parents and canonical ancestry in evidence/d3b-http-full-joint-j111x84/inputs.json. Only status.md conflict; parent histories byte-preserved in docs/status-history/j111x84-*-parent.md.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested merge0bffda233f2d1cd969961b0e8a9d49f7aad3b40e. Existing canonical
+full-isolation delivery ancestry retained by documentation-only merge before
+fast-forward. Exact refs in evidence/d3b-http-full-joint-j111x84/delivery.json.
+No original product/runtime code changed; H110E/A109/P102 are still sole paths.
 
-Original native00144 parent/49+54target predicates across two mount lifetimes and22 HTTP observations; independent51 offline tests repeat Windows/Linux without new native execution. These are not additive native trials. All420 old source files unchanged. Next new complete combined standard regression with427 sources frozen, source/evidence preservation, static then canonical clean ancestry check. No source modifications during run. Main/push/CI/production/defaultUbuntu unchanged; full agent API/broker dispatch remains open, legacyIPCv2 CLOSED/fullD3B OPEN.
+### New acceptance boundary closed
 
+SAME StorageReadinessHttp and NativeStoreStartup after exec under canonical
+private network/mount/IPC, UID23001/GID23003, seccomp/Landlock and persistent
+ext4 profile. Two COMPLETE mount/exec lifetimes, native rows/inodes/UUID stable,
+epochs1->2, duplicate reuse. Private loopback HTTP200 while same port from host
+netns returnsECONNREFUSED. Epoch drift503 stays503 after restore; liveness-only200.
+HTTP drain precedes storage close; active transactions preserve ownership.
+Native profile release does not release image while process lives. Final image
+lease released only after process exit/unmount/loop detach.2brokerpings/0sends.
 
-### Complete combined regression started
+Actual F111E274native001:44 parent predicates and49/54 target predicates,
+22HTTP observations, not147 trials. Root controller only in approved P71C;
+ordinary final target. Lab initially stopped/started by that native preflight,
+defaultUbuntu untouched; cleanup no owned processes/loops/fences/sockets/cgroups,
+image retained unattached. Independent F111X84 did NOT rerun privileged fixture.
 
-Request f111a048-bd52-4df4-99b4-8e4128000017 IN PROGRESS.427 source files frozen; all420 originals unchanged and425-source native-QA manifest exact. Do not edit executable/test files before terminal. This is the new union-wide standard execution; no new native/mount/provider trial implied. Parent successes are not substituted.
+### Current verification
 
+NEW combined fullWindows2798=2775PASS/23SKIP/0ERROR/0FAIL exit0;427 hashes stable;
+ALL420 original sources unchanged.40 original parent evidence blobs preserved.
+Independent51 offline source/raw-proof/tamper methods PASS Windows/Linux; all
+standard-suite subsets/platform repeats, not new native executions.27 earlier
+selected Linux startup unit methods are separate.23 old platform/opt-in Windows
+skips not rerun. Expected467 source hashes separately matched (276 immutable
+native Git,139 pinned installed dependencies, canonical/QA sources).
 
-### Joint terminal acceptance
+Metadata bookkeeping's Windows default-decoding error was repaired with explicit
+UTF8, preserving pre-correction bytes and all original test/native evidence.
+Final code/source bytes never changed after the complete accepted run.
 
-NEW fullWindows2798=2775PASS/23SKIP/0ERROR/0FAIL exit0;427 source hashes stable,420 original files unchanged.40 original evidence blobs preserved. Actual native001 two lifetimes/22HTTP observations/44parent+49/54target predicates verified by independent51 offline methods; no new kernel run here. Same full-isolation readiness path now qualified; native agentAPI and broker dispatch remain open. Metadata finalizers0020/0022 stopped before commit because of Windows decoding/header spelling; explicit UTF8 roundtrip fixes only current docs, retains old bytes and all native/full records. Static/scoped commit follows. No main/push/model/CI/production action.
+### Exact next step / limits
 
+Full isolated DIAGNOSTIC readiness acceptance now complete. Native Hermes agent
+HTTP adapter and work/model routes remain CLOSED. Next single borrowed-state/
+replay/ResponseStore ownership contract and legitimate in-flight healthy/busy
+policy; then fixed agent HTTP admission and broker live-ledger/dummy-provider
+send/accounting. No partial-pair automatic retry. Two-store atomic recovery and
+power-loss safety not accepted. LegacyIPCv2 CLOSED/fullD3B OPEN. Old R91F/G82C
+denied operations were not retried. No main/push/CI/production/account changes.
 
-### Canonical documentation ancestry preserved
+### Records
 
-Prior canonical 8c590d71360e91ab02606b36aa103bb160b11472 had only documentation/evidence additions after the qualified native QA. Its exact status and the joint status are archived separately. All427 source hashes remain identical to the complete regression; no native rerun or source modification. Documentation merge precedes fast-forward; no ref reset.
+Report docs/D3B-HTTP-FULL-JOINT-J111X84.md.
+Joint evidence evidence/d3b-http-full-joint-j111x84/summary.json, delivery.json,
+full-windows-result.json, full-sources-before/after.json, static-primary-final.txt.
+Original native evidence evidence/d3b-http-confined-f111e274/native-001-stdout.txt.
+Independent source/proof evidence evidence/d3b-http-confined-f111x84/.
+Prior handoffs/work logs archived docs/status-history/j111x84-*.md.
+All native/selected/full/merge operations terminal. Final documentation/static
+commit follows; read GitHEAD for current continuation. Maincc7ceba/no push.

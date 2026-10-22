@@ -117,3 +117,7 @@ blobs retained. The63 offline methods (12 original +51 independent) are part
 of that total, not63 new native executions. Selected Linux/platform repetitions
 are separate scopes. No native rerun or product byte modification by the merge.
 Final static output is static-final.txt and is not a remote CI/publication result.
+
+## Canonical local delivery
+
+Tested merge `0bffda233f2d1cd969961b0e8a9d49f7aad3b40e`; documentation-preserving merge `3cf977036d52cc7d379ffb4e98b52c56cb9abaed` retained prior canonical `8c590d71360e91ab02606b36aa103bb160b11472` without replacing history, then fast-forwarded. All427 source bytes remain exact. This final delivery changes documentation/static receipt only; no extra kernel/model/provider run, broader acceptance, main update or push. Current status.md is the continuation.
