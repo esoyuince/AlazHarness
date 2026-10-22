@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T00:52:33.836361+03:00",
+  "commonPreflightCommit": "aeff7a0d723adf2b311bba2941c5db4ee7acbc9e",
+  "independentReviewCommit": "7ce8213310c4f5d78d3f1eb1de5c4e308260fc22",
+  "lifecycleSourceCommit": "9d383cf506dbb516b052d5b266c0562a2628e9f9",
+  "selectedParent": "9d383cf506dbb516b052d5b266c0562a2628e9f9",
+  "canonicalBefore": "a3951d764df291bebbf20f0452119a3d461d8832",
+  "sourceCount": 446,
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2918,
+    "discovered": 2918,
+    "passed": 2895,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "expectedFailures": 0,
+    "unexpectedSuccesses": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 446,
+    "sourcesUnchanged": true,
+    "patchesUnchanged": true,
+    "elapsedSeconds": 249.04,
+    "at": "2026-10-23T00:51:33.976350+03:00",
+    "scope": "combined response cold/live/A109 three-store source; new complete standard Windows suite, no new native/full-isolation execution"
+  },
+  "onlyConflict": [
+    "status.md"
+  ],
+  "integrationChangesExecutableSources": false,
+  "newNativeOrFullRunByDocsMerge": false
+}

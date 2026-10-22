@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T00:40:08.342479+03:00",
+  "externalInitialReceiptSha256": "054fc6ade2471cf754e1400eb82c08f763bff47f8575d5ecb07b950a61343921",
+  "observedFailure": "canonical-pending is rejected by existing live gate after state/replay constructors; test incorrectly asserted every store file byte remains unchanged at this later stage",
+  "responseColdGuardScope": "no-write applies to preopen helper and early response-preflight refusals. It is not a no-side-effect guarantee after native canonical constructors.",
+  "requiredFollowup": "Preserve failed run; validate exact epoch/admission-row semantics and unchanged response file explicitly, report per-store hash changes without calling old run PASS. New complete native run required.",
+  "parallelProductEdited": false,
+  "fullIntegrationAccepted": false
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-23T00:53:40.103812+03:00",
+  "parents": [
+    {
+      "parent": "7ce8213310c4f5d78d3f1eb1de5c4e308260fc22",
+      "folder": "evidence/d3b-response-preflight-r113q8",
+      "preservedEvidenceBlobs": 21
+    },
+    {
+      "parent": "9d383cf506dbb516b052d5b266c0562a2628e9f9",
+      "folder": "evidence/d3b-response-lifecycle-l113f6",
+      "preservedEvidenceBlobs": 39
+    }
+  ],
+  "totalPreservedEvidenceBlobs": 60,
+  "sourceCount": 446,
+  "fullSourceHashesExact": true,
+  "nativeSourcesMatchIndependentReview": true,
+  "blockedRefinementRetried": false,
+  "fullSuiteReexecutedByDocsMerge": false,
+  "nativeExecutedByDocsMerge": false
+}

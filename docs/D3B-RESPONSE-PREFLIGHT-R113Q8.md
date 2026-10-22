@@ -82,3 +82,29 @@ response-first close order and active-transaction refusal, and run a fresh whole
 suite. Full third-store namespace/remount/adapter readiness and healthy-busy work
 policy remain separate tests. LegacyIPCv2 CLOSED/fullD3B OPEN, no main/push or CI
 production/defaultUbuntu/service changes.
+
+## Independent integrated-source review
+
+L113F6 native002 is a NEW complete successful ordinary-UID run, not a relabel of
+native001. All279 native Python sources were reread from immutable featureGit;
+current transported harness modules and our cold checker bytes match. Nine
+target-process cases include three-store clean startup/reopen, current two-store
+control, five early response rejections and one canonical-pending refusal.
+Clean/reopen have16 predicates each, two-store8, early refusals7 each and canonical
+pending8. These overlapping predicates are not independent suite tests.
+
+The first integrated run failed a test expectation of byte-identical state.db
+AFTER native state/replay constructors in the canonical-pending case. Product
+already refused pending admissions before response construction/epoch advance.
+The corrected fixture preserves and checks exact epoch/admission rows and unchanged
+replay/response bytes, while recording canonical-file change rather than claiming
+all constructors are pure. Early response preflight rejections still require
+ZERO parent SQLite opens and unchanged ALL store bytes. The original failed run
+remains evidence. This narrower late-stage observation is not a guarantee that
+unidentified canonical databases can safely be opened. That boundary remains.
+
+This source review did not execute the integrated run itself or change its code.
+Full three-store namespace/remount/HTTP acceptance remains untested, and the old
+two-store diagnostic service explicitly refuses a response-configured startup.
+The separate lifecycle branch still needs terminal source commit and combined
+whole-suite/static verification before any canonical artifact promotion.
