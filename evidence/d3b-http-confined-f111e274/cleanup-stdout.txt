@@ -1,0 +1,1 @@
+{"result": "CLEAN", "checks": {"own_processes_absent": true, "image_unattached": true, "fence_absent": true, "cgroup_absent": true, "socket_absent": true, "mount_dirs_empty": true, "anchors_absent": true, "sources_unchanged": true}, "matchingProcesses": [], "imageRetained": true, "imageBytes": 67108864, "labTerminated": false, "defaultUbuntuCommandIssued": false}

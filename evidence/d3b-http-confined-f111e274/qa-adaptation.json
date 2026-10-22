@@ -1,0 +1,16 @@
+{
+  "parentQaSources": {
+    "scripts/qa/a109_accept.py": "780fe8ed9a4d164e3606ce94acd33544937e522461bd84d206762d69d14eb38c",
+    "scripts/qa/a109_child.py": "ecdea68eee157cac55fb77cb203bed514f8f053bb49204b4a3cf21e07b6cfff0",
+    "scripts/qa/a109_confined.py": "366f7b13d4f135da12d02bb7839614a437e4da5e85e548949e32a7d2341ce771"
+  },
+  "newScriptNames": [
+    "f111e274_accept.py",
+    "f111e274_child.py",
+    "f111e274_confined.py"
+  ],
+  "scope": "same canonical product bytes; extend already-qualified two-image-lifetime QA with actual local HTTP and host-netns negative control",
+  "productModified": false,
+  "nativeVendorModified": false,
+  "rootScope": "fresh P71C fixture only; no existing lab artifact adopted"
+}

@@ -1,0 +1,17 @@
+test_actual_complete_receipt (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_actual_complete_receipt) ... ok
+test_changed_persistent_inode_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_changed_persistent_inode_is_rejected) ... ok
+test_cleanup_is_separate_and_complete (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_cleanup_is_separate_and_complete) ... ok
+test_current_code_matches_executed_code (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_current_code_matches_executed_code) ... ok
+test_fake_native_or_broader_gateway_acceptance_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_fake_native_or_broader_gateway_acceptance_is_rejected) ... ok
+test_false_check_integer_success_or_import_hash_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_false_check_integer_success_or_import_hash_is_rejected) ... ok
+test_host_reachability_cannot_be_called_isolated (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_host_reachability_cannot_be_called_isolated) ... ok
+test_missing_second_lifetime_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_missing_second_lifetime_is_rejected) ... ok
+test_native_dependencies_are_pinned (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_native_dependencies_are_pinned) ... ok
+test_pending_work_epoch_advance_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_pending_work_epoch_advance_is_rejected) ... ok
+test_ready_after_revocation_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_ready_after_revocation_is_rejected) ... ok
+test_wrong_process_or_root_identity_is_rejected (test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_wrong_process_or_root_identity_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.052s
+
+OK

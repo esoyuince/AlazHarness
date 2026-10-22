@@ -1,62 +1,39 @@
 # AlazHarness — status
 
-## D3B-HTTP-JOINT-J110X6C2 — DEVELOPMENT-INTEGRATED; SCOPED PASS
+## D3B-HTTP-CONFINED-F111E274 — SCOPED PASS; DELIVERY PENDING
 
-Canonical branch alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested merge27561bd6e4070150c78d3ad2ae1ffda96d4aadbc is fast-forward promoted.
-Original H110E product and R110X6C2 QA branches/histories retained. This final
-delivery changes docs/static receipts only, not420 qualified source files.
+Branch alaz/d3b-http-confined-f111e274; worktree scratch/worktrees/d3b-http-confined-f111e274.
+Base1e9c305. Canonical H110E HTTP/A109 startup/P102 projection unchanged.
+QA-only new same-path full-isolation acceptance; no second runtime/store owner.
 
-### One selected product path
+Native001 exit0:44 parent controls and49/54 target predicates across TWO actual
+ext4 mount/finalexec lifetimes. UID23001/GID23003, empty groups/caps, seccomp,
+Landlock, private mount/net/IPC; real ProfileLease/native stores; no doubles.
+22 actualHTTP responses: private200/hostsameportECONNREFUSED; invalid auth401,
+workroute404, mutation405; epoch drift503 stays503 after value restoration.
+HTTP port closes while active transaction/lease remain held; explicit rollback
+then same-product native close. Actual record IDs/inodes survive full detach,
+epoch1->2; duplicates reuse records; pending work blocks new startup before3.
+2 authenticated brokerpings/0provider sends. Private broker and host mount table
+unchanged. Image64MiB NEW regular file only, retained unattached; cleanup CLEAN.
+Lab controller used root ONLY in approved P71C; final targets are unprivileged.
+Named lab initially stopped, preflight started it; shared lab not terminated.
 
-StorageReadinessHttp reuses sole A109 NativeStoreStartup. Only authenticated
-GET /health/live and /health/ready bind127.0.0.1. Native startup/live verification
-must succeed BEFORE bind. Readiness checks ownership/handles/epoch/backing;
-fault irreversibly revokes readiness. Liveness remains process-only.
-HTTP drain/close precedes native stores; cancellation/uncertain cleanup retains
-ownership, active transactions refuse storage close. No retry/repair/dispatch.
-Native Hermes APIServerAdapter, model/work/job routes are NOT enabled.
+New completeWindows2747=2724PASS/23SKIP/0ERROR/0FAIL, exit0;425 source hashes
+stable;420 original files unchanged.12 new offline evidence/mutation methods
+passWindows/Linux;27 old startup units also passLinux (not native proof).
+Nested native predicates/platform repeats are NOT independent totals.
+23 old Windows platform/opt-in skips not rerun as a group. All own jobs terminal.
 
-Selected runtime SHA2567fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1.
-Invalid raw-byte Authorization500 defect reproduced and fixed to bounded401.
-MIME initialization uses builtin data without broader file/proc permissions.
-Original failure logs, source snapshots and fixture corrections all retained.
+Records docs/D3B-HTTP-CONFINED-F111E274.md and evidence/d3b-http-confined-f111e274/
+{summary,native-001-result,full-windows-result,cleanup,source-inventory}.json;
+raw native-001-stdout.txt and source-before/after hashes preserved. Prior status
+and log archived docs/status-history/f111e274-{parent,work-log}.md.
 
-### Verified scopes and counts
-
-NEW combined fullWindows2735=2712PASS/23SKIP/0ERROR/0FAIL, exit0.420 source hashes
-stable;414 original source files unchanged;105 original evidence blobs preserved.
-23 old platform/opt-in skips were NOT rerun here. Parent suites not summed.
-
-H110E native003:55 overlapping real nativeA109/Hermes/aiohttp predicates PASS
-under ordinaryUID23001 finalexec/Landlock, source matched. No fullP102 network/
-mount/cgroup HTTP scenario or native agent HTTP adapter. Independent29 realwire
-methods repeat Windows/Linux with explicit storage/profile/actor DOUBLES; they
-are not58 scenarios or native store acceptance. Offline receipts are subsets
-of the standard total. Merge/delivery performed no additional native run.
-
-### Operational boundary and next step
-
-Only diagnostic storage readiness is implemented. In-flight agent work is NOT
-covered by this intentionally quiescent readiness policy. Next qualify the SAME
-path under full canonical network/mount isolation; review one borrowed-native-
-store/ResponseStore ownership and healthy-busy policy before any work routes.
-Then broker live-ledger reading and dummy-provider send/accounting acceptance.
-No automatic partial-pair retry, paired atomic recovery or power-loss claim.
-LegacyIPCv2 CLOSED; fullD3B OPEN. Old R91F/G82C denied actions untouched.
-
-Own temporary code/data/processes cleaned; sharedP71C not terminated. No root,
-mount/account/service/CIqueue/defaultUbuntu/production changes by this union.
-No main merge or push; published main remainscc7ceba. No model/provider call.
-All own native/wire/full/merge operations terminal; final local static/commit
-receipt below, read Git HEAD for current documentation-only handoff.
-
-### Records
-
-Report docs/D3B-HTTP-JOINT-J110X6C2.md.
-Evidence evidence/d3b-http-joint-j110x6c2/{summary,delivery,source-custody}.json,
-full-windows-result.json, full-sources-before/after.json, static-primary-final.txt.
-Native records remain evidence/d3b-http-readiness-h110e/native-003-stdout.txt.
-Independent records evidence/d3b-http-qa-r110x6c2/mime-qualified/.
-Parent/joint histories preserved in docs/status-history/j110x6c2-*.md.
+Next clean ancestry-checked canonical fast-forward after selected-file static
+and commit; preserve concurrentF111X84 independent review and do not silently
+merge its unfinished tests. Then one native API borrowed-store/ResponseStore
+lifecycle and healthy/busy policy, before any work routes. Diagnostic readiness
+under full isolation is accepted; real agent HTTP/broker send/paired atomic
+recovery/power-loss are NOT. LegacyIPCv2 CLOSED; fullD3B OPEN.
+No main/push/CIqueue/account/service/production/defaultUbuntu changes.

@@ -1,0 +1,16 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,tempfile,subprocess,sys
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<100
+with tempfile.TemporaryDirectory(prefix='alaz-f111e274-offline-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,value in files.items():
+  p=PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts
+  raw=value['text'].encode();assert hashlib.sha256(raw).hexdigest()==value['sha256']
+  dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ r=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_confined_http_receipt_f111e274.py','-v'],cwd=root,env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8'},capture_output=True,text=True,timeout=35)
+ result={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'scope':'12 offline receipt/mutation tests, not another native execution'}
+result['temporaryRootRemoved']=not root.exists();print(json.dumps(result),flush=True)
+raise SystemExit(0 if r.returncode==0 and result['sourcesUnchanged'] and result['temporaryRootRemoved'] else 1)

@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "total": 2747,
+  "discovered": 2747,
+  "passed": 2724,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "failureIds": [],
+  "errorIds": [],
+  "sourceCount": 425,
+  "sourcesUnchanged": true,
+  "priorSourcesUnchanged": 420,
+  "elapsedSeconds": 227.393,
+  "at": "2026-10-22T23:13:57.336888+03:00",
+  "scope": "complete canonical1e9c305 plus new full-confined HTTP QA and12 offline evidence checks; no product logic change"
+}
