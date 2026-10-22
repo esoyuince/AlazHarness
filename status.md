@@ -1,12 +1,12 @@
 # AlazHarness — status
 
-## D3B-NATIVE-STARTUP-J106E — SCOPED UNION PASS; LOCAL DELIVERY PENDING
+## D3B-NATIVE-STARTUP-J106E — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
-Active integration branch: `alaz/d3b-native-startup-j106e`.
-Worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-startup-j106e`.
+Active development branch: `alaz/d3b-principal-launch-21oct`.
+Worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
 Parents: canonical `abf314848edae078e4a6f5ca5b9fef1b729e3f7f` (L106R layout) and
 `367f781c1ea06ec1258876f028bcb7019ebdcc4f` (L106E live gate).
-Canonical development still `alaz/d3b-principal-launch-21oct` until checked fast-forward.
+Tested two-parent merge `3a91d456a681c1736c799acc6da84ca30a01fec2` fast-forward promoted from `abf314848edae078e4a6f5ca5b9fef1b729e3f7f`. The integration/feature branches remain clean and retained.
 
 ### Implemented and verified
 
@@ -43,9 +43,10 @@ Evidence: `evidence/d3b-native-startup-j106e/summary.json`, `full-windows-result
 Full command `f106cc25-0618-4d41-a33c-7a6900000004` is terminal0.
 First finalizer0006 stopped BEFORE commit: static scanner correctly refused the
 2,520,797-byte recursively combined status file. Runtime/tests remain unchanged.
-Current repair0009 archives every original byte and reruns the UNCHANGED static
-scanner; no pattern/size exemption. Commit only on PASS; then guarded canonical
-fast-forward and documentation-only delivery. No pending native operation.
+Repair0009 completed: every original status byte is retained and the UNCHANGED
+static scanner passed; no pattern/size exemption. The tested two-parent commit
+was fast-forwarded to canonical. Final delivery changes documentation only;
+all399 tested sources remain exact. No pending native operation.
 
 ### Preserved full histories — read only when earlier detail is needed
 
@@ -62,3 +63,11 @@ history was discarded; keep current status short rather than duplicating it all.
 Both terminal parents/source freezes verified; merged in separate worktree, only
 status conflict. Fresh combined full2604 PASS. Initial static failure preserved.
 History separated without scanner changes; final static/commit output follows.
+
+### Canonical delivery — 2026-10-22T15:50:28.925379+03:00
+
+Tested merge3a91d45 locally fast-forwarded. Current handoff is this short file;
+full prior histories remain in docs/status-history and the lossless recipe.
+Final static output: evidence/d3b-native-startup-j106e/static-primary-final.txt.
+No new native/model/production/CI/main/push action. delivery.json records exact
+parents/source count; the final documentation commit is current Git HEAD.

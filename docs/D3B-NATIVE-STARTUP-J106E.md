@@ -94,3 +94,7 @@ NEW Windows2604=2581PASS/23SKIP/0ERROR/0FAIL; exit0.399 hashes identical before/
 ## Status-history size correction
 
 Initial static scan correctly refused status.md at2,520,797 bytes (>2MiB). No scanner, threshold, source, test or permission policy was altered. Exact parent histories moved to two readable docs/status-history text files, each below the same scan limit. Unique merged prefix/between/tail plus a hashed ordered recipe reconstruct every intermediate byte. Current status.md now contains only the current handoff and archive pointers. The initial failure is static-final.txt; subsequent qualified static output is static-qualified.txt. Original113 parent evidence blobs remain unchanged.
+
+## Canonical local delivery
+
+Tested two-parent merge `3a91d456a681c1736c799acc6da84ca30a01fec2` fast-forwarded to `alaz/d3b-principal-launch-21oct` from `abf314848edae078e4a6f5ca5b9fef1b729e3f7f`. All399 tested sources match; the final follow-up is docs/static delivery only. Current status.md is short, while complete parent histories and an exact reconstruction recipe remain. No source, test, scanner, native policy, main or remote change in this follow-up.

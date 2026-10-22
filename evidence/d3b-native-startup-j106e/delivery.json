@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-22T15:50:28.925379+03:00",
+  "testedMerge": "3a91d456a681c1736c799acc6da84ca30a01fec2",
+  "canonicalBefore": "abf314848edae078e4a6f5ca5b9fef1b729e3f7f",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotion": "fast-forward only",
+  "sourceCount": 399,
+  "allTestedSourceHashesExact": true,
+  "fullWindows": {
+    "total": 2604,
+    "passed": 2581,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "originalEvidenceBlobsPreserved": 113,
+  "statusHistoryArchivedLosslessly": true,
+  "statusScanLimitUnchanged": true,
+  "rootWorktreeStatusSha256Before": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "nativeRunsByPromotion": 0,
+  "newRuntimeWiringByPromotion": false,
+  "preConstructorGateImplemented": false,
+  "combinedRuntimeAdmissionAccepted": false,
+  "fullD3BAccepted": false,
+  "mainUpdated": false,
+  "pushed": false,
+  "next": "independently trusted pre-constructor prepared-schema/identity checks, then fixed native open/live gate/epoch-recovery/readiness composition and combined full-confined acceptance"
+}
