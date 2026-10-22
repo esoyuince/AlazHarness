@@ -1,0 +1,19 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,tempfile,subprocess,sys
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+payload=json.load(sys.stdin);files=payload['files'];assert len(files)<400
+with tempfile.TemporaryDirectory(prefix='alaz-p107a-native-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for n,v in files.items():
+  path=PurePosixPath(n);assert not path.is_absolute() and '..' not in path.parts and n.endswith('.py')
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/n;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as stream:stream.write(raw)
+ (root/'manifest.json').write_text(json.dumps({'pin':payload['pin'],'files':{n:v['sha256'] for n,v in files.items()}}))
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root),'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+ r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/p107a_constructor_effects.py')],cwd=root,env=env,capture_output=True,text=True,timeout=180)
+ result={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourceUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'rootUsed':False}
+result['temporaryRootRemoved']=not root.exists()
+print(json.dumps(result));sys.exit(0 if r.returncode==0 and result['sourceUnchanged'] and result['temporaryRootRemoved'] else 1)

@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-22T16:39:24.847686+03:00",
+  "result": "SCHEMA_IDENTITY_NOT_SUFFICIENT_TO_EXCLUDE_DATA_REPAIR",
+  "observations": [
+    {
+      "case": "untouched",
+      "identitySchemaEqual": true,
+      "beforeMarkers": [
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "afterMarkers": [
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "schemaChanged": false,
+      "bytesChanged": true,
+      "constructorError": null
+    },
+    {
+      "case": "old_version",
+      "identitySchemaEqual": false,
+      "beforeMarkers": [
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "afterMarkers": [
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "schemaChanged": false,
+      "bytesChanged": true,
+      "constructorError": null
+    },
+    {
+      "case": "fts_stale",
+      "identitySchemaEqual": true,
+      "beforeMarkers": [
+        [
+          "fts_stale",
+          "1"
+        ],
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "afterMarkers": [
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "schemaChanged": false,
+      "bytesChanged": true,
+      "constructorError": null
+    },
+    {
+      "case": "missing_backfill",
+      "identitySchemaEqual": true,
+      "beforeMarkers": [],
+      "afterMarkers": [
+        [
+          "message_uid_backfill",
+          "1"
+        ]
+      ],
+      "schemaChanged": false,
+      "bytesChanged": true,
+      "constructorError": null
+    }
+  ],
+  "candidatePreopenGateNotYetRun": true,
+  "productBugNotYetClaimed": true
+}

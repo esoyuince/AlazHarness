@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2628,
+  "discovered": 2628,
+  "passed": 2605,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 403,
+  "sourceUnchanged": true,
+  "priorSourcesUnchanged": 399,
+  "elapsedSeconds": 243.017,
+  "at": "2026-10-22T16:48:37.310274+03:00",
+  "scope": "08e53df plus known-constructor-marker prerequisite and independent native challenge; not pending P107E integration",
+  "collection": "fresh complete unittest result object"
+}

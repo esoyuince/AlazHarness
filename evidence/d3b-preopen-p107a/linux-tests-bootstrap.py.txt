@@ -1,0 +1,17 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,sys,tempfile,subprocess
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<20
+with tempfile.TemporaryDirectory(prefix='alaz-p107a-units-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for n,v in files.items():
+  p=PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/n;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ code="import unittest,sys;loader=unittest.TestLoader();suite=unittest.TestSuite([loader.discover(sys.argv[1],pattern='test_constructor_metadata_p107a.py'),loader.discover(sys.argv[1],pattern='test_p107a_constructor_receipt.py')]);r=unittest.TextTestRunner(verbosity=2).run(suite);sys.exit(0 if r.wasSuccessful() else 1)"
+ r=subprocess.run([sys.executable,'-I','-B','-c',code,str(root/'tests')],cwd=root,env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8'},capture_output=True,text=True,timeout=45)
+ result={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourceUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'scope':'19 actual SQLite unit methods +5 offline native receipts; not new Hermes executions'}
+result['temporaryRootRemoved']=not root.exists()
+print(json.dumps(result));sys.exit(0 if r.returncode==0 and result['sourceUnchanged'] and result['temporaryRootRemoved'] else 1)

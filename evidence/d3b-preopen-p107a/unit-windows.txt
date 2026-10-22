@@ -1,0 +1,24 @@
+test_all_known_repair_keys_refused_regardless_of_value (test_constructor_metadata_p107a.MetadataTests.test_all_known_repair_keys_refused_regardless_of_value) ... ok
+test_backfill_requires_exact_string_one (test_constructor_metadata_p107a.MetadataTests.test_backfill_requires_exact_string_one) ... ok
+test_clear_metadata_is_scoped_observation_only (test_constructor_metadata_p107a.MetadataTests.test_clear_metadata_is_scoped_observation_only) ... ok
+test_closed_connection_is_bounded (test_constructor_metadata_p107a.MetadataTests.test_closed_connection_is_bounded) ... ok
+test_duplicate_backfill_key_refused (test_constructor_metadata_p107a.MetadataTests.test_duplicate_backfill_key_refused) ... ok
+test_duplicate_version_not_first_row_wins (test_constructor_metadata_p107a.MetadataTests.test_duplicate_version_not_first_row_wins) ... ok
+test_foreign_object_rejected_without_using_it (test_constructor_metadata_p107a.MetadataTests.test_foreign_object_rejected_without_using_it) ... ok
+test_missing_backfill_not_written (test_constructor_metadata_p107a.MetadataTests.test_missing_backfill_not_written) ... ok
+test_missing_table_bounded_no_creation (test_constructor_metadata_p107a.MetadataTests.test_missing_table_bounded_no_creation) ... ok
+test_missing_version_refused (test_constructor_metadata_p107a.MetadataTests.test_missing_version_refused) ... ok
+test_old_or_future_version_refused_without_migration (test_constructor_metadata_p107a.MetadataTests.test_old_or_future_version_refused_without_migration) ... ok
+test_open_read_transaction_is_preserved (test_constructor_metadata_p107a.MetadataTests.test_open_read_transaction_is_preserved) ... ok
+test_readwrite_policy_refused_not_reset (test_constructor_metadata_p107a.MetadataTests.test_readwrite_policy_refused_not_reset) ... ok
+test_row_limit_does_not_scan_unbounded_results (test_constructor_metadata_p107a.MetadataTests.test_row_limit_does_not_scan_unbounded_results) ... ok
+test_sqlite_row_factory_supported (test_constructor_metadata_p107a.MetadataTests.test_sqlite_row_factory_supported) ... ok
+test_temporary_metadata_cannot_hide_main_repair (test_constructor_metadata_p107a.MetadataTests.test_temporary_metadata_cannot_hide_main_repair) ... ok
+test_temporary_version_cannot_hide_old_main_version (test_constructor_metadata_p107a.MetadataTests.test_temporary_version_cannot_hide_old_main_version) ... ok
+test_unrelated_metadata_is_not_erased_or_claimed_qualified (test_constructor_metadata_p107a.MetadataTests.test_unrelated_metadata_is_not_erased_or_claimed_qualified) ... ok
+test_wrong_pin_refused_before_query (test_constructor_metadata_p107a.MetadataTests.test_wrong_pin_refused_before_query) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.016s
+
+OK

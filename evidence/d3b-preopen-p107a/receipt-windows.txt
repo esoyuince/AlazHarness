@@ -1,0 +1,10 @@
+test_clear_marker_result_does_not_claim_zero_write_constructor (test_p107a_constructor_receipt.ConstructorReceipt.test_clear_marker_result_does_not_claim_zero_write_constructor) ... ok
+test_current_markers_reject_known_preconstructor_risks (test_p107a_constructor_receipt.ConstructorReceipt.test_current_markers_reject_known_preconstructor_risks) ... ok
+test_first_native_observation_not_rewritten (test_p107a_constructor_receipt.ConstructorReceipt.test_first_native_observation_not_rewritten) ... ok
+test_schema_identity_alone_misses_actual_repairs (test_p107a_constructor_receipt.ConstructorReceipt.test_schema_identity_alone_misses_actual_repairs) ... ok
+test_terminal_execution_and_exact_source_custody (test_p107a_constructor_receipt.ConstructorReceipt.test_terminal_execution_and_exact_source_custody) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.034s
+
+OK

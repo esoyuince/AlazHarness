@@ -1,73 +1,55 @@
 # AlazHarness — status
 
-## D3B-NATIVE-STARTUP-J106E — DEVELOPMENT-INTEGRATED; SCOPED PASS
+## D3B-CONSTRUCTOR-METADATA-P107A — SCOPED PASS; LOCAL DELIVERY PENDING
 
-Active development branch: `alaz/d3b-principal-launch-21oct`.
-Worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct`.
-Parents: canonical `abf314848edae078e4a6f5ca5b9fef1b729e3f7f` (L106R layout) and
-`367f781c1ea06ec1258876f028bcb7019ebdcc4f` (L106E live gate).
-Tested two-parent merge `3a91d456a681c1736c799acc6da84ca30a01fec2` fast-forward promoted from `abf314848edae078e4a6f5ca5b9fef1b729e3f7f`. The integration/feature branches remain clean and retained.
+Branch: alaz/d3b-preopen-p107a. Worktree: scratch/worktrees/d3b-preopen-p107a.
+Base08e53df. New complementary gateway_constructor_metadata.py observes an
+existing query-only connection after trusted schema qualification, before a
+writable constructor. One preopen implementation remains owned by P107E; it
+was not copied, overwritten or declared complete by this task.
 
-### Implemented and verified
+### Implemented / actual finding
 
-- One finite `hermes-native-stores-cold-v1` layout, explicit canonical projection opt-in; default `minimal-v1` unchanged. Exact pinned SOUL/cache, fixed private objects and empty leaves; not arbitrary hooks/config/skills contents.
-- One new `gateway_live_store_gate.py` for actual open native SQLite connections under held final ProfileLease. Memory fallback, path/schema/UUID/application/epoch drift, weak policy, active transactions and unresolved work are refused. Duplicate-JSON ambiguity and TEMP shadow bugs reproduced and fixed. No raw DB open, new SQLite connection, repair, connection close or admission authority.
-- Actual parent native proofs source-verified and preserved separately: L106R full-confined native store restart across two mounts,42 parent /24and27 child conditions; L106E final-exec Landlock live gate,10 refusals /37 child /8 parent controls. Real competing SQLite processBUSY both before and after gate; acquires only after native close. This union is NOT a new combined-runtime execution.
-- NEW combined standard Windows:2604 total =2581 PASS /23 SKIP /0 ERROR /0 FAIL, exit0.399 source hashes identical before/after.87 newly added parent methods are subsets, not extra native trials.23 existing Linux/explicit-opt-in skips not rerun by this merge.
--113 original evidence Git blobs preserved.386/389 baseline files unchanged; only the already-qualified L106R projection and2 historical-source custody tests differ. No duplicate runtime implementation.
+Exact native schema31/appID/UUID/epoch/inode can still coexist with fts_stale
+or missing message_uid_backfill. Independent actual Hermes constructors then
+remove/create those markers. Even clean-control constructor changes DB bytes.
+The new prerequisite requires backfill='1' and absence of six known repair
+markers, with main-qualified finite queries. No file/connection open, SQL write,
+PRAGMA change, close, migration or epoch change by this function. Unknown
+constructor effects and complete startup authority are explicitly NOT proven.
 
-### Exact remaining work
+### Qualification
 
-The live gate runs AFTER constructors. It cannot prevent a native constructor
-from repairing/migrating unidentified state. Next implement one fixed startup
-sequence: independently trusted prepared-profile/schema/ownership qualification
-BEFORE native writable constructors; actual native opening under ProfileLease;
-live connection gate; explicit epoch/pair recovery policy BEFORE request readiness.
-Then qualify that combined path under full confinement and broker live-ledger/send.
-No automatic retry of unknown/partial pairs. Full HTTP Gateway, paired atomic
-recovery and power loss remain unaccepted. Legacy IPCv2 CLOSED; fullD3B OPEN.
-R91F/G82C blocked work is untouched and not declared fixed.
+Four distinct real-native P71C ordinaryUID23001 cases: clean accepted; old
+version, staleFTS and missing backfill rejected before deliberate diagnostic
+native opening in the OWNED test fixture. Initial observation and fresh final
+run kept separate, not8 unique cases. Native sources unchanged; read-only checks
+assert byte identity and total_changes=0; all temporary files/processes cleared.
+New fullWindows2628=2605PASS/23SKIP/0ERROR/0FAIL exit0.403 sources stable,
+all399 original files unchanged. Selected24 methods pass on Windows/Linux
+(19 SQLite-unit +5 offline native receipts; subsets/platform repeats).
+23 old platform/opt-in skips were NOT rerun here. Local static/commit follows.
 
-### Git / operational boundary
+### Limits / next
 
-Main remains `cc7ceba8f850da7652a647e984cbae2c45c8fdea`; no push or main merge.
-Existing root worktree edits, CI queue/config, production/account/service state
-were not changed. No model/provider/root/mount/lab-stop/defaultUbuntu action by
-this integration. Parent native cleanup receipts are preserved.
+NOT yet invoked by P107E fixed preopen helper or full confined startup. Add
+verify_constructor_metadata to its SAME read-only connection after independent
+schema/UUID/app/epoch qualification; do not infer constructor safety from those
+identities alone. Then qualify preflight->native open->live gate->explicit
+recovery policy before readiness. No automatic repair/retry of unknown pairs.
+No complete Gateway/paired atomic recovery/power-loss acceptance.
+Legacy IPCv2 CLOSED; fullD3B OPEN. Old R91F/G82C blocked work untouched.
 
-### Evidence and current operations
+### Evidence and operations
 
-Report: `docs/D3B-NATIVE-STARTUP-J106E.md`.
-Evidence: `evidence/d3b-native-startup-j106e/summary.json`, `full-windows-result.json`,
-`full-sources-before.json`, `full-sources-after.json`, `source-custody.json`.
-Full command `f106cc25-0618-4d41-a33c-7a6900000004` is terminal0.
-First finalizer0006 stopped BEFORE commit: static scanner correctly refused the
-2,520,797-byte recursively combined status file. Runtime/tests remain unchanged.
-Repair0009 completed: every original status byte is retained and the UNCHANGED
-static scanner passed; no pattern/size exemption. The tested two-parent commit
-was fast-forwarded to canonical. Final delivery changes documentation only;
-all399 tested sources remain exact. No pending native operation.
+Report docs/D3B-CONSTRUCTOR-METADATA-P107A.md.
+Evidence evidence/d3b-preopen-p107a/summary.json, marker-native-stdout.txt,
+full-windows-result.json, full-sources-before/after.json, cleanup.json.
+Native discovery09/current14, Linuxselected17, cleanup19 and full16 terminal0.
+No root/mount/production/account/service/CI/defaultUbuntu/main/push action.
+Shared P71C not terminated; no task left running. Main remainscc7ceba.
 
-### Preserved full histories — read only when earlier detail is needed
-
-`docs/status-history/j106e-canonical-abf3148.md` is the exact canonical parent
-status Git blob. `docs/status-history/j106e-live-gate-367f781.md` is the exact live-
-gate parent blob. Both are complete, independently scanned text, not summaries.
-The unique merged header/between/tail and ordered restoration recipe are in
-`evidence/d3b-native-startup-j106e/status-history-preservation.json`.
-They reconstruct the oversized intermediate status byte-for-byte. No earlier
-history was discarded; keep current status short rather than duplicating it all.
-
-### J106E log
-
-Both terminal parents/source freezes verified; merged in separate worktree, only
-status conflict. Fresh combined full2604 PASS. Initial static failure preserved.
-History separated without scanner changes; final static/commit output follows.
-
-### Canonical delivery — 2026-10-22T15:50:28.925379+03:00
-
-Tested merge3a91d45 locally fast-forwarded. Current handoff is this short file;
-full prior histories remain in docs/status-history and the lossless recipe.
-Final static output: evidence/d3b-native-startup-j106e/static-primary-final.txt.
-No new native/model/production/CI/main/push action. delivery.json records exact
-parents/source count; the final documentation commit is current Git HEAD.
+Full preceding status and work log retained byte-for-byte in
+ docs/status-history/p107a-work-log.md; restoration hash in status-preservation.json.
+Keep this current status short. Final Git HEAD/optional clean canonical
+promotion will be recorded separately after the actual static/commit result.
