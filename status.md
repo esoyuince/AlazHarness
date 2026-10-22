@@ -38,3 +38,8 @@ independent-cleanup-blocked.json. Prior handoffs docs/status-history/t114r6a-*.m
 Next source-identical canonical artifact delivery preserving other work, then
 active-work readiness policy; never present blocked final cleanup as complete.
 All native/full jobs terminal; local static/commit follow, no kernel rerun.
+
+
+### Existing canonical documentation preserved
+
+Canonical 799e0220d19575f08c29716412e497a2231cbe6c has only prior HTTP handoff/evidence additions beyond original H114 parent. Preserve it as a merge parent without resetting history. All454 tested source hashes and2 patches remain identical. Independent final cleanup remains BLOCKED, not retried.

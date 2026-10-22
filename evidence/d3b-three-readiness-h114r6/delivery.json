@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T01:35:31.036756+03:00",
+  "testedCodeCommit": "e715c75aa7e6cf0680d3c3c13d7b88dbc9fc53d5",
+  "canonicalBefore": "0be65aaff452bb8a4416f4a684efa6818c76f04c",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "transfer": "fast-forward only",
+  "sourceCount": 449,
+  "allSourceAndPatchHashesMatchAcceptedFullRun": true,
+  "fullWindows": {
+    "total": 2945,
+    "passed": 2922,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "ownNativeScenarios": 4,
+  "ownNativeNestedChecks": 94,
+  "ownNativeScope": "ordinary UID finalexec Landlock plus real triple HTTP; no full mount/netns execution",
+  "parallelFullIsolationNativeReviewed": true,
+  "parallelProjectionCodeIncludedByThisDelivery": false,
+  "parallelSeparateCleanupQuery": "BLOCKED_NOT_REISSUED; native supervisor teardown reports clean",
+  "installedNativeFeatureActivated": false,
+  "healthyBusyPolicyImplemented": false,
+  "nativeAgentApiStarted": false,
+  "providerCalls": 0,
+  "fullD3BAccepted": false,
+  "mainUpdated": false,
+  "pushed": false,
+  "rootStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "vendorStatusBeforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "next": "preserve terminal T114R6A projection history and exact shared HTTP; new full union regression; retain separately blocked post-cleanup observation limitation; healthy-busy native agent API/broker dispatch still open"
+}

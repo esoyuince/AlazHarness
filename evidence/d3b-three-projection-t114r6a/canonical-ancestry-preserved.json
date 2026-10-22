@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-23T01:42:24.903880+03:00",
+  "testedCommit": "6f1daf8c291b8deb59e557b3bebeb78e5ea62c90",
+  "preservedCanonical": "799e0220d19575f08c29716412e497a2231cbe6c",
+  "incomingDocumentationOnly": [
+    "docs/D3B-THREE-READINESS-H114R6.md",
+    "docs/status-history/h114r6-before-canonical-delivery.md",
+    "evidence/d3b-three-readiness-h114r6/delivery.json",
+    "evidence/d3b-three-readiness-h114r6/static-primary-final.txt",
+    "status.md"
+  ],
+  "all454SourcesAndTwoPatchesExact": true,
+  "onlyConflict": [
+    "status.md"
+  ],
+  "nativeExecutionRepeated": false
+}

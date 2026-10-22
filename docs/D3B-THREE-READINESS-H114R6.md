@@ -113,3 +113,7 @@ forced cleanup. A SEPARATE post-run root cleanup observation was tool-blocked.
 That action was not reissued/bypassed, and independent cleanup remains unverified.
 The accepted HTTP slice and recorded native experiment are not substitutes for
 that independent check or a not-yet-run combined branch regression.
+
+## Canonical HTTP-only local delivery
+
+Tested code `e715c75aa7e6cf0680d3c3c13d7b88dbc9fc53d5` fast-forwarded from `0be65aaff452bb8a4416f4a684efa6818c76f04c` into the canonical development branch. All449 source files and two native patch hashes still equal the accepted full run. Final record is documentation/static only. The separately reviewed T114R6A projection implementation is not included by this delivery and its independently blocked cleanup observation stays unverified. Native source pins, main and remotes unchanged. Current status.md is the continuation.
