@@ -1,0 +1,49 @@
+test_exact_pinned_contract_immutable (test_gateway_response_preopen.ExpectedContract.test_exact_pinned_contract_immutable) ... ok
+test_expectation_extra_field_rejected (test_gateway_response_preopen.ExpectedContract.test_expectation_extra_field_rejected) ... ok
+test_separate_response_inode_and_same_device (test_gateway_response_preopen.ExpectedContract.test_separate_response_inode_and_same_device) ... ok
+test_wrong_pin_schema_limits_or_identity (test_gateway_response_preopen.ExpectedContract.test_wrong_pin_schema_limits_or_identity) ... ok
+test_changed_metadata_not_accepted (test_gateway_response_preopen.ParentContract.test_changed_metadata_not_accepted) ... ok
+test_child_private_diagnostic_not_echoed (test_gateway_response_preopen.ParentContract.test_child_private_diagnostic_not_echoed) ... ok
+test_child_refusal_is_bounded (test_gateway_response_preopen.ParentContract.test_child_refusal_is_bounded) ... ok
+test_fixed_process_and_bound_response (test_gateway_response_preopen.ParentContract.test_fixed_process_and_bound_response) ... ok
+test_forged_worker_pid_rejected (test_gateway_response_preopen.ParentContract.test_forged_worker_pid_rejected) ... ok
+test_timeout_kills_and_reaps_only_child (test_gateway_response_preopen.ParentContract.test_timeout_kills_and_reaps_only_child) ... ok
+test_unknown_timeout_no_spawn (test_gateway_response_preopen.ParentContract.test_unknown_timeout_no_spawn) ... ok
+test_wrong_lease_no_spawn (test_gateway_response_preopen.ParentContract.test_wrong_lease_no_spawn) ... ok
+test_active_transaction_refused_without_rollback (test_gateway_response_preopen.ResponseReadOnly.test_active_transaction_refused_without_rollback) ... ok
+test_body_invalid_json_not_deleted (test_gateway_response_preopen.ResponseReadOnly.test_body_invalid_json_not_deleted) ... ok
+test_body_scalar_or_array_not_accepted (test_gateway_response_preopen.ResponseReadOnly.test_body_scalar_or_array_not_accepted) ... ok
+test_closed_settled_response_and_derivative_rows_preserved (test_gateway_response_preopen.ResponseReadOnly.test_closed_settled_response_and_derivative_rows_preserved) ... ok
+test_corrupt_database_not_repaired (test_gateway_response_preopen.ResponseReadOnly.test_corrupt_database_not_repaired) ... ok
+test_empty_prepared_native_schema_read_without_content_changes (test_gateway_response_preopen.ResponseReadOnly.test_empty_prepared_native_schema_read_without_content_changes) ... ok
+test_evicted_body_does_not_erase_settled_identity (test_gateway_response_preopen.ResponseReadOnly.test_evicted_body_does_not_erase_settled_identity) ... ok
+test_extra_table_rejected (test_gateway_response_preopen.ResponseReadOnly.test_extra_table_rejected) ... ok
+test_extra_trigger_rejected_before_it_can_run (test_gateway_response_preopen.ResponseReadOnly.test_extra_trigger_rejected_before_it_can_run) ... ok
+test_helper_query_function_does_not_close_connection (test_gateway_response_preopen.ResponseReadOnly.test_helper_query_function_does_not_close_connection) ... ok
+test_identity_over_limit_not_evicted (test_gateway_response_preopen.ResponseReadOnly.test_identity_over_limit_not_evicted) ... ok
+test_infinite_timestamp_refused (test_gateway_response_preopen.ResponseReadOnly.test_infinite_timestamp_refused) ... ok
+test_invalid_fingerprint_refused (test_gateway_response_preopen.ResponseReadOnly.test_invalid_fingerprint_refused) ... ok
+test_malformed_model_binding_not_filled (test_gateway_response_preopen.ResponseReadOnly.test_malformed_model_binding_not_filled) ... ok
+test_missing_file_is_not_created (test_gateway_response_preopen.ResponseReadOnly.test_missing_file_is_not_created) ... ok
+test_missing_model_binding_not_filled (test_gateway_response_preopen.ResponseReadOnly.test_missing_model_binding_not_filled) ... ok
+test_negative_output_order_rejected (test_gateway_response_preopen.ResponseReadOnly.test_negative_output_order_rejected) ... ok
+test_normal_read_locks_and_uri_no_immutable (test_gateway_response_preopen.ResponseReadOnly.test_normal_read_locks_and_uri_no_immutable) ... ok
+test_null_body_primary_key_not_accepted (test_gateway_response_preopen.ResponseReadOnly.test_null_body_primary_key_not_accepted) ... ok
+test_null_key_not_accepted (test_gateway_response_preopen.ResponseReadOnly.test_null_key_not_accepted) ... ok
+test_old_user_version_not_reset (test_gateway_response_preopen.ResponseReadOnly.test_old_user_version_not_reset) ... ok
+test_orphan_admission_not_deleted (test_gateway_response_preopen.ResponseReadOnly.test_orphan_admission_not_deleted) ... ok
+test_orphan_conversation_not_deleted (test_gateway_response_preopen.ResponseReadOnly.test_orphan_conversation_not_deleted) ... ok
+test_orphan_output_not_deleted (test_gateway_response_preopen.ResponseReadOnly.test_orphan_output_not_deleted) ... ok
+test_readonly_policy_is_required_not_imposed_on_callers (test_gateway_response_preopen.ResponseReadOnly.test_readonly_policy_is_required_not_imposed_on_callers) ... ok
+test_response_body_over_limit_not_evicted (test_gateway_response_preopen.ResponseReadOnly.test_response_body_over_limit_not_evicted) ... ok
+test_schema_missing_column_not_migrated (test_gateway_response_preopen.ResponseReadOnly.test_schema_missing_column_not_migrated) ... ok
+test_sidecars_always_refused_without_cleanup (test_gateway_response_preopen.ResponseReadOnly.test_sidecars_always_refused_without_cleanup) ... ok
+test_sql_budget_failure_not_partial_success (test_gateway_response_preopen.ResponseReadOnly.test_sql_budget_failure_not_partial_success) ... ok
+test_unknown_application_id_not_adopted (test_gateway_response_preopen.ResponseReadOnly.test_unknown_application_id_not_adopted) ... ok
+test_unsettled_request_no_synthetic_terminal (test_gateway_response_preopen.ResponseReadOnly.test_unsettled_request_no_synthetic_terminal) ... ok
+test_view_replacing_native_table_refused (test_gateway_response_preopen.ResponseReadOnly.test_view_replacing_native_table_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 1.578s
+
+OK

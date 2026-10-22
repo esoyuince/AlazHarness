@@ -1,0 +1,38 @@
+{
+  "job": "D3B-RESPONSE-PREFLIGHT-R113Q8",
+  "result": "PASS_SCOPED_READONLY_RESPONSE_PREFLIGHT",
+  "at": "2026-10-23T00:35:51.403156+03:00",
+  "base": "a3951d764df291bebbf20f0452119a3d461d8832",
+  "focusedWindowsMethods": 44,
+  "focusedLinuxMethods": 44,
+  "offlineReceiptMethods": 6,
+  "actualNativeChecks": 47,
+  "actualNativeRefusalCases": 13,
+  "normalSqliteLockSequence": [
+    {
+      "state": "BUSY",
+      "code": 5
+    },
+    {
+      "state": "BUSY",
+      "code": 5
+    },
+    {
+      "state": "ACQUIRED"
+    }
+  ],
+  "nativeFeature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "schemaSha256": "c4b66ce0c9b2571b17eae2080834e365b3aa526d40157c8c3cf4f353541ae1b4",
+  "responsePreflightSqlWrites": false,
+  "parentRawDatabaseOpens": 0,
+  "parentSqliteConnectionsOpened": 0,
+  "original434SourcesUnchanged": true,
+  "A109ThreeStoreIntegrationProvenHere": false,
+  "fullIsolationTested": false,
+  "thirdStoreProjectionQualified": false,
+  "mainUpdated": false,
+  "pushed": false,
+  "rootOrMountAction": false,
+  "providerCalls": 0,
+  "fullStandardSuite": "pending combined lifecycle branch"
+}

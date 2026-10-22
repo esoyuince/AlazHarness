@@ -1,0 +1,6 @@
+{
+  "firstRun": "focused-windows-001.txt",
+  "reason": "one-row fixture executed fewer than1000 SQLite opcodes, so progress hook did not fire",
+  "correction": "use100 valid response rows to exercise configured instruction budget; product budget unchanged",
+  "productSourceChanged": false
+}

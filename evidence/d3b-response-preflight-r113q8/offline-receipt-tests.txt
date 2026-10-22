@@ -1,0 +1,11 @@
+test_actual_native_focused_success_with_explicit_scope (test_response_preflight_receipt_r113q8.NativeResponsePreflightReceipt.test_actual_native_focused_success_with_explicit_scope) ... ok
+test_actual_separate_worker_returns_no_write_no_authority (test_response_preflight_receipt_r113q8.NativeResponsePreflightReceipt.test_actual_separate_worker_returns_no_write_no_authority) ... ok
+test_current_product_probe_and_pinned_native_sources_match (test_response_preflight_receipt_r113q8.NativeResponsePreflightReceipt.test_current_product_probe_and_pinned_native_sources_match) ... ok
+test_real_lock_competitor_and_parent_no_raw_database_opens (test_response_preflight_receipt_r113q8.NativeResponsePreflightReceipt.test_real_lock_competitor_and_parent_no_raw_database_opens) ... ok
+test_temporary_fixture_removed_and_earlier_setup_failures_retained (test_response_preflight_receipt_r113q8.NativeResponsePreflightReceipt.test_temporary_fixture_removed_and_earlier_setup_failures_retained) ... ok
+test_thirteen_actual_refusal_cases_no_silent_fix (test_response_preflight_receipt_r113q8.NativeResponsePreflightReceipt.test_thirteen_actual_refusal_cases_no_silent_fix) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.059s
+
+OK
