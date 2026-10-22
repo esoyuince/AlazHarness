@@ -1,0 +1,8 @@
+{
+  "base": "78b41d0",
+  "reused": "scripts/qa/l106r_* canonical full isolation harness",
+  "newPaths": "/opt/alaz-a109 /srv/alaz-a109 /sys/fs/cgroup/alaz-a109",
+  "existingSourcesChanged": false,
+  "newProductInvoked": "gateway_store_startup.NativeStoreStartup.start/close",
+  "twoMounts": "clean terminal restart, then intentional pending refusal without epoch advance"
+}

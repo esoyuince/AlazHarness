@@ -1,0 +1,8 @@
+{
+  "reason": "close must not silently roll back caller transactions",
+  "oldProductSha256": "5a9e6a3307d8ccdc1d9cfec76e188a3e3786ae0a5ef1ac6a9f636419dbbfffb3",
+  "newProductSha256": "94358867806beb035d141d7d2b1345ab07c836b9b6b6841bf2ce65b224295415",
+  "failingRegressionRetained": true,
+  "native002Historical": true,
+  "newNativeRunRequired": true
+}

@@ -1,0 +1,17 @@
+{
+  "result": "CLEAN_OWNED_RUNTIME",
+  "checks": {
+    "ownProcessesAbsent": true,
+    "loopAbsent": true,
+    "fenceAbsent": true,
+    "cgroupAbsent": true,
+    "socketAbsent": true,
+    "anchorsAbsent": true,
+    "mountTargetsEmpty": true,
+    "imageRetained": true,
+    "firstFailureImageRetained": true
+  },
+  "processes": [],
+  "labTerminated": false,
+  "otherWorkTouched": false
+}

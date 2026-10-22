@@ -1,0 +1,10 @@
+test_first_failed_transport_retained_and_own_runtime_clean (test_store_startup_receipt_a109.StartupReceipt.test_first_failed_transport_retained_and_own_runtime_clean) ... ok
+test_native_data_and_isolation_preserved (test_store_startup_receipt_a109.StartupReceipt.test_native_data_and_isolation_preserved) ... ok
+test_terminal_source_identity_and_real_native_imports (test_store_startup_receipt_a109.StartupReceipt.test_terminal_source_identity_and_real_native_imports) ... ok
+test_two_mounts_start_product_and_clean_epochs (test_store_startup_receipt_a109.StartupReceipt.test_two_mounts_start_product_and_clean_epochs) ... ok
+test_unfinished_work_refuses_before_epoch_and_no_retry (test_store_startup_receipt_a109.StartupReceipt.test_unfinished_work_refuses_before_epoch_and_no_retry) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.096s
+
+OK

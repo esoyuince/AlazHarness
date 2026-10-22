@@ -1,0 +1,30 @@
+test_access_before_start_or_after_close_refused (test_gateway_store_startup.Lifecycle.test_access_before_start_or_after_close_refused) ... ok
+test_caller_lease_failure_on_close_prevents_action (test_gateway_store_startup.Lifecycle.test_caller_lease_failure_on_close_prevents_action) ... ok
+test_close_exception_retains_lease_and_cannot_repeat (test_gateway_store_startup.Lifecycle.test_close_exception_retains_lease_and_cannot_repeat) ... ok
+test_constructor_failure_has_unknown_effects_no_blind_close (test_gateway_store_startup.Lifecycle.test_constructor_failure_has_unknown_effects_no_blind_close) ... ok
+test_epoch_wrong_or_boolean_result_refused (test_gateway_store_startup.Lifecycle.test_epoch_wrong_or_boolean_result_refused) ... ok
+test_exact_sequence_and_real_closed_handles_lease_retained (test_gateway_store_startup.Lifecycle.test_exact_sequence_and_real_closed_handles_lease_retained) ... ok
+test_failed_object_cannot_retry (test_gateway_store_startup.Lifecycle.test_failed_object_cannot_retry) ... ok
+test_foreign_process_or_thread_cannot_start_access_or_close (test_gateway_store_startup.Lifecycle.test_foreign_process_or_thread_cannot_start_access_or_close) ... ok
+test_invalid_typed_inputs_and_instance_never_start (test_gateway_store_startup.Lifecycle.test_invalid_typed_inputs_and_instance_never_start) ... ok
+test_keyboard_interrupt_after_epoch_intent_blocks_restart (test_gateway_store_startup.Lifecycle.test_keyboard_interrupt_after_epoch_intent_blocks_restart) ... ok
+test_layout_refusal_precedes_helper_and_native_import (test_gateway_store_startup.Lifecycle.test_layout_refusal_precedes_helper_and_native_import) ... ok
+test_live_refusal_does_not_advance_epoch_and_owned_handles_can_close (test_gateway_store_startup.Lifecycle.test_live_refusal_does_not_advance_epoch_and_owned_handles_can_close) ... ok
+test_live_writer_blocks_close_before_any_store_close (test_gateway_store_startup.Lifecycle.test_live_writer_blocks_close_before_any_store_close) ... ok
+test_live_writer_blocks_start (test_gateway_store_startup.Lifecycle.test_live_writer_blocks_start) ... ok
+test_native_close_that_leaves_handle_open_is_not_success (test_gateway_store_startup.Lifecycle.test_native_close_that_leaves_handle_open_is_not_success) ... ok
+test_native_token_writer_blocks_close (test_gateway_store_startup.Lifecycle.test_native_token_writer_blocks_close) ... ok
+test_no_native_import_during_object_configuration (test_gateway_store_startup.Lifecycle.test_no_native_import_during_object_configuration) ... ok
+test_post_epoch_failure_is_not_ready (test_gateway_store_startup.Lifecycle.test_post_epoch_failure_is_not_ready) ... ok
+test_preflight_failure_never_opens_native_stores (test_gateway_store_startup.Lifecycle.test_preflight_failure_never_opens_native_stores) ... ok
+test_replay_constructor_failure_preserves_returned_state_and_lease (test_gateway_store_startup.Lifecycle.test_replay_constructor_failure_preserves_returned_state_and_lease) ... ok
+test_same_instance_rejected_and_non_delete_not_adopted (test_gateway_store_startup.Lifecycle.test_same_instance_rejected_and_non_delete_not_adopted) ... ok
+test_unknown_epoch_error_is_not_retried_or_rolled_back (test_gateway_store_startup.Lifecycle.test_unknown_epoch_error_is_not_retried_or_rolled_back) ... ok
+test_verified_object_cannot_start_twice (test_gateway_store_startup.Lifecycle.test_verified_object_cannot_start_twice) ... ok
+test_wrong_layout_file_identity_refuses (test_gateway_store_startup.Lifecycle.test_wrong_layout_file_identity_refuses) ... ok
+test_wrong_preflight_result_refused (test_gateway_store_startup.Lifecycle.test_wrong_preflight_result_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.047s
+
+OK

@@ -1,0 +1,1 @@
+{"result": "CLEAN_CURRENT_NATIVE003", "checks": {"noOwnProcesses": true, "noOwnLoop": true, "noOwnFence": true, "noOwnCgroup": true, "noOwnSocket": true, "noAnchors": true, "emptyMountTargets": true, "allThreeImagesRetained": true}, "ownedProcessIds": [], "labTerminated": false, "otherWorkTouched": false}

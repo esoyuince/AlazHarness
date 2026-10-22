@@ -1,0 +1,17 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,subprocess,sys,tempfile
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<150
+with tempfile.TemporaryDirectory(prefix='alaz-a109-units-',dir='/tmp') as temp:
+ root=Path(temp)
+ for n,v in files.items():
+  p=PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/n;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ code="import unittest,sys; d=unittest.TestLoader();s=unittest.TestSuite([d.discover(sys.argv[1],pattern='test_gateway_store_startup.py'),d.discover(sys.argv[1],pattern='test_store_startup_receipt_a109.py')]);r=unittest.TextTestRunner(verbosity=2).run(s);sys.exit(0 if r.wasSuccessful() else 1)"
+ r=subprocess.run([sys.executable,'-I','-B','-c',code,str(root/'tests')],cwd=root,env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8'},capture_output=True,text=True,timeout=45)
+ result={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sourceSha256':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'scope':'27 lifecycle unit methods with explicit dependencies plus5 offline native receipts; not a new full-isolation run','rootUsed':False}
+result['temporaryRootRemoved']=not root.exists()
+print(json.dumps(result));raise SystemExit(0 if r.returncode==0 and result['sourcesUnchanged'] and result['temporaryRootRemoved'] else 1)
