@@ -1,60 +1,32 @@
 # AlazHarness — status
 
-## D3B-STORE-STARTUP-A109 — DEVELOPMENT-INTEGRATED; SCOPED PASS
+## D3B-HTTP-QA-R110X6C2 — SCOPED INDEPENDENT QA PASS
 
-Active canonical branch alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested code ecea1419fd64e41ea3621048fea110bf851a86a0 fast-forward promoted
-from78b41d0. All414 tested sources exact; feature retained. Canonical now
-selects ONE NativeStoreStartup with guarded clean-only epoch sequencing.
-Parallel C109E is retained separately and NOT merged/overwritten. This final
-follow-up changes documentation/static receipts only, not product/test source.
+Branch alaz/d3b-http-qa-r110x6c2; worktree scratch/worktrees/d3b-http-qa-r110x6c2.
+Base82a8c3e. No product implementation added or parallel source overwritten.
+H110E owns sole readiness-only aiohttp layer; keep A109 canonical storage owner.
 
-Branch alaz/d3b-store-startup-a109; worktree scratch/worktrees/d3b-store-startup-a109.
-Base78b41d0. Product gateway_store_startup.NativeStoreStartup is one fixed
-caller-held ProfileLease lifecycle: finite native layout -> isolated preopen ->
-trusted native constructors -> live gate -> clean-only epoch -> live gate.
-No callback/alternate helper/native engine; no automatic recovery or dispatch.
-A failed/unknown start cannot repeat. Constructor/close unknown effects retain
-caller ownership. Active transactions block close rather than roll back.
-Only confirmed own-primary-handle close allows caller to release profile.
+Actual loopback HTTP29/29 Windows and29/29 ordinaryP71C Linux PASS on exact
+H110E source9612d3c. Native storage/profile/actor gates explicitly DOUBLED;
+not actual Hermes store/full confinement acceptance.108 pure dependency sources
+independently match installed RECORD hashes/lengths; no install/download/root.
 
-### Qualified current source
-Actual P71C native003 uses SAME product path under complete canonical private
-network/mount/IPC, hostUID23001, seccomp/Landlock and native ProfileLease.
-Two fresh mounts/processes and native schemas retain IDs/inodes, epochs1->2;
-extra pending-work startup refuses before epoch3 and leaves started record.
-42 parent controls,31/36 target predicates,2 broker pings/0 provider sends.
-These nested controls are not distinct test runs. Product transaction-close
-bug has2 failing regressions preserved; corrected full native run passed.
-First native001 transport omitted upstream Python source and failed before
-Gateway; completed transport plus owned archival fixed it without product change.
+Real raw0xff Authorization bug reproduced500; own one-condition fix proved,
+concurrentH110E current ASCII/nonempty fix separately retested with all29.
+Initial AppRunner fixture errors retained and fixed without product changes;
+unique-method count correction documented, not rewritten into original logs.
+6 offline custody checks PASS. NEW fullWindows2700=2677PASS/23SKIP/0ERROR/0FAIL,
+exit0;416 source hashes stable,414 originals unchanged.23 old platform/opt-in
+skips not rerun. Own Linux temps/processes CLEAN; shared lab not terminated.
 
-New fullWindows2694=2671PASS/23SKIP/0ERROR/0FAIL exit0.414 source hashes stable;
-ALL408 prior sources unchanged. Linuxselected32/32 (27unit+5receipt), subsets.
-The23 old platform/opt-in skips were not rerun. Own current/first/second images
-retained unattached; separate cleanup has no own process/loop/fence/socket/cgroup.
-Shared P71C not stopped; defaultUbuntu/CI/production/accounts/root edits untouched.
+Records docs/D3B-HTTP-QA-R110X6C2.md and evidence/d3b-http-qa-r110x6c2/summary.json.
+All native/wire/full jobs terminal. Prior status/worklog byte-preserved in
+ docs/status-history/r110x6c2-parent.md and r110x6c2-work-log.md.
 
-### Limits / exact next step
-Storage VERIFIED is NOT HTTP/admission authority. No provider dispatch, paired
-atomic recovery, power-loss proof or arbitrary active-profile adoption. All
-unregistered tasks/readers still require caller drain. Trusted installed native
-constructors may have known writes after preflight; markers are not universal
-side-effect proof. LegacyIPCv2 CLOSED/fullD3B OPEN; old blockedR91F/G82C untouched.
-Concurrent C109E has a different same-named alternative; never merge duplicates
-or overwrite its work. Promote only this tested path if canonical clean ancestry
-permits, otherwise retain independent qualified branch. Next fixed HTTP readiness
-and live broker ledger/dummy-provider path, no automatic partial-pair retry.
-
-### Records
-Report docs/D3B-STORE-STARTUP-A109.md.
-Evidence evidence/d3b-store-startup-a109/summary.json, native-003-stdout.txt,
-full-windows-result.json, sources-before/after-full.json, cleanup-current.json.
-Native003 request16/Linuxselected20/full18 terminal0; no native job pending.
-Prior handoff/work log retained in docs/status-history/a109-parent.md and
- a109-work-log.md. Final static/commit follows; no push/main action.
-
-### Canonical delivery — 2026-10-22T20:41:05.352406+03:00
-
-Qualified codeecea141 promoted, full2694=2671PASS/23SKIP sources remain exact. No new kernel test/provider/model/root/mount/CI/production/main/push action by this promotion. Final static at static-primary-final.txt. Original work logs retained; no task left running after terminal receipts. Next HTTP readiness and live broker-ledger path, not another duplicate storage implementation.
+Next verify terminalH110E actual-native evidence and source, then integrate
+ONLY its one runtime plus these QA files with fresh combined regression.
+Latest observed H110E native001 failed on /etc/mime.types import before its
+port-conflict case; do not label that run PASS. Our nonconfined realHTTP success
+does not substitute. Full agent API needs borrowed-store/ResponseStore ownership
+and healthy-busy versus quiescent-readiness policy; all model/work routes closed.
+Maincc7ceba/no push/CI/config/production/defaultUbuntu edits. FullD3B OPEN.

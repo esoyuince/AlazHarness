@@ -1,0 +1,37 @@
+Executing <Task pending name='Task-2' coro=<RealHttpAudit.test_authenticated_ready_is_storage_only_and_not_cacheable() running at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-http-qa-r110x6c2\scripts\qa\r110x_http_audit.py:119> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py:749> cb=[_run_until_complete_cb() at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py:181] created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.118 seconds
+Error handling request from 127.0.0.1
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Lib\site-packages\aiohttp\web_protocol.py", line 433, in data_received
+    messages, upgraded, tail = self._parser.feed_data(data)
+                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "aiohttp/_http_parser.pyx", line 687, in aiohttp._http_parser.HttpParser.feed_data
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Content-Length can't be present with Transfer-Encoding:
+
+    b'Content-Length: 5'
+                     ^
+Error handling request from 127.0.0.1
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Lib\site-packages\aiohttp\web_protocol.py", line 433, in data_received
+    messages, upgraded, tail = self._parser.feed_data(data)
+                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "aiohttp/_http_parser.pyx", line 687, in aiohttp._http_parser.HttpParser.feed_data
+  File "aiohttp/_http_parser.pyx", line 866, in aiohttp._http_parser.cb_on_header_value
+    raise LineTooLong(value[:100] + b"...", pyparser._max_field_size)
+aiohttp.http_exceptions.LineTooLong: 400, message:
+  Got more than 2048 bytes when reading: b'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...'.
+Error handling request from 127.0.0.1
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Lib\site-packages\aiohttp\web_protocol.py", line 433, in data_received
+    messages, upgraded, tail = self._parser.feed_data(data)
+                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "aiohttp/_http_parser.pyx", line 687, in aiohttp._http_parser.HttpParser.feed_data
+    raise ex
+  File "aiohttp/_http_parser.pyx", line 879, in aiohttp._http_parser.cb_on_headers_complete
+    pyparser._on_headers_complete()
+  File "aiohttp/_http_parser.pyx", line 479, in aiohttp._http_parser.HttpParser._on_headers_complete
+    self._process_header()
+  File "aiohttp/_http_parser.pyx", line 444, in aiohttp._http_parser.HttpParser._process_header
+    raise BadHttpMessage(f"Duplicate '{name}' header found.")
+aiohttp.http_exceptions.BadHttpMessage: 400, message:
+  Duplicate 'Host' header found.

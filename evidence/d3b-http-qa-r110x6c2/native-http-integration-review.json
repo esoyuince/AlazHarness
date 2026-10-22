@@ -1,0 +1,49 @@
+{
+  "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "sources": {
+    "gateway/platforms/api_server.py": {
+      "sha256": "74158a9bcac885e238508e0b36160bd6a676b0424894554d3674c67cfc7858f4",
+      "functions": [
+        {
+          "name": "__init__",
+          "line": 1119,
+          "endLine": 1193,
+          "excerpt": "def __init__(self, config: PlatformConfig):\n        super().__init__(config, Platform.API_SERVER)\n        extra = config.extra or {}\n        self._host, self._port = listen_address(extra)\n        self._api_key: str = extra.get(\"key\", _get_scoped_secret(\"API_SERVER_KEY\", \"\"))\n        self._cors_origins: tuple[str, ...] = self._parse_cors_origins(\n            extra.get(\"cors_origins\", os.getenv(\"API_SERVER_CORS_ORIGINS\", \"\")))\n        self._model_name: str = self._resolve_model_name(\n            extra.get(\"model_name\", _get_scoped_secret(\"API_SERVER_MODEL_NAME\", \"\")))\n        # alias (client \"model\") -> {model, provider?, api_key? (UPSTREAM, never logged), base_url?}\n        self._model_routes: dict[str, dict[str, Any]] = self._parse_model_routes(extra.get(\"model_routes\"))\n        # Opt-in bare ``model`` passthrough on OpenAI-compatible surfaces (generic clients\n        # hardcode \"gpt-4o\" etc., hence off by default).\n        # Off by default: generic OpenAI clients routinely hardcode model names (\"gpt-4o\", ...), and\n        # existing deployments rely on those falling back to the gateway default rather than switching the\n        # executing model. Requests that send an explicit ``provider`` \u2014 and the Hermes-native session-chat\n        # and /v1/runs endpoints \u2014 are always honored regardless of this flag. (Idea credit: PR #22825 by\n        # @mssteuer.)\n        self._direct_model_requests: bool = _coerce_request_bool(\n            extra.get(\"direct_model_requests\"), default=False)\n        # ``platforms.api_server.tool_progress_events: false`` drops the custom\n        # ``hermes.tool.progress`` SSE frames from Chat Completions streams for strict OpenAI\n        # clients that choke on named events (#12020). Default on.\n        self._tool_progress_events: bool = _coerce_request_bool(\n            extra.get(\"tool_progress_events\"), default=True)\n        self._app: Optional[web.Application] = None\n        self._runner: Optional[web.AppRunner] = None\n        self._site: Optional[web.TCPSite] = None\n        from hermes_constants import get_hermes_home\n        self._response_store = ResponseStore()  # this home's; a /p/<profile>/ route gets its own\n        self._response_store_home = str(get_hermes_home())\n        self._response_stores: dict[str, ResponseStore] = {}\n        self._response_store_lock = threading.Lock()\n        _api_runs._initialize_run_state(self, store_factory=RunIdempotencyStore)\n        self._session_db: Optional[Any] = None  # explicit override (tests/manual wiring)\n        self._session_dbs: dict[str, Any] = {}  # per-profile-home SessionDB cache\n        self._session_db_cache_lock = threading.Lock()\n        self._session_db_cache_closed = False\n        # Last-known-good model per gateway_session_key (\"*\" = process-wide; never session_id,\n        # which is per request -> unbounded). Recovers a transient empty model resolution.\n        self._last_resolved_model: dict[str, str] = {}\n        self._session_db_lock: Optional[asyncio.Lock] = None  # single-flight for lazy init\n        self._max_concurrent_runs: int = self._resolve_max_concurrent_runs()  # 0 disables\n        self._history_tool_output_max_chars = self._resolve_api_server_int(\n            \"history_tool_output_max_chars\", default=0)\n        # In-flight _run_agent() turns (/v1/runs tracks its own via _active_run_tasks).\n        # Concurrency cap shared across all agent-serving endpoints (/v1/chat/completions, /v1/responses,\n        # /v1/runs, /api/sessions/{id}/chat[/stream]). Read from config.yaml\n        # gateway.api_server.max_concurrent_runs; 0 disables the cap.\n        # Bounds CPU / memory / upstream-LLM-quota exhaustion from a request flood (#7483).\n        self._inflight_agent_runs: int = 0\n        # Every agent inside _run_agent() for shutdown interrupt, keyed by id() (the strong ref\n        # keeps the id() from recycling); distinct from the run_id-keyed _active_run_agents.\n        self._shutdown_interruptible_agents: dict[int, Any] = {}\n        # One memory provider per session across requests (this surface rebuilds the agent per turn).\n        self._memory_sessions = ApiServerMemorySessions()\n        self.gateway_runner: Optional[Any] = None  # set by gateway/run.py\n        # Admitted requests not yet in agent bookkeeping, so shutdown drain counts them.\n        self._pending_agent_requests: int = 0\n# Shared broker; this adapter maps HTTP registration + controller WS onto it.\n        self._browser_control_broker = get_browser_control_broker()\n        # One-shot artifact transport: lazy per-profile stores + limiter (tests inject).\n        self._browser_control_artifacts: dict[str, ArtifactStore] = {}\n        self._browser_control_artifact_limiter: Optional[ArtifactRateLimiter] = None\n        # Per-profile single-flight locks for the off-loop store construction in\n        # _artifact_store_for_async(); a lost race would strand receipts (in-memory index).\n        self._browser_control_artifact_locks: dict[str, asyncio.Lock] = {}\n        # Daily API metrics + heartbeat stamps published to gateway runtime status (#52323).\n        self._metrics_day: str = self._metrics_day_key()\n        self._metrics_requests_today: int = 0\n        self._metrics_messages_today: int = 0\n        self._metrics_tokens_today: int = 0\n        self._metrics_latency_ms: list[float] = []\n        self._metrics_last_request_at: Optional[float] = None\n        self._metrics_last_heartbeat_at: Optional[float] = None"
+        },
+        {
+          "name": "_handle_health",
+          "line": 2366,
+          "endLine": 2368,
+          "excerpt": "async def _handle_health(self, request: web.Request) -> web.Response:\n        \"\"\"GET /health \u2014 simple health check.\"\"\"\n        return web.json_response({\"status\": \"ok\", \"platform\": \"hermes-agent\", \"version\": _hermes_version()})"
+        }
+      ]
+    },
+    "gateway/platforms/api_server_runs.py": {
+      "sha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+      "functions": [
+        {
+          "name": "_initialize_run_state",
+          "line": 216,
+          "endLine": 238,
+          "excerpt": "def _initialize_run_state(self, *, store_factory) -> None:\n    \"\"\"Initialize adapter-owned durable and live ``/v1/runs`` state.\"\"\"\n    self._run_idempotency_store = store_factory()\n    self._run_owner_pid = os.getpid()\n    try:\n        from gateway.status import get_process_start_time\n        self._run_owner_started = int(get_process_start_time(self._run_owner_pid) or 0)\n    except Exception:\n        self._run_owner_started = 0\n    # All keyed by run_id: SSE fanout streams (+creation time for the TTL sweep), live\n    # agent/task refs for cooperative stop (the executor thread may outlive the request,\n    # hence the separate stopping set), pollable statuses, and approval session keys\n    # (approval core resolves by session key, clients by run_id).\n    self._run_idempotency_ids: set[str] = set()\n    self._stopping_run_ids: set[str] = set()\n    self._shutdown_interrupted_run_ids: set[str] = set()\n    self._run_shutdown_requested_at: Optional[float] = None\n    # Streaming run id -> its canonical admission id, held while that request observes the turn.\n    self._run_admission_aliases: dict[str, str] = {}\n    (\n        self._run_owners, self._run_streams, self._run_streams_created, self._active_run_agents,\n        self._active_run_tasks, self._run_statuses, self._run_approval_sessions,\n    ) = ({} for _ in range(7))"
+        },
+        {
+          "name": "_close_run_state",
+          "line": 259,
+          "endLine": 264,
+          "excerpt": "def _close_run_state(self) -> None:\n    try:\n        if getattr(self, \"_run_idempotency_store\", None) is not None:\n            self._run_idempotency_store.close()\n    except Exception:\n        logger.debug(\"Failed to close run idempotency store for %s\", self.name, exc_info=True)"
+        }
+      ]
+    },
+    "gateway/platforms/api_server_run_idempotency.py": {
+      "sha256": "4ad0c20dfe220cf0aac8b340702b54621f7ecdb075799816407406c5cd733c03",
+      "functions": []
+    }
+  },
+  "findings": [
+    "Native API adapter initializes response and run-idempotency ownership itself; not yet borrowed A109 handles.",
+    "Native /health unconditionally returns status ok; cannot serve as storage qualification.",
+    "Current readiness scope must not instantiate native model/work routes or claim full Gateway."
+  ],
+  "otherBranchModified": false
+}

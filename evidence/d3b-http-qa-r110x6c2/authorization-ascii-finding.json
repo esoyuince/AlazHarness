@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-22T21:05:45.170406+03:00",
+  "severity": "controlled input rejection robustness; no auth bypass observed",
+  "reproducer": "one loopback request Authorization header containing raw0xff",
+  "beforeStatus": 500,
+  "expectedStatus": 401,
+  "beforeSha256": "c8d8ff1b0bc2ba32f13587463b6beb738d49ba71b4d2ae4f28d2028811fe8456",
+  "proposedSha256": "586b4ca2a20f096a0a9f5a3f63ac38a86cea725af9fc1dc7a25dfb2516067b7a",
+  "change": "Reject nonASCII Authorization before UTF8 encoding; retains constant-time credential comparison and existing routes",
+  "otherWorktreeModified": false,
+  "productionOrCanonicalChanged": false,
+  "sourceTested": "own fixed snapshot; integration pending"
+}

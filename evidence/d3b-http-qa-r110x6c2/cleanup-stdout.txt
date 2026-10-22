@@ -1,0 +1,1 @@
+{"result": "CLEAN", "ownTemporaryPaths": [], "ownHttpTestProcesses": [], "unreadableSameUidProcesses": [], "rootUsed": false, "labTerminated": false, "otherTaskTouched": false}

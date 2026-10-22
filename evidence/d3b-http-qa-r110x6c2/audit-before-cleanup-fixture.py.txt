@@ -1,0 +1,294 @@
+"""Independent real-aiohttp audit of an explicitly pinned readiness module.
+
+Storage/profile/identity boundaries are explicit doubles. Network parsing,
+listener bind, keepalive closure and cleanup use real aiohttp sockets. No real
+Hermes/model/provider or external address is reached. Accepts trusted LOCAL
+source paths only; no downloaded source, arbitrary HTTP target or dynamic code.
+"""
+from __future__ import annotations
+import argparse
+import asyncio
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import socket
+import sys
+import threading
+import time
+from types import SimpleNamespace
+import unittest
+from unittest.mock import patch
+
+ROOT=Path(__file__).resolve().parents[2]
+TOKEN='7b'*32  # deterministic synthetic fixture, never a production credential
+runtime=None
+
+class StorageDouble:
+    def __init__(self):
+        self.stage='NEW';self.events=[];self.start_error=None;self.close_error=None
+        self.identity_bad=False;self.writer=False;self.verify_error=None
+        self._held=object();self._mount=object()
+        self.native_state=SimpleNamespace(_conn=object())
+        self.native_replay=SimpleNamespace(_conn=object())
+        self.want=SimpleNamespace(epoch=1)
+        self.service=None
+    def status(self):
+        return {'state':self.stage,'storageReady':self.stage=='VERIFIED',
+                'callerLeaseMayBeReleased':self.stage=='CLOSED'}
+    def start(self):
+        self.events.append('storage.start')
+        if self.start_error:
+            self.stage='FAILED';raise self.start_error
+        self.stage='VERIFIED';return self.status()
+    def _owned(self):
+        if self.identity_bad:raise RuntimeError('synthetic_ownership_lost')
+    def _drained(self):
+        if self.writer:raise RuntimeError('synthetic_active_writer')
+    @property
+    def state_store(self):self._owned();return self.native_state
+    @property
+    def replay_store(self):self._owned();return self.native_replay
+    @property
+    def expectation(self):self._owned();return self.want
+    def close(self):
+        self.events.append('storage.close')
+        if self.service is not None and not self.service._http_gone:
+            raise AssertionError('store_closed_before_http_drain')
+        if self.close_error:raise self.close_error
+        self.stage='CLOSED'
+
+class RealHttpAudit(unittest.IsolatedAsyncioTestCase):
+    async def asyncSetUp(self):
+        self.owned=[];self.trace=[]
+        self.patches=[patch.object(runtime.startup,'NativeStoreStartup',StorageDouble),
+            patch.object(runtime.startup.live.profiles,'_actor',side_effect=lambda:(os.getpid(),23001,23003,threading.get_ident())),
+            patch.object(runtime.startup.live,'verify_live_stores',side_effect=self.verify)]
+        for p in self.patches:p.start()
+        self.addCleanup(lambda:[p.stop() for p in reversed(self.patches)])
+    def verify(self,held,mount,state,replay,expected):
+        self.trace.append('live.check')
+        for service,storage in self.owned:
+            if storage._held is held and storage.verify_error:raise storage.verify_error
+        return {'state':'NATIVE_STORE_CONNECTIONS_VERIFIED','epochObserved':expected.epoch,
+                'runtimeAdmissionAuthorized':False}
+    def new(self,port=0):
+        storage=StorageDouble();service=runtime.StorageReadinessHttp(storage,token=TOKEN,port=port)
+        storage.service=service;self.owned.append((service,storage));return service,storage
+    async def started(self):
+        service,storage=self.new();await service.start();return service,storage
+    async def asyncTearDown(self):
+        for service,storage in reversed(self.owned):
+            # Test-owned abnormal-path cleanup, NOT another product start/retry.
+            # Any deliberately injected cleanup exception is restored first.
+            if service._runner is not None:
+                restore=getattr(service,'_qa_restore_cleanup',None)
+                if restore is not None:service._runner.cleanup=restore
+                await service._runner.cleanup()
+            if getattr(service,'_qa_external_socket',None) is not None:
+                service._qa_external_socket.close()
+    async def request(self,service,path='/health/ready',*,method='GET',headers=(),body=b'',auth=True,host=None):
+        port=service.status()['port']
+        reader,writer=await asyncio.wait_for(asyncio.open_connection('127.0.0.1',port),2)
+        try:
+            rows=[f'{method} {path} HTTP/1.1',f'Host: {host or "127.0.0.1:"+str(port)}']
+            if auth:rows.append('Authorization: Bearer '+TOKEN)
+            rows += list(headers)
+            if body and not any(n.lower().startswith('content-length:') for n in headers):rows.append('Content-Length: '+str(len(body)))
+            packet=('\r\n'.join(rows)+'\r\n\r\n').encode()+body
+            writer.write(packet);await writer.drain()
+            raw=await asyncio.wait_for(reader.readuntil(b'\r\n\r\n'),3)
+            lines=raw.decode('iso-8859-1').split('\r\n');status=int(lines[0].split()[1]);parsed={}
+            for line in lines[1:]:
+                if ':' in line:
+                    k,v=line.split(':',1);parsed.setdefault(k.lower(),[]).append(v.strip())
+            length=int(parsed.get('content-length',['0'])[0])
+            payload=await asyncio.wait_for(reader.readexactly(length),3) if length and method!='HEAD' else b''
+            end=await asyncio.wait_for(reader.read(1),3)
+            return {'status':status,'headers':parsed,'body':payload,'connectionClosed':end==b''}
+        finally:
+            writer.close();await writer.wait_closed()
+    async def assert_unbound(self,port):
+        try:reader,writer=await asyncio.wait_for(asyncio.open_connection('127.0.0.1',port),.4)
+        except OSError:return
+        else:writer.close();await writer.wait_closed();self.fail('owned listener remained reachable')
+    def assert_no_auth_leak(self,reply):
+        self.assertNotIn(TOKEN.encode(),reply['body']);self.assertNotIn(TOKEN,str(reply['headers']))
+    async def test_authenticated_ready_is_storage_only_and_not_cacheable(self):
+        s,st=await self.started();r=await self.request(s);self.assertEqual(r['status'],200)
+        body=json.loads(r['body']);self.assertEqual(body['scope'],'native_storage_readiness_only')
+        self.assertIs(body['storageReady'],True);self.assertIs(body['runtimeAdmissionAuthorized'],False)
+        self.assertIs(body['agentRoutesEnabled'],False);self.assertTrue(r['connectionClosed'])
+        self.assertEqual(r['headers']['cache-control'],['no-store']);self.assert_no_auth_leak(r)
+        self.assertEqual(st.events,['storage.start']);self.assertEqual(len(self.trace),2)
+    async def test_liveness_does_not_inspect_or_claim_store_readiness(self):
+        s,st=await self.started();before=len(self.trace);r=await self.request(s,'/health/live')
+        self.assertEqual(r['status'],200);self.assertEqual(len(self.trace),before)
+        b=json.loads(r['body']);self.assertEqual(b['scope'],'process_liveness_only');self.assertNotIn('storageReady',b)
+    async def test_missing_wrong_and_query_credentials_never_probe(self):
+        s,st=await self.started();before=len(self.trace)
+        for path,headers in (('/health/ready',()),('/health/ready',('Authorization: Bearer wrong',)),('/health/ready?token='+TOKEN,())):
+            with self.subTest(path=path,header=bool(headers)):
+                r=await self.request(s,path,headers=headers,auth=False)
+                self.assertEqual(r['status'],401);self.assert_no_auth_leak(r)
+        self.assertEqual(len(self.trace),before)
+    async def test_duplicate_authorization_same_or_mixed_is_rejected(self):
+        s,st=await self.started();before=len(self.trace)
+        for v in ('Bearer '+TOKEN,'Bearer wrong'):
+            r=await self.request(s,headers=('Authorization: '+v,));self.assertEqual(r['status'],401)
+        self.assertEqual(len(self.trace),before)
+    async def test_rebinding_host_origin_and_duplicate_host_are_rejected(self):
+        s,st=await self.started();before=len(self.trace)
+        for host in ('example.invalid','localhost:'+str(s._bound_port),'127.0.0.1:1'):
+            self.assertEqual((await self.request(s,host=host))['status'],400)
+        self.assertEqual((await self.request(s,headers=('Origin: https://example.invalid',)))['status'],400)
+        self.assertEqual((await self.request(s,headers=('Host: 127.0.0.1:'+str(s._bound_port),)))['status'],400)
+        self.assertEqual(len(self.trace),before)
+    async def test_body_or_chunked_requests_do_not_run_store_check(self):
+        s,st=await self.started();before=len(self.trace)
+        r=await self.request(s,body=b'x');self.assertEqual(r['status'],400)
+        r=await self.request(s,headers=('Transfer-Encoding: chunked',),body=b'0\r\n\r\n')
+        self.assertIn(r['status'],(400,413));self.assertEqual(len(self.trace),before)
+    async def test_methods_never_reach_state_changing_routes(self):
+        s,st=await self.started();before=len(self.trace)
+        for method in ('POST','PUT','DELETE','PATCH','OPTIONS','HEAD'):
+            with self.subTest(method=method):self.assertEqual((await self.request(s,method=method))['status'],405)
+        self.assertEqual(len(self.trace),before)
+    async def test_no_model_jobs_sessions_or_encoded_route_alias(self):
+        s,st=await self.started();before=len(self.trace)
+        for path in ('/v1/runs','/v1/chat/completions','/api/jobs','/api/sessions','/health/ready/','/health/ready?x=1','/health/%72eady','/p/default/health/ready','//health/ready'):
+            with self.subTest(path=path):self.assertEqual((await self.request(s,path))['status'],404)
+        self.assertEqual(len(self.trace),before)
+    async def test_revocation_is_permanent_even_after_dependency_repair(self):
+        s,st=await self.started();st.verify_error=RuntimeError('fixture_sensitive_detail')
+        r=await self.request(s);self.assertEqual(r['status'],503);self.assertNotIn(b'fixture_sensitive_detail',r['body'])
+        count=len(self.trace);st.verify_error=None
+        self.assertEqual((await self.request(s))['status'],503);self.assertEqual(len(self.trace),count)
+        self.assertEqual(s.status()['state'],'REVOKED');self.assertEqual((await self.request(s,'/health/live'))['status'],200)
+    async def test_different_live_connection_revokes_before_sql_gate(self):
+        s,st=await self.started();before=len(self.trace);st.native_state._conn=object()
+        self.assertEqual((await self.request(s))['status'],503);self.assertEqual(len(self.trace),before)
+    async def test_changed_expected_epoch_revokes_without_accepting_new_epoch(self):
+        s,st=await self.started();st.want=SimpleNamespace(epoch=2)
+        self.assertEqual((await self.request(s))['status'],503);self.assertTrue(s.status()['readinessRevoked'])
+    async def test_native_ownership_loss_never_reports_ready(self):
+        s,st=await self.started();st.identity_bad=True
+        self.assertEqual((await self.request(s))['status'],503)
+    async def test_storage_start_failure_precedes_http_import_or_bind(self):
+        s,st=self.new();st.start_error=RuntimeError('untrusted failure')
+        with patch.object(runtime,'_web',side_effect=AssertionError('http constructed')) as factory:
+            with self.assertRaises(runtime.ReadinessRejected):await s.start()
+        factory.assert_not_called();self.assertIsNone(s._runner);self.assertEqual(s.status()['state'],'FAILED')
+        await s.close();self.assertEqual(st.events,['storage.start','storage.close'])
+    async def test_prebind_observation_failure_never_constructs_http(self):
+        s,st=self.new();st.verify_error=RuntimeError('bad live store')
+        with patch.object(runtime,'_web',side_effect=AssertionError('http constructed')) as factory:
+            with self.assertRaises(runtime.ReadinessRejected):await s.start()
+        factory.assert_not_called();await s.close()
+    async def test_no_second_start_or_automatic_epoch_retry(self):
+        s,st=await self.started()
+        with self.assertRaises(runtime.ReadinessRejected):await s.start()
+        self.assertEqual(st.events.count('storage.start'),1)
+        await s.close()
+        with self.assertRaises(runtime.ReadinessRejected):await s.start()
+        self.assertEqual(st.events.count('storage.start'),1)
+    async def test_bound_port_conflict_does_not_displace_existing_listener(self):
+        incumbent=socket.socket();incumbent.bind(('127.0.0.1',0));incumbent.listen(2)
+        s,st=self.new(incumbent.getsockname()[1]);s._qa_external_socket=incumbent
+        with self.assertRaises(runtime.ReadinessRejected):await s.start()
+        self.assertEqual(s.status()['state'],'FAILED');self.assertNotIn('storage.close',st.events)
+        await s.close();self.assertEqual(incumbent.getsockname()[1],s._requested_port)
+        self.assertEqual(st.events,['storage.start','storage.close'])
+    async def test_normal_close_drains_http_before_stores(self):
+        s,st=await self.started();port=s._bound_port;result=await s.close()
+        self.assertEqual(result['state'],'CLOSED');self.assertIs(result['callerLeaseMayBeReleased'],True)
+        self.assertEqual(s._authorization,b'');self.assertEqual(st.events,['storage.start','storage.close'])
+        await self.assert_unbound(port);await s.close();self.assertEqual(st.events.count('storage.close'),1)
+    async def test_storage_close_refusal_does_not_reopen_listener(self):
+        s,st=await self.started();port=s._bound_port;st.close_error=RuntimeError('active transaction')
+        with self.assertRaises(runtime.ReadinessRejected):await s.close()
+        self.assertEqual(s.status()['state'],'HTTP_CLOSED');await self.assert_unbound(port)
+        self.assertIs(s.status()['callerLeaseMayBeReleased'],False)
+        st.close_error=None;await s.close();self.assertEqual(s.status()['state'],'CLOSED')
+    async def test_uncertain_http_cleanup_retains_stores_and_forbids_retry(self):
+        s,st=await self.started();original=s._runner.cleanup;s._qa_restore_cleanup=original;calls=[]
+        async def fail():calls.append('cleanup');raise RuntimeError('synthetic_cleanup_unknown')
+        s._runner.cleanup=fail
+        with self.assertRaises(runtime.ReadinessRejected):await s.close()
+        self.assertEqual(s.status()['state'],'CLOSE_UNKNOWN');self.assertNotIn('storage.close',st.events)
+        with self.assertRaises(runtime.ReadinessRejected):await s.close()
+        self.assertEqual(calls,['cleanup']);self.assertTrue(s.status()['readinessRevoked'])
+        self.assertEqual((await self.request(s))['status'],503)
+    async def test_cancellation_during_cleanup_never_closes_stores(self):
+        s,st=await self.started();original=s._runner.cleanup;s._qa_restore_cleanup=original
+        entered=asyncio.Event();gate=asyncio.Event()
+        async def held():entered.set();await gate.wait()
+        s._runner.cleanup=held
+        task=asyncio.create_task(s.close());await asyncio.wait_for(entered.wait(),1)
+        self.assertEqual(s.status()['state'],'STOPPING')
+        self.assertEqual((await self.request(s))['status'],503)
+        task.cancel()
+        with self.assertRaises(asyncio.CancelledError):await task
+        self.assertEqual(s.status()['state'],'CLOSE_UNKNOWN');self.assertNotIn('storage.close',st.events)
+    async def test_cancellation_during_runner_setup_is_explicit_failure(self):
+        s,st=self.new();from aiohttp import web
+        original=web.AppRunner.setup;entered=asyncio.Event();gate=asyncio.Event()
+        async def wait_setup(runner):entered.set();await gate.wait();await original(runner)
+        with patch.object(web.AppRunner,'setup',wait_setup):
+            task=asyncio.create_task(s.start());await asyncio.wait_for(entered.wait(),1);task.cancel()
+            with self.assertRaises(asyncio.CancelledError):await task
+        self.assertEqual(s.status()['state'],'FAILED');self.assertNotIn('storage.close',st.events)
+        await s.close();self.assertEqual(st.events,['storage.start','storage.close'])
+    async def test_closed_storage_cannot_become_ready_from_old_stage(self):
+        s,st=await self.started();st.stage='CLOSED'
+        self.assertEqual((await self.request(s))['status'],503)
+    async def test_authentication_rejection_never_echoes_secret(self):
+        s,st=await self.started()
+        r=await self.request(s,auth=False,headers=('Authorization: Bearer '+TOKEN+'x',))
+        self.assertEqual(r['status'],401);self.assert_no_auth_leak(r)
+    async def test_header_overflow_is_parser_refusal_not_live_probe(self):
+        s,st=await self.started();before=len(self.trace)
+        r=await self.request(s,headers=('X-Owned-Test: '+'x'*2050,))
+        self.assertEqual(r['status'],400);self.assertEqual(len(self.trace),before)
+    async def test_untrusted_constructor_inputs_have_no_effect(self):
+        for kwargs in ({'token':'x'},{'token':TOKEN,'port':True},{'token':TOKEN,'port':-1},{'token':TOKEN,'port':65536}):
+            with self.subTest(kwargs=sorted(kwargs)),self.assertRaises(runtime.ReadinessRejected):
+                runtime.StorageReadinessHttp(StorageDouble(),**kwargs)
+        with self.assertRaises(runtime.ReadinessRejected):runtime.StorageReadinessHttp(object(),token=TOKEN)
+
+
+def main():
+    global runtime
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--runtime',type=Path,required=True)
+    parser.add_argument('--expected-sha256',required=True)
+    parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args();path=args.runtime.resolve(strict=True)
+    raw=path.read_bytes();digest=hashlib.sha256(raw).hexdigest()
+    if digest!=args.expected_sha256:raise ValueError('runtime_source_changed_before_test')
+    if args.output.exists():raise ValueError('output_must_be_new')
+    args.output.mkdir(parents=True)
+    sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+    spec=importlib.util.spec_from_file_location('r110x_runtime_snapshot',path)
+    runtime=importlib.util.module_from_spec(spec);sys.modules[spec.name]=runtime;spec.loader.exec_module(runtime)
+    import aiohttp
+    suite=unittest.defaultTestLoader.loadTestsFromTestCase(RealHttpAudit)
+    started=time.monotonic()
+    with (args.output/'unittest.txt').open('x',encoding='utf-8',newline='\n') as log:
+        result=unittest.TextTestRunner(stream=log,verbosity=2).run(suite)
+    stable=path.read_bytes()==raw
+    report={'result':'PASS_HTTP_ONLY_EXPLICIT_STORAGE_DOUBLES' if result.wasSuccessful() and stable else 'FAIL',
+        'total':result.testsRun,'passed':result.testsRun-len(result.errors)-len(result.failures)-len(result.skipped),
+        'failures':len(result.failures),'errors':len(result.errors),'skipped':len(result.skipped),
+        'failureIds':[t.id() for t,_ in result.failures],'errorIds':[t.id() for t,_ in result.errors],
+        'runtimeSha256':digest,'runtimeSourceUnchanged':stable,'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'aiohttpVersion':aiohttp.__version__,'elapsedSeconds':round(time.monotonic()-started,3),
+        'actualLoopbackHttp':True,'nativeStorageTested':False,'profileAndIdentityDoubled':True,
+        'fullConfinementTested':False,'providerCalls':0,'fullD3BAccepted':False}
+    with (args.output/'result.json').open('x',encoding='utf-8',newline='\n') as f:json.dump(report,f,indent=2);f.write('\n')
+    print(json.dumps(report),flush=True)
+    if not result.wasSuccessful():print((args.output/'unittest.txt').read_text(encoding='utf-8')[-14000:],flush=True)
+    return 0 if result.wasSuccessful() and stable else 1
+
+if __name__=='__main__':raise SystemExit(main())

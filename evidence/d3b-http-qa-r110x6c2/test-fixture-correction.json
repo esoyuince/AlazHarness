@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-22T21:03:55.079691+03:00",
+  "sourceBefore": "11c8ad3754edca77df4d52d09e0b7b162b91de4c042f65febadc8e1c9350cb67",
+  "sourceAfter": "c8a743949e2de89ef5a007935b9244811bc4dd5431df7e3ac2f82d005e7d1309",
+  "firstRun": "windows-001",
+  "firstFailures": "Two tests had body+teardown errors because aiohttp AppRunner has slotted read-only instance method; four error events represent two unsuccessful methods. Original passed21 counter was raw-event subtraction;23 distinct methods passed.",
+  "fix": "Patch class cleanup in test only; restore before real owned-runner cleanup. Preserve failure assertions. Count unique failed methods. Exercise actual nonempty chunked body without accidental Content-Length.",
+  "runtimeProductChanged": false,
+  "originalOutputsRetained": true
+}

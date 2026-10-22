@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2700,
+  "discovered": 2700,
+  "passed": 2677,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 416,
+  "sourcesUnchanged": true,
+  "priorSourceCountUnchanged": 414,
+  "elapsedSeconds": 296.83,
+  "at": "2026-10-22T21:14:10.446652+03:00",
+  "scope": "82a8c3e plus independent realHTTP QA executable and offline receipts; snapshot candidate not product-integrated",
+  "actualHttpMethodsInThisStandardRun": 0
+}

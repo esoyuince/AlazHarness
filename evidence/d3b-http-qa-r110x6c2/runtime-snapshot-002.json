@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-22T21:06:45.177321+03:00",
+  "sourceSha256": "9612d3c98c74a070fce1ebf2c14a79bdb1c2274c5c7e2b66458352ebd19c4b8d",
+  "candidateChangedByOtherTask": true,
+  "ownCandidatePatchAppliedToOtherWorktree": false,
+  "difference": "same ASCII rejection plus empty-authorization guard and ASCII compare",
+  "sourcePath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-http-readiness-h110e\\packages\\claw-hermes\\gateway_http_readiness.py"
+}

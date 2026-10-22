@@ -1,0 +1,38 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,subprocess,sys,tempfile
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+data=json.load(sys.stdin);files=data['files'];assert 1<len(files)<200
+assert sum(len(v['text'].encode()) for v in files.values())<6000000
+with tempfile.TemporaryDirectory(prefix='alaz-r110x6c2-http-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,v in files.items():
+  p=PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts and str(p)==name
+  assert p.parts[0] in ('dependencies','packages','scripts') and name.endswith('.py')
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ code="""from pathlib import Path
+import runpy,sys
+root=Path(sys.argv[1]);digest=sys.argv[2]
+sys.path.insert(0,str(root/'dependencies'))
+def audit(event,args):
+ if event=='socket.connect' and isinstance(args[1],tuple):
+  if args[1][0]!='127.0.0.1':raise PermissionError('qa_loopback_only')
+sys.addaudithook(audit)
+sys.argv=[str(root/'scripts/qa/r110x_http_audit.py'),'--runtime',str(root/'packages/claw-hermes/gateway_http_readiness.py'),'--expected-sha256',digest,'--output',str(root/'audit-output')]
+runpy.run_path(sys.argv[0],run_name='__main__')
+"""
+ env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8','AIOHTTP_NO_EXTENSIONS':'1',
+      'MULTIDICT_NO_EXTENSIONS':'1','YARL_NO_EXTENSIONS':'1','FROZENLIST_NO_EXTENSIONS':'1','PROPCACHE_NO_EXTENSIONS':'1'}
+ r=subprocess.run([sys.executable,'-I','-B','-c',code,str(root),data['runtimeSha256']],cwd=root,env=env,capture_output=True,text=True,timeout=100)
+ resultfile=root/'audit-output/result.json';log=root/'audit-output/unittest.txt'
+ report={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'testResult':json.loads(resultfile.read_text()) if resultfile.exists() else None,
+         'testLog':log.read_text() if log.exists() else None,'sourceSha256':{n:v['sha256'] for n,v in files.items()},
+         'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),
+         'uid':os.getuid(),'gid':os.getgid(),'rootUsed':False,'packageInstallation':False,'compiledExtensionsTransferred':False,
+         'nativeStorageDoubled':True,'fullConfinementTested':False}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True)
+raise SystemExit(0 if report['exitCode']==0 and report['sourcesUnchanged'] and report['temporaryRootRemoved'] else 1)

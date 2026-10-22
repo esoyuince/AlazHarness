@@ -1,0 +1,11 @@
+test_actual_malformed_header_failure_then_narrow_rejection (test_independent_http_receipts_r110x.IndependentHttpReceipts.test_actual_malformed_header_failure_then_narrow_rejection) ... ok
+test_dependency_transport_matches_independently_verified_records (test_independent_http_receipts_r110x.IndependentHttpReceipts.test_dependency_transport_matches_independently_verified_records) ... ok
+test_every_case_has_unique_pass_in_both_logs (test_independent_http_receipts_r110x.IndependentHttpReceipts.test_every_case_has_unique_pass_in_both_logs) ... ok
+test_initial_harness_errors_retained_not_product_bugs (test_independent_http_receipts_r110x.IndependentHttpReceipts.test_initial_harness_errors_retained_not_product_bugs) ... ok
+test_same_pinned_runtime_and_audit_in_both_platforms (test_independent_http_receipts_r110x.IndependentHttpReceipts.test_same_pinned_runtime_and_audit_in_both_platforms) ... ok
+test_twenty_nine_real_http_cases_not_native_store_acceptance (test_independent_http_receipts_r110x.IndependentHttpReceipts.test_twenty_nine_real_http_cases_not_native_store_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.146s
+
+OK

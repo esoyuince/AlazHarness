@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-22T21:01:26.103616+03:00",
+  "sourcePath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-http-readiness-h110e\\packages\\claw-hermes\\gateway_http_readiness.py",
+  "snapshotSha256": "c8d8ff1b0bc2ba32f13587463b6beb738d49ba71b4d2ae4f28d2028811fe8456",
+  "snapshotBytes": 9966,
+  "executionScope": "independent tests of fixed snapshot; live storage/profile gate explicitly doubled; real aiohttp HTTP transport",
+  "sourceWorktreeModified": false
+}

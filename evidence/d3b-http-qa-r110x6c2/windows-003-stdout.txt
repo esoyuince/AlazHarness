@@ -1,0 +1,51 @@
+{"result": "FAIL", "total": 29, "passed": 28, "failures": 1, "errors": 0, "skipped": 0, "failureIds": ["__main__.RealHttpAudit.test_non_utf8_authorization_rejects_as_auth_not_server_error"], "errorIds": [], "runtimeSha256": "c8d8ff1b0bc2ba32f13587463b6beb738d49ba71b4d2ae4f28d2028811fe8456", "runtimeSourceUnchanged": true, "qaSha256": "f5889a176fa16dcbc5fc6d31ff3bb9c61092c128e90b983b764aaf040adcad79", "aiohttpVersion": "3.14.3", "elapsedSeconds": 2.635, "actualLoopbackHttp": true, "nativeStorageTested": false, "profileAndIdentityDoubled": true, "fullConfinementTested": false, "providerCalls": 0, "fullD3BAccepted": false}
+test_authenticated_ready_is_storage_only_and_not_cacheable (__main__.RealHttpAudit.test_authenticated_ready_is_storage_only_and_not_cacheable) ... ok
+test_authentication_rejection_never_echoes_secret (__main__.RealHttpAudit.test_authentication_rejection_never_echoes_secret) ... ok
+test_body_or_chunked_requests_do_not_run_store_check (__main__.RealHttpAudit.test_body_or_chunked_requests_do_not_run_store_check) ... ok
+test_bound_port_conflict_does_not_displace_existing_listener (__main__.RealHttpAudit.test_bound_port_conflict_does_not_displace_existing_listener) ... ok
+test_cancellation_during_cleanup_never_closes_stores (__main__.RealHttpAudit.test_cancellation_during_cleanup_never_closes_stores) ... ok
+test_cancellation_during_runner_setup_is_explicit_failure (__main__.RealHttpAudit.test_cancellation_during_runner_setup_is_explicit_failure) ... ok
+test_changed_expected_epoch_revokes_without_accepting_new_epoch (__main__.RealHttpAudit.test_changed_expected_epoch_revokes_without_accepting_new_epoch) ... ok
+test_closed_storage_cannot_become_ready_from_old_stage (__main__.RealHttpAudit.test_closed_storage_cannot_become_ready_from_old_stage) ... ok
+test_conflicting_framing_is_parser_refusal (__main__.RealHttpAudit.test_conflicting_framing_is_parser_refusal) ... ok
+test_different_live_connection_revokes_before_sql_gate (__main__.RealHttpAudit.test_different_live_connection_revokes_before_sql_gate) ... ok
+test_duplicate_authorization_same_or_mixed_is_rejected (__main__.RealHttpAudit.test_duplicate_authorization_same_or_mixed_is_rejected) ... ok
+test_header_overflow_is_parser_refusal_not_live_probe (__main__.RealHttpAudit.test_header_overflow_is_parser_refusal_not_live_probe) ... ok
+test_liveness_does_not_inspect_or_claim_store_readiness (__main__.RealHttpAudit.test_liveness_does_not_inspect_or_claim_store_readiness) ... ok
+test_methods_never_reach_state_changing_routes (__main__.RealHttpAudit.test_methods_never_reach_state_changing_routes) ... ok
+test_missing_wrong_and_query_credentials_never_probe (__main__.RealHttpAudit.test_missing_wrong_and_query_credentials_never_probe) ... ok
+test_more_than_maximum_headers_never_run_gate (__main__.RealHttpAudit.test_more_than_maximum_headers_never_run_gate) ... ok
+test_native_ownership_loss_never_reports_ready (__main__.RealHttpAudit.test_native_ownership_loss_never_reports_ready) ... ok
+test_no_model_jobs_sessions_or_encoded_route_alias (__main__.RealHttpAudit.test_no_model_jobs_sessions_or_encoded_route_alias) ... ok
+test_no_second_start_or_automatic_epoch_retry (__main__.RealHttpAudit.test_no_second_start_or_automatic_epoch_retry) ... ok
+test_non_utf8_authorization_rejects_as_auth_not_server_error (__main__.RealHttpAudit.test_non_utf8_authorization_rejects_as_auth_not_server_error) ... FAIL
+test_normal_close_drains_http_before_stores (__main__.RealHttpAudit.test_normal_close_drains_http_before_stores) ... ok
+test_prebind_observation_failure_never_constructs_http (__main__.RealHttpAudit.test_prebind_observation_failure_never_constructs_http) ... ok
+test_rebinding_host_origin_and_duplicate_host_are_rejected (__main__.RealHttpAudit.test_rebinding_host_origin_and_duplicate_host_are_rejected) ... ok
+test_revocation_is_permanent_even_after_dependency_repair (__main__.RealHttpAudit.test_revocation_is_permanent_even_after_dependency_repair) ... ok
+test_storage_close_refusal_does_not_reopen_listener (__main__.RealHttpAudit.test_storage_close_refusal_does_not_reopen_listener) ... ok
+test_storage_start_failure_precedes_http_import_or_bind (__main__.RealHttpAudit.test_storage_start_failure_precedes_http_import_or_bind) ... ok
+test_uncertain_http_cleanup_retains_stores_and_forbids_retry (__main__.RealHttpAudit.test_uncertain_http_cleanup_retains_stores_and_forbids_retry) ... ok
+test_unfinished_header_connection_does_not_block_clean_close (__main__.RealHttpAudit.test_unfinished_header_connection_does_not_block_clean_close) ... ok
+test_untrusted_constructor_inputs_have_no_effect (__main__.RealHttpAudit.test_untrusted_constructor_inputs_have_no_effect) ... ok
+
+======================================================================
+FAIL: test_non_utf8_authorization_rejects_as_auth_not_server_error (__main__.RealHttpAudit.test_non_utf8_authorization_rejects_as_auth_not_server_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-http-qa-r110x6c2\scripts\qa\r110x_http_audit.py", line 256, in test_non_utf8_authorization_rejects_as_auth_not_server_error
+    self.assertEqual(r['status'],401)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 500 != 401
+
+----------------------------------------------------------------------
+Ran 29 tests in 2.634s
+
+FAILED (failures=1)
+

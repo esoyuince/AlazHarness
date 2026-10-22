@@ -1,0 +1,26 @@
+{
+  "result": "FAIL",
+  "total": 25,
+  "passed": 21,
+  "failures": 0,
+  "errors": 4,
+  "skipped": 0,
+  "failureIds": [],
+  "errorIds": [
+    "__main__.RealHttpAudit.test_cancellation_during_cleanup_never_closes_stores",
+    "__main__.RealHttpAudit.test_cancellation_during_cleanup_never_closes_stores",
+    "__main__.RealHttpAudit.test_uncertain_http_cleanup_retains_stores_and_forbids_retry",
+    "__main__.RealHttpAudit.test_uncertain_http_cleanup_retains_stores_and_forbids_retry"
+  ],
+  "runtimeSha256": "c8d8ff1b0bc2ba32f13587463b6beb738d49ba71b4d2ae4f28d2028811fe8456",
+  "runtimeSourceUnchanged": true,
+  "qaSha256": "11c8ad3754edca77df4d52d09e0b7b162b91de4c042f65febadc8e1c9350cb67",
+  "aiohttpVersion": "3.14.3",
+  "elapsedSeconds": 2.172,
+  "actualLoopbackHttp": true,
+  "nativeStorageTested": false,
+  "profileAndIdentityDoubled": true,
+  "fullConfinementTested": false,
+  "providerCalls": 0,
+  "fullD3BAccepted": false
+}

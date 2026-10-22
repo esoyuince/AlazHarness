@@ -1,0 +1,23 @@
+{
+  "result": "FAIL",
+  "total": 29,
+  "passed": 28,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "failureIds": [
+    "__main__.RealHttpAudit.test_non_utf8_authorization_rejects_as_auth_not_server_error"
+  ],
+  "errorIds": [],
+  "runtimeSha256": "c8d8ff1b0bc2ba32f13587463b6beb738d49ba71b4d2ae4f28d2028811fe8456",
+  "runtimeSourceUnchanged": true,
+  "qaSha256": "f5889a176fa16dcbc5fc6d31ff3bb9c61092c128e90b983b764aaf040adcad79",
+  "aiohttpVersion": "3.14.3",
+  "elapsedSeconds": 2.635,
+  "actualLoopbackHttp": true,
+  "nativeStorageTested": false,
+  "profileAndIdentityDoubled": true,
+  "fullConfinementTested": false,
+  "providerCalls": 0,
+  "fullD3BAccepted": false
+}

@@ -1,0 +1,1 @@
+{"aiohttpVersion": "3.14.3", "path": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\__init__.py"}

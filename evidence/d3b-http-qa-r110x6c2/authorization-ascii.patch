@@ -1,0 +1,11 @@
+--- a/packages/claw-hermes/gateway_http_readiness.py
++++ b/packages/claw-hermes/gateway_http_readiness.py
+@@ -135,7 +135,7 @@
+         try:self._owned()
+         except Exception:return self._response(503,{'status':'unavailable'})
+         values=request.headers.getall('Authorization',[])
+-        if (len(values)!=1 or not isinstance(values[0],str) or len(values[0])>128
++        if (len(values)!=1 or not isinstance(values[0],str) or not values[0].isascii() or len(values[0])>128
+                 or not hmac.compare_digest(values[0].encode('utf-8'),self._authorization)):
+             return self._response(401,{'status':'unauthorized'})
+         hosts=request.headers.getall('Host',[])
