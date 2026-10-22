@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2805,
+  "discovered": 2805,
+  "passed": 2782,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 429,
+  "sourcesUnchanged": true,
+  "nativePatchUnchanged": true,
+  "originalSourceCountUnchanged": 427,
+  "elapsedSeconds": 229.081,
+  "at": "2026-10-23T00:12:31.292057+03:00",
+  "scope": "response borrowed-state patch artifact and7 offline proofs on31abe58; existing runtime pin unchanged, no API adapter integration inferred"
+}

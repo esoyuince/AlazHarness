@@ -31,3 +31,13 @@ pin before that acceptance. Maincc7ceba/no push/CI/production edits; fullD3B OPE
 ### Complementary adapter source review
 
 B112X9 current native adapter00427/27 PASS with all three real native stores, no new connect while borrowing/selecting/draining. Independently applied both patch files in a new export of immutableeb75627, exact five output hashes match its actual imports and our24-method proofs. This is source equality, not a new native adapter run. One optional urllib3 IPv6 capability bind was BLOCKED during import and retained in evidence; no new network attempts during test cases, no agent listener. Parallel branch still uncommitted at review, so no merge or whole-harness PASS inferred. Own response fork e19a945 and harness4d21e80 remain clean-source deliverables; final combined regression required.
+
+
+### Current branch complete regression started
+
+The adapter branch remains uncommitted, so do not block or infer combined acceptance. Run a fresh complete harness suite for this independently qualified response patch now, request a112f6c4-540e-44db-934b-e97f28110026.429 source files plus exact native patch hash frozen;427 original sources unchanged. No source edits while pending. The run is NOT a combined API adapter suite, not a native pytest suite and does not apply patches to installed runtime. If complementary code later becomes terminal, preserve branches and qualify union separately.
+
+
+### Response branch full regression terminal
+
+Request026 exit0:2805total=2782PASS/23SKIP/0ERROR/0FAIL;429source hashes and nativepatch exact. Complementary adapter now committed cbcd960 and nativefeaturecc16c10 descends from our e19a945;309 actual native imports independently reread against featureGit. No new listener/pin activation. Combined integration next; source manifests and previous reports preserved.

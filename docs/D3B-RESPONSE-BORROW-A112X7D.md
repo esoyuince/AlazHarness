@@ -87,3 +87,7 @@ are unchanged. Full D3B remains open.
 ## Complementary adapter review
 
 The exact B112X9 adapter004 proof reports27/27 actual-native constructor/selection/close methods. Sequential fresh apply of both patches reproduces its five imported modified-module hashes. Zero extra SQLite connects occur inside the watched borrow/selection/drain boundaries. One optional urllib3 IPv6 feature probe was refused during import, not a provider call or permission expansion; no new network attempts during tests. Original failures and this denied probe are retained by that task. This review did not rerun the native adapter or accept its pending standard regression/commit. Native listener remains explicitly refused.
+
+## Complete branch regression
+
+Fresh Windows2805=2782PASS/23SKIP/0ERROR/0FAIL, exit0;429 source hashes stable and exact native patch unchanged. All427 original files unchanged. This branch result replaces the earlier pending classification, not the original logs; it does NOT include the separate adapter branch. Native24/24 platform repeats remain separate from the7 offline standard-suite members.
