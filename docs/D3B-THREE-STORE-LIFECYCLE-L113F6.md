@@ -156,3 +156,7 @@ evidence files and17 qualified cold-parent evidence files are preserved.
 Native002 is separately exact-source matched:9 target executions/83 overlapping
 checks, no full namespace/root/mount/API activation claim. Static-final.txt is
 the final local repository gate; no remote CI result is inferred.
+
+## Canonical development delivery
+
+Tested source commit `9d383cf506dbb516b052d5b266c0562a2628e9f9`, review-preserving merge `02e5d24b737c4613e8c076422b3039275de230f7`, fast-forward from `a3951d764df291bebbf20f0452119a3d461d8832` into `alaz/d3b-principal-launch-21oct`. All446 tested source/config/test hashes and both patches remain exact. Installed native stays `eb75627faf532fa6ffbdae59a0d14b0b385fc780`; no listener or source-pin activation. Final delivery is documentation/static only, not another native or full namespace run. Current status.md is the continuation.
