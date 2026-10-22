@@ -30,3 +30,8 @@ port-conflict case; do not label that run PASS. Our nonconfined realHTTP success
 does not substitute. Full agent API needs borrowed-store/ResponseStore ownership
 and healthy-busy versus quiescent-readiness policy; all model/work routes closed.
 Maincc7ceba/no push/CI/config/production/defaultUbuntu edits. FullD3B OPEN.
+
+
+### Latest MIME-qualified candidate verification
+
+Own QA commit447212a retained. H110E runtime7fde274 now initializes optional MIME mappings without broadening file grants; exact new snapshot retested29/29Windows+29/29Linux. Supplementary records mime-qualified/; prior9612 source proofs remain historical. Independently read H110Enative003:55/55 predicates, terminal0, source hashes exact and tempclean; this task did not repeat that native run. H110E complete regression still in progress, not assumedPASS. Own416 source files unchanged; do not modify/merge parallel pending work.

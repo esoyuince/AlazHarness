@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-22T21:16:20.565870+03:00",
+  "runtimeSha256": "7fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1",
+  "qaSourceUnchangedSinceOwnFull": true,
+  "windowsRealHttpCases": 29,
+  "linuxRealHttpCases": 29,
+  "externalNativeReceiptSha256": "b3c451170c8e62c8bf9099908bb249a421c15a096d00ea9354dad79b022a1464",
+  "externalNativeResult": "PASS_NATIVE_STORAGE_READINESS_HTTP",
+  "externalNativePredicates": 55,
+  "externalNativeSourcesMatchCurrentFiles": true,
+  "externalNativeRunRepeatedHere": false,
+  "externalNativeRootUsed": false,
+  "externalNativeFullMountNetworkIsolationTested": false,
+  "externalNativeHermesAdapterStarted": false,
+  "modelOrProviderCalls": 0,
+  "parallelWorktreeChangedByThisTask": false,
+  "externalFullRegressionState": "in progress/not yet accepted by this verification"
+}

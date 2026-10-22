@@ -89,3 +89,7 @@ The current live-store check is intentionally quiescent: pending admissions, run
 ## Terminal independent branch result
 
 Fresh fullWindows2700=2677PASS/23SKIP/0ERROR/0FAIL, exit0. All416 source hashes stable; all414 baseline source files unchanged. The6 offline checks are part of that total. The29 real-wire methods were run separately with actualaiohttp on each platform and are not full-suite/native Gateway methods. Local static follows in static-final.txt; no remote CI or product publication is implied.
+
+## Current MIME-qualified runtime supplement
+
+Source7fde274 (after local MIME seed fix) separately passes the unchanged29-method real-wire audit on Windows and Linux. Original9612 proof remains intact. H110E native003 was independently parsed/source-matched:55 overlapping native predicates and cleanup pass, ordinary UID, no full mount/network isolation or native Hermes API adapter claim. Its raw receipt hash is recorded in latest-runtime-verification.json; that native execution was not repeated by this QA task. Pending H110E full regression still requires its own terminal result before integration.

@@ -1,0 +1,21 @@
+{
+  "result": "PASS_HTTP_ONLY_EXPLICIT_STORAGE_DOUBLES",
+  "total": 29,
+  "passed": 29,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "failureIds": [],
+  "errorIds": [],
+  "runtimeSha256": "7fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1",
+  "runtimeSourceUnchanged": true,
+  "qaSha256": "f5889a176fa16dcbc5fc6d31ff3bb9c61092c128e90b983b764aaf040adcad79",
+  "aiohttpVersion": "3.14.3",
+  "elapsedSeconds": 2.718,
+  "actualLoopbackHttp": true,
+  "nativeStorageTested": false,
+  "profileAndIdentityDoubled": true,
+  "fullConfinementTested": false,
+  "providerCalls": 0,
+  "fullD3BAccepted": false
+}
