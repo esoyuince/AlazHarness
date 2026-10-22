@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-22T21:29:27.721592+03:00",
+  "testedMerge": "27561bd6e4070150c78d3ad2ae1ffda96d4aadbc",
+  "canonicalBefore": "82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "transfer": "fast-forward only",
+  "sourceCount": 420,
+  "allSourceHashesMatchFullNativeAndWireEvidence": true,
+  "fullWindows": {
+    "total": 2735,
+    "passed": 2712,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "original414SourcesUnchanged": true,
+  "parentEvidenceBlobsPreserved": 105,
+  "rootStatusSha256Before": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "nativeTrialRepeatedByDelivery": false,
+  "httpScope": "authenticated storage/process diagnostics only,127.0.0.1",
+  "fullMountNetworkIsolationForHttpTested": false,
+  "nativeHermesHttpAdapterStarted": false,
+  "modelWorkRoutesEnabled": false,
+  "providerCalls": 0,
+  "fullD3BAccepted": false,
+  "mainChanged": false,
+  "pushed": false,
+  "next": "qualify same readiness path under full canonical isolation; separately design native borrowed-store/response-state ownership and healthy-busy readiness before enabling work routes; then live broker ledger/dummy-provider send/accounting."
+}

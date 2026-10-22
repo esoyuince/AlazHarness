@@ -1,41 +1,62 @@
 # AlazHarness — status
 
-## D3B-HTTP-JOINT-J110X6C2 — SCOPED PASS; CANONICAL DELIVERY PENDING
+## D3B-HTTP-JOINT-J110X6C2 — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
-Branch alaz/d3b-http-joint-j110x6c2; worktree scratch/worktrees/d3b-http-joint-j110x6c2.
-Join terminalH110E single StorageReadinessHttp runtime with independent R110X6C2
-wire/lifecycle QA. No second adapter/parser/store owner. Exact parent commits,
-source counts and prior full results in evidence/d3b-http-joint-j110x6c2/inputs.json.
-Both prior full handoffs archived byte-preserved under docs/status-history/.
-Only status.md conflict; original product/QA code and evidence unchanged.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested merge27561bd6e4070150c78d3ad2ae1ffda96d4aadbc is fast-forward promoted.
+Original H110E product and R110X6C2 QA branches/histories retained. This final
+delivery changes docs/static receipts only, not420 qualified source files.
 
-H110E actual native003:55 overlapping checks, real native A109+aiohttp under
-finalexec/Landlock, NO full mount/network projection or native Hermes API adapter.
-Independent29 realHTTP cases pass Windows/Linux with storage/profile DOUBLES;
-MIME-qualified runtime hash7fde274 identical. Malformed UTF8 auth500 failure
-and original fixes preserved. All work/task/model routes disabled. Readiness
-is diagnostic/storage-only, not dispatch/paired recovery/fullD3B authorization.
+### One selected product path
 
-Next exact-source/evidence custody and NEW combined full regression/static;
-never substitute parent PASS counts for union. Canonical source/ref recheck
-before any fast-forward; no main/push/CIqueue/production/defaultUbuntu changes.
-No new native/root/mount action by this merge. Keep old R91F/G82C work untouched.
+StorageReadinessHttp reuses sole A109 NativeStoreStartup. Only authenticated
+GET /health/live and /health/ready bind127.0.0.1. Native startup/live verification
+must succeed BEFORE bind. Readiness checks ownership/handles/epoch/backing;
+fault irreversibly revokes readiness. Liveness remains process-only.
+HTTP drain/close precedes native stores; cancellation/uncertain cleanup retains
+ownership, active transactions refuse storage close. No retry/repair/dispatch.
+Native Hermes APIServerAdapter, model/work/job routes are NOT enabled.
 
+Selected runtime SHA2567fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1.
+Invalid raw-byte Authorization500 defect reproduced and fixed to bounded401.
+MIME initialization uses builtin data without broader file/proc permissions.
+Original failure logs, source snapshots and fixture corrections all retained.
 
-### Combined full regression started
-Request e110a712-f0ae-4c12-a350-720000000040 IN PROGRESS.420 sources frozen;
-both parent source manifests exact,414 common original files unchanged.
-Earlier039 stopped at command parsing before any effects/test start, recorded.
-No executable/test edits until terminal. This is a NEW standard suite, not
-sum of old suites or new native execution. Canonical ref will be rechecked
-before delivery to preserve concurrent documentation/code.
+### Verified scopes and counts
 
+NEW combined fullWindows2735=2712PASS/23SKIP/0ERROR/0FAIL, exit0.420 source hashes
+stable;414 original source files unchanged;105 original evidence blobs preserved.
+23 old platform/opt-in skips were NOT rerun here. Parent suites not summed.
 
-### Combined terminal checkpoint
-New fullWindows2735=2712PASS/23SKIP/0ERROR/0FAIL, exit0.420 exact sources stable;
-414 originals unchanged;105 parent evidence blobs preserved.55 genuine native
-storage/HTTP predicates and independent29 real-wire methods on each platform
-remain separate scopes; not a full native agent API or new full namespace run.
-Runtime7fde274 selected unchanged. Auth invalid-byte rejection and MIME seed
-fixes included; old failures retained. Full040 terminal; local static/merge44
-follows exact indexed scope checks. No main/push/CI/production/model action.
+H110E native003:55 overlapping real nativeA109/Hermes/aiohttp predicates PASS
+under ordinaryUID23001 finalexec/Landlock, source matched. No fullP102 network/
+mount/cgroup HTTP scenario or native agent HTTP adapter. Independent29 realwire
+methods repeat Windows/Linux with explicit storage/profile/actor DOUBLES; they
+are not58 scenarios or native store acceptance. Offline receipts are subsets
+of the standard total. Merge/delivery performed no additional native run.
+
+### Operational boundary and next step
+
+Only diagnostic storage readiness is implemented. In-flight agent work is NOT
+covered by this intentionally quiescent readiness policy. Next qualify the SAME
+path under full canonical network/mount isolation; review one borrowed-native-
+store/ResponseStore ownership and healthy-busy policy before any work routes.
+Then broker live-ledger reading and dummy-provider send/accounting acceptance.
+No automatic partial-pair retry, paired atomic recovery or power-loss claim.
+LegacyIPCv2 CLOSED; fullD3B OPEN. Old R91F/G82C denied actions untouched.
+
+Own temporary code/data/processes cleaned; sharedP71C not terminated. No root,
+mount/account/service/CIqueue/defaultUbuntu/production changes by this union.
+No main merge or push; published main remainscc7ceba. No model/provider call.
+All own native/wire/full/merge operations terminal; final local static/commit
+receipt below, read Git HEAD for current documentation-only handoff.
+
+### Records
+
+Report docs/D3B-HTTP-JOINT-J110X6C2.md.
+Evidence evidence/d3b-http-joint-j110x6c2/{summary,delivery,source-custody}.json,
+full-windows-result.json, full-sources-before/after.json, static-primary-final.txt.
+Native records remain evidence/d3b-http-readiness-h110e/native-003-stdout.txt.
+Independent records evidence/d3b-http-qa-r110x6c2/mime-qualified/.
+Parent/joint histories preserved in docs/status-history/j110x6c2-*.md.

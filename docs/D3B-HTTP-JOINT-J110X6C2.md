@@ -95,3 +95,7 @@ storage/HTTP experiment. The union does not rerun native/full isolation.
 
 Local static follows in static-final.txt; remote CI/release is not inferred.
 Canonical clean ancestry and source hash checks must precede local delivery.
+
+## Canonical local delivery
+
+Tested two-parent merge `27561bd6e4070150c78d3ad2ae1ffda96d4aadbc` fast-forwarded from `82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6` to `alaz/d3b-principal-launch-21oct`. All420 source hashes match the fresh2735-method regression and corresponding unchanged native/wire proofs.105 parent evidence blobs and original branches remain. Follow-up is documentation/static delivery only; no new native trial, broader HTTP claim, remote CI publication, main update or push. Current status.md is the canonical continuation.
