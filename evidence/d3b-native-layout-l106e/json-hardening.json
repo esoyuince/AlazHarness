@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-22T15:12:45.406899+03:00",
+  "beforeProductSha256": "518c5541ef1de33c67cf2630dc1c99c0baf341025d00653fbf9e01273f885894",
+  "afterProductSha256": "d86920b5000b379c872fe31d432a2c158dff0cc0f6fcdbaecf6bbcd758de2dfc",
+  "reproducedFailure": "unit-replay-json-before.txt: duplicate status accepted",
+  "fix": "reject nonobject/nontext/oversized/duplicate-key JSON in read-only guarded query",
+  "nativeVendorChanged": false,
+  "priorNativeRunRetained": true,
+  "currentNativeRerunRequired": true
+}

@@ -1,0 +1,10 @@
+{
+  "result": "CLEAN",
+  "remainingOwnedTemporaryPaths": [],
+  "matchingOwnedProcessIds": [],
+  "unreadableSameUidProcessIds": [],
+  "uid": 23001,
+  "rootUsed": false,
+  "labTerminated": false,
+  "productionCommandIssued": false
+}

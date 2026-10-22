@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-22T15:43:29.936559+03:00",
+  "originalEvidence": [
+    {
+      "parent": "abf314848edae078e4a6f5ca5b9fef1b729e3f7f",
+      "folder": "evidence/d3b-native-layout-l106r",
+      "exactOriginalGitBlobs": 61
+    },
+    {
+      "parent": "367f781c1ea06ec1258876f028bcb7019ebdcc4f",
+      "folder": "evidence/d3b-native-layout-l106e",
+      "exactOriginalGitBlobs": 52
+    }
+  ],
+  "originalEvidenceBlobCount": 113,
+  "baselineSourcesUnchanged": 386,
+  "baselineChangesAlreadyQualifiedByLayout": [
+    "packages/claw-hermes/gateway_state_projection.py",
+    "tests/test_integrated_profile_metadata_q104e.py",
+    "tests/test_native_profile_admission_receipt.py"
+  ],
+  "nativeCurrentSourceChecks": [
+    {
+      "proof": "live-gate",
+      "verifiedCurrentFiles": [
+        "packages/claw-hermes/gateway_live_store_gate.py",
+        "packages/claw-hermes/gateway_profile_lease.py",
+        "packages/claw-hermes/gateway_storage_mounts.py",
+        "packages/claw-hermes/credential_guard.py",
+        "scripts/qa/l106e_live_store_probe.py"
+      ],
+      "newNativeExecution": false
+    }
+  ],
+  "mergeChangesRuntimeImplementation": false
+}

@@ -1,0 +1,14 @@
+# AlazHarness — status
+
+## D3B-NATIVE-STARTUP-J106E — SCOPED UNION PASS; CANONICAL DELIVERY PENDING
+
+Branch alaz/d3b-native-startup-j106e; worktree scratch/worktrees/d3b-native-startup-j106e. Join committed L106E live-connection gate367f781 into canonical finite native-layout abf3148/80f2668. Both parent full/native results verified against current source hashes before merge. No duplicate layout/runtime and no product edits by this union. Only status.md conflict, both histories retained below. Exact parents/allowed prior source differences in evidence/d3b-native-startup-j106e/inputs.json.
+
+This is source integration, not new full-path runtime admission acceptance: finite native store restart under full projection and live gate under final-exec Landlock remain separate actual proofs. Pre-constructor schema/identity verification and fixed Gateway readiness wiring are still OPEN. Unknown pair state never grants retry. No blocked R91F/G82C action, main/push/provider/model/root/mount/production/CI change. Next complete NEW combined standard regression and static/source custody, then clean ancestry-safe canonical fast-forward only.
+
+Completed NEW combined Windows2604=2581PASS/23SKIP/0ERROR/0FAIL, exit0;399 source hashes stable.113 original evidence blobs preserved; only status.md conflict, both histories retained. No source implementation rewritten by union. Existing386/389 baseline files unchanged; remaining3 are previously qualified L106R projection/historical-provenance changes. This joins actual finite-layout and live-gate modules into one source baseline, not a new combined full-runtime experiment.
+
+Real native proofs remain distinct: L106R finite layout and complete remount/native restart; L106E current live gate with10 refusals and preserved real SQLite exclusive lock. Neither old source proof is attributed to changed code. Both JSON ambiguity and temp-shadow regressions fixed in new gate before its native003/full acceptance. Current report docs/D3B-NATIVE-STARTUP-J106E.md; evidence/d3b-native-startup-j106e/summary.json. All current tests terminal; static/merge commit then clean fast-forward canonical only. No root/lab/model/provider/main/push/CI/production change by union. LegacyIPCv2 CLOSED/fullD3B OPEN; pre-constructor schema qualification and fixed request-readiness wiring remain the next implementation, not more equivalent QA loops.
+
+## Preserved canonical finite-layout continuation
+

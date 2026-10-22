@@ -1,0 +1,17 @@
+{
+  "sourceSha256": "d86920b5000b379c872fe31d432a2c158dff0cc0f6fcdbaecf6bbcd758de2dfc",
+  "sourceChanged": false,
+  "scope": "owned real SQLite fixture with native boundary doubles",
+  "observations": [
+    {
+      "case": "schema_version",
+      "accepted": true,
+      "gateState": "NATIVE_STORE_CONNECTIONS_VERIFIED"
+    },
+    {
+      "case": "replay",
+      "accepted": true,
+      "gateState": "NATIVE_STORE_CONNECTIONS_VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "originalMergedStatusSha256": "daf5d4bb8909a35754a68cfd1013cd877ec109aaf53f736d77a8b45a0d3eee1d",
+  "originalBytes": 2520797,
+  "parts": [
+    {
+      "path": "evidence/d3b-native-startup-j106e/merged-status-prefix.txt",
+      "bytes": 2437,
+      "sha256": "7eb03afcd78794d5e3d62180e423b093b5191694374dde18d220b86c7c940286"
+    },
+    {
+      "path": "docs/status-history/j106e-canonical-abf3148.md",
+      "bytes": 1259955,
+      "sha256": "55775660ae4bcb63f2af31329ce005bce1583704a4f862a441efa36659bc81b4"
+    },
+    {
+      "path": "evidence/d3b-native-startup-j106e/merged-status-between.txt",
+      "bytes": 39,
+      "sha256": "37cfc4b3ec8673479af4fb416e96f1c02d0d047df97a590e96fbb9e7b253106f"
+    },
+    {
+      "path": "docs/status-history/j106e-live-gate-367f781.md",
+      "bytes": 1257789,
+      "sha256": "13507fa937536003affff70ba9d2600be2d73bac8491b886f98874abaed5608c"
+    },
+    {
+      "path": "evidence/d3b-native-startup-j106e/merged-status-tail.txt",
+      "bytes": 577,
+      "sha256": "9227294690d3954378e1c9fa226331a48358768e23a6c038b43de689e318761e"
+    }
+  ],
+  "restoration": "concatenate parts in listed order",
+  "allPartsIndividuallyScannable": true,
+  "restoredByteForByte": true,
+  "ciScannerModified": false,
+  "priorStaticFailure": "static-final.txt",
+  "purpose": "readable short continuation with intact archival history; no exclusion from scanning"
+}

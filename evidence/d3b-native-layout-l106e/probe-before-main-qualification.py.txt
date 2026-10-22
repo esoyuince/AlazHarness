@@ -1,0 +1,274 @@
+"""L106E owned native live-connection gate and SQLite lock preservation.
+
+Ordinary UID23001 in approved P71C, fresh temporary native profiles only.
+Final exec retains exact current Landlock policy. This is NOT full P102
+mount/network projection, constructor preflight, HTTP or provider dispatch.
+"""
+from __future__ import annotations
+from dataclasses import asdict,replace
+import hashlib
+import json
+import os
+from pathlib import Path
+import select
+import sqlite3
+import subprocess
+import sys
+import tempfile
+
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'vendor-native'),str(ROOT/'dependencies')]
+import gateway_live_store_gate as gate
+
+
+def guard():
+    assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+    assert ROOT.parent==Path('/tmp') and ROOT.name.startswith('alaz-l106e-code-')
+    assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+    assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    manifest=json.loads((ROOT/'input-manifest.json').read_text())['sources']
+    assert all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest.items())
+    return manifest
+
+
+def expected_mount(home):
+    m=gate.mounts.select_mount(gate.mounts.parse_mountinfo(gate.mounts._read_mountinfo()),str(home))
+    return gate.mounts.ExpectedMount(m.mount_id,m.device,m.root,m.mount_point,m.filesystem)
+
+
+def native():
+    from hermes_state import SessionDB
+    from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+    from gateway import runtime_ownership
+    return SessionDB,RunIdempotencyStore,runtime_ownership
+
+
+def expectation(state,replay,epoch=0,instance=None):
+    home=Path(state.db_path).parent
+    ids=[(p.stat().st_dev,p.stat().st_ino) for p in (home/'state.db',home/'runs_idempotency.db')]
+    return gate.PreparedStoreExpectation(gate.NATIVE_PIN,gate.schema_digest(state._conn),
+        gate.schema_digest(replay._conn),state._conn.execute("SELECT value FROM state_meta WHERE key='store_instance_id'").fetchone()[0],
+        state._conn.execute('PRAGMA application_id').fetchone()[0],ids[0],ids[1],epoch,instance,
+        state._conn.execute('PRAGMA journal_mode').fetchone()[0])
+
+
+def prepare(home):
+    guard();assert not (home/'state.db').exists()
+    os.environ['HERMES_HOME']=str(home);os.umask(0o077)
+    SessionDB,RunStore,owner=native()
+    owner.process_ownership.reserve([home])
+    state=SessionDB(home/'state.db');replay=RunStore(str(home/'runs_idempotency.db'))
+    try:
+        prepared=expectation(state,replay)
+        assert prepared.journal_mode=='delete' and prepared.epoch==0
+    finally:replay.close();state.close();owner.process_ownership.close()
+    path=ROOT/'prepared.json'
+    with path.open('x',encoding='utf-8') as f:json.dump(asdict(prepared),f);f.write('\n')
+    print(json.dumps({'state':'EXPLICIT_FRESH_PROFILE_PREPARED','schemaVersion':31,
+        'preparedSha256':hashlib.sha256(path.read_bytes()).hexdigest(),
+        'nativePin':gate.NATIVE_PIN,'profileInventory':sorted(p.name for p in home.iterdir()),
+        'nativeTypes':[SessionDB.__module__,RunStore.__module__],'newOwnedFixtureOnly':True}),flush=True)
+
+
+def waitline():
+    assert select.select([sys.stdin],[],[],25)[0],'test_parent_command_timeout'
+    return sys.stdin.readline().strip()
+
+
+def target(home):
+    manifest=guard();os.environ['HERMES_HOME']=str(home);os.umask(0o077)
+    assert sys.flags.isolated==1
+    audit_state={'checking':False,'rawDatabaseOpens':0,'newSqliteConnections':0}
+    def audit(event,args):
+        if event in ('socket.connect','socket.getaddrinfo','socket.bind','subprocess.Popen','os.system'):
+            raise PermissionError('l106e_offline_child')
+        if audit_state['checking']:
+            if event=='sqlite3.connect':
+                audit_state['newSqliteConnections']+=1;raise AssertionError('gate_must_reuse_connections')
+            if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+                p=Path(os.fsdecode(args[0]))
+                if p.parent==home and (p.name.startswith('state.db') or p.name.startswith('runs_idempotency.db')):
+                    audit_state['rawDatabaseOpens']+=1;raise AssertionError('gate_raw_database_open')
+    sys.addaudithook(audit)
+    SessionDB,RunStore,owner=native()
+    info=json.loads((ROOT/'prepared.json').read_text())
+    for key in ('state_identity','replay_identity'):info[key]=tuple(info[key])
+    expected=gate.PreparedStoreExpectation(**info)
+    mount=expected_mount(home);held=gate.profiles.reserve_profile(home,mount)
+    state=SessionDB(home/'state.db');replay=RunStore(str(home/'runs_idempotency.db'))
+    checks={};denials={};queries=[];results=[]
+    def check(key,ok):
+        checks[key]=bool(ok);assert ok,key
+    def verify(which=replay,want=None):
+        before=(state._conn.total_changes,which._conn.total_changes)
+        state._conn.set_trace_callback(queries.append);which._conn.set_trace_callback(queries.append)
+        audit_state['checking']=True
+        try:return gate.verify_live_stores(held,mount,state,which,want or expected)
+        finally:
+            audit_state['checking']=False
+            assert before==(state._conn.total_changes,which._conn.total_changes),'gate_mutated_database'
+            state._conn.set_trace_callback(None);which._conn.set_trace_callback(None)
+    def refuse(label,reason,which=replay,want=None):
+        try:verify(which,want)
+        except gate.LiveStoreRejected as exc:denials[label]=str(exc);check(label,str(exc)==reason)
+        else:raise AssertionError('unexpected_accept_'+label)
+        check(label+'_retains_profile',held.check()['state']=='NATIVE_PROFILE_RESERVED')
+    results.append(verify())
+    check('actual_live_native_store_gate',results[-1]['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED')
+    check('prepared_schema_separate_phase',state._conn is not None and expected.epoch==0)
+    check('no_epoch_created_by_success',state._conn.execute('SELECT COUNT(*) FROM runtime_epoch').fetchone()[0]==0)
+    refuse('wrong_schema','live_store_schema_mismatch',want=replace(expected,replay_schema_sha256='f'*64))
+    refuse('wrong_expected_epoch','live_store_epoch_mismatch',want=replace(expected,epoch=1,instance_id='not-current'))
+    volatile=RunStore(str(home/'absent-parent/replay.db'))
+    try:
+        check('real_native_memory_fallback',volatile.durable is False)
+        refuse('volatile_refused','live_store_volatile_replay',which=volatile)
+    finally:volatile.close()
+    replay._conn.execute('PRAGMA synchronous=NORMAL')
+    try:refuse('weak_sync_refused','live_store_synchronous')
+    finally:replay._conn.execute('PRAGMA synchronous=FULL')
+    replay._conn.execute('PRAGMA query_only=ON')
+    try:refuse('queryonly_refused','live_store_query_only_connection')
+    finally:replay._conn.execute('PRAGMA query_only=OFF')
+    replay._conn.execute('BEGIN IMMEDIATE')
+    try:
+        refuse('active_transaction_refused','live_store_transaction_active')
+        check('rejection_does_not_rollback',replay._conn.in_transaction)
+    finally:replay._conn.rollback()
+    out,_=replay.reserve('l106e','key','a'*64,'run_'+('1'*32),{'status':'running'})
+    check('actual_running_replay_created_by_fixture',out=='created')
+    refuse('running_replay_refused','live_store_unresolved_replay')
+    check('rejected_replay_retained',replay.status_for_run('l106e','run_'+('1'*32))['status']['status']=='running')
+    replay._conn.execute('UPDATE run_idempotency SET status_json=?',('{"status":"completed","status":"running"}',))
+    replay._conn.commit()  # owned corruption fixture, not a changed native method
+    refuse('duplicate_json_refused','live_store_unresolved_replay')
+    check('native_parser_sees_last_running_status',replay.status_for_run('l106e','run_'+('1'*32))['status']['status']=='running')
+    replay.forget('l106e','key')  # explicit QA cleanup, never performed by the gate
+    import hermes_state_runtime as runtime
+    epoch=runtime.begin_runtime_epoch(state,instance_id='l106e-explicit-fixture')
+    expected=replace(expected,epoch=epoch,instance_id='l106e-explicit-fixture')
+    state.create_session('l106e-session','api')
+    row=runtime.admit_session_input(state,epoch=epoch,principal_id='owned',session_id='l106e-session',request_id='request',payload={'text':'owned fixture'})
+    refuse('queued_admission_refused','live_store_unresolved_admissions')
+    check('rejection_does_not_cancel_admission',runtime.get_session_admission(state,admission_id=row['admission_id'])['status']=='queued')
+    runtime.cancel_session_input(state,epoch=epoch,admission_id=row['admission_id'])
+    results.append(verify())
+    check('resolved_connections_verify_but_no_pair_authority',results[-1]['pairedRecoveryVerified'] is False and results[-1]['runtimeAdmissionAuthorized'] is False)
+    check('all_sql_is_read_observation',all(q.lstrip().startswith(('SELECT ','PRAGMA ')) for q in queries))
+    check('zero_raw_opens_or_new_connections',audit_state['rawDatabaseOpens']==audit_state['newSqliteConnections']==0)
+    # Hold a real SQLite EXCLUSIVE lock after COMMIT in DELETE mode. The gate
+    # must not open/close another descriptor and accidentally release it.
+    check('exclusive_lock_mode',state._conn.execute('PRAGMA locking_mode=EXCLUSIVE').fetchone()[0]=='exclusive')
+    state._conn.execute('BEGIN EXCLUSIVE');state._conn.execute('COMMIT')
+    check('exclusive_lock_without_open_transaction',not state._conn.in_transaction)
+    print(json.dumps({'state':'LOCKED_READY','pid':os.getpid(),'uid':os.getuid(),'epoch':epoch}),flush=True)
+    assert waitline()=='CHECK'
+    results.append(verify())
+    check('gate_passed_while_sqlite_lock_held',results[-1]['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED')
+    check('native_mutexes_released',not state._lock.locked() and not replay._lock.locked())
+    imported={}
+    for m in tuple(sys.modules.values()):
+        f=getattr(m,'__file__',None)
+        if f:
+            p=Path(f).resolve()
+            if p.is_relative_to(ROOT) and p.suffix=='.py':
+                n=p.relative_to(ROOT).as_posix();h=hashlib.sha256(p.read_bytes()).hexdigest();assert manifest.get(n)==h,n;imported[n]=h
+    print(json.dumps({'state':'CHECKED','pid':os.getpid(),'checks':checks,'checkCount':len(checks),
+        'denials':denials,'gateReceipts':results,'audit':audit_state,'queries':queries,
+        'sourceHashes':imported,'guardReceipt':json.loads(os.environ['L106E_GUARD']),
+        'nativeClasses':[type(state).__module__+'.'+type(state).__name__,type(replay).__module__+'.'+type(replay).__name__],
+        'nativeConnections':[type(state._conn).__module__+'.'+type(state._conn).__name__,type(replay._conn).__module__+'.'+type(replay._conn).__name__],
+        'nativeFunctionsMocked':False,'fullProjectionTested':False,'providerCalls':0}),flush=True)
+    assert waitline()=='RELEASE'
+    replay.close();state.close();held.finish()
+    print(json.dumps({'state':'STORES_AND_PROFILE_CLOSED','pid':os.getpid(),'nativeProfileReleased':not owner.process_ownership.homes}),flush=True)
+    assert waitline()=='EXIT'
+    return 0
+
+
+def launch(home):
+    guard();os.environ['HERMES_HOME']=str(home)
+    import credential_guard
+    policy={'version':1,'enabled':True,
+        'readonly':[str(ROOT/n) for n in ('vendor-native','dependencies','packages','scripts','prepared.json','input-manifest.json')]+['/usr/bin','/usr/lib','/usr/lib64','/etc/alaz-p71c-lab-id'],
+        'writable':[str(home),'/dev/null'],'protected':[str(ROOT/'canary')],'self_process_metadata':True}
+    receipt=credential_guard.apply(policy,self_mount_metadata=True)
+    env={'PATH':'/usr/bin:/bin','HOME':str(home),'HERMES_HOME':str(home),'LANG':'C.UTF-8',
+         'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C','L106E_GUARD':json.dumps(receipt)}
+    os.execve(sys.executable,[sys.executable,'-I','-B',str(Path(__file__)),'target',str(home)],env)
+
+
+def competing(path):
+    guard();assert path.name=='state.db' and path.parent==ROOT/'profile'
+    db=sqlite3.connect(path.as_uri()+'?mode=rw',uri=True,timeout=.15)
+    try:
+        try:db.execute('BEGIN IMMEDIATE')
+        except sqlite3.OperationalError as exc:
+            code=getattr(exc,'sqlite_errorcode',None)
+            assert code==sqlite3.SQLITE_BUSY
+            print(json.dumps({'state':'BUSY','sqliteCode':code}),flush=True);return
+        db.rollback();print(json.dumps({'state':'ACQUIRED_AND_ROLLED_BACK'}),flush=True)
+    finally:db.close()
+
+
+def read_line(process):
+    assert select.select([process.stdout],[],[],25)[0], 'owned_child_output_timeout'
+    raw=process.stdout.readline(262145)
+    assert raw and len(raw)<=262144, 'owned_child_output_incomplete'
+    return json.loads(raw)
+
+
+def main():
+    manifest=guard();mode=sys.argv[1] if len(sys.argv)>1 else 'run'
+    if mode!='run':
+        home=Path(sys.argv[2]);assert home==ROOT/'profile' or mode=='contend'
+        if mode=='prepare':return prepare(home)
+        if mode=='launch':return launch(home)
+        if mode=='target':return target(home)
+        if mode=='contend':return competing(home)
+        raise ValueError('unknown_mode')
+    home=ROOT/'profile';home.mkdir(mode=0o700);(ROOT/'canary').write_text('owned canary')
+    env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(home),'HERMES_HOME':str(home),'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+    def command(mode,path=home):return [sys.executable,'-I','-B',str(Path(__file__)),mode,str(path)]
+    preparation=subprocess.run(command('prepare'),cwd=ROOT,env=env,capture_output=True,text=True,timeout=40)
+    events=[{'phase':'prepare','exitCode':preparation.returncode,'stdout':preparation.stdout,'stderr':preparation.stderr}]
+    checks={};error=None;child=None;forced=False
+    try:
+        assert preparation.returncode==0,preparation.stderr[-800:]
+        child=subprocess.Popen(command('launch'),cwd=ROOT,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,bufsize=0)
+        ready=read_line(child);events.append(ready);assert ready['state']=='LOCKED_READY' and ready['pid']==child.pid
+        for label in ('before-gate','after-gate','after-close'):
+            c=subprocess.run(command('contend',home/'state.db'),cwd=ROOT,env=env,capture_output=True,text=True,timeout=10)
+            value=json.loads(c.stdout) if c.stdout else {};events.append({'phase':label,'exitCode':c.returncode,'proof':value,'stderr':c.stderr})
+            checks[label]=c.returncode==0 and value.get('state')==('ACQUIRED_AND_ROLLED_BACK' if label=='after-close' else 'BUSY')
+            assert checks[label],label
+            if label=='before-gate':
+                child.stdin.write(b'CHECK\n');child.stdin.flush()
+                checked=read_line(child);events.append(checked)
+                checks['actual_gate_checks']=checked['state']=='CHECKED' and all(checked['checks'].values())
+                assert checks['actual_gate_checks']
+            elif label=='after-gate':
+                child.stdin.write(b'RELEASE\n');child.stdin.flush()
+                closed=read_line(child);events.append(closed)
+                checks['native_connections_closed_before_reclaim']=closed['state']=='STORES_AND_PROFILE_CLOSED' and closed['nativeProfileReleased'] is True
+                assert checks['native_connections_closed_before_reclaim']
+        out,err=child.communicate(b'EXIT\n',timeout=8)
+        events.append({'phase':'final-child','exitCode':child.returncode,'stdout':out.decode(),'stderr':err.decode()})
+        checks['child_exit_zero']=child.returncode==0 and not out
+    except Exception as exc:error={'type':type(exc).__name__,'reason':str(exc)[:1000]}
+    finally:
+        if child is not None and child.poll() is None:
+            forced=True;child.kill();out,err=child.communicate(timeout=5)
+            events.append({'phase':'forced-owned-cleanup','stdout':out.decode('utf-8','replace')[-2000:],'stderr':err.decode('utf-8','replace')[-5000:]})
+        elif child is not None and child.stderr and not child.stderr.closed:
+            events.append({'phase':'child-diagnostic','stderr':child.stderr.read().decode('utf-8','replace')[-5000:]})
+    checks['sources_unchanged']=all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest.items())
+    checks['no_forced_cleanup']=not forced
+    report={'result':'PASS_LIVE_NATIVE_CONNECTION_GATE' if not error and all(checks.values()) else 'FAIL',
+        'checks':checks,'events':events,'error':error,'sourceSha256':manifest,'uid':os.getuid(),'gid':os.getgid(),
+        'rootUsed':False,'mountsChanged':False,'fullProjectionTested':False,'preConstructorGateImplemented':False,
+        'nativeProductModified':False,'realGatewayStarted':False,'providerCalls':0,'fullD3BAccepted':False}
+    print(json.dumps(report),flush=True)
+    return 0 if report['result']=='PASS_LIVE_NATIVE_CONNECTION_GATE' else 1
+
+if __name__=='__main__':raise SystemExit(main())

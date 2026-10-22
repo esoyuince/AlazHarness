@@ -1,0 +1,17 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,subprocess,sys,tempfile
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<25
+with tempfile.TemporaryDirectory(prefix='alaz-l106e-units-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,item in files.items():
+  p=PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts
+  raw=item['text'].encode();assert hashlib.sha256(raw).hexdigest()==item['sha256']
+  dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ code="import unittest,sys; loader=unittest.TestLoader();suite=unittest.TestSuite([loader.discover(sys.argv[1],pattern='test_gateway_live_store_gate.py'),loader.discover(sys.argv[1],pattern='test_live_store_gate_receipt_l106e.py')]);r=unittest.TextTestRunner(verbosity=2).run(suite);sys.exit(0 if r.wasSuccessful() else 1)"
+ r=subprocess.run([sys.executable,'-I','-B','-c',code,str(root/'tests')],cwd=root,env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8'},capture_output=True,text=True,timeout=50)
+ report={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourceUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'scope':'50 real-SQLite/native boundary-double unit methods plus5 offline receipts; no new privileged/native Gateway execution'}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True);sys.exit(0 if r.returncode==0 and report['sourceUnchanged'] and report['temporaryRootRemoved'] else 1)

@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-22T15:41:40.494126+03:00",
+  "canonicalParent": "abf314848edae078e4a6f5ca5b9fef1b729e3f7f",
+  "liveGateParent": "367f781c1ea06ec1258876f028bcb7019ebdcc4f",
+  "layoutCode": "80f26687160ef2bba3011338cc8aff58250404d9",
+  "base": "7f17594b73c825d8e04873ab2db2a28fe49ab688",
+  "sharedSourceDifferencesKeptFromCanonical": [
+    "packages/claw-hermes/gateway_state_projection.py",
+    "tests/test_integrated_profile_metadata_q104e.py",
+    "tests/test_native_profile_admission_receipt.py"
+  ],
+  "liveGateFullTotal": 2572,
+  "layoutFullTotal": 2549,
+  "unionSourceCount": 399,
+  "mergeConflicts": [
+    "status.md"
+  ],
+  "newRuntimeWiringByMerge": false,
+  "newNativeRunByMerge": false
+}

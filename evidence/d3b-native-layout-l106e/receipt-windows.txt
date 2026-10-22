@@ -1,0 +1,10 @@
+test_exclusive_sqlite_lock_survives_gate_and_releases_only_after_close (test_live_store_gate_receipt_l106e.NativeLiveGateReceipt.test_exclusive_sqlite_lock_survives_gate_and_releases_only_after_close) ... ok
+test_first_source_and_failed_json_regression_not_rewritten (test_live_store_gate_receipt_l106e.NativeLiveGateReceipt.test_first_source_and_failed_json_regression_not_rewritten) ... ok
+test_live_profile_guard_and_bounded_native_result (test_live_store_gate_receipt_l106e.NativeLiveGateReceipt.test_live_profile_guard_and_bounded_native_result) ... ok
+test_native_execution_matches_current_product_and_immutable_upstream (test_live_store_gate_receipt_l106e.NativeLiveGateReceipt.test_native_execution_matches_current_product_and_immutable_upstream) ... ok
+test_nine_native_refusals_no_silent_repair (test_live_store_gate_receipt_l106e.NativeLiveGateReceipt.test_nine_native_refusals_no_silent_repair) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.244s
+
+OK

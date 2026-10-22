@@ -1,0 +1,99 @@
+"""Pinned native-store profile layout, explicitly opted in by trusted launch code.
+
+Metadata only: never open a database, repair modes, create files or adopt links.
+The minimal P102 layout stays the default. This version intentionally excludes
+config/env/credentials, plugins and arbitrary TOP-LEVEL entries. Known native
+home data directories may contain bounded private regular-file trees. Contents
+are NOT declared trusted code; the existing noexec/isolation rules still apply.
+"""
+from __future__ import annotations
+import os
+from pathlib import Path
+import stat
+
+PROFILE_LAYOUT = 'hermes-native-stores-v1'
+NATIVE_PIN = 'eb75627faf532fa6ffbdae59a0d14b0b385fc780'
+DATABASES = ('state.db', 'runs_idempotency.db')
+CORE_FILES = frozenset((*DATABASES, 'gateway.lock', 'SOUL.md',
+                        'state.db.quarantine.lock', 'state.db.fts_rebuild.lock'))
+DIRECTORIES = frozenset(('audio_cache','cache','cron','hooks','image_cache','logs',
+                         'memories','pairing','sessions','skills'))
+SIDECARS = frozenset(n+s for n in DATABASES for s in ('-journal','-wal','-shm'))
+MAX_ENTRIES = 4096
+MAX_DEPTH = 8
+MAX_FILE_BYTES = 2 * 1024**3
+
+
+class NativeLayoutRejected(ValueError):
+    pass
+
+
+def require(ok, reason):
+    if not ok:
+        raise NativeLayoutRejected(reason)
+
+
+def metadata(info):
+    return (info.st_dev, info.st_ino, info.st_mode, info.st_uid, info.st_gid,
+            info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+
+
+def validate_object(info, uid, gid, device, *, directory):
+    kind = stat.S_ISDIR if directory else stat.S_ISREG
+    require(kind(info.st_mode) and info.st_dev == device
+            and info.st_uid == uid and info.st_gid == gid
+            and stat.S_IMODE(info.st_mode) == (0o700 if directory else 0o600)
+            and (directory or info.st_nlink == 1), 'native_layout_private_object')
+    require(directory or 0 <= info.st_size <= MAX_FILE_BYTES,
+            'native_layout_file_limit')
+    return metadata(info)
+
+
+def inspect_profile(profile, *, uid, gid, device):
+    """Stable bounded tree snapshot; caller also verifies mount/cgroup ownership.
+
+    Same-UID hostile mutation is outside this cooperative lifecycle contract.
+    Rechecks reject observed changes; they cannot detect every ABA race.
+    """
+    try:
+        require(all(type(n) is int and n >= 0 for n in (uid,gid,device)),
+                'native_layout_identity')
+        profile = Path(profile)
+        require(profile.is_absolute() and profile == profile.resolve(strict=True)
+                and not any(p.is_symlink() or getattr(p,'is_junction',lambda:False)()
+                            for p in (profile,*profile.parents)),
+                'native_layout_canonical_profile')
+        first = validate_object(profile.lstat(),uid,gid,device,directory=True)
+        children = sorted(profile.iterdir(),key=lambda p:p.name)
+        names = {p.name for p in children}
+        require(CORE_FILES | DIRECTORIES <= names <= CORE_FILES | DIRECTORIES | SIDECARS,
+                'native_layout_top_level')
+        observed = {'profile':first}; directory_names = {}
+        pending = [(profile,children,0)]
+        while pending:
+            parent,entries,depth = pending.pop()
+            require(depth <= MAX_DEPTH, 'native_layout_depth_limit')
+            directory_names[parent] = tuple(p.name for p in entries)
+            for entry in entries:
+                require(len(observed) <= MAX_ENTRIES, 'native_layout_entry_limit')
+                name = entry.relative_to(profile).as_posix()
+                info = entry.lstat(); directory = stat.S_ISDIR(info.st_mode)
+                if depth == 0:
+                    require(directory == (entry.name in DIRECTORIES),
+                            'native_layout_top_level_kind')
+                observed[name] = validate_object(info,uid,gid,device,directory=directory)
+                require(not getattr(entry,'is_junction',lambda:False)(), 'native_layout_link')
+                if directory:
+                    pending.append((entry,sorted(entry.iterdir(),key=lambda p:p.name),depth+1))
+        # No raw open/close of a live database or sidecar anywhere in this scan.
+        for name,before in observed.items():
+            path = profile if name == 'profile' else profile/name
+            require(metadata(path.lstat()) == before, 'native_layout_changed')
+        for parent,names in directory_names.items():
+            require(tuple(sorted(p.name for p in parent.iterdir())) == names,
+                    'native_layout_changed')
+        return observed
+    except NativeLayoutRejected:
+        raise
+    except (OSError,ValueError,TypeError,OverflowError):
+        raise NativeLayoutRejected('native_layout_unavailable') from None

@@ -1,0 +1,50 @@
+test_frozen_no_io (test_gateway_live_store_gate.ExpectationContracts.test_frozen_no_io) ... ok
+test_invalid_identity_or_generation (test_gateway_live_store_gate.ExpectationContracts.test_invalid_identity_or_generation) ... ok
+test_invalid_source_schema_or_uuid (test_gateway_live_store_gate.ExpectationContracts.test_invalid_source_schema_or_uuid) ... ok
+test_active_native_transaction_survives_rejection (test_gateway_live_store_gate.LiveStoreTests.test_active_native_transaction_survives_rejection) ... ok
+test_any_nonterminal_or_null_admission_refused (test_gateway_live_store_gate.LiveStoreTests.test_any_nonterminal_or_null_admission_refused) ... ok
+test_any_nonterminal_or_null_worker_refused (test_gateway_live_store_gate.LiveStoreTests.test_any_nonterminal_or_null_worker_refused) ... ok
+test_application_identity_drift (test_gateway_live_store_gate.LiveStoreTests.test_application_identity_drift) ... ok
+test_attached_foreign_database_refused_without_detach (test_gateway_live_store_gate.LiveStoreTests.test_attached_foreign_database_refused_without_detach) ... ok
+test_closed_connection_bounded (test_gateway_live_store_gate.LiveStoreTests.test_closed_connection_bounded) ... ok
+test_duplicate_mutex_refused_before_acquisition (test_gateway_live_store_gate.LiveStoreTests.test_duplicate_mutex_refused_before_acquisition) ... ok
+test_duplicate_status_key_is_not_a_terminal_decision (test_gateway_live_store_gate.LiveStoreTests.test_duplicate_status_key_is_not_a_terminal_decision) ... ok
+test_duplicate_version_rows_refused (test_gateway_live_store_gate.LiveStoreTests.test_duplicate_version_rows_refused) ... ok
+test_epoch_is_exact_not_advanced_by_gate (test_gateway_live_store_gate.LiveStoreTests.test_epoch_is_exact_not_advanced_by_gate) ... ok
+test_exact_fixture_connection_metadata_passes_without_writes (test_gateway_live_store_gate.LiveStoreTests.test_exact_fixture_connection_metadata_passes_without_writes) ... ok
+test_expected_dictionary_not_authority (test_gateway_live_store_gate.LiveStoreTests.test_expected_dictionary_not_authority) ... ok
+test_expected_schema_digest_not_derived_from_candidate (test_gateway_live_store_gate.LiveStoreTests.test_expected_schema_digest_not_derived_from_candidate) ... ok
+test_finished_native_lease_failure_is_bounded (test_gateway_live_store_gate.LiveStoreTests.test_finished_native_lease_failure_is_bounded) ... ok
+test_first_busy_mutex_is_not_released_by_gate (test_gateway_live_store_gate.LiveStoreTests.test_first_busy_mutex_is_not_released_by_gate) ... ok
+test_foreign_actual_connection_refused (test_gateway_live_store_gate.LiveStoreTests.test_foreign_actual_connection_refused) ... ok
+test_foreign_declared_path_refused (test_gateway_live_store_gate.LiveStoreTests.test_foreign_declared_path_refused) ... ok
+test_foreign_keys_off_refused (test_gateway_live_store_gate.LiveStoreTests.test_foreign_keys_off_refused) ... ok
+test_journal_drift_refused (test_gateway_live_store_gate.LiveStoreTests.test_journal_drift_refused) ... ok
+test_malformed_replay_is_bounded_and_not_deleted (test_gateway_live_store_gate.LiveStoreTests.test_malformed_replay_is_bounded_and_not_deleted) ... ok
+test_memory_connection_cannot_be_disguised_with_disk_path (test_gateway_live_store_gate.LiveStoreTests.test_memory_connection_cannot_be_disguised_with_disk_path) ... ok
+test_missing_lease_not_authority (test_gateway_live_store_gate.LiveStoreTests.test_missing_lease_not_authority) ... ok
+test_mount_change_refused_and_connections_left_open (test_gateway_live_store_gate.LiveStoreTests.test_mount_change_refused_and_connections_left_open) ... ok
+test_native_memory_fallback_refused_before_mutex_or_sql (test_gateway_live_store_gate.LiveStoreTests.test_native_memory_fallback_refused_before_mutex_or_sql) ... ok
+test_native_state_open_identity_drift (test_gateway_live_store_gate.LiveStoreTests.test_native_state_open_identity_drift) ... ok
+test_native_type_mismatch_refused (test_gateway_live_store_gate.LiveStoreTests.test_native_type_mismatch_refused) ... ok
+test_nested_duplicate_keys_refused (test_gateway_live_store_gate.LiveStoreTests.test_nested_duplicate_keys_refused) ... ok
+test_normal_sync_is_not_silently_raised (test_gateway_live_store_gate.LiveStoreTests.test_normal_sync_is_not_silently_raised) ... ok
+test_null_replay_status_is_not_terminal (test_gateway_live_store_gate.LiveStoreTests.test_null_replay_status_is_not_terminal) ... ok
+test_oversized_status_refused_without_parsing (test_gateway_live_store_gate.LiveStoreTests.test_oversized_status_refused_without_parsing) ... ok
+test_query_only_is_not_silently_reset (test_gateway_live_store_gate.LiveStoreTests.test_query_only_is_not_silently_reset) ... ok
+test_registered_background_writer_refused (test_gateway_live_store_gate.LiveStoreTests.test_registered_background_writer_refused) ... ok
+test_schema_added_table_refused (test_gateway_live_store_gate.LiveStoreTests.test_schema_added_table_refused) ... ok
+test_schema_size_bound (test_gateway_live_store_gate.LiveStoreTests.test_schema_size_bound) ... ok
+test_schema_version_value_mismatch (test_gateway_live_store_gate.LiveStoreTests.test_schema_version_value_mismatch) ... ok
+test_second_busy_mutex_releases_only_first (test_gateway_live_store_gate.LiveStoreTests.test_second_busy_mutex_releases_only_first) ... ok
+test_shared_or_readonly_native_state_refused (test_gateway_live_store_gate.LiveStoreTests.test_shared_or_readonly_native_state_refused) ... ok
+test_store_instance_value_mismatch (test_gateway_live_store_gate.LiveStoreTests.test_store_instance_value_mismatch) ... ok
+test_terminal_records_do_not_claim_cross_store_consistency (test_gateway_live_store_gate.LiveStoreTests.test_terminal_records_do_not_claim_cross_store_consistency) ... ok
+test_unresolved_or_invalid_replay_refused (test_gateway_live_store_gate.LiveStoreTests.test_unresolved_or_invalid_replay_refused) ... ok
+test_wrong_actor_refused (test_gateway_live_store_gate.LiveStoreTests.test_wrong_actor_refused) ... ok
+test_wrong_expected_inode (test_gateway_live_store_gate.LiveStoreTests.test_wrong_expected_inode) ... ok
+
+----------------------------------------------------------------------
+Ran 45 tests in 2.356s
+
+OK
