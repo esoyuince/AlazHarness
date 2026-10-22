@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-22T23:20:46.970994+03:00",
+  "oldStatusSha256": "fcd51049a89b34fc3c0ce8af21cdea341be8b1e7d400ab7c8dd8c63f780b7680",
+  "newStatusSha256": "f991985990ce156623238249c83e301760e6eca4db4d91e44eb439242e447392",
+  "reason": "status had already been decoded with CP1254 in full-run bookkeeping; restore one exact roundtrip then replace known heading",
+  "sourceAndTestsUnmodified": true,
+  "oldBytesRetained": true,
+  "priorCorrectionStoppedBeforeStage": true
+}

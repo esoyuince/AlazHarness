@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-22T23:16:01.598174+03:00",
+  "parents": [
+    {
+      "ref": "ab55ddb5abd92c048948558dc527e3d407ccb981",
+      "folder": "evidence/d3b-http-confined-f111e274",
+      "exactOriginalEvidenceBlobs": 25,
+      "indexMatches": true
+    },
+    {
+      "ref": "bcb6325e30831285cae0c2e8313e80901d9c1dd2",
+      "folder": "evidence/d3b-http-confined-f111x84",
+      "exactOriginalEvidenceBlobs": 15,
+      "indexMatches": true
+    }
+  ],
+  "originalEvidenceBlobs": 40,
+  "canonicalObserved": "1e9c305afd3d02cbb56a74f9cce034c33a4609a9",
+  "canonicalRelationship": "canonical_ancestor",
+  "sourceChangesByUnion": false,
+  "newNativeExecutionByUnion": false
+}

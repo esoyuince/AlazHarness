@@ -1,0 +1,119 @@
+# J111X84 — same readiness HTTP under full persistent isolation
+
+This is a QA-only union on canonical1e9c305. It keeps the exact previously
+qualified H110E StorageReadinessHttp, A109 NativeStoreStartup and P102 projection.
+No new runtime, HTTP parser, database owner, broader filesystem/network rule,
+provider endpoint or agent work route is introduced. Exact parents are recorded
+in evidence/d3b-http-full-joint-j111x84/inputs.json.
+
+## Previously missing combined execution
+
+F111E274 native001 exercised the SAME diagnostic HTTP startup inside canonical
+private mount/network/IPC namespaces, final host UID23001/GID23003, empty groups
+and capabilities, seccomp and Landlock after exec. Only the dedicated ext4
+profile is persistent; scratch is private and resets between lifetimes. Native
+profile lease, read-only preopen, real Hermes stores, live verification and
+clean-only epoch sequencing all precede the actual aiohttp listener.
+
+One new64MiB regular ext4 image was used in previously authorized disposable
+P71C, not a physical disk or existing profile. Two complete mount/exec lifetimes
+were run with unmount and loop detach between them. Native state/replay row IDs,
+file inodes, store UUID and application identity persist. Epoch advances1->2;
+the original finished request/key reuses its native record instead of running
+again. Test fixture work is explicit native API calls, not HTTP work dispatch.
+
+The service returns authenticated200 on its private127.0.0.1. While it is live,
+the parent attempts the SAME port from the host network namespace and receives
+ECONNREFUSED in each lifetime. Earlier positive controls prove the independent
+host TCP/abstract/path sockets were real and reachable to the ordinary UID.
+The confined target cannot reach those ambient endpoints, private broker state,
+host paths or the protected canary. Only the selected broker socket works:
+two authenticated pings, zero physical provider attempts.
+
+Each target records11 HTTP outcomes: ready200; wrong/malformed auth401; closed
+agent/query routes404; mutation method405; continued readiness200; epoch-drift503;
+restoring the epoch still503; liveness200 explicitly process-only. The22 raw HTTP
+rows, ports/PIDs and ordering are preserved, not replaced by a PASS label.
+
+## Ownership and shutdown
+
+HTTP cleanup occurs before closing native stores. An active SQLite transaction
+keeps storage/profile ownership held even after HTTP has stopped. The fixture
+explicitly rolls back its own transaction before successful close; the product
+does not silently discard it. Another process cannot take the native profile
+until release, then can acquire the SAME lock inode. The outer supervisor still
+holds the image after profile release while the target process lives. Only after
+that process exits and unmount/loop cleanup completes is the image lease released.
+
+A second start with deliberately pending native work fails before epoch3 and
+cannot be retried on the same startup object. Pending rows remain intact; no
+automatic recovery/resend was performed. Minimal layout and default denied
+mountinfo remain closed; wrong image profile inode/loop are rejected.
+
+## Independent source and raw-proof review
+
+F111X84 did not repeat the privileged experiment. It separately matched467 source
+hashes:276 unchanged upstream Python files read directly from no-replacement Git
+at eb75627faf532fa6ffbdae59a0d14b0b385fc780,139 installed/pinned pure dependencies,
+canonical baseline code and three reviewed fixed native QA files. The copied
+raw receipt and cleanup bytes have explicit provenance hashes.
+
+Its offline verifier checks actual status/body/port/PID/UID values, source chunk
+digests, row/inode/UUID/epoch continuity, original negative observations and the
+full close/release/detach event order.51 positive/altered-proof methods pass on
+Windows and ordinary-user Linux. All-true flags do not conceal an actually
+successful host connection, timeout instead of refusal, restored200 after a
+revocation, modified records, root/capability leaks, missing checks or early
+lease release. Original native results remain unmodified. This is consistency
+validation, not cryptographic attestation against a malicious host fabricating
+all data, and never a runtime launch capability.
+
+## Counts, custody and environment
+
+Native001 has44 parent predicates and49/54 target predicates in two lifetimes.
+Those nested counts are not147 separate trials. The27 existing Linux startup
+unit methods are a different selected scope. F111E274's12 offline methods and
+F111X84's51 methods are standard suite members; platform repeats are not new
+kernel/HTTP executions. A NEW complete combined Windows run is recorded in this
+joint evidence directory; no sum of previous full suites substitutes for it.
+The23 preexisting platform/opt-in skips are not reexecuted by the Windows run.
+
+All420 preexisting source/config/test/script files remain unchanged. The union
+contains427 frozen source files, all additions being QA/verifier/test files.
+40 original parent evidence Git blobs exactly match their immutable parents.
+Only status.md conflicted; both handoffs are archived without recursive growth.
+The combined standard run/static result and exact merge are recorded only once
+terminal. The union performs no new native/provider or root/mount action.
+
+The original native fixture used its reviewed root controller only in P71C and
+ordinary final workload UID. P71C was initially stopped and started by that
+fixture's preflight; defaultUbuntu was not commanded. Separate cleanup records
+no owned live process/socket/loop/fence/cgroup, empty mount directories and the
+retained unattached image. The independent offline test removed its temporary
+files. No unrelated lab termination, CI queue/configuration, account/service,
+production, main update or remote push is part of this union.
+
+## Exact next boundary
+
+The combined full-isolation readiness-only gap is closed at this tested scope.
+This is NOT the native Hermes agent HTTP API. Its adapter still needs a single
+borrowed-store/ResponseStore ownership contract rather than silently opening a
+second verified state owner. Quiescent startup checks cannot serve as the future
+healthy/busy policy for legitimate in-flight work. Define that boundary and test
+its lifecycle before opening work routes, then qualify broker live-ledger reads
+and dummy-provider send/accounting. No real provider call is authorized here.
+
+Two-store atomic recovery, physical power-loss guarantees and universal side-
+effect-free native constructors are not accepted. Pending/unknown pairs must not
+imply replay permission. Legacy IPCv2 remains CLOSED and fullD3B OPEN. R91F/G82C
+previously denied operations were not retried. Current status.md and delivery.json
+identify the single canonical continuation after successful local promotion.
+
+## Terminal combined regression
+
+NEW fullWindows2798=2775PASS/23SKIP/0ERROR/0FAIL, exit0. All427 source hashes
+match before/after, all420 original source files unchanged.40 original evidence
+blobs retained. The63 offline methods (12 original +51 independent) are part
+of that total, not63 new native executions. Selected Linux/platform repetitions
+are separate scopes. No native rerun or product byte modification by the merge.
+Final static output is static-final.txt and is not a remote CI/publication result.

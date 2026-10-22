@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-22T23:19:59.712341+03:00",
+  "earlierRequest": "f111a048-bd52-4df4-99b4-8e4128000020",
+  "exitCode": 1,
+  "cause": "Windows default CP1254 decode of UTF8 status failed after summary/report write; before staging/commit",
+  "summaryRetained": true,
+  "reportEncodingRoundtripRestored": true,
+  "oldReportSha256": "e9801451d30573522ac80a5191f40658489dc851eda21ae334837fdd867bf3bd",
+  "newReportSha256": "7560af3585d46c30720c6faff8ea7095bb13914f00dd3a5cafe34b3644be9787",
+  "executableAndTestFilesChanged": false,
+  "nativeAndFullProofsUnchanged": true
+}

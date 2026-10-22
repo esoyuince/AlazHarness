@@ -1,0 +1,85 @@
+{
+  "job": "D3B-FULL-ISOLATION-HTTP-JOINT-J111X84",
+  "result": "PASS_SCOPED_UNCHANGED_READINESS_HTTP_FULL_ISOLATION",
+  "at": "2026-10-22T23:19:12.683614+03:00",
+  "inputs": {
+    "at": "2026-10-22T23:15:12.407425+03:00",
+    "base": "1e9c305afd3d02cbb56a74f9cce034c33a4609a9",
+    "nativeQaCommit": "ab55ddb5abd92c048948558dc527e3d407ccb981",
+    "selectedBaseCommit": "ab55ddb5abd92c048948558dc527e3d407ccb981",
+    "independentQaCommit": "bcb6325e30831285cae0c2e8313e80901d9c1dd2",
+    "canonicalBefore": "1e9c305afd3d02cbb56a74f9cce034c33a4609a9",
+    "nativeFullResult": {
+      "total": 2747,
+      "passed": 2724,
+      "skipped": 23,
+      "errors": 0,
+      "failures": 0
+    },
+    "expectedCombinedSources": 427,
+    "conflicts": [
+      "status.md"
+    ],
+    "newNativeRunByMerge": false
+  },
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2798,
+    "discovered": 2798,
+    "passed": 2775,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 427,
+    "sourcesUnchanged": true,
+    "originalSourceCountUnchanged": 420,
+    "elapsedSeconds": 211.299,
+    "at": "2026-10-22T23:19:12.460956+03:00",
+    "collection": "new complete unittest execution result",
+    "scope": "full native HTTP isolation QA + independent offline tamper validation; same unchanged canonical runtime"
+  },
+  "sourceCount": 427,
+  "all420OriginalSourceFilesUnchanged": true,
+  "all427SourcesStable": true,
+  "originalEvidenceBlobsPreserved": 40,
+  "nativeProof": {
+    "state": "SCOPED_CONFINED_HTTP_PROOF_CONSISTENT",
+    "lifetimes": 2,
+    "httpObservations": 22,
+    "targetCheckCounts": [
+      49,
+      54
+    ],
+    "parentChecks": 44,
+    "sourceCount": 467,
+    "newNativeExecution": false,
+    "launchAuthorized": false,
+    "fullD3BAccepted": false
+  },
+  "nativeExecutionRepeatedByUnion": false,
+  "independentOfflineMethods": 51,
+  "independentOfflinePlatforms": [
+    "Windows",
+    "Linux"
+  ],
+  "nativeParentPredicates": 44,
+  "nativeTargetPredicates": [
+    49,
+    54
+  ],
+  "actualHttpObservations": 22,
+  "completeMountExecLifetimes": 2,
+  "brokerAuthenticatedPings": 2,
+  "providerPhysicalSends": 0,
+  "fullNamespaceReadinessHttpQualified": true,
+  "nativeHermesAgentApiStarted": false,
+  "pairedAtomicRecoveryVerified": false,
+  "powerLossTested": false,
+  "legacyIpcV2Enabled": false,
+  "fullD3BAccepted": false,
+  "mainChanged": false,
+  "pushed": false,
+  "next": "single borrowed native API/response-store ownership and healthy-busy policy; then native agent HTTP admission and broker live-ledger/dummy-provider dispatch acceptance"
+}

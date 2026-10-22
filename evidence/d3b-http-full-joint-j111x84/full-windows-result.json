@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2798,
+  "discovered": 2798,
+  "passed": 2775,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 427,
+  "sourcesUnchanged": true,
+  "originalSourceCountUnchanged": 420,
+  "elapsedSeconds": 211.299,
+  "at": "2026-10-22T23:19:12.460956+03:00",
+  "collection": "new complete unittest execution result",
+  "scope": "full native HTTP isolation QA + independent offline tamper validation; same unchanged canonical runtime"
+}
