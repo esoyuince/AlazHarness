@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-23T01:42:34.183512+03:00",
+  "testedCommit": "6f1daf8c291b8deb59e557b3bebeb78e5ea62c90",
+  "documentationPreservingMerge": "5d21b51f52cdf876faded6b08f0b67bba28d0a8b",
+  "canonicalBefore": "799e0220d19575f08c29716412e497a2231cbe6c",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "promotion": "fast-forward only, prior canonical retained as ancestor",
+  "sourceCount": 454,
+  "allSourceAndPatchHashesMatchAcceptedRun": true,
+  "fullWindows": {
+    "total": 2973,
+    "passed": 2950,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "actualFullIsolationTrial": "native-003",
+  "nativeParentPredicates": 45,
+  "nativeTargetPredicates": [
+    58,
+    63
+  ],
+  "httpObservations": 22,
+  "recordedNativeOwnTeardown": "PASS",
+  "independentFinalCleanup": "BLOCKED_NOT_RETRIED",
+  "nativeAgentApiActivated": false,
+  "healthyBusyPolicyImplemented": false,
+  "installedNativeFeatureActivated": false,
+  "providerCalls": 0,
+  "fullD3BAccepted": false,
+  "mainChanged": false,
+  "pushed": false,
+  "rootStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "next": "keep independent final cleanup openly blocked; define legitimate active-work healthy/busy ownership before native API/broker dispatch, without automatic partial/unknown retry"
+}

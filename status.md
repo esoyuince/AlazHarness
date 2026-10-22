@@ -1,45 +1,74 @@
 # AlazHarness - status
 
-## D3B-THREE-PROJECTION-T114R6A - SCOPED PASS; INDEPENDENT CLEANUP BLOCKED
+## D3B-THREE-PROJECTION-T114R6A - DEVELOPMENT-INTEGRATED; SCOPED PASS / CLEANUP FOLLOW-UP BLOCKED
 
-Branch alaz/d3b-three-projection-t114r6a; worktree scratch/worktrees/d3b-three-projection-t114r6a.
-H114R6 original HTTP parent e715c75 integrated with one finite P102 third-file
-selector; no second runtime/startup/parser. Current HTTP7256a62 and projection
-0ff0d4 match actual native003. Installed native/source locks unchanged.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested code6f1daf8c291b8deb59e557b3bebeb78e5ea62c90. Exact documentation merge
+and canonical fast-forward in evidence/d3b-three-projection-t114r6a/delivery.json.
+Original H114 parent/history retained. Read current GitHEAD for final handoff.
 
-NEW combined fullWindows2973=2950PASS/23SKIP/0ERROR/0FAIL exit0,454 source/config
-hashes and2 patches stable. Independent18 unit contracts and10 raw-receipt checks
-are subsets. Original H11430 evidence blobs retained.23 old platform/opt-in skips
-not rerun; upstream full native suite not claimed.
+### One selected product path
 
-Actual native003:45parent/58+63target controls,22HTTP observations/two COMPLETE
-mount-exec-detach lifetimes PASS. Private ready200/host same-portECONNREFUSED;
-third-only fault503 stays503 after fixture restoration, three inodes/body persist,
-response transaction retains all stores after HTTP drain, all3handles close
-before profile/image lease.2brokerpings/0provider sends. Root controller only in
-approved P71C, finalUID23001/GID23003 with private mount/net/IPC, seccomp/Landlock.
-Default minimum/two-store layouts and two-store HTTP semantics unchanged.
+Finite hermes-native-three-stores-cold-v1 P102 profile option uses existing exact
+response layout, same one persistent directory and same isolation permissions.
+Default minimal and two-store behavior unchanged. Existing StorageReadinessHttp
+response_ready=True uses the SAME NativeStoreStartup and all THREE actual handles.
+Pin configured expectation/objects; pair-response-pair checks plus final handle/
+owner verification. Readiness fault stays revoked; process liveness is separate.
+HTTP drain precedes response/replay/state close; transactions retain ownership.
+No second adapter/parser/store owner or broader system-file grant.
 
-Native001/002 FAIL before profile activation due incomplete transported helper
-closure; originals retained, independent cleanup of those failed trials CLEAN.
-Native003 recorded own teardown PASS. Independent final root cleanup query00024
-TOOL-BLOCKED and NOT reissued by another tool/encoding/route. Independent final
-cleanup remains BLOCKED, not CLEAN. No more native/root action performed.
+### Current acceptance
 
-Native featurecc16c10 used only exported fixture, not installed. Diagnostic
-response_ready=True is quiescent storage status, not legitimate-active-work
-healthy/busy policy or native Hermes API authorization. Work/model routes remain
-closed. FullD3B, cross-store atomic recovery/powerloss remain open. Old blocked
-L113 source-check reorder unchanged/not retried. Maincc7ceba/no push/CI/production.
+NEW combined fullWindows2973=2950PASS/23SKIP/0ERROR/0FAIL exit0.454 source/config
+hashes and2 existing patch hashes stable. Relative to446-base:442 unchanged,
+2 runtime edits +2 historical source-binding tests;8 new QA/test files.18 own
+focused contracts and10 offline receipts are subsets, not new kernel trials.
+Old23 platform/opt-in skips not rerun; upstream native full suite not claimed.
 
-Report docs/D3B-THREE-PROJECTION-T114R6A.md; evidence/d3b-three-projection-t114r6a/
-summary.json, native-003-stdout.txt, full-windows-result.json, source-custody.json,
-independent-cleanup-blocked.json. Prior handoffs docs/status-history/t114r6a-*.md.
-Next source-identical canonical artifact delivery preserving other work, then
-active-work readiness policy; never present blocked final cleanup as complete.
-All native/full jobs terminal; local static/commit follow, no kernel rerun.
+Actual native003 terminal0 under approved P71C root controller/finalUID23001:
+private mount/net/IPC, seccomp/Landlock, TWO complete detach/remount lifetimes.
+45parent/58+63target predicates,22 raw HTTP outcomes PASS. Private ready200 while
+host SAME-portECONNREFUSED; response-only fault503 remains503 after restore.
+Three native inodes/body persist, epoch1->2, response transaction holds stores
+after HTTP closes, all3handles close before profile/image lease.2brokerpings,
+0provider/model sends.473 transported source hashes pinned;279 native feature
+sources and139 installed pure dependencies. Installed vendor/source lock still
+eb75627; featurecc16c10 used only in exported dummy-data fixtures, NOT activated.
 
+### Explicit cleanup limitation / retained failures
 
-### Existing canonical documentation preserved
+Native001/002 failed before target/volume because QA transport missed original
+launcher/upstream helpers. Product/policy unchanged; raw failures and their CLEAN
+independent post-failure observations retained, images remain unattached.
+Native003 OWN recorded teardown PASS: children/broker exited, loop/fence/scopes
+gone, parent mount/private hashes unchanged, no forced cleanup. Separate final
+Linux root cleanup query00024 TOOL-BLOCKED. NOT reissued through another tool,
+encoding or route. INDEPENDENT FINAL CLEANUP remains BLOCKED, not CLEAN. No more
+root/native action by this task. This open follow-up is not hidden by full PASS.
 
-Canonical 799e0220d19575f08c29716412e497a2231cbe6c has only prior HTTP handoff/evidence additions beyond original H114 parent. Preserve it as a merge parent without resetting history. All454 tested source hashes and2 patches remain identical. Independent final cleanup remains BLOCKED, not retried.
+Old two-store/L113 results bind exact executed snapshots, not changed runtime.
+Raw response-store duplicateRefused marker is inherited canonical/replay fixture
+metadata; it is NOT independent ResponseStore request-dedup proof. Actual third
+proof is body/inode persistence, handle ownership, fault rejection and close.
+
+### Next / limits
+
+Quiescent STORAGE diagnostics is not healthy/busy readiness for legitimate active
+agent work. Define that ownership/observation policy before actual native API
+listener and broker live-ledger/dummy-provider dispatch. Native agent/work routes
+remain CLOSED; no partial/unknown automatic retry, cross-store atomic recovery,
+power-loss guarantee or fullD3B acceptance. LegacyIPCv2 CLOSED/fullD3B OPEN.
+Previously blocked L113 source-check relocation remains untouched/not replayed.
+No main/push/CIqueue/production/account/defaultUbuntu changes. Maincc7ceba.
+
+### Records
+
+Report docs/D3B-THREE-PROJECTION-T114R6A.md.
+Evidence evidence/d3b-three-projection-t114r6a/: summary.json, delivery.json,
+native-003-stdout.txt, full-windows-result.json, full-sources-before/after.json,
+source-custody.json, independent-cleanup-blocked.json, receipt-scope-clarification.json,
+static-primary-final.txt. Original H114evidence remains unchanged.
+Parent/work histories docs/status-history/t114r6a-*.md. All native/full jobs
+terminal. Final docs/static commit only; no new kernel test or activation.

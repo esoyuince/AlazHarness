@@ -105,3 +105,7 @@ vendor/source lock was not promoted. Local static is recorded separately.
 Acceptance is SCOPED BEHAVIOR+REGRESSION PASS with INDEPENDENT FINAL CLEANUP
 BLOCKED. The native trial's own teardown checks passed, but the separate blocked
 post-run query was not retried and has no CLEAN result. No ambiguity is hidden.
+
+## Canonical delivery
+
+Tested commit `6f1daf8c291b8deb59e557b3bebeb78e5ea62c90`, documentation-preserving merge `5d21b51f52cdf876faded6b08f0b67bba28d0a8b`, prior canonical `799e0220d19575f08c29716412e497a2231cbe6c` retained as ancestor and fast-forwarded. All454 source hashes and2 patches match the full run. Final handoff edits documentation/static receipt only; no additional native/root run, installed-feature activation, main merge or push. Independent final cleanup remains BLOCKED.
