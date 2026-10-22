@@ -1,0 +1,73 @@
+{
+  "job": "D3B-HTTP-JOINT-J110X6C2",
+  "result": "PASS_SCOPED_STORAGE_READINESS_HTTP_AND_INDEPENDENT_QA",
+  "at": "2026-10-22T21:27:50.579376+03:00",
+  "inputs": {
+    "at": "2026-10-22T21:21:22.527054+03:00",
+    "qaCommit": "56b2d68551788c400dc595c2bbc7c52dc0d3c700",
+    "httpCommit": "10dcb3b5304107530795c55a3ed15ded902023fd",
+    "base": "82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6",
+    "canonicalBefore": "82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6",
+    "qaSourceCount": 416,
+    "httpSourceCount": 418,
+    "jointSourceCount": 420,
+    "commonSourceCount": 414,
+    "onlyConflict": [
+      "status.md"
+    ],
+    "parentHttpFull": {
+      "total": 2729,
+      "passed": 2706,
+      "skipped": 23,
+      "errors": 0,
+      "failures": 0
+    },
+    "actualNativeHttpProofSourceMatched": true,
+    "newNativeExecutionByMerge": false
+  },
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2735,
+    "discovered": 2735,
+    "passed": 2712,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 420,
+    "sourcesUnchanged": true,
+    "elapsedSeconds": 289.793,
+    "at": "2026-10-22T21:27:42.078391+03:00",
+    "collection": "new complete unittest result object",
+    "scope": "H110E readiness-only product plus independent R110X6C2 QA; actual network/native proofs remain separate, no real agent API enabled"
+  },
+  "runtimeSha256": "7fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1",
+  "sourceCount": 420,
+  "baseline414SourcesUnchanged": true,
+  "allTestedSourcesUnchanged": true,
+  "preservedParentEvidenceBlobs": 105,
+  "selectedHttpEndpoints": [
+    "GET /health/live",
+    "GET /health/ready"
+  ],
+  "bindAddress": "127.0.0.1",
+  "nativeStorageReadinessHttpChecks": 55,
+  "independentRealWireMethodsPerPlatform": 29,
+  "platforms": [
+    "Windows",
+    "Linux"
+  ],
+  "independentWireStorageDoubled": true,
+  "newNativeRunByUnion": false,
+  "newFullMountNetworkIsolationRun": false,
+  "realHermesHttpAdapterStarted": false,
+  "agentWorkOrModelRoutesEnabled": false,
+  "providerCalls": 0,
+  "pairedAtomicRecoveryVerified": false,
+  "fullD3BAccepted": false,
+  "legacyIpcV2Enabled": false,
+  "mainChanged": false,
+  "pushed": false,
+  "next": "Use sole qualified readiness lifecycle; review borrowed native API/ResponseStore ownership and healthy-busy policy, then same-path full isolation and broker live-ledger/dummy-provider send."
+}

@@ -1,0 +1,22 @@
+from pathlib import Path,PurePosixPath
+import os,sys,json,subprocess,tempfile,hashlib
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<300
+with tempfile.TemporaryDirectory(prefix='alaz-h110e-check-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for n,v in files.items():
+  p=PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts and str(p)==n
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/n;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root),'AIOHTTP_NO_EXTENSIONS':'1','MULTIDICT_NO_EXTENSIONS':'1','FROZENLIST_NO_EXTENSIONS':'1','YARL_NO_EXTENSIONS':'1','PROPCACHE_NO_EXTENSIONS':'1'}
+ code="import sys,unittest;sys.path.insert(0,sys.argv[2]);l=unittest.TestLoader();s=unittest.TestSuite([l.discover(sys.argv[1],pattern='test_gateway_http_readiness.py'),l.discover(sys.argv[1],pattern='test_http_readiness_receipt_h110e.py')]);r=unittest.TextTestRunner(verbosity=2).run(s);sys.exit(0 if r.wasSuccessful() else 1)"
+ units=subprocess.run([sys.executable,'-I','-B','-c',code,str(root/'tests'),str(root/'http-dependencies')],cwd=root,env=env,capture_output=True,text=True,timeout=50)
+ wire_code="import sys,runpy;sys.path.insert(0,sys.argv[1]);sys.argv=sys.argv[2:];runpy.run_path(sys.argv[0],run_name='__main__')"
+ module=root/'packages/claw-hermes/gateway_http_readiness.py';sha=hashlib.sha256(module.read_bytes()).hexdigest()
+ wire=subprocess.run([sys.executable,'-I','-B','-c',wire_code,str(root/'http-dependencies'),str(root/'scripts/qa/r110x_http_audit.py'),'--runtime',str(module),'--expected-sha256',sha,'--output',str(root/'wire-proof')],cwd=root,env=env,capture_output=True,text=True,timeout=60)
+ report={'unitsExitCode':units.returncode,'unitsStdout':units.stdout,'unitsStderr':units.stderr,'wireExitCode':wire.returncode,'wireStdout':wire.stdout,'wireStderr':wire.stderr,'wireReceipt':json.loads((root/'wire-proof/result.json').read_text()) if (root/'wire-proof/result.json').exists() else None,'sources':{n:v['sha256'] for n,v in files.items()},'sourceUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'scope':'35 unit/offline methods plus29 actual loopback HTTP methods with storage doubles; no new native-store execution'}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True)
+sys.exit(0 if units.returncode==wire.returncode==0 and report['sourceUnchanged'] and report['temporaryRootRemoved'] else 1)

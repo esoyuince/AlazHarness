@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-22T21:24:34.077813+03:00",
+  "parents": [
+    {
+      "parent": "56b2d68551788c400dc595c2bbc7c52dc0d3c700",
+      "folder": "evidence/d3b-http-qa-r110x6c2",
+      "originalGitBlobsPreserved": 60,
+      "exactIndexEquality": true
+    },
+    {
+      "parent": "10dcb3b5304107530795c55a3ed15ded902023fd",
+      "folder": "evidence/d3b-http-readiness-h110e",
+      "originalGitBlobsPreserved": 45,
+      "exactIndexEquality": true
+    }
+  ],
+  "evidenceBlobTotal": 105,
+  "baselineSourceCountUnchanged": 414,
+  "canonicalObserved": "82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6",
+  "canonicalRelation": "canonical_at_or_before_qualified_http",
+  "canonicalAdditionalDocumentation": [],
+  "nativeRunByUnion": false
+}

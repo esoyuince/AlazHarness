@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-22T21:11:19.839607+03:00",
+  "native001": "FAIL before bind due optional system MIME read in aiohttp import",
+  "oldSourceSha256": "9612d3c98c74a070fce1ebf2c14a79bdb1c2274c5c7e2b66458352ebd19c4b8d",
+  "newSourceSha256": "7fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1",
+  "change": "explicit public mimetypes knownfiles=[] only during initial stdlib built-in database seed, restored in finally; native and aiohttp functions untouched",
+  "filesystemPermissionsChanged": false,
+  "nativeSourceChanged": false,
+  "freshFullNativeRunRequired": true
+}

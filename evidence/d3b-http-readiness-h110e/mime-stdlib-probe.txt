@@ -1,0 +1,28 @@
+def init(files=None):
+    global suffix_map, types_map, encodings_map, common_types
+    global inited, _db
+    inited = True    # so that MimeTypes.__init__() doesn't call us again
+
+    if files is None or _db is None:
+        db = MimeTypes()
+        # Quick return if not supported
+        db.read_windows_registry()
+
+        if files is None:
+            files = knownfiles
+        else:
+            files = knownfiles + list(files)
+    else:
+        db = _db
+
+    for file in files:
+        if os.path.isfile(file):
+            db.read(file)
+    encodings_map = db.encodings_map
+    suffix_map = db.suffix_map
+    types_map = db.types_map[True]
+    common_types = db.types_map[False]
+    # Make the DB a global variable now that it is fully initialized
+    _db = db
+
+{"result": "FAIL", "type": "PermissionError", "reason": "owned_probe_no_system_mime", "opened": ["/etc/mime.types"]}

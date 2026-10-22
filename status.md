@@ -1,37 +1,41 @@
 # AlazHarness — status
 
-## D3B-HTTP-QA-R110X6C2 — SCOPED INDEPENDENT QA PASS
+## D3B-HTTP-JOINT-J110X6C2 — SCOPED PASS; CANONICAL DELIVERY PENDING
 
-Branch alaz/d3b-http-qa-r110x6c2; worktree scratch/worktrees/d3b-http-qa-r110x6c2.
-Base82a8c3e. No product implementation added or parallel source overwritten.
-H110E owns sole readiness-only aiohttp layer; keep A109 canonical storage owner.
+Branch alaz/d3b-http-joint-j110x6c2; worktree scratch/worktrees/d3b-http-joint-j110x6c2.
+Join terminalH110E single StorageReadinessHttp runtime with independent R110X6C2
+wire/lifecycle QA. No second adapter/parser/store owner. Exact parent commits,
+source counts and prior full results in evidence/d3b-http-joint-j110x6c2/inputs.json.
+Both prior full handoffs archived byte-preserved under docs/status-history/.
+Only status.md conflict; original product/QA code and evidence unchanged.
 
-Actual loopback HTTP29/29 Windows and29/29 ordinaryP71C Linux PASS on exact
-H110E source9612d3c. Native storage/profile/actor gates explicitly DOUBLED;
-not actual Hermes store/full confinement acceptance.108 pure dependency sources
-independently match installed RECORD hashes/lengths; no install/download/root.
+H110E actual native003:55 overlapping checks, real native A109+aiohttp under
+finalexec/Landlock, NO full mount/network projection or native Hermes API adapter.
+Independent29 realHTTP cases pass Windows/Linux with storage/profile DOUBLES;
+MIME-qualified runtime hash7fde274 identical. Malformed UTF8 auth500 failure
+and original fixes preserved. All work/task/model routes disabled. Readiness
+is diagnostic/storage-only, not dispatch/paired recovery/fullD3B authorization.
 
-Real raw0xff Authorization bug reproduced500; own one-condition fix proved,
-concurrentH110E current ASCII/nonempty fix separately retested with all29.
-Initial AppRunner fixture errors retained and fixed without product changes;
-unique-method count correction documented, not rewritten into original logs.
-6 offline custody checks PASS. NEW fullWindows2700=2677PASS/23SKIP/0ERROR/0FAIL,
-exit0;416 source hashes stable,414 originals unchanged.23 old platform/opt-in
-skips not rerun. Own Linux temps/processes CLEAN; shared lab not terminated.
-
-Records docs/D3B-HTTP-QA-R110X6C2.md and evidence/d3b-http-qa-r110x6c2/summary.json.
-All native/wire/full jobs terminal. Prior status/worklog byte-preserved in
- docs/status-history/r110x6c2-parent.md and r110x6c2-work-log.md.
-
-Next verify terminalH110E actual-native evidence and source, then integrate
-ONLY its one runtime plus these QA files with fresh combined regression.
-Latest observed H110E native001 failed on /etc/mime.types import before its
-port-conflict case; do not label that run PASS. Our nonconfined realHTTP success
-does not substitute. Full agent API needs borrowed-store/ResponseStore ownership
-and healthy-busy versus quiescent-readiness policy; all model/work routes closed.
-Maincc7ceba/no push/CI/config/production/defaultUbuntu edits. FullD3B OPEN.
+Next exact-source/evidence custody and NEW combined full regression/static;
+never substitute parent PASS counts for union. Canonical source/ref recheck
+before any fast-forward; no main/push/CIqueue/production/defaultUbuntu changes.
+No new native/root/mount action by this merge. Keep old R91F/G82C work untouched.
 
 
-### Latest MIME-qualified candidate verification
+### Combined full regression started
+Request e110a712-f0ae-4c12-a350-720000000040 IN PROGRESS.420 sources frozen;
+both parent source manifests exact,414 common original files unchanged.
+Earlier039 stopped at command parsing before any effects/test start, recorded.
+No executable/test edits until terminal. This is a NEW standard suite, not
+sum of old suites or new native execution. Canonical ref will be rechecked
+before delivery to preserve concurrent documentation/code.
 
-Own QA commit447212a retained. H110E runtime7fde274 now initializes optional MIME mappings without broadening file grants; exact new snapshot retested29/29Windows+29/29Linux. Supplementary records mime-qualified/; prior9612 source proofs remain historical. Independently read H110Enative003:55/55 predicates, terminal0, source hashes exact and tempclean; this task did not repeat that native run. H110E complete regression still in progress, not assumedPASS. Own416 source files unchanged; do not modify/merge parallel pending work.
+
+### Combined terminal checkpoint
+New fullWindows2735=2712PASS/23SKIP/0ERROR/0FAIL, exit0.420 exact sources stable;
+414 originals unchanged;105 parent evidence blobs preserved.55 genuine native
+storage/HTTP predicates and independent29 real-wire methods on each platform
+remain separate scopes; not a full native agent API or new full namespace run.
+Runtime7fde274 selected unchanged. Auth invalid-byte rejection and MIME seed
+fixes included; old failures retained. Full040 terminal; local static/merge44
+follows exact indexed scope checks. No main/push/CI/production/model action.

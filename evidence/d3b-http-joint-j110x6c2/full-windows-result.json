@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "total": 2735,
+  "discovered": 2735,
+  "passed": 2712,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 420,
+  "sourcesUnchanged": true,
+  "elapsedSeconds": 289.793,
+  "at": "2026-10-22T21:27:42.078391+03:00",
+  "collection": "new complete unittest result object",
+  "scope": "H110E readiness-only product plus independent R110X6C2 QA; actual network/native proofs remain separate, no real agent API enabled"
+}

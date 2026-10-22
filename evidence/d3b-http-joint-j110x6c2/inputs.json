@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-22T21:21:22.527054+03:00",
+  "qaCommit": "56b2d68551788c400dc595c2bbc7c52dc0d3c700",
+  "httpCommit": "10dcb3b5304107530795c55a3ed15ded902023fd",
+  "base": "82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6",
+  "canonicalBefore": "82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6",
+  "qaSourceCount": 416,
+  "httpSourceCount": 418,
+  "jointSourceCount": 420,
+  "commonSourceCount": 414,
+  "onlyConflict": [
+    "status.md"
+  ],
+  "parentHttpFull": {
+    "total": 2729,
+    "passed": 2706,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "actualNativeHttpProofSourceMatched": true,
+  "newNativeExecutionByMerge": false
+}

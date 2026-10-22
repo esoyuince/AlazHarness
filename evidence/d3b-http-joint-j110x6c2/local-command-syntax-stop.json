@@ -1,0 +1,8 @@
+{
+  "requestId": "e110a712-f0ae-4c12-a350-720000000039",
+  "exitCode": 1,
+  "reason": "Python unterminated status-update literal before execution",
+  "testProcessStarted": false,
+  "runtimeOrTestFilesModified": false,
+  "correctedRequest": "e110a712-f0ae-4c12-a350-720000000040"
+}

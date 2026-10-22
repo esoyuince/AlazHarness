@@ -1,0 +1,7 @@
+{
+  "earlierRequest": "e110a712-f0ae-4c12-a350-720000000041",
+  "stoppedBeforeWrites": true,
+  "reason": "helper assumed canonical already contained HTTP commit; reverse diff to ancestor included product files",
+  "correctedCheck": "explicit ancestor relation first; descendant allowed only docs/evidence with no source change",
+  "sourcesOrTestsModified": false
+}
