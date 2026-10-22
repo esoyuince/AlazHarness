@@ -26,3 +26,8 @@ producer capture and HTTP integration remain unaccepted. Prior cleanup/tool
 blocks unchanged and NOT retried. No WSL/root/provider/model/main/push/CI or
 production action. Installed native/source locks unchanged. All own native
 jobs terminal; scoped static/commit follows.
+
+
+### Reader native proof independently matched
+
+W115B6 native00228/28PASS source hashes equal current reader and SINGLE policy2e6d784. Every actual native import independently read from cc16Git. Keeps terminal owner-referenced rows, bounded metadata, no reopen/write/rollback. Live owner/storage flags remain fixtures. Reader original commit and NEW combined full suite pending; no native rerun here. See reader-native-independent-review.json.
