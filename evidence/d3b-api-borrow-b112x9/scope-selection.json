@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-22T23:53:48.500056+03:00",
+  "selectedNativeWorktree": "scratch/worktrees/hermes-api-storage-a112x7d",
+  "selectedHarnessWorktree": "scratch/worktrees/d3b-api-storage-a112x7d",
+  "ownDraftActivated": false,
+  "ownDraftNativeExecuted": false,
+  "ownScope": "independent actual native borrowed-store/response-state side-effect and lifetime QA; do not introduce a second production patch",
+  "parallelFilesModified": false
+}

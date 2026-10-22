@@ -1,0 +1,32 @@
+{
+  "job": "D3B-API-BORROW-B112X9",
+  "result": "PASS_SCOPED_NATIVE_ADAPTER_BORROW_PATCH_NOT_ACTIVATED",
+  "at": "2026-10-23T00:08:52.211278+03:00",
+  "baseHarness": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "nativeFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "requiredResponseCommit": "e19a945342c94138c685ac919b208d558ddcc53a",
+  "nativeWindowsMethods": 27,
+  "offlineReceiptMethods": 8,
+  "nativeImportedSourcesCheckedAgainstGit": 309,
+  "linuxResponseComparisonCases": [
+    "original upstream",
+    "borrowed current patch"
+  ],
+  "newSqliteOpensDuringAdapterBorrowLifecycle": 0,
+  "newNetworkAttemptsDuringAdapterTests": 0,
+  "originalUpstreamLockCorruptionObserved": false,
+  "borrowedResponseCanonicalExtraConnections": 0,
+  "callerCanonicalLockPreserved": true,
+  "uncommittedTerminalRejected": true,
+  "nativeAdapterHTTPListenerActivated": false,
+  "runtimeGitlinkOrSourceLockChanged": false,
+  "fullNativeUpstreamSuiteRun": false,
+  "preparedThirdStoreIntegrated": false,
+  "healthyBusyPolicyImplemented": false,
+  "harnessOriginalSourcesUnchanged": 427,
+  "completeHarnessRegression": "required on combined branch",
+  "providerCalls": 0,
+  "rootMountOrProductionChanges": false,
+  "mainChanged": false,
+  "pushed": false
+}

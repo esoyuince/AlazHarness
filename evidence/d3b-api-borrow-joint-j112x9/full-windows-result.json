@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2813,
+  "discovered": 2813,
+  "passed": 2790,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceAndPatchArtifactCount": 437,
+  "sourcesAndPatchesUnchanged": true,
+  "originalHarnessSourcesUnchanged": 427,
+  "elapsedSeconds": 256.652,
+  "at": "2026-10-23T00:15:45.128260+03:00",
+  "collection": "fresh complete unittest result object",
+  "scope": "combined opt-in native patch artifacts and custody tests; installed native runtime not activated and native upstream full suite not run"
+}

@@ -1,0 +1,234 @@
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+Exception ignored while calling deallocator <function BaseEventLoop.__del__ at 0x0000027E0EF3C670>:
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 760, in __del__
+    self.close()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 696, in close
+    self._close_self_pipe()
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 778, in _close_self_pipe
+    self._ssock.close()
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'

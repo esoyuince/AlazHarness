@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T00:13:26.413244+03:00",
+  "windowsNativeTemporaryProfiles": [],
+  "linux": {
+    "ownResponseTemporaryPaths": [],
+    "uid": 23001,
+    "rootUsed": false,
+    "labStopRequested": false
+  },
+  "ownedPatchReconstructionRemoved": true,
+  "nativeForkSourceRetained": true,
+  "sharedLabTerminated": false
+}

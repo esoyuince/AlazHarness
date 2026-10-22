@@ -1,0 +1,8 @@
+{
+  "reason": "all26 cases failed before setUp because stdlib Windows event loop creates a private loopback socketpair; audit rejected framework startup",
+  "oldQaSha256": "f95dafbf055bcd2513aa3efb4259a772d092fe56b70c066cd86b06a98f9af281",
+  "newQaSha256": "b948a14ad8e9e9949e035fa30e7c0757c6e7e141fe7f7f43639f0f835e4ce419",
+  "fix": "strictly limited unittest loop factory permits only local socketpair; native operation network remains denied",
+  "nativeProductChanged": false,
+  "firstOutputsRetained": true
+}

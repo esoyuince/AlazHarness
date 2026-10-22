@@ -1,0 +1,889 @@
+test_active_caller_transaction_not_rolled_back (__main__.NativeBorrowTests.test_active_caller_transaction_not_rolled_back) ... ERROR
+test_active_worker_global_prevents_detach (__main__.NativeBorrowTests.test_active_worker_global_prevents_detach) ... ERROR
+test_actual_pending_async_task_prevents_detach (__main__.NativeBorrowTests.test_actual_pending_async_task_prevents_detach) ... ERROR
+test_bundle_wrong_thread_is_rejected (__main__.NativeBorrowTests.test_bundle_wrong_thread_is_rejected) ... ERROR
+test_cancellation_during_cleanup_cannot_release_store_bundle (__main__.NativeBorrowTests.test_cancellation_during_cleanup_cannot_release_store_bundle) ... ERROR
+test_cleanup_error_retains_ownership_and_no_retry (__main__.NativeBorrowTests.test_cleanup_error_retains_ownership_and_no_retry) ... ERROR
+test_closed_caller_connection_not_reopened (__main__.NativeBorrowTests.test_closed_caller_connection_not_reopened) ... ERROR
+test_detached_adapter_never_falls_back_to_open (__main__.NativeBorrowTests.test_detached_adapter_never_falls_back_to_open) ... ERROR
+test_disconnect_idempotent_after_caller_closes_stores (__main__.NativeBorrowTests.test_disconnect_idempotent_after_caller_closes_stores) ... ERROR
+test_disconnect_preserves_three_caller_owned_connections (__main__.NativeBorrowTests.test_disconnect_preserves_three_caller_owned_connections) ... ERROR
+test_existing_default_owns_and_closes_its_original_stores (__main__.NativeBorrowTests.test_existing_default_owns_and_closes_its_original_stores) ... ERROR
+test_foreign_profile_never_lazy_opens_any_store (__main__.NativeBorrowTests.test_foreign_profile_never_lazy_opens_any_store) ... ERROR
+test_invalid_bundle_argument_precedes_any_database_open (__main__.NativeBorrowTests.test_invalid_bundle_argument_precedes_any_database_open) ... ERROR
+test_native_connect_is_explicitly_disabled_before_network (__main__.NativeBorrowTests.test_native_connect_is_explicitly_disabled_before_network) ... ERROR
+test_native_constructor_borrows_three_exact_handles_without_open (__main__.NativeBorrowTests.test_native_constructor_borrows_three_exact_handles_without_open) ... ERROR
+test_native_run_cleanup_does_not_close_borrowed_replay (__main__.NativeBorrowTests.test_native_run_cleanup_does_not_close_borrowed_replay) ... ERROR
+test_ordered_http_resource_drain_before_detach (__main__.NativeBorrowTests.test_ordered_http_resource_drain_before_detach) ... ERROR
+test_replaced_adapter_reference_not_accepted (__main__.NativeBorrowTests.test_replaced_adapter_reference_not_accepted) ... ERROR
+test_replaced_canonical_response_binding_not_accepted (__main__.NativeBorrowTests.test_replaced_canonical_response_binding_not_accepted) ... ERROR
+test_replaced_live_sqlite_handle_not_accepted (__main__.NativeBorrowTests.test_replaced_live_sqlite_handle_not_accepted) ... ERROR
+test_reusing_claimed_bundle_never_opens_new_stores (__main__.NativeBorrowTests.test_reusing_claimed_bundle_never_opens_new_stores) ... ERROR
+test_runner_injection_is_rejected_not_reopened (__main__.NativeBorrowTests.test_runner_injection_is_rejected_not_reopened) ... ERROR
+test_sync_async_and_response_selection_return_same_native_objects (__main__.NativeBorrowTests.test_sync_async_and_response_selection_return_same_native_objects) ... ERROR
+test_unbound_response_store_is_not_accepted (__main__.NativeBorrowTests.test_unbound_response_store_is_not_accepted) ... ERROR
+test_unknown_or_negative_work_counter_not_treated_as_idle (__main__.NativeBorrowTests.test_unknown_or_negative_work_counter_not_treated_as_idle) ... ERROR
+test_work_appearing_during_drain_stops_detach (__main__.NativeBorrowTests.test_work_appearing_during_drain_stops_detach) ... ERROR
+
+======================================================================
+ERROR: test_active_caller_transaction_not_rolled_back (__main__.NativeBorrowTests.test_active_caller_transaction_not_rolled_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_active_worker_global_prevents_detach (__main__.NativeBorrowTests.test_active_worker_global_prevents_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_actual_pending_async_task_prevents_detach (__main__.NativeBorrowTests.test_actual_pending_async_task_prevents_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_bundle_wrong_thread_is_rejected (__main__.NativeBorrowTests.test_bundle_wrong_thread_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_cancellation_during_cleanup_cannot_release_store_bundle (__main__.NativeBorrowTests.test_cancellation_during_cleanup_cannot_release_store_bundle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_cleanup_error_retains_ownership_and_no_retry (__main__.NativeBorrowTests.test_cleanup_error_retains_ownership_and_no_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_closed_caller_connection_not_reopened (__main__.NativeBorrowTests.test_closed_caller_connection_not_reopened)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_detached_adapter_never_falls_back_to_open (__main__.NativeBorrowTests.test_detached_adapter_never_falls_back_to_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_disconnect_idempotent_after_caller_closes_stores (__main__.NativeBorrowTests.test_disconnect_idempotent_after_caller_closes_stores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_disconnect_preserves_three_caller_owned_connections (__main__.NativeBorrowTests.test_disconnect_preserves_three_caller_owned_connections)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_existing_default_owns_and_closes_its_original_stores (__main__.NativeBorrowTests.test_existing_default_owns_and_closes_its_original_stores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_foreign_profile_never_lazy_opens_any_store (__main__.NativeBorrowTests.test_foreign_profile_never_lazy_opens_any_store)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_invalid_bundle_argument_precedes_any_database_open (__main__.NativeBorrowTests.test_invalid_bundle_argument_precedes_any_database_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_native_connect_is_explicitly_disabled_before_network (__main__.NativeBorrowTests.test_native_connect_is_explicitly_disabled_before_network)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_native_constructor_borrows_three_exact_handles_without_open (__main__.NativeBorrowTests.test_native_constructor_borrows_three_exact_handles_without_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_native_run_cleanup_does_not_close_borrowed_replay (__main__.NativeBorrowTests.test_native_run_cleanup_does_not_close_borrowed_replay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_ordered_http_resource_drain_before_detach (__main__.NativeBorrowTests.test_ordered_http_resource_drain_before_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_replaced_adapter_reference_not_accepted (__main__.NativeBorrowTests.test_replaced_adapter_reference_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_replaced_canonical_response_binding_not_accepted (__main__.NativeBorrowTests.test_replaced_canonical_response_binding_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_replaced_live_sqlite_handle_not_accepted (__main__.NativeBorrowTests.test_replaced_live_sqlite_handle_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_reusing_claimed_bundle_never_opens_new_stores (__main__.NativeBorrowTests.test_reusing_claimed_bundle_never_opens_new_stores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_runner_injection_is_rejected_not_reopened (__main__.NativeBorrowTests.test_runner_injection_is_rejected_not_reopened)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_sync_async_and_response_selection_return_same_native_objects (__main__.NativeBorrowTests.test_sync_async_and_response_selection_return_same_native_objects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_unbound_response_store_is_not_accepted (__main__.NativeBorrowTests.test_unbound_response_store_is_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_unknown_or_negative_work_counter_not_treated_as_idle (__main__.NativeBorrowTests.test_unknown_or_negative_work_counter_not_treated_as_idle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+======================================================================
+ERROR: test_work_appearing_during_drain_stops_detach (__main__.NativeBorrowTests.test_work_appearing_during_drain_stops_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 84, in get_loop
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 146, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 210, in audit
+    AUDIT['network']+=1;raise PermissionError('native_test_offline')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: native_test_offline
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.081s
+
+FAILED (errors=26)

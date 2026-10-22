@@ -1,33 +1,17 @@
 # AlazHarness - status
 
-## D3B-RESPONSE-BORROW-A112X7D - SCOPED PATCH PASS; INTEGRATION PENDING
+## D3B-API-BORROW-JOINT-J112X9 - SCOPED PATCH PASS; DELIVERY PENDING
 
-Harness branch alaz/d3b-api-storage-a112x7d at base31abe58; own native fork
-alaz/d3b-api-storage-a112x7d commit e19a945342c94138c685ac919b208d558ddcc53a.
-Native worktree scratch/worktrees/hermes-api-storage-a112x7d is CLEAN.
-Vendor main/source lock/installed runtime NOT updated. Patch is optional artifact.
+Combine one native API borrowed-store adapter patch with one complementary ResponseStore canonical-state patch. Exact parents/native feature in evidence/d3b-api-borrow-joint-j112x9/inputs.json. Installed runtime/gitlink/source lock unchanged; H110E/A109 remains selected. Borrowed native API listener refuses until prepared third-store/healthy-busy qualification.
 
-ResponseStore canonical_state reuses exact live caller SessionDB, no duplicate
-canonical SQLite open/close, no _read_ctx pool/reopen; samehome/handle/lock/actor/
-generation checks. Reject busy/active/closed/foreign state and memory fallback.
-Default behavior unchanged.24 genuine native methods PASS Windows and Linux,
-7 offline receipts PASS.427 original harness sources unchanged. No listener,
-provider/root/mount action. Native full pytest suite NOT RUN, full harness suite
-deferred to one combined run after B112X9 adapter seam becomes terminal.
-
-Records docs/D3B-RESPONSE-BORROW-A112X7D.md and evidence/d3b-api-storage-a112x7d/.
-Patch patches/hermes/a112x7d-response-canonical-state.patch, exact apply/hash proof,
-first Windows autocrlf mismatch and commit-identity stop retained. Prior statuses
-archived docs/status-history/a112x7d-*.md. All actual native tests terminal0,
-temporary data/code removed, no unknown-effect operation.
-
-Next preserve BOTH complementary patches, verify actual native adapter borrow/
-close without factory replacement, run fresh combined regression and stage
-artifacts only. Native response third-store cold schema/preflight/A109 ownership
-and healthy-busy HTTP readiness remain open; do not activate a listener or change
-pin before that acceptance. Maincc7ceba/no push/CI/production edits; fullD3B OPEN.
+Actual native adapter27/27 Windows; response24/24 Windows and24/24 Linux plus independent original/borrowed real SQLite competitor comparison. Native featurecc16c10b includes responseparente19a9453. No native full upstream suite/full confinement of newAPI claimed. Incoming source is immutable committed tree; other's pending full-run files untouched. Next one NEW combined full standard suite/static with all source+patch artifacts frozen,427 originals unchanged. Only status.md conflict; both histories archived. No main/push/CI/production/root/mount/provider effects.
 
 
-### Complementary adapter source review
+### Complete combined regression started
 
-B112X9 current native adapter00427/27 PASS with all three real native stores, no new connect while borrowing/selecting/draining. Independently applied both patch files in a new export of immutableeb75627, exact five output hashes match its actual imports and our24-method proofs. This is source equality, not a new native adapter run. One optional urllib3 IPv6 capability bind was BLOCKED during import and retained in evidence; no new network attempts during test cases, no agent listener. Parallel branch still uncommitted at review, so no merge or whole-harness PASS inferred. Own response fork e19a945 and harness4d21e80 remain clean-source deliverables; final combined regression required.
+Request b112d87e-7f29-4fa4-918a-0130be000037 IN PROGRESS. Executable/test/config AND native patch artifacts frozen; all427 original harness sources unchanged. Do not modify these files before terminal. This standard suite includes offline proof tests, not an additional nativeAPI launch. Native source lock remains unchanged; other branch in-progress run not reused as union acceptance.
+
+
+### Complete combined result
+
+NEW fullHarnessWindows2813=2790PASS/23SKIP/0ERROR/0FAIL exit0.437 source/patch artifacts stable; all427 originals unchanged. Nativecc16c10b patches tested but installed native pin remains eb75627. Own actual adapter27Windows and complementary response24Windows/24Linux plus independent response lock comparison source-matched;15 offline receipts included, not extra native trials.74 evidence blobs retained. Next local static/selected merge then clean canonical artifact fast-forward. No work/listener/API activation or provider calls; third-store lifecycle and healthy-busy policy remain open.

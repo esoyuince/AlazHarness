@@ -1,0 +1,104 @@
+"""Owned native response/canonical comparison, real SQLite lock competitors.
+No provider, HTTP, root, mount or production profile. Offline copied P71C fixture.
+"""
+from pathlib import Path
+import hashlib,inspect,json,os,sqlite3,subprocess,sys,time
+ROOT=Path(__file__).resolve().parents[2]
+
+def main():
+    assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+    assert ROOT.parent==Path('/tmp') and ROOT.name.startswith('alaz-b112x9-')
+    assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+    config=json.loads((ROOT/'input.json').read_text());manifest=config['sources'];mode=config['mode']
+    assert mode in ('baseline','borrowed')
+    assert all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest.items())
+    home=ROOT/'profile';home.mkdir(mode=0o700);os.environ['HERMES_HOME']=str(home);os.umask(0o077)
+    sys.path[:0]=[str(ROOT/'vendor-native'),str(ROOT/'dependencies')]
+    audit={'watch':False,'connects':[]}
+    def observed(event,args):
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo'):raise PermissionError('offline_fixture')
+        if audit['watch'] and event=='sqlite3.connect':audit['connects'].append(str(args[0]))
+    sys.addaudithook(observed)
+    from gateway.runtime_ownership import process_ownership
+    from hermes_state import SessionDB
+    import hermes_state_runtime as runtime
+    from gateway.platforms.api_server_response_store import ResponseStore
+    process_ownership.reserve([home]);state=SessionDB(home/'state.db')
+    keyword=config.get('borrowedKeyword')
+    if mode=='borrowed':
+        assert keyword in inspect.signature(ResponseStore).parameters
+        kwargs={keyword:state}
+    else:kwargs={}
+    response=ResponseStore(db_path=str(home/'response_store.db'),**kwargs)
+    response_connection=response._conn;state_connection=state._conn
+    checks={};events=[]
+    def check(name,value):checks[name]=bool(value)
+    def contender():
+        code=chr(10).join(["import sqlite3,sys,json;db=sqlite3.connect(sys.argv[1],timeout=.1)",
+            "try:"," db.execute('BEGIN IMMEDIATE');db.rollback();print(json.dumps({'state':'ACQUIRED'}))",
+            "except sqlite3.OperationalError as e:"," print(json.dumps({'state':'BUSY','code':e.sqlite_errorcode}))",
+            "finally:db.close()"])
+        r=subprocess.run([sys.executable,'-I','-B','-c',code,str(home/'state.db')],capture_output=True,text=True,timeout=5,
+            env={'PATH':'/usr/bin:/bin','HOME':str(home),'LANG':'C.UTF-8'})
+        assert r.returncode==0,r.stderr
+        value=json.loads(r.stdout);events.append({'phase':'competitor',**value});return value
+    def admission(key,terminal):
+        row=runtime.admit_session_input(state,epoch=epoch,principal_id='owned',session_id='session',request_id=key,payload={'text':key})
+        claimed=runtime.claim_session_input(state,epoch=epoch,session_id='session')
+        assert claimed['admission_id']==row['admission_id']
+        if terminal:runtime.settle_session_input(state,epoch=epoch,admission_id=row['admission_id'],generation=claimed['generation'],outcome='completed')
+        assert response.bind_request_key(key,'a'*64)
+        response.bind_request_admission(key,row['admission_id']);return row['admission_id']
+    def settle(label):
+        audit['connects']=[];audit['watch']=True;t=time.monotonic();error=None
+        try:response._settle_terminal_admissions()
+        except Exception as exc:error={'type':type(exc).__name__,'code':str(exc)[:120]}
+        finally:audit['watch']=False
+        response._conn.commit()
+        row={'phase':label,'newSqliteConnections':len(audit['connects']),'error':error,'elapsedSeconds':round(time.monotonic()-t,3)}
+        events.append(row);return row
+    def settled(key):return response._conn.execute('SELECT settled_at FROM main.response_keys WHERE request_key=?',(key,)).fetchone()[0] is not None
+    try:
+        check('real_native_types',type(state).__module__=='hermes_state' and type(response).__module__=='gateway.platforms.api_server_response_store')
+        epoch=runtime.begin_runtime_epoch(state,instance_id='b112x9-'+mode);state.create_session('session','api')
+        admission('terminal-key',True)
+        check('delete_journal',state._conn.execute('PRAGMA journal_mode').fetchone()[0]=='delete')
+        state._conn.execute('PRAGMA locking_mode=EXCLUSIVE');state._conn.execute('BEGIN EXCLUSIVE');state._conn.commit()
+        check('competitor_before_busy',contender()=={'state':'BUSY','code':5})
+        first=settle('settle-committed-under-lock');committed_settled=settled('terminal-key')
+        check('competitor_after_busy',contender()=={'state':'BUSY','code':5})
+        if mode=='borrowed':
+            check('no_extra_canonical_connection',first['newSqliteConnections']==0)
+            check('committed_terminal_settled',committed_settled and first['error'] is None)
+        pending=admission('uncommitted-key',False)
+        state._conn.execute("UPDATE main.session_admissions SET status='terminal' WHERE admission_id=?",(pending,))
+        assert state._conn.in_transaction
+        settle('settle-uncommitted-canonical')
+        check('uncommitted_terminal_not_settled',not settled('uncommitted-key'))
+        check('caller_transaction_retained',state._conn.in_transaction);state._conn.rollback()
+        state._conn.execute('CREATE TEMP TABLE session_admissions(admission_id TEXT,status TEXT)')
+        state._conn.execute('INSERT INTO temp.session_admissions VALUES (?,?)',(pending,'terminal'))
+        state._conn.execute('CREATE TEMP TABLE state_meta(key TEXT,value TEXT)');state._conn.commit()
+        settle('settle-temporary-shadow');check('temp_terminal_not_settled',not settled('uncommitted-key'))
+        state._conn.execute('DROP TABLE temp.session_admissions');state._conn.execute('DROP TABLE temp.state_meta');state._conn.commit()
+        check('same_canonical_connection_retained',state._conn is state_connection and response._conn is response_connection)
+        response.close();check('response_close_leaves_canonical_open',state._conn.execute('SELECT 1').fetchone()[0]==1)
+        check('competitor_after_response_close_still_busy',contender()=={'state':'BUSY','code':5})
+        state.close();check('competitor_after_owner_close_acquired',contender()=={'state':'ACQUIRED'})
+    finally:
+        response.close();state.close();process_ownership.close()
+    imported={}
+    for module in tuple(sys.modules.values()):
+        name=getattr(module,'__file__',None)
+        if not name:continue
+        p=Path(name).resolve()
+        if p.is_relative_to(ROOT) and p.suffix=='.py':
+            n=p.relative_to(ROOT).as_posix();h=hashlib.sha256(p.read_bytes()).hexdigest();assert manifest.get(n)==h,n;imported[n]=h
+    report={'result':'PASS_NATIVE_RESPONSE_COMPARISON' if all(checks.values()) else 'FAIL','mode':mode,
+        'checks':checks,'events':events,'initialCommittedResponseSettled':committed_settled,'sourceSha256':manifest,
+        'actualImportedSources':imported,'uid':os.getuid(),'gid':os.getgid(),'rootUsed':False,'fullIsolationTested':False,
+        'nativeFunctionsMocked':False,'httpAdapterStarted':False,'providerCalls':0,'fullD3BAccepted':False}
+    print(json.dumps(report),flush=True)
+    return 0 if all(checks.values()) else 1
+
+if __name__=='__main__':raise SystemExit(main())
