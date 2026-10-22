@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-23T00:45:04.051868+03:00",
+  "snapshots": [
+    {
+      "module": "packages/claw-hermes/gateway_store_startup.py",
+      "baselineSha256": "94358867806beb035d141d7d2b1345ab07c836b9b6b6841bf2ce65b224295415",
+      "snapshot": "evidence\\d3b-response-lifecycle-l113f6\\gateway_store_startup.py.before.txt",
+      "exactOriginalBytes": true
+    },
+    {
+      "module": "packages/claw-hermes/gateway_native_layout.py",
+      "baselineSha256": "fc25b4e5a5d2d97615b6d3abe441694b40bdba931be61fdf3fd9205e986ee029",
+      "snapshot": "evidence\\d3b-response-lifecycle-l113f6\\gateway_native_layout.py.before.txt",
+      "exactOriginalBytes": true
+    },
+    {
+      "module": "packages/claw-hermes/gateway_http_readiness.py",
+      "baselineSha256": "7fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1",
+      "snapshot": "evidence\\d3b-response-lifecycle-l113f6\\gateway_http_readiness.py.before.txt",
+      "exactOriginalBytes": true
+    }
+  ],
+  "helperSha256": "41d3e56415b0d56a8a7f667e9197e492400534006533548364f265d7e71171bd",
+  "onlyThreeNamedHistoricalModuleBindings": true,
+  "restOfReceiptSourceChecksRemainCurrent": true,
+  "currentNativeIntegrationHasSeparateEvidence": true,
+  "parallelSourceEdited": false,
+  "historicalConfinementResultNotRelabelledCurrent": true
+}
