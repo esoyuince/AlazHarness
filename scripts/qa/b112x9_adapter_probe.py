@@ -1,0 +1,272 @@
+"""Real native API borrowed-store audit; no listener/model/provider activation.
+
+Original classes imported normally from a source-hash-pinned scratch tree.
+Only explicit failure/await-order fixtures are doubled; SQLite and stores real.
+"""
+from pathlib import Path
+import argparse,asyncio,hashlib,json,os,sqlite3,sys,tempfile,threading,time,unittest
+from types import SimpleNamespace
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[2]
+AUDIT={'watch':False,'connects':0,'network':0,'frameworkLoopSetup':False,'frameworkSocketEvents':0,'deniedNetworkEvents':[]}
+
+class NativeBorrowTests(unittest.IsolatedAsyncioTestCase):
+    @staticmethod
+    def loop_factory():
+        # Windows stdlib socketpair uses loopback only to wake its own loop.
+        # Permit this only while unittest constructs the loop, not in test/native code.
+        AUDIT['frameworkLoopSetup']=True
+        try:return asyncio.new_event_loop()
+        finally:AUDIT['frameworkLoopSetup']=False
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='alaz-b112x9-native-')
+        self.home=Path(self.temp.name).resolve();self.oldhome=os.environ.get('HERMES_HOME');os.environ['HERMES_HOME']=str(self.home)
+        self.owner=ownership.process_ownership;self.owner.reserve([self.home])
+        self.state=SessionDB(self.home/'state.db');self.replay=RunIdempotencyStore(str(self.home/'runs_idempotency.db'))
+        self.response=ResponseStore(db_path=str(self.home/'response_store.db'),canonical_state=self.state)
+        self.bundle=BorrowedAPIStores(self.home,self.state,self.replay,self.response)
+        self.cfg=PlatformConfig(enabled=True,extra={'host':'127.0.0.1','port':8642,'key':'owned-fixture-not-a-secret','model_name':'owned-fixture'})
+        self.adapter=None;self.tasks=[];self.extra=[]
+    async def asyncTearDown(self):
+        AUDIT['watch']=False
+        for t in self.tasks:
+            if not t.done():t.cancel()
+        if self.tasks:await asyncio.gather(*self.tasks,return_exceptions=True)
+        for s in self.extra:
+            try:s.close()
+            except Exception:pass
+        for s in (self.response,self.replay,self.state):
+            try:
+                if s._conn is not None and s._conn.in_transaction:s._conn.rollback()
+            except sqlite3.Error:pass
+            s.close()
+        self.owner.close()
+        import gateway.status as gateway_status
+        self.assertTrue(gateway_status.flush_runtime_status(timeout=3))
+        if self.oldhome is None:os.environ.pop('HERMES_HOME',None)
+        else:os.environ['HERMES_HOME']=self.oldhome
+        self.temp.cleanup()
+    def build(self):
+        before=AUDIT['connects'];AUDIT['watch']=True
+        try:self.adapter=APIServerAdapter(self.cfg,borrowed_stores=self.bundle)
+        finally:AUDIT['watch']=False
+        self.assertEqual(AUDIT['connects'],before)
+        return self.adapter
+    def alive(self):
+        for store in (self.state,self.replay,self.response):self.assertEqual(store._conn.execute('SELECT 1').fetchone()[0],1)
+    async def no_opens(self,fn):
+        before=AUDIT['connects'];AUDIT['watch']=True
+        try:return await fn()
+        finally:AUDIT['watch']=False;self.assertEqual(AUDIT['connects'],before)
+    async def test_native_constructor_borrows_three_exact_handles_without_open(self):
+        a=self.build();self.assertIs(a._session_db,self.state);self.assertIs(a._run_idempotency_store,self.replay);self.assertIs(a._response_store,self.response)
+        self.assertEqual(a._session_dbs,{});self.assertEqual(a._response_stores,{})
+        self.assertIsNone(a._runner);self.assertIsNone(a._site);self.alive()
+    async def test_sync_async_and_response_selection_return_same_native_objects(self):
+        a=self.build()
+        async def call():
+            self.assertIs(a._ensure_session_db(),self.state)
+            self.assertIs(await a._ensure_session_db_async(),self.state)
+            self.assertIs(a._open_and_cache_session_db(self.home),self.state)
+            self.assertIs(a._current_response_store(),self.response)
+        await self.no_opens(call)
+    async def test_foreign_profile_never_lazy_opens_any_store(self):
+        a=self.build();foreign=self.home/'foreign';foreign.mkdir()
+        async def call():
+            with self.assertRaisesRegex(BorrowedStoreRejected,'profile_mismatch'):a._open_and_cache_session_db(foreign)
+            os.environ['HERMES_HOME']=str(foreign)
+            try:
+                with self.assertRaisesRegex(BorrowedStoreRejected,'profile_mismatch'):a._ensure_session_db()
+                with self.assertRaisesRegex(BorrowedStoreRejected,'profile_mismatch'):await a._ensure_session_db_async()
+                with self.assertRaisesRegex(BorrowedStoreRejected,'profile_mismatch'):a._current_response_store()
+            finally:os.environ['HERMES_HOME']=str(self.home)
+        await self.no_opens(call);self.assertEqual(list(foreign.iterdir()),[])
+    async def test_runner_injection_is_rejected_not_reopened(self):
+        a=self.build();a.gateway_runner=object()
+        with self.assertRaisesRegex(BorrowedStoreRejected,'runner_conflict'):a._ensure_session_db()
+        self.alive()
+    async def test_replaced_adapter_reference_not_accepted(self):
+        a=self.build();a._session_db=object()
+        with self.assertRaisesRegex(BorrowedStoreRejected,'adapter_handles_changed'):a._ensure_session_db()
+        a._session_db=self.state;self.alive()
+    async def test_replaced_live_sqlite_handle_not_accepted(self):
+        a=self.build();old=self.replay._conn;fake=sqlite3.connect(':memory:');self.replay._conn=fake
+        try:
+            with self.assertRaisesRegex(BorrowedStoreRejected,'connection_changed'):a._ensure_session_db()
+        finally:self.replay._conn=old;fake.close()
+        self.alive()
+    async def test_closed_caller_connection_not_reopened(self):
+        a=self.build();self.replay.close()
+        with self.assertRaisesRegex(BorrowedStoreRejected,'connection_closed'):a._ensure_session_db()
+    async def test_replaced_canonical_response_binding_not_accepted(self):
+        a=self.build();original=self.response._canonical_state;self.response._canonical_state=None
+        try:
+            with self.assertRaisesRegex(BorrowedStoreRejected,'canonical_changed'):a._ensure_session_db()
+        finally:self.response._canonical_state=original
+    async def test_native_run_cleanup_does_not_close_borrowed_replay(self):
+        a=self.build();api_runs._close_run_state(a);self.alive()
+    async def test_native_connect_is_explicitly_disabled_before_network(self):
+        a=self.build();before=AUDIT['network']
+        with self.assertRaisesRegex(BorrowedStoreRejected,'listener_not_qualified'):await a.connect()
+        self.assertEqual(AUDIT['network'],before);self.assertIsNone(a._runner);self.assertEqual(self.bundle.status()['state'],'ATTACHED')
+    async def test_disconnect_preserves_three_caller_owned_connections(self):
+        a=self.build();await self.no_opens(a.disconnect)
+        self.assertEqual(self.bundle.status()['state'],'DETACHED');self.alive()
+        self.assertFalse(self.bundle.status()['storesClosedByAdapter'])
+        self.assertFalse(self.bundle.status()['listenerAuthorized'])
+    async def test_borrowed_disconnect_does_not_schedule_default_status_writer(self):
+        a=self.build()
+        with patch.object(a,'_mark_disconnected',side_effect=AssertionError('default writer called')):
+            await a.disconnect()
+        self.assertFalse((self.home/'gateway_state.json').exists());self.alive()
+    async def test_disconnect_idempotent_after_caller_closes_stores(self):
+        a=self.build();await a.disconnect()
+        for s in (self.response,self.replay,self.state):s.close()
+        await a.disconnect();self.assertEqual(self.bundle.status()['state'],'DETACHED')
+    async def test_detached_adapter_never_falls_back_to_open(self):
+        a=self.build();await a.disconnect()
+        async def call():
+            with self.assertRaisesRegex(BorrowedStoreRejected,'not_attached'):a._ensure_session_db()
+            with self.assertRaisesRegex(BorrowedStoreRejected,'not_attached'):await a._ensure_session_db_async()
+            with self.assertRaisesRegex(BorrowedStoreRejected,'not_attached'):a._current_response_store()
+        await self.no_opens(call);self.alive()
+    async def test_active_caller_transaction_not_rolled_back(self):
+        a=self.build()
+        for s in (self.state,self.replay,self.response):
+            s._conn.execute('BEGIN IMMEDIATE')
+            with self.assertRaisesRegex(BorrowedStoreRejected,'transaction_active'):await a.disconnect()
+            self.assertTrue(s._conn.in_transaction);self.assertEqual(self.bundle.status()['state'],'ATTACHED');s._conn.rollback()
+        self.alive()
+    async def test_unknown_or_negative_work_counter_not_treated_as_idle(self):
+        a=self.build()
+        for value in ('invalid',None,True,-1,1):
+            a._pending_agent_requests=value
+            with self.assertRaisesRegex(BorrowedStoreRejected,'workers_active'):await a.disconnect()
+            self.assertEqual(self.bundle.status()['state'],'ATTACHED')
+        a._pending_agent_requests=0;self.alive()
+    async def test_active_worker_global_prevents_detach(self):
+        a=self.build()
+        with patch.object(api_runs,'_API_WORKER_LIVE',1):
+            with self.assertRaisesRegex(BorrowedStoreRejected,'workers_active'):await a.disconnect()
+        self.assertEqual(self.bundle.status()['state'],'ATTACHED');self.alive()
+    async def test_actual_pending_async_task_prevents_detach(self):
+        a=self.build();task=asyncio.create_task(asyncio.Event().wait());self.tasks.append(task);a._background_tasks.add(task)
+        with self.assertRaisesRegex(BorrowedStoreRejected,'tasks_active'):await a.disconnect()
+        self.assertFalse(task.done());self.alive()
+    async def test_ordered_http_resource_drain_before_detach(self):
+        a=self.build();events=[]
+        async def site_stop():events.append('site.stop');self.alive();self.assertEqual(self.bundle.status()['state'],'DRAINING')
+        async def runner_cleanup():events.append('runner.cleanup');self.alive()
+        a._site=SimpleNamespace(stop=site_stop);a._runner=SimpleNamespace(cleanup=runner_cleanup)
+        await a.disconnect();self.assertEqual(events,['site.stop','runner.cleanup']);self.assertEqual(self.bundle.status()['state'],'DETACHED');self.alive()
+    async def test_cleanup_error_retains_ownership_and_no_retry(self):
+        a=self.build();calls=[]
+        async def fail():calls.append(1);raise RuntimeError('owned failure')
+        a._runner=SimpleNamespace(cleanup=fail)
+        with self.assertRaisesRegex(RuntimeError,'owned failure'):await a.disconnect()
+        self.assertEqual(self.bundle.status()['state'],'CLOSE_UNKNOWN');self.alive()
+        with self.assertRaisesRegex(BorrowedStoreRejected,'cleanup_unknown'):await a.disconnect()
+        self.assertEqual(calls,[1])
+    async def test_cancellation_during_cleanup_cannot_release_store_bundle(self):
+        a=self.build();entered=asyncio.Event()
+        async def hold():entered.set();await asyncio.Event().wait()
+        a._runner=SimpleNamespace(cleanup=hold);task=asyncio.create_task(a.disconnect());self.tasks.append(task)
+        await asyncio.wait_for(entered.wait(),1);task.cancel()
+        with self.assertRaises(asyncio.CancelledError):await task
+        self.assertEqual(self.bundle.status()['state'],'CLOSE_UNKNOWN');self.alive()
+        with self.assertRaisesRegex(BorrowedStoreRejected,'cleanup_unknown'):await a.disconnect()
+    async def test_work_appearing_during_drain_stops_detach(self):
+        a=self.build()
+        async def cleanup():a._inflight_agent_runs=1
+        a._runner=SimpleNamespace(cleanup=cleanup)
+        with self.assertRaisesRegex(BorrowedStoreRejected,'workers_active'):await a.disconnect()
+        self.assertEqual(self.bundle.status()['state'],'CLOSE_UNKNOWN');a._inflight_agent_runs=0;self.alive()
+    async def test_bundle_wrong_thread_is_rejected(self):
+        a=self.build()
+        with self.assertRaisesRegex(BorrowedStoreRejected,'actor'):await asyncio.to_thread(a._ensure_session_db)
+        self.alive()
+    async def test_reusing_claimed_bundle_never_opens_new_stores(self):
+        a=self.build();before=AUDIT['connects'];AUDIT['watch']=True
+        try:
+            with self.assertRaisesRegex(BorrowedStoreRejected,'already_claimed'):APIServerAdapter(self.cfg,borrowed_stores=self.bundle)
+        finally:AUDIT['watch']=False
+        self.assertEqual(before,AUDIT['connects']);self.assertIs(a._session_db,self.state)
+    async def test_unbound_response_store_is_not_accepted(self):
+        response=ResponseStore(db_path=str(self.home/'response_store.db'));self.extra.append(response)
+        with self.assertRaisesRegex(BorrowedStoreRejected,'response_canonical_required'):
+            BorrowedAPIStores(self.home,self.state,self.replay,response)
+    async def test_invalid_bundle_argument_precedes_any_database_open(self):
+        before=AUDIT['connects'];AUDIT['watch']=True
+        try:
+            with self.assertRaisesRegex(BorrowedStoreRejected,'bundle_type'):APIServerAdapter(self.cfg,borrowed_stores={})
+        finally:AUDIT['watch']=False
+        self.assertEqual(before,AUDIT['connects'])
+    async def test_existing_default_owns_and_closes_its_original_stores(self):
+        a=APIServerAdapter(self.cfg)
+        self.assertIsNone(a._borrowed_api_stores)
+        self.assertIsNot(a._response_store,self.response);self.assertIsNot(a._run_idempotency_store,self.replay)
+        conns=(a._response_store._conn,a._run_idempotency_store._conn)
+        await a.disconnect()
+        for conn in conns:
+            with self.assertRaises(sqlite3.ProgrammingError):conn.execute('SELECT 1')
+        self.alive()
+
+def main():
+    global APIServerAdapter,PlatformConfig,SessionDB,RunIdempotencyStore,ResponseStore,BorrowedAPIStores,BorrowedStoreRejected,ownership,api_runs
+    p=argparse.ArgumentParser();p.add_argument('--native-root',type=Path,required=True);p.add_argument('--source-manifest',type=Path,required=True);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+    native=args.native_root.resolve(strict=True);manifest=json.loads(args.source_manifest.read_text(encoding='utf-8'))
+    before={n:hashlib.sha256((native/n).read_bytes()).hexdigest() for n in manifest}
+    assert before==manifest;assert not args.output.exists();args.output.mkdir(parents=True)
+    boot=tempfile.TemporaryDirectory(prefix='alaz-b112x9-bootstrap-');os.environ['HERMES_HOME']=boot.name
+    sys.path.insert(0,str(native))
+    def audit(event,fields):
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo'):
+            if (AUDIT['frameworkLoopSetup'] and event in ('socket.connect','socket.bind')
+                    and isinstance(fields[1],tuple) and fields[1][0] in ('127.0.0.1','::1')):
+                AUDIT['frameworkSocketEvents']+=1
+                return
+            import traceback
+            AUDIT['network']+=1
+            AUDIT['deniedNetworkEvents'].append({'event':event,'stack':[str(Path(f.filename).name)+':'+f.name for f in traceback.extract_stack(limit=8)]})
+            raise PermissionError('native_test_offline')
+        if AUDIT['watch'] and event=='sqlite3.connect':AUDIT['connects']+=1;raise AssertionError('unexpected_SQLite_open')
+    sys.addaudithook(audit)
+    # urllib3 detects optional IPv6 support by a local bind during import.
+    # The guard still DENIES it; isolate this known import probe from adapter effects.
+    import urllib3.util.connection
+    from gateway.platforms.api_server import APIServerAdapter
+    from gateway.config import PlatformConfig
+    from hermes_state import SessionDB
+    from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+    from gateway.platforms.api_server_response_store import ResponseStore
+    from gateway.platforms.api_server_borrowed import BorrowedAPIStores,BorrowedStoreRejected
+    from gateway import runtime_ownership as ownership
+    from gateway.platforms import api_server_runs as api_runs
+    import_denials=list(AUDIT['deniedNetworkEvents'])
+    assert all(e['event']=='socket.bind' and 'connection.py:_has_ipv6' in e['stack'] for e in import_denials)
+    import_network=AUDIT['network']
+    suite=unittest.defaultTestLoader.loadTestsFromTestCase(NativeBorrowTests);t=time.monotonic()
+    with (args.output/'tests.txt').open('x',encoding='utf-8',newline='\n') as f:r=unittest.TextTestRunner(stream=f,verbosity=2).run(suite)
+    after={n:hashlib.sha256((native/n).read_bytes()).hexdigest() for n in manifest}
+    imported={}
+    for module in tuple(sys.modules.values()):
+        name=getattr(module,'__file__',None)
+        if name:
+            path=Path(name).resolve()
+            if path.is_relative_to(native) and path.suffix=='.py' and path.exists():
+                imported[path.relative_to(native).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
+    boot.cleanup()
+    result={'result':'PASS_NATIVE_BORROWED_API_LIFECYCLE' if r.wasSuccessful() and before==after and AUDIT['network']==import_network else 'FAIL',
+        'total':r.testsRun,'passed':r.testsRun-len({x.id() for x,_ in r.failures+r.errors})-len(r.skipped),
+        'failures':len(r.failures),'errors':len(r.errors),'skipped':len(r.skipped),'failureIds':[x.id() for x,_ in r.failures],'errorIds':[x.id() for x,_ in r.errors],
+        'sourceSha256':before,'sourcesUnchanged':before==after,'nativeImportedSources':imported,'audit':AUDIT,
+        'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'elapsedSeconds':round(time.monotonic()-t,3),
+        'networkDeniedDuringKnownImportProbe':import_network,'newNetworkAttemptsDuringTests':AUDIT['network']-import_network,
+        'nativeAdapterAndThreeStoresReal':True,'cleanupFaultAwaitablesDoubled':True,'nativeListenerStarted':False,
+        'A109ThirdStoreIntegrated':False,'healthyBusyPolicyImplemented':False,'providerCalls':0,'fullD3BAccepted':False}
+    (args.output/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
+    print(json.dumps({k:v for k,v in result.items() if k not in ('nativeImportedSources','sourceSha256')}),flush=True)
+    if result['result']=='FAIL':print((args.output/'tests.txt').read_text(encoding='utf-8')[-16000:],flush=True)
+    return 0 if result['result'].startswith('PASS') else 1
+
+if __name__=='__main__':raise SystemExit(main())

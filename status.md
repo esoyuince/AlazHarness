@@ -1,43 +1,19 @@
 # AlazHarness - status
 
-## D3B-RESPONSE-BORROW-A112X7D - SCOPED PATCH PASS; INTEGRATION PENDING
+## D3B-API-BORROW-JOINT-J112X7D - SCOPED PASS; ARTIFACT DELIVERY PENDING
 
-Harness branch alaz/d3b-api-storage-a112x7d at base31abe58; own native fork
-alaz/d3b-api-storage-a112x7d commit e19a945342c94138c685ac919b208d558ddcc53a.
-Native worktree scratch/worktrees/hermes-api-storage-a112x7d is CLEAN.
-Vendor main/source lock/installed runtime NOT updated. Patch is optional artifact.
+Single paired patch series on nativeeb75627, featurecc16c10: A112X7D response canonical-state borrowing + B112X9 native API constructor/selection/drain. Both real-native proofs are source matched. No duplicate adapter/storage engine. Existing installed native gitlink/source lock remain unchanged and borrowed connect stays explicitly refused.
 
-ResponseStore canonical_state reuses exact live caller SessionDB, no duplicate
-canonical SQLite open/close, no _read_ctx pool/reopen; samehome/handle/lock/actor/
-generation checks. Reject busy/active/closed/foreign state and memory fallback.
-Default behavior unchanged.24 genuine native methods PASS Windows and Linux,
-7 offline receipts PASS.427 original harness sources unchanged. No listener,
-provider/root/mount action. Native full pytest suite NOT RUN, full harness suite
-deferred to one combined run after B112X9 adapter seam becomes terminal.
+Own response24 actual native methods PASS Windows/Linux; adapter27 actual-native Windows methods PASS, only cleanup failure awaitables doubled; Linux real competitor comparison source matched. Optional IPv6 import probe was blocked, not a provider call. Branch response full2805 PASS does not replace combined acceptance. Exact refs and proof paths in evidence/d3b-api-borrow-joint-j112x7d/inputs.json. Both prior handoffs preserved in docs/status-history/j112x7d-*-parent.md.
 
-Records docs/D3B-RESPONSE-BORROW-A112X7D.md and evidence/d3b-api-storage-a112x7d/.
-Patch patches/hermes/a112x7d-response-canonical-state.patch, exact apply/hash proof,
-first Windows autocrlf mismatch and commit-identity stop retained. Prior statuses
-archived docs/status-history/a112x7d-*.md. All actual native tests terminal0,
-temporary data/code removed, no unknown-effect operation.
-
-Next preserve BOTH complementary patches, verify actual native adapter borrow/
-close without factory replacement, run fresh combined regression and stage
-artifacts only. Native response third-store cold schema/preflight/A109 ownership
-and healthy-busy HTTP readiness remain open; do not activate a listener or change
-pin before that acceptance. Maincc7ceba/no push/CI/production edits; fullD3B OPEN.
+Next NEW complete combined standard suite with both patches/config/source hashes frozen; preserve evidence and check canonical ancestry before artifact promotion. No installed runtime activation, third-response-store preopen/layout/A109 lifecycle or healthy-busy HTTP policy claim. No work/listener/model/provider/main/push/CI/production/defaultUbuntu change. FullD3B OPEN, legacyIPCv2 CLOSED.
 
 
-### Complementary adapter source review
+### Combined full regression started
 
-B112X9 current native adapter00427/27 PASS with all three real native stores, no new connect while borrowing/selecting/draining. Independently applied both patch files in a new export of immutableeb75627, exact five output hashes match its actual imports and our24-method proofs. This is source equality, not a new native adapter run. One optional urllib3 IPv6 capability bind was BLOCKED during import and retained in evidence; no new network attempts during test cases, no agent listener. Parallel branch still uncommitted at review, so no merge or whole-harness PASS inferred. Own response fork e19a945 and harness4d21e80 remain clean-source deliverables; final combined regression required.
-
-
-### Current branch complete regression started
-
-The adapter branch remains uncommitted, so do not block or infer combined acceptance. Run a fresh complete harness suite for this independently qualified response patch now, request a112f6c4-540e-44db-934b-e97f28110026.429 source files plus exact native patch hash frozen;427 original sources unchanged. No source edits while pending. The run is NOT a combined API adapter suite, not a native pytest suite and does not apply patches to installed runtime. If complementary code later becomes terminal, preserve branches and qualify union separately.
+Request a112f6c4-540e-44db-934b-e97f28110030 IN PROGRESS.434 source/config/test files and2 exact patch hashes frozen. All427 original sources unchanged. No source/patch edits until terminal. This is a fresh whole-harness run, not sum of parent outcomes or a native upstream suite. No actual adapter/listener/model/runtime activation by this merge.
 
 
-### Response branch full regression terminal
+### Combined terminal checkpoint
 
-Request026 exit0:2805total=2782PASS/23SKIP/0ERROR/0FAIL;429source hashes and nativepatch exact. Complementary adapter now committed cbcd960 and nativefeaturecc16c10 descends from our e19a945;309 actual native imports independently reread against featureGit. No new listener/pin activation. Combined integration next; source manifests and previous reports preserved.
+Fresh fullWindows2813=2790PASS/23SKIP/0ERROR/0FAIL exit0.434 source/config hashes and2 native patch hashes stable;427 old sources unchanged,79 original evidence blobs preserved. Request030 complete. Exact nativefeaturecc16c10 plus both source-pinned patches remain staged artifacts only; no installed/source-lock promotion. Static and exact-scope merge commit request033 follows. Healthy-busy policy, third-store startup and native borrowed listener remain NOT ACCEPTED/CLOSED.

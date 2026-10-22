@@ -1,0 +1,1 @@
+{"import": "PASS", "adapter": "gateway.platforms.api_server", "configFields": ["enabled", "token", "api_key", "home_channel", "reply_to_mode", "gateway_restart_notification", "typing_indicator", "typing_status_text", "channel_overrides", "extra"]}

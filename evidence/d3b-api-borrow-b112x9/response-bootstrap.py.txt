@@ -1,0 +1,20 @@
+from pathlib import Path,PurePosixPath
+import os,sys,json,tempfile,hashlib,subprocess
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+data=json.load(sys.stdin);files=data['files'];assert len(files)<400
+with tempfile.TemporaryDirectory(prefix='alaz-b112x9-response-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,item in files.items():
+  p=PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts and name.endswith('.py')
+  raw=item['text'].encode();assert hashlib.sha256(raw).hexdigest()==item['sha256']
+  dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ manifest={n:v['sha256'] for n,v in files.items()}
+ (root/'input.json').write_text(json.dumps({'sources':manifest,'mode':data['mode'],'borrowedKeyword':data.get('borrowedKeyword')}))
+ env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8','WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+ r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/b112x9_response_probe.py')],cwd=root,env=env,capture_output=True,text=True,timeout=80)
+ report={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':manifest,'sourceUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in manifest.items()),'uid':os.getuid(),'rootUsed':False}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True);raise SystemExit(0 if r.returncode==0 and report['sourceUnchanged'] and report['temporaryRootRemoved'] else 1)

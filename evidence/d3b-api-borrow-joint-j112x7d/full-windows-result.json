@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 2813,
+  "discovered": 2813,
+  "passed": 2790,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 434,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "originalSourceCountUnchanged": 427,
+  "elapsedSeconds": 254.184,
+  "at": "2026-10-23T00:17:37.601810+03:00",
+  "scope": "both opt-in native borrowing patches + fixed series + prior runtime regressions; existing source lock unchanged; no installed feature activation"
+}

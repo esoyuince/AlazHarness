@@ -1,0 +1,68 @@
+{
+  "job": "D3B-API-BORROW-JOINT-J112X7D",
+  "result": "PASS_SCOPED_STAGED_NATIVE_BORROW_SERIES",
+  "at": "2026-10-23T00:17:37.778589+03:00",
+  "inputs": {
+    "at": "2026-10-23T00:12:38.862957+03:00",
+    "baseHarness": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+    "responseHarnessCommit": "872de4526e5a10a2912bb7637dde71b9d66778db",
+    "adapterHarnessCommit": "cbcd960425252043d92ae741c1030467a0d7893f",
+    "nativeResponseCommit": "e19a945342c94138c685ac919b208d558ddcc53a",
+    "nativeCombinedFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+    "canonicalBefore": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+    "onlyConflict": [
+      "status.md"
+    ],
+    "newNativeExecutionByMerge": false,
+    "activeSourcePinChanged": false
+  },
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2813,
+    "discovered": 2813,
+    "passed": 2790,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 434,
+    "sourcesUnchanged": true,
+    "patchesUnchanged": true,
+    "originalSourceCountUnchanged": 427,
+    "elapsedSeconds": 254.184,
+    "at": "2026-10-23T00:17:37.601810+03:00",
+    "scope": "both opt-in native borrowing patches + fixed series + prior runtime regressions; existing source lock unchanged; no installed feature activation"
+  },
+  "sourceCount": 434,
+  "sourceHashesStable": true,
+  "original427SourceFilesUnchanged": true,
+  "patchHashesStable": {
+    "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+    "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac"
+  },
+  "preservedEvidenceBlobs": 79,
+  "nativeFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "nativeResponseMethodsPerPlatform": 24,
+  "nativeResponsePlatforms": [
+    "Windows",
+    "Linux"
+  ],
+  "nativeAdapterMethods": 27,
+  "nativeAdapterPlatform": "Windows",
+  "offlineReceiptMethodsInStandardSuite": 15,
+  "nativeAdapterCleanupAwaitablesDoubled": true,
+  "newNativeRunByUnion": false,
+  "nativeSourceLockOrGitlinkChanged": false,
+  "thirdStoreStartupIntegrated": false,
+  "healthyBusyPolicyImplemented": false,
+  "nativeAgentHttpListenerStarted": false,
+  "providerCalls": 0,
+  "fullNativeUpstreamSuiteRun": false,
+  "pairedAtomicRecoveryVerified": false,
+  "fullD3BAccepted": false,
+  "legacyIpcV2Enabled": false,
+  "mainChanged": false,
+  "pushed": false,
+  "next": "prepare response_store schema/identity read-only preflight and integrate three-store A109 ownership; separately qualify healthy/busy policy and same-path isolation before borrowed listener/work activation"
+}

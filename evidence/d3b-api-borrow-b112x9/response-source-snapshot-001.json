@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-22T23:57:48.987407+03:00",
+  "sources": {
+    "gateway/platforms/api_server_response_store.py": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+    "gateway/platforms/api_server_response_state.py": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83"
+  },
+  "originWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-api-storage-a112x7d",
+  "otherFilesModified": false
+}

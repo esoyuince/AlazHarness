@@ -1,0 +1,32 @@
+test_active_caller_transaction_not_rolled_back (__main__.NativeBorrowTests.test_active_caller_transaction_not_rolled_back) ... ok
+test_active_worker_global_prevents_detach (__main__.NativeBorrowTests.test_active_worker_global_prevents_detach) ... ok
+test_actual_pending_async_task_prevents_detach (__main__.NativeBorrowTests.test_actual_pending_async_task_prevents_detach) ... ok
+test_borrowed_disconnect_does_not_schedule_default_status_writer (__main__.NativeBorrowTests.test_borrowed_disconnect_does_not_schedule_default_status_writer) ... ok
+test_bundle_wrong_thread_is_rejected (__main__.NativeBorrowTests.test_bundle_wrong_thread_is_rejected) ... ok
+test_cancellation_during_cleanup_cannot_release_store_bundle (__main__.NativeBorrowTests.test_cancellation_during_cleanup_cannot_release_store_bundle) ... ok
+test_cleanup_error_retains_ownership_and_no_retry (__main__.NativeBorrowTests.test_cleanup_error_retains_ownership_and_no_retry) ... ok
+test_closed_caller_connection_not_reopened (__main__.NativeBorrowTests.test_closed_caller_connection_not_reopened) ... ok
+test_detached_adapter_never_falls_back_to_open (__main__.NativeBorrowTests.test_detached_adapter_never_falls_back_to_open) ... ok
+test_disconnect_idempotent_after_caller_closes_stores (__main__.NativeBorrowTests.test_disconnect_idempotent_after_caller_closes_stores) ... ok
+test_disconnect_preserves_three_caller_owned_connections (__main__.NativeBorrowTests.test_disconnect_preserves_three_caller_owned_connections) ... ok
+test_existing_default_owns_and_closes_its_original_stores (__main__.NativeBorrowTests.test_existing_default_owns_and_closes_its_original_stores) ... ok
+test_foreign_profile_never_lazy_opens_any_store (__main__.NativeBorrowTests.test_foreign_profile_never_lazy_opens_any_store) ... ok
+test_invalid_bundle_argument_precedes_any_database_open (__main__.NativeBorrowTests.test_invalid_bundle_argument_precedes_any_database_open) ... ok
+test_native_connect_is_explicitly_disabled_before_network (__main__.NativeBorrowTests.test_native_connect_is_explicitly_disabled_before_network) ... ok
+test_native_constructor_borrows_three_exact_handles_without_open (__main__.NativeBorrowTests.test_native_constructor_borrows_three_exact_handles_without_open) ... ok
+test_native_run_cleanup_does_not_close_borrowed_replay (__main__.NativeBorrowTests.test_native_run_cleanup_does_not_close_borrowed_replay) ... ok
+test_ordered_http_resource_drain_before_detach (__main__.NativeBorrowTests.test_ordered_http_resource_drain_before_detach) ... ok
+test_replaced_adapter_reference_not_accepted (__main__.NativeBorrowTests.test_replaced_adapter_reference_not_accepted) ... ok
+test_replaced_canonical_response_binding_not_accepted (__main__.NativeBorrowTests.test_replaced_canonical_response_binding_not_accepted) ... ok
+test_replaced_live_sqlite_handle_not_accepted (__main__.NativeBorrowTests.test_replaced_live_sqlite_handle_not_accepted) ... ok
+test_reusing_claimed_bundle_never_opens_new_stores (__main__.NativeBorrowTests.test_reusing_claimed_bundle_never_opens_new_stores) ... ok
+test_runner_injection_is_rejected_not_reopened (__main__.NativeBorrowTests.test_runner_injection_is_rejected_not_reopened) ... ok
+test_sync_async_and_response_selection_return_same_native_objects (__main__.NativeBorrowTests.test_sync_async_and_response_selection_return_same_native_objects) ... ok
+test_unbound_response_store_is_not_accepted (__main__.NativeBorrowTests.test_unbound_response_store_is_not_accepted) ... ok
+test_unknown_or_negative_work_counter_not_treated_as_idle (__main__.NativeBorrowTests.test_unknown_or_negative_work_counter_not_treated_as_idle) ... ok
+test_work_appearing_during_drain_stops_detach (__main__.NativeBorrowTests.test_work_appearing_during_drain_stops_detach) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 28.461s
+
+OK

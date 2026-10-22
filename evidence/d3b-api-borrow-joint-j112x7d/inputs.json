@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-23T00:12:38.862957+03:00",
+  "baseHarness": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "responseHarnessCommit": "872de4526e5a10a2912bb7637dde71b9d66778db",
+  "adapterHarnessCommit": "cbcd960425252043d92ae741c1030467a0d7893f",
+  "nativeResponseCommit": "e19a945342c94138c685ac919b208d558ddcc53a",
+  "nativeCombinedFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "canonicalBefore": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "onlyConflict": [
+    "status.md"
+  ],
+  "newNativeExecutionByMerge": false,
+  "activeSourcePinChanged": false
+}

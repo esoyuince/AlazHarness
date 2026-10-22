@@ -1,0 +1,13 @@
+test_actual_native_adapter_twenty_seven_methods_pass (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_actual_native_adapter_twenty_seven_methods_pass) ... ok
+test_actual_sqlite_lock_survives_both_paths_and_response_close (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_actual_sqlite_lock_survives_both_paths_and_response_close) ... ok
+test_each_method_has_unique_success_record (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_each_method_has_unique_success_record) ... ok
+test_initial_failed_attempts_not_relabelled (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_initial_failed_attempts_not_relabelled) ... ok
+test_linux_baseline_and_borrowed_are_separate_actual_comparisons (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_linux_baseline_and_borrowed_are_separate_actual_comparisons) ... ok
+test_optional_ipv6_probe_denied_not_a_started_api_listener (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_optional_ipv6_probe_denied_not_a_started_api_listener) ... ok
+test_response_sources_are_exact_complementary_patch (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_response_sources_are_exact_complementary_patch) ... ok
+test_tested_patch_matches_native_feature_and_current_artifact (test_api_borrow_b112x9_receipts.BorrowedAPIEvidence.test_tested_patch_matches_native_feature_and_current_artifact) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.060s
+
+OK

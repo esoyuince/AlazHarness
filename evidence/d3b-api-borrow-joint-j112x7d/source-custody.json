@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-23T00:14:56.885442+03:00",
+  "parents": [
+    {
+      "ref": "872de4526e5a10a2912bb7637dde71b9d66778db",
+      "folder": "evidence/d3b-api-storage-a112x7d",
+      "exactPreservedGitBlobs": 25
+    },
+    {
+      "ref": "cbcd960425252043d92ae741c1030467a0d7893f",
+      "folder": "evidence/d3b-api-borrow-b112x9",
+      "exactPreservedGitBlobs": 54
+    }
+  ],
+  "preservedEvidenceBlobs": 79,
+  "originalSourceCountUnchanged": 427,
+  "nativeSourceLockAndGitlinkUnchanged": true,
+  "nativeFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "newNativeExecutionByUnion": false
+}
