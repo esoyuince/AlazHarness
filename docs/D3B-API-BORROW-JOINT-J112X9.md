@@ -121,3 +121,7 @@ Native adapter27 Windows methods, response24 methods per platform, and separate
 Linux lock comparison remain distinct actual scopes. Full upstream native suite
 NOT RUN. No artifact merge activates the native pin or work/listener routes.
 74 original parent evidence blobs preserved; final local static follows.
+
+## Canonical artifact delivery
+
+Tested merge `c4ff1211305055c29258a846a6faea8b7724fc17` was fast-forwarded from `31abe5821e7d0235ab3b7440a91285d5b508ab97` to `alaz/d3b-principal-launch-21oct`. All437 source/config/test/native-patch artifacts remain exactly as tested. This documentation/static delivery does NOT activate native featurecc16c10b, change the runtime pin, start a work listener, or imply full native-suite acceptance. Main/push/production/CI are unchanged. Current status.md holds the single next step.
