@@ -1,0 +1,30 @@
+test_all_required_entries_mandatory (test_gateway_native_layout.LayoutFixtures.test_all_required_entries_mandatory) ... ok
+test_aux_fd_identity_changed_refused (test_gateway_native_layout.LayoutFixtures.test_aux_fd_identity_changed_refused) ... ok
+test_cache_duplicate_keys_refused (test_gateway_native_layout.LayoutFixtures.test_cache_duplicate_keys_refused) ... ok
+test_cache_nonfinite_refused (test_gateway_native_layout.LayoutFixtures.test_cache_nonfinite_refused) ... ok
+test_cache_schema_tampering_refused (test_gateway_native_layout.LayoutFixtures.test_cache_schema_tampering_refused) ... ok
+test_cache_semantic_hash_not_whitespace_order (test_gateway_native_layout.LayoutFixtures.test_cache_semantic_hash_not_whitespace_order) ... ok
+test_cache_size_bounded_before_open (test_gateway_native_layout.LayoutFixtures.test_cache_size_bounded_before_open) ... ok
+test_changed_snapshot_refused (test_gateway_native_layout.LayoutFixtures.test_changed_snapshot_refused) ... ok
+test_exact_prepared_fixture_passes (test_gateway_native_layout.LayoutFixtures.test_exact_prepared_fixture_passes) ... ok
+test_extra_cache_file_refused (test_gateway_native_layout.LayoutFixtures.test_extra_cache_file_refused) ... ok
+test_file_size_in_limit_and_sidecar_is_observed_not_opened (test_gateway_native_layout.LayoutFixtures.test_file_size_in_limit_and_sidecar_is_observed_not_opened) ... ok
+test_forbidden_config_auth_and_unknown_top_level (test_gateway_native_layout.LayoutFixtures.test_forbidden_config_auth_and_unknown_top_level) ... ok
+test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) ... ok
+test_invalid_identity_fails_before_io (test_gateway_native_layout.LayoutFixtures.test_invalid_identity_fails_before_io) ... ok
+test_only_two_auxiliary_files_are_opened (test_gateway_native_layout.LayoutFixtures.test_only_two_auxiliary_files_are_opened) ... ok
+test_soul_content_not_only_size_checked (test_gateway_native_layout.LayoutFixtures.test_soul_content_not_only_size_checked) ... ok
+test_unprepared_zero_byte_db_refused (test_gateway_native_layout.LayoutFixtures.test_unprepared_zero_byte_db_refused) ... ok
+test_bad_layout_refuses_before_any_kernel_action (test_gateway_native_layout.ObjectContracts.test_bad_layout_refuses_before_any_kernel_action) ... ok
+test_directory_mode_separate (test_gateway_native_layout.ObjectContracts.test_directory_mode_separate) ... ok
+test_large_regular_object_refused (test_gateway_native_layout.ObjectContracts.test_large_regular_object_refused) ... ok
+test_no_implicit_default_profile_widening (test_gateway_native_layout.ObjectContracts.test_no_implicit_default_profile_widening) ... ok
+test_object_type_owner_mode_device_and_link_refused (test_gateway_native_layout.ObjectContracts.test_object_type_owner_mode_device_and_link_refused) ... ok
+test_opt_in_is_explicit_and_minimal_default (test_gateway_native_layout.ObjectContracts.test_opt_in_is_explicit_and_minimal_default) ... ok
+test_private_regular_object (test_gateway_native_layout.ObjectContracts.test_private_regular_object) ... ok
+test_scan_refuses_first_unknown_without_draining_iterator (test_gateway_native_layout.ObjectContracts.test_scan_refuses_first_unknown_without_draining_iterator) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.403s
+
+OK

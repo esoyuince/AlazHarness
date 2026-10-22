@@ -1,0 +1,20 @@
+{
+  "observed": {
+    "dirEntryStat": {
+      "device": 0,
+      "inode": 0,
+      "links": 0
+    },
+    "pathLstat": {
+      "device": 4648881605658880572,
+      "inode": 26177172837462687,
+      "links": 1
+    },
+    "platform": "win32"
+  },
+  "repair": "use path lstat rather than Windows DirEntry zero device/inode/link placeholders; still never follow links; complete metadata recheck retained",
+  "sourceBefore": "1887f3352bd017f16541d5ff5b8514dc7a53e94b12d856630ac0f890c145419a",
+  "sourceAfter": "65a2b0497b3202c7521ac88ca9cd451637872125d2be40cff10c12a1c8b19441",
+  "firstFailedRunRetained": true,
+  "assertionsRelaxed": false
+}

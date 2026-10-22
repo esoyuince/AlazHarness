@@ -1,0 +1,7 @@
+{
+  "cause": "Windows CRT text-mode read normalizes CRLF, observed12 physical bytes ->11 returned",
+  "repair": "explicit binary auxiliary-file read; POSIX flags and full size/hash checks unchanged",
+  "before": "65a2b0497b3202c7521ac88ca9cd451637872125d2be40cff10c12a1c8b19441",
+  "after": "fc25b4e5a5d2d97615b6d3abe441694b40bdba931be61fdf3fd9205e986ee029",
+  "previousFailuresRetained": true
+}

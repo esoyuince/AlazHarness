@@ -1,0 +1,122 @@
+test_all_required_entries_mandatory (test_gateway_native_layout.LayoutFixtures.test_all_required_entries_mandatory) ... ok
+test_aux_fd_identity_changed_refused (test_gateway_native_layout.LayoutFixtures.test_aux_fd_identity_changed_refused) ... ok
+test_cache_duplicate_keys_refused (test_gateway_native_layout.LayoutFixtures.test_cache_duplicate_keys_refused) ... FAIL
+test_cache_nonfinite_refused (test_gateway_native_layout.LayoutFixtures.test_cache_nonfinite_refused) ... FAIL
+test_cache_schema_tampering_refused (test_gateway_native_layout.LayoutFixtures.test_cache_schema_tampering_refused) ... FAIL
+test_cache_semantic_hash_not_whitespace_order (test_gateway_native_layout.LayoutFixtures.test_cache_semantic_hash_not_whitespace_order) ... ERROR
+test_cache_size_bounded_before_open (test_gateway_native_layout.LayoutFixtures.test_cache_size_bounded_before_open) ... ok
+test_changed_snapshot_refused (test_gateway_native_layout.LayoutFixtures.test_changed_snapshot_refused) ... ok
+test_exact_prepared_fixture_passes (test_gateway_native_layout.LayoutFixtures.test_exact_prepared_fixture_passes) ... ERROR
+test_extra_cache_file_refused (test_gateway_native_layout.LayoutFixtures.test_extra_cache_file_refused) ... ok
+test_file_size_in_limit_and_sidecar_is_observed_not_opened (test_gateway_native_layout.LayoutFixtures.test_file_size_in_limit_and_sidecar_is_observed_not_opened) ... ok
+test_forbidden_config_auth_and_unknown_top_level (test_gateway_native_layout.LayoutFixtures.test_forbidden_config_auth_and_unknown_top_level) ... ok
+test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) ... ok
+test_invalid_identity_fails_before_io (test_gateway_native_layout.LayoutFixtures.test_invalid_identity_fails_before_io) ... ok
+test_only_two_auxiliary_files_are_opened (test_gateway_native_layout.LayoutFixtures.test_only_two_auxiliary_files_are_opened) ... ok
+test_soul_content_not_only_size_checked (test_gateway_native_layout.LayoutFixtures.test_soul_content_not_only_size_checked) ... FAIL
+test_unprepared_zero_byte_db_refused (test_gateway_native_layout.LayoutFixtures.test_unprepared_zero_byte_db_refused) ... ok
+test_bad_layout_refuses_before_any_kernel_action (test_gateway_native_layout.ObjectContracts.test_bad_layout_refuses_before_any_kernel_action) ... ok
+test_directory_mode_separate (test_gateway_native_layout.ObjectContracts.test_directory_mode_separate) ... ok
+test_large_regular_object_refused (test_gateway_native_layout.ObjectContracts.test_large_regular_object_refused) ... ok
+test_no_implicit_default_profile_widening (test_gateway_native_layout.ObjectContracts.test_no_implicit_default_profile_widening) ... ok
+test_object_type_owner_mode_device_and_link_refused (test_gateway_native_layout.ObjectContracts.test_object_type_owner_mode_device_and_link_refused) ... ok
+test_opt_in_is_explicit_and_minimal_default (test_gateway_native_layout.ObjectContracts.test_opt_in_is_explicit_and_minimal_default) ... ok
+test_private_regular_object (test_gateway_native_layout.ObjectContracts.test_private_regular_object) ... ok
+test_scan_refuses_first_unknown_without_draining_iterator (test_gateway_native_layout.ObjectContracts.test_scan_refuses_first_unknown_without_draining_iterator) ... ok
+
+======================================================================
+ERROR: test_cache_semantic_hash_not_whitespace_order (test_gateway_native_layout.LayoutFixtures.test_cache_semantic_hash_not_whitespace_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 111, in test_cache_semantic_hash_not_whitespace_order
+    self.check()
+    ~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 84, in check
+    def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 124, in inspect_profile
+    _cache(_read_aux(home,'cache/schema_columns.json',first,MAX_CACHE_BYTES))
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 88, in _read_aux
+    require(metadata(os.fstat(fd))==expected,'native_layout_aux_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_aux_changed
+
+======================================================================
+ERROR: test_exact_prepared_fixture_passes (test_gateway_native_layout.LayoutFixtures.test_exact_prepared_fixture_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 86, in test_exact_prepared_fixture_passes
+    r=self.check();self.assertEqual(set(r),set(layout.REQUIRED)|{'profile'})
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 84, in check
+    def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 122, in inspect_profile
+    soul=_read_aux(home,'SOUL.md',first,SOUL_BYTES)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 88, in _read_aux
+    require(metadata(os.fstat(fd))==expected,'native_layout_aux_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_aux_changed
+
+======================================================================
+FAIL: test_cache_duplicate_keys_refused (test_gateway_native_layout.LayoutFixtures.test_cache_duplicate_keys_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_aux_changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 118, in test_cache_duplicate_keys_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'duplicate_key'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "duplicate_key" does not match "native_layout_aux_changed"
+
+======================================================================
+FAIL: test_cache_nonfinite_refused (test_gateway_native_layout.LayoutFixtures.test_cache_nonfinite_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_aux_changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 121, in test_cache_nonfinite_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'nonfinite'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "nonfinite" does not match "native_layout_aux_changed"
+
+======================================================================
+FAIL: test_cache_schema_tampering_refused (test_gateway_native_layout.LayoutFixtures.test_cache_schema_tampering_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_aux_changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 115, in test_cache_schema_tampering_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'cache_content'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "cache_content" does not match "native_layout_aux_changed"
+
+======================================================================
+FAIL: test_soul_content_not_only_size_checked (test_gateway_native_layout.LayoutFixtures.test_soul_content_not_only_size_checked)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_aux_changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 108, in test_soul_content_not_only_size_checked
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'soul_content'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "soul_content" does not match "native_layout_aux_changed"
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.514s
+
+FAILED (failures=4, errors=2)

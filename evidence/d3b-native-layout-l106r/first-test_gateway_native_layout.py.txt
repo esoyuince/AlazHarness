@@ -1,0 +1,339 @@
+test_all_required_entries_mandatory (test_gateway_native_layout.LayoutFixtures.test_all_required_entries_mandatory) ... ok
+test_aux_fd_identity_changed_refused (test_gateway_native_layout.LayoutFixtures.test_aux_fd_identity_changed_refused) ... ok
+test_cache_duplicate_keys_refused (test_gateway_native_layout.LayoutFixtures.test_cache_duplicate_keys_refused) ... FAIL
+test_cache_nonfinite_refused (test_gateway_native_layout.LayoutFixtures.test_cache_nonfinite_refused) ... FAIL
+test_cache_schema_tampering_refused (test_gateway_native_layout.LayoutFixtures.test_cache_schema_tampering_refused) ... FAIL
+test_cache_semantic_hash_not_whitespace_order (test_gateway_native_layout.LayoutFixtures.test_cache_semantic_hash_not_whitespace_order) ... ERROR
+test_cache_size_bounded_before_open (test_gateway_native_layout.LayoutFixtures.test_cache_size_bounded_before_open) ... FAIL
+test_changed_snapshot_refused (test_gateway_native_layout.LayoutFixtures.test_changed_snapshot_refused) ... ERROR
+test_exact_prepared_fixture_passes (test_gateway_native_layout.LayoutFixtures.test_exact_prepared_fixture_passes) ... ERROR
+test_extra_cache_file_refused (test_gateway_native_layout.LayoutFixtures.test_extra_cache_file_refused) ... FAIL
+test_file_size_in_limit_and_sidecar_is_observed_not_opened (test_gateway_native_layout.LayoutFixtures.test_file_size_in_limit_and_sidecar_is_observed_not_opened) ... ERROR
+test_forbidden_config_auth_and_unknown_top_level (test_gateway_native_layout.LayoutFixtures.test_forbidden_config_auth_and_unknown_top_level) ... ok
+test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) ... 
+  test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='hooks') ... FAIL
+  test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='skills') ... FAIL
+  test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='cron') ... FAIL
+  test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='sessions') ... FAIL
+  test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='logs/curator') ... FAIL
+test_invalid_identity_fails_before_io (test_gateway_native_layout.LayoutFixtures.test_invalid_identity_fails_before_io) ... ok
+test_only_two_auxiliary_files_are_opened (test_gateway_native_layout.LayoutFixtures.test_only_two_auxiliary_files_are_opened) ... ERROR
+test_soul_content_not_only_size_checked (test_gateway_native_layout.LayoutFixtures.test_soul_content_not_only_size_checked) ... FAIL
+test_unprepared_zero_byte_db_refused (test_gateway_native_layout.LayoutFixtures.test_unprepared_zero_byte_db_refused) ... FAIL
+test_bad_layout_refuses_before_any_kernel_action (test_gateway_native_layout.ObjectContracts.test_bad_layout_refuses_before_any_kernel_action) ... ok
+test_directory_mode_separate (test_gateway_native_layout.ObjectContracts.test_directory_mode_separate) ... ok
+test_large_regular_object_refused (test_gateway_native_layout.ObjectContracts.test_large_regular_object_refused) ... ok
+test_no_implicit_default_profile_widening (test_gateway_native_layout.ObjectContracts.test_no_implicit_default_profile_widening) ... ok
+test_object_type_owner_mode_device_and_link_refused (test_gateway_native_layout.ObjectContracts.test_object_type_owner_mode_device_and_link_refused) ... ok
+test_opt_in_is_explicit_and_minimal_default (test_gateway_native_layout.ObjectContracts.test_opt_in_is_explicit_and_minimal_default) ... ok
+test_private_regular_object (test_gateway_native_layout.ObjectContracts.test_private_regular_object) ... ok
+test_scan_refuses_first_unknown_without_draining_iterator (test_gateway_native_layout.ObjectContracts.test_scan_refuses_first_unknown_without_draining_iterator) ... ok
+
+======================================================================
+ERROR: test_cache_semantic_hash_not_whitespace_order (test_gateway_native_layout.LayoutFixtures.test_cache_semantic_hash_not_whitespace_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 111, in test_cache_semantic_hash_not_whitespace_order
+    self.check()
+    ~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 84, in check
+    def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 121, in inspect_profile
+    first=_snapshot(home,uid,gid,device)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 72, in _snapshot
+    observed[name]=_private(info,uid,gid,device,directory)
+                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 79, in private
+    layout.require((stat.S_ISDIR if directory else stat.S_ISREG)(info.st_mode) and (directory or info.st_nlink==1),'native_layout_private_object')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+======================================================================
+ERROR: test_changed_snapshot_refused (test_gateway_native_layout.LayoutFixtures.test_changed_snapshot_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 137, in test_changed_snapshot_refused
+    first=layout._snapshot(self.home,self.uid,self.gid,self.device);second=dict(first);second['profile']=tuple([99]+list(first['profile'][1:]))
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 72, in _snapshot
+    observed[name]=_private(info,uid,gid,device,directory)
+                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 79, in private
+    layout.require((stat.S_ISDIR if directory else stat.S_ISREG)(info.st_mode) and (directory or info.st_nlink==1),'native_layout_private_object')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+======================================================================
+ERROR: test_exact_prepared_fixture_passes (test_gateway_native_layout.LayoutFixtures.test_exact_prepared_fixture_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 86, in test_exact_prepared_fixture_passes
+    r=self.check();self.assertEqual(set(r),set(layout.REQUIRED)|{'profile'})
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 84, in check
+    def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 121, in inspect_profile
+    first=_snapshot(home,uid,gid,device)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 72, in _snapshot
+    observed[name]=_private(info,uid,gid,device,directory)
+                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 79, in private
+    layout.require((stat.S_ISDIR if directory else stat.S_ISREG)(info.st_mode) and (directory or info.st_nlink==1),'native_layout_private_object')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+======================================================================
+ERROR: test_file_size_in_limit_and_sidecar_is_observed_not_opened (test_gateway_native_layout.LayoutFixtures.test_file_size_in_limit_and_sidecar_is_observed_not_opened)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 141, in test_file_size_in_limit_and_sidecar_is_observed_not_opened
+    self.assertIn('state.db-journal',self.check())
+                                     ~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 84, in check
+    def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 121, in inspect_profile
+    first=_snapshot(home,uid,gid,device)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 72, in _snapshot
+    observed[name]=_private(info,uid,gid,device,directory)
+                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 79, in private
+    layout.require((stat.S_ISDIR if directory else stat.S_ISREG)(info.st_mode) and (directory or info.st_nlink==1),'native_layout_private_object')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+======================================================================
+ERROR: test_only_two_auxiliary_files_are_opened (test_gateway_native_layout.LayoutFixtures.test_only_two_auxiliary_files_are_opened)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 129, in test_only_two_auxiliary_files_are_opened
+    with patch.object(layout.os,'open',side_effect=tracked):self.check()
+                                                            ~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 84, in check
+    def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 121, in inspect_profile
+    first=_snapshot(home,uid,gid,device)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 72, in _snapshot
+    observed[name]=_private(info,uid,gid,device,directory)
+                   ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 79, in private
+    layout.require((stat.S_ISDIR if directory else stat.S_ISREG)(info.st_mode) and (directory or info.st_nlink==1),'native_layout_private_object')
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\packages\claw-hermes\gateway_native_layout.py", line 37, in require
+    if not ok:raise NativeLayoutRejected(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+======================================================================
+FAIL: test_cache_duplicate_keys_refused (test_gateway_native_layout.LayoutFixtures.test_cache_duplicate_keys_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 118, in test_cache_duplicate_keys_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'duplicate_key'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "duplicate_key" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_cache_nonfinite_refused (test_gateway_native_layout.LayoutFixtures.test_cache_nonfinite_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 121, in test_cache_nonfinite_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'nonfinite'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "nonfinite" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_cache_schema_tampering_refused (test_gateway_native_layout.LayoutFixtures.test_cache_schema_tampering_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 115, in test_cache_schema_tampering_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'cache_content'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "cache_content" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_cache_size_bounded_before_open (test_gateway_native_layout.LayoutFixtures.test_cache_size_bounded_before_open)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 124, in test_cache_size_bounded_before_open
+    with patch.object(layout,'_read_aux') as read,self.assertRaisesRegex(layout.NativeLayoutRejected,'cache_size'):self.check()
+                                                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "cache_size" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_extra_cache_file_refused (test_gateway_native_layout.LayoutFixtures.test_extra_cache_file_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 102, in test_extra_cache_file_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'unexpected_entry'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unexpected_entry" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='hooks')
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 98, in test_hooks_skills_cron_cannot_hide_payload
+    with self.subTest(folder=folder),self.assertRaisesRegex(layout.NativeLayoutRejected,'unexpected_entry'):self.check()
+                                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unexpected_entry" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='skills')
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 98, in test_hooks_skills_cron_cannot_hide_payload
+    with self.subTest(folder=folder),self.assertRaisesRegex(layout.NativeLayoutRejected,'unexpected_entry'):self.check()
+                                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unexpected_entry" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='cron')
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 98, in test_hooks_skills_cron_cannot_hide_payload
+    with self.subTest(folder=folder),self.assertRaisesRegex(layout.NativeLayoutRejected,'unexpected_entry'):self.check()
+                                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unexpected_entry" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='sessions')
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 98, in test_hooks_skills_cron_cannot_hide_payload
+    with self.subTest(folder=folder),self.assertRaisesRegex(layout.NativeLayoutRejected,'unexpected_entry'):self.check()
+                                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unexpected_entry" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_hooks_skills_cron_cannot_hide_payload (test_gateway_native_layout.LayoutFixtures.test_hooks_skills_cron_cannot_hide_payload) (folder='logs/curator')
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 98, in test_hooks_skills_cron_cannot_hide_payload
+    with self.subTest(folder=folder),self.assertRaisesRegex(layout.NativeLayoutRejected,'unexpected_entry'):self.check()
+                                     ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unexpected_entry" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_soul_content_not_only_size_checked (test_gateway_native_layout.LayoutFixtures.test_soul_content_not_only_size_checked)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 108, in test_soul_content_not_only_size_checked
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'soul_content'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "soul_content" does not match "native_layout_private_object"
+
+======================================================================
+FAIL: test_unprepared_zero_byte_db_refused (test_gateway_native_layout.LayoutFixtures.test_unprepared_zero_byte_db_refused)
+----------------------------------------------------------------------
+gateway_native_layout.NativeLayoutRejected: native_layout_private_object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_gateway_native_layout.py", line 105, in test_unprepared_zero_byte_db_refused
+    with self.assertRaisesRegex(layout.NativeLayoutRejected,'unprepared_database'):self.check()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unprepared_database" does not match "native_layout_private_object"
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.275s
+
+FAILED (failures=12, errors=5)

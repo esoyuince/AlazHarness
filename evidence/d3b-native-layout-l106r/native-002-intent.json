@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-22T15:16:00.201259+03:00",
+  "scope": "archive own failed installation/image only after exact old manifest and no-live-process/loop checks; new fresh run same approved names",
+  "bootstrapSha256": "89b81117f6813fccefb67d72d129876207c4164f4b51e9d618c109bba6360acc",
+  "previousOutputRetained": true,
+  "runtimeProductUnmodifiedFromNative001": true
+}

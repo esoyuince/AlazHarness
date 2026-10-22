@@ -1,0 +1,98 @@
+{
+  "rows": [
+    {
+      "path": "audio_cache",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "cache",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "cache/schema_columns.json",
+      "kind": "file",
+      "bytes": 6291
+    },
+    {
+      "path": "cron",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "gateway.lock",
+      "kind": "file",
+      "bytes": 217
+    },
+    {
+      "path": "hooks",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "image_cache",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "logs",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "logs/curator",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "memories",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "pairing",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "runs_idempotency.db",
+      "kind": "file",
+      "bytes": 16384
+    },
+    {
+      "path": "sessions",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "skills",
+      "kind": "directory",
+      "bytes": 0
+    },
+    {
+      "path": "SOUL.md",
+      "kind": "file",
+      "bytes": 667,
+      "sha256": "36c1f5a2e92cd1d018311eaf4c8f1e8886672eae78212e033c681d0e3d5d506f"
+    },
+    {
+      "path": "state.db",
+      "kind": "file",
+      "bytes": 315392
+    },
+    {
+      "path": "state.db.fts_rebuild.lock",
+      "kind": "file",
+      "bytes": 0
+    },
+    {
+      "path": "state.db.quarantine.lock",
+      "kind": "file",
+      "bytes": 0
+    }
+  ],
+  "nativeSourcesUnmodified": true,
+  "modelCalls": 0,
+  "scope": "real native fresh scaffold discovery; not mount/UID acceptance"
+}

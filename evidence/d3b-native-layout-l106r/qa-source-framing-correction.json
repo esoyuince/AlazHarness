@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-22T15:16:00.078201+03:00",
+  "firstRun": "native-001-stdout.txt",
+  "firstNativeFailure": "supervisor_worker_output_bound",
+  "repair": "QA source proof emitted as max16 frames of max32 source pins, <8KiB each; parent validates PID/index/count/digest and reassembles before evidence",
+  "productionSupervisorLimitUnchanged": true,
+  "productSourcesUnchanged": true,
+  "sourceChanges": {
+    "scripts/qa/l106r_confined.py": {
+      "before": "34065f7a565044e98c2726719ce681c371d644a5f555f7c8d09210766314a626",
+      "after": "0c89f984af6db2708250a6f0dec50b21620e68561cfe57eacbe7b219a1241dbd"
+    },
+    "scripts/qa/l106r_accept.py": {
+      "before": "44f45c30c93416dc083dd41a994726111688116a78b2f04ad4f5c1cb544a7661",
+      "after": "e1ecd074ea3664400c906478fcca81968c8c9716b162bfe12affd17e540bedae"
+    }
+  },
+  "firstFailedImageRetained": true
+}

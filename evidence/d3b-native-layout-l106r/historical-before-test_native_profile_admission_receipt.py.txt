@@ -1,0 +1,25 @@
+test_dummy_store_persistence_and_bounded_claims (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_dummy_store_persistence_and_bounded_claims) ... ok
+test_exact_native_dependency_pin_and_each_target_imports (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_exact_native_dependency_pin_and_each_target_imports) ... ok
+test_first_failure_historical_proof_and_own_cleanup_retained (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_first_failure_historical_proof_and_own_cleanup_retained) ... ok
+test_optin_is_one_read_file_and_default_remains_denied (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_optin_is_one_read_file_and_default_remains_denied) ... ok
+test_profile_ownership_occurs_after_final_uid_and_exec (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_profile_ownership_occurs_after_final_uid_and_exec) ... ok
+test_real_contenders_and_volume_retention_after_profile_release (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_real_contenders_and_volume_retention_after_profile_release) ... ok
+test_terminal_outcomes_and_exact_current_transport (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_terminal_outcomes_and_exact_current_transport) ... 
+  test_terminal_outcomes_and_exact_current_transport (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_terminal_outcomes_and_exact_current_transport) (source='packages/claw-hermes/gateway_state_projection.py') ... FAIL
+
+======================================================================
+FAIL: test_terminal_outcomes_and_exact_current_transport (test_native_profile_admission_receipt.NativeProfileAdmissionReceipt.test_terminal_outcomes_and_exact_current_transport) (source='packages/claw-hermes/gateway_state_projection.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_native_profile_admission_receipt.py", line 29, in test_terminal_outcomes_and_exact_current_transport
+    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'a148f9d300bb84335f6b3cca0536673d5271667f6564eb5753dfec20a1a882ad' != 'da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443'
+- a148f9d300bb84335f6b3cca0536673d5271667f6564eb5753dfec20a1a882ad
++ da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.065s
+
+FAILED (failures=1)

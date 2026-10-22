@@ -1,0 +1,56 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,subprocess,sys
+D='AlazHarness-D3B-P71C';ROOT=Path('/opt/alaz-l106r');RUN=Path('/srv/alaz-l106r')
+assert os.getresuid()==(0,)*3 and os.environ.get('WSL_DISTRO_NAME')==D
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()==D and not Path('/mnt/c/Windows').exists()
+assert Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295']
+assert ROOT.is_dir() and RUN.is_dir() and not Path('/sys/fs/cgroup/alaz-l106r').exists()
+data=json.load(sys.stdin);files=data['files'];assert 1<len(files)<500
+previous=json.loads((ROOT/'input-manifest.json').read_text())['sources']
+assert previous==data['previous']
+assert all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in previous.items())
+report=json.loads((RUN/'acceptance.json').read_text())
+assert report['result']=='FAIL' and report['error']['reason']=='supervisor_worker_output_bound'
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import state_volume_supervisor as oldvolume
+from state_image_lease import ImagePin
+image=RUN/'images/state.img';s=image.stat();d=image.parent.stat()
+pin=ImagePin(str(image),s.st_dev,s.st_ino,s.st_size,0,0,d.st_dev,d.st_ino)
+assert not oldvolume.attachments(pin) and not Path(str(image)+'.volume-owner.json').exists()
+assert not (RUN/'socket/egress.sock').exists()
+assert all(not os.path.ismount(p) and not any(p.iterdir()) for p in RUN.glob('mount-*'))
+for p in Path('/proc').iterdir():
+ if not p.name.isdigit() or int(p.name)==os.getpid():continue
+ try:args=(p/'cmdline').read_bytes().split(b'\0')
+ except FileNotFoundError:continue
+ assert not any(a.startswith(b'/opt/alaz-l106r/scripts/') for a in args),'owned_process_alive'
+archive=Path('/opt/alaz-l106r-first');archive_run=Path('/srv/alaz-l106r-first')
+assert not archive.exists() and not archive_run.exists()
+image_hash=hashlib.sha256(image.read_bytes()).hexdigest()
+ROOT.rename(archive);RUN.rename(archive_run)
+assert hashlib.sha256((archive_run/'images/state.img').read_bytes()).hexdigest()==image_hash
+
+assert sum(len(v['text'].encode()) for v in files.values())<12000000
+ROOT.mkdir(mode=0o755)
+for n,v in files.items():
+ p=PurePosixPath(n);assert str(p)==n and not p.is_absolute() and '..' not in p.parts
+ assert p.parts[0] in ('packages','scripts','tests','vendor-native','dependencies','evidence')
+ assert n.endswith('.py') or n=='evidence/d3b-native-layout-l106r/native-auxiliary-fixture.json'
+ raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+ dest=ROOT/n;dest.parent.mkdir(parents=True,exist_ok=True)
+ with dest.open('xb') as f:f.write(raw)
+ dest.chmod(0o644)
+manifest={'sources':{n:v['sha256'] for n,v in files.items()},'nativePin':data['pin']}
+with (ROOT/'input-manifest.json').open('x',encoding='utf-8') as f:json.dump(manifest,f,indent=2);f.write('\n')
+env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':D}
+units=[]
+for pattern in ('test_gateway_native_layout.py','test_gateway_state_projection.py'):
+ r=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(ROOT/'tests'),'-p',pattern,'-v'],cwd='/',env=env,capture_output=True,text=True,timeout=45,user=23001,group=23003,extra_groups=[])
+ units.append({'pattern':pattern,'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr})
+result={'units':units,'sources':manifest['sources'],'nativePin':data['pin']}
+if all(r['exitCode']==0 for r in units):
+ r=subprocess.run([sys.executable,'-I','-B',str(ROOT/'scripts/qa/l106r_accept.py')],cwd='/',env=env,capture_output=True,text=True,timeout=220)
+ result.update(nativeExitCode=r.returncode,nativeStdout=r.stdout,nativeStderr=r.stderr)
+result['sourcesUnchanged']=all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest['sources'].items())
+print(json.dumps(result),flush=True)
+raise SystemExit(0 if all(u['exitCode']==0 for u in units) and result.get('nativeExitCode')==0 and result['sourcesUnchanged'] else 1)

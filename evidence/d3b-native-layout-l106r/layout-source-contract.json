@@ -1,0 +1,23 @@
+{
+  "pin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "sourceSha256": {
+    "hermes_cli/default_soul.py": "b65192a631f0011fcef245c94d9741e0c716defe605d3edfd0e59f26da211d2d",
+    "hermes_cli/config.py": "68239827c32c60114cc01d03a2c29f872c91d2114a3f0c1d1094de49980d0d2e",
+    "hermes_cli/config_home.py": "85f5e604e745a7b74688b4ae2c930af96f228e661b8100cefd561f2640618e74"
+  },
+  "nativeDirectories": [
+    "cron",
+    "sessions",
+    "logs",
+    "logs/curator",
+    "memories",
+    "pairing",
+    "hooks",
+    "image_cache",
+    "audio_cache",
+    "skills"
+  ],
+  "defaultSoulSha256": "36c1f5a2e92cd1d018311eaf4c8f1e8886672eae78212e033c681d0e3d5d506f",
+  "defaultSoulBytes": 667,
+  "scope": "cold native store-only profile; directories must be empty, no user content/hooks/plugins accepted"
+}

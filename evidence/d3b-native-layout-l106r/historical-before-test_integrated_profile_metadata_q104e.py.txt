@@ -1,0 +1,20 @@
+test_current_permission_files_equal_independent_snapshot (test_integrated_profile_metadata_q104e.IntegratedProfileSource.test_current_permission_files_equal_independent_snapshot) ... 
+  test_current_permission_files_equal_independent_snapshot (test_integrated_profile_metadata_q104e.IntegratedProfileSource.test_current_permission_files_equal_independent_snapshot) (path='packages/claw-hermes/gateway_state_projection.py') ... FAIL
+test_distinct_native_trials_share_actual_guard_source (test_integrated_profile_metadata_q104e.IntegratedProfileSource.test_distinct_native_trials_share_actual_guard_source) ... ok
+
+======================================================================
+FAIL: test_current_permission_files_equal_independent_snapshot (test_integrated_profile_metadata_q104e.IntegratedProfileSource.test_current_permission_files_equal_independent_snapshot) (path='packages/claw-hermes/gateway_state_projection.py')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-layout-l106r\tests\test_integrated_profile_metadata_q104e.py", line 15, in test_current_permission_files_equal_independent_snapshot
+    self.assertEqual(hashlib.sha256((ROOT/path).read_bytes()).hexdigest(),pin['sha256'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'a148f9d300bb84335f6b3cca0536673d5271667f6564eb5753dfec20a1a882ad' != 'da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443'
+- a148f9d300bb84335f6b3cca0536673d5271667f6564eb5753dfec20a1a882ad
++ da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.027s
+
+FAILED (failures=1)

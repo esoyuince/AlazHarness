@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "7f17594b73c825d8e04873ab2db2a28fe49ab688",
+  "sourcePath": "packages/claw-hermes/gateway_state_projection.py",
+  "snapshot": "gateway_state_projection.before.py.txt",
+  "sourceSha256": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443",
+  "tests": {
+    "test_integrated_profile_metadata_q104e.py": {
+      "before": "9ed83efdfc18b88d9942a1f0b70eb31ecf1157ec1b6aff2f67d3da03609995dd",
+      "after": "83f941027078e06fc878287d94f3509cfaa114197a77ccc501993283a011d5b1"
+    },
+    "test_native_profile_admission_receipt.py": {
+      "before": "bac4dde9d35ba27a353121b245236680de76d25585910991c29adcd80824d8ff",
+      "after": "f786dfbcbbfffd45b7b45a87237b59a641f5fbc657cfa72d79c17ff02b4e860d"
+    }
+  },
+  "reason": "Old accepted receipts retain original exact source. Current changed projection verified separately by fresh L106R native002. No historical outcome edited."
+}

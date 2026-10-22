@@ -1,5 +1,26 @@
 # AlazHarness — status
 
+## D3B-NATIVE-LAYOUT-L106R — SCOPED FEATURE PASS; UNION PENDING
+
+OWNERSHIP CONFIRMED: L106R owns gateway_native_layout.py and explicit canonical state-projection layout integration. L106E explicitly moved to complementary gateway_live_store_gate.py, so retain this division; no further role swapping. The earlier independent-audit scope note is superseded by this agreement. Our layout remains finite store-only: native skeleton and exact known auxiliary paths, not generic hooks/plugins/recursive code. Native logs/curator and cache/schema_columns.json discovered; original draft retained, never executed.
+
+Current ownership: L106E concurrently owns canonical gateway_native_profile.py, projection and live-store integration. L106R now provides independent real-native/adversarial audit only; do not overwrite its files or add a second runtime. Our unused draft is preserved as unintegrated-layout-draft.py.txt (not executed/accepted); no baseline source changed. Actual fresh native discovery reveals logs/curator plus cache/schema_columns.json, not simply empty top-level directories. Snapshot candidate before checks; no old blocked R91F/G82C action.
+
+
+Branch alaz/d3b-native-layout-l106r; worktree scratch/worktrees/d3b-native-layout-l106r; base7f17594. Implement an explicit bounded native-store profile layout / pre-admission contract while preserving default strict profile handling. Existing canonical P102/F104X runtime only; no alternate projection, blocked R91F/G82C repair, model/provider, main/push, CI or production action. Keep all historical receipts tied to original sources. First verify pinned native scaffolding and concurrent task ownership, then choose one narrow implementation slice and run actual native fixtures plus regression. Do not claim full Gateway admission or paired atomic recovery.
+
+Only already approved isolated P71C may be used, new unique L106R owned fixtures. No existing account/old image/defaultUbuntu/service changes. Record all pending receipts and first failures. Baseline389 sources recorded. No test pending yet.
+
+Completed: finite hermes-native-stores-cold-v1 profile grammar, exact pinned SOUL/schema cache, private fixed objects; canonical projection explicit opt-in only, minimal-v1 remains default. Actual native002 in P71C:42 parent predicates; two final exec/native ProfileLease targets24/27 checks, native SessionDB/replay commit and complete detach/reopen, epoch1->2/started->unknown, identical native IDs/inodes, unknown/stale write refusal. Two broker pings, zero physical provider/model sends. No general home/hooks/skills data acceptance or pre-constructor schema/repair guard claimed.
+
+Fresh fullWindows2549=2526PASS/23SKIP/0ERROR/0FAIL exit0;395 hashes stable,386/389 original sources unchanged (only projection+two historical-custody tests changed). Linux25new+22old methods allPASS. New7 current-source receipts PASS; old F104X/Q104E pin original projection bytes. First Windows metadata/CRT fixture failures and native16KiB QA framing failure preserved. Only QA framing changed after native001; product bytes identical across final native run. Cleanup audit has no own loops/processes/socket/fence/cgroup/anchors; two64MiB images retained unattached. Shared P71C left for concurrentL106E, no defaultUbuntu/account/service/CI/main/push operation.
+
+Own report docs/D3B-NATIVE-LAYOUT-L106R.md; evidence/d3b-native-layout-l106r/summary.json. Full/native/cleanup jobs terminal; local static/commit follows. L106E owns complementary live store gate; preserve its files. Next qualify union without confusing separate acceptance with actual combined readiness. Full pre-constructor schema/identity and fixed admission remain open; fullD3B OPEN and legacyIPCv2 CLOSED.
+
+## Preserved canonical handoff
+
+# AlazHarness — status
+
 ## D3B-STORE-JOINT-H105E — DEVELOPMENT-INTEGRATED; SCOPED QA PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested two-parent merge `762fe6f32ddd7dcd55bf7caec9f513aec50be6f1` fast-forward promoted; original H105E/N105D branches and76 evidence blobs retained. All389 tested sources exact, all382 baseline sources unchanged. This follow-up changes documentation/static delivery only. No new runtime implementation or broader Gateway acceptance.
@@ -12870,3 +12891,38 @@ Full c80b15ef-982a-4e63-94d8-722205100027 terminal result0 recorded; parent data
 ### Canonical delivery recorded — 2026-10-22T04:29:38.115889+03:00
 
 Tested merge762fe6f fast-forward promoted from30604df. New full2517=2494PASS/23SKIP remains exact389-source baseline. Existing product code unchanged, old histories retained. Maincc7ceba/no push. Documentation-only final commit records delivery. Next is actual native profile layout/live-connection gate, NOT repeating old crash tests as a substitute.
+
+
+### L106R layout design
+
+Explicit native-store-only profile: pinned native directory names must be empty, exact default SOUL bytes, private singleton DB/native lock files and declared SQLite sidecars. No general recursive allowance, no config/auth/hooks content, no automatic repair/chmod. New pure observation module created; next opt-in canonical projection wiring then real native-store tests. Database files are stat-only here to avoid SQLite lock cancellation. Default strict path stays unchanged.
+
+
+### L106R implementation prepared
+
+Single owner confirmed: L106R finite cold-layout + canonical projection keyword profile_layout; L106E live-connection gate complementary. New layout accepts exactly pinned native skeleton including logs/curator and schema cache, validates exact SOUL/cache digest, rejects arbitrary leaf contents and unknown files. No raw SQLite descriptor opened. Default minimal-v1 preserved; native option hermes-native-stores-cold-v1 explicit only. Product sources compiled; not yet test-qualified.
+
+
+### L106R native001 launched
+
+Request b1dc6618-4140-4f57-938a-a10600000020 pending. NEW owned /opt/alaz-l106r /srv/alaz-l106r and64MiB ext4 image only in approved P71C. Canonical explicit layout, unchanged pinned native SessionDB/replay/profile ownership; real epoch1/2 and native records across detach intended. Product source hashes frozen in native-001-source-manifest.json. No source edits while running; poll receipt before any retry. Minimal default and IPCv2 gate remain closed.
+
+
+### Native001 failed QA framing; native002 in progress
+
+First actual root/image run passed Linux25+22 and native scaffold preparation/negative default checks, then source proof exceeded existing16KiB supervisor read_line limit. Classified FAIL, own live target terminated and cleanup record retained; NOT a product acceptance. Only QA framing changed to bounded8KiB source frames with PID/index/count/digest binding. Product code unchanged. Native002 request b1dc6618-4140-4f57-938a-a10600000023 first audits no old own processes/loops/fence, archives original own image/source, then runs fresh. Do not replay or edit source until terminal.
+
+
+### L106R native002 PASS — 2026-10-22T15:17:21.896224+03:00
+
+Actual approvedP71C run exits0:42 parent predicates, write24/read27 target checks, Linux25 new+22 old unit methods PASS. Real native schemas, final UID/exec/ProfileLease, explicit finite layout, own64MiB ext4 image, two complete mount lifetimes, epoch1->2/started->unknown/native duplicate reuse; two brokerpings,zero provider calls. Original strict minimal path explicitly refused native scaffold. First framing failure/image preserved, QA-only framed output change. Separate final audit: no own processes/loops/fence/socket/cgroup/anchors; images retained unattached. Shared lab NOT terminated for concurrentL106E. Current355 transported sources unchanged. Full regression/provenance refresh still pending.
+
+
+### L106R full regression started
+
+Request b1dc6618-4140-4f57-938a-a10600000027. Current product/QA sources frozen; no edits during full run. Native002 andcleanup terminal0, newreceipt7 and historical source proofs pass with original snapshot. Expected2549 methods; actual runner count recorded, not assumed. No new native/root operation in this phase.
+
+
+### L106R terminal source checkpoint — 2026-10-22T15:23:15.909372+03:00
+
+Native002 request...0023, cleanup...0025, full...0027 terminal0. All current395 source hashes exact. Commit only explicitly selected feature/evidence; no background native task or unknown-effect call.

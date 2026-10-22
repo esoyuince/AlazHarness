@@ -1,0 +1,32 @@
+{
+  "exitCode": 0,
+  "audit": {
+    "ownLivePids": [],
+    "images": [
+      {
+        "root": "/srv/alaz-l106r",
+        "imageBytes": 67108864,
+        "imageRetained": true,
+        "loops": [],
+        "fence": false,
+        "socket": false,
+        "mountTargetsEmpty": true
+      },
+      {
+        "root": "/srv/alaz-l106r-first",
+        "imageBytes": 67108864,
+        "imageRetained": true,
+        "loops": [],
+        "fence": false,
+        "socket": false,
+        "mountTargetsEmpty": true
+      }
+    ],
+    "cgroupParentExists": false,
+    "anchorsAbsent": true,
+    "sourcesUnchanged": true,
+    "sharedLabTerminated": false,
+    "defaultUbuntuChanged": false,
+    "ownClean": true
+  }
+}

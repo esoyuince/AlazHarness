@@ -23,6 +23,13 @@ TARGET = '/run/alaz-state/profile'
 REQUIRED = frozenset(('state.db', 'runs_idempotency.db', 'gateway.lock'))
 ALLOWED = REQUIRED | frozenset(storage.SIDECAR_NAMES)
 SAFE_FLAGS = gp.ipc.NOSUID | gp.ipc.NODEV | gp.ipc.NOEXEC
+MINIMAL_LAYOUT = 'minimal-v1'
+NATIVE_STORE_LAYOUT = 'hermes-native-stores-cold-v1'
+
+def validate_layout(value):
+    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT),
+            'state_projection_layout_invalid')
+    return value
 
 
 class StateProjectionRejected(RuntimeError):
@@ -121,9 +128,10 @@ def _metadata(info):
             info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
-def inspect_volume(binding, principal, *, joined_namespace=True):
+def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=MINIMAL_LAYOUT):
     """Prove existing S101 authority and sole-user admission; never repair it."""
     require(type(binding) is VolumeBinding, 'state_projection_trusted_binding_required')
+    validate_layout(profile_layout)
     supervisor.actor()
     try:
         _live_root(binding.controller_pid, binding.controller_start)
@@ -176,16 +184,23 @@ def inspect_volume(binding, principal, *, joined_namespace=True):
                 'state_projection_profile_identity')
         require(not any(PurePosixPath(r.mount_point).is_relative_to(profile) for r in records),
                 'state_projection_nested_mount')
-        names = {p.name for p in profile.iterdir()}
-        require(REQUIRED <= names <= ALLOWED, 'state_projection_profile_inventory')
-        objects = {'profile':_metadata(s)}
-        for name in sorted(names):
-            item = (profile / name).lstat()
-            require(stat.S_ISREG(item.st_mode) and item.st_nlink == 1
-                    and stat.S_IMODE(item.st_mode) == 0o600 and item.st_dev == s.st_dev
-                    and (item.st_uid,item.st_gid) == (s.st_uid,s.st_gid),
-                    'state_projection_private_regular_file')
-            objects[name] = _metadata(item)
+        if profile_layout == NATIVE_STORE_LAYOUT:
+            import gateway_native_layout as native_layout
+            try:
+                objects = native_layout.inspect_profile(profile,uid=s.st_uid,gid=s.st_gid,device=s.st_dev)
+            except native_layout.NativeLayoutRejected as exc:
+                raise StateProjectionRejected(str(exc)) from None
+        else:
+            names = {p.name for p in profile.iterdir()}
+            require(REQUIRED <= names <= ALLOWED, 'state_projection_profile_inventory')
+            objects = {'profile':_metadata(s)}
+            for name in sorted(names):
+                item = (profile / name).lstat()
+                require(stat.S_ISREG(item.st_mode) and item.st_nlink == 1
+                        and stat.S_IMODE(item.st_mode) == 0o600 and item.st_dev == s.st_dev
+                        and (item.st_uid,item.st_gid) == (s.st_uid,s.st_gid),
+                        'state_projection_private_regular_file')
+                objects[name] = _metadata(item)
         require(set(members) == set((scope/'cgroup.procs').read_text().split())
                 and process_start(binding.worker_pid) == binding.worker_start
                 and process_start(binding.controller_pid) == binding.controller_start,
@@ -199,14 +214,17 @@ def inspect_volume(binding, principal, *, joined_namespace=True):
 
 class _ProfileMounts(gp.Mounts):
     """One fixed pre-pivot extension; no override of the baseline UID/filter path."""
-    def __init__(self, binding, principal, observed):
+    def __init__(self, binding, principal, observed, profile_layout=MINIMAL_LAYOUT):
         super().__init__()
         self.binding, self.principal, self.observed = binding, principal, observed
+        self.profile_layout = validate_layout(profile_layout)
         self.projected = False
 
     def pivot(self, root):
         require(not self.projected, 'state_projection_once')
-        current = inspect_volume(self.binding, self.principal, joined_namespace=False)
+        current = (inspect_volume(self.binding,self.principal,joined_namespace=False)
+                   if self.profile_layout == MINIMAL_LAYOUT else
+                   inspect_volume(self.binding,self.principal,joined_namespace=False,profile_layout=self.profile_layout))
         require(current == self.observed, 'state_projection_profile_changed')
         source = Path(self.binding.mountpoint)/'profile'
         target = root / TARGET.lstrip('/')
@@ -223,23 +241,26 @@ class _ProfileMounts(gp.Mounts):
         super().pivot(root)
 
 
-def enter(value, filesystem, binding, *, observe_self_mount=False):
+def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT):
     """Confine one joined root child; only its checked image profile persists.
 
     Caller joins the root-controlled S101 cgroup BEFORE the volume namespace.
     A complete production child launcher/admission pipeline is still required.
     Do not run a workload after any exception or return to the host caller.
     """
+    validate_layout(profile_layout)
     require(type(observe_self_mount) is bool, 'state_projection_mount_observation_boolean')
     plan = gp.inspect(value, filesystem)
     full_policy = validate_exports(binding, plan['ipc'], plan['filesystem'])
     p = plan['ipc']['principalContract']
-    observed = inspect_volume(binding, p)
+    observed = (inspect_volume(binding,p) if profile_layout == MINIMAL_LAYOUT else
+                inspect_volume(binding,p,profile_layout=profile_layout))
     gp.fs_guard.abi_version(gp.fs_guard.kernel())
     seccomp = gp.net._load_seccomp()
     namespaces = {n:os.readlink('/proc/self/ns/'+n) for n in ('mnt','net','ipc')}
     gp.launch.close_ambient_fds()
-    mounts = _ProfileMounts(binding,p,observed)
+    mounts = (_ProfileMounts(binding,p,observed) if profile_layout == MINIMAL_LAYOUT else
+              _ProfileMounts(binding,p,observed,profile_layout))
     mounts.unshare(); gp._loopback_up()
     bound = gp._project(plan,mounts)
     require(mounts.projected, 'state_projection_not_projected')
@@ -254,6 +275,7 @@ def enter(value, filesystem, binding, *, observe_self_mount=False):
                 else gp.fs_guard.apply(full_policy))
     return {'version':1,'state':'confined_state_profile','pid':os.getpid(),
             'profile':TARGET,'profileDevice':observed['profile'][0],'profileInode':binding.profile_inode,
+            'profileLayout':profile_layout,
             'persistentProfileProjected':True,'stateDirectoryCount':1,'ambientHostDirectoriesBound':0,
             'privateEphemeralDirectories':sum(n!='/dev/null' for n in plan['filesystem']['writable']),
             'hostUserNamespacePreserved':True,'rootPrivilegesDropped':True,'afterDrop':after,

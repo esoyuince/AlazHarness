@@ -1,0 +1,111 @@
+"""Explicit cold layout for the pinned native Hermes STORE-ONLY startup.
+
+Not a general Hermes home allowlist. Directory entries must be empty; only the
+exact pinned default SOUL template is admitted. No hooks/plugins/config/secrets
+or recursive runtime content. No database bytes are opened, no raw SQLite FD
+is opened/closed, no chmod/provision/recovery is performed. Run before native
+constructors while supervised users are drained, and under the native profile
+lease after final exec. A snapshot cannot replace those lifecycle guarantees.
+"""
+from __future__ import annotations
+import hashlib
+import os
+from pathlib import Path
+import stat
+import gateway_storage_mounts as mounts
+
+NATIVE_PIN = 'eb75627faf532fa6ffbdae59a0d14b0b385fc780'
+DIRECTORIES = frozenset(('cron', 'sessions', 'logs', 'logs/curator', 'memories', 'pairing', 'hooks', 'image_cache', 'audio_cache', 'skills'))
+DATABASES = frozenset(mounts.DATABASE_NAMES)
+LOCKS = frozenset(('gateway.lock','state.db.quarantine.lock','state.db.fts_rebuild.lock'))
+REQUIRED = DATABASES | LOCKS | DIRECTORIES | {'SOUL.md'}
+ALLOWED = REQUIRED | frozenset(mounts.SIDECAR_NAMES)
+SOUL_SHA256 = '36c1f5a2e92cd1d018311eaf4c8f1e8886672eae78212e033c681d0e3d5d506f'
+SOUL_BYTES = 667
+MAX_ENTRIES = 32
+
+class NativeLayoutRejected(RuntimeError):
+    """Bounded reason; no profile contents, credentials or caller paths."""
+
+def require(ok, reason):
+    if not ok: raise NativeLayoutRejected(reason)
+
+def _metadata(info):
+    return (info.st_dev,info.st_ino,info.st_mode,info.st_uid,info.st_gid,
+            info.st_nlink,info.st_size,info.st_mtime_ns,info.st_ctime_ns)
+
+def _private(info, uid, gid, device, *, directory=False):
+    expected = 0o700 if directory else 0o600
+    kind = stat.S_ISDIR if directory else stat.S_ISREG
+    require(kind(info.st_mode) and stat.S_IMODE(info.st_mode)==expected
+            and info.st_uid==uid and info.st_gid==gid and info.st_dev==device
+            and (directory or info.st_nlink==1),'native_layout_private_object')
+    return _metadata(info)
+
+def _snapshot(home, uid, gid, device):
+    found={}
+    with os.scandir(home) as entries:
+        for entry in entries:
+            require(len(found)<MAX_ENTRIES,'native_layout_entry_limit')
+            require(entry.name in ALLOWED,'native_layout_unexpected_entry')
+            found[entry.name]=entry.stat(follow_symlinks=False)
+    require(REQUIRED <= set(found),'native_layout_required_entry_missing')
+    result={'profile':_private(home.lstat(),uid,gid,device,directory=True)}
+    for name,info in sorted(found.items()):
+        result[name]=_private(info,uid,gid,device,directory=name in DIRECTORIES)
+        if name in DIRECTORIES:
+            with os.scandir(home/name) as children:
+                require(next(children,None) is None,'native_layout_directory_not_empty')
+        elif name in DATABASES:
+            require(info.st_size>=512,'native_layout_unprepared_database')
+        elif name in LOCKS:
+            require(0<=info.st_size<=16384,'native_layout_lock_size')
+        elif name=='SOUL.md':
+            require(info.st_size==SOUL_BYTES,'native_layout_soul_size')
+    return result
+
+def _soul(home, observed):
+    # SOUL is a distinct single-link inode, never the live DB. All other paths
+    # are observed with stat only to preserve SQLite's process-scoped locks.
+    target=home/'SOUL.md'
+    require(observed['SOUL.md'][:2] not in {observed[n][:2] for n in DATABASES|LOCKS},
+            'native_layout_soul_alias')
+    fd=os.open(target,os.O_RDONLY|os.O_CLOEXEC|os.O_NOFOLLOW)
+    try:
+        require(_metadata(os.fstat(fd))==observed['SOUL.md'],'native_layout_soul_changed')
+        content=os.read(fd,SOUL_BYTES+1)
+        require(len(content)==SOUL_BYTES and hashlib.sha256(content).hexdigest()==SOUL_SHA256,
+                'native_layout_soul_content')
+        require(_metadata(os.fstat(fd))==observed['SOUL.md'],'native_layout_soul_changed')
+    finally:os.close(fd)
+
+def inspect_native_store_layout(home, uid, gid, device, records):
+    """Read-only bounded cold snapshot, used only by explicit opt-in callers.
+
+    DB schema/connection state, recovery and request acceptance remain separate.
+    No guarantee against a concurrent malicious same-UID writer or host root.
+    """
+    try:
+        require(type(uid) is int and uid>0 and type(gid) is int and gid>0
+                and type(device) is int and device>0,'native_layout_identity')
+        require(isinstance(home,(str,Path)),'native_layout_home')
+        home=Path(home)
+        require(home.is_absolute() and home==home.resolve(strict=True)
+                and not any(p.is_symlink() for p in (home,*home.parents)),'native_layout_path')
+        require(type(records) is tuple and all(type(r) is mounts.MountRecord for r in records),
+                'native_layout_mount_records')
+        parent=mounts.select_mount(records,home.as_posix())
+        require(parent.filesystem in mounts.QUALIFIED_TYPES
+                and 'rw' in parent.mount_options and 'rw' in parent.super_options
+                and parent.device==(os.major(device),os.minor(device)),'native_layout_mount')
+        # The home can itself be a bind mount. No nested or stacked mount may
+        # introduce foreign contents below it.
+        require(not any(Path(r.mount_point)!=home and Path(r.mount_point).is_relative_to(home)
+                        for r in records),'native_layout_nested_mount')
+        first=_snapshot(home,uid,gid,device)
+        _soul(home,first)
+        require(first==_snapshot(home,uid,gid,device),'native_layout_changed')
+        return first
+    except NativeLayoutRejected:raise
+    except (OSError,ValueError,TypeError,KeyError,AttributeError,mounts.StorageMountRejected):
+        raise NativeLayoutRejected('native_layout_unavailable') from None

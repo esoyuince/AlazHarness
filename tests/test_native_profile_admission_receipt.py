@@ -1,4 +1,4 @@
-"""Exact current F104X native-profile proof; not a full Hermes Gateway run."""
+"""Historical F104X proof; changed projection is pinned to its original bytes."""
 import hashlib
 import json
 from pathlib import Path
@@ -13,7 +13,7 @@ class NativeProfileAdmissionReceipt(unittest.TestCase):
         cls.r=json.loads(cls.outer['nativeStdout'])
         cls.targets=[row for row in cls.r['events'] if row.get('state')=='RESULT']
         cls.phases={row['phase']:row for row in cls.r['events'] if 'phase' in row}
-    def test_terminal_outcomes_and_exact_current_transport(self):
+    def test_terminal_outcomes_and_original_transport(self):
         self.assertEqual(json.loads((E/'native-002-result.json').read_text())['exitCode'],0)
         self.assertEqual((self.outer['unitExitCode'],self.outer['nativeExitCode']),(0,0))
         self.assertEqual(self.outer['nativeStderr'],'');self.assertIs(self.outer['sourceUnchanged'],True)
@@ -26,7 +26,9 @@ class NativeProfileAdmissionReceipt(unittest.TestCase):
         for name,want in manifest.items():
             if name.startswith(('packages/','scripts/','tests/')):
                 with self.subTest(source=name):
-                    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+                    source=(ROOT/'evidence/d3b-native-layout-l106r/gateway_state_projection.before.py.txt'
+                            if name=='packages/claw-hermes/gateway_state_projection.py' else ROOT/name)
+                    self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),want)
     def test_exact_native_dependency_pin_and_each_target_imports(self):
         prior=json.loads((ROOT/'evidence/d3b-profile-lease-l99d/native-dependency-inventory.json').read_text())
         self.assertEqual(self.outer['nativePin'],prior['pin'])

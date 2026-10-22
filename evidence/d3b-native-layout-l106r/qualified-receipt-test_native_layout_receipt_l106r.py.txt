@@ -1,0 +1,12 @@
+test_exact_current_sources_and_pinned_native_files (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_exact_current_sources_and_pinned_native_files) ... ok
+test_final_identity_guard_and_no_database_open_by_layout (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_final_identity_guard_and_no_database_open_by_layout) ... ok
+test_first_failure_and_historical_snapshots_cleanup_retained (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_first_failure_and_historical_snapshots_cleanup_retained) ... ok
+test_minimal_defaults_and_claim_limits (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_minimal_defaults_and_claim_limits) ... ok
+test_real_native_owner_contention_and_last_user_drain (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_real_native_owner_contention_and_last_user_drain) ... ok
+test_terminal_native_checks_and_framed_provenance (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_terminal_native_checks_and_framed_provenance) ... ok
+test_true_native_epoch_recovery_after_complete_detach (test_native_layout_receipt_l106r.NativeLayoutReceipt.test_true_native_epoch_recovery_after_complete_detach) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.035s
+
+OK

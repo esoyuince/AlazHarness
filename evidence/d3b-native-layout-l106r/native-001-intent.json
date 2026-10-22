@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-22T15:12:01.895215+03:00",
+  "scope": "approved disposable P71C, own NEW /opt/alaz-l106r /srv/alaz-l106r fixture; no other installations touched",
+  "sourceFiles": 355,
+  "bootstrapSha256": "aaaced981f92e6e8210affeef8b356cf95aab564b883bac961238f0ceb59f18b",
+  "rootRequiredForOwnedImageOnly": true,
+  "paidModelCalls": 0,
+  "providerSends": 0
+}

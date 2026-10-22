@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-22T15:00:57.076451+03:00",
+  "scope": "independent actual-native and adversarial audit of L106E; no duplicate product implementation",
+  "parallelBranch": "alaz/d3b-native-layout-l106e",
+  "candidateInitialSha256": "359de65011a029c3fe6034a533153080b574146576b80b01cf7e6ea9390a0bbf",
+  "unusedOwnDraftPreserved": "unintegrated-layout-draft.py.txt",
+  "unusedDraftAccepted": false,
+  "draftIssue": "first draft treated native logs/curator as flat and missed cache/schema_columns.json; discovered before tests/integration, never activated",
+  "productSourcesModified": false,
+  "next": "Review exact candidate and construct mutation/source/lock-safety checks without modifying concurrent files"
+}

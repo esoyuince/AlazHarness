@@ -1,0 +1,8 @@
+{
+  "cause": "measured Windows lstat/fstat ctime differ after in-place rewrite; production contract is Linux",
+  "repair": "Windows fixture metadata shim only. Product snapshot still compares all fields including ctime. Linux test run uses actual filesystem with no shim.",
+  "testBefore": "300ded5c69e9ac59c3fb7b1b2269848d95572c85ef396d6e500bdc7d94b8c92c",
+  "testAfter": "9e2b830d0abd11bffad7c1b3c5fcb30c806efe8f4395385fd502dccb56e4c4a0",
+  "assertionsUnchanged": true,
+  "firstFailuresRetained": true
+}
