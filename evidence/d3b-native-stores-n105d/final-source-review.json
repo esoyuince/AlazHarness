@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-22T04:16:55.424323+03:00",
+  "review": "all original382 sources preserved; no live DB raw reads; native/dependency provenance distinguished; subprocess deaths deliberate owned fixtures; no product admission claim",
+  "sourceCount": 382,
+  "transportFiles": 266,
+  "nativeTransportFiles": 234,
+  "noTemporaryWindowsProfiles": true,
+  "canonicalNotModifiedByThisTask": true,
+  "priorBlockedFilesNotModified": true
+}

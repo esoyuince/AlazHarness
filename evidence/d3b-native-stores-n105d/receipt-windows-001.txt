@@ -1,0 +1,23 @@
+test_exact_windows_terminal_receipt (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_exact_windows_terminal_receipt) ... ok
+test_failed_guard_cannot_be_relabelled_pass (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_failed_guard_cannot_be_relabelled_pass) ... ok
+test_fake_atomic_pair_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_fake_atomic_pair_refused) ... ok
+test_fake_recovery_to_queued_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_fake_recovery_to_queued_refused) ... ok
+test_false_cleanup_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_false_cleanup_refused) ... ok
+test_full_gateway_claim_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_full_gateway_claim_refused) ... ok
+test_memory_fallback_is_not_qualified_storage (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_memory_fallback_is_not_qualified_storage) ... ok
+test_missing_scenario_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_missing_scenario_refused) ... ok
+test_missing_unknown_block_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_missing_unknown_block_refused) ... ok
+test_native_git_provenance_not_fake_schema (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_native_git_provenance_not_fake_schema) ... ok
+test_native_source_drift_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_native_source_drift_refused) ... ok
+test_raw_stdout_must_match_parsed_record (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_raw_stdout_must_match_parsed_record) ... ok
+test_reordered_case_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_reordered_case_refused) ... ok
+test_script_drift_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_script_drift_refused) ... ok
+test_source_pin_drift_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_source_pin_drift_refused) ... ok
+test_terminal_recovery_count_not_inflated (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_terminal_recovery_count_not_inflated) ... ok
+test_uncommitted_reservation_claim_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_uncommitted_reservation_claim_refused) ... ok
+test_unexecuted_commit_boundary_refused (test_native_store_crash_receipt_n105d.NativeCrashReceipt.test_unexecuted_commit_boundary_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.038s
+
+OK

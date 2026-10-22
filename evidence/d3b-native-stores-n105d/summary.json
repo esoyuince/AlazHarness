@@ -1,0 +1,140 @@
+{
+  "job": "D3B-NATIVE-STORES-N105D",
+  "result": "PASS_SCOPED_INDEPENDENT_NATIVE_RECOVERY_QA",
+  "completedAt": "2026-10-22T04:19:07.649129+03:00",
+  "base": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+  "nativeSourcePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "distinctScenarios": 8,
+  "windows": {
+    "terminalExitCode": 0,
+    "scenarioCount": 8,
+    "childLifetimes": 17,
+    "nativeImportedSources": 218,
+    "journalModes": "DELETE"
+  },
+  "linux": {
+    "terminalExitCode": 0,
+    "scenarioCount": 8,
+    "childLifetimes": 17,
+    "nativeImportedSources": 210,
+    "dependencyImportedSources": 29,
+    "journalModes": "DELETE",
+    "uid": 23001,
+    "gid": 23003,
+    "rootUsed": false
+  },
+  "platformRepeatNotAdditionalScenarios": true,
+  "sameProbeSha256": "90d1941671cfd457be40e008b1525561633f1db97b22c551d864a6522813b686",
+  "transitions": [
+    {
+      "case": "before_reserve",
+      "admission": null,
+      "replay": null
+    },
+    {
+      "case": "before_reservation_commit",
+      "admission": null,
+      "replay": null
+    },
+    {
+      "case": "reservation_only",
+      "admission": null,
+      "replay": "running"
+    },
+    {
+      "case": "queued",
+      "admission": "queued",
+      "replay": "running"
+    },
+    {
+      "case": "started",
+      "admission": "unknown",
+      "replay": "running"
+    },
+    {
+      "case": "terminal_gap",
+      "admission": "terminal",
+      "replay": "running"
+    },
+    {
+      "case": "terminal_synced",
+      "admission": "terminal",
+      "replay": "completed"
+    },
+    {
+      "case": "aged_running",
+      "admission": null,
+      "replay": "running"
+    }
+  ],
+  "observedMemoryFallback": true,
+  "runtimeReadinessGuardImplemented": false,
+  "realNativeSchemasTested": true,
+  "nativeOwnershipLockUsed": true,
+  "finalConfinedProfileLeaseIntegrated": false,
+  "commitBoundaryUsesTimingOnlySqliteTrace": true,
+  "casesUseDeliberateExit73": true,
+  "nativeCodeMocked": false,
+  "nativeFilesPatched": false,
+  "sourceManifestTypes": "native Git pin and dependency installed RECORD kept distinct",
+  "offlineReceiptTests": 22,
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2485,
+    "discovered": 2485,
+    "passed": 2462,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "skipIds": [
+      "test_broker_budget_native.NativeBudgetTransport.test_http_500_is_observed_without_refund",
+      "test_broker_budget_native.NativeBudgetTransport.test_missing_private_authority_never_opens_socket",
+      "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_broker_restart",
+      "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_gateway_ledger_reset",
+      "test_broker_budget_native.NativeBudgetTransport.test_unknown_commit_ack_does_not_send_http",
+      "test_state_image_lease.NativeImageLeaseTests.test_abrupt_owner_exit_releases_kernel_lock",
+      "test_state_image_lease.NativeImageLeaseTests.test_actual_child_contends_then_acquires_after_close",
+      "test_state_image_lease.NativeImageLeaseTests.test_closed_lease_cannot_be_reused",
+      "test_state_image_lease.NativeImageLeaseTests.test_exception_releases_owned_lease_without_unlink",
+      "test_state_image_lease.NativeImageLeaseTests.test_exec_does_not_inherit_image_or_parent_descriptors",
+      "test_state_image_lease.NativeImageLeaseTests.test_fork_child_cannot_release_parent_lock",
+      "test_state_image_lease.NativeImageLeaseTests.test_hardlink_refused_without_repair",
+      "test_state_image_lease.NativeImageLeaseTests.test_image_mode_must_be_private",
+      "test_state_image_lease.NativeImageLeaseTests.test_missing_file_not_created",
+      "test_state_image_lease.NativeImageLeaseTests.test_no_content_read_write_or_unlink",
+      "test_state_image_lease.NativeImageLeaseTests.test_parent_mode_must_be_private",
+      "test_state_image_lease.NativeImageLeaseTests.test_parent_path_replacement_rejected",
+      "test_state_image_lease.NativeImageLeaseTests.test_real_acquisition_preserves_bytes_and_metadata",
+      "test_state_image_lease.NativeImageLeaseTests.test_replaced_image_not_adopted",
+      "test_state_image_lease.NativeImageLeaseTests.test_resize_during_lease_refuses_confirmation",
+      "test_state_image_lease.NativeImageLeaseTests.test_same_process_second_owner_refused",
+      "test_state_image_lease.NativeImageLeaseTests.test_symlink_is_never_followed",
+      "test_state_image_lease.NativeImageLeaseTests.test_wrong_identity_rejected"
+    ],
+    "sourceCount": 386,
+    "sourceUnchanged": true,
+    "allBaselineSourcesUnchanged": true,
+    "baselineSourceCount": 382,
+    "elapsedSeconds": 234.018,
+    "at": "2026-10-22T04:17:40.939659+03:00",
+    "collection": "direct complete unittest result object",
+    "scope": "canonical30604df plus independent N105D crash/recovery QA; NOT H105E runtime integration",
+    "fullD3BAccepted": false
+  },
+  "allPriorSourcesUnchanged": 382,
+  "currentSourceCount": 386,
+  "existingProductSourceChanged": false,
+  "actualGatewayStarted": false,
+  "pairedStoreAtomicRecoveryAccepted": false,
+  "powerLossTested": false,
+  "providerCalls": 0,
+  "rootOrMountAction": false,
+  "sharedLabTerminated": false,
+  "canonicalUpdated": false,
+  "mainUpdated": false,
+  "pushed": false,
+  "diagnosticsEncoding": "child stdout is JSON text; diagnostic stderr decoded UTF8 with replacement; parent transport output raw bytes retained",
+  "next": "qualify native preprovisioned profile layout and live-connection validation under final confinement; reconcile partial two-store states without automatic resend; keep H105E separate until its terminal reviewed commit"
+}

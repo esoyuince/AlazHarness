@@ -1,0 +1,1 @@
+{"uid": 23001, "temporaryCodeRoots": [], "matchingPids": [], "unreadableSameUidPids": [], "ownClean": true, "rootUsed": false, "labStopRequested": false, "defaultUbuntuTouched": false}

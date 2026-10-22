@@ -1,0 +1,44 @@
+from pathlib import Path
+import os,sys,tempfile,json,hashlib,sqlite3,traceback
+base=Path(sys.argv[1]).resolve();source=Path(sys.argv[2]).resolve()
+assert base.name=='n105d-discovery' and base.is_dir()
+with tempfile.TemporaryDirectory(prefix='owned-',dir=base) as t:
+ home=Path(t)/'profile';home.mkdir();os.environ['HERMES_HOME']=str(home)
+ os.environ['HOME']=t;os.environ['USERPROFILE']=t;os.environ['HERMES_TEST_ISOLATION']='1'
+ os.environ['HERMES_GATEWAY_LOCK_DIR']=str(Path(t)/'locks')
+ sys.path.insert(0,str(source))
+ blocked=[]
+ def audit(event,args):
+  if event in ('socket.connect','socket.getaddrinfo','subprocess.Popen','os.system'):
+   blocked.append(event);raise PermissionError('n105d_no_external_effect')
+ sys.addaudithook(audit)
+ from hermes_state import SessionDB
+ from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+ from gateway.runtime_ownership import process_ownership
+ from hermes_state_runtime import begin_runtime_epoch,recover_session_inputs,admit_session_input,claim_session_input,get_session_admission
+ db=None;store=None
+ try:
+  process_ownership.reserve([home]);db=SessionDB(home/'state.db');store=RunIdempotencyStore(str(home/'runs_idempotency.db'))
+  epoch=begin_runtime_epoch(db,instance_id='n105d-discovery');db.create_session('n105d-session','api_server')
+  adm=admit_session_input(db,epoch=epoch,principal_id='n105d-principal',session_id='n105d-session',request_id='n105d-request',payload={'text':'owned inert fixture'})
+  claim=claim_session_input(db,epoch=epoch,session_id='n105d-session')
+  outcome,record=store.reserve('n105d','n105d-key','a'*64,'n105d-run',{'status':'running'},owner_pid=os.getpid())
+  epoch2=begin_runtime_epoch(db,instance_id='n105d-discovery2');recovered=recover_session_inputs(db,epoch=epoch2)
+  imported={}
+  for name,mod in tuple(sys.modules.items()):
+   f=getattr(mod,'__file__',None)
+   if f and Path(f).suffix=='.py':
+    p=Path(f).resolve()
+    if p.is_relative_to(source):imported[p.relative_to(source).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+  report={'scope':'ordinary Windows discovery; no confined admission','sqliteVersion':sqlite3.sqlite_version,'nativeImports':imported,'durable':store.durable,'epoch':[epoch,epoch2],
+   'recovered':recovered,'admissionState':get_session_admission(db,admission_id=adm['admission_id'])['status'],
+   'idemOutcome':outcome,'profileEntries':sorted(p.name for p in home.iterdir()),'blockedEvents':blocked,
+   'dbPath':str(db.db_path),'stateMode':db._conn.execute('PRAGMA journal_mode').fetchone()[0],
+   'idemMode':store._conn.execute('PRAGMA journal_mode').fetchone()[0],
+   'stateTables':[r[0] for r in db._conn.execute("SELECT name FROM sqlite_master WHERE type='table'")],
+   'importedModuleNames':[n for n in sys.modules if n.startswith(('gateway','hermes_state'))]}
+ finally:
+  if store is not None:store.close()
+  if db is not None:db.close()
+  process_ownership.close()
+ print(json.dumps(report),flush=True)

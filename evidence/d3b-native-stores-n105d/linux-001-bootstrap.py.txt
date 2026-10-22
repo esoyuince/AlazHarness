@@ -1,0 +1,30 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,tempfile,subprocess,sys
+assert os.getuid()==os.geteuid()==23001 and os.getgid()==23003
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+payload=json.load(sys.stdin);files=payload['files'];assert len(files)<500
+assert sum(len(v['text'].encode()) for v in files.values())<10000000
+with tempfile.TemporaryDirectory(prefix='alaz-n105d-code-',dir='/tmp') as temp:
+ root=Path(temp)
+ for n,item in files.items():
+  p=PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+  assert p.parts[0] in ('vendor-native','dependencies','scripts') and n.endswith('.py')
+  data=item['text'].encode();assert hashlib.sha256(data).hexdigest()==item['sha256']
+  out=root/n;out.parent.mkdir(parents=True,exist_ok=True)
+  with out.open('xb') as stream:stream.write(data)
+ manifest=root/'source-manifest.json';manifest.write_text(json.dumps(payload['native']),encoding='utf-8')
+ # Normal imports find pure-Python verified ruamel sources; no installation.
+ # The native source root is a namespace path for this supplied package only.
+ for n in ('ruamel',):
+  src=root/'dependencies'/n;dst=root/'vendor-native'/n
+  assert not dst.exists();src.rename(dst)
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root),'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+ command=[sys.executable,'-I','-B',str(root/'scripts/qa/n105d_recovery_probe.py'),'--source',str(root/'vendor-native'),
+          '--manifest',str(manifest),'--output',str(root/'result.json')]
+ r=subprocess.run(command,cwd=root,env=env,capture_output=True,text=True,timeout=180)
+ result={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'native':json.loads((root/'result.json').read_text()) if (root/'result.json').exists() else None,
+         'uid':os.getuid(),'gid':os.getgid(),'rootUsed':False,'dependencyInstalled':False,
+         'scriptUnchanged':hashlib.sha256((root/'scripts/qa/n105d_recovery_probe.py').read_bytes()).hexdigest()==files['scripts/qa/n105d_recovery_probe.py']['sha256']}
+result['temporaryCodeRemoved']=not root.exists()
+print(json.dumps(result),flush=True)
+sys.exit(0 if r.returncode==0 and result['scriptUnchanged'] and result['temporaryCodeRemoved'] else 1)

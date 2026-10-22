@@ -1,5 +1,21 @@
 # AlazHarness — status
 
+## D3B-NATIVE-STORES-N105D — INDEPENDENT NATIVE RECOVERY QA PASS
+
+Branch alaz/d3b-native-stores-n105d; worktree scratch/worktrees/d3b-native-stores-n105d; base30604df. Continue canonical P102/F104X/Q104E only. Qualify real pinned Hermes SessionDB and RunIdempotencyStore under final native ProfileLease, explicit refusal of in-memory fallback, and native epoch/recovery stale-work handling. Do not replay blocked R91F collector or G82C patch; no alternate projection or mock native storage success.
+
+Only already approved disposable P71C may host NEW /opt/alaz-n105d and /srv/alaz-n105d fixtures. No existing image format, production/defaultUbuntu/account/service/CI configuration change, real provider/model, push or main update. Existing source baseline captured. No native test begun. Verify source/dependency closure and current work ownership before transport. Source/QA failures preserved. Before constructors can repair/adopt existing databases, preflight expected on-disk native schema and ownership; no silent creation/recovery of unknown state. Power-loss and cross-database atomicity are not assumed.
+
+Completed independent actual native SessionDB/RunIdempotencyStore/ProfileOwnership crash matrix on Windows and ordinaryP71C Linux. SAME8 scenarios each platform,17 child lifetimes each. All deliberate crash exits73 and recovery exits0. Native epoch1->2/stale refusal, exact same-key replay/conflict/tenant separation, started->unknown/no reclaim, beforeCOMMIT rollback, nonterminal retention and actual memory fallback observed. Terminal SessionDB plus running replay remains an explicit cross-store inconsistency, NOT repaired. No Gateway/provider/OS-confinement or power-loss acceptance.
+
+Windows218 native imports pinned to immutableHermes; Linux210 native plus29 separately pinnedruamel imports. Actual original methods/schemas/OS locks, no native mocks or patches. Identical QA script on both platforms.22 offline evidence/negative tests PASS. NEW fullWindows2485=2462PASS/23SKIP/0FAIL/0ERROR,exit0;386 source hashes stable,ALL382 prior sources unchanged. Own profiles/processes/code removed; lab kept available for concurrentH105E. No root/mount/namespace/account/service/CI config change, defaultUbuntu/main/push/provider action. All own native/full jobs terminal. Final local static and commit follow.
+
+Report docs/D3B-NATIVE-CRASH-RECOVERY-N105D.md; evidence/d3b-native-stores-n105d/summary.json. H105E worktree remains untouched and separately in progress; do NOT call this final confined native-store integration. Next actual gate: approved native profile layout + explicit existing-schema/connection/file-backed validation under final profile lease, epoch/recovery + safe treatment of paired-store gaps before fixed admission. No R91F/G82C denied action replay.
+
+## Preserved Q104E delivery
+
+# AlazHarness — status
+
 ## D3B-PROFILE-JOINT-Q104E — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested two-parent merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` fast-forwarded from032f2fd. F104X implementation/native ownership and Q104E independent permission QA are now ONE qualified development baseline. Original feature/QA branches,69 evidence blobs and first failures preserved. This follow-up changes documentation/static delivery only;382 tested source hashes exact.
@@ -6374,3 +6390,23 @@ New fullWindows request7991de21-13fb-4908-a8be-33af10400023 runs2463 methods wit
 ### Canonical delivery completed
 
 Tested merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` promoted by fast-forward only; current382 sources match fresh unionfull2463=2440PASS/23SKIP/0FAIL/0ERROR. Local integration staticPASS2463; primary documentation-only static recorded separately. No new privileged/WSL/provider/model, main or push action. Independent/native counts remain scoped and nonadditive. Next actual native Hermes DB/epoch/recovery and fixed request admission; no duplicate projection/lock implementation.
+
+
+### Concurrent ownership split
+
+Canonical still30604df. Independent H105E branch now owns native-store admission integration. N105D will NOT duplicate or edit it: focus unmodified native SessionDB/runtime + idempotency crash/replay/epoch edge cases under real native profile ownership in owned temporary profiles. No alternative runtime module or R91F collector fix. Reconcile exact source proofs after the other branch completes.
+
+
+### N105D native Windows crash matrix complete
+
+Eight fresh native store scenarios, each an actual abrupt exit73 followed by a distinct recovery process: reservation absent/beforeCOMMIT/only, queued, started, terminal-gap, terminal-synced, aged-running. All passed; final epoch2 refuses epoch1 writes, started->unknown blocks claim, partial-store inconsistency remains visible rather than repaired. Real invalid-path fallback observed in separate child:durableFalse,0 reservations.17 child lifetimes, no mocking/Gateway/provider, own temporary profiles removed. Exact original imported Hermes sources independently verified against immutable Git. Sources untouched. Full regression/receipt validation not yet run; H105E owns production admission integration, not overwritten.
+
+
+### N105D Linux and full-suite checkpoint
+
+Identical native crash matrix PASS on ordinaryP71C UID23001/GID23003:8 scenarios/17 child lifetimes; same probe asWindows. Original-source pin verified for210 native imported modules plus29 ruamel dependency files with distinct provenance. No normal cleanup/close after deliberate exit73; actual reopen and same-key retry outcomes verified. All own Linux temp roots/processes absent; shared lab NOT terminated because H105E concurrently active. Windows22 offline source/negative tests PASS. New complete fullWindows request ba1f85c6-5d70-4d4f-8f50-23f0d9105015 IN PROGRESS, expected2485 methods/386 sources. Do not edit sources/tests until terminal.
+
+
+### N105D terminal local QA checkpoint — 2026-10-22T04:19:07.649129+03:00
+
+Full request ba1f85c6-5d70-4d4f-8f50-23f0d9105015 terminal exit0. Windows native5009/Linux native5011/cleanup5016 terminal exit0. No uncertain effect or test job remains. Code/evidence commit being recorded; no canonical or remote promotion in this checkpoint.
