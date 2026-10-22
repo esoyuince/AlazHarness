@@ -24,3 +24,8 @@ L113F6native001 resultFAIL retained: clean+reopen/two-store and early response r
 ### Integrated native002 reviewed successfully
 
 New L113F6native002 completePASS, source-matched279 native featureGit files and current harness modules.9 target cases: clean+reopen each16checks, two-store8, five response-error cases7each, canonical-pending8. Response errors before parent SQLite open leave all bytes unchanged. Later canonical pending preserves epoch/admission semantics and replay/response bytes but does NOT claim unchanged state.db after native constructors. First failure retained. Three-store clean reopen epochs1->2, identical inodes/response expectation. Full confinement/HTTP not executed and third-store HTTP explicitly refused. Full regression pending terminal joint tree, no guessed PASS.
+
+
+### Whole combined suite running on matching sources
+
+L113F6 complete Windows suite00028 now IN PROGRESS on446 frozen source/config/test files plus2 original native patches. Independent cross-check finds only3 intended existing product changes (startup/layout/HTTP third-store refusal) and4 historical receipt-source rebinding tests;427 baseline files unchanged,12new sources. Our committed cold helper/QA exact. No third-store namespace/HTTP evidence inferred. Monitor terminal full result and clean source commit, then preserve both branches with docs-only merge; no new code or native execution planned. Further optional earlier-source-check refinement was blocked in the parallel task and is NOT retried here.
