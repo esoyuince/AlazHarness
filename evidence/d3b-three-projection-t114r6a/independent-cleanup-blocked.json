@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T01:29:49.651710+03:00",
+  "requestId": "c114f2a7-43d2-4b06-86e9-667314000024",
+  "status": "BLOCKED_TOOL_SAFETY_CHECK",
+  "scope": "separate post-run Linux root cleanup observation, not the completed native experiment",
+  "reissuedOrBypassed": false,
+  "independentCleanupVerified": false,
+  "recordedNativeOwnTeardownPassed": true,
+  "nextPermittedWork": "local Windows source/receipt review and tests only; no new root query or native run"
+}

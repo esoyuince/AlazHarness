@@ -1,0 +1,1 @@
+{"fresh": true, "lab": "AlazHarness-D3B-P71C", "uid": 0, "ownedPathsAbsent": ["/opt/alaz-t114r6a", "/srv/alaz-t114r6a", "/sys/fs/cgroup/alaz-t114r6a"], "defaultUbuntuTouched": false}

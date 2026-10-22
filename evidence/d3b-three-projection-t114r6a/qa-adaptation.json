@@ -1,0 +1,19 @@
+{
+  "originalSources": {
+    "scripts\\qa\\f111e274_child.py": "1500bb98ade45665f15ae17e5379dcc48c3761f4e145e3b2da193b620951232e",
+    "scripts\\qa\\f111e274_accept.py": "9ab57d3e136e234fcf657c4dfc3abba1a17d9dd7a4303341d247b3886bf1b6c8",
+    "scripts\\qa\\f111e274_confined.py": "8fe6241dfd9258633c0346edb8a329fabb404a020985364e19ac9f3acf15fc66"
+  },
+  "selectedMethod": "derive fixed F111 lifecycle/cleanup scaffolding; preserve limits and paths restricted to fresh t114r6a trial",
+  "newAspects": [
+    "explicit third profile selector",
+    "real prepared response file",
+    "both wrong pair/response no-bind/no-parent-open controls",
+    "two full mount lifetimes",
+    "response-only fault invalidates HTTP",
+    "response transaction blocks storage close after HTTP drain",
+    "three persisted inodes/body and three closed handles"
+  ],
+  "oldQaSourcesEdited": false,
+  "newNativeRunStarted": false
+}

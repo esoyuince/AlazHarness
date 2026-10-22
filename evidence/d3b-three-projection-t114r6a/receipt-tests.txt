@@ -1,0 +1,15 @@
+test_actual_final_identity_is_confined_not_root (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_actual_final_identity_is_confined_not_root) ... ok
+test_all_three_persist_across_complete_detach_and_new_epoch (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_all_three_persist_across_complete_detach_and_new_epoch) ... ok
+test_cold_negative_and_old_layout_do_not_silently_opt_in (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_cold_negative_and_old_layout_do_not_silently_opt_in) ... ok
+test_current_source_and_native_feature_hashes_match_execution (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_current_source_and_native_feature_hashes_match_execution) ... ok
+test_http_drains_before_response_transaction_and_all_three_close (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_http_drains_before_response_transaction_and_all_three_close) ... ok
+test_original_transport_failures_remain_failures_not_product_success (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_original_transport_failures_remain_failures_not_product_success) ... ok
+test_private_ready_host_refusal_bound_to_same_live_pid_and_port (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_private_ready_host_refusal_bound_to_same_live_pid_and_port) ... ok
+test_recorded_teardown_and_blocked_independent_query_are_not_conflated (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_recorded_teardown_and_blocked_independent_query_are_not_conflated) ... ok
+test_scope_and_nested_counts (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_scope_and_nested_counts) ... ok
+test_third_only_faults_and_monotonic_503_have_raw_http_outcomes (test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_third_only_faults_and_monotonic_503_have_raw_http_outcomes) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.017s
+
+OK

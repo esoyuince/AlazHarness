@@ -1,0 +1,110 @@
+"""Fixed T114R6A lab-only profile-ownership child; no arbitrary workload target."""
+from contextlib import closing
+import ctypes
+from dataclasses import asdict
+import json
+import os
+from pathlib import Path
+import sqlite3
+import stat
+import sys
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import gateway_state_projection as state
+import state_volume_supervisor as volume
+from state_image_lease import ImagePin
+
+
+def main():
+    assert ROOT==Path('/opt/alaz-t114r6a3')
+    assert os.getresuid()==(0,)*3 and os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+    assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    assert not Path('/mnt/c/Windows').exists()
+    line=sys.stdin.buffer.readline(32769);assert len(line)<=32768
+    data=state.gp.fs_guard.unique_json(line.decode())
+    assert data['mode'] in ('seed','write','read','reject','deny','contend','minimal','two')
+    scope=Path(data['binding']['scope']);target=Path(data['binding']['mountpoint'])
+    assert scope.parent==Path('/sys/fs/cgroup/alaz-t114r6a3')
+    assert target.parent==Path('/srv/alaz-t114r6a3') and target.name in ('mount-a','mount-b')
+    assert volume.trusted(scope,directory=True)==tuple(data['binding']['scope_identity'])
+    assert volume.fs_type(scope)==volume.CGROUP2_MAGIC
+    fd=data['namespace_fd'];assert type(fd) is int and fd>=3
+    assert os.fstat(fd).st_ino==data['binding']['namespace_inode']
+    with (scope/'cgroup.procs').open('w') as f:f.write(str(os.getpid()))
+    lib=ctypes.CDLL(None,use_errno=True);lib.setns.argtypes=[ctypes.c_int,ctypes.c_int];lib.setns.restype=ctypes.c_int
+    assert lib.setns(fd,0x00020000)==0
+    os.close(fd)
+    assert os.stat('/proc/self/ns/mnt').st_ino==data['binding']['namespace_inode']
+    assert target.stat().st_dev==os.makedev(7,data['binding']['loop_number']),'lab_volume_device_mismatch'
+    assert volume.fs_type(target)==0xEF53
+    home=target/'profile'
+    if data['mode']=='seed':
+        assert not home.exists();home.mkdir(mode=0o700);os.chown(home,23001,23003)
+        (target/'image-root-secret').write_text('owned image-root canary')
+        os.setgroups([]);os.setresgid(23003,23003,23003);os.setresuid(23001,23001,23001);os.umask(0o077)
+        (home/'gateway.lock').touch(mode=0o600,exist_ok=False)
+        os.environ['HERMES_HOME']=str(home)
+        sys.path[:0]=[str(ROOT/'vendor-native'),str(ROOT/'dependencies')]
+        def offline(event,args):
+            if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen'):
+                raise PermissionError('t114r6a_seed_offline')
+        sys.addaudithook(offline)
+        from gateway.runtime_ownership import process_ownership
+        from hermes_state import SessionDB
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        process_ownership.reserve([home])
+        db=SessionDB(home/'state.db');replay=RunIdempotencyStore(str(home/'runs_idempotency.db'))
+        assert replay.durable is True
+        from gateway.platforms.api_server_response_store import ResponseStore
+        import gateway_response_preopen as response_preopen
+        response=ResponseStore(db_path=str(home/'response_store.db'),canonical_state=db,max_size=100,max_identities=1000)
+        response.put('resp_t114',{'output':'persistent three-store fixture'})
+        response.set_conversation('owned','resp_t114')
+        response_expected=response_preopen.PreparedResponseExpectation(response_preopen.NATIVE_FEATURE,
+            response_preopen.SCHEMA_SHA256,((home/'response_store.db').stat().st_dev,(home/'response_store.db').stat().st_ino))
+        import gateway_live_store_gate as live
+        prepared=live.PreparedStoreExpectation(live.NATIVE_PIN,live.schema_digest(db._conn),live.schema_digest(replay._conn),
+            db._conn.execute("SELECT value FROM main.state_meta WHERE key='store_instance_id'").fetchone()[0],
+            db._conn.execute('PRAGMA main.application_id').fetchone()[0],
+            (home.joinpath('state.db').stat().st_dev,home.joinpath('state.db').stat().st_ino),
+            (home.joinpath('runs_idempotency.db').stat().st_dev,home.joinpath('runs_idempotency.db').stat().st_ino),0,None)
+        response.close();replay.close();db.close();process_ownership.close()
+        import gateway_native_layout as layout
+        layout.inspect_profile(home,uid=23001,gid=23003,device=home.stat().st_dev,include_response=True)
+        print(json.dumps({'state':'SEEDED','profileInode':home.stat().st_ino,'uid':os.getuid(),'prepared':asdict(prepared),'responsePrepared':asdict(response_expected)}),flush=True)
+        return 0
+    if data['mode']=='contend':
+        os.setgroups([]);os.setresgid(23003,23003,23003);os.setresuid(23001,23001,23001);os.umask(0o077)
+        os.environ['HERMES_HOME']=str(home)
+        sys.path[:0]=[str(ROOT/'vendor-native'),str(ROOT/'dependencies')]
+        import gateway_profile_lease as lease
+        import gateway_storage_mounts as mounts
+        record=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home))
+        expect=mounts.ExpectedMount(record.mount_id,record.device,record.root,record.mount_point,record.filesystem)
+        before=(home/'gateway.lock').read_bytes()
+        try:held=lease.reserve_profile(home,expect)
+        except lease.ProfileLeaseRejected as exc:
+            assert str(exc)=='profile_already_owned'
+            assert before==(home/'gateway.lock').read_bytes()
+            print(json.dumps({'state':'REFUSED','reason':str(exc),'pid':os.getpid(),'lockUnchanged':True}),flush=True)
+            return 77
+        held.check();held.finish()
+        print(json.dumps({'state':'ACQUIRED_THEN_RELEASED','pid':os.getpid(),'inode':(home/'gateway.lock').stat().st_ino}),flush=True)
+        return 0
+    value=dict(data['binding']);value['image']=ImagePin(**value['image']);value['scope_identity']=tuple(value['scope_identity'])
+    binding=state.VolumeBinding(**value)
+    receipt=state.enter(data['ipc'],data['filesystem'],binding,observe_self_mount=data['mode']!='deny',
+                        profile_layout=(state.MINIMAL_LAYOUT if data['mode']=='minimal' else
+                            state.NATIVE_STORE_LAYOUT if data['mode']=='two' else state.NATIVE_RESPONSE_LAYOUT))
+    assert data['mode']!='reject','invalid_binding_was_accepted'
+    env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':state.TARGET,
+         'HERMES_HOME':state.TARGET,
+         'AIOHTTP_NO_EXTENSIONS':'1','MULTIDICT_NO_EXTENSIONS':'1','YARL_NO_EXTENSIONS':'1','FROZENLIST_NO_EXTENSIONS':'1','PROPCACHE_NO_EXTENSIONS':'1',
+         'T114R6A_RECEIPT':json.dumps(receipt),'T114R6A_TEST':json.dumps(data['probe']|{'mode':data['mode']})}
+    os.execve('/usr/bin/python3.12',['/usr/bin/python3.12','-I','-B',str(ROOT/'scripts/qa/t114r6a_confined.py')],env)
+
+if __name__=='__main__':
+    try:raise SystemExit(main())
+    except Exception as exc:
+        print(json.dumps({'state':'REFUSED','type':type(exc).__name__,'reason':str(exc)[:200]}),file=sys.stderr,flush=True)
+        raise SystemExit(2)

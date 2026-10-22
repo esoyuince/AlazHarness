@@ -1,0 +1,14 @@
+{
+  "rawReceiptUnchanged": true,
+  "responseStoreDuplicateRefusedField": "inherited fixture marker for the canonical/replay duplicate check; NOT independent proof of ResponseStore request-key idempotency",
+  "responseStoreProofActuallyProvided": [
+    "response body and conversation persisted",
+    "response file inode survived detach/remount",
+    "borrowed canonical handle reused",
+    "constructor row writes zero",
+    "response-only drift revoked HTTP",
+    "response transaction retained ownership",
+    "response handle closed before lease release"
+  ],
+  "noClaim": "No additional response-request execution/dedup or cross-store atomicity claim is based on that marker. Parent and target check counts are nested predicates, not independent scenarios."
+}

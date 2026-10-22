@@ -1,0 +1,28 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,subprocess,sys
+D='AlazHarness-D3B-P71C';ROOT=Path('/opt/alaz-t114r6a2');RUN=Path('/srv/alaz-t114r6a2')
+assert os.getresuid()==(0,)*3 and os.environ.get('WSL_DISTRO_NAME')==D
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()==D and not Path('/mnt/c/Windows').exists()
+assert Path('/proc/self/uid_map').read_text().split()==['0','0','4294967295']
+assert not ROOT.exists() and not RUN.exists() and not Path('/sys/fs/cgroup/alaz-t114r6a2').exists(),'owned_paths_must_be_absent'
+data=json.load(sys.stdin);files=data['files'];assert 1<len(files)<650
+assert sum(len(v['text'].encode()) for v in files.values())<12000000
+ROOT.mkdir(mode=0o755)
+for n,v in files.items():
+ p=PurePosixPath(n);assert str(p)==n and not p.is_absolute() and '..' not in p.parts
+ assert p.parts[0] in ('packages','scripts','tests','vendor-native','dependencies') and n.endswith('.py')
+ raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+ dest=ROOT/n;dest.parent.mkdir(parents=True,exist_ok=True)
+ with dest.open('xb') as f:f.write(raw)
+ dest.chmod(0o644)
+manifest={'sources':{n:v['sha256'] for n,v in files.items()},'nativePin':data['pin']}
+with (ROOT/'input-manifest.json').open('x',encoding='utf-8') as f:json.dump(manifest,f,indent=2);f.write('\n')
+env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':D}
+r=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(ROOT/'tests'),'-p','test_gateway_store_startup.py','-v'],cwd='/',env=env,capture_output=True,text=True,timeout=45,user=23001,group=23003,extra_groups=[])
+result={'unitsExitCode':r.returncode,'unitsStdout':r.stdout,'unitsStderr':r.stderr,'sources':manifest['sources'],'nativePin':data['pin']}
+if r.returncode==0:
+ r=subprocess.run([sys.executable,'-I','-B',str(ROOT/'scripts/qa/t114r6a_accept.py')],cwd='/',env=env,capture_output=True,text=True,timeout=240)
+ result.update(nativeExitCode=r.returncode,nativeStdout=r.stdout,nativeStderr=r.stderr)
+result['sourcesUnchanged']=all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest['sources'].items())
+print(json.dumps(result),flush=True)
+raise SystemExit(0 if result['unitsExitCode']==0 and result.get('nativeExitCode')==0 and result['sourcesUnchanged'] else 1)

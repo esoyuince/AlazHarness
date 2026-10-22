@@ -1,0 +1,15 @@
+controller PASS
+trusted_install PASS
+{"phase": "deployment", "type": "FileNotFoundError", "filename": "/opt/alaz-t114r6a2/packages/upstream/hermes/hermes_state_keys.py"}
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+  File "/opt/alaz-t114r6a2/packages/claw-hermes/principal_launch.py", line 178, in deployment
+    from provider_egress import BrokerConfig
+  File "/opt/alaz-t114r6a2/packages/claw-hermes/provider_egress.py", line 16, in <module>
+    from execution_budget import ExecutionLedger, ExecutionDenied, CONFIG, CLAIM, seal
+  File "/opt/alaz-t114r6a2/packages/claw-hermes/execution_budget.py", line 12, in <module>
+    from recovery_inspector import LocalRecoveryContext, _load, _json
+  File "/opt/alaz-t114r6a2/packages/claw-hermes/recovery_inspector.py", line 37, in <module>
+    _KEYS=_helper('hermes_state_keys')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/alaz-t114r6a2/packages/upstream/hermes/hermes_state_keys.py'

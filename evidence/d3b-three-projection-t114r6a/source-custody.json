@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T01:35:35.371986+03:00",
+  "originalHttpParentCommit": "e715c75aa7e6cf0680d3c3c13d7b88dbc9fc53d5",
+  "originalHttpEvidenceBlobs": 30,
+  "originalEvidenceGitIdsPreserved": true,
+  "currentFullIsolationReceiptSha256": "9b34ac57e3f330bda106966e85caea7bae019a99a4bb6c73ba5850ab9f80f2e0",
+  "currentNativeTransportedFiles": 473,
+  "allActualExecutedLocalSourcesStillExact": true,
+  "sameHttpSha256": "7256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007",
+  "independentPostRunCleanup": "BLOCKED_NOT_RETRIED",
+  "recordedNativeOwnTeardown": "PASS",
+  "newNativeRunByIntegration": false
+}

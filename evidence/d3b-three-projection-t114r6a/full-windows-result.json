@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "total": 2973,
+  "discovered": 2973,
+  "passed": 2950,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 454,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "baseSourceCount": 446,
+  "changedOriginalSources": [
+    "packages/claw-hermes/gateway_http_readiness.py",
+    "packages/claw-hermes/gateway_state_projection.py",
+    "tests/historical_sources_l113f6.py",
+    "tests/test_three_store_receipt_l113f6.py"
+  ],
+  "unchangedOriginalSources": 442,
+  "elapsedSeconds": 318.919,
+  "at": "2026-10-23T01:40:20.553119+03:00",
+  "scope": "combined third-store projection/current quiescent HTTP and offline evidence; no new native run or feature activation; independent cleanup still blocked"
+}

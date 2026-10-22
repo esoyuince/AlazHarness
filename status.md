@@ -1,13 +1,40 @@
 # AlazHarness - status
 
-## D3B-THREE-READINESS-H114R6 - SCOPED PASS; CANONICAL INTEGRATION PENDING
+## D3B-THREE-PROJECTION-T114R6A - SCOPED PASS; INDEPENDENT CLEANUP BLOCKED
 
-Branch alaz/d3b-three-readiness-h114r6, worktree scratch/worktrees/d3b-three-readiness-h114r6, base0be65aa. One existing StorageReadinessHttp with explicit response_ready=True. Pin third expectation/objects/handles before effects, observe pair-response-pair and recheck ownership; default still refuses implicit third store. Only quiescent GET diagnostics; no native agent/task/model routes or healthy-busy policy.
+Branch alaz/d3b-three-projection-t114r6a; worktree scratch/worktrees/d3b-three-projection-t114r6a.
+H114R6 original HTTP parent e715c75 integrated with one finite P102 third-file
+selector; no second runtime/startup/parser. Current HTTP7256a62 and projection
+0ff0d4 match actual native003. Installed native/source locks unchanged.
 
-Current HTTP SHA2567256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007 frozen.69focused boundary-double methods PASS,29default real-wire Windows methods PASS (storage doubled). New genuine ordinary-P71C native00194 nested controls/4 scenarios PASS after finalexec+Landlock, no root/mount. Bad response schema0nativeconnect/noport, occupied port known epoch, actual response-only200->503->503, response transaction blocks stores after HTTP drain, new process same three inodes/epoch1->2. Native sources/temporary cleanup exact. No source check reorder or blocked L113refinement replay.
+NEW combined fullWindows2973=2950PASS/23SKIP/0ERROR/0FAIL exit0,454 source/config
+hashes and2 patches stable. Independent18 unit contracts and10 raw-receipt checks
+are subsets. Original H11430 evidence blobs retained.23 old platform/opt-in skips
+not rerun; upstream full native suite not claimed.
 
-NEW fullWindows2945=2922PASS/23SKIP/0ERROR/0FAIL exit0;449source hashes and2patches stable.444 old sources unchanged; HTTP+historical receipt binding modified;3new QA/test sources.23preexisting skips not rerun;21new unit+6offline receipts are subsets. Old L113receipt refers its actual saved039bc HTTP source, never re-labelled current proof.
+Actual native003:45parent/58+63target controls,22HTTP observations/two COMPLETE
+mount-exec-detach lifetimes PASS. Private ready200/host same-portECONNREFUSED;
+third-only fault503 stays503 after fixture restoration, three inodes/body persist,
+response transaction retains all stores after HTTP drain, all3handles close
+before profile/image lease.2brokerpings/0provider sends. Root controller only in
+approved P71C, finalUID23001/GID23003 with private mount/net/IPC, seccomp/Landlock.
+Default minimum/two-store layouts and two-store HTTP semantics unchanged.
 
-Concurrent T114R6A owns finite projection selector and full mount/netns acceptance. Same7256 HTTP selected, native00345parent+58/63target/22HTTP observations independently source/raw matched (473 files). Its completed supervisor teardown says clean; SEPARATE post-run root observation tool-BLOCKED and not retried, independent cleanup NOT VERIFIED. No projection integration/full-union acceptance inferred by this branch. Only read/local tests/delivery work after that blocked action. Preserve all originals; do not replay its blocked query via any tool.
+Native001/002 FAIL before profile activation due incomplete transported helper
+closure; originals retained, independent cleanup of those failed trials CLEAN.
+Native003 recorded own teardown PASS. Independent final root cleanup query00024
+TOOL-BLOCKED and NOT reissued by another tool/encoding/route. Independent final
+cleanup remains BLOCKED, not CLEAN. No more native/root action performed.
 
-Report docs/D3B-THREE-READINESS-H114R6.md, evidence/d3b-three-readiness-h114r6/{summary,full-windows-result,full-isolation-independent-review}.json. Prior handoffs archived docs/status-history/h114r6-*.md. All own native/full jobs terminal. Static/scoped commit follows; next preserve original projection history when terminal, run new combined regression, retain independent-cleanup limitation. Installed vendor/source-lock/main/push/CI/production unchanged; fullD3B OPEN/legacyIPCv2 CLOSED.
+Native featurecc16c10 used only exported fixture, not installed. Diagnostic
+response_ready=True is quiescent storage status, not legitimate-active-work
+healthy/busy policy or native Hermes API authorization. Work/model routes remain
+closed. FullD3B, cross-store atomic recovery/powerloss remain open. Old blocked
+L113 source-check reorder unchanged/not retried. Maincc7ceba/no push/CI/production.
+
+Report docs/D3B-THREE-PROJECTION-T114R6A.md; evidence/d3b-three-projection-t114r6a/
+summary.json, native-003-stdout.txt, full-windows-result.json, source-custody.json,
+independent-cleanup-blocked.json. Prior handoffs docs/status-history/t114r6a-*.md.
+Next source-identical canonical artifact delivery preserving other work, then
+active-work readiness policy; never present blocked final cleanup as complete.
+All native/full jobs terminal; local static/commit follow, no kernel rerun.

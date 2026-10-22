@@ -1,0 +1,126 @@
+"""Third-store readiness/projection contracts; native/kernel/HTTP boundaries doubled."""
+from dataclasses import replace
+import sys,unittest
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import PropertyMock,patch
+ROOT=Path(__file__).resolve().parents[1]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'tests')]
+import test_gateway_http_readiness as old_http
+import test_gateway_state_projection as old_projection
+h=old_http.h
+p=old_projection.p
+
+class ThreeReadiness(unittest.IsolatedAsyncioTestCase):
+    request=old_http.ReadinessTests.request
+    def setUp(self):
+        old_http.ReadinessTests.setUp(self)
+        self.want=h.startup.response_preopen.PreparedResponseExpectation(
+            h.startup.response_preopen.NATIVE_FEATURE,h.startup.response_preopen.SCHEMA_SHA256,(7,13))
+        self.stores._response_expected=self.want
+        self.response=SimpleNamespace(_conn=object())
+        self.rstore=self.stack.enter_context(patch.object(h.startup.NativeStoreStartup,'response_store',new_callable=PropertyMock,return_value=self.response))
+        self.rexpected=self.stack.enter_context(patch.object(h.startup.NativeStoreStartup,'response_expectation',new_callable=PropertyMock,return_value=self.want))
+        def observe(*args,**kw):
+            self.events.append('response-probe')
+            return {'state':'NATIVE_RESPONSE_CONNECTION_VERIFIED','featureCommit':self.want.native_feature,'sameCanonicalConnectionBorrowed':True,'runtimeAdmissionAuthorized':False,'newDatabaseConnectionsOpened':False,'rawDatabaseDescriptorsOpened':False,'sqlWritesPerformed':False,'connectionsClosed':False}
+        self.rprobe=self.stack.enter_context(patch.object(h.startup.response_live,'verify_response_connection',side_effect=observe))
+    def obj(self,**kw):return h.StorageReadinessHttp(self.stores,token=self.token,response_ready=True,**kw)
+    async def serving(self):o=self.obj();await o.start();return o
+    async def test_explicit_three_selection_probes_before_bind(self):
+        o=await self.serving()
+        self.assertEqual(self.events[:5],['storage-start','live-probe','response-probe','live-probe','http-app'])
+        self.assertEqual(o.status()['configuredStoreCount'],3)
+        self.assertEqual(o.status()['scope'],'native_three_store_quiescent_readiness_only')
+        self.assertFalse(o.status()['agentRoutesEnabled']);self.assertTrue(o.status()['responseIncluded'])
+        self.assertIs(self.rprobe.call_args.args[2],self.state);self.assertIs(self.rprobe.call_args.args[3],self.response)
+        self.assertEqual(self.rprobe.call_args.args[4].identity,(7,13))
+        self.assertEqual(self.rprobe.call_args.kwargs,{'constructor':False})
+    async def test_three_not_silently_enabled_and_default_unchanged(self):
+        with self.assertRaisesRegex(h.ReadinessRejected,'three_store_not_qualified'):
+            h.StorageReadinessHttp(self.stores,token=self.token)
+        self.stores._response_expected=None
+        with self.assertRaisesRegex(h.ReadinessRejected,'response_expectation_required'):self.obj()
+        o=h.StorageReadinessHttp(self.stores,token=self.token);await o.start()
+        self.assertEqual(o.status()['configuredStoreCount'],2);self.rprobe.assert_not_called()
+    async def test_response_option_is_bool(self):
+        for value in (1,'yes',None,{},[]):
+            with self.subTest(value=value),self.assertRaisesRegex(h.ReadinessRejected,'response_option'):
+                h.StorageReadinessHttp(self.stores,token=self.token,response_ready=value)
+        self.start.assert_not_called();self.web.assert_not_called()
+    async def test_both_stores_and_response_reobserved_each_ready_request(self):
+        o=await self.serving();r=await o._handle(self.request())
+        self.assertEqual(r.status,200);self.assertEqual(self.probe.call_count,4);self.assertEqual(self.rprobe.call_count,2)
+        self.assertTrue(r.body['storageReady']);self.assertFalse(r.body['runtimeAdmissionAuthorized']);self.assertFalse(r.body['agentRoutesEnabled'])
+        self.assertEqual(r.body['scope'],'native_three_store_quiescent_readiness_only')
+    async def test_response_prebind_failure_never_constructs_http(self):
+        self.rprobe.side_effect=RuntimeError('private response fault');o=self.obj()
+        with self.assertRaises(h.ReadinessRejected):await o.start()
+        self.web.assert_not_called();self.close.assert_not_called();self.assertTrue(o.status()['readinessRevoked'])
+    async def test_response_failure_permanently_revokes_even_when_fixed(self):
+        o=await self.serving();self.rprobe.side_effect=RuntimeError('pending response')
+        self.assertEqual((await o._handle(self.request())).status,503)
+        self.rprobe.side_effect=None;before=self.rprobe.call_count
+        self.assertEqual((await o._handle(self.request())).status,503);self.assertEqual(self.rprobe.call_count,before)
+        self.close.assert_not_called()
+    async def test_swapped_response_handle_cannot_pass_old_receipt(self):
+        o=await self.serving();self.response._conn=object();n=self.rprobe.call_count
+        self.assertEqual((await o._handle(self.request())).status,503);self.assertEqual(self.rprobe.call_count,n)
+    async def test_swapped_response_object_refused(self):
+        o=await self.serving();self.rstore.return_value=SimpleNamespace(_conn=self.response._conn)
+        self.assertEqual((await o._handle(self.request())).status,503)
+    async def test_response_expectation_replaced_before_probe(self):
+        o=await self.serving();self.rexpected.return_value=replace(self.want,response_identity=(7,99));n=self.rprobe.call_count
+        self.assertEqual((await o._handle(self.request())).status,503);self.assertEqual(self.rprobe.call_count,n)
+    async def test_response_false_success_is_not_ready(self):
+        o=await self.serving();self.rprobe.side_effect=None
+        good={'state':'NATIVE_RESPONSE_CONNECTION_VERIFIED','featureCommit':self.want.native_feature,'sameCanonicalConnectionBorrowed':True,'runtimeAdmissionAuthorized':False,'newDatabaseConnectionsOpened':False,'rawDatabaseDescriptorsOpened':False,'sqlWritesPerformed':False,'connectionsClosed':False}
+        for altered in ({'state':'NOT_READY'},{'sameCanonicalConnectionBorrowed':False},{'runtimeAdmissionAuthorized':True},{'featureCommit':'f'*40},{'sqlWritesPerformed':True}):
+            self.rprobe.return_value=good|altered
+            with self.subTest(altered=altered),self.assertRaisesRegex(h.ReadinessRejected,'response_live_result'):o._probe()
+        self.assertEqual((await o._handle(self.request())).status,503)
+        self.assertEqual(o.status()['state'],'REVOKED')
+    async def test_liveness_does_not_hide_or_evaluate_response(self):
+        o=await self.serving();self.rprobe.side_effect=AssertionError('must not probe')
+        r=await o._handle(self.request(path='/health/live'))
+        self.assertEqual(r.status,200);self.assertEqual(r.body['scope'],'process_liveness_only');self.assertNotIn('storageReady',r.body)
+    async def test_authenticated_work_routes_still_closed(self):
+        o=await self.serving();before=self.rprobe.call_count
+        for path in ('/v1/runs','/v1/responses','/v1/chat/completions','/health/ready?stores=2'):
+            self.assertEqual((await o._handle(self.request(path=path,method='POST'))).status,404)
+        self.assertEqual(self.rprobe.call_count,before)
+    async def test_shutdown_revokes_before_await_and_uses_same_owner(self):
+        o=await self.serving();replies=[]
+        async def cleanup():
+            replies.append(await o._handle(self.request()));self.close.assert_not_called()
+        self.runner.cleanup=cleanup;await o.close()
+        self.assertEqual(replies[0].status,503);self.assertEqual(replies[0].body['scope'],'native_three_store_quiescent_readiness_only')
+        self.assertEqual(self.close.call_count,1);self.assertTrue(o.status()['callerLeaseMayBeReleased'])
+    async def test_pair_failure_still_revokes_before_response_read(self):
+        o=await self.serving();self.probe.side_effect=RuntimeError('pair drift');n=self.rprobe.call_count
+        self.assertEqual((await o._handle(self.request())).status,503);self.assertEqual(self.rprobe.call_count,n)
+
+class ThirdProjection(unittest.TestCase):
+    setUp=old_projection.Sequence.setUp
+    def test_valid_third_layout_reuses_canonical_confinement_sequence(self):
+        out=p.enter(old_projection.V,old_projection.FS,self.b,observe_self_mount=True,profile_layout=p.NATIVE_RESPONSE_LAYOUT)
+        self.assertEqual(out['profileLayout'],'hermes-native-three-stores-cold-v1')
+        self.assertEqual(out['stateDirectoryCount'],1);self.assertEqual(out['ambientHostDirectoriesBound'],0)
+        self.assertEqual(self.volume.call_args.kwargs,{'profile_layout':p.NATIVE_RESPONSE_LAYOUT})
+        self.assertEqual(self.events,['inspect','volume','abi','loadfilter','closefds','unshare','loopback','project','umask','drop','verifyids','filter','closefds','landlock'])
+        self.assertEqual(self.guard.call_args.kwargs,{'self_mount_metadata':True})
+        self.assertFalse(out['fullD3BAccepted'])
+    def test_default_remains_minimal(self):
+        out=p.enter(old_projection.V,old_projection.FS,self.b)
+        self.assertEqual(out['profileLayout'],p.MINIMAL_LAYOUT);self.assertEqual(self.volume.call_args.kwargs,{})
+    def test_native_two_store_layout_not_relabelled(self):
+        out=p.enter(old_projection.V,old_projection.FS,self.b,profile_layout=p.NATIVE_STORE_LAYOUT)
+        self.assertEqual(out['profileLayout'],'hermes-native-stores-cold-v1')
+        self.assertEqual(self.volume.call_args.kwargs,{'profile_layout':p.NATIVE_STORE_LAYOUT})
+    def test_no_truthy_or_unknown_layout_before_io(self):
+        for value in (True,3,{},'three','hermes-native-three-stores-cold-v2'):
+            with self.subTest(value=value),self.assertRaisesRegex(p.StateProjectionRejected,'layout_invalid'):
+                p.enter(old_projection.V,old_projection.FS,self.b,profile_layout=value)
+        self.inspector.assert_not_called();self.volume.assert_not_called();self.mounts.unshare.assert_not_called()
+
+if __name__=='__main__':unittest.main()

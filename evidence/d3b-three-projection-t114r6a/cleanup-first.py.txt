@@ -1,0 +1,20 @@
+from pathlib import Path
+import os,json,sys,hashlib
+assert os.getresuid()==(0,)*3 and os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+root=Path('/opt/alaz-t114r6a');run=Path('/srv/alaz-t114r6a')
+manifest=json.loads((root/'input-manifest.json').read_text())['sources']
+assert all(hashlib.sha256((root/n).read_bytes()).hexdigest()==h for n,h in manifest.items())
+sys.path.insert(0,str(root/'packages/claw-hermes'))
+import state_volume_supervisor as v
+from state_image_lease import ImagePin
+p=run/'images/state.img';s=p.stat();d=p.parent.stat();pin=ImagePin(str(p),s.st_dev,s.st_ino,s.st_size,0,0,d.st_dev,d.st_ino)
+processes=[]
+for proc in Path('/proc').iterdir():
+ if not proc.name.isdigit() or int(proc.name)==os.getpid():continue
+ try:args=(proc/'cmdline').read_bytes().split(b'\0')
+ except FileNotFoundError:continue
+ if any(a.startswith(b'/opt/alaz-t114r6a/scripts/') or a==b'/srv/alaz-t114r6a/broker-contract.json' for a in args):processes.append(int(proc.name))
+checks={'own_processes_absent':not processes,'image_unattached':not v.attachments(pin),'fence_absent':not Path(str(p)+'.volume-owner.json').exists(),'cgroup_absent':not Path('/sys/fs/cgroup/alaz-t114r6a').exists(),'socket_absent':not (run/'socket/egress.sock').exists(),'mount_dirs_empty':all(not os.path.ismount(m) and not any(m.iterdir()) for m in run.glob('mount-*')),'anchors_absent':not any(Path('/tmp').glob('alaz-ipc-t114r6a-*')),'sources_unchanged':True}
+print(json.dumps({'result':'CLEAN' if all(checks.values()) else 'FAIL','checks':checks,'matchingProcesses':processes,'imageRetained':True,'imageBytes':s.st_size,'labTerminated':False,'defaultUbuntuCommandIssued':False}))
+raise SystemExit(0 if all(checks.values()) else 1)
