@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-22T15:26:09.503765+03:00",
+  "testedCodeCommit": "80f26687160ef2bba3011338cc8aff58250404d9",
+  "canonicalBefore": "7f17594b73c825d8e04873ab2db2a28fe49ab688",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotion": "fast-forward only; no history rewrite",
+  "testedSourceCount": 395,
+  "sourcesMatchFullAndNativeProof": true,
+  "fullWindows": {
+    "total": 2549,
+    "passed": 2526,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "nativeParentChecks": 42,
+  "nativeFinalTargets": [
+    24,
+    27
+  ],
+  "nativeSchemasAndEpochRestartTested": true,
+  "brokerPings": 2,
+  "providerSends": 0,
+  "parallelLiveGateBranch": "alaz/d3b-native-layout-l106e",
+  "parallelWasDirty": false,
+  "parallelCodeNotAdopted": true,
+  "mainUpdated": false,
+  "pushed": false,
+  "preConstructorSchemaGateImplemented": false,
+  "fixedGatewayAdmissionCompleted": false,
+  "fullD3BAccepted": false,
+  "rootStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "next": "Finish and source-verify complementary live gate; qualify union separately, then pre-constructor schema/identity and fixed admission without automatic repair/adoption or resend."
+}

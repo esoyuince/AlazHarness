@@ -155,3 +155,7 @@ Evidence:evidence/d3b-native-layout-l106r/. Current continuation:status.md.
 ## Final full regression
 
 New fullWindows2549=2526PASS/23SKIP/0ERROR/0FAIL exit0, 226.162s. All395 sources unchanged during execution. Of389 baseline files,386 unchanged; changed prior files are canonical projection and two historical-provenance tests. Six new code/test/QA files. New25 unit+7 receipt tests are subsets; Linux repeats25+22 methods without skips. The23 old platform/explicit-opt-in skips were not reexecuted in this task. Final local static gate is recorded separately; not GitHub CI.
+
+## Canonical local delivery
+
+Tested implementation/evidence commit `80f26687160ef2bba3011338cc8aff58250404d9` fast-forwarded into `alaz/d3b-principal-launch-21oct` from `7f17594b73c825d8e04873ab2db2a28fe49ab688`. All395 source hashes match the complete regression; no new native execution is inferred from promotion. The final follow-up is documentation/static receipt only. Complementary L106E had uncommitted changes and is deliberately NOT merged. No main update, push or production activation. Current canonical status.md is the continuation.

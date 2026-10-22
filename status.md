@@ -1,6 +1,9 @@
 # AlazHarness — status
 
-## D3B-NATIVE-LAYOUT-L106R — SCOPED FEATURE PASS; UNION PENDING
+## D3B-NATIVE-LAYOUT-L106R — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Qualified code/evidence commit `80f26687160ef2bba3011338cc8aff58250404d9` fast-forward promoted from7f17594. Feature branch retained clean. All395 tested sources exact. Native finite-layout/profile restart proof now on canonical; complementary L106E live-store gate NOT adopted because its latest changes are uncommitted. This follow-up changes only documentation/static delivery.
+
 
 OWNERSHIP CONFIRMED: L106R owns gateway_native_layout.py and explicit canonical state-projection layout integration. L106E explicitly moved to complementary gateway_live_store_gate.py, so retain this division; no further role swapping. The earlier independent-audit scope note is superseded by this agreement. Our layout remains finite store-only: native skeleton and exact known auxiliary paths, not generic hooks/plugins/recursive code. Native logs/curator and cache/schema_columns.json discovered; original draft retained, never executed.
 
@@ -12926,3 +12929,8 @@ Request b1dc6618-4140-4f57-938a-a10600000027. Current product/QA sources frozen;
 ### L106R terminal source checkpoint — 2026-10-22T15:23:15.909372+03:00
 
 Native002 request...0023, cleanup...0025, full...0027 terminal0. All current395 source hashes exact. Commit only explicitly selected feature/evidence; no background native task or unknown-effect call.
+
+
+### Canonical delivery recorded — 2026-10-22T15:26:09.503765+03:00
+
+Qualified80f2668 fast-forwarded from7f17594. Full2549=2526PASS/23SKIP exact395-source baseline; actual native restart42 parent/write24/read27. No general full Gateway/pre-constructor gate claim. L106E remains independent/dirty; preserve it, verify final commit before union. Maincc7ceba/no push, old blocked work untouched. Final documentation/static only.
