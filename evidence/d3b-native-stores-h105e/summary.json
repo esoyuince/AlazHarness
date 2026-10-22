@@ -1,0 +1,143 @@
+{
+  "job": "D3B-NATIVE-STORES-H105E",
+  "result": "PASS_SCOPED_NATIVE_CRASH_AND_COMPATIBILITY_QA",
+  "at": "2026-10-22T04:21:47.885444+03:00",
+  "base": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+  "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "fullWindows": {
+    "result": "PASS",
+    "total": 2495,
+    "discovered": 2495,
+    "passed": 2472,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "skipIds": [
+      "test_broker_budget_native.NativeBudgetTransport.test_http_500_is_observed_without_refund",
+      "test_broker_budget_native.NativeBudgetTransport.test_missing_private_authority_never_opens_socket",
+      "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_broker_restart",
+      "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_gateway_ledger_reset",
+      "test_broker_budget_native.NativeBudgetTransport.test_unknown_commit_ack_does_not_send_http",
+      "test_state_image_lease.NativeImageLeaseTests.test_abrupt_owner_exit_releases_kernel_lock",
+      "test_state_image_lease.NativeImageLeaseTests.test_actual_child_contends_then_acquires_after_close",
+      "test_state_image_lease.NativeImageLeaseTests.test_closed_lease_cannot_be_reused",
+      "test_state_image_lease.NativeImageLeaseTests.test_exception_releases_owned_lease_without_unlink",
+      "test_state_image_lease.NativeImageLeaseTests.test_exec_does_not_inherit_image_or_parent_descriptors",
+      "test_state_image_lease.NativeImageLeaseTests.test_fork_child_cannot_release_parent_lock",
+      "test_state_image_lease.NativeImageLeaseTests.test_hardlink_refused_without_repair",
+      "test_state_image_lease.NativeImageLeaseTests.test_image_mode_must_be_private",
+      "test_state_image_lease.NativeImageLeaseTests.test_missing_file_not_created",
+      "test_state_image_lease.NativeImageLeaseTests.test_no_content_read_write_or_unlink",
+      "test_state_image_lease.NativeImageLeaseTests.test_parent_mode_must_be_private",
+      "test_state_image_lease.NativeImageLeaseTests.test_parent_path_replacement_rejected",
+      "test_state_image_lease.NativeImageLeaseTests.test_real_acquisition_preserves_bytes_and_metadata",
+      "test_state_image_lease.NativeImageLeaseTests.test_replaced_image_not_adopted",
+      "test_state_image_lease.NativeImageLeaseTests.test_resize_during_lease_refuses_confirmation",
+      "test_state_image_lease.NativeImageLeaseTests.test_same_process_second_owner_refused",
+      "test_state_image_lease.NativeImageLeaseTests.test_symlink_is_never_followed",
+      "test_state_image_lease.NativeImageLeaseTests.test_wrong_identity_rejected"
+    ],
+    "sourceCount": 385,
+    "sourcesUnchanged": true,
+    "allPriorSourceCountUnchanged": 382,
+    "elapsedSeconds": 234.335,
+    "completedAt": "2026-10-22T04:18:13.688718+03:00",
+    "collection": "direct unittest result object",
+    "scope": "canonical30604df plus independent H105E native crash QA; not N105D product integration"
+  },
+  "nativeCrashProof": {
+    "result": "VERIFIED_SCOPED_NATIVE_CRASH_PROOF",
+    "cases": 6,
+    "childProcesses": 12,
+    "recoveryClassifications": [
+      "REPLAY_WITHOUT_ADMISSION_REQUIRES_RECONCILIATION",
+      "UNKNOWN_EXECUTION_BLOCKED",
+      "STATE_TERMINAL_REPLAY_RUNNING_REQUIRES_RECONCILIATION",
+      "REPLAY_COMPLETED_STATE_UNKNOWN_REQUIRES_RECONCILIATION",
+      "UNCOMMITTED_REPLAY_ROLLED_BACK",
+      "VOLATILE_STORE_NOT_ADMITTED"
+    ],
+    "launchAuthorized": false,
+    "fullD3BAccepted": false
+  },
+  "nativeSourceFiles": 276,
+  "purePythonDependencyFiles": 31,
+  "linuxReceiptTests": 32,
+  "windowsReceiptTests": 32,
+  "compatibilityCases": [
+    {
+      "mode": "control",
+      "phase": "complete",
+      "facts": {
+        "profileLease": "NATIVE_PROFILE_RESERVED",
+        "stateConnection": [
+          [
+            0,
+            "main",
+            "/tmp/alaz-h105e-compat-profile-3x844881/state.db"
+          ],
+          [
+            1,
+            "temp",
+            ""
+          ]
+        ],
+        "replayDurable": true,
+        "journal": "delete",
+        "epoch": 1,
+        "profileReleased": true
+      },
+      "error": null
+    },
+    {
+      "mode": "landlock",
+      "phase": "complete",
+      "facts": {
+        "profileLease": "NATIVE_PROFILE_RESERVED",
+        "stateConnection": [
+          [
+            0,
+            "main",
+            "/tmp/alaz-h105e-compat-profile-r5stghgv/state.db"
+          ],
+          [
+            1,
+            "temp",
+            ""
+          ]
+        ],
+        "replayDurable": true,
+        "journal": "delete",
+        "epoch": 1,
+        "profileReleased": true
+      },
+      "error": null
+    }
+  ],
+  "compatibilityScope": "fresh final-exec profile ownership and real stores with exact existing Landlock metadata policy; NOT full mount/network/cgroup projection",
+  "historicalProjectionInventoryCompatible": false,
+  "allPrior382SourcesUnchanged": true,
+  "nativeProductModified": false,
+  "qaSourcesStable": 385,
+  "rootUsed": false,
+  "providerCalls": 0,
+  "powerLossTested": false,
+  "pairedAtomicRecoveryClaimed": false,
+  "fullD3BAccepted": false,
+  "mainChanged": false,
+  "pushed": false,
+  "cleanup": {
+    "result": "CLEAN",
+    "ownedTemporaryPaths": [],
+    "matchingLivePids": [],
+    "unreadableSameUidPids": [],
+    "uid": 23001,
+    "rootUsed": false,
+    "labStopRequested": false,
+    "defaultUbuntuCommandIssued": false
+  },
+  "concurrentN105DNotModified": true,
+  "next": "Join qualified complementary QA without product changes; then explicit native profile layout / prepared-schema / constructor-side-effect contract before confined remount and HTTP admission."
+}

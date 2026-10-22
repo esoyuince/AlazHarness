@@ -1,0 +1,25 @@
+from pathlib import Path,PurePosixPath
+import os,sys,json,tempfile,hashlib,subprocess
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+data=json.load(sys.stdin);files=data['files'];assert len(files)<500
+results=[];homes=[]
+with tempfile.TemporaryDirectory(prefix='alaz-h105e-compat-code-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for n,v in files.items():
+  p=PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/n;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ (root/'canary').write_text('owned-protection-fixture')
+ (root/'input-manifest.json').write_text(json.dumps({'sources':{n:v['sha256'] for n,v in files.items()}}))
+ for mode in ('control','landlock'):
+  with tempfile.TemporaryDirectory(prefix='alaz-h105e-compat-profile-',dir='/tmp') as h:
+   home=Path(h);homes.append(home);(home/'.owned').write_text('h105e-compat-only')
+   env={'PATH':'/usr/bin:/bin','HOME':str(home),'HERMES_HOME':str(home),'LANG':'C.UTF-8'}
+   r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/h105e_compat.py'),mode,str(home)],cwd=home,env=env,capture_output=True,text=True,timeout=35)
+   results.append({'mode':mode,'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr})
+ report={'cases':results,'sources':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items())}
+report.update(temporaryRootsRemoved=not root.exists() and all(not p.exists() for p in homes),scope='isolated exec plus exact Landlock metadata policy only; not full namespace/cgroup projection',rootUsed=False)
+print(json.dumps(report),flush=True)

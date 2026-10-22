@@ -1,0 +1,251 @@
+"""Independent native Hermes storage crash boundaries; owned P71C ordinary UID.
+
+No product patch, model, gateway listener, root/mount, profile restoration or
+repair of preexisting data. Timing-only native pre-COMMIT checkpoint; no native
+function replacement. Independent connections are NOT a two-store transaction.
+"""
+from __future__ import annotations
+import argparse
+import ast
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+
+ROOT=Path(__file__).resolve().parents[2]
+PIN='eb75627faf532fa6ffbdae59a0d14b0b385fc780'
+CASES=('reservation_only','started_pair','state_terminal_replay_running',
+       'replay_completed_state_started','uncommitted_reservation','memory_fallback')
+SCOPE='h105e-owned-scope';KEY='h105e-owned-key';FP='a'*64;RUN='run_'+('1'*32)
+SESSION='h105e-owned-session';REQUEST='h105e-request';PRINCIPAL='h105e-principal'
+PAYLOAD={'text':'owned native crash-boundary fixture'}
+
+
+def guard():
+    assert sys.platform=='linux' and os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+    assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+    assert ROOT.parent==Path('/tmp') and ROOT.name.startswith('alaz-h105e-code-')
+    assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    m=json.loads((ROOT/'input-manifest.json').read_text())
+    assert m['nativePin']==PIN
+    assert all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in m['sources'].items())
+    return m
+
+
+def imported_sources(manifest):
+    found={}
+    for module in tuple(sys.modules.values()):
+        name=getattr(module,'__file__',None)
+        if not name:continue
+        path=Path(name).resolve()
+        if path.is_relative_to(ROOT) and path.suffix=='.py':
+            name=path.relative_to(ROOT).as_posix();raw=path.read_bytes()
+            digest=hashlib.sha256(raw).hexdigest()
+            assert manifest['sources'].get(name)==digest,('unmanifested_import',name)
+            found[name]=digest
+    for name in ('vendor-native/hermes_state.py','vendor-native/hermes_state_runtime.py',
+                 'vendor-native/gateway/platforms/api_server_run_idempotency.py',
+                 'vendor-native/gateway/runtime_ownership.py'):
+        assert name in found,('native_not_imported',name)
+    return found
+
+
+def child(case,phase,home):
+    manifest=guard();home=Path(home)
+    assert home.parent==ROOT/'profiles' and home.name==case and home==home.resolve()
+    assert (home/'.h105e-owned').read_text()=='owned-new-fixture-only'
+    os.environ['HERMES_HOME']=str(home);os.umask(0o077)
+    def audit(event,args):
+        if event in ('socket.connect','socket.getaddrinfo','socket.bind','subprocess.Popen','os.system','os.exec'):
+            raise PermissionError('h105e_no_external_effect')
+    sys.addaudithook(audit)
+    sys.path[:0]=[str(ROOT/'vendor-native'),str(ROOT/'dependencies')]
+    from gateway import runtime_ownership as native
+    from hermes_state import SessionDB
+    from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+    import hermes_state_runtime as runtime
+    native.process_ownership.reserve([home])
+    lock_inode=(home/'gateway.lock').stat().st_ino
+    db=SessionDB(home/'state.db')
+    replay_path=home/('absent-parent/replay.db' if case=='memory_fallback' else 'runs_idempotency.db')
+    runs=RunIdempotencyStore(str(replay_path))
+    checks={};data={};before_epoch=db._conn.execute('SELECT epoch FROM runtime_epoch WHERE singleton=1').fetchone()
+    before_epoch=None if before_epoch is None else int(before_epoch[0])
+    def check(key,value):
+        checks[key]=bool(value)
+        assert value,key
+    def request(epoch,body=PAYLOAD,request_id=REQUEST):
+        return runtime.admit_session_input(db,epoch=epoch,principal_id=PRINCIPAL,
+            session_id=SESSION,request_id=request_id,payload=body)
+    def reserve(run_id=RUN,fp=FP):
+        return runs.reserve(SCOPE,KEY,fp,run_id,{'status':'running'},owner_pid=os.getpid(),owner_started=1)
+    def reason(fn):
+        try:fn()
+        except runtime.RuntimeStoreError as exc:return str(exc)
+        return None
+    def rows():
+        return [dict(r) for r in db._conn.execute('SELECT admission_id,request_id,status,outcome,owner_epoch,generation FROM session_admissions ORDER BY seq')]
+    def report(state):
+        return {'state':state,'case':case,'phase':phase,'pid':os.getpid(),'checks':checks,
+            'checkCount':len(checks),'data':data,'stateRows':rows(),'lockInode':lock_inode,
+            'replayRows':[{'runId':r[0],'fingerprint':r[1],'status':json.loads(r[2])}
+                for r in runs._conn.execute('SELECT run_id,fingerprint,status_json FROM run_idempotency ORDER BY run_id')],
+            'epochRows':[{'epoch':r[0],'instanceId':r[1]}
+                for r in db._conn.execute('SELECT epoch,instance_id FROM runtime_epoch WHERE singleton=1')],
+            'replayTransactionOpen':runs._conn.in_transaction,
+            'profileInventory':sorted(p.name for p in home.iterdir()),
+            'sourceHashes':imported_sources(manifest),'nativePin':PIN,
+            'nativeFunctionsReplaced':False,'rootUsed':False,'fullConfinementTested':False,
+            'httpAdmissionTested':False,'realGatewayStarted':False,'providerCalls':0}
+    def crash():
+        print(json.dumps(report('CRASH_CHECKPOINT')),flush=True)
+        os._exit(73)  # owned child only; no DB close, rollback, lease release or atexit
+    try:
+        check('real_native_profile_owned',native.process_ownership.owns(home))
+        check('native_state_connection_on_file',Path(db._conn.execute('PRAGMA database_list').fetchone()[2])==home/'state.db')
+        data['journals']={name:obj._conn.execute('PRAGMA journal_mode').fetchone()[0] for name,obj in (('state',db),('replay',runs))}
+        data['synchronous']={name:obj._conn.execute('PRAGMA synchronous').fetchone()[0] for name,obj in (('state',db),('replay',runs))}
+        if case=='memory_fallback':
+            check('native_memory_fallback_observed',runs.durable is False and runs._conn.execute('PRAGMA database_list').fetchone()[2]=='')
+            check('failed_path_not_created',not replay_path.exists() and not replay_path.parent.exists())
+            if phase=='crash':
+                out,rec=reserve();check('native_volatile_reservation_created',out=='created')
+                data.update(epochBefore=before_epoch,reservation=rec,classification='VOLATILE_STORE_NOT_ADMITTED')
+                crash()
+            out,rec=runs.lookup(SCOPE,KEY,FP)
+            check('volatile_reservation_lost_after_exit',out=='missing' and rec is None)
+            check('no_epoch_advanced_in_negative_probe',db._conn.execute('SELECT epoch FROM runtime_epoch WHERE singleton=1').fetchone() is None if before_epoch is None else db._conn.execute('SELECT epoch FROM runtime_epoch WHERE singleton=1').fetchone()[0]==before_epoch)
+            data.update(epochBefore=before_epoch,classification='VOLATILE_STORE_NOT_ADMITTED',retryAuthorized=False)
+        else:
+            check('real_native_replay_file',runs.durable is True and Path(runs._conn.execute('PRAGMA database_list').fetchone()[2])==replay_path)
+            check('disk_journals_not_memory',all(j in ('delete','truncate','persist','wal') for j in data['journals'].values()))
+            if phase=='crash':
+                epoch=runtime.begin_runtime_epoch(db,instance_id='h105e-'+case+'-old')
+                check('initial_epoch_one',epoch==1)
+                db.create_session(SESSION,'api')
+                data['epoch']=epoch
+                if case=='uncommitted_reservation':
+                    path=ROOT/'vendor-native/gateway/platforms/api_server_run_idempotency.py'
+                    tree=ast.parse(path.read_text());cls=next(n for n in tree.body if isinstance(n,ast.ClassDef) and n.name=='RunIdempotencyStore')
+                    method=next(n for n in cls.body if isinstance(n,ast.FunctionDef) and n.name=='reserve')
+                    commits=sorted(n.lineno for n in ast.walk(method) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='commit')
+                    assert len(commits)==2
+                    target=commits[-1]
+                    def trace(frame,event,arg):
+                        if frame.f_code.co_name!='reserve' or Path(frame.f_code.co_filename)!=path:return None
+                        if event=='line' and frame.f_lineno==target:
+                            sys.settrace(None)
+                            check('native_insert_not_committed',runs._conn.in_transaction and runs._conn.execute('SELECT COUNT(*) FROM run_idempotency').fetchone()==(1,))
+                            data.update(checkpointLine=target,checkpointSourceSha256=hashlib.sha256(path.read_bytes()).hexdigest(),classification='BEFORE_NATIVE_COMMIT')
+                            crash()
+                        return trace
+                    sys.settrace(trace);reserve();raise AssertionError('native_checkpoint_not_reached')
+                out,rec=reserve();check('first_native_replay_created',out=='created' and rec['run_id']==RUN)
+                if case!='reservation_only':
+                    admitted=request(epoch);claimed=runtime.claim_session_input(db,epoch=epoch,session_id=SESSION)
+                    check('native_admission_started',admitted['status']=='queued' and claimed['status']=='started' and claimed['admission_id']==admitted['admission_id'])
+                    data['admissionId']=admitted['admission_id'];data['generation']=claimed['generation']
+                    if case=='state_terminal_replay_running':
+                        settled=runtime.settle_session_input(db,epoch=epoch,admission_id=admitted['admission_id'],generation=claimed['generation'],outcome='completed')
+                        check('state_terminal_committed_only',settled['status']=='terminal' and runs.status_for_run(SCOPE,RUN)['status']['status']=='running')
+                    elif case=='replay_completed_state_started':
+                        runs.update_status(RUN,{'status':'completed'})
+                        check('replay_terminal_committed_only',runs.status_for_run(SCOPE,RUN)['status']['status']=='completed' and runtime.get_session_admission(db,admission_id=admitted['admission_id'])['status']=='started')
+                data['classification']='OWNED_CROSS_STORE_CHECKPOINT';crash()
+            check('previous_epoch_retained',before_epoch==1)
+            prior=rows();data['beforeRecoveryRows']=prior
+            epoch=runtime.begin_runtime_epoch(db,instance_id='h105e-'+case+'-new')
+            check('new_epoch_exact_increment',epoch==before_epoch+1)
+            recovered=runtime.recover_session_inputs(db,epoch=epoch)
+            expected_recovered=1 if case in ('started_pair','replay_completed_state_started') else 0
+            check('native_recovery_exact_count',recovered==expected_recovered)
+            check('stale_epoch_write_refused',reason(lambda:request(before_epoch,request_id='stale-new-request'))=='stale_epoch')
+            out,rec=runs.lookup(SCOPE,KEY,FP)
+            if case=='uncommitted_reservation':
+                check('uncommitted_insert_rolled_back',out=='missing' and rec is None)
+                out,rec=reserve();check('one_fresh_reservation_after_rollback',out=='created' and rec['run_id']==RUN)
+                check('state_never_admitted',rows()==[])
+                classification='UNCOMMITTED_REPLAY_ROLLED_BACK'
+            else:
+                check('committed_replay_retained',out=='reused' and rec['run_id']==RUN)
+                check('native_reserve_returns_original',reserve('run_'+('2'*32))[0]=='reused')
+                check('different_fingerprint_conflicts',reserve('run_'+('3'*32),'b'*64)[0]=='conflict')
+                if case=='reservation_only':
+                    check('missing_state_not_synthesized',rows()==[])
+                    classification='REPLAY_WITHOUT_ADMISSION_REQUIRES_RECONCILIATION'
+                else:
+                    admission=runtime.get_session_admission(db,admission_id=prior[0]['admission_id'])
+                    expected_status='terminal' if case=='state_terminal_replay_running' else 'unknown'
+                    check('native_state_disposition_exact',admission['status']==expected_status)
+                    check('native_same_request_reuses_id',request(epoch)['admission_id']==admission['admission_id'])
+                    check('native_changed_payload_conflicts',reason(lambda:request(epoch,{'text':'changed payload'}))=='admission_conflict')
+                    if expected_status=='unknown':
+                        check('unknown_never_claimed_again',reason(lambda:runtime.claim_session_input(db,epoch=epoch,session_id=SESSION))=='unknown_execution')
+                        check('old_epoch_cannot_settle',reason(lambda:runtime.settle_session_input(db,epoch=before_epoch,admission_id=admission['admission_id'],generation=admission['generation'],outcome='completed'))=='stale_epoch')
+                    wanted='completed' if case=='replay_completed_state_started' else 'running'
+                    check('other_store_not_silently_rewritten',runs.status_for_run(SCOPE,RUN)['status']['status']==wanted)
+                    check('no_duplicate_state_admission',len(rows())==1)
+                    classification={'started_pair':'UNKNOWN_EXECUTION_BLOCKED',
+                        'state_terminal_replay_running':'STATE_TERMINAL_REPLAY_RUNNING_REQUIRES_RECONCILIATION',
+                        'replay_completed_state_started':'REPLAY_COMPLETED_STATE_UNKNOWN_REQUIRES_RECONCILIATION'}[case]
+            check('exactly_one_replay_row',runs._conn.execute('SELECT COUNT(*) FROM run_idempotency').fetchone()==(1,))
+            check('state_integrity_ok',db._conn.execute('PRAGMA integrity_check').fetchone()[0]=='ok')
+            check('replay_integrity_ok',runs._conn.execute('PRAGMA integrity_check').fetchone()[0]=='ok')
+            data.update(epoch=epoch,recovered=recovered,classification=classification,retryAuthorized=False)
+        result=report('RECOVERED_OBSERVATION')
+    finally:
+        runs.close();db.close();native.process_ownership.close()
+    check('native_profile_released_after_stores_close',not native.process_ownership.homes)
+    check('lock_inode_not_replaced',(home/'gateway.lock').stat().st_ino==lock_inode)
+    result['checks']=checks;result['checkCount']=len(checks)
+    print(json.dumps(result),flush=True)
+    return 0
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--case',choices=CASES)
+    parser.add_argument('--phase',choices=('crash','recover'))
+    parser.add_argument('--home',type=Path)
+    args=parser.parse_args()
+    manifest=guard()
+    if args.case:return child(args.case,args.phase,args.home)
+    before=(os.getresuid(),os.getresgid(),os.readlink('/proc/self/ns/user'),os.readlink('/proc/self/ns/mnt'))
+    mounts_before=Path('/proc/self/mountinfo').read_bytes()
+    profiles=ROOT/'profiles';profiles.mkdir(mode=0o700)
+    events=[];error=None
+    env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(profiles),
+         'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+    for case in CASES:
+        home=profiles/case;home.mkdir(mode=0o700);(home/'.h105e-owned').write_text('owned-new-fixture-only')
+        for phase in ('crash','recover'):
+            r=subprocess.run([sys.executable,'-I','-B',str(Path(__file__).resolve()),'--case',case,'--phase',phase,'--home',str(home)],
+                cwd=ROOT,env=env,capture_output=True,text=True,timeout=35)
+            record={'case':case,'phase':phase,'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr}
+            events.append(record)
+            try:
+                proof=json.loads(r.stdout)
+                assert r.returncode==(73 if phase=='crash' else 0)
+                assert proof['case']==case and proof['phase']==phase and all(proof['checks'].values())
+                assert len(proof['checks'])==proof['checkCount']
+            except Exception as exc:
+                error={'type':type(exc).__name__,'case':case,'phase':phase};break
+        if error:break
+    checks={'six_cases_twelve_native_children':len(events)==12,
+            'six_abrupt_exits_without_finalizers':sum(r['exitCode']==73 for r in events)==6,
+            'six_fresh_recovery_processes':sum(r['exitCode']==0 and r['phase']=='recover' for r in events)==6,
+            'parent_identity_unchanged':before==(os.getresuid(),os.getresgid(),os.readlink('/proc/self/ns/user'),os.readlink('/proc/self/ns/mnt')),
+            'parent_mount_table_unchanged':mounts_before==Path('/proc/self/mountinfo').read_bytes(),
+            'all_manifest_sources_unchanged':all(hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==h for n,h in manifest['sources'].items())}
+    report={'result':'PASS_NATIVE_CRASH_BOUNDARIES' if not error and all(checks.values()) else 'FAIL',
+        'checks':checks,'events':events,'error':error,'sourceSha256':manifest['sources'],'nativePin':PIN,
+        'uid':os.getuid(),'gid':os.getgid(),'rootUsed':False,'mountsChanged':False,
+        'nativeMethodsMocked':False,'powerLossTested':False,'pairedTransactionAtomicityClaimed':False,
+        'fullConfinementTested':False,'realGatewayStarted':False,'providerCalls':0,'fullD3BAccepted':False}
+    print(json.dumps(report),flush=True)
+    return 0 if report['result']=='PASS_NATIVE_CRASH_BOUNDARIES' else 1
+
+if __name__=='__main__':raise SystemExit(main())

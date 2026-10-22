@@ -1,5 +1,19 @@
 # AlazHarness — status
 
+## D3B-NATIVE-STORES-H105E — SCOPED INDEPENDENT QA PASS
+
+Branch alaz/d3b-native-stores-h105e; worktree scratch/worktrees/d3b-native-stores-h105e; base30604df. Next actual native SessionDB and RunIdempotencyStore with epoch/recovery under final profile lease, using canonical P102/F104X rather than alternate P102X. Reuse immutable Hermes code, do not patch vendor or blocked R91F collector/G82C. No live model/provider, main/push, defaultUbuntu, CI or production action. Preserve concurrent work.
+
+Only already authorized isolated P71C with new unique H105E fixture scope may be used. First independently inspect native import/API requirements; no DB open against personal/old test state. Refuse memory fallback and unverifiable disk/epoch state before any request. Actual full Gateway HTTP/paired atomic recovery/power-loss are separate acceptance, not inferred. Baseline382 sources recorded in evidence/d3b-native-stores-h105e/baseline.json. No test pending yet.
+
+Completed independent actual native crash/reopen proof: six child exits73 without finalizers and six fresh native recovery processes0 in P71C UID23001. Real unchanged SessionDB/RunIdempotencyStore/ProfileOwnership, epoch1->2, started->unknown, stale writes/unknown replay blocked, contradictory cross-store outcomes retained, pre-COMMIT rollback, volatile fallback loss. Final native002 raw rows/source pins PASS; native001 retained. Additional exact unchanged-Landlock final-exec fresh-open plus positive control both COMPLETE, not full G84E/projection acceptance. First QA canary-overlap refusal retained and fixture narrowed.
+
+New fullWindows2495=2472PASS/23SKIP/0FAIL/0ERROR exit0;385 source hashes stable,382 prior sources unchanged. New offline/tamper32 tests PASS Windows/Linux (subset/platform repeat). Actual native bootstrap inventory exceeds canonical30604df strict list; historical snapshot records GAP, not fixed policy. No production gate/provider/paired atomic repair/power-loss/fullGateway acceptance. Files docs/D3B-NATIVE-STORES-H105E.md and evidence/d3b-native-stores-h105e/summary.json. Own temp profiles/processes cleared; shared lab left available for concurrent N105D. No root/mount/namespace/account/service/defaultUbuntu/CI/main/push change. All native/full jobs terminal; local static/commit follows. Next verify and join complementary N105D QA, then one explicit prepared-native-profile admission contract.
+
+## Preserved canonical baseline
+
+# AlazHarness — status
+
 ## D3B-PROFILE-JOINT-Q104E — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested two-parent merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` fast-forwarded from032f2fd. F104X implementation/native ownership and Q104E independent permission QA are now ONE qualified development baseline. Original feature/QA branches,69 evidence blobs and first failures preserved. This follow-up changes documentation/static delivery only;382 tested source hashes exact.
@@ -6374,3 +6388,28 @@ New fullWindows request7991de21-13fb-4908-a8be-33af10400023 runs2463 methods wit
 ### Canonical delivery completed
 
 Tested merge `5001f1a0a2102520ba609d5e0f7d094297e87adf` promoted by fast-forward only; current382 sources match fresh unionfull2463=2440PASS/23SKIP/0FAIL/0ERROR. Local integration staticPASS2463; primary documentation-only static recorded separately. No new privileged/WSL/provider/model, main or push action. Independent/native counts remain scoped and nonadditive. Next actual native Hermes DB/epoch/recovery and fixed request admission; no duplicate projection/lock implementation.
+
+
+### H105E independent crash scope — 2026-10-22T04:06:00.932126+03:00
+
+Concurrent alaz/d3b-native-stores-n105d owns canonical confined native-store integration. Do not create a duplicate product path. H105E independently tests actual immutable SessionDB/RunIdempotencyStore/profile ownership under abrupt process exit at cross-store boundaries, rollback before native COMMIT, and disk-open-to-memory fallback. Existing382 product sources stay frozen. Windows discovery PASS native epoch1->2/started->unknown and unknown_execution refusal. Native source closure verified byte-for-byte with immutable Git, pure ruamel dependency pins reused. Actual Linux independent tests planned under ordinary UID23001 with new temporary files only, no root/mount/new image/private broker or other task writes. This is not a new full confinement acceptance and does not repair blocked R91F collector.
+
+
+### H105E native run started — 2026-10-22T04:09:32.867478+03:00
+
+Bridge c80b15ef-982a-4e63-94d8-722205100012 IN PROGRESS. Ordinary UID23001 in named P71C; fresh tempfile code/profiles only. Six actual native crash+reopen cases planned with known-source pre-COMMIT timing checkpoint. Pin276 native files/31 existing pure-Python dependency files; no vendor/runtime code edited. Do not replay run while pending; stdout/terminal record will be native-001-*. Backend integration belongs to concurrent N105D, which remains untouched.
+
+
+### H105E native001 terminal PASS
+
+Actual six abrupt native-store exits73 and six recovery processes0 under UID23001 completed. All sources/temp cleanup stable; no root/mount/provider. Native default uses DELETE journaling; state started->unknown, stale epoch blocked, two contradictory store outcomes retained, uncommitted INSERT rolled back, memory fallback loses record. First proof retained. Added raw replay/epoch row observations to QA report only, so NEW native002 required before final evidence tests. No product edit.
+
+
+### H105E native002 complete; full regression starting
+
+Six crash73/recovery0 pairs completed with actual native rows and epoch records. New independent verifier32 methods PASS on Windows. Profile bootstrap creates additional native dirs and lock files incompatible with canonical30604df strict inventory; snapshot evidence records this without requiring future code to preserve the gap. Native002 current probe unchanged. Full run request c80b15ef-982a-4e63-94d8-722205100018 now in progress; no source edits until terminal.
+
+
+### H105E completed native/full checkpoint — 2026-10-22T04:21:47.885444+03:00
+
+Full c80b15ef-982a-4e63-94d8-722205100018 terminal0; native002 ...0015 terminal0; Linux receipt ...0019 terminal0; compatibility002 ...0022 collected both cases0; cleanup ...0023 terminal0. Original382 source files unchanged; no unknown-effect command left. Static/selected commit pending below.

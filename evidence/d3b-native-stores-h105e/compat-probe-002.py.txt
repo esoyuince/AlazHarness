@@ -1,0 +1,66 @@
+from pathlib import Path
+import os,sys,json,sqlite3,traceback,hashlib
+ROOT=Path(__file__).resolve().parents[2]
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert ROOT.parent==Path('/tmp') and ROOT.name.startswith('alaz-h105e-compat-code-')
+home=Path(sys.argv[2]);mode=sys.argv[1]
+assert home.parent==Path('/tmp') and home.name.startswith('alaz-h105e-compat-profile-')
+assert home==home.resolve() and (home/'.owned').read_text()=='h105e-compat-only'
+os.environ['HERMES_HOME']=str(home);os.umask(0o077)
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'vendor-native'),str(ROOT/'dependencies')]
+manifest=json.loads((ROOT/'input-manifest.json').read_text())['sources']
+def audit(event,args):
+ if event in ('socket.connect','socket.getaddrinfo','socket.bind','subprocess.Popen','os.system'):
+  raise PermissionError('no_external_effect')
+sys.addaudithook(audit)
+if mode in ('control','landlock'):
+ assert not (home/'state.db').exists()
+ (home/'gateway.lock').touch(mode=0o600)
+ for n in ('state.db','runs_idempotency.db'):
+  db=sqlite3.connect(home/n);db.execute('VACUUM');db.close();(home/n).chmod(0o600)
+ policy={'version':1,'enabled':True,'readonly':[str(ROOT/'vendor-native'),str(ROOT/'dependencies'),str(ROOT/'packages'),str(ROOT/'scripts'),str(ROOT/'input-manifest.json'),'/usr/bin','/usr/lib','/usr/lib64'],
+         'writable':[str(home),'/dev/null'],'protected':[str(ROOT/'canary')],'self_process_metadata':True}
+ if mode=='landlock':
+  import credential_guard
+  receipt=credential_guard.apply(policy,self_mount_metadata=True)
+ else:receipt={'state':'explicit_unconfined_positive_control'}
+ env={'PATH':'/usr/bin:/bin','HOME':str(home),'HERMES_HOME':str(home),'LANG':'C.UTF-8','H105E_MODE':mode,'H105E_GUARD':json.dumps(receipt)}
+ os.execve(sys.executable,[sys.executable,'-I','-B',str(Path(__file__)), 'target',str(home)],env)
+assert mode=='target';phase='import_profile';held=None;db=None;runs=None;error=None;facts={}
+try:
+ import gateway_storage_mounts as mounts
+ import gateway_profile_lease as lease
+ row=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home))
+ expected=mounts.ExpectedMount(row.mount_id,row.device,row.root,row.mount_point,row.filesystem)
+ phase='reserve_native_profile';held=lease.reserve_profile(home,expected)
+ facts['profileLease']=held.check()['state']
+ phase='import_sessiondb';from hermes_state import SessionDB
+ phase='construct_sessiondb';db=SessionDB(home/'state.db')
+ facts['stateConnection']=db._conn.execute('PRAGMA database_list').fetchall()
+ phase='import_replay';from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+ phase='construct_replay';runs=RunIdempotencyStore(str(home/'runs_idempotency.db'))
+ facts['replayDurable']=runs.durable;facts['journal']=runs._conn.execute('PRAGMA journal_mode').fetchone()[0]
+ phase='advance_epoch';import hermes_state_runtime as runtime
+ facts['epoch']=runtime.begin_runtime_epoch(db,instance_id='h105e-compat-'+os.environ['H105E_MODE'])
+ phase='complete'
+except Exception as exc:error={'type':type(exc).__name__,'reason':str(exc)[:300],'traceback':traceback.format_exc(limit=7)}
+finally:
+ for value in (runs,db):
+  if value is not None:
+   try:value.close()
+   except Exception as exc:facts.setdefault('closeErrors',[]).append(type(exc).__name__)
+ if held is not None:
+  try:held.finish();facts['profileReleased']=True
+  except Exception as exc:facts['profileReleaseError']=type(exc).__name__
+imported={}
+for m in tuple(sys.modules.values()):
+ f=getattr(m,'__file__',None)
+ if f:
+  p=Path(f).resolve()
+  if p.is_relative_to(ROOT) and p.suffix=='.py':
+   n=p.relative_to(ROOT).as_posix();h=hashlib.sha256(p.read_bytes()).hexdigest();assert manifest.get(n)==h,n;imported[n]=h
+# Row tuples only; never report SQLite connection objects or private credentials.
+if 'stateConnection' in facts:facts['stateConnection']=[list(r) for r in facts['stateConnection']]
+print(json.dumps({'mode':os.environ['H105E_MODE'],'phase':phase,'error':error,'facts':facts,'guard':json.loads(os.environ['H105E_GUARD']),
+ 'profileInventory':sorted(p.name for p in home.iterdir()),'sourceHashes':imported,'pid':os.getpid(),'uid':os.getuid(),
+ 'fullProjectionTested':False,'networkIsolationTested':False,'productChanged':False,'rootUsed':False,'providerCalls':0}),flush=True)

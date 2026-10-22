@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-22T04:18:07.813748+03:00",
+  "firstControlPassed": true,
+  "firstLandlockCaseFailed": true,
+  "reason": "QA protected canary overlapped the QA read-only root. Narrowed read-only grants to exact code subdirectories/manifest; no product policy altered or widened.",
+  "newProbeSha256": "ce8bcbd70cdbf209a4c848352b95e86346d35e04393c57b633b0a4a351b3812f",
+  "firstOutputsRetained": true,
+  "newFreshProfiles": true
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-22T04:10:46.878883+03:00",
+  "previousNativeRunPassed": true,
+  "reason": "record actual replay rows and epoch rows, not only assertions, for independent split-store receipt validation",
+  "oldProbeSha256": "7c552345a194994404d78151da47a025bd0a672f785723fd258b0b5bffb9e14b",
+  "newProbeSha256": "6cd3e96e7e0590d631ad5aecdefb557e28c20f43b05f81914681f682a379ec5a",
+  "nativeProductChanged": false,
+  "newNativeRunRequired": true,
+  "previousReceiptUnmodified": true
+}

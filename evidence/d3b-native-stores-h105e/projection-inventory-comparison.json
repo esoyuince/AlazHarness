@@ -1,0 +1,52 @@
+{
+  "scope": "historical canonical projection inventory at30604df versus actual native bootstrap; NOT an invariant requiring future code to stay incompatible",
+  "baseCommit": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+  "projectionSourceSha256": "da1d30898111cd7452e535c806209173f27dc7c772eba438ee130e9272d31443",
+  "projectionSourcePath": "packages/claw-hermes/gateway_state_projection.py",
+  "observedNativeInventory": [
+    "SOUL.md",
+    "audio_cache",
+    "cache",
+    "cron",
+    "gateway.lock",
+    "hooks",
+    "image_cache",
+    "logs",
+    "memories",
+    "pairing",
+    "runs_idempotency.db",
+    "sessions",
+    "skills",
+    "state.db",
+    "state.db.fts_rebuild.lock",
+    "state.db.quarantine.lock"
+  ],
+  "allowedAtBaseline": [
+    "gateway.lock",
+    "runs_idempotency.db",
+    "runs_idempotency.db-journal",
+    "runs_idempotency.db-shm",
+    "runs_idempotency.db-wal",
+    "state.db",
+    "state.db-journal",
+    "state.db-shm",
+    "state.db-wal"
+  ],
+  "unacceptedNativeEntries": [
+    "SOUL.md",
+    "audio_cache",
+    "cache",
+    "cron",
+    "hooks",
+    "image_cache",
+    "logs",
+    "memories",
+    "pairing",
+    "sessions",
+    "skills",
+    "state.db.fts_rebuild.lock",
+    "state.db.quarantine.lock"
+  ],
+  "comparisonCompatible": false,
+  "productPolicyChanged": false
+}

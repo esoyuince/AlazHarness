@@ -1,0 +1,16 @@
+from pathlib import Path,PurePosixPath
+import os,json,hashlib,subprocess,sys,tempfile
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<20
+with tempfile.TemporaryDirectory(prefix='alaz-h105e-verifier-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for n,v in files.items():
+  path=PurePosixPath(n);assert not path.is_absolute() and '..' not in path.parts
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  p=root/n;p.parent.mkdir(parents=True,exist_ok=True)
+  with p.open('xb') as f:f.write(raw)
+ r=subprocess.run([sys.executable,'-I','-B','-m','unittest','discover','-s',str(root/'tests'),'-p','test_h105e_native_crash_receipts.py','-v'],cwd=root,env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root)},capture_output=True,text=True,timeout=45)
+ result={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sourceSha256':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'scope':'offline verifier/mutation tests only; no new native store or privileged run','uid':os.getuid()}
+result['temporaryRootRemoved']=not root.exists()
+print(json.dumps(result));sys.exit(0 if r.returncode==0 and result['sourcesUnchanged'] and result['temporaryRootRemoved'] else 1)

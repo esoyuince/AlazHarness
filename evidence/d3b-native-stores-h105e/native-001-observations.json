@@ -1,0 +1,499 @@
+[
+  {
+    "case": "reservation_only",
+    "phase": "crash",
+    "exit": 73,
+    "pid": 8,
+    "checkCount": 6,
+    "classification": "OWNED_CROSS_STORE_CHECKPOINT",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 284
+  },
+  {
+    "case": "reservation_only",
+    "phase": "recover",
+    "exit": 0,
+    "pid": 9,
+    "checkCount": 17,
+    "classification": "REPLAY_WITHOUT_ADMISSION_REQUIRES_RECONCILIATION",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 283
+  },
+  {
+    "case": "started_pair",
+    "phase": "crash",
+    "exit": 73,
+    "pid": 10,
+    "checkCount": 7,
+    "classification": "OWNED_CROSS_STORE_CHECKPOINT",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [
+      {
+        "admission_id": "8d48f697f2c5468b97f9afe72cac50ab",
+        "request_id": "h105e-request",
+        "status": "started",
+        "outcome": null,
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 288
+  },
+  {
+    "case": "started_pair",
+    "phase": "recover",
+    "exit": 0,
+    "pid": 11,
+    "checkCount": 23,
+    "classification": "UNKNOWN_EXECUTION_BLOCKED",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [
+      {
+        "admission_id": "8d48f697f2c5468b97f9afe72cac50ab",
+        "request_id": "h105e-request",
+        "status": "unknown",
+        "outcome": null,
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 284
+  },
+  {
+    "case": "state_terminal_replay_running",
+    "phase": "crash",
+    "exit": 73,
+    "pid": 12,
+    "checkCount": 8,
+    "classification": "OWNED_CROSS_STORE_CHECKPOINT",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [
+      {
+        "admission_id": "d9d378ccc2da4dadac110007fb94a77c",
+        "request_id": "h105e-request",
+        "status": "terminal",
+        "outcome": "completed",
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 288
+  },
+  {
+    "case": "state_terminal_replay_running",
+    "phase": "recover",
+    "exit": 0,
+    "pid": 13,
+    "checkCount": 21,
+    "classification": "STATE_TERMINAL_REPLAY_RUNNING_REQUIRES_RECONCILIATION",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [
+      {
+        "admission_id": "d9d378ccc2da4dadac110007fb94a77c",
+        "request_id": "h105e-request",
+        "status": "terminal",
+        "outcome": "completed",
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 284
+  },
+  {
+    "case": "replay_completed_state_started",
+    "phase": "crash",
+    "exit": 73,
+    "pid": 14,
+    "checkCount": 8,
+    "classification": "OWNED_CROSS_STORE_CHECKPOINT",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [
+      {
+        "admission_id": "3cbeba8f506742a6b731827ff9d6d7f8",
+        "request_id": "h105e-request",
+        "status": "started",
+        "outcome": null,
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 288
+  },
+  {
+    "case": "replay_completed_state_started",
+    "phase": "recover",
+    "exit": 0,
+    "pid": 15,
+    "checkCount": 23,
+    "classification": "REPLAY_COMPLETED_STATE_UNKNOWN_REQUIRES_RECONCILIATION",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [
+      {
+        "admission_id": "3cbeba8f506742a6b731827ff9d6d7f8",
+        "request_id": "h105e-request",
+        "status": "unknown",
+        "outcome": null,
+        "owner_epoch": 1,
+        "generation": 1
+      }
+    ],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 284
+  },
+  {
+    "case": "uncommitted_reservation",
+    "phase": "crash",
+    "exit": 73,
+    "pid": 16,
+    "checkCount": 6,
+    "classification": "BEFORE_NATIVE_COMMIT",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "runs_idempotency.db-journal",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 284
+  },
+  {
+    "case": "uncommitted_reservation",
+    "phase": "recover",
+    "exit": 0,
+    "pid": 17,
+    "checkCount": 16,
+    "classification": "UNCOMMITTED_REPLAY_ROLLED_BACK",
+    "journals": {
+      "state": "delete",
+      "replay": "delete"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "runs_idempotency.db",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 283
+  },
+  {
+    "case": "memory_fallback",
+    "phase": "crash",
+    "exit": 73,
+    "pid": 18,
+    "checkCount": 5,
+    "classification": "VOLATILE_STORE_NOT_ADMITTED",
+    "journals": {
+      "state": "delete",
+      "replay": "memory"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 282
+  },
+  {
+    "case": "memory_fallback",
+    "phase": "recover",
+    "exit": 0,
+    "pid": 19,
+    "checkCount": 8,
+    "classification": "VOLATILE_STORE_NOT_ADMITTED",
+    "journals": {
+      "state": "delete",
+      "replay": "memory"
+    },
+    "synchronous": {
+      "state": 2,
+      "replay": 2
+    },
+    "stateRows": [],
+    "profileInventory": [
+      ".h105e-owned",
+      "SOUL.md",
+      "audio_cache",
+      "cache",
+      "cron",
+      "gateway.lock",
+      "hooks",
+      "image_cache",
+      "logs",
+      "memories",
+      "pairing",
+      "sessions",
+      "skills",
+      "state.db",
+      "state.db.fts_rebuild.lock",
+      "state.db.quarantine.lock"
+    ],
+    "importCount": 282
+  }
+]

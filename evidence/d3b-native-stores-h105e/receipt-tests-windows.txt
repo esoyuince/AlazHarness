@@ -1,0 +1,37 @@
+test_admission_identity_not_substituted (test_h105e_native_crash_receipts.NativeCrashEvidence.test_admission_identity_not_substituted) ... ok
+test_changed_epoch_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_changed_epoch_refused) ... ok
+test_changed_lock_inode_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_changed_lock_inode_refused) ... ok
+test_cleanup_required (test_h105e_native_crash_receipts.NativeCrashEvidence.test_cleanup_required) ... ok
+test_complete_raw_native_run (test_h105e_native_crash_receipts.NativeCrashEvidence.test_complete_raw_native_run) ... ok
+test_crash_not_normal_close (test_h105e_native_crash_receipts.NativeCrashEvidence.test_crash_not_normal_close) ... ok
+test_duplicate_keys_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_duplicate_keys_refused) ... ok
+test_first_success_retained_separately (test_h105e_native_crash_receipts.NativeCrashEvidence.test_first_success_retained_separately) ... ok
+test_import_hash_drift_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_import_hash_drift_refused) ... ok
+test_integer_true_not_success (test_h105e_native_crash_receipts.NativeCrashEvidence.test_integer_true_not_success) ... ok
+test_manifest_drift_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_manifest_drift_refused) ... ok
+test_memory_case_may_not_advance_epoch (test_h105e_native_crash_receipts.NativeCrashEvidence.test_memory_case_may_not_advance_epoch) ... ok
+test_memory_loss_cannot_be_called_durable (test_h105e_native_crash_receipts.NativeCrashEvidence.test_memory_loss_cannot_be_called_durable) ... ok
+test_missing_import_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_missing_import_refused) ... ok
+test_missing_scenario_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_missing_scenario_refused) ... ok
+test_native_and_dependency_hashes_match_separate_git_inventory (test_h105e_native_crash_receipts.NativeCrashEvidence.test_native_and_dependency_hashes_match_separate_git_inventory) ... ok
+test_native_profile_required (test_h105e_native_crash_receipts.NativeCrashEvidence.test_native_profile_required) ... ok
+test_no_synthesized_state_for_replay_only (test_h105e_native_crash_receipts.NativeCrashEvidence.test_no_synthesized_state_for_replay_only) ... ok
+test_null_and_nonfinite_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_null_and_nonfinite_refused) ... ok
+test_other_replay_store_not_rewritten (test_h105e_native_crash_receipts.NativeCrashEvidence.test_other_replay_store_not_rewritten) ... ok
+test_parent_or_child_broader_scope_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_parent_or_child_broader_scope_refused) ... ok
+test_pid_reuse_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_pid_reuse_refused) ... ok
+test_probe_matches_actual_native_execution (test_h105e_native_crash_receipts.NativeCrashEvidence.test_probe_matches_actual_native_execution) ... ok
+test_recovery_nonzero_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_recovery_nonzero_refused) ... ok
+test_runtime_profile_inventory_is_not_current_projection_allowlist (test_h105e_native_crash_receipts.NativeCrashEvidence.test_runtime_profile_inventory_is_not_current_projection_allowlist) ... ok
+test_terminal_replay_cannot_imply_terminal_state (test_h105e_native_crash_receipts.NativeCrashEvidence.test_terminal_replay_cannot_imply_terminal_state) ... ok
+test_timing_checkpoint_source_pinned (test_h105e_native_crash_receipts.NativeCrashEvidence.test_timing_checkpoint_source_pinned) ... ok
+test_uncommitted_native_transaction_required (test_h105e_native_crash_receipts.NativeCrashEvidence.test_uncommitted_native_transaction_required) ... ok
+test_unknown_cannot_be_queued (test_h105e_native_crash_receipts.NativeCrashEvidence.test_unknown_cannot_be_queued) ... ok
+test_unsafe_retry_claim_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_unsafe_retry_claim_refused) ... ok
+test_wrong_case_order_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_wrong_case_order_refused) ... ok
+test_wrong_epoch_instance_refused (test_h105e_native_crash_receipts.NativeCrashEvidence.test_wrong_epoch_instance_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.249s
+
+OK
