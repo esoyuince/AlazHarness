@@ -1,0 +1,34 @@
+test_bad_mount_no_spawn (test_gateway_store_preopen.ParentContracts.test_bad_mount_no_spawn) ... ok
+test_child_refusal_propagates_bounded_code (test_gateway_store_preopen.ParentContracts.test_child_refusal_propagates_bounded_code) ... ok
+test_fixed_command_no_ambient_handles_or_custom_environment (test_gateway_store_preopen.ParentContracts.test_fixed_command_no_ambient_handles_or_custom_environment) ... ok
+test_lease_failure_no_spawn (test_gateway_store_preopen.ParentContracts.test_lease_failure_no_spawn) ... ok
+test_mount_change_refuses_result (test_gateway_store_preopen.ParentContracts.test_mount_change_refuses_result) ... ok
+test_no_dynamic_timeout_or_bool (test_gateway_store_preopen.ParentContracts.test_no_dynamic_timeout_or_bool) ... ok
+test_no_lease_no_spawn (test_gateway_store_preopen.ParentContracts.test_no_lease_no_spawn) ... ok
+test_pid_binding_refuses_old_receipt (test_gateway_store_preopen.ParentContracts.test_pid_binding_refuses_old_receipt) ... ok
+test_stderr_cannot_be_accepted (test_gateway_store_preopen.ParentContracts.test_stderr_cannot_be_accepted) ... ok
+test_timeout_kills_and_reaps_only_owned_child (test_gateway_store_preopen.ParentContracts.test_timeout_kills_and_reaps_only_owned_child) ... ok
+test_untrusted_diagnostic_not_echoed (test_gateway_store_preopen.ParentContracts.test_untrusted_diagnostic_not_echoed) ... ok
+test_application_mismatch (test_gateway_store_preopen.ReadOnlyChecks.test_application_mismatch) ... ok
+test_corruption_is_not_repaired (test_gateway_store_preopen.ReadOnlyChecks.test_corruption_is_not_repaired) ... ok
+test_duplicate_json_and_nonfinite_rejected (test_gateway_store_preopen.ReadOnlyChecks.test_duplicate_json_and_nonfinite_rejected) ... ok
+test_epoch_mismatch_no_advance (test_gateway_store_preopen.ReadOnlyChecks.test_epoch_mismatch_no_advance) ... ok
+test_existing_epoch_exact (test_gateway_store_preopen.ReadOnlyChecks.test_existing_epoch_exact) ... ok
+test_expectation_extra_missing_keys (test_gateway_store_preopen.ReadOnlyChecks.test_expectation_extra_missing_keys) ... ok
+test_expectation_roundtrip_and_no_other_journal (test_gateway_store_preopen.ReadOnlyChecks.test_expectation_roundtrip_and_no_other_journal) ... ok
+test_missing_backfill_rejected (test_gateway_store_preopen.ReadOnlyChecks.test_missing_backfill_rejected) ... ok
+test_missing_file_not_created (test_gateway_store_preopen.ReadOnlyChecks.test_missing_file_not_created) ... ok
+test_mode_readonly_no_nolock_immutable (test_gateway_store_preopen.ReadOnlyChecks.test_mode_readonly_no_nolock_immutable) ... ok
+test_old_version_not_migrated (test_gateway_store_preopen.ReadOnlyChecks.test_old_version_not_migrated) ... ok
+test_repair_markers_not_erased (test_gateway_store_preopen.ReadOnlyChecks.test_repair_markers_not_erased) ... ok
+test_schema_changed (test_gateway_store_preopen.ReadOnlyChecks.test_schema_changed) ... ok
+test_sidecars_all_refused_even_empty (test_gateway_store_preopen.ReadOnlyChecks.test_sidecars_all_refused_even_empty) ... ok
+test_sql_budget_is_fail_closed (test_gateway_store_preopen.ReadOnlyChecks.test_sql_budget_is_fail_closed) ... ok
+test_uuid_mismatch (test_gateway_store_preopen.ReadOnlyChecks.test_uuid_mismatch) ... ok
+test_valid_state_and_replay_never_write_or_create_sidecars (test_gateway_store_preopen.ReadOnlyChecks.test_valid_state_and_replay_never_write_or_create_sidecars) ... ok
+test_wrong_schema_digest (test_gateway_store_preopen.ReadOnlyChecks.test_wrong_schema_digest) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.849s
+
+OK

@@ -1,0 +1,18 @@
+from pathlib import Path,PurePosixPath
+import json,os,subprocess,sys,tempfile,hashlib
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)<30
+with tempfile.TemporaryDirectory(prefix='alaz-p108e-units-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,v in files.items():
+  p=PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+ code="import unittest,sys; loader=unittest.TestLoader();suite=unittest.TestSuite([loader.discover(sys.argv[1],pattern='test_gateway_store_preopen.py'),loader.discover(sys.argv[1],pattern='test_preopen_receipt_p108e.py')]);r=unittest.TextTestRunner(verbosity=2).run(suite);sys.exit(0 if r.wasSuccessful() else 1)"
+ r=subprocess.run([sys.executable,'-I','-B','-c',code,str(root/'tests')],cwd=root,env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root)},capture_output=True,text=True,timeout=50)
+ report={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'rootUsed':False,'scope':'29 real SQLite/native-boundary-double methods plus5 offline receipt checks; no new native constructor run'}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True)
+raise SystemExit(0 if r.returncode==0 and report['sourcesUnchanged'] and report['temporaryRootRemoved'] else 1)

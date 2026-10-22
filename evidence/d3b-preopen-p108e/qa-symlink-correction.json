@@ -1,0 +1,7 @@
+{
+  "cause": "existing parent mount observer rejects link before worker starts; QA incorrectly expected worker-specific code",
+  "oldProbeSha256": "b59dd1991987fd0ec4f9c4b9179652483050b5e21a5f10f7fa58743c9a95e4f3",
+  "newProbeSha256": "49f334b7d25a9ea1c9a6c48f833dd563b2457a628ff0034a417b36918aa68807",
+  "productChanged": false,
+  "priorFailureRetained": true
+}

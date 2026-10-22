@@ -1,0 +1,10 @@
+test_current_sources_and_immutable_vendor (test_preopen_receipt_p108e.NativePreopenReceipt.test_current_sources_and_immutable_vendor) ... ok
+test_first_failure_and_unchanged_product_preserved (test_preopen_receipt_p108e.NativePreopenReceipt.test_first_failure_and_unchanged_product_preserved) ... ok
+test_parent_locks_survive_child_raw_reads_and_close (test_preopen_receipt_p108e.NativePreopenReceipt.test_parent_locks_survive_child_raw_reads_and_close) ... ok
+test_real_preflight_before_native_open_and_live_gate (test_preopen_receipt_p108e.NativePreopenReceipt.test_real_preflight_before_native_open_and_live_gate) ... ok
+test_refusals_are_explicit_nonmutating_not_repairs (test_preopen_receipt_p108e.NativePreopenReceipt.test_refusals_are_explicit_nonmutating_not_repairs) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.197s
+
+OK

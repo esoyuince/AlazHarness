@@ -1,0 +1,8 @@
+{
+  "reason": "receipt fixture field named run shadowed unittest.TestCase.run; renamed fixture field only",
+  "beforeSha256": "b3908a076e3f79805ab9309ce2d989415249b265a207d28452b3c8fa9a1a296e",
+  "afterSha256": "02fdd6db1b604335b5765db4af366536a5213095e8696a1916971c4640c2663e",
+  "productChanged": false,
+  "assertionsChanged": false,
+  "rawNativeEvidenceChanged": false
+}
