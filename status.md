@@ -26,3 +26,8 @@ close without factory replacement, run fresh combined regression and stage
 artifacts only. Native response third-store cold schema/preflight/A109 ownership
 and healthy-busy HTTP readiness remain open; do not activate a listener or change
 pin before that acceptance. Maincc7ceba/no push/CI/production edits; fullD3B OPEN.
+
+
+### Complementary adapter source review
+
+B112X9 current native adapter00427/27 PASS with all three real native stores, no new connect while borrowing/selecting/draining. Independently applied both patch files in a new export of immutableeb75627, exact five output hashes match its actual imports and our24-method proofs. This is source equality, not a new native adapter run. One optional urllib3 IPv6 capability bind was BLOCKED during import and retained in evidence; no new network attempts during test cases, no agent listener. Parallel branch still uncommitted at review, so no merge or whole-harness PASS inferred. Own response fork e19a945 and harness4d21e80 remain clean-source deliverables; final combined regression required.

@@ -83,3 +83,7 @@ policy and same-path three-store start/drain/restart are accepted. No automatic
 retry of partial/unknown pairs, two/three-store atomic recovery or power-loss
 claims. Published main, CI queues, production, source pins and legacyIPC gate
 are unchanged. Full D3B remains open.
+
+## Complementary adapter review
+
+The exact B112X9 adapter004 proof reports27/27 actual-native constructor/selection/close methods. Sequential fresh apply of both patches reproduces its five imported modified-module hashes. Zero extra SQLite connects occur inside the watched borrow/selection/drain boundaries. One optional urllib3 IPv6 feature probe was refused during import, not a provider call or permission expansion; no new network attempts during tests. Original failures and this denied probe are retained by that task. This review did not rerun the native adapter or accept its pending standard regression/commit. Native listener remains explicitly refused.

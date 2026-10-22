@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-23T00:06:53.956730+03:00",
+  "baseNativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "responsePatchSha256": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+  "adapterPatchSha256": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac",
+  "expectedCombinedNativeHashes": {
+    "gateway/platforms/api_server_response_store.py": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+    "gateway/platforms/api_server_response_state.py": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+    "gateway/platforms/api_server.py": "e310575a61690672c561e21e2975a4f64bb0bdd83186a0c0fbe98079dbaf2ea4",
+    "gateway/platforms/api_server_runs.py": "c67a3d0564afd2cd34c2726efe172f77b5e196f9a2756df93ad804452922614e",
+    "gateway/platforms/api_server_borrowed.py": "16e02e6e513d01c4ae5082ad755d9615c6b6e9d08464ec21514e7bd57b3c73f8"
+  },
+  "freshSequentialPatchApplyMatches": true,
+  "temporaryExportRemoved": true,
+  "externalAdapterProofSha256": "ae3b80ea00ca9896bb51e72022f3691a9214d79dbd9194028da99c0f3939b659",
+  "externalAdapterQaSha256": "0f36346df24bcf6d9c35de46170962e9eb7971b372cdf0fe7f0e316b29ecefbc",
+  "adapterNativeMethods": 27,
+  "noNewConnectionsDuringBorrowSelectDrain": true,
+  "newNetworkAttemptsDuringTests": 0,
+  "deniedOptionalImportProbe": [
+    {
+      "event": "socket.bind",
+      "stack": [
+        "<frozen importlib._bootstrap>:_find_and_load",
+        "<frozen importlib._bootstrap>:_find_and_load_unlocked",
+        "<frozen importlib._bootstrap>:_load_unlocked",
+        "<frozen importlib._bootstrap_external>:exec_module",
+        "<frozen importlib._bootstrap>:_call_with_frames_removed",
+        "connection.py:<module>",
+        "connection.py:_has_ipv6",
+        "b112x9_adapter_probe.py:audit"
+      ]
+    }
+  ],
+  "nativeListenerStarted": false,
+  "thirdStoreStartupIntegrated": false,
+  "healthyBusyPolicyImplemented": false,
+  "parallelFilesModified": false,
+  "externalNativeRunRepeatedHere": false
+}
