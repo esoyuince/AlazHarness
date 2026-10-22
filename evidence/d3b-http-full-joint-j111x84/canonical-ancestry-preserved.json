@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-22T23:22:17.038188+03:00",
+  "testedMerge": "0bffda233f2d1cd969961b0e8a9d49f7aad3b40e",
+  "preservedCanonical": "8c590d71360e91ab02606b36aa103bb160b11472",
+  "incomingDocsOnly": [
+    "docs/D3B-HTTP-CONFINED-F111E274.md",
+    "docs/status-history/f111e274-qualified-handoff.md",
+    "evidence/d3b-http-confined-f111e274/delivery.json",
+    "evidence/d3b-http-confined-f111e274/static-primary-final.txt",
+    "status.md"
+  ],
+  "sourceCount": 427,
+  "allSourceHashesExact": true,
+  "testRerunNeededForSourceChanges": false,
+  "onlyConflict": [
+    "status.md"
+  ]
+}

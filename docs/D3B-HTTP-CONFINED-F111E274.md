@@ -135,3 +135,7 @@ Continuation: status.md; previous handoff in docs/status-history/f111e274-parent
 ## Terminal complete regression
 
 NEW fullWindows2747=2724PASS/23SKIP/0ERROR/0FAIL, exit0;425 source hashes unchanged before/after. All420 baseline sources remain exact.12 new offline receipt methods are included in the full total and repeat onLinux;27 existing startup contracts also ran onLinux. These are not new native trials or additional full-suite counts.23 old Windows platform/opt-in skips were not rerun as a group. Native001 completed on its first full execution with44 parent and49/54 child predicates. Static outcome follows in static-final.txt, not remote CI publication.
+
+## Canonical local delivery
+
+Qualified commit `ab55ddb5abd92c048948558dc527e3d407ccb981` fast-forward promoted from `1e9c305afd3d02cbb56a74f9cce034c33a4609a9` to `alaz/d3b-principal-launch-21oct`. All425 sources match the new complete2747-method result and unchanged actual native proof; all420 prior sources remain unchanged. This follow-up is documentation/static-delivery only, not another native run. Feature branch and independentF111X84 work preserved. No main publication, push or broader agent/dispatch acceptance. Current status.md is the continuation.

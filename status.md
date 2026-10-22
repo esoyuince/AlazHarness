@@ -15,3 +15,8 @@ Request f111a048-bd52-4df4-99b4-8e4128000017 IN PROGRESS.427 source files frozen
 ### Joint terminal acceptance
 
 NEW fullWindows2798=2775PASS/23SKIP/0ERROR/0FAIL exit0;427 source hashes stable,420 original files unchanged.40 original evidence blobs preserved. Actual native001 two lifetimes/22HTTP observations/44parent+49/54target predicates verified by independent51 offline methods; no new kernel run here. Same full-isolation readiness path now qualified; native agentAPI and broker dispatch remain open. Metadata finalizers0020/0022 stopped before commit because of Windows decoding/header spelling; explicit UTF8 roundtrip fixes only current docs, retains old bytes and all native/full records. Static/scoped commit follows. No main/push/model/CI/production action.
+
+
+### Canonical documentation ancestry preserved
+
+Prior canonical 8c590d71360e91ab02606b36aa103bb160b11472 had only documentation/evidence additions after the qualified native QA. Its exact status and the joint status are archived separately. All427 source hashes remain identical to the complete regression; no native rerun or source modification. Documentation merge precedes fast-forward; no ref reset.
