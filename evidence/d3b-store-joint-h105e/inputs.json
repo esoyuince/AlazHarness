@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-22T04:23:59.090223+03:00",
+  "h105eCommit": "fef7aa3ae90329bdeb178d008d691220aed94ad0",
+  "n105dCommit": "7f21e512a376c62a94344c190370da9a83c9e035",
+  "canonicalBefore": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+  "base": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+  "h105eSources": 385,
+  "n105dSources": 386,
+  "sharedSources": 382,
+  "newUnionSources": 389,
+  "onlyConflict": [
+    "status.md"
+  ],
+  "scope": "QA-only union; no product behavior changed and no new native execution inferred"
+}

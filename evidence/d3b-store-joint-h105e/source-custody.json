@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-22T04:25:57.309880+03:00",
+  "evidence": [
+    {
+      "parent": "fef7aa3ae90329bdeb178d008d691220aed94ad0",
+      "folder": "evidence/d3b-native-stores-h105e",
+      "preservedGitBlobs": 43,
+      "exactIndexEquality": true
+    },
+    {
+      "parent": "7f21e512a376c62a94344c190370da9a83c9e035",
+      "folder": "evidence/d3b-native-stores-n105d",
+      "preservedGitBlobs": 33,
+      "exactIndexEquality": true
+    }
+  ],
+  "all382BaselineSourcesUnchanged": true,
+  "runtimePackagesAndConfigDiffEmpty": true,
+  "noNativeRepeatByMerge": true
+}
