@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-22T21:12:18.887012+03:00",
+  "qaSha256": "f5889a176fa16dcbc5fc6d31ff3bb9c61092c128e90b983b764aaf040adcad79",
+  "qaSourceWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-http-qa-r110x6c2",
+  "runtimeSha256": "7fde274d143e6bf4707a8318b00c942a308e61bdebbbf02eb3558337ae8f0cd1",
+  "scope": "real aiohttp network/parser/lifecycle; explicit storage doubles; no native acceptance from these tests"
+}

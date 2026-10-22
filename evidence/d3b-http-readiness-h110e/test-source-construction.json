@@ -1,0 +1,1 @@
+{"firstCommand": "e110f0a1-19cd-4d37-b283-005100000007", "firstResult": "SyntaxError during compile before creating test file or running tests", "correction": "use raw source literal for escaped newline fixture; product unchanged"}

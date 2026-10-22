@@ -1,0 +1,1 @@
+{"result": "CLEAN", "ownedTemporaryPaths": [], "matchingOwnedPids": [], "unreadableSameUidPids": [], "uid": 23001, "rootUsed": false, "sharedLabTerminated": false, "otherScopesModified": false}

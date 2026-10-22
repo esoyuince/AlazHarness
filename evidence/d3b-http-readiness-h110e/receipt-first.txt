@@ -1,0 +1,10 @@
+test_actual_wire_auth_scope_and_monotonic_revocation (test_http_readiness_receipt_h110e.NativeHttpReadinessReceipt.test_actual_wire_auth_scope_and_monotonic_revocation) ... ok
+test_first_failures_and_independent_current_http_proof_preserved (test_http_readiness_receipt_h110e.NativeHttpReadinessReceipt.test_first_failures_and_independent_current_http_proof_preserved) ... ok
+test_http_stops_before_transaction_and_profile_are_released (test_http_readiness_receipt_h110e.NativeHttpReadinessReceipt.test_http_stops_before_transaction_and_profile_are_released) ... ok
+test_preflight_failure_and_bind_conflict_are_not_ready (test_http_readiness_receipt_h110e.NativeHttpReadinessReceipt.test_preflight_failure_and_bind_conflict_are_not_ready) ... ok
+test_terminal_current_sources_and_immutable_native_dependencies (test_http_readiness_receipt_h110e.NativeHttpReadinessReceipt.test_terminal_current_sources_and_immutable_native_dependencies) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.118s
+
+OK

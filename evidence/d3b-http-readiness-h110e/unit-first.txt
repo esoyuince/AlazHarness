@@ -1,0 +1,31 @@
+test_agent_query_and_encoded_routes_not_served (test_gateway_http_readiness.ReadinessTests.test_agent_query_and_encoded_routes_not_served) ... ok
+test_auth_missing_wrong_or_duplicate_no_probe (test_gateway_http_readiness.ReadinessTests.test_auth_missing_wrong_or_duplicate_no_probe) ... ok
+test_cancelled_cleanup_retains_stores (test_gateway_http_readiness.ReadinessTests.test_cancelled_cleanup_retains_stores) ... ok
+test_cancelled_start_not_replayed (test_gateway_http_readiness.ReadinessTests.test_cancelled_start_not_replayed) ... ok
+test_close_once_and_secret_not_returned (test_gateway_http_readiness.ReadinessTests.test_close_once_and_secret_not_returned) ... ok
+test_epoch_probe_failure_never_closes_or_mutates (test_gateway_http_readiness.ReadinessTests.test_epoch_probe_failure_never_closes_or_mutates) ... ok
+test_exact_startup_required (test_gateway_http_readiness.ReadinessTests.test_exact_startup_required) ... ok
+test_expectation_replacement_refused (test_gateway_http_readiness.ReadinessTests.test_expectation_replacement_refused) ... ok
+test_false_live_success_refused (test_gateway_http_readiness.ReadinessTests.test_false_live_success_refused) ... ok
+test_get_only (test_gateway_http_readiness.ReadinessTests.test_get_only) ... ok
+test_handle_replacement_refused_before_probe (test_gateway_http_readiness.ReadinessTests.test_handle_replacement_refused_before_probe) ... ok
+test_host_origin_body_refused (test_gateway_http_readiness.ReadinessTests.test_host_origin_body_refused) ... ok
+test_http_cleanup_failure_retains_stores_no_retry (test_gateway_http_readiness.ReadinessTests.test_http_cleanup_failure_retains_stores_no_retry) ... ok
+test_invalid_token_or_port_no_effect (test_gateway_http_readiness.ReadinessTests.test_invalid_token_or_port_no_effect) ... ok
+test_lease_loss_monotonic_revocation (test_gateway_http_readiness.ReadinessTests.test_lease_loss_monotonic_revocation) ... ok
+test_live_prebind_failure_no_socket (test_gateway_http_readiness.ReadinessTests.test_live_prebind_failure_no_socket) ... ok
+test_liveness_does_not_claim_storage (test_gateway_http_readiness.ReadinessTests.test_liveness_does_not_claim_storage) ... ok
+test_non_new_startup_refused (test_gateway_http_readiness.ReadinessTests.test_non_new_startup_refused) ... ok
+test_ready_reprobes_no_dispatch_authority (test_gateway_http_readiness.ReadinessTests.test_ready_reprobes_no_dispatch_authority) ... ok
+test_setup_failure_requires_explicit_cleanup (test_gateway_http_readiness.ReadinessTests.test_setup_failure_requires_explicit_cleanup) ... ok
+test_start_twice_not_advance_again (test_gateway_http_readiness.ReadinessTests.test_start_twice_not_advance_again) ... ok
+test_stop_revokes_before_await_then_drains_before_stores (test_gateway_http_readiness.ReadinessTests.test_stop_revokes_before_await_then_drains_before_stores) ... ok
+test_storage_close_refusal_leaves_http_closed (test_gateway_http_readiness.ReadinessTests.test_storage_close_refusal_leaves_http_closed) ... ok
+test_storage_failure_never_constructs_http (test_gateway_http_readiness.ReadinessTests.test_storage_failure_never_constructs_http) ... ok
+test_storage_then_probe_before_http_bind (test_gateway_http_readiness.ReadinessTests.test_storage_then_probe_before_http_bind) ... ok
+test_wrong_actor_and_loop_cannot_operate (test_gateway_http_readiness.ReadinessTests.test_wrong_actor_and_loop_cannot_operate) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.475s
+
+OK

@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-22T21:13:14.778063+03:00",
+  "native002Failed": true,
+  "cause": "aiohttp parser correctly refused duplicate Host before application with text/plain400; QA wrongly required JSON on every response",
+  "oldQaSha256": "c99f2ddaa167a4a13b915229a23eddc966961d5da6d7328bebc8e34fcec1bd76",
+  "newQaSha256": "a9f9ac4f85a86af256f00e80c13ee241a5e053d84408a3b61cdbf435bcc35c15",
+  "scope": "only known duplicate-Host case may accept exact parser text/plain400; all application statuses/cache checks unchanged",
+  "productChanged": false,
+  "earlierFailureRetained": true,
+  "freshNativeRunRequired": true
+}

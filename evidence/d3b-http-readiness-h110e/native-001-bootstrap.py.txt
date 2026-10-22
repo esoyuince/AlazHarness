@@ -1,0 +1,23 @@
+from pathlib import Path,PurePosixPath
+import json,hashlib,os,subprocess,sys,tempfile
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+data=json.load(sys.stdin);files=data['files'];assert len(files)<650
+assert sum(len(v['text'].encode()) for v in files.values())<16000000
+with tempfile.TemporaryDirectory(prefix='alaz-h110e-code-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for n,v in files.items():
+  p=PurePosixPath(n);assert not p.is_absolute() and '..' not in p.parts and str(p)==n
+  assert p.parts[0] in ('packages','scripts','vendor-native','dependencies','http-dependencies') and n.endswith('.py')
+  raw=v['text'].encode();assert hashlib.sha256(raw).hexdigest()==v['sha256']
+  dest=root/n;dest.parent.mkdir(parents=True,exist_ok=True)
+  with dest.open('xb') as f:f.write(raw)
+  dest.chmod(0o600)
+ with (root/'manifest.json').open('x',encoding='utf-8') as f:json.dump({n:v['sha256'] for n,v in files.items()},f);f.write('\n')
+ env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':str(root),'WSL_DISTRO_NAME':'AlazHarness-D3B-P71C','AIOHTTP_NO_EXTENSIONS':'1','FROZENLIST_NO_EXTENSIONS':'1','MULTIDICT_NO_EXTENSIONS':'1','YARL_NO_EXTENSIONS':'1','PROPCACHE_NO_EXTENSIONS':'1'}
+ r=subprocess.run([sys.executable,'-I','-B',str(root/'scripts/qa/h110e_native_readiness.py')],cwd=root,env=env,capture_output=True,text=True,timeout=160)
+ report={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'rootUsed':False,'codeRoot':str(root)}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True)
+raise SystemExit(0 if r.returncode==0 and report['sourcesUnchanged'] and report['temporaryRootRemoved'] else 1)
