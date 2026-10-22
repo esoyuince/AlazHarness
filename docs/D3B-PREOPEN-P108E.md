@@ -156,3 +156,7 @@ refusal cases belong to one controlled scenario. Native001 remains a failed
 QA expectation run, not relabelled successful. Product files stayed identical
 across those two runs. All native temporary profiles/code/processes are clean.
 Final local static follows in static-final.txt; it is not remote CI or release.
+
+## Canonical local delivery
+
+Tested code `382afe4bf48f2cc883b23b4249dd6c4ad887ba22` fast-forwarded from `d24f8d2654c4a866445bf0b3d1e31f085ca34de7` to the canonical development branch. The feature remains clean and retained. All408 sources match full/native evidence; this follow-up changes only documentation/static delivery. S108E alternate runtime is not merged or overwritten; canonical selects one helper pair. Maincc7ceba and remote refs unchanged. No full HTTP readiness or full-projection acceptance is implied by local promotion.

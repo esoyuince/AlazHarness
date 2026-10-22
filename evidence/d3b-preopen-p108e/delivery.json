@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-22T17:48:17.729743+03:00",
+  "testedCode": "382afe4bf48f2cc883b23b4249dd6c4ad887ba22",
+  "canonicalBefore": "d24f8d2654c4a866445bf0b3d1e31f085ca34de7",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotion": "fast-forward only; exact tested408 sources",
+  "featureBranchRetained": true,
+  "alternativeS108EAdopted": false,
+  "singleSelectedHelper": "gateway_store_preopen.py + run_store_preopen.py",
+  "fullWindows": {
+    "total": 2662,
+    "passed": 2639,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "newNativeRunByPromotion": false,
+  "sourceCount": 408,
+  "rootWorktreeStatusSha256Before": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "fullGatewayAdmissionAccepted": false,
+  "runtimeAdmissionAuthorized": false,
+  "mainUpdated": false,
+  "pushed": false
+}

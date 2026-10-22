@@ -1,6 +1,15 @@
 # AlazHarness — status
 
-## D3B-PREOPEN-P108E — SCOPED QUALIFIED; LOCAL DELIVERY PENDING
+## D3B-PREOPEN-P108E — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Active canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested code382afe4bf48f2cc883b23b4249dd6c4ad887ba22 fast-forward promoted fromd24f8d2.
+All408 source hashes match full/native acceptance. Original feature branch retained.
+Canonical selects ONE helper gateway_store_preopen.py/run_store_preopen.py;
+parallel S108E candidate was NOT merged or overwritten. Carry over only separately
+reviewed useful tests/fixes, never duplicate the runtime path. This delivery changes
+documentation/static receipts only, not the tested code or full-Gateway boundary.
 
 Branch alaz/d3b-preopen-p108e; worktree scratch/worktrees/d3b-preopen-p108e.
 Base d24f8d2654c4a866445bf0b3d1e31f085ca34de7. One implemented helper path:
@@ -53,3 +62,8 @@ Local static/selected commit follows; read Git HEAD/delivery for exact pointers.
 No main/push, root/mount/account/service/model/provider operation.
 Prior current status and parent retained byte-for-byte in
  docs/status-history/p108e-work-log.md and p108e-parent-d24f8d2.md.
+
+
+### Canonical delivery — 2026-10-22T17:48:17.729743+03:00
+
+Qualified code382afe4 promoted with exact408-source match. No new native test, root/mount, provider/model, CI/config, production, main or push action. All task operations terminal; final static outcome in static-primary-final.txt and delivery.json. Current Git HEAD is the documentation-only handoff. Next implement one fixed PRODUCT call path and test full confinement, not repeat the previous isolated proof as a substitute.
