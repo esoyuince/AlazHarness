@@ -1,39 +1,64 @@
 # AlazHarness — status
 
-## D3B-HTTP-CONFINED-F111E274 — SCOPED PASS; DELIVERY PENDING
+## D3B-HTTP-CONFINED-F111E274 — DEVELOPMENT-INTEGRATED; SCOPED PASS
 
-Branch alaz/d3b-http-confined-f111e274; worktree scratch/worktrees/d3b-http-confined-f111e274.
-Base1e9c305. Canonical H110E HTTP/A109 startup/P102 projection unchanged.
-QA-only new same-path full-isolation acceptance; no second runtime/store owner.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested commit ab55ddb5abd92c048948558dc527e3d407ccb981 fast-forward promoted.
+Feature alaz/d3b-http-confined-f111e274 retained. This final delivery changes
+only docs/static receipts, not the425 qualified source files. Independent
+F111X84 review remains separate; its uncommitted work was not overwritten.
 
-Native001 exit0:44 parent controls and49/54 target predicates across TWO actual
-ext4 mount/finalexec lifetimes. UID23001/GID23003, empty groups/caps, seccomp,
-Landlock, private mount/net/IPC; real ProfileLease/native stores; no doubles.
-22 actualHTTP responses: private200/hostsameportECONNREFUSED; invalid auth401,
-workroute404, mutation405; epoch drift503 stays503 after value restoration.
-HTTP port closes while active transaction/lease remain held; explicit rollback
-then same-product native close. Actual record IDs/inodes survive full detach,
-epoch1->2; duplicates reuse records; pending work blocks new startup before3.
-2 authenticated brokerpings/0provider sends. Private broker and host mount table
-unchanged. Image64MiB NEW regular file only, retained unattached; cleanup CLEAN.
-Lab controller used root ONLY in approved P71C; final targets are unprivileged.
-Named lab initially stopped, preflight started it; shared lab not terminated.
+### Same canonical runtime, new combined native qualification
 
-New completeWindows2747=2724PASS/23SKIP/0ERROR/0FAIL, exit0;425 source hashes
-stable;420 original files unchanged.12 new offline evidence/mutation methods
-passWindows/Linux;27 old startup units also passLinux (not native proof).
-Nested native predicates/platform repeats are NOT independent totals.
-23 old Windows platform/opt-in skips not rerun as a group. All own jobs terminal.
+H110E StorageReadinessHttp, A109 NativeStoreStartup and P102 projection unchanged.
+Actual native001 ran TWO ext4 mount/finalexec lifetimes: UID23001/GID23003,
+empty groups/caps, nnp/seccomp, private mount/net/IPC and Landlock. Real native
+ProfileLease, Hermes databases and actual HTTP; no native boundary doubles.
 
-Records docs/D3B-HTTP-CONFINED-F111E274.md and evidence/d3b-http-confined-f111e274/
-{summary,native-001-result,full-windows-result,cleanup,source-inventory}.json;
-raw native-001-stdout.txt and source-before/after hashes preserved. Prior status
-and log archived docs/status-history/f111e274-{parent,work-log}.md.
+Private ready200 while controller on host gets ECONNREFUSED on SAME port;
+then private200 again.22 recorded HTTP responses across two lifetimes include
+wrong/invalid-byteauth401, closedworkroute404, mutation405, epochdrift503 and
+still503 after restoring old value; processliveness200 never grants admission.
+Wrong schema refuses before bind/new epoch. HTTP close stops listener while
+active SQLite transaction/profile remain held; explicit caller rollback permits
+native close. Actual request IDs/inodes persist across complete detach/remount,
+epoch1->2, duplicates reuse records; pending work blocks startup before epoch3.
+Outer image lease stays while confined process lives, even after profile release.
+2 selected brokerpings/0provider sends; other host paths/endpoints stay denied.
 
-Next clean ancestry-checked canonical fast-forward after selected-file static
-and commit; preserve concurrentF111X84 independent review and do not silently
-merge its unfinished tests. Then one native API borrowed-store/ResponseStore
-lifecycle and healthy/busy policy, before any work routes. Diagnostic readiness
-under full isolation is accepted; real agent HTTP/broker send/paired atomic
-recovery/power-loss are NOT. LegacyIPCv2 CLOSED; fullD3B OPEN.
-No main/push/CIqueue/account/service/production/defaultUbuntu changes.
+### Results
+
+Native001 terminal0:44 parent controls,49/54 target predicates (overlapping,
+NOT147 separate trials). NEW fullWindows2747=2724PASS/23SKIP/0ERROR/0FAIL exit0.
+All425 source hashes stable; ALL420 prior files unchanged.12 new offline proof/
+mutation methods passWindows/Linux;27 existing startup contracts passLinux.
+Selected/platform repetitions are not additive.23 old Windows platform/opt-in
+skips were not rerun as a group. Local static PASS is not remote CI publication.
+
+Controller root/mount operations were limited to the approved P71C disposable
+lab and a fresh64MiB REGULAR image, never a physical disk/existing image.
+Independent cleanup CLEAN: own processes/loops/fences/cgroups/sockets/anchors
+absent; image retained unattached. Named lab initially stopped, preflight started
+it; shared lab not terminated. DefaultUbuntu/production/accounts/services/CI
+queues and root worktree edits untouched. Maincc7ceba/no push.
+
+### Exact next boundary
+
+Full-isolation DIAGNOSTIC storage readiness is accepted. Native Hermes agent
+HTTP adapter/work routes are not enabled, and intentionally quiescent storage
+readiness is not a healthy/busy policy for active agent work. Next review ONE
+borrowed-native-store/ResponseStore lifecycle and healthy/busy readiness before
+work admission; then fixed broker live-ledger/dummy-provider send/accounting.
+No partial-pair retry/atomic pair recovery/power-loss claim. LegacyIPCv2 CLOSED,
+fullD3B OPEN. Existing R91F/G82C blocked operations were not retried.
+
+### Records / continuation
+
+Report docs/D3B-HTTP-CONFINED-F111E274.md.
+Evidence evidence/d3b-http-confined-f111e274/summary.json, delivery.json,
+native-001-stdout.txt, full-windows-result.json, full-sources-before/after.json,
+cleanup.json, source-inventory.json, static-primary-final.txt.
+Prior parent/work/qualification records in docs/status-history/f111e274-*.md.
+All owned native/full/source operations terminal; final documentation/static
+commit follows. Read Git HEAD for the exact current handoff.
