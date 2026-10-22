@@ -116,3 +116,7 @@ preserved byte-for-byte in docs/status-history/a109-parent.md.
 ## Final complete regression
 
 Current fullWindows2694=2671PASS/23SKIP/0ERROR/0FAIL, exit0. All414 source hashes stable; all408 baseline files unchanged. Linux32/32PASS contains27 lifecycle unit methods and5 offline receipts; these are standard-suite subsets/platform repeats.23 old platform/explicit-opt-in Windows skips were not rerun here. Final native003 (not earlier002) pins current product and open-transaction refusal. Scope remains storage component, not HTTP/provider/complete D3B. Static result follows in static-final.txt.
+
+## Canonical local delivery
+
+Qualified code `ecea1419fd64e41ea3621048fea110bf851a86a0` fast-forwarded from `78b41d0a90b7abd311ee1d1f992cc65b605f073e` into `alaz/d3b-principal-launch-21oct`. All414 sources exactly match complete/native003 qualification; this delivery is documentation-only. Feature and C109E alternate branches retained, latter not merged or edited. No new native test, main publication or push. Current short status.md is the active continuation; delivery.json records provenance.

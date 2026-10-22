@@ -1,6 +1,14 @@
 # AlazHarness — status
 
-## D3B-STORE-STARTUP-A109 — SCOPED PASS; LOCAL COMMIT/PROMOTION PENDING
+## D3B-STORE-STARTUP-A109 — DEVELOPMENT-INTEGRATED; SCOPED PASS
+
+Active canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested code ecea1419fd64e41ea3621048fea110bf851a86a0 fast-forward promoted
+from78b41d0. All414 tested sources exact; feature retained. Canonical now
+selects ONE NativeStoreStartup with guarded clean-only epoch sequencing.
+Parallel C109E is retained separately and NOT merged/overwritten. This final
+follow-up changes documentation/static receipts only, not product/test source.
 
 Branch alaz/d3b-store-startup-a109; worktree scratch/worktrees/d3b-store-startup-a109.
 Base78b41d0. Product gateway_store_startup.NativeStoreStartup is one fixed
@@ -46,3 +54,7 @@ full-windows-result.json, sources-before/after-full.json, cleanup-current.json.
 Native003 request16/Linuxselected20/full18 terminal0; no native job pending.
 Prior handoff/work log retained in docs/status-history/a109-parent.md and
  a109-work-log.md. Final static/commit follows; no push/main action.
+
+### Canonical delivery — 2026-10-22T20:41:05.352406+03:00
+
+Qualified codeecea141 promoted, full2694=2671PASS/23SKIP sources remain exact. No new kernel test/provider/model/root/mount/CI/production/main/push action by this promotion. Final static at static-primary-final.txt. Original work logs retained; no task left running after terminal receipts. Next HTTP readiness and live broker-ledger path, not another duplicate storage implementation.
