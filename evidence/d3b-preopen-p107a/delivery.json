@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-22T16:51:39.410949+03:00",
+  "testedCommit": "2d527e55d6611c544f8fa6ad2759f0f548046259",
+  "canonicalBefore": "08e53df8c6ea18791c874eabd8c3d13ebc979579",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotion": "fast-forward only; independent prerequisite available, not automatically wired",
+  "testedSourceCount": 403,
+  "sourceHashesExact": true,
+  "fullWindows": {
+    "total": 2628,
+    "passed": 2605,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "newNativeRunByPromotion": false,
+  "fixedPreopenHelperWired": false,
+  "runtimeAdmissionAuthorized": false,
+  "mainChanged": false,
+  "pushed": false,
+  "rootWorktreeStatusSha256Before": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "next": "Compose this marker prerequisite with P107E read-only preflight and native live-gate startup; source-verify peer implementation before integration."
+}

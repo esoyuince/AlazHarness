@@ -1,8 +1,11 @@
 # AlazHarness — status
 
-## D3B-CONSTRUCTOR-METADATA-P107A — SCOPED PASS; LOCAL DELIVERY PENDING
+## D3B-CONSTRUCTOR-METADATA-P107A — DEVELOPMENT-INTEGRATED; PREREQUISITE ONLY
 
-Branch: alaz/d3b-preopen-p107a. Worktree: scratch/worktrees/d3b-preopen-p107a.
+Active branch: alaz/d3b-principal-launch-21oct.
+Worktree: C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested code/evidence2d527e5 fast-forwarded from08e53df. Feature branch retained.
+The larger read-only helper/startup wiring is NOT completed by this promotion.
 Base08e53df. New complementary gateway_constructor_metadata.py observes an
 existing query-only connection after trusted schema qualification, before a
 writable constructor. One preopen implementation remains owned by P107E; it
@@ -53,3 +56,8 @@ Full preceding status and work log retained byte-for-byte in
  docs/status-history/p107a-work-log.md; restoration hash in status-preservation.json.
 Keep this current status short. Final Git HEAD/optional clean canonical
 promotion will be recorded separately after the actual static/commit result.
+
+
+### Canonical local delivery — 2026-10-22T16:51:39.410949+03:00
+
+Qualified code2d527e5 promoted without runtime/test changes. All403 sources match full test receipts. This documentation-only follow-up records active continuation and static result. No new native test/root/mount/CI/production/main/push action. Prior full work log remains in docs/status-history/p107a-work-log.md.

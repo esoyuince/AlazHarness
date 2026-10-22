@@ -112,3 +112,7 @@ These are background references, not substitutes for local execution evidence.
 ## Final current-source result
 
 Fresh fullWindows2628=2605PASS/23SKIP/0ERROR/0FAIL, exit0. All403 hashes stable; all399 prior source files unchanged. Windows/Linux selected24/24 each, including5 receipt tests: subsets/platform repeat, not added to full total. Four actual native cases completed; first repetition kept separate. The23 existing platform/opt-in skips were not newly run. Cleanup independent audit CLEAN. Preopen/helper wiring and fixed full startup NOT accepted here.
+
+## Canonical delivery
+
+Tested code/evidence commit `2d527e55d6611c544f8fa6ad2759f0f548046259` fast-forwarded from `08e53df8c6ea18791c874eabd8c3d13ebc979579` to the local canonical development branch. All403 source bytes remain identical to the full qualification. The marker prerequisite is available but is NOT automatically connected to the separate preopen helper or listener. This follow-up changes documentation/static delivery only; no main/push or new native run. Read current status.md for the next work item.
