@@ -15,6 +15,8 @@ import threading
 import gateway_live_store_gate as live
 import gateway_native_layout as layout
 import gateway_store_preopen as preopen
+import gateway_response_preopen as response_preopen
+import gateway_response_live as response_live
 
 
 class StoreStartupRejected(RuntimeError):
@@ -41,7 +43,7 @@ class NativeStoreStartup:
     expose HTTP or redispatch a partial pair. Even terminal pairs have not been
     reconciled here. Public native handles are available ONLY after verification.
     """
-    def __init__(self,held,expected_mount,expected,*,instance_id):
+    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None):
         require(type(held) is live.profiles.ProfileLease,'startup_native_lease_required')
         require(type(expected_mount) is live.mounts.ExpectedMount,'startup_mount_expectation')
         require(type(expected) is live.PreparedStoreExpectation and expected.journal_mode=='delete',
@@ -49,6 +51,10 @@ class NativeStoreStartup:
         require(type(instance_id) is str and re.fullmatch('[A-Za-z0-9._-]{1,128}',instance_id) is not None,
                 'startup_instance_id')
         require(instance_id!=expected.instance_id,'startup_new_instance_required')
+        if response_expected is not None:
+            response_preopen._pair(response_expected,expected)
+        self._response_expected=response_expected
+        self._response=None;self._response_conn=None
         held.check()
         self._actor=live.profiles._actor()
         require(self._actor==held._actor,'startup_other_actor')
@@ -82,8 +88,12 @@ class NativeStoreStartup:
             self._drained()
             home=self._held._home
             self._stage='LAYOUT'
+            options={'include_response':True} if self._response_expected is not None else {}
             snapshot=layout.inspect_profile(home,uid=self._actor[1],gid=self._actor[2],
-                                            device=self._expected.state_identity[0])
+                                            device=self._expected.state_identity[0],**options)
+            if self._response_expected is not None:
+                require(snapshot['response_store.db'][:2]==self._response_expected.response_identity,
+                        'startup_response_layout_identity')
             require(snapshot['state.db'][:2]==self._expected.state_identity
                     and snapshot['runs_idempotency.db'][:2]==self._expected.replay_identity,
                     'startup_layout_identity')
@@ -91,6 +101,11 @@ class NativeStoreStartup:
             proof=preopen.verify_preopen(self._held,self._mount,self._expected)
             require(proof['state']=='COLD_STORES_PREFLIGHT_VERIFIED','startup_preflight_result')
             self._receipts.append(('preflight',proof))
+            if self._response_expected is not None:
+                self._stage='RESPONSE_PREFLIGHT'
+                proof=response_preopen.verify_response_preopen(self._held,self._mount,self._response_expected,self._expected)
+                require(proof['state']=='COLD_RESPONSE_PREFLIGHT_VERIFIED','startup_response_preflight_result')
+                self._receipts.append(('response_preflight',proof))
             self._owned();self._drained()
             State,Replay,runtime=_native()
             self._stage='STATE_CONSTRUCTOR';self._unknown_constructor=True
@@ -105,6 +120,18 @@ class NativeStoreStartup:
             proof=live.verify_live_stores(self._held,self._mount,self._state,self._replay,self._expected)
             require(proof['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED','startup_live_result')
             self._receipts.append(('before_epoch',proof))
+            if self._response_expected is not None:
+                Response=response_live.qualified_response_type()
+                want=self._response_expected
+                self._stage='RESPONSE_CONSTRUCTOR';self._unknown_constructor=True
+                self._response=Response(db_path=str(home/'response_store.db'),canonical_state=self._state,
+                                        max_size=want.max_size,max_identities=want.max_identities)
+                self._response_conn=self._response._conn;self._unknown_constructor=False
+                self._stage='RESPONSE_LIVE_BEFORE_EPOCH'
+                proof=response_live.verify_response_connection(self._held,self._mount,self._state,
+                    self._response,self._response_live_expectation(),constructor=True)
+                require(proof['state']=='NATIVE_RESPONSE_CONNECTION_VERIFIED','startup_response_live_result')
+                self._receipts.append(('response_before_epoch',proof))
             self._owned();self._drained()
             # No recover_session_inputs, queue mutation, provider or task dispatch.
             # An exception/interrupt after this flag is never treated as no effect.
@@ -116,6 +143,12 @@ class NativeStoreStartup:
             proof=live.verify_live_stores(self._held,self._mount,self._state,self._replay,self._expected)
             require(proof['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED','startup_live_result')
             self._receipts.append(('after_epoch',proof))
+            if self._response_expected is not None:
+                self._stage='RESPONSE_LIVE_AFTER_EPOCH'
+                proof=response_live.verify_response_connection(self._held,self._mount,self._state,
+                    self._response,self._response_live_expectation(),constructor=True)
+                require(proof['state']=='NATIVE_RESPONSE_CONNECTION_VERIFIED','startup_response_live_result')
+                self._receipts.append(('response_after_epoch',proof))
             self._owned();self._drained()
             self._stage='VERIFIED'
             return self.status()
@@ -125,6 +158,23 @@ class NativeStoreStartup:
             if isinstance(exc,StoreStartupRejected):raise
             # Bound diagnostics; original exception retains details only locally.
             raise StoreStartupRejected('startup_sequence_rejected') from exc
+
+    def _response_live_expectation(self):
+        want=self._response_expected
+        return response_live.ResponseConnectionExpectation(want.native_feature,want.schema_sha256,
+            want.response_identity,want.max_size,want.max_identities)
+
+    @property
+    def response_store(self):
+        self._owned();require(self._stage=='VERIFIED','startup_not_verified')
+        require(self._response_expected is not None,'startup_response_not_configured')
+        return self._response
+
+    @property
+    def response_expectation(self):
+        self._owned();require(self._stage=='VERIFIED','startup_not_verified')
+        require(self._response_expected is not None,'startup_response_not_configured')
+        return self._response_expected
 
     @property
     def state_store(self):
@@ -141,6 +191,7 @@ class NativeStoreStartup:
     def status(self):
         require(live.profiles._actor()==self._actor,'startup_other_actor')
         return {'state':self._stage,'nativePin':live.NATIVE_PIN,
+            'responseConfigured':self._response_expected is not None,
             'epochObserved':self._expected.epoch,'epochMayHaveAdvanced':self._epoch_attempted,
             'unknownConstructorEffects':self._unknown_constructor,
             'completedChecks':[label for label,_ in self._receipts],
@@ -157,13 +208,17 @@ class NativeStoreStartup:
         self._drained()
         # Never implicitly discard a caller's uncommitted transaction.
         # The caller must explicitly settle it before asking for shutdown.
-        for connection in (self._state_conn,self._replay_conn):
+        if self._response_expected is not None:
+            for store,connection in ((self._state,self._state_conn),(self._replay,self._replay_conn),
+                                     (self._response,self._response_conn)):
+                require(store is None or store._conn is connection,'startup_connection_replaced')
+        for connection in (self._response_conn,self._state_conn,self._replay_conn):
             if connection is not None:
                 require(not connection.in_transaction,'startup_transaction_active')
         self._stage='CLOSING'
         try:
             # Close only returned/owned handles; never release caller's lease here.
-            for store,connection in ((self._replay,self._replay_conn),(self._state,self._state_conn)):
+            for store,connection in ((self._response,self._response_conn),(self._replay,self._replay_conn),(self._state,self._state_conn)):
                 if store is None:continue
                 store.close()
                 try:connection.in_transaction

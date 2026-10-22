@@ -50,6 +50,7 @@ class StorageReadinessHttp:
     """
     def __init__(self,stores,*,token,port=0):
         require(type(stores) is startup.NativeStoreStartup,'readiness_native_startup_required')
+        require(getattr(stores,'_response_expected',None) is None,'readiness_three_store_not_qualified')
         require(type(token) is str and re.fullmatch('[0-9a-f]{64}',token) is not None,
                 'readiness_local_token_required')
         require(type(port) is int and 0<=port<=65535,'readiness_loopback_port')

@@ -57,14 +57,18 @@ def _children(path,allowed):
             found[entry.name]=(path/entry.name).lstat()
     return found
 
-def _snapshot(home,uid,gid,device):
+def _snapshot(home,uid,gid,device,include_response=False):
+    additions=frozenset(('response_store.db',)) if include_response else frozenset()
+    databases=DATABASES|additions
+    allowed_paths=ALLOWED|additions|{n+s for n in additions for s in ('-journal','-wal','-shm')}
+    required_paths=REQUIRED|additions
     observed={'profile':_private(home.lstat(),uid,gid,device,True)}
     pending=[('',home)]
     while pending:
         relative,parent=pending.pop()
-        allowed={Path(n).name for n in ALLOWED if str(Path(n).parent).replace('\\','/')==(relative or '.')}
+        allowed={Path(n).name for n in allowed_paths if str(Path(n).parent).replace('\\','/')==(relative or '.')}
         entries=_children(parent,allowed)
-        required={Path(n).name for n in REQUIRED if str(Path(n).parent).replace('\\','/')==(relative or '.')}
+        required={Path(n).name for n in required_paths if str(Path(n).parent).replace('\\','/')==(relative or '.')}
         require(required<=set(entries),'native_layout_required_entry_missing')
         for child,info in sorted(entries.items()):
             name=relative+'/'+child if relative else child
@@ -72,7 +76,7 @@ def _snapshot(home,uid,gid,device):
             observed[name]=_private(info,uid,gid,device,directory)
             require(not getattr(parent/child,'is_junction',lambda:False)(),'native_layout_link')
             if directory:pending.append((name,parent/child))
-            elif name in DATABASES:require(info.st_size>=512,'native_layout_unprepared_database')
+            elif name in databases:require(info.st_size>=512,'native_layout_unprepared_database')
             elif name in LOCKS:require(info.st_size<=16384,'native_layout_lock_size')
             elif name=='SOUL.md':require(info.st_size==SOUL_BYTES,'native_layout_soul_size')
             elif name=='cache/schema_columns.json':require(0<info.st_size<=MAX_CACHE_BYTES,'native_layout_cache_size')
@@ -81,7 +85,7 @@ def _snapshot(home,uid,gid,device):
 def _read_aux(home,name,observed,maximum):
     expected=observed[name]
     # These two files must never alias live SQLite state or ownership locks.
-    require(expected[:2] not in {observed[n][:2] for n in DATABASES|LOCKS|SIDECARS if n in observed},
+    require(expected[:2] not in {observed[n][:2] for n in DATABASES|LOCKS|SIDECARS|frozenset(('response_store.db','response_store.db-journal','response_store.db-wal','response_store.db-shm')) if n in observed},
             'native_layout_aux_alias')
     fd=os.open(home/name,os.O_RDONLY|os.O_CLOEXEC|os.O_NOFOLLOW|getattr(os,'O_BINARY',0))
     try:
@@ -103,7 +107,7 @@ def _cache(raw):
     canonical=json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode()
     require(hashlib.sha256(canonical).hexdigest()==CACHE_SHA256,'native_layout_cache_content')
 
-def inspect_profile(profile,*,uid,gid,device):
+def inspect_profile(profile,*,uid,gid,device,include_response=False):
     """Finite store-only admission snapshot; mount and native lease are separate.
 
     Rechecks reject observed mutation, not every ABA race. Caller must not run
@@ -112,17 +116,18 @@ def inspect_profile(profile,*,uid,gid,device):
     the exact non-DB SOUL/cache paths, never SQLite files/sidecars/lock files.
     """
     try:
+        require(type(include_response) is bool,'native_layout_response_option')
         require(all(type(n) is int and n>0 for n in (uid,gid,device)),'native_layout_identity')
         require(isinstance(profile,(str,Path)),'native_layout_home')
         home=Path(profile)
         require(home.is_absolute() and home==home.resolve(strict=True)
                 and not any(p.is_symlink() or getattr(p,'is_junction',lambda:False)() for p in (home,*home.parents)),
                 'native_layout_canonical_profile')
-        first=_snapshot(home,uid,gid,device)
+        first=_snapshot(home,uid,gid,device,include_response)
         soul=_read_aux(home,'SOUL.md',first,SOUL_BYTES)
         require(hashlib.sha256(soul).hexdigest()==SOUL_SHA256,'native_layout_soul_content')
         _cache(_read_aux(home,'cache/schema_columns.json',first,MAX_CACHE_BYTES))
-        require(first==_snapshot(home,uid,gid,device),'native_layout_changed')
+        require(first==_snapshot(home,uid,gid,device,include_response),'native_layout_changed')
         return first
     except NativeLayoutRejected:raise
     except (OSError,ValueError,TypeError,KeyError,AttributeError,OverflowError,RecursionError):

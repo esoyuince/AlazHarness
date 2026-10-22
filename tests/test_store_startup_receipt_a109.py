@@ -1,4 +1,5 @@
 """A109 real full-confinement product startup proof, not additional executions."""
+from historical_sources_l113f6 import receipt_source_hash
 import hashlib,json,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -9,7 +10,7 @@ class StartupReceipt(unittest.TestCase):
         cls.outer=json.loads((E/'native-003-stdout.txt').read_bytes())
         cls.proof=json.loads(cls.outer['nativeStdout'])
         cls.targets=[e for e in cls.proof['events'] if e.get('state')=='RESULT']
-    def test_terminal_source_identity_and_real_native_imports(self):
+    def test_historical_source_identity_and_real_native_imports(self):
         self.assertEqual(json.loads((E/'native-003-result.json').read_text())['exitCode'],0)
         self.assertEqual((self.outer['unitsExitCode'],self.outer['nativeExitCode']),(0,0))
         self.assertIs(self.outer['sourcesUnchanged'],True)
@@ -17,7 +18,7 @@ class StartupReceipt(unittest.TestCase):
         inv=json.loads((ROOT/'evidence/d3b-native-stores-h105e/native-source-inventory.json').read_text())
         for n,h in self.proof['sourceSha256'].items():
             if n.startswith(('packages/','scripts/','tests/')):
-                self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+                self.assertEqual(receipt_source_hash(ROOT,n,h),h,n)
             elif n.startswith('vendor-native/'):
                 self.assertEqual(inv['nativeSources'][n.removeprefix('vendor-native/')]['sha256'],h,n)
             elif n.startswith('dependencies/'):

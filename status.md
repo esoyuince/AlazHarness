@@ -1,11 +1,41 @@
 # AlazHarness - status
 
-## D3B-RESPONSE-PREFLIGHT-R113Q8 - SCOPED PASS; JOINT INTEGRATION PENDING
+## D3B-THREE-STORE-LIFECYCLE-L113F6 - SCOPED PASS; DEVELOPMENT DELIVERY PENDING
 
-Branch alaz/d3b-response-preflight-r113q8; worktree scratch/worktrees/d3b-response-preflight-r113q8; basea3951d7. Final gateway_response_preopen public contract implemented; separate fixed worker. ConcurrentL113F6 owns live gate and optional existing A109 integration; preserve its work, no second runtime.
+Branch alaz/d3b-response-lifecycle-l113f6; originalbasea3951d7. Immutable qualified
+cold-preflight commit aeff7a0 fast-forwarded; own disjoint live/layout/A109 code
+preserved. Other branch has further review notes; NOT changed or adopted here.
+Prior handoffs archived docs/status-history/l113f6-*.md. No second startup owner.
 
-PreparedResponseExpectation(featurecc16c10, exact native schemac4b66ce0, response_identity,max_size100,max_identities1000); verify_response_preopen(held,mount,want,canonical_expected). Parent opens no DB, holds/checks native lease and exact mounts. Separate helper mode=ro normal locks, bounded authorizer, expected private file/header/schema/identity, no sidecars. Reject all unsettled identities/constructor eviction pressure/malformed/orphan state. No repair/recovery/epoch/dispatch.
+Native002 PASS on ordinaryP71C: separate provisioning and new startup processes,
+clean three-store reopen epoch1->2, current two-store control, six refusals.
+Five response-file negatives refuse before any parent writable connection and
+preserve all bytes. Canonical-pending refusal is later: existing SessionDB
+constructor changes metadata, but exact epoch/admission rows and replay/response
+bytes remain unchanged. Original failing001 all-byte assertion retained; product
+unchanged001->002, only QA distinguishes data identity from byte purity honestly.
+No mock native classes or source patching inside the genuine native execution.
 
-44 unit methods PASS Windows/Linux,6 offline receipts PASS. Actual native P71C ordinaryUID23001 run47 checks/13 refusal cases PASS; empty+populated file hashes unchanged and qualified real reopen zero row writes. CompetitorBUSY before+after helper, acquire only after owner close; parent0rawDBopen/0sqliteconnect. Native source current; all434 prior files unchanged. First env/budget-fixture failures retained and corrected without product weakening. Tempcode/profiles removed, no root/mount/listener/model/provider.
+126 focused unit methods PASS with explicitly doubled boundaries. Full combined
+regression and current-source receipt checks still pending. Current default
+HTTP diagnostic constructor explicitly refuses third-configured startup. No
+HTTP/network/root/mount/installed native pin/provider/main/push/CI changes.
+This ordinary-user trial is NOT full three-store mount/netns acceptance.
+Next pin old receipts to original saved bytes, add exact new native receipt
+checks and run complete combined suite/static with frozen sources. All own
+native jobs terminal; no pending unknown-effect operation.
 
-Full harness regression pending COMBINED source tree; no separate fullPASS inferred here. A109 three-store/full namespace isolation not proven by this standalone native run. docs/D3B-RESPONSE-PREFLIGHT-R113Q8.md and evidence/d3b-response-preflight-r113q8/summary.json. All own native/selected tests terminal. Next exact-source union with terminalL113F6, genuine common startup proof + whole regression/static, preserve old evidence/pins and keep agent listener disabled. Maincc7ceba/no push/CI/production/defaultUbuntu changes. LegacyIPCv2 CLOSED/fullD3B OPEN.
+
+### Blocked optional refinement; accepted bytes preserved
+
+Tool safety blocked request00021 (earlier response source-check + new native run). It was NOT reissued, reformatted, or run via another bridge. Read-only00022 confirms zero effects: current product/QA bytes match successfulnative002 and no native003 files exist. Current supported feature check stays before ResponseStore constructor, after canonical pair constructors/live gate. Completing historical source bindings/offline verification and standard regression only; no new native request. Old kernel/HTTP proofs now explicitly reference their saved executed bytes, not newer runtime behavior.
+
+
+### Complete combined regression started
+
+Interrupted draft00026 had no receipt or full-run artifacts. Read-only00027 verified current code and native002 exact. New standard Windows suite00028 IN PROGRESS; all source/config/tests and native patches frozen before discovery. No new Linux native run, blocked refinement replay, root/mount or runtime activation. Do not modify source/test files until terminal.
+
+
+### Combined standard regression terminal
+
+Request00028 exit0:2918=2895PASS/23SKIP/0ERROR/0FAIL.446 source/config hashes and both native patches unchanged.427 original source files unchanged;3product+4historical receipt tests deliberately changed;2512 old evidence files exact. Native0029targets/83nested checks and cold47 checks remain separate nonadditive scopes. No replay of blocked00021/native003; no full three-store confinement or healthy-busy/listener activation. Local static/selected commit00033 follows.

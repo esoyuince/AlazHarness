@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-23T00:49:23.856565+03:00",
+  "originalBase": "a3951d764df291bebbf20f0452119a3d461d8832",
+  "coldParent": "aeff7a0d723adf2b311bba2941c5db4ee7acbc9e",
+  "originalSourceCount": 434,
+  "unchangedOriginalSources": 427,
+  "explicitChangedOriginalSources": [
+    "packages/claw-hermes/gateway_http_readiness.py",
+    "packages/claw-hermes/gateway_native_layout.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/test_confined_http_receipt_f111e274.py",
+    "tests/test_http_readiness_receipt_h110e.py",
+    "tests/test_native_layout_receipt_l106r.py",
+    "tests/test_store_startup_receipt_a109.py"
+  ],
+  "newSourceFiles": [
+    "packages/claw-hermes/gateway_response_live.py",
+    "packages/claw-hermes/gateway_response_preopen.py",
+    "scripts/qa/l113f6_native_startup.py",
+    "scripts/qa/r113q8_response_preflight_probe.py",
+    "scripts/run_response_preopen.py",
+    "tests/historical_sources_l113f6.py",
+    "tests/test_gateway_response_live.py",
+    "tests/test_gateway_response_preopen.py",
+    "tests/test_response_preflight_receipt_r113q8.py",
+    "tests/test_three_store_layout_l113f6.py",
+    "tests/test_three_store_lifecycle_l113f6.py",
+    "tests/test_three_store_receipt_l113f6.py"
+  ],
+  "combinedSourceCount": 446,
+  "coldParentEvidenceGitBlobs": {
+    "evidence/d3b-response-preflight-r113q8/.gitattributes": [
+      "100644",
+      "75bed5e1c3524f0e28ca6cfb26768141a9d91d34"
+    ],
+    "evidence/d3b-response-preflight-r113q8/baseline.json": [
+      "100644",
+      "a464ae5c426d591dc3c0dfb366c7c2453f29b69b"
+    ],
+    "evidence/d3b-response-preflight-r113q8/budget-fixture-correction.json": [
+      "100644",
+      "6f0ce5ecf87c4cbe7b94bb010aa18990703fd050"
+    ],
+    "evidence/d3b-response-preflight-r113q8/focused-windows-001.txt": [
+      "100644",
+      "e54871b942f9d5c054a34d6c37c31161d97e5ebe"
+    ],
+    "evidence/d3b-response-preflight-r113q8/focused-windows-002.txt": [
+      "100644",
+      "49e106a49ae59938b7659acbd135fab9c4fc5666"
+    ],
+    "evidence/d3b-response-preflight-r113q8/linux-001-intent.json": [
+      "100644",
+      "f4c6b3e6efac62184323929c0d179edca0a3d26b"
+    ],
+    "evidence/d3b-response-preflight-r113q8/linux-001-stderr.txt": [
+      "100644",
+      "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    ],
+    "evidence/d3b-response-preflight-r113q8/linux-001-stdout.txt": [
+      "100644",
+      "ea6a16810a5833f9d5674b71fb225287899b8653"
+    ],
+    "evidence/d3b-response-preflight-r113q8/linux-bootstrap-001.py.txt": [
+      "100644",
+      "fca594b35fc6b499bde13f21365036073389f54a"
+    ],
+    "evidence/d3b-response-preflight-r113q8/native-schema-002-stderr.txt": [
+      "100644",
+      "01ef3f0d087f7a8250da766630a85812b73a1100"
+    ],
+    "evidence/d3b-response-preflight-r113q8/native-schema-002-stdout.txt": [
+      "100644",
+      "ccfcb9f5ca59c37f2c8e8e09a3666d512869ec75"
+    ],
+    "evidence/d3b-response-preflight-r113q8/native-schema-stderr.txt": [
+      "100644",
+      "dd11f4faae1c3afb1d06f6700077ec0477119c74"
+    ],
+    "evidence/d3b-response-preflight-r113q8/native-schema-stdout.txt": [
+      "100644",
+      "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    ],
+    "evidence/d3b-response-preflight-r113q8/native-schema.json": [
+      "100644",
+      "02892b96979248907332361e9be3d8765070332c"
+    ],
+    "evidence/d3b-response-preflight-r113q8/offline-receipt-tests.txt": [
+      "100644",
+      "ee5f96f2713a74fd89926f1bc58c614b4d5474db"
+    ],
+    "evidence/d3b-response-preflight-r113q8/static-scoped.txt": [
+      "100644",
+      "abe12ff9719d399db5eefbadbca8003b0616e3af"
+    ],
+    "evidence/d3b-response-preflight-r113q8/summary.json": [
+      "100644",
+      "19973171c7b32139e07157c4494771b0f47d5948"
+    ]
+  },
+  "historicalEvidenceTrackedFilesUnmodified": 2512,
+  "sourceLockGitlinkPatchUnchanged": true,
+  "threeHistoricalProductSnapshotsExact": true,
+  "earlierCustodyGuard": "00029 stopped before writes because broad diff included valid newly-added preflight evidence; corrected to exact immutable existing Git blobs plus clean tracked worktree"
+}

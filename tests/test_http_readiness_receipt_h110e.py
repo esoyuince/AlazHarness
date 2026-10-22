@@ -1,4 +1,5 @@
-"""Current-source native storage/real aiohttp readiness acceptance receipts."""
+"""Historical-source native storage/real aiohttp readiness acceptance receipts."""
+from historical_sources_l113f6 import receipt_source_hash
 import hashlib,json
 from pathlib import Path
 import unittest
@@ -10,7 +11,7 @@ class NativeHttpReadinessReceipt(unittest.TestCase):
         cls.outer=json.loads((E/'native-003-stdout.txt').read_bytes())
         cls.proof=json.loads(cls.outer['stdout'])
         cls.events=cls.proof['events']
-    def test_terminal_current_sources_and_immutable_native_dependencies(self):
+    def test_historical_sources_and_immutable_native_dependencies(self):
         self.assertEqual(json.loads((E/'native-003-result.json').read_text())['exitCode'],0)
         self.assertEqual(self.outer['exitCode'],0);self.assertIs(self.outer['temporaryRootRemoved'],True)
         self.assertIs(self.outer['sourcesUnchanged'],True)
@@ -21,7 +22,7 @@ class NativeHttpReadinessReceipt(unittest.TestCase):
         deps={n:h for item in http['packages'].values() for n,h in item['files'].items()}
         for n,h in sources.items():
             with self.subTest(source=n):
-                if n.startswith(('packages/','scripts/')):self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h)
+                if n.startswith(('packages/','scripts/')):self.assertEqual(receipt_source_hash(ROOT,n,h),h)
                 elif n.startswith('vendor-native/'):self.assertEqual(native['nativeSources'][n.removeprefix('vendor-native/')]['sha256'],h)
                 elif n.startswith('dependencies/'):self.assertEqual(native['dependency']['sourceSha256'][n.removeprefix('dependencies/')],h)
                 elif n.startswith('http-dependencies/'):self.assertEqual(deps[n.removeprefix('http-dependencies/')],h)

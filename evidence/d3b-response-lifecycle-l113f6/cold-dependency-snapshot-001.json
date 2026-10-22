@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T00:32:48.865137+03:00",
+  "sources": {
+    "packages/claw-hermes/gateway_response_preopen.py": "916931a2d04d257d83e95aaccfff86998961a83bbe64a45e2c3094451800c8e1",
+    "scripts/run_response_preopen.py": "e166d3d1cc05e664ef541ffd70dfd2cdb5b5145046b523325b38bf4e22bcd38e"
+  },
+  "originWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-response-preflight-r113q8",
+  "originModified": false,
+  "candidateOnlyUntilOriginalTestsAndCommit": true
+}

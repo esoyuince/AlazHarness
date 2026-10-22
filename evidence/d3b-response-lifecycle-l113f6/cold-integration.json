@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T00:41:50.701098+03:00",
+  "originalBase": "a3951d764df291bebbf20f0452119a3d461d8832",
+  "qualifiedColdParent": "aeff7a0d723adf2b311bba2941c5db4ee7acbc9e",
+  "transfer": "fast-forward immutable preflight commit with own disjoint working changes preserved",
+  "coldBytesIdenticalToIntegratedNative002": true,
+  "parallelUncommittedReviewFilesUntouched": true,
+  "earlierCleanWorktreeGuardStoppedBeforeWrites": true
+}

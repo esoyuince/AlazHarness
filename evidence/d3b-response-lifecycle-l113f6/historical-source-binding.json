@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-23T00:44:05.471152+03:00",
+  "updatedReceiptTests": [
+    "test_confined_http_receipt_f111e274.py",
+    "test_http_readiness_receipt_h110e.py",
+    "test_native_layout_receipt_l106r.py",
+    "test_store_startup_receipt_a109.py"
+  ],
+  "redirectedProductModules": [
+    "gateway_store_startup.py",
+    "gateway_native_layout.py",
+    "gateway_http_readiness.py"
+  ],
+  "baselineCommit": "a3951d764df291bebbf20f0452119a3d461d8832",
+  "reason": "original native proofs must remain bound to actual original bytes rather than force all future implementations to stay identical",
+  "oldExecutionRecordsModified": false,
+  "currentNativeReceipt": "native-002",
+  "currentProofDoesNotClaimOldFullConfinement": true
+}

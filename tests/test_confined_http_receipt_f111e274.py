@@ -1,5 +1,6 @@
 """Source-bound native F111E274 proof and negative receipt mutation tests."""
 from copy import deepcopy
+from historical_sources_l113f6 import receipt_source_hash
 import hashlib,json
 from pathlib import Path
 import sys,unittest
@@ -21,9 +22,9 @@ class ConfinedReadinessEvidence(unittest.TestCase):
     def test_actual_complete_receipt(self):
         got=v.verify(self.outer,self.manifest);self.assertEqual(got['httpResponses'],22);self.assertIs(got['launchAuthorized'],False)
         self.assertEqual(json.loads((E/'native-001-result.json').read_text())['exitCode'],0)
-    def test_current_code_matches_executed_code(self):
+    def test_historical_executed_source_snapshot_matches_receipt(self):
         for name,digest in self.manifest.items():
-            if name.startswith(('packages/','scripts/','tests/')):self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest,name)
+            if name.startswith(('packages/','scripts/','tests/')):self.assertEqual(receipt_source_hash(ROOT,name,digest),digest,name)
         baseline=json.loads((E/'baseline.json').read_text())['sources']
         for name in ('packages/claw-hermes/gateway_http_readiness.py','packages/claw-hermes/gateway_store_startup.py','packages/claw-hermes/gateway_state_projection.py'):
             self.assertEqual(self.manifest[name],baseline[name])

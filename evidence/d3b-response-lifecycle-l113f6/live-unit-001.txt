@@ -1,0 +1,31 @@
+test_active_transaction_retained (test_gateway_response_live.LiveResponseChecks.test_active_transaction_retained) ... ok
+test_closed_response_handle_not_reopened (test_gateway_response_live.LiveResponseChecks.test_closed_response_handle_not_reopened) ... ok
+test_constructor_mutation_refused_before_mount (test_gateway_response_live.LiveResponseChecks.test_constructor_mutation_refused_before_mount) ... ok
+test_expected_inode_not_same_as_canonical (test_gateway_response_live.LiveResponseChecks.test_expected_inode_not_same_as_canonical) ... ok
+test_extra_attached_database_refused_without_detach (test_gateway_response_live.LiveResponseChecks.test_extra_attached_database_refused_without_detach) ... ok
+test_foreign_response_path (test_gateway_response_live.LiveResponseChecks.test_foreign_response_path) ... ok
+test_identity_count_limit (test_gateway_response_live.LiveResponseChecks.test_identity_count_limit) ... ok
+test_memory_connection_with_disk_label_refused (test_gateway_response_live.LiveResponseChecks.test_memory_connection_with_disk_label_refused) ... ok
+test_memory_fallback_path_refused (test_gateway_response_live.LiveResponseChecks.test_memory_fallback_path_refused) ... ok
+test_mismatched_schema (test_gateway_response_live.LiveResponseChecks.test_mismatched_schema) ... ok
+test_missing_binding_refused (test_gateway_response_live.LiveResponseChecks.test_missing_binding_refused) ... ok
+test_mount_change_releases_native_mutex (test_gateway_response_live.LiveResponseChecks.test_mount_change_releases_native_mutex) ... ok
+test_no_write_or_new_connection_or_raw_file (test_gateway_response_live.LiveResponseChecks.test_no_write_or_new_connection_or_raw_file) ... ok
+test_non_constructor_check_does_not_claim_zero_initial_writes (test_gateway_response_live.LiveResponseChecks.test_non_constructor_check_does_not_claim_zero_initial_writes) ... ok
+test_other_actor_refused (test_gateway_response_live.LiveResponseChecks.test_other_actor_refused) ... ok
+test_other_state_binding_refused (test_gateway_response_live.LiveResponseChecks.test_other_state_binding_refused) ... ok
+test_pending_response_identity_not_reinterpreted (test_gateway_response_live.LiveResponseChecks.test_pending_response_identity_not_reinterpreted) ... ok
+test_queryonly_not_reset (test_gateway_response_live.LiveResponseChecks.test_queryonly_not_reset) ... ok
+test_response_count_limit_never_evicts (test_gateway_response_live.LiveResponseChecks.test_response_count_limit_never_evicts) ... ok
+test_retention_configuration_mismatch (test_gateway_response_live.LiveResponseChecks.test_retention_configuration_mismatch) ... ok
+test_settled_identity_retained (test_gateway_response_live.LiveResponseChecks.test_settled_identity_retained) ... ok
+test_swapped_state_handle_refused (test_gateway_response_live.LiveResponseChecks.test_swapped_state_handle_refused) ... ok
+test_temp_identity_table_does_not_hide_pending (test_gateway_response_live.LiveResponseChecks.test_temp_identity_table_does_not_hide_pending) ... ok
+test_unexpected_application_or_user_version (test_gateway_response_live.LiveResponseChecks.test_unexpected_application_or_user_version) ... ok
+test_weak_sync_not_raised (test_gateway_response_live.LiveResponseChecks.test_weak_sync_not_raised) ... ok
+test_wrong_types_have_no_mount_or_query (test_gateway_response_live.LiveResponseChecks.test_wrong_types_have_no_mount_or_query) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.731s
+
+OK

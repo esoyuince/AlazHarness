@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T00:39:43.766993+03:00",
+  "firstRunRetained": "native-001",
+  "observed": "canonical pending work refused before epoch/response constructor but state DB byte hash changes after preexisting SessionDB constructor",
+  "correction": "keep response-error cases strict zero parent opens and unchanged all file bytes; canonical pending case compare exact epoch/admission rows and unchanged replay/response bytes, record canonical hash change rather than claim total constructor purity",
+  "productSourceChanged": false,
+  "previousProbeSha256": "80e8f25c4c957bb6deea3666241cc72bdeca7af39c06383d70c70eb7def738a0",
+  "currentProbeSha256": "ce5b1e61370633e825c9a582e7510675234a80004f7b0256438c95826ad06361"
+}

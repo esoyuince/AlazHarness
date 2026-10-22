@@ -1,0 +1,10 @@
+{
+  "requestId": "7b113d18-a236-4b16-8850-cadf11300021",
+  "state": "BLOCKED_TOOL_SAFETY_CHECK",
+  "proposedAction": "move optional response feature source-check before both canonical writable constructors and rerun native fixture",
+  "notRetriedViaAnyOtherToolOrEncoding": true,
+  "readOnlyVerificationRequest": "7b113d18-a236-4b16-8850-cadf11300022",
+  "allProductAndQaBytesStillEqualSuccessfulNative002": true,
+  "native003DoesNotExist": true,
+  "currentSourceCheckScope": "before response constructor, after pair constructors/live check; not the proposed earlier boundary"
+}

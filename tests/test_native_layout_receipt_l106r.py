@@ -1,4 +1,5 @@
-"""Actual L106R current-source native layout/restart proof, not full admission."""
+"""Actual L106R historical-source native layout/restart proof, not full admission."""
+from historical_sources_l113f6 import receipt_source_hash
 import hashlib
 import json
 from pathlib import Path
@@ -29,14 +30,14 @@ class NativeLayoutReceipt(unittest.TestCase):
             self.assertTrue(0<t['sourceChunks']<=16)
             raw=json.dumps(t['nativeSources'],sort_keys=True,separators=(',',':')).encode()
             self.assertEqual(hashlib.sha256(raw).hexdigest(),t['sourceDigest'])
-    def test_exact_current_sources_and_pinned_native_files(self):
+    def test_exact_historical_sources_and_pinned_native_files(self):
         manifest=json.loads((E/'native-002-source-manifest.json').read_text())
         self.assertEqual(manifest,self.o['sources']);self.assertEqual(manifest,self.r['sourceSha256'])
         native=json.loads((ROOT/'evidence/d3b-native-stores-h105e/native-source-inventory.json').read_text())
         for name,want in manifest.items():
             with self.subTest(source=name):
                 if name.startswith(('packages/','scripts/','tests/','evidence/')):
-                    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+                    self.assertEqual(receipt_source_hash(ROOT,name,want),want)
                 elif name.startswith('vendor-native/'):
                     self.assertEqual(native['nativeSources'][name[len('vendor-native/'):]]['sha256'],want)
                 else:
