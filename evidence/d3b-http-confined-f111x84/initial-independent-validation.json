@@ -1,0 +1,14 @@
+{
+  "state": "SCOPED_CONFINED_HTTP_PROOF_CONSISTENT",
+  "lifetimes": 2,
+  "httpObservations": 22,
+  "targetCheckCounts": [
+    49,
+    54
+  ],
+  "parentChecks": 44,
+  "sourceCount": 467,
+  "newNativeExecution": false,
+  "launchAuthorized": false,
+  "fullD3BAccepted": false
+}

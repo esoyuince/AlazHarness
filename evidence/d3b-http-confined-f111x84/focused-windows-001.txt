@@ -1,0 +1,56 @@
+test_actual_native_receipt_passes_without_new_execution (test_f111x84_proof.ConfinedHttpProof.test_actual_native_receipt_passes_without_new_execution) ... ok
+test_ambient_host_directory_not_exported (test_f111x84_proof.ConfinedHttpProof.test_ambient_host_directory_not_exported) ... ok
+test_ambient_socket_positive_connection_not_ignored (test_f111x84_proof.ConfinedHttpProof.test_ambient_socket_positive_connection_not_ignored) ... ok
+test_boolean_transport_exit_is_not_zero (test_f111x84_proof.ConfinedHttpProof.test_boolean_transport_exit_is_not_zero) ... ok
+test_cleanup_independently_captured (test_f111x84_proof.ConfinedHttpProof.test_cleanup_independently_captured) ... ok
+test_default_metadata_permission_not_weakened (test_f111x84_proof.ConfinedHttpProof.test_default_metadata_permission_not_weakened) ... ok
+test_detach_must_precede_second_lifetime (test_f111x84_proof.ConfinedHttpProof.test_detach_must_precede_second_lifetime) ... ok
+test_different_image_size_refused (test_f111x84_proof.ConfinedHttpProof.test_different_image_size_refused) ... ok
+test_duplicate_json_and_nonfinite_refused (test_f111x84_proof.ConfinedHttpProof.test_duplicate_json_and_nonfinite_refused) ... ok
+test_duplicate_phase_refused (test_f111x84_proof.ConfinedHttpProof.test_duplicate_phase_refused) ... ok
+test_duplicate_reuse_not_false_success (test_f111x84_proof.ConfinedHttpProof.test_duplicate_reuse_not_false_success) ... ok
+test_epoch_not_advanced_twice (test_f111x84_proof.ConfinedHttpProof.test_epoch_not_advanced_twice) ... ok
+test_expected_source_not_taken_from_receipt (test_f111x84_proof.ConfinedHttpProof.test_expected_source_not_taken_from_receipt) ... ok
+test_extra_proc_grants_refused (test_f111x84_proof.ConfinedHttpProof.test_extra_proc_grants_refused) ... ok
+test_failure_not_overridden_by_true_checks (test_f111x84_proof.ConfinedHttpProof.test_failure_not_overridden_by_true_checks) ... ok
+test_file_inode_binds_to_prepared_identity (test_f111x84_proof.ConfinedHttpProof.test_file_inode_binds_to_prepared_identity) ... ok
+test_health_cannot_claim_storage (test_f111x84_proof.ConfinedHttpProof.test_health_cannot_claim_storage) ... ok
+test_host_reachable_refused_despite_true_flags (test_f111x84_proof.ConfinedHttpProof.test_host_reachable_refused_despite_true_flags) ... ok
+test_host_timeout_is_not_connection_refusal (test_f111x84_proof.ConfinedHttpProof.test_host_timeout_is_not_connection_refusal) ... ok
+test_http_body_cannot_grant_dispatch (test_f111x84_proof.ConfinedHttpProof.test_http_body_cannot_grant_dispatch) ... ok
+test_http_cleanup_unknown_not_accepted (test_f111x84_proof.ConfinedHttpProof.test_http_cleanup_unknown_not_accepted) ... ok
+test_http_failure_observation_must_be_kept (test_f111x84_proof.ConfinedHttpProof.test_http_failure_observation_must_be_kept) ... ok
+test_image_lease_not_released_before_cleanup (test_f111x84_proof.ConfinedHttpProof.test_image_lease_not_released_before_cleanup) ... ok
+test_import_digest_substitution_refused (test_f111x84_proof.ConfinedHttpProof.test_import_digest_substitution_refused) ... ok
+test_import_frame_digest_refused (test_f111x84_proof.ConfinedHttpProof.test_import_frame_digest_refused) ... ok
+test_integer_success_flag_not_true (test_f111x84_proof.ConfinedHttpProof.test_integer_success_flag_not_true) ... ok
+test_invented_extra_check_count_refused (test_f111x84_proof.ConfinedHttpProof.test_invented_extra_check_count_refused) ... ok
+test_json_size_and_structure_bound (test_f111x84_proof.ConfinedHttpProof.test_json_size_and_structure_bound) ... ok
+test_landlock_is_not_claimed_as_network_proof (test_f111x84_proof.ConfinedHttpProof.test_landlock_is_not_claimed_as_network_proof) ... ok
+test_live_target_must_not_be_root (test_f111x84_proof.ConfinedHttpProof.test_live_target_must_not_be_root) ... ok
+test_missing_second_target_refused (test_f111x84_proof.ConfinedHttpProof.test_missing_second_target_refused) ... ok
+test_monotonic_readiness_cannot_return_200_again (test_f111x84_proof.ConfinedHttpProof.test_monotonic_readiness_cannot_return_200_again) ... ok
+test_overclaimed_full_gateway_refused (test_f111x84_proof.ConfinedHttpProof.test_overclaimed_full_gateway_refused) ... ok
+test_pending_start_cannot_advance_epoch (test_f111x84_proof.ConfinedHttpProof.test_pending_start_cannot_advance_epoch) ... ok
+test_persisted_row_cannot_change (test_f111x84_proof.ConfinedHttpProof.test_persisted_row_cannot_change) ... ok
+test_profile_contention_must_really_refuse (test_f111x84_proof.ConfinedHttpProof.test_profile_contention_must_really_refuse) ... ok
+test_provider_call_not_covered_by_zero_flag (test_f111x84_proof.ConfinedHttpProof.test_provider_call_not_covered_by_zero_flag) ... ok
+test_public_bind_rejected (test_f111x84_proof.ConfinedHttpProof.test_public_bind_rejected) ... ok
+test_raw_receipt_exact_copy_and_separate_source_expectations (test_f111x84_proof.ConfinedHttpProof.test_raw_receipt_exact_copy_and_separate_source_expectations) ... ok
+test_ready_must_be_positive_before_host_probe (test_f111x84_proof.ConfinedHttpProof.test_ready_must_be_positive_before_host_probe) ... ok
+test_remaining_capability_refused (test_f111x84_proof.ConfinedHttpProof.test_remaining_capability_refused) ... ok
+test_required_control_missing_even_with_fixed_count (test_f111x84_proof.ConfinedHttpProof.test_required_control_missing_even_with_fixed_count) ... ok
+test_retained_scope_cleanup_refused (test_f111x84_proof.ConfinedHttpProof.test_retained_scope_cleanup_refused) ... ok
+test_same_schema_but_other_store_uuid_refused (test_f111x84_proof.ConfinedHttpProof.test_same_schema_but_other_store_uuid_refused) ... ok
+test_transport_nonzero_cannot_be_pass (test_f111x84_proof.ConfinedHttpProof.test_transport_nonzero_cannot_be_pass) ... ok
+test_transport_source_mutation_refused (test_f111x84_proof.ConfinedHttpProof.test_transport_source_mutation_refused) ... ok
+test_two_results_not_one_lifetime_repeated (test_f111x84_proof.ConfinedHttpProof.test_two_results_not_one_lifetime_repeated) ... ok
+test_unclean_broker_is_not_hidden_by_parent_check (test_f111x84_proof.ConfinedHttpProof.test_unclean_broker_is_not_hidden_by_parent_check) ... ok
+test_wrong_host_port_does_not_prove_isolation (test_f111x84_proof.ConfinedHttpProof.test_wrong_host_port_does_not_prove_isolation) ... ok
+test_wrong_inode_negative_cannot_be_called_success (test_f111x84_proof.ConfinedHttpProof.test_wrong_inode_negative_cannot_be_called_success) ... ok
+test_wrong_native_pin_refused (test_f111x84_proof.ConfinedHttpProof.test_wrong_native_pin_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.142s
+
+OK

@@ -1,0 +1,19 @@
+from pathlib import Path,PurePosixPath
+import json,hashlib,os,sys,tempfile,subprocess
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+files=json.load(sys.stdin);assert len(files)==7
+with tempfile.TemporaryDirectory(prefix='alaz-f111x84-proof-',dir='/tmp') as tmp:
+ root=Path(tmp)
+ for name,item in files.items():
+  p=PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts
+  raw=item['text'].encode();assert hashlib.sha256(raw).hexdigest()==item['sha256']
+  target=root/name;target.parent.mkdir(parents=True,exist_ok=True)
+  with target.open('xb') as f:f.write(raw)
+ code="import sys,runpy; sys.addaudithook(lambda event,args: (_ for _ in ()).throw(PermissionError('offline_test')) if event in ('socket.connect','socket.bind','subprocess.Popen','os.system') else None);sys.argv=['unittest','discover','-s',sys.argv[1],'-p','test_f111x84_proof.py','-v'];runpy.run_module('unittest',run_name='__main__')"
+ r=subprocess.run([sys.executable,'-I','-B','-c',code,str(root/'tests')],cwd=root,env={'PATH':'/usr/bin:/bin','HOME':str(root),'LANG':'C.UTF-8'},capture_output=True,text=True,timeout=40)
+ report={'exitCode':r.returncode,'stdout':r.stdout,'stderr':r.stderr,'sources':{n:v['sha256'] for n,v in files.items()},'sourcesUnchanged':all(hashlib.sha256((root/n).read_bytes()).hexdigest()==v['sha256'] for n,v in files.items()),'uid':os.getuid(),'scope':'offline raw-proof consistency/mutation tests; no new native/HTTP/privileged execution','rootUsed':False}
+report['temporaryRootRemoved']=not root.exists()
+print(json.dumps(report),flush=True)
+raise SystemExit(0 if r.returncode==0 and report['sourcesUnchanged'] and report['temporaryRootRemoved'] else 1)
