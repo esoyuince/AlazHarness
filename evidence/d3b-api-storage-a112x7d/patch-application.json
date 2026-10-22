@@ -1,0 +1,16 @@
+{
+  "baseNativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "baseFileSha256": "378a6283622609b945d3596eb0b1aaeca3ea11b9cd013020ec3897e4b77ba5ee",
+  "patchSha256": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+  "checkExit": 0,
+  "applyExit": 0,
+  "afterSources": {
+    "gateway/platforms/api_server_response_store.py": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+    "gateway/platforms/api_server_response_state.py": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83"
+  },
+  "secondApplicationRejected": true,
+  "repeatExit": 1,
+  "temporaryLocalAutocrlfDisabled": true,
+  "originalVendorEdited": false,
+  "temporaryExportRemoved": true
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-22T23:56:02.896527+03:00",
+  "parallelBranch": "alaz/d3b-api-borrow-b112x9",
+  "selectedScope": "ResponseStore canonical read borrowing only; no adapter ownership duplication",
+  "nativeBase": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-api-storage-a112x7d",
+  "callerStateNeverOpenedOrClosed": true,
+  "productPinUnchanged": true,
+  "testsRun": false
+}

@@ -1,0 +1,48 @@
+{
+  "priorRequest": "a112f6c4-540e-44db-934b-e97f28110014",
+  "stoppedBeforeNativeCommit": true,
+  "attempts": [
+    {
+      "localAutocrlfDisabled": false,
+      "files": {
+        "gateway/platforms/api_server_response_store.py": {
+          "sha256": "50a2f6355328235578ebc16d381af9e41e5680f88e0d3f0374083c2f6b819205",
+          "expected": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+          "CRLF": 316,
+          "LF": 316,
+          "normalizedMatches": true
+        },
+        "gateway/platforms/api_server_response_state.py": {
+          "sha256": "d6e1a1910772242c279fd932055f05df0d5e42c71a88ac385a3972e78d9cfe77",
+          "expected": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+          "CRLF": 93,
+          "LF": 93,
+          "normalizedMatches": true
+        }
+      },
+      "sourceMatches": false
+    },
+    {
+      "localAutocrlfDisabled": true,
+      "files": {
+        "gateway/platforms/api_server_response_store.py": {
+          "sha256": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+          "expected": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+          "CRLF": 0,
+          "LF": 316,
+          "normalizedMatches": true
+        },
+        "gateway/platforms/api_server_response_state.py": {
+          "sha256": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+          "expected": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+          "CRLF": 0,
+          "LF": 93,
+          "normalizedMatches": true
+        }
+      },
+      "sourceMatches": true
+    }
+  ],
+  "sourcePatchModified": false,
+  "onlyTemporaryRepoSettingChanged": true
+}

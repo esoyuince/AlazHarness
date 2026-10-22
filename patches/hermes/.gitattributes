@@ -1,0 +1,2 @@
+# Preserve unified-diff blank context; executable source checks remain unchanged.
+a112x7d-response-canonical-state.patch text eol=lf whitespace=-blank-at-eol

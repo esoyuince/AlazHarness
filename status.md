@@ -1,62 +1,28 @@
-# AlazHarness — status
+# AlazHarness - status
 
-## D3B-HTTP-FULL-JOINT-J111X84 — DEVELOPMENT-INTEGRATED; SCOPED PASS
+## D3B-RESPONSE-BORROW-A112X7D - SCOPED PATCH PASS; INTEGRATION PENDING
 
-Canonical branch alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested merge0bffda233f2d1cd969961b0e8a9d49f7aad3b40e. Existing canonical
-full-isolation delivery ancestry retained by documentation-only merge before
-fast-forward. Exact refs in evidence/d3b-http-full-joint-j111x84/delivery.json.
-No original product/runtime code changed; H110E/A109/P102 are still sole paths.
+Harness branch alaz/d3b-api-storage-a112x7d at base31abe58; own native fork
+alaz/d3b-api-storage-a112x7d commit e19a945342c94138c685ac919b208d558ddcc53a.
+Native worktree scratch/worktrees/hermes-api-storage-a112x7d is CLEAN.
+Vendor main/source lock/installed runtime NOT updated. Patch is optional artifact.
 
-### New acceptance boundary closed
+ResponseStore canonical_state reuses exact live caller SessionDB, no duplicate
+canonical SQLite open/close, no _read_ctx pool/reopen; samehome/handle/lock/actor/
+generation checks. Reject busy/active/closed/foreign state and memory fallback.
+Default behavior unchanged.24 genuine native methods PASS Windows and Linux,
+7 offline receipts PASS.427 original harness sources unchanged. No listener,
+provider/root/mount action. Native full pytest suite NOT RUN, full harness suite
+deferred to one combined run after B112X9 adapter seam becomes terminal.
 
-SAME StorageReadinessHttp and NativeStoreStartup after exec under canonical
-private network/mount/IPC, UID23001/GID23003, seccomp/Landlock and persistent
-ext4 profile. Two COMPLETE mount/exec lifetimes, native rows/inodes/UUID stable,
-epochs1->2, duplicate reuse. Private loopback HTTP200 while same port from host
-netns returnsECONNREFUSED. Epoch drift503 stays503 after restore; liveness-only200.
-HTTP drain precedes storage close; active transactions preserve ownership.
-Native profile release does not release image while process lives. Final image
-lease released only after process exit/unmount/loop detach.2brokerpings/0sends.
+Records docs/D3B-RESPONSE-BORROW-A112X7D.md and evidence/d3b-api-storage-a112x7d/.
+Patch patches/hermes/a112x7d-response-canonical-state.patch, exact apply/hash proof,
+first Windows autocrlf mismatch and commit-identity stop retained. Prior statuses
+archived docs/status-history/a112x7d-*.md. All actual native tests terminal0,
+temporary data/code removed, no unknown-effect operation.
 
-Actual F111E274native001:44 parent predicates and49/54 target predicates,
-22HTTP observations, not147 trials. Root controller only in approved P71C;
-ordinary final target. Lab initially stopped/started by that native preflight,
-defaultUbuntu untouched; cleanup no owned processes/loops/fences/sockets/cgroups,
-image retained unattached. Independent F111X84 did NOT rerun privileged fixture.
-
-### Current verification
-
-NEW combined fullWindows2798=2775PASS/23SKIP/0ERROR/0FAIL exit0;427 hashes stable;
-ALL420 original sources unchanged.40 original parent evidence blobs preserved.
-Independent51 offline source/raw-proof/tamper methods PASS Windows/Linux; all
-standard-suite subsets/platform repeats, not new native executions.27 earlier
-selected Linux startup unit methods are separate.23 old platform/opt-in Windows
-skips not rerun. Expected467 source hashes separately matched (276 immutable
-native Git,139 pinned installed dependencies, canonical/QA sources).
-
-Metadata bookkeeping's Windows default-decoding error was repaired with explicit
-UTF8, preserving pre-correction bytes and all original test/native evidence.
-Final code/source bytes never changed after the complete accepted run.
-
-### Exact next step / limits
-
-Full isolated DIAGNOSTIC readiness acceptance now complete. Native Hermes agent
-HTTP adapter and work/model routes remain CLOSED. Next single borrowed-state/
-replay/ResponseStore ownership contract and legitimate in-flight healthy/busy
-policy; then fixed agent HTTP admission and broker live-ledger/dummy-provider
-send/accounting. No partial-pair automatic retry. Two-store atomic recovery and
-power-loss safety not accepted. LegacyIPCv2 CLOSED/fullD3B OPEN. Old R91F/G82C
-denied operations were not retried. No main/push/CI/production/account changes.
-
-### Records
-
-Report docs/D3B-HTTP-FULL-JOINT-J111X84.md.
-Joint evidence evidence/d3b-http-full-joint-j111x84/summary.json, delivery.json,
-full-windows-result.json, full-sources-before/after.json, static-primary-final.txt.
-Original native evidence evidence/d3b-http-confined-f111e274/native-001-stdout.txt.
-Independent source/proof evidence evidence/d3b-http-confined-f111x84/.
-Prior handoffs/work logs archived docs/status-history/j111x84-*.md.
-All native/selected/full/merge operations terminal. Final documentation/static
-commit follows; read GitHEAD for current continuation. Maincc7ceba/no push.
+Next preserve BOTH complementary patches, verify actual native adapter borrow/
+close without factory replacement, run fresh combined regression and stage
+artifacts only. Native response third-store cold schema/preflight/A109 ownership
+and healthy-busy HTTP readiness remain open; do not activate a listener or change
+pin before that acceptance. Maincc7ceba/no push/CI/production edits; fullD3B OPEN.

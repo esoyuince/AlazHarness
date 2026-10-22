@@ -1,0 +1,28 @@
+{
+  "job": "D3B-RESPONSE-CANONICAL-BORROW-A112X7D",
+  "result": "PASS_SCOPED_OPT_IN_NATIVE_PATCH",
+  "at": "2026-10-23T00:05:06.896391+03:00",
+  "baseHarness": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "baseNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeForkCommit": "e19a945342c94138c685ac919b208d558ddcc53a",
+  "patchSha256": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+  "changedNativeFiles": {
+    "gateway/platforms/api_server_response_store.py": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+    "gateway/platforms/api_server_response_state.py": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83"
+  },
+  "windowsNativeMethods": 24,
+  "linuxNativeMethods": 24,
+  "distinctNativeMethods": 24,
+  "offlineReceiptMethods": 7,
+  "harnessOriginalSourcesUnchanged": 427,
+  "activeSourcePinChanged": false,
+  "thirdStorePreparedStartupIntegrated": false,
+  "nativeHttpListenerStarted": false,
+  "healthyBusyPolicyImplemented": false,
+  "nativeFullSuiteRun": false,
+  "fullHarnessSuite": "pending combined branch",
+  "modelOrProviderCalls": 0,
+  "rootOrMountChanges": false,
+  "mainChanged": false,
+  "pushed": false
+}
