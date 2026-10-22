@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T02:46:38.166713+03:00",
+  "nativeFeature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "nativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-api-borrow-b112x9",
+  "sources": {
+    "packages/claw-hermes/gateway_work_health.py": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+    "scripts/qa/b115w6_native_work_health.py": "cc8be997fb4f17352fe7be4d106cfee8c1b8089387832f0ee94121e48b0d8ccd",
+    "scripts/qa/a112x7d_response_probe.py": "809fa4540d3b5fda9c62cc17fd7b1a8ac9c5f1661b8740b694f40466fe031aa3"
+  },
+  "scope": "Windows owned temporary native profiles; policy/native-row compatibility; owner inventory and storage-verification flags explicit QA fixtures",
+  "rootWslOrNetworkAction": false,
+  "installedFeatureActivated": false
+}

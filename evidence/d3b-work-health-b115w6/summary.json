@@ -1,0 +1,22 @@
+{
+  "job": "D3B-WORK-HEALTH-B115W6",
+  "result": "PASS_SCOPED_POLICY_AND_NATIVE_DATA_MAPPING",
+  "at": "2026-10-23T02:52:08.369630+03:00",
+  "base": "971770443d486b1a3853ed8600ec370017948ab3",
+  "policySha256": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+  "unitMethods": 37,
+  "actualNativeDataMethods": 16,
+  "offlineReceiptMethods": 5,
+  "allOriginal454SourcesUnchanged": true,
+  "actualNativeTaskOwnershipProven": false,
+  "ownerInventoryAndStorageFlagsAreFixturesInNativeProbe": true,
+  "realReaderTestedInThisBranch": false,
+  "healthyBusyHttpIntegrated": false,
+  "nativeUpstreamFullSuiteRun": false,
+  "fullStandardRegression": "PENDING_COMBINED_POLICY_READER_RUN",
+  "rootWslAction": false,
+  "providerCalls": 0,
+  "installedFeatureActivated": false,
+  "mainChanged": false,
+  "pushed": false
+}

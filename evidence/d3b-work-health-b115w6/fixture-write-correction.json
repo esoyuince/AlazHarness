@@ -1,0 +1,7 @@
+{
+  "firstRequest": "b115a9f1-2864-438f-9d11-231015000007",
+  "failure": "test source string contained an actual unpaired surrogate and failed compile before test-file write",
+  "testProcessStarted": false,
+  "correction": "construct invalid header string with chr(0xdcff) inside test instead of encoding it in source",
+  "productNativeGenerationMapping": "native queued generation is NULL, not fabricated zero"
+}

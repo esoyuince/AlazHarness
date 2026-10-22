@@ -1,0 +1,21 @@
+test_native_new_epoch_cannot_inherit_previous_owner (__main__.NativeWorkPolicy.test_native_new_epoch_cannot_inherit_previous_owner) ... ok
+test_native_unknown_after_explicit_fixture_recovery_not_replayable (__main__.NativeWorkPolicy.test_native_unknown_after_explicit_fixture_recovery_not_replayable) ... ok
+test_real_all_three_running_links_busy (__main__.NativeWorkPolicy.test_real_all_three_running_links_busy) ... ok
+test_real_complete_settlement_chain_to_idle (__main__.NativeWorkPolicy.test_real_complete_settlement_chain_to_idle) ... ok
+test_real_dead_owner_does_not_get_rebuilt_from_rows (__main__.NativeWorkPolicy.test_real_dead_owner_does_not_get_rebuilt_from_rows) ... ok
+test_real_drain_does_not_turn_completed_owner_into_new_capacity (__main__.NativeWorkPolicy.test_real_drain_does_not_turn_completed_owner_into_new_capacity) ... ok
+test_real_duplicate_json_fault_never_means_healthy (__main__.NativeWorkPolicy.test_real_duplicate_json_fault_never_means_healthy) ... ok
+test_real_empty_native_inventory_idle (__main__.NativeWorkPolicy.test_real_empty_native_inventory_idle) ... ok
+test_real_partial_settlement_owner_gone_is_not_idle (__main__.NativeWorkPolicy.test_real_partial_settlement_owner_gone_is_not_idle) ... ok
+test_real_pid_reuse_fixture_refused (__main__.NativeWorkPolicy.test_real_pid_reuse_fixture_refused) ... ok
+test_real_queue_generation_null_and_owned_busy (__main__.NativeWorkPolicy.test_real_queue_generation_null_and_owned_busy) ... ok
+test_real_response_transaction_not_rolled_back_by_observer (__main__.NativeWorkPolicy.test_real_response_transaction_not_rolled_back_by_observer) ... ok
+test_real_running_session_is_not_corruption (__main__.NativeWorkPolicy.test_real_running_session_is_not_corruption) ... ok
+test_real_temp_shadow_cannot_hide_main_pending (__main__.NativeWorkPolicy.test_real_temp_shadow_cannot_hide_main_pending) ... ok
+test_real_unowned_queue_requires_reconciliation (__main__.NativeWorkPolicy.test_real_unowned_queue_requires_reconciliation) ... ok
+test_real_worker_registry_not_disguised_as_idle (__main__.NativeWorkPolicy.test_real_worker_registry_not_disguised_as_idle) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 20.050s
+
+OK
