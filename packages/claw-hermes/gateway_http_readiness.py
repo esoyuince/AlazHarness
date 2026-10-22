@@ -4,6 +4,9 @@ Compose the canonical NativeStoreStartup once; never construct an API adapter,
 second database owner, model or arbitrary request handler. Only GET /health/live
 and GET /health/ready exist. These diagnostic routes do NOT authorize dispatch.
 Caller retains ProfileLease until close() confirms both listener and stores.
+Optional response_ready=True checks the third native handle explicitly; default
+selection still refuses a response-configured startup. All observations require
+quiescent stores and do NOT implement healthy/busy agent-serving readiness.
 Uncertain HTTP cleanup forbids store close/retry; terminate the owned process.
 """
 from __future__ import annotations
@@ -48,9 +51,22 @@ class StorageReadinessHttp:
     of entropy. This class is NOT a public-facing/auth-provider HTTP Gateway.
     No self-healing after revoked readiness; establish a new lifecycle instead.
     """
-    def __init__(self,stores,*,token,port=0):
+    def __init__(self,stores,*,token,port=0,response_ready=False):
         require(type(stores) is startup.NativeStoreStartup,'readiness_native_startup_required')
-        require(getattr(stores,'_response_expected',None) is None,'readiness_three_store_not_qualified')
+        require(type(response_ready) is bool,'readiness_response_option')
+        configured=getattr(stores,'_response_expected',None)
+        if response_ready:
+            require(type(configured) is startup.response_preopen.PreparedResponseExpectation,
+                    'readiness_response_expectation_required')
+        else:
+            require(configured is None,'readiness_three_store_not_qualified')
+        self._response_mode=response_ready
+        self._scope=('native_three_store_quiescent_readiness_only' if response_ready
+                     else 'native_storage_readiness_only')
+        self._configured_response=configured
+        self._response_live_expected=(startup.response_live.ResponseConnectionExpectation(
+            configured.native_feature,configured.schema_sha256,configured.response_identity,
+            configured.max_size,configured.max_identities) if response_ready else None)
         require(type(token) is str and re.fullmatch('[0-9a-f]{64}',token) is not None,
                 'readiness_local_token_required')
         require(type(port) is int and 0<=port<=65535,'readiness_loopback_port')
@@ -68,22 +84,57 @@ class StorageReadinessHttp:
         require(self._loop is None or loop is self._loop,'readiness_other_loop')
         return loop
 
-    def _probe(self):
-        self._owned()
-        require(not self._revoked,'readiness_revoked')
-        require(self._stores.status()['state']=='VERIFIED','readiness_storage_not_verified')
-        self._stores._owned();self._stores._drained()
+    def _configuration(self):
+        require(getattr(self._stores,'_response_expected',None) is self._configured_response,
+                'readiness_response_configuration_changed')
+
+    def _check_handles(self):
+        self._configuration()
         state,replay=self._stores.state_store,self._stores.replay_store
-        require(state is self._native[0] and replay is self._native[1]
-                and state._conn is self._handles[0]
-                and replay._conn is self._handles[1], 'readiness_store_handle_changed')
+        current=(state,replay)
+        if self._response_mode:
+            require(self._stores.response_expectation is self._configured_response,
+                    'readiness_response_expectation_changed')
+            current+=(self._stores.response_store,)
+        require(len(current)==len(self._native) and
+                all(store is saved and store._conn is conn
+                    for store,saved,conn in zip(current,self._native,self._handles)),
+                'readiness_store_handle_changed')
         require(self._stores.expectation==self._expected,'readiness_expectation_changed')
+        return current
+
+    def _pair_probe(self,state,replay):
         proof=startup.live.verify_live_stores(self._stores._held,self._stores._mount,
                                              state,replay,self._expected)
         require(proof['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED'
                 and proof['epochObserved']==self._expected.epoch
                 and proof['runtimeAdmissionAuthorized'] is False,
                 'readiness_live_result')
+
+    def _probe(self):
+        self._owned()
+        require(not self._revoked,'readiness_revoked')
+        require(self._stores.status()['state']=='VERIFIED','readiness_storage_not_verified')
+        self._stores._owned();self._stores._drained()
+        current=self._check_handles()
+        state,replay=current[:2]
+        self._pair_probe(state,replay)
+        if self._response_mode:
+            proof=startup.response_live.verify_response_connection(
+                self._stores._held,self._stores._mount,state,current[2],
+                self._response_live_expected,constructor=False)
+            require(proof['state']=='NATIVE_RESPONSE_CONNECTION_VERIFIED'
+                    and proof['featureCommit']==self._configured_response.native_feature
+                    and proof['sameCanonicalConnectionBorrowed'] is True
+                    and all(proof[key] is False for key in (
+                        'newDatabaseConnectionsOpened','rawDatabaseDescriptorsOpened',
+                        'sqlWritesPerformed','connectionsClosed','runtimeAdmissionAuthorized')),
+                    'readiness_response_live_result')
+            # Bracket the third-store observation with the existing pair check.
+            # This is quiescent diagnostics, NOT a multi-store transaction.
+            self._pair_probe(state,replay)
+            self._check_handles()
+            self._stores._owned();self._stores._drained()
         self._probes+=1
 
     async def start(self):
@@ -91,11 +142,16 @@ class StorageReadinessHttp:
         require(self._stage=='NEW','readiness_not_fresh')
         self._stage='STARTING'
         try:
+            self._configuration()
             proof=self._stores.start()
             require(proof['state']=='VERIFIED' and proof['storageReady'] is True,
                     'readiness_startup_result')
             self._expected=self._stores.expectation
             self._native=(self._stores.state_store,self._stores.replay_store)
+            if self._response_mode:
+                require(self._stores.response_expectation is self._configured_response,
+                        'readiness_response_expectation_changed')
+                self._native+=(self._stores.response_store,)
             self._handles=tuple(store._conn for store in self._native)
             self._probe()  # Revalidate immediately before ANY listener construction.
             web=self._web_module=_web()
@@ -129,7 +185,9 @@ class StorageReadinessHttp:
     def status(self):
         self._owned()
         return {'state':self._stage,'host':'127.0.0.1','port':self._bound_port,
-                'scope':'native_storage_readiness_only','listenerBindConfirmed':self._bound_port is not None and not self._http_gone,
+                'scope':self._scope,'responseIncluded':self._response_mode,
+                'configuredStoreCount':3 if self._response_mode else 2,'healthyBusyWorkPolicy':False,
+                'listenerBindConfirmed':self._bound_port is not None and not self._http_gone,
                 'httpCleanupPending':not self._http_gone,
                 'readinessRevoked':self._revoked,'successfulStorageObservations':self._probes,
                 'storageReadinessMustBeQueried':True,'agentRoutesEnabled':False,
@@ -160,7 +218,7 @@ class StorageReadinessHttp:
             return self._response(404,{'status':'not_found'})
         if request.method!='GET':return self._response(405,{'status':'method_not_allowed'})
         if self._stage not in ('SERVING','REVOKED'):
-            return self._response(503,{'status':'stopping','scope':'native_storage_readiness_only'})
+            return self._response(503,{'status':'stopping','scope':self._scope})
         if request.raw_path=='/health/live':
             return self._response(200,{'status':'alive','scope':'process_liveness_only',
                                        'runtimeAdmissionAuthorized':False})
@@ -171,7 +229,7 @@ class StorageReadinessHttp:
         ready=not self._revoked
         return self._response(200 if ready else 503,{
             'status':'ready' if ready else 'not_ready','storageReady':ready,
-            'scope':'native_storage_readiness_only','runtimeAdmissionAuthorized':False,
+            'scope':self._scope,'runtimeAdmissionAuthorized':False,
             'agentRoutesEnabled':False})
 
     async def close(self):

@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "total": 2945,
+  "discovered": 2945,
+  "passed": 2922,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 449,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "unchangedOriginalSources": 444,
+  "changedOriginalSources": [
+    "packages/claw-hermes/gateway_http_readiness.py",
+    "tests/test_three_store_receipt_l113f6.py"
+  ],
+  "elapsedSeconds": 306.507,
+  "at": "2026-10-23T01:31:37.637150+03:00",
+  "scope": "explicit third-store diagnostic HTTP and current native receipts; not new full namespace execution"
+}

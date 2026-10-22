@@ -1,0 +1,18 @@
+test_all_controls_and_scope_are_explicit (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_all_controls_and_scope_are_explicit) ... ok
+test_default_two_store_control_still_runs (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_default_two_store_control_still_runs) ... ok
+test_executed_sources_with_historical_http_snapshot (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_executed_sources_with_historical_http_snapshot) ... ok
+test_first_failure_and_blocked_optional_refinement_retained (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_first_failure_and_blocked_optional_refinement_retained) ... ok
+test_later_pending_canonical_refusal_is_not_byte_purity_claim (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_later_pending_canonical_refusal_is_not_byte_purity_claim) ... ok
+test_response_refusals_precede_any_parent_writable_open (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_response_refusals_precede_any_parent_writable_open) ... ok
+test_two_new_processes_preserve_response_and_advance_once (test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_two_new_processes_preserve_response_and_advance_once) ... ok
+test_http_drain_precedes_response_transaction_settlement (test_three_store_http_receipt_h114r6.ThreeHttpProof.test_http_drain_precedes_response_transaction_settlement) ... ok
+test_only_response_drift_revokes_and_restore_stays_revoked (test_three_store_http_receipt_h114r6.ThreeHttpProof.test_only_response_drift_revokes_and_restore_stays_revoked) ... ok
+test_response_preopen_and_bind_failure_are_not_zero_effect_confused (test_three_store_http_receipt_h114r6.ThreeHttpProof.test_response_preopen_and_bind_failure_are_not_zero_effect_confused) ... ok
+test_scope_counts_no_agent_api_or_full_namespace_claim (test_three_store_http_receipt_h114r6.ThreeHttpProof.test_scope_counts_no_agent_api_or_full_namespace_claim) ... ok
+test_success_current_imported_sources_and_exact_transport (test_three_store_http_receipt_h114r6.ThreeHttpProof.test_success_current_imported_sources_and_exact_transport) ... ok
+test_three_actual_connections_and_same_profile_reopen (test_three_store_http_receipt_h114r6.ThreeHttpProof.test_three_actual_connections_and_same_profile_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.098s
+
+OK

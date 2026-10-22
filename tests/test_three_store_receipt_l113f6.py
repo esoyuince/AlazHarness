@@ -8,7 +8,7 @@ class NativeThreeStoreReceipt(unittest.TestCase):
     def setUpClass(cls):
         cls.o=json.loads((E/'native-002-stdout.txt').read_bytes());cls.r=json.loads(cls.o['stdout'])
         cls.t={e['case']:json.loads(e['stdout']) for e in cls.r['events'] if e['mode']=='target' and e['exitCode']==0}
-    def test_terminal_actual_sources_match_current_product(self):
+    def test_executed_sources_with_historical_http_snapshot(self):
         self.assertEqual(self.o['exitCode'],0);self.assertEqual(self.r['result'],'PASS_NATIVE_THREE_STORE_STARTUP');self.assertIsNone(self.r['error'])
         self.assertIs(self.o['sourcesUnchanged'],True);self.assertIs(self.o['temporaryRootRemoved'],True)
         self.assertEqual(self.o['sources'],self.r['sourceSha256'])
@@ -17,7 +17,12 @@ class NativeThreeStoreReceipt(unittest.TestCase):
         deps=json.loads((ROOT/'evidence/d3b-native-stores-h105e/native-source-inventory.json').read_text(encoding='utf-8'))['dependency']['sourceSha256']
         for name,digest in self.o['sources'].items():
             with self.subTest(source=name):
-                if name.startswith(('packages/','scripts/')):self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest)
+                if name=='packages/claw-hermes/gateway_http_readiness.py':
+                    old=ROOT/'evidence/d3b-three-readiness-h114r6'
+                    baseline=json.loads((old/'baseline.json').read_text(encoding='utf-8'))
+                    self.assertEqual(baseline['sources'][name],digest)
+                    self.assertEqual(hashlib.sha256((old/'gateway_http_readiness.before.py.txt').read_bytes()).hexdigest(),digest)
+                elif name.startswith(('packages/','scripts/')):self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest)
                 elif name.startswith('vendor-native/'):self.assertEqual(native[name.removeprefix('vendor-native/')]['sha256'],digest)
                 else:self.assertEqual(deps[name.removeprefix('dependencies/')],digest)
         for t in self.t.values():

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T01:21:10.157383+03:00",
+  "parallelBranch": "alaz/d3b-three-projection-t114r6a",
+  "ownRole": "independent stronger readiness reference/expectation checks and QA; adopt one HTTP implementation only after exact-source qualification",
+  "selectedPublicOption": "response_ready=True",
+  "parallelSourceSha256": "a3f0a10fc9c3b565aad4d751cada03c8160d299237d8e399aa19a27570a0c21c",
+  "ownCandidateSha256": "7256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007",
+  "otherWorktreeModified": false,
+  "projectionOrBlockedEarlySourceCheckChanged": false
+}

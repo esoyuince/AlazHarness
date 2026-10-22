@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-23T01:31:44.734648+03:00",
+  "sourceReceipt": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-three-projection-t114r6a\\evidence\\d3b-three-projection-t114r6a\\native-003-stdout.txt",
+  "nativeReceiptSha256": "9b34ac57e3f330bda106966e85caea7bae019a99a4bb6c73ba5850ab9f80f2e0",
+  "nativeFeature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "transportSourceCount": 473,
+  "nativeGitFilesReread": 279,
+  "allCurrentParallelSourcesMatched": true,
+  "httpHashMatchesOwnNative001": "7256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007",
+  "parentChecks": 45,
+  "targetChecks": [
+    58,
+    63
+  ],
+  "httpObservations": 22,
+  "twoFullMountLifetimes": true,
+  "responseOnlyFaultRevocation": true,
+  "sameThreeInodesRows": true,
+  "hostRefusalSameLivePort": true,
+  "supervisorReportsNoResidualLoopFenceScope": true,
+  "separateCleanupToolBlockedRecord": {
+    "at": "2026-10-23T01:29:49.651710+03:00",
+    "requestId": "c114f2a7-43d2-4b06-86e9-667314000024",
+    "status": "BLOCKED_TOOL_SAFETY_CHECK",
+    "scope": "separate post-run Linux root cleanup observation, not the completed native experiment",
+    "reissuedOrBypassed": false,
+    "independentCleanupVerified": false,
+    "recordedNativeOwnTeardownPassed": true,
+    "nextPermittedWork": "local Windows source/receipt review and tests only; no new root query or native run"
+  },
+  "newNativeExecutionByReviewer": false,
+  "otherWorktreeModified": false,
+  "fullD3BAccepted": false,
+  "providerSends": 0
+}

@@ -1,90 +1,13 @@
 # AlazHarness - status
 
-## D3B-RESPONSE-STARTUP-JOINT-J113Q8 - SCOPED PASS; CANONICAL HANDOFF
+## D3B-THREE-READINESS-H114R6 - SCOPED PASS; CANONICAL INTEGRATION PENDING
 
-Continuation branch: alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested combined source commit9d383cf506dbb516b052d5b266c0562a2628e9f9.
-Independent evidence merge36729fce26ea6680359a183beda13ea176082e48 and prior
-canonical b414a13 are retained as parents of this documentation-only handoff.
-Exact refs/static/promotion operation in evidence/d3b-response-startup-joint-j113q8/delivery.json.
-Read GitHEAD for final current handoff; no source changes after the full run.
+Branch alaz/d3b-three-readiness-h114r6, worktree scratch/worktrees/d3b-three-readiness-h114r6, base0be65aa. One existing StorageReadinessHttp with explicit response_ready=True. Pin third expectation/objects/handles before effects, observe pair-response-pair and recheck ownership; default still refuses implicit third store. Only quiescent GET diagnostics; no native agent/task/model routes or healthy-busy policy.
 
-### Single selected implementation
+Current HTTP SHA2567256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007 frozen.69focused boundary-double methods PASS,29default real-wire Windows methods PASS (storage doubled). New genuine ordinary-P71C native00194 nested controls/4 scenarios PASS after finalexec+Landlock, no root/mount. Bad response schema0nativeconnect/noport, occupied port known epoch, actual response-only200->503->503, response transaction blocks stores after HTTP drain, new process same three inodes/epoch1->2. Native sources/temporary cleanup exact. No source check reorder or blocked L113refinement replay.
 
-R113Q8 fixed-process cold response preflight and L113F6 optional response live/
-close extension use the existing NativeStoreStartup, not a second storage owner.
-Default two-store behavior remains unchanged. Third-file layout is explicit only.
-Both cold preflights finish before writable constructors. The response expectation
-pins nativefeaturecc16c10, exact schema, distinct device/inode and100/1000 bounds.
-No trust learned from unknown candidate DBs. Normal read locks, mode=ro, bounded
-SQL/size/time, no immutable/nolock/recovery; parent opens no raw SQLite file.
-Unsettled identities, constructor eviction pressure, wrong schema/permission/
-identity or malformed/orphan data refuse without creating/repairing/evicting.
+NEW fullWindows2945=2922PASS/23SKIP/0ERROR/0FAIL exit0;449source hashes and2patches stable.444 old sources unchanged; HTTP+historical receipt binding modified;3new QA/test sources.23preexisting skips not rerun;21new unit+6offline receipts are subsets. Old L113receipt refers its actual saved039bc HTTP source, never re-labelled current proof.
 
-ResponseStore receives the SAME verified canonical state connection. Response
-source check precedes its constructor, after canonical pair constructors/live
-check. Both pair and response are checked before/after one clean epoch advance.
-Every handle is transaction-checked before close; response closes before replay
-and canonical state. Caller owns/relinquishes native profile lease separately.
-Unknown constructor/cleanup effects and replaced handles retain ownership.
+Concurrent T114R6A owns finite projection selector and full mount/netns acceptance. Same7256 HTTP selected, native00345parent+58/63target/22HTTP observations independently source/raw matched (473 files). Its completed supervisor teardown says clean; SEPARATE post-run root observation tool-BLOCKED and not retried, independent cleanup NOT VERIFIED. No projection integration/full-union acceptance inferred by this branch. Only read/local tests/delivery work after that blocked action. Preserve all originals; do not replay its blocked query via any tool.
 
-### Actual tests and provenance
-
-Complete combined Windows2918=2895PASS/23SKIP/0ERROR/0FAIL, exit0. All446
-source/config/test hashes and2 existing native patch hashes unchanged. Relative
-to434-source base:427 unchanged,3 deliberate runtime integration edits and4
-historical receipt-binding tests;12 new source/test files.60 current-task parent
-evidence blobs preserved. No second full/native run for documentation-only merge.
-23 preexisting platform/opt-in skips were not rerun. Native upstream full suite
-was not executed. Static gate is local, not remote CI/publication.
-
-Standalone cold checker44methods PASS Windows/Linux,6 offline receipt methods.
-Actual ordinaryP71C native preflight47nested checks/13refusal cases PASS, no mocks.
-Competing SQLite process BUSY before/after helper, acquires only after owner close.
-Populated response bytes unchanged and qualified reopen has zero response row writes.
-
-Integrated native002:9 fresh-process target cases/83 overlapping checks PASS:
-clean+reopen epochs1->2 with same three inodes/body, current two-store control,
-5 early response refusals and canonical-pending refusal. Actual native classes,
-279 immutable native source files independently verified; no root/mount/HTTP.
-Early response faults have0parentSQLiteopen and unchanged ALL DB bytes. Later
-canonical-pending refusal preserves exact epoch/admission rows and replay/response
-bytes, but state.db metadata bytes may change after existing native constructors.
-Original native001 broader byte-purity failure retained; never relabelled PASS.
-Historical two-store full confinement/HTTP receipts bind their exact old source
-snapshots, NOT current optional three-store behavior.
-
-### Remaining limits and exact next step
-
-Existing two-store HTTP diagnostics explicitly REFUSE a response-configured
-startup. Borrowed native agent listener remains CLOSED. Native feature patches
-are NOT installed; vendor/source-lock/gitlink remain on originaleb75627.
-Full three-store network/mount/IPC projection, remount and HTTP acceptance NOT
-RUN in this ordinary-user trial. Legitimate in-flight healthy/busy policy is
-not implemented by cold checks or busy-close refusal. Next qualify that SAME
-three-store path under canonical isolation and truthful readiness ownership;
-then native adapter healthy/busy and broker live-ledger/dummy-provider accounting.
-
-Optional earlier source-check refinement was tool-blocked and NOT retried by
-another action/tool/encoding; no native003 run. No partial/unknown automatic retry,
-canonical outcome-equivalence, cross-store atomic recovery or power-loss guarantee.
-LegacyIPCv2 CLOSED/fullD3B OPEN. No main/push/CIqueue/production/account/service/
-defaultUbuntu changes; no model/provider call or new mount/root operation.
-
-### Records
-
-Consolidated report docs/D3B-RESPONSE-STARTUP-JOINT-J113Q8.md.
-Joint evidence evidence/d3b-response-startup-joint-j113q8/{summary,delivery,source-custody}.json,
-static-final.txt, static-delivery-final.txt.
-Actual full/native records evidence/d3b-response-lifecycle-l113f6/{full-windows-result,
-full-sources-before,full-sources-after}.json and native-002-stdout.txt.
-Independent cold/source review evidence/d3b-response-preflight-r113q8/.
-Prior handoffs archived docs/status-history/j113q8-*.md and l113f6-*.md.
-All native/full operations terminal. Final source-identical Git promotion is
-checked by delivery operation048; no pending native replay or activation.
-
-
-### Interrupted-response recovery verified
-
-The earlier full request00028 was already terminal0 (2918 total,2895 PASS,23 SKIP); it was read, not replayed. Current canonical446 source hashes and2 patch hashes equal the tested9d383cf/native002 set;60 original parent evidence blobs verified against immutable Git. The full native/common-startup result is retained, not a new execution. No blocked refinement or native003 attempted. This follow-up changes only the status and evidence; full three-store isolation/HTTP readiness and native feature activation remain open/disabled. Recovery record: evidence/d3b-response-startup-joint-j113q8/resume-verification.json.
+Report docs/D3B-THREE-READINESS-H114R6.md, evidence/d3b-three-readiness-h114r6/{summary,full-windows-result,full-isolation-independent-review}.json. Prior handoffs archived docs/status-history/h114r6-*.md. All own native/full jobs terminal. Static/scoped commit follows; next preserve original projection history when terminal, run new combined regression, retain independent-cleanup limitation. Installed vendor/source-lock/main/push/CI/production unchanged; fullD3B OPEN/legacyIPCv2 CLOSED.

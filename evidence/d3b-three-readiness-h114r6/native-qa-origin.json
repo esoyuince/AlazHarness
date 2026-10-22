@@ -1,0 +1,14 @@
+{
+  "original": "scripts/qa/h110e_native_readiness.py",
+  "originalSha256": "a9f9ac4f85a86af256f00e80c13ee241a5e053d84408a3b61cdbf435bcc35c15",
+  "newQaSha256": "6b31c0e7c7a3d45d5ff3a478c0a0f56705abaf84894a8171e85dbdb7c9143d03",
+  "cases": [
+    "response-preopen-refusal",
+    "bind-conflict",
+    "normal",
+    "new-process-reopen"
+  ],
+  "existingQaChanged": false,
+  "mountOrRootAction": false,
+  "scope": "actual ordinary-P71C three-store aiohttp under final-exec Landlock; not full namespace isolation"
+}
