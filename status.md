@@ -2,6 +2,8 @@
 
 ## D3B-NATIVE-STORES-N105D — INDEPENDENT NATIVE RECOVERY QA PASS
 
+Tested QA/evidence commit `59fde69e3a91fbff95ed8a58cb5350753f5f8d4d`; current runtime remains unchanged. This branch is intentionally independent while concurrent H105E is still being finalized; canonical observed `30604dfcbb53d76b24bcf2a21996828d18afca49`. Final documentation/static delivery carries the same386 source hashes. No push/main/canonical promotion.
+
 Branch alaz/d3b-native-stores-n105d; worktree scratch/worktrees/d3b-native-stores-n105d; base30604df. Continue canonical P102/F104X/Q104E only. Qualify real pinned Hermes SessionDB and RunIdempotencyStore under final native ProfileLease, explicit refusal of in-memory fallback, and native epoch/recovery stale-work handling. Do not replay blocked R91F collector or G82C patch; no alternate projection or mock native storage success.
 
 Only already approved disposable P71C may host NEW /opt/alaz-n105d and /srv/alaz-n105d fixtures. No existing image format, production/defaultUbuntu/account/service/CI configuration change, real provider/model, push or main update. Existing source baseline captured. No native test begun. Verify source/dependency closure and current work ownership before transport. Source/QA failures preserved. Before constructors can repair/adopt existing databases, preflight expected on-disk native schema and ownership; no silent creation/recovery of unknown state. Power-loss and cross-database atomicity are not assumed.
@@ -6410,3 +6412,8 @@ Identical native crash matrix PASS on ordinaryP71C UID23001/GID23003:8 scenarios
 ### N105D terminal local QA checkpoint — 2026-10-22T04:19:07.649129+03:00
 
 Full request ba1f85c6-5d70-4d4f-8f50-23f0d9105015 terminal exit0. Windows native5009/Linux native5011/cleanup5016 terminal exit0. No uncertain effect or test job remains. Code/evidence commit being recorded; no canonical or remote promotion in this checkpoint.
+
+
+### Local delivery recorded
+
+QualifiedN105D code/evidence59fde69. Full2485=2462PASS/23SKIP, Windows/Linux actual8-scenario native replay/epoch matrix; no final confined-store integration or runtime patch. H105E also narrowed its current work to independent native crash QA; neither output should be called a completed production connection gate. Combine evidence only after terminal commits, or continue a single-owner implementation from canonical with exact native preprovisioning/open/recovery policy. Current branch clean after delivery commit; source freeze386 exact.

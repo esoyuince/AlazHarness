@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-22T04:21:12.773513+03:00",
+  "testedCodeAndEvidenceCommit": "59fde69e3a91fbff95ed8a58cb5350753f5f8d4d",
+  "branch": "alaz/d3b-native-stores-n105d",
+  "worktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-native-stores-n105d",
+  "canonicalObserved": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+  "mainObserved": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "concurrentH105EObserved": {
+    "head": "30604dfcbb53d76b24bcf2a21996828d18afca49",
+    "dirty": true,
+    "worktreeModifiedByThisTask": false
+  },
+  "sourceCount": 386,
+  "sourceHashEqualityVerified": true,
+  "nativeSchemasActual": true,
+  "finalConfinedIntegration": false,
+  "newRuntimePatch": false,
+  "windows": {
+    "total": 2485,
+    "passed": 2462,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "nativeScenariosPerPlatform": 8,
+  "childLifetimesPerPlatform": 17,
+  "mainUpdated": false,
+  "pushed": false,
+  "canonicalUpdatedByThisTask": false,
+  "labTerminatedByThisTask": false,
+  "allOwnJobsTerminal": true,
+  "next": "Use native evidence to implement one reviewed confined connection/recovery gate; do not repeat already qualified crash cases or treat QA union as product integration."
+}
