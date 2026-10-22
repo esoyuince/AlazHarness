@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-23T00:53:08.938311+03:00",
+  "testedCommit": "9d383cf506dbb516b052d5b266c0562a2628e9f9",
+  "preflightReviewCommit": "7ce8213310c4f5d78d3f1eb1de5c4e308260fc22",
+  "incomingDocsOnly": [
+    "docs/D3B-RESPONSE-PREFLIGHT-R113Q8.md",
+    "docs/D3B-RESPONSE-STARTUP-JOINT-J113Q8.md",
+    "evidence/d3b-response-preflight-r113q8/combined-source-review-in-progress.json",
+    "evidence/d3b-response-preflight-r113q8/historical-custody-review.json",
+    "evidence/d3b-response-preflight-r113q8/integrated-native-source-review.json",
+    "evidence/d3b-response-preflight-r113q8/integration-first-run-review.json",
+    "status.md"
+  ],
+  "onlyConflict": [
+    "status.md"
+  ],
+  "all446SourceHashesExact": true,
+  "twoPatchHashesExact": true,
+  "newNativeRun": false,
+  "blockedRefinementRetried": false
+}

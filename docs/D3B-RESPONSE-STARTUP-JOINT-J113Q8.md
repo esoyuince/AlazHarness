@@ -110,3 +110,7 @@ package installation, root or mount operation is part of this integration.
 ## Terminal combined regression and source-identical merge
 
 The complete combined Windows execution at lifecycle source commit `9d383cf506dbb516b052d5b266c0562a2628e9f9` reports **2918 total = 2895 PASS / 23 SKIP / 0 errors / 0 failures**, exit 0. All446 source/config/test hashes and both native patch hashes match before and after. The current merge adds independent documentation/source-custody review only; no executable, test, config or patch bytes differ, so the run is not mislabeled as a new execution. Both parent evidence directories preserve 60 exact original Git blobs. Native002 and the separate cold preflight trial remain separate proof scopes. Final local static output is in the joint evidence directory; no remote CI or installed-native promotion is implied.
+
+## Source-identical canonical handoff
+
+The final documentation-only merge retains prior canonical `b414a13c6e0df05daa6fbfc766bcd87fa555eccd` and independent review merge `36729fce26ea6680359a183beda13ea176082e48`. All446 executable/test/config files and both native patches remain exactly the complete2918-test source set at `9d383cf506dbb516b052d5b266c0562a2628e9f9`. The final local static output is `evidence/d3b-response-startup-joint-j113q8/static-delivery-final.txt`. Delivery operation048 performs and verifies a fast-forward only after the commit succeeds; no history reset, native execution, installed source-pin promotion or remote push.
