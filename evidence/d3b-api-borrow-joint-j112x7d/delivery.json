@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-23T00:20:53.200677+03:00",
+  "testedMerge": "fac86e3d5e837cb6afbfb7d08bf3627291f01e9c",
+  "documentationPreservingMerge": "0dcdca8499a8770d8021a37f07fa1596fdb450a3",
+  "canonicalBefore": "a43b468be55b95386cea3009ad580cef35e9f9f0",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "canonicalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-principal-launch-21oct",
+  "promotion": "fast-forward only; existing canonical qualification retained as parent",
+  "nativeFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "nativeInstalledPin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeFeatureActivated": false,
+  "sourceCount": 434,
+  "allSourceHashesMatchFullRun": true,
+  "patchHashes": {
+    "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+    "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac"
+  },
+  "original427SourcesUnchanged": true,
+  "preservedParentEvidenceBlobs": 79,
+  "fullWindows": {
+    "total": 2813,
+    "passed": 2790,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "nativeResponseMethodsPerPlatform": 24,
+  "nativeAdapterWindowsMethods": 27,
+  "newNativeRunByDelivery": false,
+  "thirdStoreStartupIntegrated": false,
+  "healthyBusyHttpPolicyImplemented": false,
+  "nativeAgentListenerActivated": false,
+  "fullD3BAccepted": false,
+  "providerCalls": 0,
+  "mainUpdated": false,
+  "pushed": false,
+  "rootStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "vendorStatusBeforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "next": "trusted response-store preparation/schema/identity/read-only preopen plus three-store A109 ownership; then healthy/busy observation and full-isolation adapter startup before any listener or runtime-pin activation"
+}

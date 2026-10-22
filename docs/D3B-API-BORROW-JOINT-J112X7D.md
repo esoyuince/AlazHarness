@@ -118,3 +118,7 @@ members, not extra native runs. Actual24 response methods on two platforms and
 27 Windows adapter methods remain distinct scoped proofs. The union itself
 performs no new native runtime or provider action. Static-final.txt records the
 local static gate, not remote CI. Installation/source-pin promotion is disabled.
+
+## Canonical artifact delivery
+
+Tested merge `fac86e3d5e837cb6afbfb7d08bf3627291f01e9c`; documentation merge `0dcdca8499a8770d8021a37f07fa1596fdb450a3` retains existing canonical `a43b468be55b95386cea3009ad580cef35e9f9f0` as a parent, then fast-forwarded. All434 tested source/config files and both native patch hashes match the complete run. The installed vendor remains `eb75627faf532fa6ffbdae59a0d14b0b385fc780`; native feature `cc16c10b16a0ca8d80b23fd9be3f0e59ee605075` is NOT activated. This final record changes docs/static evidence only. No new native execution, full upstream-suite claim, listener, main update or remote push. Current status.md and the ordered staged manifest are the continuation.
