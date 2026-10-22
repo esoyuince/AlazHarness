@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-23T00:19:53.342460+03:00",
+  "testedMerge": "fac86e3d5e837cb6afbfb7d08bf3627291f01e9c",
+  "preservedCanonical": "a43b468be55b95386cea3009ad580cef35e9f9f0",
+  "sharedCanonicalSourcesExact": 433,
+  "onlyAdditionalTestedSource": "config/hermes-api-borrow-series-j112x7d.json",
+  "all434TestedSourceHashesExact": true,
+  "twoPatchHashesExact": true,
+  "original79ParentEvidenceBlobsExact": true,
+  "priorCanonicalJointEvidenceBlobsPreserved": 15,
+  "onlyConflict": [
+    "status.md"
+  ],
+  "reconciliationChangesExecutableSource": false,
+  "nativePinChanged": false,
+  "newNativeExecution": false
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T00:17:20.055047+03:00",
+  "testedHarnessMerge": "c4ff1211305055c29258a846a6faea8b7724fc17",
+  "canonicalBefore": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "promotion": "fast-forward only",
+  "nativeFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "nativeResponseParentCommit": "e19a945342c94138c685ac919b208d558ddcc53a",
+  "nativeFeatureActivated": false,
+  "nativeVendorHeadBefore": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeVendorWorkingTreeUnchanged": true,
+  "runtimeSourceLockOrGitlinksChanged": false,
+  "fullWindows": {
+    "total": 2813,
+    "passed": 2790,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "all437SourceAndPatchArtifactsExact": true,
+  "all427PriorHarnessSourcesUnchanged": true,
+  "nativeAdapterWindowsMethods": 27,
+  "nativeResponseMethodsPerWindowsLinux": 24,
+  "nativeFullUpstreamSuiteRun": false,
+  "thirdPersistentStorePreparedStartupIntegrated": false,
+  "healthyBusyPolicyImplemented": false,
+  "nativeWorkListenerActivated": false,
+  "providerCalls": 0,
+  "mainUpdated": false,
+  "pushed": false,
+  "rootStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "next": "trusted response_store.db preparation/layout/schema/identity/preopen/live validation integrated with sole A109 ownership, then healthy/busy policy and native agent HTTP isolation before any runtime-pin activation or broker dispatch"
+}

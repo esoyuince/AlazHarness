@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-23T00:10:45.091061+03:00",
+  "base": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "adapterHarnessCommit": "cbcd960425252043d92ae741c1030467a0d7893f",
+  "responseHarnessCommit": "b138648a0a225d98a8ed2b43a5e43a41e8b1f0de",
+  "selectedFirstParent": "b138648a0a225d98a8ed2b43a5e43a41e8b1f0de",
+  "canonicalBefore": "31abe5821e7d0235ab3b7440a91285d5b508ab97",
+  "nativeFeatureCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "nativeResponseParent": "e19a945342c94138c685ac919b208d558ddcc53a",
+  "runtimeActivation": false,
+  "onlyConflict": [
+    "status.md"
+  ],
+  "nativeAdapterWindowsMethods": 27,
+  "responseWindowsAndLinuxMethodsEach": 24,
+  "parallelUncommittedFullRunNotTouched": true,
+  "sourceOfIncoming": "immutable committed tree, not in-progress worktree"
+}

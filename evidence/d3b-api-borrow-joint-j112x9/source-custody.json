@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-23T00:11:57.909988+03:00",
+  "parents": [
+    {
+      "parent": "cbcd960425252043d92ae741c1030467a0d7893f",
+      "folder": "evidence/d3b-api-borrow-b112x9",
+      "originalEvidenceBlobs": 54,
+      "exactIndexEquality": true
+    },
+    {
+      "parent": "b138648a0a225d98a8ed2b43a5e43a41e8b1f0de",
+      "folder": "evidence/d3b-api-storage-a112x7d",
+      "originalEvidenceBlobs": 20,
+      "exactIndexEquality": true
+    }
+  ],
+  "totalOriginalEvidenceBlobs": 74,
+  "nativeCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "patchRoundtripVerified": true,
+  "installedRuntimePinUnchanged": true,
+  "newNativeRunByUnion": false
+}

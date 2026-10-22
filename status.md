@@ -17,3 +17,8 @@ Request a112f6c4-540e-44db-934b-e97f28110030 IN PROGRESS.434 source/config/test 
 ### Combined terminal checkpoint
 
 Fresh fullWindows2813=2790PASS/23SKIP/0ERROR/0FAIL exit0.434 source/config hashes and2 native patch hashes stable;427 old sources unchanged,79 original evidence blobs preserved. Request030 complete. Exact nativefeaturecc16c10 plus both source-pinned patches remain staged artifacts only; no installed/source-lock promotion. Static and exact-scope merge commit request033 follows. Healthy-busy policy, third-store startup and native borrowed listener remain NOT ACCEPTED/CLOSED.
+
+
+### Existing canonical ancestry preserved
+
+Canonical a43b468 had the same two patches and433 shared source/config files, already qualified separately; this tested434-file tree adds only the fixed ordered series descriptor. No runtime/test bytes were selected from untested code. Existing canonical joint proof and handoff are retained in Git history and their own evidence directory. This documentation-only reconciliation preserves both parents, then permits a fast-forward; no history reset or installed native pin update. Current native feature remains NOT ACTIVATED.
