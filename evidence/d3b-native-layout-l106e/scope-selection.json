@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-22T15:01:18.151981+03:00",
+  "parallelLayoutBranch": "alaz/d3b-native-layout-l106r",
+  "parallelModule": "gateway_native_layout.py",
+  "ownUntrackedCandidateArchived": "not-selected-layout-candidate.py.txt",
+  "candidateSha256": "359de65011a029c3fe6034a533153080b574146576b80b01cf7e6ea9390a0bbf",
+  "candidateExecuted": false,
+  "ownSelectedScope": "read-only validation of real live SQLite connections under existing ProfileLease; no duplicate layout implementation",
+  "preConstructorSchemaGateImplementedHere": false,
+  "otherWorkModified": false
+}

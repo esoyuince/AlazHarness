@@ -1,5 +1,23 @@
 # AlazHarness — status
 
+## D3B-LIVE-STORE-GATE-L106E — SCOPED PRODUCT PASS; INTEGRATION PENDING
+
+Scope refinement: concurrent L106R owns gateway_native_layout.py and prepared-layout policy. This branch owns complementary gateway_live_store_gate.py: verify real native live connections under held final ProfileLease, reject volatile/foreign/schema/epoch drift before request-readiness, never open raw DB descriptors or mutate/close caller stores. No duplicate layout path; own unexecuted candidate archived then removed from product tree. Constructors/pre-constructor validation remain separate and must not be called qualified by this live-only check. Read-only native verification and lock-preservation experiment are next.
+
+Branch alaz/d3b-native-layout-l106e; worktree scratch/worktrees/d3b-native-layout-l106e; base7f17594. Implement an explicit opt-in pinned Hermes store-only profile layout and prepared/live-store startup gate. Existing minimal profile/default projection and blocked R91F/G82C work stay untouched. Preserve current root changes, CI queues, existing lab installations and concurrent work. No main/push/model/provider/production operation.
+
+New tests must use fresh owned profiles and, only when needed, the previously authorized isolated P71C lab. No broad host grants, silent database repair/migration or adoption, automatic resend, arbitrary new runtime. Existing native modules must be reused from immutable pin. Unknown database pair/recovery remains fail-closed and not a full Gateway claim. Read-only/preflight and real-native/live checks are distinct. Source baseline389 files captured in evidence/d3b-native-layout-l106e/baseline.json. No native test started.
+
+Completed complementary product gateway_live_store_gate.py: already-open actual native connections checked under final ProfileLease; independently prepared schema/generation/path expectations; no new SQL connection/rawDBopen/writes/close/epoch change by gate. Nonblocking native mutexes, live mount/file/source/type/schema/epoch/unfinished-work controls. Explicit main schema queries and bounded duplicate-free replayJSON decision; both own development bugs have retained failing regressions and snapshots.
+
+Current native003 actual P71C ordinaryUID23001 finalexec+unchangedLandlock PASS:37 child/8 parent checks,10 refusal cases, competitor actualSQLITE_BUSY before+after verification, acquisition only after native close. No mocked native classes/methods in native run. Linuxselected55/55, fullWindows2572=2549PASS/23SKIP/0ERROR/0FAIL exit0.393 source hashes stable;389 prior sources unchanged. Report docs/D3B-LIVE-STORE-GATE-L106E.md; evidence/d3b-native-layout-l106e/summary.json. First successful001/002 and initial full2567 remain historical. Temp/profile/process cleanup CLEAN; shared lab not stopped. No root/mount/provider/CI/main/push change.
+
+NOT a preconstructor schema gate, direct VFS handle-to-inode/write-capability proof, paired recovery or listener authorization. Explicit trusted constructors/layout still needed before this LIVE-only check; no fullP102/Gateway acceptance. ConcurrentL106R owns finite layout/projection; preserve and join only after terminal current-source/full proof. Existing blockedR91F/G82C untouched. All own native/full jobs terminal; scoped static/commit follows. Read Git HEAD for exact delivery.
+
+## Preserved canonical continuation
+
+# AlazHarness — status
+
 ## D3B-STORE-JOINT-H105E — DEVELOPMENT-INTEGRATED; SCOPED QA PASS
 
 Canonical branch alaz/d3b-principal-launch-21oct; worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct. Tested two-parent merge `762fe6f32ddd7dcd55bf7caec9f513aec50be6f1` fast-forward promoted; original H105E/N105D branches and76 evidence blobs retained. All389 tested sources exact, all382 baseline sources unchanged. This follow-up changes documentation/static delivery only. No new runtime implementation or broader Gateway acceptance.
@@ -12870,3 +12888,28 @@ Full c80b15ef-982a-4e63-94d8-722205100027 terminal result0 recorded; parent data
 ### Canonical delivery recorded — 2026-10-22T04:29:38.115889+03:00
 
 Tested merge762fe6f fast-forward promoted from30604df. New full2517=2494PASS/23SKIP remains exact389-source baseline. Existing product code unchanged, old histories retained. Maincc7ceba/no push. Documentation-only final commit records delivery. Next is actual native profile layout/live-connection gate, NOT repeating old crash tests as a substitute.
+
+
+### L106E live-gate native verification underway — 2026-10-22T15:11:16.730614+03:00
+
+Windows real-SQLite fixture tests41/41PASS; native lease/type/mount are explicit doubles there. Actual P71C ordinaryUID23001 native job d106ca17-682a-49b2-84c2-51d300000015 IN PROGRESS: fresh owned provisioning phase then final-exec Landlock current policy, exact actual SessionDB/RunIdempotencyStore/ProfileLease, negative checks and competing-process SQLite lock controls. No root/mount/new image; do not replay pending job. Existing389 sources unchanged. Preserve concurrent L106R layout implementation; this module only validates already-open live handles and does not authorize admission or pre-constructor repair.
+
+
+### L106E final source freeze / full regression
+
+Actual native002 PASS:8 supervisor assertions /34 child assertions,9 native refusals; before/after gate SQLite competitorBUSY, acquisition only after native close. Product JSON duplicate-key bug reproduced in unit43 (42PASS/1FAIL), fixed with bounded unambiguous JSON decision and repeated complete native run. Windows final45 unit methods and5 receipt methods PASS (subsets). New fullWindows request d106ca17-682a-49b2-84c2-51d300000022 IN PROGRESS;393-source freeze. All389 baseline files unchanged. Do not edit product/QA/tests during run. Live-only gate not preconstructor/HTTP/full-projection authorization.
+
+
+### L106E final review qualification correction
+
+Prior full2567 completedPASS unchanged393 hashes before any edit. Adversarial temporary-table shadow fixture exposed five missing main qualifiers; first failing tests retained. All application-table SELECTs now explicit main, no engine/native method changed. Unit50 pass; native-probe adds actual temporary replay shadow refusal and main schema control. New native003 and full qualified run required. Prior successful002/full result now historical, not current acceptance.
+
+
+### L106E current native003 PASS; qualified full started
+
+Current-source complete native003 exit0,37 child checks/8 parent controls,10 refusal cases, actual before/after lockBUSY then acquire only after native close. Both JSON ambiguity and temp-shadow fixes now included. Source-identical earlier proofs retained as historical. Qualified full request d106ca17-682a-49b2-84c2-51d300000030 IN PROGRESS,393 source hashes; all389 existing files unchanged. No product/QA/test edit during this run.
+
+
+### L106E final current-source checkpoint — 2026-10-22T15:25:15.571481+03:00
+
+Full request030 terminal0, native003 request028 terminal0, Linuxselected request031 terminal0; cleanup032 CLEAN. New source behavior guarded by50unit+5receipt cases. Source freeze verified before local static/selected commit. No unknown-effect operation or background task claimed.

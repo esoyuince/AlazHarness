@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-22T15:19:03.139039+03:00",
+  "priorFullFinishedBeforeEdit": true,
+  "priorFullResult": "PASS",
+  "beforeSourceSha256": "d86920b5000b379c872fe31d432a2c158dff0cc0f6fcdbaecf6bbcd758de2dfc",
+  "afterSourceSha256": "ada6acbc4d66dca4e3be9f5b035599cd90f3a04883f0c19f0dbffaa3f62e58f9",
+  "problem": "unqualified native-table SELECT could resolve same-named temp tables despite main schema digest",
+  "fix": "qualify all six application-table queries to main; no native method or DB engine modification",
+  "firstFailedTestsRetained": true,
+  "newCompleteNativeAndFullRunsRequired": true
+}
