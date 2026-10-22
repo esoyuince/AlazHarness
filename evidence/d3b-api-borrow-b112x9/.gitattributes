@@ -1,0 +1,4 @@
+.gitattributes text eol=lf
+*.txt -text -diff
+*.json -text whitespace=cr-at-eol
+*.patch -text -diff

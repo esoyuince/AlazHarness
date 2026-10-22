@@ -1,0 +1,78 @@
+{"result": "FAIL", "total": 26, "passed": 24, "failures": 0, "errors": 2, "skipped": 0, "failureIds": [], "errorIds": ["__main__.NativeBorrowTests.test_cleanup_error_retains_ownership_and_no_retry", "__main__.NativeBorrowTests.test_disconnect_idempotent_after_caller_closes_stores"], "sourcesUnchanged": true, "audit": {"watch": false, "connects": 0, "network": 1, "frameworkLoopSetup": false, "frameworkSocketEvents": 52}, "qaSha256": "b948a14ad8e9e9949e035fa30e7c0757c6e7e141fe7f7f43639f0f835e4ce419", "elapsedSeconds": 26.541, "nativeAdapterAndThreeStoresReal": true, "cleanupFaultAwaitablesDoubled": true, "nativeListenerStarted": false, "A109ThirdStoreIntegrated": false, "healthyBusyPolicyImplemented": false, "providerCalls": 0, "fullD3BAccepted": false}
+test_active_caller_transaction_not_rolled_back (__main__.NativeBorrowTests.test_active_caller_transaction_not_rolled_back) ... ok
+test_active_worker_global_prevents_detach (__main__.NativeBorrowTests.test_active_worker_global_prevents_detach) ... ok
+test_actual_pending_async_task_prevents_detach (__main__.NativeBorrowTests.test_actual_pending_async_task_prevents_detach) ... ok
+test_bundle_wrong_thread_is_rejected (__main__.NativeBorrowTests.test_bundle_wrong_thread_is_rejected) ... ok
+test_cancellation_during_cleanup_cannot_release_store_bundle (__main__.NativeBorrowTests.test_cancellation_during_cleanup_cannot_release_store_bundle) ... ok
+test_cleanup_error_retains_ownership_and_no_retry (__main__.NativeBorrowTests.test_cleanup_error_retains_ownership_and_no_retry) ... ERROR
+test_closed_caller_connection_not_reopened (__main__.NativeBorrowTests.test_closed_caller_connection_not_reopened) ... ok
+test_detached_adapter_never_falls_back_to_open (__main__.NativeBorrowTests.test_detached_adapter_never_falls_back_to_open) ... ok
+test_disconnect_idempotent_after_caller_closes_stores (__main__.NativeBorrowTests.test_disconnect_idempotent_after_caller_closes_stores) ... ERROR
+test_disconnect_preserves_three_caller_owned_connections (__main__.NativeBorrowTests.test_disconnect_preserves_three_caller_owned_connections) ... ok
+test_existing_default_owns_and_closes_its_original_stores (__main__.NativeBorrowTests.test_existing_default_owns_and_closes_its_original_stores) ... ok
+test_foreign_profile_never_lazy_opens_any_store (__main__.NativeBorrowTests.test_foreign_profile_never_lazy_opens_any_store) ... ok
+test_invalid_bundle_argument_precedes_any_database_open (__main__.NativeBorrowTests.test_invalid_bundle_argument_precedes_any_database_open) ... ok
+test_native_connect_is_explicitly_disabled_before_network (__main__.NativeBorrowTests.test_native_connect_is_explicitly_disabled_before_network) ... ok
+test_native_constructor_borrows_three_exact_handles_without_open (__main__.NativeBorrowTests.test_native_constructor_borrows_three_exact_handles_without_open) ... ok
+test_native_run_cleanup_does_not_close_borrowed_replay (__main__.NativeBorrowTests.test_native_run_cleanup_does_not_close_borrowed_replay) ... ok
+test_ordered_http_resource_drain_before_detach (__main__.NativeBorrowTests.test_ordered_http_resource_drain_before_detach) ... ok
+test_replaced_adapter_reference_not_accepted (__main__.NativeBorrowTests.test_replaced_adapter_reference_not_accepted) ... ok
+test_replaced_canonical_response_binding_not_accepted (__main__.NativeBorrowTests.test_replaced_canonical_response_binding_not_accepted) ... ok
+test_replaced_live_sqlite_handle_not_accepted (__main__.NativeBorrowTests.test_replaced_live_sqlite_handle_not_accepted) ... ok
+test_reusing_claimed_bundle_never_opens_new_stores (__main__.NativeBorrowTests.test_reusing_claimed_bundle_never_opens_new_stores) ... ok
+test_runner_injection_is_rejected_not_reopened (__main__.NativeBorrowTests.test_runner_injection_is_rejected_not_reopened) ... ok
+test_sync_async_and_response_selection_return_same_native_objects (__main__.NativeBorrowTests.test_sync_async_and_response_selection_return_same_native_objects) ... ok
+test_unbound_response_store_is_not_accepted (__main__.NativeBorrowTests.test_unbound_response_store_is_not_accepted) ... ok
+test_unknown_or_negative_work_counter_not_treated_as_idle (__main__.NativeBorrowTests.test_unknown_or_negative_work_counter_not_treated_as_idle) ... ok
+test_work_appearing_during_drain_stops_detach (__main__.NativeBorrowTests.test_work_appearing_during_drain_stops_detach) ... ok
+
+======================================================================
+ERROR: test_cleanup_error_retains_ownership_and_no_retry (__main__.NativeBorrowTests.test_cleanup_error_retains_ownership_and_no_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 46, in asyncTearDown
+    self.temp.cleanup()
+    ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-b112x9-native-lb9h7jhc'
+
+======================================================================
+ERROR: test_disconnect_idempotent_after_caller_closes_stores (__main__.NativeBorrowTests.test_disconnect_idempotent_after_caller_closes_stores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-borrow-b112x9\scripts\qa\b112x9_adapter_probe.py", line 40, in asyncTearDown
+    if s._conn.in_transaction:s._conn.rollback()
+       ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'in_transaction'
+
+----------------------------------------------------------------------
+Ran 26 tests in 26.261s
+
+FAILED (errors=2)
+

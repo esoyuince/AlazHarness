@@ -1,0 +1,8 @@
+{
+  "reason": "native default disconnect helper schedules status writer; borrowed lifecycle must not schedule unrelated profile mutation",
+  "nativeChanges": "borrowed-only sets _running False without default status writer",
+  "firstFailedLogsRetained": true,
+  "fixtureAlsoCorrected": "closed SessionDB._conn is None; flush native default status before deleting test profile",
+  "productBefore": "b62f1d7b0ff4773428279c5b7a0ccc1c01c14778897899496a5ac1b9e3a53652",
+  "productAfter": "16e02e6e513d01c4ae5082ad755d9615c6b6e9d08464ec21514e7bd57b3c73f8"
+}

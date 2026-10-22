@@ -1,0 +1,10 @@
+{
+  "priorRun": "adapter-003",
+  "testMethodsPassed": 27,
+  "overallExit": 1,
+  "cause": "all27 methods passed but known urllib3 import-time IPv6 capability bind was denied and counted as an API effect",
+  "fix": "force import under same DENY hook before test baseline; only known _has_ipv6 denial accepted; any new network attempt during native test still fails",
+  "networkPermissionBroadened": false,
+  "productSourceChanged": false,
+  "priorReceiptRetained": true
+}

@@ -1,0 +1,7 @@
+{
+  "baselineFirstRunExit": 1,
+  "cause": "SessionDB native connection autocommits; QA must explicitly BEGIN before simulating uncommitted terminality",
+  "fix": "add BEGIN IMMEDIATE in QA only",
+  "productChanged": false,
+  "originalOutputRetained": true
+}

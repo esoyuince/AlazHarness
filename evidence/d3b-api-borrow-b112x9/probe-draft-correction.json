@@ -1,0 +1,6 @@
+{
+  "earlierRequest": "b112d87e-7f29-4fa4-918a-0130be000011",
+  "reason": "nested string newline failed compile before write; corrected raw source literal",
+  "nativeRunStartedBeforeCorrection": false,
+  "productChanged": false
+}
