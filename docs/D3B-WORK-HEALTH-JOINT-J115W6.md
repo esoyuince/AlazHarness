@@ -85,3 +85,7 @@ then genuine task-lifecycle/isolation acceptance before active-work HTTP wiring.
 Existing strict cold and quiescent gates stay selected. Full D3B, actual native
 agent listener, broker live-ledger/dummy-provider dispatch and cross-store
 atomic recovery/power-loss safety are not accepted by this foundation.
+
+## Canonical delivery
+
+Tested source `966c12692422f36cd5fb6db0e953b2dba77cab09`; independent review `12147af7ea942d8ca133c193ee1f6f521002ed24`; documentation-preserving merge `be6ec020ea0227c4cad282c3d74f6f3417ff8103` retains canonical `2155112378cc99c267afb764e727774150f4adfb` as an ancestor and is fast-forwarded. All461 source hashes and2 patches match the original combined full run. This final handoff changes only docs/static evidence; no new native/full execution or activation. Installed native remains `eb75627faf532fa6ffbdae59a0d14b0b385fc780`, main/push unchanged. Live producer collection and active-work HTTP stay OPEN.
