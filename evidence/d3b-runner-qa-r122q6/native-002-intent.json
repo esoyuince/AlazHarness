@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-23T21:10:57.566849+03:00",
+  "candidateHashes": {
+    "gateway/run.py": "7f4fda539a53dca8395210ff73ab7b209a6aeeae5179969d47b0681dea17d311",
+    "gateway/run_runtime.py": "dedbd4429bdd542c0555693de6d0b22a09dc338fc0b6603105355d78fd7176c9",
+    "gateway/run_runtime_init.py": "dba2a590c0a68f7e21210c40c0350da699d22949d8b9adcc3cbdd4d54ad28749",
+    "gateway/run_shutdown.py": "1594ed1230b6db10cee4154babc49998b00cc01419061a978c1f261ccd5e2926",
+    "gateway/run_startup.py": "1c29c9839e46048b08873e8a822aae8c913f6740eb6a23876ab2eadff6e97e9b",
+    "gateway/session_authority.py": "48b438675a68380cc8462f6c441196ac380eec7cd12a3f84b6c13f17326d896b",
+    "gateway/run_borrowed_state.py": "5245dd516d2d884f4128f6fc716467f0cce0e3b8338b5d748e4cfccad3116a98"
+  },
+  "qaHashes": {
+    "scripts/qa/r122q6_native_runner_checks.py": "3bd65c9fe4f8c0996b5ce1b60fd078c60b6552a2bc53002967a2cfb421e7843e",
+    "scripts/qa/r122q6_owner_drift_checks.py": "d3bc4b77daf6cff1e0d94ba00166c5430d9c3d3196fa623dfae339142bc07cdf"
+  },
+  "scope": "same30 independent native methods against corrected original helper,24foundation+6owner-drift; no tests relaxed or new services"
+}

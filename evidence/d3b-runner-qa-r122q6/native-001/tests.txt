@@ -1,0 +1,29 @@
+test_authority_pending_result_blocks_detach_without_discard (__main__.RunnerOwnershipTests.test_authority_pending_result_blocks_detach_without_discard) ... ok
+test_binding_one_shot_and_exact_config_not_equal_copy (__main__.RunnerOwnershipTests.test_binding_one_shot_and_exact_config_not_equal_copy) ... ok
+test_caller_closed_state_is_not_reopened (__main__.RunnerOwnershipTests.test_caller_closed_state_is_not_reopened) ... ok
+test_changed_async_wrapper_not_adopted (__main__.RunnerOwnershipTests.test_changed_async_wrapper_not_adopted) ... ok
+test_changed_epoch_after_constructor_not_recovered (__main__.RunnerOwnershipTests.test_changed_epoch_after_constructor_not_recovered) ... ok
+test_configuration_change_refused_without_transport_start (__main__.RunnerOwnershipTests.test_configuration_change_refused_without_transport_start) ... ok
+test_default_start_stop_and_api_routes_reject_before_side_effects (__main__.RunnerOwnershipTests.test_default_start_stop_and_api_routes_reject_before_side_effects) ... ok
+test_existing_worker_registry_row_not_ignored (__main__.RunnerOwnershipTests.test_existing_worker_registry_row_not_ignored) ... ok
+test_fake_binding_and_repinned_state_refused (__main__.RunnerOwnershipTests.test_fake_binding_and_repinned_state_refused) ... ok
+test_foreign_scope_does_not_create_a_profile (__main__.RunnerOwnershipTests.test_foreign_scope_does_not_create_a_profile) ... ok
+test_lifecycle_from_another_thread_is_rejected (__main__.RunnerOwnershipTests.test_lifecycle_from_another_thread_is_rejected) ... ok
+test_locked_state_refuses_without_unlock (__main__.RunnerOwnershipTests.test_locked_state_refuses_without_unlock) ... ok
+test_native_background_task_blocks_detach_without_cancellation (__main__.RunnerOwnershipTests.test_native_background_task_blocks_detach_without_cancellation) ... ok
+test_normal_detach_retains_caller_state_and_profile (__main__.RunnerOwnershipTests.test_normal_detach_retains_caller_state_and_profile) ... ok
+test_open_transaction_retained_on_prepare_and_detach (__main__.RunnerOwnershipTests.test_open_transaction_retained_on_prepare_and_detach) ... ok
+test_ordinary_authority_initializer_cannot_bump_borrowed_epoch (__main__.RunnerOwnershipTests.test_ordinary_authority_initializer_cannot_bump_borrowed_epoch) ... ok
+test_profile_reacquire_does_not_adopt_old_binding (__main__.RunnerOwnershipTests.test_profile_reacquire_does_not_adopt_old_binding) ... ok
+test_queued_work_after_constructor_blocks_prepare_and_detach (__main__.RunnerOwnershipTests.test_queued_work_after_constructor_blocks_prepare_and_detach) ... ok
+test_queued_work_before_binding_not_recovered (__main__.RunnerOwnershipTests.test_queued_work_before_binding_not_recovered) ... ok
+test_real_authority_preparation_reuses_epoch_and_stays_closed (__main__.RunnerOwnershipTests.test_real_authority_preparation_reuses_epoch_and_stays_closed) ... ok
+test_real_constructor_uses_same_state_without_opens_or_epoch_change (__main__.RunnerOwnershipTests.test_real_constructor_uses_same_state_without_opens_or_epoch_change) ... ok
+test_repeated_preparation_preserves_original_authority (__main__.RunnerOwnershipTests.test_repeated_preparation_preserves_original_authority) ... ok
+test_terminal_history_accepted_without_rewrite (__main__.RunnerOwnershipTests.test_terminal_history_accepted_without_rewrite) ... ok
+test_wrong_epoch_or_instance_refused_before_any_runner (__main__.RunnerOwnershipTests.test_wrong_epoch_or_instance_refused_before_any_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 12.995s
+
+OK

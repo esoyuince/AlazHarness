@@ -1,0 +1,183 @@
+test_authority_pending_result_blocks_detach_without_discard (__main__.PreparedIdentityChecks.test_authority_pending_result_blocks_detach_without_discard) ... ok
+test_binding_one_shot_and_exact_config_not_equal_copy (__main__.PreparedIdentityChecks.test_binding_one_shot_and_exact_config_not_equal_copy) ... ok
+test_caller_closed_state_is_not_reopened (__main__.PreparedIdentityChecks.test_caller_closed_state_is_not_reopened) ... ok
+test_changed_async_wrapper_not_adopted (__main__.PreparedIdentityChecks.test_changed_async_wrapper_not_adopted) ... ok
+test_changed_epoch_after_constructor_not_recovered (__main__.PreparedIdentityChecks.test_changed_epoch_after_constructor_not_recovered) ... ok
+test_configuration_change_refused_without_transport_start (__main__.PreparedIdentityChecks.test_configuration_change_refused_without_transport_start) ... ok
+test_default_start_stop_and_api_routes_reject_before_side_effects (__main__.PreparedIdentityChecks.test_default_start_stop_and_api_routes_reject_before_side_effects) ... ok
+test_existing_worker_registry_row_not_ignored (__main__.PreparedIdentityChecks.test_existing_worker_registry_row_not_ignored) ... ok
+test_fake_binding_and_repinned_state_refused (__main__.PreparedIdentityChecks.test_fake_binding_and_repinned_state_refused) ... ok
+test_foreign_scope_does_not_create_a_profile (__main__.PreparedIdentityChecks.test_foreign_scope_does_not_create_a_profile) ... ok
+test_lifecycle_from_another_thread_is_rejected (__main__.PreparedIdentityChecks.test_lifecycle_from_another_thread_is_rejected) ... ok
+test_locked_state_refuses_without_unlock (__main__.PreparedIdentityChecks.test_locked_state_refuses_without_unlock) ... ok
+test_native_background_task_blocks_detach_without_cancellation (__main__.PreparedIdentityChecks.test_native_background_task_blocks_detach_without_cancellation) ... ok
+test_normal_detach_retains_caller_state_and_profile (__main__.PreparedIdentityChecks.test_normal_detach_retains_caller_state_and_profile) ... ok
+test_open_transaction_retained_on_prepare_and_detach (__main__.PreparedIdentityChecks.test_open_transaction_retained_on_prepare_and_detach) ... ok
+test_ordinary_authority_initializer_cannot_bump_borrowed_epoch (__main__.PreparedIdentityChecks.test_ordinary_authority_initializer_cannot_bump_borrowed_epoch) ... ok
+test_prepared_authority_flags_cannot_become_active (__main__.PreparedIdentityChecks.test_prepared_authority_flags_cannot_become_active) ... 
+  test_prepared_authority_flags_cannot_become_active (__main__.PreparedIdentityChecks.test_prepared_authority_flags_cannot_become_active) (name='retiring') ... FAIL
+  test_prepared_authority_flags_cannot_become_active (__main__.PreparedIdentityChecks.test_prepared_authority_flags_cannot_become_active) (name='retired') ... FAIL
+test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) ... 
+  test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='epoch') ... FAIL
+  test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='instance_id') ... FAIL
+  test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='profile_id') ... FAIL
+  test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='runner') ... FAIL
+test_prepared_descriptor_identity_blocks_detach (__main__.PreparedIdentityChecks.test_prepared_descriptor_identity_blocks_detach) ... FAIL
+test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) ... 
+  test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='state') ... FAIL
+  test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='authority_epoch') ... FAIL
+  test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='instance_id') ... FAIL
+  test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='capabilities') ... FAIL
+  test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='served_profiles') ... FAIL
+test_prepared_registry_extra_slot_cannot_be_ignored_on_detach (__main__.PreparedIdentityChecks.test_prepared_registry_extra_slot_cannot_be_ignored_on_detach) ... FAIL
+test_prepared_runner_flags_must_stay_not_running_and_draining (__main__.PreparedIdentityChecks.test_prepared_runner_flags_must_stay_not_running_and_draining) ... 
+  test_prepared_runner_flags_must_stay_not_running_and_draining (__main__.PreparedIdentityChecks.test_prepared_runner_flags_must_stay_not_running_and_draining) (name='_draining') ... FAIL
+  test_prepared_runner_flags_must_stay_not_running_and_draining (__main__.PreparedIdentityChecks.test_prepared_runner_flags_must_stay_not_running_and_draining) (name='_running') ... FAIL
+test_profile_reacquire_does_not_adopt_old_binding (__main__.PreparedIdentityChecks.test_profile_reacquire_does_not_adopt_old_binding) ... ok
+test_queued_work_after_constructor_blocks_prepare_and_detach (__main__.PreparedIdentityChecks.test_queued_work_after_constructor_blocks_prepare_and_detach) ... ok
+test_queued_work_before_binding_not_recovered (__main__.PreparedIdentityChecks.test_queued_work_before_binding_not_recovered) ... ok
+test_real_authority_preparation_reuses_epoch_and_stays_closed (__main__.PreparedIdentityChecks.test_real_authority_preparation_reuses_epoch_and_stays_closed) ... ok
+test_real_constructor_uses_same_state_without_opens_or_epoch_change (__main__.PreparedIdentityChecks.test_real_constructor_uses_same_state_without_opens_or_epoch_change) ... ok
+test_repeated_preparation_preserves_original_authority (__main__.PreparedIdentityChecks.test_repeated_preparation_preserves_original_authority) ... ok
+test_terminal_history_accepted_without_rewrite (__main__.PreparedIdentityChecks.test_terminal_history_accepted_without_rewrite) ... ok
+test_wrong_epoch_or_instance_refused_before_any_runner (__main__.PreparedIdentityChecks.test_wrong_epoch_or_instance_refused_before_any_runner) ... ok
+
+======================================================================
+FAIL: test_prepared_authority_flags_cannot_become_active (__main__.PreparedIdentityChecks.test_prepared_authority_flags_cannot_become_active) (name='retiring')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 53, in test_prepared_authority_flags_cannot_become_active
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_authority_flags_cannot_become_active (__main__.PreparedIdentityChecks.test_prepared_authority_flags_cannot_become_active) (name='retired')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 53, in test_prepared_authority_flags_cannot_become_active
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='epoch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 16, in test_prepared_authority_identity_rechecked_on_selection
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='instance_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 16, in test_prepared_authority_identity_rechecked_on_selection
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='profile_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 16, in test_prepared_authority_identity_rechecked_on_selection
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_authority_identity_rechecked_on_selection (__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection) (name='runner')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 16, in test_prepared_authority_identity_rechecked_on_selection
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_descriptor_identity_blocks_detach (__main__.PreparedIdentityChecks.test_prepared_descriptor_identity_blocks_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 22, in test_prepared_descriptor_identity_blocks_detach
+    with self.observe(),self.assertRaises(q.Rejected):r.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='state')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 30, in test_prepared_descriptor_values_cannot_claim_readiness
+    with self.subTest(key=key),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='authority_epoch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 30, in test_prepared_descriptor_values_cannot_claim_readiness
+    with self.subTest(key=key),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='instance_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 30, in test_prepared_descriptor_values_cannot_claim_readiness
+    with self.subTest(key=key),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='capabilities')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 30, in test_prepared_descriptor_values_cannot_claim_readiness
+    with self.subTest(key=key),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_descriptor_values_cannot_claim_readiness (__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness) (key='served_profiles')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 30, in test_prepared_descriptor_values_cannot_claim_readiness
+    with self.subTest(key=key),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_registry_extra_slot_cannot_be_ignored_on_detach (__main__.PreparedIdentityChecks.test_prepared_registry_extra_slot_cannot_be_ignored_on_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 37, in test_prepared_registry_extra_slot_cannot_be_ignored_on_detach
+    with self.observe(),self.assertRaises(q.Rejected):r.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_runner_flags_must_stay_not_running_and_draining (__main__.PreparedIdentityChecks.test_prepared_runner_flags_must_stay_not_running_and_draining) (name='_draining')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 46, in test_prepared_runner_flags_must_stay_not_running_and_draining
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_prepared_runner_flags_must_stay_not_running_and_draining (__main__.PreparedIdentityChecks.test_prepared_runner_flags_must_stay_not_running_and_draining) (name='_running')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-qa-r122q6\scripts\qa\r122q6_owner_drift_checks.py", line 46, in test_prepared_runner_flags_must_stay_not_running_and_draining
+    with self.subTest(name=name),self.observe(),self.assertRaises(q.Rejected):r._session_db
+                                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+----------------------------------------------------------------------
+Ran 30 tests in 13.802s
+
+FAILED (failures=15)

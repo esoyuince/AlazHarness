@@ -1,72 +1,28 @@
 # AlazHarness - status
 
-## D3B-SESSION-BORROW-JOINT-J121S1 - DEVELOPMENT-INTEGRATED; NATIVE PATCH STAGED / SHARED BOOTSTRAP OPEN
+## D3B-RUNNER-QA-R122Q6 - CURRENT NATIVE30/30 PASS; UNION FULL PENDING
 
-Canonical branch alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested merge6a01e1a89b0017153dc1710e16446e22e24f0f80 fast-forwarded, both original
-S121R4 implementation and S121S1 independent QA histories intact. Native feature
-2bc50496bebe21f948dd2e86f553ef1e22904ed2 on94321058 changes only3 native files;
-installed vendor/source locks remaineb75627, NOT ACTIVATED. Read GitHEAD for final
-documentation handoff; exact delivery refs in matching joint delivery.json.
+Own QA worktree scratch/worktrees/d3b-runner-qa-r122q6 at basea941906. R122C4
+owns ONE native borrowed runner; own native copy only exact-source test snapshot.
+All496 existing harness sources unchanged. Default real runner control:1 extra
+registry connection, epoch1->2 (intended default). Optional real native constructor
+and preparation retain caller state/accepted epoch without new connection/write.
 
-### One new ownership seam, no guard removal
+Initial24 native methods passed but extra6 ownership methods failed15 assertions:
+authority identity/flags, descriptor identity/values, registry extras, runnerflags.
+Raw failures and initial seven sources retained. R122C4 corrected one helper;
+SAME driver now30/30PASS,7offline receipts PASS,461 imported native sources bound
+to immutable base or seven hashes. Tests never replace native methods. Distinguish
+6failed parent methods from15subtest assertions, see drift-before-accounting.json.
 
-Optional SessionStore(...,session_db=caller_state) validates native state/profile/
-file/handle/application identity and explicit single-home/SQLite-only mode BEFORE
-eager default registry acquisition. Selects same caller connection across active/
-routing/key paths; no new SQLite/registry acquire, foreign profile fallback or
-closed-handle reopen. Default multiplexed constructor remains unchanged and still
-uses registry-owned connection. No private-field replacement after constructor.
+All30 profiles cleaned and registry/refcounts0; no caller close/release by borrowed
+facade. Prepared authority RETIRING; admission/service start/stop/API blocked.
+No complete agent/tools, shared three-store API, Linux isolation or activeHTTP
+acceptance. Existing borrowed_runner_conflict not changed. Diagnostic subprocess/
+IPv6 probes denied (not zero attempts); no effective provider/model/service.
 
-Detach disables only facade, never closes caller DB or releases profile. Native
-mutex/open transaction/inflight/dirty state refuses without waiting/rollback/
-discard. Borrowed routing JSON import/fallback disabled. Scope/config/owner-handle
-changes refused. Full shared concurrent writer/drain coordination stays caller's
-obligation; per-call guard is not atomic all-work ownership. Existing native write
-methods may read DB header; zero-raw-open acceptance is construction/selection/
-readonly-load/detach, not every mutation. Native profile/mount trust not minted.
-
-### Current verified counts
-
-NEW combined fullWindows3162=3139PASS/23SKIP/0ERROR/0FAIL exit0.496 source/config/
-test hashes +5 native patch hashes stable. ALL490 prior harness files unchanged.
-50 original parent evidence blobs preserved. Original23/23 and independent24/24
-genuine native Windows methods PASS on same3 product hashes; suites overlap,
-not47unique cases.14offline receipts are subsets of standard suite; re-run14/14
-PASS on delivered source.23old platform/opt-in skips NOT reexecuted. Native full
-upstream pytest and Linux isolation NOT RUN.
-
-Original registry behavior control confirmed1 extra connection, not called bug.
-Independent250 and original261 imported native files match immutable943Git or
-explicit patch. Fresh patch apply reproduces exact bytes, second apply refused.
-Fresh profiles removed, caller leases released after test teardown, registry0.
-First failed fixture outcomes preserved (original21/23 and independent21/24):
-sessions directory was already created by native imports, not borrowed facade.
-Before/after comparison correction left product unchanged. Mutation failure test
-allows existing native header validation but never JSON fallback/new connection.
-Native journal fallback warning retained; no dependency/runtime upgrade.
-
-### Next exact acceptance boundary
-
-SessionStore caller-owned constructor is ready as staged optional patch. Now
-construct one REAL canonical runner/SessionAuthority with the existing caller
-state/accepted epoch and same three-store owner; no duplicate connection or epoch,
-no ad-hoc private assignment. Native borrowed_runner_conflict remains BYTE-EXACT
-and MUST stay until the shared contract is explicitly tested. Native listener/
-work/model routes not activated. Then same-path profile/mount/three-store lifetime
-and activeHTTP/full-isolation acceptance. FullD3B/cross-store recovery/powerloss,
-broker live-ledger/dummy-provider accounting remain OPEN. LegacyIPCv2 CLOSED.
-C120P9 extra physical probe remains HOLD; prior blocked operations NOT retried.
-No root/WSL/provider/model/main/push/CIqueue/production/account changes. Maincc7ceba.
-
-### Records
-
-Joint report docs/D3B-SESSION-BORROW-JOINT-J121S1.md; detailed original and independent
-reports D3B-SESSION-BORROW-S121R4.md / D3B-SESSION-BORROW-QA-S121S1.md.
-Staged config/hermes-session-borrow-s121r4.json; patch under patches/hermes/s121r4/.
-Joint evidence evidence/d3b-session-borrow-joint-j121s1/: summary.json,delivery.json,
-full-windows-result.json,full-source/patch manifests,source-custody.json,
-selected-delivery-result.json,static-primary-final.txt. Original raw native/results
-remain in s121r4/s121s1 evidence. Status history docs/status-history/j121s1-*.md.
-All native/full/merge jobs terminal; final static/docs commit only, no runtime replay.
+Report docs/D3B-RUNNER-QA-R122Q6.md; evidence matching directory, native-002/
+extended-result.json, source-custody-current.json, candidate-snapshot002, raw before
+failure, default-native baseline. Current full harness suite PENDING union with
+original patch. All own native jobs terminal; static/selected QA commit next.
+No root/WSL/main/push/CI/production/installed updates; prior blocks not retried.
