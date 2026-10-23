@@ -115,3 +115,7 @@ not native reruns. Original28 and independent30 actual-native packages match
 same7product hashes and remain overlapping scopes. Native patch remains staged,
 not installed; service/admission/API/isolation acceptance remains open.
 Local static-final.txt follows and is not a remote CI or production result.
+
+## Canonical artifact delivery
+
+Tested merge `4725de8e6e516c2d459992d684d228f866734b58` delivered from `a941906565ab61af0b85dcbb234a5ba22bfbce98` by fast-forward only. All505 source hashes and6patches match the new complete run; delivered14 offline receipts PASS. Native feature6b8124ab remains STAGED/NOT_INSTALLED, no service or admission. Installed nativeeb75627/main unchanged, no push. Final handoff edits docs/static evidence only and preserves original ancestry.

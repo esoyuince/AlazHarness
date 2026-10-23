@@ -1,41 +1,76 @@
 # AlazHarness - status
 
-## D3B-RUNNER-BORROW-JOINT-J122C4 - SCOPED PASS; CANONICAL DELIVERY PENDING
+## D3B-RUNNER-BORROW-JOINT-J122C4 - DEVELOPMENT-INTEGRATED; PREPARED REAL RUNNER, SERVICE CLOSED
 
-ONE native R122C4 implementation + independent R122Q6 QA histories retained.
-Native feature6b8124ab on2bc50496 changes7files, STAGED_NOT_INSTALLED. Actual full
-GatewayRunner constructor selects caller state before eager registry acquire;
-real SessionStore/AsyncSessionDB/SessionAuthority, same accepted epoch/instance.
-No fake facade/private rewiring, epoch increment/recovery or new SQLite handles.
-Authority PREPARED/RETIRING, runner DRAINING, no capabilities/admission. Ordinary
-service start/stop/direct teardown/old authority init refuse before side effects.
-Default behavior unchanged; native borrowed_runner_conflict remains intact.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested merge4725de8e6e516c2d459992d684d228f866734b58. Original implementation
+8fb9c52 and independentQAfc19e65 histories retained. Exact promotion in joint
+delivery.json; read currentGitHEAD for final documentation handoff.
+Native optional feature6b8124ab3874b330968c08bf05ce82004d762258 on2bc50496,
+7files changed. STAGED_NOT_INSTALLED: vendor/source locks still eb75627.
 
-NEW fullWindows3176=3153PASS/23SKIP/0ERROR/0FAIL.505 source hashes+6patches stable;
-ALL496 prior harness files unchanged.82 parent evidence blobs exact. Actual
-native28/28 + independent30/30PASS on same7source hashes, overlapping not58unique
-scenarios.14offline receipts are full-suite subsets.23old platform/opt-in skips
-not reexecuted; official native upstream full suite not run. No activeHTTP/Linux
-isolation/shared-three-store API acceptance or installed native update.
+### Actual new construction contract
 
-Initial24native success followed by real prepared-owner drift failure (3/4 own,
-6independent parent methods/15assertions); helper corrected, same negatives now
-pass. Failed receipts/executed bytes preserved. Identity/epoch/profile/descriptor/
-single-registry and closed-admission flags rechecked before select/detach.
-No automatic cancel/discard/rollback/close of caller resources. Temp profiles,
-profile ownership, registry and async tasks clean in native evidence.
+Real GatewayRunner(config,caller_state=...) constructor, real native SessionStore/
+AsyncSessionDB and prepared SessionAuthority reuse SAME caller SessionDB and
+accepted epoch/instance. No fake runner facade, private post-construction rewire,
+new SQLite/registry acquire, epoch increment, recovery/backfill or DB maintenance.
+Defaults retain original path. Binding consumed once; foreign profile/file/handle/
+config/owner/transaction/unknown work refused. Prepared authority is RETIRING,
+runner DRAINING, capabilities/served profiles empty. Real admission gate refuses.
 
-Framework smoke failed on own audit socketpair setup, retained. Final native
-imports denied7version-infoGitprobes+1IPv6bind; not zero attempts, no effective
-native-test external/model/provider/service. Existing SQLite warning unchanged.
-Native commit used existing harness identity command-locally, no config change.
+Ordinary start/stop/direct teardown/old authority initializer refuse before service,
+watchdog, new epoch or caller close. Explicit detach only closes own facade;
+caller state/profile retained. Busy native task/executor/maps/dirty data or open
+transaction never cancelled/discarded/rolled back. Exact prepared authority,
+profile/instance/epoch/single registry/original descriptor and closed-service
+flags rechecked before select/detach. Post-facade partial failure stays UNKNOWN;
+separate injection of that rare branch not claimed. Not a hostile-local-code
+capability system or global atomic drain; caller coordination still required.
 
-Next source-identical canonical delivery, then shared three-store caller lifetime,
-explicit borrowed API compatibility/local epoch mappings, updated-source tasks
-and profile/mount/activeHTTP isolation. FullD3B/live accounting/recovery/powerloss
-OPEN. C120P9 staysHOLD; old blocked operations not reissued. No WSL/root/main/push/
-CI/production. All native/full jobs terminal; static/merge commit follows.
+### Exact current acceptance
 
-Joint report docs/D3B-RUNNER-BORROW-JOINT-J122C4.md; inputs/summary/source-custody,
-full result and source/patch manifests in matching joint evidence. Detailed
-native original and independent proofs retained in r122c4/r122q6 evidence.
+NEW fullWindows3176=3153PASS/23SKIP/0ERROR/0FAIL, exit0.505 source/config/test
+hashes+6patch hashes stable; ALL496 previous harness files unchanged.82 parent
+evidence blobs retained. Native28/28 and independent30/30 current methods pass
+same7product hashes; suites overlap, NOT58unique scenarios.14offline receipts
+are full-suite subsets, re-run14/14PASS on delivered exact sources.23old platform/
+opt-in skips NOT reexecuted; native upstream full pytest not run.
+
+Initial24 success missed prepared-owner drift. Original extra4cases failed3;
+independent extra6 parent methods failed15 assertions. Same assertions pass after
+helper correction; old receipts/source snapshots retained. Actual native import
+hashes467original/461independent verified. Fresh patch apply exact, repeat refused.
+Native cleanup: temp profiles/ownership/registry/pending tasks cleared by fixtures.
+
+First smoke failed on test audit Windows loop socketpair setup AFTER constructor;
+retained. Final loop initialized before native audit. Original import phase denied
+7versionGit subprocess probes+1IPv6bind; not zero attempted operations. No actual
+native-test provider/model/service/listener. Native SQLite warning retained; no
+interpreter/dependency update. Native commit identity supplied from existing
+harness config command-locally only; no global/repo config mutation.
+
+### Next / not accepted
+
+Prepared state-only native runner construction is closed; complete shared3store
+state/replay/response API service is NOT. Bind the SAME caller-owned store bundle
+and epoch, exact native local epoch mappings, and an explicit compatible borrowed
+API attachment. Existing borrowed_runner_conflict stays BYTE-EXACT until proper
+qualification; do not remove it or rewire after eager construction. Qualify task
+observers against updated native source and real admitted lifecycle, then same-
+path profile/mount/activeHTTP/Linux isolation before opening service/admission.
+FullAIAgent/brokerliveaccounting/fullD3B/recovery/powerloss remain OPEN.
+
+C120P9 optional physical probe HOLD, old tool blocks NOT retried. No root/WSL/
+mount/provider/model/main/push/CIqueue/production/accounts change. Maincc7ceba.
+
+### Records and continuation
+
+Joint docs/D3B-RUNNER-BORROW-JOINT-J122C4.md; original D3B-RUNNER-BORROW-R122C4.md,
+independent D3B-RUNNER-QA-R122Q6.md. Staged config/hermes-runner-borrow-r122c4.json
+and patches/hermes/r122c4/runner-caller-state.patch. Joint evidence includes
+summary,inputs,source-custody,delivery,full-windows-result,source/patch manifests,
+selected-delivery-result and static-primary-final. Original raw native/current/
+failed receipts in respective r122c4/r122q6 evidence, previous status histories
+preserved. All native/full/merge jobs terminal; final docs/static only, no replay.
