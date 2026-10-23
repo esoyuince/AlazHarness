@@ -1,0 +1,242 @@
+"""Exercise actual native /v1/runs producer hooks with real tasks and stores.
+
+No HTTP listener or authentication middleware is started. Only agent execution and
+external/authority delivery boundaries are explicit deterministic test doubles.
+Native request parsing, replay reserve, Task creation, status and retirement run.
+"""
+import argparse,asyncio,contextlib,hashlib,json,os,sys,tempfile,threading,time,unittest
+from dataclasses import FrozenInstanceError
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch,AsyncMock
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(Path(__file__).parent)]
+import b112x9_adapter_probe as fixture
+import gateway_work_health as policy
+from gateway_work_health_reader import NativeWorkReader
+from gateway_work_observer import NativeTaskObserver,TaskObservationRejected
+from gateway_native_run_provenance import NativeRunProvenance,NativeIngressRejected
+native_hooks=runtime=api=None
+RESULTS=[]
+
+class Request(dict):
+    method='POST'
+    path='/v1/runs'
+    def __init__(self,body,key='owned-key'):
+        super().__init__();self.body=body;self.headers={'Idempotency-Key':key} if key is not None else {}
+    async def json(self):return self.body.copy()
+
+class NativeProducerTests(unittest.IsolatedAsyncioTestCase):
+    loop_factory=staticmethod(fixture.NativeBorrowTests.loop_factory)
+    build=fixture.NativeBorrowTests.build
+    alive=fixture.NativeBorrowTests.alive
+    def setUp(self):fixture.NativeBorrowTests.setUp(self)
+    async def asyncSetUp(self):
+        self.a=self.build();self.stack=contextlib.ExitStack();self.events=[];self.worker_started=asyncio.Event()
+        self.worker_release=threading.Event();self.worker_release.set();self.worker_done=asyncio.Event()
+        self.loop=asyncio.get_running_loop();self.dummy_calls=0
+        self.epoch=runtime.begin_runtime_epoch(self.state,instance_id='h117b-owned')
+        self.state.create_session('fixture-session','api')
+        store=self.state._conn.execute("SELECT value FROM main.state_meta WHERE key='store_instance_id'").fetchone()[0]
+        self.identity=policy.RuntimeIdentity(store,self.epoch,'h117b-owned',os.getpid(),self.a._run_owner_started)
+        self.reader=NativeWorkReader(self.state,self.replay,self.response,self.identity,schema_hashes=(
+            'f4889e8d91c8b57ee828ac7a1ead9ac880db48f9c21500e3800d4b48b759e8c7',
+            'c4adac6a33044a05806868e2518e5f778c62e99d26a73c003fc6112ed3d589a3',
+            'c4b66ce0c9b2571b17eae2080834e365b3aa526d40157c8c3cf4f353541ae1b4'))
+        self.observer=NativeTaskObserver(self.a,self.reader)
+        self.stack.enter_context(patch.object(self.a,'_create_agent',return_value=SimpleNamespace()))
+        self.stack.enter_context(patch.object(fixture.api_runs,'_run_agent_sync',side_effect=self.dummy_agent))
+    def dummy_agent(self,*a,**k):
+        self.dummy_calls+=1;self.loop.call_soon_threadsafe(self.worker_started.set)
+        try:
+            if not self.worker_release.wait(8):raise AssertionError('test_worker_release_missing')
+            return {'final_response':'owned deterministic result'},{},{}
+        finally:self.loop.call_soon_threadsafe(self.worker_done.set)
+    async def asyncTearDown(self):
+        self.worker_release.set()
+        for task in self.tasks:
+            if not task.done():task.cancel()
+        if self.tasks:await asyncio.gather(*self.tasks,return_exceptions=True)
+        deadline=self.loop.time()+5
+        while fixture.api_runs.api_worker_live_count():
+            if self.loop.time()>deadline:raise AssertionError('native_worker_leaked')
+            await asyncio.sleep(0)
+        self.stack.close()
+        RESULTS.append({'case':self._testMethodName,'eventPhases':[e.phase for e in self.events],
+                        'roles':sorted({e.binding.execution_role for e in self.events}),
+                        'dummyAgentCalls':self.dummy_calls,'nativeWorkersRemaining':fixture.api_runs.api_worker_live_count()})
+        await fixture.NativeBorrowTests.asyncTearDown(self)
+    def attach(self,sink=None):
+        return native_hooks.RunLifecycleChannel(self.a,self.events.append if sink is None else sink)
+    async def post(self,body=None,key='owned-key'):
+        response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+        if response.status==202:
+            rid=json.loads(response.body)['run_id'];task=self.a._active_run_tasks.get(rid)
+            if task is not None and task not in self.tasks:self.tasks.append(task)
+        return response
+    async def finish(self):
+        self.worker_release.set()
+        if self.tasks:await asyncio.gather(*self.tasks,return_exceptions=True)
+        await asyncio.sleep(0)
+    async def test_default_disabled_preserves_native_run(self):
+        self.assertIsNone(self.a._run_observation_channel);r=await self.post();self.assertEqual(r.status,202)
+        await self.finish();self.assertEqual(self.dummy_calls,1);self.assertIsNone(self.a._run_observation_channel)
+        self.assertEqual(self.a._run_statuses[json.loads(r.body)['run_id']]['status'],'completed')
+    async def test_native_complete_lifecycle_and_immutable_ingress_identity(self):
+        ch=self.attach();body={'input':'owned dummy input'};r=await self.post(body)
+        self.assertEqual(r.status,202);self.assertEqual([e.phase for e in self.events],['ACCEPTED','CREATED'])
+        binding=self.events[0].binding;task=self.tasks[0]
+        self.assertIs(self.a._active_run_tasks[binding.run_id],task)
+        expected=hashlib.sha256(json.dumps({'body':body,'gateway_session_key':''},sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+        self.assertEqual(binding.fingerprint,expected);self.assertEqual(binding.key,'owned-key')
+        self.assertEqual(binding.execution_role,'executor_thread_carrier');self.assertIsNone(binding.admission_id)
+        with self.assertRaises(FrozenInstanceError):binding.key='other'
+        await self.finish()
+        self.assertEqual([e.phase for e in self.events],['ACCEPTED','CREATED','STARTED','EXECUTION_RETURNED','RETIRED','DONE'])
+        self.assertEqual([e.sequence for e in self.events],list(range(1,7)))
+        self.assertTrue(all(e.binding is binding for e in self.events));self.assertTrue(all(e.task is task for e in self.events[1:]))
+        self.assertTrue(self.events[-1].task_done);self.assertEqual(self.events[-1].native_status,'completed')
+        self.assertEqual(ch.status()['state'],'OBSERVING');self.alive()
+    async def test_expected_fingerprint_not_relearned_from_candidate_store(self):
+        self.attach();self.worker_release.clear();await self.post();binding=self.events[0].binding
+        self.replay._conn.execute('UPDATE main.run_idempotency SET fingerprint=?',('f'*64,));self.replay._conn.commit()
+        await self.finish();self.assertTrue(all(e.binding.fingerprint==binding.fingerprint for e in self.events))
+        self.assertNotEqual(binding.fingerprint,'f'*64)
+    async def test_idempotent_replay_does_not_emit_another_admission(self):
+        ch=self.attach();self.worker_release.clear();r=await self.post();await asyncio.wait_for(self.worker_started.wait(),3)
+        before=len(self.events);again=await self.post()
+        self.assertEqual(again.status,202);self.assertTrue(json.loads(again.body)['replayed'])
+        self.assertEqual(json.loads(r.body)['run_id'],json.loads(again.body)['run_id']);self.assertEqual(len(self.events),before)
+        await self.finish();self.assertEqual(self.dummy_calls,1);self.assertEqual(ch.status()['state'],'OBSERVING')
+    async def test_conflict_and_bad_key_never_emit_new_run(self):
+        self.attach();self.worker_release.clear();await self.post();await asyncio.wait_for(self.worker_started.wait(),3);before=len(self.events)
+        conflict=await self.post({'input':'different'});self.assertEqual(conflict.status,409);self.assertEqual(len(self.events),before)
+        bad=await self.post(key='bad'+chr(0));self.assertEqual(bad.status,400);self.assertEqual(len(self.events),before)
+        await self.finish()
+    async def test_unkeyed_request_has_no_fabricated_idempotency_proof(self):
+        self.attach();await self.post(key=None);await self.finish()
+        self.assertIsNone(self.events[0].binding.key);self.assertIsNone(self.events[0].binding.fingerprint)
+    async def test_observer_exception_latches_gap_without_cancelling_work(self):
+        calls=[]
+        def broken(event):calls.append(event.phase);raise RuntimeError('private-do-not-log')
+        ch=self.attach(broken);r=await self.post();await self.finish()
+        self.assertEqual(calls,['ACCEPTED']);self.assertEqual(ch.status()['state'],'GAP')
+        self.assertNotIn('private-do-not-log',str(ch.status()));self.assertEqual(self.dummy_calls,1)
+        self.assertEqual(self.a._run_statuses[json.loads(r.body)['run_id']]['status'],'completed')
+    async def test_async_sink_is_not_scheduled(self):
+        calls=[]
+        async def invalid(event):calls.append(event.phase)
+        ch=self.attach(invalid);await self.post();await self.finish()
+        self.assertEqual(calls,[]);self.assertEqual(ch.status()['reason'],'run_observation_sink_must_be_synchronous')
+    async def test_duplicate_attach_rejected_before_replacement(self):
+        ch=self.attach()
+        with self.assertRaises(ValueError):self.attach()
+        self.assertIs(self.a._run_observation_channel,ch)
+    async def test_attach_after_native_task_creation_refused(self):
+        self.worker_release.clear();await self.post()
+        with self.assertRaises(ValueError):self.attach()
+        self.assertIsNone(self.a._run_observation_channel);await self.finish()
+    async def test_replaced_channel_is_not_adopted_midrun(self):
+        ch=self.attach();await self.post();self.a._run_observation_channel=None
+        await self.finish();self.assertEqual(ch.status()['state'],'GAP');self.assertEqual(self.dummy_calls,1)
+    async def test_cancelled_carrier_done_does_not_hide_live_native_thread(self):
+        ch=self.attach();self.worker_release.clear();await self.post();await asyncio.wait_for(self.worker_started.wait(),3)
+        task=self.tasks[0];task.cancel();await asyncio.gather(task,return_exceptions=True);await asyncio.sleep(0)
+        self.assertTrue(task.cancelled());self.assertEqual(fixture.api_runs.api_worker_live_count(),1)
+        self.assertEqual(self.events[-1].phase,'DONE');self.assertEqual(self.events[-1].worker_count,1)
+        self.assertEqual(self.events[-1].native_status,'cancelled');self.assertEqual(ch.status()['state'],'OBSERVING')
+        with self.assertRaises(TaskObservationRejected):self.observer.capture()
+        self.worker_release.set()
+    async def test_agent_failure_is_not_reported_as_execution_returned(self):
+        self.attach();self.stack.enter_context(patch.object(self.a,'_create_agent',side_effect=RuntimeError('owned dummy failure')))
+        r=await self.post();await self.finish()
+        self.assertNotIn('EXECUTION_RETURNED',[e.phase for e in self.events]);self.assertEqual(self.events[-1].native_status,'failed')
+        self.assertEqual(self.a._run_statuses[json.loads(r.body)['run_id']]['status'],'failed')
+    async def test_consumer_uses_native_publication_without_manual_task_map(self):
+        consumer=NativeRunProvenance(self.observer);self.worker_release.clear();r=await self.post();rid=json.loads(r.body)['run_id']
+        bound=consumer.binding_for(rid,self.tasks[0]);public=bound.public()
+        self.assertEqual(public['executionRole'],'executor_thread_carrier');self.assertTrue(public['nativeProducerNotificationsObserved'])
+        for key in ('canonicalExecutorVerified','serviceReadinessVerified','runtimeAdmissionAuthorized','storeReleaseAuthorized'):self.assertFalse(public[key])
+        self.assertEqual(self.observer._entries,{})
+        await self.finish();self.assertEqual(consumer.status()['activeProvenanceRecords'],0)
+        self.assertEqual(consumer.status()['completedDiagnosticCount'],1)
+        with self.assertRaises(NativeIngressRejected):consumer.binding_for(rid,self.tasks[0])
+    async def test_canonical_authority_path_is_labelled_watcher_not_executor(self):
+        self.attach();self.a.gateway_runner=SimpleNamespace(session_authority=object())
+        async def admitted(adapter,launch,*args):
+            row=runtime.admit_session_input(self.state,epoch=self.epoch,principal_id='owned',session_id='fixture-session',request_id='canonical',payload={'text':'fixture'})
+            launch.admission=(object(),object(),row);return None
+        async def result(*a,**k):return {'final_response':'canonical dummy result'},{}
+        self.stack.enter_context(patch.object(fixture.api_runs,'_admit_run_to_authority',side_effect=admitted))
+        import gateway.session_api_turn as turn
+        self.stack.enter_context(patch.object(turn,'observe_api_controls',return_value=contextlib.nullcontext()))
+        self.stack.enter_context(patch.object(turn,'observe_api_turn',side_effect=result))
+        await self.post();await self.finish();binding=self.events[0].binding
+        self.assertEqual(binding.execution_role,'canonical_authority_observer');self.assertIsNotNone(binding.admission_id)
+        self.assertEqual(binding.canonical_session_id,'fixture-session');self.assertEqual(self.dummy_calls,0)
+        self.a.gateway_runner=None
+    async def test_external_owner_path_is_labelled_watcher(self):
+        self.attach()
+        self.stack.enter_context(patch.object(self.a,'_admit_to_live_bot_chat',new=AsyncMock(return_value=(self.home,{'delivery_id':'owned-delivery','status':'queued'}))))
+        import gateway.platforms.api_server_bot_chat as bot
+        self.stack.enter_context(patch.object(bot,'await_live_delivery',new=AsyncMock(return_value={'status':'settled','reply':'external dummy'})))
+        await self.post({'input':'owned dummy input','session_id':'fixture-session'});await self.finish()
+        self.assertEqual(self.events[0].binding.execution_role,'external_owner_observer')
+        self.assertEqual([e.phase for e in self.events],['ACCEPTED','CREATED','STARTED','EXECUTION_RETURNED','RETIRED','DONE']);self.assertEqual(self.dummy_calls,0)
+    async def test_native_listener_gate_stays_closed(self):
+        self.attach()
+        with self.assertRaisesRegex(fixture.BorrowedStoreRejected,'listener_not_qualified'):await self.a.connect()
+        self.assertIsNone(self.a._runner);self.assertIsNone(self.a._site)
+
+
+def main():
+    global api,native_hooks,runtime
+    p=argparse.ArgumentParser();p.add_argument('--native',type=Path,required=True);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+    n=args.native.resolve(strict=True);out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    boot=tempfile.TemporaryDirectory(prefix='alaz-h117b-import-')
+    os.environ.update(HERMES_HOME=boot.name,HOME=boot.name,USERPROFILE=boot.name,APPDATA=boot.name,LOCALAPPDATA=boot.name)
+    sys.path.insert(0,str(n))
+    def audit(event,fields):
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo'):
+            if fixture.AUDIT['frameworkLoopSetup'] and event in ('socket.connect','socket.bind') and isinstance(fields[1],tuple) and fields[1][0] in ('127.0.0.1','::1'):
+                fixture.AUDIT['frameworkSocketEvents']+=1;return
+            fixture.AUDIT['network']+=1;raise PermissionError('h117b_offline')
+        if event=='subprocess.Popen':raise PermissionError('h117b_no_subprocess')
+        if fixture.AUDIT['watch'] and event=='sqlite3.connect':fixture.AUDIT['connects']+=1;raise AssertionError('unexpected_sqlite_open')
+    sys.addaudithook(audit)
+    import urllib3.util.connection
+    import gateway.platforms.api_server as api
+    from gateway.config import PlatformConfig
+    from hermes_state import SessionDB
+    from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+    from gateway.platforms.api_server_response_store import ResponseStore
+    from gateway.platforms.api_server_borrowed import BorrowedAPIStores,BorrowedStoreRejected
+    from gateway import runtime_ownership as ownership
+    from gateway.platforms import api_server_runs,api_server_run_observation as native_hooks
+    import hermes_state_runtime as runtime
+    fixture.APIServerAdapter=api.APIServerAdapter;fixture.api_runs=api_server_runs
+    for name in ('PlatformConfig','SessionDB','RunIdempotencyStore','ResponseStore','BorrowedAPIStores','BorrowedStoreRejected','ownership'):setattr(fixture,name,locals()[name])
+    before_network=fixture.AUDIT['network']
+    local=('packages/claw-hermes/gateway_native_run_provenance.py','scripts/qa/h117b_native_producer.py','packages/claw-hermes/gateway_work_observer.py','scripts/qa/b112x9_adapter_probe.py')
+    sources={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in local}
+    suite=unittest.defaultTestLoader.loadTestsFromTestCase(NativeProducerTests)
+    with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as stream:r=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+    imports={}
+    for m in tuple(sys.modules.values()):
+        f=getattr(m,'__file__',None)
+        if f:
+            path=Path(f).resolve()
+            if path.is_relative_to(n) and path.suffix=='.py':imports[path.relative_to(n).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
+    stable=all(hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==h for name,h in sources.items())
+    boot.cleanup();report={'result':'PASS_NATIVE_PRODUCER_HOOKS_SCOPED' if r.wasSuccessful() and stable and fixture.AUDIT['network']==before_network else 'FAIL',
+        'total':r.testsRun,'passed':r.testsRun-len({t.id() for t,_ in r.errors+r.failures})-len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),'skipped':len(r.skipped),
+        'errorIds':[t.id() for t,_ in r.errors],'failureIds':[t.id() for t,_ in r.failures], 'sources':sources,'nativeImports':imports,'sourcesUnchanged':stable,'cases':RESULTS,
+        'nativeEntryAndTaskLifecycleReal':True,'nativeTaskMapsWrittenByFixture':False,'agentExecutionDoubled':True,'authorityAndBotDeliveryBoundariesDoubled':True,
+        'authenticationMiddlewareTested':False,'httpListenerStarted':False,'canonicalExecutorHealthProven':False,'fullIsolationTested':False,'rootWslAction':False,
+        'providerCalls':0,'newNetworkAttempts':fixture.AUDIT['network']-before_network,'deniedImportProbes':before_network,
+        'profileReleased':not ownership.process_ownership.homes,'bootstrapRemoved':not Path(boot.name).exists()}
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','cases','sources')}),flush=True)
+    if report['result']=='FAIL':print((out/'tests.txt').read_text(encoding='utf-8')[-20000:],flush=True)
+    return 0 if report['result'].startswith('PASS') else 1
+if __name__=='__main__':raise SystemExit(main())

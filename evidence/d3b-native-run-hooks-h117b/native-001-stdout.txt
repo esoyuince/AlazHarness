@@ -1,0 +1,246 @@
+{"result": "FAIL", "total": 17, "passed": 2, "errors": 15, "failures": 0, "skipped": 0, "errorIds": ["__main__.NativeProducerTests.test_agent_failure_is_not_reported_as_execution_returned", "__main__.NativeProducerTests.test_async_sink_is_not_scheduled", "__main__.NativeProducerTests.test_attach_after_native_task_creation_refused", "__main__.NativeProducerTests.test_cancelled_carrier_done_does_not_hide_live_native_thread", "__main__.NativeProducerTests.test_canonical_authority_path_is_labelled_watcher_not_executor", "__main__.NativeProducerTests.test_conflict_and_bad_key_never_emit_new_run", "__main__.NativeProducerTests.test_consumer_uses_native_publication_without_manual_task_map", "__main__.NativeProducerTests.test_default_disabled_preserves_native_run", "__main__.NativeProducerTests.test_expected_fingerprint_not_relearned_from_candidate_store", "__main__.NativeProducerTests.test_external_owner_path_is_labelled_watcher", "__main__.NativeProducerTests.test_idempotent_replay_does_not_emit_another_admission", "__main__.NativeProducerTests.test_native_complete_lifecycle_and_immutable_ingress_identity", "__main__.NativeProducerTests.test_observer_exception_latches_gap_without_cancelling_work", "__main__.NativeProducerTests.test_replaced_channel_is_not_adopted_midrun", "__main__.NativeProducerTests.test_unkeyed_request_has_no_fabricated_idempotency_proof"], "failureIds": [], "sourcesUnchanged": true, "nativeEntryAndTaskLifecycleReal": true, "nativeTaskMapsWrittenByFixture": false, "agentExecutionDoubled": true, "authorityAndBotDeliveryBoundariesDoubled": true, "authenticationMiddlewareTested": false, "httpListenerStarted": false, "canonicalExecutorHealthProven": false, "fullIsolationTested": false, "rootWslAction": false, "providerCalls": 0, "newNetworkAttempts": 0, "deniedImportProbes": 1, "profileReleased": true, "bootstrapRemoved": true}
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_default_disabled_preserves_native_run (__main__.NativeProducerTests.test_default_disabled_preserves_native_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 82, in test_default_disabled_preserves_native_run
+    self.assertIsNone(self.a._run_observation_channel);r=await self.post();self.assertEqual(r.status,202)
+                                                         ^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_expected_fingerprint_not_relearned_from_candidate_store (__main__.NativeProducerTests.test_expected_fingerprint_not_relearned_from_candidate_store)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 101, in test_expected_fingerprint_not_relearned_from_candidate_store
+    self.attach();self.worker_release.clear();await self.post();binding=self.events[0].binding
+                                              ^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_external_owner_path_is_labelled_watcher (__main__.NativeProducerTests.test_external_owner_path_is_labelled_watcher)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 183, in test_external_owner_path_is_labelled_watcher
+    await self.post({'input':'owned dummy input','session_id':'fixture-session'});await self.finish()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_idempotent_replay_does_not_emit_another_admission (__main__.NativeProducerTests.test_idempotent_replay_does_not_emit_another_admission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 106, in test_idempotent_replay_does_not_emit_another_admission
+    ch=self.attach();self.worker_release.clear();r=await self.post();await asyncio.wait_for(self.worker_started.wait(),3)
+                                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_native_complete_lifecycle_and_immutable_ingress_identity (__main__.NativeProducerTests.test_native_complete_lifecycle_and_immutable_ingress_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 86, in test_native_complete_lifecycle_and_immutable_ingress_identity
+    ch=self.attach();body={'input':'owned dummy input'};r=await self.post(body)
+                                                          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_observer_exception_latches_gap_without_cancelling_work (__main__.NativeProducerTests.test_observer_exception_latches_gap_without_cancelling_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 122, in test_observer_exception_latches_gap_without_cancelling_work
+    ch=self.attach(broken);r=await self.post();await self.finish()
+                             ^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_replaced_channel_is_not_adopted_midrun (__main__.NativeProducerTests.test_replaced_channel_is_not_adopted_midrun)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 140, in test_replaced_channel_is_not_adopted_midrun
+    ch=self.attach();await self.post();self.a._run_observation_channel=None
+                     ^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+======================================================================
+ERROR: test_unkeyed_request_has_no_fabricated_idempotency_proof (__main__.NativeProducerTests.test_unkeyed_request_has_no_fabricated_idempotency_proof)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 117, in test_unkeyed_request_has_no_fabricated_idempotency_proof
+    self.attach();await self.post(key=None);await self.finish()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-run-hooks-h117b\scripts\qa\h117b_native_producer.py", line 72, in post
+    response=await self.a._handle_runs(Request(body or {'input':'owned dummy input'},key))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 837, in _wrapped
+    else self._check_auth(request))
+         ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1516, in _check_auth
+    logger.warning("API server rejected invalid API key: %s", self._request_audit_log_suffix(request))
+                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1456, in _request_audit_log_suffix
+    ctx = self._request_audit_context(request)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-run-hooks-h117b\gateway\platforms\api_server.py", line 1452, in _request_audit_context
+    "path": self._clean_log_value(request.path_qs, max_len=500),
+                                  ^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'path_qs'
+
+----------------------------------------------------------------------
+Ran 17 tests in 16.257s
+
+FAILED (errors=15)
+

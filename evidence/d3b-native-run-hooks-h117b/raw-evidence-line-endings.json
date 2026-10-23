@@ -1,0 +1,5 @@
+{
+  "stagingStoppedBeforeCommit": true,
+  "rawResultBytesEdited": false,
+  "scope": "only own evidence/*.json accepts CR as line ending; ordinary source whitespace checks unchanged"
+}

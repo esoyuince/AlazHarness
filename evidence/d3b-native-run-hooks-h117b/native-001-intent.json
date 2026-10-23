@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T12:45:14.110482+03:00",
+  "sources": {
+    "harness:packages/claw-hermes/gateway_native_run_provenance.py": "6b95596df3e74dbeb52096d8c7cfea6f5c44e994fffa13ecf84ac2e778db014d",
+    "harness:scripts/qa/h117b_native_producer.py": "e3046a9bdf247d6062dff98cb9f7209df5679748d5246f25bc37dac9b8575f22",
+    "native:gateway/platforms/api_server_runs.py": "58330aa6024e2b662214794ad448f888ec9aa3bcdbe25e2ffbc4ff06a9d79e07",
+    "native:gateway/platforms/api_server_run_observation.py": "224f68468d2fe3fca41de800bc51fc4df5117f76f052670504e93205ce1be879"
+  },
+  "nativeBase": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "request": "e1175a20-8fd8-4a22-a457-70c117000011",
+  "scope": "actual native run producer methods; dummy model/external/authority execution; no listener/root/WSL"
+}

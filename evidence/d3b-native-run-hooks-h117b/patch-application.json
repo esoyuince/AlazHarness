@@ -1,0 +1,14 @@
+{
+  "baseNativeCommit": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "baseRunsSha256": "c67a3d0564afd2cd34c2726efe172f77b5e196f9a2756df93ad804452922614e",
+  "patchSha256": "86d2ae5d4014239e08c790e947692a65919178c887a4e6e5418244736683098d",
+  "checkAndApplyExitCode": 0,
+  "outputHashes": {
+    "gateway/platforms/api_server_run_observation.py": "224f68468d2fe3fca41de800bc51fc4df5117f76f052670504e93205ce1be879",
+    "gateway/platforms/api_server_runs.py": "58330aa6024e2b662214794ad448f888ec9aa3bcdbe25e2ffbc4ff06a9d79e07"
+  },
+  "repeatApplicationExitCode": 1,
+  "rawByteHashMatch": true,
+  "temporaryGitAutocrlfOverrideOnly": true,
+  "temporaryExportRemoved": true
+}

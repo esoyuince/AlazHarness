@@ -1,0 +1,5 @@
+{
+  "guardedDraftEditsStoppedBeforeExistingFileWrite": 3,
+  "correction": "target exact original AST function segments before applying edits; no future import assumed",
+  "nativeTestsStarted": false
+}

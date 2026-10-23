@@ -1,0 +1,25 @@
+test_agent_failure_is_not_reported_as_execution_returned (__main__.NativeProducerTests.test_agent_failure_is_not_reported_as_execution_returned) ... ok
+test_async_sink_is_not_scheduled (__main__.NativeProducerTests.test_async_sink_is_not_scheduled) ... ok
+test_attach_after_native_task_creation_refused (__main__.NativeProducerTests.test_attach_after_native_task_creation_refused) ... ok
+test_cancelled_carrier_done_does_not_hide_live_native_thread (__main__.NativeProducerTests.test_cancelled_carrier_done_does_not_hide_live_native_thread) ... ok
+test_canonical_authority_path_is_labelled_watcher_not_executor (__main__.NativeProducerTests.test_canonical_authority_path_is_labelled_watcher_not_executor) ... ok
+test_changed_task_factory_fails_observation_not_execution (__main__.NativeProducerTests.test_changed_task_factory_fails_observation_not_execution) ... ok
+test_conflict_and_bad_key_never_emit_new_run (__main__.NativeProducerTests.test_conflict_and_bad_key_never_emit_new_run) ... ok
+test_consumer_uses_native_publication_without_manual_task_map (__main__.NativeProducerTests.test_consumer_uses_native_publication_without_manual_task_map) ... ok
+test_default_disabled_preserves_native_run (__main__.NativeProducerTests.test_default_disabled_preserves_native_run) ... ok
+test_duplicate_attach_rejected_before_replacement (__main__.NativeProducerTests.test_duplicate_attach_rejected_before_replacement) ... ok
+test_expected_fingerprint_not_relearned_from_candidate_store (__main__.NativeProducerTests.test_expected_fingerprint_not_relearned_from_candidate_store) ... ok
+test_external_owner_path_is_labelled_watcher (__main__.NativeProducerTests.test_external_owner_path_is_labelled_watcher) ... ok
+test_idempotent_replay_does_not_emit_another_admission (__main__.NativeProducerTests.test_idempotent_replay_does_not_emit_another_admission) ... ok
+test_native_bearer_rejection_precedes_any_notification (__main__.NativeProducerTests.test_native_bearer_rejection_precedes_any_notification) ... ok
+test_native_complete_lifecycle_and_immutable_ingress_identity (__main__.NativeProducerTests.test_native_complete_lifecycle_and_immutable_ingress_identity) ... ok
+test_native_listener_gate_stays_closed (__main__.NativeProducerTests.test_native_listener_gate_stays_closed) ... ok
+test_observer_exception_latches_gap_without_cancelling_work (__main__.NativeProducerTests.test_observer_exception_latches_gap_without_cancelling_work) ... ok
+test_prestart_cancellation_records_gap_not_false_retirement (__main__.NativeProducerTests.test_prestart_cancellation_records_gap_not_false_retirement) ... ok
+test_replaced_channel_is_not_adopted_midrun (__main__.NativeProducerTests.test_replaced_channel_is_not_adopted_midrun) ... ok
+test_unkeyed_request_has_no_fabricated_idempotency_proof (__main__.NativeProducerTests.test_unkeyed_request_has_no_fabricated_idempotency_proof) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 35.392s
+
+OK

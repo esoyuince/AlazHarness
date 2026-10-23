@@ -1,0 +1,7 @@
+{
+  "firstRun": "native-001",
+  "result": "FAIL",
+  "cause": "actual decorated native entry correctly rejected missing bearer; minimal Request also lacked audit path_qs",
+  "correction": "supply existing test-config bearer and request audit fields; auth function not mocked or bypassed",
+  "productSourceChanged": false
+}

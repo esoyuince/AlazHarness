@@ -1,0 +1,23 @@
+test_active_inventory_bounded_not_silently_evicted (test_native_run_provenance_h117b.ProvenanceContracts.test_active_inventory_bounded_not_silently_evicted) ... ok
+test_binding_object_cannot_be_replaced_by_equal_value (test_native_run_provenance_h117b.ProvenanceContracts.test_binding_object_cannot_be_replaced_by_equal_value) ... ok
+test_bounded_completed_diagnostics_retain_no_request_keys (test_native_run_provenance_h117b.ProvenanceContracts.test_bounded_completed_diagnostics_retain_no_request_keys) ... ok
+test_completed_provenance_discards_task_reference (test_native_run_provenance_h117b.ProvenanceContracts.test_completed_provenance_discards_task_reference) ... ok
+test_duplicate_acceptance_not_overwritten (test_native_run_provenance_h117b.ProvenanceContracts.test_duplicate_acceptance_not_overwritten) ... ok
+test_exact_task_binding_never_grants_executor_health (test_native_run_provenance_h117b.ProvenanceContracts.test_exact_task_binding_never_grants_executor_health) ... ok
+test_finished_task_is_not_active_binding (test_native_run_provenance_h117b.ProvenanceContracts.test_finished_task_is_not_active_binding) ... ok
+test_foreign_source_or_sequence_is_rejected (test_native_run_provenance_h117b.ProvenanceContracts.test_foreign_source_or_sequence_is_rejected) ... ok
+test_gap_or_replaced_channel_prevents_binding_access (test_native_run_provenance_h117b.ProvenanceContracts.test_gap_or_replaced_channel_prevents_binding_access) ... ok
+test_out_of_order_return_is_not_success (test_native_run_provenance_h117b.ProvenanceContracts.test_out_of_order_return_is_not_success) ... ok
+test_rejects_non_observer_and_existing_owner_inventory (test_native_run_provenance_h117b.ProvenanceContracts.test_rejects_non_observer_and_existing_owner_inventory) ... ok
+test_replaced_task_is_rejected (test_native_run_provenance_h117b.ProvenanceContracts.test_replaced_task_is_rejected) ... ok
+test_all_twenty_actual_outcomes_match_log (test_native_run_hook_receipt_h117b.NativeProducerReceipt.test_all_twenty_actual_outcomes_match_log) ... ok
+test_executed_local_sources_and_native_imports_match (test_native_run_hook_receipt_h117b.NativeProducerReceipt.test_executed_local_sources_and_native_imports_match) ... ok
+test_first_auth_fixture_failure_retained_and_product_unchanged (test_native_run_hook_receipt_h117b.NativeProducerReceipt.test_first_auth_fixture_failure_retained_and_product_unchanged) ... ok
+test_native_event_order_roles_and_no_duplicate_acceptance (test_native_run_hook_receipt_h117b.NativeProducerReceipt.test_native_event_order_roles_and_no_duplicate_acceptance) ... ok
+test_patch_exact_apply_and_duplicate_refusal_without_activation (test_native_run_hook_receipt_h117b.NativeProducerReceipt.test_patch_exact_apply_and_duplicate_refusal_without_activation) ... ok
+test_terminal_twenty_native_methods_and_scope (test_native_run_hook_receipt_h117b.NativeProducerReceipt.test_terminal_twenty_native_methods_and_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.394s
+
+OK
