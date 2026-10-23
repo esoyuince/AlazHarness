@@ -1,0 +1,21 @@
+{
+  "job": "D3B-SESSION-BORROW-S121R4",
+  "result": "PASS_SCOPED_NATIVE_PATCH_FULL_HARNESS_PENDING",
+  "at": "2026-10-23T20:19:28.935817+03:00",
+  "nativeBase": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "nativeFeature": "2bc50496bebe21f948dd2e86f553ef1e22904ed2",
+  "nativeMethods": 23,
+  "independentNativeMethods": 24,
+  "offlineReceiptMethods": 7,
+  "allOriginal490HarnessSourcesUnchanged": true,
+  "nativePatchFiles": 3,
+  "fullHarnessSuite": "PENDING_COMBINED_RUN",
+  "installedNativeFeatureActivated": false,
+  "borrowedApiGuardChanged": false,
+  "fullCanonicalRunnerBootstrapQualified": false,
+  "httpOrLinuxIsolationQualified": false,
+  "rootWslAction": false,
+  "providerCalls": 0,
+  "mainChanged": false,
+  "pushed": false
+}

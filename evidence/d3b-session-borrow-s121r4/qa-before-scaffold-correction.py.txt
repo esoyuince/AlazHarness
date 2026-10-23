@@ -1,0 +1,228 @@
+"""S121R4 real native SessionStore borrow contract, Windows-owned temporary homes.
+
+No private handle installation, no native class/factory replacement, no runner or
+listener activation. Direct SQL/field changes are explicit isolated fault fixtures.
+"""
+import argparse
+from contextlib import contextmanager
+import hashlib,json,os,sqlite3,sys,tempfile,threading,unittest
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+NATIVE=None
+State=SessionStore=Config=Source=Platform=Rejected=Ownership=Registry=Runtime=None
+WATCH=None
+AUDIT={'connections':0,'networkDenied':0}
+
+def audit(event,args):
+    if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+        AUDIT['networkDenied']+=1;raise PermissionError('s121r4_offline_acceptance')
+    if event=='sqlite3.connect' and WATCH is not None:
+        WATCH.append(str(args[0]));AUDIT['connections']+=1
+
+class SessionBorrowCases(unittest.TestCase):
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory(prefix='alaz-s121r4-case-');self.home=Path(self.tmp.name).resolve()
+        self.addCleanup(self.tmp.cleanup)
+        self.old=os.environ.get('HERMES_HOME');os.environ['HERMES_HOME']=str(self.home)
+        self.addCleanup(self.restore)
+        Ownership.reserve([self.home]);self.addCleanup(Ownership.close)
+        self.addCleanup(lambda:Registry.close_all_under(self.home))
+        self.db=State(self.home/'state.db');self.addCleanup(self.db.close)
+        self.config=Config(multiplex_profiles=False,write_sessions_json=False)
+        self.handles=[]
+        self.addCleanup(self.close_facades)
+    def restore(self):
+        if self.old is None:os.environ.pop('HERMES_HOME',None)
+        else:os.environ['HERMES_HOME']=self.old
+    def close_facades(self):
+        for store in self.handles:
+            try:store.close_all_db_handles()
+            except Rejected:pass # a deliberately closed/corrupt caller is never repaired by cleanup
+    def make(self,**kwargs):
+        store=SessionStore(kwargs.pop('sessions_dir',self.home/'sessions'),kwargs.pop('config',self.config),session_db=kwargs.pop('state',self.db),**kwargs)
+        self.handles.append(store);return store
+    @contextmanager
+    def no_connections(self):
+        global WATCH
+        values=[];WATCH=values
+        try:yield values
+        finally:WATCH=None;self.assertEqual(values,[])
+    def source(self):return Source(platform=Platform.LOCAL,chat_id='owned-test',chat_type='dm',user_id='owned')
+    def test_constructor_selectors_and_detach_have_no_extra_open_or_row_write(self):
+        before=self.db._conn.total_changes;registry=Registry.stats();queries=[];self.db._conn.set_trace_callback(queries.append)
+        try:
+            with self.no_connections():
+                store=self.make()
+                self.assertIs(store._db,self.db);self.assertIs(store._routing_db,self.db)
+                self.assertIs(store._db_for_key('agent:main:owned'),self.db)
+                self.assertIs(store._db_for_session_id('unlisted'),self.db)
+                self.assertIs(store._open_session_db_for_active_scope(self.home/'state.db'),self.db)
+                store.close_all_db_handles()
+        finally:self.db._conn.set_trace_callback(None)
+        self.assertEqual(self.db._conn.total_changes,before);self.assertEqual(Registry.stats(),registry)
+        self.assertTrue(all(q.startswith(('SELECT ','PRAGMA ')) for q in queries));self.assertFalse((self.home/'sessions').exists())
+        self.assertEqual(self.db._conn.execute('SELECT 1').fetchone()[0],1);self.assertTrue(Ownership.owns(self.home))
+    def test_detached_facade_cannot_reopen_or_repin(self):
+        store=self.make();store.close_all_db_handles();store.close_all_db_handles()
+        with self.no_connections(),self.assertRaises(Rejected):_ = store._db
+        with self.assertRaisesRegex(Rejected,'cannot_repin'):store._db=self.db
+    def test_default_native_constructor_still_registry_owned(self):
+        other=self.home/'default';other.mkdir();Ownership.reserve([other]);os.environ['HERMES_HOME']=str(other)
+        store=SessionStore(other/'sessions',Config())
+        try:self.assertTrue(store._db._shared_registry_owned);self.assertIsNone(store._borrowed_session_state)
+        finally:store.close_all_db_handles();Registry.close_all_under(other);os.environ['HERMES_HOME']=str(self.home)
+        self.assertEqual(self.db._conn.execute('SELECT 1').fetchone()[0],1)
+    def test_real_primary_routing_and_native_admission_share_caller_state(self):
+        store=self.make();entry=store.get_or_create_session(self.source())
+        self.assertTrue(entry.session_key.startswith('agent:main:'));self.assertIs(store._db,self.db)
+        again=store.get_or_create_session(self.source());self.assertEqual(entry.session_id,again.session_id)
+        self.assertIsNotNone(self.db.get_session(entry.session_id));self.assertFalse((self.home/'sessions/sessions.json').exists())
+        epoch=Runtime.begin_runtime_epoch(self.db,instance_id='s121r4-native')
+        row=Runtime.admit_session_input(self.db,epoch=epoch,principal_id='owned',session_id=entry.session_id,request_id='request',payload={'text':'fixture'})
+        claimed=Runtime.claim_session_input(self.db,epoch=epoch,session_id=entry.session_id)
+        self.assertEqual(claimed['admission_id'],row['admission_id'])
+        final=Runtime.settle_session_input(self.db,epoch=epoch,admission_id=claimed['admission_id'],generation=claimed['generation'],outcome='completed')
+        self.assertEqual(final['status'],'terminal')
+        store.close_all_db_handles();self.assertTrue(Ownership.owns(self.home))
+    def test_rebuilt_facade_reads_primary_routing_not_legacy_file(self):
+        store=self.make();entry=store.get_or_create_session(self.source());store.close_all_db_handles()
+        folder=self.home/'sessions';folder.mkdir(exist_ok=True);legacy=folder/'sessions.json';legacy.write_text('{not valid json',encoding='utf-8')
+        fresh=self.make();loaded=fresh.lookup_by_session_key(entry.session_key)
+        self.assertEqual(loaded.session_id,entry.session_id);self.assertEqual(legacy.read_text(),'{not valid json')
+    def test_foreign_sessions_directory_rejected_before_creation(self):
+        foreign=self.home/'foreign'
+        with self.no_connections(),self.assertRaisesRegex(Rejected,'sessions_path'):self.make(sessions_dir=foreign)
+        self.assertFalse(foreign.exists())
+    def test_multiplex_and_json_modes_require_explicit_disable(self):
+        for cfg in (Config(),Config(multiplex_profiles=True,write_sessions_json=False),Config(multiplex_profiles=False,write_sessions_json=True)):
+            with self.subTest(config=cfg.multiplex_profiles),self.no_connections(),self.assertRaisesRegex(Rejected,'single_home_sqlite_only'):self.make(config=cfg)
+    def test_fake_native_state_refused(self):
+        with self.no_connections(),self.assertRaisesRegex(Rejected,'native_owner'):self.make(state=object())
+    def test_registry_state_not_adopted(self):
+        other=self.home/'registered';other.mkdir();Ownership.reserve([other]);os.environ['HERMES_HOME']=str(other)
+        handle=Registry.acquire(other/'state.db')
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'native_owner'):self.make(sessions_dir=other/'sessions',state=handle)
+        finally:Registry.release_or_close(handle);Registry.close_all_under(other);os.environ['HERMES_HOME']=str(self.home)
+    def test_changed_home_and_foreign_paths_never_open_replacements(self):
+        store=self.make();other=self.home/'other';other.mkdir()
+        with self.no_connections(),self.assertRaisesRegex(Rejected,'foreign_path'):store._open_session_db_for_active_scope(other/'state.db')
+        with self.no_connections(),self.assertRaisesRegex(Rejected,'foreign_key'):store._db_for_key('agent:other:local:owned')
+        os.environ['HERMES_HOME']=str(other)
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'profile_changed'):_=store._db
+        finally:os.environ['HERMES_HOME']=str(self.home)
+        self.assertFalse((other/'state.db').exists())
+    def test_transaction_before_construction_is_retained(self):
+        self.db._conn.execute('BEGIN IMMEDIATE')
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'transaction_active'):self.make()
+            self.assertTrue(self.db._conn.in_transaction)
+        finally:self.db._conn.rollback()
+    def test_transaction_blocks_detach_and_selection_without_rollback(self):
+        store=self.make();self.db._conn.execute('BEGIN IMMEDIATE')
+        try:
+            for call in (lambda:store._db,store.close_all_db_handles):
+                with self.no_connections(),self.assertRaisesRegex(Rejected,'transaction_active'):call()
+            self.assertTrue(self.db._conn.in_transaction)
+        finally:self.db._conn.rollback()
+        self.assertIs(store._db,self.db)
+    def test_busy_state_mutex_refuses_without_waiting_or_release(self):
+        store=self.make();self.db._lock.acquire()
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'state_busy'):_=store._db
+            self.assertTrue(self.db._lock.locked())
+        finally:self.db._lock.release()
+        self.assertIs(store._db,self.db)
+    def test_closed_caller_never_reopened(self):
+        store=self.make();self.db.close()
+        with self.no_connections(),self.assertRaises(Rejected):_=store._db
+        self.assertFalse(store._borrowed_session_state._closed)
+    def test_swapped_connection_not_adopted(self):
+        store=self.make();old=self.db._conn;other=sqlite3.connect(':memory:');self.db._conn=other
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'state_changed'):_=store._db
+        finally:self.db._conn=old;other.close()
+        self.assertIs(store._db,self.db)
+    def test_changed_application_id_not_repaired(self):
+        store=self.make();value=self.db._conn.execute('PRAGMA application_id').fetchone()[0];self.db._conn.execute('PRAGMA application_id=7')
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'generation_changed'):_=store._db
+            self.assertEqual(self.db._conn.execute('PRAGMA application_id').fetchone()[0],7)
+        finally:self.db._conn.execute('PRAGMA application_id='+str(value))
+    def test_profile_release_reacquire_is_not_original_ownership(self):
+        store=self.make();Ownership.close();Ownership.reserve([self.home])
+        with self.no_connections(),self.assertRaisesRegex(Rejected,'owner_changed'):_=store._db
+    def test_attachment_refused_without_detaching_or_closing(self):
+        store=self.make();self.db._conn.execute("ATTACH ':memory:' AS foreign_db")
+        try:
+            with self.no_connections(),self.assertRaisesRegex(Rejected,'database_changed'):_=store._db
+            self.assertIn('foreign_db',[r[1] for r in self.db._conn.execute('PRAGMA database_list')])
+        finally:self.db._conn.execute('DETACH foreign_db')
+    def test_configuration_and_facade_changes_refused(self):
+        store=self.make()
+        self.config.multiplex_profiles=True
+        try:
+            with self.assertRaisesRegex(Rejected,'configuration_changed'):_=store._db
+        finally:self.config.multiplex_profiles=False
+        old=store.sessions_dir;store.sessions_dir=self.home/'elsewhere'
+        try:
+            with self.assertRaisesRegex(Rejected,'facade_changed'):_=store._db
+        finally:store.sessions_dir=old
+    def test_inflight_dirty_or_cached_facade_not_detached(self):
+        store=self.make()
+        for attr,value in (('_inflight_sessions',{'owned':object()}),('_dirty_transcripts',{'owned':[{}]}),('_db_handles',{self.home/'state.db':self.db})):
+            old=getattr(store,attr);setattr(store,attr,value)
+            try:
+                with self.assertRaisesRegex(Rejected,'facade_busy'):store.close_all_db_handles()
+                self.assertEqual(self.db._conn.execute('SELECT 1').fetchone()[0],1)
+            finally:setattr(store,attr,old)
+    def test_explicit_json_import_or_write_never_used(self):
+        store=self.make()
+        for call in (lambda:store._save_sessions_json({}),lambda:store._import_legacy_sessions_json(False)):
+            with self.assertRaises(Rejected):call()
+        self.assertFalse((self.home/'sessions').exists())
+    def test_routing_sql_failure_does_not_fall_back_to_json(self):
+        store=self.make();self.db._conn.execute('PRAGMA query_only=ON')
+        try:
+            with self.assertRaises(Rejected):store._persist_routing_data({'owned':{}},1)
+            self.assertEqual(self.db._conn.execute('PRAGMA query_only').fetchone()[0],1)
+            self.assertFalse((self.home/'sessions/sessions.json').exists())
+        finally:self.db._conn.execute('PRAGMA query_only=OFF')
+    def test_actual_thread_can_select_same_state_with_bound_home(self):
+        store=self.make();results=[]
+        def worker():
+            try:results.append(store._db is self.db)
+            except Exception as exc:results.append(type(exc).__name__)
+        t=threading.Thread(target=worker);t.start();t.join(5)
+        self.assertFalse(t.is_alive());self.assertEqual(results,[True])
+
+def main():
+    global NATIVE,State,SessionStore,Config,Source,Platform,Rejected,Ownership,Registry,Runtime
+    p=argparse.ArgumentParser();p.add_argument('--native',type=Path,required=True);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+    NATIVE=args.native.resolve(strict=True);out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    with tempfile.TemporaryDirectory(prefix='alaz-s121r4-import-') as tmp:
+        home=Path(tmp);os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home))
+        sys.path.insert(0,str(NATIVE));sys.addaudithook(audit)
+        from hermes_state import SessionDB as State
+        from gateway.session import SessionStore,SessionSource as Source
+        from gateway.config import GatewayConfig as Config,Platform
+        from gateway.session_borrowed_state import BorrowedSessionRejected as Rejected
+        from gateway.runtime_ownership import process_ownership as Ownership
+        import hermes_state_registry as Registry
+        import hermes_state_runtime as Runtime
+        suite=unittest.defaultTestLoader.loadTestsFromTestCase(SessionBorrowCases)
+        with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as log:r=unittest.TextTestRunner(stream=log,verbosity=2).run(suite)
+        imports={}
+        for m in tuple(sys.modules.values()):
+            path=getattr(m,'__file__',None)
+            if path:
+                f=Path(path).resolve()
+                if f.is_relative_to(NATIVE) and f.suffix=='.py':imports[f.relative_to(NATIVE).as_posix()]=hashlib.sha256(f.read_bytes()).hexdigest()
+        report={'result':'PASS_NATIVE_SESSION_BORROW' if r.wasSuccessful() else 'FAIL','total':r.testsRun,'passed':r.testsRun-len({t.id() for t,_ in r.errors+r.failures})-len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),'skipped':len(r.skipped),'errorIds':[t.id() for t,_ in r.errors],'failureIds':[t.id() for t,_ in r.failures],'nativeImports':imports,'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'audit':AUDIT,'ownershipReleased':not Ownership.homes,'registry':Registry.stats(),'nativeClassesReplaced':False,'callerStateInstalledAfterConstructor':False,'fullGatewayRunnerTested':False,'borrowedApiGuardChanged':False,'httpListenerStarted':False,'rootWslAction':False,'providerCalls':0}
+    report['temporaryImportHomeRemoved']=not home.exists()
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k!='nativeImports'}),flush=True)
+    if not r.wasSuccessful():print((out/'tests.txt').read_text(encoding='utf-8')[-16000:],flush=True)
+    return 0 if r.wasSuccessful() and report['ownershipReleased'] and report['temporaryImportHomeRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())

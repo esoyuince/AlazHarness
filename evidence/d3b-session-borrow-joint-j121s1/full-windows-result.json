@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3162,
+  "discovered": 3162,
+  "passed": 3139,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 496,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "all490OriginalSourcesUnchanged": true,
+  "elapsedSeconds": 188.292,
+  "at": "2026-10-23T20:25:13.733221+03:00",
+  "scope": "new complete standard union regression, staged SessionStore patch and source-pinned native receipts; no installed feature/shared runner/listener activation"
+}

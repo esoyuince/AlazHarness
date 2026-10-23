@@ -1,0 +1,7 @@
+{
+  "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+  "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac",
+  "patches/hermes/e118w2/native-worker-owner.patch": "47731c2b72f88486852ed8e4b1e08b2cc39599829687bfd439b1b76b1445d935",
+  "patches/hermes/h117b/native-run-producer.patch": "86d2ae5d4014239e08c790e947692a65919178c887a4e6e5418244736683098d",
+  "patches/hermes/s121r4/session-store-caller-state.patch": "c048461b42e7d318e6f5d46f0a1483e0fb3bfdc756b414c0e6c99c2954e49920"
+}

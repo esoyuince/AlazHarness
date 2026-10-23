@@ -1,0 +1,48 @@
+{"result": "FAIL", "total": 23, "passed": 21, "errors": 0, "failures": 2, "skipped": 0, "errorIds": [], "failureIds": ["__main__.SessionBorrowCases.test_constructor_selectors_and_detach_have_no_extra_open_or_row_write", "__main__.SessionBorrowCases.test_explicit_json_import_or_write_never_used"], "qaSha256": "7f2cb4cf539ecf90f40e7018ac153e2b794195a3262dd852d754a500620bedef", "audit": {"connections": 0, "networkDenied": 7}, "ownershipReleased": true, "registry": {"live_generations": 0, "retired_generations": 0, "total_refcounts": 0}, "nativeClassesReplaced": false, "callerStateInstalledAfterConstructor": false, "fullGatewayRunnerTested": false, "borrowedApiGuardChanged": false, "httpListenerStarted": false, "rootWslAction": false, "providerCalls": 0, "temporaryImportHomeRemoved": true}
+test_actual_thread_can_select_same_state_with_bound_home (__main__.SessionBorrowCases.test_actual_thread_can_select_same_state_with_bound_home) ... ok
+test_attachment_refused_without_detaching_or_closing (__main__.SessionBorrowCases.test_attachment_refused_without_detaching_or_closing) ... ok
+test_busy_state_mutex_refuses_without_waiting_or_release (__main__.SessionBorrowCases.test_busy_state_mutex_refuses_without_waiting_or_release) ... ok
+test_changed_application_id_not_repaired (__main__.SessionBorrowCases.test_changed_application_id_not_repaired) ... ok
+test_changed_home_and_foreign_paths_never_open_replacements (__main__.SessionBorrowCases.test_changed_home_and_foreign_paths_never_open_replacements) ... ok
+test_closed_caller_never_reopened (__main__.SessionBorrowCases.test_closed_caller_never_reopened) ... ok
+test_configuration_and_facade_changes_refused (__main__.SessionBorrowCases.test_configuration_and_facade_changes_refused) ... ok
+test_constructor_selectors_and_detach_have_no_extra_open_or_row_write (__main__.SessionBorrowCases.test_constructor_selectors_and_detach_have_no_extra_open_or_row_write) ... FAIL
+test_default_native_constructor_still_registry_owned (__main__.SessionBorrowCases.test_default_native_constructor_still_registry_owned) ... ok
+test_detached_facade_cannot_reopen_or_repin (__main__.SessionBorrowCases.test_detached_facade_cannot_reopen_or_repin) ... ok
+test_explicit_json_import_or_write_never_used (__main__.SessionBorrowCases.test_explicit_json_import_or_write_never_used) ... FAIL
+test_fake_native_state_refused (__main__.SessionBorrowCases.test_fake_native_state_refused) ... ok
+test_foreign_sessions_directory_rejected_before_creation (__main__.SessionBorrowCases.test_foreign_sessions_directory_rejected_before_creation) ... ok
+test_inflight_dirty_or_cached_facade_not_detached (__main__.SessionBorrowCases.test_inflight_dirty_or_cached_facade_not_detached) ... ok
+test_multiplex_and_json_modes_require_explicit_disable (__main__.SessionBorrowCases.test_multiplex_and_json_modes_require_explicit_disable) ... ok
+test_profile_release_reacquire_is_not_original_ownership (__main__.SessionBorrowCases.test_profile_release_reacquire_is_not_original_ownership) ... ok
+test_real_primary_routing_and_native_admission_share_caller_state (__main__.SessionBorrowCases.test_real_primary_routing_and_native_admission_share_caller_state) ... ok
+test_rebuilt_facade_reads_primary_routing_not_legacy_file (__main__.SessionBorrowCases.test_rebuilt_facade_reads_primary_routing_not_legacy_file) ... ok
+test_registry_state_not_adopted (__main__.SessionBorrowCases.test_registry_state_not_adopted) ... ok
+test_routing_sql_failure_does_not_fall_back_to_json (__main__.SessionBorrowCases.test_routing_sql_failure_does_not_fall_back_to_json) ... ok
+test_swapped_connection_not_adopted (__main__.SessionBorrowCases.test_swapped_connection_not_adopted) ... ok
+test_transaction_before_construction_is_retained (__main__.SessionBorrowCases.test_transaction_before_construction_is_retained) ... ok
+test_transaction_blocks_detach_and_selection_without_rollback (__main__.SessionBorrowCases.test_transaction_blocks_detach_and_selection_without_rollback) ... ok
+
+======================================================================
+FAIL: test_constructor_selectors_and_detach_have_no_extra_open_or_row_write (__main__.SessionBorrowCases.test_constructor_selectors_and_detach_have_no_extra_open_or_row_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-session-borrow-s121r4\scripts\qa\s121r4_native_session_borrow.py", line 63, in test_constructor_selectors_and_detach_have_no_extra_open_or_row_write
+    self.assertTrue(all(q.startswith(('SELECT ','PRAGMA ')) for q in queries));self.assertFalse((self.home/'sessions').exists())
+                                                                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_explicit_json_import_or_write_never_used (__main__.SessionBorrowCases.test_explicit_json_import_or_write_never_used)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-session-borrow-s121r4\scripts\qa\s121r4_native_session_borrow.py", line 184, in test_explicit_json_import_or_write_never_used
+    self.assertFalse((self.home/'sessions').exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 23 tests in 9.869s
+
+FAILED (failures=2)
+

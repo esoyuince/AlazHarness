@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-23T20:23:00.812620+03:00",
+  "parents": [
+    {
+      "commit": "e4e2d6edadd1e3ddc6c3de7823a587baf9b8053d",
+      "folder": "evidence/d3b-session-borrow-s121r4",
+      "exactOriginalEvidenceBlobs": 23
+    },
+    {
+      "commit": "f8c3fc98620b35a232cf4d0d0d7a4f5cfec6b9bc",
+      "folder": "evidence/d3b-session-borrow-s121s1",
+      "exactOriginalEvidenceBlobs": 27
+    }
+  ],
+  "originalEvidenceBlobTotal": 50,
+  "sameNativeProductHashes": {
+    "gateway/session.py": "d871eef6a753b8339b90080c8e14bf7e8fb6aad6106e0a31ee8aeee5b92df5a9",
+    "gateway/session_persistence.py": "33c303007c112c276aacf104558090d902d9b43740430ceee85de7534ec1371d",
+    "gateway/session_borrowed_state.py": "b72605ec6152d54e2854dbdba53ca2d8025748ed0c6c92935e40bd7cff5522ca"
+  },
+  "nativeFeature": "2bc50496bebe21f948dd2e86f553ef1e22904ed2",
+  "twoRealNativeSuites": [
+    23,
+    24
+  ],
+  "notDistinct47Scenarios": true,
+  "runtimePinAndGitlinksUnchanged": true,
+  "newNativeExecutionByUnion": false
+}
