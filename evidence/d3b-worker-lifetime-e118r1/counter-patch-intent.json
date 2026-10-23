@@ -1,0 +1,10 @@
+{
+  "originalModuleSha256": "58330aa6024e2b662214794ad448f888ec9aa3bcdbe25e2ffbc4ff06a9d79e07",
+  "patchedModuleSha256": "10f65cf48a6a63829f02419fc6ccf5f94fc68f872e29cf85e15c5095a00c6962",
+  "function": "_submit_api_worker",
+  "nativeBase": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "sharedLock": "existing _API_WORKER_LOCK",
+  "noNewExecutor": true,
+  "noWorkerLifecycleChannelAddedHere": true,
+  "parallelSourceOwner": "E118W2 extends producer-worker metadata; compose this cancellation guard with its original source, no overwrite"
+}

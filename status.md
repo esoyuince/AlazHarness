@@ -1,37 +1,29 @@
 # AlazHarness - status
 
-## D3B-WORKER-OWNER-E118W2 - SCOPED NATIVE PASS; ONE COMBINED FULL RUN PENDING
+## D3B-WORKER-LIFETIME-E118R1 - SELECTED NATIVE AND INDEPENDENT QA PASS; FULL UNION NEXT
 
-Branch alaz/d3b-worker-owner-e118w2; scratch/worktrees/d3b-worker-owner-e118w2.
-Native feature943210584828ccfcfd6adc8eb966ecaa8ca18429 (own sourcec998df4 plus
-counter original24165690 ancestor), exact tested tree unchanged by merge.
-Native worktree hermes-worker-owner-e118w2 CLEAN. Installed vendor untouched.
+Original E118W2 source/config/patch committed history fast-forwarded; source ref in
+ evidence/d3b-worker-lifetime-e118r1/original-source-integration.json. Selected
+native94321058 includes original queued-cancellation fix24165690 as an ancestor.
+ONE worker book and ONE companion; installed vendor/source locks unchanged.
 
-One source-owned WorkerBook on existing native run provenance, actual submission/
-thread-entry/function-exit markers and immutable request binding. Native carrier
-may end before its worker. Records retain running invocation but release carrier
-Task reference; both completion sides required before record removal. Count race
-fix uses existing lock, queued cancellation can release only before callable
-entry; started workers release only in their finally. No scheduler/DB owner.
+Current12counter +10real native request-worker cases PASS, seven own offline
+receipts PASS. Combined focused27=14companion units+13offline receipts PASS.
+Original34native methods include20producer regressions+14worker cases and overlap
+independent tests; not a summed56 scenarios.498 independent actual imports match
+selectedGit. No QA ticket/map publication. Dummy compute, real handler/thread/count.
 
-Actual native34/34 PASS (20 inherited producer+14worker), companion14unit+6receipt
-PASS. Native/imports474 exact943Git; fresh patch apply exact, duplicate refused.
-E118R1 independently verified12counter+10worker on SAME feature; these overlap
-and are NOT summed. Full standard regression NOT RUN YET for union.
-ALL474 previous harness source/config files unchanged. No main/push/activation.
+Actual d002 baseline queued cancellation leaves count1/calls0; same corrected
+probe returns0/calls0. Queued/running ownership split by existing native lock,
+after entry only worker finally decrements. Other worker state reported honestly,
+no canonical admission invented. Counter-only precursor is not a second patch
+activation. Earlier20compatibility first19PASS/1five-second timeout, one unchanged
+retry20PASS retained as timing-flaky. Current selected tests passed first time.
 
-Next E118R1 fast-forwards this original source commit then commits only independent
-QA/evidence; E118W2 owns ONE full combined regression after importing that commit.
-Do not launch a duplicate full suite. Preserve both native/harness source histories.
-Current policy/reader/Task observer/strict cold-quiescent HTTP unchanged. Local
-worker lifetime is NOT canonical SessionAuthority health/complete work or storage
-verification. Native listener and active-work HTTP remain CLOSED/unaccepted.
-No WSL/root/provider/model/CI/production or blocked-cleanup retry. Original native
-counter-only producer timing failure retained; no blanket unqualified PASS.
-
-Report docs/D3B-NATIVE-WORKER-OWNER-E118W2.md. Evidence
- evidence/d3b-worker-owner-e118w2/: native-001/, native-source-custody.json,
-native-patch-custody.json, focused-001.txt, summary.json. Staged patch descriptor
-config/hermes-worker-owner-e118w2.json activation NOT_INSTALLED. All current native
-jobs terminal; scoped static/commit follows. Exact next step is source-identical
-independent QA union then new full regression and canonical delivery.
+Next original E118W2 owner fast-forwards this independent QA commit and executes
+ONE source-frozen full union regression with all current tests. Full regression
+NOT yet claimed here. No source or QA change afterward without rerun. Prior
+blocked cleanup/refinement unmodified/not retried. No WSL/root/provider/model/
+listener/main/push/CI/production action. Canonical SessionAuthority health,
+active-work storage/profile/mount and healthy/busyHTTP remain open. All native
+jobs terminal and test resources cleaned by native fixtures.

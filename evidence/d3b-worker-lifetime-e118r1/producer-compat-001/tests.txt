@@ -1,0 +1,55 @@
+test_actual_handler_publishes_whole_task_lifecycle (__main__.ProducerCases.test_actual_handler_publishes_whole_task_lifecycle) ... ERROR
+test_async_sink_does_not_get_scheduled_as_work (__main__.ProducerCases.test_async_sink_does_not_get_scheduled_as_work) ... ok
+test_callback_cancellation_does_not_cancel_native_request (__main__.ProducerCases.test_callback_cancellation_does_not_cancel_native_request) ... ok
+test_callback_cancellation_during_retirement_keeps_native_cleanup (__main__.ProducerCases.test_callback_cancellation_during_retirement_keeps_native_cleanup) ... ok
+test_callback_failure_is_sticky_without_duplicating_request (__main__.ProducerCases.test_callback_failure_is_sticky_without_duplicating_request) ... ok
+test_cancelled_wrapper_done_does_not_mean_worker_stopped (__main__.ProducerCases.test_cancelled_wrapper_done_does_not_mean_worker_stopped) ... ok
+test_coroutine_result_fault_does_not_retry_request (__main__.ProducerCases.test_coroutine_result_fault_does_not_retry_request) ... ok
+test_default_disabled_path_still_completes (__main__.ProducerCases.test_default_disabled_path_still_completes) ... ok
+test_duplicate_attach_never_replaces_sink (__main__.ProducerCases.test_duplicate_attach_never_replaces_sink) ... ok
+test_eager_factory_gaps_trace_but_preserves_native_execution (__main__.ProducerCases.test_eager_factory_gaps_trace_but_preserves_native_execution) ... ok
+test_external_owner_is_labelled_waiter (__main__.ProducerCases.test_external_owner_is_labelled_waiter) ... ok
+test_failed_compute_native_status_not_health (__main__.ProducerCases.test_failed_compute_native_status_not_health) ... ok
+test_identity_is_immutable_and_excludes_input_and_secret (__main__.ProducerCases.test_identity_is_immutable_and_excludes_input_and_secret) ... ok
+test_invalid_key_never_starts_trace_or_task (__main__.ProducerCases.test_invalid_key_never_starts_trace_or_task) ... ok
+test_json_cannot_enable_native_observation (__main__.ProducerCases.test_json_cannot_enable_native_observation) ... ok
+test_native_auth_rejects_without_creating_work_or_trace (__main__.ProducerCases.test_native_auth_rejects_without_creating_work_or_trace) ... ok
+test_native_borrowed_listener_stays_closed (__main__.ProducerCases.test_native_borrowed_listener_stays_closed) ... ok
+test_running_replay_does_not_republish_or_execute (__main__.ProducerCases.test_running_replay_does_not_republish_or_execute) ... ok
+test_selected_provenance_never_promotes_live_carrier_to_executor (__main__.ProducerCases.test_selected_provenance_never_promotes_live_carrier_to_executor) ... ok
+test_unkeyed_identity_remains_unkeyed (__main__.ProducerCases.test_unkeyed_identity_remains_unkeyed) ... ok
+
+======================================================================
+ERROR: test_actual_handler_publishes_whole_task_lifecycle (__main__.ProducerCases.test_actual_handler_publishes_whole_task_lifecycle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 488, in wait_for
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-worker-lifetime-e118r1\scripts\qa\p117n1_native_hook_audit.py", line 61, in test_actual_handler_publishes_whole_task_lifecycle
+    await self.complete(t)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-worker-lifetime-e118r1\scripts\qa\p117n1_native_hook_audit.py", line 56, in complete
+    self.release.set();await asyncio.wait_for(asyncio.shield(t),5);await asyncio.sleep(0)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py", line 487, in wait_for
+    async with timeouts.timeout(timeout):
+               ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+----------------------------------------------------------------------
+Ran 20 tests in 37.635s
+
+FAILED (errors=1)

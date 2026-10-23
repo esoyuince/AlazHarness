@@ -1,0 +1,12 @@
+test_current_sources_and_all_native_imports_bound_to_selected_commit (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_current_sources_and_all_native_imports_bound_to_selected_commit) ... ok
+test_current_twelve_counter_cases_retain_real_executor_and_zero_count (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_current_twelve_counter_cases_retain_real_executor_and_zero_count) ... ok
+test_first_compatibility_timeout_not_erased_or_relabelled (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_first_compatibility_timeout_not_erased_or_relabelled) ... ok
+test_native_bug_reproduced_and_same_probe_changed_result (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_native_bug_reproduced_and_same_probe_changed_result) ... ok
+test_queue_and_unattributed_work_not_falsely_healthy (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_queue_and_unattributed_work_not_falsely_healthy) ... ok
+test_raw_cancelled_carrier_survivor_then_actual_exit (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_raw_cancelled_carrier_survivor_then_actual_exit) ... ok
+test_ten_current_native_request_cases_have_no_manual_worker_publication (test_worker_lifetime_receipt_e118r1.WorkerLifetimeReceipt.test_ten_current_native_request_cases_have_no_manual_worker_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.056s
+
+OK

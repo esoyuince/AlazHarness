@@ -1,0 +1,15 @@
+test_actual_worker_ids_and_immutable_ingress_match (__main__.WorkerRequestCases.test_actual_worker_ids_and_immutable_ingress_match) ... ok
+test_cancelled_carrier_record_survives_until_actual_worker_exit (__main__.WorkerRequestCases.test_cancelled_carrier_record_survives_until_actual_worker_exit) ... ok
+test_capture_never_consumes_payload_or_claims_admission (__main__.WorkerRequestCases.test_capture_never_consumes_payload_or_claims_admission) ... ok
+test_failed_compute_does_not_fabricate_worker_success (__main__.WorkerRequestCases.test_failed_compute_does_not_fabricate_worker_success) ... ok
+test_observation_failure_does_not_cancel_business_work (__main__.WorkerRequestCases.test_observation_failure_does_not_cancel_business_work) ... ok
+test_process_identity_change_stays_rejected_after_restore (__main__.WorkerRequestCases.test_process_identity_change_stays_rejected_after_restore) ... ok
+test_queued_carrier_cancel_never_runs_and_leaves_no_owner (__main__.WorkerRequestCases.test_queued_carrier_cancel_never_runs_and_leaves_no_owner) ... ok
+test_replay_does_not_create_a_second_worker_binding (__main__.WorkerRequestCases.test_replay_does_not_create_a_second_worker_binding) ... ok
+test_untracked_other_ingress_is_visible_not_counted_as_complete (__main__.WorkerRequestCases.test_untracked_other_ingress_is_visible_not_counted_as_complete) ... ok
+test_worker_book_lock_contention_is_retryable_observation_only (__main__.WorkerRequestCases.test_worker_book_lock_contention_is_retryable_observation_only) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 21.311s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "prior": "producer-compat-001",
+  "priorResult": "19PASS/1ERROR timeout at5s first actual handler; other19 passed",
+  "priorProfileAndBootstrapReleased": true,
+  "singleFreshRetry": true,
+  "productAndQaBytesUnchanged": true,
+  "priorFailureRetained": true,
+  "notRelabelledAsSuccess": true
+}

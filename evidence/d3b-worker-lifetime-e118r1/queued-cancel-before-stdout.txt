@@ -1,0 +1,1 @@
+{"before": 0, "submitted": 1, "afterAllThreadsDrained": 1, "actualWorkCalls": 0, "asyncFutureCancelled": true, "nativeSubmitModuleSha256": "58330aa6024e2b662214794ad448f888ec9aa3bcdbe25e2ffbc4ff06a9d79e07", "rootWslAction": false, "providerCalls": 0}

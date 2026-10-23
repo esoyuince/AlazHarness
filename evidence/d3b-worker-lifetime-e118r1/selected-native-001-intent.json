@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-23T15:20:42.936951+03:00",
+  "nativeCommit": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "nativeFiles": {
+    "gateway/platforms/api_server_runs.py": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+    "gateway/platforms/api_server_run_observation.py": "a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01",
+    "gateway/platforms/api_server_worker_observation.py": "d0f62fc1cbb182db10688dda0a88ffff8f64c0e61845dfac92e62b73cdb75c44"
+  },
+  "sources": {
+    "scripts/qa/e118r1_worker_counter.py": "e04b3a6e3367d770a8e19ed00aa49866b5937a7228b2609ef49d96c870e5329e",
+    "scripts/qa/e118r1_native_worker_requests.py": "8abb938f0c933818ecb91a6b61d668ddfe5d6aac8d4ee5bd8ae6b4ccb9641b6a",
+    "scripts/qa/e118r1_queued_cancel.py": "6b60665ed76f34f1f0b56b45cacb236a6456653b59df0178c447361f7f37aa68",
+    "packages/claw-hermes/gateway_native_worker_owner.py": "585c420b3434e1ea9b0584190ed6986b08c8732f77a1a9e0d7e9a635c4a26e4c",
+    "scripts/qa/p117n1_native_hook_audit.py": "1f01311a30c2bf80cee4ae18a1de4cadce60bb54f4156fa0e4f818319161011e",
+    "scripts/qa/b112x9_adapter_probe.py": "0f36346df24bcf6d9c35de46170962e9eb7971b372cdf0fe7f0e316b29ecefbc"
+  },
+  "originalNativeMethods": 34,
+  "independentNativeCounterMethods": 12,
+  "independentNativeWorkerRequestMethods": 10,
+  "sourceOwner": "E118W2",
+  "counterOriginalAncestor": "24165690b15f479f90f4bb7ac8751ae65c6f21fe",
+  "newNativeFeatureInstalled": false
+}

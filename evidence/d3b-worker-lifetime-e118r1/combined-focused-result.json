@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "total": 27,
+  "passed": 27,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "scope": "14 companion unit +13 offline receipt checks, not native executions or full suite"
+}

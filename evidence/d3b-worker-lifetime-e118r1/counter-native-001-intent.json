@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T15:14:32.973529+03:00",
+  "sources": {
+    "scripts/qa/e118r1_worker_counter.py": "e04b3a6e3367d770a8e19ed00aa49866b5937a7228b2609ef49d96c870e5329e",
+    "scripts/qa/e118r1_queued_cancel.py": "6b60665ed76f34f1f0b56b45cacb236a6456653b59df0178c447361f7f37aa68",
+    "scripts/qa/p117n1_native_hook_audit.py": "1f01311a30c2bf80cee4ae18a1de4cadce60bb54f4156fa0e4f818319161011e",
+    "scripts/qa/b112x9_adapter_probe.py": "0f36346df24bcf6d9c35de46170962e9eb7971b372cdf0fe7f0e316b29ecefbc"
+  },
+  "nativeSubmitModuleSha256": "10f65cf48a6a63829f02419fc6ccf5f94fc68f872e29cf85e15c5095a00c6962",
+  "scope": "same deterministic repro expected0,12 actual executor counter cases,20 existing native producer compatibility cases; no mocked worker function"
+}
