@@ -1,34 +1,42 @@
 # AlazHarness - status
 
-## D3B-PREPARED-THREE-QA-A123C6 - CURRENT NATIVE30/30 PASS; UNION FULL PENDING
+## D3B-PREPARED-API-JOINT-J123C6 - SCOPED PASS; CANONICAL DELIVERY PENDING
 
-Own harness branch alaz/d3b-three-runner-a123c6, basefd3cdc2. Original505 harness
-files unchanged. B123A6 owns the ONE native prepared-runner/API join; our native
-worktree is byte-identical frozen candidate002 for independent tests, not second
-product. No modifications to original worktree/index. Installed native unchanged.
+ONE B123A6 native prepared API join1e97dd61 on6b8124ab, with independent A123C6
+QA. Original histories and86 evidence blobs retained; only status conflict.
+Four native product hashes exact across original22 and independent30 cases;
+unchanged R12228 compatibility PASS. Counts overlap, not80unique scenarios.
 
-Actual old6b runner/API conflict baseline verified with real three stores, no
-additional connection/epoch/rows; caller stores remain open. Local epoch map
-absent in original. New explicit prepared_runner joins exact state/home/epoch
-and API ctor attaches internally. API detach must precede runner detach; caller
-three connections/profile remain caller-owned. Old unqualified conflict retained.
+NEW fullWindows3190=3167PASS/23SKIP/0ERROR/0FAIL exit0.512 source/config/test
+hashes+7patches stable; ALL505 prior files unchanged. Same23 prior skipped
+methods AND reasons verified.14 offline receipts are standard subsets. No full
+native upstream pytest or Linux isolation rerun; model/listener/service closed.
 
-Native00127PASS missed service drift. Same base QA +3 independent assertions
-produced30cases27PASS/3FAIL(11assertions inclsubtests); fixed sole helper checks
-closed-service objects/native quiescence every selection/post-await. IDENTICAL
-QA then native00230/30PASS.501 native import hashes matched6bGit or4candidate
-files;7offline receipts PASS. No product methods replaced; one explicit empty
-memory-cleanup object is a failure fixture. Profiles/tasks/registry cleanup PASS.
+Explicit BorrowedAPIStores(...prepared_runner=runner) joins actual native runner,
+existing caller state/epoch and3 exact handles. Real API constructor attaches
+without private rewire. Local authority epoch and original one-path map pinned.
+Default unqualified runner conflict unchanged; connect/ordinary service guards
+remain closed. API must detach before runner; caller DBs/profile not closed.
+Transactions, task/counter/service drift, foreign scope/identity, partial cleanup
+are refused without rollback/cancel/reopen. CLOSE_UNKNOWN retains ownership.
+No new owner/scheduler/worker/epoch/SQLite connection in watched boundaries.
 
-No active model/work/listener/fullLinux/profile-mount/NativeStoreStartup acceptance.
-New full harness regression deferred to exact original implementation+QA union;
-static/discovery isn't a full run. Preserve failures and original source history.
-No runtime/source-lock/main/push/WSL/root/provider/CI/production changes. Earlier
-blocked actions not reissued, C120P9 remainsHOLD. Next original native commit/patch
-identity check, immutable QA merge and SINGLE combined full+static+canonical
-handoff. All own native jobs terminal; selected QA/static commit follows.
+Initial20/27 success missed service drift. Original2methods/5assertions and
+independent3methods/11assertions failed; same assertions pass with5line helper
+correction. Failure/source histories preserved. Real native classes/stores/tasks;
+only explicit cleanup-object fault fixture substituted, not native product methods.
+Imports/probes and original patch CRLF fixture failure retained, no permission
+relaxation. Independent clean Git index patch proof exact entire native tree,
+repeat refused, temp index removed. Current patch STAGED_NOT_INSTALLED.
 
-Report docs/D3B-PREPARED-THREE-QA-A123C6.md, evidence/d3b-three-runner-a123c6/:
-summary.json,candidate-snapshot002,source-custody-current,native002,
-service-drift-before (27PASS3FAIL),baseline-native001,receipt-tests/static-qa.
-Parent/work status docs/status-history/a123c6-*.md.
+Next source-identical canonical artifact delivery; then existing NativeStoreStartup
+source pins/profile/mount owner joined to prepared runner/API. Actual work/task/
+HTTP same-path Linux isolation acceptance before any admission/listener activation.
+Not malicious in-process capability or atomic cross-store snapshot/drain. FullD3B,
+completeAIAgent/brokeraccounting/recovery/powerloss remain OPEN. LegacyIPCv2 closed.
+Prior blocks/C120P9HOLD not replayed. No root/WSL/provider/main/push/CI/production.
+Installed nativeeb75627/maincc7ceba unchanged. All native/full jobs terminal.
+
+Docs D3B-PREPARED-API-JOINT-J123C6.md; joint evidence summary/inputs/source-custody,
+full result/source/patch manifests, skip-custody, independent-patch-review and
+static-final. Original b123a6/a123c6 raw proofs retained. Status history j123c6-*.

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T21:48:14.588951+03:00",
+  "qaSha256": "7868c02cbebfe672b53b8caf6174a75a26b3eb95b13696108d870009a19d14bc",
+  "product": "unchanged candidate001",
+  "scope": "2 new native refusal invariants, explicit local field-fault injection not service start"
+}

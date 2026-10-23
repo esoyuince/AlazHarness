@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T21:57:57.458229+03:00",
+  "scope": "independent clean index-only patch application; no full working-tree checkout or installed mutation",
+  "base": "6b8124ab3874b330968c08bf05ce82004d762258",
+  "feature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "patchPath": "patches/hermes/b123a6/prepared-api-runner.patch",
+  "patchSha256": "953ede974fffbac717e8e69e26bde29bbb4b2accc0e1d7465a2ab8559b2ebf03",
+  "appliedTree": "7befe85f7027c0146975c310410564a384ef2c42",
+  "exactNativeFeatureTree": "7befe85f7027c0146975c310410564a384ef2c42",
+  "allTreeBytesMatch": true,
+  "duplicateApplyRefused": true,
+  "duplicateCheckExitCode": 1,
+  "originalNativeWorktreeUnchanged": true,
+  "temporaryIndexOnly": true,
+  "temporaryIndexRemoved": true
+}

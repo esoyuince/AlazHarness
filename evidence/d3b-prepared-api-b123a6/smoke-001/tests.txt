@@ -1,0 +1,6 @@
+test_exact_three_handles_and_prepared_runner_without_extra_open (__main__.PreparedAPICases.test_exact_three_handles_and_prepared_runner_without_extra_open) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.731s
+
+OK

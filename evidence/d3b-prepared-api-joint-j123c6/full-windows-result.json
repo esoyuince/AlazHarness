@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3190,
+  "discovered": 3190,
+  "passed": 3167,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 512,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "all505OriginalSourcesUnchanged": true,
+  "elapsedSeconds": 181.311,
+  "at": "2026-10-23T22:07:09.269711+03:00",
+  "scope": "one new full harness union; staged native prepared join and actual-native receipts, no installed/service/admission/Linux isolation acceptance"
+}

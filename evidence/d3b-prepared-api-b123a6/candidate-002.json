@@ -1,0 +1,11 @@
+{
+  "nativeBase": "6b8124ab3874b330968c08bf05ce82004d762258",
+  "nativeFiles": {
+    "gateway/run_borrowed_state.py": "33d956b144699ae62600c9aed94c9f88ebf4e2b48eb4a492ac00dcdd1138fed6",
+    "gateway/platforms/api_server_borrowed.py": "5cf200204bf2d1bf1691ec2f0b29e6f614ff32a194e6f6dcc0adc4e62c26d8eb",
+    "gateway/platforms/api_server.py": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+    "gateway/platforms/api_server_prepared.py": "e0a18c1617ee978db292e9e36d473fd636817e62c15687800531acee48cd8760"
+  },
+  "serviceOrAdmissionEnabled": false,
+  "oneImplementation": true
+}
