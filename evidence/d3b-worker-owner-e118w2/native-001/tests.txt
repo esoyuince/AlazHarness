@@ -1,0 +1,39 @@
+test_agent_failure_is_not_reported_as_execution_returned (__main__.WorkerCases.test_agent_failure_is_not_reported_as_execution_returned) ... ok
+test_async_sink_is_not_scheduled (__main__.WorkerCases.test_async_sink_is_not_scheduled) ... ok
+test_attach_after_native_task_creation_refused (__main__.WorkerCases.test_attach_after_native_task_creation_refused) ... ok
+test_cancelled_carrier_done_does_not_hide_live_native_thread (__main__.WorkerCases.test_cancelled_carrier_done_does_not_hide_live_native_thread) ... ok
+test_canonical_authority_path_is_labelled_watcher_not_executor (__main__.WorkerCases.test_canonical_authority_path_is_labelled_watcher_not_executor) ... ok
+test_changed_task_factory_fails_observation_not_execution (__main__.WorkerCases.test_changed_task_factory_fails_observation_not_execution) ... ok
+test_conflict_and_bad_key_never_emit_new_run (__main__.WorkerCases.test_conflict_and_bad_key_never_emit_new_run) ... ok
+test_consumer_uses_native_publication_without_manual_task_map (__main__.WorkerCases.test_consumer_uses_native_publication_without_manual_task_map) ... ok
+test_default_disabled_preserves_native_run (__main__.WorkerCases.test_default_disabled_preserves_native_run) ... ok
+test_duplicate_attach_rejected_before_replacement (__main__.WorkerCases.test_duplicate_attach_rejected_before_replacement) ... ok
+test_expected_fingerprint_not_relearned_from_candidate_store (__main__.WorkerCases.test_expected_fingerprint_not_relearned_from_candidate_store) ... ok
+test_external_owner_path_is_labelled_watcher (__main__.WorkerCases.test_external_owner_path_is_labelled_watcher) ... ok
+test_idempotent_replay_does_not_emit_another_admission (__main__.WorkerCases.test_idempotent_replay_does_not_emit_another_admission) ... ok
+test_native_bearer_rejection_precedes_any_notification (__main__.WorkerCases.test_native_bearer_rejection_precedes_any_notification) ... ok
+test_native_complete_lifecycle_and_immutable_ingress_identity (__main__.WorkerCases.test_native_complete_lifecycle_and_immutable_ingress_identity) ... ok
+test_native_listener_gate_stays_closed (__main__.WorkerCases.test_native_listener_gate_stays_closed) ... ok
+test_observer_exception_latches_gap_without_cancelling_work (__main__.WorkerCases.test_observer_exception_latches_gap_without_cancelling_work) ... ok
+test_prestart_cancellation_records_gap_not_false_retirement (__main__.WorkerCases.test_prestart_cancellation_records_gap_not_false_retirement) ... ok
+test_replaced_channel_is_not_adopted_midrun (__main__.WorkerCases.test_replaced_channel_is_not_adopted_midrun) ... ok
+test_unkeyed_request_has_no_fabricated_idempotency_proof (__main__.WorkerCases.test_unkeyed_request_has_no_fabricated_idempotency_proof) ... ok
+test_worker_capture_contention_is_transient_not_false_idle (__main__.WorkerCases.test_worker_capture_contention_is_transient_not_false_idle) ... ok
+test_worker_foreign_thread_capture_is_rejected (__main__.WorkerCases.test_worker_foreign_thread_capture_is_rejected) ... ok
+test_worker_json_cannot_inject_lifetime (__main__.WorkerCases.test_worker_json_cannot_inject_lifetime) ... ok
+test_worker_no_payload_or_identity_in_public_snapshot (__main__.WorkerCases.test_worker_no_payload_or_identity_in_public_snapshot) ... ok
+test_worker_old_strict_task_observer_not_relaxed (__main__.WorkerCases.test_worker_old_strict_task_observer_not_relaxed) ... ok
+test_worker_provenance_gap_cannot_claim_no_workers (__main__.WorkerCases.test_worker_provenance_gap_cannot_claim_no_workers) ... ok
+test_worker_queued_cancellation_does_not_leak_count_or_call_function (__main__.WorkerCases.test_worker_queued_cancellation_does_not_leak_count_or_call_function) ... ok
+test_worker_real_thread_bound_to_exact_immutable_ingress (__main__.WorkerCases.test_worker_real_thread_bound_to_exact_immutable_ingress) ... ok
+test_worker_replaced_book_is_not_adopted (__main__.WorkerCases.test_worker_replaced_book_is_not_adopted) ... ok
+test_worker_replay_never_adds_submission (__main__.WorkerCases.test_worker_replay_never_adds_submission) ... ok
+test_worker_source_binding_not_relearned_after_database_change (__main__.WorkerCases.test_worker_source_binding_not_relearned_after_database_change) ... ok
+test_worker_submit_failure_does_not_leave_counter_or_record (__main__.WorkerCases.test_worker_submit_failure_does_not_leave_counter_or_record) ... ok
+test_worker_survives_cancelled_carrier_without_task_retention (__main__.WorkerCases.test_worker_survives_cancelled_carrier_without_task_retention) ... ok
+test_worker_two_requests_do_not_share_identity_or_thread (__main__.WorkerCases.test_worker_two_requests_do_not_share_identity_or_thread) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 45.004s
+
+OK

@@ -1,0 +1,25 @@
+{
+  "base": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "featureCommit": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "firstFeatureCommit": "c998df4dff4e4ae9298cbb75894ffba7ca084ea4",
+  "preservedCounterCommit": "24165690b15f479f90f4bb7ac8751ae65c6f21fe",
+  "conflicts": [
+    "gateway/platforms/api_server_runs.py"
+  ],
+  "mergeTreeIdenticalToTestedFeature": true,
+  "resultHashes": {
+    "gateway/platforms/api_server_runs.py": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+    "gateway/platforms/api_server_run_observation.py": "a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01",
+    "gateway/platforms/api_server_worker_observation.py": "d0f62fc1cbb182db10688dda0a88ffff8f64c0e61845dfac92e62b73cdb75c44"
+  },
+  "patchPath": "patches/hermes/e118w2/native-worker-owner.patch",
+  "patchSha256": "47731c2b72f88486852ed8e4b1e08b2cc39599829687bfd439b1b76b1445d935",
+  "freshApplyMatches": true,
+  "repeatApplyRefused": true,
+  "temporaryApplyRemoved": true,
+  "firstMergeGuardStoppedBeforeEffects": true,
+  "gitIdentitySuppliedOnlyPerCommandFromHarnessConfig": true,
+  "globalOrNativeRepoConfigChanged": false,
+  "pushed": false,
+  "installedNativeUnchanged": true
+}

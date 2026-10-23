@@ -1,0 +1,19 @@
+test_changed_worker_book_revision_is_transient_unavailable (test_native_worker_owner_e118w2.WorkerContracts.test_changed_worker_book_revision_is_transient_unavailable) ... ok
+test_contention_does_not_latch_or_mutate_store (test_native_worker_owner_e118w2.WorkerContracts.test_contention_does_not_latch_or_mutate_store) ... ok
+test_count_less_than_bound_work_is_not_empty (test_native_worker_owner_e118w2.WorkerContracts.test_count_less_than_bound_work_is_not_empty) ... ok
+test_empty_snapshot_is_not_service_idle_or_close_permission (test_native_worker_owner_e118w2.WorkerContracts.test_empty_snapshot_is_not_service_idle_or_close_permission) ... ok
+test_equal_but_different_request_binding_not_adopted (test_native_worker_owner_e118w2.WorkerContracts.test_equal_but_different_request_binding_not_adopted) ... ok
+test_false_role_is_not_promoted_to_local_worker (test_native_worker_owner_e118w2.WorkerContracts.test_false_role_is_not_promoted_to_local_worker) ... ok
+test_native_count_race_does_not_return_positive (test_native_worker_owner_e118w2.WorkerContracts.test_native_count_race_does_not_return_positive) ... ok
+test_no_generic_provenance_or_reentrant_read (test_native_worker_owner_e118w2.WorkerContracts.test_no_generic_provenance_or_reentrant_read) ... ok
+test_other_native_work_is_explicit_not_claimed_as_this_request (test_native_worker_owner_e118w2.WorkerContracts.test_other_native_work_is_explicit_not_claimed_as_this_request) ... ok
+test_process_restart_and_store_owner_change_refused (test_native_worker_owner_e118w2.WorkerContracts.test_process_restart_and_store_owner_change_refused) ... ok
+test_retired_carrier_does_not_remove_running_worker_proof (test_native_worker_owner_e118w2.WorkerContracts.test_retired_carrier_does_not_remove_running_worker_proof) ... ok
+test_running_output_has_no_authority_or_private_request (test_native_worker_owner_e118w2.WorkerContracts.test_running_output_has_no_authority_or_private_request) ... ok
+test_sequence_gap_refused (test_native_worker_owner_e118w2.WorkerContracts.test_sequence_gap_refused) ... ok
+test_source_replacement_latches_refusal (test_native_worker_owner_e118w2.WorkerContracts.test_source_replacement_latches_refusal) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.002s
+
+OK

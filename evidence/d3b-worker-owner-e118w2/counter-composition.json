@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T15:13:23.293783+03:00",
+  "candidateOwner": "E118R1",
+  "candidateFunctionSha256": "a9f9a112c5fa375158f996c95dd0a269b8800b2e226a70aaad0454eeabf32073",
+  "scope": "preserve shared-lock queued/running/cancelled handoff; add observational markers only after original native count transitions",
+  "nativeSourceBase": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "newExecutor": false,
+  "parallelWorktreeModified": false
+}

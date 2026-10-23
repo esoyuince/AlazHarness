@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-23T15:15:35.400658+03:00",
+  "nativeBase": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "sources": {
+    "packages/claw-hermes/gateway_native_worker_owner.py": "585c420b3434e1ea9b0584190ed6986b08c8732f77a1a9e0d7e9a635c4a26e4c",
+    "scripts/qa/e118w2_native_workers.py": "9047034562f5a7a53d9a0e0ec9160952f0bf4d85aa0c35f0d5b4f4724d454160"
+  },
+  "nativeModifiedSources": {
+    "gateway/platforms/api_server_runs.py": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+    "gateway/platforms/api_server_run_observation.py": "a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01",
+    "gateway/platforms/api_server_worker_observation.py": "d0f62fc1cbb182db10688dda0a88ffff8f64c0e61845dfac92e62b73cdb75c44"
+  },
+  "scope": "Windows real decorated handler/task/native executor; dummy agent/external boundaries; no HTTP listener/root/WSL/provider",
+  "expectedMethods": 34
+}
