@@ -108,3 +108,7 @@ trusted producer snapshot boundary. Only AFTER actor/handle/liveness/revision an
 fingerprint validation and same-path isolation tests may HTTP report this model.
 Native API work routes, live broker send/accounting and fullD3B remain closed/open
 respectively; this module does not confer cross-store atomicity or powerloss safety.
+
+## Complementary reader qualification review
+
+W115B6 current native002 reports28/28 actual-native metadata methods PASS, with the exact same selected policy. This task independently matched every reported native import to immutable cc16Git and each product/QA hash to its current file. The reader retains terminal rows still referenced by a settling owner and exposes scope/key/fingerprint metadata without inventing verification/liveness flags. Producer liveness/storage verification are still explicit fixtures, not real adapter capture. The original reader commit and fresh combined suite are still required; this review is not a second native execution.
