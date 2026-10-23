@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "total": 49,
+  "passed": 49,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "scope": "37 pure policy +12 offline native-receipt tests on exact merged source; not new native or full-suite run"
+}

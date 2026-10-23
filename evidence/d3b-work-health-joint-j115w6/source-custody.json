@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-23T03:02:23.778555+03:00",
+  "testedReaderCommit": "966c12692422f36cd5fb6db0e953b2dba77cab09",
+  "fullResultSha256": "7d732fa8b80dd31e6ae7344d150ed39d296028f8f378927822c6fe11547cd37f",
+  "testedSourceManifestSha256": "ca5efa276d36e37df25f4b2914ac8ad7cfc8734d4fe5f5885470c09b57c91df2",
+  "sourceCount": 461,
+  "allSourcesExact": true,
+  "allOriginal454SourcesExact": true,
+  "patchHashes": {
+    "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+    "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac"
+  },
+  "parents": [
+    {
+      "ref": "30244eb92d2abbd94a2241074216be9bee644d29",
+      "folder": "evidence/d3b-work-health-b115w6",
+      "unchangedGitBlobs": 18
+    },
+    {
+      "ref": "966c12692422f36cd5fb6db0e953b2dba77cab09",
+      "folder": "evidence/d3b-work-health-w115b6",
+      "unchangedGitBlobs": 33
+    }
+  ],
+  "noExecutableSourceChangeByMerge": true,
+  "nativeRerunByReview": false
+}

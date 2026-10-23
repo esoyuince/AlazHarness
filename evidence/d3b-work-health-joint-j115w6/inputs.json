@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-23T03:00:59.958060+03:00",
+  "base": "971770443d486b1a3853ed8600ec370017948ab3",
+  "testedReaderCommit": "966c12692422f36cd5fb6db0e953b2dba77cab09",
+  "independentPolicyReviewCommit": "30244eb92d2abbd94a2241074216be9bee644d29",
+  "canonicalObserved": "971770443d486b1a3853ed8600ec370017948ab3",
+  "originalCombinedFull": {
+    "result": "PASS",
+    "total": 3022,
+    "discovered": 3022,
+    "passed": 2999,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 23,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 461,
+    "sourcesUnchanged": true,
+    "patchesUnchanged": true,
+    "unchangedOriginalSources": 454,
+    "elapsedSeconds": 272.421,
+    "at": "2026-10-23T02:59:53.600564+03:00",
+    "scope": "one work-state policy + native committed-row reader and previous unchanged runtime; no live collector/HTTP activation or new native trial"
+  },
+  "sourceCount": 461,
+  "allOriginal454SourcesUnchanged": true,
+  "onlyConflicts": [
+    "status.md"
+  ],
+  "mergeChangesExecutableSources": false,
+  "newFullSuiteByReview": false,
+  "newNativeExecutionByReview": false
+}
