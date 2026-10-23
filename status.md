@@ -20,3 +20,8 @@ receipt tests/static and canonical ancestry before local delivery.
 ### Current joint verification terminal
 
 49/49 selected methods PASS. Original combined3022=2999PASS/23SKIP full source set461 exactly retained; no duplicated full/native run. Both original evidence trees intact. Local static/scoped docs merge follows. No change to live collector/HTTP activation status: NOT IMPLEMENTED/NOT ACCEPTED. Prior blocked cleanup remains open.
+
+
+### Parallel canonical delivery preserved
+
+Existing canonical 2155112378cc99c267afb764e727774150f4adfb contains the same tested461 sources and only further documentation/evidence. Preserve it as a parent with its prior handoff, no reset/overwrite. Independent review merges documentation only; source/native/full results stay exact and current collector/HTTP boundary stays open.

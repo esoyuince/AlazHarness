@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-23T03:04:39.007908+03:00",
+  "testedSourceCommit": "966c12692422f36cd5fb6db0e953b2dba77cab09",
+  "independentReviewMerge": "12147af7ea942d8ca133c193ee1f6f521002ed24",
+  "preservedCanonical": "2155112378cc99c267afb764e727774150f4adfb",
+  "canonicalChangesOnlyDocs": [
+    "docs/D3B-WORK-HEALTH-B115W6.md",
+    "docs/D3B-WORK-HEALTH-READER-W115B6.md",
+    "docs/status-history/w115b6-before-docs-merge.md",
+    "docs/status-history/w115b6-final-work-log.md",
+    "docs/status-history/w115b6-original-policy-review.md",
+    "evidence/d3b-work-health-b115w6/reader-native-independent-review.json",
+    "evidence/d3b-work-health-w115b6/delivery.json",
+    "evidence/d3b-work-health-w115b6/documentation-ancestry.json",
+    "evidence/d3b-work-health-w115b6/static-primary-final.txt",
+    "status.md"
+  ],
+  "all461SourcesExact": true,
+  "twoPatchHashesExact": true,
+  "noNativeOrFullRerun": true,
+  "onlyConflict": [
+    "status.md"
+  ]
+}

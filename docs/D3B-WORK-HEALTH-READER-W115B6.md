@@ -135,3 +135,7 @@ actual native agent listener or fullD3B acceptance is granted by this phase.
 ## Terminal combined regression
 
 Fresh fullWindows3022=2999PASS/23SKIP/0ERROR/0FAIL, exit0.461 source/config hashes and2 native patches stayed exact; all454 preexisting source files are unchanged.37 pure policy and12 offline receipt/selection methods are members of this total, not extra native runs. The28 reader and16 policy native-data cases remain separate Windows-only fixtures, with explicit live-owner/storage flags rather than live collector proof. Original17 policy evidence blobs remain exact. Local static output is separately recorded; remote CI/activation is not inferred.
+
+## Canonical development delivery
+
+Tested code `966c12692422f36cd5fb6db0e953b2dba77cab09`; documentation merge `4c91d257b1a19e484f51d55cb61c397ac3c934ac` preserves original policy review `30244eb92d2abbd94a2241074216be9bee644d29`. Canonical fast-forwarded from `971770443d486b1a3853ed8600ec370017948ab3` without resetting history. All461 source hashes and2patches are exact; this final handoff changes documentation/static receipt only. Native vendor remains `eb75627faf532fa6ffbdae59a0d14b0b385fc780`, main remains `cc7ceba8f850da7652a647e984cbae2c45c8fdea`; no installation, listener, provider or remote push occurred. Current status.md carries the live-collector acceptance gap.

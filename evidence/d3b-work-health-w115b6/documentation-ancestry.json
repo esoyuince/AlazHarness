@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T03:02:23.424597+03:00",
+  "testedCommit": "966c12692422f36cd5fb6db0e953b2dba77cab09",
+  "preservedOriginalPolicyReview": "30244eb92d2abbd94a2241074216be9bee644d29",
+  "sourceChanges": false,
+  "incomingDocumentation": [
+    "docs/D3B-WORK-HEALTH-B115W6.md",
+    "evidence/d3b-work-health-b115w6/reader-native-independent-review.json",
+    "status.md"
+  ],
+  "all461SourceAndTwoPatchHashesExact": true,
+  "onlyConflict": [
+    "status.md"
+  ],
+  "newNativeRun": false
+}
