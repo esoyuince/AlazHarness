@@ -99,3 +99,7 @@ implementation. Current native source import count is312; every imported module
 was matched to immutable featureGit. No native producer hook, profile/mount
 verification or active-work HTTP acceptance is inferred. Static-final.txt is a
 local static gate, not remote CI or upstream-native full-suite acceptance.
+
+## Canonical delivery
+
+Tested union `578d2edc1aad6fe974d286221f71e84dfa6ed1a1` fast-forwarded from canonical `ec5f1e3ba773550c0c8a1e7fa8381c7b28d4b85a`; original observer source/history and independent acceptance retained. All467 source hashes and2 optional patch hashes match the full run. Final handoff changes documentation/static evidence only; no new native/full execution, source-pin activation, main merge or push. Native producer hooks, active-work profile/mount verification and HTTP acceptance remain OPEN.
