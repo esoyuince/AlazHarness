@@ -1,8 +1,9 @@
 # AlazHarness - status
 
-## D3B-TURNRUNNER-C120A - SCOPED PASS; CANONICAL DELIVERY PENDING
+## D3B-TURNRUNNER-C120A - DEVELOPMENT-INTEGRATED; NATIVE TURN WORKER CORRELATION PASS
 
-Branch alaz/d3b-turnrunner-c120a, worktree scratch/worktrees/d3b-turnrunner-c120a.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
 Base80e15b4. Added gateway_canonical_turn_observation; C119 and all487 earlier
 sources unchanged. No native patch, scheduler, worker registry or installed update.
 
@@ -49,5 +50,8 @@ Report docs/D3B-TURNRUNNER-C120A.md. Evidence evidence/d3b-turnrunner-c120a/:
 summary.json, native-004-clean/result.json, native-clean-source-custody.json,
 clean-full-windows-result.json, clean-full source/patch before-after manifests,
 selected-clean-source.txt, static-clean-source.txt. Earlier failed/successful
-receipts and parent/work logs retained. All native/full jobs terminal. Commit
-and clean canonical fast-forward delivery follow without runtime activation.
+receipts and parent/work logs retained. All native/full jobs terminal; clean canonical fast-forward delivered without runtime activation.
+
+### Exact delivery
+
+Tested 1a892b1a2f56c9b710f0be6deb33a91df602a449; canonical 80e15b4bb525ce1ab9aa0d997252b82f33335a65 fast-forwarded. All490source/fourpatch hashes exact, canonical14selected methods PASS. Main/vendor/root status unchanged; no push. See delivery.json. Final GitHEAD identifies the documentation handoff.

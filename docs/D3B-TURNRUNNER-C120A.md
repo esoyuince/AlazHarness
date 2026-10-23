@@ -132,3 +132,7 @@ receipt-test references. Product code is identical to the accepted completion fi
 All490 current source hashes and4patch hashes match. Use native-004-clean/result.json,
 native-clean-source-custody.json and clean-full-windows-result.json as current;
 earlier result files are historical and are not additional scenario counts.
+
+## Canonical delivery
+
+Tested commit `1a892b1a2f56c9b710f0be6deb33a91df602a449` fast-forwarded from `80e15b4bb525ce1ab9aa0d997252b82f33335a65` into alaz/d3b-principal-launch-21oct. All490 source hashes and4patch hashes match current complete acceptance. Canonical14 selected checks PASS; root/vendor state and main unchanged. No new native/full replay, installed activation or push.
