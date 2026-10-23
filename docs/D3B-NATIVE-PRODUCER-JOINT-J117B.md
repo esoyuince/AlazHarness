@@ -95,3 +95,7 @@ native20/20 overlap and are not summed.80 original evidence Git blobs are intact
 Both native imports together cover504 source files with matching immutable-source
 custody. Local static is recorded in static-final.txt, not remote CI. Runtime
 activation and the canonical executor/active-work health boundary remain closed.
+
+## Canonical delivery
+
+Tested source `d0b150b3924da9dc7f103cb07fa438a93d3b83ca`, acceptance `7c4e5125920ec2548f536344c11974bd649a023f`; canonical `42b20e9956cff938976972ed1a7eddec6d47edff` fast-forwarded without history loss. All474 source files and3 patches match the full run.24/24 focused methods passed again at the canonical path. The accepted static check applies to identical executable sources; final delivery changes only documentation/evidence. Native featured0028f6 remains NOT INSTALLED, main/push unchanged. Canonical executor linkage, active-work storage/HTTP/isolation remain OPEN.
