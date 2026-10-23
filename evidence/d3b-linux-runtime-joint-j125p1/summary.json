@@ -29,7 +29,7 @@
   "independentLinuxSyntaxFiles": 562,
   "selectedTargetWheels": 30,
   "independentWheelAuditSyntheticControls": 12,
-  "offlineReceiptMethods": 15,
+  "offlineReceiptMethods": 19,
   "securityRemediationPackageChanges": 4,
   "requiredYarlUpdate": true,
   "installedWindowsRuntimeChanged": false,
@@ -42,5 +42,6 @@
   "providerCalls": 0,
   "mainChanged": false,
   "pushed": false,
-  "next": "same corrected runtime/source/owner path under original projection plus namespace/seccomp/Landlock; requalify exact binary/source closure before active task/service routes"
+  "next": "same corrected runtime/source/owner path under original projection plus namespace/seccomp/Landlock; requalify exact binary/source closure before active task/service routes",
+  "receiptCountClarification": "8+7+4 methods, discovered/re-run19; previous draft counted only8+7. Raw full/native results unchanged."
 }

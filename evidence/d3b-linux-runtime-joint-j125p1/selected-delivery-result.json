@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "total": 19,
+  "passed": 19,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "scope": "8 original runtime receipts +7 initial independent +4 current corrected-candidate receipts; not new Linux execution"
+}

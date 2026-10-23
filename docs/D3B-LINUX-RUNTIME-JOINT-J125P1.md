@@ -27,7 +27,7 @@ transactions and after-detach header drift refuse unsafe close. No Linux boundar
 was doubled and no native method replaced in this owner experiment.
 
 These are NOT45 distinct tests:22 methods plus one lifecycle with23 predicates.
-The12 independent synthetic wheel-auditor checks and15 combined offline receipts
+The12 independent synthetic wheel-auditor checks and19 combined offline receipts
 are other scopes, not additional native/Linux runs. Independent513+49=562-file
 Linux compile is syntax-only; it is not another lifecycle acceptance.
 
@@ -80,3 +80,7 @@ Main/push/CI/installed vendor/source locks/production remain unchanged.
 ## Complete union standard terminal
 
 New full Windows 3231=3208PASS/23SKIP/0FAIL/0ERROR. 532 source/config/test hashes and7patches stayed exact. All522 preceding files unchanged. Exact same23skip identities/reasons retained. This is not an additional Linux execution. Final local static is recorded separately and does not imply remote CI/production acceptance.
+
+## Canonical delivery
+
+Tested `eab1cbe792b407f1a874aa404287632045e58271` fast-forwarded from `00e9b36213a0939df02007b0cf55fd4cd10bb4c7`; all532 source hashes and7patches exact. Final19/19 offline receipts PASS (8+7+4), correcting the draft15-count without altering any raw/native/full result. No Linux rerun or installed-runtime change during delivery. Current status.md gives the continuation; full namespace/seccomp/Landlock and active-service acceptance remain open.
