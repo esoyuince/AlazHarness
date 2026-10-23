@@ -1,0 +1,312 @@
+"""Real API-to-authority correlation; runner/model boundary explicitly doubled.
+
+Admission, native run provenance, FIFO claim, Task maps and settlement are real.
+Adoption calls the real method from the doubled compute boundary; this is NOT a
+full GatewayRunner/TurnRunner/AIAgent or physical-worker/isolation acceptance.
+"""
+from pathlib import Path
+import argparse,asyncio,hashlib,json,os,sys,tempfile,threading,unittest
+from types import SimpleNamespace
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'scripts/qa')]
+import b112x9_adapter_probe as loops
+import gateway_canonical_run_binding as binding
+import gateway_work_health as health
+import gateway_live_store_gate as live
+OBS=[];SCHEMAS=None
+AUDIT={'watch':False,'connects':0,'dbopens':0,'network':0,'deniedNetworkEvents':[]}
+
+class Request(dict):
+    method='POST';path='/v1/runs';path_qs='/v1/runs';query={};remote='127.0.0.1';transport=None
+    def __init__(self,body=None,key='owned-key'):
+        super().__init__();self.body=body or {'input':'offline-c119','model':'owned-fixture'}
+        self.headers={'Authorization':'Bearer owned-c119-fixture'}
+        if key is not None:self.headers['Idempotency-Key']=key
+    async def json(self):return self.body
+
+class CanonicalCases(unittest.IsolatedAsyncioTestCase):
+    loop_factory=staticmethod(loops.NativeBorrowTests.loop_factory)
+    async def asyncSetUp(self):
+        self.tmp=tempfile.TemporaryDirectory(prefix='alaz-c119-case-');self.home=Path(self.tmp.name).resolve()
+        self.a=None;self.authority=None;self.tasks=[];self.release=asyncio.Event()
+        self.addAsyncCleanup(self._cleanup)
+        os.environ['HERMES_HOME']=str(self.home);ownership.reserve([self.home])
+        self.store=SessionStore(self.home/'sessions',GatewayConfig());self.db=self.store._db
+        self.a=APIServerAdapter(PlatformConfig(enabled=True,extra={'key':'owned-c119-fixture','model_name':'owned-fixture'}))
+        self.epoch=runtime.begin_runtime_epoch(self.db,instance_id='owned-c119')
+        self.runner=SimpleNamespace(_draining=False,config=GatewayConfig(),session_store=self.store,_session_db=self.store,_running_agents={})
+        self.authority=SessionAuthority(self.runner,profile_id=str(self.home),instance_id='owned-c119',db=self.db,epoch=self.epoch)
+        self.runner.session_authority=self.authority;self.runner._adapter_for_source=lambda source:self.a
+        self.a.gateway_runner=self.runner
+        self.entered=asyncio.Event();self.release=asyncio.Event();self.adopt=True;self.compute_calls=0;self.dummy=SimpleNamespace()
+        self.tasks=[]
+        async def compute(event):
+            self.compute_calls+=1
+            node=self.authority.sessions[event.source.chat_id];generation=node.event_stream.execution['execution_generation']
+            if self.adopt:await asyncio.to_thread(self.authority.adopt_agent,event.source.chat_id,generation,self.dummy)
+            execution_result.get().update(result={'final_response':'offline canonical result','messages':[]},usage={})
+            self.entered.set();await asyncio.wait_for(self.release.wait(),20);return 'offline canonical result'
+        self.runner._handle_message=compute
+        sid=self.db._conn.execute("SELECT value FROM main.state_meta WHERE key='store_instance_id'").fetchone()[0]
+        self.identity=health.RuntimeIdentity(sid,self.epoch,'owned-c119',os.getpid(),self.a._run_owner_started)
+        self.observer=binding.NativeCanonicalBinding(self.a,self.authority,self.identity,schema_hashes=SCHEMAS)
+    async def _cleanup(self):
+        AUDIT['watch']=False;self.release.set()
+        tasks=list(self.tasks)+[n.task for n in getattr(self.authority,'sessions',{}).values() if n.task is not None]
+        tasks+=list(getattr(self.authority,'_mutation_tasks',()))
+        if tasks:await asyncio.wait_for(asyncio.gather(*tasks,return_exceptions=True),25)
+        await asyncio.get_running_loop().shutdown_default_executor(timeout=10)
+        if self.a is not None:self.a._response_store.close();self.a._run_idempotency_store.close()
+        assert gateway_status.flush_runtime_status(timeout=5)
+        registry.close_all_under(self.home);ownership.close()
+        self.tmp.cleanup();self.assertFalse(self.home.exists())
+    async def submit(self,body=None,key='owned-key',*,running=True):
+        response=await self.a._handle_runs(Request(body,key));self.assertEqual(response.status,202,response.text)
+        rid=json.loads(response.text)['run_id'];task=self.a._active_run_tasks.get(rid)
+        if task is not None and task not in self.tasks:self.tasks.append(task)
+        if running:await asyncio.wait_for(self.entered.wait(),20)
+        return rid,task
+    def capture(self,rid):
+        connections=(self.db._conn,self.a._run_idempotency_store._conn)
+        before=[c.total_changes for c in connections];sql=[]
+        for c in connections:c.set_trace_callback(sql.append)
+        AUDIT['watch']=True
+        try:result=self.observer.capture(rid)
+        finally:
+            AUDIT['watch']=False
+            for c in connections:c.set_trace_callback(None)
+        self.assertEqual(before,[c.total_changes for c in connections]);self.assertTrue(all(s.startswith(('SELECT ','PRAGMA ')) for s in sql))
+        OBS.append({'case':self._testMethodName,'result':result.public(),'databaseWrites':0,'newDatabaseConnections':0,'nativeAdmissionAndTaskNotInjected':True})
+        return result
+    async def finish(self,rid,task):
+        self.release.set()
+        await asyncio.wait_for(asyncio.gather(task,*[n.task for n in self.authority.sessions.values() if n.task],return_exceptions=True),25)
+        await asyncio.sleep(0)
+    def corrupt_replay(self,column,value):
+        assert column in {'fingerprint','scope','idempotency_key','status_json'}
+        c=self.a._run_idempotency_store._conn;old=c.execute('SELECT '+column+' FROM main.run_idempotency').fetchone()[0]
+        c.execute('UPDATE main.run_idempotency SET '+column+'=?',(value,));c.commit();return old
+
+    async def test_native_claim_is_distinct_from_waiter_and_matches_adopted_generation(self):
+        rid,watcher=await self.submit();s=self.capture(rid)
+        node=self.authority.sessions[s.session_id]
+        self.assertIsNot(node.task,watcher);self.assertEqual(s.phase,'CLAIMED');self.assertTrue(s.adopted_agent_observed)
+        self.assertEqual(self.authority.adopted[s.session_id],(s.generation,self.dummy));self.assertEqual(s.epoch,1)
+        await self.finish(rid,watcher);s=self.capture(rid);self.assertEqual(s.phase,'SETTLED')
+        self.assertTrue(s.replay_terminal);self.assertTrue(s.carrier_done)
+        result=self.observer.release_settled(rid);self.assertFalse(result['nativeStateModified'])
+        with self.assertRaises(binding.CanonicalBindingRejected):self.observer.capture(rid)
+    async def test_native_queued_snapshot_is_not_a_claim(self):
+        rid,t=await self.submit(running=False);s=self.capture(rid)
+        self.assertEqual(s.phase,'QUEUED');self.assertIsNone(s.generation);self.assertFalse(s.public()['canonicalClaimMatched'])
+    async def test_claim_before_agent_adoption_is_not_worker_health(self):
+        self.adopt=False;rid,t=await self.submit();s=self.capture(rid)
+        self.assertEqual(s.phase,'CLAIMED');self.assertFalse(s.adopted_agent_observed)
+        self.assertFalse(s.public()['physicalWorkerHealthVerified'])
+    async def test_cancelled_api_waiter_does_not_cancel_actual_authority_task(self):
+        rid,t=await self.submit();s=self.capture(rid);owner=self.authority.sessions[s.session_id].task
+        t.cancel();await asyncio.gather(t,return_exceptions=True);await asyncio.sleep(0)
+        self.assertFalse(owner.done());s=self.capture(rid);self.assertTrue(s.carrier_cancelled);self.assertTrue(s.authority_task_live)
+        self.assertEqual(s.phase,'CLAIMED');self.assertIsNone(self.observer._entries[rid].carrier)
+        await self.finish(rid,t);self.assertEqual(self.capture(rid).phase,'SETTLED');self.observer.release_settled(rid)
+    async def test_replay_preserves_admission_owner_and_no_second_compute(self):
+        rid,t=await self.submit();first=self.capture(rid);before=self.observer.channel._sequence
+        rid2,t2=await self.submit();self.assertEqual(rid2,rid);self.assertIs(t,t2)
+        self.assertEqual(self.observer.channel._sequence,before);self.assertEqual(self.compute_calls,1)
+        self.assertEqual(self.capture(rid).admission_id,first.admission_id)
+    async def test_native_auth_refusal_produces_no_binding(self):
+        q=Request();q.headers.pop('Authorization');r=await self.a._handle_runs(q)
+        self.assertEqual(r.status,401);self.assertEqual(self.observer._entries,{});self.assertEqual(self.authority.sessions,{})
+    async def test_request_json_cannot_enable_another_observer(self):
+        rid,t=await self.submit({'input':'offline','canonical_healthy':True,'_observer':True})
+        self.assertIs(self.a._run_observation_channel,self.observer.channel);self.assertFalse(self.capture(rid).public()['serviceReadinessVerified'])
+    async def test_unkeyed_request_is_not_qualified(self):
+        rid,t=await self.submit(key=None)
+        with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+    async def test_wrong_fingerprint_refused_and_stays_faulted_after_restoration(self):
+        rid,t=await self.submit();old=self.corrupt_replay('fingerprint','f'*64)
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.corrupt_replay('fingerprint',old)
+        with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+    async def test_wrong_scope_not_learned_from_candidate(self):
+        rid,t=await self.submit();old=self.corrupt_replay('scope','b'*64)
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.corrupt_replay('scope',old)
+    async def test_wrong_request_key_not_learned_from_candidate(self):
+        rid,t=await self.submit();old=self.corrupt_replay('idempotency_key','foreign')
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.corrupt_replay('idempotency_key',old)
+    async def test_source_gap_never_gives_healthy_claim(self):
+        rid,t=await self.submit();self.observer.channel._gap('explicit-test-fault')
+        with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+    async def test_open_state_transaction_not_rolled_back(self):
+        rid,t=await self.submit();self.db._conn.execute('BEGIN IMMEDIATE')
+        try:
+            with self.assertRaises(binding.CanonicalBindingUnavailable):self.capture(rid)
+            self.assertTrue(self.db._conn.in_transaction)
+        finally:self.db._conn.rollback()
+        self.assertEqual(self.capture(rid).phase,'CLAIMED')
+    async def test_native_mutex_contention_is_unavailable_not_permanent_fault(self):
+        rid,t=await self.submit();held=threading.Event();done=threading.Event()
+        def holder():
+            with self.db._lock:held.set();done.wait(10)
+        worker=threading.Thread(target=holder);worker.start();self.assertTrue(held.wait(5))
+        try:
+            with self.assertRaises(binding.CanonicalBindingUnavailable):self.capture(rid)
+        finally:done.set();worker.join(5)
+        self.assertFalse(worker.is_alive());self.assertEqual(self.capture(rid).phase,'CLAIMED')
+    async def test_settlement_transition_is_unavailable_not_false_claim(self):
+        rid,t=await self.submit();s=self.capture(rid);g=self.authority.executing.pop(s.session_id)
+        try:
+            with self.assertRaises(binding.CanonicalBindingUnavailable):self.capture(rid)
+        finally:self.authority.executing[s.session_id]=g
+        self.assertEqual(self.capture(rid).phase,'CLAIMED')
+    async def test_wrong_adopted_generation_is_not_current_owner(self):
+        rid,t=await self.submit();s=self.capture(rid);old=self.authority.adopted[s.session_id]
+        self.authority.adopted[s.session_id]=(s.generation+1,self.dummy)
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.authority.adopted[s.session_id]=old
+    async def test_wrong_runtime_epoch_refused_without_advancing_db_epoch(self):
+        rid,t=await self.submit();self.authority.epoch+=1
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.authority.epoch-=1
+        self.assertEqual(self.db._conn.execute('SELECT epoch FROM runtime_epoch').fetchone()[0],self.epoch)
+    async def test_temp_table_cannot_hide_main_claim(self):
+        rid,t=await self.submit();self.db._conn.execute('CREATE TEMP TABLE session_admissions(admission_id TEXT,status TEXT)')
+        try:s=self.capture(rid);self.assertEqual(s.phase,'CLAIMED');self.assertTrue(s.authority_task_live)
+        finally:self.db._conn.execute('DROP TABLE temp.session_admissions')
+    async def test_canonical_terminal_does_not_release_unfinished_replay(self):
+        rid,t=await self.submit();await self.finish(rid,t)
+        old=self.a._run_idempotency_store._conn.execute('SELECT status_json FROM run_idempotency').fetchone()[0]
+        data=json.loads(old);data['status']='running';self.corrupt_replay('status_json',json.dumps(data))
+        try:
+            s=self.capture(rid);self.assertEqual(s.phase,'SETTLED');self.assertFalse(s.replay_terminal)
+            with self.assertRaises(binding.CanonicalBindingRejected):self.observer.release_settled(rid)
+            self.assertIn(rid,self.observer._entries)
+        finally:self.corrupt_replay('status_json',old)
+        self.observer.release_settled(rid)
+    async def test_drain_visible_but_never_grants_service_or_release(self):
+        rid,t=await self.submit();self.runner._draining=True
+        s=self.capture(rid);self.assertTrue(s.draining)
+        for k in ('runtimeAdmissionAuthorized','retryAuthorized','storeReleaseAuthorized','serviceReadinessVerified','allAgentWorkObserved'):self.assertFalse(s.public()[k])
+    async def test_schema_drift_rejected_even_with_same_request_identity(self):
+        rid,t=await self.submit();self.db._conn.execute('CREATE TABLE unintended_table(v)');self.db._conn.commit()
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.db._conn.execute('DROP TABLE unintended_table');self.db._conn.commit()
+    async def test_replaced_authority_session_object_refused(self):
+        rid,t=await self.submit();s=self.capture(rid);node=self.authority.sessions[s.session_id]
+        self.authority.sessions[s.session_id]=SimpleNamespace()
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.authority.sessions[s.session_id]=node
+    async def test_running_claim_cannot_be_diagnostically_released(self):
+        rid,t=await self.submit()
+        with self.assertRaises(binding.CanonicalBindingRejected):self.observer.release_settled(rid)
+        self.assertIn(rid,self.observer._entries);self.assertEqual(self.capture(rid).phase,'CLAIMED')
+    async def test_replaced_canonical_task_refused_without_native_cancellation(self):
+        rid,t=await self.submit();s=self.capture(rid);node=self.authority.sessions[s.session_id];owner=node.task
+        node.task=t
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+            self.assertFalse(owner.done())
+        finally:node.task=owner
+
+
+
+    async def test_native_duplicate_status_keys_are_not_last_wins(self):
+        rid,t=await self.submit();old=self.corrupt_replay('status_json','{"status":"running","status":"completed"}')
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.corrupt_replay('status_json',old)
+    async def test_native_status_overflow_exponent_cannot_be_healthy(self):
+        rid,t=await self.submit();c=self.a._run_idempotency_store._conn
+        old=c.execute('SELECT status_json FROM run_idempotency').fetchone()[0]
+        raw=old[:-1]+',"extra":1e9999}'
+        self.corrupt_replay('status_json',raw)
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+        finally:self.corrupt_replay('status_json',old)
+
+
+    async def test_unrelated_live_task_cannot_replace_native_drain_before_first_read(self):
+        rid,t=await self.submit();entry=self.observer._entries[rid];node=entry.live;original=node.task
+        other=asyncio.create_task(asyncio.Event().wait());node.task=other
+        try:
+            with self.assertRaises(binding.CanonicalBindingRejected):self.capture(rid)
+            self.assertFalse(original.done())
+        finally:
+            node.task=original;other.cancel();await asyncio.gather(other,return_exceptions=True)
+
+def audit(event,args):
+    if event in ('socket.connect','socket.bind','socket.getaddrinfo'):
+        if loops.AUDIT['frameworkLoopSetup'] and event in ('socket.connect','socket.bind') and isinstance(args[1],tuple) and args[1][0] in ('127.0.0.1','::1'):return
+        import traceback
+        AUDIT['network']+=1
+        frames=[{'file':Path(f.filename).name,'line':f.lineno,'function':f.name} for f in traceback.extract_stack(limit=7)[:-1]]
+        target=(str(args[1])[:160] if len(args)>1 else '')
+        AUDIT['deniedNetworkEvents'].append({'event':event,'target':target,'frames':frames})
+        raise PermissionError('c119_offline')
+    if event in ('subprocess.Popen','os.system'):raise PermissionError('c119_no_child')
+    if AUDIT['watch']:
+        if event=='sqlite3.connect':AUDIT['connects']+=1;raise AssertionError('observer_connect')
+        if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+            name=Path(os.fsdecode(args[0])).name
+            if name.endswith(('.db','.db-wal','.db-journal','.db-shm')):
+                AUDIT['dbopens']+=1;raise AssertionError('observer_raw_db_open')
+
+def main():
+    global SessionStore,GatewayConfig,PlatformConfig,APIServerAdapter,SessionAuthority,runtime,execution_result,ownership,registry,gateway_status,SCHEMAS
+    parser=argparse.ArgumentParser();parser.add_argument('--native',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args();native=args.native.resolve(strict=True);out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    with tempfile.TemporaryDirectory(prefix='alaz-c119-import-') as tmp:
+        base=Path(tmp);os.environ.update(HERMES_HOME=str(base),HOME=str(base),USERPROFILE=str(base),APPDATA=str(base),LOCALAPPDATA=str(base))
+        sys.path.insert(0,str(native));sys.addaudithook(audit)
+        from gateway.config import GatewayConfig,PlatformConfig
+        from gateway.session import SessionStore
+        from gateway.platforms.api_server import APIServerAdapter
+        from gateway.session_authority import SessionAuthority
+        from gateway.session_results import execution_result
+        from gateway.runtime_ownership import process_ownership as ownership
+        import hermes_state_runtime as runtime
+        import hermes_state_registry as registry
+        import gateway.status as gateway_status
+        # Schema pins are prepared on a distinct, empty source-qualified control,
+        # closed BEFORE any candidate case; never learned from a candidate read.
+        control=base/'schema-control';control.mkdir();os.environ['HERMES_HOME']=str(control);ownership.reserve([control])
+        store=SessionStore(control/'sessions',GatewayConfig());db=store._db
+        a=APIServerAdapter(PlatformConfig(enabled=True,extra={'key':'owned-control','model_name':'owned'}))
+        runtime.begin_runtime_epoch(db,instance_id='schema-control')
+        binding._qualified_source()
+        SCHEMAS=(live.schema_digest(db._conn),live.schema_digest(a._run_idempotency_store._conn))
+        a._response_store.close();a._run_idempotency_store.close();registry.close_all_under(control);ownership.close()
+        (out/'provisioned-schemas.json').write_text(json.dumps({'schemaHashes':SCHEMAS,'separateControlClosedBeforeCases':True,'nativeFeature':binding.NATIVE_FEATURE})+'\n',encoding='utf-8')
+        suite=unittest.defaultTestLoader.loadTestsFromTestCase(CanonicalCases)
+        with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as stream:result=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+        imports={}
+        for module in tuple(sys.modules.values()):
+            name=getattr(module,'__file__',None)
+            if name:
+                path=Path(name).resolve()
+                if path.is_relative_to(native) and path.suffix=='.py':imports[path.relative_to(native).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
+        report={'result':'PASS_SCOPED_CANONICAL_CORRELATION' if result.wasSuccessful() else 'FAIL','total':result.testsRun,
+            'passed':result.testsRun-len({t.id() for t,_ in result.errors+result.failures})-len(result.skipped),
+            'errors':len(result.errors),'failures':len(result.failures),'skipped':len(result.skipped),
+            'errorIds':[t.id() for t,_ in result.errors],'failureIds':[t.id() for t,_ in result.failures],
+            'observations':OBS,'nativeImports':imports,'audit':AUDIT,
+            'sourceHashes':{n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ('packages/claw-hermes/gateway_canonical_run_binding.py','scripts/qa/c119v1_native_canonical.py')},
+            'nativeFeature':binding.NATIVE_FEATURE,'schemaPins':SCHEMAS,'ownershipReleased':not ownership.homes,'registry':registry.stats(),
+            'nativeAdmissionClaimTaskMapsDoubled':False,'runnerFacadeAndComputeDoubled':True,'adoptionCallSiteIsComputeDouble':True,
+            'nativeAdoptionMethodDoubled':False,'httpListenerStarted':False,'fullGatewayTurnRunnerTested':False,
+            'kernelIsolationTested':False,'borrowedRunnerGuardRelaxed':False,'providerCalls':0,'rootOrWslAction':False}
+    report['temporaryImportHomeRemoved']=not base.exists()
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','observations','sourceHashes')}),flush=True)
+    if not result.wasSuccessful():print((out/'tests.txt').read_text(encoding='utf-8')[-18000:],flush=True)
+    return 0 if result.wasSuccessful() and report['ownershipReleased'] and report['temporaryImportHomeRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())

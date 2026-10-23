@@ -1,0 +1,9 @@
+{
+  "issue": "JSON 1e9999 parsed as infinite despite parse_constant guard; new regression failed before correction",
+  "correction": "reject nonfinite parse_float values",
+  "native001RemainsHistoricalPass": true,
+  "native001DeniedNetworkAttempts": 1,
+  "networkObservation": "audit rejected before operation; next complete fixture captures source/target of attempted import probe",
+  "productNativeFeatureUnchanged": true,
+  "next": "new26 native current-source cases; not label historical24 as current corrected source"
+}

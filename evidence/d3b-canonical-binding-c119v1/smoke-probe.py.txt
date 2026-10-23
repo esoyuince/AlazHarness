@@ -1,0 +1,67 @@
+from pathlib import Path
+import asyncio,json,os,sys,tempfile,traceback
+from types import SimpleNamespace
+root=Path(sys.argv[1]);native=Path(sys.argv[2])
+sys.path[:0]=[str(root/'packages/claw-hermes'),str(root/'scripts/qa'),str(native)]
+import b112x9_adapter_probe as fixture
+class Request(dict):
+    method='POST';path='/v1/runs';path_qs='/v1/runs';query={};remote='127.0.0.1';transport=None
+    def __init__(self):
+        super().__init__();self.headers={'Authorization':'Bearer owned-c119-fixture','Idempotency-Key':'owned-key'}
+    async def json(self):return {'input':'offline canonical test','model':'owned-fixture'}
+with tempfile.TemporaryDirectory(prefix='alaz-c119-smoke-') as tmp:
+    home=Path(tmp).resolve();os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),LOCALAPPDATA=str(home),APPDATA=str(home))
+    def audit(event,args):
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo'):
+            if fixture.AUDIT['frameworkLoopSetup'] and event in ('socket.connect','socket.bind') and isinstance(args[1],tuple) and args[1][0] in ('127.0.0.1','::1'):return
+            raise PermissionError('offline_c119')
+        if event in ('subprocess.Popen','os.system'):raise PermissionError('no_child_c119')
+    sys.addaudithook(audit)
+    from gateway.config import GatewayConfig,PlatformConfig
+    from gateway.session import SessionStore
+    from gateway.session_authority import SessionAuthority
+    from gateway.platforms.api_server import APIServerAdapter
+    from gateway.platforms.api_server_run_observation import RunLifecycleChannel
+    from gateway.runtime_ownership import process_ownership
+    from hermes_state_runtime import begin_runtime_epoch
+    from gateway.session_results import execution_result
+    import gateway.status as status
+    process_ownership.reserve([home]);store=SessionStore(home/'sessions',GatewayConfig());db=store._db
+    print('NATIVE_STORE',type(db).__name__,db.db_path,flush=True)
+    a=APIServerAdapter(PlatformConfig(enabled=True,extra={'key':'owned-c119-fixture','model_name':'owned-fixture'}))
+    epoch=begin_runtime_epoch(db,instance_id='owned-c119')
+    runner=SimpleNamespace(_draining=False,config=GatewayConfig(),session_store=store,_session_db=store,_running_agents={})
+    auth=SessionAuthority(runner,profile_id=str(home),instance_id='owned-c119',db=db,epoch=epoch);runner.session_authority=auth
+    runner._adapter_for_source=lambda source:a;a.gateway_runner=runner
+    async def main():
+        entered=asyncio.Event();release=asyncio.Event();events=[]
+        dummy=SimpleNamespace()
+        async def handle(event):
+            live=auth.sessions[event.source.chat_id];g=live.event_stream.execution['execution_generation']
+            auth.adopt_agent(event.source.chat_id,g,dummy)
+            execution_result.get().update(result={'final_response':'offline authority result','messages':[]},usage={})
+            entered.set();await asyncio.wait_for(release.wait(),15);return 'offline authority result'
+        runner._handle_message=handle
+        channel=RunLifecycleChannel(a,events.append)
+        reply=await a._handle_runs(Request());print('RESPONSE',reply.status,reply.text,flush=True)
+        assert reply.status==202
+        value=json.loads(reply.text);watcher=a._active_run_tasks[value['run_id']]
+        try:
+            await asyncio.wait_for(entered.wait(),15)
+            binding=events[0].binding;live=auth.sessions[binding.canonical_session_id]
+            row=dict(db._conn.execute('SELECT * FROM session_admissions').fetchone())
+            print('RUNNING',json.dumps({'role':binding.execution_role,'sameTask':watcher is live.task,'stamp':live.event_stream.execution,'rowStatus':row['status'],'rowGeneration':row['generation'],'adopted':auth.adopted[binding.canonical_session_id][0],'phases':[x.phase for x in events]}),flush=True)
+        finally:
+            release.set();await asyncio.wait_for(asyncio.shield(watcher),20)
+            if auth.sessions:
+                await asyncio.gather(*(l.task for l in auth.sessions.values() if l.task),return_exceptions=True)
+        print('COMPLETED',a._run_statuses[value['run_id']]['status'],[e.phase for e in events],dict(db._conn.execute('SELECT status,outcome FROM session_admissions').fetchone()),flush=True)
+        await asyncio.get_running_loop().shutdown_default_executor(timeout=10)
+    try:
+        with asyncio.Runner(loop_factory=fixture.NativeBorrowTests.loop_factory) as run:run.run(main())
+    finally:
+        assert status.flush_runtime_status(timeout=5)
+        for s in (a._response_store,a._run_idempotency_store,db):s.close()
+        process_ownership.close()
+    print('OWNED_RESOURCES_CLOSED',flush=True)
+print('TEMP_REMOVED',not home.exists(),flush=True)

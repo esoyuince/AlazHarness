@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T17:39:47.168907+03:00",
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "sources": {
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "dd8c3a6f62e9d16b0312c280dfde7670883ebadc5b3ac529554c4936c54978da",
+    "scripts/qa/c119v1_native_canonical.py": "be2805752aa1e49b290e614e3952cf141fc537aa521648eb61e04a78af557fe7"
+  },
+  "scope": "24 standard native API/canonical authority cases; runner/compute boundary doubled; no listener/provider/borrowed contract bypass"
+}

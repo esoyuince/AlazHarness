@@ -1,0 +1,56 @@
+{
+  "scope": "read-only named standard-native request/claim snapshot, not all-work service gate",
+  "existingCodeSourcePins": "5 exact native seams at94321058",
+  "noNewNativePatch": true,
+  "writerOrRecoveryMethodsAdded": false,
+  "requestBindingOrigin": "native RunBinding event, immutable before candidate observation",
+  "expectedSchemaOrigin": "separate source-qualified control profile closed before candidate cases",
+  "adoptionEvidence": "real native method called from explicitly doubled _handle_message compute boundary",
+  "actualTurnRunnerAIAgentAdoption": "NOT_RUN",
+  "fullPhysicalExecutorProof": "NOT_RUN",
+  "borrowedContractBypass": false,
+  "responseDatabaseVerification": "not claimed by this class",
+  "canonicalPayloadDigestEquivalence": "not claimed; public flag false",
+  "crossDatabaseAtomicity": "not claimed",
+  "successfulExternalNetworkOrProviderOperation": false,
+  "deniedProbe": [
+    {
+      "event": "socket.bind",
+      "target": "('::1', 0)",
+      "frames": [
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 1342,
+          "function": "_find_and_load_unlocked"
+        },
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 938,
+          "function": "_load_unlocked"
+        },
+        {
+          "file": "<frozen importlib._bootstrap_external>",
+          "line": 759,
+          "function": "exec_module"
+        },
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 491,
+          "function": "_call_with_frames_removed"
+        },
+        {
+          "file": "connection.py",
+          "line": 137,
+          "function": "<module>"
+        },
+        {
+          "file": "connection.py",
+          "line": 127,
+          "function": "_has_ipv6"
+        }
+      ]
+    }
+  ],
+  "networkAuditDoesNotMeanZeroAttempt": true,
+  "oldBlocksRetried": false
+}

@@ -1,0 +1,23 @@
+test_bounded_json_accepts_only_objects (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_bounded_json_accepts_only_objects) ... ok
+test_duplicate_top_and_nested_keys_not_last_wins (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_duplicate_top_and_nested_keys_not_last_wins) ... ok
+test_json_byte_limit_not_just_character_limit (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_json_byte_limit_not_just_character_limit) ... ok
+test_json_invalid_types_not_coerced (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_json_invalid_types_not_coerced) ... ok
+test_nonfinite_exponent_refused (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_nonfinite_exponent_refused) ... FAIL
+test_nonfinite_numbers_refused (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_nonfinite_numbers_refused) ... ok
+test_snapshot_claim_does_not_authorize_work_or_prove_worker (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_snapshot_claim_does_not_authorize_work_or_prove_worker) ... ok
+test_snapshot_immutable (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_snapshot_immutable) ... ok
+test_source_pin_has_only_exact_critical_native_seams (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_source_pin_has_only_exact_critical_native_seams) ... ok
+
+======================================================================
+FAIL: test_nonfinite_exponent_refused (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_nonfinite_exponent_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-binding-c119v1\tests\test_canonical_boundary_c119v1.py", line 20, in test_nonfinite_exponent_refused
+    with self.assertRaises(binding.CanonicalBindingRejected):binding.json_object('{"x":1e9999}')
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanonicalBindingRejected not raised
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+FAILED (failures=1)

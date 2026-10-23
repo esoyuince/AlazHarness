@@ -1,0 +1,32 @@
+test_cancelled_api_waiter_does_not_cancel_actual_authority_task (__main__.CanonicalCases.test_cancelled_api_waiter_does_not_cancel_actual_authority_task) ... ok
+test_canonical_terminal_does_not_release_unfinished_replay (__main__.CanonicalCases.test_canonical_terminal_does_not_release_unfinished_replay) ... ok
+test_claim_before_agent_adoption_is_not_worker_health (__main__.CanonicalCases.test_claim_before_agent_adoption_is_not_worker_health) ... ok
+test_drain_visible_but_never_grants_service_or_release (__main__.CanonicalCases.test_drain_visible_but_never_grants_service_or_release) ... ok
+test_native_auth_refusal_produces_no_binding (__main__.CanonicalCases.test_native_auth_refusal_produces_no_binding) ... ok
+test_native_claim_is_distinct_from_waiter_and_matches_adopted_generation (__main__.CanonicalCases.test_native_claim_is_distinct_from_waiter_and_matches_adopted_generation) ... ok
+test_native_duplicate_status_keys_are_not_last_wins (__main__.CanonicalCases.test_native_duplicate_status_keys_are_not_last_wins) ... ok
+test_native_mutex_contention_is_unavailable_not_permanent_fault (__main__.CanonicalCases.test_native_mutex_contention_is_unavailable_not_permanent_fault) ... ok
+test_native_queued_snapshot_is_not_a_claim (__main__.CanonicalCases.test_native_queued_snapshot_is_not_a_claim) ... ok
+test_native_status_overflow_exponent_cannot_be_healthy (__main__.CanonicalCases.test_native_status_overflow_exponent_cannot_be_healthy) ... ok
+test_open_state_transaction_not_rolled_back (__main__.CanonicalCases.test_open_state_transaction_not_rolled_back) ... ok
+test_replaced_authority_session_object_refused (__main__.CanonicalCases.test_replaced_authority_session_object_refused) ... ok
+test_replaced_canonical_task_refused_without_native_cancellation (__main__.CanonicalCases.test_replaced_canonical_task_refused_without_native_cancellation) ... ok
+test_replay_preserves_admission_owner_and_no_second_compute (__main__.CanonicalCases.test_replay_preserves_admission_owner_and_no_second_compute) ... ok
+test_request_json_cannot_enable_another_observer (__main__.CanonicalCases.test_request_json_cannot_enable_another_observer) ... ok
+test_running_claim_cannot_be_diagnostically_released (__main__.CanonicalCases.test_running_claim_cannot_be_diagnostically_released) ... ok
+test_schema_drift_rejected_even_with_same_request_identity (__main__.CanonicalCases.test_schema_drift_rejected_even_with_same_request_identity) ... ok
+test_settlement_transition_is_unavailable_not_false_claim (__main__.CanonicalCases.test_settlement_transition_is_unavailable_not_false_claim) ... ok
+test_source_gap_never_gives_healthy_claim (__main__.CanonicalCases.test_source_gap_never_gives_healthy_claim) ... ok
+test_temp_table_cannot_hide_main_claim (__main__.CanonicalCases.test_temp_table_cannot_hide_main_claim) ... ok
+test_unkeyed_request_is_not_qualified (__main__.CanonicalCases.test_unkeyed_request_is_not_qualified) ... ok
+test_unrelated_live_task_cannot_replace_native_drain_before_first_read (__main__.CanonicalCases.test_unrelated_live_task_cannot_replace_native_drain_before_first_read) ... ok
+test_wrong_adopted_generation_is_not_current_owner (__main__.CanonicalCases.test_wrong_adopted_generation_is_not_current_owner) ... ok
+test_wrong_fingerprint_refused_and_stays_faulted_after_restoration (__main__.CanonicalCases.test_wrong_fingerprint_refused_and_stays_faulted_after_restoration) ... ok
+test_wrong_request_key_not_learned_from_candidate (__main__.CanonicalCases.test_wrong_request_key_not_learned_from_candidate) ... ok
+test_wrong_runtime_epoch_refused_without_advancing_db_epoch (__main__.CanonicalCases.test_wrong_runtime_epoch_refused_without_advancing_db_epoch) ... ok
+test_wrong_scope_not_learned_from_candidate (__main__.CanonicalCases.test_wrong_scope_not_learned_from_candidate) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 39.524s
+
+OK

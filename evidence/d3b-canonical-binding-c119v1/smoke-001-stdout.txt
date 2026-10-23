@@ -1,0 +1,6 @@
+NATIVE_STORE SessionDB C:\Users\ender\AppData\Local\Temp\alaz-c119-smoke-86g8r1vk\state.db
+RESPONSE 202 {"run_id": "run_680f50aa1180407581e24aa4da4ea63b", "status": "started", "replayed": false}
+RUNNING {"role": "canonical_authority_observer", "sameTask": false, "stamp": {"authority_epoch": 1, "execution_generation": 1, "admission_id": "43481907b7f246a18dd30140759ab4d9"}, "rowStatus": "started", "rowGeneration": 1, "adopted": 1, "phases": ["ACCEPTED", "CREATED", "STARTED"]}
+COMPLETED completed ['ACCEPTED', 'CREATED', 'STARTED', 'EXECUTION_RETURNED', 'RETIRED', 'DONE'] {'status': 'terminal', 'outcome': 'completed'}
+OWNED_RESOURCES_CLOSED
+TEMP_REMOVED True

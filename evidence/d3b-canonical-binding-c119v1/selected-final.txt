@@ -1,0 +1,20 @@
+test_bounded_json_accepts_only_objects (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_bounded_json_accepts_only_objects) ... ok
+test_duplicate_top_and_nested_keys_not_last_wins (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_duplicate_top_and_nested_keys_not_last_wins) ... ok
+test_json_byte_limit_not_just_character_limit (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_json_byte_limit_not_just_character_limit) ... ok
+test_json_invalid_types_not_coerced (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_json_invalid_types_not_coerced) ... ok
+test_nonfinite_exponent_refused (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_nonfinite_exponent_refused) ... ok
+test_nonfinite_numbers_refused (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_nonfinite_numbers_refused) ... ok
+test_snapshot_claim_does_not_authorize_work_or_prove_worker (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_snapshot_claim_does_not_authorize_work_or_prove_worker) ... ok
+test_snapshot_immutable (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_snapshot_immutable) ... ok
+test_source_pin_has_only_exact_critical_native_seams (test_canonical_boundary_c119v1.CanonicalBoundaryTests.test_source_pin_has_only_exact_critical_native_seams) ... ok
+test_actual_api_cancel_leaves_canonical_claim_until_settlement (test_canonical_receipt_c119v1.CanonicalReceipt.test_actual_api_cancel_leaves_canonical_claim_until_settlement) ... ok
+test_exact_source_and_immutable_native_imports (test_canonical_receipt_c119v1.CanonicalReceipt.test_exact_source_and_immutable_native_imports) ... ok
+test_historical24_and_actual_exponent_failure_not_relabelled (test_canonical_receipt_c119v1.CanonicalReceipt.test_historical24_and_actual_exponent_failure_not_relabelled) ... ok
+test_no_observer_opens_writes_or_unreported_network_effect (test_canonical_receipt_c119v1.CanonicalReceipt.test_no_observer_opens_writes_or_unreported_network_effect) ... ok
+test_terminal_complete_current27_cases (test_canonical_receipt_c119v1.CanonicalReceipt.test_terminal_complete_current27_cases) ... ok
+test_test_boundary_and_original_controls_remain_explicit (test_canonical_receipt_c119v1.CanonicalReceipt.test_test_boundary_and_original_controls_remain_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.134s
+
+OK

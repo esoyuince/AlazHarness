@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "total": 3134,
+  "discovered": 3134,
+  "passed": 3111,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 487,
+  "sourceHashesUnchanged": true,
+  "patchCount": 4,
+  "patchHashesUnchanged": true,
+  "all483PreviousSourcesUnchanged": true,
+  "elapsedSeconds": 281.045,
+  "at": "2026-10-23T17:50:33.886328+03:00",
+  "scope": "full harness Windows unittest, not upstream full pytest or new native/isolation test"
+}

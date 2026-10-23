@@ -1,0 +1,84 @@
+{
+  "job": "D3B-CANONICAL-BINDING-C119V1",
+  "result": "PASS_NAMED_CANONICAL_CORRELATION_NOT_SERVICE_HEALTH",
+  "at": "2026-10-23T17:50:37.529793+03:00",
+  "base": "e814e4cc771f40f49f4ecd7753c9cf15ec913255",
+  "fullWindows": {
+    "result": "PASS",
+    "total": 3134,
+    "discovered": 3134,
+    "passed": 3111,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 23,
+    "errorIds": [],
+    "failureIds": [],
+    "sourceCount": 487,
+    "sourceHashesUnchanged": true,
+    "patchCount": 4,
+    "patchHashesUnchanged": true,
+    "all483PreviousSourcesUnchanged": true,
+    "elapsedSeconds": 281.045,
+    "at": "2026-10-23T17:50:33.886328+03:00",
+    "scope": "full harness Windows unittest, not upstream full pytest or new native/isolation test"
+  },
+  "nativeCurrentMethods": 27,
+  "pureBoundaryMethods": 9,
+  "offlineReceiptMethods": 6,
+  "sourceCount": 487,
+  "all483PreviousSourcesUnchanged": true,
+  "patchCount": 4,
+  "newNativePatchAdded": false,
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "nativeImportsVerified": 501,
+  "runnerFacadeAndComputeDoubled": true,
+  "nativeAdmissionClaimTaskMapsDoubled": false,
+  "adoptionCallsiteIsComputeDouble": true,
+  "fullTurnRunnerOrPhysicalWorkerTested": false,
+  "borrowedRunnerContractRelaxed": false,
+  "activeWorkHttpWired": false,
+  "fullIsolationTested": false,
+  "providerCalls": 0,
+  "deniedIpv6ImportProbe": [
+    {
+      "event": "socket.bind",
+      "target": "('::1', 0)",
+      "frames": [
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 1342,
+          "function": "_find_and_load_unlocked"
+        },
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 938,
+          "function": "_load_unlocked"
+        },
+        {
+          "file": "<frozen importlib._bootstrap_external>",
+          "line": 759,
+          "function": "exec_module"
+        },
+        {
+          "file": "<frozen importlib._bootstrap>",
+          "line": 491,
+          "function": "_call_with_frames_removed"
+        },
+        {
+          "file": "connection.py",
+          "line": 137,
+          "function": "<module>"
+        },
+        {
+          "file": "connection.py",
+          "line": 127,
+          "function": "_has_ipv6"
+        }
+      ]
+    }
+  ],
+  "installedNativeActivated": false,
+  "oldBlocksRetried": false,
+  "mainChanged": false,
+  "pushed": false
+}

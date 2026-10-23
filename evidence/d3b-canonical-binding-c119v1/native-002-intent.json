@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T17:43:21.219662+03:00",
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "sources": {
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61"
+  },
+  "scope": "new27 complete native cases on final nonfinite-json/coroutine-identity guards; source event network denials audited; fresh profiles"
+}
