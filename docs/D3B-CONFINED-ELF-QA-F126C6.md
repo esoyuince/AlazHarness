@@ -75,3 +75,29 @@ Records: matching evidence/elf-custody.json,elf-input.json,elf-linux-stdout.txt,
 elf-linux-terminal.json,elf-focused-tests.txt and summary.json. Source snapshots
 and original roles are in single-experiment-owner.json. Read status.md plus live
 Git before continuation; source work in F126C1 may advance concurrently.
+
+## Exact original side effect now identified independently
+
+A separate original ordinary-UID diagnostic with current real constructors shows
+only two added paths: platforms and platforms/pairing, appearing at runner
+construction, not at import, authority preparation, adapter binding or detach.
+The native source chain is explicit: run_runtime_init creates PairingStore;
+PairingStore asks get_hermes_dir for platforms/pairing versus legacy pairing;
+empty legacy scaffolding deliberately does not count as occupied, so the native
+constructor creates the newer directory. Ordinary upstream behavior is intentional.
+The earlier finite store-only layout excludes platforms and rightly rejects it.
+
+Immutable three-file source excerpts, current layout snapshot and raw diagnostic
+hash are saved. No current native source or layout is edited by this branch.
+The integration now needs a narrow qualified prepared-only side-effect contract
+or an explicitly reviewed new finite layout; do not delete the generated paths,
+seed artificial approval content or relax the existing checker to hide the issue.
+Ordinary active pairing behavior must remain intact. The previous unconfined
+owner test did not run a postclose full layout inventory; its scoped PASS does
+not prove clean restart under this finite projection.
+
+Four more offline receipt methods preserve the first three failed run outcomes
+and original side effect/source identities. Total focused18/18=10synthetic parser
+controls+8offline receipts. Native003 failure is not reclassified as positive
+confinement just because the prepared consumer had matched its three handles.
+The partial wrapper intent fields do not replace the missing final result.

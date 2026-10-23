@@ -1,0 +1,23 @@
+test_cold_layout_was_intentionally_finite_not_arbitrary_profile (test_confined_failed_receipt_f126c6.FailedConfinementReceipt.test_cold_layout_was_intentionally_finite_not_arbitrary_profile) ... ok
+test_exact_old_native_sources_remain_archived_not_relabelled (test_confined_failed_receipt_f126c6.FailedConfinementReceipt.test_exact_old_native_sources_remain_archived_not_relabelled) ... ok
+test_no_success_is_inferred_from_partial_consumer_preparation (test_confined_failed_receipt_f126c6.FailedConfinementReceipt.test_no_success_is_inferred_from_partial_consumer_preparation) ... ok
+test_only_runner_construction_created_new_pairing_directories (test_confined_failed_receipt_f126c6.FailedConfinementReceipt.test_only_runner_construction_created_new_pairing_directories) ... ok
+test_architecture_mismatch (test_elf_projection_audit_f126c6.ElfParsingControls.test_architecture_mismatch) ... ok
+test_corrupt_version_chain_is_refused (test_elf_projection_audit_f126c6.ElfParsingControls.test_corrupt_version_chain_is_refused) ... ok
+test_duplicate_needed_is_not_silently_deduplicated (test_elf_projection_audit_f126c6.ElfParsingControls.test_duplicate_needed_is_not_silently_deduplicated) ... ok
+test_missing_dynamic_terminator (test_elf_projection_audit_f126c6.ElfParsingControls.test_missing_dynamic_terminator) ... ok
+test_needed_path_not_filename (test_elf_projection_audit_f126c6.ElfParsingControls.test_needed_path_not_filename) ... ok
+test_payload_truncated (test_elf_projection_audit_f126c6.ElfParsingControls.test_payload_truncated) ... ok
+test_search_override_is_reported (test_elf_projection_audit_f126c6.ElfParsingControls.test_search_override_is_reported) ... ok
+test_section_table_out_of_bounds (test_elf_projection_audit_f126c6.ElfParsingControls.test_section_table_out_of_bounds) ... ok
+test_string_offset_outside_dynstr (test_elf_projection_audit_f126c6.ElfParsingControls.test_string_offset_outside_dynstr) ... ok
+test_valid_generated_elf_needed_and_versions (test_elf_projection_audit_f126c6.ElfParsingControls.test_valid_generated_elf_needed_and_versions) ... ok
+test_actual_linux_terminal_and_input_binding (test_elf_projection_audit_f126c6.StaticElfReceipt.test_actual_linux_terminal_and_input_binding) ... ok
+test_all_edges_resolve_in_existing_readonly_roots (test_elf_projection_audit_f126c6.StaticElfReceipt.test_all_edges_resolve_in_existing_readonly_roots) ... ok
+test_static_not_dynamic_or_full_confinement (test_elf_projection_audit_f126c6.StaticElfReceipt.test_static_not_dynamic_or_full_confinement) ... ok
+test_thirteen_binary_digests_match_accepted_target (test_elf_projection_audit_f126c6.StaticElfReceipt.test_thirteen_binary_digests_match_accepted_target) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.074s
+
+OK

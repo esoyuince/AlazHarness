@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-24T00:59:26.301937+03:00",
+  "scope": "independent read-only existing failure/source diagnosis, not another Linux execution",
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "probeSha256": "3dcf4cd9d6986eb6b2e59dac1562e7243c88884e65a17f8956c0e4c329e62969",
+  "sourceFiles": {
+    "gateway/run_runtime_init.py": {
+      "sha256": "dba2a590c0a68f7e21210c40c0350da699d22949d8b9adcc3cbdd4d54ad28749",
+      "archive": "evidence/d3b-confined-consumer-f126c6/gateway__run_runtime_init.py.source.txt"
+    },
+    "gateway/pairing.py": {
+      "sha256": "c5079ce13cad68458515d3e4def7dcb7b855761dfa09520396867716d29ab794",
+      "archive": "evidence/d3b-confined-consumer-f126c6/gateway__pairing.py.source.txt"
+    },
+    "hermes_constants.py": {
+      "sha256": "8d55a41452b625061f1f2e2f507a7e7ffb2a396e711afcc7aee28b03a6e8fa9d",
+      "archive": "evidence/d3b-confined-consumer-f126c6/hermes_constants.py.source.txt"
+    }
+  },
+  "policySha256": "d19d6591a414fd6a59a88a932714c8e3ed220d45de5c20bd75546fd695306639",
+  "snapshotTransitions": [
+    {
+      "from": "seeded_three_stores",
+      "to": "config_imported",
+      "added": [],
+      "removed": []
+    },
+    {
+      "from": "config_imported",
+      "to": "runner_imported",
+      "added": [],
+      "removed": []
+    },
+    {
+      "from": "runner_imported",
+      "to": "runner_constructed",
+      "added": [
+        "platforms",
+        "platforms/pairing"
+      ],
+      "removed": []
+    },
+    {
+      "from": "runner_constructed",
+      "to": "authority_prepared",
+      "added": [],
+      "removed": []
+    },
+    {
+      "from": "authority_prepared",
+      "to": "api_imported",
+      "added": [],
+      "removed": []
+    },
+    {
+      "from": "api_imported",
+      "to": "api_prepared",
+      "added": [],
+      "removed": []
+    },
+    {
+      "from": "api_prepared",
+      "to": "consumer_detached",
+      "added": [],
+      "removed": []
+    },
+    {
+      "from": "consumer_detached",
+      "to": "stores_closed",
+      "added": [],
+      "removed": []
+    }
+  ],
+  "unexpectedPaths": {
+    "platforms": {
+      "type": "directory",
+      "mode": "0o700",
+      "bytes": null
+    },
+    "platforms/pairing": {
+      "type": "directory",
+      "mode": "0o700",
+      "bytes": null
+    }
+  },
+  "defaultSourceBehavior": "run_runtime_init._init_registries_and_clocks constructs PairingStore; an empty legacy pairing directory intentionally does not select legacy path; constructor mkdir creates platforms/pairing",
+  "firstAffectedStage": "runner_constructed",
+  "actualColdLayoutRefuses": true,
+  "allowedDirectoryListBroadened": false,
+  "runtimeSourceChangedHere": false,
+  "nextBoundary": "qualified prepared-only behavior must avoid unused platform pairing mutation OR an explicitly reviewed new finite runtime layout contract; do not delete directories to manufacture acceptance, pin old bytes as new proof, or enable active routes",
+  "ordinaryRuntimeDefaultMustStay": true,
+  "oldAcceptedOwnerLifecycleDidNotCheckPostCloseLayout": true,
+  "newFullConfinementAccepted": false
+}
