@@ -1,0 +1,33 @@
+test_cancel_request_not_done_is_refused_without_cancelling_again (__main__.NativeOwnerCases.test_cancel_request_not_done_is_refused_without_cancelling_again) ... ok
+test_changed_run_fingerprint_not_learned_from_candidate (__main__.NativeOwnerCases.test_changed_run_fingerprint_not_learned_from_candidate) ... ok
+test_changed_run_key_not_accepted_when_run_id_matches (__main__.NativeOwnerCases.test_changed_run_key_not_accepted_when_run_id_matches) ... ok
+test_changed_run_scope_not_accepted_when_run_id_matches (__main__.NativeOwnerCases.test_changed_run_scope_not_accepted_when_run_id_matches) ... ok
+test_completed_task_left_in_native_registry_is_refused (__main__.NativeOwnerCases.test_completed_task_left_in_native_registry_is_refused) ... ok
+test_cross_thread_observation_refused (__main__.NativeOwnerCases.test_cross_thread_observation_refused) ... ok
+test_drain_never_reopens_intake (__main__.NativeOwnerCases.test_drain_never_reopens_intake) ... ok
+test_failed_task_exception_not_consumed (__main__.NativeOwnerCases.test_failed_task_exception_not_consumed) ... ok
+test_future_is_not_accepted_as_task (__main__.NativeOwnerCases.test_future_is_not_accepted_as_task) ... ok
+test_live_task_and_os_start_identity_are_real (__main__.NativeOwnerCases.test_live_task_and_os_start_identity_are_real) ... ok
+test_live_task_owns_phase_transition_not_external_caller (__main__.NativeOwnerCases.test_live_task_owns_phase_transition_not_external_caller) ... ok
+test_live_transaction_retained_and_fresh_capture_recovers (__main__.NativeOwnerCases.test_live_transaction_retained_and_fresh_capture_recovers) ... ok
+test_native_idle_is_metadata_not_service_ready (__main__.NativeOwnerCases.test_native_idle_is_metadata_not_service_ready) ... ok
+test_native_listener_still_refused (__main__.NativeOwnerCases.test_native_listener_still_refused) ... ok
+test_native_mutex_not_stolen (__main__.NativeOwnerCases.test_native_mutex_not_stolen) ... ok
+test_native_worker_survives_cancelled_wrapper_and_refuses_idle (__main__.NativeOwnerCases.test_native_worker_survives_cancelled_wrapper_and_refuses_idle) ... ok
+test_pending_ingress_not_mislabelled_idle (__main__.NativeOwnerCases.test_pending_ingress_not_mislabelled_idle) ... ok
+test_replaced_task_same_run_id_refused (__main__.NativeOwnerCases.test_replaced_task_same_run_id_refused) ... ok
+test_response_fingerprint_mismatch_refused (__main__.NativeOwnerCases.test_response_fingerprint_mismatch_refused) ... ok
+test_retirement_does_not_remove_native_registry_itself (__main__.NativeOwnerCases.test_retirement_does_not_remove_native_registry_itself) ... ok
+test_retirement_rechecks_fingerprint_after_task_success (__main__.NativeOwnerCases.test_retirement_rechecks_fingerprint_after_task_success) ... ok
+test_retirement_refuses_failed_task_even_when_rows_terminal (__main__.NativeOwnerCases.test_retirement_refuses_failed_task_even_when_rows_terminal) ... ok
+test_retirement_refuses_partial_response_settlement (__main__.NativeOwnerCases.test_retirement_refuses_partial_response_settlement) ... ok
+test_retirement_unavailable_transaction_is_retryable_without_rollback (__main__.NativeOwnerCases.test_retirement_unavailable_transaction_is_retryable_without_rollback) ... ok
+test_revision_change_inside_reader_is_not_positive_proof (__main__.NativeOwnerCases.test_revision_change_inside_reader_is_not_positive_proof) ... ok
+test_successful_native_retirement_returns_to_empty_observation (__main__.NativeOwnerCases.test_successful_native_retirement_returns_to_empty_observation) ... ok
+test_unregistered_background_task_refused (__main__.NativeOwnerCases.test_unregistered_background_task_refused) ... ok
+test_unregistered_native_run_task_refused (__main__.NativeOwnerCases.test_unregistered_native_run_task_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 29.507s
+
+OK

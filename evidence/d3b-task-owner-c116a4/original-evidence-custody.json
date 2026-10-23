@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T04:05:48.638188+03:00",
+  "originalObserverCommit": "af6cf2f9b8f092d749eb6df4bab6ea4d9616fc4a",
+  "originalEvidenceGitBlobs": 16,
+  "originalEvidenceUnmodified": true,
+  "sameObserverCurrentProof": "native-003",
+  "oldNative002Historical": true,
+  "singleImplementation": true,
+  "allNativeProofScopesRequireExplicitProducerFixture": true,
+  "newNativeRunByReview": false
+}

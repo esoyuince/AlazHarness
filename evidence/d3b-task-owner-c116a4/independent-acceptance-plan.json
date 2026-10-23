@@ -1,0 +1,30 @@
+{
+  "scope": "independent tests of single C116A observer; not a second implementation",
+  "mustReject": [
+    "asyncio Future passed as Task",
+    "task on foreign loop",
+    "cancellation requested while task not done",
+    "done or failed task still referenced",
+    "task missing from native run registry",
+    "unknown active run or background/session task",
+    "live native executor thread without qualified owner",
+    "request fingerprint changed in DB after trusted task bind",
+    "run scope/key changed while run_id matches",
+    "response fingerprint mismatch despite valid admission",
+    "snapshot/task revision change during committed reader capture",
+    "observer from wrong thread/loop/process",
+    "adapter replaced native handle",
+    "bounded inventory overflow without truncation",
+    "pending ingress omitted from inventory"
+  ],
+  "mustRetain": [
+    "single existing policy and reader",
+    "caller store/transaction/profile ownership",
+    "no positive storage_verified/dispatch/retry/close permission",
+    "no automatic task cancellation or result/exception consumption",
+    "no native listener/provider activation"
+  ],
+  "upstreamNativeFeature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "nativeAuthorityVsWatcherDistinction": "api_server_runs._execute_run with run.admission observes authority; _execute_run_via_live_owner observes BotChat receipt; Task.alive alone proves neither external owner nor executor thread",
+  "sourceInspectionOnly": true
+}

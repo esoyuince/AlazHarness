@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T03:52:39.347927+03:00",
+  "feature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "sources": {
+    "packages/claw-hermes/gateway_work_observer.py": "a2d49ec2153a2432d1423eabb446f47b751d1e58bdc49193c228dabd9959598b",
+    "packages/claw-hermes/gateway_work_health.py": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+    "packages/claw-hermes/gateway_work_health_reader.py": "fd270a4523638987f752c28dc54e1be0dc8ab086a3c51c237e44a8ea749ef35a",
+    "scripts/qa/c116a4_native_owner.py": "25132807e4515337a2dccdcdf9780c477065d15d9b84418eaf61fae975e0207a",
+    "scripts/qa/b112x9_adapter_probe.py": "0f36346df24bcf6d9c35de46170962e9eb7971b372cdf0fe7f0e316b29ecefbc"
+  },
+  "productSameAs001": true
+}

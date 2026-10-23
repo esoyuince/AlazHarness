@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-task-owner-c116a4\scripts\qa\c116a4_native_owner.py", line 243, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-task-owner-c116a4\scripts\qa\c116a4_native_owner.py", line 215, in main
+    from gateway.platforms.api_server import APIServerAdapter
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-borrow-b112x9\gateway\platforms\__init__.py", line 3, in <module>
+    from .base import BasePlatformAdapter, SendResult
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-borrow-b112x9\gateway\platforms\base.py", line 768, in <module>
+    _HERMES_ROOT = get_default_hermes_root()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-borrow-b112x9\hermes_constants.py", line 222, in get_default_hermes_root
+    native_home = _get_platform_default_hermes_home()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-borrow-b112x9\hermes_constants.py", line 56, in _get_platform_default_hermes_home
+    base = Path(local_appdata) if local_appdata else Path.home() / "AppData" / "Local"
+                                                     ~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1261, in home
+    raise RuntimeError("Could not determine home directory.")
+RuntimeError: Could not determine home directory.

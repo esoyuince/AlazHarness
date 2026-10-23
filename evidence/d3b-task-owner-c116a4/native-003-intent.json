@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-23T03:57:41.114614+03:00",
+  "feature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "sources": {
+    "packages/claw-hermes/gateway_work_observer.py": "80ac8275ceeb34bfaeaffdb9164b376cc5e5620883f255479a49fb888c14b634",
+    "packages/claw-hermes/gateway_work_health.py": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+    "packages/claw-hermes/gateway_work_health_reader.py": "fd270a4523638987f752c28dc54e1be0dc8ab086a3c51c237e44a8ea749ef35a",
+    "scripts/qa/c116a4_native_owner.py": "246cf3b99f8806b29949e904241d9b478e94ad822658d52890609bba1d8bf340",
+    "scripts/qa/b112x9_adapter_probe.py": "0f36346df24bcf6d9c35de46170962e9eb7971b372cdf0fe7f0e316b29ecefbc"
+  },
+  "prior22ResultsHistoricalForOldObserver": true,
+  "retirementTestsAdded": 6,
+  "sameProductOwnerSource": true
+}

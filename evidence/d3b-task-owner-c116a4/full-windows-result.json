@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3068,
+  "discovered": 3068,
+  "passed": 3045,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 467,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "allOriginal461SourcesUnchanged": true,
+  "elapsedSeconds": 305.133,
+  "at": "2026-10-23T04:10:26.389464+03:00",
+  "scope": "one observer primitive + original unit/native retirement receipts and independent native-task receipts; existing runtime unchanged; no native ingress hook/service/isolation activation"
+}

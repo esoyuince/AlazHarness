@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T04:04:33.255438+03:00",
+  "base": "ec5f1e3ba773550c0c8a1e7fa8381c7b28d4b85a",
+  "originalObserverCommit": "af6cf2f9b8f092d749eb6df4bab6ea4d9616fc4a",
+  "integration": "fast-forward exact original source and focused-test history; own disjoint QA/proof retained",
+  "observerMatchesCurrentNative003": true,
+  "otherWorktreeModified": false,
+  "newNativeRunByIntegration": false
+}

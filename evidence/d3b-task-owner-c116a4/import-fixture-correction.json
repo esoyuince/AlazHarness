@@ -1,0 +1,8 @@
+{
+  "firstRun": "native-001",
+  "firstExit": 1,
+  "firstOutcome": "import refused absent HOME/USERPROFILE in sanitized subprocess environment before any cases",
+  "correction": "all home/appdata paths point to own new temporary bootstrap; do not inherit personal directories",
+  "productSourcesChanged": false,
+  "firstFailurePreserved": true
+}
