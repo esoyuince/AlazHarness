@@ -1,0 +1,70 @@
+{
+  "oldStorageFeature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "preparedFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "examinedStorageModules": {
+    "hermes_state.py": {
+      "oldSha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577",
+      "currentSha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577",
+      "byteIdentical": true
+    },
+    "hermes_state_runtime.py": {
+      "oldSha256": "a48a5f925fd4b1b36c3c97e7cd0ec902850a694fcca3c4480b3ca685b800ae74",
+      "currentSha256": "a48a5f925fd4b1b36c3c97e7cd0ec902850a694fcca3c4480b3ca685b800ae74",
+      "byteIdentical": true
+    },
+    "gateway/platforms/api_server_run_idempotency.py": {
+      "oldSha256": "4ad0c20dfe220cf0aac8b340702b54621f7ecdb075799816407406c5cd733c03",
+      "currentSha256": "4ad0c20dfe220cf0aac8b340702b54621f7ecdb075799816407406c5cd733c03",
+      "byteIdentical": true
+    },
+    "gateway/platforms/api_server_response_store.py": {
+      "oldSha256": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+      "currentSha256": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+      "byteIdentical": true
+    },
+    "gateway/platforms/api_server_response_state.py": {
+      "oldSha256": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+      "currentSha256": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+      "byteIdentical": true
+    }
+  },
+  "changedNativePythonModules": [
+    "gateway/platforms/api_server.py",
+    "gateway/platforms/api_server_borrowed.py",
+    "gateway/platforms/api_server_prepared.py",
+    "gateway/platforms/api_server_run_observation.py",
+    "gateway/platforms/api_server_runs.py",
+    "gateway/platforms/api_server_worker_observation.py",
+    "gateway/run.py",
+    "gateway/run_borrowed_state.py",
+    "gateway/run_runtime.py",
+    "gateway/run_runtime_init.py",
+    "gateway/run_shutdown.py",
+    "gateway/run_startup.py",
+    "gateway/session.py",
+    "gateway/session_authority.py",
+    "gateway/session_borrowed_state.py",
+    "gateway/session_persistence.py"
+  ],
+  "changedNativePythonCount": 16,
+  "currentValidatorDeclarations": [
+    {
+      "file": "gateway_live_store_gate.py",
+      "symbol": "NATIVE_PIN",
+      "value": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+    },
+    {
+      "file": "gateway_response_preopen.py",
+      "symbol": "NATIVE_FEATURE",
+      "value": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075"
+    },
+    {
+      "file": "gateway_response_live.py",
+      "symbol": "FEATURE_COMMIT",
+      "value": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075"
+    }
+  ],
+  "meaning": "five core storage modules are source-compatible; not full import closure, schema/mount/lease acceptance or permission to relabel old receipts",
+  "wholeRuntimeCompatibilityClaimed": false,
+  "runtimePinsChanged": false
+}

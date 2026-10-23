@@ -77,3 +77,24 @@ source/patch manifests,delivery,selected-delivery-result,static-primary-final.
 Raw original/current/failed proofs remain in b123a6/a123c6 evidence; prior status
 histories j123c6-*.md preserved. All native/full/merge jobs terminal; final docs/
 static only. No native/full replay needed to resume this turn.
+
+
+### R123C1 resume verification - COMPLETE, source-only next gate reviewed
+
+Recovered last native000016 terminal0/22PASS; no native/full/merge replay.
+Verified delivered code379977c through1d6564d. Recorded complete3190=3167PASS/
+23SKIP; all512source hashes+7patches exact. Re-ran59/59 selected checks here:
+14 offline receipts +45 explicit dependency-doubled startup lifecycle contracts.
+Not59 native cases, not a new full/WSL/isolation run. Product files unchanged.
+
+Five storage core source files identical between cc16 and1e97;16 other native
+modules differ. This does NOT qualify newer source closure or change gate pins.
+Next implementation must attach prepared runtime as a consumer of existing
+NativeStoreStartup and enforce API->runner->stores->caller-lease close ordering
+in the ORIGINAL owner close path, including unknown/partial-effect refusal.
+No consumer integration implemented by this recovery; no service/admission.
+Detailed boundary docs/D3B-STARTUP-INTEGRATION-NEXT-R123C1.md.
+Evidence joint/resume-r123c1/{intent,selected-result,startup-source-boundary,summary}.json
+and static-final.txt. Original status saved docs/status-history/r123c1-delivery-before-resume.md.
+Main/vendor unchanged, no blocked retry/root/WSL/provider/push. All own jobs
+terminal; final documentation commit only. Current GitHEAD identifies checkpoint.
