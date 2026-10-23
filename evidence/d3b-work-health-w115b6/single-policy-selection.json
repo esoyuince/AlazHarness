@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-23T02:47:51.144360+03:00",
+  "selectedPolicyOwner": "alaz/d3b-work-health-b115w6",
+  "selectedPolicySha256": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+  "discardedOwnPolicyRetained": {
+    "packages/claw-hermes/gateway_work_health_policy.py": {
+      "sha256": "a9a6e6721a4a215a034c4fa4d511d633b44e2681b6c7d4ba8f1e0e1049c31c87",
+      "savedAs": "evidence/d3b-work-health-w115b6/gateway_work_health_policy.py.candidate-001.txt"
+    },
+    "packages/claw-hermes/gateway_work_health_reader.py": {
+      "sha256": "41e27165299c8362eff6a7baeed1481a10223fabf2318ab66fa21bfb616ffef2",
+      "savedAs": "evidence/d3b-work-health-w115b6/gateway_work_health_reader.py.candidate-001.txt"
+    },
+    "tests/test_work_health_policy_w115b6.py": {
+      "sha256": "cf2cf5f9a23a09c37086e2c6abb03121fa18b7d16248fc8c3776f0aa52ec9dfe",
+      "savedAs": "evidence/d3b-work-health-w115b6/test_work_health_policy_w115b6.py.candidate-001.txt"
+    },
+    "scripts/qa/w115b6_native_work_health.py": {
+      "sha256": "972286c18d8502b80390524554ad77eaed02cb2c80d4db842097f5626b409c87",
+      "savedAs": "evidence/d3b-work-health-w115b6/w115b6_native_work_health.py.candidate-001.txt"
+    }
+  },
+  "selectionReason": "One canonical policy, not two competing health engines. B115 enforces one active owner and explicit drainage/settlement; W115 contributes committed native row collection and independent tests.",
+  "otherWorktreeModified": false,
+  "ownOld43MethodsAnd22of23NativeOutcomeAreHistoricalOnly": true
+}

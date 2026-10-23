@@ -1,0 +1,10 @@
+{
+  "firstRun": "native-windows-001",
+  "outcome": "22PASS/1ERROR; native private settlement left response transaction active",
+  "correction": "explicit owning fixture commit, reader still rejects active transactions without rollback",
+  "selectedPolicyChanged": true,
+  "oldPolicyRetainedAsHistoricalOnly": true,
+  "oldProbeSha256": "972286c18d8502b80390524554ad77eaed02cb2c80d4db842097f5626b409c87",
+  "newProbeSha256": "b473e7d9eed7e2eb5b28aa9907e96b37545f720736ae162345b488ec7dc1c363",
+  "actualProducerCollectorImplemented": false
+}

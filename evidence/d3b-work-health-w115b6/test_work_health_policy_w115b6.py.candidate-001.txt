@@ -1,0 +1,134 @@
+"""Pure work/owner policy tests: no DB, worker or HTTP execution."""
+from dataclasses import replace,FrozenInstanceError
+import json,sys,unittest
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'packages/claw-hermes'))
+import gateway_work_health_policy as p
+
+class WorkPolicy(unittest.TestCase):
+    def setUp(self):
+        self.runtime=p.RuntimeIdentity('12345678-1234-4234-8234-123456789012',2,'runtime',100,77)
+        self.claim=p.WorkClaim('admission','session',1,'started','worker',p.RunClaim('run','scope','key','a'*64),p.ResponseClaim('idem:key','b'*64))
+        self.owner=p.OwnerSnapshot(self.runtime,5,100,(self.claim,))
+        self.snapshot=p.WorkSnapshot(self.runtime,1,101,
+            (p.Admission('admission','session',2,1,'started',1,('session',)),),
+            (p.Worker('worker','session',2,1,'running',1),),
+            (p.Run('run','scope','key','a'*64,'running',100,77),),
+            (p.Response('idem:key','b'*64,'admission'),))
+        self.after=replace(self.owner,captured_ns=102);self.monitor=p.WorkHealthMonitor(self.runtime)
+    def assess(self,snapshot=None,owner=None,after=None,now=103):
+        return self.monitor.observe(snapshot or self.snapshot,owner or self.owner,after or self.after,now_ns=now)
+    def denied(self,code,**kw):
+        r=self.assess(**kw);self.assertEqual((r['phase'],r['reason']),('RECOVERY_REQUIRED',code))
+    def test_owned_busy_matches_every_store(self):
+        r=self.assess();self.assertEqual(r['phase'],'OWNED_BUSY');self.assertTrue(r['workStateConsistent'])
+        self.assertEqual(r['counts'],{'admissions':1,'workers':1,'runs':1,'responses':1})
+    def test_idle_is_not_execution_or_close_permission(self):
+        s=p.WorkSnapshot(self.runtime,1,101);o=replace(self.owner,claims=())
+        r=self.assess(s,o,replace(o,captured_ns=102));self.assertEqual(r['phase'],'IDLE')
+        for k in ('runtimeAdmissionAuthorized','retryAuthorized','callerLeaseMayBeReleased','fullD3BAccepted','serviceReadinessVerified','producerLivenessVerifiedHere','storageIntegrityVerifiedHere'):self.assertIs(r[k],False)
+    def test_no_identifiers_in_public_result(self):
+        r=json.dumps(self.assess());self.assertNotIn('idem:key',r);self.assertNotIn('12345678',r);self.assertNotIn('worker',r.replace('workers',''))
+    def test_current_queue_is_busy_not_fault(self):
+        c=replace(self.claim,generation=None,phase='queued',worker_id=None)
+        s=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],generation=None,status='queued'),),workers=(),runs=(replace(self.snapshot.runs[0],status='queued'),))
+        o=replace(self.owner,claims=(c,));self.assertEqual(self.assess(s,o,replace(o,captured_ns=102))['phase'],'OWNED_BUSY')
+    def test_optional_worker_run_response_not_required_without_claim(self):
+        c=replace(self.claim,worker_id=None,run=None,response=None);o=replace(self.owner,claims=(c,))
+        s=replace(self.snapshot,workers=(),runs=(),responses=());self.assertEqual(self.assess(s,o,replace(o,captured_ns=102))['phase'],'OWNED_BUSY')
+    def test_worker_in_explicit_lineage_supported(self):
+        s=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],lineage=('session','child')),),workers=(replace(self.snapshot.workers[0],session_id='child'),))
+        self.assertEqual(self.assess(s)['phase'],'OWNED_BUSY')
+    def test_unknown_admission_is_sticky(self):
+        s=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],status='unknown'),))
+        self.denied('work_unknown_admission',snapshot=s)
+        self.assertEqual(self.assess(replace(self.snapshot,sample_id=2))['phase'],'RECOVERY_REQUIRED')
+        self.assertEqual(self.monitor.unavailable()['phase'],'RECOVERY_REQUIRED')
+    def test_unavailable_is_not_sticky(self):
+        self.assertEqual(self.monitor.unavailable()['phase'],'UNOBSERVABLE');self.assertEqual(self.assess()['phase'],'OWNED_BUSY')
+    def test_explicit_transition_is_never_healthy(self):
+        o=replace(self.owner,transitioning=True);s=replace(self.snapshot,responses=())
+        r=self.assess(s,o,replace(o,captured_ns=102));self.assertEqual(r['phase'],'TRANSITION');self.assertFalse(r['workStateConsistent'])
+        self.assertEqual(self.assess(replace(self.snapshot,sample_id=2))['phase'],'OWNED_BUSY')
+    def test_settlement_transition_allows_partial_rows_without_retry(self):
+        o=replace(self.owner,claims=(replace(self.claim,phase='settling'),))
+        r=self.assess(replace(self.snapshot,admissions=(),workers=()),o,replace(o,captured_ns=102));self.assertEqual(r['phase'],'TRANSITION');self.assertFalse(r['retryAuthorized'])
+    def test_transition_does_not_hide_unknown_worker(self):
+        o=replace(self.owner,transitioning=True)
+        self.denied('work_unknown_worker',snapshot=replace(self.snapshot,workers=(replace(self.snapshot.workers[0],status='unknown'),)),owner=o,after=replace(o,captured_ns=102))
+    def test_fresh_owner_before_after_must_match(self):
+        r=self.assess(after=replace(self.after,revision=6));self.assertEqual(r['phase'],'UNOBSERVABLE')
+        self.assertEqual(self.assess()['phase'],'OWNED_BUSY')
+    def test_claim_change_without_revision_is_not_hidden(self):
+        self.assertEqual(self.assess(after=replace(self.after,claims=()))['reason'],'work_owner_changed_during_capture')
+    def test_incomplete_inventory_never_means_idle(self):
+        self.assertEqual(self.assess(owner=replace(self.owner,complete=False))['phase'],'UNOBSERVABLE')
+    def test_stale_future_or_wrong_order_not_fresh(self):
+        for s,b,a,now in ((self.snapshot,self.owner,self.after,p.MAX_AGE_NS+101),
+                          (self.snapshot,self.owner,self.after,100),
+                          (replace(self.snapshot,captured_ns=99),self.owner,self.after,103)):
+            with self.subTest(now=now):self.assertEqual(self.assess(s,b,a,now)['phase'],'UNOBSERVABLE')
+        self.assertEqual(self.assess()['phase'],'OWNED_BUSY')
+    def test_same_sample_cannot_be_replayed(self):
+        self.assess();self.assertEqual(self.assess()['reason'],'work_sample_replayed')
+    def test_owner_revision_regression_is_fault(self):
+        self.assess();o=replace(self.owner,revision=4)
+        self.denied('work_owner_revision_regressed',snapshot=replace(self.snapshot,sample_id=2),owner=o,after=replace(o,captured_ns=102))
+    def test_runtime_epoch_change_never_adopted(self):
+        self.denied('work_runtime_changed',snapshot=replace(self.snapshot,runtime=replace(self.runtime,epoch=3)))
+    def test_same_pid_different_start_is_other_owner(self):
+        self.denied('work_runtime_changed',after=replace(self.after,runtime=replace(self.runtime,owner_started=88)))
+    def test_native_stale_queued_epoch_refused(self):
+        self.denied('work_stale_admission',snapshot=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],owner_epoch=1),)))
+    def test_stale_generation_refused(self):
+        self.denied('work_admission_generation',snapshot=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],session_generation=2),)))
+    def test_missing_session_refused(self):
+        self.denied('work_admission_invalid',snapshot=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],session_generation=None),)))
+    def test_orphan_admission_refused(self):
+        o=replace(self.owner,claims=());self.denied('work_admission_owner_mismatch',owner=o,after=replace(o,captured_ns=102))
+    def test_orphan_worker_refused(self):
+        self.denied('work_worker_owner_mismatch',snapshot=replace(self.snapshot,workers=(replace(self.snapshot.workers[0],execution_id='other'),)))
+    def test_orphan_response_and_wrong_mapping_refused(self):
+        self.denied('work_response_link_mismatch',snapshot=replace(self.snapshot,responses=(replace(self.snapshot.responses[0],admission_id=None),)))
+    def test_replay_identity_and_fingerprint_match(self):
+        self.denied('work_run_link_mismatch',snapshot=replace(self.snapshot,runs=(replace(self.snapshot.runs[0],fingerprint='c'*64),)))
+    def test_wrong_replay_owner_is_not_busy(self):
+        self.denied('work_stale_run_owner',snapshot=replace(self.snapshot,runs=(replace(self.snapshot.runs[0],owner_started=88),)))
+    def test_unknown_replay_status_refused(self):
+        self.denied('work_unknown_run',snapshot=replace(self.snapshot,runs=(replace(self.snapshot.runs[0],status='unknown'),)))
+    def test_replay_phase_mismatch_not_assumed_transition(self):
+        self.denied('work_run_phase_mismatch',snapshot=replace(self.snapshot,runs=(replace(self.snapshot.runs[0],status='queued'),)))
+    def test_unknown_or_null_statuses_refused(self):
+        self.denied('work_unknown_admission',snapshot=replace(self.snapshot,admissions=(replace(self.snapshot.admissions[0],status=None),)))
+    def test_mismatched_claim_cannot_adopt_another_session(self):
+        o=replace(self.owner,claims=(replace(self.claim,session_id='foreign'),));self.denied('work_claim_mismatch',owner=o,after=replace(o,captured_ns=102))
+    def test_worker_outside_lineage_refused(self):
+        self.denied('work_worker_link_mismatch',snapshot=replace(self.snapshot,workers=(replace(self.snapshot.workers[0],session_id='foreign'),)))
+    def test_replaced_worker_generation_refused(self):
+        self.denied('work_stale_worker',snapshot=replace(self.snapshot,workers=(replace(self.snapshot.workers[0],generation=2),)))
+    def test_two_started_admissions_same_session_refused(self):
+        a=replace(self.snapshot.admissions[0],admission_id='second')
+        self.denied('work_duplicate_session_owner',snapshot=replace(self.snapshot,admissions=self.snapshot.admissions+(a,)))
+    def test_duplicate_claims_and_rows_refused(self):
+        self.denied('work_duplicate_identity',snapshot=replace(self.snapshot,admissions=self.snapshot.admissions*2))
+    def test_one_worker_cannot_be_claimed_by_two_requests(self):
+        o=replace(self.owner,claims=self.owner.claims+(replace(self.claim,admission_id='second'),))
+        self.denied('work_duplicate_claim',owner=o,after=replace(o,captured_ns=102))
+    def test_mutable_container_not_immutable_snapshot(self):
+        self.denied('work_inventory_invalid',snapshot=replace(self.snapshot,admissions=list(self.snapshot.admissions)))
+    def test_inventory_limit_is_not_silently_truncated(self):
+        self.denied('work_inventory_invalid',snapshot=replace(self.snapshot,workers=self.snapshot.workers*257))
+    def test_boolean_epoch_and_pid_not_integer_identity(self):
+        for kw in ({'epoch':True},{'owner_pid':True},{'owner_started':0},{'store_id':'bad'}):
+            with self.subTest(kw=kw),self.assertRaises(p.WorkHealthRejected):replace(self.runtime,**kw)
+    def test_invalid_clock_and_owner_fields_fail_closed(self):
+        self.denied('work_clock_invalid',now=True)
+    def test_invalid_freshness_not_accepted(self):
+        for value in (True,0,p.MAX_AGE_NS+1,None):
+            with self.subTest(value=value),self.assertRaises(p.WorkHealthRejected):p.WorkHealthMonitor(self.runtime,max_age_ns=value)
+    def test_frozen_inputs_cannot_mutate_in_place(self):
+        with self.assertRaises(FrozenInstanceError):self.claim.phase='queued'
+    def test_no_owner_flag_type_coercion(self):
+        self.denied('work_owner_invalid',owner=replace(self.owner,complete=1))
+
+if __name__=='__main__':unittest.main()

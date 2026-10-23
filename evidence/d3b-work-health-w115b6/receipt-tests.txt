@@ -1,0 +1,12 @@
+test_actual_native_result_and_scope (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_actual_native_result_and_scope) ... ok
+test_all_28_actual_method_outcomes_are_present (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_all_28_actual_method_outcomes_are_present) ... ok
+test_current_source_bytes_match_tested_inputs (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_current_source_bytes_match_tested_inputs) ... ok
+test_discarded_policy_remains_evidence_not_second_engine (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_discarded_policy_remains_evidence_not_second_engine) ... ok
+test_owner_selection_is_parameterized_and_empty_is_bounded (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_owner_selection_is_parameterized_and_empty_is_bounded) ... ok
+test_prior_candidate_failure_and_fixture_commit_are_preserved (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_prior_candidate_failure_and_fixture_commit_are_preserved) ... ok
+test_reader_output_cannot_mint_live_storage_flags (test_work_reader_receipt_w115b6.NativeWorkReceipt.test_reader_output_cannot_mint_live_storage_flags) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.124s
+
+OK

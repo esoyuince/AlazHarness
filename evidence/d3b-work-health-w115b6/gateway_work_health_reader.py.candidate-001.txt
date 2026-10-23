@@ -1,0 +1,141 @@
+"""Read committed native work metadata using existing caller-owned handles only.
+
+Does not verify Linux lease/mount/file identity, live tasks or source installation.
+Caller supplies independently prepared schema pins and brackets capture with a
+trusted producer revision. No new connection, file descriptor, transaction,
+repair, recovery, admission, cancellation, settlement or close is performed.
+"""
+import json
+import os
+from pathlib import Path
+import sqlite3
+import threading
+import time
+
+import gateway_live_store_gate as live
+import gateway_work_health_policy as p
+
+_MAX_JSON = 131072
+_ACTIVE_RUN = """CASE
+ WHEN typeof(status_json)!='text' OR length(CAST(status_json AS BLOB))>131072 THEN 1
+ WHEN NOT json_valid(status_json) THEN 1
+ WHEN json_type(status_json)!='object' THEN 1
+ WHEN EXISTS (SELECT 1 FROM json_tree(status_json) WHERE key IS NOT NULL
+              GROUP BY parent,key HAVING COUNT(*)>1) THEN 1
+ WHEN json_type(status_json,'$.status') IS NOT 'text' THEN 1
+ WHEN json_extract(status_json,'$.status') NOT IN
+      ('completed','failed','cancelled','interrupted') THEN 1 ELSE 0 END=1"""
+
+def strict_json(value):
+    p.need(type(value) is str and len(value.encode('utf-8'))<=_MAX_JSON,'work_json_invalid')
+    def pairs(items):
+        result={}
+        for key,v in items:
+            p.need(key not in result,'work_json_duplicate');result[key]=v
+        return result
+    def constant(_):raise p.WorkHealthRejected('work_json_nonfinite')
+    try:return json.loads(value,object_pairs_hook=pairs,parse_constant=constant)
+    except p.WorkHealthRejected:raise
+    except (ValueError,TypeError,RecursionError,UnicodeError):raise p.WorkHealthRejected('work_json_invalid') from None
+
+class NativeWorkReader:
+    def __init__(self,state,replay,responses,expected,*,schema_hashes):
+        from hermes_state import SessionDB
+        from hermes_cli.sqlite_safe_read import TrackedConnection
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        from gateway.platforms.api_server_response_store import ResponseStore
+        from gateway.platforms.api_server_response_state import BorrowedResponseState
+        p.need(type(expected) is p.RuntimeIdentity and expected.owner_pid==os.getpid(),'work_reader_identity')
+        p.need(type(schema_hashes) is tuple and len(schema_hashes)==3
+               and all(p.fingerprint(h) for h in schema_hashes),'work_reader_schema_pins')
+        p.need(type(state) is SessionDB and type(replay) is RunIdempotencyStore
+               and type(responses) is ResponseStore,'work_reader_native_types')
+        p.need(state.read_only is False and state._shared_registry_owned is False
+               and replay.durable is True,'work_reader_durable_writer')
+        binding=responses._canonical_state
+        p.need(type(binding) is BorrowedResponseState and binding._state is state
+               and binding._connection is state._conn and binding._lock is state._lock,
+               'work_reader_canonical_binding')
+        self._stores=(state,replay,responses);self._connections=tuple(s._conn for s in self._stores)
+        p.need(type(self._connections[0]) is TrackedConnection
+               and all(type(c) is sqlite3.Connection for c in self._connections[1:])
+               and len({id(c) for c in self._connections})==3,'work_reader_native_handles')
+        self._locks=(state._lock,replay._lock);p.need(self._locks[0] is not self._locks[1],'work_reader_mutexes')
+        self._binding=binding;self._actor=(os.getpid(),threading.get_ident())
+        self._home=Path(state.db_path).parent
+        self._paths=tuple(self._home/n for n in ('state.db','runs_idempotency.db','response_store.db'))
+        p.need(self._home.is_absolute(),'work_reader_absolute_home')
+        self.expected=expected;self._schemas=schema_hashes;self._sample=0
+        self._check()
+
+    def _check(self):
+        p.need((os.getpid(),threading.get_ident())==self._actor,'work_reader_other_actor')
+        state,replay,response=self._stores
+        p.need(all(store._conn is conn for store,conn in zip(self._stores,self._connections))
+               and state._lock is self._locks[0] and replay._lock is self._locks[1]
+               and response._canonical_state is self._binding
+               and self._binding._state is state and self._binding._connection is state._conn
+               and self._binding._lock is state._lock,'work_reader_handle_changed')
+        p.need(tuple(Path(v) for v in (state.db_path,replay._db_path,response._db_path))==self._paths,
+               'work_reader_path_changed')
+        p.need(state.read_only is False and state._shared_registry_owned is False
+               and replay.durable is True,'work_reader_owner_changed')
+
+    @staticmethod
+    def _rows(conn,sql):
+        rows=conn.execute(sql).fetchmany(p.MAX_ROWS+1)
+        if len(rows)>p.MAX_ROWS:raise p.WorkObservationUnavailable('work_inventory_limit')
+        return rows
+
+    def capture(self):
+        acquired=[]
+        try:
+            self._check()
+            for lock in self._locks:
+                if not lock.acquire(blocking=False):raise p.WorkObservationUnavailable('work_native_mutex_busy')
+                acquired.append(lock)
+            if any(c.in_transaction for c in self._connections):raise p.WorkObservationUnavailable('work_native_transaction_active')
+            state=self._stores[0]
+            if state._token_writer_thread is not None and state._token_writer_thread.is_alive():
+                raise p.WorkObservationUnavailable('work_native_background_writer')
+            seen=[live._connection(c,path,h,'delete') for c,path,h in zip(self._connections,self._paths,self._schemas)]
+            sc,rc,pc=self._connections
+            epoch=[tuple(r) for r in sc.execute('SELECT epoch,instance_id FROM main.runtime_epoch WHERE singleton=1').fetchmany(2)]
+            store_id=live._one(sc,"SELECT value FROM main.state_meta WHERE key='store_instance_id'")
+            p.need(epoch==[(self.expected.epoch,self.expected.instance_id)] and store_id==self.expected.store_id,'work_reader_runtime_changed')
+            admissions=[]
+            sql="""SELECT a.admission_id,a.target_session_id,a.owner_epoch,a.generation,a.status,
+                     s.runtime_generation,a.lineage_json FROM main.session_admissions a
+                     LEFT JOIN main.sessions s ON s.id=a.target_session_id
+                     WHERE a.status IS NULL OR a.status!='terminal' ORDER BY a.seq LIMIT 257"""
+            for row in self._rows(sc,sql):
+                values=list(row);lineage=strict_json(values.pop())
+                p.need(type(lineage) is list and len(lineage)<=100,'work_lineage_invalid')
+                admissions.append(p.Admission(*values,tuple(lineage)))
+            workers=tuple(p.Worker(*tuple(r)) for r in self._rows(sc,"""SELECT w.execution_id,w.session_id,w.owner_epoch,
+                w.generation,w.status,s.runtime_generation FROM main.worker_executions w
+                LEFT JOIN main.sessions s ON s.id=w.session_id WHERE w.status IS NULL OR w.status!='terminal'
+                ORDER BY w.execution_id LIMIT 257"""))
+            runs=[]
+            sql="""SELECT run_id,scope,idempotency_key,fingerprint,
+                CASE WHEN typeof(status_json)='text' AND length(CAST(status_json AS BLOB))<=131072
+                THEN status_json ELSE NULL END,owner_pid,owner_started FROM main.run_idempotency
+                WHERE """+_ACTIVE_RUN+" ORDER BY run_id LIMIT 257"
+            for row in self._rows(rc,sql):
+                values=list(row);body=strict_json(values[4]);p.need(type(body) is dict,'work_run_json_object')
+                values[4]=body.get('status');runs.append(p.Run(*values))
+            responses=tuple(p.Response(*tuple(r)) for r in self._rows(pc,"""SELECT k.request_key,k.fingerprint,a.admission_id
+                FROM main.response_keys k LEFT JOIN main.response_admissions a ON a.request_key=k.request_key
+                WHERE k.settled_at IS NULL ORDER BY k.request_key LIMIT 257"""))
+            for conn,old in zip(self._connections,seen):
+                if conn.in_transaction or conn.total_changes!=old['changes'] or live._one(conn,'PRAGMA main.data_version')!=old['dataVersion']:
+                    raise p.WorkObservationUnavailable('work_snapshot_changed')
+            self._check();self._sample+=1
+            return p.WorkSnapshot(self.expected,self._sample,time.monotonic_ns(),tuple(admissions),workers,tuple(runs),responses)
+        except (p.WorkHealthRejected,p.WorkObservationUnavailable):raise
+        except (sqlite3.OperationalError,sqlite3.InterfaceError):
+            raise p.WorkObservationUnavailable('work_native_read_unavailable') from None
+        except (sqlite3.Error,live.LiveStoreRejected,ValueError,TypeError,AttributeError,KeyError,IndexError,UnicodeError):
+            raise p.WorkHealthRejected('work_native_observation_invalid') from None
+        finally:
+            for lock in reversed(acquired):lock.release()

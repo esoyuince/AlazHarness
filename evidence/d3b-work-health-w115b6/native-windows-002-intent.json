@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T02:52:33.376175+03:00",
+  "sources": {
+    "packages/claw-hermes/gateway_work_health.py": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+    "packages/claw-hermes/gateway_work_health_reader.py": "fd270a4523638987f752c28dc54e1be0dc8ab086a3c51c237e44a8ea749ef35a",
+    "scripts/qa/w115b6_native_work_health.py": "b473e7d9eed7e2eb5b28aa9907e96b37545f720736ae162345b488ec7dc1c363"
+  },
+  "nativeManifestSha256": "9c09e9b8139ba947e5ece63551f76e6c32e929a1cdd86595ef35b2fef9903a18",
+  "scope": "actual native stores; producer task and storage-verification flags are explicit test fixtures; no HTTP or runtime integration"
+}

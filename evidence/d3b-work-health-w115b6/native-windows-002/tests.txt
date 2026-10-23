@@ -1,0 +1,33 @@
+test_committed_queued_native_admission_is_owned_busy (__main__.NativeWorkHealth.test_committed_queued_native_admission_is_owned_busy) ... ok
+test_draining_is_latched_without_authorizing_release (__main__.NativeWorkHealth.test_draining_is_latched_without_authorizing_release) ... ok
+test_epoch_change_refused_without_adoption (__main__.NativeWorkHealth.test_epoch_change_refused_without_adoption) ... ok
+test_existing_mutex_not_stolen (__main__.NativeWorkHealth.test_existing_mutex_not_stolen) ... ok
+test_existing_transaction_not_rolled_back_or_queried (__main__.NativeWorkHealth.test_existing_transaction_not_rolled_back_or_queried) ... ok
+test_idle_real_three_store_capture (__main__.NativeWorkHealth.test_idle_real_three_store_capture) ... ok
+test_inventory_overflow_not_truncated_into_health (__main__.NativeWorkHealth.test_inventory_overflow_not_truncated_into_health) ... ok
+test_large_replay_json_bounded_before_transfer (__main__.NativeWorkHealth.test_large_replay_json_bounded_before_transfer) ... ok
+test_live_settling_task_keeps_terminal_admission_visible (__main__.NativeWorkHealth.test_live_settling_task_keeps_terminal_admission_visible) ... ok
+test_malformed_replay_json_refused (__main__.NativeWorkHealth.test_malformed_replay_json_refused) ... ok
+test_native_delegated_worker_is_explicitly_not_qualified (__main__.NativeWorkHealth.test_native_delegated_worker_is_explicitly_not_qualified) ... ok
+test_native_rows_do_not_prove_storage_or_liveness_flags (__main__.NativeWorkHealth.test_native_rows_do_not_prove_storage_or_liveness_flags) ... ok
+test_native_stale_generation_not_busy (__main__.NativeWorkHealth.test_native_stale_generation_not_busy) ... ok
+test_orphan_native_work_never_becomes_idle (__main__.NativeWorkHealth.test_orphan_native_work_never_becomes_idle) ... ok
+test_parameterized_owner_identity_does_not_change_query (__main__.NativeWorkHealth.test_parameterized_owner_identity_does_not_change_query) ... ok
+test_pid_reuse_tuple_mismatch_refused (__main__.NativeWorkHealth.test_pid_reuse_tuple_mismatch_refused) ... ok
+test_reader_never_closes_caller_connections (__main__.NativeWorkHealth.test_reader_never_closes_caller_connections) ... ok
+test_replay_duplicate_json_keys_cannot_hide_running_status (__main__.NativeWorkHealth.test_replay_duplicate_json_keys_cannot_hide_running_status) ... ok
+test_response_mapping_mismatch_is_not_healthy (__main__.NativeWorkHealth.test_response_mapping_mismatch_is_not_healthy) ... ok
+test_schema_change_refused_without_repair (__main__.NativeWorkHealth.test_schema_change_refused_without_repair) ... ok
+test_settled_native_rows_require_explicit_owner_commit (__main__.NativeWorkHealth.test_settled_native_rows_require_explicit_owner_commit) ... ok
+test_settled_run_and_response_retained_for_owner_settling (__main__.NativeWorkHealth.test_settled_run_and_response_retained_for_owner_settling) ... ok
+test_started_native_admission_is_owned_busy (__main__.NativeWorkHealth.test_started_native_admission_is_owned_busy) ... ok
+test_temp_table_cannot_hide_pending_native_work (__main__.NativeWorkHealth.test_temp_table_cannot_hide_pending_native_work) ... ok
+test_three_native_record_families_match (__main__.NativeWorkHealth.test_three_native_record_families_match) ... ok
+test_unknown_is_not_automatic_recovery (__main__.NativeWorkHealth.test_unknown_is_not_automatic_recovery) ... ok
+test_unsettled_orphan_response_requires_recovery (__main__.NativeWorkHealth.test_unsettled_orphan_response_requires_recovery) ... ok
+test_worker_unknown_is_not_erased (__main__.NativeWorkHealth.test_worker_unknown_is_not_erased) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 38.911s
+
+OK

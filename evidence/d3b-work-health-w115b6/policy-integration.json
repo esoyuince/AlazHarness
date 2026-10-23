@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T02:54:35.438802+03:00",
+  "base": "971770443d486b1a3853ed8600ec370017948ab3",
+  "policyParentCommit": "3fae30dee84b5a39804e051d1921a06975122bb0",
+  "selectedPolicySha256": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+  "ownNative28TestsUseExactSelectedSource": true,
+  "otherWorktreeModified": false,
+  "newNativeExecution": false,
+  "transfer": "original policy history fast-forward, own disjoint native reader/QA preserved"
+}

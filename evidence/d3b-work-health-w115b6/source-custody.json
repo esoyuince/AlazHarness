@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T02:55:50.857988+03:00",
+  "originalPolicyCommit": "3fae30dee84b5a39804e051d1921a06975122bb0",
+  "originalPolicyEvidenceBlobs": 17,
+  "originalGitBlobIdsPreserved": true,
+  "samePolicySha256": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6",
+  "nativeReaderTestCount": 28,
+  "nativePolicyMappingTestCount": 16,
+  "original454SourceFilesUnchanged": true,
+  "actualNativeRerunByIntegration": false,
+  "priorIndependentCleanup": "BLOCKED_NOT_RETRIED"
+}

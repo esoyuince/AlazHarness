@@ -1,0 +1,261 @@
+"""Bounded work-state consistency, NOT overall readiness or execution authority.
+
+Input ownership is a separately captured trusted producer inventory, not a
+model assertion, DB row or boolean busy count. This first policy covers admitted
+session work with optional linked worker/replay/response identities. A stable
+snapshot is cooperative, not a multi-file transaction or a live-worker proof.
+Existing cold/quiescent gates MUST NOT be relaxed by interpreting this result.
+"""
+from dataclasses import dataclass
+import uuid
+
+MAX_ROWS = 256
+MAX_AGE_NS = 5_000_000_000
+
+class WorkHealthRejected(ValueError):
+    pass
+
+class WorkObservationUnavailable(RuntimeError):
+    pass
+
+def need(ok, code):
+    if not ok: raise WorkHealthRejected(code)
+
+def text(value):
+    return type(value) is str and 0 < len(value) <= 1024 and all(ord(c) >= 32 for c in value)
+
+def integer(value, minimum=0):
+    return type(value) is int and minimum <= value < 2**63
+
+def fingerprint(value):
+    return type(value) is str and len(value)==64 and all(c in '0123456789abcdef' for c in value)
+
+@dataclass(frozen=True)
+class RuntimeIdentity:
+    store_id: str
+    epoch: int
+    instance_id: str
+    owner_pid: int
+    owner_started: int
+    def __post_init__(self):
+        try: valid = type(self.store_id) is str and str(uuid.UUID(self.store_id)) == self.store_id
+        except (ValueError,TypeError,AttributeError): valid = False
+        need(valid and integer(self.epoch,1) and text(self.instance_id)
+             and integer(self.owner_pid,1) and integer(self.owner_started,1),'work_identity_invalid')
+
+@dataclass(frozen=True)
+class RunClaim:
+    run_id: str
+    scope: str
+    key: str
+    fingerprint: str
+
+@dataclass(frozen=True)
+class ResponseClaim:
+    key: str
+    fingerprint: str
+
+@dataclass(frozen=True)
+class WorkClaim:
+    admission_id: str
+    session_id: str
+    generation: int | None
+    phase: str
+    worker_id: str | None = None
+    run: RunClaim | None = None
+    response: ResponseClaim | None = None
+
+@dataclass(frozen=True)
+class Admission:
+    admission_id: str
+    session_id: str
+    owner_epoch: int
+    generation: int | None
+    status: str
+    session_generation: int
+    lineage: tuple[str,...]
+
+@dataclass(frozen=True)
+class Worker:
+    execution_id: str
+    session_id: str
+    owner_epoch: int
+    generation: int
+    status: str
+    session_generation: int
+
+@dataclass(frozen=True)
+class Run:
+    run_id: str
+    scope: str
+    key: str
+    fingerprint: str
+    status: str
+    owner_pid: int
+    owner_started: int
+
+@dataclass(frozen=True)
+class Response:
+    key: str
+    fingerprint: str
+    admission_id: str | None
+
+@dataclass(frozen=True)
+class WorkSnapshot:
+    runtime: RuntimeIdentity
+    sample_id: int
+    captured_ns: int
+    admissions: tuple[Admission,...] = ()
+    workers: tuple[Worker,...] = ()
+    runs: tuple[Run,...] = ()
+    responses: tuple[Response,...] = ()
+
+@dataclass(frozen=True)
+class OwnerSnapshot:
+    runtime: RuntimeIdentity
+    revision: int
+    captured_ns: int
+    claims: tuple[WorkClaim,...] = ()
+    transitioning: bool = False
+    complete: bool = True
+
+
+def _items(value, cls):
+    need(type(value) is tuple and len(value) <= MAX_ROWS and all(type(v) is cls for v in value),
+         'work_inventory_invalid')
+
+def _unique(rows, attr):
+    values=[getattr(r,attr) for r in rows]
+    need(all(text(v) for v in values) and len(set(values))==len(values),'work_duplicate_identity')
+    return dict(zip(values, rows))
+
+def _owners(owner):
+    need(type(owner) is OwnerSnapshot and type(owner.runtime) is RuntimeIdentity
+         and integer(owner.revision) and integer(owner.captured_ns)
+         and type(owner.complete) is bool and type(owner.transitioning) is bool,'work_owner_invalid')
+    _items(owner.claims,WorkClaim)
+    claims=_unique(owner.claims,'admission_id')
+    for c in owner.claims:
+        need(text(c.session_id) and c.phase in ('queued','started','settling')
+             and (c.generation is None or integer(c.generation,1)), 'work_claim_invalid')
+        need(c.phase != 'queued' or (c.generation is None and c.worker_id is None),'work_queued_generation')
+        need(c.phase != 'started' or integer(c.generation,1),'work_started_generation')
+        need(c.worker_id is None or text(c.worker_id),'work_claim_invalid')
+        if c.run is not None:
+            need(type(c.run) is RunClaim and all(text(v) for v in (c.run.run_id,c.run.scope,c.run.key))
+                 and fingerprint(c.run.fingerprint),'work_run_claim_invalid')
+        if c.response is not None:
+            need(type(c.response) is ResponseClaim and text(c.response.key)
+                 and fingerprint(c.response.fingerprint),'work_response_claim_invalid')
+    for values in ([c.worker_id for c in owner.claims if c.worker_id is not None],
+                   [c.run.run_id for c in owner.claims if c.run is not None],
+                   [c.response.key for c in owner.claims if c.response is not None]):
+        need(len(set(values))==len(values),'work_duplicate_claim')
+    return claims
+
+
+def _rows(s):
+    need(type(s) is WorkSnapshot and type(s.runtime) is RuntimeIdentity
+         and integer(s.sample_id,1) and integer(s.captured_ns),'work_snapshot_invalid')
+    for values,cls in ((s.admissions,Admission),(s.workers,Worker),(s.runs,Run),(s.responses,Response)):_items(values,cls)
+    admissions=_unique(s.admissions,'admission_id');workers=_unique(s.workers,'execution_id')
+    runs=_unique(s.runs,'run_id');responses=_unique(s.responses,'key')
+    for a in s.admissions:
+        need(text(a.session_id) and integer(a.owner_epoch,1) and integer(a.session_generation)
+             and (a.generation is None or integer(a.generation,1))
+             and type(a.lineage) is tuple and 0<len(a.lineage)<=100
+             and all(text(v) for v in a.lineage) and len(set(a.lineage))==len(a.lineage)
+             and a.session_id in a.lineage,'work_admission_invalid')
+        need(a.status in ('queued','started'),'work_unknown_admission')
+        need(a.owner_epoch==s.runtime.epoch,'work_stale_admission')
+        need((a.status=='queued' and a.generation is None) or
+             (a.status=='started' and a.generation==a.session_generation and integer(a.generation,1)),
+             'work_admission_generation')
+    started=[a.session_id for a in s.admissions if a.status=='started']
+    need(len(set(started))==len(started),'work_duplicate_session_owner')
+    for w in s.workers:
+        need(text(w.session_id) and integer(w.owner_epoch,1) and integer(w.generation)
+             and integer(w.session_generation),'work_worker_invalid')
+        need(w.status in ('registered','running'),'work_unknown_worker')
+        need(w.owner_epoch==s.runtime.epoch and w.generation==w.session_generation,'work_stale_worker')
+    for r in s.runs:
+        need(all(text(v) for v in (r.scope,r.key)) and fingerprint(r.fingerprint)
+             and integer(r.owner_pid,1) and integer(r.owner_started,1),'work_run_invalid')
+        need(r.status in ('queued','running'),'work_unknown_run')
+        need((r.owner_pid,r.owner_started)==(s.runtime.owner_pid,s.runtime.owner_started),'work_stale_run_owner')
+    for r in s.responses:
+        need(fingerprint(r.fingerprint) and (r.admission_id is None or text(r.admission_id)),
+             'work_response_invalid')
+    return admissions,workers,runs,responses
+
+
+class WorkHealthMonitor:
+    """A sticky consistency fault cannot be cleared by merely restoring rows.
+
+    IDLE/OWNED_BUSY mean matching committed records and trusted owner inventory.
+    They do NOT verify mount/profile ownership, worker liveness, fresh producer
+    capture, or complete service readiness. Those are separate live integration
+    gates. No listener/close/retry authority is returned by ANY phase.
+    """
+    def __init__(self, expected, *, max_age_ns=MAX_AGE_NS):
+        need(type(expected) is RuntimeIdentity,'work_identity_required')
+        need(integer(max_age_ns,1) and max_age_ns<=MAX_AGE_NS,'work_freshness_bound')
+        self.expected=expected;self.max_age_ns=max_age_ns;self._sample=0;self._revision=-1;self._fault=None
+
+    def _result(self,phase,reason,counts=None):
+        return {'phase':phase,'reason':reason,'workStateConsistent':phase in ('IDLE','OWNED_BUSY'),
+                'counts':counts,'scope':'committed_work_and_trusted_owner_consistency_only',
+                'serviceReadinessVerified':False,'producerLivenessVerifiedHere':False,
+                'storageIntegrityVerifiedHere':False,'runtimeAdmissionAuthorized':False,
+                'retryAuthorized':False,'callerLeaseMayBeReleased':False,'fullD3BAccepted':False}
+
+    def unavailable(self):
+        return self._result('RECOVERY_REQUIRED',self._fault) if self._fault else self._result('UNOBSERVABLE','work_snapshot_unavailable')
+
+    def observe(self, snapshot, before, after, *, now_ns):
+        if self._fault:return self._result('RECOVERY_REQUIRED',self._fault)
+        try:
+            need(integer(now_ns),'work_clock_invalid')
+            claims=_owners(before);_owners(after)
+            need(type(snapshot) is WorkSnapshot and type(snapshot.runtime) is RuntimeIdentity
+                 and integer(snapshot.sample_id,1) and integer(snapshot.captured_ns),'work_snapshot_invalid')
+            need(snapshot.runtime==self.expected and before.runtime==self.expected and after.runtime==self.expected,
+                 'work_runtime_changed')
+            if not (before.complete and after.complete):return self.unavailable()
+            if before.revision!=after.revision or before.claims!=after.claims or before.transitioning!=after.transitioning:
+                return self._result('UNOBSERVABLE','work_owner_changed_during_capture')
+            if not (before.captured_ns<=snapshot.captured_ns<=after.captured_ns<=now_ns
+                    and now_ns-before.captured_ns<=self.max_age_ns):
+                return self._result('UNOBSERVABLE','work_snapshot_not_fresh')
+            if snapshot.sample_id<=self._sample:return self._result('UNOBSERVABLE','work_sample_replayed')
+            need(before.revision>=self._revision,'work_owner_revision_regressed')
+            self._sample=snapshot.sample_id;self._revision=before.revision
+            admissions,workers,runs,responses=_rows(snapshot)
+            # Explicit producer transition may temporarily have partial cross-file writes.
+            # Never call it healthy or recover/retry it; native unknown/stale rows above still fence it.
+            if before.transitioning or any(c.phase=='settling' for c in claims.values()):
+                return self._result('TRANSITION','work_producer_transition')
+            need(set(admissions)==set(claims),'work_admission_owner_mismatch')
+            need(set(workers)=={c.worker_id for c in claims.values() if c.worker_id is not None},'work_worker_owner_mismatch')
+            need(set(runs)=={c.run.run_id for c in claims.values() if c.run is not None},'work_run_owner_mismatch')
+            need(set(responses)=={c.response.key for c in claims.values() if c.response is not None},'work_response_owner_mismatch')
+            for key,c in claims.items():
+                a=admissions[key]
+                need((a.session_id,a.generation,a.status)==(c.session_id,c.generation,c.phase),'work_claim_mismatch')
+                if c.worker_id is not None:
+                    w=workers[c.worker_id]
+                    need(a.status=='started' and w.session_id in a.lineage and w.generation==a.generation,
+                         'work_worker_link_mismatch')
+                if c.run is not None:
+                    r=runs[c.run.run_id]
+                    need((r.scope,r.key,r.fingerprint)==(c.run.scope,c.run.key,c.run.fingerprint),'work_run_link_mismatch')
+                    need(r.status==('queued' if c.phase=='queued' else 'running'),'work_run_phase_mismatch')
+                if c.response is not None:
+                    r=responses[c.response.key]
+                    need(r.admission_id==key and r.fingerprint==c.response.fingerprint,'work_response_link_mismatch')
+            counts={'admissions':len(admissions),'workers':len(workers),'runs':len(runs),'responses':len(responses)}
+            return self._result('OWNED_BUSY' if claims else 'IDLE','work_records_match_owner',counts)
+        except WorkHealthRejected as exc:
+            self._fault=str(exc);return self._result('RECOVERY_REQUIRED',self._fault)
+        except (ValueError,TypeError,AttributeError,KeyError,IndexError):
+            self._fault='work_observation_invalid';return self._result('RECOVERY_REQUIRED',self._fault)
