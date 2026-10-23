@@ -1,0 +1,517 @@
+{
+  "originalOuterSha256": "c80fb7121888d76d6dc2a7baef3d427a7ff9e34c6d6b8bb383456d2f68b3737d",
+  "result": "PASS_PREPARED_PREREQUISITE_ONLY",
+  "bundleSha256": "6e9b19d297e7fadd8255576707b44e8bb4f69bdfcf0e2659fdf3ecde61f8a573",
+  "childResult": {
+    "result": "PASS_NATIVE_PREPARED_THREE_STORE_JOIN",
+    "total": 22,
+    "passed": 22,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "checks": [
+      {
+        "case": "test_adapter_runner_or_store_drift_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_adapter_runner_or_store_drift_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_adapter_runner_or_store_drift_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_api_then_runner_detach_keeps_all_caller_connections_and_profile",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 65
+      },
+      {
+        "case": "test_disconnect_is_idempotent_but_bundle_cannot_be_reused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 34
+      },
+      {
+        "case": "test_disconnect_is_idempotent_but_bundle_cannot_be_reused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 0
+      },
+      {
+        "case": "test_exact_three_handles_and_prepared_runner_without_extra_open",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 72
+      },
+      {
+        "case": "test_extra_database_remains_attached_on_refusal",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 13
+      },
+      {
+        "case": "test_failed_adapter_cleanup_is_unknown_and_not_retried",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 12
+      },
+      {
+        "case": "test_foreign_profile_does_not_open_or_create",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 0
+      },
+      {
+        "case": "test_foreign_runner_object_is_rejected",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 9
+      },
+      {
+        "case": "test_listener_and_ordinary_runner_still_closed",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 0
+      },
+      {
+        "case": "test_local_epoch_map_is_native_preparation_not_database_write",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 67
+      },
+      {
+        "case": "test_mapping_replacement_and_value_change_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 5
+      },
+      {
+        "case": "test_mapping_replacement_and_value_change_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 5
+      },
+      {
+        "case": "test_mapping_replacement_and_value_change_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 5
+      },
+      {
+        "case": "test_old_bundle_still_rejects_arbitrary_runner_attachment",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 0
+      },
+      {
+        "case": "test_one_bundle_and_one_adapter_per_prepared_owner",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 9
+      },
+      {
+        "case": "test_other_application_generation_never_silently_restored",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_other_application_generation_never_silently_restored",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_prepared_pending_work_is_not_treated_as_quiescent_attachment",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_prepared_service_objects_and_running_flag_are_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_prepared_service_objects_and_running_flag_are_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_prepared_service_objects_and_running_flag_are_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_prepared_service_objects_and_running_flag_are_refused",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 17
+      },
+      {
+        "case": "test_real_pending_adapter_task_prevents_detach_without_cancellation",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 0
+      },
+      {
+        "case": "test_replay_mutex_refuses_without_waiting_or_unlocking",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 5
+      },
+      {
+        "case": "test_runner_cannot_detach_before_api",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 12
+      },
+      {
+        "case": "test_runner_identity_change_cannot_be_fixed_by_api_select",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 5
+      },
+      {
+        "case": "test_transaction_after_api_detach_blocks_runner_detach",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 24
+      },
+      {
+        "case": "test_transaction_in_each_store_refuses_selection_and_disconnect_without_rollback",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 0
+      },
+      {
+        "case": "test_transaction_in_each_store_refuses_selection_and_disconnect_without_rollback",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 10
+      },
+      {
+        "case": "test_transaction_in_each_store_refuses_selection_and_disconnect_without_rollback",
+        "sqliteOpens": 0,
+        "rawDatabaseOpens": 0,
+        "rowChanges": 0,
+        "queryCount": 12
+      }
+    ],
+    "caseEnd": [
+      {
+        "case": "test_adapter_runner_or_store_drift_refused",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_api_then_runner_detach_keeps_all_caller_connections_and_profile",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_disconnect_is_idempotent_but_bundle_cannot_be_reused",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_exact_three_handles_and_prepared_runner_without_extra_open",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_extra_database_remains_attached_on_refusal",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_failed_adapter_cleanup_is_unknown_and_not_retried",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_foreign_profile_does_not_open_or_create",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_foreign_runner_object_is_rejected",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_listener_and_ordinary_runner_still_closed",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_local_epoch_map_is_native_preparation_not_database_write",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_mapping_replacement_and_value_change_refused",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_old_bundle_still_rejects_arbitrary_runner_attachment",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_one_bundle_and_one_adapter_per_prepared_owner",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_other_application_generation_never_silently_restored",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_prepared_pending_work_is_not_treated_as_quiescent_attachment",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_prepared_service_objects_and_running_flag_are_refused",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_real_pending_adapter_task_prevents_detach_without_cancellation",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_replay_mutex_refuses_without_waiting_or_unlocking",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_runner_cannot_detach_before_api",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_runner_identity_change_cannot_be_fixed_by_api_select",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_transaction_after_api_detach_blocks_runner_detach",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      },
+      {
+        "case": "test_transaction_in_each_store_refuses_selection_and_disconnect_without_rollback",
+        "profileRemoved": true,
+        "ownershipReleased": true,
+        "registry": {
+          "live_generations": 0,
+          "retired_generations": 0,
+          "total_refcounts": 0
+        },
+        "pendingTasks": 0
+      }
+    ],
+    "qaSha256": "7868c02cbebfe672b53b8caf6174a75a26b3eb95b13696108d870009a19d14bc",
+    "actualNativeRunnerAndAdapter": true,
+    "nativeMethodsReplaced": false,
+    "cleanupObjectFaultInjectedExplicitly": true,
+    "sameThreeCallerConnections": true,
+    "epochAdvancedByAttachment": false,
+    "serviceAdmissionOrListenerActivated": false,
+    "providerCalls": 0,
+    "linuxIsolationTested": false,
+    "rootWslAction": false,
+    "temporaryRootRemoved": true
+  },
+  "nativeImportCount": 499,
+  "installedFileManifestSha256": "091b9bed58272ed6beb63d11a8c200f3a5239475849976d562fea6cc0502950e",
+  "temporaryRootRemoved": true,
+  "uid": [
+    23001,
+    23001,
+    23001
+  ],
+  "gid": [
+    23003,
+    23003,
+    23003
+  ],
+  "namespaceConfinementTested": false
+}

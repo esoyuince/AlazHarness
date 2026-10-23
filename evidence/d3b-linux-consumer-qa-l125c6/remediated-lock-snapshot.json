@@ -1,0 +1,711 @@
+{
+  "format": 1,
+  "scope": "Linux CPython3.12 x86_64 prepared import prerequisite; not complete agent/plugin distribution",
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "target": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.3",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "11",
+    "platform_system": "Linux",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.3",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "linux",
+    "extra": ""
+  },
+  "packageCount": 30,
+  "wheels": [
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "filename": "aiohappyeyeballs-2.7.1-py3-none-any.whl",
+      "sha256": "9243213661e29250eb41368e5daa826fc017156c3b8a11440826b2e3ed376472",
+      "bytes": 15038,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [],
+      "recordEntriesChecked": 9,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.5",
+      "filename": "aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "20f085697d7e911f1f73c43ed03fafbed1e7121797e2eb5428efa80398060584",
+      "bytes": 1919630,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "aiohappyeyeballs>=2.5.0",
+        "aiosignal>=1.4.0",
+        "async-timeout<6.0,>=4.0; python_version < \"3.11\"",
+        "attrs>=17.3.0",
+        "frozenlist>=1.1.1",
+        "multidict<8.0,>=4.5",
+        "propcache>=0.2.0",
+        "typing_extensions>=4.4; python_version < \"3.13\"",
+        "yarl<2.0,>=1.25.1",
+        "aiodns>=3.3.0; (sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\"",
+        "Brotli>=1.2; (platform_python_implementation == \"CPython\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\"",
+        "brotlicffi>=1.2; platform_python_implementation != \"CPython\" and extra == \"speedups\"",
+        "backports.zstd; (platform_python_implementation == \"CPython\" and python_version < \"3.14\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+      ],
+      "recordEntriesChecked": 72,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0",
+      "filename": "aiosignal-1.4.0-py3-none-any.whl",
+      "sha256": "053243f8b92b990551949e63930a839ff0cf0b0ebbe0597b0f3fb19e1a0fe82e",
+      "bytes": 7490,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [
+        "frozenlist>=1.1.0",
+        "typing-extensions>=4.2; python_version < \"3.13\""
+      ],
+      "recordEntriesChecked": 6,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "anyio",
+      "version": "4.14.2",
+      "filename": "anyio-4.14.2-py3-none-any.whl",
+      "sha256": "9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494",
+      "bytes": 125813,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "exceptiongroup>=1.0.2; python_version < \"3.11\"",
+        "idna>=2.8",
+        "typing_extensions>=4.5; python_version < \"3.13\"",
+        "trio>=0.32.0; extra == \"trio\""
+      ],
+      "recordEntriesChecked": 51,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "bytes": 67548,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [],
+      "recordEntriesChecked": 34,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "filename": "certifi-2026.10.23-py3-none-any.whl",
+      "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+      "bytes": 135082,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.7",
+      "requiresDist": [],
+      "recordEntriesChecked": 11,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.1",
+      "filename": "charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08",
+      "bytes": 248801,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.7",
+      "requiresDist": [],
+      "recordEntriesChecked": 20,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "click",
+      "version": "8.4.2",
+      "filename": "click-8.4.2-py3-none-any.whl",
+      "sha256": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76",
+      "bytes": 119243,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "colorama; platform_system == 'Windows'"
+      ],
+      "recordEntriesChecked": 21,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "concurrent-log-handler",
+      "version": "0.9.29",
+      "filename": "concurrent_log_handler-0.9.29-py3-none-any.whl",
+      "sha256": "0d6c077fbaef2dae49a25975dcf72a602fe0a6a4ce80a3b7c37696d37e10459a",
+      "bytes": 32052,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.6",
+      "requiresDist": [
+        "portalocker>=2.6.0",
+        "black>=26.1.0; extra == 'dev'",
+        "coverage; extra == 'dev'",
+        "hatch; extra == 'dev'",
+        "pytest; extra == 'dev'",
+        "pytest-cov; extra == 'dev'",
+        "pytest-mock; extra == 'dev'",
+        "pytest-repeat; extra == 'dev'",
+        "pytest-sugar; extra == 'dev'",
+        "ruff>=0.15.2; extra == 'dev'"
+      ],
+      "recordEntriesChecked": 6,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0",
+      "filename": "frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "sha256": "494a5952b1c597ba44e0e78113a7266e656b9794eec897b19ead706bd7074383",
+      "bytes": 242411,
+      "tags": [
+        "cp312-cp312-manylinux1_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64",
+        "cp312-cp312-manylinux_2_5_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [],
+      "recordEntriesChecked": 9,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "filename": "h11-0.16.0-py3-none-any.whl",
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+      "bytes": 37515,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requiresDist": [],
+      "recordEntriesChecked": 16,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "filename": "httpcore-1.0.9-py3-none-any.whl",
+      "sha256": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55",
+      "bytes": 78784,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requiresDist": [
+        "certifi",
+        "h11>=0.16",
+        "anyio<5.0,>=4.0; extra == 'asyncio'",
+        "h2<5,>=3; extra == 'http2'",
+        "socksio==1.*; extra == 'socks'",
+        "trio<1.0,>=0.22.0; extra == 'trio'"
+      ],
+      "recordEntriesChecked": 35,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "filename": "httpx-0.28.1-py3-none-any.whl",
+      "sha256": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad",
+      "bytes": 73517,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requiresDist": [
+        "anyio",
+        "certifi",
+        "httpcore==1.*",
+        "idna",
+        "brotli; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "click==8.*; extra == 'cli'",
+        "pygments==2.*; extra == 'cli'",
+        "rich<14,>=10; extra == 'cli'",
+        "h2<5,>=3; extra == 'http2'",
+        "socksio==1.*; extra == 'socks'",
+        "zstandard>=0.18.0; extra == 'zstd'"
+      ],
+      "recordEntriesChecked": 28,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "idna",
+      "version": "3.19",
+      "filename": "idna-3.19-py3-none-any.whl",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4",
+      "bytes": 68550,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [
+        "ruff >= 0.16.0 ; extra == \"all\"",
+        "mypy >= 1.11.2 ; extra == \"all\"",
+        "ty >= 0.0.37 ; extra == \"all\"",
+        "pytest >= 8.3.2 ; extra == \"all\"",
+        "hypothesis >= 6.141.1 ; extra == \"all\"",
+        "coverage >= 7.10.0 ; extra == \"all\""
+      ],
+      "recordEntriesChecked": 15,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "jiter",
+      "version": "0.16.0",
+      "filename": "jiter-0.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "46add52f4ad47a08bfb1219f3e673da972191489a33016edefdb5ea55bfa8c48",
+      "bytes": 343805,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [],
+      "recordEntriesChecked": 8,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "bytes": 91687,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "mdurl~=0.1",
+        "psutil ; extra == \"benchmarking\"",
+        "pytest ; extra == \"benchmarking\"",
+        "pytest-benchmark ; extra == \"benchmarking\"",
+        "commonmark~=0.9 ; extra == \"compare\"",
+        "markdown~=3.4 ; extra == \"compare\"",
+        "mistletoe~=1.0 ; extra == \"compare\"",
+        "mistune~=3.0 ; extra == \"compare\"",
+        "panflute~=2.3 ; extra == \"compare\"",
+        "markdown-it-pyrs ; extra == \"compare\"",
+        "linkify-it-py>=1,<3 ; extra == \"linkify\"",
+        "mdit-py-plugins>=0.5.0 ; extra == \"plugins\"",
+        "gprof2dot ; extra == \"profiling\"",
+        "mdit-py-plugins>=0.5.0 ; extra == \"rtd\"",
+        "myst-parser ; extra == \"rtd\"",
+        "pyyaml ; extra == \"rtd\"",
+        "sphinx ; extra == \"rtd\"",
+        "sphinx-copybutton ; extra == \"rtd\"",
+        "sphinx-design ; extra == \"rtd\"",
+        "sphinx-book-theme~=1.0 ; extra == \"rtd\"",
+        "jupyter_sphinx ; extra == \"rtd\"",
+        "ipykernel ; extra == \"rtd\"",
+        "coverage ; extra == \"testing\"",
+        "pytest ; extra == \"testing\"",
+        "pytest-cov ; extra == \"testing\"",
+        "pytest-regressions ; extra == \"testing\"",
+        "pytest-timeout ; extra == \"testing\"",
+        "requests ; extra == \"testing\""
+      ],
+      "recordEntriesChecked": 73,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "bytes": 9979,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.7",
+      "requiresDist": [],
+      "recordEntriesChecked": 10,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "multidict",
+      "version": "6.9.1",
+      "filename": "multidict-6.9.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "976fd7689d69ec78d67d31d38d396d8adb562f7e8368279f76aed4aa451fa06d",
+      "bytes": 336881,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "typing-extensions>=4.1.0; python_version < \"3.11\""
+      ],
+      "recordEntriesChecked": 10,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "portalocker",
+      "version": "3.2.0",
+      "filename": "portalocker-3.2.0-py3-none-any.whl",
+      "sha256": "3cdc5f565312224bc570c49337bd21428bba0ef363bbcf58b9ef4a9f11779968",
+      "bytes": 22424,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [
+        "pywin32>=226; platform_system == \"Windows\"",
+        "portalocker[tests]; extra == \"docs\"",
+        "coverage-conditional-plugin>=0.9.0; extra == \"tests\"",
+        "portalocker[redis]; extra == \"tests\"",
+        "pytest-cov>=2.8.1; extra == \"tests\"",
+        "pytest-mypy>=0.8.0; extra == \"tests\"",
+        "pytest-rerunfailures>=15.0; extra == \"tests\"",
+        "pytest-timeout>=2.1.0; extra == \"tests\"",
+        "pytest>=5.4.1; extra == \"tests\"",
+        "sphinx>=6.0.0; extra == \"tests\"",
+        "types-pywin32>=310.0.0.20250429; extra == \"tests\"",
+        "types-redis; extra == \"tests\"",
+        "redis; extra == \"redis\""
+      ],
+      "recordEntriesChecked": 14,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.2",
+      "filename": "propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "6f328175a2cde1f0ff2c4ed8ce968b9dcfb55f3a7153f39e2957ed994da13476",
+      "bytes": 61639,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [],
+      "recordEntriesChecked": 12,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2",
+      "filename": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+      "bytes": 155560,
+      "tags": [
+        "cp36-abi3-manylinux2010_x86_64",
+        "cp36-abi3-manylinux_2_12_x86_64",
+        "cp36-abi3-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.6",
+      "requiresDist": [
+        "psleak ; extra == 'dev'",
+        "pytest ; extra == 'dev'",
+        "pytest-instafail ; extra == 'dev'",
+        "pytest-xdist ; extra == 'dev'",
+        "setuptools ; extra == 'dev'",
+        "abi3audit ; extra == 'dev'",
+        "black ; extra == 'dev'",
+        "check-manifest ; extra == 'dev'",
+        "coverage ; extra == 'dev'",
+        "packaging ; extra == 'dev'",
+        "pylint ; extra == 'dev'",
+        "pyperf ; extra == 'dev'",
+        "pypinfo ; extra == 'dev'",
+        "pytest-cov ; extra == 'dev'",
+        "requests ; extra == 'dev'",
+        "rstcheck ; extra == 'dev'",
+        "ruff ; extra == 'dev'",
+        "sphinx ; extra == 'dev'",
+        "sphinx-rtd-theme ; extra == 'dev'",
+        "toml-sort ; extra == 'dev'",
+        "twine ; extra == 'dev'",
+        "validate-pyproject[all] ; extra == 'dev'",
+        "virtualenv ; extra == 'dev'",
+        "vulture ; extra == 'dev'",
+        "wheel ; extra == 'dev'",
+        "colorama ; (os_name == \"nt\") and extra == 'dev'",
+        "pyreadline3 ; (os_name == \"nt\") and extra == 'dev'",
+        "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "psleak ; extra == 'test'",
+        "pytest ; extra == 'test'",
+        "pytest-instafail ; extra == 'test'",
+        "pytest-xdist ; extra == 'test'",
+        "setuptools ; extra == 'test'",
+        "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+        "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+        "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+      ],
+      "recordEntriesChecked": 15,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "bytes": 1250147,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [
+        "colorama>=0.4.6; extra == 'windows-terminal'"
+      ],
+      "recordEntriesChecked": 348,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.2",
+      "filename": "python_dotenv-1.2.2-py3-none-any.whl",
+      "sha256": "1d8214789a24de455a8b8bd8ae6fe3c6b69a5e3d64aa8a8e5d68e694bbcb285a",
+      "bytes": 22101,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "click>=5.0; extra == \"cli\""
+      ],
+      "recordEntriesChecked": 14,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "requests",
+      "version": "2.33.0",
+      "filename": "requests-2.33.0-py3-none-any.whl",
+      "sha256": "3324635456fa185245e24865e810cecec7b4caf933d7eb133dcde67d48cee69b",
+      "bytes": 65017,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "charset_normalizer<4,>=2",
+        "idna<4,>=2.5",
+        "urllib3<3,>=1.26",
+        "certifi>=2023.5.7",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+        "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\"",
+        "pytest-httpbin==2.1.0; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-mock; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"test\"",
+        "pytest>=3; extra == \"test\""
+      ],
+      "recordEntriesChecked": 23,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "rich",
+      "version": "14.3.3",
+      "filename": "rich-14.3.3-py3-none-any.whl",
+      "sha256": "793431c1f8619afa7d3b52b2cdec859562b950ea0d4b6b505397612db8d5362d",
+      "bytes": 310458,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8.0",
+      "requiresDist": [
+        "ipywidgets (>=7.5.1,<9) ; extra == \"jupyter\"",
+        "markdown-it-py (>=2.2.0)",
+        "pygments (>=2.13.0,<3.0.0)"
+      ],
+      "recordEntriesChecked": 104,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "ruamel.yaml",
+      "version": "0.18.16",
+      "filename": "ruamel.yaml-0.18.16-py3-none-any.whl",
+      "sha256": "048f26d64245bae57a4f9ef6feb5b552a386830ef7a826f235ffb804c59efbba",
+      "bytes": 119858,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requiresDist": [
+        "ruamel.yaml.clib>=0.2.7; platform_python_implementation == \"CPython\" and python_version < \"3.14\"",
+        "ruamel.yaml.jinja2>=0.2; extra == \"jinja2\"",
+        "ryd; extra == \"docs\"",
+        "mercurial>5.7; extra == \"docs\""
+      ],
+      "recordEntriesChecked": 36,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "ruamel.yaml.clib",
+      "version": "0.2.15",
+      "filename": "ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "11e5499db1ccbc7f4b41f0565e4f799d863ea720e01d3e99fa0b7b5fcd7802c9",
+      "bytes": 788211,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [],
+      "recordEntriesChecked": 5,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "bytes": 45571,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requiresDist": [],
+      "recordEntriesChecked": 4,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "filename": "urllib3-2.8.0-py3-none-any.whl",
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "bytes": 135717,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "h2<5,>=4; extra == 'h2'",
+        "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+        "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+      ],
+      "recordEntriesChecked": 41,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "yarl",
+      "version": "1.25.1",
+      "filename": "yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "c6f117789d22dce188e5754e8bc65b7e6ebf8cb73963b9fa761f672a5883769d",
+      "bytes": 117050,
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [
+        "idna>=2.0",
+        "multidict>=4.0",
+        "propcache>=0.2.1"
+      ],
+      "recordEntriesChecked": 16,
+      "purpose": "native-import-dependency"
+    },
+    {
+      "name": "pip",
+      "version": "26.2.2",
+      "filename": "pip-26.2.2-py3-none-any.whl",
+      "sha256": "fd7f4dfa8190e014013b9f08f3e973f4e4c26ffd179a204895533a7254813a70",
+      "bytes": 1819850,
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requiresDist": [],
+      "recordEntriesChecked": 477,
+      "purpose": "installer-tool"
+    }
+  ],
+  "allPublishedPyPIHashesMatched": true,
+  "sourceBuildsAllowed": false,
+  "globalInstallAllowed": false,
+  "existingRuntimeVersionsPreserved": 24,
+  "linuxOnlyAdded": "ruamel.yaml.clib==0.2.15",
+  "securityUpdates": [
+    {
+      "name": "aiohttp",
+      "oldVersion": "3.14.3",
+      "newVersion": "3.14.5",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/aiohttp/3.14.5/json",
+      "apiSha256": "7deb2f0d6dc95c63a2b576236bbe3051f3c0b1d402bd5f59e7619c05684f499a",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "certifi",
+      "oldVersion": "2026.5.20",
+      "newVersion": "2026.10.23",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/certifi/2026.10.23/json",
+      "apiSha256": "546ce90e02c152f5ff565baca6bc2a8f43c355855f637756f49a0143e312bdb2",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "multidict",
+      "oldVersion": "6.7.1",
+      "newVersion": "6.9.1",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/multidict/6.9.1/json",
+      "apiSha256": "35dfa27a368babee3240617789a038e8071315872c1dc0d5972988f7c8d947d1",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "urllib3",
+      "oldVersion": "2.7.0",
+      "newVersion": "2.8.0",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/urllib3/2.8.0/json",
+      "apiSha256": "5315e7401db3cacccd0c2ce5daf81f752a9cc3614b18c37f2b79930b7159ce2f",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "yarl",
+      "oldVersion": "1.24.5",
+      "newVersion": "1.25.1",
+      "reason": "required by corrected aiohttp>=1.25.1",
+      "releaseApi": "https://pypi.org/pypi/yarl/1.25.1/json",
+      "apiSha256": "a07cf3b564a15e3be66faacf0c81a23497ebfbf1ec849a3a77b494ba4b60cf0f",
+      "nonWithdrawnPyPIAdvisories": 0
+    }
+  ],
+  "status": "CANDIDATE_NOT_YET_LINUX_EXECUTED",
+  "noAffectedOldCandidateInstalled": true,
+  "knownReleaseMetadataAdvisories": 0,
+  "advisoryMetadataNotFullAudit": true
+}

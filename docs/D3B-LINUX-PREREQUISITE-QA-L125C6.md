@@ -88,3 +88,39 @@ for current commit/integration state; do not restart uncertain original work.
 ## Target candidate superseded after separate security metadata review
 
 The30-artifact integrity/marker result above belongs to the FIRST candidate. L125P1 has explicitly NOT installed it and subsequently selected five newer package versions after its own advisory metadata review. Those findings are not produced by this integrity auditor. Retain this result as historical artifact evidence, not as permission to activate the old candidate. The replacement set needs a new artifact report and actual target imports; old-wheel-candidate-superseded.json records the exact five substitutions and source-plan hash. Windows runtime and native product remain unchanged.
+
+## Corrected candidate and actual Linux runtime independently verified
+
+The replacement set is now independently reviewed:30 wheels,1096 RECORD members,
+13 ELF64x86_64 members, same unchanged auditor. Its1066 non-RECORD payload files
+match both actual Linux installed-file maps;96 installer-generated or rewritten
+files are separately listed. No unknown installed file remains. Five substituted
+package versions are recorded explicitly; this byte audit still does not claim
+comprehensive advisory/publisher safety. The prior first-candidate audit remains
+historical. The lock copied Windows release/version fields not used by any
+selected metadata marker; this independent audit uses actual Linux values.
+
+Original L125P1 import and unchanged22 native prepared runner/API cases PASS on
+real UID23001 Linux/Python3.12. Then the ORIGINAL current NativeStoreStartup and
+PreparedRuntimeConsumer passed one actual Linux lifecycle with23 nested checks:
+real native profile ownership, finite layout, ext4 mount observation, fixed cold
+helper subprocesses and live SQL, no Windows boundary replacements. Wrong cold
+schema rejected before parent open; exact3connections/oneepoch retained; active
+transactions refused; API then runner then original owner store close followed by
+caller lease release. Post-detach response header drift blocks store close.
+Mount table and namespaces stayed unchanged; fresh profiles/targets were removed.
+
+This task independently verified the exact two archives,513native files,499actual
+native imports in prepared cases and498 in the owner case, selected original
+QA/harness hashes and package payload bytes. It did NOT execute another runtime
+case. The22 methods and23 nested predicates are different measures and NOT45
+independent scenarios. Four additional offline receipt methods bind the new
+scope, giving11 own receipt methods; they are not native executions.
+
+Import inventory did not enumerate third-party files installed under a custom
+target prefix (its map was empty). Therefore this review proves the installed
+payload byte set, NOT a complete per-import third-party provenance trace. All
+actual native imports were enumerated and checked. No product edits or global
+installation occurred; optional native remains staged. Complete namespace/
+seccomp/Landlock isolation, active observer/HTTP and powerloss durability stay
+OPEN. Existing SQLite warning/fallback remains; no interpreter upgrade occurred.

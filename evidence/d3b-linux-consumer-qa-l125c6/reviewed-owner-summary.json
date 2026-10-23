@@ -1,0 +1,146 @@
+{
+  "originalOuterSha256": "b7ab3f3ff6a968716094f97fb482c60892999586a3e277303804056b89d432f1",
+  "result": "PASS_OWNER_PREREQUISITE_ONLY",
+  "bundleSha256": "02154c018e0258a85bd9a17f48cc12696eb0cd6d49d680e2937e12af0efe5fa8",
+  "childResult": {
+    "result": "PASS_REAL_LINUX_OWNER_LIFECYCLE_NOT_CONFINEMENT",
+    "phase": "COMPLETE",
+    "checks": {
+      "trusted_fresh_seed_schema_matches_fixed_response": true,
+      "actual_native_linux_lease": true,
+      "actual_qualified_filesystem": true,
+      "actual_finite_layout": true,
+      "wrong_schema_refused_before_parent_open": true,
+      "negative_preserves_lease": true,
+      "actual_all_cold_and_live_checks": true,
+      "accepted_epoch_once": true,
+      "same_three_connections": true,
+      "no_second_epoch": true,
+      "original_close_blocks_attached_consumer": true,
+      "all_three_transactions_retained": true,
+      "api_then_runner_detached": true,
+      "same_handles_alive_after_detach": true,
+      "consumer_zero_row_changes": true,
+      "consumer_no_raw_database_opens": true,
+      "postdetach_header_drift_blocks_close": true,
+      "all_three_closed": true,
+      "lease_retained_after_stores": true,
+      "profile_released_only_by_caller": true,
+      "same_mount_table": true,
+      "no_namespace_reconfiguration": true,
+      "no_model_or_service_authority": true
+    },
+    "checkCount": 23,
+    "error": null,
+    "events": [
+      {
+        "phase": "owner_started",
+        "receipt": {
+          "state": "VERIFIED",
+          "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+          "responseConfigured": true,
+          "epochObserved": 1,
+          "epochMayHaveAdvanced": true,
+          "unknownConstructorEffects": false,
+          "completedChecks": [
+            "preflight",
+            "response_preflight",
+            "before_epoch",
+            "response_before_epoch",
+            "after_epoch",
+            "response_after_epoch"
+          ],
+          "storageReady": true,
+          "callerLeaseMayBeReleased": false,
+          "recoveryPolicy": "REFUSE_PENDING_NO_REPLAY",
+          "automaticRecoveryPerformed": false,
+          "runtimeAdmissionAuthorized": false,
+          "pairedRecoveryVerified": false,
+          "fullD3BAccepted": false
+        }
+      },
+      {
+        "phase": "consumer_attached",
+        "receipt": {
+          "state": "ATTACHED",
+          "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+          "storesOwnedHere": false,
+          "sameAcceptedEpoch": 1,
+          "serviceStarted": false,
+          "runtimeAdmissionAuthorized": false,
+          "storeReleaseAuthorized": false,
+          "profileReleasedHere": false,
+          "activeTaskObserversQualified": false,
+          "fullD3BAccepted": false
+        }
+      },
+      {
+        "phase": "consumer_detached",
+        "receipt": {
+          "state": "DETACHED",
+          "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+          "storesOwnedHere": false,
+          "sameAcceptedEpoch": 1,
+          "serviceStarted": false,
+          "runtimeAdmissionAuthorized": false,
+          "storeReleaseAuthorized": false,
+          "profileReleasedHere": false,
+          "activeTaskObserversQualified": false,
+          "fullD3BAccepted": false
+        }
+      },
+      {
+        "phase": "stores_closed",
+        "receipt": {
+          "state": "CLOSED",
+          "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+          "responseConfigured": true,
+          "epochObserved": 1,
+          "epochMayHaveAdvanced": true,
+          "unknownConstructorEffects": false,
+          "completedChecks": [
+            "preflight",
+            "response_preflight",
+            "before_epoch",
+            "response_before_epoch",
+            "after_epoch",
+            "response_after_epoch"
+          ],
+          "storageReady": false,
+          "callerLeaseMayBeReleased": true,
+          "recoveryPolicy": "REFUSE_PENDING_NO_REPLAY",
+          "automaticRecoveryPerformed": false,
+          "runtimeAdmissionAuthorized": false,
+          "pairedRecoveryVerified": false,
+          "fullD3BAccepted": false
+        }
+      }
+    ],
+    "coldHelpers": [
+      {
+        "commandName": "run_store_preopen.py",
+        "scope": "existing fixed cold read-only helper"
+      },
+      {
+        "commandName": "run_store_preopen.py",
+        "scope": "existing fixed cold read-only helper"
+      },
+      {
+        "commandName": "run_response_preopen.py",
+        "scope": "existing fixed cold read-only helper"
+      }
+    ],
+    "qaSha256": "e79d12ec4a028a55020cf452bd5fe39068e4d36088cc0be25b45a90ca93c7c85",
+    "actualLinuxActorLeaseMountLayoutColdHelpersAndLiveSql": true,
+    "productOrNativeMethodsDoubled": false,
+    "namespaceConfinementTested": false,
+    "physicalDurabilityTested": false,
+    "serviceOrAdmissionActivated": false,
+    "rootUsed": false,
+    "providerCalls": 0,
+    "fixtureCleanupAfterFailure": false,
+    "temporaryProfileRemoved": true
+  },
+  "installedFileManifestSha256": "091b9bed58272ed6beb63d11a8c200f3a5239475849976d562fea6cc0502950e",
+  "temporaryRootRemoved": true
+}
