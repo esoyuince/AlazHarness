@@ -1,0 +1,11 @@
+{
+  "redirectedProductFile": "packages/claw-hermes/gateway_store_startup.py",
+  "savedBase": "66a7bf7",
+  "oldNativeReceiptsModified": false,
+  "changedTests": [
+    "test_three_store_receipt_l113f6.py",
+    "test_three_store_http_receipt_h114r6.py",
+    "test_three_projection_receipt_t114r6a.py"
+  ],
+  "newConsumerClaimedByOldLinuxProof": false
+}

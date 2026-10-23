@@ -1,4 +1,5 @@
 """Actual T114R6A full-isolation receipts, not a new native run or cleanup query."""
+from historical_startup_s124b1 import executed_source_hash
 import hashlib,json,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -8,14 +9,14 @@ class ThreeStoreProjectionReceipt(unittest.TestCase):
     def setUpClass(cls):
         cls.o=json.loads((E/'native-003-stdout.txt').read_bytes());cls.r=json.loads(cls.o['nativeStdout'])
         cls.targets=[e for e in cls.r['events'] if e.get('state')=='RESULT']
-    def test_current_source_and_native_feature_hashes_match_execution(self):
+    def test_executed_source_with_historical_startup_and_native_hashes(self):
         self.assertEqual((self.o['unitsExitCode'],self.o['nativeExitCode']),(0,0));self.assertTrue(self.o['sourcesUnchanged'])
         self.assertEqual(self.r['result'],'PASS_SCOPED_NATIVE_STORE_LAYOUT');self.assertIsNone(self.r['error'])
         self.assertEqual(self.o['sources'],self.r['sourceSha256'])
         self.assertEqual(self.o['sources'],json.loads((E/'native-003-intent.json').read_text(encoding='utf-8'))['sourceSha256'])
         inventory=json.loads((E/'source-inventory.json').read_text(encoding='utf-8'))
         for name,h in self.o['sources'].items():
-            if name.startswith(('packages/','scripts/','tests/')):self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+            if name.startswith(('packages/','scripts/','tests/')):self.assertEqual(executed_source_hash(ROOT,name,h),h,name)
             elif name.startswith('vendor-native/'):self.assertEqual(inventory['nativeSources'][name.removeprefix('vendor-native/')]['sha256'],h)
             else:self.assertEqual(inventory['dependencySources'][name.removeprefix('dependencies/')],h)
         self.assertEqual(self.o['nativePin'],'cc16c10b16a0ca8d80b23fd9be3f0e59ee605075')

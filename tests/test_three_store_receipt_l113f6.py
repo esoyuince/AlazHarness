@@ -1,4 +1,5 @@
 """Current actual three-store proof, distinct from earlier historical two-store proofs."""
+from historical_startup_s124b1 import executed_source_hash
 import hashlib,json,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -8,7 +9,7 @@ class NativeThreeStoreReceipt(unittest.TestCase):
     def setUpClass(cls):
         cls.o=json.loads((E/'native-002-stdout.txt').read_bytes());cls.r=json.loads(cls.o['stdout'])
         cls.t={e['case']:json.loads(e['stdout']) for e in cls.r['events'] if e['mode']=='target' and e['exitCode']==0}
-    def test_executed_sources_with_historical_http_and_projection_snapshots(self):
+    def test_executed_sources_with_historical_http_projection_and_startup_snapshots(self):
         self.assertEqual(self.o['exitCode'],0);self.assertEqual(self.r['result'],'PASS_NATIVE_THREE_STORE_STARTUP');self.assertIsNone(self.r['error'])
         self.assertIs(self.o['sourcesUnchanged'],True);self.assertIs(self.o['temporaryRootRemoved'],True)
         self.assertEqual(self.o['sources'],self.r['sourceSha256'])
@@ -25,7 +26,7 @@ class NativeThreeStoreReceipt(unittest.TestCase):
                 elif name=='packages/claw-hermes/gateway_state_projection.py':
                     from historical_sources_l113f6 import receipt_source_hash
                     self.assertEqual(receipt_source_hash(ROOT,name,digest),digest)
-                elif name.startswith(('packages/','scripts/')):self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest)
+                elif name.startswith(('packages/','scripts/')):self.assertEqual(executed_source_hash(ROOT,name,digest),digest)
                 elif name.startswith('vendor-native/'):self.assertEqual(native[name.removeprefix('vendor-native/')]['sha256'],digest)
                 else:self.assertEqual(deps[name.removeprefix('dependencies/')],digest)
         for t in self.t.values():

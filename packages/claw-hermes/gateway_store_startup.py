@@ -65,6 +65,7 @@ class NativeStoreStartup:
         self._unknown_constructor=False
         self._epoch_attempted=False
         self._stage='NEW';self._receipts=[]
+        self._prepared_consumer=None
 
     def _owned(self):
         require(live.profiles._actor()==self._actor,'startup_other_actor')
@@ -159,6 +160,19 @@ class NativeStoreStartup:
             # Bound diagnostics; original exception retains details only locally.
             raise StoreStartupRejected('startup_sequence_rejected') from exc
 
+    async def prepare_runtime(self, gateway_config, api_config):
+        """Attach the fixed prepared consumer; no new store owner or service."""
+        self._owned()
+        require(self._stage=='VERIFIED' and self._response_expected is not None,
+                'startup_verified_three_stores_required')
+        require(self._prepared_consumer is None,'startup_consumer_already_reserved')
+        from gateway_prepared_consumer import PreparedRuntimeConsumer
+        consumer=PreparedRuntimeConsumer(self)
+        # Reserve BEFORE imports/native constructors/awaits can have effects.
+        self._prepared_consumer=consumer
+        await consumer.prepare(gateway_config,api_config)
+        return consumer
+
     def _response_live_expectation(self):
         want=self._response_expected
         return response_live.ResponseConnectionExpectation(want.native_feature,want.schema_sha256,
@@ -205,6 +219,10 @@ class NativeStoreStartup:
         self._owned()
         require(self._stage in ('NEW','FAILED','VERIFIED'),'startup_close_unknown_or_active')
         require(not self._unknown_constructor,'startup_constructor_effects_unknown')
+        if self._prepared_consumer is not None:
+            from gateway_prepared_consumer import PreparedRuntimeConsumer
+            require(type(self._prepared_consumer) is PreparedRuntimeConsumer,'startup_consumer_identity')
+            self._prepared_consumer.assert_store_closeable(self)
         self._drained()
         # Never implicitly discard a caller's uncommitted transaction.
         # The caller must explicitly settle it before asking for shutdown.

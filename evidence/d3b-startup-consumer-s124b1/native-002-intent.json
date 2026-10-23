@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T23:31:32.552616+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_store_startup.py": "e9bcb9b7dfc98cef60ddf75b749574b21f6a6e11f4411f13adcf00b245371d28",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "e25f87293ac28fe078f451ceb58f2b39d07ab3d9b43a09edb0adcb99704cbcd5",
+    "config/prepared-consumer-s124b1-sources.json": "6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215"
+  },
+  "qaSha256": "65b07db5fa6517d59d9d18d6255feacd587d9effd8dc5c384d12d54e94894609",
+  "same20TestsAsFailure": true,
+  "fix": "final original owner close reobserves SQL/epoch and native runner/authority work after consumer detach",
+  "firstFailedProofRetained": true
+}

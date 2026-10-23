@@ -1,0 +1,7 @@
+test_exact_handles_epoch_and_original_close_blocked (__main__.LifecycleCases.test_exact_handles_epoch_and_original_close_blocked) ... ok
+test_api_runner_store_then_external_profile_release (__main__.LifecycleCases.test_api_runner_store_then_external_profile_release) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 11.237s
+
+OK

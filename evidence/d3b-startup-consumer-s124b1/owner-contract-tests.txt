@@ -1,0 +1,13 @@
+test_consumer_cannot_attach_before_verified (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_consumer_cannot_attach_before_verified) ... ok
+test_consumer_constructor_failure_cannot_replace_reserved_slot (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_consumer_constructor_failure_cannot_replace_reserved_slot) ... ok
+test_default_pair_never_implicitly_becomes_three_store (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_default_pair_never_implicitly_becomes_three_store) ... ok
+test_detached_label_without_native_proofs_not_enough (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_detached_label_without_native_proofs_not_enough) ... ok
+test_foreign_actor_refuses_consumer_before_import (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_foreign_actor_refuses_consumer_before_import) ... ok
+test_interrupted_prepare_retains_owner_slot (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_interrupted_prepare_retains_owner_slot) ... ok
+test_reservation_precedes_first_consumer_prepare_effect (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_reservation_precedes_first_consumer_prepare_effect) ... ok
+test_wrong_consumer_type_never_authorizes_close (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_wrong_consumer_type_never_authorizes_close) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.328s
+
+OK

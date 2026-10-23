@@ -1,0 +1,33 @@
+{
+  "job": "D3B-STARTUP-CONSUMER-S124B1",
+  "result": "PASS_SCOPED_NATIVE_WITH_EXPLICIT_WINDOWS_BOUNDARIES",
+  "at": "2026-10-23T23:35:28.794115+03:00",
+  "base": "66a7bf776bd8df0ea0e0562efa4b03604f93b1fa",
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "nativeMethods": 20,
+  "ownerUnitMethods": 8,
+  "offlineReceiptMethods": 7,
+  "focusedCombinedMethods": 83,
+  "nativeImportsVerified": 501,
+  "fixedNativeEnvelopeFiles": 513,
+  "changedExistingFiles": [
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/test_three_projection_receipt_t114r6a.py",
+    "tests/test_three_store_http_receipt_h114r6.py",
+    "tests/test_three_store_receipt_l113f6.py"
+  ],
+  "originalOwnerSingle": true,
+  "originalCloseGuardImplemented": true,
+  "first20Run18Pass2FailuresRetained": true,
+  "sameQaPassedAfterFix": true,
+  "nativeSourcesModified": false,
+  "linuxActorLeaseColdMountPermissionDoubled": true,
+  "fullLinuxAccepted": false,
+  "taskObserversRequalified": false,
+  "serviceStarted": false,
+  "providerCalls": 0,
+  "installedFeatureActivated": false,
+  "fullHarness": "PENDING_SINGLE_COMBINED_RUN",
+  "mainChanged": false,
+  "pushed": false
+}

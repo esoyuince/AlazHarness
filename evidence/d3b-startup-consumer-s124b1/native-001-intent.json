@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T23:26:30.687556+03:00",
+  "qaSha256": "65b07db5fa6517d59d9d18d6255feacd587d9effd8dc5c384d12d54e94894609",
+  "productHashes": {
+    "packages/claw-hermes/gateway_store_startup.py": "e9bcb9b7dfc98cef60ddf75b749574b21f6a6e11f4411f13adcf00b245371d28",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "89d93a0f9ffc8e554a79432d1bfb3970c97990957ebac7283f035c9221a9b13b",
+    "config/prepared-consumer-s124b1-sources.json": "6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215"
+  },
+  "scope": "20 native Windows lifecycle cases incl two post-detach refusal regressions, explicit Linux doubles"
+}

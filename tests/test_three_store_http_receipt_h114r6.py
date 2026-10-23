@@ -1,4 +1,5 @@
 """Current H114R6 native three-store HTTP receipt; no execution by these checks."""
+from historical_startup_s124b1 import executed_source_hash
 import hashlib,json,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -9,7 +10,7 @@ class ThreeHttpProof(unittest.TestCase):
         cls.o=json.loads((E/'native-001-stdout.txt').read_bytes());cls.r=json.loads(cls.o['stdout'])
         cls.events=cls.r['events'];cls.listen=[e for e in cls.events if e.get('state')=='LISTENING']
         cls.closed=[e for e in cls.events if e.get('state')=='CLOSED']
-    def test_success_current_imported_sources_and_exact_transport(self):
+    def test_success_executed_sources_with_historical_startup_and_exact_transport(self):
         self.assertEqual(self.o['exitCode'],0);self.assertEqual(self.r['result'],'PASS_NATIVE_THREE_STORE_READINESS_HTTP');self.assertIsNone(self.r['error'])
         self.assertIs(self.o['sourcesUnchanged'],True);self.assertIs(self.o['temporaryRootRemoved'],True)
         self.assertEqual(self.o['sources'],self.r['sourceSha256'])
@@ -20,7 +21,7 @@ class ThreeHttpProof(unittest.TestCase):
         for event in self.closed:
             for n,h in event['sourceHashes'].items():
                 self.assertEqual(self.o['sources'][n],h)
-                if n.startswith(('packages/','scripts/')):self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h)
+                if n.startswith(('packages/','scripts/')):self.assertEqual(executed_source_hash(ROOT,n,h),h)
                 elif n.startswith('vendor-native/'):self.assertEqual(expected_native[n.removeprefix('vendor-native/')]['sha256'],h)
                 elif n.startswith('http-dependencies/'):self.assertEqual(http[n.removeprefix('http-dependencies/')],h)
                 else:self.assertEqual(deps[n.removeprefix('dependencies/')],h)

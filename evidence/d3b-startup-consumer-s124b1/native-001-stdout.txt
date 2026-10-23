@@ -1,0 +1,51 @@
+{"result": "FAIL", "total": 20, "passed": 18, "errors": 0, "failures": 2, "skipped": 0, "errorIds": [], "failureIds": ["__main__.LifecycleCases.test_actual_epoch_changed_after_detach_refuses_close", "__main__.LifecycleCases.test_pending_runner_task_after_detach_refuses_close"], "actualNativeStoreStartupAndStores": true, "actualNativeRunnerAndAdapter": true, "linuxLeaseMountColdPreflightMetadataDoubled": true, "nativeSqlLiveChecksReal": true, "productBoundaryDoublesOnlyInExplicitFaultTests": true, "fullLinuxAcceptance": false, "activeTaskObserversRequalified": false, "serviceStarted": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true}
+test_actual_epoch_changed_after_detach_refuses_close (__main__.LifecycleCases.test_actual_epoch_changed_after_detach_refuses_close) ... FAIL
+test_api_runner_store_then_external_profile_release (__main__.LifecycleCases.test_api_runner_store_then_external_profile_release) ... ok
+test_attached_consumer_retains_native_service_guards (__main__.LifecycleCases.test_attached_consumer_retains_native_service_guards) ... ok
+test_close_refused_after_postdetach_adapter_revived (__main__.LifecycleCases.test_close_refused_after_postdetach_adapter_revived) ... ok
+test_constructor_failure_holds_slot_and_is_not_replayed (__main__.LifecycleCases.test_constructor_failure_holds_slot_and_is_not_replayed) ... ok
+test_direct_native_detaches_cannot_bypass_consumer_ack (__main__.LifecycleCases.test_direct_native_detaches_cannot_bypass_consumer_ack) ... ok
+test_each_store_transaction_blocks_without_rollback_then_recovers (__main__.LifecycleCases.test_each_store_transaction_blocks_without_rollback_then_recovers) ... ok
+test_exact_handles_epoch_and_original_close_blocked (__main__.LifecycleCases.test_exact_handles_epoch_and_original_close_blocked) ... ok
+test_lease_loss_during_api_await_holds_runner_and_stores (__main__.LifecycleCases.test_lease_loss_during_api_await_holds_runner_and_stores) ... ok
+test_native_authority_identity_drift_refused (__main__.LifecycleCases.test_native_authority_identity_drift_refused) ... ok
+test_other_event_loop_cannot_detach (__main__.LifecycleCases.test_other_event_loop_cannot_detach) ... ok
+test_owner_epoch_object_replaced_refused (__main__.LifecycleCases.test_owner_epoch_object_replaced_refused) ... ok
+test_pending_real_adapter_task_not_cancelled (__main__.LifecycleCases.test_pending_real_adapter_task_not_cancelled) ... ok
+test_pending_runner_task_after_detach_refuses_close (__main__.LifecycleCases.test_pending_runner_task_after_detach_refuses_close) ... FAIL
+test_same_epoch_value_different_object_not_learned (__main__.LifecycleCases.test_same_epoch_value_different_object_not_learned) ... ok
+test_second_prepare_never_replaces_consumer (__main__.LifecycleCases.test_second_prepare_never_replaces_consumer) ... ok
+test_source_gate_before_constructor_and_reserved_close (__main__.LifecycleCases.test_source_gate_before_constructor_and_reserved_close) ... ok
+test_source_manifest_refusal_does_not_close_owner (__main__.LifecycleCases.test_source_manifest_refusal_does_not_close_owner) ... ok
+test_source_unknown_import_is_refused (__main__.LifecycleCases.test_source_unknown_import_is_refused) ... ok
+test_unknown_cleanup_is_not_retried (__main__.LifecycleCases.test_unknown_cleanup_is_not_retried) ... ok
+
+======================================================================
+FAIL: test_actual_epoch_changed_after_detach_refuses_close (__main__.LifecycleCases.test_actual_epoch_changed_after_detach_refuses_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-s124b1\scripts\qa\s124b1_native_consumer.py", line 176, in test_actual_epoch_changed_after_detach_refuses_close
+    try:self.blocked_close()
+        ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-s124b1\scripts\qa\s124b1_native_consumer.py", line 61, in blocked_close
+    with self.assertRaises((consumer.PreparedConsumerRejected,startup.StoreStartupRejected)):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>) not raised
+
+======================================================================
+FAIL: test_pending_runner_task_after_detach_refuses_close (__main__.LifecycleCases.test_pending_runner_task_after_detach_refuses_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-s124b1\scripts\qa\s124b1_native_consumer.py", line 184, in test_pending_runner_task_after_detach_refuses_close
+    try:self.blocked_close();self.assertFalse(task.cancelled())
+        ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-s124b1\scripts\qa\s124b1_native_consumer.py", line 61, in blocked_close
+    with self.assertRaises((consumer.PreparedConsumerRejected,startup.StoreStartupRejected)):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>) not raised
+
+----------------------------------------------------------------------
+Ran 20 tests in 89.922s
+
+FAILED (failures=2)
+
