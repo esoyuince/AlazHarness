@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T18:31:36.970407+03:00",
+  "sourceHashes": {
+    "scripts/qa/c120a_native_turnrunner.py": "6e5e00ad312cde804a37eaefc0718146efbaba5cc8666fc91f97d238142ad64f",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61",
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "11f2165b03bfa8c92d7d32cd441d93759d531ca9d337f340031b0222ff5bf5a5"
+  },
+  "newNamedReadOnlyWorkerObserver": true,
+  "earlier8CasesRetained": "native-001",
+  "nativeChanges": false
+}

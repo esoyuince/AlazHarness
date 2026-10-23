@@ -1,0 +1,11 @@
+{
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "sourceHashes": {
+    "gateway/run.py": "b06201243d8750ee5b2391826f90d4f2a9d98100701fba0b53f358141c6ce8f9",
+    "gateway/run_turn.py": "3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72",
+    "gateway/run_turn_runner.py": "b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c",
+    "gateway/session_execution.py": "6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660",
+    "gateway/session_runtime_workers.py": "3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b"
+  },
+  "scope": "new additive named read-only TurnRunner/worker closure correlation; no new registry/scheduler/admission or readiness"
+}

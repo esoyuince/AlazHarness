@@ -1,0 +1,118 @@
+"""Pure snapshot boundary checks and offline C120 native proof custody.
+
+No native imports, worker launch or HTTP execution occurs in this standard test.
+The14 genuine native methods were separately executed; their source is pinned.
+"""
+import ast,hashlib,json,sys,unittest
+from pathlib import Path
+from dataclasses import FrozenInstanceError
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import gateway_canonical_turn_observation as t
+E=ROOT/'evidence/d3b-turnrunner-c120a'
+
+class NativeTurnProof(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.r=json.loads((E/'native-003-fixed/result.json').read_text(encoding='utf-8'))
+        cls.c=json.loads((E/'native-fixed-source-custody.json').read_text(encoding='utf-8'))
+    def test_terminal_native_fifteen_and_exact_current_sources(self):
+        self.assertEqual((self.r['result'],self.r['total'],self.r['passed'],self.r['errors'],self.r['failures'],self.r['skipped']),('PASS_NATIVE_TURNRUNNER_CALLSITE',15,15,0,0,0))
+        intent=json.loads((E/'native-final-source-acceptance.json').read_text(encoding='utf-8'))
+        self.assertEqual(self.r['sourceHashes'],intent['sourceHashes'])
+        for n,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+        self.assertEqual(self.c['nativeResultSha256'],hashlib.sha256((E/'native-003-fixed/result.json').read_bytes()).hexdigest())
+    def test_actual_native_imports_equal_immutable_feature_and_product_pins(self):
+        self.assertEqual(self.c['feature'],t.NATIVE_FEATURE)
+        self.assertEqual(self.c['actualImportCount'],541)
+        self.assertEqual({n:v['sha256'] for n,v in self.c['actualImports'].items()},self.r['nativeImports'])
+        for n,h in t.SOURCE_HASHES.items():self.assertEqual(self.r['nativeImports'][n],h,n)
+        self.assertFalse(self.c['originalNativeCodeChanged']);self.assertTrue(self.c['nativeWorktreeClean'])
+    def test_real_adoption_calls_came_from_native_turnrunner_not_fixture(self):
+        records=self.r['caseEnd'];self.assertEqual(len(records),15)
+        proof_count=0
+        for row in records:
+            calls=[p for p in row['nativeProfileEvents'] if p['event']=='call' and p['method']=='adopt_agent']
+            for call in calls:
+                self.assertTrue(call['authorityIsOriginal']);self.assertTrue(call['callerIsNativeWire'])
+                self.assertEqual(call['caller'],'_wire_turn_agent_callbacks');self.assertGreater(call['nativeThread'],0)
+                self.assertGreater(call['generation'],0);proof_count+=1
+        self.assertEqual(proof_count,13)
+        code=ast.parse((ROOT/'scripts/qa/c120a_native_turnrunner.py').read_text(encoding='utf-8'))
+        direct=[n for n in ast.walk(code) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='adopt_agent']
+        self.assertEqual(direct,[])
+    def test_real_cancelled_waiter_retained_native_worker_then_cleanup(self):
+        rows=[o for o in self.r['observations'] if o.get('cancelledExecutorTask')]
+        self.assertEqual(len(rows),1);self.assertFalse(rows[0]['workerDone']);self.assertTrue(rows[0]['nativePhysicalRegistryRetained']);self.assertFalse(rows[0]['positiveHealthClaim'])
+        cancelled=[o['turnObservation'] for o in self.r['observations'] if o['case']=='test_watcher_cancellation_does_not_end_turn_worker' and 'turnObservation' in o]
+        self.assertEqual(len(cancelled),2);self.assertFalse(cancelled[0]['carrierCancelled']);self.assertTrue(cancelled[1]['carrierCancelled'])
+        self.assertTrue(cancelled[1]['canonicalTaskLive']);self.assertFalse(cancelled[1]['nativeWorkerCompletionObserved'])
+    def test_all_profiles_physical_workers_and_executor_waiters_clean(self):
+        self.assertTrue(self.r['ownershipReleased']);self.assertTrue(self.r['temporaryImportHomeRemoved'])
+        self.assertEqual(self.r['registry'],{'live_generations':0,'retired_generations':0,'total_refcounts':0})
+        for row in self.r['caseEnd']:
+            for key in ('candidateHomeRemoved','allPhysicalWorkersDone','allExecutorTasksDone','nativePhysicalRegistryEmpty'):
+                self.assertIs(row[key],True,(row['case'],key))
+    def test_all_native_case_lines_and_scope_honesty(self):
+        text=(E/'native-003-fixed/tests.txt').read_text(encoding='utf-8')
+        names=[l.split(' ',1)[0] for l in text.splitlines() if l.startswith('test_') and l.endswith(' ... ok')]
+        self.assertEqual(len(names),15);self.assertEqual(len(set(names)),15)
+        self.assertEqual(set(names),{e['case'] for e in self.r['caseEnd']})
+        for key in ('actualTurnRunnerRunSync','actualNativeAdoptionCallSite','actualNativePhysicalWorkerTracking','namedWorkerObservationTested','runnerConfigCredentialDeliveryFacadeDoubled','agentFactoryAndComputationDoubled'):
+            self.assertIs(self.r[key],True,key)
+        for key in ('completeAIAgentTested','sharedBorrowedBootstrapTested','healthyBusyHttpTested','kernelIsolationTested','httpListenerStarted','rootOrWslAction'):
+            self.assertIs(self.r[key],False,key)
+        self.assertEqual(self.r['providerCalls'],0)
+    def test_readonly_observation_and_denied_import_probe_not_hidden(self):
+        self.assertEqual((self.r['audit']['connects'],self.r['audit']['dbopens']),(0,0))
+        self.assertEqual(self.r['audit']['network'],1)
+        event=self.r['audit']['deniedNetworkEvents'][0]
+        self.assertEqual(event['event'],'socket.bind');self.assertIn('_has_ipv6',[f['function'] for f in event['frames']])
+        observations=[o for o in self.r['observations'] if 'turnObservation' in o]
+        self.assertEqual(len(observations),14)
+        for o in observations:
+            self.assertEqual((o['sqlWrites'],o['databaseOpens']),(0,0));body=o['turnObservation']
+            self.assertEqual(body['state'],'CANONICAL_TURN_WORKER_CORRELATED')
+            for key in ('physicalWorkerResponsivenessVerified','allAgentWorkObserved','serviceReadinessVerified','runtimeAdmissionAuthorized','retryAuthorized','storeReleaseAuthorized'):self.assertIs(body[key],False)
+    def test_real_normal_completion_race_failed_before_and_passes_after(self):
+        old=json.loads((E/'completion-race-before/result.json').read_text(encoding='utf-8'))
+        self.assertEqual((old['total'],old['passed'],old['errors']),(1,0,1))
+        self.assertEqual(old['result'],'FAIL')
+        log=(E/'completion-race-before/tests.txt').read_text(encoding='utf-8')
+        self.assertIn('TurnWorkerRejected: turn_worker_binding_unconfirmed',log)
+        method='test_real_completion_during_probe_is_transient'
+        self.assertIn(method,[r['case'] for r in self.r['caseEnd']])
+        self.assertIn(method,(E/'native-003-fixed/tests.txt').read_text(encoding='utf-8'))
+        name='packages/claw-hermes/gateway_canonical_turn_observation.py'
+        self.assertEqual(old['sourceHashes'][name],hashlib.sha256((E/'observer-before-completion-fix.py.txt').read_bytes()).hexdigest())
+        self.assertNotEqual(old['sourceHashes'][name],self.r['sourceHashes'][name])
+    def test_old_smoke_and_eight_case_runs_remain_distinct(self):
+        old=json.loads((E/'native-001/result.json').read_text(encoding='utf-8'))
+        smoke=json.loads((E/'smoke-001/result.json').read_text(encoding='utf-8'))
+        self.assertEqual((old['total'],old['passed']),(8,8));self.assertEqual((smoke['total'],smoke['passed']),(1,1))
+        self.assertEqual(old['sourceHashes']['scripts/qa/c120a_native_turnrunner.py'],hashlib.sha256((E/'qa-native001-source.py.txt').read_bytes()).hexdigest())
+        self.assertEqual(smoke['sourceHashes']['scripts/qa/c120a_native_turnrunner.py'],hashlib.sha256((E/'qa-smoke001-source.py.txt').read_bytes()).hexdigest())
+        self.assertNotEqual(old['sourceHashes']['scripts/qa/c120a_native_turnrunner.py'],self.r['sourceHashes']['scripts/qa/c120a_native_turnrunner.py'])
+
+class PureSnapshotBoundary(unittest.TestCase):
+    def test_wrong_binding_rejected_before_any_native_import(self):
+        with patch.object(t.importlib,'import_module',side_effect=AssertionError('native import')):
+            for value in (None,{},object(),True):
+                with self.assertRaises(t.TurnWorkerRejected):t.NativeTurnWorkerObserver(value)
+    def test_reentrant_call_does_not_touch_canonical(self):
+        o=object.__new__(t.NativeTurnWorkerObserver);o._fault=False;o._reading=True
+        with self.assertRaisesRegex(t.TurnWorkerRejected,'turn_worker_reentrant'):o.capture('run')
+    def test_reconciliation_stays_latched(self):
+        o=object.__new__(t.NativeTurnWorkerObserver);o._fault=True
+        with self.assertRaisesRegex(t.TurnWorkerRejected,'turn_worker_requires_reconciliation'):o.capture('run')
+    def test_snapshot_is_immutable(self):
+        s=t.TurnWorkerSnapshot(1,2,True,False,False,True,10)
+        with self.assertRaises(FrozenInstanceError):s.generation=3
+    def test_snapshot_does_not_grant_service_or_recovery_authority(self):
+        body=t.TurnWorkerSnapshot(1,2,True,True,True,True,10).public()
+        self.assertTrue(body['carrierCancelled']);self.assertFalse(body['nativeWorkerCompletionObserved'])
+        self.assertNotIn('healthy',body);self.assertNotIn('run_id',body)
+        self.assertFalse(body['serviceReadinessVerified']);self.assertFalse(body['runtimeAdmissionAuthorized'])
+        self.assertFalse(body['retryAuthorized']);self.assertFalse(body['storeReleaseAuthorized'])
+if __name__=='__main__':unittest.main()

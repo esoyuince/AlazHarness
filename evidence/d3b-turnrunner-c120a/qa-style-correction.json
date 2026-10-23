@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T18:48:05.500811+03:00",
+  "earlierCommitFinalizer": "b219a3d7-1023-4fa1-9ac4-219000000029",
+  "stoppedBeforeCommit": true,
+  "cause": "git diff --check rejected four trailing spaces on an otherwise blank QA line231",
+  "changedLines": [
+    231
+  ],
+  "oldSha256": "82ba048712bcc04513528a3b345c887ecd3f405841f07cd54932da947b306311",
+  "newSha256": "4f8f442e19e407148216c3d4945acaf8c83fcd5b15b007cfe5c16f57daac89f3",
+  "astIncludingLocationsIdentical": true,
+  "productSourceUnchanged": true,
+  "checksWeakened": false,
+  "oldExecutedQaBytesRetained": true,
+  "nativeAndStandardWillBeQualifiedOnCleanExactBytes": true
+}

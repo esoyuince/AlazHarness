@@ -1,0 +1,33 @@
+"""Exploratory regression: actual native worker completes DURING observer read.
+Only the agent-factory fixture attribute hook triggers the physical worker exit.
+No native class/method, registry or completion event is fabricated or replaced.
+"""
+from pathlib import Path
+import sys,threading,time
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts/qa'))
+import c120a_native_turnrunner as qa
+
+async def race(self):
+    rid,task=await self.submit();self.observe_live(rid)
+    agent=self.agent_instances[0];cls=type(agent);original=cls.__getattribute__
+    worker=self.workers[0];owner_thread=threading.get_ident();armed=True
+    def exit_during_read(obj,name):
+        nonlocal armed
+        if name=='_gateway_turn_process_task_id' and armed and threading.get_ident()==owner_thread:
+            armed=False;self.thread_release.set()
+            assert worker.worker_done.wait(5),'real worker did not exit'
+            end=time.monotonic()+2
+            while original(obj,name)!='':
+                assert time.monotonic()<end,'native wrapper did not clear its scope'
+                time.sleep(.001)
+        return original(obj,name)
+    cls.__getattribute__=exit_during_read
+    try:
+        with self.assertRaises(qa.turns.TurnWorkerUnavailable):self.observe_worker(rid)
+        self.assertFalse(self.turn_observer._fault,'normal completion poisoned diagnostic binding')
+    finally:cls.__getattribute__=original
+    await self.finish(rid,task)
+
+qa.TurnRunnerCases.test_real_completion_during_probe_is_transient=race
+if __name__=='__main__':raise SystemExit(qa.main())

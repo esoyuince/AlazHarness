@@ -1,0 +1,2 @@
+scripts/qa/c120a_native_turnrunner.py:231: trailing whitespace.
++    

@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3147,
+  "discovered": 3147,
+  "passed": 3124,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 490,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "originalSourceCountUnchanged": 487,
+  "elapsedSeconds": 308.306,
+  "at": "2026-10-23T18:40:08.416761+03:00",
+  "scope": "new full standard regression for additive native TurnRunner worker observation;14 native fixture cases separate; no shared bootstrap/HTTP/root activation"
+}

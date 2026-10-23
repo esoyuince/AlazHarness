@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T18:38:18.102382+03:00",
+  "candidateRoot": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-turnrunner-c120a\\scratch\\c120a-fixed",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "782358334180e44e94989945f2de888edde5be569e830df4041f225f49faf285",
+    "scripts/qa/c120a_native_turnrunner.py": "82ba048712bcc04513528a3b345c887ecd3f405841f07cd54932da947b306311"
+  },
+  "reason": "native worker_done is set before agent scope clear; recheck completion before classifying changed scope as ownership corruption",
+  "existingFullRunSourcesChanged": false,
+  "fullRunInProgressSourceSetPreserved": true,
+  "nativeSourceModified": false,
+  "newPositiveHealthPermission": false
+}

@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-23T18:44:22.856651+03:00",
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "inspectedSources": {
+    "gateway/session.py": "632d8e541b07262b8af3006905d1719fdce1cd011b5573043a14380a9ceb0933",
+    "gateway/platforms/api_server_borrowed.py": "16e02e6e513d01c4ae5082ad755d9615c6b6e9d08464ec21514e7bd57b3c73f8"
+  },
+  "observedConstraints": [
+    "SessionStore constructor has no existing-state parameter and primes an active-scope connection via _open_session_db_for_active_scope",
+    "BorrowedAPIStores requires caller-owned non-registry SessionDB and same canonical response binding",
+    "BorrowedAPIStores deliberately refuses adapter.gateway_runner through borrowed_runner_conflict"
+  ],
+  "nextRequiredWork": "explicit source-pinned caller-owned SessionStore/canonical-runner bootstrap contract, with zero extra connections and close ownership proof before relaxing any adapter compatibility guard",
+  "notImplementedHere": true,
+  "manualPrivateFieldAssignmentAcceptedAsBootstrap": false,
+  "guardRelaxed": false,
+  "nativeSourceModified": false
+}

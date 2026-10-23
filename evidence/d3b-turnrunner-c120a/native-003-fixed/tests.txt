@@ -1,0 +1,20 @@
+test_actual_native_turnrunner_adopts_and_settles (__main__.TurnRunnerCases.test_actual_native_turnrunner_adopts_and_settles) ... ok
+test_adopted_reference_without_native_worker_is_not_correlated (__main__.TurnRunnerCases.test_adopted_reference_without_native_worker_is_not_correlated) ... ok
+test_cancelled_executor_waiter_still_retains_physical_thread (__main__.TurnRunnerCases.test_cancelled_executor_waiter_still_retains_physical_thread) ... ok
+test_completed_worker_is_not_reported_active (__main__.TurnRunnerCases.test_completed_worker_is_not_reported_active) ... ok
+test_compute_failure_releases_physical_worker_and_terminal_claim (__main__.TurnRunnerCases.test_compute_failure_releases_physical_worker_and_terminal_claim) ... ok
+test_factory_block_is_claimed_but_not_yet_adopted (__main__.TurnRunnerCases.test_factory_block_is_claimed_but_not_yet_adopted) ... ok
+test_native_auth_refusal_never_constructs_turn_or_worker (__main__.TurnRunnerCases.test_native_auth_refusal_never_constructs_turn_or_worker) ... ok
+test_native_idempotent_request_creates_no_second_worker (__main__.TurnRunnerCases.test_native_idempotent_request_creates_no_second_worker) ... ok
+test_real_completion_during_probe_is_transient (__main__.TurnRunnerCases.test_real_completion_during_probe_is_transient) ... ok
+test_registry_replacement_cannot_be_adopted (__main__.TurnRunnerCases.test_registry_replacement_cannot_be_adopted) ... ok
+test_running_worker_does_not_authorize_observer_release (__main__.TurnRunnerCases.test_running_worker_does_not_authorize_observer_release) ... ok
+test_turn_observer_never_claims_service_health_or_release (__main__.TurnRunnerCases.test_turn_observer_never_claims_service_health_or_release) ... ok
+test_unrelated_waiter_cannot_replace_real_native_executor (__main__.TurnRunnerCases.test_unrelated_waiter_cannot_replace_real_native_executor) ... ok
+test_watcher_cancellation_does_not_end_turn_worker (__main__.TurnRunnerCases.test_watcher_cancellation_does_not_end_turn_worker) ... ok
+test_wrong_turn_context_generation_sticks_without_cancelling_native_work (__main__.TurnRunnerCases.test_wrong_turn_context_generation_sticks_without_cancelling_native_work) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 26.008s
+
+OK

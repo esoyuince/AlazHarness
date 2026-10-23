@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T18:25:42.485584+03:00",
+  "sources": {
+    "scripts/qa/c120a_native_turnrunner.py": "844b87b168830e7bcd22a110e93c077ccdeacff890fc83e255da1a7a080aebc9",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61",
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830"
+  },
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "case": "test_actual_native_turnrunner_adopts_and_settles",
+  "scope": "real unchanged TurnRunner native factory callsite and native worker registry, with explicit facade/agent fixture; no root/network/model"
+}

@@ -1,54 +1,53 @@
 # AlazHarness - status
 
-## D3B-CANONICAL-BINDING-C119V1 - DEVELOPMENT-INTEGRATED; NAMED CANONICAL CORRELATION PASS
+## D3B-TURNRUNNER-C120A - SCOPED PASS; CANONICAL DELIVERY PENDING
 
-Canonical branch alaz/d3b-principal-launch-21oct; worktree
-C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Basee814e4c. One additive gateway_canonical_run_binding companion; existing native
-RunLifecycleChannel/SessionAuthority/SessionStore/API admission/FIFO/claim/settle
-remain unchanged. No new native patch, scheduler, ledger or task owner.
+Branch alaz/d3b-turnrunner-c120a, worktree scratch/worktrees/d3b-turnrunner-c120a.
+Base80e15b4. Added gateway_canonical_turn_observation; C119 and all487 earlier
+sources unchanged. No native patch, scheduler, worker registry or installed update.
 
-Native immutable request binding is matched to committed canonical admission,
-current epoch/session generation and actual native _drain coroutine/self/route.
-API observer is not executor. Cancelled watcher leaves canonical claim visible;
-native settlement and replay-terminal/carrier-retirement required to release
-ONLY diagnostic references. No cancel/write/rollback/native-map change/store close.
-Bounded main-qualified parameterized reads and existing locks; contention/open
-transaction/settling transition unavailable, identity/source mismatch sticky.
-No positive service/all-work/physical-worker/profile-mount/payload-digest or
-admission/retry/store-release authority. Keyed standard non-borrowed API path only.
-Borrowed gateway_runner conflict MUST remain enforced.
+Named canonical claim correlates with existing native worker record, exact native
+executor coroutine and completion-wrapper closure, bound TurnRunner.run_sync,
+TurnContext/session/route/generation/agent holder and adopted reference. Both
+claim and worker are bracketed; adopted object/live Task alone is not enough.
+No task cancel/create/remove, database write/reopen or ownership release. No
+service health/all-work inventory/admission/retry/store-release authority.
 
-CURRENT native00227/27PASS;501 actual native imports matched943Git. Real native
-API auth/provenance/preparation/admission/FIFO/claim/Task maps/settlement. Runner
-facade and compute _handle_message boundary are doubles. Real adopt_agent method
-called from that double; actual TurnRunner/AIAgent adoption callsite NOT tested.
-Windows only. Separate trusted schema control closes before candidate profiles.
-Observer SQL writes/connects/rawDBopens0; profiles removed/registry refs0.
-Import-time _has_ipv6 bind(::1,0) was DENIED by audit before effect, not zero attempts.
-No provider/model/listener/root/WSL/mount activity by native fixture.
+Current real native15/15PASS through native worker starter and TurnRunner actual
+adoption callsite. API auth/admission/FIFO/claim/settlement are real. Config/credential/
+delivery facade, agent factory and model calculation remain explicit fixtures.
+Whole GatewayRunner/AIAgent/shared-borrowed bootstrap and active-work HTTP/Linux
+isolation are NOT ACCEPTED. Native source94321058 unchanged and not installed.
 
-NEW fullWindows3134=3111PASS/23SKIP/0ERROR/0FAIL.487 source hashes and4patch hashes
-stable; ALL483 existing sources unchanged.15 selected =9pure+6offline receipts,
-subsets of full, not15 additional native scenarios. Old23platform/opt-in skips
-not rerun; native upstream full suite not run. Historical24 native PASS retained
-with original source snapshots. Exponent1e9999 acceptance regression FAILED before
-fix then passed; final native27 proves corrected parser and native coroutine guard.
-Interrupted request00013 never executed per receipt+readback; no unknown replay.
+Real completion-race regression FAILED on initial observer: normal worker exit
+cleared agent scope during read and falsely latched permanent rejection. Narrow
+worker_done recheck now yields UNAVAILABLE. Wrong generation/registry/coroutine
+still fail closed. Failed receipt and original sources retained. No native rules
+or borrowed_runner_conflict guard relaxed. A QA blank-line whitespace gate also
+stopped commit; fixed without disabling gate, exact clean sources requalified.
 
-Installed vendor/source lockeb75627 and maincc7ceba unchanged. No push/CIqueue/
-production/account/old blocked cleanup retry. Existing483 files preserved.
-Next actual TurnRunner/physical-worker adoption plus immutable request identity in
-shared caller-owned canonical bootstrap; qualify lifetime/profile/mount/three-store
-isolation BEFORE healthy/busy HTTP. No fake admissions or borrowed guard removal.
-FullD3B/live-ledger/model dispatch/cross-store recovery/powerloss remain OPEN.
+LATEST complete clean-source Windows3148=3125PASS/23SKIP/0ERROR/0FAIL exit0.
+490 source/config/test hashes +4patch hashes exact. ALL487 original files unchanged.
+LATEST native004-clean15/15PASS;541 actual native imports matched immutable Git.
+14 selected standard tests=5pure+9offline receipts, not14 native reruns. Earlier
+smoke1/native8/native14/native15/full3147/full3148 retained historically, NOT summed.
+23 old platform/opt-in skips not rerun; native upstream full suite not executed.
+Every candidate profile removed, native ownership/physical-worker registry empty,
+executor waiters terminal. Import IPv6 capability bind DENIED and recorded; no
+provider/model/listener/root/WSL action. Native journal warnings unchanged.
 
-Report docs/D3B-CANONICAL-BINDING-C119V1.md. Evidence under
- evidence/d3b-canonical-binding-c119v1/: summary.json,native-002/result.json,
- source-custody.json,scope-review.json,full-windows-result.json,
- full-source/patch manifests, selected-final.txt,static-final.txt.
-Prior handoffs docs/status-history/c119v1-*.md. All native/full jobs terminal.
+Next needs explicit caller-owned SessionStore/canonical-runner bootstrap. Current
+SessionStore opens active-scope registry handle during construction; borrowed API
+stores require non-registry ownership and reject attached gateway_runner. Private
+field assignment after construction or guard removal is not accepted integration.
+Then profile/mount/three-store same-path isolation before active-work HTTP health.
+FullD3B/live-ledger/cross-store recovery/powerloss remain OPEN; legacyIPCv2 CLOSED.
+Prior blocked cleanup/source-check attempts NOT retried. No CIqueue/production/
+account/main/push change. Installed vendoreb75627, maincc7ceba unchanged.
 
-### Exact delivery
-
-Tested source 68f1b833d633766a2a3c958572bcc7281243337e; previous canonical e814e4cc771f40f49f4ecd7753c9cf15ec913255 fast-forwarded. Source487/patch4 hashes identical, final15selected methods PASS. Main/vendor/source lock unchanged; no push. See delivery.json for scope and current GitHEAD for final docs commit. No native/full replay needed to resume.
+Report docs/D3B-TURNRUNNER-C120A.md. Evidence evidence/d3b-turnrunner-c120a/:
+summary.json, native-004-clean/result.json, native-clean-source-custody.json,
+clean-full-windows-result.json, clean-full source/patch before-after manifests,
+selected-clean-source.txt, static-clean-source.txt. Earlier failed/successful
+receipts and parent/work logs retained. All native/full jobs terminal. Commit
+and clean canonical fast-forward delivery follow without runtime activation.

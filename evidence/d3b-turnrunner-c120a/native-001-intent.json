@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T18:27:34.120390+03:00",
+  "sourceHashes": {
+    "scripts/qa/c120a_native_turnrunner.py": "089c8e4021e5a8cd1e0f30eaeb6fe43947fa52a2dd39ed80cf0d528cff77cf35",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61",
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830"
+  },
+  "nativeFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "scope": "8 genuine native TurnRunner-path cases, model/factory/config/delivery facade explicit",
+  "oldSmokeSourcePreserved": true,
+  "cancellationFixtureRetiresItsOwnDanglingApiWatcher": true,
+  "noAutomaticProductRecovery": true
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-23T18:50:29.178414+03:00",
+  "sourceHashes": {
+    "scripts/qa/c120a_native_turnrunner.py": "4f8f442e19e407148216c3d4945acaf8c83fcd5b15b007cfe5c16f57daac89f3",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61",
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "782358334180e44e94989945f2de888edde5be569e830df4041f225f49faf285"
+  },
+  "nativeCases": 15,
+  "nativeResult": "native-004-clean/result.json",
+  "rawResultSha256": "11838343e9c47c14202c76150cee6e57cfb241d31a2919dda9804c786e571d2d",
+  "productSourceUnchangedFromRaceFix": true,
+  "nativeCodeModified": false
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-23T18:41:14.643107+03:00",
+  "sourceHashes": {
+    "scripts/qa/c120a_native_turnrunner.py": "82ba048712bcc04513528a3b345c887ecd3f405841f07cd54932da947b306311",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61",
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "782358334180e44e94989945f2de888edde5be569e830df4041f225f49faf285"
+  },
+  "nativeCases": 15,
+  "nativeResult": "native-003-fixed/result.json",
+  "rawResultSha256": "8c4847eaa00d8ea45c089a8c4eb2ec85409446418f056e73da3318b3ff4579cf",
+  "firstFullRunTerminalBeforeApply": true,
+  "firstFullRunIsHistoricalNotCurrentAcceptance": true,
+  "nativeTreeModified": false
+}

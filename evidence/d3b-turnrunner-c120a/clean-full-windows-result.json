@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3148,
+  "discovered": 3148,
+  "passed": 3125,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 490,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "originalSourceCountUnchanged": 487,
+  "elapsedSeconds": 307.918,
+  "at": "2026-10-23T18:55:43.791101+03:00",
+  "scope": "complete exact clean delivery-source suite after native completion-race correction and QA blank-line whitespace repair; no borrowed bootstrap or HTTP/isolation activation"
+}

@@ -1,0 +1,19 @@
+test_actual_native_imports_equal_immutable_feature_and_product_pins (test_canonical_turn_observation_c120a.NativeTurnProof.test_actual_native_imports_equal_immutable_feature_and_product_pins) ... ok
+test_all_native_case_lines_and_scope_honesty (test_canonical_turn_observation_c120a.NativeTurnProof.test_all_native_case_lines_and_scope_honesty) ... ok
+test_all_profiles_physical_workers_and_executor_waiters_clean (test_canonical_turn_observation_c120a.NativeTurnProof.test_all_profiles_physical_workers_and_executor_waiters_clean) ... ok
+test_old_smoke_and_eight_case_runs_remain_distinct (test_canonical_turn_observation_c120a.NativeTurnProof.test_old_smoke_and_eight_case_runs_remain_distinct) ... ok
+test_readonly_observation_and_denied_import_probe_not_hidden (test_canonical_turn_observation_c120a.NativeTurnProof.test_readonly_observation_and_denied_import_probe_not_hidden) ... ok
+test_real_adoption_calls_came_from_native_turnrunner_not_fixture (test_canonical_turn_observation_c120a.NativeTurnProof.test_real_adoption_calls_came_from_native_turnrunner_not_fixture) ... ok
+test_real_cancelled_waiter_retained_native_worker_then_cleanup (test_canonical_turn_observation_c120a.NativeTurnProof.test_real_cancelled_waiter_retained_native_worker_then_cleanup) ... ok
+test_real_normal_completion_race_failed_before_and_passes_after (test_canonical_turn_observation_c120a.NativeTurnProof.test_real_normal_completion_race_failed_before_and_passes_after) ... ok
+test_terminal_native_fifteen_and_exact_current_sources (test_canonical_turn_observation_c120a.NativeTurnProof.test_terminal_native_fifteen_and_exact_current_sources) ... ok
+test_reconciliation_stays_latched (test_canonical_turn_observation_c120a.PureSnapshotBoundary.test_reconciliation_stays_latched) ... ok
+test_reentrant_call_does_not_touch_canonical (test_canonical_turn_observation_c120a.PureSnapshotBoundary.test_reentrant_call_does_not_touch_canonical) ... ok
+test_snapshot_does_not_grant_service_or_recovery_authority (test_canonical_turn_observation_c120a.PureSnapshotBoundary.test_snapshot_does_not_grant_service_or_recovery_authority) ... ok
+test_snapshot_is_immutable (test_canonical_turn_observation_c120a.PureSnapshotBoundary.test_snapshot_is_immutable) ... ok
+test_wrong_binding_rejected_before_any_native_import (test_canonical_turn_observation_c120a.PureSnapshotBoundary.test_wrong_binding_rejected_before_any_native_import) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.173s
+
+OK

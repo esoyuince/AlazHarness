@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3148,
+  "discovered": 3148,
+  "passed": 3125,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 490,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "originalSourceCountUnchanged": 487,
+  "elapsedSeconds": 234.452,
+  "at": "2026-10-23T18:45:43.546268+03:00",
+  "scope": "new complete corrected-source suite after genuine normal-completion race regression and narrow fix; no native API/bootstrap/isolation activation"
+}

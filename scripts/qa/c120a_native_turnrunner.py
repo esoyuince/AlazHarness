@@ -1,0 +1,296 @@
+"""Actual native TurnRunner worker/adoption path behind API authority admission.
+
+The runner's credential/config/delivery facade and agent factory+computation are
+explicit fixture boundaries. TurnRunner, worker scheduling/registry/done marker,
+authority admission/claim/adoption/settlement and API auth/provenance are REAL.
+No installed feature, shared borrowed bootstrap, complete AIAgent or HTTP claim.
+"""
+import argparse,asyncio,hashlib,json,os,sys,tempfile,threading,time,unittest
+from pathlib import Path
+from types import MethodType,SimpleNamespace
+from concurrent.futures import ThreadPoolExecutor
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'scripts/qa')]
+import c119v1_native_canonical as base
+import gateway_canonical_run_binding as binding
+import gateway_live_store_gate as live
+import gateway_canonical_turn_observation as turns
+OBS=[];CASE_END=[]
+
+class TurnRunnerCases(unittest.IsolatedAsyncioTestCase):
+    loop_factory=staticmethod(base.CanonicalCases.loop_factory)
+    submit=base.CanonicalCases.submit
+    capture=base.CanonicalCases.capture
+    async def asyncSetUp(self):
+        self.thread_release=threading.Event();self.factory_gate=threading.Event();self.factory_gate.set()
+        self.pool=None;self.workers=[];self.turns=[];self.agent_instances=[];self.profile_events=[]
+        self.failed_compute=False
+        await base.CanonicalCases.asyncSetUp(self)
+        self.loop=asyncio.get_running_loop();self.build_entered=asyncio.Event()
+        owner=self
+        codes={TurnRunner.run_sync.__code__:'run_sync',TurnRunner._wire_turn_agent_callbacks.__code__:'wire_callbacks',
+               base.SessionAuthority.adopt_agent.__code__:'adopt_agent',
+               TurnRunner._run_conversation_with_approval.__code__:'conversation_boundary'}
+        def profile(frame,event,arg):
+            if event not in ('call','return') or frame.f_code not in codes:return
+            record={'event':event,'method':codes[frame.f_code],'thread':threading.get_ident(),'nativeThread':threading.get_native_id(),
+                    'caller':frame.f_back.f_code.co_name if frame.f_back else None}
+            if frame.f_code is base.SessionAuthority.adopt_agent.__code__:
+                record.update(authorityIsOriginal=frame.f_locals.get('self') is owner.authority,
+                    sessionId=frame.f_locals.get('session_id'),generation=frame.f_locals.get('generation'),
+                    callerIsNativeWire=frame.f_back.f_code is TurnRunner._wire_turn_agent_callbacks.__code__)
+            owner.profile_events.append(record)
+        self.pool=ThreadPoolExecutor(max_workers=1,thread_name_prefix='owned-c120',initializer=lambda:sys.setprofile(profile))
+        class ComputeFixture:
+            def __init__(agent,**kwargs):
+                owner.loop.call_soon_threadsafe(owner.build_entered.set)
+                if not owner.factory_gate.wait(15):raise TimeoutError('owned_factory_fixture_timeout')
+                agent.session_id=kwargs['session_id'];agent.model=kwargs['model'];agent.tools=[]
+                agent.session_prompt_tokens=0;agent.session_completion_tokens=0;agent.session_output_tokens=0
+                agent.context_compressor=SimpleNamespace(compression_count=0,last_prompt_tokens=0,context_length=4096)
+                agent.kwargs=kwargs;agent.interrupted=False;agent.steers=[]
+                owner.agent_instances.append(agent)
+            def clear_interrupt(agent):agent.interrupted=False
+            def interrupt(agent,*args,**kwargs):agent.interrupted=True
+            def steer(agent,text):agent.steers.append(text)
+            def run_conversation(agent,message,**kwargs):
+                owner.compute_calls+=1;owner.loop.call_soon_threadsafe(owner.entered.set)
+                if not owner.thread_release.wait(15):raise TimeoutError('owned_compute_fixture_timeout')
+                if owner.failed_compute:raise RuntimeError('owned_compute_fixture_failure')
+                return {'final_response':'offline native TurnRunner result','messages':[],
+                        'completed':True,'api_calls':0,'tools':[]}
+        self.factory=ComputeFixture
+        runner=self.runner
+        runner._get_executor=lambda:self.pool
+        runner._run_in_executor_with_context=MethodType(GatewayRunner._run_in_executor_with_context,runner)
+        runner._RunAgentWorker=GatewayRunner._RunAgentWorker
+        runner._is_session_run_current=lambda key,generation:True  # facade gate, not ownership evidence
+        runner._provider_routing={};runner._prefill_messages=None;runner._agent_cache=None;runner._agent_cache_lock=None
+        runner._service_tier=None;runner._reasoning_config=None
+        runner._resolve_session_agent_runtime=lambda **kw:('owned-fixture',{'provider':'custom','api_key':'owned-offline-fixture','base_url':'http://127.0.0.1:9/v1'})
+        runner._resolve_session_reasoning_config=lambda **kw:None
+        runner._resolve_session_service_tier=lambda **kw:None
+        runner._resolve_turn_agent_config=lambda msg,model,kw:{'model':model,'runtime':kw}
+        runner._agent_config_signature=lambda *args,**kw:'owned-signature'
+        runner._extract_cache_busting_config=lambda cfg:{}
+        runner._refresh_fallback_model=lambda:None
+        runner._consume_pending_turn_sidecar_notes=lambda key:[]
+        runner._consume_pending_native_image_paths=lambda key:[]
+        runner._sync_session_model_from_agent=lambda *args:None
+        async def turn_message(event):
+            node=self.authority.sessions[event.source.chat_id]
+            ctx=TurnContext(source=event.source,session_id=event.source.chat_id,session_key=node.route,
+                run_generation=node.event_stream.execution['execution_generation'],message=event.text,history=[],
+                user_config={},AIAgent=self.factory,_run_still_current=lambda:True,
+                resolve_display_setting=lambda *args:False,_hooks_ref=SimpleNamespace(loaded_hooks=[]),
+                _loop_for_step=self.loop,mute_notification_reply=True,enabled_toolsets=[],disabled_toolsets=[])
+            turn=TurnRunner(runner,ctx);self.turns.append(turn)
+            worker=GatewayTurnMixin._run_agent_start_turn_worker(runner,ctx,turn.run_sync)
+            self.workers.append(worker)
+            # Await the native executor task without replacing the native done marker.
+            result=await asyncio.shield(worker.executor_task)
+            return result['final_response']
+        self.legacy_compute=runner._handle_message
+        runner._handle_message=turn_message
+        self.turn_observer=turns.NativeTurnWorkerObserver(self.observer)
+    async def _cleanup(self):
+        self.factory_gate.set();self.thread_release.set();self.release.set()
+        if self.workers:await asyncio.gather(*(w.executor_task for w in self.workers),return_exceptions=True)
+        await base.CanonicalCases._cleanup(self)
+        if self.pool is not None:self.pool.shutdown(wait=True,cancel_futures=False)
+        if self.authority is not None:self.assertEqual(list(physical_workers(self.authority)),[])
+        CASE_END.append({'case':self._testMethodName,'nativeProfileEvents':self.profile_events,'allPhysicalWorkersDone':all(q.worker_done.is_set() for q in self.workers),'allExecutorTasksDone':all(q.executor_task.done() for q in self.workers),'nativePhysicalRegistryEmpty':not list(physical_workers(self.authority)),'candidateHomeRemoved':not self.home.exists()})
+    async def finish(self,rid,watcher):
+        self.thread_release.set()
+        await base.CanonicalCases.finish(self,rid,watcher)
+        self.assertTrue(all(w.worker_done.is_set() for w in self.workers))
+        self.assertEqual(list(physical_workers(self.authority)),[])
+    def observe_worker(self,rid):
+        connections=(self.db._conn,self.a._run_idempotency_store._conn)
+        before=[c.total_changes for c in connections];sql=[]
+        for c in connections:c.set_trace_callback(sql.append)
+        base.AUDIT['watch']=True
+        try:result=self.turn_observer.capture(rid)
+        finally:
+            base.AUDIT['watch']=False
+            for c in connections:c.set_trace_callback(None)
+        self.assertEqual(before,[c.total_changes for c in connections])
+        self.assertTrue(all(q.startswith(('SELECT ','PRAGMA ')) for q in sql))
+        OBS.append({'case':self._testMethodName,'turnObservation':result.public(),'sqlWrites':0,'databaseOpens':0})
+        return result
+
+    def observe_live(self,rid):
+        s=self.capture(rid);worker_proof=self.observe_worker(rid);self.assertEqual(worker_proof.generation,s.generation)
+        node=self.authority.sessions[s.session_id]
+        rows=list(physical_workers(self.authority));self.assertEqual(len(rows),1)
+        worker,holder=rows[0]
+        self.assertIs(worker,self.workers[0]);self.assertIs(holder,self.turns[0]._ctx.agent_holder)
+        self.assertIs(holder[0],self.agent_instances[0]);self.assertFalse(worker.worker_done.is_set())
+        self.assertFalse(worker.executor_task.done());self.assertEqual(s.phase,'CLAIMED')
+        self.assertEqual(self.authority.adopted[s.session_id],(s.generation,holder[0]))
+        calls=[r for r in self.profile_events if r['event']=='call' and r['method']=='adopt_agent']
+        self.assertEqual(len(calls),1);self.assertTrue(calls[0]['callerIsNativeWire']);self.assertTrue(calls[0]['authorityIsOriginal'])
+        self.assertEqual((calls[0]['sessionId'],calls[0]['generation']),(s.session_id,s.generation))
+        self.assertNotEqual(calls[0]['thread'],threading.get_ident());self.assertGreater(calls[0]['nativeThread'],0)
+        OBS.append({'case':self._testMethodName,'canonical':s.public(),'nativeTurnRunnerCallSite':True,
+            'physicalWorkerRegistryEntry':True,'workerDone':False,'nativeAdoptionCallerVerified':True,
+            'workerThread':calls[0]['thread'],'workerNativeThread':calls[0]['nativeThread'],
+            'modelAndCredentialFacadeAreFixtures':True,'sharedBorrowedBootstrapTested':False})
+        return s
+    async def test_actual_native_turnrunner_adopts_and_settles(self):
+        rid,t=await self.submit();s=self.observe_live(rid)
+        self.assertIsNot(self.authority.sessions[s.session_id].task,t)
+        await self.finish(rid,t);self.assertEqual(self.capture(rid).phase,'SETTLED')
+        self.observer.release_settled(rid);self.assertFalse(self.observer._entries)
+    async def test_watcher_cancellation_does_not_end_turn_worker(self):
+        rid,t=await self.submit();self.observe_live(rid)
+        t.cancel();await asyncio.gather(t,return_exceptions=True);await asyncio.sleep(0)
+        s=self.observe_live(rid);self.assertTrue(s.carrier_cancelled)
+        self.assertFalse(self.workers[0].worker_done.is_set())
+        await self.finish(rid,t);self.observer.release_settled(rid)
+    async def test_native_idempotent_request_creates_no_second_worker(self):
+        rid,t=await self.submit();s=self.observe_live(rid)
+        again,t2=await self.submit();self.assertEqual(rid,again);self.assertIs(t,t2)
+        self.assertEqual(len(self.workers),1);self.assertEqual(self.compute_calls,1)
+        self.assertEqual(self.capture(rid).admission_id,s.admission_id)
+    async def test_factory_block_is_claimed_but_not_yet_adopted(self):
+        self.factory_gate.clear();rid,t=await self.submit(running=False)
+        await asyncio.wait_for(self.build_entered.wait(),10)
+        s=self.capture(rid);self.assertEqual(s.phase,'CLAIMED');self.assertFalse(s.adopted_agent_observed)
+        rows=list(physical_workers(self.authority));self.assertEqual(len(rows),1);self.assertIsNone(rows[0][1][0])
+        self.assertFalse(rows[0][0].worker_done.is_set())
+        with self.assertRaises(turns.TurnWorkerUnavailable):self.observe_worker(rid)
+        self.factory_gate.set();await asyncio.wait_for(self.entered.wait(),10);self.observe_live(rid)
+    async def test_compute_failure_releases_physical_worker_and_terminal_claim(self):
+        self.failed_compute=True;rid,t=await self.submit();self.observe_live(rid)
+        await self.finish(rid,t);s=self.capture(rid);self.assertEqual(s.phase,'SETTLED');self.assertTrue(s.replay_terminal)
+        self.observer.release_settled(rid)
+    async def test_running_worker_does_not_authorize_observer_release(self):
+        rid,t=await self.submit();self.observe_live(rid)
+        with self.assertRaises(binding.CanonicalBindingRejected):self.observer.release_settled(rid)
+        self.assertFalse(self.workers[0].worker_done.is_set());self.assertEqual(len(list(physical_workers(self.authority))),1)
+    async def test_native_auth_refusal_never_constructs_turn_or_worker(self):
+        q=base.Request();q.headers.pop('Authorization')
+        reply=await self.a._handle_runs(q);self.assertEqual(reply.status,401)
+        self.assertEqual(self.turns,[]);self.assertEqual(self.workers,[]);self.assertEqual(self.agent_instances,[])
+    async def test_cancelled_executor_waiter_still_retains_physical_thread(self):
+        rid,t=await self.submit();self.observe_live(rid);worker=self.workers[0]
+        worker.executor_task.cancel();await asyncio.gather(worker.executor_task,return_exceptions=True);await asyncio.sleep(0)
+        self.assertTrue(worker.executor_task.cancelled());self.assertFalse(worker.worker_done.is_set())
+        self.assertEqual(list(physical_workers(self.authority))[0][0],worker)
+        OBS.append({'case':self._testMethodName,'cancelledExecutorTask':True,'workerDone':worker.worker_done.is_set(),'nativePhysicalRegistryRetained':True,'positiveHealthClaim':False})
+        t.cancel();await asyncio.gather(t,return_exceptions=True);await asyncio.sleep(0)
+        # Do not label the now-cancelled authority drain healthy; only physical liveness is proven.
+        with self.assertRaises((binding.CanonicalBindingRejected,binding.CanonicalBindingUnavailable)):self.capture(rid)
+        self.thread_release.set()
+        deadline=self.loop.time()+10
+        while not worker.worker_done.is_set():
+            self.assertLess(self.loop.time(),deadline);await asyncio.sleep(.01)
+        self.assertEqual(list(physical_workers(self.authority)),[])
+
+
+    async def test_adopted_reference_without_native_worker_is_not_correlated(self):
+        self.runner._handle_message=self.legacy_compute
+        rid,t=await self.submit();s=self.capture(rid);self.assertTrue(s.adopted_agent_observed)
+        self.assertEqual(self.workers,[])
+        with self.assertRaises(turns.TurnWorkerUnavailable):self.observe_worker(rid)
+    async def test_wrong_turn_context_generation_sticks_without_cancelling_native_work(self):
+        rid,t=await self.submit();self.observe_live(rid);ctx=self.turns[0]._ctx;old=ctx.run_generation
+        ctx.run_generation=old+1
+        try:
+            with self.assertRaises(turns.TurnWorkerRejected):self.observe_worker(rid)
+            self.assertFalse(self.workers[0].worker_done.is_set())
+        finally:ctx.run_generation=old
+        with self.assertRaises(turns.TurnWorkerRejected):self.observe_worker(rid)
+        self.assertEqual(self.capture(rid).phase,'CLAIMED')
+    async def test_unrelated_waiter_cannot_replace_real_native_executor(self):
+        rid,t=await self.submit();self.observe_live(rid);worker=self.workers[0];old=worker.executor_task
+        fake=asyncio.create_task(asyncio.Event().wait());worker.executor_task=fake
+        try:
+            with self.assertRaises(turns.TurnWorkerRejected):self.observe_worker(rid)
+            self.assertFalse(old.done());self.assertFalse(fake.done())
+        finally:worker.executor_task=old;fake.cancel();await asyncio.gather(fake,return_exceptions=True)
+    async def test_registry_replacement_cannot_be_adopted(self):
+        rid,t=await self.submit();self.observe_live(rid);old=self.authority._turn_workers
+        self.authority._turn_workers=dict(old)
+        try:
+            with self.assertRaises(turns.TurnWorkerRejected):self.observe_worker(rid)
+        finally:self.authority._turn_workers=old
+    async def test_completed_worker_is_not_reported_active(self):
+        rid,t=await self.submit();self.observe_live(rid);await self.finish(rid,t)
+        with self.assertRaises(turns.TurnWorkerUnavailable):self.observe_worker(rid)
+        self.assertEqual(self.capture(rid).phase,'SETTLED')
+    async def test_turn_observer_never_claims_service_health_or_release(self):
+        rid,t=await self.submit();s=self.observe_worker(rid).public()
+        self.assertEqual(s['state'],'CANONICAL_TURN_WORKER_CORRELATED')
+        for key in ('physicalWorkerResponsivenessVerified','allAgentWorkObserved','storageProfileMountVerified',
+                    'serviceReadinessVerified','runtimeAdmissionAuthorized','retryAuthorized','storeReleaseAuthorized'):
+            self.assertFalse(s[key])
+
+    async def test_real_completion_during_probe_is_transient(self):
+
+        rid,task=await self.submit();self.observe_live(rid)
+        agent=self.agent_instances[0];cls=type(agent);original=cls.__getattribute__
+        worker=self.workers[0];owner_thread=threading.get_ident();armed=True
+        def exit_during_read(obj,name):
+            nonlocal armed
+            if name=='_gateway_turn_process_task_id' and armed and threading.get_ident()==owner_thread:
+                armed=False;self.thread_release.set()
+                assert worker.worker_done.wait(5),'real worker did not exit'
+                end=time.monotonic()+2
+                while original(obj,name)!='':
+                    assert time.monotonic()<end,'native wrapper did not clear its scope'
+                    time.sleep(.001)
+            return original(obj,name)
+        cls.__getattribute__=exit_during_read
+        try:
+            with self.assertRaises(turns.TurnWorkerUnavailable):self.observe_worker(rid)
+            self.assertFalse(self.turn_observer._fault,'normal completion poisoned diagnostic binding')
+        finally:cls.__getattribute__=original
+        await self.finish(rid,task)
+
+def main():
+    global TurnRunner,TurnContext,GatewayRunner,GatewayTurnMixin,physical_workers
+    parser=argparse.ArgumentParser();parser.add_argument('--native',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--case',choices=[n for n in vars(TurnRunnerCases) if n.startswith('test_')]);args=parser.parse_args();native=args.native.resolve(strict=True);out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    with tempfile.TemporaryDirectory(prefix='alaz-c120-import-') as tmp:
+        home=Path(tmp);os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home),HERMES_AGENT_TIMEOUT='0',HERMES_AGENT_TIMEOUT_WARNING='0')
+        sys.path.insert(0,str(native));sys.addaudithook(base.audit)
+        from gateway.config import GatewayConfig,PlatformConfig
+        from gateway.session import SessionStore
+        from gateway.platforms.api_server import APIServerAdapter
+        from gateway.session_authority import SessionAuthority
+        from gateway.session_results import execution_result
+        from gateway.runtime_ownership import process_ownership
+        from gateway.run_turn_runner import TurnRunner
+        from gateway.turn_context import TurnContext
+        from gateway.run import GatewayRunner
+        from gateway.run_turn import GatewayTurnMixin
+        from gateway.session_runtime_workers import physical_workers
+        import hermes_state_runtime as runtime
+        import hermes_state_registry as registry
+        import gateway.status as gateway_status
+        for n,v in dict(SessionStore=SessionStore,GatewayConfig=GatewayConfig,PlatformConfig=PlatformConfig,APIServerAdapter=APIServerAdapter,SessionAuthority=SessionAuthority,execution_result=execution_result,ownership=process_ownership,runtime=runtime,registry=registry,gateway_status=gateway_status).items():setattr(base,n,v)
+        control=home/'schema-control';control.mkdir();os.environ['HERMES_HOME']=str(control);process_ownership.reserve([control])
+        store=SessionStore(control/'sessions',GatewayConfig());db=store._db
+        adapter=APIServerAdapter(PlatformConfig(enabled=True,extra={'key':'owned-control','model_name':'owned'}))
+        runtime.begin_runtime_epoch(db,instance_id='schema-control');binding._qualified_source()
+        base.SCHEMAS=(live.schema_digest(db._conn),live.schema_digest(adapter._run_idempotency_store._conn))
+        adapter._response_store.close();adapter._run_idempotency_store.close();registry.close_all_under(control);process_ownership.close()
+        (out/'schema-control.json').write_text(json.dumps({'schemas':base.SCHEMAS,'separateControlClosed':True})+'\n',encoding='utf-8')
+        suite=unittest.TestSuite([TurnRunnerCases(args.case)]) if args.case else unittest.defaultTestLoader.loadTestsFromTestCase(TurnRunnerCases)
+        with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as f:r=unittest.TextTestRunner(stream=f,verbosity=2).run(suite)
+        imports={}
+        for mod in tuple(sys.modules.values()):
+            f=getattr(mod,'__file__',None)
+            if f:
+                p=Path(f).resolve()
+                if p.is_relative_to(native) and p.suffix=='.py':imports[p.relative_to(native).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+        sources=['scripts/qa/c120a_native_turnrunner.py','scripts/qa/c119v1_native_canonical.py','packages/claw-hermes/gateway_canonical_run_binding.py','packages/claw-hermes/gateway_canonical_turn_observation.py']
+        report={'result':'PASS_NATIVE_TURNRUNNER_CALLSITE' if r.wasSuccessful() else 'FAIL','total':r.testsRun,'passed':r.testsRun-len({t.id() for t,_ in r.errors+r.failures})-len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),'skipped':len(r.skipped),'errorIds':[t.id() for t,_ in r.errors],'failureIds':[t.id() for t,_ in r.failures],'observations':OBS,'caseEnd':CASE_END,'nativeImports':imports,'audit':base.AUDIT,'sourceHashes':{n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in sources},'nativeFeature':binding.NATIVE_FEATURE,'ownershipReleased':not process_ownership.homes,'registry':registry.stats(),'actualTurnRunnerRunSync':True,'actualNativeAdoptionCallSite':True,'actualNativePhysicalWorkerTracking':True,'namedWorkerObservationTested':True,'runnerConfigCredentialDeliveryFacadeDoubled':True,'agentFactoryAndComputationDoubled':True,'completeAIAgentTested':False,'sharedBorrowedBootstrapTested':False,'healthyBusyHttpTested':False,'kernelIsolationTested':False,'httpListenerStarted':False,'providerCalls':0,'rootOrWslAction':False}
+    report['temporaryImportHomeRemoved']=not home.exists()
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','observations','caseEnd','sourceHashes')}),flush=True)
+    if not r.wasSuccessful():print((out/'tests.txt').read_text(encoding='utf-8')[-18000:],flush=True)
+    return 0 if r.wasSuccessful() and report['ownershipReleased'] and report['temporaryImportHomeRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())
