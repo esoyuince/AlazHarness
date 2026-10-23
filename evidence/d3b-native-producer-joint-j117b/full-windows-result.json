@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "total": 3092,
+  "discovered": 3092,
+  "passed": 3069,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 474,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "allOriginal467SourcesUnchanged": true,
+  "focusedMethods": 24,
+  "elapsedSeconds": 304.932,
+  "at": "2026-10-23T13:06:07.216044+03:00",
+  "scope": "staged native producer hook artifact and one consumer plus existing harness regression; does not install native feature or validate canonical executor/HTTP/isolation"
+}

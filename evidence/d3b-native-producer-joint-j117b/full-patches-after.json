@@ -1,0 +1,5 @@
+{
+  "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+  "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac",
+  "patches/hermes/h117b/native-run-producer.patch": "86d2ae5d4014239e08c790e947692a65919178c887a4e6e5418244736683098d"
+}

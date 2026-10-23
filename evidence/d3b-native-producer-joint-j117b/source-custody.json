@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-23T13:02:46.755305+03:00",
+  "parents": [
+    {
+      "ref": "454e3797422a62d762db35341667e87538831240",
+      "folder": "evidence/d3b-native-run-hooks-h117b",
+      "preservedGitBlobs": 26
+    },
+    {
+      "ref": "d0b150b3924da9dc7f103cb07fa438a93d3b83ca",
+      "folder": "evidence/d3b-native-producer-p117n1",
+      "preservedGitBlobs": 54
+    }
+  ],
+  "originalEvidenceBlobsPreserved": 80,
+  "nativeFeatureCommit": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "ownImportedNativeFiles": 473,
+  "independentImportedNativeFiles": 501,
+  "combinedNativeImportUnion": 504,
+  "allCommonNativeHashesEqual": true,
+  "all474FrozenSourcesExact": true,
+  "newNativeRunByUnion": false,
+  "fullStandardResultPending": true
+}
