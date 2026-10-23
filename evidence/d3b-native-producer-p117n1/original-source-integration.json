@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T12:57:28.627465+03:00",
+  "originalSourceCommit": "454e3797422a62d762db35341667e87538831240",
+  "base": "42b20e9956cff938976972ed1a7eddec6d47edff",
+  "transfer": "fast-forward original H117 native patch/consumer history; own disjoint QA retained",
+  "selectedConsumerMatchesActualIndependentNativeRun": true,
+  "selectedFeature": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "originalWorktreeModified": false,
+  "fullSuiteNotStartedHere": true
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T12:57:33.232184+03:00",
+  "nativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-native-producer-p117n1",
+  "originalSelectedFeatureCommit": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "history": "fast-forward original native source commit, no duplicate native commit created",
+  "allTestedBytesRetained": true,
+  "workingTreeClean": true,
+  "nativeTestsWereTerminalBeforeFF": true,
+  "installedVendorNotModified": true
+}

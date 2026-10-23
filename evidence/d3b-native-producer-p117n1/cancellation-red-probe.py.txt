@@ -1,0 +1,12 @@
+import asyncio,json,sys
+from types import SimpleNamespace
+sys.path.insert(0,sys.argv[1])
+from gateway.platforms.api_server_run_observation import attach,prepare
+async def main():
+ a=SimpleNamespace(_run_observation_channel=None,_active_run_tasks={},_background_tasks=set(),_run_statuses={},_pending_agent_requests=0,_inflight_agent_runs=0)
+ def sink(e):raise asyncio.CancelledError('observer-only failure')
+ channel=attach(a,sink)
+ try:prepare(a,run_id='run',session_id='session',scope='scope',key='key',fingerprint='a'*64)
+ except asyncio.CancelledError:print(json.dumps({'cancelEscaped':True,'faultLatched':channel.fault is not None}));return 1
+ print(json.dumps({'cancelEscaped':False,'faultLatched':channel.fault is not None}));return 0
+raise SystemExit(asyncio.run(main()))

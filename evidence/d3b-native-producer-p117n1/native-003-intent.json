@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-23T12:48:41.899117+03:00",
+  "sources": {
+    "packages/claw-hermes/gateway_native_run_source.py": "9696e42d2bf383437e3e8f1147f3a597b32810a9923594b0f8b4ce17aa68227b",
+    "scripts/qa/p117n1_native_producer.py": "a4d3933aface939c22a288801d3f3722708013693dbff7625c5f78f33409b33c"
+  },
+  "patchedNative": {
+    "gateway/platforms/api_server_run_observation.py": "036ff0c43a7c6b657093bab59c6db9e08eb4c20485bb6fea1ac710444271d1f7",
+    "gateway/platforms/api_server_runs.py": "2ae3f460370fc5fba199e05efcbd0ee13f4eeac3979f85e97269365ff52475b6"
+  },
+  "scope": "current20 native handler tests including cancelled observational callback; source-frozen"
+}

@@ -1,0 +1,111 @@
+"""Opt-in in-process run provenance; no scheduling, storage or readiness authority.
+
+The callback sees immutable identity from the native request path, never a body,
+credential or response text. A callback fault is sticky and stops notifications;
+it cannot unwind a committed request or rerun it. Execution kind distinguishes a
+transport waiter from a local worker. Neither kind establishes executor health.
+"""
+from __future__ import annotations
+import asyncio
+from dataclasses import dataclass
+import inspect
+import os
+import threading
+
+
+@dataclass(frozen=True, slots=True)
+class RunIdentity:
+    run_id: str
+    session_id: str
+    scope: str
+    key: str
+    fingerprint: str
+
+
+@dataclass(frozen=True, slots=True)
+class RunEvent:
+    sequence: int
+    phase: str
+    identity: RunIdentity
+    execution_kind: str
+    task: asyncio.Task | None
+
+
+@dataclass(frozen=True, slots=True)
+class _Ticket:
+    channel: object
+    identity: RunIdentity
+
+
+class RunObservationChannel:
+    def __init__(self, adapter, sink):
+        if not callable(sink) or inspect.iscoroutinefunction(sink):
+            raise ValueError('run_observation_sync_sink_required')
+        if (getattr(adapter, '_run_observation_channel', None) is not None
+                or adapter._active_run_tasks or adapter._background_tasks
+                or adapter._run_statuses or adapter._pending_agent_requests
+                or adapter._inflight_agent_runs):
+            raise ValueError('run_observation_attach_not_quiescent')
+        self._adapter, self._sink = adapter, sink
+        self._loop = asyncio.get_running_loop()
+        self._actor = (os.getpid(), threading.get_ident())
+        self.sequence = 0
+        self.fault = None
+
+    def emit(self, identity, phase, kind, task=None):
+        if self.fault is not None:
+            return
+        try:
+            if ((os.getpid(), threading.get_ident()) != self._actor
+                    or asyncio.get_running_loop() is not self._loop
+                    or self._adapter._run_observation_channel is not self):
+                raise ValueError('run_observation_actor_or_channel_changed')
+            if task is not None and (type(task) is not asyncio.Task or task.get_loop() is not self._loop):
+                raise ValueError('run_observation_task_changed')
+            self.sequence += 1
+            result = self._sink(RunEvent(self.sequence, phase, identity, kind, task))
+            if inspect.isawaitable(result):
+                if inspect.iscoroutine(result):
+                    result.close()
+                raise ValueError('run_observation_sink_returned_awaitable')
+        except Exception:
+            # Observational failure is sticky, but admission/settlement has its
+            # own outcome. Never translate this into another request execution.
+            self.fault = 'run_observation_callback_or_identity_failed'
+
+
+def attach(adapter, sink):
+    channel = RunObservationChannel(adapter, sink)
+    adapter._run_observation_channel = channel
+    return channel
+
+
+def prepare(adapter, *, run_id, session_id, scope, key, fingerprint):
+    channel = getattr(adapter, '_run_observation_channel', None)
+    if channel is None:
+        return None
+    if type(channel) is not RunObservationChannel:
+        return None  # A consumer must reject replacement of its attached channel.
+    values = (run_id, session_id, scope, key, fingerprint)
+    if (any(type(v) is not str or len(v) > 512 for v in values)
+            or not run_id or not session_id or not scope
+            or (key and (len(fingerprint) != 64 or any(c not in '0123456789abcdef' for c in fingerprint)))):
+        channel.fault = 'run_observation_identity_invalid'
+        return None
+    ticket = _Ticket(channel, RunIdentity(*values))
+    channel.emit(ticket.identity, 'request_prepared', 'not_selected')
+    return ticket
+
+
+def notify(ticket, phase, kind, task=None):
+    if ticket is not None:
+        ticket.channel.emit(ticket.identity, phase, kind, task)
+
+
+def register(ticket, task, kind):
+    if ticket is None:
+        return
+    notify(ticket, 'task_registered', kind, task)
+    # Registered after native background-set discard. No exception()/result()
+    # access: observation must not consume a failed task's exception.
+    task.add_done_callback(lambda done: notify(ticket, 'task_done', kind, done))

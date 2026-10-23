@@ -1,0 +1,70 @@
+"""NativeRunSource contract with explicit native-channel/adapter boundary doubles."""
+import sys,unittest,types
+from pathlib import Path
+from dataclasses import dataclass
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+from gateway_native_run_source import NativeRunSource
+from gateway_work_observer import NativeTaskObserver,TaskObservationRejected
+@dataclass(frozen=True)
+class Event:
+    sequence:int
+    phase:str='request_prepared'
+class SourceContracts(unittest.TestCase):
+    def setUp(self):
+        self.obs=object.__new__(NativeTaskObserver);self.obs._adapter=types.SimpleNamespace();self.obs._fault=None
+        self.module=types.ModuleType('gateway.platforms.api_server_run_observation');self.module.RunEvent=Event
+        def attach(adapter,sink):
+            channel=types.SimpleNamespace(fault=None,sequence=0,sink=sink);adapter._run_observation_channel=channel;return channel
+        self.module.attach=attach
+        gateway=types.ModuleType('gateway');platforms=types.ModuleType('gateway.platforms');platforms.api_server_run_observation=self.module;gateway.platforms=platforms
+        self.patches=[patch.dict(sys.modules,{'gateway':gateway,'gateway.platforms':platforms,'gateway.platforms.api_server_run_observation':self.module})]
+        self.patches += [patch.object(NativeTaskObserver,name,return_value=None) for name in ('_usable','_native_check','_actor_check')]
+        for p in self.patches:p.start();self.addCleanup(p.stop)
+        def capture(obs):
+            if obs._fault is not None:raise TaskObservationRejected(obs._fault)
+            return 'existing-reader-observation'
+        p=patch.object(NativeTaskObserver,'capture',new=capture);p.start();self.addCleanup(p.stop)
+        self.source=NativeRunSource(self.obs)
+    def emit(self,seq,phase='request_prepared'):
+        self.source._channel.sequence=seq;self.source._channel.sink(Event(seq,phase))
+    def test_exact_observer_type_required(self):
+        with self.assertRaises(TypeError):NativeRunSource(object())
+    def test_idle_delegates_without_health_claim(self):
+        self.assertEqual(self.source.capture(),'existing-reader-observation')
+        state=self.source.status();self.assertEqual(state['eventsObserved'],0)
+        self.assertFalse(state['nativeProducerEventsObserved']);self.assertFalse(state['executorOwnershipVerified'])
+    def test_prepared_source_event_invalidates_existing_observer(self):
+        self.emit(1);self.assertEqual(self.obs._fault,'native_execution_owner_not_qualified')
+        with self.assertRaises(TaskObservationRejected):self.obs.capture()
+        with self.assertRaises(TaskObservationRejected):self.source.capture()
+    def test_done_event_does_not_clear_fault(self):
+        self.emit(1);self.emit(2,'task_done')
+        with self.assertRaises(TaskObservationRejected):self.source.capture()
+        self.assertEqual(self.source.status()['eventsObserved'],2)
+    def test_trace_is_bounded_without_resetting_total(self):
+        for seq in range(1,101):self.emit(seq)
+        self.assertEqual(len(self.source._events),64);self.assertEqual(self.source._events[0].sequence,37)
+        self.assertEqual(self.source.status()['eventsObserved'],100)
+    def test_sequence_gap_is_fail_closed(self):
+        with self.assertRaises(TaskObservationRejected):self.emit(2)
+        self.assertEqual(self.obs._fault,'native_execution_owner_not_qualified')
+        self.assertEqual(self.source.status()['state'],'NATIVE_PRODUCER_TRACE_FAULT')
+    def test_wrong_event_type_refused_not_accepted_as_idle(self):
+        with self.assertRaises(TaskObservationRejected):self.source._receive({'sequence':1})
+        with self.assertRaises(TaskObservationRejected):self.source.capture()
+    def test_channel_replacement_cannot_clear_observer(self):
+        self.obs._adapter._run_observation_channel=object()
+        with self.assertRaises(TaskObservationRejected):self.source.capture()
+        self.assertEqual(self.obs._fault,'native_source_integrity_unknown')
+    def test_callback_fault_and_unseen_events_invalidate_capture(self):
+        self.source._channel.fault='bounded failure'
+        with self.assertRaises(TaskObservationRejected):self.source.capture()
+        self.source._channel.fault=None;self.source._channel.sequence=3
+        with self.assertRaises(TaskObservationRejected):self.source.capture()
+    def test_public_status_does_not_expose_request_or_grant(self):
+        self.emit(1);state=self.source.status()
+        self.assertEqual(set(state),{'state','eventsObserved','retainedEvents','nativeProducerEventsObserved','executorOwnershipVerified','serviceReadinessVerified','runtimeAdmissionAuthorized','retryAuthorized','storeReleaseAuthorized'})
+        for key in ('executorOwnershipVerified','serviceReadinessVerified','runtimeAdmissionAuthorized','retryAuthorized','storeReleaseAuthorized'):self.assertFalse(state[key])
+if __name__=='__main__':unittest.main()

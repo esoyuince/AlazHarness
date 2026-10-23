@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-23T12:50:45.174282+03:00",
+  "selectedNativeAndConsumerOwner": "H117B",
+  "independentAcceptanceOwner": "P117N1",
+  "selection": {
+    "native/gateway/platforms/api_server_run_observation.py": "224f68468d2fe3fca41de800bc51fc4df5117f76f052670504e93205ce1be879",
+    "native/gateway/platforms/api_server_runs.py": "58330aa6024e2b662214794ad448f888ec9aa3bcdbe25e2ffbc4ff06a9d79e07",
+    "packages/claw-hermes/gateway_native_run_provenance.py": "6b95596df3e74dbeb52096d8c7cfea6f5c44e994fffa13ecf84ac2e778db014d"
+  },
+  "ownHistoricalDrafts": {
+    "packages/claw-hermes/gateway_native_run_source.py": {
+      "path": "evidence/d3b-native-producer-p117n1/draft-gateway_native_run_source.py.txt",
+      "sha256": "9696e42d2bf383437e3e8f1147f3a597b32810a9923594b0f8b4ce17aa68227b"
+    },
+    "tests/test_native_run_source_p117n1.py": {
+      "path": "evidence/d3b-native-producer-p117n1/draft-test_native_run_source_p117n1.py.txt",
+      "sha256": "7f86e89e312e2b94c2e26fa0c7eac163cdb82cf12bbbb8b3d15b74e2847c7581"
+    },
+    "scripts/qa/p117n1_native_producer.py": {
+      "path": "evidence/d3b-native-producer-p117n1/draft-p117n1_native_producer.py.txt",
+      "sha256": "a4d3933aface939c22a288801d3f3722708013693dbff7625c5f78f33409b33c"
+    },
+    "native/gateway/platforms/api_server_run_observation.py": {
+      "path": "evidence/d3b-native-producer-p117n1/draft-native-api_server_run_observation.py.txt",
+      "sha256": "036ff0c43a7c6b657093bab59c6db9e08eb4c20485bb6fea1ac710444271d1f7"
+    },
+    "native/gateway/platforms/api_server_runs.py": {
+      "path": "evidence/d3b-native-producer-p117n1/draft-native-api_server_runs.py.txt",
+      "sha256": "2ae3f460370fc5fba199e05efcbd0ee13f4eeac3979f85e97269365ff52475b6"
+    }
+  },
+  "reason": "one native hook implementation, stronger reentrancy/task identity/retirement coverage plus explicit execution-return and admission provenance; do not ship competing channels",
+  "own20NativeMethodsHistoricalNotSelectedSourceAcceptance": true,
+  "parallelFilesModified": false,
+  "ownNativeDraftWorktreeRetainedNotInstalled": true,
+  "selectedSourceTestsPendingHere": true
+}

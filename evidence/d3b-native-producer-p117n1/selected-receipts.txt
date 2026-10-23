@@ -1,0 +1,11 @@
+test_auth_callback_cancellation_and_factory_cases_actually_ran (test_native_producer_receipt_p117n1.IndependentProducerReceipt.test_auth_callback_cancellation_and_factory_cases_actually_ran) ... ok
+test_current_product_qa_and_native_bytes_bound (test_native_producer_receipt_p117n1.IndependentProducerReceipt.test_current_product_qa_and_native_bytes_bound) ... ok
+test_current_terminal_and_scope (test_native_producer_receipt_p117n1.IndependentProducerReceipt.test_current_terminal_and_scope) ... ok
+test_first_fixture_error_preserved_and_cancellation_red_green_not_relabelled (test_native_producer_receipt_p117n1.IndependentProducerReceipt.test_first_fixture_error_preserved_and_cancellation_red_green_not_relabelled) ... ok
+test_real_lifecycle_replay_and_worker_distinction (test_native_producer_receipt_p117n1.IndependentProducerReceipt.test_real_lifecycle_replay_and_worker_distinction) ... ok
+test_superseded_draft_is_not_selected_product (test_native_producer_receipt_p117n1.IndependentProducerReceipt.test_superseded_draft_is_not_selected_product) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.150s
+
+OK

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T12:42:22.017834+03:00",
+  "nativeBase": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+  "sources": {
+    "packages/claw-hermes/gateway_native_run_source.py": "9696e42d2bf383437e3e8f1147f3a597b32810a9923594b0f8b4ce17aa68227b",
+    "scripts/qa/p117n1_native_producer.py": "cbb9ab8fa21e1bc6b4adcb16ae7b937802f542af3fd262ca4e2201b8c2b9b058"
+  },
+  "patchedNative": {
+    "gateway/platforms/api_server_run_observation.py": "f0c0250e1532e989128391a617b393b4cba88f65637b8981c97b34211ae4f7cc",
+    "gateway/platforms/api_server_runs.py": "2ae3f460370fc5fba199e05efcbd0ee13f4eeac3979f85e97269365ff52475b6"
+  },
+  "scope": "real native handler/Task/worker/retirement, dummy computation; no HTTP authentication middleware/listener/provider"
+}

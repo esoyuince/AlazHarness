@@ -1,33 +1,29 @@
 # AlazHarness - status
 
-## D3B-NATIVE-RUN-HOOKS-H117B - SCOPED NATIVE PASS; FULL UNION PENDING
+## D3B-P117N1 - INDEPENDENT NATIVE HOOK ACCEPTANCE PASS; ONE UNION FULL RUN NEXT
 
-Harness branch alaz/d3b-native-run-hooks-h117b, base42b20e9. Original native feature
-d0028f680f84298442269affd9c030dbe1fd4ffc extends cc16c10 on separate native worktree
-hermes-run-hooks-h117b. Only runs.py + new run_observation.py; vendor main/source
-locks/installed runtime unchanged. Patch/config under patches/hermes/h117b and
-config/hermes-run-hooks-h117b.json with activation NOT_INSTALLED.
+Original H117 source commit454e379 preserved by fast-forward. Selected native
+d0028f6 and its optional patch/consumer are the ONLY implementation. Own evidence
+is independent QA, not a second channel. All467 prior sources unchanged.
 
-Actual decorated native /v1/runs now emits optional immutable ingress binding,
-real Task creation/start/execution-return/retirement/done. No manually seeded
-native task maps in QA. Replay/conflict/auth refusal emits no new admission.
-Explicit thread-carrier/authority-watcher/external-watcher roles avoid pretending
-a transport Task is the executor. Callback errors latch GAP, do NOT cancel or
-replay business work. Synchronous-only bounded companion consumer attaches to
-existing observer, but does NOT forge canonical owner publication or health.
+Current selected native20/20 PASS.501 actual native imported modules independently
+matched d0028f6Git, six offline receipts PASS. Consumer/receipt combined focused
+count in combined-focused-result.json; this does NOT substitute full regression.
+Original H11720/native and own20 overlap; do NOT sum as40 independent cases.
+All old own draft20/units10 results and failures retained as historical only.
 
-20 actual-native cases PASS with dummy model/authority/external delivery edges.
-12 consumer units +6offline receipts PASS. Native auth decorator exercised; no
-HTTP transport listener.473 imported native modules source-matched, exact patch
-apply and duplicate refusal proven. Original17-case failed auth fixture retained;
-product auth unchanged. All467 prior harness sources unchanged. Full combined
-standard regression PENDING original source integration with P117 independent QA.
+Actual native auth-decorated entry/Task maps/replay/worker/retirement publish
+notifications without QA registration. Model computation/external delivery are
+explicit doubles. Cancelled observer callback must not unwind native acceptance
+or retirement. A cancelled carrier can finish while worker lives; no executor
+health asserted. Eager factory creates traceGAP, not a second work attempt.
+Existing observer/policy unchanged; no positive service/dispatch/release claims.
 
-P117 selects this SAME implementation and owns independent acceptance, not a
-second channel. Next original harness commit, source-identical union full suite
-and selective canonical delivery. Current producer notification subset is not
-canonical executor integration: borrowed runner conflict remains, active-work
-profile/mount/storage and HTTP/isolated health still OPEN. Native listener stays
-CLOSED; installed pin eb75627, maincc7ceba/no push/CI/production/provider/root/WSL.
-Previous blocked cleanup/refinement unchanged, NOT retried. Own native jobs all
-terminal. Report docs/D3B-NATIVE-RUN-HOOKS-H117B.md; evidence/d3b-native-run-hooks-h117b/.
+Next H117B merges this exact independent QA/evidence commit and owns ONE complete
+source-frozen union standard regression/static then canonical delivery. No full
+run launched here. Native source/features NOT installed, listener stays refused.
+No root/WSL/model/provider/main/push/CI/production or blocked-cleanup retry.
+Reports docs/D3B-NATIVE-PRODUCER-P117N1.md and originalH117. Evidence
+ evidence/d3b-native-producer-p117n1/:selected-native-001/,selected-native-source-custody.json,
+selected-commit-verification.json,summary.json,original-source-integration.json.
+All native jobs terminal; local static/selective commit below.

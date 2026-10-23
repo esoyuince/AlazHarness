@@ -1,0 +1,9 @@
+{
+  "firstRun": "native-001",
+  "result": "FAIL_3_PASS_14_ERROR",
+  "reason": "fake transport omitted configured fixture bearer auth and audit path_qs; native decorator rejected before handler",
+  "nativeAuthNotMockedOrDisabled": true,
+  "nativePatchChanged": false,
+  "addedControl": "unauthenticated call returns401 with no trace or work",
+  "initialSourceWriteError": "compile refused before file write due newline escaping; raw literal fixed before first execution"
+}

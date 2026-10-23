@@ -1,0 +1,31 @@
+state.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+runs_idempotency.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+response_store.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+Executing <Task finished name='Task-1' coro=<ProducerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-producer-p117n1\scripts\qa\p117n1_native_producer.py:37> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.597 seconds
+Executing <Task pending name='Task-2' coro=<ProducerCases.test_actual_handler_publishes_whole_task_lifecycle() running at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-producer-p117n1\scripts\qa\p117n1_native_producer.py:61> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py:991, Task.task_wakeup()] created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py:459> cb=[_run_until_complete_cb() at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py:181] created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 4.298 seconds
+Executing <Task finished name='Task-25' coro=<ProducerCases.test_callback_failure_is_sticky_without_duplicating_request() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-producer-p117n1\scripts\qa\p117n1_native_producer.py:79> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.184 seconds
+[api_server] run run_31f8d30267f7443ab0b81948a47c2e9a failed
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\gateway\platforms\api_server_runs.py", line 1093, in _execute_run
+    result, usage, served_runtime = await _submit_api_worker(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+        loop, lambda: _run_agent_sync(self, run, agent, approval_notify, _api_server=_api_server))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\gateway\platforms\api_server_runs.py", line 66, in _counted
+    return fn()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\gateway\platforms\api_server_runs.py", line 1094, in <lambda>
+    loop, lambda: _run_agent_sync(self, run, agent, approval_notify, _api_server=_api_server))
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\gateway\platforms\api_server_runs.py", line 925, in _run_agent_sync
+    r = agent.run_conversation(
+        user_message=run.user_message, conversation_history=run.conversation_history,
+        task_id=effective_task_id, **author_kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-producer-p117n1\scripts\qa\p117n1_native_producer.py", line 31, in run_conversation
+    if self.case.fail_compute:raise RuntimeError('owned_dummy_failure')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: owned_dummy_failure
+API server rejected invalid API key: remote='127.0.0.1' method='POST' path='/v1/runs'

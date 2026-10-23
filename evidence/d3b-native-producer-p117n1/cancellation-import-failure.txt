@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+    from gateway.platforms.api_server_run_observation import attach,prepare
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\gateway\platforms\__init__.py", line 3, in <module>
+    from .base import BasePlatformAdapter, SendResult
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\gateway\platforms\base.py", line 23, in <module>
+    from utils import normalize_proxy_url
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\utils.py", line 18, in <module>
+    import hermes_yaml as yaml
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-native-producer-p117n1\hermes_yaml.py", line 10, in <module>
+    from ruamel.yaml import YAML
+ModuleNotFoundError: No module named 'ruamel'

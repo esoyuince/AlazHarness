@@ -1,0 +1,52 @@
+"""Bind native source notifications to the existing fail-closed Task observer.
+
+This intentionally does not turn a live API waiter/thread wrapper into a proven
+canonical executor. Native producer publication is now real; active execution
+qualification remains open. No TaskRequest is synthesized from candidate DB rows.
+"""
+from collections import deque
+from gateway_work_observer import NativeTaskObserver, TaskObservationRejected
+
+
+class NativeRunSource:
+    def __init__(self, observer):
+        if type(observer) is not NativeTaskObserver:
+            raise TypeError('native_source_observer_required')
+        observer._usable()
+        observer._native_check()
+        from gateway.platforms import api_server_run_observation as native
+        self._observer = observer
+        self._native = native
+        self._events = deque(maxlen=64)
+        self._seen = 0
+        self._channel = native.attach(observer._adapter, self._receive)
+
+    def _receive(self, event):
+        # A newly accepted native request may execute outside the proven Task
+        # owner model. Block positive capture BEFORE any request side effect.
+        self._observer._fault = 'native_execution_owner_not_qualified'
+        if type(event) is not self._native.RunEvent or event.sequence != self._seen + 1:
+            raise TaskObservationRejected('native_source_event_sequence')
+        self._seen = event.sequence
+        self._events.append(event)
+
+    def capture(self):
+        self._observer._actor_check()
+        if (self._observer._adapter._run_observation_channel is not self._channel
+                or self._channel.fault is not None or self._seen != self._channel.sequence):
+            self._observer._fault = 'native_source_integrity_unknown'
+            raise TaskObservationRejected('native_source_integrity_unknown')
+        return self._observer.capture()
+
+    def status(self):
+        self._observer._actor_check()
+        intact = (self._observer._adapter._run_observation_channel is self._channel
+                  and self._channel.fault is None and self._seen == self._channel.sequence)
+        if not intact:
+            self._observer._fault = 'native_source_integrity_unknown'
+        return {'state': 'NATIVE_PRODUCER_TRACE_ONLY' if intact else 'NATIVE_PRODUCER_TRACE_FAULT',
+                'eventsObserved': self._seen, 'retainedEvents': len(self._events),
+                'nativeProducerEventsObserved': self._seen > 0,
+                'executorOwnershipVerified': False, 'serviceReadinessVerified': False,
+                'runtimeAdmissionAuthorized': False, 'retryAuthorized': False,
+                'storeReleaseAuthorized': False}

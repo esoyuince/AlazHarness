@@ -1,0 +1,9 @@
+{
+  "reason": "callback CancelledError must not unwind producer admission/retirement",
+  "pureBeforeExit": 1,
+  "pureAfterExit": 0,
+  "earlierProbeImportMissingDependencyNotBehaviorFailure": true,
+  "first18NativeResultsHistoricalAfterFix": true,
+  "addedNativeCases": 2,
+  "systemExitKeyboardInterruptNotSwallowed": true
+}

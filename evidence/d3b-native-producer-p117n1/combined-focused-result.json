@@ -1,0 +1,8 @@
+{
+  "total": 24,
+  "passed": 24,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "scope": "selected current consumer-unit and offline source/native receipts only; not native or complete suite"
+}

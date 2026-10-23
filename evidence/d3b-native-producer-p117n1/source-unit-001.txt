@@ -1,0 +1,15 @@
+test_callback_fault_and_unseen_events_invalidate_capture (test_native_run_source_p117n1.SourceContracts.test_callback_fault_and_unseen_events_invalidate_capture) ... ok
+test_channel_replacement_cannot_clear_observer (test_native_run_source_p117n1.SourceContracts.test_channel_replacement_cannot_clear_observer) ... ok
+test_done_event_does_not_clear_fault (test_native_run_source_p117n1.SourceContracts.test_done_event_does_not_clear_fault) ... ok
+test_exact_observer_type_required (test_native_run_source_p117n1.SourceContracts.test_exact_observer_type_required) ... ok
+test_idle_delegates_without_health_claim (test_native_run_source_p117n1.SourceContracts.test_idle_delegates_without_health_claim) ... ok
+test_prepared_source_event_invalidates_existing_observer (test_native_run_source_p117n1.SourceContracts.test_prepared_source_event_invalidates_existing_observer) ... ok
+test_public_status_does_not_expose_request_or_grant (test_native_run_source_p117n1.SourceContracts.test_public_status_does_not_expose_request_or_grant) ... ok
+test_sequence_gap_is_fail_closed (test_native_run_source_p117n1.SourceContracts.test_sequence_gap_is_fail_closed) ... ok
+test_trace_is_bounded_without_resetting_total (test_native_run_source_p117n1.SourceContracts.test_trace_is_bounded_without_resetting_total) ... ok
+test_wrong_event_type_refused_not_accepted_as_idle (test_native_run_source_p117n1.SourceContracts.test_wrong_event_type_refused_not_accepted_as_idle) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK

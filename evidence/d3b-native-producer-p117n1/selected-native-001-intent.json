@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T12:52:19.947213+03:00",
+  "nativeSourceOwner": "H117B",
+  "independentExactSourceCopy": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-native-producer-p117n1",
+  "selectedNative": {
+    "gateway/platforms/api_server_run_observation.py": "224f68468d2fe3fca41de800bc51fc4df5117f76f052670504e93205ce1be879",
+    "gateway/platforms/api_server_runs.py": "58330aa6024e2b662214794ad448f888ec9aa3bcdbe25e2ffbc4ff06a9d79e07"
+  },
+  "sources": {
+    "packages/claw-hermes/gateway_native_run_provenance.py": "6b95596df3e74dbeb52096d8c7cfea6f5c44e994fffa13ecf84ac2e778db014d",
+    "scripts/qa/p117n1_native_hook_audit.py": "1f01311a30c2bf80cee4ae18a1de4cadce60bb54f4156fa0e4f818319161011e"
+  },
+  "previousOwnDraftArchived": true,
+  "scope": "20 independent actual decorated handler/worker cases; dummy agent and remote boundary, no native event/map publication by QA",
+  "originalWorktreeModified": false
+}

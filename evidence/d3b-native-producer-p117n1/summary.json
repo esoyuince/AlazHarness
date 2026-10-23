@@ -1,0 +1,31 @@
+{
+  "result": "PASS_INDEPENDENT_SELECTED_NATIVE_PRODUCER",
+  "currentNativeMethods": 20,
+  "nativeImportCount": 501,
+  "manualProducerPublication": false,
+  "nativeHandlerAuthDecoratorReal": true,
+  "agentComputationIsDummy": true,
+  "externalOwnerBoundaryDoubled": true,
+  "executorOwnershipHealthAccepted": false,
+  "currentOriginalOwnerNativeMethods": 20,
+  "theseTwoScopesOverlapNot40UniqueTests": true,
+  "priorOwn20NativeDraftMethodsHistorical": true,
+  "newNetworkAttempts": 0,
+  "rootWslAction": false,
+  "installedNativeFeatureActivated": false,
+  "fullStandardRegression": "PENDING_H117_ORIGINAL_PLUS_INDEPENDENT_UNION",
+  "selectedSourceOwner": "H117B",
+  "independentQaOwner": "P117N1",
+  "originalSourceCommit": "454e3797422a62d762db35341667e87538831240",
+  "nativeFeatureCommit": "d0028f680f84298442269affd9c030dbe1fd4ffc",
+  "selectedFocused": {
+    "total": 24,
+    "passed": 24,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "scope": "selected current consumer-unit and offline source/native receipts only; not native or complete suite"
+  },
+  "allOriginal467SourcesUnchanged": true,
+  "currentConsumerIsOriginalH117": true
+}
