@@ -1,0 +1,30 @@
+test_absolute_path_refused (__main__.ArchiveControls.test_absolute_path_refused) ... ok
+test_download_hash_mismatch_refused (__main__.ArchiveControls.test_download_hash_mismatch_refused) ... ok
+test_inactive_extra_is_not_target_dependency (__main__.ArchiveControls.test_inactive_extra_is_not_target_dependency) ... ok
+test_missing_target_dependency_refused (__main__.ArchiveControls.test_missing_target_dependency_refused) ... ok
+test_modified_record_refused (__main__.ArchiveControls.test_modified_record_refused) ... ok
+test_relative_traversal_refused (__main__.ArchiveControls.test_relative_traversal_refused) ... ok
+test_single_windows_separator_refused (__main__.ArchiveControls.test_single_windows_separator_refused) ... FAIL
+test_startup_pth_refused (__main__.ArchiveControls.test_startup_pth_refused) ... ok
+test_symlink_refused (__main__.ArchiveControls.test_symlink_refused) ... ok
+test_valid_dummy_metadata_and_record_pass (__main__.ArchiveControls.test_valid_dummy_metadata_and_record_pass) ... ok
+test_windows_binary_refused (__main__.ArchiveControls.test_windows_binary_refused) ... ok
+test_wrong_target_tag_refused (__main__.ArchiveControls.test_wrong_target_tag_refused) ... ok
+
+======================================================================
+FAIL: test_single_windows_separator_refused (__main__.ArchiveControls.test_single_windows_separator_refused)
+----------------------------------------------------------------------
+ValueError: record_membership_mismatch
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-consumer-qa-l125c6\scripts\qa\l125c6_wheel_audit_controls.py", line 36, in test_single_windows_separator_refused
+    with self.assertRaisesRegex(ValueError,'unsafe_member_path'):audit.inspect_wheel(p,e)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unsafe_member_path" does not match "record_membership_mismatch"
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.304s
+
+FAILED (failures=1)

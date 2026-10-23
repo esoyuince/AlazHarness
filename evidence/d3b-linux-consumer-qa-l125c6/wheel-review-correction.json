@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:09:09.940339+03:00",
+  "firstOutcome": "REFUSED_EXTRA_BEFORE_CHECKING_INACTIVE_MARKER",
+  "cause": "auditor treated optional inactive portalocker test/docs extra as selected dependency",
+  "correction": "evaluate target marker before requiring no requested extra; active extras remain refused",
+  "wheelOrProductChanged": false,
+  "initialQaSha256": "00f8dfb87299e0abcd121e7fa3c199dbc523805944fe9ea7a7b717eb97ee17f6",
+  "currentQaSha256": "7a00e4dbdbf62d4bc0cc955e61a77aae26dfa1553f9ac3bdd1a37bd53be424ac"
+}

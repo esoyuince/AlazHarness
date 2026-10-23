@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:10:50.067754+03:00",
+  "beforeResult": "11/12 controls; backslash fixture refused as RECORD mismatch after Windows zip normalization, not accepted",
+  "correction": "audit rejects single separator using chr(92); generated negative fixture keeps original filename bytes, assertion unchanged",
+  "downloadedWheelOrRuntimeChanged": false,
+  "oldAuditSha256": "7a00e4dbdbf62d4bc0cc955e61a77aae26dfa1553f9ac3bdd1a37bd53be424ac",
+  "oldControlSha256": "0c695b27f8b2e9eef125788712208a8eb29f62e574e459b0c2dc4c7986b7b985",
+  "currentAuditSha256": "8f631ef67bc2e63b75e62f45402701fcf3225ff37e4f7ff981f14189a600498c"
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-consumer-qa-l125c6\scripts\qa\l125c6_review_wheels.py", line 110, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-consumer-qa-l125c6\scripts\qa\l125c6_review_wheels.py", line 106, in main
+    raw=a.download.read_bytes();r=inspect_set(a.wheels,json.loads(raw));r['downloadManifestSha256']=hashlib.sha256(raw).hexdigest()
+                                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-consumer-qa-l125c6\scripts\qa\l125c6_review_wheels.py", line 89, in inspect_set
+    need(not r.extras,'extra_resolution_unimplemented')
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-consumer-qa-l125c6\scripts\qa\l125c6_review_wheels.py", line 24, in need
+    if not ok:raise ValueError(reason)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: extra_resolution_unimplemented

@@ -1,0 +1,14 @@
+{
+  "result": "FAIL",
+  "total": 12,
+  "failures": 1,
+  "errors": 0,
+  "failedIds": [
+    "__main__.ArchiveControls.test_single_windows_separator_refused"
+  ],
+  "auditSha256": "7a00e4dbdbf62d4bc0cc955e61a77aae26dfa1553f9ac3bdd1a37bd53be424ac",
+  "controlsSha256": "0c695b27f8b2e9eef125788712208a8eb29f62e574e459b0c2dc4c7986b7b985",
+  "actualDependencyWheelsExecuted": false,
+  "linuxRuntimeTested": false,
+  "syntheticArchivesOnly": true
+}

@@ -1,0 +1,71 @@
+"""Generated dummy-wheel negative controls; no extraction or wheel execution."""
+import base64,csv,hashlib,io,json,stat,tempfile,unittest,zipfile,argparse
+from pathlib import Path
+import l125c6_review_wheels as audit
+
+class ArchiveControls(unittest.TestCase):
+    def setUp(self):self.tmp=tempfile.TemporaryDirectory(prefix='alaz-l125c6-wheel-controls-');self.root=Path(self.tmp.name)
+    def tearDown(self):self.tmp.cleanup()
+    def build(self,*,extra=None,requirements=(),wrong_record=False,symlink=False,tag='py3-none-any'):
+        p=self.root/('fixture_pkg-1.0-'+tag+'.whl');prefix='fixture_pkg-1.0.dist-info/'
+        metadata='Metadata-Version: 2.1\nName: fixture-pkg\nVersion: 1.0\nRequires-Python: >=3.8\n'
+        metadata+=''.join('Requires-Dist: '+r+'\n' for r in requirements)
+        entries={'fixture_pkg/__init__.py':b'# synthetic, never executed\n',prefix+'METADATA':metadata.encode(),prefix+'WHEEL':('Wheel-Version: 1.0\nRoot-Is-Purelib: true\nTag: '+tag+'\n').encode()}
+        if extra is not None:entries[extra]=b'not executed'
+        rows=[]
+        for n,b in entries.items():rows.append((n,'sha256='+base64.urlsafe_b64encode(hashlib.sha256(b).digest()).decode().rstrip('='),str(len(b))))
+        if wrong_record:rows[0]=(rows[0][0],'sha256='+('0'*43),rows[0][2])
+        record=prefix+'RECORD';rows.append((record,'',''));buf=io.StringIO();csv.writer(buf,lineterminator='\n').writerows(rows);entries[record]=buf.getvalue().encode()
+        with zipfile.ZipFile(p,'w') as z:
+            for name,b in entries.items():
+                if symlink and name==extra:
+                    item=zipfile.ZipInfo(name);item.create_system=3;item.external_attr=(stat.S_IFLNK|0o777)<<16;z.writestr(item,b)
+                else:z.writestr(name,b)
+        raw=p.read_bytes();return p,{'name':p.name,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+    def test_valid_dummy_metadata_and_record_pass(self):
+        p,e=self.build();self.assertTrue(audit.inspect_wheel(p,e)['allRecordHashesVerified'])
+    def test_relative_traversal_refused(self):
+        p,e=self.build(extra='../escape.py')
+        with self.assertRaisesRegex(ValueError,'unsafe_member_path'):audit.inspect_wheel(p,e)
+    def test_absolute_path_refused(self):
+        p,e=self.build(extra='/escape.py')
+        with self.assertRaisesRegex(ValueError,'unsafe_member_path'):audit.inspect_wheel(p,e)
+    def test_single_windows_separator_refused(self):
+        p,e=self.build(extra='folder'+chr(92)+'escape.py')
+        with self.assertRaisesRegex(ValueError,'unsafe_member_path'):audit.inspect_wheel(p,e)
+    def test_symlink_refused(self):
+        p,e=self.build(extra='link',symlink=True)
+        with self.assertRaisesRegex(ValueError,'symlink_member'):audit.inspect_wheel(p,e)
+    def test_startup_pth_refused(self):
+        p,e=self.build(extra='activate.pth')
+        with self.assertRaisesRegex(ValueError,'startup_or_windows_binary'):audit.inspect_wheel(p,e)
+    def test_windows_binary_refused(self):
+        p,e=self.build(extra='fixture_pkg/native.pyd')
+        with self.assertRaisesRegex(ValueError,'startup_or_windows_binary'):audit.inspect_wheel(p,e)
+    def test_wrong_target_tag_refused(self):
+        p,e=self.build(tag='cp314-cp314-win_amd64')
+        with self.assertRaisesRegex(ValueError,'unsupported_target_tags'):audit.inspect_wheel(p,e)
+    def test_modified_record_refused(self):
+        p,e=self.build(wrong_record=True)
+        with self.assertRaisesRegex(ValueError,'record_hash_or_size_mismatch'):audit.inspect_wheel(p,e)
+    def test_download_hash_mismatch_refused(self):
+        p,e=self.build();e['sha256']='0'*64
+        with self.assertRaisesRegex(ValueError,'wheel_hash_or_size'):audit.inspect_wheel(p,e)
+    def test_inactive_extra_is_not_target_dependency(self):
+        p,e=self.build(requirements=('not-installed[extra]; extra == "dev"',))
+        r=audit.inspect_set(self.root,{'exitCode':0,'installationPerformed':False,'files':[e]})
+        self.assertEqual(r['dependencyEdges'],[]);self.assertEqual(len(r['excludedMarkerEdges']),1)
+    def test_missing_target_dependency_refused(self):
+        p,e=self.build(requirements=('not-installed>=1',))
+        with self.assertRaisesRegex(ValueError,'unresolved_target_dependency'):audit.inspect_set(self.root,{'exitCode':0,'installationPerformed':False,'files':[e]})
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);a=parser.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+    with (a.output/'tests.txt').open('x',encoding='utf-8') as out:r=unittest.TextTestRunner(stream=out,verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(ArchiveControls))
+    report={'result':'PASS_SYNTHETIC_AUDITOR_CONTRACTS' if r.wasSuccessful() else 'FAIL','total':r.testsRun,'failures':len(r.failures),'errors':len(r.errors),'failedIds':[t.id() for t,_ in r.failures+r.errors],
+            'auditSha256':hashlib.sha256(Path(audit.__file__).read_bytes()).hexdigest(),'controlsSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            'actualDependencyWheelsExecuted':False,'linuxRuntimeTested':False,'syntheticArchivesOnly':True}
+    (a.output/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report),flush=True)
+    if not r.wasSuccessful():print((a.output/'tests.txt').read_text(encoding='utf-8')[-7000:],flush=True)
+    return not r.wasSuccessful()
+if __name__=='__main__':raise SystemExit(main())

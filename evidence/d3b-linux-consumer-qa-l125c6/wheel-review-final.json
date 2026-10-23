@@ -1,0 +1,1457 @@
+{
+  "result": "PASS_WHEEL_INTEGRITY_AND_DECLARED_LINUX_CLOSURE",
+  "target": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.3",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "6.6.87.2-microsoft-standard-WSL2",
+    "platform_system": "Linux",
+    "platform_version": "unqueried-not-used",
+    "python_full_version": "3.12.3",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "linux",
+    "extra": ""
+  },
+  "targetPlatforms": [
+    "manylinux_2_17_x86_64",
+    "manylinux2014_x86_64",
+    "manylinux_2_28_x86_64",
+    "manylinux_2_31_x86_64",
+    "manylinux_2_34_x86_64",
+    "manylinux_2_35_x86_64"
+  ],
+  "wheelCount": 30,
+  "wheels": [
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "filename": "aiohappyeyeballs-2.7.1-py3-none-any.whl",
+      "sha256": "9243213661e29250eb41368e5daa826fc017156c3b8a11440826b2e3ed376472",
+      "metadataSha256": "e68d1bf48aec9dcc2767343dedec25e12860085cba180e10bc3d3bdd031602ba",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [],
+      "memberCount": 10,
+      "expandedBytes": 40006,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.3",
+      "filename": "aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "543906c127fb1d929b95076db19b83fa2d46751006ff1e23b093aa5ac4d8db42",
+      "metadataSha256": "287d4346fb85cdf58dae89ac33639bef485653990a19af9bcd7d39e47e54ea1b",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "aiohappyeyeballs>=2.5.0",
+        "aiosignal>=1.4.0",
+        "async-timeout<6.0,>=4.0; python_version < \"3.11\"",
+        "attrs>=17.3.0",
+        "frozenlist>=1.1.1",
+        "multidict<7.0,>=4.5",
+        "propcache>=0.2.0",
+        "typing_extensions>=4.4; python_version < \"3.13\"",
+        "yarl<2.0,>=1.17.0",
+        "aiodns>=3.3.0; (sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\"",
+        "Brotli>=1.2; (platform_python_implementation == \"CPython\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\"",
+        "brotlicffi>=1.2; platform_python_implementation != \"CPython\" and extra == \"speedups\"",
+        "backports.zstd; (platform_python_implementation == \"CPython\" and python_version < \"3.14\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+      ],
+      "memberCount": 74,
+      "expandedBytes": 6529554,
+      "elfMembers": [
+        "aiohttp/_http_parser.cpython-312-x86_64-linux-gnu.so",
+        "aiohttp/_http_writer.cpython-312-x86_64-linux-gnu.so",
+        "aiohttp/_websocket/mask.cpython-312-x86_64-linux-gnu.so",
+        "aiohttp/_websocket/reader_c.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0",
+      "filename": "aiosignal-1.4.0-py3-none-any.whl",
+      "sha256": "053243f8b92b990551949e63930a839ff0cf0b0ebbe0597b0f3fb19e1a0fe82e",
+      "metadataSha256": "09247ef1da8bc696728d47130e702e4307f6f7d101d6c485bff9f3a71ce7008d",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [
+        "frozenlist>=1.1.0",
+        "typing-extensions>=4.2; python_version < \"3.13\""
+      ],
+      "memberCount": 7,
+      "expandedBytes": 17188,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "anyio",
+      "version": "4.14.2",
+      "filename": "anyio-4.14.2-py3-none-any.whl",
+      "sha256": "9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494",
+      "metadataSha256": "c5e6fc4dfd833319913b287be7a30d9935e9208c7ef917630621855aaac4d419",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "exceptiongroup>=1.0.2; python_version < \"3.11\"",
+        "idna>=2.8",
+        "typing_extensions>=4.5; python_version < \"3.13\"",
+        "trio>=0.32.0; extra == \"trio\""
+      ],
+      "memberCount": 52,
+      "expandedBytes": 512408,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "metadataSha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [],
+      "memberCount": 35,
+      "expandedBytes": 233691,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "certifi",
+      "version": "2026.5.20",
+      "filename": "certifi-2026.5.20-py3-none-any.whl",
+      "sha256": "3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897",
+      "metadataSha256": "1c38826bc95f7744c69501689e00e3a1a2c93a158988937ce32ef4ed5c1df0f6",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.7",
+      "requires": [],
+      "memberCount": 10,
+      "expandedBytes": 244169,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.1",
+      "filename": "charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08",
+      "metadataSha256": "955c93827d59f1280f6d6a76b1e11bfb999cc65a55df83a6f9b28b7bc0e467f6",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.7",
+      "requires": [],
+      "memberCount": 21,
+      "expandedBytes": 724328,
+      "elfMembers": [
+        "charset_normalizer/cd.cpython-312-x86_64-linux-gnu.so",
+        "charset_normalizer/md.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "click",
+      "version": "8.4.2",
+      "filename": "click-8.4.2-py3-none-any.whl",
+      "sha256": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76",
+      "metadataSha256": "194c9dd81d567f9081f026c7e401060fbafa7bc147c8e0a58b3668b40a64c031",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "colorama; platform_system == 'Windows'"
+      ],
+      "memberCount": 22,
+      "expandedBytes": 428495,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "concurrent-log-handler",
+      "version": "0.9.29",
+      "filename": "concurrent_log_handler-0.9.29-py3-none-any.whl",
+      "sha256": "0d6c077fbaef2dae49a25975dcf72a602fe0a6a4ce80a3b7c37696d37e10459a",
+      "metadataSha256": "12939ef212c3603d56e4d1c33582bf9c08b36a0fbb0b4b49c033872e6c7b9ca4",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.6",
+      "requires": [
+        "portalocker>=2.6.0",
+        "black>=26.1.0; extra == 'dev'",
+        "coverage; extra == 'dev'",
+        "hatch; extra == 'dev'",
+        "pytest; extra == 'dev'",
+        "pytest-cov; extra == 'dev'",
+        "pytest-mock; extra == 'dev'",
+        "pytest-repeat; extra == 'dev'",
+        "pytest-sugar; extra == 'dev'",
+        "ruff>=0.15.2; extra == 'dev'"
+      ],
+      "memberCount": 7,
+      "expandedBytes": 101771,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0",
+      "filename": "frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "sha256": "494a5952b1c597ba44e0e78113a7266e656b9794eec897b19ead706bd7074383",
+      "metadataSha256": "946c22dc9f7e2c76f2d698f00a4306dbe49a820e2b3f1a0e22fe5286cbec35f1",
+      "tags": [
+        "cp312-cp312-manylinux1_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64",
+        "cp312-cp312-manylinux_2_5_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [],
+      "memberCount": 10,
+      "expandedBytes": 826878,
+      "elfMembers": [
+        "frozenlist/_frozenlist.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "filename": "h11-0.16.0-py3-none-any.whl",
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+      "metadataSha256": "28f326098ac09fcba79b8f180f96087c841fe2456215cb7b872a9c7d5cd19d64",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requires": [],
+      "memberCount": 17,
+      "expandedBytes": 103935,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "filename": "httpcore-1.0.9-py3-none-any.whl",
+      "sha256": "2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55",
+      "metadataSha256": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requires": [
+        "certifi",
+        "h11>=0.16",
+        "anyio<5.0,>=4.0; extra == 'asyncio'",
+        "h2<5,>=3; extra == 'http2'",
+        "socksio==1.*; extra == 'socks'",
+        "trio<1.0,>=0.22.0; extra == 'trio'"
+      ],
+      "memberCount": 36,
+      "expandedBytes": 288016,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "filename": "httpx-0.28.1-py3-none-any.whl",
+      "sha256": "d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad",
+      "metadataSha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requires": [
+        "anyio",
+        "certifi",
+        "httpcore==1.*",
+        "idna",
+        "brotli; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "click==8.*; extra == 'cli'",
+        "pygments==2.*; extra == 'cli'",
+        "rich<14,>=10; extra == 'cli'",
+        "h2<5,>=3; extra == 'http2'",
+        "socksio==1.*; extra == 'socks'",
+        "zstandard>=0.18.0; extra == 'zstd'"
+      ],
+      "memberCount": 29,
+      "expandedBytes": 295303,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "idna",
+      "version": "3.19",
+      "filename": "idna-3.19-py3-none-any.whl",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4",
+      "metadataSha256": "4d113161aca8582e8d28fddf3ea50f19b607209c2b3e4364379a163454680084",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [
+        "ruff >= 0.16.0 ; extra == \"all\"",
+        "mypy >= 1.11.2 ; extra == \"all\"",
+        "ty >= 0.0.37 ; extra == \"all\"",
+        "pytest >= 8.3.2 ; extra == \"all\"",
+        "hypothesis >= 6.141.1 ; extra == \"all\"",
+        "coverage >= 7.10.0 ; extra == \"all\""
+      ],
+      "memberCount": 16,
+      "expandedBytes": 337228,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "jiter",
+      "version": "0.16.0",
+      "filename": "jiter-0.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "46add52f4ad47a08bfb1219f3e673da972191489a33016edefdb5ea55bfa8c48",
+      "metadataSha256": "b1bcf7374eb4f4195f890ab610b6de54ae8766456df7ddf757f95d255097ef2e",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [],
+      "memberCount": 9,
+      "expandedBytes": 887089,
+      "elfMembers": [
+        "jiter/jiter.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "metadataSha256": "72c36ff516755443b1ecb61e17b2567a990230b49a504b0eb0c42d5f82448a9c",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "mdurl~=0.1",
+        "psutil ; extra == \"benchmarking\"",
+        "pytest ; extra == \"benchmarking\"",
+        "pytest-benchmark ; extra == \"benchmarking\"",
+        "commonmark~=0.9 ; extra == \"compare\"",
+        "markdown~=3.4 ; extra == \"compare\"",
+        "mistletoe~=1.0 ; extra == \"compare\"",
+        "mistune~=3.0 ; extra == \"compare\"",
+        "panflute~=2.3 ; extra == \"compare\"",
+        "markdown-it-pyrs ; extra == \"compare\"",
+        "linkify-it-py>=1,<3 ; extra == \"linkify\"",
+        "mdit-py-plugins>=0.5.0 ; extra == \"plugins\"",
+        "gprof2dot ; extra == \"profiling\"",
+        "mdit-py-plugins>=0.5.0 ; extra == \"rtd\"",
+        "myst-parser ; extra == \"rtd\"",
+        "pyyaml ; extra == \"rtd\"",
+        "sphinx ; extra == \"rtd\"",
+        "sphinx-copybutton ; extra == \"rtd\"",
+        "sphinx-design ; extra == \"rtd\"",
+        "sphinx-book-theme~=1.0 ; extra == \"rtd\"",
+        "jupyter_sphinx ; extra == \"rtd\"",
+        "ipykernel ; extra == \"rtd\"",
+        "coverage ; extra == \"testing\"",
+        "pytest ; extra == \"testing\"",
+        "pytest-cov ; extra == \"testing\"",
+        "pytest-regressions ; extra == \"testing\"",
+        "pytest-timeout ; extra == \"testing\"",
+        "requests ; extra == \"testing\""
+      ],
+      "memberCount": 74,
+      "expandedBytes": 244684,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "metadataSha256": "b53b29d48f499367053fda3c81e7ce27d2558380ebbf83e66023b02eb7ddd25d",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.7",
+      "requires": [],
+      "memberCount": 11,
+      "expandedBytes": 23308,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "multidict",
+      "version": "6.7.1",
+      "filename": "multidict-6.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "bfde23ef6ed9db7eaee6c37dcec08524cb43903c60b285b172b6c094711b3961",
+      "metadataSha256": "4913fdaae936a309c29b89b98c2dbebd237203fb27ab9e68ae5e4ec17ba3024f",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [
+        "typing-extensions>=4.1.0; python_version < \"3.11\""
+      ],
+      "memberCount": 11,
+      "expandedBytes": 898163,
+      "elfMembers": [
+        "multidict/_multidict.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "portalocker",
+      "version": "3.2.0",
+      "filename": "portalocker-3.2.0-py3-none-any.whl",
+      "sha256": "3cdc5f565312224bc570c49337bd21428bba0ef363bbcf58b9ef4a9f11779968",
+      "metadataSha256": "1a6cc9434cfd4a373630949c8807ab6c30f4783ad2024151eea755f0766ecc03",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [
+        "pywin32>=226; platform_system == \"Windows\"",
+        "portalocker[tests]; extra == \"docs\"",
+        "coverage-conditional-plugin>=0.9.0; extra == \"tests\"",
+        "portalocker[redis]; extra == \"tests\"",
+        "pytest-cov>=2.8.1; extra == \"tests\"",
+        "pytest-mypy>=0.8.0; extra == \"tests\"",
+        "pytest-rerunfailures>=15.0; extra == \"tests\"",
+        "pytest-timeout>=2.1.0; extra == \"tests\"",
+        "pytest>=5.4.1; extra == \"tests\"",
+        "sphinx>=6.0.0; extra == \"tests\"",
+        "types-pywin32>=310.0.0.20250429; extra == \"tests\"",
+        "types-redis; extra == \"tests\"",
+        "redis; extra == \"redis\""
+      ],
+      "memberCount": 15,
+      "expandedBytes": 67786,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.2",
+      "filename": "propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "6f328175a2cde1f0ff2c4ed8ce968b9dcfb55f3a7153f39e2957ed994da13476",
+      "metadataSha256": "f534495cdd2f915af8e649783d95fddcb1a05a1ac181850f0c973c0a78f7bbae",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [],
+      "memberCount": 13,
+      "expandedBytes": 193472,
+      "elfMembers": [
+        "propcache/_helpers_c.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2",
+      "filename": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+      "metadataSha256": "525f8ba78523cf7bc3759d62a105e7c57fd679ea702402b9449fb0746aa0217f",
+      "tags": [
+        "cp36-abi3-manylinux2010_x86_64",
+        "cp36-abi3-manylinux_2_12_x86_64",
+        "cp36-abi3-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.6",
+      "requires": [
+        "psleak ; extra == 'dev'",
+        "pytest ; extra == 'dev'",
+        "pytest-instafail ; extra == 'dev'",
+        "pytest-xdist ; extra == 'dev'",
+        "setuptools ; extra == 'dev'",
+        "abi3audit ; extra == 'dev'",
+        "black ; extra == 'dev'",
+        "check-manifest ; extra == 'dev'",
+        "coverage ; extra == 'dev'",
+        "packaging ; extra == 'dev'",
+        "pylint ; extra == 'dev'",
+        "pyperf ; extra == 'dev'",
+        "pypinfo ; extra == 'dev'",
+        "pytest-cov ; extra == 'dev'",
+        "requests ; extra == 'dev'",
+        "rstcheck ; extra == 'dev'",
+        "ruff ; extra == 'dev'",
+        "sphinx ; extra == 'dev'",
+        "sphinx-rtd-theme ; extra == 'dev'",
+        "toml-sort ; extra == 'dev'",
+        "twine ; extra == 'dev'",
+        "validate-pyproject[all] ; extra == 'dev'",
+        "virtualenv ; extra == 'dev'",
+        "vulture ; extra == 'dev'",
+        "wheel ; extra == 'dev'",
+        "colorama ; (os_name == \"nt\") and extra == 'dev'",
+        "pyreadline3 ; (os_name == \"nt\") and extra == 'dev'",
+        "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "psleak ; extra == 'test'",
+        "pytest ; extra == 'test'",
+        "pytest-instafail ; extra == 'test'",
+        "pytest-xdist ; extra == 'test'",
+        "setuptools ; extra == 'test'",
+        "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+        "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+        "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+      ],
+      "memberCount": 16,
+      "expandedBytes": 520630,
+      "elfMembers": [
+        "psutil/_psutil_linux.abi3.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "metadataSha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [
+        "colorama>=0.4.6; extra == 'windows-terminal'"
+      ],
+      "memberCount": 349,
+      "expandedBytes": 4621166,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.2",
+      "filename": "python_dotenv-1.2.2-py3-none-any.whl",
+      "sha256": "1d8214789a24de455a8b8bd8ae6fe3c6b69a5e3d64aa8a8e5d68e694bbcb285a",
+      "metadataSha256": "59430a9dee8f8118dbf693e41c4a3e5150626d19901f4727503da9499f5a64a1",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "click>=5.0; extra == \"cli\""
+      ],
+      "memberCount": 15,
+      "expandedBytes": 61892,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "requests",
+      "version": "2.33.0",
+      "filename": "requests-2.33.0-py3-none-any.whl",
+      "sha256": "3324635456fa185245e24865e810cecec7b4caf933d7eb133dcde67d48cee69b",
+      "metadataSha256": "0cc0fa6e89be83cfa1777957519e3fffe78d1a79b30561934d1e4384fb177711",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "charset_normalizer<4,>=2",
+        "idna<4,>=2.5",
+        "urllib3<3,>=1.26",
+        "certifi>=2023.5.7",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+        "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\"",
+        "pytest-httpbin==2.1.0; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-mock; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"test\"",
+        "pytest>=3; extra == \"test\""
+      ],
+      "memberCount": 24,
+      "expandedBytes": 204350,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "rich",
+      "version": "14.3.3",
+      "filename": "rich-14.3.3-py3-none-any.whl",
+      "sha256": "793431c1f8619afa7d3b52b2cdec859562b950ea0d4b6b505397612db8d5362d",
+      "metadataSha256": "f643a724f7a397abd3c1abe5df9a93266b4abb6d7ca7d39bfb3fa30e8cf5013a",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8.0",
+      "requires": [
+        "ipywidgets (>=7.5.1,<9) ; extra == \"jupyter\"",
+        "markdown-it-py (>=2.2.0)",
+        "pygments (>=2.13.0,<3.0.0)"
+      ],
+      "memberCount": 105,
+      "expandedBytes": 1244702,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "ruamel-yaml",
+      "version": "0.18.16",
+      "filename": "ruamel.yaml-0.18.16-py3-none-any.whl",
+      "sha256": "048f26d64245bae57a4f9ef6feb5b552a386830ef7a826f235ffb804c59efbba",
+      "metadataSha256": "39376f3b128778b05ed27fcf27958feef9436df63422463865b293c1b212c978",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.8",
+      "requires": [
+        "ruamel.yaml.clib>=0.2.7; platform_python_implementation == \"CPython\" and python_version < \"3.14\"",
+        "ruamel.yaml.jinja2>=0.2; extra == \"jinja2\"",
+        "ryd; extra == \"docs\"",
+        "mercurial>5.7; extra == \"docs\""
+      ],
+      "memberCount": 37,
+      "expandedBytes": 568698,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "ruamel-yaml-clib",
+      "version": "0.2.15",
+      "filename": "ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "11e5499db1ccbc7f4b41f0565e4f799d863ea720e01d3e99fa0b7b5fcd7802c9",
+      "metadataSha256": "1f59e721f351ceb296e3311698a52e4388bc12f97ac709926fecaddea02e8a05",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [],
+      "memberCount": 6,
+      "expandedBytes": 2756609,
+      "elfMembers": [
+        "_ruamel_yaml.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "metadataSha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.9",
+      "requires": [],
+      "memberCount": 5,
+      "expandedBytes": 182767,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "urllib3",
+      "version": "2.7.0",
+      "filename": "urllib3-2.7.0-py3-none-any.whl",
+      "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897",
+      "metadataSha256": "66147856d30bbb6bed01c6ce3326d0f48d84ed5f286ac177633a1486b82eace5",
+      "tags": [
+        "py3-none-any"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "h2<5,>=4; extra == 'h2'",
+        "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+        "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+      ],
+      "memberCount": 42,
+      "expandedBytes": 432384,
+      "elfMembers": [],
+      "allRecordHashesVerified": true
+    },
+    {
+      "name": "yarl",
+      "version": "1.24.5",
+      "filename": "yarl-1.24.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "f08c7513ecef5aad65687bfdf6bc601ae9fccd04a42904501f8f7141abad9eb9",
+      "metadataSha256": "0fd7b817553598246289189dfb95b425a15c9319d1bae355a38860419937e1c7",
+      "tags": [
+        "cp312-cp312-manylinux2014_x86_64",
+        "cp312-cp312-manylinux_2_17_x86_64",
+        "cp312-cp312-manylinux_2_28_x86_64"
+      ],
+      "requiresPython": ">=3.10",
+      "requires": [
+        "idna>=2.0",
+        "multidict>=4.0",
+        "propcache>=0.2.1"
+      ],
+      "memberCount": 17,
+      "expandedBytes": 341046,
+      "elfMembers": [
+        "yarl/_quoting_c.cpython-312-x86_64-linux-gnu.so"
+      ],
+      "allRecordHashesVerified": true
+    }
+  ],
+  "dependencyEdges": [
+    {
+      "from": "aiohttp",
+      "to": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "requirement": "aiohappyeyeballs>=2.5.0"
+    },
+    {
+      "from": "aiohttp",
+      "to": "aiosignal",
+      "version": "1.4.0",
+      "requirement": "aiosignal>=1.4.0"
+    },
+    {
+      "from": "aiohttp",
+      "to": "attrs",
+      "version": "26.1.0",
+      "requirement": "attrs>=17.3.0"
+    },
+    {
+      "from": "aiohttp",
+      "to": "frozenlist",
+      "version": "1.8.0",
+      "requirement": "frozenlist>=1.1.1"
+    },
+    {
+      "from": "aiohttp",
+      "to": "multidict",
+      "version": "6.7.1",
+      "requirement": "multidict<7.0,>=4.5"
+    },
+    {
+      "from": "aiohttp",
+      "to": "propcache",
+      "version": "0.5.2",
+      "requirement": "propcache>=0.2.0"
+    },
+    {
+      "from": "aiohttp",
+      "to": "typing-extensions",
+      "version": "4.16.0",
+      "requirement": "typing_extensions>=4.4; python_version < \"3.13\""
+    },
+    {
+      "from": "aiohttp",
+      "to": "yarl",
+      "version": "1.24.5",
+      "requirement": "yarl<2.0,>=1.17.0"
+    },
+    {
+      "from": "aiosignal",
+      "to": "frozenlist",
+      "version": "1.8.0",
+      "requirement": "frozenlist>=1.1.0"
+    },
+    {
+      "from": "aiosignal",
+      "to": "typing-extensions",
+      "version": "4.16.0",
+      "requirement": "typing-extensions>=4.2; python_version < \"3.13\""
+    },
+    {
+      "from": "anyio",
+      "to": "idna",
+      "version": "3.19",
+      "requirement": "idna>=2.8"
+    },
+    {
+      "from": "anyio",
+      "to": "typing-extensions",
+      "version": "4.16.0",
+      "requirement": "typing_extensions>=4.5; python_version < \"3.13\""
+    },
+    {
+      "from": "concurrent-log-handler",
+      "to": "portalocker",
+      "version": "3.2.0",
+      "requirement": "portalocker>=2.6.0"
+    },
+    {
+      "from": "httpcore",
+      "to": "certifi",
+      "version": "2026.5.20",
+      "requirement": "certifi"
+    },
+    {
+      "from": "httpcore",
+      "to": "h11",
+      "version": "0.16.0",
+      "requirement": "h11>=0.16"
+    },
+    {
+      "from": "httpx",
+      "to": "anyio",
+      "version": "4.14.2",
+      "requirement": "anyio"
+    },
+    {
+      "from": "httpx",
+      "to": "certifi",
+      "version": "2026.5.20",
+      "requirement": "certifi"
+    },
+    {
+      "from": "httpx",
+      "to": "httpcore",
+      "version": "1.0.9",
+      "requirement": "httpcore==1.*"
+    },
+    {
+      "from": "httpx",
+      "to": "idna",
+      "version": "3.19",
+      "requirement": "idna"
+    },
+    {
+      "from": "markdown-it-py",
+      "to": "mdurl",
+      "version": "0.1.2",
+      "requirement": "mdurl~=0.1"
+    },
+    {
+      "from": "requests",
+      "to": "charset-normalizer",
+      "version": "3.5.1",
+      "requirement": "charset_normalizer<4,>=2"
+    },
+    {
+      "from": "requests",
+      "to": "idna",
+      "version": "3.19",
+      "requirement": "idna<4,>=2.5"
+    },
+    {
+      "from": "requests",
+      "to": "urllib3",
+      "version": "2.7.0",
+      "requirement": "urllib3<3,>=1.26"
+    },
+    {
+      "from": "requests",
+      "to": "certifi",
+      "version": "2026.5.20",
+      "requirement": "certifi>=2023.5.7"
+    },
+    {
+      "from": "rich",
+      "to": "markdown-it-py",
+      "version": "4.2.0",
+      "requirement": "markdown-it-py (>=2.2.0)"
+    },
+    {
+      "from": "rich",
+      "to": "pygments",
+      "version": "2.21.0",
+      "requirement": "pygments (>=2.13.0,<3.0.0)"
+    },
+    {
+      "from": "ruamel-yaml",
+      "to": "ruamel-yaml-clib",
+      "version": "0.2.15",
+      "requirement": "ruamel.yaml.clib>=0.2.7; platform_python_implementation == \"CPython\" and python_version < \"3.14\""
+    },
+    {
+      "from": "yarl",
+      "to": "idna",
+      "version": "3.19",
+      "requirement": "idna>=2.0"
+    },
+    {
+      "from": "yarl",
+      "to": "multidict",
+      "version": "6.7.1",
+      "requirement": "multidict>=4.0"
+    },
+    {
+      "from": "yarl",
+      "to": "propcache",
+      "version": "0.5.2",
+      "requirement": "propcache>=0.2.1"
+    }
+  ],
+  "excludedMarkerEdges": [
+    {
+      "from": "aiohttp",
+      "requirement": "async-timeout<6.0,>=4.0; python_version < \"3.11\""
+    },
+    {
+      "from": "aiohttp",
+      "requirement": "aiodns>=3.3.0; (sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+    },
+    {
+      "from": "aiohttp",
+      "requirement": "Brotli>=1.2; (platform_python_implementation == \"CPython\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+    },
+    {
+      "from": "aiohttp",
+      "requirement": "brotlicffi>=1.2; platform_python_implementation != \"CPython\" and extra == \"speedups\""
+    },
+    {
+      "from": "aiohttp",
+      "requirement": "backports.zstd; (platform_python_implementation == \"CPython\" and python_version < \"3.14\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+    },
+    {
+      "from": "anyio",
+      "requirement": "exceptiongroup>=1.0.2; python_version < \"3.11\""
+    },
+    {
+      "from": "anyio",
+      "requirement": "trio>=0.32.0; extra == \"trio\""
+    },
+    {
+      "from": "click",
+      "requirement": "colorama; platform_system == 'Windows'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "black>=26.1.0; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "coverage; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "hatch; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "pytest; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "pytest-cov; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "pytest-mock; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "pytest-repeat; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "pytest-sugar; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "requirement": "ruff>=0.15.2; extra == 'dev'"
+    },
+    {
+      "from": "httpcore",
+      "requirement": "anyio<5.0,>=4.0; extra == 'asyncio'"
+    },
+    {
+      "from": "httpcore",
+      "requirement": "h2<5,>=3; extra == 'http2'"
+    },
+    {
+      "from": "httpcore",
+      "requirement": "socksio==1.*; extra == 'socks'"
+    },
+    {
+      "from": "httpcore",
+      "requirement": "trio<1.0,>=0.22.0; extra == 'trio'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "brotli; (platform_python_implementation == 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "brotlicffi; (platform_python_implementation != 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "click==8.*; extra == 'cli'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "pygments==2.*; extra == 'cli'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "rich<14,>=10; extra == 'cli'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "h2<5,>=3; extra == 'http2'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "socksio==1.*; extra == 'socks'"
+    },
+    {
+      "from": "httpx",
+      "requirement": "zstandard>=0.18.0; extra == 'zstd'"
+    },
+    {
+      "from": "idna",
+      "requirement": "ruff >= 0.16.0 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "requirement": "mypy >= 1.11.2 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "requirement": "ty >= 0.0.37 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "requirement": "pytest >= 8.3.2 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "requirement": "hypothesis >= 6.141.1 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "requirement": "coverage >= 7.10.0 ; extra == \"all\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "psutil ; extra == \"benchmarking\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pytest ; extra == \"benchmarking\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pytest-benchmark ; extra == \"benchmarking\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "commonmark~=0.9 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "markdown~=3.4 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "mistletoe~=1.0 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "mistune~=3.0 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "panflute~=2.3 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "markdown-it-pyrs ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "linkify-it-py>=1,<3 ; extra == \"linkify\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "mdit-py-plugins>=0.5.0 ; extra == \"plugins\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "gprof2dot ; extra == \"profiling\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "mdit-py-plugins>=0.5.0 ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "myst-parser ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pyyaml ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "sphinx ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "sphinx-copybutton ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "sphinx-design ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "sphinx-book-theme~=1.0 ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "jupyter_sphinx ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "ipykernel ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "coverage ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pytest ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pytest-cov ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pytest-regressions ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "pytest-timeout ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "requirement": "requests ; extra == \"testing\""
+    },
+    {
+      "from": "multidict",
+      "requirement": "typing-extensions>=4.1.0; python_version < \"3.11\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "pywin32>=226; platform_system == \"Windows\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "portalocker[tests]; extra == \"docs\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "coverage-conditional-plugin>=0.9.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "portalocker[redis]; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "pytest-cov>=2.8.1; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "pytest-mypy>=0.8.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "pytest-rerunfailures>=15.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "pytest-timeout>=2.1.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "pytest>=5.4.1; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "sphinx>=6.0.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "types-pywin32>=310.0.0.20250429; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "types-redis; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "requirement": "redis; extra == \"redis\""
+    },
+    {
+      "from": "psutil",
+      "requirement": "psleak ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest-instafail ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest-xdist ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "setuptools ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "abi3audit ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "black ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "check-manifest ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "coverage ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "packaging ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pylint ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pyperf ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pypinfo ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest-cov ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "requests ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "rstcheck ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "ruff ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "sphinx ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "sphinx-rtd-theme ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "toml-sort ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "twine ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "validate-pyproject[all] ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "virtualenv ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "vulture ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "wheel ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "colorama ; (os_name == \"nt\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pyreadline3 ; (os_name == \"nt\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "psleak ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest-instafail ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pytest-xdist ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "setuptools ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "requirement": "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    },
+    {
+      "from": "pygments",
+      "requirement": "colorama>=0.4.6; extra == 'windows-terminal'"
+    },
+    {
+      "from": "python-dotenv",
+      "requirement": "click>=5.0; extra == \"cli\""
+    },
+    {
+      "from": "requests",
+      "requirement": "PySocks!=1.5.7,>=1.5.6; extra == \"socks\""
+    },
+    {
+      "from": "requests",
+      "requirement": "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+    },
+    {
+      "from": "requests",
+      "requirement": "pytest-httpbin==2.1.0; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "requirement": "pytest-cov; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "requirement": "pytest-mock; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "requirement": "pytest-xdist; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "requirement": "PySocks!=1.5.7,>=1.5.6; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "requirement": "pytest>=3; extra == \"test\""
+    },
+    {
+      "from": "rich",
+      "requirement": "ipywidgets (>=7.5.1,<9) ; extra == \"jupyter\""
+    },
+    {
+      "from": "ruamel-yaml",
+      "requirement": "ruamel.yaml.jinja2>=0.2; extra == \"jinja2\""
+    },
+    {
+      "from": "ruamel-yaml",
+      "requirement": "ryd; extra == \"docs\""
+    },
+    {
+      "from": "ruamel-yaml",
+      "requirement": "mercurial>5.7; extra == \"docs\""
+    },
+    {
+      "from": "urllib3",
+      "requirement": "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "urllib3",
+      "requirement": "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "urllib3",
+      "requirement": "h2<5,>=4; extra == 'h2'"
+    },
+    {
+      "from": "urllib3",
+      "requirement": "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'"
+    },
+    {
+      "from": "urllib3",
+      "requirement": "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+    }
+  ],
+  "recordMemberCount": 1095,
+  "elfFileCount": 13,
+  "packagingVersion": "26.0",
+  "allHashesVerified": true,
+  "wheelCodeExecuted": false,
+  "wheelExtractionPerformed": false,
+  "installationPerformed": false,
+  "publisherTrustOrVulnerabilityAudited": false,
+  "dynamicAbiOrRuntimeImportsTested": false,
+  "linuxLifecycleOrConfinementAccepted": false,
+  "downloadManifestSha256": "398ae6734da20374690072bb6867968dabec6d94e6b1249d56429d7cb0c6467f",
+  "qaSha256": "bd1829ced76d1faca85a4892baebaf64e1e1babba71bc5af400335484013a8f4"
+}

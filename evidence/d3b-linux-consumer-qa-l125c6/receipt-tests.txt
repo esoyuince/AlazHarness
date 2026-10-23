@@ -1,0 +1,12 @@
+test_actual_linux_python_syntax_terminal_and_scope (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_actual_linux_python_syntax_terminal_and_scope) ... ok
+test_all_native_and_harness_inputs_match_saved_fixed_generation (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_all_native_and_harness_inputs_match_saved_fixed_generation) ... ok
+test_current_qa_bytes_are_bound_to_execution (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_current_qa_bytes_are_bound_to_execution) ... ok
+test_download_and_review_are_exact_same_artifacts (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_download_and_review_are_exact_same_artifacts) ... ok
+test_negative_controls_pass_and_initial_diagnostics_preserved (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_negative_controls_pass_and_initial_diagnostics_preserved) ... ok
+test_static_integrity_not_runtime_security_or_confinement_acceptance (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_static_integrity_not_runtime_security_or_confinement_acceptance) ... ok
+test_thirty_actual_wheels_and_file_records_reviewed (test_linux_prerequisite_receipt_l125c6.LinuxPrerequisiteReceipt.test_thirty_actual_wheels_and_file_records_reviewed) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.059s
+
+OK

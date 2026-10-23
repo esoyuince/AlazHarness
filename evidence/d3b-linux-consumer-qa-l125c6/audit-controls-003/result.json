@@ -1,0 +1,12 @@
+{
+  "result": "PASS_SYNTHETIC_AUDITOR_CONTRACTS",
+  "total": 12,
+  "failures": 0,
+  "errors": 0,
+  "failedIds": [],
+  "auditSha256": "bd1829ced76d1faca85a4892baebaf64e1e1babba71bc5af400335484013a8f4",
+  "controlsSha256": "fcf9fdb1206945f0c5e5fce9c746f85eed26100d988814ab0daf627e72f346af",
+  "actualDependencyWheelsExecuted": false,
+  "linuxRuntimeTested": false,
+  "syntheticArchivesOnly": true
+}

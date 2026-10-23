@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T00:11:16.990574+03:00",
+  "priorResult": "all invalid archives refused; single-backslash refused by RECORD mismatch rather than path check",
+  "diagnosis": "Windows ZipInfo normalizes filename on read too; original encoded name remains orig_filename",
+  "correction": "check both normalized and original member names, same negative test unchanged",
+  "qaControlSourceUnchanged": "fcf9fdb1206945f0c5e5fce9c746f85eed26100d988814ab0daf627e72f346af",
+  "runtimeOrWheelBytesModified": false
+}
