@@ -1,0 +1,56 @@
+test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) ... 
+  test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_running') ... FAIL
+  test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_app') ... FAIL
+  test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_site') ... FAIL
+  test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_runner') ... FAIL
+test_prepared_pending_work_is_not_treated_as_quiescent_attachment (__main__.PreparedAPICases.test_prepared_pending_work_is_not_treated_as_quiescent_attachment) ... FAIL
+
+======================================================================
+FAIL: test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_running')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-api-b123a6\scripts\qa\b123a6_native_prepared_api.py", line 208, in test_prepared_service_objects_and_running_flag_are_refused
+    with self.observed(),self.assertRaises(RejectStore):self.select(b,a)
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+======================================================================
+FAIL: test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_app')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-api-b123a6\scripts\qa\b123a6_native_prepared_api.py", line 208, in test_prepared_service_objects_and_running_flag_are_refused
+    with self.observed(),self.assertRaises(RejectStore):self.select(b,a)
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+======================================================================
+FAIL: test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_site')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-api-b123a6\scripts\qa\b123a6_native_prepared_api.py", line 208, in test_prepared_service_objects_and_running_flag_are_refused
+    with self.observed(),self.assertRaises(RejectStore):self.select(b,a)
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+======================================================================
+FAIL: test_prepared_service_objects_and_running_flag_are_refused (__main__.PreparedAPICases.test_prepared_service_objects_and_running_flag_are_refused) (field='_runner')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-api-b123a6\scripts\qa\b123a6_native_prepared_api.py", line 208, in test_prepared_service_objects_and_running_flag_are_refused
+    with self.observed(),self.assertRaises(RejectStore):self.select(b,a)
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+======================================================================
+FAIL: test_prepared_pending_work_is_not_treated_as_quiescent_attachment (__main__.PreparedAPICases.test_prepared_pending_work_is_not_treated_as_quiescent_attachment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-api-b123a6\scripts\qa\b123a6_native_prepared_api.py", line 213, in test_prepared_pending_work_is_not_treated_as_quiescent_attachment
+    with self.observed(),self.assertRaises(RejectStore):self.select(b,a)
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 3.167s
+
+FAILED (failures=5)

@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-23T21:41:56.240473+03:00",
+  "failedCreationRequest": "b123a607-4c31-40f2-9f12-781230000004",
+  "zeroByteIndexLockNotOpenByWriter": true,
+  "staleLockPreservedAt": "C:\\Antigravity\\AlazHarness\\.git\\modules\\hermes-agent\\worktrees\\hermes-prepared-api-b123a6\\index.lock.abandoned-b123a6-000004",
+  "ownNewWorktreeOnly": true,
+  "noExistingProductEdits": true,
+  "cleanRestored": true
+}

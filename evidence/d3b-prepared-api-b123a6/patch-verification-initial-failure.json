@@ -1,0 +1,31 @@
+{
+  "request": "b123a607-4c31-40f2-9f12-781230000020",
+  "nativeCommitCompleted": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "patchApplyCompleted": true,
+  "byteIdentityPassed": false,
+  "reason": "fresh fixture omitted upstream .gitattributes; inherited autocrlf true produced CRLF",
+  "failedFixtureRetained": true,
+  "productOrPatchBytesChanged": false,
+  "fileDifferences": {
+    "gateway/run_borrowed_state.py": {
+      "actualSha256": "6de18034e975abf3c5c2deb6fc1da6381f3f3385fc8915dfd729d47ab94a4b78",
+      "expectedSha256": "33d956b144699ae62600c9aed94c9f88ebf4e2b48eb4a492ac00dcdd1138fed6",
+      "lineEndingsOnly": true
+    },
+    "gateway/platforms/api_server_borrowed.py": {
+      "actualSha256": "7cdbf31d3ce5a847acd69fbff9dc87a0aa63403967891dfcfcfc5c246d6896af",
+      "expectedSha256": "5cf200204bf2d1bf1691ec2f0b29e6f614ff32a194e6f6dcc0adc4e62c26d8eb",
+      "lineEndingsOnly": true
+    },
+    "gateway/platforms/api_server.py": {
+      "actualSha256": "495be2e88de885f4b937860feafcae5193aa4e7a679cf0dbce8b0728830378e1",
+      "expectedSha256": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+      "lineEndingsOnly": true
+    },
+    "gateway/platforms/api_server_prepared.py": {
+      "actualSha256": "e2ccb8dd08b8703ca7e133f08e709621c30bef9fa5088744fb70e10de7829340",
+      "expectedSha256": "e0a18c1617ee978db292e9e36d473fd636817e62c15687800531acee48cd8760",
+      "lineEndingsOnly": true
+    }
+  }
+}

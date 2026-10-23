@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T21:45:45.116500+03:00",
+  "qaSha256": "91e90319a58bcd4101fc3261dea025fccf384f5e2c538ca614983c58d6b9884f",
+  "nativeManifest": "candidate-001.json",
+  "scope": "one actual native constructor+prepared join, no service"
+}
