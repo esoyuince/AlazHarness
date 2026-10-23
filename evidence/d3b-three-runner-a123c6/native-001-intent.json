@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T21:48:44.493679+03:00",
+  "candidateSnapshot": "candidate-snapshot-001.json",
+  "qaSha256": "d8d1865ef9b93ab58e294c7e49eaf5991bb85ed925c3cae2e8ee9594b24cbc3c",
+  "scope": "27 real native prepared-only join cases; one explicit memory cleanup failure object"
+}

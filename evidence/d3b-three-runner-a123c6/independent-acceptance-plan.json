@@ -1,0 +1,35 @@
+{
+  "scope": "independent actual native three-store prepared join; not service/admission",
+  "requiredPositive": [
+    "same actual runner/caller state and epoch",
+    "three exact native handles, no additional SQLite acquisition",
+    "local epoch mappings pinned to exact caller state path and epoch",
+    "API disconnect before runner detach retains all caller stores",
+    "existing unqualified direct assignment still refused"
+  ],
+  "requiredNegative": [
+    "cross-owner bundle/state/home",
+    "changed local epoch map and descriptor",
+    "each of three open transactions retained",
+    "actual pending adapter task not cancelled",
+    "runner-before-API detach refused",
+    "closed/replaced replay and response not reopened",
+    "foreign profile rejected",
+    "claim reuse refused",
+    "native listener and authority admission stay closed",
+    "partial async cleanup never relabeled retryable"
+  ],
+  "priorNativeGuardsToPreserve": [
+    "borrowed_listener_not_qualified",
+    "ordinary_service_lifecycle_unqualified",
+    "unqualified borrowed_runner_conflict"
+  ],
+  "notAccepted": [
+    "active work",
+    "live HTTP",
+    "Linux isolation",
+    "profile mount gate",
+    "automatic retry/recovery",
+    "installed activation"
+  ]
+}

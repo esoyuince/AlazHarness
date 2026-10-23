@@ -1,0 +1,12 @@
+test_actual_imports_and_four_source_snapshots_exact (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_actual_imports_and_four_source_snapshots_exact) ... ok
+test_current_qa_identical_to_before_fix (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_current_qa_identical_to_before_fix) ... ok
+test_default_conflict_baseline_is_preserved_and_not_called_bug (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_default_conflict_baseline_is_preserved_and_not_called_bug) ... ok
+test_initial_native_success_and_extra_failed_assertions_retained (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_initial_native_success_and_extra_failed_assertions_retained) ... ok
+test_scope_and_import_diagnostic_denials_not_hidden (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_scope_and_import_diagnostic_denials_not_hidden) ... ok
+test_thirty_current_methods_and_cleanup_not_service_acceptance (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_thirty_current_methods_and_cleanup_not_service_acceptance) ... ok
+test_watched_readonly_boundaries_and_raw_case_coverage (test_prepared_join_receipt_a123c6.ThreePreparedReceipt.test_watched_readonly_boundaries_and_raw_case_coverage) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.210s
+
+OK

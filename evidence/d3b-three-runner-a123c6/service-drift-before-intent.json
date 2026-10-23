@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T21:49:58.083618+03:00",
+  "candidateSnapshot": "candidate-snapshot-001.json",
+  "qaSha256": "b3bff8bac4900ab90e5f91d8cac87a6d88ef57966313b9ef51b9051118ad76e5",
+  "expected": "old candidate must fail new prepared-only selection invariants; failures retained"
+}

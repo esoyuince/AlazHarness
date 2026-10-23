@@ -1,0 +1,152 @@
+{"result": "FAIL", "total": 30, "passed": 27, "failedMethods": 3, "failures": 11, "errors": 0, "skipped": 0, "failureIds": ["__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters (field='_pending_agent_requests', value=1)", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters (field='_pending_agent_requests', value=True)", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters (field='_pending_agent_requests', value=-1)", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters (field='_inflight_agent_runs', value=1)", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters (field='_inflight_agent_runs', value=True)", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters (field='_inflight_agent_runs', value=-1)", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_real_new_task_without_cancelling_it", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag (field='_running')", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag (field='_app')", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag (field='_site')", "__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag (field='_runner')"], "errorIds": [], "qaSha256": "d8d1865ef9b93ab58e294c7e49eaf5991bb85ed925c3cae2e8ee9594b24cbc3c", "actualNativeRunnerAndAdapterAndThreeStores": true, "nativeProductMethodsReplaced": false, "oneCleanupObjectReplacedForExplicitFault": true, "profileMountOrLinuxIsolationTested": false, "activeWorkOrModelTested": false, "httpListenerStarted": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true}
+test_actual_sync_async_and_response_selectors_keep_caller_objects (__main__.PreparedServiceChecks.test_actual_sync_async_and_response_selectors_keep_caller_objects) ... ok
+test_changed_authority_or_descriptor_refused (__main__.PreparedServiceChecks.test_changed_authority_or_descriptor_refused) ... ok
+test_cleanup_fault_retains_unknown_ownership_no_retry (__main__.PreparedServiceChecks.test_cleanup_fault_retains_unknown_ownership_no_retry) ... ok
+test_closed_response_cannot_reopen_or_detach_runner (__main__.PreparedServiceChecks.test_closed_response_cannot_reopen_or_detach_runner) ... ok
+test_construction_failure_retains_claim_not_reusable (__main__.PreparedServiceChecks.test_construction_failure_retains_claim_not_reusable) ... ok
+test_default_bundle_still_rejects_direct_runner_assignment (__main__.PreparedServiceChecks.test_default_bundle_still_rejects_direct_runner_assignment) ... ok
+test_detached_adapter_never_reopens_or_selects (__main__.PreparedServiceChecks.test_detached_adapter_never_reopens_or_selects) ... ok
+test_each_open_transaction_blocks_selection_and_detach_no_rollback (__main__.PreparedServiceChecks.test_each_open_transaction_blocks_selection_and_detach_no_rollback) ... ok
+test_each_replay_response_generation_change_refused (__main__.PreparedServiceChecks.test_each_replay_response_generation_change_refused) ... ok
+test_foreign_scope_refused_without_new_profile (__main__.PreparedServiceChecks.test_foreign_scope_refused_without_new_profile) ... ok
+test_listener_service_and_authority_admission_remain_closed (__main__.PreparedServiceChecks.test_listener_service_and_authority_admission_remain_closed) ... ok
+test_local_epoch_binding_matches_caller_path_and_epoch (__main__.PreparedServiceChecks.test_local_epoch_binding_matches_caller_path_and_epoch) ... ok
+test_local_epoch_copy_wrong_value_extra_home_and_bool_refused (__main__.PreparedServiceChecks.test_local_epoch_copy_wrong_value_extra_home_and_bool_refused) ... ok
+test_non_native_prepared_runner_not_accepted (__main__.PreparedServiceChecks.test_non_native_prepared_runner_not_accepted) ... ok
+test_only_one_adapter_can_claim_bundle (__main__.PreparedServiceChecks.test_only_one_adapter_can_claim_bundle) ... ok
+test_only_one_bundle_can_claim_prepared_runner (__main__.PreparedServiceChecks.test_only_one_bundle_can_claim_prepared_runner) ... ok
+test_ordered_detach_keeps_all_caller_stores_and_profile (__main__.PreparedServiceChecks.test_ordered_detach_keeps_all_caller_stores_and_profile) ... ok
+test_pending_adapter_task_is_retained_not_cancelled (__main__.PreparedServiceChecks.test_pending_adapter_task_is_retained_not_cancelled) ... ok
+test_prepared_bundle_requires_exact_state_not_other_home (__main__.PreparedServiceChecks.test_prepared_bundle_requires_exact_state_not_other_home) ... ok
+test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) ... 
+  test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_pending_agent_requests', value=1) ... FAIL
+  test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_pending_agent_requests', value=True) ... FAIL
+  test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_pending_agent_requests', value=-1) ... FAIL
+  test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_inflight_agent_runs', value=1) ... FAIL
+  test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_inflight_agent_runs', value=True) ... FAIL
+  test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_inflight_agent_runs', value=-1) ... FAIL
+test_prepared_selection_refuses_real_new_task_without_cancelling_it (__main__.PreparedServiceChecks.test_prepared_selection_refuses_real_new_task_without_cancelling_it) ... FAIL
+test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) ... 
+  test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_running') ... FAIL
+  test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_app') ... FAIL
+  test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_site') ... FAIL
+  test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_runner') ... FAIL
+test_profile_reacquire_does_not_adopt_old_bundle (__main__.PreparedServiceChecks.test_profile_reacquire_does_not_adopt_old_bundle) ... ok
+test_real_join_has_same_three_handles_no_epoch_or_row_change (__main__.PreparedServiceChecks.test_real_join_has_same_three_handles_no_epoch_or_row_change) ... ok
+test_replaced_adapter_store_not_relearned (__main__.PreparedServiceChecks.test_replaced_adapter_store_not_relearned) ... ok
+test_replaced_connection_is_not_adopted (__main__.PreparedServiceChecks.test_replaced_connection_is_not_adopted) ... ok
+test_replay_lock_contention_is_nonblocking_and_not_unlocked (__main__.PreparedServiceChecks.test_replay_lock_contention_is_nonblocking_and_not_unlocked) ... ok
+test_runner_cannot_detach_before_api (__main__.PreparedServiceChecks.test_runner_cannot_detach_before_api) ... ok
+test_unclaimed_prepared_bundle_retains_runner (__main__.PreparedServiceChecks.test_unclaimed_prepared_bundle_retains_runner) ... ok
+test_wrong_actor_cannot_select_or_release (__main__.PreparedServiceChecks.test_wrong_actor_cannot_select_or_release) ... ok
+
+======================================================================
+FAIL: test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_pending_agent_requests', value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 21, in test_prepared_selection_refuses_pending_or_malformed_work_counters
+    with self.subTest(field=field,value=value),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_pending_agent_requests', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 21, in test_prepared_selection_refuses_pending_or_malformed_work_counters
+    with self.subTest(field=field,value=value),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_pending_agent_requests', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 21, in test_prepared_selection_refuses_pending_or_malformed_work_counters
+    with self.subTest(field=field,value=value),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_inflight_agent_runs', value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 21, in test_prepared_selection_refuses_pending_or_malformed_work_counters
+    with self.subTest(field=field,value=value),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_inflight_agent_runs', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 21, in test_prepared_selection_refuses_pending_or_malformed_work_counters
+    with self.subTest(field=field,value=value),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_pending_or_malformed_work_counters (__main__.PreparedServiceChecks.test_prepared_selection_refuses_pending_or_malformed_work_counters) (field='_inflight_agent_runs', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 21, in test_prepared_selection_refuses_pending_or_malformed_work_counters
+    with self.subTest(field=field,value=value),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_real_new_task_without_cancelling_it (__main__.PreparedServiceChecks.test_prepared_selection_refuses_real_new_task_without_cancelling_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 32, in test_prepared_selection_refuses_real_new_task_without_cancelling_it
+    q.LOOP.run_until_complete(scenario());self.alive()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 29, in scenario
+    with self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_running')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 12, in test_prepared_selection_refuses_service_objects_or_running_flag
+    with self.subTest(field=field),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_app')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 12, in test_prepared_selection_refuses_service_objects_or_running_flag
+    with self.subTest(field=field),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_site')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 12, in test_prepared_selection_refuses_service_objects_or_running_flag
+    with self.subTest(field=field),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_prepared_selection_refuses_service_objects_or_running_flag (__main__.PreparedServiceChecks.test_prepared_selection_refuses_service_objects_or_running_flag) (field='_runner')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-three-runner-a123c6\scripts\qa\a123c6_service_drift.py", line 12, in test_prepared_selection_refuses_service_objects_or_running_flag
+    with self.subTest(field=field),self.observed(),self.assertRaises((q.Rejected,q.RunnerRejected)):self.select()
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+----------------------------------------------------------------------
+Ran 30 tests in 15.871s
+
+FAILED (failures=11)
+

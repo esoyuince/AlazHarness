@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-23T21:50:41.189717+03:00",
+  "snapshot": "candidate-snapshot-002.json",
+  "sameFailingQaSha256": "b3bff8bac4900ab90e5f91d8cac87a6d88ef57966313b9ef51b9051118ad76e5",
+  "baseQaSha256": "d8d1865ef9b93ab58e294c7e49eaf5991bb85ed925c3cae2e8ee9594b24cbc3c",
+  "actualMethods": 30,
+  "noProviderOrService": true
+}
