@@ -84,3 +84,7 @@ main merge or push occurred in this independent work. One new unprivileged WSL
 compile-only subprocess ran, and no prior blocked operation was reissued. Keep
 C120P9 held code outside executable selection. Read status.md and summary.json
 for current commit/integration state; do not restart uncertain original work.
+
+## Target candidate superseded after separate security metadata review
+
+The30-artifact integrity/marker result above belongs to the FIRST candidate. L125P1 has explicitly NOT installed it and subsequently selected five newer package versions after its own advisory metadata review. Those findings are not produced by this integrity auditor. Retain this result as historical artifact evidence, not as permission to activate the old candidate. The replacement set needs a new artifact report and actual target imports; old-wheel-candidate-superseded.json records the exact five substitutions and source-plan hash. Windows runtime and native product remain unchanged.

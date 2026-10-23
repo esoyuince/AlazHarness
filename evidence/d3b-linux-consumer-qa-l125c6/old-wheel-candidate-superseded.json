@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-24T00:15:48.452221+03:00",
+  "firstWheelAuditState": "INTEGRITY_PASS_ONLY_SUPERSEDED_TARGET_NOT_ACTIVATED",
+  "reason": "original L125P1 security metadata review replaced five candidate versions; no claim previous integrity audit established safety",
+  "originalPlanSha256": "57d09ff0408f1fc84a848f106f952eb8261c4bef93ee4531e0c245b7e2c37bac",
+  "proposedTargetVersionChanges": [
+    {
+      "name": "aiohttp",
+      "oldVersion": "3.14.3",
+      "newVersion": "3.14.5"
+    },
+    {
+      "name": "certifi",
+      "oldVersion": "2026.5.20",
+      "newVersion": "2026.10.23"
+    },
+    {
+      "name": "multidict",
+      "oldVersion": "6.7.1",
+      "newVersion": "6.9.1"
+    },
+    {
+      "name": "urllib3",
+      "oldVersion": "2.7.0",
+      "newVersion": "2.8.0"
+    },
+    {
+      "name": "yarl",
+      "oldVersion": "1.24.5",
+      "newVersion": "1.25.1"
+    }
+  ],
+  "originalOwner": "L125P1",
+  "oldArtifactReviewRetainedAsHistorical": true,
+  "newTargetAuditPending": true,
+  "originalRuntimeNotChanged": true,
+  "productCodeChanged": false
+}
