@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-23T23:38:40.010177+03:00",
+  "base": "66a7bf776bd8df0ea0e0562efa4b03604f93b1fa",
+  "implementationParent": "1a8d46df94746a445c8cef7ce53e4771b7caa69b",
+  "sourceCount": 522,
+  "changedOriginalSources": [
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/test_three_projection_receipt_t114r6a.py",
+    "tests/test_three_store_http_receipt_h114r6.py",
+    "tests/test_three_store_receipt_l113f6.py"
+  ],
+  "unchangedOriginalSources": 508,
+  "patchHashes": {
+    "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+    "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac",
+    "patches/hermes/b123a6/prepared-api-runner.patch": "953ede974fffbac717e8e69e26bde29bbb4b2accc0e1d7465a2ab8559b2ebf03",
+    "patches/hermes/e118w2/native-worker-owner.patch": "47731c2b72f88486852ed8e4b1e08b2cc39599829687bfd439b1b76b1445d935",
+    "patches/hermes/h117b/native-run-producer.patch": "86d2ae5d4014239e08c790e947692a65919178c887a4e6e5418244736683098d",
+    "patches/hermes/r122c4/runner-caller-state.patch": "7df24fdd60614583e73a056ba111eac40df2ad1a7bb55555562cf64c2ed293a3",
+    "patches/hermes/s121r4/session-store-caller-state.patch": "c048461b42e7d318e6f5d46f0a1483e0fb3bfdc756b414c0e6c99c2954e49920"
+  },
+  "fullRunOwner": "C124L1 exact original implementation + independent QA",
+  "nativeFeatureChanged": false,
+  "noNativeRerunByUnion": true
+}

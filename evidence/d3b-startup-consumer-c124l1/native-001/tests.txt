@@ -1,0 +1,185 @@
+test_actual_adapter_task_is_neither_cancelled_nor_hidden (__main__.IndependentConsumer.test_actual_adapter_task_is_neither_cancelled_nor_hidden) ... ok
+test_after_detach_closed_api_flags_are_rechecked (__main__.IndependentConsumer.test_after_detach_closed_api_flags_are_rechecked) ... ok
+test_bad_manifest_retains_stores_and_never_retries (__main__.IndependentConsumer.test_bad_manifest_retains_stores_and_never_retries) ... ok
+test_borrower_reuses_exact_handles_once_and_owner_close_refuses (__main__.IndependentConsumer.test_borrower_reuses_exact_handles_once_and_owner_close_refuses) ... ok
+test_cancelled_preparation_after_real_authority_holds_unfinished_consumer (__main__.IndependentConsumer.test_cancelled_preparation_after_real_authority_holds_unfinished_consumer) ... ok
+test_cancelled_real_api_cleanup_await_is_unknown_not_retryable (__main__.IndependentConsumer.test_cancelled_real_api_cleanup_await_is_unknown_not_retryable) ... ok
+test_consumer_reference_replacement_not_treated_as_clean (__main__.IndependentConsumer.test_consumer_reference_replacement_not_treated_as_clean) ... ok
+test_direct_native_detach_does_not_forge_owner_acknowledgment (__main__.IndependentConsumer.test_direct_native_detach_does_not_forge_owner_acknowledgment) ... ok
+test_each_database_transaction_preserved_and_known_refusal_recoverable (__main__.IndependentConsumer.test_each_database_transaction_preserved_and_known_refusal_recoverable) ... ok
+test_equal_replacement_expectations_do_not_transfer_identity (__main__.IndependentConsumer.test_equal_replacement_expectations_do_not_transfer_identity) ... ok
+test_foreign_thread_owner_close_never_releases_connections (__main__.IndependentConsumer.test_foreign_thread_owner_close_never_releases_connections) ... ok
+test_missing_third_configuration_refused_without_consumer (__main__.IndependentConsumer.test_missing_third_configuration_refused_without_consumer) ... ok
+test_native_service_and_admission_still_refused (__main__.IndependentConsumer.test_native_service_and_admission_still_refused) ... ok
+test_non_native_config_failed_attempt_retains_slot (__main__.IndependentConsumer.test_non_native_config_failed_attempt_retains_slot) ... ok
+test_ordered_detach_leaves_handles_until_owner_and_lease_until_caller (__main__.IndependentConsumer.test_ordered_detach_leaves_handles_until_owner_and_lease_until_caller) ... ok
+test_postdetach_committed_epoch_drift_blocks_owner_close (__main__.IndependentConsumer.test_postdetach_committed_epoch_drift_blocks_owner_close) ... FAIL
+test_postdetach_live_authority_mutation_task_blocks (__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks) ... ERROR
+test_postdetach_live_authority_mutation_task_blocks (__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks) ... FAIL
+test_postdetach_live_runner_task_blocks_without_cancellation (__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation) ... FAIL
+test_postdetach_live_runner_task_blocks_without_cancellation (__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation) ... FAIL
+test_postdetach_pending_response_identity_blocks_store_close (__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close) ... FAIL
+test_postdetach_pending_response_identity_blocks_store_close (__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close) ... FAIL
+test_postdetach_replay_connection_transaction_blocks (__main__.IndependentConsumer.test_postdetach_replay_connection_transaction_blocks) ... FAIL
+test_postdetach_response_header_changed_refuses (__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses) ... FAIL
+test_postdetach_response_header_changed_refuses (__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses) ... FAIL
+test_slot_reentry_refused_before_second_constructor (__main__.IndependentConsumer.test_slot_reentry_refused_before_second_constructor) ... FAIL
+test_wrong_owner_stage_refuses_without_constructor (__main__.IndependentConsumer.test_wrong_owner_stage_refuses_without_constructor) ... ok
+
+======================================================================
+ERROR: test_postdetach_live_authority_mutation_task_blocks (__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 167, in test_postdetach_live_authority_mutation_task_blocks
+    task=LOOP.run_until_complete(begin());original=authority._mutation_tasks;authority._mutation_tasks={task}
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionAuthority' object has no attribute '_mutation_tasks'
+
+======================================================================
+FAIL: test_postdetach_committed_epoch_drift_blocks_owner_close (__main__.IndependentConsumer.test_postdetach_committed_epoch_drift_blocks_owner_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 154, in test_postdetach_committed_epoch_drift_blocks_owner_close
+    try:self.refuse_close()
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 50, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_live_authority_mutation_task_blocks (__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 39, in tearDown
+    self.assertEqual([t for t in asyncio.all_tasks(LOOP) if not t.done()],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Task pending name='Task-41' coro=<Event.[145 chars])]>>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+
+- [<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
++ []
+
+======================================================================
+FAIL: test_postdetach_live_runner_task_blocks_without_cancellation (__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 162, in test_postdetach_live_runner_task_blocks_without_cancellation
+    try:self.refuse_close();self.assertFalse(task.cancelled());self.assertFalse(task.done())
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 50, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_live_runner_task_blocks_without_cancellation (__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 39, in tearDown
+    self.assertEqual([t for t in asyncio.all_tasks(LOOP) if not t.done()],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Task pending name='Task-41' coro=<Event.[145 chars])]>>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+
+- [<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
++ []
+
+======================================================================
+FAIL: test_postdetach_pending_response_identity_blocks_store_close (__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 173, in test_postdetach_pending_response_identity_blocks_store_close
+    try:self.refuse_close()
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 50, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_pending_response_identity_blocks_store_close (__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 39, in tearDown
+    self.assertEqual([t for t in asyncio.all_tasks(LOOP) if not t.done()],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Task pending name='Task-41' coro=<Event.[145 chars])]>>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+
+- [<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
++ []
+
+======================================================================
+FAIL: test_postdetach_replay_connection_transaction_blocks (__main__.IndependentConsumer.test_postdetach_replay_connection_transaction_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 39, in tearDown
+    self.assertEqual([t for t in asyncio.all_tasks(LOOP) if not t.done()],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Task pending name='Task-41' coro=<Event.[145 chars])]>>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+
+- [<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
++ []
+
+======================================================================
+FAIL: test_postdetach_response_header_changed_refuses (__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 180, in test_postdetach_response_header_changed_refuses
+    try:self.refuse_close()
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 50, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_response_header_changed_refuses (__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 39, in tearDown
+    self.assertEqual([t for t in asyncio.all_tasks(LOOP) if not t.done()],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Task pending name='Task-41' coro=<Event.[145 chars])]>>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+
+- [<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
++ []
+
+======================================================================
+FAIL: test_slot_reentry_refused_before_second_constructor (__main__.IndependentConsumer.test_slot_reentry_refused_before_second_constructor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 39, in tearDown
+    self.assertEqual([t for t in asyncio.all_tasks(LOOP) if not t.done()],[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Task pending name='Task-41' coro=<Event.[145 chars])]>>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+
+- [<Task pending name='Task-41' coro=<Event.wait() running at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\locks.py:213> wait_for=<Future pending cb=[Task.task_wakeup()]>>]
++ []
+
+----------------------------------------------------------------------
+Ran 23 tests in 95.389s
+
+FAILED (failures=10, errors=1)

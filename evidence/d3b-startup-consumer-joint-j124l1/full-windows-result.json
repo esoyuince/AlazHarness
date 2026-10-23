@@ -1,0 +1,113 @@
+{
+  "result": "FAIL",
+  "total": 3212,
+  "discovered": 3212,
+  "passed": 3188,
+  "errors": 0,
+  "failures": 1,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [
+    "test_canonical_receipt_c119v1.CanonicalReceipt.test_test_boundary_and_original_controls_remain_explicit"
+  ],
+  "skippedNamesAndReasons": [
+    [
+      "test_broker_budget_native.NativeBudgetTransport.test_http_500_is_observed_without_refund",
+      "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    ],
+    [
+      "test_broker_budget_native.NativeBudgetTransport.test_missing_private_authority_never_opens_socket",
+      "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    ],
+    [
+      "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_broker_restart",
+      "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    ],
+    [
+      "test_broker_budget_native.NativeBudgetTransport.test_private_cap_survives_gateway_ledger_reset",
+      "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    ],
+    [
+      "test_broker_budget_native.NativeBudgetTransport.test_unknown_commit_ack_does_not_send_http",
+      "native IPC/HTTP requires explicit opt-in and a prepared Linux runtime"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_abrupt_owner_exit_releases_kernel_lock",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_actual_child_contends_then_acquires_after_close",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_closed_lease_cannot_be_reused",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_exception_releases_owned_lease_without_unlink",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_exec_does_not_inherit_image_or_parent_descriptors",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_fork_child_cannot_release_parent_lock",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_hardlink_refused_without_repair",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_image_mode_must_be_private",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_missing_file_not_created",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_no_content_read_write_or_unlink",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_parent_mode_must_be_private",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_parent_path_replacement_rejected",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_real_acquisition_preserves_bytes_and_metadata",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_replaced_image_not_adopted",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_resize_during_lease_refuses_confirmation",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_same_process_second_owner_refused",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_symlink_is_never_followed",
+      "real Linux flock/dirfd/fork required"
+    ],
+    [
+      "test_state_image_lease.NativeImageLeaseTests.test_wrong_identity_rejected",
+      "real Linux flock/dirfd/fork required"
+    ]
+  ],
+  "sourceCount": 522,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "elapsedSeconds": 206.989,
+  "at": "2026-10-23T23:42:11.014994+03:00",
+  "scope": "new full standard consumer-owner union; actual native receipts with explicit Windows Linux-boundary doubles, no native/isolated service activation"
+}

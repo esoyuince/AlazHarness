@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T23:29:45.345732+03:00",
+  "productOwner": "S124B1",
+  "copiedSources": {
+    "packages/claw-hermes/gateway_store_startup.py": "e9bcb9b7dfc98cef60ddf75b749574b21f6a6e11f4411f13adcf00b245371d28",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "89d93a0f9ffc8e554a79432d1bfb3970c97990957ebac7283f035c9221a9b13b",
+    "config/prepared-consumer-s124b1-sources.json": "6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215",
+    "scripts/qa/s124b1_startup_fixture.py": "2e50d9c6c1080c06b319f09d010e72e619c4e9681f881ba69ec6edde6f033680"
+  },
+  "otherWorktreeModified": false,
+  "oldOwnerSnapshotPreserved": true,
+  "independentTestOnlySnapshot": true
+}

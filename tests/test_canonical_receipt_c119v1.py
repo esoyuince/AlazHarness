@@ -1,4 +1,4 @@
-"""Current actual native receipts; no new native execution or safety-block retry."""
+"""Native observer receipts with exact historical startup baseline; no native replay."""
 import hashlib,json,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -47,7 +47,21 @@ class CanonicalReceipt(unittest.TestCase):
         control=json.loads((E/'native-002/provisioned-schemas.json').read_text(encoding='utf-8'))
         self.assertTrue(control['separateControlClosedBeforeCases']);self.assertEqual(control['schemaHashes'],self.r['schemaPins'])
         base=json.loads((E/'baseline.json').read_text(encoding='utf-8'))['sources'];self.assertEqual(len(base),483)
-        for n,h in base.items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+        # The pre-consumer baseline is historical, not a ban on future changes.
+        # Redirect ONLY four exact saved files; every other baseline byte stays checked.
+        changed=('packages/claw-hermes/gateway_store_startup.py',
+                 'tests/test_three_projection_receipt_t114r6a.py',
+                 'tests/test_three_store_http_receipt_h114r6.py',
+                 'tests/test_three_store_receipt_l113f6.py')
+        saved=ROOT/'evidence/d3b-startup-consumer-s124b1'
+        later=json.loads((saved/'baseline.json').read_text(encoding='utf-8'))
+        self.assertEqual(later['base'],'66a7bf776bd8df0ea0e0562efa4b03604f93b1fa')
+        for n,h in base.items():
+            if n in changed:
+                self.assertEqual(later['sources'][n],h)
+                path=saved/(Path(n).name+'.before.txt')
+            else:path=ROOT/n
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),h,n)
     def test_historical24_and_actual_exponent_failure_not_relabelled(self):
         old=json.loads((E/'native-001/result.json').read_text(encoding='utf-8'));self.assertEqual(old['total'],24)
         for n,h in old['sourceHashes'].items():

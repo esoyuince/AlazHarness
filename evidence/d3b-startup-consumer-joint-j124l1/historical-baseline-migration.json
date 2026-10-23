@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T23:42:24.296995+03:00",
+  "firstFullResult": "full-windows-result.json",
+  "firstFullFailureCount": 1,
+  "failureId": "test_canonical_receipt_c119v1.CanonicalReceipt.test_test_boundary_and_original_controls_remain_explicit",
+  "reason": "C119 receipt assumed all483 baseline source files remain forever current; 4 changed files now bind saved actual pre-consumer snapshots",
+  "historicalRawReceiptsModified": false,
+  "currentNativeSourcesModified": false,
+  "changedOnlyTest": "tests/test_canonical_receipt_c119v1.py",
+  "oldTestSha256": "807a4e1a200c9e16ecc2c3722e56c30b75f69e1b8ce4592da298b333b5f43a71",
+  "newTestSha256": "ace4ac3a00cc6487e87f02cfa51ccaec94e83851b379f433bc98ce95de36a81c",
+  "nativeTestsRerun": false
+}

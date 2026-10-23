@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-23T23:37:47.912837+03:00",
+  "base": "66a7bf776bd8df0ea0e0562efa4b03604f93b1fa",
+  "implementationParentCommit": "1a8d46df94746a445c8cef7ce53e4771b7caa69b",
+  "transfer": "immutable fast-forward with only own exact snapshots restored/removed before merge",
+  "allIndependentlyTestedSourcesExact": true,
+  "parallelWorktreeModified": false,
+  "newNativeExecution": false,
+  "independentNativePassed": 23
+}

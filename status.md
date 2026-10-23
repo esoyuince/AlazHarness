@@ -1,28 +1,44 @@
 # AlazHarness - status
 
-## D3B-STARTUP-CONSUMER-S124B1 - NATIVE20/20 PASS; UNION FULL PENDING
+## D3B-STARTUP-CONSUMER-JOINT-J124L1 - EXACT UNION PASS; CANONICAL DELIVERY PENDING
 
-S124B1 is SOLE implementation owner. Existing NativeStoreStartup now reserves a
-fixed prepared consumer before effects and ORIGINAL close refuses active/unknown
-consumer. Native real API->runner detach, same3 stores/epoch, current SQL and
-native retirement inventories revalidated before store close. External lease
-release remains caller-owned. No new storage owner, scheduler, recovery or service.
+Branch alaz/d3b-startup-consumer-c124l1, original S124B1 product1a8d46d retained.
+One ORIGINAL NativeStoreStartup owns state/replay/response; prepared consumer
+borrows exactly those handles/accepted epoch. Slot reserved before constructors/
+awaits. Direct owner.close blocked until consumer confirms API then runner detach.
+Unknown preparation/cleanup holds stores, no replay or automatic lease release.
+Final close rechecks live SQL/epoch and existing runner/authority/task inventories.
 
-Native00220/20PASS on fixed candidate002, original20 QA bytes unchanged from
-18PASS/2FAIL epoch/task-after-detach reproduction. First failures/source retained.
-8owner unit+7current offline receipt methods PASS; focused83 includes old45doubled
-lifecycle and23historical receipts.513 native manifest files match immutable1e97;
-501 actual imports match that envelope. Real startup/native classes/live SQL,
-EXPLICIT Windows Linux actor/lease/layout/cold/mount/permission doubles. Do not
-claim actual Linux/profile/full preopen acceptance. No active task observer/HTTP.
+NEW final full3212=3189PASS/23SKIP/0ERROR/0FAIL.522 source/config/test hashes+7patches
+stable; same23skipped IDs/reasons as prior run.512prior files:507unchanged,1runtime
+owner+4historical receipt bindings changed;10 additions. Original20/20 and own
+23/23 actual native Windows methods PASS, scopes overlap.8owner unit and14offline
+receipts are standard subsets.513pinned native sources;501actual imports verified.
+36 original evidence blobs/history unchanged. No native patch/gitlink/pin change.
 
-One changed existing product file;3 old receipt tests now bind exact saved old
-startup source, never relabel Linux acceptance. No native patch/pin edits, seven
-existing patches unchanged. C124L1 independent QA owns exact-source extra tests;
-no product duplicates or parallel edits. Next immutable source/QA union and one
-new full harness run/static/canonical delivery; do not sum native scopes.
+Windows Linux actor/lease/mount/layout/cold-helper metadata EXPLICITLY DOUBLED;
+actual native constructors/stores/epoch/liveSQL/runner/API/close used. No actual
+Linux/preopen/isolation or current-source active-task/HTTP acceptance. Service,
+admission and listeners remain closed. Installed nativeeb75627 unchanged.
 
-Report docs/D3B-STARTUP-CONSUMER-S124B1.md; matching evidence summary,source-custody,
-candidate002,native002,failednative001,baseline001,focused-current and metadata.
-Current native/full jobs terminal, full NOT RUN YET. Installed nativeeb75627,
-maincc7ceba; no push/root/WSL/provider/CI/production or blocked-operation retry.
+Original closed3stores while APIATTACHED/runnerPREPARED control preserved.
+Initial original20methods18PASS2FAIL; independent clean5/5FAIL demonstrated
+postdetach epoch/task/authority/response-state/header gaps, SAMEQA passed fix.
+First independent23attempt also had optional-field fixture error/cascading cleanup;
+logs/source retained, only exact orphan test temp removed AFTER process exit.
+First combined full3212 had1historical C119 baseline binding failure; raw old proof
+retained, only receipt snapshot binding changed, NEW final full allPASS.
+
+Source gate before consumer imports checks fixed513-file native1e97 envelope;
+not future plugin/agent/dependency or hostile local-code trust. Stores/profile
+stay original-owner/caller owned. No root/WSL/provider/model/main/push/CI/production
+or previously blocked operation replay. C120P9HOLD/fullD3B and activeHTTP stillOPEN.
+Next canonical exact-source artifact delivery, then same Linux cold/mount/current
+source task lifecycle and isolated active readiness before any service activation.
+
+Joint report docs/D3B-STARTUP-CONSUMER-JOINT-J124L1.md; independent detailed report
+D3B-STARTUP-CONSUMER-QA-C124L1.md; original D3B-STARTUP-CONSUMER-S124B1.md.
+Joint evidence summary,final-full-windows-result,source/patch manifests,
+skip-custody,source-custody,historical-baseline-migration. Original/current/failed
+native evidence retained in S124B1/C124L1 folders. Prior status histories archived.
+All native/full jobs terminal; local static and selected commit follow.

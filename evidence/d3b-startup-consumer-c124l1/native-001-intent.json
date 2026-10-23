@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T23:31:08.317146+03:00",
+  "qaSha256": "a72b5992b2cce2c48f668fdf01d4c9f27231162263825480a12ab05134c635d5",
+  "candidate": "candidate-snapshot001.json",
+  "scope": "independent native original-owner/consumer lifecycle, Windows metadata/cold boundaries explicitly doubled; same native1e97"
+}

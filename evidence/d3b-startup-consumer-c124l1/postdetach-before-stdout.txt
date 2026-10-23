@@ -1,0 +1,72 @@
+{"result": "FAIL", "total": 5, "passed": 0, "failures": 5, "errors": 0, "skipped": 0, "failureIds": ["__main__.IndependentConsumer.test_postdetach_committed_epoch_drift_blocks_owner_close", "__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks", "__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation", "__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close", "__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses"], "errorIds": [], "realNativeStoreStartupRunnerApiStores": true, "nativeSqlLiveGatesReal": true, "linuxActorLeaseLayoutColdMountMetadataDoubled": true, "explicitFaultsIncludePausedInitializerAndMemoryCleanup": true, "fullLinuxAcceptance": false, "serviceAdmissionOrListenerActivated": false, "activeTaskObserverRequalified": false, "rootWslAction": false, "providerCalls": 0, "temporaryRootRemoved": true}
+test_postdetach_committed_epoch_drift_blocks_owner_close (__main__.IndependentConsumer.test_postdetach_committed_epoch_drift_blocks_owner_close) ... FAIL
+test_postdetach_live_authority_mutation_task_blocks (__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks) ... FAIL
+test_postdetach_live_runner_task_blocks_without_cancellation (__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation) ... FAIL
+test_postdetach_pending_response_identity_blocks_store_close (__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close) ... FAIL
+test_postdetach_response_header_changed_refuses (__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses) ... FAIL
+
+======================================================================
+FAIL: test_postdetach_committed_epoch_drift_blocks_owner_close (__main__.IndependentConsumer.test_postdetach_committed_epoch_drift_blocks_owner_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 157, in test_postdetach_committed_epoch_drift_blocks_owner_close
+    try:self.refuse_close()
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 53, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_live_authority_mutation_task_blocks (__main__.IndependentConsumer.test_postdetach_live_authority_mutation_task_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 171, in test_postdetach_live_authority_mutation_task_blocks
+    try:self.refuse_close();self.assertFalse(task.cancelled())
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 53, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_live_runner_task_blocks_without_cancellation (__main__.IndependentConsumer.test_postdetach_live_runner_task_blocks_without_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 165, in test_postdetach_live_runner_task_blocks_without_cancellation
+    try:self.refuse_close();self.assertFalse(task.cancelled());self.assertFalse(task.done())
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 53, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_pending_response_identity_blocks_store_close (__main__.IndependentConsumer.test_postdetach_pending_response_identity_blocks_store_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 176, in test_postdetach_pending_response_identity_blocks_store_close
+    try:self.refuse_close()
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 53, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+======================================================================
+FAIL: test_postdetach_response_header_changed_refuses (__main__.IndependentConsumer.test_postdetach_response_header_changed_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 183, in test_postdetach_response_header_changed_refuses
+    try:self.refuse_close()
+        ~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-startup-consumer-c124l1\scripts\qa\c124l1_native_consumer_checks.py", line 53, in refuse_close
+    with self.assertRaises(REJECTIONS):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: (<class 'gateway_prepared_consumer.PreparedConsumerRejected'>, <class 'gateway_store_startup.StoreStartupRejected'>, <class 'gateway_live_store_gate.LiveStoreRejected'>, <class 'gateway_response_live.ResponseLiveRejected'>) not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 33.847s
+
+FAILED (failures=5)
+

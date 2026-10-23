@@ -1,0 +1,12 @@
+test_current_sources_and_native_immutable_imports (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_current_sources_and_native_immutable_imports) ... ok
+test_fixture_cleanup_never_relabels_unknown_product_state (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_fixture_cleanup_never_relabels_unknown_product_state) ... ok
+test_original_close_gap_control_has_exact_old_source (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_original_close_gap_control_has_exact_old_source) ... ok
+test_real_five_defects_fixed_without_weakening_same_assertions (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_real_five_defects_fixed_without_weakening_same_assertions) ... ok
+test_scope_and_failed_first_fixture_remain_explicit (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_scope_and_failed_first_fixture_remain_explicit) ... ok
+test_terminal_native23_and_all_actual_case_lines (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_terminal_native23_and_all_actual_case_lines) ... ok
+test_watched_no_fourth_connection_database_open_or_row_write (test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_watched_no_fourth_connection_database_open_or_row_write) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.067s
+
+OK

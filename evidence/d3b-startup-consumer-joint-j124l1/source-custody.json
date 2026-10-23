@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-23T23:39:45.442664+03:00",
+  "implementationCommit": "1a8d46df94746a445c8cef7ce53e4771b7caa69b",
+  "exactOriginalEvidenceGitBlobs": 36,
+  "originalEvidenceChanged": false,
+  "independentActualNativeMethods": 23,
+  "originalActualNativeMethods": 20,
+  "suitesOverlap": true,
+  "fixedNativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "sameSoleProductImplementation": true,
+  "sourceEnvelopeFiles": 513,
+  "nativeFilesModifiedByIntegration": false,
+  "linuxAcceptanceInferred": false
+}

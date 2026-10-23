@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-23T23:33:51.619739+03:00",
+  "priorRequest": "e124a901-52bc-461a-973f-124001000013",
+  "priorExitCode": 1,
+  "priorFullNativeMethods": 23,
+  "priorTestLogCounts": {
+    "failures": 10,
+    "errors": 1
+  },
+  "priorJsonResultAbsent": true,
+  "cause": "optional native _mutation_tasks field assumed present in test setup; own Task leaked and early teardown assertion prevented fixture DB cleanup",
+  "correction": "get optional field before creating Task; always-run addCleanup for own profiles, no weakening of product refusal assertions",
+  "firstPassNotClaimed": true,
+  "productUntouched": true,
+  "oldQaSha256": "a72b5992b2cce2c48f668fdf01d4c9f27231162263825480a12ab05134c635d5",
+  "newQaSha256": "418b931a157b5521f1402d8a5c9628ddfbd9b78b5789432b0bb37512f08834e7",
+  "terminalProcessOwnTempCleanup": {
+    "ownedRoot": "C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-c124l1-native-rz4fmjmj",
+    "existed": true,
+    "entryCount": 26,
+    "removedAfterChildTerminal": true,
+    "noOtherPathsTouched": true
+  }
+}

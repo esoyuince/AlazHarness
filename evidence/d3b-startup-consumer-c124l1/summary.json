@@ -1,0 +1,9 @@
+{
+  "result": "PASS_INDEPENDENT_NATIVE_CONSUMER_QA",
+  "actualNativeMethods": 23,
+  "offlineReceiptMethods": 7,
+  "sameQaAsFiveFailingBeforeCases": true,
+  "currentSourcesMatchFinalFull": true,
+  "scope": "real native Windows path with explicit Linux boundary doubles; full outcome is joint final-full only",
+  "nativeFeatureInstalled": false
+}
