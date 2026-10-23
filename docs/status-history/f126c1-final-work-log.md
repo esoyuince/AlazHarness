@@ -1,0 +1,17 @@
+# AlazHarness - status
+
+## D3B-CONFINED-CONSUMER-F126C1 - SCOPED FULL CONFINEMENT PASS / CANONICAL DELIVERY PENDING
+
+Branch alaz/d3b-confined-consumer-f126c1, worktree scratch/worktrees/d3b-confined-consumer-f126c1. Independent F126C6 history4f29829 preserved by fast-forward. This worktree owns sole actual experiment and new complete union regression. Native1e97 unchanged, installed vendor/source lock still eb75627, maincc7ceba. Native/standard jobs terminal.
+
+Accepted native006: TWO cold final execs in original private mount/net/IPC projection, actual UID23001/GID23003/no groups/no caps/NNP/seccomp/LandlockABI3, real lease/ext4/cold helpers/native stores/owner/consumer, no boundary doubles.44controller+41per target NESTED predicates, NOT126separate tests. Epoch1->2 same3store rows/inodes.820loaded files per target(498native,304dependencies,17harness,1QA),13actualLinuxbinary imports; immutable513nativeGit envelope+same1162accepted dependency bytes verified. Exactly2authenticated broker pings,0provider/model sends. Native HTTP/admission/task observers remain CLOSED/UNQUALIFIED. FullD3B/powerloss/completeagent remain OPEN.
+
+3harness changes: explicit optional empty0700platforms/platforms-pairing layout, selected by NATIVE_PREPARED_LAYOUT plus NativeStoreStartup(prepared_layout=True). Three-store-only; default minimal/two/three layouts unchanged and old three still rejects second-start scaffold. No contents/authdata/siblings/new readwrite grants. Native eager PairingStore dirs now restart-compatible without deletion. TMPDIR/TMP/TEMP explicitly point existing projected scratch tmpfs; persistent cache/scratch remains refused. Existing syscall/network/Landlock guards not edited.
+
+Native001FAIL missing4unchanged broker-slice transport files;002FAIL dropped diagnostic/forced fixture exit;003FAIL empty pairing scaffold;004/005FAIL missing explicit tmp vars led native persistent scratch fallback. All raw/source/QA records retained. Native006 noforcedcleanup, broker clean, no loop/fence/scopes and original host mounts/privatefiles unchanged. This is original same-run cleanup proof, NOT previously blocked independent root cleanup. Old roots/artifacts not deleted. Earlier blocked actions not retried.
+
+NEW complete standard Windows3280=3257PASS/23SKIP/0ERROR/0FAIL.546source/config/test and7patch hashes frozen through run.532baseline:523unchanged,3runtime+6strict historical receipt/helper adaptations,14new files. Same23skipIDs/reasons unchanged.49focusedPASS(18newunit+10syntheticELF+21offline receipts); native/POSIX not rerun by standard. Independent10realLinux finite-layout checks no metadata doubles.371historical receipts pass strict9saved-generation mapping; original raw outcomes/expected hashes unchanged, not relabelled current.
+
+Reports docs/D3B-CONFINED-CONSUMER-F126C1.md and D3B-CONFINED-ELF-QA-F126C6.md. Evidence matching f126c1/f126c6 dirs. f126c1/current-source-custody, native006-acceptance, transport006, prepared-layout-source-selection, full-windows-result/source/patches, skip-custody, historical-source-bindings/migration, union-focused. Old failed001-005 and diagnostic ordinary-user layout retained. Exact tested Gitcommit follows local static/scoped commit; next canonical fast-forward and selected receipt check only, no native replay.
+
+NEXT: qualify current-source borrowed active task/worker observations and explicit admission/service lifecycle, then same-path active-work/HTTP; do not unlock native guard from prepared PASS alone. No main/push/remoteCI/production/accounts/system runtime upgrade.

@@ -136,3 +136,7 @@ Current status.md and exact source/receipt hashes are the continuation record.
 ## Terminal union regression
 
 NEW full standard Windows3280=3257PASS/23SKIP/0ERROR/0FAIL.546source hashes+7patches stable. All23old skip identities/reasons preserved. Original532files523unchanged;3runtime finite-layout edits and6historical test/helper binding adaptations,14new source/test files. Independent immutable history4f29829 retained.49focused checks are18new unit+10synthetic ELF+21offline receipts, NOT extra kernel runs. Separate independent10actual POSIX layout checks passed. Local static result in static-final.txt is local only; no remoteCI/installed feature/main/push claim.
+
+## Canonical development delivery
+
+Tested commit `96ef5dd0a858bb6bd821096455aa9263d25c1f62` fast-forwarded from `931e57045bdce466934838dffde7d54527ad3f12` into alaz/d3b-principal-launch-21oct. All546source hashes and7patches match full3280=3257PASS/23SKIP. Rechecked49selected unit/synthetic/offline controls on delivered source, no native rerun. Final status and delivery.json record next active-task/service boundary; no main/push/installednative promotion.
