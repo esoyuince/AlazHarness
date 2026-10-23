@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:02:01.720832+03:00",
+  "distro": "AlazHarness-D3B-P71C",
+  "user": "alazgateway",
+  "uid": 23001,
+  "operation": "runtime/source directory/package metadata only",
+  "notOldCleanupReplay": true,
+  "noDefaultUbuntuChange": true
+}

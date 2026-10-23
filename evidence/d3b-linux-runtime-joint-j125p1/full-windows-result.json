@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3231,
+  "discovered": 3231,
+  "passed": 3208,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 23,
+  "failureIds": [],
+  "errorIds": [],
+  "sourceCount": 532,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "all522PreviousSourcesUnchanged": true,
+  "elapsedSeconds": 159.491,
+  "at": "2026-10-24T00:27:59.792307+03:00",
+  "scope": "fresh full Windows standard suite with source-bound real Linux receipts; not a second Linux run or sandbox acceptance"
+}

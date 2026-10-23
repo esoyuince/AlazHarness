@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-24T00:13:32.356409+03:00",
+  "changes": [
+    {
+      "name": "aiohttp",
+      "oldVersion": "3.14.3",
+      "newVersion": "3.14.5",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/aiohttp/3.14.5/json",
+      "apiSha256": "7deb2f0d6dc95c63a2b576236bbe3051f3c0b1d402bd5f59e7619c05684f499a",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "certifi",
+      "oldVersion": "2026.5.20",
+      "newVersion": "2026.10.23",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/certifi/2026.10.23/json",
+      "apiSha256": "546ce90e02c152f5ff565baca6bc2a8f43c355855f637756f49a0143e312bdb2",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "multidict",
+      "oldVersion": "6.7.1",
+      "newVersion": "6.9.1",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/multidict/6.9.1/json",
+      "apiSha256": "35dfa27a368babee3240617789a038e8071315872c1dc0d5972988f7c8d947d1",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "urllib3",
+      "oldVersion": "2.7.0",
+      "newVersion": "2.8.0",
+      "reason": "published security remediation",
+      "releaseApi": "https://pypi.org/pypi/urllib3/2.8.0/json",
+      "apiSha256": "5315e7401db3cacccd0c2ce5daf81f752a9cc3614b18c37f2b79930b7159ce2f",
+      "nonWithdrawnPyPIAdvisories": 0
+    },
+    {
+      "name": "yarl",
+      "oldVersion": "1.24.5",
+      "newVersion": "1.25.1",
+      "reason": "required by corrected aiohttp>=1.25.1",
+      "releaseApi": "https://pypi.org/pypi/yarl/1.25.1/json",
+      "apiSha256": "a07cf3b564a15e3be66faacf0c81a23497ebfbf1ec849a3a77b494ba4b60cf0f",
+      "nonWithdrawnPyPIAdvisories": 0
+    }
+  ],
+  "constraintsSatisfied": true,
+  "oldCandidateNotInstalled": true,
+  "previousPlanRefusedYarlMismatchBeforeDownload": true,
+  "windowsRuntimeChanged": false,
+  "metadataNotFullVulnerabilityAudit": true
+}

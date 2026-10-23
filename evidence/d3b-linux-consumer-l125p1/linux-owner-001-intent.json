@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:19:02.444296+03:00",
+  "archiveSha256": "02154c018e0258a85bd9a17f48cc12696eb0cd6d49d680e2937e12af0efe5fa8",
+  "bootstrapSha256": "0a15af8648d5704f5e549c58b86968b277eed8319d37afc41e8270981c8245b7",
+  "ownerQaSha256": "e79d12ec4a028a55020cf452bd5fe39068e4d36088cc0be25b45a90ca93c7c85",
+  "scope": "actual existing startup on fresh Linux profile/ext4 observed mount/real lease+fixed cold helpers, no boundary doubles or new confinement",
+  "rootUsed": false,
+  "previousBlockedActionsReplayed": false
+}

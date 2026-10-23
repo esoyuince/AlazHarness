@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T00:17:02.431614+03:00",
+  "archiveSha256": "6e9b19d297e7fadd8255576707b44e8bb4f69bdfcf0e2659fdf3ecde61f8a573",
+  "bootstrapSha256": "0a15af8648d5704f5e549c58b86968b277eed8319d37afc41e8270981c8245b7",
+  "qa": "unchanged scripts/qa/b123a6_native_prepared_api.py",
+  "scope": "22 original real-native prepared join cases under actual Linux UID23001, no full owner cold/mount/confinement yet",
+  "serviceEnabled": false
+}

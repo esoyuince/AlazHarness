@@ -1,0 +1,6 @@
+{
+  "firstRequest": "f125d201-7163-4f6d-8b1d-451250000007",
+  "firstFailure": "optional pip metadata absent from immutable native runtime; no file/package mutation",
+  "correction": "report None, use external existing host pip only as download tool",
+  "runtimeUpgraded": false
+}

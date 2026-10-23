@@ -1,0 +1,32 @@
+from pathlib import Path,PurePosixPath
+import os,sys,json,hashlib,tempfile,traceback,platform
+assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+assert os.getresuid()==(23001,)*3 and not Path('/mnt/c/Windows').exists()
+data=json.load(sys.stdin);assert data['nativeFeature']=='1e97dd617b81120255304e472ce322befcdb9ccd'
+assert len(data['files'])==513;assert sum(len(v['text'].encode()) for v in data['files'].values())<16000000
+old=Path('/opt/alaz-t114r6a3/dependencies')
+for name,h in data['oldDependencyHashes'].items():assert hashlib.sha256((old/name).read_bytes()).hexdigest()==h,name
+report={'scope':'unprivileged current-source Linux import prerequisite, NOT confinement/lifecycle','uid':os.getresuid(),'python':sys.version,'kernel':platform.release(),'nativeFeature':data['nativeFeature'],'nativeSourceCount':len(data['files']),'oldDependencyCount':len(data['oldDependencyHashes']),'oldDependencyBytesMatched':True,'rootUsed':False,'providerCalls':0,'serviceStarted':False,'sourceCompileFailures':[],'imports':[],'deniedDiagnostics':[]}
+with tempfile.TemporaryDirectory(prefix='alaz-l125p1-import-') as temp:
+    root=Path(temp);native=root/'native';native.mkdir();home=root/'home';home.mkdir()
+    for name,item in data['files'].items():
+        p=PurePosixPath(name);assert str(p)==name and not p.is_absolute() and '..' not in p.parts and p.suffix=='.py'
+        raw=item['text'].encode();assert hashlib.sha256(raw).hexdigest()==item['sha256']
+        try:compile(raw,name,'exec')
+        except SyntaxError as e:report['sourceCompileFailures'].append({'file':name,'message':str(e),'line':e.lineno})
+        target=native/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(raw)
+    os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),AIOHTTP_NO_EXTENSIONS='1',MULTIDICT_NO_EXTENSIONS='1',YARL_NO_EXTENSIONS='1',FROZENLIST_NO_EXTENSIONS='1',PROPCACHE_NO_EXTENSIONS='1')
+    sys.path[:0]=[str(native),str(old)]
+    def audit(event,args):
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+            report['deniedDiagnostics'].append({'event':event,'callers':[f.name for f in traceback.extract_stack(limit=6)]});raise PermissionError('l125p1_import_offline')
+    sys.addaudithook(audit)
+    for name in ('hermes_state','gateway.config','gateway.run','gateway.platforms.api_server','gateway.platforms.api_server_prepared'):
+        try:__import__(name);report['imports'].append({'module':name,'result':'IMPORTED'})
+        except Exception as e:
+            report['imports'].append({'module':name,'result':'REFUSED','type':type(e).__name__,'missingName':getattr(e,'name',None),'message':str(e)[:400],'traceback':traceback.format_exc()[-5000:]});break
+    report['allCopiedNativeSourcesUnchanged']=all(hashlib.sha256((native/n).read_bytes()).hexdigest()==v['sha256'] for n,v in data['files'].items())
+report['temporaryRootRemoved']=not root.exists()
+report['result']='PASS_IMPORT_ONLY' if len(report['imports'])==5 and all(v['result']=='IMPORTED' for v in report['imports']) and not report['sourceCompileFailures'] else 'DEPENDENCY_OR_COMPATIBILITY_BLOCKER_CONFIRMED'
+print(json.dumps(report),flush=True)

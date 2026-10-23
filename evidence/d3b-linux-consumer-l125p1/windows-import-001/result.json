@@ -1,0 +1,2345 @@
+{
+  "scope": "import and dependency provenance only, not owner lifecycle or confinement",
+  "platform": "win32",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "machine": "AMD64",
+  "completedImports": [
+    "hermes_state",
+    "gateway.config",
+    "gateway.run",
+    "gateway.platforms.api_server",
+    "gateway.platforms.api_server_prepared"
+  ],
+  "error": null,
+  "thirdPartyImports": {
+    "_virtualenv": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\_virtualenv.py",
+      "sha256": "cfb3db86aaa53bb62b5ff764970bec2d71c9228590a0ebec57f6ec926cc0bf1a",
+      "nativeBinary": false
+    },
+    "pywin32_bootstrap": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\win32\\lib\\pywin32_bootstrap.py",
+      "sha256": "fd31f27bc85a6b9c974670838b6eefafb32991be4a9f840f96a4f5524df3b3c3",
+      "nativeBinary": false
+    },
+    "jiter.jiter": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\jiter\\jiter.cp314-win_amd64.pyd",
+      "sha256": "78d924057f1af32a17a29340a9fbe772e1d0b4abc19768a04ce9291f3e38ecc9",
+      "nativeBinary": true
+    },
+    "jiter": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\jiter\\__init__.py",
+      "sha256": "169f4790e8b18986034a20bff34be6889fec0a80864fc380878f3296d9b494fd",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.error": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\error.py",
+      "sha256": "9f3a2e022b3d4d3a6c717f1f9d3197aa36fd5e2926ce881fe249f63aafac4f86",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.docinfo": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\docinfo.py",
+      "sha256": "e0d3ef3bffa6e9ce1f4219be67ddfc9d42a4564a0bd8e050127ffa7e367e265f",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.compat": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\compat.py",
+      "sha256": "ca05082fbfde00843a12bf4d815b4c08198d0418ae9b9033985dd03cbb2f9f47",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.tokens": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\tokens.py",
+      "sha256": "bf97cc67d7b557a6978051d55377dff5bc6a78914da87cac80749b1156ea1571",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.tag": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\tag.py",
+      "sha256": "31452644fc34c569b596bfda0e0645a49ba468f9fa573651b2699289f1cddf2d",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.events": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\events.py",
+      "sha256": "cf0de91a87e7b498f354119c508c4a943c02b35df23d5d9433a212bf1f11d691",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.nodes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\nodes.py",
+      "sha256": "107801e641e2554ca8a0d23bd231d65c56f4c79022dc42567caf16df4621ed64",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.util": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\util.py",
+      "sha256": "a5b49c11e319149d919e9767d63a60d63a26fbe51e83bf4149d8e05fd777f308",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.reader": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\reader.py",
+      "sha256": "27dee9bdccaf2f1956c20b98cdc10a2e97e919a727338f3e5dfd423e0142a07b",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.scanner": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\scanner.py",
+      "sha256": "b716df08841b725be09153e1a093a1359a16044a395bc892a975f9b1509cc8ce",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.anchor": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\anchor.py",
+      "sha256": "bbaa5622e0df29f199523520c3a6997b11e27ec1fd9eb8048d84b3247dda1728",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.scalarstring": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\scalarstring.py",
+      "sha256": "2ac30fbc108b5f5286a471e440aacd234c4a21dc88776e55abf22a2c57125ef4",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.comments": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\comments.py",
+      "sha256": "fccdf4d964c7cac3bb236be9cdd098452df8c43f3e499c31713ae0c52fdee101",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.parser": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\parser.py",
+      "sha256": "44b2d0b372807d08fa2175841ed3d1c974320a5858d238a1b8ba50cd77d78f9a",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.composer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\composer.py",
+      "sha256": "995207cbd7f356028312ac8e031814740e5f4e20cf477f0e1cd7e96f517a0096",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.scalarint": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\scalarint.py",
+      "sha256": "ab400bdb6b1762ee9d274a350b778426f3d1c1faf0b9d7e77ac98e8c0c8a6c6e",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.scalarfloat": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\scalarfloat.py",
+      "sha256": "4a36b81924af3b799c3f877da85b12d540d08364a0d6fe6e405f2cf2be4b02cd",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.scalarbool": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\scalarbool.py",
+      "sha256": "9af7b7435b033b5c586acb42e7f6c9d59477b0bef20c704824f44363e51b3767",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.timestamp": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\timestamp.py",
+      "sha256": "980e052c95c85172a4a66a2e0193b46ed1bb4fee7349c04b898563360594d15d",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.constructor": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\constructor.py",
+      "sha256": "bdaace288852001493bff213299314bb5ff1d9d6aeca217c0c4f91fa61145298",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.resolver": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\resolver.py",
+      "sha256": "aad8c7f2a4ffbff69a9aac646bc87440e7f6227f2cc6b2a914eeaa3b10d50171",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.loader": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\loader.py",
+      "sha256": "d5d59b07c79be84549344b625f1fe4dfd3806122f0369704f8c940fa10bc3604",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.emitter": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\emitter.py",
+      "sha256": "9a5bd5e7281cf80d897780208c62452eb6601f641d0c6edc442e51ec2a5013d7",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.serializer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\serializer.py",
+      "sha256": "96cfd7ccd8241e850a608a7054d99e921f84c9c5490eeae3b1523048d3d3f626",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.representer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\representer.py",
+      "sha256": "3412f1b0c1b3a794599df37b5bdbcb01a28e29dc4248b9b18696ea45844cd1c1",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.dumper": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\dumper.py",
+      "sha256": "65d9d9c305b44bdc061e741ebac97940106a0fe23220801802a74cd1030e9dc5",
+      "nativeBinary": false
+    },
+    "ruamel.yaml.main": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\main.py",
+      "sha256": "b26c1fff79e3f7e681a33684db921bdf6d920a83ca462427c23fe25ca3ea1fde",
+      "nativeBinary": false
+    },
+    "ruamel.yaml": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\ruamel\\yaml\\__init__.py",
+      "sha256": "3119652033a15c24d69c2f2707260f811f3e446cdbad6c8f97d603ede8ac499a",
+      "nativeBinary": false
+    },
+    "psutil._common": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\psutil\\_common.py",
+      "sha256": "6fc6bf5f86491ba962521374472570238929003cebea8e9b6c55224084b52bb0",
+      "nativeBinary": false
+    },
+    "psutil._ntuples": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\psutil\\_ntuples.py",
+      "sha256": "96f42bc24549636b5707a949b7cc92e89c87f7cea7d343a6d17821ac670dfcd2",
+      "nativeBinary": false
+    },
+    "psutil._psutil_windows": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\psutil\\_psutil_windows.pyd",
+      "sha256": "0035450801bd7d938e9e146c5ec28e619cb5a5f4a18cdc53ac7e9734c7f94f78",
+      "nativeBinary": true
+    },
+    "psutil._pswindows": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\psutil\\_pswindows.py",
+      "sha256": "0bbd52dcb214735be4168d11a2ae192d5bc7265c8cf72c611179476479687f54",
+      "nativeBinary": false
+    },
+    "psutil": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\psutil\\__init__.py",
+      "sha256": "7b6a0675824eb1fa2ff0cb1eb36e358dc454703e51dfa4e9a0e6ccd26a159f0c",
+      "nativeBinary": false
+    },
+    "portalocker.__about__": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\__about__.py",
+      "sha256": "5694ce3540287a159b9f0fc102aec3123b5f1e2e80f02a3cc592741484c7d075",
+      "nativeBinary": false
+    },
+    "portalocker.constants": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\constants.py",
+      "sha256": "e186981596710576b5c173339bfc5a7d3c2c1df190a8668da35bc7be50ae7863",
+      "nativeBinary": false
+    },
+    "portalocker.types": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\types.py",
+      "sha256": "e6f2d08065fb583f2b333a5f704dc5b02d9c0efdb22cc2d2ff3b71f4963d71ab",
+      "nativeBinary": false
+    },
+    "portalocker.exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\exceptions.py",
+      "sha256": "c10329e24fc54f4b9591e87506526bc7590927419869e6bf3d3e341e8ca4d2be",
+      "nativeBinary": false
+    },
+    "portalocker.portalocker": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\portalocker.py",
+      "sha256": "df98c8b4d3c4127f8e0a8666008cbfc78c69928b0b060aed76e5a10be1fa359d",
+      "nativeBinary": false
+    },
+    "portalocker.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\utils.py",
+      "sha256": "c861d79110faa5b0100006359adb75f1ce4e28750f16fa0b86c6960b3c831e47",
+      "nativeBinary": false
+    },
+    "portalocker": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\portalocker\\__init__.py",
+      "sha256": "4554d27efbb4aca971e64eab5b9b012d0540ec9e13af418a6ecbf31fb109df4a",
+      "nativeBinary": false
+    },
+    "_win32sysloader": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\win32\\_win32sysloader.pyd",
+      "sha256": "2ce1de2dea3fee1ec8f548860e7f070597d25a31a942212c118c79b16fe74b38",
+      "nativeBinary": true
+    },
+    "pywintypes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pywin32_system32\\pywintypes314.dll",
+      "sha256": "74f036548f3321d312205085662b2b92c0654354a718a41c44e02fd4e01fedb9",
+      "nativeBinary": true
+    },
+    "concurrent_log_handler": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\concurrent_log_handler\\__init__.py",
+      "sha256": "4562b34689a11d7b608f1dfb078c884eb651630c678002f0f59491d9669d8a8a",
+      "nativeBinary": false
+    },
+    "dotenv.parser": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\dotenv\\parser.py",
+      "sha256": "25226977de2d1a1be7ccebf83cbdc3ade5352ede6feab4caee9a7c1ba4677cbe",
+      "nativeBinary": false
+    },
+    "dotenv.variables": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\dotenv\\variables.py",
+      "sha256": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+      "nativeBinary": false
+    },
+    "dotenv.main": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\dotenv\\main.py",
+      "sha256": "a7d99ec5bbbc135b22b7cb81c0f292ce32a460eac8244e7502c4cb892e45778a",
+      "nativeBinary": false
+    },
+    "dotenv": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\dotenv\\__init__.py",
+      "sha256": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23",
+      "nativeBinary": false
+    },
+    "httpx.__version__": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\__version__.py",
+      "sha256": "2e853261e3974e2786cee3ffeb850bd30c5db718eebbf41b3af13b34e83e22a5",
+      "nativeBinary": false
+    },
+    "httpx._exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_exceptions.py",
+      "sha256": "6f15bb7f1ce054c01d3536f04f4567ab4e202435b5fe023f1858903ee3328cbd",
+      "nativeBinary": false
+    },
+    "httpx._types": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_types.py",
+      "sha256": "272878d4642aec039ebfc20e58a0c083bcc26ef1c07ee7e65b983f3e24ed12b6",
+      "nativeBinary": false
+    },
+    "httpx._utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_utils.py",
+      "sha256": "fd355ea802afc4990a1ddcfb74579be2cd0b66a41781e1645d281f88704aff5a",
+      "nativeBinary": false
+    },
+    "httpx._multipart": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_multipart.py",
+      "sha256": "28e1c465997aa28860f663da2b2caedf8e6aab5ac92e0df94d41b7600cd70776",
+      "nativeBinary": false
+    },
+    "httpx._content": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_content.py",
+      "sha256": "2c61b3ac94d1dcebcde0c6f519554d2d7917247fbaa0a97002db4ef69e70ff28",
+      "nativeBinary": false
+    },
+    "httpx._decoders": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_decoders.py",
+      "sha256": "a74757f08d0d1077b1b37506a784ac66eb62321b17aeb5a5ebe1a7a956f488a3",
+      "nativeBinary": false
+    },
+    "httpx._status_codes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_status_codes.py",
+      "sha256": "0d89fedae7c180c797cb9b3cc77fd307bc2302e00031ec136a43eb9b9ad712c7",
+      "nativeBinary": false
+    },
+    "idna.idnadata": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\idnadata.py",
+      "sha256": "01ffa6a3c5819a48402ba4f25ca3901fcf0e5f49903432ad74bed45ad429a699",
+      "nativeBinary": false
+    },
+    "idna.intranges": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\intranges.py",
+      "sha256": "838f6c70b4a4a89b4084b98e3836bb8551eb8928e66fad2d893b04a287097412",
+      "nativeBinary": false
+    },
+    "idna.core": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\core.py",
+      "sha256": "d9f2cb3e2f9da9c494ffb1e27e501441d395cf9c12aa8321c9656fda9bb0da0d",
+      "nativeBinary": false
+    },
+    "idna.package_data": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\package_data.py",
+      "sha256": "335f9830c0f69a399ae75464766817ee8bed94d3e9944b286e2629b13213cd1b",
+      "nativeBinary": false
+    },
+    "idna": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\__init__.py",
+      "sha256": "8514c3ed53136a3596ebdf512fa487bbdd7da5a99adcaed82e0363d2c306d3af",
+      "nativeBinary": false
+    },
+    "httpx._urlparse": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_urlparse.py",
+      "sha256": "640987e3b38d7e4c6bae3f8f3d88467a21e36fa0232824be00d58837838bfca6",
+      "nativeBinary": false
+    },
+    "httpx._urls": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_urls.py",
+      "sha256": "757f7d551d4348e1e9828f40abb3f360ee0529dc6a2a3c32369f20adff1d1cdd",
+      "nativeBinary": false
+    },
+    "httpx._models": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_models.py",
+      "sha256": "e3ffc6bb2bf580bc6e6428708a6f247d036220e709f5a72b785392babbd97e6b",
+      "nativeBinary": false
+    },
+    "httpx._auth": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_auth.py",
+      "sha256": "62bdd0c1a5122b5eeb198c7eee3f85762705233cf863d14557ed45e3eed15d7e",
+      "nativeBinary": false
+    },
+    "httpx._config": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_config.py",
+      "sha256": "a4fa7653ec2271f70ab05f8a6111352d876dddee84446788a1767c1a3a372d67",
+      "nativeBinary": false
+    },
+    "httpx._transports.base": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_transports\\base.py",
+      "sha256": "9194bf54c6d58987c5e7bd29a205022756ee973fb26df2f9d4faacf7292d79b5",
+      "nativeBinary": false
+    },
+    "httpx._transports.asgi": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_transports\\asgi.py",
+      "sha256": "1d17e20d830fb78c101f6805807660e1cfa2dec6e5a3a6cbe464ea7044fec73f",
+      "nativeBinary": false
+    },
+    "httpx._transports.default": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_transports\\default.py",
+      "sha256": "03379a454c95c0271c4f2c8d25ec437f49f57457f3cf2769748420bf0ecf2e79",
+      "nativeBinary": false
+    },
+    "httpx._transports.mock": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_transports\\mock.py",
+      "sha256": "3d3a34779ebb4484d7c46ae48ba90deffebbc300317f088c0dcb972626428c4a",
+      "nativeBinary": false
+    },
+    "httpx._transports.wsgi": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_transports\\wsgi.py",
+      "sha256": "35c3d7dd76a9fc4c0215958efce692c9036e227098c7540c35b3bc1807a2ea36",
+      "nativeBinary": false
+    },
+    "httpx._transports": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_transports\\__init__.py",
+      "sha256": "19b52805200ea7bcfe97ef63e5884c851dc3308727e8554b863d3bd8edcd9e7a",
+      "nativeBinary": false
+    },
+    "httpx._client": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_client.py",
+      "sha256": "c43f941baefe58c91e96d00039e1868fe719d91453026d7db1647194563bff8d",
+      "nativeBinary": false
+    },
+    "httpx._api": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_api.py",
+      "sha256": "aff660b388c8a5c3c92ea2b975b6d26b2aa8fe254c2856b164277ea0e1f12c4b",
+      "nativeBinary": false
+    },
+    "click._winconsole": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\_winconsole.py",
+      "sha256": "292c5f35b3256116ba18e26e08b82c8363dbddd56480934fa8b24f69ef8f6b5d",
+      "nativeBinary": false
+    },
+    "click._compat": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\_compat.py",
+      "sha256": "80f36d5d0f6af86e908a5d9bf8c0b90ac1ec186710e2ee98496cbdfed966ba17",
+      "nativeBinary": false
+    },
+    "click.globals": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\globals.py",
+      "sha256": "80cf8d87a0383341c1fd2824685e4ce2770618c0c773f7e51d7bbdfe88781845",
+      "nativeBinary": false
+    },
+    "click.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\utils.py",
+      "sha256": "5f0ac3c4ecd4fffae71e7fabbc9989703ede71bca950a31e0c94118cdd85f8e0",
+      "nativeBinary": false
+    },
+    "click.exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\exceptions.py",
+      "sha256": "1ef498df81b86ae8ff6d8451f3e4fc094f09c2aff5f8e72c454e1ecdfa337849",
+      "nativeBinary": false
+    },
+    "click.types": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\types.py",
+      "sha256": "f46e0307e9c18fea2603f5d6b18c1b4371fd064a47f36c098fe93120f49c2a60",
+      "nativeBinary": false
+    },
+    "click._utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\_utils.py",
+      "sha256": "782642b7026db180f941892435627c318ffc001223cbc31cce030cc95637dab4",
+      "nativeBinary": false
+    },
+    "click.parser": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\parser.py",
+      "sha256": "a09f9f53fde6bf1ba022e36d1da0804d9e7a9601261d18208c9892a84818ae30",
+      "nativeBinary": false
+    },
+    "click.formatting": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\formatting.py",
+      "sha256": "f125b628692f8dfcfd43535b7a88cc1ee64137471f9d0243b389aa0cfea85e6b",
+      "nativeBinary": false
+    },
+    "click.termui": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\termui.py",
+      "sha256": "567f5e866ad097ddb3dbfe91e1b5593ac1d423a8fc2eb4fcbb44733595290af6",
+      "nativeBinary": false
+    },
+    "click.core": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\core.py",
+      "sha256": "ad9cfbea284d4c5578636b31a771fe9bddc6c4bd9a703e4faacd08a1b12f9ae9",
+      "nativeBinary": false
+    },
+    "click.decorators": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\decorators.py",
+      "sha256": "f5ed4d76ee2384601c3fa44674d3c0c005adb8ff6112ce044e9d6ede52a61f5a",
+      "nativeBinary": false
+    },
+    "click": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\click\\__init__.py",
+      "sha256": "1487767d7092241df27960fe7b6b8e37e9818456b661cf4cbd71a61eef0e5c6d",
+      "nativeBinary": false
+    },
+    "pygments": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\__init__.py",
+      "sha256": "83fe99688e06ed80d7d44d325f79027de83a434c60f249bceffd67fda3e7d2b1",
+      "nativeBinary": false
+    },
+    "pygments.lexers._mapping": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\lexers\\_mapping.py",
+      "sha256": "fd7e1ac14a895e47591c7a911460ebbe2a47caed81159ea292776c08a122b4fa",
+      "nativeBinary": false
+    },
+    "pygments.modeline": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\modeline.py",
+      "sha256": "99ef20e6bc9289dbcfb4c04eac3cb63b5b0ca99774da5047318e4a0d979f530b",
+      "nativeBinary": false
+    },
+    "pygments.plugin": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\plugin.py",
+      "sha256": "f4d2931f3bbd495ee17d8dfe4d50b863bc10c7cdc2f22e4b82cdfe0014c131b4",
+      "nativeBinary": false
+    },
+    "pygments.util": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\util.py",
+      "sha256": "37432e828279a6e031c557865aa1daa2b242f4770792f45489a8536dc592e3c5",
+      "nativeBinary": false
+    },
+    "pygments.lexers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\lexers\\__init__.py",
+      "sha256": "1b876da84e5030402aa1a683d6bc126597aea8a84cc92e2eb65333d6cce4ad38",
+      "nativeBinary": false
+    },
+    "rich._extension": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_extension.py",
+      "sha256": "1bae8f91b1ff41d4c987a8c3f89db6f0eefa0a6027af684b42fef60a03cfbb31",
+      "nativeBinary": false
+    },
+    "rich": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\__init__.py",
+      "sha256": "8fb000f7fcff3c03506e6453c1391665cfc355daad0411f106a1ab32ccf6d422",
+      "nativeBinary": false
+    },
+    "rich._null_file": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_null_file.py",
+      "sha256": "00318aa75cadfa4ef414c295ead9ea0aa79c07ead2273a7e590b03ecb3cbfa48",
+      "nativeBinary": false
+    },
+    "rich.errors": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\errors.py",
+      "sha256": "e693f729ce5de1027f734285b31adfca18e23d57bb275ccea9215b140cdc57e6",
+      "nativeBinary": false
+    },
+    "rich.color_triplet": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\color_triplet.py",
+      "sha256": "de585091d25bbd63e82c33be0276089805a626f579765818342559f7b39168de",
+      "nativeBinary": false
+    },
+    "rich.palette": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\palette.py",
+      "sha256": "02be9952b607885b7af91af693e93d17c57b87180960735daa3936bd55ec2e07",
+      "nativeBinary": false
+    },
+    "rich._palettes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_palettes.py",
+      "sha256": "71d7afd4940a67426f960b95f62a478339d3767be52335050c16f422dd8fce32",
+      "nativeBinary": false
+    },
+    "rich.repr": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\repr.py",
+      "sha256": "1c8b2eacf2d92bd1ab6b2ef9977fef431ed2dbb0334e9023e0285749f7b515eb",
+      "nativeBinary": false
+    },
+    "rich.terminal_theme": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\terminal_theme.py",
+      "sha256": "d63e7eb9f25f9ef940a3942c8bf0026625c39b0317cea826141c8e6d3f7ec896",
+      "nativeBinary": false
+    },
+    "rich.color": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\color.py",
+      "sha256": "dc74942d50e3eea4245d47455afefc24e8926737f2e72d6791c6219dadbde95d",
+      "nativeBinary": false
+    },
+    "rich.style": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\style.py",
+      "sha256": "5bd09ccbc3f2f253480ad95f729fabcb3313b90686c405376afefe8397c7bb4b",
+      "nativeBinary": false
+    },
+    "rich.default_styles": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\default_styles.py",
+      "sha256": "4e4d6967d6ce678d04557edc7c16d80c4a3b86ba7006f646b225025dd8743f43",
+      "nativeBinary": false
+    },
+    "rich.theme": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\theme.py",
+      "sha256": "a0dca15e119a82d0e56c3c9eded56eddeb16396934bcd92ec45c3efee9e568ad",
+      "nativeBinary": false
+    },
+    "rich.themes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\themes.py",
+      "sha256": "d318132e8cdf69b79b62d709b43742e50917e4855411abe2a83509261e185459",
+      "nativeBinary": false
+    },
+    "rich._emoji_codes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_emoji_codes.py",
+      "sha256": "86ed552fd9db55da6926b5688a356c85195c4517bfbf7763bb7326776b0a65d6",
+      "nativeBinary": false
+    },
+    "rich._emoji_replace": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_emoji_replace.py",
+      "sha256": "9fe91c7adb04531d99526850adf78c35cfad79e1a1a6e490e45f153c1b32bc3a",
+      "nativeBinary": false
+    },
+    "rich._export_format": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_export_format.py",
+      "sha256": "448d3ca52ae6e6d052ccf32f9db4ea6c3f5621a95a3a837977833545398bab56",
+      "nativeBinary": false
+    },
+    "rich._fileno": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_fileno.py",
+      "sha256": "1d66713f90b66a331b1ebcaf01066c79f9557d0a06cec28e1f3286b0b0fcca74",
+      "nativeBinary": false
+    },
+    "rich._loop": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_loop.py",
+      "sha256": "855ffa08b7683e6d2f6b6d96a70e332aa334458b33dd36715e3d0fa12fbd7834",
+      "nativeBinary": false
+    },
+    "rich._pick": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_pick.py",
+      "sha256": "7af0edf10378945e428b0ad421794e2429ed8ad0423ac23764b3c42005512c95",
+      "nativeBinary": false
+    },
+    "rich._unicode_data._versions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_unicode_data\\_versions.py",
+      "sha256": "7ed20b4771b976a9a542608960da2fbb25df167789636787d91be9575f6dc981",
+      "nativeBinary": false
+    },
+    "rich._unicode_data": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_unicode_data\\__init__.py",
+      "sha256": "e343e1005a776fcf323e746d4c6ea2f60e718fee70f7c0844f70b8229d4b2402",
+      "nativeBinary": false
+    },
+    "rich.cells": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\cells.py",
+      "sha256": "7cf4529eab989423b84c782652890e24e84d95cc7c0b8359d97bfd24cffb19b1",
+      "nativeBinary": false
+    },
+    "rich._wrap": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_wrap.py",
+      "sha256": "1654aca26e445f42d5900dca5b2df8c879c27cbb6a5fe6487a95ca87eef4ae97",
+      "nativeBinary": false
+    },
+    "rich.segment": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\segment.py",
+      "sha256": "69487da91b5e4f2a3a82e78f527f1c53b4b571c5d1b1fccb67e54c0d75de36e8",
+      "nativeBinary": false
+    },
+    "rich.jupyter": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\jupyter.py",
+      "sha256": "1bda4e26647811220561277830a1aa987a82b6cb71d28456a7279382fe78f977",
+      "nativeBinary": false
+    },
+    "rich.protocol": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\protocol.py",
+      "sha256": "5adfb61d977aece622a295240933b3ee5337f2fca8e6bdc711067d4ce3c39794",
+      "nativeBinary": false
+    },
+    "rich.measure": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\measure.py",
+      "sha256": "1e6ac8257f2c5914c76e087c33111acbff37564a8d5bfef4b3c68a3f965c608f",
+      "nativeBinary": false
+    },
+    "rich.constrain": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\constrain.py",
+      "sha256": "d5520fb82f0082d296adc9dc42b8c1758a80dc9556cacbba8d9a35aeb87b73b4",
+      "nativeBinary": false
+    },
+    "rich.align": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\align.py",
+      "sha256": "6bc31b3fe8898e8385a27c6a8283f76247ad28c594dd61596b18ea02fd907391",
+      "nativeBinary": false
+    },
+    "rich.containers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\containers.py",
+      "sha256": "73fe7a4f171e74662a0dea4704c4ee65d5088a38ad010827a31f9075ed19d6aa",
+      "nativeBinary": false
+    },
+    "rich.control": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\control.py",
+      "sha256": "1e7b2b6854f305a5100f3289597b1f3eff8f3e6806ca94a04afee800d69c92ab",
+      "nativeBinary": false
+    },
+    "rich.emoji": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\emoji.py",
+      "sha256": "fdb4dfd58dc9aa2324e8d7e7e15fd83a1ab5c003c01cd3838462c98fde51dee2",
+      "nativeBinary": false
+    },
+    "rich.text": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\text.py",
+      "sha256": "b7627c88caaec11d015148209be715369df45b1c3933c7c817fa748e2a18455d",
+      "nativeBinary": false
+    },
+    "rich._log_render": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_log_render.py",
+      "sha256": "c41282c6a88ee05664f1e1b9e9ff1cac576b989c45ac9b1013757717e7c57a47",
+      "nativeBinary": false
+    },
+    "rich.highlighter": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\highlighter.py",
+      "sha256": "3086a95b08d1f1a85472c0e2720378c4b45b6a76e1e71fd0ce1e647dd0eb28a9",
+      "nativeBinary": false
+    },
+    "rich.markup": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\markup.py",
+      "sha256": "6eda6bdbbd412e18824758cd825467bf606923355c35e7d8c1231e5bdb5e0db7",
+      "nativeBinary": false
+    },
+    "rich.pager": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\pager.py",
+      "sha256": "48efc44c114a6e0de7fc080ecd79b8d52bf7e98c57032237fd1f8a398dbfb927",
+      "nativeBinary": false
+    },
+    "attr._compat": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_compat.py",
+      "sha256": "c7483b88450e9c15490bbdb3c850a06f578aab2c52fbb7f62c69cdc99febf79b",
+      "nativeBinary": false
+    },
+    "attr._config": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_config.py",
+      "sha256": "746ab7c51e9f819105e9406dfcbd13f9e507201e22e37911987d0fdbcb09570f",
+      "nativeBinary": false
+    },
+    "attr.exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\exceptions.py",
+      "sha256": "6f8bcc6e7a10dd5a7059986aad88bfb2c5d508af28d9ce074124b4f5c49433da",
+      "nativeBinary": false
+    },
+    "attr.setters": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\setters.py",
+      "sha256": "e7e75c4fadc640adf938d1334a07d70a46c1ee93e4691faabf5e669b83d54b34",
+      "nativeBinary": false
+    },
+    "attr._make": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_make.py",
+      "sha256": "1fb387d9e592e429c1ccb5233451355b299f3eb985d6bf1fbf644f76df4cb980",
+      "nativeBinary": false
+    },
+    "attr.converters": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\converters.py",
+      "sha256": "1a50de3b33de4c581e0412db8fd1b9ec4cf994093af2e85200b45827f7b17bce",
+      "nativeBinary": false
+    },
+    "attr.filters": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\filters.py",
+      "sha256": "64188a58ba774742df099b2aed7d75a67f565fc36c952db05cce23b272ce19cf",
+      "nativeBinary": false
+    },
+    "attr.validators": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\validators.py",
+      "sha256": "9b7411cd94c036be1fd82e1e55d528160d753605d66a4f166ade2a4131a1bdcb",
+      "nativeBinary": false
+    },
+    "attr._cmp": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_cmp.py",
+      "sha256": "dcd9f54e3c659546225ff9c9a159c4917a0393484cd4360a8f90c4ec665ee22d",
+      "nativeBinary": false
+    },
+    "attr._funcs": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_funcs.py",
+      "sha256": "231e481134dfcf9174d45fb5d8c17f0921689889f687c6faec4555cf6802b411",
+      "nativeBinary": false
+    },
+    "attr._next_gen": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_next_gen.py",
+      "sha256": "050b42525cf08368161d3617050beb118067cc152b0ef3b9eeed0fcba5023e17",
+      "nativeBinary": false
+    },
+    "attr._version_info": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\_version_info.py",
+      "sha256": "c3847e1580b734afe43241945899583f87150251fd1d1682fae9b77dc8d89073",
+      "nativeBinary": false
+    },
+    "attr": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\attr\\__init__.py",
+      "sha256": "7ce608bedd5e192a90adee2e092dec256299d26c00b82f140faa9b6b9392f7f5",
+      "nativeBinary": false
+    },
+    "rich.abc": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\abc.py",
+      "sha256": "7402cc3867ca54d7806efaaaeba2294d0c5051eaf10fb004e052b0a9dd1e40a9",
+      "nativeBinary": false
+    },
+    "rich.pretty": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\pretty.py",
+      "sha256": "9715bf6e105f0d329efa0aedccfd4a42142ca8f6717d9375e2d8782515682f34",
+      "nativeBinary": false
+    },
+    "rich.region": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\region.py",
+      "sha256": "acd4fdc59ad56536085d90b43589f8d42250c1835b47e29e70f3b14e042f07c6",
+      "nativeBinary": false
+    },
+    "rich.box": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\box.py",
+      "sha256": "492a2583cfe9cc7cd8f50bc9428faaa74b5b3ec9e3f0eff65b88668b597e668d",
+      "nativeBinary": false
+    },
+    "rich.padding": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\padding.py",
+      "sha256": "87c5e7222bcbacdb65c48def40f2875e1e210308ce26a671d2c94cd33de0d7f3",
+      "nativeBinary": false
+    },
+    "rich.panel": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\panel.py",
+      "sha256": "f6c425d3484f22a1f91b68002d0a3835ea45c293f493dc13facfe03a6b39a487",
+      "nativeBinary": false
+    },
+    "rich._ratio": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_ratio.py",
+      "sha256": "20eb65efcb1009866c987cb185ee3992b91bebcbbdc55cfbcc5b175490fe6f66",
+      "nativeBinary": false
+    },
+    "rich.table": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\table.py",
+      "sha256": "eb2bfbc0c2d76603ac1a0cc40e9297a5e71740ec1c2c11cd3a7f8c61c6e8d599",
+      "nativeBinary": false
+    },
+    "rich.scope": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\scope.py",
+      "sha256": "c7e8e428813e8fb67103d234ee5c9ae62540b8303250a339f075ad359414cd17",
+      "nativeBinary": false
+    },
+    "rich.screen": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\screen.py",
+      "sha256": "acbfe3db05fee127ae20e236a0e95ce35f103fd100bc3e7d1889d4984004ea34",
+      "nativeBinary": false
+    },
+    "rich.styled": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\styled.py",
+      "sha256": "c258d5b154d76c004c319be4ce43b8dd9124ffe8abcc4b6f52243eb0d9e2910f",
+      "nativeBinary": false
+    },
+    "rich.console": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\console.py",
+      "sha256": "76828d8b804b48a642b7a45afba0178902be15a5802feedf0a51b664ee70eee4",
+      "nativeBinary": false
+    },
+    "rich.filesize": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\filesize.py",
+      "sha256": "fe2cfd948a5182f5bb30d49e0999cb83e1f0cdb3f81844e0e78dd6a83f1216cd",
+      "nativeBinary": false
+    },
+    "rich.ansi": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\ansi.py",
+      "sha256": "02fb352c76d275cc8ebc339da442d952850b7018987b063be9e341a7ab85061b",
+      "nativeBinary": false
+    },
+    "rich.file_proxy": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\file_proxy.py",
+      "sha256": "4e5f531cc0d9f8f9395a6f2c23580683f5390e1bac9b10fe159d1f51b714d16d",
+      "nativeBinary": false
+    },
+    "rich.live_render": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\live_render.py",
+      "sha256": "8d03b75ffa76c1e9862366dd08063f7b98fdc57353c03c6eba36e9a1246c1fa7",
+      "nativeBinary": false
+    },
+    "rich.live": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\live.py",
+      "sha256": "50abea2d2b92ccd1c8073e69c51ad4ed23ec9c6e3cbc9271d9330789a1e59a72",
+      "nativeBinary": false
+    },
+    "rich.progress_bar": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\progress_bar.py",
+      "sha256": "9994cfa4953071f71d8100934f3de4c98f9f73bf5d74bc2dc7a1a18717e8d3ae",
+      "nativeBinary": false
+    },
+    "rich._spinners": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\_spinners.py",
+      "sha256": "536af5fe0ff5cd28ec8e251d00449cda200c7378b8ae2fd2f0f60fea4439cf52",
+      "nativeBinary": false
+    },
+    "rich.spinner": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\spinner.py",
+      "sha256": "a27221a4a9658d11e9a5365ab313bc91782d632087524a5280a825449de8e758",
+      "nativeBinary": false
+    },
+    "rich.progress": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\progress.py",
+      "sha256": "67a633ea960edba2c55f1db87172af9366c45fa1648cad99e5ed9fcb406defcb",
+      "nativeBinary": false
+    },
+    "pygments.filter": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\filter.py",
+      "sha256": "d5d9db92ad80742dc0907b770da5f09ce91304b0a1975911ea76922f09ebfed7",
+      "nativeBinary": false
+    },
+    "pygments.token": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\token.py",
+      "sha256": "0d58a5e53da5b479138104d4632d5d32d8328a08dabc2b35ca913841fd82ac6a",
+      "nativeBinary": false
+    },
+    "pygments.filters": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\filters\\__init__.py",
+      "sha256": "d37658748626c6758287b80d5c3ee5110f3af437f89331e7386338e222716a7f",
+      "nativeBinary": false
+    },
+    "pygments.regexopt": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\regexopt.py",
+      "sha256": "2a8f57b570e22c429ead6683e78f7692b08159da6666982f924994fce911992a",
+      "nativeBinary": false
+    },
+    "pygments.lexer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\lexer.py",
+      "sha256": "2037632e5c3bbf18c6c12a14dc38815e0584b16b2e81e7b765c04af1b3e1b738",
+      "nativeBinary": false
+    },
+    "pygments.style": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\style.py",
+      "sha256": "29829f6bf5cf41338fc69853b91ad3f541a76e3e3afc6b6b1324119467baab57",
+      "nativeBinary": false
+    },
+    "pygments.styles._mapping": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\styles\\_mapping.py",
+      "sha256": "300df2a81cbee4921cf706b0c4ff32ff4198bfb216451e8e2e8fadd285061134",
+      "nativeBinary": false
+    },
+    "pygments.styles": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\pygments\\styles\\__init__.py",
+      "sha256": "daf8062a76f2b749dffc248312d3211f1a693d200faf68da7f39791625c5b86b",
+      "nativeBinary": false
+    },
+    "rich.syntax": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\rich\\syntax.py",
+      "sha256": "e5904dc63223dc2d450bddaf2f005537e0b960074a8cf1df1fa4aa0b315a3981",
+      "nativeBinary": false
+    },
+    "httpx._main": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\_main.py",
+      "sha256": "0a0f4631a6e24d3fecc1a0df5202118ad4b0c4b44c4b05033a6ecb7521aa940e",
+      "nativeBinary": false
+    },
+    "httpx": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\httpx\\__init__.py",
+      "sha256": "0ac6997bac998f4ac783adf6d8058a587193315afdb718047c3e4fdff46bcfad",
+      "nativeBinary": false
+    },
+    "urllib3.exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\exceptions.py",
+      "sha256": "8503c7a2aa38cb0e3a7ac3525647225505d5520031580825b21e8c6f242d6be4",
+      "nativeBinary": false
+    },
+    "urllib3.util.timeout": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\timeout.py",
+      "sha256": "e1e4f5155799654ee1ee6603d49ab639735ee1fc5e91d36f868594919bac4690",
+      "nativeBinary": false
+    },
+    "urllib3.util.connection": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\connection.py",
+      "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+      "nativeBinary": false
+    },
+    "urllib3.util.util": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\util.py",
+      "sha256": "8f795b64ad633f28b00f7e13f08809cdd5846554fee04fb4bd82098bd52378d0",
+      "nativeBinary": false
+    },
+    "urllib3.util.request": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\request.py",
+      "sha256": "8ada670bcba0ec3e2755f0e6194091325824011510d77aff5ccc529f34f09a91",
+      "nativeBinary": false
+    },
+    "urllib3.util.response": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\response.py",
+      "sha256": "bd013adfdba81218f5be98c4771bb994d22124249466477ba6a965508d0164e0",
+      "nativeBinary": false
+    },
+    "urllib3.util.retry": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\retry.py",
+      "sha256": "d989d25fefc579c312843eb5331e6cebc274fdbb541d9aeb73f064155452d4fe",
+      "nativeBinary": false
+    },
+    "urllib3.util.url": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\url.py",
+      "sha256": "59187e4cc617a2c9a0a7c9bc953e07e6ca681f0e7252395c3027d4e77024a00b",
+      "nativeBinary": false
+    },
+    "urllib3.util.ssltransport": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\ssltransport.py",
+      "sha256": "133e0ef2947fbd3f1d6a7fc5bea0584ba7600df05710c7d57ebcdc754a167e2e",
+      "nativeBinary": false
+    },
+    "urllib3.util.ssl_": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\ssl_.py",
+      "sha256": "3aa7b7ac88545377b7195819a1bda1c6647c43464386b84448f94f3ff18b6954",
+      "nativeBinary": false
+    },
+    "urllib3.util.wait": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\wait.py",
+      "sha256": "fe987c22b511deca8faa2d0ea29420254947e30ce419e3390a2c80ed7186b662",
+      "nativeBinary": false
+    },
+    "urllib3.util": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\__init__.py",
+      "sha256": "faa792d1071e8af6b3bc110a0cd142008fba00271d0ce1384ccbe8ed22cd9404",
+      "nativeBinary": false
+    },
+    "urllib3._base_connection": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_base_connection.py",
+      "sha256": "1f37121077b1803ad152beb48cd9e20762908ddc3ded279d0f996e45f1ed0978",
+      "nativeBinary": false
+    },
+    "urllib3._collections": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_collections.py",
+      "sha256": "68e566da62a296fbaf4f579f006b6403ba62eb90b5342dc725fa45c6f6014bc0",
+      "nativeBinary": false
+    },
+    "urllib3._version": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_version.py",
+      "sha256": "fa032b2a1b0f88e8f45f351ecd515ae7d7754ba4204222a0413e601a0c8cf3ec",
+      "nativeBinary": false
+    },
+    "urllib3.fields": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\fields.py",
+      "sha256": "6862c5015669554f856c996596f7b8021834fa91fd659050d88cfb95fa648e43",
+      "nativeBinary": false
+    },
+    "urllib3.filepost": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\filepost.py",
+      "sha256": "53c78d67e9a928a1e1ae56c7104893c7180ad7a21e8e111aeeecf8db2a80fdd2",
+      "nativeBinary": false
+    },
+    "urllib3.http2": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\http2\\__init__.py",
+      "sha256": "c73ac0487ed1e4035190f24ea2de651a70133aadca2aec97cc8e36adc9f09aab",
+      "nativeBinary": false
+    },
+    "urllib3.http2.probe": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\http2\\probe.py",
+      "sha256": "9e7024a9b8406a43a217be6bcfb5b4b9d677f047a1fee0fc7e357be0def71442",
+      "nativeBinary": false
+    },
+    "urllib3.util.ssl_match_hostname": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\ssl_match_hostname.py",
+      "sha256": "16de38289cd3cc632629f7ff6573fdd658b65785a19af132d7a3ca05cbf8bd99",
+      "nativeBinary": false
+    },
+    "urllib3.connection": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\connection.py",
+      "sha256": "668b37ab12835bdf8643a695a9f050551339b280742231f163fc575a925a1532",
+      "nativeBinary": false
+    },
+    "urllib3.response": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\response.py",
+      "sha256": "f525f806491da0b82cc759deea1a6dfb93e772b9c3ccfcdea82d4369285273e3",
+      "nativeBinary": false
+    },
+    "urllib3._request_methods": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_request_methods.py",
+      "sha256": "802785f3948efd45385a83f0607228cffb70f9e33f1153a42c5a7c385b02ec30",
+      "nativeBinary": false
+    },
+    "urllib3.util.proxy": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\proxy.py",
+      "sha256": "b1e3fcf90e41e9b07474cb703e3f98719650df4bc7b8ba91bbeb48d096767f3b",
+      "nativeBinary": false
+    },
+    "urllib3.connectionpool": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\connectionpool.py",
+      "sha256": "b0616775d5d8c25c7b282e0908fd602af74d18b34af984c22437460021a3dd8f",
+      "nativeBinary": false
+    },
+    "urllib3.poolmanager": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\poolmanager.py",
+      "sha256": "734ae1d2b7140b5b79b431ae51e188800ce512b6ac3cec16c0b881ebb957f293",
+      "nativeBinary": false
+    },
+    "urllib3": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\__init__.py",
+      "sha256": "24ca35b60d67215d40789daf10d0bf4f17e5d1ee61e86ce5f43195935ad645ba",
+      "nativeBinary": false
+    },
+    "charset_normalizer.constant": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\constant.py",
+      "sha256": "9b4e0a49913370b4283d26466bec73af7dd1cdf13bd70d9325ac453f82e8628f",
+      "nativeBinary": false
+    },
+    "charset_normalizer.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\utils.py",
+      "sha256": "4dc210b6670b40d9332925b893dd792b4437365f147abe00251a08606b35a853",
+      "nativeBinary": false
+    },
+    "charset_normalizer.md": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\md.cp314-win_amd64.pyd",
+      "sha256": "faf5cb006492b3526abcbfdac9a0d39cd52d32425292db9d2a210d8b44d9d925",
+      "nativeBinary": true
+    },
+    "charset_normalizer.cd": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\cd.cp314-win_amd64.pyd",
+      "sha256": "f234a1dbd19363a3260d6a1e2d82ec1c6e30b2e23d6057796021231d668d978a",
+      "nativeBinary": true
+    },
+    "charset_normalizer.models": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\models.py",
+      "sha256": "01189116f8501996fd87b57f12639d763df21bcd801b9fc768db3a5c9519354c",
+      "nativeBinary": false
+    },
+    "charset_normalizer.api": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\api.py",
+      "sha256": "9032c5c8a60b2c19b5101d1543e4aa8b0ded26618d28a3d45c3372454cf20a6a",
+      "nativeBinary": false
+    },
+    "charset_normalizer.legacy": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\legacy.py",
+      "sha256": "8d5a1916b9fc14b890f4b68db9a715e72189a854aa067430a65f035252649bdb",
+      "nativeBinary": false
+    },
+    "charset_normalizer.version": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\version.py",
+      "sha256": "c6e9896047e40b6a966dae4565e75bf5b42790a9c01a53046358bbac1723a110",
+      "nativeBinary": false
+    },
+    "charset_normalizer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\__init__.py",
+      "sha256": "c9c9fcadec07e5fbc1c07b9aaae8b54c238f49524b40629f7ddfd44719ce770a",
+      "nativeBinary": false
+    },
+    "requests.compat": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\compat.py",
+      "sha256": "27bb088d1e97a031a9e494d5ccec642b97d2a145546bf3e373b8916610161a62",
+      "nativeBinary": false
+    },
+    "requests.exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\exceptions.py",
+      "sha256": "9de3a402478aedebd939faa1b48495b0714894e888267e65071b52d014c56a50",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\exceptions.py",
+      "sha256": "8503c7a2aa38cb0e3a7ac3525647225505d5520031580825b21e8c6f242d6be4",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.timeout": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\timeout.py",
+      "sha256": "e1e4f5155799654ee1ee6603d49ab639735ee1fc5e91d36f868594919bac4690",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.connection": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\connection.py",
+      "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.util": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\util.py",
+      "sha256": "8f795b64ad633f28b00f7e13f08809cdd5846554fee04fb4bd82098bd52378d0",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.request": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\request.py",
+      "sha256": "8ada670bcba0ec3e2755f0e6194091325824011510d77aff5ccc529f34f09a91",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.response": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\response.py",
+      "sha256": "bd013adfdba81218f5be98c4771bb994d22124249466477ba6a965508d0164e0",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.retry": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\retry.py",
+      "sha256": "d989d25fefc579c312843eb5331e6cebc274fdbb541d9aeb73f064155452d4fe",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.url": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\url.py",
+      "sha256": "59187e4cc617a2c9a0a7c9bc953e07e6ca681f0e7252395c3027d4e77024a00b",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.ssltransport": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\ssltransport.py",
+      "sha256": "133e0ef2947fbd3f1d6a7fc5bea0584ba7600df05710c7d57ebcdc754a167e2e",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.ssl_": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\ssl_.py",
+      "sha256": "3aa7b7ac88545377b7195819a1bda1c6647c43464386b84448f94f3ff18b6954",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.wait": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\wait.py",
+      "sha256": "fe987c22b511deca8faa2d0ea29420254947e30ce419e3390a2c80ed7186b662",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\__init__.py",
+      "sha256": "faa792d1071e8af6b3bc110a0cd142008fba00271d0ce1384ccbe8ed22cd9404",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3._base_connection": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_base_connection.py",
+      "sha256": "1f37121077b1803ad152beb48cd9e20762908ddc3ded279d0f996e45f1ed0978",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3._collections": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_collections.py",
+      "sha256": "68e566da62a296fbaf4f579f006b6403ba62eb90b5342dc725fa45c6f6014bc0",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3._version": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_version.py",
+      "sha256": "fa032b2a1b0f88e8f45f351ecd515ae7d7754ba4204222a0413e601a0c8cf3ec",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.fields": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\fields.py",
+      "sha256": "6862c5015669554f856c996596f7b8021834fa91fd659050d88cfb95fa648e43",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.filepost": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\filepost.py",
+      "sha256": "53c78d67e9a928a1e1ae56c7104893c7180ad7a21e8e111aeeecf8db2a80fdd2",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.http2": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\http2\\__init__.py",
+      "sha256": "c73ac0487ed1e4035190f24ea2de651a70133aadca2aec97cc8e36adc9f09aab",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.http2.probe": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\http2\\probe.py",
+      "sha256": "9e7024a9b8406a43a217be6bcfb5b4b9d677f047a1fee0fc7e357be0def71442",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.ssl_match_hostname": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\ssl_match_hostname.py",
+      "sha256": "16de38289cd3cc632629f7ff6573fdd658b65785a19af132d7a3ca05cbf8bd99",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.connection": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\connection.py",
+      "sha256": "668b37ab12835bdf8643a695a9f050551339b280742231f163fc575a925a1532",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.response": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\response.py",
+      "sha256": "f525f806491da0b82cc759deea1a6dfb93e772b9c3ccfcdea82d4369285273e3",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3._request_methods": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\_request_methods.py",
+      "sha256": "802785f3948efd45385a83f0607228cffb70f9e33f1153a42c5a7c385b02ec30",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.util.proxy": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\util\\proxy.py",
+      "sha256": "b1e3fcf90e41e9b07474cb703e3f98719650df4bc7b8ba91bbeb48d096767f3b",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.connectionpool": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\connectionpool.py",
+      "sha256": "b0616775d5d8c25c7b282e0908fd602af74d18b34af984c22437460021a3dd8f",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3.poolmanager": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\poolmanager.py",
+      "sha256": "734ae1d2b7140b5b79b431ae51e188800ce512b6ac3cec16c0b881ebb957f293",
+      "nativeBinary": false
+    },
+    "requests.packages.urllib3": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\__init__.py",
+      "sha256": "24ca35b60d67215d40789daf10d0bf4f17e5d1ee61e86ce5f43195935ad645ba",
+      "nativeBinary": false
+    },
+    "requests.packages.idna.idnadata": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\idnadata.py",
+      "sha256": "01ffa6a3c5819a48402ba4f25ca3901fcf0e5f49903432ad74bed45ad429a699",
+      "nativeBinary": false
+    },
+    "requests.packages.idna.intranges": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\intranges.py",
+      "sha256": "838f6c70b4a4a89b4084b98e3836bb8551eb8928e66fad2d893b04a287097412",
+      "nativeBinary": false
+    },
+    "requests.packages.idna.core": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\core.py",
+      "sha256": "d9f2cb3e2f9da9c494ffb1e27e501441d395cf9c12aa8321c9656fda9bb0da0d",
+      "nativeBinary": false
+    },
+    "requests.packages.idna.package_data": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\package_data.py",
+      "sha256": "335f9830c0f69a399ae75464766817ee8bed94d3e9944b286e2629b13213cd1b",
+      "nativeBinary": false
+    },
+    "requests.packages.idna": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\idna\\__init__.py",
+      "sha256": "8514c3ed53136a3596ebdf512fa487bbdd7da5a99adcaed82e0363d2c306d3af",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer.constant": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\constant.py",
+      "sha256": "9b4e0a49913370b4283d26466bec73af7dd1cdf13bd70d9325ac453f82e8628f",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet.constant": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\constant.py",
+      "sha256": "9b4e0a49913370b4283d26466bec73af7dd1cdf13bd70d9325ac453f82e8628f",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\utils.py",
+      "sha256": "4dc210b6670b40d9332925b893dd792b4437365f147abe00251a08606b35a853",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\utils.py",
+      "sha256": "4dc210b6670b40d9332925b893dd792b4437365f147abe00251a08606b35a853",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer.md": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\md.cp314-win_amd64.pyd",
+      "sha256": "faf5cb006492b3526abcbfdac9a0d39cd52d32425292db9d2a210d8b44d9d925",
+      "nativeBinary": true
+    },
+    "requests.packages.chardet.md": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\md.cp314-win_amd64.pyd",
+      "sha256": "faf5cb006492b3526abcbfdac9a0d39cd52d32425292db9d2a210d8b44d9d925",
+      "nativeBinary": true
+    },
+    "requests.packages.charset_normalizer.cd": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\cd.cp314-win_amd64.pyd",
+      "sha256": "f234a1dbd19363a3260d6a1e2d82ec1c6e30b2e23d6057796021231d668d978a",
+      "nativeBinary": true
+    },
+    "requests.packages.chardet.cd": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\cd.cp314-win_amd64.pyd",
+      "sha256": "f234a1dbd19363a3260d6a1e2d82ec1c6e30b2e23d6057796021231d668d978a",
+      "nativeBinary": true
+    },
+    "requests.packages.charset_normalizer.models": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\models.py",
+      "sha256": "01189116f8501996fd87b57f12639d763df21bcd801b9fc768db3a5c9519354c",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet.models": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\models.py",
+      "sha256": "01189116f8501996fd87b57f12639d763df21bcd801b9fc768db3a5c9519354c",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer.api": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\api.py",
+      "sha256": "9032c5c8a60b2c19b5101d1543e4aa8b0ded26618d28a3d45c3372454cf20a6a",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet.api": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\api.py",
+      "sha256": "9032c5c8a60b2c19b5101d1543e4aa8b0ded26618d28a3d45c3372454cf20a6a",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer.legacy": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\legacy.py",
+      "sha256": "8d5a1916b9fc14b890f4b68db9a715e72189a854aa067430a65f035252649bdb",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet.legacy": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\legacy.py",
+      "sha256": "8d5a1916b9fc14b890f4b68db9a715e72189a854aa067430a65f035252649bdb",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer.version": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\version.py",
+      "sha256": "c6e9896047e40b6a966dae4565e75bf5b42790a9c01a53046358bbac1723a110",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet.version": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\version.py",
+      "sha256": "c6e9896047e40b6a966dae4565e75bf5b42790a9c01a53046358bbac1723a110",
+      "nativeBinary": false
+    },
+    "requests.packages.charset_normalizer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\__init__.py",
+      "sha256": "c9c9fcadec07e5fbc1c07b9aaae8b54c238f49524b40629f7ddfd44719ce770a",
+      "nativeBinary": false
+    },
+    "requests.packages.chardet": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\charset_normalizer\\__init__.py",
+      "sha256": "c9c9fcadec07e5fbc1c07b9aaae8b54c238f49524b40629f7ddfd44719ce770a",
+      "nativeBinary": false
+    },
+    "requests.packages": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\packages.py",
+      "sha256": "fe0d2067af355320252874631fa91a9db6a8c71d9e01beaacdc5e2383c932287",
+      "nativeBinary": false
+    },
+    "certifi.core": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\certifi\\core.py",
+      "sha256": "5c55f2727746e697f7edac9e17c377d8752e0da7ecca191531b3b80403d61dad",
+      "nativeBinary": false
+    },
+    "certifi": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\certifi\\__init__.py",
+      "sha256": "fbc96373bc3b7f28b92b28b4e9cd7f2f4946fe40ff27416f6d44daf261297734",
+      "nativeBinary": false
+    },
+    "requests.certs": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\certs.py",
+      "sha256": "fd9c6b83359cef90ff6c4eeeab8dcc2388da382ebca7d00a499b3c0b434a87e4",
+      "nativeBinary": false
+    },
+    "requests.__version__": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\__version__.py",
+      "sha256": "9daa3434e2aadfec28492e748e28edcc302e642f8f80019febc38e1477ca8a65",
+      "nativeBinary": false
+    },
+    "requests._internal_utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\_internal_utils.py",
+      "sha256": "3c85f736286cbff92db39e92e2304767a8b654e9998e3ca3547feca66b6ef149",
+      "nativeBinary": false
+    },
+    "requests.cookies": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\cookies.py",
+      "sha256": "6cd8be8aa123e0d3d9d34fa86feac7bf392f39bccdde5129830de0ea9692dd7c",
+      "nativeBinary": false
+    },
+    "requests.structures": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\structures.py",
+      "sha256": "f886e6855cf4e92fb968f499b94b6167afba0fd5ce8d1b935c739a6d8d38d573",
+      "nativeBinary": false
+    },
+    "requests.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\utils.py",
+      "sha256": "c433154e14f78de6d50ea7fe753825b8bbb3c9459468dee052f8b68edc2572dc",
+      "nativeBinary": false
+    },
+    "requests.auth": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\auth.py",
+      "sha256": "2875df9db347d857b8add1892b7ada2f83b79f1917c9494b8b324904482e8527",
+      "nativeBinary": false
+    },
+    "requests.hooks": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\hooks.py",
+      "sha256": "f5fad88402ec2c19071fbe86f8762abc0becb1296ed42d5becbebc700b3e1398",
+      "nativeBinary": false
+    },
+    "requests.status_codes": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\status_codes.py",
+      "sha256": "889500780db96da4ddc3ee8f7c3d1e178aa1a48343251248fb268cab1b382c42",
+      "nativeBinary": false
+    },
+    "requests.models": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\models.py",
+      "sha256": "24733d202d7636316123a24a838d51d5d664326798dfc840695876eb2989fadc",
+      "nativeBinary": false
+    },
+    "urllib3.contrib": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\urllib3\\contrib\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "nativeBinary": false
+    },
+    "requests.adapters": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\adapters.py",
+      "sha256": "f64950f522f0f5a56627b957064093c462dcbd6cf7e33116848238db01b53e61",
+      "nativeBinary": false
+    },
+    "requests.sessions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\sessions.py",
+      "sha256": "81b9a5b0d4a2f7ab088a0d26aed1f3640653fdf388593a1ef989d6eefe69b4a2",
+      "nativeBinary": false
+    },
+    "requests.api": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\api.py",
+      "sha256": "fd96fd39aeedcd5222cd32b016b3e30c463d7a3b66fce9d2444467003c46b10b",
+      "nativeBinary": false
+    },
+    "requests": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\requests\\__init__.py",
+      "sha256": "9800bf41cb6bfff678df0ffeafd121a2abd5b49954d7df92f28e59e1e2d6be64",
+      "nativeBinary": false
+    },
+    "multidict._abc": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\multidict\\_abc.py",
+      "sha256": "7bfd090c98bb13a2d64b4037814275ed29200cb96683c7df8dfca54eefef6e87",
+      "nativeBinary": false
+    },
+    "multidict._multidict": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\multidict\\_multidict.cp314-win_amd64.pyd",
+      "sha256": "258d185776cf6b35c244cd134cdda9405f74de222c927d0bdbb9fd6d926ae5ce",
+      "nativeBinary": true
+    },
+    "multidict._compat": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\multidict\\_compat.py",
+      "sha256": "4dc463092b64da2218d7f0f00cd8fc90da49450f6bb4b8fdd97be4d73d86fda9",
+      "nativeBinary": false
+    },
+    "multidict": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\multidict\\__init__.py",
+      "sha256": "0cce7a554a07132c7ba4ab0bad3f4411e2234e581698fc9042e0b98ee2f36e16",
+      "nativeBinary": false
+    },
+    "aiohttp.hdrs": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\hdrs.py",
+      "sha256": "bf609a4bbb4f769620bc6ca638299370d3e9c97cb54f0db10909d9095bdf51e4",
+      "nativeBinary": false
+    },
+    "yarl._quoting_c": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_quoting_c.cp314-win_amd64.pyd",
+      "sha256": "0c774c400a79d179f4c1e9d718563364fdf6259c5140ed16abda1dbe40228f63",
+      "nativeBinary": true
+    },
+    "yarl._quoting": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_quoting.py",
+      "sha256": "c8a22a153cc5cd62d56f4f31cb50d2c4a363170a387fea0b973c53b8ac02e7b3",
+      "nativeBinary": false
+    },
+    "yarl._quoters": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_quoters.py",
+      "sha256": "85eaf32c12fa3a00f7ee4ed22149d0d6a12c3cab5cad40edff86a2eb1c1ebd09",
+      "nativeBinary": false
+    },
+    "yarl._query": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_query.py",
+      "sha256": "e6e769cfda6ecb46eb79f079d2558fbaedf04dd6c481763f325a865f3b9789e1",
+      "nativeBinary": false
+    },
+    "propcache": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\propcache\\__init__.py",
+      "sha256": "94d5ea040479c527c291e798add5019a9935e782968cf4ddae1d6b76aa30b581",
+      "nativeBinary": false
+    },
+    "propcache._helpers_c": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\propcache\\_helpers_c.cp314-win_amd64.pyd",
+      "sha256": "041d0de31e32d1a248b93ba8b4b232a8562cea142b59f2da0fc8cbb5de7698e3",
+      "nativeBinary": true
+    },
+    "propcache._helpers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\propcache\\_helpers.py",
+      "sha256": "ebc4909ba9044cdf0c9edf4e976e8b25880782607498acb5b69f76f3cf333789",
+      "nativeBinary": false
+    },
+    "propcache.api": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\propcache\\api.py",
+      "sha256": "c2f801fb2a64908e6e7fbd9555897634519cfd39f35100360b10bb75394be5a9",
+      "nativeBinary": false
+    },
+    "yarl._parse": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_parse.py",
+      "sha256": "da65419608fdd1c85a126ea2b1d5e58d9450fbe8dde6943127b7da3b01e94007",
+      "nativeBinary": false
+    },
+    "yarl._path": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_path.py",
+      "sha256": "034149532959cb39a54f46b75033816caf84cd95c2018b90401bc6f5e002f61b",
+      "nativeBinary": false
+    },
+    "yarl._url": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\_url.py",
+      "sha256": "e870ddd65d20ba85e9fe1e7f6534cdb3ede74ea38911898dc245b15dfbb459b0",
+      "nativeBinary": false
+    },
+    "yarl": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\yarl\\__init__.py",
+      "sha256": "5cd1b20240d69ff55a1a780ddba9f827ee2f8c0432e9f80a2cf6aa2d963cb639",
+      "nativeBinary": false
+    },
+    "aiohttp.typedefs": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\typedefs.py",
+      "sha256": "0b294c1d1001f110de97a25a28151ffef2b622a403947d9d7bba74ebd2660d2e",
+      "nativeBinary": false
+    },
+    "aiohttp.http_exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\http_exceptions.py",
+      "sha256": "ca073869c5471f0972f35c286cee4323296bddeaa763f943b2c56c071a2668e8",
+      "nativeBinary": false
+    },
+    "aiohttp.client_exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client_exceptions.py",
+      "sha256": "2b2215efeaf2121dcc6b1204050d070f9ec1e0954e2db32768e9692211f31c1e",
+      "nativeBinary": false
+    },
+    "aiohttp.log": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\log.py",
+      "sha256": "cd8513bd7b0c43d4b3d7234df245f0779431bb8f5ad45ce367fc10aab88473c3",
+      "nativeBinary": false
+    },
+    "aiohttp.helpers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\helpers.py",
+      "sha256": "c46842a498a119baed4422d4f0ca12792e48a9fddf269fd5beffcd252805f815",
+      "nativeBinary": false
+    },
+    "aiohttp.tcp_helpers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\tcp_helpers.py",
+      "sha256": "2be8611a1de377aa821271c9a3c2ef1727c9c018e1f7d50a23b034692455863e",
+      "nativeBinary": false
+    },
+    "aiohttp.base_protocol": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\base_protocol.py",
+      "sha256": "0cc73fb14f336d5595c004d0956397e5a670123e5bb1ed4a44fa9595c7ad3c87",
+      "nativeBinary": false
+    },
+    "aiohttp.compression_utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\compression_utils.py",
+      "sha256": "cb8483887c81f15b9922c40c5b733d7358963168e0642a76044d064d1d24e04b",
+      "nativeBinary": false
+    },
+    "aiohttp._cookie_helpers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_cookie_helpers.py",
+      "sha256": "f08f15b3a8c324e591188a4de41305cc47868782247c9b91b97c1957af6c4fae",
+      "nativeBinary": false
+    },
+    "aiohttp.abc": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\abc.py",
+      "sha256": "f88f5a5852caacebe75d68073af8a93a5b6dea56a8b8f9f0bb0f536a2f407e26",
+      "nativeBinary": false
+    },
+    "aiohttp._http_writer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_http_writer.cp314-win_amd64.pyd",
+      "sha256": "471d44a62f269545f4608aef5c84a5d75fbd7a99fef2fed680fa5bccf389432d",
+      "nativeBinary": true
+    },
+    "aiohttp.http_writer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\http_writer.py",
+      "sha256": "6ded378201621c85f7a5f025f87c592915f038df52cb535d044ea99f39b27022",
+      "nativeBinary": false
+    },
+    "aiohttp.streams": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\streams.py",
+      "sha256": "91bf9f9f983b39e1b4d3e8974dedd8870664787eae675bda2b0295e005b6b90f",
+      "nativeBinary": false
+    },
+    "aiohttp._http_parser": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_http_parser.cp314-win_amd64.pyd",
+      "sha256": "44e90b54298a360c85678e0a4e45713bcf72305c1dc05dcb06aa0a6200eef7dd",
+      "nativeBinary": true
+    },
+    "aiohttp.http_parser": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\http_parser.py",
+      "sha256": "3486e1532021fb233e8dc27ad28fb76d2214c736fdbd285e8af85298e94a9d9a",
+      "nativeBinary": false
+    },
+    "aiohttp._websocket": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\__init__.py",
+      "sha256": "479d4a587e6491db432dbed3fa2973b64b1b7f078a0b2deddb64a0c46b6263ee",
+      "nativeBinary": false
+    },
+    "aiohttp._websocket.models": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\models.py",
+      "sha256": "06e9d9440e47602fa4c9552864659af067b15c26d0b43d75e585f93297299f28",
+      "nativeBinary": false
+    },
+    "aiohttp._websocket.mask": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\mask.cp314-win_amd64.pyd",
+      "sha256": "5f5c3de90b92c76af16b3773cb95f39d27acf2631adfa1da4e7dbf66e6be9d8a",
+      "nativeBinary": true
+    },
+    "aiohttp._websocket.helpers": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\helpers.py",
+      "sha256": "4cb884d483e426f0bb2c9e39b253b80efddb4197a8cad93ba3c55b439d2b5ead",
+      "nativeBinary": false
+    },
+    "aiohttp._websocket.reader_c": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\reader_c.cp314-win_amd64.pyd",
+      "sha256": "ace655e0e595d5f29f5347e85ed294402ea624cb57ed73a879db78c3b68b792f",
+      "nativeBinary": true
+    },
+    "aiohttp._websocket.reader": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\reader.py",
+      "sha256": "d6bd1c27e8dd1606d2ac2ebe8c8d338c40350a9a73a149fcbbfc2279bad554ed",
+      "nativeBinary": false
+    },
+    "aiohttp._websocket.writer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\_websocket\\writer.py",
+      "sha256": "651562636d7f454309ff416404c91dab1b09b5e808de112619a3d84fc9748afe",
+      "nativeBinary": false
+    },
+    "aiohttp.http_websocket": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\http_websocket.py",
+      "sha256": "c346e74afdfd09da487bd30418260a0ded5b27781d77efdb5710f33471d1ba56",
+      "nativeBinary": false
+    },
+    "aiohttp.http": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\http.py",
+      "sha256": "5e7d87911f136d20f39fad5c18457d8c4d712e4d0046295233e12245569bf2be",
+      "nativeBinary": false
+    },
+    "aiohttp.payload": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\payload.py",
+      "sha256": "67da40ee0ce11409a7cc4a4c7701707b4659a301d17dd44b4a4cc748de98ed2c",
+      "nativeBinary": false
+    },
+    "aiohttp.multipart": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\multipart.py",
+      "sha256": "bc5277c1f0ab0ca92446c86293ea3f6ff1e83b8630d1f559676f8ab2a63a4f3e",
+      "nativeBinary": false
+    },
+    "aiohttp.formdata": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\formdata.py",
+      "sha256": "25cc3a70018a8e9aeedbb4a61819be50d7ce1d9010c8ed8a4f2bd8476d714f0d",
+      "nativeBinary": false
+    },
+    "aiohttp.client_reqrep": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client_reqrep.py",
+      "sha256": "2c69f1652d524da702726b3fe9d837b26ac7bc674988aa68e6e43219fb1d4b29",
+      "nativeBinary": false
+    },
+    "aiohttp.client_middlewares": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client_middlewares.py",
+      "sha256": "1445485c5910e7c9f96e12b804612aa830969c387e18d2665aadb423962de925",
+      "nativeBinary": false
+    },
+    "aiohttp.client_ws": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client_ws.py",
+      "sha256": "b05a0840bfa09a972cdefec1c3ff32521acab79966bf584651c6ceafbcdf432a",
+      "nativeBinary": false
+    },
+    "aiohappyeyeballs._staggered": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohappyeyeballs\\_staggered.py",
+      "sha256": "6a3ddc4b01c40d7f3c50c7cef5b51abbdb5fad102cce18e0f7d76910c8803863",
+      "nativeBinary": false
+    },
+    "aiohappyeyeballs.types": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohappyeyeballs\\types.py",
+      "sha256": "ffc2661c58b1e8c78cd5eee144fec195e11a1b2f771acc06b7342fd3af33298f",
+      "nativeBinary": false
+    },
+    "aiohappyeyeballs.impl": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohappyeyeballs\\impl.py",
+      "sha256": "eb32b7ba4aa27993fe187deb56cf16af8dfcb4fbfe63b4f5846802ca02a64bb2",
+      "nativeBinary": false
+    },
+    "aiohappyeyeballs.utils": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohappyeyeballs\\utils.py",
+      "sha256": "c051d5f1ea4632a22b0bda6aa1f4cee2a968065775e063ef55be52a5bdb91c92",
+      "nativeBinary": false
+    },
+    "aiohappyeyeballs": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohappyeyeballs\\__init__.py",
+      "sha256": "f30fbf99f793ec71ad6db3c5283821a6bf0e1ac436537ff27d9097027674442b",
+      "nativeBinary": false
+    },
+    "aiohttp.client_proto": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client_proto.py",
+      "sha256": "e6e58e003347013fdd5bc532ef8dfe4d9a4b08a49593c59c9d2931e47240d9f9",
+      "nativeBinary": false
+    },
+    "aiohttp.resolver": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\resolver.py",
+      "sha256": "2f0b96237e09d13fc1341cf964d175f8dd7d47bbad085f72d060a2147fbc46f5",
+      "nativeBinary": false
+    },
+    "aiohttp.connector": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\connector.py",
+      "sha256": "6010359c5c019b57273d480482fc07d89fd0a37abc5b5f2962f36c114766e15f",
+      "nativeBinary": false
+    },
+    "aiohttp.cookiejar": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\cookiejar.py",
+      "sha256": "b8473d9eb7a5641d96a9144c9ed693a915d3f4b269c9e7687813c2062edf342d",
+      "nativeBinary": false
+    },
+    "frozenlist._frozenlist": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\frozenlist\\_frozenlist.cp314-win_amd64.pyd",
+      "sha256": "054e5d97884e8d833528aa3a98868204a3ec46cabb6a656e72432634d117880a",
+      "nativeBinary": true
+    },
+    "frozenlist": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\frozenlist\\__init__.py",
+      "sha256": "c40204daef677006e30131883df9e8fce25f7bc010fb587bcffb9cef7758b040",
+      "nativeBinary": false
+    },
+    "aiosignal": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiosignal\\__init__.py",
+      "sha256": "4c8926506f474c1b7875fab69c8498062662441db1c2f16d119c9d2cfd073cbe",
+      "nativeBinary": false
+    },
+    "aiohttp.tracing": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\tracing.py",
+      "sha256": "57ddb7e49ea79a2a504d39d443c8b4148457b0fa1f9818c20c0a94c5ba074632",
+      "nativeBinary": false
+    },
+    "aiohttp.client": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client.py",
+      "sha256": "7a18c2a46541a245e54860ec78b270d756b586a30ba32a0eae874b1338756204",
+      "nativeBinary": false
+    },
+    "aiohttp.client_middleware_digest_auth": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\client_middleware_digest_auth.py",
+      "sha256": "3d313b270d8f401b050fb124c564513bd4b1f59f04ee09e12e2bb4418bff97e4",
+      "nativeBinary": false
+    },
+    "aiohttp.payload_streamer": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\payload_streamer.py",
+      "sha256": "73cca85fbd80607b3a371a82aa649f403445fb3dbebf590a2189fa923ebc17bf",
+      "nativeBinary": false
+    },
+    "aiohttp": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\__init__.py",
+      "sha256": "071300f33556ba68fb74aed7718b63c411c476ed395c81326436a2dfefd40d5d",
+      "nativeBinary": false
+    },
+    "aiohttp.web_response": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_response.py",
+      "sha256": "27c5a900197b2bab9535e098fb41f4a132aa5582d72f02e3aa93b6df0143c4ba",
+      "nativeBinary": false
+    },
+    "aiohttp.web_exceptions": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_exceptions.py",
+      "sha256": "92f5182fb4a015acbe801262cdef2f42d5eae12a46c1129ef0ef3caec74ede7a",
+      "nativeBinary": false
+    },
+    "aiohttp.web_request": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_request.py",
+      "sha256": "265fb65c42c81d22ab9d9ea6563641565bcb83183c1c5c0d1e41706153d503be",
+      "nativeBinary": false
+    },
+    "aiohttp.web_log": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_log.py",
+      "sha256": "a4ad3ce52eaa4f24b6258ef1270e41bf89f39f7967693c0019a9f8b058b0791e",
+      "nativeBinary": false
+    },
+    "aiohttp.web_fileresponse": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_fileresponse.py",
+      "sha256": "f8b9a4910b373ef5bf0ee2c6b8916189f0adb9f684d1ed0c0258af3789f92bdc",
+      "nativeBinary": false
+    },
+    "aiohttp.web_routedef": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_routedef.py",
+      "sha256": "f44834cf4911a66b77c8ffa08d94c6a27d08eeb2691c477715b23eb48c8a5911",
+      "nativeBinary": false
+    },
+    "aiohttp.web_urldispatcher": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_urldispatcher.py",
+      "sha256": "f86a65707420165f49c3ccc37ae6cecb20d0cd76f947ae3b8c1c4d0a8c7d68cc",
+      "nativeBinary": false
+    },
+    "aiohttp.web_middlewares": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_middlewares.py",
+      "sha256": "e56e53d63b4162bf3dd3a24eefd2bdcad72a6bd338b90830a937a75c7748fb50",
+      "nativeBinary": false
+    },
+    "aiohttp.web_protocol": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_protocol.py",
+      "sha256": "5e794b38d3b5ec1a9bc9281f605cd00aa24e0c52573600c5a02b79cbb1fec238",
+      "nativeBinary": false
+    },
+    "aiohttp.web_server": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_server.py",
+      "sha256": "de432ecfd01d4238b940fcc3d8a0562650b0cb7d473cc55f66b4046e2ee8982f",
+      "nativeBinary": false
+    },
+    "aiohttp.web_app": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_app.py",
+      "sha256": "ec2ec8ebc847f6a8b01377c37b2f6b1575af40e593251313e77ec597899629d9",
+      "nativeBinary": false
+    },
+    "aiohttp.web_runner": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_runner.py",
+      "sha256": "3964177fc9657d916d2b48dda80c6e703c5be4fe54e503560a428061efe622a0",
+      "nativeBinary": false
+    },
+    "aiohttp.web_ws": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web_ws.py",
+      "sha256": "d5da90f910ee37a936d1c6bf66a4d8040067a51c3bbaafab685cf5b144be7bf0",
+      "nativeBinary": false
+    },
+    "aiohttp.web": {
+      "file": "C:\\Antigravity\\AlazHarness\\runtime\\hyb-gateway-5a5c\\prepared\\env\\Lib\\site-packages\\aiohttp\\web.py",
+      "sha256": "24c0343358527b92a8f522c0a1c57138f502209448748c40a0b97d432141d866",
+      "nativeBinary": false
+    }
+  },
+  "distributions": {
+    "Pygments": {
+      "version": "2.21.0",
+      "requires": [
+        "colorama>=0.4.6; extra == 'windows-terminal'"
+      ],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: hatchling 1.32.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43",
+      "binaryFiles": []
+    },
+    "aiohappyeyeballs": {
+      "version": "2.7.1",
+      "requires": [],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: poetry-core 2.4.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "e68d1bf48aec9dcc2767343dedec25e12860085cba180e10bc3d3bdd031602ba",
+      "binaryFiles": []
+    },
+    "aiohttp": {
+      "version": "3.14.3",
+      "requires": [
+        "aiohappyeyeballs>=2.5.0",
+        "aiosignal>=1.4.0",
+        "async-timeout<6.0,>=4.0; python_version < \"3.11\"",
+        "attrs>=17.3.0",
+        "frozenlist>=1.1.1",
+        "multidict<7.0,>=4.5",
+        "propcache>=0.2.0",
+        "typing_extensions>=4.4; python_version < \"3.13\"",
+        "yarl<2.0,>=1.17.0",
+        "aiodns>=3.3.0; (sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\"",
+        "Brotli>=1.2; (platform_python_implementation == \"CPython\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\"",
+        "brotlicffi>=1.2; platform_python_implementation != \"CPython\" and extra == \"speedups\"",
+        "backports.zstd; (platform_python_implementation == \"CPython\" and python_version < \"3.14\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+      ],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (83.0.0)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "287d4346fb85cdf58dae89ac33639bef485653990a19af9bcd7d39e47e54ea1b",
+      "binaryFiles": [
+        "aiohttp/_http_parser.cp314-win_amd64.pyd",
+        "aiohttp/_http_writer.cp314-win_amd64.pyd",
+        "aiohttp/_websocket/mask.cp314-win_amd64.pyd",
+        "aiohttp/_websocket/reader_c.cp314-win_amd64.pyd"
+      ]
+    },
+    "aiosignal": {
+      "version": "1.4.0",
+      "requires": [
+        "frozenlist>=1.1.0",
+        "typing-extensions>=4.2; python_version < \"3.13\""
+      ],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (80.9.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n",
+      "metadataSha256": "09247ef1da8bc696728d47130e702e4307f6f7d101d6c485bff9f3a71ce7008d",
+      "binaryFiles": []
+    },
+    "attrs": {
+      "version": "26.1.0",
+      "requires": [],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: hatchling 1.29.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "4cd40e690f23bf37cbcad34efd6758e062df1df07c86833f7e3ce95bf1fa38cc",
+      "binaryFiles": []
+    },
+    "certifi": {
+      "version": "2026.5.20",
+      "requires": [],
+      "requiresPython": ">=3.7",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n",
+      "metadataSha256": "1c38826bc95f7744c69501689e00e3a1a2c93a158988937ce32ef4ed5c1df0f6",
+      "binaryFiles": []
+    },
+    "charset-normalizer": {
+      "version": "3.5.1",
+      "requires": [],
+      "requiresPython": ">=3.7",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (84.0.0)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "955c93827d59f1280f6d6a76b1e11bfb999cc65a55df83a6f9b28b7bc0e467f6",
+      "binaryFiles": [
+        "charset_normalizer/cd.cp314-win_amd64.pyd",
+        "charset_normalizer/md.cp314-win_amd64.pyd"
+      ]
+    },
+    "click": {
+      "version": "8.4.2",
+      "requires": [
+        "colorama; platform_system == 'Windows'"
+      ],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: flit 3.12.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "194c9dd81d567f9081f026c7e401060fbafa7bc147c8e0a58b3668b40a64c031",
+      "binaryFiles": []
+    },
+    "concurrent-log-handler": {
+      "version": "0.9.29",
+      "requires": [
+        "portalocker>=2.6.0",
+        "black>=26.1.0; extra == 'dev'",
+        "coverage; extra == 'dev'",
+        "hatch; extra == 'dev'",
+        "pytest; extra == 'dev'",
+        "pytest-cov; extra == 'dev'",
+        "pytest-mock; extra == 'dev'",
+        "pytest-repeat; extra == 'dev'",
+        "pytest-sugar; extra == 'dev'",
+        "ruff>=0.15.2; extra == 'dev'"
+      ],
+      "requiresPython": ">=3.6",
+      "wheel": "Wheel-Version: 1.0\nGenerator: hatchling 1.28.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "12939ef212c3603d56e4d1c33582bf9c08b36a0fbb0b4b49c033872e6c7b9ca4",
+      "binaryFiles": []
+    },
+    "frozenlist": {
+      "version": "1.8.0",
+      "requires": [],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (80.9.0)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "946c22dc9f7e2c76f2d698f00a4306dbe49a820e2b3f1a0e22fe5286cbec35f1",
+      "binaryFiles": [
+        "frozenlist/_frozenlist.cp314-win_amd64.pyd"
+      ]
+    },
+    "httpx": {
+      "version": "0.28.1",
+      "requires": [
+        "anyio",
+        "certifi",
+        "httpcore==1.*",
+        "idna",
+        "brotli; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "click==8.*; extra == 'cli'",
+        "pygments==2.*; extra == 'cli'",
+        "rich<14,>=10; extra == 'cli'",
+        "h2<5,>=3; extra == 'http2'",
+        "socksio==1.*; extra == 'socks'",
+        "zstandard>=0.18.0; extra == 'zstd'"
+      ],
+      "requiresPython": ">=3.8",
+      "wheel": "Wheel-Version: 1.0\nGenerator: hatchling 1.26.3\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25",
+      "binaryFiles": []
+    },
+    "idna": {
+      "version": "3.19",
+      "requires": [
+        "ruff >= 0.16.0 ; extra == \"all\"",
+        "mypy >= 1.11.2 ; extra == \"all\"",
+        "ty >= 0.0.37 ; extra == \"all\"",
+        "pytest >= 8.3.2 ; extra == \"all\"",
+        "hypothesis >= 6.141.1 ; extra == \"all\"",
+        "coverage >= 7.10.0 ; extra == \"all\""
+      ],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: flit 4.0.2\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "4d113161aca8582e8d28fddf3ea50f19b607209c2b3e4364379a163454680084",
+      "binaryFiles": []
+    },
+    "jiter": {
+      "version": "0.16.0",
+      "requires": [],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: maturin (1.14.1)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n",
+      "metadataSha256": "b1bcf7374eb4f4195f890ab610b6de54ae8766456df7ddf757f95d255097ef2e",
+      "binaryFiles": [
+        "jiter/jiter.cp314-win_amd64.pyd"
+      ]
+    },
+    "multidict": {
+      "version": "6.7.1",
+      "requires": [
+        "typing-extensions>=4.1.0; python_version < \"3.11\""
+      ],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (80.10.2)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "4913fdaae936a309c29b89b98c2dbebd237203fb27ab9e68ae5e4ec17ba3024f",
+      "binaryFiles": [
+        "multidict/_multidict.cp314-win_amd64.pyd"
+      ]
+    },
+    "portalocker": {
+      "version": "3.2.0",
+      "requires": [
+        "pywin32>=226; platform_system == \"Windows\"",
+        "portalocker[tests]; extra == \"docs\"",
+        "coverage-conditional-plugin>=0.9.0; extra == \"tests\"",
+        "portalocker[redis]; extra == \"tests\"",
+        "pytest-cov>=2.8.1; extra == \"tests\"",
+        "pytest-mypy>=0.8.0; extra == \"tests\"",
+        "pytest-rerunfailures>=15.0; extra == \"tests\"",
+        "pytest-timeout>=2.1.0; extra == \"tests\"",
+        "pytest>=5.4.1; extra == \"tests\"",
+        "sphinx>=6.0.0; extra == \"tests\"",
+        "types-pywin32>=310.0.0.20250429; extra == \"tests\"",
+        "types-redis; extra == \"tests\"",
+        "redis; extra == \"redis\""
+      ],
+      "requiresPython": ">=3.9",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (80.9.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n",
+      "metadataSha256": "1a6cc9434cfd4a373630949c8807ab6c30f4783ad2024151eea755f0766ecc03",
+      "binaryFiles": []
+    },
+    "propcache": {
+      "version": "0.5.2",
+      "requires": [],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "f534495cdd2f915af8e649783d95fddcb1a05a1ac181850f0c973c0a78f7bbae",
+      "binaryFiles": [
+        "propcache/_helpers_c.cp314-win_amd64.pyd"
+      ]
+    },
+    "psutil": {
+      "version": "7.2.2",
+      "requires": [
+        "psleak ; extra == 'dev'",
+        "pytest ; extra == 'dev'",
+        "pytest-instafail ; extra == 'dev'",
+        "pytest-xdist ; extra == 'dev'",
+        "setuptools ; extra == 'dev'",
+        "abi3audit ; extra == 'dev'",
+        "black ; extra == 'dev'",
+        "check-manifest ; extra == 'dev'",
+        "coverage ; extra == 'dev'",
+        "packaging ; extra == 'dev'",
+        "pylint ; extra == 'dev'",
+        "pyperf ; extra == 'dev'",
+        "pypinfo ; extra == 'dev'",
+        "pytest-cov ; extra == 'dev'",
+        "requests ; extra == 'dev'",
+        "rstcheck ; extra == 'dev'",
+        "ruff ; extra == 'dev'",
+        "sphinx ; extra == 'dev'",
+        "sphinx-rtd-theme ; extra == 'dev'",
+        "toml-sort ; extra == 'dev'",
+        "twine ; extra == 'dev'",
+        "validate-pyproject[all] ; extra == 'dev'",
+        "virtualenv ; extra == 'dev'",
+        "vulture ; extra == 'dev'",
+        "wheel ; extra == 'dev'",
+        "colorama ; (os_name == \"nt\") and extra == 'dev'",
+        "pyreadline3 ; (os_name == \"nt\") and extra == 'dev'",
+        "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+        "psleak ; extra == 'test'",
+        "pytest ; extra == 'test'",
+        "pytest-instafail ; extra == 'test'",
+        "pytest-xdist ; extra == 'test'",
+        "setuptools ; extra == 'test'",
+        "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+        "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+        "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+      ],
+      "requiresPython": ">=3.6",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (75.3.3)\nRoot-Is-Purelib: false\nTag: cp37-abi3-win_amd64\n\n",
+      "metadataSha256": "525f8ba78523cf7bc3759d62a105e7c57fd679ea702402b9449fb0746aa0217f",
+      "binaryFiles": [
+        "psutil/_psutil_windows.pyd"
+      ]
+    },
+    "python-dotenv": {
+      "version": "1.2.2",
+      "requires": [
+        "click>=5.0; extra == \"cli\""
+      ],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.0)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n",
+      "metadataSha256": "59430a9dee8f8118dbf693e41c4a3e5150626d19901f4727503da9499f5a64a1",
+      "binaryFiles": []
+    },
+    "pywin32": {
+      "version": "311",
+      "requires": [],
+      "requiresPython": null,
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (80.9.0)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "fb3306bf927e6a679d01cbeac76ac19c5fee4f154dd90f837349118da820444d",
+      "binaryFiles": [
+        "isapi/PyISAPI_loader.dll",
+        "pythonwin/dde.pyd",
+        "pythonwin/mfc140u.dll",
+        "pythonwin/scintilla.dll",
+        "pythonwin/win32ui.pyd",
+        "pythonwin/win32uiole.pyd",
+        "pywin32_system32/pythoncom314.dll",
+        "pywin32_system32/pywintypes314.dll",
+        "win32/_win32sysloader.pyd",
+        "win32/_winxptheme.pyd",
+        "win32/mmapfile.pyd",
+        "win32/odbc.pyd",
+        "win32/perfmon.pyd",
+        "win32/perfmondata.dll",
+        "win32/servicemanager.pyd",
+        "win32/timer.pyd",
+        "win32/win32api.pyd",
+        "win32/win32clipboard.pyd",
+        "win32/win32console.pyd",
+        "win32/win32cred.pyd",
+        "win32/win32crypt.pyd",
+        "win32/win32event.pyd",
+        "win32/win32evtlog.pyd",
+        "win32/win32file.pyd",
+        "win32/win32gui.pyd",
+        "win32/win32help.pyd",
+        "win32/win32inet.pyd",
+        "win32/win32job.pyd",
+        "win32/win32lz.pyd",
+        "win32/win32net.pyd",
+        "win32/win32pdh.pyd",
+        "win32/win32pipe.pyd",
+        "win32/win32print.pyd",
+        "win32/win32process.pyd",
+        "win32/win32profile.pyd",
+        "win32/win32ras.pyd",
+        "win32/win32security.pyd",
+        "win32/win32service.pyd",
+        "win32/win32trace.pyd",
+        "win32/win32transaction.pyd",
+        "win32/win32ts.pyd",
+        "win32/win32wnet.pyd",
+        "win32comext/adsi/adsi.pyd",
+        "win32comext/authorization/authorization.pyd",
+        "win32comext/axcontrol/axcontrol.pyd",
+        "win32comext/axscript/axscript.pyd",
+        "win32comext/bits/bits.pyd",
+        "win32comext/directsound/directsound.pyd",
+        "win32comext/ifilter/ifilter.pyd",
+        "win32comext/internet/internet.pyd",
+        "win32comext/mapi/exchange.pyd",
+        "win32comext/mapi/mapi.pyd",
+        "win32comext/propsys/propsys.pyd",
+        "win32comext/shell/shell.pyd",
+        "win32comext/taskscheduler/taskscheduler.pyd"
+      ]
+    },
+    "requests": {
+      "version": "2.33.0",
+      "requires": [
+        "charset_normalizer<4,>=2",
+        "idna<4,>=2.5",
+        "urllib3<3,>=1.26",
+        "certifi>=2023.5.7",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+        "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\"",
+        "pytest-httpbin==2.1.0; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-mock; extra == \"test\"",
+        "pytest-xdist; extra == \"test\"",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"test\"",
+        "pytest>=3; extra == \"test\""
+      ],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (82.0.1)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n",
+      "metadataSha256": "0cc0fa6e89be83cfa1777957519e3fffe78d1a79b30561934d1e4384fb177711",
+      "binaryFiles": []
+    },
+    "rich": {
+      "version": "14.3.3",
+      "requires": [
+        "ipywidgets (>=7.5.1,<9) ; extra == \"jupyter\"",
+        "markdown-it-py (>=2.2.0)",
+        "pygments (>=2.13.0,<3.0.0)"
+      ],
+      "requiresPython": ">=3.8.0",
+      "wheel": "Wheel-Version: 1.0\nGenerator: poetry-core 2.3.1\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "f643a724f7a397abd3c1abe5df9a93266b4abb6d7ca7d39bfb3fa30e8cf5013a",
+      "binaryFiles": []
+    },
+    "ruamel.yaml": {
+      "version": "0.18.16",
+      "requires": [
+        "ruamel.yaml.clib>=0.2.7; platform_python_implementation == \"CPython\" and python_version < \"3.14\"",
+        "ruamel.yaml.jinja2>=0.2; extra == \"jinja2\"",
+        "ryd; extra == \"docs\"",
+        "mercurial>5.7; extra == \"docs\""
+      ],
+      "requiresPython": ">=3.8",
+      "wheel": "Wheel-Version: 1.0\nGenerator: develop (0.18.16)\nRoot-Is-Purelib: true\nTag: py3-none-any\n\n",
+      "metadataSha256": "39376f3b128778b05ed27fcf27958feef9436df63422463865b293c1b212c978",
+      "binaryFiles": []
+    },
+    "urllib3": {
+      "version": "2.7.0",
+      "requires": [
+        "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "h2<5,>=4; extra == 'h2'",
+        "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+        "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+      ],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: hatchling 1.29.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+      "metadataSha256": "66147856d30bbb6bed01c6ce3326d0f48d84ed5f286ac177633a1486b82eace5",
+      "binaryFiles": []
+    },
+    "yarl": {
+      "version": "1.24.5",
+      "requires": [
+        "idna>=2.0",
+        "multidict>=4.0",
+        "propcache>=0.2.1"
+      ],
+      "requiresPython": ">=3.10",
+      "wheel": "Wheel-Version: 1.0\nGenerator: setuptools (83.0.0)\nRoot-Is-Purelib: false\nTag: cp314-cp314-win_amd64\n\n",
+      "metadataSha256": "0fd7b817553598246289189dfb95b425a15c9319d1bae355a38860419937e1c7",
+      "binaryFiles": [
+        "yarl/_quoting_c.cp314-win_amd64.pyd"
+      ]
+    }
+  },
+  "deniedDiagnostics": [
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "get_version_info",
+        "_git_version_info",
+        "_run_git",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "get_version_info",
+        "_git_version_info",
+        "_run_git",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "get_version_info",
+        "_git_version_info",
+        "_run_git",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "<module>",
+        "get_version_info",
+        "_git_version_info",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "get_version_info",
+        "_git_version_info",
+        "_run_git",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "_git_version_info",
+        "_calver_release_version",
+        "_run_git",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "subprocess.Popen",
+      "callers": [
+        "get_version_info",
+        "_git_version_info",
+        "_run_git",
+        "run",
+        "__init__",
+        "_execute_child",
+        "audit"
+      ]
+    },
+    {
+      "event": "socket.bind",
+      "callers": [
+        "_load_unlocked",
+        "exec_module",
+        "exec_module",
+        "_call_with_frames_removed",
+        "<module>",
+        "_has_ipv6",
+        "audit"
+      ]
+    }
+  ],
+  "providerCalls": 0,
+  "serviceStarted": false,
+  "qaSha256": "6a9640e93595e8e32fbcc515d3afa5fb85fed4c667e0a43ac8d6a2bf7802da9f",
+  "temporaryHomeRemoved": true,
+  "result": "PASS_IMPORT_ONLY"
+}

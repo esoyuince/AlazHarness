@@ -1,0 +1,13 @@
+from pathlib import Path
+import os,sys,json,importlib.util,importlib.metadata,platform,sqlite3
+D='AlazHarness-D3B-P71C'
+assert os.environ.get('WSL_DISTRO_NAME')==D and Path('/etc/alaz-p71c-lab-id').read_text().strip()==D
+assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+assert not Path('/mnt/c/Windows').exists()
+names=('aiohttp','pydantic','yaml','requests','rich','dotenv','httpx','litellm','openai','psutil','croniter','jinja2','PIL','numpy','sqlite3','pytest')
+mods={}
+for n in names:
+ try:s=importlib.util.find_spec(n);mods[n]=None if s is None else s.origin
+ except Exception as e:mods[n]={'error':type(e).__name__}
+roots={str(p):sorted(x.name for x in p.iterdir())[:40] for p in (Path('/opt'),Path('/opt/alaz-t114r6a3'),Path('/opt/alaz-t114r6a3/dependencies')) if p.is_dir()}
+print(json.dumps({'uid':os.getresuid(),'gid':os.getresgid(),'groups':os.getgroups(),'python':sys.version,'executable':sys.executable,'architecture':platform.machine(),'kernel':platform.release(),'sqlite':sqlite3.sqlite_version,'distro':D,'windowsMountPresent':Path('/mnt/c').exists(),'modules':mods,'sourceRootEntries':roots,'runtimePackages':sorted((d.metadata.get('Name',''),d.version) for d in importlib.metadata.distributions()),'readOnlyMetadata':True,'rootUsed':False}))

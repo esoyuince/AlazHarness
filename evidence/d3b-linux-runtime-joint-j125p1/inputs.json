@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:25:17.433746+03:00",
+  "base": "00e9b36213a0939df02007b0cf55fd4cd10bb4c7",
+  "independentQaCommit": "1937a3eab50196ebcac4325a2978e641e7820b2d",
+  "canonicalObserved": "00e9b36213a0939df02007b0cf55fd4cd10bb4c7",
+  "transfer": "immutable fast-forward original independent QA history; own disjoint Linux scripts/config/evidence retained",
+  "noNativeRerunByIntegration": true,
+  "oldPackageCandidateNotActivated": true
+}

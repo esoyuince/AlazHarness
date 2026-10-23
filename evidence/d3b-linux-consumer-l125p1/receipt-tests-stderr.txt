@@ -1,0 +1,13 @@
+test_actual_linux_identity_and_temporary_only_install (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_actual_linux_identity_and_temporary_only_install) ... ok
+test_corrected_exact_linux_wheel_lock (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_corrected_exact_linux_wheel_lock) ... ok
+test_current_native22_all_cases_and_cleanup (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_current_native22_all_cases_and_cleanup) ... ok
+test_first_missing_dependency_and_superseded_candidate_remain_historical (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_first_missing_dependency_and_superseded_candidate_remain_historical) ... ok
+test_real_owner_cold_helpers_and_exact_order_not_mocked (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_real_owner_cold_helpers_and_exact_order_not_mocked) ... ok
+test_scope_no_admission_model_or_full_isolation (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_scope_no_admission_model_or_full_isolation) ... ok
+test_source_bytes_native_imports_and_prior_harness_preserved (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_source_bytes_native_imports_and_prior_harness_preserved) ... ok
+test_transport_source_and_package_integrity_binds_both_runs (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_transport_source_and_package_integrity_binds_both_runs) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.421s
+
+OK

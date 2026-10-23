@@ -1,0 +1,797 @@
+{
+  "target": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.3",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "11",
+    "platform_system": "Linux",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.3",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "linux",
+    "extra": ""
+  },
+  "observedRootDistributions": [
+    "Pygments",
+    "aiohappyeyeballs",
+    "aiohttp",
+    "aiosignal",
+    "attrs",
+    "certifi",
+    "charset-normalizer",
+    "click",
+    "concurrent-log-handler",
+    "frozenlist",
+    "httpx",
+    "idna",
+    "jiter",
+    "multidict",
+    "portalocker",
+    "propcache",
+    "psutil",
+    "python-dotenv",
+    "requests",
+    "rich",
+    "ruamel.yaml",
+    "urllib3",
+    "yarl"
+  ],
+  "explicitExcludedPlatformPackage": "pywin32",
+  "lockedInstalledClosure": [
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1",
+      "requiresPython": ">=3.10",
+      "dependencies": []
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.3",
+      "requiresPython": ">=3.10",
+      "dependencies": [
+        "aiohappyeyeballs>=2.5.0",
+        "aiosignal>=1.4.0",
+        "attrs>=17.3.0",
+        "frozenlist>=1.1.1",
+        "multidict<7.0,>=4.5",
+        "propcache>=0.2.0",
+        "typing_extensions>=4.4; python_version < \"3.13\"",
+        "yarl<2.0,>=1.17.0"
+      ]
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0",
+      "requiresPython": ">=3.9",
+      "dependencies": [
+        "frozenlist>=1.1.0",
+        "typing-extensions>=4.2; python_version < \"3.13\""
+      ]
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "certifi",
+      "version": "2026.5.20",
+      "requiresPython": ">=3.7",
+      "dependencies": []
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.1",
+      "requiresPython": ">=3.7",
+      "dependencies": []
+    },
+    {
+      "name": "click",
+      "version": "8.4.2",
+      "requiresPython": ">=3.10",
+      "dependencies": []
+    },
+    {
+      "name": "concurrent-log-handler",
+      "version": "0.9.29",
+      "requiresPython": ">=3.6",
+      "dependencies": [
+        "portalocker>=2.6.0"
+      ]
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "requiresPython": ">=3.8",
+      "dependencies": [
+        "anyio",
+        "certifi",
+        "httpcore==1.*",
+        "idna"
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.19",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "jiter",
+      "version": "0.16.0",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "multidict",
+      "version": "6.7.1",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "portalocker",
+      "version": "3.2.0",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.2",
+      "requiresPython": ">=3.10",
+      "dependencies": []
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2",
+      "requiresPython": ">=3.6",
+      "dependencies": []
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.2",
+      "requiresPython": ">=3.10",
+      "dependencies": []
+    },
+    {
+      "name": "requests",
+      "version": "2.33.0",
+      "requiresPython": ">=3.10",
+      "dependencies": [
+        "charset_normalizer<4,>=2",
+        "idna<4,>=2.5",
+        "urllib3<3,>=1.26",
+        "certifi>=2023.5.7"
+      ]
+    },
+    {
+      "name": "rich",
+      "version": "14.3.3",
+      "requiresPython": ">=3.8.0",
+      "dependencies": [
+        "markdown-it-py (>=2.2.0)",
+        "pygments (>=2.13.0,<3.0.0)"
+      ]
+    },
+    {
+      "name": "ruamel.yaml",
+      "version": "0.18.16",
+      "requiresPython": ">=3.8",
+      "dependencies": [
+        "ruamel.yaml.clib>=0.2.7; platform_python_implementation == \"CPython\" and python_version < \"3.14\""
+      ]
+    },
+    {
+      "name": "urllib3",
+      "version": "2.7.0",
+      "requiresPython": ">=3.10",
+      "dependencies": []
+    },
+    {
+      "name": "yarl",
+      "version": "1.24.5",
+      "requiresPython": ">=3.10",
+      "dependencies": [
+        "idna>=2.0",
+        "multidict>=4.0",
+        "propcache>=0.2.1"
+      ]
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "requiresPython": ">=3.9",
+      "dependencies": []
+    },
+    {
+      "name": "anyio",
+      "version": "4.14.2",
+      "requiresPython": ">=3.10",
+      "dependencies": [
+        "idna>=2.8",
+        "typing_extensions>=4.5; python_version < \"3.13\""
+      ]
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "requiresPython": ">=3.8",
+      "dependencies": [
+        "certifi",
+        "h11>=0.16"
+      ]
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "requiresPython": ">=3.10",
+      "dependencies": [
+        "mdurl~=0.1"
+      ]
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "requiresPython": ">=3.8",
+      "dependencies": []
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "requiresPython": ">=3.7",
+      "dependencies": []
+    }
+  ],
+  "missingTargetOnly": {
+    "ruamel.yaml.clib": "ruamel.yaml.clib>=0.2.7"
+  },
+  "excludedByMarker": [
+    {
+      "from": "Pygments",
+      "dependency": "colorama>=0.4.6; extra == 'windows-terminal'"
+    },
+    {
+      "from": "aiohttp",
+      "dependency": "async-timeout<6.0,>=4.0; python_version < \"3.11\""
+    },
+    {
+      "from": "aiohttp",
+      "dependency": "aiodns>=3.3.0; (sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+    },
+    {
+      "from": "aiohttp",
+      "dependency": "Brotli>=1.2; (platform_python_implementation == \"CPython\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+    },
+    {
+      "from": "aiohttp",
+      "dependency": "brotlicffi>=1.2; platform_python_implementation != \"CPython\" and extra == \"speedups\""
+    },
+    {
+      "from": "aiohttp",
+      "dependency": "backports.zstd; (platform_python_implementation == \"CPython\" and python_version < \"3.14\" and sys_platform != \"android\" and sys_platform != \"ios\") and extra == \"speedups\""
+    },
+    {
+      "from": "click",
+      "dependency": "colorama; platform_system == 'Windows'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "black>=26.1.0; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "coverage; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "hatch; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "pytest; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "pytest-cov; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "pytest-mock; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "pytest-repeat; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "pytest-sugar; extra == 'dev'"
+    },
+    {
+      "from": "concurrent-log-handler",
+      "dependency": "ruff>=0.15.2; extra == 'dev'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "brotli; (platform_python_implementation == 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "brotlicffi; (platform_python_implementation != 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "click==8.*; extra == 'cli'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "pygments==2.*; extra == 'cli'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "rich<14,>=10; extra == 'cli'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "h2<5,>=3; extra == 'http2'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "socksio==1.*; extra == 'socks'"
+    },
+    {
+      "from": "httpx",
+      "dependency": "zstandard>=0.18.0; extra == 'zstd'"
+    },
+    {
+      "from": "idna",
+      "dependency": "ruff >= 0.16.0 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "dependency": "mypy >= 1.11.2 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "dependency": "ty >= 0.0.37 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "dependency": "pytest >= 8.3.2 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "dependency": "hypothesis >= 6.141.1 ; extra == \"all\""
+    },
+    {
+      "from": "idna",
+      "dependency": "coverage >= 7.10.0 ; extra == \"all\""
+    },
+    {
+      "from": "multidict",
+      "dependency": "typing-extensions>=4.1.0; python_version < \"3.11\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "pywin32>=226; platform_system == \"Windows\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "portalocker[tests]; extra == \"docs\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "coverage-conditional-plugin>=0.9.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "portalocker[redis]; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "pytest-cov>=2.8.1; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "pytest-mypy>=0.8.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "pytest-rerunfailures>=15.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "pytest-timeout>=2.1.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "pytest>=5.4.1; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "sphinx>=6.0.0; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "types-pywin32>=310.0.0.20250429; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "types-redis; extra == \"tests\""
+    },
+    {
+      "from": "portalocker",
+      "dependency": "redis; extra == \"redis\""
+    },
+    {
+      "from": "psutil",
+      "dependency": "psleak ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest-instafail ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest-xdist ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "setuptools ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "abi3audit ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "black ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "check-manifest ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "coverage ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "packaging ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pylint ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pyperf ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pypinfo ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest-cov ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "requests ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "rstcheck ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "ruff ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "sphinx ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "sphinx-rtd-theme ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "toml-sort ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "twine ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "validate-pyproject[all] ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "virtualenv ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "vulture ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "wheel ; extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "colorama ; (os_name == \"nt\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pyreadline3 ; (os_name == \"nt\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "psleak ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest-instafail ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pytest-xdist ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "setuptools ; extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    },
+    {
+      "from": "psutil",
+      "dependency": "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    },
+    {
+      "from": "python-dotenv",
+      "dependency": "click>=5.0; extra == \"cli\""
+    },
+    {
+      "from": "requests",
+      "dependency": "PySocks!=1.5.7,>=1.5.6; extra == \"socks\""
+    },
+    {
+      "from": "requests",
+      "dependency": "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+    },
+    {
+      "from": "requests",
+      "dependency": "pytest-httpbin==2.1.0; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "dependency": "pytest-cov; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "dependency": "pytest-mock; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "dependency": "pytest-xdist; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "dependency": "PySocks!=1.5.7,>=1.5.6; extra == \"test\""
+    },
+    {
+      "from": "requests",
+      "dependency": "pytest>=3; extra == \"test\""
+    },
+    {
+      "from": "rich",
+      "dependency": "ipywidgets (>=7.5.1,<9) ; extra == \"jupyter\""
+    },
+    {
+      "from": "ruamel.yaml",
+      "dependency": "ruamel.yaml.jinja2>=0.2; extra == \"jinja2\""
+    },
+    {
+      "from": "ruamel.yaml",
+      "dependency": "ryd; extra == \"docs\""
+    },
+    {
+      "from": "ruamel.yaml",
+      "dependency": "mercurial>5.7; extra == \"docs\""
+    },
+    {
+      "from": "urllib3",
+      "dependency": "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "urllib3",
+      "dependency": "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'"
+    },
+    {
+      "from": "urllib3",
+      "dependency": "h2<5,>=4; extra == 'h2'"
+    },
+    {
+      "from": "urllib3",
+      "dependency": "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'"
+    },
+    {
+      "from": "urllib3",
+      "dependency": "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+    },
+    {
+      "from": "anyio",
+      "dependency": "exceptiongroup>=1.0.2; python_version < \"3.11\""
+    },
+    {
+      "from": "anyio",
+      "dependency": "trio>=0.32.0; extra == \"trio\""
+    },
+    {
+      "from": "httpcore",
+      "dependency": "anyio<5.0,>=4.0; extra == 'asyncio'"
+    },
+    {
+      "from": "httpcore",
+      "dependency": "h2<5,>=3; extra == 'http2'"
+    },
+    {
+      "from": "httpcore",
+      "dependency": "socksio==1.*; extra == 'socks'"
+    },
+    {
+      "from": "httpcore",
+      "dependency": "trio<1.0,>=0.22.0; extra == 'trio'"
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "psutil ; extra == \"benchmarking\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pytest ; extra == \"benchmarking\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pytest-benchmark ; extra == \"benchmarking\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "commonmark~=0.9 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "markdown~=3.4 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "mistletoe~=1.0 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "mistune~=3.0 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "panflute~=2.3 ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "markdown-it-pyrs ; extra == \"compare\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "linkify-it-py>=1,<3 ; extra == \"linkify\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "mdit-py-plugins>=0.5.0 ; extra == \"plugins\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "gprof2dot ; extra == \"profiling\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "mdit-py-plugins>=0.5.0 ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "myst-parser ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pyyaml ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "sphinx ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "sphinx-copybutton ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "sphinx-design ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "sphinx-book-theme~=1.0 ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "jupyter_sphinx ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "ipykernel ; extra == \"rtd\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "coverage ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pytest ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pytest-cov ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pytest-regressions ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "pytest-timeout ; extra == \"testing\""
+    },
+    {
+      "from": "markdown-it-py",
+      "dependency": "requests ; extra == \"testing\""
+    }
+  ],
+  "pipVersionInImmutableRuntime": null
+}
