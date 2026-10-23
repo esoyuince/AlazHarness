@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T21:08:43.874108+03:00",
+  "nativeHashes": {
+    "gateway/run_borrowed_state.py": "5245dd516d2d884f4128f6fc716467f0cce0e3b8338b5d748e4cfccad3116a98",
+    "gateway/run.py": "7f4fda539a53dca8395210ff73ab7b209a6aeeae5179969d47b0681dea17d311",
+    "gateway/run_runtime_init.py": "dba2a590c0a68f7e21210c40c0350da699d22949d8b9adcc3cbdd4d54ad28749",
+    "gateway/run_runtime.py": "dedbd4429bdd542c0555693de6d0b22a09dc338fc0b6603105355d78fd7176c9",
+    "gateway/run_startup.py": "1c29c9839e46048b08873e8a822aae8c913f6740eb6a23876ab2eadff6e97e9b",
+    "gateway/run_shutdown.py": "1594ed1230b6db10cee4154babc49998b00cc01419061a978c1f261ccd5e2926",
+    "gateway/session_authority.py": "48b438675a68380cc8462f6c441196ac380eec7cd12a3f84b6c13f17326d896b"
+  },
+  "qaSha256": "2cb373bf8e04bef4a0511b95250026958590d7a753fb3d5d35ab874e38b1e198",
+  "corrected": "revalidate exact prepared authority/profile/instance/epoch/registry/descriptor/flags before selection and detach; keep unknown post-detach terminal",
+  "firstFourRegression": "3FAIL/1PASS retained",
+  "originalNative24SourceSnapshotSaved": true
+}

@@ -1,0 +1,38 @@
+{"result": "FAIL", "total": 4, "passed": 1, "skipped": 0, "errors": 0, "failures": 3, "errorIds": [], "failureIds": ["__main__.PreparedDriftChecks.test_authority_epoch_drift_refuses_selection", "__main__.PreparedDriftChecks.test_descriptor_replacement_refuses_before_detach", "__main__.PreparedDriftChecks.test_foreign_authority_registry_entry_refuses_detach"], "qaSha256": "4fb5abdcb216fa819e76514805abcb68b9b91d30cb7b46745b55e585d696758f", "nativeMethodsReplaced": false, "fullNativeConstructorCalled": true, "realAuthorityClassUsed": true, "threeStoreApiIntegrated": false, "authorityAdmissionEnabled": false, "serviceStarted": false, "httpListenerStarted": false, "providerCalls": 0, "frameworkLoopInitializedBeforeAudit": true, "blockedImportOrNativeEvents": ["subprocess.Popen", "subprocess.Popen", "subprocess.Popen", "subprocess.Popen", "subprocess.Popen", "subprocess.Popen", "subprocess.Popen", "socket.bind"], "rootWslAction": false, "temporaryRootRemoved": true}
+test_authority_epoch_drift_refuses_selection (__main__.PreparedDriftChecks.test_authority_epoch_drift_refuses_selection) ... FAIL
+test_descriptor_replacement_refuses_before_detach (__main__.PreparedDriftChecks.test_descriptor_replacement_refuses_before_detach) ... FAIL
+test_foreign_authority_registry_entry_refuses_detach (__main__.PreparedDriftChecks.test_foreign_authority_registry_entry_refuses_detach) ... FAIL
+test_native_admission_gate_is_closed (__main__.PreparedDriftChecks.test_native_admission_gate_is_closed) ... ok
+
+======================================================================
+FAIL: test_authority_epoch_drift_refuses_selection (__main__.PreparedDriftChecks.test_authority_epoch_drift_refuses_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-borrow-r122c4\scripts\qa\r122c4_owner_drift_probe.py", line 14, in test_authority_epoch_drift_refuses_selection
+    with self.watched(),self.assertRaises(q.Rejected):self.runner._session_db
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_descriptor_replacement_refuses_before_detach (__main__.PreparedDriftChecks.test_descriptor_replacement_refuses_before_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-borrow-r122c4\scripts\qa\r122c4_owner_drift_probe.py", line 19, in test_descriptor_replacement_refuses_before_detach
+    with self.watched(),self.assertRaises(q.Rejected):r.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_foreign_authority_registry_entry_refuses_detach (__main__.PreparedDriftChecks.test_foreign_authority_registry_entry_refuses_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-borrow-r122c4\scripts\qa\r122c4_owner_drift_probe.py", line 26, in test_foreign_authority_registry_entry_refuses_detach
+    with self.watched(),self.assertRaises(q.Rejected):self.runner.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.113s
+
+FAILED (failures=3)
+

@@ -1,0 +1,29 @@
+test_active_native_executor_blocks_detach_without_shutdown (__main__.NativeRunnerChecks.test_active_native_executor_blocks_detach_without_shutdown) ... ok
+test_actual_epoch_and_instance_are_reused_not_recovered (__main__.NativeRunnerChecks.test_actual_epoch_and_instance_are_reused_not_recovered) ... ok
+test_closed_state_not_reopened (__main__.NativeRunnerChecks.test_closed_state_not_reopened) ... ok
+test_config_must_be_exact_explicit_object (__main__.NativeRunnerChecks.test_config_must_be_exact_explicit_object) ... ok
+test_configuration_mutation_cannot_enable_transports (__main__.NativeRunnerChecks.test_configuration_mutation_cannot_enable_transports) ... ok
+test_constructed_not_prepared_can_detach_without_authority (__main__.NativeRunnerChecks.test_constructed_not_prepared_can_detach_without_authority) ... ok
+test_default_native_runner_still_uses_registry_state (__main__.NativeRunnerChecks.test_default_native_runner_still_uses_registry_state) ... ok
+test_detach_keeps_caller_state_and_profile_open (__main__.NativeRunnerChecks.test_detach_keeps_caller_state_and_profile_open) ... ok
+test_direct_old_authority_initializer_cannot_advance_epoch (__main__.NativeRunnerChecks.test_direct_old_authority_initializer_cannot_advance_epoch) ... ok
+test_dirty_native_facade_retains_caller_state (__main__.NativeRunnerChecks.test_dirty_native_facade_retains_caller_state) ... ok
+test_lifecycle_rejected_from_other_real_thread (__main__.NativeRunnerChecks.test_lifecycle_rejected_from_other_real_thread) ... ok
+test_live_authority_entry_blocks_detach_without_removal (__main__.NativeRunnerChecks.test_live_authority_entry_blocks_detach_without_removal) ... ok
+test_native_start_stop_and_direct_teardown_refused_before_effects (__main__.NativeRunnerChecks.test_native_start_stop_and_direct_teardown_refused_before_effects) ... ok
+test_open_transaction_kept_and_no_detach (__main__.NativeRunnerChecks.test_open_transaction_kept_and_no_detach) ... ok
+test_profile_release_and_reacquire_not_adopted (__main__.NativeRunnerChecks.test_profile_release_and_reacquire_not_adopted) ... ok
+test_real_constructor_all_facades_same_state_without_new_open (__main__.NativeRunnerChecks.test_real_constructor_all_facades_same_state_without_new_open) ... ok
+test_real_foreign_profile_scope_refused_without_open (__main__.NativeRunnerChecks.test_real_foreign_profile_scope_refused_without_open) ... ok
+test_repeat_authority_initialization_cannot_bump_epoch (__main__.NativeRunnerChecks.test_repeat_authority_initialization_cannot_bump_epoch) ... ok
+test_repin_async_property_refused (__main__.NativeRunnerChecks.test_repin_async_property_refused) ... ok
+test_reuse_binding_for_second_runner_refused (__main__.NativeRunnerChecks.test_reuse_binding_for_second_runner_refused) ... ok
+test_runtime_epoch_changed_is_not_restored (__main__.NativeRunnerChecks.test_runtime_epoch_changed_is_not_restored) ... ok
+test_state_mutex_not_waited_or_released (__main__.NativeRunnerChecks.test_state_mutex_not_waited_or_released) ... ok
+test_unresolved_admission_not_recovered_or_discarded (__main__.NativeRunnerChecks.test_unresolved_admission_not_recovered_or_discarded) ... ok
+test_wrong_epoch_instance_and_bool_rejected_before_constructor (__main__.NativeRunnerChecks.test_wrong_epoch_instance_and_bool_rejected_before_constructor) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 10.027s
+
+OK

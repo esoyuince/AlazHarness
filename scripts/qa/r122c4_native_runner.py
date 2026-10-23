@@ -1,0 +1,265 @@
+"""Real optional GatewayRunner construction on a caller state/epoch, no method doubles.
+Framework loop wakeup sockets are initialized BEFORE auditing native code.
+No API listener, model/provider, worker or ordinary service lifecycle is activated.
+"""
+import argparse,asyncio,hashlib,json,os,sys,tempfile,threading,unittest
+from contextlib import contextmanager
+from pathlib import Path
+State=Runner=Config=Binding=Rejected=Ownership=Registry=Runtime=Constants=None
+initialize=None
+BASE=LOOP=None
+WATCH=None
+BLOCKED=[]
+BLOCKED_DETAILS=[]
+PHASE="imports"
+CHECKS=[]
+END=[]
+
+def audit(event,args):
+    if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+        BLOCKED.append(event)
+        frame=sys._getframe(1);frames=[]
+        for _ in range(8):
+            if frame is None:break
+            frames.append({'module':frame.f_globals.get('__name__',''),'function':frame.f_code.co_name});frame=frame.f_back
+        BLOCKED_DETAILS.append({'event':event,'phase':PHASE,'frames':frames});frame=None
+        raise PermissionError('r122_native_offline')
+    if WATCH is not None and event=='sqlite3.connect':
+        WATCH['sqliteOpens']+=1;raise AssertionError('extra_sqlite_connection')
+
+class NativeRunnerChecks(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='profile-',dir=BASE)
+        self.home=Path(self.temp.name).resolve();os.environ['HERMES_HOME']=str(self.home)
+        Ownership.reserve([self.home]);self.db=State(self.home/'state.db')
+        self.epoch=Runtime.begin_runtime_epoch(self.db,instance_id='r122-native')
+        self.config=Config(sessions_dir=self.home/'sessions',multiplex_profiles=False,write_sessions_json=False)
+        self.binding=None;self.runner=None;self.authority=None
+    def tearDown(self):
+        global WATCH
+        WATCH=None
+        if self.db._conn is not None and self.db._conn.in_transaction:self.db._conn.rollback()
+        if self.runner is not None:
+            try:self.runner.close_all_session_db_handles()
+            except Rejected:pass  # tests that invalidate fixture ownership retain facade until explicit caller close
+        self.db.close();Ownership.close();self.temp.cleanup()
+        counts=Registry.stats();pending=len(asyncio.all_tasks(LOOP))
+        END.append({'case':self._testMethodName,'profileRemoved':not self.home.exists(),'profileReleased':not Ownership.homes,'registry':counts,'pendingTasks':pending})
+        self.assertEqual(counts,{'live_generations':0,'retired_generations':0,'total_refcounts':0})
+        self.assertEqual(pending,0);self.assertFalse(self.home.exists());self.assertFalse(Ownership.homes)
+    @contextmanager
+    def watched(self):
+        global WATCH
+        before=self.db._conn.total_changes;epoch=tuple(self.db._conn.execute('SELECT epoch,instance_id FROM runtime_epoch').fetchone())
+        reg=Registry.stats();row={'case':self._testMethodName,'sqliteOpens':0};WATCH=row
+        try:yield
+        finally:
+            WATCH=None
+            self.assertEqual(self.db._conn.total_changes,before)
+            self.assertEqual(tuple(self.db._conn.execute('SELECT epoch,instance_id FROM runtime_epoch').fetchone()),epoch)
+            self.assertEqual(Registry.stats(),reg);row.update(sqlWrites=0,epochChanged=False);CHECKS.append(row)
+    def make(self,*,prepare=True):
+        self.binding=Binding(self.config,self.db,epoch=self.epoch,instance_id='r122-native')
+        self.runner=Runner(self.config,caller_state=self.binding)
+        if prepare:self.authority=LOOP.run_until_complete(initialize(self.runner))
+        return self.runner
+    def test_real_constructor_all_facades_same_state_without_new_open(self):
+        with self.watched():r=self.make()
+        self.assertIs(type(r),Runner);self.assertIs(r.session_store._db,self.db)
+        self.assertIs(r._session_db._db,self.db);self.assertIs(r.async_session_store._store,r.session_store)
+        self.assertIs(self.authority.db,self.db);self.assertIs(r.session_authorities.launch,self.authority)
+        self.assertEqual(self.binding.status()['state'],'PREPARED');self.assertFalse(r._session_db_handles)
+    def test_actual_epoch_and_instance_are_reused_not_recovered(self):
+        with self.watched():self.make()
+        self.assertEqual(self.authority.epoch,self.epoch);self.assertEqual(self.authority.instance_id,'r122-native')
+        self.assertEqual(self.runner.session_runtime_descriptor['authority_epoch'],self.epoch)
+        self.assertTrue(self.authority.retiring);self.assertFalse(self.authority.retired)
+        self.assertEqual(self.runner.session_runtime_descriptor['served_profiles'],[])
+        self.assertEqual(self.runner.session_runtime_descriptor['capabilities'],[])
+        self.assertFalse(self.binding.status()['runtimeAdmissionAuthorized'])
+    def test_detach_keeps_caller_state_and_profile_open(self):
+        self.make()
+        with self.watched():self.runner.close_all_session_db_handles();self.runner.close_all_session_db_handles()
+        self.assertTrue(self.authority.retired);self.assertTrue(Ownership.owns(self.home))
+        self.assertEqual(self.binding.status()['state'],'DETACHED')
+        self.assertEqual(self.db._conn.execute('SELECT 1').fetchone()[0],1)
+        with self.assertRaises(Rejected):self.runner._session_db
+    def test_constructed_not_prepared_can_detach_without_authority(self):
+        self.make(prepare=False)
+        with self.watched():self.runner.close_all_session_db_handles()
+        self.assertEqual(self.binding.status()['state'],'DETACHED');self.assertIsNone(getattr(self.runner,'session_authority',None))
+    def test_repeat_authority_initialization_cannot_bump_epoch(self):
+        self.make()
+        with self.watched(),self.assertRaises(Rejected):LOOP.run_until_complete(initialize(self.runner))
+    def test_reuse_binding_for_second_runner_refused(self):
+        self.make()
+        with self.watched(),self.assertRaises(Rejected):Runner(self.config,caller_state=self.binding)
+    def test_config_must_be_exact_explicit_object(self):
+        binding=Binding(self.config,self.db,epoch=self.epoch,instance_id='r122-native')
+        foreign=Config(sessions_dir=self.home/'sessions',multiplex_profiles=False,write_sessions_json=False)
+        with self.watched():
+            for config in (None,foreign):
+                with self.assertRaises(Rejected):Runner(config,caller_state=binding)
+        self.assertEqual(binding.status()['state'],'NEW')
+    def test_wrong_epoch_instance_and_bool_rejected_before_constructor(self):
+        with self.watched():
+            for epoch,instance in ((self.epoch+1,'r122-native'),(self.epoch,'other'),(True,'r122-native')):
+                with self.assertRaises(Rejected):Binding(self.config,self.db,epoch=epoch,instance_id=instance)
+    def test_unresolved_admission_not_recovered_or_discarded(self):
+        self.db.create_session('owned',source='test')
+        a=Runtime.admit_session_input(self.db,epoch=self.epoch,principal_id='owned',session_id='owned',request_id='owned',payload={'text':'pending'})
+        with self.watched(),self.assertRaises(Rejected):Binding(self.config,self.db,epoch=self.epoch,instance_id='r122-native')
+        self.assertEqual(self.db._conn.execute('SELECT status FROM session_admissions WHERE admission_id=?',(a['admission_id'],)).fetchone()[0],'queued')
+    def test_real_foreign_profile_scope_refused_without_open(self):
+        self.make();token=Constants.set_hermes_home_override(self.home/'foreign')
+        try:
+            with self.watched(),self.assertRaises(Rejected):self.runner._session_db
+        finally:Constants.reset_hermes_home_override(token)
+        self.assertFalse((self.home/'foreign').exists())
+    def test_state_mutex_not_waited_or_released(self):
+        self.make();self.db._lock.acquire()
+        try:
+            with self.assertRaises(Rejected):self.runner._session_db
+            self.assertTrue(self.db._lock.locked())
+        finally:self.db._lock.release()
+    def test_open_transaction_kept_and_no_detach(self):
+        self.make();self.db._conn.execute('BEGIN IMMEDIATE')
+        try:
+            with self.watched():
+                with self.assertRaises(Rejected):self.runner._session_db
+                with self.assertRaises(Rejected):self.runner.close_all_session_db_handles()
+            self.assertTrue(self.db._conn.in_transaction);self.assertEqual(self.binding.status()['state'],'PREPARED')
+        finally:self.db._conn.rollback()
+    def test_configuration_mutation_cannot_enable_transports(self):
+        self.make();self.config.profile_routes.append({'unqualified':True})
+        try:
+            with self.watched(),self.assertRaises(Rejected):self.runner._session_db
+        finally:self.config.profile_routes.clear()
+    def test_runtime_epoch_changed_is_not_restored(self):
+        self.make();new=Runtime.begin_runtime_epoch(self.db,instance_id='foreign-epoch')
+        with self.watched():
+            with self.assertRaises(Rejected):self.runner._session_db
+            with self.assertRaises(Rejected):self.runner.close_all_session_db_handles()
+        self.assertEqual(new,self.epoch+1)
+    def test_profile_release_and_reacquire_not_adopted(self):
+        self.make();Ownership.close();Ownership.reserve([self.home])
+        with self.watched(),self.assertRaises(Rejected):self.runner._session_db
+    def test_repin_async_property_refused(self):
+        self.make()
+        with self.watched():
+            for value in (None,self.db):
+                with self.assertRaises(Rejected):self.runner._session_db=value
+    def test_native_start_stop_and_direct_teardown_refused_before_effects(self):
+        self.make();r=self.runner;before=set(asyncio.all_tasks(LOOP))
+        from gateway.run_runtime import start_gateway_runtime_api
+        with self.watched():
+            for fn in (r.start,r._start_impl,r.stop,r._stop_impl,lambda:start_gateway_runtime_api(r)):
+                with self.assertRaises(Rejected):LOOP.run_until_complete(fn())
+            with self.assertRaises(Rejected):r._stop_quiesce_and_close_session_dbs(0,None)
+        self.assertEqual(set(asyncio.all_tasks(LOOP)),before);self.assertIsNone(r._stop_task)
+        self.assertFalse(r._running);self.assertTrue(Ownership.owns(self.home))
+    def test_direct_old_authority_initializer_cannot_advance_epoch(self):
+        from gateway.session_authority import initialize_session_authority
+        self.make()
+        with self.watched(),self.assertRaises(Rejected):
+            LOOP.run_until_complete(initialize_session_authority(self.runner,profile_id=str(self.home),instance_id='bad',db=self.db))
+    def test_active_native_executor_blocks_detach_without_shutdown(self):
+        import concurrent.futures
+        self.make();pool=concurrent.futures.ThreadPoolExecutor(max_workers=1);self.runner._executor=pool
+        try:
+            with self.watched(),self.assertRaises(Rejected):self.runner.close_all_session_db_handles()
+            self.assertIs(self.runner._executor,pool)
+        finally:pool.shutdown(wait=True);self.runner._executor=None
+    def test_live_authority_entry_blocks_detach_without_removal(self):
+        self.make();marker=object();self.authority.executing['owned']=marker
+        try:
+            with self.watched(),self.assertRaises(Rejected):self.runner.close_all_session_db_handles()
+            self.assertIs(self.authority.executing['owned'],marker)
+        finally:self.authority.executing.clear()
+    def test_dirty_native_facade_retains_caller_state(self):
+        self.make();dirty=self.runner.session_store._dirty_transcripts;dirty['owned']=[{'role':'user','content':'unsaved fixture'}]
+        from gateway.session_borrowed_state import BorrowedSessionRejected
+        try:
+            with self.watched(),self.assertRaises(BorrowedSessionRejected):self.runner.close_all_session_db_handles()
+            self.assertTrue(dirty);self.assertEqual(self.binding.status()['state'],'PREPARED')
+        finally:dirty.clear()
+    def test_lifecycle_rejected_from_other_real_thread(self):
+        self.make();errors=[];done=threading.Event()
+        def close():
+            try:self.runner.close_all_session_db_handles()
+            except Exception as exc:errors.append(type(exc))
+            finally:done.set()
+        thread=threading.Thread(target=close);thread.start();self.assertTrue(done.wait(5));thread.join(5)
+        self.assertEqual(errors,[Rejected]);self.assertEqual(self.binding.status()['state'],'PREPARED')
+    def test_closed_state_not_reopened(self):
+        global WATCH
+        self.make();self.db.close();row={'case':self._testMethodName,'sqliteOpens':0,'sqlWrites':0,'epochChanged':False};WATCH=row
+        try:
+            with self.assertRaises(Rejected):self.runner._session_db
+            with self.assertRaises(Rejected):self.runner.close_all_session_db_handles()
+        finally:WATCH=None;CHECKS.append(row)
+    def test_default_native_runner_still_uses_registry_state(self):
+        r=Runner(self.config)
+        try:
+            self.assertIsNot(r.session_store._db,self.db);self.assertIs(r._session_db._db,r.session_store._db)
+            self.assertTrue(r.session_store._db._shared_registry_owned)
+            self.assertIsNone(r._caller_owned_state)
+        finally:r.session_store.close_all_db_handles();r.close_all_session_db_handles()
+        self.assertEqual(self.db._conn.execute('SELECT 1').fetchone()[0],1)
+
+    def test_authority_epoch_drift_refuses_selection(self):
+        self.make();a=self.authority;old=a.epoch;a.epoch+=1
+        try:
+            with self.watched(),self.assertRaises(Rejected):self.runner._session_db
+        finally:a.epoch=old
+    def test_descriptor_replacement_refuses_before_detach(self):
+        self.make();r=self.runner;old=r.session_runtime_descriptor;r.session_runtime_descriptor=dict(old)
+        try:
+            with self.watched(),self.assertRaises(Rejected):r.close_all_session_db_handles()
+            self.assertEqual(self.binding.status()['state'],'PREPARED')
+        finally:r.session_runtime_descriptor=old
+    def test_foreign_authority_registry_entry_refuses_detach(self):
+        self.make();registry=self.runner.session_authorities;home=self.home/'other'
+        registry.add(home,object())
+        try:
+            with self.watched(),self.assertRaises(Rejected):self.runner.close_all_session_db_handles()
+        finally:registry.remove(home)
+    def test_native_admission_gate_is_closed(self):
+        self.make()
+        with self.watched(),self.assertRaises(Runtime.RuntimeStoreError) as caught:self.authority._require_admission_open()
+        self.assertEqual(caught.exception.reason,'runtime_draining')
+
+def main():
+    global State,Runner,Config,Binding,Rejected,Ownership,Registry,Runtime,Constants,BASE,LOOP,initialize,PHASE
+    p=argparse.ArgumentParser();p.add_argument('--native',type=Path,required=True);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+    n=args.native.resolve(strict=True);out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    # Windows asyncio's socketpair is local framework setup, not the code under test.
+    LOOP=asyncio.new_event_loop();asyncio.set_event_loop(LOOP)
+    with tempfile.TemporaryDirectory(prefix='alaz-r122-suite-') as temp:
+        BASE=Path(temp).resolve();home=BASE/'import-home';home.mkdir()
+        os.environ.update(HERMES_HOME=str(home),HOME=str(BASE),USERPROFILE=str(BASE));sys.path.insert(0,str(n));sys.addaudithook(audit)
+        from gateway.run import GatewayRunner
+        from gateway.config import GatewayConfig
+        from gateway.run_borrowed_state import CallerOwnedRunnerState,BorrowedRunnerRejected
+        from gateway.run_runtime import initialize_gateway_runtime
+        from gateway.runtime_ownership import process_ownership
+        from hermes_state import SessionDB
+        import hermes_state_runtime,hermes_state_registry,hermes_constants
+        State,Runner,Config,Binding,Rejected,Ownership,Registry,Runtime,Constants=SessionDB,GatewayRunner,GatewayConfig,CallerOwnedRunnerState,BorrowedRunnerRejected,process_ownership,hermes_state_registry,hermes_state_runtime,hermes_constants
+        initialize=initialize_gateway_runtime
+        PHASE="native_tests"
+        suite=unittest.defaultTestLoader.loadTestsFromTestCase(NativeRunnerChecks)
+        with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as f:r=unittest.TextTestRunner(stream=f,verbosity=2).run(suite)
+        imports={}
+        for mod in tuple(sys.modules.values()):
+            path=getattr(mod,'__file__',None)
+            if path:
+                q=Path(path).resolve()
+                if q.is_relative_to(n) and q.suffix=='.py':imports[q.relative_to(n).as_posix()]=hashlib.sha256(q.read_bytes()).hexdigest()
+        report={'result':'PASS_NATIVE_CALLER_RUNNER_CONSTRUCTION' if r.wasSuccessful() else 'FAIL','total':r.testsRun,'passed':r.testsRun-len({t.id() for t,_ in r.errors+r.failures})-len(r.skipped),'skipped':len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),'errorIds':[t.id() for t,_ in r.errors],'failureIds':[t.id() for t,_ in r.failures],'checks':CHECKS,'caseEnd':END,'nativeImports':imports,'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'nativeMethodsReplaced':False,'fullNativeConstructorCalled':True,'realAuthorityClassUsed':True,'threeStoreApiIntegrated':False,'authorityAdmissionEnabled':False,'serviceStarted':False,'httpListenerStarted':False,'providerCalls':0,'frameworkLoopInitializedBeforeAudit':True,'blockedImportOrNativeEvents':BLOCKED,'deniedEventDetails':BLOCKED_DETAILS,'rootWslAction':False}
+    LOOP.close();asyncio.set_event_loop(None);report['temporaryRootRemoved']=not BASE.exists()
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('checks','caseEnd','nativeImports')}),flush=True)
+    if not r.wasSuccessful():print((out/'tests.txt').read_text(encoding='utf-8')[-14000:],flush=True)
+    return 0 if r.wasSuccessful() and report['temporaryRootRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())

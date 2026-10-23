@@ -1,0 +1,12 @@
+test_current_native_28_and_complete_cleanup (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_current_native_28_and_complete_cleanup) ... ok
+test_existing_epoch_and_no_new_sqlite_in_watched_native_paths (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_existing_epoch_and_no_new_sqlite_in_watched_native_paths) ... ok
+test_framework_failure_and_import_probe_denials_not_hidden (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_framework_failure_and_import_probe_denials_not_hidden) ... ok
+test_initial_prepared_drift_regression_retained (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_initial_prepared_drift_regression_retained) ... ok
+test_native_imports_and_exact_current_qa (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_native_imports_and_exact_current_qa) ... ok
+test_real_constructor_not_a_running_shared_service (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_real_constructor_not_a_running_shared_service) ... ok
+test_staged_patch_application_and_api_boundary_unchanged (test_runner_borrow_receipt_r122c4.RunnerBorrowReceipt.test_staged_patch_application_and_api_boundary_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.170s
+
+OK

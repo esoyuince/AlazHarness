@@ -1,0 +1,36 @@
+test_authority_epoch_drift_refuses_selection (__main__.PreparedDriftChecks.test_authority_epoch_drift_refuses_selection) ... FAIL
+test_descriptor_replacement_refuses_before_detach (__main__.PreparedDriftChecks.test_descriptor_replacement_refuses_before_detach) ... FAIL
+test_foreign_authority_registry_entry_refuses_detach (__main__.PreparedDriftChecks.test_foreign_authority_registry_entry_refuses_detach) ... FAIL
+test_native_admission_gate_is_closed (__main__.PreparedDriftChecks.test_native_admission_gate_is_closed) ... ok
+
+======================================================================
+FAIL: test_authority_epoch_drift_refuses_selection (__main__.PreparedDriftChecks.test_authority_epoch_drift_refuses_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-borrow-r122c4\scripts\qa\r122c4_owner_drift_probe.py", line 14, in test_authority_epoch_drift_refuses_selection
+    with self.watched(),self.assertRaises(q.Rejected):self.runner._session_db
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_descriptor_replacement_refuses_before_detach (__main__.PreparedDriftChecks.test_descriptor_replacement_refuses_before_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-borrow-r122c4\scripts\qa\r122c4_owner_drift_probe.py", line 19, in test_descriptor_replacement_refuses_before_detach
+    with self.watched(),self.assertRaises(q.Rejected):r.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+======================================================================
+FAIL: test_foreign_authority_registry_entry_refuses_detach (__main__.PreparedDriftChecks.test_foreign_authority_registry_entry_refuses_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-runner-borrow-r122c4\scripts\qa\r122c4_owner_drift_probe.py", line 26, in test_foreign_authority_registry_entry_refuses_detach
+    with self.watched(),self.assertRaises(q.Rejected):self.runner.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: BorrowedRunnerRejected not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.113s
+
+FAILED (failures=3)

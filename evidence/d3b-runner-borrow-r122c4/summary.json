@@ -1,0 +1,27 @@
+{
+  "job": "D3B-RUNNER-BORROW-R122C4",
+  "result": "PASS_NATIVE_CONSTRUCTION_PREPARATION_NOT_ACTIVE_SERVICE",
+  "at": "2026-10-23T21:14:44.372535+03:00",
+  "base": "a941906565ab61af0b85dcbb234a5ba22bfbce98",
+  "nativeFeature": "6b8124ab3874b330968c08bf05ce82004d762258",
+  "nativeCases": 28,
+  "offlineReceiptMethods": 7,
+  "initialDriftRegression": {
+    "total": 4,
+    "passed": 1,
+    "failed": 3
+  },
+  "independentCurrentNativeCases": 30,
+  "sameSevenNativeHashes": true,
+  "all496ExistingHarnessSourcesUnchanged": true,
+  "fullStandardSuite": "PENDING_COMBINED_REGRESSION",
+  "installedFeatureActivated": false,
+  "authorityAdmissionEnabled": false,
+  "threeStoreApiIntegrated": false,
+  "fullNativeConstructorUsed": true,
+  "nativeMethodsReplaced": false,
+  "providerCalls": 0,
+  "rootWslAction": false,
+  "mainChanged": false,
+  "pushed": false
+}

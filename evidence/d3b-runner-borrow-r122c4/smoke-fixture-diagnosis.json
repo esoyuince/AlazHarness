@@ -1,0 +1,7 @@
+{
+  "firstSmoke": "FAIL",
+  "cause": "local test audit blocked asyncio Windows loopback wakeup socketpair after native constructor succeeded",
+  "nativeProductChanged": false,
+  "correction": "initialize framework event loop before instrumenting native code; network/provider/subprocess still denied for the code under test",
+  "toolSafetyDenied": false
+}

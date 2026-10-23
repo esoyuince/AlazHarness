@@ -1,0 +1,9 @@
+{
+  "failedRequest": "d122c004-1752-4451-8a72-012200000019",
+  "firstCommitEffect": "NO_COMMIT; native author configuration absent",
+  "verifiedHeadAndIndexBeforeRetry": true,
+  "identitySource": "existing harness local config; exact native parent author matched",
+  "globalOrRepositoryConfigChanged": false,
+  "commitScopedIdentityOnly": true,
+  "nativeFeature": "6b8124ab3874b330968c08bf05ce82004d762258"
+}
