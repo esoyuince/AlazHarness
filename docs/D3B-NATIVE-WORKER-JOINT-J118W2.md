@@ -102,3 +102,7 @@ Native34 includes20 inherited+14 new; independent12/10 overlap and are not added
 blobs are preserved. Local static-final.txt follows, not remote CI/runtime approval.
 Canonical authority/active storage/HTTP/isolation and installed-feature gates remain
 unchanged/open. Prior blocked cleanup remains BLOCKED and not retried.
+
+## Canonical delivery
+
+Tested source `c6b0fe66acc45aed06e88ff7924849685af26b35`, acceptance `09d2669b70225e9630b8e6f2e3fe49bec826df87`; canonical `250e218fe12883db320dbed02763d4fea8d6bce8` fast-forwarded preserving original histories. All483 source hashes and4patches match full run.27 selected methods passed again at canonical location. Accepted static applies to identical executable source; final edits docs/evidence only. Installed vendor remains `eb75627faf532fa6ffbdae59a0d14b0b385fc780`; native943 feature NOT installed, main/push unchanged. Canonical executor/storage/isolation/active-work HTTP remain open.
