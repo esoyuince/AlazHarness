@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-24T01:06:27.014816+03:00",
+  "actualAdditionalEntries": [
+    "cache/scratch",
+    "cache/scratch/.last_prune"
+  ],
+  "cause": "QA final exec omitted TMPDIR/TMP/TEMP unlike L125 accepted launcher; pinned apply_scratch_tmp_env then intentionally chooses home cache/scratch",
+  "nativeEvidence": "hermes_constants.py apply_scratch_tmp_env, get_scratch_dir at immutable1e97",
+  "correction": "set explicit TMPDIR/TMP/TEMP to existing projected private tmpfs scratch; no HERMES_SCRATCH_DIR fallback marker, no source patch/dynamic hook",
+  "cacheScratchStillNotAllowedInProfile": true,
+  "sameExistingGrantUsed": true,
+  "priorRunTerminalAndRetained": true
+}

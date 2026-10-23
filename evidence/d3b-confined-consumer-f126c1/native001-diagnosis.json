@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-24T00:53:26.282015+03:00",
+  "firstFailure": "broker target not reached; required packages/upstream/hermes slice files absent from QA transport",
+  "sourceEvidence": "recovery_inspector._helper resolves sibling upstream/hermes files at import; identical prior T114 diagnostic identifies hermes_state_keys.py",
+  "correction": "include FOUR unchanged tracked upstream slices and preflight fixed controller imports, before fresh resource setup",
+  "sourcePolicyOrNativeModified": false,
+  "firstRootRunTerminal": true,
+  "firstReportedNoRemainingLoopsScopesFence": true,
+  "newExperimentUsesFreshPaths": true,
+  "oldRunArtifactsNotRemoved": true
+}

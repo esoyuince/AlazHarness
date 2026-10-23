@@ -1,0 +1,992 @@
+{
+  "result": "DIAGNOSIS_COMPLETE_NOT_ACCEPTANCE",
+  "uid": [
+    23001,
+    23001,
+    23001
+  ],
+  "snapshots": [
+    {
+      "phase": "seeded_three_stores",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "config_imported",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "runner_imported",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "runner_constructed",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms/pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "authority_prepared",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms/pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "api_imported",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms/pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "api_prepared",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms/pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "consumer_detached",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms/pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    },
+    {
+      "phase": "stores_closed",
+      "entries": {
+        "sessions": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "skills": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "SOUL.md": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 667
+        },
+        "pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "memories": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 315392
+        },
+        "runs_idempotency.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 16384
+        },
+        "state.db.quarantine.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "logs": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "gateway.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 337
+        },
+        "hooks": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "image_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "response_store.db": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 57344
+        },
+        "cron": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "state.db.fts_rebuild.lock": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 0
+        },
+        "audio_cache": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "platforms/pairing": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "logs/curator": {
+          "type": "directory",
+          "mode": "0o700",
+          "bytes": null
+        },
+        "cache/schema_columns.json": {
+          "type": "file",
+          "mode": "0o600",
+          "bytes": 6291
+        }
+      }
+    }
+  ],
+  "layoutRefusal": "native_layout_unexpected_entry",
+  "unexpectedFinalPaths": {
+    "platforms": {
+      "type": "directory",
+      "mode": "0o700",
+      "bytes": null
+    },
+    "platforms/pairing": {
+      "type": "directory",
+      "mode": "0o700",
+      "bytes": null
+    }
+  },
+  "error": null,
+  "deniedEvents": [
+    "socket.bind"
+  ],
+  "productOrPolicyModified": false,
+  "namespaceConfinementTested": false,
+  "rootUsed": false,
+  "qaSha256": "a4d1ec7ce1816e107b8db1d7b9294fea91edf4e4e8acae428039d4dee9cfd058",
+  "temporaryRootRemoved": true
+}

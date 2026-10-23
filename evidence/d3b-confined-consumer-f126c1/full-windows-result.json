@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "total": 3280,
+  "discovered": 3280,
+  "passed": 3257,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 546,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "prior532Unchanged": 523,
+  "prior532ExplicitChanges": [
+    "packages/claw-hermes/gateway_native_layout.py",
+    "packages/claw-hermes/gateway_state_projection.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/historical_startup_s124b1.py",
+    "tests/test_canonical_receipt_c119v1.py",
+    "tests/test_linux_prerequisite_current_receipt_l125c6.py",
+    "tests/test_linux_runtime_receipt_l125p1.py",
+    "tests/test_startup_consumer_receipt_c124l1.py",
+    "tests/test_startup_consumer_receipt_s124b1.py"
+  ],
+  "elapsedSeconds": 180.562,
+  "at": "2026-10-24T01:17:45.344069+03:00",
+  "scope": "complete standard Windows union; actual Linux/native results source bound, not reexecuted"
+}

@@ -1,5 +1,6 @@
 """Offline evidence binding of the corrected Linux candidate; no new native run."""
 import hashlib,json,unittest
+from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-linux-consumer-qa-l125c6'
@@ -47,5 +48,5 @@ class CurrentLinuxPrerequisiteReceipt(unittest.TestCase):
         self.assertEqual(q['providerCalls'],0);self.assertTrue(q['temporaryProfileRemoved']);self.assertTrue(r['temporaryRootRemoved'])
         self.assertFalse(verified['newNativeRunByReview']);self.assertTrue(verified['sameRemediatedDependencyPayloadAsPrepared22'])
         for name in ('packages/claw-hermes/gateway_store_startup.py','packages/claw-hermes/gateway_prepared_consumer.py'):
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),verified['harnessTransportHashes'][name])
+            self.assertEqual(pre_f126_hash(ROOT,name,verified['harnessTransportHashes'][name]),verified['harnessTransportHashes'][name])
 if __name__=='__main__':unittest.main()

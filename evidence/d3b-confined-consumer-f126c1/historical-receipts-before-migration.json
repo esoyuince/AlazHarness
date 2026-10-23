@@ -1,0 +1,20 @@
+{
+  "result": "FAIL",
+  "total": 371,
+  "errors": 0,
+  "failures": 9,
+  "skipped": 0,
+  "failureIds": [
+    "test_canonical_receipt_c119v1.CanonicalReceipt.test_test_boundary_and_original_controls_remain_explicit",
+    "test_linux_prerequisite_current_receipt_l125c6.CurrentLinuxPrerequisiteReceipt.test_real_linux_owner_order_and_scope_not_namespace_acceptance",
+    "test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_source_bytes_native_imports_and_prior_harness_preserved",
+    "test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_transport_source_and_package_integrity_binds_both_runs",
+    "test_startup_consumer_receipt_c124l1.IndependentConsumerReceipt.test_current_sources_and_native_immutable_imports",
+    "test_startup_consumer_receipt_s124b1.StartupConsumerReceipt.test_current_twenty_and_exact_sources",
+    "test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_executed_source_with_historical_startup_and_native_hashes",
+    "test_three_store_http_receipt_h114r6.ThreeHttpProof.test_success_executed_sources_with_historical_startup_and_exact_transport",
+    "test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_executed_sources_with_historical_http_projection_and_startup_snapshots (source='packages/claw-hermes/gateway_native_layout.py')"
+  ],
+  "errorIds": [],
+  "scope": "offline historical receipt/source binding audit; no original native or Linux rerun"
+}

@@ -1,6 +1,7 @@
 """Current independent native evidence; neither a kernel nor new native run."""
 from pathlib import Path
 import hashlib,json,unittest
+from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-startup-consumer-c124l1'
 class IndependentConsumerReceipt(unittest.TestCase):
@@ -14,7 +15,7 @@ class IndependentConsumerReceipt(unittest.TestCase):
         self.assertEqual(len(names),23);self.assertEqual(len(set(names)),23);self.assertEqual(set(names),{e['case'] for e in self.r['caseEnd']})
         self.assertTrue(self.r['temporaryRootRemoved'])
     def test_current_sources_and_native_immutable_imports(self):
-        for name,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        for name,h in self.r['sourceHashes'].items():self.assertEqual(pre_f126_hash(ROOT,name,h),h,name)
         self.assertEqual(self.c['feature'],'1e97dd617b81120255304e472ce322befcdb9ccd')
         self.assertEqual(self.c['actualNativeImportCount'],len(self.r['nativeImports']))
         self.assertEqual({n:v['sha256'] for n,v in self.c['actualNativeImports'].items()},self.r['nativeImports'])

@@ -4,10 +4,11 @@ Only gateway_store_startup is redirected, and only to this saved immutable base.
 These old runs are explicitly NOT acceptance of the new prepared consumer.
 """
 import hashlib,json
+from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
 
 def executed_source_hash(root,name,expected):
     if name!='packages/claw-hermes/gateway_store_startup.py':
-        return hashlib.sha256((root/name).read_bytes()).hexdigest()
+        return pre_f126_hash(root,name,expected)
     e=root/'evidence/d3b-startup-consumer-s124b1'
     base=json.loads((e/'baseline.json').read_text(encoding='utf-8'))
     assert base['base']=='66a7bf776bd8df0ea0e0562efa4b03604f93b1fa'

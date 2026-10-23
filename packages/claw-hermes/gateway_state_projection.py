@@ -26,9 +26,10 @@ SAFE_FLAGS = gp.ipc.NOSUID | gp.ipc.NODEV | gp.ipc.NOEXEC
 MINIMAL_LAYOUT = 'minimal-v1'
 NATIVE_STORE_LAYOUT = 'hermes-native-stores-cold-v1'
 NATIVE_RESPONSE_LAYOUT = 'hermes-native-three-stores-cold-v1'
+NATIVE_PREPARED_LAYOUT = 'hermes-native-prepared-three-stores-cold-v1'
 
 def validate_layout(value):
-    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT),
+    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT),
             'state_projection_layout_invalid')
     return value
 
@@ -185,10 +186,11 @@ def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=
                 'state_projection_profile_identity')
         require(not any(PurePosixPath(r.mount_point).is_relative_to(profile) for r in records),
                 'state_projection_nested_mount')
-        if profile_layout in (NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT):
+        if profile_layout in (NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT):
             import gateway_native_layout as native_layout
             try:
-                options = {'include_response':True} if profile_layout == NATIVE_RESPONSE_LAYOUT else {}
+                options = {'include_response':True} if profile_layout in (NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT) else {}
+                if profile_layout == NATIVE_PREPARED_LAYOUT:options['include_prepared']=True
                 objects = native_layout.inspect_profile(profile,uid=s.st_uid,gid=s.st_gid,device=s.st_dev,**options)
             except native_layout.NativeLayoutRejected as exc:
                 raise StateProjectionRejected(str(exc)) from None

@@ -1,0 +1,197 @@
+"""Fixed final-exec current owner/consumer proof; no listener, model or job.
+Existing product projection, native source and owner lifecycle remain unchanged.
+"""
+import asyncio,ctypes,errno,hashlib,json,os,select,socket,sqlite3,sys,threading,traceback
+from dataclasses import asdict,replace
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'native'),str(ROOT/'dependencies')]
+PHASE='IMPORTS'
+from provider_broker import ProviderBrokerClient
+import gateway_native_layout as layout
+import gateway_profile_lease as lease
+import gateway_storage_mounts as mounts
+import gateway_store_startup as startup
+import gateway_prepared_consumer as prepared_consumer
+from gateway import runtime_ownership as native
+
+
+def connection_errno(kind,address):
+    with socket.socket(kind,socket.SOCK_STREAM) as s:
+        s.settimeout(1)
+        try:s.connect(address)
+        except OSError as ex:return ex.errno
+    return 0
+
+
+def fields():
+    return {k:v.split() for row in Path('/proc/self/status').read_text().splitlines()
+            for k,sep,v in [row.partition(':')] if sep}
+
+
+async def main():
+    global PHASE
+    assert ROOT==Path('/opt/alaz-f126c1a3') and sys.flags.isolated and sys.dont_write_bytecode
+    data=json.loads(os.environ['F126C1_TEST']);receipt=json.loads(os.environ['F126C1_RECEIPT'])
+    home=Path(receipt['profile']);checks={};work=Path(data['work'])
+    if data['mode']=='deny':
+        before=(home/'gateway.lock').read_bytes();denied=False
+        try:mounts._read_mountinfo()
+        except PermissionError:denied=True
+        expected=mounts.ExpectedMount(1,(7,0),'/profile',str(home),'ext4')
+        try:lease.reserve_profile(home,expected)
+        except lease.ProfileLeaseRejected as ex:reason=str(ex)
+        else:raise AssertionError('default_profile_admitted')
+        assert denied and reason=='profile_reservation_unavailable' and before==(home/'gateway.lock').read_bytes()
+        print(json.dumps({'state':'DEFAULT_REFUSED','pid':os.getpid(),'mountinfoDenied':True,'nativeLeaseRefused':True,'lockUnchanged':True}),flush=True)
+        return 0
+    PHASE='REAL_LEASE_AND_COLD_START'
+    record=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home))
+    mount=mounts.ExpectedMount(record.mount_id,record.device,record.root,record.mount_point,record.filesystem)
+    held=lease.reserve_profile(home,mount);lock_inode=(home/'gateway.lock').stat().st_ino
+    checks['real_native_profile_lease']=held.check()['state']=='NATIVE_PROFILE_RESERVED' and held._owner is native.process_ownership
+    checks['real_ext4_image_and_layout']=mount.filesystem=='ext4' and receipt['profileLayout']=='hermes-native-three-stores-cold-v1'
+    before=layout.inspect_profile(home,uid=23001,gid=23003,device=home.stat().st_dev,include_response=True)
+    checks['same_profile_inode']=home.stat().st_ino==receipt['profileInode']
+    obj=dict(data['prepared'])
+    for key in ('state_identity','replay_identity'):obj[key]=tuple(obj[key])
+    expected=startup.live.PreparedStoreExpectation(**obj)
+    obj=dict(data['responsePrepared']);obj['response_identity']=tuple(obj['response_identity'])
+    response_expected=startup.response_preopen.PreparedResponseExpectation(**obj)
+    parent_opens=[];watch_start=True;watch_consumer=False;consumer_opens=[];raw_opens=[]
+    def audit(event,args):
+        if event=='sqlite3.connect':
+            if watch_start:parent_opens.append(str(args[0]))
+            if watch_consumer:consumer_opens.append(str(args[0]))
+        if watch_consumer and event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+            name=Path(os.fsdecode(args[0])).name
+            if any(name==n or name.startswith(n+'-') for n in ('state.db','runs_idempotency.db','response_store.db')):raw_opens.append(name)
+    sys.addaudithook(audit)
+    wrong=startup.NativeStoreStartup(held,mount,replace(expected,state_schema_sha256='f'*64),instance_id='f126-refused',response_expected=response_expected)
+    try:wrong.start()
+    except startup.StoreStartupRejected:
+        checks['wrong_cold_schema_no_parent_opens_or_epoch']=not parent_opens and not wrong.status()['epochMayHaveAdvanced']
+    else:raise AssertionError('wrong_schema_admitted')
+    wrong.close();checks['wrong_start_retains_caller_lease']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+    owner=startup.NativeStoreStartup(held,mount,expected,instance_id='f126-'+data['mode'],response_expected=response_expected)
+    started=owner.start();watch_start=False
+    checks['exactly_three_original_parent_connections']=len(parent_opens)==3
+    checks['all_cold_live_gates']=started['completedChecks']==['preflight','response_preflight','before_epoch','response_before_epoch','after_epoch','response_after_epoch']
+    conns=(owner.state_store._conn,owner.replay_store._conn,owner.response_store._conn)
+    checks['expected_epoch_once']=owner.expectation.epoch==(1 if data['mode']=='write' else 2)
+    checks['no_automatic_recovery']=started['automaticRecoveryPerformed'] is False
+    rows=[list(r) for r in conns[2].execute('SELECT response_id,data FROM responses ORDER BY response_id')]
+    conversations=[list(r) for r in conns[2].execute('SELECT * FROM conversations ORDER BY 1')]
+    checks['seeded_rows_retained']=rows==[['resp_f126',json.dumps({'output':'persistent three-store fixture'})]] and conversations==[['owned','resp_f126']]
+    PHASE='PREPARE_CURRENT_NATIVE_CONSUMER'
+    from gateway.config import GatewayConfig,PlatformConfig
+    initial=[c.total_changes for c in conns];watch_consumer=True
+    try:
+        consumer=await owner.prepare_runtime(GatewayConfig(multiplex_profiles=False,write_sessions_json=False),PlatformConfig(extra={'key':'owned-f126-only','model_name':'offline'}))
+        consumer.check()
+        checks['same_three_existing_connections']=all(a is b for a,b in zip(consumer._connections,conns))
+        checks['same_accepted_epoch']=conns[0].execute('SELECT epoch FROM runtime_epoch').fetchone()[0]==owner.expectation.epoch
+        checks['no_service_or_admission']=consumer.status()['serviceStarted'] is False and consumer.status()['runtimeAdmissionAuthorized'] is False
+        print(json.dumps({'state':'CONSUMER_PREPARED','pid':os.getpid(),'sameThreeHandles':checks['same_three_existing_connections'],'serviceStarted':False,'epoch':owner.expectation.epoch}),flush=True)
+        assert select.select([sys.stdin],[],[],25)[0] and sys.stdin.readline()=='CONTINUE\n'
+        try:owner.close()
+        except (startup.StoreStartupRejected,prepared_consumer.PreparedConsumerRejected):checks['original_owner_blocks_attached_consumer']=owner._stage=='VERIFIED'
+        else:raise AssertionError('attached_consumer_stores_closed')
+        for conn in conns:
+            conn.execute('BEGIN IMMEDIATE')
+            try:
+                try:await consumer.detach()
+                except (startup.StoreStartupRejected,prepared_consumer.PreparedConsumerRejected):assert conn.in_transaction and consumer.status()['state']=='ATTACHED'
+                else:raise AssertionError('transaction_not_preserved')
+            finally:conn.rollback()
+        checks['all_three_transactions_preserved']=True
+        await consumer.detach()
+        checks['api_runner_consumer_ordered_detach']=(consumer._bundle._stage,consumer._binding._stage,consumer._stage)==('DETACHED','DETACHED','DETACHED')
+        checks['handles_alive_after_detach']=all(c.execute('SELECT 1').fetchone()[0]==1 for c in conns)
+        checks['consumer_no_fourth_connection']=not consumer_opens
+        checks['consumer_no_raw_database_open']=not raw_opens
+        checks['consumer_no_row_change']=initial==[c.total_changes for c in conns]
+    finally:watch_consumer=False
+    PHASE='ORIGINAL_OWNER_CLOSE'
+    appid=conns[2].execute('PRAGMA application_id').fetchone()[0]
+    conns[2].execute('PRAGMA application_id=7')
+    try:
+        try:owner.close()
+        except (startup.StoreStartupRejected,prepared_consumer.PreparedConsumerRejected):checks['postdetach_header_change_blocks_close']=owner._stage=='VERIFIED'
+        else:raise AssertionError('changed_header_closed')
+    finally:conns[2].execute('PRAGMA application_id='+str(appid))
+    next_expected=asdict(owner.expectation);epoch=owner.expectation.epoch
+    stores={name:{'rows':rows if name=='response_store.db' else [],'inode':(home/name).stat().st_ino}
+            for name in ('state.db','runs_idempotency.db','response_store.db')}
+    owner.close();closed=0
+    for c in conns:
+        try:c.execute('SELECT 1')
+        except sqlite3.ProgrammingError:closed+=1
+    checks['three_handles_closed_before_profile_release']=closed==3 and held.check()['state']=='NATIVE_PROFILE_RESERVED'
+    checks['owner_allows_external_release']=owner.status()['callerLeaseMayBeReleased'] is True
+    after=layout.inspect_profile(home,uid=23001,gid=23003,device=home.stat().st_dev,include_response=True)
+    checks['finite_layout_unchanged']=set(after)==set(before)
+    PHASE='FINAL_KERNEL_AND_READ_CLOSURE'
+    proc=fields();checks['uid_gid_preserved']=proc['Uid']==['23001']*4 and proc['Gid']==['23003']*4
+    checks['capabilities_and_groups_empty']=not proc['Groups'] and all(int(proc[k][0],16)==0 for k in ('CapInh','CapPrm','CapEff','CapBnd','CapAmb'))
+    checks['inherited_nnp_seccomp']=proc['NoNewPrivs']==['1'] and proc['Seccomp']==['2']
+    ns={k:os.readlink('/proc/self/ns/'+k) for k in ('mnt','net','ipc','user')}
+    checks['private_namespace_and_original_userns']=all(ns[k]!=data['parentNamespaces'][k] for k in ('mnt','net','ipc')) and ns['user']==data['parentNamespaces']['user']
+    checks['landlock_abi_enforced']=receipt['filesystem']['state']=='enforced' and receipt['filesystem']['landlockAbi']>=3 and receipt['filesystem']['selfMountMetadata'] is True
+    checks['broker_only_ready_ping']=await ProviderBrokerClient(data['settings']).ready() is True
+    failures={name:connection_errno(kind,address) for name,kind,address in (
+        ('host_tcp',socket.AF_INET,('127.0.0.1',data['tcpPort'])),('host_abstract',socket.AF_UNIX,'\0'+data['abstract']),
+        ('ambient',socket.AF_UNIX,data['ambient']),('sibling',socket.AF_UNIX,data['sibling']))}
+    checks['host_endpoints_stay_denied']=all(n in (errno.ENOENT,errno.EACCES,errno.EPERM,errno.ECONNREFUSED) for n in failures.values())
+    checks['host_private_paths_hidden']=not any(Path(p).exists() for p in ('/srv/alaz-p71c/private/config.json','/srv/alaz-p71c/private/budget/budget.sqlite3','/mnt/c','/sys/fs/cgroup','/proc/1','/.old-root',data['source']))
+    denied=[]
+    for mode in (os.O_RDONLY,os.O_WRONLY):
+        try:fd=os.open(data['canary'],mode)
+        except OSError as ex:denied.append(ex.errno)
+        else:os.close(fd);denied.append(0)
+    checks['canary_read_write_denied']=Path(data['canary']).exists() and all(n in (errno.EACCES,errno.EPERM) for n in denied)
+    try:os.fstat(data['inheritedFd'])
+    except OSError as ex:checks['ambient_fd_closed']=ex.errno==errno.EBADF
+    else:checks['ambient_fd_closed']=False
+    checks['private_scratch_fresh']=not (work/'ephemeral-marker').exists();(work/'ephemeral-marker').write_text('fixed F126 fixture')
+    lib=ctypes.CDLL(None,use_errno=True);ctypes.set_errno(0)
+    checks['seccomp_namespace_reentry_denied']=lib.unshare(0x40000000)==-1 and ctypes.get_errno()==errno.EPERM
+    manifest=json.loads((ROOT/'input-manifest.json').read_text())['sources'];imports={}
+    for module in tuple(sys.modules.values()):
+        name=getattr(module,'__file__',None)
+        if name:
+            p=Path(name).resolve()
+            if p.is_relative_to(ROOT) and p.is_file():
+                rel=p.relative_to(ROOT).as_posix();digest=hashlib.sha256(p.read_bytes()).hexdigest();assert manifest[rel]==digest,rel;imports[rel]=digest
+    checks['current_native_and_owner_sources_loaded']=all(n in imports for n in ('native/gateway/run.py','native/gateway/session_authority.py','native/gateway/platforms/api_server_prepared.py','packages/claw-hermes/gateway_store_startup.py','packages/claw-hermes/gateway_prepared_consumer.py'))
+    binaries={n:h for n,h in imports.items() if n.endswith('.so')};checks['actual_linux_dependency_binary_loaded']=bool(binaries)
+    gate=threading.Event();writer=threading.Thread(target=gate.wait,daemon=True);native.process_ownership.start_writer(writer)
+    try:held.finish()
+    except lease.ProfileLeaseRejected as ex:checks['live_writer_retains_profile']=str(ex)=='profile_writers_still_active'
+    else:checks['live_writer_retains_profile']=False
+    entries=sorted(imports.items());chunks=[dict(entries[i:i+32]) for i in range(0,len(entries),32)]
+    assert 0<len(chunks)<=48
+    for index,part in enumerate(chunks):
+        line=json.dumps({'state':'SOURCE_CHUNK','pid':os.getpid(),'index':index,'total':len(chunks),'sources':part});assert len(line.encode())<8192;print(line,flush=True)
+    result={'state':'RESULT','result':'PASS_CONFINED_PREPARED_CONSUMER' if all(checks.values()) else 'FAIL',
+            'mode':data['mode'],'pid':os.getpid(),'receipt':receipt,'checks':checks,'checkCount':len(checks),'stores':stores,
+            'epoch':epoch,'recovered':0,'nextExpectation':next_expected,'responseExpectation':asdict(response_expected),
+            'productStartup':started,'consumerStatus':consumer.status(),'sourceCount':len(imports),
+            'sourceDigest':hashlib.sha256(json.dumps(imports,sort_keys=True,separators=(',',':')).encode()).hexdigest(),
+            'actualBinaryImports':binaries,'interpreterSha256':hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest(),
+            'hostEndpointErrnos':failures,'actualOwnerConsumerConfined':True,'nativeMethodsReplaced':False,
+            'coldHelpersDoubled':False,'kernelBoundaryDoubled':False,'activeTaskObserversQualified':False,
+            'serviceOrAdmissionEnabled':False,'providerSends':0,'fullD3BAccepted':False}
+    print(json.dumps(result),flush=True)
+    assert select.select([sys.stdin],[],[],25)[0] and sys.stdin.readline()=='RELEASE\n'
+    gate.set();writer.join(3);held.finish();assert not native.process_ownership.homes
+    print(json.dumps({'state':'PROFILE_RELEASED_PROCESS_ALIVE','pid':os.getpid(),'lockInode':lock_inode}),flush=True)
+    assert select.select([sys.stdin],[],[],25)[0] and sys.stdin.readline()=='EXIT\n'
+    return 0 if all(checks.values()) else 1
+
+
+if __name__=='__main__':
+    try:raise SystemExit(asyncio.run(main()))
+    except Exception as ex:
+        print(json.dumps({'state':'CONFINED_FAILURE','pid':os.getpid(),'phase':PHASE,'type':type(ex).__name__,'reason':str(ex)[:800],'traceback':traceback.format_exc()[-8000:]}),flush=True)
+        raise SystemExit(1)

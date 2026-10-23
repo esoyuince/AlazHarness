@@ -15,6 +15,7 @@ from pathlib import Path
 import stat
 
 PROFILE_LAYOUT='hermes-native-stores-cold-v1'
+PREPARED_DIRECTORIES=frozenset(('platforms','platforms/pairing'))
 NATIVE_PIN='eb75627faf532fa6ffbdae59a0d14b0b385fc780'
 DATABASES=frozenset(('state.db','runs_idempotency.db'))
 LOCKS=frozenset(('gateway.lock','state.db.quarantine.lock','state.db.fts_rebuild.lock'))
@@ -57,11 +58,13 @@ def _children(path,allowed):
             found[entry.name]=(path/entry.name).lstat()
     return found
 
-def _snapshot(home,uid,gid,device,include_response=False):
+def _snapshot(home,uid,gid,device,include_response=False,include_prepared=False):
     additions=frozenset(('response_store.db',)) if include_response else frozenset()
     databases=DATABASES|additions
     allowed_paths=ALLOWED|additions|{n+s for n in additions for s in ('-journal','-wal','-shm')}
     required_paths=REQUIRED|additions
+    directories=DIRECTORIES|(PREPARED_DIRECTORIES if include_prepared else frozenset())
+    allowed_paths=allowed_paths|(PREPARED_DIRECTORIES if include_prepared else frozenset())
     observed={'profile':_private(home.lstat(),uid,gid,device,True)}
     pending=[('',home)]
     while pending:
@@ -69,10 +72,13 @@ def _snapshot(home,uid,gid,device,include_response=False):
         allowed={Path(n).name for n in allowed_paths if str(Path(n).parent).replace('\\','/')==(relative or '.')}
         entries=_children(parent,allowed)
         required={Path(n).name for n in required_paths if str(Path(n).parent).replace('\\','/')==(relative or '.')}
+        # Fresh three-store seed may omit both. Once platforms exists it must
+        # contain exactly the empty native pairing directory, never other data.
+        if include_prepared and relative=='platforms':required=required|{'pairing'}
         require(required<=set(entries),'native_layout_required_entry_missing')
         for child,info in sorted(entries.items()):
             name=relative+'/'+child if relative else child
-            directory=name in DIRECTORIES
+            directory=name in directories
             observed[name]=_private(info,uid,gid,device,directory)
             require(not getattr(parent/child,'is_junction',lambda:False)(),'native_layout_link')
             if directory:pending.append((name,parent/child))
@@ -107,27 +113,32 @@ def _cache(raw):
     canonical=json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode()
     require(hashlib.sha256(canonical).hexdigest()==CACHE_SHA256,'native_layout_cache_content')
 
-def inspect_profile(profile,*,uid,gid,device,include_response=False):
+def inspect_profile(profile,*,uid,gid,device,include_response=False,include_prepared=False):
     """Finite store-only admission snapshot; mount and native lease are separate.
 
     Rechecks reject observed mutation, not every ABA race. Caller must not run
     this against an untrusted concurrently mutable same-UID profile. All SQL
     connection checks must use existing connections; this function opens only
     the exact non-DB SOUL/cache paths, never SQLite files/sidecars/lock files.
+    include_prepared is an explicit three-store-only selector for the two EMPTY
+    private directories created by the pinned native runner. Defaults stay cold
+    store-only; no pairing/auth content, new permission or creation is admitted.
     """
     try:
         require(type(include_response) is bool,'native_layout_response_option')
+        require(type(include_prepared) is bool,'native_layout_prepared_option')
+        require(not include_prepared or include_response,'native_layout_prepared_requires_response')
         require(all(type(n) is int and n>0 for n in (uid,gid,device)),'native_layout_identity')
         require(isinstance(profile,(str,Path)),'native_layout_home')
         home=Path(profile)
         require(home.is_absolute() and home==home.resolve(strict=True)
                 and not any(p.is_symlink() or getattr(p,'is_junction',lambda:False)() for p in (home,*home.parents)),
                 'native_layout_canonical_profile')
-        first=_snapshot(home,uid,gid,device,include_response)
+        first=_snapshot(home,uid,gid,device,include_response,include_prepared)
         soul=_read_aux(home,'SOUL.md',first,SOUL_BYTES)
         require(hashlib.sha256(soul).hexdigest()==SOUL_SHA256,'native_layout_soul_content')
         _cache(_read_aux(home,'cache/schema_columns.json',first,MAX_CACHE_BYTES))
-        require(first==_snapshot(home,uid,gid,device,include_response),'native_layout_changed')
+        require(first==_snapshot(home,uid,gid,device,include_response,include_prepared),'native_layout_changed')
         return first
     except NativeLayoutRejected:raise
     except (OSError,ValueError,TypeError,KeyError,AttributeError,OverflowError,RecursionError):

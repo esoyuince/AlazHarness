@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T00:55:08.579422+03:00",
+  "requestId": "d126c601-19e4-4df2-a611-126001000015",
+  "transportSha256": "569d83af9f73e7ad6fcb650c5687ca3dac7edb450eb42e16ee27057e678ebbf5",
+  "freshPrefix": "alaz-f126c1a3",
+  "scope": "same unchanged product; capture missing diagnostic frame after prior terminal failure"
+}

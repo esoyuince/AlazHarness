@@ -1,5 +1,6 @@
 """Exact Linux result custody; these offline tests do not rerun Linux/native code."""
 import ast,hashlib,json,unittest
+from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-linux-consumer-l125p1'
@@ -37,10 +38,10 @@ class ActualLinuxReceipt(unittest.TestCase):
         self.assertEqual((self.c['preparedImportCount'],self.c['ownerImportCount'],self.c['unionImportCount']),(499,498,499))
         for report in (self.pc,self.oc):
             for name,h in report['nativeImports'].items():self.assertEqual(self.c['actualImportedSources'][name]['sha256'],h)
-        for name,h in self.c['qaHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        for name,h in self.c['qaHashes'].items():self.assertEqual(pre_f126_hash(ROOT,name,h),h,name)
         for name,h in self.c['resultHashes'].items():self.assertEqual(hashlib.sha256((E/name).read_bytes()).hexdigest(),h,name)
         baseline=read('baseline.json');self.assertEqual(len(baseline['sources']),522)
-        for name,h in baseline['sources'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        for name,h in baseline['sources'].items():self.assertEqual(pre_f126_hash(ROOT,name,h),h,name)
     def test_corrected_exact_linux_wheel_lock(self):
         p=ROOT/'config/linux-prepared-dependencies-l125p1.json';lock=json.loads(p.read_text(encoding='utf-8'))
         self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),self.c['dependencyLockSha256'])
@@ -55,7 +56,7 @@ class ActualLinuxReceipt(unittest.TestCase):
             manifest=read('transport-manifest-'+suffix+'.json')
             self.assertEqual(manifest['nativeCount'],513);self.assertEqual(manifest['dependencyLockSha256'],self.c['dependencyLockSha256'])
             for name,h in manifest['files'].items():
-                if name.startswith('harness/'):self.assertEqual(hashlib.sha256((ROOT/name.removeprefix('harness/')).read_bytes()).hexdigest(),h,name)
+                if name.startswith('harness/'):self.assertEqual(pre_f126_hash(ROOT,name.removeprefix('harness/'),h),h,name)
             self.assertEqual(result['installedFileCount'],len(result['installedFileHashes']))
             self.assertEqual(result['installedFileManifestSha256'],hashlib.sha256(json.dumps(result['installedFileHashes'],sort_keys=True,separators=(',',':')).encode()).hexdigest())
         for name,h in read('transport-manifest-001.json')['files'].items():self.assertEqual(read('transport-manifest-002.json')['files'][name],h)

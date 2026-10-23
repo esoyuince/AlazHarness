@@ -1,5 +1,6 @@
 """Native observer receipts with exact historical startup baseline; no native replay."""
 import hashlib,json,unittest
+from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-canonical-binding-c119v1'
@@ -60,7 +61,9 @@ class CanonicalReceipt(unittest.TestCase):
             if n in changed:
                 self.assertEqual(later['sources'][n],h)
                 path=saved/(Path(n).name+'.before.txt')
-            else:path=ROOT/n
+            else:
+                self.assertEqual(pre_f126_hash(ROOT,n,h),h,n)
+                continue
             self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),h,n)
     def test_historical24_and_actual_exponent_failure_not_relabelled(self):
         old=json.loads((E/'native-001/result.json').read_text(encoding='utf-8'));self.assertEqual(old['total'],24)

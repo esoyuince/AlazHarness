@@ -1,0 +1,16 @@
+{
+  "newOptin": "hermes-native-prepared-three-stores-cold-v1",
+  "onlyOptionalPaths": [
+    "platforms",
+    "platforms/pairing"
+  ],
+  "filesOrNestedContentsAllowed": false,
+  "oldDefaultsUnchanged": true,
+  "metadataGuardsUnchanged": true,
+  "nativeFeatureUnchanged": true,
+  "productSourceHashes": {
+    "packages/claw-hermes/gateway_native_layout.py": "efce686a9a8f07d60454e9394b7069ef0214a0f5792e567f0c657973ce3356f7",
+    "packages/claw-hermes/gateway_state_projection.py": "886597e1947b5fdd734c07d692582b747822c455d3ee3e05d540837064c30f6c",
+    "packages/claw-hermes/gateway_store_startup.py": "deaa11c65777a5f70f768636d69de84b4b3d9065fae48bc391d5c36be47366b7"
+  }
+}

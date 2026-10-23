@@ -1,0 +1,48 @@
+{
+  "result": "PASS",
+  "total": 371,
+  "failures": 0,
+  "errors": 0,
+  "failureIds": [],
+  "errorIds": [],
+  "sourceBindings": {
+    "packages/claw-hermes/gateway_native_layout.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-packages__claw-hermes__gateway_native_layout.py.txt",
+      "sha256": "d19d6591a414fd6a59a88a932714c8e3ed220d45de5c20bd75546fd695306639"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-packages__claw-hermes__gateway_state_projection.py.txt",
+      "sha256": "0ff0d4f928564f2c1d670b2f5921e3e71941ad7bfedff14b26f630a4b45db5ff"
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-packages__claw-hermes__gateway_store_startup.py.txt",
+      "sha256": "e9bcb9b7dfc98cef60ddf75b749574b21f6a6e11f4411f13adcf00b245371d28"
+    },
+    "tests/historical_startup_s124b1.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-tests__historical_startup_s124b1.py.txt",
+      "sha256": "5a0fe3d200213eaa7b173c9054b04a09aaeef45e2eecef2895a7d11528df75bc"
+    },
+    "tests/test_canonical_receipt_c119v1.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-tests__test_canonical_receipt_c119v1.py.txt",
+      "sha256": "ace4ac3a00cc6487e87f02cfa51ccaec94e83851b379f433bc98ce95de36a81c"
+    },
+    "tests/test_linux_prerequisite_current_receipt_l125c6.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-tests__test_linux_prerequisite_current_receipt_l125c6.py.txt",
+      "sha256": "a6ebd61e5e7fb45965803916c221f397c3ffea5eb9bdf86ac63464a5ab600988"
+    },
+    "tests/test_linux_runtime_receipt_l125p1.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-tests__test_linux_runtime_receipt_l125p1.py.txt",
+      "sha256": "e9234adcc7d9e54db8990bb037dc2fb75cb1273af10445be4a8fabf0e6957c19"
+    },
+    "tests/test_startup_consumer_receipt_c124l1.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-tests__test_startup_consumer_receipt_c124l1.py.txt",
+      "sha256": "8c8c34af90896597834275ad326954cb113a9f0100de66e76204106e1fd6a692"
+    },
+    "tests/test_startup_consumer_receipt_s124b1.py": {
+      "path": "evidence/d3b-confined-consumer-f126c1/historical-tests__test_startup_consumer_receipt_s124b1.py.txt",
+      "sha256": "272ef27a6f0d72e684620dc0b694f299aca790804ff193915c6548e3fdc452c7"
+    }
+  },
+  "rawHistoricalOutcomesChanged": false,
+  "newNativeExecution": false
+}

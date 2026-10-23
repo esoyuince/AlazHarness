@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:56:51.233620+03:00",
+  "transportSha256": "b6634dea8b8e52bc9d380b1c0d8a256f0a3daaa09bec97043772a6f3061dee29",
+  "rootUsed": false,
+  "scope": "original source same target; metadata-only phase snapshots of own fresh profile to identify post-close extra path",
+  "qaSha256": "a4d1ec7ce1816e107b8db1d7b9294fea91edf4e4e8acae428039d4dee9cfd058",
+  "driverSha256": "b92653f464b2e39bcdfa7da55b6fd663b67a3dd201cf2a59f16a8c0815417d42",
+  "productPolicyChanged": false
+}

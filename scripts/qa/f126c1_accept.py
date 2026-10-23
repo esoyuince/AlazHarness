@@ -1,0 +1,259 @@
+"""One-shot F126C1 native profile acceptance in approved P71C only; new owned image/dummy stores."""
+from dataclasses import asdict
+import fcntl,hashlib,json,os,signal,socket,subprocess,sys,time,errno
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import gateway_state_projection as projection
+import state_volume_supervisor as volume
+import principal_launch as launch
+from state_image_lease import ImagePin
+RUN=Path('/srv/alaz-f126c1a6');GROUP=Path('/sys/fs/cgroup/alaz-f126c1a6')
+OLD=Path('/srv/alaz-p71c');INSTALL=Path('/opt/alazharness-broker/802fade')
+PY='/usr/bin/python3.12'
+ENV={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':'/','WSL_DISTRO_NAME':'AlazHarness-D3B-P71C'}
+
+def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def private_proof():
+    return {str(p):{'sha256':digest(p),'ino':p.stat().st_ino,'dev':p.stat().st_dev} for p in
+        (OLD/'private/config.json',OLD/'private/budget/budget.sqlite3')}
+def mkdir(path,mode=0o755,uid=0,gid=0):
+    path.mkdir(mode=mode);os.chown(path,uid,gid);path.chmod(mode)
+
+def read_target(process):
+    # QA-only multi-message proof; production supervisor limit stays16KiB.
+    sources={};total=None
+    for index in range(48):
+        row=volume.read_line(process,30)
+        if row.get('state')!='SOURCE_CHUNK':
+            problem=RuntimeError('unexpected_confined_frame');problem.frame=row;raise problem
+        assert row.get('pid')==process.pid, {'badSourcePid':row}
+        assert row.get('index')==index and type(row.get('total')) is int and 0<row['total']<=48
+        if total is None:total=row['total']
+        assert total==row['total'] and type(row.get('sources')) is dict and 0<len(row['sources'])<=32
+        assert not set(sources)&set(row['sources']);sources.update(row['sources'])
+        if index+1==total:break
+    else:raise AssertionError('qa_source_frame_limit')
+    result=volume.read_line(process,30)
+    assert result.get('state')=='RESULT' and result.get('pid')==process.pid
+    assert result.get('sourceCount')==len(sources)
+    assert result.get('sourceDigest')==hashlib.sha256(json.dumps(sources,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+    result['nativeSources']=sources;result['sourceChunks']=total
+    return result
+
+
+def main():
+    assert ROOT==Path('/opt/alaz-f126c1a6') and os.getresuid()==(0,)*3
+    assert os.environ.get('WSL_DISTRO_NAME')=='AlazHarness-D3B-P71C'
+    assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    assert not Path('/mnt/c/Windows').exists() and not RUN.exists() and not GROUP.exists()
+    sources=json.loads((ROOT/'input-manifest.json').read_text())['sources']
+    assert all(digest(ROOT/n)==h for n,h in sources.items())
+    before_mounts=Path('/proc/self/mountinfo').read_bytes();private_before=private_proof()
+    mkdir(RUN);mkdir(RUN/'images',0o700);mkdir(GROUP)
+    image=RUN/'images/state.img'
+    with image.open('xb') as f:f.truncate(64*1024*1024)
+    image.chmod(0o600);volume.trusted(Path('/usr/sbin/mke2fs'))
+    subprocess.run(['/usr/sbin/mke2fs','-q','-t','ext4','-F','-m','0',str(image)],
+                   check=True,capture_output=True,stdin=subprocess.DEVNULL,timeout=20,env=ENV)
+    s=image.stat();parent=image.parent.stat()
+    pin=ImagePin(str(image),s.st_dev,s.st_ino,s.st_size,0,0,parent.st_dev,parent.st_ino)
+    for name in ('mount-a','mount-b'):mkdir(RUN/name)
+    mkdir(RUN/'scratch',0o700,23001,23003);mkdir(RUN/'socket',0o710,23002,23003)
+    canary=RUN/'canary';canary.write_text('owned p102 canary');canary.chmod(0o644)
+    principal=json.loads((OLD/'control/provision.json').read_text())['principal']
+    contract=json.loads((OLD/'control/sock1-contract.json').read_text());contract['output']=str(RUN/'socket')
+    contract['commandSha256']=launch.command_digest(launch.command(contract));launch.validate(contract)
+    contract_path=RUN/'broker-contract.json';contract_path.write_text(json.dumps(contract));contract_path.chmod(0o600)
+    checks={};events=[];error=None;broker=None;current=None;children=[];listeners=[];anchors=[];fd=None;forced=False
+    namespaces={n:os.readlink('/proc/self/ns/'+n) for n in ('mnt','net','ipc','user')}
+    def unix(path):
+        sock=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM);sock.bind(str(path));sock.listen(16)
+        os.chown(path,23001,23003);os.chmod(path,0o660);listeners.append((sock,path))
+    try:
+        broker=subprocess.Popen([PY,'-I','-B',str(ROOT/'scripts/run_principal_broker.py'),'--contract',str(contract_path)],
+            cwd='/',env=ENV,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        deadline=time.monotonic()+15
+        while not (RUN/'socket/ready.json').exists():
+            assert broker.poll() is None and time.monotonic()<deadline,'broker_not_ready';time.sleep(.05)
+        ready=json.loads((RUN/'socket/ready.json').read_text());assert ready['pid']==broker.pid
+        unix(RUN/'ambient.sock');unix(RUN/'socket/sibling.sock')
+        tcp=socket.socket(socket.AF_INET,socket.SOCK_STREAM);tcp.bind(('127.0.0.1',0));tcp.listen(16);listeners.append((tcp,None))
+        abstract_name='alaz-f126c1-'+str(os.getpid())
+        abstract=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM);abstract.bind(chr(0)+abstract_name);abstract.listen(16);listeners.append((abstract,None))
+        code=chr(10).join(['import socket,json,sys;v=json.load(sys.stdin)',
+            "for family,address in [(socket.AF_INET,('127.0.0.1',v['port'])),(socket.AF_UNIX,v['ambient']),(socket.AF_UNIX,v['sibling']),(socket.AF_UNIX,chr(0)+v['abstract'])]:",
+            ' with socket.socket(family,socket.SOCK_STREAM) as s:s.settimeout(1);s.connect(address)',"print('controls-ok')"])
+        control=subprocess.run([PY,'-I','-B','-c',code],input=json.dumps({'port':tcp.getsockname()[1],
+            'ambient':str(RUN/'ambient.sock'),'sibling':str(RUN/'socket/sibling.sock'),'abstract':abstract_name}).encode(),
+            user=23001,group=23003,extra_groups=[],capture_output=True,timeout=5,env=ENV,cwd='/')
+        checks['ordinary_uid_host_positive_controls']=control.returncode==0
+        assert checks['ordinary_uid_host_positive_controls'],control.stderr.decode()[:300]
+        rawfd=os.open(canary,os.O_RDONLY);fd=fcntl.fcntl(rawfd,fcntl.F_DUPFD,129);os.close(rawfd);os.set_inheritable(fd,True)
+        settings={'socket_path':ready['socketPath'],'broker_id':ready['brokerId'],
+                  'route_fingerprint':ready['routeFingerprint'],'signing_key':'b'*64,'principal_contract':principal}
+        profile_inode=1;first_stores=None;prepared=None;response_prepared=None
+        for index,mode in enumerate(('write','read')):
+            current=volume.VolumeSupervisor.begin(pin,GROUP,RUN/('mount-a' if index==0 else 'mount-b'))
+            current.attach();mounted=current.start()
+            nsfd=os.open('/proc/'+str(current.worker.pid)+'/ns/mnt',os.O_RDONLY|os.O_CLOEXEC)
+            try:
+                domain={'image':asdict(pin),'scope':str(current.scope),'scope_identity':list(current.scope_id),
+                    'token':current.token,'controller_pid':os.getpid(),'controller_start':projection.process_start(os.getpid()),
+                    'worker_pid':current.worker.pid,'worker_start':projection.process_start(current.worker.pid),
+                    'namespace_inode':os.fstat(nsfd).st_ino,'mountpoint':str(current.target),
+                    'profile_inode':profile_inode,'loop_number':current.loop_number,'fence_sha256':digest(current.fence)}
+                def child(data,hold=False):
+                    proc=subprocess.Popen([PY,'-I','-B',str(ROOT/'scripts/qa/f126c1_child.py')],
+                        stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,bufsize=0,
+                        pass_fds=(nsfd,fd),cwd='/',env=ENV)
+                    children.append(proc)
+                    proc.stdin.write((json.dumps(data)+'\n').encode());proc.stdin.flush()
+                    if hold:return proc
+                    out,err=proc.communicate(timeout=20)
+                    return proc.returncode,out,err
+                if index==0:
+                    code,out,err=child({'mode':'seed','binding':domain,'namespace_fd':nsfd})
+                    assert code==0,err.decode()[:300]
+                    seed=json.loads(out);profile_inode=seed['profileInode'];domain['profile_inode']=profile_inode
+                    checks['profile_prepared_as_gateway_uid']=seed['uid']==23001
+                    prepared=seed['prepared'];response_prepared=seed['responsePrepared']
+                anchor=Path('/tmp/alaz-ipc-f126c1a6-'+mode);assert not anchor.exists();anchor.mkdir(mode=0o700);anchors.append(anchor)
+                fs={'version':1,'enabled':True,'readonly':['/usr/bin','/usr/lib/python3.12','/usr/lib/x86_64-linux-gnu',
+                    '/usr/lib64','/usr/lib/locale',str(ROOT),str(INSTALL),'/dev/urandom'],
+                    'writable':['/dev/null',str(RUN/'scratch')],'protected':[str(canary)],'self_process_metadata':True}
+                view={'version':2,'mode':'projected_root_principal','root':str(anchor),
+                      'brokerSocket':ready['socketPath'],'principalContract':principal}
+                probe={'settings':settings,'parentNamespaces':namespaces,'tcpPort':tcp.getsockname()[1],
+                    'abstract':abstract_name,'ambient':str(RUN/'ambient.sock'),'sibling':str(RUN/'socket/sibling.sock'),
+                    'canary':str(canary),'source':str(current.target/'profile'),'work':str(RUN/'scratch'),'inheritedFd':fd,'controllerPid':os.getpid(),'prepared':prepared,'responsePrepared':response_prepared}
+                data={'mode':mode,'binding':domain,'namespace_fd':nsfd,'ipc':view,'filesystem':fs,'probe':probe}
+                if index==0:
+                    for label,change in [('wrong_inode',{'profile_inode':profile_inode+1}),('wrong_loop',{'loop_number':current.loop_number+1})]:
+                        code,out,err=child({**data,'mode':'reject','binding':domain|change})
+                        details=json.loads(err)
+                        checks[label+'_refused_before_projection']=code==2 and ((label=='wrong_inode' and details['type']=='StateProjectionRejected' and details['reason']=='state_projection_profile_identity') or (label=='wrong_loop' and details['type']=='AssertionError' and details['reason']=='lab_volume_device_mismatch')) and not any(anchor.iterdir())
+                        events.append({'negative':label,'exitCode':code,'diagnostic':details})
+                        assert checks[label+'_refused_before_projection'],details
+                if index==0:
+                    code,out,err=child({**data,'mode':'minimal'})
+                    details=json.loads(err)
+                    checks['minimal_default_refuses_native_scaffold']=code==2 and details.get('reason')=='state_projection_profile_inventory' and not any(anchor.iterdir())
+                    events.append({'negative':'minimal_layout','exitCode':code,'diagnostic':details})
+                    assert checks['minimal_default_refuses_native_scaffold'],details
+                if index==0:
+                    code,out,err=child({**data,'mode':'two'})
+                    details=json.loads(err)
+                    checks['old_two_store_layout_refuses_response']=code==2 and details.get('reason')=='native_layout_unexpected_entry' and not any(anchor.iterdir())
+                    events.append({'negative':'two_store_layout','exitCode':code,'diagnostic':details})
+                    assert checks['old_two_store_layout_refuses_response'],details
+                if index==0:
+                    code,out,err=child({**data,'mode':'deny'})
+                    details=json.loads(out) if out else {'error':err.decode()[:1000]}
+                    checks['default_self_mount_stays_denied']=code==0 and details.get('mountinfoDenied') is True and details.get('nativeLeaseRefused') is True and details.get('lockUnchanged') is True
+                    events.append({'negative':'default_metadata','exitCode':code,'diagnostic':details})
+                    assert checks['default_self_mount_stays_denied'],details
+                if index==1:
+                    code,out,err=child({**data,'mode':'legacy_prepared'})
+                    details=json.loads(err)
+                    checks['old_three_store_layout_still_rejects_prepared_scaffold']=code==2 and details.get('reason')=='native_layout_unexpected_entry' and not any(anchor.iterdir())
+                    events.append({'negative':'old_three_store_after_runner','exitCode':code,'diagnostic':details})
+                    assert checks['old_three_store_layout_still_rejects_prepared_scaffold'],details
+                proc=child(data,True)
+                ready_consumer=volume.read_line(proc,60)
+                assert ready_consumer.get('state')=='CONSUMER_PREPARED' and ready_consumer.get('pid')==proc.pid,ready_consumer
+                assert ready_consumer.get('serviceStarted') is False and ready_consumer.get('sameThreeHandles') is True
+                events.append({'phase':mode+'-consumer-prepared',**ready_consumer})
+                proc.stdin.write(b'CONTINUE\n');proc.stdin.flush()
+                result=read_target(proc);events.append(result)
+                prepared=result['nextExpectation'];response_prepared=result['responseExpectation']
+                code,out,err=child({**data,'mode':'contend'})
+                contender=json.loads(out) if out else {'error':err.decode()[:1500]}
+                checks[mode+'_native_other_process_refused']=code==77 and contender.get('reason')=='profile_already_owned' and contender.get('lockUnchanged') is True
+                events.append({'phase':mode+'-native-contender','exitCode':code,'proof':contender})
+                assert checks[mode+'_native_other_process_refused'],contender
+                assert result['state']=='RESULT' and result['result']=='PASS_CONFINED_PREPARED_CONSUMER',result
+                checks[mode+'_target_checks']=all(result['checks'].values())
+                checks[mode+'_exec_pid_bound']=result['pid']==proc.pid==result['receipt']['pid']
+                checks[mode+'_scope_contains_confined_user']=str(proc.pid) in (current.scope/'cgroup.procs').read_text().split()
+                try:current.stop()
+                except volume.SupervisorRejected as exc:checks[mode+'_live_confined_user_blocks_stop']=str(exc)=='supervisor_users_still_active'
+                else:checks[mode+'_live_confined_user_blocks_stop']=False
+                assert checks[mode+'_live_confined_user_blocks_stop']
+                checks[mode+'_lease_retained']=current.lease.confirm()['cooperatingControllersExcluded'] is True and current.fence.exists()
+                proc.stdin.write(b'RELEASE\n');proc.stdin.flush()
+                released=volume.read_line(proc,10);events.append({'phase':mode+'-profile-released',**released})
+                checks[mode+'_released_profile_process_still_live']=released['state']=='PROFILE_RELEASED_PROCESS_ALIVE' and released['pid']==proc.pid and proc.poll() is None
+                code,out,err=child({**data,'mode':'contend'})
+                contender=json.loads(out) if out else {'error':err.decode()[:1500]}
+                checks[mode+'_native_acquires_after_release']=code==0 and contender.get('state')=='ACQUIRED_THEN_RELEASED' and contender.get('inode')==released['lockInode']
+                events.append({'phase':mode+'-native-after-release','exitCode':code,'proof':contender})
+                assert checks[mode+'_native_acquires_after_release'],contender
+                try:current.stop()
+                except volume.SupervisorRejected as exc:checks[mode+'_image_retained_after_profile_release']=str(exc)=='supervisor_users_still_active' and current.fence.exists()
+                else:checks[mode+'_image_retained_after_profile_release']=False
+                assert checks[mode+'_image_retained_after_profile_release']
+                proc.stdin.write(b'EXIT\n');proc.stdin.flush();out,err=proc.communicate(timeout=8)
+                events.append({'phase':mode+'-native-stderr','text':err.decode('utf-8','replace')})
+                assert proc.returncode==0 and not out,(proc.returncode,err)
+                current.stop();closed=current.finish();events.append({'phase':mode+'-closed',**closed});current=None
+                checks[mode+'_detach_before_release']=closed['leaseReleasedLast'] and closed['loopAttachmentGone']
+                checks[mode+'_host_scratch_untouched']=not any((RUN/'scratch').iterdir())
+                checks[mode+'_anchor_empty']=not any(anchor.iterdir())
+                if index==0:first_stores=result['stores']
+                else:
+                    checks['rows_and_inodes_survive_detach']=all(first_stores[n]['rows']==v['rows'] and first_stores[n]['inode']==v['inode'] for n,v in result['stores'].items())
+                    checks['second_run_accepted_new_epoch_only']=result['epoch']==2 and result['recovered']==0
+            finally:os.close(nsfd)
+    except Exception as exc:
+        error={'type':type(exc).__name__,'reason':str(exc)[:1200]}
+        if hasattr(exc,'frame'):events.append({'unexpectedConfinedFrame':exc.frame})
+    finally:
+        for proc in children:
+            if proc.poll() is None:
+                try:proc.wait(timeout=.25)
+                except subprocess.TimeoutExpired:
+                    forced=True;proc.terminate()
+                    try:proc.wait(timeout=5)
+                    except subprocess.TimeoutExpired:proc.kill();proc.wait(timeout=5)
+            if proc.stderr is not None and not proc.stderr.closed:
+                rest,diag=proc.communicate(timeout=2)
+                events.append({'childExit':proc.returncode,'diagnostic':diag.decode('utf-8','replace')[-9000:], 'remainingStdout':rest.decode('utf-8','replace')[-9000:]})
+        if current is not None:
+            try:
+                if current.worker is not None and current.worker.poll() is None and current.stage in ('RUNNING','STOP_REFUSED'):current.stop()
+                current.finish()
+            except Exception as exc:events.append({'cleanupRetained':type(exc).__name__,'reason':str(exc)[:200]})
+        if broker is not None:
+            if broker.poll() is None:broker.send_signal(signal.SIGTERM)
+            try:bout,berr=broker.communicate(timeout=8)
+            except subprocess.TimeoutExpired:forced=True;broker.kill();bout,berr=broker.communicate(timeout=5)
+            checks['broker_clean_exit']=broker.returncode==0 and not berr
+            events.append({'brokerExit':broker.returncode,'diagnostic':berr.decode('utf-8','replace')[-2000:]})
+        for sock,path in listeners:
+            sock.close()
+            if path is not None:path.unlink(missing_ok=True)
+        if fd is not None:os.close(fd)
+        for anchor in anchors:
+            if anchor.is_dir() and not os.path.ismount(anchor) and not any(anchor.iterdir()):anchor.rmdir()
+    shutdown=json.loads((RUN/'socket/shutdown.json').read_text()) if (RUN/'socket/shutdown.json').exists() else {}
+    checks['exactly_two_authenticated_pings']=shutdown.get('counters',{}).get('pings')==2
+    checks['zero_physical_provider_attempts']=shutdown.get('counters',{}).get('physicalAttempts')==0
+    checks['broker_private_files_unchanged']=private_before==private_proof()
+    checks['parent_mount_table_unchanged']=before_mounts==Path('/proc/self/mountinfo').read_bytes()
+    checks['no_remaining_loop']=not volume.attachments(pin)
+    checks['no_remaining_fence']=not Path(pin.path+'.volume-owner.json').exists()
+    checks['no_remaining_scopes']=not any(q.is_dir() for q in GROUP.iterdir()) and not volume.populated((GROUP/'cgroup.events').read_text())
+    if checks['no_remaining_scopes']:GROUP.rmdir()
+    checks['no_forced_cleanup']=not forced
+    checks['source_bytes_unchanged']=all(digest(ROOT/n)==h for n,h in sources.items())
+    report={'result':'PASS_SCOPED_CONFINED_PREPARED_CONSUMER' if error is None and all(checks.values()) else 'FAIL',
+        'checks':checks,'checkCount':len(checks),'events':events,'error':error,'sourceSha256':sources,
+        'forcedCleanup':forced,'realExt4Image':True,'imageBytes':pin.size,'imageRetained':True,
+        'nativeHermesGatewayStarted':False,'nativeProfileLease':True,'cleanOnlyEpochStartupTested':True,'pendingStartupRefusalTested':False,'nativeStoreLayoutTested':True,'productStoreStartupInvoked':True,'fullAdmissionGateImplemented':False,'readinessHttpUnderFullIsolation':False,'preparedConsumerUnderFullIsolation':True,'threeStoreReadiness':True,'agentModelExecutionTested':False,'nativeAgentHttpAdapterStarted':False,
+        'legacyIpcV2Enabled':False,'fullD3BAccepted':False,'paidModelCalls':0}
+    (RUN/'acceptance.json').write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps(report),flush=True)
+    return 0 if report['result'].startswith('PASS_') else 1
+
+if __name__=='__main__':raise SystemExit(main())

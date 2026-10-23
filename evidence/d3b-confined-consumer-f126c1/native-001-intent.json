@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T00:51:38.338034+03:00",
+  "requestId": "d126c601-19e4-4df2-a611-126001000009",
+  "scope": "ONE new fixed current prepared owner/consumer confinement run, approved dedicated P71C only; no old cleanup query",
+  "distro": "AlazHarness-D3B-P71C",
+  "newOwnedPaths": [
+    "/opt/alaz-f126c1",
+    "/srv/alaz-f126c1",
+    "/sys/fs/cgroup/alaz-f126c1"
+  ],
+  "transportSha256": "8a792958e0632ea870376b720913baad39d8ea96f442180dad944cb28a6653c0",
+  "rootSetup": true,
+  "runtimeUid": 23001,
+  "unchangedProductAndNative": true,
+  "listenerModelProviderActivation": false,
+  "installedRuntimeChanged": false,
+  "blockedPriorOperationsReplayed": false
+}

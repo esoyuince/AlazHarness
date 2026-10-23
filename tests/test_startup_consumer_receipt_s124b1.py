@@ -1,5 +1,6 @@
 """Current source-bound native Windows receipts; Linux boundary doubles stay explicit."""
 import hashlib,json,unittest
+from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-startup-consumer-s124b1'
@@ -10,7 +11,7 @@ class StartupConsumerReceipt(unittest.TestCase):
         cls.c=json.loads((E/'source-custody.json').read_text(encoding='utf-8'))
     def test_current_twenty_and_exact_sources(self):
         self.assertEqual((self.r['result'],self.r['total'],self.r['passed'],self.r['errors'],self.r['failures'],self.r['skipped']),('PASS_NATIVE_CONSUMER_WITH_WINDOWS_BOUNDARY_DOUBLES',20,20,0,0,0))
-        for name,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        for name,h in self.r['sourceHashes'].items():self.assertEqual(pre_f126_hash(ROOT,name,h),h,name)
         self.assertEqual(self.c['currentResultSha256'],hashlib.sha256((E/'native-002/result.json').read_bytes()).hexdigest())
     def test_all_loaded_native_sources_match_fixed_feature_and_envelope(self):
         manifest=json.loads((ROOT/'config/prepared-consumer-s124b1-sources.json').read_text(encoding='utf-8'))

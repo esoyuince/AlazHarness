@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-24T01:13:59.025438+03:00",
+  "base": "931e57045bdce466934838dffde7d54527ad3f12",
+  "independentCommit": "4f298298172637b6bd6f7a9c7101a24a3f9c6d45",
+  "transfer": "fast-forward only; all own disjoint changes retained",
+  "independentNewSources": [
+    "scripts/qa/f126c6_elf_dependency_audit.py",
+    "scripts/qa/f126c6_linux_layout_checks.py",
+    "tests/test_confined_failed_receipt_f126c6.py",
+    "tests/test_confined_success_receipt_f126c6.py",
+    "tests/test_elf_projection_audit_f126c6.py"
+  ],
+  "independentWorktreeEdited": false,
+  "newNativeRun": false,
+  "soleFullRegressionOwner": "F126C1"
+}

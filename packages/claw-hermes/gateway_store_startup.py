@@ -43,7 +43,7 @@ class NativeStoreStartup:
     expose HTTP or redispatch a partial pair. Even terminal pairs have not been
     reconciled here. Public native handles are available ONLY after verification.
     """
-    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None):
+    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None,prepared_layout=False):
         require(type(held) is live.profiles.ProfileLease,'startup_native_lease_required')
         require(type(expected_mount) is live.mounts.ExpectedMount,'startup_mount_expectation')
         require(type(expected) is live.PreparedStoreExpectation and expected.journal_mode=='delete',
@@ -51,6 +51,9 @@ class NativeStoreStartup:
         require(type(instance_id) is str and re.fullmatch('[A-Za-z0-9._-]{1,128}',instance_id) is not None,
                 'startup_instance_id')
         require(instance_id!=expected.instance_id,'startup_new_instance_required')
+        require(type(prepared_layout) is bool,'startup_prepared_layout_option')
+        require(not prepared_layout or response_expected is not None,'startup_prepared_layout_requires_response')
+        self._prepared_layout=prepared_layout
         if response_expected is not None:
             response_preopen._pair(response_expected,expected)
         self._response_expected=response_expected
@@ -90,6 +93,7 @@ class NativeStoreStartup:
             home=self._held._home
             self._stage='LAYOUT'
             options={'include_response':True} if self._response_expected is not None else {}
+            if self._prepared_layout:options['include_prepared']=True
             snapshot=layout.inspect_profile(home,uid=self._actor[1],gid=self._actor[2],
                                             device=self._expected.state_identity[0],**options)
             if self._response_expected is not None:

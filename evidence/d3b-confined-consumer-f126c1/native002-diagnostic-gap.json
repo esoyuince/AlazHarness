@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T00:55:08.578499+03:00",
+  "result": "FAIL_AFTER_CONSUMER_PREPARED",
+  "known": "sameThreeHandles true,serviceStarted false,epoch1; broker clean, no remaining loop/fence/scopes",
+  "unknown": "read_target asserted before retaining unexpected frame; original teardown discarded pipe output after forced child termination",
+  "correction": "preserve unexpected frame and collected diagnostics; allow brief already-exiting child terminal acknowledgement, no workload/control predicate relaxed",
+  "oldFailurePreserved": true,
+  "newRunNeededForDiagnostic": true
+}

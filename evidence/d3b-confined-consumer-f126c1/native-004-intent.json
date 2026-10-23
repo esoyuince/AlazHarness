@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T01:03:21.833610+03:00",
+  "requestId": "d126c601-19e4-4df2-a611-126001000023",
+  "transportSha256": "8fff91487ff67547bfbf52fc8b4f7f7caca03d31b5318ab2027d30f6f62d0115",
+  "scope": "explicit empty prepared-scaffold selector; two same-image confined real owner-consumer lifecycles; old layout refusal on second admission",
+  "newPrefix": "alaz-f126c1a4",
+  "priorFailuresPreserved": true,
+  "newActiveService": false
+}
