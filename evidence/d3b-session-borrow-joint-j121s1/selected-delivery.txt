@@ -1,0 +1,19 @@
+test_all_behavior_cases_present_not_added_to_full_count (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_all_behavior_cases_present_not_added_to_full_count) ... ok
+test_exact_tested_qa_and_three_patched_source_hashes (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_exact_tested_qa_and_three_patched_source_hashes) ... ok
+test_fresh_patch_application_and_no_activation (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_fresh_patch_application_and_no_activation) ... ok
+test_initial_failed_directory_assumption_remains_failed (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_initial_failed_directory_assumption_remains_failed) ... ok
+test_native_terminal_and_scope (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_native_terminal_and_scope) ... ok
+test_original_native_imports_are_immutable_except_selected_patch (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_original_native_imports_are_immutable_except_selected_patch) ... ok
+test_watched_opens_zero_and_import_external_attempts_recorded (test_session_borrow_receipt_s121r4.SessionBorrowProof.test_watched_opens_zero_and_import_external_attempts_recorded) ... ok
+test_actual_candidate_and_imported_sources_pinned (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_actual_candidate_and_imported_sources_pinned) ... ok
+test_current_native_24_and_cleanup (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_current_native_24_and_cleanup) ... ok
+test_default_comparison_keeps_original_behavior (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_default_comparison_keeps_original_behavior) ... ok
+test_explicit_unaccepted_scope (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_explicit_unaccepted_scope) ... ok
+test_initial_failed_fixture_and_correction_not_hidden (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_initial_failed_fixture_and_correction_not_hidden) ... ok
+test_no_extra_connections_or_json_fallback_in_watched_boundary (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_no_extra_connections_or_json_fallback_in_watched_boundary) ... ok
+test_qa_bytes_and_all_case_outcomes (test_session_borrow_receipt_s121s1.IndependentSessionReceipt.test_qa_bytes_and_all_case_outcomes) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.198s
+
+OK

@@ -94,3 +94,7 @@ not additional native runs. Original23 and independent24 native methods share
 the exact same three native product hashes and remain separate overlapping
 acceptance scopes. No installed feature, shared runner, active HTTP or source
 lock activation. Local static-final.txt is a local gate, not remote CI.
+
+## Canonical artifact delivery
+
+Tested merge `6a01e1a89b0017153dc1710e16446e22e24f0f80` fast-forwarded from `9418bf0a4f92f095ad784ac0483025c9f82465e6` into the canonical development branch. All496 source hashes and5patches still match the new complete run; final14 offline receipts PASS. The native feature2bc50496 remains STAGED/NOT INSTALLED, installed nativeeb75627 and main unchanged. This final handoff adds docs/static evidence only; no native/full rerun, guard relaxation or push. Current status.md is the continuation.
