@@ -1,0 +1,23 @@
+{
+  "job": "D3B-SESSION-BORROW-QA-S121S1",
+  "result": "PASS_SCOPED_INDEPENDENT_NATIVE_SESSION_OWNERSHIP",
+  "at": "2026-10-23T20:18:41.223775+03:00",
+  "base": "9418bf0a4f92f095ad784ac0483025c9f82465e6",
+  "original490HarnessSourcesUnchanged": true,
+  "originalDefaultBaselineConfirmed": true,
+  "independentNativeMethods": 24,
+  "offlineReceiptMethods": 7,
+  "nativeImportedFiles": 250,
+  "nativeMethodsReplaced": false,
+  "firstRunFailedFixtureRetained": true,
+  "actualCandidateImplementationOwner": "S121R4",
+  "nativeCandidateChangedByIndependentTask": false,
+  "fullStandardSuite": "PENDING_COMBINED_SOURCE_QUALIFICATION",
+  "sharedGatewayRunnerBootstrap": false,
+  "healthyBusyHttp": false,
+  "installedNativeActivated": false,
+  "providerCalls": 0,
+  "rootWslAction": false,
+  "mainChanged": false,
+  "pushed": false
+}

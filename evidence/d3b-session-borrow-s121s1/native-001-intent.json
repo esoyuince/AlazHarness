@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T20:14:25.426213+03:00",
+  "candidateSnapshot": "candidate-snapshot-001.json",
+  "qaSha256": "6d600bb62c989cb9997baa57f051aacbfdc5e6e091803b69af02953d0ab53cd7",
+  "scope": "24 independent real-native cases, fresh Windows temp homes, no API/network/native replacement"
+}

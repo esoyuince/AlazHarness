@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T20:16:06.321941+03:00",
+  "firstRun": "native-001 FAIL21/24",
+  "cause": "native import prepares sessions directory BEFORE SessionStore; first tests incorrectly assumed global absence",
+  "independentPositiveControl": "directory-positive-control-stdout.txt",
+  "correctedAssertion": "same filesystem entry inventory before/after borrowed facade, no JSON create; legacy fixture uses existing directory",
+  "nativeCandidateChanged": false,
+  "additionalScopeCorrection": "write-failure fixture permits native state header read needed by existing mutation guard; selection/constructor/detach still forbid raw DB opens; JSON fallback forbidden in both",
+  "oldQaSha256": "6d600bb62c989cb9997baa57f051aacbfdc5e6e091803b69af02953d0ab53cd7",
+  "newQaSha256": "f3c32c0839c2dce7fee464f268e78dfe693ebc5dc3642bf539660cf6462d825a"
+}

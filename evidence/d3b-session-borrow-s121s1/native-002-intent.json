@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T20:16:06.342714+03:00",
+  "sourceHashes": {
+    "gateway/session.py": "d871eef6a753b8339b90080c8e14bf7e8fb6aad6106e0a31ee8aeee5b92df5a9",
+    "gateway/session_persistence.py": "33c303007c112c276aacf104558090d902d9b43740430ceee85de7534ec1371d",
+    "gateway/session_borrowed_state.py": "b72605ec6152d54e2854dbdba53ca2d8025748ed0c6c92935e40bd7cff5522ca"
+  },
+  "qaSha256": "f3c32c0839c2dce7fee464f268e78dfe693ebc5dc3642bf539660cf6462d825a",
+  "nativeProductUnchangedFrom001": true,
+  "scope": "24 actual native cases, corrected existing-directory baseline; explicit native header read only for attempted SQL write fault"
+}

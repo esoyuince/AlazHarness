@@ -1,0 +1,29 @@
+test_active_transaction_blocks_selection_and_detach_without_rollback (__main__.IndependentSessionChecks.test_active_transaction_blocks_selection_and_detach_without_rollback) ... ok
+test_all_selection_routes_reuse_exact_handle (__main__.IndependentSessionChecks.test_all_selection_routes_reuse_exact_handle) ... ok
+test_changed_config_or_facade_path_rejected (__main__.IndependentSessionChecks.test_changed_config_or_facade_path_rejected) ... ok
+test_closed_state_is_not_reopened_or_cached (__main__.IndependentSessionChecks.test_closed_state_is_not_reopened_or_cached) ... ok
+test_constructor_refuses_existing_transaction_without_open (__main__.IndependentSessionChecks.test_constructor_refuses_existing_transaction_without_open) ... ok
+test_constructor_reuses_caller_without_registry_or_directory (__main__.IndependentSessionChecks.test_constructor_reuses_caller_without_registry_or_directory) ... ok
+test_cross_thread_same_scope_reuses_caller_connection (__main__.IndependentSessionChecks.test_cross_thread_same_scope_reuses_caller_connection) ... ok
+test_default_constructor_keeps_separate_registry_path (__main__.IndependentSessionChecks.test_default_constructor_keeps_separate_registry_path) ... ok
+test_detach_only_facade_not_caller_connection_or_profile (__main__.IndependentSessionChecks.test_detach_only_facade_not_caller_connection_or_profile) ... ok
+test_direct_legacy_import_and_save_are_refused (__main__.IndependentSessionChecks.test_direct_legacy_import_and_save_are_refused) ... ok
+test_dirty_or_inflight_facade_not_silently_discarded (__main__.IndependentSessionChecks.test_dirty_or_inflight_facade_not_silently_discarded) ... ok
+test_extra_database_not_detached_by_guard (__main__.IndependentSessionChecks.test_extra_database_not_detached_by_guard) ... ok
+test_foreign_active_scope_never_falls_back (__main__.IndependentSessionChecks.test_foreign_active_scope_never_falls_back) ... ok
+test_foreign_explicit_path_and_profile_key_do_not_materialize (__main__.IndependentSessionChecks.test_foreign_explicit_path_and_profile_key_do_not_materialize) ... ok
+test_generation_changed_refused_without_reset (__main__.IndependentSessionChecks.test_generation_changed_refused_without_reset) ... ok
+test_locked_state_is_not_waited_or_repaired (__main__.IndependentSessionChecks.test_locked_state_is_not_waited_or_repaired) ... ok
+test_missing_routing_schema_refused_without_json_import (__main__.IndependentSessionChecks.test_missing_routing_schema_refused_without_json_import) ... ok
+test_nonexclusive_or_json_enabled_constructor_not_coerced (__main__.IndependentSessionChecks.test_nonexclusive_or_json_enabled_constructor_not_coerced) ... ok
+test_reacquired_profile_handle_is_not_original_ownership (__main__.IndependentSessionChecks.test_reacquired_profile_handle_is_not_original_ownership) ... ok
+test_readonly_routing_load_does_not_import_legacy_json (__main__.IndependentSessionChecks.test_readonly_routing_load_does_not_import_legacy_json) ... ok
+test_repinned_handle_setter_disabled (__main__.IndependentSessionChecks.test_repinned_handle_setter_disabled) ... ok
+test_routing_write_failure_cannot_create_json_fallback (__main__.IndependentSessionChecks.test_routing_write_failure_cannot_create_json_fallback) ... ok
+test_unowned_profile_refused_before_open (__main__.IndependentSessionChecks.test_unowned_profile_refused_before_open) ... ok
+test_wrong_sessions_directory_refused_before_open (__main__.IndependentSessionChecks.test_wrong_sessions_directory_refused_before_open) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 8.776s
+
+OK
