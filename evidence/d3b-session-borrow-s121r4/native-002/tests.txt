@@ -1,0 +1,28 @@
+test_actual_thread_can_select_same_state_with_bound_home (__main__.SessionBorrowCases.test_actual_thread_can_select_same_state_with_bound_home) ... ok
+test_attachment_refused_without_detaching_or_closing (__main__.SessionBorrowCases.test_attachment_refused_without_detaching_or_closing) ... ok
+test_busy_state_mutex_refuses_without_waiting_or_release (__main__.SessionBorrowCases.test_busy_state_mutex_refuses_without_waiting_or_release) ... ok
+test_changed_application_id_not_repaired (__main__.SessionBorrowCases.test_changed_application_id_not_repaired) ... ok
+test_changed_home_and_foreign_paths_never_open_replacements (__main__.SessionBorrowCases.test_changed_home_and_foreign_paths_never_open_replacements) ... ok
+test_closed_caller_never_reopened (__main__.SessionBorrowCases.test_closed_caller_never_reopened) ... ok
+test_configuration_and_facade_changes_refused (__main__.SessionBorrowCases.test_configuration_and_facade_changes_refused) ... ok
+test_constructor_selectors_and_detach_have_no_extra_open_or_row_write (__main__.SessionBorrowCases.test_constructor_selectors_and_detach_have_no_extra_open_or_row_write) ... ok
+test_default_native_constructor_still_registry_owned (__main__.SessionBorrowCases.test_default_native_constructor_still_registry_owned) ... ok
+test_detached_facade_cannot_reopen_or_repin (__main__.SessionBorrowCases.test_detached_facade_cannot_reopen_or_repin) ... ok
+test_explicit_json_import_or_write_never_used (__main__.SessionBorrowCases.test_explicit_json_import_or_write_never_used) ... ok
+test_fake_native_state_refused (__main__.SessionBorrowCases.test_fake_native_state_refused) ... ok
+test_foreign_sessions_directory_rejected_before_creation (__main__.SessionBorrowCases.test_foreign_sessions_directory_rejected_before_creation) ... ok
+test_inflight_dirty_or_cached_facade_not_detached (__main__.SessionBorrowCases.test_inflight_dirty_or_cached_facade_not_detached) ... ok
+test_multiplex_and_json_modes_require_explicit_disable (__main__.SessionBorrowCases.test_multiplex_and_json_modes_require_explicit_disable) ... ok
+test_profile_release_reacquire_is_not_original_ownership (__main__.SessionBorrowCases.test_profile_release_reacquire_is_not_original_ownership) ... ok
+test_real_primary_routing_and_native_admission_share_caller_state (__main__.SessionBorrowCases.test_real_primary_routing_and_native_admission_share_caller_state) ... ok
+test_rebuilt_facade_reads_primary_routing_not_legacy_file (__main__.SessionBorrowCases.test_rebuilt_facade_reads_primary_routing_not_legacy_file) ... ok
+test_registry_state_not_adopted (__main__.SessionBorrowCases.test_registry_state_not_adopted) ... ok
+test_routing_sql_failure_does_not_fall_back_to_json (__main__.SessionBorrowCases.test_routing_sql_failure_does_not_fall_back_to_json) ... ok
+test_swapped_connection_not_adopted (__main__.SessionBorrowCases.test_swapped_connection_not_adopted) ... ok
+test_transaction_before_construction_is_retained (__main__.SessionBorrowCases.test_transaction_before_construction_is_retained) ... ok
+test_transaction_blocks_detach_and_selection_without_rollback (__main__.SessionBorrowCases.test_transaction_blocks_detach_and_selection_without_rollback) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 8.537s
+
+OK

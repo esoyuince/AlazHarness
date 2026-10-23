@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T20:15:24.324657+03:00",
+  "firstRun": "native-001 FAIL21/23",
+  "reason": "preexisting sessions directory from native initialization; no new directory was shown created by borrowed constructor",
+  "diagnosis": "scaffold-diagnosis.txt, staged before/after real native imports/reserve/state/config/facade",
+  "correction": "compare complete profile-entry snapshot before/after tested constructor; direct JSON operations leave same entries",
+  "nativeProductChanged": false,
+  "previousQaSha256": "7f2cb4cf539ecf90f40e7018ac153e2b794195a3262dd852d754a500620bedef",
+  "qaSha256": "2ec559b9915c5d66b7710692738f30c5098d50cc2a34ffed8b4793a45becb07f",
+  "firstFailureRetained": true
+}

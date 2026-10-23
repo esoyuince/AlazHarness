@@ -1,0 +1,14 @@
+{
+  "nativeBase": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "nativeFeature": "2bc50496bebe21f948dd2e86f553ef1e22904ed2",
+  "patchPath": "patches/hermes/s121r4/session-store-caller-state.patch",
+  "patchSha256": "c048461b42e7d318e6f5d46f0a1483e0fb3bfdc756b414c0e6c99c2954e49920",
+  "resultHashes": {
+    "gateway/session.py": "d871eef6a753b8339b90080c8e14bf7e8fb6aad6106e0a31ee8aeee5b92df5a9",
+    "gateway/session_persistence.py": "33c303007c112c276aacf104558090d902d9b43740430ceee85de7534ec1371d",
+    "gateway/session_borrowed_state.py": "b72605ec6152d54e2854dbdba53ca2d8025748ed0c6c92935e40bd7cff5522ca"
+  },
+  "activation": "STAGED_NOT_INSTALLED",
+  "sharedCanonicalRunnerQualified": false,
+  "borrowedApiGuardUnchanged": true
+}

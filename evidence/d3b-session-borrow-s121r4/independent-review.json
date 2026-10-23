@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-23T20:19:28.934514+03:00",
+  "owner": "S121S1",
+  "sourceResult": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-session-borrow-s121s1\\evidence\\d3b-session-borrow-s121s1\\native-002\\result.json",
+  "sourceResultSha256": "cfcae44de6eaa2afab7b5e24426deab2c1358393e881178db7f8b449e2c42111",
+  "nativeMethods": 24,
+  "allThreeCandidateSourcesMatchSelectedNativeCommit": true,
+  "selectedFeature": "2bc50496bebe21f948dd2e86f553ef1e22904ed2",
+  "resultHashes": {
+    "gateway/session.py": "d871eef6a753b8339b90080c8e14bf7e8fb6aad6106e0a31ee8aeee5b92df5a9",
+    "gateway/session_persistence.py": "33c303007c112c276aacf104558090d902d9b43740430ceee85de7534ec1371d",
+    "gateway/session_borrowed_state.py": "b72605ec6152d54e2854dbdba53ca2d8025748ed0c6c92935e40bd7cff5522ca"
+  },
+  "independentExecutionRepeatedHere": false,
+  "originalWorktreeModified": false,
+  "originalBaselineControl": "one extra registry-owned connection in unmodified default; expected behavior, not claimed upstream bug",
+  "harnessHistoryAndCombinedFullStillPending": true
+}
