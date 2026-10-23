@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T01:08:53.553023+03:00",
+  "layoutSha256": "efce686a9a8f07d60454e9394b7069ef0214a0f5792e567f0c657973ce3356f7",
+  "qaSha256": "276b6106b54187290516ab07bdd98c23530dbbee8dbaf6b91735d448ef71c062",
+  "inputSha256": "57ba6738d8bc24ffcb5d76e521eb86d3c067ff049ea3c05acab5be9c03e77ff7",
+  "scope": "10 independent real POSIX finite-layout fixture checks, no native/run/confinement replay"
+}

@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "attempt": "004",
+      "rawSha256": "fe61cc76fff54ba9bfff043d26702f76b5c058b4e411b43d9196f42ea97a5dc4",
+      "result": "FAIL",
+      "phase": "ORIGINAL_OWNER_CLOSE",
+      "forcedCleanup": false,
+      "reason": "native_layout_unexpected_entry",
+      "newProfilePaths": [],
+      "productHashes": {
+        "packages/claw-hermes/gateway_native_layout.py": "efce686a9a8f07d60454e9394b7069ef0214a0f5792e567f0c657973ce3356f7",
+        "packages/claw-hermes/gateway_state_projection.py": "886597e1947b5fdd734c07d692582b747822c455d3ee3e05d540837064c30f6c",
+        "packages/claw-hermes/gateway_store_startup.py": "deaa11c65777a5f70f768636d69de84b4b3d9065fae48bc391d5c36be47366b7"
+      }
+    },
+    {
+      "attempt": "005",
+      "rawSha256": "dafec1a5f33072d966bb8543f0526f3b4600c8ac7da1704caaf381ec97a45b81",
+      "result": "FAIL",
+      "phase": "ORIGINAL_OWNER_CLOSE",
+      "forcedCleanup": false,
+      "reason": "postclose_layout:native_layout_unexpected_entry",
+      "newProfilePaths": [
+        "cache/scratch",
+        "cache/scratch/.last_prune",
+        "platforms",
+        "platforms/pairing"
+      ],
+      "productHashes": {
+        "packages/claw-hermes/gateway_native_layout.py": "efce686a9a8f07d60454e9394b7069ef0214a0f5792e567f0c657973ce3356f7",
+        "packages/claw-hermes/gateway_state_projection.py": "886597e1947b5fdd734c07d692582b747822c455d3ee3e05d540837064c30f6c",
+        "packages/claw-hermes/gateway_store_startup.py": "deaa11c65777a5f70f768636d69de84b4b3d9065fae48bc391d5c36be47366b7"
+      }
+    }
+  ],
+  "productSameInAttempts004005006": true,
+  "successfulLaunchUsesExistingPrivateTmpfs": true,
+  "persistentScratchAllowlistAdded": false,
+  "firstFailuresRetained": true
+}

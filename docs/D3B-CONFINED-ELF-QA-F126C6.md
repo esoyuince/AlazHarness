@@ -101,3 +101,58 @@ and original side effect/source identities. Total focused18/18=10synthetic parse
 controls+8offline receipts. Native003 failure is not reclassified as positive
 confinement just because the prepared consumer had matched its three handles.
 The partial wrapper intent fields do not replace the missing final result.
+
+## Current sixth experiment PASS, independently source-bound
+
+F126C1 native006 completed two final-exec cold lifecycles with44controller
+predicates and41predicates per target, no forced cleanup. Both target processes
+use private mount/network/IPC namespaces, original host user namespace, explicit
+UID23001/GID23003, empty supplementary groups/capabilities, no-new-privileges,
+seccomp and LandlockABI3. Existing host endpoint positive controls are denied
+inside; canary reads/writes and namespace reentry fail, ambient FD is absent,
+private broker/user paths hidden. Broker receives exactly2authenticated ready
+pings and makes0physical provider attempts. No model/agent task/HTTP/admission.
+
+Same persistent ext4 image/profile/store inodes/seeded rows survive both clean
+mount cycles; accepted epoch advances1then2 once per original startup, not per
+consumer preparation. Actual cold helper processes/lease/live SQL and native
+runner/API are unchanged, with no boundary doubles. Attached consumer blocks
+owner close; open transactions remain; API->runner->stores->callerlease order is
+verified. Live fixture writer prevents profile release, and a live consumer PID
+still prevents volume stop after profile release. Parent mount/private files
+unchanged, no scoped loop/fence/cgroup or forced termination in accepted teardown.
+This refers to original SAME-experiment teardown, not a separate old blocked
+postrun root query. Current final-exec result does not enable all-work observers.
+
+The earlier two-directory mismatch is handled by a NEW EXPLICIT finite prepared
+layout selector: optional exactly-empty private platforms/pairing, response store
+required. Existing minimal/two/three-store defaults remain strict; old three-store
+layout actually rejects the prepared scaffold on second opening. New files,
+credentials, nested directories/siblings and unsafe metadata remain rejected.
+This is a versioned allowed-profile-shape change in3harness modules, not a claim
+all product code is unchanged. Native feature and syscall/Landlock/filesystem/
+network permission grants remain unchanged. Independent real ordinary-user POSIX
+fixture checks10/10 PASS, including actual symlinks, FIFO, unsafe mode and wrong
+UID/GID/device; no stat/permission substitutes. No second privileged experiment.
+
+Native004/005 still failed with that exact same product source:005bounded inventory
+found cache/scratch/.last_prune. The launch script had omitted temp variables,
+unlike preceding L125. Native006 sets TMPDIR/TMP/TEMP to the EXISTING projected
+private scratch tmpfs; no persistent cache allowance, cleanup deception, native
+patch or grant expansion. Product bytes match004/005/006. First5failures remain
+failures; the final success is not a relabelled earlier run.
+
+The677-file transport archive,1805-file installed source manifest,513immutable
+nativeGit blobs,1162accepted dependency bytes and every820actually loaded file
+per target were checked independently. All13Linux.so files actually loaded under
+normal extension settings and match the static metadata audit; this is now real
+loader execution evidence for this workload, not universal ABI safety. Same820
+source maps in both cycles. Selected3product hashes also match the10POSIX checks.
+
+Five new offline receipt methods bind this scope, for23independent standard
+methods total=10generated parser controls+13offline receipts. The separate10real
+POSIX checks and44+41+41 nested predicates are not summed as independent test
+methods. Complete combined standard run is required before canonical delivery.
+FullAIAgent/provider accounting, current borrowed active-task observers, service
+admission/HTTP and powerloss durability remain unaccepted. Kernel exploit/CVE
+hardening is not implied by a successful confinement behavior experiment.

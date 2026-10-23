@@ -1,21 +1,39 @@
 # AlazHarness - status
 
-## D3B-CONFINED-ELF-QA-F126C6 - STATIC PASS / ORIGINAL CONFINEMENT NOT YET ACCEPTED
+## D3B-CONFINED-CONSUMER-QA-F126C6 - INDEPENDENT SCOPED CONFINEMENT REVIEW PASS; FULL UNION PENDING
 
-Own branch alaz/d3b-confined-consumer-f126c6; base931e570; current worktree scratch/worktrees/d3b-confined-consumer-f126c6. F126C1 owns ONE full projection/consumer experiment; this lane only independently reviews fixed source/ELF/results. Own controller drafts not executed and archived, no duplicate root setup. All532 existing source/config files unchanged.
+Own branch alaz/d3b-confined-consumer-f126c6/base931e570. F126C1 owns sole privileged
+experiment/product3filechange. This lane adds independent read-only ELF/source/
+receipt review and ordinaryUID realPOSIX finite-layout fixtures, not duplicate
+root setup. Early controller drafts never executed, preserved as evidence only.
+All532 prior files unchanged IN THIS LANE; original union has3explicit product
+changes plus historical-source test migrations, cannot claim all unchanged there.
 
-Actual ordinary-user Linux read-only ELF metadata:13 accepted package binaries,7 system libraries under existing read-only roots, no missing dependency/version or RPATH/RUNPATH override. Binary hashes match prior accepted target; system inode/mode/owner/hash captured. No ELF execution/loading or policy change.10dummy parsing controls+4offline receipts14/14PASS. No dynamic ABI/CVE/full isolation inference.
+Accepted original native006:44controller+41per target nested predicates on2cold
+starts, same ext4profile/store rows/inodes, epoch1->2, actual UIDdrop/private
+mount-net-ipc/seccomp/LandlockABI3, coldhelpers/profilelease/liveSQL/realrunnerAPI,
+no native/kernel doubles. Final820loadedfiles each including13actualLinuxELFs;
+source/hash maps same both cycles. Broker exactly2authenticated readyPINGs and
+0provider calls, host endpoints/canary/namespace reentry denied. Ordered
+API->runner->stores->externallease, live process retains volume, no forcedcleanup
+or scoped loop/fence/cgroup leftovers in original same-run teardown evidence.
+No separate old blocked root cleanup query rerun, no full active-agent acceptance.
 
-Original F126C1 first3experiment outcomes observed FAIL:001 omitted4unchanged transport slices before broker ready;002 reached same3handle consumer then diagnostic frame lost/forced fixture stop;003 preserves actual postclose finite-profile unexpected-entry rejection. Do not infer acceptance from intended proof flags. F126C1 diagnoses current fixture/runtime effect without widening policy; its latest status/evidence must be read. No takeover or duplicate runtime job.
+Original3productmodules add explicit finite empty platforms/pairing scaffold,
+olddefaults unchanged and credentials/extra content refused. No syscall/FS/network
+permission expansion/native patch. Native004005sameproduct FAIL due persistent
+scratch fallback; native006 binds TMPDIR/TMP/TEMP to ALREADY projected tmpfs,
+no new cache allowlist/deletion. First5original failures preserved. Independent
+10realPOSIXfixture checks PASS with actual permissions/symlinks/FIFO and no mocks.
+23own standard methods PASS=10syntheticELF+13offline receipts; no double counts.
 
-Report docs/D3B-CONFINED-ELF-QA-F126C6.md; evidence/d3b-confined-consumer-f126c6/: summary,elf-custody,input,linux-result/terminal,focused-tests and inactive drafts. Current own jobs terminal. Local static/scoped commit next; ONE complete union regression remains pending original outcome. No main/push/vendor/source-lock/system-runtime/provider/model/HTTP/account change; previous blocks not retried. Installedeb75627/maincc7ceba. Never overwrite unrelated root/parallel changes.
-
-
-### Actual layout mismatch independently identified
-
-OrdinaryUIDdiagnostic snapshots show exactly platforms and platforms/pairing added at runner construction, not import, authority or detach. Immutable1e97 run_runtime_init eagerly constructs PairingStore; get_hermes_dir intentionally ignores EMPTY legacy pairing scaffold, so new directory creation is native default behavior. Current finite store-only layout correctly refuses it. Independent raw/source hashes in layout-incompatibility-independent.json. No allowlist broadening/deletion, source repin, native patch or duplicate experiment by this lane. F126C1 owns next explicit narrow source/lifecycle decision. Old unconfined lifecycle did not check final layout, so its PASS is not invalidated but is insufficient for reopen/confinement.
-
-
-### Failed-run/source custody qualified
-
-Focused18/18PASS=10dummy ELF parser controls+8offline receipts, NOT18native successes. First3actual confinement attempts remain FAIL, known third cause exactly unused eager native pairing directories. Three native source snapshots and old finite layout archived at immutable1e97; no original bytes modified/relabelled. Current report/source diagnosis ready for integration with original terminal work. Full suite pending sole original union.
+Independent exact677transport/1805installed/513nativeGit/1162dependency bytes
+checked; all820loadedmodules and13.so tied accepted target. Static13ELF/7system
+library check remains limited; actual matching binaries also loaded in final run.
+Report docs/D3B-CONFINED-ELF-QA-F126C6.md; evidence matchingfolder including
+confined-success-independent-review,reviewed-confined-success,linux-layout,
+reviewed-postfix-failures,final-focused-tests. Original raw native proof remains
+F126C1. Next ONE complete exact source union regression and canonical delivery;
+do not duplicate original native/root/full run. Current own jobs terminal before
+final static/commit. Installednativeeb75627/maincc7ceba unchanged; no push/CI.
+Taskobserver/admission/HTTP/model/provider/fullD3B/powerloss remain OPEN.

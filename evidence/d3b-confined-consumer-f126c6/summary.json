@@ -1,7 +1,7 @@
 {
   "job": "D3B-CONFINED-ELF-QA-F126C6",
-  "result": "PASS_STATIC_ELF_METADATA_NOT_FULL_CONFINEMENT",
-  "at": "2026-10-24T01:01:59.229408+03:00",
+  "result": "PASS_INDEPENDENT_REVIEW_SCOPED_PREPARED_CONFINEMENT",
+  "at": "2026-10-24T01:12:18.400266+03:00",
   "base": "931e57045bdce466934838dffde7d54527ad3f12",
   "all532OriginalSourcesUnchanged": true,
   "binaryCandidates": 13,
@@ -14,11 +14,11 @@
   "candidateCodeLoadedOrExecuted": false,
   "policyModified": false,
   "parserSyntheticMethods": 10,
-  "offlineReceiptMethods": 8,
-  "focusedTotal": 18,
-  "focusedPassed": 18,
+  "offlineReceiptMethods": 13,
+  "focusedTotal": 23,
+  "focusedPassed": 23,
   "fullStandardSuite": "PENDING_SINGLE_UNION",
-  "fullConfinementAccepted": false,
+  "fullConfinementAccepted": "SCOPED_PREPARED_CONSUMER_ONLY_NOT_ACTIVE_AGENT",
   "nativeExperimentOwner": "F126C1",
   "firstThreeNativeOutcomesAtReview": "FAIL;001missingtransport,002diagnosticgap,003finiteprofileunexpectedentry",
   "newNativeRunByThisBranch": false,
@@ -30,5 +30,13 @@
     "platforms/pairing"
   ],
   "mutationStage": "runner_constructed",
-  "nativeOrLayoutChangedByThisLane": false
+  "nativeOrLayoutChangedByThisLane": false,
+  "realPosixLayoutMethods": 10,
+  "originalConfinedColdStartsReviewed": 2,
+  "controllerNestedPredicates": 44,
+  "targetNestedPredicatesEach": 41,
+  "actualLoadedFilesEach": 820,
+  "actualLoadedElfEach": 13,
+  "preparedConsumerConfinementVerified": true,
+  "sourceChangeOwner": "F126C1"
 }

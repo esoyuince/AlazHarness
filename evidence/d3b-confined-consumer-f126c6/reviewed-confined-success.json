@@ -1,0 +1,554 @@
+{
+  "result": "PASS_SCOPED_CONFINED_PREPARED_CONSUMER",
+  "checks": {
+    "ordinary_uid_host_positive_controls": true,
+    "profile_prepared_as_gateway_uid": true,
+    "wrong_inode_refused_before_projection": true,
+    "wrong_loop_refused_before_projection": true,
+    "minimal_default_refuses_native_scaffold": true,
+    "old_two_store_layout_refuses_response": true,
+    "default_self_mount_stays_denied": true,
+    "write_native_other_process_refused": true,
+    "write_target_checks": true,
+    "write_exec_pid_bound": true,
+    "write_scope_contains_confined_user": true,
+    "write_live_confined_user_blocks_stop": true,
+    "write_lease_retained": true,
+    "write_released_profile_process_still_live": true,
+    "write_native_acquires_after_release": true,
+    "write_image_retained_after_profile_release": true,
+    "write_detach_before_release": true,
+    "write_host_scratch_untouched": true,
+    "write_anchor_empty": true,
+    "old_three_store_layout_still_rejects_prepared_scaffold": true,
+    "read_native_other_process_refused": true,
+    "read_target_checks": true,
+    "read_exec_pid_bound": true,
+    "read_scope_contains_confined_user": true,
+    "read_live_confined_user_blocks_stop": true,
+    "read_lease_retained": true,
+    "read_released_profile_process_still_live": true,
+    "read_native_acquires_after_release": true,
+    "read_image_retained_after_profile_release": true,
+    "read_detach_before_release": true,
+    "read_host_scratch_untouched": true,
+    "read_anchor_empty": true,
+    "rows_and_inodes_survive_detach": true,
+    "second_run_accepted_new_epoch_only": true,
+    "broker_clean_exit": true,
+    "exactly_two_authenticated_pings": true,
+    "zero_physical_provider_attempts": true,
+    "broker_private_files_unchanged": true,
+    "parent_mount_table_unchanged": true,
+    "no_remaining_loop": true,
+    "no_remaining_fence": true,
+    "no_remaining_scopes": true,
+    "no_forced_cleanup": true,
+    "source_bytes_unchanged": true
+  },
+  "checkCount": 44,
+  "error": null,
+  "forcedCleanup": false,
+  "realExt4Image": true,
+  "imageBytes": 67108864,
+  "imageRetained": true,
+  "nativeHermesGatewayStarted": false,
+  "nativeProfileLease": true,
+  "cleanOnlyEpochStartupTested": true,
+  "pendingStartupRefusalTested": false,
+  "nativeStoreLayoutTested": true,
+  "productStoreStartupInvoked": true,
+  "fullAdmissionGateImplemented": false,
+  "readinessHttpUnderFullIsolation": false,
+  "preparedConsumerUnderFullIsolation": true,
+  "threeStoreReadiness": true,
+  "agentModelExecutionTested": false,
+  "nativeAgentHttpAdapterStarted": false,
+  "legacyIpcV2Enabled": false,
+  "fullD3BAccepted": false,
+  "paidModelCalls": 0,
+  "originalRawSha256": "638442c61c128a999e2917121de29f5e57daefe60488853736c7db531155ad85",
+  "children": [
+    {
+      "state": "RESULT",
+      "result": "PASS_CONFINED_PREPARED_CONSUMER",
+      "mode": "write",
+      "pid": 25,
+      "receipt": {
+        "version": 1,
+        "state": "confined_state_profile",
+        "pid": 25,
+        "profile": "/run/alaz-state/profile",
+        "profileDevice": 1792,
+        "profileInode": 12,
+        "profileLayout": "hermes-native-prepared-three-stores-cold-v1",
+        "persistentProfileProjected": true,
+        "stateDirectoryCount": 1,
+        "ambientHostDirectoriesBound": 0,
+        "privateEphemeralDirectories": 1,
+        "hostUserNamespacePreserved": true,
+        "rootPrivilegesDropped": true,
+        "afterDrop": {
+          "pid": 25,
+          "uids": [
+            23001,
+            23001,
+            23001,
+            23001
+          ],
+          "gids": [
+            23003,
+            23003,
+            23003,
+            23003
+          ],
+          "groups": [],
+          "threads": 1,
+          "nnp": 1,
+          "caps": {
+            "CapInh": 0,
+            "CapPrm": 0,
+            "CapEff": 0,
+            "CapBnd": 0,
+            "CapAmb": 0
+          },
+          "userns": "user:[4026531837]",
+          "uidMap": [
+            "0",
+            "0",
+            "4294967295"
+          ],
+          "gidMap": [
+            "0",
+            "0",
+            "4294967295"
+          ]
+        },
+        "boundRuntimeRoots": 13,
+        "filesystem": {
+          "version": 1,
+          "state": "enforced",
+          "landlockAbi": 3,
+          "handledFilesystemRights": 32767,
+          "noNewPrivs": true,
+          "closedSelfExecutableFds": 0,
+          "protectedReadDenials": 1,
+          "policySha256": "710e0096eb82c37ce5139f9692ce51319d8f82044a7bfd8cea7dfff4a8e62098",
+          "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+          "selfProcessMetadata": true,
+          "metadataReadFileCount": 6,
+          "selfMountMetadata": true,
+          "networkConfinementVerified": false,
+          "separateHostUid": false
+        },
+        "profileOwnershipAcquired": false,
+        "nativeHermesStoresOpened": false,
+        "realHermesGatewayTested": false,
+        "legacyIpcV2Activated": false,
+        "fullD3BAccepted": false
+      },
+      "checks": {
+        "real_native_profile_lease": true,
+        "real_ext4_image_and_layout": true,
+        "same_profile_inode": true,
+        "wrong_cold_schema_no_parent_opens_or_epoch": true,
+        "wrong_start_retains_caller_lease": true,
+        "exactly_three_original_parent_connections": true,
+        "all_cold_live_gates": true,
+        "expected_epoch_once": true,
+        "no_automatic_recovery": true,
+        "seeded_rows_retained": true,
+        "same_three_existing_connections": true,
+        "same_accepted_epoch": true,
+        "no_service_or_admission": true,
+        "original_owner_blocks_attached_consumer": true,
+        "all_three_transactions_preserved": true,
+        "api_runner_consumer_ordered_detach": true,
+        "handles_alive_after_detach": true,
+        "consumer_no_fourth_connection": true,
+        "consumer_no_raw_database_open": true,
+        "consumer_no_row_change": true,
+        "postdetach_header_change_blocks_close": true,
+        "three_handles_closed_before_profile_release": true,
+        "owner_allows_external_release": true,
+        "finite_prepared_layout_after_close": true,
+        "pairing_scaffold_empty_private": true,
+        "uid_gid_preserved": true,
+        "capabilities_and_groups_empty": true,
+        "inherited_nnp_seccomp": true,
+        "private_namespace_and_original_userns": true,
+        "landlock_abi_enforced": true,
+        "broker_only_ready_ping": true,
+        "host_endpoints_stay_denied": true,
+        "host_private_paths_hidden": true,
+        "canary_read_write_denied": true,
+        "ambient_fd_closed": true,
+        "explicit_tmp_uses_projected_scratch": true,
+        "private_scratch_fresh": true,
+        "seccomp_namespace_reentry_denied": true,
+        "current_native_and_owner_sources_loaded": true,
+        "actual_linux_dependency_binary_loaded": true,
+        "live_writer_retains_profile": true
+      },
+      "checkCount": 41,
+      "stores": {
+        "state.db": {
+          "rows": [],
+          "inode": 27
+        },
+        "runs_idempotency.db": {
+          "rows": [],
+          "inode": 31
+        },
+        "response_store.db": {
+          "rows": [
+            [
+              "resp_f126",
+              "{\"output\": \"persistent three-store fixture\"}"
+            ]
+          ],
+          "inode": 32
+        }
+      },
+      "epoch": 1,
+      "recovered": 0,
+      "nextExpectation": {
+        "native_pin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+        "state_schema_sha256": "f4889e8d91c8b57ee828ac7a1ead9ac880db48f9c21500e3800d4b48b759e8c7",
+        "replay_schema_sha256": "c4adac6a33044a05806868e2518e5f778c62e99d26a73c003fc6112ed3d589a3",
+        "store_instance_id": "70f23adf-6f97-41db-9437-cdbcb25cf83a",
+        "application_id": 1577320747,
+        "state_identity": [
+          1792,
+          27
+        ],
+        "replay_identity": [
+          1792,
+          31
+        ],
+        "epoch": 1,
+        "instance_id": "f126-write",
+        "journal_mode": "delete"
+      },
+      "responseExpectation": {
+        "native_feature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+        "schema_sha256": "c4b66ce0c9b2571b17eae2080834e365b3aa526d40157c8c3cf4f353541ae1b4",
+        "response_identity": [
+          1792,
+          32
+        ],
+        "max_size": 100,
+        "max_identities": 1000
+      },
+      "productStartup": {
+        "state": "VERIFIED",
+        "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+        "responseConfigured": true,
+        "epochObserved": 1,
+        "epochMayHaveAdvanced": true,
+        "unknownConstructorEffects": false,
+        "completedChecks": [
+          "preflight",
+          "response_preflight",
+          "before_epoch",
+          "response_before_epoch",
+          "after_epoch",
+          "response_after_epoch"
+        ],
+        "storageReady": true,
+        "callerLeaseMayBeReleased": false,
+        "recoveryPolicy": "REFUSE_PENDING_NO_REPLAY",
+        "automaticRecoveryPerformed": false,
+        "runtimeAdmissionAuthorized": false,
+        "pairedRecoveryVerified": false,
+        "fullD3BAccepted": false
+      },
+      "consumerStatus": {
+        "state": "DETACHED",
+        "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+        "storesOwnedHere": false,
+        "sameAcceptedEpoch": 1,
+        "serviceStarted": false,
+        "runtimeAdmissionAuthorized": false,
+        "storeReleaseAuthorized": false,
+        "profileReleasedHere": false,
+        "activeTaskObserversQualified": false,
+        "fullD3BAccepted": false
+      },
+      "sourceCount": 820,
+      "sourceDigest": "4eb558a0b1e3275da066aaf1d91c08a5acb631344ebc99a819dd718f4ce83c6f",
+      "actualBinaryImports": {
+        "dependencies/_ruamel_yaml.cpython-312-x86_64-linux-gnu.so": "a232be716cb776f65f28760e47a9a2db33ce740c6719d8e579b74481b82ecda7",
+        "dependencies/jiter/jiter.cpython-312-x86_64-linux-gnu.so": "18cd56d20730bf8195f381bc0fd508e3617582d95dd3510260874beef1503847",
+        "dependencies/psutil/_psutil_linux.abi3.so": "8085c743a77f6059be6d18d54317ccce2e715425bb5f15aa8835770463d6b9fd",
+        "dependencies/charset_normalizer/md.cpython-312-x86_64-linux-gnu.so": "8efd70bb6f5b91f780b0aaf9eaaaed9e2098321c015853c569ef52bb6534df1b",
+        "dependencies/charset_normalizer/cd.cpython-312-x86_64-linux-gnu.so": "b16e644c978a0f7661a6c7b8640556f645bc5840c752b2d8e80c67fdb1f1857d",
+        "dependencies/multidict/_multidict.cpython-312-x86_64-linux-gnu.so": "2ebc449f43657f8460a18167944e4e4e13f00b74bef41c9f2704b9261fb5e1f8",
+        "dependencies/yarl/_quoting_c.cpython-312-x86_64-linux-gnu.so": "deae0fb92793730e5b3924f267c03225360f0756e4cbb3971c5a048010b3245e",
+        "dependencies/propcache/_helpers_c.cpython-312-x86_64-linux-gnu.so": "84f85de74e8900c5e8f7dc08b9f5fe513fab63e1eb21bf4acf1f5f290e744b0a",
+        "dependencies/aiohttp/_http_writer.cpython-312-x86_64-linux-gnu.so": "36f687dda2b63a85a305deed8d896551cbc74034cbb285ab91d099210b1b2338",
+        "dependencies/aiohttp/_http_parser.cpython-312-x86_64-linux-gnu.so": "fbdb69d4b707f0fa75ef3e5d72cc10681903fe428bdba1be2fd9eecbfa5009b2",
+        "dependencies/aiohttp/_websocket/mask.cpython-312-x86_64-linux-gnu.so": "8f9be7e800e262ed6f2332b9818e8b9165adc23c14612c54a2aac887113b1038",
+        "dependencies/aiohttp/_websocket/reader_c.cpython-312-x86_64-linux-gnu.so": "1c727b5d9234ddcdbac7d8c38ffdc49b327598d86e5570b427e68306fee6d028",
+        "dependencies/frozenlist/_frozenlist.cpython-312-x86_64-linux-gnu.so": "533163376b8ddb84f3f3a49d12ba74eda261e0b3a9f00d30f448719033f88b71"
+      },
+      "interpreterSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "hostEndpointErrnos": {
+        "host_tcp": 111,
+        "host_abstract": 111,
+        "ambient": 2,
+        "sibling": 2
+      },
+      "actualOwnerConsumerConfined": true,
+      "nativeMethodsReplaced": false,
+      "coldHelpersDoubled": false,
+      "kernelBoundaryDoubled": false,
+      "activeTaskObserversQualified": false,
+      "serviceOrAdmissionEnabled": false,
+      "providerSends": 0,
+      "fullD3BAccepted": false,
+      "sourceChunks": 26
+    },
+    {
+      "state": "RESULT",
+      "result": "PASS_CONFINED_PREPARED_CONSUMER",
+      "mode": "read",
+      "pid": 37,
+      "receipt": {
+        "version": 1,
+        "state": "confined_state_profile",
+        "pid": 37,
+        "profile": "/run/alaz-state/profile",
+        "profileDevice": 1792,
+        "profileInode": 12,
+        "profileLayout": "hermes-native-prepared-three-stores-cold-v1",
+        "persistentProfileProjected": true,
+        "stateDirectoryCount": 1,
+        "ambientHostDirectoriesBound": 0,
+        "privateEphemeralDirectories": 1,
+        "hostUserNamespacePreserved": true,
+        "rootPrivilegesDropped": true,
+        "afterDrop": {
+          "pid": 37,
+          "uids": [
+            23001,
+            23001,
+            23001,
+            23001
+          ],
+          "gids": [
+            23003,
+            23003,
+            23003,
+            23003
+          ],
+          "groups": [],
+          "threads": 1,
+          "nnp": 1,
+          "caps": {
+            "CapInh": 0,
+            "CapPrm": 0,
+            "CapEff": 0,
+            "CapBnd": 0,
+            "CapAmb": 0
+          },
+          "userns": "user:[4026531837]",
+          "uidMap": [
+            "0",
+            "0",
+            "4294967295"
+          ],
+          "gidMap": [
+            "0",
+            "0",
+            "4294967295"
+          ]
+        },
+        "boundRuntimeRoots": 13,
+        "filesystem": {
+          "version": 1,
+          "state": "enforced",
+          "landlockAbi": 3,
+          "handledFilesystemRights": 32767,
+          "noNewPrivs": true,
+          "closedSelfExecutableFds": 0,
+          "protectedReadDenials": 1,
+          "policySha256": "710e0096eb82c37ce5139f9692ce51319d8f82044a7bfd8cea7dfff4a8e62098",
+          "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+          "selfProcessMetadata": true,
+          "metadataReadFileCount": 6,
+          "selfMountMetadata": true,
+          "networkConfinementVerified": false,
+          "separateHostUid": false
+        },
+        "profileOwnershipAcquired": false,
+        "nativeHermesStoresOpened": false,
+        "realHermesGatewayTested": false,
+        "legacyIpcV2Activated": false,
+        "fullD3BAccepted": false
+      },
+      "checks": {
+        "real_native_profile_lease": true,
+        "real_ext4_image_and_layout": true,
+        "same_profile_inode": true,
+        "wrong_cold_schema_no_parent_opens_or_epoch": true,
+        "wrong_start_retains_caller_lease": true,
+        "exactly_three_original_parent_connections": true,
+        "all_cold_live_gates": true,
+        "expected_epoch_once": true,
+        "no_automatic_recovery": true,
+        "seeded_rows_retained": true,
+        "same_three_existing_connections": true,
+        "same_accepted_epoch": true,
+        "no_service_or_admission": true,
+        "original_owner_blocks_attached_consumer": true,
+        "all_three_transactions_preserved": true,
+        "api_runner_consumer_ordered_detach": true,
+        "handles_alive_after_detach": true,
+        "consumer_no_fourth_connection": true,
+        "consumer_no_raw_database_open": true,
+        "consumer_no_row_change": true,
+        "postdetach_header_change_blocks_close": true,
+        "three_handles_closed_before_profile_release": true,
+        "owner_allows_external_release": true,
+        "finite_prepared_layout_after_close": true,
+        "pairing_scaffold_empty_private": true,
+        "uid_gid_preserved": true,
+        "capabilities_and_groups_empty": true,
+        "inherited_nnp_seccomp": true,
+        "private_namespace_and_original_userns": true,
+        "landlock_abi_enforced": true,
+        "broker_only_ready_ping": true,
+        "host_endpoints_stay_denied": true,
+        "host_private_paths_hidden": true,
+        "canary_read_write_denied": true,
+        "ambient_fd_closed": true,
+        "explicit_tmp_uses_projected_scratch": true,
+        "private_scratch_fresh": true,
+        "seccomp_namespace_reentry_denied": true,
+        "current_native_and_owner_sources_loaded": true,
+        "actual_linux_dependency_binary_loaded": true,
+        "live_writer_retains_profile": true
+      },
+      "checkCount": 41,
+      "stores": {
+        "state.db": {
+          "rows": [],
+          "inode": 27
+        },
+        "runs_idempotency.db": {
+          "rows": [],
+          "inode": 31
+        },
+        "response_store.db": {
+          "rows": [
+            [
+              "resp_f126",
+              "{\"output\": \"persistent three-store fixture\"}"
+            ]
+          ],
+          "inode": 32
+        }
+      },
+      "epoch": 2,
+      "recovered": 0,
+      "nextExpectation": {
+        "native_pin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+        "state_schema_sha256": "f4889e8d91c8b57ee828ac7a1ead9ac880db48f9c21500e3800d4b48b759e8c7",
+        "replay_schema_sha256": "c4adac6a33044a05806868e2518e5f778c62e99d26a73c003fc6112ed3d589a3",
+        "store_instance_id": "70f23adf-6f97-41db-9437-cdbcb25cf83a",
+        "application_id": 1577320747,
+        "state_identity": [
+          1792,
+          27
+        ],
+        "replay_identity": [
+          1792,
+          31
+        ],
+        "epoch": 2,
+        "instance_id": "f126-read",
+        "journal_mode": "delete"
+      },
+      "responseExpectation": {
+        "native_feature": "cc16c10b16a0ca8d80b23fd9be3f0e59ee605075",
+        "schema_sha256": "c4b66ce0c9b2571b17eae2080834e365b3aa526d40157c8c3cf4f353541ae1b4",
+        "response_identity": [
+          1792,
+          32
+        ],
+        "max_size": 100,
+        "max_identities": 1000
+      },
+      "productStartup": {
+        "state": "VERIFIED",
+        "nativePin": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+        "responseConfigured": true,
+        "epochObserved": 2,
+        "epochMayHaveAdvanced": true,
+        "unknownConstructorEffects": false,
+        "completedChecks": [
+          "preflight",
+          "response_preflight",
+          "before_epoch",
+          "response_before_epoch",
+          "after_epoch",
+          "response_after_epoch"
+        ],
+        "storageReady": true,
+        "callerLeaseMayBeReleased": false,
+        "recoveryPolicy": "REFUSE_PENDING_NO_REPLAY",
+        "automaticRecoveryPerformed": false,
+        "runtimeAdmissionAuthorized": false,
+        "pairedRecoveryVerified": false,
+        "fullD3BAccepted": false
+      },
+      "consumerStatus": {
+        "state": "DETACHED",
+        "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+        "storesOwnedHere": false,
+        "sameAcceptedEpoch": 2,
+        "serviceStarted": false,
+        "runtimeAdmissionAuthorized": false,
+        "storeReleaseAuthorized": false,
+        "profileReleasedHere": false,
+        "activeTaskObserversQualified": false,
+        "fullD3BAccepted": false
+      },
+      "sourceCount": 820,
+      "sourceDigest": "4eb558a0b1e3275da066aaf1d91c08a5acb631344ebc99a819dd718f4ce83c6f",
+      "actualBinaryImports": {
+        "dependencies/_ruamel_yaml.cpython-312-x86_64-linux-gnu.so": "a232be716cb776f65f28760e47a9a2db33ce740c6719d8e579b74481b82ecda7",
+        "dependencies/jiter/jiter.cpython-312-x86_64-linux-gnu.so": "18cd56d20730bf8195f381bc0fd508e3617582d95dd3510260874beef1503847",
+        "dependencies/psutil/_psutil_linux.abi3.so": "8085c743a77f6059be6d18d54317ccce2e715425bb5f15aa8835770463d6b9fd",
+        "dependencies/charset_normalizer/md.cpython-312-x86_64-linux-gnu.so": "8efd70bb6f5b91f780b0aaf9eaaaed9e2098321c015853c569ef52bb6534df1b",
+        "dependencies/charset_normalizer/cd.cpython-312-x86_64-linux-gnu.so": "b16e644c978a0f7661a6c7b8640556f645bc5840c752b2d8e80c67fdb1f1857d",
+        "dependencies/multidict/_multidict.cpython-312-x86_64-linux-gnu.so": "2ebc449f43657f8460a18167944e4e4e13f00b74bef41c9f2704b9261fb5e1f8",
+        "dependencies/yarl/_quoting_c.cpython-312-x86_64-linux-gnu.so": "deae0fb92793730e5b3924f267c03225360f0756e4cbb3971c5a048010b3245e",
+        "dependencies/propcache/_helpers_c.cpython-312-x86_64-linux-gnu.so": "84f85de74e8900c5e8f7dc08b9f5fe513fab63e1eb21bf4acf1f5f290e744b0a",
+        "dependencies/aiohttp/_http_writer.cpython-312-x86_64-linux-gnu.so": "36f687dda2b63a85a305deed8d896551cbc74034cbb285ab91d099210b1b2338",
+        "dependencies/aiohttp/_http_parser.cpython-312-x86_64-linux-gnu.so": "fbdb69d4b707f0fa75ef3e5d72cc10681903fe428bdba1be2fd9eecbfa5009b2",
+        "dependencies/aiohttp/_websocket/mask.cpython-312-x86_64-linux-gnu.so": "8f9be7e800e262ed6f2332b9818e8b9165adc23c14612c54a2aac887113b1038",
+        "dependencies/aiohttp/_websocket/reader_c.cpython-312-x86_64-linux-gnu.so": "1c727b5d9234ddcdbac7d8c38ffdc49b327598d86e5570b427e68306fee6d028",
+        "dependencies/frozenlist/_frozenlist.cpython-312-x86_64-linux-gnu.so": "533163376b8ddb84f3f3a49d12ba74eda261e0b3a9f00d30f448719033f88b71"
+      },
+      "interpreterSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "hostEndpointErrnos": {
+        "host_tcp": 111,
+        "host_abstract": 111,
+        "ambient": 2,
+        "sibling": 2
+      },
+      "actualOwnerConsumerConfined": true,
+      "nativeMethodsReplaced": false,
+      "coldHelpersDoubled": false,
+      "kernelBoundaryDoubled": false,
+      "activeTaskObserversQualified": false,
+      "serviceOrAdmissionEnabled": false,
+      "providerSends": 0,
+      "fullD3BAccepted": false,
+      "sourceChunks": 26
+    }
+  ],
+  "actualLoadedSourceDigest": "4eb558a0b1e3275da066aaf1d91c08a5acb631344ebc99a819dd718f4ce83c6f"
+}
