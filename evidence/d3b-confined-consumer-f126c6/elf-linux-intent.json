@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T00:51:20.467880+03:00",
+  "scope": "ordinary user read-only ELF metadata and version-name closure in existing permitted system roots",
+  "rootUsed": false,
+  "candidateBytesExecuted": false,
+  "noPolicyExpansion": true,
+  "qaSha256": "2de29db071c3afec43ea077341af59489ad5549ab87ae0477a26e4a4f380edf6"
+}

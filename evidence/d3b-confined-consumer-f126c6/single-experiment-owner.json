@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-24T00:49:01.627849+03:00",
+  "owner": "F126C1",
+  "ownRole": "independent fixed source, ELF dependency and confinement evidence review",
+  "duplicateDrafts": {
+    "scripts/qa/f126c6_accept.py": {
+      "archive": "evidence/d3b-confined-consumer-f126c6/not-executed-controller-draft/f126c6_accept.py.txt",
+      "sha256": "4aa0581a57daa0162fd32daf600ce4eb50b214b408cb2f4d38a37e15b8c38cc4",
+      "executed": false
+    },
+    "scripts/qa/f126c6_child.py": {
+      "archive": "evidence/d3b-confined-consumer-f126c6/not-executed-controller-draft/f126c6_child.py.txt",
+      "sha256": "d488abb373864f43e2617fdd5ad7e90e7fce3ffee8594a93217eeb00d146969d",
+      "executed": false
+    }
+  },
+  "rootOrLinuxExperimentStartedByOwnDraft": false,
+  "parallelWorktreeModified": false
+}

@@ -1,0 +1,72 @@
+{
+  "qaSha256": "2de29db071c3afec43ea077341af59489ad5549ab87ae0477a26e4a4f380edf6",
+  "inputSha256": "fc365acfaf64e3e8949210fb53565a8a73f9ef6af580812afc69b973ae068c60",
+  "elfs": {
+    "aiohttp/_http_parser.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "20f085697d7e911f1f73c43ed03fafbed1e7121797e2eb5428efa80398060584",
+      "elfSha256": "fbdb69d4b707f0fa75ef3e5d72cc10681903fe428bdba1be2fd9eecbfa5009b2"
+    },
+    "aiohttp/_http_writer.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "20f085697d7e911f1f73c43ed03fafbed1e7121797e2eb5428efa80398060584",
+      "elfSha256": "36f687dda2b63a85a305deed8d896551cbc74034cbb285ab91d099210b1b2338"
+    },
+    "aiohttp/_websocket/mask.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "20f085697d7e911f1f73c43ed03fafbed1e7121797e2eb5428efa80398060584",
+      "elfSha256": "8f9be7e800e262ed6f2332b9818e8b9165adc23c14612c54a2aac887113b1038"
+    },
+    "aiohttp/_websocket/reader_c.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "20f085697d7e911f1f73c43ed03fafbed1e7121797e2eb5428efa80398060584",
+      "elfSha256": "1c727b5d9234ddcdbac7d8c38ffdc49b327598d86e5570b427e68306fee6d028"
+    },
+    "charset_normalizer/cd.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08",
+      "elfSha256": "b16e644c978a0f7661a6c7b8640556f645bc5840c752b2d8e80c67fdb1f1857d"
+    },
+    "charset_normalizer/md.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08",
+      "elfSha256": "8efd70bb6f5b91f780b0aaf9eaaaed9e2098321c015853c569ef52bb6534df1b"
+    },
+    "frozenlist/_frozenlist.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "wheelSha256": "494a5952b1c597ba44e0e78113a7266e656b9794eec897b19ead706bd7074383",
+      "elfSha256": "533163376b8ddb84f3f3a49d12ba74eda261e0b3a9f00d30f448719033f88b71"
+    },
+    "jiter/jiter.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "jiter-0.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "wheelSha256": "46add52f4ad47a08bfb1219f3e673da972191489a33016edefdb5ea55bfa8c48",
+      "elfSha256": "18cd56d20730bf8195f381bc0fd508e3617582d95dd3510260874beef1503847"
+    },
+    "multidict/_multidict.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "multidict-6.9.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "976fd7689d69ec78d67d31d38d396d8adb562f7e8368279f76aed4aa451fa06d",
+      "elfSha256": "2ebc449f43657f8460a18167944e4e4e13f00b74bef41c9f2704b9261fb5e1f8"
+    },
+    "propcache/_helpers_c.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "propcache-0.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "6f328175a2cde1f0ff2c4ed8ce968b9dcfb55f3a7153f39e2957ed994da13476",
+      "elfSha256": "84f85de74e8900c5e8f7dc08b9f5fe513fab63e1eb21bf4acf1f5f290e744b0a"
+    },
+    "psutil/_psutil_linux.abi3.so": {
+      "wheel": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+      "elfSha256": "8085c743a77f6059be6d18d54317ccce2e715425bb5f15aa8835770463d6b9fd"
+    },
+    "_ruamel_yaml.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "ruamel_yaml_clib-0.2.15-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "11e5499db1ccbc7f4b41f0565e4f799d863ea720e01d3e99fa0b7b5fcd7802c9",
+      "elfSha256": "a232be716cb776f65f28760e47a9a2db33ce740c6719d8e579b74481b82ecda7"
+    },
+    "yarl/_quoting_c.cpython-312-x86_64-linux-gnu.so": {
+      "wheel": "yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheelSha256": "c6f117789d22dce188e5754e8bc65b7e6ebf8cb73963b9fa761f672a5883769d",
+      "elfSha256": "deae0fb92793730e5b3924f267c03225360f0756e4cbb3971c5a048010b3245e"
+    }
+  },
+  "nativeOrDependencyCodeLoaded": false
+}
