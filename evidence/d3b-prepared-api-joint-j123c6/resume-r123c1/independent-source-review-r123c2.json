@@ -1,0 +1,121 @@
+{
+  "job": "D3B-RESUME-INDEPENDENT-R123C2",
+  "at": "2026-10-23T22:23:59.117042+03:00",
+  "canonicalBefore": "1e511717f78d2a44901ab92b88ff476d49c6d1f8",
+  "testedSourceMerge": "379977c8531122a589dfdf816a2a48ed6ba40823",
+  "stagedNativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "independentReadOnlyAuditRequest": "d123c914-0aaa-465d-b936-223456000008",
+  "all512SourcesAndSevenPatchesExact": true,
+  "recordedFullWindows": {
+    "total": 3190,
+    "passed": 3167,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "recoveredNativeMethods": 22,
+  "independentlyVerifiedActualNativeImportsAgainstImmutableGit": 501,
+  "latestSelectedLogDistinctPassedMethods": 59,
+  "selectedBreakdown": {
+    "offlineNativeReceipts": 14,
+    "dependencyDoubledStartupContracts": 45
+  },
+  "newNativeOrFullRunByIndependentReview": false,
+  "sourceComparisons": [
+    {
+      "harnessModule": "gateway_canonical_run_binding.py",
+      "nativeModule": "gateway/session_authority.py",
+      "expectedSha256": "035d5a5dee4090bbd85b275a9b33981d8d1378730b9400319a8cf7bf5a0bdff8",
+      "stagedFeatureSha256": "48b438675a68380cc8462f6c441196ac380eec7cd12a3f84b6c13f17326d896b",
+      "matches": false
+    },
+    {
+      "harnessModule": "gateway_canonical_run_binding.py",
+      "nativeModule": "gateway/session_api_turn.py",
+      "expectedSha256": "feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f",
+      "stagedFeatureSha256": "feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_run_binding.py",
+      "nativeModule": "gateway/platforms/api_server_run_observation.py",
+      "expectedSha256": "a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01",
+      "stagedFeatureSha256": "a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_run_binding.py",
+      "nativeModule": "gateway/platforms/api_server_runs.py",
+      "expectedSha256": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+      "stagedFeatureSha256": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_run_binding.py",
+      "nativeModule": "gateway/session_runtime_workers.py",
+      "expectedSha256": "3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b",
+      "stagedFeatureSha256": "3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_turn_observation.py",
+      "nativeModule": "gateway/run.py",
+      "expectedSha256": "b06201243d8750ee5b2391826f90d4f2a9d98100701fba0b53f358141c6ce8f9",
+      "stagedFeatureSha256": "7f4fda539a53dca8395210ff73ab7b209a6aeeae5179969d47b0681dea17d311",
+      "matches": false
+    },
+    {
+      "harnessModule": "gateway_canonical_turn_observation.py",
+      "nativeModule": "gateway/run_turn.py",
+      "expectedSha256": "3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72",
+      "stagedFeatureSha256": "3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_turn_observation.py",
+      "nativeModule": "gateway/run_turn_runner.py",
+      "expectedSha256": "b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c",
+      "stagedFeatureSha256": "b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_turn_observation.py",
+      "nativeModule": "gateway/session_execution.py",
+      "expectedSha256": "6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660",
+      "stagedFeatureSha256": "6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_canonical_turn_observation.py",
+      "nativeModule": "gateway/session_runtime_workers.py",
+      "expectedSha256": "3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b",
+      "stagedFeatureSha256": "3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_response_live.py",
+      "nativeModule": "gateway/platforms/api_server_response_store.py",
+      "expectedSha256": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+      "stagedFeatureSha256": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+      "matches": true
+    },
+    {
+      "harnessModule": "gateway_response_live.py",
+      "nativeModule": "gateway/platforms/api_server_response_state.py",
+      "expectedSha256": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+      "stagedFeatureSha256": "8bca7e8c5a7d7e42545b811ecaa34cbe982bfcab363f0a9f4a295f735cf50b83",
+      "matches": true
+    }
+  ],
+  "conclusion": "Storage response source pins still match, but canonical binding and turn observer cannot automatically qualify the staged runtime: session_authority.py and run.py differ. Existing binding also expressly supports non-borrowed authority only. Do not merely replace hashes or infer whole-runtime or mount acceptance from storage source equality.",
+  "observerPinsChanged": false,
+  "preparedStartupConsumerImplementedByReview": false,
+  "serviceOrAdmissionEnabled": false,
+  "previousBlockedActionsRetried": false,
+  "rootWslProviderAction": false,
+  "rootBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "vendorBeforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "pushed": false
+}

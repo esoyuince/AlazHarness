@@ -98,3 +98,22 @@ Evidence joint/resume-r123c1/{intent,selected-result,startup-source-boundary,sum
 and static-final.txt. Original status saved docs/status-history/r123c1-delivery-before-resume.md.
 Main/vendor unchanged, no blocked retry/root/WSL/provider/push. All own jobs
 terminal; final documentation commit only. Current GitHEAD identifies checkpoint.
+
+
+### R123C2 independent source / continuation check
+
+Read-only audit000008 independently confirms512 source hashes,7patches and501
+actually imported native file hashes against immutable1e97Git. Selected59-result
+log and test definitions match (14offline receipts+45doubled lifecycle contracts);
+no additional native/full execution. Recovery checkpoint1e511717 retained.
+
+Exact observer source blockers, not a new production defect: canonical binding
+expects old gateway/session_authority.py, and turn observer expects old
+gateway/run.py. Both hashes differ on staged1e97. Response store/binding pins
+still match; that does not qualify changed runner/authority or a borrowed active
+path. Existing canonical binding explicitly supports non-borrowed authority only.
+Do NOT simply replace hashes, weaken source checks, or label prior proofs current.
+Next consumer integration must preserve API->runner->stores->lease ownership and
+qualify these two changed native boundaries on actual lifecycle before activation.
+Product/native pins unchanged. Independent review JSON and static check under
+joint/resume-r123c1. No root/WSL/provider/main/push or blocked-action retry.
