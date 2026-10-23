@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-23T03:55:48.040552+03:00",
+  "previousSha256": "a2d49ec2153a2432d1423eabb446f47b751d1e58bdc49193c228dabd9959598b",
+  "currentSha256": "80ac8275ceeb34bfaeaffdb9164b376cc5e5620883f255479a49fb888c14b634",
+  "reason": "successful task retirement requires real task success, native removal and all linked committed terminal records; do not permanently retain normally completed tasks",
+  "originalNative22CaseProof": "historical until rerun on refined source",
+  "otherWorktreeModified": false
+}

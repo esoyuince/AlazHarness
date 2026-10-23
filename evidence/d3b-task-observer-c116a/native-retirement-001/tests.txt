@@ -1,0 +1,13 @@
+test_native_metadata_removal_is_not_observer_responsibility (__main__.NativeRetirement.test_native_metadata_removal_is_not_observer_responsibility) ... ok
+test_real_cancelled_task_cannot_be_forgiven_by_done_flag (__main__.NativeRetirement.test_real_cancelled_task_cannot_be_forgiven_by_done_flag) ... ok
+test_real_completed_binding_mismatch_latches (__main__.NativeRetirement.test_real_completed_binding_mismatch_latches) ... ok
+test_real_failed_task_not_retired_despite_terminal_rows (__main__.NativeRetirement.test_real_failed_task_not_retired_despite_terminal_rows) ... ok
+test_real_partial_settlement_keeps_observation (__main__.NativeRetirement.test_real_partial_settlement_keeps_observation) ... ok
+test_real_queue_running_settling_success_to_empty_inventory (__main__.NativeRetirement.test_real_queue_running_settling_success_to_empty_inventory) ... ok
+test_real_response_transaction_blocks_retirement_without_rollback (__main__.NativeRetirement.test_real_response_transaction_blocks_retirement_without_rollback) ... ok
+test_success_does_not_end_latched_drain (__main__.NativeRetirement.test_success_does_not_end_latched_drain) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 14.667s
+
+OK
