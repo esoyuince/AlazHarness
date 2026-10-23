@@ -1,0 +1,7 @@
+{
+  "request": "f118a622-d0ea-4ec7-a922-118000000026",
+  "result": "SYNTAX_ERROR_BEFORE_ANY_COMMAND_BODY_EXECUTED",
+  "fullTestsStarted": false,
+  "sourceOrEvidenceWrittenByFailedCall": false,
+  "correction": "use triple-quoted status text; this next request is first actual full run"
+}

@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "total": 3119,
+  "discovered": 3119,
+  "passed": 3096,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 483,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "allOriginal474SourcesUnchanged": true,
+  "focusedMethods": 27,
+  "elapsedSeconds": 322.442,
+  "at": "2026-10-23T15:35:54.457334+03:00",
+  "scope": "native worker/count patch artifact + companion/QA union and complete harness regression; no installed feature, canonical executor, active-work storage/HTTP/isolation acceptance"
+}

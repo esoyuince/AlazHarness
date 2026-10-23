@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-23T15:29:11.392262+03:00",
+  "base": "250e218fe12883db320dbed02763d4fea8d6bce8",
+  "ownerSourceCommit": "15498974b6bd97074d11c07fd43e0b44ade980f4",
+  "independentAcceptanceCommit": "c6b0fe66acc45aed06e88ff7924849685af26b35",
+  "nativeFeatureCommit": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "counterNativeAncestor": "24165690b15f479f90f4bb7ac8751ae65c6f21fe",
+  "allOriginal474SourcesUnchanged": true,
+  "independentCounterResultSha256": "0ed848a6192887d9830d5dcfe023ad2a92927321024974c026a81198ed77dd18",
+  "independentWorkerResultSha256": "74ff230cca557bce619e769b9cc85f5bf120fd3e1af3116d9924cd2f08037bda",
+  "nativeRerunByUnion": false,
+  "fullStandardRun": "NEXT_ONE_NEW_RUN"
+}
