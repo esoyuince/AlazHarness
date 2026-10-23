@@ -121,3 +121,7 @@ complete log.86 original evidence Git blobs retained.14 offline receipts are
 standard-suite subsets. This is the single new complete union run, not summing
 old full/native packages. Local static result is recorded separately; no remote
 CI, native feature installation or active service acceptance is inferred.
+
+## Canonical artifact delivery
+
+Tested merge `379977c8531122a589dfdf816a2a48ed6ba40823` fast-forwarded from `fd3cdc26d3c9d9590bc8da7f516b965409be5140` into the canonical development branch. All512 source hashes and7patch hashes match the complete run; final14 offline receipts PASS. This handoff changes docs/static evidence only. Native feature1e97dd61 remains STAGED/NOT INSTALLED; installed nativeeb75627 and maincc7ceba unchanged. No new native/full run, listener/admission activation or push. Current status.md is the resume point.

@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "total": 14,
+  "passed": 14,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "scope": "offline original and independent receipts on delivered source; not a new native run"
+}
