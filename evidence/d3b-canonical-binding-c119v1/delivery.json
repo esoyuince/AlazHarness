@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-23T17:51:57.047382+03:00",
+  "testedSourceCommit": "68f1b833d633766a2a3c958572bcc7281243337e",
+  "canonicalBefore": "e814e4cc771f40f49f4ecd7753c9cf15ec913255",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "promotion": "fast-forward preserving history",
+  "sourceCount": 487,
+  "allSourceAnd4PatchHashesExact": true,
+  "all483PreviousSourcesUnchanged": true,
+  "fullWindows": {
+    "total": 3134,
+    "passed": 3111,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "currentNativeMethods": 27,
+  "canonicalSelectedMethods": 15,
+  "static": "PASS_ON_EXACT_SOURCE",
+  "nativeImportsMatchedGit": 501,
+  "actualTurnRunnerAdoptionTested": false,
+  "borrowedCanonicalBootstrapQualified": false,
+  "activeWorkHttpEnabled": false,
+  "physicalWorkerAndFullIsolationAccepted": false,
+  "rootPreexistingStatusUnchanged": true,
+  "installedNativeHead": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "main": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "mainChanged": false,
+  "pushed": false,
+  "oldBlocksRetried": false,
+  "newNativePatch": false
+}

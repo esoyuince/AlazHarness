@@ -105,3 +105,7 @@ Native002 completed27/27 PASS on exact current code. All501 imported native Pyth
 ## Terminal full standard result
 
 New fullWindows3134=3111PASS/23SKIP/0ERROR/0FAIL. All487 source hashes and4existing patch hashes stable; all483 previous source files unchanged. Native00227 methods and9pure+6offline standard methods have distinct scope; subsets are not added together. The complete runner finished exit0. Static verification is recorded separately; no installed activation, main merge or push. Actual TurnRunner adoption, shared borrowed canonical ownership, active-work profile/mount/third-store isolation and HTTP remain open.
+
+## Canonical delivery
+
+Tested commit `68f1b833d633766a2a3c958572bcc7281243337e` fast-forwarded into alaz/d3b-principal-launch-21oct. All487 source and4patch hashes match; final15 selected methods passed again. Final handoff changes only documentation/evidence. Installed native remains eb75627; maincc7ceba/no push.

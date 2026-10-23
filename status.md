@@ -1,8 +1,9 @@
 # AlazHarness - status
 
-## D3B-CANONICAL-BINDING-C119V1 - SCOPED CORRELATION PASS; CANONICAL DELIVERY PENDING
+## D3B-CANONICAL-BINDING-C119V1 - DEVELOPMENT-INTEGRATED; NAMED CANONICAL CORRELATION PASS
 
-Branch alaz/d3b-canonical-binding-c119v1; worktree scratch/worktrees/d3b-canonical-binding-c119v1.
+Canonical branch alaz/d3b-principal-launch-21oct; worktree
+C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
 Basee814e4c. One additive gateway_canonical_run_binding companion; existing native
 RunLifecycleChannel/SessionAuthority/SessionStore/API admission/FIFO/claim/settle
 remain unchanged. No new native patch, scheduler, ledger or task owner.
@@ -47,3 +48,7 @@ Report docs/D3B-CANONICAL-BINDING-C119V1.md. Evidence under
  source-custody.json,scope-review.json,full-windows-result.json,
  full-source/patch manifests, selected-final.txt,static-final.txt.
 Prior handoffs docs/status-history/c119v1-*.md. All native/full jobs terminal.
+
+### Exact delivery
+
+Tested source 68f1b833d633766a2a3c958572bcc7281243337e; previous canonical e814e4cc771f40f49f4ecd7753c9cf15ec913255 fast-forwarded. Source487/patch4 hashes identical, final15selected methods PASS. Main/vendor/source lock unchanged; no push. See delivery.json for scope and current GitHEAD for final docs commit. No native/full replay needed to resume.
