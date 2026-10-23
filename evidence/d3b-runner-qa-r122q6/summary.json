@@ -1,0 +1,34 @@
+{
+  "job": "D3B-RUNNER-QA-R122Q6",
+  "result": "PASS_SCOPED_REAL_RUNNER_PREPARATION_QA",
+  "at": "2026-10-23T21:16:10.099510+03:00",
+  "base": "a941906565ab61af0b85dcbb234a5ba22bfbce98",
+  "original496HarnessSourcesUnchanged": true,
+  "actualNativeMethods": 30,
+  "offlineReceiptMethods": 7,
+  "nativeImportedFiles": 461,
+  "sameTestDriverBeforeAndAfter": true,
+  "beforeFixMethods": {
+    "total": 30,
+    "passed": 24,
+    "failed": 6,
+    "assertionFailures": 15
+  },
+  "defaultBaseline": {
+    "additionalSQLiteConnection": 1,
+    "epochBefore": 1,
+    "epochAfter": 2,
+    "defaultIsBug": false
+  },
+  "nativeImplementationOwner": "R122C4",
+  "nativeMethodsReplaced": false,
+  "fullHarnessSuite": "PENDING_COMBINED_UNION",
+  "sharedThreeStoreApiIntegrated": false,
+  "fullAgentExecutionTested": false,
+  "httpListenerStarted": false,
+  "rootWslAction": false,
+  "providerCalls": 0,
+  "installedNativeActivated": false,
+  "mainChanged": false,
+  "pushed": false
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T21:02:22.883175+03:00",
+  "snapshot": "candidate-snapshot-001.json",
+  "qaSha256": "3bd65c9fe4f8c0996b5ce1b60fd078c60b6552a2bc53002967a2cfb421e7843e",
+  "scope": "24 actual GatewayRunner/authority construction/epoch/rejection cases; no method replacement; real temp profiles"
+}

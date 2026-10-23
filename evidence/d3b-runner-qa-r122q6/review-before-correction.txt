@@ -1,0 +1,29 @@
+# R122Q6 independent prepared-owner review
+
+Real initial constructor24/24 passes do not qualify the missing prepared-owner
+checks. Independent30-case driver confirms six failing parent methods with15
+failing subtest assertions;24 base cases still pass. All fresh profiles removed.
+The original R122C4 narrower owner-drift test also reproduced three failures.
+
+Required invariants before returning the prepared async DB or detaching:
+- Same actual authority object/runner/home/native state/epoch/instance; still
+  retiring and not already retired before detach.
+- Same single-profile SessionAuthorities registry, with exactly the owned home
+  and authority; adding a second slot must not be ignored.
+- Same descriptor object and expected epoch/instance/state/capabilities/served
+  profiles; forged ready/capability metadata is not accepted.
+- Runner stays non-running and draining once prepared. Checking only SQLite's
+  runtime_epoch does not detect changed Python authority/descriptor ownership.
+
+The independent driver exercises genuine native construction, then mutates only
+its own inert fixture metadata and restores it for test cleanup. It never calls
+admission or starts a service. Original failing records and initial seven native
+sources are retained byte-exact. Product correction remains owned by R122C4;
+this task does not edit its native code. Same-case before/after qualification
+is required rather than relying on the initial24 methods.
+
+Counts: raw old passed15 field subtracts failing subtest ids, not parent methods.
+Use drift-before-accounting.json for truthful24 passing/6 failing method totals.
+External version-probe subprocess calls and optional IPv6 capability bind were
+DENIED by the audit hook; not zero attempts. No effective provider/model/listener
+or WSL/root action. Three-store integration and full service lifecycle remain open.

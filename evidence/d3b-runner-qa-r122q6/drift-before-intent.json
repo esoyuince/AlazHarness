@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-23T21:06:18.067854+03:00",
+  "nativeSnapshot": "candidate-snapshot-001.json",
+  "driverSha256": "d3bc4b77daf6cff1e0d94ba00166c5430d9c3d3196fa623dfae339142bc07cdf",
+  "scope": "same initial seven-file snapshot independent30 methods; explicit inert fixture field mutation, never service or task activation"
+}

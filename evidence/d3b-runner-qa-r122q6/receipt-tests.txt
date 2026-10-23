@@ -1,0 +1,12 @@
+test_current_native_import_and_source_bytes (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_current_native_import_and_source_bytes) ... ok
+test_exact_qa_unchanged_before_and_after_native_fix (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_exact_qa_unchanged_before_and_after_native_fix) ... ok
+test_failing_prepared_identity_regression_remains_failure (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_failing_prepared_identity_regression_remains_failure) ... ok
+test_real_default_control_is_preserved_not_called_a_bug (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_real_default_control_is_preserved_not_called_a_bug) ... ok
+test_scope_and_denied_diagnostic_probes_not_provider_acceptance (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_scope_and_denied_diagnostic_probes_not_provider_acceptance) ... ok
+test_thirty_current_real_native_methods_and_cleanup (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_thirty_current_real_native_methods_and_cleanup) ... ok
+test_watched_boundaries_have_no_extra_connection_or_state_write (test_runner_borrow_receipt_r122q6.NativeRunnerReceipt.test_watched_boundaries_have_no_extra_connection_or_state_write) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.122s
+
+OK

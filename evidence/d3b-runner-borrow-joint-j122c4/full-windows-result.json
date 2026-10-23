@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "total": 3176,
+  "discovered": 3176,
+  "passed": 3153,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 505,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "all496OriginalSourcesUnchanged": true,
+  "elapsedSeconds": 189.291,
+  "at": "2026-10-23T21:22:09.153408+03:00",
+  "scope": "new full harness union with staged native construction/preparation patch and actual-native receipts; not service/runtime/HTTP/isolation acceptance"
+}

@@ -1,0 +1,18 @@
+{
+  "rawResultUnchanged": true,
+  "actualMethods": 30,
+  "passedMethods": 24,
+  "failedMethods": 6,
+  "failedAssertionsIncludingSubtests": 15,
+  "failedMethodIds": [
+    "__main__.PreparedIdentityChecks.test_prepared_authority_flags_cannot_become_active",
+    "__main__.PreparedIdentityChecks.test_prepared_authority_identity_rechecked_on_selection",
+    "__main__.PreparedIdentityChecks.test_prepared_descriptor_identity_blocks_detach",
+    "__main__.PreparedIdentityChecks.test_prepared_descriptor_values_cannot_claim_readiness",
+    "__main__.PreparedIdentityChecks.test_prepared_registry_extra_slot_cannot_be_ignored_on_detach",
+    "__main__.PreparedIdentityChecks.test_prepared_runner_flags_must_stay_not_running_and_draining"
+  ],
+  "rawPassedField": 15,
+  "rawPassedFieldMeaning": "original runner subtracts failing subtest identities, not failing parent methods; use this explicit parent accounting for before-fix comparison",
+  "temporaryRootRemoved": true
+}
