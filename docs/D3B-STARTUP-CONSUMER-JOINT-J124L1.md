@@ -72,3 +72,7 @@ The first complete combined3212-method run retained one failing C119 baseline as
 ## Terminal complete regression
 
 NEW final full3212=3189PASS/23SKIP/0ERROR/0FAIL exit0.522 source/config/test hashes and7 existing patch hashes remained exact. Same23 skipped test identities AND reasons as prior completed run; they were not executed as native acceptance. Of512 prior files,507 are unchanged,1runtime owner and4historical receipt bindings differ;10 source/test/config additions. Original20 and independent23 native scopes overlap, and8 owner contract tests/14offline receipts are standard subsets.36 original evidence Git blobs preserved. First full one-failure result and native pre-fix failures remain untouched. Local static is recorded separately; no installed/native/Linux/service activation.
+
+## Canonical delivery
+
+Tested commit `a6a3b850cd67f9006fb1e03a90406bc24b92d1d6` fast-forwarded from `66a7bf776bd8df0ea0e0562efa4b03604f93b1fa`. All522 source hashes and7patches match final full3212/3189PASS/23SKIP. Delivered28selected checks passed. Full static-final.txt covers this exact product/test/config set; final handoff changes only docs/evidence and receives bounded syntax/credential/whitespace verification, not another full scan or test run. Installed nativeeb75627 and main unchanged, no push or service activation. Actual Linux acceptance remainsOPEN.

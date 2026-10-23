@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "scope": "bounded final documentation/evidence syntax and credential pattern scan only; not a new complete static/runtime run",
+  "files": {
+    "status.md": "c21401aac4802bfa4e8b25f9ff8ddea4f957a1d9804a8231360fbc713a48ecde",
+    "docs/D3B-STARTUP-CONSUMER-JOINT-J124L1.md": "d242a43cb78daf0b14557b1ff414dea0fafd9ab889270a10e9cb6ca0c49cfffd",
+    "docs/status-history/j124l1-final-work-log.md": "52081927cda5be73292754943c5697f0cbe71b5c9b964928a9546b347da00f9f",
+    "evidence/d3b-startup-consumer-joint-j124l1/delivery.json": "549c657ec317bf0de417335422b8417ff5a4f18ebbadaeb54991362cc2b8df35",
+    "evidence/d3b-startup-consumer-joint-j124l1/selected-delivery.txt": "0a895bb1f6c0f375d85fe66a0e652e311d2098052b497a102f56d9810ee3c1ba",
+    "evidence/d3b-startup-consumer-joint-j124l1/selected-delivery-result.json": "c90c78f4d6e0a83c66dbc17695b275abb62071ed0f58274bfd781cca8ff466cd"
+  },
+  "testedFullStaticResult": "static-final.txt",
+  "all522TestedExecutableSourcesUnchanged": true
+}

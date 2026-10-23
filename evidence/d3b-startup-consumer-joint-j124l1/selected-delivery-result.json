@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "total": 28,
+  "passed": 28,
+  "skipped": 0,
+  "errors": 0,
+  "failures": 0,
+  "scope": "8 doubled owner contracts plus20 offline receipt checks on delivered code; not new native or full run"
+}
