@@ -1,5 +1,35 @@
 # AlazHarness - status
 
+## J133C6 PUBLICATION RESUME - TESTED QA UNION / PUSH-CI-MAIN IN PROGRESS
+
+Active worktree scratch/worktrees/d3b-api-owner-joint-j133c6, branch
+alaz/d3b-api-owner-joint-j133c6. Main6001 already holds the accepted original-owner
+canonical API implementation. This step consolidates independent QA8a15 and the
+original published implementation handoff75c8 while preserving both histories.
+Only status.md conflicted; complete parent copies retained in docs/status-history.
+
+No source/runtime/config/test/patch changes relative to tested union97a3:
+593sources+10patches exact, fullWindows3422=3399PASS23SKIP0ERROR0FAIL exit0.
+Native39/23 and compatibility23/20 scopes remain distinct, Windows OS doubles
+explicit; no finite payload, HTTP, current Linux or model acceptance.
+
+Remote main6001 and its exact alaz/local-ci SUCCESS re-read. Next bounded complete
+outgoing-history scan and local static, commit this docs-only reconciliation,
+push JOINT branch, require exact-SHA alaz/local-ci SUCCESS, re-read main then
+fast-forward local/remote main. No force/squash/reset and no runtime activation.
+Do not start duplicate full/native tests. New source or CI failure blocks promotion.
+
+Final action receipts under evidence/d3b-api-owner-joint-j133c6/publication-resume-r133c8/.
+Current work has not yet pushed the joint or advanced main. Root dirty file bytes,
+installed vendor and prior locks recorded and must stay unchanged. Prior denied
+operations are not repeated. All earlier native/full runs terminal.
+
+Next product milestone after this handoff: actual accepted API -> finite turn ->
+physical worker -> computed result and native retirement. Explicit source closure
+review is required; no test-written terminal state counts as execution.
+
+## Preserved pre-publication acceptance details
+
 ## J133C6 - PRODUCT MAIN6001 PUBLISHED / INDEPENDENT QA UNION97a3 LOCAL ACCEPTED
 
 Active branch alaz/d3b-api-owner-joint-j133c6.
