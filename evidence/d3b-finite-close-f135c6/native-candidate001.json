@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-25T00:08:47.102319+03:00",
+  "nativeBase": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "sourceHashes": {
+    "hermes_cli/goals_borrowed.py": "d3cae86fcde55b03f3032f1f74eea96a963d62f086fb836b7315bfc13504b07e",
+    "gateway/run_borrowed_goals.py": "161401d7db325a16b4f6e401e67393479b2a6da6c8ff6c633cd7f88f29ad0b9e",
+    "hermes_cli/goals.py": "25d199a11742aa42b2345e9a5278dea352edab57094addd4d4e4b5c4981852a9",
+    "gateway/session_ingress.py": "72c99c8936e3ba3bcb962f94779a8855aa35f929bbe360990aff84fec6efcc6c",
+    "gateway/run_borrowed_admission.py": "2c6fe4e45f2d91d2728ad5b46ef2aa81a9ae6bb57307bf760215475588b4f966",
+    "gateway/platforms/api_server_borrowed.py": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+    "gateway/run_borrowed_cleanup.py": "36535d0edada827785fba2f54ba8e2cecf30c5faa45189e3f642e018c178ca6b"
+  },
+  "state": "CANDIDATE001_NOT_ACCEPTED",
+  "explicitApi": "await bundle.retire_idle_runtime() after begin_drain before native sessions retirement",
+  "scope": "idle executor/session/agent close, model-memory-manager remains unqualified; no DB ownership change"
+}

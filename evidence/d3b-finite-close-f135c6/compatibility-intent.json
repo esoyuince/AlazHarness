@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T00:22:08.764395+03:00",
+  "tests": [
+    {
+      "label": "native-publication-compat",
+      "driverSha256": "d36ddb5c882328088487fad490d5ec201514666eb26e33f2c1a33cb9b4cd4e9a",
+      "native": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6"
+    },
+    {
+      "label": "legacy-owner-canonical",
+      "driverSha256": "a8fa626150b54f78417a337bc2c0cefa581607a5767e2b028c545105a50ea78f",
+      "native": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-canonical-api-c131d6"
+    }
+  ],
+  "scope": "53 native publication on new native and39 old canonical same-owner on newharness",
+  "priorMisspelledDriverPreflight": "failed before any test or artifact write"
+}

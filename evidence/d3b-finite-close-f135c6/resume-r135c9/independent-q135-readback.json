@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-25T00:53:20.401569+03:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "actualIndependentNativeUnionFiles": 750,
+  "allActualNativeHashesMatchImmutableFeature": true,
+  "separateNativeMethods": [
+    16,
+    15,
+    6
+  ],
+  "actualIndependentLifecycleScenarios": 2,
+  "records": {
+    "goals-final/goals-result.json": {
+      "sha256": "857165a066b0f4c4d505b995ed3476af3603bfe47203ce795344b21e05737522",
+      "observed": {
+        "result": "PASS_INDEPENDENT_NATIVE_GOALS_BORROWING",
+        "total": 16,
+        "passed": 16,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+        "temporaryRootRemoved": true,
+        "driverSha256": "30ffef55e16f6c99586785253137ccdde557be4f1f4628fc968ae53908f8551e"
+      }
+    },
+    "runtime-final/runtime-result.json": {
+      "sha256": "3dd6b01ee9ee07992d14dbeea1dc668793d74e9690c5da388f03212ff3c3004e",
+      "observed": {
+        "result": "PASS_INDEPENDENT_NATIVE_RUNTIME_RETIREMENT",
+        "total": 15,
+        "passed": 15,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+        "temporaryRootRemoved": true,
+        "driverSha256": "e87153ed55008ff5b196d3423882cf97f1660841fefaae32f7deffbb77162ac2"
+      }
+    },
+    "hints-final/hints-result.json": {
+      "sha256": "9602fa6487cffb4e56129267848035ef90daa4bc80ddaec71abecc2ec5610ad7",
+      "observed": {
+        "result": "PASS_INDEPENDENT_NATIVE_PERSISTED_HINTS",
+        "total": 6,
+        "passed": 6,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+        "temporaryRootRemoved": true,
+        "driverSha256": "b3c790bd6307ac6c7406c05433a45aa03796de57f027375f469dc58774586feb"
+      }
+    },
+    "actual-independent-001/result.json": {
+      "sha256": "83def19fbd379ddebad5dd580f1d7296fd3e166ab4a17ead60fd2a81894e9b4a",
+      "observed": {
+        "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+        "driverSha256": "4c656068f3ed5197022284f185dc80ae594f78c123513c80ddb33a59807ea1f9",
+        "temporaryHomeRemoved": true,
+        "fullLifecycleAccepted": true,
+        "additionalStateDbOpensDuringTurn": 0,
+        "verdict": "NATIVE_COMPUTED_RESULT_AND_RETRY_OBSERVED"
+      }
+    },
+    "actual-independent-failure/result.json": {
+      "sha256": "0d4063dac006d2325c140e5615920ba25c1e142e1d28fb286483c348a605122b",
+      "observed": {
+        "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+        "driverSha256": "4c656068f3ed5197022284f185dc80ae594f78c123513c80ddb33a59807ea1f9",
+        "temporaryHomeRemoved": true,
+        "fullLifecycleAccepted": true,
+        "additionalStateDbOpensDuringTurn": 0,
+        "verdict": "NATIVE_FAILURE_AND_RETRY_OBSERVED"
+      }
+    }
+  },
+  "newNativeExecutionByReview": false,
+  "peerSourcesModified": false,
+  "fullStandardOwner": "R136C6 product worktree, not duplicated",
+  "scope": "real native and original owner with explicit fake model and Windows OS doubles; no Linux/HTTP/provider acceptance"
+}

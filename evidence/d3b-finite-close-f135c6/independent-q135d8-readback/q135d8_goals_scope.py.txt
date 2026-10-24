@@ -1,0 +1,160 @@
+"""Independent actual native goals/loop/heartbeat borrowing and scope revocation.
+Real runner/state/API; no product methods replaced. Direct tests of the native seam,
+not full harness or model execution. Fixture cleanup is reported separately.
+"""
+import asyncio,contextvars,hashlib,json,sys,threading,unittest
+from contextlib import nullcontext
+from pathlib import Path
+from types import SimpleNamespace
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts/qa'))
+import q128c6_native_lifecycle_checks as f
+Base=f.IndependentLifecycle
+OBS=[]
+class GoalsScopeCases(unittest.TestCase):
+    call=Base.call
+    activate=Base.activate
+    drain=Base.drain
+    finish=Base.finish
+    watched=Base.watched
+    assert_open=Base.assert_open
+    def setUp(self):
+        Base.setUp(self)
+        import hermes_cli.goals as goals
+        import hermes_cli.loops as loops
+        import hermes_cli.heartbeat as heartbeat
+        from hermes_cli.goals_borrowed import session_db_scope,current_session_db
+        from gateway.run_borrowed_goals import execution_scope
+        self.goals,self.loops,self.heartbeat=goals,loops,heartbeat
+        self.scope,self.current,self.execution_scope=session_db_scope,current_session_db,execution_scope
+        self.cache_before=dict(goals._DB_CACHE)
+    def tearDown(self):
+        for event in self.releases:event.set()
+        for pool in (self.runner._executor,self.runner._housekeeping_executor):
+            if pool is not None:pool.shutdown(wait=True)
+        # Ordinary-cache baseline alone intentionally uses the registry path.
+        stats=f.Registry.stats()
+        if stats['total_refcounts']:
+            f.Registry.close_all_under(self.home)
+            for key in tuple(self.goals._DB_CACHE):
+                if Path(key).is_relative_to(self.home):del self.goals._DB_CACHE[key]
+        OBS.append({'case':self._testMethodName,'registryBeforeFixtureCleanup':stats,'borrowContextReset':self.current() is None})
+        Base.tearDown(self)
+    def test_no_selected_scope_preserves_default(self):
+        self.assertIsNone(self.current())
+        import hermes_constants
+        home=self.home/'ordinary';home.mkdir();token=hermes_constants.set_hermes_home_override(home)
+        try:
+            first=self.goals._get_session_db();self.assertIsNotNone(first);self.assertIsNot(first,self.state)
+            self.assertIs(self.goals._get_session_db(),first);self.assertEqual(f.Registry.stats()['total_refcounts'],1)
+        finally:hermes_constants.reset_hermes_home_override(token)
+        self.assert_open()
+    def test_three_helper_getters_share_same_original_connection(self):
+        with self.watched(),self.scope(lambda:self.state):
+            for getter in (self.goals._get_session_db,self.loops._get_session_db,self.heartbeat._get_session_db):self.assertIs(getter(),self.state)
+        self.assertEqual(self.goals._DB_CACHE,self.cache_before);self.assertEqual(f.Registry.stats()['total_refcounts'],0);self.assert_open()
+    def test_real_goal_loop_heartbeat_persist_into_caller_store(self):
+        with self.scope(lambda:self.state):
+            self.goals.save_goal('owned',self.goals.GoalState(goal='bounded goal'))
+            self.loops.save_loop('owned',self.loops.LoopState(prompt='bounded loop'))
+            self.heartbeat.save_heartbeat('owned',self.heartbeat.HeartbeatState(prompt='bounded heartbeat',interval_seconds=60))
+            self.assertEqual(self.goals.load_goal('owned').goal,'bounded goal')
+            self.assertEqual(self.loops.load_loop('owned').prompt,'bounded loop')
+            self.assertEqual(self.heartbeat.load_heartbeat('owned').prompt,'bounded heartbeat')
+        self.assertGreater(self.connections[0].total_changes,0);self.assertEqual(f.Registry.stats()['total_refcounts'],0);self.assertEqual(self.goals._DB_CACHE,self.cache_before)
+    def test_expired_copy_refuses_without_registry_fallback(self):
+        with self.scope(lambda:self.state):saved=contextvars.copy_context();self.assertIs(saved.run(self.goals._get_session_db),self.state)
+        with self.watched(),self.assertRaisesRegex(RuntimeError,'scope_expired'):saved.run(self.goals._get_session_db)
+        self.assertEqual(f.Registry.stats()['total_refcounts'],0)
+    def test_nested_scope_restores_outer_and_revokes_inner_copy(self):
+        with self.scope(lambda:self.state):
+            outer=contextvars.copy_context()
+            with self.scope(lambda:self.replay):
+                inner=contextvars.copy_context();self.assertIs(self.current(),self.replay)
+            self.assertIs(self.current(),self.state);self.assertIs(outer.run(self.current),self.state)
+            with self.assertRaisesRegex(RuntimeError,'scope_expired'):inner.run(self.current)
+        with self.assertRaisesRegex(RuntimeError,'scope_expired'):outer.run(self.current)
+    def test_exception_exits_scope_and_revokes_retained_context(self):
+        with self.assertRaisesRegex(ValueError,'explicit'):
+            with self.scope(lambda:self.state):saved=contextvars.copy_context();raise ValueError('explicit')
+        self.assertIsNone(self.current())
+        with self.assertRaisesRegex(RuntimeError,'scope_expired'):saved.run(self.goals._get_session_db)
+    def test_resolver_failure_never_falls_back_to_registry(self):
+        def refused():raise RuntimeError('owned_resolver_refusal')
+        with self.watched(),self.scope(refused),self.assertRaisesRegex(RuntimeError,'owned_resolver_refusal'):self.goals._get_session_db()
+        self.assertEqual(f.Registry.stats()['total_refcounts'],0)
+    def test_missing_state_does_not_fall_back(self):
+        with self.watched(),self.scope(lambda:None),self.assertRaisesRegex(RuntimeError,'state_unavailable'):self.goals._get_session_db()
+    def test_noncallable_resolver_rejected(self):
+        with self.assertRaises(TypeError):
+            with self.scope(self.state):pass
+        self.assertIsNone(self.current())
+    def test_gateway_scope_requires_active_original_authority(self):
+        with self.assertRaises(f.RunnerReject):
+            with self.execution_scope(self.authority,nullcontext()):pass
+        self.activate()
+        with self.watched(),self.execution_scope(self.authority,nullcontext()):self.assertIs(self.goals._get_session_db(),self.state)
+        self.assertIsNone(self.current())
+    def test_foreign_authority_rejected(self):
+        self.activate();foreign=SimpleNamespace(runner=self.runner,db=self.state)
+        with self.assertRaises(f.RunnerReject):
+            with self.execution_scope(foreign,nullcontext()):pass
+        self.assertIsNone(self.current());self.assert_open()
+    def test_foreign_home_in_selected_scope_refuses_before_open(self):
+        self.activate();import hermes_constants
+        with self.execution_scope(self.authority,nullcontext()):
+            token=hermes_constants.set_hermes_home_override(self.home/'foreign')
+            try:
+                with self.watched(),self.assertRaises(f.RunnerReject):self.goals._get_session_db()
+                self.assertFalse((self.home/'foreign').exists())
+            finally:hermes_constants.reset_hermes_home_override(token)
+            self.assertIs(self.goals._get_session_db(),self.state)
+    def test_same_home_wrong_authority_db_refuses(self):
+        self.activate()
+        with self.execution_scope(self.authority,nullcontext()):
+            old=self.authority.db;self.authority.db=object()
+            try:
+                with self.watched(),self.assertRaises(f.RunnerReject):self.goals._get_session_db()
+            finally:self.authority.db=old
+    def test_native_executor_propagates_borrow_without_cache_or_new_writer(self):
+        self.activate()
+        async def trial():
+            with self.execution_scope(self.authority,nullcontext()):
+                with self.watched():db=await self.runner._run_in_executor_with_context(self.goals._get_session_db)
+                self.assertIs(db,self.state)
+        f.LOOP.run_until_complete(trial());self.assertEqual(f.Registry.stats()['total_refcounts'],0);self.assertEqual(self.goals._DB_CACHE,self.cache_before)
+    def test_drain_keeps_accepted_scope_then_drained_rejects(self):
+        self.activate()
+        with self.execution_scope(self.authority,nullcontext()):
+            self.drain();self.assertIs(self.goals._get_session_db(),self.state);self.finish()
+            with self.watched(),self.assertRaises(f.RunnerReject):self.goals._get_session_db()
+        self.assert_open()
+    def test_cancelled_carrier_expires_context_not_still_running_thread(self):
+        self.activate();started=threading.Event();release=threading.Event();done=threading.Event();self.releases.append(release);out=[]
+        def worker():
+            started.set()
+            try:
+                if not release.wait(8):raise TimeoutError('release missing')
+                try:self.goals._get_session_db()
+                except RuntimeError as exc:out.append(str(exc))
+                else:out.append('unexpected_store_access')
+            finally:done.set()
+        async def carrier():
+            with self.execution_scope(self.authority,nullcontext()):await asyncio.to_thread(worker)
+        async def trial():
+            task=asyncio.create_task(carrier())
+            try:
+                for _ in range(1000):
+                    if started.is_set():break
+                    await asyncio.sleep(.002)
+                self.assertTrue(started.is_set());task.cancel()
+                with self.assertRaises(asyncio.CancelledError):await task
+                self.assertFalse(done.is_set());release.set()
+            finally:release.set();await asyncio.gather(task,return_exceptions=True)
+        f.LOOP.run_until_complete(trial());self.assertTrue(done.wait(5));self.assertEqual(out,['goals_borrowed_scope_expired']);self.assertEqual(f.Registry.stats()['total_refcounts'],0);self.assert_open()
+
+def main():
+    f.IndependentLifecycle=GoalsScopeCases;code=f.main();out=Path(sys.argv[sys.argv.index('--output')+1]);r=json.loads((out/'result.json').read_text(encoding='utf-8'))
+    r.update(result='PASS_INDEPENDENT_NATIVE_GOALS_BORROWING' if code==0 else 'FAIL',driverSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),observations=OBS,actualGoalLoopHeartbeatOperations=True,ordinaryRegistryPathChecked=True,nativeMethodsReplaced=False,harnessOwnerAndFullFiniteNotTested=True)
+    (out/'goals-result.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print('GOALS_RESULT '+json.dumps({k:v for k,v in r.items() if k not in ('nativeImports','checks','caseEnd','deniedEvents')}),flush=True);return code
+if __name__=='__main__':raise SystemExit(main())

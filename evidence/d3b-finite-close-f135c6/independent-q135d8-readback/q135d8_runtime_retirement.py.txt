@@ -1,0 +1,186 @@
+"""Independent native idle-resource retirement, with real pools/threads/SQL.
+Agent close callback and retained-cache records are explicitly constructed fixtures.
+No native method replacement, no full harness or computed-turn claim.
+"""
+import asyncio,concurrent.futures,hashlib,json,sys,threading,unittest
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts/qa'))
+import q128c6_native_lifecycle_checks as f
+Base=f.IndependentLifecycle
+OBS=[]
+class Closer:
+    def __init__(self,sid,callback=None):self.session_id=sid;self._memory_manager=None;self.calls=0;self.callback=callback
+    def close(self):
+        self.calls+=1
+        return self.callback() if self.callback is not None else None
+class RuntimeRetirement(unittest.TestCase):
+    setUp=Base.setUp
+    call=Base.call
+    activate=Base.activate
+    drain=Base.drain
+    finish=Base.finish
+    watched=Base.watched
+    assert_open=Base.assert_open
+    def retire(self):return f.LOOP.run_until_complete(self.bundle.retire_idle_runtime())
+    def tearDown(self):
+        for event in self.releases:event.set()
+        task=getattr(self.binding,'_runtime_cleanup_task',None)
+        if task is not None:
+            async def finish_fixture():await asyncio.wait_for(asyncio.gather(task,return_exceptions=True),10)
+            f.LOOP.run_until_complete(finish_fixture())
+        for pool in (self.runner._executor,self.runner._housekeeping_executor):
+            if pool is not None:pool.shutdown(wait=True)
+        OBS.append({'case':self._testMethodName,'phaseBeforeFixtureCleanup':self.binding._stage,
+            'cleanupState':getattr(self.binding,'_runtime_cleanup_state','NEW'),
+            'cacheCountBeforeFixtureCleanup':len(self.runner._agent_cache),
+            'retainedCleanupTask':task is not None,'retainedCleanupTaskDone':task.done() if task else None})
+        Base.tearDown(self)
+    def active(self):self.call(self.bundle.publish_api_adapter);self.activate()
+    def idle_agent(self,callback=None):
+        self.active()
+        from gateway.session_api_turn import admit_api_turn_async
+        async def admit():
+            result=await admit_api_turn_async(self.api,session_id='runtime-owned',request_id='runtime-request',user_message='owned',conversation_history=[])
+            await asyncio.sleep(0);jobs=list(getattr(self.authority,'_mutation_tasks',()))
+            if jobs:await asyncio.gather(*jobs)
+            await asyncio.sleep(0);return result
+        authority,ref,row=f.LOOP.run_until_complete(admit())
+        claim=f.RT.claim_session_input(self.state,epoch=self.epoch,session_id=ref.session_id,_guard=authority._admission_gate())
+        f.RT.settle_session_input(self.state,epoch=self.epoch,admission_id=row['admission_id'],generation=claim['generation'],outcome='completed')
+        from gateway.session_state import SessionState
+        live=authority.sessions[ref.session_id];self.runner._sessions[live.route]=SessionState();self.runner._sessions['*']=SessionState()
+        agent=Closer(ref.session_id,callback);self.runner._agent_cache[live.route]=(agent,0,0,0)
+        self.runner._get_executor();self.drain();return agent,live.route,row
+    def test_retire_requires_drain_before_any_effect(self):
+        with self.assertRaises(f.Reject):self.retire()
+        self.active();pool=self.runner._get_executor()
+        with self.assertRaises(f.Reject):self.retire()
+        self.assertEqual(self.binding._stage,'ACTIVE');self.assertFalse(pool._shutdown);self.assertFalse(self.runner._executor_closing)
+    def test_empty_retirement_and_repeat_preserve_all_caller_handles(self):
+        self.active();self.drain()
+        with self.watched():one=self.retire();two=self.retire();self.finish();f.LOOP.run_until_complete(self.api.disconnect());self.runner.close_all_session_db_handles()
+        self.assertEqual(one['state'],two['state']);self.assertEqual(one['state'],'IDLE_RUNTIME_RETIRED');self.assertEqual(self.binding._stage,'DETACHED');self.assert_open()
+    def test_exact_idle_native_pool_stops_and_cannot_reopen(self):
+        self.active();pool=self.runner._get_executor();self.drain()
+        with self.watched():self.retire()
+        self.assertTrue(pool._shutdown);self.assertIsNone(self.runner._executor);self.assertTrue(self.runner._executor_closing)
+        with self.assertRaises(RuntimeError):pool.submit(lambda:None)
+        with self.assertRaises(RuntimeError):self.runner._get_executor()
+        self.assert_open()
+    def test_actual_thread_blocks_retirement_without_cancel_or_flag_changes(self):
+        self.active();pool=self.runner._get_executor();entered=threading.Event();release=threading.Event();self.releases.append(release)
+        def work():entered.set();return release.wait(8)
+        future=pool.submit(work);self.assertTrue(entered.wait(5));self.drain()
+        try:
+            with self.watched(),self.assertRaises(f.Reject):self.retire()
+            self.assertFalse(future.done());self.assertFalse(pool._shutdown);self.assertFalse(self.runner._executor_closing);self.assertEqual(self.binding._stage,'DRAINING')
+        finally:release.set();future.result(8)
+        pool.shutdown(wait=True);self.retire();self.assert_open()
+    def test_cancelled_awaiter_cannot_hide_physical_worker(self):
+        self.active();pool=self.runner._get_executor();entered=threading.Event();release=threading.Event();self.releases.append(release)
+        def work():entered.set();return release.wait(8)
+        future=pool.submit(work);self.assertTrue(entered.wait(5))
+        async def cancel():
+            wrapped=asyncio.wrap_future(future);wrapped.cancel()
+            with self.assertRaises(asyncio.CancelledError):await wrapped
+        f.LOOP.run_until_complete(cancel());self.drain()
+        try:
+            with self.assertRaises(f.Reject):self.retire()
+            self.assertFalse(future.done());self.assertFalse(pool._shutdown)
+        finally:release.set();future.result(8);pool.shutdown(wait=True)
+        self.retire()
+    def test_open_sql_transactions_rejected_without_rollback(self):
+        self.active();self.drain()
+        for conn in self.connections:
+            conn.execute('BEGIN IMMEDIATE')
+            try:
+                with self.watched(),self.assertRaises((f.Reject,f.RunnerReject)):self.retire()
+                self.assertTrue(conn.in_transaction);self.assertEqual(self.binding._stage,'DRAINING');self.assertFalse(self.runner._executor_closing)
+            finally:conn.rollback()
+        self.retire()
+    def test_unresolved_admission_cannot_be_pruned_to_pass(self):
+        self.active();self.state.create_session('pending','api_server')
+        row=f.RT.admit_session_input(self.state,epoch=self.epoch,principal_id='api',session_id='pending',request_id='pending',payload={'text':'pending'},_authorize_write=self.authority._admission_gate())
+        self.drain()
+        with self.watched(),self.assertRaises((f.Reject,f.RunnerReject)):self.retire()
+        self.assertEqual(f.RT.get_session_admission(self.state,admission_id=row['admission_id'])['status'],'queued');self.assertFalse(self.runner._executor_closing)
+    def test_foreign_pool_and_busy_native_lock_refuse(self):
+        self.active();foreign=concurrent.futures.ThreadPoolExecutor(max_workers=1);self.runner._executor=foreign;self.drain()
+        try:
+            with self.assertRaises(f.Reject):self.retire()
+            self.assertFalse(foreign._shutdown)
+        finally:foreign.shutdown(wait=True);self.runner._executor=None
+        # Using original factory during sealed phase is fixture setup, never admission.
+        pool=self.runner._get_executor();pool._lock.acquire()
+        try:
+            with self.assertRaises(f.Reject):self.retire()
+            self.assertFalse(pool._shutdown);self.assertEqual(self.binding._stage,'DRAINING')
+        finally:pool._lock.release()
+    def test_real_native_cache_plan_closes_once_and_does_not_change_sql(self):
+        agent,route,row=self.idle_agent();before=[c.total_changes for c in self.connections]
+        with self.watched():r=self.retire()
+        self.assertEqual(agent.calls,1);self.assertEqual(r['agentCount'],1);self.assertEqual(r['runnerSessionCount'],2);self.assertEqual(before,[c.total_changes for c in self.connections])
+        self.assertEqual(self.runner._sessions,{});self.assertEqual(self.runner._agent_cache,{});self.assertEqual(len(self.authority.sessions),1)
+        self.call(self.bundle.retire_idle_api_sessions);self.finish();f.LOOP.run_until_complete(self.api.disconnect());self.runner.close_all_session_db_handles();self.assert_open()
+    def test_agent_close_exception_retains_unknown_and_original_refs(self):
+        def fail():raise RuntimeError('fixture agent close failure')
+        agent,route,row=self.idle_agent(fail);pool=self.runner._executor
+        with self.assertRaisesRegex(RuntimeError,'fixture agent close failure'):self.retire()
+        self.assertEqual(self.binding._stage,'ADMISSION_UNKNOWN');self.assertEqual(self.binding._runtime_cleanup_state,'UNKNOWN');self.assertIs(self.runner._executor,pool);self.assertIs(self.runner._agent_cache[route][0],agent);self.assertEqual(agent.calls,1)
+        with self.assertRaises(Exception):self.retire()
+        self.assertEqual(agent.calls,1);self.assert_open()
+    def test_unconfirmed_close_return_retains_unknown(self):
+        agent,route,row=self.idle_agent(lambda:False)
+        with self.assertRaises(f.Reject):self.retire()
+        self.assertEqual(self.binding._stage,'ADMISSION_UNKNOWN');self.assertIs(self.runner._agent_cache[route][0],agent);self.assert_open()
+    def test_memory_provider_agent_refuses_before_cleanup(self):
+        agent,route,row=self.idle_agent();agent._memory_manager=object();pool=self.runner._executor
+        with self.assertRaises(f.Reject):self.retire()
+        self.assertEqual(agent.calls,0);self.assertFalse(pool._shutdown);self.assertEqual(self.binding._stage,'DRAINING')
+    def test_cancelled_retirement_keeps_cleanup_thread_task_and_ownership(self):
+        entered=threading.Event();release=threading.Event();done=threading.Event();self.releases.append(release)
+        def close():
+            entered.set()
+            try:
+                if not release.wait(8):raise TimeoutError('test release')
+            finally:done.set()
+        agent,route,row=self.idle_agent(close)
+        async def trial():
+            task=asyncio.create_task(self.bundle.retire_idle_runtime())
+            try:
+                for _ in range(1000):
+                    if entered.is_set():break
+                    await asyncio.sleep(.002)
+                self.assertTrue(entered.is_set());task.cancel()
+                with self.assertRaises(asyncio.CancelledError):await task
+                self.assertEqual(self.binding._stage,'ADMISSION_UNKNOWN');self.assertFalse(done.is_set());self.assertFalse(self.binding._runtime_cleanup_task.done());self.assertIs(self.runner._agent_cache[route][0],agent)
+                self.assert_open();release.set();await self.binding._runtime_cleanup_task
+                self.assertEqual(self.binding._stage,'ADMISSION_UNKNOWN')
+            finally:release.set();await asyncio.gather(task,return_exceptions=True)
+        f.LOOP.run_until_complete(trial());self.assertTrue(done.wait(5));self.assertEqual(agent.calls,1)
+        with self.assertRaises(Exception):self.retire()
+    def test_late_response_during_close_blocks_cache_removal(self):
+        entered=threading.Event();release=threading.Event();self.releases.append(release)
+        def close():entered.set();release.wait(8)
+        agent,route,row=self.idle_agent(close)
+        async def trial():
+            task=asyncio.create_task(self.bundle.retire_idle_runtime())
+            try:
+                for _ in range(1000):
+                    if entered.is_set():break
+                    await asyncio.sleep(.002)
+                self.assertTrue(entered.is_set());self.response._conn.execute("INSERT INTO response_keys(request_key,fingerprint,created_at,model_json) VALUES('late',?,1,'null')",('c'*64,));self.response._conn.commit();release.set()
+                with self.assertRaises(f.Reject):await task
+            finally:release.set();await asyncio.gather(task,return_exceptions=True)
+        f.LOOP.run_until_complete(trial());self.assertEqual(self.binding._stage,'ADMISSION_UNKNOWN');self.assertIs(self.runner._agent_cache[route][0],agent);self.assert_open()
+    def test_foreign_loop_has_no_retirement_effect(self):
+        self.active();pool=self.runner._get_executor();self.drain()
+        with self.assertRaises(f.Reject):f.OTHER.run_until_complete(self.bundle.retire_idle_runtime())
+        self.assertFalse(pool._shutdown);self.assertEqual(self.binding._stage,'DRAINING');self.assertFalse(self.runner._executor_closing)
+
+def main():
+    f.IndependentLifecycle=RuntimeRetirement;code=f.main();out=Path(sys.argv[sys.argv.index('--output')+1]);r=json.loads((out/'result.json').read_text(encoding='utf-8'))
+    r.update(result='PASS_INDEPENDENT_NATIVE_RUNTIME_RETIREMENT' if code==0 else 'FAIL',driverSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),observations=OBS,agentCloseCallbacksAndCacheEntriesExplicitFixtures=True,actualNativePoolsThreadsAndSql=True,nativeMethodsReplaced=False,fullComputedTurnAndHarnessNotTested=True)
+    (out/'runtime-result.json').write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print('RUNTIME_RESULT '+json.dumps({k:v for k,v in r.items() if k not in ('nativeImports','checks','caseEnd','deniedEvents')}),flush=True);return code
+if __name__=='__main__':raise SystemExit(main())

@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-25T00:51:50.585409+03:00",
+  "owner": "R136C6 original finite-close feature full standard only",
+  "requestId": "136cc601-5b17-4a31-9f60-136000000006",
+  "base": "b163796604b821729999582dc06e4642b7bbc23e",
+  "sourceCount": 602,
+  "patchCount": 11,
+  "baselineSources": 597,
+  "changedOriginalFiles": [
+    "packages/claw-hermes/gateway_consumer_admission.py",
+    "packages/claw-hermes/gateway_consumer_api.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/historical_api_i133p1.py",
+    "tests/test_api_owner_i133p1.py"
+  ],
+  "newFiles": [
+    "config/finite-close-f135c6-sources.json",
+    "config/hermes-finite-close-f135c6.json",
+    "scripts/qa/f135c6_native_finite_close.py",
+    "tests/historical_finite_close_f135c6.py",
+    "tests/test_finite_close_f135c6.py"
+  ],
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeRerun": false,
+  "independentQaRawEvidenceNotYetIntegrated": true
+}

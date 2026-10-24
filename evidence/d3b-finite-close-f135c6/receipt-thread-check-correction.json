@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-25T00:50:22.044803+03:00",
+  "reason": "old receipt used absent mainThread default -1; compare actual native API and run_sync thread sets instead",
+  "testExpectationStrengthened": true,
+  "nativeOrRuntimeCodeChanged": false,
+  "nativeExperimentsRerun": false,
+  "beforeSha256": "53daa368ad668de4944d638b7e04d901e2fb25124fac83733fdd6c799b98fb8f",
+  "afterSha256": "7b0f17f6e8a3e29d41f12a9773507d48b7a52391537242876b7b18936c7c6bfd"
+}

@@ -1,0 +1,10 @@
+{
+  "nativeBase": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "patchSha256": "86a4c7a7e6c15fd29deaef06e1ce48098fc14fab24a345fa9ec3c2b4a191d1dc",
+  "appliedExactEightFiles": true,
+  "secondApplyRefused": true,
+  "ownedTemporaryDirectoryRemoved": true,
+  "installedNativeModified": false,
+  "priorPreparationError": "missing own scratch parent before patch execution; original artifact export succeeded and is unchanged"
+}

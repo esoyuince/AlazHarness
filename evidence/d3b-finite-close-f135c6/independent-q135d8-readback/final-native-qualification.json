@@ -1,0 +1,72 @@
+{
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "runs": [
+    {
+      "run": "goals-final",
+      "commandExitCode": 0,
+      "driverSha256": "30ffef55e16f6c99586785253137ccdde557be4f1f4628fc968ae53908f8551e",
+      "result": "PASS_INDEPENDENT_NATIVE_GOALS_BORROWING",
+      "total": 16,
+      "passed": 16,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    {
+      "run": "runtime-final",
+      "commandExitCode": 0,
+      "driverSha256": "e87153ed55008ff5b196d3423882cf97f1660841fefaae32f7deffbb77162ac2",
+      "result": "PASS_INDEPENDENT_NATIVE_RUNTIME_RETIREMENT",
+      "total": 15,
+      "passed": 15,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    {
+      "run": "actual-independent-failure",
+      "commandExitCode": 0,
+      "driverSha256": "4c656068f3ed5197022284f185dc80ae594f78c123513c80ddb33a59807ea1f9",
+      "verdict": "NATIVE_FAILURE_AND_RETRY_OBSERVED",
+      "fullLifecycleAccepted": true,
+      "closeOutcome": "ORIGINAL_OWNER_CLEAN_CLOSE",
+      "additionalStateDbOpensDuringTurn": 0,
+      "independentOwnershipObservations": [
+        {
+          "event": "native_goals_lookup",
+          "sameCallerState": true,
+          "thread": 62460
+        },
+        {
+          "event": "native_goals_lookup",
+          "sameCallerState": true,
+          "thread": 39528
+        },
+        {
+          "event": "native_goals_lookup",
+          "sameCallerState": true,
+          "thread": 36064
+        },
+        {
+          "event": "native_goals_lookup",
+          "sameCallerState": true,
+          "thread": 39528
+        },
+        {
+          "event": "original_owner_close_return",
+          "ownerStage": "CLOSED",
+          "threeConnectionsPhysicallyClosed": [
+            true,
+            true,
+            true
+          ],
+          "profileStillCallerOwned": true
+        }
+      ]
+    }
+  ],
+  "allPassed": true,
+  "allCurrentNativeAndHarnessBytesUnchanged": true,
+  "previousCurrentHints": "hints-final",
+  "previousCurrentActualNormal": "actual-independent-001"
+}

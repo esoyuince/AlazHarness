@@ -4,11 +4,11 @@ Identity-only observations permit pending work but grant neither health nor clos
 Draining seals the native gate without waiting for the SQL mutex. Retained queued
 or unknown work is not automatically run or discarded; clean release is separate.
 """
-from gateway_prepared_consumer import require,verify_imports,ADMISSION_FEATURE,CANONICAL_API_FEATURE
+from gateway_prepared_consumer import require,verify_imports,ADMISSION_FEATURE,CANONICAL_API_FEATURE,FINITE_FEATURE
 
 
 def _pair(c,*,quiescent=True):
-    require(c._local_admission is True and c._selected_feature in (ADMISSION_FEATURE,CANONICAL_API_FEATURE),
+    require(c._local_admission is True and c._selected_feature in (ADMISSION_FEATURE,CANONICAL_API_FEATURE,FINITE_FEATURE),
             'consumer_local_admission_not_selected')
     require(c._stage=='ATTACHED','consumer_admission_not_attached')
     c._identity(loop=True,quiescent=quiescent)

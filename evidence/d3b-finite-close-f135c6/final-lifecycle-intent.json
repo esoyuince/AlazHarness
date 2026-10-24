@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-25T00:20:04.355941+03:00",
+  "qaSha256": "48b95cabb5a788998113d370fef07a5b7e3c2ccf1c955210207d9de298943d09",
+  "native": "d1516731",
+  "scope": "same native code plus stronger positive caller-close/no-row-write/modelclose assertions; success and compute exception both required",
+  "noNativeProductChanges": true
+}

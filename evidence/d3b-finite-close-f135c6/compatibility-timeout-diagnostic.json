@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-25T00:27:47.611429+03:00",
+  "priorRequest": "127a76fa-9aa9-455c-8d65-b5a744f3ed03",
+  "priorExitCode": 1,
+  "priorException": "subprocess.TimeoutExpired",
+  "priorLimitSeconds": 160,
+  "priorCompletedOkMethods": 35,
+  "priorLastLine": "test_service_and_provider_permission_remain_separate (__main__.ApiOwnerCases.test_service_and_provider_permission_remain_separate) ... ",
+  "newLocalCommandLimitSeconds": 300,
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "55693d315fcff2d9bef3129ba83aa83dc3b1b728b2316324c340ba85d257f151",
+    "packages/claw-hermes/gateway_store_startup.py": "23b0dc7bf9e7003a1ec593248142f0bc7a2871e471a140a0d62484ca38c9cd13",
+    "packages/claw-hermes/gateway_consumer_api.py": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168",
+    "packages/claw-hermes/gateway_consumer_admission.py": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da",
+    "scripts/qa/i133p1_native_api_owner.py": "a8fa626150b54f78417a337bc2c0cefa581607a5767e2b028c545105a50ea78f",
+    "config/canonical-api-consumer-i133p1-sources.json": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27",
+    "config/finite-close-f135c6-sources.json": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4"
+  },
+  "codeAssertionsAndCiPolicyChanged": false
+}

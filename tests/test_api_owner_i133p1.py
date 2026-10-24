@@ -73,13 +73,13 @@ class NativeReceipt(unittest.TestCase):
         self.assertEqual(hashlib.sha256(raw).hexdigest(),consumer.CANONICAL_API_MANIFEST_SHA256);self.assertEqual(len(manifest['sources']),522)
         self.assertEqual(manifest['nativeFeature'],consumer.CANONICAL_API_FEATURE)
         for name,h in self.r['nativeImports'].items():self.assertEqual(manifest['sources'][name],h,name);self.assertEqual(self.c['nativeFiles'][name]['sha256'],h,name)
-        for name,h in self.r['harnessImports'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        for name,h in self.r['harnessImports'].items():self.assertEqual(history.executed_source_hash(ROOT,name,h),h,name)
         for name,h in self.c['resultHashes'].items():self.assertEqual(hashlib.sha256((E/name).read_bytes()).hexdigest(),h,name)
     def test_legacy_modes_actually_retested_current_harness(self):
         for label,count,feature in (('compat-admission',23,consumer.ADMISSION_FEATURE),('compat-prepared',20,consumer.FEATURE)):
             r=read(label+'/result.json');self.assertEqual((r['total'],r['passed'],r['errors'],r['failures'],r['skipped']),(count,count,0,0,0))
             self.assertTrue(r['temporaryRootRemoved']);self.assertEqual(self.c['compatibility'][label]['feature'],feature)
-            for name,h in r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+            for name,h in r['sourceHashes'].items():self.assertEqual(history.executed_source_hash(ROOT,name,h),h,name)
         self.assertTrue(all(r['exitCode']==0 for r in read('compatibility-terminal.json')))
     def test_readonly_transitions_and_real_writer_races_retained(self):
         for x in self.r['checks']:self.assertEqual((x['newConnections'],x['rawDatabaseOpens'],x['rowChanges']),(0,0,0))

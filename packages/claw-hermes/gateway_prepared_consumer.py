@@ -20,6 +20,8 @@ ADMISSION_FEATURE='1b7b31e14451baf1d56c3edbfa2cea69a8f7940c'
 ADMISSION_MANIFEST_SHA256='d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35'
 CANONICAL_API_FEATURE='5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979'
 CANONICAL_API_MANIFEST_SHA256='f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27'
+FINITE_FEATURE='d1516731308de8e87130dc68124e69aad35d6911'
+FINITE_MANIFEST_SHA256='30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4'
 ROOT=Path(__file__).resolve().parents[2]
 
 class PreparedConsumerRejected(RuntimeError):pass
@@ -27,7 +29,7 @@ class PreparedConsumerRejected(RuntimeError):pass
 def require(ok,code):
     if not ok:raise PreparedConsumerRejected(code)
 
-def qualify_sources(*,local_admission=False,canonical_api=False):
+def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=False):
     """Read fixed source files, never data files, before native consumer imports."""
     require(type(local_admission) is bool,'consumer_admission_option')
     require(type(canonical_api) is bool and (not canonical_api or local_admission),
@@ -39,6 +41,11 @@ def qualify_sources(*,local_admission=False,canonical_api=False):
     if canonical_api:
         path='config/canonical-api-consumer-i133p1-sources.json'
         expected=CANONICAL_API_MANIFEST_SHA256;feature=CANONICAL_API_FEATURE
+    require(type(finite_turn) is bool and (not finite_turn or canonical_api),
+            'consumer_finite_option')
+    if finite_turn:
+        path='config/finite-close-f135c6-sources.json'
+        expected=FINITE_MANIFEST_SHA256;feature=FINITE_FEATURE
     raw=(ROOT/path).read_bytes()
     require(hashlib.sha256(raw).hexdigest()==expected,'consumer_manifest_changed')
     manifest=json.loads(raw);require(manifest['nativeFeature']==feature,'consumer_feature')
@@ -74,15 +81,19 @@ def native_types():
     return GatewayConfig,PlatformConfig,CallerOwnedRunnerState,GatewayRunner,initialize_gateway_runtime,BorrowedAPIStores,APIServerAdapter
 
 class PreparedRuntimeConsumer:
-    def __init__(self,owner,*,local_admission=False,canonical_api=False):
+    def __init__(self,owner,*,local_admission=False,canonical_api=False,finite_turn=False):
         import gateway_store_startup as startup
         require(type(local_admission) is bool,'consumer_admission_option')
         require(type(canonical_api) is bool and (not canonical_api or local_admission),
                 'consumer_canonical_api_option')
+        require(type(finite_turn) is bool and (not finite_turn or canonical_api),
+                'consumer_finite_option')
+        self._finite_turn=finite_turn
         self._canonical_api=canonical_api;self._publication_phase='NEW'
         self._local_admission=local_admission
         self._selected_feature=ADMISSION_FEATURE if local_admission else FEATURE
         if canonical_api:self._selected_feature=CANONICAL_API_FEATURE
+        if finite_turn:self._selected_feature=FINITE_FEATURE
         self._admission_phase='PREPARED'
         require(type(owner) is startup.NativeStoreStartup,'consumer_exact_owner_required')
         owner._owned();require(owner._stage=='VERIFIED' and owner._response_expected is not None,'consumer_verified_owner')
@@ -97,9 +108,11 @@ class PreparedRuntimeConsumer:
     def _identity(self,*,loop=False,quiescent=True):
         require(type(quiescent) is bool,'consumer_identity_policy')
         canonical=getattr(self,'_canonical_api',False)
+        finite=getattr(self,'_finite_turn',False)
+        require(type(finite) is bool and (not finite or canonical),'consumer_finite_option')
         require(type(canonical) is bool and type(self._local_admission) is bool
                 and (not canonical or self._local_admission)
-                and self._selected_feature==(CANONICAL_API_FEATURE if canonical else
+                and self._selected_feature==(FINITE_FEATURE if finite else CANONICAL_API_FEATURE if canonical else
                     ADMISSION_FEATURE if self._local_admission else FEATURE),
                 'consumer_generation_changed')
         o=self._owner;o._owned()
@@ -135,7 +148,9 @@ class PreparedRuntimeConsumer:
         self._stage='QUALIFYING'
         try:
             self._identity(loop=True);self._storage()
-            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True)
+            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True,finite_turn=True)
+                                if self._finite_turn else
+                                qualify_sources(local_admission=True,canonical_api=True)
                                 if self._canonical_api else
                                 qualify_sources(local_admission=True) if self._local_admission else qualify_sources())
             Config,Platform,Binding,Runner,initialize,Bundle,Adapter=native_types()
@@ -210,6 +225,10 @@ class PreparedRuntimeConsumer:
     def publish_api_adapter(self):
         from gateway_consumer_api import publish
         return publish(self)
+
+    async def retire_idle_runtime(self):
+        from gateway_consumer_api import retire_idle_runtime
+        return await retire_idle_runtime(self)
 
     def retire_idle_api_sessions(self):
         from gateway_consumer_api import retire_idle_sessions

@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-25T00:54:06.199039+03:00",
+  "knownRootDirtyFiles": 33,
+  "allPriorDirtyFileBytesAndStatusUnchanged": true,
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "installedNativeUnchanged": true,
+  "liveRemoteMain": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "frozenFullSources": 602,
+  "frozenPatches": 11,
+  "allCurrentlyMatchFullIntent": true,
+  "newRuntimeOrRemoteChangesByThisReview": false
+}

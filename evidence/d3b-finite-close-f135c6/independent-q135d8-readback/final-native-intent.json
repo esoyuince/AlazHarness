@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-25T00:24:45.962487+03:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "harnessHashes": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "55693d315fcff2d9bef3129ba83aa83dc3b1b728b2316324c340ba85d257f151",
+    "packages/claw-hermes/gateway_store_startup.py": "23b0dc7bf9e7003a1ec593248142f0bc7a2871e471a140a0d62484ca38c9cd13",
+    "packages/claw-hermes/gateway_consumer_admission.py": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da",
+    "packages/claw-hermes/gateway_consumer_api.py": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168",
+    "config/finite-close-f135c6-sources.json": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4"
+  },
+  "nativeHashes": {
+    "gateway/platforms/api_server_borrowed.py": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+    "gateway/run_borrowed_admission.py": "e7befc6ca9e11d6774cdd0c7d9060a337e1cccc9776fe043bfa1a869b7352dac",
+    "gateway/run_borrowed_cleanup.py": "8ca5b7a76534a45de883a138c38bc1ac6c2aac27984e6d910f29cc68adb3da1b",
+    "gateway/run_borrowed_goals.py": "161401d7db325a16b4f6e401e67393479b2a6da6c8ff6c633cd7f88f29ad0b9e",
+    "gateway/run_borrowed_retirement.py": "672aaa1971f0dd8b605e07ae6e7a1781d4ee8dd2e9385a595ed55fcb06ac22e1",
+    "gateway/session_ingress.py": "72c99c8936e3ba3bcb962f94779a8855aa35f929bbe360990aff84fec6efcc6c",
+    "hermes_cli/goals.py": "25d199a11742aa42b2345e9a5278dea352edab57094addd4d4e4b5c4981852a9",
+    "hermes_cli/goals_borrowed.py": "d3cae86fcde55b03f3032f1f74eea96a963d62f086fb836b7315bfc13504b07e"
+  },
+  "goalsDriverSha256": "30ffef55e16f6c99586785253137ccdde557be4f1f4628fc968ae53908f8551e",
+  "runtimeDriverSha256": "e87153ed55008ff5b196d3423882cf97f1660841fefaae32f7deffbb77162ac2",
+  "actualDriverSha256": "4c656068f3ed5197022284f185dc80ae594f78c123513c80ddb33a59807ea1f9",
+  "interruptedPriorRequest": "000037 unavailable and no matching effects/result found; not replayed",
+  "scope": "current16goals+15resources on exactd151 and independent actual computation failure with normal owner close; previous6hints+normal actualalready terminal"
+}

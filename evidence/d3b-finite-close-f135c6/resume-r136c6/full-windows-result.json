@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-25T00:54:59.413227+03:00",
+  "result": "PASS",
+  "total": 3448,
+  "discovered": 3448,
+  "passed": 3425,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 602,
+  "sourceHashesStable": true,
+  "patchHashesStable": true,
+  "same23SkipIdsAndReasons": true,
+  "elapsedSeconds": 187.099,
+  "wrapperExitCode": 0,
+  "fullLogSha256": "96145be94b1d975f3753d0e4efaf3d0abaf19e471ae716cdbee68551292ee500",
+  "nativeOrLinuxReexecution": false
+}

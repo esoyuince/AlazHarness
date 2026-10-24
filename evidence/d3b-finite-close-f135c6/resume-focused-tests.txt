@@ -1,0 +1,16 @@
+test_actual_compute_exception_also_closes_without_retry_execution (test_finite_close_f135c6.FiniteLifecycleReceipt.test_actual_compute_exception_also_closes_without_retry_execution) ... ok
+test_both_original_owner_closures_real_not_fixture_cleanup (test_finite_close_f135c6.FiniteLifecycleReceipt.test_both_original_owner_closures_real_not_fixture_cleanup) ... ok
+test_earlier_failures_are_preserved (test_finite_close_f135c6.FiniteLifecycleReceipt.test_earlier_failures_are_preserved) ... ok
+test_exact_selection_and_patch_match_native (test_finite_close_f135c6.FiniteLifecycleReceipt.test_exact_selection_and_patch_match_native) ... ok
+test_historical_redirect_exact_bytes_only (test_finite_close_f135c6.FiniteLifecycleReceipt.test_historical_redirect_exact_bytes_only) ... ok
+test_native_pipeline_is_present_and_never_manually_settled (test_finite_close_f135c6.FiniteLifecycleReceipt.test_native_pipeline_is_present_and_never_manually_settled) ... ok
+test_normal_real_result_and_idempotent_retry (test_finite_close_f135c6.FiniteLifecycleReceipt.test_normal_real_result_and_idempotent_retry) ... ok
+test_scope_remains_bounded_model_and_declared_os_doubles (test_finite_close_f135c6.FiniteLifecycleReceipt.test_scope_remains_bounded_model_and_declared_os_doubles) ... ok
+test_defaults_stay_false_and_three_legacy_generations_distinct (test_finite_close_f135c6.FiniteSelection.test_defaults_stay_false_and_three_legacy_generations_distinct) ... ok
+test_explicit_finite_uses_same_reserved_owner (test_finite_close_f135c6.FiniteSelection.test_explicit_finite_uses_same_reserved_owner) ... ok
+test_invalid_finite_options_do_not_reserve_slot (test_finite_close_f135c6.FiniteSelection.test_invalid_finite_options_do_not_reserve_slot) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.215s
+
+OK

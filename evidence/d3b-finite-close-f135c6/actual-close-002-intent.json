@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-25T00:12:17.071717+03:00",
+  "nativeSourceUnchanged": true,
+  "qaSha256": "6d87be42d7b15998f2cf73e246aa956b02ab9819e190d0b3ac3a387011f8b2f0",
+  "purpose": "observe exact refused live session field, no registry pruning or weakened expectations"
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-25T00:16:15.374033+03:00",
+  "purpose": "read-only diff of native fast UPSERT receipt/live/durable on refusal",
+  "driverSha256": "6942dab6824f768724ccf87920260804041d9026df82543191a6317e2419d2bd",
+  "nativeUnchanged": true
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-25T00:14:57.792754+03:00",
+  "nativeFeature": "61050dce3b0a15fb39a32026296a2b5d7936fe99",
+  "nativeSourceHashes": {
+    "hermes_cli/goals_borrowed.py": "d3cae86fcde55b03f3032f1f74eea96a963d62f086fb836b7315bfc13504b07e",
+    "gateway/run_borrowed_goals.py": "161401d7db325a16b4f6e401e67393479b2a6da6c8ff6c633cd7f88f29ad0b9e",
+    "hermes_cli/goals.py": "25d199a11742aa42b2345e9a5278dea352edab57094addd4d4e4b5c4981852a9",
+    "gateway/session_ingress.py": "72c99c8936e3ba3bcb962f94779a8855aa35f929bbe360990aff84fec6efcc6c",
+    "gateway/run_borrowed_admission.py": "e7befc6ca9e11d6774cdd0c7d9060a337e1cccc9776fe043bfa1a869b7352dac",
+    "gateway/platforms/api_server_borrowed.py": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+    "gateway/run_borrowed_cleanup.py": "8ca5b7a76534a45de883a138c38bc1ac6c2aac27984e6d910f29cc68adb3da1b",
+    "gateway/run_borrowed_retirement.py": "5973da7ab1cf403ba67afcfb7d0c66b8432fe276df791e998237280cb7e6ce3c"
+  },
+  "sourceManifestSha256": "be88547bdb4c52d8a77d5b026340c87f789c834c186b2dfc5b655b5de2fdd6c1",
+  "sourceManifestCount": 755,
+  "driverSha256": "6d87be42d7b15998f2cf73e246aa956b02ab9819e190d0b3ac3a387011f8b2f0",
+  "sameDriverAsActualClose002": true,
+  "state": "RUNNING_ACTUAL_CLOSE003"
+}

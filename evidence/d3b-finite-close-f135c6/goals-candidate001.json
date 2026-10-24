@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-25T00:05:21.327125+03:00",
+  "nativeBase": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "sourceHashes": {
+    "hermes_cli/goals_borrowed.py": "d3cae86fcde55b03f3032f1f74eea96a963d62f086fb836b7315bfc13504b07e",
+    "gateway/run_borrowed_goals.py": "161401d7db325a16b4f6e401e67393479b2a6da6c8ff6c633cd7f88f29ad0b9e",
+    "hermes_cli/goals.py": "25d199a11742aa42b2345e9a5278dea352edab57094addd4d4e4b5c4981852a9",
+    "gateway/session_ingress.py": "72c99c8936e3ba3bcb962f94779a8855aa35f929bbe360990aff84fec6efcc6c"
+  },
+  "scope": "native turn-scoped caller state for goals, no cache entry, no new registry writer; cleanup not yet added",
+  "state": "UNTESTED"
+}

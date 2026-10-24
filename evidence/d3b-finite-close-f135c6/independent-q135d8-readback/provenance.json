@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-25T00:53:47.844972+03:00",
+  "originalWorktree": "d3b-finite-close-qa-q135d8",
+  "originalHead": "b163796604b821729999582dc06e4642b7bbc23e",
+  "snapshotFiles": {
+    "evidence/goals-final/goals-result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/goals-final/goals-result.json",
+      "sha256": "857165a066b0f4c4d505b995ed3476af3603bfe47203ce795344b21e05737522",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/goals-final/goals-result.json"
+    },
+    "evidence/goals-final/tests.txt": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/goals-final/tests.txt",
+      "sha256": "1e89e22d83c8bac147908603ef6a63be8837ab41057f954f491d9c5e97982874",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/goals-final/tests.txt"
+    },
+    "evidence/runtime-final/runtime-result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/runtime-final/runtime-result.json",
+      "sha256": "3dd6b01ee9ee07992d14dbeea1dc668793d74e9690c5da388f03212ff3c3004e",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/runtime-final/runtime-result.json"
+    },
+    "evidence/runtime-final/tests.txt": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/runtime-final/tests.txt",
+      "sha256": "f68cb19e822e9baf9dd81685cf797debc0f1ae9fc92e74680ebd15082ccc5d98",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/runtime-final/tests.txt"
+    },
+    "evidence/hints-final/hints-result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/hints-final/hints-result.json",
+      "sha256": "9602fa6487cffb4e56129267848035ef90daa4bc80ddaec71abecc2ec5610ad7",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-final/hints-result.json"
+    },
+    "evidence/hints-final/tests.txt": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/hints-final/tests.txt",
+      "sha256": "0456374c5a3c2031aad8357694fbb176e776125483897607ea5aa32608b65ec1",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-final/tests.txt"
+    },
+    "evidence/hints-before/hints-result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/hints-before/hints-result.json",
+      "sha256": "5be5e8c8e6bd11c0f6d7f6a2c2326310fdb4d0b00263424ce998741017493dee",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-before/hints-result.json"
+    },
+    "evidence/hints-before/tests.txt": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/hints-before/tests.txt",
+      "sha256": "e826f2a9965ee6b1b9ad36c163c3c44521c0514bb0517bbd7da57c542327375b",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-before/tests.txt"
+    },
+    "evidence/hints-after/hints-result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/hints-after/hints-result.json",
+      "sha256": "72f77acfdd009ce440d5f59b61967b906bbad7bbba8e0e615c0c69a6398a5321",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-after/hints-result.json"
+    },
+    "evidence/hints-after/tests.txt": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/hints-after/tests.txt",
+      "sha256": "c69b5c76f7c9d0c242001035cc6d4c560a8e71c0c7cf53eb50fb45e69f9b58b1",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-after/tests.txt"
+    },
+    "evidence/actual-independent-001/result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/actual-independent-001/result.json",
+      "sha256": "83def19fbd379ddebad5dd580f1d7296fd3e166ab4a17ead60fd2a81894e9b4a",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/actual-independent-001/result.json"
+    },
+    "evidence/actual-independent-failure/result.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/actual-independent-failure/result.json",
+      "sha256": "0d4063dac006d2325c140e5615920ba25c1e142e1d28fb286483c348a605122b",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/actual-independent-failure/result.json"
+    },
+    "evidence/final-native-qualification.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/final-native-qualification.json",
+      "sha256": "c30516e472ef0e8eebf9c252286b78f4ec703ee645c03e7ddf09a5eddff734de",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/final-native-qualification.json"
+    },
+    "evidence/final-native-intent.json": {
+      "originalRelativePath": "evidence/d3b-finite-close-qa-q135d8/final-native-intent.json",
+      "sha256": "6ca9d7bc2ddb4397dc59e7dc0e64c95ef66ab088063bbd01d53d95d243cd3dcd",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/final-native-intent.json"
+    },
+    "driver/q135d8_actual_close.py": {
+      "originalRelativePath": "scripts/qa/q135d8_actual_close.py",
+      "sha256": "4c656068f3ed5197022284f185dc80ae594f78c123513c80ddb33a59807ea1f9",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_actual_close.py.txt"
+    },
+    "driver/q135d8_goals_scope.py": {
+      "originalRelativePath": "scripts/qa/q135d8_goals_scope.py",
+      "sha256": "30ffef55e16f6c99586785253137ccdde557be4f1f4628fc968ae53908f8551e",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_goals_scope.py.txt"
+    },
+    "driver/q135d8_persisted_hints.py": {
+      "originalRelativePath": "scripts/qa/q135d8_persisted_hints.py",
+      "sha256": "b3c790bd6307ac6c7406c05433a45aa03796de57f027375f469dc58774586feb",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_persisted_hints.py.txt"
+    },
+    "driver/q135d8_runtime_retirement.py": {
+      "originalRelativePath": "scripts/qa/q135d8_runtime_retirement.py",
+      "sha256": "e87153ed55008ff5b196d3423882cf97f1660841fefaae32f7deffbb77162ac2",
+      "savedRelativePath": "evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_runtime_retirement.py.txt"
+    }
+  },
+  "copyOnlyExactBytes": true,
+  "originalFilesNotModified": true,
+  "newRuntimeExecution": false,
+  "independentHistoryMerged": false,
+  "purpose": "make current result/source acceptance inspectable with product branch; not substitute execution or duplicate implementation"
+}

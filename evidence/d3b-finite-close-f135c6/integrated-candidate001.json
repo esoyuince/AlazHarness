@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-25T00:10:41.054631+03:00",
+  "nativeFeature": "92b6806ca4469244917c72d470e985df2ad8f9fc",
+  "nativeBase": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "nativeSourceHashes": {
+    "hermes_cli/goals_borrowed.py": "d3cae86fcde55b03f3032f1f74eea96a963d62f086fb836b7315bfc13504b07e",
+    "gateway/run_borrowed_goals.py": "161401d7db325a16b4f6e401e67393479b2a6da6c8ff6c633cd7f88f29ad0b9e",
+    "hermes_cli/goals.py": "25d199a11742aa42b2345e9a5278dea352edab57094addd4d4e4b5c4981852a9",
+    "gateway/session_ingress.py": "72c99c8936e3ba3bcb962f94779a8855aa35f929bbe360990aff84fec6efcc6c",
+    "gateway/run_borrowed_admission.py": "2c6fe4e45f2d91d2728ad5b46ef2aa81a9ae6bb57307bf760215475588b4f966",
+    "gateway/platforms/api_server_borrowed.py": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+    "gateway/run_borrowed_cleanup.py": "36535d0edada827785fba2f54ba8e2cecf30c5faa45189e3f642e018c178ca6b"
+  },
+  "sourceManifestSha256": "ae610c5ada2b88ba391d576df053726950cf0b5dd98d91da487cf0193f274310",
+  "sourceManifestCount": 755,
+  "driverSha256": "89d4abcba7ac69184cfc9644ae0a5fc130bc57cca52aaac6916e3dd283e02311",
+  "state": "READY_FOR_ACTUAL_FINITE_CLOSE_TEST_NOT_ACCEPTED",
+  "fixtureChange": "fake model.close is explicit no-op closed marker, native resource method awaited; no manual cleanup replacing native path"
+}

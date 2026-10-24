@@ -6,6 +6,9 @@ NAMES=frozenset(('packages/claw-hermes/gateway_prepared_consumer.py',
     'tests/historical_owner_b129d6.py','tests/test_active_owner_receipt_b129d6.py'))
 
 def saved_generation_hash(root,name,expected):
+    from historical_finite_close_f135c6 import saved_generation_hash as previous_finite
+    old=previous_finite(root,name,expected)
+    if old is not None:return old
     if name not in NAMES:return None
     folder=root/'evidence/d3b-api-owner-i133p1'
     record=json.loads((folder/'historical-source-bindings.json').read_text(encoding='utf-8'))

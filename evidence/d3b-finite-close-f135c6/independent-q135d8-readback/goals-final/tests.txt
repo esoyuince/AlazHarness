@@ -1,0 +1,21 @@
+test_cancelled_carrier_expires_context_not_still_running_thread (__main__.GoalsScopeCases.test_cancelled_carrier_expires_context_not_still_running_thread) ... ok
+test_drain_keeps_accepted_scope_then_drained_rejects (__main__.GoalsScopeCases.test_drain_keeps_accepted_scope_then_drained_rejects) ... ok
+test_exception_exits_scope_and_revokes_retained_context (__main__.GoalsScopeCases.test_exception_exits_scope_and_revokes_retained_context) ... ok
+test_expired_copy_refuses_without_registry_fallback (__main__.GoalsScopeCases.test_expired_copy_refuses_without_registry_fallback) ... ok
+test_foreign_authority_rejected (__main__.GoalsScopeCases.test_foreign_authority_rejected) ... ok
+test_foreign_home_in_selected_scope_refuses_before_open (__main__.GoalsScopeCases.test_foreign_home_in_selected_scope_refuses_before_open) ... ok
+test_gateway_scope_requires_active_original_authority (__main__.GoalsScopeCases.test_gateway_scope_requires_active_original_authority) ... ok
+test_missing_state_does_not_fall_back (__main__.GoalsScopeCases.test_missing_state_does_not_fall_back) ... ok
+test_native_executor_propagates_borrow_without_cache_or_new_writer (__main__.GoalsScopeCases.test_native_executor_propagates_borrow_without_cache_or_new_writer) ... ok
+test_nested_scope_restores_outer_and_revokes_inner_copy (__main__.GoalsScopeCases.test_nested_scope_restores_outer_and_revokes_inner_copy) ... ok
+test_no_selected_scope_preserves_default (__main__.GoalsScopeCases.test_no_selected_scope_preserves_default) ... ok
+test_noncallable_resolver_rejected (__main__.GoalsScopeCases.test_noncallable_resolver_rejected) ... ok
+test_real_goal_loop_heartbeat_persist_into_caller_store (__main__.GoalsScopeCases.test_real_goal_loop_heartbeat_persist_into_caller_store) ... ok
+test_resolver_failure_never_falls_back_to_registry (__main__.GoalsScopeCases.test_resolver_failure_never_falls_back_to_registry) ... ok
+test_same_home_wrong_authority_db_refuses (__main__.GoalsScopeCases.test_same_home_wrong_authority_db_refuses) ... ok
+test_three_helper_getters_share_same_original_connection (__main__.GoalsScopeCases.test_three_helper_getters_share_same_original_connection) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 12.946s
+
+OK

@@ -1,0 +1,20 @@
+test_actual_thread_blocks_retirement_without_cancel_or_flag_changes (__main__.RuntimeRetirement.test_actual_thread_blocks_retirement_without_cancel_or_flag_changes) ... ok
+test_agent_close_exception_retains_unknown_and_original_refs (__main__.RuntimeRetirement.test_agent_close_exception_retains_unknown_and_original_refs) ... ok
+test_cancelled_awaiter_cannot_hide_physical_worker (__main__.RuntimeRetirement.test_cancelled_awaiter_cannot_hide_physical_worker) ... ok
+test_cancelled_retirement_keeps_cleanup_thread_task_and_ownership (__main__.RuntimeRetirement.test_cancelled_retirement_keeps_cleanup_thread_task_and_ownership) ... ok
+test_empty_retirement_and_repeat_preserve_all_caller_handles (__main__.RuntimeRetirement.test_empty_retirement_and_repeat_preserve_all_caller_handles) ... ok
+test_exact_idle_native_pool_stops_and_cannot_reopen (__main__.RuntimeRetirement.test_exact_idle_native_pool_stops_and_cannot_reopen) ... ok
+test_foreign_loop_has_no_retirement_effect (__main__.RuntimeRetirement.test_foreign_loop_has_no_retirement_effect) ... ok
+test_foreign_pool_and_busy_native_lock_refuse (__main__.RuntimeRetirement.test_foreign_pool_and_busy_native_lock_refuse) ... ok
+test_late_response_during_close_blocks_cache_removal (__main__.RuntimeRetirement.test_late_response_during_close_blocks_cache_removal) ... ok
+test_memory_provider_agent_refuses_before_cleanup (__main__.RuntimeRetirement.test_memory_provider_agent_refuses_before_cleanup) ... ok
+test_open_sql_transactions_rejected_without_rollback (__main__.RuntimeRetirement.test_open_sql_transactions_rejected_without_rollback) ... ok
+test_real_native_cache_plan_closes_once_and_does_not_change_sql (__main__.RuntimeRetirement.test_real_native_cache_plan_closes_once_and_does_not_change_sql) ... ok
+test_retire_requires_drain_before_any_effect (__main__.RuntimeRetirement.test_retire_requires_drain_before_any_effect) ... ok
+test_unconfirmed_close_return_retains_unknown (__main__.RuntimeRetirement.test_unconfirmed_close_return_retains_unknown) ... ok
+test_unresolved_admission_cannot_be_pruned_to_pass (__main__.RuntimeRetirement.test_unresolved_admission_cannot_be_pruned_to_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 8.041s
+
+OK

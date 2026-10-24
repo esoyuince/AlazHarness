@@ -1,0 +1,11 @@
+test_boolean_revision_is_not_proven_integer_generation (__main__.PersistedHints.test_boolean_revision_is_not_proven_integer_generation) ... ok
+test_changed_hint_json_refuses_without_deleting_hint (__main__.PersistedHints.test_changed_hint_json_refuses_without_deleting_hint) ... ok
+test_future_hint_revision_refuses (__main__.PersistedHints.test_future_hint_revision_refuses) ... ok
+test_generation_newer_than_last_proven_hint_refuses (__main__.PersistedHints.test_generation_newer_than_last_proven_hint_refuses) ... ok
+test_hint_outside_retired_native_routes_refuses (__main__.PersistedHints.test_hint_outside_retired_native_routes_refuses) ... ok
+test_native_fast_upsert_can_retire_after_exact_durable_match (__main__.PersistedHints.test_native_fast_upsert_can_retire_after_exact_durable_match) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 5.432s
+
+OK

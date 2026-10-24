@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-25T00:19:06.378366+03:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeSourceHashes": {
+    "hermes_cli/goals_borrowed.py": "d3cae86fcde55b03f3032f1f74eea96a963d62f086fb836b7315bfc13504b07e",
+    "gateway/run_borrowed_goals.py": "161401d7db325a16b4f6e401e67393479b2a6da6c8ff6c633cd7f88f29ad0b9e",
+    "hermes_cli/goals.py": "25d199a11742aa42b2345e9a5278dea352edab57094addd4d4e4b5c4981852a9",
+    "gateway/session_ingress.py": "72c99c8936e3ba3bcb962f94779a8855aa35f929bbe360990aff84fec6efcc6c",
+    "gateway/run_borrowed_admission.py": "e7befc6ca9e11d6774cdd0c7d9060a337e1cccc9776fe043bfa1a869b7352dac",
+    "gateway/platforms/api_server_borrowed.py": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+    "gateway/run_borrowed_cleanup.py": "8ca5b7a76534a45de883a138c38bc1ac6c2aac27984e6d910f29cc68adb3da1b",
+    "gateway/run_borrowed_retirement.py": "672aaa1971f0dd8b605e07ae6e7a1781d4ee8dd2e9385a595ed55fcb06ac22e1"
+  },
+  "sourceManifestSha256": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4",
+  "sourceManifestCount": 755,
+  "driverSha256": "6942dab6824f768724ccf87920260804041d9026df82543191a6317e2419d2bd",
+  "sameDriverAsActualClose004": true,
+  "fix": "fast receipt must use native sessions_dir namespace; root empty scope is separate API identity route",
+  "state": "CURRENT_CANDIDATE003_RUNNING"
+}

@@ -4,11 +4,11 @@ Explicit source selection does not enable a listener, recover a queue, execute a
 model, or authorize worker health. All registry effects use native owner methods.
 """
 import asyncio
-from gateway_prepared_consumer import require,verify_imports,CANONICAL_API_FEATURE
+from gateway_prepared_consumer import require,verify_imports,CANONICAL_API_FEATURE,FINITE_FEATURE
 
 
 def check_publication(c):
-    require(c._canonical_api is True and c._selected_feature==CANONICAL_API_FEATURE,
+    require(c._canonical_api is True and c._selected_feature==(FINITE_FEATURE if getattr(c,'_finite_turn',False) else CANONICAL_API_FEATURE),
             'consumer_canonical_api_not_selected')
     bundle,runner,adapter,binding=c._bundle,c._runner,c._adapter,c._binding
     phase=c._publication_phase
@@ -72,6 +72,27 @@ def retire_idle_sessions(c):
         # A completed retirement returns to DRAINING, so an unchanged phase
         # alone cannot prove a failure had no effects. Only the native typed
         # pre-effect refusal may retain a known phase without a receipt.
+        if returned or c._binding._stage!=before or not isinstance(exc,BorrowedStoreRejected):
+            c._stage='ADMISSION_UNKNOWN';c._admission_phase='UNKNOWN'
+        raise
+    return receipt
+
+
+async def retire_idle_runtime(c):
+    from gateway_consumer_admission import _pair
+    from gateway.platforms.api_server_borrowed import BorrowedStoreRejected
+    _pair(c)
+    require(c._finite_turn is True and c._admission_phase=='DRAINING'
+            and c._publication_phase=='PUBLISHED','consumer_runtime_retirement_not_sealed')
+    c._storage()
+    before=c._binding._stage;returned=False
+    try:
+        receipt=await c._bundle.retire_idle_runtime()
+        returned=True
+        require(receipt['state']=='IDLE_RUNTIME_RETIRED' and c._binding._stage==before,
+                'consumer_runtime_retirement_unconfirmed')
+        verify_imports(c._source_proof);c._storage();check_publication(c)
+    except BaseException as exc:
         if returned or c._binding._stage!=before or not isinstance(exc,BorrowedStoreRejected):
             c._stage='ADMISSION_UNKNOWN';c._admission_phase='UNKNOWN'
         raise

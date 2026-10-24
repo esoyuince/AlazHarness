@@ -1,45 +1,37 @@
 # AlazHarness - status
 
-## F134C6 REAL COMPUTED FLOW OBSERVED / FULL OWNER CLOSE NOT ACCEPTED
+## F135C6 / R136C6 - BOUNDED COMPUTED WORK AND ORIGINAL-OWNER CLOSE PASS
 
-Main local/remote4d37687 published after exact alaz/local-ci SUCCESS. Merge is DONE.
-Own branch alaz/d3b-finite-turn-qa-f134c6, worktree scratch/worktrees/d3b-finite-turn-qa-f134c6.
-Producer d3b-finite-turn-f134r1 is SINGLE implementation owner. This QA branch
-restores593 prior sources byte-exact after its temporary candidate copy. Native
-5ff88189 and installed vendor/locks untouched. No new feature main/push here.
+Active branch alaz/d3b-finite-close-f135c6.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-finite-close-f135c6.
+Parent b163796, current tested source includes staged native d1516731308de8e87130dc68124e69aad35d6911 on5ff88189. Read GitHEAD for this final local delivery commit. Native patch0011 is optional STAGED_NOT_INSTALLED; installed vendor/locks remain eb75627. Published main stays4d37687. No new push/main/CI/rollout this continuation.
 
-One independent actual original-owner/native API->authority drain->finite->handler
-->TurnRunner physicalthread->native commit_and_publish->settle_session_input run
-returned and durably stored50 for17+25+8. One terminal/completed admission, no
-manual fixture settlement. Model factory/computation alone fake; native pipeline
-functions original. Windows actor/lease/mount/cold doubles explicit. Witness PASS
-is computational path only, NOT fullagent/provider/Linux/HTTP/clean-close acceptance.
-744actual native files equal immutableGit.15focused testsPASS=9synthetic witness
-contracts+6offline receipts, not15native runs. No full standard rerun by this QA.
+### What now works
 
-Actual resource gap: one extra state.db registry handle via hermes_cli/goals.py
-_get_session_db/_acquire_session_db during executor work. Independent525manifest
-close refuses consumer_import_outside_manifest. Later producer752manifest readback
-hits admission_runner_lifecycle_active; no full clean close. Fixture registry cleanup
-is not product ownership release. Failedprobe002 wrong readback column/inventory/
-cleanup kept; actual50 confirmed read-only in its retained DB, no mutation/deletion.
-Full observed probe003 was independently replayed once with exact code snapshot.
+Real original NativeStoreStartup -> same consumer -> canonical API -> native authority/finite -> TurnRunner physical thread -> native persisted result -> exact retry -> sealed native resource+session retirement -> API/runner detach -> ORIGINAL OWNER closes all3connections. Bounded model computes17+25+8=50; controlled computation exception also follows normal closed ownership. No fixture-written terminal row, no second execution on exact retry, changed payload rejected. Same caller SessionDB now reaches goals/loop/heartbeat through scoped revocable borrow, zero extra state.db opens during turn and registry0 BEFORE fixture cleanup.
 
-Driver adapter ONLY chains test profiling and relocates proof JSON. All executed
-source snapshots/raw traces/results retained. Optional static source closure is
-not a blanket permission grant. Delegated read-only reviewer stopped+archived with
-no report, not counted as evidence. All own native commands terminal. Original
-producer continues its bounded work; do not duplicate or edit its tree.
+Native idle resource retirement validates real work/SQL/threads before closing exact executor and agent/session cache. Cancelled or partial close keeps UNKNOWN and retains task/handle ownership. Native session retirement matches fast-save receipt to its exact durable SessionStore namespace; it does not forge full-save generations, rewrite SQL or delete history. API->runner->original3store close then caller profile release. All3connections physically closed; caller lease remains held for caller to release; no SQL row changes during retire/detach. Queued/unknown work is never discarded for success.
 
-Next fix actual goals caller-state/lifetime and native runtime idle blocker in the
-single producer, then same actual work and normalowner close, then full/current
-source Linux/HTTP and failure/cancellation. No M1/M2 claim. Report
- docs/D3B-FINITE-FLOW-QA-F134C6.md; evidence/d3b-finite-turn-qa-f134c6 includes
-independent-run001,witness,source-custody,extra-goals-connection-source-review,
-computed-result-independent-readback,snapshot-restoration,current-focused-tests.
-Source/test local static+selected commit follow, not runtime replay or deployment.
+### Current evidence
 
+Original final-normal + final-compute-failure accepted, independent two same scenarios also accepted (overlap, not4distinct features). Independent exact-source goals16/16, runtime15/15, routinghint6/6 native PASS. Native publication compatibility53/53 and old canonical native5ff with current harness39/39 PASS. Actual computation and runtime functions native, model factory/computation/close explicitly doubled; Windows actor/lease/mount/layout/cold helpers doubled. No currentLinux/HTTP/realLLM/M1/M2 acceptance.
 
-### Final independent checkpoint
+NEW COMPLETE standardWindows3448=3425PASS/23SKIP/0ERROR/0FAIL, actual request136cc601...000006 exit0.602 source/config/test hashes and11patch hashes fixed; old23skipIDs/reasons unchanged, not rerun asLinux.11 focused standard checksPASS (3selection +8offline receipts). Observed thread comparison strengthened from missing-field fallback to actual native API versus worker IDs; runtime/native unchanged. Full run includes historicalF134 witness tests, not new native execution. Old native failures/compatibility timeout retained. Native union756file hashes independently matched immutableGit; actual finite normal748/failure745 within755manifest.
 
-QA/evidence commit8f3ce01 complete and clean.15focused methodsPASS; local staticPASS,3437discovered is NOT full3437run. Full standard not rerun for this unaccepted finite feature. All593prior sources unchanged, temporary own runtime copies archived/restored. Main local/remote4d37687 still exact; requested merge is complete. This final docs-only checkpoint changes no tested code/evidence results. Own native commands terminal; delegated review stopped/archived without verdict. Next producer owns goals extra-handle/lifecycle fix; no background promise or new rollout. Read live producer status before any further native run.
+Final raw independent result/failure/driver copies are exact-byte readbacks in independent-q135d8-readback with provenance. Original Q135D8 tree remains unchanged and its history is NOT merged; these snapshots are not additional executions. All interrupted jobs read back before action, completed native cases not rerun for resume. One original feature full run only. Native/peer/source locks not changed this continuation. Root33user-file contents and status verified unchanged.
+
+### Next acceptance boundary
+
+Current finite-close source requires actual activeLinux isolation and authenticatedHTTP qualification; earlier prepared Linux PASS applies only to its old source. Full realAIAgent memory-manager cleanup and paid-provider calls not qualified. Retained FIFO/unknown restart/cross-store recovery and budgets remain separate acceptance gates. Do not start M2 or claim production readiness. Before main promotion: publish/review exact feature commit and require its alaz/local-ciSUCCESS; local full is not remoteCI. Native patch not automatically installed.
+
+### Files
+
+Report docs/D3B-FINITE-CLOSE-F135C6.md.
+Config/hermes-finite-close-f135c6.json and config/finite-close-f135c6-sources.json.
+Patch patches/hermes/f135c6/0011-borrowed-finite-goals-and-runtime-retirement.patch.
+Evidence/d3b-finite-close-f135c6/: summary.json, final-normal/final-compute-failure,
+source-custody-r136c6, independent-q135d8-readback, historical-source-bindings,
+patch-application, compatibility timeout and final results. resume-r136c6 contains
+full-windows-result/log, source/patch-before/after, full-skips, protected-state and
+static-final. Status work history preserved in docs/status-history/f135c6-*.md.
+All native/full jobs terminal; final static/selected local commit only.

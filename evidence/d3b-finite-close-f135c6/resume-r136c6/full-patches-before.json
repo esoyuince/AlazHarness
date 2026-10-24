@@ -1,0 +1,13 @@
+{
+  "patches/hermes/f135c6/0011-borrowed-finite-goals-and-runtime-retirement.patch": "86a4c7a7e6c15fd29deaef06e1ce48098fc14fab24a345fa9ec3c2b4a191d1dc",
+  "patches/hermes/a112x7d-response-canonical-state.patch": "9ef4ff7cc73f0a5d6e7a1a98609a63f0880363f8ff6e261afa9af27e0f3383f5",
+  "patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch": "c5cf4433b66ba57bd9659c7877f83e0ae152501de6fd9e3e02f801c1542c6f12",
+  "patches/hermes/b112x9-borrowed-api-stores.patch": "afa2fc8e1bbf7c0406dbbcdc02a2cdcf8c41be77fe4f6aed383ee4ad8028c9ac",
+  "patches/hermes/b123a6/prepared-api-runner.patch": "953ede974fffbac717e8e69e26bde29bbb4b2accc0e1d7465a2ab8559b2ebf03",
+  "patches/hermes/c130t6/0009-caller-owned-idle-api-retirement.patch": "3509c7556f13bebc6ef40ebff03830b1efe7cc161238f70b0e89ff6cc288d326",
+  "patches/hermes/c131d6/0010-caller-owned-canonical-api-publication.patch": "5e0db755105e5b976f23138cd676e7925d0086f193ed41d35e063cd0e431afae",
+  "patches/hermes/e118w2/native-worker-owner.patch": "47731c2b72f88486852ed8e4b1e08b2cc39599829687bfd439b1b76b1445d935",
+  "patches/hermes/h117b/native-run-producer.patch": "86d2ae5d4014239e08c790e947692a65919178c887a4e6e5418244736683098d",
+  "patches/hermes/r122c4/runner-caller-state.patch": "7df24fdd60614583e73a056ba111eac40df2ad1a7bb55555562cf64c2ed293a3",
+  "patches/hermes/s121r4/session-store-caller-state.patch": "c048461b42e7d318e6f5d46f0a1483e0fb3bfdc756b414c0e6c99c2954e49920"
+}

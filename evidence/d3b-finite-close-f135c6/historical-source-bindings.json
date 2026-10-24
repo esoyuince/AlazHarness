@@ -1,0 +1,21 @@
+{
+  "base": "b163796604b821729999582dc06e4642b7bbc23e",
+  "sources": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "sha256": "1bf4557ac9cb59751653b890099863ab82722bb3dc38427320ab8910b75d7cac",
+      "path": "evidence/d3b-finite-close-f135c6/prefinite-gateway_prepared_consumer.py.txt"
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "sha256": "bd7620251e459bd8ef1ec14d3809363ed18507996b4601eb7720f88e7b5d7691",
+      "path": "evidence/d3b-finite-close-f135c6/prefinite-gateway_store_startup.py.txt"
+    },
+    "packages/claw-hermes/gateway_consumer_admission.py": {
+      "sha256": "5c9fa513793b2451fb931ad4c2e755d7bb1df93d690a54a3415e7bd276acdac8",
+      "path": "evidence/d3b-finite-close-f135c6/prefinite-gateway_consumer_admission.py.txt"
+    },
+    "packages/claw-hermes/gateway_consumer_api.py": {
+      "sha256": "c677a8310b00206ef3c2d784a7b0b76b36cfb541f22815830825f93067729142",
+      "path": "evidence/d3b-finite-close-f135c6/prefinite-gateway_consumer_api.py.txt"
+    }
+  }
+}

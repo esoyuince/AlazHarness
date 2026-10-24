@@ -1,0 +1,62 @@
+"""Real native fast routing persistence: distinguish persisted hints from lost writes.
+Uses actual native APIs/save_entry; no product method replacements. Leaf settlement
+and idle cache callback fixtures are declared, not a complete finite computation.
+"""
+import hashlib,json,sys,unittest
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'scripts/qa'))
+import q135d8_runtime_retirement as r
+f=r.f;Base=r.RuntimeRetirement
+OBS=[]
+class PersistedHints(unittest.TestCase):
+    setUp=Base.setUp
+    tearDown=Base.tearDown
+    call=Base.call
+    activate=Base.activate
+    active=Base.active
+    drain=Base.drain
+    finish=Base.finish
+    retire=Base.retire
+    idle_agent=Base.idle_agent
+    watched=Base.watched
+    assert_open=Base.assert_open
+    def setup_hint(self):
+        agent,route,row=self.idle_agent();store=self.binding._facade
+        store._entries[route].display_name='owned fast update';store._save_entry(route)
+        self.assertIn(route,store._fast_persisted_entries)
+        self.assertGreater(store._routing_generation,store._persisted_routing_generation)
+        self.retire();return store,route,row
+    def test_native_fast_upsert_can_retire_after_exact_durable_match(self):
+        store,route,row=self.setup_hint();before=[c.total_changes for c in self.connections]
+        dumps=['\n'.join(c.iterdump()) for c in self.connections]
+        with self.watched():receipt=self.call(self.bundle.retire_idle_api_sessions)
+        self.assertEqual(receipt['retiredCount'],1);self.assertEqual(store._fast_persisted_entries,{})
+        self.assertEqual(before,[c.total_changes for c in self.connections]);self.assertEqual(dumps,['\n'.join(c.iterdump()) for c in self.connections]);self.finish();self.assert_open()
+        OBS.append({'case':self._testMethodName,'nativeSaveEntryCreatesHint':True,'durableSqlUnchangedByRetirement':True})
+    def test_changed_hint_json_refuses_without_deleting_hint(self):
+        store,route,row=self.setup_hint();rev,text=store._fast_persisted_entries[route];edited=json.loads(text);edited['display_name']='not durable';store._fast_persisted_entries[route]=(rev,json.dumps(edited))
+        before=dict(store._fast_persisted_entries)
+        with self.watched(),self.assertRaises(f.Reject):self.call(self.bundle.retire_idle_api_sessions)
+        self.assertEqual(store._fast_persisted_entries,before);self.assertIn(row['target_session_id'],self.authority.sessions)
+    def test_future_hint_revision_refuses(self):
+        store,route,row=self.setup_hint();rev,text=store._fast_persisted_entries[route];store._fast_persisted_entries[route]=(store._routing_generation+1,text)
+        with self.watched(),self.assertRaises(f.Reject):self.call(self.bundle.retire_idle_api_sessions)
+        self.assertIn(route,store._fast_persisted_entries)
+    def test_generation_newer_than_last_proven_hint_refuses(self):
+        store,route,row=self.setup_hint();store._routing_generation+=1
+        with self.watched(),self.assertRaises(f.Reject):self.call(self.bundle.retire_idle_api_sessions)
+        self.assertIn(route,store._fast_persisted_entries)
+    def test_hint_outside_retired_native_routes_refuses(self):
+        store,route,row=self.setup_hint();store._fast_persisted_entries['foreign']=store._fast_persisted_entries[route]
+        with self.watched(),self.assertRaises(f.Reject):self.call(self.bundle.retire_idle_api_sessions)
+        self.assertIn('foreign',store._fast_persisted_entries)
+    def test_boolean_revision_is_not_proven_integer_generation(self):
+        store,route,row=self.setup_hint();_,text=store._fast_persisted_entries[route];store._fast_persisted_entries[route]=(True,text)
+        with self.watched(),self.assertRaises(f.Reject):self.call(self.bundle.retire_idle_api_sessions)
+        self.assertIs(store._fast_persisted_entries[route][0],True)
+
+def main():
+    f.IndependentLifecycle=PersistedHints;code=f.main();out=Path(sys.argv[sys.argv.index('--output')+1]);report=json.loads((out/'result.json').read_text(encoding='utf-8'))
+    report.update(result='PASS_INDEPENDENT_NATIVE_PERSISTED_HINTS' if code==0 else 'FAIL',driverSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),observations=OBS,realNativeSaveEntryUsed=True,nativeMethodsReplaced=False,fullComputedTurnNotClaimed=True)
+    (out/'hints-result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print('HINTS_RESULT '+json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','checks','caseEnd','deniedEvents')}),flush=True);return code
+if __name__=='__main__':raise SystemExit(main())

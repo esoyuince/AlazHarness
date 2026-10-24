@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T00:11:16.695541+03:00",
+  "nativeFeature": "92b6806ca4469244917c72d470e985df2ad8f9fc",
+  "sources": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "757d742f0ff5d6c8177d5991cabc3e6b4d79856ab6335e52eb64c3e3ca5efad7",
+    "packages/claw-hermes/gateway_store_startup.py": "23b0dc7bf9e7003a1ec593248142f0bc7a2871e471a140a0d62484ca38c9cd13",
+    "packages/claw-hermes/gateway_consumer_admission.py": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da",
+    "packages/claw-hermes/gateway_consumer_api.py": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168",
+    "config/finite-close-f135c6-sources.json": "ae610c5ada2b88ba391d576df053726950cf0b5dd98d91da487cf0193f274310",
+    "scripts/qa/f135c6_native_finite_close.py": "89d4abcba7ac69184cfc9644ae0a5fc130bc57cca52aaac6916e3dd283e02311"
+  },
+  "scope": "one actual API native finite compute/retry then native resources->session->original owner close; model/OS fixture doubles explicit"
+}
