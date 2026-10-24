@@ -1,0 +1,338 @@
+Updating 4d37687..f08fab0
+Fast-forward
+ config/finite-close-f135c6-sources.json            |   762 ++
+ config/hermes-finite-close-f135c6.json             |    21 +
+ docs/D3B-FINITE-CLOSE-F135C6.md                    |   123 +
+ docs/D3B-FINITE-FLOW-QA-F134C6.md                  |    86 +
+ docs/status-history/f134c6-parent.md               |   107 +
+ docs/status-history/f134c6-work-log.md             |    37 +
+ docs/status-history/f135c6-parent.md               |    45 +
+ docs/status-history/f135c6-resume-r136c6.md        |    62 +
+ evidence/d3b-finite-close-f135c6/.gitattributes    |     3 +
+ .../actual-close-001-intent.json                   |    13 +
+ .../actual-close-001-stderr.txt                    |   Bin 0 -> 6570 bytes
+ .../actual-close-001-stdout.txt                    |   Bin 0 -> 4858 bytes
+ .../actual-close-001/before-profile-cleanup.json   |  3405 +++++
+ .../actual-close-001/result.json                   |  3410 +++++
+ .../actual-close-002-intent.json                   |     6 +
+ .../actual-close-002-stderr.txt                    |   Bin 0 -> 6570 bytes
+ .../actual-close-002-stdout.txt                    |   Bin 0 -> 8331 bytes
+ .../actual-close-002/before-profile-cleanup.json   |  3414 ++++++
+ .../actual-close-002/result.json                   |  3419 ++++++
+ .../actual-close-003-stderr.txt                    |   Bin 0 -> 6570 bytes
+ .../actual-close-003-stdout.txt                    |   Bin 0 -> 7260 bytes
+ .../actual-close-003/before-profile-cleanup.json   |  3407 +++++
+ .../actual-close-003/result.json                   |  3412 +++++
+ .../actual-close-004-intent.json                   |     6 +
+ .../actual-close-004-stderr.txt                    |   Bin 0 -> 6570 bytes
+ .../actual-close-004-stdout.txt                    |   Bin 0 -> 7447 bytes
+ .../actual-close-004/before-profile-cleanup.json   |  3378 +++++
+ .../actual-close-004/result.json                   |  3383 +++++
+ .../actual-close-005-stderr.txt                    |   Bin 0 -> 6570 bytes
+ .../actual-close-005-stdout.txt                    |   Bin 0 -> 4786 bytes
+ .../actual-close-005/before-profile-cleanup.json   |  3401 +++++
+ .../actual-close-005/result.json                   |  3406 +++++
+ .../actual-close001-driver.py.txt                  |   Bin 0 -> 16199 bytes
+ .../actual-close003-driver.py.txt                  |   Bin 0 -> 16730 bytes
+ .../actual-close005-driver.py.txt                  |   Bin 0 -> 17585 bytes
+ evidence/d3b-finite-close-f135c6/baseline.json     |   605 +
+ .../compatibility-intent.json                      |    17 +
+ .../compatibility-timeout-diagnostic.json          |    20 +
+ .../f134-final-driver.py.txt                       |   Bin 0 -> 15978 bytes
+ ...__claw-hermes__gateway_prepared_consumer.py.txt |   Bin 0 -> 19871 bytes
+ ...ages__claw-hermes__gateway_store_startup.py.txt |   Bin 0 -> 14837 bytes
+ .../final-compute-failure-stderr.txt               |   Bin 0 -> 10232 bytes
+ .../final-compute-failure-stdout.txt               |   Bin 0 -> 4827 bytes
+ .../before-profile-cleanup.json                    |  3234 +++++
+ .../final-compute-failure/result.json              |  3239 +++++
+ .../final-lifecycle-intent.json                    |     7 +
+ .../final-normal-stderr.txt                        |   Bin 0 -> 6570 bytes
+ .../final-normal-stdout.txt                        |   Bin 0 -> 5515 bytes
+ .../final-normal/before-profile-cleanup.json       |  3429 ++++++
+ .../final-normal/result.json                       |  3434 ++++++
+ .../d3b-finite-close-f135c6/focused-initial.txt    |   Bin 0 -> 1851 bytes
+ ...y__platforms__api_server_borrowed.py.before.txt |   Bin 0 -> 11255 bytes
+ .../gateway__run_borrowed_admission.py.before.txt  |   Bin 0 -> 12783 bytes
+ .../gateway__run_borrowed_retirement.py.before.txt |   Bin 0 -> 8802 bytes
+ .../gateway__session_ingress.py.before.txt         |   Bin 0 -> 21408 bytes
+ .../goals-candidate001.json                        |    12 +
+ .../hermes_cli__goals.py.before.txt                |   Bin 0 -> 84404 bytes
+ .../historical-source-bindings.json                |    21 +
+ .../historical_api_i133p1.py.before.txt            |   Bin 0 -> 1205 bytes
+ .../actual-independent-001/result.json             |  3424 ++++++
+ .../actual-independent-failure/result.json         |  3313 +++++
+ .../final-native-intent.json                       |    26 +
+ .../final-native-qualification.json                |    72 +
+ .../goals-final/goals-result.json                  |   990 ++
+ .../goals-final/tests.txt                          |   Bin 0 -> 2264 bytes
+ .../hints-after/hints-result.json                  |   684 ++
+ .../hints-after/tests.txt                          |   Bin 0 -> 3663 bytes
+ .../hints-before/hints-result.json                 |   684 ++
+ .../hints-before/tests.txt                         |   Bin 0 -> 3522 bytes
+ .../hints-final/hints-result.json                  |   688 ++
+ .../hints-final/tests.txt                          |   Bin 0 -> 902 bytes
+ .../independent-q135d8-readback/provenance.json    |   102 +
+ .../q135d8_actual_close.py.txt                     |   Bin 0 -> 19929 bytes
+ .../q135d8_goals_scope.py.txt                      |   Bin 0 -> 10628 bytes
+ .../q135d8_persisted_hints.py.txt                  |   Bin 0 -> 4603 bytes
+ .../q135d8_runtime_retirement.py.txt               |   Bin 0 -> 13575 bytes
+ .../runtime-final/runtime-result.json              |   952 ++
+ .../runtime-final/tests.txt                        |   Bin 0 -> 2259 bytes
+ .../integrated-candidate001.json                   |    19 +
+ .../integrated-candidate002.json                   |    19 +
+ .../integrated-candidate003.json                   |    20 +
+ .../legacy-owner-canonical-002-stderr.txt          |   Bin 0 -> 1460 bytes
+ .../legacy-owner-canonical-002-stdout.txt          |   Bin 0 -> 1303 bytes
+ .../legacy-owner-canonical-002-terminal.json       |     6 +
+ .../legacy-owner-canonical-002/result.json         |  1225 ++
+ .../legacy-owner-canonical-002/tests.txt           |   Bin 0 -> 5943 bytes
+ .../legacy-owner-canonical/tests.txt               |   Bin 0 -> 5395 bytes
+ .../native-candidate001.json                       |    16 +
+ .../native-candidate002.json                       |    21 +
+ .../native-candidate003.json                       |    14 +
+ .../native-publication-compat-stderr.txt           |   Bin 0 -> 1460 bytes
+ .../native-publication-compat-stdout.txt           |   Bin 0 -> 3424 bytes
+ .../publication-result.json                        |  1648 +++
+ .../native-publication-compat/result.json          |  1616 +++
+ .../native-publication-compat/tests.txt            |   Bin 0 -> 8321 bytes
+ .../d3b-finite-close-f135c6/patch-application.json |    10 +
+ .../prefinite-gateway_consumer_admission.py.txt    |   Bin 0 -> 3520 bytes
+ .../prefinite-gateway_consumer_api.py.txt          |   Bin 0 -> 3899 bytes
+ .../prefinite-gateway_prepared_consumer.py.txt     |   Bin 0 -> 19042 bytes
+ .../prefinite-gateway_store_startup.py.txt         |   Bin 0 -> 14570 bytes
+ .../probe-source-closure.json                      |  3682 ++++++
+ .../receipt-thread-check-before.py.txt             |   Bin 0 -> 7749 bytes
+ .../receipt-thread-check-correction.json           |     9 +
+ .../resume-focused-tests.txt                       |   Bin 0 -> 1851 bytes
+ .../resume-r135c9/independent-q135-readback.json   |    82 +
+ .../resume-r135c9/root-source-preservation.json    |    12 +
+ .../resume-r135c9/single-writer-handoff.json       |     9 +
+ .../resume-r135c9/start.json                       |    34 +
+ .../test_finite_close.before-strengthening.py.txt  |   Bin 0 -> 8095 bytes
+ .../resume-r136c6/delivery.json                    |    42 +
+ .../resume-r136c6/full-intent.json                 |    27 +
+ .../resume-r136c6/full-patches-after.json          |    13 +
+ .../resume-r136c6/full-patches-before.json         |    13 +
+ .../resume-r136c6/full-skips.json                  |    94 +
+ .../resume-r136c6/full-sources-after.json          |   604 +
+ .../resume-r136c6/full-sources-before.json         |   604 +
+ .../resume-r136c6/full-windows-result.json         |    20 +
+ .../resume-r136c6/full-windows.txt                 |   Bin 0 -> 466283 bytes
+ .../resume-r136c6/protected-state.json             |    12 +
+ .../resume-r136c6/static-final.txt                 |   Bin 0 -> 399 bytes
+ .../source-custody-r136c6.json                     |  3151 +++++
+ .../d3b-finite-close-f135c6/source-custody.json    |  3074 +++++
+ evidence/d3b-finite-close-f135c6/summary.json      |    62 +
+ .../test_api_owner_i133p1.py.before.txt            |   Bin 0 -> 8583 bytes
+ evidence/d3b-finite-turn-qa-f134c6/.gitattributes  |     3 +
+ evidence/d3b-finite-turn-qa-f134c6/baseline.json   |   601 +
+ ...config__finite-consumer-f134r1-sources.json.txt |   Bin 0 -> 55158 bytes
+ ...__claw-hermes__gateway_prepared_consumer.py.txt |   Bin 0 -> 19871 bytes
+ ...ages__claw-hermes__gateway_store_startup.py.txt |   Bin 0 -> 14837 bytes
+ .../computed-result-independent-readback.json      |    64 +
+ .../current-focused-tests.txt                      |   Bin 0 -> 2486 bytes
+ .../delegated-review-state.json                    |     7 +
+ evidence/d3b-finite-turn-qa-f134c6/delivery.json   |    26 +
+ .../driver-observation-review.json                 |    20 +
+ .../extra-goals-connection-source-review.json      |    29 +
+ .../first-probe-independent-readback.json          |    25 +
+ .../independent-run-001-intent.json                |    20 +
+ .../independent-run-001-stderr.txt                 |   Bin 0 -> 6569 bytes
+ .../independent-run-001-stdout.txt                 |   Bin 0 -> 5310 bytes
+ .../independent-run-001-witness.json               |  5645 +++++++++
+ .../before-profile-cleanup.json                    |  3028 +++++
+ .../independent-run-001/result.json                |  3030 +++++
+ .../later-producer-readback.json                   |    14 +
+ .../native-flow-and-owner-gap.json                 |    94 +
+ .../producer-source-closure.json                   |  3679 ++++++
+ .../producer003-driver.py.txt                      |   Bin 0 -> 12742 bytes
+ .../publication-verification.json                  |    11 +
+ .../snapshot-restoration.json                      |     7 +
+ .../d3b-finite-turn-qa-f134c6/source-custody.json  |  3000 +++++
+ .../static-finite-source-review.json               | 12287 +++++++++++++++++++
+ .../d3b-finite-turn-qa-f134c6/static-qa-final.txt  |   Bin 0 -> 399 bytes
+ evidence/d3b-finite-turn-qa-f134c6/summary.json    |    19 +
+ .../witness-contract-result.json                   |    10 +
+ .../witness-contract-tests.txt                     |   Bin 0 -> 1517 bytes
+ .../d3b-finite-turn-qa-f134c6/witness-intent.json  |     7 +
+ packages/claw-hermes/gateway_consumer_admission.py |     4 +-
+ packages/claw-hermes/gateway_consumer_api.py       |    25 +-
+ packages/claw-hermes/gateway_prepared_consumer.py  |    27 +-
+ packages/claw-hermes/gateway_store_startup.py      |     7 +-
+ patches/hermes/f135c6/.gitattributes               |     1 +
+ ...rowed-finite-goals-and-runtime-retirement.patch |   Bin 0 -> 19578 bytes
+ scripts/qa/f134c6_flow_witness.py                  |   101 +
+ scripts/qa/f134c6_observed_driver.py               |   156 +
+ scripts/qa/f135c6_native_finite_close.py           |   207 +
+ status.md                                          |   145 +-
+ tests/historical_api_i133p1.py                     |     3 +
+ tests/historical_finite_close_f135c6.py            |    17 +
+ tests/test_api_owner_i133p1.py                     |     4 +-
+ tests/test_finite_close_f135c6.py                  |    94 +
+ tests/test_finite_flow_receipt_f134c6.py           |    44 +
+ tests/test_finite_flow_witness_f134c6.py           |    37 +
+ 171 files changed, 108798 insertions(+), 117 deletions(-)
+ create mode 100644 config/finite-close-f135c6-sources.json
+ create mode 100644 config/hermes-finite-close-f135c6.json
+ create mode 100644 docs/D3B-FINITE-CLOSE-F135C6.md
+ create mode 100644 docs/D3B-FINITE-FLOW-QA-F134C6.md
+ create mode 100644 docs/status-history/f134c6-parent.md
+ create mode 100644 docs/status-history/f134c6-work-log.md
+ create mode 100644 docs/status-history/f135c6-parent.md
+ create mode 100644 docs/status-history/f135c6-resume-r136c6.md
+ create mode 100644 evidence/d3b-finite-close-f135c6/.gitattributes
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-001-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-001-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-001-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-001/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-001/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-002-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-002-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-002-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-002/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-002/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-003-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-003-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-003/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-003/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-004-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-004-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-004-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-004/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-004/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-005-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-005-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-005/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close-005/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close001-driver.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close003-driver.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/actual-close005-driver.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/baseline.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/compatibility-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/compatibility-timeout-diagnostic.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/f134-final-driver.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/f134-packages__claw-hermes__gateway_prepared_consumer.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/f134-packages__claw-hermes__gateway_store_startup.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-compute-failure-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-compute-failure-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-compute-failure/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-compute-failure/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-lifecycle-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-normal-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-normal-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-normal/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/final-normal/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/focused-initial.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/gateway__platforms__api_server_borrowed.py.before.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/gateway__run_borrowed_admission.py.before.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/gateway__run_borrowed_retirement.py.before.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/gateway__session_ingress.py.before.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/goals-candidate001.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/hermes_cli__goals.py.before.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/historical-source-bindings.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/historical_api_i133p1.py.before.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/actual-independent-001/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/actual-independent-failure/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/final-native-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/final-native-qualification.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/goals-final/goals-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/goals-final/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-after/hints-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-after/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-before/hints-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-before/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-final/hints-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/hints-final/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/provenance.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_actual_close.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_goals_scope.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_persisted_hints.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/q135d8_runtime_retirement.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/runtime-final/runtime-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/independent-q135d8-readback/runtime-final/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/integrated-candidate001.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/integrated-candidate002.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/integrated-candidate003.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/legacy-owner-canonical-002-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/legacy-owner-canonical-002-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/legacy-owner-canonical-002-terminal.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/legacy-owner-canonical-002/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/legacy-owner-canonical-002/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/legacy-owner-canonical/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-candidate001.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-candidate002.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-candidate003.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-publication-compat-stderr.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-publication-compat-stdout.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-publication-compat/publication-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-publication-compat/result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/native-publication-compat/tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/patch-application.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/prefinite-gateway_consumer_admission.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/prefinite-gateway_consumer_api.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/prefinite-gateway_prepared_consumer.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/prefinite-gateway_store_startup.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/probe-source-closure.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/receipt-thread-check-before.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/receipt-thread-check-correction.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-focused-tests.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r135c9/independent-q135-readback.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r135c9/root-source-preservation.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r135c9/single-writer-handoff.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r135c9/start.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r135c9/test_finite_close.before-strengthening.py.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/delivery.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-intent.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-patches-after.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-patches-before.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-skips.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-sources-after.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-sources-before.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-windows-result.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/full-windows.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/protected-state.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/resume-r136c6/static-final.txt
+ create mode 100644 evidence/d3b-finite-close-f135c6/source-custody-r136c6.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/source-custody.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/summary.json
+ create mode 100644 evidence/d3b-finite-close-f135c6/test_api_owner_i133p1.py.before.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/.gitattributes
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/baseline.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/candidate001-config__finite-consumer-f134r1-sources.json.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/candidate001-packages__claw-hermes__gateway_prepared_consumer.py.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/candidate001-packages__claw-hermes__gateway_store_startup.py.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/computed-result-independent-readback.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/current-focused-tests.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/delegated-review-state.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/delivery.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/driver-observation-review.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/extra-goals-connection-source-review.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/first-probe-independent-readback.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/independent-run-001-intent.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/independent-run-001-stderr.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/independent-run-001-stdout.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/independent-run-001-witness.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/independent-run-001/before-profile-cleanup.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/independent-run-001/result.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/later-producer-readback.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/native-flow-and-owner-gap.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/producer-source-closure.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/producer003-driver.py.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/publication-verification.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/snapshot-restoration.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/source-custody.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/static-finite-source-review.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/static-qa-final.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/summary.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/witness-contract-result.json
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/witness-contract-tests.txt
+ create mode 100644 evidence/d3b-finite-turn-qa-f134c6/witness-intent.json
+ create mode 100644 patches/hermes/f135c6/.gitattributes
+ create mode 100644 patches/hermes/f135c6/0011-borrowed-finite-goals-and-runtime-retirement.patch
+ create mode 100644 scripts/qa/f134c6_flow_witness.py
+ create mode 100644 scripts/qa/f134c6_observed_driver.py
+ create mode 100644 scripts/qa/f135c6_native_finite_close.py
+ create mode 100644 tests/historical_finite_close_f135c6.py
+ create mode 100644 tests/test_finite_close_f135c6.py
+ create mode 100644 tests/test_finite_flow_receipt_f134c6.py
+ create mode 100644 tests/test_finite_flow_witness_f134c6.py

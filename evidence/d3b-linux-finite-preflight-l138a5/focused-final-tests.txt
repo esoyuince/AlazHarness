@@ -1,0 +1,12 @@
+test_exact_small_bundle_validates (test_linux_import_bundle_l138a5.LinuxImportBundleContract.test_exact_small_bundle_validates) ... ok
+test_internal_member_digest_changed_refuses (test_linux_import_bundle_l138a5.LinuxImportBundleContract.test_internal_member_digest_changed_refuses) ... ok
+test_outer_digest_changed_refuses (test_linux_import_bundle_l138a5.LinuxImportBundleContract.test_outer_digest_changed_refuses) ... ok
+test_traversal_and_foreign_sections_refuse (test_linux_import_bundle_l138a5.LinuxImportBundleContract.test_traversal_and_foreign_sections_refuse) ... ok
+test_actual_unprivileged_import_and_cleanup (test_linux_import_receipt_l138a5.LinuxImportEvidence.test_actual_unprivileged_import_and_cleanup) ... ok
+test_all_import_and_compilation_bytes_bound (test_linux_import_receipt_l138a5.LinuxImportEvidence.test_all_import_and_compilation_bytes_bound) ... ok
+test_import_side_effects_not_hidden_or_called_kernel_acceptance (test_linux_import_receipt_l138a5.LinuxImportEvidence.test_import_side_effects_not_hidden_or_called_kernel_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.007s
+
+OK

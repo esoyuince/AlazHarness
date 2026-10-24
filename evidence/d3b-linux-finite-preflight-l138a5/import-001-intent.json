@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-25T01:25:30.945365+03:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "bundleSha256": "732ca8a35d1398cca6d633319cd187863c6cfb5eae1a9087be675b742043efea",
+  "bundleBytes": 5885520,
+  "nativeSourceCount": 755,
+  "harnessPythonFiles": 51,
+  "probeSha256": "5b7b77ce73a9ed7a67210feba8a4eb6d04abb1452d1fd3ed3f001218cec1e42a",
+  "constructorFactoryArityFromActualSource": 7,
+  "preRunQaCorrection": "expected native_types arity seven verified from source, fixed before first Linux run",
+  "priorWrapper0013": "Python SyntaxError before execution, no files or Linux process created",
+  "rootUsed": false,
+  "scope": "syntax/selected imports, no constructor instances/stores/work/listener/confinement"
+}

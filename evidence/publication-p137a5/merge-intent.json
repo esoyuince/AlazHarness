@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-25T01:22:08.769471+03:00",
+  "base": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "target": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+  "ciStatus": {
+    "sha": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+    "state": "success",
+    "context": "alaz/local-ci",
+    "id": 57180676318,
+    "description": "ALAZ Local CI passed",
+    "updated_at": "2026-10-24T22:21:07Z",
+    "source": "GitHub.fetch live status read this turn before main promotion"
+  },
+  "operation": "local clean main fast-forward plus normal exact-SHA main push",
+  "force": false,
+  "squash": false,
+  "installedNativeActivation": false
+}

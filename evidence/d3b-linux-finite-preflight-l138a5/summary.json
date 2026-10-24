@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-25T01:27:07.479714+03:00",
+  "result": "PASS_LINUX_SOURCE_IMPORT_PREREQUISITE_ONLY",
+  "publishedMain": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "oneActualLinuxRun": true,
+  "compiledSourceFiles": 806,
+  "nativeFileImports": 444,
+  "dependencyFileImports": 304,
+  "verifiedExistingDependencyFiles": 1162,
+  "newFocusedMethods": 7,
+  "focusedScope": "4synthetic transport+3offline result receipts",
+  "fullStandardOnNewQa": "NOT_RUN",
+  "nativeProductChanged": false,
+  "harnessRuntimeChanged": false,
+  "activeLinuxLifecycleAccepted": false,
+  "kernelConfinementAccepted": false,
+  "providerHttpOrModelStarted": false,
+  "auditRefusedBind": true,
+  "inputBytesUnchanged": true,
+  "temporaryRootRemoved": true,
+  "next": "actual Linux same-owner finite lifecycle, then existing confinement and authenticated HTTP"
+}

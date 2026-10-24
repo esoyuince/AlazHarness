@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-25T01:22:20.888817+03:00",
+  "result": "PUSH_CI_AND_MAIN_FAST_FORWARD_COMPLETE",
+  "previousMain": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "publishedMain": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+  "developmentBranch": "alaz/d3b-finite-close-f135c6",
+  "sameShaCi": {
+    "sha": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+    "state": "success",
+    "context": "alaz/local-ci",
+    "id": 57180676318,
+    "description": "ALAZ Local CI passed",
+    "updated_at": "2026-10-24T22:21:07Z",
+    "source": "GitHub.fetch live status read this turn before main promotion"
+  },
+  "pushExitCode": 0,
+  "localRemoteMainMatch": true,
+  "mainWorktreeClean": true,
+  "sourceCount": 602,
+  "patchCount": 11,
+  "allTestedSourceHashesMatchMainCheckout": true,
+  "rootStatePreserved": true,
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeFeatureInstalled": false,
+  "forcePush": false,
+  "historySquashed": false,
+  "next": "new current-main worktree for ordinary-user Linux source/import prerequisites, then active confinement and authenticated HTTP; no service permission implied"
+}

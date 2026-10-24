@@ -1,0 +1,26 @@
+{
+  "result": "PASS_EXISTING_DEPENDENCY_BYTES_READ_ONLY",
+  "uid": [
+    23001,
+    23001,
+    23001
+  ],
+  "gid": [
+    23003,
+    23003,
+    23003
+  ],
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "rootUsed": false,
+  "dependenciesChecked": 1162,
+  "expectedCount": 1162,
+  "changedOrMissing": [],
+  "extraFiles": [],
+  "nativeCodeImported": false,
+  "namespaceOrMountChanged": false,
+  "filesWrittenByProbe": false,
+  "moduleOrSystemPackagesInstalled": false,
+  "fullFiniteOrConfinementTested": false,
+  "commandExitCode": 0
+}

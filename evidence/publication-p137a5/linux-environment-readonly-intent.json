@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-25T01:20:08.818751+03:00",
+  "scope": "read-only existing dedicated lab readiness, no new runtime/installation",
+  "distro": "AlazHarness-D3B-P71C",
+  "user": "alazgateway",
+  "expectedFileMapSha256": "eb274796afbb2d7f112f97e71322f16a6ec97c8fb5617c5ec11d9fb9d6e6d78c",
+  "oldExpectedFiles": 1162
+}

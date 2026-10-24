@@ -1,42 +1,65 @@
 # AlazHarness - status
 
-## F135C6 / R136C6 - BOUNDED COMPUTED WORK AND ORIGINAL-OWNER CLOSE PASS
+## P137A5 PUBLISHED / L138A5 LINUX IMPORT PREREQUISITE PASS
 
-Active branch alaz/d3b-finite-close-f135c6.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-finite-close-f135c6.
-Parent b163796, current tested source includes staged native d1516731308de8e87130dc68124e69aad35d6911 on5ff88189. Read GitHEAD for this final local delivery commit. Native patch0011 is optional STAGED_NOT_INSTALLED; installed vendor/locks remain eb75627. Published main stays4d37687. No new push/main/CI/rollout this continuation.
+Active branch alaz/d3b-linux-finite-preflight-l138a5.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-finite-preflight-l138a5.
+Base/local/remote main f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7.
+Read live Git HEAD for current QA-only checkpoint; this branch is not yet pushed.
 
-### What now works
+### Publication completed
 
-Real original NativeStoreStartup -> same consumer -> canonical API -> native authority/finite -> TurnRunner physical thread -> native persisted result -> exact retry -> sealed native resource+session retirement -> API/runner detach -> ORIGINAL OWNER closes all3connections. Bounded model computes17+25+8=50; controlled computation exception also follows normal closed ownership. No fixture-written terminal row, no second execution on exact retry, changed payload rejected. Same caller SessionDB now reaches goals/loop/heartbeat through scoped revocable borrow, zero extra state.db opens during turn and registry0 BEFORE fixture cleanup.
+Finite feature de91876 plus docs f08fab0 pushed to development, exact alaz/local-ci
+SUCCESS57180676318 verified before clean main fast-forward/push. Local/remote main
+match. No force/squash/source rewrite.176 outgoing changed file versions scanned
+with existing bounded patterns/path rules, no findings (not a complete security
+audit).602source/config/test and11patch hashes match original full3448=3425PASS,
+23SKIP,0ERROR/FAIL,exit0. No native/full test replay merely for publication.
+Root33dirtyfiles and installed nativeeb75627 unchanged. Native d151 optional patch
+remains STAGED_NOT_INSTALLED; main merge is not runtime or service activation.
+Original finite feature and main worktrees clean. Publication evidence moved
+byte-exact to evidence/publication-p137a5; original status/work log archived.
 
-Native idle resource retirement validates real work/SQL/threads before closing exact executor and agent/session cache. Cancelled or partial close keeps UNKNOWN and retains task/handle ownership. Native session retirement matches fast-save receipt to its exact durable SessionStore namespace; it does not forge full-save generations, rewrite SQL or delete history. API->runner->original3store close then caller profile release. All3connections physically closed; caller lease remains held for caller to release; no SQL row changes during retire/detach. Queued/unknown work is never discarded for success.
+### Actual Linux source/import prerequisite
 
-### Current evidence
+Normal UID23001/GID23003, Python3.12.3, dedicated AlazHarness-D3B-P71C. Existing1162
+dependency files verified exact, no install or root. Current755native+51harness
+Python sources compiled806/806. Selected source qualification and real native
+constructor TYPES/finite/cleanup/goals imported;444native+304dependency imported
+file hashes match sealed input and existing dependency map. No unqualified system
+site packages. Input unchanged; fresh temp root removed. One actual probe exit0.
+No NativeStoreStartup/runner/API instances, stores, finite jobs, namespace/mount,
+HTTP listener, model or provider was started; this is NOT full Linux acceptance.
 
-Original final-normal + final-compute-failure accepted, independent two same scenarios also accepted (overlap, not4distinct features). Independent exact-source goals16/16, runtime15/15, routinghint6/6 native PASS. Native publication compatibility53/53 and old canonical native5ff with current harness39/39 PASS. Actual computation and runtime functions native, model factory/computation/close explicitly doubled; Windows actor/lease/mount/layout/cold helpers doubled. No currentLinux/HTTP/realLLM/M1/M2 acceptance.
+Import attempted socket.bind, offline audit denied it; exact caller not recorded.
+Owned temporary home/SOUL.md was created, then removed with fixture. Both recorded,
+not hidden under no-effects claims. QA audit hook is not a security sandbox.
+Read-only readiness initially had a missing-account-home chdir warning; actual
+probe used explicit cwd / without changing users/files. A host wrapper SyntaxError
+occurred before effects; no intent/run existed, corrected unique request executed.
+Factory arity7 was checked against actual source before first Linux execution.
 
-NEW COMPLETE standardWindows3448=3425PASS/23SKIP/0ERROR/0FAIL, actual request136cc601...000006 exit0.602 source/config/test hashes and11patch hashes fixed; old23skipIDs/reasons unchanged, not rerun asLinux.11 focused standard checksPASS (3selection +8offline receipts). Observed thread comparison strengthened from missing-field fallback to actual native API versus worker IDs; runtime/native unchanged. Full run includes historicalF134 witness tests, not new native execution. Old native failures/compatibility timeout retained. Native union756file hashes independently matched immutableGit; actual finite normal748/failure745 within755manifest.
+7focused methodsPASS:4synthetic transport refusal contracts+3offline receipts,
+not7native tests. New QA full standard NOT RUN; local static recorded separately.
+All602 prior source/config/test files and11patches remain unchanged. New code is
+one QA probe and two test files only. Runtime source selection/defaults untouched.
 
-Final raw independent result/failure/driver copies are exact-byte readbacks in independent-q135d8-readback with provenance. Original Q135D8 tree remains unchanged and its history is NOT merged; these snapshots are not additional executions. All interrupted jobs read back before action, completed native cases not rerun for resume. One original feature full run only. Native/peer/source locks not changed this continuation. Root33user-file contents and status verified unchanged.
+### Exact next step
 
-### Next acceptance boundary
+Run current normal+compute-error finite lifecycle on genuine Linux owner/lease/
+mount/cold helpers, then same source under existing namespace/seccomp/Landlock
+with exact3handles, result/retry/restart identity, caller lease ordering and host
+socket/path/FD canaries. Earlier F126 prepared-only isolation is historical source,
+not this current active proof.752/755 source expansion is explicit; do not weaken
+kernel/data/network gates to pass. Use fresh dedicated lab prefixes after reviewing
+setup; never replay previously blocked root cleanup/probes or touch defaultUbuntu.
+Authenticated HTTP, real model/tool/memory manager, budget/recovery and M1/M2 open.
+No automation or delegated background work exists; current commands terminal.
 
-Current finite-close source requires actual activeLinux isolation and authenticatedHTTP qualification; earlier prepared Linux PASS applies only to its old source. Full realAIAgent memory-manager cleanup and paid-provider calls not qualified. Retained FIFO/unknown restart/cross-store recovery and budgets remain separate acceptance gates. Do not start M2 or claim production readiness. Before main promotion: publish/review exact feature commit and require its alaz/local-ciSUCCESS; local full is not remoteCI. Native patch not automatically installed.
+### Evidence
 
-### Files
-
-Report docs/D3B-FINITE-CLOSE-F135C6.md.
-Config/hermes-finite-close-f135c6.json and config/finite-close-f135c6-sources.json.
-Patch patches/hermes/f135c6/0011-borrowed-finite-goals-and-runtime-retirement.patch.
-Evidence/d3b-finite-close-f135c6/: summary.json, final-normal/final-compute-failure,
-source-custody-r136c6, independent-q135d8-readback, historical-source-bindings,
-patch-application, compatibility timeout and final results. resume-r136c6 contains
-full-windows-result/log, source/patch-before/after, full-skips, protected-state and
-static-final. Status work history preserved in docs/status-history/f135c6-*.md.
-All native/full jobs terminal; final static/selected local commit only.
-
-
-### Local delivery checkpoint
-
-Tested feature committed asde918765bdbbd45afb18c1e28836613bdf715dd1. Full3448=3425PASS23SKIP exit0 and staticPASS; source602+patch11 unchanged. Commit wrapper0010 exited1 AFTER commit on immediate clean-tree assertion; readonly0011 verified sameHEAD, clean worktree and exact sources, no commit replay. Cause of transient status not inferred. Delivery.json preserves this separate wrapper diagnostic. Final docs-only checkpoint follows; local/remote main4d37687 remains unchanged, no feature push, native not installed. Root33dirtyfiles and vendor preserved. Current own jobs terminal, all acceptance limits above remain.
+Docs/D3B-LINUX-FINITE-PREFLIGHT-L138A5.md.
+Evidence/publication-p137a5/: scans, push, CI success, main merge/readback, prior
+Linux readiness and source gap. Evidence/d3b-linux-finite-preflight-l138a5/:
+baseline, import001 intent/transport/raw stdout/stderr/result, focused-final-tests,
+summary, local-static-final, preservation. Scratch archive is private/not tracked.

@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-25T01:18:04.326494+03:00",
+  "candidate": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+  "branch": "alaz/d3b-finite-close-f135c6",
+  "pushExitCode": 0,
+  "remoteRefReadback": "f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7",
+  "sameCommitConfirmed": true,
+  "mainNotUpdated": true,
+  "nativeNotInstalled": true,
+  "ci": "PENDING_READBACK"
+}
