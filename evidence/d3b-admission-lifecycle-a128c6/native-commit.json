@@ -1,0 +1,7 @@
+{
+  "head": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "parent": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "clean": true,
+  "installedVendorChanged": false,
+  "patch": "patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch"
+}

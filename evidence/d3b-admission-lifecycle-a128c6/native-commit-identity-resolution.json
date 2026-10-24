@@ -1,0 +1,9 @@
+{
+  "failedRequest": "a128c601-66e3-4b15-8246-128001000022",
+  "exitCode": 128,
+  "causeVerified": "native repo has no author/committer identity",
+  "postFailureHead": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "postFailureIndexExactlyFiveOwnedFiles": true,
+  "resolution": "use existing harness repository configured identity for this invocation only",
+  "globalOrVendorConfigWritten": false
+}

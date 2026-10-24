@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "activation": "STAGED_NOT_INSTALLED",
+  "nativeBase": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "patchPath": "patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch",
+  "patchSha256": "c5cf4433b66ba57bd9659c7877f83e0ae152501de6fd9e3e02f801c1542c6f12",
+  "resultHashes": {
+    "gateway/run_borrowed_state.py": "6e3f81619a4973fb5d54a930dd6ac2b583c0b77872337894f9660b811f62693b",
+    "gateway/platforms/api_server_borrowed.py": "4879f96d06f9fd6542c3dae5db665326395d40c45eaec15f41917428d5ce4ca3",
+    "gateway/platforms/api_server_prepared.py": "b153a29c4aa4cc622f7d870186b50d71e02a37ac40bade3c1be693a893be1340",
+    "gateway/session_authority.py": "91ccbe38a754f5649a5cfdedea9cd0965bddb9234bf0c9628ae1099d37175396",
+    "gateway/run_borrowed_admission.py": "3abe9a19f3836b33eacd473cd94335ea36c6d37f2071b79d58e9492961aa88c7"
+  },
+  "localAdmissionStates": [
+    "PREPARED",
+    "ACTIVE",
+    "DRAINING",
+    "DRAINED"
+  ],
+  "normalPreparedDefaultsUnchanged": true,
+  "originalCallerKeepsThreeStoresAndEpoch": true,
+  "harnessConsumerIntegrated": false,
+  "fullApiTurnWorkerQualified": false,
+  "httpListenerQualified": false,
+  "linuxIsolationQualified": false,
+  "providerExecutionQualified": false,
+  "sourceEnvelopePromoted": false
+}

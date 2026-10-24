@@ -1,0 +1,407 @@
+From 1b7b31e14451baf1d56c3edbfa2cea69a8f7940c Mon Sep 17 00:00:00 2001
+From: esoyuince <248225088+esoyuince@users.noreply.github.com>
+Date: Sat, 24 Oct 2026 09:04:16 +0300
+Subject: [PATCH] feat(runtime): add explicit caller-owned admission and
+ retained draining lifecycle
+
+---
+ gateway/platforms/api_server_borrowed.py |  24 +++
+ gateway/platforms/api_server_prepared.py |   9 +-
+ gateway/run_borrowed_admission.py        | 225 +++++++++++++++++++++++
+ gateway/run_borrowed_state.py            |  18 +-
+ gateway/session_authority.py             |   4 +
+ 5 files changed, 274 insertions(+), 6 deletions(-)
+ create mode 100644 gateway/run_borrowed_admission.py
+
+diff --git a/gateway/platforms/api_server_borrowed.py b/gateway/platforms/api_server_borrowed.py
+index b9cb1f50..a9a28364 100644
+--- a/gateway/platforms/api_server_borrowed.py
++++ b/gateway/platforms/api_server_borrowed.py
+@@ -113,6 +113,21 @@ class BorrowedAPIStores:
+                 'borrowed_foreign_cache')
+         return self._stores
+ 
++    def activate_admission(self):
++        """Explicit local authority admission only; does not start a service."""
++        from gateway.run_borrowed_admission import activate
++        return activate(self)
++
++    def begin_drain(self):
++        """Withdraw new admission/claims; never cancel or delete existing work."""
++        from gateway.run_borrowed_admission import begin_drain
++        return begin_drain(self)
++
++    def finish_drain(self):
++        """Require caller/native work retirement before ordinary ordered detach."""
++        from gateway.run_borrowed_admission import finish_drain
++        return finish_drain(self)
++
+     def status(self):
+         require((os.getpid(), threading.get_ident()) == self._actor, 'borrowed_actor')
+         return {'state':self._stage,'callerOwnsStores':True,'storesClosedByAdapter':False,
+@@ -151,6 +166,12 @@ async def disconnect_borrowed(adapter):
+     if bundle._stage == 'DETACHED':
+         return
+     bundle._check()
++    if bundle._prepared_binding is not None:
++        require(bundle._prepared_binding._stage in ('PREPARED', 'DRAINED'),
++                'borrowed_admission_must_drain')
++        if bundle._prepared_binding._stage == 'DRAINED':
++            from gateway.run_borrowed_admission import assert_drained
++            assert_drained(bundle)
+     require(bundle._stage == 'ATTACHED', 'borrowed_cleanup_unknown_or_active')
+     _quiescent(adapter)
+     require(not any(c.in_transaction for c in bundle._connections), 'borrowed_transaction_active')
+@@ -176,6 +197,9 @@ async def disconnect_borrowed(adapter):
+         if bundle._prepared_runner is not None:
+             from gateway.platforms.api_server_prepared import check_prepared
+             check_prepared(bundle, adapter)
++            if bundle._prepared_binding._stage == 'DRAINED':
++                from gateway.run_borrowed_admission import assert_drained
++                assert_drained(bundle)
+         bundle._stage='DETACHED'
+     except BaseException:
+         bundle._stage='CLOSE_UNKNOWN'
+diff --git a/gateway/platforms/api_server_prepared.py b/gateway/platforms/api_server_prepared.py
+index 945d44df..6cc6cc85 100644
+--- a/gateway/platforms/api_server_prepared.py
++++ b/gateway/platforms/api_server_prepared.py
+@@ -49,7 +49,8 @@ def _runner_check(bundle):
+     try:
+         require(runner._caller_owned_state is binding and binding._api_bundle is bundle
+                 and binding.state is bundle.state and binding.home == bundle.home
+-                and binding._stage == 'PREPARED', 'prepared_runner_binding_changed')
++                and binding._stage in ('PREPARED', 'ACTIVE', 'DRAINING', 'DRAINED'),
++                'prepared_runner_binding_changed')
+         require(binding.select_async(runner)._db is bundle.state, 'prepared_runner_state_changed')
+     except (BorrowedRunnerRejected, AttributeError, KeyError, TypeError):
+         raise BorrowedStoreRejected('prepared_runner_unavailable') from None
+@@ -86,7 +87,8 @@ def check_prepared(bundle, adapter=None):
+         require(adapter._running is False and adapter._app is None
+                 and adapter._site is None and adapter._runner is None,
+                 'prepared_api_service_state_changed')
+-        _quiescent(adapter)
++        if bundle._prepared_binding._stage in ('PREPARED', 'DRAINED'):
++            _quiescent(adapter)
+ 
+ 
+ def finish_adapter(bundle, adapter):
+@@ -118,3 +120,6 @@ def require_adapter_detached(bundle, runner, binding):
+             and adapter._site is None and adapter._runner is None and not adapter._running,
+             'prepared_adapter_cleanup_incomplete')
+     _quiescent(adapter)
++    if binding._stage == 'DRAINED':
++        from gateway.run_borrowed_admission import assert_drained
++        assert_drained(bundle)
+diff --git a/gateway/run_borrowed_admission.py b/gateway/run_borrowed_admission.py
+new file mode 100644
+index 00000000..d6a00008
+--- /dev/null
++++ b/gateway/run_borrowed_admission.py
+@@ -0,0 +1,225 @@
++"""Explicit local admission for the existing caller-owned runner/API pair.
++
++No scheduler, listener, provider, store owner or epoch is created here. Draining
++closes NEW admission/claims; existing accepted writers may still settle. Native
++queued/unknown records are retained. All transitions use the owner event loop;
++the native write-transaction gate is a pure identity/state read, so it can run
++under the existing SQLite mutex on a worker thread without lock inversion.
++
++This is a cooperative in-process seam, not hostile-thread protection, complete
++work execution or permission to activate an unqualified harness/runtime image.
++"""
++import asyncio
++import os
++import sqlite3
++from pathlib import Path
++from collections import OrderedDict
++from gateway.platforms.api_server_borrowed import BorrowedStoreRejected, require
++
++RUNNER_FIELDS = (
++    ('adapters', dict), ('_profile_adapters', dict), ('_background_tasks', set),
++    ('_sessions', dict), ('_fatal_handler_tasks', set),
++    ('_completion_notification_batch_tasks', dict),
++    ('_completion_notification_batch_flush_tasks', set),
++    ('_completion_notification_batches', dict), ('_completion_deliveries_inflight', set),
++    ('_session_db_handles', dict), ('_startup_restore_tasks', list),
++    ('_startup_restore_queue', list), ('_agent_cache', OrderedDict))
++AUTHORITY_FIELDS = (
++    ('sessions', dict), ('waiters', dict), ('events', dict), ('native_waiters', set),
++    ('pending_results', dict), ('pending_deliveries', dict), ('adopted', dict),
++    ('executing', dict), ('pending_stops', dict), ('pending_steers', dict),
++    ('cancel_obligations', set))
++LAZY_FIELDS = (('_turn_workers', dict), ('_managed_workers', dict),
++    ('_mutation_tasks', set), ('_bot_mailbox_operations', set),
++    ('_bot_receipt_tasks', set), ('_cron_cancellations', dict))
++
++
++def _pair(bundle):
++    from gateway.platforms.api_server_borrowed import BorrowedAPIStores
++    from gateway.run_borrowed_state import CallerOwnedRunnerState
++    from gateway.run import GatewayRunner
++    from gateway.session_authority import SessionAuthority
++    from gateway.platforms.api_server import APIServerAdapter
++    require(type(bundle) is BorrowedAPIStores, 'admission_native_bundle')
++    binding, runner, adapter = bundle._prepared_binding, bundle._prepared_runner, bundle._adapter
++    require(type(binding) is CallerOwnedRunnerState and type(runner) is GatewayRunner
++            and type(adapter) is APIServerAdapter, 'admission_native_pair')
++    binding._lifecycle_actor()
++    require(bundle._stage == 'ATTACHED' and binding._api_bundle is bundle
++            and runner._caller_owned_state is binding and binding._runner is runner
++            and bundle._prepared_adapter_ready is True and adapter._borrowed_api_stores is bundle
++            and adapter.gateway_runner is runner and type(binding._authority) is SessionAuthority,
++            'admission_pair_changed')
++    loop = asyncio.get_running_loop()
++    require(binding._admission_loop is None or binding._admission_loop is loop,
++            'admission_other_loop')
++    return binding, runner, adapter, loop
++
++
++def _idle_work(binding, runner, adapter):
++    from gateway.platforms.api_server_borrowed import _quiescent
++    require(runner._running is False and runner._executor is None
++            and runner._housekeeping_executor is None and runner._loop_heartbeat_task is None
++            and runner._stop_task is None, 'admission_runner_lifecycle_active')
++    for owner, fields in ((runner, RUNNER_FIELDS), (binding._authority, AUTHORITY_FIELDS)):
++        for name, kind in fields:
++            value = getattr(owner, name, None)
++            require(type(value) is kind and not value, 'admission_owned_work_retained')
++    for name, kind in LAZY_FIELDS:
++        value = getattr(binding._authority, name, None)
++        require(value is None or type(value) is kind and not value, 'admission_owned_work_retained')
++    # Do not call physical_workers(): it prunes retained records. No task.done()
++    # inference, cancellation, join, eviction or session-registry mutation here.
++    _quiescent(adapter)
++
++
++def _idle_ledgers(bundle, binding):
++    binding._check_state(quiescent=True)
++    lock = bundle.replay._lock
++    require(lock is bundle._prepared_replay_lock and lock.acquire(blocking=False),
++            'admission_replay_busy')
++    try:
++        with bundle._canonical.read():
++            require(not any(c.in_transaction for c in bundle._connections), 'admission_transaction_active')
++            replay = bundle.replay._conn.execute("""SELECT 1 FROM run_idempotency WHERE CASE
++                WHEN typeof(status_json) != 'text' OR length(CAST(status_json AS BLOB)) > 65536 THEN 1
++                WHEN NOT json_valid(status_json) THEN 1
++                WHEN json_type(status_json) != 'object' THEN 1
++                WHEN EXISTS(SELECT 1 FROM json_tree(status_json) WHERE key IS NOT NULL
++                    GROUP BY parent,key HAVING COUNT(*)>1) THEN 1
++                WHEN COALESCE(json_extract(status_json,'$.status'),'') NOT IN
++                    ('completed','failed','cancelled','interrupted') THEN 1 ELSE 0 END=1 LIMIT 1""").fetchone()
++            require(replay is None, 'admission_replay_unsettled')
++            require(bundle.responses._conn.execute(
++                'SELECT 1 FROM response_keys WHERE settled_at IS NULL LIMIT 1').fetchone() is None,
++                'admission_response_unsettled')
++    finally:
++        lock.release()
++
++
++def _status(binding):
++    return {'state': binding._stage, 'localAdmissionOpen': binding._stage == 'ACTIVE',
++            'serviceStarted': False, 'listenerAuthorized': False,
++            'callerStoresClosed': False, 'epochAdvanced': False,
++            'providerAuthorized': False, 'fullHarnessAcceptance': False}
++
++
++def activate(bundle):
++    from gateway.platforms.api_server_prepared import check_prepared
++    binding, runner, adapter, loop = _pair(bundle)
++    require(binding._stage == 'PREPARED', 'admission_not_fresh_prepared')
++    check_prepared(bundle, adapter)
++    _idle_work(binding, runner, adapter)
++    _idle_ledgers(bundle, binding)
++    # No await and no callback after this point. SQL/native source gates remain
++    # authoritative; this local phase change never creates a persistent lease.
++    try:
++        binding._admission_loop = loop
++        binding._stage = 'ACTIVATING'
++        binding._descriptor['state'] = 'caller_active'
++        binding._authority.retiring = False
++        runner._draining = False
++        binding._stage = 'ACTIVE'
++        check_prepared(bundle, adapter)
++    except BaseException:
++        binding._stage = 'ADMISSION_UNKNOWN'
++        binding._authority.retiring = True
++        runner._draining = True
++        raise
++    return _status(binding)
++
++
++def begin_drain(bundle):
++    binding, runner, adapter, loop = _pair(bundle)
++    require(binding._stage in ('ACTIVE', 'DRAINING'), 'admission_not_active_or_draining')
++    binding._check_prepared(runner)
++    if binding._stage == 'ACTIVE':
++        # The stage closes the transaction gate first. This does not take an SQL
++        # lock, await, cancel workers or deny already admitted settlement writes.
++        binding._stage = 'DRAINING'
++        runner._draining = True
++        binding._authority.retiring = True
++        binding._descriptor['state'] = 'caller_draining'
++    binding._check_prepared(runner)
++    return _status(binding)
++
++
++def finish_drain(bundle):
++    from gateway.platforms.api_server_prepared import check_prepared
++    binding, runner, adapter, loop = _pair(bundle)
++    require(binding._stage in ('DRAINING', 'DRAINED'), 'admission_drain_not_started')
++    check_prepared(bundle, adapter)
++    _idle_work(binding, runner, adapter)
++    _idle_ledgers(bundle, binding)
++    binding._stage = 'DRAINED'
++    binding._descriptor['state'] = 'caller_drained'
++    return _status(binding)
++
++
++def assert_drained(bundle):
++    """Fresh release barrier, also after API cleanup and before runner detach.
++
++    Synchronous runner detach is allowed on its original owner thread after the
++    async adapter detach. No new admission can reopen DRAINED. Keep every handle
++    when anything changed since finish_drain; this function never repairs it.
++    """
++    from gateway.platforms.api_server_prepared import check_prepared
++    binding = bundle._prepared_binding
++    binding._lifecycle_actor()
++    require(binding._stage == 'DRAINED' and binding._api_bundle is bundle
++            and bundle._stage in ('ATTACHED', 'DRAINING', 'DETACHED'),
++            'admission_not_drained')
++    check_prepared(bundle, bundle._adapter)
++    _idle_work(binding, bundle._prepared_runner, bundle._adapter)
++    _idle_ledgers(bundle, binding)
++
++
++def require_open(binding, authority):
++    """Pure gate, including the existing off-loop SQL admission/claim callback.
++
++    Never acquire a mutex, open a file or query SQLite while its transaction is
++    calling this guard. The original native write still checks its durable epoch.
++    """
++    from hermes_state_runtime import RuntimeStoreError
++    from gateway.run_borrowed_state import BorrowedRunnerRejected, CallerOwnedRunnerState
++    from hermes_constants import get_hermes_home
++    try:
++        require(type(binding) is CallerOwnedRunnerState and binding._stage == 'ACTIVE'
++                and os.getpid() == binding._actor[0] and binding._admission_loop is not None
++                and not binding._admission_loop.is_closed(),
++                'admission_closed')
++        runner, bundle = binding._runner, binding._api_bundle
++        require(bundle is not None and bundle._stage == 'ATTACHED'
++                and bundle._prepared_binding is binding and bundle._prepared_runner is runner
++                and runner._caller_owned_state is binding and authority is binding._authority
++                and authority.db is bundle.state and binding.state is bundle.state,
++                'admission_owner_changed')
++        require(runner.config is binding.config and binding.config.multiplex_profiles is False
++                and binding.config.write_sessions_json is False and not binding.config.platforms
++                and not binding.config.profile_routes and Path(get_hermes_home()) == binding.home
++                and runner.session_store is binding._facade
++                and binding._facade.config is binding.config
++                and binding._facade._borrowed_session_state._state is binding.state,
++                'admission_profile_or_configuration_changed')
++        require(bundle.state.read_only is False and bundle.state._shared_registry_owned is False
++                and bundle.replay.durable is True and bundle.state._lock is bundle._state_lock
++                and bundle.replay._lock is bundle._prepared_replay_lock
++                and bundle.responses._canonical_state is bundle._canonical
++                and bundle._canonical._state is bundle.state
++                and bundle._canonical._connection is bundle._connections[0]
++                and bundle._canonical._lock is bundle._state_lock,
++                'admission_connection_owner_changed')
++        # Reading this attribute raises on a closed native handle; no SQL or lock.
++        tuple(c.in_transaction for c in bundle._connections)
++        require(not bundle._connections[1].in_transaction and not bundle._connections[2].in_transaction,
++                'admission_other_store_transaction')
++        adapter = bundle._adapter
++        require(adapter is not None and adapter.gateway_runner is runner
++                and adapter._borrowed_api_stores is bundle and adapter._session_db is bundle.state
++                and adapter._run_idempotency_store is bundle.replay
++                and adapter._response_store is bundle.responses
++                and all(s._conn is c for s,c in zip(bundle._stores,bundle._connections)),
++                'admission_stores_changed')
++        binding._check_prepared(runner)
++    except (BorrowedStoreRejected, BorrowedRunnerRejected, sqlite3.Error, AttributeError, TypeError, KeyError, ValueError):
++        raise RuntimeStoreError('caller_admission_unavailable') from None
+diff --git a/gateway/run_borrowed_state.py b/gateway/run_borrowed_state.py
+index b4a9f01f..62de730c 100644
+--- a/gateway/run_borrowed_state.py
++++ b/gateway/run_borrowed_state.py
+@@ -47,6 +47,7 @@ class CallerOwnedRunnerState:
+         self._runner = self._facade = self._wrapper = self._authority = None
+         self._registry = self._descriptor = None
+         self._local_epochs = self._api_bundle = None
++        self._admission_loop = None
+         self._stage = 'NEW'
+         self._check_state(quiescent=True)
+ 
+@@ -133,22 +134,28 @@ class CallerOwnedRunnerState:
+             return
+         try:
+             a, registry, descriptor = self._authority, self._registry, self._descriptor
++            phases = {'PREPARED': ('caller_prepared', True),
++                      'ACTIVE': ('caller_active', False),
++                      'DRAINING': ('caller_draining', True),
++                      'DRAINED': ('caller_drained', True)}
++            require(self._stage in phases, 'runner_borrow_phase_unknown')
++            description, retiring = phases[self._stage]
+             require(runner.session_authority is a and runner.session_authorities is registry
+                     and registry.launch is a and registry.for_home(self.home) is a
+                     and len(registry) == 1 and registry.multiplexed is False,
+                     'runner_borrow_authority_registry_changed')
+             require(a.runner is runner and a.db is self.state and a.epoch == self.epoch
+                     and a.instance_id == self.instance_id and a.profile_id == str(self.home)
+-                    and a.retiring is True and a.retired is False,
++                    and a.retiring is retiring and a.retired is False,
+                     'runner_borrow_authority_identity_changed')
+-            require(runner._running is False and runner._draining is True,
++            require(runner._running is False and runner._draining is retiring,
+                     'runner_borrow_not_prepared_only')
+             require(runner.session_runtime_descriptor is descriptor and type(descriptor) is dict
+                     and type(descriptor.get('authority_epoch')) is int
+                     and type(descriptor.get('runtime_protocol')) is int
+                     and descriptor == {'instance_id': self.instance_id,
+                         'authority_epoch': self.epoch, 'runtime_protocol': 1,
+-                        'state': 'caller_prepared', 'capabilities': [], 'served_profiles': []},
++                        'state': description, 'capabilities': [], 'served_profiles': []},
+                     'runner_borrow_descriptor_changed')
+             require(self._facade._local_authority_epochs is self._local_epochs
+                     and type(self._local_epochs) is dict
+@@ -163,7 +170,8 @@ class CallerOwnedRunnerState:
+     def select_async(self, runner):
+         require(runner is self._runner and runner._caller_owned_state is self
+                 and runner.config is self.config and runner.session_store is self._facade
+-                and self._stage in ('CONSTRUCTED', 'PREPARED'), 'runner_borrow_owner_changed')
++                and self._stage in ('CONSTRUCTED', 'PREPARED', 'ACTIVE', 'DRAINING', 'DRAINED'),
++                'runner_borrow_owner_changed')
+         self._check_state()
+         self._check_prepared(runner)
+         return self._wrapper
+@@ -206,6 +214,8 @@ class CallerOwnedRunnerState:
+         require(runner is self._runner, 'runner_borrow_detach_owner')
+         if self._stage == 'DETACHED':
+             return
++        require(self._stage in ('CONSTRUCTED', 'PREPARED', 'DRAINED'),
++                'runner_borrow_admission_must_drain')
+         self.select_async(runner)
+         self._check_state(quiescent=True)
+         # This stage never started workers/transports. Unknown work is retained,
+diff --git a/gateway/session_authority.py b/gateway/session_authority.py
+index c0e7e3c0..001b4592 100644
+--- a/gateway/session_authority.py
++++ b/gateway/session_authority.py
+@@ -138,6 +138,10 @@ class SessionAuthority:
+     def _require_admission_open(self):
+         if self.runner._draining or self.retiring:
+             raise RuntimeStoreError('runtime_draining')
++        borrowed = getattr(self.runner, '_caller_owned_state', None)
++        if borrowed is not None:
++            from gateway.run_borrowed_admission import require_open
++            require_open(borrowed, self)
+ 
+     def _admission_gate(self, authorize=None):
+         """The admission gate re-checked inside an off-loop write transaction (with the caller's
+-- 
+2.56.0.windows.2
+

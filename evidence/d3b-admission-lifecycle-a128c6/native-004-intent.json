@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-24T09:01:39.277340+03:00",
+  "candidate": "candidate002 unchanged",
+  "sourceHashes": {
+    "gateway/run_borrowed_state.py": "6e3f81619a4973fb5d54a930dd6ac2b583c0b77872337894f9660b811f62693b",
+    "gateway/platforms/api_server_borrowed.py": "4879f96d06f9fd6542c3dae5db665326395d40c45eaec15f41917428d5ce4ca3",
+    "gateway/platforms/api_server_prepared.py": "b153a29c4aa4cc622f7d870186b50d71e02a37ac40bade3c1be693a893be1340",
+    "gateway/session_authority.py": "91ccbe38a754f5649a5cfdedea9cd0965bddb9234bf0c9628ae1099d37175396",
+    "gateway/run_borrowed_admission.py": "3abe9a19f3836b33eacd473cd94335ea36c6d37f2071b79d58e9492961aa88c7"
+  },
+  "qaSha256": "306bb4b95985134dc81766cd48902bf3a826a1429a1efc09b237715df411b27a",
+  "total": 46,
+  "extra": "2actual awaited API cleanup boundary tests; memory pause explicit fixture"
+}

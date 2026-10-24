@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T08:56:06.098799+03:00",
+  "candidate": "candidate001 unchanged",
+  "cases": 5,
+  "purpose": "post-DRAINED drift must not authorize late detach or new writes under changed owner config/scope/closed response",
+  "qaSha256": "6b710dfa48b8f25054528339d2aa56c8c51480b690f38e031e20f0ef14c6e6e6"
+}

@@ -1,0 +1,8 @@
+{
+  "reason": "git format-patch has required blank context and mail signature whitespace; treat retained patch as byte-exact artifact consistent with r122c4/b123a6",
+  "scope": "patches/hermes/a128c6/*.patch only",
+  "productSourceWhitespaceChecksUnchanged": true,
+  "nativeDiffCheckPassed": true,
+  "patchHashUnchanged": "c5cf4433b66ba57bd9659c7877f83e0ae152501de6fd9e3e02f801c1542c6f12",
+  "firstStagingCheckRetained": "initial-staging-check.txt"
+}

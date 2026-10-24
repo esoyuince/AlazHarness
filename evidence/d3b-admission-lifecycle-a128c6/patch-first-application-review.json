@@ -1,0 +1,61 @@
+{
+  "firstAttemptPassed": false,
+  "sourceChanged": false,
+  "rows": [
+    {
+      "file": "gateway/run_borrowed_state.py",
+      "nativeMatches": true,
+      "blobMatches": true,
+      "appliedMatches": false,
+      "appliedMatchesAfterCRLFNormalization": true,
+      "nativeBytes": 14071,
+      "appliedBytes": 14334,
+      "nativeCRLF": 0,
+      "appliedCRLF": 263
+    },
+    {
+      "file": "gateway/platforms/api_server_borrowed.py",
+      "nativeMatches": true,
+      "blobMatches": true,
+      "appliedMatches": false,
+      "appliedMatchesAfterCRLFNormalization": true,
+      "nativeBytes": 10288,
+      "appliedBytes": 10494,
+      "nativeCRLF": 0,
+      "appliedCRLF": 206
+    },
+    {
+      "file": "gateway/platforms/api_server_prepared.py",
+      "nativeMatches": true,
+      "blobMatches": true,
+      "appliedMatches": false,
+      "appliedMatchesAfterCRLFNormalization": true,
+      "nativeBytes": 6716,
+      "appliedBytes": 6841,
+      "nativeCRLF": 0,
+      "appliedCRLF": 125
+    },
+    {
+      "file": "gateway/session_authority.py",
+      "nativeMatches": true,
+      "blobMatches": true,
+      "appliedMatches": false,
+      "appliedMatchesAfterCRLFNormalization": true,
+      "nativeBytes": 64814,
+      "appliedBytes": 65907,
+      "nativeCRLF": 0,
+      "appliedCRLF": 1093
+    },
+    {
+      "file": "gateway/run_borrowed_admission.py",
+      "nativeMatches": true,
+      "blobMatches": true,
+      "appliedMatches": false,
+      "appliedMatchesAfterCRLFNormalization": true,
+      "nativeBytes": 11990,
+      "appliedBytes": 12215,
+      "nativeCRLF": 0,
+      "appliedCRLF": 225
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:23: trailing whitespace.
++ 
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:86: trailing whitespace.
++ 
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:87: trailing whitespace.
++ 
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:338: trailing whitespace.
++ 
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:402: trailing whitespace.
++ 
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:405: trailing whitespace.
++-- 
+patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch:407: new blank line at EOF.

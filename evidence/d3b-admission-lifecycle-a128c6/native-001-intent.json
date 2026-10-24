@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-24T08:52:42.065814+03:00",
+  "sourceHashes": {
+    "gateway/run_borrowed_state.py": "6e3f81619a4973fb5d54a930dd6ac2b583c0b77872337894f9660b811f62693b",
+    "gateway/platforms/api_server_borrowed.py": "81c22b33fec0221a4436cb84a26da02cfe0e7dc7b3b18f3aec7eade6f191895a",
+    "gateway/platforms/api_server_prepared.py": "8e394523379e36d67ef05f5866b4e17ddf03f6683fc431a48b8948036341d4f7",
+    "gateway/session_authority.py": "91ccbe38a754f5649a5cfdedea9cd0965bddb9234bf0c9628ae1099d37175396",
+    "gateway/run_borrowed_admission.py": "11dbb9cf039f4a94414e71c3003ac86f50cec37475c15540a2514b546b53f8e4"
+  },
+  "qaSha256": "cb218b2c021265a34d90a3d3d672aaefdefeb90d07d8be7bd4e0fbb33df003ba",
+  "scope": "17new native lifecycle/ledger +22prepared compatibility cases; no agent/HTTP/provider/harness activation"
+}

@@ -1,85 +1,15 @@
 # AlazHarness - status
 
-## D3B-OBSERVER-WORK-JOINT-J127B6 - DEVELOPMENT-INTEGRATED / ACTIVE BORROWED WORK STILL CLOSED
+## D3B-ADMISSION-LIFECYCLE-A128C6 - NATIVE46 PASS / STAGED PATCH / UNION FULL PENDING
 
-Canonical branch alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested merge71db831e12fe0a8623940c874a1e2ab8f39c57f7 fast-forwarded frome4968ae.
-Both observerb00bf8d and consumer6c64d2b histories preserved. Read GitHEAD for
-final docs-only commit, exact promotion in evidence/d3b-observer-work-joint-j127b6/delivery.json.
-Native1e97 feature unchanged and NOT INSTALLED; vendoreb75627/maincc7ceba unchanged.
+Own branch alaz/d3b-admission-lifecycle-a128c6, worktree scratch/worktrees/d3b-admission-lifecycle-a128c6; base39a1be3. Sole native implementation in hermes-admission-lifecycle-a128c6. Native feature1b7b31e14451baf1d56c3edbfa2cea69a8f7940c on1e97dd61, clean,5files. Independent Q128C6 lives in d3b-active-lifecycle-a128c6; do not modify its source/index. All557 old harness files unchanged; new QA/config/patch/receipt only.
 
-### Current source observation, no automatic admission
+Existing BorrowedAPIStores explicit activate_admission/begin_drain/finish_drain uses existing binding PREPARED->ACTIVE->DRAINING->DRAINED. No new scheduler/ledger/store/connection/epoch/listener. Native authority adds phase gate inside original admission/claim transaction callback, no recursive SQL lock. Flags alone insufficient; scope/config/closed/changed handles refused. DRAINING stops new admissions/claims, never cancels/prunes/rollsback. Guard-passed writes may commit and remain queued; native claims may settle. Queued/unknown and retained native session/worker/tasks prevent finish; their owning native lifecycle must retire them, no dictionary clear.
 
-Existing NativeCanonicalBinding/NativeTurnWorkerObserver retain exact943 default;
-explicit1e97 selection verified against distinct current source table and common
-native source root. Same15 original native TurnRunner/adopt/executor/physical
-worker scenarios PASS on current1e97 and on943, original runner/model facade
-fixtures explicit. Source/event records do not establish full agent progress.
+Fresh barrier before API detach/after await/before runner detach prevents stale DRAINED authorization. Late replay or cancelled memory cleanup leaves CLOSE_UNKNOWN, three stores/profile retained, retries refused. Ordinary service/start/listener still denied. No actual agent/TurnRunner/API job run: direct native guarded ledger/claim/settlement + actual threads/tasks/registry fault fixtures.
 
-Exact prepared consumer can attach SAME readonly native channel after owner/
-runner/authority/API/three-store validation, only3existing manifest-resident source
-seams read. No worker modules imported/read outside original513envelope. Native
-turn observer refuses prepared mode, capture unavailable; unexpected producer
-event latches GAP. Empty inventory is not health, admission, retry or release.
+Final native00446/46PASS=24new+22original prepared cases. Independent native28/28PASS on same5product hashes, overlapping not74unique.508actual native imports match immutable feature;8own offline receipts PASS. First native38/39 fixture-envelope error and five before-fix failures preserved. Two final awaited-cleanup cases added with no further product change. Successful profiles/ownership/registry cleaned. Native patch reproduced byte-exact with actual base LF attributes; first CRLF fixture mismatch retained. Native initial commit128 absent identity resolved using existing harness identity per invocation, global config untouched.
 
-### Work guards before effects and after awaited cleanup
+Config/hermes-admission-lifecycle-a128c6.json STAGED_NOT_INSTALLED. Old consumer513manifest/observers/installed nativeeb75627/maincc7ceba unchanged. NOT yet NativeStoreStartup ACTIVE integration or worker/HTTP/Linux isolation acceptance. No model/provider/root/WSL/main/push/CI/production or old blocked retry. Need exact combined standard regression with immutable independent QA history; ONE full owner only, check concurrent status before starting. Current native jobs terminal.
 
-Prepared consumer inspects typed existing runner/authority tasks, physical worker
-records, mailbox/receipt/completion/cron obligations before check/API detach,
-after its await, and before retired owner stores close. Live work refuses before
-API changes; cancelled carrier is not physical completion. No prune/cancel/newDB/
-rowwrite or duplicate registry. Historical delivered_stops not active. Unknown
-work after cleanup await retains CLOSE_UNKNOWN. Retired descriptor, single-profile
-registry/epoch/profile/drain identity checked; per-call cooperative checks are not
-atomic protection against hostile same-process concurrency.
-
-C127 native40/40PASS(17new+23compat), real tasks/thread/native-record FAULT fixtures,
-not admitted TurnRunner/agent work. New JOINT16/16PASS=original14attachment+2real
-pending-task composition methods, exact current3product modules and501native
-imports. Native runner/authority/API/stores/SQL/channel real. Windows actor/lease/
-layout/mount/cold-helper boundaries explicitly doubled. Final successful fixture
-profiles/ownership/registry cleaned. Oldprepared003 belongs to oldconsumer bytes,
-not current proof. First import-envelope and fixture-loop failures and initial
-failed lock/temp cleanup preserved; old temp artifacts not silently removed.
-
-### Complete standard and delivered source custody
-
-ONE new complete standard3327=3304PASS/23SKIP/0ERROR/FAIL, raw unittest terminalOK.
-557source/config/test hashes and7patches exact from test through canonical delivery.
-Prior546:538unchanged,3product+5historical test/helper edits;11new source files.
-Exact same23skipIDs/reasons preserved, not rerun as Linux.47selected checks rerun
-on canonicalPASS=25purecontracts+22offline receipts, standard subset not native.
-Old raw results/expected hashes unchanged, strict named saved-source chains only.
-
-Full wrapper requesta127b601...00033 exited1 AFTER all tests because prior skip
-records were dictionaries. Exact stderr/TypeError and raw full log preserved.
-Finalizer00036 verified every3304ok/23skip and source/patch/ID/reason pair, produced
-report exit0 WITHOUT test rerun or raw result changes. Do NOT call original wrapper
-exit0. full-reporting-error.json and full-wrapper-original-stderr.txt are durable.
-Local static PASS, no remote CI claimed; final static-primary-final.txt retained.
-
-### Remaining gate
-
-No new Linux/seccomp/Landlock/kernel acceptance for these changed3product modules.
-OldF126 confinement belongs to exact previous consumer/observer source, not
-relabelled current. No service/listener/model/provider or active borrowed worker
-admission, root/WSL, production/profile/account/main/push/CIqueue operations. Prior
-blocked root/refinement tasks and C120P9HOLD remain unchanged. CompleteAIAgent,
-fullD3B/model accounting/cross-store recovery/powerloss remain open.
-
-NEXT: define and test explicit ACTIVE/DRAINING shared-owner native admission and
-current request/worker correlation, preserving owner lifetime and unknown effects.
-Do not flip retiring/start flags from diagnostic PASS. Then qualify SAME combined
-source under existing isolation and active-workHTTP. No duplicate preparatory
-native/full tests needed just to reread this terminal checkpoint.
-
-### Records
-
-Docs/D3B-OBSERVER-WORK-JOINT-J127B6.md, D3B-CURRENT-OBSERVERS-O127B6.md,
-D3B-PREPARED-WORK-C127A6.md. Original component evidence unchanged. Joint evidence
-folder: inputs,summary,joint-source-custody,prepared-joint001,full-windows-result/
-rawlog,full-reporting-error,full-wrapper-original-stderr,source/patch/skip manifests,
-delivery,selected-delivery-result,static-final,static-primary-final.
-Histories docs/status-history/j127b6-*.md. All native/full jobs terminal; final
-handoff commit is docs/evidence only, canonical worktree is continuation.
+Report docs/D3B-ADMISSION-LIFECYCLE-A128C6.md; evidence/d3b-admission-lifecycle-a128c6/: summary,source-custody,native004,native-commit,patch-application,receipt-tests,first failures. Next own scoped static/commit, then ONE union full + canonical artifact delivery, not runtime installation.

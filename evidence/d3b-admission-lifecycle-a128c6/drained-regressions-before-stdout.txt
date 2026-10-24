@@ -1,0 +1,58 @@
+{"result": "FAIL", "total": 5, "passed": 0, "errors": 0, "failures": 5, "skipped": 0, "errorIds": [], "failureIds": ["__main__.AdmissionCases.test_regression_late_replay_blocks_api_detach_before_effect", "__main__.AdmissionCases.test_regression_late_response_blocks_runner_after_api_detach", "__main__.AdmissionCases.test_regression_changed_config_refuses_write_gate", "__main__.AdmissionCases.test_regression_foreign_scope_refuses_write_gate", "__main__.AdmissionCases.test_regression_closed_response_refuses_write_gate"], "qaSha256": "7868c02cbebfe672b53b8caf6174a75a26b3eb95b13696108d870009a19d14bc", "actualNativeRunnerAndAdapter": true, "nativeMethodsReplaced": false, "cleanupObjectFaultInjectedExplicitly": true, "sameThreeCallerConnections": true, "epochAdvancedByAttachment": false, "serviceAdmissionOrListenerActivated": false, "providerCalls": 0, "linuxIsolationTested": false, "rootWslAction": false, "temporaryRootRemoved": true}
+test_regression_late_replay_blocks_api_detach_before_effect (__main__.AdmissionCases.test_regression_late_replay_blocks_api_detach_before_effect) ... FAIL
+test_regression_late_response_blocks_runner_after_api_detach (__main__.AdmissionCases.test_regression_late_response_blocks_runner_after_api_detach) ... FAIL
+test_regression_changed_config_refuses_write_gate (__main__.AdmissionCases.test_regression_changed_config_refuses_write_gate) ... FAIL
+test_regression_foreign_scope_refuses_write_gate (__main__.AdmissionCases.test_regression_foreign_scope_refuses_write_gate) ... FAIL
+test_regression_closed_response_refuses_write_gate (__main__.AdmissionCases.test_regression_closed_response_refuses_write_gate) ... FAIL
+
+======================================================================
+FAIL: test_regression_late_replay_blocks_api_detach_before_effect (__main__.AdmissionCases.test_regression_late_replay_blocks_api_detach_before_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-admission-lifecycle-a128c6\scripts\qa\a128c6_native_admission.py", line 195, in test_regression_late_replay_blocks_api_detach_before_effect
+    with self.assertRaises(base.RejectStore):base.LOOP.run_until_complete(a.disconnect())
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+======================================================================
+FAIL: test_regression_late_response_blocks_runner_after_api_detach (__main__.AdmissionCases.test_regression_late_response_blocks_runner_after_api_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-admission-lifecycle-a128c6\scripts\qa\a128c6_native_admission.py", line 200, in test_regression_late_response_blocks_runner_after_api_detach
+    with self.assertRaises(base.RejectStore):self.runner.close_all_session_db_handles()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: BorrowedStoreRejected not raised
+
+======================================================================
+FAIL: test_regression_changed_config_refuses_write_gate (__main__.AdmissionCases.test_regression_changed_config_refuses_write_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-admission-lifecycle-a128c6\scripts\qa\a128c6_native_admission.py", line 205, in test_regression_changed_config_refuses_write_gate
+    with self.assertRaises(base.Runtime.RuntimeStoreError):self.authority._require_admission_open()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+======================================================================
+FAIL: test_regression_foreign_scope_refuses_write_gate (__main__.AdmissionCases.test_regression_foreign_scope_refuses_write_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-admission-lifecycle-a128c6\scripts\qa\a128c6_native_admission.py", line 211, in test_regression_foreign_scope_refuses_write_gate
+    with self.assertRaises(base.Runtime.RuntimeStoreError):self.authority._require_admission_open()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+======================================================================
+FAIL: test_regression_closed_response_refuses_write_gate (__main__.AdmissionCases.test_regression_closed_response_refuses_write_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-admission-lifecycle-a128c6\scripts\qa\a128c6_native_admission.py", line 216, in test_regression_closed_response_refuses_write_gate
+    with self.assertRaises(base.Runtime.RuntimeStoreError):self.authority._require_admission_open()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.886s
+
+FAILED (failures=5)
+
+A128_RESULT FAIL 5 0 0 5

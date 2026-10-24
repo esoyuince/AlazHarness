@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T08:53:56.996499+03:00",
+  "firstRun": "38PASS/1ERROR/39",
+  "reason": "fixture supplied top-level response id, native response replay expects response record envelope; real lifecycle correctly refused unsettled response",
+  "productChanged": false,
+  "oldQaSha256": "cb218b2c021265a34d90a3d3d672aaefdefeb90d07d8be7bd4e0fbb33df003ba",
+  "newQaSha256": "ebaf2de4f10a1ef9b480c5182fa8eeb689ac5f88a4aa492763815d48ab924751"
+}
