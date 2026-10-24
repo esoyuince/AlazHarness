@@ -53,3 +53,13 @@ Remote df121d5 failedrc124 at180seconds, not test failure. Actual structured rep
 ### Full throughput-fixed suite PASS; third exact-SHA CI required
 
 Complete Windows3402=3379PASS/23SKIP/0ERROR/0FAIL exit0,134.445seconds,586source/config/test+10patches fixed. Wire30same scenarios and51focused methodsPASS;7new portability/cleanup controls total. Runtime/CI configuration/time/cpu/memory limits unchanged. Previous secondCI has3396PASS5SKIP but overallrc124, remainsFAIL and mainunchanged. New actual loopback fixture polling removes repeated idle shutdown waits, not assertions or deadlines. Next push exact committed source and await full remote gate.
+
+
+### Actual full Linux PASS but inherited job budget still too short
+
+Third1db68d7 remoteCI FAILEDrc124; rawlog3402=3397PASS5SKIP,staticPASS,181.154s tests exceeds180s before overhead. No failure waived/main advance. Narrow PRIVATE infrastructure profile commit7f9976d3 has6/6policy testsPASS, onlyAlazHarness timeout180->360, resource/trust/image/commands unchanged. Live update request3cc4a55e holds no locks yet and waits for existing coordinator lock without stopping other jobs. Config backup/CAS/owner-mode validation required. No oldblockedoperation retry; finalCIstillrequired.
+
+
+### Narrow wall-clock policy update APPLIED; fourth exact CI next
+
+AlazHarness timeout180->360 ONLY applied with existing coordinatorlock/zero processing, privatebackup/configSHA-CAS/owner-mode verification. CPU1/RAM512m/swap768m/image/command/global2jobs10g/trust unchanged, no restart/statusoverride. Private profile+receipt commits7f9976d3/36d5a91 stay isolated, unrelated infra root preserved. Public docs carry sanitized receipt only. Current586source+10patches still same full3402Windows3379PASS23SKIP. Next docs-only push and realremote full gate; main remainscc7ceba until exactSHA success.

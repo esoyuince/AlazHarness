@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T18:06:04.203966+03:00",
+  "profileCommit": "7f9976d3d28bfae483782e45bbe5ac11f5bab31e",
+  "oldConfigSha256": "2caa78c3e51135332a12b69014ed99d4dfa08ebe6b002e6932f7cf4f7e4252f6",
+  "onlyPolicyChange": "AlazHarness.timeout_sec180->360",
+  "requiresExistingWorkerLock": true,
+  "backupPrivateOnly": true,
+  "applyScriptSha256": "7757ce13a1fb84a64863a904462ba5874ebbf9e98c121bd1eb94c98c860f954e"
+}

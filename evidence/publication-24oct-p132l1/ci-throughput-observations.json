@@ -1,0 +1,101 @@
+[
+  {
+    "at": "2026-10-24T17:57:09.750948+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:57:25.008635+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:57:40.209870+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:57:55.396850+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:58:10.597314+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:58:25.817681+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:58:41.037100+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:58:56.275516+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167262252,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:55:32Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:59:11.492756+03:00",
+    "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+    "status": {
+      "id": 57167354779,
+      "state": "failure",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI failed (rc=124)",
+      "created_at": "2026-10-24T14:58:46Z"
+    }
+  }
+]

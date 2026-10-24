@@ -95,3 +95,24 @@ bytes are archived, no historical receipt is relabelled. A new full run follows.
 ## Throughput-fixed complete local acceptance
 
 FullWindows3402=3379PASS/23SKIP/0ERROR/0FAIL exit0,134.445seconds observed.586source/config/test and10patch hashes unchanged during the run. All30wire scenarios and their request/stop/identity assertions remain. The extra real-thread shutdown control brings new tests to7. CI policy and runtime code remain unchanged; third exact-SHA remote gate is still required.
+
+## Measured CI wall-clock budget correction
+
+Third exact commit1db68d7 still ended overallrc124 despite its actual Linux
+log showing3402tests/3397PASS/5SKIP,zero failures and staticPASS. The original
+one-CPU job timer180s is below the observed complete test duration181.154s plus
+static/setup time. This remains a FAILED CI run and main was not advanced.
+
+A separately versioned PRIVATE infrastructure change now sets ONLY the
+AlazHarness wall-clock timeout180->360seconds. Six policy contracts preserve
+exact project, immutable image,1CPU/512mRAM/768mRAM+swap, structured reporting,
+test command and no-installer/no-secret/no-agent requirements. Global worker
+concurrency/memory, all other policies and trust checks remain unchanged.
+Live activation requires the original coordinator lock, a private config backup,
+matching preflight config hash and atomic replacement with original owner/mode.
+A new exact-SHA push must still pass the complete CI gate; no status is overridden.
+Actual activation and acceptance are recorded separately, not inferred here.
+
+## Actual bounded CI profile activation
+
+The timeout-only change was applied under the original worker lock with zero processing jobs, privately backed up, atomic replacement and owner/mode verification. All other configuration values are semantically unchanged; no service restart or CI status override. Private source profile commit7f9976d3 and receipt commit`36d5a91c8060cc036901ff7001b129ed8589041a` retain the review without publishing operational configuration. Runtime source, native patches and the586-file accepted source map remain unchanged. The next push is documentation/evidence only and must pass remoteCI before main.

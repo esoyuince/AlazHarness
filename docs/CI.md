@@ -321,3 +321,17 @@ Historical merged Gateway evidence is pinned to its original code
 commit, not required to match this experimental new branch code.
 No real model/provider, invoices or automatic learning.
 See docs/D3B-HOST-PRINCIPAL-001.md.
+
+## 2026-10-24 AlazHarness full-gate wall-clock budget
+
+The per-AlazHarness Docker command budget is now360seconds, after the3402-test
+suite and static gate exceeded the original180s total budget on the1CPU runner.
+Actual portability failures were fixed first; the remaining completed test/static
+PASS was still recorded as overall timeoutFAIL, never accepted for merging.
+The existing immutable image,1CPU,512MiB RAM,768MiB RAM+swap, exact structured
+reporter/test command, fork/draft/workflow restrictions and global concurrency
+are unchanged. Only policies.AlazHarness.timeout_sec changed, with a private
+backup and atomic compare-and-replace under the existing worker lock.
+No dependencies, source deployment or model calls are introduced. Exact pushed-SHA
+alaz/local-ci success remains mandatory; docs/publication receipts preserve the
+failed attempts and measured cause instead of overriding their statuses.

@@ -1,0 +1,30 @@
+{
+  "configSha256": "2caa78c3e51135332a12b69014ed99d4dfa08ebe6b002e6932f7cf4f7e4252f6",
+  "configMetadata": {
+    "uid": 0,
+    "gid": 983,
+    "mode": "0o640",
+    "symlink": false
+  },
+  "AlazHarnessPolicy": {
+    "command": "set -euo pipefail; export PYTHONDONTWRITEBYTECODE=1; git config --global --add safe.directory /workspace; python3 -B /opt/alaz-ci-reporters/report_init.py tests; python3 -B /opt/alaz-ci-reporters/unittest_live.py tests; python3 -B scripts/ci_check.py",
+    "cpus": 1,
+    "image": "sha256:6852a9b6c39485734c2b0f616504392029499c766d1c43d3dee99df7320e9152",
+    "kind": "node",
+    "memory": "512m",
+    "report_suites": [
+      "tests"
+    ],
+    "reporter": "structured",
+    "swap": "768m",
+    "timeout_sec": 180
+  },
+  "processingJobs": 1,
+  "queueJobs": 1,
+  "dataDiskMounted": true,
+  "globalLimits": {
+    "max_concurrent_jobs": 2,
+    "max_concurrent_memory": "10g",
+    "allow_generic_node": false
+  }
+}

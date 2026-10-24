@@ -1,0 +1,20 @@
+{
+  "sha": "1db68d7d46e5a266b601304c52f953d9d59f5bcd",
+  "job": "f49e40ea-cfba-11f1-8616-162f6e9d7eab",
+  "status": "failure",
+  "exitCode": 124,
+  "timeout": true,
+  "oomKilled": false,
+  "testSummary": {
+    "total": 3402,
+    "passed": 3397,
+    "failed": 0,
+    "skipped": 5,
+    "executed": 3402,
+    "suite_errors": 0
+  },
+  "staticPassTextPresent": true,
+  "logSha256": "f19c0bf1a9bce885ed4590e84ce950ea27cc16185ffb895adba398ff24fef035",
+  "logTail": "................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 3402 tests in 181.154s\n\nOK (skipped=5)\n{\n  \"scope\": \"M0_and_HYB_mock_contracts_not_full_runtime\",\n  \"selected_components\": 10,\n  \"result\": \"PASS\",\n  \"root_files_checked\": 5417,\n  \"source_gitlinks_checked\": 2,\n  \"discovered_tests\": 3402,\n  \"errors\": [],\n  \"vendor_bytes_checked\": false,\n  \"runtime_tested\": false,\n  \"model_called\": false,\n  \"secret_scan\": \"bounded root tracked text patterns; not a complete security audit\"\n}\nTIMEOUT after 180s\n",
+  "overallAccepted": false
+}
