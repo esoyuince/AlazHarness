@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-24T23:07:11.276157+03:00",
+  "result": "OBSERVED_NATIVE_COMPLETED_SUM_NOT_FULL_LIFECYCLE_ACCEPTANCE",
+  "sourceRecoveryRecordSha256": "6d284465c5ea01ad2e389938614a8116889326eee17d3cdf8a128501c993608f",
+  "readOnlyFixtureDatabaseSha256": "2b8d2927326752682c758152341899102dd0bffc921c8baaf5f81e0962fee33e",
+  "queryOnlyImmutable": true,
+  "databaseBytesUnchanged": true,
+  "admission": {
+    "admission_id": "f87f30d59cad485ca1a781079bac1664",
+    "request_id": "f134-request",
+    "target_session_id": "f134-session",
+    "status": "terminal",
+    "outcome": "completed",
+    "owner_epoch": 1,
+    "generation": 1
+  },
+  "savedResult": {
+    "result": {
+      "_messages_are_turn_suffix": true,
+      "_notification_reply_muted": false,
+      "agent_persisted": false,
+      "api_calls": 0,
+      "compacted_in_place": false,
+      "completed": true,
+      "compression_deferred": false,
+      "compression_exhausted": false,
+      "context_length": 4096,
+      "error": null,
+      "failed": false,
+      "failure_reason": null,
+      "final_response": "50",
+      "history_offset": 0,
+      "input_tokens": 0,
+      "interrupt_message": null,
+      "interrupted": false,
+      "last_prompt_tokens": 0,
+      "last_reasoning": null,
+      "messages": [
+        {
+          "content": "50",
+          "role": "assistant"
+        }
+      ],
+      "model": "f134-offline",
+      "output_tokens": 0,
+      "partial": false,
+      "response_previewed": false,
+      "response_reused": false,
+      "response_transformed": false,
+      "session_id": "f134-session"
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0
+    }
+  },
+  "computedExpected": 50,
+  "manualSqlWritesByReview": false,
+  "probeCommandStillFailed": true,
+  "originalCompleteTraceAndCleanupNotAccepted": true,
+  "runtimeRerunByThisReview": false,
+  "retainedFixtureRemoved": false
+}

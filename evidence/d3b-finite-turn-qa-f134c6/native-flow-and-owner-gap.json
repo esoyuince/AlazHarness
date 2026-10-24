@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-24T23:10:48.432540+03:00",
+  "result": "PASS_COMPUTED_NATIVE_PATH_ONLY_CLOSE_NOT_ACCEPTED",
+  "witnessResultSha256": "0e4d26d40be53fbe12e884d39a07941b183947af221b9387b051f9cc9343aae8",
+  "driverResultSha256": "364287ef016f011d5b40174129ce3fe9b2e8db64a3a293c89611ab12374a5606",
+  "answer": "50",
+  "input": [
+    17,
+    25,
+    8
+  ],
+  "actualComputationOffMain": true,
+  "nativePipelineObserved": {
+    "requiredNativeCallsObserved": true,
+    "missing": [],
+    "fixtureComputationCalled": true,
+    "computationOffMainThread": true,
+    "nativeSettlementObserved": true,
+    "manualSettlementStackObserved": false,
+    "flowObserved": true,
+    "nativeCallCountsNotTaskCounts": true,
+    "payloadCorrectnessNeedsDriverAssertions": true
+  },
+  "extraRegistryOpens": [
+    {
+      "kind": "native",
+      "path": "hermes_state_registry.py",
+      "function": "_open_session_db",
+      "thread": 50840,
+      "elapsed": 25.000453,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "hermes_state_registry.py",
+          "function": "acquire"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_acquire_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_get_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_registry.py",
+      "function": "_open_session_db",
+      "thread": 50840,
+      "elapsed": 25.000465,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "hermes_state_registry.py",
+          "function": "acquire"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_acquire_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_get_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    }
+  ],
+  "normalCloseResult": {
+    "type": "PreparedConsumerRejected",
+    "reason": "consumer_import_outside_manifest",
+    "consumerStage": "ATTACHED",
+    "nativePhase": "ACTIVE"
+  },
+  "newConnectionDuringActualTurn": true,
+  "temporaryProfileRemovedByFixture": true,
+  "noSuccessfulProductCloseClaim": true,
+  "nativeMethodsReplacedByWitness": false
+}

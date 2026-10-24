@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-24T23:11:12.789749+03:00",
+  "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "sourcePath": "hermes_cli/goals.py",
+  "sourceSha256": "9be23366970e87d4b41ca6ba15c51294f9584c0d6d3e501e1cefa0590c32f012",
+  "observedFunctions": {
+    "_get_session_db": {
+      "line": 539,
+      "endLine": 600,
+      "source": "def _get_session_db() -> Optional[Any]:\n    \"\"\"Cached SessionDB per HERMES_HOME (profile switches pick the right DB); None on any failure.\n\n    Never constructs SessionDB on an event-loop thread: a cache miss there kicks a one-shot background\n    bootstrap and waits a bounded grace window (the kick call waits ``_DB_BOOTSTRAP_INIT_WAIT_S`` so a\n    healthy cold init completes and the first write isn't dropped).\n    \"\"\"\n    try:\n        from hermes_constants import get_hermes_home\n\n        home = str(get_hermes_home())\n    except Exception as exc:  # pragma: no cover\n        logger.debug(\"GoalManager: SessionDB bootstrap failed (%s)\", exc)\n        return None\n\n    cached = _DB_CACHE.get(home)\n    if cached is not None and _registry_tore_down(cached):\n        # ``hermes profile delete`` force-closes every handle under the profile home\n        # (``hermes_state_registry.close_all_under``) before rmtree; a same-name recreate in this\n        # process must acquire a fresh handle, not keep writing into the torn-down one.\n        with _DB_BOOTSTRAP_LOCK:\n            if _DB_CACHE.get(home) is cached:\n                del _DB_CACHE[home]\n        cached = None\n    if cached is not None:\n        return cached\n\n    try:\n        asyncio.get_running_loop()\n    except RuntimeError:\n        on_loop_thread = False\n    else:\n        on_loop_thread = True\n\n    if on_loop_thread:\n        with _DB_BOOTSTRAP_LOCK:\n            # Re-check under the lock: a bootstrap may have finished since the unlocked read.\n            cached = _DB_CACHE.get(home)\n            if cached is not None:\n                return cached\n            done = _DB_BOOTSTRAP_INFLIGHT.get(home)\n            wait = _DB_BOOTSTRAP_LOOP_WAIT_S   # already running: brief grace window only\n            if done is None:\n                done = _DB_BOOTSTRAP_INFLIGHT[home] = threading.Event()\n                threading.Thread(target=_bootstrap_session_db, args=(home, done), name=\"goals-sessiondb-bootstrap\", daemon=True).start()\n                wait = _DB_BOOTSTRAP_INIT_WAIT_S   # kick call pays the one-time init cost\n        done.wait(wait)\n        return _DB_CACHE.get(home)\n\n    try:\n        db = _acquire_session_db(home)\n    except Exception as exc:  # pragma: no cover\n        logger.debug(\"GoalManager: SessionDB() raised (%s)\", exc)\n        return None\n    with _DB_BOOTSTRAP_LOCK:\n        existing = _DB_CACHE.get(home)\n        if existing is not None:\n            # A concurrent bootstrap won the race; drop our reference so connections don't leak.\n            _release_session_db(db)\n            return existing\n        _DB_CACHE[home] = db\n    return db"
+    },
+    "_acquire_session_db": {
+      "line": 603,
+      "endLine": 608,
+      "source": "def _acquire_session_db(home: str):\n    \"\"\"The registry's shared handle for ``home/state.db``. A bare ``SessionDB()`` here was a SECOND\n    writer per profile beside the gateway's registry handle \u2014 its own token-writer thread and\n    close-time checkpoint (the #90837 corruption shape), doubled under multiplexing.\"\"\"\n    from hermes_state_registry import acquire\n    return acquire(Path(home) / \"state.db\")"
+    }
+  },
+  "callerReferences": "gateway/run.py:2205:from gateway.run_goals import GatewayGoalsMixin\ngateway/run_busy.py:207:            from hermes_cli.goals import GoalManager\ngateway/run_goals.py:54:            from hermes_cli.goals import _get_session_db as _warm_goals_db\ngateway/run_goals.py:90:            from hermes_cli.goals import GoalManager\ngateway/run_goals.py:296:            from hermes_cli.goals import GoalManager\ngateway/run_goals.py:306:            from hermes_cli.goals import count_active_delegations, gather_background_processes as _gather_bg\ngateway/run_idle_gates.py:20:    from hermes_cli.goals import _get_session_db\ngateway/run_idle_gates.py:25:        return _get_session_db()\ngateway/session_ancillary.py:335:    from hermes_cli.goals import GoalState\ngateway/session_kanban.py:324:    from hermes_cli.goals import run_kanban_goal_loop, DEFAULT_MAX_TURNS\ngateway/session_viewer_automation.py:47:    from hermes_cli.goals import DEFAULT_MAX_TURNS\ngateway/session_viewer_automation.py:53:        from hermes_cli.goals import GoalManager\ngateway/session_viewer_automation.py:89:        from hermes_cli.goals import count_active_delegations, gather_background_processes\ngateway/session_viewer_automation.py:98:        from hermes_cli.goals import GoalContract\nhermes_cli/goals.py:539:def _get_session_db() -> Optional[Any]:\nhermes_cli/goals.py:640:    db = _get_session_db()\nhermes_cli/goals.py:661:    db = _get_session_db()\nhermes_cli/goals.py:1013:        db = _get_session_db()\n",
+  "actualObservedStack": [
+    "gateway/turn_executor.py:_run",
+    "hermes_cli/goals.py:_get_session_db",
+    "hermes_cli/goals.py:_acquire_session_db",
+    "hermes_state_registry.py:acquire",
+    "hermes_state_registry.py:_open_session_db"
+  ],
+  "scope": "actual extra registry-owned writer exists during accepted bounded API work; source review only, no producer patch/retry/forced cleanup",
+  "duplicateProfileEventsNotTwoDistinctConnections": true,
+  "invariant": "normal original owner must not claim all runtime handles closed while independent goals registry handle remains"
+}

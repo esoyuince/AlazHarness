@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-24T23:05:20.731047+03:00",
+  "producerDriverSha256": "1a68b45efe69919e44ee1ce36e66d530549bf0550eb8e7688b22b8c3dfeb2137",
+  "nativeMethodsMustRemainOriginal": [
+    "API admission/resolver",
+    "authority schedule/drain/claim",
+    "TurnRunner",
+    "turn executor/thread tracking",
+    "native result persistence/settlement"
+  ],
+  "explicitFixtureOnly": [
+    "AIAgent factory and bounded computation",
+    "existing Windows actor/lease/mount/cold startup boundaries"
+  ],
+  "observerIntegrationGap": "Producer installs its own sys.setprofile/threading.setprofile and temporarily replaces an outer witness. Before independent replay, use an explicit saved-source driver adapter that chains only the test profile callback, or add producer-approved chaining; no native code replacement. An empty outer trace must NOT be relabelled native success.",
+  "profileObservationNotAuthorization": true,
+  "producerFilesEdited": false,
+  "firstFailureSnapshotBound": true,
+  "requestedProbeMeaning": "Computed result, native trace and native saved result all required. Return value alone or fixture-set terminal row never acceptance."
+}

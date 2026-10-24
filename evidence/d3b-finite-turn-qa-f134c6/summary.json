@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-24T23:14:46.604546+03:00",
+  "result": "COMPUTED_NATIVE_FLOW_OBSERVED_FULL_OWNER_CLOSE_NOT_ACCEPTED",
+  "mainPublicationComplete": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "actualIndependentExecutions": 1,
+  "expectedAndSavedResult": "50",
+  "nativeFilesVerified": 744,
+  "focusedSyntheticAndReceiptMethods": 15,
+  "extraRegistryStateConnectionObserved": 1,
+  "nativeGoalsOwnerSeamOpen": true,
+  "normalProductCloseAccepted": false,
+  "nativeKernelOrHttpAccepted": false,
+  "actualProviderCalls": 0,
+  "all593PriorSourcesUnchanged": true,
+  "newFullStandardRun": "NOT_RUN_INDEPENDENT_QA_ONLY",
+  "installedRuntimeChanged": false,
+  "mainChangedByIndependentQA": false,
+  "pushed": false
+}

@@ -1,0 +1,55 @@
+state.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+runs_idempotency.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+response_store.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+Could not import tool module tools.annotate_preview_tool: unreviewed_native_source:tools/annotate_preview_tool.py
+Could not import tool module tools.browser_cdp_tool: unreviewed_native_source:tools/browser_cdp_tool.py
+Could not import tool module tools.browser_dialog_tool: unreviewed_native_source:tools/browser_dialog_tool.py
+Could not import tool module tools.browser_vault_tool: unreviewed_native_source:tools/browser_vault_tool.py
+Could not import tool module tools.close_terminal_tool: unreviewed_native_source:tools/close_terminal_tool.py
+Could not import tool module tools.computer_use_tool: unreviewed_native_source:tools/computer_use_tool.py
+Could not import tool module tools.connectors.tool: unreviewed_native_source:tools/connectors/tool.py
+Could not import tool module tools.drive_preview_tool: unreviewed_native_source:tools/drive_preview_tool.py
+Could not import tool module tools.feishu_doc_tool: unreviewed_native_source:tools/feishu_doc_tool.py
+Could not import tool module tools.feishu_drive_tool: unreviewed_native_source:tools/feishu_drive_tool.py
+Could not import tool module tools.focus_pane_tool: unreviewed_native_source:tools/focus_pane_tool.py
+Could not import tool module tools.react_to_message_tool: unreviewed_native_source:tools/react_to_message_tool.py
+Could not import tool module tools.read_terminal_tool: unreviewed_native_source:tools/read_terminal_tool.py
+Could not import tool module tools.read_window_tool: unreviewed_native_source:tools/read_window_tool.py
+Could not import tool module tools.session_search_tool: unreviewed_native_source:tools/session_search_tool.py
+Could not import tool module tools.tip_tool: unreviewed_native_source:tools/tip_tool.py
+Could not import tool module tools.video_generation_tool: unreviewed_native_source:tools/video_generation_tool.py
+Could not import tool module tools.x_search_tool: unreviewed_native_source:tools/x_search_tool.py
+Could not import tool module tools.xai_video_tools: unreviewed_native_source:tools/xai_video_tools.py
+Could not import tool module tools.yuanbao_tools: unreviewed_native_source:tools/yuanbao_tools.py
+Failed to load plugin 'browser-firecrawl': unreviewed_native_exec:plugins/browser/firecrawl/__init__.py
+Failed to load plugin 'drain': unreviewed_native_exec:plugins/dashboard_auth/drain/__init__.py
+Failed to load plugin 'self-hosted': unreviewed_native_exec:plugins/dashboard_auth/self_hosted/__init__.py
+Failed to load plugin 'deepinfra': unreviewed_native_exec:plugins/image_gen/deepinfra/__init__.py
+Failed to load plugin 'fal': unreviewed_native_exec:plugins/image_gen/fal/__init__.py
+Failed to load plugin 'meta-ai-image-gen': unreviewed_native_exec:plugins/image_gen/meta-ai/__init__.py
+Failed to load plugin 'openai': unreviewed_native_exec:plugins/image_gen/openai/__init__.py
+Failed to load plugin 'openai-codex': unreviewed_native_exec:plugins/image_gen/openai-codex/__init__.py
+Failed to load plugin 'openrouter': unreviewed_native_exec:plugins/image_gen/openrouter/__init__.py
+Failed to load plugin 'xai': unreviewed_native_exec:plugins/image_gen/xai/__init__.py
+Failed to load plugin 'deepinfra': unreviewed_native_exec:plugins/video_gen/deepinfra/__init__.py
+Failed to load plugin 'fal': unreviewed_native_exec:plugins/video_gen/fal/__init__.py
+Failed to load plugin 'openrouter': unreviewed_native_exec:plugins/video_gen/openrouter/__init__.py
+Failed to load plugin 'xai': unreviewed_native_exec:plugins/video_gen/xai/__init__.py
+Failed to load plugin 'web-brave-free': unreviewed_native_exec:plugins/web/brave_free/__init__.py
+Failed to load plugin 'web-ddgs': unreviewed_native_exec:plugins/web/ddgs/__init__.py
+Failed to load plugin 'web-exa': unreviewed_native_exec:plugins/web/exa/__init__.py
+Failed to load plugin 'web-keenable': unreviewed_native_exec:plugins/web/keenable/__init__.py
+Failed to load plugin 'web-openai-native': unreviewed_native_exec:plugins/web/openai_native/__init__.py
+Failed to load plugin 'web-parallel': unreviewed_native_exec:plugins/web/parallel/__init__.py
+Failed to load plugin 'web-perplexity': unreviewed_native_exec:plugins/web/perplexity/__init__.py
+Failed to load plugin 'web-searxng': unreviewed_native_exec:plugins/web/searxng/__init__.py
+Failed to load plugin 'web-tavily': unreviewed_native_exec:plugins/web/tavily/__init__.py
+Failed to load plugin 'web-xai': unreviewed_native_exec:plugins/web/xai/__init__.py
+Failed to register bundled command secret source
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\agent\secret_sources\registry.py", line 206, in _ensure_builtin_sources
+    module = __import__(module_name, fromlist=[class_name])
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-finite-turn-qa-f134c6\scripts\qa\f134c6_observed_driver.py", line 34, in find_spec
+    rejected_imports.append(name);raise ImportError('unreviewed_native_source:'+name)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: unreviewed_native_source:agent/secret_sources/command.py

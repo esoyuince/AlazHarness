@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-24T23:04:48.051620+03:00",
+  "originalResultSha256": "bdbeb821749e5532aa3fbc82eb24e55072a317848257934e3f9a17da4d751ad1",
+  "phase": "OWNER_PREPARE",
+  "errorReason": "consumer_import_outside_manifest",
+  "nativeImportedCount": 446,
+  "additionalSources": {
+    "gateway/media_policy.py": {
+      "sha256": "ae0fd2ef46dee1f61ab24a9cfd903c7f8c5db09c051104acb1b1033c1d23f2cc",
+      "nativeGitVerified": true
+    },
+    "hermes_cli/config_backups.py": {
+      "sha256": "a923aeb156eac44b055ebc2cea458dfd4ee1dbfe7cf0694fd7a55da751b3f1aa",
+      "nativeGitVerified": true
+    },
+    "hermes_cli/moa_config.py": {
+      "sha256": "e75d7d6f1c4f56c5add9c0b9055596e0d95c769fa58364e5f2e364d67780c0df",
+      "nativeGitVerified": true
+    }
+  },
+  "noComputation": true,
+  "noAdmissionRows": true,
+  "originalTempRemoved": true,
+  "independentRuntimeReplay": false
+}

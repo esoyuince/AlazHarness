@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-24T23:14:46.585703+03:00",
+  "sourceResultSha256": "2df3495ab27a302ffb7c478b6f722a7b3e113453c954802fc3f37b73c06455c2",
+  "verdict": "NATIVE_COMPUTED_RESULT_OBSERVED",
+  "savedFinalResponse": "50",
+  "closeOutcome": {
+    "type": "BorrowedStoreRejected",
+    "reason": "admission_runner_lifecycle_active",
+    "consumerStage": "ATTACHED",
+    "nativePhase": "DRAINING"
+  },
+  "runtimeRerunByReview": false,
+  "notIndependentSnapshot001Source": true
+}

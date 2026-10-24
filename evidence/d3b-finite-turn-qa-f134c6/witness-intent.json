@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T23:00:12.728721+03:00",
+  "qaSha256": "648c46fca28e0221cd3fa586d9bc0420e13fe369ec3b943b31b84e7e4627ed52",
+  "state": "WRITTEN_NOT_EXECUTED",
+  "purpose": "observe existing native call/thread/settlement stack; reject fixture direct terminalization; no product patch",
+  "producerDriverRequired": "must be read and hash-pinned before any execution"
+}

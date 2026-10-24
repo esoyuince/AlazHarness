@@ -1,0 +1,154 @@
+"""Bounded same-owner native API execution characterization.
+Only the AIAgent factory/computation is replaced with an explicit finite model
+fixture. Native handler, TurnRunner, scheduler, worker, and SQL settlement remain
+original. Windows OS boundaries use the already declared NativeFixture doubles.
+The old production manifest is NOT widened; this probe observes its next gap.
+"""
+import argparse,asyncio,hashlib,importlib.abc,importlib.machinery,json,os,re,sys,tempfile,threading,traceback
+from pathlib import Path
+from contextlib import nullcontext
+import shutil
+from types import SimpleNamespace
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[2]
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--native',type=Path,required=True);parser.add_argument('--output',type=Path,required=True);a=parser.parse_args()
+    native=a.native.resolve(strict=True);out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    proof=json.loads((ROOT/'evidence/d3b-finite-turn-f134r1/probe-source-closure.json').read_text(encoding='utf-8'))
+    for name,h in proof['sourceHashes'].items():
+        path=native/name
+        assert path.is_file() and path.resolve()==path and hashlib.sha256(path.read_bytes()).hexdigest()==h,name
+    original=json.loads((ROOT/'config/canonical-api-consumer-i133p1-sources.json').read_text())['sources']
+    loop=asyncio.new_event_loop();asyncio.set_event_loop(loop)
+    denied=[];rejected_imports=[];events=[];compute=[];instances=[];opens=[];executed_sources={};phase='PREPARE';f=c=None;result=None;error=None;teardown=[];saved=None;rows=[];close_outcome=None
+    mainthread=threading.get_ident()
+    class SourceGuard(importlib.abc.MetaPathFinder):
+        def find_spec(self,fullname,path=None,target=None):
+            spec=importlib.machinery.PathFinder.find_spec(fullname,path,target)
+            if spec is not None and spec.origin and spec.origin not in ('built-in','frozen'):
+                p=Path(spec.origin).resolve()
+                if p.is_relative_to(native):
+                    name=p.relative_to(native).as_posix();h=proof['sourceHashes'].get(name)
+                    if not h or hashlib.sha256(p.read_bytes()).hexdigest()!=h:
+                        rejected_imports.append(name);raise ImportError('unreviewed_native_source:'+name)
+            return None
+    def audit(event,args):
+        if event=='sqlite3.connect':
+            opens.append({'phase':phase,'path':str(args[0]),'stack':[x.name for x in traceback.extract_stack(limit=9)]})
+        if event=='exec':
+            file=getattr(args[0],'co_filename','')
+            if file and not file.startswith('<'):
+                p=Path(file).resolve()
+                if p.is_relative_to(native):
+                    name=p.relative_to(native).as_posix();h=proof['sourceHashes'].get(name)
+                    if not h or hashlib.sha256(p.read_bytes()).hexdigest()!=h:
+                        rejected_imports.append(name);raise ImportError('unreviewed_native_exec:'+name)
+                    executed_sources[name]=h
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+            denied.append({'event':event,'stack':[x.name for x in traceback.extract_stack(limit=8)]})
+            raise PermissionError('f134_owned_offline_no_external_io')
+    selected={'run_api_turn','observe_api_turn','execute_finite_admission','execute_admission','_handle_message','_run_agent_start_turn_worker','run_sync','_wire_turn_agent_callbacks','adopt_agent','finish_result','settle_session_input','_run_sync_with_timeout_lifecycle','_build_fresh_agent'}
+    def profile(frame,event,arg):
+        if previous is not None:previous(frame,event,arg)
+        if event!='call' or frame.f_code.co_name not in selected or len(events)>=4000:return
+        p=Path(frame.f_code.co_filename)
+        if not p.is_relative_to(native):return
+        chain=[];cur=frame
+        for _ in range(6):
+            if cur is None:break
+            chain.append(cur.f_code.co_name);cur=cur.f_back
+        events.append({'method':frame.f_code.co_name,'source':p.relative_to(native).as_posix(),'thread':threading.get_ident(),'nativeThread':threading.get_native_id(),'stack':chain})
+    class FiniteCompute:
+        def __init__(self,**kwargs):
+            self.kwargs=kwargs;self.session_id=kwargs['session_id'];self.model=kwargs['model'];self.tools=[]
+            self.session_prompt_tokens=self.session_completion_tokens=self.session_output_tokens=0
+            self.context_compressor=SimpleNamespace(compression_count=0,last_prompt_tokens=0,context_length=4096)
+            self.request_overrides={};self._codex_session=None;self.interrupted=False;instances.append(self)
+        def clear_interrupt(self):self.interrupted=False
+        def interrupt(self,*args,**kwargs):self.interrupted=True
+        def steer(self,text):raise AssertionError('not_a_steering_probe')
+        def run_conversation(self,message,**kwargs):
+            assert isinstance(message,str)
+            match=re.search(r'SUM:([0-9, -]+)',message);assert match is not None,message
+            values=[int(x.strip()) for x in match.group(1).strip().split(',')];assert 1<=len(values)<=10 and all(abs(v)<=1000 for v in values)
+            answer=str(sum(values));compute.append({'input':values,'result':answer,'thread':threading.get_ident(),'nativeThread':threading.get_native_id(),'sessionId':self.session_id,'onMainThread':threading.get_ident()==mainthread})
+            assert not compute[-1]['onMainThread']
+            return {'final_response':answer,'messages':[{'role':'user','content':message},{'role':'assistant','content':answer}],
+                    'completed':True,'api_calls':0,'tools':[],'agent_persisted':False}
+    sys.meta_path.insert(0,SourceGuard())
+    with nullcontext(tempfile.mkdtemp(prefix='alaz-f134-owner-')) as tmp:
+        home=Path(tmp).resolve();os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home),HERMES_AGENT_TIMEOUT='0',HERMES_AGENT_TIMEOUT_WARNING='0',OPENAI_API_KEY='owned-fixture-not-a-real-key',OPENAI_BASE_URL='http://127.0.0.1:9/v1')
+        (home/'config.yaml').write_text('model:\n  default: f134-offline\n  provider: custom\n  base_url: http://127.0.0.1:9/v1\nagent:\n  max_turns: 1\ngateway:\n  multiplex_profiles: false\n  write_sessions_json: false\ndisplay:\n  tool_progress: off\n  streaming: false\n',encoding='utf-8')
+        sys.path[:0]=[str(native),str(ROOT/'packages/claw-hermes'),str(ROOT/'scripts/qa')];sys.addaudithook(audit)
+        previous=sys.getprofile();threadprevious=threading.getprofile();sys.setprofile(profile);threading.setprofile(profile)
+        try:
+            from gateway.config import GatewayConfig,PlatformConfig
+            from s124b1_startup_fixture import NativeFixture
+            import hermes_state_registry as registry
+            f=NativeFixture(native,home,loop)
+            async def execute():
+                nonlocal phase,c,result,saved,rows,close_outcome
+                phase='OWNER_PREPARE'
+                c=await f.startup.prepare_runtime(GatewayConfig(multiplex_profiles=False,write_sessions_json=False),PlatformConfig(extra={'key':'f134-test-only','model_name':'f134-offline'}),local_admission=True,canonical_api=True,finite_turn=True)
+                c.publish_api_adapter();c.activate_admission()
+                phase='MODEL_FACTORY_IMPORT'
+                import run_agent
+                from gateway.session_api_turn import run_api_turn
+                phase='ACTUAL_NATIVE_API_TURN'
+                with patch.object(run_agent,'AIAgent',FiniteCompute):
+                    result=await asyncio.wait_for(run_api_turn(c._adapter,session_id='f134-session',request_id='f134-request',user_message='SUM:17,25,8',conversation_history=[]),timeout=25)
+                    authority=c._binding._authority
+                    tasks=[live.task for live in authority.sessions.values() if live.task is not None and not live.task.done()]
+                    if tasks:await asyncio.wait_for(asyncio.gather(*tasks,return_exceptions=True),10)
+                    jobs=list(getattr(authority,'_mutation_tasks',()))
+                    if jobs:await asyncio.wait_for(asyncio.gather(*jobs,return_exceptions=True),10)
+                    await asyncio.sleep(0)
+                phase='NATIVE_RESULT_READBACK'
+                from gateway.session_results import admission_result
+                rows=[dict(row) for row in f.connections[0].execute('SELECT admission_id,target_session_id,status,outcome,generation FROM session_admissions')]
+                if rows:saved=admission_result(f.stores[0],rows[0]['admission_id'])
+                phase='CURRENT_CONSUMER_RELEASE'
+                try:
+                    c.begin_drain();c.retire_idle_api_sessions();c.finish_drain();await c.detach();f.startup.close();close_outcome='ORIGINAL_OWNER_CLEAN_CLOSE'
+                except BaseException as exc:
+                    close_outcome={'type':type(exc).__name__,'reason':str(exc),'consumerStage':c._stage,'nativePhase':c._binding._stage}
+                phase='COMPLETE'
+            loop.run_until_complete(execute())
+        except BaseException as exc:
+            error={'phase':phase,'type':type(exc).__name__,'reason':str(exc),'traceback':traceback.format_exc()};print('PROBE_EXCEPTION',phase,type(exc).__name__,str(exc),flush=True)
+        finally:
+            # Fixture teardown is not product successful drain/close.
+            pending=[t for t in asyncio.all_tasks(loop) if not t.done()]
+            if pending:
+                for t in pending:t.cancel()
+                loop.run_until_complete(asyncio.gather(*pending,return_exceptions=True));teardown.append({'cancelledFixtureTasks':len(pending)})
+            if c is not None:
+                for attr in ('_executor','_housekeeping_executor'):
+                    pool=getattr(c._runner,attr,None)
+                    if pool is not None:pool.shutdown(wait=True);teardown.append({'fixtureShutdownNativePool':attr})
+            loop.run_until_complete(loop.shutdown_default_executor())
+            sys.setprofile(previous);threading.setprofile(threadprevious)
+            if f is not None:
+                teardown.append({'nativeRegistryBeforeFixtureCleanup':registry.stats()})
+                registry.close_all_under(home)
+                f.cleanup_fixture()
+                teardown.append({'nativeRegistryAfterFixtureCleanup':registry.stats()})
+            loop.close()
+        imports={}
+        for mod in tuple(sys.modules.values()):
+            name=getattr(mod,'__file__',None)
+            if name:
+                p=Path(name).resolve()
+                if p.is_relative_to(native) and p.suffix=='.py':imports[p.relative_to(native).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+        unqualified_metadata=[name for name,h in imports.items() if proof['sourceHashes'].get(name)!=h]
+        assert all(proof['sourceHashes'].get(name)==h for name,h in executed_sources.items())
+        report={'phase':phase,'error':error,'result':result,'savedResult':saved,'admissions':rows,'computation':compute,'nativeTrace':events,'closeOutcome':close_outcome,'fixtureTeardown':teardown,'nativeImports':imports,'unqualifiedModuleMetadata':unqualified_metadata,'nativeExecutedSources':executed_sources,'sqliteOpens':opens,'additionalLoadedNativeSources':sorted(set(imports)-set(original)),'deniedExternalEvents':denied,'rejectedImports':rejected_imports,'nativeFeature':proof['feature'],'driverSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'nativeMethodsReplaced':['run_agent.AIAgent (explicit model factory/computation only)'],'windowsOsBoundariesDoubled':True,'manualSettlementPerformed':False,'productionManifestWidened':False,'realProviderCalls':0,'httpListenerStarted':False,'linuxIsolationTested':False}
+    (out/'before-profile-cleanup.json').write_text(json.dumps(report,indent=2,default=str)+'\n',encoding='utf-8')
+    try:shutil.rmtree(home)
+    except OSError as exc:report['fixtureProfileCleanupError']={'type':type(exc).__name__,'reason':str(exc)}
+    report['temporaryHomeRemoved']=not home.exists();passed=bool(not error and compute and saved and saved['result'].get('final_response')=='50')
+    report['verdict']='NATIVE_COMPUTED_RESULT_OBSERVED' if passed else 'CHARACTERIZATION_BLOCKED';(out/'result.json').write_text(json.dumps(report,indent=2,default=str)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','nativeExecutedSources','nativeTrace','sqliteOpens','deniedExternalEvents','additionalLoadedNativeSources')}),flush=True)
+    return 0 if passed else 1
+if __name__=='__main__':raise SystemExit(main())

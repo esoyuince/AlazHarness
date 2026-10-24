@@ -1,0 +1,11 @@
+{
+  "main": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "ciState": "success",
+  "ciSource": "live GitHub get_commit_combined_status",
+  "remoteMainVerified": true,
+  "localMainVerified": true,
+  "ownMergePreflight002": "stopped before merge/push: single CRLF source checkout differs from Git blob",
+  "exactDifference": "scripts/qa/windows_appcontainer_probe.cs text eol=crlf,229CRLF only; tested97a3 and4d376 Git sources identical",
+  "originalP134R1PromotionReadback": "complete; did not replay concurrent merge",
+  "runtimeSourceChanged": false
+}

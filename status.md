@@ -1,107 +1,40 @@
 # AlazHarness - status
 
-## J133C6 PUBLICATION RESUME - TESTED QA UNION / PUSH-CI-MAIN IN PROGRESS
+## F134C6 REAL COMPUTED FLOW OBSERVED / FULL OWNER CLOSE NOT ACCEPTED
 
-Active worktree scratch/worktrees/d3b-api-owner-joint-j133c6, branch
-alaz/d3b-api-owner-joint-j133c6. Main6001 already holds the accepted original-owner
-canonical API implementation. This step consolidates independent QA8a15 and the
-original published implementation handoff75c8 while preserving both histories.
-Only status.md conflicted; complete parent copies retained in docs/status-history.
+Main local/remote4d37687 published after exact alaz/local-ci SUCCESS. Merge is DONE.
+Own branch alaz/d3b-finite-turn-qa-f134c6, worktree scratch/worktrees/d3b-finite-turn-qa-f134c6.
+Producer d3b-finite-turn-f134r1 is SINGLE implementation owner. This QA branch
+restores593 prior sources byte-exact after its temporary candidate copy. Native
+5ff88189 and installed vendor/locks untouched. No new feature main/push here.
 
-No source/runtime/config/test/patch changes relative to tested union97a3:
-593sources+10patches exact, fullWindows3422=3399PASS23SKIP0ERROR0FAIL exit0.
-Native39/23 and compatibility23/20 scopes remain distinct, Windows OS doubles
-explicit; no finite payload, HTTP, current Linux or model acceptance.
+One independent actual original-owner/native API->authority drain->finite->handler
+->TurnRunner physicalthread->native commit_and_publish->settle_session_input run
+returned and durably stored50 for17+25+8. One terminal/completed admission, no
+manual fixture settlement. Model factory/computation alone fake; native pipeline
+functions original. Windows actor/lease/mount/cold doubles explicit. Witness PASS
+is computational path only, NOT fullagent/provider/Linux/HTTP/clean-close acceptance.
+744actual native files equal immutableGit.15focused testsPASS=9synthetic witness
+contracts+6offline receipts, not15native runs. No full standard rerun by this QA.
 
-Remote main6001 and its exact alaz/local-ci SUCCESS re-read. Next bounded complete
-outgoing-history scan and local static, commit this docs-only reconciliation,
-push JOINT branch, require exact-SHA alaz/local-ci SUCCESS, re-read main then
-fast-forward local/remote main. No force/squash/reset and no runtime activation.
-Do not start duplicate full/native tests. New source or CI failure blocks promotion.
+Actual resource gap: one extra state.db registry handle via hermes_cli/goals.py
+_get_session_db/_acquire_session_db during executor work. Independent525manifest
+close refuses consumer_import_outside_manifest. Later producer752manifest readback
+hits admission_runner_lifecycle_active; no full clean close. Fixture registry cleanup
+is not product ownership release. Failedprobe002 wrong readback column/inventory/
+cleanup kept; actual50 confirmed read-only in its retained DB, no mutation/deletion.
+Full observed probe003 was independently replayed once with exact code snapshot.
 
-Final action receipts under evidence/d3b-api-owner-joint-j133c6/publication-resume-r133c8/.
-Current work has not yet pushed the joint or advanced main. Root dirty file bytes,
-installed vendor and prior locks recorded and must stay unchanged. Prior denied
-operations are not repeated. All earlier native/full runs terminal.
+Driver adapter ONLY chains test profiling and relocates proof JSON. All executed
+source snapshots/raw traces/results retained. Optional static source closure is
+not a blanket permission grant. Delegated read-only reviewer stopped+archived with
+no report, not counted as evidence. All own native commands terminal. Original
+producer continues its bounded work; do not duplicate or edit its tree.
 
-Next product milestone after this handoff: actual accepted API -> finite turn ->
-physical worker -> computed result and native retirement. Explicit source closure
-review is required; no test-written terminal state counts as execution.
-
-## Preserved pre-publication acceptance details
-
-## J133C6 - PRODUCT MAIN6001 PUBLISHED / INDEPENDENT QA UNION97a3 LOCAL ACCEPTED
-
-Active branch alaz/d3b-api-owner-joint-j133c6.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-owner-joint-j133c6.
-Implementation6001b5534f445fc5fe085af53abfbb89d6f6c6b3 and independentQA
-8a15de2de12e742a3509d0d0002a69066d390527 histories retained; only status conflict.
-Tested union97a3c78116071afaa7416028a0c7b8a2ccbaa4ff; current GitHEAD may add
-this docs-only handoff. Product6001b5534f445fc5fe085af53abfbb89d6f6c6b3 is NOW
-published on remote main and original feature branch; exact GitHub alaz/local-ci
-SUCCESS independently observed. Same runtime/config/patch/source-lock bytes as
-union. Prior main94f509d publication also completed. Joint independent QA/evidence
-is LOCAL, not pushed; main6001CI is NOT union97a3CI. No runtime activation.
-Actual readback/evidence in delivery.json. Source593/patch10 unchanged.
-
-### Implemented and actually accepted
-
-Existing NativeStoreStartup.prepare_runtime(local_admission=True,canonical_api=True)
-selects fixed522source native5ff88189 in SAME consumer/owner/three stores/epoch.
-Defaults1e97prepared and1b7local remain unchanged. Explicit publish_api_adapter
-uses native existing canonical resolver/registry; separate activation, not implicit
-HTTP/model/start. Current mapping/config/loop/source and caller-owner identity are
-checked. Direct native publication cannot impersonate the consumer phase.
-
-Actual programmatic API admission and exact retry reach same authority; one record,
-conflicting body refused. Queued/unknown obligations survive drain and block finish.
-Native retire_idle_api_sessions only after sealing and terminal durable obligations,
-never automatic queue execution or deletion. Test uses DECLARED native leaf
-claim/settlement; no full computed payload/TurnRunner result yet. Native memory
-retirement preserves SQL/history, API withdraws before runner detach, original
-owner closes threehandles, caller releases profile lease separately.
-
-Original39first38PASS1FAIL and independent23first22PASS1FAIL exposed real native
-retirement completing then receipt loss; unchanged DRAINING was not no-effect
-proof. Fixed wrapper retains UNKNOWN for unexpected/post-return failures; native
-typed pre-effect rejection alone can remain known. SAME failed QA assertions pass.
-Cancelled/late cleanup and replaced final maps retain owner or block final close.
-All raw failed logs and exact candidate sources preserved, no result relabelling.
-
-### Exact test results and boundaries
-
-Current native39/39 and independent23/23PASS, overlapping scopes not62unique.
-New harness on oldlocal23/23 and oldprepared20/20PASS. Actual owner/native/API/SQL,
-threads/tasks; Windows actor/lease/mount/layout/cold helpers explicitly doubled.
-Original514/independent513native imports exact immutable5ff within522manifest.
-Independent raw scaffold's old static feature label retained; independent-result
-explicitly binds correct current feature and actual imports. All fixtures cleaned.
-
-Fresh combinedWindows3422=3399PASS23SKIP0ERROR0FAIL, actualcommand000027exit0.
-593source/config/test files+10patches unchanged from start through commit. Previous
-586files:581unchanged/5changed/7added. Full591producer source set unchanged plus
-2QA files. Same23skip IDs/reasons, not Linux reruns.20new standard contracts/receipt
-checks included, not native execution count.80original evidence Git blobs exact.
-Local static result recorded alongside full; no sameSHA remoteCI claim for union.
-Native patches/source locks/installednativeeb75627 unchanged. No prior blocked
-operations, root/WSL/model/provider/HTTP/production action. Legacyroot untouched.
-
-### Next action
-
-Inspect live Git/ref/CI before any promotion; current union needs its own exactCI
-if published. Continue actual accepted API->finiteTurnRunner->physicalworker bounded
-compute->real result and native session/cache retirement. Test-settled terminal
-rows cannot substitute for payload execution. Explicit worker observation and
-same active source Linux isolation/authenticatedHTTP remain OPEN; prior prepared
-Linux is historical source proof. Realmodelbudget/recovery/M1/M2 not accepted.
-
-Report docs/D3B-API-OWNER-JOINT-J133C6.md plus producer/independent reports.
-Evidence/d3b-api-owner-joint-j133c6/: inputs,summary,joint-source-custody,
-full-windows-result/log,fullsources/patches-before/after,full-skips,static-final.
-Parent histories docs/status-history/j133c6-*.md. Current native/full jobs terminal;
-this checkpoint's only work is local static/commit, not autonomous background work.
-
-
-### Final independent delivery verification
-
-Productmain6001 live ref and exactCI success confirmed; same runtime/config/patch/lock bytes as testedunion97a3. Own final checkpoint only docs/evidence, no full/native rerun. Published product3414 suite and local joint3422 suite remain separate counts; local union adds8offline receipt checks. Legacyroot33dirtyfiles byte-exact, nativevendor eb75627 unchanged. Current commands terminal. Continue from this joint worktree after reconciling any newer main docs; preserve both accepted histories.
+Next fix actual goals caller-state/lifetime and native runtime idle blocker in the
+single producer, then same actual work and normalowner close, then full/current
+source Linux/HTTP and failure/cancellation. No M1/M2 claim. Report
+ docs/D3B-FINITE-FLOW-QA-F134C6.md; evidence/d3b-finite-turn-qa-f134c6 includes
+independent-run001,witness,source-custody,extra-goals-connection-source-review,
+computed-result-independent-readback,snapshot-restoration,current-focused-tests.
+Source/test local static+selected commit follow, not runtime replay or deployment.

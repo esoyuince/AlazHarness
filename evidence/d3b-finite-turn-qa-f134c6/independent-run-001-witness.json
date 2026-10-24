@@ -1,0 +1,5645 @@
+{
+  "result": "PASS_OBSERVED_NATIVE_FINITE_FLOW",
+  "driverExitCode": 0,
+  "driverError": null,
+  "driverSha256": "a2a32eb552ec68b49cb61f4ab132870904617db37f1140e7639aacc75060e61a",
+  "driverBytesUnchanged": true,
+  "mainThread": 3664,
+  "events": [
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "thread": 3664,
+      "elapsed": 23.57382,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "thread": 3664,
+      "elapsed": 23.573844,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "thread": 3664,
+      "elapsed": 23.644262,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "thread": 3664,
+      "elapsed": 23.644305,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "observe_api_turn",
+      "thread": 3664,
+      "elapsed": 23.644477,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "observe_api_turn",
+      "thread": 3664,
+      "elapsed": 23.644493,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_schedule",
+      "thread": 3664,
+      "elapsed": 23.687627,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "observe_api_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_schedule",
+      "thread": 3664,
+      "elapsed": 23.687651,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "observe_api_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 23.687807,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 23.687815,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 23.841172,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 23.841191,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 23.841251,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 23.841259,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 23.853354,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 23.853372,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 23.899118,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 23.899139,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 23.941808,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_hm_dispatch_idle_commands"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 23.941935,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_hm_dispatch_idle_commands"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 6436,
+      "elapsed": 24.023891,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 6436,
+      "elapsed": 24.023905,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.056927,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.056959,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.05697,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.056978,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.056989,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.056997,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.059872,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.059897,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.064374,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.064393,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.064403,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.064411,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.064423,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.064431,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.064543,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.064554,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.068249,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.068271,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.068283,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.068291,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.068538,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.068608,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.069022,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.069045,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.091306,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.09132,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.091328,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.091334,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.091342,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.091348,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.091413,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.091421,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.12166,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.121678,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.121689,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.121697,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.121709,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.121718,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.12184,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.121851,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.191848,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.191866,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.191876,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.191884,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.191895,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.191903,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.192023,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.192033,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "start_turn_worker",
+      "thread": 3664,
+      "elapsed": 24.580697,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_inner"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_handle_message_with_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "start_turn_worker",
+      "thread": 3664,
+      "elapsed": 24.580722,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_inner"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_handle_message_with_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "track_turn_worker",
+      "thread": 3664,
+      "elapsed": 24.580739,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_inner"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_handle_message_with_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "track_turn_worker",
+      "thread": 3664,
+      "elapsed": 24.580753,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_inner"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_handle_message_with_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "physical_workers",
+      "thread": 3664,
+      "elapsed": 24.580787,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "track_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_inner"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_handle_message_with_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "physical_workers",
+      "thread": 3664,
+      "elapsed": 24.580801,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "track_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_start_turn_worker"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent_inner"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_handle_message_with_agent"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 24.581404,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 24.58142,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 40388,
+      "elapsed": 24.581838,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 40388,
+      "elapsed": 24.58185,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/run_turn_runner.py",
+      "function": "run_sync",
+      "thread": 40388,
+      "elapsed": 24.58205,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/run_turn_runner.py",
+      "function": "run_sync",
+      "thread": 40388,
+      "elapsed": 24.582061,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/run_turn_runner.py",
+      "function": "_run_sync_scoped",
+      "thread": 40388,
+      "elapsed": 24.582235,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "run_sync"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/run_turn_runner.py",
+      "function": "_run_sync_scoped",
+      "thread": 40388,
+      "elapsed": 24.58225,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "run_sync"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/run_turn_runner.py",
+      "function": "_run_conversation_with_approval",
+      "thread": 40388,
+      "elapsed": 24.812385,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "<lambda>"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_cli_turn.py",
+          "function": "run_classic_cli_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "_run_sync_scoped"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "run_sync"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/run_turn_runner.py",
+      "function": "_run_conversation_with_approval",
+      "thread": 40388,
+      "elapsed": 24.812402,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "<lambda>"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_cli_turn.py",
+          "function": "run_classic_cli_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "_run_sync_scoped"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "run_sync"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "fixture_computation",
+      "path": "f134c6_observed_driver.py",
+      "function": "run_conversation",
+      "thread": 40388,
+      "elapsed": 24.816537,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "_run_conversation_with_approval"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "<lambda>"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_cli_turn.py",
+          "function": "run_classic_cli_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "_run_sync_scoped"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "run_sync"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "fixture_computation",
+      "path": "f134c6_observed_driver.py",
+      "function": "run_conversation",
+      "thread": 40388,
+      "elapsed": 24.816556,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "_run_conversation_with_approval"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "<lambda>"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_cli_turn.py",
+          "function": "run_classic_cli_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "_run_sync_scoped"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn_runner.py",
+          "function": "run_sync"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_turn.py",
+          "function": "_run_sync_with_timeout_lifecycle"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "physical_workers",
+      "thread": 3664,
+      "elapsed": 24.847449,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "<lambda>"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_runtime_workers.py",
+      "function": "physical_workers",
+      "thread": 3664,
+      "elapsed": 24.847467,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_runtime_workers.py",
+          "function": "<lambda>"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.84755,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.847557,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.847567,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.847576,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.847586,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.847594,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.847697,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.847707,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.882085,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.882097,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.882105,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.88211,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.882119,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.882125,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.882189,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.882197,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.913259,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.913276,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.913286,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.913305,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.913327,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.913372,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.913531,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.913546,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.928038,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.928053,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.928061,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.928068,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.928077,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.928083,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.928167,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.928175,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.939954,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.939971,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.93998,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.939988,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.939999,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.940007,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.94011,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.940122,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.970624,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.97064,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.970648,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.970655,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.970665,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.970672,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.970766,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.970775,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.973937,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.973969,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.973978,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.973984,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.973992,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.973998,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.974118,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.974159,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.9869,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 24.986916,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.986926,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 24.986936,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.986946,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 24.986954,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.987062,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 24.987071,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 24.998341,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_warm_goals_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_manager"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_goal_continuation"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_run_post_turn_hooks"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 24.998397,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_warm_goals_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_manager"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_goal_continuation"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_run_post_turn_hooks"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 50840,
+      "elapsed": 24.999536,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 50840,
+      "elapsed": 24.999548,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_registry.py",
+      "function": "acquire",
+      "thread": 50840,
+      "elapsed": 24.999766,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_acquire_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_get_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_registry.py",
+      "function": "acquire",
+      "thread": 50840,
+      "elapsed": 24.999774,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_acquire_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_get_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_registry.py",
+      "function": "_open_session_db",
+      "thread": 50840,
+      "elapsed": 25.000453,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "hermes_state_registry.py",
+          "function": "acquire"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_acquire_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_get_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_registry.py",
+      "function": "_open_session_db",
+      "thread": 50840,
+      "elapsed": 25.000465,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "hermes_state_registry.py",
+          "function": "acquire"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_acquire_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "hermes_cli/goals.py",
+          "function": "_get_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/turn_executor.py",
+          "function": "_run"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.026682,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.026699,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 25.026709,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 25.026717,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 25.026731,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 25.026742,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 25.026845,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 25.026855,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 25.047049,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_warm_goals_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_manager"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_loop_completion"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_run_post_turn_hooks"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "submit",
+      "thread": 3664,
+      "elapsed": 25.047075,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/run.py",
+          "function": "_run_in_executor_with_context"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_warm_goals_session_db"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_manager"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_post_turn_loop_completion"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_goals.py",
+          "function": "_run_post_turn_hooks"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/run_inbound.py",
+          "function": "_handle_message"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_ingress.py",
+          "function": "execute_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 52968,
+      "elapsed": 25.047535,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/turn_executor.py",
+      "function": "_run",
+      "thread": 52968,
+      "elapsed": 25.047547,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.063368,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.06339,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 25.063402,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_execute_claimed",
+      "thread": 3664,
+      "elapsed": 25.06341,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 25.063422,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "thread": 3664,
+      "elapsed": 25.06343,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 25.063559,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_ingress.py",
+      "function": "execute_admission",
+      "thread": 3664,
+      "elapsed": 25.063568,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_finite.py",
+          "function": "execute_finite_admission"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_execute_claimed"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_settlement_recovery.py",
+      "function": "settle_with_retry",
+      "thread": 3664,
+      "elapsed": 25.067575,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_settlement_recovery.py",
+      "function": "settle_with_retry",
+      "thread": 3664,
+      "elapsed": 25.067591,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_settlement_recovery.py",
+      "function": "commit_and_publish",
+      "thread": 43004,
+      "elapsed": 25.067887,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_settlement_recovery.py",
+      "function": "commit_and_publish",
+      "thread": 43004,
+      "elapsed": 25.067896,
+      "stack": []
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_runtime.py",
+      "function": "settle_session_input",
+      "thread": 43004,
+      "elapsed": 25.06948,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_results.py",
+          "function": "finish_result"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_settlement_recovery.py",
+          "function": "commit_and_publish"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "hermes_state_runtime.py",
+      "function": "settle_session_input",
+      "thread": 43004,
+      "elapsed": 25.069489,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_results.py",
+          "function": "finish_result"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_settlement_recovery.py",
+          "function": "commit_and_publish"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.132895,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.132909,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_settlement_recovery.py",
+      "function": "settle_with_retry",
+      "thread": 3664,
+      "elapsed": 25.132918,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_settlement_recovery.py",
+      "function": "settle_with_retry",
+      "thread": 3664,
+      "elapsed": 25.132924,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_authority.py",
+          "function": "_drain"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "thread": 3664,
+      "elapsed": 25.134469,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "thread": 3664,
+      "elapsed": 25.13448,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "observe_api_turn",
+      "thread": 3664,
+      "elapsed": 25.134545,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "observe_api_turn",
+      "thread": 3664,
+      "elapsed": 25.134553,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "_settled_api_result",
+      "thread": 3664,
+      "elapsed": 25.134601,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "observe_api_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_api_turn.py",
+      "function": "_settled_api_result",
+      "thread": 3664,
+      "elapsed": 25.13461,
+      "stack": [
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "observe_api_turn"
+        },
+        {
+          "kind": "native",
+          "path": "gateway/session_api_turn.py",
+          "function": "run_api_turn"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "execute"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.139328,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.139342,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.14486,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "path": "gateway/session_authority.py",
+      "function": "_drain",
+      "thread": 3664,
+      "elapsed": 25.144877,
+      "stack": [
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "main"
+        },
+        {
+          "kind": "fixture_computation",
+          "path": "f134c6_observed_driver.py",
+          "function": "<module>"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "requiredNativeCallsObserved": true,
+    "missing": [],
+    "fixtureComputationCalled": true,
+    "computationOffMainThread": true,
+    "nativeSettlementObserved": true,
+    "manualSettlementStackObserved": false,
+    "flowObserved": true,
+    "nativeCallCountsNotTaskCounts": true,
+    "payloadCorrectnessNeedsDriverAssertions": true
+  },
+  "observationError": null,
+  "truncated": false,
+  "nativeMethodsReplacedByWitness": false,
+  "threadProfileInstalledBeforeDriver": true,
+  "fullAgentOrProviderAcceptance": false,
+  "qaSha256": "a25662d777298657733729fe978aeafa6c6f2f7cd7f4f7ed973dd1a55b569dd3"
+}

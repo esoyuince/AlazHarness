@@ -1,0 +1,14 @@
+test_complete_synthetic_flow_only_has_scoped_verdict (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_complete_synthetic_flow_only_has_scoped_verdict) ... ok
+test_manual_settlement_cannot_impersonate_native_result (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_manual_settlement_cannot_impersonate_native_result) ... ok
+test_missing_finite_execution_refused (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_missing_finite_execution_refused) ... ok
+test_missing_physical_worker_tracking_refused (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_missing_physical_worker_tracking_refused) ... ok
+test_model_on_main_thread_refused (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_model_on_main_thread_refused) ... ok
+test_no_computation_despite_native_calls_refused (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_no_computation_despite_native_calls_refused) ... ok
+test_one_valid_settle_does_not_hide_second_manual_settle (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_one_valid_settle_does_not_hide_second_manual_settle) ... ok
+test_witness_does_not_count_coroutine_resumptions_as_jobs (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_witness_does_not_count_coroutine_resumptions_as_jobs) ... ok
+test_zero_events_never_pass (test_finite_flow_witness_f134c6.FiniteWitnessContract.test_zero_events_never_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK

@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-24T23:09:47.346139+03:00",
+  "producerResultSha256": "74b094452a15369ecba5093cd8aae6c3f1e730c33b14319093618d0c66852575",
+  "originalDriverSha256": "2513e343fd61293b75b46097875f8edf1c75c90554fcaa56c76bc93ce5127869",
+  "adaptedDriverSha256": "a2a32eb552ec68b49cb61f4ab132870904617db37f1140e7639aacc75060e61a",
+  "testOnlyAdapterChanges": [
+    "source proof record path in own worktree",
+    "chain original caller profile observer, without replacing native functions"
+  ],
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "85035cf2e1c75ae517c58d26afcaeb1c3e4ec8432d1ea6c62a81c828b45612dd",
+    "packages/claw-hermes/gateway_store_startup.py": "23b0dc7bf9e7003a1ec593248142f0bc7a2871e471a140a0d62484ca38c9cd13",
+    "config/finite-consumer-f134r1-sources.json": "4c1d48ce77c9e1d60b22d4a8c75d2a7b96717807428329e87d61f9e68a574320"
+  },
+  "sourceProofSha256": "3ef570bdb7d7fc334359bb3fccd692717a39d87e07fdfc5d5ade3d7e14a490e8",
+  "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "witnessSha256": "a25662d777298657733729fe978aeafa6c6f2f7cd7f4f7ed973dd1a55b569dd3",
+  "producerModified": false,
+  "scope": "independent actual computation/native settlement witness, owner close expected to remain rejected until source/resource seams fixed"
+}
