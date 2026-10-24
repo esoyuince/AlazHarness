@@ -1,0 +1,5 @@
+{
+  "same23IdsAndReasons": true,
+  "normalization": "explicit id/reason pairs validated before run",
+  "priorArtifactSha256": "520f2d520229d97c177c1c97a77abfeb0e9ce04897bec4b41b579e18be12021e"
+}

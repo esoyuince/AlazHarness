@@ -1,0 +1,29 @@
+{
+  "job": "D3B-ADMISSION-QA-Q128C6",
+  "result": "PASS_INDEPENDENT_NATIVE_LOCAL_LIFECYCLE_NOT_FULL_RUNTIME",
+  "at": "2026-10-24T09:02:19.953109+03:00",
+  "base": "39a1be3a8786f52bc792d20ca20ee53e92c993a6",
+  "all557OriginalSourcesUnchanged": true,
+  "implementationOwner": "A128C6 original admission-lifecycle worktree",
+  "actualNativeBaselineNestedControls": 9,
+  "actualIndependentFinalMethods": 28,
+  "earlierIndependentMethodCounts": [
+    22,
+    24
+  ],
+  "fourAdditionalFailingAssertionsPreserved": true,
+  "sameFailingQaBytesPassed": true,
+  "actualImportedNativeSources": 514,
+  "baselineImportedNativeSources": 247,
+  "offlineReceiptMethods": 8,
+  "nativeProductFilesEditedByIndependentTask": false,
+  "newSqlConnectionsOrRawDbOpenInTransition": 0,
+  "providerCalls": 0,
+  "harnessActiveIntegrationAccepted": false,
+  "linuxConfinementAccepted": false,
+  "httpOrAgentExecutionAccepted": false,
+  "fullCombinedStandardSuite": "PENDING_UNION",
+  "installedNativeChanged": false,
+  "mainChanged": false,
+  "pushed": false
+}

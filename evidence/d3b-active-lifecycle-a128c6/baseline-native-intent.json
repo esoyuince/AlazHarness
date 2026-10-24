@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T08:49:59.135056+03:00",
+  "nativeBase": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "qaSha256": "84af69e84de6dd2736d2f6f0797dc68ea436096729978bb5506b2ea800cf7a1e",
+  "scope": "unchanged native admission/claim/SQL guard + explicit ordinary runner flags fixture, no activation or caller-state monkeypatch"
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-24T09:11:42.369053+03:00",
+  "base": "39a1be3a8786f52bc792d20ca20ee53e92c993a6",
+  "originalImplementationCommit": "dad8011216af1645eafe0ef2db6a0de18c974c16",
+  "independentQaCommit": "fc3bbbd1a53d87c7f5b4e7ec850223eaef7928d7",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "nativePatchSha256": "c5cf4433b66ba57bd9659c7877f83e0ae152501de6fd9e3e02f801c1542c6f12",
+  "onlyConflict": [
+    "status.md"
+  ],
+  "fullRegressionOwner": "J128C6 this exact union; do not duplicate",
+  "newNativeExecutionByUnion": false,
+  "installedNativeActivated": false,
+  "canonicalBefore": "39a1be3a8786f52bc792d20ca20ee53e92c993a6"
+}

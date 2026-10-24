@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "total": 3343,
+  "discovered": 3343,
+  "passed": 3320,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 563,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "all557OriginalSourcesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "elapsedSeconds": 153.05,
+  "at": "2026-10-24T09:15:10.435198+03:00",
+  "fullLogSha256": "0e6354192ba9745268b968c940c913fbda4e16dc6137f820ffd1be1936ca18f4",
+  "scope": "one complete combined standard union, optional native artifact/QA; no installed runtime activation or Linux/provider run",
+  "wrapperExitCode": 0
+}

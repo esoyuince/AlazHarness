@@ -1,0 +1,13 @@
+{
+  "requestId": "a128c601-3e71-4a59-8f18-128001000034",
+  "exitCode": 1,
+  "phase": "after documentation stage, before local static or commit",
+  "reason": "exact staged-change assertion counted one already-identical shared parent history file as a new diff",
+  "sharedParentPath": "docs/status-history/a128c6-parent.md",
+  "sharedParentSha256": "7ac3797060c0dada81f424035e377aeee87a4ed2dec1a9401eaad2956e08764f",
+  "bothOriginalCommitsAndIndexAndBaseStatusBytesIdentical": true,
+  "unexpectedStagedPaths": [],
+  "testOrNativeSourceChanged": false,
+  "fullLogUnchanged": true,
+  "repair": "exclude only proved identical shared parent from changed-path expectation; no file deletion or test rerun"
+}

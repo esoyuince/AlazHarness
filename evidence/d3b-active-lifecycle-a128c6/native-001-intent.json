@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T08:55:27.206252+03:00",
+  "candidate": "candidate-001.json",
+  "qaSha256": "ae13e51130a2a3477308b54a990acfcef318098681ed82e52f755a907fc0c080",
+  "scope": "22 independent actual native transition/guard/SQL race cases, no service/agent/harness/OS acceptance"
+}

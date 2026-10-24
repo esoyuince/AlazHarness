@@ -1,0 +1,16 @@
+# AlazHarness - status
+
+## D3B-ADMISSION-QA-Q128C6 - INDEPENDENT NATIVE28 PASS / UNION FULL PENDING
+
+Own branch alaz/d3b-active-lifecycle-a128c6; worktree scratch/worktrees/d3b-active-lifecycle-a128c6; base39a1be3. A128C6 in d3b-admission-lifecycle-a128c6 is SOLE native product owner. This branch adds independent QA only; all557 original harness source/config/test bytes unchanged. Native snapshot hermes-admission-qa-q128c6 is an owned byte-exact test copy, original product untouched.
+
+Actual native baseline9nestedcontrols PASS with flags-only ordinary runner fixture: guard-before-drain refuses, guard-passed inflight writes may commit after drain; exact replay no new identity, queued rows retained. Candidate00122/24PASS historical. Four additional native failures reproduced on001, saved. Same QA on exact candidate002 five files28/28PASS, no native method replacement. Real GatewayRunner/authority/API/stores/SQL/tasks/thread; guarded native leaf writes not whole API/agent execution. Three race cases include real native tracked_write shielding cancelled carrier and retaining commit owner. DRAINING stops new admissions/queued claims, never deletes queued/unknown rows. Late obligations/current config/scope block detach/guard. Native default service/start/listener refusal retained.
+
+Final514native imports exact immutable1e97or5candidate hashes; baseline247exactGit. Watched transitions0newDB/0rawDBopen/0rowchanges; all28fresh profiles/ownership/registry clean, retained-data cleanup explicitly fixture-only.8offline receipt methods PASS. No admitted agent/model/provider/HTTP/Linux isolation/harness active-owner integration. Native patch not installed; manifest and observers untouched. Original producer native44 includes overlapping cases and must not be added as unique72. Current own native jobs terminal.
+
+Report docs/D3B-ADMISSION-QA-Q128C6.md; evidence/d3b-active-lifecycle-a128c6/: baseline-native001,candidate001/002,native001/002historical,review-beforeFAIL4,native003PASS28,source-custody,receipt-tests,summary. New raw failures unchanged. Read-only reviewer agent a128c601...000080 still being collected, not executing product tasks. Next preserve both original/QA commits and ONE full standard on exact union; do not duplicate producer work. No root/WSL/provider/main/push, no prior blocked retry. Full runtime/active observation/confinement remain future gates.
+
+
+### Native artifact identity and independent reviewer settled
+
+Native feature1b7b31e14451baf1d56c3edbfa2cea69a8f7940c is clean and matches our tested5candidate002 hashes. Own native QA worktree fast-forwarded original feature history with byte-identical code; no rerun. Original46 and own28 overlap, not74unique. Read-only reviewer000080 COMPLETED and ARCHIVED, no delegated work remains. Baseline review confirms clean-only gates/queued retention/session retirement must not be called full ACTIVE integration; route reservation race is hypothesis, not reproduced bug. original-feature-and-review-handoff.json binds artifact/config/patch and conclusions. Original A128C6 may own joint/full; this task will verify source/logs without duplicate full or peer edits.

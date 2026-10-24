@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-24T09:10:36.677266+03:00",
+  "independentQaCommit": "5819740cdb77f04cd4c19f960d39e19828fdbf69",
+  "originalHarnessCommit": "dad8011216af1645eafe0ef2db6a0de18c974c16",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "nativeBase": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "nativePatchPath": "patches/hermes/a128c6/0008-caller-owned-admission-lifecycle.patch",
+  "nativePatchSha256": "c5cf4433b66ba57bd9659c7877f83e0ae152501de6fd9e3e02f801c1542c6f12",
+  "fiveTestedNativeFilesMatchOriginalCommit": true,
+  "originalNativeMethods": 46,
+  "independentNativeMethods": 28,
+  "nativeScopesOverlap": true,
+  "reviewerAgent": "a128c601-3e71-4a59-8f18-128001000080",
+  "reviewerState": "COMPLETED_AND_ARCHIVED",
+  "reviewerWasReadOnly": true,
+  "reviewerTestExecution": false,
+  "reviewedBaseNative": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "reviewedBaseHarness": "39a1be3a8786f52bc792d20ca20ee53e92c993a6",
+  "reviewFindingsCarriedForward": [
+    "SQL-guard-passed writes may commit after admission closes; explicit baseline and actual tracked-write cancellation independently verified",
+    "clean-only NativeStoreStartup/consumer cannot be used as ACTIVE work-health acceptance",
+    "DRAINING stops queued claims, retains queued/unknown rows and blocks finish; full native session retirement/queue finalization is separate work",
+    "source-pinned full worker correlation and same-source confinement/HTTP not accepted by local admission tests",
+    "route-reservation race is source-review hypothesis, not a reproduced current bug"
+  ],
+  "reviewRecommendationsNotSilentlyApplied": true,
+  "fullRegressionOwner": "original A128C6 joint union; this task verifies read-only, no duplicate full",
+  "runtimeInstalled": false,
+  "newNativeRun": false
+}

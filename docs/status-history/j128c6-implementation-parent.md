@@ -1,0 +1,15 @@
+# AlazHarness - status
+
+## D3B-ADMISSION-LIFECYCLE-A128C6 - NATIVE46 PASS / STAGED PATCH / UNION FULL PENDING
+
+Own branch alaz/d3b-admission-lifecycle-a128c6, worktree scratch/worktrees/d3b-admission-lifecycle-a128c6; base39a1be3. Sole native implementation in hermes-admission-lifecycle-a128c6. Native feature1b7b31e14451baf1d56c3edbfa2cea69a8f7940c on1e97dd61, clean,5files. Independent Q128C6 lives in d3b-active-lifecycle-a128c6; do not modify its source/index. All557 old harness files unchanged; new QA/config/patch/receipt only.
+
+Existing BorrowedAPIStores explicit activate_admission/begin_drain/finish_drain uses existing binding PREPARED->ACTIVE->DRAINING->DRAINED. No new scheduler/ledger/store/connection/epoch/listener. Native authority adds phase gate inside original admission/claim transaction callback, no recursive SQL lock. Flags alone insufficient; scope/config/closed/changed handles refused. DRAINING stops new admissions/claims, never cancels/prunes/rollsback. Guard-passed writes may commit and remain queued; native claims may settle. Queued/unknown and retained native session/worker/tasks prevent finish; their owning native lifecycle must retire them, no dictionary clear.
+
+Fresh barrier before API detach/after await/before runner detach prevents stale DRAINED authorization. Late replay or cancelled memory cleanup leaves CLOSE_UNKNOWN, three stores/profile retained, retries refused. Ordinary service/start/listener still denied. No actual agent/TurnRunner/API job run: direct native guarded ledger/claim/settlement + actual threads/tasks/registry fault fixtures.
+
+Final native00446/46PASS=24new+22original prepared cases. Independent native28/28PASS on same5product hashes, overlapping not74unique.508actual native imports match immutable feature;8own offline receipts PASS. First native38/39 fixture-envelope error and five before-fix failures preserved. Two final awaited-cleanup cases added with no further product change. Successful profiles/ownership/registry cleaned. Native patch reproduced byte-exact with actual base LF attributes; first CRLF fixture mismatch retained. Native initial commit128 absent identity resolved using existing harness identity per invocation, global config untouched.
+
+Config/hermes-admission-lifecycle-a128c6.json STAGED_NOT_INSTALLED. Old consumer513manifest/observers/installed nativeeb75627/maincc7ceba unchanged. NOT yet NativeStoreStartup ACTIVE integration or worker/HTTP/Linux isolation acceptance. No model/provider/root/WSL/main/push/CI/production or old blocked retry. Need exact combined standard regression with immutable independent QA history; ONE full owner only, check concurrent status before starting. Current native jobs terminal.
+
+Report docs/D3B-ADMISSION-LIFECYCLE-A128C6.md; evidence/d3b-admission-lifecycle-a128c6/: summary,source-custody,native004,native-commit,patch-application,receipt-tests,first failures. Next own scoped static/commit, then ONE union full + canonical artifact delivery, not runtime installation.
