@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T18:36:43.803624+03:00",
+  "candidate": "candidate-001.json",
+  "qaSha256": "d51e06fa0b8f7427f2d5bdecd2c5af58135c605df3eeb140cb9e4a80ac7d0822",
+  "scope": "23 independent methods; original owner+native/API real; Linux OS boundaries doubled; explicit post-native retirement receipt loss"
+}

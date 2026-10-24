@@ -1,75 +1,69 @@
 # AlazHarness - status
 
-## D3B-API-OWNER-I133P1 - LOCAL ACCEPTED / FEATURE PUSH AND EXACT CI NEXT
+## J133C6 - SAME-OWNER CANONICAL API LOCAL ACCEPTANCE COMPLETE
 
-Active branch alaz/d3b-api-owner-i133p1.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-owner-i133p1.
-Published local/remote main94f509d exactCI succeeded; prior P132 publication is
-COMPLETE. This increment continues e073fc0 from that main. Read gitHEAD for current
-implementation commit; push/CI/merge receipts below are not inferred or preclaimed.
-Installednativeeb75627 unchanged;10native patches remain staged, not installed.
-Dirty legacyroot and privateinfra work untouched. No force/squash/reset/cleanup.
+Active branch alaz/d3b-api-owner-joint-j133c6.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-owner-joint-j133c6.
+Implementation6001b5534f445fc5fe085af53abfbb89d6f6c6b3 and independentQA
+8a15de2de12e742a3509d0d0002a69066d390527 histories retained; only status conflict.
+Read live GitHEAD for tested union commit. Original main94f509d publication and
+exactCI already COMPLETE. New joint not pushed at this checkpoint; producer6001
+was separately pushed, last read exactCI pending. ItsCI is not this union's CI.
+No main mutation or service/native activation by this local union.
 
-### Implemented in the SAME owner
+### Implemented and actually accepted
 
-NativeStoreStartup.prepare_runtime gains explicit canonical_api=False. New source
-5ff88189 is selected only with local_admission=True,canonical_api=True and its
-separate fixed522source envelope. Old1e97prepared/1b7admission defaults and manifests
-unchanged. Invalid/unpaired flag fails before reserving a slot. Same original
-PreparedRuntimeConsumer, three connections, authority and epoch; no new manager,
-resolver, scheduler or private adapter assignment. Source verified before effects.
+Existing NativeStoreStartup.prepare_runtime(local_admission=True,canonical_api=True)
+selects fixed522source native5ff88189 in SAME consumer/owner/three stores/epoch.
+Defaults1e97prepared and1b7local remain unchanged. Explicit publish_api_adapter
+uses native existing canonical resolver/registry; separate activation, not implicit
+HTTP/model/start. Current mapping/config/loop/source and caller-owner identity are
+checked. Direct native publication cannot impersonate the consumer phase.
 
-Preparation remains unpublished and admission closed. Explicit consumer
-publish_api_adapter delegates to existing native registry owner and tracks receipt;
-only exact owned mapping is accepted, not equal replacements or direct native
-phase changes. New mode requires publication before activation. API cleanup
-withdraws registration, runner detaches later, caller closes original stores/lease.
-Current source/maps/native pair/epoch checked again; late/unknown cleanup holds
-CLOSE_UNKNOWN and connections. No listener/model or automatic recovery enabled.
+Actual programmatic API admission and exact retry reach same authority; one record,
+conflicting body refused. Queued/unknown obligations survive drain and block finish.
+Native retire_idle_api_sessions only after sealing and terminal durable obligations,
+never automatic queue execution or deletion. Test uses DECLARED native leaf
+claim/settlement; no full computed payload/TurnRunner result yet. Native memory
+retirement preserves SQL/history, API withdraws before runner detach, original
+owner closes threehandles, caller releases profile lease separately.
 
-consumer.retire_idle_api_sessions invokes existing native memory retirement only
-in PUBLISHED+DRAINING with clean SQL. Queue/unknown/live worker obligations remain
-preserved, not erased or fabricated terminal. Native actual API admits one queued
-request; exactretry oneID, changed payload refuses. Cleanup test explicitly uses
-native leaf claim/settlement fixture: NOT finite payload/TurnRunner/agent execution.
+Original39first38PASS1FAIL and independent23first22PASS1FAIL exposed real native
+retirement completing then receipt loss; unchanged DRAINING was not no-effect
+proof. Fixed wrapper retains UNKNOWN for unexpected/post-return failures; native
+typed pre-effect rejection alone can remain known. SAME failed QA assertions pass.
+Cancelled/late cleanup and replaced final maps retain owner or block final close.
+All raw failed logs and exact candidate sources preserved, no result relabelling.
 
-### Acceptance and retained first failure
+### Exact test results and boundaries
 
-New native39/39PASS exit0 (23inherited+16new). Oldsource admission23/23 and prepared
-20/20PASS on SAME new harness; overlap, not82unique tests. Windows fixture doubles
-Linux actor/lease metadata/mount/cold helpers explicitly. Actual owner/native
-objects/SQL/tasks/threads real; post-effect and cleanup fault doubles labelled.
-No new Linux/root/HTTP/provider/model experiment or prior blocked retry.
+Current native39/39 and independent23/23PASS, overlapping scopes not62unique.
+New harness on oldlocal23/23 and oldprepared20/20PASS. Actual owner/native/API/SQL,
+threads/tasks; Windows actor/lease/mount/layout/cold helpers explicitly doubled.
+Original514/independent513native imports exact immutable5ff within522manifest.
+Independent raw scaffold's old static feature label retained; independent-result
+explicitly binds correct current feature and actual imports. All fixtures cleaned.
 
-Initial native39=38PASS/1FAIL: retirement completed then exception while native
-phase returned DRAINING. Fixed wrapper retains ADMISSION_UNKNOWN for unexpected/
-post-return errors; unchanged native typed pre-effect refusal alone may preserve
-knownphase. SAME39driver/tests passed; initial log and helper bytes preserved.
-All fresh current fixture profiles, ownership and registry cleaned. Current514native
-imports match immutable5ff; old514/501 match1b7/1e97. Source/proof custody recorded.
+Fresh combinedWindows3422=3399PASS23SKIP0ERROR0FAIL, actualcommand000027exit0.
+593source/config/test files+10patches unchanged from start through commit. Previous
+586files:581unchanged/5changed/7added. Full591producer source set unchanged plus
+2QA files. Same23skip IDs/reasons, not Linux reruns.20new standard contracts/receipt
+checks included, not native execution count.80original evidence Git blobs exact.
+Local static result recorded alongside full; no sameSHA remoteCI claim for union.
+Native patches/source locks/installednativeeb75627 unchanged. No prior blocked
+operations, root/WSL/model/provider/HTTP/production action. Legacyroot untouched.
 
-NEW complete Windows3414=3391PASS/23SKIP/0ERROR/0FAIL, commandd133a601...000017
-exit0. Same23skipIDs/reasons,591source/config/test hashes+10patches fixed. Twelve
-new standard tests=4selection contracts+8offline receipts, subsets not native runs.
-Prior586files:581unchanged;3runtime+2historical-test adapters changed;5new files.
-Old raw results/expected hashes unchanged, exact pre-I133 snapshots bind old proof.
-No kernel acceptance relabelled. Local static/credential/path scan follows exact
-staging. Current native/full jobs terminal; feature push/CI must be verified next.
+### Next action
 
-### Exact next milestone
+Inspect live Git/ref/CI before any promotion; current union needs its own exactCI
+if published. Continue actual accepted API->finiteTurnRunner->physicalworker bounded
+compute->real result and native session/cache retirement. Test-settled terminal
+rows cannot substitute for payload execution. Explicit worker observation and
+same active source Linux isolation/authenticatedHTTP remain OPEN; prior prepared
+Linux is historical source proof. Realmodelbudget/recovery/M1/M2 not accepted.
 
-After same-SHA CI and scoped merge, run real accepted API->native finite turn->
-physical worker->actual result and native cache/session retirement. No test-written
-terminal row may substitute for completed payload. Current worker observation and
-same-source Linux isolation/authenticatedHTTP remain OPEN; earlier prepared
-isolation is historical only. Real-model budget/recovery/M1/M2 not yet accepted.
-
-### Records
-
-Docs/D3B-API-OWNER-INTEGRATION-I133P1.md.
-Evidence/d3b-api-owner-i133p1/: manifest-source-custody,current-source-custody,
-native001FAIL/native002PASS,compat-admission,compat-prepared,focused-contracts-and-
-receipts,full-windows-result/log,fullsources/patches,implementation-summary,
-historical-source-bindings. Earlier e073/main promotion and source-boundary proof
-preserved. Native candidate remains5ff88189, no native edit. Current task does not
-change current main until exact remoteCI and ancestry checked.
+Report docs/D3B-API-OWNER-JOINT-J133C6.md plus producer/independent reports.
+Evidence/d3b-api-owner-joint-j133c6/: inputs,summary,joint-source-custody,
+full-windows-result/log,fullsources/patches-before/after,full-skips,static-final.
+Parent histories docs/status-history/j133c6-*.md. Current native/full jobs terminal;
+this checkpoint's only work is local static/commit, not autonomous background work.

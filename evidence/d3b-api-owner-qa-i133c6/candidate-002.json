@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T18:39:07.222140+03:00",
+  "producerBranch": "alaz/d3b-api-owner-i133p1",
+  "producerHead": "e073fc07f555d80be1b73b7a9347f3209f10c810",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_store_startup.py": "bd7620251e459bd8ef1ec14d3809363ed18507996b4601eb7720f88e7b5d7691",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "1bf4557ac9cb59751653b890099863ab82722bb3dc38427320ab8910b75d7cac",
+    "packages/claw-hermes/gateway_consumer_admission.py": "5c9fa513793b2451fb931ad4c2e755d7bb1df93d690a54a3415e7bd276acdac8",
+    "packages/claw-hermes/gateway_consumer_api.py": "c677a8310b00206ef3c2d784a7b0b76b36cfb541f22815830825f93067729142",
+    "config/canonical-api-consumer-i133p1-sources.json": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27"
+  },
+  "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "nativeProductEdits": false,
+  "peerFilesModified": false,
+  "purpose": "OWN snapshot only for stable independent execution; implementation originals read-only",
+  "sameQaSha256": "d51e06fa0b8f7427f2d5bdecd2c5af58135c605df3eeb140cb9e4a80ac7d0822",
+  "state": "FROZEN_FIXED_CANDIDATE002"
+}

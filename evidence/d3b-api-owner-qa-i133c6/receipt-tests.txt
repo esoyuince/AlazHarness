@@ -1,0 +1,13 @@
+test_actual_api_acceptance_and_memory_only_retirement_scope (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_actual_api_acceptance_and_memory_only_retirement_scope) ... ok
+test_all_owned_fixtures_removed_and_references_released (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_all_owned_fixtures_removed_and_references_released) ... ok
+test_boundaries_not_full_agent_http_or_linux_proof (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_boundaries_not_full_agent_http_or_linux_proof) ... ok
+test_current_twenty_three_cases_terminal (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_current_twenty_three_cases_terminal) ... ok
+test_exact_candidate_generations_and_driver_bound (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_exact_candidate_generations_and_driver_bound) ... ok
+test_native_source_matches_immutable_feature (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_native_source_matches_immutable_feature) ... ok
+test_original_failure_same_tests_now_pass (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_original_failure_same_tests_now_pass) ... ok
+test_watched_transition_boundaries_no_new_store_or_write (test_api_owner_receipt_i133c6.ApiOwnerIndependentReceipt.test_watched_transition_boundaries_no_new_store_or_write) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.076s
+
+OK

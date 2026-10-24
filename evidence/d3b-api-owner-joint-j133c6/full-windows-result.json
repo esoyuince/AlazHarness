@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "total": 3422,
+  "passed": 3399,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "sourceCount": 593,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "elapsedSeconds": 129.956,
+  "at": "2026-10-24T18:50:38.184894+03:00",
+  "wrapperExitCode": 0,
+  "logSha256": "f2be5c4a5df919e0d64108c7c0fd62768063d71a9976817c6eaf84b5cc3d72da",
+  "scope": "complete exact union standard regression; native results independently bound, no new native/HTTP/Linux/model execution"
+}
