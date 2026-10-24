@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-24T17:49:46.119314+03:00",
+  "scope": "5 actual idle loopback fixture startup/shutdown cycles before and after, no agent/model",
+  "beforeSeconds": [
+    0.509017,
+    0.511788,
+    0.511564,
+    0.510974,
+    0.51173
+  ],
+  "afterSeconds": [
+    0.021305,
+    0.015503,
+    0.015464,
+    0.015954,
+    0.015738
+  ],
+  "oldSourceSha256": "8f8695d1a452096e555874214ee2557889c640a8c3b2a42091236f1007724cc5",
+  "newSourceSha256": "1524329509d47a0e7ea4b362d6e610be88f64e2f137bc432f36b3979a3db438b",
+  "allTenServerThreadsStopped": true,
+  "requestBudgetsAndAssertionsUnchanged": true,
+  "serverCiPolicyLimitsChanged": false,
+  "onlyChange": "test HTTP serve_forever shutdown poll_interval0.5(default)->0.01",
+  "timingsDiagnosticNotPerformanceThreshold": true
+}

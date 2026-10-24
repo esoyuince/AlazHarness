@@ -1,0 +1,145 @@
+[
+  {
+    "at": "2026-10-24T17:42:12.344926+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:42:27.548115+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:42:42.741645+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:42:58.057149+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:43:13.255685+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:43:28.594891+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:43:43.812396+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:43:59.017400+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:44:14.225090+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:44:29.442887+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166828296,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "created_at": "2026-10-24T14:41:01Z",
+      "updated_at": "2026-10-24T14:41:01Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:44:44.683997+03:00",
+    "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+    "combined": "failure",
+    "localCi": {
+      "id": 57166927366,
+      "state": "failure",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI failed (rc=124)",
+      "created_at": "2026-10-24T14:44:23Z",
+      "updated_at": "2026-10-24T14:44:23Z"
+    }
+  }
+]

@@ -16,6 +16,11 @@
       "sha256": "5975d93dba5712ef7e236168b92535e0a04a683fcf2b4e6021516c5bb96f7bff",
       "path": "evidence/publication-24oct-p132l1/historical/historical_owner_b129d6.py.txt",
       "gitBlob": "7a06ee165672f4d0b4776727ddcb6f127499b597"
+    },
+    "tests/fixtures/hermes_wire.py": {
+      "sha256": "8f8695d1a452096e555874214ee2557889c640a8c3b2a42091236f1007724cc5",
+      "path": "evidence/publication-24oct-p132l1/historical/hermes_wire.py.txt",
+      "gitBlob": "ce80b4bf1a95ff260f71cb41cb1fa1bb5c086bbb"
     }
   }
 }

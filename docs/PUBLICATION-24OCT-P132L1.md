@@ -75,3 +75,23 @@ CI artifacts were read via its existing owner gitmirror only; no server writes.
 ## Repair local acceptance
 
 FullWindows3401=3378PASS/23SKIP/0ERROR/0FAIL, exit0.586source/config/test hashes and10patches fixed; same23Windows skips.71focused methods PASS. The runtime/native implementation and source locks are unchanged. This local result does not waive the required next exact-SHA remote CI.
+
+## Second remote run and fixture shutdown throughput
+
+The repaired df121d5 commit ran3401 tests with3396passed/5skipped/0failed in
+its structured Linux report, but the overall180s job limit terminated the run
+with exit124 before a complete accepted CI result. It remains FAILURE; main
+was not advanced. The timer, CPU/RAM limits, image and server policy are unchanged.
+
+A measured test-only HTTP server fixture used the default0.5s shutdown poll for
+each of30 wire scenarios. Five idle startup/shutdown cycles took about0.51s each;
+the same cycles with explicit0.01s polling took0.016-0.021s, all threads stopped.
+Only shutdown polling changed, not client deadlines, scenario counts, HTTP
+responses, assertions, model behavior or product code. The actual30 Node/wire
+scenarios plus cleanup/history controls passed in the51-method focused check.
+A seventh new portability test checks real server-thread shutdown. The old fixture
+bytes are archived, no historical receipt is relabelled. A new full run follows.
+
+## Throughput-fixed complete local acceptance
+
+FullWindows3402=3379PASS/23SKIP/0ERROR/0FAIL exit0,134.445seconds observed.586source/config/test and10patch hashes unchanged during the run. All30wire scenarios and their request/stop/identity assertions remain. The extra real-thread shutdown control brings new tests to7. CI policy and runtime code remain unchanged; third exact-SHA remote gate is still required.

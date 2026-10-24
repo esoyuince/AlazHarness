@@ -43,3 +43,13 @@ Exact ea7b482 alaz/local-ci FAILURE57166391620,3395tests with33failure assertion
 ### Portability repair complete locally; exact second remote CI next
 
 New full3401=3378PASS/23SKIP/0ERROR/0FAIL exit0,586source/config/test+10patches stable, original23Windows skipIDs/reasons unchanged.71targeted PASS. Only3existing test/helper sources changed,2test/helper files added and singleC#checkout attribute. Runtime packages/scripts/config/nativepatches unchanged. First remote ea7b482 failure preserved; no main advancement. Next commit selected repair/docs, push same developmentbranch, require exact newSHA CI.
+
+
+### Second CI timeout; bounded fixture throughput correction
+
+Remote df121d5 failedrc124 at180seconds, not test failure. Actual structured report has3401executed/3396passed/5skipped/0failed; full gate did not complete so no main. CI image/CPU/RAM/time limits remain unchanged. Measured repeated HTTP test fixture shutdown waited default0.5s across30wire cases; only polling interval lowered to0.01, no client deadline/expected result changed. Five real idle cycles before/after and full thread exit recorded. Added explicit real-thread cleanup control; oldfixture archived and exact history binding extended. No server policy/privateinfra write or product source change. New full required.
+
+
+### Full throughput-fixed suite PASS; third exact-SHA CI required
+
+Complete Windows3402=3379PASS/23SKIP/0ERROR/0FAIL exit0,134.445seconds,586source/config/test+10patches fixed. Wire30same scenarios and51focused methodsPASS;7new portability/cleanup controls total. Runtime/CI configuration/time/cpu/memory limits unchanged. Previous secondCI has3396PASS5SKIP but overallrc124, remainsFAIL and mainunchanged. New actual loopback fixture polling removes repeated idle shutdown waits, not assertions or deadlines. Next push exact committed source and await full remote gate.

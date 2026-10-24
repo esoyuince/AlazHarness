@@ -114,7 +114,9 @@ class Fixture:
                     self.send_json(200, payload)
         self.server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
         self.server.daemon_threads = True
-        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+        # The fixture polls only for shutdown; this does not shorten client deadlines.
+        self.thread = threading.Thread(target=self.server.serve_forever,
+                                       kwargs={'poll_interval': 0.01}, daemon=True)
     def __enter__(self):
         self.thread.start(); return self
     def __exit__(self, *args):

@@ -11,6 +11,11 @@ class PublicationPortability(unittest.TestCase):
         values=dict(st_dev=7,st_ino=8,st_mode=stat.S_IFREG|0o600,st_uid=0,st_gid=0,
                     st_nlink=1,st_size=512,st_mtime_ns=1,st_ctime_ns=2)
         values.update(overrides);return SimpleNamespace(**values)
+    def test_real_loopback_fixture_fully_stops_after_context(self):
+        from test_hybrid_wire import FIXTURE
+        with FIXTURE.Fixture() as server:
+            self.assertTrue(server.thread.is_alive())
+        self.assertFalse(server.thread.is_alive())
     def test_only_root_fixture_owner_ids_change(self):
         old=self.info();new=fixture.fixture_owner_info(old,0,0,1000,1000)
         self.assertEqual((new.st_uid,new.st_gid),(1000,1000))

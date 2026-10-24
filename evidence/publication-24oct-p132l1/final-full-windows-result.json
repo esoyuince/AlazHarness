@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "total": 3402,
+  "passed": 3379,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 586,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "runtimeSourcesChanged": false,
+  "elapsedSeconds": 134.445,
+  "at": "2026-10-24T17:54:27.515037+03:00",
+  "scope": "complete Windows standard including unchanged wire scenarios and faster fixture shutdown; no CI policy widening"
+}

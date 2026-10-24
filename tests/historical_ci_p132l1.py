@@ -1,6 +1,6 @@
-"""Three exact pre-publication test generations, never current runtime proof."""
+"""Four exact pre-publication test generations, never current runtime proof."""
 import hashlib,json
-NAMES=frozenset(('tests/test_gateway_native_layout.py',
+NAMES=frozenset(('tests/fixtures/hermes_wire.py','tests/test_gateway_native_layout.py',
                  'tests/test_principal_export_replace_refs.py',
                  'tests/historical_owner_b129d6.py'))
 

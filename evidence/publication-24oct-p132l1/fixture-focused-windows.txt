@@ -1,0 +1,56 @@
+test_approval (test_hybrid_wire.HybridWireTests.test_approval) ... ok
+test_bad_endpoint (test_hybrid_wire.HybridWireTests.test_bad_endpoint) ... ok
+test_bad_input (test_hybrid_wire.HybridWireTests.test_bad_input) ... ok
+test_budget (test_hybrid_wire.HybridWireTests.test_budget) ... ok
+test_cancel (test_hybrid_wire.HybridWireTests.test_cancel) ... ok
+test_cancel_idempotent (test_hybrid_wire.HybridWireTests.test_cancel_idempotent) ... ok
+test_conflict (test_hybrid_wire.HybridWireTests.test_conflict) ... ok
+test_contradictory (test_hybrid_wire.HybridWireTests.test_contradictory) ... ok
+test_disposed_no_revival (test_hybrid_wire.HybridWireTests.test_disposed_no_revival) ... ok
+test_duplicate (test_hybrid_wire.HybridWireTests.test_duplicate) ... ok
+test_lost_ack (test_hybrid_wire.HybridWireTests.test_lost_ack) ... ok
+test_not_found (test_hybrid_wire.HybridWireTests.test_not_found) ... ok
+test_observer_failure (test_hybrid_wire.HybridWireTests.test_observer_failure) ... ok
+test_oversized (test_hybrid_wire.HybridWireTests.test_oversized) ... ok
+test_partial (test_hybrid_wire.HybridWireTests.test_partial) ... ok
+test_preaborted (test_hybrid_wire.HybridWireTests.test_preaborted) ... ok
+test_reconcile_live (test_hybrid_wire.HybridWireTests.test_reconcile_live) ... ok
+test_redirect (test_hybrid_wire.HybridWireTests.test_redirect) ... ok
+test_resume (test_hybrid_wire.HybridWireTests.test_resume) ... ok
+test_resume_abort_readonly (test_hybrid_wire.HybridWireTests.test_resume_abort_readonly) ... ok
+test_resume_timeout_readonly (test_hybrid_wire.HybridWireTests.test_resume_timeout_readonly) ... ok
+test_settlement_no_extension (test_hybrid_wire.HybridWireTests.test_settlement_no_extension) ... ok
+test_success (test_hybrid_wire.HybridWireTests.test_success) ... ok
+test_terminal_freeze (test_hybrid_wire.HybridWireTests.test_terminal_freeze) ... ok
+test_timeout (test_hybrid_wire.HybridWireTests.test_timeout) ... ok
+test_unconfirmed (test_hybrid_wire.HybridWireTests.test_unconfirmed) ... ok
+test_unknown (test_hybrid_wire.HybridWireTests.test_unknown) ... ok
+test_unsupported (test_hybrid_wire.HybridWireTests.test_unsupported) ... ok
+test_unverified_terminal (test_hybrid_wire.HybridWireTests.test_unverified_terminal) ... ok
+test_wrong_id (test_hybrid_wire.HybridWireTests.test_wrong_id) ... ok
+test_foreign_owner_and_modes_still_fail_real_guard (test_publication_portability_p132l1.PublicationPortability.test_foreign_owner_and_modes_still_fail_real_guard) ... ok
+test_nonroot_metadata_not_rewritten (test_publication_portability_p132l1.PublicationPortability.test_nonroot_metadata_not_rewritten) ... ok
+test_only_root_fixture_owner_ids_change (test_publication_portability_p132l1.PublicationPortability.test_only_root_fixture_owner_ids_change) ... ok
+test_pinned_csharp_checkout_matches_existing_native_receipts (test_publication_portability_p132l1.PublicationPortability.test_pinned_csharp_checkout_matches_existing_native_receipts) ... ok
+test_production_root_actor_still_rejected_before_io (test_publication_portability_p132l1.PublicationPortability.test_production_root_actor_still_rejected_before_io) ... ok
+test_real_loopback_fixture_fully_stops_after_context (test_publication_portability_p132l1.PublicationPortability.test_real_loopback_fixture_fully_stops_after_context) ... ok
+test_saved_old_generations_exact_and_unknown_not_bypassed (test_publication_portability_p132l1.PublicationPortability.test_saved_old_generations_exact_and_unknown_not_bypassed) ... ok
+test_actual_api_cancel_leaves_canonical_claim_until_settlement (test_canonical_receipt_c119v1.CanonicalReceipt.test_actual_api_cancel_leaves_canonical_claim_until_settlement) ... ok
+test_exact_source_and_immutable_native_imports (test_canonical_receipt_c119v1.CanonicalReceipt.test_exact_source_and_immutable_native_imports) ... ok
+test_historical24_and_actual_exponent_failure_not_relabelled (test_canonical_receipt_c119v1.CanonicalReceipt.test_historical24_and_actual_exponent_failure_not_relabelled) ... ok
+test_no_observer_opens_writes_or_unreported_network_effect (test_canonical_receipt_c119v1.CanonicalReceipt.test_no_observer_opens_writes_or_unreported_network_effect) ... ok
+test_terminal_complete_current27_cases (test_canonical_receipt_c119v1.CanonicalReceipt.test_terminal_complete_current27_cases) ... ok
+test_test_boundary_and_original_controls_remain_explicit (test_canonical_receipt_c119v1.CanonicalReceipt.test_test_boundary_and_original_controls_remain_explicit) ... ok
+test_actual_linux_identity_and_temporary_only_install (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_actual_linux_identity_and_temporary_only_install) ... ok
+test_corrected_exact_linux_wheel_lock (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_corrected_exact_linux_wheel_lock) ... ok
+test_current_native22_all_cases_and_cleanup (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_current_native22_all_cases_and_cleanup) ... ok
+test_first_missing_dependency_and_superseded_candidate_remain_historical (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_first_missing_dependency_and_superseded_candidate_remain_historical) ... ok
+test_real_owner_cold_helpers_and_exact_order_not_mocked (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_real_owner_cold_helpers_and_exact_order_not_mocked) ... ok
+test_scope_no_admission_model_or_full_isolation (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_scope_no_admission_model_or_full_isolation) ... ok
+test_source_bytes_native_imports_and_prior_harness_preserved (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_source_bytes_native_imports_and_prior_harness_preserved) ... ok
+test_transport_source_and_package_integrity_binds_both_runs (test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_transport_source_and_package_integrity_binds_both_runs) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 6.057s
+
+OK

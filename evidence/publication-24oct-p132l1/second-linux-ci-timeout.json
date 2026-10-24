@@ -1,0 +1,23 @@
+{
+  "sha": "df121d54b497a5b7eeae3980248ab9e934e79f2b",
+  "job": "ed251d72-cfb8-11f1-898e-85386aebbbce",
+  "status": "failure",
+  "containerExitCode": 124,
+  "timeout": true,
+  "oomKilled": false,
+  "startedUnix": 1792852860,
+  "finishedUnix": 1792853064,
+  "image": "sha256:6852a9b6c39485734c2b0f616504392029499c766d1c43d3dee99df7320e9152",
+  "structuredTestSummary": {
+    "total": 3401,
+    "passed": 3396,
+    "failed": 0,
+    "skipped": 5,
+    "executed": 3401,
+    "suite_errors": 0
+  },
+  "logSha256": "cd1b28480f9ab0ebaf58e374aab547b22e0234e1b5a99c4d21483e53e32c5fa5",
+  "logTail": "...................................................................................................................................TIMEOUT after 180s\n",
+  "testsReportSha256": "8b05643dd9c5eb7b58ce997ea3a35782f79e00f595ac9bbf7142e0a2c8c2f57d",
+  "fullCiAccepted": false
+}
