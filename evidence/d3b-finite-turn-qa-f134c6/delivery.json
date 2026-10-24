@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-24T23:17:25.004292+03:00",
+  "acceptedPublishedMain": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "sameShaCiVerifiedBeforeMerge": true,
+  "qaCommit": "8f3ce01c90c62d23c7f0583c9e5136c85eb35997",
+  "qaBranch": "alaz/d3b-finite-turn-qa-f134c6",
+  "qaTreeCleanBeforeDocs": true,
+  "independentActualNativeExecution": {
+    "computed": "50",
+    "savedResult": "50",
+    "realNativeFlowWitness": "PASS",
+    "manualSettlementObserved": false,
+    "normalOwnerClose": "NOT_ACCEPTED"
+  },
+  "focusedTestMethods": 15,
+  "focusedScope": "9synthetic witness contracts+6offline receipts, not native run count",
+  "staticGate": "PASS",
+  "discoveredNotExecutedFullSuite": 3437,
+  "all593PriorSourcesUnchanged": true,
+  "nativeSourceModified": false,
+  "installedNativeModified": false,
+  "newQAFullSuite": "NOT_RUN",
+  "newQACommitPushed": false,
+  "reviewAgent": "STOPPED_ARCHIVED_NO_ACCEPTANCE_REPORT",
+  "next": "single producer fixes actual goals registry borrow/ownership and active native-lifecycle close before declaring finite acceptance; then exact-source combined native/full/Linux/HTTP"
+}

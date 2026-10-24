@@ -80,3 +80,7 @@ qualify the exact active source under Linux isolation/authenticated HTTP. Comple
 M1/M2, paid model budgets, restart recovery and power-loss durability remain open.
 The current branch's focused/static outcomes do not replace a future combined
 full suite or remote CI. No new main promotion for this incomplete finite feature.
+
+## Final QA checkpoint
+
+Independent QA/source evidence committed as8f3ce01; focused15/15 and local staticPASS.3437 is discovery count, no new full-suite claim. Local/remote main4d37687 verified again, new finite code remains unaccepted in its producer feature branch. All593 prior QA branch sources unchanged. Final delivery.json and status.md bind the remaining gaps without relabelling computed result as complete ownership acceptance.
