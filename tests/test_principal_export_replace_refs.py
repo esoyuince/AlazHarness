@@ -70,9 +70,14 @@ class ExportReplacementRefs(unittest.TestCase):
         replacement=self.g('hash-object','-w','--stdin',
                            input=b'# owned replacement under empty environment flag\n').decode().strip()
         self.g('replace',self.oid,replacement)
-        with patch.dict(os.environ,{'GIT_NO_REPLACE_OBJECTS':''}):
+        with patch.dict(os.environ):
+            # Positive control must not depend on platform-specific empty-env
+            # handling: first prove the replacement with the flag absent.
+            os.environ.pop('GIT_NO_REPLACE_OBJECTS',None)
             self.assertNotEqual(self.g('cat-file','blob',self.oid),self.original)
+            os.environ['GIT_NO_REPLACE_OBJECTS']=''
             self.assert_original_export()
+            self.assertEqual(os.environ['GIT_NO_REPLACE_OBJECTS'],'')
         self.assertEqual(self.g('rev-parse','refs/replace/'+self.oid).decode().strip(),replacement)
 
     def test_commit_replacement_cannot_change_pinned_tree(self):

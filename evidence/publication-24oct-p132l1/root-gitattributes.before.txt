@@ -1,0 +1,13 @@
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.ts text eol=lf
+*.mjs text eol=lf
+packages/upstream/**/LICENSE text eol=lf
+evidence/hyb-http/*.txt text eol=lf
+
+# Preserve required blank-context markers in this historical unified diff.
+# No whitespace-check exception applies to product code.
+evidence/hyb-005b-qa3156/c01-memory-only-proposal.patch whitespace=-blank-at-eol

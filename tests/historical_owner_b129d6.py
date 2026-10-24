@@ -7,6 +7,9 @@ import hashlib,json
 
 
 def saved_generation_hash(root,name,expected):
+    from historical_ci_p132l1 import saved_generation_hash as saved_ci
+    previous=saved_ci(root,name,expected)
+    if previous is not None:return previous
     e=root/'evidence/d3b-active-owner-b129d6'
     manifest=json.loads((e/'historical-source-bindings.json').read_text(encoding='utf-8'))
     item=manifest['sources'].get(name)

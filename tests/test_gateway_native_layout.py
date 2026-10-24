@@ -1,5 +1,6 @@
-"""Finite layout contract tests; Windows tests double POSIX ownership only.
-Linux executes the same fixtures with real modes/UIDs and O_NOFOLLOW semantics.
+"""Finite layout unit contracts; Windows doubles POSIX ownership metadata.
+Unprivileged Linux uses real metadata. Root CI doubles ONLY ownership IDs,
+keeping real type/mode/device/link/descriptor checks; it is not confinement proof.
 """
 from contextlib import ExitStack
 import hashlib
@@ -18,6 +19,16 @@ import gateway_native_layout as layout
 import gateway_state_projection as projection
 E=ROOT/'evidence/d3b-native-layout-l106r'
 DATA=json.loads((E/'native-auxiliary-fixture.json').read_text())
+
+def fixture_owner_info(info, actual_uid, actual_gid, expected_uid, expected_gid):
+    """Normalize only a root fixture owner; all other metadata stays native."""
+    fields=('st_dev','st_ino','st_mode','st_uid','st_gid','st_nlink','st_size',
+            'st_mtime_ns','st_ctime_ns')
+    values={name:getattr(info,name) for name in fields}
+    if actual_uid==0 and values['st_uid']==0:values['st_uid']=expected_uid
+    if actual_gid==0 and values['st_gid']==0:values['st_gid']=expected_gid
+    return SimpleNamespace(**values)
+
 
 class ObjectContracts(unittest.TestCase):
     def info(self,**kw):
@@ -85,6 +96,21 @@ class LayoutFixtures(unittest.TestCase):
             stack.enter_context(patch.object(layout,'_private',side_effect=private))
             stack.enter_context(patch.object(layout.os,'O_CLOEXEC',0,create=True))
             stack.enter_context(patch.object(layout.os,'O_NOFOLLOW',0,create=True))
+        elif self.uid==0 or self.gid==0:
+            # A root-run CI container is not the positive unprivileged actor.
+            # Keep production rejection of UID/GID zero; only this unit fixture
+            # maps its own metadata IDs and still calls the real private guard.
+            actual_uid,actual_gid=self.uid,self.gid
+            self.uid=self.uid or 1000;self.gid=self.gid or 1000
+            stack=ExitStack();self.addCleanup(stack.close)
+            native_private,native_metadata=layout._private,layout.metadata
+            def owned(info):
+                return fixture_owner_info(info,actual_uid,actual_gid,self.uid,self.gid)
+            def private(info,uid,gid,dev,directory):
+                return native_private(owned(info),uid,gid,dev,directory)
+            stack.enter_context(patch.object(layout,'metadata',side_effect=lambda info:native_metadata(owned(info))))
+            stack.enter_context(patch.object(layout,'_private',side_effect=private))
+
     def check(self):return layout.inspect_profile(self.home,uid=self.uid,gid=self.gid,device=self.device)
     def test_exact_prepared_fixture_passes(self):
         r=self.check();self.assertEqual(set(r),set(layout.REQUIRED)|{'profile'})

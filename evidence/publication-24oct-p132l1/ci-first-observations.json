@@ -1,0 +1,100 @@
+[
+  {
+    "at": "2026-10-24T17:25:17.613596+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166297166,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "target_url": null,
+      "created_at": "2026-10-24T14:23:24Z",
+      "updated_at": "2026-10-24T14:23:24Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:25:32.821560+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166297166,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "target_url": null,
+      "created_at": "2026-10-24T14:23:24Z",
+      "updated_at": "2026-10-24T14:23:24Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:25:48.020137+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166297166,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "target_url": null,
+      "created_at": "2026-10-24T14:23:24Z",
+      "updated_at": "2026-10-24T14:23:24Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:26:03.246435+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166297166,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "target_url": null,
+      "created_at": "2026-10-24T14:23:24Z",
+      "updated_at": "2026-10-24T14:23:24Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:26:18.453892+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166297166,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "target_url": null,
+      "created_at": "2026-10-24T14:23:24Z",
+      "updated_at": "2026-10-24T14:23:24Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:26:33.654310+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "pending",
+    "localCi": {
+      "id": 57166297166,
+      "state": "pending",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI running",
+      "target_url": null,
+      "created_at": "2026-10-24T14:23:24Z",
+      "updated_at": "2026-10-24T14:23:24Z"
+    }
+  },
+  {
+    "at": "2026-10-24T17:26:48.853663+03:00",
+    "sha": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+    "combined": "failure",
+    "localCi": {
+      "id": 57166391620,
+      "state": "failure",
+      "context": "alaz/local-ci",
+      "description": "ALAZ Local CI failed (rc=1)",
+      "target_url": null,
+      "created_at": "2026-10-24T14:26:31Z",
+      "updated_at": "2026-10-24T14:26:31Z"
+    }
+  }
+]

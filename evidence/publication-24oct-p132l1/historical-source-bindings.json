@@ -1,0 +1,21 @@
+{
+  "base": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+  "testedSourceManifest": "evidence/d3b-canonical-api-joint-j131d6/full-sources-after.json",
+  "sources": {
+    "tests/test_gateway_native_layout.py": {
+      "sha256": "9e2b830d0abd11bffad7c1b3c5fcb30c806efe8f4395385fd502dccb56e4c4a0",
+      "path": "evidence/publication-24oct-p132l1/historical/test_gateway_native_layout.py.txt",
+      "gitBlob": "582e0720d8d8d496732b52810e57d272eaf3b6ec"
+    },
+    "tests/test_principal_export_replace_refs.py": {
+      "sha256": "abeeade9f6c45c8fe50bbf27a6af4905d0902ae7aca7864556aeaf1bc4ea8ba6",
+      "path": "evidence/publication-24oct-p132l1/historical/test_principal_export_replace_refs.py.txt",
+      "gitBlob": "cd46f043b58368b78ecebaab0dd606f23e237c1f"
+    },
+    "tests/historical_owner_b129d6.py": {
+      "sha256": "5975d93dba5712ef7e236168b92535e0a04a683fcf2b4e6021516c5bb96f7bff",
+      "path": "evidence/publication-24oct-p132l1/historical/historical_owner_b129d6.py.txt",
+      "gitBlob": "7a06ee165672f4d0b4776727ddcb6f127499b597"
+    }
+  }
+}

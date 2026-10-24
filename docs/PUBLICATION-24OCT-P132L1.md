@@ -40,3 +40,38 @@ lock; no squash, force-push, global Git/CI configuration, fork-main or deploymen
 Record actual results separately; a local PASS does not substitute for remoteCI.
 After main publication, continue on a short feature branch from accepted main.
 At this document's preparation push/main/remoteCI are not yet complete.
+
+## First pushed CI outcome and bounded portability repair
+
+Branch ea7b48257ae741c81ff385bac596ceb884d02caf was pushed and verified. Its
+exact-SHA alaz/local-ci FAILED: full3395,33 failure assertions,8errors,5Linuxskips.
+The container did not time out or run out of memory. Main was NOT advanced.
+The raw public status and sanitized failing-test log sections are preserved.
+
+Three portability assumptions were corrected without altering runtime code:
+(1) Positive layout unit fixtures used root UID/GID0 inside CI, which production
+correctly rejects. Only root-run test ownership metadata is now mapped to the
+explicit nonroot fixture identity; actual type/mode/device/links/descriptor logic
+and production zero-ID refusal remain unchanged. NonrootLinux keeps native IDs.
+(2) One historical C# probe was recorded with229CRLF lines, but Linux checkout
+usedLF. A single-path Git attribute pinsCRLF for exact historical raw bytes;
+content, recorded hashes, and production source stay unchanged.
+(3) An exporter test assumed empty GIT_NO_REPLACE_OBJECTS enabled replacement refs
+on every Git build. It now proves the actual replacement while the variable is
+absent, then verifies the same original-byte export with the variable empty.
+No assertion about the exporter or its security behavior was removed.
+
+Three old test/helper versions are archived by exact name and hash against the
+accepted source manifest. Historical native/kernel results keep their original
+bytes and scope; no expected digest or old outcome is rewritten. Six added tests
+cover owner-ID mapping, foreign owner/mode refusals, nonroot identity, original
+root refusal, exact C# bytes and historical-generation fail-closed behavior.
+The existing71selected Windows methods pass; a new complete standard run is
+recorded separately. Remote success is still required before main.
+
+No CI service, executor limits, image, permissions or policy were changed. Server
+CI artifacts were read via its existing owner gitmirror only; no server writes.
+
+## Repair local acceptance
+
+FullWindows3401=3378PASS/23SKIP/0ERROR/0FAIL, exit0.586source/config/test hashes and10patches fixed; same23Windows skips.71focused methods PASS. The runtime/native implementation and source locks are unchanged. This local result does not waive the required next exact-SHA remote CI.

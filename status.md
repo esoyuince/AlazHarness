@@ -23,3 +23,23 @@ in evidence/publication-24oct-p132l1. Push/main/remoteCI NOT RUN at this checkpo
 ### Publication review completed
 
 All164 commits/3248newblobs and5365historicalpaths reviewed,92795880bytes; no configured credential/path/binary/size/mode finding.10upstream components reproduced.584current source/config/test files+10patches match full3395=3372PASS23SKIP. No runtime/test/source edit; only selected publication docs/evidence. Next local static then branch push. Remote main may advance only on exact pushed-SHA alaz/local-ci SUCCESS.
+
+
+### Branch push complete, exact CI still required
+
+Remote alaz/d3b-principal-launch-21oct verified at ea7b48257ae741c81ff385bac596ceb884d02caf. Push command exit0, no tags/submodule pushes/force. Entire original164commit history plus publication docs delta checked. Main remainscc7ceba. First GitHub status lookup for pushedSHA returned no status yet; oldmain alaz/local-ci isSUCCESS. Do not substitute old/main/local success for newSHA. RemoteCI and main update remain pending actual evidence.
+
+
+### First Linux CI failure retained; test portability repair in progress
+
+Exact ea7b482 alaz/local-ci FAILURE57166391620,3395tests with33failure assertions/8errors/5Linuxskips; no timeout/OOM. Main remainscc7ceba. Root-CI positive fixtures suppliedUID/GID0 and real runtime correctly refused; explicit root-only unit ownership metadata now mapped while mode/device/link and productionzeroID rejection stay real. Empty Git env positive control separated from platform-specific emptyflag parsing. Single C# probe checkout pinnedCRLF to exact existing native bytes. Three changed old test/helper sources archived by exactname+hash, raw historical results unchanged. No packages/runtime/native/CI policy or limits changed. Fresh focused/full tests required before nextpush.
+
+
+### Repair focused checks passed; new complete regression started
+
+71targeted Windows methods PASS including6new portability controls. Root productionidentity still refused, only unitfixturemetadata adapts; original modes/device/linkchecks retained. All packages/scripts/config/nativepatch bytes unchanged. Three oldtest/helper source versions archived, two newtest/helper files, singleC#checkout rule. Request9f220e48... owns full standard on frozen586source+10patch hashes; no source/test edits until terminal. Main stillblocked on remoteCI success.
+
+
+### Portability repair complete locally; exact second remote CI next
+
+New full3401=3378PASS/23SKIP/0ERROR/0FAIL exit0,586source/config/test+10patches stable, original23Windows skipIDs/reasons unchanged.71targeted PASS. Only3existing test/helper sources changed,2test/helper files added and singleC#checkout attribute. Runtime packages/scripts/config/nativepatches unchanged. First remote ea7b482 failure preserved; no main advancement. Next commit selected repair/docs, push same developmentbranch, require exact newSHA CI.

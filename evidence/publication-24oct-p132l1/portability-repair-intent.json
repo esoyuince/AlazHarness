@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-24T17:35:35.310362+03:00",
+  "failedCiCommit": "ea7b48257ae741c81ff385bac596ceb884d02caf",
+  "runtimeSourcesChanged": false,
+  "nativePatchesChanged": false,
+  "ciServiceConfigurationChanged": false,
+  "newTests": 6,
+  "changedTestFiles": [
+    "tests/test_gateway_native_layout.py",
+    "tests/test_principal_export_replace_refs.py",
+    "tests/historical_owner_b129d6.py"
+  ],
+  "newHistoricalHelper": "tests/historical_ci_p132l1.py",
+  "csharpActualBytesUnchanged": true,
+  "oldRawEvidenceModified": false
+}
