@@ -1,0 +1,45 @@
+{
+  "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "implementationHead": "6001b5534f445fc5fe085af53abfbb89d6f6c6b3",
+  "readOnly": true,
+  "noPayloadExecution": true,
+  "nextFunctions": [
+    {
+      "path": "gateway/session_api_turn.py",
+      "function": "run_api_turn",
+      "line": 326,
+      "endLine": 348,
+      "sourceSha256": "f81bc82e2e8d903d93eef93c4b8fa0c96dd7050039c555c6082c8fa75f887cd6"
+    },
+    {
+      "path": "gateway/session_api_turn.py",
+      "function": "observe_api_turn",
+      "line": 351,
+      "endLine": 383,
+      "sourceSha256": "fe403eb3e61f80a3abb2ee71a87a076f67158d9b575251a119d212cb2aab8589"
+    },
+    {
+      "path": "gateway/session_api_turn.py",
+      "function": "_settled_api_result",
+      "line": 386,
+      "endLine": 394,
+      "sourceSha256": "96e3def02611ab328f51c154f44baf8feefa888d04236cc4fa4b9d52e1256ba3"
+    },
+    {
+      "path": "gateway/session_api_turn.py",
+      "function": "prepare_api_runtime",
+      "line": 535,
+      "endLine": 549,
+      "sourceSha256": "648f6ca00f43baf51045f9f98192f676beff2db467b43ab6345c624dc4dd7455"
+    },
+    {
+      "path": "gateway/session_finite.py",
+      "function": "execute_finite_admission",
+      "line": 71,
+      "endLine": 80,
+      "sourceSha256": "ba85458123ae585e502fcb66e1d05db05f816e010f39de98d60a427721b644b5"
+    }
+  ],
+  "goal": "real native run_api_turn and finite execution with bounded injected model computation only; must not manually terminalize row, replace resolver or duplicate scheduler",
+  "workerObserverStillRequiresSeparateQualification": true
+}

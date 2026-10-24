@@ -104,3 +104,7 @@ not retried. Do not merge unverified source or equate old main's CI with this br
 ## Complete current standard regression
 
 New full Windows3414=3391PASS/23SKIP/0ERROR/0FAIL, original command exit0.591source/config/test files and10patches identical before/after; same23skip IDs/reasons. Prior586files:581unchanged,3runtime and2historical receipt adapters changed;5new files. This full run includes12new standard contracts/receipts, not extra native or Linux executions. Native39/23/20 acceptance is separately recorded. RemoteCI not inferred from local result.
+
+## Published implementation and exact main promotion
+
+Implementation `6001b5534f445fc5fe085af53abfbb89d6f6c6b3` pushed as a two-commit increment from94f509d. All47newGitblob versions passed bounded configured credential/path scan; this is not a universal secret audit. Exact GitHub alaz/local-ci SUCCESS57168949440 was observed before non-forced remote/main fast-forward. Local clean main agrees,591source hashes and10patches unchanged. All33legacy-root dirty file hashes preserved. Installednative/source locks unchanged. Final handoff changes docs/evidence only; its own exactSHA status is separate from this code acceptance. Raw server test counts are not present in the GitHub status response and are not inferred.

@@ -1,0 +1,11 @@
+{
+  "source": "GitHub connector fetch of commits/6001b5534f445fc5fe085af53abfbb89d6f6c6b3/status",
+  "observedAt": "2026-10-24T18:51:23.523711+03:00",
+  "sha": "6001b5534f445fc5fe085af53abfbb89d6f6c6b3",
+  "context": "alaz/local-ci",
+  "state": "success",
+  "statusId": 57168949440,
+  "description": "ALAZ Local CI passed",
+  "updatedAt": "2026-10-24T15:50:37Z",
+  "suiteCountsNotInStatusResponse": true
+}

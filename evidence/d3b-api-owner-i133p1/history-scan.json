@@ -1,0 +1,293 @@
+{
+  "at": "2026-10-24T18:47:25.356541+03:00",
+  "base": "94f509d028e45790adef9d27ffa237a042a2151d",
+  "head": "6001b5534f445fc5fe085af53abfbb89d6f6c6b3",
+  "commitCount": 2,
+  "blobCount": 47,
+  "rows": [
+    {
+      "object": "d31ad024f6bae1ccec29ecf2d0cd4b8b3e90fdc2",
+      "path": "config/canonical-api-consumer-i133p1-sources.json",
+      "bytes": 54723,
+      "sha256": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27"
+    },
+    {
+      "object": "3bcc509a7346958f577bd872dcf6bafb46de50ea",
+      "path": "docs/D3B-API-OWNER-INTEGRATION-I133P1.md",
+      "bytes": 7039,
+      "sha256": "7a18f785b2d74ab4d5af4939351917ff04bb1f002a652a40b371aa3f1582d343"
+    },
+    {
+      "object": "f9525e7ad51101c286577e2990b7e0f2d19e0cdc",
+      "path": "docs/status-history/i133p1-implementation-work-log.md",
+      "bytes": 4939,
+      "sha256": "6c25e89f562057c02377ee7848a6d6ba9aeb16885d0558c8453fa5fb9fab2027"
+    },
+    {
+      "object": "83c663d81a8a412cbe799d9edb91e14bb996f88f",
+      "path": "evidence/d3b-api-owner-i133p1/baseline.json",
+      "bytes": 67449,
+      "sha256": "88aabed3f0b1ff9be8709077cb086404982ffc2f87f866a0a693ec2c27125705"
+    },
+    {
+      "object": "abc400aab942b41d398fe843c88335e567d7fd15",
+      "path": "evidence/d3b-api-owner-i133p1/compat-admission/result.json",
+      "bytes": 67207,
+      "sha256": "2075fdf9c5f9a0d31fa6836119de48d33604d2a639b907eaa36827fac3ed9fc8"
+    },
+    {
+      "object": "d47825a96f488160b746a05d990ab38b0cb29c8f",
+      "path": "evidence/d3b-api-owner-i133p1/compat-admission/tests.txt",
+      "bytes": 3651,
+      "sha256": "13a73a2398296823db0b469a68cff33db7fd2c36d0a8b9cddd7eb76673741705"
+    },
+    {
+      "object": "aa118f0adc35fe50ea441b866592ddae02c7f966",
+      "path": "evidence/d3b-api-owner-i133p1/compat-prepared/result.json",
+      "bytes": 64484,
+      "sha256": "98bf3a5a6e6afb4b84282800ae4fc96d163ed2c25507f728d793e2523c281516"
+    },
+    {
+      "object": "93141900b4dea05a47f253deb736f9a74ba6d31f",
+      "path": "evidence/d3b-api-owner-i133p1/compat-prepared/tests.txt",
+      "bytes": 2738,
+      "sha256": "bd66f0914a0ac31eed64366d6a33dd8c2622ed66efcaf1bf22276aade8c925e1"
+    },
+    {
+      "object": "e012f7be246843c158794c12b188d6347aa2bfa9",
+      "path": "evidence/d3b-api-owner-i133p1/compatibility-intent.json",
+      "bytes": 1478,
+      "sha256": "c27897fa87101dd0c265fb64b9d8961bb7d78794508f3d3e5b4cb275da4622fd"
+    },
+    {
+      "object": "cf367edcf5b023e1dd914abaf1e0950cba7d6d26",
+      "path": "evidence/d3b-api-owner-i133p1/compatibility-terminal.json",
+      "bytes": 122,
+      "sha256": "3f9182902f1d1fe1b4d02721fdf7092f835ef9b0c2d5f9421f4db4bcdd5019f7"
+    },
+    {
+      "object": "e318988145da5decb971284cf791a2c7319b2a42",
+      "path": "evidence/d3b-api-owner-i133p1/current-source-custody.json",
+      "bytes": 306970,
+      "sha256": "3b5ac2fae9ee881c5a3bae9618c3bc91d2e57235cde6d3f2a530d89e94989116"
+    },
+    {
+      "object": "dfe555bcebd463ab88fbd2c0b427498f026fe6da",
+      "path": "evidence/d3b-api-owner-i133p1/final-docs-ci.json",
+      "bytes": 5619,
+      "sha256": "36a3e5cc07e9a9c8a0272536e093a0cca85bacd34bf6e6be775062bf1f47a529"
+    },
+    {
+      "object": "3e527f5f740e2294da97dc2880ba3b7b01600950",
+      "path": "evidence/d3b-api-owner-i133p1/final-main-intent.json",
+      "bytes": 846,
+      "sha256": "f8d45f9ef81e0dc6aa7c4242ae756c9a8c821ea2b16bfd81bfad6bb0b0475fa9"
+    },
+    {
+      "object": "d5e4c3bf935ed6ba701deb1ff3888789e22cff9d",
+      "path": "evidence/d3b-api-owner-i133p1/final-main-local.txt",
+      "bytes": 2148,
+      "sha256": "b3b6097ca92c97b1a39ece6bacf3f11cdb3496590581dd6cf576c0dbf5b8df9e"
+    },
+    {
+      "object": "d3671c1a36623883b230724f43ef7ef67f9d526a",
+      "path": "evidence/d3b-api-owner-i133p1/final-main-promotion.json",
+      "bytes": 979,
+      "sha256": "e30d59359f4b695fce81c2238301e94ff30d82e5c4f833cd934362200872ae73"
+    },
+    {
+      "object": "5b31892855559406729711932826851027e299c6",
+      "path": "evidence/d3b-api-owner-i133p1/final-main-push.txt",
+      "bytes": 129,
+      "sha256": "5f6fdb4f30afbe035df28a54f0297631bec1a68576c3c6276962cdd66d48c3f3"
+    },
+    {
+      "object": "6ed25f7da19d3aa76f197c2235c40a33254b4174",
+      "path": "evidence/d3b-api-owner-i133p1/focused-contracts-and-receipts.txt",
+      "bytes": 1946,
+      "sha256": "dc832440d72349bee8600c0a23ba0c17cfbc2a7238d20c7fbbf96f802166fd1c"
+    },
+    {
+      "object": "25b07fb7c6562fdc821c65a3f1e6610a36293c65",
+      "path": "evidence/d3b-api-owner-i133p1/full-sources-after.json",
+      "bytes": 65247,
+      "sha256": "e86f794f2ad89916c7428b1c16619a8ede9dda1baece226e410615c7f07ddcb9"
+    },
+    {
+      "object": "77ab836804a4ca4b864d4b563c8a82eec2dc5b5e",
+      "path": "evidence/d3b-api-owner-i133p1/full-windows-result.json",
+      "bytes": 563,
+      "sha256": "c42b49912bfc94f189016dc1bc8d3a4346608619268c6c9d8c0e984afdd35edf"
+    },
+    {
+      "object": "5740b0bd60d2facb80f9501dabbcdd7ff287eefd",
+      "path": "evidence/d3b-api-owner-i133p1/full-windows.txt",
+      "bytes": 460848,
+      "sha256": "fc2ec8b88041b4f4799a2a7db295e96ee47df7fe2ce9a3dcc1b93a75b631c061"
+    },
+    {
+      "object": "7f47a63dcc24d254cd27fc91a076660421cfa871",
+      "path": "evidence/d3b-api-owner-i133p1/historical-source-bindings.json",
+      "bytes": 1230,
+      "sha256": "455190659a2c14331a01539a83d3bb9fd86dd192fe422ce8aeb6ef5858a27a4a"
+    },
+    {
+      "object": "6306cd21e087e95940b516abded326d76c3e8f8a",
+      "path": "evidence/d3b-api-owner-i133p1/implementation-parent-status.txt",
+      "bytes": 2561,
+      "sha256": "c3a266e627b656fab7054aca75eefdfeaf786a0f225134ab592fffa640e8405e"
+    },
+    {
+      "object": "0aaf8e513c14f58a043b5af1b82bf7ec3675ec5e",
+      "path": "evidence/d3b-api-owner-i133p1/implementation-summary.json",
+      "bytes": 2612,
+      "sha256": "fa133c303255605d171454064d7cf73e2a8dc6f35304526d195cd1f8783ac8c7"
+    },
+    {
+      "object": "9e6bf132680e8c747113812853f06dafd1d0659a",
+      "path": "evidence/d3b-api-owner-i133p1/manifest-source-custody.json",
+      "bytes": 42196,
+      "sha256": "b0ce27d65561bf4f26bdb11242385b90ce2260a054abfd9d53306db6d1b54fb1"
+    },
+    {
+      "object": "9e2b0903ae902fc0feb40b4201eb4f109fa67ef9",
+      "path": "evidence/d3b-api-owner-i133p1/native-001-intent.json",
+      "bytes": 923,
+      "sha256": "f8c1260777e5ad83f17d1e72a17731195ef751d8c5a345457b309fbfe956baf7"
+    },
+    {
+      "object": "2bb217b78c89cf8a863f8acbdc7473879deebe84",
+      "path": "evidence/d3b-api-owner-i133p1/native-001-stdout.txt",
+      "bytes": 8090,
+      "sha256": "1b02b76f6ee0ca16514c3ed952ceee068d9cf52f650ffe4ca7bb9c290da3470b"
+    },
+    {
+      "object": "32c6aee1635043656dcf2a1b22b12e417726f7d9",
+      "path": "evidence/d3b-api-owner-i133p1/native-001/result.json",
+      "bytes": 75723,
+      "sha256": "3db3a97bac3dc3548406b58f688b1ab8cfee76673a7397a386812cc874228f3d"
+    },
+    {
+      "object": "0cb9c368d50c613c7fac6229d409842e4613cc3b",
+      "path": "evidence/d3b-api-owner-i133p1/native-001/tests.txt",
+      "bytes": 6697,
+      "sha256": "610ecac1e606de3e6ae4e42df60072456465c767426cbac668d73e51f4d8f2db"
+    },
+    {
+      "object": "8ff56d6a5ff9714fa3b91eb1115e62da65f513b3",
+      "path": "evidence/d3b-api-owner-i133p1/native-002-intent.json",
+      "bytes": 955,
+      "sha256": "bd67d11f59012a343d8276a2ad84da33ea2ef1741bec778dbaadcc381c8ba534"
+    },
+    {
+      "object": "f0ff69212a7bec15bdf05fb8ae17044409b62a37",
+      "path": "evidence/d3b-api-owner-i133p1/native-002-stdout.txt",
+      "bytes": 1303,
+      "sha256": "c92dcd9159d4e430ab1990afa0378ea58169d6db391598273e5b838c664d022b"
+    },
+    {
+      "object": "22f93d61b53f9d68327bf219c61f21da0a11279b",
+      "path": "evidence/d3b-api-owner-i133p1/native-002/result.json",
+      "bytes": 75689,
+      "sha256": "cc0d9b864904daa32eb7c376143b09165a753a9832ec1dc62fdf75e86e70e727"
+    },
+    {
+      "object": "4a5d3b63799f9e93bc59a494b4fe078974c087c0",
+      "path": "evidence/d3b-api-owner-i133p1/native-002/tests.txt",
+      "bytes": 5943,
+      "sha256": "db08f5a3fa2437e38b68cdf695f7e96f9dcc96d62dd47a098ea664b91e1fa6b5"
+    },
+    {
+      "object": "bfb830fd2072c4bd0de63c8791af8a67db2a446d",
+      "path": "evidence/d3b-api-owner-i133p1/native001-gateway_consumer_api.py.txt",
+      "bytes": 3496,
+      "sha256": "4ca291df5879363d5acd6cb4af431719ba771965957a614c1d00671a8912110c"
+    },
+    {
+      "object": "9fa493f1a5b578a2bd45b32ac1cb4d6772a0aaff",
+      "path": "evidence/d3b-api-owner-i133p1/selection-contracts.txt",
+      "bytes": 716,
+      "sha256": "6582f9e6b1f9907b8e222fdb7f3d53ce557e3185e05994affc2a5075d0d715b3"
+    },
+    {
+      "object": "80d7f7a7aab48c3fb69a64680853256d7e2e6e1a",
+      "path": "evidence/d3b-api-owner-i133p1/source-boundary.json",
+      "bytes": 45930,
+      "sha256": "d4bc0daa7fb065e952f2de95dfdd285ceddf3e038036c52bcb22abd34f16b91d"
+    },
+    {
+      "object": "c6fe66cc37c2961ac6a46322a60d098af5493ed4",
+      "path": "evidence/d3b-api-owner-i133p1/static-final.txt",
+      "bytes": 399,
+      "sha256": "52a8a99daf44446179e65056a88a0ac968b7f7443db4a1893db358f368f7f934"
+    },
+    {
+      "object": "4cf29b47a77544f6a75e86f90bd34637ce12ef58",
+      "path": "packages/claw-hermes/gateway_consumer_admission.py",
+      "bytes": 3520,
+      "sha256": "5c9fa513793b2451fb931ad4c2e755d7bb1df93d690a54a3415e7bd276acdac8"
+    },
+    {
+      "object": "cc2bd27fb7046e3979f986eaa017cc22d4258455",
+      "path": "packages/claw-hermes/gateway_consumer_api.py",
+      "bytes": 3899,
+      "sha256": "c677a8310b00206ef3c2d784a7b0b76b36cfb541f22815830825f93067729142"
+    },
+    {
+      "object": "deba9ac320889895bcb21def734090cbdef30cc0",
+      "path": "packages/claw-hermes/gateway_prepared_consumer.py",
+      "bytes": 19042,
+      "sha256": "1bf4557ac9cb59751653b890099863ab82722bb3dc38427320ab8910b75d7cac"
+    },
+    {
+      "object": "8b18c78569b62d7e21d2e6525af312ab72d1fb99",
+      "path": "packages/claw-hermes/gateway_store_startup.py",
+      "bytes": 14570,
+      "sha256": "bd7620251e459bd8ef1ec14d3809363ed18507996b4601eb7720f88e7b5d7691"
+    },
+    {
+      "object": "a06296f76341e396b1c12ae465be0f36f6fb2bd5",
+      "path": "scripts/qa/i133p1_native_api_owner.py",
+      "bytes": 14357,
+      "sha256": "a8fa626150b54f78417a337bc2c0cefa581607a5767e2b028c545105a50ea78f"
+    },
+    {
+      "object": "702049ea157b16a18a0d0b5873764cda41064454",
+      "path": "status.md",
+      "bytes": 4585,
+      "sha256": "b2fbd2045664b3cd74d2c6c865a351fd396fc9fbe57461b544cdbb1b00cd9015"
+    },
+    {
+      "object": "0bfa00414525708189729fef2de89476f1b00f04",
+      "path": "tests/historical_api_i133p1.py",
+      "bytes": 1205,
+      "sha256": "732c71a7619f2bbacaaf9d9335c5e3cc04a4e3ba59a21b153aee51e6dbadfa61"
+    },
+    {
+      "object": "fde2ebbf8f49175960ee54cab7da16dbd6a1a8e3",
+      "path": "tests/historical_owner_b129d6.py",
+      "bytes": 1440,
+      "sha256": "37d8765ed3dca45ce03fd665e833963baf726dd65bd1f21040ddab0224f7b16f"
+    },
+    {
+      "object": "ff20df6322bcfc7d23e4ba436ae0bec7e5b2cbb9",
+      "path": "tests/test_active_owner_receipt_b129d6.py",
+      "bytes": 5204,
+      "sha256": "893c4049b5277ad55891dc70b3ec38c7535063a68275da2b1562ee812d6a49ea"
+    },
+    {
+      "object": "d766cdfd5e9e393c67bf9a93eb57f45c93f475a0",
+      "path": "tests/test_api_owner_i133p1.py",
+      "bytes": 8583,
+      "sha256": "0c7bc0baaa508a04c29649a3c5d9ee6bf073a1d243be7f54f5ff1c02f94474cf"
+    },
+    {
+      "object": "b73b2fb53962adf1d105a0a73ede40110f2e48cd",
+      "path": "docs/D3B-API-OWNER-INTEGRATION-I133P1.md",
+      "bytes": 3319,
+      "sha256": "7d583f41778c35a40daf54757ab6a034d02708873bf7dde9ec2927dbad2495cb"
+    }
+  ],
+  "findings": [],
+  "scope": "bounded configured credential/path patterns over every added Git blob in publication range; not proof of every possible secret"
+}

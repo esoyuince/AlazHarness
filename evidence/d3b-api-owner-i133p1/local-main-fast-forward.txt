@@ -1,0 +1,123 @@
+Updating 94f509d..6001b55
+Fast-forward
+ config/canonical-api-consumer-i133p1-sources.json  |  528 ++
+ docs/D3B-API-OWNER-INTEGRATION-I133P1.md           |  106 +
+ .../i133p1-implementation-work-log.md              |   62 +
+ .../i133p1-main-publication-parent.md              |   69 +
+ evidence/d3b-api-owner-i133p1/.gitattributes       |    3 +
+ evidence/d3b-api-owner-i133p1/baseline.json        |  608 ++
+ .../compat-admission-stderr.txt                    |  Bin 0 -> 1460 bytes
+ .../compat-admission-stdout.txt                    |  Bin 0 -> 933 bytes
+ .../compat-admission/result.json                   |  949 +++
+ .../compat-admission/tests.txt                     |  Bin 0 -> 3651 bytes
+ .../compat-prepared-stderr.txt                     |  Bin 0 -> 1460 bytes
+ .../compat-prepared-stdout.txt                     |  Bin 0 -> 562 bytes
+ .../compat-prepared/result.json                    |  894 +++
+ .../d3b-api-owner-i133p1/compat-prepared/tests.txt |  Bin 0 -> 2738 bytes
+ .../d3b-api-owner-i133p1/compatibility-intent.json |   26 +
+ .../compatibility-terminal.json                    |   10 +
+ .../current-source-custody.json                    | 6148 ++++++++++++++++++++
+ evidence/d3b-api-owner-i133p1/final-docs-ci.json   |   89 +
+ .../d3b-api-owner-i133p1/final-main-intent.json    |   32 +
+ evidence/d3b-api-owner-i133p1/final-main-local.txt |  Bin 0 -> 2148 bytes
+ .../d3b-api-owner-i133p1/final-main-promotion.json |   36 +
+ evidence/d3b-api-owner-i133p1/final-main-push.txt  |  Bin 0 -> 129 bytes
+ .../focused-contracts-and-receipts.txt             |  Bin 0 -> 1946 bytes
+ .../d3b-api-owner-i133p1/full-patches-after.json   |   12 +
+ .../d3b-api-owner-i133p1/full-patches-before.json  |   12 +
+ evidence/d3b-api-owner-i133p1/full-skips.json      |   94 +
+ .../d3b-api-owner-i133p1/full-sources-after.json   |  593 ++
+ .../d3b-api-owner-i133p1/full-sources-before.json  |  593 ++
+ .../d3b-api-owner-i133p1/full-windows-result.json  |   19 +
+ evidence/d3b-api-owner-i133p1/full-windows.txt     |  Bin 0 -> 460848 bytes
+ .../gateway_consumer_admission.py.before.txt       |  Bin 0 -> 3220 bytes
+ .../gateway_prepared_consumer.py.before.txt        |  Bin 0 -> 17035 bytes
+ .../gateway_store_startup.py.before.txt            |  Bin 0 -> 14303 bytes
+ .../historical-source-bindings.json                |   25 +
+ .../historical_owner_b129d6.py.before.txt          |  Bin 0 -> 1280 bytes
+ .../implementation-parent-status.txt               |  Bin 0 -> 2561 bytes
+ .../implementation-summary.json                    |   74 +
+ .../manifest-source-custody.json                   |  529 ++
+ .../d3b-api-owner-i133p1/native-001-intent.json    |   12 +
+ .../d3b-api-owner-i133p1/native-001-stderr.txt     |  Bin 0 -> 1460 bytes
+ .../d3b-api-owner-i133p1/native-001-stdout.txt     |  Bin 0 -> 8090 bytes
+ .../d3b-api-owner-i133p1/native-001/result.json    | 1227 ++++
+ evidence/d3b-api-owner-i133p1/native-001/tests.txt |  Bin 0 -> 6697 bytes
+ .../d3b-api-owner-i133p1/native-002-intent.json    |   14 +
+ .../d3b-api-owner-i133p1/native-002-stderr.txt     |  Bin 0 -> 1460 bytes
+ .../d3b-api-owner-i133p1/native-002-stdout.txt     |  Bin 0 -> 1303 bytes
+ .../d3b-api-owner-i133p1/native-002/result.json    | 1225 ++++
+ evidence/d3b-api-owner-i133p1/native-002/tests.txt |  Bin 0 -> 5943 bytes
+ .../native001-gateway_consumer_api.py.txt          |  Bin 0 -> 3496 bytes
+ .../d3b-api-owner-i133p1/selection-contracts.txt   |  Bin 0 -> 716 bytes
+ evidence/d3b-api-owner-i133p1/source-boundary.json |  601 ++
+ evidence/d3b-api-owner-i133p1/static-final.txt     |  Bin 0 -> 399 bytes
+ .../test_active_owner_receipt_b129d6.py.before.txt |  Bin 0 -> 5187 bytes
+ packages/claw-hermes/gateway_consumer_admission.py |    9 +-
+ packages/claw-hermes/gateway_consumer_api.py       |   78 +
+ packages/claw-hermes/gateway_prepared_consumer.py  |   45 +-
+ packages/claw-hermes/gateway_store_startup.py      |    7 +-
+ scripts/qa/i133p1_native_api_owner.py              |  181 +
+ status.md                                          |  118 +-
+ tests/historical_api_i133p1.py                     |   23 +
+ tests/historical_owner_b129d6.py                   |    3 +
+ tests/test_active_owner_receipt_b129d6.py          |    5 +-
+ tests/test_api_owner_i133p1.py                     |   99 +
+ 63 files changed, 15090 insertions(+), 68 deletions(-)
+ create mode 100644 config/canonical-api-consumer-i133p1-sources.json
+ create mode 100644 docs/D3B-API-OWNER-INTEGRATION-I133P1.md
+ create mode 100644 docs/status-history/i133p1-implementation-work-log.md
+ create mode 100644 docs/status-history/i133p1-main-publication-parent.md
+ create mode 100644 evidence/d3b-api-owner-i133p1/.gitattributes
+ create mode 100644 evidence/d3b-api-owner-i133p1/baseline.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-admission-stderr.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-admission-stdout.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-admission/result.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-admission/tests.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-prepared-stderr.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-prepared-stdout.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-prepared/result.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/compat-prepared/tests.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/compatibility-intent.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/compatibility-terminal.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/current-source-custody.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/final-docs-ci.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/final-main-intent.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/final-main-local.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/final-main-promotion.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/final-main-push.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/focused-contracts-and-receipts.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-patches-after.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-patches-before.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-skips.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-sources-after.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-sources-before.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-windows-result.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/full-windows.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/gateway_consumer_admission.py.before.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/gateway_prepared_consumer.py.before.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/gateway_store_startup.py.before.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/historical-source-bindings.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/historical_owner_b129d6.py.before.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/implementation-parent-status.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/implementation-summary.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/manifest-source-custody.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-001-intent.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-001-stderr.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-001-stdout.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-001/result.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-001/tests.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-002-intent.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-002-stderr.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-002-stdout.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-002/result.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/native-002/tests.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/native001-gateway_consumer_api.py.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/selection-contracts.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/source-boundary.json
+ create mode 100644 evidence/d3b-api-owner-i133p1/static-final.txt
+ create mode 100644 evidence/d3b-api-owner-i133p1/test_active_owner_receipt_b129d6.py.before.txt
+ create mode 100644 packages/claw-hermes/gateway_consumer_api.py
+ create mode 100644 scripts/qa/i133p1_native_api_owner.py
+ create mode 100644 tests/historical_api_i133p1.py
+ create mode 100644 tests/test_api_owner_i133p1.py
