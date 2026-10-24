@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-25T00:58:53.855425+03:00",
+  "testedFeatureCommit": "de918765bdbbd45afb18c1e28836613bdf715dd1",
+  "branch": "alaz/d3b-finite-close-f135c6",
+  "fullWindows": {
+    "total": 3448,
+    "passed": 3425,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "wrapperExitCode": 0
+  },
+  "sourceCount": 602,
+  "patchCount": 11,
+  "sameFullRunSourcesAfterCommit": true,
+  "localStatic": "PASS",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "installedFeatureActivated": false,
+  "main": "4d376870b9bede8534fc0fd88ed683dfde9106c7",
+  "remoteFeatureRef": null,
+  "pushPerformed": false,
+  "mainMergePerformed": false,
+  "fullNativeNormalAndErrorCleanClose": true,
+  "newStateConnectionDuringTurn": 0,
+  "root33DirtyFileStatePreserved": true,
+  "independentEvidenceExactByteCopies": true,
+  "independentQaHistoryMerged": false,
+  "currentLinuxHttpRealProviderAccepted": false,
+  "postCommitWrapperDiagnostic": {
+    "requestId": "136cc601-5b17-4a31-9f60-136000000010",
+    "wrapperExitCode": 1,
+    "failurePhase": "after successful commit; immediate clean-tree assertion failed",
+    "commitDefinitelyCreated": "de918765bdbbd45afb18c1e28836613bdf715dd1",
+    "readonlyReconciliationRequest": "136cc601-5b17-4a31-9f60-136000000011",
+    "readbackClean": true,
+    "allSourceAndPatchHashesMatch": true,
+    "commitWasNotReplayed": true,
+    "transientStatusTextNotCapturedSoCauseNotClaimed": true
+  },
+  "next": "same-source remote CI before any promotion; active Linux isolation and HTTP next, not a new scheduler or duplicate owner"
+}

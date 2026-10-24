@@ -35,3 +35,8 @@ patch-application, compatibility timeout and final results. resume-r136c6 contai
 full-windows-result/log, source/patch-before/after, full-skips, protected-state and
 static-final. Status work history preserved in docs/status-history/f135c6-*.md.
 All native/full jobs terminal; final static/selected local commit only.
+
+
+### Local delivery checkpoint
+
+Tested feature committed asde918765bdbbd45afb18c1e28836613bdf715dd1. Full3448=3425PASS23SKIP exit0 and staticPASS; source602+patch11 unchanged. Commit wrapper0010 exited1 AFTER commit on immediate clean-tree assertion; readonly0011 verified sameHEAD, clean worktree and exact sources, no commit replay. Cause of transient status not inferred. Delivery.json preserves this separate wrapper diagnostic. Final docs-only checkpoint follows; local/remote main4d37687 remains unchanged, no feature push, native not installed. Root33dirtyfiles and vendor preserved. Current own jobs terminal, all acceptance limits above remain.
