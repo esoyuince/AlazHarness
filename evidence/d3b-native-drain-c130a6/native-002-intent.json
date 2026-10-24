@@ -1,0 +1,7 @@
+{
+  "candidate": "candidate-002.json",
+  "qaSha256": "d4769be1dc0e3bb42e4b58019269b40ed3631780825df86c630339e4c06fa036",
+  "totalOwnMethods": 24,
+  "sameFourFailingAssertions": true,
+  "sourceScope": "native optional memory retirement only, same owner-loop3handles, no full agent/FIFO/cache-resource release claim"
+}

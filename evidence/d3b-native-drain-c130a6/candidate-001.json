@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-24T14:16:55.054512+03:00",
+  "nativeBase": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "producerNativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-session-retire-c130t6",
+  "ownFrozenNativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-session-retire-qa-q130a6",
+  "candidateHashes": {
+    "gateway/platforms/api_server_borrowed.py": "c78ecbaf297a98cca9c65d4a3f5ef7282651ebe2e4186c0037ec651d068a5e64",
+    "gateway/run_borrowed_admission.py": "e2ec3dbdcb5032de2943e6bf9d44bfcf34292964f9f854919f695eec32192a22",
+    "gateway/run_borrowed_retirement.py": "1ac8b4069890d7944e1da4050d6e83378dd30bfc9c723bcbd9c5e70f514d4e35"
+  },
+  "nativeProductOwner": "C130T6 d3b-native-turn-c130a6",
+  "producerChangedByThisTask": false,
+  "qaPurpose": "independent memory-only API session retirement; no full turn/HTTP/provider activation"
+}

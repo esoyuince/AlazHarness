@@ -1,0 +1,5 @@
+{
+  "at": "2026-10-24T14:13:33.988015+03:00",
+  "qaSha256": "87500e9b0a7d91b2f76891cbb55acd391d9b6f5f7ce21bd1abc97ff6ef414c35",
+  "scope": "one actual native bound API session plus guarded direct leaf claim/settlement, reproduce retained memory after terminal; no complete agent turn"
+}

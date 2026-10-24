@@ -1,0 +1,12 @@
+test_all_native_and_qa_bytes_match_fixed_generations (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_all_native_and_qa_bytes_match_fixed_generations) ... ok
+test_final_own_twenty_four_and_real_fixture_cleanup (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_final_own_twenty_four_and_real_fixture_cleanup) ... ok
+test_four_actual_refusal_regressions_preserved_then_fixed (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_four_actual_refusal_regressions_preserved_then_fixed) ... ok
+test_memory_retirement_keeps_all_durable_data_and_retry (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_memory_retirement_keeps_all_durable_data_and_retry) ... ok
+test_native_terminal_leaf_does_not_implicitly_retire_session (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_native_terminal_leaf_does_not_implicitly_retire_session) ... ok
+test_no_whole_agent_harness_or_kernel_acceptance (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_no_whole_agent_harness_or_kernel_acceptance) ... ok
+test_original_api_boundary_preserves_partial_session_effects (test_session_retirement_receipt_q130a6.IndependentRetirementReceipt.test_original_api_boundary_preserves_partial_session_effects) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.170s
+
+OK

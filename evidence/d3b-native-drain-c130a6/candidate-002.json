@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-24T14:23:22.290231+03:00",
+  "nativeBase": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "candidateHashes": {
+    "gateway/platforms/api_server_borrowed.py": "c78ecbaf297a98cca9c65d4a3f5ef7282651ebe2e4186c0037ec651d068a5e64",
+    "gateway/run_borrowed_admission.py": "e2ec3dbdcb5032de2943e6bf9d44bfcf34292964f9f854919f695eec32192a22",
+    "gateway/run_borrowed_retirement.py": "24a20d7fbf48d05121b6cd28a9be1c6aab53cf7c49c082d4355f502ae30d2c46"
+  },
+  "producerChangedByThisTask": false,
+  "sameFailingQaSha256": "d4769be1dc0e3bb42e4b58019269b40ed3631780825df86c630339e4c06fa036"
+}

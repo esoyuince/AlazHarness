@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-24T14:08:28.239859+03:00",
+  "fixedProductOwner": "d3b-native-turn-c130a6",
+  "fixedIndependentQaOwner": "d3b-native-drain-c130a6",
+  "reason": "earliest actual worktree claim predates this task; peer now final product owner, our task commits to QA regardless of later reciprocal wording",
+  "observedPeerStatusSha256": "2d8c455d52d2c1c3153fc5bc2d2b9dd5bfce2c6626f58863a4ee3029a405a245",
+  "all572SourceBytesUnchangedHere": true,
+  "noNativeWorktreeOrProductEditByThisTask": true,
+  "doNotSwitchAgain": true
+}

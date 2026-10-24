@@ -1,0 +1,60 @@
+{"result": "FAIL", "total": 4, "passed": 0, "errors": 0, "failures": 4, "skipped": 0, "errorIds": [], "failureIds": ["__main__.RetirementCases.test_review_pending_native_reply_survives_failed_retirement", "__main__.RetirementCases.test_review_memory_turn_marker_retains_exact_session", "__main__.RetirementCases.test_review_persisted_turn_marker_is_never_erased_or_relearned", "__main__.RetirementCases.test_review_live_profile_change_is_not_retired_as_original"], "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "races": [], "actualNativeRunnerAuthorityApiStores": true, "nativeMethodsReplaced": false, "ledgerWritesDirectWithRealNativeGuards": true, "explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords": true, "admittedAgentOrHttpExecution": false, "harnessOwnerIntegrationTested": false, "linuxIsolationTested": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true}
+test_review_pending_native_reply_survives_failed_retirement (__main__.RetirementCases.test_review_pending_native_reply_survives_failed_retirement) ... FAIL
+test_review_memory_turn_marker_retains_exact_session (__main__.RetirementCases.test_review_memory_turn_marker_retains_exact_session) ... FAIL
+test_review_persisted_turn_marker_is_never_erased_or_relearned (__main__.RetirementCases.test_review_persisted_turn_marker_is_never_erased_or_relearned) ... FAIL
+test_review_live_profile_change_is_not_retired_as_original (__main__.RetirementCases.test_review_live_profile_change_is_not_retired_as_original) ... FAIL
+
+======================================================================
+FAIL: test_review_pending_native_reply_survives_failed_retirement (__main__.RetirementCases.test_review_pending_native_reply_survives_failed_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 35, in test_review_pending_native_reply_survives_failed_retirement
+    try:self.reject();self.assertIs(replies['held-reply'],token)
+        ~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 29, in reject
+    with self.watched(),self.assertRaises((fixture.Reject,fixture.RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_review_memory_turn_marker_retains_exact_session (__main__.RetirementCases.test_review_memory_turn_marker_retains_exact_session)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 39, in test_review_memory_turn_marker_retains_exact_session
+    try:self.reject();self.assertEqual(entry.active_turn_token,'unresolved-owned-token')
+        ~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 29, in reject
+    with self.watched(),self.assertRaises((fixture.Reject,fixture.RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_review_persisted_turn_marker_is_never_erased_or_relearned (__main__.RetirementCases.test_review_persisted_turn_marker_is_never_erased_or_relearned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 45, in test_review_persisted_turn_marker_is_never_erased_or_relearned
+    try:self.reject();self.assertEqual(c.execute("SELECT entry_json FROM gateway_routing WHERE scope='' AND session_key=?",(live.route,)).fetchone()[0],changed)
+        ~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 29, in reject
+    with self.watched(),self.assertRaises((fixture.Reject,fixture.RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_review_live_profile_change_is_not_retired_as_original (__main__.RetirementCases.test_review_live_profile_change_is_not_retired_as_original)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 49, in test_review_live_profile_change_is_not_retired_as_original
+    try:self.reject();self.assertEqual(live.source.profile,'other-owned-context')
+        ~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-drain-c130a6\scripts\qa\q130a6_native_retirement.py", line 29, in reject
+    with self.watched(),self.assertRaises((fixture.Reject,fixture.RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.911s
+
+FAILED (failures=4)
+
+RETIREMENT_SCOPE {"result": "FAIL", "total": 4, "passed": 0, "errors": 0, "failures": 4, "skipped": 0, "errorIds": [], "failureIds": ["__main__.RetirementCases.test_review_pending_native_reply_survives_failed_retirement", "__main__.RetirementCases.test_review_memory_turn_marker_retains_exact_session", "__main__.RetirementCases.test_review_persisted_turn_marker_is_never_erased_or_relearned", "__main__.RetirementCases.test_review_live_profile_change_is_not_retired_as_original"], "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "races": [], "actualNativeRunnerAuthorityApiStores": true, "nativeMethodsReplaced": false, "ledgerWritesDirectWithRealNativeGuards": true, "explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords": true, "admittedAgentOrHttpExecution": false, "harnessOwnerIntegrationTested": false, "linuxIsolationTested": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true, "retirementChecks": [], "retirementQaSha256": "d4769be1dc0e3bb42e4b58019269b40ed3631780825df86c630339e4c06fa036", "fixtureQaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "selectedOwnMethodsOnly": true, "newRetirementMethodCount": 24, "sameOwnerHarnessIntegrationTested": false, "actualApiSessionBinding": true, "terminalWorkUsesGuardedNativeLeafSettlement": true, "wholeApiAgentTurnExecuted": false, "sourceGeneration": "native candidate supplied by producer, immutable pin checked externally"}
