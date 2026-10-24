@@ -1,0 +1,17 @@
+# AlazHarness - status
+
+## D3B-OBSERVER-WORK-JOINT-J127B6 - SCOPED PASS / CANONICAL DELIVERY PENDING
+
+Own joint branch alaz/d3b-observer-work-joint-j127b6; worktree scratch/worktrees/d3b-observer-work-joint-j127b6. Immutable parents O127B6 b00bf8d and C127A6 6c64d2b preserved; only status/historical-source resolution conflict, no peer edits. Current3product files exactly match accepted normal/native consumer and new combined prepared runs. Inputs in joint evidence.
+
+Existing canonical/turn observers retain legacy943 default and require explicit1e97 opt-in. Current normal native15/15 and same legacy15/15 PASS (realTurnRunner/adopt/physical registry; deterministic runner/model facade fixtures). Prepared mode attaches same readonly native channel only after exact owner/consumer/source checks;3manifest-resident seams, no future active module import. Turn observer/capture refuses active prepared use; empty inventory does not mean health. Original source-import failure and loop-fixture failure preserved.
+
+PreparedRuntimeConsumer shared fixed typed task/worker/mailbox/receipt/completion/cron checks now precede any API detach, repeat after await, and guard retired owner store close.40native methods(17new+23compat)PASS with actual Task/thread/worker fault fixtures, no admitted agent job. Current union16/16PASS=14unchanged attachment+2actual pending-task composition cases. No cancellation/pruning/rowwrite/newDB to manufacture idle. Windows actor/profile/layout/mount/cold helper doubles remain explicit. Successful final profiles/ownership/registry cleaned; first failed temp cleanup is NOT retroactively called successful. Old componentprepared003 stays historical original consumer; new16 binds current501native imports and current3product files.
+
+NEW complete standard3327=3304PASS/23SKIP/0ERROR/FAIL, raw runner OK.557source/config/test and7patches unchanged. Prior546:538unchanged,3product+5historical-test/helper edits,11new files. Same23skipIDs/reasons preserved. Wrapper00033 exited1 AFTER tests because it sorted prior skip dictionaries; exact stderr/error retained.00036 finalized report from immutable complete outcome lines and source/skip hashes, no test rerun; finalization exit0, NOT original wrapper exit0.47selected standard contracts/receiptsPASS=25unit+22offline, no extra native runs. Local final static/scoped merge follows.
+
+No new Linux/confinement acceptance, native code/manifest/install, model/provider, HTTP/service admission, root/WSL, main/push/remoteCI or production changes. OldF126 confinement stays original source bytes, not relabelled current. Native1e97 staged, installedeb75627, maincc7ceba. Prior blocked operations and C120P9HOLD unchanged. All native/full jobs terminal; no duplicate native/full replay on delivery.
+
+Next explicit ACTIVE/DRAINING borrowed admission and source-bound request/worker lifecycle; then exact combined isolated activeHTTP. Current prepared diagnostic PASS is not permission to flip retiring/start flags. FullD3B/completeAIAgent/model accounting/powerloss remain open.
+
+Report docs/D3B-OBSERVER-WORK-JOINT-J127B6.md. Evidence/d3b-observer-work-joint-j127b6/: inputs,summary,joint-source-custody,prepared-joint001,full-windows-result/rawlog,full-reporting-error,full-wrapper-original-stderr,source/patch/skip manifests,static-final. Component reports/evidence retained; docs/status-history/j127b6-* preserves work log. Canonical e4968ae until ancestry-safe delivery.

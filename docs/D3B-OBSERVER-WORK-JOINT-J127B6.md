@@ -124,3 +124,7 @@ exit0. All three product files are exactly the native-tested union generation.
 Prior546 source files:538unchanged,3product changes and5historical test/helper
 changes,11new source/QA/test files. No installed source lock or native patch change.
 Local static is saved as static-final.txt; it is not remote CI or native replay.
+
+## Canonical delivery
+
+Tested merge `71db831e12fe0a8623940c874a1e2ab8f39c57f7` fast-forwarded from `e4968ae6c6265aa3f1841efacdee286a767d13a3` with both component histories. All557source hashes and7patches match accepted full/native proofs.47standard subset checks PASS on delivered source. Final handoff adds docs/evidence only, no native/Linux/full rerun, service activation, main merge or push. Original full wrapper exit1/report-finalization recovery remains explicit. Current status.md is the continuation.

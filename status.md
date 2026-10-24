@@ -1,17 +1,85 @@
 # AlazHarness - status
 
-## D3B-OBSERVER-WORK-JOINT-J127B6 - SCOPED PASS / CANONICAL DELIVERY PENDING
+## D3B-OBSERVER-WORK-JOINT-J127B6 - DEVELOPMENT-INTEGRATED / ACTIVE BORROWED WORK STILL CLOSED
 
-Own joint branch alaz/d3b-observer-work-joint-j127b6; worktree scratch/worktrees/d3b-observer-work-joint-j127b6. Immutable parents O127B6 b00bf8d and C127A6 6c64d2b preserved; only status/historical-source resolution conflict, no peer edits. Current3product files exactly match accepted normal/native consumer and new combined prepared runs. Inputs in joint evidence.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested merge71db831e12fe0a8623940c874a1e2ab8f39c57f7 fast-forwarded frome4968ae.
+Both observerb00bf8d and consumer6c64d2b histories preserved. Read GitHEAD for
+final docs-only commit, exact promotion in evidence/d3b-observer-work-joint-j127b6/delivery.json.
+Native1e97 feature unchanged and NOT INSTALLED; vendoreb75627/maincc7ceba unchanged.
 
-Existing canonical/turn observers retain legacy943 default and require explicit1e97 opt-in. Current normal native15/15 and same legacy15/15 PASS (realTurnRunner/adopt/physical registry; deterministic runner/model facade fixtures). Prepared mode attaches same readonly native channel only after exact owner/consumer/source checks;3manifest-resident seams, no future active module import. Turn observer/capture refuses active prepared use; empty inventory does not mean health. Original source-import failure and loop-fixture failure preserved.
+### Current source observation, no automatic admission
 
-PreparedRuntimeConsumer shared fixed typed task/worker/mailbox/receipt/completion/cron checks now precede any API detach, repeat after await, and guard retired owner store close.40native methods(17new+23compat)PASS with actual Task/thread/worker fault fixtures, no admitted agent job. Current union16/16PASS=14unchanged attachment+2actual pending-task composition cases. No cancellation/pruning/rowwrite/newDB to manufacture idle. Windows actor/profile/layout/mount/cold helper doubles remain explicit. Successful final profiles/ownership/registry cleaned; first failed temp cleanup is NOT retroactively called successful. Old componentprepared003 stays historical original consumer; new16 binds current501native imports and current3product files.
+Existing NativeCanonicalBinding/NativeTurnWorkerObserver retain exact943 default;
+explicit1e97 selection verified against distinct current source table and common
+native source root. Same15 original native TurnRunner/adopt/executor/physical
+worker scenarios PASS on current1e97 and on943, original runner/model facade
+fixtures explicit. Source/event records do not establish full agent progress.
 
-NEW complete standard3327=3304PASS/23SKIP/0ERROR/FAIL, raw runner OK.557source/config/test and7patches unchanged. Prior546:538unchanged,3product+5historical-test/helper edits,11new files. Same23skipIDs/reasons preserved. Wrapper00033 exited1 AFTER tests because it sorted prior skip dictionaries; exact stderr/error retained.00036 finalized report from immutable complete outcome lines and source/skip hashes, no test rerun; finalization exit0, NOT original wrapper exit0.47selected standard contracts/receiptsPASS=25unit+22offline, no extra native runs. Local final static/scoped merge follows.
+Exact prepared consumer can attach SAME readonly native channel after owner/
+runner/authority/API/three-store validation, only3existing manifest-resident source
+seams read. No worker modules imported/read outside original513envelope. Native
+turn observer refuses prepared mode, capture unavailable; unexpected producer
+event latches GAP. Empty inventory is not health, admission, retry or release.
 
-No new Linux/confinement acceptance, native code/manifest/install, model/provider, HTTP/service admission, root/WSL, main/push/remoteCI or production changes. OldF126 confinement stays original source bytes, not relabelled current. Native1e97 staged, installedeb75627, maincc7ceba. Prior blocked operations and C120P9HOLD unchanged. All native/full jobs terminal; no duplicate native/full replay on delivery.
+### Work guards before effects and after awaited cleanup
 
-Next explicit ACTIVE/DRAINING borrowed admission and source-bound request/worker lifecycle; then exact combined isolated activeHTTP. Current prepared diagnostic PASS is not permission to flip retiring/start flags. FullD3B/completeAIAgent/model accounting/powerloss remain open.
+Prepared consumer inspects typed existing runner/authority tasks, physical worker
+records, mailbox/receipt/completion/cron obligations before check/API detach,
+after its await, and before retired owner stores close. Live work refuses before
+API changes; cancelled carrier is not physical completion. No prune/cancel/newDB/
+rowwrite or duplicate registry. Historical delivered_stops not active. Unknown
+work after cleanup await retains CLOSE_UNKNOWN. Retired descriptor, single-profile
+registry/epoch/profile/drain identity checked; per-call cooperative checks are not
+atomic protection against hostile same-process concurrency.
 
-Report docs/D3B-OBSERVER-WORK-JOINT-J127B6.md. Evidence/d3b-observer-work-joint-j127b6/: inputs,summary,joint-source-custody,prepared-joint001,full-windows-result/rawlog,full-reporting-error,full-wrapper-original-stderr,source/patch/skip manifests,static-final. Component reports/evidence retained; docs/status-history/j127b6-* preserves work log. Canonical e4968ae until ancestry-safe delivery.
+C127 native40/40PASS(17new+23compat), real tasks/thread/native-record FAULT fixtures,
+not admitted TurnRunner/agent work. New JOINT16/16PASS=original14attachment+2real
+pending-task composition methods, exact current3product modules and501native
+imports. Native runner/authority/API/stores/SQL/channel real. Windows actor/lease/
+layout/mount/cold-helper boundaries explicitly doubled. Final successful fixture
+profiles/ownership/registry cleaned. Oldprepared003 belongs to oldconsumer bytes,
+not current proof. First import-envelope and fixture-loop failures and initial
+failed lock/temp cleanup preserved; old temp artifacts not silently removed.
+
+### Complete standard and delivered source custody
+
+ONE new complete standard3327=3304PASS/23SKIP/0ERROR/FAIL, raw unittest terminalOK.
+557source/config/test hashes and7patches exact from test through canonical delivery.
+Prior546:538unchanged,3product+5historical test/helper edits;11new source files.
+Exact same23skipIDs/reasons preserved, not rerun as Linux.47selected checks rerun
+on canonicalPASS=25purecontracts+22offline receipts, standard subset not native.
+Old raw results/expected hashes unchanged, strict named saved-source chains only.
+
+Full wrapper requesta127b601...00033 exited1 AFTER all tests because prior skip
+records were dictionaries. Exact stderr/TypeError and raw full log preserved.
+Finalizer00036 verified every3304ok/23skip and source/patch/ID/reason pair, produced
+report exit0 WITHOUT test rerun or raw result changes. Do NOT call original wrapper
+exit0. full-reporting-error.json and full-wrapper-original-stderr.txt are durable.
+Local static PASS, no remote CI claimed; final static-primary-final.txt retained.
+
+### Remaining gate
+
+No new Linux/seccomp/Landlock/kernel acceptance for these changed3product modules.
+OldF126 confinement belongs to exact previous consumer/observer source, not
+relabelled current. No service/listener/model/provider or active borrowed worker
+admission, root/WSL, production/profile/account/main/push/CIqueue operations. Prior
+blocked root/refinement tasks and C120P9HOLD remain unchanged. CompleteAIAgent,
+fullD3B/model accounting/cross-store recovery/powerloss remain open.
+
+NEXT: define and test explicit ACTIVE/DRAINING shared-owner native admission and
+current request/worker correlation, preserving owner lifetime and unknown effects.
+Do not flip retiring/start flags from diagnostic PASS. Then qualify SAME combined
+source under existing isolation and active-workHTTP. No duplicate preparatory
+native/full tests needed just to reread this terminal checkpoint.
+
+### Records
+
+Docs/D3B-OBSERVER-WORK-JOINT-J127B6.md, D3B-CURRENT-OBSERVERS-O127B6.md,
+D3B-PREPARED-WORK-C127A6.md. Original component evidence unchanged. Joint evidence
+folder: inputs,summary,joint-source-custody,prepared-joint001,full-windows-result/
+rawlog,full-reporting-error,full-wrapper-original-stderr,source/patch/skip manifests,
+delivery,selected-delivery-result,static-final,static-primary-final.
+Histories docs/status-history/j127b6-*.md. All native/full jobs terminal; final
+handoff commit is docs/evidence only, canonical worktree is continuation.

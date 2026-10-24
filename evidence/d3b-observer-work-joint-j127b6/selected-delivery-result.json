@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "total": 47,
+  "passed": 47,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "scope": "25unit source/work contracts +22offline receipts, standard subset, no native or kernel rerun"
+}
