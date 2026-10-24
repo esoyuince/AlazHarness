@@ -1,0 +1,16 @@
+from pathlib import Path
+import os,sys,tempfile,json
+root=Path(sys.argv[1]);native=Path(sys.argv[2]);out=Path(sys.argv[3]);denied=[]
+def audit(event,args):
+ if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+  denied.append(event);raise PermissionError('offline_source_refusal_control')
+with tempfile.TemporaryDirectory(prefix='alaz-o127-refusal-') as tmp:
+ home=Path(tmp);os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home))
+ sys.path[:0]=[str(root/'packages/claw-hermes'),str(native)];sys.addaudithook(audit)
+ import gateway_canonical_run_binding as b
+ try:b._qualified_source()
+ except b.CanonicalBindingRejected as exc:reason=str(exc)
+ else:raise AssertionError('old_source_gate_unexpectedly_accepted_current')
+ assert reason=='canonical_native_source_unqualified'
+r={'result':'EXPECTED_OLD_SOURCE_REFUSAL','reason':reason,'candidateNativeFeature':'1e97dd617b81120255304e472ce322befcdb9ccd','oldQualifiedFeature':b.NATIVE_FEATURE,'temporaryHomeRemoved':not home.exists(),'deniedNetworkEvents':denied,'nativeTasksExecuted':False,'serviceOrProviderStarted':False}
+out.write_text(json.dumps(r,indent=2)+'\n',encoding='utf-8');print(json.dumps(r))

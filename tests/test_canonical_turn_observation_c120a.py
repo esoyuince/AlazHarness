@@ -1,3 +1,4 @@
+from historical_observer_o127b6 import executed_source_hash as pre_o127_hash
 """Pure snapshot boundary checks and offline C120 native proof custody.
 
 No native imports, worker launch or HTTP execution occurs in this standard test.
@@ -21,7 +22,7 @@ class NativeTurnProof(unittest.TestCase):
         self.assertEqual((self.r['result'],self.r['total'],self.r['passed'],self.r['errors'],self.r['failures'],self.r['skipped']),('PASS_NATIVE_TURNRUNNER_CALLSITE',15,15,0,0,0))
         intent=json.loads((E/'native-clean-source-acceptance.json').read_text(encoding='utf-8'))
         self.assertEqual(self.r['sourceHashes'],intent['sourceHashes'])
-        for n,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+        for n,h in self.r['sourceHashes'].items():self.assertEqual(pre_o127_hash(ROOT,n,h),h,n)
         self.assertEqual(self.c['nativeResultSha256'],hashlib.sha256((E/'native-004-clean/result.json').read_bytes()).hexdigest())
     def test_actual_native_imports_equal_immutable_feature_and_product_pins(self):
         self.assertEqual(self.c['feature'],t.NATIVE_FEATURE)

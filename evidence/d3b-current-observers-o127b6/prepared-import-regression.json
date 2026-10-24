@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-24T07:52:50.008949+03:00",
+  "firstPreparedRun": "FAIL_1PASS_12SETUPERRORS",
+  "initialCause": "observer qualification imported active native work modules outside existing prepared513 envelope; next prepare correctly refused",
+  "productCorrection": "prepared source check reads fixed files without importing active modules; turn observer rejects prepared path before those imports; existing native manifest unchanged",
+  "fixtureCorrection": "register fixture cleanup immediately so later setup failure still closes own resources",
+  "firstCleanup": "failed before process exit due to native profile handles; no completed result.json; old temp artifacts not deleted or requalified",
+  "allRawFailuresPreserved": true,
+  "initialActiveTurnResults": "current15/legacy15PASS historical generation001; must rerun after source change",
+  "peer": "C127A6 owns PreparedRuntimeConsumer quiescence; no edits to its source"
+}

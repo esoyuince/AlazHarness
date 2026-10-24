@@ -1,6 +1,7 @@
+from historical_observer_o127b6 import executed_source_hash as pre_o127_hash
 """Exact Linux result custody; these offline tests do not rerun Linux/native code."""
 import ast,hashlib,json,unittest
-from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
+from historical_observer_o127b6 import executed_source_hash as pre_f126_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-linux-consumer-l125p1'

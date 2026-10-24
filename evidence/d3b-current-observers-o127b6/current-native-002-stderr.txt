@@ -1,0 +1,61 @@
+state.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+response_store.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+runs_idempotency.db: linked SQLite 3.50.4 (interpreter C:\Antigravity\AlazHarness\runtime\hyb-gateway-5a5c\prepared\env\Scripts\python.exe) is vulnerable to the WAL-reset corruption bug (https://sqlite.org/wal.html#walresetbug) — using journal_mode=DELETE instead of enabling WAL. Upgrade to SQLite 3.51.3+ (or backports 3.50.7 / 3.44.6); Hermes-managed installs can repair the embedded runtime with `hermes update`. See `hermes doctor`. This warning fires once per process per database.
+Executing <Task finished name='Task-1' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.438 seconds
+Executing <Task pending name='Task-7' coro=<SessionAuthority._drain() running at C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_authority.py:937> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py:991, Task.task_wakeup()] created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py:459> cb=[_log_drain_failure() at C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_authority.py:62, SessionAuthority._schedule.<locals>.<lambda>() at C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_authority.py:298] created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\tasks.py:395> took 0.302 seconds
+Executing <Task finished name='Task-17' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.519 seconds
+Executing <Task finished name='Task-32' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.592 seconds
+Executing <Task finished name='Task-45' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.537 seconds
+Executing <Task finished name='Task-61' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.558 seconds
+Admitted turn 832f3cf1112c428099fd27fcc8c605bf failed
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_authority.py", line 892, in _execute_claimed
+    return await execute_finite_admission(self, ref, row), 'completed'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_finite.py", line 80, in execute_finite_admission
+    return await execute_admission(authority, ref, row)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_ingress.py", line 247, in execute_admission
+    response = await authority.runner._handle_message(event)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py", line 91, in turn_message
+    result=await asyncio.shield(worker.executor_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\run.py", line 4073, in _run_in_executor_with_context
+    return await loop.run_in_executor(self._get_executor(), ctx.run, func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\run_turn.py", line 1526, in _run_sync_with_timeout_lifecycle
+    return run_sync()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\run_turn_runner.py", line 1113, in run_sync
+    result = self._run_sync_scoped()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\run_turn_runner.py", line 1253, in _run_sync_scoped
+    result = run_classic_cli_turn(self, lambda: self._run_conversation_with_approval(
+        agent, agent_history, observed_group_context, persist_msg, persist_ts))
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\session_cli_turn.py", line 166, in run_classic_cli_turn
+    return run()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\run_turn_runner.py", line 1253, in <lambda>
+    result = run_classic_cli_turn(self, lambda: self._run_conversation_with_approval(
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        agent, agent_history, observed_group_context, persist_msg, persist_ts))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-prepared-api-b123a6\gateway\run_turn_runner.py", line 936, in _run_conversation_with_approval
+    result = agent.run_conversation(api_message, **kwargs)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py", line 59, in run_conversation
+    if owner.failed_compute:raise RuntimeError('owned_compute_fixture_failure')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: owned_compute_fixture_failure
+Executing <Task finished name='Task-77' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.505 seconds
+Executing <Task finished name='Task-93' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.545 seconds
+API server rejected invalid API key: remote='127.0.0.1' method='POST' path='/v1/runs'
+Executing <Task finished name='Task-99' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.457 seconds
+Executing <Task finished name='Task-115' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.438 seconds
+Executing <Task finished name='Task-131' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.442 seconds
+Executing <Task finished name='Task-147' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.445 seconds
+Executing <Task finished name='Task-163' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.462 seconds
+Executing <Task finished name='Task-179' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.454 seconds
+Executing <Task finished name='Task-196' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.428 seconds
+Executing <Task finished name='Task-212' coro=<TurnRunnerCases.asyncSetUp() done, defined at C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\c120a_native_turnrunner.py:24> result=None created at C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\runners.py:109> took 0.426 seconds

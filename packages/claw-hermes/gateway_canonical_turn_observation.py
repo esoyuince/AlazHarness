@@ -14,6 +14,8 @@ import gateway_canonical_run_binding as canonical
 NATIVE_FEATURE=canonical.NATIVE_FEATURE
 SOURCE_HASHES={'gateway/run.py': 'b06201243d8750ee5b2391826f90d4f2a9d98100701fba0b53f358141c6ce8f9', 'gateway/run_turn.py': '3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72', 'gateway/run_turn_runner.py': 'b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c', 'gateway/session_execution.py': '6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660', 'gateway/session_runtime_workers.py': '3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b'}
 
+CURRENT_SOURCE_HASHES={'gateway/run.py': '7f4fda539a53dca8395210ff73ab7b209a6aeeae5179969d47b0681dea17d311', 'gateway/run_turn.py': '3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72', 'gateway/run_turn_runner.py': 'b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c', 'gateway/session_execution.py': '6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660', 'gateway/session_runtime_workers.py': '3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b'}
+
 class TurnWorkerRejected(RuntimeError):pass
 class TurnWorkerUnavailable(RuntimeError):pass
 
@@ -40,7 +42,8 @@ class TurnWorkerSnapshot:
             'retryAuthorized':False,'storeReleaseAuthorized':False}
 
 class NativeTurnWorkerObserver:
-    """Observe one current CLAIMED request on the unchanged non-borrowed path.
+    """Observe one CLAIMED normal-path request on the explicitly qualified source.
+    Prepared-only attachment cannot produce an active borrowed-worker proof.
 
     Pin the existing native task coroutine and its worker-wrapper closure to the
     actual TurnRunner/TurnContext/holder/agent. Never infer execution from a generic
@@ -51,11 +54,16 @@ class NativeTurnWorkerObserver:
     def __init__(self,binding):
         require(type(binding) is canonical.NativeCanonicalBinding,'turn_canonical_binding_required')
         binding._check()
-        for name,digest in SOURCE_HASHES.items():
+        require(binding._prepared_consumer is None,'turn_prepared_active_path_not_qualified')
+        feature=binding._native_feature
+        require(feature in (canonical.NATIVE_FEATURE,canonical.CURRENT_NATIVE_FEATURE),'turn_native_feature_unqualified')
+        hashes=SOURCE_HASHES if feature==canonical.NATIVE_FEATURE else CURRENT_SOURCE_HASHES
+        for name,digest in hashes.items():
             module=importlib.import_module(name[:-3].replace('/','.'))
             path=Path(module.__file__).resolve()
             require(path.suffix=='.py' and hashlib.sha256(path.read_bytes()).hexdigest()==digest,
                     'turn_native_source_unqualified')
+            require(path.parents[len(Path(name).parts)-1]==binding._native_root,'turn_mixed_native_roots')
         from gateway.run import GatewayRunner
         from gateway.run_turn import GatewayTurnMixin
         from gateway.run_turn_runner import TurnRunner

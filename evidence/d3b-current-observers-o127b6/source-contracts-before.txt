@@ -1,0 +1,44 @@
+test_current_normal_scope_cannot_be_inferred_from_empty_inventory (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_current_normal_scope_cannot_be_inferred_from_empty_inventory) ... ok
+test_current_pins_equal_immutable_record (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_current_pins_equal_immutable_record) ... ok
+test_default_normal_check_requires_all_five_sources (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_default_normal_check_requires_all_five_sources) ... ok
+test_hash_mismatch_rejected_instead_of_silent_repin (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_hash_mismatch_rejected_instead_of_silent_repin) ... ok
+test_legacy_default_and_old_pins_remain_exact (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_legacy_default_and_old_pins_remain_exact) ... ok
+test_mixed_root_native_modules_refused (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_mixed_root_native_modules_refused) ... ok
+test_only_explicit_two_generations_accepted (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_only_explicit_two_generations_accepted) ... ok
+test_prepared_root_mode_cannot_use_legacy_generation (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_prepared_root_mode_cannot_use_legacy_generation) ... FAIL
+test_prepared_source_check_needs_only_existing_three_manifest_seams (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_prepared_source_check_needs_only_existing_three_manifest_seams) ... ERROR
+test_prepared_sources_all_within_original_closed_envelope (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_prepared_sources_all_within_original_closed_envelope) ... ok
+test_prepared_turn_refusal_precedes_active_native_import (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_prepared_turn_refusal_precedes_active_native_import) ... ok
+test_source_tables_return_copies_not_mutable_authority (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_source_tables_return_copies_not_mutable_authority) ... ok
+
+======================================================================
+ERROR: test_prepared_source_check_needs_only_existing_three_manifest_seams (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_prepared_source_check_needs_only_existing_three_manifest_seams)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\tests\test_observer_source_contracts_o127b6.py", line 58, in test_prepared_source_check_needs_only_existing_three_manifest_seams
+    self.assertEqual(b._qualified_source(b.CURRENT_NATIVE_FEATURE,native_root=root),root)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_canonical_run_binding.py", line 57, in _qualified_source
+    require(path.suffix == '.py' and hashlib.sha256(path.read_bytes()).hexdigest() == expected,
+                                                    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 777, in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\ender\\AppData\\Local\\Temp\\tmpj_stknei\\gateway\\session_api_turn.py'
+
+======================================================================
+FAIL: test_prepared_root_mode_cannot_use_legacy_generation (test_observer_source_contracts_o127b6.ObserverSourceContracts.test_prepared_root_mode_cannot_use_legacy_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\tests\test_observer_source_contracts_o127b6.py", line 63, in test_prepared_root_mode_cannot_use_legacy_generation
+    with patch.object(b,'NATIVE_SOURCE_HASHES',h),self.assertRaises(b.CanonicalBindingRejected):b._qualified_source(b.NATIVE_FEATURE,native_root=root)
+                                                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanonicalBindingRejected not raised
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.084s
+
+FAILED (failures=1, errors=1)

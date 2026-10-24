@@ -1,6 +1,7 @@
+from historical_observer_o127b6 import executed_source_hash as pre_o127_hash
 """Native observer receipts with exact historical startup baseline; no native replay."""
 import hashlib,json,unittest
-from historical_layout_f126c1 import executed_source_hash as pre_f126_hash
+from historical_observer_o127b6 import executed_source_hash as pre_f126_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-canonical-binding-c119v1'
@@ -18,7 +19,7 @@ class CanonicalReceipt(unittest.TestCase):
     def test_exact_source_and_immutable_native_imports(self):
         self.assertEqual(self.c['resultSha256'],hashlib.sha256((E/'native-002/result.json').read_bytes()).hexdigest())
         self.assertEqual(self.r['sourceHashes'],json.loads((E/'native-002-intent.json').read_text(encoding='utf-8'))['sources'])
-        for n,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h)
+        for n,h in self.r['sourceHashes'].items():self.assertEqual(pre_o127_hash(ROOT,n,h),h)
         self.assertEqual(self.c['nativeFeature'],'943210584828ccfcfd6adc8eb966ecaa8ca18429')
         self.assertEqual({n:v['sha256'] for n,v in self.c['actualImportedNativeFiles'].items()},self.r['nativeImports'])
         self.assertEqual(self.c['nativeImportCount'],len(self.r['nativeImports']))

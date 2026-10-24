@@ -1,0 +1,14 @@
+{
+  "result": "FAIL",
+  "total": 402,
+  "failures": 5,
+  "errors": 0,
+  "failureIds": [
+    "test_canonical_receipt_c119v1.CanonicalReceipt.test_exact_source_and_immutable_native_imports",
+    "test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_current_native_package_and_qa_bytes",
+    "test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_source_bytes_native_imports_and_prior_harness_preserved",
+    "test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_transport_source_and_package_integrity_binds_both_runs",
+    "test_canonical_turn_observation_c120a.NativeTurnProof.test_terminal_native_fifteen_and_exact_current_sources"
+  ],
+  "errorIds": []
+}

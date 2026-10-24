@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "total": 402,
+  "errors": 0,
+  "failures": 0,
+  "failureIds": [],
+  "errorIds": [],
+  "rawHistoricalOutcomeChanged": false,
+  "oldExpectedHashesChanged": false,
+  "newNativeRerun": false
+}

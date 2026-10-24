@@ -2,8 +2,10 @@
 
 Uses the existing RunLifecycleChannel and SessionAuthority registries/committed
 rows. No scheduler, native hook replacement, work admission or borrowed-runner
-exception is introduced. Supported only on the normal non-borrowed authority
-path. An adopted agent reference is NOT proof of a physical worker's completion.
+exception is introduced. The default legacy normal-path contract stays pinned.
+Current sources require explicit native_feature selection. Prepared-consumer
+attachment is diagnostic ONLY: active borrowed work remains unavailable. An
+adopted agent reference is NOT proof of a physical worker's completion.
 """
 from __future__ import annotations
 import asyncio
@@ -33,13 +35,37 @@ def require(ok, reason):
 NATIVE_FEATURE = '943210584828ccfcfd6adc8eb966ecaa8ca18429'
 NATIVE_SOURCE_HASHES = {'gateway/session_authority.py': '035d5a5dee4090bbd85b275a9b33981d8d1378730b9400319a8cf7bf5a0bdff8', 'gateway/session_api_turn.py': 'feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f', 'gateway/platforms/api_server_run_observation.py': 'a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01', 'gateway/platforms/api_server_runs.py': '058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb', 'gateway/session_runtime_workers.py': '3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b'}
 
-def _qualified_source():
+CURRENT_NATIVE_FEATURE = '1e97dd617b81120255304e472ce322befcdb9ccd'
+CURRENT_NATIVE_SOURCE_HASHES = {'gateway/session_authority.py': '48b438675a68380cc8462f6c441196ac380eec7cd12a3f84b6c13f17326d896b', 'gateway/session_api_turn.py': 'feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f', 'gateway/platforms/api_server_run_observation.py': 'a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01', 'gateway/platforms/api_server_runs.py': '058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb', 'gateway/session_runtime_workers.py': '3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b'}
+
+def source_hashes(native_feature):
+    require(type(native_feature) is str and native_feature in (NATIVE_FEATURE,CURRENT_NATIVE_FEATURE),
+            'canonical_native_feature_unqualified')
+    return dict(NATIVE_SOURCE_HASHES if native_feature==NATIVE_FEATURE else CURRENT_NATIVE_SOURCE_HASHES)
+
+def _qualified_source(native_feature=NATIVE_FEATURE, *, native_root=None):
     import hashlib, importlib
-    for name, expected in NATIVE_SOURCE_HASHES.items():
-        module = importlib.import_module(name[:-3].replace('/', '.'))
-        path = Path(module.__file__).resolve()
+    hashes=source_hashes(native_feature);root=None
+    if native_root is not None:
+        require(native_feature==CURRENT_NATIVE_FEATURE,'canonical_prepared_source_generation')
+        # Only the already qualified prepared channel seams; not worker qualification.
+        names=('gateway/session_authority.py','gateway/platforms/api_server_run_observation.py',
+               'gateway/platforms/api_server_runs.py')
+        hashes={name:hashes[name] for name in names}
+    for name, expected in hashes.items():
+        if native_root is None:
+            module = importlib.import_module(name[:-3].replace('/', '.'))
+            path = Path(module.__file__).resolve()
+        else:
+            # Prepared-only reads source identity without importing active work.
+            path = native_root/name
+            require(path.resolve()==path,'canonical_native_source_path')
         require(path.suffix == '.py' and hashlib.sha256(path.read_bytes()).hexdigest() == expected,
                 'canonical_native_source_unqualified')
+        selected=path.parents[len(Path(name).parts)-1]
+        require(root is None or selected==root,'canonical_mixed_native_roots')
+        root=selected
+    return root
 
 def json_object(raw):
     require(type(raw) is str and len(raw) <= 65536 and len(raw.encode('utf-8')) <= 65536,
@@ -112,7 +138,8 @@ class NativeCanonicalBinding:
     Source notifications are automatic. Explicit release removes only this
     diagnostic entry after terminal commit and native carrier retirement.
     """
-    def __init__(self, adapter, authority, expected, *, schema_hashes):
+    def __init__(self, adapter, authority, expected, *, schema_hashes,
+                 native_feature=NATIVE_FEATURE, prepared_consumer=None):
         from gateway.platforms.api_server import APIServerAdapter
         from gateway.session_authority import SessionAuthority
         from gateway.platforms.api_server_run_observation import RunLifecycleChannel
@@ -120,14 +147,22 @@ class NativeCanonicalBinding:
         from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
         require(type(adapter) is APIServerAdapter and type(authority) is SessionAuthority,
                 'canonical_native_objects_required')
-        require(adapter._borrowed_api_stores is None, 'canonical_borrowed_path_not_qualified')
+        source_hashes(native_feature)  # Reject unknown selection before attaching any sink.
+        self._prepared_consumer=prepared_consumer
+        if prepared_consumer is None:
+            require(adapter._borrowed_api_stores is None, 'canonical_borrowed_path_not_qualified')
+        else:
+            require(native_feature==CURRENT_NATIVE_FEATURE,'canonical_prepared_requires_current_source')
+            self._check_prepared_consumer(adapter,authority)
+        self._native_feature=self._qualified_feature=native_feature
         require(type(expected) is health.RuntimeIdentity and expected.owner_pid == os.getpid(),
                 'canonical_expected_identity')
         require(type(schema_hashes) is tuple and len(schema_hashes) == 2
                 and all(digest(v) for v in schema_hashes), 'canonical_schema_pins')
         require(type(authority.db) is SessionDB and
                 type(adapter._run_idempotency_store) is RunIdempotencyStore, 'canonical_native_stores')
-        _qualified_source()
+        root=prepared_consumer._source_proof[0] if prepared_consumer is not None else None
+        self._native_root=_qualified_source(native_feature,native_root=root)
         self._adapter, self._authority, self._runner = adapter, authority, authority.runner
         self._expected, self._schemas = expected, schema_hashes
         self._state, self._replay = authority.db, adapter._run_idempotency_store
@@ -154,7 +189,12 @@ class NativeCanonicalBinding:
                 and asyncio.get_running_loop() is self._loop, 'canonical_other_actor')
         a, authority, e = self._adapter, self._authority, self._expected
         require(self._fault is None, 'canonical_requires_reconciliation')
-        require(a._borrowed_api_stores is None and a.gateway_runner is self._runner
+        require(self._native_feature==self._qualified_feature,'canonical_source_generation_changed')
+        if self._prepared_consumer is None:
+            require(a._borrowed_api_stores is None,'canonical_borrowed_path_not_qualified')
+        else:
+            self._check_prepared_consumer(a,authority)
+        require(a.gateway_runner is self._runner
                 and authority.runner is self._runner and active_authority(self._runner) is authority,
                 'canonical_authority_replaced')
         require(authority.db is self._state and authority.sessions is self._sessions
@@ -181,7 +221,31 @@ class NativeCanonicalBinding:
                     and self.channel.status()['state'] == 'OBSERVING'
                     and self._last_sequence == self.channel._sequence, 'canonical_source_gap')
 
+    def _check_prepared_consumer(self,adapter,authority):
+        from gateway_prepared_consumer import PreparedRuntimeConsumer
+        consumer=self._prepared_consumer
+        require(type(consumer) is PreparedRuntimeConsumer,'canonical_prepared_consumer_required')
+        try:
+            consumer.check()
+            require(consumer._adapter is adapter and consumer._runner is authority.runner
+                    and consumer._binding._authority is authority
+                    and consumer._bundle is adapter._borrowed_api_stores
+                    and consumer._owner._prepared_consumer is consumer,
+                    'canonical_prepared_owner_mismatch')
+        except (RuntimeError,ValueError,OSError,sqlite3.Error,AttributeError,TypeError,KeyError):
+            raise CanonicalBindingRejected('canonical_prepared_owner_unavailable') from None
+
+    def attachment_status(self):
+        """A channel contract, not a healthy/idle verdict or a work capability."""
+        self._check()
+        return {'state':'NAMED_OBSERVER_ATTACHED','nativeFeature':self._native_feature,
+            'attachmentMode':'PREPARED_ONLY' if self._prepared_consumer is not None else 'NORMAL_PATH',
+            'namedRequestsObserved':len(self._entries),'activeBorrowedWorkQualified':False,
+            'allAgentWorkObserved':False,'serviceReadinessVerified':False,
+            'runtimeAdmissionAuthorized':False,'retryAuthorized':False,'storeReleaseAuthorized':False}
+
     def _receive(self, event):
+        require(self._prepared_consumer is None,'canonical_prepared_work_not_qualified')
         from gateway.platforms.api_server_run_observation import RunProducerEvent
         require(type(event) is RunProducerEvent and event.source is self.channel
                 and event.sequence == self._last_sequence + 1, 'canonical_event_source_gap')
@@ -246,6 +310,9 @@ class NativeCanonicalBinding:
         return status,generation,current_generation,run_status['status']
 
     def capture(self, run_id):
+        if self._prepared_consumer is not None:
+            self._check()
+            raise CanonicalBindingUnavailable('canonical_prepared_work_not_qualified')
         require(health.text(run_id) and run_id in self._entries, 'canonical_request_not_observed')
         require(not self._reading, 'canonical_reentrant')
         self._reading = True

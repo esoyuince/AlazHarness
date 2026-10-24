@@ -1,0 +1,30 @@
+{
+  "base": "e4968ae6c6265aa3f1841efacdee286a767d13a3",
+  "sources": {
+    "packages/claw-hermes/gateway_canonical_run_binding.py": {
+      "sha256": "704af2e45160e115f3feeb438eb123430a3db5f4725ece316470545f8ce55830",
+      "path": "evidence/d3b-current-observers-o127b6/historical-packages__claw-hermes__gateway_canonical_run_binding.py.txt"
+    },
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": {
+      "sha256": "782358334180e44e94989945f2de888edde5be569e830df4041f225f49faf285",
+      "path": "evidence/d3b-current-observers-o127b6/historical-packages__claw-hermes__gateway_canonical_turn_observation.py.txt"
+    },
+    "tests/test_canonical_receipt_c119v1.py": {
+      "sha256": "cb937cb59e4f69ee56af756e8e69daf6786001e614a95391abcc24bfd8fcdc64",
+      "path": "evidence/d3b-current-observers-o127b6/historical-tests__test_canonical_receipt_c119v1.py.txt"
+    },
+    "tests/test_canonical_turn_observation_c120a.py": {
+      "sha256": "35168e382ac328f5d9756c7c12bccaa907d5b1856e21f5f9c036242fdefdc7c8",
+      "path": "evidence/d3b-current-observers-o127b6/historical-tests__test_canonical_turn_observation_c120a.py.txt"
+    },
+    "tests/test_confined_consumer_receipt_f126c1.py": {
+      "sha256": "54396fa48ec84f165de570706f89f4404d021b4fc89f7b72e6b9f1ad9078b298",
+      "path": "evidence/d3b-current-observers-o127b6/historical-tests__test_confined_consumer_receipt_f126c1.py.txt"
+    },
+    "tests/test_linux_runtime_receipt_l125p1.py": {
+      "sha256": "9a97de870dd14c4a8a299de52382a1cd30671f9e1d3570a3cc52172b0ea635f5",
+      "path": "evidence/d3b-current-observers-o127b6/historical-tests__test_linux_runtime_receipt_l125p1.py.txt"
+    }
+  },
+  "rawOutcomesChanged": false
+}

@@ -1,0 +1,48 @@
+test_actual_current_prepared_attach_is_readonly_and_has_no_readiness_claim (__main__.PreparedObserverCases.test_actual_current_prepared_attach_is_readonly_and_has_no_readiness_claim) ... ok
+test_authority_generation_drift_is_not_repaired (__main__.PreparedObserverCases.test_authority_generation_drift_is_not_repaired) ... ok
+test_each_open_transaction_refused_without_rollback (__main__.PreparedObserverCases.test_each_open_transaction_refused_without_rollback) ... ok
+test_existing_native_service_and_admission_guards_remain_closed (__main__.PreparedObserverCases.test_existing_native_service_and_admission_guards_remain_closed) ... ok
+test_native_turn_observer_attaches_but_cannot_invent_active_worker (__main__.PreparedObserverCases.test_native_turn_observer_attaches_but_cannot_invent_active_worker) ... ok
+test_no_consumer_or_default_feature_still_rejected_before_channel (__main__.PreparedObserverCases.test_no_consumer_or_default_feature_still_rejected_before_channel) ... ok
+test_observer_does_not_prevent_normal_detach_or_keep_store_open (__main__.PreparedObserverCases.test_observer_does_not_prevent_normal_detach_or_keep_store_open) ... ok
+test_other_loop_and_actor_cannot_take_over (__main__.PreparedObserverCases.test_other_loop_and_actor_cannot_take_over) ... ERROR
+test_real_pending_task_refused_without_cancellation (__main__.PreparedObserverCases.test_real_pending_task_refused_without_cancellation) ... ok
+test_second_observer_preserves_original_native_channel (__main__.PreparedObserverCases.test_second_observer_preserves_original_native_channel) ... ok
+test_source_gate_does_not_import_unqualified_worker_modules (__main__.PreparedObserverCases.test_source_gate_does_not_import_unqualified_worker_modules) ... ok
+test_source_generation_change_is_not_adopted (__main__.PreparedObserverCases.test_source_generation_change_is_not_adopted) ... ok
+test_unexpected_native_event_latches_gap_without_claiming_work (__main__.PreparedObserverCases.test_unexpected_native_event_latches_gap_without_claiming_work) ... ok
+test_unknown_source_and_fake_consumer_do_not_attach (__main__.PreparedObserverCases.test_unknown_source_and_fake_consumer_do_not_attach) ... ok
+
+======================================================================
+ERROR: test_other_loop_and_actor_cannot_take_over (__main__.PreparedObserverCases.test_other_loop_and_actor_cannot_take_over)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 154, in test_other_loop_and_actor_cannot_take_over
+    observer=self.attach();other=asyncio.new_event_loop()
+                                 ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 844, in new_event_loop
+    return _get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\events.py", line 732, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 639, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\proactor_events.py", line 786, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\socket.py", line 621, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 21, in audit
+    raise PermissionError('o127_prepared_offline')
+PermissionError: o127_prepared_offline
+
+----------------------------------------------------------------------
+Ran 14 tests in 35.311s
+
+FAILED (errors=1)

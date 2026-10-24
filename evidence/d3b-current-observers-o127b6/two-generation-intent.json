@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-24T07:49:05.318337+03:00",
+  "sources": {
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "0127475ecca4f24ef989a29b766c2f59df5046821a51af603009ebc765d77199",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "76cd30f7982dc08bcd9b12045bf3e6776be3cbbb2646b7485eae2b6bca7ee8be",
+    "scripts/qa/o127b6_native_turn_source.py": "6952d60f909f49ad4c0c11b8389b7d5a5bf741839d6cfeb551989d4da3e1933b",
+    "scripts/qa/c119v1_native_canonical.py": "bd044d4888928c57d13d4b7f9084d114fc9f2a0d895ceb9238f8cd42c4539a61",
+    "scripts/qa/c120a_native_turnrunner.py": "4f8f442e19e407148216c3d4945acaf8c83fcd5b15b007cfe5c16f57daac89f3"
+  },
+  "nativeCasesPerGeneration": 15,
+  "scope": "unchanged original C12015 methods, explicit1e97 and legacy943; normal authority path and deterministic model facade, not borrowed active work"
+}

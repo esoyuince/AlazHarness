@@ -1,0 +1,6 @@
+test_actual_native_turnrunner_adopts_and_settles (c120a_native_turnrunner.TurnRunnerCases.test_actual_native_turnrunner_adopts_and_settles) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.764s
+
+OK

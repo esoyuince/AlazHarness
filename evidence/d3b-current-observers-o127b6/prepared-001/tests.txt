@@ -1,0 +1,318 @@
+test_actual_current_prepared_attach_is_readonly_and_has_no_readiness_claim (__main__.PreparedObserverCases.test_actual_current_prepared_attach_is_readonly_and_has_no_readiness_claim) ... ok
+test_authority_generation_drift_is_not_repaired (__main__.PreparedObserverCases.test_authority_generation_drift_is_not_repaired) ... ERROR
+test_each_open_transaction_refused_without_rollback (__main__.PreparedObserverCases.test_each_open_transaction_refused_without_rollback) ... ERROR
+test_existing_native_service_and_admission_guards_remain_closed (__main__.PreparedObserverCases.test_existing_native_service_and_admission_guards_remain_closed) ... ERROR
+test_native_turn_observer_attaches_but_cannot_invent_active_worker (__main__.PreparedObserverCases.test_native_turn_observer_attaches_but_cannot_invent_active_worker) ... ERROR
+test_no_consumer_or_default_feature_still_rejected_before_channel (__main__.PreparedObserverCases.test_no_consumer_or_default_feature_still_rejected_before_channel) ... ERROR
+test_observer_does_not_prevent_normal_detach_or_keep_store_open (__main__.PreparedObserverCases.test_observer_does_not_prevent_normal_detach_or_keep_store_open) ... ERROR
+test_other_loop_and_actor_cannot_take_over (__main__.PreparedObserverCases.test_other_loop_and_actor_cannot_take_over) ... ERROR
+test_real_pending_task_refused_without_cancellation (__main__.PreparedObserverCases.test_real_pending_task_refused_without_cancellation) ... ERROR
+test_second_observer_preserves_original_native_channel (__main__.PreparedObserverCases.test_second_observer_preserves_original_native_channel) ... ERROR
+test_source_generation_change_is_not_adopted (__main__.PreparedObserverCases.test_source_generation_change_is_not_adopted) ... ERROR
+test_unexpected_native_event_latches_gap_without_claiming_work (__main__.PreparedObserverCases.test_unexpected_native_event_latches_gap_without_claiming_work) ... ERROR
+test_unknown_source_and_fake_consumer_do_not_attach (__main__.PreparedObserverCases.test_unknown_source_and_fake_consumer_do_not_attach) ... ERROR
+
+======================================================================
+ERROR: test_authority_generation_drift_is_not_repaired (__main__.PreparedObserverCases.test_authority_generation_drift_is_not_repaired)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_each_open_transaction_refused_without_rollback (__main__.PreparedObserverCases.test_each_open_transaction_refused_without_rollback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_existing_native_service_and_admission_guards_remain_closed (__main__.PreparedObserverCases.test_existing_native_service_and_admission_guards_remain_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_native_turn_observer_attaches_but_cannot_invent_active_worker (__main__.PreparedObserverCases.test_native_turn_observer_attaches_but_cannot_invent_active_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_no_consumer_or_default_feature_still_rejected_before_channel (__main__.PreparedObserverCases.test_no_consumer_or_default_feature_still_rejected_before_channel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_observer_does_not_prevent_normal_detach_or_keep_store_open (__main__.PreparedObserverCases.test_observer_does_not_prevent_normal_detach_or_keep_store_open)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_other_loop_and_actor_cannot_take_over (__main__.PreparedObserverCases.test_other_loop_and_actor_cannot_take_over)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_real_pending_task_refused_without_cancellation (__main__.PreparedObserverCases.test_real_pending_task_refused_without_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_second_observer_preserves_original_native_channel (__main__.PreparedObserverCases.test_second_observer_preserves_original_native_channel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_source_generation_change_is_not_adopted (__main__.PreparedObserverCases.test_source_generation_change_is_not_adopted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_unexpected_native_event_latches_gap_without_claiming_work (__main__.PreparedObserverCases.test_unexpected_native_event_latches_gap_without_claiming_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+ERROR: test_unknown_source_and_fake_consumer_do_not_attach (__main__.PreparedObserverCases.test_unknown_source_and_fake_consumer_do_not_attach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\scripts\qa\o127b6_native_prepared_observer.py", line 33, in setUp
+    self.consumer=LOOP.run_until_complete(self.owner.prepare_runtime(Config(multiplex_profiles=False,write_sessions_json=False),Platform(extra={'key':'owned-observer-fixture','model_name':'offline'})))
+                  ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-current-observers-o127b6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+----------------------------------------------------------------------
+Ran 13 tests in 22.029s
+
+FAILED (errors=12)

@@ -1,0 +1,12 @@
+{
+  "result": "FAIL",
+  "total": 402,
+  "failures": 1,
+  "errors": 0,
+  "failureIds": [
+    "test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_current_native_package_and_qa_bytes"
+  ],
+  "errorIds": [],
+  "rawNativeOrOldReceiptsModified": false,
+  "nativeRerun": false
+}

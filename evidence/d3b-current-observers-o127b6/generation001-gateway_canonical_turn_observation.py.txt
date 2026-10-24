@@ -1,0 +1,168 @@
+"""Named canonical claim to existing native TurnRunner worker correlation only.
+
+No worker/task is created, adopted, cancelled or removed. No new registry or
+admission path. The existing authority and native worker wrapper are the source.
+An incomplete or cancelled waiter does not establish physical completion; this
+snapshot never reports general health, capacity, retry or store-release authority.
+"""
+from dataclasses import dataclass
+import asyncio,hashlib,importlib,threading,time
+from pathlib import Path
+from types import CodeType,MethodType
+import gateway_canonical_run_binding as canonical
+
+NATIVE_FEATURE=canonical.NATIVE_FEATURE
+SOURCE_HASHES={'gateway/run.py': 'b06201243d8750ee5b2391826f90d4f2a9d98100701fba0b53f358141c6ce8f9', 'gateway/run_turn.py': '3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72', 'gateway/run_turn_runner.py': 'b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c', 'gateway/session_execution.py': '6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660', 'gateway/session_runtime_workers.py': '3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b'}
+
+CURRENT_SOURCE_HASHES={'gateway/run.py': '7f4fda539a53dca8395210ff73ab7b209a6aeeae5179969d47b0681dea17d311', 'gateway/run_turn.py': '3855ac88e923d798b6c6e10dc1e59959a2102fcf4c1bf29625ea452f0abacc72', 'gateway/run_turn_runner.py': 'b0b5ea1f583a350695108c47f3f8a2c7201700d8a2dde1e56e0a73858979802c', 'gateway/session_execution.py': '6d89e284dbbac756d0e8acc97b7468c511d164ba8ef6f8a694e3a69582f8d660', 'gateway/session_runtime_workers.py': '3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b'}
+
+class TurnWorkerRejected(RuntimeError):pass
+class TurnWorkerUnavailable(RuntimeError):pass
+
+def require(value,code):
+    if not value:raise TurnWorkerRejected(code)
+
+@dataclass(frozen=True,slots=True)
+class TurnWorkerSnapshot:
+    epoch: int
+    generation: int
+    canonical_task_live: bool
+    carrier_done: bool
+    carrier_cancelled: bool
+    native_worker_pending: bool
+    captured_ns: int
+    def public(self):
+        return {'state':'CANONICAL_TURN_WORKER_CORRELATED','generation':self.generation,
+            'nativeTurnRunnerBound':True,'nativeWorkerCompletionObserved':not self.native_worker_pending,
+            'canonicalTaskLive':self.canonical_task_live,'carrierDone':self.carrier_done,
+            'carrierCancelled':self.carrier_cancelled,'snapshotOnly':True,
+            'physicalWorkerResponsivenessVerified':False,'allAgentWorkObserved':False,
+            'admissionPayloadDigestVerified':False,'storageProfileMountVerified':False,
+            'serviceReadinessVerified':False,'runtimeAdmissionAuthorized':False,
+            'retryAuthorized':False,'storeReleaseAuthorized':False}
+
+class NativeTurnWorkerObserver:
+    """Observe one CLAIMED normal-path request on the explicitly qualified source.
+    Prepared-only attachment cannot produce an active borrowed-worker proof.
+
+    Pin the existing native task coroutine and its worker-wrapper closure to the
+    actual TurnRunner/TurnContext/holder/agent. Never infer execution from a generic
+    live Task or an adopted reference alone. Queued/completing/cancelled records
+    are unavailable, NOT permission to run or release. Malicious same-process
+    replacement of all trusted code/state is outside this cooperative contract.
+    """
+    def __init__(self,binding):
+        require(type(binding) is canonical.NativeCanonicalBinding,'turn_canonical_binding_required')
+        binding._check()
+        feature=binding._native_feature
+        require(feature in (canonical.NATIVE_FEATURE,canonical.CURRENT_NATIVE_FEATURE),'turn_native_feature_unqualified')
+        hashes=SOURCE_HASHES if feature==canonical.NATIVE_FEATURE else CURRENT_SOURCE_HASHES
+        for name,digest in hashes.items():
+            module=importlib.import_module(name[:-3].replace('/','.'))
+            path=Path(module.__file__).resolve()
+            require(path.suffix=='.py' and hashlib.sha256(path.read_bytes()).hexdigest()==digest,
+                    'turn_native_source_unqualified')
+            require(path.parents[len(Path(name).parts)-1]==binding._native_root,'turn_mixed_native_roots')
+        from gateway.run import GatewayRunner
+        from gateway.run_turn import GatewayTurnMixin
+        from gateway.run_turn_runner import TurnRunner
+        from gateway.turn_context import TurnContext
+        self._binding=binding;self._fault=False;self._reading=False;self._registry=None
+        self._worker_type=GatewayRunner._RunAgentWorker
+        self._executor_code=GatewayRunner._run_in_executor_with_context.__code__
+        self._turn_type=TurnRunner;self._ctx_type=TurnContext;self._run_sync=TurnRunner.run_sync
+        codes=[c for c in GatewayTurnMixin._run_agent_start_turn_worker.__code__.co_consts
+               if type(c) is CodeType and c.co_name=='_run_sync_with_timeout_lifecycle']
+        require(len(codes)==1,'turn_worker_wrapper_unqualified');self._wrapper_code=codes[0]
+
+    @staticmethod
+    def _claim_key(s):
+        return (s.admission_id,s.run_id,s.session_id,s.epoch,s.generation,s.phase,s.authority_task_live)
+
+    def _select(self,entry,claim):
+        authority=self._binding._authority
+        registry=getattr(authority,'_turn_workers',None)
+        if registry is None:raise TurnWorkerUnavailable('turn_worker_not_registered')
+        require(type(registry) is dict and len(registry)<=256,'turn_worker_registry_shape')
+        require(self._registry is None or self._registry is registry,'turn_worker_registry_replaced')
+        matches=[]
+        for key,value in list(registry.items()):
+            require(type(value) is tuple and len(value)==2,'turn_worker_registry_record')
+            worker,holder=value
+            require(type(worker) is self._worker_type and key==id(worker),'turn_worker_native_type')
+            if worker.task_id==claim.session_id:matches.append((worker,holder))
+        if not matches:raise TurnWorkerUnavailable('turn_worker_not_registered')
+        require(len(matches)==1,'turn_worker_owner_ambiguous')
+        worker,holder=matches[0]
+        require(type(holder) is list and len(holder)==1,'turn_worker_holder_shape')
+        done=worker.worker_done;task=worker.executor_task
+        require(type(done) is threading.Event and type(task) is asyncio.Task,'turn_worker_lifetime_fields')
+        if done.is_set() or task.done() or task.cancelling():
+            raise TurnWorkerUnavailable('turn_worker_completion_or_waiter_gap')
+        require(task.get_loop() is self._binding._loop,'turn_worker_other_loop')
+        coro=task.get_coro();frame=getattr(coro,'cr_frame',None)
+        require(getattr(coro,'cr_code',None) is self._executor_code and frame is not None
+                and frame.f_locals.get('self') is self._binding._runner,'turn_worker_not_native_executor')
+        wrapper=frame.f_locals.get('func')
+        require(getattr(wrapper,'__code__',None) is self._wrapper_code,'turn_worker_not_native_wrapper')
+        cells=dict(zip(wrapper.__code__.co_freevars,wrapper.__closure__ or ()))
+        try:parts={n:c.cell_contents for n,c in cells.items()}
+        except ValueError:raise TurnWorkerUnavailable('turn_worker_closure_unavailable') from None
+        require(parts.get('worker') is worker and parts.get('agent_holder') is holder,
+                'turn_worker_wrapper_owner_mismatch')
+        method=parts.get('run_sync')
+        require(type(method) is MethodType and method.__func__ is self._run_sync
+                and type(method.__self__) is self._turn_type,'turn_worker_not_native_turnrunner')
+        turn=method.__self__;ctx=turn._ctx
+        require(turn._runner is self._binding._runner and type(ctx) is self._ctx_type,
+                'turn_worker_runner_or_context_changed')
+        require(ctx.agent_holder is holder and ctx.session_id==claim.session_id
+                and ctx.session_key==entry.live.route and ctx.run_generation==claim.generation
+                and ctx.process_task_id==claim.session_id,'turn_worker_route_or_generation')
+        require(turn._approval_owner==(authority,claim.session_id,claim.generation),
+                'turn_worker_approval_owner_changed')
+        adopted=authority.adopted.get(claim.session_id)
+        if holder[0] is None or adopted is None:raise TurnWorkerUnavailable('turn_agent_not_adopted_yet')
+        require(type(adopted) is tuple and len(adopted)==2 and adopted[0]==claim.generation
+                and adopted[1] is holder[0], 'turn_worker_adopted_agent_mismatch')
+        agent_scope=getattr(holder[0],'_gateway_turn_process_task_id',None)
+        # The physical wrapper sets worker_done BEFORE clearing the agent scope.
+        # A normal concurrent finish is unavailable, not permanent owner loss.
+        if done.is_set() or task.done() or task.cancelling():
+            raise TurnWorkerUnavailable('turn_worker_completed_during_observation')
+        require(agent_scope==worker.task_id,'turn_worker_agent_scope_changed')
+        self._registry=registry
+        return (registry,worker,holder,holder[0],task,done,turn,ctx)
+
+    def capture(self,run_id):
+        require(not self._fault,'turn_worker_requires_reconciliation')
+        require(not self._reading,'turn_worker_reentrant')
+        self._reading=True;lock=None
+        try:
+            first=self._binding.capture(run_id)
+            if first.phase!='CLAIMED':raise TurnWorkerUnavailable('turn_not_currently_claimed')
+            entry=self._binding._entries[run_id]
+            lock=entry.stream_lock
+            if not lock.acquire(blocking=False):
+                lock=None;raise TurnWorkerUnavailable('turn_worker_stream_contended')
+            self._binding._check()
+            selected=self._select(entry,first)
+            lock.release();lock=None
+            after=self._binding.capture(run_id)
+            if self._claim_key(first)!=self._claim_key(after):
+                raise TurnWorkerUnavailable('turn_claim_changed_during_observation')
+            lock=entry.stream_lock
+            if not lock.acquire(blocking=False):
+                lock=None;raise TurnWorkerUnavailable('turn_worker_stream_contended')
+            final=self._select(entry,after)
+            require(all(a is b for a,b in zip(selected,final)),'turn_worker_changed_during_observation')
+            self._binding._check()
+            return TurnWorkerSnapshot(after.epoch,after.generation,after.authority_task_live,
+                after.carrier_done,after.carrier_cancelled,True,time.monotonic_ns())
+        except (TurnWorkerUnavailable,canonical.CanonicalBindingUnavailable):raise
+        except (TurnWorkerRejected,canonical.CanonicalBindingRejected,AttributeError,ValueError,TypeError,KeyError):
+            self._fault=True
+            raise TurnWorkerRejected('turn_worker_binding_unconfirmed') from None
+        finally:
+            if lock is not None:lock.release()
+            self._reading=False

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-24T07:54:52.590942+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "f29c96065c45eac90b9b2effab5ac73ac1ef98a79cbd60445b4aec7fac60ef31",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "a03799a4e389cc0a48fa76f4b0ed1afb64bde81b67892241e0a02753f1751fe4",
+    "scripts/qa/o127b6_native_turn_source.py": "6952d60f909f49ad4c0c11b8389b7d5a5bf741839d6cfeb551989d4da3e1933b",
+    "scripts/qa/o127b6_native_prepared_observer.py": "0c15ed04ed88f35ebb61e0d6a9e6b3593c1a650601c24bf552da592ce749c596"
+  },
+  "prepared002": "13PASS1ERROR: second test loop creation hit audit network block; candidate imports now clean and cleanup successful",
+  "loopFixtureCorrection": "both test event loops created before audit boundary, like original fixtures; no native/provider/listener enablement",
+  "fixedPreparedSourceScope": "only existing three manifest-resident channel seams, no reading/importing future worker modules",
+  "sourceContracts": "12/12PASS, previous10PASS1FAIL1ERROR preserved",
+  "normalSourceChecks": "full5canonical+5turn source verification remains on normal path",
+  "newPreparedActiveQualification": false
+}

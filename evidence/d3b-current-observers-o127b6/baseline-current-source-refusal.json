@@ -1,0 +1,18 @@
+{
+  "result": "EXPECTED_OLD_SOURCE_REFUSAL",
+  "reason": "canonical_native_source_unqualified",
+  "candidateNativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "oldQualifiedFeature": "943210584828ccfcfd6adc8eb966ecaa8ca18429",
+  "temporaryHomeRemoved": true,
+  "deniedNetworkEvents": [
+    "subprocess.Popen",
+    "subprocess.Popen",
+    "subprocess.Popen",
+    "subprocess.Popen",
+    "subprocess.Popen",
+    "subprocess.Popen",
+    "subprocess.Popen"
+  ],
+  "nativeTasksExecuted": false,
+  "serviceOrProviderStarted": false
+}
