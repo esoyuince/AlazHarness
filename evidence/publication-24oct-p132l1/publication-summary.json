@@ -1,0 +1,46 @@
+{
+  "job": "PUBLICATION-24OCT-P132L1",
+  "result": "PUSH_EXACT_SHA_CI_AND_MAIN_FAST_FORWARD_COMPLETE",
+  "at": "2026-10-24T18:15:23.899247+03:00",
+  "publishedMain": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+  "previousMain": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "publishedRangeCommits": 168,
+  "ciStatusId": 57167784341,
+  "ciContext": "alaz/local-ci",
+  "ciState": "success",
+  "windows": {
+    "total": 3402,
+    "passed": 3379,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "linuxServer": {
+    "total": 3402,
+    "passed": 3397,
+    "failed": 0,
+    "skipped": 5,
+    "executed": 3402,
+    "suite_errors": 0
+  },
+  "serverExitCode": 0,
+  "sourceCount": 586,
+  "patchCount": 10,
+  "runtimeProductSourcesModifiedByPublication": false,
+  "firstActualPortabilityFailuresRetained": true,
+  "twoTimeoutFailuresRetained": true,
+  "fixtureClientDeadlinesAndExpectedResultsUnchanged": true,
+  "ciProjectOnlyTimeoutChanged": [
+    180,
+    360
+  ],
+  "ciImageCpuRamSwapTrustAndGlobalConcurrencyUnchanged": true,
+  "privateConfigBackupVerified": true,
+  "installedNativeHead": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeFeatureActivated": false,
+  "mainMergeMode": "fast-forward, no force/squash",
+  "unrelatedRootChangesPreserved": true,
+  "privateInfraRootChangesPreserved": true,
+  "next": "short feature branch from accepted main: qualify canonical API publication in SAME NativeStoreStartup/consumer, then actual finite native task and worker/retirement; active isolation/HTTP still open"
+}

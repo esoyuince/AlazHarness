@@ -116,3 +116,7 @@ Actual activation and acceptance are recorded separately, not inferred here.
 ## Actual bounded CI profile activation
 
 The timeout-only change was applied under the original worker lock with zero processing jobs, privately backed up, atomic replacement and owner/mode verification. All other configuration values are semantically unchanged; no service restart or CI status override. Private source profile commit7f9976d3 and receipt commit`36d5a91c8060cc036901ff7001b129ed8589041a` retain the review without publishing operational configuration. Runtime source, native patches and the586-file accepted source map remain unchanged. The next push is documentation/evidence only and must pass remoteCI before main.
+
+## Actual main publication completed
+
+Exact commit `20ab7e4e9347a5c631175c703a43073970c67a8e` received GitHub `alaz/local-ci` SUCCESS status57167784341. Server jobee6a3772 reports3402total/3397PASS/5SKIP/0failed, staticPASS and exit0 without timeout/OOM. Only then remote main advanced fromcc7ceba with ordinary non-forced push, followed by local main fast-forward in its clean separate worktree. Both refs and586source+10patch hashes verified. Root/privateinfra unrelated changes and installednative preserved. No release or runtime enabled. Current final handoff is documentation-only; its own exactCI is required before any further main advancement.

@@ -1,0 +1,117 @@
+[
+  {
+    "state": "processing",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 1767,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 1772,
+      "suite_errors": 0
+    },
+    "observedAt": "2026-10-24T18:10:50.081123+03:00"
+  },
+  {
+    "state": "processing",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 1809,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 1814,
+      "suite_errors": 0
+    },
+    "observedAt": "2026-10-24T18:11:10.748940+03:00"
+  },
+  {
+    "state": "processing",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 2270,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 2275,
+      "suite_errors": 0
+    },
+    "observedAt": "2026-10-24T18:11:31.438848+03:00"
+  },
+  {
+    "state": "processing",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 2710,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 2715,
+      "suite_errors": 0
+    },
+    "observedAt": "2026-10-24T18:11:52.136702+03:00"
+  },
+  {
+    "state": "processing",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 2968,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 2973,
+      "suite_errors": 0
+    },
+    "observedAt": "2026-10-24T18:12:12.862230+03:00"
+  },
+  {
+    "state": "processing",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 3397,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 3402,
+      "suite_errors": 0
+    },
+    "observedAt": "2026-10-24T18:12:33.582635+03:00"
+  },
+  {
+    "state": "TERMINAL",
+    "sha": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+    "job": "ee6a3772-cfbc-11f1-9a29-1e25ae9bd658",
+    "policyTimeout": 360,
+    "tests": {
+      "total": 3402,
+      "passed": 3397,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 3402,
+      "suite_errors": 0
+    },
+    "status": "success",
+    "buildStatus": "success",
+    "exitCode": 0,
+    "timeout": false,
+    "oomKilled": false,
+    "image": "sha256:6852a9b6c39485734c2b0f616504392029499c766d1c43d3dee99df7320e9152",
+    "startedUnix": 1792854580,
+    "finishedUnix": 1792854756,
+    "logSha256": "469366ec68318ba954cdb86dd47df71fac37b0ab4138c5a39c3f5af2cd284504",
+    "logTail": "...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 3402 tests in 161.418s\n\nOK (skipped=5)\n{\n  \"scope\": \"M0_and_HYB_mock_contracts_not_full_runtime\",\n  \"selected_components\": 10,\n  \"result\": \"PASS\",\n  \"root_files_checked\": 5427,\n  \"source_gitlinks_checked\": 2,\n  \"discovered_tests\": 3402,\n  \"errors\": [],\n  \"vendor_bytes_checked\": false,\n  \"runtime_tested\": false,\n  \"model_called\": false,\n  \"secret_scan\": \"bounded root tracked text patterns; not a complete security audit\"\n}\n",
+    "observedAt": "2026-10-24T18:12:54.469031+03:00"
+  }
+]

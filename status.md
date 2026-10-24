@@ -1,65 +1,69 @@
 # AlazHarness - status
 
-## PUBLICATION-24OCT-P132L1 - IN PROGRESS
+## PUBLICATION-24OCT-P132L1 - PUSH + EXACT CI + MAIN FAST-FORWARD COMPLETE
 
-User explicitly approved publication review, push of the reviewed development
-branch and main fast-forward only after exact-SHA alaz/local-ci SUCCESS, followed
-by resuming same-owner API/finite-turn integration. Active branch
-alaz/d3b-principal-launch-21oct, worktree scratch/worktrees/d3b-principal-launch-21oct.
-Starting code d0418ad, previous main cc7ceba,164 pending commits. Existing J131D6
-full3395=3372PASS/23SKIP/0ERROR/0FAIL and584sources/10patches are preserved.
+Accepted published code/main20ab7e4e9347a5c631175c703a43073970c67a8e,
+previousmaincc7ceba. Exact GitHub alaz/local-ci SUCCESS57167784341 observed BEFORE
+non-forced remote main update; local clean main worktree fast-forwarded to sameSHA.
+Publication branch alaz/d3b-principal-launch-21oct is at the same accepted code;
+current GitHEAD may add only this final delivery documentation. Preserve history,
+no squash/reset/force/branch deletion. Actual receipts in publication-24oct-p132l1.
 
-Current work is publication only: scan reachable historical blobs/commit texts
-and all pending trees, verify component provenance and existing tested hashes,
-commit selected docs/evidence, push ONLY this branch. Require actual exact pushed
-SHA GitHub alaz/local-ci success before remote main. Re-read remote main and use
-non-forced history-preserving fast-forward; root dirty legacy tree is untouched.
-No fork-main, installednative/source-lock/runtime/provider/service activation.
-Do not start runtime work until publication passes. Prior handoff archived at
-docs/status-history/p132l1-before-publication.md. Current commands/status receipts
-in evidence/publication-24oct-p132l1. Push/main/remoteCI NOT RUN at this checkpoint.
+### Verified publication and CI repair
 
+Original164commit history/3248newblob versions and allpending trees scanned with
+bounded configured credential/path checks, nohits;10upstream components reproduced.
+No claim this pattern scan proves absence of every secret. User dirty root and
+privateinfra dirty root hashes preserved, no unrelated staging. Native/source
+locks unchanged, installednativeeb75627;10reviewed patches remain STAGED.
 
-### Publication review completed
+First exact push ea7b482 FAILED real Linux portability assertions. Root-run unit
+positive fixture UID/GID0 incorrectly used production root-denial input; root-only
+fixture metadata mapping retains real mode/device/link checks and production
+root actor remains rejected. Single C#checkout attribute now yields exact historic
+CRLFbytes. Git replace-ref control first proves replacement with envflag absent,
+then verifies protected export with emptyflag. Old test/hash evidence unchanged,
+four historical test/helper/fixture bytes archived by explicit name/hash.
 
-All164 commits/3248newblobs and5365historicalpaths reviewed,92795880bytes; no configured credential/path/binary/size/mode finding.10upstream components reproduced.584current source/config/test files+10patches match full3395=3372PASS23SKIP. No runtime/test/source edit; only selected publication docs/evidence. Next local static then branch push. Remote main may advance only on exact pushed-SHA alaz/local-ci SUCCESS.
+Second df121d5 had3396PASS/5SKIP but180s overall timeout. Test-only HTTP fixture
+shutdown polling0.5->0.01 removed measured idle waits; client deadlines,30wire
+scenario bodies and assertions unchanged. Third1db68d7 had3397PASS/5SKIP and
+staticPASS but overall180s timeout, both remain FAIL. No status overridden.
+Only AlazHarness CI wallclock180->360 now applied under coordinator lock with
+private4TBbackup, config hash-CAS and preserved mode/owner. Image/command/1CPU/
+512mRAM/768mRAM+swap/global2jobs10g/trust/allotherpolicies unchanged, no restart.
+Private policy commits7f9976d3/36d5a91 are isolated; private infra main untouched.
 
+Final Windows3402=3379PASS23SKIP0ERROR0FAIL exit0. Exact Linuxserver20ab7e4:
+3402=3397PASS5SKIP0FAILED0suiteErrors, staticPASS, jobexit0/no timeout/noOOM.
+This is standard scoped CI, not new native/kernel/model acceptance.586source/
+config/test hashes and10patches unchanged from accepted run.7new portability/
+cleanup contracts,71initial and51wire/history focused methods passed; subsets,
+not extra native runs. Existing native53/21 etc remain their original scoped proof.
 
-### Branch push complete, exact CI still required
+### Continue from published main, not dirty legacy root
 
-Remote alaz/d3b-principal-launch-21oct verified at ea7b48257ae741c81ff385bac596ceb884d02caf. Push command exit0, no tags/submodule pushes/force. Entire original164commit history plus publication docs delta checked. Main remainscc7ceba. First GitHub status lookup for pushedSHA returned no status yet; oldmain alaz/local-ci isSUCCESS. Do not substitute old/main/local success for newSHA. RemoteCI and main update remain pending actual evidence.
+Main worktree: C:\Antigravity\AlazHarness\scratch\worktrees\main-published-21oct-a37c.
+Publication worktree: scratch/worktrees/d3b-principal-launch-21oct.
+After this docs-only handoff has its own exactCI, fast-forward main if still valid,
+then use a short branch for I133 same-owner canonical API integration.
+Current native5ff88189 provides real programmatic API admission in original
+registry, exact retries/identity and safe publication withdrawal; NOT full payload
+execution or authenticatedHTTP. Current harness envelopes/emptyregistry gates
+still need explicit new-source qualification, not private field insertion.
 
+NEXT: SAME NativeStoreStartup/consumer source-qualified canonical publication,
+then actual accepted API->finite turn->native physical worker bounded compute,
+real result and native session/cache retirement. Then same active source under
+Linux isolation/HTTP, model budgeting and recovery. Earlier prepared isolation is
+historical source proof, not new active acceptance. M1/M2/fullD3B not completed.
+No provider/model/listener/production/native activation by publication. Prior
+blocked operations remain unexecuted. Current publication code/test jobs terminal.
 
-### First Linux CI failure retained; test portability repair in progress
+### Evidence
 
-Exact ea7b482 alaz/local-ci FAILURE57166391620,3395tests with33failure assertions/8errors/5Linuxskips; no timeout/OOM. Main remainscc7ceba. Root-CI positive fixtures suppliedUID/GID0 and real runtime correctly refused; explicit root-only unit ownership metadata now mapped while mode/device/link and productionzeroID rejection stay real. Empty Git env positive control separated from platform-specific emptyflag parsing. Single C# probe checkout pinnedCRLF to exact existing native bytes. Three changed old test/helper sources archived by exactname+hash, raw historical results unchanged. No packages/runtime/native/CI policy or limits changed. Fresh focused/full tests required before nextpush.
-
-
-### Repair focused checks passed; new complete regression started
-
-71targeted Windows methods PASS including6new portability controls. Root productionidentity still refused, only unitfixturemetadata adapts; original modes/device/linkchecks retained. All packages/scripts/config/nativepatch bytes unchanged. Three oldtest/helper source versions archived, two newtest/helper files, singleC#checkout rule. Request9f220e48... owns full standard on frozen586source+10patch hashes; no source/test edits until terminal. Main stillblocked on remoteCI success.
-
-
-### Portability repair complete locally; exact second remote CI next
-
-New full3401=3378PASS/23SKIP/0ERROR/0FAIL exit0,586source/config/test+10patches stable, original23Windows skipIDs/reasons unchanged.71targeted PASS. Only3existing test/helper sources changed,2test/helper files added and singleC#checkout attribute. Runtime packages/scripts/config/nativepatches unchanged. First remote ea7b482 failure preserved; no main advancement. Next commit selected repair/docs, push same developmentbranch, require exact newSHA CI.
-
-
-### Second CI timeout; bounded fixture throughput correction
-
-Remote df121d5 failedrc124 at180seconds, not test failure. Actual structured report has3401executed/3396passed/5skipped/0failed; full gate did not complete so no main. CI image/CPU/RAM/time limits remain unchanged. Measured repeated HTTP test fixture shutdown waited default0.5s across30wire cases; only polling interval lowered to0.01, no client deadline/expected result changed. Five real idle cycles before/after and full thread exit recorded. Added explicit real-thread cleanup control; oldfixture archived and exact history binding extended. No server policy/privateinfra write or product source change. New full required.
-
-
-### Full throughput-fixed suite PASS; third exact-SHA CI required
-
-Complete Windows3402=3379PASS/23SKIP/0ERROR/0FAIL exit0,134.445seconds,586source/config/test+10patches fixed. Wire30same scenarios and51focused methodsPASS;7new portability/cleanup controls total. Runtime/CI configuration/time/cpu/memory limits unchanged. Previous secondCI has3396PASS5SKIP but overallrc124, remainsFAIL and mainunchanged. New actual loopback fixture polling removes repeated idle shutdown waits, not assertions or deadlines. Next push exact committed source and await full remote gate.
-
-
-### Actual full Linux PASS but inherited job budget still too short
-
-Third1db68d7 remoteCI FAILEDrc124; rawlog3402=3397PASS5SKIP,staticPASS,181.154s tests exceeds180s before overhead. No failure waived/main advance. Narrow PRIVATE infrastructure profile commit7f9976d3 has6/6policy testsPASS, onlyAlazHarness timeout180->360, resource/trust/image/commands unchanged. Live update request3cc4a55e holds no locks yet and waits for existing coordinator lock without stopping other jobs. Config backup/CAS/owner-mode validation required. No oldblockedoperation retry; finalCIstillrequired.
-
-
-### Narrow wall-clock policy update APPLIED; fourth exact CI next
-
-AlazHarness timeout180->360 ONLY applied with existing coordinatorlock/zero processing, privatebackup/configSHA-CAS/owner-mode verification. CPU1/RAM512m/swap768m/image/command/global2jobs10g/trust unchanged, no restart/statusoverride. Private profile+receipt commits7f9976d3/36d5a91 stay isolated, unrelated infra root preserved. Public docs carry sanitized receipt only. Current586source+10patches still same full3402Windows3379PASS23SKIP. Next docs-only push and realremote full gate; main remainscc7ceba until exactSHA success.
+Docs/PUBLICATION-24OCT-P132L1.md and evidence/publication-24oct-p132l1/: historyscan,
+root-preservation-before, firstfailure, second/thirdtimeout, finalWindowsfull,
+ci-budget-activation(sanitized), budget-server-ci-result, ci-accepted-before-main,
+main-publication-result and publication-summary. Private config never committed
+publicly. Old J131 status archived before publication; full logs/failures retained.
