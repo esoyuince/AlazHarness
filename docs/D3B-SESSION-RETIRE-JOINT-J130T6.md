@@ -106,3 +106,7 @@ recovery/powerloss OPEN. Original blocked operations and C120P9 not retried.
 ## Complete standard regression terminal
 
 Fresh fullWindows3380=3357PASS/23SKIP/0ERROR/0FAIL, wrapperexit0.579source/config/test and9patch hashes stable, all572prior files unchanged. Same23skipIDs/reasons, no Linux or native replay.15offline receipts are included subsets. Full request000034; all native imported sources match fixedfeature,111original evidence blobs preserved. Local static gate is separate from remoteCI and does not itself run the native runtime.
+
+## Source-identical canonical delivery
+
+Tested merge `b541d703eb90652feabf8dcbf7499cf5e225c9f8` fast-forwarded from `2c0d9d081fa29fa5836eb4fc782e8340fd461c59` to canonical development. Current579source/config/test hashes and9patches match the accepted full3380 run. Delivered15offline receiptsPASS, no native/full replay. Native13186 remains STAGED_NOT_INSTALLED; old source envelopes/runtime and main unchanged. Final docs-only checkpoint does not modify tested code; final-doc-validation.json complements tested localstaticPASS. Peer blocked native-QA history housekeeping not performed.

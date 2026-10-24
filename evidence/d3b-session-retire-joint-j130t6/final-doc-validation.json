@@ -1,0 +1,37 @@
+{
+  "result": "PASS_DOCUMENTATION_ONLY_DELIVERY",
+  "at": "2026-10-24T14:43:53.857271+03:00",
+  "testedMerge": "b541d703eb90652feabf8dcbf7499cf5e225c9f8",
+  "testedLocalStaticArtifactSha256": "772335c9bfa18f4b3e3a34ae98a38c37b75dbd6a4d7181b7ab171118b8750fc7",
+  "testedLocalStaticResult": "PASS",
+  "checkedChangedFiles": [
+    {
+      "path": "status.md",
+      "sha256": "61a49a2be8d981661421b7d1758696ad3f5e5ca30784d554cf0641ff62a82e62"
+    },
+    {
+      "path": "docs/D3B-SESSION-RETIRE-JOINT-J130T6.md",
+      "sha256": "3caef23970e9616908b206ab1c4a72897162cd01a7f619e42030140e6317b662"
+    },
+    {
+      "path": "docs/status-history/j130t6-final-work-log.md",
+      "sha256": "7838d96ba5184b624021bcdd17fcc9a900238c7a1850eef7a222b75963078066"
+    },
+    {
+      "path": "evidence/d3b-session-retire-joint-j130t6/delivery.json",
+      "sha256": "b457e6e09febc83dc402fb3b2878b75fa1137d823d3c390dc88111ec5a318321"
+    },
+    {
+      "path": "evidence/d3b-session-retire-joint-j130t6/selected-delivery.txt",
+      "sha256": "b98adb0e728d7ddd8b06b1ef837978d9acdfbd63107cea3c4b21765642d1e6ec"
+    },
+    {
+      "path": "evidence/d3b-session-retire-joint-j130t6/selected-delivery-result.json",
+      "sha256": "de5428618e3fff3dfbef20d44988abc882bc8eb1ce89e6918b4bd11475b75101"
+    }
+  ],
+  "tested579SourceAndNinePatchHashesUnchanged": true,
+  "selectedOfflineReceiptMethods": 15,
+  "fullSuiteReexecuted": false,
+  "scope": "bounded changed UTF8/JSON/credential patterns/diffcheck and exact tested-code identity, not a new complete static/native run"
+}

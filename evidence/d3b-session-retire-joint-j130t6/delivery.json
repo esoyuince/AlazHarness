@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-24T14:43:52.878364+03:00",
+  "testedMerge": "b541d703eb90652feabf8dcbf7499cf5e225c9f8",
+  "canonicalBefore": "2c0d9d081fa29fa5836eb4fc782e8340fd461c59",
+  "canonicalBranch": "alaz/d3b-principal-launch-21oct",
+  "promotion": "fast-forward exact tested union, original product and independent QA histories preserved",
+  "fullWindows": {
+    "total": 3380,
+    "passed": 3357,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "wrapperExitCode": 0
+  },
+  "sourceCount": 579,
+  "patchCount": 9,
+  "all572PriorSourceConfigTestFilesUnchanged": true,
+  "allSourceAndPatchHashesMatchFullRun": true,
+  "same23SkipIdsAndReasons": true,
+  "nativeFeature": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "nativeBase": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "nativePatchSha256": "3509c7556f13bebc6ef40ebff03830b1efe7cc161238f70b0e89ff6cc288d326",
+  "nativeMethodCounts": {
+    "product": 28,
+    "independent": 24,
+    "unchangedCompatibility": 28
+  },
+  "nativeScopesOverlap": true,
+  "originalEvidenceGitBlobsPreserved": 111,
+  "selectedReceipts": {
+    "result": "PASS",
+    "total": 15,
+    "passed": 15,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "testFiles": [
+      "test_session_retirement_receipt_c130t6.py",
+      "test_session_retirement_receipt_q130a6.py"
+    ],
+    "scope": "original8 plus independent7 offline receipts on exact delivered source; standard subset, not native replay"
+  },
+  "newNativeOrFullRunByDelivery": false,
+  "currentHarnessSourceEnvelopePromoted": false,
+  "sameOwnerFeatureInstalled": false,
+  "wholeApiTurnWorkerOrFifoAccepted": false,
+  "newLinuxIsolationAccepted": false,
+  "serviceOrProviderActivated": false,
+  "providerCalls": 0,
+  "rootWslAction": false,
+  "installedNativeHead": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "nativeFeatureInstalled": false,
+  "mainChanged": false,
+  "pushed": false,
+  "rootStatusBeforeSha256": "26aa1826d949f0bc9313f28746f908b0e52fce709b8a2f70db96e03b8b99ffbf",
+  "vendorStatusBeforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "peerBlockedNativeQaHistorySyncPreservedSha256": "998916801b4b093ebc95b7116a1a4ed78340530b0fa3508360c54b5b0d062456",
+  "blockedOperationRetried": false,
+  "reviewerCompletedAndArchived": true,
+  "next": "qualify actual API sources and existing canonical adapter publication, then accepted request/TurnRunner/physical-worker + asynchronous cache completion/session retirement and same-source isolation/HTTP"
+}

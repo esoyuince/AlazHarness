@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "total": 15,
+  "passed": 15,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "testFiles": [
+    "test_session_retirement_receipt_c130t6.py",
+    "test_session_retirement_receipt_q130a6.py"
+  ],
+  "scope": "original8 plus independent7 offline receipts on exact delivered source; standard subset, not native replay"
+}
