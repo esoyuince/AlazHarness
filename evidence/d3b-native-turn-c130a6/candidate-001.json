@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-24T14:13:08.501570+03:00",
+  "base": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "nativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-session-retire-c130t6",
+  "sourceHashes": {
+    "gateway/run_borrowed_admission.py": "e2ec3dbdcb5032de2943e6bf9d44bfcf34292964f9f854919f695eec32192a22",
+    "gateway/platforms/api_server_borrowed.py": "c78ecbaf297a98cca9c65d4a3f5ef7282651ebe2e4186c0037ec651d068a5e64",
+    "gateway/run_borrowed_retirement.py": "1ac8b4069890d7944e1da4050d6e83378dd30bfc9c723bcbd9c5e70f514d4e35"
+  },
+  "scope": "optional memory-only idle ordinary API session retirement; no data deletion/no queue execution/worker/HTTP claim"
+}

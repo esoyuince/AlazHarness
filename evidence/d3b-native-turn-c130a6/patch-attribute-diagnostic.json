@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-24T14:32:39.940734+03:00",
+  "requestStopped": "c130a601-7d24-4bc0-8d19-130001000029",
+  "phase": "staged diff-check before static and component commit",
+  "reason": "raw nested Git patch contains required blank context prefixes, new directory lacked the same binary-artifact attributes as previous native patch directories",
+  "attributeMatchesExisting": "patches/hermes/a128c6/.gitattributes",
+  "patchBytesChanged": false,
+  "patchSha256": "3509c7556f13bebc6ef40ebff03830b1efe7cc161238f70b0e89ff6cc288d326",
+  "runtimeOrTestsChanged": false
+}

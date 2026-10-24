@@ -1,0 +1,5 @@
+# AlazHarness - status
+
+## D3B-NATIVE-TURN-C130A6 - IN PROGRESS
+
+Own branch alaz/d3b-native-turn-c130a6, worktree scratch/worktrees/d3b-native-turn-c130a6; base2c0d9d0. Scope: close the accepted request/native-turn/session-retirement gap on the same current NativeStoreStartup owner. First inspect actual SessionAuthority/TurnRunner/native task lifetime and reproduce baseline, then smallest justified native integration or acceptance change. No direct queue pruning/ledger terminal forging, no second scheduler or store owner. Isolated fresh owned offline fixtures only; any dummy execution boundary must be explicit, never called whole real model acceptance. Installed source locks/vendor/main unchanged, no provider/network/listener/root/WSL/production. Native1b7 remains immutable until an owned feature worktree is deliberately created. Check concurrent claims before product edits. All572 prior sources recorded. Prior full3365 is terminal; not rerun just for resume. No previous blocked operations/C120P9 replay. Next source read and actual request/worker/retirement contract.

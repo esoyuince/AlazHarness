@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T14:04:08.499912+03:00",
+  "qaSha256": "564446db5e68feb1b8c6f2638485e6d340af14f1f067910e31aba60734312fe1",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "scope": "current same-owner native API admission only, no observer/scheduler/model invocation"
+}

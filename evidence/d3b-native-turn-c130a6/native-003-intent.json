@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T14:21:52.423210+03:00",
+  "candidate": "candidate-002.json",
+  "qaSha256": "090e1c850c4299b9d479b94653b5d763dc1dd32087d2de9b0a7af3d9f85b485b",
+  "scope": "previous27plus one explicit native-code trace interruption after first real memory effect; source unchanged"
+}

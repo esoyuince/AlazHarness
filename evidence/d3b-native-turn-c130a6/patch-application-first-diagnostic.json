@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-24T14:26:17.204995+03:00",
+  "requestId": "c130a601-7d24-4bc0-8d19-130001000026",
+  "exitCode": 1,
+  "phase": "native commit completed; application fixture mismatch before config/artifact finalization",
+  "reason": "git apply within an ignored subdirectory used enclosing repository prefix and skipped paths; output file hashes caught no-op",
+  "observedFirstStage": {
+    "gateway/run_borrowed_admission.py": {
+      "exists": true,
+      "sha256": "3abe9a19f3836b33eacd473cd94335ea36c6d37f2071b79d58e9492961aa88c7"
+    },
+    "gateway/platforms/api_server_borrowed.py": {
+      "exists": true,
+      "sha256": "4879f96d06f9fd6542c3dae5db665326395d40c45eaec15f41917428d5ce4ca3"
+    },
+    "gateway/run_borrowed_retirement.py": {
+      "exists": false,
+      "sha256": null
+    }
+  },
+  "all572HarnessOriginalFilesUnchanged": true,
+  "nativeCodeUnchanged": true,
+  "correction": "new ignored standalone Git staging repository, exact base blobs and LF attributes"
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T14:16:00.362424+03:00",
+  "qaSha256": "bc26cf86287dab619a0d97dd60a401500b21c7fb7f9873b0c04a1cfe5983bd34",
+  "candidate": "candidate-001.json",
+  "scope": "24 real native binding/memory-retirement cases, no harness source-gate bypass or full agent execution"
+}

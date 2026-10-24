@@ -1,0 +1,43 @@
+{
+  "job": "D3B-SESSION-RETIREMENT-C130T6",
+  "result": "PASS_NATIVE_IDLE_API_MEMORY_RETIREMENT_NOT_FULL_REQUEST",
+  "at": "2026-10-24T14:30:33.624902+03:00",
+  "harnessBase": "2c0d9d081fa29fa5836eb4fc782e8340fd461c59",
+  "nativeFeature": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "nativeBase": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "all572PriorHarnessSourcesUnchanged": true,
+  "nativeFilesChanged": 3,
+  "currentNativeMethods": 28,
+  "unchangedNativeCompatibilityMethods": 28,
+  "nativeScopesOverlap": true,
+  "offlineReceiptMethods": 8,
+  "currentNativeImportCount": 512,
+  "compatNativeImportCount": 514,
+  "apiBaselineNativeImportCount": 448,
+  "firstNativeBeforeFix": {
+    "total": 24,
+    "passed": 23,
+    "failures": 1
+  },
+  "additionalBeforeFix": {
+    "total": 3,
+    "passed": 0,
+    "failures": 3
+  },
+  "fixedSameAssertions": {
+    "total": 27,
+    "passed": 27
+  },
+  "partialEffectTraceFaultExplicit": true,
+  "logicalDataAndTotalChangesUnchangedInObservedOperations": true,
+  "currentHarnessEnvelopePromoted": false,
+  "wholeApiTurnWorkerOrAgentExecuted": false,
+  "queuedWorkExecutedOrRetiredAutomatically": false,
+  "fullLinuxIsolationAccepted": false,
+  "providerCalls": 0,
+  "rootWslAction": false,
+  "nativeInstalled": false,
+  "mainChanged": false,
+  "pushed": false,
+  "fullStandardSuite": "PENDING_SINGLE_UNION"
+}

@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T14:19:32.708095+03:00",
+  "candidate": "candidate-002.json",
+  "qaSha256": "e53b3633f4c90f3b350058c3e9b2481db561f75e1ae9cc2593f0f631b36ad5da",
+  "allPriorAssertionsUnchanged": true,
+  "scope": "27 actual native memory-retirement methods, no complete turn or kernel acceptance"
+}

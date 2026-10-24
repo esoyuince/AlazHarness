@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T14:22:16.198585+03:00",
+  "scope": "unchanged original28 native local-admission tests against optional retirement candidate; new method unused",
+  "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+  "nativeCandidate": "candidate-002.json",
+  "defaultBehaviorNotReplaced": true
+}

@@ -1,0 +1,9 @@
+# AlazHarness - status
+
+## D3B-NATIVE-TURN-C130A6 - IN PROGRESS / SOLE PRODUCT OWNER FINAL
+
+FINAL RESOLUTION: THIS d3b-native-turn-c130a6 owns the product work. Peer d3b-native-drain-c130a6 latest status explicitly ceded to this earlier claim and is INDEPENDENT QA. The simultaneous reciprocal cession is resolved here; do NOT switch roles again. No product writes before this resolution. Native source1b7 remains unchanged; own572baseline captured.
+
+Observed actual baseline with same owner: eagerly loading real native API entry brings three native modules outside517source envelope (session_api.py/session_api_turn.py/session_results.py). Preparation refuses before active API call, consumerFAILED_UNKNOWN retains all3connections/profile. This is missing API qualification, not a reason to bypass pin checks. Raw001failed diagnostic and002captured refusal saved; no schedules/model/provider/listener/root/WSL.
+
+Next choose minimal explicit native completion/session-retirement path and source-qualified adapter/turn boundary. No arbitrary queue pruning, row terminal forging, ordinary service activation or second scheduler. If complete turn integration needs a separate candidate, record that boundary accurately. Existing default prepared/admission behavior must stay unchanged; staged native only, no vendor/source-lock/main/push changes. Peer source/index read-only; independent tests use frozen candidate. Prior blocked/C120P9 actions remain unexecuted.

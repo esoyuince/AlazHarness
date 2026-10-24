@@ -1,0 +1,7 @@
+# AlazHarness - status
+
+## D3B-NATIVE-TURN-QA-Q130T6 - IN PROGRESS / INDEPENDENT QA ONLY
+
+FINAL ROLE: d3b-native-drain-c130a6 is SOLE native drain/retirement product owner. This d3b-native-turn-c130a6 branch owns independent request/worker/source QA only. Do not switch product roles or duplicate feature work. No product code has been written here; all572 prior source files unchanged. Native1b7 remains untouched. Initial claim saved in evidence/claim-before-qa-resolution.txt.
+
+First reproduce actual API admission boundary on current same-owner harness with immutable native1b7; examine native accepted queue and session retirement, then qualify producer candidate in OWN frozen snapshot. Real owner/native SQL where possible, Windows OS-boundary doubles explicit. No real provider/model, listener, WSL/root, production/main/source locks or prior blocked/C120P9 execution. Preserve rejected requests and all effect records. Existing NativeStoreStartup source identity/readiness is not full API execution acceptance. Own initial setup terminal; next bounded baseline and independent cases, producer files/index strictly read-only.

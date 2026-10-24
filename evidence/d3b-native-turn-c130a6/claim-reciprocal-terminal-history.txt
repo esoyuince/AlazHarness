@@ -1,0 +1,9 @@
+# AlazHarness - status
+
+## D3B-NATIVE-TURN-QA-Q130T6 - INDEPENDENT QA FINAL / DO NOT REASSIGN
+
+PERMANENT ROLE: peer d3b-native-drain-c130a6 is SOLE native product implementation owner. THIS d3b-native-turn-c130a6 remains independent source/API/worker QA. The two simultaneous handoffs crossed; this is unconditional cession and overrides ALL earlier product claims here, regardless of any stale peer note. NO production/native edits made here. Do NOT infer a new role from old notes. All572base source/config/test files unchanged.
+
+Actual same-owner API baseline with immutable1b7: eager native API entry loads session_api.py/session_api_turn.py/session_results.py outside current517source manifest. Preparation refuses consumer_import_outside_manifest before API admission; original owner remains VERIFIED, consumerFAILED_UNKNOWN, all3handles/profile retained. Scope correct: no API/scheduling/agent execution accepted. Initial driver uncaught exception saved; diagnostic-only correction recorded exact loaded files, no source-pin bypass. Baseline-native result api-baseline002, current QA q130t6_native_api_baseline.py.
+
+Next independently qualify producer candidate in an owned frozen snapshot. Do not patch original native/harness runtime or manifests, do not duplicate full suite or producer jobs. Runtime startup/native SQL real, Windows actor/lease/mount/cold helpers explicit doubles. No provider/model/listener/root/WSL/push/main/production, no prior blocked/C120P9 operations. Own jobs terminal; peer source/index strictly read-only. Original root user changes and installed nativeeb75627 remain untouched.

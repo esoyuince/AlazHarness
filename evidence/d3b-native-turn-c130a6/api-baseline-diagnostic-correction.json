@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T14:04:57.555240+03:00",
+  "firstRun": "api-baseline001 exit1 before API admission; consumer_import_outside_manifest",
+  "qaChange": "record rejected preparation and enumerate imported sources before fixture teardown, no source-gate bypass or candidate changes",
+  "originalQaSha256": "564446db5e68feb1b8c6f2638485e6d340af14f1f067910e31aba60734312fe1",
+  "newQaSha256": "db003de438e5a782ff92e3bf5091ee19691e86c75aa38b82a6bc032515cf75a6"
+}

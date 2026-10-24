@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T14:03:26.534977+03:00",
+  "producer": "d3b-native-drain-c130a6",
+  "independentQa": "d3b-native-turn-c130a6 Q130T6",
+  "reason": "concurrent native product task already owns drain/retirement; this branch only independent API/worker qualification",
+  "peerStatusSha256": "261827229a383ba728c02bfee216172f563c66d6b59c131a33c417b59a9c2d2b",
+  "productWritesHere": false,
+  "peerEdited": false
+}

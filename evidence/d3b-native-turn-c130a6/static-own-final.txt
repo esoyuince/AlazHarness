@@ -1,0 +1,13 @@
+{
+  "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+  "selected_components": 10,
+  "result": "PASS",
+  "root_files_checked": 5134,
+  "source_gitlinks_checked": 2,
+  "discovered_tests": 3373,
+  "errors": [],
+  "vendor_bytes_checked": false,
+  "runtime_tested": false,
+  "model_called": false,
+  "secret_scan": "bounded root tracked text patterns; not a complete security audit"
+}

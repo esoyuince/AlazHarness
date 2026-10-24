@@ -1,0 +1,13 @@
+test_all_three_database_digests_preserved_across_observed_operations (test_session_retirement_receipt_c130t6.RetirementReceipt.test_all_three_database_digests_preserved_across_observed_operations) ... ok
+test_api_manifest_refusal_is_not_false_full_request_success (test_session_retirement_receipt_c130t6.RetirementReceipt.test_api_manifest_refusal_is_not_false_full_request_success) ... ok
+test_current_twenty_eight_and_retained_failure_state (test_session_retirement_receipt_c130t6.RetirementReceipt.test_current_twenty_eight_and_retained_failure_state) ... ok
+test_every_actual_native_generation_and_current_qa_bound (test_session_retirement_receipt_c130t6.RetirementReceipt.test_every_actual_native_generation_and_current_qa_bound) ... ok
+test_fresh_patch_identity_and_duplicate_refusal (test_session_retirement_receipt_c130t6.RetirementReceipt.test_fresh_patch_identity_and_duplicate_refusal) ... ok
+test_original_four_failures_preserved_and_same_assertions_now_pass (test_session_retirement_receipt_c130t6.RetirementReceipt.test_original_four_failures_preserved_and_same_assertions_now_pass) ... ok
+test_scope_retains_default_harness_and_no_execution_authority (test_session_retirement_receipt_c130t6.RetirementReceipt.test_scope_retains_default_harness_and_no_execution_authority) ... ok
+test_unchanged_old_twenty_eight_admission_contracts (test_session_retirement_receipt_c130t6.RetirementReceipt.test_unchanged_old_twenty_eight_admission_contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.182s
+
+OK

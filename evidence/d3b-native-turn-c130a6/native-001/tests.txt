@@ -1,0 +1,41 @@
+test_active_and_prepared_refuse_retirement (__main__.RetirementCases.test_active_and_prepared_refuse_retirement) ... ok
+test_actual_native_waiter_reply_registry_is_not_discarded (__main__.RetirementCases.test_actual_native_waiter_reply_registry_is_not_discarded) ... FAIL
+test_all_sessions_validated_before_first_memory_effect (__main__.RetirementCases.test_all_sessions_validated_before_first_memory_effect) ... ok
+test_api_observers_refuse_retirement_even_without_transport (__main__.RetirementCases.test_api_observers_refuse_retirement_even_without_transport) ... ok
+test_bound_idle_api_session_drops_only_memory_and_preserves_all_rows (__main__.RetirementCases.test_bound_idle_api_session_drops_only_memory_and_preserves_all_rows) ... ok
+test_cancelled_dispatcher_is_not_mistaken_for_completed (__main__.RetirementCases.test_cancelled_dispatcher_is_not_mistaken_for_completed) ... ok
+test_default_service_and_listener_are_not_activated (__main__.RetirementCases.test_default_service_and_listener_are_not_activated) ... ok
+test_dirty_transcript_and_unsaved_routing_refuse (__main__.RetirementCases.test_dirty_transcript_and_unsaved_routing_refuse) ... ok
+test_durable_binding_drift_keeps_every_memory_entry (__main__.RetirementCases.test_durable_binding_drift_keeps_every_memory_entry) ... ok
+test_empty_repeat_and_postretirement_rebind_do_not_authorize_close (__main__.RetirementCases.test_empty_repeat_and_postretirement_rebind_do_not_authorize_close) ... ok
+test_failed_dispatcher_is_not_silently_retired (__main__.RetirementCases.test_failed_dispatcher_is_not_silently_retired) ... ok
+test_finished_physical_worker_registry_still_requires_native_retirement (__main__.RetirementCases.test_finished_physical_worker_registry_still_requires_native_retirement) ... ok
+test_foreign_event_loop_cannot_retire (__main__.RetirementCases.test_foreign_event_loop_cannot_retire) ... ok
+test_foreign_thread_holding_event_lock_is_not_disrupted (__main__.RetirementCases.test_foreign_thread_holding_event_lock_is_not_disrupted) ... ok
+test_held_facade_mutex_refuses_without_waiting (__main__.RetirementCases.test_held_facade_mutex_refuses_without_waiting) ... ok
+test_live_controls_subscribers_and_event_observers_all_refuse (__main__.RetirementCases.test_live_controls_subscribers_and_event_observers_all_refuse) ... ok
+test_native_claimed_settled_row_and_transcript_survive_retirement (__main__.RetirementCases.test_native_claimed_settled_row_and_transcript_survive_retirement) ... ok
+test_normal_completed_dispatcher_can_retire_after_all_workers_gone (__main__.RetirementCases.test_normal_completed_dispatcher_can_retire_after_all_workers_gone) ... ok
+test_open_transaction_in_each_store_preserved (__main__.RetirementCases.test_open_transaction_in_each_store_preserved) ... ok
+test_queued_input_retained_and_finish_blocked (__main__.RetirementCases.test_queued_input_retained_and_finish_blocked) ... ok
+test_real_dispatcher_running_is_not_cancelled_or_detached (__main__.RetirementCases.test_real_dispatcher_running_is_not_cancelled_or_detached) ... ok
+test_route_cache_identity_drift_not_repaired (__main__.RetirementCases.test_route_cache_identity_drift_not_repaired) ... ok
+test_unknown_input_retained_without_recovery (__main__.RetirementCases.test_unknown_input_retained_without_recovery) ... ok
+test_unsettled_response_and_replay_records_preserved (__main__.RetirementCases.test_unsettled_response_and_replay_records_preserved) ... ok
+
+======================================================================
+FAIL: test_actual_native_waiter_reply_registry_is_not_discarded (__main__.RetirementCases.test_actual_native_waiter_reply_registry_is_not_discarded)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 171, in test_actual_native_waiter_reply_registry_is_not_discarded
+    try:self.refuse(live);self.assertIn('receipt',pending)
+        ~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 80, in refuse
+    with self.watched(),self.assertRaises((Reject,RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+----------------------------------------------------------------------
+Ran 24 tests in 35.076s
+
+FAILED (failures=1)

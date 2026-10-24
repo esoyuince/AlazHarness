@@ -1,0 +1,46 @@
+{"result": "FAIL", "total": 3, "passed": 0, "errors": 0, "failures": 3, "skipped": 0, "errorIds": [], "failureIds": ["__main__.RetirementCases.test_memory_crash_marker_refuses_without_erasing_route", "__main__.RetirementCases.test_durable_crash_marker_refuses_without_rewriting_json", "__main__.RetirementCases.test_changed_live_source_does_not_get_retired_as_original_profile"], "qaSha256": "e53b3633f4c90f3b350058c3e9b2481db561f75e1ae9cc2593f0f631b36ad5da", "actualNativeApiBindingAndStores": true, "nativeProductMethodsReplaced": false, "directNativeLeafSettlementNotAgentExecution": true, "faultFixturesUseExplicitMemoryOrSqlInputs": true, "completeApiRequestOrWorkerExecuted": false, "sameHarnessOwnerQualified": false, "newLinuxIsolationAccepted": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true}
+test_memory_crash_marker_refuses_without_erasing_route (__main__.RetirementCases.test_memory_crash_marker_refuses_without_erasing_route) ... FAIL
+test_durable_crash_marker_refuses_without_rewriting_json (__main__.RetirementCases.test_durable_crash_marker_refuses_without_rewriting_json) ... FAIL
+test_changed_live_source_does_not_get_retired_as_original_profile (__main__.RetirementCases.test_changed_live_source_does_not_get_retired_as_original_profile) ... FAIL
+
+======================================================================
+FAIL: test_memory_crash_marker_refuses_without_erasing_route (__main__.RetirementCases.test_memory_crash_marker_refuses_without_erasing_route)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 206, in test_memory_crash_marker_refuses_without_erasing_route
+    try:self.refuse(live);self.assertEqual(entry.active_turn_token,'owned-live-marker')
+        ~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 80, in refuse
+    with self.watched(),self.assertRaises((Reject,RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_durable_crash_marker_refuses_without_rewriting_json (__main__.RetirementCases.test_durable_crash_marker_refuses_without_rewriting_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 211, in test_durable_crash_marker_refuses_without_rewriting_json
+    try:self.refuse(live);self.assertIn('durable-owned-marker',conn.execute("SELECT entry_json FROM gateway_routing WHERE scope='' AND session_key=?",(live.route,)).fetchone()[0])
+        ~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 80, in refuse
+    with self.watched(),self.assertRaises((Reject,RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_changed_live_source_does_not_get_retired_as_original_profile (__main__.RetirementCases.test_changed_live_source_does_not_get_retired_as_original_profile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 215, in test_changed_live_source_does_not_get_retired_as_original_profile
+    try:self.refuse(live);self.assertEqual(live.source.profile,'foreign-profile')
+        ~~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-native-turn-c130a6\scripts\qa\c130t6_native_session_retirement.py", line 80, in refuse
+    with self.watched(),self.assertRaises((Reject,RunnerReject)):self.retire()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 6.371s
+
+FAILED (failures=3)
+
