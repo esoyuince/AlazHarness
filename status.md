@@ -1,65 +1,79 @@
 # AlazHarness - status
 
-## P137A5 PUBLISHED / L138A5 LINUX IMPORT PREREQUISITE PASS
+## L139C6 REAL LINUX FINITE OWNER PASS / RETAINED PROFILE RESTART NOT ACCEPTED
 
-Active branch alaz/d3b-linux-finite-preflight-l138a5.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-finite-preflight-l138a5.
-Base/local/remote main f08fab0b166e0b3a5e6d22add7b0b7fbd9b0cde7.
-Read live Git HEAD for current QA-only checkpoint; this branch is not yet pushed.
+Active branch alaz/d3b-linux-owner-l139c6.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-owner-l139c6.
+Base0b20f61; main local/remote remains f08fab0, previous push/merge already complete.
+Native feature d1516731308de8e87130dc68124e69aad35d6911 remains optional/uninstalled.
+Installed nativeeb75627 and all33root user-file changes preserved. No remote write.
 
-### Publication completed
+### Actual Linux normal and compute-error acceptance
 
-Finite feature de91876 plus docs f08fab0 pushed to development, exact alaz/local-ci
-SUCCESS57180676318 verified before clean main fast-forward/push. Local/remote main
-match. No force/squash/source rewrite.176 outgoing changed file versions scanned
-with existing bounded patterns/path rules, no findings (not a complete security
-audit).602source/config/test and11patch hashes match original full3448=3425PASS,
-23SKIP,0ERROR/FAIL,exit0. No native/full test replay merely for publication.
-Root33dirtyfiles and installed nativeeb75627 unchanged. Native d151 optional patch
-remains STAGED_NOT_INSTALLED; main merge is not runtime or service activation.
-Original finite feature and main worktrees clean. Publication evidence moved
-byte-exact to evidence/publication-p137a5; original status/work log archived.
+Ordinary UID23001/GID23003 in dedicatedP71C, actual Linux ext4 mount observation,
+ProfileLease, finite metadata, separate fixed cold helper processes and six
+cold/live checks. No OS/product method doubles, no fabricated metadata. Original
+NativeStoreStartup owns exactly3connections and one accepted epoch. Supported
+native environment resolves fake-model route WITHOUT config.yaml, loader override,
+new layout allowance or source gate relaxation. No product/native source changes.
 
-### Actual Linux source/import prerequisite
+Same source/driver/bundle normal17+25+8 -> native saved50 and controlled model error
+-> native failed/completedfalse. Actual API->authority->finite->TurnRunner on
+physical non-mainthread->native commit_and_publish->settle_session_input observed;
+no manual terminal-row mutation. Exact retry returns saved result, computation1;
+sameID/different body admission_conflict. Shared original primary state, zeroextra
+state.db opens during turn. Model factory/computation/close alone a finite fixture.
 
-Normal UID23001/GID23003, Python3.12.3, dedicated AlazHarness-D3B-P71C. Existing1162
-dependency files verified exact, no install or root. Current755native+51harness
-Python sources compiled806/806. Selected source qualification and real native
-constructor TYPES/finite/cleanup/goals imported;444native+304dependency imported
-file hashes match sealed input and existing dependency map. No unqualified system
-site packages. Input unchanged; fresh temp root removed. One actual probe exit0.
-No NativeStoreStartup/runner/API instances, stores, finite jobs, namespace/mount,
-HTTP listener, model or provider was started; this is NOT full Linux acceptance.
+Sealed runtime retirement->native memory retirement->API/runner detach->original
+owner closes all3SQLhandles. SQL total_changes stable during retire/detach,
+registry0 BEFORE fixture cleanup, real caller lease retained then caller releases.
+15nested checks per scenario, two separate actual runs exit0; not30distinct tests.
+Transport/profile temps removed, existing1162dependency files unchanged, no install.
+Normal721/error718native imports all immutableGitd151 and selected755manifest.
+Import bind attempt denied, stack names_has_ipv6; no successful listener and audit
+hook is NOT hostile-code sandbox. Mount/ns identities unchanged, not confinement.
 
-Import attempted socket.bind, offline audit denied it; exact caller not recorded.
-Owned temporary home/SOUL.md was created, then removed with fixture. Both recorded,
-not hidden under no-effects claims. QA audit hook is not a security sandbox.
-Read-only readiness initially had a missing-account-home chdir warning; actual
-probe used explicit cwd / without changing users/files. A host wrapper SyntaxError
-occurred before effects; no intent/run existed, corrected unique request executed.
-Factory arity7 was checked against actual source before first Linux execution.
+### Actual restart boundary
 
-7focused methodsPASS:4synthetic transport refusal contracts+3offline receipts,
-not7native tests. New QA full standard NOT RUN; local static recorded separately.
-All602 prior source/config/test files and11patches remain unchanged. New code is
-one QA probe and two test files only. Runtime source selection/defaults untouched.
+Normal work leaves cache/tool_discovery_cache.json and runtime/active_sessions
+state+lock. Corrected actual second owner startup on the SAME unchanged completed
+profile refuses native_layout_unexpected_entry before writable SQL/epoch. All3DB
+hashes unchanged. This is a reproducible integration gap, NOT restart success.
+No generated records deleted to manufacture acceptance. First restart-control QA
+mistakenly requested expectation AFTER old lease finished: profile_lease_finished;
+raw failure/driver retained. Corrected control captures immutable expectation while
+ownerVERIFIED; same product and assertions, expected-refusal commandexit0.
 
-### Exact next step
+### Independent validation and full regression
 
-Run current normal+compute-error finite lifecycle on genuine Linux owner/lease/
-mount/cold helpers, then same source under existing namespace/seccomp/Landlock
-with exact3handles, result/retry/restart identity, caller lease ordering and host
-socket/path/FD canaries. Earlier F126 prepared-only isolation is historical source,
-not this current active proof.752/755 source expansion is explicit; do not weaken
-kernel/data/network gates to pass. Use fresh dedicated lab prefixes after reviewing
-setup; never replay previously blocked root cleanup/probes or touch defaultUbuntu.
-Authenticated HTTP, real model/tool/memory manager, budget/recovery and M1/M2 open.
-No automation or delegated background work exists; current commands terminal.
+Q139R6 actualLinux boundary one execution18nested predicatesPASS, no OS/model work
+replacement: config/mode/mount/thread/schema refusal, each open transaction blocks
+close without rollback, exact3handles, caller lease order. Raw result/driver/intent
+readback copied with provenance; original peer files/history untouched/not merged.
+Copying results is not an additional native run.9new offline receipt methodsPASS.
 
-### Evidence
+NEW COMPLETE standardWindows3464=3441PASS/23SKIP/0ERROR/0FAIL, actual command000016
+exit0.609source/config/test hashes and11patches stable, all605prior files unchanged.
+Same23skip IDs/reasons preserved, no Linux/native rerun by fullsuite. Added3QA
+scripts+1offline test only. Local static is separate, recorded static-final.txt.
+Current native/full commands terminal; selected-file commit/document checkpoint.
 
-Docs/D3B-LINUX-FINITE-PREFLIGHT-L138A5.md.
-Evidence/publication-p137a5/: scans, push, CI success, main merge/readback, prior
-Linux readiness and source gap. Evidence/d3b-linux-finite-preflight-l138a5/:
-baseline, import001 intent/transport/raw stdout/stderr/result, focused-final-tests,
-summary, local-static-final, preservation. Scratch archive is private/not tracked.
+### Next exact work
+
+Qualify supported native auxiliary-output lifetime or a bounded explicit persisted
+active-profile layout, then repeat real retained-profile restart with saved-result
+identity. Do not silently widen old cold layout, erase cache/registry files, force
+an epoch or call refusal success. Then test THIS source under original active
+namespace/seccomp/Landlock and authenticatedHTTP. Earlier prepared isolation is
+historical only. RealAIAgent/tool/memory manager, provider budgets, crash/powerloss
+and M1/M2 remain open. No root/mount/system/service/production/remote/main changes.
+
+### Records
+
+Docs/D3B-LINUX-OWNER-L139C6.md.
+Evidence/d3b-linux-owner-l139c6: owner001normal/owner002error raw transports/results,
+source-custody, restart001failedcontrol/restart002expectedrefusal, independent-q139r6
+exact copied records/provenance, focused-tests, full-windows-result/log, before/after
+sources+patches, full-skips, protected-state, restart-next-source-review and summary.
+Three QA scripts l139c6_linux_owner_finite,linux_transport,linux_restart_probe.
+Status histories l139c6-parent/work-log preserved. Read liveGitHEAD for final commit.

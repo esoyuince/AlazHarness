@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-25T02:04:10.150767+03:00",
+  "result": "PASS_OFFLINE_LINUX_OWNER_RECEIPTS",
+  "total": 9,
+  "passed": 9,
+  "exitCode": 0,
+  "newNativeOrLinuxRun": false,
+  "testSha256": "2d93547f2df3fde0fb71d767a8b3f724e910d58f8a0ff2df7954d31e7364f58c"
+}

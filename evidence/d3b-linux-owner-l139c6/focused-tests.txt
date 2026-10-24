@@ -1,0 +1,14 @@
+test_actual_restart_refusal_is_not_restart_success (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_actual_restart_refusal_is_not_restart_success) ... ok
+test_config_and_network_limits_not_kernel_confinement (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_config_and_network_limits_not_kernel_confinement) ... ok
+test_exact_retry_and_native_physical_thread_settlement (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_exact_retry_and_native_physical_thread_settlement) ... ok
+test_exact_source_custody_and_same_case_driver (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_exact_source_custody_and_same_case_driver) ... ok
+test_failed_restart_fixture_preserved_without_changing_product (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_failed_restart_fixture_preserved_without_changing_product) ... ok
+test_independent_boundary_readback_is_not_an_extra_finite_run (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_independent_boundary_readback_is_not_an_extra_finite_run) ... ok
+test_normal_and_error_are_two_real_linux_completed_lifecycles (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_normal_and_error_are_two_real_linux_completed_lifecycles) ... ok
+test_raw_transport_outcomes_and_temporary_cleanup (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_raw_transport_outcomes_and_temporary_cleanup) ... ok
+test_real_cold_helpers_three_handles_and_caller_release (test_linux_owner_receipt_l139c6.LinuxFiniteOwnerReceipt.test_real_cold_helpers_three_handles_and_caller_release) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.339s
+
+OK

@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-25T01:59:52.091508+03:00",
+  "originalControlFailure": "QA read owner.expectation after completed owner/lease close; correctly refused profile_lease_finished before restart",
+  "fix": "capture accepted immutable expectation while original owner is VERIFIED, use it for second startup",
+  "productOrNativeChanged": false,
+  "assertionsUnchanged": true,
+  "qaSha256": "3220764cfab87efcd25314fff2ad2d81c1759b1260c5c8152abb2a1eceff15c1",
+  "bundleSha256": "14fee1c9f958ce9219765a8bd740a066d8326431cb1acbb1ba3aec8d641f08b3"
+}

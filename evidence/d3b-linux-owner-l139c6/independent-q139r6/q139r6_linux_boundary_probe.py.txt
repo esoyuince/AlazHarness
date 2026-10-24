@@ -1,0 +1,142 @@
+"""Actual Linux owner refusal boundaries, not finite execution or confinement.
+Trusted fresh fixture, same pinned native and live OS functions. No method doubles.
+The only subprocesses allowed are existing fixed cold read-only helpers.
+"""
+from pathlib import Path,PurePosixPath
+from dataclasses import replace
+import argparse,asyncio,hashlib,io,json,os,shutil,sqlite3,stat,subprocess,sys,tempfile,threading,traceback,zipfile
+FEATURE='d1516731308de8e87130dc68124e69aad35d6911'
+DEPS=Path('/opt/alaz-f126c1a6/dependencies')
+def validate(raw,digest):
+    if len(raw)>30_000_000 or hashlib.sha256(raw).hexdigest()!=digest:raise ValueError('transport_digest')
+    z=zipfile.ZipFile(io.BytesIO(raw));names=z.namelist();infos=z.infolist()
+    if len(names)!=len(set(names)) or len(names)>1200 or sum(v.file_size for v in infos)>60_000_000:raise ValueError('transport_shape')
+    m=json.loads(z.read('transport-manifest.json'))
+    if m['nativeFeature']!=FEATURE or set(names)!=set(m['files'])|{'transport-manifest.json'}:raise ValueError('transport_set')
+    for name,h in m['files'].items():
+        p=PurePosixPath(name)
+        if p.is_absolute() or '..' in p.parts or chr(92) in name or ':' in name or stat.S_ISLNK(z.getinfo(name).external_attr>>16):raise ValueError('transport_path')
+        allowed=name.startswith(('native/','harness/packages/claw-hermes/','harness/config/')) or name in ('accepted-dependencies.json','harness/scripts/run_store_preopen.py','harness/scripts/run_response_preopen.py')
+        if not allowed or hashlib.sha256(z.read(name)).hexdigest()!=h:raise ValueError('transport_member')
+    return z,m
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--sha256',required=True);a=p.parse_args()
+    assert os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3 and sys.flags.isolated and sys.dont_write_bytecode
+    assert os.environ['WSL_DISTRO_NAME']=='AlazHarness-D3B-P71C' and Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    assert not Path('/mnt/c/Windows').exists();os.umask(0o077)
+    z,m=validate(sys.stdin.buffer.read(30_000_001),a.sha256)
+    expected=json.loads(z.read('accepted-dependencies.json'))
+    actual={p.relative_to(DEPS).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in DEPS.rglob('*') if p.is_file()}
+    assert actual==expected and len(actual)==1162
+    root=Path(tempfile.mkdtemp(prefix='alaz-q139r6-boundary-')).resolve();home=root/'home';home.mkdir(mode=0o700);tmp=root/'tmp';tmp.mkdir(mode=0o700)
+    for name in m['files']:
+        dest=root/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(name))
+    z.close();native=root/'native';harness=root/'harness';os.chdir(root)
+    os.environ.clear();os.environ.update(PATH='/usr/bin:/bin',LANG='C.UTF-8',HOME=str(home),USERPROFILE=str(home),HERMES_HOME=str(home),TMPDIR=str(tmp),TMP=str(tmp),TEMP=str(tmp),WSL_DISTRO_NAME='AlazHarness-D3B-P71C',PYTHONUTF8='1',TZ='UTC')
+    sys.path[:0]=[str(harness/'packages/claw-hermes'),str(native),str(DEPS)]
+    opens=[];children=[];denied=[];checks={};error=None;stage='IMPORT';held=None;owner=None;stores=();seed=[]
+    mounts_before=Path('/proc/self/mountinfo').read_bytes();ns_before={k:os.readlink('/proc/self/ns/'+k) for k in ('mnt','net','ipc','user')}
+    def audit(event,args):
+        if event=='sqlite3.connect':opens.append({'stage':stage,'path':str(args[0])})
+        if event=='subprocess.Popen':
+            command=args[1]
+            if isinstance(command,(list,tuple)) and len(command)==4 and list(command[:3])==[sys.executable,'-I','-B'] and command[3] in (str(harness/'scripts/run_store_preopen.py'),str(harness/'scripts/run_response_preopen.py')):
+                children.append({'stage':stage,'name':Path(command[3]).name});return
+            raise PermissionError('q139_process_not_allowed')
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo','os.system','os.exec','os.posix_spawn'):
+            denied.append({'event':event,'stage':stage,'functions':[v.name for v in traceback.extract_stack(limit=6)]});raise PermissionError('q139_offline')
+    sys.addaudithook(audit)
+    try:
+        from gateway.runtime_ownership import process_ownership
+        from hermes_state import SessionDB
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        from gateway.platforms.api_server_response_store import ResponseStore
+        import gateway_profile_lease as lease,gateway_native_layout as layout,gateway_storage_mounts as mounts,gateway_store_startup as startup
+        stage='SEED';(home/'gateway.lock').touch(mode=0o600,exist_ok=False);process_ownership.reserve([home])
+        state=SessionDB(home/'state.db');seed.append(state);replay=RunIdempotencyStore(str(home/'runs_idempotency.db'));seed.append(replay)
+        response=ResponseStore(db_path=str(home/'response_store.db'),canonical_state=state,max_size=100,max_identities=1000);seed.append(response)
+        def ident(name):s=(home/name).stat();return s.st_dev,s.st_ino
+        want=startup.live.PreparedStoreExpectation(startup.live.NATIVE_PIN,startup.live.schema_digest(state._conn),startup.live.schema_digest(replay._conn),state._conn.execute("SELECT value FROM state_meta WHERE key='store_instance_id'").fetchone()[0],state._conn.execute('PRAGMA application_id').fetchone()[0],ident('state.db'),ident('runs_idempotency.db'),0,None)
+        rwant=startup.response_preopen.PreparedResponseExpectation(startup.response_preopen.NATIVE_FEATURE,startup.response_preopen.SCHEMA_SHA256,ident('response_store.db'))
+        for store in reversed(seed):store.close()
+        seed=[];process_ownership.close();stage='BOUNDARIES'
+        observed=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home));mount=mounts.ExpectedMount(observed.mount_id,observed.device,observed.root,observed.mount_point,observed.filesystem)
+        assert mount.filesystem=='ext4';before_open=len(opens)
+        def inspect():return layout.inspect_profile(home,uid=23001,gid=23003,device=home.stat().st_dev,include_response=True)
+        inspect();checks['valid_current_real_linux_layout']=True
+        config=home/'config.yaml';config.write_text('model: should-be-refused\n',encoding='utf-8');config.chmod(0o600)
+        try:
+            try:inspect()
+            except layout.NativeLayoutRejected as exc:checks['config_rejected_without_allowlist_change']=str(exc)=='native_layout_unexpected_entry'
+            else:raise AssertionError('profile_config_accepted')
+        finally:config.unlink()
+        db=home/'state.db';db.chmod(0o644)
+        try:
+            try:inspect()
+            except layout.NativeLayoutRejected as exc:checks['public_mode_refused']=str(exc)=='native_layout_private_object'
+            else:raise AssertionError('relaxed_mode_accepted')
+        finally:db.chmod(0o600)
+        try:lease.reserve_profile(home,replace(mount,mount_id=mount.mount_id+1000000))
+        except Exception:checks['wrong_mount_rejected_without_lease']=not process_ownership.homes
+        else:raise AssertionError('wrong_mount_accepted')
+        held=lease.reserve_profile(home,mount);checks['native_profile_lease_real']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+        result=[]
+        def other_thread():
+            try:held.check()
+            except lease.ProfileLeaseRejected as exc:result.append(str(exc))
+            else:result.append('wrong-success')
+        thread=threading.Thread(target=other_thread);thread.start();thread.join(5);assert not thread.is_alive()
+        checks['other_thread_cannot_use_lease']=result==['profile_main_thread_required']
+        checks['non_sql_refusals_open_no_database']=len(opens)==before_open
+        stage='WRONG_COLD_SCHEMA'
+        bad=startup.NativeStoreStartup(held,mount,replace(want,state_schema_sha256='f'*64),instance_id='q139-refused',response_expected=rwant)
+        try:bad.start()
+        except startup.StoreStartupRejected:checks['wrong_cold_schema_prevents_parent_open']=bad._state is None and not bad._epoch_attempted and len(opens)==before_open
+        else:raise AssertionError('wrong_schema_accepted')
+        bad.close();checks['refusal_keeps_caller_lease']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+        stage='ORIGINAL_OWNER_START';owner=startup.NativeStoreStartup(held,mount,want,instance_id='q139-control',response_expected=rwant)
+        started=owner.start();stores=(owner.state_store,owner.replay_store,owner.response_store);connections=tuple(s._conn for s in stores)
+        checks['actual_cold_live_checks']=len(started['completedChecks'])==6
+        checks['exact_three_parent_connections']=len(opens)-before_open==3
+        checks['accepted_epoch_once']=owner.expectation.epoch==1
+        stage='OPEN_TRANSACTION_CLOSE'
+        for conn in connections:
+            conn.execute('BEGIN IMMEDIATE')
+            try:
+                try:owner.close()
+                except startup.StoreStartupRejected:assert conn.in_transaction and all(c.execute('SELECT 1').fetchone()[0]==1 for c in connections)
+                else:raise AssertionError('owner_discarded_transaction')
+            finally:conn.rollback()
+        checks['each_open_transaction_blocks_close_without_rollback']=True
+        stage='NORMAL_OWNER_CLOSE';owner.close();closed=0
+        for conn in connections:
+            try:conn.execute('SELECT 1')
+            except sqlite3.ProgrammingError:closed+=1
+        checks['three_handles_closed']=closed==3;checks['lease_stays_with_caller']=held.check()['state']=='NATIVE_PROFILE_RESERVED';held.finish();checks['caller_released_profile']=not process_ownership.homes
+        checks['mounts_unchanged']=Path('/proc/self/mountinfo').read_bytes()==mounts_before
+        checks['namespaces_unchanged']=ns_before=={k:os.readlink('/proc/self/ns/'+k) for k in ns_before}
+        assert all(checks.values()),checks;stage='COMPLETE'
+    except BaseException as exc:error={'stage':stage,'type':type(exc).__name__,'message':str(exc),'traceback':traceback.format_exc()}
+    finally:
+        for store in reversed(stores or seed):
+            try:store.close()
+            except Exception:pass
+        if 'process_ownership' in locals():process_ownership.close()
+    imports={};deps={};other={}
+    for module in tuple(sys.modules.values()):
+        file=getattr(module,'__file__',None)
+        if not file:continue
+        path=Path(file).resolve()
+        if not path.is_file():continue
+        if path.is_relative_to(native):
+            name=path.relative_to(native).as_posix();h=hashlib.sha256(path.read_bytes()).hexdigest();assert m['files']['native/'+name]==h;imports[name]=h
+        elif path.is_relative_to(DEPS):
+            name=path.relative_to(DEPS).as_posix();h=hashlib.sha256(path.read_bytes()).hexdigest();assert expected[name]==h;deps[name]=h
+        elif 'site-packages' in path.parts or 'dist-packages' in path.parts:other[str(path)]=hashlib.sha256(path.read_bytes()).hexdigest()
+    unchanged=all(hashlib.sha256((root/name).read_bytes()).hexdigest()==h for name,h in m['files'].items())
+    report={'result':'PASS_REAL_LINUX_OWNER_REFUSAL_BOUNDARIES' if error is None and all(checks.values()) and unchanged and not other else 'NOT_ACCEPTED','stage':stage,'error':error,'checks':checks,'nestedPredicateCount':len(checks),'coldHelpers':children,'parentSqliteOpens':opens,'deniedEvents':denied,'nativeImports':imports,'dependencyImports':deps,'unqualifiedSystemPackages':other,'inputsUnchanged':unchanged,'uid':list(os.getresuid()),'gid':list(os.getresgid()),'bundleSha256':a.sha256,'nativeFeature':FEATURE,'osOrProductMethodsDoubled':False,'finiteJobExecuted':False,'rootUsed':False,'namespaceConfinementTested':False,'httpOrModelStarted':False,'systemInstallPerformed':False,'failureFixtureCleanup':error is not None}
+    os.chdir('/');shutil.rmtree(root);report['temporaryRootRemoved']=not root.exists()
+    print('Q139_RESULT '+json.dumps(report),flush=True)
+    return 0 if report['result'].startswith('PASS_') and report['temporaryRootRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())

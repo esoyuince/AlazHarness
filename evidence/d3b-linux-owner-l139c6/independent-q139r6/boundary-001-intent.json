@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-25T01:59:08.224339+03:00",
+  "requestId": "c139c601-7c45-4f88-9081-139000000009",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "probeSha256": "ddd6487188760d5c4ade91e245b1ded339059f0a1c1f19a4d78afe3a288aaf66",
+  "bundleSha256": "c3d77613a743915de31d8cfef70f54ee2e2a869e175d3db9f9186312353583e9",
+  "bundleBytes": 5979177,
+  "transportMembers": 829,
+  "nativeFiles": 755,
+  "acceptedDependencyFiles": 1162,
+  "uid": 23001,
+  "gid": 23003,
+  "distro": "AlazHarness-D3B-P71C",
+  "user": "alazgateway",
+  "scope": "actual Linux metadata/lease/cold checks and owner close only; finite flow belongs producer; no root or installation"
+}

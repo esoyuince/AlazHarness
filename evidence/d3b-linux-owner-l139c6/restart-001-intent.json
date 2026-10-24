@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-25T01:58:50.587655+03:00",
+  "scope": "actual second owner startup on unmodified normally completed Linux profile; known new native data must be rejected before writable DB/epoch",
+  "qaSha256": "88bf94fa635672246fc720f1e8ea69cd0575b6541c011b57af69551957e8b364",
+  "originalDriverSha256": "df36866a52c75363f59300e05292f93576911b55281811e6bcf14a5c43246d38",
+  "bundleSha256": "66a723f366bbad259d5e9822bd12ce4f5fcd0a039374e220bdda111bbfb48566",
+  "productChanged": false
+}

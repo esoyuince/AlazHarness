@@ -1,0 +1,178 @@
+"""Real Linux finite owner experiment, no OS/lifecycle replacements.
+Only AIAgent factory/computation/close is a declared finite model fixture.
+No profile config file, installer, root, socket listener or kernel isolation claim.
+"""
+import argparse,asyncio,hashlib,json,os,re,shutil,sqlite3,sys,tempfile,threading,traceback
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[2]
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--native',type=Path,required=True);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--compute-failure',action='store_true');a=parser.parse_args()
+    native=a.native.resolve(strict=True);out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    assert sys.platform=='linux' and os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+    assert os.environ['WSL_DISTRO_NAME']=='AlazHarness-D3B-P71C';assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    os.umask(0o077);loop=asyncio.new_event_loop();asyncio.set_event_loop(loop)
+    home=Path(tempfile.mkdtemp(prefix='alaz-l139c6-home-')).resolve();home.chmod(0o700)
+    os.environ.update(HOME=str(home),HERMES_HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home),HERMES_INFERENCE_PROVIDER='openai',OPENAI_API_KEY='owned-offline-fixture-not-real',OPENAI_BASE_URL='http://127.0.0.1:9/v1',HERMES_AGENT_TIMEOUT='0',HERMES_AGENT_TIMEOUT_WARNING='0')
+    before_mounts=Path('/proc/self/mountinfo').read_bytes();before_ns={k:os.readlink('/proc/self/ns/'+k) for k in ('mnt','net','user','ipc')}
+    checks={};opens=[];children=[];denied=[];events=[];compute=[];agents=[];phase='IMPORT';error=None;held=owner=c=None;stores=();seed=();saved=None;rows=[];retry=None;conflict=None;release=None
+    main_thread=threading.get_ident();native_prefix=str(native)+os.sep;restart_refusal=None
+    def audit(event,args):
+        if event=='subprocess.Popen':
+            cmd=args[1]
+            if isinstance(cmd,(list,tuple)) and len(cmd)==4 and list(cmd[:3])==[sys.executable,'-I','-B'] and cmd[3] in (str(ROOT/'scripts/run_store_preopen.py'),str(ROOT/'scripts/run_response_preopen.py')):
+                children.append({'phase':phase,'helper':Path(cmd[3]).name});return
+            denied.append({'event':event,'phase':phase,'callers':[f.name for f in traceback.extract_stack(limit=6)]});raise PermissionError('l139_unqualified_process')
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo','os.system','os.exec','os.posix_spawn'):
+            denied.append({'event':event,'phase':phase,'callers':[f.name for f in traceback.extract_stack(limit=8)]});raise PermissionError('l139_offline')
+        if event=='sqlite3.connect':opens.append({'phase':phase,'path':str(args[0])})
+    selected={'run_api_turn','execute_finite_admission','run_sync','commit_and_publish','settle_session_input'}
+    def observe(frame,event,arg):
+        if event=='call' and frame.f_code.co_name in selected and frame.f_code.co_filename.startswith(native_prefix) and len(events)<2000:
+            stack=[];f=frame.f_back
+            for _ in range(14):
+                if f is None:break
+                if f.f_code.co_filename.startswith(native_prefix):stack.append({'file':f.f_code.co_filename[len(native_prefix):],'function':f.f_code.co_name})
+                f=f.f_back
+            events.append({'function':frame.f_code.co_name,'file':frame.f_code.co_filename[len(native_prefix):],'thread':threading.get_ident(),'stack':stack})
+    class FiniteCompute:
+        def __init__(self,**kwargs):
+            self.kwargs=kwargs;self.session_id=kwargs['session_id'];self.model=kwargs['model'];self.tools=[]
+            self.session_prompt_tokens=self.session_completion_tokens=self.session_output_tokens=0
+            self.context_compressor=SimpleNamespace(compression_count=0,last_prompt_tokens=0,context_length=4096)
+            self.request_overrides={};self._codex_session=None;self.interrupted=False;self.closed=False;agents.append(self)
+        def close(self):self.closed=True
+        def clear_interrupt(self):self.interrupted=False
+        def interrupt(self,*args,**kwargs):self.interrupted=True
+        def run_conversation(self,message,**kwargs):
+            match=re.search(r'SUM:([0-9, -]+)',message);assert match
+            values=[int(v.strip()) for v in match.group(1).strip().split(',')];assert values==[17,25,8]
+            answer=str(sum(values));compute.append({'input':values,'answer':answer,'thread':threading.get_ident(),'sameCallerState':self.kwargs['session_db'] is stores[0],'onMainThread':threading.get_ident()==main_thread})
+            assert not compute[-1]['onMainThread'] and compute[-1]['sameCallerState']
+            if a.compute_failure:raise RuntimeError('controlled_l139_computation_failure')
+            return {'final_response':answer,'completed':True,'api_calls':0,'tools':[],'agent_persisted':False,'messages':[{'role':'user','content':message},{'role':'assistant','content':answer}]}
+    sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(native)];sys.addaudithook(audit);sys.setprofile(observe);threading.setprofile(observe)
+    try:
+        from gateway.runtime_ownership import process_ownership
+        from hermes_state import SessionDB
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        from gateway.platforms.api_server_response_store import ResponseStore
+        import gateway_store_startup as startup
+        import gateway_profile_lease as lease
+        import gateway_storage_mounts as mounts
+        import gateway_native_layout as layout
+        import hermes_state_registry as registry
+        phase='TRUSTED_SEED';(home/'gateway.lock').touch(mode=0o600,exist_ok=False);process_ownership.reserve([home])
+        state=SessionDB(home/'state.db');replay=RunIdempotencyStore(str(home/'runs_idempotency.db'));response=ResponseStore(db_path=str(home/'response_store.db'),canonical_state=state,max_size=100,max_identities=1000);seed=(state,replay,response)
+        def identity(name):v=(home/name).stat();return v.st_dev,v.st_ino
+        expected=startup.live.PreparedStoreExpectation(startup.live.NATIVE_PIN,startup.live.schema_digest(state._conn),startup.live.schema_digest(replay._conn),state._conn.execute("SELECT value FROM state_meta WHERE key='store_instance_id'").fetchone()[0],state._conn.execute('PRAGMA application_id').fetchone()[0],identity('state.db'),identity('runs_idempotency.db'),0,None)
+        response_expected=startup.response_preopen.PreparedResponseExpectation(startup.response_preopen.NATIVE_FEATURE,startup.response_preopen.SCHEMA_SHA256,identity('response_store.db'))
+        assert startup.live.schema_digest(response._conn)==response_expected.schema_sha256
+        for store in reversed(seed):store.close()
+        seed=();process_ownership.close()
+        phase='REAL_LEASE_LAYOUT';m=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home));mount=mounts.ExpectedMount(m.mount_id,m.device,m.root,m.mount_point,m.filesystem)
+        assert mount.filesystem=='ext4';held=lease.reserve_profile(home,mount);checks['realLinuxLease']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+        checks['noConfigFileBeforeOwner']=not (home/'config.yaml').exists()
+        layout.inspect_profile(home,uid=23001,gid=23003,device=home.stat().st_dev,include_response=True)
+        phase='REAL_COLD_START';owner=startup.NativeStoreStartup(held,mount,expected,instance_id='l139c6-owned',response_expected=response_expected,prepared_layout=True)
+        started=owner.start();restart_expected=owner.expectation;checks['realSixColdLiveChecks']=len(started['completedChecks'])==6
+        stores=(owner.state_store,owner.replay_store,owner.response_store);connections=tuple(s._conn for s in stores)
+        checks['oneEpoch']=owner.expectation.epoch==1
+        from gateway.config import GatewayConfig,PlatformConfig
+        async def execute():
+            nonlocal phase,c,saved,rows,retry,conflict,release
+            phase='PREPARE_FINITE'
+            c=await owner.prepare_runtime(GatewayConfig(multiplex_profiles=False,write_sessions_json=False),PlatformConfig(extra={'key':'owned-test-api','model_name':'owned-offline'}),local_admission=True,canonical_api=True,finite_turn=True)
+            checks['sameThreeConnections']=all(x is y for x,y in zip(c._connections,connections))
+            c.publish_api_adapter();c.activate_admission()
+            phase='IMPORT_MODEL';import run_agent
+            from gateway.session_api_turn import run_api_turn
+            from gateway.session_results import admission_result
+            phase='ACTUAL_TURN'
+            with patch.object(run_agent,'AIAgent',FiniteCompute):
+                kwargs={'session_id':'l139-session','request_id':'l139-request','user_message':'SUM:17,25,8','conversation_history':[]}
+                result=await asyncio.wait_for(run_api_turn(c._adapter,**kwargs),25)
+                authority=c._binding._authority
+                tasks=[s.task for s in authority.sessions.values() if s.task and not s.task.done()]+list(getattr(authority,'_mutation_tasks',()))
+                if tasks:await asyncio.wait_for(asyncio.gather(*tasks,return_exceptions=True),10)
+                await asyncio.sleep(0)
+                repeated=await asyncio.wait_for(run_api_turn(c._adapter,**kwargs),10)
+                retry={'sameResult':result==repeated,'computationCount':len(compute)};assert retry=={'sameResult':True,'computationCount':1}
+                from hermes_state_runtime import RuntimeStoreError
+                try:await run_api_turn(c._adapter,**{**kwargs,'user_message':'SUM:999'})
+                except RuntimeStoreError as exc:conflict={'rejected':True,'reason':exc.reason}
+                else:raise AssertionError('same_id_conflict_not_rejected')
+            phase='RESULT_READBACK';rows=[dict(v) for v in connections[0].execute('SELECT admission_id,status,outcome,generation FROM session_admissions')];assert len(rows)==1
+            saved=admission_result(stores[0],rows[0]['admission_id']);assert rows[0]['status']=='terminal'
+            if a.compute_failure:assert rows[0]['outcome']=='failed' and saved['result']['completed'] is False
+            else:assert rows[0]['outcome']=='completed' and saved['result']['final_response']=='50' and saved['result']['completed'] is True
+            phase='NORMAL_RETIREMENT';changes=[conn.total_changes for conn in connections]
+            c.begin_drain();runtime=await c.retire_idle_runtime();sessions=c.retire_idle_api_sessions();c.finish_drain();await c.detach()
+            checks['noRowsChangedByRetirement']=changes==[conn.total_changes for conn in connections]
+            checks['registryZeroBeforeFixtureCleanup']=registry.stats()['total_refcounts']==0
+            checks['modelCloseCalled']=all(v.closed for v in agents)
+            assert all(checks.values()),checks
+            owner.close()
+            closed=0
+            for conn in connections:
+                try:conn.execute('SELECT 1')
+                except sqlite3.ProgrammingError:closed+=1
+            checks['allThreeConnectionsPhysicallyClosed']=closed==3
+            checks['callerLeaseRetained']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+            held.finish();checks['callerReleasedLease']=not process_ownership.homes
+            release={'runtime':runtime,'sessions':sessions,'ownerStage':owner._stage,'consumerStage':c._stage}
+        loop.run_until_complete(execute());phase='COMPLETE'
+        checks['noAdditionalStateDbInTurn']=not any(v['phase']=='ACTUAL_TURN' and v['path'].endswith('state.db') for v in opens)
+        checks['sameMountTable']=before_mounts==Path('/proc/self/mountinfo').read_bytes()
+        checks['sameNamespaces']=before_ns=={k:os.readlink('/proc/self/ns/'+k) for k in before_ns}
+        phase='RESTART_AFTER_NORMAL_CLOSE'
+        db_before={name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in ('state.db','runs_idempotency.db','response_store.db')}
+        held=lease.reserve_profile(home,mount)
+        restarted=startup.NativeStoreStartup(held,mount,restart_expected,instance_id='l139c6-restart',response_expected=response_expected,prepared_layout=True)
+        try:restarted.start()
+        except startup.StoreStartupRejected as exc:
+            restart_refusal={'reason':str(exc),'cause':str(exc.__cause__),'causeType':type(exc.__cause__).__name__,'noWritableStateOpened':restarted._state is None,'noEpochAttempt':not restarted._epoch_attempted,'stage':restarted._stage}
+        else:raise AssertionError('recorded_unqualified_runtime_files_unexpectedly_accepted')
+        assert restart_refusal['causeType']=='NativeLayoutRejected' and restart_refusal['cause']=='native_layout_unexpected_entry'
+        assert restart_refusal['noWritableStateOpened'] and restart_refusal['noEpochAttempt']
+        assert db_before=={name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in db_before}
+        restart_refusal['allThreeDatabaseHashesUnchanged']=True
+        restart_refusal['noSqliteOpenDuringRejectedRestart']=not any(v['phase']=='RESTART_AFTER_NORMAL_CLOSE' for v in opens)
+        assert restart_refusal['noSqliteOpenDuringRejectedRestart']
+        restarted.close();held.finish()
+        checks['restartRefusedWithoutMutation']=True
+        phase='COMPLETE'
+        checks['noConfigFileAtEnd']=not (home/'config.yaml').exists()
+        assert all(checks.values()),checks
+    except BaseException as exc:error={'phase':phase,'type':type(exc).__name__,'reason':str(exc),'traceback':traceback.format_exc()}
+    finally:
+        sys.setprofile(None);threading.setprofile(None)
+        pending=[t for t in asyncio.all_tasks(loop) if not t.done()]
+        for t in pending:t.cancel()
+        if pending:loop.run_until_complete(asyncio.gather(*pending,return_exceptions=True))
+        if c:
+            for name in ('_executor','_housekeeping_executor'):
+                executor=getattr(c._runner,name,None)
+                if executor:executor.shutdown(wait=True)
+        loop.run_until_complete(loop.shutdown_default_executor());loop.close()
+        # Failure fixture teardown is not normal product close acceptance.
+        for store in reversed(stores or seed):
+            try:store.close()
+            except Exception:pass
+        if 'registry' in locals():registry.close_all_under(home)
+        if 'process_ownership' in locals():process_ownership.close()
+    loaded={}
+    for module in tuple(sys.modules.values()):
+        file=getattr(module,'__file__',None)
+        if file:
+            p=Path(file).resolve()
+            if p.is_relative_to(native) and p.is_file():loaded[p.relative_to(native).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+    inventory=[{'path':p.relative_to(home).as_posix(),'mode':oct(p.stat().st_mode & 0o777),'size':p.stat().st_size} for p in home.rglob('*')]
+    passed=error is None and phase=='COMPLETE' and bool(compute) and all(checks.values())
+    report={'result':'REPRODUCED_REAL_RESTART_LAYOUT_GAP' if passed else 'NOT_ACCEPTED','phase':phase,'error':error,'uid':list(os.getresuid()),'gid':list(os.getresgid()),'checks':checks,'computeFailure':a.compute_failure,'computation':compute,'savedResult':saved,'admissions':rows,'exactRetry':retry,'changedPayload':conflict,'release':release,'sqliteOpens':opens,'coldHelperCalls':children,'deniedEvents':denied,'nativeTrace':events,'nativeImports':loaded,'profileInventory':inventory,'actualOsBoundaries':True,'osOrProductMethodsDoubled':False,'modelFactoryComputationCloseDoubled':True,'configFileWritten':False,'rootUsed':False,'realProviderCalls':0,'confinementOrHttpTested':False,'manualSqlSettlement':False,'failureFixtureCleanupUsed':error is not None,'restartRefusal':restart_refusal,'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+    shutil.rmtree(home);report['temporaryProfileRemoved']=not home.exists();(out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','nativeTrace','profileInventory')}),flush=True)
+    return 0 if passed and report['temporaryProfileRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())

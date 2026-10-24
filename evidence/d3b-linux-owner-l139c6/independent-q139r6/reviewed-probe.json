@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-25T01:58:15.852651+03:00",
+  "sha256": "ddd6487188760d5c4ade91e245b1ded339059f0a1c1f19a4d78afe3a288aaf66",
+  "preExecutionCorrection": "single Windows separator explicitly rejected with chr92; no Linux run happened before correction",
+  "syntheticTests": 5,
+  "testsExitCode": 0,
+  "scope": "same current product/OS boundary calls, no production-code changes"
+}

@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-25T02:06:59.884899+03:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "scope": "source review only, no configuration/permission or runtime mutation",
+  "observedGeneratedPaths": [
+    "cache/tool_discovery_cache.json",
+    "runtime/active_sessions.json",
+    "runtime/active_sessions.lock"
+  ],
+  "sources": {
+    "tools/registry.py": {
+      "sha256": "eecf43c6578e2a0bb78e5d795cba150e00e704395d37490bf2217ab55a923296",
+      "functions": {
+        "_discovery_cache_path": {
+          "line": 178,
+          "endLine": 185
+        },
+        "_load_discovery_cache": {
+          "line": 188,
+          "endLine": 198
+        },
+        "_save_discovery_cache": {
+          "line": 201,
+          "endLine": 212
+        }
+      }
+    },
+    "hermes_cli/active_sessions.py": {
+      "sha256": "3afb9d213000f657354a79225d9b7ecb84ecc0321bfab74823f3e841f8d90ccf",
+      "functions": {
+        "_registry_home": {
+          "line": 171,
+          "endLine": 172
+        },
+        "_state_path": {
+          "line": 175,
+          "endLine": 176
+        },
+        "_lock_path": {
+          "line": 179,
+          "endLine": 180
+        },
+        "release_active_session": {
+          "line": 577,
+          "endLine": 593
+        }
+      }
+    }
+  },
+  "conclusions": [
+    "Tool discovery persistent cache path is the current Hermes home/cache, not an independently qualified temp location in this source.",
+    "Active-session release retains native state/lock files; replacing it with deletion would need its own ownership contract.",
+    "No environment controls appear in these two module files; this is not an exhaustive absence claim for all upstream APIs.",
+    "Plan explicit versioned layout or supported native auxiliary-state lifetime, test corrupt/nonempty/live/foreign-mode/link/path cases and unchanged durable result/epoch before new acceptance."
+  ],
+  "restartProductAccepted": false
+}

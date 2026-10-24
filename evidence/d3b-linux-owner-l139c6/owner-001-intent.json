@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T01:55:58.659522+03:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "bundleSha256": "464f63b5a42a28161c3f0d3877adfe54965c05ba49c6922906d33d6021bcaf85",
+  "bundleSize": 5965158,
+  "nativeFiles": 755,
+  "driverSha256": "df36866a52c75363f59300e05292f93576911b55281811e6bcf14a5c43246d38",
+  "transportSha256": "70dfe4d00748fd418226843d39955ad08b9e4dbb436b02f2613048b7dc214c1e",
+  "scenario": "normal",
+  "uid": 23001,
+  "root": false,
+  "scope": "actual OS owner lease/mount/cold/start/finite/close, no confinement or HTTP"
+}

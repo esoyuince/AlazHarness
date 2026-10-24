@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-25T02:04:09.375793+03:00",
+  "originalWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6",
+  "originalHead": "562b69921688f756b1ce922d0bcd7e07cd4ce97b",
+  "files": {
+    "boundary-001-intent.json": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\evidence\\d3b-linux-owner-qa-q139r6\\boundary-001-intent.json",
+      "sha256": "880e74d4a95390e487805ed1b34ed34944c41e1fbec9d24c8ecc861a9012b379"
+    },
+    "boundary-001-result.json": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\evidence\\d3b-linux-owner-qa-q139r6\\boundary-001-result.json",
+      "sha256": "d36f0580d5507933a9e02c4bcaecf5ae52995299e04ce17484f8b6d3b28e93d2"
+    },
+    "boundary-001-stdout.txt": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\evidence\\d3b-linux-owner-qa-q139r6\\boundary-001-stdout.txt",
+      "sha256": "a59e7543b1902989f70e8d88ea9be498047bd662325dc3593a6c81ee2134c5d3"
+    },
+    "boundary-001-stderr.txt": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\evidence\\d3b-linux-owner-qa-q139r6\\boundary-001-stderr.txt",
+      "sha256": "6835531560cfb3b3e7d8ebd1bad0e8cfd3e1710408cac85f9a1814b00133916c"
+    },
+    "boundary-001-transport.json": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\evidence\\d3b-linux-owner-qa-q139r6\\boundary-001-transport.json",
+      "sha256": "5e2c68038888b3c20961e380186d50d4407f98df0a30870c64f4eeee38e139fe"
+    },
+    "reviewed-probe.json": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\evidence\\d3b-linux-owner-qa-q139r6\\reviewed-probe.json",
+      "sha256": "e98b0c34d20ee6834ea4cf91e5712a951650b4411cda9219da660cebc22a22ab"
+    },
+    "q139r6_linux_boundary_probe.py.txt": {
+      "originalPath": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-linux-owner-qa-q139r6\\scripts\\qa\\q139r6_linux_boundary_probe.py",
+      "sha256": "ddd6487188760d5c4ade91e245b1ded339059f0a1c1f19a4d78afe3a288aaf66"
+    }
+  },
+  "nativeImportedCount": 255,
+  "allNativeImportsMatchSelectedImmutableSources": true,
+  "actualLinuxBoundaryExecution": 1,
+  "nestedPredicateCount": 18,
+  "newRuntimeExecutionByReadback": false,
+  "originalFilesChanged": false,
+  "originalHistoryMerged": false
+}
