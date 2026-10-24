@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-24T11:30:26.155441+03:00",
+  "scope": "read-only original actual tests and old-source compatibility review; no new execution",
+  "checked": [
+    {
+      "resultPath": "evidence/d3b-active-owner-b129d6/native-001/result.json",
+      "sha256": "e3bb54c330087c33e706b51d7b7fc226219e0790cba03c9b5d7abe98fc179bd4",
+      "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+      "actualNativeImports": 514,
+      "methods": 23,
+      "allImportedNativeFilesMatchImmutableGit": true,
+      "recordedCurrentHarnessSourcesStillExact": true
+    },
+    {
+      "resultPath": "evidence/d3b-active-owner-b129d6/compat-001/result.json",
+      "sha256": "7a3874cfac1dde56ab55b58098ec04376add4cff9382df161739d65722e64924",
+      "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+      "actualNativeImports": 501,
+      "methods": 20,
+      "allImportedNativeFilesMatchImmutableGit": true,
+      "recordedCurrentHarnessSourcesStillExact": true
+    }
+  ],
+  "independentMethods": 24,
+  "scopesOverlap": true,
+  "selectedSixProductConfigFilesStillMatchIndependentSnapshot": true,
+  "fullRegressionOwner": "B129D6 original product task, one union only",
+  "ownIndependentQaCommit": "e54e9bd9e03747fc47704a7abda66b289d0fb4a1",
+  "producerObservedHead": "ffa0d366b505848718f4e10f044af19350a4d947",
+  "newNativeExecution": false,
+  "linuxIsolationRequalified": false,
+  "nativeChanged": false
+}
