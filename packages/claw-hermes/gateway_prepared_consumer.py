@@ -8,6 +8,7 @@ current-source live-task/service qualification remain separate acceptance gates.
 """
 from __future__ import annotations
 import asyncio
+from collections import OrderedDict
 import hashlib
 import json
 from pathlib import Path
@@ -120,13 +121,64 @@ class PreparedRuntimeConsumer:
             self._stage='FAILED_UNKNOWN'
             raise
 
+    def _work_absent(self):
+        """Read-only prepared/retired work check; never prune or finish native work.
+
+        These fixed containers belong to the source-qualified native owners.
+        This is a cooperative instantaneous observation, not proof against other
+        same-process threads creating work afterward, or permission to admit it.
+        Even completed/cancelled retained records require their native owner to
+        settle them; task.done() is not proof that physical execution stopped.
+        """
+        runner,binding=self._runner,self._binding
+        require(runner is not None and binding is not None
+                and runner._caller_owned_state is binding,'consumer_native_objects_changed')
+        require(runner._running is False and runner._executor is None
+                and runner._housekeeping_executor is None
+                and runner._loop_heartbeat_task is None and runner._stop_task is None,
+                'consumer_runner_lifecycle_active')
+        runner_fields=(('adapters',dict),('_profile_adapters',dict),('_background_tasks',set),
+                       ('_sessions',dict),('_fatal_handler_tasks',set),
+                       ('_completion_notification_batch_tasks',dict),
+                       ('_completion_notification_batches',dict),('_completion_deliveries_inflight',set),
+                       ('_completion_notification_batch_flush_tasks',set),
+                       ('_session_db_handles',dict),('_startup_restore_tasks',list),
+                       ('_startup_restore_queue',list),('_agent_cache',OrderedDict))
+        for name,kind in runner_fields:
+            value=getattr(runner,name,None)
+            require(type(value) is kind and not value,'consumer_runner_work_present')
+        authority=binding._authority
+        require(authority is not None and runner.session_authority is authority
+                and authority.runner is runner and authority.db is self._stores[0],
+                'consumer_work_authority_changed')
+        authority_fields=(('sessions',dict),('waiters',dict),('events',dict),
+                          ('native_waiters',set),('pending_results',dict),
+                          ('pending_deliveries',dict),('adopted',dict),('executing',dict),
+                          ('pending_stops',dict),('pending_steers',dict),
+                          ('cancel_obligations',set))
+        for name,kind in authority_fields:
+            value=getattr(authority,name,None)
+            require(type(value) is kind and not value,'consumer_authority_work_present')
+        # These are lazily created by the native work producers. Do not call
+        # physical_workers(): it prunes the native registry as a side effect.
+        for name,kind in (('_turn_workers',dict),('_managed_workers',dict),
+                          ('_mutation_tasks',set),('_bot_mailbox_operations',set),
+                          ('_bot_receipt_tasks',set),
+                          ('_cron_cancellations',dict)):
+            value=getattr(authority,name,None)
+            require(value is None or type(value) is kind and not value,
+                    'consumer_authority_work_present')
+
     def check(self):
         require(self._stage=='ATTACHED','consumer_not_attached')
+        self._identity()
+        self._work_absent()
         self._storage()
         require(self._runner._caller_owned_state is self._binding and self._binding._api_bundle is self._bundle
                 and self._bundle._adapter is self._adapter,'consumer_native_objects_changed')
         selected=self._bundle.select(self._adapter,self._held._home)
         require(all(a is b for a,b in zip(selected,self._stores)),'consumer_native_stores_changed')
+        self._work_absent()
         self._identity()
         return self.status()
 
@@ -142,6 +194,7 @@ class PreparedRuntimeConsumer:
             await self._adapter.disconnect()
             self._identity(loop=True);self._storage()
             require(self._bundle.status()['state']=='DETACHED','consumer_api_not_detached')
+            self._work_absent()
             self._stage='DETACHING_RUNNER'
             self._runner.close_all_session_db_handles()
             self._identity(loop=True);self._storage()
@@ -170,29 +223,27 @@ class PreparedRuntimeConsumer:
         require(self._adapter._running is False and self._adapter._app is None
                 and self._adapter._site is None and self._adapter._runner is None,'consumer_listener_changed')
         _quiescent(self._adapter)
-        require(not self._runner._running and self._runner._executor is None
-                and self._runner._housekeeping_executor is None,'consumer_runner_restarted')
         runner,binding=self._runner,self._binding
-        require(runner._loop_heartbeat_task is None and runner._stop_task is None,
-                'consumer_runner_lifecycle_restarted')
-        for name in ('adapters','_profile_adapters','_background_tasks','_sessions',
-                     '_fatal_handler_tasks','_completion_notification_batch_tasks',
-                     '_completion_notification_batch_flush_tasks','_session_db_handles',
-                     '_startup_restore_tasks','_startup_restore_queue','_agent_cache'):
-            require(not getattr(runner,name),'consumer_runner_work_after_detach')
+        self._work_absent()
         authority=binding._authority
         require(runner.session_authority is authority and runner.session_authorities is binding._registry
                 and binding._registry.launch is authority and len(binding._registry)==1
+                and binding._registry.for_home(binding.home) is authority
+                and binding._registry.multiplexed is False
                 and authority.db is self._stores[0] and authority.runner is runner
                 and type(authority.epoch) is int and authority.epoch==self._expected.epoch
                 and authority.instance_id==self._expected.instance_id
+                and authority.profile_id==str(binding.home) and runner._draining is True
                 and authority.retiring is True and authority.retired is True,
                 'consumer_retired_authority_changed')
-        for name in ('sessions','waiters','events','native_waiters','pending_results',
-                     'pending_deliveries','adopted','executing','_turn_workers',
-                     '_managed_workers','_mutation_tasks','pending_stops','pending_steers',
-                     'cancel_obligations'):
-            require(not getattr(authority,name,None),'consumer_authority_work_after_detach')
+        descriptor=runner.session_runtime_descriptor
+        require(descriptor is binding._descriptor and type(descriptor) is dict
+                and type(descriptor.get('authority_epoch')) is int
+                and type(descriptor.get('runtime_protocol')) is int
+                and descriptor=={'instance_id':self._expected.instance_id,
+                    'authority_epoch':self._expected.epoch,'runtime_protocol':1,
+                    'state':'caller_detached','capabilities':[],'served_profiles':[]},
+                'consumer_retired_descriptor_changed')
 
     def status(self):
         self._owner._owned()

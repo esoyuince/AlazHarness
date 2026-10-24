@@ -1,0 +1,29 @@
+{
+  "job": "D3B-PREPARED-WORK-C127A6",
+  "result": "PASS_SCOPED_NATIVE_IDLE_WORK_GUARDS_NOT_ACTIVE_ADMISSION",
+  "at": "2026-10-24T07:59:48.931203+03:00",
+  "base": "e4968ae6c6265aa3f1841efacdee286a767d13a3",
+  "changedPriorSources": [
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "tests/historical_layout_f126c1.py",
+    "tests/test_confined_consumer_receipt_f126c1.py"
+  ],
+  "nativeCases": 40,
+  "ownNativeCases": 17,
+  "priorCompatibilityCases": 23,
+  "unitContracts": 13,
+  "offlineReceipts": 8,
+  "historicalReceipts": 388,
+  "actualNativeImports": 501,
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "nativeMethodsReplaced": false,
+  "explicitTaskRegistryFaultInjection": true,
+  "windowsLinuxBoundariesDoubled": true,
+  "newKernelAcceptance": false,
+  "activeBorrowedWorkAccepted": false,
+  "nativeManifestChanged": false,
+  "providerCalls": 0,
+  "mainChanged": false,
+  "pushed": false,
+  "fullStandardSuite": "PENDING_ONE_COMBINED_UNION"
+}

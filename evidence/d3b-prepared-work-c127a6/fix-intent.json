@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T07:50:38.539766+03:00",
+  "beforeConsumerSha256": "e25f87293ac28fe078f451ceb58f2b39d07ab3d9b43a09edb0adcb99704cbcd5",
+  "afterConsumerSha256": "37db74fab963e2d8fdadb5e5d8e6aac544af596d0bb24fee3afc3e4fa8e28918",
+  "qaSameAsFailingCorrectedBaseline": true,
+  "scope": "fixed native work containers read-only before check, before API effects, after cleanup await, before store close",
+  "newNativeManifestOrRegistryOrAdmission": false,
+  "compatibilitySuiteMethods": 23
+}

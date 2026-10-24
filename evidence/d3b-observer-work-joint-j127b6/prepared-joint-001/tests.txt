@@ -1,0 +1,21 @@
+test_actual_current_prepared_attach_is_readonly_and_has_no_readiness_claim (__main__.JointPreparedObserverCases.test_actual_current_prepared_attach_is_readonly_and_has_no_readiness_claim) ... ok
+test_authority_generation_drift_is_not_repaired (__main__.JointPreparedObserverCases.test_authority_generation_drift_is_not_repaired) ... ok
+test_each_open_transaction_refused_without_rollback (__main__.JointPreparedObserverCases.test_each_open_transaction_refused_without_rollback) ... ok
+test_existing_native_service_and_admission_guards_remain_closed (__main__.JointPreparedObserverCases.test_existing_native_service_and_admission_guards_remain_closed) ... ok
+test_joint_real_authority_task_is_seen_by_attached_observer (__main__.JointPreparedObserverCases.test_joint_real_authority_task_is_seen_by_attached_observer) ... ok
+test_joint_real_runner_task_is_seen_by_attached_observer (__main__.JointPreparedObserverCases.test_joint_real_runner_task_is_seen_by_attached_observer) ... ok
+test_native_turn_observer_attaches_but_cannot_invent_active_worker (__main__.JointPreparedObserverCases.test_native_turn_observer_attaches_but_cannot_invent_active_worker) ... ok
+test_no_consumer_or_default_feature_still_rejected_before_channel (__main__.JointPreparedObserverCases.test_no_consumer_or_default_feature_still_rejected_before_channel) ... ok
+test_observer_does_not_prevent_normal_detach_or_keep_store_open (__main__.JointPreparedObserverCases.test_observer_does_not_prevent_normal_detach_or_keep_store_open) ... ok
+test_other_loop_and_actor_cannot_take_over (__main__.JointPreparedObserverCases.test_other_loop_and_actor_cannot_take_over) ... ok
+test_real_pending_task_refused_without_cancellation (__main__.JointPreparedObserverCases.test_real_pending_task_refused_without_cancellation) ... ok
+test_second_observer_preserves_original_native_channel (__main__.JointPreparedObserverCases.test_second_observer_preserves_original_native_channel) ... ok
+test_source_gate_does_not_import_unqualified_worker_modules (__main__.JointPreparedObserverCases.test_source_gate_does_not_import_unqualified_worker_modules) ... ok
+test_source_generation_change_is_not_adopted (__main__.JointPreparedObserverCases.test_source_generation_change_is_not_adopted) ... ok
+test_unexpected_native_event_latches_gap_without_claiming_work (__main__.JointPreparedObserverCases.test_unexpected_native_event_latches_gap_without_claiming_work) ... ok
+test_unknown_source_and_fake_consumer_do_not_attach (__main__.JointPreparedObserverCases.test_unknown_source_and_fake_consumer_do_not_attach) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 47.288s
+
+OK

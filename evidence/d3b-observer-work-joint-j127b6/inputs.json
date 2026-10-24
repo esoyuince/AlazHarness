@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T08:03:12.713041+03:00",
+  "observerCommit": "b00bf8de9ff336ec9dd74596fe11d19983e89c82",
+  "consumerCommit": "6c64d2ba2be083d89d72c3b0c484b55f290ab081",
+  "base": "e4968ae6c6265aa3f1841efacdee286a767d13a3",
+  "soleCombinedFullOwner": "J127B6",
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "samePreparedAttachmentRerunRequired": true
+}

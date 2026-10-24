@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-24T08:05:38.304949+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_canonical_run_binding.py": "f29c96065c45eac90b9b2effab5ac73ac1ef98a79cbd60445b4aec7fac60ef31",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": "a03799a4e389cc0a48fa76f4b0ed1afb64bde81b67892241e0a02753f1751fe4",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "a677bf45b5d37551989725bda9ac236abc1118e6632df4c24ab87b41cb20c948",
+    "packages/claw-hermes/gateway_store_startup.py": "deaa11c65777a5f70f768636d69de84b4b3d9065fae48bc391d5c36be47366b7",
+    "scripts/qa/o127b6_native_prepared_observer.py": "0c15ed04ed88f35ebb61e0d6a9e6b3593c1a650601c24bf552da592ce749c596",
+    "scripts/qa/j127b6_native_joint_observer.py": "270487b9ffd365c42932b6868119654de7d5da05141d2f3559b2dcbb372af492"
+  },
+  "scope": "original14 unchanged methods plus2 real-task fault composition checks; no active agent admission",
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd"
+}

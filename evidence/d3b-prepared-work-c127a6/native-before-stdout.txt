@@ -1,0 +1,131 @@
+{"result": "FAIL", "total": 12, "passed": 2, "errors": 3, "failures": 7, "skipped": 0, "errorIds": ["__main__.PreparedWork.test_work_physical_thread_outlives_cancelled_waiter", "__main__.PreparedWork.test_work_postdetach_mailbox_task_blocks_store_close", "__main__.PreparedWork.test_work_runner_task_refused_before_api_detach"], "failureIds": ["__main__.PreparedWork.test_work_authority_mutation_refused_before_api_detach", "__main__.PreparedWork.test_work_cancelled_runner_record_is_not_pruned", "__main__.PreparedWork.test_work_done_runner_record_is_not_pruned", "__main__.PreparedWork.test_work_executor_even_without_submitted_job_is_not_prepared", "__main__.PreparedWork.test_work_heartbeat_task_refused_without_cancel", "__main__.PreparedWork.test_work_live_runner_task_not_idle", "__main__.PreparedWork.test_work_mailbox_operation_is_not_silently_untracked"], "detachObservations": [{"case": "test_work_authority_mutation_refused_before_api_detach", "stages": ["CLOSE_UNKNOWN", "DETACHED", "PREPARED"], "refusalType": "BorrowedRunnerRejected"}, {"case": "test_work_executor_even_without_submitted_job_is_not_prepared", "stages": ["CLOSE_UNKNOWN", "DETACHED", "PREPARED"], "refusalType": "BorrowedRunnerRejected"}, {"case": "test_work_mailbox_operation_is_not_silently_untracked", "stages": ["DETACHED", "DETACHED", "DETACHED"], "refusalType": null}], "nativeProductMethodsReplaced": false, "realTasksThreadsAndNativeWorkerRecord": true, "taskRegistryFaultInjectionExplicit": true, "completeAgentOrTurnRunnerExecuted": false, "windowsActorLeaseMountColdBoundariesDoubled": true, "linuxConfinementRerun": false, "serviceAdmissionActivated": false, "providerCalls": 0, "ownMethods": 12, "compatMethods": 0, "temporaryRootRemoved": true}
+=============================
+ERROR: test_work_runner_task_refused_before_api_detach (__main__.PreparedWork.test_work_runner_task_refused_before_api_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 57, in test_work_runner_task_refused_before_api_detach
+    consumer=self.prep()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c124l1_native_consumer_checks.py", line 48, in prep
+    def prep(self):return LOOP.run_until_complete(self.o.prepare_runtime(self.config,self.api))
+                          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\packages\claw-hermes\gateway_store_startup.py", line 177, in prepare_runtime
+    await consumer.prepare(gateway_config,api_config)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\packages\claw-hermes\gateway_prepared_consumer.py", line 106, in prepare
+    verify_imports(self._source_proof)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\packages\claw-hermes\gateway_prepared_consumer.py", line 47, in verify_imports
+    require(path.suffix=='.py' and path.relative_to(root).as_posix() in hashes,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'consumer_import_outside_manifest')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\packages\claw-hermes\gateway_prepared_consumer.py", line 23, in require
+    if not ok:raise PreparedConsumerRejected(code)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_prepared_consumer.PreparedConsumerRejected: consumer_import_outside_manifest
+
+======================================================================
+FAIL: test_work_authority_mutation_refused_before_api_detach (__main__.PreparedWork.test_work_authority_mutation_refused_before_api_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 64, in test_work_authority_mutation_refused_before_api_detach
+    self.known_detach_refused(consumer);self.assertFalse(task.done());self.assertIn(task,records)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 43, in known_detach_refused
+    self.assertIsNotNone(caught);self.assertEqual(stages,('ATTACHED','ATTACHED','PREPARED'))
+                                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ('CLOSE_UNKNOWN', 'DETACHED', 'PREPARED') != ('ATTACHED', 'ATTACHED', 'PREPARED')
+
+First differing element 0:
+'CLOSE_UNKNOWN'
+'ATTACHED'
+
+- ('CLOSE_UNKNOWN', 'DETACHED', 'PREPARED')
++ ('ATTACHED', 'ATTACHED', 'PREPARED')
+
+======================================================================
+FAIL: test_work_cancelled_runner_record_is_not_pruned (__main__.PreparedWork.test_work_cancelled_runner_record_is_not_pruned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 77, in test_work_cancelled_runner_record_is_not_pruned
+    self.idle_refused(consumer);self.assertTrue(task.cancelled());self.assertIn(task,records)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 35, in idle_refused
+    with self.watched(),self.assertRaises(c.PreparedConsumerRejected):consumer.check()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PreparedConsumerRejected not raised
+
+======================================================================
+FAIL: test_work_done_runner_record_is_not_pruned (__main__.PreparedWork.test_work_done_runner_record_is_not_pruned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 73, in test_work_done_runner_record_is_not_pruned
+    self.idle_refused(consumer);self.assertTrue(task.done());self.assertIn(task,records)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 35, in idle_refused
+    with self.watched(),self.assertRaises(c.PreparedConsumerRejected):consumer.check()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PreparedConsumerRejected not raised
+
+======================================================================
+FAIL: test_work_executor_even_without_submitted_job_is_not_prepared (__main__.PreparedWork.test_work_executor_even_without_submitted_job_is_not_prepared)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 82, in test_work_executor_even_without_submitted_job_is_not_prepared
+    try:self.known_detach_refused(consumer)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 43, in known_detach_refused
+    self.assertIsNotNone(caught);self.assertEqual(stages,('ATTACHED','ATTACHED','PREPARED'))
+                                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ('CLOSE_UNKNOWN', 'DETACHED', 'PREPARED') != ('ATTACHED', 'ATTACHED', 'PREPARED')
+
+First differing element 0:
+'CLOSE_UNKNOWN'
+'ATTACHED'
+
+- ('CLOSE_UNKNOWN', 'DETACHED', 'PREPARED')
++ ('ATTACHED', 'ATTACHED', 'PREPARED')
+
+======================================================================
+FAIL: test_work_heartbeat_task_refused_without_cancel (__main__.PreparedWork.test_work_heartbeat_task_refused_without_cancel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 88, in test_work_heartbeat_task_refused_without_cancel
+    try:self.idle_refused(consumer);self.assertFalse(task.cancelled())
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 35, in idle_refused
+    with self.watched(),self.assertRaises(c.PreparedConsumerRejected):consumer.check()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PreparedConsumerRejected not raised
+
+======================================================================
+FAIL: test_work_live_runner_task_not_idle (__main__.PreparedWork.test_work_live_runner_task_not_idle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 53, in test_work_live_runner_task_not_idle
+    self.idle_refused(consumer);self.assertFalse(task.done());self.assertFalse(task.cancelled())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 35, in idle_refused
+    with self.watched(),self.assertRaises(c.PreparedConsumerRejected):consumer.check()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PreparedConsumerRejected not raised
+
+======================================================================
+FAIL: test_work_mailbox_operation_is_not_silently_untracked (__main__.PreparedWork.test_work_mailbox_operation_is_not_silently_untracked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 69, in test_work_mailbox_operation_is_not_silently_untracked
+    self.known_detach_refused(consumer);self.assertFalse(task.done());self.assertIn(task,records)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 43, in known_detach_refused
+    self.assertIsNotNone(caught);self.assertEqual(stages,('ATTACHED','ATTACHED','PREPARED'))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 12 tests in 29.574s
+
+FAILED (failures=7, errors=3)
+

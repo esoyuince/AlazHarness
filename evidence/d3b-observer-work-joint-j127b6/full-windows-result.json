@@ -1,0 +1,31 @@
+{
+  "result": "PASS",
+  "total": 3327,
+  "discovered": 3327,
+  "passed": 3304,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "sourceCount": 557,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "prior546Changed": [
+    "packages/claw-hermes/gateway_canonical_run_binding.py",
+    "packages/claw-hermes/gateway_canonical_turn_observation.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "tests/historical_layout_f126c1.py",
+    "tests/test_canonical_receipt_c119v1.py",
+    "tests/test_canonical_turn_observation_c120a.py",
+    "tests/test_confined_consumer_receipt_f126c1.py",
+    "tests/test_linux_runtime_receipt_l125p1.py"
+  ],
+  "prior546Unchanged": 538,
+  "elapsedSeconds": 283.938,
+  "at": "2026-10-24T08:14:44.107551+03:00",
+  "scope": "complete standard suite passed; wrapper reporting error retained; report finalized from immutable complete runner log, no test rerun",
+  "originalWrapperExitCode": 1,
+  "testRunnerOutcome": "OK (skipped=23)",
+  "reportFinalizedFromRawLog": true,
+  "fullLogSha256": "6bf93ad5c4b732ca32b3e8306a8f5a04566167c1bb5da9e6c5c195384a644831"
+}

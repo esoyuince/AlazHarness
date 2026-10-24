@@ -1,3 +1,4 @@
+from historical_observer_o127b6 import executed_source_hash as original_hash
 """Offline custody of source-qualified native observer runs, not runtime replay."""
 import hashlib,json,unittest
 from pathlib import Path
@@ -20,7 +21,7 @@ class CurrentObserverReceipt(unittest.TestCase):
             self.assertEqual(c['resultSha256'],hashlib.sha256((E/label/'result.json').read_bytes()).hexdigest())
             self.assertEqual({n:v['sha256'] for n,v in c['nativeImports'].items()},r['nativeImports'])
             self.assertEqual(len(c['nativeImports']),c['nativeImportCount'])
-            for n,h in r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,(label,n))
+            for n,h in r['sourceHashes'].items():self.assertEqual(original_hash(ROOT,n,h),h,(label,n))
         self.assertEqual([self.c['runs'][n]['nativeImportCount'] for n in ('current-native-002','legacy-native-002','prepared-003')],[541,541,501])
     def test_normal_worker_cancellation_and_cleanup_retained(self):
         for label in ('current-native-002','legacy-native-002'):

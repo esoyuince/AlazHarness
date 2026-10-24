@@ -1,0 +1,12 @@
+{
+  "requestId": "a127b601-4c42-4820-9a10-127001000033",
+  "receiptExitCode": 1,
+  "exceptionType": "TypeError",
+  "exceptionMessage": "'<' not supported between instances of 'dict' and 'dict'",
+  "phase": "after complete unittest execution, comparing old skip dictionaries",
+  "stderrArtifactId": "cfaf1c09-eec2-43bb-9ef0-57d3802027c6",
+  "stderrArtifactSha256": "b63bb595e31cd0fdfaa0177a42e519294d25f4d31916094333e422c204c6f84c",
+  "testRunnerTerminalLine": "OK (skipped=23)",
+  "originalRawLogUnchanged": true,
+  "nativeOrFullTestsReexecutedByFinalization": false
+}

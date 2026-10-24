@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "total": 388,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "failureIds": [],
+  "errorIds": [],
+  "rawOldResultsOrExpectedHashesChanged": false,
+  "savedSourceGenerations": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "sha256": "e25f87293ac28fe078f451ceb58f2b39d07ab3d9b43a09edb0adcb99704cbcd5",
+      "path": "evidence/d3b-prepared-work-c127a6/historical-packages__claw-hermes__gateway_prepared_consumer.py.txt"
+    },
+    "tests/historical_layout_f126c1.py": {
+      "sha256": "973ca459d603a756b3ba1148ad52f34c0af9504c2758ab40832ee3427ebc094a",
+      "path": "evidence/d3b-prepared-work-c127a6/historical-tests__historical_layout_f126c1.py.txt"
+    },
+    "tests/test_confined_consumer_receipt_f126c1.py": {
+      "sha256": "54396fa48ec84f165de570706f89f4404d021b4fc89f7b72e6b9f1ad9078b298",
+      "path": "evidence/d3b-prepared-work-c127a6/historical-tests__test_confined_consumer_receipt_f126c1.py.txt"
+    }
+  },
+  "noOldNativeOrKernelRunsReexecuted": true
+}
