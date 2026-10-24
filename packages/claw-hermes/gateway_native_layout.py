@@ -58,13 +58,17 @@ def _children(path,allowed):
             found[entry.name]=(path/entry.name).lstat()
     return found
 
-def _snapshot(home,uid,gid,device,include_response=False,include_prepared=False):
+def _snapshot(home,uid,gid,device,include_response=False,include_prepared=False,include_retained=False):
     additions=frozenset(('response_store.db',)) if include_response else frozenset()
     databases=DATABASES|additions
     allowed_paths=ALLOWED|additions|{n+s for n in additions for s in ('-journal','-wal','-shm')}
     required_paths=REQUIRED|additions
     directories=DIRECTORIES|(PREPARED_DIRECTORIES if include_prepared else frozenset())
     allowed_paths=allowed_paths|(PREPARED_DIRECTORIES if include_prepared else frozenset())
+    if include_retained:
+        from gateway_retained_profile import PATHS,DIRECTORIES as EXTRA_DIRS
+        allowed_paths=allowed_paths|PATHS;required_paths=required_paths|PATHS
+        directories=directories|EXTRA_DIRS
     observed={'profile':_private(home.lstat(),uid,gid,device,True)}
     pending=[('',home)]
     while pending:
@@ -86,6 +90,14 @@ def _snapshot(home,uid,gid,device,include_response=False,include_prepared=False)
             elif name in LOCKS:require(info.st_size<=16384,'native_layout_lock_size')
             elif name=='SOUL.md':require(info.st_size==SOUL_BYTES,'native_layout_soul_size')
             elif name=='cache/schema_columns.json':require(0<info.st_size<=MAX_CACHE_BYTES,'native_layout_cache_size')
+            elif include_retained and name in ('auth.lock','runtime/active_sessions.lock'):
+                require(info.st_size==0,'native_layout_retained_lock_nonempty')
+            elif include_retained and name=='cache/tool_discovery_cache.json':
+                from gateway_retained_profile import MAX_DISCOVERY_BYTES
+                require(0<info.st_size<=MAX_DISCOVERY_BYTES,'native_layout_discovery_size')
+            elif include_retained and name=='runtime/active_sessions.json':
+                from gateway_retained_profile import MAX_ACTIVE_BYTES
+                require(0<info.st_size<=MAX_ACTIVE_BYTES,'native_layout_active_size')
     return observed
 
 def _read_aux(home,name,observed,maximum):
@@ -113,7 +125,7 @@ def _cache(raw):
     canonical=json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode()
     require(hashlib.sha256(canonical).hexdigest()==CACHE_SHA256,'native_layout_cache_content')
 
-def inspect_profile(profile,*,uid,gid,device,include_response=False,include_prepared=False):
+def inspect_profile(profile,*,uid,gid,device,include_response=False,include_prepared=False,retained=None):
     """Finite store-only admission snapshot; mount and native lease are separate.
 
     Rechecks reject observed mutation, not every ABA race. Caller must not run
@@ -128,17 +140,25 @@ def inspect_profile(profile,*,uid,gid,device,include_response=False,include_prep
         require(type(include_response) is bool,'native_layout_response_option')
         require(type(include_prepared) is bool,'native_layout_prepared_option')
         require(not include_prepared or include_response,'native_layout_prepared_requires_response')
+        if retained is not None:
+            from gateway_retained_profile import validate_receipt
+            require(include_prepared and include_response,'native_layout_retained_requires_prepared')
+            validate_receipt(retained)
         require(all(type(n) is int and n>0 for n in (uid,gid,device)),'native_layout_identity')
         require(isinstance(profile,(str,Path)),'native_layout_home')
         home=Path(profile)
         require(home.is_absolute() and home==home.resolve(strict=True)
                 and not any(p.is_symlink() or getattr(p,'is_junction',lambda:False)() for p in (home,*home.parents)),
                 'native_layout_canonical_profile')
-        first=_snapshot(home,uid,gid,device,include_response,include_prepared)
+        extra={'include_retained':True} if retained is not None else {}
+        first=_snapshot(home,uid,gid,device,include_response,include_prepared,**extra)
         soul=_read_aux(home,'SOUL.md',first,SOUL_BYTES)
         require(hashlib.sha256(soul).hexdigest()==SOUL_SHA256,'native_layout_soul_content')
         _cache(_read_aux(home,'cache/schema_columns.json',first,MAX_CACHE_BYTES))
-        require(first==_snapshot(home,uid,gid,device,include_response,include_prepared),'native_layout_changed')
+        if retained is not None:
+            from gateway_retained_profile import validate_snapshot
+            validate_snapshot(home,first,retained)
+        require(first==_snapshot(home,uid,gid,device,include_response,include_prepared,**extra),'native_layout_changed')
         return first
     except NativeLayoutRejected:raise
     except (OSError,ValueError,TypeError,KeyError,AttributeError,OverflowError,RecursionError):

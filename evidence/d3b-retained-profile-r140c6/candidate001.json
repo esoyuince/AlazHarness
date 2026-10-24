@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-25T02:19:28.790399+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_profile.py": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf",
+    "packages/claw-hermes/gateway_native_layout.py": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+    "packages/claw-hermes/gateway_store_startup.py": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b"
+  },
+  "scope": "trusted original-owner receipt, exact helper files without deletion or default relaxation",
+  "state": "UNTESTED"
+}

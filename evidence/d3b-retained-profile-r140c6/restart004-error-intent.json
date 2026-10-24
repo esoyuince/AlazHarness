@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T02:26:18.626255+03:00",
+  "bundleSha256": "a2bf07b8e6af1eefdae39dc488895a0ff17b84c2c6514f4fb764c3f61e48cbd5",
+  "driverSha256": "5376eba1ba6b3de16d21155b3e01770edb39ceb981b5bee5b53d4e4c6691f3ba",
+  "sameAssertionsAs002": true,
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeFiles": 756,
+  "productSourceHashes": {
+    "packages/claw-hermes/gateway_retained_profile.py": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf",
+    "packages/claw-hermes/gateway_native_layout.py": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+    "packages/claw-hermes/gateway_store_startup.py": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "d5ce29480570d140363deda7fe8740ad7ddb1f5e579d0befbd790ca68a0f5cc6",
+    "config/retained-profile-r140c6-sources.json": "0af0852042217675b8398e2f64c7e509935726b992d91b4bdf4080512b35f8e4"
+  },
+  "scenario": "controlled-computation-error-before-and-after-reopen",
+  "sameBundleAndDriverAs003": true
+}

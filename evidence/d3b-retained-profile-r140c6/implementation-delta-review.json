@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T02:36:09.235845+03:00",
+  "baselineSourceCount": 609,
+  "changedPriorSources": [
+    "packages/claw-hermes/gateway_native_layout.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/historical_finite_close_f135c6.py"
+  ],
+  "other605BaselineSourcesUnchanged": true,
+  "runtimeSameAsActualLinuxRuns": true,
+  "oldSourceManifestsUnchanged": true,
+  "nativeSourceAnd11PatchesUnchanged": true,
+  "expectedOldDigestOrRawResultsChanged": false,
+  "independentCommit": "fd39190509f4a9cae7643690aceb312b7a232765 test(restart): verify retained Linux replay and prewrite profile refusals",
+  "independentEvidenceCopiedWithProvenanceNotHistoryRewrite": true
+}

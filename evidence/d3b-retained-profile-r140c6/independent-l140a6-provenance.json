@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-25T02:27:06.939244+03:00",
+  "files": {
+    "restart-001-result.json": {
+      "originalPath": "evidence/d3b-retained-profile-l140a6/restart-001-result.json",
+      "sha256": "be99520dbd6123554c5be9b6c19fb0f5c1ed02597622071b063db83db35348cb"
+    },
+    "restart-001-transport-result.json": {
+      "originalPath": "evidence/d3b-retained-profile-l140a6/restart-001-transport-result.json",
+      "sha256": "8414324f13ff0b7d5349352aaaf8eb9ff336be1c218cf3c7e7869ffd6cdf28bc"
+    },
+    "restart-001-intent.json": {
+      "originalPath": "evidence/d3b-retained-profile-l140a6/restart-001-intent.json",
+      "sha256": "ac98f301e1c5fa6e645dc4f2b1d2268059f09a59732e60f6dd1664d389d79df6"
+    },
+    "restart-001-transport-manifest.json": {
+      "originalPath": "evidence/d3b-retained-profile-l140a6/restart-001-transport-manifest.json",
+      "sha256": "73d832e4fce383c4ab044dfc76e8a8a8bf7ad92045be8b36eceaf476e7cc46af"
+    },
+    "l140a6_retained_negative_controls.py.txt": {
+      "originalPath": "scripts/qa/l140a6_retained_negative_controls.py",
+      "sha256": "f749ee8a23cbc3eb7c4617ee49879e6de47143403b0366cdb8d19690c2f15a05"
+    }
+  },
+  "candidateLayoutHashes": {
+    "packages/claw-hermes/gateway_native_layout.py": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+    "packages/claw-hermes/gateway_store_startup.py": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+    "packages/claw-hermes/gateway_retained_profile.py": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf"
+  },
+  "sameThreeCurrentLayoutSources": true,
+  "currentSourceExtensionNotRunByOriginalPeer": true,
+  "nativeReexecutionByCopy": false,
+  "originalBranchHistoryUnchanged": true
+}

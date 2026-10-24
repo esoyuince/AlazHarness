@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T02:22:43.461889+03:00",
+  "originalOutcome": "restart cold startup+stored result intact+no recompute reached; wrong QA response shape assertion failed",
+  "sourceConfirmed": "native observe_api_turn returns (result,usage), not result alone",
+  "correction": "compare entire two-member API tuple and new-work result member; product and native sources unchanged",
+  "oldDriverSha256": "8f3504f69a256e3cd854a1597b655e4ca851200f4661049371381d7a42d95da2",
+  "newDriverSha256": "5376eba1ba6b3de16d21155b3e01770edb39ceb981b5bee5b53d4e4c6691f3ba",
+  "firstFailurePreserved": true,
+  "bundleSha256": "284f0a24c69fe449ad69dd0cb825bb9e5838d781ecc1b9a3afa1f42eb8b04c30",
+  "transportSha256": "75243b4973f0d7b9330b10f845df7234d8d7aada7c50d827a3db682df6a051ef",
+  "driverSha256": "5376eba1ba6b3de16d21155b3e01770edb39ceb981b5bee5b53d4e4c6691f3ba",
+  "scope": "same genuine Linux cold owner restart/replay/newwork/close, corrected native return-shape assertion"
+}

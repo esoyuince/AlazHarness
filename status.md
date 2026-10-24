@@ -1,84 +1,83 @@
 # AlazHarness - status
 
-## L139C6 REAL LINUX FINITE OWNER PASS / RETAINED PROFILE RESTART NOT ACCEPTED
+## R140C6 RETAINED PROFILE REOPEN - SCOPED PASS / LOCAL CHECKPOINT
 
-Active branch alaz/d3b-linux-owner-l139c6.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-linux-owner-l139c6.
-Base0b20f61; main local/remote remains f08fab0, previous push/merge already complete.
-Native feature d1516731308de8e87130dc68124e69aad35d6911 remains optional/uninstalled.
-Installed nativeeb75627 and all33root user-file changes preserved. No remote write.
+Active branch alaz/d3b-retained-profile-r140c6.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-retained-profile-r140c6.
+Base508bf5a (L139 realLinux normal/error and full3464 already accepted). Read live
+GitHEAD for final local checkpoint. Main local/remote remainsf08fab0; no newpush.
+Installed nativeeb75627 unchanged. Candidate d151 source/11patches not modified.
 
-### Actual Linux normal and compute-error acceptance
+### Actual same-profile reopen and fresh work
 
-Ordinary UID23001/GID23003 in dedicatedP71C, actual Linux ext4 mount observation,
-ProfileLease, finite metadata, separate fixed cold helper processes and six
-cold/live checks. No OS/product method doubles, no fabricated metadata. Original
-NativeStoreStartup owns exactly3connections and one accepted epoch. Supported
-native environment resolves fake-model route WITHOUT config.yaml, loader override,
-new layout allowance or source gate relaxation. No product/native source changes.
+Real P71C ordinaryUID23001/GID23003/Python3.12, ext4/lease/metadata/cold helper/
+SQLite/authority/finite/TurnRunner physicalthread/native settlement/cleanup real.
+Only model factory/computation/close fake. Actual normal and controlled-error
+scenarios bothPASS exit0 using exact same bundle/driver (failure flag only).
+First owner computes then closes; captures trusted receipt before caller releases.
+Same retained profile/3DBinodes/helperfiles reopen at epoch2, exact oldrequest
+returns original result+usage/ID/generation without recompute. SameIDchangedbody
+refused. NEWrequest on same session computes once at epoch2/gen2; original saved
+result remains identical. Normal secondowner retires runtime/sessions and closes3;
+registry0 before fixture cleanup, second trusted receipt captured, caller releases.
+Helper files never removed to manufacture success. Temp profile/transport removed
+only after complete lifecycle. Same Python process with TWO cold owners, NOT
+process kill/reboot/crash/powerloss. Active kernel isolation/HTTP/realLLM not accepted.
 
-Same source/driver/bundle normal17+25+8 -> native saved50 and controlled model error
--> native failed/completedfalse. Actual API->authority->finite->TurnRunner on
-physical non-mainthread->native commit_and_publish->settle_session_input observed;
-no manual terminal-row mutation. Exact retry returns saved result, computation1;
-sameID/different body admission_conflict. Shared original primary state, zeroextra
-state.db opens during turn. Model factory/computation/close alone a finite fixture.
+### Explicit bounded contract, old defaults preserved
 
-Sealed runtime retirement->native memory retirement->API/runner detach->original
-owner closes all3SQLhandles. SQL total_changes stable during retire/detach,
-registry0 BEFORE fixture cleanup, real caller lease retained then caller releases.
-15nested checks per scenario, two separate actual runs exit0; not30distinct tests.
-Transport/profile temps removed, existing1162dependency files unchanged, no install.
-Normal721/error718native imports all immutableGitd151 and selected755manifest.
-Import bind attempt denied, stack names_has_ipv6; no successful listener and audit
-hook is NOT hostile-code sandbox. Mount/ns identities unchanged, not confinement.
+New gateway_retained_profile.capture(originalClosedOwner) checks retained still-held
+caller lease, detached finite source, exact discovery cache against source-manifest
+candidates and original native AST predicate. Frozen trusted receipt binds home/
+3DBidentity/epoch/instance/nativefeature/exactcachebytes. Receipt is trusted caller
+input like existing store expectations, NOT a signature or hostile-process barrier.
+Only startup retained_profile=receipt + preparedthree mode admits empty auth.lock,
+empty cache/documents, private runtime/empty active lock and exactly entries:[],
+and bounded verified tool cache. No arbitrary config/auth/env/live entry pruning.
+Cold/prepared defaults and kernel projection allowances stay unchanged.
 
-### Actual restart boundary
+Actual second-owner newwork found missing transcript repair module; retained-only
+756source manifest adds exactly immutable agent/agent_runtime_helpers.py. Default
+755finite+canonical+prepared manifests unchanged. Selected solely by trustedowner
+receipt and finite mode, current identity rechecked. No bypass/source substitution.
+Existing optional command-secret-source missing warning not enabled/hidden.
 
-Normal work leaves cache/tool_discovery_cache.json and runtime/active_sessions
-state+lock. Corrected actual second owner startup on the SAME unchanged completed
-profile refuses native_layout_unexpected_entry before writable SQL/epoch. All3DB
-hashes unchanged. This is a reproducible integration gap, NOT restart success.
-No generated records deleted to manufacture acceptance. First restart-control QA
-mistakenly requested expectation AFTER old lease finished: profile_lease_finished;
-raw failure/driver retained. Corrected control captures immutable expectation while
-ownerVERIFIED; same product and assertions, expected-refusal commandexit0.
+### Evidence and tests
 
-### Independent validation and full regression
+Normal722/error719 and independent721native import hashes equal immutabled151.
+Independent L140A6 actualLinux16bad retained startup predicates all refused before
+parentSQL/epoch, same3DBhashes, then valid reopen/replay with compute1. Same3layout
+files tested; later one-module source extension/newwork verified in producer only.
+Raw independent evidence copied with provenance; original branch fd39190 retained.
 
-Q139R6 actualLinux boundary one execution18nested predicatesPASS, no OS/model work
-replacement: config/mode/mount/thread/schema refusal, each open transaction blocks
-close without rollback, exact3handles, caller lease order. Raw result/driver/intent
-readback copied with provenance; original peer files/history untouched/not merged.
-Copying results is not an additional native run.9new offline receipt methodsPASS.
+NEW full3492=3469PASS/23SKIP/0ERROR/0FAIL, command0031 exit0;616source/config/test
+hashes+11patches stable.28focused=18unit+10offline receipts are full-suite subsets,
+not28Linux runs. Same23skipIDs/reasons, not replayed as Linux.605of609prior files
+unchanged;3runtime+1historicalhelper changed,7newsource/config/test files. New runtime
+matches the exact successfulLinux executions. Local static records separately.
 
-NEW COMPLETE standardWindows3464=3441PASS/23SKIP/0ERROR/0FAIL, actual command000016
-exit0.609source/config/test hashes and11patches stable, all605prior files unchanged.
-Same23skip IDs/reasons preserved, no Linux/native rerun by fullsuite. Added3QA
-scripts+1offline test only. Local static is separate, recorded static-final.txt.
-Current native/full commands terminal; selected-file commit/document checkpoint.
+First actual restart001 failed a QA result-vs(result,usage) comparison; native tuple
+shape checked and corrected without product change. Restart002 oldreplay passed,
+newwork exposed actual missing transcript source; exact one-module selector fixed.
+Full0013490 ended2historic hash failures, not runtime/test expectation change.
+Exact3named oldsource archive resolver+negative digest tests added; old expected
+hashes/raw results retained. Fresh final full passed, no relabelled old acceptance.
 
-### Next exact work
+### Next boundary and guardrails
 
-Qualify supported native auxiliary-output lifetime or a bounded explicit persisted
-active-profile layout, then repeat real retained-profile restart with saved-result
-identity. Do not silently widen old cold layout, erase cache/registry files, force
-an epoch or call refusal success. Then test THIS source under original active
-namespace/seccomp/Landlock and authenticatedHTTP. Earlier prepared isolation is
-historical only. RealAIAgent/tool/memory manager, provider budgets, crash/powerloss
-and M1/M2 remain open. No root/mount/system/service/production/remote/main changes.
+Commit checked local source and evidence, then publish only after bounded outgoing
+review and exactSHA CI. Next actual active namespace/seccomp/Landlock plus retained
+profile projection/receipt handling, then authenticated HTTP. Separate-process
+trusted receipt handoff/crash recovery and model/tool/memory/budgets remain open.
+No root/WSLprovisioning/install/permissions/service/model/provider/remote/main write.
+Root33user dirtyfiles and native vendor preserved. All native/full commands terminal;
+local static and scoped commit completion recorded below. No background promise.
 
 ### Records
 
-Docs/D3B-LINUX-OWNER-L139C6.md.
-Evidence/d3b-linux-owner-l139c6: owner001normal/owner002error raw transports/results,
-source-custody, restart001failedcontrol/restart002expectedrefusal, independent-q139r6
-exact copied records/provenance, focused-tests, full-windows-result/log, before/after
-sources+patches, full-skips, protected-state, restart-next-source-review and summary.
-Three QA scripts l139c6_linux_owner_finite,linux_transport,linux_restart_probe.
-Status histories l139c6-parent/work-log preserved. Read liveGitHEAD for final commit.
-
-
-### Final local delivery checkpoint
-
-Tested QA/evidence committed7559b6befbfc0e2583733fb25e9d0e1b7d08c63c; full3464=3441PASS23SKIP exit0, staticPASS.609sources+11patches still exact, all605base sources unchanged. Normal/error realLinux owner workflows accepted; restart only expected refusal, never relabelled. Raw independent checks retain original source provenance. Final docs-only checkpoint records delivery; no runtime/full/native replay. Local/remote mainf08fab0 and installednativeeb75627 unchanged, no branchpush. Root33file contents+status preserved. All own commands terminal, no background/delegated job started. Next retained-profile contract before active kernel/HTTP.
+Docs/D3B-RETAINED-PROFILE-R140C6.md.
+Evidence/d3b-retained-profile-r140c6/: summary,source-custody, normalrestart003,
+errorrestart004, independent-l140a6/provenance, historical-source-bindings,
+firstfailures001/002, full001FAIL and full002PASS/rawlogs/source+patch manifests,
+focused28-final, protected-state, implementation-delta-review, static-final.
+Trusted source config/retained-profile-r140c6-sources.json distinct from old755.

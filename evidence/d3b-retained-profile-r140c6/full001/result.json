@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-25T02:32:22.594516+03:00",
+  "result": "FAIL",
+  "total": 3490,
+  "passed": 3465,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 2,
+  "errorIds": [],
+  "failureIds": [
+    "test_api_owner_i133p1.NativeReceipt.test_exact_current_loaded_sources_and_manifest",
+    "test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_current_native_package_and_qa_bytes"
+  ],
+  "sourcesStable": true,
+  "patchesStable": true,
+  "same23SkipIdsAndReasons": true,
+  "elapsedSeconds": 226.957,
+  "exitCode": 1,
+  "rawLogSha256": "0e7e6766e4db5af47d46f3bc9fb22fc2d0ee3d4fa11aff9d4982033222a463b0"
+}

@@ -22,6 +22,7 @@ CANONICAL_API_FEATURE='5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979'
 CANONICAL_API_MANIFEST_SHA256='f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27'
 FINITE_FEATURE='d1516731308de8e87130dc68124e69aad35d6911'
 FINITE_MANIFEST_SHA256='30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4'
+RETAINED_MANIFEST_SHA256='0af0852042217675b8398e2f64c7e509935726b992d91b4bdf4080512b35f8e4'
 ROOT=Path(__file__).resolve().parents[2]
 
 class PreparedConsumerRejected(RuntimeError):pass
@@ -29,7 +30,7 @@ class PreparedConsumerRejected(RuntimeError):pass
 def require(ok,code):
     if not ok:raise PreparedConsumerRejected(code)
 
-def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=False):
+def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=False,retained_profile=False):
     """Read fixed source files, never data files, before native consumer imports."""
     require(type(local_admission) is bool,'consumer_admission_option')
     require(type(canonical_api) is bool and (not canonical_api or local_admission),
@@ -46,6 +47,10 @@ def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=Fals
     if finite_turn:
         path='config/finite-close-f135c6-sources.json'
         expected=FINITE_MANIFEST_SHA256;feature=FINITE_FEATURE
+    require(type(retained_profile) is bool and (not retained_profile or finite_turn),
+            'consumer_retained_source_option')
+    if retained_profile:
+        path='config/retained-profile-r140c6-sources.json';expected=RETAINED_MANIFEST_SHA256
     raw=(ROOT/path).read_bytes()
     require(hashlib.sha256(raw).hexdigest()==expected,'consumer_manifest_changed')
     manifest=json.loads(raw);require(manifest['nativeFeature']==feature,'consumer_feature')
@@ -89,6 +94,7 @@ class PreparedRuntimeConsumer:
         require(type(finite_turn) is bool and (not finite_turn or canonical_api),
                 'consumer_finite_option')
         self._finite_turn=finite_turn
+        self._retained_source_receipt=getattr(owner,'_retained_profile',None)
         self._canonical_api=canonical_api;self._publication_phase='NEW'
         self._local_admission=local_admission
         self._selected_feature=ADMISSION_FEATURE if local_admission else FEATURE
@@ -116,6 +122,8 @@ class PreparedRuntimeConsumer:
                     ADMISSION_FEATURE if self._local_admission else FEATURE),
                 'consumer_generation_changed')
         o=self._owner;o._owned()
+        require(getattr(o,'_retained_profile',None) is getattr(self,'_retained_source_receipt',None),
+                'consumer_retained_receipt_changed')
         require(o._stage=='VERIFIED' and o._prepared_consumer is self
                 and o._held is self._held and o._mount is self._mount
                 and o._expected is self._expected and o._response_expected is self._response_expected,
@@ -148,7 +156,9 @@ class PreparedRuntimeConsumer:
         self._stage='QUALIFYING'
         try:
             self._identity(loop=True);self._storage()
-            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True,finite_turn=True)
+            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True,finite_turn=True,retained_profile=True)
+                                if self._finite_turn and self._retained_source_receipt is not None else
+                                qualify_sources(local_admission=True,canonical_api=True,finite_turn=True)
                                 if self._finite_turn else
                                 qualify_sources(local_admission=True,canonical_api=True)
                                 if self._canonical_api else

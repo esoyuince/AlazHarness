@@ -1,0 +1,79 @@
+"""Actual-Linux negative inputs for a fresh caller-owned retained profile.
+Factory/callbacks are test composition only. No product functions are replaced.
+All bad inputs are confined to the explicitly owned fixture and restored byte-exact;
+restoration does not represent product cleanup or valid startup.
+"""
+import hashlib,json,os,stat
+from pathlib import Path
+
+DATABASES=('state.db','runs_idempotency.db','response_store.db')
+def db_hashes(home):return {n:hashlib.sha256((home/n).read_bytes()).hexdigest() for n in DATABASES}
+
+def run_controls(home:Path,make_owner,sqlite_open_count):
+    assert os.name=='posix' and os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+    home=home.resolve(strict=True)
+    assert home.name.startswith(('alaz-l139c6-home-','alaz-r140c6-','alaz-l140a6-'))
+    active=home/'runtime/active_sessions.json';cache=home/'cache/tool_discovery_cache.json'
+    assert json.loads(active.read_bytes())=={'entries':[]} and cache.is_file()
+    startdb=db_hashes(home);events=[]
+    snapshots={p.relative_to(home).as_posix():(p.read_bytes(),stat.S_IMODE(p.stat().st_mode)) for p in home.rglob('*') if p.is_file()}
+    key=next(iter(json.loads(cache.read_bytes())))
+    def check(name,apply,restore):
+        original_db=db_hashes(home);before=sqlite_open_count();owner=held=None
+        try:
+            apply();owner,held=make_owner()
+            try:owner.start()
+            except Exception as exc:
+                assert owner._state is None and owner._replay is None and owner._response is None,name
+                assert owner._epoch_attempted is False,name
+                assert db_hashes(home)==original_db and sqlite_open_count()==before,name
+                events.append({'case':name,'exception':type(exc).__name__,'reason':str(exc),
+                               'cause':str(exc.__cause__),'parentSqliteOpens':0,'databaseHashesUnchanged':True,
+                               'writableStoreConstructed':False,'epochAttempted':False})
+            else:raise AssertionError('unsafe retained profile accepted:'+name)
+        finally:
+            if owner is not None:owner.close()
+            if held is not None:held.finish()
+            restore()
+        assert db_hashes(home)==original_db
+    def bytes_case(name,path,value):
+        raw=path.read_bytes();mode=stat.S_IMODE(path.stat().st_mode)
+        check(name,lambda:path.write_bytes(value),lambda:(path.write_bytes(raw),path.chmod(mode)))
+    bytes_case('live_active_entry_refused',active,json.dumps({'entries':[{'lease_id':'owned-negative-lease','session_id':'fixture','pid':os.getpid(),'surface':'api','track_liveness':True}]}).encode())
+    bytes_case('duplicate_active_key_refused',active,b'{"entries":[],"entries":[]}')
+    bytes_case('malformed_active_json_refused',active,b'{bad')
+    bytes_case('unknown_active_field_refused',active,b'{"entries":[],"unknown":true}')
+    bytes_case('nonfinite_active_json_refused',active,b'{"entries":[],"unknown":NaN}')
+    bytes_case('oversize_active_json_refused',active,b' '*131073)
+    altered=json.loads(cache.read_bytes());altered[key][2]=not altered[key][2]
+    bytes_case('false_discovery_verdict_refused',cache,json.dumps(altered).encode())
+    altered=json.loads(cache.read_bytes());altered['/tmp/unqualified-negative-tool.py']=altered.pop(key)
+    bytes_case('foreign_discovery_path_refused',cache,json.dumps(altered).encode())
+    bytes_case('duplicate_discovery_path_refused',cache,b'{'+json.dumps(key).encode()+b':[1,2,true],'+json.dumps(key).encode()+b':[1,2,true]}')
+    bytes_case('auth_lock_payload_refused',home/'auth.lock',b'not-empty')
+    for name,path in (('forbidden_config_refused',home/'config.yaml'),('nonempty_documents_refused',home/'cache/documents/unqualified.txt'),('unrelated_runtime_file_refused',home/'runtime/other.json')):
+        assert not path.exists()
+        check(name,lambda p=path:p.write_bytes(b'owned-negative-fixture'),lambda p=path:p.unlink())
+    mode=stat.S_IMODE(active.stat().st_mode)
+    check('public_active_file_refused',lambda:active.chmod(0o644),lambda:active.chmod(mode))
+    raw=active.read_bytes();sibling=home.parent/(home.name+'-l140a6-target');assert not sibling.exists()
+    sibling.write_bytes(raw);sibling.chmod(0o600)
+    try:
+        def link(symbolic):
+            active.unlink()
+            if symbolic:active.symlink_to(sibling)
+            else:os.link(sibling,active)
+        def restore_link():
+            active.unlink();active.write_bytes(raw);active.chmod(mode)
+        check('symlink_active_file_refused',lambda:link(True),restore_link)
+        check('hardlink_active_file_refused',lambda:link(False),restore_link)
+    finally:sibling.unlink()
+    assert db_hashes(home)==startdb
+    end={p.relative_to(home).as_posix():(p.read_bytes(),stat.S_IMODE(p.stat().st_mode)) for p in home.rglob('*') if p.is_file()}
+    # Native ProfileLease legitimately rewrites its own ownership marker; no other data changes.
+    assert set(end)==set(snapshots)
+    assert all(end[name]==data for name,data in snapshots.items() if name!='gateway.lock')
+    return {'result':'PASS_REAL_RETAINED_STARTUP_REFUSALS','nestedCases':len(events),'cases':events,
+            'originalAllThreeDatabaseHashesUnchanged':db_hashes(home)==startdb,
+            'allNonLeaseMarkerFilesRestoredByteExact':True,'noProductFunctionsReplaced':True,
+            'fixtureMutationsOnly':True,'normalRestartSuccessNotInferred':True}

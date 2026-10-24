@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-25T02:21:30.455423+03:00",
+  "bundleSha256": "b3fbee94e31239a66abf0fcf725e37a1548b1900a916eea488e0cdbd9a69063f",
+  "bundleBytes": 5975007,
+  "nativeFiles": 755,
+  "driverSha256": "8f3504f69a256e3cd854a1597b655e4ca851200f4661049371381d7a42d95da2",
+  "transportSha256": "75243b4973f0d7b9330b10f845df7234d8d7aada7c50d827a3db682df6a051ef",
+  "scope": "real unprivileged Linux two successive owners on same untouched profile; original request replay then new compute, no crash/kernel/provider claim"
+}

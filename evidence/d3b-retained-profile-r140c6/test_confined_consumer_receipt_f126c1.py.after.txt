@@ -1,0 +1,13 @@
+test_actual_binary_imports_and_source_frames (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_actual_binary_imports_and_source_frames) ... ok
+test_current_native_package_and_qa_bytes (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_current_native_package_and_qa_bytes) ... ok
+test_explicit_layout_and_private_scratch_no_broader_policy (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_explicit_layout_and_private_scratch_no_broader_policy) ... ok
+test_no_service_provider_or_full_agent_claim (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_no_service_provider_or_full_agent_claim) ... ok
+test_real_kernel_identity_and_no_ambient_escape (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_real_kernel_identity_and_no_ambient_escape) ... ok
+test_recorded_teardown_and_all_prior_failures_remain_historical (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_recorded_teardown_and_all_prior_failures_remain_historical) ... ok
+test_restart_and_exact_release_order (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_restart_and_exact_release_order) ... ok
+test_terminal_current_pair_exact_scoped_counts (test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_terminal_current_pair_exact_scoped_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.449s
+
+OK

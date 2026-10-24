@@ -43,7 +43,7 @@ class NativeStoreStartup:
     expose HTTP or redispatch a partial pair. Even terminal pairs have not been
     reconciled here. Public native handles are available ONLY after verification.
     """
-    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None,prepared_layout=False):
+    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None,prepared_layout=False,retained_profile=None):
         require(type(held) is live.profiles.ProfileLease,'startup_native_lease_required')
         require(type(expected_mount) is live.mounts.ExpectedMount,'startup_mount_expectation')
         require(type(expected) is live.PreparedStoreExpectation and expected.journal_mode=='delete',
@@ -54,6 +54,15 @@ class NativeStoreStartup:
         require(type(prepared_layout) is bool,'startup_prepared_layout_option')
         require(not prepared_layout or response_expected is not None,'startup_prepared_layout_requires_response')
         self._prepared_layout=prepared_layout
+        if retained_profile is not None:
+            from gateway_retained_profile import validate_receipt
+            validate_receipt(retained_profile)
+            require(prepared_layout and response_expected is not None,'startup_retained_requires_prepared')
+            require(retained_profile.epoch==expected.epoch and retained_profile.instance_id==expected.instance_id
+                    and retained_profile.database_identities==(expected.state_identity,expected.replay_identity,
+                                                               response_expected.response_identity),
+                    'startup_retained_epoch_or_stores')
+        self._retained_profile=retained_profile
         if response_expected is not None:
             response_preopen._pair(response_expected,expected)
         self._response_expected=response_expected
@@ -94,6 +103,7 @@ class NativeStoreStartup:
             self._stage='LAYOUT'
             options={'include_response':True} if self._response_expected is not None else {}
             if self._prepared_layout:options['include_prepared']=True
+            if self._retained_profile is not None:options['retained']=self._retained_profile
             snapshot=layout.inspect_profile(home,uid=self._actor[1],gid=self._actor[2],
                                             device=self._expected.state_identity[0],**options)
             if self._response_expected is not None:

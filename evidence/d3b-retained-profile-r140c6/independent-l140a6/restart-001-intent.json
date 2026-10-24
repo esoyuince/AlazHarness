@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T02:21:36.239808+03:00",
+  "bundleSha256": "11aadf320263aecad1189f00dd0f039b7a951b7ed43f867160d76e4e779a1f93",
+  "bundleBytes": 5992415,
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "candidateHashes": {
+    "packages/claw-hermes/gateway_native_layout.py": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+    "packages/claw-hermes/gateway_store_startup.py": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+    "packages/claw-hermes/gateway_retained_profile.py": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf"
+  },
+  "transportSha256": "39846ddea063c0452e7ed33a8926acddc53b041474cb4a0e923f73df0665db94",
+  "scenario": "realLinux16negativeStartups+sameProfileEpoch2+savedResultReplay",
+  "uid": 23001,
+  "root": false,
+  "kernelConfinement": false,
+  "sourceRuntimeOrPeerEditsDuringRun": false
+}

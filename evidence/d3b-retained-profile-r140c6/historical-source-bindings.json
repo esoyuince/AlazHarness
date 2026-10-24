@@ -1,0 +1,18 @@
+{
+  "base": "508bf5af1bb0f20b8d526abbda974cde0aeac278",
+  "sources": {
+    "packages/claw-hermes/gateway_native_layout.py": {
+      "path": "evidence/d3b-retained-profile-r140c6/gateway_native_layout.before.py.txt",
+      "sha256": "efce686a9a8f07d60454e9394b7069ef0214a0f5792e567f0c657973ce3356f7"
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "path": "evidence/d3b-retained-profile-r140c6/gateway_store_startup.before.py.txt",
+      "sha256": "23b0dc7bf9e7003a1ec593248142f0bc7a2871e471a140a0d62484ca38c9cd13"
+    },
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "path": "evidence/d3b-retained-profile-r140c6/gateway_prepared_consumer.before.py.txt",
+      "sha256": "55693d315fcff2d9bef3129ba83aa83dc3b1b728b2316324c340ba85d257f151"
+    }
+  },
+  "purpose": "only exact prior source generations used in historical receipts; no changed expected digests or new runtime acceptance"
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-25T02:24:58.262177+03:00",
+  "originalFailure": "reopened saved result replay passed, new work refused transcript read due missing reviewed native module",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "addedNativeSource": "agent/agent_runtime_helpers.py",
+  "addedSha256": "295bd0adcb698ddeb87966f77a79ef1c8016702641db401bfe692ffb63e0dd49",
+  "priorSources": 755,
+  "selectedRetainedSources": 756,
+  "noNativeSourceModification": true,
+  "noExistingManifestModification": true,
+  "explicitSelector": "trusted owner.retained_profile plus finite_turn; defaults stay755",
+  "topLevelLocalDependenciesAlreadyWithin755": true,
+  "newRuntimePermissions": false,
+  "originalFailureRetained": true
+}
