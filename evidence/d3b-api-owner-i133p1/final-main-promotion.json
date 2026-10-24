@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-24T18:19:07.295129+03:00",
+  "oldMain": "20ab7e4e9347a5c631175c703a43073970c67a8e",
+  "finalMain": "94f509d028e45790adef9d27ffa237a042a2151d",
+  "githubStatusId": 57167975962,
+  "githubContext": "alaz/local-ci",
+  "githubState": "success",
+  "actualServer": {
+    "state": "TERMINAL",
+    "sha": "94f509d028e45790adef9d27ffa237a042a2151d",
+    "job": "c47f2016-cfbd-11f1-8624-9adee1db478a",
+    "status": "success",
+    "buildStatus": "success",
+    "sourceReuseFrom": null,
+    "startedUnix": 1792854939,
+    "finishedUnix": 1792855127,
+    "exitCode": 0,
+    "timeout": false,
+    "oomKilled": false,
+    "tests": {
+      "total": 3402,
+      "passed": 3397,
+      "failed": 0,
+      "skipped": 5,
+      "executed": 3402,
+      "suite_errors": 0
+    }
+  },
+  "docsOnly": true,
+  "force": false,
+  "nativeActivation": false,
+  "remoteMainVerified": true,
+  "localMainVerified": true,
+  "mainWorktreeClean": true,
+  "all586SourceAnd10PatchHashesExact": true
+}

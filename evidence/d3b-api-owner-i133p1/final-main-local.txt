@@ -1,0 +1,31 @@
+Updating 20ab7e4..94f509d
+Fast-forward
+ docs/PUBLICATION-24OCT-P132L1.md                   |   4 +
+ docs/status-history/p132l1-publication-work-log.md |  65 +++++++++++
+ .../budget-push-intent.json                        |  10 ++
+ evidence/publication-24oct-p132l1/budget-push.json |  14 +++
+ evidence/publication-24oct-p132l1/budget-push.txt  | Bin 0 -> 156 bytes
+ .../budget-server-ci-observations.json             | 117 +++++++++++++++++++
+ .../budget-server-ci-result.json                   |  25 ++++
+ .../ci-accepted-before-main.json                   |  89 ++++++++++++++
+ .../local-main-fast-forward.txt                    | Bin 0 -> 551379 bytes
+ .../main-publication-intent.json                   |  21 ++++
+ .../main-publication-result.json                   |  31 +++++
+ evidence/publication-24oct-p132l1/main-push.txt    | Bin 0 -> 129 bytes
+ .../publication-summary.json                       |  46 ++++++++
+ .../static-delivery-docs.txt                       | Bin 0 -> 399 bytes
+ status.md                                          | 130 +++++++++++----------
+ 15 files changed, 489 insertions(+), 63 deletions(-)
+ create mode 100644 docs/status-history/p132l1-publication-work-log.md
+ create mode 100644 evidence/publication-24oct-p132l1/budget-push-intent.json
+ create mode 100644 evidence/publication-24oct-p132l1/budget-push.json
+ create mode 100644 evidence/publication-24oct-p132l1/budget-push.txt
+ create mode 100644 evidence/publication-24oct-p132l1/budget-server-ci-observations.json
+ create mode 100644 evidence/publication-24oct-p132l1/budget-server-ci-result.json
+ create mode 100644 evidence/publication-24oct-p132l1/ci-accepted-before-main.json
+ create mode 100644 evidence/publication-24oct-p132l1/local-main-fast-forward.txt
+ create mode 100644 evidence/publication-24oct-p132l1/main-publication-intent.json
+ create mode 100644 evidence/publication-24oct-p132l1/main-publication-result.json
+ create mode 100644 evidence/publication-24oct-p132l1/main-push.txt
+ create mode 100644 evidence/publication-24oct-p132l1/publication-summary.json
+ create mode 100644 evidence/publication-24oct-p132l1/static-delivery-docs.txt
