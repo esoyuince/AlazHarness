@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T08:57:09.819361+03:00",
+  "candidate": "candidate-001.json",
+  "qaSha256": "1f3d1c24824a7c2e219ca01a1a9b88e5f57b2bc3562d6b0056b7f6ca3f45c742",
+  "original22BodiesUnchanged": true,
+  "added": "actual native tracked_write cancellation/inflight commit retention and invalid empty registry types",
+  "scope": "24 methods on unchanged native5files, no agent/HTTP/provider/kernel run"
+}

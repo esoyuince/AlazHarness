@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T08:58:41.378543+03:00",
+  "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+  "nativeCandidate": "frozen independent001 unchanged",
+  "scope": "four extra release-barrier/profile/config guards, no existing test weakening"
+}

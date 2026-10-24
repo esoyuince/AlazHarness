@@ -1,0 +1,45 @@
+test_review_late_response_refuses_api_detach_before_effect (__main__.IndependentLifecycle.test_review_late_response_refuses_api_detach_before_effect) ... FAIL
+test_review_late_real_receipt_task_blocks_runner_after_api_detach (__main__.IndependentLifecycle.test_review_late_real_receipt_task_blocks_runner_after_api_detach) ... FAIL
+test_review_foreign_context_refuses_pure_admission_guard (__main__.IndependentLifecycle.test_review_foreign_context_refuses_pure_admission_guard) ... FAIL
+test_review_changed_configuration_refuses_pure_admission_guard (__main__.IndependentLifecycle.test_review_changed_configuration_refuses_pure_admission_guard) ... FAIL
+
+======================================================================
+FAIL: test_review_late_response_refuses_api_detach_before_effect (__main__.IndependentLifecycle.test_review_late_response_refuses_api_detach_before_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-active-lifecycle-a128c6\scripts\qa\q128c6_native_lifecycle_checks.py", line 165, in test_review_late_response_refuses_api_detach_before_effect
+    with self.watched(),self.assertRaises((Reject,RunnerReject)):LOOP.run_until_complete(self.api.disconnect())
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_review_late_real_receipt_task_blocks_runner_after_api_detach (__main__.IndependentLifecycle.test_review_late_real_receipt_task_blocks_runner_after_api_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-active-lifecycle-a128c6\scripts\qa\q128c6_native_lifecycle_checks.py", line 172, in test_review_late_real_receipt_task_blocks_runner_after_api_detach
+    with self.watched(),self.assertRaises((Reject,RunnerReject)):self.runner.close_all_session_db_handles()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'gateway.platforms.api_server_borrowed.BorrowedStoreRejected'>, <class 'gateway.run_borrowed_state.BorrowedRunnerRejected'>) not raised
+
+======================================================================
+FAIL: test_review_foreign_context_refuses_pure_admission_guard (__main__.IndependentLifecycle.test_review_foreign_context_refuses_pure_admission_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-active-lifecycle-a128c6\scripts\qa\q128c6_native_lifecycle_checks.py", line 180, in test_review_foreign_context_refuses_pure_admission_guard
+    with self.watched(),self.assertRaises(RT.RuntimeStoreError):self.authority._require_admission_open()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+======================================================================
+FAIL: test_review_changed_configuration_refuses_pure_admission_guard (__main__.IndependentLifecycle.test_review_changed_configuration_refuses_pure_admission_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-active-lifecycle-a128c6\scripts\qa\q128c6_native_lifecycle_checks.py", line 186, in test_review_changed_configuration_refuses_pure_admission_guard
+    with self.watched(),self.assertRaises(RT.RuntimeStoreError):self.authority._require_admission_open()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.215s
+
+FAILED (failures=4)

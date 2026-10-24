@@ -1,0 +1,291 @@
+"""Independent real-native caller admission/drain contracts.
+
+Native constructors/SQL/guards are real, no method replacement. Direct guarded
+ledger writes are not an admitted agent/HTTP execution. Explicit registry/SQL
+faults only affect fresh owned test profiles. No harness/OS isolation claim.
+"""
+import argparse,asyncio,hashlib,json,os,sys,tempfile,threading,traceback,unittest
+from contextlib import contextmanager
+from pathlib import Path
+BASE=LOOP=OTHER=None
+State=Config=Platform=Binding=Runner=Initialize=Bundle=Adapter=Replay=Response=Own=Registry=RT=Reject=RunnerReject=None
+WATCH=None;CHECKS=[];ENDS=[];DENIED=[];RACES=[]
+
+def audit(event,args):
+    if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+        DENIED.append(event);raise PermissionError('q128c6_offline_native')
+    if WATCH is not None:
+        if event=='sqlite3.connect':WATCH['newConnections']+=1;raise AssertionError('new_connection_during_transition')
+        if event=='open' and isinstance(args[0],(str,bytes,os.PathLike)):
+            name=Path(os.fsdecode(args[0])).name
+            if any(name==n or name.startswith(n+'-') for n in ('state.db','runs_idempotency.db','response_store.db')):
+                WATCH['rawDatabaseOpens']+=1;raise AssertionError('raw_database_open_during_transition')
+
+class IndependentLifecycle(unittest.TestCase):
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory(prefix='case-',dir=BASE);self.home=Path(self.tmp.name).resolve()
+        os.environ['HERMES_HOME']=str(self.home);Own.reserve([self.home]);self.threads=[];self.releases=[]
+        self.state=State(self.home/'state.db');self.epoch=RT.begin_runtime_epoch(self.state,instance_id='q128c6-owned')
+        self.replay=Replay(str(self.home/'runs_idempotency.db'));self.response=Response(db_path=str(self.home/'response_store.db'),canonical_state=self.state)
+        self.stores=(self.state,self.replay,self.response);self.connections=tuple(s._conn for s in self.stores)
+        self.config=Config(multiplex_profiles=False,write_sessions_json=False)
+        self.binding=Binding(self.config,self.state,epoch=self.epoch,instance_id='q128c6-owned')
+        self.runner=Runner(self.config,caller_state=self.binding);self.authority=LOOP.run_until_complete(Initialize(self.runner))
+        self.bundle=Bundle(self.home,*self.stores,prepared_runner=self.runner)
+        self.api=Adapter(Platform(extra={'key':'q128-owned-offline','model_name':'offline'}),borrowed_stores=self.bundle)
+    def tearDown(self):
+        global WATCH
+        WATCH=None
+        for e in self.releases:e.set()
+        for t in self.threads:t.join(12)
+        self.assertFalse(any(t.is_alive() for t in self.threads))
+        pending=[t for t in asyncio.all_tasks(LOOP) if not t.done()];self.assertEqual(pending,[])
+        before={'binding':self.binding._stage,'api':self.bundle._stage}
+        # Explicit fixture cleanup does not declare drain success for retained rows.
+        for store in reversed(self.stores):
+            try:
+                if store._conn.in_transaction:store._conn.rollback()
+                store.close()
+            except AttributeError:pass
+        Own.close();self.tmp.cleanup();counts=Registry.stats()
+        ENDS.append({'case':self._testMethodName,'productBeforeFixtureCleanup':before,'temporaryProfileRemoved':not self.home.exists(),'ownershipReleased':not Own.homes,'pendingTasks':0,'registry':counts})
+        self.assertFalse(self.home.exists());self.assertFalse(Own.homes);self.assertEqual(counts['total_refcounts'],0)
+    def call(self,fn,*args):
+        async def invoke():return fn(*args)
+        return LOOP.run_until_complete(invoke())
+    def activate(self):return self.call(self.bundle.activate_admission)
+    def drain(self):return self.call(self.bundle.begin_drain)
+    def finish(self):return self.call(self.bundle.finish_drain)
+    def session(self):self.state.create_session('s-owned','api_server')
+    def admit(self,name='request',extra=None):
+        return RT.admit_session_input(self.state,epoch=self.epoch,principal_id='api',session_id='s-owned',request_id=name,payload={'text':name},_authorize_write=self.authority._admission_gate(extra))
+    def claim(self):return RT.claim_session_input(self.state,epoch=self.epoch,session_id='s-owned',_guard=self.authority._admission_gate())
+    def assert_open(self):
+        for conn in self.connections:self.assertEqual(conn.execute('SELECT 1').fetchone()[0],1)
+        self.assertTrue(Own.owns(self.home));self.assertEqual(tuple(self.state._conn.execute('SELECT epoch,instance_id FROM runtime_epoch').fetchone()),(self.epoch,'q128c6-owned'))
+    @contextmanager
+    def watched(self):
+        global WATCH
+        before=[c.total_changes for c in self.connections];counts=Registry.stats();record={'case':self._testMethodName,'newConnections':0,'rawDatabaseOpens':0};WATCH=record
+        try:yield
+        finally:
+            WATCH=None;self.assertEqual(before,[c.total_changes for c in self.connections]);self.assertEqual(counts,Registry.stats());record['sqlRowChanges']=0;CHECKS.append(record)
+    def pending(self):
+        event=asyncio.Event()
+        async def make():return asyncio.create_task(event.wait())
+        return event,LOOP.run_until_complete(make())
+    def complete(self,event,task):event.set();LOOP.run_until_complete(task)
+    def test_prepared_default_cannot_admit_even_if_two_flags_are_forged(self):
+        with self.assertRaises(RT.RuntimeStoreError):self.authority._require_admission_open()
+        self.runner._draining=False;self.authority.retiring=False
+        try:
+            with self.watched(),self.assertRaises(RT.RuntimeStoreError):self.authority._require_admission_open()
+        finally:self.runner._draining=True;self.authority.retiring=True
+        self.assertEqual(self.binding._stage,'PREPARED')
+    def test_explicit_activate_keeps_three_connections_and_existing_epoch(self):
+        with self.watched():r=self.activate();self.authority._require_admission_open();selected=self.bundle.select(self.api,self.home)
+        self.assertEqual(r['state'],'ACTIVE');self.assertTrue(r['localAdmissionOpen']);self.assertFalse(r['listenerAuthorized']);self.assertFalse(r['providerAuthorized'])
+        self.assertTrue(all(a is b for a,b in zip(selected,self.stores)));self.assert_open()
+        with self.assertRaises(Reject):self.activate()
+    def test_activation_refuses_each_open_transaction_without_rollback(self):
+        for conn in self.connections:
+            conn.execute('BEGIN IMMEDIATE')
+            try:
+                with self.watched(),self.assertRaises((Reject,RunnerReject)):self.activate()
+                self.assertTrue(conn.in_transaction);self.assertEqual(self.binding._stage,'PREPARED')
+            finally:conn.rollback()
+    def test_activation_requires_no_existing_real_runner_task(self):
+        event,task=self.pending();self.runner._background_tasks.add(task)
+        try:
+            with self.watched(),self.assertRaises(Reject):self.activate()
+            self.assertFalse(task.cancelled());self.assertFalse(task.done())
+        finally:self.complete(event,task);self.runner._background_tasks.remove(task)
+        self.activate()
+    def test_empty_drain_is_one_way_and_ordered_detach_preserves_caller(self):
+        with self.watched():
+            self.activate();self.drain();self.drain();self.finish();self.finish()
+            with self.assertRaises(Reject):self.activate()
+            LOOP.run_until_complete(self.api.disconnect());self.runner.close_all_session_db_handles()
+        self.assertEqual((self.bundle._stage,self.binding._stage),('DETACHED','DETACHED'));self.assert_open()
+    def test_direct_api_and_runner_detach_refused_while_active(self):
+        self.activate()
+        with self.watched():
+            with self.assertRaises(Reject):LOOP.run_until_complete(self.api.disconnect())
+            with self.assertRaises(RunnerReject):self.runner.close_all_session_db_handles()
+        self.assertEqual((self.bundle._stage,self.binding._stage),('ATTACHED','ACTIVE'));self.assert_open()
+    def test_claimed_leaf_may_settle_during_drain_without_epoch_bump(self):
+        self.session();self.activate();row=self.admit();claimed=self.claim();self.assertEqual(claimed['admission_id'],row['admission_id'])
+        self.drain()
+        with self.assertRaises((Reject,RunnerReject)):self.finish()
+        settled=RT.settle_session_input(self.state,epoch=self.epoch,admission_id=row['admission_id'],generation=claimed['generation'],outcome='completed')
+        self.assertEqual(settled['status'],'terminal');self.finish();self.assert_open()
+    def test_queued_row_is_retained_and_not_claimed_or_auto_cancelled_by_drain(self):
+        self.session();self.activate();row=self.admit();self.drain();before=self.state._conn.total_changes
+        with self.watched():
+            with self.assertRaises((Reject,RunnerReject)):self.finish()
+        with self.assertRaises(RT.RuntimeStoreError):self.claim()
+        with self.assertRaises(RT.RuntimeStoreError):self.admit('after-drain')
+        current=RT.get_session_admission(self.state,admission_id=row['admission_id']);self.assertEqual(current['status'],'queued');self.assertIsNone(current['generation'])
+        self.assertEqual(self.state._conn.total_changes,before);self.assertEqual(self.binding._stage,'DRAINING')
+    def test_exact_leaf_replay_during_drain_is_not_new_acceptance(self):
+        self.session();self.activate();first=self.admit();self.drain();before=self.state._conn.total_changes
+        again=self.admit();self.assertEqual(again['admission_id'],first['admission_id']);self.assertEqual(self.state._conn.total_changes,before)
+        self.assertEqual(self.binding._stage,'DRAINING')
+    def test_before_guard_blocked_writer_loses_to_nonblocking_drain(self):
+        self.session();self.activate();entered=threading.Event();result=[]
+        def writer():
+            entered.set()
+            try:result.append(self.admit())
+            except RT.RuntimeStoreError as exc:result.append(exc.reason)
+        self.state._lock.acquire()
+        try:
+            t=threading.Thread(target=writer);self.threads.append(t);t.start();self.assertTrue(entered.wait(5))
+            self.drain();self.assertTrue(t.is_alive());self.assertEqual(self.binding._stage,'DRAINING')
+        finally:self.state._lock.release()
+        t.join(10);self.assertFalse(t.is_alive());self.assertEqual(result,['runtime_draining'])
+        self.assertEqual(self.state._conn.execute('SELECT COUNT(*) FROM session_admissions').fetchone()[0],0);self.finish()
+        RACES.append({'case':self._testMethodName,'beforeGuard':True,'newRowCommitted':False,'drainDidNotWaitForSqlMutex':True})
+    def test_after_guard_writer_is_preserved_and_finish_refuses_inflight(self):
+        self.session();self.activate();entered=threading.Event();release=threading.Event();self.releases.append(release);result=[]
+        def extra(conn):
+            self.assertIs(conn,self.state._conn);self.assertTrue(conn.in_transaction);entered.set()
+            if not release.wait(10):raise TimeoutError('fixture release missing')
+        def writer():
+            try:result.append(self.admit(extra=extra))
+            except BaseException as exc:result.append(type(exc).__name__)
+        t=threading.Thread(target=writer);self.threads.append(t);t.start()
+        try:
+            self.assertTrue(entered.wait(5));self.drain()
+            with self.assertRaises((Reject,RunnerReject)):self.finish()
+            self.assertEqual(self.binding._stage,'DRAINING');self.assertTrue(t.is_alive())
+        finally:release.set();t.join(10)
+        self.assertFalse(t.is_alive());self.assertEqual(len(result),1);self.assertIsInstance(result[0],dict);self.assertEqual(result[0]['status'],'queued')
+        with self.assertRaises((Reject,RunnerReject)):self.finish()
+        RACES.append({'case':self._testMethodName,'beforeGuard':False,'newRowCommitted':True,'finishWhileInFlightRefused':True,'acceptedQueuedRowRetained':True})
+    def test_pending_real_authority_task_prevents_finish_without_cancellation(self):
+        self.activate();event,task=self.pending();self.authority._mutation_tasks={task}
+        try:
+            self.drain()
+            with self.watched(),self.assertRaises(Reject):self.finish()
+            self.assertFalse(task.cancelled());self.assertFalse(task.done());self.assertIn(task,self.authority._mutation_tasks)
+        finally:self.complete(event,task);self.authority._mutation_tasks.clear()
+        self.finish()
+    def test_cancelled_carrier_does_not_mean_physical_thread_is_finished(self):
+        self.activate();entered=threading.Event();release=threading.Event();finished=threading.Event();self.releases.append(release)
+        def physical():
+            entered.set()
+            try:
+                if not release.wait(10):raise TimeoutError('fixture release missing')
+            finally:finished.set()
+        async def start():return asyncio.create_task(asyncio.to_thread(physical))
+        task=LOOP.run_until_complete(start())
+        async def cancel():
+            for _ in range(1000):
+                if entered.is_set():break
+                await asyncio.sleep(.002)
+            self.assertTrue(entered.is_set());task.cancel()
+            with self.assertRaises(asyncio.CancelledError):await task
+        LOOP.run_until_complete(cancel());worker=Runner._RunAgentWorker(executor_task=task,task_id='owned-thread',worker_done=finished)
+        self.authority._turn_workers={id(worker):(worker,[None])}
+        try:
+            self.drain()
+            with self.watched(),self.assertRaises(Reject):self.finish()
+            self.assertTrue(task.cancelled());self.assertFalse(finished.is_set());self.assertIn(id(worker),self.authority._turn_workers)
+        finally:release.set();self.assertTrue(finished.wait(5));self.authority._turn_workers.clear()
+        self.finish()
+    def test_done_retained_native_worker_record_is_not_pruned(self):
+        self.activate();done=threading.Event();done.set();worker=Runner._RunAgentWorker(task_id='done',worker_done=done)
+        self.authority._turn_workers={id(worker):(worker,[None])};self.drain()
+        try:
+            with self.watched(),self.assertRaises(Reject):self.finish()
+            self.assertIn(id(worker),self.authority._turn_workers)
+        finally:self.authority._turn_workers.clear()
+        self.finish()
+    def test_unknown_admission_never_retired_automatically(self):
+        self.session();self.activate();row=self.admit();self.state._conn.execute("UPDATE session_admissions SET status='unknown' WHERE admission_id=?",(row['admission_id'],));self.state._conn.commit();self.drain()
+        with self.watched(),self.assertRaises((Reject,RunnerReject)):self.finish()
+        self.assertEqual(RT.get_session_admission(self.state,admission_id=row['admission_id'])['status'],'unknown')
+    def test_malformed_replay_and_unsettled_response_refuse_idle_finish(self):
+        self.activate();self.drain();conn=self.response._conn
+        conn.execute("INSERT INTO response_keys(request_key,fingerprint,created_at,model_json) VALUES('fixture',?,1,'null')",('a'*64,));conn.commit()
+        try:
+            with self.watched(),self.assertRaises(Reject):self.finish()
+            self.assertIsNone(conn.execute("SELECT settled_at FROM response_keys WHERE request_key='fixture'").fetchone()[0])
+        finally:conn.execute("DELETE FROM response_keys WHERE request_key='fixture'");conn.commit()
+        self.finish()
+    def test_active_and_drained_never_enable_standard_service_or_listener(self):
+        self.activate()
+        for phase in ('ACTIVE','DRAINED'):
+            if phase=='DRAINED':self.drain();self.finish()
+            with self.assertRaises(Reject):LOOP.run_until_complete(self.api.connect())
+            with self.assertRaises(RunnerReject):LOOP.run_until_complete(self.runner.start())
+            self.assertFalse(self.runner._running);self.assertFalse(self.api._running);self.assertIsNone(self.api._site)
+    def test_activation_and_drain_reject_foreign_event_loop(self):
+        self.activate()
+        async def other():return self.bundle.begin_drain()
+        with self.assertRaises(Reject):OTHER.run_until_complete(other())
+        self.assertEqual(self.binding._stage,'ACTIVE');self.drain()
+    def test_foreign_thread_cannot_begin_drain(self):
+        self.activate();out=[]
+        def other():
+            try:self.bundle.begin_drain()
+            except RunnerReject:out.append('rejected')
+        t=threading.Thread(target=other);self.threads.append(t);t.start();t.join(5)
+        self.assertEqual(out,['rejected']);self.assertEqual(self.binding._stage,'ACTIVE');self.drain()
+    def test_descriptor_drift_is_refused_not_repaired(self):
+        self.activate();descriptor=self.binding._descriptor;descriptor['capabilities']=['invented']
+        try:
+            with self.watched(),self.assertRaises(RT.RuntimeStoreError):self.authority._require_admission_open()
+            self.assertEqual(descriptor['capabilities'],['invented'])
+            with self.assertRaises(RunnerReject):self.drain()
+        finally:descriptor['capabilities']=[]
+    def test_store_identity_drift_refuses_transaction_guard(self):
+        self.activate();old=self.api._response_store;self.api._response_store=object()
+        try:
+            with self.watched(),self.assertRaises(RT.RuntimeStoreError):self.authority._require_admission_open()
+        finally:self.api._response_store=old
+        self.authority._require_admission_open()
+    def test_drained_rechecks_new_sql_transaction_instead_of_returning_old_receipt(self):
+        self.activate();self.drain();self.finish();conn=self.replay._conn;conn.execute('BEGIN IMMEDIATE')
+        try:
+            with self.watched(),self.assertRaises((Reject,RunnerReject)):self.finish()
+            self.assertTrue(conn.in_transaction);self.assertEqual(self.binding._stage,'DRAINED')
+        finally:conn.rollback()
+        self.finish()
+
+def main():
+    global BASE,LOOP,OTHER,State,Config,Platform,Binding,Runner,Initialize,Bundle,Adapter,Replay,Response,Own,Registry,RT,Reject,RunnerReject
+    p=argparse.ArgumentParser();p.add_argument('--native',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--case',action='append');a=p.parse_args()
+    native=a.native.resolve(strict=True);out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
+    LOOP=asyncio.new_event_loop();OTHER=asyncio.new_event_loop();asyncio.set_event_loop(LOOP)
+    with tempfile.TemporaryDirectory(prefix='alaz-q128c6-native-') as tmp:
+        BASE=Path(tmp).resolve();home=BASE/'imports';home.mkdir();os.environ.update(HERMES_HOME=str(home),HOME=str(BASE),USERPROFILE=str(BASE),APPDATA=str(BASE),LOCALAPPDATA=str(BASE));sys.path.insert(0,str(native));sys.addaudithook(audit)
+        from hermes_state import SessionDB
+        from gateway.config import GatewayConfig,PlatformConfig
+        from gateway.run_borrowed_state import CallerOwnedRunnerState,BorrowedRunnerRejected
+        from gateway.run import GatewayRunner
+        from gateway.run_runtime import initialize_gateway_runtime
+        from gateway.platforms.api_server_borrowed import BorrowedAPIStores,BorrowedStoreRejected
+        from gateway.platforms.api_server import APIServerAdapter
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        from gateway.platforms.api_server_response_store import ResponseStore
+        from gateway.runtime_ownership import process_ownership
+        import hermes_state_registry,hermes_state_runtime
+        State,Config,Platform,Binding,Runner,Initialize=SessionDB,GatewayConfig,PlatformConfig,CallerOwnedRunnerState,GatewayRunner,initialize_gateway_runtime
+        Bundle,Adapter,Replay,Response,Own,Registry,RT,Reject,RunnerReject=BorrowedAPIStores,APIServerAdapter,RunIdempotencyStore,ResponseStore,process_ownership,hermes_state_registry,hermes_state_runtime,BorrowedStoreRejected,BorrowedRunnerRejected
+        suite=unittest.TestSuite(IndependentLifecycle(name) for name in a.case) if a.case else unittest.defaultTestLoader.loadTestsFromTestCase(IndependentLifecycle)
+        with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as f:r=unittest.TextTestRunner(stream=f,verbosity=2).run(suite)
+        LOOP.run_until_complete(LOOP.shutdown_default_executor());LOOP.close();OTHER.close()
+        imports={}
+        for mod in tuple(sys.modules.values()):
+            file=getattr(mod,'__file__',None)
+            if file:
+                q=Path(file).resolve()
+                if q.is_relative_to(native) and q.suffix=='.py':imports[q.relative_to(native).as_posix()]=hashlib.sha256(q.read_bytes()).hexdigest()
+        failed={t.id().split(' (',1)[0] for t,_ in r.errors+r.failures}
+        report={'result':'PASS_INDEPENDENT_NATIVE_ADMISSION_LIFECYCLE' if r.wasSuccessful() else 'FAIL','total':r.testsRun,'passed':r.testsRun-len(failed)-len(r.skipped),'errors':len(r.errors),'failures':len(r.failures),'skipped':len(r.skipped),'errorIds':[t.id() for t,_ in r.errors],'failureIds':[t.id() for t,_ in r.failures],'nativeImports':imports,'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'checks':CHECKS,'caseEnd':ENDS,'races':RACES,'deniedEvents':DENIED,'actualNativeRunnerAuthorityApiStores':True,'nativeMethodsReplaced':False,'ledgerWritesDirectWithRealNativeGuards':True,'explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords':True,'admittedAgentOrHttpExecution':False,'harnessOwnerIntegrationTested':False,'linuxIsolationTested':False,'providerCalls':0,'rootWslAction':False}
+    report['temporaryRootRemoved']=not BASE.exists();(out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','checks','caseEnd','deniedEvents')}),flush=True)
+    if not r.wasSuccessful():print((out/'tests.txt').read_text(encoding='utf-8')[-14000:],flush=True)
+    return 0 if r.wasSuccessful() and report['temporaryRootRemoved'] else 1
+if __name__=='__main__':raise SystemExit(main())
