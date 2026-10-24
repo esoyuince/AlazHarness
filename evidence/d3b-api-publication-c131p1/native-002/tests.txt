@@ -1,0 +1,26 @@
+test_adapter_map_drift_during_awaited_cleanup_never_deletes_foreign_entry (__main__.PublicationChecks.test_adapter_map_drift_during_awaited_cleanup_never_deletes_foreign_entry) ... ok
+test_default_prepared_does_not_publish (__main__.PublicationChecks.test_default_prepared_does_not_publish) ... ok
+test_draining_queued_request_retains_publication_and_all_handles (__main__.PublicationChecks.test_draining_queued_request_retains_publication_and_all_handles) ... ok
+test_foreign_existing_adapter_is_not_overwritten (__main__.PublicationChecks.test_foreign_existing_adapter_is_not_overwritten) ... ok
+test_foreign_loop_publication_refused_before_registry_effect (__main__.PublicationChecks.test_foreign_loop_publication_refused_before_registry_effect) ... ok
+test_native_async_admission_does_not_publish_unowned_gateway_status (__main__.PublicationChecks.test_native_async_admission_does_not_publish_unowned_gateway_status) ... ok
+test_non_api_adapter_is_not_silently_dropped (__main__.PublicationChecks.test_non_api_adapter_is_not_silently_dropped) ... ok
+test_prepared_only_disconnect_removes_publication_keeps_stores (__main__.PublicationChecks.test_prepared_only_disconnect_removes_publication_keeps_stores) ... ok
+test_publication_never_recovers_or_wires_voice (__main__.PublicationChecks.test_publication_never_recovers_or_wires_voice) ... ok
+test_publication_refuses_pending_real_task_without_cancel (__main__.PublicationChecks.test_publication_refuses_pending_real_task_without_cancel) ... ok
+test_publication_refuses_transaction_in_each_store (__main__.PublicationChecks.test_publication_refuses_transaction_in_each_store) ... ok
+test_published_adapter_replacement_blocks_native_guard (__main__.PublicationChecks.test_published_adapter_replacement_blocks_native_guard) ... ok
+test_published_foreign_home_refused_without_materialization (__main__.PublicationChecks.test_published_foreign_home_refused_without_materialization) ... ok
+test_published_identity_uses_existing_canonical_resolver (__main__.PublicationChecks.test_published_identity_uses_existing_canonical_resolver) ... ok
+test_published_map_replacement_blocks_new_admission_before_write (__main__.PublicationChecks.test_published_map_replacement_blocks_new_admission_before_write) ... ok
+test_published_owner_profile_drift_blocks_guard (__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard) ... ok
+test_real_api_admission_then_exact_retry_is_one_row (__main__.PublicationChecks.test_real_api_admission_then_exact_retry_is_one_row) ... ok
+test_same_request_changed_payload_refused (__main__.PublicationChecks.test_same_request_changed_payload_refused) ... ok
+test_same_request_other_target_refused (__main__.PublicationChecks.test_same_request_other_target_refused) ... ok
+test_settled_native_leaf_retirement_preserves_history_then_detaches (__main__.PublicationChecks.test_settled_native_leaf_retirement_preserves_history_then_detaches) ... ok
+test_standard_service_listener_remain_closed_after_publication (__main__.PublicationChecks.test_standard_service_listener_remain_closed_after_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 12.525s
+
+OK

@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T15:30:53.783869+03:00",
+  "candidate": "candidate-001.json",
+  "driverSha256": "0635e334bff7f00c78fb22aa8b93abccc8a1ebacf090651cb43c754fb251581e",
+  "fixtureSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+  "scope": "20 independent actual native canonical publication/admission/withdrawal checks, no agent or HTTP service",
+  "firstExecutionPublicMethod": "publish_api_adapter"
+}

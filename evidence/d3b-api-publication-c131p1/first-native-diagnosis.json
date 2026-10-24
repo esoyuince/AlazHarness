@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-24T15:32:10.155112+03:00",
+  "result": "FAIL_13_OF_20",
+  "source": "candidate-001.json",
+  "failedProfileGuard": "test_published_owner_profile_drift_blocks_guard no exception",
+  "unexpectedNativeWriter": "gateway_state.json in4 case teardown races after async API admission",
+  "twoRefusalTypeMismatches": "foreign home and replaced map already refused by BorrowedStoreRejected earlier than RuntimeStoreError",
+  "nativeProductNotModifiedHere": true,
+  "allOwnCommandsTerminal": true,
+  "parentTemporaryRootEventuallyRemoved": true,
+  "readOnlySourceSearch019HadNoMatches": true
+}

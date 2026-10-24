@@ -1,0 +1,28 @@
+{
+  "job": "D3B-API-PUBLICATION-QA-Q131P1",
+  "result": "PASS_NATIVE_PROGRAMMATIC_ADMISSION_NOT_AGENT_OR_HTTP",
+  "at": "2026-10-24T15:41:10.234164+03:00",
+  "base": "3bbabdc6bfb44c3498113f375c54065ea0d61ad9",
+  "all579OriginalSourcesUnchanged": true,
+  "independentNativeMethods": 21,
+  "offlineReceiptMethods": 7,
+  "nativeImportedSources": 513,
+  "sameBeforeFixRegressionDriver": true,
+  "twoBeforeFixFailuresPreserved": true,
+  "initial20Outcome": {
+    "passed": 13,
+    "errors": 6,
+    "failures": 1
+  },
+  "producerOwner": "C131D6",
+  "nativeProductFilesEditedHere": false,
+  "actualNativeAsyncApiAdmission": true,
+  "wholeTurnOrModelExecuted": false,
+  "httpAuthOrListenerTested": false,
+  "harnessSourceEnvelopeQualified": false,
+  "linuxIsolationTested": false,
+  "fullStandardRegression": "PENDING_EXACT_UNION",
+  "installedNativeChanged": false,
+  "mainChanged": false,
+  "pushed": false
+}

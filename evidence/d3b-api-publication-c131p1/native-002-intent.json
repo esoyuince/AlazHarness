@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T15:37:20.615148+03:00",
+  "candidate": "candidate-002.json",
+  "driverSha256": "3dbf6a7650f139b7c8b13fa7c0f62344796ff07f5fad73ae3670767edd59da64",
+  "scope": "same21 tests including both reproduced product regressions; no method replacement or listener/model"
+}
