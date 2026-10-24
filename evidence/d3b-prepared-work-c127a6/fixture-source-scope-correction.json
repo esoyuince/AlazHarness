@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-24T07:49:05.627178+03:00",
+  "firstOutcome": "12methods2PASS7FAIL3ERROR",
+  "errorCause": "test imported native session_runtime_workers outside prepared513 envelope, affecting later checks; product correctly refused source expansion",
+  "correction": "do not import or execute unqualified native helper; explicitly inject known native worker record and actual waiting thread as a fixture fault",
+  "manifestOrProductChanged": false,
+  "oldQaSha256": "eae1a83e5c1d3a93f464ec1c952c43e1409d7a1cf8dafc703942982cd7e4218b",
+  "newQaSha256": "340a915c695cf2c3b599f68a850b01b38fa4b70181cf28c9ac878d2f8d228d19",
+  "expectedAssertionsUnchanged": true
+}

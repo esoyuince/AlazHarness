@@ -1,0 +1,66 @@
+{"result": "FAIL", "total": 5, "passed": 0, "errors": 0, "failures": 5, "skipped": 0, "errorIds": [], "failureIds": ["__main__.PreparedWork.test_review_bot_receipt_task_blocks_selection_and_close", "__main__.PreparedWork.test_review_completion_batch_payload_blocks_detach", "__main__.PreparedWork.test_review_completion_delivery_inflight_blocks_detach", "__main__.PreparedWork.test_review_detached_descriptor_drift_blocks_original_owner_close", "__main__.PreparedWork.test_review_detached_registry_drift_blocks_original_owner_close"], "detachObservations": [{"case": "test_review_bot_receipt_task_blocks_selection_and_close", "stages": ["DETACHED", "DETACHED", "DETACHED"], "refusalType": null}, {"case": "test_review_completion_batch_payload_blocks_detach", "stages": ["DETACHED", "DETACHED", "DETACHED"], "refusalType": null}, {"case": "test_review_completion_delivery_inflight_blocks_detach", "stages": ["DETACHED", "DETACHED", "DETACHED"], "refusalType": null}], "nativeProductMethodsReplaced": false, "realTasksThreadsAndNativeWorkerRecord": true, "taskRegistryFaultInjectionExplicit": true, "completeAgentOrTurnRunnerExecuted": false, "windowsActorLeaseMountColdBoundariesDoubled": true, "linuxConfinementRerun": false, "serviceAdmissionActivated": false, "providerCalls": 0, "ownMethods": 5, "compatMethods": 0, "temporaryRootRemoved": true}
+test_review_bot_receipt_task_blocks_selection_and_close (__main__.PreparedWork.test_review_bot_receipt_task_blocks_selection_and_close) ... FAIL
+test_review_completion_batch_payload_blocks_detach (__main__.PreparedWork.test_review_completion_batch_payload_blocks_detach) ... FAIL
+test_review_completion_delivery_inflight_blocks_detach (__main__.PreparedWork.test_review_completion_delivery_inflight_blocks_detach) ... FAIL
+test_review_detached_descriptor_drift_blocks_original_owner_close (__main__.PreparedWork.test_review_detached_descriptor_drift_blocks_original_owner_close) ... FAIL
+test_review_detached_registry_drift_blocks_original_owner_close (__main__.PreparedWork.test_review_detached_registry_drift_blocks_original_owner_close) ... FAIL
+
+======================================================================
+FAIL: test_review_bot_receipt_task_blocks_selection_and_close (__main__.PreparedWork.test_review_bot_receipt_task_blocks_selection_and_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 125, in test_review_bot_receipt_task_blocks_selection_and_close
+    self.known_detach_refused(consumer);self.assertFalse(task.cancelled())
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 43, in known_detach_refused
+    self.assertIsNotNone(caught);self.assertEqual(stages,('ATTACHED','ATTACHED','PREPARED'))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_review_completion_batch_payload_blocks_detach (__main__.PreparedWork.test_review_completion_batch_payload_blocks_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 134, in test_review_completion_batch_payload_blocks_detach
+    try:self.known_detach_refused(consumer)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 43, in known_detach_refused
+    self.assertIsNotNone(caught);self.assertEqual(stages,('ATTACHED','ATTACHED','PREPARED'))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_review_completion_delivery_inflight_blocks_detach (__main__.PreparedWork.test_review_completion_delivery_inflight_blocks_detach)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 129, in test_review_completion_delivery_inflight_blocks_detach
+    try:self.known_detach_refused(consumer)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 43, in known_detach_refused
+    self.assertIsNotNone(caught);self.assertEqual(stages,('ATTACHED','ATTACHED','PREPARED'))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_review_detached_descriptor_drift_blocks_original_owner_close (__main__.PreparedWork.test_review_detached_descriptor_drift_blocks_original_owner_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 140, in test_review_detached_descriptor_drift_blocks_original_owner_close
+    with self.assertRaises(c.PreparedConsumerRejected):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PreparedConsumerRejected not raised
+
+======================================================================
+FAIL: test_review_detached_registry_drift_blocks_original_owner_close (__main__.PreparedWork.test_review_detached_registry_drift_blocks_original_owner_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-prepared-work-c127a6\scripts\qa\c127a6_native_prepared_work.py", line 147, in test_review_detached_registry_drift_blocks_original_owner_close
+    with self.assertRaises(c.PreparedConsumerRejected):self.o.close()
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PreparedConsumerRejected not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 15.712s
+
+FAILED (failures=5)
+

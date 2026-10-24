@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-24T07:54:47.852646+03:00",
+  "reviewAgent": "3e902f5a-994b-4da2-a5c1-375ef1831f51",
+  "reviewScope": "read-only source analysis, no independent test or edits",
+  "independentlyVerifiedSources": {
+    "gateway/run_runtime.py": "_authority_tasks:187-193 includes _bot_receipt_tasks",
+    "gateway/run_runtime_init.py": "127 inflight completion set and133 notification batch dict",
+    "gateway/run_borrowed_state.py": "128-159 exact prepared descriptor/registry identity and237-241 detached descriptor transition"
+  },
+  "newRegressions": 5,
+  "productBeforeAdditionalFixSha256": "37db74fab963e2d8fdadb5e5d8e6aac544af596d0bb24fee3afc3e4fa8e28918",
+  "fullIsolationOrActiveAgentAcceptance": false
+}

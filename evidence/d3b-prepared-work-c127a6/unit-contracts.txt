@@ -1,0 +1,17 @@
+test_callback_side_effects_are_not_used_to_measure_empty (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_callback_side_effects_are_not_used_to_measure_empty) ... ok
+test_check_refuses_work_before_sql_or_native_selection (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_check_refuses_work_before_sql_or_native_selection) ... ok
+test_done_or_cancelled_task_methods_never_called (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_done_or_cancelled_task_methods_never_called) ... ok
+test_every_authority_work_field_refuses_nonempty (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_every_authority_work_field_refuses_nonempty) ... ok
+test_every_lazy_registry_refuses_any_retained_work (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_every_lazy_registry_refuses_any_retained_work) ... ok
+test_every_runner_work_field_refuses_nonempty (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_every_runner_work_field_refuses_nonempty) ... ok
+test_falsy_invalid_containers_fail_closed (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_falsy_invalid_containers_fail_closed) ... ok
+test_foreign_authority_or_state_refused (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_foreign_authority_or_state_refused) ... ok
+test_idle_fixed_containers_pass_without_replacement (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_idle_fixed_containers_pass_without_replacement) ... ok
+test_lazy_registries_absent_none_and_correct_empty_allowed (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_lazy_registries_absent_none_and_correct_empty_allowed) ... ok
+test_lifecycle_handles_and_integer_false_are_refused (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_lifecycle_handles_and_integer_false_are_refused) ... ok
+test_missing_mandatory_fields_not_assumed_idle (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_missing_mandatory_fields_not_assumed_idle) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+OK

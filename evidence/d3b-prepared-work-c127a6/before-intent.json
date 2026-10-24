@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T07:47:40.491272+03:00",
+  "consumerSha256": "e25f87293ac28fe078f451ceb58f2b39d07ab3d9b43a09edb0adcb99704cbcd5",
+  "qaSha256": "eae1a83e5c1d3a93f464ec1c952c43e1409d7a1cf8dafc703942982cd7e4218b",
+  "expected": "regression may fail; preserve all outcomes",
+  "scope": "actual native prepared lifecycle plus explicit task/worker record fault injection; no admission/model"
+}

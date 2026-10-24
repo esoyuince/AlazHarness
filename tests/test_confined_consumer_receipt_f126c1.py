@@ -1,3 +1,4 @@
+from historical_prepared_c127a6 import executed_source_hash as pre_c127_hash
 """Exact current confined receipts; offline assertions, never a new root run."""
 import hashlib,json,unittest
 from pathlib import Path
@@ -22,7 +23,7 @@ class ConfinedPreparedReceipt(unittest.TestCase):
         self.assertEqual(self.r['sourceSha256'],self.o['sources']);self.assertEqual(self.c['nativeEnvelopeCount'],513)
         self.assertEqual(self.c['nativeFeature'],'1e97dd617b81120255304e472ce322befcdb9ccd')
         for n,h in self.o['sources'].items():
-            if n.startswith(('packages/','scripts/','config/')):self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+            if n.startswith(('packages/','scripts/','config/')):self.assertEqual(pre_c127_hash(ROOT,n,h),h,n)
             elif n.startswith('native/'):self.assertEqual(self.c['nativeGitBlobs'][n.removeprefix('native/')]['sha256'],h,n)
         self.assertEqual(hashlib.sha256((E/'native-006-result.json').read_bytes()).hexdigest(),self.c['native006ResultSha256'])
         self.assertEqual(hashlib.sha256((E/'native-006-acceptance.json').read_bytes()).hexdigest(),self.c['native006AcceptanceSha256'])

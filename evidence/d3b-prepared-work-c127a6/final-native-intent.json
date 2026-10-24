@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-24T07:56:15.238124+03:00",
+  "consumerSha256": "a677bf45b5d37551989725bda9ac236abc1118e6632df4c24ab87b41cb20c948",
+  "qaSha256": "3f1da8ab035be3af9726e933c7a5ec703bffb0469bc1d72bfe7f223448da0128",
+  "scope": "17own cases+23previous native compatibility; same5review assertions; real tasks/native records with Windows lease/mount/cold boundary doubles",
+  "historicalStopAcknowledgementsNotLiveWork": true,
+  "noSourceManifestOrNativeChange": true
+}

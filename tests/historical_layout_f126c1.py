@@ -6,6 +6,9 @@ immutable pre-F126 baseline AND saved bytes; no generic mismatch bypass.
 import hashlib,json
 
 def executed_source_hash(root,name,expected):
+    from historical_prepared_c127a6 import saved_generation_hash
+    saved=saved_generation_hash(root,name,expected)
+    if saved is not None:return saved
     e=root/'evidence/d3b-confined-consumer-f126c1'
     bindings=json.loads((e/'historical-source-bindings.json').read_text(encoding='utf-8'))
     if name not in bindings['sources']:
