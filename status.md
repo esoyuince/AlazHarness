@@ -77,3 +77,8 @@ exact copied records/provenance, focused-tests, full-windows-result/log, before/
 sources+patches, full-skips, protected-state, restart-next-source-review and summary.
 Three QA scripts l139c6_linux_owner_finite,linux_transport,linux_restart_probe.
 Status histories l139c6-parent/work-log preserved. Read liveGitHEAD for final commit.
+
+
+### Final local delivery checkpoint
+
+Tested QA/evidence committed7559b6befbfc0e2583733fb25e9d0e1b7d08c63c; full3464=3441PASS23SKIP exit0, staticPASS.609sources+11patches still exact, all605base sources unchanged. Normal/error realLinux owner workflows accepted; restart only expected refusal, never relabelled. Raw independent checks retain original source provenance. Final docs-only checkpoint records delivery; no runtime/full/native replay. Local/remote mainf08fab0 and installednativeeb75627 unchanged, no branchpush. Root33file contents+status preserved. All own commands terminal, no background/delegated job started. Next retained-profile contract before active kernel/HTTP.
