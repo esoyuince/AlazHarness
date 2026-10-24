@@ -1,0 +1,22 @@
+{
+  "job": "PUBLICATION-24OCT-P132L1",
+  "at": "2026-10-24T17:21:07.296921+03:00",
+  "rangeBase": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "sourceHead": "d0418ad0fdde8e8faa04916e6b28c2e6a8857c02",
+  "commitsAhead": 164,
+  "allPendingCommitTreesReviewed": true,
+  "historicalUniquePaths": 5365,
+  "objectsScanned": {
+    "commit": 164,
+    "blob": 3248
+  },
+  "bytesScanned": 92795880,
+  "credentialPatternFindings": [],
+  "forbiddenPaths": [],
+  "binaryReview": [],
+  "largeReview": [],
+  "unsupportedModes": [],
+  "sourcePinsLicenseChanges": [],
+  "limitations": "bounded credential/private-path pattern scan of all reachable new blob/commit/tag versions; not a proof every possible secret absent; no secret values printed",
+  "pushPerformed": false
+}

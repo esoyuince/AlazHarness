@@ -1,0 +1,164 @@
+47c70ea914dbc12d4ea2d39ef2a97a8a6b4a0139 feat(broker): add guarded host-principal launch primitive
+d0414e24358a4b632080272d799296e40ae1bf94 test(broker): independently qualify principal files and post-exec gates
+9469d58bf1aa9b12fed059fae8df6c51282b4644 fix(broker): verify restricted principal after exec before startup
+b55cc832a41de189d2f2dfe3eae2972dbe9e26e5 docs(d3b): bind completed post-exec revision to independent QA
+cb258bbb571306f1e3994deb7e96f64956025a9b merge(broker): integrate post-exec admission and independent QA evidence
+edb4ae1262b082b9bf358e04ff4c6565b09fde10 docs(broker): pin integrated launch checkpoint and remaining positive gate
+797b4aabd17fdc80f52c24949307050496ca6c79 fix(broker): resolve lifecycle import in isolated post-exec target
+01791c1ff485d9950a72728b00de83c2b520c748 docs(d3b): preserve isolated import before-after acceptance
+e8164b0153c27905a01dc167e91655eaeaacd5fd docs(d3b): start final isolated-import integration on launcher branch
+655a7a238aba7957ee2a436851a06ba150ed41eb merge(broker): integrate isolated target import with current-source validation
+802fade74d5b08b26f975738d4aa8d7546dc9cac docs(broker): record verified import integration and exact continuation
+2358d5dad7c7a0b98c1c494f30d69fc0572977c2 feat(qa): export exact broker source candidate without privileged installation
+69d72e9c7d9846f27c61ec85b0dd15dcccae11ab test(broker): qualify real host-UID startup in disposable Linux lab
+916f5290981f5cc4775c930fb4674d046cb3cc67 feat(gateway): qualify trusted host-UID socket and filesystem projection
+bfaa32b3d0d5df86178b5926343db5cf9b1fe8e2 fix(export): bind source archives to original Git objects
+80d85488b02b3b8cb4023f41d666b043b356e9a6 docs(qa): record integrated exporter repair and exact-source evidence
+e12ff5937bbac22dc0f53fdcecc0ed5eeb17a837 docs(integration): qualify exporter promotion on primary development line
+db25f2549e0cb7ec44b7aa1af09ea77a92f0446d feat(storage): observe paired profile mounts without runtime authority
+e5cb7f076a966dd559384d75dcb7888214ecce1c merge(storage): qualify native profile mount observer on development baseline
+bb30a99c7f6e02c5e054ba27451a55358c2348a1 docs(storage): record native mount qualification and exact development handoff
+f71df7b1410a52ca1ed4fda83b9d558ffc8721f5 feat(storage): reuse native profile ownership across checked lifecycle
+f7f12edcbda7e3876aaf0e98fb3d91d9ea99af86 docs(storage): record qualified native profile lifecycle delivery
+16946567c2e7d1a890c541637caa1b1c7a73f4e3 feat(storage): qualify exclusive controller lease for pinned state image
+681ddd9fe94a81d25e75edcd9dea8df9fb59c6d4 docs(storage): record exact image lease acceptance and integration boundary
+a528b725f865f28284c10c92654346cee3ea0b48 merge(storage): qualify joint image and native profile lease baseline
+0e89518d9438824b6ef6b8a962f4a40392ecff52 docs(storage): record joint lease qualification and canonical continuation
+836a29aecbd545914acb199522a299342d138b10 merge(storage): qualify image and profile leases with independent process ordering proof
+58d5b4cf669661b111ffb5980a822c2a698906aa merge(qa): retain complementary joint lease proofs on qualified development baseline
+0e170951b25de89dceae64b837997435b393243a docs(storage): record consolidated lease QA and canonical continuation
+d9296de5e7180363c1487fcc627c51fbd09740d8 feat(storage): supervise private ext4 image lifecycle with crash fence and user drain
+b0b673111b3cb793e70c2f2cb1f0951652a10fb0 docs(storage): record mounted supervisor acceptance and canonical continuation
+cef1cb20fcab605d7b97b8de944e3d96ba1071d9 feat(storage): project supervised persistent profile into confined gateway identity
+1207d37b5bb92bd107e5ec419cd3b4cac46d12f9 docs(storage): record persistent confinement qualification and canonical handoff
+b8044f2493f712175aeee7715a91d9db6c8e6014 test(security): independently verify exact self-mount metadata rules and exec inheritance
+8fdd717e16b334f39f8241037be44551b85d5f74 feat(storage): qualify native profile ownership after confined exec
+032f2fd432f233647f5f689666b7dc14c02d1b6e docs(storage): record confined native profile qualification and continuation
+5001f1a0a2102520ba609d5e0f7d094297e87adf merge(storage): qualify native profile admission with independent metadata inheritance audit
+30604dfcbb53d76b24bcf2a21996828d18afca49 docs(storage): record joint native-profile acceptance and canonical handoff
+59fde69e3a91fbff95ed8a58cb5350753f5f8d4d test(storage): qualify real native crash replay and epoch boundaries on Windows and Linux
+7f21e512a376c62a94344c190370da9a83c9e035 docs(storage): record native crash recovery boundary and exact local delivery
+fef7aa3ae90329bdeb178d008d691220aed94ad0 test(storage): verify native crash boundaries and constrained store startup
+762fe6f32ddd7dcd55bf7caec9f513aec50be6f1 merge(storage): qualify native crash and constrained-startup QA baseline
+7f17594b73c825d8e04873ab2db2a28fe49ab688 docs(storage): record joint native-store QA and canonical continuation
+80f26687160ef2bba3011338cc8aff58250404d9 feat(storage): qualify finite native profile layout and confined store restart
+367f781c1ea06ec1258876f028bcb7019ebdcc4f feat(storage): verify live native stores without disturbing SQLite locks
+abf314848edae078e4a6f5ca5b9fef1b729e3f7f docs(storage): record native layout restart acceptance and canonical handoff
+3a91d456a681c1736c799acc6da84ca30a01fec2 merge(storage): qualify finite layout and live gate with bounded status history
+08e53df8c6ea18791c874eabd8c3d13ebc979579 docs(storage): record joint native startup components and short canonical handoff
+2d527e55d6611c544f8fa6ad2759f0f548046259 feat(storage): add read-only native constructor metadata prerequisite
+d24f8d2654c4a866445bf0b3d1e31f085ca34de7 docs(storage): record constructor metadata prerequisite and canonical handoff
+382afe4bf48f2cc883b23b4249dd6c4ad887ba22 feat(storage): preflight native stores in isolated read-only helper before constructors
+78b41d0a90b7abd311ee1d1f992cc65b605f073e docs(storage): record read-only preopen qualification and canonical handoff
+ecea1419fd64e41ea3621048fea110bf851a86a0 feat(storage): run fixed native store startup and clean epoch under confinement
+82a8c3e7bcf3c0b9df3425d2096f5a5b48e841f6 docs(storage): record full-confined product startup and canonical handoff
+447212ab901b3deceec0f417c7772e2038f090c1 test(http): independently verify readiness wire failures and cleanup boundaries
+56b2d68551788c400dc595c2bbc7c52dc0d3c700 test(http): qualify MIME-safe runtime snapshot on both wire transports
+10dcb3b5304107530795c55a3ed15ded902023fd feat(http): gate local storage readiness on verified native lifecycle
+27561bd6e4070150c78d3ad2ae1ffda96d4aadbc merge(http): qualify storage readiness with independent wire and shutdown QA
+1e9c305afd3d02cbb56a74f9cce034c33a4609a9 docs(http): record unified readiness qualification and canonical continuation
+ab55ddb5abd92c048948558dc527e3d407ccb981 test(http): qualify native readiness inside full persistent isolation
+bcb6325e30831285cae0c2e8313e80901d9c1dd2 test(http): independently verify confined lifecycle evidence and tamper rejection
+8c590d71360e91ab02606b36aa103bb160b11472 docs(http): record full-isolation readiness acceptance and canonical handoff
+0bffda233f2d1cd969961b0e8a9d49f7aad3b40e merge(http): qualify full isolated readiness with independent lifecycle proof checks
+3cf977036d52cc7d379ffb4e98b52c56cb9abaed merge(docs): preserve canonical full-isolation handoff ancestry
+31abe5821e7d0235ab3b7440a91285d5b508ab97 docs(http): record jointly verified full-isolation readiness and next API boundary
+4d21e805bd9204f1e309b20c47d8a69782bca07a feat(storage): stage verified native response canonical borrowing patch
+b138648a0a225d98a8ed2b43a5e43a41e8b1f0de docs(api): record exact complementary adapter source and lifecycle verification
+cbcd960425252043d92ae741c1030467a0d7893f feat(api): stage tested borrowed-store adapter patch without runtime activation
+872de4526e5a10a2912bb7637dde71b9d66778db test(storage): record complete response-patch regression and adapter source ancestry
+c4ff1211305055c29258a846a6faea8b7724fc17 merge(api): stage jointly tested native store borrowing without activation
+a43b468be55b95386cea3009ad580cef35e9f9f0 docs(api): record tested borrowing patches and unactivated third-store gate
+fac86e3d5e837cb6afbfb7d08bf3627291f01e9c merge(api): qualify paired native borrowed-store patches without activation
+0dcdca8499a8770d8021a37f07fa1596fdb450a3 merge(docs): retain canonical API-borrow qualification ancestry
+a3951d764df291bebbf20f0452119a3d461d8832 docs(api): record unified borrowed-store patch qualification without activation
+aeff7a0d723adf2b311bba2941c5db4ee7acbc9e feat(storage): qualify read-only response preflight before native mutation
+c09faab22aef00d7a7e7b2d705e9a9ee1bee2d85 docs(storage): verify integrated native response lifecycle and preserve constructor boundary
+7ed283a8651c8d5e01af812c81032599a6ebb22c docs(storage): bind historical acceptance records to exact executed sources
+79ed402e4eb4ad8e4214f55c2e46a5f6ab9557aa docs(storage): checkpoint exact combined sources and remaining regression gate
+7ce8213310c4f5d78d3f1eb1de5c4e308260fc22 docs(storage): consolidate third-store startup acceptance and activation boundaries
+9d383cf506dbb516b052d5b266c0562a2628e9f9 feat(storage): qualify opt-in three-store startup and retain historical proof sources
+02e5d24b737c4613e8c076422b3039275de230f7 merge(docs): preserve independent response preflight and lifecycle review
+36729fce26ea6680359a183beda13ea176082e48 merge(storage): preserve independently verified three-store startup evidence
+b414a13c6e0df05daa6fbfc766bcd87fa555eccd docs(storage): record scoped three-store startup and canonical continuation
+8f120cea88dcb88209d63653e79d1f743a8dc1c4 docs(storage): preserve canonical three-store handoff and independent evidence
+0be65aaff452bb8a4416f4a684efa6818c76f04c docs(storage): verify interrupted three-store handoff without replay
+e715c75aa7e6cf0680d3c3c13d7b88dbc9fc53d5 feat(http): verify explicit three-store readiness without widening work authority
+799e0220d19575f08c29716412e497a2231cbe6c docs(http): record three-store readiness and precise remaining isolation boundary
+6f1daf8c291b8deb59e557b3bebeb78e5ea62c90 feat(storage): qualify opt-in three-store isolated diagnostic readiness
+5d21b51f52cdf876faded6b08f0b67bba28d0a8b merge(docs): preserve prior three-store HTTP handoff ancestry
+971770443d486b1a3853ed8600ec370017948ab3 docs(storage): record full isolated three-store proof and blocked cleanup follow-up
+3fae30dee84b5a39804e051d1921a06975122bb0 feat(health): classify owned work without granting dispatch or recovery
+30244eb92d2abbd94a2241074216be9bee644d29 docs(health): bind complementary native-reader evidence to selected policy
+966c12692422f36cd5fb6db0e953b2dba77cab09 feat(health): qualify committed native work reader with single owner policy
+4c91d257b1a19e484f51d55cb61c397ac3c934ac merge(docs): retain original work-policy and reader review ancestry
+12147af7ea942d8ca133c193ee1f6f521002ed24 merge(health): preserve exact tested policy-reader union and independent evidence
+2155112378cc99c267afb764e727774150f4adfb docs(health): record joint policy reader acceptance and live collector boundary
+be6ec020ea0227c4cad282c3d74f6f3417ff8103 merge(docs): preserve canonical work-health delivery and independent review
+ec5f1e3ba773550c0c8a1e7fa8381c7b28d4b85a docs(health): record unified work-policy reader proof and live-collector boundary
+af6cf2f9b8f092d749eb6df4bab6ea4d9616fc4a feat(health): observe real native Tasks and verify completed owner retirement
+578d2edc1aad6fe974d286221f71e84dfa6ed1a1 test(health): qualify native task observer union and independent retirement cases
+42b20e9956cff938976972ed1a7eddec6d47edff docs(health): record real-task observer acceptance and native-ingress boundary
+454e3797422a62d762db35341667e87538831240 feat(health): stage native run producer provenance with explicit executor-role boundary
+d0b150b3924da9dc7f103cb07fa438a93d3b83ca test(api): independently verify selected native producer lifecycle and failure isolation
+7c4e5125920ec2548f536344c11974bd649a023f test(health): qualify native producer provenance union without runtime activation
+250e218fe12883db320dbed02763d4fea8d6bce8 docs(api): record native producer provenance acceptance and executor-health boundary
+15498974b6bd97074d11c07fd43e0b44ade980f4 feat(health): bind actual native worker lifetime and preserve queued cancellation ownership
+c6b0fe66acc45aed06e88ff7924849685af26b35 test(api): verify queued cancellation fix and actual worker ownership independently
+09d2669b70225e9630b8e6f2e3fe49bec826df87 test(health): qualify actual worker ownership and cancellation accounting union
+e814e4cc771f40f49f4ecd7753c9cf15ec913255 docs(health): record actual worker lifetime and queued cancellation acceptance
+68f1b833d633766a2a3c958572bcc7281243337e feat(health): correlate native API requests with canonical authority claims
+80e15b4bb525ce1ab9aa0d997252b82f33335a65 docs(health): record canonical correlation acceptance and remaining runtime boundary
+1a892b1a2f56c9b710f0be6deb33a91df602a449 feat(health): correlate canonical claims with native TurnRunner workers
+9418bf0a4f92f095ad784ac0483025c9f82465e6 docs(health): record TurnRunner proof, completion race fix and bootstrap boundary
+f8c3fc98620b35a232cf4d0d0d7a4f5cfec6b9bc test(storage): independently qualify caller-owned SessionStore without new opens
+e4e2d6edadd1e3ddc6c3de7823a587baf9b8053d feat(session): stage verified caller-owned SessionStore patch without activation
+6a01e1a89b0017153dc1710e16446e22e24f0f80 merge(session): qualify caller-owned SessionStore with independent native acceptance
+a941906565ab61af0b85dcbb234a5ba22bfbce98 docs(session): record borrowed SessionStore qualification and shared-bootstrap boundary
+8fb9c52a8b3c333aa3d26ef04c76d11a20e2a228 feat(runtime): stage verified caller-owned runner and prepared authority
+fc19e65ec0601b57996b8825f5938938c3d7f30d test(runner): independently verify prepared owner drift and caller lifetime
+4725de8e6e516c2d459992d684d228f866734b58 merge(runtime): qualify caller-owned native runner with independent drift tests
+fd3cdc26d3c9d9590bc8da7f516b965409be5140 docs(runtime): record prepared caller-owned runner and active-service boundary
+8cf89e565719b65aad9ca494ba74a908cac7c805 test(api): independently qualify prepared three-store join and service drift
+dde6c4eecb2ff4b0e4c45d562ecdc6372a7fdd62 feat(api): stage verified prepared runner and three-store attachment
+379977c8531122a589dfdf816a2a48ed6ba40823 merge(api): qualify prepared shared-store attachment and closed-service drift gates
+1d6564ddd766a9bef15df594bd6ca2869e10922d docs(api): record prepared three-store attachment and closed-service acceptance
+1e511717f78d2a44901ab92b88ff476d49c6d1f8 docs(runtime): recover prepared API delivery and pin startup integration boundary
+66a7bf776bd8df0ea0e0562efa4b03604f93b1fa docs(runtime): preserve independent resume and exact observer source boundaries
+1a8d46df94746a445c8cef7ce53e4771b7caa69b feat(startup): retain native store ownership until prepared API and runner detach
+a6a3b850cd67f9006fb1e03a90406bc24b92d1d6 test(startup): verify original owner consumer ordering with independent native evidence
+00e9b36213a0939df02007b0cf55fd4cd10bb4c7 docs(startup): record integrated consumer ordering and explicit Linux acceptance gap
+4024e77618f0673965c98361860627fd544015a4 test(linux): verify pinned source syntax and target wheel artifact integrity
+36f8009139e094725e209dc14eb3011ecdf7ea4e docs(linux): distinguish superseded wheel integrity from current security candidate
+1937a3eab50196ebcac4325a2978e641e7820b2d test(linux): bind corrected wheel payload and real owner lifecycle evidence
+eab1cbe792b407f1a874aa404287632045e58271 test(linux): qualify corrected runtime and real cold owner-consumer lifecycle
+931e57045bdce466934838dffde7d54527ad3f12 docs(linux): record real owner acceptance and corrected isolated dependency target
+65bfc11dc2f1187e3f546670322e04d98ffe5cc2 test(confinement): verify exact Linux ELF dependency closure without policy expansion
+6a60d88d9fbf11f441b37b851651e2d40ac3c2ff test(confinement): retain failed lifecycle and exact pairing layout mismatch
+4f298298172637b6bd6f7a9c7101a24a3f9c6d45 test(confinement): independently bind two-cycle Linux and real POSIX layout acceptance
+96ef5dd0a858bb6bd821096455aa9263d25c1f62 feat(confinement): qualify explicit prepared profile across two isolated cold starts
+e4968ae6c6265aa3f1841efacdee286a767d13a3 docs(confinement): record prepared two-start acceptance and active-work boundary
+6c64d2ba2be083d89d72c3b0c484b55f290ab081 fix(lifecycle): reject prepared work before detach and validate retired ownership
+b00bf8de9ff336ec9dd74596fe11d19983e89c82 feat(observation): qualify explicit native generations and readonly prepared channel
+71db831e12fe0a8623940c874a1e2ab8f39c57f7 merge(observation): qualify source generations and prepared work lifetime
+39a1be3a8786f52bc792d20ca20ee53e92c993a6 docs(observation): record joint guards and explicit active-work acceptance boundary
+5819740cdb77f04cd4c19f960d39e19828fdbf69 test(admission): verify drain commit races and current caller-owned release guards
+dad8011216af1645eafe0ef2db6a0de18c974c16 feat(runtime): stage native caller-owned admission lifecycle with source-bound acceptance
+fc3bbbd1a53d87c7f5b4e7ec850223eaef7928d7 docs(admission): bind native feature identity and close readonly lifecycle review
+53ddfd108759b32c71a7b9f1857bb044710b9a1c merge(admission): qualify native local activation and retained drain with independent tests
+ffa0d366b505848718f4e10f044af19350a4d947 docs(admission): record native local lifecycle acceptance and active harness boundary
+e54e9bd9e03747fc47704a7abda66b289d0fb4a1 test(runtime): independently verify active admission on the original store owner
+00c5028a1d0878fd04c5d63d6669125bd1d57530 docs(runtime): bind current owner and legacy compatibility evidence
+a91f5b1dc69b49c10319c98ff88ef194b29bf651 feat(runtime): integrate explicit local admission with the original store owner
+001ca5e2e5b4fcf5929a44b964ad4eb7a1c1d300 merge(runtime): qualify explicit local admission on the original storage owner
+2c0d9d081fa29fa5836eb4fc782e8340fd461c59 docs(runtime): record same-owner local admission acceptance and remaining active gates
+0f8f3cb69d1ab87533d4a41bc2a2318b49c6829a test(retirement): verify native idle session release preserves history and live obligations
+f0cb13853813eb49403b551f32b957ee628a4223 docs(retirement): preserve blocked optional QA history operation and artifact identity
+47d92fc27297c0d46d1ca6db7a9e982456925c87 feat(runtime): stage native idle API retirement with preserved durable history
+b541d703eb90652feabf8dcbf7499cf5e225c9f8 merge(runtime): qualify idle native API retirement with independent durable-history checks
+3bbabdc6bfb44c3498113f375c54065ea0d61ad9 docs(runtime): record native memory retirement acceptance and actual request boundary
+89776a70a081f0b705170995ebb07619cc2b1b96 test(api): independently qualify canonical publication and actual admission identity
+43f7727cfbebe46a4718a1cbd145725037d5c5d8 docs(api): bind immutable publication feature and assign single union acceptance
+15cafa246335277a85535f9ff5ae1a8ab97846d3 feat(api): stage canonical caller-owned publication with native admission proof
+717cea096358a0fbe227b1409fde24b27638f268 merge(api): qualify same-owner canonical publication and native admission
+d0418ad0fdde8e8faa04916e6b28c2e6a8857c02 docs(api): record canonical publication admission acceptance and execution boundary

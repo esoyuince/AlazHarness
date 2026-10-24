@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-24T17:22:04.764694+03:00",
+  "sourceHead": "d0418ad0fdde8e8faa04916e6b28c2e6a8857c02",
+  "oldRemoteMain": "cc7ceba8f850da7652a647e984cbae2c45c8fdea",
+  "publicationAuthorized": true,
+  "rangeCommits": 164,
+  "sourceFilesExact": 584,
+  "patchesExact": 10,
+  "currentCodeUnchangedFromFullRun": true,
+  "localFull": {
+    "total": 3395,
+    "passed": 3372,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "sourceScan": "all new reachable history versions plus every commit tree, bounded credential patterns",
+  "copiedUpstreamComponentsReproduced": 10,
+  "onlyDocsEvidenceAddedByPublication": true,
+  "mainAdvanceCondition": "same pushed SHA alaz/local-ci success plus fresh remote-main ancestor; no force or squash",
+  "runtimeAndNativeActivation": false,
+  "m1OrM2Accepted": false,
+  "branchPush": "NOT_YET_RUN",
+  "remoteMainUpdated": false
+}
