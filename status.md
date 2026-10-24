@@ -32,3 +32,8 @@ No root/WSL/provider/model/installedvendor/source-lock/main/push/remoteCI change
 All579prior harness sources unchanged; next same-owner source-qualified API/worker
 path and full activeLinux/HTTP still open. No optional agent tools exposed, none
 created. Earlier blocked operations not replayed.
+
+
+### Definitive single full-suite owner and native feature identity
+
+Original native5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979 and10thpatch match exact final6files; actual producer/independent imported native bytes all matched immutable feature. Original53/53 includes25publication+28prior cases, independent21/21 overlaps; not74unique. Own native copy adopted original commit history with no byte change/replay. immutable-feature-handoff.json pins patch/config/driver/results. C131D6 is DEFINITIVE sole combined full+canonical delivery owner; Q131P1 will not create joint tree or duplicate full. Producer may merge current QA history; all own tests/jobs terminal, read-only review only next.

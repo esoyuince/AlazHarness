@@ -84,3 +84,7 @@ Next preserve original native/artifact commits and exact source custody, run one
 combined harness regression, then qualify the SAME API producer/source generation
 under the original harness owner and actual worker execution before Linux/HTTP.
 The canonical publication seam is not a claim that those later gates have passed.
+
+## Immutable artifact and single union ownership
+
+Native feature `5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979` reproduces all six exact independently tested files. Patch SHA256 `5e0db755105e5b976f23138cd676e7925d0086f193ed41d35e063cd0e431afae` and both actual imported module sets match original Git bytes. Original53methods include ordinary writer positive control plus28prior contracts, and independent21 overlap. The original C131D6 task owns the ONE combined full regression and canonical delivery; this review will verify their terminal artifacts instead of duplicating work. Current harness source envelopes remain unchanged.
