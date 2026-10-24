@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-24T18:44:10.771745+03:00",
+  "result": "PASS_SCOPED_INDEPENDENT_API_OWNER",
+  "nativeMethods": 23,
+  "nativePassed": 23,
+  "firstRun": {
+    "total": 23,
+    "passed": 22,
+    "failures": 1,
+    "errors": 0
+  },
+  "sameQaBeforeAfter": true,
+  "nativeImports": 513,
+  "manifestSources": 522,
+  "offlineReceiptMethods": 8,
+  "all586PriorSourcesUnchanged": true,
+  "nativeProductEdited": false,
+  "producerEdited": false,
+  "fullAgentOrLinuxOrHttpQualified": false,
+  "providerCalls": 0,
+  "mainUpdated": false,
+  "pushed": false,
+  "producerOwnsFullStandard": true
+}

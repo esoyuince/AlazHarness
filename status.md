@@ -1,69 +1,37 @@
 # AlazHarness - status
 
-## PUBLICATION-24OCT-P132L1 - PUSH + EXACT CI + MAIN FAST-FORWARD COMPLETE
+## I133C6 - INDEPENDENT NATIVE23 PASS / QA-ONLY HANDOFF
 
-Accepted published code/main20ab7e4e9347a5c631175c703a43073970c67a8e,
-previousmaincc7ceba. Exact GitHub alaz/local-ci SUCCESS57167784341 observed BEFORE
-non-forced remote main update; local clean main worktree fast-forwarded to sameSHA.
-Publication branch alaz/d3b-principal-launch-21oct is at the same accepted code;
-current GitHEAD may add only this final delivery documentation. Preserve history,
-no squash/reset/force/branch deletion. Actual receipts in publication-24oct-p132l1.
+Own branch alaz/d3b-api-owner-qa-i133c6 from published main94f509d.
+Producer d3b-api-owner-i133p1 remains SINGLE implementation owner. Own five
+snapshot files reverted to exact main baseline after terminal tests, all586old
+source/config/test bytes unchanged. No competing implementation in this commit.
+Native5ff88189 untouched; executed snapshots preserved under candidate001/002.
 
-### Verified publication and CI repair
+Actual original owner/native/API/SQLite23cases: first22PASS1FAIL, sameQA fixed
+23PASS0FAIL0ERROR0SKIP exit0. Lost native-retirement receipt after actual memory
+removal initially left ATTACHED/DRAINING; fixed source retains UNKNOWN, no retry
+or close. Real API admission/retry/queued-retention, leaf-settlement+native memory
+retirement and caller-close ordering tested. No payload/finite-turn/model execution.
+Await-cancel/late replay/late response/map identity covered.513actual native imports
+match immutable5ff and qualified522manifest. All23fixture profiles/registry cleaned;
+fixture retained-work cleanup never relabelled successful product drain.
 
-Original164commit history/3248newblob versions and allpending trees scanned with
-bounded configured credential/path checks, nohits;10upstream components reproduced.
-No claim this pattern scan proves absence of every secret. User dirty root and
-privateinfra dirty root hashes preserved, no unrelated staging. Native/source
-locks unchanged, installednativeeb75627;10reviewed patches remain STAGED.
+Eight offline receipts PASS; not native replays. Inherited scaffold raw metadata
+has old static nativeFeature; independent-result explicitly binds current5ff plus
+actual imported hashes, raw retained. Windows actor/lease/mount/layout/cold helpers
+doubled; no Linux/HTTP/fullworker acceptance. All current QA commands terminal.
+Interruption cut request000018 before dispatch (receipt unavailable); readback000019
+confirmed no effects,000020 performs uniquely owned restore/report checkpoint.
 
-First exact push ea7b482 FAILED real Linux portability assertions. Root-run unit
-positive fixture UID/GID0 incorrectly used production root-denial input; root-only
-fixture metadata mapping retains real mode/device/link checks and production
-root actor remains rejected. Single C#checkout attribute now yields exact historic
-CRLFbytes. Git replace-ref control first proves replacement with envflag absent,
-then verifies protected export with emptyflag. Old test/hash evidence unchanged,
-four historical test/helper/fixture bytes archived by explicit name/hash.
+Producer has39nativePASS and olddefault23/20PASS; scopes overlap, do not sum.
+Producer full run is separate and must finish before integration; do not duplicate.
+Next merge QA history/source-bound records into exact producer union, full standard,
+then same-SHA remoteCI before any new main promotion. Published main94f509d and
+prior merge are already complete. Real finite API->TurnRunner->physical-worker
+result then current Linux/HTTP remains next product acceptance.
 
-Second df121d5 had3396PASS/5SKIP but180s overall timeout. Test-only HTTP fixture
-shutdown polling0.5->0.01 removed measured idle waits; client deadlines,30wire
-scenario bodies and assertions unchanged. Third1db68d7 had3397PASS/5SKIP and
-staticPASS but overall180s timeout, both remain FAIL. No status overridden.
-Only AlazHarness CI wallclock180->360 now applied under coordinator lock with
-private4TBbackup, config hash-CAS and preserved mode/owner. Image/command/1CPU/
-512mRAM/768mRAM+swap/global2jobs10g/trust/allotherpolicies unchanged, no restart.
-Private policy commits7f9976d3/36d5a91 are isolated; private infra main untouched.
-
-Final Windows3402=3379PASS23SKIP0ERROR0FAIL exit0. Exact Linuxserver20ab7e4:
-3402=3397PASS5SKIP0FAILED0suiteErrors, staticPASS, jobexit0/no timeout/noOOM.
-This is standard scoped CI, not new native/kernel/model acceptance.586source/
-config/test hashes and10patches unchanged from accepted run.7new portability/
-cleanup contracts,71initial and51wire/history focused methods passed; subsets,
-not extra native runs. Existing native53/21 etc remain their original scoped proof.
-
-### Continue from published main, not dirty legacy root
-
-Main worktree: C:\Antigravity\AlazHarness\scratch\worktrees\main-published-21oct-a37c.
-Publication worktree: scratch/worktrees/d3b-principal-launch-21oct.
-After this docs-only handoff has its own exactCI, fast-forward main if still valid,
-then use a short branch for I133 same-owner canonical API integration.
-Current native5ff88189 provides real programmatic API admission in original
-registry, exact retries/identity and safe publication withdrawal; NOT full payload
-execution or authenticatedHTTP. Current harness envelopes/emptyregistry gates
-still need explicit new-source qualification, not private field insertion.
-
-NEXT: SAME NativeStoreStartup/consumer source-qualified canonical publication,
-then actual accepted API->finite turn->native physical worker bounded compute,
-real result and native session/cache retirement. Then same active source under
-Linux isolation/HTTP, model budgeting and recovery. Earlier prepared isolation is
-historical source proof, not new active acceptance. M1/M2/fullD3B not completed.
-No provider/model/listener/production/native activation by publication. Prior
-blocked operations remain unexecuted. Current publication code/test jobs terminal.
-
-### Evidence
-
-Docs/PUBLICATION-24OCT-P132L1.md and evidence/publication-24oct-p132l1/: historyscan,
-root-preservation-before, firstfailure, second/thirdtimeout, finalWindowsfull,
-ci-budget-activation(sanitized), budget-server-ci-result, ci-accepted-before-main,
-main-publication-result and publication-summary. Private config never committed
-publicly. Old J131 status archived before publication; full logs/failures retained.
+Report docs/D3B-API-OWNER-QA-I133C6.md; evidence/d3b-api-owner-qa-i133c6 contains
+baseline,candidate001/002,raw native001FAIL/native002PASS,source-custody,
+retirement-receipt-loss,snapshot-restoration,receipt-tests. No native/product/peer
+write, service/provider/root/WSL or remote/main change. Root user changes preserved.

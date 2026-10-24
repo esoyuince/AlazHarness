@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-24T18:38:28.380105+03:00",
+  "severity": "retirement effect/result uncertainty",
+  "candidate": "candidate-001.json",
+  "result": "REPRODUCED_ACTUAL_NATIVE_AFTER_EFFECT_RECEIPT_LOSS",
+  "failingCase": "__main__.OwnerPublication.test_trace_fault_after_native_retirement_retains_unknown",
+  "qaSha256": "d51e06fa0b8f7427f2d5bdecd2c5af58135c605df3eeb140cb9e4a80ac7d0822",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_store_startup.py": "bd7620251e459bd8ef1ec14d3809363ed18507996b4601eb7720f88e7b5d7691",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "1bf4557ac9cb59751653b890099863ab82722bb3dc38427320ab8910b75d7cac",
+    "packages/claw-hermes/gateway_consumer_admission.py": "5c9fa513793b2451fb931ad4c2e755d7bb1df93d690a54a3415e7bd276acdac8",
+    "packages/claw-hermes/gateway_consumer_api.py": "4ca291df5879363d5acd6cb4af431719ba771965957a614c1d00671a8912110c",
+    "config/canonical-api-consumer-i133p1-sources.json": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27",
+    "scripts/qa/i133c6_native_owner_publication.py": "d51e06fa0b8f7427f2d5bdecd2c5af58135c605df3eeb140cb9e4a80ac7d0822"
+  },
+  "actualObserved": "Native memory session removal completed; wrapper exception before receipt acceptance leaves ATTACHED/DRAINING instead of UNKNOWN",
+  "beforeAndAfterDurableDumpsEqual": true,
+  "nativeMethodsReplaced": false,
+  "faultInjection": "sys.settrace only in harness retirement wrapper after real native receipt assigned",
+  "expected": "keep original owner, mark unresolved transition and refuse finish/retry",
+  "producerFilesModified": false,
+  "producerAlsoReproduced": true,
+  "preliminaryFixtureResultMetadata": "inherited fixture statically labels old native feature; independent-result overrides feature and binds actual complete current hashes"
+}

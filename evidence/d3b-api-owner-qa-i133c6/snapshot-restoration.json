@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-24T18:44:10.770117+03:00",
+  "base": "94f509d028e45790adef9d27ffa237a042a2151d",
+  "all586PriorFilesUnchanged": true,
+  "onlyOwnedTestCopiesRestored": [
+    "packages/claw-hermes/gateway_store_startup.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "packages/claw-hermes/gateway_consumer_admission.py",
+    "packages/claw-hermes/gateway_consumer_api.py",
+    "config/canonical-api-consumer-i133p1-sources.json"
+  ],
+  "allExecutedCopiesRetainedInArchives": true,
+  "producerWorktreeOrNativeEdited": false,
+  "independentBranchImplementationDelta": false
+}

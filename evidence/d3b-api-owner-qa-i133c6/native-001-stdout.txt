@@ -1,0 +1,47 @@
+{"result": "FAIL", "total": 23, "passed": 22, "errors": 0, "failures": 1, "skipped": 0, "errorIds": [], "failureIds": ["__main__.OwnerPublication.test_trace_fault_after_native_retirement_retains_unknown"], "races": [], "originalOwnerAndNativeConstructorsAndSqlReal": true, "linuxActorLeaseMetadataMountColdDoubled": true, "explicitPostEffectTransitionFaultDoubled": true, "wholeApiTurnOrAgentExecuted": false, "queuedWorkRetiredAutomatically": false, "linuxConfinementTested": false, "providerCalls": 0, "rootWslAction": false, "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c", "temporaryRootRemoved": true}
+test_actual_api_admission_stays_queued_and_blocks_clean_finish (__main__.OwnerPublication.test_actual_api_admission_stays_queued_and_blocks_clean_finish) ... ok
+test_cancelled_cleanup_keeps_published_entry_and_owner (__main__.OwnerPublication.test_cancelled_cleanup_keeps_published_entry_and_owner) ... ok
+test_current_registry_identity_not_only_same_dictionary_contents (__main__.OwnerPublication.test_current_registry_identity_not_only_same_dictionary_contents) ... ok
+test_direct_native_publication_cannot_impersonate_consumer (__main__.OwnerPublication.test_direct_native_publication_cannot_impersonate_consumer) ... ok
+test_duplicate_publish_and_active_publish_refuse (__main__.OwnerPublication.test_duplicate_publish_and_active_publish_refuse) ... ok
+test_exact_retry_same_id_and_changed_body_conflict (__main__.OwnerPublication.test_exact_retry_same_id_and_changed_body_conflict) ... ok
+test_full_empty_lifecycle_and_final_close_recheck (__main__.OwnerPublication.test_full_empty_lifecycle_and_final_close_recheck) ... ok
+test_late_replay_during_await_never_withdraws_registration (__main__.OwnerPublication.test_late_replay_during_await_never_withdraws_registration) ... ok
+test_late_response_after_detach_blocks_owner_close (__main__.OwnerPublication.test_late_response_after_detach_blocks_owner_close) ... ok
+test_leaf_settlement_native_retirement_preserves_durable_history (__main__.OwnerPublication.test_leaf_settlement_native_retirement_preserves_durable_history) ... ok
+test_old_selection_never_auto_qualifies_latest_native (__main__.OwnerPublication.test_old_selection_never_auto_qualifies_latest_native) ... ok
+test_open_transactions_allow_seal_but_never_release (__main__.OwnerPublication.test_open_transactions_allow_seal_but_never_release) ... ok
+test_other_event_loop_cannot_publish (__main__.OwnerPublication.test_other_event_loop_cannot_publish) ... ok
+test_prepare_selects_same_three_connections_without_publication (__main__.OwnerPublication.test_prepare_selects_same_three_connections_without_publication) ... ok
+test_prepared_published_detach_without_activation_preserves_owner (__main__.OwnerPublication.test_prepared_published_detach_without_activation_preserves_owner) ... ok
+test_publish_is_native_exact_owner_and_no_sql_mutation (__main__.OwnerPublication.test_publish_is_native_exact_owner_and_no_sql_mutation) ... ok
+test_retired_registry_replacement_blocks_original_store_close (__main__.OwnerPublication.test_retired_registry_replacement_blocks_original_store_close) ... ok
+test_retirement_requires_seal_and_does_not_cancel_queued_work (__main__.OwnerPublication.test_retirement_requires_seal_and_does_not_cancel_queued_work) ... ok
+test_service_model_and_full_worker_permissions_are_still_false (__main__.OwnerPublication.test_service_model_and_full_worker_permissions_are_still_false) ... ok
+test_strict_explicit_options_reject_before_reservation (__main__.OwnerPublication.test_strict_explicit_options_reject_before_reservation) ... ok
+test_trace_fault_after_native_publication_retains_unknown (__main__.OwnerPublication.test_trace_fault_after_native_publication_retains_unknown) ... ok
+test_trace_fault_after_native_retirement_retains_unknown (__main__.OwnerPublication.test_trace_fault_after_native_retirement_retains_unknown) ... FAIL
+test_unknown_native_import_blocks_before_publication (__main__.OwnerPublication.test_unknown_native_import_blocks_before_publication) ... ok
+
+======================================================================
+FAIL: test_trace_fault_after_native_retirement_retains_unknown (__main__.OwnerPublication.test_trace_fault_after_native_retirement_retains_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-owner-qa-i133c6\scripts\qa\i133c6_native_owner_publication.py", line 164, in test_trace_fault_after_native_retirement_retains_unknown
+    self.assertEqual((c._stage,c._admission_phase),('ADMISSION_UNKNOWN','UNKNOWN'))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: ('ATTACHED', 'DRAINING') != ('ADMISSION_UNKNOWN', 'UNKNOWN')
+
+First differing element 0:
+'ATTACHED'
+'ADMISSION_UNKNOWN'
+
+- ('ATTACHED', 'DRAINING')
++ ('ADMISSION_UNKNOWN', 'UNKNOWN')
+
+----------------------------------------------------------------------
+Ran 23 tests in 78.453s
+
+FAILED (failures=1)
+
+{"result": "FAIL", "total": 23, "passed": 22, "errors": 0, "failures": 1, "skipped": 0, "errorIds": [], "failureIds": ["__main__.OwnerPublication.test_trace_fault_after_native_retirement_retains_unknown"], "races": [], "originalOwnerAndNativeConstructorsAndSqlReal": true, "linuxActorLeaseMetadataMountColdDoubled": true, "explicitPostEffectTransitionFaultDoubled": true, "wholeApiTurnOrAgentExecuted": false, "queuedWorkRetiredAutomatically": false, "linuxConfinementTested": false, "providerCalls": 0, "rootWslAction": false, "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979", "temporaryRootRemoved": true, "driverSha256": "d51e06fa0b8f7427f2d5bdecd2c5af58135c605df3eeb140cb9e4a80ac7d0822", "observations": [{"case": "test_actual_api_admission_stays_queued_and_blocks_clean_finish", "realApiAdmission": true, "actualOwnerSame": true, "queuedPayloadExecuted": false, "queuedRowRetained": true}, {"case": "test_leaf_settlement_native_retirement_preserves_durable_history", "actualApiAdmitted": true, "leafSettlementExplicitNotPayloadExecution": true, "nativeRetirementOnlyMemory": true, "originalOwnerClosesAfterDetach": true}], "actualProgrammaticApiAdmission": true, "nativeProductMethodsReplaced": false, "traceFaultsAndMemoryCleanupFixtureExplicit": true}
