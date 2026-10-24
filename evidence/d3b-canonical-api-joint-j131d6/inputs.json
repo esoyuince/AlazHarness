@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T15:46:34.418271+03:00",
+  "base": "3bbabdc6bfb44c3498113f375c54065ea0d61ad9",
+  "productCommit": "15cafa246335277a85535f9ff5ae1a8ab97846d3",
+  "independentCommit": "43f7727cfbebe46a4718a1cbd145725037d5c5d8",
+  "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "nativePatchSha256": "5e0db755105e5b976f23138cd676e7925d0086f193ed41d35e063cd0e431afae",
+  "onlyConflict": [
+    "status.md"
+  ],
+  "originalNativeMethods": 53,
+  "independentNativeMethods": 21,
+  "sameSixNativeHashes": true,
+  "nativeScopesOverlap": true,
+  "fullRegressionOwner": "J131D6 single exact union; no duplicate full",
+  "canonicalBefore": "3bbabdc6bfb44c3498113f375c54065ea0d61ad9",
+  "newNativeExecutionByMerge": false
+}

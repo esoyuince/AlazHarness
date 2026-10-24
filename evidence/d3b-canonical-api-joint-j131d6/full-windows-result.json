@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "total": 3395,
+  "discovered": 3395,
+  "passed": 3372,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 584,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "all579OriginalSourcesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "newOfflineReceipts": {
+    "test_api_publication_receipt_q131p1.py": 7,
+    "test_canonical_publication_receipt_c131d6.py": 8
+  },
+  "elapsedSeconds": 146.501,
+  "at": "2026-10-24T15:51:57.383985+03:00",
+  "fullLogSha256": "ae6ef212a1d03e2b90b8d750d7bdf6efb31a1d418e5f91b780930ae40b78bc87",
+  "wrapperExitCode": 0,
+  "scope": "one complete standard union run; staged native artifact, no installed activation/native replay/provider"
+}

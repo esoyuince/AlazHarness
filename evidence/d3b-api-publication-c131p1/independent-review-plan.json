@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-24T15:27:03.563694+03:00",
+  "scope": "read-only old failure and current unmodified native source review, no baseline rerun",
+  "currentNativeBase": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "oldManifestNative": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "oldManifestSourceCount": 517,
+  "threeApiModulesNotInOldManifest": {
+    "gateway/session_api.py": "0547f108fdf89fa3e1a29f8ce83a9519c8c63d38ec96bc19371e44a00b26410a",
+    "gateway/session_results.py": "e62666693967073b90e81e9dc841056ac4d747bc64e52de1605ea9975b1e614e",
+    "gateway/session_api_turn.py": "feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f"
+  },
+  "defaultPublisherSideEffects": [
+    "native recover_api_turns",
+    "voice synchronization",
+    "voice callback binding"
+  ],
+  "requiredIndependentChecks": [
+    "explicit same native adapter through unmodified canonical resolver",
+    "publication cannot recover accepted rows or create tasks",
+    "existing map/container identity pinned and foreign adapter not overwritten",
+    "current admission gate rejects publication drift before new durable binding/admission",
+    "prepublication request cannot silently create retained API session",
+    "native async API acceptance gives one session/admission and exact retry preserves ID",
+    "changed request/body/target cannot be accepted as same request",
+    "API detach removes only its own published mapping after successful cleanup",
+    "awaited cleanup map/task drift retains unknown state and caller handles",
+    "no model/service/listener activation or default prepared widening"
+  ],
+  "producerOwner": "C131D6",
+  "qaOwner": "C131P1",
+  "nativeProductChangedHere": false,
+  "oldQ130BlockedCopyUntouched": true
+}

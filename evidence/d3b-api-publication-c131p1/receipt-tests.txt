@@ -1,0 +1,12 @@
+test_annotation_only_source_version_not_conflated (test_api_publication_receipt_q131p1.PublicationReceipt.test_annotation_only_source_version_not_conflated) ... ok
+test_current_twenty_one_pass_and_owned_fixture_cleanup (test_api_publication_receipt_q131p1.PublicationReceipt.test_current_twenty_one_pass_and_owned_fixture_cleanup) ... ok
+test_final_native_and_qa_bytes_pinned (test_api_publication_receipt_q131p1.PublicationReceipt.test_final_native_and_qa_bytes_pinned) ... ok
+test_native_api_retry_and_retirement_cases_in_actual_execution (test_api_publication_receipt_q131p1.PublicationReceipt.test_native_api_retry_and_retirement_cases_in_actual_execution) ... ok
+test_publication_observation_does_not_dispatch_recovery_voice_or_status (test_api_publication_receipt_q131p1.PublicationReceipt.test_publication_observation_does_not_dispatch_recovery_voice_or_status) ... ok
+test_same_two_failing_assertions_pass_without_qa_change (test_api_publication_receipt_q131p1.PublicationReceipt.test_same_two_failing_assertions_pass_without_qa_change) ... ok
+test_scope_not_authenticated_http_or_agent_or_harness_acceptance (test_api_publication_receipt_q131p1.PublicationReceipt.test_scope_not_authenticated_http_or_agent_or_harness_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.113s
+
+OK

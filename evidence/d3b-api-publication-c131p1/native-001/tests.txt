@@ -1,0 +1,240 @@
+test_adapter_map_drift_during_awaited_cleanup_never_deletes_foreign_entry (__main__.PublicationChecks.test_adapter_map_drift_during_awaited_cleanup_never_deletes_foreign_entry) ... ok
+test_default_prepared_does_not_publish (__main__.PublicationChecks.test_default_prepared_does_not_publish) ... ok
+test_draining_queued_request_retains_publication_and_all_handles (__main__.PublicationChecks.test_draining_queued_request_retains_publication_and_all_handles) ... ERROR
+test_foreign_existing_adapter_is_not_overwritten (__main__.PublicationChecks.test_foreign_existing_adapter_is_not_overwritten) ... ok
+test_foreign_loop_publication_refused_before_registry_effect (__main__.PublicationChecks.test_foreign_loop_publication_refused_before_registry_effect) ... ok
+test_non_api_adapter_is_not_silently_dropped (__main__.PublicationChecks.test_non_api_adapter_is_not_silently_dropped) ... ok
+test_prepared_only_disconnect_removes_publication_keeps_stores (__main__.PublicationChecks.test_prepared_only_disconnect_removes_publication_keeps_stores) ... ok
+test_publication_never_recovers_or_wires_voice (__main__.PublicationChecks.test_publication_never_recovers_or_wires_voice) ... ok
+test_publication_refuses_pending_real_task_without_cancel (__main__.PublicationChecks.test_publication_refuses_pending_real_task_without_cancel) ... ok
+test_publication_refuses_transaction_in_each_store (__main__.PublicationChecks.test_publication_refuses_transaction_in_each_store) ... ok
+test_published_adapter_replacement_blocks_native_guard (__main__.PublicationChecks.test_published_adapter_replacement_blocks_native_guard) ... ok
+test_published_foreign_home_refused_without_materialization (__main__.PublicationChecks.test_published_foreign_home_refused_without_materialization) ... ERROR
+test_published_identity_uses_existing_canonical_resolver (__main__.PublicationChecks.test_published_identity_uses_existing_canonical_resolver) ... ok
+test_published_map_replacement_blocks_new_admission_before_write (__main__.PublicationChecks.test_published_map_replacement_blocks_new_admission_before_write) ... ERROR
+test_published_owner_profile_drift_blocks_guard (__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard) ... FAIL
+test_real_api_admission_then_exact_retry_is_one_row (__main__.PublicationChecks.test_real_api_admission_then_exact_retry_is_one_row) ... ERROR
+test_same_request_changed_payload_refused (__main__.PublicationChecks.test_same_request_changed_payload_refused) ... ERROR
+test_same_request_other_target_refused (__main__.PublicationChecks.test_same_request_other_target_refused) ... ERROR
+test_settled_native_leaf_retirement_preserves_history_then_detaches (__main__.PublicationChecks.test_settled_native_leaf_retirement_preserves_history_then_detaches) ... ok
+test_standard_service_listener_remain_closed_after_publication (__main__.PublicationChecks.test_standard_service_listener_remain_closed_after_publication) ... ok
+
+======================================================================
+ERROR: test_draining_queued_request_retains_publication_and_all_handles (__main__.PublicationChecks.test_draining_queued_request_retains_publication_and_all_handles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-7v4w7xpy\\case-qgq70hym'
+
+======================================================================
+ERROR: test_published_foreign_home_refused_without_materialization (__main__.PublicationChecks.test_published_foreign_home_refused_without_materialization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 132, in test_published_foreign_home_refused_without_materialization
+    with self.assertRaises(fx.RT.RuntimeStoreError):self.api_admit()
+                                                    ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 39, in api_admit
+    result=fx.LOOP.run_until_complete(attempt())
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 36, in attempt
+    result=await admit_api_turn_async(self.api,session_id=sid,request_id=rid,user_message=text,conversation_history=[])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api_turn.py", line 154, in admit_api_turn_async
+    return await run_steps_off_loop(authority, steps or admit_api_steps(adapter, **kwargs), orphaned=schedule_orphan)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api.py", line 82, in run_steps_off_loop
+    return await asyncio.shield(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api.py", line 79, in serialized
+    return await drive()
+           ^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api.py", line 65, in drive
+    write = steps.throw(error) if error is not None else steps.send(result)
+                                                         ~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api_turn.py", line 168, in admit_api_steps
+    if authority is None or adapter._ensure_session_db() is not authority.db:
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server.py", line 1859, in _ensure_session_db
+    return self._borrowed_api_stores.select(self, get_hermes_home())[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_borrowed.py", line 105, in select
+    self._check();self._home(home)
+                  ~~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_borrowed.py", line 96, in _home
+    require(Path(home) == self.home, 'borrowed_profile_mismatch')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_borrowed.py", line 21, in require
+    raise BorrowedStoreRejected(reason)
+gateway.platforms.api_server_borrowed.BorrowedStoreRejected: borrowed_profile_mismatch
+
+======================================================================
+ERROR: test_published_map_replacement_blocks_new_admission_before_write (__main__.PublicationChecks.test_published_map_replacement_blocks_new_admission_before_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 115, in test_published_map_replacement_blocks_new_admission_before_write
+    with self.assertRaises(fx.RT.RuntimeStoreError):self.api_admit()
+                                                    ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 39, in api_admit
+    result=fx.LOOP.run_until_complete(attempt())
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 36, in attempt
+    result=await admit_api_turn_async(self.api,session_id=sid,request_id=rid,user_message=text,conversation_history=[])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api_turn.py", line 154, in admit_api_turn_async
+    return await run_steps_off_loop(authority, steps or admit_api_steps(adapter, **kwargs), orphaned=schedule_orphan)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api.py", line 82, in run_steps_off_loop
+    return await asyncio.shield(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api.py", line 79, in serialized
+    return await drive()
+           ^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api.py", line 65, in drive
+    write = steps.throw(error) if error is not None else steps.send(result)
+                                                         ~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\session_api_turn.py", line 168, in admit_api_steps
+    if authority is None or adapter._ensure_session_db() is not authority.db:
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server.py", line 1859, in _ensure_session_db
+    return self._borrowed_api_stores.select(self, get_hermes_home())[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_borrowed.py", line 111, in select
+    check_prepared(self, adapter)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_prepared.py", line 82, in check_prepared
+    _runner_check(bundle)
+    ~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_prepared.py", line 56, in _runner_check
+    check_publication(bundle)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\run_borrowed_publication.py", line 25, in check_publication
+    require(registry is bundle._publication_registry and profiles is bundle._publication_profiles,
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'publication_registry_replaced')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-api-publication-c131p1\gateway\platforms\api_server_borrowed.py", line 21, in require
+    raise BorrowedStoreRejected(reason)
+gateway.platforms.api_server_borrowed.BorrowedStoreRejected: publication_registry_replaced
+
+======================================================================
+ERROR: test_real_api_admission_then_exact_retry_is_one_row (__main__.PublicationChecks.test_real_api_admission_then_exact_retry_is_one_row)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-7v4w7xpy\\case-bn8bg8lk'
+
+======================================================================
+ERROR: test_same_request_changed_payload_refused (__main__.PublicationChecks.test_same_request_changed_payload_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-7v4w7xpy\\case-2nsm6lam\\gateway_state.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-7v4w7xpy\\case-2nsm6lam\\gateway_state.json'
+
+======================================================================
+ERROR: test_same_request_other_target_refused (__main__.PublicationChecks.test_same_request_other_target_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-7v4w7xpy\\case-ve6zfxz6\\gateway_state.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-7v4w7xpy\\case-ve6zfxz6\\gateway_state.json'
+
+======================================================================
+FAIL: test_published_owner_profile_drift_blocks_guard (__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 126, in test_published_owner_profile_drift_blocks_guard
+    with self.watched(),self.assertRaises(fx.RT.RuntimeStoreError):self.authority._require_admission_open()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+----------------------------------------------------------------------
+Ran 20 tests in 11.913s
+
+FAILED (failures=1, errors=6)

@@ -1,0 +1,35 @@
+{"result": "FAIL", "total": 2, "passed": 0, "errors": 0, "failures": 2, "skipped": 0, "errorIds": [], "failureIds": ["__main__.PublicationChecks.test_native_async_admission_does_not_publish_unowned_gateway_status", "__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard"], "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "races": [], "actualNativeRunnerAuthorityApiStores": true, "nativeMethodsReplaced": false, "ledgerWritesDirectWithRealNativeGuards": true, "explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords": true, "admittedAgentOrHttpExecution": false, "harnessOwnerIntegrationTested": false, "linuxIsolationTested": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true}
+test_native_async_admission_does_not_publish_unowned_gateway_status (__main__.PublicationChecks.test_native_async_admission_does_not_publish_unowned_gateway_status) ... FAIL
+test_published_owner_profile_drift_blocks_guard (__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard) ... FAIL
+
+======================================================================
+FAIL: test_native_async_admission_does_not_publish_unowned_gateway_status (__main__.PublicationChecks.test_native_async_admission_does_not_publish_unowned_gateway_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 110, in test_native_async_admission_does_not_publish_unowned_gateway_status
+    self.assertEqual(calls,[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: Lists differ: ['publish_runtime_status', 'publish_runtime_status', 'publish_runtime_status'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'publish_runtime_status'
+
+- ['publish_runtime_status', 'publish_runtime_status', 'publish_runtime_status']
++ []
+
+======================================================================
+FAIL: test_published_owner_profile_drift_blocks_guard (__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-publication-c131p1\scripts\qa\q131p1_native_publication_checks.py", line 144, in test_published_owner_profile_drift_blocks_guard
+    with self.watched(),self.assertRaises(fx.RT.RuntimeStoreError):self.authority._require_admission_open()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.585s
+
+FAILED (failures=2)
+
+{"result": "FAIL", "total": 2, "passed": 0, "errors": 0, "failures": 2, "skipped": 0, "errorIds": [], "failureIds": ["__main__.PublicationChecks.test_native_async_admission_does_not_publish_unowned_gateway_status", "__main__.PublicationChecks.test_published_owner_profile_drift_blocks_guard"], "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "races": [], "actualNativeRunnerAuthorityApiStores": true, "nativeMethodsReplaced": false, "ledgerWritesDirectWithRealNativeGuards": true, "explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords": true, "admittedAgentOrHttpExecution": false, "harnessOwnerIntegrationTested": false, "linuxIsolationTested": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true, "driverSha256": "3dbf6a7650f139b7c8b13fa7c0f62344796ff07f5fad73ae3670767edd59da64", "fixtureSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "realNativeAsyncApiAdmission": true, "completeTurnOrModelExecuted": false, "publicationAndDetachFaultObjectsExplicit": true, "harnessSourceEnvelopeQualified": false}

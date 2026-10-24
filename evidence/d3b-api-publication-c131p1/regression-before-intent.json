@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T15:33:44.181344+03:00",
+  "candidate": "candidate-001.json unchanged",
+  "driverSha256": "3dbf6a7650f139b7c8b13fa7c0f62344796ff07f5fad73ae3670767edd59da64",
+  "scope": "2 actual native regression controls: wrong owner profile, implicit status writer; no product edits",
+  "fixtureCorrection": "earlier fail-closed BorrowedStoreRejected accepted alongside RuntimeStoreError; existing native bounded flush only in fixture teardown to avoid races, dedicated no-writer assertion retained"
+}

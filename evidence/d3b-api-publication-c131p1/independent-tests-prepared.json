@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T15:28:09.684327+03:00",
+  "state": "NOT_RUN_AWAIT_EXACT_NATIVE_API_AND_SOURCE_SNAPSHOT",
+  "driverSha256": "b3d0ded0cbefa16f46aa19754a744932b28e6f7866a4f59ec105e9fdded29055",
+  "scope": "20 independent intended native publication/real async API admission/close identity cases; no model or HTTP server",
+  "nativeProductChanges": false
+}
