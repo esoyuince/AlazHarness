@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T15:34:59.594578+03:00",
+  "qaSha256": "6708d3f9f7215620d0d73854bf980b806b0766e14288683a7049eeb828fb6a06",
+  "candidate": "candidate001 unchanged",
+  "scope": "four stronger native status/profile/loop invariants; one existing refusal assertion widened only to include earlier valid native store refusal"
+}

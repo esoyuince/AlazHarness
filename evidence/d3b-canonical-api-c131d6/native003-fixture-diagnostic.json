@@ -1,0 +1,15 @@
+{
+  "requestId": "c131d601-2e41-4d76-9f34-131001000018",
+  "exitCode": 1,
+  "totalMethods": 53,
+  "rawTestFooter": "FAILED(failures=21,errors=1)",
+  "resultJsonWritten": false,
+  "cause": "new ordinary runner control closed runner AsyncSessionDB cache but omitted separately owned SessionStore cache;1registry reference leaked within test process causing later teardown assertions",
+  "sourceEvidence": "native close_all_session_db_handles explicitly says SessionStore sweep runs first",
+  "correction": "test finally closes ordinary.session_store first then ordinary runner cache; no direct registry reset, no product edit, no ignored errors",
+  "nativeHashesUnchanged": true,
+  "failedTempRootRemovedByRun": false,
+  "failedRuntimeProcessTerminal": true,
+  "oldDriverSha256": "be1d0eeb8491fc9d1a1b13d0e681dee7ffd26ef0b5922df67812537283678a5a",
+  "newDriverSha256": "d36ddb5c882328088487fad490d5ec201514666eb26e33f2c1a33cb9b4cd4e9a"
+}

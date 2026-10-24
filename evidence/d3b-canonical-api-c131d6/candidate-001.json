@@ -1,0 +1,13 @@
+{
+  "nativeBase": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "files": {
+    "gateway/run_adapters.py": "261e2446d1c932ae9a94d677566c8b1150051a1fc1ced6de93482e2211ed9342",
+    "gateway/platforms/api_server_borrowed.py": "6bbc7d3d260444c2ee2d00fbfc43abf861b1fcfda0296fbc02635a43930d329e",
+    "gateway/platforms/api_server_prepared.py": "124c918ed2a040c26bcb2586744190a208c58c47b5e9bc4e208a8d6f19a5dd5e",
+    "gateway/run_borrowed_admission.py": "fcf58199ea22e314cbbb2e6f06c242da5cfcbed1dacae7f4899007e4218b31c1",
+    "gateway/run_borrowed_publication.py": "de9180244f1f51b005d46b737b95f0498425e0e40cb3f102efa2bf5aaf912887"
+  },
+  "at": "2026-10-24T15:29:30.738933+03:00",
+  "scope": "explicit same-native registry publication and final withdrawal; default recovery/listener not invoked",
+  "state": "CANDIDATE_NOT_TESTED"
+}

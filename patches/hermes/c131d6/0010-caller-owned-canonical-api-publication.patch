@@ -1,0 +1,270 @@
+From 5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979 Mon Sep 17 00:00:00 2001
+From: esoyuince <248225088+esoyuince@users.noreply.github.com>
+Date: Sat, 24 Oct 2026 15:41:51 +0300
+Subject: [PATCH] feat(runtime): publish caller-owned API through the existing
+ native adapter lifecycle
+
+---
+ gateway/platforms/api_server_borrowed.py |  13 +++
+ gateway/platforms/api_server_prepared.py |   2 +
+ gateway/run.py                           |   4 +
+ gateway/run_adapters.py                  |   5 +-
+ gateway/run_borrowed_admission.py        |  11 ++-
+ gateway/run_borrowed_publication.py      | 115 +++++++++++++++++++++++
+ 6 files changed, 148 insertions(+), 2 deletions(-)
+ create mode 100644 gateway/run_borrowed_publication.py
+
+diff --git a/gateway/platforms/api_server_borrowed.py b/gateway/platforms/api_server_borrowed.py
+index 20c4ff1d..ff293647 100644
+--- a/gateway/platforms/api_server_borrowed.py
++++ b/gateway/platforms/api_server_borrowed.py
+@@ -69,6 +69,8 @@ class BorrowedAPIStores:
+         self._state_lock = state._lock
+         self._adapter = None
+         self._stage = 'NEW'
++        self._publication_state = 'NEW'
++        self._publication_registry = self._publication_profiles = self._publication_loop = None
+         self._prepared_runner = self._prepared_binding = None
+         self._prepared_adapter_ready = False
+         if prepared_runner is not None:
+@@ -133,6 +135,13 @@ class BorrowedAPIStores:
+         from gateway.run_borrowed_admission import finish_drain
+         return finish_drain(self)
+ 
++    def publish_api_adapter(self):
++        """Publish this exact prepared adapter without starting transport or recovery."""
++        from gateway.config import Platform
++        require(self._prepared_runner is not None, 'publication_prepared_runner_required')
++        return self._prepared_runner._publish_primary_adapter(
++            Platform.API_SERVER, self._adapter, caller_bundle=self)
++
+     def status(self):
+         require((os.getpid(), threading.get_ident()) == self._actor, 'borrowed_actor')
+         return {'state':self._stage,'callerOwnsStores':True,'storesClosedByAdapter':False,
+@@ -168,6 +177,8 @@ async def disconnect_borrowed(adapter):
+     bundle=adapter._borrowed_api_stores
+     require((os.getpid(),threading.get_ident()) == bundle._actor, 'borrowed_actor')
+     require(bundle._adapter is adapter, 'borrowed_adapter_mismatch')
++    from gateway.run_borrowed_publication import require_owner_loop
++    require_owner_loop(bundle)
+     if bundle._stage == 'DETACHED':
+         return
+     bundle._check()
+@@ -205,6 +216,8 @@ async def disconnect_borrowed(adapter):
+             if bundle._prepared_binding._stage == 'DRAINED':
+                 from gateway.run_borrowed_admission import assert_drained
+                 assert_drained(bundle)
++        from gateway.run_borrowed_publication import withdraw
++        withdraw(bundle)
+         bundle._stage='DETACHED'
+     except BaseException:
+         bundle._stage='CLOSE_UNKNOWN'
+diff --git a/gateway/platforms/api_server_prepared.py b/gateway/platforms/api_server_prepared.py
+index 6cc6cc85..af5077ee 100644
+--- a/gateway/platforms/api_server_prepared.py
++++ b/gateway/platforms/api_server_prepared.py
+@@ -52,6 +52,8 @@ def _runner_check(bundle):
+                 and binding._stage in ('PREPARED', 'ACTIVE', 'DRAINING', 'DRAINED'),
+                 'prepared_runner_binding_changed')
+         require(binding.select_async(runner)._db is bundle.state, 'prepared_runner_state_changed')
++        from gateway.run_borrowed_publication import check_publication
++        check_publication(bundle)
+     except (BorrowedRunnerRejected, AttributeError, KeyError, TypeError):
+         raise BorrowedStoreRejected('prepared_runner_unavailable') from None
+ 
+diff --git a/gateway/run.py b/gateway/run.py
+index a4354340..c9e41853 100644
+--- a/gateway/run.py
++++ b/gateway/run.py
+@@ -3753,6 +3753,8 @@ class GatewayRunner(
+         return t("gateway.busy.action_restarting") if self._restart_requested else t("gateway.busy.action_shutting_down")
+ 
+     def _update_runtime_status(self, gateway_state: Optional[str] = None, exit_reason: Optional[str] = None) -> None:
++        if getattr(self, "_caller_owned_state", None) is not None:
++            return  # Caller-owned mode has no qualified gateway_state.json writer lifecycle.
+         if getattr(self, "_startup_cleanup_only", False):
+             return  # cleanup of a start that never ran keeps its startup verdict (startup_failed)
+         # ``active_work`` names each unit only while draining — that is when an observer (``hermes
+@@ -3767,6 +3769,8 @@ class GatewayRunner(
+         """Persist the live in-flight agent count to ``gateway_state.json`` at every turn boundary.
+         Passes ONLY ``active_agents`` so the read-merge-write keeps lifecycle state (gateway_state=None
+         would clobber it). Best-effort: a failed write must never disrupt a turn."""
++        if getattr(self, "_caller_owned_state", None) is not None:
++            return  # Native task ownership still updates; only default file persistence is absent.
+         _write_runtime_status_quiet(active_agents=self._active_work_count())
+ 
+     def _running_agent_ids(self) -> set:
+diff --git a/gateway/run_adapters.py b/gateway/run_adapters.py
+index 0c44022b..69250c43 100644
+--- a/gateway/run_adapters.py
++++ b/gateway/run_adapters.py
+@@ -886,8 +886,11 @@ class GatewayAdapterLifecycleMixin:
+         logger.warning("Reconnect %s: %s, removing from retry queue", platform.value, reason)
+         del self._failed_platforms[platform]
+ 
+-    def _publish_primary_adapter(self, platform, adapter) -> None:
++    def _publish_primary_adapter(self, platform, adapter, *, caller_bundle=None) -> dict | None:
+         """Register a connected primary adapter and wire voice mode/input (transcription without /voice join)."""
++        if caller_bundle is not None or getattr(self, '_caller_owned_state', None) is not None:
++            from gateway.run_borrowed_publication import publish
++            return publish(caller_bundle, self, platform, adapter)
+         self.adapters[platform] = adapter
+         if platform == Platform.API_SERVER:
+             from gateway.session_api_turn import recover_api_turns
+diff --git a/gateway/run_borrowed_admission.py b/gateway/run_borrowed_admission.py
+index ad3506e2..8146d4e8 100644
+--- a/gateway/run_borrowed_admission.py
++++ b/gateway/run_borrowed_admission.py
+@@ -50,7 +50,11 @@ def _pair(bundle):
+             and bundle._prepared_adapter_ready is True and adapter._borrowed_api_stores is bundle
+             and adapter.gateway_runner is runner and type(binding._authority) is SessionAuthority,
+             'admission_pair_changed')
++    from gateway.run_borrowed_publication import check_publication
++    check_publication(bundle)
+     loop = asyncio.get_running_loop()
++    from gateway.run_borrowed_publication import require_owner_loop
++    require_owner_loop(bundle)
+     require(binding._admission_loop is None or binding._admission_loop is loop,
+             'admission_other_loop')
+     return binding, runner, adapter, loop
+@@ -65,7 +69,10 @@ def _idle_work(binding, runner, adapter, *, allow_idle_sessions=False):
+     for owner, fields in ((runner, RUNNER_FIELDS), (binding._authority, AUTHORITY_FIELDS)):
+         for name, kind in fields:
+             value = getattr(owner, name, None)
+-            if allow_idle_sessions and owner is binding._authority and name == 'sessions':
++            if owner is runner and name == 'adapters':
++                from gateway.run_borrowed_publication import check_publication
++                check_publication(binding._api_bundle)
++            elif allow_idle_sessions and owner is binding._authority and name == 'sessions':
+                 require(type(value) is dict, 'admission_owned_work_retained')
+             else:
+                 require(type(value) is kind and not value, 'admission_owned_work_retained')
+@@ -225,5 +232,7 @@ def require_open(binding, authority):
+                 and all(s._conn is c for s,c in zip(bundle._stores,bundle._connections)),
+                 'admission_stores_changed')
+         binding._check_prepared(runner)
++        from gateway.run_borrowed_publication import check_publication
++        check_publication(bundle)
+     except (BorrowedStoreRejected, BorrowedRunnerRejected, sqlite3.Error, AttributeError, TypeError, KeyError, ValueError):
+         raise RuntimeStoreError('caller_admission_unavailable') from None
+diff --git a/gateway/run_borrowed_publication.py b/gateway/run_borrowed_publication.py
+new file mode 100644
+index 00000000..8d3591d2
+--- /dev/null
++++ b/gateway/run_borrowed_publication.py
+@@ -0,0 +1,115 @@
++"""Explicit publication in the existing native primary-adapter registry.
++
++No alternate resolver, transport startup, recovery, voice callback or SQL effect.
++The caller-owned object pair owns one registry entry until successful adapter
++cleanup. All phase checks are cooperative in-process identity validation, not a
++security boundary against arbitrary code changing Python objects.
++"""
++import asyncio
++from gateway.config import Platform
++from gateway.platforms.api_server_borrowed import require
++
++
++def check_publication(bundle):
++    """Pure identity check, safe inside the native SQL admission guard."""
++    runner = bundle._prepared_runner
++    require(runner is not None, 'publication_runner_missing')
++    registry, profiles = runner.adapters, runner._profile_adapters
++    require(type(registry) is dict and type(profiles) is dict and not profiles,
++            'publication_registry_shape_or_foreign_profile')
++    phase = bundle._publication_state
++    if phase == 'NEW':
++        require(not registry, 'publication_unowned_registry_entry')
++        return
++    require(phase in ('PUBLISHED', 'WITHDRAWN'), 'publication_outcome_unknown')
++    require(registry is bundle._publication_registry and profiles is bundle._publication_profiles,
++            'publication_registry_replaced')
++    loop = bundle._publication_loop
++    require(loop is not None and not loop.is_closed(), 'publication_loop_unavailable')
++    adapter = bundle._adapter
++    require(adapter.config is bundle._publication_config and adapter.platform is Platform.API_SERVER
++            and adapter._owner_profile is None and adapter._shared_listener_profile is None,
++            'publication_adapter_profile_or_config_changed')
++    binding = bundle._prepared_binding
++    require(binding._admission_loop is None or binding._admission_loop is loop,
++            'publication_admission_loop_changed')
++    if phase == 'PUBLISHED':
++        require(len(registry) == 1 and next(iter(registry)) is Platform.API_SERVER
++                and registry[Platform.API_SERVER] is bundle._adapter,
++                'publication_adapter_identity_changed')
++    else:
++        require(not registry and bundle._stage in ('DRAINING', 'DETACHED')
++                and binding._stage in ('PREPARED', 'DRAINED'),
++                'publication_withdrawal_changed')
++
++
++def require_owner_loop(bundle):
++    """Lifecycle-only check, not called by the off-loop SQL admission guard."""
++    if bundle._publication_state == 'PUBLISHED':
++        require(asyncio.get_running_loop() is bundle._publication_loop,
++                'publication_other_owner_loop')
++
++
++def _unknown(bundle):
++    # No rollback/registry pruning can prove an interrupted publication succeeded.
++    bundle._publication_state = 'UNKNOWN'
++    binding = bundle._prepared_binding
++    binding._stage = 'ADMISSION_UNKNOWN'
++    binding._authority.retiring = True
++    bundle._prepared_runner._draining = True
++
++
++def publish(bundle, runner, platform, adapter):
++    from gateway.run_borrowed_admission import _pair, _idle_work, _idle_ledgers
++    from gateway.platforms.api_server_prepared import check_prepared
++    binding, owned_runner, owned_adapter, loop = _pair(bundle)
++    require(runner is owned_runner and adapter is owned_adapter and platform is Platform.API_SERVER,
++            'publication_foreign_owner_or_platform')
++    require(binding._stage == 'PREPARED' and bundle._publication_state == 'NEW',
++            'publication_not_fresh_prepared')
++    check_prepared(bundle, adapter)
++    require(adapter.platform is Platform.API_SERVER and adapter._owner_profile is None
++            and adapter._shared_listener_profile is None, 'publication_primary_adapter_required')
++    _idle_work(binding, runner, adapter)
++    _idle_ledgers(bundle, binding)
++    try:
++        bundle._publication_registry = runner.adapters
++        bundle._publication_profiles = runner._profile_adapters
++        bundle._publication_loop = loop
++        bundle._publication_config = adapter.config
++        bundle._publication_state = 'PUBLISHING'
++        runner.adapters[Platform.API_SERVER] = adapter
++        bundle._publication_state = 'PUBLISHED'
++        check_publication(bundle)
++    except BaseException:
++        _unknown(bundle)
++        raise
++    return {'state': 'CANONICAL_API_PUBLISHED', 'sameAdapter': True,
++            'nativeRecoveryStarted': False, 'listenerAuthorized': False,
++            'providerAuthorized': False, 'runtimeAdmissionAuthorized': False}
++
++
++def withdraw(bundle):
++    """Called after the native adapter cleanup, never before an awaited operation."""
++    if bundle._prepared_runner is None:
++        return
++    check_publication(bundle)
++    if bundle._publication_state == 'NEW':
++        return
++    binding, runner, adapter = bundle._prepared_binding, bundle._prepared_runner, bundle._adapter
++    binding._lifecycle_actor()
++    require(asyncio.get_running_loop() is bundle._publication_loop,
++            'publication_other_cleanup_loop')
++    require(bundle._stage == 'DRAINING' and binding._stage in ('PREPARED', 'DRAINED')
++            and bundle._publication_state == 'PUBLISHED', 'publication_not_detachable')
++    from gateway.run_borrowed_admission import _idle_work, _idle_ledgers
++    _idle_work(binding, runner, adapter)
++    _idle_ledgers(bundle, binding)
++    try:
++        bundle._publication_state = 'WITHDRAWING'
++        del runner.adapters[Platform.API_SERVER]
++        bundle._publication_state = 'WITHDRAWN'
++        check_publication(bundle)
++    except BaseException:
++        _unknown(bundle)
++        raise

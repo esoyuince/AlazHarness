@@ -1,0 +1,24 @@
+{
+  "candidate": {
+    "nativeBase": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+    "files": {
+      "gateway/run_adapters.py": "261e2446d1c932ae9a94d677566c8b1150051a1fc1ced6de93482e2211ed9342",
+      "gateway/platforms/api_server_borrowed.py": "29efb3db98ce03b122079e213a212851d7e0aad0fcb1e32849f48f68a52b5a4b",
+      "gateway/platforms/api_server_prepared.py": "124c918ed2a040c26bcb2586744190a208c58c47b5e9bc4e208a8d6f19a5dd5e",
+      "gateway/run_borrowed_admission.py": "66d898afa284863b6a8ecd93f7c5105c28c39a7436cf67b45e135d9d596ebc43",
+      "gateway/run_borrowed_publication.py": "af61b1b984a8ae773554e1d0c9311af8f9b055402659da4ca61562977cd2cefe",
+      "gateway/run.py": "a58cb57ce253c00258e77928eea16199d5b2fe58468a8cfa6a4d46fdb296703a"
+    },
+    "at": "2026-10-24T15:36:08.199475+03:00",
+    "fixes": [
+      "no default unowned status writer for caller-owned runner",
+      "primary API profile/config immutable",
+      "publication owner loop checked before activation and before cleanup effects"
+    ],
+    "state": "CURRENT_CANDIDATE002_FROZEN"
+  },
+  "driverSha256": "6708d3f9f7215620d0d73854bf980b806b0766e14288683a7049eeb828fb6a06",
+  "sameFourFailingAssertions": true,
+  "scope": "52 actual native methods,28unchanged admission+24publication, no native method mocking, no listener or model",
+  "at": "2026-10-24T15:36:08.199475+03:00"
+}

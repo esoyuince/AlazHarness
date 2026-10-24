@@ -1,0 +1,13 @@
+test_actual_api_uses_existing_resolver_and_keeps_retirement_history (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_actual_api_uses_existing_resolver_and_keeps_retirement_history) ... ok
+test_before_after_failures_preserved_and_four_assertions_unchanged (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_before_after_failures_preserved_and_four_assertions_unchanged) ... ok
+test_default_writer_control_fixture_failure_not_relabelled (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_default_writer_control_fixture_failure_not_relabelled) ... ok
+test_final_fifty_three_native_methods_and_cleanup (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_final_fifty_three_native_methods_and_cleanup) ... ok
+test_native_source_driver_and_existing_fixture_bytes (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_native_source_driver_and_existing_fixture_bytes) ... ok
+test_partial_outcome_cases_and_cancelled_work_are_real_tests (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_partial_outcome_cases_and_cancelled_work_are_real_tests) ... ok
+test_patch_reproduces_six_sources_without_activation (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_patch_reproduces_six_sources_without_activation) ... ok
+test_programmatic_api_is_not_http_agent_or_full_harness_acceptance (test_canonical_publication_receipt_c131d6.CanonicalPublicationReceipt.test_programmatic_api_is_not_http_agent_or_full_harness_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.056s
+
+OK

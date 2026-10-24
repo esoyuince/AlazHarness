@@ -1,88 +1,15 @@
 # AlazHarness - status
 
-## D3B-SESSION-RETIRE-JOINT-J130T6 - DEVELOPMENT-INTEGRATED OPTIONAL ARTIFACT / FULL REQUEST OPEN
+## D3B-CANONICAL-API-C131D6 - NATIVE53 PASS / OPTIONAL PATCH STAGED / UNION FULL PENDING
 
-Canonical alaz/d3b-principal-launch-21oct.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
-Tested mergeb541d703eb90652feabf8dcbf7499cf5e225c9f8 fast-forwarded from2c0d9d0.
-Original product47d92fc and independentf0cb138 histories preserved. Read GitHEAD for
-final docs checkpoint, exact promotion in matching delivery.json.
-Native13186a5f8a25949e05ffacddbaafd2461989eaac on1b7b31e1:3files, ninthpatch,
-STAGED_NOT_INSTALLED. Existing runtime and prepared513/admission517 manifests are
-UNCHANGED, installedvendor eb75627/maincc7ceba, no push/remoteCI/source-lock change.
+Own branch alaz/d3b-canonical-api-c131d6; native feature5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979 clean at hermes-canonical-api-c131d6, based13186a5f. ONE product implementation, peerC131P1 independent QA. All579prior harness source/config/test hashes unchanged. Current native patch6files, tenth artifact staged, NOT INSTALLED. Current manifests/runtime unchanged.
 
-### Completed narrow native operation
+Explicit BorrowedAPIStores.publish_api_adapter -> EXISTING runner._publish_primary_adapter caller_bundle branch, one original API_SERVER entry, no new resolver or private test registry insertion. PREPARED publication does not activate; ACTIVE late publish refused. Native idle checks permit only exact owned entry, not other registries. Default publication/ordinary runtime status preserved. Pure identity checks gate every native selection/admission; owner-loop checked before lifecycle effects. No recover_api_turns/voice/listener triggered.
 
-BorrowedAPIStores.retire_idle_api_sessions is explicit DRAINING-only memory release
-of idle ordinary API LiveSessions and their facade route cache/hints. Same native
-owner, loop/thread/config/profile/3handles/epoch. No second scheduler/ledger/owner,
-SQLwrite/rawDBopen/newconnection, durable history/route/retry deletion, provider or
-service authorization. Current native worker/cache/executor/SQL obligations must
-already be settled. Every session is preflighted before first memory effect.
-Nonblocking facade/event/fanout/state locks; controls/subscribers/settling/waiter
-replies/observers/fanout writing peer/turn marker/source drift retain the whole batch.
-Completed task alone is not worker proof. API-source compression cases unqualified.
+Real programmatic native API admits one queued row in same authority/3stores, exact retries reuse, conflicting body/target refused. No HTTP authentication/ingress/model/TurnRunner payload execution. Test leaf settlement/retirement explicit, not real computation. Publication retained through drain/await; only exact entry removed after successful current cleanup. Partial insertion/removal trace faults retain UNKNOWN, cancellation CLOSE_UNKNOWN retains publication/caller stores. Runner detach still needs empty registry.
 
-Persistent session/transcript/binding/routing/terminal outcome/retry identity and
-all3callerhandles/profile remain. Retirement receipt is NOT finish/store-close
-permission; current finish+API->runner detach guard again. Rebinding/late work
-blocks again. Explicit trace exception after actual first memory deletion yields
-ADMISSION_UNKNOWN, keeps durable data/connections/profile and blocks retry/detach.
-No rollback or successful drain is inferred from fixture cleanup.
+Final native00453/53PASS=28unchanged admission+25publication/default contracts. Actual native classes not replaced; explicit cleanup-object/trace fault fixtures.522 actual native imports exact immutable Git.8offline receiptsPASS. First48(42PASS6ERROR) and4deterministic regression failures retained; no unowned gateway_state writer in caller-owned mode, default ordinary writer still tested. Native003 failed from test-owned ordinary SessionStore cache omitted; same product code passes corrected two-owner cleanup. Old failed root cleanup not mislabeled complete. Final53profiles/ownership/registry clean.
 
-### Exact verified acceptance
+Native patch fresh apply exact6files, duplicate refuses, no source lock/pin/globalGit change. Read-only reviewer completed/archived, no task pending. Full standard must run once on original+independent exact-source union. Existing harness NativeStoreStartup publication/source envelopes and old empty-registry predicates NOT updated; do not claim active harness/HTTP/isolation. Next same-owner explicit source integration + actual finite API turn and worker/cache completion, then same-path isolation. Prior blocked work and Q130QA history copy untouched, no main/push/provider/WSL/root.
 
-Original28/28, independent24/24, unchanged old28/28 native admission compatibility
-PASS on exact same3native files; overlap, NOT80unique agent scenarios. Real native
-API binding, guarded leaf SQLadmit/claim/settle/tasks/threads/fanout, NOT payload or
-complete API/TurnRunner/agent execution. Partial-memory trace fault explicitly
-injected; native methods not replaced. Watched retirement/refusals preserve full
-3DBlogicaldump hashes and total_changes; all owned test fixture homes/leases/
-registry cleaned. Current512/independent513/compat514 imports, union519matchGit.
-Peer driver and sharedQ128fixture hashes separately bound, old results preserved.
-
-Original before23/24 and3extraFAIL, independent20PASS then4FAIL preserved. Same
-assertions pass fixed002; final original28 extends27onlywithtrace. Initial parent
-Git-prefix patch no-op caught by hashes and artifact-context diff-check diagnostic
-saved. Fresh standalone patch apply exact3files, duplicate refused. Joint metadata
-field-shape assertion corrected by binding BOTH driver/fixture, no test edits.
-
-NEW fullWindows3380=3357PASS/23SKIP/0ERROR/0FAIL, command000034exit0.579source/config/
-test files+9patches stable to delivery; all572prior executable/config files unchanged,
-7newsource/config/test files. Same23skipIDs/reasons retained, not rerun asLinux.
-Local staticPASS on testedmerge. Delivered15offline receiptsPASS (8+7), full-suite
-subsets not new native runs.111original evidence Gitblobs preserved. Final docs-only
-validation checks changed text/JSON/credential patterns and unchanged tested code.
-
-### Exact remaining gate
-
-Actual same-owner API baseline refuses3extraAPI modules outside current517source
-manifest before admission. Direct native API baseline has missing published
-canonical adapter and retains bound session on refusal. Neither gate was bypassed.
-NEXT explicitly qualify actual API source set and publish SAME native adapter via
-existing canonical resolver with owned lifetime, no post-hoc private assignment.
-Then true accepted request/TurnRunner/physical-worker outcome with bounded dummy
-model boundary, native asynchronous agent-cache completion and session retirement.
-Resolve queued-at-seal work without forgingterminal or replayingunknown; current
-method does NOT execute queuedFIFO. Qualify exact combined source under Linux
-isolation/HTTP afterward. Current kernel/wholeagent/modelaccounting/cross-store/
-powerloss acceptance remains OPEN. This optional native feature not harness-selected.
-
-Peer reviewer completed/archived. Its OPTIONAL native QA-copy history sync was
-TOOLBLOCKED and NOT retried; preserve hermes-session-retire-qa-q130a6 as-is, do NOT
-cleanup/restore/merge via another route. QA proof is byte-exact despite baseHEAD+
-3candidate files. Harness union/delivery is separate from blocked housekeeping.
-Prior root/refinement/C120P9 blocks likewise not retried. No WSL/root/model/provider/
-listener/production/account/main/push/CIqueue action. User root changes preserved.
-Current native/full/merge jobs terminal; final documentation commit only.
-
-### Records
-
-Report docs/D3B-SESSION-RETIRE-JOINT-J130T6.md; originals
-D3B-SESSION-RETIREMENT-C130T6.md and D3B-SESSION-RETIREMENT-QA-Q130A6.md.
-Config/hermes-session-retirement-c130t6.json, ninth patch under patches/hermes/c130t6/.
-Evidence/d3b-session-retire-joint-j130t6/: inputs,summary,joint-source-custody,
-full-windows-result/rawlog,full-source/patchmanifest,skip-custody,static-final,
-delivery,selected-delivery-result,final-doc-validation,qa-provenance-shape-diagnostic.
-Original native failures/control/refusal/artifact diagnostics preserved in component
-evidence folders. Status histories docs/status-history/j130t6-*.md.
+Docs/D3B-CANONICAL-API-C131D6.md; config/hermes-canonical-api-c131d6.json; patches/hermes/c131d6/0010-caller-owned-canonical-api-publication.patch. Evidence/d3b-canonical-api-c131d6/: candidates001/002/003,native001/002/003failed/004PASS,regression-before,source-custody,patch-application,native-commit,readonly-review-disposition,receipt-tests,summary. Parent/work statuses archived. Current commands terminal; local static/scoped commit then immutable union.

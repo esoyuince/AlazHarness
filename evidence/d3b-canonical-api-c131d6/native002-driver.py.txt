@@ -1,0 +1,248 @@
+"""Native existing-resolver publication, real programmatic API admission.
+No HTTP listener/auth ingress or payload/TurnRunner/model execution is claimed.
+Native code remains real; explicit memory-cleanup objects and trace faults exercise
+partial effects. The unchanged Q128 native fixture supplies the ordinary stores.
+"""
+from pathlib import Path
+import asyncio,hashlib,json,sys,threading
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts/qa'))
+import q128c6_native_lifecycle_checks as f
+OBS=[]
+
+class PublicationCases(f.IndependentLifecycle):
+    def publish(self):return self.call(self.bundle.publish_api_adapter)
+    def source(self):
+        from gateway.session import SessionSource
+        from gateway.config import Platform
+        return SessionSource(platform=Platform.API_SERVER,chat_id='owned',user_id='api',chat_type='dm')
+    def api_admit(self,*,session='owned-api',request='same-request',text='bounded native payload'):
+        from gateway.session_api_turn import admit_api_turn_async
+        async def invoke():
+            try:return await admit_api_turn_async(self.api,session_id=session,request_id=request,user_message=text,conversation_history=[])
+            finally:
+                await asyncio.sleep(0)
+                tasks=list(getattr(self.authority,'_mutation_tasks',()))
+                if tasks:await asyncio.gather(*tasks,return_exceptions=True)
+                await asyncio.sleep(0)
+        return f.LOOP.run_until_complete(invoke())
+    def snapshots(self):return [hashlib.sha256('\n'.join(c.iterdump()).encode()).hexdigest() for c in self.connections]
+    def test_regression_real_api_admission_has_no_unowned_status_writer(self):
+        self.publish();self.activate();events=[];old=sys.getprofile()
+        def profile(frame,event,arg):
+            if event=='call' and frame.f_code.co_name=='publish_runtime_status':
+                chain=[];cur=frame
+                for _ in range(8):
+                    if cur is None:break
+                    chain.append({'function':cur.f_code.co_name,'file':Path(cur.f_code.co_filename).name,'line':cur.f_lineno});cur=cur.f_back
+                events.append(chain)
+        sys.setprofile(profile)
+        try:self.api_admit()
+        finally:
+            sys.setprofile(old)
+            from gateway.status import flush_runtime_status
+            self.assertTrue(flush_runtime_status(timeout=5))  # settle only the old diagnostic fixture if it was started
+        OBS.append({'case':self._testMethodName,'statusPublishCallStacks':events})
+        self.assertEqual(events,[])
+        self.assertFalse((self.home/'gateway_state.json').exists())
+    def test_regression_changed_adapter_owner_profile_refuses_guard(self):
+        self.publish();self.activate();old=self.api._owner_profile;self.api._owner_profile='foreign'
+        try:
+            with self.watched(),self.assertRaises(f.RT.RuntimeStoreError):self.authority._require_admission_open()
+        finally:self.api._owner_profile=old
+    def test_regression_foreign_loop_activation_refuses_before_phase_change(self):
+        self.publish()
+        async def other():return self.bundle.activate_admission()
+        with self.assertRaises(f.Reject):f.OTHER.run_until_complete(other())
+        self.assertEqual(self.binding._stage,'PREPARED');self.assertEqual(self.bundle._publication_state,'PUBLISHED')
+    def test_regression_foreign_loop_disconnect_refuses_before_cleanup(self):
+        self.publish()
+        with self.assertRaises(f.Reject):f.OTHER.run_until_complete(self.api.disconnect())
+        self.assertEqual(self.bundle._stage,'ATTACHED');self.assertFalse(self.api._session_db_cache_closed)
+        self.assertEqual(self.bundle._publication_state,'PUBLISHED')
+    def test_publication_resolver_same_adapter_without_recovery_callbacks(self):
+        calls=[];old=sys.getprofile()
+        def profile(frame,event,arg):
+            if event=='call' and frame.f_code.co_name in ('recover_api_turns','_sync_voice_mode_state_to_adapter','_bind_voice_input_callback'):calls.append(frame.f_code.co_name)
+        before=self.snapshots();sys.setprofile(profile)
+        try:
+            with self.watched():r=self.publish()
+        finally:sys.setprofile(old)
+        self.assertEqual(calls,[]);self.assertEqual(self.snapshots(),before)
+        self.assertEqual(r['state'],'CANONICAL_API_PUBLISHED');self.assertIs(self.runner._adapter_for_source(self.source()),self.api)
+        self.assertFalse(r['nativeRecoveryStarted']);self.assertFalse(r['runtimeAdmissionAuthorized']);self.assertFalse(r['listenerAuthorized'])
+        OBS.append({'case':self._testMethodName,'sameNativeResolverAdapter':True,'recoveryOrVoiceCalls':calls,'sqlDumpsUnchanged':True})
+    def test_unpublished_default_and_connected_service_shortcut_remain_closed(self):
+        from gateway.config import Platform
+        self.assertIsNone(self.runner._adapter_for_source(self.source()))
+        with self.watched(),self.assertRaises(f.Reject):self.runner._publish_primary_adapter(Platform.API_SERVER,self.api)
+        self.assertEqual(self.runner.adapters,{});self.assertEqual(self.bundle._publication_state,'NEW')
+    def test_duplicate_publication_and_post_detach_republication_refuse(self):
+        self.publish()
+        with self.watched(),self.assertRaises(f.Reject):self.publish()
+        f.LOOP.run_until_complete(self.api.disconnect())
+        with self.assertRaises(f.Reject):self.publish()
+        self.assertEqual(self.bundle._publication_state,'WITHDRAWN');self.assertEqual(self.runner.adapters,{})
+    def test_foreign_adapter_or_platform_cannot_publish(self):
+        from gateway.config import Platform
+        async def attempt(platform,adapter):return self.runner._publish_primary_adapter(platform,adapter,caller_bundle=self.bundle)
+        for platform,adapter in ((Platform.API_SERVER,object()),(Platform.TELEGRAM,self.api),('api_server',self.api)):
+            with self.subTest(platform=platform),self.watched(),self.assertRaises(f.Reject):f.LOOP.run_until_complete(attempt(platform,adapter))
+        self.assertEqual(self.runner.adapters,{})
+    def test_existing_primary_entry_never_overwritten(self):
+        from gateway.config import Platform
+        foreign=object();self.runner.adapters[Platform.API_SERVER]=foreign
+        try:
+            with self.watched(),self.assertRaises(f.Reject):self.publish()
+            self.assertIs(self.runner.adapters[Platform.API_SERVER],foreign)
+        finally:self.runner.adapters.clear()
+    def test_publication_refuses_open_transaction_and_retains_it(self):
+        for conn in self.connections:
+            conn.execute('BEGIN IMMEDIATE')
+            try:
+                with self.watched(),self.assertRaises((f.Reject,f.RunnerReject)):self.publish()
+                self.assertTrue(conn.in_transaction);self.assertEqual(self.bundle._publication_state,'NEW')
+            finally:conn.rollback()
+        self.publish()
+    def test_active_mode_cannot_late_publish(self):
+        self.activate()
+        with self.watched(),self.assertRaises(f.Reject):self.publish()
+        self.assertEqual(self.binding._stage,'ACTIVE');self.assertEqual(self.runner.adapters,{})
+    def test_mapping_replacement_or_equal_string_key_fails_identity(self):
+        from gateway.config import Platform
+        self.publish();original=self.runner.adapters
+        for mapping in (dict(original),{'api_server':self.api}):
+            self.runner.adapters=mapping
+            try:
+                with self.watched(),self.assertRaises(f.Reject):self.bundle.select(self.api,self.home)
+            finally:self.runner.adapters=original
+        # Same dictionary with equal string key is still not the enum-owned entry.
+        original.clear();original['api_server']=self.api
+        try:
+            with self.watched(),self.assertRaises(f.Reject):self.bundle.select(self.api,self.home)
+        finally:original.clear();original[Platform.API_SERVER]=self.api
+    def test_foreign_profile_registry_or_same_content_replacement_refuses(self):
+        self.publish();old=self.runner._profile_adapters
+        for value in ({},{'foreign':{}}):
+            self.runner._profile_adapters=value
+            try:
+                with self.watched(),self.assertRaises(f.Reject):self.bundle.select(self.api,self.home)
+            finally:self.runner._profile_adapters=old
+    def test_guard_detects_changed_published_adapter_before_new_sql(self):
+        from gateway.config import Platform
+        self.publish();self.activate();self.runner.adapters[Platform.API_SERVER]=object();before=self.snapshots()
+        try:
+            with self.assertRaises((f.RT.RuntimeStoreError,f.Reject)):self.api_admit()
+            self.assertEqual(self.snapshots(),before);self.assertEqual(self.authority.sessions,{})
+        finally:self.runner.adapters[Platform.API_SERVER]=self.api
+    def test_actual_native_api_admission_uses_published_owner_and_same_stores(self):
+        self.publish();self.activate();authority,ref,row=self.api_admit()
+        self.assertIs(authority,self.authority);self.assertEqual(ref.session_id,'owned-api');self.assertEqual(row['status'],'queued')
+        self.assertIs(self.runner._adapter_for_source(authority.sessions[ref.session_id].source),self.api)
+        self.assertEqual(self.state._conn.execute('SELECT COUNT(*) FROM session_admissions').fetchone()[0],1)
+        self.assertEqual(self.binding._stage,'ACTIVE');self.assert_open()
+        self.assertFalse(any(not t.done() for t in asyncio.all_tasks(f.LOOP)))
+        OBS.append({'case':self._testMethodName,'nativeApiAdmissionAccepted':True,'sameAuthority':True,'queuedPayloadExecuted':False})
+    def test_actual_native_api_exact_retry_preserves_admission_identity(self):
+        self.publish();self.activate();first=self.api_admit();second=self.api_admit()
+        self.assertEqual(first[2]['admission_id'],second[2]['admission_id']);self.assertEqual(self.state._conn.execute('SELECT COUNT(*) FROM session_admissions').fetchone()[0],1)
+    def test_actual_native_api_changed_payload_same_request_refuses(self):
+        self.publish();self.activate();first=self.api_admit()
+        with self.assertRaises(f.RT.RuntimeStoreError):self.api_admit(text='different body')
+        self.assertEqual(self.state._conn.execute('SELECT COUNT(*) FROM session_admissions').fetchone()[0],1)
+        self.assertEqual(f.RT.get_session_admission(self.state,admission_id=first[2]['admission_id'])['status'],'queued')
+    def test_actual_native_api_same_request_foreign_target_refuses(self):
+        self.publish();self.activate();first=self.api_admit()
+        with self.assertRaises(f.RT.RuntimeStoreError):self.api_admit(session='different-target')
+        self.assertEqual(self.state._conn.execute('SELECT COUNT(*) FROM session_admissions').fetchone()[0],1)
+        self.assertEqual(f.RT.get_session_admission(self.state,admission_id=first[2]['admission_id'])['target_session_id'],'owned-api')
+    def test_queued_api_request_blocks_finish_and_keeps_publication(self):
+        self.publish();self.activate();self.api_admit();self.drain()
+        with self.watched(),self.assertRaises((f.Reject,f.RunnerReject)):self.finish()
+        with self.assertRaises(f.Reject):f.LOOP.run_until_complete(self.api.disconnect())
+        self.assertEqual(self.bundle._publication_state,'PUBLISHED');self.assertIs(self.runner._adapter_for_source(self.source()),self.api)
+    def test_api_admit_leaf_settlement_retirement_and_detach_preserve_history(self):
+        self.publish();self.activate();authority,ref,row=self.api_admit()
+        claim=f.RT.claim_session_input(self.state,epoch=self.epoch,session_id=ref.session_id,_guard=authority._admission_gate())
+        f.RT.settle_session_input(self.state,epoch=self.epoch,admission_id=row['admission_id'],generation=claim['generation'],outcome='completed')
+        self.drain();before=self.snapshots()
+        with self.watched():
+            retired=self.call(self.bundle.retire_idle_api_sessions);self.finish();f.LOOP.run_until_complete(self.api.disconnect());self.runner.close_all_session_db_handles()
+        self.assertEqual(self.snapshots(),before);self.assertEqual(self.runner.adapters,{})
+        self.assertEqual(self.bundle._publication_state,'WITHDRAWN');self.assert_open()
+        OBS.append({'case':self._testMethodName,'nativeApiAdmitted':True,'guardedLeafManuallySettledNotExecuted':True,'sqlDumpsUnchangedByRetireAndDetach':True,'publishedEntryWithdrawnAfterApi':True})
+    def test_publication_stays_while_api_cleanup_awaits(self):
+        self.publish();entered=threading.Event();release=threading.Event();finished=threading.Event();self.releases.append(release)
+        class Memory:
+            def close_all(inner):
+                entered.set()
+                try:
+                    if not release.wait(10):raise TimeoutError('cleanup release missing')
+                finally:finished.set()
+        old=self.api._memory_sessions;self.api._memory_sessions=Memory()
+        async def trial():
+            task=asyncio.create_task(self.api.disconnect())
+            for _ in range(1000):
+                if entered.is_set():break
+                await asyncio.sleep(.002)
+            self.assertTrue(entered.is_set());self.assertEqual(self.bundle._publication_state,'PUBLISHED');self.assertIs(self.runner._adapter_for_source(self.source()),self.api)
+            release.set();await task
+        try:f.LOOP.run_until_complete(trial())
+        finally:release.set();self.assertTrue(finished.wait(5));self.api._memory_sessions=old
+        self.assertEqual(self.bundle._publication_state,'WITHDRAWN');self.assertIsNone(self.runner._adapter_for_source(self.source()))
+    def test_cancelled_cleanup_retains_entry_and_blocks_retry(self):
+        self.publish();entered=threading.Event();release=threading.Event();finished=threading.Event();self.releases.append(release)
+        class Memory:
+            def close_all(inner):
+                entered.set()
+                try:release.wait(10)
+                finally:finished.set()
+        old=self.api._memory_sessions;self.api._memory_sessions=Memory()
+        async def trial():
+            task=asyncio.create_task(self.api.disconnect())
+            for _ in range(1000):
+                if entered.is_set():break
+                await asyncio.sleep(.002)
+            self.assertTrue(entered.is_set());task.cancel()
+            with self.assertRaises(asyncio.CancelledError):await task
+            self.assertEqual(self.bundle._stage,'CLOSE_UNKNOWN');self.assertEqual(self.bundle._publication_state,'PUBLISHED');self.assertFalse(finished.is_set())
+            with self.assertRaises(f.Reject):await self.api.disconnect()
+        try:f.LOOP.run_until_complete(trial())
+        finally:release.set();self.assertTrue(finished.wait(5));self.api._memory_sessions=old
+        self.assertIs(self.runner._adapter_for_source(self.source()),self.api);self.assert_open()
+    def test_trace_exception_after_real_publication_retains_unknown(self):
+        import gateway.run_borrowed_publication as pub
+        old=sys.gettrace();hit=[]
+        def trace(frame,event,arg):
+            if frame.f_code is pub.publish.__code__ and event=='line' and self.runner.adapters and not hit:
+                hit.append(True);raise RuntimeError('explicit trace fault after registry insertion')
+            return trace
+        before=self.snapshots();sys.settrace(trace)
+        try:
+            with self.assertRaises(RuntimeError):self.publish()
+        finally:sys.settrace(old)
+        self.assertEqual(hit,[True]);self.assertEqual(self.bundle._publication_state,'UNKNOWN');self.assertEqual(self.binding._stage,'ADMISSION_UNKNOWN')
+        self.assertEqual(self.snapshots(),before);self.assertEqual(len(self.runner.adapters),1)
+        with self.assertRaises((f.Reject,f.RunnerReject)):self.activate()
+        self.assert_open()
+    def test_trace_exception_after_real_withdrawal_does_not_report_success(self):
+        import gateway.run_borrowed_publication as pub
+        self.publish();before=self.snapshots();old=sys.gettrace();hit=[]
+        def trace(frame,event,arg):
+            if frame.f_code is pub.withdraw.__code__ and event=='line' and self.bundle._publication_state=='WITHDRAWING' and not self.runner.adapters and not hit:
+                hit.append(True);raise RuntimeError('explicit trace fault after entry removal')
+            return trace
+        sys.settrace(trace)
+        try:
+            with self.assertRaises(RuntimeError):f.LOOP.run_until_complete(self.api.disconnect())
+        finally:sys.settrace(old)
+        self.assertEqual(hit,[True]);self.assertEqual((self.bundle._stage,self.bundle._publication_state,self.binding._stage),('CLOSE_UNKNOWN','UNKNOWN','ADMISSION_UNKNOWN'))
+        self.assertEqual(self.snapshots(),before);self.assert_open()
+
+def main():
+    f.IndependentLifecycle=PublicationCases;code=f.main()
+    out=Path(sys.argv[sys.argv.index('--output')+1]);result=json.loads((out/'result.json').read_text(encoding='utf-8'))
+    result.update(result='PASS_NATIVE_CANONICAL_API_PUBLICATION' if code==0 else 'FAIL',driverSha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),fixturePath='scripts/qa/q128c6_native_lifecycle_checks.py',publicationObservations=OBS,actualNativeApiAdmissionTested=True,httpAuthenticationOrListenerTested=False,payloadOrModelExecuted=False,traceFaultInjectedExplicitly=True,defaultRecoveryAndVoiceSuppressedByExplicitPath=True)
+    (out/'publication-result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in result.items() if k not in ('nativeImports','checks','caseEnd','deniedEvents')}),flush=True);return code
+if __name__=='__main__':raise SystemExit(main())

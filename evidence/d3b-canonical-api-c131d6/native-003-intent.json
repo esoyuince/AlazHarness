@@ -1,0 +1,24 @@
+{
+  "candidate": {
+    "nativeBase": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+    "files": {
+      "gateway/run_adapters.py": "74dad657dccda9b9a240c188d1bc7507f6a4a06547bc87ebe9d37caeb4a8d594",
+      "gateway/platforms/api_server_borrowed.py": "29efb3db98ce03b122079e213a212851d7e0aad0fcb1e32849f48f68a52b5a4b",
+      "gateway/platforms/api_server_prepared.py": "124c918ed2a040c26bcb2586744190a208c58c47b5e9bc4e208a8d6f19a5dd5e",
+      "gateway/run_borrowed_admission.py": "66d898afa284863b6a8ecd93f7c5105c28c39a7436cf67b45e135d9d596ebc43",
+      "gateway/run_borrowed_publication.py": "af61b1b984a8ae773554e1d0c9311af8f9b055402659da4ca61562977cd2cefe",
+      "gateway/run.py": "a58cb57ce253c00258e77928eea16199d5b2fe58468a8cfa6a4d46fdb296703a"
+    },
+    "at": "2026-10-24T15:37:41.959019+03:00",
+    "fixes": [
+      "no default unowned status writer for caller-owned runner",
+      "primary API profile/config immutable",
+      "publication owner loop checked before activation and before cleanup effects"
+    ],
+    "state": "CANDIDATE003_FINAL_TYPE_SIGNATURE",
+    "onlyChangeFrom002": "truthful dict|None return annotation of explicit publication method, runtime behavior unchanged"
+  },
+  "driverSha256": "be1d0eeb8491fc9d1a1b13d0e681dee7ffd26ef0b5922df67812537283678a5a",
+  "scope": "53native contracts:28old+25publication/default-writer; all prior52 bodies preserved",
+  "at": "2026-10-24T15:37:41.959019+03:00"
+}

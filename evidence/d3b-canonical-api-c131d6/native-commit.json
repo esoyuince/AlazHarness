@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-24T15:41:52.536802+03:00",
+  "nativeFeature": "5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979",
+  "base": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "nativeWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-canonical-api-c131d6",
+  "clean": true,
+  "perInvocationIdentityFromHarness": true,
+  "globalGitConfigurationChanged": false,
+  "testedBytesExact": true
+}

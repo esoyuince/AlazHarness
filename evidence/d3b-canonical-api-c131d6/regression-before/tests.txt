@@ -1,0 +1,57 @@
+test_regression_real_api_admission_has_no_unowned_status_writer (__main__.PublicationCases.test_regression_real_api_admission_has_no_unowned_status_writer) ... FAIL
+test_regression_changed_adapter_owner_profile_refuses_guard (__main__.PublicationCases.test_regression_changed_adapter_owner_profile_refuses_guard) ... FAIL
+test_regression_foreign_loop_activation_refuses_before_phase_change (__main__.PublicationCases.test_regression_foreign_loop_activation_refuses_before_phase_change) ... FAIL
+test_regression_foreign_loop_disconnect_refuses_before_cleanup (__main__.PublicationCases.test_regression_foreign_loop_disconnect_refuses_before_cleanup) ... FAIL
+
+======================================================================
+FAIL: test_regression_real_api_admission_has_no_unowned_status_writer (__main__.PublicationCases.test_regression_real_api_admission_has_no_unowned_status_writer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 46, in test_regression_real_api_admission_has_no_unowned_status_writer
+    self.assertEqual(events,[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+AssertionError: Lists differ: [[{'function': 'publish_runtime_status', '[1687 chars]77}]] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+[{'function': 'publish_runtime_status', 'file': 'status.py', 'line': 1186}, {'function': '_write_runtime_status_quiet', 'file': 'run.py', 'line': 3292}, {'function': '_persist_active_agents', 'file': 'run.py', 'line': 3770}, {'function': 'persist_work_count', 'file': 'session_runtime_workers.py', 'line': 33}, {'function': 'finished', 'file': 'session_runtime_workers.py', 'line': 51}, {'function': '_run', 'file': 'events.py', 'line': 94}, {'function': '_run_once', 'file': 'base_events.py', 'line': 2046}, {'function': 'run_forever', 'file': 'base_events.py', 'line': 677}]
+
+Diff is 1862 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_regression_changed_adapter_owner_profile_refuses_guard (__main__.PublicationCases.test_regression_changed_adapter_owner_profile_refuses_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 51, in test_regression_changed_adapter_owner_profile_refuses_guard
+    with self.watched(),self.assertRaises(f.RT.RuntimeStoreError):self.authority._require_admission_open()
+                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeStoreError not raised
+
+======================================================================
+FAIL: test_regression_foreign_loop_activation_refuses_before_phase_change (__main__.PublicationCases.test_regression_foreign_loop_activation_refuses_before_phase_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 57, in test_regression_foreign_loop_activation_refuses_before_phase_change
+    self.assertEqual(self.binding._stage,'PREPARED');self.assertEqual(self.bundle._publication_state,'PUBLISHED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ADMISSION_UNKNOWN' != 'PREPARED'
+- ADMISSION_UNKNOWN
++ PREPARED
+
+
+======================================================================
+FAIL: test_regression_foreign_loop_disconnect_refuses_before_cleanup (__main__.PublicationCases.test_regression_foreign_loop_disconnect_refuses_before_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 61, in test_regression_foreign_loop_disconnect_refuses_before_cleanup
+    self.assertEqual(self.bundle._stage,'ATTACHED');self.assertFalse(self.api._session_db_cache_closed)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'CLOSE_UNKNOWN' != 'ATTACHED'
+- CLOSE_UNKNOWN
++ ATTACHED
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.290s
+
+FAILED (failures=4)

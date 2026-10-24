@@ -1,0 +1,16 @@
+{
+  "agentId": "c131d601-2e41-4d76-9f34-131001000080",
+  "state": "COMPLETED_AND_ARCHIVED",
+  "scope": "readonly source review on original13186, no test/code write",
+  "baselineFinding": "prepared adapter has correct runner but lacks existing primary registry publication",
+  "incorporated": [
+    "use existing _publish_primary_adapter seam/canonical delivery resolver, no second registry",
+    "do not invoke default recover_api_turns or voice hooks",
+    "retain exact entry while admitted work or cleanup await is unresolved",
+    "identity-aware own-entry-only native idle validation, normal empty default preserved",
+    "full harness source/gate/physical-worker/HTTP proof not established by source review"
+  ],
+  "timingRecommendation": "review proposed synchronous post-ACTIVE handoff to keep old prepared gate empty",
+  "selectedDesign": "explicit PREPARED-only publication, native own-entry-aware idle contract tested; it does not open admission and is refused after ACTIVE. Existing harness prepared gate/source envelope unchanged, therefore no claim of harness integration",
+  "reviewNotFinalAcceptance": true
+}

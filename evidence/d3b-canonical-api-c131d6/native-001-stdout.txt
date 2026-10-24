@@ -1,0 +1,195 @@
+{"result": "FAIL", "total": 48, "passed": 42, "errors": 6, "failures": 0, "skipped": 0, "errorIds": ["__main__.PublicationCases.test_actual_native_api_admission_uses_published_owner_and_same_stores", "__main__.PublicationCases.test_actual_native_api_changed_payload_same_request_refuses", "__main__.PublicationCases.test_actual_native_api_exact_retry_preserves_admission_identity", "__main__.PublicationCases.test_actual_native_api_same_request_foreign_target_refuses", "__main__.PublicationCases.test_guard_detects_changed_published_adapter_before_new_sql", "__main__.PublicationCases.test_queued_api_request_blocks_finish_and_keeps_publication"], "failureIds": [], "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "races": [{"case": "test_after_guard_writer_is_preserved_and_finish_refuses_inflight", "beforeGuard": false, "newRowCommitted": true, "finishWhileInFlightRefused": true, "acceptedQueuedRowRetained": true}, {"case": "test_before_guard_blocked_writer_loses_to_nonblocking_drain", "beforeGuard": true, "newRowCommitted": false, "drainDidNotWaitForSqlMutex": true}, {"case": "test_cancelled_native_tracked_admission_keeps_commit_owner", "nativeTrackedWrite": true, "cancelledCarrier": true, "nativeWriterRetained": true, "acceptedQueuedRowRetained": true}], "actualNativeRunnerAuthorityApiStores": true, "nativeMethodsReplaced": false, "ledgerWritesDirectWithRealNativeGuards": true, "explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords": true, "admittedAgentOrHttpExecution": false, "harnessOwnerIntegrationTested": false, "linuxIsolationTested": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true}
+test_store_identity_drift_refuses_transaction_guard) ... ok
+test_trace_exception_after_real_publication_retains_unknown (__main__.PublicationCases.test_trace_exception_after_real_publication_retains_unknown) ... ok
+test_trace_exception_after_real_withdrawal_does_not_report_success (__main__.PublicationCases.test_trace_exception_after_real_withdrawal_does_not_report_success) ... ok
+test_unknown_admission_never_retired_automatically (__main__.PublicationCases.test_unknown_admission_never_retired_automatically) ... ok
+test_unpublished_default_and_connected_service_shortcut_remain_closed (__main__.PublicationCases.test_unpublished_default_and_connected_service_shortcut_remain_closed) ... ok
+
+======================================================================
+ERROR: test_actual_native_api_admission_uses_published_owner_and_same_stores (__main__.PublicationCases.test_actual_native_api_admission_uses_published_owner_and_same_stores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-ejvizccz\\case-bomt8tnw'
+
+======================================================================
+ERROR: test_actual_native_api_changed_payload_same_request_refuses (__main__.PublicationCases.test_actual_native_api_changed_payload_same_request_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-ejvizccz\\case-67cjhps7'
+
+======================================================================
+ERROR: test_actual_native_api_exact_retry_preserves_admission_identity (__main__.PublicationCases.test_actual_native_api_exact_retry_preserves_admission_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-ejvizccz\\case-v8zl7a52'
+
+======================================================================
+ERROR: test_actual_native_api_same_request_foreign_target_refuses (__main__.PublicationCases.test_actual_native_api_same_request_foreign_target_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 701, in _rmtree_unsafe
+    os.unlink(fullname)
+    ~~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-ejvizccz\\case-gipfe_ty\\gateway_state.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 705, in _rmtree_unsafe
+    onexc(os.unlink, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 930, in onexc
+    _os.unlink(path)
+    ~~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Dosya başka bir işlem tarafından kullanıldığından bu işlem dosyaya erişemiyor: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-ejvizccz\\case-gipfe_ty\\gateway_state.json'
+
+======================================================================
+ERROR: test_guard_detects_changed_published_adapter_before_new_sql (__main__.PublicationCases.test_guard_detects_changed_published_adapter_before_new_sql)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 102, in test_guard_detects_changed_published_adapter_before_new_sql
+    with self.assertRaises(f.RT.RuntimeStoreError):self.api_admit()
+                                                   ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 28, in api_admit
+    return f.LOOP.run_until_complete(invoke())
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\c131d6_native_publication.py", line 22, in invoke
+    try:return await admit_api_turn_async(self.api,session_id=session,request_id=request,user_message=text,conversation_history=[])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\session_api_turn.py", line 154, in admit_api_turn_async
+    return await run_steps_off_loop(authority, steps or admit_api_steps(adapter, **kwargs), orphaned=schedule_orphan)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\session_api.py", line 82, in run_steps_off_loop
+    return await asyncio.shield(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\session_api.py", line 79, in serialized
+    return await drive()
+           ^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\session_api.py", line 65, in drive
+    write = steps.throw(error) if error is not None else steps.send(result)
+                                                         ~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\session_api_turn.py", line 168, in admit_api_steps
+    if authority is None or adapter._ensure_session_db() is not authority.db:
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\platforms\api_server.py", line 1859, in _ensure_session_db
+    return self._borrowed_api_stores.select(self, get_hermes_home())[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\platforms\api_server_borrowed.py", line 111, in select
+    check_prepared(self, adapter)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\platforms\api_server_prepared.py", line 82, in check_prepared
+    _runner_check(bundle)
+    ~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\platforms\api_server_prepared.py", line 56, in _runner_check
+    check_publication(bundle)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\run_borrowed_publication.py", line 33, in check_publication
+    require(len(registry) == 1 and next(iter(registry)) is Platform.API_SERVER
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and registry[Platform.API_SERVER] is bundle._adapter,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'publication_adapter_identity_changed')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\hermes-canonical-api-c131d6\gateway\platforms\api_server_borrowed.py", line 21, in require
+    raise BorrowedStoreRejected(reason)
+gateway.platforms.api_server_borrowed.BorrowedStoreRejected: publication_adapter_identity_changed
+
+======================================================================
+ERROR: test_queued_api_request_blocks_finish_and_keeps_publication (__main__.PublicationCases.test_queued_api_request_blocks_finish_and_keeps_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-canonical-api-c131d6\scripts\qa\q128c6_native_lifecycle_checks.py", line 50, in tearDown
+    Own.close();self.tmp.cleanup();counts=Registry.stats()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 975, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\tempfile.py", line 955, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 852, in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 711, in _rmtree_unsafe
+    onexc(os.rmdir, path, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Programs\Python\Python314\Lib\shutil.py", line 707, in _rmtree_unsafe
+    os.rmdir(path)
+    ~~~~~~~~^^^^^^
+OSError: [WinError 145] Dizin boş değil: 'C:\\Users\\ender\\AppData\\Local\\Temp\\alaz-q128c6-native-ejvizccz\\case-iv3viz2m'
+
+----------------------------------------------------------------------
+Ran 48 tests in 25.719s
+
+FAILED (errors=6)
+
+{"result": "FAIL", "total": 48, "passed": 42, "errors": 6, "failures": 0, "skipped": 0, "errorIds": ["__main__.PublicationCases.test_actual_native_api_admission_uses_published_owner_and_same_stores", "__main__.PublicationCases.test_actual_native_api_changed_payload_same_request_refuses", "__main__.PublicationCases.test_actual_native_api_exact_retry_preserves_admission_identity", "__main__.PublicationCases.test_actual_native_api_same_request_foreign_target_refuses", "__main__.PublicationCases.test_guard_detects_changed_published_adapter_before_new_sql", "__main__.PublicationCases.test_queued_api_request_blocks_finish_and_keeps_publication"], "failureIds": [], "qaSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e", "races": [{"case": "test_after_guard_writer_is_preserved_and_finish_refuses_inflight", "beforeGuard": false, "newRowCommitted": true, "finishWhileInFlightRefused": true, "acceptedQueuedRowRetained": true}, {"case": "test_before_guard_blocked_writer_loses_to_nonblocking_drain", "beforeGuard": true, "newRowCommitted": false, "drainDidNotWaitForSqlMutex": true}, {"case": "test_cancelled_native_tracked_admission_keeps_commit_owner", "nativeTrackedWrite": true, "cancelledCarrier": true, "nativeWriterRetained": true, "acceptedQueuedRowRetained": true}], "actualNativeRunnerAuthorityApiStores": true, "nativeMethodsReplaced": false, "ledgerWritesDirectWithRealNativeGuards": true, "explicitFaultsIncludeCallbackPauseAndNativeRegistryRecords": true, "admittedAgentOrHttpExecution": false, "harnessOwnerIntegrationTested": false, "linuxIsolationTested": false, "providerCalls": 0, "rootWslAction": false, "temporaryRootRemoved": true, "driverSha256": "5b11fd50bcdb681951dbf2514cfa5b232cca34a76e7d96f58432ca3047ab9efb", "fixturePath": "scripts/qa/q128c6_native_lifecycle_checks.py", "publicationObservations": [{"case": "test_actual_native_api_admission_uses_published_owner_and_same_stores", "nativeApiAdmissionAccepted": true, "sameAuthority": true, "queuedPayloadExecuted": false}, {"case": "test_api_admit_leaf_settlement_retirement_and_detach_preserve_history", "nativeApiAdmitted": true, "guardedLeafManuallySettledNotExecuted": true, "sqlDumpsUnchangedByRetireAndDetach": true, "publishedEntryWithdrawnAfterApi": true}, {"case": "test_publication_resolver_same_adapter_without_recovery_callbacks", "sameNativeResolverAdapter": true, "recoveryOrVoiceCalls": [], "sqlDumpsUnchanged": true}], "actualNativeApiAdmissionTested": true, "httpAuthenticationOrListenerTested": false, "payloadOrModelExecuted": false, "traceFaultInjectedExplicitly": true, "defaultRecoveryAndVoiceSuppressedByExplicitPath": true}
