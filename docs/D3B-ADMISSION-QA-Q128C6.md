@@ -99,3 +99,7 @@ under existing isolation and active HTTP. No default manifest widening or ad-hoc
 retiring/start flag changes. FullAIAgent, model budget/accounting, cross-store
 recovery and power-loss acceptance stay open. Prior blocked operations/C120P9
 remain unexecuted. No root/WSL/provider/model/listener/production/main/push action.
+
+## Immutable native artifact and completed review
+
+Original native feature `1b7b31e14451baf1d56c3edbfa2cea69a8f7940c` on1e97 is byte-identical to all five independently tested candidate002 files. Patch SHA256 `c5cf4433b66ba57bd9659c7877f83e0ae152501de6fd9e3e02f801c1542c6f12` matches original artifact. Own native QA worktree adopted original history by fast-forward with no code change or test replay. Original native46 and independent28 remain overlapping scopes. The independent read-only review is completed and archived; it tested nothing. Its queued-before-drain and clean-only integration concerns are intentionally still open for the full runtime, not hidden by the local lifecycle PASS. Exact commit/patch/review checkpoint is original-feature-and-review-handoff.json.
