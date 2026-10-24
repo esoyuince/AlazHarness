@@ -4,11 +4,11 @@ Identity-only observations permit pending work but grant neither health nor clos
 Draining seals the native gate without waiting for the SQL mutex. Retained queued
 or unknown work is not automatically run or discarded; clean release is separate.
 """
-from gateway_prepared_consumer import require,verify_imports,ADMISSION_FEATURE
+from gateway_prepared_consumer import require,verify_imports,ADMISSION_FEATURE,CANONICAL_API_FEATURE
 
 
 def _pair(c,*,quiescent=True):
-    require(c._local_admission is True and c._selected_feature==ADMISSION_FEATURE,
+    require(c._local_admission is True and c._selected_feature in (ADMISSION_FEATURE,CANONICAL_API_FEATURE),
             'consumer_local_admission_not_selected')
     require(c._stage=='ATTACHED','consumer_admission_not_attached')
     c._identity(loop=True,quiescent=quiescent)
@@ -21,6 +21,9 @@ def _pair(c,*,quiescent=True):
             and b._stage==c._admission_phase,'consumer_admission_pair_changed')
     require(c._source_proof is not None,'consumer_sources_missing')
     verify_imports(c._source_proof)
+    if getattr(c,'_canonical_api',False):
+        from gateway_consumer_api import check_publication
+        check_publication(c)
     return b
 
 
@@ -59,6 +62,8 @@ def activate(c):
     _pair(c)
     require(c._admission_phase=='PREPARED','consumer_admission_not_fresh')
     check(c)
+    if getattr(c,'_canonical_api',False):
+        require(c._publication_phase=='PUBLISHED','consumer_api_not_published')
     return _call_transition(c,c._bundle.activate_admission,'ACTIVE')
 
 

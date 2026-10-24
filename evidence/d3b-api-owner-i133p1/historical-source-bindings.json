@@ -1,0 +1,25 @@
+{
+  "base": "94f509d028e45790adef9d27ffa237a042a2151d",
+  "sources": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "sha256": "4927e93a443bd52cfa0c7fca2e6e3a6b2aace5eaa417fc4270fea9b34de463b4",
+      "path": "evidence/d3b-api-owner-i133p1/gateway_prepared_consumer.py.before.txt"
+    },
+    "packages/claw-hermes/gateway_consumer_admission.py": {
+      "sha256": "9b4bc3c128935e0aaccf2173b289a44ef3eab0cb967193dd9e975646c553633e",
+      "path": "evidence/d3b-api-owner-i133p1/gateway_consumer_admission.py.before.txt"
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "sha256": "d2d3a905f7903bfcf54b0c5caf688bc91c54b3fe6e11de7089c518957a94068f",
+      "path": "evidence/d3b-api-owner-i133p1/gateway_store_startup.py.before.txt"
+    },
+    "tests/historical_owner_b129d6.py": {
+      "sha256": "f0b10476ded79a7228c45597db2a51af709558c9ecdbb10bafcbb32b9cd2a1e0",
+      "path": "evidence/d3b-api-owner-i133p1/historical_owner_b129d6.py.before.txt"
+    },
+    "tests/test_active_owner_receipt_b129d6.py": {
+      "sha256": "c2f4607d503f1b3ddd41a7ef892e4947e3aa073bf6d981324f40e11d312b4174",
+      "path": "evidence/d3b-api-owner-i133p1/test_active_owner_receipt_b129d6.py.before.txt"
+    }
+  }
+}

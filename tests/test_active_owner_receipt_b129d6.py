@@ -1,3 +1,4 @@
+from historical_api_i133p1 import executed_source_hash
 """Offline executed-source and scope receipts, not more runtime tests."""
 from pathlib import Path
 import hashlib,json,unittest
@@ -14,7 +15,7 @@ class ActiveOwnerReceipt(unittest.TestCase):
             self.assertEqual((r['total'],r['passed'],r['errors'],r['failures'],r['skipped']),(count,count,0,0,0))
             self.assertTrue(r['temporaryRootRemoved'])
             self.assertEqual(sum(l.startswith('test_') and l.endswith(' ... ok') for l in (E/label/'tests.txt').read_text(encoding='utf-8').splitlines()),count)
-            for n,h in r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+            for n,h in r['sourceHashes'].items():self.assertEqual(executed_source_hash(ROOT,n,h),h,n)
     def test_native_imports_exact_for_two_distinct_generations(self):
         for label,r in (('native-001',self.current),('compat-001',self.compat)):
             record=self.custody['runs'][label];self.assertEqual(len(r['nativeImports']),record['importCount'])
@@ -24,7 +25,7 @@ class ActiveOwnerReceipt(unittest.TestCase):
         manifest=json.loads((ROOT/'config/admission-consumer-b129d6-sources.json').read_text(encoding='utf-8'))
         self.assertEqual(len(manifest['sources']),517)
         for n,h in self.current['nativeImports'].items():self.assertEqual(manifest['sources'][n],h,n)
-        for n,h in self.custody['currentProductModules'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+        for n,h in self.custody['currentProductModules'].items():self.assertEqual(executed_source_hash(ROOT,n,h),h,n)
     def test_owner_drain_does_not_wait_for_writer_or_drop_cancelled_commit(self):
         races={r['case']:r for r in self.current['races']};self.assertEqual(len(races),2)
         a=races['test_drain_seals_while_real_sql_writer_waits_for_mutex'];self.assertTrue(a['blockedWriterRefused']);self.assertTrue(a['nativeMutexNotWaitedByDrain'])

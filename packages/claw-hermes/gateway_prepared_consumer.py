@@ -18,6 +18,8 @@ FEATURE='1e97dd617b81120255304e472ce322befcdb9ccd'
 MANIFEST_SHA256='6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215'
 ADMISSION_FEATURE='1b7b31e14451baf1d56c3edbfa2cea69a8f7940c'
 ADMISSION_MANIFEST_SHA256='d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35'
+CANONICAL_API_FEATURE='5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979'
+CANONICAL_API_MANIFEST_SHA256='f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27'
 ROOT=Path(__file__).resolve().parents[2]
 
 class PreparedConsumerRejected(RuntimeError):pass
@@ -25,13 +27,18 @@ class PreparedConsumerRejected(RuntimeError):pass
 def require(ok,code):
     if not ok:raise PreparedConsumerRejected(code)
 
-def qualify_sources(*,local_admission=False):
+def qualify_sources(*,local_admission=False,canonical_api=False):
     """Read fixed source files, never data files, before native consumer imports."""
     require(type(local_admission) is bool,'consumer_admission_option')
+    require(type(canonical_api) is bool and (not canonical_api or local_admission),
+            'consumer_canonical_api_option')
     path=('config/admission-consumer-b129d6-sources.json' if local_admission
           else 'config/prepared-consumer-s124b1-sources.json')
     expected=ADMISSION_MANIFEST_SHA256 if local_admission else MANIFEST_SHA256
     feature=ADMISSION_FEATURE if local_admission else FEATURE
+    if canonical_api:
+        path='config/canonical-api-consumer-i133p1-sources.json'
+        expected=CANONICAL_API_MANIFEST_SHA256;feature=CANONICAL_API_FEATURE
     raw=(ROOT/path).read_bytes()
     require(hashlib.sha256(raw).hexdigest()==expected,'consumer_manifest_changed')
     manifest=json.loads(raw);require(manifest['nativeFeature']==feature,'consumer_feature')
@@ -67,11 +74,15 @@ def native_types():
     return GatewayConfig,PlatformConfig,CallerOwnedRunnerState,GatewayRunner,initialize_gateway_runtime,BorrowedAPIStores,APIServerAdapter
 
 class PreparedRuntimeConsumer:
-    def __init__(self,owner,*,local_admission=False):
+    def __init__(self,owner,*,local_admission=False,canonical_api=False):
         import gateway_store_startup as startup
         require(type(local_admission) is bool,'consumer_admission_option')
+        require(type(canonical_api) is bool and (not canonical_api or local_admission),
+                'consumer_canonical_api_option')
+        self._canonical_api=canonical_api;self._publication_phase='NEW'
         self._local_admission=local_admission
         self._selected_feature=ADMISSION_FEATURE if local_admission else FEATURE
+        if canonical_api:self._selected_feature=CANONICAL_API_FEATURE
         self._admission_phase='PREPARED'
         require(type(owner) is startup.NativeStoreStartup,'consumer_exact_owner_required')
         owner._owned();require(owner._stage=='VERIFIED' and owner._response_expected is not None,'consumer_verified_owner')
@@ -85,8 +96,11 @@ class PreparedRuntimeConsumer:
 
     def _identity(self,*,loop=False,quiescent=True):
         require(type(quiescent) is bool,'consumer_identity_policy')
-        require(self._selected_feature in (FEATURE,ADMISSION_FEATURE)
-                and self._local_admission is (self._selected_feature==ADMISSION_FEATURE),
+        canonical=getattr(self,'_canonical_api',False)
+        require(type(canonical) is bool and type(self._local_admission) is bool
+                and (not canonical or self._local_admission)
+                and self._selected_feature==(CANONICAL_API_FEATURE if canonical else
+                    ADMISSION_FEATURE if self._local_admission else FEATURE),
                 'consumer_generation_changed')
         o=self._owner;o._owned()
         require(o._stage=='VERIFIED' and o._prepared_consumer is self
@@ -121,7 +135,9 @@ class PreparedRuntimeConsumer:
         self._stage='QUALIFYING'
         try:
             self._identity(loop=True);self._storage()
-            self._source_proof=(qualify_sources(local_admission=True) if self._local_admission else qualify_sources())
+            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True)
+                                if self._canonical_api else
+                                qualify_sources(local_admission=True) if self._local_admission else qualify_sources())
             Config,Platform,Binding,Runner,initialize,Bundle,Adapter=native_types()
             verify_imports(self._source_proof)
             require(type(gateway_config) is Config and type(api_config) is Platform,'consumer_explicit_configs')
@@ -165,7 +181,10 @@ class PreparedRuntimeConsumer:
                        ('_startup_restore_queue',list),('_agent_cache',OrderedDict))
         for name,kind in runner_fields:
             value=getattr(runner,name,None)
-            require(type(value) is kind and not value,'consumer_runner_work_present')
+            if name=='adapters' and getattr(self,'_canonical_api',False):
+                from gateway_consumer_api import check_publication
+                check_publication(self)
+            else:require(type(value) is kind and not value,'consumer_runner_work_present')
         authority=binding._authority
         require(authority is not None and runner.session_authority is authority
                 and authority.runner is runner and authority.db is self._stores[0],
@@ -187,6 +206,14 @@ class PreparedRuntimeConsumer:
             value=getattr(authority,name,None)
             require(value is None or type(value) is kind and not value,
                     'consumer_authority_work_present')
+
+    def publish_api_adapter(self):
+        from gateway_consumer_api import publish
+        return publish(self)
+
+    def retire_idle_api_sessions(self):
+        from gateway_consumer_api import retire_idle_sessions
+        return retire_idle_sessions(self)
 
     def activate_admission(self):
         from gateway_consumer_admission import activate
@@ -228,6 +255,10 @@ class PreparedRuntimeConsumer:
         self._stage='DETACHING_API'
         try:
             await self._adapter.disconnect()
+            if self._canonical_api:
+                expected='WITHDRAWN' if self._publication_phase=='PUBLISHED' else 'NEW'
+                require(self._bundle._publication_state==expected,'consumer_publication_withdrawal_unknown')
+                self._publication_phase=expected
             self._identity(loop=True);self._storage()
             require(self._bundle.status()['state']=='DETACHED','consumer_api_not_detached')
             self._work_absent()
@@ -290,6 +321,8 @@ class PreparedRuntimeConsumer:
         return {'state':self._stage,'nativeFeature':self._selected_feature,'storesOwnedHere':False,
             'localAdmissionSelected':self._local_admission,'nativeAdmissionState':self._admission_phase,
             'localAdmissionOpen':self._stage=='ATTACHED' and self._admission_phase=='ACTIVE',
+            'canonicalApiSelected':getattr(self,'_canonical_api',False),
+            'canonicalApiPublicationState':getattr(self,'_publication_phase','NEW'),
             'workHealthEvaluated':False,
             'sameAcceptedEpoch':self._expected.epoch,'serviceStarted':False,
             'runtimeAdmissionAuthorized':False,'storeReleaseAuthorized':False,

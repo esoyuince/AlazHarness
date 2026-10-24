@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-24T18:32:42.119948+03:00",
+  "files": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "1bf4557ac9cb59751653b890099863ab82722bb3dc38427320ab8910b75d7cac",
+    "packages/claw-hermes/gateway_consumer_api.py": "4ca291df5879363d5acd6cb4af431719ba771965957a614c1d00671a8912110c",
+    "packages/claw-hermes/gateway_consumer_admission.py": "5c9fa513793b2451fb931ad4c2e755d7bb1df93d690a54a3415e7bd276acdac8",
+    "packages/claw-hermes/gateway_store_startup.py": "bd7620251e459bd8ef1ec14d3809363ed18507996b4601eb7720f88e7b5d7691",
+    "config/canonical-api-consumer-i133p1-sources.json": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27",
+    "scripts/qa/i133p1_native_api_owner.py": "a8fa626150b54f78417a337bc2c0cefa581607a5767e2b028c545105a50ea78f"
+  },
+  "scope": "same original owner actual native API, inherited23 plus16new; Windows Linux OS fixtures explicit; no complete turn"
+}

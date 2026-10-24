@@ -1,0 +1,9 @@
+test_both_legacy_defaults_remain_exact (test_api_owner_i133p1.SelectionContracts.test_both_legacy_defaults_remain_exact) ... ok
+test_explicit_canonical_selection_uses_same_reserved_consumer (test_api_owner_i133p1.SelectionContracts.test_explicit_canonical_selection_uses_same_reserved_consumer) ... ok
+test_invalid_or_unpaired_canonical_selection_no_slot_effect (test_api_owner_i133p1.SelectionContracts.test_invalid_or_unpaired_canonical_selection_no_slot_effect) ... ok
+test_new_flag_defaults_false_at_both_boundaries (test_api_owner_i133p1.SelectionContracts.test_new_flag_defaults_false_at_both_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.112s
+
+OK

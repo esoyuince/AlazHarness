@@ -1,55 +1,106 @@
-# I133P1 - resume same-owner canonical API integration from accepted main
+# I133P1 - canonical API publication in the original startup owner
 
-## Starting point verified
+## Published base and explicit selection
 
-Public main and local clean main are94f509d028e45790adef9d27ffa237a042a2151d.
-Both20ab7e4 code publication and final94f509d docs received their own exact-SHA
-alaz/local-ci SUCCESS before non-forced main fast-forwards. Final docs job again
-ran3402Linux tests:3397PASS/5SKIP/0failures, staticPASS, exit0/no timeout/OOM.
-Publication preserved every commit, unrelated root changes and native source pins.
-The prior portability/test-fixture fixes and narrow per-project360s CI budget
-are recorded in P132L1; no production permission or native feature was activated.
+Previous publication is complete: remote/local main94f509d has exact-SHA
+alaz/local-ci success. This focused branch starts at94f509d plus e073fc0
+source-boundary checkpoint. Original/native source and ten staged patches are not
+modified or installed. The dirty legacy root remains on its existing old branch.
 
-## First continuation inspection actually completed
+NativeStoreStartup.prepare_runtime now has explicit canonical_api=False alongside
+local_admission=False. Only local_admission=True,canonical_api=True selects native
+5ff88189 with a separate fixed522-source manifest. Old1e97 prepared and1b7 local
+admission envelopes stay byte-identical and exact; no fallback/upgrading/relabeling.
+Invalid or unpaired options fail before reserving a consumer slot. Source and
+import checks occur before native effects. The consumer slot remains reserved
+before imports/constructors/await, preserving the original unknown-state rule.
 
-The native canonical publication feature5ff88189 is source-qualified by its
-existing53/21 native packages, but the live harness admission envelope still
-selects1b7b31e1 with517source entries. A fresh immutable Git comparison identifies
-five changed selected files and five additional files observed in the accepted
-publication experiment. All522 actually reported native imports match5ff88189
-Git blobs. Exact differences and blob IDs are saved in source-boundary.json.
-This is a current-source inspection, NOT a new runtime/native experiment.
+This still uses ONE PreparedRuntimeConsumer, same original NativeStoreStartup,
+three caller handles, original native authority and existing epoch. No alternate
+scheduler, adapter resolver, session ledger or storage manager is introduced.
 
-The existing NativeStoreStartup.prepare_runtime(local_admission=...) reserves
-ONE PreparedRuntimeConsumer before effects. Preserve that owner and its three
-connections/epoch. The consumer currently prepares and checks without invoking
-publish_api_adapter. Active turn observation also explicitly rejects the prepared
-consumer path. Merely changing five expected hashes cannot qualify that behavior.
+## Native publication and phase ownership
 
-## Ordered implementation boundary
+Preparation alone leaves native canonical publication NEW and admission PREPARED.
+Explicit consumer.publish_api_adapter() delegates to the exact source-qualified
+native bundle publication; it does not insert an adapter from harness code. The
+native original registry contains only its exact enum-key/adapter entry. Consumers
+track their own publication receipt, so direct native publication cannot silently
+advance the owner's phase or authorize cleanup. Source, event loop, map object,
+profile/config and exact native pair are checked; equal replacement maps are not
+accepted. New-source admission requires the explicitly published registration.
 
-Add an explicit current-generation selection to the SAME startup/consumer. Leave
-old prepared and local-admission defaults and their source proofs intact. Qualify
-all required source bytes before imports/construction/publication effects; no
-mixed source roots, unowned adapter mappings or post-hoc private field insertion.
+Only this selected generation permits the exact owned API entry in idle work
+checks. Old default behavior continues to require empty adapter registries. All
+other tasks, queues, live worker records and obligations keep their existing
+checks. ACTIVE identity observations do not grant health or store release.
 
-Integrate the existing native publish_api_adapter call, and adapt only the exact
-owned API registry entry predicate. Foreign/additional entries remain unresolved;
-unknown construction/publication must retain ownership. Preserve one-way local
-admission/drain, actual tasks, current store identity, API->runner->stores->lease
-close order and no replay/repair of uncertain outcomes.
+API withdrawal occurs through its native successful cleanup. The consumer verifies
+NEW or WITHDRAWN as appropriate before runner cleanup; post-detach checks retain
+exact registry objects, native pair, accepted epoch and closed-wrapper identities.
+Cancellation/late cleanup faults retain CLOSE_UNKNOWN and caller handles, not a
+stale cleanup ticket. Direct owner close is refused until known final detachment.
+No listener, automatic recovery, provider call or default status writer is started.
 
-Next execute a real accepted API request through finite native TurnRunner/physical
-worker using explicitly bounded computation, then real result/receipt/cache/session
-retirement. Test code must not write a terminal record instead of executing the
-payload. After local acceptance run the SAME selected generation under active
-Linux isolation and actual authenticated HTTP. Model/budget/fullM1/M2 remain
-separate acceptance; existing prepared isolation does not transfer automatically.
+## Explicit native session retirement and one corrected uncertainty bug
 
-## State of this checkpoint
+consumer.retire_idle_api_sessions() is available only on selected canonical mode,
+PUBLISHED registration and DRAINING admission. It first requires clean original
+SQL gates, then invokes the existing native memory-only retirement operation.
+It does not terminalize queued requests, clear worker obligations, erase history
+or close stores. Active/queued/unknown work is retained and blocks retirement.
 
-Only this plan, source review and durable continuation/evidence are added. All586
-published executable/config/test files and10patches are unchanged. No new harness
-integration source or source-envelope is enabled yet. This branch is the next
-implementation worktree, not another optional native implementation or duplicate
-scheduler. Native remainsinstalled eb75627; candidate5ff88189 remains staged.
+Initial complete native39 run had38PASS/1FAIL/0ERROR with cleanup completed. In the
+failing case native retirement completed and returned its phase to DRAINING, then
+an explicit unexpected post-effect exception was injected. The wrapper originally
+looked only at phase change and left ATTACHED. Corrected wrapper treats unexpected
+or post-return failures as ADMISSION_UNKNOWN even when phase appears unchanged;
+only a native typed refusal before a receipt with unchanged phase is considered a
+known refusal. Same39 test bodies then passed on corrected source. Original
+helper bytes, failure log, source intents and results remain immutable.
+
+## Actual acceptance and declared limits
+
+Current native integration:39/39PASS, including23 inherited real-owner admission
+contracts plus16 new source-selection/publication/API/retirement/fault cases.
+Old local-admission1b7 selection:23/23PASS on CURRENT harness. Old prepared1e97
+selection:20/20PASS on CURRENT harness. These overlap, not82 unique scenarios.
+Twelve current standard tests comprise4 explicit selection contracts with declared
+native preparation doubles and8 offline source/outcome receipts.
+
+Native API calls are real admit_api_turn_async operations. The exact adapter and
+authority resolve, an accepted queued request is recorded, exact retry retains
+one row, changed payload refuses. Actual tasks/threads/SQLite and original startup
+owner/consumer are used. The Windows fixture still explicitly doubles Linux
+actor/lease metadata/mount/cold helper boundaries. Post-effect native-method and
+memory-cleanup faults are named fixtures, not claimed unmodified full execution.
+
+One end-to-end cleanup test uses real API admission but explicitly invokes native
+leaf claim/settlement as a fixture, then native memory retirement, API withdrawal,
+runner detach, caller store close and profile release. It proves cleanup and
+history retention, NOT actual finite payload/TurnRunner/physical agent execution.
+New watched observation/transition scopes perform0newSQL/rawDBopen/rowchanges;
+API request writes occur outside them. No fake zero-write claim for API admission.
+
+Loaded native514files in new39 match immutable5ff; compatibility514files match
+1b7 and501match1e97. Manifest522files are verified from immutable Git blobs before
+selection. Current executed harness bytes are bound in current-source-custody.
+Native source files, installedvendor, tenpatches and global source locks unchanged.
+Existing old runtime evidence is bound to exact saved pre-I133 bytes, not updated
+expected hashes or relabelled as current acceptance. No earlier kernel run was
+replayed. Raw logs preserve SQLite compatibility warnings and the original failure.
+
+## Remaining work
+
+Full standard/native/local/remote results are recorded separately in status and
+summary. Full finite job execution, worker observation contract, current-source
+Linux confinement and authenticated HTTP remain OPEN. Next drive a real accepted
+request through native finite turn and physical worker with bounded compute and
+native result/session/cache release; no test-settled row may substitute for that.
+No new abstraction layer or private field assignment is required. Model budgeting,
+recovery and M1/M2/product readiness remain separate gates. Prior blocked work was
+not retried. Do not merge unverified source or equate old main's CI with this branch.
+
+## Complete current standard regression
+
+New full Windows3414=3391PASS/23SKIP/0ERROR/0FAIL, original command exit0.591source/config/test files and10patches identical before/after; same23skip IDs/reasons. Prior586files:581unchanged,3runtime and2historical receipt adapters changed;5new files. This full run includes12new standard contracts/receipts, not extra native or Linux executions. Native39/23/20 acceptance is separately recorded. RemoteCI not inferred from local result.

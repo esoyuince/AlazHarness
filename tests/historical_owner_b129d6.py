@@ -7,6 +7,9 @@ import hashlib,json
 
 
 def saved_generation_hash(root,name,expected):
+    from historical_api_i133p1 import saved_generation_hash as saved_api
+    previous=saved_api(root,name,expected)
+    if previous is not None:return previous
     from historical_ci_p132l1 import saved_generation_hash as saved_ci
     previous=saved_ci(root,name,expected)
     if previous is not None:return previous

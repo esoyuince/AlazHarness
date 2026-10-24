@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-24T18:38:14.258798+03:00",
+  "files": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "1bf4557ac9cb59751653b890099863ab82722bb3dc38427320ab8910b75d7cac",
+    "packages/claw-hermes/gateway_consumer_api.py": "c677a8310b00206ef3c2d784a7b0b76b36cfb541f22815830825f93067729142",
+    "packages/claw-hermes/gateway_consumer_admission.py": "5c9fa513793b2451fb931ad4c2e755d7bb1df93d690a54a3415e7bd276acdac8",
+    "packages/claw-hermes/gateway_store_startup.py": "bd7620251e459bd8ef1ec14d3809363ed18507996b4601eb7720f88e7b5d7691",
+    "config/canonical-api-consumer-i133p1-sources.json": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27",
+    "scripts/qa/i133p1_native_api_owner.py": "a8fa626150b54f78417a337bc2c0cefa581607a5767e2b028c545105a50ea78f"
+  },
+  "same39TestBodies": true,
+  "fix": "unexpected/post-return retirement failure retains uncertainty despite same native phase",
+  "firstFailurePreserved": true
+}

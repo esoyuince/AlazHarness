@@ -1,0 +1,19 @@
+{
+  "result": "PASS",
+  "total": 3414,
+  "passed": 3391,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 591,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "same23WindowsSkipIdsAndReasons": true,
+  "elapsedSeconds": 133.526,
+  "at": "2026-10-24T18:44:28.206808+03:00",
+  "wrapperExitCode": 0,
+  "logSha256": "fc2ec8b88041b4f4799a2a7db295e96ee47df7fe2ce9a3dcc1b93a75b631c061",
+  "scope": "new same-owner API integration complete standard Windows regression, not actual native/HTTP/Linux rerun"
+}
