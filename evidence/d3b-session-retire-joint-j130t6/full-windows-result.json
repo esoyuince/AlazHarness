@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "total": 3380,
+  "discovered": 3380,
+  "passed": 3357,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 579,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "all572PriorSourcesUnchanged": true,
+  "newSourceConfigTestCount": 7,
+  "elapsedSeconds": 197.671,
+  "at": "2026-10-24T14:40:20.991961+03:00",
+  "wrapperExitCode": 0,
+  "fullLogSha256": "97466bb77e5e8300d3873bd5d8223d31c401d0f1bb61f72330adb6a376556ac4",
+  "scope": "one fresh complete standard union; optional native artifact/receipts, no new native/Linux/full-agent execution"
+}

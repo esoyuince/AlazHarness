@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T14:09:40.027008+03:00",
+  "qaSha256": "40d1617b8a83a646c695474aa23671b111f50b868e4909b4ea46b7d39dded789",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "scope": "complementary direct native library routing control, NO harness source-gate bypass, not previous early-import rejection rerun"
+}

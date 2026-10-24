@@ -1,0 +1,12 @@
+# AlazHarness - status
+
+## D3B-NATIVE-DRAIN-C130A6 - IN PROGRESS
+
+Own branch/worktree alaz/d3b-native-drain-c130a6 / scratch/worktrees/d3b-native-drain-c130a6 from2c0d9d0. Scope: inspect and qualify accepted native FIFO completion, session retirement, and actual request/physical-worker ownership on SAME caller-owned runtime. Preserve default clean-only paths, queued/unknown outcomes, native/source locks/main/user changes. No real provider/network/listener/production/root/WSL, no automatic prior unknown replay or blocked operations. Native edits, if needed, only in separate own feature worktree, not installed vendor. Do not invent alternate scheduler or mark pending records terminal for a green result.
+
+Current572files baseline frozen. Single product task C130A6 pending source review; check concurrent130 claims before editing. Read-only agentc130a601...000080 reviews native session-retirement seams with no tests/writes. Existing J129 full/native results terminal, do not repeat just to resume. Next trace actual submit/execute/settle/retire paths and run bounded offline current-native baseline to choose smallest necessary seam; exact evidence and limits required.
+
+
+### Single implementation, independent native acceptance
+
+Concurrent d3b-native-turn-c130a6 existed before own worktree creation and owns full native turn implementation. This d3b-native-drain-c130a6 tree now claims INDEPENDENT actual-native FIFO/retirement/worker QA only. No product edits were made here; original572 source files unchanged. Producer source/index read-only, no duplicate scheduler or native patch. Read-only agent000080 continues source review only.

@@ -1,0 +1,18 @@
+# AlazHarness - status
+
+## D3B-SESSION-RETIREMENT-QA-Q130A6 - INDEPENDENT24 PASS / ORIGINAL PRODUCT OWNS UNION FULL
+
+This d3b-native-drain-c130a6 branch is INDEPENDENT QA ONLY, base2c0d9d0. Sole product owner C130T6 d3b-native-turn-c130a6. Permanent election recorded; older reciprocal role notes historical. No product edits in this branch, all572original source files unchanged. Own native test copy hermes-session-retire-qa-q130a6 contains exact candidate0023files, producer/nativevendor untouched.
+
+Actual original1b7 API control: native bind creates1durablesession/1livesession but missing published adapter rejects before admission,3handles/profile retained. Second real guarded terminal leaf still leaves session memory and blocks finish. These are native library controls, NOT a harness source bypass or complete API turn. Baseline514/516actualimports match immutableGit; no scheduled agent/provider.
+
+Candidate001independent20PASS then4extra FAIL, noerrors: native waiter_replies, memory/durable turn marker, changed live profile. SAME QA assertions onfixed00224/24PASS. Actual API session bind/native ledger settle, real tasks/physical thread/fanout writer; no native method replacement. All3logicalDBdumps unchanged across retirement, history/route/terminal/retry preserved. All-before-effects preflight for2sessions, pending/unknown rows retained, open transactions not rolled back, detached-but-writing fanout and cancelled-carrier physical worker block. Only existing native producer reap removes done worker record. Memory-only retirement not new FIFO/session deletion/cache eviction or close permission.
+
+Current513nativeimports exact1b7or3candidatehashes.7offline receipts PASS; inherited28tests not rerun. All24owned fixture profiles/registry/leases cleaned; retained fixture data cleanup not successful product drain. Native/rawlogs/source custody preserved. Own runs terminal. Reviewer000080 COMPLETED/ARCHIVED: existing FIFO machinery reusable, queued-at-seal handling and asynchronous agent-cache resource completion barrier still OPEN. No full agent/harness integration/Linux/HTTP or provider acceptance from these results.
+
+Report docs/D3B-SESSION-RETIREMENT-QA-Q130A6.md; evidence/d3b-native-drain-c130a6/: two nativecontrols,candidate001/002,native001historical20,review-beforeFAIL4,native002PASS24,source-custody,readonly-review-handoff,receipt-tests,summary. Next own static/scoped commit; ORIGINAL PRODUCT TASK owns one exact union/full/canonical delivery, this task does NOT duplicate full or edit its index. Installedeb75627/maincc7ceba/source locks unchanged. No WSL/root/model/listener/push/remoteCI/production or blocked/C120P9 retry.
+
+
+### QA commit ready; optional native-history synchronization BLOCKED
+
+Independent QA0f8f3cb committed clean; localstaticPASS3372discovered,7receiptsPASS. Original feature13186a5f8a25949e05ffacddbaafd2461989eaac and patch digest match3testedcandidate002 files. Request000029 to optionally synchronize OWN native QA worktree Git history was BLOCKED by tool safety checks and NOT retried. Read-only000030 confirms stillHEAD1b7 with2modified+1untracked TESTEDcandidate files. Preserve as-is; do not clean/reset/restore/merge it via another tool/agent. No test result depends on this housekeeping. blocked-native-qa-history-sync.json records outcome. Original producer C130T6 continues its ordinary harness artifact union/full, not this blocked action. No remaining reviewer agent; completed/archived.

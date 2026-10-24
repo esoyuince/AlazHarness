@@ -1,0 +1,7 @@
+# AlazHarness - status
+
+## D3B-NATIVE-DRAIN-C130A6 - IN PROGRESS / SOLE PRODUCT OWNER
+
+FINAL ROLE RESOLVED ONCE: this d3b-native-drain-c130a6 tree owns product implementation; d3b-native-turn-c130a6 explicitly owns independent QA. Both briefly ceded after concurrent discovery; no product code written in either tree at resolution. Do not switch again. Base2c0d9d0,572 baseline files; native1b7 immutable installed vendor/main unchanged. Read-only review agent000080 source inspection only.
+
+Scope: native accepted-FIFO completion and idle session retirement on existing same-owner startup/consumer. Trace exact actual API->authority->worker path, preserve queued/unknown data and accepted commit semantics. No fake terminal writes, deleting session history, alternate manager/scheduler, or private flag promotion. Native changes only separate owned nativeworktree; tests in fresh owned profiles. No provider/model/listener/production/root/WSL or blocked action retries. First bounded baseline before design; existing completed tests not repeated for resume. Current own jobs terminal.

@@ -1,0 +1,87 @@
+"""Unchanged native API admission routing control, no harness pin bypass.
+
+Direct native library construction only; no service/listener/agent scheduling.
+Fresh owned stores and real native gate/async admission; any refusal preserves
+real observed side effects. Fixture cleanup is not accepted product drain.
+"""
+import argparse,asyncio,hashlib,json,os,sys,tempfile,traceback
+from pathlib import Path
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--native',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--completed-leaf',action='store_true');a=p.parse_args();completed_leaf=a.completed_leaf
+    n=a.native.resolve(strict=True);out=a.output.resolve();out.mkdir(parents=True,exist_ok=False);loop=asyncio.new_event_loop();asyncio.set_event_loop(loop)
+    denied=[]
+    def audit(event,args):
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo','subprocess.Popen','os.system'):
+            denied.append(event);raise PermissionError('q130_native_offline')
+    report={'phase':'IMPORT','result':'UNKNOWN'}
+    with tempfile.TemporaryDirectory(prefix='alaz-q130a6-native-control-') as tmp:
+        home=Path(tmp).resolve();os.environ.update(HERMES_HOME=str(home),HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home));sys.path.insert(0,str(n));sys.addaudithook(audit)
+        from hermes_state import SessionDB
+        from gateway.config import GatewayConfig,PlatformConfig
+        from gateway.run_borrowed_state import CallerOwnedRunnerState
+        from gateway.run import GatewayRunner
+        from gateway.run_runtime import initialize_gateway_runtime
+        from gateway.platforms.api_server_borrowed import BorrowedAPIStores
+        from gateway.platforms.api_server import APIServerAdapter
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        from gateway.platforms.api_server_response_store import ResponseStore
+        from gateway.session_api_turn import admit_api_turn_async
+        from gateway.runtime_ownership import process_ownership
+        import hermes_state_runtime as runtime
+        import hermes_state_registry as registry
+        process_ownership.reserve([home]);state=SessionDB(home/'state.db');epoch=runtime.begin_runtime_epoch(state,instance_id='q130-native-owned')
+        replay=RunIdempotencyStore(str(home/'runs_idempotency.db'));response=ResponseStore(db_path=str(home/'response_store.db'),canonical_state=state)
+        config=GatewayConfig(multiplex_profiles=False,write_sessions_json=False);bind=CallerOwnedRunnerState(config,state,epoch=epoch,instance_id='q130-native-owned')
+        runner=GatewayRunner(config,caller_state=bind);loop.run_until_complete(initialize_gateway_runtime(runner))
+        bundle=BorrowedAPIStores(home,state,replay,response,prepared_runner=runner);adapter=APIServerAdapter(PlatformConfig(extra={'key':'owned-control-only','model_name':'offline'}),borrowed_stores=bundle)
+        async def attempt():
+            bundle.activate_admission();report['phase']='NATIVE_API_ADMISSION'
+            try:
+                authority,ref,row=await admit_api_turn_async(adapter,session_id='q130-owned',request_id='q130-request',user_message='offline control',conversation_history=[])
+                report['admitted']={'sessionId':ref.session_id,'status':row['status'],'admissionId':row['admission_id'],'authoritySame':authority is bind._authority}
+            except BaseException as exc:
+                report['refusal']={'type':type(exc).__name__,'reason':getattr(exc,'reason',str(exc))};report['traceback']=traceback.format_exc()
+            # No observe_api_turn/_schedule/turn or model invocation. Join native
+            # commit callbacks only; no artificial result or ledger mutation.
+            await asyncio.sleep(0);tasks=[t for t in getattr(bind._authority,'_mutation_tasks',()) if not t.done()]
+            if tasks:await asyncio.gather(*tasks,return_exceptions=True)
+            await asyncio.sleep(0)
+        try:
+            loop.run_until_complete(attempt());a=bind._authority
+            report.update(durableSessionRows=state._conn.execute('SELECT COUNT(*) FROM sessions').fetchone()[0],durableAdmissionRows=state._conn.execute('SELECT COUNT(*) FROM session_admissions').fetchone()[0],liveSessionCount=len(a.sessions),runnerAdapterCount=len(runner.adapters),nativePhase=bind._stage,bundlePhase=bundle._stage)
+            report['allConnectionsOpen']=all(c.execute('SELECT 1').fetchone()[0]==1 for c in (state._conn,replay._conn,response._conn));report['profileHeld']=process_ownership.owns(home)
+            report['pendingTaskCount']=sum(not t.done() for t in asyncio.all_tasks(loop));assert report['pendingTaskCount']==0
+            assert report['allConnectionsOpen'] and report['profileHeld']
+            report['result']='OBSERVED_UNCHANGED_NATIVE_API_ROUTE_BOUNDARY'
+            if completed_leaf:
+                # An actual bound native API session survived the route refusal.
+                # Exercise native guarded leaf settlement, not a fake API result.
+                authority=bind._authority
+                row=runtime.admit_session_input(state,epoch=epoch,principal_id='api',session_id='q130-owned',request_id='accepted-leaf',payload={'text':'leaf'},_authorize_write=authority._admission_gate())
+                claim=runtime.claim_session_input(state,epoch=epoch,session_id='q130-owned',_guard=authority._admission_gate())
+                settled=runtime.settle_session_input(state,epoch=epoch,admission_id=row['admission_id'],generation=claim['generation'],outcome='completed')
+                before=state._conn.total_changes
+                async def finish_attempt():
+                    bundle.begin_drain()
+                    try:bundle.finish_drain()
+                    except Exception as exc:return {'type':type(exc).__name__,'reason':str(exc)}
+                    raise AssertionError('retained session unexpectedly closeable')
+                refusal=loop.run_until_complete(finish_attempt())
+                report['completedLeafRetirementBoundary']={'terminalRow':settled['status']=='terminal','sameAdmissionId':settled['admission_id']==row['admission_id'],'generation':claim['generation'],'finishRefusal':refusal,'liveSessionRetained':len(authority.sessions)==1,'routingEntriesRetained':len(runner.session_store._entries)==1,'durableSessionPreserved':state.get_session('q130-owned') is not None,'terminalAdmissionPreserved':runtime.get_session_admission(state,admission_id=row['admission_id'])['status']=='terminal','noSqlWritesByDrainObservation':before==state._conn.total_changes,'nativePhase':bind._stage}
+                report['result']='OBSERVED_NATIVE_TERMINAL_LEAF_WITH_RETAINED_SESSION'
+                assert all(report['completedLeafRetirementBoundary'][k] is True for k in ('terminalRow','sameAdmissionId','liveSessionRetained','routingEntriesRetained','durableSessionPreserved','terminalAdmissionPreserved','noSqlWritesByDrainObservation'))
+                assert bind._stage=='DRAINING'
+
+        finally:
+            response.close();replay.close();state.close();process_ownership.close()
+        imports={}
+        for mod in tuple(sys.modules.values()):
+            file=getattr(mod,'__file__',None)
+            if file:
+                q=Path(file).resolve()
+                if q.is_relative_to(n) and q.suffix=='.py':imports[q.relative_to(n).as_posix()]=hashlib.sha256(q.read_bytes()).hexdigest()
+        report.update(nativeImports=imports,nativeFeature='1b7b31e14451baf1d56c3edbfa2cea69a8f7940c',nativeMethodsReplaced=False,harnessSourceQualificationTested=False,harnessGateBypassed=False,wholeAgentOrWorkerScheduled=False,httpListenerStarted=False,providerCalls=0,rootWslAction=False,profileReleased=not process_ownership.homes,registry=registry.stats(),deniedEvents=denied)
+    loop.run_until_complete(loop.shutdown_default_executor());loop.close();report['temporaryProfileRemoved']=not home.exists();report['qaSha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','deniedEvents')}),flush=True)
+if __name__=='__main__':main()

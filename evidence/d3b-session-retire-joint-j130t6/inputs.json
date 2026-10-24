@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T14:36:12.955064+03:00",
+  "base": "2c0d9d081fa29fa5836eb4fc782e8340fd461c59",
+  "productCommit": "47d92fc27297c0d46d1ca6db7a9e982456925c87",
+  "independentCommit": "f0cb13853813eb49403b551f32b957ee628a4223",
+  "nativeFeature": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "nativeBase": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "nativePatchSha256": "3509c7556f13bebc6ef40ebff03830b1efe7cc161238f70b0e89ff6cc288d326",
+  "onlyConflict": [
+    "status.md"
+  ],
+  "canonicalBefore": "2c0d9d081fa29fa5836eb4fc782e8340fd461c59",
+  "fullOwner": "J130T6 this exact union; no duplicate full",
+  "newNativeExecutionByUnion": false,
+  "blockedIndependentQaCopyHistoryOperationPreservedSha256": "998916801b4b093ebc95b7116a1a4ed78340530b0fa3508360c54b5b0d062456",
+  "blockedOperationRetried": false,
+  "nativeInstalled": false
+}

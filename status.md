@@ -1,46 +1,50 @@
 # AlazHarness - status
 
-## D3B-SESSION-RETIREMENT-C130T6 - NATIVE28 + COMPAT28 PASS / UNION FULL PENDING
+## D3B-SESSION-RETIRE-JOINT-J130T6 - SCOPED PASS / CANONICAL DELIVERY PENDING
 
-Own worktree d3b-native-turn-c130a6, branch alaz/d3b-native-turn-c130a6, base2c0d9d0.
-Native feature13186a5f8a25949e05ffacddbaafd2461989eaac on1b7b31e1 in own clean
-hermes-session-retire-c130t6. Peer d3b-native-drain-c130a6 INDEPENDENT QA only.
-Initial reciprocal claim notes superseded by concrete worktree/product; no duplicate
-implementation. THIS product task owns later ONE combined full/canonical delivery.
+Joint branch alaz/d3b-session-retire-joint-j130t6, own worktree same name.
+Product47d92fc and independentf0cb138 histories preserved; status-only conflict.
+Native13186a5f8a25949e05ffacddbaafd2461989eaac on1b7 in3files, optional9thpatch
+STAGED_NOT_INSTALLED. All572prior harness source/config/test files unchanged;
+current579files+9patches frozen.111original evidence blobs exact.
 
-Explicit BorrowedAPIStores.retire_idle_api_sessions is DRAINING-only memory release
-for idle ordinary API LiveSession/cache entries after all native work is terminal.
-No history/routing/retry/SQL deletion, new connection/epoch, scheduler or forced
-cancel. Native default admission/finish/close behavior unchanged. Subscriptions,
-controls, settling, actual waiter replies, pending work/worker records, dirtydata,
-active-turn markers and source drift refuse before removal. All sessions validated
-before first effect. Nonblocking facade/event/fanout/state locks. Partial real memory
-removal trace-fault retains ADMISSION_UNKNOWN+3callerhandles/profile, no retry/close.
-Retirement receipt is NOT finish/store-release authorization; current gates remain.
+Native BorrowedAPIStores.retire_idle_api_sessions requires DRAINING/same owner,
+current profile/config/identity, settled native worker/cache/executor/SQL obligations
+and every ordinary API LiveSession idle. Batch preflight before first memory effect;
+nonblocking locks, no subscriber/control/observer/fanout writer/receipt/turn marker.
+Only memory cache/session entries removed. Persistent history/routes/retry/epoch,
+all3callerconnections/profile unchanged. No SQL writes/rawDBopen/newconnections in
+watched retirement/refusals. Existing finish and API->runner detach remain separate
+fresh guards; new binding/work after retirement blocks again. No second owner.
 
-Original native00124=23PASS/1FAIL plus review3FAIL preserved. Same27assertions passed
-fixed002; final28/28 adds explicit partial-effect trace. Old unchanged28admission
-compat alsoPASS on same3files, scopes overlap. Real API binding/native leaf guarded
-admit/claim/settle/SQL/tasks/threads, NOT complete API request/TurnRunner/agent work.
-Current512native imports and compat514 match immutable feature; baseline448match1b7.
-Watched full3SQLite logical dumps/total_changes unchanged,0newDB/rawopen. Successful
-fixture cleanup is recorded separately from product completion of retained state.
-8offline receipt testsPASS; exact QA/source/result hashes bound.
+Partial actual-memory-effect trace interruption retains ADMISSION_UNKNOWN and no
+retry/finish/detach/close. Native methods not replaced; trace and task/SQL faults
+explicit. Fresh fixtures disposed separately, never reported product completion.
+Original28, independent24, unchanged old28 admission compatibility PASS on exact
+same3files; overlap, not80unique tasks. Original512/independent513/compat514actual
+imports (union519) match immutable feature. Independent specific driver and reused
+fixture hashes both verified; raw fixture result is not its independent driver ID.
+15new offline receipts are standard subsets, not additional native executions.
 
-Actual same-owner API baseline eager import refuses3missing modules outside old517
-manifest; then direct native peer baseline sees absent published adapter. Neither
-is silently bypassed or called full-runtime success. Pending FIFO/worker execution,
-agent-cache lifetime, currentLinux/HTTP remain OPEN. Existing572harness files all
-unchanged, default prepared513/admission517 source envelopes unchanged. New9thpatch
-and config/hermes-session-retirement-c130t6.json STAGED_NOT_INSTALLED. Fresh isolated
-patch apply exact3hashes, duplicate refused; first parent-Git-prefix no-op fixture
-caught by hashes and preserved. Installedvendor eb75627/maincc7ceba unchanged.
-No root/WSL/provider/model/listener/production/blocked retry/push. Prior C120P9 HOLD.
+Original00123/24 plus review3FAIL, peer00120PASS plus extra4FAIL retained; unchanged
+failing assertions pass fixed002. Same native source extended original27to28trace.
+Patch fresh apply exact3files, duplicate refuses. Initial parent-prefix apply no-op
+and patch-context attribute diagnostics retained without source/test edits. Joint
+readonly metadata-field diagnostic retained; no result rewritten or native replay.
 
-Report docs/D3B-SESSION-RETIREMENT-C130T6.md; evidence/d3b-native-turn-c130a6/: summary,
-source-custody,native-artifact,candidate001/002,native001FAIL/review-beforeFAIL,
-native002PASS27/native003PASS28,compat001PASS28,api-baseline001driver-error/
-api-baseline002refusal,receipt-tests. All own native jobs terminal. Next scoped
-component static/commit, independent exact-source qualification, ONE full union.
-Then next work is explicit actual API source/adapter publication + request/worker
-and native cache/session retirement, not re-running this prepared proof.
+NEW fullWindows3380=3357PASS/23SKIP/0ERROR/0FAIL exit0. Same23skipIDs/reasons retained,
+not reexecuted asLinux. Native/full all terminal; local static/merge next. Full log,
+source/patch manifests, skip-custody, joint-source-custody and summary recorded in
+evidence/d3b-session-retire-joint-j130t6/. Report docs/D3B-SESSION-RETIRE-JOINT-J130T6.md.
+Component reports/evidence preserve API harness3missing-module refusal and direct
+native missing-adapter refusal. No full API/TurnRunner/agent/queuedFIFO acceptance.
+
+Exact next boundary: explicit actual API source set and publication of SAME native
+adapter via existing canonical resolver with owned lifetime; then true accepted
+request/physical-worker + native async cache release/session retirement. No private
+post-hoc adapter injection or terminal-row forging. Qualify exact active path under
+Linux isolation/HTTP afterward. Current prepared513/admission517manifests unchanged.
+Installednativeeb75627/maincc7ceba/source locks untouched, no model/provider/listener,
+root/WSL/production/push/remoteCI. Reviewer completed/archived. Peer OPTIONAL native
+QA-copy history sync toolBLOCK preserved and NOT retried; leave that copy as-is.
+Prior blocks/C120P9 not reissued. Canonical remains2c0d9d0 until guarded delivery.

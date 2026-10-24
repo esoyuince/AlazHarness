@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-24T14:19:41.445438+03:00",
+  "candidate": "candidate-001.json",
+  "qaSha256": "0d19946933304dec736ef8277433db8d4f0b894b146ce21fe8e3d4cf01434fd8",
+  "fixtureSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+  "methodCount": 20,
+  "scope": "independent real native API binding and guarded leaf settlement, memory retirement; no full agent/HTTP/harness/kernel",
+  "existingAdmissionCasesNotRepeated": true
+}

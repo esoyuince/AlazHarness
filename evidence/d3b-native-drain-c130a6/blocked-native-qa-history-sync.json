@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-24T14:29:43.533848+03:00",
+  "requestId": "c130a601-8142-4c31-9013-130001000029",
+  "result": "BLOCKED_BY_TOOL_SAFETY_CHECKS",
+  "operation": "optional independent native QA worktree Git history synchronization",
+  "notExecutedOrRetried": true,
+  "readOnlyInspectionRequest": "c130a601-8142-4c31-9013-130001000030",
+  "observedNativeQaHead": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "observedNativeQaState": "two modified tracked candidate files and one untracked new helper; exact already-tested bytes preserved",
+  "doNotRetryViaAnotherToolOrAgent": true,
+  "testedCandidateHashesUnchanged": true,
+  "independentTestsAndEvidenceUnaffected": true,
+  "nativeOriginalFeature": "13186a5f8a25949e05ffacddbaafd2461989eaac",
+  "nativePatchSha256": "3509c7556f13bebc6ef40ebff03830b1efe7cc161238f70b0e89ff6cc288d326",
+  "originalFeatureConfigMatchesTestedThreeFiles": true,
+  "independentNativeWorktreeClean": false,
+  "nextOwner": "original C130T6 owns normal harness artifact union/full; this unrelated Git housekeeping is not prerequisite and must remain blocked"
+}

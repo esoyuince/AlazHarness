@@ -1,0 +1,11 @@
+{
+  "requestId": "c130a601-7d24-4bc0-8d19-130001000035",
+  "exitCode": 1,
+  "phase": "read-only joint provenance review before report/evidence write",
+  "reason": "generic inherited fixture result qaSha256 identifies Q128 runner, whereas specific peer driver hash is in retirement-result.json retirementQaSha256",
+  "resolution": "bind BOTH immutable fixture and independent driver, validate all nested raw results and own selected method scope",
+  "testCodeOrExpectedResultsChanged": false,
+  "newRuntimeExecution": false,
+  "rawFixtureSha256": "a4d580e205f191696c433c14b8282c51a2848a58fac9577c1dc295a3f7e5d73e",
+  "actualIndependentDriverSha256": "d4769be1dc0e3bb42e4b58019269b40ed3631780825df86c630339e4c06fa036"
+}

@@ -1,0 +1,25 @@
+test_actual_detached_fanout_writer_is_still_obligation (__main__.RetirementCases.test_actual_detached_fanout_writer_is_still_obligation) ... ok
+test_durable_route_and_binding_drift_refuse_before_memory_changes (__main__.RetirementCases.test_durable_route_and_binding_drift_refuse_before_memory_changes) ... ok
+test_each_store_transaction_preserved_on_refusal (__main__.RetirementCases.test_each_store_transaction_preserved_on_refusal) ... ok
+test_empty_retirement_in_draining_is_readonly_and_not_finish (__main__.RetirementCases.test_empty_retirement_in_draining_is_readonly_and_not_finish) ... ok
+test_foreign_scope_keeps_exact_original_session (__main__.RetirementCases.test_foreign_scope_keeps_exact_original_session) ... ok
+test_identity_drift_precedes_any_memory_removal (__main__.RetirementCases.test_identity_drift_precedes_any_memory_removal) ... ok
+test_idle_retirement_is_not_delete_or_profile_release (__main__.RetirementCases.test_idle_retirement_is_not_delete_or_profile_release) ... ok
+test_live_native_dispatcher_must_end_without_cancellation (__main__.RetirementCases.test_live_native_dispatcher_must_end_without_cancellation) ... ok
+test_live_subscriber_observer_pending_control_and_settling_each_refuse (__main__.RetirementCases.test_live_subscriber_observer_pending_control_and_settling_each_refuse) ... ok
+test_new_native_binding_restore_after_retire_blocks_finish_again (__main__.RetirementCases.test_new_native_binding_restore_after_retire_blocks_finish_again) ... ok
+test_no_implicit_retirement_by_finish_and_wrong_phase_refuses (__main__.RetirementCases.test_no_implicit_retirement_by_finish_and_wrong_phase_refuses) ... ok
+test_nonempty_agent_cache_is_not_evicted_or_cleaned (__main__.RetirementCases.test_nonempty_agent_cache_is_not_evicted_or_cleaned) ... ok
+test_other_thread_holding_event_lock_refuses_without_wait (__main__.RetirementCases.test_other_thread_holding_event_lock_refuses_without_wait) ... ok
+test_queued_and_unknown_rows_are_not_cleared_to_retire (__main__.RetirementCases.test_queued_and_unknown_rows_are_not_cleared_to_retire) ... ok
+test_real_physical_thread_retained_after_cancelled_carrier (__main__.RetirementCases.test_real_physical_thread_retained_after_cancelled_carrier) ... ok
+test_session_async_claim_and_mutation_locks_refuse_without_release (__main__.RetirementCases.test_session_async_claim_and_mutation_locks_refuse_without_release) ... ok
+test_successful_done_dispatcher_is_permitted_but_cancelled_is_not (__main__.RetirementCases.test_successful_done_dispatcher_is_permitted_but_cancelled_is_not) ... ok
+test_terminal_history_retry_and_route_persist_while_only_memory_retires (__main__.RetirementCases.test_terminal_history_retry_and_route_persist_while_only_memory_retires) ... ok
+test_two_sessions_are_preflighted_all_before_any_memory_removal (__main__.RetirementCases.test_two_sessions_are_preflighted_all_before_any_memory_removal) ... ok
+test_unsettled_response_and_replay_are_not_ignored (__main__.RetirementCases.test_unsettled_response_and_replay_are_not_ignored) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 46.809s
+
+OK

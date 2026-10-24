@@ -1,0 +1,25 @@
+{
+  "reviewerAgent": "c130a601-8142-4c31-9013-130001000080",
+  "state": "COMPLETED_ARCHIVED",
+  "sourceOnly": true,
+  "nativeBase": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "harnessBase": "2c0d9d081fa29fa5836eb4fc782e8340fd461c59",
+  "testsExecutedByReviewer": false,
+  "filesEditedByReviewer": false,
+  "findings": [
+    "Existing SessionAuthority drain/TurnRunner/settlement should be reused, no second FIFO",
+    "begin_drain closes future queued claims; accepted queued/late commit must retain owner",
+    "Delete-specific retire_live_sessions is not safe general non-destructive retirement",
+    "Native physical worker record survives cancelled carrier until thread finally; native reap is separate",
+    "run_agent_cache._spawn_release_thread is asynchronous and untracked here; empty cache is NOT proof its resources have stopped",
+    "Full TurnRunner with explicit offline AIAgent double is source-feasible but not acceptance-tested; model-resolution path must also remain offline"
+  ],
+  "acceptedCurrentScope": "memory-only retirement after existing owners already settled all known work; no cached-agent cleanup/thread-completion claim",
+  "remainingFullRuntimeGates": [
+    "actual API adapter publication and explicit combined-source manifest",
+    "native FIFO and request/physical worker correlation",
+    "accepted-only claim after seal or bounded finish-before-seal contract",
+    "session agent-cache release completion barrier",
+    "same-source Linux confinement and HTTP"
+  ]
+}
