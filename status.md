@@ -1,15 +1,18 @@
 # AlazHarness - status
 
-## J133C6 - SAME-OWNER CANONICAL API LOCAL ACCEPTANCE COMPLETE
+## J133C6 - PRODUCT MAIN6001 PUBLISHED / INDEPENDENT QA UNION97a3 LOCAL ACCEPTED
 
 Active branch alaz/d3b-api-owner-joint-j133c6.
 Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-api-owner-joint-j133c6.
 Implementation6001b5534f445fc5fe085af53abfbb89d6f6c6b3 and independentQA
 8a15de2de12e742a3509d0d0002a69066d390527 histories retained; only status conflict.
-Read live GitHEAD for tested union commit. Original main94f509d publication and
-exactCI already COMPLETE. New joint not pushed at this checkpoint; producer6001
-was separately pushed, last read exactCI pending. ItsCI is not this union's CI.
-No main mutation or service/native activation by this local union.
+Tested union97a3c78116071afaa7416028a0c7b8a2ccbaa4ff; current GitHEAD may add
+this docs-only handoff. Product6001b5534f445fc5fe085af53abfbb89d6f6c6b3 is NOW
+published on remote main and original feature branch; exact GitHub alaz/local-ci
+SUCCESS independently observed. Same runtime/config/patch/source-lock bytes as
+union. Prior main94f509d publication also completed. Joint independent QA/evidence
+is LOCAL, not pushed; main6001CI is NOT union97a3CI. No runtime activation.
+Actual readback/evidence in delivery.json. Source593/patch10 unchanged.
 
 ### Implemented and actually accepted
 
@@ -67,3 +70,8 @@ Evidence/d3b-api-owner-joint-j133c6/: inputs,summary,joint-source-custody,
 full-windows-result/log,fullsources/patches-before/after,full-skips,static-final.
 Parent histories docs/status-history/j133c6-*.md. Current native/full jobs terminal;
 this checkpoint's only work is local static/commit, not autonomous background work.
+
+
+### Final independent delivery verification
+
+Productmain6001 live ref and exactCI success confirmed; same runtime/config/patch/lock bytes as testedunion97a3. Own final checkpoint only docs/evidence, no full/native rerun. Published product3414 suite and local joint3422 suite remain separate counts; local union adds8offline receipt checks. Legacyroot33dirtyfiles byte-exact, nativevendor eb75627 unchanged. Current commands terminal. Continue from this joint worktree after reconciling any newer main docs; preserve both accepted histories.

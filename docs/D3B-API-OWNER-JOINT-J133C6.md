@@ -92,3 +92,7 @@ remoteCI and a fresh ancestry check. Root legacy/user state remains untouched.
 ## Terminal union result
 
 New complete standard3422=3399PASS23SKIP0ERROR0FAIL; command000027 exit0.593source/config/test files and10nativepatches identical before/after. Same23skip IDs/reasons. Original80evidence blobs preserved. No new native execution by union. Runtime native39/23 scopes overlap. Exact source checks and local static accompany the merge commit; no remoteCI claim for this new union until that SHA is published and observed.
+
+## Published product versus local independent union
+
+Remote main and original feature branch now equal `6001b5534f445fc5fe085af53abfbb89d6f6c6b3`; exact alaz/local-ci SUCCESS observed through GitHub. Test-qualified local union `97a3c78116071afaa7416028a0c7b8a2ccbaa4ff` has byte-identical runtime/config/patch/lock files and extra independent QA/evidence. The union itself is not pushed; its complete local3422 result is NOT a remoteCI result. This final docs-only checkpoint records that distinction, with source593/patch10 unchanged.

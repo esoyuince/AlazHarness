@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-24T18:53:30.588000+03:00",
+  "testedUnion": "97a3c78116071afaa7416028a0c7b8a2ccbaa4ff",
+  "publishedMain": "6001b5534f445fc5fe085af53abfbb89d6f6c6b3",
+  "publishedBranch": "alaz/d3b-api-owner-i133p1",
+  "liveRemoteMainAndBranchExact": true,
+  "publishedCommitCi": {
+    "sha": "6001b5534f445fc5fe085af53abfbb89d6f6c6b3",
+    "context": "alaz/local-ci",
+    "state": "success",
+    "source": "GitHub.get_commit_combined_status live read in this conversation"
+  },
+  "acceptedBeforeMainReceiptSha256": "450b48e0e2da441331e1ad5335a0e4d612038d891af39e0114a7320d94e5b658",
+  "productConfigPatchesAndLocksIdenticalBetweenPublishedMainAndUnion": true,
+  "fullUnion": {
+    "total": 3422,
+    "passed": 3399,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "exitCode": 0
+  },
+  "originalImplementationFull": {
+    "total": 3414,
+    "passed": 3391,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0
+  },
+  "sourceCount": 593,
+  "patchCount": 10,
+  "unionPublished": false,
+  "unionRemoteCi": "NOT_RUN",
+  "nativeFeatureInstalled": false,
+  "oldRoot33DirtyFilesPreserved": true,
+  "state": "PRODUCT_MAIN_PUBLISHED_INDEPENDENT_QA_UNION_LOCAL_ACCEPTED",
+  "next": "Publish/test union when consolidating evidence; next product work is real finite API->TurnRunner->physical worker result, not manually settled row"
+}
