@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T11:22:29.969845+03:00",
+  "snapshot": "candidate-001.json",
+  "qaSha256": "cbb4e1cb5ff233d238074fe76c0420e19a9cf7a6ba1673d2e433c7b059017c93",
+  "scope": "24 same-owner native scenarios, Windows OS boundaries explicitly doubled, selected source frozen"
+}

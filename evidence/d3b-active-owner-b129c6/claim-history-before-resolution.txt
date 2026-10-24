@@ -1,0 +1,17 @@
+# AlazHarness - status
+
+## D3B-ACTIVE-OWNER-B129C6 - IN PROGRESS
+
+Own worktree scratch/worktrees/d3b-active-owner-b129c6, branch alaz/d3b-active-owner-b129c6; baseffa0d36. Scope: integrate already-qualified native1b7b31e1 local admission transitions into SAME NativeStoreStartup/PreparedRuntimeConsumer owner with explicit source generation and phase-appropriate connection identity observation. Default prepared1e97/clean-only startup/close unchanged. No new owner, scheduler, ledger or native patch. No HTTP/provider/agent activation; native leaf writes in fresh test profiles only. Native FIFO/session retirement and real active task correlation remain separate gates, never claimed from this owner seam.
+
+Claim existing consumer/startup and two live verifier modules, plus new explicit1b7 source manifest and QA. Check concurrent claims before edits. In ACTIVE/DRAINING observe handle/schema/epoch/profile identity without mistaking normal pending work for source drift; only clean gates may authorize detach/store close. Begin drain must not block on a held SQL mutex or discard transaction. Unknown native transitions retain owner and no retry. Prior blocked work not replayed. Native/source locks/main/userroot untouched. Current baseline563 files recorded; full/native prior acceptance terminal, not rerun just for resume.
+
+
+### One owner implementation, independent QA split
+
+Concurrent d3b-active-owner-b129d6 exists on same base and owns original ACTIVE owner integration. B129C6 now claims INDEPENDENT QA and source/race review only, NOT those production modules. Do not edit producer files/index. Own base remains563 sources unchanged. Verify actual NativeStoreStartup + current candidate source in a frozen test snapshot, normal pending records vs clean-close boundary, cancelled writer/mutex drain and late identity drift. No second owner implementation. Native1b7 stays immutable and installed vendor/main unchanged.
+
+
+### FINAL CLAIM: B129C6 implements, B129D6 validates independently
+
+Read peer status in00007: B129D6 explicitly yielded product implementation to this B129C6 original claim and owns independent native/owner QA. The earlier cross-observed independent note above is SUPERSEDED: THIS worktree B129C6 is sole PRODUCT owner of consumer/startup/two live gates plus explicit manifest. B129D6 QA remains untouched. No production edit occurred during claim resolution. New code/tests follow; do not create duplicate implementation.

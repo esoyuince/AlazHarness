@@ -1,0 +1,13 @@
+test_actual_qa_and_result_bytes_preserved (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_actual_qa_and_result_bytes_preserved) ... ok
+test_explicit_windows_boundary_and_fault_scope (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_explicit_windows_boundary_and_fault_scope) ... ok
+test_immutable_native_and_harness_source_custody (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_immutable_native_and_harness_source_custody) ... ok
+test_original_default_and_clean_gates_remain_intentional (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_original_default_and_clean_gates_remain_intentional) ... ok
+test_original_native_owner_close_order_was_actually_exercised (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_original_native_owner_close_order_was_actually_exercised) ... ok
+test_twenty_four_terminal_outcomes_and_cleanup (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_twenty_four_terminal_outcomes_and_cleanup) ... ok
+test_two_real_writer_races_keep_same_owner (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_two_real_writer_races_keep_same_owner) ... ok
+test_watched_observations_readonly_and_unknowns_preserved (test_active_owner_receipt_q129c6.ActiveOwnerIndependentReceipt.test_watched_observations_readonly_and_unknowns_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.230s
+
+OK

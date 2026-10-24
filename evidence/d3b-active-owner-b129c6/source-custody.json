@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-24T11:25:51.598258+03:00",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "nativeEnvelopeCount": 517,
+  "actualNativeImportCount": 514,
+  "baselineNativeImportCount": 258,
+  "actualHarnessImportCount": 12,
+  "allActualNativeImportsMatchFixedGit": true,
+  "allActualHarnessImportsMatchSnapshotOrOriginalBase": true,
+  "selectedProductHashes": {
+    "packages/claw-hermes/gateway_prepared_consumer.py": "4927e93a443bd52cfa0c7fca2e6e3a6b2aace5eaa417fc4270fea9b34de463b4",
+    "packages/claw-hermes/gateway_store_startup.py": "d2d3a905f7903bfcf54b0c5caf688bc91c54b3fe6e11de7089c518957a94068f",
+    "packages/claw-hermes/gateway_live_store_gate.py": "c4d2a50afc91bd7fca6f2706c9b411d76dc2d79cb8e45f0d6f6988e813bafc51",
+    "packages/claw-hermes/gateway_response_live.py": "80a9d45b1488858e05f8cbf3b5fd7e25c11f941f43ac7dbf866b33e73d0516a7",
+    "packages/claw-hermes/gateway_consumer_admission.py": "9b4bc3c128935e0aaccf2173b289a44ef3eab0cb967193dd9e975646c553633e",
+    "config/admission-consumer-b129d6-sources.json": "d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35"
+  },
+  "qaSha256": "cbb4e1cb5ff233d238074fe76c0420e19a9cf7a6ba1673d2e433c7b059017c93",
+  "baselineQaSha256": "946754e6f2061525e1a9e342fc4282ce4249df1f54e5d6dd3fe33d4b0a046f13",
+  "resultHashes": {
+    "native-001/result.json": "adfaaaba474896dc3d236f70f0c01a79a8835ad46ffa61d58aa9f47a92ab4878",
+    "baseline-native-001/result.json": "b8750a42b01f166a9813d2311cb78c74f7148571b515d6f6aebce91ecbb6aa09"
+  },
+  "snapshotProductOwner": "B129D6",
+  "productEditedByThisIndependentTask": false,
+  "own563OriginalFilesUnchanged": true,
+  "linuxBoundaryDoublesExplicit": true,
+  "fullAgentHttpAndLinuxIsolationAccepted": false
+}
