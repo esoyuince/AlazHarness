@@ -1,0 +1,14 @@
+{
+  "result": "PASS",
+  "total": 22,
+  "passed": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "scope": "7pure/doubled owner-policy contracts+15offline native source/outcome receipts on exact delivered code, full-suite subset not native execution",
+  "testFiles": [
+    "test_active_owner_contract_b129d6.py",
+    "test_active_owner_receipt_b129d6.py",
+    "test_active_owner_receipt_q129c6.py"
+  ]
+}

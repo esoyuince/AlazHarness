@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-24T11:50:13.571722+03:00",
+  "result": "PASS_CHANGED_DOCS_ONLY",
+  "wholeStaticOnTestedSource": "static-final.txt PASS3365",
+  "changedDocCount": 6,
+  "sha256": {
+    "status.md": "3ffe1aca825b6cba05d9af1317b7155a1a978d334b743e5e01770ac3f01c938d",
+    "docs/D3B-ACTIVE-OWNER-JOINT-J129D6.md": "0de69cf9e03e4b3bc1b62bedeecdee1338abc83d46cabc97a2b004f12fd2c682",
+    "docs/status-history/j129d6-final-work-log.md": "f3ff25315907068fb796891c2b1c176d80a58839750986095e0c9a4c09df645a",
+    "evidence/d3b-active-owner-joint-j129d6/delivery.json": "da8e01947038f2f618996fe5e8d132b58db563836b7b96689408aa7f310d3305",
+    "evidence/d3b-active-owner-joint-j129d6/selected-delivery.txt": "b8f1941c5525300773e8b5ae0a0569bf2637cc53d0fbdc18b3544a6dafdf0f57",
+    "evidence/d3b-active-owner-joint-j129d6/selected-delivery-result.json": "4eecabb929462163b812fc7a360acf6b8a6789af199fd9a05646a543dd71e869"
+  },
+  "credentialScan": "existing bounded patterns only, not comprehensive audit",
+  "jsonParsed": true,
+  "all572ExecutableSourceHashesAnd8PatchHashesExact": true,
+  "wholeStaticRerunOnDocsOnlyCommit": false,
+  "nativeOrFullRegressionRerunByDelivery": false
+}

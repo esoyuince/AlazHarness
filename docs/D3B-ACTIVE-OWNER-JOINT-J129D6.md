@@ -104,3 +104,7 @@ stable, same23skip IDs/reasons. Prior563:551unchanged,12changed(4runtime,7histor
 source receipt/helpers,1unitfixture),9new files.67original evidence Git blobs
 preserved. This full does not replay native/kernel experiments. Local static
 runs on this final source, not remoteCI or an upstream native full-suite claim.
+
+## Canonical delivery
+
+Tested union `001ca5e2e5b4fcf5929a44b964ad4eb7a1c1d300` fast-forwarded from `ffa0d366b505848718f4e10f044af19350a4d947` into the development continuation. All572source/config/test hashes and8unchanged native patches match final full3365. Delivered22checksPASS(7pure/doubled+15offline) are included standard subsets, no new native run. Native1b7/source locks are not installed or changed; default1e97 unchanged. Final handoff adds documentation/evidence only and validates those changed documents with bounded credential-pattern/JSON/Git checks. Whole local static was PASS on the tested merge; no remoteCI/fullnative claim.
