@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "total": 15,
+  "passed": 15,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "testFiles": [
+    "test_api_publication_receipt_q131p1.py",
+    "test_canonical_publication_receipt_c131d6.py"
+  ],
+  "scope": "8 original+7 independent offline receipts on delivered exact sources; standard subset, not new native runs"
+}

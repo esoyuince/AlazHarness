@@ -120,3 +120,7 @@ authorizes native service activation.
 ## Terminal combined standard regression
 
 One new full standard3395=3372PASS/23SKIP/0ERROR/0FAIL, requestc131d601...000027 exit0.584source/config/test files and10patch hashes unchanged. All579prior harness files untouched; five additions include original and independent QA/config/tests. The15new offline receipts are full-suite subsets. Same23skipIDs/reasons verified against priorJ130, not a Linux rerun.116original evidence Git blobs retained. This result does not execute native full upstream suite or enable any installed runtime.
+
+## Canonical staged-artifact delivery
+
+Tested `717cea096358a0fbe227b1409fde24b27638f268` fast-forwarded from `3bbabdc6bfb44c3498113f375c54065ea0d61ad9` into canonical development, preserving both original histories. All584 source/config/test hashes and10patches match full3395; current15offline receipts PASS. Native5ff88189 remains uninstalled; current harness envelope/consumer predicates and installedvendor/main unchanged. Final handoff modifies docs/static evidence only, no new native/full replay, remoteCI, push or service activation.

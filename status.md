@@ -1,19 +1,96 @@
 # AlazHarness - status
 
-## D3B-CANONICAL-API-JOINT-J131D6 - SCOPED PASS / CANONICAL DELIVERY PENDING
+## D3B-CANONICAL-API-JOINT-J131D6 - DEVELOPMENT-INTEGRATED STAGED NATIVE FEATURE / HARNESS EXECUTION OPEN
 
-Joint branch alaz/d3b-canonical-api-joint-j131d6; original product15cafa2 and independent43f7727 histories preserved, only status conflict. Optional native5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979 on13186 in6files, tenthpatch STAGED_NOT_INSTALLED. Current579harness files/source envelopes/runtime unchanged. No installed vendor/main promotion.
+Canonical branch alaz/d3b-principal-launch-21oct.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-principal-launch-21oct.
+Tested717cea096358a0fbe227b1409fde24b27638f268 fast-forwarded from3bbabdc.
+Original product15cafa2 and independentQA43f7727 histories intact. Exact refs in
+joint delivery.json; read current GitHEAD for final docs-only checkpoint.
+Native5ff88189832c3ff71bf8fd2f6b2ff05bb8bb4979 atop13186a5f changes6files;
+10thpatch STAGED_NOT_INSTALLED. Installedvendor/source lockseb75627, maincc7ceba,
+no push/remoteCI/global Git configuration change.
 
-Explicit bundle.publish_api_adapter delegates EXISTING native _publish_primary_adapter caller_bundle branch: one original API_SERVER registry entry, no duplicate resolver/scheduler. Qualified idle PREPARED only, no recovery/voice/listener, admission closed until separate activation. ACTIVE late publish refused. Native own-entry checks bind actual map identities/enum/config/profile/loop, foreign and unowned work still refused. Ordinary publication/default status writer preserved. Pure SQL admission checks do not acquire SQL locks; lifecycle-loop validation precedes effects.
+### Same native registry, real API admission, not agent execution
 
-Real programmatic admit_api_turn_async now resolves correct adapter/authority, persists one queued request, same retry reuses ID, conflicting payload/target refuses. No HTTP auth/listener or finite payload/TurnRunner/AIAgent execution. Native leaf claim/settlement in one fixture is explicit manual test, not model result. Publication retained through drain and awaited cleanup; exact withdrawal only after current checks, API then runner detach, caller stores/profile retained. Trace insertion/removal faults and cancellation retain UNKNOWN/ADMISSION_UNKNOWN/CLOSE_UNKNOWN and no blind retry.
+Explicit BorrowedAPIStores.publish_api_adapter -> EXISTING runner publication
+with caller_bundle. One identity-owned Platform.API_SERVER entry in original
+primary map, no second resolver/scheduler or registry. PREPARED idle publication
+leaves admission closed; separate activation required, lateACTIVE publication
+refused. No recover_api_turns, voice hook, listener or model dispatch. Default
+unpublished/ordinary publication semantics retained. Native quiescence accepts
+only exact owned slot, never arbitrary work/foreign map. Exact enum/map/config/
+primaryprofile/loop identities checked; pure checks fit off-loop native SQL gate.
 
-First48 suite42PASS6ERROR exposed native unowned statusfile writer plus one early valid store refusal assertion. Four explicit native failures(profile/status/loop) corrected; same test bodies pass. Caller-owned _persist_active_agents/_update_runtime_status skip default file persistence only, not task bookkeeping. Real ordinary writer test preserved. Its first fixture missed separate SessionStore cache closure, caused1ref/leaked temp-root and downstream teardown failures; failed log/driver kept, not product relaxation. Correct store-before-runner fixture cleanup yields final53cleanprofiles. Before-fix and failed outcomes preserved.
+Real native admit_api_turn_async persists one queued request in same authority/
+three stores; exact retry sameID, changed payload/target refuses. These are true
+API-function calls, NOT HTTP authentication/ingress, finite turn, TurnRunner or
+model execution. One test uses explicit native leaf claim/settlement to prove
+retirement/detach preserves persistent history; do not call that payload execution.
+Queued/unknown work remains preserved and blocks finish.
 
-Final original53/53PASS=28prior+25new; independent21/21PASS same6files, overlapping not74unique. Actual native classes/SQL/tasks/threads, explicit trace/memory cleanup faults, no native method replacements. All original522/independent513 actual native imports match immutable feature. Pure watched transitions0newDB/rawDBopen/rowwrite; real API writes outside that boundary expected. Native full upstream suite NOT run. Source/patch fresh-apply exact6files, duplicate refused, ordinary defaults tested.
+Publication stays through drain and awaited API cleanup. Only successful current
+checks permit exact owned-entry withdrawal, then runner detach; caller retains
+allstores/profile. Trace failure after insertion/removal retains UNKNOWN and
+ADMISSION_UNKNOWN/CLOSE_UNKNOWN, cancellation keeps ownership/registration.
+Cached source refs are not promised erased; sealed admission remains required.
 
-NEW fullWindows3395=3372PASS/23SKIP/0ERROR/0FAIL, request00027 exit0.584source/config/test hashes+10patches unchanged; all579old files unchanged,5newfiles.15newoffline receipts included as standard subset, not native tests. Same23skip IDs/reasons preserved, not rerun asLinux.116parent evidence Git blobs intact. Current native/full jobs terminal; local static/scoped merge and canonical ff next.
+### Real defects/failures retained
 
-Read-only reviewer completed/archived, no agent pending. Its recommendation of existing resolver/no recovery included; selected PREPARED publication with native own-entry predicate differs from its suggested postACTIVE seam. Harness unchanged old source/empty-registry gates NOT claimed compatible. NEXT explicitly integrate new source+publication with SAME NativeStoreStartup consumer, prove actual accepted API->finiteTurn/nativeWorker and cache/session retirement, then exact-source Linux isolation/HTTP. Existing held/blocked Q130QA-copy/root/refinement/C120P9 untouched; no root/WSL/provider/model/main/push/CI/production actions. Installednativeeb75627/maincc7ceba.
+First48native42PASS6ERROR: five actual gateway_state.json unowned default-writer
+races and one assertion expecting later error instead of valid earlier refusal.
+Four explicit producer/twoindependent profile/status/loop failures reproduced.
+Fixed caller-owned _persist_active_agents/_update_runtime_status suppress only
+unqualified FILE persistence, native task bookkeeping unchanged; actual normal
+runner still writes its status file. Loop check precedes activation/cleanup effects.
 
-Report docs/D3B-CANONICAL-API-JOINT-J131D6.md, product/QA reports. Config/hermes-canonical-api-c131d6.json, patches/hermes/c131d6/0010*. Joint evidence: inputs,summary,joint-source-custody,full-windows-result/rawlog,full-source/patch manifests,skip-custody,static-final; original raw evidence preserved. Parent/work statuses docs/status-history/j131d6-*.md. Canonical remains3bbabdc pending guarded delivery.
+New normal-mode control first omitted its separately owned SessionStore cache,
+leaking1registryref inside that failed test process with outer temp-root failure.
+Native documented two-owner cleanup fixed fixture only; failure/driver retained,
+not retroactively clean. Final fresh53profiles/leases/registry refs clean. Previous
+SQLite warning retained, no dependency/interpreter upgrade or native-method mocks.
+
+### Exact accepted sources and tests
+
+Final product53/53PASS=28prior+25new; independent21/21PASS same6native hashes,
+overlap not74unique. Actual native classes, SQL/tasks/thread, explicit trace and
+memory-cleanup fault objects. Product522/independent513 imports (union522) match
+immutable native Git; staged patch fresh-applies exactbytes, duplicate refuses.
+Pure watched transitions0newSQLite/rawDBopen/rowwrite; real API writes expected
+outside that boundary. No full native upstream pytest or new Linux kernel tests.
+
+NEW fullWindows3395=3372PASS/23SKIP/0ERROR/0FAIL, actual command00027 exit0.
+584source/config/test hashes+10patches stable through delivery. All579old files
+unchanged,5newsource/config/test files. Same23skipIDs/reasons, not rerun asLinux.
+15newoffline receipts (8+7) are standard subsets, rerun15/15PASS on deliveredsource,
+no new native/full replay.116original evidence Git blobs intact. Local staticPASS
+on tested union; final canonical static recorded separately. Current jobs terminal.
+
+### Next exact boundary
+
+New native feature remains staged: old harness prepared/admission/retirement source
+envelopes and empty-registry gates unchanged and NOT claimed compatible. NEXT
+qualify new source and publication with SAME NativeStoreStartup/consumer, without
+a second owner or private registry assignment. Then actual accepted API->finite
+turn->native physical worker with bounded compute and proper session/cache retirement;
+no direct test settlement substituted for real task result. Then rerun that exact
+active path under Linux isolation and HTTP. Model/budget accounting, cross-store
+recovery/powerloss/fullD3B remain OPEN.
+
+Read-only reviewer completed+archived, no delegated work pending. Prior blocked
+Q130QA-copy history sync/root cleanup/refinement/C120P9 untouched, not replayed.
+No root/WSL/provider/model/listener/production/account/main/push actions. Root user
+changes and installed vendor preserved. This delivery is code/artifact integration,
+not native service enablement.
+
+### Records
+
+Docs/D3B-CANONICAL-API-JOINT-J131D6.md, D3B-CANONICAL-API-C131D6.md,
+D3B-API-PUBLICATION-QA-Q131P1.md. Config/hermes-canonical-api-c131d6.json.
+Patch patches/hermes/c131d6/0010-caller-owned-canonical-api-publication.patch.
+Evidence/d3b-canonical-api-joint-j131d6/: inputs,summary,joint-source-custody,
+full-windows-result/rawlog,full-source/patch hashes,skip-custody,delivery,
+selected-delivery-result,static-final,static-primary-final. Original native logs/
+regressions/failed fixture snapshots preserved in product and peer evidence trees.
+Parent/work handoffs docs/status-history/j131d6-*.md. No full/native replay needed
+merely to resume; current GitHEAD is the final documentation checkpoint.
