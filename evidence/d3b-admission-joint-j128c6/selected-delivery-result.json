@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "total": 16,
+  "passed": 16,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "testFiles": [
+    "test_admission_lifecycle_receipt_a128c6.py",
+    "test_admission_lifecycle_receipt_q128c6.py"
+  ],
+  "scope": "original8+independent8 offline source/outcome receipts on delivered source, standard subset not native replay"
+}

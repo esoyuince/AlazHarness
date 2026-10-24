@@ -104,3 +104,7 @@ and final delivery.json for exact canonical commit and remaining scope.
 ## Terminal complete standard run
 
 New full standard3343=3320PASS/23SKIP/0ERROR/0FAIL. Original command requesta128c601...000031 completed with exit0; old skip structures were normalized by explicit ID/reason before execution.563 source/config/test hashes and8patches unchanged, all557prior files unchanged.16offline receipts are included subsets. This complete run did not repeat native/WSL experiments or activate the native patch. Local static is separate from remoteCI.
+
+## Canonical staged-artifact delivery
+
+Tested union `53ddfd108759b32c71a7b9f1857bb044710b9a1c` fast-forwarded from `39a1be3a8786f52bc792d20ca20ee53e92c993a6` into canonical development. All563 source/config/test hashes and8patches still match full3343; current16offline receipts PASS. Native feature1b7b31e1 remains optional/uninstalled; old prepared source envelope and current harness runtime unchanged. Final handoff changes only documentation/evidence. No native/full replay, main merge, push or activation.
