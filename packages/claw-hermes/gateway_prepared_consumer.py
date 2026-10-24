@@ -16,6 +16,8 @@ import sys
 
 FEATURE='1e97dd617b81120255304e472ce322befcdb9ccd'
 MANIFEST_SHA256='6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215'
+ADMISSION_FEATURE='1b7b31e14451baf1d56c3edbfa2cea69a8f7940c'
+ADMISSION_MANIFEST_SHA256='d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35'
 ROOT=Path(__file__).resolve().parents[2]
 
 class PreparedConsumerRejected(RuntimeError):pass
@@ -23,11 +25,16 @@ class PreparedConsumerRejected(RuntimeError):pass
 def require(ok,code):
     if not ok:raise PreparedConsumerRejected(code)
 
-def qualify_sources():
+def qualify_sources(*,local_admission=False):
     """Read fixed source files, never data files, before native consumer imports."""
-    raw=(ROOT/'config/prepared-consumer-s124b1-sources.json').read_bytes()
-    require(hashlib.sha256(raw).hexdigest()==MANIFEST_SHA256,'consumer_manifest_changed')
-    manifest=json.loads(raw);require(manifest['nativeFeature']==FEATURE,'consumer_feature')
+    require(type(local_admission) is bool,'consumer_admission_option')
+    path=('config/admission-consumer-b129d6-sources.json' if local_admission
+          else 'config/prepared-consumer-s124b1-sources.json')
+    expected=ADMISSION_MANIFEST_SHA256 if local_admission else MANIFEST_SHA256
+    feature=ADMISSION_FEATURE if local_admission else FEATURE
+    raw=(ROOT/path).read_bytes()
+    require(hashlib.sha256(raw).hexdigest()==expected,'consumer_manifest_changed')
+    manifest=json.loads(raw);require(manifest['nativeFeature']==feature,'consumer_feature')
     import hermes_state
     native=Path(hermes_state.__file__).resolve().parent
     require(native==Path(hermes_state.__file__).parent,'consumer_source_path')
@@ -60,8 +67,12 @@ def native_types():
     return GatewayConfig,PlatformConfig,CallerOwnedRunnerState,GatewayRunner,initialize_gateway_runtime,BorrowedAPIStores,APIServerAdapter
 
 class PreparedRuntimeConsumer:
-    def __init__(self,owner):
+    def __init__(self,owner,*,local_admission=False):
         import gateway_store_startup as startup
+        require(type(local_admission) is bool,'consumer_admission_option')
+        self._local_admission=local_admission
+        self._selected_feature=ADMISSION_FEATURE if local_admission else FEATURE
+        self._admission_phase='PREPARED'
         require(type(owner) is startup.NativeStoreStartup,'consumer_exact_owner_required')
         owner._owned();require(owner._stage=='VERIFIED' and owner._response_expected is not None,'consumer_verified_owner')
         self._owner=owner;self._held=owner._held;self._mount=owner._mount;self._expected=owner.expectation
@@ -72,7 +83,11 @@ class PreparedRuntimeConsumer:
         self._binding=self._runner=self._bundle=self._adapter=None
         self._source_proof=None
 
-    def _identity(self,*,loop=False):
+    def _identity(self,*,loop=False,quiescent=True):
+        require(type(quiescent) is bool,'consumer_identity_policy')
+        require(self._selected_feature in (FEATURE,ADMISSION_FEATURE)
+                and self._local_admission is (self._selected_feature==ADMISSION_FEATURE),
+                'consumer_generation_changed')
         o=self._owner;o._owned()
         require(o._stage=='VERIFIED' and o._prepared_consumer is self
                 and o._held is self._held and o._mount is self._mount
@@ -84,16 +99,20 @@ class PreparedRuntimeConsumer:
                 and all(s._conn is c for s,c in zip(self._stores,self._connections)),
                 'consumer_connections_changed')
         if loop:require(asyncio.get_running_loop() is self._loop,'consumer_other_loop')
-        require(not any(c.in_transaction for c in self._connections),'consumer_transaction_active')
-        o._drained()
+        if quiescent:
+            require(not any(c.in_transaction for c in self._connections),'consumer_transaction_active')
+            o._drained()
 
-    def _storage(self):
+    def _storage(self,*,require_idle=True):
         import gateway_store_startup as startup
         self._identity()
-        a=startup.live.verify_live_stores(self._held,self._mount,*self._stores[:2],self._expected)
+        options={} if require_idle else {'require_idle':False}
+        a=startup.live.verify_live_stores(self._held,self._mount,*self._stores[:2],self._expected,**options)
         b=startup.response_live.verify_response_connection(self._held,self._mount,
-            self._stores[0],self._stores[2],self._owner._response_live_expectation())
-        require(a['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED' and b['state']=='NATIVE_RESPONSE_CONNECTION_VERIFIED',
+            self._stores[0],self._stores[2],self._owner._response_live_expectation(),**options)
+        state='NATIVE_STORE_CONNECTIONS_VERIFIED' if require_idle else 'NATIVE_STORE_IDENTITY_OBSERVED'
+        response='NATIVE_RESPONSE_CONNECTION_VERIFIED' if require_idle else 'NATIVE_RESPONSE_IDENTITY_OBSERVED'
+        require(a['state']==state and b['state']==response,
                 'consumer_storage_observation')
         self._identity()
 
@@ -102,7 +121,7 @@ class PreparedRuntimeConsumer:
         self._stage='QUALIFYING'
         try:
             self._identity(loop=True);self._storage()
-            self._source_proof=qualify_sources()
+            self._source_proof=(qualify_sources(local_admission=True) if self._local_admission else qualify_sources())
             Config,Platform,Binding,Runner,initialize,Bundle,Adapter=native_types()
             verify_imports(self._source_proof)
             require(type(gateway_config) is Config and type(api_config) is Platform,'consumer_explicit_configs')
@@ -169,8 +188,23 @@ class PreparedRuntimeConsumer:
             require(value is None or type(value) is kind and not value,
                     'consumer_authority_work_present')
 
+    def activate_admission(self):
+        from gateway_consumer_admission import activate
+        return activate(self)
+
+    def begin_drain(self):
+        from gateway_consumer_admission import begin_drain
+        return begin_drain(self)
+
+    def finish_drain(self):
+        from gateway_consumer_admission import finish_drain
+        return finish_drain(self)
+
     def check(self):
         require(self._stage=='ATTACHED','consumer_not_attached')
+        if self._local_admission:
+            from gateway_consumer_admission import check
+            return check(self)
         self._identity()
         self._work_absent()
         self._storage()
@@ -187,6 +221,8 @@ class PreparedRuntimeConsumer:
         if self._stage=='DETACHED':
             self.assert_store_closeable(self._owner);return self.status()
         require(self._stage=='ATTACHED','consumer_cleanup_unknown_or_active')
+        if self._local_admission:
+            require(self._admission_phase in ('PREPARED','DRAINED'),'consumer_admission_must_drain')
         # Known pre-effect refusals leave ATTACHED and may be reobserved later.
         self.check()
         self._stage='DETACHING_API'
@@ -200,6 +236,7 @@ class PreparedRuntimeConsumer:
             self._identity(loop=True);self._storage()
             require(self._binding.status()['state']=='DETACHED','consumer_runner_not_detached')
             self._stage='DETACHED'
+            if self._local_admission:self._admission_phase='DETACHED'
             self.assert_store_closeable(self._owner)
             return self.status()
         except BaseException:
@@ -209,6 +246,9 @@ class PreparedRuntimeConsumer:
     def assert_store_closeable(self,owner):
         require(owner is self._owner,'consumer_other_owner')
         require(self._stage=='DETACHED','consumer_still_attached_or_unknown')
+        if self._local_admission:
+            require(self._admission_phase=='DETACHED','consumer_admission_not_detached')
+            verify_imports(self._source_proof)
         import gateway_store_startup as startup
         try:
             self._storage()  # New work/epoch drift after detach cannot authorize store close.
@@ -247,7 +287,10 @@ class PreparedRuntimeConsumer:
 
     def status(self):
         self._owner._owned()
-        return {'state':self._stage,'nativeFeature':FEATURE,'storesOwnedHere':False,
+        return {'state':self._stage,'nativeFeature':self._selected_feature,'storesOwnedHere':False,
+            'localAdmissionSelected':self._local_admission,'nativeAdmissionState':self._admission_phase,
+            'localAdmissionOpen':self._stage=='ATTACHED' and self._admission_phase=='ACTIVE',
+            'workHealthEvaluated':False,
             'sameAcceptedEpoch':self._expected.epoch,'serviceStarted':False,
             'runtimeAdmissionAuthorized':False,'storeReleaseAuthorized':False,
             'profileReleasedHere':False,'activeTaskObserversQualified':False,

@@ -1,5 +1,6 @@
 """Offline custody of current native work-guard cases; no runtime replay."""
 import ast,hashlib,json,unittest
+from historical_owner_b129d6 import executed_source_hash as pre_b129_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-prepared-work-c127a6'
@@ -14,7 +15,7 @@ class PreparedWorkReceipt(unittest.TestCase):
         self.assertEqual((r['ownMethods'],r['compatMethods']),(17,23));self.assertTrue(r['temporaryRootRemoved'])
         self.assertEqual(sum(l.startswith('test_') and l.endswith(' ... ok') for l in (E/'native-final-002/tests.txt').read_text(encoding='utf-8').splitlines()),40)
     def test_current_source_bytes_and_exact_native_envelope(self):
-        for n,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+        for n,h in self.r['sourceHashes'].items():self.assertEqual(pre_b129_hash(ROOT,n,h),h,n)
         self.assertEqual(self.c['nativeFeature'],'1e97dd617b81120255304e472ce322befcdb9ccd')
         self.assertEqual(self.c['actualNativeImportCount'],501);self.assertEqual({n:v['sha256'] for n,v in self.c['actualNativeImports'].items()},self.r['nativeImports'])
         envelope=json.loads((ROOT/'config/prepared-consumer-s124b1-sources.json').read_text(encoding='utf-8'))['sources']

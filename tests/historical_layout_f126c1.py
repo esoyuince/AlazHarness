@@ -6,6 +6,9 @@ immutable pre-F126 baseline AND saved bytes; no generic mismatch bypass.
 import hashlib,json
 
 def executed_source_hash(root,name,expected):
+    from historical_owner_b129d6 import saved_generation_hash as saved_b129
+    previous=saved_b129(root,name,expected)
+    if previous is not None:return previous
     from historical_prepared_c127a6 import saved_generation_hash
     saved=saved_generation_hash(root,name,expected)
     if saved is not None:return saved

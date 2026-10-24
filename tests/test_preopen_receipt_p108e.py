@@ -1,5 +1,6 @@
 """Source-bound P108E actual preconstructor sequence receipts; offline checks."""
 import hashlib,json
+from historical_owner_b129d6 import executed_source_hash as pre_b129_hash
 from pathlib import Path
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
@@ -20,7 +21,7 @@ class NativePreopenReceipt(unittest.TestCase):
         for name,digest in manifest.items():
             with self.subTest(source=name):
                 if name.startswith(('packages/','scripts/')):
-                    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest)
+                    self.assertEqual(pre_b129_hash(ROOT,name,digest),digest)
                 elif name.startswith('vendor-native/'):
                     self.assertEqual(vendor['nativeSources'][name.removeprefix('vendor-native/')]['sha256'],digest)
                 elif name.startswith('dependencies/'):

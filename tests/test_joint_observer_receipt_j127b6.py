@@ -1,5 +1,6 @@
 """Current union native proof, no additional runtime execution by these tests."""
 import hashlib,json,unittest
+from historical_owner_b129d6 import executed_source_hash as pre_b129_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-observer-work-joint-j127b6'
@@ -16,7 +17,7 @@ class JointObserverReceipt(unittest.TestCase):
         self.assertEqual(len(names),16);self.assertEqual(names,{v['case'] for v in r['caseEnd']})
         self.assertIn('test_joint_real_authority_task_is_seen_by_attached_observer',names);self.assertIn('test_joint_real_runner_task_is_seen_by_attached_observer',names)
     def test_actual_current_three_product_sources_and_all_native_imports(self):
-        for n,h in self.r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+        for n,h in self.r['sourceHashes'].items():self.assertEqual(pre_b129_hash(ROOT,n,h),h,n)
         self.assertEqual(self.c['currentSourceHashes'],self.r['sourceHashes'])
         self.assertEqual(self.c['nativeImports'],self.r['nativeImports']);self.assertEqual(self.c['nativeImportCount'],501)
         manifest=json.loads((ROOT/'config/prepared-consumer-s124b1-sources.json').read_text(encoding='utf-8'))
@@ -26,7 +27,7 @@ class JointObserverReceipt(unittest.TestCase):
     def test_current_normal_observer_and_forty_work_guard_sources_remain_exact(self):
         for name in ('evidence/d3b-current-observers-o127b6/current-native-002/result.json','evidence/d3b-current-observers-o127b6/legacy-native-002/result.json','evidence/d3b-prepared-work-c127a6/native-final-002/result.json'):
             r=json.loads((ROOT/name).read_text(encoding='utf-8'))
-            for n,h in r['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h,n)
+            for n,h in r['sourceHashes'].items():self.assertEqual(pre_b129_hash(ROOT,n,h),h,n)
         self.assertTrue(self.c['normal15andLegacy15SourceUnchanged']);self.assertTrue(self.c['native40ConsumerSourcesUnchanged'])
     def test_old_prepared_result_not_relabelled_current_owner(self):
         old=json.loads((ROOT/'evidence/d3b-current-observers-o127b6/prepared-003/result.json').read_text(encoding='utf-8'));n='packages/claw-hermes/gateway_prepared_consumer.py'

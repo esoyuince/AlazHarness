@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-24T11:21:43.844395+03:00",
+  "candidate": "candidate-001.json",
+  "qaSha256": "acd934604ee5d3b7024f068d8c24cee1a2a4a61610657baf7c9bb07198b23a61",
+  "scope": "23 methods real NativeStoreStartup/consumer/native/sql with explicit Windows boundary doubles, no service/model"
+}

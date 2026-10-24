@@ -164,14 +164,16 @@ class NativeStoreStartup:
             # Bound diagnostics; original exception retains details only locally.
             raise StoreStartupRejected('startup_sequence_rejected') from exc
 
-    async def prepare_runtime(self, gateway_config, api_config):
+    async def prepare_runtime(self, gateway_config, api_config, *, local_admission=False):
         """Attach the fixed prepared consumer; no new store owner or service."""
         self._owned()
+        require(type(local_admission) is bool,'startup_admission_option')
         require(self._stage=='VERIFIED' and self._response_expected is not None,
                 'startup_verified_three_stores_required')
         require(self._prepared_consumer is None,'startup_consumer_already_reserved')
         from gateway_prepared_consumer import PreparedRuntimeConsumer
-        consumer=PreparedRuntimeConsumer(self)
+        consumer=(PreparedRuntimeConsumer(self,local_admission=True) if local_admission
+                  else PreparedRuntimeConsumer(self))
         # Reserve BEFORE imports/native constructors/awaits can have effects.
         self._prepared_consumer=consumer
         await consumer.prepare(gateway_config,api_config)

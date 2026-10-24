@@ -1,0 +1,29 @@
+{
+  "total": 426,
+  "passed": 408,
+  "errors": 0,
+  "failures": 18,
+  "skipped": 0,
+  "errorIds": [],
+  "failureIds": [
+    "test_canonical_receipt_c119v1.CanonicalReceipt.test_test_boundary_and_original_controls_remain_explicit",
+    "test_confined_consumer_receipt_f126c1.ConfinedPreparedReceipt.test_current_native_package_and_qa_bytes",
+    "test_confined_http_receipt_f111e274.ConfinedReadinessEvidence.test_historical_executed_source_snapshot_matches_receipt",
+    "test_current_observer_receipt_o127b6.CurrentObserverReceipt.test_every_current_source_and_native_git_blob_bound",
+    "test_http_readiness_receipt_h110e.NativeHttpReadinessReceipt.test_historical_sources_and_immutable_native_dependencies (source='packages/claw-hermes/gateway_live_store_gate.py')",
+    "test_joint_observer_receipt_j127b6.JointObserverReceipt.test_actual_current_three_product_sources_and_all_native_imports",
+    "test_joint_observer_receipt_j127b6.JointObserverReceipt.test_current_normal_observer_and_forty_work_guard_sources_remain_exact",
+    "test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_source_bytes_native_imports_and_prior_harness_preserved",
+    "test_linux_runtime_receipt_l125p1.ActualLinuxReceipt.test_transport_source_and_package_integrity_binds_both_runs",
+    "test_live_store_gate_receipt_l106e.NativeLiveGateReceipt.test_native_execution_matches_current_product_and_immutable_upstream (source='packages/claw-hermes/gateway_live_store_gate.py')",
+    "test_p107a_constructor_receipt.ConstructorReceipt.test_terminal_execution_and_exact_source_custody (source='packages/claw-hermes/gateway_live_store_gate.py')",
+    "test_preopen_receipt_p108e.NativePreopenReceipt.test_current_sources_and_immutable_vendor (source='packages/claw-hermes/gateway_live_store_gate.py')",
+    "test_prepared_work_receipt_c127a6.PreparedWorkReceipt.test_current_source_bytes_and_exact_native_envelope",
+    "test_store_startup_receipt_a109.StartupReceipt.test_historical_source_identity_and_real_native_imports",
+    "test_three_projection_receipt_t114r6a.ThreeStoreProjectionReceipt.test_executed_source_with_historical_startup_and_native_hashes",
+    "test_three_store_http_receipt_h114r6.ThreeHttpProof.test_success_executed_sources_with_historical_startup_and_exact_transport",
+    "test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_executed_sources_with_historical_http_projection_and_startup_snapshots (source='packages/claw-hermes/gateway_live_store_gate.py')",
+    "test_three_store_receipt_l113f6.NativeThreeStoreReceipt.test_executed_sources_with_historical_http_projection_and_startup_snapshots (source='packages/claw-hermes/gateway_response_live.py')"
+  ],
+  "scope": "old exact-source receipt guards on changed candidate, not runtime/native rerun"
+}

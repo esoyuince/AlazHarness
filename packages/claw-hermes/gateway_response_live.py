@@ -84,7 +84,7 @@ def _observe(home,expected_mount,expected,actor):
     return proof,identity
 
 
-def verify_response_connection(held,expected_mount,state,response,expected,*,constructor=False):
+def verify_response_connection(held,expected_mount,state,response,expected,*,constructor=False,require_idle=True):
     """No raw DB/sidecar open; only native handle queries and metadata.
 
     constructor=True verifies zero response-row modifications by the JUST
@@ -95,6 +95,8 @@ def verify_response_connection(held,expected_mount,state,response,expected,*,con
     try:
         require(type(expected) is ResponseConnectionExpectation,'response_live_trusted_expectation')
         require(type(constructor) is bool,'response_live_constructor_flag')
+        require(type(require_idle) is bool and (not constructor or require_idle),
+                'response_live_idle_policy')
         require(type(held) is live.profiles.ProfileLease,'response_live_native_lease')
         require(type(expected_mount) is live.mounts.ExpectedMount,'response_live_expected_mount')
         held.check();actor=live.profiles._actor();home=held._home
@@ -122,8 +124,9 @@ def verify_response_connection(held,expected_mount,state,response,expected,*,con
             require(live._one(conn,'PRAGMA main.application_id')==0
                     and live._one(conn,'PRAGMA main.user_version')==0,'response_live_unexpected_header_version')
             # Startup is quiescent; unresolved response identities are NOT replay authority.
-            require(conn.execute('SELECT 1 FROM main.response_keys WHERE settled_at IS NULL LIMIT 1').fetchone() is None,
-                    'response_live_unsettled_identity')
+            if require_idle:
+                require(conn.execute('SELECT 1 FROM main.response_keys WHERE settled_at IS NULL LIMIT 1').fetchone() is None,
+                        'response_live_unsettled_identity')
             bodies=live._one(conn,'SELECT COUNT(*) FROM main.responses')
             identities=live._one(conn,'SELECT COUNT(*) FROM main.response_keys')
             require(type(bodies) is int and bodies<=expected.max_size
@@ -135,7 +138,8 @@ def verify_response_connection(held,expected_mount,state,response,expected,*,con
         require(response._conn is conn and response._canonical_state is binding,'response_live_handle_changed')
         require(_observe(home,expected_mount,expected,actor)==before,'response_live_mount_changed')
         held.check();require(live.profiles._actor()==actor,'response_live_other_actor')
-        return {'state':'NATIVE_RESPONSE_CONNECTION_VERIFIED','featureCommit':expected.feature_commit,
+        return {'state':('NATIVE_RESPONSE_CONNECTION_VERIFIED' if require_idle else 'NATIVE_RESPONSE_IDENTITY_OBSERVED'),
+            'idleRequired':require_idle,'workHealthEvaluated':False,'featureCommit':expected.feature_commit,
             'constructorRowsUnchanged':True if constructor else None,
             'bodyCount':bodies,'identityCount':identities,'normalSqliteConnection':True,
             'sameCanonicalConnectionBorrowed':True,'newDatabaseConnectionsOpened':False,

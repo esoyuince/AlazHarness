@@ -127,16 +127,19 @@ def _connection(connection,path,schema,journal):
             'dataVersion':_one(connection,'PRAGMA main.data_version')}
 
 
-def verify_live_stores(held,expected_mount,state,replay,expected):
+def verify_live_stores(held,expected_mount,state,replay,expected,*,require_idle=True):
     """Validate live connections without taking ownership of their lifecycle.
 
     Caller remains responsible for all unregistered writers. Both native mutexes
     are acquired without waiting. Observed drift fails closed. Path/identity
     checks are cooperative snapshots, not a SQLite-VFS handle-to-inode proof.
     Every rejection leaves connections, transactions and native profile intact.
+    require_idle=False observes identity only; pending work is not health/readiness.
+    Startup/constructor/close callers retain the default clean-only policy.
     """
     acquired=[]
     try:
+        require(type(require_idle) is bool, 'live_store_idle_policy')
         require(type(held) is profiles.ProfileLease, 'live_store_profile_lease_required')
         require(type(expected) is PreparedStoreExpectation, 'live_store_trusted_expectation')
         require(type(expected_mount) is mounts.ExpectedMount, 'live_store_mount_expectation')
@@ -181,25 +184,26 @@ def verify_live_stores(held,expected_mount,state,replay,expected):
         epochs=[tuple(r) for r in state._conn.execute('SELECT epoch,instance_id FROM main.runtime_epoch WHERE singleton=1').fetchmany(2)]
         require(epochs==([] if expected.epoch==0 else [(expected.epoch,expected.instance_id)]),
                 'live_store_epoch_mismatch')
-        # Startup will not decide whether queued/unknown/cross-store work may run.
-        require(state._conn.execute("SELECT 1 FROM main.session_admissions WHERE status IS NULL OR status != 'terminal' LIMIT 1").fetchone() is None,
-                'live_store_unresolved_admissions')
-        require(state._conn.execute("SELECT 1 FROM main.worker_executions WHERE status IS NULL OR status != 'terminal' LIMIT 1").fetchone() is None,
-                'live_store_unresolved_workers')
-        # CASE short-circuits malformed/oversized JSON before tree traversal.
-        # Duplicate keys are ambiguous across SQLite and native json.loads;
-        # never choose one spelling of a supposedly terminal state.
-        require(replay._conn.execute("""SELECT 1 FROM main.run_idempotency WHERE CASE
-            WHEN typeof(status_json) != 'text' OR length(CAST(status_json AS BLOB)) > 2097152 THEN 1
-            WHEN NOT json_valid(status_json) THEN 1
-            WHEN json_type(status_json) != 'object' THEN 1
-            WHEN EXISTS (SELECT 1 FROM json_tree(status_json) WHERE key IS NOT NULL
-                         GROUP BY parent,key HAVING COUNT(*) > 1) THEN 1
-            WHEN json_type(status_json,'$.status') IS NOT 'text' THEN 1
-            WHEN json_extract(status_json,'$.status') NOT IN
-                 ('completed','failed','cancelled','interrupted') THEN 1
-            ELSE 0 END = 1 LIMIT 1""").fetchone() is None,
-                'live_store_unresolved_replay')
+        if require_idle:
+            # Startup will not decide whether queued/unknown/cross-store work may run.
+            require(state._conn.execute("SELECT 1 FROM main.session_admissions WHERE status IS NULL OR status != 'terminal' LIMIT 1").fetchone() is None,
+                    'live_store_unresolved_admissions')
+            require(state._conn.execute("SELECT 1 FROM main.worker_executions WHERE status IS NULL OR status != 'terminal' LIMIT 1").fetchone() is None,
+                    'live_store_unresolved_workers')
+            # CASE short-circuits malformed/oversized JSON before tree traversal.
+            # Duplicate keys are ambiguous across SQLite and native json.loads;
+            # never choose one spelling of a supposedly terminal state.
+            require(replay._conn.execute("""SELECT 1 FROM main.run_idempotency WHERE CASE
+                WHEN typeof(status_json) != 'text' OR length(CAST(status_json AS BLOB)) > 2097152 THEN 1
+                WHEN NOT json_valid(status_json) THEN 1
+                WHEN json_type(status_json) != 'object' THEN 1
+                WHEN EXISTS (SELECT 1 FROM json_tree(status_json) WHERE key IS NOT NULL
+                             GROUP BY parent,key HAVING COUNT(*) > 1) THEN 1
+                WHEN json_type(status_json,'$.status') IS NOT 'text' THEN 1
+                WHEN json_extract(status_json,'$.status') NOT IN
+                     ('completed','failed','cancelled','interrupted') THEN 1
+                ELSE 0 END = 1 LIMIT 1""").fetchone() is None,
+                    'live_store_unresolved_replay')
         for connection,seen in zip(handles,before):
             require(connection.total_changes==seen['changes'] and not connection.in_transaction
                     and _one(connection,'PRAGMA main.data_version')==seen['dataVersion'],
@@ -211,7 +215,8 @@ def verify_live_stores(held,expected_mount,state,replay,expected):
                 'live_store_mount_changed')
         held.check()
         require(profiles._actor()==actor, 'live_store_other_actor')
-        return {'version':1,'state':'NATIVE_STORE_CONNECTIONS_VERIFIED',
+        return {'version':1,'state':('NATIVE_STORE_CONNECTIONS_VERIFIED' if require_idle else 'NATIVE_STORE_IDENTITY_OBSERVED'),
+                'idleRequired':require_idle,'workHealthEvaluated':False,
                 'nativePin':NATIVE_PIN,'schemaVersion':SCHEMA_VERSION,
                 'epochObserved':expected.epoch,'volatileReplayRejected':True,
                 'connectionPathsMatchPreparedFiles':True,'nativeStateIdentityMatches':True,

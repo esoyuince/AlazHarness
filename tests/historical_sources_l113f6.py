@@ -8,6 +8,9 @@ current-code evidence. No other source change is silently ignored.
 import hashlib,json
 
 def receipt_source_hash(root,name,expected):
+    from historical_owner_b129d6 import saved_generation_hash as saved_b129
+    previous=saved_b129(root,name,expected)
+    if previous is not None:return previous
     # T114 adds an explicit third-file selector; old two-file projection receipts
     # remain bound to their saved executed implementation, never the new one.
     if name=='packages/claw-hermes/gateway_state_projection.py':

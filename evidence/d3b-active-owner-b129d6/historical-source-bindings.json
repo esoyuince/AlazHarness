@@ -1,0 +1,50 @@
+{
+  "base": "ffa0d366b505848718f4e10f044af19350a4d947",
+  "sources": {
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "path": "evidence/d3b-active-owner-b129d6/gateway_store_startup.py.before.txt",
+      "sha256": "deaa11c65777a5f70f768636d69de84b4b3d9065fae48bc391d5c36be47366b7"
+    },
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "path": "evidence/d3b-active-owner-b129d6/gateway_prepared_consumer.py.before.txt",
+      "sha256": "a677bf45b5d37551989725bda9ac236abc1118e6632df4c24ab87b41cb20c948"
+    },
+    "packages/claw-hermes/gateway_live_store_gate.py": {
+      "path": "evidence/d3b-active-owner-b129d6/gateway_live_store_gate.py.before.txt",
+      "sha256": "ada6acbc4d66dca4e3be9f5b035599cd90f3a04883f0c19f0dbffaa3f62e58f9"
+    },
+    "packages/claw-hermes/gateway_response_live.py": {
+      "path": "evidence/d3b-active-owner-b129d6/gateway_response_live.py.before.txt",
+      "sha256": "36ca1d3e13d515c5fe413d6d9c8a96c2d6cc66c9771c69a889705a5a71cd125e"
+    },
+    "tests/historical_sources_l113f6.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__historical_sources_l113f6.py.before.txt",
+      "sha256": "582cd1869df22c4f9ae282b184e9c0c35847a9c4b172b53d1289e48c749c14fa"
+    },
+    "tests/historical_layout_f126c1.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__historical_layout_f126c1.py.before.txt",
+      "sha256": "0e69c0ccd92d629a87e6fe243ae58a7642697ef2560d68e8ad0ad020a3f4706e"
+    },
+    "tests/test_live_store_gate_receipt_l106e.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__test_live_store_gate_receipt_l106e.py.before.txt",
+      "sha256": "ad8db179e5b820ede8ffa0adda3a0d6d55d3cc7d7b7f25b9dcf35a57814aa327"
+    },
+    "tests/test_p107a_constructor_receipt.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__test_p107a_constructor_receipt.py.before.txt",
+      "sha256": "f7938e04e9f63a43d5ecaf49d1de15ead4f1a24e9badcb5ecf32056a16d0425e"
+    },
+    "tests/test_preopen_receipt_p108e.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__test_preopen_receipt_p108e.py.before.txt",
+      "sha256": "02fdd6db1b604335b5765db4af366536a5213095e8696a1916971c4640c2663e"
+    },
+    "tests/test_prepared_work_receipt_c127a6.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__test_prepared_work_receipt_c127a6.py.before.txt",
+      "sha256": "dff3cecf5fed98c824d6850ddcbb49db6f4f4bb411cd8a558004c89c9a3eee54"
+    },
+    "tests/test_joint_observer_receipt_j127b6.py": {
+      "path": "evidence/d3b-active-owner-b129d6/tests__test_joint_observer_receipt_j127b6.py.before.txt",
+      "sha256": "effd5fca9c46541570051b2665aa5f6ea54e34fff6a2602551f6b6f0ad487f4c"
+    }
+  },
+  "purpose": "bind only exact named older source/test bytes; never claim earlier runtime accepted current code"
+}

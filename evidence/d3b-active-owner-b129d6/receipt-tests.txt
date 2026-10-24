@@ -1,0 +1,12 @@
+test_both_current_and_prepared_default_execute_on_current_harness (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_both_current_and_prepared_default_execute_on_current_harness) ... ok
+test_cleanup_and_unknown_stages_remain_explicit (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_cleanup_and_unknown_stages_remain_explicit) ... ok
+test_native_imports_exact_for_two_distinct_generations (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_native_imports_exact_for_two_distinct_generations) ... ok
+test_native_owner_acceptance_not_whole_agent_or_linux (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_native_owner_acceptance_not_whole_agent_or_linux) ... ok
+test_old_receipt_source_changes_do_not_relabel_kernel_acceptance (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_old_receipt_source_changes_do_not_relabel_kernel_acceptance) ... ok
+test_owner_drain_does_not_wait_for_writer_or_drop_cancelled_commit (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_owner_drain_does_not_wait_for_writer_or_drop_cancelled_commit) ... ok
+test_transition_observations_never_open_or_mutate_databases (test_active_owner_receipt_b129d6.ActiveOwnerReceipt.test_transition_observations_never_open_or_mutate_databases) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.080s
+
+OK

@@ -1,0 +1,52 @@
+{
+  "job": "D3B-ACTIVE-OWNER-B129D6",
+  "result": "PASS_SCOPED_NATIVE_OWNER_LOCAL_ADMISSION_NOT_FULL_ACTIVE_AGENT",
+  "at": "2026-10-24T11:29:17.073536+03:00",
+  "base": "ffa0d366b505848718f4e10f044af19350a4d947",
+  "candidate": {
+    "packages/claw-hermes/gateway_store_startup.py": "d2d3a905f7903bfcf54b0c5caf688bc91c54b3fe6e11de7089c518957a94068f",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "4927e93a443bd52cfa0c7fca2e6e3a6b2aace5eaa417fc4270fea9b34de463b4",
+    "packages/claw-hermes/gateway_live_store_gate.py": "c4d2a50afc91bd7fca6f2706c9b411d76dc2d79cb8e45f0d6f6988e813bafc51",
+    "packages/claw-hermes/gateway_response_live.py": "80a9d45b1488858e05f8cbf3b5fd7e25c11f941f43ac7dbf866b33e73d0516a7",
+    "packages/claw-hermes/gateway_consumer_admission.py": "9b4bc3c128935e0aaccf2173b289a44ef3eab0cb967193dd9e975646c553633e",
+    "config/admission-consumer-b129d6-sources.json": "d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35"
+  },
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "ownNativeMethods": 23,
+  "originalPreparedCompatibilityMethods": 20,
+  "currentNativeImports": 514,
+  "compatNativeImports": 501,
+  "explicitCurrentEnvelopeSources": 517,
+  "pureDoubledContracts": 7,
+  "offlineReceiptMethods": 7,
+  "historicalReceipts": {
+    "total": 426,
+    "beforeFailedAssertions": 18,
+    "afterFailedAssertions": 0,
+    "rawEvidenceChanged": false
+  },
+  "prior563Changed": [
+    "packages/claw-hermes/gateway_live_store_gate.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "packages/claw-hermes/gateway_response_live.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/historical_layout_f126c1.py",
+    "tests/historical_sources_l113f6.py",
+    "tests/test_joint_observer_receipt_j127b6.py",
+    "tests/test_live_store_gate_receipt_l106e.py",
+    "tests/test_p107a_constructor_receipt.py",
+    "tests/test_preopen_receipt_p108e.py",
+    "tests/test_prepared_work_receipt_c127a6.py"
+  ],
+  "prior563Unchanged": 552,
+  "nativePatched": false,
+  "defaultPreparedManifestChanged": false,
+  "sameOriginalOwnerThreeConnectionsEpoch": true,
+  "fullStandard": "PENDING_EXACT_UNION",
+  "fullAgentOrHttp": false,
+  "currentLinuxIsolation": false,
+  "providerCalls": 0,
+  "rootWslAction": false,
+  "mainChanged": false,
+  "pushed": false
+}

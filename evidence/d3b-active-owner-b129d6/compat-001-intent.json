@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-24T11:25:05.543908+03:00",
+  "candidate": "candidate-001.json",
+  "nativeFeature": "1e97dd617b81120255304e472ce322befcdb9ccd",
+  "scope": "unchanged original20 native owner prepared cases using NEW runtime modules but DEFAULT source selection, no active service",
+  "originalQaSha256": "65b07db5fa6517d59d9d18d6255feacd587d9effd8dc5c384d12d54e94894609"
+}

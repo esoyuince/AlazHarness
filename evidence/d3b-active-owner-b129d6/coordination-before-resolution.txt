@@ -1,0 +1,10 @@
+# AlazHarness - status
+
+## D3B-ACTIVE-OWNER-B129D6 - IN PROGRESS
+
+Own worktree scratch/worktrees/d3b-active-owner-b129d6 atffa0d36;563prior source files pinned. Scope: integrate selected staged1b7b31e1 local admission phases with SAME NativeStoreStartup/PreparedRuntimeConsumer owner. Preserve default1e97 prepared path, explicit separate source generation, no second store owner or scheduler. Active identity observation must not confuse pending work with idle readiness; clean-only close barrier remains mandatory. Candidate native stays immutable, installed vendor/source locks/main unchanged. Read simultaneous129claims before product edits. Offline native/owner tests in fresh profiles; no real provider/model/HTTP/kernel/WSL or production work, no blocked operation retry. Queue claims/session retirement/whole-agent acceptance must be reported separately, never inferred from leaf admission tests.
+
+
+### Single integration owner / independent test claim
+
+Concurrent B129C6 at d3b-active-owner-b129c6 owns the sole harness integration in consumer/startup/live gates and fixed new manifest. B129D6 here owns independent REAL NativeStoreStartup activation/drain/source and transaction-race QA, no second product implementation. Producer sources read-only; tests use byte-exact snapshot in this own worktree, reverted to baseline after immutable integration. All563 prior files currently unchanged. Current setup00003 terminal; no native runs yet. Need preserve prepared default and reject clean-only shortcuts when queued work exists.
