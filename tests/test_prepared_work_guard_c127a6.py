@@ -28,6 +28,7 @@ class PreparedWorkContracts(unittest.TestCase):
         self.a.runner=self.r;self.a.db=self.state;self.r.session_authority=self.a
         self.b=SimpleNamespace(_authority=self.a);self.r._caller_owned_state=self.b
         self.v=c.PreparedRuntimeConsumer.__new__(c.PreparedRuntimeConsumer)
+        self.v._local_admission=False  # Explicit default normally set by the real constructor.
         self.v._runner=self.r;self.v._binding=self.b;self.v._stores=(self.state,)
     def refuse(self):
         with self.assertRaises(c.PreparedConsumerRejected):self.v._work_absent()

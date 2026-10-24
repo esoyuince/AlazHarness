@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-24T11:42:24.092611+03:00",
+  "firstFullResult": "FAIL_3341PASS_23SKIP_1ERROR",
+  "firstFullCommandExitCode": 1,
+  "errorId": "test_prepared_work_guard_c127a6.PreparedWorkContracts.test_check_refuses_work_before_sql_or_native_selection",
+  "cause": "old unit fixture bypassed __init__ via __new__ and omitted the explicit new default selection field",
+  "testPath": "tests/test_prepared_work_guard_c127a6.py",
+  "originalSha256": "6bb59aef3bdfa6a7d87661c27413fac37090d09afcaa626e4547fd924edbcfba",
+  "correctedSha256": "7e3f871a0212011da6f63972ee1a22ac6a83e6a926b319295a653d03480c1a70",
+  "correction": "initialize _local_admission=False in fixture setup only",
+  "all13TestMethodBodiesAndAssertionsUnchanged": true,
+  "focusedTotal": 13,
+  "focusedPassed": 13,
+  "focusedExitCode": 0,
+  "productAndNativeSourceChanged": false,
+  "firstFullLogSha256": "4004bb2bf563ee69da6ae73b71aa0093aad275cd5ac4b32f7d94cc9ee8f41a88",
+  "nativeRerunNeeded": false,
+  "completeStandardRerunRequired": true
+}

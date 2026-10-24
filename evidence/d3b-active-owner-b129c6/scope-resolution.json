@@ -1,0 +1,9 @@
+{
+  "productOwner": "B129D6",
+  "independentQaOwner": "B129C6",
+  "ownAll563OriginalSourcesUnchanged": true,
+  "failedSetupRequest": "b129c601-5f42-45c0-9b29-129001000010",
+  "failedAt": "incorrect union size514; actual517; before runtime/config writes",
+  "producerCandidateExists": true,
+  "sourcePinPromoted": false
+}

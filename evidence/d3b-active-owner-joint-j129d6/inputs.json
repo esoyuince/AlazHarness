@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-24T11:33:16.303034+03:00",
+  "base": "ffa0d366b505848718f4e10f044af19350a4d947",
+  "productCommit": "a91f5b1dc69b49c10319c98ff88ef194b29bf651",
+  "independentCommit": "00c5028a1d0878fd04c5d63d6669125bd1d57530",
+  "nativeFeature": "1b7b31e14451baf1d56c3edbfa2cea69a8f7940c",
+  "onlyConflict": [
+    "status.md"
+  ],
+  "sameSixProductConfigHashes": {
+    "packages/claw-hermes/gateway_store_startup.py": "d2d3a905f7903bfcf54b0c5caf688bc91c54b3fe6e11de7089c518957a94068f",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "4927e93a443bd52cfa0c7fca2e6e3a6b2aace5eaa417fc4270fea9b34de463b4",
+    "packages/claw-hermes/gateway_live_store_gate.py": "c4d2a50afc91bd7fca6f2706c9b411d76dc2d79cb8e45f0d6f6988e813bafc51",
+    "packages/claw-hermes/gateway_response_live.py": "80a9d45b1488858e05f8cbf3b5fd7e25c11f941f43ac7dbf866b33e73d0516a7",
+    "packages/claw-hermes/gateway_consumer_admission.py": "9b4bc3c128935e0aaccf2173b289a44ef3eab0cb967193dd9e975646c553633e",
+    "config/admission-consumer-b129d6-sources.json": "d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35"
+  },
+  "fullOwner": "J129D6 exact union, no duplicate full/native",
+  "canonicalBefore": "ffa0d366b505848718f4e10f044af19350a4d947",
+  "newNativeRunByUnion": false,
+  "priorGuardStop": "request000026 stopped before writes because independent branch advanced docs-only frome54e9bd to00c5028; current immutable source verified unchanged"
+}

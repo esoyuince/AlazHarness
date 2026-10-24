@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "total": 3365,
+  "passed": 3342,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourceCount": 572,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "baselineSourceCount": 563,
+  "baselineUnchangedCount": 551,
+  "baselineChangedNames": [
+    "packages/claw-hermes/gateway_live_store_gate.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "packages/claw-hermes/gateway_response_live.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/historical_layout_f126c1.py",
+    "tests/historical_sources_l113f6.py",
+    "tests/test_joint_observer_receipt_j127b6.py",
+    "tests/test_live_store_gate_receipt_l106e.py",
+    "tests/test_p107a_constructor_receipt.py",
+    "tests/test_preopen_receipt_p108e.py",
+    "tests/test_prepared_work_guard_c127a6.py",
+    "tests/test_prepared_work_receipt_c127a6.py"
+  ],
+  "newSourceConfigTestCount": 9,
+  "onlyChangedSinceFirstFull": [
+    "tests/test_prepared_work_guard_c127a6.py"
+  ],
+  "elapsedSeconds": 281.781,
+  "wrapperExitCode": 0,
+  "at": "2026-10-24T11:47:39.237490+03:00",
+  "fullLogSha256": "53ee7f7c62a5233fcea8fa247fe516c2460cb25efaa6e14f8db555bc0cb3b664",
+  "scope": "fresh complete exact-source union after unit-fixture setup correction, no native/Linux/provider rerun"
+}

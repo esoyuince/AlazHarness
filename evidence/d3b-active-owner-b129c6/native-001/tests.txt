@@ -1,0 +1,29 @@
+test_active_and_draining_never_allow_direct_close_or_detach (__main__.OwnerIntegration.test_active_and_draining_never_allow_direct_close_or_detach) ... ok
+test_active_identity_checks_actual_epoch_not_pending_counts (__main__.OwnerIntegration.test_active_identity_checks_actual_epoch_not_pending_counts) ... ok
+test_active_identity_checks_schema_with_pending_work (__main__.OwnerIntegration.test_active_identity_checks_schema_with_pending_work) ... ok
+test_actual_pending_task_allowed_identity_never_pruned_by_finish (__main__.OwnerIntegration.test_actual_pending_task_allowed_identity_never_pruned_by_finish) ... ok
+test_cancelled_cleanup_retains_unknown_and_all_connections (__main__.OwnerIntegration.test_cancelled_cleanup_retains_unknown_and_all_connections) ... ok
+test_cancelled_tracked_writer_preserved_through_original_owner (__main__.OwnerIntegration.test_cancelled_tracked_writer_preserved_through_original_owner) ... ok
+test_claimed_leaf_settles_during_drain_and_owner_can_close (__main__.OwnerIntegration.test_claimed_leaf_settles_during_drain_and_owner_can_close) ... ok
+test_default_source_does_not_auto_select_new_feature (__main__.OwnerIntegration.test_default_source_does_not_auto_select_new_feature) ... ok
+test_explicit_generation_same_owner_three_handles_epoch (__main__.OwnerIntegration.test_explicit_generation_same_owner_three_handles_epoch) ... ok
+test_full_empty_lifecycle_closes_only_original_owner_then_lease (__main__.OwnerIntegration.test_full_empty_lifecycle_closes_only_original_owner_then_lease) ... ok
+test_identity_policy_cannot_relax_constructor_or_accept_nonbool (__main__.OwnerIntegration.test_identity_policy_cannot_relax_constructor_or_accept_nonbool) ... ok
+test_late_replay_after_detach_blocks_original_store_close (__main__.OwnerIntegration.test_late_replay_after_detach_blocks_original_store_close) ... ok
+test_late_response_after_drained_refuses_before_api_effect (__main__.OwnerIntegration.test_late_response_after_drained_refuses_before_api_effect) ... ok
+test_malformed_replay_is_not_declared_valid_work_by_identity (__main__.OwnerIntegration.test_malformed_replay_is_not_declared_valid_work_by_identity) ... ok
+test_native_completed_transition_then_error_retains_unknown (__main__.OwnerIntegration.test_native_completed_transition_then_error_retains_unknown) ... ok
+test_new_replay_during_cleanup_await_is_not_successful_detach (__main__.OwnerIntegration.test_new_replay_during_cleanup_await_is_not_successful_detach) ... ok
+test_nonboolean_selection_refused_before_consumer_reservation (__main__.OwnerIntegration.test_nonboolean_selection_refused_before_consumer_reservation) ... ok
+test_other_loop_cannot_activate_or_drain (__main__.OwnerIntegration.test_other_loop_cannot_activate_or_drain) ... ok
+test_pending_response_identity_allowed_active_clean_gate_unchanged (__main__.OwnerIntegration.test_pending_response_identity_allowed_active_clean_gate_unchanged) ... ok
+test_queued_work_passes_identity_but_not_finish (__main__.OwnerIntegration.test_queued_work_passes_identity_but_not_finish) ... ok
+test_seal_does_not_wait_for_blocked_native_writer (__main__.OwnerIntegration.test_seal_does_not_wait_for_blocked_native_writer) ... ok
+test_seal_with_any_open_transaction_keeps_it_unmodified (__main__.OwnerIntegration.test_seal_with_any_open_transaction_keeps_it_unmodified) ... ok
+test_unknown_native_import_refuses_before_activation (__main__.OwnerIntegration.test_unknown_native_import_refuses_before_activation) ... ok
+test_unknown_record_is_not_health_or_recovery_permission (__main__.OwnerIntegration.test_unknown_record_is_not_health_or_recovery_permission) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 115.363s
+
+OK

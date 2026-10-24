@@ -1,0 +1,37 @@
+{
+  "result": "FAIL",
+  "total": 3365,
+  "passed": 3341,
+  "skipped": 23,
+  "errors": 1,
+  "failures": 0,
+  "errorIds": [
+    "test_prepared_work_guard_c127a6.PreparedWorkContracts.test_check_refuses_work_before_sql_or_native_selection"
+  ],
+  "failureIds": [],
+  "sourceCount": 572,
+  "sourcesUnchanged": true,
+  "patchesUnchanged": true,
+  "same23SkipIdsAndReasons": true,
+  "baselineSourceCount": 563,
+  "baselineUnchangedCount": 552,
+  "baselineChangedNames": [
+    "packages/claw-hermes/gateway_live_store_gate.py",
+    "packages/claw-hermes/gateway_prepared_consumer.py",
+    "packages/claw-hermes/gateway_response_live.py",
+    "packages/claw-hermes/gateway_store_startup.py",
+    "tests/historical_layout_f126c1.py",
+    "tests/historical_sources_l113f6.py",
+    "tests/test_joint_observer_receipt_j127b6.py",
+    "tests/test_live_store_gate_receipt_l106e.py",
+    "tests/test_p107a_constructor_receipt.py",
+    "tests/test_preopen_receipt_p108e.py",
+    "tests/test_prepared_work_receipt_c127a6.py"
+  ],
+  "newSourceConfigTestCount": 9,
+  "elapsedSeconds": 260.518,
+  "wrapperExitCode": 1,
+  "at": "2026-10-24T11:38:38.398306+03:00",
+  "fullLogSha256": "4004bb2bf563ee69da6ae73b71aa0093aad275cd5ac4b32f7d94cc9ee8f41a88",
+  "scope": "new complete standard union; no native/Linux/model rerun or installed activation"
+}
