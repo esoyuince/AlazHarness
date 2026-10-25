@@ -1,0 +1,42 @@
+{
+  "base": "31e0c54c530151bd25ebc43f617a853bb1736412",
+  "purpose": "exact executed prior source generation; not current runtime or kernel acceptance",
+  "sources": {
+    "packages/claw-hermes/credential_guard.py": {
+      "sha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+      "path": "evidence/self-identity-r149a9/historical-src/packages__claw-hermes__credential_guard.py.txt"
+    },
+    "packages/claw-hermes/gateway_retained_launch.py": {
+      "sha256": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00",
+      "path": "evidence/self-identity-r149a9/historical-src/packages__claw-hermes__gateway_retained_launch.py.txt"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "sha256": "ddcca9ca9176fd26810fd90a50de207aef7896693106efd7798cee735604065c",
+      "path": "evidence/self-identity-r149a9/historical-src/packages__claw-hermes__gateway_state_projection.py.txt"
+    },
+    "tests/historical_owner_b129d6.py": {
+      "sha256": "37d8765ed3dca45ce03fd665e833963baf726dd65bd1f21040ddab0224f7b16f",
+      "path": "evidence/self-identity-r149a9/historical-src/tests__historical_owner_b129d6.py.txt"
+    },
+    "tests/test_integrated_profile_metadata_q104e.py": {
+      "sha256": "83f941027078e06fc878287d94f3509cfaa114197a77ccc501993283a011d5b1",
+      "path": "evidence/self-identity-r149a9/historical-src/tests__test_integrated_profile_metadata_q104e.py.txt"
+    },
+    "tests/test_native_profile_admission_receipt.py": {
+      "sha256": "f786dfbcbbfffd45b7b45a87237b59a641f5fbc657cfa72d79c17ff02b4e860d",
+      "path": "evidence/self-identity-r149a9/historical-src/tests__test_native_profile_admission_receipt.py.txt"
+    },
+    "tests/test_projected_launch_l145a8.py": {
+      "sha256": "6f213bcaac3d11fb7da82a804397a18ce7381b32dd2247fbcf0566b878c1b83a",
+      "path": "evidence/self-identity-r149a9/historical-src/tests__test_projected_launch_l145a8.py.txt"
+    },
+    "tests/test_projected_launch_receipt_l145a8.py": {
+      "sha256": "08f7b75e41f2bad59c48ce0563afb22e66996a0d16697abfc2ad849f43f775e4",
+      "path": "evidence/self-identity-r149a9/historical-src/tests__test_projected_launch_receipt_l145a8.py.txt"
+    },
+    "tests/test_retained_projection_receipt_p142c6.py": {
+      "sha256": "2d54296667b1370920a6af83e22f0b6e38c4b47a8bf95b75621a0983f9540429",
+      "path": "evidence/self-identity-r149a9/historical-src/tests__test_retained_projection_receipt_p142c6.py.txt"
+    }
+  }
+}

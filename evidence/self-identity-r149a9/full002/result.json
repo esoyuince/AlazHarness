@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-25T17:16:46.747120+03:00",
+  "result": "PASS",
+  "total": 3642,
+  "passed": 3619,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 23,
+  "errorIds": [],
+  "failureIds": [],
+  "sourcesStable": true,
+  "patchesStable": true,
+  "samePriorSkipIdsReasons": true,
+  "elapsedSeconds": 496.023,
+  "rawLogSha256": "bcc854e7fcf64f5477e66fa3fb02501fa918f7d50cf0dc2d5b11a1f851cdb4c3",
+  "exitCode": 0,
+  "kernelAcceptance": false,
+  "originalRepositoryTouched": false,
+  "allR147CandidateFilesUnchanged": true
+}

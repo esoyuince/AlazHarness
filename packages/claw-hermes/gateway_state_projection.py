@@ -263,7 +263,7 @@ class _ProfileMounts(gp.Mounts):
         super().pivot(root)
 
 
-def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT, retained_profile=None):
+def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT, retained_profile=None, observe_self_identity=False):
     """Confine one joined root child; only its checked image profile persists.
 
     Caller joins the root-controlled S101 cgroup BEFORE the volume namespace.
@@ -277,6 +277,10 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
         from gateway_retained_profile import validate_receipt
         validate_receipt(retained_profile)
     require(type(observe_self_mount) is bool, 'state_projection_mount_observation_boolean')
+    require(type(observe_self_identity) is bool, 'state_projection_identity_observation_boolean')
+    require(not observe_self_identity or (observe_self_mount and
+            profile_layout == NATIVE_RETAINED_LAYOUT and retained_profile is not None),
+            'state_projection_identity_requires_retained_mount')
     plan = gp.inspect(value, filesystem)
     full_policy = validate_exports(binding, plan['ipc'], plan['filesystem'])
     p = plan['ipc']['principalContract']
@@ -310,7 +314,9 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
     gp.net._filter(seccomp)
     require(gp.net.status()['Seccomp'] == '2', 'state_projection_filter_missing')
     gp.launch.close_ambient_fds()
-    landlock = (gp.fs_guard.apply(full_policy, self_mount_metadata=True) if observe_self_mount
+    landlock = (gp.fs_guard.apply(full_policy, self_mount_metadata=True, self_identity_metadata=True)
+                if observe_self_identity else
+                gp.fs_guard.apply(full_policy, self_mount_metadata=True) if observe_self_mount
                 else gp.fs_guard.apply(full_policy))
     result = {'version':1,'state':'confined_state_profile','pid':os.getpid(),
             'profile':TARGET,'profileDevice':observed['profile'][0],'profileInode':binding.profile_inode,

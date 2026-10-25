@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-25T17:09:10.677629+03:00",
+  "base": "31e0c54c530151bd25ebc43f617a853bb1736412",
+  "baselineCount": 631,
+  "currentCount": 634,
+  "changed": [
+    "packages/claw-hermes/credential_guard.py",
+    "packages/claw-hermes/gateway_retained_launch.py",
+    "packages/claw-hermes/gateway_state_projection.py",
+    "tests/historical_owner_b129d6.py",
+    "tests/test_integrated_profile_metadata_q104e.py",
+    "tests/test_native_profile_admission_receipt.py",
+    "tests/test_projected_launch_l145a8.py",
+    "tests/test_projected_launch_receipt_l145a8.py",
+    "tests/test_retained_projection_receipt_p142c6.py"
+  ],
+  "added": [
+    "tests/historical_self_identity_r149a9.py",
+    "tests/test_self_identity_history_r149a9.py",
+    "tests/test_self_identity_r147.py"
+  ],
+  "unchangedCount": 622,
+  "productFiles": 3,
+  "originalRepoGitAccess": false,
+  "oldEvidenceChanged": false,
+  "nativeKernelServicesActivated": false,
+  "runtimeCandidateUnchangedSinceR147": true
+}

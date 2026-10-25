@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-25T17:06:18.962217+03:00",
+  "firstFullResult": {
+    "total": 3630,
+    "failures": 20,
+    "errors": 0,
+    "skipped": 23,
+    "exitCode": 1
+  },
+  "cause": "historical expected source hashes compared to changed current R147 files",
+  "expectedOldHashesChanged": false,
+  "oldEvidenceRewritten": false,
+  "productCodeChangedToPass": false,
+  "namedArchiveCount": 9,
+  "archivedBase": "31e0c54c530151bd25ebc43f617a853bb1736412",
+  "changedHistoricalHelperAndTests": [
+    "tests/historical_owner_b129d6.py",
+    "tests/test_integrated_profile_metadata_q104e.py",
+    "tests/test_native_profile_admission_receipt.py",
+    "tests/test_projected_launch_receipt_l145a8.py",
+    "tests/test_retained_projection_receipt_p142c6.py"
+  ],
+  "runtimeCandidateStillExactR147": true
+}

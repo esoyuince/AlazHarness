@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-25T17:10:37.934303+03:00",
+  "newCloneBase": "31e0c54c530151bd25ebc43f617a853bb1736412",
+  "archivesProvenAgainstImmutableGit": {
+    "packages/claw-hermes/credential_guard.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "db350bf55fb1a4decab8e0f0e9f20f5d44e1c89f",
+      "sha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b",
+      "archive": "evidence/self-identity-r149a9/historical-src/packages__claw-hermes__credential_guard.py.txt",
+      "bytes": 12556
+    },
+    "packages/claw-hermes/gateway_retained_launch.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "e7f391029d9ec16f8e4bafbe6ad4df678b54f7f7",
+      "sha256": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00",
+      "archive": "evidence/self-identity-r149a9/historical-src/packages__claw-hermes__gateway_retained_launch.py.txt",
+      "bytes": 9795
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "323b9fbbfe2926adf747b68c28d4a3c26d317c18",
+      "sha256": "ddcca9ca9176fd26810fd90a50de207aef7896693106efd7798cee735604065c",
+      "archive": "evidence/self-identity-r149a9/historical-src/packages__claw-hermes__gateway_state_projection.py.txt",
+      "bytes": 18498
+    },
+    "tests/historical_owner_b129d6.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "fde2ebbf8f49175960ee54cab7da16dbd6a1a8e3",
+      "sha256": "37d8765ed3dca45ce03fd665e833963baf726dd65bd1f21040ddab0224f7b16f",
+      "archive": "evidence/self-identity-r149a9/historical-src/tests__historical_owner_b129d6.py.txt",
+      "bytes": 1440
+    },
+    "tests/test_integrated_profile_metadata_q104e.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "39071193d6df6c926b32aeeafd29c05a4ea52879",
+      "sha256": "83f941027078e06fc878287d94f3509cfaa114197a77ccc501993283a011d5b1",
+      "archive": "evidence/self-identity-r149a9/historical-src/tests__test_integrated_profile_metadata_q104e.py.txt",
+      "bytes": 2106
+    },
+    "tests/test_native_profile_admission_receipt.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "785474b00dc8c1a4b9e7309da7db38b70c200e9d",
+      "sha256": "f786dfbcbbfffd45b7b45a87237b59a641f5fbc657cfa72d79c17ff02b4e860d",
+      "archive": "evidence/self-identity-r149a9/historical-src/tests__test_native_profile_admission_receipt.py.txt",
+      "bytes": 9241
+    },
+    "tests/test_projected_launch_l145a8.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "da8b6a4df55035b7a597312c8e15f7809de1dffd",
+      "sha256": "6f213bcaac3d11fb7da82a804397a18ce7381b32dd2247fbcf0566b878c1b83a",
+      "archive": "evidence/self-identity-r149a9/historical-src/tests__test_projected_launch_l145a8.py.txt",
+      "bytes": 21219
+    },
+    "tests/test_projected_launch_receipt_l145a8.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "6dc6162ffb243a7cf35463ece87fccd64040356b",
+      "sha256": "08f7b75e41f2bad59c48ce0563afb22e66996a0d16697abfc2ad849f43f775e4",
+      "archive": "evidence/self-identity-r149a9/historical-src/tests__test_projected_launch_receipt_l145a8.py.txt",
+      "bytes": 4938
+    },
+    "tests/test_retained_projection_receipt_p142c6.py": {
+      "baseCommit": "31e0c54c530151bd25ebc43f617a853bb1736412",
+      "gitBlob": "04618f9dbec62e94c66a42740df684b1a70b673e",
+      "sha256": "2d54296667b1370920a6af83e22f0b6e38c4b47a8bf95b75621a0983f9540429",
+      "archive": "evidence/self-identity-r149a9/historical-src/tests__test_retained_projection_receipt_p142c6.py.txt",
+      "bytes": 4073
+    }
+  },
+  "R147ProductAndTestCandidateBytesStillExact": true,
+  "originalRepoGitTouched": false,
+  "oldEvidenceModified": false,
+  "nativePatchesChanged": false,
+  "kernelTestRun": false,
+  "policyInstalled": false,
+  "commitPushMergePerformed": false
+}

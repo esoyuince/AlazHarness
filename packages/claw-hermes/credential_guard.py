@@ -176,7 +176,7 @@ def _preflight(policy):
     return closed_executable_fds
 
 
-def self_metadata_paths(pid, *, mountinfo=False):
+def self_metadata_paths(pid, *, mountinfo=False, identity_maps=False):
     """Fixed self-only process identity files plus system boot-time statistics.
 
     Never expose /proc directories, arbitrary PIDs, environ, mem, fd or exe.
@@ -184,21 +184,27 @@ def self_metadata_paths(pid, *, mountinfo=False):
     """
     require(type(pid) is int and pid > 0, 'credential_guard_metadata_pid')
     require(type(mountinfo) is bool, 'credential_guard_mount_metadata_boolean')
+    require(type(identity_maps) is bool, 'credential_guard_identity_metadata_boolean')
     return tuple('/proc/' + str(pid) + '/' + name
                  for name in ('stat', 'status', 'statm', 'cmdline')) + ('/proc/stat',) + (
-                     ('/proc/' + str(pid) + '/mountinfo',) if mountinfo else ())
+                     ('/proc/' + str(pid) + '/mountinfo',) if mountinfo else ()) + (
+                     tuple('/proc/' + str(pid) + '/' + name for name in ('uid_map', 'gid_map'))
+                     if identity_maps else ())
 
 
-def apply(policy, *, self_mount_metadata=False):
+def apply(policy, *, self_mount_metadata=False, self_identity_metadata=False):
     """Irreversibly restrict only this fresh process and future descendants.
 
     Any failure is fatal to the caller: do not continue the intended workload.
     Does not try to revoke already-open descriptors in sibling processes.
     """
     require(type(self_mount_metadata) is bool, 'credential_guard_mount_metadata_boolean')
+    require(type(self_identity_metadata) is bool, 'credential_guard_identity_metadata_boolean')
     policy = validate_policy(policy)
     require(not self_mount_metadata or policy.get('self_process_metadata') is True,
             'credential_guard_mount_metadata_requires_self')
+    require(not self_identity_metadata or policy.get('self_process_metadata') is True,
+            'credential_guard_identity_metadata_requires_self')
     libc = kernel()
     abi = abi_version(libc)
     closed_executable_fds = _preflight(policy)
@@ -223,7 +229,10 @@ def apply(policy, *, self_mount_metadata=False):
                     require(rc == 0, 'credential_guard_add_rule_failed')
                 finally:
                     os.close(fd)
-        metadata = self_metadata_paths(os.getpid(), mountinfo=self_mount_metadata) if policy.get('self_process_metadata', False) else ()
+        # Caller selects only the fixed self-map pair; never accept a PID/path from policy JSON.
+        identity_options = {'identity_maps': True} if self_identity_metadata else {}
+        metadata = self_metadata_paths(os.getpid(), mountinfo=self_mount_metadata,
+            **identity_options) if policy.get('self_process_metadata', False) else ()
         for value in metadata:
             require(value not in policy['protected'], 'credential_guard_protected_metadata')
             fd = os.open(value, os.O_PATH | os.O_CLOEXEC | os.O_NOFOLLOW)
@@ -254,12 +263,20 @@ def apply(policy, *, self_mount_metadata=False):
         else:
             os.close(fd)
             raise GuardRejected('credential_guard_protected_read_permitted')
-    return {'version': 1, 'state': 'enforced', 'landlockAbi': abi,
+    effective_policy = policy
+    if self_mount_metadata:
+        effective_policy = effective_policy | {'self_mount_metadata': True}
+    if self_identity_metadata:
+        effective_policy = effective_policy | {'self_identity_metadata': True}
+    result = {'version': 1, 'state': 'enforced', 'landlockAbi': abi,
             'handledFilesystemRights': HANDLED, 'noNewPrivs': True,
             'closedSelfExecutableFds': closed_executable_fds,
             'protectedReadDenials': denied,
-            'policySha256': policy_digest(policy | {'self_mount_metadata': True}) if self_mount_metadata else policy_digest(policy),
+            'policySha256': policy_digest(effective_policy),
             'scope': 'Landlock ABI3 filesystem opens; not network/UID/metadata isolation',
             'selfProcessMetadata': bool(policy.get('self_process_metadata', False)),
             'metadataReadFileCount': len(metadata), 'selfMountMetadata': self_mount_metadata,
             'networkConfinementVerified': False, 'separateHostUid': False}
+    if self_identity_metadata:
+        result['selfIdentityMetadata'] = True
+    return result

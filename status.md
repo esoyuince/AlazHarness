@@ -1,72 +1,36 @@
-# AlazHarness - status
+# R149A9 — R147 self-identity integration, complete local regression
 
-## L145A8: fixed projected launcher contract and real receiver refusals - PASS
+Active branch: alaz/self-identity-r149a9.
+Independent public clone: C:\Antigravity\AlazHarness\scratch\r149-integration-a9\repo.
+Base: 31e0c54c530151bd25ebc43f617a853bb1736412. This clone is separate from the
+original local repository/worktrees/index. No original Git status/metadata write,
+root/WSL/kernel/installation/provider/service action was attempted. Main unchanged.
 
-Active branch alaz/d3b-projected-launch-l145a8, base/main d304a57.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-projected-launch-l145a8.
-Canonical final shared claim fixes A8 product/singlefull/publication and C8 QA.
-Provisional reciprocal courtesy yields were superseded before product acceptance;
-no more role changes. C8 source/index/history untouched.
+R147 exact patch checked/applied here; all five candidate file hashes remain exact.
+Three product files add strictly selected self uid_map/gid_map READ_FILE grants.
+Defaults, JSON schema, original identity observer and old mode behavior remain.
+No broad /proc, arbitrary PID/path, writing/execution grants or weakened identity
+checks. This code is not installed as an operating-system policy in this work.
 
-### Implemented, opt-in, not deployed
+Final full002: 3,642 total / 3,619 PASS / 23 SKIP / 0 errors / 0 failures / exit 0.
+Original 23 skipped IDs/reasons unchanged. 634 source/config/test files and 11
+patches byte-identical before/after/current. Old631 files:622 unchanged,9 modified;
+3 new test/helper files. R147 product/test candidate unchanged during integration.
 
-New gateway_retained_launch.py calls original state.enter retained mode, existing
-encode_projected, live principal/namespaces/filter/mount checks and FIXED Python
--I -B scripts/run_retained_projected.py via execve. No arbitrary argv/entrypoint,
-shell, inherited parent environment, fallback or retry. Transfer/context bounded
-canonical data, trusted caller input rather than signed authority/attestation.
-Receiver decodes fixed TARGET, verifies exact environment/interpreter/current PID/
-UID/GID/groups/caps/NNP/thread/namespaces/filter and mount before lease/SQL.
-Original profile lease and NativeStoreStartup retain all live schema/identity/
-epoch/ownership checks. Readiness target starts/closes three stores then releases
-caller lease ONLY after confirmed close. No active work, model, HTTP or listener.
-Target result explicitly marks admission/finite/service/full acceptance false.
+First full001:3,630 total/20 historical-source hash failures/0errors/23skips/exit1.
+Raw failure preserved. Nine named immutable prior source archives bind old evidence
+without rewriting expected digests or original results. Five old helper/receipt
+files select their executed generation; unknown/current digests are not redirected.
+99 affected-module tests PASS; original19R147 plus new12binding negatives PASS31.
+These are subsets of the final full suite, not extra native or kernel experiments.
 
-### Tests and exact limits
+No historical kernel acceptance transferred to changed code. Real Landlock after
+identity grant, positive isolated startup/exec/close, HTTP/model/crash durability
+remain unaccepted. Earlier blocked originalGit/root/bootstrap actions not replayed.
+A normal new public clone was used to preserve the original user's work.
 
-Fresh full3611:3588PASS23SKIP0ERROR0FAIL, actual request022 terminalexit0.
-631source/config/test hashes+11patches stable; all625old files unchanged. New6files
-are product2, fixedLinuxQA2 and tests2. Same23skipIDs/reasons. Focused45=39control+
-6offline receipt; independent29same-source tests overlap, do not sum as unique.
-Original expectation property read after close caused initial35=34PASS1ERROR;
-same35byte-identical tests pass fixed epoch snapshot BEFORE close. Four stronger
-cases execute ORIGINAL NativeStoreStartup/start/close with actual in-memorySQLite
-and explicit constructor/cold/mount doubles, verify reverse3close before release.
-Peer actual original property reproduced00129=28PASS1ERROR; same29driver on002PASS.
-Peer fixture mistakes separately archived, not called product findings.
-
-ACTUAL ordinary-Linux5fresh Python3.12 -I -B negative processes: missing/malformed/
-extraenv/foreignPID/unconfined well-shaped transfer all fixedtargetexit2, validator
-exit0. No product/OS methods patched. Explicit runpy wrapper only enables audit
-before fixed entrypoint. No profile creation/lease/mount read/SQL/nativework/network
-attempt. Unconfined actual supplementary group and NNP0 observed, not fabricated
-kernel failure. Namespaces/mount table unchanged; owned temp transport removed.
-Source/loaded module hashes exact. This is NEGATIVE behavior, NOT positive kernel
-confinement or isolated native startup. Unit kernel/exec boundaries are doubled.
-
-### Remaining acceptance
-
-New code NOT installed in privileged lab. Existing supervised authorized dedicated
-volume child must call this exact path with complete current source/dependency
-exports. First positive real projected readiness/open/close; then actual native
-finite normal/error/replay/newwork/normalclose plus hostfile/socket/FD/reentry
-canaries. No inherited F126prepared-only proof. Prior denied root/bootstrap/mount/
-cleanup actions are NOT retried by this change. HTTP, crashes/powerloss, realmodel/
-tools/memory/budgets remain separate. No fake dataclass or JSON grants permission.
-
-### Custody / publication
-
-Main currently d304a57, no source-lock/native changes. Installedeb75627 and optional
-d151 clean; root33dirtyuserfiles/status preserved. This turn normal-user negative
-experiment only, no root/kernel/install/provider/service action. Full completed;
-static and selected implementation commit follow. If publishing: bounded outgoing
-scan then sameSHA CI before ordinaryFF main, never force/squash or hidden deployment.
-Do not replay accepted tests merely because a response is interrupted.
-
-### Records
-
-Docs/D3B-PROJECTED-LAUNCH-L145A8.md.
-Evidence/d3b-projected-launch-l145a8/: baseline,candidate001/002,unit001/002/003,
-focused45,receiver-refusal001 source+rawresults,independent-l145c8/provenance,
-source-custody,full001 result/rawlog/source+patch manifests,summary,protected-state.
-All current native/full jobs terminal. Read liveHEAD for final tested commit.
+Report: docs/R149-SELF-IDENTITY-INTEGRATION.md.
+Evidence: evidence/self-identity-r149a9/ (integration, source-custody, named archives,
+full001FAIL, full002PASS, focused results, summary, static-final).
+Local static and scoped commit follow; exact product commit will be recorded in a
+final delivery note. No push, main merge, deployment or remote CI is claimed.

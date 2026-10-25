@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import unittest
+from historical_self_identity_r149a9 import historical_source_path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-profile-admission-f104x'
 
@@ -27,7 +28,7 @@ class NativeProfileAdmissionReceipt(unittest.TestCase):
             if name.startswith(('packages/','scripts/','tests/')):
                 with self.subTest(source=name):
                     source=(ROOT/'evidence/d3b-native-layout-l106r/gateway_state_projection.before.py.txt'
-                            if name=='packages/claw-hermes/gateway_state_projection.py' else ROOT/name)
+                            if name=='packages/claw-hermes/gateway_state_projection.py' else historical_source_path(ROOT,name,want))
                     self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),want)
     def test_exact_native_dependency_pin_and_each_target_imports(self):
         prior=json.loads((ROOT/'evidence/d3b-profile-lease-l99d/native-dependency-inventory.json').read_text())

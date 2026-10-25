@@ -1,5 +1,6 @@
 """Offline exact-source negative-experiment evidence; not a new runtime execution."""
 import hashlib,json,unittest
+from historical_owner_b129d6 import executed_source_hash as historical_hash
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-projected-launch-l145a8'
@@ -24,8 +25,8 @@ class ProjectedLauncherEvidence(unittest.TestCase):
         c=read('source-custody.json');m=read('receiver-refusal001-manifest.json')['files'];r=read('receiver-refusal001-result.json')
         self.assertEqual(m,r['sourceHashes']);self.assertTrue(r['allTransferredSourcesUnchanged'])
         for row in r['cases']:
-            for name,h in row['result']['loadedSources'].items():self.assertEqual(m[name],h);self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h)
-        for name,h in c['currentSourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h)
+            for name,h in row['result']['loadedSources'].items():self.assertEqual(m[name],h);self.assertEqual(historical_hash(ROOT,name,h),h)
+        for name,h in c['currentSourceHashes'].items():self.assertEqual(historical_hash(ROOT,name,h),h)
     def test_original_error_and_same35_tests_preserved(self):
         old=read('unit001-result.json');new=read('unit002-result.json')
         self.assertEqual(old['exitCode'],1);self.assertEqual(new['exitCode'],0)
@@ -36,14 +37,14 @@ class ProjectedLauncherEvidence(unittest.TestCase):
         a=read('independent-l145c8/independent004/result.json');b=read('independent-l145c8/independent005/result.json')
         self.assertEqual((a['total'],a['passed'],a['errors'],a['failures']),(29,28,1,0));self.assertEqual((b['total'],b['passed'],b['errors'],b['failures']),(29,29,0,0))
         self.assertEqual(a['driverSha256'],b['driverSha256']);self.assertEqual(hashlib.sha256((E/'independent-l145c8/same29-driver.py.txt').read_bytes()).hexdigest(),b['driverSha256'])
-        for n,h in b['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/n).read_bytes()).hexdigest(),h)
+        for n,h in b['sourceHashes'].items():self.assertEqual(historical_hash(ROOT,n,h),h)
         self.assertIn('startup_not_verified',(E/'independent-l145c8/independent004/tests.txt').read_text(encoding='utf-8'))
         proof=read('independent-provenance.json')
         for n,v in proof['files'].items():self.assertEqual(hashlib.sha256((E/'independent-l145c8'/n).read_bytes()).hexdigest(),v['sha256'])
         self.assertTrue(proof['peerNotModified']);self.assertTrue(proof['noDuplicateRunByEvidenceCopy'])
     def test_new_code_is_additive_and_scope_not_native_or_kernel(self):
         baseline=read('baseline.json')['sourceHashes'];self.assertEqual(len(baseline),625)
-        for name,h in baseline.items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        for name,h in baseline.items():self.assertEqual(historical_hash(ROOT,name,h),h,name)
         r=read('source-custody.json');self.assertFalse(r['nativeSourceOrKernelPositiveAcceptance'])
         actual=read('unit003-result.json');self.assertEqual(actual['total'],39);self.assertTrue(actual['originalOwnerCodeAndSQLiteCloseReal']);self.assertTrue(actual['nativeStoreConstructorsColdBoundariesDoubled']);self.assertFalse(actual['currentKernelAccepted'])
 if __name__=='__main__':unittest.main()

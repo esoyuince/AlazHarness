@@ -53,7 +53,7 @@ class LaunchFlow(unittest.TestCase,Fixtures):
         args=self.exe.call_args.args;self.assertEqual(args[:2],(l.PYTHON,[l.PYTHON,'-I','-B','/opt/owned/'+l.ENTRY]))
         env=args[2];self.assertEqual(set(env),set(self.env));self.assertNotIn('UNRELATED_SECRET',env)
         self.assertEqual(l.handoff.decode_projected(env[l.WIRE_ENV].encode('ascii')),self.value)
-        self.assertEqual(self.enter.call_args.kwargs,dict(observe_self_mount=True,profile_layout=l.state.NATIVE_RETAINED_LAYOUT,retained_profile=self.receipt))
+        self.assertEqual(self.enter.call_args.kwargs,dict(observe_self_mount=True,observe_self_identity=True,profile_layout=l.state.NATIVE_RETAINED_LAYOUT,retained_profile=self.receipt))
         self.assertEqual(self.receipt.home,l.handoff.TARGET)
     def test_wrong_typed_record_refuses_before_projection(self):
         self.value=asdict(self.value)

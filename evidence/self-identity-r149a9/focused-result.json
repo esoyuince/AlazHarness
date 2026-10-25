@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T17:07:30.755979+03:00",
+  "methods": 31,
+  "newHistoryMethods": 12,
+  "originalR147Methods": 19,
+  "exitCode": 0,
+  "noKernelExecution": true,
+  "historicalFailedMethodsRechecked": 99,
+  "historicalRecheckExitCode": 0,
+  "R147CandidateFilesUnchanged": true,
+  "helperSha256": "cfc21a25b98a9ab38eb1b5d6cc323cbe74d28e1695c1361ff283ac00cb846e65",
+  "newTestSha256": "1fa9d0181e385c0c4035b7d33fdcfa76ffdd243d7e3c1f9713b5cf88cc8eae10"
+}
