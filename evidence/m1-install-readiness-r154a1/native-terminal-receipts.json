@@ -1,0 +1,320 @@
+{
+  "kind": "R154A1_NATIVE_TERMINAL_OBSERVATIONS",
+  "records": [
+    {
+      "acceptedAt": 1792965814340,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 2172,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 2172
+          },
+          "role": "stdout",
+          "sha256": "4a473db1605d51d95a63713789890629c14521bbe95ba2c39c30c2f98107091f",
+          "size": 2172
+        }
+      ],
+      "completedAt": 1792965819565,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154EnvironmentProbe",
+      "metrics": {
+        "executionMs": 5210,
+        "providerMs": 5193.246,
+        "providerTimingComplete": true,
+        "queueMs": 15,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "2d5bd6ba-a7c1-4088-a46d-14bab1706154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792966502940,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 294,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 294
+          },
+          "role": "stderr",
+          "sha256": "6111f46c393503e07edef44dffe1344c0d19132aa3fb092985c20d496f0a0abb",
+          "size": 294
+        }
+      ],
+      "completedAt": 1792966505836,
+      "effect": "applied",
+      "exitCode": 1,
+      "jobState": "completed",
+      "label": "r154WindowsFocusedRun",
+      "metrics": {
+        "executionMs": 2856,
+        "providerMs": 2838.052,
+        "providerTimingComplete": true,
+        "queueMs": 40,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "cc11d003-d399-4f40-bcf2-1c9c56206154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792966578090,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 5956,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 5956
+          },
+          "role": "stdout",
+          "sha256": "c16433fdbe8414e215235f0fedc842d5bc1f9c87166f2fdd03e5cf0b99ef1252",
+          "size": 5956
+        }
+      ],
+      "completedAt": 1792966578411,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154WindowsCorrectionRun",
+      "metrics": {
+        "executionMs": 285,
+        "providerMs": 263.802,
+        "providerTimingComplete": true,
+        "queueMs": 36,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "d7b637dc-5fb6-4b43-89b3-c18d328d6154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792966620867,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 266,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 266
+          },
+          "role": "stdout",
+          "sha256": "a30f1f4283de0225af7e4285456296fc949ad94b8ceb9f300f402eff31122893",
+          "size": 266
+        }
+      ],
+      "completedAt": 1792966639126,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154ActualPreflightRun",
+      "metrics": {
+        "executionMs": 18228,
+        "providerMs": 18197.785,
+        "providerTimingComplete": true,
+        "queueMs": 31,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "37332750-9cd8-4129-a638-bcbb22556154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792967145195,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 1136,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 1136
+          },
+          "role": "stdout",
+          "sha256": "cf79442737868cdc49f8418b2f1adc05d93c7a40375542bcac780448dc7e6413",
+          "size": 1136
+        }
+      ],
+      "completedAt": 1792967149062,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154RunnerWindowsAndPrepareRun",
+      "metrics": {
+        "executionMs": 3828,
+        "providerMs": 3805.545,
+        "providerTimingComplete": true,
+        "queueMs": 39,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "8cb7e355-dcc3-4609-9ca8-4f11e55b6154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792967174515,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 517,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 517
+          },
+          "role": "stdout",
+          "sha256": "e37dce15b7747f27a8f6939697a1e7bd8a07d978c379728620a80a70f08a9649",
+          "size": 517
+        }
+      ],
+      "completedAt": 1792967221723,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154ActualInstallRun",
+      "metrics": {
+        "executionMs": 47083,
+        "providerMs": 47060.013,
+        "providerTimingComplete": true,
+        "queueMs": 125,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "3d5848d2-aae5-4a82-bd76-904504df6154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792967282747,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 1617,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 1617
+          },
+          "role": "stdout",
+          "sha256": "37268153fc7632619fdd0cd5942797184a85af50fc74fd73e536566a43133c4e",
+          "size": 1617
+        }
+      ],
+      "completedAt": 1792967290096,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154InstalledVerifyRun",
+      "metrics": {
+        "executionMs": 7333,
+        "providerMs": 7320.396,
+        "providerTimingComplete": true,
+        "queueMs": 16,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "bbd6950b-72ad-4c56-a98e-f71d48a16154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792967433625,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 353,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 353
+          },
+          "role": "stderr",
+          "sha256": "c1eef2d496adf8aa1f63f45006c58c3aacacc8ea85ac37dacdae90b44849a172",
+          "size": 353
+        }
+      ],
+      "completedAt": 1792967434373,
+      "effect": "applied",
+      "exitCode": 1,
+      "jobState": "completed",
+      "label": "r154ClosureEvidenceRun",
+      "metrics": {
+        "executionMs": 729,
+        "providerMs": 714.576,
+        "providerTimingComplete": true,
+        "queueMs": 19,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "383b1943-0cb0-4ce3-a085-a2cce6ed6154",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1792967498077,
+      "artifacts": [
+        {
+          "coverage": {
+            "complete": true,
+            "endOffset": 453,
+            "sourceTruncated": false,
+            "startOffset": 0,
+            "storageError": false,
+            "totalBytes": 453
+          },
+          "role": "stdout",
+          "sha256": "d12fa0ec2f9999fb7634138429509a188ad02ca30e6265e580347f65b28abc44",
+          "size": 453
+        }
+      ],
+      "completedAt": 1792967526091,
+      "effect": "applied",
+      "exitCode": 0,
+      "jobState": "completed",
+      "label": "r154CheckoutDiagnostic",
+      "metrics": {
+        "executionMs": 27569,
+        "providerMs": 27549.83,
+        "providerTimingComplete": true,
+        "queueMs": 445,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "phase": "result_delivery",
+      "requestId": "25d31f61-c79b-4ee6-a23f-88df9ac26154",
+      "state": "completed"
+    }
+  ]
+}

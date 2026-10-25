@@ -1,0 +1,17 @@
+{
+  "kind": "R154A1_WINDOWS_FOCUSED",
+  "exitCode": 0,
+  "testsRun": 36,
+  "passed": 36,
+  "skipped": 0,
+  "skipRegistry": [],
+  "durationSeconds": 2.5572207999939565,
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "sourceSha256": {
+    "scripts/install_projected_candidate.py": "a56782d4e09bed38983c387d4b882e3db3866409e8e96e1f092d36517fc53525",
+    "tests/test_projected_install.py": "17f06bbfa6062007e5f94f12014f1a68daa3ce8cb22337773f66a6ccca382752",
+    "scripts/qa/r154a1_install_candidate.py": "f3ab8719fe63158c826aa345593573455ec7a2ecf0ba1b55d1e72ed1a8d07e88",
+    "scripts/build_projected_candidate.py": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7"
+  },
+  "fullRegressionClaimed": false
+}

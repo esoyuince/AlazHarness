@@ -1,0 +1,37 @@
+{
+  "installer": {
+    "findings": [
+      "Hash-pinned builder and input identities; candidate/dependency code never imported",
+      "Trusted descriptor reads, exclusive writes, root/initial-namespace actor, atomic no-replace final publication",
+      "Complete readback and receipt qualification; partial states retained; ordinary read-only verification"
+    ],
+    "linesRead": 618,
+    "nativeCallsForFinalReview": false,
+    "result": "NO_BLOCKER_FOR_FIXED_SOURCE_ONLY_INSTALLATION",
+    "reviewer": "r154_install_review",
+    "sha256": "a56782d4e09bed38983c387d4b882e3db3866409e8e96e1f092d36517fc53525",
+    "sourceOnly": true,
+    "testsExecutedByReviewer": false
+  },
+  "operator": {
+    "resolvedFindings": [
+      "Propagate post-spawn unknown effects across host terminal boundary",
+      "Explicit new input modes independent of umask",
+      "Reject optimized host invocation unconditionally",
+      "Validate exact installed receipt identity, counts and false execution flags"
+    ],
+    "result": "NO_REMAINING_BLOCKER_FOR_FIXED_SOURCE_ONLY_INVOCATION",
+    "reviewer": "r154_installer_impl",
+    "role": "Independent reviewer of root-authored operator, author of separately reviewed installer",
+    "rootInvocationByReviewer": false,
+    "runnerSha256": "06755f6d866a30b208c80ce23dab30e99326077d0b632211b42d9f6dcac18a14",
+    "sourceOnly": true,
+    "supersededRunner": "f3ab8719fe63158c826aa345593573455ec7a2ecf0ba1b55d1e72ed1a8d07e88",
+    "testsExecutedByReviewer": false,
+    "testsSha256": "59f3b0e2a08c7985bf38b38df28f6daf3a39108fcceb8cbf70d7d3212de08bf2"
+  },
+  "runtime": {
+    "reason": "Separate native runtime review has not produced an accepted source conclusion at closure preparation; runtime readiness remains NOT RUN.",
+    "result": "NOT_USED_AS_CORROBORATION"
+  }
+}

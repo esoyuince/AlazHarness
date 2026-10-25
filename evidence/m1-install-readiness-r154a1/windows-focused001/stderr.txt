@@ -1,0 +1,41 @@
+test_archive_symbolic_link_refuses (test_projected_install.CandidateInputTests.test_archive_symbolic_link_refuses) ... ok
+test_archive_trailing_data_refuses_after_resealed_digest (test_projected_install.CandidateInputTests.test_archive_trailing_data_refuses_after_resealed_digest) ... ok
+test_boolean_zero_is_not_a_model_call_count (test_projected_install.CandidateInputTests.test_boolean_zero_is_not_a_model_call_count) ... ok
+test_changed_archive_external_pin_refuses (test_projected_install.CandidateInputTests.test_changed_archive_external_pin_refuses) ... ok
+test_changed_harness_pin_refuses (test_projected_install.CandidateInputTests.test_changed_harness_pin_refuses) ... ok
+test_changed_manifest_external_pin_refuses (test_projected_install.CandidateInputTests.test_changed_manifest_external_pin_refuses) ... ok
+test_dependency_map_traversal_refuses (test_projected_install.CandidateInputTests.test_dependency_map_traversal_refuses) ... ok
+test_dependency_proof_digest_mismatch_refuses (test_projected_install.CandidateInputTests.test_dependency_proof_digest_mismatch_refuses) ... ok
+test_duplicate_manifest_json_key_refuses (test_projected_install.CandidateInputTests.test_duplicate_manifest_json_key_refuses) ... ok
+test_exact_candidate_prepares_all_bytes_without_executing_them (test_projected_install.CandidateInputTests.test_exact_candidate_prepares_all_bytes_without_executing_them) ... ok
+test_manifest_cannot_claim_execution_authority (test_projected_install.CandidateInputTests.test_manifest_cannot_claim_execution_authority) ... ok
+test_native_envelope_disagreement_refuses (test_projected_install.CandidateInputTests.test_native_envelope_disagreement_refuses) ... ok
+test_native_revision_refuses (test_projected_install.CandidateInputTests.test_native_revision_refuses) ... ok
+test_receipt_requires_exact_identity_flags_and_types (test_projected_install.CandidateInputTests.test_receipt_requires_exact_identity_flags_and_types) ... ok
+test_source_case_collision_refuses (test_projected_install.CandidateInputTests.test_source_case_collision_refuses) ... ok
+test_traversal_metadata_refuses_even_with_matching_manifest_pin (test_projected_install.CandidateInputTests.test_traversal_metadata_refuses_even_with_matching_manifest_pin) ... ok
+test_all_actual_candidate_fixture_bytes_materialize_and_read_back (test_projected_install.OwnedFilesystemTests.test_all_actual_candidate_fixture_bytes_materialize_and_read_back) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_atomic_publication_never_replaces_existing_directory (test_projected_install.OwnedFilesystemTests.test_atomic_publication_never_replaces_existing_directory) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_atomic_publication_success_preserves_directory_identity (test_projected_install.OwnedFilesystemTests.test_atomic_publication_success_preserves_directory_identity) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_changed_python_hash_refuses_using_declared_reader_fixture (test_projected_install.OwnedFilesystemTests.test_changed_python_hash_refuses_using_declared_reader_fixture) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_dependency_changed_bytes_refuse (test_projected_install.OwnedFilesystemTests.test_dependency_changed_bytes_refuse) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_dependency_mode_mismatch_refuses (test_projected_install.OwnedFilesystemTests.test_dependency_mode_mismatch_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_destination_existence_including_dangling_symlink_refuses (test_projected_install.OwnedFilesystemTests.test_destination_existence_including_dangling_symlink_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_extra_dependency_file_refuses (test_projected_install.OwnedFilesystemTests.test_extra_dependency_file_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_extra_empty_dependency_directory_refuses (test_projected_install.OwnedFilesystemTests.test_extra_empty_dependency_directory_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_fifo_refuses_without_waiting_for_writer (test_projected_install.OwnedFilesystemTests.test_fifo_refuses_without_waiting_for_writer) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_input_hardlink_refuses (test_projected_install.OwnedFilesystemTests.test_input_hardlink_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_input_symbolic_link_refuses (test_projected_install.OwnedFilesystemTests.test_input_symbolic_link_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_materialization_directory_case_collision_fails_before_writes (test_projected_install.OwnedFilesystemTests.test_materialization_directory_case_collision_fails_before_writes) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_materialization_file_directory_collision_fails_before_writes (test_projected_install.OwnedFilesystemTests.test_materialization_file_directory_collision_fails_before_writes) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_materialization_refuses_nonempty_directory_and_preserves_existing_file (test_projected_install.OwnedFilesystemTests.test_materialization_refuses_nonempty_directory_and_preserves_existing_file) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_materialization_traversal_fails_before_writes (test_projected_install.OwnedFilesystemTests.test_materialization_traversal_fails_before_writes) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_missing_dependency_refuses (test_projected_install.OwnedFilesystemTests.test_missing_dependency_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_parent_symbolic_link_refuses (test_projected_install.OwnedFilesystemTests.test_parent_symbolic_link_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_partial_write_is_preserved_without_success_receipt (test_projected_install.OwnedFilesystemTests.test_partial_write_is_preserved_without_success_receipt) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+test_world_writable_ancestry_refuses (test_projected_install.OwnedFilesystemTests.test_world_writable_ancestry_refuses) ... skipped 'descriptor and atomic-publication fixtures require Linux'
+
+----------------------------------------------------------------------
+Ran 36 tests in 1.509s
+
+OK (skipped=20)

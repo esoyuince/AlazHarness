@@ -1,0 +1,17 @@
+{
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "exitCode": 0,
+  "finiteWorkExecuted": false,
+  "hostPid": 74292,
+  "installed": true,
+  "installerPid": 7,
+  "installerTerminalObserved": true,
+  "processMayBeRunning": false,
+  "projectedReadinessAccepted": false,
+  "realModelCalls": 0,
+  "rootPhase": "INSTALLED_SOURCE_ONLY",
+  "state": "INSTALLED_SOURCE_ONLY",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdoutSha256": "d8ec62649b1c1265bd9f5462d50997642039a0af7939a680cbbec380fbd3a299"
+}

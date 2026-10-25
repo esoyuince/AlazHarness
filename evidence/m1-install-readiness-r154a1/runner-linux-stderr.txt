@@ -1,0 +1,16 @@
+test_complete_receipt_accepts_source_installation_only (test_projected_install_runner.OperatorTerminalTests.test_complete_receipt_accepts_source_installation_only) ... ok
+test_exception_during_spawn_remains_unknown_without_a_returned_pid (test_projected_install_runner.OperatorTerminalTests.test_exception_during_spawn_remains_unknown_without_a_returned_pid) ... ok
+test_inner_timeout_remains_unknown_with_original_process_identity (test_projected_install_runner.OperatorTerminalTests.test_inner_timeout_remains_unknown_with_original_process_identity) ... ok
+test_known_preflight_refusal_has_no_live_child_claim (test_projected_install_runner.OperatorTerminalTests.test_known_preflight_refusal_has_no_live_child_claim) ... ok
+test_missing_root_report_is_unknown (test_projected_install_runner.OperatorTerminalTests.test_missing_root_report_is_unknown) ... ok
+test_observed_installer_failure_is_not_a_running_child (test_projected_install_runner.OperatorTerminalTests.test_observed_installer_failure_is_not_a_running_child) ... ok
+test_optimized_driver_refuses_before_any_action (test_projected_install_runner.OperatorTerminalTests.test_optimized_driver_refuses_before_any_action) ... ok
+test_stderr_prevents_acceptance_without_inventing_unknown_child (test_projected_install_runner.OperatorTerminalTests.test_stderr_prevents_acceptance_without_inventing_unknown_child) ... ok
+test_unknown_flag_overrides_an_apparent_success (test_projected_install_runner.OperatorTerminalTests.test_unknown_flag_overrides_an_apparent_success) ... ok
+test_wrong_report_kind_is_unknown (test_projected_install_runner.OperatorTerminalTests.test_wrong_report_kind_is_unknown) ... ok
+test_exact_transport_writers_set_modes_even_with_restrictive_umask (test_projected_install_runner.ProvisioningModeTests.test_exact_transport_writers_set_modes_even_with_restrictive_umask) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.165s
+
+OK

@@ -1,0 +1,15 @@
+{
+  "kind": "R154A1_WINDOWS_RUNNER",
+  "exitCode": 0,
+  "testsRun": 11,
+  "passed": 10,
+  "skipped": 1,
+  "skipRegistry": [
+    "test_exact_transport_writers_set_modes_even_with_restrictive_umask (test_projected_install_runner.ProvisioningModeTests.test_exact_transport_writers_set_modes_even_with_restrictive_umask) ... skipped 'owned descriptor/mode fixture requires Linux'"
+  ],
+  "sourceSha256": {
+    "scripts/qa/r154a1_install_candidate.py": "06755f6d866a30b208c80ce23dab30e99326077d0b632211b42d9f6dcac18a14",
+    "tests/test_projected_install_runner.py": "59f3b0e2a08c7985bf38b38df28f6daf3a39108fcceb8cbf70d7d3212de08bf2"
+  },
+  "fullRegressionClaimed": false
+}

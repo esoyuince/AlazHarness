@@ -1,0 +1,8 @@
+{
+  "exitCode": 0,
+  "sourceSha256": {
+    "r154-runner/scripts/qa/r154a1_install_candidate.py": "06755f6d866a30b208c80ce23dab30e99326077d0b632211b42d9f6dcac18a14",
+    "r154-runner/tests/test_projected_install_runner.py": "59f3b0e2a08c7985bf38b38df28f6daf3a39108fcceb8cbf70d7d3212de08bf2"
+  },
+  "scope": "owned protocol and filesystem helpers; no WSL, root installation or candidate execution"
+}

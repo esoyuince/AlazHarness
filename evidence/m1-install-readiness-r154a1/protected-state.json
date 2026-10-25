@@ -1,0 +1,37 @@
+{
+  "installationEvidenceEqualsFrozenAttempt": true,
+  "kind": "R154A1_PROTECTED_STATE_BEFORE_PUBLICATION",
+  "observedUtc": "2026-10-25T22:35:58.088904+00:00",
+  "ordinaryVerificationLogsMatchReceipt": true,
+  "packagedSourceQualification": "All 77 immutable HEAD Git blobs match candidate manifest; LICENSE checkout CRLF qualification recorded separately",
+  "publicationNotYetPerformed": true,
+  "receiptSha256": "137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2",
+  "repositories": [
+    {
+      "branch": "alaz/hyb-001-component-slice",
+      "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+      "path": "C:\\Antigravity\\AlazHarness",
+      "status": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+    },
+    {
+      "branch": "main",
+      "head": "16830bd56e8c9b6a23e1bd60435ffb4b04793a9d",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+      "status": ""
+    },
+    {
+      "branch": "alaz/d3b-finite-close-f135c6",
+      "head": "d1516731308de8e87130dc68124e69aad35d6911",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6",
+      "status": ""
+    }
+  ],
+  "rootExistingFileContentsPreserved": true,
+  "rootExistingFileCount": 33,
+  "sourceSha256": {
+    "scripts/install_projected_candidate.py": "a56782d4e09bed38983c387d4b882e3db3866409e8e96e1f092d36517fc53525",
+    "scripts/qa/r154a1_install_candidate.py": "06755f6d866a30b208c80ce23dab30e99326077d0b632211b42d9f6dcac18a14",
+    "tests/test_projected_install.py": "17f06bbfa6062007e5f94f12014f1a68daa3ce8cb22337773f66a6ccca382752",
+    "tests/test_projected_install_runner.py": "59f3b0e2a08c7985bf38b38df28f6daf3a39108fcceb8cbf70d7d3212de08bf2"
+  }
+}

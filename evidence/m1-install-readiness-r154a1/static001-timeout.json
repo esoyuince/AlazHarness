@@ -1,0 +1,45 @@
+{
+  "kind": "R154A1_INITIAL_STATIC_TIMEOUT_NOT_ACCEPTED",
+  "requestId": "6d19378e-e9c9-4ba2-9060-a37e797d6154",
+  "state": "failed",
+  "effect": "unknown",
+  "exitCode": 124,
+  "cancellation": {
+    "reason": "deadline",
+    "acknowledgement": "provider_completed"
+  },
+  "metrics": {
+    "queueMs": 14,
+    "executionMs": 120240,
+    "providerMs": 120226.991,
+    "providerTimingComplete": true,
+    "verificationMs": 0,
+    "verificationTimingComplete": true
+  },
+  "validationResult": "NO_RESULT",
+  "inspection": {
+    "requestId": "18f604a1-95ca-4c2a-b527-263d97436154",
+    "exitCode": 0,
+    "stagedFileCount": 57,
+    "stagedFilesUnchanged": true,
+    "unstagedDiff": "",
+    "gateFiles": {
+      "whitespace-stderr.txt": {
+        "size": 0,
+        "text": ""
+      },
+      "whitespace-stdout.txt": {
+        "size": 0,
+        "text": ""
+      }
+    }
+  },
+  "processObservation": {
+    "requestId": "58a9226b-c202-4cf3-bfb0-9f3eadca6154",
+    "truncated": false,
+    "matchingOriginalWrapperOrScannerProcesses": 0
+  },
+  "installationAffected": false,
+  "acceptedStaticRun": "static002.json",
+  "explanation": "The command staged the selected files then exceeded its 120-second bridge deadline while running the read-only scanner. Provider cancellation acknowledgement was completed. A separate observation found no original wrapper/scanner process and confirmed the exact 57-file stage with no unstaged diff. No validation success was inferred. The scanner alone was subsequently run with a longer deadline."
+}

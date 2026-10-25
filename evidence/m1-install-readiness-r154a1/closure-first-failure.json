@@ -1,0 +1,11 @@
+{
+  "exitCode": 1,
+  "installationAffected": false,
+  "kind": "R154A1_CLOSURE_CHECKOUT_COMPARISON_CORRECTION",
+  "partialCopiesRetained": true,
+  "reason": "All 77 packaged HEAD Git blobs match. Sole raw Windows checkout difference is LICENSE CRLF conversion, exactly matching after CRLF-to-LF. No source, archive, attributes, or installed file was rewritten.",
+  "requestId": "383b1943-0cb0-4ce3-a085-a2cce6ed6154",
+  "state": "completed",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 26, in <module>\r\n    assert len(harness)==77 and all(hashlib.sha256((root/name).read_bytes()).hexdigest()==row['sha256'] for name,row in harness)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError\r\n",
+  "stdout": ""
+}

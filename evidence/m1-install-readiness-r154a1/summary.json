@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "kind": "R154A1_VERIFIED_CURRENT_SOURCE_INSTALLATION",
+  "result": "PASS_SOURCE_INSTALLATION_SUBGATE",
+  "installation": {
+    "archiveSha256": "e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b",
+    "dependencyFileCount": 1162,
+    "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+    "destination": "/opt/alaz-r154a1",
+    "executionAuthorized": false,
+    "finiteWorkExecuted": false,
+    "harnessCommit": "e03f7fd4e47fea6a58b749564ab350aeb4237a26",
+    "installed": true,
+    "kind": "VERIFIED_PROJECTED_INSTALLATION",
+    "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+    "projectedReadinessAccepted": false,
+    "python": {
+      "device": 2096,
+      "gid": 0,
+      "inode": 3825,
+      "mode": 493,
+      "path": "/usr/bin/python3.12",
+      "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "uid": 0
+    },
+    "realModelCalls": 0,
+    "receiptSha256": "137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2",
+    "result": "PASS",
+    "rootControlledAncestryVerified": true,
+    "rootDevice": 2096,
+    "rootInode": 27339,
+    "schemaVersion": 1,
+    "sourceAndDependenciesReadBack": true,
+    "sourceFileCount": 834,
+    "sourceManifestSha256": "182b9d0198e4c7f39bd28e194bfe7fc6cfca844ed4a653e9d209b0db8d77eef9",
+    "verifiedInstalledBytesNow": true
+  },
+  "ordinaryInstalledVerification": {
+    "exitCode": 0,
+    "rootUsed": false,
+    "writesPerformed": false
+  },
+  "terminal": {
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "exitCode": 0,
+    "finiteWorkExecuted": false,
+    "hostPid": 74292,
+    "installed": true,
+    "installerPid": 7,
+    "installerTerminalObserved": true,
+    "processMayBeRunning": false,
+    "projectedReadinessAccepted": false,
+    "realModelCalls": 0,
+    "rootPhase": "INSTALLED_SOURCE_ONLY",
+    "state": "INSTALLED_SOURCE_ONLY",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdoutSha256": "d8ec62649b1c1265bd9f5462d50997642039a0af7939a680cbbec380fbd3a299"
+  },
+  "focusedTests": {
+    "installerLinux": {
+      "passed": 36,
+      "skipped": 0,
+      "exitCode": 0
+    },
+    "installerWindows": {
+      "passed": 16,
+      "skipped": 20,
+      "rawTestExitCode": 0,
+      "initialReportingWrapperExitCode": 1
+    },
+    "operatorLinux": {
+      "passed": 11,
+      "skipped": 0,
+      "exitCode": 0
+    },
+    "operatorWindows": {
+      "passed": 10,
+      "skipped": 1,
+      "exitCode": 0
+    },
+    "overlapAcrossPlatforms": true,
+    "fullRegressionCountClaimed": false
+  },
+  "staticGate": {
+    "record": "static002.json",
+    "exitCode": 0,
+    "filesChecked": 6348,
+    "gitlinksChecked": 2,
+    "testsDiscovered": 3745,
+    "testsExecuted": false,
+    "initialTimeout": "static001-timeout.json"
+  },
+  "reviews": "independent-reviews.json",
+  "protectedState": "protected-state.json",
+  "sourceCheckoutQualification": "checkout-qualification.json",
+  "preservedCorrections": [
+    "Original operator superseded before root apply; uncertainty and umask fixed",
+    "Initial Windows wrapper CRLF skip-count report corrected without replay",
+    "Closure raw Windows checkout comparison qualified through exact Git blobs",
+    "Initial static deadline preserved; inspected staged effects and later standalone static PASS"
+  ],
+  "product": {
+    "p1": "IN_PROGRESS",
+    "installationSubgate": "PASS",
+    "projectedReadiness": "NOT_RUN",
+    "retainedSupervisedImageSeed": "NOT_RUN",
+    "finiteWork": "NOT_RUN",
+    "m1": "NOT_ACCEPTED",
+    "production": "NOT_ACCEPTED",
+    "realModelCalls": 0
+  },
+  "publication": {
+    "stateAtEvidenceCommit": "FINAL_EXACT_COMMIT_CI_REQUIRED",
+    "requiredContext": "alaz/local-ci",
+    "method": "ordinary fast-forward after exact-SHA success",
+    "finalLiveObservation": "ignored scratch publication journal; live Git and CI authoritative"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "state": "SUPERSEDED_NOT_APPLIED",
+  "reason": "Two operator receipt/provisioning-mode findings fixed before root application. Exact installer and four payload members are unchanged; actual ordinary preflight remains valid for those input bytes.",
+  "oldRunnerSha256": "f3ab8719fe63158c826aa345593573455ec7a2ecf0ba1b55d1e72ed1a8d07e88",
+  "newRunnerSha256": "06755f6d866a30b208c80ce23dab30e99326077d0b632211b42d9f6dcac18a14",
+  "rootApplicationAttempted": false
+}

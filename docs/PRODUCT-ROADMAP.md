@@ -17,9 +17,9 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 
 ## Beş teslimat paketi
 
-| Paket | Teslimat | Tamamlanma ölçütü | Başlangıç durumu |
+| Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
-| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R153. Güncel ayrıcalıklı kurulum ve olumlu projected kabul henüz yok. |
+| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R154. Güncel kaynak/bağımlılık kurulumu ve bağımsız doğrulama PASS; aynı imajda projected readiness ve gerçek iş kabulü açık. |
 | P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | OPEN; kontrollü model/broker altyapısı mevcut. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
@@ -75,3 +75,18 @@ Paket, `e03f7fd4e47fea6a58b749564ab350aeb4237a26` kaynak commit'inden 834 dosya 
 referanstır; kurulum yapılmadı. Bu alt teslimat P1'i tamamlamaz: aynı kurulumda
 olumlu projected readiness, gerçek retained seed ve ardından finite iş kabulü
 sıradaki adımdır. Ayrıntı ve kanıtlar: [R153A1](M1-PRODUCT-PATH-R153A1.md).
+
+## P1 / R154A1 teslimatı
+
+Güncel R153 kaynak adayı, mevcut özel Linux laboratuvarında `/opt/alaz-r154a1`
+altına kuruldu. 834 paket dosyası ve 1.162 bağımlılık dosyası, sabit Python
+kimliği ve güvenilir dizin izinleriyle doğrulandı. Kurulumdan sonra ayrı bir
+sıradan kullanıcı süreci bütün kurulu dosyaları ve kurulum kaydını yeniden
+doğruladı; iki işlem de exit 0 ile tamamlandı.
+
+P1'in güncel kaynak/bağımlılık kurulumu alt adımı tamamlandı. Aynı supervised
+ext4 imajında orijinal native yaşam döngüsüyle gerçek başlangıç kaydı üretmek,
+supervisor üzerinden olumlu projected readiness ve sıralı kapanışı kabul etmek,
+ardından normal/hata, replay/yeni iş ve finite görev akışını bağlamak hâlâ açık.
+Bu teslimatta native uygulama veya model çalıştırılmadı; P1, M1 ve prod kabulü
+henüz tamamlanmadı. Ayrıntı ve kanıtlar: [R154A1](M1-INSTALL-READINESS-R154A1.md).

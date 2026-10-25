@@ -1,0 +1,21 @@
+{
+  "exitCode": 0,
+  "elapsedSeconds": 2.1386530169984326,
+  "source": {
+    "/workspace/scratch/288e2938ab4c/r154-install/scripts/install_projected_candidate.py": {
+      "sha256": "a56782d4e09bed38983c387d4b882e3db3866409e8e96e1f092d36517fc53525",
+      "bytes": 28251
+    },
+    "/workspace/scratch/288e2938ab4c/r154-install/tests/test_projected_install.py": {
+      "sha256": "17f06bbfa6062007e5f94f12014f1a68daa3ce8cb22337773f66a6ccca382752",
+      "bytes": 18890
+    },
+    "/workspace/scratch/288e2938ab4c/r153-packaging/scripts/build_projected_candidate.py": {
+      "sha256": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7",
+      "bytes": 23212
+    }
+  },
+  "ownedFixtureScopeOnly": true,
+  "rootInstallationExecuted": false,
+  "providerCalls": 0
+}

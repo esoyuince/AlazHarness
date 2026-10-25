@@ -1,0 +1,15 @@
+{
+  "headGitBlobsMatchArchive": true,
+  "packagedHarnessFiles": 77,
+  "selectedTrackedDiff": "",
+  "workingTreeDifferences": [
+    {
+      "archiveBytes": 1081,
+      "archiveSha256": "f124b0474189e3cade42b6efec680e515f38908341eb909a4bad1a2012607e40",
+      "crlfToLfMatches": true,
+      "path": "LICENSE",
+      "workingBytes": 1102,
+      "workingSha256": "f2073680fc298961849a6502f906e6f8c9cdf70024e5e023f875c894448a82e4"
+    }
+  ]
+}

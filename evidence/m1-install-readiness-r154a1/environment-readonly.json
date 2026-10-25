@@ -1,0 +1,112 @@
+{
+  "dependencyAncestry": [
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 2,
+      "mode": "0o755",
+      "path": "/",
+      "symlink": false,
+      "uid": 0
+    },
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 32769,
+      "mode": "0o755",
+      "path": "/opt",
+      "symlink": false,
+      "uid": 0
+    },
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 14114,
+      "mode": "0o755",
+      "path": "/opt/alaz-f126c1a6",
+      "symlink": false,
+      "uid": 0
+    },
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 22911,
+      "mode": "0o755",
+      "path": "/opt/alaz-f126c1a6/dependencies",
+      "symlink": false,
+      "uid": 0
+    }
+  ],
+  "dependencyDirectories": 119,
+  "dependencyFiles": 1162,
+  "dependencyHashesMatch": true,
+  "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+  "dependencyRoot": "/opt/alaz-f126c1a6/dependencies",
+  "filesWritten": false,
+  "freshPathExistence": {
+    "/opt/alaz-r153a1": false,
+    "/opt/alaz-r154a1": false,
+    "/srv/alaz-r154a1": false,
+    "/sys/fs/cgroup/alaz-r154a1": false
+  },
+  "gid": [
+    23003,
+    23003,
+    23003
+  ],
+  "installed": false,
+  "kernel": "6.6.87.2-microsoft-standard-WSL2",
+  "kind": "R154A1_ORDINARY_READONLY_ENVIRONMENT",
+  "lab": "AlazHarness-D3B-P71C",
+  "machine": "x86_64",
+  "projectedReadinessAccepted": false,
+  "providerCalls": 0,
+  "pythonAncestry": [
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 2,
+      "mode": "0o755",
+      "path": "/",
+      "symlink": false,
+      "uid": 0
+    },
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 57346,
+      "mode": "0o755",
+      "path": "/usr",
+      "symlink": false,
+      "uid": 0
+    },
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 188,
+      "mode": "0o755",
+      "path": "/usr/bin",
+      "symlink": false,
+      "uid": 0
+    },
+    {
+      "device": 2096,
+      "gid": 0,
+      "inode": 3825,
+      "mode": "0o755",
+      "path": "/usr/bin/python3.12",
+      "symlink": false,
+      "uid": 0
+    }
+  ],
+  "pythonSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "pythonVersion": "3.12.3",
+  "rootUsed": false,
+  "uid": [
+    23001,
+    23001,
+    23001
+  ],
+  "untrustedDependencyEntryCount": 0,
+  "untrustedDependencyPaths": []
+}

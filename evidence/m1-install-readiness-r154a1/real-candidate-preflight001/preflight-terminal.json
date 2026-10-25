@@ -1,0 +1,8 @@
+{
+  "state": "PASS_REAL_CANDIDATE_PREFLIGHT",
+  "exitCode": 0,
+  "rootUsed": false,
+  "installed": false,
+  "stdoutSha256": "d473e5135174aa2de7f936d1a4b487d041c18e9917477e40eb40d39b2530fdd4",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
