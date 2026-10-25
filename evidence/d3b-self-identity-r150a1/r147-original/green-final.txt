@@ -1,0 +1,24 @@
+test_only_existing_fixed_launcher_explicitly_requests_maps (test_self_identity_r147.LauncherSelection.test_only_existing_fixed_launcher_explicitly_requests_maps) ... ok
+test_apply_invalid_option_refuses_before_any_kernel (test_self_identity_r147.MetadataContract.test_apply_invalid_option_refuses_before_any_kernel) ... ok
+test_defaults_exactly_unchanged (test_self_identity_r147.MetadataContract.test_defaults_exactly_unchanged) ... ok
+test_enabled_digest_distinct_and_binds_both_options (test_self_identity_r147.MetadataContract.test_enabled_digest_distinct_and_binds_both_options) ... ok
+test_invalid_pid_or_boolean_rejected (test_self_identity_r147.MetadataContract.test_invalid_pid_or_boolean_rejected) ... ok
+test_metadata_rules_only_read_file_current_pid (test_self_identity_r147.MetadataContract.test_metadata_rules_only_read_file_current_pid) ... ok
+test_missing_map_file_cannot_fall_back (test_self_identity_r147.MetadataContract.test_missing_map_file_cannot_fall_back) ... ok
+test_no_json_knob_or_arbitrary_proc_allowlist (test_self_identity_r147.MetadataContract.test_no_json_knob_or_arbitrary_proc_allowlist) ... ok
+test_old_digest_and_receipt_shape_preserved (test_self_identity_r147.MetadataContract.test_old_digest_and_receipt_shape_preserved) ... ok
+test_optin_requires_self_metadata_policy (test_self_identity_r147.MetadataContract.test_optin_requires_self_metadata_policy) ... ok
+test_selected_adds_only_two_fixed_self_files (test_self_identity_r147.MetadataContract.test_selected_adds_only_two_fixed_self_files) ... ok
+test_allowed_maps_do_not_hide_nonzero_capabilities (test_self_identity_r147.ObservationRegression.test_allowed_maps_do_not_hide_nonzero_capabilities) ... ok
+test_default_still_refuses_the_map_read (test_self_identity_r147.ObservationRegression.test_default_still_refuses_the_map_read) ... ok
+test_one_map_is_not_enough (test_self_identity_r147.ObservationRegression.test_one_map_is_not_enough) ... ok
+test_selected_grants_allow_the_unmodified_observer_and_live_check (test_self_identity_r147.ObservationRegression.test_selected_grants_allow_the_unmodified_observer_and_live_check) ... ok
+test_nonboolean_selection_fails_before_projection (test_self_identity_r147.ProjectionSelection.test_nonboolean_selection_fails_before_projection) ... ok
+test_old_default_modes_do_not_gain_new_flag (test_self_identity_r147.ProjectionSelection.test_old_default_modes_do_not_gain_new_flag) ... ok
+test_only_retained_and_mount_observed_can_select_identity (test_self_identity_r147.ProjectionSelection.test_only_retained_and_mount_observed_can_select_identity) ... ok
+test_selected_retained_path_forwards_two_true_flags (test_self_identity_r147.ProjectionSelection.test_selected_retained_path_forwards_two_true_flags) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.031s
+
+OK

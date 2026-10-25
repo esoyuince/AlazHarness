@@ -1,0 +1,26 @@
+test_selected_grants_allow_the_unmodified_observer_and_live_check (test_self_identity_r147.ObservationRegression.test_selected_grants_allow_the_unmodified_observer_and_live_check) ... ERROR
+
+======================================================================
+ERROR: test_selected_grants_allow_the_unmodified_observer_and_live_check (test_self_identity_r147.ObservationRegression.test_selected_grants_allow_the_unmodified_observer_and_live_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\r147-self-identity-a9\baseline\tests\test_self_identity_r147.py", line 84, in test_selected_grants_allow_the_unmodified_observer_and_live_check
+    self.assertEqual(self.observe(allowed),['/proc/4242/status',*MAPS])
+                     ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\r147-self-identity-a9\baseline\tests\test_self_identity_r147.py", line 79, in observe
+    launcher._live(old.P,ns,PID)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\r147-self-identity-a9\baseline\packages\claw-hermes\gateway_retained_launch.py", line 52, in _live
+    current=state.gp.launch.observation()
+  File "C:\Antigravity\AlazHarness\scratch\r147-self-identity-a9\baseline\packages\claw-hermes\principal_launch.py", line 90, in observation
+    'uidMap': Path('/proc/self/uid_map').read_text().split(),
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\r147-self-identity-a9\baseline\tests\test_self_identity_r147.py", line 69, in read_text
+    if name not in allowed:raise PermissionError(13,'explicit read-right model',name)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] explicit read-right model: '/proc/4242/uid_map'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (errors=1)

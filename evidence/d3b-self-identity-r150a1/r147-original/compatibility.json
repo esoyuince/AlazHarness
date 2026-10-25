@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "total": 210,
+  "passed": 210,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "selected": [
+    "test_credential_guard",
+    "test_self_mount_metadata",
+    "test_gateway_state_projection",
+    "test_prepared_layout_f126c1",
+    "test_three_store_http_projection_t114r6a",
+    "test_retained_handoff_t143a7",
+    "test_projected_launch_l145a8",
+    "test_retained_projection_p142c6.MappingContract",
+    "test_retained_projection_p142c6.ProjectionSequence",
+    "test_retained_projection_p142c6.PivotBarrier",
+    "test_retained_projection_p142c6.OriginalStartupHandoff",
+    "test_self_identity_r147"
+  ],
+  "selectionNotFullSuite": true,
+  "sourceStable": true,
+  "elapsedSeconds": 0.828,
+  "failureIds": [],
+  "errorIds": [],
+  "kernelWasNotActivated": true,
+  "newTestsIncluded": 19
+}

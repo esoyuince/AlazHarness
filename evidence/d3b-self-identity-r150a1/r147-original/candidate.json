@@ -1,0 +1,11 @@
+{
+  "sourceReference": "31e0c54c530151bd25ebc43f617a853bb1736412",
+  "changedHashes": {
+    "packages/claw-hermes/credential_guard.py": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4",
+    "packages/claw-hermes/gateway_state_projection.py": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74",
+    "packages/claw-hermes/gateway_retained_launch.py": "3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db",
+    "tests/test_projected_launch_l145a8.py": "e20eed0610107ffc36d6f24ea7b545e49666da9779eafcd56f6818131e87917e"
+  },
+  "unchangedRegressionSha256": "dc620e50b7c092a86f5d6e727a16a6357192bce776bd9ff866c8bedf5a656532",
+  "scope": "standalone candidate only; no kernel activation, no Git modification"
+}

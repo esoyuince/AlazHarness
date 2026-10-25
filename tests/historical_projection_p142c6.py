@@ -3,6 +3,9 @@ import hashlib,json
 NAME='packages/claw-hermes/gateway_state_projection.py'
 BASE='1321699198805fad1909d40053e118a624dc23f2'
 def saved_generation_hash(root,name,expected):
+    from historical_self_identity_r150a1 import saved_generation_hash as before_identity
+    prior=before_identity(root,name,expected)
+    if prior is not None:return prior
     if name!=NAME:return None
     e=root/'evidence/d3b-retained-projection-p142c6'
     baseline=json.loads((e/'baseline.json').read_text(encoding='utf-8'))

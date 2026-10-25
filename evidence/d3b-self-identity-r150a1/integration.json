@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-25T18:03:04.589650+03:00",
+  "patchSha256": "d78eb8c6b71d5d5d01ec4f29767285283fcd9d0bff8867f372c5e47e46ef7536",
+  "allFiveAppliedFilesEqualTestedR147": true,
+  "sourceHashes": {
+    "packages/claw-hermes/credential_guard.py": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4",
+    "packages/claw-hermes/gateway_retained_launch.py": "3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db",
+    "packages/claw-hermes/gateway_state_projection.py": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74",
+    "tests/test_projected_launch_l145a8.py": "e20eed0610107ffc36d6f24ea7b545e49666da9779eafcd56f6818131e87917e",
+    "tests/test_self_identity_r147.py": "4380e04954e148501bbe540c734555380abdc8fbe66885c0125850d8def3fabf"
+  },
+  "mainModified": false,
+  "standaloneR147Modified": false,
+  "kernelOrNativeInstalled": false
+}

@@ -1,3 +1,4 @@
+from historical_self_identity_r150a1 import source_hash
 """Offline mapping source and independent unit receipts; not a kernel test."""
 import hashlib,json,unittest
 from pathlib import Path
@@ -14,7 +15,7 @@ class RetainedProjectionEvidence(unittest.TestCase):
     def test_source_generation_of_independent_run_is_current(self):
         r=read('independent-c142c6/producer001-independent21-result.json');c=read('source-custody.json')
         self.assertEqual(set(r['sourceHashes']),{'packages/claw-hermes/gateway_state_projection.py','packages/claw-hermes/gateway_retained_projection.py'})
-        for name,h in r['sourceHashes'].items():self.assertEqual(c['currentSourceHashes'][name],h);self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h)
+        for name,h in r['sourceHashes'].items():self.assertEqual(c['currentSourceHashes'][name],h);self.assertEqual(source_hash(ROOT,name,h),h)
     def test_original_independent_driver_and_records_byte_exact(self):
         provenance=read('independent-provenance.json');self.assertTrue(provenance['sameRuntimeHashesAsCurrent']);self.assertTrue(provenance['peerNotEdited']);self.assertTrue(provenance['testsNotReexecutedByCopy'])
         for name,record in provenance['files'].items():self.assertEqual(hashlib.sha256((E/'independent-c142c6'/name).read_bytes()).hexdigest(),record['sha256'])
@@ -22,7 +23,7 @@ class RetainedProjectionEvidence(unittest.TestCase):
         old=read('independent-c142c6/producer001-independent-result.json');self.assertEqual(old['methods'],15);self.assertEqual(hashlib.sha256((E/'independent-c142c6/independent15-checks.py.txt').read_bytes()).hexdigest(),old['qaSha256'])
     def test_current_source_and_named_history_binding_remain_distinct(self):
         c=read('source-custody.json');b=read('baseline.json');n='packages/claw-hermes/gateway_state_projection.py'
-        for name,h in c['currentSourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h)
+        for name,h in c['currentSourceHashes'].items():self.assertEqual(source_hash(ROOT,name,h),h)
         self.assertNotEqual(c['currentSourceHashes'][n],b['sources'][n]);self.assertEqual(hashlib.sha256((E/'gateway_state_projection.before.py.txt').read_bytes()).hexdigest(),b['sources'][n])
         self.assertTrue(c['oldNativeEvidenceRetainsOriginalSource'])
     def test_previous_failure_remains_failure_not_kernel_regression_proof(self):

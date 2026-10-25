@@ -1,0 +1,13 @@
+{
+  "red-final": {
+    "exitCode": 1,
+    "testSha256": "4380e04954e148501bbe540c734555380abdc8fbe66885c0125850d8def3fabf",
+    "scope": "explicit OS/file/syscall adapters; unmodified product observation function"
+  },
+  "green-final": {
+    "exitCode": 0,
+    "testSha256": "4380e04954e148501bbe540c734555380abdc8fbe66885c0125850d8def3fabf",
+    "scope": "explicit OS/file/syscall adapters; unmodified product observation function"
+  },
+  "initialFixtureIssues": "Windows platform selector and reused configure helper were corrected; original logs retained, no product finding attributed to those fixture errors"
+}

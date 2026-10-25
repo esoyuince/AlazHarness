@@ -1,72 +1,53 @@
 # AlazHarness - status
 
-## L145A8: fixed projected launcher contract and real receiver refusals - PASS
+## R150A1 - R147 exact self-identity patch INTEGRATED / FULL REGRESSION PASS
 
-Active branch alaz/d3b-projected-launch-l145a8, base/main d304a57.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-projected-launch-l145a8.
-Canonical final shared claim fixes A8 product/singlefull/publication and C8 QA.
-Provisional reciprocal courtesy yields were superseded before product acceptance;
-no more role changes. C8 source/index/history untouched.
+Active branch alaz/d3b-self-identity-r150a1.
+Path C:\Antigravity\AlazHarness\scratch\worktrees\d3b-self-identity-r150a1.
+Baseline/main31e0c54. Named Bridge lane now supports actual reads/commands; no
+permission or Bridge-server configuration changed. Single claim R150A1, no peer
+writer. Existing root33 dirty user files, installed Hermes and main preserved.
 
-### Implemented, opt-in, not deployed
+### Accepted current code
 
-New gateway_retained_launch.py calls original state.enter retained mode, existing
-encode_projected, live principal/namespaces/filter/mount checks and FIXED Python
--I -B scripts/run_retained_projected.py via execve. No arbitrary argv/entrypoint,
-shell, inherited parent environment, fallback or retry. Transfer/context bounded
-canonical data, trusted caller input rather than signed authority/attestation.
-Receiver decodes fixed TARGET, verifies exact environment/interpreter/current PID/
-UID/GID/groups/caps/NNP/thread/namespaces/filter and mount before lease/SQL.
-Original profile lease and NativeStoreStartup retain all live schema/identity/
-epoch/ownership checks. Readiness target starts/closes three stores then releases
-caller lease ONLY after confirmed close. No active work, model, HTTP or listener.
-Target result explicitly marks admission/finite/service/full acceptance false.
+Exact original R147 patch applied with git apply --check then apply exit0 into
+this separate worktree. Three product files and two R147 test files match the
+standalone tested candidate byte-for-byte. Only explicit retained launcher option
+adds current numeric PID uid_map/gid_map READ_FILE; default paths, old summary
+shape/digest and capability checks stay unchanged. No arbitrary JSON PID/path,
+/proc directory grant, write or exec rights. Original observer code unchanged.
 
-### Tests and exact limits
+### Current complete regression
 
-Fresh full3611:3588PASS23SKIP0ERROR0FAIL, actual request022 terminalexit0.
-631source/config/test hashes+11patches stable; all625old files unchanged. New6files
-are product2, fixedLinuxQA2 and tests2. Same23skipIDs/reasons. Focused45=39control+
-6offline receipt; independent29same-source tests overlap, do not sum as unique.
-Original expectation property read after close caused initial35=34PASS1ERROR;
-same35byte-identical tests pass fixed epoch snapshot BEFORE close. Four stronger
-cases execute ORIGINAL NativeStoreStartup/start/close with actual in-memorySQLite
-and explicit constructor/cold/mount doubles, verify reverse3close before release.
-Peer actual original property reproduced00129=28PASS1ERROR; same29driver on002PASS.
-Peer fixture mistakes separately archived, not called product findings.
+Fresh full0023638=3615PASS23SKIP0ERROR0FAIL, runnerexit0; request32fe6001...000016.
+634source/config/test files and11patches stable before/after/current. Same23skip
+IDs/reasons. R14719 and new8history guards are full-suite subsets. Focused126PASS;
+previous210selected evidence copied not rerun, not added to totals. Exact R147
+five files unchanged across integration and history maintenance.
 
-ACTUAL ordinary-Linux5fresh Python3.12 -I -B negative processes: missing/malformed/
-extraenv/foreignPID/unconfined well-shaped transfer all fixedtargetexit2, validator
-exit0. No product/OS methods patched. Explicit runpy wrapper only enables audit
-before fixed entrypoint. No profile creation/lease/mount read/SQL/nativework/network
-attempt. Unconfined actual supplementary group and NNP0 observed, not fabricated
-kernel failure. Namespaces/mount table unchanged; owned temp transport removed.
-Source/loaded module hashes exact. This is NEGATIVE behavior, NOT positive kernel
-confinement or isolated native startup. Unit kernel/exec boundaries are doubled.
+First full0013630=3587PASS23SKIP20FAIL0ERROR exit1 retained. All20 were old
+experiment-source digest assertions, not observed current behavior failures.
+Oldexpected digests/results/native evidence remain unchanged. Exact nine named
+31e0c54 source/test snapshots plus matching expectedhash resolve prior proof;
+unknown/current generations still read current files. Negative tests reject bad
+archive/path/digest. This does NOT turn old kernel success into new acceptance.
+Nine prior files changed (3product,6test/history),622of631old files unchanged;
+3new test/helper files. No native source/manifest/11patch changes.
 
-### Remaining acceptance
+### Limits and next step
 
-New code NOT installed in privileged lab. Existing supervised authorized dedicated
-volume child must call this exact path with complete current source/dependency
-exports. First positive real projected readiness/open/close; then actual native
-finite normal/error/replay/newwork/normalclose plus hostfile/socket/FD/reentry
-canaries. No inherited F126prepared-only proof. Prior denied root/bootstrap/mount/
-cleanup actions are NOT retried by this change. HTTP, crashes/powerloss, realmodel/
-tools/memory/budgets remain separate. No fake dataclass or JSON grants permission.
-
-### Custody / publication
-
-Main currently d304a57, no source-lock/native changes. Installedeb75627 and optional
-d151 clean; root33dirtyuserfiles/status preserved. This turn normal-user negative
-experiment only, no root/kernel/install/provider/service action. Full completed;
-static and selected implementation commit follow. If publishing: bounded outgoing
-scan then sameSHA CI before ordinaryFF main, never force/squash or hidden deployment.
-Do not replay accepted tests merely because a response is interrupted.
+No actual Landlock/kernel/WSL/namespace/mount/service/provider experiment this turn.
+Current tests use declared syscall/file adapters; real post-Landlock observer and
+exec/start/close remains separate NOT RUN. Previous denied root/bootstrap/cleanup
+commands are not retried. No deployed Hermes change. M1/M2/full isolation not
+claimed. Main moves only after explicit publication of exact tested SHA and its
+own CI success; do not infer runtime deployment from Git merge.
 
 ### Records
 
-Docs/D3B-PROJECTED-LAUNCH-L145A8.md.
-Evidence/d3b-projected-launch-l145a8/: baseline,candidate001/002,unit001/002/003,
-focused45,receiver-refusal001 source+rawresults,independent-l145c8/provenance,
-source-custody,full001 result/rawlog/source+patch manifests,summary,protected-state.
-All current native/full jobs terminal. Read liveHEAD for final tested commit.
+Report docs/D3B-SELF-IDENTITY-R150A1.md; evidence/d3b-self-identity-r150a1 includes
+originalR147 patch/provenance, integration, old immutable source archives,
+full001FAIL, focused126PASS, full002PASS source/patch/logs, summary/protected-state.
+Old evidence data files unchanged. Local static and selected commit follow.
+All final full files present; read actual tool terminal receipt before claiming
+command delivery after interruption. Never rerun unknown effects blindly.

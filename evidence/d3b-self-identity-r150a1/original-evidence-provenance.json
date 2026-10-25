@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-25T18:04:16.201105+03:00",
+  "records": {
+    "summary.json": {
+      "source": "scratch/r147-self-identity-a9/evidence/summary.json",
+      "sha256": "0b02f676160d1bd14050363b2b1801fdaf1271b8eaccd94a02855099e2a20e9b"
+    },
+    "compatibility.json": {
+      "source": "scratch/r147-self-identity-a9/evidence/compatibility.json",
+      "sha256": "973a00384785add615093acdb034477878da5d189300f55befdf94384c0f8345"
+    },
+    "compatibility.txt": {
+      "source": "scratch/r147-self-identity-a9/evidence/compatibility.txt",
+      "sha256": "708c47b3b59a021c7eebdebaef11b2dc2748b088a2fb982f9b1f006f76846d7e"
+    },
+    "red-green.json": {
+      "source": "scratch/r147-self-identity-a9/evidence/red-green.json",
+      "sha256": "42baa4255e391fccc1701a06fce76030868c41e2e9d165b3a76b8e5eef1d811a"
+    },
+    "red-final.txt": {
+      "source": "scratch/r147-self-identity-a9/evidence/red-final.txt",
+      "sha256": "b2ac8f76174654c5d181d5de4acac75fd36795862027a516526c356140abf2d8"
+    },
+    "green-final.txt": {
+      "source": "scratch/r147-self-identity-a9/evidence/green-final.txt",
+      "sha256": "8ddce5ace5f41c1fd34ce73410479fc73c89b5f08d9c70e67c0e7794cd642114"
+    },
+    "candidate.json": {
+      "source": "scratch/r147-self-identity-a9/evidence/candidate.json",
+      "sha256": "0f2a00857e185acebde0c1823bce501c43523da4d22de041fb415dc6e56e1524"
+    },
+    "source-custody.json": {
+      "source": "scratch/r147-self-identity-a9/evidence/source-custody.json",
+      "sha256": "a821c694e8da2254dc952ce51f55d68194d326419031e382bfe7b302f5545d30"
+    }
+  },
+  "copiedNotReexecuted": true,
+  "noKernelAcceptanceImplied": true
+}

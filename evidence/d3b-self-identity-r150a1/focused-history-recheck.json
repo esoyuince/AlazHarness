@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-25T18:13:18.407544+03:00",
+  "result": "PASS",
+  "total": 126,
+  "passed": 126,
+  "skipped": 0,
+  "errors": 0,
+  "failures": 0,
+  "modules": [
+    "test_canonical_receipt_c119v1",
+    "test_confined_consumer_receipt_f126c1",
+    "test_confined_http_receipt_f111e274",
+    "test_http_readiness_receipt_h110e",
+    "test_integrated_profile_metadata_q104e",
+    "test_linux_runtime_receipt_l125p1",
+    "test_live_store_gate_receipt_l106e",
+    "test_native_layout_receipt_l106r",
+    "test_native_profile_admission_receipt",
+    "test_preopen_receipt_p108e",
+    "test_projected_launch_receipt_l145a8",
+    "test_retained_projection_receipt_p142c6",
+    "test_store_startup_receipt_a109",
+    "test_three_projection_receipt_t114r6a",
+    "test_three_store_receipt_l113f6",
+    "test_self_identity_r147",
+    "test_self_identity_history_r150a1"
+  ],
+  "errorIds": [],
+  "failureIds": [],
+  "exitCode": 0,
+  "newHistoryGuardMethods": 8,
+  "kernelRun": false
+}

@@ -95,7 +95,7 @@ def launch(value, filesystem, binding, record, *, scratch, instance_id):
         handoff._home(path)
         require(any(PurePosixPath(path).is_relative_to(root) for root in fs['readonly']),
                 'projected_entry_not_readonly')
-    projected=state.enter(view,fs,binding,observe_self_mount=True,
+    projected=state.enter(view,fs,binding,observe_self_mount=True,observe_self_identity=True,
                           profile_layout=state.NATIVE_RETAINED_LAYOUT,
                           retained_profile=record.retained)
     wire=handoff.encode_projected(projected,record.state,record.response)

@@ -1,0 +1,42 @@
+{
+  "base": "31e0c54c530151bd25ebc43f617a853bb1736412",
+  "sources": {
+    "packages/claw-hermes/credential_guard.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-packages__claw-hermes__credential_guard.py.txt",
+      "sha256": "5bd669d0c5b9a3bb995cc933ab58a8a185f31e4bbec59d08683c2edb776dbe2b"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-packages__claw-hermes__gateway_state_projection.py.txt",
+      "sha256": "ddcca9ca9176fd26810fd90a50de207aef7896693106efd7798cee735604065c"
+    },
+    "packages/claw-hermes/gateway_retained_launch.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-packages__claw-hermes__gateway_retained_launch.py.txt",
+      "sha256": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00"
+    },
+    "tests/test_projected_launch_l145a8.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-tests__test_projected_launch_l145a8.py.txt",
+      "sha256": "6f213bcaac3d11fb7da82a804397a18ce7381b32dd2247fbcf0566b878c1b83a"
+    },
+    "tests/historical_projection_p142c6.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-tests__historical_projection_p142c6.py.txt",
+      "sha256": "7a302f5b5cf65c55ee5e2aab9102c8432e9790c3d91a571382029e6ee5f62b8f"
+    },
+    "tests/test_integrated_profile_metadata_q104e.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-tests__test_integrated_profile_metadata_q104e.py.txt",
+      "sha256": "83f941027078e06fc878287d94f3509cfaa114197a77ccc501993283a011d5b1"
+    },
+    "tests/test_native_profile_admission_receipt.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-tests__test_native_profile_admission_receipt.py.txt",
+      "sha256": "f786dfbcbbfffd45b7b45a87237b59a641f5fbc657cfa72d79c17ff02b4e860d"
+    },
+    "tests/test_projected_launch_receipt_l145a8.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-tests__test_projected_launch_receipt_l145a8.py.txt",
+      "sha256": "08f7b75e41f2bad59c48ce0563afb22e66996a0d16697abfc2ad849f43f775e4"
+    },
+    "tests/test_retained_projection_receipt_p142c6.py": {
+      "path": "evidence/d3b-self-identity-r150a1/base-tests__test_retained_projection_receipt_p142c6.py.txt",
+      "sha256": "2d54296667b1370920a6af83e22f0b6e38c4b47a8bf95b75621a0983f9540429"
+    }
+  },
+  "purpose": "exact historical experiment source, never current runtime evidence"
+}

@@ -1,3 +1,4 @@
+from historical_self_identity_r150a1 import source_path, source_hash
 """Historical integration proof plus still-current unchanged metadata guard."""
 import hashlib
 import json
@@ -13,7 +14,7 @@ class IntegratedProfileSource(unittest.TestCase):
         for path,pin in files.items():
             with self.subTest(path=path):
                 source=(ROOT/'evidence/d3b-native-layout-l106r/gateway_state_projection.before.py.txt'
-                        if path=='packages/claw-hermes/gateway_state_projection.py' else ROOT/path)
+                        if path=='packages/claw-hermes/gateway_state_projection.py' else source_path(ROOT,path,pin['sha256']))
                 self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),pin['sha256'])
                 self.assertEqual(source.read_bytes(),(Q/pin['snapshot']).read_bytes())
     def test_distinct_native_trials_share_actual_guard_source(self):
@@ -21,7 +22,7 @@ class IntegratedProfileSource(unittest.TestCase):
         profile=json.loads(json.loads((F/'native-002-stdout.txt').read_bytes())['nativeStdout'])
         self.assertEqual(independent['result'],'PASS_SCOPED_METADATA_INHERITANCE')
         self.assertEqual(profile['result'],'PASS_SCOPED_NATIVE_PROFILE_ADMISSION')
-        digest=hashlib.sha256((ROOT/'packages/claw-hermes/credential_guard.py').read_bytes()).hexdigest()
+        digest=source_hash(ROOT,'packages/claw-hermes/credential_guard.py',independent['candidateSha256'])
         self.assertEqual(independent['candidateSha256'],digest)
         self.assertEqual(profile['sourceSha256']['packages/claw-hermes/credential_guard.py'],digest)
         self.assertIs(independent['actualNativeProfileTested'],False)

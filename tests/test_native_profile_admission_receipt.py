@@ -1,3 +1,4 @@
+from historical_self_identity_r150a1 import source_path
 """Historical F104X proof; changed projection is pinned to its original bytes."""
 import hashlib
 import json
@@ -27,7 +28,7 @@ class NativeProfileAdmissionReceipt(unittest.TestCase):
             if name.startswith(('packages/','scripts/','tests/')):
                 with self.subTest(source=name):
                     source=(ROOT/'evidence/d3b-native-layout-l106r/gateway_state_projection.before.py.txt'
-                            if name=='packages/claw-hermes/gateway_state_projection.py' else ROOT/name)
+                            if name=='packages/claw-hermes/gateway_state_projection.py' else source_path(ROOT,name,want))
                     self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),want)
     def test_exact_native_dependency_pin_and_each_target_imports(self):
         prior=json.loads((ROOT/'evidence/d3b-profile-lease-l99d/native-dependency-inventory.json').read_text())
