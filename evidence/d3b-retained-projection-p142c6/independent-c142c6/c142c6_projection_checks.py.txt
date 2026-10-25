@@ -1,0 +1,147 @@
+"""Independent candidate checks; actual mapping, explicit OS/kernel test doubles."""
+from pathlib import Path,PurePosixPath
+from contextlib import ExitStack
+from dataclasses import asdict,replace
+import copy,json,os,sys,unittest
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'));sys.path.insert(0,str(ROOT/'tests'))
+import test_gateway_state_projection as old
+import gateway_state_projection as p
+import gateway_retained_projection as r
+import gateway_retained_profile as receipt
+
+class IndependentMapping(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close)
+        if sys.platform=='win32':
+            self.stack.enter_context(patch.object(receipt,'Path',PurePosixPath))
+            self.stack.enter_context(patch.object(r.os,'makedev',lambda major,minor:major*256+minor,create=True))
+        self.b=old.binding();self.principal=copy.deepcopy(old.P);d=os.makedev(7,self.b.loop_number)
+        self.receipt=receipt.RetainedProfileExpectation(receipt.FEATURE,'/srv/test/volume/profile',(d,12),((d,21),(d,22),(d,23)),4,'owner-four','c'*64)
+        self.mapping=r.RetainedProjection(self.b,self.receipt,self.principal)
+        self.snapshot={'profile':(d,12),'state.db':(d,21),'runs_idempotency.db':(d,22),'response_store.db':(d,23)}
+    def test_host_then_target_preserves_every_original_value(self):
+        before=asdict(self.receipt)
+        with patch.object(r.retained.layout,'inspect_profile',return_value=self.snapshot) as inspect:
+            a,host=r.inspect_view(self.mapping,self.b,self.principal,view='host')
+            b,target=r.inspect_view(self.mapping,self.b,self.principal,view='target')
+        self.assertEqual(asdict(self.receipt),before);self.assertEqual(asdict(host),before)
+        self.assertEqual(asdict(target),{**before,'home':p.TARGET});self.assertEqual(a,b)
+        self.assertEqual([str(c.args[0]).replace('\\','/') for c in inspect.call_args_list],['/srv/test/volume/profile',p.TARGET])
+    def test_after_same_volume_object_mutation_even_valid_shape_is_refused(self):
+        object.__setattr__(self.b,'fence_sha256','d'*64)
+        with patch.object(r.retained.layout,'inspect_profile') as inspect,self.assertRaises(p.StateProjectionRejected):r.inspect_view(self.mapping,self.b,self.principal,view='host')
+        inspect.assert_not_called()
+    def test_receipt_home_changed_to_other_allowed_home_is_still_detected(self):
+        object.__setattr__(self.receipt,'home',p.TARGET)
+        with self.assertRaises(p.StateProjectionRejected):r.validate(self.mapping,self.b,self.principal)
+    def test_principal_extra_field_change_not_only_uid_is_detected(self):
+        candidate={**self.principal,'hostUserNamespace':'user:[999]'}
+        with self.assertRaises(p.StateProjectionRejected):r.validate(self.mapping,self.b,candidate)
+    def test_original_principal_mutation_not_hidden_by_clean_current_copy(self):
+        clean=copy.deepcopy(self.principal);self.principal['brokerUid']=99999
+        with self.assertRaises(p.StateProjectionRejected):r.validate(self.mapping,self.b,clean)
+    def test_invalid_view_rejects_before_file_read(self):
+        for v in ('/tmp/alias','HOST','host/../target',None,True):
+            with self.subTest(view=v),patch.object(r.retained.layout,'inspect_profile') as inspect,self.assertRaises(p.StateProjectionRejected):r.inspect_view(self.mapping,self.b,self.principal,view=v)
+            inspect.assert_not_called()
+    def test_same_content_foreign_binding_not_accepted(self):
+        with self.assertRaises(p.StateProjectionRejected):r.validate(self.mapping,replace(self.b),self.principal)
+    def test_subordinate_snapshot_same_parent_wrong_third_store_refused(self):
+        wrong={**self.snapshot,'response_store.db':(self.snapshot['response_store.db'][0],99)}
+        with patch.object(r.retained.layout,'inspect_profile',return_value=wrong),self.assertRaises(p.StateProjectionRejected):r.inspect_view(self.mapping,self.b,self.principal,view='target')
+    def test_mutation_during_actual_layout_return_rechecked(self):
+        def change(*args,**kwargs):
+            self.principal['gatewayUid']+=1;return self.snapshot
+        with patch.object(r.retained.layout,'inspect_profile',side_effect=change),self.assertRaises(p.StateProjectionRejected):r.inspect_view(self.mapping,self.b,copy.deepcopy(self.principal),view='target')
+    def test_auxiliary_failure_never_returns_target_receipt(self):
+        with patch.object(r.retained.layout,'inspect_profile',side_effect=receipt.layout.NativeLayoutRejected('retained_discovery_changed')),self.assertRaises(receipt.layout.NativeLayoutRejected):r.inspect_view(self.mapping,self.b,self.principal,view='target')
+    def test_unselected_mapping_cannot_reach_live_actor(self):
+        for v in (p.MINIMAL_LAYOUT,p.NATIVE_PREPARED_LAYOUT,p.NATIVE_RESPONSE_LAYOUT,p.NATIVE_STORE_LAYOUT):
+            with self.subTest(layout=v),patch.object(p.supervisor,'actor') as actor,self.assertRaises(p.StateProjectionRejected):p.inspect_volume(self.b,self.principal,profile_layout=v,retained_projection=self.mapping)
+            actor.assert_not_called()
+
+class IndependentEntry(unittest.TestCase):
+    def setUp(self):
+        old.Sequence.setUp(self)
+        if sys.platform=='win32':
+            self.stack.enter_context(patch.object(receipt,'Path',PurePosixPath))
+            self.stack.enter_context(patch.object(r.os,'makedev',lambda major,minor:major*256+minor,create=True))
+        d=os.makedev(7,self.b.loop_number)
+        self.r=receipt.RetainedProfileExpectation(receipt.FEATURE,p.TARGET,(d,12),((d,21),(d,22),(d,23)),1,'owner','a'*64)
+        self.inspect=self.stack.enter_context(patch.object(r,'inspect_view',return_value=(self.observed,self.r)))
+    def enter(self):return p.enter(old.V,old.FS,self.b,profile_layout=p.NATIVE_RETAINED_LAYOUT,retained_profile=self.r)
+    def test_only_complete_isolation_return_hands_back_receipt(self):
+        out=self.enter();self.assertIs(out['retainedProfile'],self.r);self.assertTrue(out['retainedProjectionVerified'])
+        self.assertEqual(self.inspect.call_count,2);self.assertIn('landlock',self.events)
+        for key in ('nativeHermesStoresOpened','realHermesGatewayTested','fullD3BAccepted'):self.assertFalse(out[key])
+    def test_child_database_changed_before_drop_refuses(self):
+        self.inspect.return_value=({**self.observed,'state.db':(999,2)},self.r)
+        with self.assertRaisesRegex(p.StateProjectionRejected,'target_changed'):self.enter()
+        self.drop.assert_not_called();self.guard.assert_not_called()
+    def test_change_after_landlock_never_hands_off_receipt(self):
+        self.inspect.side_effect=[(self.observed,self.r),({**self.observed,'cache/tool_discovery_cache.json':(999,7)},self.r)]
+        with self.assertRaises(p.StateProjectionRejected):self.enter()
+        self.guard.assert_called_once();self.assertEqual(self.inspect.call_count,2)
+    def test_interrupt_after_drop_does_not_return_handoff(self):
+        self.guard.side_effect=KeyboardInterrupt('explicit unit interruption')
+        with self.assertRaises(KeyboardInterrupt):self.enter()
+        self.assertEqual(self.inspect.call_count,1)
+
+import test_gateway_store_startup as existing_startup
+
+class IndependentStartupHandoff(unittest.TestCase):
+    setUpBase=existing_startup.Lifecycle.setUp
+    mark=existing_startup.Lifecycle.mark
+    make_store=existing_startup.Lifecycle.make_store
+    def setUp(self):
+        self.setUpBase()
+        if sys.platform=='win32':
+            self.stack.enter_context(patch.object(receipt,'Path',PurePosixPath))
+            self.stack.enter_context(patch.object(r.os,'makedev',lambda major,minor:major*256+minor,create=True))
+        self.volume=old.binding();d=os.makedev(7,self.volume.loop_number)
+        self.original=receipt.RetainedProfileExpectation(receipt.FEATURE,'/srv/test/volume/profile',(d,12),((d,21),(d,22),(d,23)),4,'prior-instance','c'*64)
+        mapped=r.RetainedProjection(self.volume,self.original,copy.deepcopy(old.P))
+        snapshot={'profile':(d,12),'state.db':(d,21),'runs_idempotency.db':(d,22),'response_store.db':(d,23)}
+        with patch.object(r.retained.layout,'inspect_profile',return_value=snapshot):
+            _,self.target=r.inspect_view(mapped,self.volume,old.P,view='target')
+        self.expected=replace(self.expected,state_identity=(d,21),replay_identity=(d,22),epoch=4,instance_id='prior-instance')
+        s=existing_startup.s
+        self.response=s.response_preopen.PreparedResponseExpectation(s.response_preopen.NATIVE_FEATURE,s.response_preopen.SCHEMA_SHA256,(d,23))
+        self.held._home=Path(p.TARGET)
+        self.lease.reset_mock();self.layout.reset_mock();self.native.reset_mock()
+    def construct(self,record=None):
+        s=existing_startup.s
+        return s.NativeStoreStartup(self.held,self.mount,self.expected,instance_id='new-instance',response_expected=self.response,prepared_layout=True,retained_profile=self.target if record is None else record)
+    def test_mapped_target_enters_existing_owner_layout_before_cold_or_native(self):
+        s=existing_startup.s;self.layout.side_effect=ValueError('explicit stop at real owner layout boundary')
+        owner=self.construct()
+        self.assertIs(owner._retained_profile,self.target);self.assertEqual(self.original.home,'/srv/test/volume/profile')
+        with self.assertRaises(s.StoreStartupRejected):owner.start()
+        self.assertIs(self.layout.call_args.kwargs['retained'],self.target)
+        self.assertEqual(self.layout.call_args.args[0],Path(p.TARGET));self.assertEqual(self.target.home,p.TARGET)
+        self.pre.assert_not_called();self.native.assert_not_called();self.epoch.assert_not_called()
+        owner.close();self.finish.assert_not_called()
+    def test_wrong_prior_epoch_refuses_before_profile_lease_check(self):
+        with self.assertRaisesRegex(existing_startup.s.StoreStartupRejected,'retained_epoch_or_stores'):self.construct(replace(self.target,epoch=5))
+        self.lease.assert_not_called();self.native.assert_not_called();self.epoch.assert_not_called()
+    def test_wrong_previous_instance_refuses_before_profile_lease_check(self):
+        with self.assertRaisesRegex(existing_startup.s.StoreStartupRejected,'retained_epoch_or_stores'):self.construct(replace(self.target,instance_id='not-the-prior-owner'))
+        self.lease.assert_not_called();self.native.assert_not_called()
+    def test_third_database_changed_refuses_before_any_constructor(self):
+        bad=replace(self.target,database_identities=(*self.target.database_identities[:2],(self.target.home_identity[0],77)))
+        with self.assertRaisesRegex(existing_startup.s.StoreStartupRejected,'retained_epoch_or_stores'):self.construct(bad)
+        self.lease.assert_not_called();self.native.assert_not_called();self.State.assert_not_called();self.Replay.assert_not_called()
+    def test_raw_mapping_output_dictionary_is_not_startup_receipt(self):
+        with self.assertRaises(receipt.layout.NativeLayoutRejected):self.construct(asdict(self.target))
+        self.lease.assert_not_called();self.native.assert_not_called()
+    def test_correct_target_does_not_override_live_writer_block(self):
+        from types import SimpleNamespace
+        owner=self.construct();self.held._owner._writers=[SimpleNamespace(is_alive=lambda:True)]
+        try:
+            with self.assertRaisesRegex(existing_startup.s.StoreStartupRejected,'writers_active'):owner.start()
+            self.layout.assert_not_called();self.native.assert_not_called();self.epoch.assert_not_called()
+        finally:self.held._owner._writers.clear();owner.close()
+
+if __name__=='__main__':unittest.main(verbosity=2)

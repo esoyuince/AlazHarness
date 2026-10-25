@@ -1,88 +1,72 @@
 # AlazHarness - status
 
-## R140C6 RETAINED PROFILE REOPEN - SCOPED PASS / LOCAL CHECKPOINT
+## P142C6 RETAINED PROJECTION - SCOPED CONTRACT PASS / PUBLICATION NEXT
 
-Active branch alaz/d3b-retained-profile-r140c6.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-retained-profile-r140c6.
-Base508bf5a (L139 realLinux normal/error and full3464 already accepted). Read live
-GitHEAD for final local checkpoint. Main local/remote remainsf08fab0; no newpush.
-Installed nativeeb75627 unchanged. Candidate d151 source/11patches not modified.
+Active branch alaz/d3b-retained-projection-p142c6.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-retained-projection-p142c6.
+Base/main1321699. Read liveHEAD for tested implementation checkpoint. C142 is
+independentQA; P142 is single product/full/publication writer, no further role flip.
 
-### Actual same-profile reopen and fresh work
+### Implemented path
 
-Real P71C ordinaryUID23001/GID23003/Python3.12, ext4/lease/metadata/cold helper/
-SQLite/authority/finite/TurnRunner physicalthread/native settlement/cleanup real.
-Only model factory/computation/close fake. Actual normal and controlled-error
-scenarios bothPASS exit0 using exact same bundle/driver (failure flag only).
-First owner computes then closes; captures trusted receipt before caller releases.
-Same retained profile/3DBinodes/helperfiles reopen at epoch2, exact oldrequest
-returns original result+usage/ID/generation without recompute. SameIDchangedbody
-refused. NEWrequest on same session computes once at epoch2/gen2; original saved
-result remains identical. Normal secondowner retires runtime/sessions and closes3;
-registry0 before fixture cleanup, second trusted receipt captured, caller releases.
-Helper files never removed to manufacture success. Temp profile/transport removed
-only after complete lifecycle. Same Python process with TWO cold owners, NOT
-process kill/reboot/crash/powerloss. Active kernel isolation/HTTP/realLLM not accepted.
+Adds explicit NATIVE_RETAINED_LAYOUT+retained_profile pair to EXISTING projection.
+Old4layouts preserve their call paths/defaults and cannot accept a receipt by
+accident. New RetainedProjection binds exact typed VolumeBinding object plus full
+field snapshot, original typed receipt and principal snapshot; host mountpoint/
+profile and fixedTARGET=/run/alaz-state/profile are the ONLY allowed views. Same
+loop device/profileinode/3DBidentities required. Internal home-only receipt copy;
+original immutable input never rewritten. Record is trusted caller data, NOT signed
+or arbitrary-hostile-Python-safe launch authority.
 
-### Explicit bounded contract, old defaults preserved
+Original live volume/controller/cgroup/image/fence checks unchanged. Host full
+layout verified in inspect_volume, same mapping rechecked prebind/pivot, full target
+snapshot rechecked before drop and AFTER original UID/GID/seccomp/Landlock stages.
+Target retainedProfile only returned after all stages; no DB/lease/epoch/admission
+permission inferred. NativeStoreStartup unchanged, retains previous epoch/instance/
+3DBidentity/cold/schema/live checks. Separateprocess/exec JSON handoff is NOT done.
 
-New gateway_retained_profile.capture(originalClosedOwner) checks retained still-held
-caller lease, detached finite source, exact discovery cache against source-manifest
-candidates and original native AST predicate. Frozen trusted receipt binds home/
-3DBidentity/epoch/instance/nativefeature/exactcachebytes. Receipt is trusted caller
-input like existing store expectations, NOT a signature or hostile-process barrier.
-Only startup retained_profile=receipt + preparedthree mode admits empty auth.lock,
-empty cache/documents, private runtime/empty active lock and exactly entries:[],
-and bounded verified tool cache. No arbitrary config/auth/env/live entry pruning.
-Cold/prepared defaults and kernel projection allowances stay unchanged.
+### Tests and source scope
 
-Actual second-owner newwork found missing transcript repair module; retained-only
-756source manifest adds exactly immutable agent/agent_runtime_helpers.py. Default
-755finite+canonical+prepared manifests unchanged. Selected solely by trustedowner
-receipt and finite mode, current identity rechecked. No bypass/source substitution.
-Existing optional command-secret-source missing warning not enabled/hidden.
+Actual fresh full3534=3511PASS23SKIP0ERROR0FAIL, command0020 terminalexit0.620source/
+config/test and11patch hashes stable. Same23skipIDs/reasons, not rerun asLinux.
+Own42focused=36unit contracts+6offline receipts; peer21unit exact same2runtime hashes
+passed independently. Counts overlap, not63uniquecases. Kernel/mount/drop/filter/
+Landlock/startup dependency calls in these tests are explicit doubles; NO current
+native worker/kernel/Linux acceptance. Existing22projection+18prepared+18three-store
+contracts passed unchanged. Current code not inferred from oldF126513kernel proof.
 
-### Evidence and tests
+One oldF126receipt hash test failed after legitimate source change. Exact immutable
+prechange132 projection bytes archived, one named expected-digest resolver added;
+old expected digests/rawkernel results unchanged. New negatives reject unknown
+name/digest/current source. Targeted old test nowPASS; fresh full passed first full
+attempt. Product candidate001 unchanged throughout focused, peer and full tests.
 
-Normal722/error719 and independent721native import hashes equal immutabled151.
-Independent L140A6 actualLinux16bad retained startup predicates all refused before
-parentSQL/epoch, same3DBhashes, then valid reopen/replay with compute1. Same3layout
-files tested; later one-module source extension/newwork verified in producer only.
-Raw independent evidence copied with provenance; original branch fd39190 retained.
+Only oldruntime gateway_state_projection changed + newgateway_retained_projection.
+Only oldtesthelper historical_retained_r140c6 changed + newhistoryhelper/two test
+files. Other614of616baseline files unchanged; native d151/11patches/source manifests
+and installedvendoreb75627 untouched. Independent driver/rawrecords copied with
+exactprovenance; peer branch untouched. No duplicate full or native rerun.
 
-NEW full3492=3469PASS/23SKIP/0ERROR/0FAIL, command0031 exit0;616source/config/test
-hashes+11patches stable.28focused=18unit+10offline receipts are full-suite subsets,
-not28Linux runs. Same23skipIDs/reasons, not replayed as Linux.605of609prior files
-unchanged;3runtime+1historicalhelper changed,7newsource/config/test files. New runtime
-matches the exact successfulLinux executions. Local static records separately.
+### Exact remaining gate
 
-First actual restart001 failed a QA result-vs(result,usage) comparison; native tuple
-shape checked and corrected without product change. Restart002 oldreplay passed,
-newwork exposed actual missing transcript source; exact one-module selector fixed.
-Full0013490 ended2historic hash failures, not runtime/test expectation change.
-Exact3named oldsource archive resolver+negative digest tests added; old expected
-hashes/raw results retained. Fresh final full passed, no relabelled old acceptance.
+Root/WSL/kernel/service/provider/HTTP operations NOT performed here. Next current-
+source supervised launcher must carry typed retained expectation across trusted
+exec/target boundary and run actual normal/error/replay/newwork/orderedowner close
+under namespace/seccomp/Landlock with hostfile/socket/FD/reentry canaries. Historic
+F126 launcher supports oldmodes only, not automatic new dataclass serialization.
+Previous denied root/cleanup/bootstrap operations stay denied; no alternate-tool
+retry. Crossprocess receipt trust, crash/powerloss and realmodel/tool/memory/budget
+acceptance remain open. Main update would be development increment, not deployment.
 
-### Next boundary and guardrails
-
-Commit checked local source and evidence, then publish only after bounded outgoing
-review and exactSHA CI. Next actual active namespace/seccomp/Landlock plus retained
-profile projection/receipt handling, then authenticated HTTP. Separate-process
-trusted receipt handoff/crash recovery and model/tool/memory/budgets remain open.
-No root/WSLprovisioning/install/permissions/service/model/provider/remote/main write.
-Root33user dirtyfiles and native vendor preserved. All native/full commands terminal;
-local static and scoped commit completion recorded below. No background promise.
+Root33dirtyuserfile bytes/status and vendor preserved. Current main1321699; commit
+then bounded outgoing scan/exactSHA CI before any newmain promotion. All full/test
+commands terminal; localstatic/scopedcommit and publication recorded below.
 
 ### Records
 
-Docs/D3B-RETAINED-PROFILE-R140C6.md.
-Evidence/d3b-retained-profile-r140c6/: summary,source-custody, normalrestart003,
-errorrestart004, independent-l140a6/provenance, historical-source-bindings,
-firstfailures001/002, full001FAIL and full002PASS/rawlogs/source+patch manifests,
-focused28-final, protected-state, implementation-delta-review, static-final.
-Trusted source config/retained-profile-r140c6-sources.json distinct from old755.
-
-
-### Final local delivery verified
-
-Tested commit1e9648f90945853f2d96a698a8ad4e1f062d892a created by command0034 exit0; clean. Final full3492/3469PASS23SKIP0errors exit0 and staticPASS verified again,616source+11patch hashes exact. Actual normal/error same-profile cold owner reopen passed; this is same process, not crash/kernel/HTTP. Main local/remote f08fab0 unchanged, new feature not pushed. Root33dirtyfiles and clean installed/native candidate preserved. delivery.json binds tested SHA. This final docs-only checkpoint does not change executable/test sources or rerun accepted jobs. All own commands terminal at delivery.
+Docs/D3B-RETAINED-PROJECTION-P142C6.md.
+Evidence/d3b-retained-projection-p142c6/: baseline,candidate001,source-custody,
+focused42,independent-c142c6/provenance,compatibility-before,historical-proof-
+diagnosis,full001/rawlogs/result/source+patch manifests,summary,protected-state.
+New runtime helper gateway_retained_projection.py, original typed receipt contract
+and NativeStoreStartup unchanged. Unit tests are not current kernel evidence.

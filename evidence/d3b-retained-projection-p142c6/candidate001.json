@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-25T11:31:50.001549+03:00",
+  "base": "1321699198805fad1909d40053e118a624dc23f2",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_state_projection.py": "ddcca9ca9176fd26810fd90a50de207aef7896693106efd7798cee735604065c",
+    "packages/claw-hermes/gateway_retained_projection.py": "68cf4520873efc402860f4d9a9f31ee478d87e4f1b00ad7a0079aa335200ab79"
+  },
+  "scope": "exact retained mapping through existing projection sequence; no new launch/source authority",
+  "state": "CANDIDATE001_UNTESTED",
+  "onlyExistingProductFileChanged": "packages/claw-hermes/gateway_state_projection.py",
+  "oldLayoutDefaultsUnchanged": true,
+  "originalReceiptNeverMutated": true,
+  "targetReceiptOnlyReturnedAfterAllExistingConfinementStages": true
+}

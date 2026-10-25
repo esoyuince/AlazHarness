@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-25T11:39:00.793837+03:00",
+  "targetedFailurePreserved": "test_confined_consumer_receipt_f126c1.py.before.txt",
+  "reason": "current projection no longer equals source in historic prepared-only kernel run",
+  "exactPriorBase": "1321699198805fad1909d40053e118a624dc23f2",
+  "archivedSha256": "886597e1947b5fdd734c07d692582b747822c455d3ee3e05d540837064c30f6c",
+  "repair": "named exact source+expected digest resolver, no generic mismatch success",
+  "originalExpectedDigestUnchanged": true,
+  "historicalKernelNotRelabelledCurrent": true,
+  "runtimeFilesChangedByThisRepair": false
+}

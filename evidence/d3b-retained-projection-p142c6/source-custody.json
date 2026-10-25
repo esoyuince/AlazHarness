@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T11:41:09.393803+03:00",
+  "base": "1321699198805fad1909d40053e118a624dc23f2",
+  "currentSourceHashes": {
+    "packages/claw-hermes/gateway_state_projection.py": "ddcca9ca9176fd26810fd90a50de207aef7896693106efd7798cee735604065c",
+    "packages/claw-hermes/gateway_retained_projection.py": "68cf4520873efc402860f4d9a9f31ee478d87e4f1b00ad7a0079aa335200ab79",
+    "tests/test_retained_projection_p142c6.py": "2075b2d94284fa02e568eb0e56a79485be88e214a73fab904716097d69946ade",
+    "tests/historical_projection_p142c6.py": "7a302f5b5cf65c55ee5e2aab9102c8432e9790c3d91a571382029e6ee5f62b8f",
+    "tests/historical_retained_r140c6.py": "1ad080ee12c0da35bb7b26c6bdd79c2684afb89f63cfff4d7349bed182ef9c1a"
+  },
+  "independentUnitMethods": 21,
+  "ourFocusedMethods": 36,
+  "actualKernelRun": false,
+  "nativeRuntimeRun": false,
+  "oldNativeEvidenceRetainsOriginalSource": true,
+  "nativeSourceOrManifestChanged": false
+}

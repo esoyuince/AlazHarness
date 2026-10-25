@@ -1,0 +1,23 @@
+test_default_remains_minimal (test_three_store_http_projection_t114r6a.ThirdProjection.test_default_remains_minimal) ... ok
+test_native_two_store_layout_not_relabelled (test_three_store_http_projection_t114r6a.ThirdProjection.test_native_two_store_layout_not_relabelled) ... ok
+test_no_truthy_or_unknown_layout_before_io (test_three_store_http_projection_t114r6a.ThirdProjection.test_no_truthy_or_unknown_layout_before_io) ... ok
+test_valid_third_layout_reuses_canonical_confinement_sequence (test_three_store_http_projection_t114r6a.ThirdProjection.test_valid_third_layout_reuses_canonical_confinement_sequence) ... ok
+test_authenticated_work_routes_still_closed (test_three_store_http_projection_t114r6a.ThreeReadiness.test_authenticated_work_routes_still_closed) ... ok
+test_both_stores_and_response_reobserved_each_ready_request (test_three_store_http_projection_t114r6a.ThreeReadiness.test_both_stores_and_response_reobserved_each_ready_request) ... ok
+test_explicit_three_selection_probes_before_bind (test_three_store_http_projection_t114r6a.ThreeReadiness.test_explicit_three_selection_probes_before_bind) ... ok
+test_liveness_does_not_hide_or_evaluate_response (test_three_store_http_projection_t114r6a.ThreeReadiness.test_liveness_does_not_hide_or_evaluate_response) ... ok
+test_pair_failure_still_revokes_before_response_read (test_three_store_http_projection_t114r6a.ThreeReadiness.test_pair_failure_still_revokes_before_response_read) ... ok
+test_response_expectation_replaced_before_probe (test_three_store_http_projection_t114r6a.ThreeReadiness.test_response_expectation_replaced_before_probe) ... ok
+test_response_failure_permanently_revokes_even_when_fixed (test_three_store_http_projection_t114r6a.ThreeReadiness.test_response_failure_permanently_revokes_even_when_fixed) ... ok
+test_response_false_success_is_not_ready (test_three_store_http_projection_t114r6a.ThreeReadiness.test_response_false_success_is_not_ready) ... ok
+test_response_option_is_bool (test_three_store_http_projection_t114r6a.ThreeReadiness.test_response_option_is_bool) ... ok
+test_response_prebind_failure_never_constructs_http (test_three_store_http_projection_t114r6a.ThreeReadiness.test_response_prebind_failure_never_constructs_http) ... ok
+test_shutdown_revokes_before_await_and_uses_same_owner (test_three_store_http_projection_t114r6a.ThreeReadiness.test_shutdown_revokes_before_await_and_uses_same_owner) ... ok
+test_swapped_response_handle_cannot_pass_old_receipt (test_three_store_http_projection_t114r6a.ThreeReadiness.test_swapped_response_handle_cannot_pass_old_receipt) ... ok
+test_swapped_response_object_refused (test_three_store_http_projection_t114r6a.ThreeReadiness.test_swapped_response_object_refused) ... ok
+test_three_not_silently_enabled_and_default_unchanged (test_three_store_http_projection_t114r6a.ThreeReadiness.test_three_not_silently_enabled_and_default_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.344s
+
+OK

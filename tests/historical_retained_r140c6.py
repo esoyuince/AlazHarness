@@ -4,6 +4,9 @@ NAMES=frozenset('packages/claw-hermes/'+n for n in (
     'gateway_native_layout.py','gateway_store_startup.py','gateway_prepared_consumer.py'))
 
 def saved_generation_hash(root,name,expected):
+    from historical_projection_p142c6 import saved_generation_hash as prior_projection
+    prior=prior_projection(root,name,expected)
+    if prior is not None:return prior
     if name not in NAMES:return None
     folder=root/'evidence/d3b-retained-profile-r140c6'
     record=json.loads((folder/'historical-source-bindings.json').read_text(encoding='utf-8'))

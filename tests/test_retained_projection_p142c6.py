@@ -1,0 +1,259 @@
+"""Retained projection unit contracts; kernel/profile syscalls explicitly doubled.
+These tests neither mount a volume nor prove namespace/seccomp/Landlock execution.
+"""
+from contextlib import ExitStack
+from dataclasses import replace,asdict,FrozenInstanceError
+from pathlib import Path,PurePosixPath
+import inspect,json,os,sys,unittest
+from types import SimpleNamespace
+from unittest.mock import patch,Mock
+import test_gateway_state_projection as old
+p=old.p
+import gateway_retained_profile as retained
+import gateway_retained_projection as mapping
+
+DEVICE=1792
+
+def receipt(home='/srv/test/volume/profile'):
+    return retained.RetainedProfileExpectation(retained.FEATURE,home,(DEVICE,12),
+        ((DEVICE,21),(DEVICE,22),(DEVICE,23)),1,'previous-native-owner','d'*64)
+
+def snapshot():
+    return {'profile':(DEVICE,12,0o40700,23001,23003,2,4096,100,100),
+            **{name:(DEVICE,ino,0o100600,23001,23003,1,8192,100,100)
+               for name,ino in (('state.db',21),('runs_idempotency.db',22),('response_store.db',23))}}
+
+def posix_doubles(case):
+    case.stack.enter_context(patch.object(retained,'Path',PurePosixPath))
+    case.stack.enter_context(patch.object(mapping.os,'makedev',side_effect=lambda major,minor:DEVICE+minor,create=True))
+
+class MappingContract(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close);posix_doubles(self)
+        self.b=old.binding();self.principal=dict(old.P);self.r=receipt()
+    def bound(self):return mapping.RetainedProjection(self.b,self.r,self.principal)
+    def test_creation_is_immutable_and_does_not_read_profile(self):
+        with patch.object(retained.layout,'inspect_profile') as read:m=self.bound()
+        read.assert_not_called();self.assertIs(m.receipt,self.r);self.assertIs(m.volume,self.b)
+        with self.assertRaises(FrozenInstanceError):m.volume=old.binding()
+    def test_home_may_be_original_fixed_target_without_mutation(self):
+        self.r=receipt(p.TARGET);m=self.bound();before=asdict(self.r)
+        with patch.object(retained.layout,'inspect_profile',return_value=snapshot()) as read:
+            _,host=mapping.inspect_view(m,self.b,self.principal,view='host')
+        self.assertEqual(host.home,'/srv/test/volume/profile');self.assertEqual(asdict(self.r),before)
+        self.assertEqual(read.call_args.kwargs['retained'],host)
+    def test_host_to_target_changes_only_home(self):
+        m=self.bound();before=asdict(self.r)
+        with patch.object(retained.layout,'inspect_profile',return_value=snapshot()) as read:
+            result,target=mapping.inspect_view(m,self.b,self.principal,view='target')
+        self.assertEqual(result,snapshot());self.assertEqual(target,replace(self.r,home=p.TARGET))
+        self.assertEqual(asdict(self.r),before);self.assertIsNot(target,self.r)
+        self.assertEqual(read.call_args.args[0].as_posix(),p.TARGET)
+        self.assertEqual(read.call_args.kwargs,dict(uid=23001,gid=23003,device=DEVICE,include_response=True,include_prepared=True,retained=target))
+    def test_unrelated_or_aliased_home_refused(self):
+        for home in ('/tmp/profile','/run/alaz-state/profile/../other','/srv/test//volume/profile','/srv/test/volume/./profile','/srv/test/volume/profile/','//run/alaz-state/profile'):
+            with self.subTest(home=home),self.assertRaises((p.StateProjectionRejected,retained.layout.NativeLayoutRejected)):
+                mapping.RetainedProjection(self.b,receipt(home),self.principal)
+    def test_dict_or_subclass_is_not_typed_volume(self):
+        with self.assertRaises(p.StateProjectionRejected):mapping.RetainedProjection(asdict(self.b),self.r,self.principal)
+        class Other(p.VolumeBinding):pass
+        with self.assertRaises(p.StateProjectionRejected):mapping.RetainedProjection(Other(**asdict(self.b)),self.r,self.principal)
+    def test_equal_reconstructed_volume_cannot_replace_original_reference(self):
+        m=self.bound()
+        with self.assertRaisesRegex(p.StateProjectionRejected,'binding_changed'):mapping.validate(m,replace(self.b),self.principal)
+    def test_changed_original_receipt_is_not_an_accepted_receipt(self):
+        m=self.bound();object.__setattr__(self.r,'epoch',2)
+        with self.assertRaisesRegex(p.StateProjectionRejected,'receipt_or_volume_changed'):mapping.validate(m,self.b,self.principal)
+    def test_changed_same_volume_object_is_not_hidden_by_identity(self):
+        m=self.bound();object.__setattr__(self.b,'fence_sha256','e'*64)
+        with self.assertRaisesRegex(p.StateProjectionRejected,'receipt_or_volume_changed'):mapping.validate(m,self.b,self.principal)
+    def test_all_three_store_devices_must_match_volume(self):
+        for index in range(3):
+            ids=list(self.r.database_identities);ids[index]=(DEVICE+1,ids[index][1]);changed=replace(self.r,database_identities=tuple(ids))
+            with self.subTest(index=index),self.assertRaisesRegex(p.StateProjectionRejected,'volume_identity'):
+                mapping.RetainedProjection(self.b,changed,self.principal)
+    def test_profile_inode_and_loop_device_bound(self):
+        for binding in (replace(self.b,profile_inode=999),replace(self.b,loop_number=1)):
+            with self.assertRaisesRegex(p.StateProjectionRejected,'volume_identity'):mapping.RetainedProjection(binding,self.r,self.principal)
+    def test_principal_bool_or_missing_identity_refused(self):
+        for values in ({},dict(self.principal,gatewayUid=True),dict(self.principal,socketGroupGid=0)):
+            with self.assertRaisesRegex(p.StateProjectionRejected,'principal'):mapping.RetainedProjection(self.b,self.r,values)
+    def test_current_and_original_principal_mutations_refused(self):
+        m=self.bound()
+        with self.assertRaisesRegex(p.StateProjectionRejected,'principal_changed'):mapping.validate(m,self.b,dict(self.principal,hostUserNamespace='user:[2]'))
+        self.principal['brokerUid']=999
+        with self.assertRaisesRegex(p.StateProjectionRejected,'principal_changed'):mapping.validate(m,self.b,self.principal)
+    def test_arbitrary_view_refuses_before_layout_read(self):
+        m=self.bound()
+        for view in ('/srv/test/volume/profile','source','HOST',True,None):
+            with patch.object(retained.layout,'inspect_profile') as read,self.assertRaisesRegex(p.StateProjectionRejected,'projection_view'):
+                mapping.inspect_view(m,self.b,self.principal,view=view)
+            read.assert_not_called()
+    def test_changed_store_after_view_read_refused(self):
+        m=self.bound();out=snapshot();out['response_store.db']=(DEVICE,999,*out['response_store.db'][2:])
+        with patch.object(retained.layout,'inspect_profile',return_value=out),self.assertRaisesRegex(p.StateProjectionRejected,'snapshot_identity'):
+            mapping.inspect_view(m,self.b,self.principal,view='target')
+    def test_changed_mapping_during_layout_read_refused(self):
+        m=self.bound()
+        def read(*a,**kw):self.principal['socketGroupGid']+=1;return snapshot()
+        with patch.object(retained.layout,'inspect_profile',side_effect=read),self.assertRaisesRegex(p.StateProjectionRejected,'principal_changed'):
+            mapping.inspect_view(m,self.b,self.principal,view='host')
+    def test_original_layout_refusal_not_swallowed(self):
+        m=self.bound()
+        with patch.object(retained.layout,'inspect_profile',side_effect=retained.layout.NativeLayoutRejected('retained_active_sessions_not_empty')), self.assertRaisesRegex(retained.layout.NativeLayoutRejected,'active_sessions'):
+            mapping.inspect_view(m,self.b,self.principal,view='target')
+
+class ProjectionSequence(unittest.TestCase):
+    def setUp(self):
+        old.Sequence.setUp(self);posix_doubles(self)
+        self.r=receipt();self.observed=snapshot();self.meta.return_value=self.observed['profile']
+        def volume(*a,**kw):self.events.append('volume');return self.observed
+        self.volume.side_effect=volume;self.target_reads=0
+        def target(m,b,principal,*,view):
+            self.assertEqual(view,'target');self.target_reads+=1;self.events.append('target'+str(self.target_reads))
+            mapping.validate(m,b,principal)
+            return self.observed,replace(m.receipt,home=p.TARGET)
+        self.target=self.stack.enter_context(patch.object(mapping,'inspect_view',side_effect=target))
+    def enter(self,**kw):return p.enter(old.V,old.FS,self.b,profile_layout=p.NATIVE_RETAINED_LAYOUT,retained_profile=self.r,**kw)
+    def test_target_handoff_only_after_drop_filter_and_landlock(self):
+        original=asdict(self.r);out=self.enter(observe_self_mount=True)
+        self.assertEqual(self.events,['inspect','volume','abi','loadfilter','closefds','unshare','loopback','project','target1','umask','drop','verifyids','filter','closefds','landlock','target2'])
+        self.assertEqual(out['retainedProfile'],replace(self.r,home=p.TARGET));self.assertEqual(asdict(self.r),original)
+        self.assertTrue(out['retainedProjectionVerified']);self.assertFalse(out['profileOwnershipAcquired']);self.assertFalse(out['nativeHermesStoresOpened']);self.assertFalse(out['fullD3BAccepted'])
+        self.assertIs(self.volume.call_args.kwargs['retained_projection'].receipt,self.r)
+    def test_new_selector_requires_receipt_before_any_probe(self):
+        with self.assertRaisesRegex(p.StateProjectionRejected,'retained_selection'):
+            p.enter(old.V,old.FS,self.b,profile_layout=p.NATIVE_RETAINED_LAYOUT)
+        self.inspector.assert_not_called();self.volume.assert_not_called()
+    def test_old_four_layouts_do_not_implicitly_accept_receipt(self):
+        for layout in (p.MINIMAL_LAYOUT,p.NATIVE_STORE_LAYOUT,p.NATIVE_RESPONSE_LAYOUT,p.NATIVE_PREPARED_LAYOUT):
+            with self.subTest(layout=layout),self.assertRaisesRegex(p.StateProjectionRejected,'retained_selection'):
+                p.enter(old.V,old.FS,self.b,profile_layout=layout,retained_profile=self.r)
+        self.inspector.assert_not_called();self.volume.assert_not_called()
+    def test_invalid_receipt_before_any_kernel_stage(self):
+        for r in (False,{},replace(self.r,epoch=True)):
+            with self.assertRaises((p.StateProjectionRejected,retained.layout.NativeLayoutRejected)):
+                p.enter(old.V,old.FS,self.b,profile_layout=p.NATIVE_RETAINED_LAYOUT,retained_profile=r)
+        self.inspector.assert_not_called();self.drop.assert_not_called()
+    def test_wrong_host_before_volume_or_unshare(self):
+        self.r=receipt('/tmp/unrelated')
+        with self.assertRaisesRegex(p.StateProjectionRejected,'receipt_home'):self.enter()
+        self.volume.assert_not_called();self.mounts.unshare.assert_not_called()
+    def test_target_mismatch_before_drop(self):
+        wrong={**self.observed,'state.db':(DEVICE,999,*self.observed['state.db'][2:])}
+        self.target.side_effect=lambda *a,**k:(wrong,replace(self.r,home=p.TARGET))
+        with self.assertRaisesRegex(p.StateProjectionRejected,'target_changed'):self.enter()
+        self.drop.assert_not_called();self.guard.assert_not_called()
+    def test_target_changed_after_guard_never_returns_success(self):
+        self.target.side_effect=[(self.observed,replace(self.r,home=p.TARGET)),({},replace(self.r,home=p.TARGET))]
+        with self.assertRaisesRegex(p.StateProjectionRejected,'target_changed'):self.enter()
+        self.guard.assert_called_once();self.assertEqual(self.target.call_count,2)
+    def test_filter_failure_prevents_final_receipt_read(self):
+        self.filterstatus.return_value={'Seccomp':'0'}
+        with self.assertRaisesRegex(p.StateProjectionRejected,'filter_missing'):self.enter()
+        self.assertEqual(self.target.call_count,1);self.guard.assert_not_called()
+    def test_landlock_failure_prevents_handoff(self):
+        self.guard.side_effect=p.gp.fs_guard.GuardRejected('explicit test failure')
+        with self.assertRaises(p.gp.fs_guard.GuardRejected):self.enter()
+        self.assertEqual(self.target.call_count,1)
+    def test_old_minimal_output_and_sequence_still_exact(self):
+        out=p.enter(old.V,old.FS,self.b)
+        self.assertNotIn('retainedProfile',out);self.assertNotIn('retainedProjectionVerified',out)
+        self.target.assert_not_called();self.assertEqual(self.volume.call_args.kwargs,{})
+        self.assertEqual(inspect.signature(p.enter).parameters['profile_layout'].default,p.MINIMAL_LAYOUT)
+        self.assertIsNone(inspect.signature(p.enter).parameters['retained_profile'].default)
+
+class PivotBarrier(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close);posix_doubles(self)
+        self.b=old.binding();self.r=receipt();self.principal=dict(old.P);self.mapping=mapping.RetainedProjection(self.b,self.r,self.principal)
+        self.stack.enter_context(patch.object(p.gp.Mounts,'__init__',return_value=None))
+        self.mounts=p._ProfileMounts(self.b,self.principal,snapshot(),p.NATIVE_RETAINED_LAYOUT,self.mapping)
+        self.inspect=self.stack.enter_context(patch.object(p,'inspect_volume',return_value=snapshot()))
+        self.mkdir=self.stack.enter_context(patch.object(Path,'mkdir'))
+        self.stack.enter_context(patch.object(Path,'lstat',return_value=object()))
+        self.meta=self.stack.enter_context(patch.object(p,'_metadata',return_value=snapshot()['profile']))
+        self.stack.enter_context(patch.object(p.os,'statvfs',return_value=SimpleNamespace(f_flag=p.SAFE_FLAGS),create=True))
+        self.mounts.mount=Mock();self.pivot=self.stack.enter_context(patch.object(p.gp.Mounts,'pivot'))
+    def test_prebind_rechecks_same_mapping_and_full_volume(self):
+        self.mounts.pivot(Path('/temporary-root'))
+        self.assertEqual(self.inspect.call_args.kwargs,dict(joined_namespace=False,profile_layout=p.NATIVE_RETAINED_LAYOUT,retained_projection=self.mapping))
+        self.assertEqual(self.mounts.mount.call_count,2);self.pivot.assert_called_once();self.assertTrue(self.mounts.projected)
+    def test_changed_database_snapshot_stops_before_mount(self):
+        self.inspect.return_value={**snapshot(),'runs_idempotency.db':(DEVICE,999)}
+        with self.assertRaisesRegex(p.StateProjectionRejected,'profile_changed'):self.mounts.pivot(Path('/temporary-root'))
+        self.mkdir.assert_not_called();self.mounts.mount.assert_not_called();self.pivot.assert_not_called()
+    def test_bind_identity_change_stops_before_root_switch(self):
+        self.meta.return_value=(999,)*9
+        with self.assertRaisesRegex(p.StateProjectionRejected,'bound_identity'):self.mounts.pivot(Path('/temporary-root'))
+        self.pivot.assert_not_called();self.assertFalse(self.mounts.projected)
+    def test_second_pivot_not_permitted(self):
+        self.mounts.projected=True
+        with self.assertRaisesRegex(p.StateProjectionRejected,'once'):self.mounts.pivot(Path('/temporary-root'))
+        self.inspect.assert_not_called();self.mounts.mount.assert_not_called()
+
+class OriginalStartupHandoff(unittest.TestCase):
+    def setUp(self):
+        import test_gateway_store_startup as startup_fixture
+        self.original_fixture=startup_fixture
+        startup_fixture.Lifecycle.setUp(self)
+        posix_doubles(self)
+        self.startup=startup_fixture.s
+        self.held._home=Path(p.TARGET)
+        self.expected=replace(self.expected,state_identity=(DEVICE,21),replay_identity=(DEVICE,22),
+                              epoch=1,instance_id='previous-native-owner')
+        self.response=self.startup.response_preopen.PreparedResponseExpectation(
+            self.startup.response_preopen.NATIVE_FEATURE,self.startup.response_preopen.SCHEMA_SHA256,(DEVICE,23))
+        self.original=receipt()
+        self.mapping=mapping.RetainedProjection(old.binding(),self.original,dict(old.P))
+        with patch.object(retained.layout,'inspect_profile',return_value=snapshot()):
+            _,self.target_receipt=mapping.inspect_view(self.mapping,self.mapping.volume,dict(old.P),view='target')
+    def mark(self,name,value=None):return self.original_fixture.Lifecycle.mark(self,name,value)
+    def make_store(self,name):return self.original_fixture.Lifecycle.make_store(self,name)
+    def create(self,expected=None):
+        return self.startup.NativeStoreStartup(self.held,self.mount,self.expected if expected is None else expected,
+              instance_id='new-owner',response_expected=self.response,prepared_layout=True,retained_profile=self.target_receipt)
+    def test_target_receipt_is_checked_by_unchanged_original_startup(self):
+        self.layout.side_effect=ValueError('stop after layout forwarding before cold/SQLite')
+        owner=self.create()
+        with self.assertRaises(self.startup.StoreStartupRejected):owner.start()
+        self.assertIs(self.layout.call_args.kwargs['retained'],self.target_receipt)
+        self.assertEqual(self.layout.call_args.args[0].as_posix(),p.TARGET)
+        self.assertTrue(self.layout.call_args.kwargs['include_response']);self.assertTrue(self.layout.call_args.kwargs['include_prepared'])
+        self.assertFalse(owner._epoch_attempted);self.assertIsNone(owner._state);self.assertIsNone(owner._response)
+        self.pre.assert_not_called();self.native.assert_not_called();self.assertEqual(self.original.home,'/srv/test/volume/profile')
+    def test_new_projection_does_not_authorize_old_or_wrong_epoch(self):
+        self.lease.reset_mock()
+        for expected in (replace(self.expected,epoch=2),replace(self.expected,instance_id='other')):
+            with self.assertRaisesRegex(self.startup.StoreStartupRejected,'retained_epoch_or_stores'):self.create(expected)
+        self.lease.assert_not_called();self.pre.assert_not_called();self.native.assert_not_called()
+    def test_new_projection_does_not_replace_store_identity_validation(self):
+        self.lease.reset_mock()
+        with self.assertRaisesRegex(self.startup.StoreStartupRejected,'retained_epoch_or_stores'):
+            self.create(replace(self.expected,state_identity=(DEVICE,999)))
+        self.lease.assert_not_called();self.native.assert_not_called()
+    def test_direct_layout_still_rejects_wrong_home_not_an_arbitrary_alias(self):
+        m=self.mapping
+        observed=snapshot()
+        with self.assertRaisesRegex(retained.layout.NativeLayoutRejected,'profile_identity'):
+            retained.validate_snapshot(Path(p.TARGET),observed,self.original)
+        self.assertEqual(m.receipt.home,'/srv/test/volume/profile')
+
+class HistoricalProjectionBinding(unittest.TestCase):
+    def test_only_exact_archived_projection_generation_is_redirected(self):
+        import historical_projection_p142c6 as h
+        root=Path(__file__).resolve().parents[1]
+        base=json.loads((root/'evidence/d3b-retained-projection-p142c6/baseline.json').read_text(encoding='utf-8'))
+        want=base['sources'][h.NAME]
+        self.assertEqual(h.saved_generation_hash(root,h.NAME,want),want)
+        self.assertIsNone(h.saved_generation_hash(root,h.NAME,'0'*64))
+        self.assertIsNone(h.saved_generation_hash(root,'unrelated.py',want))
+    def test_new_projection_bytes_are_not_previous_kernel_acceptance(self):
+        import historical_projection_p142c6 as h
+        import hashlib
+        root=Path(__file__).resolve().parents[1]
+        base=json.loads((root/'evidence/d3b-retained-projection-p142c6/baseline.json').read_text(encoding='utf-8'))
+        current=hashlib.sha256((root/h.NAME).read_bytes()).hexdigest()
+        self.assertNotEqual(current,base['sources'][h.NAME]);self.assertIsNone(h.saved_generation_hash(root,h.NAME,current))
+
+if __name__=='__main__':unittest.main()

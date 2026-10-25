@@ -1,0 +1,23 @@
+test_default_three_store_rejects_same_new_directories (test_prepared_layout_f126c1.PreparedScaffold.test_default_three_store_rejects_same_new_directories) ... ok
+test_explicit_two_empty_directories_accepted (test_prepared_layout_f126c1.PreparedScaffold.test_explicit_two_empty_directories_accepted) ... ok
+test_false_option_does_not_enable_scaffold (test_prepared_layout_f126c1.PreparedScaffold.test_false_option_does_not_enable_scaffold) ... ok
+test_new_mode_accepts_fresh_three_store_without_creating_scaffold (test_prepared_layout_f126c1.PreparedScaffold.test_new_mode_accepts_fresh_three_store_without_creating_scaffold) ... ok
+test_only_original_aux_files_opened (test_prepared_layout_f126c1.PreparedScaffold.test_only_original_aux_files_opened) ... ok
+test_pairing_files_and_hidden_auth_never_accepted (test_prepared_layout_f126c1.PreparedScaffold.test_pairing_files_and_hidden_auth_never_accepted) ... ok
+test_pairing_nested_directory_refused (test_prepared_layout_f126c1.PreparedScaffold.test_pairing_nested_directory_refused) ... ok
+test_pairing_regular_file_refused (test_prepared_layout_f126c1.PreparedScaffold.test_pairing_regular_file_refused) ... ok
+test_parent_only_without_pairing_refused (test_prepared_layout_f126c1.PreparedScaffold.test_parent_only_without_pairing_refused) ... ok
+test_platform_sibling_directory_refused (test_prepared_layout_f126c1.PreparedScaffold.test_platform_sibling_directory_refused) ... ok
+test_prepared_option_requires_actual_bool (test_prepared_layout_f126c1.PreparedScaffold.test_prepared_option_requires_actual_bool) ... ok
+test_prepared_option_requires_response_store (test_prepared_layout_f126c1.PreparedScaffold.test_prepared_option_requires_response_store) ... ok
+test_new_selector_explicit_old_defaults_unchanged (test_prepared_layout_f126c1.ProjectionSelection.test_new_selector_explicit_old_defaults_unchanged) ... ok
+test_unknown_selector_still_refuses_before_kernel (test_prepared_layout_f126c1.ProjectionSelection.test_unknown_selector_still_refuses_before_kernel) ... ok
+test_default_remains_unselected (test_prepared_layout_f126c1.StartupSelection.test_default_remains_unselected) ... ok
+test_nonboolean_prepared_mode_refused (test_prepared_layout_f126c1.StartupSelection.test_nonboolean_prepared_mode_refused) ... ok
+test_owner_forwards_optin_before_cold_helpers (test_prepared_layout_f126c1.StartupSelection.test_owner_forwards_optin_before_cold_helpers) ... ok
+test_selected_mode_requires_response_and_no_lease_effect (test_prepared_layout_f126c1.StartupSelection.test_selected_mode_requires_response_and_no_lease_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.377s
+
+OK

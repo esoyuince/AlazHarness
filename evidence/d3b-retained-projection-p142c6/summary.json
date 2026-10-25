@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-25T11:46:45.737068+03:00",
+  "result": "PASS_EXPLICIT_RETAINED_PROJECTION_CONTRACTS_NOT_KERNEL_ACCEPTANCE",
+  "base": "1321699198805fad1909d40053e118a624dc23f2",
+  "fullWindows": {
+    "at": "2026-10-25T11:45:14.708611+03:00",
+    "result": "PASS",
+    "total": 3534,
+    "passed": 3511,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourcesStable": true,
+    "patchesStable": true,
+    "same23SkipIdsAndReasons": true,
+    "elapsedSeconds": 217.486,
+    "exitCode": 0,
+    "rawLogSha256": "fec43f906b9cc03f638ed0fe435c83f7c0314d813e22c076eecf4561891a6ab3"
+  },
+  "actualFullCommand": "d142c601-7b82-4e35-a16c-142000000020",
+  "actualFullCommandExitCode": 0,
+  "sourceFiles": 620,
+  "nativePatches": 11,
+  "changedBaselineSourceFiles": [
+    "packages/claw-hermes/gateway_state_projection.py",
+    "tests/historical_retained_r140c6.py"
+  ],
+  "other614PriorSourcesUnchanged": true,
+  "newSourceFiles": [
+    "packages/claw-hermes/gateway_retained_projection.py",
+    "tests/historical_projection_p142c6.py",
+    "tests/test_retained_projection_p142c6.py",
+    "tests/test_retained_projection_receipt_p142c6.py"
+  ],
+  "ownFocusedMethods": 42,
+  "ownContractMethods": 36,
+  "ownOfflineReceipts": 6,
+  "independentContractMethods": 21,
+  "countsHaveSemanticOverlap": true,
+  "oldFourLayoutDefaultsPreserved": true,
+  "originalRetainedReceiptMutated": false,
+  "newKernelIsolationExecuted": false,
+  "nativeOrModelFlowExecuted": false,
+  "nativeSourceOrManifestOrInstalledRuntimeChanged": false,
+  "providerCalls": 0,
+  "oldKernelProofStillHistorical": true,
+  "mainChanged": false,
+  "pushed": false
+}

@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-25T11:42:51.343320+03:00",
+  "rootDirtyFileCount": 33,
+  "rootBytesAndStatusPreserved": true,
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "installedNativeClean": true,
+  "optionalNative": "d1516731308de8e87130dc68124e69aad35d6911",
+  "optionalNativeClean": true,
+  "mainRemote": "1321699198805fad1909d40053e118a624dc23f2",
+  "rootWslKernelProviderServiceActions": false
+}

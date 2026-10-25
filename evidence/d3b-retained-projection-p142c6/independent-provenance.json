@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-25T11:41:09.393351+03:00",
+  "sourceWorktree": "d3b-retained-projection-c142c6",
+  "files": {
+    "producer001-independent21-result.json": {
+      "sha256": "0a3c5d08c4c5281e1dfea56e9c400ce832f86305e417e927b8ab9157371fa65f",
+      "source": "evidence\\d3b-retained-projection-c142c6\\producer001-independent21-result.json"
+    },
+    "producer001-independent21-tests.txt": {
+      "sha256": "7f93f3ba91cbec9d5e3b4fb2eee6238cc842e092c9c87236492036b3991e0a06",
+      "source": "evidence\\d3b-retained-projection-c142c6\\producer001-independent21-tests.txt"
+    },
+    "producer001-independent-result.json": {
+      "sha256": "7de9e49fc9597b3f492c8d01b78cfbfc3299a6cceb617fc6a761929ccd56c589",
+      "source": "evidence\\d3b-retained-projection-c142c6\\producer001-independent-result.json"
+    },
+    "producer001-independent-tests.txt": {
+      "sha256": "55b2df0acab7052cf9e6a5f2b3ad61e4d39d6c6d11f01e6d96e613adedcdf503",
+      "source": "evidence\\d3b-retained-projection-c142c6\\producer001-independent-tests.txt"
+    },
+    "independent15-checks.py.txt": {
+      "sha256": "0ddf75645de99e5788acffe5a4860a91caac4ff4959f9dc735d8884868c8c5ec",
+      "source": "evidence\\d3b-retained-projection-c142c6\\independent15-checks.py.txt"
+    },
+    "producer-candidate001.json": {
+      "sha256": "67c37a2a542d16653335c5854ad495b17bd61fc50ffa9fdc9b98134b9b5e178f",
+      "source": "evidence\\d3b-retained-projection-c142c6\\producer-candidate001.json"
+    },
+    "c142c6_projection_checks.py.txt": {
+      "sha256": "cb3016cdf2f9862f201f6e6dcfc5e46e4176ecc7808020f0d1a8f46e2bb63a25",
+      "source": "scripts/qa/c142c6_projection_checks.py"
+    }
+  },
+  "sameRuntimeHashesAsCurrent": true,
+  "peerNotEdited": true,
+  "testsNotReexecutedByCopy": true,
+  "scope": "21 independent unit contracts with explicit syscall/profile/startup fixtures, not real confinement"
+}

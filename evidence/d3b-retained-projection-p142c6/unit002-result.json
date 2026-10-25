@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-25T11:36:36.550963+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "declaredMethods": 34,
+  "testSha256": "4f005a50dde80f82aaa14f1f77ad6ee812c637f4e22121068389c4aeefed6b45",
+  "scope": "original mapping,projection,pivot,startup handoff contracts; kernel/OS/store constructors doubled; NOT kernel acceptance"
+}

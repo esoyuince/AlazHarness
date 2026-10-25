@@ -1,0 +1,7 @@
+{
+  "requestId": "d142c601-7b82-4e35-a16c-142000000020",
+  "jobState": "completed",
+  "exitCode": 0,
+  "resultJsonSha256": "f296d2376f04dcead9eaf5bbf744c4e9ecdf4faa667d3bb7cfcde34e68dea1db",
+  "scope": "actual native_tool_result terminal receipt observed in this turn; fullWindows not kernel experiment"
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-25T11:29:28.106873+03:00",
+  "scope": "independent pre-implementation invariant review",
+  "implementationOwner": "d3b-retained-projection-c142c6",
+  "readOnlyProduct": true,
+  "requirements": [
+    "Preserve immutable original RetainedProfileExpectation.home; explicit mapping bound to exact VolumeBinding and current principal",
+    "Receipt input home must be original host profile or exact fixedTARGET, not arbitrary path from JSON",
+    "Validate receipt profile/DB identities against volume loop/profile; identical contents on another inode never suffice",
+    "Revalidate full retained metadata/cache/empty-active registry before bind and after pivot, before writable SQLite/epoch",
+    "Verify source and target under exact binding; serialized binding is not live launch authority",
+    "Old layouts must reject receipt; new selector without matching receipt must fail before kernel actions",
+    "Original startup retains epoch/schema/lease checks; projection does not authorize admission",
+    "Native756source immutable, historic prepared source proof not acceptance"
+  ],
+  "keyRisk": "caller replacement of receipt.home manufactures acceptance unless alias is narrow identity-bound and rechecked; direct inspect_profile must remain strict",
+  "nativeSourceChanged": false,
+  "executions": 0
+}

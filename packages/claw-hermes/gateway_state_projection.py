@@ -27,9 +27,10 @@ MINIMAL_LAYOUT = 'minimal-v1'
 NATIVE_STORE_LAYOUT = 'hermes-native-stores-cold-v1'
 NATIVE_RESPONSE_LAYOUT = 'hermes-native-three-stores-cold-v1'
 NATIVE_PREPARED_LAYOUT = 'hermes-native-prepared-three-stores-cold-v1'
+NATIVE_RETAINED_LAYOUT = 'hermes-native-retained-three-stores-v1'
 
 def validate_layout(value):
-    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT),
+    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT,NATIVE_RETAINED_LAYOUT),
             'state_projection_layout_invalid')
     return value
 
@@ -130,10 +131,15 @@ def _metadata(info):
             info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
-def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=MINIMAL_LAYOUT):
+def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=MINIMAL_LAYOUT, retained_projection=None):
     """Prove existing S101 authority and sole-user admission; never repair it."""
     require(type(binding) is VolumeBinding, 'state_projection_trusted_binding_required')
     validate_layout(profile_layout)
+    require((retained_projection is not None) == (profile_layout == NATIVE_RETAINED_LAYOUT),
+            'state_projection_retained_selection')
+    if retained_projection is not None:
+        from gateway_retained_projection import validate
+        validate(retained_projection, binding, principal)
     supervisor.actor()
     try:
         _live_root(binding.controller_pid, binding.controller_start)
@@ -186,7 +192,10 @@ def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=
                 'state_projection_profile_identity')
         require(not any(PurePosixPath(r.mount_point).is_relative_to(profile) for r in records),
                 'state_projection_nested_mount')
-        if profile_layout in (NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT):
+        if profile_layout == NATIVE_RETAINED_LAYOUT:
+            from gateway_retained_projection import inspect_view
+            objects, _ = inspect_view(retained_projection, binding, principal, view='host')
+        elif profile_layout in (NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT):
             import gateway_native_layout as native_layout
             try:
                 options = {'include_response':True} if profile_layout in (NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT) else {}
@@ -212,21 +221,30 @@ def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=
         return objects
     except StateProjectionRejected:
         raise
-    except (OSError, ValueError, TypeError, KeyError, IndexError, supervisor.SupervisorRejected):
+    except (OSError, ValueError, TypeError, KeyError, IndexError, AttributeError, supervisor.SupervisorRejected):
         raise StateProjectionRejected('state_projection_observation_unavailable') from None
 
 
 class _ProfileMounts(gp.Mounts):
     """One fixed pre-pivot extension; no override of the baseline UID/filter path."""
-    def __init__(self, binding, principal, observed, profile_layout=MINIMAL_LAYOUT):
+    def __init__(self, binding, principal, observed, profile_layout=MINIMAL_LAYOUT, retained_projection=None):
         super().__init__()
         self.binding, self.principal, self.observed = binding, principal, observed
         self.profile_layout = validate_layout(profile_layout)
+        self.retained_projection = retained_projection
+        require((retained_projection is not None) == (profile_layout == NATIVE_RETAINED_LAYOUT),
+                'state_projection_retained_selection')
+        if retained_projection is not None:
+            from gateway_retained_projection import validate
+            validate(retained_projection, binding, principal)
         self.projected = False
 
     def pivot(self, root):
         require(not self.projected, 'state_projection_once')
-        current = (inspect_volume(self.binding,self.principal,joined_namespace=False)
+        current = (inspect_volume(self.binding,self.principal,joined_namespace=False,
+                    profile_layout=self.profile_layout,retained_projection=self.retained_projection)
+                   if self.profile_layout == NATIVE_RETAINED_LAYOUT else
+                   inspect_volume(self.binding,self.principal,joined_namespace=False)
                    if self.profile_layout == MINIMAL_LAYOUT else
                    inspect_volume(self.binding,self.principal,joined_namespace=False,profile_layout=self.profile_layout))
         require(current == self.observed, 'state_projection_profile_changed')
@@ -245,7 +263,7 @@ class _ProfileMounts(gp.Mounts):
         super().pivot(root)
 
 
-def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT):
+def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT, retained_profile=None):
     """Confine one joined root child; only its checked image profile persists.
 
     Caller joins the root-controlled S101 cgroup BEFORE the volume namespace.
@@ -253,22 +271,39 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
     Do not run a workload after any exception or return to the host caller.
     """
     validate_layout(profile_layout)
+    require((retained_profile is not None) == (profile_layout == NATIVE_RETAINED_LAYOUT),
+            'state_projection_retained_selection')
+    if retained_profile is not None:
+        from gateway_retained_profile import validate_receipt
+        validate_receipt(retained_profile)
     require(type(observe_self_mount) is bool, 'state_projection_mount_observation_boolean')
     plan = gp.inspect(value, filesystem)
     full_policy = validate_exports(binding, plan['ipc'], plan['filesystem'])
     p = plan['ipc']['principalContract']
-    observed = (inspect_volume(binding,p) if profile_layout == MINIMAL_LAYOUT else
+    retained_projection = None
+    if retained_profile is not None:
+        from gateway_retained_projection import RetainedProjection
+        retained_projection = RetainedProjection(binding, retained_profile, p)
+    observed = (inspect_volume(binding,p,profile_layout=profile_layout,retained_projection=retained_projection)
+                if retained_projection is not None else
+                inspect_volume(binding,p) if profile_layout == MINIMAL_LAYOUT else
                 inspect_volume(binding,p,profile_layout=profile_layout))
     gp.fs_guard.abi_version(gp.fs_guard.kernel())
     seccomp = gp.net._load_seccomp()
     namespaces = {n:os.readlink('/proc/self/ns/'+n) for n in ('mnt','net','ipc')}
     gp.launch.close_ambient_fds()
-    mounts = (_ProfileMounts(binding,p,observed) if profile_layout == MINIMAL_LAYOUT else
+    mounts = (_ProfileMounts(binding,p,observed,profile_layout,retained_projection)
+              if retained_projection is not None else
+              _ProfileMounts(binding,p,observed) if profile_layout == MINIMAL_LAYOUT else
               _ProfileMounts(binding,p,observed,profile_layout))
     mounts.unshare(); gp._loopback_up()
     bound = gp._project(plan,mounts)
     require(mounts.projected, 'state_projection_not_projected')
     require(_metadata(Path(TARGET).lstat()) == observed['profile'], 'state_projection_final_identity')
+    if retained_projection is not None:
+        from gateway_retained_projection import inspect_view
+        target_objects, _ = inspect_view(retained_projection, binding, p, view='target')
+        require(target_objects == observed, 'state_projection_retained_target_changed')
     os.umask(0o077)
     gp.launch.drop_identity({'brokerUid':p['gatewayUid'],'socketGroupGid':p['socketGroupGid']})
     after = gp._verify_gateway(p,plan['before'],namespaces)
@@ -277,7 +312,7 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
     gp.launch.close_ambient_fds()
     landlock = (gp.fs_guard.apply(full_policy, self_mount_metadata=True) if observe_self_mount
                 else gp.fs_guard.apply(full_policy))
-    return {'version':1,'state':'confined_state_profile','pid':os.getpid(),
+    result = {'version':1,'state':'confined_state_profile','pid':os.getpid(),
             'profile':TARGET,'profileDevice':observed['profile'][0],'profileInode':binding.profile_inode,
             'profileLayout':profile_layout,
             'persistentProfileProjected':True,'stateDirectoryCount':1,'ambientHostDirectoriesBound':0,
@@ -286,3 +321,11 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
             'boundRuntimeRoots':bound,'filesystem':landlock,'profileOwnershipAcquired':False,
             'nativeHermesStoresOpened':False,'realHermesGatewayTested':False,
             'legacyIpcV2Activated':False,'fullD3BAccepted':False}
+
+    if retained_projection is not None:
+        # No receipt handoff until all native projection/drop/filter/guard stages return.
+        target_objects, target_receipt = inspect_view(retained_projection, binding, p, view='target')
+        require(target_objects == observed, 'state_projection_retained_target_changed')
+        result['retainedProfile'] = target_receipt
+        result['retainedProjectionVerified'] = True
+    return result

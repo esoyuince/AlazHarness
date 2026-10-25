@@ -1,0 +1,20 @@
+test_change_after_landlock_never_hands_off_receipt (__main__.IndependentEntry.test_change_after_landlock_never_hands_off_receipt) ... ok
+test_child_database_changed_before_drop_refuses (__main__.IndependentEntry.test_child_database_changed_before_drop_refuses) ... ok
+test_interrupt_after_drop_does_not_return_handoff (__main__.IndependentEntry.test_interrupt_after_drop_does_not_return_handoff) ... ok
+test_only_complete_isolation_return_hands_back_receipt (__main__.IndependentEntry.test_only_complete_isolation_return_hands_back_receipt) ... ok
+test_after_same_volume_object_mutation_even_valid_shape_is_refused (__main__.IndependentMapping.test_after_same_volume_object_mutation_even_valid_shape_is_refused) ... ok
+test_auxiliary_failure_never_returns_target_receipt (__main__.IndependentMapping.test_auxiliary_failure_never_returns_target_receipt) ... ok
+test_host_then_target_preserves_every_original_value (__main__.IndependentMapping.test_host_then_target_preserves_every_original_value) ... ok
+test_invalid_view_rejects_before_file_read (__main__.IndependentMapping.test_invalid_view_rejects_before_file_read) ... ok
+test_mutation_during_actual_layout_return_rechecked (__main__.IndependentMapping.test_mutation_during_actual_layout_return_rechecked) ... ok
+test_original_principal_mutation_not_hidden_by_clean_current_copy (__main__.IndependentMapping.test_original_principal_mutation_not_hidden_by_clean_current_copy) ... ok
+test_principal_extra_field_change_not_only_uid_is_detected (__main__.IndependentMapping.test_principal_extra_field_change_not_only_uid_is_detected) ... ok
+test_receipt_home_changed_to_other_allowed_home_is_still_detected (__main__.IndependentMapping.test_receipt_home_changed_to_other_allowed_home_is_still_detected) ... ok
+test_same_content_foreign_binding_not_accepted (__main__.IndependentMapping.test_same_content_foreign_binding_not_accepted) ... ok
+test_subordinate_snapshot_same_parent_wrong_third_store_refused (__main__.IndependentMapping.test_subordinate_snapshot_same_parent_wrong_third_store_refused) ... ok
+test_unselected_mapping_cannot_reach_live_actor (__main__.IndependentMapping.test_unselected_mapping_cannot_reach_live_actor) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.012s
+
+OK

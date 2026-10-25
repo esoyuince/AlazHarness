@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T11:36:10.090664+03:00",
+  "exitCode": 0,
+  "result": "PASS_UNIT_MAPPING_AND_HANDOFF",
+  "methods": 15,
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_state_projection.py": "ddcca9ca9176fd26810fd90a50de207aef7896693106efd7798cee735604065c",
+    "packages/claw-hermes/gateway_retained_projection.py": "68cf4520873efc402860f4d9a9f31ee478d87e4f1b00ad7a0079aa335200ab79"
+  },
+  "qaSha256": "0ddf75645de99e5788acffe5a4860a91caac4ff4959f9dc735d8884868c8c5ec",
+  "kernelMountIdentityDropSeccompLandlockAreDoubles": true,
+  "actualKernelOrNativeFlowAccepted": false
+}
