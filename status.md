@@ -1,51 +1,72 @@
-# AlazHarness — T143 / R144 yayın devam kaydı
+# AlazHarness - status
 
-## IN PROGRESS — Tam regresyon doğrulandı; tek yayın sahibi bu T143 dalıdır
+## L145A8: fixed projected launcher contract and real receiver refusals - PASS
 
-Çalışma: `alaz/d3b-retained-exec-t143a7`.
-Yol: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-retained-exec-t143a7`.
-Başlangıç/main: `802910552bc4c804348d4c604fbae8130a45f5ed`.
-H143 bağımsız QA dalına dokunulmaz; alternatif codec tekrar eklenmez.
+Active branch alaz/d3b-projected-launch-l145a8, base/main d304a57.
+Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-projected-launch-l145a8.
+Canonical final shared claim fixes A8 product/singlefull/publication and C8 QA.
+Provisional reciprocal courtesy yields were superseded before product acceptance;
+no more role changes. C8 source/index/history untouched.
 
-### Kesinti sonrası doğrulanan durum
+### Implemented, opt-in, not deployed
 
-Tam test 3566: 3543 PASS, 23 SKIP, 0 hata/başarısızlık, çıkış 0.
-`full001/result.json` ile ham test günlüğü ve 625 kaynak + 11 yama özeti eşleşiyor.
-Önceki 620 kaynağın tamamı değişmeden kaldı. 23 atlamanın kimliği/gerekçesi aynı.
-Bu tur tam test ve gerçek Linux deneyleri yeniden başlatılmadı.
+New gateway_retained_launch.py calls original state.enter retained mode, existing
+encode_projected, live principal/namespaces/filter/mount checks and FIXED Python
+-I -B scripts/run_retained_projected.py via execve. No arbitrary argv/entrypoint,
+shell, inherited parent environment, fallback or retry. Transfer/context bounded
+canonical data, trusted caller input rather than signed authority/attestation.
+Receiver decodes fixed TARGET, verifies exact environment/interpreter/current PID/
+UID/GID/groups/caps/NNP/thread/namespaces/filter and mount before lease/SQL.
+Original profile lease and NativeStoreStartup retain all live schema/identity/
+epoch/ownership checks. Readiness target starts/closes three stores then releases
+caller lease ONLY after confirmed close. No active work, model, HTTP or listener.
+Target result explicitly marks admission/finite/service/full acceptance false.
 
-Ürün yalnız yeni `gateway_retained_handoff.py`: mevcut üç typed expectation için
-sınırlı kanonik JSON, zorunlu ayrı trusted expected_home; projected wrapper fixedTARGET.
-JSON kimlik doğrulama veya kernel/çalıştırma yetkisi değildir. Asıl owner tüm canlı
-lease/mount/schema/epoch kontrollerini sürdürür. Yeni signer/manager/scheduler yok.
+### Tests and exact limits
 
-Normal ve kontrollü hata: gerçek ordinary-user Linux os.execve, aynı PID/startticks,
-yeni yorumlayıcı ve boş registry. Eski sonuç/usage replay hesaplanmaz; yeni iş bir kez
-çalışır. Native sonuçlandırma, iki normal owner kapanışı/3 fiziksel bağlantı ve
-caller lease release doğrulandı. Model factory/compute/close test dublörü.
-Kernel izolasyonu, fixedTARGET exec entegrasyonu, HTTP, çökme/güç kaybı ve gerçek
-model/araç/hafıza/bütçe kabulü hâlâ açık. Önceki reddedilen root işlemleri denenmez.
+Fresh full3611:3588PASS23SKIP0ERROR0FAIL, actual request022 terminalexit0.
+631source/config/test hashes+11patches stable; all625old files unchanged. New6files
+are product2, fixedLinuxQA2 and tests2. Same23skipIDs/reasons. Focused45=39control+
+6offline receipt; independent29same-source tests overlap, do not sum as unique.
+Original expectation property read after close caused initial35=34PASS1ERROR;
+same35byte-identical tests pass fixed epoch snapshot BEFORE close. Four stronger
+cases execute ORIGINAL NativeStoreStartup/start/close with actual in-memorySQLite
+and explicit constructor/cold/mount doubles, verify reverse3close before release.
+Peer actual original property reproduced00129=28PASS1ERROR; same29driver on002PASS.
+Peer fixture mistakes separately archived, not called product findings.
 
-### Yayın sırası ve koruma
+ACTUAL ordinary-Linux5fresh Python3.12 -I -B negative processes: missing/malformed/
+extraenv/foreignPID/unconfined well-shaped transfer all fixedtargetexit2, validator
+exit0. No product/OS methods patched. Explicit runpy wrapper only enables audit
+before fixed entrypoint. No profile creation/lease/mount read/SQL/nativework/network
+attempt. Unconfined actual supplementary group and NNP0 observed, not fabricated
+kernel failure. Namespaces/mount table unchanged; owned temp transport removed.
+Source/loaded module hashes exact. This is NEGATIVE behavior, NOT positive kernel
+confinement or isolated native startup. Unit kernel/exec boundaries are doubled.
 
-Önce statik kontrol ve yalnız seçili dosyalarla commit; sonra outgoing tarama ve
-exact-SHA branch push; aynı SHA CI başarı + canlı main/ancestry kontrolü olmadan
-main ilerletilmez. Force-push/squash/install/service/provider işlemi yok.
-Root 33 kullanıcı dosyası, kurulu native eb75627 ve optional d151 korunuyor.
-Bu devam turu R144 yalnız T143 yayınını tamamlar; H143 tekrar ürün sahibi olmaz.
+### Remaining acceptance
 
-### Kanıt ve devam
+New code NOT installed in privileged lab. Existing supervised authorized dedicated
+volume child must call this exact path with complete current source/dependency
+exports. First positive real projected readiness/open/close; then actual native
+finite normal/error/replay/newwork/normalclose plus hostfile/socket/FD/reentry
+canaries. No inherited F126prepared-only proof. Prior denied root/bootstrap/mount/
+cleanup actions are NOT retried by this change. HTTP, crashes/powerloss, realmodel/
+tools/memory/budgets remain separate. No fake dataclass or JSON grants permission.
 
-`docs/D3B-RETAINED-EXEC-T143A7.md`;
-`evidence/d3b-retained-exec-t143a7/full001/` ve `resume-r144c7/`.
-Önceki status: `docs/status-history/t143a7-prepublication-r144c7.md`.
-İşlemlerin makbuzu/kimliği sonuç belirsizliğinde okunur, körlemesine tekrar yok.
+### Custody / publication
 
+Main currently d304a57, no source-lock/native changes. Installedeb75627 and optional
+d151 clean; root33dirtyuserfiles/status preserved. This turn normal-user negative
+experiment only, no root/kernel/install/provider/service action. Full completed;
+static and selected implementation commit follow. If publishing: bounded outgoing
+scan then sameSHA CI before ordinaryFF main, never force/squash or hidden deployment.
+Do not replay accepted tests merely because a response is interrupted.
 
-### Live final writer resolution: R144C7 publishes, R144C8 read-only
+### Records
 
-Stable peer single-writer-review.json explicitly names original T143/R144C7 sole
-publisher and forbids future handoff. Original provisional reciprocal yields are
-superseded. R144C7 acquired exclusive scratch/task-claims/t143-publication-r144.json
-before index mutation; R144C8 tree remains untouched. Exact frozen T143 package
-only; no source edits, full/native replay, root/service/provider changes.
+Docs/D3B-PROJECTED-LAUNCH-L145A8.md.
+Evidence/d3b-projected-launch-l145a8/: baseline,candidate001/002,unit001/002/003,
+focused45,receiver-refusal001 source+rawresults,independent-l145c8/provenance,
+source-custody,full001 result/rawlog/source+patch manifests,summary,protected-state.
+All current native/full jobs terminal. Read liveHEAD for final tested commit.

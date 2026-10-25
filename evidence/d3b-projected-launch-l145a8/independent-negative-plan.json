@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-25T13:35:12.327187+03:00",
+  "role": "independent source and negative testing only",
+  "productOwner": "L145C8",
+  "requiredNegativeInputs": [
+    "untrusted/missing/oversized/duplicate/truncated typed handoff before any mount/lease/SQL",
+    "fixed target path disagreement or inherited HERMES_HOME injection",
+    "UID/GID/groups/capabilities/seccomp/NNP mismatch in receiver",
+    "failed or returning exec never falls back to direct runtime",
+    "half-completed state.enter failure never invokes encode/exec",
+    "mutated launch metadata or database identity never produces writable owner",
+    "constructor/start/close uncertainty keeps lease and blocks retry, no forced registry prune",
+    "receipt source path cannot become executable/argv/env"
+  ],
+  "scopeLimit": "No root/mount/namespace/bootstrap/install or refused action retry. Tests must identify any doubles. Generic normal-user exec does not establish confined launch."
+}

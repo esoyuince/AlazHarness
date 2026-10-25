@@ -1,0 +1,7 @@
+{
+  "requestId": "e145a801-98c0-4b52-907b-145000000022",
+  "jobState": "completed",
+  "exitCode": 0,
+  "resultSha256": "837bdb9c2bc8843f30979e6096f7e47e64355694809eb4a631f537caeac75f20",
+  "terminalObservedThrough": "native_tool_result in current turn"
+}

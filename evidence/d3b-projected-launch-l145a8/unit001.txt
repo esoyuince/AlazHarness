@@ -1,0 +1,54 @@
+test_failed_exec_not_retried_or_replaced_by_direct_owner (test_projected_launch_l145a8.LaunchFlow.test_failed_exec_not_retried_or_replaced_by_direct_owner) ... ok
+test_incomplete_projected_metadata_never_executes (test_projected_launch_l145a8.LaunchFlow.test_incomplete_projected_metadata_never_executes) ... ok
+test_no_unexported_python_or_target (test_projected_launch_l145a8.LaunchFlow.test_no_unexported_python_or_target) ... ok
+test_projection_error_never_encodes_or_executes (test_projected_launch_l145a8.LaunchFlow.test_projection_error_never_encodes_or_executes) ... ok
+test_real_codec_links_projection_to_exact_exec_and_scrubbed_environment (test_projected_launch_l145a8.LaunchFlow.test_real_codec_links_projection_to_exact_exec_and_scrubbed_environment) ... ok
+test_returning_exec_never_reported_as_success (test_projected_launch_l145a8.LaunchFlow.test_returning_exec_never_reported_as_success) ... ok
+test_same_or_invalid_instance_before_projection (test_projected_launch_l145a8.LaunchFlow.test_same_or_invalid_instance_before_projection) ... ok
+test_scratch_must_be_explicit_private_export (test_projected_launch_l145a8.LaunchFlow.test_scratch_must_be_explicit_private_export) ... ok
+test_wrong_live_identity_blocks_exec (test_projected_launch_l145a8.LaunchFlow.test_wrong_live_identity_blocks_exec) ... ok
+test_wrong_mount_root_or_profile_device_blocks_exec (test_projected_launch_l145a8.LaunchFlow.test_wrong_mount_root_or_profile_device_blocks_exec) ... ok
+test_wrong_typed_record_refuses_before_projection (test_projected_launch_l145a8.LaunchFlow.test_wrong_typed_record_refuses_before_projection) ... ok
+test_any_remaining_capability_refused (test_projected_launch_l145a8.LiveReceiverChecks.test_any_remaining_capability_refused) ... ok
+test_correct_live_kernel_fields_pass_without_store_access (test_projected_launch_l145a8.LiveReceiverChecks.test_correct_live_kernel_fields_pass_without_store_access) ... ok
+test_live_filter_must_still_be_active (test_projected_launch_l145a8.LiveReceiverChecks.test_live_filter_must_still_be_active) ... ok
+test_wrong_real_saved_uid_gid_groups_threads_or_nnp_refused (test_projected_launch_l145a8.LiveReceiverChecks.test_wrong_real_saved_uid_gid_groups_threads_or_nnp_refused) ... ok
+test_wrong_userns_maps_or_changed_private_namespace_refused (test_projected_launch_l145a8.LiveReceiverChecks.test_wrong_userns_maps_or_changed_private_namespace_refused) ... ok
+test_bound_payload_and_context_sizes_before_parse (test_projected_launch_l145a8.ReceiveContracts.test_bound_payload_and_context_sizes_before_parse) ... ok
+test_changed_mount_after_exec_refused (test_projected_launch_l145a8.ReceiveContracts.test_changed_mount_after_exec_refused) ... ok
+test_context_duplicate_unknown_protocol_and_noncanonical_refused (test_projected_launch_l145a8.ReceiveContracts.test_context_duplicate_unknown_protocol_and_noncanonical_refused) ... ok
+test_context_pid_and_hash_bound (test_projected_launch_l145a8.ReceiveContracts.test_context_pid_and_hash_bound) ... ok
+test_environment_path_home_temp_must_equal_context (test_projected_launch_l145a8.ReceiveContracts.test_environment_path_home_temp_must_equal_context) ... ok
+test_extra_or_missing_environment_never_reaches_live_or_mount (test_projected_launch_l145a8.ReceiveContracts.test_extra_or_missing_environment_never_reaches_live_or_mount) ... ok
+test_invalid_wire_or_wrong_target_before_live (test_projected_launch_l145a8.ReceiveContracts.test_invalid_wire_or_wrong_target_before_live) ... ok
+test_malformed_mount_before_live (test_projected_launch_l145a8.ReceiveContracts.test_malformed_mount_before_live) ... ok
+test_namespace_shapes_and_user_policy_strict (test_projected_launch_l145a8.ReceiveContracts.test_namespace_shapes_and_user_policy_strict) ... ok
+test_real_fixed_codec_reconstructs_original_types_before_live_check (test_projected_launch_l145a8.ReceiveContracts.test_real_fixed_codec_reconstructs_original_types_before_live_check) ... ok
+test_same_instance_or_mismatched_generation_refused (test_projected_launch_l145a8.ReceiveContracts.test_same_instance_or_mismatched_generation_refused) ... ok
+test_scratch_alias_and_profile_overlap_refused (test_projected_launch_l145a8.ReceiveContracts.test_scratch_alias_and_profile_overlap_refused) ... ok
+test_wrong_interpreter_or_not_isolated_before_payload (test_projected_launch_l145a8.ReceiveContracts.test_wrong_interpreter_or_not_isolated_before_payload) ... ok
+test_close_unknown_never_releases_lease_or_retries (test_projected_launch_l145a8.TargetOwnerFlow.test_close_unknown_never_releases_lease_or_retries) ... ok
+test_constructor_unknown_does_not_release_caller_lease (test_projected_launch_l145a8.TargetOwnerFlow.test_constructor_unknown_does_not_release_caller_lease) ... ok
+test_no_false_success_when_owner_not_releasable (test_projected_launch_l145a8.TargetOwnerFlow.test_no_false_success_when_owner_not_releasable) ... ok
+test_original_owner_contract_snapshot_before_close_and_release (test_projected_launch_l145a8.TargetOwnerFlow.test_original_owner_contract_snapshot_before_close_and_release) ... ERROR
+test_receive_failure_never_reserves_profile (test_projected_launch_l145a8.TargetOwnerFlow.test_receive_failure_never_reserves_profile) ... ok
+test_start_unknown_never_forces_close_or_release (test_projected_launch_l145a8.TargetOwnerFlow.test_start_unknown_never_forces_close_or_release) ... ok
+
+======================================================================
+ERROR: test_original_owner_contract_snapshot_before_close_and_release (test_projected_launch_l145a8.TargetOwnerFlow.test_original_owner_contract_snapshot_before_close_and_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-projected-launch-l145a8\tests\test_projected_launch_l145a8.py", line 210, in test_original_owner_contract_snapshot_before_close_and_release
+    result=l.target_main()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-projected-launch-l145a8\packages\claw-hermes\gateway_retained_launch.py", line 181, in target_main
+    'epoch':owner.expectation.epoch,'completedChecks':opened['completedChecks'],
+            ^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\d3b-projected-launch-l145a8\tests\test_projected_launch_l145a8.py", line 204, in expectation
+    if self.phase!='VERIFIED':raise startup.StoreStartupRejected('startup_not_verified')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gateway_store_startup.StoreStartupRejected: startup_not_verified
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.327s
+
+FAILED (errors=1)

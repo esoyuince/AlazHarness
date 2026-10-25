@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-25T13:45:01.315268+03:00",
+  "initialRun": "independent001",
+  "issue": "own partial old fixture V omitted real IPC version/mode; that fixture was previously used with mocked inspect, not real gp.validate",
+  "correction": "supply version2/projected_root_principal, keep actual IPC validator and all behavioral assertions",
+  "producerOrProductSourceChanged": false,
+  "oldDriverSha256": "43ae12bc7dafb14648a24317e4e94310174292565498904439a7cef1ec661501",
+  "newDriverSha256": "b111e0290d05bcf404a4dc567eddb69f6f5f748d6ea39bbb6082b34ebefe2fc8",
+  "initialFailureRetained": true
+}

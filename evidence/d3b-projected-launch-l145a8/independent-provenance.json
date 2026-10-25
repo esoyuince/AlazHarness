@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-25T13:47:46.522650+03:00",
+  "files": {
+    "independent004/result.json": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\independent004\\result.json",
+      "sha256": "5c6bc11095df8760deb81444ca621547ea51f65932d9dd5a08b144fdf0e0acc5"
+    },
+    "independent004/tests.txt": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\independent004\\tests.txt",
+      "sha256": "cf546b6bad023c04cf93a4b1b433d03c85e251839e6a2505f320e0bdcc769999"
+    },
+    "independent005/result.json": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\independent005\\result.json",
+      "sha256": "3e11643eb45473d0f1677b4ba2f6e4952685122134ba2775e947334ad3191d62"
+    },
+    "independent005/tests.txt": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\independent005\\tests.txt",
+      "sha256": "228997ed8e78120231aedfecac1da4745a998e2f99015980b85ed4d6502623a9"
+    },
+    "producer001-packages__claw-hermes__gateway_retained_launch.py.txt": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\producer001-packages__claw-hermes__gateway_retained_launch.py.txt",
+      "sha256": "da05b727fa47c42343f7abeafd2419e0e349e8731b6e678c41e6cf83ae060ada"
+    },
+    "producer002-packages__claw-hermes__gateway_retained_launch.py.txt": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\producer002-packages__claw-hermes__gateway_retained_launch.py.txt",
+      "sha256": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00"
+    },
+    "producer001-scripts__run_retained_projected.py.txt": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\producer001-scripts__run_retained_projected.py.txt",
+      "sha256": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+    },
+    "producer002-scripts__run_retained_projected.py.txt": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\producer002-scripts__run_retained_projected.py.txt",
+      "sha256": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+    },
+    "independent001-fixture-diagnosis.json": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\independent001-fixture-diagnosis.json",
+      "sha256": "144061551c7d6480b88119b7dcb438a6bb6eea9c1d2d6587391b69fe424e2f5c"
+    },
+    "independent003-fixture-diagnosis.json": {
+      "source": "evidence\\d3b-projected-launch-l145c8\\independent003-fixture-diagnosis.json",
+      "sha256": "23b9122d43fb4c63ce6cf76d771f6e5208f9dcf694d84b453b3d223a1b82712e"
+    },
+    "same29-driver.py.txt": {
+      "source": "scripts/qa/l145c8_launch_contracts.py",
+      "sha256": "3af06a030cc49c49741e92167982f8303d483b1f052653f52a44eaed6e7e95cd"
+    }
+  },
+  "same29BeforeAfter": true,
+  "peerNotModified": true,
+  "noDuplicateRunByEvidenceCopy": true,
+  "initialFixtureErrorsNotProductFindings": true
+}

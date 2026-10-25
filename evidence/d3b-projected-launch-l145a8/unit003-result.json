@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-25T13:46:39.141462+03:00",
+  "result": "PASS",
+  "exitCode": 0,
+  "total": 39,
+  "old35TestsPreserved": "original35-tests.py.txt",
+  "currentTestSha256": "6f213bcaac3d11fb7da82a804397a18ce7381b32dd2247fbcf0566b878c1b83a",
+  "nativeStoreConstructorsColdBoundariesDoubled": true,
+  "originalOwnerCodeAndSQLiteCloseReal": true,
+  "currentKernelAccepted": false
+}

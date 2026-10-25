@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-25T13:46:14.999045+03:00",
+  "previousRun": "independent003",
+  "reason": "new stronger test referred to class after constructor patch; descriptor was Mock not original",
+  "correction": "save original class before patch and use its actual expectation descriptor and _owned method",
+  "productSourceChanged": false,
+  "oldResultNotRuntimeEvidence": true,
+  "sameAssertions": true
+}

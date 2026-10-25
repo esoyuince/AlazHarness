@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-25T13:49:48.946691+03:00",
+  "rootDirtyFileCount": 33,
+  "allBytesAndStatusPreserved": true,
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "installedNativeClean": true,
+  "optionalNative": "d1516731308de8e87130dc68124e69aad35d6911",
+  "optionalNativeClean": true,
+  "mainRemote": "d304a57992ea168c6d592a949566e4419ee2f032",
+  "rootMountKernelProviderInstallServiceActions": false,
+  "ordinaryLinuxNegativeReceiverRun": true
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-25T13:46:39.782683+03:00",
+  "result": "PASS_INDEPENDENT_FIXED_LAUNCH_CONTRACTS",
+  "total": 29,
+  "passed": 29,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "failureIds": [],
+  "errorIds": [],
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_launch.py": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00",
+    "scripts/run_retained_projected.py": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+  },
+  "driverSha256": "3af06a030cc49c49741e92167982f8303d483b1f052653f52a44eaed6e7e95cd",
+  "kernelProjectionIdentityMountExecAndStoreDependenciesDoubled": true,
+  "actualKernelNativeWorkOrProviderTested": false,
+  "originalCodecAndValidationsReal": true
+}

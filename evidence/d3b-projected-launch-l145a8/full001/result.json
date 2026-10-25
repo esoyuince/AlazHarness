@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-25T13:52:14.732046+03:00",
+  "result": "PASS",
+  "total": 3611,
+  "passed": 3588,
+  "skipped": 23,
+  "errors": 0,
+  "failures": 0,
+  "errorIds": [],
+  "failureIds": [],
+  "sourcesStable": true,
+  "patchesStable": true,
+  "same23SkipIdsAndReasons": true,
+  "elapsedSeconds": 212.791,
+  "exitCode": 0,
+  "rawLogSha256": "b1a12ec21c4b372f67c913186bf7b9e6c1d31659a15f9200d40f6fb77314e3c2"
+}

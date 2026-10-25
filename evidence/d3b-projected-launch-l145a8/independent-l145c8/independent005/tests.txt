@@ -1,0 +1,34 @@
+test_arbitrary_home_scratch_or_install_not_an_escape (__main__.FixedLaunch.test_arbitrary_home_scratch_or_install_not_an_escape) ... ok
+test_changed_wire_hash_refused_even_when_codec_valid (__main__.FixedLaunch.test_changed_wire_hash_refused_even_when_codec_valid) ... ok
+test_duplicate_noncanonical_and_oversized_context_refuse (__main__.FixedLaunch.test_duplicate_noncanonical_and_oversized_context_refuse) ... ok
+test_exec_return_or_failure_not_a_success_receipt (__main__.FixedLaunch.test_exec_return_or_failure_not_a_success_receipt) ... ok
+test_extra_or_missing_environment_never_reaches_live_reads (__main__.FixedLaunch.test_extra_or_missing_environment_never_reaches_live_reads) ... ok
+test_filter_group_or_capability_changed_after_exec_refused (__main__.FixedLaunch.test_filter_group_or_capability_changed_after_exec_refused) ... ok
+test_fixed_exec_cannot_inherit_parent_keys_or_argv (__main__.FixedLaunch.test_fixed_exec_cannot_inherit_parent_keys_or_argv) ... ok
+test_foreign_pid_bool_protocol_and_extra_context_refuse (__main__.FixedLaunch.test_foreign_pid_bool_protocol_and_extra_context_refuse) ... ok
+test_incomplete_projection_never_executes (__main__.FixedLaunch.test_incomplete_projection_never_executes) ... ok
+test_live_identity_failure_after_projection_never_executes (__main__.FixedLaunch.test_live_identity_failure_after_projection_never_executes) ... ok
+test_live_mount_device_failure_never_executes (__main__.FixedLaunch.test_live_mount_device_failure_never_executes) ... ok
+test_mount_identity_changed_after_exec_refuses (__main__.FixedLaunch.test_mount_identity_changed_after_exec_refuses) ... ok
+test_namespace_change_after_exec_refuses_before_mount (__main__.FixedLaunch.test_namespace_change_after_exec_refuses_before_mount) ... ok
+test_original_projection_result_is_the_only_codec_input (__main__.FixedLaunch.test_original_projection_result_is_the_only_codec_input) ... ok
+test_previous_or_bad_instance_refuses_before_projection (__main__.FixedLaunch.test_previous_or_bad_instance_refuses_before_projection) ... ok
+test_projection_error_never_encodes_or_executes (__main__.FixedLaunch.test_projection_error_never_encodes_or_executes) ... ok
+test_roundtrip_receiver_returns_existing_typed_records_and_mount (__main__.FixedLaunch.test_roundtrip_receiver_returns_existing_typed_records_and_mount) ... ok
+test_scratch_context_cannot_overlap_fixed_profile (__main__.FixedLaunch.test_scratch_context_cannot_overlap_fixed_profile) ... ok
+test_wrong_context_mount_shape_and_device_refused (__main__.FixedLaunch.test_wrong_context_mount_shape_and_device_refused) ... ok
+test_wrong_interpreter_is_refused_before_data_or_mount (__main__.FixedLaunch.test_wrong_interpreter_is_refused_before_data_or_mount) ... ok
+test_wrong_record_rejected_before_irreversible_projection (__main__.FixedLaunch.test_wrong_record_rejected_before_irreversible_projection) ... ok
+test_actual_original_owner_expectation_property_not_read_after_close (__main__.TargetOwnerBoundary.test_actual_original_owner_expectation_property_not_read_after_close) ... ok
+test_close_or_closeable_failure_never_releases (__main__.TargetOwnerBoundary.test_close_or_closeable_failure_never_releases) ... ok
+test_constructor_unknown_does_not_release_lease (__main__.TargetOwnerBoundary.test_constructor_unknown_does_not_release_lease) ... ok
+test_entrypoint_refuses_arbitrary_arguments_before_target (__main__.TargetOwnerBoundary.test_entrypoint_refuses_arbitrary_arguments_before_target) ... ok
+test_original_owner_arguments_and_close_before_release (__main__.TargetOwnerBoundary.test_original_owner_arguments_and_close_before_release) ... ok
+test_receive_failure_before_lease_or_store (__main__.TargetOwnerBoundary.test_receive_failure_before_lease_or_store) ... ok
+test_refusal_entrypoint_returns_bounded_failure_without_payload (__main__.TargetOwnerBoundary.test_refusal_entrypoint_returns_bounded_failure_without_payload) ... ok
+test_start_failure_no_unqualified_close_or_release (__main__.TargetOwnerBoundary.test_start_failure_no_unqualified_close_or_release) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.108s
+
+OK

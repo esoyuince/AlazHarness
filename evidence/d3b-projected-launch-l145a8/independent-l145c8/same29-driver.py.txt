@@ -1,0 +1,251 @@
+"""Independent fixed-launcher contracts, explicit kernel/OS/store boundary doubles.
+No real projection, native model, mount, store or provider runs in these methods.
+"""
+import copy,hashlib,importlib.util,io,json,os,sys,unittest
+from contextlib import ExitStack,redirect_stdout
+from dataclasses import asdict,replace
+from pathlib import Path,PurePosixPath
+from types import SimpleNamespace
+from unittest.mock import Mock,patch
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(ROOT/'tests')]
+import gateway_retained_launch as launch
+import gateway_retained_handoff as h
+import test_gateway_state_projection as fixture
+
+class ExecReplaced(BaseException):pass
+
+class FixedLaunch(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close);self.events=[]
+        self.stack.enter_context(patch.object(launch,'ROOT',PurePosixPath('/opt/owned')))
+        self.stack.enter_context(patch.object(h.retained,'Path',PurePosixPath))
+        self.stack.enter_context(patch.object(launch.os,'makedev',side_effect=lambda a,b:1792+b,create=True))
+        self.b=fixture.binding();self.view=copy.deepcopy(fixture.V);self.fs=copy.deepcopy(fixture.FS)
+        self.view.update(version=2,mode='projected_root_principal')
+        self.state=h.preopen.live.PreparedStoreExpectation(h.preopen.live.NATIVE_PIN,'a'*64,'b'*64,
+            '12345678-1234-4234-8234-123456789012',123,(1792,21),(1792,22),1,'prior-owner')
+        self.reply=h.response.PreparedResponseExpectation(h.response.NATIVE_FEATURE,h.response.SCHEMA_SHA256,(1792,23))
+        self.retained=h.retained.RetainedProfileExpectation(h.retained.FEATURE,h.TARGET,(1792,12),((1792,21),(1792,22),(1792,23)),1,'prior-owner','c'*64)
+        self.record=h.RetainedStartup(self.state,self.reply,self.retained)
+        self.projected={'version':1,'pid':os.getpid(),'stateDirectoryCount':1,'ambientHostDirectoriesBound':0,
+            'hostUserNamespacePreserved':True,'legacyIpcV2Activated':False,'fullD3BAccepted':False,
+            'state':'confined_state_profile','profile':h.TARGET,'profileLayout':launch.state.NATIVE_RETAINED_LAYOUT,
+            'retainedProjectionVerified':True,'persistentProfileProjected':True,'rootPrivilegesDropped':True,
+            'profileOwnershipAcquired':False,'nativeHermesStoresOpened':False,'retainedProfile':self.retained,
+            'profileDevice':1792,'profileInode':12}
+        self.ns={'user':'user:[1]','mnt':'mnt:[2]','net':'net:[3]','ipc':'ipc:[4]'}
+        self.mount=launch.mounts.ExpectedMount(81,(7,0),'/profile',h.TARGET,'ext4')
+        self.projection=self.stack.enter_context(patch.object(launch.state,'enter',side_effect=lambda *a,**k:self.mark('projection',self.projected)))
+        self.encode=self.stack.enter_context(patch.object(h,'encode_projected',wraps=h.encode_projected))
+        self.stack.enter_context(patch.object(launch,'_namespaces',side_effect=lambda:self.mark('namespaces',dict(self.ns))))
+        self.identity=self.stack.enter_context(patch.object(launch.state.gp.hp,'gateway_identity',side_effect=lambda *a:self.mark('identity')))
+        self.observed={'pid':os.getpid(),'uids':(23001,)*4,'gids':(23003,)*4,'groups':(),
+            'threads':1,'nnp':1,'caps':{k:0 for k in launch.state.gp.launch.CAPS},'userns':'user:[1]',
+            'uidMap':['0','0','4294967295'],'gidMap':['0','0','4294967295']}
+        self.observation=self.stack.enter_context(patch.object(launch.state.gp.launch,'observation',side_effect=lambda:self.mark('observation',copy.deepcopy(self.observed))))
+        self.filter=self.stack.enter_context(patch.object(launch.state.gp.net,'status',return_value={'Seccomp':'2'}))
+        self.mount_read=self.stack.enter_context(patch.object(launch,'_mount',side_effect=lambda:self.mark('mount',self.mount)))
+        self.exec=self.stack.enter_context(patch.object(launch.os,'execve',side_effect=self.executed))
+        self.captured=None
+    def mark(self,name,value=None):self.events.append(name);return value
+    def executed(self,*args):self.events.append('exec');self.captured=args;raise ExecReplaced()
+    def run_launch(self,**kw):return launch.launch(self.view,self.fs,self.b,self.record,scratch='/srv/test/scratch',instance_id='new-owner',**kw)
+    def environment(self):
+        with self.assertRaises(ExecReplaced):self.run_launch()
+        return copy.deepcopy(self.captured[2])
+    def receiver(self,env):
+        with patch.object(launch.sys,'platform','linux'),patch.object(launch.sys,'flags',SimpleNamespace(isolated=1)),patch.object(launch.sys,'dont_write_bytecode',True),patch.object(launch.sys,'executable',launch.PYTHON):
+            return launch.receive(env)
+    def mutate_context(self,env,change):
+        context=json.loads(env[launch.CONTEXT_ENV]);change(context);env[launch.CONTEXT_ENV]=launch._bytes(context).decode('ascii');return env
+    def test_original_projection_result_is_the_only_codec_input(self):
+        before=asdict(self.record);env=self.environment()
+        self.assertEqual(self.events[0],'projection');self.assertEqual(self.events[-1],'exec')
+        self.assertIs(self.encode.call_args.args[0],self.projected)
+        self.assertEqual(self.projection.call_args.kwargs,{'observe_self_mount':True,'profile_layout':launch.state.NATIVE_RETAINED_LAYOUT,'retained_profile':self.retained})
+        self.assertEqual(h.decode_projected(env[launch.WIRE_ENV].encode()),self.record);self.assertEqual(asdict(self.record),before)
+    def test_fixed_exec_cannot_inherit_parent_keys_or_argv(self):
+        with patch.dict(os.environ,{'PYTHONPATH':'/untrusted','MODEL_SECRET':'fixture-only','LD_PRELOAD':'/bad'},clear=False):env=self.environment()
+        exe,argv,_=self.captured
+        self.assertEqual(exe,'/usr/bin/python3.12');self.assertEqual(argv,[exe,'-I','-B','/opt/owned/scripts/run_retained_projected.py'])
+        self.assertEqual(set(env),{'PATH','LANG','HOME','HERMES_HOME','TMPDIR','TMP','TEMP',launch.WIRE_ENV,launch.CONTEXT_ENV})
+        self.assertEqual(env['HOME'],h.TARGET);self.assertEqual(env['TMPDIR'],'/srv/test/scratch')
+    def test_wrong_record_rejected_before_irreversible_projection(self):
+        for r in (None,asdict(self.record),replace(self.record,retained=replace(self.retained,epoch=2))):
+            with self.subTest(record=type(r).__name__),self.assertRaises(Exception):
+                launch.launch(self.view,self.fs,self.b,r,scratch='/srv/test/scratch',instance_id='new-owner')
+        self.projection.assert_not_called();self.exec.assert_not_called()
+    def test_previous_or_bad_instance_refuses_before_projection(self):
+        for value in ('prior-owner','',True,'../escape','a'*129):
+            with self.subTest(value=value),self.assertRaises(Exception):launch.launch(self.view,self.fs,self.b,self.record,scratch='/srv/test/scratch',instance_id=value)
+        self.projection.assert_not_called();self.exec.assert_not_called()
+    def test_arbitrary_home_scratch_or_install_not_an_escape(self):
+        with self.assertRaises(Exception):launch.launch(self.view,self.fs,self.b,replace(self.record,retained=replace(self.retained,home='/tmp/elsewhere')),scratch='/srv/test/scratch',instance_id='new-owner')
+        for scratch in ('/tmp','/dev/null','/srv/test/../scratch'):
+            with self.assertRaises(Exception):launch.launch(self.view,self.fs,self.b,self.record,scratch=scratch,instance_id='new-owner')
+        self.fs['readonly']=['/usr/bin']
+        with self.assertRaises(Exception):self.run_launch()
+        self.projection.assert_not_called();self.exec.assert_not_called()
+    def test_projection_error_never_encodes_or_executes(self):
+        self.projection.side_effect=RuntimeError('partial projection')
+        with self.assertRaises(RuntimeError):self.run_launch()
+        self.encode.assert_not_called();self.exec.assert_not_called()
+    def test_incomplete_projection_never_executes(self):
+        self.projected['rootPrivilegesDropped']=False
+        with self.assertRaises(h.HandoffRejected):self.run_launch()
+        self.mount_read.assert_not_called();self.exec.assert_not_called()
+    def test_live_identity_failure_after_projection_never_executes(self):
+        self.observed['nnp']=0
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'live_identity'):self.run_launch()
+        self.exec.assert_not_called()
+    def test_live_mount_device_failure_never_executes(self):
+        self.mount=replace(self.mount,device=(7,1))
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'mount_identity'):self.run_launch()
+        self.exec.assert_not_called()
+    def test_exec_return_or_failure_not_a_success_receipt(self):
+        self.exec.side_effect=None
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'exec_returned'):self.run_launch()
+        self.exec.assert_called_once();self.exec.reset_mock();self.exec.side_effect=OSError('testexec')
+        with self.assertRaises(OSError):self.run_launch()
+        self.exec.assert_called_once()
+    def test_roundtrip_receiver_returns_existing_typed_records_and_mount(self):
+        env=self.environment();r,m,instance=self.receiver(env)
+        self.assertEqual(r,self.record);self.assertEqual(m,self.mount);self.assertEqual(instance,'new-owner')
+        self.assertIs(type(r),h.RetainedStartup);self.assertEqual(env,self.captured[2])
+    def test_wrong_interpreter_is_refused_before_data_or_mount(self):
+        env=self.environment();self.mount_read.reset_mock()
+        with patch.object(launch.sys,'executable','/usr/bin/other'),self.assertRaisesRegex(launch.ProjectedLaunchRejected,'fixed_interpreter'):launch.receive(env)
+        self.mount_read.assert_not_called()
+    def test_extra_or_missing_environment_never_reaches_live_reads(self):
+        original=self.environment();self.identity.reset_mock();self.mount_read.reset_mock()
+        for env in (dict(original,EXTRA='x'),{k:v for k,v in original.items() if k!='HOME'}):
+            with self.assertRaises(launch.ProjectedLaunchRejected):self.receiver(env)
+        self.identity.assert_not_called();self.mount_read.assert_not_called()
+    def test_changed_wire_hash_refused_even_when_codec_valid(self):
+        env=self.environment();self.identity.reset_mock();self.mount_read.reset_mock()
+        self.mutate_context(env,lambda c:c.update(wireSha256='f'*64))
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'context_binding'):self.receiver(env)
+        self.identity.assert_not_called();self.mount_read.assert_not_called()
+    def test_duplicate_noncanonical_and_oversized_context_refuse(self):
+        original=self.environment();self.mount_read.reset_mock()
+        for raw in (original[launch.CONTEXT_ENV]+' ',original[launch.CONTEXT_ENV][:-1]+',"pid":1}','x'*(launch.MAX_CONTEXT+1)):
+            env=dict(original);env[launch.CONTEXT_ENV]=raw
+            with self.assertRaises(launch.ProjectedLaunchRejected):self.receiver(env)
+        self.mount_read.assert_not_called()
+    def test_foreign_pid_bool_protocol_and_extra_context_refuse(self):
+        original=self.environment();self.mount_read.reset_mock()
+        for change in (lambda c:c.update(pid=os.getpid()+1),lambda c:c.update(pid=True),lambda c:c.update(protocol='unknown'),lambda c:c.update(extra=1)):
+            env=self.mutate_context(copy.deepcopy(original),change)
+            with self.assertRaises(launch.ProjectedLaunchRejected):self.receiver(env)
+        self.mount_read.assert_not_called()
+    def test_wrong_context_mount_shape_and_device_refused(self):
+        original=self.environment();self.mount_read.reset_mock()
+        for change in (lambda c:c['mount'].update(device=[True,0]),lambda c:c['mount'].update(device=[7,1]),lambda c:c['mount'].update(mount_point='/other'),lambda c:c['mount'].update(root='/')):
+            env=self.mutate_context(copy.deepcopy(original),change)
+            with self.assertRaises(launch.ProjectedLaunchRejected):self.receiver(env)
+        self.mount_read.assert_not_called()
+    def test_namespace_change_after_exec_refuses_before_mount(self):
+        env=self.environment();self.ns['net']='net:[99]';self.mount_read.reset_mock()
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'live_namespaces'):self.receiver(env)
+        self.mount_read.assert_not_called()
+    def test_filter_group_or_capability_changed_after_exec_refused(self):
+        env=self.environment();self.mount_read.reset_mock()
+        self.filter.return_value={'Seccomp':'0'}
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'live_filter'):self.receiver(env)
+        self.filter.return_value={'Seccomp':'2'};self.observed['groups']=(1,)
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'live_identity'):self.receiver(env)
+        self.observed['groups']=();self.observed['caps']['CapEff']=1
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'live_identity'):self.receiver(env)
+        self.mount_read.assert_not_called()
+    def test_mount_identity_changed_after_exec_refuses(self):
+        env=self.environment();self.mount=replace(self.mount,mount_id=82)
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'changed_after_exec'):self.receiver(env)
+    def test_scratch_context_cannot_overlap_fixed_profile(self):
+        original=self.environment();self.identity.reset_mock()
+        for scratch in ('/',h.TARGET,h.TARGET+'/escape','/run/alaz-state','/dev/null'):
+            env=self.mutate_context(copy.deepcopy(original),lambda c:c.update(scratch=scratch))
+            for key in ('TMPDIR','TMP','TEMP'):env[key]=scratch
+            with self.assertRaises(launch.ProjectedLaunchRejected):self.receiver(env)
+        self.identity.assert_not_called()
+
+class TargetOwnerBoundary(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close);self.events=[]
+        self.record=SimpleNamespace(state=object(),response=object(),retained=object());self.mount=object()
+        self.receive=self.stack.enter_context(patch.object(launch,'receive',return_value=(self.record,self.mount,'new-owner')))
+        import gateway_profile_lease as profiles
+        import gateway_store_startup as startup
+        self.original_owner_type=startup.NativeStoreStartup
+        self.held=Mock();self.owner=Mock();self.owner.expectation=SimpleNamespace(epoch=2)
+        self.owner.start.side_effect=lambda:self.mark('start',{'completedChecks':['a','b','c','d','e','f']})
+        self.owner.close.side_effect=lambda:self.mark('close');self.owner.status.return_value={'callerLeaseMayBeReleased':True}
+        self.held.finish.side_effect=lambda:self.mark('finish')
+        self.reserve=self.stack.enter_context(patch.object(profiles,'reserve_profile',side_effect=lambda *a:self.mark('lease',self.held)))
+        self.constructor=self.stack.enter_context(patch.object(startup,'NativeStoreStartup',side_effect=lambda *a,**kw:self.mark('construct',self.owner)))
+    def mark(self,name,value=None):self.events.append(name);return value
+    def test_original_owner_arguments_and_close_before_release(self):
+        result=launch.target_main()
+        self.assertEqual(self.events,['lease','construct','start','close','finish'])
+        self.assertEqual(self.constructor.call_args.args,(self.held,self.mount,self.record.state))
+        self.assertEqual(self.constructor.call_args.kwargs,dict(instance_id='new-owner',response_expected=self.record.response,prepared_layout=True,retained_profile=self.record.retained))
+        self.assertEqual(result['state'],'PROJECTED_RETAINED_OWNER_CLOSED');self.assertFalse(result['finiteWorkExecuted']);self.assertFalse(result['runtimeAdmissionAuthorized'])
+    def test_actual_original_owner_expectation_property_not_read_after_close(self):
+        import gateway_store_startup as original
+        from threading import get_ident
+        actor=(os.getpid(),23001,23003,get_ident());fixture=self
+        class Owner:
+            # Actual production descriptor and owned check, not a permissive Mock attribute.
+            expectation=fixture.original_owner_type.expectation
+            _owned=fixture.original_owner_type._owned
+            def __init__(self):
+                self._actor=actor;self._held=fixture.held;self._expected=SimpleNamespace(epoch=2);self._stage='NEW'
+            def start(self):self._stage='VERIFIED';return fixture.mark('start',{'completedChecks':['a','b','c','d','e','f']})
+            def close(self):self._stage='CLOSED';fixture.mark('close')
+            def status(self):return {'callerLeaseMayBeReleased':self._stage=='CLOSED'}
+        owner=Owner();self.constructor.side_effect=lambda *a,**kw:self.mark('construct',owner)
+        with patch.object(original.live.profiles,'_actor',return_value=actor):
+            result=launch.target_main()
+        self.assertEqual(result['epoch'],2);self.assertEqual(self.events,['lease','construct','start','close','finish'])
+        self.assertIs(Owner.expectation,self.original_owner_type.expectation)
+    def test_receive_failure_before_lease_or_store(self):
+        self.receive.side_effect=launch.ProjectedLaunchRejected('badtransfer')
+        with self.assertRaises(launch.ProjectedLaunchRejected):launch.target_main()
+        self.reserve.assert_not_called();self.constructor.assert_not_called()
+    def test_constructor_unknown_does_not_release_lease(self):
+        self.constructor.side_effect=RuntimeError('partial constructor')
+        with self.assertRaises(RuntimeError):launch.target_main()
+        self.held.finish.assert_not_called();self.owner.close.assert_not_called()
+    def test_start_failure_no_unqualified_close_or_release(self):
+        self.owner.start.side_effect=RuntimeError('unknown epoch')
+        with self.assertRaises(RuntimeError):launch.target_main()
+        self.owner.close.assert_not_called();self.held.finish.assert_not_called()
+    def test_close_or_closeable_failure_never_releases(self):
+        self.owner.close.side_effect=RuntimeError('closeunknown')
+        with self.assertRaises(RuntimeError):launch.target_main()
+        self.held.finish.assert_not_called();self.owner.close.side_effect=None
+        self.owner.status.return_value={'callerLeaseMayBeReleased':False}
+        with self.assertRaisesRegex(launch.ProjectedLaunchRejected,'not_closeable'):launch.target_main()
+        self.held.finish.assert_not_called()
+    def test_refusal_entrypoint_returns_bounded_failure_without_payload(self):
+        spec=importlib.util.spec_from_file_location('independent_fixed_target',ROOT/'scripts/run_retained_projected.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+        with patch.object(m,'target_main',side_effect=RuntimeError('private-fixture-value')) as target,patch.object(sys,'argv',['fixed']),redirect_stdout(io.StringIO()) as output:code=m.main()
+        self.assertEqual(code,2);self.assertEqual(json.loads(output.getvalue()),{'state':'PROJECTED_RETAINED_REFUSED','type':'RuntimeError'});target.assert_called_once()
+    def test_entrypoint_refuses_arbitrary_arguments_before_target(self):
+        spec=importlib.util.spec_from_file_location('independent_fixed_target_args',ROOT/'scripts/run_retained_projected.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+        with patch.object(m,'target_main') as target,patch.object(sys,'argv',['fixed','arbitrary.py']),redirect_stdout(io.StringIO()):code=m.main()
+        self.assertEqual(code,2);target.assert_not_called()
+
+def main():
+    import argparse,datetime
+    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,required=True);args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=False)
+    files=('packages/claw-hermes/gateway_retained_launch.py','scripts/run_retained_projected.py')
+    before={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in files}
+    suite=unittest.TestSuite([unittest.defaultTestLoader.loadTestsFromTestCase(cls) for cls in (FixedLaunch,TargetOwnerBoundary)])
+    with (args.out/'tests.txt').open('w',encoding='utf-8') as out:r=unittest.TextTestRunner(stream=out,verbosity=2).run(suite)
+    after={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in files};assert before==after
+    result={'at':datetime.datetime.now().astimezone().isoformat(),'result':'PASS_INDEPENDENT_FIXED_LAUNCH_CONTRACTS' if r.wasSuccessful() else 'FAIL','total':r.testsRun,'passed':r.testsRun-len(r.errors)-len(r.failures)-len(r.skipped),'failures':len(r.failures),'errors':len(r.errors),'skipped':len(r.skipped),'failureIds':[t.id() for t,_ in r.failures],'errorIds':[t.id() for t,_ in r.errors],'sourceHashes':after,'driverSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'kernelProjectionIdentityMountExecAndStoreDependenciesDoubled':True,'actualKernelNativeWorkOrProviderTested':False,'originalCodecAndValidationsReal':True}
+    (args.out/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps(result),flush=True)
+    if not r.wasSuccessful():print((args.out/'tests.txt').read_text(encoding='utf-8')[-14000:],flush=True)
+    return 0 if r.wasSuccessful() else 1
+if __name__=='__main__':raise SystemExit(main())

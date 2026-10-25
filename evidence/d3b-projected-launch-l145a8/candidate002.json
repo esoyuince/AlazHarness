@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-25T13:43:16.966904+03:00",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_launch.py": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00",
+    "scripts/run_retained_projected.py": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+  },
+  "change": "capture original owner expectation before normal close/release",
+  "nativeOwnerSemanticsUnchanged": true,
+  "state": "CANDIDATE002",
+  "same35TestSha256": "70a2154c52dccaa2c8e95a4f52ffc50684cf7d2fc081f97b58610de13d864337",
+  "originalErrorPreserved": true
+}

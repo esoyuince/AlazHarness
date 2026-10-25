@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-25T13:42:27.500859+03:00",
+  "exitCode": 1,
+  "testSha256": "70a2154c52dccaa2c8e95a4f52ffc50684cf7d2fc081f97b58610de13d864337",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_launch.py": "da05b727fa47c42343f7abeafd2419e0e349e8731b6e678c41e6cf83ae060ada",
+    "scripts/run_retained_projected.py": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+  },
+  "scope": "explicit kernel/projection/exec/startup doubles, no kernel acceptance"
+}

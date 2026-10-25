@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T13:44:38.990951+03:00",
+  "state": "READY_NOT_EXECUTED",
+  "bundleSha256": "01e90bacb8e5a581a6894662a5e7a551b1ea312b44f463d8fe9e544ce24bce9f",
+  "bundleBytes": 229085,
+  "transportSha256": "2d371726bdb392c20fbcb5b5e34cda2cecf087483ce1b0061495427812850595",
+  "scope": "five separate isolated ordinary-Linux interpreters run fixed target with invalid or unconfined input; kernel fields real, NO profile stores or native work expected",
+  "noRootOrPriorDeniedAction": true,
+  "productSourceHashes": {
+    "packages/claw-hermes/gateway_retained_launch.py": "f326c2f420eb8355b09d8bfb26ad8182be544bae71818c5a2cca1f4e40736c00",
+    "scripts/run_retained_projected.py": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-25T13:38:53.387774+03:00",
+  "base": "d304a57992ea168c6d592a949566e4419ee2f032",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_launch.py": "da05b727fa47c42343f7abeafd2419e0e349e8731b6e678c41e6cf83ae060ada",
+    "scripts/run_retained_projected.py": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+  },
+  "state": "CANDIDATE001_UNTESTED",
+  "actualCalls": [
+    "state.enter",
+    "handoff.encode_projected",
+    "os.execve fixed argv",
+    "handoff.decode_projected",
+    "original lease and NativeStoreStartup"
+  ],
+  "targetScope": "readiness-only original owner start/close; no actual finite work or service enabled",
+  "kernelAcceptance": false
+}
