@@ -1,0 +1,54 @@
+{
+  "capture": {
+    "capturedAtUtc": "2026-10-25T20:41:38.499800+00:00",
+    "execSessionId": 25819,
+    "finalChunkId": "b215ec",
+    "initialChunkId": "a0387b",
+    "method": "Exact terminal output transcribed and concatenated from the already-completed initial and final tool chunks; no rerun"
+  },
+  "command": [
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_projected_candidate.py",
+    "-v"
+  ],
+  "cwd": "/workspace/scratch/288e2938ab4c/r153-packaging",
+  "durationSeconds": 5.553,
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "fullRepositorySuiteForTheseBytes": false,
+  "installationPerformed": false,
+  "modelCalls": 0,
+  "packagedCodeExecuted": false,
+  "passed": 27,
+  "privilegedExecution": false,
+  "rawLog": {
+    "bytes": 4495,
+    "file": "linux-packaging.log",
+    "sha256": "98a3158662e4ed4580dabd6fe47bb27b5559b22b8a2d70779dda862fca98558f"
+  },
+  "realNativeSourceRead": false,
+  "result": "PASS",
+  "schemaVersion": 1,
+  "scope": "Linux owned-Git-fixture packaging tests; no native runtime execution",
+  "serviceStarted": false,
+  "skipped": 0,
+  "sourceFiles": {
+    "scripts/build_projected_candidate.py": {
+      "bytes": 23212,
+      "sha256": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7"
+    },
+    "tests/test_projected_candidate.py": {
+      "bytes": 26737,
+      "sha256": "015a43cc6dc679a2bddeac6abfd6dc7a3520830325724ca150ca278a8cf194fe"
+    }
+  },
+  "testsRun": 27
+}

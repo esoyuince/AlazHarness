@@ -1,0 +1,12 @@
+{
+  "kind": "R153A1_MARKER_WINDOWS_PREFLIGHT_NOT_RUN",
+  "requestId": "3e5fc9ec-2cb0-4b75-bb1e-d37eadcc1531",
+  "state": "completed",
+  "exitCode": 1,
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 9, in <module>\r\n    assert before==expected\r\n           ^^^^^^^^^^^^^^^^\r\nAssertionError\r\n",
+  "testsRun": 0,
+  "reason": "Expected the adjacent Linux support-copy hash; that copy has one additional final LF. Primary Windows scanner is unchanged and byte-identical to its committed Git blob.",
+  "primaryScannerSha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8",
+  "localSupportScannerSha256": "3ddd0d1a0d6f853e446cf19b6164b078b38069ae1fde4702baccbff3c08d13f5",
+  "sourceOrScannerChangedToPass": false
+}

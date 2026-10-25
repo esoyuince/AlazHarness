@@ -134,3 +134,18 @@ Request 1076690d-0dfc-4b60-94b4-0252ea721531 completed exit 0.
 static errors and default staged whitespace exit 0. Full test execution remains
 full001. Raw .log files are locally retained; explicit public transcript copies
 will be hash-checked and scanned before the source commit.
+
+## Real-source refusal and narrow marker refinement
+
+Source checkpoint652d881 committed locally with tested source Git bytes and exact
+public transcript archives. candidate001 refused one credential-url pattern,
+with no archive or installation. Git/AST classified native base.py line337 as a
+conventional placeholder in resolve_proxy_url's docstring. Native bytes/scanner
+were not changed. Exact native marker review requires all eight identity fields,
+every occurrence and the entire declared inventory; changed pin/clean bytes
+cannot silently drop it. Independent review passed final97be4be/015a43c bytes.
+Linux packaging27 PASS, Windows new-marker8 PASS. Full001/static001 remain the
+pre-marker complete-repo receipts; runtime source files are unchanged. The first
+Windows marker preflight was NOT STARTED due solely to a local helper's extra
+EOF LF; actual primary scanner was verified byte-equal to its committed source.
+Next: refined source commit, candidate002 actual export and exact-final-SHA CI.

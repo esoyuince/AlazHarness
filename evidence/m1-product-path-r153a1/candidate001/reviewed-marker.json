@@ -1,0 +1,28 @@
+{
+  "kind": "R153A1_REVIEWED_NATIVE_DOCUMENTATION_MARKER",
+  "observedUtc": "2026-10-25T20:36:13.738332+00:00",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "path": "gateway/platforms/base.py",
+  "gitBlob": "39f810e91264aee5f7d6bfcda5deffca816e7f14",
+  "fileSha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525",
+  "detector": "credential-url",
+  "byteStart": 15806,
+  "byteEnd": 15823,
+  "line": 337,
+  "matchSha256": "f8c7f2987069485166a19282090fd6bfda8b12c5ccf46c99846068ed92369f32",
+  "matchBytes": 17,
+  "functionDocstringOnly": true,
+  "conventionalUserPassPlaceholders": true,
+  "functionName": "resolve_proxy_url",
+  "sanitizedContext": [
+    "    None when nothing is found or NO_PROXY matches a target.",
+    "",
+    "    *platform_env_var* is a per-adapter, per-profile-configurable setting (each proxy URL can",
+    "    embed credentials, e.g. ``<REDACTED_URL_USERINFO>host``) so it is read scope-aware: under a",
+    "    secondary multiplex profile it comes from that profile's own ``.env``, not the shared",
+    "    process env another profile's ``TELEGRAM_PROXY``/``DISCORD_PROXY``/etc. may hold; the YAML",
+    "    value is the same profile's, so a secondary keeps its configured route without any env"
+  ],
+  "nativeBytesModified": false,
+  "matchingValuesDisclosed": false
+}

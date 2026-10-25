@@ -1,0 +1,24 @@
+{
+  "kind": "R153A1_INDEPENDENT_MARKER_SOURCE_REVIEW",
+  "reviewer": "r153_marker_review",
+  "result": "APPROVED_SOURCE_ONLY_SCOPE",
+  "builderSha256": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7",
+  "testsSha256": "015a43cc6dc679a2bddeac6abfd6dc7a3520830325724ca150ca278a8cf194fe",
+  "verified": [
+    "existing scanner runs for every blob and all occurrences are enumerated",
+    "eight exact native source/occurrence bindings",
+    "no harness exception",
+    "full native review inventory mandatory including omitted source",
+    "changed/missing/extra matches refuse before output",
+    "safe hash/location/rationale metadata only",
+    "native pin change with clean source cannot silently discard review"
+  ],
+  "resolvedFinding": "Initial pin filtering could drop expected inventory; final guard requires current pin and all declared reviews to bind it. Independent targeted clean-source/unknown-pin repro now refuses.",
+  "nativeBytesModified": false,
+  "kernelOrInstalledAcceptance": false,
+  "realMarkerClassification": "Root recorded actual Git/AST classification separately; reviewer inspected source and synthetic tests.",
+  "fullSuiteDuplicatedByReviewer": false,
+  "localSupportScannerSha256": "3ddd0d1a0d6f853e446cf19b6164b078b38069ae1fde4702baccbff3c08d13f5",
+  "primaryUnchangedScannerSha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8",
+  "localSupportDifference": "One additional final LF in the local support copy; normalizing only surplus EOF LF exactly yields the primary committed hash. Scanner semantics unchanged."
+}

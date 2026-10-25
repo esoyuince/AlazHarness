@@ -1,0 +1,8 @@
+{
+  "requestId": "aef83854-7c7b-46ae-9442-2ed6b86d1531",
+  "state": "completed",
+  "exitCode": 0,
+  "completedAt": 1792960337318,
+  "stdout": "{\r\n  \"state\": \"SOURCE_COMMITTED_NOT_PUSHED\",\r\n  \"commit\": \"652d881c822da32c753c7dddd1495c4ac81009b9\",\r\n  \"branch\": \"alaz/m1-product-path-r153a1\",\r\n  \"changedFiles\": 45,\r\n  \"clean\": true,\r\n  \"sourceGitBytesMatchExecutedFiles\": true,\r\n  \"publicTranscriptGitBytesVerified\": true,\r\n  \"staticGatePassed\": true,\r\n  \"fullSuitePassed\": true,\r\n  \"firstCommitLine\": \"[alaz/m1-product-path-r153a1 652d881] feat: compose supervised retained readiness and exact source candidate\",\r\n  \"remoteCIClaimed\": false,\r\n  \"installed\": false\r\n}\r\n",
+  "stderr": ""
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "R153A1_CREDENTIAL_PATTERN_DIAGNOSTIC",
+  "observedUtc": "2026-10-25T20:34:51.895353+00:00",
+  "sourceCommit": "652d881c822da32c753c7dddd1495c4ac81009b9",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "matches": [
+    {
+      "repository": "native",
+      "path": "gateway/platforms/base.py",
+      "gitBlob": "39f810e91264aee5f7d6bfcda5deffca816e7f14",
+      "fileSha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525",
+      "detector": "credential-url",
+      "line": 337,
+      "matchBytes": 17,
+      "matchSha256": "f8c7f2987069485166a19282090fd6bfda8b12c5ccf46c99846068ed92369f32",
+      "constants": [
+        {
+          "constantBytes": 1009,
+          "constantSha256": "f779463bc76768004a98c8855d222fb687c48f3869f9ce1f24846cb60705cb52",
+          "constantIsOnlyMatchedLiteral": false,
+          "parents": [
+            {
+              "node": "Expr"
+            },
+            {
+              "node": "FunctionDef",
+              "name": "resolve_proxy_url"
+            },
+            {
+              "node": "Module"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "matchingValuesDisclosed": false,
+  "sourceBytesModified": false,
+  "archiveProduced": false,
+  "failedCandidateOutputExists": false
+}

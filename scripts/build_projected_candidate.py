@@ -51,6 +51,21 @@ REQUIRED_MODULES = frozenset('packages/claw-hermes/' + name for name in (
     'state_volume_supervisor.py', 'state_image_lease.py', 'supervised_pipe_capture.py',
     'gateway_store_startup.py', 'gateway_prepared_consumer.py',
 ))
+# The sole real-source detector hit was reviewed as a conventional URL-userinfo
+# placeholder in the first-statement docstring of resolve_proxy_url. This table
+# binds that occurrence to exact immutable native bytes, not a path exemption.
+# No matched text is stored here. Every other occurrence remains a refusal.
+REVIEWED_NATIVE_MARKERS = ({
+    'nativeFeature': 'd1516731308de8e87130dc68124e69aad35d6911',
+    'path': 'gateway/platforms/base.py',
+    'gitBlob': '39f810e91264aee5f7d6bfcda5deffca816e7f14',
+    'fileSha256': 'ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525',
+    'detector': 'credential-url', 'byteStart': 15806, 'byteEnd': 15823,
+    'matchSha256': 'f8c7f2987069485166a19282090fd6bfda8b12c5ccf46c99846068ed92369f32',
+    'classification': 'documentation-placeholder',
+    'context': 'first-statement function docstring',
+    'symbol': 'resolve_proxy_url', 'line': 337,
+},)
 
 
 class CandidateRejected(ValueError):
@@ -134,13 +149,55 @@ def tree(repo, revision, choose):
     return dict(sorted(result.items()))
 
 
-def blobs(repo, entries, *, scan_private=True):
+def _marker_key(marker):
+    return tuple(marker[k] for k in ('nativeFeature', 'path', 'gitBlob', 'fileSha256',
+        'detector', 'byteStart', 'byteEnd', 'matchSha256'))
+
+
+def _native_reviews(native_feature):
+    if native_feature is None:
+        return ()  # Harness blobs never have a reviewed-marker exception.
+    require(type(native_feature) is str and native_feature == NATIVE_FEATURE
+            and all(m['nativeFeature'] == native_feature for m in REVIEWED_NATIVE_MARKERS),
+            'candidate_reviewed_native_revision')
+    return REVIEWED_NATIVE_MARKERS
+
+
+def _scan_credentials(name, row, data, *, native_feature=None):
+    """Keep the original scan; review only exact immutable native occurrences."""
+    from ci_check import PATTERNS, credential_hits
+    hits = credential_hits(data)
+    reviewed = [m for m in _native_reviews(native_feature) if m['path'] == name]
+    wanted = {_marker_key(m): m for m in reviewed}
+    require(len(wanted) == len(reviewed), 'candidate_reviewed_marker_duplicate')
+    file_hash = digest(data)
+    require(all(m['gitBlob'] == row['gitBlob'] and m['fileSha256'] == file_hash
+                for m in reviewed), 'candidate_reviewed_source_changed')
+    seen = set()
+    for detector in hits:
+        # credential_hits summarizes names; finditer checks EVERY occurrence,
+        # including a second match of a detector already represented above.
+        require(detector in PATTERNS, 'candidate_credential_detector_changed')
+        for match in PATTERNS[detector].finditer(data):
+            identity = (native_feature, name, row['gitBlob'], file_hash, detector,
+                        match.start(), match.end(), digest(match.group()))
+            require(identity in wanted and identity not in seen,
+                    'candidate_credential_pattern')
+            seen.add(identity)
+    require(seen == set(wanted), 'candidate_reviewed_marker_missing')
+    # Only fixed safe metadata is returned. Neither matched bytes nor context
+    # snippets from source are written into the manifest or diagnostics.
+    return [dict(wanted[key]) for key in sorted(seen)]
+
+
+def blobs(repo, entries, *, native_feature=None, scan_private=True):
     # Same bounded public-source scanners used by the existing exporter/CI.
-    from ci_check import credential_hits, private_path
+    from ci_check import private_path
+    expected = [_marker_key(m) for m in _native_reviews(native_feature)]
     request = ''.join(row['gitBlob'] + '\n' for row in entries.values()).encode('ascii')
     raw = git(repo, 'cat-file', '--batch', data=request)
     require(len(raw) <= MAX_TOTAL + MAX_FILES * 100, 'candidate_batch_limit')
-    cursor = 0; result = {}
+    cursor = 0; result = {}; reviewed = []
     for name, row in entries.items():
         end = raw.find(b'\n', cursor)
         require(end != -1, 'candidate_blob_header')
@@ -154,10 +211,12 @@ def blobs(repo, entries, *, scan_private=True):
         cursor += 1
         require(b'\0' not in data, 'candidate_binary_source')
         require(not scan_private or not private_path(name), 'candidate_private_path')
-        require(not credential_hits(data), 'candidate_credential_pattern')
+        reviewed.extend(_scan_credentials(name, row, data, native_feature=native_feature))
         result[name] = data
     require(cursor == len(raw), 'candidate_extra_blob_output')
-    return result
+    require(sorted(_marker_key(m) for m in reviewed) == sorted(expected),
+            'candidate_reviewed_marker_inventory')
+    return result, reviewed
 
 
 def unique_json(raw):
@@ -177,7 +236,8 @@ def source(repo, revision, native_repo):
     inventory = tree(repo, revision, lambda n: selected(n) or n == DEPENDENCY_RECORD)
     require(EXACT | REQUIRED_MODULES | {DEPENDENCY_RECORD} <= set(inventory),
             'candidate_required_source_missing')
-    harness = blobs(repo, inventory)
+    harness, harness_reviews = blobs(repo, inventory)
+    require(not harness_reviews, 'candidate_harness_marker_review_forbidden')
     record_raw = harness.pop(DEPENDENCY_RECORD)
     record_meta = inventory.pop(DEPENDENCY_RECORD)
     record = unique_json(record_raw)
@@ -210,7 +270,7 @@ def source(repo, revision, native_repo):
                 'candidate_native_digest')
     native_inventory = tree(native_repo, NATIVE_FEATURE, lambda n: n in expected)
     require(set(native_inventory) == set(expected), 'candidate_native_sources_missing')
-    native = blobs(native_repo, native_inventory)
+    native, native_reviews = blobs(native_repo, native_inventory, native_feature=NATIVE_FEATURE)
     require({name: digest(data) for name, data in native.items()} == expected,
             'candidate_native_source_changed')
     payload = dict(harness)
@@ -234,7 +294,8 @@ def source(repo, revision, native_repo):
         'bytesIncluded': False, 'installedBytesVerifiedNow': False,
         'target': 'Linux x86_64 CPython 3.12',
     }
-    return dict(sorted(payload.items())), dict(sorted(metadata.items())), dependency_proof
+    return (dict(sorted(payload.items())), dict(sorted(metadata.items())),
+            dependency_proof, native_reviews)
 
 
 def stamp(revision):
@@ -315,7 +376,7 @@ def build(repo, revision, native_repo, destination):
     relative = destination.relative_to(repo).as_posix() + '/'
     require(git(repo, 'check-ignore', '--no-index', '--stdin', data=(relative + '\n').encode()).strip(),
             'candidate_destination_not_ignored')
-    payload, metadata, dependency_proof = source(repo, revision, native_repo)
+    payload, metadata, dependency_proof, native_reviews = source(repo, revision, native_repo)
     raw = archive_bytes(payload, metadata, revision)
     checked = verify_archive(raw, metadata, revision)
     manifest = {
@@ -328,6 +389,9 @@ def build(repo, revision, native_repo, destination):
         'installed': False, 'executionAuthorized': False,
         'privilegedExecutionTested': False, 'positiveProjectedReadinessAccepted': False,
         'finiteWorkExecuted': False, 'pythonIncluded': False, 'realModelCalls': 0,
+        'credentialScan': {'existingPatternsApplied': True,
+                           'reviewedNativeMarkerCount': len(native_reviews),
+                           'reviewedNativeMarkers': native_reviews},
         'scanScope': 'Existing bounded credential/private-path scanners; not a complete security audit',
     }
     plan = {

@@ -4,6 +4,7 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import sys
 import tarfile
@@ -14,6 +15,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_projected_candidate as candidate
+import ci_check
 
 
 def command(repo, *args, data=None):
@@ -64,12 +66,154 @@ def fixture():
                   'installedBytesMatchPriorAcceptedTarget': True, 'sources': dependencies}
         save(repo, candidate.DEPENDENCY_RECORD, candidate.canonical(record))
         revision = commit(repo)
-        with patch.object(candidate, 'NATIVE_FEATURE', native_sha):
+        # Synthetic native commits have no real-source reviewed marker. Marker
+        # tests below supply an explicit separate owned-fixture review table.
+        with patch.object(candidate, 'NATIVE_FEATURE', native_sha), \
+                patch.object(candidate, 'REVIEWED_NATIVE_MARKERS', ()):
             yield repo, native, revision, envelope, record
 
 
 def output(repo, name='candidate'):
     return repo / 'scratch' / 'projected-candidates' / name
+
+
+@contextmanager
+def marker_fixture(*, extra=b'', duplicate_path=False):
+    """Owned synthetic review metadata; never substitutes real native bytes."""
+    with fixture() as (repo, native, _, envelope, __):
+        name = 'agent/module0000.py'
+        marker = b'http' + b'://' + b'fixture-user' + b':' + b'fixture-pass' + b'@'
+        data = (b'def resolve_proxy_url():\n    """Example: ' + marker
+                + b'example.invalid."""\n    return None\n' + extra)
+        save(native, name, data)
+        envelope['sources'][name] = candidate.digest(data)
+        if duplicate_path:
+            other = 'agent/module0001.py'
+            save(native, other, data)
+            envelope['sources'][other] = candidate.digest(data)
+        native_sha = commit(native, 'owned reviewed marker fixture')
+        envelope['nativeFeature'] = native_sha
+        save(repo, candidate.NATIVE_MANIFEST, candidate.canonical(envelope))
+        revision = commit(repo, 'owned reviewed source envelope')
+        start = data.index(marker)
+        review = {'nativeFeature': native_sha, 'path': name,
+            'gitBlob': command(native, 'rev-parse', native_sha + ':' + name).decode().strip(),
+            'fileSha256': candidate.digest(data), 'detector': 'credential-url',
+            'byteStart': start, 'byteEnd': start + len(marker),
+            'matchSha256': candidate.digest(marker),
+            'classification': 'documentation-placeholder',
+            'context': 'first-statement function docstring',
+            'symbol': 'resolve_proxy_url', 'line': 2}
+        with patch.object(candidate, 'NATIVE_FEATURE', native_sha), \
+                patch.object(candidate, 'REVIEWED_NATIVE_MARKERS', (review,)):
+            yield repo, native, revision, data, marker, review
+
+
+class ReviewedNativeMarkers(unittest.TestCase):
+    def test_exact_review_keeps_scanner_and_archive_bytes_unchanged(self):
+        with marker_fixture() as (repo, native, revision, data, marker, review):
+            self.assertEqual(ci_check.credential_hits(data), ['credential-url'])
+            manifest = candidate.build(repo, revision, native, output(repo))
+            scan = manifest['credentialScan']
+            self.assertIs(scan['existingPatternsApplied'], True)
+            self.assertEqual(scan['reviewedNativeMarkerCount'], 1)
+            self.assertEqual(scan['reviewedNativeMarkers'], [review])
+            self.assertNotIn(marker, (output(repo) / 'manifest.json').read_bytes())
+            with tarfile.open(output(repo) / candidate.ARCHIVE) as archive:
+                stream = archive.extractfile(candidate.PREFIX + 'native/' + review['path'])
+                self.assertIsNotNone(stream)
+                with stream:
+                    self.assertEqual(stream.read(), data)
+
+    def test_every_identity_and_occurrence_field_is_bound(self):
+        with marker_fixture() as (repo, native, revision, _, __, review):
+            changes = {'nativeFeature': '0' * 40, 'path': 'agent/foreign.py',
+                'gitBlob': '0' * 40, 'fileSha256': '0' * 64,
+                'detector': 'model-key', 'byteStart': review['byteStart'] + 1,
+                'byteEnd': review['byteEnd'] - 1, 'matchSha256': '0' * 64}
+            for number, (field, value) in enumerate(changes.items()):
+                with self.subTest(field=field), patch.object(candidate,
+                        'REVIEWED_NATIVE_MARKERS', ({**review, field: value},)):
+                    destination = output(repo, 'bad-' + str(number))
+                    with self.assertRaises(candidate.CandidateRejected):
+                        candidate.build(repo, revision, native, destination)
+                    self.assertFalse(destination.exists())
+
+    def test_same_detector_second_occurrence_is_not_a_file_exemption(self):
+        second = b'# http' + b'://' + b'fixture-user' + b':' + b'fixture-pass' + b'@example.invalid\n'
+        with marker_fixture(extra=second) as (repo, native, revision, _, __, ___):
+            with self.assertRaisesRegex(candidate.CandidateRejected, 'credential_pattern'):
+                candidate.build(repo, revision, native, output(repo))
+            self.assertFalse(output(repo).exists())
+
+    def test_different_detector_is_not_covered_by_review(self):
+        extra = b'# ' + b'sk-' + b'X' * 40 + b'\n'
+        with marker_fixture(extra=extra) as (repo, native, revision, _, __, ___):
+            with self.assertRaisesRegex(candidate.CandidateRejected, 'credential_pattern'):
+                candidate.build(repo, revision, native, output(repo))
+            self.assertFalse(output(repo).exists())
+
+    def test_identical_bytes_at_another_native_path_refuse(self):
+        with marker_fixture(duplicate_path=True) as (repo, native, revision, _, __, ___):
+            with self.assertRaisesRegex(candidate.CandidateRejected, 'credential_pattern'):
+                candidate.build(repo, revision, native, output(repo))
+            self.assertFalse(output(repo).exists())
+
+    def test_harness_never_receives_the_native_exception(self):
+        with marker_fixture() as (repo, native, _, data, __, review):
+            # Even identical path/blob metadata without native role must refuse.
+            with self.assertRaisesRegex(candidate.CandidateRejected, 'credential_pattern'):
+                candidate._scan_credentials(review['path'], {'gitBlob': review['gitBlob']}, data)
+            save(repo, 'packages/claw-hermes/gateway_supervised_launch.py', data)
+            revision = commit(repo, 'owned harness marker fixture')
+            with self.assertRaisesRegex(candidate.CandidateRejected, 'credential_pattern'):
+                candidate.build(repo, revision, native, output(repo))
+            self.assertFalse(output(repo).exists())
+
+    def test_missing_reviewed_occurrence_or_source_refuses(self):
+        with marker_fixture() as (repo, native, revision, _, __, review):
+            # A changed detector must not silently orphan the reviewed occurrence.
+            with patch.dict(ci_check.PATTERNS, {'credential-url': re.compile(rb'(?!)')}):
+                with self.assertRaisesRegex(candidate.CandidateRejected, 'reviewed_marker_missing'):
+                    candidate.build(repo, revision, native, output(repo, 'missing-hit'))
+            # Keep the reviewed file in Git, but omit it from a still-exact
+            # 756-entry envelope. Per-encounter checks alone would miss it.
+            replacement = 'agent/replacement_source.py'
+            replacement_bytes = b'# owned replacement envelope fixture\n'
+            save(native, replacement, replacement_bytes)
+            native_sha = commit(native, 'owned envelope omission fixture')
+            envelope = json.loads((repo / candidate.NATIVE_MANIFEST).read_bytes())
+            envelope['nativeFeature'] = native_sha
+            envelope['sources'].pop(review['path'])
+            envelope['sources'][replacement] = candidate.digest(replacement_bytes)
+            self.assertEqual(len(envelope['sources']), 756)
+            save(repo, candidate.NATIVE_MANIFEST, candidate.canonical(envelope))
+            revision = commit(repo, 'owned omitted review source envelope')
+            with patch.object(candidate, 'NATIVE_FEATURE', native_sha), \
+                    patch.object(candidate, 'REVIEWED_NATIVE_MARKERS',
+                                 ({**review, 'nativeFeature': native_sha},)):
+                with self.assertRaisesRegex(candidate.CandidateRejected, 'reviewed_marker_inventory'):
+                    candidate.build(repo, revision, native, output(repo, 'missing-source'))
+            self.assertFalse(output(repo, 'missing-hit').exists())
+            self.assertFalse(output(repo, 'missing-source').exists())
+
+    def test_changed_native_pin_with_clean_bytes_cannot_disable_review(self):
+        with marker_fixture() as (repo, native, _, __, ___, review):
+            clean = b'# owned replacement has no credential detector occurrence\n'
+            self.assertEqual(ci_check.credential_hits(clean), [])
+            save(native, review['path'], clean)
+            native_sha = commit(native, 'owned clean changed-pin fixture')
+            envelope = json.loads((repo / candidate.NATIVE_MANIFEST).read_bytes())
+            envelope['nativeFeature'] = native_sha
+            envelope['sources'][review['path']] = candidate.digest(clean)
+            save(repo, candidate.NATIVE_MANIFEST, candidate.canonical(envelope))
+            revision = commit(repo, 'owned changed-pin envelope')
+            # Keep the original review table: changing only the native pin must
+            # not silently drop the required reviewed-file/occurrence contract.
+            with patch.object(candidate, 'NATIVE_FEATURE', native_sha):
+                with self.assertRaisesRegex(candidate.CandidateRejected, 'reviewed_native_revision'):
+                    candidate.build(repo, revision, native, output(repo))
+            self.assertFalse(output(repo).exists())
 
 
 class GitCandidate(unittest.TestCase):

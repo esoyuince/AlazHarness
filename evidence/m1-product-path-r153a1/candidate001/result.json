@@ -1,0 +1,18 @@
+{
+  "kind": "R153A1_ACTUAL_CURRENT_SOURCE_EXPORT",
+  "startedUtc": "2026-10-25T20:33:02.649448+00:00",
+  "finishedUtc": "2026-10-25T20:33:06.932098+00:00",
+  "sourceCommit": "652d881c822da32c753c7dddd1495c4ac81009b9",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "exitCode": 2,
+  "stdout": "",
+  "stderr": "{\"result\": \"REFUSED\", \"reasonType\": \"CandidateRejected\", \"reason\": \"candidate_credential_pattern\", \"installed\": false, \"executionAuthorized\": false}\n",
+  "outputDirectory": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-product-path-r153a1\\scratch\\projected-candidates\\r153a1-current-source",
+  "executionAuthorized": false,
+  "installed": false,
+  "privilegedExecutionTested": false,
+  "finiteWorkExecuted": false,
+  "realModelCalls": 0,
+  "state": "EXPORT_REFUSED_OR_FAILED",
+  "nativeRepositoryUnchanged": true
+}

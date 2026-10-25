@@ -1,0 +1,35 @@
+{
+  "kind": "R153A1_MARKER_WINDOWS_PREFLIGHT_DIAGNOSIS",
+  "state": "TESTS_NOT_STARTED",
+  "files": {
+    "scripts/build_projected_candidate.py": {
+      "workingSha256": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7",
+      "workingBytes": 23212,
+      "committedSha256": "9e717963b462c1f3b6ff87c14b55f01dd2389cc54c65dc2dc14d9990fa53089b",
+      "committedBytes": 19551,
+      "workingMatchesCommit": false,
+      "terminalLfCount": 1,
+      "containsCrlf": false
+    },
+    "tests/test_projected_candidate.py": {
+      "workingSha256": "015a43cc6dc679a2bddeac6abfd6dc7a3520830325724ca150ca278a8cf194fe",
+      "workingBytes": 26737,
+      "committedSha256": "f817670dc96ab3e92d2d7fa49ff15e0acb589f42beb34c491ec97bd85dff4a9e",
+      "committedBytes": 17560,
+      "workingMatchesCommit": false,
+      "terminalLfCount": 1,
+      "containsCrlf": false
+    },
+    "scripts/ci_check.py": {
+      "workingSha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8",
+      "workingBytes": 7958,
+      "committedSha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8",
+      "committedBytes": 7958,
+      "workingMatchesCommit": true,
+      "terminalLfCount": 1,
+      "containsCrlf": false
+    }
+  },
+  "scannerGitBytesUnchanged": true,
+  "sourceChangesLimitedToPlannedBuilderAndTests": true
+}

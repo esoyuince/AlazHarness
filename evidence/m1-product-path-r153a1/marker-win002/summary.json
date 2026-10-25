@@ -1,0 +1,26 @@
+{
+  "kind": "R153A1_CURRENT_MARKER_BOUNDARIES_WINDOWS",
+  "startedUtc": "2026-10-25T20:43:38.215704+00:00",
+  "finishedUtc": "2026-10-25T20:45:03.610293+00:00",
+  "durationSeconds": 85.395,
+  "python": "3.14.3",
+  "platform": "win32",
+  "selection": "test_projected_candidate.ReviewedNativeMarkers",
+  "testsRun": 8,
+  "passed": 8,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "sourceSha256": {
+    "scripts/build_projected_candidate.py": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7",
+    "tests/test_projected_candidate.py": "015a43cc6dc679a2bddeac6abfd6dc7a3520830325724ca150ca278a8cf194fe",
+    "scripts/ci_check.py": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8"
+  },
+  "sourcesUnchanged": true,
+  "runtimeSourcesUnchangedSinceFull001": true,
+  "fullRepositoryTestedAtCurrentPackagingBytes": false,
+  "logSha256": "e1e01971d8aaf9c920e1a6916ad7e3349809e14523b83345a9264f60744b1979",
+  "privilegedOperations": 0,
+  "realModelCalls": 0,
+  "success": true
+}

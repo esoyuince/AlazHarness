@@ -1,0 +1,8 @@
+{
+  "requestId": "a6f8d1d8-d467-454a-b824-bf12ae411531",
+  "state": "completed",
+  "exitCode": 0,
+  "completedAt": 1792961103682,
+  "stdout": "{\r\n  \"kind\": \"R153A1_CURRENT_MARKER_BOUNDARIES_WINDOWS\",\r\n  \"startedUtc\": \"2026-10-25T20:43:38.215704+00:00\",\r\n  \"finishedUtc\": \"2026-10-25T20:45:03.610293+00:00\",\r\n  \"durationSeconds\": 85.395,\r\n  \"python\": \"3.14.3\",\r\n  \"platform\": \"win32\",\r\n  \"selection\": \"test_projected_candidate.ReviewedNativeMarkers\",\r\n  \"testsRun\": 8,\r\n  \"passed\": 8,\r\n  \"failures\": [],\r\n  \"errors\": [],\r\n  \"skipped\": [],\r\n  \"sourceSha256\": {\r\n    \"scripts/build_projected_candidate.py\": \"97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7\",\r\n    \"tests/test_projected_candidate.py\": \"015a43cc6dc679a2bddeac6abfd6dc7a3520830325724ca150ca278a8cf194fe\",\r\n    \"scripts/ci_check.py\": \"b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8\"\r\n  },\r\n  \"sourcesUnchanged\": true,\r\n  \"runtimeSourcesUnchangedSinceFull001\": true,\r\n  \"fullRepositoryTestedAtCurrentPackagingBytes\": false,\r\n  \"logSha256\": \"e1e01971d8aaf9c920e1a6916ad7e3349809e14523b83345a9264f60744b1979\",\r\n  \"privilegedOperations\": 0,\r\n  \"realModelCalls\": 0,\r\n  \"success\": true\r\n}\r\n",
+  "stderr": ""
+}

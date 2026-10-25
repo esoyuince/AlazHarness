@@ -1,0 +1,1 @@
+{"result": "REFUSED", "reasonType": "CandidateRejected", "reason": "candidate_credential_pattern", "installed": false, "executionAuthorized": false}

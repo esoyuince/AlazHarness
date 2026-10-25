@@ -70,23 +70,52 @@ The exporter creates `projected-source.tar`, `manifest.json` and
 mismatched or missing sources and trailing archive data. The existing bounded
 credential scanner is reused; this is not a new complete security audit.
 
+### Reviewed native documentation marker
+
+The first real-source export refused a `credential-url` detector hit. Exact Git
+and AST inspection established the sole match was a conventional placeholder
+URL in the first-statement docstring of `resolve_proxy_url`, in native
+`gateway/platforms/base.py`. No active credential or executable configuration
+assignment was involved; the matched material is not reproduced in evidence.
+
+The exporter still scans every blob with the original scanner. One fixed review
+binds the native pin, path, Git blob, whole-file SHA-256, detector, byte start/end
+and matched-byte SHA-256. Every occurrence and the complete declared inventory
+must match. Additional or missing occurrences, an omitted file, a changed pin
+with clean bytes, another path or a harness file all refuse. There is no CLI
+override, scanner edit, wildcard exemption or native-byte modification.
+
+The manifest records only safe review metadata. The initial refusal and actual
+classification remain in `candidate001/`; `marker-review.json` records the
+independent review, including its resolved pin-filtering finding.
+
 ## Verification
 
 | Check | Observed result | Scope |
 |---|---|---|
-| Windows full001 | 3,690 run: 3,663 PASS, 27 SKIP; zero failures/errors, exit 0 | Original 23 skip IDs/reasons unchanged, plus exactly four Linux pipe skips; source hashes unchanged |
-| Windows focused002 | 48 PASS, 4 Linux-only SKIP; exit 0 | 29 supervisor contracts and 19 real-Git/archive checks; included in the full suite |
-| Linux pipe transport | 4 PASS, zero skips; exit 0 | Actual owned subprocesses, Python 3.12.14; no native store or kernel projection |
-| Independent source review | No remaining blocking finding in the recorded bytes | Source review, not installed/runtime acceptance |
-| Local static/index gate | PASS, exit 0: 6,259 tracked files, two gitlinks, 3,690 tests discovered; whitespace exit 0 | Static discovery is not test execution; final commit CI remains required |
-| Actual current-source archive | NEXT after immutable source commit | Not yet exported at this source checkpoint |
+| Windows full001 at source checkpoint `652d881c822da32c753c7dddd1495c4ac81009b9` | 3,690 run: 3,663 PASS, 27 SKIP; zero failures/errors, exit 0 | Original 23 skip IDs/reasons unchanged, plus four Linux pipe skips. This precedes the packaging-only marker refinement. |
+| Windows focused002 at that checkpoint | 48 PASS, 4 Linux-only SKIP; exit 0 | 29 supervisor contracts and 19 package checks; a subset of full001 |
+| Linux pipe transport | 4 PASS, zero skips; exit 0 | Actual owned subprocesses. Pipe/runtime bytes remain unchanged. |
+| Current Linux packaging suite | 27 PASS, zero skips; exit 0, 5.553 seconds | Exact final builder/test hashes; owned Git fixtures |
+| Current Windows marker boundaries | 8 PASS, zero skips; exit 0, 85.395 seconds | The eight new cases, also included in the Linux packaging suite |
+| Independent source reviews | No remaining blocker in recorded bytes | Supervisor composition and marker packaging reviewed separately |
+| Local static/index gate before marker refinement | PASS, exit 0: 6,259 tracked files, two gitlinks; 3,690 discovered; whitespace exit 0 | Static discovery is not test execution. Changed-file gate and final exact commit CI follow. |
+| Actual current-source archive | First export REFUSED; corrected export NEXT after a new source commit | No archive or installation produced by the refusal |
 | Installed projected readiness / finite work / M1 | NOT RUN / NOT ACCEPTED | Remains the next product gate |
 
-Full standard run: Windows Python 3.14.3, 487.133 seconds. Focused Windows run:
-167.985 seconds. Focused results are a subset of the full standard run and are
-not added to its total. The separate four Linux pipe results qualify transport
-only. Default CI status will be checked on the exact final commit; no CI test
-count is inferred from the local Windows count.
+Full001 took 487.133 seconds on Windows Python 3.14.3. Its complete seven-file
+source snapshot is retained. The later change affects only the exporter and its
+tests; the five runtime/dispatch files in that snapshot remain byte-identical.
+No second full Windows suite is claimed for the refined packaging bytes.
+The exact final commit must pass the remote full-suite/static CI before main.
+No CI count is inferred from local results; overlapping focused results are
+not added together.
+
+The first Windows marker preflight stopped before any test because it compared
+the primary scanner to a local support copy with one extra final LF. The primary
+scanner is byte-identical to committed Git; only the expected preflight digest
+was corrected. `marker-win001/` records NOT STARTED, and `marker-win002/` is the
+successful eight-test run.
 
 Independent source review found two blocking issues in the initial draft:
 regular-file stdio was incompatible with the unchanged inherited-FD guard, and
