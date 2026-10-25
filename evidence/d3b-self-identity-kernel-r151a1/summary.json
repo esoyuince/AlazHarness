@@ -45,7 +45,13 @@
     "skipped": 23,
     "total": 3638
   },
-  "publication": "READY_FOR_SELECTED_COMMIT",
+  "publication": {
+    "codeCommit": "ec3182bebfe2768a41fdb3bc1e3b50df00e71f6d",
+    "codeBranchPublished": true,
+    "codeExactShaCI": "success",
+    "closureChanges": "documentation and publication receipt only; no driver/product changes",
+    "finalHeadCi": "Read exact current HEAD GitHub status separately"
+  },
   "sourceHashes": {
     "scripts/qa/r151a1_self_identity_kernel.py": "06dd33bcd1aefa6ad0e6f7cf18a157476844cbbf6545ddc2995334fa2f60b36c",
     "scripts/qa/r151a1_windows_accept.py": "208690aafc18373a75e798c3159ca2568dfd95b2c027f7d6f99043013ced35d2"

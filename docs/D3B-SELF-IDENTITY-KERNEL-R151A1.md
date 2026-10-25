@@ -23,8 +23,10 @@ unchanged observer; fixed QA Python exec preserving PID; descendant with a new
 PID receiving no new self-map grant. The descendant may still read its parent's
 explicitly granted files while that parent is alive; that inheritance is recorded.
 
-Every negative open is first shown to be permitted in the same process before
-confinement. Sensitive proc tests only open and close descriptors; they never read
+Each of the42primary denial checks is first shown to be permitted in the same
+process before confinement. The4additional descendant checks start already
+confined; they are inherited-denial observations without an unconfined same-child
+baseline. Sensitive proc tests only open and close descriptors; they never read
 environ/mem contents or write/truncate/create proc files. The protected file is a
 new synthetic canary. No real credentials or profiles are used.
 
@@ -123,3 +125,13 @@ Staged-source ci_check.py PASS, exit0:6151tracked files scanned,2source gitlinks
 10selected components,3638test methods discovered. Discovery is not test execution.
 No syntax/JSON/bounded credential-pattern or tracked-path errors. Cached whitespace
 check also passed. Source and current product/config/lock diff remain unchanged.
+
+## Publication
+
+Code/evidence commit ec3182bebfe2768a41fdb3bc1e3b50df00e71f6d was pushed to
+alaz/d3b-self-identity-kernel-r151a1. Its exact alaz/local-ci status is SUCCESS
+(2026-10-25T16:26:52Z), recorded in publication-code-ci.json. The status API does
+not expose an exact fresh test count, so no remote count is inferred. This
+closure changes only documentation/status/publication metadata. Its own HEAD CI
+is checked separately before ordinary fast-forward main publication.
+No runtime service or installed native deployment is implied by the Git update.
