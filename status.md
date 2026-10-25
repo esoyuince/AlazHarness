@@ -1,53 +1,48 @@
 # AlazHarness - status
 
-## R150A1 - R147 exact self-identity patch INTEGRATED / FULL REGRESSION PASS
+## R151A1 - actual self-identity Landlock component SCOPED PASS
 
-Active branch alaz/d3b-self-identity-r150a1.
-Path C:\Antigravity\AlazHarness\scratch\worktrees\d3b-self-identity-r150a1.
-Baseline/main31e0c54. Named Bridge lane now supports actual reads/commands; no
-permission or Bridge-server configuration changed. Single claim R150A1, no peer
-writer. Existing root33 dirty user files, installed Hermes and main preserved.
+Active branch alaz/d3b-self-identity-kernel-r151a1.
+Path C:\Antigravity\AlazHarness\scratch\worktrees\d3b-self-identity-kernel-r151a1.
+Base/main665330a0249ea8ee9396ff8c391b959fc3ca8505, same-SHA alaz/local-ci SUCCESS.
+No product source, configuration, source pin or installed native change.
 
-### Accepted current code
+### Actual new acceptance
 
-Exact original R147 patch applied with git apply --check then apply exit0 into
-this separate worktree. Three product files and two R147 test files match the
-standalone tested candidate byte-for-byte. Only explicit retained launcher option
-adds current numeric PID uid_map/gid_map READ_FILE; default paths, old summary
-shape/digest and capability checks stay unchanged. No arbitrary JSON PID/path,
-/proc directory grant, write or exec rights. Original observer code unchanged.
+One executed bundle native002:4/4real-kernel cases PASS,0FAIL0SKIP,hostexit0.
+Linux6.6.87.2/Python3.12.3/LandlockABI3, ordinary UID23001/GID23003.
+Default map denial; selected maps + original identity observer; samePID fixedQA
+Python exec; descendant newPID denial with original parent-map grant inherited.
+42baseline-open to EACCES13 pairs;4additional child read-open denials within case4.
+No proc content read for sensitive canaries, no proc writes/truncate.
+All6loaded/transferred source hashes exact before/after;4canaries unchanged.
+Group already empty on normal exit, no timeout/signal, owned temp tree removed.
+Independent exact-driver and full-result corroboration complete. Two QA transport
+issues fixed before first execution; native001 was PREPARED but NOT RUN.
 
-### Current complete regression
+### Scope boundary
 
-Fresh full0023638=3615PASS23SKIP0ERROR0FAIL, runnerexit0; request32fe6001...000016.
-634source/config/test files and11patches stable before/after/current. Same23skip
-IDs/reasons. R14719 and new8history guards are full-suite subsets. Focused126PASS;
-previous210selected evidence copied not rerun, not added to totals. Exact R147
-five files unchanged across integration and history maintenance.
+Actual supplementary group23003 and nonzero CapBnd remain truthfully observed.
+This is NOT fixed product launcher/startup/native3storeclose/network/separateUID/
+fullD3B acceptance. QAexec is explicitly a different target. These gates NOT RUN.
+Prior denied root/bootstrap/mount/cleanup actions not retried.
+Earlier R150full3638=3615PASS23SKIP is historical; no new full local suite yet.
+Timeout branch reviewed, not fault-injected. Unknown lifetime cannot pass/cleanup.
 
-First full0013630=3587PASS23SKIP20FAIL0ERROR exit1 retained. All20 were old
-experiment-source digest assertions, not observed current behavior failures.
-Oldexpected digests/results/native evidence remain unchanged. Exact nine named
-31e0c54 source/test snapshots plus matching expectedhash resolve prior proof;
-unknown/current generations still read current files. Negative tests reject bad
-archive/path/digest. This does NOT turn old kernel success into new acceptance.
-Nine prior files changed (3product,6test/history),622of631old files unchanged;
-3new test/helper files. No native source/manifest/11patch changes.
+### Publication and next action
 
-### Limits and next step
-
-No actual Landlock/kernel/WSL/namespace/mount/service/provider experiment this turn.
-Current tests use declared syscall/file adapters; real post-Landlock observer and
-exec/start/close remains separate NOT RUN. Previous denied root/bootstrap/cleanup
-commands are not retried. No deployed Hermes change. M1/M2/full isolation not
-claimed. Main moves only after explicit publication of exact tested SHA and its
-own CI success; do not infer runtime deployment from Git merge.
+Selected-file static gate PASS:6151tracked files checked,3638tests discovered
+(not executed),0errors,exit0; cached whitespace check PASS. Ready for commit.
+Commit/push/this-commit CI NOT RUN yet. Main only moves after exactSHA CI success.
+Next product acceptance requires existing authorized trusted supervisor invoking
+current-source fixed retained launcher: projection -> exec -> receive -> original
+owner start/close -> caller lease release. Do not inherit old kernel acceptance.
 
 ### Records
 
-Report docs/D3B-SELF-IDENTITY-R150A1.md; evidence/d3b-self-identity-r150a1 includes
-originalR147 patch/provenance, integration, old immutable source archives,
-full001FAIL, focused126PASS, full002PASS source/patch/logs, summary/protected-state.
-Old evidence data files unchanged. Local static and selected commit follow.
-All final full files present; read actual tool terminal receipt before claiming
-command delivery after interruption. Never rerun unknown effects blindly.
+Report docs/D3B-SELF-IDENTITY-KERNEL-R151A1.md.
+Evidence evidence/d3b-self-identity-kernel-r151a1, including native002 full raw and
+terminal results, source hashes, review and baseline/protected Git observations.
+Parent/current work log retained under docs/status-history/r151a1-*.md.
+Request ea3656d9-f13e-4ba8-8f10-65c11c3dd4a2 terminal COMPLETED exit0.
+Do not repeat this completed experiment on receipt interruption.

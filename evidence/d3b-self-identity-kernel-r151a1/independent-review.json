@@ -1,0 +1,23 @@
+{
+  "result": "STATIC_REVIEW_AND_RECORDED_RESULT_CORROBORATED",
+  "reviewer": "independent driver_fast_review",
+  "newExecutionPerformedByReviewer": false,
+  "sourceHashes": {
+    "scripts/qa/r151a1_self_identity_kernel.py": "06dd33bcd1aefa6ad0e6f7cf18a157476844cbbf6545ddc2995334fa2f60b36c",
+    "scripts/qa/r151a1_windows_accept.py": "208690aafc18373a75e798c3159ca2568dfd95b2c027f7d6f99043013ced35d2"
+  },
+  "findingsFixedBeforeFirstRun": [
+    "execute exact captured verified transport bytes",
+    "own process group; confirm no remaining members before cleanup; propagate unknown lifetime"
+  ],
+  "corroborated": [
+    "42 open-to-EACCES transitions",
+    "complete observer equality with only nnp0-to1",
+    "all case/descendant/source hashes identical",
+    "same-PID QA exec",
+    "new-PID metadata denied; original parent read-open grant inherited",
+    "normal exit; group empty before any signal; temporary tree removed"
+  ],
+  "faultInjectedTimeoutTestPerformed": false,
+  "otherReviewAgentsAddedEvidence": false
+}

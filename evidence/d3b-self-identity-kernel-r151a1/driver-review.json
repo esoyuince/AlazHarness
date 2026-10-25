@@ -1,0 +1,10 @@
+{
+  "state": "STATIC_REVIEW",
+  "finding": "transport source reread race",
+  "fix": "Execute captured bytes whose digest was checked; no second source read",
+  "runtimeBeforeFix": false,
+  "sourceHashes": {
+    "scripts/qa/r151a1_self_identity_kernel.py": "a90e08dda0f8821ca1c2f09e7824892f9adc1586c27f2f78cf77ab4d2cc095b7",
+    "scripts/qa/r151a1_windows_accept.py": "b92bace8db1f7b7c5fdf7061c2f4ef14b0b340a01c1871ab229472e3d7014a98"
+  }
+}

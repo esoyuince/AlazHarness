@@ -1,0 +1,22 @@
+{
+  "protectedStateMatches": true,
+  "current": {
+    "root": {
+      "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+      "status": "M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py"
+    },
+    "main": {
+      "head": "665330a0249ea8ee9396ff8c391b959fc3ca8505",
+      "status": ""
+    }
+  },
+  "sourceHashesUnchanged": true,
+  "sourceHashes": {
+    "packages/claw-hermes/credential_guard.py": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "packages/claw-hermes/gateway_retained_launch.py": "3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db",
+    "packages/claw-hermes/gateway_state_projection.py": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74",
+    "sources.lock.json": "a4a66c6ad75cfd9d53635f7e436564b8c72c42a8d98592312057184d41bb95ff"
+  },
+  "productDiff": ""
+}

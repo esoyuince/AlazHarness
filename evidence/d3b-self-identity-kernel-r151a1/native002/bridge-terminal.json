@@ -1,0 +1,21 @@
+{
+  "receiptVersion": 2,
+  "requestId": "ea3656d9-f13e-4ba8-8f10-65c11c3dd4a2",
+  "state": "completed",
+  "jobState": "completed",
+  "exitCode": 0,
+  "stdout": "{\"state\": \"COMPLETED\", \"result\": \"PASS\", \"exitCode\": 0, \"attempt\": \"native002\", \"cases\": [{\"case\": \"default\", \"exitCode\": 0, \"result\": \"PASS\"}, {\"case\": \"selected\", \"exitCode\": 0, \"result\": \"PASS\"}, {\"case\": \"same-pid-exec\", \"exitCode\": 0, \"result\": \"PASS\"}, {\"case\": \"descendant\", \"exitCode\": 0, \"result\": \"PASS\"}], \"sourceUnchanged\": true}\r\n",
+  "stderr": "",
+  "startedAt": 1792945010150,
+  "completedAt": 1792945013196,
+  "metrics": {
+    "queueMs": 22,
+    "executionMs": 3046,
+    "providerMs": 3029.885,
+    "providerTimingComplete": true,
+    "verificationMs": 0,
+    "verificationTimingComplete": true,
+    "resultBytes": 38
+  },
+  "executionSessionIdentifierOmitted": true
+}

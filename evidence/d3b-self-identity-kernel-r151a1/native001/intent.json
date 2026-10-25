@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-25T19:11:03.425538+03:00",
+  "bundleBytes": 21460,
+  "bundleSha256": "12817fcdfec6420bc3b538d69d0a753304cff334f6f03e9948aa501bdc8fd952",
+  "distribution": "AlazHarness-D3B-P71C",
+  "gid": 23003,
+  "rootRequested": false,
+  "scope": "four actual-kernel self-map component cases; no product startup acceptance",
+  "sourceHashes": {
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/credential_guard.py": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "scripts/qa/r151a1_self_identity_kernel.py": "a90e08dda0f8821ca1c2f09e7824892f9adc1586c27f2f78cf77ab4d2cc095b7"
+  },
+  "state": "PREPARED_NOT_RUN",
+  "uid": 23001,
+  "user": "alazgateway"
+}

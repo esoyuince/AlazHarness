@@ -1,0 +1,9 @@
+{
+  "requestId": "7a346ea8-e4c5-4fda-9adf-a3c4e1e33781",
+  "state": "completed",
+  "exitCode": 0,
+  "stdout": "{\"uid\": [23001, 23001, 23001], \"gid\": [23003, 23003, 23003], \"kernel\": \"6.6.87.2-microsoft-standard-WSL2\", \"machine\": \"x86_64\", \"python\": \"3.12.3\", \"landlockAbi\": 3, \"errno\": 0, \"singleThread\": true, \"readOnlyProbe\": true}\n",
+  "stderr": "<3>WSL (6 - Relay) ERROR: CreateProcessCommon:792: chdir(/home/alazgateway) failed 2\n",
+  "operation": "command/exec",
+  "completedAt": 1792944372114
+}

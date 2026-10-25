@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-25T19:16:50.448816+03:00",
+  "bundleSha256": "ce8750367c47cfcff9864aa1dae436799320bd984df85f8d01fb5d822242598b",
+  "ordinaryUserOnly": true,
+  "sourceHashes": {
+    "packages/claw-hermes/combined_guard.py": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67",
+    "packages/claw-hermes/credential_guard.py": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4",
+    "packages/claw-hermes/host_principal.py": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0",
+    "packages/claw-hermes/linux_netns.py": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6",
+    "packages/claw-hermes/principal_launch.py": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b",
+    "scripts/qa/r151a1_self_identity_kernel.py": "06dd33bcd1aefa6ad0e6f7cf18a157476844cbbf6545ddc2995334fa2f60b36c"
+  },
+  "state": "IN_PROGRESS",
+  "transportSource": "scripts/qa/r151a1_self_identity_kernel.py"
+}
