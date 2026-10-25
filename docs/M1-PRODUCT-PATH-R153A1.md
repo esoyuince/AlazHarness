@@ -10,8 +10,8 @@ same volume, and useful finite work through that complete path are still require
 
 Base harness: `7abdd57e408ec7972bddeaf267ea180b4cb3673b`.
 Native source: `d1516731308de8e87130dc68124e69aad35d6911`, unchanged.
-The publication closure will record the exact source commit and actual archive
-digest. A source export does not establish installation or execution authority.
+Final candidate source commit: `e03f7fd4e47fea6a58b749564ab350aeb4237a26`.
+A source export does not establish installation or execution authority.
 
 ## Product changes
 
@@ -99,8 +99,8 @@ independent review, including its resolved pin-filtering finding.
 | Current Linux packaging suite | 27 PASS, zero skips; exit 0, 5.553 seconds | Exact final builder/test hashes; owned Git fixtures |
 | Current Windows marker boundaries | 8 PASS, zero skips; exit 0, 85.395 seconds | The eight new cases, also included in the Linux packaging suite |
 | Independent source reviews | No remaining blocker in recorded bytes | Supervisor composition and marker packaging reviewed separately |
-| Local static/index gate before marker refinement | PASS, exit 0: 6,259 tracked files, two gitlinks; 3,690 discovered; whitespace exit 0 | Static discovery is not test execution. Changed-file gate and final exact commit CI follow. |
-| Actual current-source archive | First export REFUSED; corrected export NEXT after a new source commit | No archive or installation produced by the refusal |
+| Local static/index gate before marker refinement | PASS, exit 0: 6,259 tracked files, two gitlinks; 3,690 discovered; whitespace exit 0 | Static discovery is not test execution. Post-marker changed-file gate passed, current discovery 3,698; final exact commit CI is required. |
+| Actual current-source archive | candidate002 EXPORTED_SOURCE_ONLY, exit 0; 834 files, exact hashes/readback verified | First candidate001 refusal preserved; no installation or native execution |
 | Installed projected readiness / finite work / M1 | NOT RUN / NOT ACCEPTED | Remains the next product gate |
 
 Full001 took 487.133 seconds on Windows Python 3.14.3. Its complete seven-file
@@ -133,6 +133,36 @@ The independent native-path audit did not reach the source and is recorded as
 INCOMPLETE in `review-evidence-limits.json`; it is not counted as corroboration.
 Historical specific denials were not replayed. No new R153 installation was
 attempted or rejected.
+
+## Actual exported candidate
+
+Candidate002 completed exit 0 from source commit
+`e03f7fd4e47fea6a58b749564ab350aeb4237a26`, using unchanged native
+`d1516731308de8e87130dc68124e69aad35d6911`.
+
+| Item | Verified value |
+|---|---|
+| Archive | `projected-source.tar`, 19,712,000 bytes |
+| File inventory | 834 = 77 harness + 756 native + one generated dependency-reference inventory |
+| Source payload bytes | 19,064,899 |
+| Archive SHA-256 | `e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b` |
+| Manifest SHA-256 | `182b9d0198e4c7f39bd28e194bfe7fc6cfca844ed4a653e9d209b0db8d77eef9` |
+| Install-plan SHA-256 | `588650b62de3a70f842d378488083d7607df69c38719f2fe441dcb5127c87368` |
+| Dependency references | 1,162 exact accepted hashes; dependency bytes and interpreter not included |
+| Reviewed native markers | Exactly one previously classified documentation placeholder |
+| Installed / privileged run / finite work / real model calls | False / false / false / zero |
+
+The archive was verified before exclusive output publication and read back with
+the same digest. Manifest and plan are retained in
+`evidence/m1-product-path-r153a1/candidate002/`. The source archive is locally
+retained at
+`scratch/projected-candidates/r153a1-current-source-002/projected-source.tar`
+in the R153 worktree and can be deterministically rebuilt from the source commit.
+
+The final publication closure changes only documentation and evidence. The
+candidate remains bound to its exact source commit; final source/blob equality
+and exact final-commit CI are checked before ordinary main fast-forward.
+Neither a passing source export nor its plan grants privileged execution.
 
 ## Next acceptance gate
 

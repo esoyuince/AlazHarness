@@ -66,3 +66,12 @@ Her paket raporu kullanıcıya açılan gerçek akışı, son kaynak/kurulum kim
 çalışan kabulü ve açık kalanları bildirir. Mock/native/gerçek-model ve
 PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında normal
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
+
+## P1 / R153A1 teslimatı
+
+Sabit supervisor çocuğu, sınırlı pipe aktarımı ve güncel kaynak paketi tamamlandı.
+Paket, `e03f7fd4e47fea6a58b749564ab350aeb4237a26` kaynak commit'inden 834 dosya ile üretildi;
+756 native dosya d151 kaynağıyla hash düzeyinde eşleşir. 1.162 bağımlılık hash'i
+referanstır; kurulum yapılmadı. Bu alt teslimat P1'i tamamlamaz: aynı kurulumda
+olumlu projected readiness, gerçek retained seed ve ardından finite iş kabulü
+sıradaki adımdır. Ayrıntı ve kanıtlar: [R153A1](M1-PRODUCT-PATH-R153A1.md).

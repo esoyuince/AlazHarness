@@ -1,0 +1,16 @@
+{
+  "kind": "R153A1_FINAL_CLOSURE_VALIDATION",
+  "observedUtc": "2026-10-25T20:51:59.011166+00:00",
+  "sourceCommit": "e03f7fd4e47fea6a58b749564ab350aeb4237a26",
+  "closureMetadataOnly": true,
+  "changedFilesChecked": 13,
+  "archiveReadbackVerified": true,
+  "archiveSha256": "e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b",
+  "manifestAndPlanBytesVerified": true,
+  "protectedRootFiles": 33,
+  "protectedRootFilesUnchanged": true,
+  "mainAndNativeRemainAtBaselineBeforePublication": true,
+  "boundedArtifactScanPassed": true,
+  "stagedWhitespaceExitCode": 0,
+  "finalExactShaCIRequiredBeforeMain": true
+}

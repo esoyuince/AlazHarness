@@ -1,0 +1,59 @@
+{
+  "kind": "R153A1_CURRENT_SOURCE_SUPERVISED_READINESS_CANDIDATE",
+  "state": "SOURCE_CANDIDATE_VERIFIED",
+  "roadmap": "P1",
+  "sourceCommit": "e03f7fd4e47fea6a58b749564ab350aeb4237a26",
+  "priorFullRegressionCommit": "652d881c822da32c753c7dddd1495c4ac81009b9",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "archiveSha256": "e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b",
+  "archiveBytes": 19712000,
+  "sourceFileCount": 834,
+  "harnessSourceFileCount": 77,
+  "nativeSourceFileCount": 756,
+  "dependencyReferenceFileCount": 1162,
+  "dependencyBytesIncluded": false,
+  "firstActualExport": "candidate001: REFUSED; documentation marker classified, original evidence preserved",
+  "acceptedSourceExport": "candidate002: exit0; source-only readback verified",
+  "verification": {
+    "priorWindowsFull": {
+      "run": 3690,
+      "passed": 3663,
+      "skipped": 27,
+      "errors": 0,
+      "failures": 0,
+      "sourceCommit": "652d881c822da32c753c7dddd1495c4ac81009b9"
+    },
+    "runtimeFilesUnchangedSinceFull": true,
+    "linuxPipes": {
+      "passed": 4,
+      "skipped": 0
+    },
+    "currentLinuxPackaging": {
+      "passed": 27,
+      "skipped": 0
+    },
+    "currentWindowsMarker": {
+      "passed": 8,
+      "skipped": 0
+    },
+    "priorStaticFilesChecked": 6259,
+    "currentDiscoveredTests": 3698,
+    "currentChangedFileGate": "PASS",
+    "finalExactShaCI": "Required before main; verified externally after this self-contained closure commit",
+    "countsAreNotAdditive": true
+  },
+  "sourceReviews": [
+    "source-review.json",
+    "marker-review.json"
+  ],
+  "protectedRootChangedFiles": 33,
+  "protectedRootUnchangedAtRecordedChecks": true,
+  "installed": false,
+  "positiveProjectedReadinessAccepted": false,
+  "finiteWorkExecuted": false,
+  "fullD3BAccepted": false,
+  "m1Accepted": false,
+  "productionAccepted": false,
+  "realModelCalls": 0,
+  "nextGate": "Current installed original supervised projected readiness, actual retained seed on same ext4 image, then finite product work"
+}

@@ -1,0 +1,1 @@
+{"result": "EXPORTED_SOURCE_ONLY", "harnessCommit": "e03f7fd4e47fea6a58b749564ab350aeb4237a26", "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911", "sourceFileCount": 834, "nativeSourceFileCount": 756, "archiveSha256": "e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b", "installed": false, "executionAuthorized": false}

@@ -1,0 +1,8 @@
+{
+  "requestId": "31ec18e4-cbe1-4c46-840b-7dfeae6e1531",
+  "state": "completed",
+  "exitCode": 0,
+  "completedAt": 1792961249180,
+  "stdout": "{\r\n  \"state\": \"REFINED_SOURCE_COMMITTED_NOT_PUSHED\",\r\n  \"commit\": \"e03f7fd4e47fea6a58b749564ab350aeb4237a26\",\r\n  \"clean\": true,\r\n  \"sourceGitBytesMatchCurrentTestedFiles\": true,\r\n  \"changedFileGatePassed\": true,\r\n  \"discoveredTests\": 3698,\r\n  \"runtimeSourcesUnchangedSinceFull001\": true,\r\n  \"linuxPackagingPassed\": 27,\r\n  \"windowsMarkerPassed\": 8,\r\n  \"firstCommitLine\": \"[alaz/m1-product-path-r153a1 e03f7fd] fix: bind reviewed native documentation marker in source exports\",\r\n  \"remoteCIClaimed\": false,\r\n  \"installed\": false\r\n}\r\n",
+  "stderr": ""
+}

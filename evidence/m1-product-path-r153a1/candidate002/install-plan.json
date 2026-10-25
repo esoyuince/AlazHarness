@@ -1,0 +1,39 @@
+{
+  "archiveSha256": "e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b",
+  "deadlineLimitsSeconds": {
+    "maximumChildWait": 60,
+    "reservedStopMargin": 15,
+    "workerIdle": 120
+  },
+  "executionAuthorized": false,
+  "failurePolicy": "Retain uncertain image/lease/fence/evidence; no replay, forced detach or automatic repair",
+  "fixedEntrypoints": [
+    "scripts/run_supervised_retained.py",
+    "scripts/run_retained_projected.py",
+    "scripts/run_state_volume_worker.py"
+  ],
+  "freshWorkerRequired": true,
+  "harnessCommit": "e03f7fd4e47fea6a58b749564ab350aeb4237a26",
+  "historicalDeniedOperationsMayBeRetried": false,
+  "installed": false,
+  "interpreterRequired": "/usr/bin/python3.12",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "privateStateOrCredentialsIncluded": false,
+  "schemaVersion": 1,
+  "state": "REVIEW_REQUIRED_NOT_EXECUTABLE",
+  "suggestedFreshPaths": {
+    "cgroupParent": "/sys/fs/cgroup/alaz-r153a1",
+    "installation": "/opt/alaz-r153a1",
+    "state": "/srv/alaz-r153a1"
+  },
+  "targetPlatform": "Linux x86_64; initial host user namespace",
+  "unmetGates": [
+    "Designate and authorize exact disposable installation and invocation",
+    "Verify installed source bytes and root-controlled ancestry",
+    "Supply and verify all accepted dependency bytes and trusted interpreter",
+    "Produce retained receipt via original finite owner on the exact ext4 image",
+    "Derive live supervisor, namespace, cgroup, fence, mount and principal binding",
+    "Start a fresh mount worker; child deadline plus stop margin must fit its remaining lifetime",
+    "Qualify fixed supervised projected readiness before enabling work"
+  ]
+}

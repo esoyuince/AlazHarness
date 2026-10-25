@@ -149,3 +149,14 @@ pre-marker complete-repo receipts; runtime source files are unchanged. The first
 Windows marker preflight was NOT STARTED due solely to a local helper's extra
 EOF LF; actual primary scanner was verified byte-equal to its committed source.
 Next: refined source commit, candidate002 actual export and exact-final-SHA CI.
+
+## Source and actual candidate closure
+
+Refined source commit: e03f7fd4e47fea6a58b749564ab350aeb4237a26. Post-marker changed-file gate passed,
+current discovery3698; runtime bytes remain equal to full001. Actual candidate002
+exit0:834files,19,712,000archive bytes, SHA256e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b.
+One reviewed documentation marker applied; native repository unchanged. Manifest
+and nonexecutable install plan copied into evidence. No install/runtime/model call.
+Final closure is documentation/evidence only. Exact final-SHA alaz/local-ci and
+normal main fast-forward remain the external publication gate; live Git refs and
+ignored scratch final-publication receipt record its completed result.
