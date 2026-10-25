@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-25T12:44:25.545469+03:00",
+  "peerHead": "61ab77db331701cafc3d10d49db0243e8e8ebab9",
+  "files": {
+    "normal-exec-independent-readback.json": {
+      "sha256": "d1086cff6151307d851fb798a9a066ee1b229034388d455babf0a7c889cae3d9",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\normal-exec-independent-readback.json"
+    },
+    "exec-source-review.json": {
+      "sha256": "5fbe1d724ae8c45345c7d6397395384962d213b7fb5cabbbe6e440feb6d4fb86",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\exec-source-review.json"
+    },
+    "exec-independent-custody.json": {
+      "sha256": "f135c8472e50da5a8ee38964116ae64481fcd5539f570fcf074e54239c3e4471",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\exec-independent-custody.json"
+    }
+  },
+  "sameProducerRunReviewedNotReexecuted": true,
+  "peerTreeNotEdited": true,
+  "existingRawNativeResultsNotChanged": true
+}

@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-25T12:22:19.282062+03:00",
+  "productOwner": "d3b-retained-exec-h143c7",
+  "ownRole": "independent QA only, no role flip",
+  "requirements": [
+    "Duplicate keys and unknown fields at every level rejected before typed constructors or filesystem",
+    "Strict bool-vs-int and upperbounds for epochs/PIDs/identities/counts; canonical path, no arbitrary alias",
+    "All3DB identities distinct same device, previous epoch/instance consistent across retained and original expectations",
+    "Codec result is data not proof of namespace/seccomp/mount/current UID",
+    "Reject stale/different PID if designed for same-process exec; do not turn spawn into same-PID acceptance",
+    "Malformed/truncated/oversize/nonfinite/deep JSON cannot partially construct stores or learn expectations from DB",
+    "Unknown/provided callbacks/modules/classnames/paths cannot turn into code execution",
+    "Original same source manifest/lease/cold/live gates stay unchanged after decode",
+    "Original typed values preserved; dictionaries do not independently create supervisor authority"
+  ],
+  "original620SourcesUnchanged": true,
+  "noNativeOrKernelExecution": true
+}

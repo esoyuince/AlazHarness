@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T12:22:43.919046+03:00",
+  "base": "802910552bc4c804348d4c604fbae8130a45f5ed",
+  "result": "BASELINE_TYPED_RECEIPT_NOT_JSON_SERIALIZABLE",
+  "observation": {
+    "exception": "TypeError",
+    "reason": "Object of type RetainedProfileExpectation is not JSON serializable"
+  },
+  "historicLauncherNotExecuted": true,
+  "originalCodeChanged": false,
+  "kernelOrNativeOrFsProfileUsed": false,
+  "reason": "historic F126 env writer json.dumps(receipt) must not be reused blindly with new typed retainedProfile"
+}

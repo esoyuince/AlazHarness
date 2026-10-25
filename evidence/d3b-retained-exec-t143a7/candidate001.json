@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-25T12:23:52.060564+03:00",
+  "state": "CANDIDATE001_UNTESTED",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_handoff.py": "26a4cc299f587ed28e4252bb7633ad2ff1a60426c3b19866e33772f217c59b9a"
+  },
+  "scope": "pure bounded typed data; original startup and kernel gates unchanged",
+  "expectedHomeMustComeFromTrustedCaller": true,
+  "nativeSourcesChanged": false
+}

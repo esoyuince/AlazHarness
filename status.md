@@ -1,72 +1,51 @@
-# AlazHarness - status
+# AlazHarness — T143 / R144 yayın devam kaydı
 
-## P142C6 RETAINED PROJECTION - SCOPED CONTRACT PASS / PUBLICATION NEXT
+## IN PROGRESS — Tam regresyon doğrulandı; tek yayın sahibi bu T143 dalıdır
 
-Active branch alaz/d3b-retained-projection-p142c6.
-Worktree C:\Antigravity\AlazHarness\scratch\worktrees\d3b-retained-projection-p142c6.
-Base/main1321699. Read liveHEAD for tested implementation checkpoint. C142 is
-independentQA; P142 is single product/full/publication writer, no further role flip.
+Çalışma: `alaz/d3b-retained-exec-t143a7`.
+Yol: `C:\Antigravity\AlazHarness\scratch\worktrees\d3b-retained-exec-t143a7`.
+Başlangıç/main: `802910552bc4c804348d4c604fbae8130a45f5ed`.
+H143 bağımsız QA dalına dokunulmaz; alternatif codec tekrar eklenmez.
 
-### Implemented path
+### Kesinti sonrası doğrulanan durum
 
-Adds explicit NATIVE_RETAINED_LAYOUT+retained_profile pair to EXISTING projection.
-Old4layouts preserve their call paths/defaults and cannot accept a receipt by
-accident. New RetainedProjection binds exact typed VolumeBinding object plus full
-field snapshot, original typed receipt and principal snapshot; host mountpoint/
-profile and fixedTARGET=/run/alaz-state/profile are the ONLY allowed views. Same
-loop device/profileinode/3DBidentities required. Internal home-only receipt copy;
-original immutable input never rewritten. Record is trusted caller data, NOT signed
-or arbitrary-hostile-Python-safe launch authority.
+Tam test 3566: 3543 PASS, 23 SKIP, 0 hata/başarısızlık, çıkış 0.
+`full001/result.json` ile ham test günlüğü ve 625 kaynak + 11 yama özeti eşleşiyor.
+Önceki 620 kaynağın tamamı değişmeden kaldı. 23 atlamanın kimliği/gerekçesi aynı.
+Bu tur tam test ve gerçek Linux deneyleri yeniden başlatılmadı.
 
-Original live volume/controller/cgroup/image/fence checks unchanged. Host full
-layout verified in inspect_volume, same mapping rechecked prebind/pivot, full target
-snapshot rechecked before drop and AFTER original UID/GID/seccomp/Landlock stages.
-Target retainedProfile only returned after all stages; no DB/lease/epoch/admission
-permission inferred. NativeStoreStartup unchanged, retains previous epoch/instance/
-3DBidentity/cold/schema/live checks. Separateprocess/exec JSON handoff is NOT done.
+Ürün yalnız yeni `gateway_retained_handoff.py`: mevcut üç typed expectation için
+sınırlı kanonik JSON, zorunlu ayrı trusted expected_home; projected wrapper fixedTARGET.
+JSON kimlik doğrulama veya kernel/çalıştırma yetkisi değildir. Asıl owner tüm canlı
+lease/mount/schema/epoch kontrollerini sürdürür. Yeni signer/manager/scheduler yok.
 
-### Tests and source scope
+Normal ve kontrollü hata: gerçek ordinary-user Linux os.execve, aynı PID/startticks,
+yeni yorumlayıcı ve boş registry. Eski sonuç/usage replay hesaplanmaz; yeni iş bir kez
+çalışır. Native sonuçlandırma, iki normal owner kapanışı/3 fiziksel bağlantı ve
+caller lease release doğrulandı. Model factory/compute/close test dublörü.
+Kernel izolasyonu, fixedTARGET exec entegrasyonu, HTTP, çökme/güç kaybı ve gerçek
+model/araç/hafıza/bütçe kabulü hâlâ açık. Önceki reddedilen root işlemleri denenmez.
 
-Actual fresh full3534=3511PASS23SKIP0ERROR0FAIL, command0020 terminalexit0.620source/
-config/test and11patch hashes stable. Same23skipIDs/reasons, not rerun asLinux.
-Own42focused=36unit contracts+6offline receipts; peer21unit exact same2runtime hashes
-passed independently. Counts overlap, not63uniquecases. Kernel/mount/drop/filter/
-Landlock/startup dependency calls in these tests are explicit doubles; NO current
-native worker/kernel/Linux acceptance. Existing22projection+18prepared+18three-store
-contracts passed unchanged. Current code not inferred from oldF126513kernel proof.
+### Yayın sırası ve koruma
 
-One oldF126receipt hash test failed after legitimate source change. Exact immutable
-prechange132 projection bytes archived, one named expected-digest resolver added;
-old expected digests/rawkernel results unchanged. New negatives reject unknown
-name/digest/current source. Targeted old test nowPASS; fresh full passed first full
-attempt. Product candidate001 unchanged throughout focused, peer and full tests.
+Önce statik kontrol ve yalnız seçili dosyalarla commit; sonra outgoing tarama ve
+exact-SHA branch push; aynı SHA CI başarı + canlı main/ancestry kontrolü olmadan
+main ilerletilmez. Force-push/squash/install/service/provider işlemi yok.
+Root 33 kullanıcı dosyası, kurulu native eb75627 ve optional d151 korunuyor.
+Bu devam turu R144 yalnız T143 yayınını tamamlar; H143 tekrar ürün sahibi olmaz.
 
-Only oldruntime gateway_state_projection changed + newgateway_retained_projection.
-Only oldtesthelper historical_retained_r140c6 changed + newhistoryhelper/two test
-files. Other614of616baseline files unchanged; native d151/11patches/source manifests
-and installedvendoreb75627 untouched. Independent driver/rawrecords copied with
-exactprovenance; peer branch untouched. No duplicate full or native rerun.
+### Kanıt ve devam
 
-### Exact remaining gate
+`docs/D3B-RETAINED-EXEC-T143A7.md`;
+`evidence/d3b-retained-exec-t143a7/full001/` ve `resume-r144c7/`.
+Önceki status: `docs/status-history/t143a7-prepublication-r144c7.md`.
+İşlemlerin makbuzu/kimliği sonuç belirsizliğinde okunur, körlemesine tekrar yok.
 
-Root/WSL/kernel/service/provider/HTTP operations NOT performed here. Next current-
-source supervised launcher must carry typed retained expectation across trusted
-exec/target boundary and run actual normal/error/replay/newwork/orderedowner close
-under namespace/seccomp/Landlock with hostfile/socket/FD/reentry canaries. Historic
-F126 launcher supports oldmodes only, not automatic new dataclass serialization.
-Previous denied root/cleanup/bootstrap operations stay denied; no alternate-tool
-retry. Crossprocess receipt trust, crash/powerloss and realmodel/tool/memory/budget
-acceptance remain open. Main update would be development increment, not deployment.
 
-Root33dirtyuserfile bytes/status and vendor preserved. Current main1321699; commit
-then bounded outgoing scan/exactSHA CI before any newmain promotion. All full/test
-commands terminal; localstatic/scopedcommit and publication recorded below.
+### Live final writer resolution: R144C7 publishes, R144C8 read-only
 
-### Records
-
-Docs/D3B-RETAINED-PROJECTION-P142C6.md.
-Evidence/d3b-retained-projection-p142c6/: baseline,candidate001,source-custody,
-focused42,independent-c142c6/provenance,compatibility-before,historical-proof-
-diagnosis,full001/rawlogs/result/source+patch manifests,summary,protected-state.
-New runtime helper gateway_retained_projection.py, original typed receipt contract
-and NativeStoreStartup unchanged. Unit tests are not current kernel evidence.
+Stable peer single-writer-review.json explicitly names original T143/R144C7 sole
+publisher and forbids future handoff. Original provisional reciprocal yields are
+superseded. R144C7 acquired exclusive scratch/task-claims/t143-publication-r144.json
+before index mutation; R144C8 tree remains untouched. Exact frozen T143 package
+only; no source edits, full/native replay, root/service/provider changes.

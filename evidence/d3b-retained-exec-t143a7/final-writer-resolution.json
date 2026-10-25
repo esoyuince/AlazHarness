@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-25T12:29:00.242345+03:00",
+  "productOwner": "T143A7",
+  "qaOnly": "H143C7",
+  "permanent": true,
+  "onlyProductModule": "gateway_retained_handoff.py",
+  "ownTwoFilesRestoredFromExactArchives": true,
+  "peerAlternativeNeverCopiedOrExecutedHere": true,
+  "effectOf010": "own files archived then removed; peer copy failed before any copy; not blindly replayed"
+}

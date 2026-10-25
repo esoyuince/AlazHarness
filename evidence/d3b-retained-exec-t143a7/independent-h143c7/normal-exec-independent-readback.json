@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-25T12:35:37.533606+03:00",
+  "scenario": "normal",
+  "result": "INDEPENDENT_READBACK_PASS_REAL_EXEC_NORMAL_NOT_KERNEL",
+  "producerResultSha256": "4e85257375a11ad5c141abcf93af5a5a6d00e62d1d84ca8b32002976f687df64",
+  "codecSha256": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc",
+  "qaSha256": "5cba58adb3fc6af53ec9ecb9b181ac6ebd907566f9fadee22f92605f25d1ebb3",
+  "actualExecPid": 7,
+  "samePidAndStartCheckedInReviewedSource": true,
+  "priorChecksAllTrue": true,
+  "postChecksAllTrue": true,
+  "computeCounts": [
+    1,
+    1
+  ],
+  "noManualSettlementStack": true,
+  "noExtraStateConnectionDuringEitherWork": true,
+  "freshInterpreterRegistryAndCountersChecked": true,
+  "sameRetainedStoreIdentities": true,
+  "oldResultReplayNoComputation": true,
+  "normalOwnerCloseBeforeExecAndAfterWork": true,
+  "execAsTrustedChannelNotSignedRemoteInput": true,
+  "independentRuntimeReexecution": false,
+  "kernelOrHttpAcceptance": false,
+  "scope": "reviewed exact source+original raw result/transport, no separate native run"
+}

@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-25T12:59:46.550118+03:00",
+  "result": "VERIFIED_EXISTING_FULL_TERMINAL_NO_RERUN",
+  "base": "802910552bc4c804348d4c604fbae8130a45f5ed",
+  "fullResult": {
+    "at": "2026-10-25T12:45:06.222208+03:00",
+    "result": "PASS",
+    "total": 3566,
+    "passed": 3543,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourcesStable": true,
+    "patchesStable": true,
+    "same23SkipIdsAndReasons": true,
+    "elapsedSeconds": 204.587,
+    "exitCode": 0,
+    "rawLogSha256": "392dd5969007f2ca21c3dc9c02c5f101c236a23ac3693fc8640c733c7a8bd41b"
+  },
+  "sourceCount": 625,
+  "patchCount": 11,
+  "all620OldSourcesUnchanged": true,
+  "newSources": [
+    "packages/claw-hermes/gateway_retained_handoff.py",
+    "scripts/qa/t143a7_linux_exec.py",
+    "scripts/qa/t143a7_linux_transport.py",
+    "tests/test_exec_handoff_receipt_t143a7.py",
+    "tests/test_retained_handoff_t143a7.py"
+  ],
+  "rawTestLogSha256": "392dd5969007f2ca21c3dc9c02c5f101c236a23ac3693fc8640c733c7a8bd41b",
+  "sourceHashesMatchBeforeAfterAndCurrent": true,
+  "same23SkipIdsAndReasons": true,
+  "normalAndErrorExecEvidenceAlreadyComplete": true,
+  "currentProductMatchesIndependent21FixedRun": true,
+  "independentQAHead": "61ab77db331701cafc3d10d49db0243e8e8ebab9",
+  "rootDirtyFilesPreserved": 33,
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "optionalNative": "d1516731308de8e87130dc68124e69aad35d6911",
+  "noNativeOrFullRerunThisTurn": true
+}

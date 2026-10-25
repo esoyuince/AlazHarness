@@ -1,0 +1,26 @@
+test_bool_cannot_be_epoch_application_id_or_database_identity (__main__.AdversarialHandoff.test_bool_cannot_be_epoch_application_id_or_database_identity) ... ok
+test_decode_no_file_connection_process_or_input_authority (__main__.AdversarialHandoff.test_decode_no_file_connection_process_or_input_authority) ... ok
+test_duplicate_keys_even_unicode_escape_equivalent_refused (__main__.AdversarialHandoff.test_duplicate_keys_even_unicode_escape_equivalent_refused) ... ok
+test_epoch_instance_and_all_three_identity_pairs_remain_bound (__main__.AdversarialHandoff.test_epoch_instance_and_all_three_identity_pairs_remain_bound) ... ok
+test_error_is_bounded_without_echoing_input (__main__.AdversarialHandoff.test_error_is_bounded_without_echoing_input) ... ok
+test_extra_missing_and_wrong_nested_object_types_refused (__main__.AdversarialHandoff.test_extra_missing_and_wrong_nested_object_types_refused) ... ok
+test_foreign_device_alias_tuple_length_and_typed_subclass_refused (__main__.AdversarialHandoff.test_foreign_device_alias_tuple_length_and_typed_subclass_refused) ... ok
+test_mutated_frozen_expected_revalidated_on_export (__main__.AdversarialHandoff.test_mutated_frozen_expected_revalidated_on_export) ... ok
+test_no_rewrite_of_foreign_home_by_projected_decoder (__main__.AdversarialHandoff.test_no_rewrite_of_foreign_home_by_projected_decoder) ... ok
+test_noncanonical_whitespace_reordering_and_bom_refused (__main__.AdversarialHandoff.test_noncanonical_whitespace_reordering_and_bom_refused) ... ok
+test_nonfinite_exponential_and_float_numbers_refused (__main__.AdversarialHandoff.test_nonfinite_exponential_and_float_numbers_refused) ... ok
+test_overlong_integer_deep_payload_and_limit_rejected (__main__.AdversarialHandoff.test_overlong_integer_deep_payload_and_limit_rejected) ... ok
+test_partial_projection_and_wrong_profile_identity_refused (__main__.AdversarialHandoff.test_partial_projection_and_wrong_profile_identity_refused) ... ok
+test_projection_ambient_host_directory_not_clean_projection (__main__.AdversarialHandoff.test_projection_ambient_host_directory_not_clean_projection) ... ok
+test_projection_changed_pid_not_current_exec_source_refused (__main__.AdversarialHandoff.test_projection_changed_pid_not_current_exec_source_refused) ... ok
+test_projection_changed_user_namespace_refused (__main__.AdversarialHandoff.test_projection_changed_user_namespace_refused) ... ok
+test_projection_unknown_version_refused (__main__.AdversarialHandoff.test_projection_unknown_version_refused) ... ok
+test_projection_wrong_store_count_and_bool_not_one (__main__.AdversarialHandoff.test_projection_wrong_store_count_and_bool_not_one) ... ok
+test_roundtrip_reconstructs_original_exact_types_and_all_fields (__main__.AdversarialHandoff.test_roundtrip_reconstructs_original_exact_types_and_all_fields) ... ok
+test_trusted_expected_home_is_separate_mandatory_argument (__main__.AdversarialHandoff.test_trusted_expected_home_is_separate_mandatory_argument) ... ok
+test_valid_projection_shape_roundtrips_without_mutation (__main__.AdversarialHandoff.test_valid_projection_shape_roundtrips_without_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.007s
+
+OK

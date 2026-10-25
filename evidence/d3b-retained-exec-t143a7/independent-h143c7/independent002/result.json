@@ -1,0 +1,13 @@
+{
+  "result": "PASS_INDEPENDENT_HANDOFF_CONTRACTS",
+  "total": 21,
+  "passed": 21,
+  "skipped": 0,
+  "errors": 0,
+  "failures": 0,
+  "failureIds": [],
+  "sourceSha256": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc",
+  "qaSha256": "f198cd7e98db7b77274bc02efb7ff585b9e3faa977d5f0efec1d69e61312892d",
+  "kernelProjectionFixture": true,
+  "nativeOrKernelRun": false
+}

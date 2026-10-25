@@ -1,0 +1,112 @@
+"""Pure codec tests; no native store/OS/confinement acceptance."""
+from contextlib import ExitStack
+from dataclasses import asdict,replace,FrozenInstanceError
+from pathlib import Path,PurePosixPath
+import hashlib,json,sys,unittest
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import gateway_retained_handoff as h
+
+class HandoffContract(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close)
+        if sys.platform=='win32':self.stack.enter_context(patch.object(h.retained,'Path',PurePosixPath))
+        self.state=h.preopen.live.PreparedStoreExpectation(h.preopen.live.NATIVE_PIN,'a'*64,'b'*64,
+            '12345678-1234-4234-8234-123456789012',123,(1792,21),(1792,22),1,'prior-owner')
+        self.reply=h.response.PreparedResponseExpectation(h.response.NATIVE_FEATURE,h.response.SCHEMA_SHA256,(1792,23))
+        self.receipt=h.retained.RetainedProfileExpectation(h.retained.FEATURE,h.TARGET,(1792,12),
+            ((1792,21),(1792,22),(1792,23)),1,'prior-owner','c'*64)
+        self.value=h.RetainedStartup(self.state,self.reply,self.receipt)
+        self.raw=h.encode(self.value,expected_home=h.TARGET)
+    def encoded(self,value):return json.dumps(value,sort_keys=True,separators=(',',':')).encode()
+    def wire(self):return json.loads(self.raw)
+    def refused(self,raw):
+        with self.assertRaises(h.HandoffRejected):h.decode(raw,expected_home=h.TARGET)
+    def test_roundtrip_is_typed_equal_and_deterministic(self):
+        decoded=h.decode(self.raw,expected_home=h.TARGET)
+        self.assertEqual(decoded,self.value);self.assertIsNot(decoded,self.value)
+        self.assertIs(type(decoded.state),type(self.state));self.assertIs(type(decoded.retained),type(self.receipt))
+        self.assertIs(type(decoded.retained.database_identities),tuple)
+        self.assertEqual(h.encode(decoded,expected_home=h.TARGET),self.raw)
+        with self.assertRaises(FrozenInstanceError):decoded.state=None
+    def test_no_files_network_or_store_constructor_for_roundtrip(self):
+        with patch('builtins.open',side_effect=AssertionError('no file')),patch.object(Path,'stat',side_effect=AssertionError('no stat')):
+            self.assertEqual(h.decode(self.raw,expected_home=h.TARGET),self.value)
+    def test_unknown_fields_at_all_levels_are_refused(self):
+        for level in (None,'state','response','retained'):
+            w=self.wire();(w if level is None else w[level])['foreign']=None
+            with self.subTest(level=level):self.refused(self.encoded(w))
+    def test_missing_fields_at_all_levels_are_refused(self):
+        for level in (None,'state','response','retained'):
+            w=self.wire();d=w if level is None else w[level];d.pop(next(iter(d)))
+            with self.subTest(level=level):self.refused(self.encoded(w))
+    def test_duplicate_keys_not_last_wins(self):
+        for raw in (self.raw[:-1]+b',"protocol":"'+h.PROTOCOL.encode()+b'"}',
+                    self.raw.replace(b'"epoch":1',b'"epoch":1,"epoch":1',1)):
+            self.refused(raw)
+    def test_nonfinite_and_any_float_rejected(self):
+        for n in (b'NaN',b'Infinity',b'-Infinity',b'1.0',b'1e0'):
+            self.refused(self.raw.replace(b'"epoch":1',b'"epoch":'+n,1))
+    def test_bool_never_integer_identity_or_epoch(self):
+        for level,key,value in (('state','epoch',True),('state','application_id',True),
+            ('response','max_size',True),('retained','epoch',True),('retained','home_identity',[True,12])):
+            w=self.wire();w[level][key]=value;self.refused(self.encoded(w))
+    def test_unbounded_integer_refused(self):
+        self.refused(self.raw.replace(b'"epoch":1',b'"epoch":'+b'9'*100,1))
+        for n in (0,-1,2**63):
+            w=self.wire();w['state']['epoch']=w['retained']['epoch']=n;self.refused(self.encoded(w))
+    def test_only_bounded_bytes_accepted(self):
+        for raw in ('{}',None,bytearray(self.raw),b'',b'x'*(h.MAX_BYTES+1)):
+            self.refused(raw)
+    def test_invalid_utf8_and_json_depth_truncation(self):
+        for raw in (b'\xff',b'{',self.raw[:-1],b'['*1500+b']'*1500):self.refused(raw)
+    def test_ambiguous_noncanonical_encoding_refused(self):
+        for raw in (b' '+self.raw,self.raw+b'\n',json.dumps(self.wire(),indent=2).encode()):self.refused(raw)
+    def test_protocol_version_and_type_exact(self):
+        for protocol in (None,True,1,'alaz-retained-startup-v2'):
+            w=self.wire();w['protocol']=protocol;self.refused(self.encoded(w))
+    def test_previous_epoch_and_instance_bound_together(self):
+        for key,val in (('epoch',2),('instance_id','other')):
+            w=self.wire();w['retained'][key]=val;self.refused(self.encoded(w))
+    def test_old_state_source_and_response_schema_pins_not_overridden(self):
+        for level,key in (('state','native_pin'),('response','native_feature'),('response','schema_sha256'),('retained','native_feature')):
+            w=self.wire();w[level][key]='0'*len(w[level][key]);self.refused(self.encoded(w))
+    def test_three_file_ids_and_profile_device_not_interchangeable(self):
+        w=self.wire();w['retained']['database_identities'].reverse();self.refused(self.encoded(w))
+        w=self.wire();w['retained']['home_identity'][0]=999;self.refused(self.encoded(w))
+        w=self.wire();w['response']['response_identity']=w['state']['state_identity'];self.refused(self.encoded(w))
+    def test_tuple_arity_and_wrong_member_types(self):
+        for v in ([],[1],[1,2,3],['1792',21],[-1,21],[2**64,21],{'a':1}):
+            w=self.wire();w['retained']['home_identity']=v;self.refused(self.encoded(w))
+    def test_no_wal_or_other_journal_transfer(self):
+        for mode in ('wal','persist','truncate',None):
+            w=self.wire();w['state']['journal_mode']=mode;self.refused(self.encoded(w))
+    def test_home_expectation_cannot_be_taken_from_payload(self):
+        with self.assertRaisesRegex(h.HandoffRejected,'home_mismatch'):h.decode(self.raw,expected_home='/other/profile')
+        w=self.wire();w['retained']['home']='/other/profile';self.refused(self.encoded(w))
+    def test_home_aliases_and_null_bytes_refused(self):
+        for home in ('//run/alaz-state/profile','/run/../profile','/run/./profile','/run//profile','/run/alaz-state/profile/','relative','/run\x00/x','/run\\x'):
+            with self.subTest(home=home),self.assertRaises(h.HandoffRejected):h.decode(self.raw,expected_home=home)
+    def test_data_instances_not_raw_dicts_or_subclass_records(self):
+        for value in (asdict(self.value),None,replace(self.value,retained=asdict(self.receipt))):
+            with self.assertRaises(h.HandoffRejected):h.encode(value,expected_home=h.TARGET)
+    def test_mutated_frozen_member_revalidated_on_encode(self):
+        object.__setattr__(self.reply,'max_size',999)
+        with self.assertRaises(h.HandoffRejected):h.encode(self.value,expected_home=h.TARGET)
+    def test_fixed_projection_requires_complete_explicit_flags(self):
+        projected={'state':'confined_state_profile','profile':h.TARGET,'profileLayout':'hermes-native-retained-three-stores-v1',
+           'retainedProjectionVerified':True,'persistentProfileProjected':True,'rootPrivilegesDropped':True,
+           'profileOwnershipAcquired':False,'nativeHermesStoresOpened':False,'retainedProfile':self.receipt,
+           'profileDevice':1792,'profileInode':12}
+        self.assertEqual(h.encode_projected(projected,self.state,self.reply),self.raw)
+        for key,val in (('rootPrivilegesDropped',1),('profile','/other'),('nativeHermesStoresOpened',True),('profileInode',True),('profileDevice',999)):
+            with self.subTest(key=key),self.assertRaises(h.HandoffRejected):h.encode_projected(dict(projected,**{key:val}),self.state,self.reply)
+    def test_fixed_projection_decoder_cannot_decode_other_home(self):
+        value=replace(self.value,retained=replace(self.receipt,home='/owned/profile'))
+        raw=h.encode(value,expected_home='/owned/profile')
+        with self.assertRaises(h.HandoffRejected):h.decode_projected(raw)
+    def test_original_receipt_and_schema_values_not_modified(self):
+        before=asdict(self.value);h.decode(self.raw,expected_home=h.TARGET);self.assertEqual(asdict(self.value),before)
+
+if __name__=='__main__':unittest.main()

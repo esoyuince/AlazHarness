@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-25T12:59:46.550118+03:00",
+  "result": "PASS_SCOPED_TYPED_TRANSFER_AND_ORDERLY_REAL_EXEC",
+  "fullWindows": {
+    "at": "2026-10-25T12:45:06.222208+03:00",
+    "result": "PASS",
+    "total": 3566,
+    "passed": 3543,
+    "skipped": 23,
+    "errors": 0,
+    "failures": 0,
+    "errorIds": [],
+    "failureIds": [],
+    "sourcesStable": true,
+    "patchesStable": true,
+    "same23SkipIdsAndReasons": true,
+    "elapsedSeconds": 204.587,
+    "exitCode": 0,
+    "rawLogSha256": "392dd5969007f2ca21c3dc9c02c5f101c236a23ac3693fc8640c733c7a8bd41b"
+  },
+  "sourceFiles": 625,
+  "nativePatches": 11,
+  "all620PriorSourcesUnchanged": true,
+  "newSourceFiles": [
+    "packages/claw-hermes/gateway_retained_handoff.py",
+    "scripts/qa/t143a7_linux_exec.py",
+    "scripts/qa/t143a7_linux_transport.py",
+    "tests/test_exec_handoff_receipt_t143a7.py",
+    "tests/test_retained_handoff_t143a7.py"
+  ],
+  "ownFocusedMethods": 32,
+  "focusedBreakdown": {
+    "unit": 24,
+    "offlineReceipt": 8
+  },
+  "independentMethods": 21,
+  "testScopesOverlap": true,
+  "actualLinuxScenarios": [
+    "normal-orderly-exec-replay-newwork-close",
+    "controlled-error-orderly-exec-replay-newwork-close"
+  ],
+  "nativeImportsUnion": 722,
+  "fixedNativeManifestSources": 756,
+  "actualExecSamePidFreshInterpreter": true,
+  "noManualSqlSettlement": true,
+  "nativeSourceOrManifestChanged": false,
+  "kernelProjectionOrHttpOrCrashAccepted": false,
+  "realModelAccepted": false,
+  "realProviderCalls": 0,
+  "baseMain": "802910552bc4c804348d4c604fbae8130a45f5ed",
+  "pushed": false
+}

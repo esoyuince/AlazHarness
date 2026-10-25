@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-25T12:36:50.337418+03:00",
+  "sourceHashes": {
+    "scripts/qa/t143a7_linux_exec.py": "5cba58adb3fc6af53ec9ecb9b181ac6ebd907566f9fadee22f92605f25d1ebb3",
+    "scripts/qa/t143a7_linux_transport.py": "981b1107589ef3a022156447bc5db0281cef3c6cbf99f8e61eec444703c29dce"
+  },
+  "checks": [
+    {
+      "lines": [
+        134,
+        172
+      ],
+      "finding": "native runtime/session/consumer retirement, three physical closes, caller lease finish and default executor shutdown precede os.execve; fixed interpreter argv/no shell is audited"
+    },
+    {
+      "lines": [
+        175,
+        188
+      ],
+      "finding": "preexec metadata+wire hashes compared to separately supplied env values; PID/startticks retained, counters and registry fresh; expected_home comes from parent-selected argv not from wire"
+    },
+    {
+      "lines": [
+        190,
+        253
+      ],
+      "finding": "new real owner epoch2, same3DBidentities/helpers, old result+usage replay no newcompute, conflict refused, new request once then normal3handle close/registry0/leasefinish"
+    },
+    {
+      "lines": [
+        262,
+        287
+      ],
+      "finding": "fixture finally cleanup is separate from normal owner checks and labelled; eventual temp deletion is not pre-open deletion-to-pass"
+    }
+  ],
+  "limits": [
+    "same OS PID orderly exec, NOT crash/reboot/powerloss or spawn-based cross-PID owner transfer",
+    "ordinary-user P71C, no new namespace/seccomp/Landlock or authenticated HTTP acceptance",
+    "generic codec expected_home trusted caller path; projected fixedTARGET wrapper only unit-tested",
+    "preexec SHA correspondence proves fixture continuity, NOT cryptographic authentication against hostile same-UID sender",
+    "AIAgent factory/computation/close replaced only; real model/tool/memory budget not run"
+  ],
+  "noProductionChangesOrNativeReplayByThisReview": true
+}

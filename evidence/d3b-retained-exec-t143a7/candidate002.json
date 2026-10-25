@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-25T12:29:58.383771+03:00",
+  "state": "CANDIDATE002_FROZEN",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_retained_handoff.py": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc"
+  },
+  "fix": "complete projection-result consistency checks, same current PID/version/host-userns/counts/no ambient exports; not kernel attestation",
+  "oldIndependentResult": "21total16PASS5FAIL0ERROR preserved in H143",
+  "sameIndependentTestsMustPass": true
+}

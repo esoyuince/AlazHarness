@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-25T12:35:54.416435+03:00",
+  "bundleSha256": "3d45c70401b1e84ece01e9b0a303afb53c2187d7248ef6b384be7260c6ea5a59",
+  "nativeFiles": 756,
+  "driverSha256": "5cba58adb3fc6af53ec9ecb9b181ac6ebd907566f9fadee22f92605f25d1ebb3",
+  "transportSha256": "981b1107589ef3a022156447bc5db0281cef3c6cbf99f8e61eec444703c29dce",
+  "codecSha256": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc",
+  "scenario": "controlled-computation-error-before-and-after-exec",
+  "scope": "actual execve samePID fresh interpreter, original native owner result/replay/newwork/close. No kernel/powerloss/provider claim",
+  "state": "READY_NOT_EXECUTED",
+  "sameBundleAndDriverAsNormal": true
+}

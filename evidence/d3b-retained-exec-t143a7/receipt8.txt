@@ -1,0 +1,13 @@
+test_actual_exec_event_pid_and_fresh_interpreter_observations (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_actual_exec_event_pid_and_fresh_interpreter_observations) ... ok
+test_all_native_and_current_code_hashes_bound (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_all_native_and_current_code_hashes_bound) ... ok
+test_exact_same_bundle_driver_and_original_transport_results (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_exact_same_bundle_driver_and_original_transport_results) ... ok
+test_native_settlement_stacks_and_computation_are_not_fixture_terminalization (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_native_settlement_stacks_and_computation_are_not_fixture_terminalization) ... ok
+test_normal_and_error_native_reopen_same_stores_new_generation (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_normal_and_error_native_reopen_same_stores_new_generation) ... ok
+test_owner_release_and_real_helpers_no_additional_turn_db (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_owner_release_and_real_helpers_no_additional_turn_db) ... ok
+test_same_independent_failures_now_pass_without_test_rewrite (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_same_independent_failures_now_pass_without_test_rewrite) ... ok
+test_scope_is_orderly_exec_not_crash_or_current_kernel_acceptance (test_exec_handoff_receipt_t143a7.ExecHandoffReceipt.test_scope_is_orderly_exec_not_crash_or_current_kernel_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.122s
+
+OK

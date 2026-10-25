@@ -1,0 +1,28 @@
+{
+  "owner": "R144C7",
+  "session": "d7b50557-e76f-47db-85d5-0e402a0cfbff",
+  "requestId": "d144c701-21f8-4a96-bf45-144000000012",
+  "state": "CLAIMED",
+  "worktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\d3b-retained-exec-t143a7",
+  "base": "802910552bc4c804348d4c604fbae8130a45f5ed",
+  "at": "2026-10-25T13:06:12.415116+03:00",
+  "purpose": "exclusive publication coordination only, not runtime authorization",
+  "supersedes": "provisional mutual yields; stable peer ownership JSON confirms original R144C7 publishes and R144C8 remains read-only",
+  "publisher": "R144C7 only",
+  "independentReviewer": "R144C8 only",
+  "peerOwnershipRecord": {
+    "at": "2026-10-25T13:01:39.409662+03:00",
+    "productAndPublicationOwner": "T143 / R144C7 in d3b-retained-exec-t143a7",
+    "reviewOnlyOwner": "R144C8 in d3b-exec-publication-review-r144c8",
+    "reason": "new publisher summary/status observed before candidate commit; avoid second writer",
+    "our004Outcome": "precondition stopped on already-existing producer summary before stage/commit; only our own resume JSON session field removal occurred",
+    "producerProductOrIndexChangedByReview": false,
+    "our003InitialStatusAppendPreservedInProducerHistory": true,
+    "ownRecordsCopiedNotDeletedFromActiveProducer": true,
+    "noFutureWriterHandoff": true,
+    "noRootKernelOrDuplicateTestExecution": true
+  },
+  "noPeerTreeWrites": true,
+  "noDuplicateFullOrNativeRuns": true,
+  "attempt010": "wording-sensitive precondition failed before any write; observed revised status text and unchanged structured ownership record, corrected to read that stable record"
+}

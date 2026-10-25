@@ -1,0 +1,40 @@
+{
+  "files": {
+    "independent001/result.json": {
+      "sha256": "98d85154e53f588acba85b7276ea84b17c996e9c66b2e1cea71f6d36eb0b5ed3",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\independent001\\result.json"
+    },
+    "independent001/tests.txt": {
+      "sha256": "0e4dad9fdad269cc80d58d412d5e9e6efe4c94d5c720fca1e504a5491a80b924",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\independent001\\tests.txt"
+    },
+    "independent002/result.json": {
+      "sha256": "31fb02a9c7355f64341a6ecfab493a6b13718406e20508b5b67da2d4cd588a40",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\independent002\\result.json"
+    },
+    "independent002/tests.txt": {
+      "sha256": "3cfc3a395dd29947b7cbf260dd074cf22e5d9ad460dd6570a52da1f80b8ba7cd",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\independent002\\tests.txt"
+    },
+    "producer001-codec.py.txt": {
+      "sha256": "26a4cc299f587ed28e4252bb7633ad2ff1a60426c3b19866e33772f217c59b9a",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\producer001-codec.py.txt"
+    },
+    "producer002-codec.py.txt": {
+      "sha256": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\producer002-codec.py.txt"
+    },
+    "projected-consistency-finding.json": {
+      "sha256": "f1f392061b5e3a7fd25fdb5af442d5111e24a45bfaf397acaf63ee4237039753",
+      "sourcePath": "evidence\\d3b-retained-exec-h143c7\\projected-consistency-finding.json"
+    },
+    "qa.py.txt": {
+      "sha256": "f198cd7e98db7b77274bc02efb7ff585b9e3faa977d5f0efec1d69e61312892d",
+      "sourcePath": "scripts/qa/h143c7_adversarial_handoff.py"
+    }
+  },
+  "producerOrPeerFilesEditedByCopy": false,
+  "noDuplicateRun": true,
+  "sameTestsBeforeAfter": true,
+  "scopesOverlapWithOwnUnits": true
+}

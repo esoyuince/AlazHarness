@@ -1,0 +1,19 @@
+{
+  "result": "FAIL",
+  "total": 21,
+  "passed": 16,
+  "skipped": 0,
+  "errors": 0,
+  "failures": 5,
+  "failureIds": [
+    "__main__.AdversarialHandoff.test_projection_ambient_host_directory_not_clean_projection",
+    "__main__.AdversarialHandoff.test_projection_changed_pid_not_current_exec_source_refused",
+    "__main__.AdversarialHandoff.test_projection_changed_user_namespace_refused",
+    "__main__.AdversarialHandoff.test_projection_unknown_version_refused",
+    "__main__.AdversarialHandoff.test_projection_wrong_store_count_and_bool_not_one"
+  ],
+  "sourceSha256": "26a4cc299f587ed28e4252bb7633ad2ff1a60426c3b19866e33772f217c59b9a",
+  "qaSha256": "f198cd7e98db7b77274bc02efb7ff585b9e3faa977d5f0efec1d69e61312892d",
+  "kernelProjectionFixture": true,
+  "nativeOrKernelRun": false
+}

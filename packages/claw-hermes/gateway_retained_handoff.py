@@ -1,0 +1,173 @@
+"""Bounded typed retained-startup data across a trusted exec boundary.
+
+No JSON grants launch authority. The caller supplies expected_home from its own
+trusted launch context, never by reading it back from this payload. Actual mount,
+profile lease, cold schema, store identities and epoch still belong to the
+original NativeStoreStartup. This module opens no file, imports no native agent,
+starts no process and never authorizes work. Projected wrappers bind fixed TARGET.
+"""
+from dataclasses import asdict, dataclass, fields
+import json
+import os
+from pathlib import PurePosixPath
+import re
+
+import gateway_retained_profile as retained
+import gateway_store_preopen as preopen
+import gateway_response_preopen as response
+
+MAX_BYTES = 16384
+PROTOCOL = 'alaz-retained-startup-v1'
+TARGET = '/run/alaz-state/profile'
+
+class HandoffRejected(ValueError):
+    """Bounded diagnostics; never include candidate field contents."""
+
+def require(ok, reason):
+    if not ok:
+        raise HandoffRejected(reason)
+
+def _home(value):
+    require(type(value) is str and 0 < len(value) <= 4096 and value.startswith('/')
+            and not value.startswith('//') and '\x00' not in value and '\\' not in value,
+            'handoff_home')
+    path = PurePosixPath(value)
+    require(str(path) == value and '..' not in path.parts and '.' not in value.split('/'),
+            'handoff_home')
+    return value
+
+def _keys(value, expected):
+    require(type(value) is dict and set(value) == set(expected), 'handoff_fields')
+
+def _pair(value):
+    require(type(value) is list and len(value) == 2 and all(type(v) is int
+            and 0 < v < 2**64 for v in value), 'handoff_identity')
+    return tuple(value)
+
+def _raw_receipt(value):
+    _keys(value, (f.name for f in fields(retained.RetainedProfileExpectation)))
+    value = dict(value)
+    value['home_identity'] = _pair(value['home_identity'])
+    ids = value['database_identities']
+    require(type(ids) is list and len(ids) == 3, 'handoff_three_identities')
+    value['database_identities'] = tuple(_pair(v) for v in ids)
+    return retained.RetainedProfileExpectation(**value)
+
+@dataclass(frozen=True)
+class RetainedStartup:
+    state: preopen.live.PreparedStoreExpectation
+    response: response.PreparedResponseExpectation
+    retained: retained.RetainedProfileExpectation
+
+def validate(value, *, expected_home):
+    """Validate only typed data; no claim that supplied trust is authentic."""
+    home = _home(expected_home)
+    require(type(value) is RetainedStartup, 'handoff_record_type')
+    require(type(value.state) is preopen.live.PreparedStoreExpectation
+            and type(value.response) is response.PreparedResponseExpectation
+            and type(value.retained) is retained.RetainedProfileExpectation,
+            'handoff_record_members')
+    value.state.__post_init__()
+    value.response.__post_init__()
+    retained.validate_receipt(value.retained)
+    response._pair(value.response, value.state)
+    _home(value.retained.home)
+    require(value.retained.home == home, 'handoff_home_mismatch')
+    require(value.state.journal_mode == 'delete' and value.state.epoch > 0
+            and value.retained.epoch == value.state.epoch
+            and value.retained.instance_id == value.state.instance_id,
+            'handoff_previous_epoch_or_instance')
+    require(type(value.retained.epoch) is int and value.retained.epoch < 2**63
+            and type(value.retained.instance_id) is str
+            and re.fullmatch('[A-Za-z0-9._-]{1,128}',value.retained.instance_id) is not None,
+            'handoff_retained_generation')
+    identities = (value.state.state_identity, value.state.replay_identity,
+                  value.response.response_identity)
+    require(value.retained.database_identities == identities
+            and value.retained.home_identity[0] == identities[0][0]
+            and all(type(n) is int and 0 < n < 2**64
+                    for pair in (value.retained.home_identity,*identities) for n in pair),
+            'handoff_store_or_profile_identity')
+    return value
+
+def _json(raw):
+    def pairs(items):
+        out = {}
+        for key, value in items:
+            require(key not in out, 'handoff_duplicate_field')
+            out[key] = value
+        return out
+    def integer(value):
+        require(len(value.lstrip('-')) <= 20, 'handoff_integer_limit')
+        return int(value)
+    def no_number(_):
+        raise HandoffRejected('handoff_noninteger_number')
+    return json.loads(raw,object_pairs_hook=pairs,parse_int=integer,
+                      parse_float=no_number,parse_constant=no_number)
+
+def encode(value, *, expected_home):
+    try:
+        validate(value,expected_home=expected_home)
+        raw = json.dumps({'protocol':PROTOCOL,'state':asdict(value.state),
+                          'response':asdict(value.response),'retained':asdict(value.retained)},
+                         sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False).encode('utf-8')
+        require(len(raw) <= MAX_BYTES, 'handoff_size')
+        return raw
+    except HandoffRejected:
+        raise
+    except (ValueError,TypeError,KeyError,AttributeError,OverflowError,RecursionError,RuntimeError):
+        raise HandoffRejected('handoff_encode_invalid') from None
+
+def decode(raw, *, expected_home):
+    try:
+        _home(expected_home)
+        require(type(raw) is bytes and 0 < len(raw) <= MAX_BYTES, 'handoff_size_or_type')
+        wire = _json(raw.decode('utf-8','strict'))
+        _keys(wire,('protocol','state','response','retained'))
+        require(type(wire['protocol']) is str and wire['protocol'] == PROTOCOL,
+                'handoff_protocol')
+        # Reuse original exact-field/type validators; never construct runtime stores.
+        state = preopen._expectation(wire['state'])
+        reply = response._expected(wire['response'])
+        record = RetainedStartup(state,reply,_raw_receipt(wire['retained']))
+        validate(record,expected_home=expected_home)
+        require(encode(record,expected_home=expected_home) == raw,'handoff_noncanonical')
+        return record
+    except HandoffRejected:
+        raise
+    except (ValueError,TypeError,KeyError,AttributeError,OverflowError,RecursionError,RuntimeError):
+        raise HandoffRejected('handoff_decode_invalid') from None
+
+def encode_projected(projection, state, reply):
+    """Accept only the caller's completed retained projection result, not user JSON.
+
+    These consistency checks are not authentication or a rerun of kernel checks.
+    An arbitrary dictionary must never be passed here as trusted launch input.
+    """
+    require(type(projection) is dict
+            and type(projection.get('version')) is int and projection['version'] == 1
+            and type(projection.get('pid')) is int and projection['pid'] == os.getpid()
+            and type(projection.get('stateDirectoryCount')) is int and projection['stateDirectoryCount'] == 1
+            and type(projection.get('ambientHostDirectoriesBound')) is int and projection['ambientHostDirectoriesBound'] == 0
+            and projection.get('hostUserNamespacePreserved') is True
+            and projection.get('legacyIpcV2Activated') is False
+            and projection.get('fullD3BAccepted') is False
+            and projection.get('state') == 'confined_state_profile'
+            and projection.get('profile') == TARGET
+            and projection.get('profileLayout') == 'hermes-native-retained-three-stores-v1'
+            and projection.get('retainedProjectionVerified') is True
+            and projection.get('persistentProfileProjected') is True
+            and projection.get('rootPrivilegesDropped') is True
+            and projection.get('profileOwnershipAcquired') is False
+            and projection.get('nativeHermesStoresOpened') is False,
+            'handoff_projection_incomplete')
+    data = RetainedStartup(state,reply,projection.get('retainedProfile'))
+    raw = encode(data,expected_home=TARGET)
+    require(type(projection.get('profileDevice')) is int
+            and type(projection.get('profileInode')) is int
+            and (projection['profileDevice'],projection['profileInode']) == data.retained.home_identity,
+            'handoff_projection_identity')
+    return raw
+
+def decode_projected(raw):
+    return decode(raw,expected_home=TARGET)

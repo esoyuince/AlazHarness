@@ -1,0 +1,133 @@
+"""Independent hostile-input controls against the producer's exact codec.
+No real projection or native runtime execution; successful projection shape is
+an explicit fixture. Rejecting inconsistent shape is not kernel attestation.
+"""
+from contextlib import ExitStack
+from dataclasses import asdict,replace
+from pathlib import Path,PurePosixPath
+import copy,hashlib,json,os,sqlite3,subprocess,sys,unittest
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'packages/claw-hermes'))
+import gateway_retained_handoff as t
+
+class AdversarialHandoff(unittest.TestCase):
+    def setUp(self):
+        self.stack=ExitStack();self.addCleanup(self.stack.close)
+        if sys.platform=='win32':self.stack.enter_context(patch.object(t.retained,'Path',PurePosixPath))
+        self.home=t.TARGET
+        self.state=t.preopen.live.PreparedStoreExpectation(t.preopen.live.NATIVE_PIN,'a'*64,'b'*64,
+            '12345678-1234-4234-8234-123456789012',123,(1792,21),(1792,22),4,'owner-four')
+        self.response=t.response.PreparedResponseExpectation(t.response.NATIVE_FEATURE,t.response.SCHEMA_SHA256,(1792,23))
+        self.receipt=t.retained.RetainedProfileExpectation(t.retained.FEATURE,self.home,(1792,20),
+            ((1792,21),(1792,22),(1792,23)),4,'owner-four','d'*64)
+        self.bundle=t.RetainedStartup(self.state,self.response,self.receipt)
+        self.raw=t.encode(self.bundle,expected_home=self.home);self.data=json.loads(self.raw)
+    def wire(self,obj):return json.dumps(obj,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode('utf-8')
+    def altered(self,section,key,value):
+        obj=copy.deepcopy(self.data);obj[section][key]=value;return self.wire(obj)
+    def decode(self,raw):return t.decode(raw,expected_home=self.home)
+    def projection(self):
+        return dict(version=1,state='confined_state_profile',pid=os.getpid(),profile=self.home,
+            profileLayout='hermes-native-retained-three-stores-v1',profileDevice=1792,profileInode=20,
+            persistentProfileProjected=True,hostUserNamespacePreserved=True,rootPrivilegesDropped=True,
+            retainedProjectionVerified=True,stateDirectoryCount=1,ambientHostDirectoriesBound=0,
+            profileOwnershipAcquired=False,nativeHermesStoresOpened=False,legacyIpcV2Activated=False,
+            fullD3BAccepted=False,retainedProfile=self.receipt)
+    def test_roundtrip_reconstructs_original_exact_types_and_all_fields(self):
+        result=self.decode(self.raw);self.assertEqual(result,self.bundle)
+        self.assertIs(type(result.state),type(self.state));self.assertIs(type(result.response),type(self.response));self.assertIs(type(result.retained),type(self.receipt))
+        self.assertEqual(t.encode(result,expected_home=self.home),self.raw);self.assertIsNot(result.retained,self.receipt)
+    def test_decode_no_file_connection_process_or_input_authority(self):
+        with patch.object(os,'open') as files,patch.object(sqlite3,'connect') as sql,patch.object(subprocess,'Popen') as processes:self.decode(self.raw)
+        files.assert_not_called();sql.assert_not_called();processes.assert_not_called()
+    def test_trusted_expected_home_is_separate_mandatory_argument(self):
+        with self.assertRaises(TypeError):t.decode(self.raw)
+        with self.assertRaises(t.HandoffRejected):t.decode(self.raw,expected_home='/unrelated/profile')
+    def test_duplicate_keys_even_unicode_escape_equivalent_refused(self):
+        for needle,new in ((b'"protocol":',b'"pro\u0074ocol":"alaz-retained-startup-v1","protocol":'),
+                           (b'"epoch":4',b'"epoch":4,"epoch":4')):
+            raw=self.raw.replace(needle,new,1);self.assertNotEqual(raw,self.raw)
+            with self.assertRaises(t.HandoffRejected):self.decode(raw)
+    def test_extra_missing_and_wrong_nested_object_types_refused(self):
+        for section in (None,'state','response','retained'):
+            obj=copy.deepcopy(self.data);target=obj if section is None else obj[section];target['__extra__']=0
+            with self.assertRaises(t.HandoffRejected):self.decode(self.wire(obj))
+            obj=copy.deepcopy(self.data);target=obj if section is None else obj[section];del target[next(iter(target))]
+            with self.assertRaises(t.HandoffRejected):self.decode(self.wire(obj))
+        for section in ('state','response','retained'):
+            obj=copy.deepcopy(self.data);obj[section]=[]
+            with self.assertRaises(t.HandoffRejected):self.decode(self.wire(obj))
+    def test_noncanonical_whitespace_reordering_and_bom_refused(self):
+        for raw in (json.dumps(self.data).encode(),self.raw+b' ',b'\xef\xbb\xbf'+self.raw):
+            self.assertNotEqual(raw,self.raw)
+            with self.assertRaises(t.HandoffRejected):self.decode(raw)
+    def test_nonfinite_exponential_and_float_numbers_refused(self):
+        for value in (b'NaN',b'Infinity',b'-Infinity',b'4.0',b'4e0'):
+            with self.assertRaises(t.HandoffRejected):self.decode(self.raw.replace(b'"epoch":4',b'"epoch":'+value,1))
+    def test_bool_cannot_be_epoch_application_id_or_database_identity(self):
+        for section,key in (('state','epoch'),('state','application_id'),('retained','epoch'),('response','max_size')):
+            with self.assertRaises(t.HandoffRejected):self.decode(self.altered(section,key,True))
+        obj=copy.deepcopy(self.data);obj['retained']['database_identities'][0][1]=True
+        with self.assertRaises(t.HandoffRejected):self.decode(self.wire(obj))
+    def test_overlong_integer_deep_payload_and_limit_rejected(self):
+        for raw in (self.raw.replace(b'"epoch":4',b'"epoch":'+b'9'*200,1),b'['*1800+b']'*1800,b' '*(t.MAX_BYTES+1),b''):
+            with self.assertRaises(t.HandoffRejected):self.decode(raw)
+    def test_epoch_instance_and_all_three_identity_pairs_remain_bound(self):
+        changes=(('retained','epoch',5),('retained','instance_id','other'),('state','state_identity',[1792,91]),
+                 ('state','replay_identity',[1792,92]),('response','response_identity',[1792,93]))
+        for section,key,value in changes:
+            with self.assertRaises(t.HandoffRejected):self.decode(self.altered(section,key,value))
+    def test_foreign_device_alias_tuple_length_and_typed_subclass_refused(self):
+        for value in ([1792,21],[1793,20],[1792],[0,20]):
+            with self.assertRaises(t.HandoffRejected):self.decode(self.altered('retained','home_identity',value))
+        class Derived(t.retained.RetainedProfileExpectation):pass
+        with self.assertRaises(t.HandoffRejected):t.encode(t.RetainedStartup(self.state,self.response,Derived(**asdict(self.receipt))),expected_home=self.home)
+    def test_mutated_frozen_expected_revalidated_on_export(self):
+        object.__setattr__(self.state,'application_id',True)
+        with self.assertRaises(t.HandoffRejected):t.encode(self.bundle,expected_home=self.home)
+    def test_no_rewrite_of_foreign_home_by_projected_decoder(self):
+        other=replace(self.receipt,home='/tmp/owned-fixture')
+        raw=t.encode(t.RetainedStartup(self.state,self.response,other),expected_home=other.home)
+        with self.assertRaises(t.HandoffRejected):t.decode_projected(raw)
+    def test_error_is_bounded_without_echoing_input(self):
+        marker=b'not-a-secret-example-private-string'
+        with self.assertRaises(t.HandoffRejected) as err:self.decode(marker)
+        self.assertNotIn(marker.decode(),str(err.exception));self.assertLess(len(str(err.exception)),80)
+    def test_valid_projection_shape_roundtrips_without_mutation(self):
+        p=self.projection();before=dict(p);r=t.decode_projected(t.encode_projected(p,self.state,self.response))
+        self.assertEqual(r,self.bundle);self.assertEqual(p,before);self.assertIs(p['retainedProfile'],self.receipt)
+    def test_projection_changed_pid_not_current_exec_source_refused(self):
+        p=self.projection();p['pid']=os.getpid()+1
+        with self.assertRaises(t.HandoffRejected):t.encode_projected(p,self.state,self.response)
+    def test_projection_unknown_version_refused(self):
+        p=self.projection();p['version']=2
+        with self.assertRaises(t.HandoffRejected):t.encode_projected(p,self.state,self.response)
+    def test_projection_ambient_host_directory_not_clean_projection(self):
+        p=self.projection();p['ambientHostDirectoriesBound']=1
+        with self.assertRaises(t.HandoffRejected):t.encode_projected(p,self.state,self.response)
+    def test_projection_changed_user_namespace_refused(self):
+        p=self.projection();p['hostUserNamespacePreserved']=False
+        with self.assertRaises(t.HandoffRejected):t.encode_projected(p,self.state,self.response)
+    def test_projection_wrong_store_count_and_bool_not_one(self):
+        for value in (2,True):
+            p=self.projection();p['stateDirectoryCount']=value
+            with self.assertRaises(t.HandoffRejected):t.encode_projected(p,self.state,self.response)
+    def test_partial_projection_and_wrong_profile_identity_refused(self):
+        for field,value in (('rootPrivilegesDropped',False),('retainedProjectionVerified',1),('profileInode',999),('nativeHermesStoresOpened',True)):
+            p=self.projection();p[field]=value
+            with self.assertRaises(t.HandoffRejected):t.encode_projected(p,self.state,self.response)
+
+if __name__=='__main__':
+    out=Path(sys.argv[1]);out.mkdir(exist_ok=False)
+    suite=unittest.defaultTestLoader.loadTestsFromTestCase(AdversarialHandoff)
+    with (out/'tests.txt').open('x',encoding='utf-8',newline='\n') as stream:r=unittest.TextTestRunner(stream=stream,verbosity=2).run(suite)
+    fail={t.id() for t,_ in r.errors+r.failures}
+    record={'result':'PASS_INDEPENDENT_HANDOFF_CONTRACTS' if r.wasSuccessful() else 'FAIL',
+        'total':r.testsRun,'passed':r.testsRun-len(r.skipped)-len(fail),'skipped':len(r.skipped),
+        'errors':len(r.errors),'failures':len(r.failures),'failureIds':sorted(fail),
+        'sourceSha256':hashlib.sha256((ROOT/'packages/claw-hermes/gateway_retained_handoff.py').read_bytes()).hexdigest(),
+        'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'kernelProjectionFixture':True,'nativeOrKernelRun':False}
+    (out/'result.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8',newline='\n')
+    print(json.dumps(record),flush=True);sys.exit(0 if r.wasSuccessful() else 1)

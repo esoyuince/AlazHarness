@@ -1,0 +1,43 @@
+# AlazHarness - status
+
+## T143A7 TYPED RETAINED EXEC HANDOFF - IN PROGRESS
+
+Own branch/worktree alaz/d3b-retained-exec-t143a7 from published8029105. Single
+writer for bounded JSON codec and explicit exec boundary experiment. Do not edit
+other worktrees or launch another producer for this same seam. Capture baseline620.
+Native d151 and installedeb75627 immutable, main/root user files preserved.
+
+Target: bounded strict typed serialization of existing state/response/retained
+expectations. Data is NOT signed authorization. Fixed projected wrapper must bind
+TARGET; original owner still enforces real lease/mount/schema/epoch. No weaker
+cold defaults, no new scheduler/manager, no arbitrary payload execution. Reuse
+existing Linux native QA for fresh process reopen with old replay/newwork/close.
+Allowed experiment ordinary P71C UID23001/GID23003 only, inspected fixed scripts.
+Do not run prior denied root/bootstrap/mount/cleanup actions or alternate-tool
+retries. True kernel confinement/HTTP not inferred from subprocess success.
+First inspect exact schemas, implement minimal codec, negatives and current-source
+fresh-interpreter normal/error replay. Record effects before uncertain retries.
+
+
+### PERMANENT ownership resolution: H143 product, T143 independent QA
+
+H143C7 already explicitly owns typed codec and its fixed exec lab test. T143
+irrevocably yields product edits to H143; DO NOT reciprocally yield. No product
+file written in this tree. H143 owns final full/regression/integration, T143 owns
+independent hostile-input/serialization provenance checks and exact-source
+process-boundary QA only. Avoid duplicate full or root/kernel work. Snapshot only
+frozen H143 files into our OWN tree, restore before independent QA-only commit.
+Consider native three-store reopen/replay in a separate ordinary-user interpreter
+only if H143 does not already own that experiment and its codec supports it
+without bypassing fixedTARGET/current PID checks. No invented scope or path rewrite.
+
+
+### FINAL actual split: T143 product, H143 QA; do not flip again
+
+H143 explicitly and finally yielded BEFORE edits to this T143. T143 resumes sole
+implementation/actual experiment/full owner; H143 independent tests only. The two
+provisional notes conflicted but neither had product writes. This final split
+supersedes them. Add one pure data codec of existing state/response/retained types,
+strict mandatory expected_home, plus fixedTARGET projected wrappers. No signature
+or JSON runtime permission. Linux QA demonstrates real separate interpreter clean
+reopen with native replay/newwork; generic codec path does not pretend projection.

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T13:01:15.165296+03:00",
+  "FINAL_PERMANENT_PUBLISHER": "R144C8 in d3b-retained-exec-t143a7",
+  "FINAL_INDEPENDENT_REVIEWER": "R144C7 in d3b-exec-publication-review-r144c7",
+  "doNotYieldBack": true,
+  "productOrMainWritesByThisLaneFromNowOn": false,
+  "noProductSourcesChangedByAttempt003": true,
+  "attempt003": "stopped before staging/static/commit when unexpected concurrent archive appeared; earlier docs/status/summary remain in product tree for publisher to preserve",
+  "sourceAndFullResultsWereOnlyRead": true,
+  "originalProductDocsNotRolledBackOrDeleted": true,
+  "publisherOwnsCommitPushCiMain": "R144C8 only",
+  "ourScope": "independent outgoing/CI/source readback and next exact fixed-target launcher source review; no duplicate native/full runs"
+}

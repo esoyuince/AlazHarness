@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-25T12:42:59.626815+03:00",
+  "rootDirtyFiles": 33,
+  "allRootBytesAndStatusPreserved": true,
+  "installedNative": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+  "vendorClean": true,
+  "optionalNative": "d1516731308de8e87130dc68124e69aad35d6911",
+  "optionalNativeClean": true,
+  "main": "802910552bc4c804348d4c604fbae8130a45f5ed",
+  "rootOrMountOrKernelOrProviderActions": false
+}
