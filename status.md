@@ -1,39 +1,76 @@
 # AlazHarness - status
 
-## R152A1 - SCOPED_KERNEL_AND_RETAINED_LIFECYCLE_PASS
+## R152A1 - COMPLETE: SCOPED_KERNEL_AND_RETAINED_LIFECYCLE_PASS
 
-Checkpoint: 2026-10-25T22:00:14.788443+03:00. Branch: alaz/d3b-retained-acceptance-r152a1.
-Starting main: 8aae47fb7efa94fbfb45b22018747d4bb3178c2a.
-Native pin: d1516731308de8e87130dc68124e69aad35d6911 (unchanged).
+Updated: 2026-10-25T22:08:49.276750+03:00.
+Code/evidence commit: 870da7ae310ca20ab4392aa7b998531056ee8384.
+Feature branch: alaz/d3b-retained-acceptance-r152a1.
+Exact code-commit alaz/local-ci: SUCCESS, observed 2026-10-25 19:08:07 UTC.
+Native source pin: d1516731308de8e87130dc68124e69aad35d6911, unchanged.
 
-### Completed
+Continuation after gated publication: main in
+C:\Antigravity\AlazHarness\scratch\worktrees\main-published-21oct-a37c.
+Live Git HEAD/ref state is authoritative. Root remains on its older branch with
+existing user changes; no root status mirror was overwritten.
 
-- native003: normal + controlled-error scenarios both PASS, exit 0.
-- Original current Landlock ABI3 survives the fixed QA exec; four primary denial pairs and four inherited observations.
-- Same retained three databases, epoch 1 to 2, exact prior result/usage replay without computation, one new computation per scenario, persisted/API equality and epoch/generation 2.
-- Original owner closes all three connections; retained receipt captured before caller lease release. Both owned groups already empty; no timeout/signal.
-- Source/dependency hashes unchanged. Only successful fresh trees removed after complete acceptance. native001/native002 failures and original preservation observations remain recorded.
-- Independent review corroborated 115 recorded-data checks. This is not 115 new runtime tests.
-- Four QA scripts plus documentation/evidence; no product/native/config/pin/installed-dependency changes. Root user changes preserved.
+### Completed outcome
 
-### Evidence and limits
+- native003: normal and controlled-error both PASS, exit 0.
+- Actual original Landlock ABI3, fresh bootstrap and two fixed same-PID QA execs.
+- Four primary baseline-to-EACCES denial pairs and four inherited observations.
+- Same three database identities, owner epoch 1 to 2, exact saved result/usage
+  replay without recomputation, one new physical-thread computation per scenario,
+  and persisted/API equality with new owner epoch/generation 2.
+- Three native connections physically close, retained receipt is captured while
+  the caller lease is held, then the caller releases it.
+- Source/dependency bytes unchanged. Both successful groups already empty without
+  timeout/signal; successful trees removed only after all acceptance checks.
+- native001 and native002 remain FAIL with raw evidence and original failed-tree
+  preservation observations. No earlier attempt was replayed.
+- Independent review: 115 recorded-data/source/hash checks passed. These are not
+  additional runtime tests.
+- Local static gate: PASS, exit 0; 6221 tracked files checked, 3638 tests discovered.
+  No new full standard suite was run locally. Historical 3615 PASS / 23 SKIP is
+  prior evidence. Exact remote CI success does not provide a new test count.
+- Four exact frozen driver files retain an extra EOF blank line. The default
+  whitespace result and successful path-scoped checks are in local-gate.json;
+  executed bytes and global Git settings were preserved.
+- Four QA scripts plus documentation/evidence only; product/native/config/source
+  pins and installed dependencies were not changed.
+
+### Evidence and accepted limits
 
 Report: docs/D3B-LANDLOCK-RETAINED-R152A1.md.
-Evidence: evidence/d3b-retained-acceptance-r152a1/summary.json and native003/.
-Review: evidence/d3b-retained-acceptance-r152a1/independent-review.json.
+Summary: evidence/d3b-retained-acceptance-r152a1/summary.json.
+Raw accepted attempt: evidence/d3b-retained-acceptance-r152a1/native003/.
+Independent review and exact code CI: independent-review.json and
+publication-code-ci.json in the same evidence directory.
 
-Initial lifecycle is unconfined; retained second owner is under explicit laboratory Landlock. Only the declared AIAgent computation fixture is doubled. Four optional IPv6 probes were denied and accounted for; this does not establish network isolation. Native SQLite fallback/optional-module warnings remain in raw stderr. API/handoff equality is supported by executed hash-matched assertions, with the export limits documented.
+Initial lifecycle is unconfined; the retained second owner is under the explicit
+laboratory Landlock policy. Only the declared AIAgent computation fixture is
+doubled. Four optional IPv6 bind probes were denied and accounted for. Native
+SQLite fallback/optional-module warnings remain in child stderr. API/handoff
+equality is supported by hash-matched executed assertions with export/review
+limits documented.
 
-Full projected launch/receive/target_main, privileged supervisor, separate UID/zero CapBnd, namespace/network isolation, HTTP/provider, crash recovery and full D3B remain NOT RUN. No root/bootstrap/mount/service action or earlier denied-operation retry occurred.
+### Publication rule and next gate
 
-### Publication and next gate
+Code/evidence is pushed and its exact CI succeeded. This final closure contains
+documentation/publication metadata only. Its own exact HEAD CI must succeed
+before ordinary fast-forward main publication. Final local/origin/remote main
+equality and final-SHA CI are checked live; no force/squash/reset or service
+deployment is part of publication.
 
-Local staged-source gate and exact target-commit CI are next; ordinary fast-forward main publication follows only after those pass. Historical 3615 PASS / 23 SKIP is not a new local suite run.
+Full projected launch/receive/target_main, privileged supervisor, separate UID,
+zero CapBnd, namespace/network isolation, HTTP/provider, crash recovery and full
+D3B remain NOT RUN. No root/bootstrap/mount/service operation or earlier denied
+operation was retried.
 
-Next product gate: qualify the exact current fixed projected launcher in the existing authorized volume-supervisor context with original export, identity, namespace, mount and native ownership checks. Current privileged installation/invocation is not qualified; this component result does not authorize retrying earlier denied actions.
+Exact next product gate: qualify the current fixed projected launcher in the
+existing authorized volume-supervisor context with original export, identity,
+namespace, mount and native ownership checks. Current privileged installation
+and invocation are not qualified; this component result does not authorize a
+retry of earlier denied privileged actions.
 
-History: docs/status-history/r152a1-parent.md, r152a1-prepublication.md and r152a1-work-log.md.
-
-### Local publication gate — 2026-10-25T22:03:59.559263+03:00
-
-Static gate PASS (exit 0): 6221 tracked files, 3638 tests discovered, no test execution. Scoped whitespace checks PASS; four exact frozen driver files retain their extra EOF blank line to preserve executed bytes. Default check/exception recorded in local-gate.json. Feature commit/push and exact-SHA CI are next.
+History: docs/status-history/r152a1-parent.md, r152a1-prepublication.md and
+r152a1-work-log.md.

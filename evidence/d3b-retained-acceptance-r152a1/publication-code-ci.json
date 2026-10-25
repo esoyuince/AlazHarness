@@ -1,0 +1,18 @@
+{
+  "closureCommitMustPassItsOwnExactCiBeforeMain": true,
+  "commit": "870da7ae310ca20ab4392aa7b998531056ee8384",
+  "freshRemoteTestCountAvailable": false,
+  "observedAtUtc": "2026-10-25 19:08:07 UTC",
+  "repo": "esoyuince/AlazHarness",
+  "result": "EXACT_CODE_COMMIT_CI_SUCCESS",
+  "runtimeExperimentRerun": false,
+  "status": {
+    "statuses": [
+      {
+        "context": "alaz/local-ci",
+        "state": "success",
+        "target_url": null
+      }
+    ]
+  }
+}

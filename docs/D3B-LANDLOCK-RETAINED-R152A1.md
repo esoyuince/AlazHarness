@@ -201,3 +201,16 @@ Those bytes were preserved. Strict whitespace checking passes for every other
 path; the four exact frozen paths pass all checks with only blank-at-EOF excluded
 for that command. The initial default result and exact scoped commands are in
 local-gate.json. No global Git setting or product/source hash was changed.
+
+## Publication
+
+Code/evidence commit 870da7ae310ca20ab4392aa7b998531056ee8384 was pushed to
+alaz/d3b-retained-acceptance-r152a1. Its exact alaz/local-ci status is SUCCESS,
+observed 2026-10-25 19:08:07 UTC; see publication-code-ci.json. The status API
+does not expose an exact fresh test count, so no remote count is inferred.
+
+The closure changes only this report, status/work log, summary and publication
+metadata. Its own exact HEAD must also pass alaz/local-ci before ordinary
+fast-forward main publication. Live local/origin/remote main equality and exact
+final-SHA CI are verified at completion; Git is authoritative for the final SHA.
+No runtime service or installed native deployment is implied by the Git update.

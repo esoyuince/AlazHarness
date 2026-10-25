@@ -20,3 +20,7 @@
 - 2026-10-25T22:00:14.788443+03:00: independent review corroborated scoped acceptance with 115 recorded-data checks (not runtime tests). Exact artifact hash 1cd5e8bc1c5ad04917832faaf19f1641503a946e593a3c6d4e463048494d6359; limitations retained. Final result/report/status and full prepublication history recorded; selected staging/static gate follows.
 
 - 2026-10-25T22:03:59.559263+03:00: staged static gate PASS, exit0, 6221 tracked files / 3638 discovered tests. Default whitespace check found only extra EOF blank line in three immutable driver snapshots and exact executed driver; bytes preserved and explicit path-scoped checks passed with -blank-at-eof. No global Git settings changed. Full standard suite not rerun locally.
+
+- 2026-10-25T22:05:27.535675+03:00: code/evidence commit 870da7ae310ca20ab4392aa7b998531056ee8384, 69 selected files; 21 frozen/indexed source or raw-output byte comparisons passed. Feature push completed. Exact alaz/local-ci PENDING; main unchanged. Closure will have its own exact-commit CI gate before fast-forward.
+
+- 2026-10-25T22:08:49.276750+03:00: exact code commit 870da7ae310ca20ab4392aa7b998531056ee8384 alaz/local-ci SUCCESS (2026-10-25 19:08:07 UTC); no fresh remote count inferred. Closure updates only docs/status/summary/publication metadata. Its exact HEAD CI is required before ordinary fast-forward main; root user state remains preserved.
