@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-25T22:03:59.559263+03:00",
+  "defaultWhitespaceCheck": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exitCode": 2,
+    "stderr": "",
+    "stdout": "evidence/d3b-retained-acceptance-r152a1/native001/r152a1_landlock_native.py.txt:361: new blank line at EOF.\nevidence/d3b-retained-acceptance-r152a1/native002/r152a1_landlock_native.py.txt:394: new blank line at EOF.\nevidence/d3b-retained-acceptance-r152a1/native003/r152a1_landlock_native.py.txt:394: new blank line at EOF.\nscripts/qa/r152a1_landlock_native.py:394: new blank line at EOF.\n"
+  },
+  "discoveryIsNotExecution": true,
+  "fullStandardSuiteExecutedLocally": false,
+  "knownFormattingException": {
+    "allOtherPathsStrict": true,
+    "allOtherWhitespaceChecksOnFrozenPaths": true,
+    "onlyIssue": "one existing extra blank line at EOF",
+    "paths": [
+      "scripts/qa/r152a1_landlock_native.py",
+      "evidence/d3b-retained-acceptance-r152a1/native001/r152a1_landlock_native.py.txt",
+      "evidence/d3b-retained-acceptance-r152a1/native002/r152a1_landlock_native.py.txt",
+      "evidence/d3b-retained-acceptance-r152a1/native003/r152a1_landlock_native.py.txt"
+    ],
+    "reason": "preserve exactly executed/frozen source bytes; no file or global Git-config change"
+  },
+  "result": "STATIC_AND_SCOPED_WHITESPACE_PASS",
+  "scopedWhitespaceChecks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)scripts/qa/r152a1_landlock_native.py",
+        ":(exclude)evidence/d3b-retained-acceptance-r152a1/native001/r152a1_landlock_native.py.txt",
+        ":(exclude)evidence/d3b-retained-acceptance-r152a1/native002/r152a1_landlock_native.py.txt",
+        ":(exclude)evidence/d3b-retained-acceptance-r152a1/native003/r152a1_landlock_native.py.txt"
+      ],
+      "exitCode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "core.whitespace=blank-at-eol,-blank-at-eof,space-before-tab",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        "scripts/qa/r152a1_landlock_native.py",
+        "evidence/d3b-retained-acceptance-r152a1/native001/r152a1_landlock_native.py.txt",
+        "evidence/d3b-retained-acceptance-r152a1/native002/r152a1_landlock_native.py.txt",
+        "evidence/d3b-retained-acceptance-r152a1/native003/r152a1_landlock_native.py.txt"
+      ],
+      "exitCode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "staticGate": {
+    "command": [
+      "python",
+      "-B",
+      "scripts/ci_check.py"
+    ],
+    "exitCode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"scope\": \"M0_and_HYB_mock_contracts_not_full_runtime\",\n  \"selected_components\": 10,\n  \"result\": \"PASS\",\n  \"root_files_checked\": 6221,\n  \"source_gitlinks_checked\": 2,\n  \"discovered_tests\": 3638,\n  \"errors\": [],\n  \"vendor_bytes_checked\": false,\n  \"runtime_tested\": false,\n  \"model_called\": false,\n  \"secret_scan\": \"bounded root tracked text patterns; not a complete security audit\"\n}\n"
+  }
+}

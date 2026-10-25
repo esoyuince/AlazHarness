@@ -1,0 +1,28 @@
+{
+  "currentStatus": " M status.md\n?? docs/status-history/r152a1-parent.md\n?? docs/status-history/r152a1-work-log.md\n?? evidence/d3b-retained-acceptance-r152a1/\n?? scripts/qa/r152a1_landlock_bootstrap.py\n?? scripts/qa/r152a1_landlock_native.py\n?? scripts/qa/r152a1_linux_transport.py\n?? scripts/qa/r152a1_windows_accept.py\n",
+  "evidenceSizes": {
+    "evidence/d3b-retained-acceptance-r152a1/native001/result.json": 200383,
+    "evidence/d3b-retained-acceptance-r152a1/native001/stdout.txt": 196905,
+    "evidence/d3b-retained-acceptance-r152a1/native002/result.json": 469884,
+    "evidence/d3b-retained-acceptance-r152a1/native002/stdout.txt": 465870
+  },
+  "productDiff": "",
+  "protected": {
+    "main": {
+      "head": "8aae47fb7efa94fbfb45b22018747d4bb3178c2a",
+      "matchesBaseline": true,
+      "status": "## main...origin/main\n"
+    },
+    "native": {
+      "head": "d1516731308de8e87130dc68124e69aad35d6911",
+      "pinAndClean": true,
+      "status": "## alaz/d3b-finite-close-f135c6\n"
+    },
+    "root": {
+      "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+      "matchesBaseline": true,
+      "status": "## alaz/hyb-001-component-slice\n M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+    }
+  },
+  "repo": "esoyuince/AlazHarness"
+}

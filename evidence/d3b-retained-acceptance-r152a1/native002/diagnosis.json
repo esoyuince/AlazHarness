@@ -1,0 +1,78 @@
+{
+  "afterExecDenials": {
+    "qa_source_write": {
+      "errno": 13,
+      "opened": false
+    },
+    "synthetic_canary": {
+      "errno": 13,
+      "opened": false
+    }
+  },
+  "at": "2026-10-25T21:52:56.829896+03:00",
+  "correction": "candidate003 adds only canonical nonsymlink /etc/mime.types to the QA readonly list for stdlib mimetypes/aiohttp import",
+  "denialPairs": {
+    "qa_source_write": {
+      "after": {
+        "errno": 13,
+        "opened": false
+      },
+      "before": {
+        "errno": 0,
+        "opened": true
+      }
+    },
+    "synthetic_canary": {
+      "after": {
+        "errno": 13,
+        "opened": false
+      },
+      "before": {
+        "errno": 0,
+        "opened": true
+      }
+    }
+  },
+  "earlierAttemptReplayed": false,
+  "error": {
+    "phase": "RESTART_AFTER_NORMAL_CLOSE",
+    "reason": "[Errno 13] Permission denied: '/etc/mime.types'",
+    "traceback": "Traceback (most recent call last):\n  File \"/tmp/alaz-r152a1-normal-mcooqlc_/harness/scripts/qa/r152a1_landlock_native.py\", line 358, in main\n    loop.run_until_complete(restarted_work())\n  File \"/usr/lib/python3.12/asyncio/base_events.py\", line 687, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/tmp/alaz-r152a1-normal-mcooqlc_/harness/scripts/qa/r152a1_landlock_native.py\", line 293, in restarted_work\n    c=await owner.prepare_runtime(GatewayConfig(multiplex_profiles=False,write_sessions_json=False),\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/alaz-r152a1-normal-mcooqlc_/harness/packages/claw-hermes/gateway_store_startup.py\", line 195, in prepare_runtime\n    await consumer.prepare(gateway_config,api_config)\n  File \"/tmp/alaz-r152a1-normal-mcooqlc_/harness/packages/claw-hermes/gateway_prepared_consumer.py\", line 166, in prepare\n    Config,Platform,Binding,Runner,initialize,Bundle,Adapter=native_types()\n                                                             ^^^^^^^^^^^^^^\n  File \"/tmp/alaz-r152a1-normal-mcooqlc_/harness/packages/claw-hermes/gateway_prepared_consumer.py\", line 85, in native_types\n    from gateway.platforms.api_server import APIServerAdapter\n  File \"/tmp/alaz-r152a1-normal-mcooqlc_/native/gateway/platforms/api_server.py\", line 131, in <module>\n    from aiohttp import web\n  File \"/opt/alaz-f126c1a6/dependencies/aiohttp/web.py\", line 17, in <module>\n    from .web_app import Application as Application, CleanupError as CleanupError\n  File \"/opt/alaz-f126c1a6/dependencies/aiohttp/web_app.py\", line 35, in <module>\n    from .web_middlewares import _fix_request_current_app\n  File \"/opt/alaz-f126c1a6/dependencies/aiohttp/web_middlewares.py\", line 8, in <module>\n    from .web_urldispatcher import SystemRoute\n  File \"/opt/alaz-f126c1a6/dependencies/aiohttp/web_urldispatcher.py\", line 45, in <module>\n    from .web_fileresponse import FileResponse\n  File \"/opt/alaz-f126c1a6/dependencies/aiohttp/web_fileresponse.py\", line 52, in <module>\n    CONTENT_TYPES: Final[MimeTypes] = MimeTypes()\n                                      ^^^^^^^^^^^\n  File \"/usr/lib/python3.12/mimetypes.py\", line 74, in __init__\n    init()\n  File \"/usr/lib/python3.12/mimetypes.py\", line 382, in init\n    db.read(file)\n  File \"/usr/lib/python3.12/mimetypes.py\", line 215, in read\n    with open(filename, encoding='utf-8') as fp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [Errno 13] Permission denied: '/etc/mime.types'\n",
+    "type": "PermissionError"
+  },
+  "failureProfilePreserved": true,
+  "fdInventoryBeforeGuard": [
+    {
+      "fd": 0,
+      "inheritable": true,
+      "kind": "other"
+    },
+    {
+      "fd": 1,
+      "inheritable": true,
+      "kind": "pipe"
+    },
+    {
+      "fd": 2,
+      "inheritable": true,
+      "kind": "pipe"
+    }
+  ],
+  "fullProjectedLauncherAccepted": false,
+  "landlockInstalled": true,
+  "lifetime": {
+    "completeOutput": true,
+    "groupEmptyBeforeSignal": true,
+    "normalExitWithoutStragglers": false,
+    "ownedProcessGroupEmpty": true,
+    "processGroup": 7,
+    "signalSent": false,
+    "timedOut": false
+  },
+  "ownerRetainedLifecycleAccepted": false,
+  "productOrGuardChanged": false,
+  "result": "FAIL",
+  "retainedTemporaryTree": "/tmp/alaz-r152a1-normal-mcooqlc_",
+  "samePidBootstrapAndConfinedExec": true,
+  "sourceUnchanged": true
+}

@@ -1,0 +1,32 @@
+{
+  "state": "STATIC_REVIEW_COMPLETE",
+  "actualExecution": "NOT_RUN",
+  "reviewer": "r152_driver_review",
+  "sourceHashes": {
+    "r152a1_landlock_native.py": "3e67b5300c1bbfebbade0db9a43d0131bc07f69acaac02990a31d805379428f0",
+    "r152a1_linux_transport.py": "280491a5cd80fe738c5789d021eecf7249673d8a00620a4c3f9aa646dd3fd1fa",
+    "r152a1_windows_accept.py": "7be22235e612dc74a5b317cfeed8f84eac59bbab084e9ce17c98f3a9edd48795"
+  },
+  "correctedBeforeFirstRun": [
+    "Initial and new persisted result/usage compared to actual API return; request ID/epoch/generation and prior row immutability asserted.",
+    "Every pre-exec check asserted before handoff and saved checks revalidated after exec.",
+    "Windows 480 seconds encloses two 210-second Linux process-group bounds; Bridge 600 seconds.",
+    "Malformed/missing results classified UNKNOWN_RESULT with termination confirmation and replay prohibition; post-run custody exceptions retained."
+  ],
+  "scope": "Only the restarted second-owner lifecycle is under actual Landlock. First lifecycle is unconfined. Existing finite AIAgent model fixture only; no OS/product function replacements.",
+  "notAccepted": [
+    "actual projected entrypoint",
+    "mount or namespace isolation",
+    "separate host UID",
+    "zero capability bound",
+    "network isolation",
+    "authenticated HTTP",
+    "crash recovery",
+    "full D3B"
+  ],
+  "faultInjectedTimeouts": false,
+  "otherReviews": {
+    "retained_contract_review": "INCOMPLETE: only project instructions read; read-only native source query stalled and canceled; not counted as source-review PASS",
+    "retained_path_review": "No completed independent source findings received; not counted as corroboration"
+  }
+}

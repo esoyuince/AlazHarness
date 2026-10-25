@@ -1,0 +1,9 @@
+{
+  "statuses": [
+    {
+      "context": "alaz/local-ci",
+      "state": "success",
+      "target_url": null
+    }
+  ]
+}

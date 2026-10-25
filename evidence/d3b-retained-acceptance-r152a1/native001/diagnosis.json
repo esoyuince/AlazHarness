@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-25T21:51:06.722707+03:00",
+  "correction": "new candidate002 uses ordinary exec to a fresh fixed QA bootstrap before unchanged guard.apply; no arbitrary FD closing or guard relaxation",
+  "earlierAttemptReplayed": false,
+  "error": {
+    "phase": "APPLY_CURRENT_LANDLOCK",
+    "reason": "credential_guard_inherited_fd",
+    "traceback": "Traceback (most recent call last):\n  File \"/tmp/alaz-r152a1-normal-9a4ktps4/harness/scripts/qa/r152a1_landlock_native.py\", line 211, in main\n    landlock_proof=apply_current_landlock(native,out,home)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/alaz-r152a1-normal-9a4ktps4/harness/scripts/qa/r152a1_landlock_native.py\", line 50, in apply_current_landlock\n    receipt=guard.apply(policy,self_mount_metadata=True,self_identity_metadata=True)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/alaz-r152a1-normal-9a4ktps4/harness/packages/claw-hermes/credential_guard.py\", line 210, in apply\n    closed_executable_fds = _preflight(policy)\n                            ^^^^^^^^^^^^^^^^^^\n  File \"/tmp/alaz-r152a1-normal-9a4ktps4/harness/packages/claw-hermes/credential_guard.py\", line 163, in _preflight\n    require(exact_executable and readonly and any(beneath(target, p) for p in policy['readonly']),\n  File \"/tmp/alaz-r152a1-normal-9a4ktps4/harness/packages/claw-hermes/credential_guard.py\", line 32, in require\n    raise GuardRejected(reason)\ncredential_guard.GuardRejected: credential_guard_inherited_fd\n",
+    "type": "GuardRejected"
+  },
+  "failedTreeNotDeleted": true,
+  "firstNativeLifecycleChecks": {
+    "allThreeConnectionsPhysicallyClosed": true,
+    "callerLeaseRetained": true,
+    "callerReleasedLease": true,
+    "modelCloseCalled": true,
+    "noAdditionalStateDbInTurn": true,
+    "noConfigFileBeforeOwner": true,
+    "noRowsChangedByRetirement": true,
+    "oneEpoch": true,
+    "realLinuxLease": true,
+    "realSixColdLiveChecks": true,
+    "registryZeroBeforeFixtureCleanup": true,
+    "sameMountTable": true,
+    "sameNamespaces": true,
+    "sameThreeConnections": true
+  },
+  "fullProjectedLauncherAccepted": false,
+  "knownCandidate001ReportingDefect": "landlockFilesystemComponentTested was an intent constant; null proof and failure are authoritative",
+  "landlockInstalled": false,
+  "normalCloseAndLeaseReleaseCompleted": true,
+  "originalGuardRejectedBeforeInstallation": true,
+  "ownedGroupEmpty": true,
+  "result": "FAIL",
+  "retainedTemporaryTree": "/tmp/alaz-r152a1-normal-9a4ktps4",
+  "signalSent": false,
+  "sourceUnchanged": true,
+  "stage": "APPLY_CURRENT_LANDLOCK",
+  "timedOut": false
+}

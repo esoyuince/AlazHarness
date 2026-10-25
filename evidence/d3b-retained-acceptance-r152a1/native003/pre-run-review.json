@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-25T21:53:21.981739+03:00",
+  "candidate002Retained": "FAIL",
+  "changeFromCandidate002": "only exact canonical nonsymlink /etc/mime.types added readonly; removal of token reproduces previous driver SHA",
+  "executionRequestId": "32533e48-9cc6-4499-80de-d38d3a48a6b1",
+  "experimentState": "PREPARED_NOT_RUN",
+  "kind": "independent source/hash review only",
+  "noGuardProductNativeOrPinChanges": true,
+  "qaSha256": {
+    "r152a1_landlock_bootstrap.py": "b1007b11f98d66fe3753d7225e3daf8eae22cf82e85dbffd81ce8b7f7be58b86",
+    "r152a1_landlock_native.py": "0e239897cd1d52d1cff469b7cf94419ea5aa38390cd9d557d0937ede71779378",
+    "r152a1_linux_transport.py": "91246de577096d588c265f6ef22d9bc09f170f376400b08ec0826219d9c8c035",
+    "r152a1_windows_accept.py": "f7e9bfc08c826b8b3e2104d6f8986278edd00346214840a9dcfe90a711883bd9"
+  },
+  "status": "NO_REMAINING_CONCRETE_SOURCE_BLOCKER"
+}

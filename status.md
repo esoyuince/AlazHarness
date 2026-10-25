@@ -1,59 +1,39 @@
 # AlazHarness - status
 
-## R151A1 - actual self-identity Landlock component SCOPED PASS
+## R152A1 - SCOPED_KERNEL_AND_RETAINED_LIFECYCLE_PASS
 
-Active branch alaz/d3b-self-identity-kernel-r151a1.
-Path C:\Antigravity\AlazHarness\scratch\worktrees\d3b-self-identity-kernel-r151a1.
-Starting baseline665330a0249ea8ee9396ff8c391b959fc3ca8505.
-Accepted code/evidence ec3182bebfe2768a41fdb3bc1e3b50df00e71f6d, exactSHA
-alaz/local-ci SUCCESS on2026-10-25T16:26:52Z; branch published.
-No product source, configuration, source pin or installed native change.
+Checkpoint: 2026-10-25T22:00:14.788443+03:00. Branch: alaz/d3b-retained-acceptance-r152a1.
+Starting main: 8aae47fb7efa94fbfb45b22018747d4bb3178c2a.
+Native pin: d1516731308de8e87130dc68124e69aad35d6911 (unchanged).
 
-### Actual new acceptance
+### Completed
 
-One executed bundle native002:4/4real-kernel cases PASS,0FAIL0SKIP,hostexit0.
-Linux6.6.87.2/Python3.12.3/LandlockABI3, ordinary UID23001/GID23003.
-Default map denial; selected maps + original identity observer; samePID fixedQA
-Python exec; descendant newPID denial with original parent-map grant inherited.
-42baseline-open to EACCES13 pairs;4additional child read-open denials within case4.
-No proc content read for sensitive canaries, no proc writes/truncate.
-All6loaded/transferred source hashes exact before/after;4canaries unchanged.
-Group already empty on normal exit, no timeout/signal, owned temp tree removed.
-Independent exact-driver and full-result corroboration complete. Two QA transport
-issues fixed before first execution; native001 was PREPARED but NOT RUN.
+- native003: normal + controlled-error scenarios both PASS, exit 0.
+- Original current Landlock ABI3 survives the fixed QA exec; four primary denial pairs and four inherited observations.
+- Same retained three databases, epoch 1 to 2, exact prior result/usage replay without computation, one new computation per scenario, persisted/API equality and epoch/generation 2.
+- Original owner closes all three connections; retained receipt captured before caller lease release. Both owned groups already empty; no timeout/signal.
+- Source/dependency hashes unchanged. Only successful fresh trees removed after complete acceptance. native001/native002 failures and original preservation observations remain recorded.
+- Independent review corroborated 115 recorded-data checks. This is not 115 new runtime tests.
+- Four QA scripts plus documentation/evidence; no product/native/config/pin/installed-dependency changes. Root user changes preserved.
 
-### Scope boundary
+### Evidence and limits
 
-Actual supplementary group23003 and nonzero CapBnd remain truthfully observed.
-This is NOT fixed product launcher/startup/native3storeclose/network/separateUID/
-fullD3B acceptance. QAexec is explicitly a different target. These gates NOT RUN.
-Prior denied root/bootstrap/mount/cleanup actions not retried.
-Earlier R150full3638=3615PASS23SKIP is historical; no new full LOCAL suite.
-Exact code-commit alaz/local-ci is now SUCCESS, with its normal remote regression
-gate; no new remote count is invented from the status-only API.
-Timeout branch reviewed, not fault-injected. Unknown lifetime cannot pass/cleanup.
+Report: docs/D3B-LANDLOCK-RETAINED-R152A1.md.
+Evidence: evidence/d3b-retained-acceptance-r152a1/summary.json and native003/.
+Review: evidence/d3b-retained-acceptance-r152a1/independent-review.json.
 
-### Publication and next action
+Initial lifecycle is unconfined; retained second owner is under explicit laboratory Landlock. Only the declared AIAgent computation fixture is doubled. Four optional IPv6 probes were denied and accounted for; this does not establish network isolation. Native SQLite fallback/optional-module warnings remain in raw stderr. API/handoff equality is supported by executed hash-matched assertions, with the export limits documented.
 
-Selected-file static gate PASS:6151tracked files checked,3638tests discovered
-(not executed),0errors,exit0; cached whitespace check PASS. Code/evidence commit recorded below.
-Code/evidence commit ec3182b published and exactSHA CI SUCCESS.
-This closure update changes only docs/status/publication records. Its own current
-HEAD status must be checked separately; do not infer it from code-parent CI.
-Main publication uses ordinary fast-forward only after exactHEAD CI success.
-Live Git HEAD/ref/status is the authority after the final publication step.
-Next product acceptance requires existing authorized trusted supervisor invoking
-current-source fixed retained launcher: projection -> exec -> receive -> original
-owner start/close -> caller lease release. Do not inherit old kernel acceptance.
+Full projected launch/receive/target_main, privileged supervisor, separate UID/zero CapBnd, namespace/network isolation, HTTP/provider, crash recovery and full D3B remain NOT RUN. No root/bootstrap/mount/service action or earlier denied-operation retry occurred.
 
-### Records
+### Publication and next gate
 
-Report docs/D3B-SELF-IDENTITY-KERNEL-R151A1.md.
-Evidence evidence/d3b-self-identity-kernel-r151a1, including native002 full raw and
-terminal results, source hashes, review and baseline/protected Git observations.
-Parent/current work log retained under docs/status-history/r151a1-*.md.
-Request ea3656d9-f13e-4ba8-8f10-65c11c3dd4a2 terminal COMPLETED exit0.
-Do not repeat this completed experiment on receipt interruption.
+Local staged-source gate and exact target-commit CI are next; ordinary fast-forward main publication follows only after those pass. Historical 3615 PASS / 23 SKIP is not a new local suite run.
 
-- Closure: code commit ec3182b pushed, exact CI success observed. No runtime
-  deployment. Exact current HEAD publication must be read from live Git/GitHub.
+Next product gate: qualify the exact current fixed projected launcher in the existing authorized volume-supervisor context with original export, identity, namespace, mount and native ownership checks. Current privileged installation/invocation is not qualified; this component result does not authorize retrying earlier denied actions.
+
+History: docs/status-history/r152a1-parent.md, r152a1-prepublication.md and r152a1-work-log.md.
+
+### Local publication gate — 2026-10-25T22:03:59.559263+03:00
+
+Static gate PASS (exit 0): 6221 tracked files, 3638 tests discovered, no test execution. Scoped whitespace checks PASS; four exact frozen driver files retain their extra EOF blank line to preserve executed bytes. Default check/exception recorded in local-gate.json. Feature commit/push and exact-SHA CI are next.

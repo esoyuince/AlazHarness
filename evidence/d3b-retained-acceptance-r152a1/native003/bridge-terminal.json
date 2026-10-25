@@ -1,0 +1,22 @@
+{
+  "acceptedAt": 1792954405607,
+  "completedAt": 1792954538396,
+  "effect": "applied",
+  "exitCode": 0,
+  "jobState": "completed",
+  "metrics": {
+    "executionMs": 132766,
+    "providerMs": 132710.832,
+    "providerTimingComplete": true,
+    "queueMs": 23,
+    "resultBytes": 38,
+    "verificationMs": 0,
+    "verificationTimingComplete": true
+  },
+  "phase": "result_delivery",
+  "requestId": "32533e48-9cc6-4499-80de-d38d3a48a6b1",
+  "state": "completed",
+  "stderr": "",
+  "stdout": "{\"at\": \"2026-10-25T21:55:38.347380+03:00\", \"state\": \"COMPLETED\", \"result\": \"PASS\", \"exitCode\": 0, \"parseError\": null, \"bundleSha256\": \"ff23ecb92b3c00de7244163ea8ef3b5fc62e6ca636d34314a4b9239b2980de60\", \"sourceCustodyError\": null, \"ownedLinuxChildrenTerminationConfirmed\": true, \"replayForbidden\": true, \"sourceUnchanged\": true, \"stdoutSha256\": \"e373bfe01e2162eda5065f67f6cd0388dd4c802ffac7a8d1d51b486cab71337c\", \"stderrSha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"cases\": [{\"case\": \"normal\", \"result\": \"PASS\", \"exitCode\": 0}, {\"case\": \"controlled-error\", \"result\": \"PASS\", \"exitCode\": 0}]}\r\n",
+  "verification": "not_configured"
+}

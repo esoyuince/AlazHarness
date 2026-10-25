@@ -1,0 +1,172 @@
+{
+  "actualKernel": true,
+  "after": {
+    "caps": {
+      "CapAmb": 0,
+      "CapBnd": 2199023255551,
+      "CapEff": 0,
+      "CapInh": 0,
+      "CapPrm": 0
+    },
+    "gidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "gids": [
+      23003,
+      23003,
+      23003,
+      23003
+    ],
+    "groups": [
+      23003
+    ],
+    "nnp": 1,
+    "pid": 24,
+    "threads": 1,
+    "uidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "uids": [
+      23001,
+      23001,
+      23001,
+      23001
+    ],
+    "userns": "user:[4026531837]"
+  },
+  "before": {
+    "caps": {
+      "CapAmb": 0,
+      "CapBnd": 2199023255551,
+      "CapEff": 0,
+      "CapInh": 0,
+      "CapPrm": 0
+    },
+    "gidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "gids": [
+      23003,
+      23003,
+      23003,
+      23003
+    ],
+    "groups": [
+      23003
+    ],
+    "nnp": 0,
+    "pid": 24,
+    "threads": 1,
+    "uidMap": [
+      "0",
+      "0",
+      "4294967295"
+    ],
+    "uids": [
+      23001,
+      23001,
+      23001,
+      23001
+    ],
+    "userns": "user:[4026531837]"
+  },
+  "bootstrapSourceSha256": "b1007b11f98d66fe3753d7225e3daf8eae22cf82e85dbffd81ce8b7f7be58b86",
+  "denialPairs": {
+    "qa_source_write": {
+      "after": {
+        "errno": 13,
+        "opened": false
+      },
+      "before": {
+        "errno": 0,
+        "opened": true
+      }
+    },
+    "synthetic_canary": {
+      "after": {
+        "errno": 13,
+        "opened": false
+      },
+      "before": {
+        "errno": 0,
+        "opened": true
+      }
+    }
+  },
+  "driverSourceSha256": "0e239897cd1d52d1cff469b7cf94419ea5aa38390cd9d557d0937ede71779378",
+  "fdInventoryBeforeGuard": [
+    {
+      "fd": 0,
+      "inheritable": true,
+      "kind": "other"
+    },
+    {
+      "fd": 1,
+      "inheritable": true,
+      "kind": "pipe"
+    },
+    {
+      "fd": 2,
+      "inheritable": true,
+      "kind": "pipe"
+    }
+  ],
+  "freshInterpreterBeforeGuard": true,
+  "fullProjectionAccepted": false,
+  "noNativeModulesBeforeGuard": true,
+  "noProductOrOsMethodReplacement": true,
+  "pid": 24,
+  "policy": {
+    "enabled": true,
+    "protected": [
+      "/tmp/alaz-r152a1-controlled-error-xi9ahe94/kernel-denied.txt"
+    ],
+    "readonly": [
+      "/tmp/alaz-r152a1-controlled-error-xi9ahe94/harness",
+      "/tmp/alaz-r152a1-controlled-error-xi9ahe94/native",
+      "/opt/alaz-f126c1a6/dependencies",
+      "/usr/bin",
+      "/usr/lib/python3.12",
+      "/usr/lib/x86_64-linux-gnu",
+      "/usr/lib64",
+      "/usr/lib/locale",
+      "/etc/ld.so.cache",
+      "/etc/mime.types",
+      "/etc/alaz-p71c-lab-id",
+      "/dev/urandom"
+    ],
+    "self_process_metadata": true,
+    "version": 1,
+    "writable": [
+      "/tmp/alaz-r152a1-controlled-error-xi9ahe94/tmp",
+      "/tmp/alaz-r152a1-controlled-error-xi9ahe94/result",
+      "/tmp/alaz-r152a1-controlled-error-xi9ahe94/envhome",
+      "/dev/null"
+    ]
+  },
+  "preExecSha256": "30f401bb56c546994b457d2695f3b8cb59e24aa2d099a34217e4267e30a91320",
+  "receipt": {
+    "closedSelfExecutableFds": 0,
+    "handledFilesystemRights": 32767,
+    "landlockAbi": 3,
+    "metadataReadFileCount": 8,
+    "networkConfinementVerified": false,
+    "noNewPrivs": true,
+    "policySha256": "925eb9855e5444f48894bc81786eb4425f2438437dee7c92ba5f805b169e958a",
+    "protectedReadDenials": 1,
+    "scope": "Landlock ABI3 filesystem opens; not network/UID/metadata isolation",
+    "selfIdentityMetadata": true,
+    "selfMountMetadata": true,
+    "selfProcessMetadata": true,
+    "separateHostUid": false,
+    "state": "enforced",
+    "version": 1
+  },
+  "startTicks": "5603"
+}

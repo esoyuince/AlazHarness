@@ -1,0 +1,22 @@
+{
+  "acceptedAt": 1792954269760,
+  "completedAt": 1792954310140,
+  "effect": "applied",
+  "exitCode": 1,
+  "jobState": "completed",
+  "metrics": {
+    "executionMs": 40363,
+    "providerMs": 40259.225,
+    "providerTimingComplete": true,
+    "queueMs": 17,
+    "resultBytes": 38,
+    "verificationMs": 0,
+    "verificationTimingComplete": true
+  },
+  "phase": "result_delivery",
+  "requestId": "561507f5-f087-4d65-85d4-24685468d616",
+  "state": "completed",
+  "stderr": "",
+  "stdout": "{\"at\": \"2026-10-25T21:51:50.090778+03:00\", \"state\": \"COMPLETED\", \"result\": \"FAIL\", \"exitCode\": 1, \"parseError\": null, \"bundleSha256\": \"5a68caa5ec8e2a8aff359e0b08be2561328d6ee421b429e26b1fcb5a3a772dc9\", \"sourceCustodyError\": null, \"ownedLinuxChildrenTerminationConfirmed\": true, \"replayForbidden\": true, \"sourceUnchanged\": true, \"stdoutSha256\": \"1db79c2cc48e6403b2cc91be2e23514d5fe5845d89edd304095a084926e9f95a\", \"stderrSha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"cases\": [{\"case\": \"normal\", \"result\": \"FAIL\", \"exitCode\": 1}]}\r\n",
+  "verification": "not_configured"
+}

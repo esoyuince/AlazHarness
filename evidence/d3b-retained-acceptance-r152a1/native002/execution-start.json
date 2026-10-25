@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-25T21:51:12.596629+03:00",
+  "bundleSha256": "5a68caa5ec8e2a8aff359e0b08be2561328d6ee421b429e26b1fcb5a3a772dc9",
+  "ordinaryUserOnly": true,
+  "outerTimeoutSeconds": 480,
+  "state": "IN_PROGRESS",
+  "transportSha256": "91246de577096d588c265f6ef22d9bc09f170f376400b08ec0826219d9c8c035"
+}

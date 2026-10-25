@@ -1,0 +1,104 @@
+{
+  "root": {
+    "head": {
+      "exitCode": 0,
+      "stdout": "58b210ac9d400b84b028a2b57dcf1a4a396f089e\n",
+      "stderr": ""
+    },
+    "status": {
+      "exitCode": 0,
+      "stdout": "## alaz/hyb-001-component-slice\n M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n",
+      "stderr": ""
+    }
+  },
+  "main": {
+    "head": {
+      "exitCode": 0,
+      "stdout": "8aae47fb7efa94fbfb45b22018747d4bb3178c2a\n",
+      "stderr": ""
+    },
+    "status": {
+      "exitCode": 0,
+      "stdout": "## main...origin/main\n",
+      "stderr": ""
+    }
+  },
+  "r151": {
+    "head": {
+      "exitCode": 0,
+      "stdout": "8aae47fb7efa94fbfb45b22018747d4bb3178c2a\n",
+      "stderr": ""
+    },
+    "status": {
+      "exitCode": 0,
+      "stdout": "## alaz/d3b-self-identity-kernel-r151a1...origin/alaz/d3b-self-identity-kernel-r151a1\n",
+      "stderr": ""
+    }
+  },
+  "remoteMain": {
+    "exitCode": 0,
+    "stdout": "8aae47fb7efa94fbfb45b22018747d4bb3178c2a\trefs/heads/main\n",
+    "stderr": ""
+  },
+  "candidateFiles": [
+    "config\\admission-compatibility.lock.json",
+    "config\\admission-consumer-b129d6-sources.json",
+    "config\\canonical-api-consumer-i133p1-sources.json",
+    "config\\components.lock.json",
+    "config\\retained-profile-r140c6-sources.json",
+    "config\\research-sources.lock.json",
+    "scripts\\verify_host_report_retained.py",
+    "scripts\\verify_evidence_view_retained.py",
+    "scripts\\verify-source-snapshot.py",
+    "scripts\\run_retained_projected.py",
+    "scripts\\restore_sources.py",
+    "config\\recovery-inspector\\source-lock.json",
+    "config\\prepared-consumer-s124b1-sources.json",
+    "config\\gateway-probe\\source-lock.json",
+    "config\\finite-close-f135c6-sources.json",
+    "config\\operator-resolution\\source-lock.json",
+    "docs\\D3B-HTTP-READINESS-H110E.md",
+    "docs\\D3B-SELF-IDENTITY-R150A1.md",
+    "docs\\D3B-SELF-IDENTITY-KERNEL-R151A1.md",
+    "docs\\D3B-RETAINED-PROJECTION-P142C6.md",
+    "docs\\D3B-RETAINED-PROFILE-R140C6.md",
+    "docs\\D3B-RETAINED-EXEC-T143A7.md",
+    "docs\\D3B-VOLUME-SUPERVISOR-S101.md",
+    "docs\\D3B-THREE-READINESS-H114R6.md",
+    "docs\\R1B1-SOURCE-CAPTURE.md",
+    "docs\\SOURCE-INTEGRATION-CHECKLIST.md",
+    "config\\execution-gate\\source-lock.json",
+    "config\\opencode-probe\\package-lock.json",
+    "config\\opencode-probe\\source-lock.json",
+    "scripts\\qa\\execution_retained_qa3156.py",
+    "scripts\\qa\\export_principal_source.py",
+    "config\\isolated-read\\source-lock.json",
+    "scripts\\qa\\host_report_retained_9256.py",
+    "scripts\\qa\\h114r6_native_readiness.py",
+    "scripts\\qa\\h110e_native_readiness.py",
+    "scripts\\qa\\l125c6_linux_source_compile.py",
+    "docs\\status-history\\c116a4-before-source-integration.md",
+    "docs\\status-history\\e118r1-before-source-integration.md",
+    "docs\\status-history\\e118r1-owner-source-parent.md",
+    "docs\\research\\R1B1-SOURCE-QA-C72E.md",
+    "scripts\\qa\\maintenance_lock_contract.py",
+    "scripts\\qa\\maintenance_lock_worker.py",
+    "config\\host-gate\\source-lock.json",
+    "scripts\\qa\\o127b6_native_turn_source.py",
+    "scripts\\qa\\principal_readiness.py",
+    "scripts\\qa\\r151a1_self_identity_kernel.py",
+    "scripts\\qa\\r140c6_linux_transport.py",
+    "scripts\\qa\\r140c6_linux_restart.py",
+    "scripts\\qa\\r151a1_windows_accept.py",
+    "scripts\\qa\\verify_source_capture_af13.py",
+    "scripts\\qa\\opencode-independent\\source-loader.mjs",
+    "docs\\status-history\\t143a7-prepublication-r144c7.md",
+    "docs\\status-history\\r151a1-work-log.md",
+    "docs\\status-history\\r151a1-parent.md",
+    "docs\\status-history\\r150a1-work-log.md",
+    "docs\\status-history\\r150a1-parent.md",
+    "docs\\status-history\\r140c6-work-log.md",
+    "docs\\status-history\\r140c6-parent.md"
+  ],
+  "rgExitCode": 0
+}

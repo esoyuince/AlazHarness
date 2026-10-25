@@ -1,0 +1,68 @@
+{
+  "actualOrdinaryUserProbe": {
+    "uid": [
+      23001,
+      23001,
+      23001
+    ],
+    "gid": [
+      23003,
+      23003,
+      23003
+    ],
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "paths": {
+      "/usr/bin": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/usr/lib/python3.12": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/usr/lib/x86_64-linux-gnu": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/usr/lib64": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/usr/lib/locale": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/etc/ld.so.cache": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/etc/alaz-p71c-lab-id": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/dev/urandom": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      },
+      "/opt/alaz-f126c1a6/dependencies": {
+        "exists": true,
+        "symlink": false,
+        "canonical": true
+      }
+    },
+    "dependencyFiles": 1162,
+    "dependencyMapSha256": "091b9bed58272ed6beb63d11a8c200f3a5239475849976d562fea6cc0502950e",
+    "links": []
+  },
+  "matchesAcceptedDependencyMap": true,
+  "rootUsed": false,
+  "installPerformed": false
+}

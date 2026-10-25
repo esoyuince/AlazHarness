@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-25T21:53:08.749596+03:00",
+  "bundleBytes": 6090500,
+  "bundleSha256": "ff23ecb92b3c00de7244163ea8ef3b5fc62e6ca636d34314a4b9239b2980de60",
+  "distribution": "AlazHarness-D3B-P71C",
+  "eachOwnedGroupTimeoutSeconds": 210,
+  "gid": 23003,
+  "harnessBase": "8aae47fb7efa94fbfb45b22018747d4bb3178c2a",
+  "manifestSha256": "a30b47f7383cc9ba4b0a31a59c835e9d31c75def7005a9eb6318849f7fc2b11a",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "outerTimeoutSeconds": 480,
+  "rootRequested": false,
+  "scenarios": [
+    "normal",
+    "controlled-error"
+  ],
+  "scope": "actual Landlock before QA exec; original native retained finite lifecycle; no projected launcher acceptance",
+  "sourceFileCount": 823,
+  "state": "PREPARED_NOT_RUN",
+  "uid": 23001,
+  "user": "alazgateway"
+}

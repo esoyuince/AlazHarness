@@ -1,0 +1,561 @@
+{
+  "bundleSha256AsRecorded": "ff23ecb92b3c00de7244163ea8ef3b5fc62e6ca636d34314a4b9239b2980de60",
+  "cases": [
+    {
+      "admissionOutcomes": [
+        "completed",
+        "completed"
+      ],
+      "artifactSha256": {
+        "kernel-proof.json": "acf6c8d5b133b0234978bb635b23aa806cbd2821e9a94e007922107dbec44108",
+        "pre-exec.json": "c140b77a6cfe8114a678bee2cbd8c8e9028b1895a94f19ffbf11aaa1a46350f1",
+        "result.json": "04f9413f8b8d3c7435281da57c63c292807aacae9b66ec3eb3f7b2abb9a449d2"
+      },
+      "blockedImportProbes": 2,
+      "case": "normal",
+      "inheritedDenialObservations": 2,
+      "initialComputationCount": 1,
+      "lifetime": {
+        "completeOutput": true,
+        "groupEmptyBeforeSignal": true,
+        "normalExitWithoutStragglers": true,
+        "ownedProcessGroupEmpty": true,
+        "processGroup": 7,
+        "signalSent": false,
+        "timedOut": false
+      },
+      "nativeImportsAfter": 722,
+      "nativeImportsBefore": 721,
+      "pid": 7,
+      "primaryDenialPairs": 2,
+      "resumedComputationCount": 1,
+      "startTicks": "353",
+      "stderrMissingCommandSourceWarnings": 2,
+      "stderrSqliteFallbackWarnings": 6
+    },
+    {
+      "admissionOutcomes": [
+        "failed",
+        "failed"
+      ],
+      "artifactSha256": {
+        "kernel-proof.json": "6bd5ee63e26301c85a396196f0e8e8771d1bdcb70d17c948a70f07c154d2d37e",
+        "pre-exec.json": "30f401bb56c546994b457d2695f3b8cb59e24aa2d099a34217e4267e30a91320",
+        "result.json": "bfdda1003a1634566c92d945d943c35e14ec77a90e223d4a8aa30e8d40c8be30"
+      },
+      "blockedImportProbes": 2,
+      "case": "controlled-error",
+      "inheritedDenialObservations": 2,
+      "initialComputationCount": 1,
+      "lifetime": {
+        "completeOutput": true,
+        "groupEmptyBeforeSignal": true,
+        "normalExitWithoutStragglers": true,
+        "ownedProcessGroupEmpty": true,
+        "processGroup": 24,
+        "signalSent": false,
+        "timedOut": false
+      },
+      "nativeImportsAfter": 719,
+      "nativeImportsBefore": 718,
+      "pid": 24,
+      "primaryDenialPairs": 2,
+      "resumedComputationCount": 1,
+      "startTicks": "5603",
+      "stderrMissingCommandSourceWarnings": 2,
+      "stderrSqliteFallbackWarnings": 6
+    }
+  ],
+  "checks": [
+    {
+      "check": "record byte length",
+      "pass": true
+    },
+    {
+      "check": "record SHA-256",
+      "pass": true
+    },
+    {
+      "check": "manifest reserialization SHA-256",
+      "pass": true
+    },
+    {
+      "check": "exact transport stdout reconstruction SHA-256",
+      "pass": true
+    },
+    {
+      "check": "host stderr digest is empty",
+      "pass": true
+    },
+    {
+      "check": "shared bundle digest",
+      "pass": true
+    },
+    {
+      "check": "source-map equality",
+      "pass": true
+    },
+    {
+      "check": "source counts",
+      "pass": true
+    },
+    {
+      "check": "current QA hash r152a1_landlock_native.py",
+      "pass": true
+    },
+    {
+      "check": "current QA hash r152a1_landlock_bootstrap.py",
+      "pass": true
+    },
+    {
+      "check": "current QA hash r152a1_linux_transport.py",
+      "pass": true
+    },
+    {
+      "check": "current QA hash r152a1_windows_accept.py",
+      "pass": true
+    },
+    {
+      "check": "ordinary-user intent",
+      "pass": true
+    },
+    {
+      "check": "terminal acceptance",
+      "pass": true
+    },
+    {
+      "check": "case order",
+      "pass": true
+    },
+    {
+      "check": "dependency attestation",
+      "pass": true
+    },
+    {
+      "check": "cleanup attestation",
+      "pass": true
+    },
+    {
+      "check": "normal: exact artifact set",
+      "pass": true
+    },
+    {
+      "check": "normal: pre-exec raw-byte hash binding",
+      "pass": true
+    },
+    {
+      "check": "normal: embedded copies of pre-exec and kernel proof",
+      "pass": true
+    },
+    {
+      "check": "normal: canonical kernel proof bytes",
+      "pass": true
+    },
+    {
+      "check": "normal: proof QA source hashes",
+      "pass": true
+    },
+    {
+      "check": "normal: handoff codec hash",
+      "pass": true
+    },
+    {
+      "check": "normal: 14 first checks",
+      "pass": true
+    },
+    {
+      "check": "normal: 4 resumed checks",
+      "pass": true
+    },
+    {
+      "check": "normal: initial lifecycle unconfined",
+      "pass": true
+    },
+    {
+      "check": "normal: actual original guard receipt",
+      "pass": true
+    },
+    {
+      "check": "normal: fresh bootstrap descriptors",
+      "pass": true
+    },
+    {
+      "check": "normal: warm interpreter noninheritable descriptor",
+      "pass": true
+    },
+    {
+      "check": "normal: observer only NNP changed",
+      "pass": true
+    },
+    {
+      "check": "normal: observer ordinary identity",
+      "pass": true
+    },
+    {
+      "check": "normal: PID and ticks links",
+      "pass": true
+    },
+    {
+      "check": "normal: exec preservation flags",
+      "pass": true
+    },
+    {
+      "check": "normal: exact two exec markers",
+      "pass": true
+    },
+    {
+      "check": "normal: exec marker PID R152_EXECVE_REQUEST",
+      "pass": true
+    },
+    {
+      "check": "normal: exec marker PID R152_CONFINED_EXECVE_REQUEST",
+      "pass": true
+    },
+    {
+      "check": "normal: stdout report equals artifact",
+      "pass": true
+    },
+    {
+      "check": "normal: denial target set",
+      "pass": true
+    },
+    {
+      "check": "normal: qa_source_write before/after and inherited",
+      "pass": true
+    },
+    {
+      "check": "normal: synthetic_canary before/after and inherited",
+      "pass": true
+    },
+    {
+      "check": "normal: source imports and source unchanged",
+      "pass": true
+    },
+    {
+      "check": "normal: computation once in each interpreter",
+      "pass": true
+    },
+    {
+      "check": "normal: initial worker computation",
+      "pass": true
+    },
+    {
+      "check": "normal: initial original native trace",
+      "pass": true
+    },
+    {
+      "check": "normal: initial two original cold helpers",
+      "pass": true
+    },
+    {
+      "check": "normal: resumed worker computation",
+      "pass": true
+    },
+    {
+      "check": "normal: resumed original native trace",
+      "pass": true
+    },
+    {
+      "check": "normal: resumed two original cold helpers",
+      "pass": true
+    },
+    {
+      "check": "normal: retained result and usage unchanged",
+      "pass": true
+    },
+    {
+      "check": "normal: prior admission unchanged",
+      "pass": true
+    },
+    {
+      "check": "normal: request IDs epochs generations",
+      "pass": true
+    },
+    {
+      "check": "normal: terminal outcome rows",
+      "pass": true
+    },
+    {
+      "check": "normal: persisted API equality assertion receipts",
+      "pass": true
+    },
+    {
+      "check": "normal: prior saved outcome",
+      "pass": true
+    },
+    {
+      "check": "normal: new saved outcome",
+      "pass": true
+    },
+    {
+      "check": "normal: closure/lease/receipt assertions",
+      "pass": true
+    },
+    {
+      "check": "normal: after_exec single denied probe",
+      "pass": true
+    },
+    {
+      "check": "normal: after_exec exact pinned denied probe",
+      "pass": true
+    },
+    {
+      "check": "normal: before_bootstrap single denied probe",
+      "pass": true
+    },
+    {
+      "check": "normal: before_bootstrap exact pinned denied probe",
+      "pass": true
+    },
+    {
+      "check": "normal: audit receipts exact",
+      "pass": true
+    },
+    {
+      "check": "normal: lifetime no signals or timeout",
+      "pass": true
+    },
+    {
+      "check": "normal: case completion and cleanup",
+      "pass": true
+    },
+    {
+      "check": "normal: driver completion",
+      "pass": true
+    },
+    {
+      "check": "normal: scope flags",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: exact artifact set",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: pre-exec raw-byte hash binding",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: embedded copies of pre-exec and kernel proof",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: canonical kernel proof bytes",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: proof QA source hashes",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: handoff codec hash",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: 14 first checks",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: 4 resumed checks",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: initial lifecycle unconfined",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: actual original guard receipt",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: fresh bootstrap descriptors",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: warm interpreter noninheritable descriptor",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: observer only NNP changed",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: observer ordinary identity",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: PID and ticks links",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: exec preservation flags",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: exact two exec markers",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: exec marker PID R152_EXECVE_REQUEST",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: exec marker PID R152_CONFINED_EXECVE_REQUEST",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: stdout report equals artifact",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: denial target set",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: qa_source_write before/after and inherited",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: synthetic_canary before/after and inherited",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: source imports and source unchanged",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: computation once in each interpreter",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: initial worker computation",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: initial original native trace",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: initial two original cold helpers",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: resumed worker computation",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: resumed original native trace",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: resumed two original cold helpers",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: retained result and usage unchanged",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: prior admission unchanged",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: request IDs epochs generations",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: terminal outcome rows",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: persisted API equality assertion receipts",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: prior saved outcome",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: new saved outcome",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: closure/lease/receipt assertions",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: after_exec single denied probe",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: after_exec exact pinned denied probe",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: before_bootstrap single denied probe",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: before_bootstrap exact pinned denied probe",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: audit receipts exact",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: lifetime no signals or timeout",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: case completion and cleanup",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: driver completion",
+      "pass": true
+    },
+    {
+      "check": "controlled-error: scope flags",
+      "pass": true
+    },
+    {
+      "check": "4 primary, 4 inherited, 4 blocked probes",
+      "pass": true
+    },
+    {
+      "check": "scope flags result",
+      "pass": true
+    }
+  ],
+  "checksPassed": 115,
+  "inputBytes": 986713,
+  "inputFile": "/workspace/scratch/288e2938ab4c/r152-recorded-result.json",
+  "inputSha256": "31bda58e8d861b9831a97a4f0643b805a47405dfcc96d6b91a9911ace397e976",
+  "limits": [
+    "The bundle.zip bytes and all installed dependency bytes are not in this transfer. Bundle equality and full 1162-file dependency verification are run-time attestations from the hash-matched transport/host; only available maps, imported-native hashes and local QA bytes were independently compared here.",
+    "R152_HANDOFF bytes and R152_KERNEL_SHA256 environment values are not exported. The pre-exec raw hash and nested proof copies were independently checked; receiver assertions in the hash-matched executed driver provide wire/kernel environment binding evidence.",
+    "Separate API return tuples are not retained in the artifacts. Initial/replayed/new API versus persisted-result-and-usage equality, zero computation on replay, and physical handle/lease operations are supported by the reviewed executed assertions and their receipts, not by re-querying cleaned databases.",
+    "Two cases contain nonempty child stderr: 6 SQLite DELETE-fallback warnings and 2 missing bundled command-source warnings per case; controlled-error also contains the expected computation exception tracebacks. Do not describe this as warning-free, WAL-path, provider, or bundled command-source acceptance.",
+    "Earlier native001/native002 raw terminal records and retained trees are not present in this local transfer; their preservation is not independently reverified here.",
+    "Initial owner lifecycle is unconfined. The retained restarted lifecycle is under the explicit laboratory Landlock filesystem policy. Full projected launcher, privileged supervisor installation, separate host UID transition, network isolation, HTTP/provider path, crash/power-loss recovery and full D3B acceptance are outside this evidence.",
+    "The original guard receipt policySha256 is preserved in the input but its internal policy normalization was not independently recomputed in this review; this review does not report a policy-hash mismatch."
+  ],
+  "localQaSha256": {
+    "r152a1_landlock_bootstrap.py": "b1007b11f98d66fe3753d7225e3daf8eae22cf82e85dbffd81ce8b7f7be58b86",
+    "r152a1_landlock_native.py": "0e239897cd1d52d1cff469b7cf94419ea5aa38390cd9d557d0937ede71779378",
+    "r152a1_linux_transport.py": "91246de577096d588c265f6ef22d9bc09f170f376400b08ec0826219d9c8c035",
+    "r152a1_windows_accept.py": "f7e9bfc08c826b8b3e2104d6f8986278edd00346214840a9dcfe90a711883bd9"
+  },
+  "manifestSha256Recomputed": "a30b47f7383cc9ba4b0a31a59c835e9d31c75def7005a9eb6318849f7fc2b11a",
+  "method": "Local JSON/source/hash analysis only; no candidate import or execution, no WSL/Bridge, no new runtime experiment.",
+  "reviewResult": "RECORDED_SCOPED_ACCEPTANCE_CORROBORATED",
+  "sourceCounts": {
+    "acceptedDependencyManifest": 1,
+    "harness": 66,
+    "installedDependenciesAsAttested": 1162,
+    "native": 756,
+    "total": 823
+  },
+  "transportStdoutSha256Recomputed": "e373bfe01e2162eda5065f67f6cd0388dd4c802ffac7a8d1d51b486cab71337c"
+}

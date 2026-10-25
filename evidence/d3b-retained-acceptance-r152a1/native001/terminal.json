@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-25T21:41:58.685041+03:00",
+  "bundleSha256": "4dabdec23eab2a79ff5e4403b1fb85955097c67b3964be960018baaa23e788e3",
+  "exitCode": 1,
+  "ownedLinuxChildrenTerminationConfirmed": true,
+  "parseError": null,
+  "replayForbidden": true,
+  "result": "FAIL",
+  "sourceCustodyError": null,
+  "sourceUnchanged": true,
+  "state": "COMPLETED",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdoutSha256": "c69974f97dcc78095fe6308881f54be05cb4cc9e4d4a927531092820819a83e8"
+}

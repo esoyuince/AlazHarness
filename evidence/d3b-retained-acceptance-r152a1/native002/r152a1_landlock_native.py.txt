@@ -1,0 +1,394 @@
+"""Real Linux finite owner experiment, no OS/lifecycle replacements.
+Only AIAgent factory/computation/close is a declared finite model fixture.
+After the first original owner closes, a fresh QA bootstrap applies Landlock
+before a second fixed QA exec. Native imports occur only after that confinement.
+No installer, root, mount, namespace transition or fixed projected-target acceptance.
+"""
+import argparse,asyncio,hashlib,json,os,re,sqlite3,sys,tempfile,threading,traceback
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
+ROOT=Path(__file__).resolve().parents[2]
+
+
+def open_probe(path, flags=os.O_RDONLY):
+    """Open/close only; no data read/write, truncate or create."""
+    try:
+        fd=os.open(path,flags|os.O_CLOEXEC)
+    except OSError as exc:
+        return {'opened':False,'errno':exc.errno}
+    os.close(fd)
+    return {'opened':True,'errno':0}
+
+
+def fd_observations():
+    import errno,stat
+    rows=[]
+    for value in os.listdir('/proc/self/fd'):
+        fd=int(value)
+        try:
+            info=os.fstat(fd)
+            kind=('regular' if stat.S_ISREG(info.st_mode) else 'socket' if stat.S_ISSOCK(info.st_mode)
+                  else 'pipe' if stat.S_ISFIFO(info.st_mode) else 'other')
+            rows.append({'fd':fd,'kind':kind,'inheritable':os.get_inheritable(fd)})
+        except OSError as exc:
+            if exc.errno!=errno.EBADF:raise
+    return sorted(rows,key=lambda row:row['fd'])
+
+
+def kernel_targets():
+    return {'synthetic_canary':(str(ROOT.parent/'kernel-denied.txt'),os.O_RDONLY),
+            'qa_source_write':(str(Path(__file__).resolve()),os.O_WRONLY)}
+
+
+def kernel_denials():
+    import errno
+    values={name:open_probe(*item) for name,item in kernel_targets().items()}
+    assert all(not value['opened'] and value['errno']==errno.EACCES for value in values.values()), values
+    return values
+
+
+def apply_current_landlock(native, out, home):
+    import credential_guard as guard
+    import principal_launch as observer
+    before=observer.observation()
+    baseline={name:open_probe(*item) for name,item in kernel_targets().items()}
+    assert all(value['opened'] for value in baseline.values()), baseline
+    # Explicit laboratory component exports; no claim of the full projected policy.
+    readonly=[str(ROOT),str(native),'/opt/alaz-f126c1a6/dependencies','/usr/bin',
+              '/usr/lib/python3.12','/usr/lib/x86_64-linux-gnu','/usr/lib64',
+              '/usr/lib/locale','/etc/ld.so.cache','/etc/alaz-p71c-lab-id','/dev/urandom']
+    assert all(Path(value).exists() and not Path(value).is_symlink() and str(Path(value).resolve())==value
+               for value in readonly)
+    writable=[str(home.parent),str(out),str(ROOT.parent/'envhome'),'/dev/null']
+    policy={'version':1,'enabled':True,'self_process_metadata':True,'readonly':readonly,
+            'writable':writable,'protected':[str(ROOT.parent/'kernel-denied.txt')]}
+    descriptors=fd_observations()
+    receipt=guard.apply(policy,self_mount_metadata=True,self_identity_metadata=True)
+    after=observer.observation()
+    assert after=={**before,'nnp':1}, {'before':before,'after':after}
+    denied=kernel_denials()
+    return {'actualKernel':True,'receipt':receipt,'policy':policy,'before':before,'after':after,
+            'fdInventoryBeforeGuard':descriptors,
+            'denialPairs':{name:{'before':baseline[name],'after':denied[name]} for name in denied},
+            'noProductOrOsMethodReplacement':True,'fullProjectionAccepted':False}
+
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--native',type=Path,required=True);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--compute-failure',action='store_true');parser.add_argument('--resume',action='store_true');parser.add_argument('--home',type=Path);a=parser.parse_args()
+    native=a.native.resolve(strict=True);out=a.output.resolve()
+    if a.resume:assert out.is_dir() and a.home is not None
+    else:out.mkdir(parents=True,exist_ok=False)
+    assert sys.platform=='linux' and os.getresuid()==(23001,)*3 and os.getresgid()==(23003,)*3
+    assert os.environ['WSL_DISTRO_NAME']=='AlazHarness-D3B-P71C';assert Path('/etc/alaz-p71c-lab-id').read_text().strip()=='AlazHarness-D3B-P71C'
+    os.umask(0o077);loop=asyncio.new_event_loop();asyncio.set_event_loop(loop)
+    home=a.home.resolve(strict=True) if a.resume else Path(tempfile.mkdtemp(prefix='alaz-r152a1-home-')).resolve()
+    assert home.name.startswith('alaz-r152a1-home-') and home.parent==Path(os.environ['TMPDIR']).resolve()
+    if not a.resume:home.chmod(0o700)
+    os.environ.update(HOME=str(home),HERMES_HOME=str(home),USERPROFILE=str(home),APPDATA=str(home),LOCALAPPDATA=str(home),HERMES_INFERENCE_PROVIDER='openai',OPENAI_API_KEY='owned-offline-fixture-not-real',OPENAI_BASE_URL='http://127.0.0.1:9/v1',HERMES_AGENT_TIMEOUT='0',HERMES_AGENT_TIMEOUT_WARNING='0')
+    before_mounts=Path('/proc/self/mountinfo').read_bytes();before_ns={k:os.readlink('/proc/self/ns/'+k) for k in ('mnt','net','user','ipc')}
+    checks={};opens=[];children=[];denied=[];events=[];compute=[];agents=[];phase='IMPORT';error=None;landlock_proof=None;landlock_after_exec=None;held=owner=c=None;stores=();seed=();saved=None;rows=[];retry=None;conflict=None;release=None
+    main_thread=threading.get_ident();native_prefix=str(native)+os.sep;retained_receipt=None;restart_report=None;prior=None;exec_args=None;wire=None
+    def audit(event,args):
+        if event=='subprocess.Popen':
+            cmd=args[1]
+            if isinstance(cmd,(list,tuple)) and len(cmd)==4 and list(cmd[:3])==[sys.executable,'-I','-B'] and cmd[3] in (str(ROOT/'scripts/run_store_preopen.py'),str(ROOT/'scripts/run_response_preopen.py')):
+                children.append({'phase':phase,'helper':Path(cmd[3]).name});return
+            denied.append({'event':event,'phase':phase,'callers':[f.name for f in traceback.extract_stack(limit=6)]});raise PermissionError('l139_unqualified_process')
+        if event=='os.exec':
+            assert not a.resume and phase=='EXEC_REPLACEMENT' and args[0]==sys.executable
+            assert list(args[1])==exec_args and args[2].get('R152_HANDOFF')==wire.decode('ascii')
+            print('R152_EXECVE_REQUEST '+json.dumps({'pid':os.getpid(),'expectedSamePid':True,'fixedInterpreter':True,'noShell':True}),flush=True)
+            return
+        if event in ('socket.connect','socket.bind','socket.getaddrinfo','os.system','os.posix_spawn'):
+            frames=traceback.extract_stack(limit=8);origin=frames[-2]
+            source=Path(origin.filename).resolve()
+            denied.append({'event':event,'phase':phase,'callers':[f.name for f in frames],
+                'origin':{'function':origin.name,'file':str(source),
+                          'sha256':hashlib.sha256(source.read_bytes()).hexdigest() if source.is_file() else None}})
+            raise PermissionError('l139_offline')
+        if event=='sqlite3.connect':opens.append({'phase':phase,'path':str(args[0])})
+    selected={'run_api_turn','execute_finite_admission','run_sync','commit_and_publish','settle_session_input'}
+    def observe(frame,event,arg):
+        if event=='call' and frame.f_code.co_name in selected and frame.f_code.co_filename.startswith(native_prefix) and len(events)<2000:
+            stack=[];f=frame.f_back
+            for _ in range(14):
+                if f is None:break
+                if f.f_code.co_filename.startswith(native_prefix):stack.append({'file':f.f_code.co_filename[len(native_prefix):],'function':f.f_code.co_name})
+                f=f.f_back
+            events.append({'function':frame.f_code.co_name,'file':frame.f_code.co_filename[len(native_prefix):],'thread':threading.get_ident(),'stack':stack})
+    class FiniteCompute:
+        def __init__(self,**kwargs):
+            self.kwargs=kwargs;self.session_id=kwargs['session_id'];self.model=kwargs['model'];self.tools=[]
+            self.session_prompt_tokens=self.session_completion_tokens=self.session_output_tokens=0
+            self.context_compressor=SimpleNamespace(compression_count=0,last_prompt_tokens=0,context_length=4096)
+            self.request_overrides={};self._codex_session=None;self.interrupted=False;self.closed=False;agents.append(self)
+        def close(self):self.closed=True
+        def clear_interrupt(self):self.interrupted=False
+        def interrupt(self,*args,**kwargs):self.interrupted=True
+        def run_conversation(self,message,**kwargs):
+            match=re.search(r'SUM:([0-9, -]+)',message);assert match
+            values=[int(v.strip()) for v in match.group(1).strip().split(',')];assert values==[17,25,8]
+            answer=str(sum(values));compute.append({'input':values,'answer':answer,'thread':threading.get_ident(),'sameCallerState':self.kwargs['session_db'] is stores[0],'onMainThread':threading.get_ident()==main_thread})
+            assert not compute[-1]['onMainThread'] and compute[-1]['sameCallerState']
+            if a.compute_failure:raise RuntimeError('controlled_l139_computation_failure')
+            return {'final_response':answer,'completed':True,'api_calls':0,'tools':[],'agent_persisted':False,'messages':[{'role':'user','content':message},{'role':'assistant','content':answer}]}
+    sys.path[:0]=[str(ROOT/'packages/claw-hermes'),str(native)];sys.addaudithook(audit);sys.setprofile(observe);threading.setprofile(observe)
+    try:
+        from gateway.runtime_ownership import process_ownership
+        from hermes_state import SessionDB
+        from gateway.platforms.api_server_run_idempotency import RunIdempotencyStore
+        from gateway.platforms.api_server_response_store import ResponseStore
+        import gateway_store_startup as startup
+        import gateway_retained_profile as retained
+        import gateway_retained_handoff as handoff
+        from gateway.config import GatewayConfig,PlatformConfig
+        import gateway_profile_lease as lease
+        import gateway_storage_mounts as mounts
+        import gateway_native_layout as layout
+        import hermes_state_registry as registry
+        def identity(name):
+            v=(home/name).stat();return v.st_dev,v.st_ino
+        def imported_native():
+            result={}
+            for module in tuple(sys.modules.values()):
+                file=getattr(module,'__file__',None)
+                if file:
+                    path=Path(file).resolve()
+                    if path.is_relative_to(native) and path.is_file():result[path.relative_to(native).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
+            return result
+        if not a.resume:
+            phase='TRUSTED_SEED';(home/'gateway.lock').touch(mode=0o600,exist_ok=False);process_ownership.reserve([home])
+            state=SessionDB(home/'state.db');replay=RunIdempotencyStore(str(home/'runs_idempotency.db'));response=ResponseStore(db_path=str(home/'response_store.db'),canonical_state=state,max_size=100,max_identities=1000);seed=(state,replay,response)
+            def identity(name):v=(home/name).stat();return v.st_dev,v.st_ino
+            expected=startup.live.PreparedStoreExpectation(startup.live.NATIVE_PIN,startup.live.schema_digest(state._conn),startup.live.schema_digest(replay._conn),state._conn.execute("SELECT value FROM state_meta WHERE key='store_instance_id'").fetchone()[0],state._conn.execute('PRAGMA application_id').fetchone()[0],identity('state.db'),identity('runs_idempotency.db'),0,None)
+            response_expected=startup.response_preopen.PreparedResponseExpectation(startup.response_preopen.NATIVE_FEATURE,startup.response_preopen.SCHEMA_SHA256,identity('response_store.db'))
+            assert startup.live.schema_digest(response._conn)==response_expected.schema_sha256
+            for store in reversed(seed):store.close()
+            seed=();process_ownership.close()
+            phase='REAL_LEASE_LAYOUT';m=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home));mount=mounts.ExpectedMount(m.mount_id,m.device,m.root,m.mount_point,m.filesystem)
+            assert mount.filesystem=='ext4';held=lease.reserve_profile(home,mount);checks['realLinuxLease']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+            checks['noConfigFileBeforeOwner']=not (home/'config.yaml').exists()
+            layout.inspect_profile(home,uid=23001,gid=23003,device=home.stat().st_dev,include_response=True)
+            phase='REAL_COLD_START';owner=startup.NativeStoreStartup(held,mount,expected,instance_id='l139c6-owned',response_expected=response_expected,prepared_layout=True)
+            started=owner.start();restart_expected=owner.expectation;checks['realSixColdLiveChecks']=len(started['completedChecks'])==6
+            stores=(owner.state_store,owner.replay_store,owner.response_store);connections=tuple(s._conn for s in stores)
+            checks['oneEpoch']=owner.expectation.epoch==1
+            from gateway.config import GatewayConfig,PlatformConfig
+            async def execute():
+                nonlocal phase,c,saved,rows,retry,conflict,release,retained_receipt
+                phase='PREPARE_FINITE'
+                c=await owner.prepare_runtime(GatewayConfig(multiplex_profiles=False,write_sessions_json=False),PlatformConfig(extra={'key':'owned-test-api','model_name':'owned-offline'}),local_admission=True,canonical_api=True,finite_turn=True)
+                checks['sameThreeConnections']=all(x is y for x,y in zip(c._connections,connections))
+                c.publish_api_adapter();c.activate_admission()
+                phase='IMPORT_MODEL';import run_agent
+                from gateway.session_api_turn import run_api_turn
+                from gateway.session_results import admission_result
+                phase='ACTUAL_TURN'
+                with patch.object(run_agent,'AIAgent',FiniteCompute):
+                    kwargs={'session_id':'l139-session','request_id':'l139-request','user_message':'SUM:17,25,8','conversation_history':[]}
+                    result=await asyncio.wait_for(run_api_turn(c._adapter,**kwargs),25)
+                    authority=c._binding._authority
+                    tasks=[s.task for s in authority.sessions.values() if s.task and not s.task.done()]+list(getattr(authority,'_mutation_tasks',()))
+                    if tasks:await asyncio.wait_for(asyncio.gather(*tasks,return_exceptions=True),10)
+                    await asyncio.sleep(0)
+                    repeated=await asyncio.wait_for(run_api_turn(c._adapter,**kwargs),10)
+                    retry={'sameResult':result==repeated,'computationCount':len(compute)};assert retry=={'sameResult':True,'computationCount':1}
+                    from hermes_state_runtime import RuntimeStoreError
+                    try:await run_api_turn(c._adapter,**{**kwargs,'user_message':'SUM:999'})
+                    except RuntimeStoreError as exc:conflict={'rejected':True,'reason':exc.reason}
+                    else:raise AssertionError('same_id_conflict_not_rejected')
+                phase='RESULT_READBACK';rows=[dict(v) for v in connections[0].execute('SELECT admission_id,request_id,status,outcome,owner_epoch,generation FROM session_admissions')];assert len(rows)==1
+                saved=admission_result(stores[0],rows[0]['admission_id']);assert rows[0]['status']=='terminal'
+                assert rows[0]['request_id']=='l139-request' and rows[0]['owner_epoch']==owner.expectation.epoch==1
+                assert rows[0]['generation']==1 and result==(saved['result'],saved['usage'])
+                if a.compute_failure:assert rows[0]['outcome']=='failed' and saved['result']['completed'] is False
+                else:assert rows[0]['outcome']=='completed' and saved['result']['final_response']=='50' and saved['result']['completed'] is True
+                phase='NORMAL_RETIREMENT';changes=[conn.total_changes for conn in connections]
+                c.begin_drain();runtime=await c.retire_idle_runtime();sessions=c.retire_idle_api_sessions();c.finish_drain();await c.detach()
+                checks['noRowsChangedByRetirement']=changes==[conn.total_changes for conn in connections]
+                checks['registryZeroBeforeFixtureCleanup']=registry.stats()['total_refcounts']==0
+                checks['modelCloseCalled']=all(v.closed for v in agents)
+                assert all(checks.values()),checks
+                owner.close()
+                closed=0
+                for conn in connections:
+                    try:conn.execute('SELECT 1')
+                    except sqlite3.ProgrammingError:closed+=1
+                checks['allThreeConnectionsPhysicallyClosed']=closed==3
+                checks['callerLeaseRetained']=held.check()['state']=='NATIVE_PROFILE_RESERVED'
+                retained_receipt=retained.capture(owner)
+                held.finish();checks['callerReleasedLease']=not process_ownership.homes
+                release={'runtime':runtime,'sessions':sessions,'ownerStage':owner._stage,'consumerStage':c._stage}
+            loop.run_until_complete(execute());phase='COMPLETE'
+            checks['noAdditionalStateDbInTurn']=not any(v['phase']=='ACTUAL_TURN' and v['path'].endswith('state.db') for v in opens)
+            checks['sameMountTable']=before_mounts==Path('/proc/self/mountinfo').read_bytes()
+            checks['sameNamespaces']=before_ns=={k:os.readlink('/proc/self/ns/'+k) for k in before_ns}
+            assert all(checks.values()),checks
+            phase='ENCODE_HANDOFF'
+            wire=handoff.encode(handoff.RetainedStartup(restart_expected,response_expected,retained_receipt),expected_home=str(home))
+            assert len(compute)==1 and not process_ownership.homes and registry.stats()['total_refcounts']==0
+            assert not [t for t in asyncio.all_tasks(loop) if not t.done()]
+            loop.run_until_complete(loop.shutdown_default_executor());loop.close()
+            phase='PRE_BOOTSTRAP_EXEC'
+            prior={'landlock':None,'pid':os.getpid(),'startTicks':Path('/proc/self/stat').read_text().rsplit(')',1)[1].split()[19],
+                'fdInventoryBeforeBootstrap':fd_observations(),'deniedEvents':denied,
+                'home':str(home),'checks':checks,'savedResult':saved,'admissions':rows,'computation':compute,
+                'coldHelperCalls':children,'nativeTrace':events,'nativeImports':imported_native(),
+                'mount':{'mount_id':mount.mount_id,'device':list(mount.device),'root':mount.root,'mount_point':mount.mount_point,'filesystem':mount.filesystem},
+                'namespaces':before_ns,'helperHashes':{name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in retained.FILES},
+                'wireSha256':hashlib.sha256(wire).hexdigest(),'allOwnersClosedBeforeExec':True,'computeFailure':a.compute_failure}
+            prior_raw=(json.dumps(prior,indent=2)+'\n').encode('utf-8');(out/'pre-exec.json').write_bytes(prior_raw)
+            env={key:os.environ[key] for key in ('PATH','LANG','HOME','HERMES_HOME','TMPDIR','TMP','TEMP','WSL_DISTRO_NAME') if key in os.environ}
+            env.update(PYTHONUTF8='1',TZ='UTC',R152_HANDOFF=wire.decode('ascii'),R152_PRIOR_SHA256=hashlib.sha256(prior_raw).hexdigest())
+            exec_args=[sys.executable,'-I','-B',str(ROOT/'scripts/qa/r152a1_landlock_bootstrap.py'),
+                       '--native',str(native),'--output',str(out),'--home',str(home)]
+            if a.compute_failure:exec_args.append('--compute-failure')
+            phase='EXEC_REPLACEMENT'
+            os.execve(sys.executable,exec_args,env)
+            raise AssertionError('execve_returned')
+        phase='DECODE_AFTER_EXEC'
+        prior_raw=(out/'pre-exec.json').read_bytes();assert hashlib.sha256(prior_raw).hexdigest()==os.environ.pop('R152_PRIOR_SHA256')
+        prior=json.loads(prior_raw);wire=os.environ.pop('R152_HANDOFF').encode('ascii')
+        assert prior['checks'] and all(prior['checks'].values()),prior['checks']
+        kernel_raw=(out/'kernel-proof.json').read_bytes()
+        assert hashlib.sha256(kernel_raw).hexdigest()==os.environ.pop('R152_KERNEL_SHA256')
+        landlock_proof=json.loads(kernel_raw)
+        assert landlock_proof['preExecSha256']==hashlib.sha256(prior_raw).hexdigest()
+        assert landlock_proof['freshInterpreterBeforeGuard'] and landlock_proof['noNativeModulesBeforeGuard']
+        assert landlock_proof['pid']==os.getpid() and landlock_proof['startTicks']==prior['startTicks']
+        assert hashlib.sha256(wire).hexdigest()==prior['wireSha256']
+        assert prior['pid']==os.getpid() and prior['startTicks']==Path('/proc/self/stat').read_text().rsplit(')',1)[1].split()[19]
+        assert prior['computeFailure']==a.compute_failure and prior['home']==str(home)
+        assert not compute and not agents and not process_ownership.homes and registry.stats()['total_refcounts']==0
+        assert before_ns==prior['namespaces']
+        import principal_launch as observer
+        landlock_after_exec={'observation':observer.observation(),'denials':kernel_denials()}
+        # JSON round-trip normalizes tuples in the original observer data.
+        assert json.loads(json.dumps(landlock_after_exec['observation']))==landlock_proof['after']
+        assert landlock_after_exec['denials']=={k:v['after'] for k,v in landlock_proof['denialPairs'].items()}
+        decoded=handoff.decode(wire,expected_home=str(home))
+        restart_expected=decoded.state;response_expected=decoded.response;retained_receipt=decoded.retained
+        saved=prior['savedResult'];rows=prior['admissions']
+        m=mounts.select_mount(mounts.parse_mountinfo(mounts._read_mountinfo()),str(home))
+        mount=mounts.ExpectedMount(m.mount_id,m.device,m.root,m.mount_point,m.filesystem)
+        assert {'mount_id':mount.mount_id,'device':list(mount.device),'root':mount.root,'mount_point':mount.mount_point,'filesystem':mount.filesystem}==prior['mount']
+        assert prior['helperHashes']=={name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in retained.FILES}
+        checks['freshInterpreterCountersAndRegistry']=True;checks['actualExecPidAndStartPreserved']=True
+        phase='RESTART_AFTER_NORMAL_CLOSE'
+        old_result=saved
+        helpers_before={name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in retained.FILES}
+        identities_before=retained_receipt.database_identities
+        held=lease.reserve_profile(home,mount)
+        owner=startup.NativeStoreStartup(held,mount,restart_expected,instance_id='r140c6-restart',
+                    response_expected=response_expected,prepared_layout=True,retained_profile=retained_receipt)
+        second=owner.start()
+        assert owner.expectation.epoch==2 and len(second['completedChecks'])==6
+        stores=(owner.state_store,owner.replay_store,owner.response_store)
+        connections=tuple(s._conn for s in stores)
+        assert tuple(identity(name) for name in ('state.db','runs_idempotency.db','response_store.db'))==identities_before
+        assert helpers_before=={name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in retained.FILES}
+        async def restarted_work():
+            nonlocal phase,c,restart_report
+            c=await owner.prepare_runtime(GatewayConfig(multiplex_profiles=False,write_sessions_json=False),
+                PlatformConfig(extra={'key':'owned-test-api','model_name':'owned-offline'}),
+                local_admission=True,canonical_api=True,finite_turn=True)
+            c.publish_api_adapter();c.activate_admission()
+            from gateway.session_api_turn import run_api_turn
+            from gateway.session_results import admission_result
+            from hermes_state_runtime import RuntimeStoreError
+            kwargs={'session_id':'l139-session','request_id':'l139-request','user_message':'SUM:17,25,8','conversation_history':[]}
+            phase='RESTART_EXACT_REPLAY'
+            with patch.object(run_agent,'AIAgent',FiniteCompute):
+                repeated=await asyncio.wait_for(run_api_turn(c._adapter,**kwargs),15)
+                assert len(compute)==0,'restarted_saved_request_computed_again'
+                original_saved=admission_result(stores[0],rows[0]['admission_id'])
+                assert original_saved==old_result
+                assert repeated==(old_result['result'],old_result['usage'])
+                try:await run_api_turn(c._adapter,**{**kwargs,'user_message':'SUM:999'})
+                except RuntimeStoreError as exc:assert exc.reason=='admission_conflict'
+                else:raise AssertionError('restart_conflict_not_refused')
+                phase='RESTART_NEW_WORK'
+                fresh=await asyncio.wait_for(run_api_turn(c._adapter,**{**kwargs,'request_id':'r140-second'}),25)
+                assert len(compute)==1 and fresh[0]['completed'] is (not a.compute_failure)
+                tasks=[v.task for v in c._binding._authority.sessions.values() if v.task and not v.task.done()]+list(getattr(c._binding._authority,'_mutation_tasks',()))
+                if tasks:await asyncio.wait_for(asyncio.gather(*tasks,return_exceptions=True),10)
+                await asyncio.sleep(0)
+            phase='RESTART_NORMAL_CLOSE'
+            changes=[conn.total_changes for conn in connections]
+            c.begin_drain();await c.retire_idle_runtime();c.retire_idle_api_sessions();c.finish_drain();await c.detach()
+            assert changes==[conn.total_changes for conn in connections]
+            after_rows=[dict(v) for v in connections[0].execute('SELECT admission_id,request_id,status,outcome,owner_epoch,generation FROM session_admissions ORDER BY seq')]
+            assert len(after_rows)==2 and after_rows[0]==rows[0]
+            assert all(v['status']=='terminal' for v in after_rows)
+            assert admission_result(stores[0],rows[0]['admission_id'])==old_result
+            fresh_row=after_rows[1]
+            assert fresh_row['admission_id']!=rows[0]['admission_id'] and fresh_row['request_id']=='r140-second'
+            assert fresh_row['owner_epoch']==owner.expectation.epoch==2
+            assert fresh_row['generation']==rows[0]['generation']+1
+            fresh_saved=admission_result(stores[0],fresh_row['admission_id'])
+            assert fresh==(fresh_saved['result'],fresh_saved['usage'])
+            if a.compute_failure:
+                assert fresh_row['outcome']=='failed' and fresh_saved['result']['completed'] is False
+            else:
+                assert fresh_row['outcome']=='completed' and fresh_saved['result']['completed'] is True
+                assert fresh_saved['result']['final_response']=='50'
+            assert registry.stats()['total_refcounts']==0
+            owner.close()
+            for conn in connections:
+                try:conn.execute('SELECT 1')
+                except sqlite3.ProgrammingError:pass
+                else:raise AssertionError('restarted_connection_not_closed')
+            second_receipt=retained.capture(owner)
+            assert second_receipt.epoch==2 and second_receipt.database_identities==identities_before
+            assert held.check()['state']=='NATIVE_PROFILE_RESERVED'
+            held.finish()
+            restart_report={'accepted':True,'epochBefore':1,'epochAfter':2,'sameDatabaseIdentities':True,
+                'helperFilesKeptAndUnchangedAtStartup':True,'savedResultUnchanged':True,
+                'savedRequestNotRecomputed':True,'newRequestComputedExactlyOnce':True,
+                'newPersistedResultMatchesApi':True,'newPersistedResult':fresh_saved,
+                'newRequestId':fresh_row['request_id'],'newOwnerEpoch':fresh_row['owner_epoch'],
+                'newGeneration':fresh_row['generation'],'priorAdmissionUnchanged':True,
+                'computationCount':len(prior['computation'])+len(compute),'beforeExecComputationCount':len(prior['computation']),'afterExecComputationCount':len(compute),'sameRequestConflictRefused':True,'admissions':after_rows,
+                'originalOwnerClosedAllThree':True,'registryRefsBeforeFixtureCleanup':registry.stats()['total_refcounts'],
+                'secondTrustedReceiptCaptured':True,'callerReleasedLease':not process_ownership.homes,
+                'freshInterpreterAfterExecve':True,'sameInterpreterReopen':False,'pidPreserved':prior['pid']==os.getpid(),'processCrashOrPowerLossTested':False}
+        # The native constructor import exists only inside the first coroutine.
+        import run_agent
+        loop.run_until_complete(restarted_work())
+        phase='COMPLETE'
+        checks['retainedRestartAccepted']=True
+        checks['noConfigFileAtEnd']=not (home/'config.yaml').exists()
+        assert all(checks.values()),checks
+    except BaseException as exc:error={'phase':phase,'type':type(exc).__name__,'reason':str(exc),'traceback':traceback.format_exc()}
+    finally:
+        sys.setprofile(None);threading.setprofile(None)
+        # No forced native close, registry clearing or lease release on failure.
+        # The outer transport owns the entire disposable process group and records
+        # uncertain lifetime separately. A failed profile is retained for inspection.
+        if error is None:
+            assert not ([] if loop.is_closed() else [t for t in asyncio.all_tasks(loop) if not t.done()])
+            if not loop.is_closed():
+                loop.run_until_complete(loop.shutdown_default_executor());loop.close()
+            assert not process_ownership.homes and registry.stats()['total_refcounts']==0
+    loaded={}
+    for module in tuple(sys.modules.values()):
+        file=getattr(module,'__file__',None)
+        if file:
+            p=Path(file).resolve()
+            if p.is_relative_to(native) and p.is_file():loaded[p.relative_to(native).as_posix()]=hashlib.sha256(p.read_bytes()).hexdigest()
+    inventory=[{'path':p.relative_to(home).as_posix(),'mode':oct(p.stat().st_mode & 0o777),'size':p.stat().st_size} for p in home.rglob('*')]
+    passed=error is None and phase=='COMPLETE' and bool(compute) and all(checks.values())
+    report={'result':'PASS_REAL_LANDLOCK_RETAINED_NATIVE_LIFECYCLE' if passed and a.resume else 'NOT_ACCEPTED','phase':phase,'error':error,'uid':list(os.getresuid()),'gid':list(os.getresgid()),'checks':checks,'computeFailure':a.compute_failure,'computation':compute,'savedResult':saved,'admissions':rows,'exactRetry':retry,'changedPayload':conflict,'release':release,'sqliteOpens':opens,'coldHelperCalls':children,'deniedEvents':denied,'nativeTrace':events,'nativeImports':loaded,'profileInventory':inventory,'actualOsBoundaries':True,'osOrProductMethodsDoubled':False,'modelFactoryComputationCloseDoubled':True,'configFileWritten':False,'rootUsed':False,'realProviderCalls':0,'landlockFilesystemComponentTested':True,'fullProjectionOrHttpTested':False,'actualProjectedEntrypointUsed':False,'manualSqlSettlement':False,'failureFixtureCleanupUsed':False,'landlockBeforeExec':landlock_proof,'landlockAfterExec':landlock_after_exec,'restartReport':restart_report,'retainedReceiptCaptured':retained_receipt is not None,'preExec':prior,'freshInterpreterRole':a.resume,'codecSha256':hashlib.sha256((ROOT/'packages/claw-hermes/gateway_retained_handoff.py').read_bytes()).hexdigest(),'qaSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+    report['landlockFilesystemComponentTested']=landlock_proof is not None and landlock_after_exec is not None
+    report['freshInterpreterBootstrapUsed']=landlock_proof is not None
+    report['bootstrapAndFinalExecPreservedPid']=landlock_proof is not None and landlock_proof['pid']==os.getpid()
+    # Only the outer transport may remove the owned tree, after its process group
+    # is empty, all audit events are qualified and both cases/dependencies pass.
+    report['temporaryProfileRemoved']=not home.exists()
+    report['profileCleanupDeferredToTransport']=home.exists()
+    (out/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:v for k,v in report.items() if k not in ('nativeImports','nativeTrace','profileInventory')}),flush=True)
+    return 0 if passed and a.resume and report['profileCleanupDeferredToTransport'] and landlock_after_exec is not None else 1
+if __name__=='__main__':raise SystemExit(main())
+

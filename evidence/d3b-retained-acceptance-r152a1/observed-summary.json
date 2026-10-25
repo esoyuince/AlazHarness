@@ -1,0 +1,673 @@
+{
+  "acceptedDependencyFiles": 1162,
+  "actualProjectedEntrypointUsed": false,
+  "attempt": "native003",
+  "bundleSha256": "ff23ecb92b3c00de7244163ea8ef3b5fc62e6ca636d34314a4b9239b2980de60",
+  "cases": [
+    {
+      "allNetworkAuditDenialsAccounted": true,
+      "blockedOptionalImportProbes": [
+        {
+          "callers": [
+            "_find_and_load_unlocked",
+            "_load_unlocked",
+            "exec_module",
+            "exec_module",
+            "_call_with_frames_removed",
+            "<module>",
+            "_has_ipv6",
+            "audit"
+          ],
+          "event": "socket.bind",
+          "origin": {
+            "file": "/opt/alaz-f126c1a6/dependencies/urllib3/util/connection.py",
+            "function": "_has_ipv6",
+            "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74"
+          },
+          "phase": "RESTART_AFTER_NORMAL_CLOSE",
+          "role": "after_exec"
+        },
+        {
+          "callers": [
+            "_find_and_load_unlocked",
+            "_load_unlocked",
+            "exec_module",
+            "exec_module",
+            "_call_with_frames_removed",
+            "<module>",
+            "_has_ipv6",
+            "audit"
+          ],
+          "event": "socket.bind",
+          "origin": {
+            "file": "/opt/alaz-f126c1a6/dependencies/urllib3/util/connection.py",
+            "function": "_has_ipv6",
+            "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74"
+          },
+          "phase": "PREPARE_FINITE",
+          "role": "before_bootstrap"
+        }
+      ],
+      "canaryUnchanged": true,
+      "case": "normal",
+      "confinedHelpers": [
+        {
+          "helper": "run_store_preopen.py",
+          "phase": "RESTART_AFTER_NORMAL_CLOSE"
+        },
+        {
+          "helper": "run_response_preopen.py",
+          "phase": "RESTART_AFTER_NORMAL_CLOSE"
+        }
+      ],
+      "denialPairs": {
+        "qa_source_write": {
+          "after": {
+            "errno": 13,
+            "opened": false
+          },
+          "before": {
+            "errno": 0,
+            "opened": true
+          }
+        },
+        "synthetic_canary": {
+          "after": {
+            "errno": 13,
+            "opened": false
+          },
+          "before": {
+            "errno": 0,
+            "opened": true
+          }
+        }
+      },
+      "fdBeforeBootstrap": [
+        {
+          "fd": 0,
+          "inheritable": true,
+          "kind": "other"
+        },
+        {
+          "fd": 1,
+          "inheritable": true,
+          "kind": "pipe"
+        },
+        {
+          "fd": 2,
+          "inheritable": true,
+          "kind": "pipe"
+        },
+        {
+          "fd": 7,
+          "inheritable": false,
+          "kind": "regular"
+        }
+      ],
+      "fdBeforeGuard": [
+        {
+          "fd": 0,
+          "inheritable": true,
+          "kind": "other"
+        },
+        {
+          "fd": 1,
+          "inheritable": true,
+          "kind": "pipe"
+        },
+        {
+          "fd": 2,
+          "inheritable": true,
+          "kind": "pipe"
+        }
+      ],
+      "firstChecks": {
+        "allThreeConnectionsPhysicallyClosed": true,
+        "callerLeaseRetained": true,
+        "callerReleasedLease": true,
+        "modelCloseCalled": true,
+        "noAdditionalStateDbInTurn": true,
+        "noConfigFileBeforeOwner": true,
+        "noRowsChangedByRetirement": true,
+        "oneEpoch": true,
+        "realLinuxLease": true,
+        "realSixColdLiveChecks": true,
+        "registryZeroBeforeFixtureCleanup": true,
+        "sameMountTable": true,
+        "sameNamespaces": true,
+        "sameThreeConnections": true
+      },
+      "firstComputationCount": 1,
+      "identityAfter": {
+        "caps": {
+          "CapAmb": 0,
+          "CapBnd": 2199023255551,
+          "CapEff": 0,
+          "CapInh": 0,
+          "CapPrm": 0
+        },
+        "gidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "gids": [
+          23003,
+          23003,
+          23003,
+          23003
+        ],
+        "groups": [
+          23003
+        ],
+        "nnp": 1,
+        "pid": 7,
+        "threads": 1,
+        "uidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "uids": [
+          23001,
+          23001,
+          23001,
+          23001
+        ],
+        "userns": "user:[4026531837]"
+      },
+      "identityBefore": {
+        "caps": {
+          "CapAmb": 0,
+          "CapBnd": 2199023255551,
+          "CapEff": 0,
+          "CapInh": 0,
+          "CapPrm": 0
+        },
+        "gidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "gids": [
+          23003,
+          23003,
+          23003,
+          23003
+        ],
+        "groups": [
+          23003
+        ],
+        "nnp": 0,
+        "pid": 7,
+        "threads": 1,
+        "uidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "uids": [
+          23001,
+          23001,
+          23001,
+          23001
+        ],
+        "userns": "user:[4026531837]"
+      },
+      "inheritedDenials": {
+        "qa_source_write": {
+          "errno": 13,
+          "opened": false
+        },
+        "synthetic_canary": {
+          "errno": 13,
+          "opened": false
+        }
+      },
+      "initialHelpers": [
+        {
+          "helper": "run_store_preopen.py",
+          "phase": "REAL_COLD_START"
+        },
+        {
+          "helper": "run_response_preopen.py",
+          "phase": "REAL_COLD_START"
+        }
+      ],
+      "lifetime": {
+        "completeOutput": true,
+        "groupEmptyBeforeSignal": true,
+        "normalExitWithoutStragglers": true,
+        "ownedProcessGroupEmpty": true,
+        "processGroup": 7,
+        "signalSent": false,
+        "timedOut": false
+      },
+      "nativeImportsAfter": 722,
+      "nativeImportsBefore": 721,
+      "pid": 7,
+      "restart": {
+        "accepted": true,
+        "admissions": [
+          {
+            "admission_id": "4d6d8c9698724475b89455222dd4e922",
+            "generation": 1,
+            "outcome": "completed",
+            "owner_epoch": 1,
+            "request_id": "l139-request",
+            "status": "terminal"
+          },
+          {
+            "admission_id": "677391190a0d4998b04a1944a9619e82",
+            "generation": 2,
+            "outcome": "completed",
+            "owner_epoch": 2,
+            "request_id": "r140-second",
+            "status": "terminal"
+          }
+        ],
+        "afterExecComputationCount": 1,
+        "beforeExecComputationCount": 1,
+        "callerReleasedLease": true,
+        "computationCount": 2,
+        "epochAfter": 2,
+        "epochBefore": 1,
+        "freshInterpreterAfterExecve": true,
+        "helperFilesKeptAndUnchangedAtStartup": true,
+        "newGeneration": 2,
+        "newOwnerEpoch": 2,
+        "newPersistedResult": {
+          "result": {
+            "_messages_are_turn_suffix": true,
+            "_notification_reply_muted": false,
+            "agent_persisted": false,
+            "api_calls": 0,
+            "compacted_in_place": false,
+            "completed": true,
+            "compression_deferred": false,
+            "compression_exhausted": false,
+            "context_length": 4096,
+            "error": null,
+            "failed": false,
+            "failure_reason": null,
+            "final_response": "50",
+            "history_offset": 0,
+            "input_tokens": 0,
+            "interrupt_message": null,
+            "interrupted": false,
+            "last_prompt_tokens": 0,
+            "last_reasoning": null,
+            "messages": [
+              {
+                "content": "50",
+                "role": "assistant"
+              }
+            ],
+            "model": "",
+            "output_tokens": 0,
+            "partial": false,
+            "response_previewed": false,
+            "response_reused": false,
+            "response_transformed": false,
+            "session_id": "l139-session"
+          },
+          "usage": {
+            "input_tokens": 0,
+            "output_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "newPersistedResultMatchesApi": true,
+        "newRequestComputedExactlyOnce": true,
+        "newRequestId": "r140-second",
+        "originalOwnerClosedAllThree": true,
+        "pidPreserved": true,
+        "priorAdmissionUnchanged": true,
+        "processCrashOrPowerLossTested": false,
+        "registryRefsBeforeFixtureCleanup": 0,
+        "sameDatabaseIdentities": true,
+        "sameInterpreterReopen": false,
+        "sameRequestConflictRefused": true,
+        "savedRequestNotRecomputed": true,
+        "savedResultUnchanged": true,
+        "secondTrustedReceiptCaptured": true
+      },
+      "result": "PASS",
+      "secondChecks": {
+        "actualExecPidAndStartPreserved": true,
+        "freshInterpreterCountersAndRegistry": true,
+        "noConfigFileAtEnd": true,
+        "retainedRestartAccepted": true
+      },
+      "secondComputationCount": 1,
+      "sourceUnchanged": true,
+      "startTicks": "353",
+      "temporaryTreeRemoved": true
+    },
+    {
+      "allNetworkAuditDenialsAccounted": true,
+      "blockedOptionalImportProbes": [
+        {
+          "callers": [
+            "_find_and_load_unlocked",
+            "_load_unlocked",
+            "exec_module",
+            "exec_module",
+            "_call_with_frames_removed",
+            "<module>",
+            "_has_ipv6",
+            "audit"
+          ],
+          "event": "socket.bind",
+          "origin": {
+            "file": "/opt/alaz-f126c1a6/dependencies/urllib3/util/connection.py",
+            "function": "_has_ipv6",
+            "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74"
+          },
+          "phase": "RESTART_AFTER_NORMAL_CLOSE",
+          "role": "after_exec"
+        },
+        {
+          "callers": [
+            "_find_and_load_unlocked",
+            "_load_unlocked",
+            "exec_module",
+            "exec_module",
+            "_call_with_frames_removed",
+            "<module>",
+            "_has_ipv6",
+            "audit"
+          ],
+          "event": "socket.bind",
+          "origin": {
+            "file": "/opt/alaz-f126c1a6/dependencies/urllib3/util/connection.py",
+            "function": "_has_ipv6",
+            "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74"
+          },
+          "phase": "PREPARE_FINITE",
+          "role": "before_bootstrap"
+        }
+      ],
+      "canaryUnchanged": true,
+      "case": "controlled-error",
+      "confinedHelpers": [
+        {
+          "helper": "run_store_preopen.py",
+          "phase": "RESTART_AFTER_NORMAL_CLOSE"
+        },
+        {
+          "helper": "run_response_preopen.py",
+          "phase": "RESTART_AFTER_NORMAL_CLOSE"
+        }
+      ],
+      "denialPairs": {
+        "qa_source_write": {
+          "after": {
+            "errno": 13,
+            "opened": false
+          },
+          "before": {
+            "errno": 0,
+            "opened": true
+          }
+        },
+        "synthetic_canary": {
+          "after": {
+            "errno": 13,
+            "opened": false
+          },
+          "before": {
+            "errno": 0,
+            "opened": true
+          }
+        }
+      },
+      "fdBeforeBootstrap": [
+        {
+          "fd": 0,
+          "inheritable": true,
+          "kind": "other"
+        },
+        {
+          "fd": 1,
+          "inheritable": true,
+          "kind": "pipe"
+        },
+        {
+          "fd": 2,
+          "inheritable": true,
+          "kind": "pipe"
+        },
+        {
+          "fd": 7,
+          "inheritable": false,
+          "kind": "regular"
+        }
+      ],
+      "fdBeforeGuard": [
+        {
+          "fd": 0,
+          "inheritable": true,
+          "kind": "other"
+        },
+        {
+          "fd": 1,
+          "inheritable": true,
+          "kind": "pipe"
+        },
+        {
+          "fd": 2,
+          "inheritable": true,
+          "kind": "pipe"
+        }
+      ],
+      "firstChecks": {
+        "allThreeConnectionsPhysicallyClosed": true,
+        "callerLeaseRetained": true,
+        "callerReleasedLease": true,
+        "modelCloseCalled": true,
+        "noAdditionalStateDbInTurn": true,
+        "noConfigFileBeforeOwner": true,
+        "noRowsChangedByRetirement": true,
+        "oneEpoch": true,
+        "realLinuxLease": true,
+        "realSixColdLiveChecks": true,
+        "registryZeroBeforeFixtureCleanup": true,
+        "sameMountTable": true,
+        "sameNamespaces": true,
+        "sameThreeConnections": true
+      },
+      "firstComputationCount": 1,
+      "identityAfter": {
+        "caps": {
+          "CapAmb": 0,
+          "CapBnd": 2199023255551,
+          "CapEff": 0,
+          "CapInh": 0,
+          "CapPrm": 0
+        },
+        "gidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "gids": [
+          23003,
+          23003,
+          23003,
+          23003
+        ],
+        "groups": [
+          23003
+        ],
+        "nnp": 1,
+        "pid": 24,
+        "threads": 1,
+        "uidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "uids": [
+          23001,
+          23001,
+          23001,
+          23001
+        ],
+        "userns": "user:[4026531837]"
+      },
+      "identityBefore": {
+        "caps": {
+          "CapAmb": 0,
+          "CapBnd": 2199023255551,
+          "CapEff": 0,
+          "CapInh": 0,
+          "CapPrm": 0
+        },
+        "gidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "gids": [
+          23003,
+          23003,
+          23003,
+          23003
+        ],
+        "groups": [
+          23003
+        ],
+        "nnp": 0,
+        "pid": 24,
+        "threads": 1,
+        "uidMap": [
+          "0",
+          "0",
+          "4294967295"
+        ],
+        "uids": [
+          23001,
+          23001,
+          23001,
+          23001
+        ],
+        "userns": "user:[4026531837]"
+      },
+      "inheritedDenials": {
+        "qa_source_write": {
+          "errno": 13,
+          "opened": false
+        },
+        "synthetic_canary": {
+          "errno": 13,
+          "opened": false
+        }
+      },
+      "initialHelpers": [
+        {
+          "helper": "run_store_preopen.py",
+          "phase": "REAL_COLD_START"
+        },
+        {
+          "helper": "run_response_preopen.py",
+          "phase": "REAL_COLD_START"
+        }
+      ],
+      "lifetime": {
+        "completeOutput": true,
+        "groupEmptyBeforeSignal": true,
+        "normalExitWithoutStragglers": true,
+        "ownedProcessGroupEmpty": true,
+        "processGroup": 24,
+        "signalSent": false,
+        "timedOut": false
+      },
+      "nativeImportsAfter": 719,
+      "nativeImportsBefore": 718,
+      "pid": 24,
+      "restart": {
+        "accepted": true,
+        "admissions": [
+          {
+            "admission_id": "a5333df4c22f4d5592d6fc8294800f7e",
+            "generation": 1,
+            "outcome": "failed",
+            "owner_epoch": 1,
+            "request_id": "l139-request",
+            "status": "terminal"
+          },
+          {
+            "admission_id": "45abe2b8a5824db1b578fffaeb1879fc",
+            "generation": 2,
+            "outcome": "failed",
+            "owner_epoch": 2,
+            "request_id": "r140-second",
+            "status": "terminal"
+          }
+        ],
+        "afterExecComputationCount": 1,
+        "beforeExecComputationCount": 1,
+        "callerReleasedLease": true,
+        "computationCount": 2,
+        "epochAfter": 2,
+        "epochBefore": 1,
+        "freshInterpreterAfterExecve": true,
+        "helperFilesKeptAndUnchangedAtStartup": true,
+        "newGeneration": 2,
+        "newOwnerEpoch": 2,
+        "newPersistedResult": {
+          "result": {
+            "_messages_are_turn_suffix": true,
+            "completed": false,
+            "error": "gateway.errors.generic_failed_with_hint\n\nThis turn did not complete. Some actions may already have run; verify their effects before resending.",
+            "failed": true,
+            "final_response": "",
+            "messages": []
+          },
+          "usage": {}
+        },
+        "newPersistedResultMatchesApi": true,
+        "newRequestComputedExactlyOnce": true,
+        "newRequestId": "r140-second",
+        "originalOwnerClosedAllThree": true,
+        "pidPreserved": true,
+        "priorAdmissionUnchanged": true,
+        "processCrashOrPowerLossTested": false,
+        "registryRefsBeforeFixtureCleanup": 0,
+        "sameDatabaseIdentities": true,
+        "sameInterpreterReopen": false,
+        "sameRequestConflictRefused": true,
+        "savedRequestNotRecomputed": true,
+        "savedResultUnchanged": true,
+        "secondTrustedReceiptCaptured": true
+      },
+      "result": "PASS",
+      "secondChecks": {
+        "actualExecPidAndStartPreserved": true,
+        "freshInterpreterCountersAndRegistry": true,
+        "noConfigFileAtEnd": true,
+        "retainedRestartAccepted": true
+      },
+      "secondComputationCount": 1,
+      "sourceUnchanged": true,
+      "startTicks": "5603",
+      "temporaryTreeRemoved": true
+    }
+  ],
+  "completedAt": "2026-10-25T21:55:38.347380+03:00",
+  "earlierFailures": [
+    "native001",
+    "native002"
+  ],
+  "fullD3BAccepted": false,
+  "fullProjectionAccepted": false,
+  "harnessSourceFiles": 66,
+  "initialLifecycleConfined": false,
+  "modelComputationFixtureOnly": true,
+  "nativeSourceFiles": 756,
+  "networkIsolationAccepted": false,
+  "restartedLifecycleConfined": true,
+  "sourceFileCount": 823,
+  "state": "SCOPED_KERNEL_AND_RETAINED_LIFECYCLE_PASS"
+}

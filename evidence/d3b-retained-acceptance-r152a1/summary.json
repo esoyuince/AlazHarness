@@ -1,0 +1,38 @@
+{
+  "acceptedAttempt": "native003",
+  "blockedOptionalImportProbes": 4,
+  "bundleSha256": "ff23ecb92b3c00de7244163ea8ef3b5fc62e6ca636d34314a4b9239b2980de60",
+  "completedAt": "2026-10-25T21:55:38.347380+03:00",
+  "failedAttemptsPreserved": [
+    "native001",
+    "native002"
+  ],
+  "failedTreePreservationEvidence": "original terminal records; no separate later filesystem inspection",
+  "fullD3BAccepted": false,
+  "fullProjectedLauncherAccepted": false,
+  "harnessSourceFiles": 66,
+  "historicalFullSuite": "3615 PASS / 23 SKIP (prior R150 evidence only)",
+  "independentRecordedDataChecks": 115,
+  "inheritedDenialObservations": 4,
+  "initialLifecycleConfined": false,
+  "installedDependencyFilesVerified": 1162,
+  "modelFixtureOnly": true,
+  "nativeSourceFiles": 756,
+  "networkIsolationAccepted": false,
+  "noTimeoutOrSignal": true,
+  "primaryKernelDenialPairs": 4,
+  "productNativeConfigOrPinChanges": false,
+  "publicationState": "LOCAL_GATE_AND_EXACT_COMMIT_CI_PENDING",
+  "result": "SCOPED_KERNEL_AND_RETAINED_LIFECYCLE_PASS",
+  "retainedLifecycleConfined": true,
+  "reviewDoesNotRerunRuntime": true,
+  "reviewSha256": "1cd5e8bc1c5ad04917832faaf19f1641503a946e593a3c6d4e463048494d6359",
+  "rootUsed": false,
+  "runtimeScenarioResults": {
+    "controlled-error": "PASS",
+    "normal": "PASS"
+  },
+  "runtimeScenarios": 2,
+  "standardFullSuiteRerunLocally": false,
+  "successfulOwnedTreesRemovedAfterAcceptance": true
+}

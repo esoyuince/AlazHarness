@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-25T21:51:06.722707+03:00",
+  "closedFindings": [
+    "fresh bootstrap before native imports; unchanged inherited-FD guard",
+    "driver cannot delete profile",
+    "transport cleanup only after both case acceptance, final dependency verification, empty owned groups and root custody",
+    "Landlock tested fields derive from observed proof",
+    "blocked optional IPv6 probe accepted only by exact pinned origin; audit still denies every network event"
+  ],
+  "executionRequestId": "561507f5-f087-4d65-85d4-24685468d616",
+  "fullProjectedLauncherAccepted": false,
+  "kind": "static source/readback review only; actual execution not yet verified",
+  "productFunctionsChanged": false,
+  "qaSha256": {
+    "r152a1_landlock_bootstrap.py": "b1007b11f98d66fe3753d7225e3daf8eae22cf82e85dbffd81ce8b7f7be58b86",
+    "r152a1_landlock_native.py": "51dbc01863ebbd34f52acea571b475cf1e8f90bfa3f232ad878190f33f59e7b6",
+    "r152a1_linux_transport.py": "91246de577096d588c265f6ef22d9bc09f170f376400b08ec0826219d9c8c035",
+    "r152a1_windows_accept.py": "f7e9bfc08c826b8b3e2104d6f8986278edd00346214840a9dcfe90a711883bd9"
+  },
+  "reviewer": "independent local source reviewer",
+  "rootUsed": false,
+  "status": "NO_REMAINING_CONCRETE_SOURCE_BLOCKER"
+}
