@@ -1,0 +1,32 @@
+{
+  "kind": "R153A1_REVIEW_EVIDENCE_LIMITS",
+  "nativePathReview": {
+    "result": "INCOMPLETE",
+    "completedReads": [
+      "AGENTS.md",
+      "status.md",
+      "docs/MVP-v0.1.md",
+      "docs/WORKSPACE-RULES.md"
+    ],
+    "noSourceOrRuntimeCorroboration": true,
+    "pendingReadRequestId": "c1aefcf0-2434-462f-aa6f-c4808bac71cb",
+    "laterRootPoll": "Native request is unavailable; no replay"
+  },
+  "historicalDenialLookup": {
+    "actualReviewerRationaleRecovered": false,
+    "confirmedStatusText": "blocked by OpenAI safety checks",
+    "confirmedEditRequests": [
+      "2539fe93-9294-49db-9a81-6c35266c787a",
+      "bf864a88-2a97-42b9-8ec7-f48976cbf342"
+    ],
+    "privilegedCleanupOriginalRequestIdRecovered": false,
+    "doesNotProveNewR153Rejection": true,
+    "pendingReadRequestIds": [
+      "a2a3b001-7413-4c1a-86c0-000000000020",
+      "a2a3b001-7413-4c1a-86c0-000000000021"
+    ],
+    "laterRootPoll": "Native request is unavailable; no replay"
+  },
+  "newPrivilegedActions": 0,
+  "serviceOrInstallerActions": 0
+}

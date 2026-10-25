@@ -1,0 +1,21 @@
+{
+  "kind": "R153A1_OWNED_LINUX_PIPE_TESTS",
+  "startedUtc": "2026-10-25T20:13:18.363942+00:00",
+  "finishedUtc": "2026-10-25T20:13:20.453948+00:00",
+  "python": "3.12.14",
+  "platform": "linux",
+  "testsRun": 4,
+  "failures": 0,
+  "errors": 0,
+  "skipped": [],
+  "success": true,
+  "kernelProjectionTested": false,
+  "nativeStoreTested": false,
+  "privilegedOperations": 0,
+  "realModelCalls": 0,
+  "sourceSha256": {
+    "packages/claw-hermes/supervised_pipe_capture.py": "b3fe4c30607469ca05d95b7f329970c5093a429c2f952280371ddf4c085a1695",
+    "tests/test_supervised_pipe_capture.py": "ae558c5ba812ba7e2c85f7dff1f18000176fa7b5707aafe14c33464fd1a8c086"
+  },
+  "logSha256": "3e192c2939b93783a0936681e32e94480e23191edc6125ce10b6c1a8581d0884"
+}

@@ -1,0 +1,9 @@
+{
+  "packages/claw-hermes/gateway_supervised_launch.py": "b05dd16b93e6f77b45b60f513d4781873f214bd9d9399a54e575272faff8e6f4",
+  "packages/claw-hermes/supervised_pipe_capture.py": "b3fe4c30607469ca05d95b7f329970c5093a429c2f952280371ddf4c085a1695",
+  "scripts/run_supervised_retained.py": "208a9f42201e7fe8ff57469d56d604baa0a19a685dccffea871ade43807fed74",
+  "scripts/build_projected_candidate.py": "9e717963b462c1f3b6ff87c14b55f01dd2389cc54c65dc2dc14d9990fa53089b",
+  "tests/test_supervised_retained_launch.py": "d33c33892ee201c773d1cd232245fe49e41dfcac3481bf239878111a57bb0cf5",
+  "tests/test_supervised_pipe_capture.py": "ae558c5ba812ba7e2c85f7dff1f18000176fa7b5707aafe14c33464fd1a8c086",
+  "tests/test_projected_candidate.py": "f817670dc96ab3e92d2d7fa49ff15e0acb589f42beb34c491ec97bd85dff4a9e"
+}

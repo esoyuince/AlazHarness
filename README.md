@@ -11,6 +11,11 @@ Varsayılan çalışma klasörü: `C:\Antigravity\AlazHarness`.
 3. `docs/WORKSPACE-RULES.md`: dosya düzeni ve Git çalışma kuralları.
 4. `sources.lock.json`: kaynak commit'leri ve fork ilişkileri (hazırlık sırasında oluşturulur).
 
+## Ürüne geçiş yol haritası
+
+Güncel beş teslimat paketi ve çıkış koşulları: [Ürün yol haritası](docs/PRODUCT-ROADMAP.md).
+İlk hedef tek Linux ortamında yerel, tek ajanlı kullanılabilir M1; otonomi M2 aşamasıdır.
+
 ## Dizinler
 
 - `vendor/`: özgün geçmişleri korunan, commit'e sabitlenen OpenClaw ve Hermes forkları.

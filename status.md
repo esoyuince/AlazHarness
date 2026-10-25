@@ -1,76 +1,62 @@
 # AlazHarness - status
 
-## R152A1 - COMPLETE: SCOPED_KERNEL_AND_RETAINED_LIFECYCLE_PASS
+## R153A1 / P1 - IN PROGRESS: supervised readiness candidate
 
-Updated: 2026-10-25T22:08:49.276750+03:00.
-Code/evidence commit: 870da7ae310ca20ab4392aa7b998531056ee8384.
-Feature branch: alaz/d3b-retained-acceptance-r152a1.
-Exact code-commit alaz/local-ci: SUCCESS, observed 2026-10-25 19:08:07 UTC.
-Native source pin: d1516731308de8e87130dc68124e69aad35d6911, unchanged.
+Roadmap decision: 2026-10-25, Europe/Istanbul.
+Active branch: alaz/m1-product-path-r153a1.
+Active worktree: C:\Antigravity\AlazHarness\scratch\worktrees\m1-product-path-r153a1.
+Base: 7abdd57e408ec7972bddeaf267ea180b4cb3673b (published main).
+Native source: d1516731308de8e87130dc68124e69aad35d6911, unchanged.
+Protected root remains on 58b210a with its original 33 changed/untracked files.
 
-Continuation after gated publication: main in
-C:\Antigravity\AlazHarness\scratch\worktrees\main-published-21oct-a37c.
-Live Git HEAD/ref state is authoritative. Root remains on its older branch with
-existing user changes; no root status mirror was overwritten.
+### Product path and scope
 
-### Completed outcome
+The adopted five-package roadmap is docs/PRODUCT-ROADMAP.md. This package adds
+the missing fixed supervisor child composition and a reproducible exact-source
+candidate exporter. The original retained target remains readiness-only. Full
+P1 still requires current installation, a retained receipt from the actual
+supervised ext4 volume, positive native readiness and then finite useful work.
 
-- native003: normal and controlled-error both PASS, exit 0.
-- Actual original Landlock ABI3, fresh bootstrap and two fixed same-PID QA execs.
-- Four primary baseline-to-EACCES denial pairs and four inherited observations.
-- Same three database identities, owner epoch 1 to 2, exact saved result/usage
-  replay without recomputation, one new physical-thread computation per scenario,
-  and persisted/API equality with new owner epoch/generation 2.
-- Three native connections physically close, retained receipt is captured while
-  the caller lease is held, then the caller releases it.
-- Source/dependency bytes unchanged. Both successful groups already empty without
-  timeout/signal; successful trees removed only after all acceptance checks.
-- native001 and native002 remain FAIL with raw evidence and original failed-tree
-  preservation observations. No earlier attempt was replayed.
-- Independent review: 115 recorded-data/source/hash checks passed. These are not
-  additional runtime tests.
-- Local static gate: PASS, exit 0; 6221 tracked files checked, 3638 tests discovered.
-  No new full standard suite was run locally. Historical 3615 PASS / 23 SKIP is
-  prior evidence. Exact remote CI success does not provide a new test count.
-- Four exact frozen driver files retain an extra EOF blank line. The default
-  whitespace result and successful path-scoped checks are in local-gate.json;
-  executed bytes and global Git settings were preserved.
-- Four QA scripts plus documentation/evidence only; product/native/config/source
-  pins and installed dependencies were not changed.
+### Completed at this checkpoint
 
-### Evidence and accepted limits
+- Isolated worktree and baseline of main, native source and protected root.
+- Roadmap persisted; prior status preserved in docs/status-history/r153a1-parent.md.
+- Additive RetainedVolumeSupervisor and fixed child entrypoint. Same inherited
+  image lease/fence, cgroup/namespace identity checks and original launcher.
+- Bounded nonblocking pipe transport, exact completion protocol and conservative
+  worker deadline. Unknown child state prevents stop/finish; no signal or retry.
+- Independent source review found no remaining blocker in the reviewed bytes.
+  Initial stdio/check-list findings were corrected without weakening old guards.
+- Real owned Linux subprocess/pipe checks: 4 PASS, zero skips, Python 3.12.14.
+  This is transport validation only, not native store or kernel projection.
+- First Windows focused run failed: incomplete synthetic IPC policy plus a
+  shared os.stat mock that also broke unittest traceback rendering. Raw receipt,
+  source snapshots and diagnostic were preserved in focused001. The fixture now
+  supplies the original complete v2 policy and mocks only this module's OS seam.
+  Product validators remain unchanged.
 
-Report: docs/D3B-LANDLOCK-RETAINED-R152A1.md.
-Summary: evidence/d3b-retained-acceptance-r152a1/summary.json.
-Raw accepted attempt: evidence/d3b-retained-acceptance-r152a1/native003/.
-Independent review and exact code CI: independent-review.json and
-publication-code-ci.json in the same evidence directory.
+### Active verification
 
-Initial lifecycle is unconfined; the retained second owner is under the explicit
-laboratory Landlock policy. Only the declared AIAgent computation fixture is
-doubled. Four optional IPv6 bind probes were denied and accounted for. Native
-SQLite fallback/optional-module warnings remain in child stderr. API/handoff
-equality is supported by hash-matched executed assertions with export/review
-limits documented.
+Corrected Windows focused002 completed exit 0: 52 tests, 48 PASS and exactly four
+Linux pipe SKIP; the same four pipe tests passed on Linux. All 29 supervisor
+contracts and all 19 real-Git/archive candidate checks passed.
+Full001 completed exit 0: 3,690 tests run, 3,663 PASS, 27 SKIP, zero failures and
+errors; 487.133 seconds on Windows Python 3.14.3. Original 23 skip IDs/reasons are
+unchanged and exactly four Linux pipe tests are additional Windows skips.
+The seven current source/test hashes match before and after the complete run.
+Static/index gate completed exit 0: 6,259 tracked files checked, two gitlinks,
+3,690 tests discovered; default staged whitespace check exit 0. This adds no
+runtime test count. No effectful command is pending at this checkpoint.
+Next: immutable source commit and actual source-only archive,
+then one exact final-SHA alaz/local-ci gate before ordinary main fast-forward.
+Report: docs/M1-PRODUCT-PATH-R153A1.md. Evidence: full001/summary.json.
+No install, service, provider/model call, root/WSL/mount or cleanup action occurred.
 
-### Publication rule and next gate
+### Remaining acceptance boundary
 
-Code/evidence is pushed and its exact CI succeeded. This final closure contains
-documentation/publication metadata only. Its own exact HEAD CI must succeed
-before ordinary fast-forward main publication. Final local/origin/remote main
-equality and final-SHA CI are checked live; no force/squash/reset or service
-deployment is part of publication.
-
-Full projected launch/receive/target_main, privileged supervisor, separate UID,
-zero CapBnd, namespace/network isolation, HTTP/provider, crash recovery and full
-D3B remain NOT RUN. No root/bootstrap/mount/service operation or earlier denied
-operation was retried.
-
-Exact next product gate: qualify the current fixed projected launcher in the
-existing authorized volume-supervisor context with original export, identity,
-namespace, mount and native ownership checks. Current privileged installation
-and invocation are not qualified; this component result does not authorize a
-retry of earlier denied privileged actions.
-
-History: docs/status-history/r152a1-parent.md, r152a1-prepublication.md and
-r152a1-work-log.md.
+A retained receipt must be created by the original native owner on the same
+supervised ext4 volume; old /tmp QA state or rewritten inode/device records are
+not valid. Old prepared-only installations do not qualify current d151 bytes.
+Historical denied actions must not be replayed or routed around. No new R153
+installation has been attempted or rejected. Actual kernel readiness, finite
+work, full D3B and M1 remain unaccepted.

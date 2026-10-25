@@ -1,0 +1,45 @@
+{
+  "kind": "R153A1_PUBLIC_TEST_TRANSCRIPTS",
+  "observedUtc": "2026-10-25T20:32:08.853826+00:00",
+  "archives": [
+    {
+      "original": "focused001/unittest.log",
+      "publicArchive": "focused001/unittest-transcript.json",
+      "encoding": "json-escaped-utf8",
+      "originalSha256": "6e1d03821f4c53b4727f2137919c3fef07e5c05250a3f705d21348784c46b7e1",
+      "publicArchiveSha256": "0ecc59cb93dda16e1d4a1efa61e1443c37edcb290ad12bac38d892ec6fb07f79",
+      "bytes": 178,
+      "credentialPatterns": []
+    },
+    {
+      "original": "focused002/unittest.log",
+      "publicArchive": "focused002/unittest.txt",
+      "encoding": "utf-8",
+      "originalSha256": "ede469ebff2767e53ac7e70a272fffc617526188ffe0b1935fa533b33a97d075",
+      "publicArchiveSha256": "ede469ebff2767e53ac7e70a272fffc617526188ffe0b1935fa533b33a97d075",
+      "bytes": 8928,
+      "credentialPatterns": []
+    },
+    {
+      "original": "full001/unittest.log",
+      "publicArchive": "full001/unittest.txt",
+      "encoding": "utf-8",
+      "originalSha256": "c0ce43621d88b621276dc5007363eaa0109599d66633db50893c6016a0efeaa4",
+      "publicArchiveSha256": "c0ce43621d88b621276dc5007363eaa0109599d66633db50893c6016a0efeaa4",
+      "bytes": 505645,
+      "credentialPatterns": []
+    },
+    {
+      "original": "linux-pipe-unittest.log",
+      "publicArchive": "linux-pipe-unittest.txt",
+      "encoding": "utf-8",
+      "originalSha256": "3e192c2939b93783a0936681e32e94480e23191edc6125ce10b6c1a8581d0884",
+      "publicArchiveSha256": "3e192c2939b93783a0936681e32e94480e23191edc6125ce10b6c1a8581d0884",
+      "bytes": 780,
+      "credentialPatterns": []
+    }
+  ],
+  "exactOriginalBytesRecoverable": true,
+  "boundedCredentialScanPassed": true,
+  "ignoredOriginalLogsPreservedLocally": true
+}

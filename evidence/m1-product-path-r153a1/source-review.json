@@ -1,0 +1,39 @@
+{
+  "kind": "R153A1_INDEPENDENT_SOURCE_REVIEW",
+  "reviewer": "r153_launch_plan",
+  "scope": "fixed supervisor composition and bounded pipe transport; source review only",
+  "result": "NO_REMAINING_BLOCKING_SOURCE_FINDING_IN_REVIEWED_BYTES",
+  "reviewedSha256": {
+    "packages/claw-hermes/gateway_supervised_launch.py": "b05dd16b93e6f77b45b60f513d4781873f214bd9d9399a54e575272faff8e6f4",
+    "packages/claw-hermes/supervised_pipe_capture.py": "b3fe4c30607469ca05d95b7f329970c5093a429c2f952280371ddf4c085a1695",
+    "scripts/run_supervised_retained.py": "208a9f42201e7fe8ff57469d56d604baa0a19a685dccffea871ade43807fed74"
+  },
+  "correctedStaticFindings": [
+    {
+      "finding": "Initial regular-file stdout/stderr violates unchanged close_ambient_fds and only bounds output after exit.",
+      "resolution": "All standard streams are pipes. Nonblocking bounded selector capture retains original process and partial buffers on uncertainty."
+    },
+    {
+      "finding": "Initial completion verifier accepted arbitrary six distinct check names.",
+      "resolution": "Require the exact ordered six NativeStoreStartup checks."
+    },
+    {
+      "finding": "Original worker waits for STOP for 120 seconds, so delayed launch can exhaust worker lifetime.",
+      "resolution": "Conservative monotonic deadline begins before inherited start; requested child timeout and 15-second stop margin must fit before dispatch."
+    }
+  ],
+  "confirmedContracts": [
+    "same inherited lease and durable fence",
+    "pending/unknown child blocks stop and finish",
+    "fixed Python, argv and environment; only known namespace FD passed",
+    "direct parent and worker PID/start identity; namespace descriptor checks",
+    "cgroup registration before mount namespace join",
+    "unchanged projection, identity drop and confinement chain",
+    "no retry, signal, fallback command, new scheduler or owner",
+    "readiness completion explicitly excludes finite work and full D3B"
+  ],
+  "limitations": [
+    "No actual installed candidate or kernel projection was executed.",
+    "Static review does not qualify a retained seed or authorize installation."
+  ]
+}

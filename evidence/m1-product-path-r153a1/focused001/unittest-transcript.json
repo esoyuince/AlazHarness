@@ -1,0 +1,7 @@
+{
+  "encoding": "utf-8",
+  "originalFileName": "focused001/unittest.log",
+  "originalSha256": "6e1d03821f4c53b4727f2137919c3fef07e5c05250a3f705d21348784c46b7e1",
+  "content": "test_enroll_then_join_then_close_known_fd_then_original_launch (test_supervised_retained_launch.ChildSequence.test_enroll_then_join_then_close_known_fd_then_original_launch) ... ",
+  "note": "Incomplete first-run transcript; terminal traceback is in native-receipt.json."
+}

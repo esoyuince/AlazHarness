@@ -1,0 +1,56 @@
+{
+  "kind": "R153A1_PROTECTED_STATE_BEFORE_PUBLICATION",
+  "observedUtc": "2026-10-25T20:19:06.294824+00:00",
+  "repositories": [
+    {
+      "before": {
+        "branch": "alaz/hyb-001-component-slice",
+        "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+        "path": "C:\\Antigravity\\AlazHarness",
+        "status": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+      },
+      "after": {
+        "path": "C:\\Antigravity\\AlazHarness",
+        "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+        "branch": "alaz/hyb-001-component-slice",
+        "status": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "branch": "main",
+        "head": "7abdd57e408ec7972bddeaf267ea180b4cb3673b",
+        "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+        "status": ""
+      },
+      "after": {
+        "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+        "head": "7abdd57e408ec7972bddeaf267ea180b4cb3673b",
+        "branch": "main",
+        "status": ""
+      },
+      "unchanged": true
+    },
+    {
+      "before": {
+        "branch": "alaz/d3b-finite-close-f135c6",
+        "head": "d1516731308de8e87130dc68124e69aad35d6911",
+        "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6",
+        "status": ""
+      },
+      "after": {
+        "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6",
+        "head": "d1516731308de8e87130dc68124e69aad35d6911",
+        "branch": "alaz/d3b-finite-close-f135c6",
+        "status": ""
+      },
+      "unchanged": true
+    }
+  ],
+  "rootChangedFileCount": 33,
+  "rootChangedFilesIdentical": true,
+  "unexpectedModifiedExistingTrackedFiles": [],
+  "newCodeIsAdditive": true,
+  "success": true
+}

@@ -1,0 +1,19 @@
+{
+  "requestId": "3442d44a-8756-4593-af56-ef95173a1531",
+  "state": "completed",
+  "operation": "command/exec",
+  "startedAt": 1792959518269,
+  "completedAt": 1792960015128,
+  "exitCode": 0,
+  "metrics": {
+    "queueMs": 13,
+    "executionMs": 496859,
+    "providerMs": 496844.501,
+    "providerTimingComplete": true,
+    "verificationMs": 0,
+    "verificationTimingComplete": true,
+    "resultBytes": 38
+  },
+  "stdout": "{\r\n  \"kind\": \"R153A1_FULL_STANDARD_REGRESSION\",\r\n  \"startedUtc\": \"2026-10-25T20:18:47.392478+00:00\",\r\n  \"finishedUtc\": \"2026-10-25T20:26:54.525677+00:00\",\r\n  \"durationSeconds\": 487.133,\r\n  \"python\": \"3.14.3\",\r\n  \"platform\": \"win32\",\r\n  \"discovered\": 3690,\r\n  \"testsRun\": 3690,\r\n  \"passed\": 3663,\r\n  \"failures\": [],\r\n  \"errors\": [],\r\n  \"skipped\": 27,\r\n  \"originalSkipRegistryCount\": 23,\r\n  \"newLinuxPipeSkips\": 4,\r\n  \"skipRegistryMatchesExpected\": true,\r\n  \"unexpectedSkipChanges\": [],\r\n  \"sourcesUnchanged\": true,\r\n  \"unitSuiteSuccessful\": true,\r\n  \"success\": true,\r\n  \"logSha256\": \"c0ce43621d88b621276dc5007363eaa0109599d66633db50893c6016a0efeaa4\",\r\n  \"nativeKernelProjectionTested\": false,\r\n  \"currentInstalledCandidateTested\": false,\r\n  \"privilegedOperations\": 0,\r\n  \"realModelCalls\": 0\r\n}\r\n",
+  "stderr": ""
+}

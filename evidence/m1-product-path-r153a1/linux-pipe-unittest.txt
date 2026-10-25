@@ -1,0 +1,9 @@
+test_invalid_bounds_refuse_before_any_pipe_operation (test_supervised_pipe_capture.RealPipeContracts.test_invalid_bounds_refuse_before_any_pipe_operation) ... ok
+test_large_input_and_two_output_pipes_do_not_deadlock (test_supervised_pipe_capture.RealPipeContracts.test_large_input_and_two_output_pipes_do_not_deadlock) ... ok
+test_output_overflow_is_bounded_and_does_not_signal_owned_child (test_supervised_pipe_capture.RealPipeContracts.test_output_overflow_is_bounded_and_does_not_signal_owned_child) ... ok
+test_timeout_then_explicit_read_observation_never_resends (test_supervised_pipe_capture.RealPipeContracts.test_timeout_then_explicit_read_observation_never_resends) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.050s
+
+OK
