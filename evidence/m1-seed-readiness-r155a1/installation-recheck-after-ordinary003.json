@@ -1,0 +1,41 @@
+{
+  "requestId": "246b75db-fe20-4b03-8409-cb5d961b6155",
+  "state": "completed",
+  "exitCode": 0,
+  "stdout": "{\"exitCode\": 0, \"kind\": \"R155A1_READONLY_INSTALLATION_RECHECK_AFTER_ORDINARY003\", \"paths\": {\"/opt/alaz-r154a1\": {\"device\": 2096, \"gid\": 0, \"inode\": 27339, \"mode\": 493, \"sha256\": null, \"uid\": 0}, \"/opt/alaz-r154a1/.alaz-installation.json\": {\"device\": 2096, \"gid\": 0, \"inode\": 29540, \"mode\": 420, \"sha256\": \"137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2\", \"uid\": 0}, \"/usr/bin/python3.12\": {\"device\": 2096, \"gid\": 0, \"inode\": 3825, \"mode\": 493, \"sha256\": \"e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f\", \"uid\": 0}}, \"rootUsed\": false, \"stderr\": \"\", \"stdout\": \"{\\\"archiveSha256\\\": \\\"e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b\\\", \\\"dependencyFileCount\\\": 1162, \\\"dependencyInventorySha256\\\": \\\"1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18\\\", \\\"destination\\\": \\\"/opt/alaz-r154a1\\\", \\\"executionAuthorized\\\": false, \\\"finiteWorkExecuted\\\": false, \\\"harnessCommit\\\": \\\"e03f7fd4e47fea6a58b749564ab350aeb4237a26\\\", \\\"installed\\\": true, \\\"kind\\\": \\\"VERIFIED_PROJECTED_INSTALLATION\\\", \\\"nativeFeature\\\": \\\"d1516731308de8e87130dc68124e69aad35d6911\\\", \\\"projectedReadinessAccepted\\\": false, \\\"python\\\": {\\\"device\\\": 2096, \\\"gid\\\": 0, \\\"inode\\\": 3825, \\\"mode\\\": 493, \\\"path\\\": \\\"/usr/bin/python3.12\\\", \\\"sha256\\\": \\\"e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f\\\", \\\"uid\\\": 0}, \\\"realModelCalls\\\": 0, \\\"receiptSha256\\\": \\\"137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2\\\", \\\"result\\\": \\\"PASS\\\", \\\"rootControlledAncestryVerified\\\": true, \\\"rootDevice\\\": 2096, \\\"rootInode\\\": 27339, \\\"schemaVersion\\\": 1, \\\"sourceAndDependenciesReadBack\\\": true, \\\"sourceFileCount\\\": 834, \\\"sourceManifestSha256\\\": \\\"182b9d0198e4c7f39bd28e194bfe7fc6cfca844ed4a653e9d209b0db8d77eef9\\\", \\\"verifiedInstalledBytesNow\\\": true}\\n\", \"writesPerformed\": false}\n",
+  "stderr": "",
+  "parsed": {
+    "exitCode": 0,
+    "kind": "R155A1_READONLY_INSTALLATION_RECHECK_AFTER_ORDINARY003",
+    "paths": {
+      "/opt/alaz-r154a1": {
+        "device": 2096,
+        "gid": 0,
+        "inode": 27339,
+        "mode": 493,
+        "sha256": null,
+        "uid": 0
+      },
+      "/opt/alaz-r154a1/.alaz-installation.json": {
+        "device": 2096,
+        "gid": 0,
+        "inode": 29540,
+        "mode": 420,
+        "sha256": "137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2",
+        "uid": 0
+      },
+      "/usr/bin/python3.12": {
+        "device": 2096,
+        "gid": 0,
+        "inode": 3825,
+        "mode": 493,
+        "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+        "uid": 0
+      }
+    },
+    "rootUsed": false,
+    "stderr": "",
+    "stdout": "{\"archiveSha256\": \"e036fba503130b3b259ec727439089c8fa3d88408359618fa5c7df77a6b5513b\", \"dependencyFileCount\": 1162, \"dependencyInventorySha256\": \"1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18\", \"destination\": \"/opt/alaz-r154a1\", \"executionAuthorized\": false, \"finiteWorkExecuted\": false, \"harnessCommit\": \"e03f7fd4e47fea6a58b749564ab350aeb4237a26\", \"installed\": true, \"kind\": \"VERIFIED_PROJECTED_INSTALLATION\", \"nativeFeature\": \"d1516731308de8e87130dc68124e69aad35d6911\", \"projectedReadinessAccepted\": false, \"python\": {\"device\": 2096, \"gid\": 0, \"inode\": 3825, \"mode\": 493, \"path\": \"/usr/bin/python3.12\", \"sha256\": \"e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f\", \"uid\": 0}, \"realModelCalls\": 0, \"receiptSha256\": \"137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2\", \"result\": \"PASS\", \"rootControlledAncestryVerified\": true, \"rootDevice\": 2096, \"rootInode\": 27339, \"schemaVersion\": 1, \"sourceAndDependenciesReadBack\": true, \"sourceFileCount\": 834, \"sourceManifestSha256\": \"182b9d0198e4c7f39bd28e194bfe7fc6cfca844ed4a653e9d209b0db8d77eef9\", \"verifiedInstalledBytesNow\": true}\n",
+    "writesPerformed": false
+  }
+}

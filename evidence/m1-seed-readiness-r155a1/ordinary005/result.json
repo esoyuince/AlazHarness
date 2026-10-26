@@ -1,0 +1,48 @@
+{
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "exitCode": 2,
+  "producerSha256": "7f28e0a89fdfc5ccd8d5ae29aaf182d948514a45a96ad19e0390af8674d4f84c",
+  "proof": {
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "controllerPid": 6,
+    "elapsedMillis": 23030,
+    "fullD3BAccepted": false,
+    "kind": "R155A1_ORDINARY_NATIVE_SEED_PROOF",
+    "nativeAccepted": false,
+    "nativeProcessAttempted": true,
+    "partialStatePreserved": true,
+    "path": "/tmp/alaz-r155a1-ordinary005",
+    "phase": "PRODUCER_TERMINAL",
+    "producerExitCode": 2,
+    "producerPid": 7,
+    "producerStderrBase64": "c3RhdGUuZGI6IGxpbmtlZCBTUUxpdGUgMy40NS4xIChpbnRlcnByZXRlciAvdXNyL2Jpbi9weXRob24zLjEyKSBpcyB2dWxuZXJhYmxlIHRvIHRoZSBXQUwtcmVzZXQgY29ycnVwdGlvbiBidWcgKGh0dHBzOi8vc3FsaXRlLm9yZy93YWwuaHRtbCN3YWxyZXNldGJ1Zykg4oCUIHVzaW5nIGpvdXJuYWxfbW9kZT1ERUxFVEUgaW5zdGVhZCBvZiBlbmFibGluZyBXQUwuIFVwZ3JhZGUgdG8gU1FMaXRlIDMuNTEuMysgKG9yIGJhY2twb3J0cyAzLjUwLjcgLyAzLjQ0LjYpOyBIZXJtZXMtbWFuYWdlZCBpbnN0YWxscyBjYW4gcmVwYWlyIHRoZSBlbWJlZGRlZCBydW50aW1lIHdpdGggYGhlcm1lcyB1cGRhdGVgLiBTZWUgYGhlcm1lcyBkb2N0b3JgLiBUaGlzIHdhcm5pbmcgZmlyZXMgb25jZSBwZXIgcHJvY2VzcyBwZXIgZGF0YWJhc2UuCnJ1bnNfaWRlbXBvdGVuY3kuZGI6IGxpbmtlZCBTUUxpdGUgMy40NS4xIChpbnRlcnByZXRlciAvdXNyL2Jpbi9weXRob24zLjEyKSBpcyB2dWxuZXJhYmxlIHRvIHRoZSBXQUwtcmVzZXQgY29ycnVwdGlvbiBidWcgKGh0dHBzOi8vc3FsaXRlLm9yZy93YWwuaHRtbCN3YWxyZXNldGJ1Zykg4oCUIHVzaW5nIGpvdXJuYWxfbW9kZT1ERUxFVEUgaW5zdGVhZCBvZiBlbmFibGluZyBXQUwuIFVwZ3JhZGUgdG8gU1FMaXRlIDMuNTEuMysgKG9yIGJhY2twb3J0cyAzLjUwLjcgLyAzLjQ0LjYpOyBIZXJtZXMtbWFuYWdlZCBpbnN0YWxscyBjYW4gcmVwYWlyIHRoZSBlbWJlZGRlZCBydW50aW1lIHdpdGggYGhlcm1lcyB1cGRhdGVgLiBTZWUgYGhlcm1lcyBkb2N0b3JgLiBUaGlzIHdhcm5pbmcgZmlyZXMgb25jZSBwZXIgcHJvY2VzcyBwZXIgZGF0YWJhc2UuCnJlc3BvbnNlX3N0b3JlLmRiOiBsaW5rZWQgU1FMaXRlIDMuNDUuMSAoaW50ZXJwcmV0ZXIgL3Vzci9iaW4vcHl0aG9uMy4xMikgaXMgdnVsbmVyYWJsZSB0byB0aGUgV0FMLXJlc2V0IGNvcnJ1cHRpb24gYnVnIChodHRwczovL3NxbGl0ZS5vcmcvd2FsLmh0bWwjd2FscmVzZXRidWcpIOKAlCB1c2luZyBqb3VybmFsX21vZGU9REVMRVRFIGluc3RlYWQgb2YgZW5hYmxpbmcgV0FMLiBVcGdyYWRlIHRvIFNRTGl0ZSAzLjUxLjMrIChvciBiYWNrcG9ydHMgMy41MC43IC8gMy40NC42KTsgSGVybWVzLW1hbmFnZWQgaW5zdGFsbHMgY2FuIHJlcGFpciB0aGUgZW1iZWRkZWQgcnVudGltZSB3aXRoIGBoZXJtZXMgdXBkYXRlYC4gU2VlIGBoZXJtZXMgZG9jdG9yYC4gVGhpcyB3YXJuaW5nIGZpcmVzIG9uY2UgcGVyIHByb2Nlc3MgcGVyIGRhdGFiYXNlLgp7ImF1dG9tYXRpY0NsZWFudXAiOmZhbHNlLCJhdXRvbWF0aWNSZXRyeSI6ZmFsc2UsImJvdW5kYXJ5UmVqZWN0aW9ucyI6W3siZXZlbnQiOiJzb2NrZXQuYmluZCIsInBoYXNlIjoiUFJFUEFSRV9DT05TVU1FUiIsInJlYXNvbiI6ImJvb3RzdHJhcF9uZXR3b3JrX29yX3Byb2Nlc3NfZm9yYmlkZGVuIiwic291cmNlcyI6W3siZmlsZSI6ImRlcGVuZGVuY2llcy91cmxsaWIzL3V0aWwvY29ubmVjdGlvbi5weSIsImZ1bmN0aW9uIjoiX2hhc19pcHY2IiwibGluZSI6MTI3fSx7ImZpbGUiOiJkZXBlbmRlbmNpZXMvdXJsbGliMy91dGlsL2Nvbm5lY3Rpb24ucHkiLCJmdW5jdGlvbiI6Ijxtb2R1bGU+IiwibGluZSI6MTM3fV19XSwiZnVsbEQzQkFjY2VwdGVkIjpmYWxzZSwia2luZCI6IlIxNTVBMV9UQVNLX0ZSRUVfUkVUQUlORURfU0VFRCIsIm5hdGl2ZUVmZmVjdHNBdHRlbXB0ZWQiOnRydWUsIm5hdGl2ZVdvcmtBdHRlbXB0cyI6W10sInBhcnRpYWxTdGF0ZVByZXNlcnZlZCI6dHJ1ZSwicGhhc2UiOiJSRUxFQVNFX1BST0ZJTEUiLCJwcm9qZWN0ZWRSZWFkaW5lc3NBY2NlcHRlZCI6ZmFsc2UsInJlYXNvbiI6ImJvb3RzdHJhcF9mb3JiaWRkZW5fZWZmZWN0IiwicmVhc29uVHlwZSI6IkJvb3RzdHJhcFJlamVjdGVkIiwicmVzdWx0IjoiTk9UX0FDQ0VQVEVEIiwic3RhdGUiOiJTRUVEX09VVENPTUVfVU5LTk9XTiIsInRvdGFsTWlsbGlzIjoyMjE2M30K",
+    "producerStderrBytes": 1974,
+    "producerStderrSha256": "550c205d7dc739047532555a1f3020002c62a09b207469149e110b2167ffdfd1",
+    "producerStdoutBase64": "",
+    "producerStdoutBytes": 0,
+    "producerStdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "producerTerminalObserved": true,
+    "projectedReadinessAccepted": false,
+    "reason": "producer_refused_or_failed",
+    "reasonType": "RuntimeError",
+    "result": "NOT_ACCEPTED",
+    "rootUsed": false,
+    "sameImageReadinessAccepted": false,
+    "sourceSha256": "7f28e0a89fdfc5ccd8d5ae29aaf182d948514a45a96ad19e0390af8674d4f84c",
+    "sqliteVersion": "3.45.1",
+    "sqliteVersionInfo": [
+      3,
+      45,
+      1
+    ],
+    "supplementaryGroups": [
+      23003
+    ]
+  },
+  "result": "NOT_ACCEPTED",
+  "rootRequested": false,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdoutSha256": "895a25e2d3ca31045c4337ab559bc782e6f186a0caa325dcc6d299468c220b89"
+}

@@ -1,0 +1,9 @@
+{
+  "attempt": "ordinary002",
+  "lab": "AlazHarness-D3B-P71C",
+  "linuxRunnerSha256": "07f81a979c8644d211ce131a39f8b225580891ba9786575237d3cd976417a803",
+  "producerSha256": "158e43bf2eb40e4925353134744d8ef1fafd5c0f6a784c540468fea0aa66c083",
+  "rootRequested": false,
+  "startedUtc": "2026-10-25T23:37:06.345271+00:00",
+  "state": "EXECUTION_STARTED_NO_REPLAY"
+}

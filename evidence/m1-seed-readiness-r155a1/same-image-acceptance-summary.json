@@ -1,0 +1,249 @@
+{
+  "kind": "R155A1_ACCEPTANCE_EVIDENCE_SUMMARY",
+  "scope": "Derived summary of saved terminal observations; not a new runtime execution",
+  "result": "PASS",
+  "source": "same-image001/result.json",
+  "sourceSha256": "6fb481f97a70d949f3ab080102e1511d8d44d09349aa74906f2219611f10b010",
+  "operation": {
+    "requestId": "e2a42e11-d56e-4bc9-9f72-bc28d2c76155",
+    "state": "completed",
+    "jobState": "completed",
+    "exitCode": 0,
+    "metrics": {
+      "queueMs": 384,
+      "executionMs": 83962,
+      "providerMs": 83918.162,
+      "providerTimingComplete": true,
+      "verificationMs": 0,
+      "verificationTimingComplete": true,
+      "resultBytes": 38
+    }
+  },
+  "state": "SAME_IMAGE_SEED_READINESS_ACCEPTED",
+  "intentSha256": "2b1d4f7eae5ac979a8f3449e230e8be8156d1335bae41b07a91f55b0ad4836a5",
+  "manifestSha256": "2b97bdf8ddd2f3b776311aba16cffce50918c4446989f544aa2668c80238f793",
+  "ordinaryProofSha256": "cb79324e986166d606fcdf345da01a6dcff73c55a477e3db7ea27a6512b70abf",
+  "executionStartSha256": "22b370c932bec332ae64363e046581e953504d423a8e1693900ab0089b08a39f",
+  "hostTransportPid": 83144,
+  "transportTerminalObserved": true,
+  "transportExitCode": 0,
+  "communicationCompletedWithinDeadline": true,
+  "caller": {
+    "pid": 7,
+    "startTicks": 2465,
+    "terminalObserved": true,
+    "exitCode": 0
+  },
+  "image": {
+    "device": 2096,
+    "gid": 0,
+    "inode": 29692,
+    "parent_device": 2096,
+    "parent_inode": 29686,
+    "path": "/srv/alaz-r155a1/images/state.ext4",
+    "size": 67108864,
+    "uid": 0
+  },
+  "worker": {
+    "filesystem": "ext4",
+    "gatewayStarted": false,
+    "loopNumber": 0,
+    "mountNamespace": "mnt:[4026532224]",
+    "pid": 10,
+    "state": "MOUNTED",
+    "token": "4bea5c03aefcbbcf01edf05ba0daab7d"
+  },
+  "loopPath": "/dev/loop0",
+  "seed": {
+    "allThreeConnectionsPhysicallyClosed": true,
+    "apiAdmissionPublished": false,
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "auxiliaryInitialization": {
+      "activeSessionEntries": 0,
+      "blockedIpv6CapabilityProbe": {
+        "bindPerformed": false,
+        "count": 1,
+        "socketClosed": true
+      },
+      "completeToolRegistrationPerformed": false,
+      "sourceDerivedCacheEntries": 130,
+      "sourceDerivedCacheSha256": "339458215115171f7094d43cd51a611edd42c53c1ca568c7eaa823bc1ede38c9"
+    },
+    "coldHelperCalls": [
+      {
+        "phase": "START_OWNER",
+        "script": "run_store_preopen.py"
+      },
+      {
+        "phase": "START_OWNER",
+        "script": "run_response_preopen.py"
+      }
+    ],
+    "completedChecks": [
+      "preflight",
+      "response_preflight",
+      "before_epoch",
+      "response_before_epoch",
+      "after_epoch",
+      "response_after_epoch"
+    ],
+    "consumerState": "DETACHED",
+    "databaseIdentities": [
+      [
+        1792,
+        26
+      ],
+      [
+        1792,
+        30
+      ],
+      [
+        1792,
+        31
+      ]
+    ],
+    "executedTasks": 0,
+    "fullD3BAccepted": false,
+    "gatewayUid": 23001,
+    "handoffSha256": "626af976bae601ec0107e2ebc29613a1b39f3f78345d80df26d34f67bc8eff5d",
+    "harnessCommit": "e03f7fd4e47fea6a58b749564ab350aeb4237a26",
+    "home": "/srv/alaz-r155a1/mount/profile",
+    "installationReceiptSha256": "137cbe59427813b50f8c8581a7dbc3b81db9e514e2e57784cee91baa4cc17ae2",
+    "instanceId": "r155a1-seed",
+    "kind": "R155A1_TASK_FREE_RETAINED_SEED",
+    "listenersCreated": 0,
+    "mount": {
+      "device": [
+        7,
+        0
+      ],
+      "filesystem": "ext4",
+      "mount_id": 167,
+      "mount_point": "/srv/alaz-r155a1/mount",
+      "root": "/"
+    },
+    "mountNamespace": "mnt:[4026532224]",
+    "mountNamespaceInode": 4026532224,
+    "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+    "nativeMillis": 21936,
+    "normalLoopShutdown": true,
+    "outstandingAsyncTasks": 0,
+    "outstandingThreads": 0,
+    "ownerState": "CLOSED",
+    "parentPid": 7,
+    "phase": "COMPLETE",
+    "pid": 11,
+    "previousEpoch": 1,
+    "profileIdentity": [
+      1792,
+      12
+    ],
+    "profileLeaseReleasedNormally": true,
+    "projectedReadinessAccepted": false,
+    "qualifiedNativeSourceCount": 755,
+    "realModelCalls": 0,
+    "resGid": [
+      23003,
+      23003,
+      23003
+    ],
+    "resUid": [
+      23001,
+      23001,
+      23001
+    ],
+    "result": "PASS",
+    "retainedCapturedWhileLeaseHeld": true,
+    "socketGroupGid": 23003,
+    "sqliteOpenCount": 7,
+    "startTicks": 3076,
+    "state": "RETAINED_SEED_CREATED",
+    "supplementaryGroups": [],
+    "totalMillis": 23125,
+    "verificationMillis": 1188
+  },
+  "readiness": {
+    "childExited": true,
+    "childStartTicks": 5507,
+    "finiteWorkExecuted": false,
+    "fullD3BAccepted": false,
+    "inputSha256": "8e67279ab4a76d87655cf9f0d2385dd73e8e434d34e63404d4d640f95c6c3afa",
+    "observedAfterUnknown": false,
+    "owner": {
+      "completedChecks": [
+        "preflight",
+        "response_preflight",
+        "before_epoch",
+        "response_before_epoch",
+        "after_epoch",
+        "response_after_epoch"
+      ],
+      "epoch": 2,
+      "finiteWorkExecuted": false,
+      "fullD3BAccepted": false,
+      "pid": 16,
+      "runtimeAdmissionAuthorized": false,
+      "serviceStarted": false,
+      "state": "PROJECTED_RETAINED_OWNER_CLOSED"
+    },
+    "pid": 16,
+    "state": "SUPERVISED_PROJECTED_OWNER_CLOSED",
+    "stderrBytes": 1265,
+    "stderrSha256": "6835531560cfb3b3e7d8ebd1bad0e8cfd3e1710408cac85f9a1814b00133916c",
+    "stdoutSha256": "c293dd1904fb1123661818821e63355989fef5eee3a8eb494d44718cad2a78f3",
+    "volumeMayClose": true
+  },
+  "closure": {
+    "finish": {
+      "fenceRemovedAfterCleanup": true,
+      "fullD3BAccepted": false,
+      "leaseReleasedLast": true,
+      "loopAttachmentGone": true,
+      "ownedUsersGone": true,
+      "realHermesGatewayTested": false,
+      "state": "CLOSED"
+    },
+    "stop": {
+      "pid": 10,
+      "state": "UNMOUNTED",
+      "token": "4bea5c03aefcbbcf01edf05ba0daab7d"
+    }
+  },
+  "events": [
+    "PROVISION_FRESH_PATHS",
+    "FORMAT_FRESH_IMAGE",
+    "START_METADATA_SOCKET_FIXTURE",
+    "BEGIN_ORIGINAL_SUPERVISOR",
+    "ATTACH_ORIGINAL_SUPERVISOR",
+    "START_ORIGINAL_WORKER",
+    "SEED_ATTEMPT",
+    "SEED_COMPLETED",
+    "PROJECTED_READINESS_ATTEMPT",
+    "PROJECTED_READINESS_COMPLETED",
+    "NORMAL_STOP",
+    "NORMAL_FINISH",
+    "VOLUME_CLOSED",
+    "VERIFY_NORMAL_CLOSE",
+    "COMPLETE"
+  ],
+  "volumeStage": "CLOSED",
+  "originalRetainedVolumes": [],
+  "allOwnedChildrenTerminal": true,
+  "hostMountNamespaceUnchanged": true,
+  "hostMountTableUnchanged": true,
+  "sameImageSeedAndReadiness": true,
+  "sameOriginalSupervisor": true,
+  "projectedReadinessAccepted": true,
+  "executedTasks": 0,
+  "realModelCalls": 0,
+  "realBrokerExchangeAccepted": false,
+  "serviceStarted": false,
+  "runtimeAdmissionAuthorized": false,
+  "finiteWorkExecuted": false,
+  "fullD3BAccepted": false,
+  "m1Accepted": false,
+  "productionReady": false,
+  "automaticCleanup": false,
+  "automaticRetry": false
+}

@@ -1,0 +1,114 @@
+{
+  "requestId": "7adc5ca2-5c48-402d-8c81-9233a2fd6155",
+  "state": "completed",
+  "exitCode": 0,
+  "readback": {
+    "executionStarted": false,
+    "files": {
+      "intent.json": {
+        "sha256": "2b1d4f7eae5ac979a8f3449e230e8be8156d1335bae41b07a91f55b0ad4836a5",
+        "value": {
+          "baseCommit": "27eb7571211ba0b685d7893d149438d612f6e2cd",
+          "bundleBytes": 104123,
+          "bundleSha256": "7242482096d7a5f80677b94207b36dc66c30bfe244b5fcc2b93a0d35e9225268",
+          "hostRunnerSha256": "113ec74d47509cefc875a19dfa8b34b465db864ead3edd04c40b3d9d7e9fc4ef",
+          "inputRoot": "/opt/alaz-r155a1-input",
+          "kind": "R155A1_SAME_IMAGE_ACCEPT_INTENT",
+          "lab": "AlazHarness-D3B-P71C",
+          "manifestSha256": "2b97bdf8ddd2f3b776311aba16cffce50918c4446989f544aa2668c80238f793",
+          "ordinaryProducerSha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+          "ordinaryProofSha256": "cb79324e986166d606fcdf345da01a6dcff73c55a477e3db7ea27a6512b70abf",
+          "sourceFiles": {
+            "scripts/bootstrap_retained_profile.py": {
+              "sha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+              "size": 35385
+            },
+            "scripts/qa/r155a1_linux_accept.py": {
+              "sha256": "cc80c882fc0ada181afe86f4151e8296db13c2cd922937aa3189be9f5b71933d",
+              "size": 36760
+            },
+            "scripts/qa/r155a1_seed_child.py": {
+              "sha256": "fe598ba4e09e10b534d4f74de2d16246228e770eb00fd273d92c40ccf665cb12",
+              "size": 30995
+            }
+          },
+          "stateRoot": "/srv/alaz-r155a1",
+          "transportSha256": "a08345f8eaa6fe179d973d28159949d5d405c4996f60ecc79bd1bc041d4119a6"
+        }
+      },
+      "manifest.json": {
+        "sha256": "2b97bdf8ddd2f3b776311aba16cffce50918c4446989f544aa2668c80238f793",
+        "value": {
+          "files": {
+            "scripts/bootstrap_retained_profile.py": {
+              "sha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+              "size": 35385
+            },
+            "scripts/qa/r155a1_linux_accept.py": {
+              "sha256": "cc80c882fc0ada181afe86f4151e8296db13c2cd922937aa3189be9f5b71933d",
+              "size": 36760
+            },
+            "scripts/qa/r155a1_seed_child.py": {
+              "sha256": "fe598ba4e09e10b534d4f74de2d16246228e770eb00fd273d92c40ccf665cb12",
+              "size": 30995
+            }
+          },
+          "protocol": "alaz-r155a1-input-v1"
+        }
+      },
+      "ordinary-proof.json": {
+        "sha256": "cb79324e986166d606fcdf345da01a6dcff73c55a477e3db7ea27a6512b70abf",
+        "value": {
+          "files": {
+            "execution-start.json": {
+              "sha256": "838d2b63a86fdee8d8274d9b8a3a2f1f2be60db8f6ffa49a58e8ccc005011b81",
+              "size": 363
+            },
+            "linux-runner.py": {
+              "sha256": "ba570957d87dbb9020fc1091450cf33f5cc019075165686bb3cef361c6a0c12d",
+              "size": 7397
+            },
+            "producer-source.py": {
+              "sha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+              "size": 35385
+            },
+            "result.json": {
+              "sha256": "49afc18aca1d4393925cef39e00a3a0195a0333ca3a7d510b2af0c172256541c",
+              "size": 11743
+            },
+            "stderr.txt": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "size": 0
+            },
+            "stdout.txt": {
+              "sha256": "306d7d292ce9a64e7c729f781e7981723ec3b7cc5fc754dc9155a3054cce8557",
+              "size": 10147
+            }
+          },
+          "kind": "R155A1_ORDINARY_PROOF_BINDING",
+          "ordinaryDirectory": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-seed-readiness-r155a1\\evidence\\m1-seed-readiness-r155a1\\ordinary007",
+          "ordinaryDriver": {
+            "sha256": "b06ffe888e75406721da111c6e8d58941a2b01004bf0b544981195a364769e6f",
+            "size": 11338
+          }
+        }
+      },
+      "prepared.json": {
+        "sha256": "fbb298b861dc96d5fbb7d8e4520d500303197d00db06fe6b885e806a717dcb1b",
+        "value": {
+          "automaticCleanup": false,
+          "automaticRetry": false,
+          "baseCommit": "27eb7571211ba0b685d7893d149438d612f6e2cd",
+          "intentSha256": "2b1d4f7eae5ac979a8f3449e230e8be8156d1335bae41b07a91f55b0ad4836a5",
+          "kind": "R155A1_HOST_PREPARATION",
+          "ordinaryProofSha256": "cb79324e986166d606fcdf345da01a6dcff73c55a477e3db7ea27a6512b70abf",
+          "ordinaryResultSha256": "49afc18aca1d4393925cef39e00a3a0195a0333ca3a7d510b2af0c172256541c",
+          "producerSha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+          "result": "PREPARED",
+          "rootRequested": false
+        }
+      }
+    },
+    "kind": "R155A1_PRE_ROOT_FROZEN_READBACK"
+  }
+}

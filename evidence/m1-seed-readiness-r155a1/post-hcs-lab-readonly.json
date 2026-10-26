@@ -1,0 +1,14 @@
+{
+  "requestId": "16690ee5-5fa7-44f2-9541-ac7072306155",
+  "state": "completed",
+  "exitCode": 0,
+  "observation": {
+    "elapsedMillis": 30952,
+    "exitCode": 0,
+    "kind": "R155A1_POST_HCS_READONLY_CARRIER",
+    "pid": 67644,
+    "stderrBase64": "",
+    "stdout": "{\"kind\": \"R155A1_READONLY_LAB_AFTER_HCS_TIMEOUT\", \"nativeImportsAttempted\": false, \"ordinary006Exists\": false, \"pid\": 6, \"rootPaths\": {\"/opt/alaz-r155a1-input\": false, \"/srv/alaz-r155a1\": false, \"/sys/fs/cgroup/alaz-r155a1\": false, \"/tmp/alaz-ipc-r155a1\": false}, \"rootUsed\": false, \"uid\": 23001, \"userNamespace\": \"user:[4026531837]\", \"writesPerformed\": false}\n",
+    "stdoutBase64": "eyJraW5kIjogIlIxNTVBMV9SRUFET05MWV9MQUJfQUZURVJfSENTX1RJTUVPVVQiLCAibmF0aXZlSW1wb3J0c0F0dGVtcHRlZCI6IGZhbHNlLCAib3JkaW5hcnkwMDZFeGlzdHMiOiBmYWxzZSwgInBpZCI6IDYsICJyb290UGF0aHMiOiB7Ii9vcHQvYWxhei1yMTU1YTEtaW5wdXQiOiBmYWxzZSwgIi9zcnYvYWxhei1yMTU1YTEiOiBmYWxzZSwgIi9zeXMvZnMvY2dyb3VwL2FsYXotcjE1NWExIjogZmFsc2UsICIvdG1wL2FsYXotaXBjLXIxNTVhMSI6IGZhbHNlfSwgInJvb3RVc2VkIjogZmFsc2UsICJ1aWQiOiAyMzAwMSwgInVzZXJOYW1lc3BhY2UiOiAidXNlcjpbNDAyNjUzMTgzN10iLCAid3JpdGVzUGVyZm9ybWVkIjogZmFsc2V9Cg=="
+  }
+}

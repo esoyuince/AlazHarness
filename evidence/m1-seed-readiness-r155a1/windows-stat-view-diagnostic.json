@@ -1,0 +1,50 @@
+{
+  "requestId": "20fb809a-b09b-4759-bdb2-4b7db8706155",
+  "state": "completed",
+  "exitCode": 0,
+  "observation": {
+    "after": {
+      "st_birthtime_ns": 1792972916311530200,
+      "st_ctime_ns": 1792972916312033500,
+      "st_dev": 4648881605658881000,
+      "st_ino": 2533274806819963,
+      "st_mode": 33206,
+      "st_mtime_ns": 1792972916312033500,
+      "st_nlink": 1,
+      "st_size": 39427
+    },
+    "before": {
+      "st_birthtime_ns": 1792972916311530200,
+      "st_ctime_ns": 1792972916311530200,
+      "st_dev": 4648881605658881000,
+      "st_ino": 2533274806819963,
+      "st_mode": 33206,
+      "st_mtime_ns": 1792972916312033500,
+      "st_nlink": 1,
+      "st_size": 39427
+    },
+    "kind": "R155A1_READONLY_WINDOWS_FILE_STAT",
+    "last": {
+      "st_birthtime_ns": 1792972916311530200,
+      "st_ctime_ns": 1792972916311530200,
+      "st_dev": 4648881605658881000,
+      "st_ino": 2533274806819963,
+      "st_mode": 33206,
+      "st_mtime_ns": 1792972916312033500,
+      "st_nlink": 1,
+      "st_size": 39427
+    },
+    "opened": {
+      "st_birthtime_ns": 1792972916311530200,
+      "st_ctime_ns": 1792972916312033500,
+      "st_dev": 4648881605658881000,
+      "st_ino": 2533274806819963,
+      "st_mode": 33206,
+      "st_mtime_ns": 1792972916312033500,
+      "st_nlink": 1,
+      "st_size": 39427
+    },
+    "path": "scripts\\qa\\r155a1_accept.py",
+    "sha256": "a1a6263d1a2eae9a67f84176105bfabe99bd0d0666b0167e1feb1b104444f306"
+  }
+}

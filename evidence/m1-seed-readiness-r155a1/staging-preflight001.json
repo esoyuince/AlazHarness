@@ -1,0 +1,12 @@
+{
+  "correction": "Explicitly force-add only these two named evidence transcripts; existing ignore rules unchanged",
+  "effect": "No stage or file write occurred before the assertion",
+  "exitCode": 1,
+  "files": [
+    "evidence/m1-seed-readiness-r155a1/focused-windows001/unittest.log",
+    "evidence/m1-seed-readiness-r155a1/focused-windows002/unittest.log"
+  ],
+  "kind": "R155A1_STAGING_PREFLIGHT_CORRECTION",
+  "reason": "Two owned UTF-8 unittest.log evidence files are ignored by the existing log rule",
+  "requestId": "0c419fb9-8c22-432b-b64d-40817df46155"
+}

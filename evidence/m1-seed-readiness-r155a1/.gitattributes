@@ -1,0 +1,6 @@
+# Preserve captured receipt and frozen-input byte hashes across checkouts.
+* -text
+
+# These original Windows captures have CRLF; keep the usual whitespace checks.
+environment-readonly001/result.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+static001/stdout.txt whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

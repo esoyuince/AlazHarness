@@ -1,0 +1,11 @@
+{
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "exitCode": 4294967295,
+  "producerSha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+  "reason": "invalid_linux_report",
+  "result": "NOT_ACCEPTED",
+  "rootRequested": false,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdoutSha256": "252a88e9f53ca956c95bbb539b26a45d8ff60fe0bba215ec63fd969b1af93dbb"
+}

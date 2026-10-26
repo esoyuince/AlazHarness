@@ -1,0 +1,11 @@
+{
+  "kind": "R155A1_EXACT_RAW_STDOUT_CAPTURE",
+  "encoding": "utf-16-le",
+  "rawSha256": "252a88e9f53ca956c95bbb539b26a45d8ff60fe0bba215ec63fd969b1af93dbb",
+  "rawBytes": 322,
+  "base64": "UwBhAG4AYQBsACAAbQBhAGsAaQBuAGUAIAB2AGUAeQBhACAAawBhAHAAcwBhAHkAMQFjADEBZABhAG4AIABiAGkAcgAgAHkAYQBuADEBdAAgAGEAbAAxAW4AYQBtAGEAZAAxAR8BMQEgAGkA5wBpAG4AIABpAF8BbABlAG0AIAB6AGEAbQBhAG4AIABhAF8BMQFtADEBbgBhACAAdQAfAXIAYQBkADEBLgAgAA0ACgBIAGEAdABhACAAawBvAGQAdQA6ACAAVwBzAGwALwBTAGUAcgB2AGkAYwBlAC8AQwByAGUAYQB0AGUASQBuAHMAdABhAG4AYwBlAC8AQwByAGUAYQB0AGUAVgBtAC8ASABDAFMAXwBFAF8AQwBPAE4ATgBFAEMAVABJAE8ATgBfAFQASQBNAEUATwBVAFQADQAKAA==",
+  "decoded": "Sanal makine veya kapsay\u0131c\u0131dan bir yan\u0131t al\u0131namad\u0131\u011f\u0131 i\u00e7in i\u015flem zaman a\u015f\u0131m\u0131na u\u011frad\u0131. \r\nHata kodu: Wsl/Service/CreateInstance/CreateVm/HCS_E_CONNECTION_TIMEOUT\r\n",
+  "originalFile": "stdout.txt",
+  "preservedRawPath": "scratch/r155a1/raw/ordinary006-stdout-utf16le.bin",
+  "representation": "Raw UTF-16LE is preserved as base64 for the repository text-only gate; original bytes moved to ignored scratch after readback."
+}

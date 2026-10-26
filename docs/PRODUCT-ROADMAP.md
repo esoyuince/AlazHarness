@@ -19,7 +19,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
-| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R154. Güncel kaynak/bağımlılık kurulumu ve bağımsız doğrulama PASS; aynı imajda projected readiness ve gerçek iş kabulü açık. |
+| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R155. Güncel kurulum, aynı supervised imajda gerçek seed, projected readiness ve sıralı kapanış PASS; normal/hata, replay/yeni iş ve finite görev kabulü açık. |
 | P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | OPEN; kontrollü model/broker altyapısı mevcut. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
@@ -45,8 +45,10 @@ değildir. Gerçek sağlayıcı/maliyet deneyi seçilmiş model ve açık bütç
    bırakma, mount kaldırma, reset veya otomatik retry yok.
 
 R152 yalnız sıradan kullanıcı altında gerçek Landlock + retained yaşam döngüsünü
-kabul etti. Güncel ürün launch/receive/target ve privileged supervisor bununla
-kabul edilmiş değildir. L145 hedefi şu an yalnız readiness yapar.
+kabul etti; bu eski sonuç tek başına ürün supervisor kabulü değildi. R155'te aynı
+özgün supervisor ve ext4 imajında gerçek seed, sabit ürün çocuğu üzerinden
+projected readiness ve normal kapanış ayrıca kabul edildi. L145 hedefi hâlâ
+yalnız readiness yapar; gerçek finite görev bağlantısı ve kabulü açık.
 
 ## M2 sonraki aşama
 
@@ -90,3 +92,26 @@ supervisor üzerinden olumlu projected readiness ve sıralı kapanışı kabul e
 ardından normal/hata, replay/yeni iş ve finite görev akışını bağlamak hâlâ açık.
 Bu teslimatta native uygulama veya model çalıştırılmadı; P1, M1 ve prod kabulü
 henüz tamamlanmadı. Ayrıntı ve kanıtlar: [R154A1](M1-INSTALL-READINESS-R154A1.md).
+
+## P1 / R155A1 teslimatı
+
+Aynı kurulumdaki özgün native yaşam döngüsü, ordinary007 ile sıradan kullanıcı
+altında doğrulandı. Ardından yeni 64 MiB ext4 imajında, özgün VolumeSupervisor
+içinde gerçek başlangıç profili üretildi (epoch 1). Sabit ürün çocuğu aynı profil
+ve veritabanı kimlikleriyle projected readiness'i tamamladı (epoch 2); her iki
+aşamada altı özgün başlangıç kontrolü geçti. Başka profilden state kopyalanmadı.
+
+Özgün stop/finish sırası başarıyla kapandı: bütün sahip olunan çocuk süreçler
+sonlandı, loop bağlantısı kaldırıldı, volume fence temizlikten sonra silindi ve
+imaj lease'i en son bırakıldı. Host mount namespace'i ve mount tablosu değişmedi.
+Saklanan imajın ve çalışma dosyalarının tümünün silindiği iddia edilmez.
+
+Windows'taki seçilmiş 120 testin 113'ü geçti, yedisi platform gereği atlandı;
+bu sayım gerçek native kabul ve son commit CI sonucundan ayrıdır. Bu teslimatta
+gerçek görev/model çağrısı sıfırdır; metadata socket fixture gerçek broker
+alışverişi, servis başlangıcı veya API admission kabulü değildir.
+
+P1'in aynı imajda seed/readiness/sıralı kapanış alt adımı tamamlandı. Sıradaki
+iş, aynı kabul edilmiş girişten finite native görevi bağlamak; normal/hata,
+replay/yeni iş ve sıralı kapanışı tek kurulumda kabul etmek. P1 bütünü, P2-P5,
+M1 ve prod açık. Rapor ve kanıtlar: [R155A1](M1-SEED-READINESS-R155A1.md).

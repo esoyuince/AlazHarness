@@ -1,0 +1,63 @@
+{
+  "discoveredByFile": {
+    "test_retained_bootstrap.py": 29,
+    "test_seed_child.py": 29,
+    "test_seed_readiness_caller.py": 24,
+    "test_seed_readiness_runner.py": 28,
+    "test_seed_readiness_transport.py": 10
+  },
+  "elapsedMillis": 29226,
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "kind": "R155A1_PRIMARY_WINDOWS_FOCUSED_TESTS",
+  "logSha256": "02f216cfd032b2d031b68fcb43ee690cd00ace685f376db482ed0637017e82eb",
+  "platform": "win32",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "result": "PASS",
+  "scope": "Owned fixtures; includes real finite Windows stdio child; no WSL/native application/root/model/runtime acceptance",
+  "skipped": [
+    {
+      "reason": "Owned POSIX symlink fixture",
+      "test": "test_profile_mutation_refuses_symlink_escape (test_retained_bootstrap.AuditContractTests.test_profile_mutation_refuses_symlink_escape)"
+    },
+    {
+      "reason": "Owned POSIX symlink fixture",
+      "test": "test_discovery_symlink_is_refused_even_with_matching_content (test_retained_bootstrap.OwnedFilesystemTests.test_discovery_symlink_is_refused_even_with_matching_content)"
+    },
+    {
+      "reason": "Linux fd and permission contract",
+      "test": "test_fresh_home_is_observed_not_created_or_reused (test_retained_bootstrap.OwnedFilesystemTests.test_fresh_home_is_observed_not_created_or_reused)"
+    },
+    {
+      "reason": "Linux fd and permission contract",
+      "test": "test_home_wrong_mode_or_symlink_is_refused (test_retained_bootstrap.OwnedFilesystemTests.test_home_wrong_mode_or_symlink_is_refused)"
+    },
+    {
+      "reason": "Linux selectable pipe contract",
+      "test": "test_eof_is_complete_even_when_caller_remains_live (test_seed_readiness_transport.PipeCollectionTests.test_eof_is_complete_even_when_caller_remains_live)"
+    },
+    {
+      "reason": "Linux selectable pipe contract",
+      "test": "test_overflow_is_bounded_and_does_not_wait_or_mark_complete (test_seed_readiness_transport.PipeCollectionTests.test_overflow_is_bounded_and_does_not_wait_or_mark_complete)"
+    },
+    {
+      "reason": "Linux selectable pipe contract",
+      "test": "test_timeout_preserves_unknown_without_wait (test_seed_readiness_transport.PipeCollectionTests.test_timeout_preserves_unknown_without_wait)"
+    }
+  ],
+  "sourceSha256": {
+    "scripts/bootstrap_retained_profile.py": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+    "scripts/qa/r155a1_accept.py": "113ec74d47509cefc875a19dfa8b34b465db864ead3edd04c40b3d9d7e9fc4ef",
+    "scripts/qa/r155a1_linux_accept.py": "cc80c882fc0ada181afe86f4151e8296db13c2cd922937aa3189be9f5b71933d",
+    "scripts/qa/r155a1_linux_transport.py": "a08345f8eaa6fe179d973d28159949d5d405c4996f60ecc79bd1bc041d4119a6",
+    "scripts/qa/r155a1_ordinary_seed.py": "b06ffe888e75406721da111c6e8d58941a2b01004bf0b544981195a364769e6f",
+    "scripts/qa/r155a1_seed_child.py": "fe598ba4e09e10b534d4f74de2d16246228e770eb00fd273d92c40ccf665cb12",
+    "tests/test_retained_bootstrap.py": "8d03e7e4f6df13e6a1e2398af97dc989572da0f7145cfdb53a7edea5b60f2dc8",
+    "tests/test_seed_child.py": "d50e044d382f4ab351417b950af41289bc92109913956c07bc1337521e725050",
+    "tests/test_seed_readiness_caller.py": "54ddc6e3ddce55ca4540887b3a600635244e56e29dbe1ce671ca1429686c4394",
+    "tests/test_seed_readiness_runner.py": "e15a4b2b7506e91d47a2ab17c72aa34c3826561a27b6d47784fc4cf247868633",
+    "tests/test_seed_readiness_transport.py": "5b997703cb5716b54826fd28a1c707ce7422701c9c9d3a42e94a06ac1722fe9e"
+  },
+  "testsRun": 120
+}

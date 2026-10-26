@@ -1,0 +1,53 @@
+{
+  "receiptVersion": 2,
+  "revision": 3,
+  "sessionId": "f1f7f0a1-c13b-4023-87e5-31e230228762",
+  "operation": "command/exec",
+  "jobState": "failed",
+  "effect": "unknown",
+  "phase": "provider",
+  "verification": "not_configured",
+  "acceptedAt": 1792972112154,
+  "startedAt": 1792972112243,
+  "deadlineAt": 1792972157154,
+  "cancellation": {
+    "reason": "deadline",
+    "acknowledgement": "provider_completed"
+  },
+  "completedAt": 1792972157258,
+  "metrics": {
+    "queueMs": 89,
+    "executionMs": 45015,
+    "providerMs": 44957.709,
+    "providerTimingComplete": true,
+    "verificationMs": 0,
+    "verificationTimingComplete": true
+  },
+  "nextPollMs": 0,
+  "errorCode": "DEADLINE_EXCEEDED",
+  "outputSummary": {
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "captureEnabled": true,
+    "detailsTool": "native_tool_result",
+    "retention": {
+      "perStream": 8388608,
+      "perOwner": 67108864,
+      "global": 268435456
+    }
+  },
+  "requestId": "811f31b2-a26b-41be-a53e-6b42a1416155",
+  "state": "failed",
+  "processId": "c104d758-9f9c-4497-a1a6-e59c28aec30e",
+  "result": {
+    "exitCode": 124,
+    "stdout": "",
+    "stderr": ""
+  },
+  "error": "Operation timed out: deadline exceeded; inspect cancellation acknowledgement and effects before continuing",
+  "outcome": "unknown",
+  "stdout": "",
+  "stderr": "",
+  "truncated": false,
+  "error_code": "INVALID_ARGUMENT"
+}

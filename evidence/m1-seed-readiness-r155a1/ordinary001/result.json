@@ -1,0 +1,48 @@
+{
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "exitCode": 2,
+  "producerSha256": "113139e0fa3a345a0f833eb36e26964f42b88c9528126290dc5ebca3bbded798",
+  "proof": {
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "controllerPid": 6,
+    "elapsedMillis": 8225,
+    "fullD3BAccepted": false,
+    "kind": "R155A1_ORDINARY_NATIVE_SEED_PROOF",
+    "nativeAccepted": false,
+    "nativeProcessAttempted": true,
+    "partialStatePreserved": true,
+    "path": "/tmp/alaz-r155a1-ordinary001",
+    "phase": "PRODUCER_TERMINAL",
+    "producerExitCode": 2,
+    "producerPid": 7,
+    "producerStderrBase64": "eyJhdXRvbWF0aWNDbGVhbnVwIjpmYWxzZSwiYXV0b21hdGljUmV0cnkiOmZhbHNlLCJmdWxsRDNCQWNjZXB0ZWQiOmZhbHNlLCJraW5kIjoiUjE1NUExX1RBU0tfRlJFRV9SRVRBSU5FRF9TRUVEIiwibmF0aXZlRWZmZWN0c0F0dGVtcHRlZCI6dHJ1ZSwicGFydGlhbFN0YXRlUHJlc2VydmVkIjp0cnVlLCJwaGFzZSI6Ik5BVElWRV9JTVBPUlRTIiwicHJvamVjdGVkUmVhZGluZXNzQWNjZXB0ZWQiOmZhbHNlLCJyZWFzb24iOiJib290c3RyYXBfaG9tZV9ub3RfZW1wdHkiLCJyZWFzb25UeXBlIjoiQm9vdHN0cmFwUmVqZWN0ZWQiLCJyZXN1bHQiOiJOT1RfQUNDRVBURUQiLCJzdGF0ZSI6IlNFRURfT1VUQ09NRV9VTktOT1dOIiwidG90YWxNaWxsaXMiOjgwMjZ9CkV4Y2VwdGlvbiBpZ25vcmVkIGluOiA8ZnVuY3Rpb24gX3JlbW92ZUhhbmRsZXJSZWYgYXQgMHg3MDc3ZGUyYTUxYzA+ClRyYWNlYmFjayAobW9zdCByZWNlbnQgY2FsbCBsYXN0KToKICBGaWxlICIvdXNyL2xpYi9weXRob24zLjEyL2xvZ2dpbmcvX19pbml0X18ucHkiLCBsaW5lIDg3NCwgaW4gX3JlbW92ZUhhbmRsZXJSZWYKICBGaWxlICIvdG1wL2FsYXotcjE1NWExLW9yZGluYXJ5MDAxL2Jvb3RzdHJhcF9yZXRhaW5lZF9wcm9maWxlLnB5IiwgbGluZSAyNjEsIGluIHByb2ZpbGUKVHlwZUVycm9yOiB1bnN1cHBvcnRlZCBvcGVyYW5kIHR5cGUocykgZm9yIC86ICdQb3NpeFBhdGgnIGFuZCAnc3RyJwo=",
+    "producerStderrBytes": 719,
+    "producerStderrSha256": "cfd0db2e62c6cea4328438c9d20c6613440441b33717ad238263952caba6442d",
+    "producerStdoutBase64": "",
+    "producerStdoutBytes": 0,
+    "producerStdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "producerTerminalObserved": true,
+    "projectedReadinessAccepted": false,
+    "reason": "producer_refused_or_failed",
+    "reasonType": "RuntimeError",
+    "result": "NOT_ACCEPTED",
+    "rootUsed": false,
+    "sameImageReadinessAccepted": false,
+    "sourceSha256": "113139e0fa3a345a0f833eb36e26964f42b88c9528126290dc5ebca3bbded798",
+    "sqliteVersion": "3.45.1",
+    "sqliteVersionInfo": [
+      3,
+      45,
+      1
+    ],
+    "supplementaryGroups": [
+      23003
+    ]
+  },
+  "result": "NOT_ACCEPTED",
+  "rootRequested": false,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdoutSha256": "366bb9119611ca47abcb53413263ebcfb29c0b77350c945c58b58d51aa775306"
+}

@@ -1,0 +1,60 @@
+{
+  "kind": "R155A1_INDEPENDENT_CLOSURE_REVIEWS",
+  "sameImageReceipt": {
+    "result": "PASS",
+    "reviewer": "r155_closure_review",
+    "readRequestId": "4113a4d2-5294-458b-a025-ed6a0d6a6155",
+    "sourceResultSha256": "6fb481f97a70d949f3ab080102e1511d8d44d09349aa74906f2219611f10b010",
+    "checks": [
+      "Terminal and saved JSON equality",
+      "Six full-file record hashes and cross-record bindings",
+      "Raw caller and four child frames: base64, byte count, digest and decoded object",
+      "Controller, worker, seed, readiness, namespace, loop and retained identities",
+      "Epoch 1 then 2, six checks, original normal-close flags and event order",
+      "Reviewed local host/caller/child/transport hashes equal frozen intent"
+    ],
+    "scopeLimits": [
+      "No independent additional raw ZIP read completed",
+      "No runtime replay or primary mutation",
+      "Finite work, real broker/service/admission, full D3B, M1 and production not accepted"
+    ]
+  },
+  "staticEvidence": {
+    "result": "PASS",
+    "reviewer": "r155_seed_review",
+    "requestId": "e5e32227-5ef4-4a4f-8d6b-c5b311a0c0b3",
+    "exitCode": 0,
+    "filesInspected": 84,
+    "jsonFilesParsed": 35,
+    "allFilesUtf8": true,
+    "noNulBytes": true,
+    "allFilesWithinTwoMiB": true,
+    "largestFile": "same-image001/bundle.zip.b64",
+    "largestFileBytes": 138833,
+    "issues": [],
+    "scopeLimits": [
+      "Snapshot before later closure metadata",
+      "Current 11 source file rehash delegated to root staging gate",
+      "No independent decoded ZIP/raw006 check claimed"
+    ]
+  },
+  "rootSourceReadback": {
+    "result": "PASS",
+    "requestId": "ef6cf7ab-1b61-4878-9ace-d97628be6155",
+    "exitCode": 0,
+    "sourceSha256": {
+      "scripts/bootstrap_retained_profile.py": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01",
+      "scripts/qa/r155a1_accept.py": "113ec74d47509cefc875a19dfa8b34b465db864ead3edd04c40b3d9d7e9fc4ef",
+      "scripts/qa/r155a1_linux_accept.py": "cc80c882fc0ada181afe86f4151e8296db13c2cd922937aa3189be9f5b71933d",
+      "scripts/qa/r155a1_linux_transport.py": "a08345f8eaa6fe179d973d28159949d5d405c4996f60ecc79bd1bc041d4119a6",
+      "scripts/qa/r155a1_ordinary_seed.py": "b06ffe888e75406721da111c6e8d58941a2b01004bf0b544981195a364769e6f",
+      "scripts/qa/r155a1_seed_child.py": "fe598ba4e09e10b534d4f74de2d16246228e770eb00fd273d92c40ccf665cb12",
+      "tests/test_retained_bootstrap.py": "8d03e7e4f6df13e6a1e2398af97dc989572da0f7145cfdb53a7edea5b60f2dc8",
+      "tests/test_seed_child.py": "d50e044d382f4ab351417b950af41289bc92109913956c07bc1337521e725050",
+      "tests/test_seed_readiness_caller.py": "54ddc6e3ddce55ca4540887b3a600635244e56e29dbe1ce671ca1429686c4394",
+      "tests/test_seed_readiness_runner.py": "e15a4b2b7506e91d47a2ab17c72aa34c3826561a27b6d47784fc4cf247868633",
+      "tests/test_seed_readiness_transport.py": "5b997703cb5716b54826fd28a1c707ce7422701c9c9d3a42e94a06ac1722fe9e"
+    },
+    "scope": "All 11 current source/test bytes equal accepted focused-windows002 source map"
+  }
+}

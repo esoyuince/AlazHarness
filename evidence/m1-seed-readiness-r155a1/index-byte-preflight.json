@@ -1,0 +1,15 @@
+{
+  "evidenceAttributesExist": false,
+  "globalAttributes": "* text=auto\n*.md text eol=lf\n*.json text eol=lf\n*.py text eol=lf\n*.ps1 text eol=lf\n*.ts text eol=lf\n*.mjs text eol=lf\npackages/upstream/**/LICENSE text eol=lf\nevidence/hyb-http/*.txt text eol=lf\n\n# Preserve required blank-context markers in this historical unified diff.\n# No whitespace-check exception applies to product code.\nevidence/hyb-005b-qa3156/c01-memory-only-proposal.patch whitespace=-blank-at-eol\n\n# Match the exact Windows probe bytes recorded by historical native receipts.\nscripts/qa/windows_appcontainer_probe.cs text eol=crlf\n",
+  "kind": "R155A1_INDEX_BYTE_PREFLIGHT",
+  "mismatches": [
+    {
+      "indexedBytes": 3587,
+      "indexedSha256": "b8a2c537ba0b5f31a1597ffe4c7c9321b1baa6673ab1896b5082958f460af87a",
+      "path": "evidence/m1-seed-readiness-r155a1/environment-readonly001/result.json",
+      "workingBytes": 3703,
+      "workingSha256": "7b9995748a0a9538e8e5e652e7f6edaf9440c0d2b5fd371ad47b1127e9edc728"
+    }
+  ],
+  "pathsChecked": 110
+}

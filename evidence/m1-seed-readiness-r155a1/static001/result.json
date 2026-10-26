@@ -1,0 +1,21 @@
+{
+  "ciCheckSha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8",
+  "command": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-B",
+    "scripts/ci_check.py"
+  ],
+  "elapsedMillis": 161142,
+  "exitCode": 0,
+  "finishedAt": "2026-10-26T00:24:29.163427+00:00",
+  "kind": "R155A1_REPOSITORY_STATIC_GATE",
+  "result": "PASS",
+  "scope": "Indexed repository file checks and unittest discovery; no full-suite execution or runtime acceptance",
+  "stagedPathCount": 115,
+  "stagedPathsSha256": "045d8762f0a0ae894c2d1a0d90b8e739ef2ee7b6e6a700774c6de64d0d64ee9d",
+  "startedAt": "2026-10-26T00:21:47.501308+00:00",
+  "stderr": "",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "{\r\n  \"scope\": \"M0_and_HYB_mock_contracts_not_full_runtime\",\r\n  \"selected_components\": 10,\r\n  \"result\": \"PASS\",\r\n  \"root_files_checked\": 6464,\r\n  \"source_gitlinks_checked\": 2,\r\n  \"discovered_tests\": 3865,\r\n  \"errors\": [],\r\n  \"vendor_bytes_checked\": false,\r\n  \"runtime_tested\": false,\r\n  \"model_called\": false,\r\n  \"secret_scan\": \"bounded root tracked text patterns; not a complete security audit\"\r\n}\r\n",
+  "stdoutSha256": "6d2d03346587a7d979a459f51b6866ec4a5b8f221df80b9102a8392871a8bc61"
+}

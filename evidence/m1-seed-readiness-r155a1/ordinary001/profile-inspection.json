@@ -1,0 +1,129 @@
+{
+  "kind": "R155A1_ORDINARY001_READ_ONLY_PROFILE_INSPECTION",
+  "requestId": "aebbe557-596e-4256-9ac6-06b3927c6155",
+  "exitCode": 0,
+  "observation": {
+    "profileEntries": [
+      {
+        "bytes": 667,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29555,
+        "kind": "file",
+        "mode": 384,
+        "path": "SOUL.md",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29553,
+        "kind": "directory",
+        "mode": 448,
+        "path": "audio_cache",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29545,
+        "kind": "directory",
+        "mode": 448,
+        "path": "cron",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29551,
+        "kind": "directory",
+        "mode": 448,
+        "path": "hooks",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29552,
+        "kind": "directory",
+        "mode": 448,
+        "path": "image_cache",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29547,
+        "kind": "directory",
+        "mode": 448,
+        "path": "logs",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29548,
+        "kind": "directory",
+        "mode": 448,
+        "path": "logs/curator",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29549,
+        "kind": "directory",
+        "mode": 448,
+        "path": "memories",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29550,
+        "kind": "directory",
+        "mode": 448,
+        "path": "pairing",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29546,
+        "kind": "directory",
+        "mode": 448,
+        "path": "sessions",
+        "uid": 23001
+      },
+      {
+        "bytes": 4096,
+        "device": 2096,
+        "gid": 23003,
+        "inode": 29554,
+        "kind": "directory",
+        "mode": 448,
+        "path": "skills",
+        "uid": 23001
+      }
+    ],
+    "rootPathsAbsent": {
+      "/opt/alaz-r155a1-input": true,
+      "/srv/alaz-r155a1": true,
+      "/sys/fs/cgroup/alaz-r155a1": true,
+      "/tmp/alaz-ipc-r155a1": true
+    },
+    "rootUsed": false,
+    "writesPerformed": false
+  },
+  "stdout": "{\"profileEntries\": [{\"bytes\": 667, \"device\": 2096, \"gid\": 23003, \"inode\": 29555, \"kind\": \"file\", \"mode\": 384, \"path\": \"SOUL.md\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29553, \"kind\": \"directory\", \"mode\": 448, \"path\": \"audio_cache\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29545, \"kind\": \"directory\", \"mode\": 448, \"path\": \"cron\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29551, \"kind\": \"directory\", \"mode\": 448, \"path\": \"hooks\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29552, \"kind\": \"directory\", \"mode\": 448, \"path\": \"image_cache\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29547, \"kind\": \"directory\", \"mode\": 448, \"path\": \"logs\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29548, \"kind\": \"directory\", \"mode\": 448, \"path\": \"logs/curator\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29549, \"kind\": \"directory\", \"mode\": 448, \"path\": \"memories\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29550, \"kind\": \"directory\", \"mode\": 448, \"path\": \"pairing\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29546, \"kind\": \"directory\", \"mode\": 448, \"path\": \"sessions\", \"uid\": 23001}, {\"bytes\": 4096, \"device\": 2096, \"gid\": 23003, \"inode\": 29554, \"kind\": \"directory\", \"mode\": 448, \"path\": \"skills\", \"uid\": 23001}], \"rootPathsAbsent\": {\"/opt/alaz-r155a1-input\": true, \"/srv/alaz-r155a1\": true, \"/sys/fs/cgroup/alaz-r155a1\": true, \"/tmp/alaz-ipc-r155a1\": true}, \"rootUsed\": false, \"writesPerformed\": false}\n",
+  "stderr": ""
+}

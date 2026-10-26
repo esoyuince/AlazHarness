@@ -1,0 +1,452 @@
+test_decimal_rejects_ambiguous_or_unbounded_actor_numbers (test_retained_bootstrap.ArgumentAndProtocolTests.test_decimal_rejects_ambiguous_or_unbounded_actor_numbers) ... ok
+test_environment_is_credential_free_without_repurposing_home (test_retained_bootstrap.ArgumentAndProtocolTests.test_environment_is_credential_free_without_repurposing_home) ... ok
+test_failed_verifier_prevents_environment_audit_or_native_lifecycle (test_retained_bootstrap.ArgumentAndProtocolTests.test_failed_verifier_prevents_environment_audit_or_native_lifecycle) ... ok
+test_failure_protocol_preserves_partial_effects_and_has_no_success_stdout (test_retained_bootstrap.ArgumentAndProtocolTests.test_failure_protocol_preserves_partial_effects_and_has_no_success_stdout) ... ok
+test_home_requires_canonical_absolute_explicit_path (test_retained_bootstrap.ArgumentAndProtocolTests.test_home_requires_canonical_absolute_explicit_path) ... ok
+test_json_is_one_ascii_canonical_frame_and_refuses_nan (test_retained_bootstrap.ArgumentAndProtocolTests.test_json_is_one_ascii_canonical_frame_and_refuses_nan) ... ok
+test_native_failure_preserves_fresh_entry_checks_and_retires_observers (test_retained_bootstrap.ArgumentAndProtocolTests.test_native_failure_preserves_fresh_entry_checks_and_retires_observers) ... ok
+test_pinned_verifier_refusal_retains_only_a_finite_reason_code (test_retained_bootstrap.ArgumentAndProtocolTests.test_pinned_verifier_refusal_retains_only_a_finite_reason_code) ... ok
+test_caught_audit_refusal_keeps_finite_evidence_without_argument_data (test_retained_bootstrap.AuditContractTests.test_caught_audit_refusal_keeps_finite_evidence_without_argument_data) ... ok
+test_database_paths_are_fixed_and_not_taken_from_a_uri (test_retained_bootstrap.AuditContractTests.test_database_paths_are_fixed_and_not_taken_from_a_uri) ... ok
+test_helper_environment_argv_phase_and_order_cannot_expand (test_retained_bootstrap.AuditContractTests.test_helper_environment_argv_phase_and_order_cannot_expand) ... ok
+test_missing_physical_ipv6_socket_close_is_not_accepted (test_retained_bootstrap.AuditContractTests.test_missing_physical_ipv6_socket_close_is_not_accepted) ... ok
+test_network_and_unqualified_process_events_are_denied (test_retained_bootstrap.AuditContractTests.test_network_and_unqualified_process_events_are_denied) ... ok
+test_only_original_schema_reference_can_open_memory_once_and_is_closed (test_retained_bootstrap.AuditContractTests.test_only_original_schema_reference_can_open_memory_once_and_is_closed) ... ok
+test_only_original_two_helpers_in_original_order_are_allowed (test_retained_bootstrap.AuditContractTests.test_only_original_two_helpers_in_original_order_are_allowed) ... ok
+test_original_ipv6_probe_remains_blocked_and_its_socket_close_is_observed (test_retained_bootstrap.AuditContractTests.test_original_ipv6_probe_remains_blocked_and_its_socket_close_is_observed) ... ok
+test_profile_mutation_refuses_symlink_escape (test_retained_bootstrap.AuditContractTests.test_profile_mutation_refuses_symlink_escape) ... skipped 'Owned POSIX symlink fixture'
+test_profile_mutations_refuse_parent_escape_or_relative_paths (test_retained_bootstrap.AuditContractTests.test_profile_mutations_refuse_parent_escape_or_relative_paths) ... ok
+test_schema_memory_exception_rejects_other_phase_sql_source_and_caller (test_retained_bootstrap.AuditContractTests.test_schema_memory_exception_rejects_other_phase_sql_source_and_caller) ... ok
+test_unqualified_ipv6_phase_source_host_or_caller_never_gets_probe_exemption (test_retained_bootstrap.AuditContractTests.test_unqualified_ipv6_phase_source_host_or_caller_never_gets_probe_exemption) ... ok
+test_changed_tool_bytes_are_refused_without_rewriting_them (test_retained_bootstrap.OwnedFilesystemTests.test_changed_tool_bytes_are_refused_without_rewriting_them) ... ok
+test_closed_connections_are_physically_probed (test_retained_bootstrap.OwnedFilesystemTests.test_closed_connections_are_physically_probed) ... ok
+test_discovery_rows_use_real_qualified_source_stats_and_scanner (test_retained_bootstrap.OwnedFilesystemTests.test_discovery_rows_use_real_qualified_source_stats_and_scanner) ... ok
+test_discovery_symlink_is_refused_even_with_matching_content (test_retained_bootstrap.OwnedFilesystemTests.test_discovery_symlink_is_refused_even_with_matching_content) ... skipped 'Owned POSIX symlink fixture'
+test_duplicate_candidate_or_nonbool_scanner_result_is_refused (test_retained_bootstrap.OwnedFilesystemTests.test_duplicate_candidate_or_nonbool_scanner_result_is_refused) ... ok
+test_fresh_home_is_observed_not_created_or_reused (test_retained_bootstrap.OwnedFilesystemTests.test_fresh_home_is_observed_not_created_or_reused) ... skipped 'Linux fd and permission contract'
+test_home_wrong_mode_or_symlink_is_refused (test_retained_bootstrap.OwnedFilesystemTests.test_home_wrong_mode_or_symlink_is_refused) ... skipped 'Linux fd and permission contract'
+test_scanner_time_source_change_is_refused (test_retained_bootstrap.OwnedFilesystemTests.test_scanner_time_source_change_is_refused) ... ok
+test_unqualified_or_missing_candidate_is_refused (test_retained_bootstrap.OwnedFilesystemTests.test_unqualified_or_missing_candidate_is_refused) ... ok
+test_extra_live_fd_is_refused_without_closing_any_fd (test_seed_child.DescriptorTests.test_extra_live_fd_is_refused_without_closing_any_fd) ... ok
+test_namespace_descriptor_closed_once_on_success_and_failure (test_seed_child.DescriptorTests.test_namespace_descriptor_closed_once_on_success_and_failure) ... ok
+test_only_closed_enumeration_fd_is_ignored (test_seed_child.DescriptorTests.test_only_closed_enumeration_fd_is_ignored) ... ok
+test_privilege_reduction_order_and_no_root_syscall (test_seed_child.IdentityReductionTests.test_privilege_reduction_order_and_no_root_syscall) ... ok
+test_mismatched_namespace_fd_refused (test_seed_child.KernelBindingTests.test_mismatched_namespace_fd_refused) ... ok
+test_mount_requires_exact_ext4_loop_and_options_without_profile_submount (test_seed_child.KernelBindingTests.test_mount_requires_exact_ext4_loop_and_options_without_profile_submount) ... ok
+test_reduced_actor_uses_own_namespace_and_root_process_anchors (test_seed_child.KernelBindingTests.test_reduced_actor_uses_own_namespace_and_root_process_anchors) ... ok
+test_root_authority_is_bound_to_original_processes_and_fd (test_seed_child.KernelBindingTests.test_root_authority_is_bound_to_original_processes_and_fd) ... ok
+test_scope_refuses_foreign_member_or_replaced_identity (test_seed_child.KernelBindingTests.test_scope_refuses_foreign_member_or_replaced_identity) ... ok
+test_exclusive_creation_then_mode_owner_and_actual_inode (test_seed_child.ProfileCreationTests.test_exclusive_creation_then_mode_owner_and_actual_inode) ... ok
+test_existing_file_symlink_or_directory_never_adopted_or_overwritten (test_seed_child.ProfileCreationTests.test_existing_file_symlink_or_directory_never_adopted_or_overwritten) ... ok
+test_failure_after_creation_preserves_profile_and_only_closes_owned_fds (test_seed_child.ProfileCreationTests.test_failure_after_creation_preserves_profile_and_only_closes_owned_fds) ... ok
+test_all_top_level_fields_required (test_seed_child.ProtocolTests.test_all_top_level_fields_required) ... ok
+test_digest_and_instance_are_bounded (test_seed_child.ProtocolTests.test_digest_and_instance_are_bounded) ... ok
+test_duplicate_keys_noncanonical_and_multiple_frames_rejected (test_seed_child.ProtocolTests.test_duplicate_keys_noncanonical_and_multiple_frames_rejected) ... ok
+test_fixed_exec_has_actual_created_identity_and_no_environment_passthrough (test_seed_child.ProtocolTests.test_fixed_exec_has_actual_created_identity_and_no_environment_passthrough) ... ok
+test_fixed_paths_and_pins (test_seed_child.ProtocolTests.test_fixed_paths_and_pins) ... ok
+test_inherited_home_is_refused_before_any_other_boundary (test_seed_child.ProtocolTests.test_inherited_home_is_refused_before_any_other_boundary) ... ok
+test_integer_booleans_bounds_and_principal_alias_rejected (test_seed_child.ProtocolTests.test_integer_booleans_bounds_and_principal_alias_rejected) ... ok
+test_no_command_environment_or_profile_inode_input (test_seed_child.ProtocolTests.test_no_command_environment_or_profile_inode_input) ... ok
+test_roundtrip_and_detached_copy (test_seed_child.ProtocolTests.test_roundtrip_and_detached_copy) ... ok
+test_input_requires_eof_and_bounded_wait (test_seed_child.SourceAndProcessTests.test_input_requires_eof_and_bounded_wait) ... ok
+test_kernel_start_ticks_parser_handles_parentheses_and_rejects_zombie (test_seed_child.SourceAndProcessTests.test_kernel_start_ticks_parser_handles_parentheses_and_rejects_zombie) ... ok
+test_trusted_bytes_digest_change_and_metadata_change_refused (test_seed_child.SourceAndProcessTests.test_trusted_bytes_digest_change_and_metadata_change_refused) ... ok
+test_complete_order_and_only_created_identity_reaches_exec (test_seed_child.StateMachineTests.test_complete_order_and_only_created_identity_reaches_exec) ... ok
+test_diagnostic_does_not_disclose_exception_text (test_seed_child.StateMachineTests.test_diagnostic_does_not_disclose_exception_text) ... ok
+test_every_effect_phase_failure_is_unknown_and_never_retried (test_seed_child.StateMachineTests.test_every_effect_phase_failure_is_unknown_and_never_retried) ... ok
+test_invalid_input_never_reaches_boundary (test_seed_child.StateMachineTests.test_invalid_input_never_reaches_boundary) ... ok
+test_missing_real_created_identity_prevents_drop (test_seed_child.StateMachineTests.test_missing_real_created_identity_prevents_drop) ... ok
+test_input_manifest_forbids_commands_paths_and_extra_files (test_seed_readiness_caller.InputTests.test_input_manifest_forbids_commands_paths_and_extra_files) ... ok
+test_manifest_size_digest_and_bool_are_rejected (test_seed_readiness_caller.InputTests.test_manifest_size_digest_and_bool_are_rejected) ... ok
+test_projected_exports_do_not_include_inputs_or_image_parent (test_seed_readiness_caller.InputTests.test_projected_exports_do_not_include_inputs_or_image_parent) ... ok
+test_any_unresolved_seed_blocks_readiness_and_normal_close (test_seed_readiness_caller.OwnedProcessTests.test_any_unresolved_seed_blocks_readiness_and_normal_close) ... ok
+test_diagnostic_failure_still_enters_same_controller_retention (test_seed_readiness_caller.OwnedProcessTests.test_diagnostic_failure_still_enters_same_controller_retention) ... ok
+test_formatter_timeout_retains_owned_process_without_kill_or_retry (test_seed_readiness_caller.OwnedProcessTests.test_formatter_timeout_retains_owned_process_without_kill_or_retry) ... ok
+test_normal_finish_only_after_stop_with_both_children_complete (test_seed_readiness_caller.OwnedProcessTests.test_normal_finish_only_after_stop_with_both_children_complete) ... ok
+test_readiness_unknown_blocks_stop_even_after_valid_seed (test_seed_readiness_caller.OwnedProcessTests.test_readiness_unknown_blocks_stop_even_after_valid_seed) ... ok
+test_seed_spawn_uncertainty_is_recorded_before_popen_and_blocks_close (test_seed_readiness_caller.OwnedProcessTests.test_seed_spawn_uncertainty_is_recorded_before_popen_and_blocks_close) ... ERROR
+test_stop_failure_never_attempts_finish (test_seed_readiness_caller.OwnedProcessTests.test_stop_failure_never_attempts_finish) ... ok
+test_unknown_retains_same_controller_and_only_closes_known_stdio (test_seed_readiness_caller.OwnedProcessTests.test_unknown_retains_same_controller_and_only_closes_known_stdio) ... ok
+test_actual_database_and_profile_identities_must_match (test_seed_readiness_caller.SeedContractTests.test_actual_database_and_profile_identities_must_match) ... ok
+test_actual_mount_loop_and_filesystem_must_match (test_seed_readiness_caller.SeedContractTests.test_actual_mount_loop_and_filesystem_must_match) ... ok
+test_bool_is_not_an_integer_proof (test_seed_readiness_caller.SeedContractTests.test_bool_is_not_an_integer_proof) ... ok
+test_capability_probe_requires_exact_block_and_physical_socket_close (test_seed_readiness_caller.SeedContractTests.test_capability_probe_requires_exact_block_and_physical_socket_close) ... ok
+test_close_and_scope_claims_must_be_exact (test_seed_readiness_caller.SeedContractTests.test_close_and_scope_claims_must_be_exact) ... ok
+test_duplicate_noncanonical_multiple_and_oversize_frames_rejected (test_seed_readiness_caller.SeedContractTests.test_duplicate_noncanonical_multiple_and_oversize_frames_rejected) ... ok
+test_every_success_field_is_required (test_seed_readiness_caller.SeedContractTests.test_every_success_field_is_required) ... ok
+test_pid_parent_generation_and_namespace_cannot_be_rebound (test_seed_readiness_caller.SeedContractTests.test_pid_parent_generation_and_namespace_cannot_be_rebound) ... ok
+test_same_image_requires_exact_dropped_identity_and_empty_groups (test_seed_readiness_caller.SeedContractTests.test_same_image_requires_exact_dropped_identity_and_empty_groups) ... ok
+test_six_checks_helper_order_and_scope_are_fixed (test_seed_readiness_caller.SeedContractTests.test_six_checks_helper_order_and_scope_are_fixed) ... ok
+test_unedited_handoff_and_source_cache_identity_required (test_seed_readiness_caller.SeedContractTests.test_unedited_handoff_and_source_cache_identity_required) ... ok
+test_unexpected_claim_is_rejected (test_seed_readiness_caller.SeedContractTests.test_unexpected_claim_is_rejected) ... ok
+test_valid_contract_uses_fixed_expected_home (test_seed_readiness_caller.SeedContractTests.test_valid_contract_uses_fixed_expected_home) ... ok
+test_exact_owned_bundle_is_returned_without_staging (test_seed_readiness_transport.BundleTests.test_exact_owned_bundle_is_returned_without_staging) ... ok
+test_wrong_bundle_or_ordinary_producer_digest_is_rejected (test_seed_readiness_transport.BundleTests.test_wrong_bundle_or_ordinary_producer_digest_is_rejected) ... ok
+test_early_refusal_requires_actual_exit_two (test_seed_readiness_transport.CustodyTests.test_early_refusal_requires_actual_exit_two) ... ok
+test_live_custodian_is_not_waited_for (test_seed_readiness_transport.CustodyTests.test_live_custodian_is_not_waited_for) ... ok
+test_mixed_or_malformed_frames_never_wait (test_seed_readiness_transport.CustodyTests.test_mixed_or_malformed_frames_never_wait) ... ok
+test_unknown_without_custody_never_waits (test_seed_readiness_transport.CustodyTests.test_unknown_without_custody_never_waits) ... ok
+test_wrong_pid_ticks_dead_or_changed_custodian_never_accepts_or_waits (test_seed_readiness_transport.CustodyTests.test_wrong_pid_ticks_dead_or_changed_custodian_never_accepts_or_waits) ... ok
+test_eof_is_complete_even_when_caller_remains_live (test_seed_readiness_transport.PipeCollectionTests.test_eof_is_complete_even_when_caller_remains_live) ... skipped 'Linux selectable pipe contract'
+test_overflow_is_bounded_and_does_not_wait_or_mark_complete (test_seed_readiness_transport.PipeCollectionTests.test_overflow_is_bounded_and_does_not_wait_or_mark_complete) ... skipped 'Linux selectable pipe contract'
+test_timeout_preserves_unknown_without_wait (test_seed_readiness_transport.PipeCollectionTests.test_timeout_preserves_unknown_without_wait) ... skipped 'Linux selectable pipe contract'
+test_apply_revalidates_original_proof_and_current_host_source (test_seed_readiness_runner.ApplyTests.test_apply_revalidates_original_proof_and_current_host_source) ... ERROR
+test_apply_single_fixed_launch_with_exclusive_marker_and_exact_bundle (test_seed_readiness_runner.ApplyTests.test_apply_single_fixed_launch_with_exclusive_marker_and_exact_bundle) ... ERROR
+test_blocked_stdin_worker_times_out_without_close_kill_or_second_invocation (test_seed_readiness_runner.ApplyTests.test_blocked_stdin_worker_times_out_without_close_kill_or_second_invocation) ... ERROR
+test_capture_overflow_is_bounded_and_not_accepted (test_seed_readiness_runner.ApplyTests.test_capture_overflow_is_bounded_and_not_accepted) ... ERROR
+test_current_child_change_blocks_apply_before_execution_marker (test_seed_readiness_runner.ApplyTests.test_current_child_change_blocks_apply_before_execution_marker) ... ERROR
+test_frozen_bundle_tamper_prevents_marker_and_spawn (test_seed_readiness_runner.ApplyTests.test_frozen_bundle_tamper_prevents_marker_and_spawn) ... ERROR
+test_receipt_write_failure_cannot_leave_host_acceptance_true (test_seed_readiness_runner.ApplyTests.test_receipt_write_failure_cannot_leave_host_acceptance_true) ... ERROR
+test_retained_custody_is_only_an_observation_before_transport_exit (test_seed_readiness_runner.ApplyTests.test_retained_custody_is_only_an_observation_before_transport_exit) ... ERROR
+test_spawn_exception_is_unknown_after_marker_without_retry (test_seed_readiness_runner.ApplyTests.test_spawn_exception_is_unknown_after_marker_without_retry) ... ERROR
+test_timeout_is_unknown_preserves_prefix_and_never_retries (test_seed_readiness_runner.ApplyTests.test_timeout_is_unknown_preserves_prefix_and_never_retries) ... ERROR
+test_transport_or_caller_provenance_and_scope_failure_cannot_pass (test_seed_readiness_runner.ApplyTests.test_transport_or_caller_provenance_and_scope_failure_cannot_pass) ... ERROR
+test_wrong_expected_intent_prevents_execution_marker (test_seed_readiness_runner.ApplyTests.test_wrong_expected_intent_prevents_execution_marker) ... ERROR
+test_actual_windows_three_pipe_communication_with_owned_finite_child (test_seed_readiness_runner.ParserAndCaptureTests.test_actual_windows_three_pipe_communication_with_owned_finite_child) ... ok
+test_capture_reader_retains_only_bound_and_drains_to_eof (test_seed_readiness_runner.ParserAndCaptureTests.test_capture_reader_retains_only_bound_and_drains_to_eof) ... ok
+test_json_and_base64_have_one_exact_encoding (test_seed_readiness_runner.ParserAndCaptureTests.test_json_and_base64_have_one_exact_encoding) ... ok
+test_ordinary_literals_are_read_without_executing_source (test_seed_readiness_runner.ParserAndCaptureTests.test_ordinary_literals_are_read_without_executing_source) ... ok
+test_blocked_probe_requires_exact_count_closed_socket_and_no_bind (test_seed_readiness_runner.PreparationTests.test_blocked_probe_requires_exact_count_closed_socket_and_no_bind) ... ok
+test_current_head_and_fresh_evidence_are_required (test_seed_readiness_runner.PreparationTests.test_current_head_and_fresh_evidence_are_required) ... ERROR
+test_frozen_producer_runner_start_or_raw_hash_change_refuses_preparation (test_seed_readiness_runner.PreparationTests.test_frozen_producer_runner_start_or_raw_hash_change_refuses_preparation) ... ok
+test_ordinary_refusal_root_or_nonterminal_claim_leaves_evidence_absent (test_seed_readiness_runner.PreparationTests.test_ordinary_refusal_root_or_nonterminal_claim_leaves_evidence_absent) ... ok
+test_prepare_requires_complete_proof_and_freezes_text_only_without_process (test_seed_readiness_runner.PreparationTests.test_prepare_requires_complete_proof_and_freezes_text_only_without_process) ... ERROR
+test_seed_scope_and_physical_close_cannot_be_faked_by_outer_pass (test_seed_readiness_runner.PreparationTests.test_seed_scope_and_physical_close_cannot_be_faked_by_outer_pass) ... ok
+test_unreviewed_child_source_blocks_prepare_before_evidence_creation (test_seed_readiness_runner.PreparationTests.test_unreviewed_child_source_blocks_prepare_before_evidence_creation) ... FAIL
+
+======================================================================
+ERROR: test_seed_spawn_uncertainty_is_recorded_before_popen_and_blocks_close (test_seed_readiness_caller.OwnedProcessTests.test_seed_spawn_uncertainty_is_recorded_before_popen_and_blocks_close)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_caller.py", line 253, in test_seed_spawn_uncertainty_is_recorded_before_popen_and_blocks_close
+    owned.run_seed(manifest, protocol)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_linux_accept.py", line 443, in run_seed
+    fd = os.open('/proc/' + str(v.worker.pid) + '/ns/mnt', os.O_RDONLY | os.O_CLOEXEC)
+                                                                         ^^^^^^^^^^^^
+AttributeError: module 'os' has no attribute 'O_CLOEXEC'
+
+======================================================================
+ERROR: test_apply_revalidates_original_proof_and_current_host_source (test_seed_readiness_runner.ApplyTests.test_apply_revalidates_original_proof_and_current_host_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 361, in test_apply_revalidates_original_proof_and_current_host_source
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 383, in current_inputs
+    return sources, transport, read_file(SELF), read_file(ROOT / ORDINARY_DRIVER)
+                               ~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_apply_single_fixed_launch_with_exclusive_marker_and_exact_bundle (test_seed_readiness_runner.ApplyTests.test_apply_single_fixed_launch_with_exclusive_marker_and_exact_bundle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 337, in test_apply_single_fixed_launch_with_exclusive_marker_and_exact_bundle
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 383, in current_inputs
+    return sources, transport, read_file(SELF), read_file(ROOT / ORDINARY_DRIVER)
+                               ~~~~~~~~~^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_blocked_stdin_worker_times_out_without_close_kill_or_second_invocation (test_seed_readiness_runner.ApplyTests.test_blocked_stdin_worker_times_out_without_close_kill_or_second_invocation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 400, in test_blocked_stdin_worker_times_out_without_close_kill_or_second_invocation
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 378, in current_inputs
+    sources = {name: read_file(ROOT / name) for name in sorted(SOURCES)}
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_capture_overflow_is_bounded_and_not_accepted (test_seed_readiness_runner.ApplyTests.test_capture_overflow_is_bounded_and_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 498, in test_capture_overflow_is_bounded_and_not_accepted
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 379, in current_inputs
+    transport = read_file(ROOT / TRANSPORT)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_current_child_change_blocks_apply_before_execution_marker (test_seed_readiness_runner.ApplyTests.test_current_child_change_blocks_apply_before_execution_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 391, in test_current_child_change_blocks_apply_before_execution_marker
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 378, in current_inputs
+    sources = {name: read_file(ROOT / name) for name in sorted(SOURCES)}
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_frozen_bundle_tamper_prevents_marker_and_spawn (test_seed_readiness_runner.ApplyTests.test_frozen_bundle_tamper_prevents_marker_and_spawn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 381, in test_frozen_bundle_tamper_prevents_marker_and_spawn
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 378, in current_inputs
+    sources = {name: read_file(ROOT / name) for name in sorted(SOURCES)}
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_receipt_write_failure_cannot_leave_host_acceptance_true (test_seed_readiness_runner.ApplyTests.test_receipt_write_failure_cannot_leave_host_acceptance_true)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 506, in test_receipt_write_failure_cannot_leave_host_acceptance_true
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 429, in prepare
+    ordinary = proof_bytes(ordinary_directory)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 363, in proof_bytes
+    return {name: read_file(directory / name, MAX_OUTPUT if name in ('result.json', 'stderr.txt')
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           else MAX_SOURCE, empty=name == 'stderr.txt') for name in sorted(PROOF_FILES)}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_retained_custody_is_only_an_observation_before_transport_exit (test_seed_readiness_runner.ApplyTests.test_retained_custody_is_only_an_observation_before_transport_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 470, in test_retained_custody_is_only_an_observation_before_transport_exit
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 378, in current_inputs
+    sources = {name: read_file(ROOT / name) for name in sorted(SOURCES)}
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_spawn_exception_is_unknown_after_marker_without_retry (test_seed_readiness_runner.ApplyTests.test_spawn_exception_is_unknown_after_marker_without_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 461, in test_spawn_exception_is_unknown_after_marker_without_retry
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 378, in current_inputs
+    sources = {name: read_file(ROOT / name) for name in sorted(SOURCES)}
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_timeout_is_unknown_preserves_prefix_and_never_retries (test_seed_readiness_runner.ApplyTests.test_timeout_is_unknown_preserves_prefix_and_never_retries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 447, in test_timeout_is_unknown_preserves_prefix_and_never_retries
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 429, in prepare
+    ordinary = proof_bytes(ordinary_directory)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 363, in proof_bytes
+    return {name: read_file(directory / name, MAX_OUTPUT if name in ('result.json', 'stderr.txt')
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           else MAX_SOURCE, empty=name == 'stderr.txt') for name in sorted(PROOF_FILES)}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_transport_or_caller_provenance_and_scope_failure_cannot_pass (test_seed_readiness_runner.ApplyTests.test_transport_or_caller_provenance_and_scope_failure_cannot_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 479, in test_transport_or_caller_provenance_and_scope_failure_cannot_pass
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 379, in current_inputs
+    transport = read_file(ROOT / TRANSPORT)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_wrong_expected_intent_prevents_execution_marker (test_seed_readiness_runner.ApplyTests.test_wrong_expected_intent_prevents_execution_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 353, in test_wrong_expected_intent_prevents_execution_marker
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 379, in current_inputs
+    transport = read_file(ROOT / TRANSPORT)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_current_head_and_fresh_evidence_are_required (test_seed_readiness_runner.PreparationTests.test_current_head_and_fresh_evidence_are_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 310, in test_current_head_and_fresh_evidence_are_required
+    self.prepare()
+    ~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 429, in prepare
+    ordinary = proof_bytes(ordinary_directory)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 363, in proof_bytes
+    return {name: read_file(directory / name, MAX_OUTPUT if name in ('result.json', 'stderr.txt')
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           else MAX_SOURCE, empty=name == 'stderr.txt') for name in sorted(PROOF_FILES)}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+ERROR: test_prepare_requires_complete_proof_and_freezes_text_only_without_process (test_seed_readiness_runner.PreparationTests.test_prepare_requires_complete_proof_and_freezes_text_only_without_process)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 241, in test_prepare_requires_complete_proof_and_freezes_text_only_without_process
+    receipt = self.prepare()
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 210, in prepare
+    result = runner.prepare(self.evidence, self.ordinary)
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 428, in prepare
+    sources, transport, host, driver = current_inputs()
+                                       ~~~~~~~~~~~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 378, in current_inputs
+    sources = {name: read_file(ROOT / name) for name in sorted(SOURCES)}
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 160, in read_file
+    require(stamp(opened) == stamp(before), 'runner_file_changed')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\scripts\qa\r155a1_accept.py", line 70, in require
+    raise RunnerRejected(reason)
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+======================================================================
+FAIL: test_unreviewed_child_source_blocks_prepare_before_evidence_creation (test_seed_readiness_runner.PreparationTests.test_unreviewed_child_source_blocks_prepare_before_evidence_creation)
+----------------------------------------------------------------------
+owned_seed_readiness_runner.RunnerRejected: runner_file_changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-seed-readiness-r155a1\tests\test_seed_readiness_runner.py", line 317, in test_unreviewed_child_source_blocks_prepare_before_evidence_creation
+    with self.assertRaisesRegex(runner.RunnerRejected, 'reviewed_sources_changed'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "reviewed_sources_changed" does not match "runner_file_changed"
+
+----------------------------------------------------------------------
+Ran 115 tests in 1.159s
+
+FAILED (failures=1, errors=15, skipped=7)
