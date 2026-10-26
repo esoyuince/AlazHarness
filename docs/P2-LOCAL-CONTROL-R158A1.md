@@ -116,7 +116,7 @@ duymadan mevcut owner'a açık listener sahipliği ekleyecek bir sonraki paketti
 - Yeni Linux kontrolleri: 25 SQLite/HTTP handler + 31 CLI/HTTP fixture testi,
   **56/56 PASS**. Mevcut ledger 36 ve host-client 17 regresyon kontrolü de geçti.
 - HTTP/CLI sunucuları test fixture'ıdır; gerçek native servis veya model kabulü değildir.
-- Windows'taki son dokuz kaynak/test dosyası birlikte doğrulandı: **109 test,
+- İlk Windows kontrolünde dokuz kaynak/test dosyası birlikte doğrulandı: **109 test,
   104 PASS, 5 skip, 0 hata**, 27,248 saniye, exit 0. Dört aiohttp handler testi
   bu Python ortamında bağımlılık olmadığı için, bir CLI sinyal testi POSIX
   gerektirdiği için atlandı; bu beş test Linux'ta geçti. Kesin sayım ve ham
@@ -126,6 +126,40 @@ duymadan mevcut owner'a açık listener sahipliği ekleyecek bir sonraki paketti
 - İlk kısıtlı Linux ortamında socket/thread uyanışı engellendi; izinli yerel
   test çalışmasında aynı kod geçti. Mevcut aiohttp string-AppKey uyarısı korunur.
 - R158'de native runtime/kurulum, gerçek provider/model çağrısı ve prod dağıtımı yoktur.
+
+### İlk tam CI bulguları ve düzeltme
+
+İlk feature commit'i `cd596387f9f4fc03f02eeaf540e24a921792820e` üzerinde
+tam suite gerçekten çalıştı: **4.032 test, 17 failure kaydı, 10 skip**, 263,358
+saniye. `alaz/local-ci` sonucu FAILED idi ve main bu sonuçla ilerletilmedi.
+Ham log, metadata ve özet `checks/ci-first-attempt*` dosyalarında korunur.
+
+On altı failure kaydı, eski deneylerin kaynak kimliklerini değişmiş güncel
+dosyalarla karşılaştırmasından geldi. Dört değişen mevcut ürün dosyasının
+`aba1e6af9242e7b4006bbd9f6244022549a52c61` parent commit'indeki birebir
+baytları arşivlendi. Yeni çözümleyici yalnız tam eski dosya adı/hash çifti için
+sabit commit, yol, kapsam, boyut ve arşiv hash'ini doğrular. Güncel veya bilinmeyen
+hash'ler canlı kaynak kontrolünde kalır; eksik/bozuk arşiv hata verir. Eski 11
+receipt test modülü, beklenen hash'ler ve deney sonuçları değiştirilmedi.
+Bu bağlantı geçmiş kanıtı korur; güncel native kabulü veya yeni bir deney değildir.
+
+Diğer failure, 40 ms'lik izleme süresinde ilk GET'in mutlaka sunucuya ulaşacağını
+varsayan testti. Ürün doğru biçimde tüm gözlem için süre sınırı uygular; işlemci
+yükü altında istek ulaşmadan süre dolabilir. Fixture artık önce gerçek,
+kimliği doğrulanmış bir durum sorgusunu tamamlar; aynı 40 ms sürede izleme
+kesilmesini, `execution_timeout`, exit 3 ve hiç stop/dispatch olmamasını denetler.
+Ürün zaman aşımı değiştirilmedi. Tamamlanmaya kadar gerçek çoklu GET izleme
+senaryosu da korunur.
+
+İlk arşiv düzeltmesiyle Windows'ta 118 testin 114'ü geçti, biri atlandı;
+üç assertion daha ilerleyerek dördüncü dosyanın (`host-gate-client.mjs`) eski
+kimliğini ortaya çıkardı. Bu ham sonuç `checks/windows-ci-repair-001.*` altında
+korunur. Dört dosyanın tamamını kapsayan son Windows kontrolü **118 test,
+117 PASS, 1 POSIX skip, 0 failure/error**, 22,299 saniye ve exit 0 ile geçti.
+Ham sonuç `checks/windows-ci-repair-002.*`, bağımsız kaynak incelemesi
+`ci-repair-review.json` içindedir. Altı yeni arşiv doğrulama testi eksik/bozuk
+kayıt, yönlendirilmiş yol, değiştirilmiş baytlar ve güncel/bilinmeyen sürüm
+durumlarını kapsar. Düzeltme ürün kodunu, native kilitleri veya kurulumu değiştirmez.
 
 Kaynak incelemeleri ve başlangıç kaydı
 [`evidence/p2-local-control-r158a1`](../evidence/p2-local-control-r158a1/) altındadır.

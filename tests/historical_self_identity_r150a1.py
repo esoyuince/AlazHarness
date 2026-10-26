@@ -1,8 +1,9 @@
-"""Exact pre-R147 code for historical experiment receipts, not current acceptance.
+"""Exact saved code for historical experiment receipts, not current acceptance.
 
-Only named files with an expected digest equal to the immutable31e0c54 baseline
-can resolve to an archive. Unknown/current generations still hash their live file.
-Old test outcomes or expected digests are never changed by this resolver.
+The R158 resolver first handles its four pinned parent source generations.
+This resolver's own named files require the immutable 31e0c54 baseline digest.
+Unknown/current generations still hash their live file. Old test outcomes or
+expected digests are never changed by either resolver.
 """
 from pathlib import Path
 import hashlib,json
@@ -10,6 +11,9 @@ BASE='31e0c54c530151bd25ebc43f617a853bb1736412'
 NAMES=frozenset(('packages/claw-hermes/credential_guard.py', 'packages/claw-hermes/gateway_state_projection.py', 'packages/claw-hermes/gateway_retained_launch.py', 'tests/test_projected_launch_l145a8.py', 'tests/historical_projection_p142c6.py', 'tests/test_integrated_profile_metadata_q104e.py', 'tests/test_native_profile_admission_receipt.py', 'tests/test_projected_launch_receipt_l145a8.py', 'tests/test_retained_projection_receipt_p142c6.py'))
 
 def _archived(root,name,expected):
+    from historical_local_control_r158a1 import archived_source as before_local_control
+    prior=before_local_control(root,name,expected)
+    if prior is not None:return prior
     if name not in NAMES:return None
     folder=root/'evidence/d3b-self-identity-r150a1'
     record=json.loads((folder/'historical-source-bindings.json').read_text(encoding='utf-8'))

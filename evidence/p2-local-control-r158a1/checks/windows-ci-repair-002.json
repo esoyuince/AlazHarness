@@ -1,0 +1,195 @@
+{
+  "atUtc": "2026-10-26T11:16:26.504664+00:00",
+  "base": "cd596387f9f4fc03f02eeaf540e24a921792820e",
+  "discovered": 118,
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "kind": "R158A1_WINDOWS_CI_CORRECTION",
+  "nativeRuntimeStarted": false,
+  "passed": 117,
+  "realProviderCalls": 0,
+  "run": 118,
+  "scope": "historical receipt identity and synthetic HTTP/CLI tests; no new native acceptance",
+  "seconds": 22.299,
+  "skipDetails": [
+    [
+      "test_cli_watch_interrupted (test_local_control.LocalControlTests.test_cli_watch_interrupted)",
+      "POSIX SIGINT delivery; AbortSignal cancellation is tested portably"
+    ]
+  ],
+  "skipped": 1,
+  "sourceFiles": {
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__hermes-runs.mjs.txt": {
+      "sha256": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+      "size": 11670
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host-gate-client.mjs.txt": {
+      "sha256": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+      "size": 8609
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host_gate.py.txt": {
+      "sha256": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+      "size": 12593
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host_gate_plugin.py.txt": {
+      "sha256": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+      "size": 16236
+    },
+    "evidence/p2-local-control-r158a1/historical-source-bindings.json": {
+      "sha256": "0f7b6147fb030e11f440bbdce4232d53dc9bba26fc0594a75fb4c4af2039aa66",
+      "size": 1237
+    },
+    "packages/claw-hermes/hermes-runs.mjs": {
+      "sha256": "14a9b1112d6df77c9e2baff00dea7be8be83efce5c602eeeddf8bd741671c9b4",
+      "size": 11772
+    },
+    "packages/claw-hermes/host-gate-client.mjs": {
+      "sha256": "4fbbe0416789d0dd194f4e2501d28692a31b118d29e4185a879a0661bfe3693b",
+      "size": 10691
+    },
+    "packages/claw-hermes/host_gate.py": {
+      "sha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+      "size": 18380
+    },
+    "packages/claw-hermes/host_gate_plugin.py": {
+      "sha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+      "size": 16758
+    },
+    "packages/claw-hermes/local-control.mjs": {
+      "sha256": "2037499a06c7baf29f90e1dc54c55d2d8f73b99c4eb665f7f6bcbc8cceacaf49",
+      "size": 11607
+    },
+    "scripts/alaz_local.mjs": {
+      "sha256": "a0dbeda385f78c4344bd679298bf72ee4ca7b7fdbb7e46ceb507b9b470704a94",
+      "size": 6341
+    },
+    "tests/historical_api_i133p1.py": {
+      "sha256": "9aef52e0ce1964042ba6195b9d8577260b647dac717751a3e629b8a5e5eebc4b",
+      "size": 1371
+    },
+    "tests/historical_ci_p132l1.py": {
+      "sha256": "4ecce947d2e235aa5dd8b0d53073c0c5a58b47b268aedd1bb9a24ca54a2d8d22",
+      "size": 1080
+    },
+    "tests/historical_finite_close_f135c6.py": {
+      "sha256": "e13974119635733e74cfb9ed114e6d7841f05b1a403925859b2fced733fcb11b",
+      "size": 1109
+    },
+    "tests/historical_layout_f126c1.py": {
+      "sha256": "e95be36db4cf067522eccdd5d5c555ff5676bc3601a4a4acf26c8eb4a3b3c8d0",
+      "size": 1328
+    },
+    "tests/historical_local_control_r158a1.py": {
+      "sha256": "1b42d065201756a1aba705abbc498dbfa67c4d7fa88ad07577ebecfdb0bb7a5c",
+      "size": 2304
+    },
+    "tests/historical_observer_o127b6.py": {
+      "sha256": "ddb82e3150f7cb2209c7fe284a2b0f527dd09dc83285774b845c0ef0c8eb22f9",
+      "size": 984
+    },
+    "tests/historical_owner_b129d6.py": {
+      "sha256": "37d8765ed3dca45ce03fd665e833963baf726dd65bd1f21040ddab0224f7b16f",
+      "size": 1440
+    },
+    "tests/historical_prepared_c127a6.py": {
+      "sha256": "5a252ab549811bca16ca6e27f9f1416763598373b3ca6f201774c23b57cdf7bf",
+      "size": 1146
+    },
+    "tests/historical_projection_p142c6.py": {
+      "sha256": "189b82d4b99e9a91f9f87a178fecebe2a867aaa7053a75ad3f1bf5d5963885fd",
+      "size": 890
+    },
+    "tests/historical_retained_r140c6.py": {
+      "sha256": "1ad080ee12c0da35bb7b26c6bdd79c2684afb89f63cfff4d7349bed182ef9c1a",
+      "size": 1162
+    },
+    "tests/historical_self_identity_r150a1.py": {
+      "sha256": "8ac256bf6ed07200846a71f3fa7271e031b2805acd4e83ff17e65760d204bb0d",
+      "size": 2407
+    },
+    "tests/historical_sources_l113f6.py": {
+      "sha256": "5cd8735766563a69bf3a3f222779d3794c1d42a5c32f124f303c8177311ebf77",
+      "size": 2058
+    },
+    "tests/historical_startup_s124b1.py": {
+      "sha256": "27e74da7486003fe513f4f450c9ecbd81c2892504504fb3f466b8ef7ac00ce64",
+      "size": 971
+    },
+    "tests/node/local-control-cases.mjs": {
+      "sha256": "afade0cb7a7b3ea9cad3a983ef72ad67f76ad52bb833ad55e7790bcc9625486b",
+      "size": 23023
+    },
+    "tests/test_canonical_receipt_c119v1.py": {
+      "sha256": "61e4616cf31effa42671ad4e23898d621919d21d9ccaa5d848c502d98167228d",
+      "size": 6280
+    },
+    "tests/test_confined_consumer_receipt_f126c1.py": {
+      "sha256": "9dd13079b7cdc35c7347baf911328b2625573b6f21379dd2eaf69d0a20bc6fcd",
+      "size": 7869
+    },
+    "tests/test_confined_http_receipt_f111e274.py": {
+      "sha256": "b27cb6581582130deef6b14b3145f42322217e86d104e8f2f4b3274034260448",
+      "size": 4553
+    },
+    "tests/test_historical_local_control_r158a1.py": {
+      "sha256": "2711710888dc39deff1a5bcab06c5e0cc3ae52b63552b9ce6414a986b0b0e43a",
+      "size": 6610
+    },
+    "tests/test_host_request_observation.py": {
+      "sha256": "8b67cf6deb5da9992a13e117fc5bde9e1d4bab429a35a776dc0228c999c8f172",
+      "size": 20156
+    },
+    "tests/test_http_readiness_receipt_h110e.py": {
+      "sha256": "6daaf50aaa6aada05484af539d68035f2825032341e49f861bd4719c3f7ccd1b",
+      "size": 7696
+    },
+    "tests/test_linux_runtime_receipt_l125p1.py": {
+      "sha256": "646fc0495b277aba06747c0fa2150fcffba2b20d843262f92aefb6aa87f20091",
+      "size": 7804
+    },
+    "tests/test_local_control.py": {
+      "sha256": "08b28767235f05082ee656f8fb3f4001b0f85584e350b0d685a065d18e8f6932",
+      "size": 1978
+    },
+    "tests/test_native_layout_receipt_l106r.py": {
+      "sha256": "3d8cf94981b4945d18a4be90e27f2b564145dbce68419b404f32c8bf32b8bb0c",
+      "size": 8445
+    },
+    "tests/test_native_profile_admission_receipt.py": {
+      "sha256": "c64012cd4cb3c7a02d31b30b468cdeb74ce93d51cf0667d8578f9d934dc5c76e",
+      "size": 9315
+    },
+    "tests/test_projected_launch_receipt_l145a8.py": {
+      "sha256": "a563b0d8a1125f3c909148fc084ed7634a63468a8335e245007464798d3a9bf2",
+      "size": 4882
+    },
+    "tests/test_store_startup_receipt_a109.py": {
+      "sha256": "9c68252ccd27f678ecb5dac51245bafebf98fad43c535dedda81f6ccb77704a3",
+      "size": 6386
+    },
+    "tests/test_three_projection_receipt_t114r6a.py": {
+      "sha256": "e486f597812e2c80603c82912204285b4b6215d30361e38b582d6d95b500200b",
+      "size": 9253
+    },
+    "tests/test_three_store_receipt_l113f6.py": {
+      "sha256": "d9ae201377c09fca85059ab6f727e33e08e0ebfe9a20f1f13f3e28078075dd18",
+      "size": 7116
+    }
+  },
+  "testModules": [
+    "test_canonical_receipt_c119v1",
+    "test_confined_consumer_receipt_f126c1",
+    "test_confined_http_receipt_f111e274",
+    "test_http_readiness_receipt_h110e",
+    "test_linux_runtime_receipt_l125p1",
+    "test_native_layout_receipt_l106r",
+    "test_native_profile_admission_receipt",
+    "test_projected_launch_receipt_l145a8",
+    "test_store_startup_receipt_a109",
+    "test_three_projection_receipt_t114r6a",
+    "test_three_store_receipt_l113f6",
+    "test_historical_local_control_r158a1",
+    "test_local_control"
+  ]
+}

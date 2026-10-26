@@ -1,0 +1,101 @@
+{
+  "kind": "R158A1_CI_CORRECTION_SOURCE_REVIEW",
+  "result": "PASS_SOURCE_REVIEW",
+  "baselineCommit": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "firstFeatureCommit": "cd596387f9f4fc03f02eeaf540e24a921792820e",
+  "independentReviewer": "/root/r158_lifecycle_review",
+  "reviewerExecutedTests": false,
+  "sourceFiles": {
+    "tests/historical_local_control_r158a1.py": {
+      "sha256": "1b42d065201756a1aba705abbc498dbfa67c4d7fa88ad07577ebecfdb0bb7a5c",
+      "size": 2304
+    },
+    "tests/historical_self_identity_r150a1.py": {
+      "sha256": "8ac256bf6ed07200846a71f3fa7271e031b2805acd4e83ff17e65760d204bb0d",
+      "size": 2407
+    },
+    "tests/test_historical_local_control_r158a1.py": {
+      "sha256": "2711710888dc39deff1a5bcab06c5e0cc3ae52b63552b9ce6414a986b0b0e43a",
+      "size": 6610
+    },
+    "evidence/p2-local-control-r158a1/historical-source-bindings.json": {
+      "sha256": "0f7b6147fb030e11f440bbdce4232d53dc9bba26fc0594a75fb4c4af2039aa66",
+      "size": 1237
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host_gate.py.txt": {
+      "sha256": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+      "size": 12593
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host_gate_plugin.py.txt": {
+      "sha256": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+      "size": 16236
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__hermes-runs.mjs.txt": {
+      "sha256": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+      "size": 11670
+    },
+    "tests/node/local-control-cases.mjs": {
+      "sha256": "afade0cb7a7b3ea9cad3a983ef72ad67f76ad52bb833ad55e7790bcc9625486b",
+      "size": 23023
+    },
+    "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host-gate-client.mjs.txt": {
+      "sha256": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+      "size": 8609
+    }
+  },
+  "fixedHistoricalSources": 4,
+  "unchangedReceiptModules": 11,
+  "unchangedOtherHistoricalHelpers": 11,
+  "findings": [
+    "Only exact historical name/digest pairs select a pinned parent archive; current and unknown generations retain live-source fallback.",
+    "Bindings pin parent commit, scope, paths, sizes and digests. Actual archived bytes are read and hashed; absent or corrupted bindings/archives fail.",
+    "All four archives match original parent Git blobs. No historical expected outcomes or digests were rewritten.",
+    "The existing helper keeps its prior logic after one three-line delegation; its documentation now describes both generations.",
+    "The timeout fixture first observes a real authenticated running peer, then preserves the 40 ms whole-observation deadline. A GET need not arrive before expiry.",
+    "Timeout assertions retain observation_interrupted, execution_timeout, exit 3, no stop and GET-only traffic; the positive watch test retains real multi-GET completion."
+  ],
+  "focusedGuardTests": {
+    "reportedBy": "/root/r158_compatibility",
+    "run": 6,
+    "passed": 6,
+    "seconds": 0.021,
+    "exitCode": 0
+  },
+  "cliFocusedTests": {
+    "reportedBy": "/root/r158_cli",
+    "scenarios": [
+      "watch-timeout",
+      "watch"
+    ],
+    "passed": 2,
+    "realLoopbackHttp": true
+  },
+  "firstCi": {
+    "sha": "cd596387f9f4fc03f02eeaf540e24a921792820e",
+    "statusId": 57253341117,
+    "testsRun": 4032,
+    "failureRecords": 17,
+    "skipped": 10,
+    "result": "FAILED",
+    "evidence": "checks/ci-first-attempt.json"
+  },
+  "firstPrimaryRepair": {
+    "run": 118,
+    "passed": 114,
+    "failures": 3,
+    "skipped": 1,
+    "result": "FAILED",
+    "reason": "Three loops advanced past corrected assertions and exposed the fourth changed source, host-gate-client.mjs.",
+    "evidence": "checks/windows-ci-repair-001.json"
+  },
+  "primaryFinalRepairEvidence": "checks/windows-ci-repair-002.json",
+  "exactCommitCiAccepted": false,
+  "nativeRuntimeStarted": false,
+  "realProviderCalls": 0,
+  "productSourceChangedForCorrection": false,
+  "currentNativeAcceptance": false,
+  "limitations": [
+    "This record is source review and records the provenance of separately reported focused checks.",
+    "Final primary results, exact-commit CI and publication must be verified independently."
+  ]
+}

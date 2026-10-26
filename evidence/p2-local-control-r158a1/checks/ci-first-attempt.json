@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "ci-first-attempt-log.txt": {
+      "sha256": "1c48b89a9330ecf28a8684af1a49aa3ee74c3ff4d6a0edc2a259afb274b762e7",
+      "size": 22792
+    },
+    "ci-first-attempt-metadata.json": {
+      "sha256": "15ffe408d69ea5fdc0e66738907f078fbdaee356a2eabf1ca20e3bcf495e8355",
+      "size": 1904
+    }
+  },
+  "atUtc": "2026-10-26T11:10:39.022056+00:00",
+  "errors": 0,
+  "failures": 17,
+  "findings": [
+    "16 historical source identity assertion failures require original byte archives for three changed sources; historical expected values remain unchanged.",
+    "The watch-timeout fixture incorrectly assumes an HTTP GET reaches the peer before a whole-observation deadline expires under CPU scheduling."
+  ],
+  "head": "cd596387f9f4fc03f02eeaf540e24a921792820e",
+  "kind": "R158A1_FIRST_EXACT_COMMIT_CI",
+  "mainAdvanced": false,
+  "nativeRuntimeStarted": false,
+  "realProviderCalls": 0,
+  "result": "FAILED",
+  "runtimeSourceChangedForRepair": false,
+  "seconds": 263.358,
+  "skipped": 10,
+  "staticGateReached": false,
+  "status": {
+    "combinedState": "failure",
+    "latest": {
+      "context": "alaz/local-ci",
+      "created_at": "2026-10-26T11:08:05Z",
+      "description": "ALAZ Local CI failed (rc=1)",
+      "id": 57253341117,
+      "state": "failure",
+      "updated_at": "2026-10-26T11:08:05Z"
+    },
+    "sha": "cd596387f9f4fc03f02eeaf540e24a921792820e",
+    "url": "https://api.github.com/repos/esoyuince/AlazHarness/commits/cd596387f9f4fc03f02eeaf540e24a921792820e/status"
+  },
+  "testsRun": 4032
+}

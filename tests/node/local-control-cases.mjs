@@ -167,9 +167,15 @@ try {
     assert.equal(result.run.status, 'completed'); assert.equal(result.outcome, 'terminal_reported');
     assert.equal(result.stopRequested, false); assert.equal(gets, 2); assert.equal(stops(), 0);
   } else if (scenario === 'watch-timeout') {
+    // Establish the real authenticated peer before testing the observation's
+    // deadline. That deadline includes fetch setup: expiry may legitimately
+    // precede the next GET reaching the server, especially on a constrained CPU.
+    const before = await client.status(runId);
+    assert.equal(before.outcome, 'observed'); assert.equal(before.run.status, 'running'); assert.equal(gets, 1);
     const result = await client.watch(runId, { watchTimeoutMs: 40, pollIntervalMs: 5 });
     assert.equal(result.error.code, 'observation_interrupted'); assert.equal(result.stopRequested, false);
-    assert.equal(controlExitCode(result), 3); assert.ok(gets > 0); assert.equal(stops(), 0);
+    assert.equal(result.error.hostReason, 'execution_timeout'); assert.equal(controlExitCode(result), 3);
+    assert.equal(stops(), 0); assert.ok(requests.every(row => row.method === 'GET'));
   } else if (scenario === 'watch-interrupted') {
     const controller = new AbortController(); afterGet = () => controller.abort();
     const result = await client.watch(runId, { signal: controller.signal, watchTimeoutMs: 1000, pollIntervalMs: 1 });
