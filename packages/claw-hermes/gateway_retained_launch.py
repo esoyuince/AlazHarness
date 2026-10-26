@@ -21,9 +21,12 @@ import gateway_storage_mounts as mounts
 ROOT = Path(__file__).resolve().parents[2]
 PYTHON = '/usr/bin/python3.12'
 ENTRY = 'scripts/run_retained_projected.py'
+FINITE_ENTRY = 'scripts/run_finite_projected.py'
 WIRE_ENV = 'ALAZ_RETAINED_WIRE'
 CONTEXT_ENV = 'ALAZ_RETAINED_CONTEXT'
+FINITE_WORK_ENV = 'ALAZ_FINITE_WORK'
 PROTOCOL = 'alaz-projected-exec-context-v1'
+FINITE_PROTOCOL = 'alaz-projected-finite-exec-context-v1'
 MAX_CONTEXT = 16384
 
 class ProjectedLaunchRejected(RuntimeError):
@@ -69,11 +72,15 @@ def _mount_shape(value, retained):
             and os.makedev(*value.device)==retained.home_identity[0],
             'projected_mount_identity')
 
-def _environment(wire, context):
+def _environment(wire, context, work=None):
     scratch=context['scratch']
-    return {'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':handoff.TARGET,
+    result={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8','HOME':handoff.TARGET,
             'HERMES_HOME':handoff.TARGET,'TMPDIR':scratch,'TMP':scratch,'TEMP':scratch,
             WIRE_ENV:wire.decode('ascii'),CONTEXT_ENV:_bytes(context).decode('ascii')}
+    if work is not None:
+        import gateway_finite_protocol as finite
+        result[FINITE_WORK_ENV]=finite.canonical(finite.validate_work(work)).decode('ascii')
+    return result
 
 def launch(value, filesystem, binding, record, *, scratch, instance_id):
     """Dedicated joined supervisor child only. Does not return on success.
@@ -81,6 +88,21 @@ def launch(value, filesystem, binding, record, *, scratch, instance_id):
     Caller must terminate after any exception; projection may have irreversible
     partial effects. The original root/controller/export guards execute in enter.
     """
+    return _launch(value,filesystem,binding,record,scratch=scratch,
+                   instance_id=instance_id,operation='readiness')
+
+def launch_finite(value, filesystem, binding, record, work, *, scratch, instance_id):
+    """Fixed scripted qualification sibling; no caller-selected executable."""
+    import gateway_finite_protocol as finite
+    work=finite.validate_work(work)
+    return _launch(value,filesystem,binding,record,scratch=scratch,
+                   instance_id=instance_id,operation='finite',work=work)
+
+def _launch(value, filesystem, binding, record, *, scratch, instance_id,
+            operation, work=None):
+    require(operation in ('readiness','finite'),'projected_operation')
+    require((operation=='readiness')==(work is None),'projected_operation_work')
+    entry=ENTRY if operation=='readiness' else FINITE_ENTRY
     require(type(record) is handoff.RetainedStartup,'projected_record_type')
     handoff.validate(record,expected_home=record.retained.home)
     _instance(instance_id,record.state.instance_id)
@@ -89,7 +111,7 @@ def launch(value, filesystem, binding, record, *, scratch, instance_id):
     mapping.RetainedProjection(binding,record.retained,principal)
     scratch=handoff._home(scratch)
     require(scratch!='/dev/null' and scratch in fs['writable'],'projected_scratch_not_exported')
-    target=str(ROOT/ENTRY)
+    target=str(ROOT/entry)
     # Actual root-owned metadata/read-only export verification remains in enter.
     for path in (str(ROOT),PYTHON,target):
         handoff._home(path)
@@ -102,11 +124,15 @@ def launch(value, filesystem, binding, record, *, scratch, instance_id):
     decoded=handoff.decode_projected(wire)
     namespaces=_namespaces();_live(principal,namespaces,os.getpid())
     expected=_mount();_mount_shape(expected,decoded.retained)
-    context={'protocol':PROTOCOL,'pid':os.getpid(),'principal':principal,
+    context={'protocol':PROTOCOL if operation=='readiness' else FINITE_PROTOCOL,
+             'pid':os.getpid(),'principal':principal,
              'namespaces':namespaces,'mount':asdict(expected),'scratch':scratch,
              'instanceId':instance_id,'wireSha256':hashlib.sha256(wire).hexdigest()}
+    if operation=='finite':
+        import gateway_finite_protocol as finite
+        context['workSha256']=finite.work_digest(work)
     require(len(_bytes(context))<=MAX_CONTEXT,'projected_context_size')
-    env=_environment(wire,context)
+    env=_environment(wire,context,work)
     # Neither argv nor executable is taken from JSON. Never inherit host environment.
     os.execve(PYTHON,[PYTHON,'-I','-B',target],env)
     raise ProjectedLaunchRejected('projected_exec_returned')
@@ -117,11 +143,20 @@ def receive(environment):
     Returns existing typed expectations and the exact mount observation. It does
     not create another owner, open stores, start work or authenticate remote JSON.
     """
+    return _receive(environment,operation='readiness')
+
+def receive_finite(environment):
+    """Finite transfer is disjoint from readiness, before any native import."""
+    return _receive(environment,operation='finite')
+
+def _receive(environment, *, operation):
     try:
+        require(operation in ('readiness','finite'),'projected_operation')
         require(sys.platform=='linux' and sys.flags.isolated==1 and sys.dont_write_bytecode
                 and sys.executable==PYTHON,'projected_fixed_interpreter')
-        require(type(environment) is dict and set(environment)=={
-            'PATH','LANG','HOME','HERMES_HOME','TMPDIR','TMP','TEMP',WIRE_ENV,CONTEXT_ENV},
+        fields={'PATH','LANG','HOME','HERMES_HOME','TMPDIR','TMP','TEMP',WIRE_ENV,CONTEXT_ENV}
+        if operation=='finite':fields.add(FINITE_WORK_ENV)
+        require(type(environment) is dict and set(environment)==fields,
             'projected_environment_fields')
         raw=environment[WIRE_ENV];context_raw=environment[CONTEXT_ENV]
         require(type(raw) is str and 0<len(raw)<=handoff.MAX_BYTES
@@ -129,13 +164,27 @@ def receive(environment):
                 'projected_transfer_bounds')
         wire=raw.encode('ascii');record=handoff.decode_projected(wire)
         context=handoff._json(context_raw)
-        require(type(context) is dict and set(context)=={'protocol','pid','principal',
-            'namespaces','mount','scratch','instanceId','wireSha256'},'projected_context_fields')
-        require(_bytes(context).decode('ascii')==context_raw and context['protocol']==PROTOCOL,
+        context_fields={'protocol','pid','principal','namespaces','mount','scratch',
+                        'instanceId','wireSha256'}
+        work=None
+        if operation=='finite':
+            import gateway_finite_protocol as finite
+            context_fields.add('workSha256')
+            work_raw=environment[FINITE_WORK_ENV]
+            require(type(work_raw) is str and 0<len(work_raw)<=finite.MAX_WORK,
+                    'projected_work_size')
+            work=finite.validate_work(handoff._json(work_raw))
+            require(finite.canonical(work).decode('ascii')==work_raw,
+                    'projected_work_canonical')
+        require(type(context) is dict and set(context)==context_fields,'projected_context_fields')
+        protocol=PROTOCOL if operation=='readiness' else FINITE_PROTOCOL
+        require(_bytes(context).decode('ascii')==context_raw and context['protocol']==protocol,
                 'projected_context_canonical')
         require(type(context['pid']) is int and context['pid']==os.getpid()
                 and context['wireSha256']==hashlib.sha256(wire).hexdigest(),
                 'projected_context_binding')
+        if operation=='finite':
+            require(context['workSha256']==finite.work_digest(work),'projected_work_binding')
         principal=state.gp.hp.policy(context['principal'])
         ns=context['namespaces']
         require(type(ns) is dict and set(ns)=={'user','mnt','net','ipc'}
@@ -147,7 +196,7 @@ def receive(environment):
                 not PurePosixPath(scratch).is_relative_to(handoff.TARGET) and
                 not PurePosixPath(handoff.TARGET).is_relative_to(scratch),
                 'projected_context_scratch')
-        require(environment==_environment(wire,context),'projected_environment_mismatch')
+        require(environment==_environment(wire,context,work),'projected_environment_mismatch')
         m=context['mount']
         require(type(m) is dict and set(m)=={'mount_id','device','root','mount_point','filesystem'}
                 and type(m['device']) is list and len(m['device'])==2,'projected_context_mount')
@@ -155,7 +204,8 @@ def receive(environment):
         _mount_shape(expected,record.retained)
         _live(principal,ns,context['pid'])
         require(_mount()==expected,'projected_mount_changed_after_exec')
-        return record,expected,context['instanceId']
+        result=(record,expected,context['instanceId'])
+        return result if operation=='readiness' else (*result,work)
     except ProjectedLaunchRejected:raise
     except (ValueError,TypeError,KeyError,AttributeError,OverflowError,RecursionError,UnicodeError,OSError):
         raise ProjectedLaunchRejected('projected_target_invalid') from None
@@ -182,3 +232,9 @@ def target_main():
             'epoch':epoch,'completedChecks':opened['completedChecks'],
             'serviceStarted':False,'runtimeAdmissionAuthorized':False,
             'finiteWorkExecuted':False,'fullD3BAccepted':False}
+
+def finite_target_main():
+    """Validate actual projection first, then execute the fixed native lifecycle."""
+    record,expected,instance,work=receive_finite(dict(os.environ))
+    from gateway_finite_runtime import execute
+    return execute(record,expected,instance,work)

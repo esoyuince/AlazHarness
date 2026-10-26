@@ -1,0 +1,46 @@
+test_absent_receipt_cannot_render_placeholder_sources (test_r156_preparation.AcceptancePreparationTests.test_absent_receipt_cannot_render_placeholder_sources) ... ok
+test_bad_finite_semantics_cannot_be_hidden_by_outer_pass_and_resealed_stdout (test_r156_preparation.AcceptancePreparationTests.test_bad_finite_semantics_cannot_be_hidden_by_outer_pass_and_resealed_stdout) ... ok
+test_changed_original_seed_helper_is_not_silently_repinned (test_r156_preparation.AcceptancePreparationTests.test_changed_original_seed_helper_is_not_silently_repinned) ... ok
+test_exact_four_cases_and_original_captured_close_accept_as_declared_owned_fixture (test_r156_preparation.AcceptancePreparationTests.test_exact_four_cases_and_original_captured_close_accept_as_declared_owned_fixture) ... ok
+test_generated_sources_load_as_modules_with_fixed_inputs_and_budget (test_r156_preparation.AcceptancePreparationTests.test_generated_sources_load_as_modules_with_fixed_inputs_and_budget) ... ERROR
+test_host_rejects_changed_shared_finite_validator_before_preparation (test_r156_preparation.AcceptancePreparationTests.test_host_rejects_changed_shared_finite_validator_before_preparation) ... ok
+test_live_or_mismatched_original_child_cannot_claim_close (test_r156_preparation.AcceptancePreparationTests.test_live_or_mismatched_original_child_cannot_claim_close) ... ok
+test_old_installation_receipt_is_rejected_even_with_its_matching_digest (test_r156_preparation.AcceptancePreparationTests.test_old_installation_receipt_is_rejected_even_with_its_matching_digest) ... ok
+test_receipt_bound_sources_render_without_processes_or_acceptance_claims (test_r156_preparation.AcceptancePreparationTests.test_receipt_bound_sources_render_without_processes_or_acceptance_claims) ... ok
+test_receipt_claiming_work_or_wrong_dependency_inventory_is_rejected (test_r156_preparation.AcceptancePreparationTests.test_receipt_claiming_work_or_wrong_dependency_inventory_is_rejected) ... ok
+test_rendered_producer_native_algorithm_and_offline_boundary_are_unchanged (test_r156_preparation.AcceptancePreparationTests.test_rendered_producer_native_algorithm_and_offline_boundary_are_unchanged) ... ok
+test_single_finite_call_then_original_observer_no_readiness_invocation (test_r156_preparation.AcceptancePreparationTests.test_single_finite_call_then_original_observer_no_readiness_invocation) ... ok
+test_changed_installer_refuses_before_output (test_r156_preparation.InstallationPreparationTests.test_changed_installer_refuses_before_output) ... ok
+test_changed_manifest_external_pin_refuses_before_output (test_r156_preparation.InstallationPreparationTests.test_changed_manifest_external_pin_refuses_before_output) ... ok
+test_changed_template_refuses_before_output (test_r156_preparation.InstallationPreparationTests.test_changed_template_refuses_before_output) ... ok
+test_existing_output_is_not_overwritten (test_r156_preparation.InstallationPreparationTests.test_existing_output_is_not_overwritten) ... ok
+test_explicit_binding_rejects_extra_fields_and_alternate_runtime_roots (test_r156_preparation.InstallationPreparationTests.test_explicit_binding_rejects_extra_fields_and_alternate_runtime_roots) ... ok
+test_incomplete_commit_is_not_replaced_with_a_placeholder (test_r156_preparation.InstallationPreparationTests.test_incomplete_commit_is_not_replaced_with_a_placeholder) ... ok
+test_missing_finite_entry_in_resealed_candidate_refuses_before_output (test_r156_preparation.InstallationPreparationTests.test_missing_finite_entry_in_resealed_candidate_refuses_before_output) ... ok
+test_native_revision_remains_fixed (test_r156_preparation.InstallationPreparationTests.test_native_revision_remains_fixed) ... ok
+test_output_outside_owned_preparation_tree_refuses (test_r156_preparation.InstallationPreparationTests.test_output_outside_owned_preparation_tree_refuses) ... ok
+test_source_count_is_derived_from_verified_candidate_not_hardcoded_as_838 (test_r156_preparation.InstallationPreparationTests.test_source_count_is_derived_from_verified_candidate_not_hardcoded_as_838) ... ok
+test_verified_fixture_renders_fixed_operator_without_processes_or_execution_claims (test_r156_preparation.InstallationPreparationTests.test_verified_fixture_renders_fixed_operator_without_processes_or_execution_claims) ... ok
+
+======================================================================
+ERROR: test_generated_sources_load_as_modules_with_fixed_inputs_and_budget (test_r156_preparation.AcceptancePreparationTests.test_generated_sources_load_as_modules_with_fixed_inputs_and_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-finite-product-r156a1\tests\test_r156_preparation.py", line 346, in test_generated_sources_load_as_modules_with_fixed_inputs_and_budget
+    transport.validate_intent(intent)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Temp\owned-r156-preparation-knyn68ns\scripts\qa\r156a1_linux_transport.py", line 72, in validate_intent
+    require(value['kind'] == 'R156A1_SAME_IMAGE_ACCEPT_INTENT' and value['lab'] == LAB
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and value['inputRoot'] == str(INPUT) and value['stateRoot'] == '/srv/alaz-r156a1',
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'transport_fixed_target')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ender\AppData\Local\Temp\owned-r156-preparation-knyn68ns\scripts\qa\r156a1_linux_transport.py", line 36, in require
+    raise TransportRejected(reason)
+owned_r156_r156a1_linux_transport.TransportRejected: transport_fixed_target
+
+----------------------------------------------------------------------
+Ran 23 tests in 14.937s
+
+FAILED (errors=1)

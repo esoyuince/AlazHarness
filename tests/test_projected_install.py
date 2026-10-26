@@ -16,6 +16,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import install_projected_candidate as installer
 
+FINITE_SOURCES = (
+    'scripts/run_supervised_finite.py', 'scripts/run_finite_projected.py',
+    'packages/claw-hermes/gateway_finite_protocol.py',
+    'packages/claw-hermes/gateway_finite_runtime.py',
+)
+
 
 def source_fixture():
     b = installer._builder()
@@ -94,6 +100,16 @@ class CandidateInputTests(unittest.TestCase):
     def test_changed_manifest_external_pin_refuses(self):
         with self.assertRaisesRegex(ValueError, 'manifest_digest'):
             prepared(self.manifest, self.archive, expected_manifest_sha256='0' * 64)
+
+    def test_missing_fixed_finite_source_refuses_even_with_resealed_candidate(self):
+        for name in FINITE_SOURCES:
+            with self.subTest(source=name):
+                source = dict(self.source)
+                del source[name]
+                manifest, archive = seal(source)
+                manifest['harnessSourceFileCount'] -= 1
+                with self.assertRaisesRegex(ValueError, 'installation_required_sources'):
+                    prepared(manifest, archive)
 
     def test_changed_archive_external_pin_refuses(self):
         with self.assertRaisesRegex(ValueError, 'archive_digest'):

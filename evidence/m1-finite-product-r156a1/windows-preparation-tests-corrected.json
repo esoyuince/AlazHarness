@@ -1,0 +1,23 @@
+{
+  "elapsedSeconds": 15.171,
+  "errors": [],
+  "expectedFailures": 0,
+  "failures": [],
+  "kernelOrInstalledAcceptance": false,
+  "kind": "R156A1_WINDOWS_PREPARATION_TESTS_CORRECTED",
+  "modules": [
+    "test_r156_preparation"
+  ],
+  "nativeRuntimeExecuted": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "skipped": [],
+  "sourceSha256": {
+    "scripts/qa/r156a1_acceptance_templates.py": "e2aa6b659e2926222be552dfa47835b6ef67aaa1c0296104b6c1a994c9d794f0",
+    "scripts/qa/r156a1_prepare.py": "cc652865855cedca4f1d06f4d8ed7d58be462d5612082d02b843b2b688130a54",
+    "tests/test_r156_preparation.py": "32cc56e16ad520af0a6211e45434be69d3e4fe2799fe61580a37ff03ba6e0b1b"
+  },
+  "successful": true,
+  "testsRun": 23,
+  "unexpectedSuccesses": 0
+}

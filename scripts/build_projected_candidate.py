@@ -1,4 +1,4 @@
-"""Build an exact-source projected-startup candidate; never install or run it.
+"""Build an exact-source projected startup/finite candidate; never install or run it.
 
 The candidate contains fixed product entrypoints, current harness modules and the
 756 pinned retained-native sources. It references the accepted dependency bytes;
@@ -41,6 +41,7 @@ EXACT = frozenset((
     'config/hermes-finite-close-f135c6.json',
     'config/linux-prepared-dependencies-l125p1.json',
     'scripts/run_supervised_retained.py', 'scripts/run_retained_projected.py',
+    'scripts/run_supervised_finite.py', 'scripts/run_finite_projected.py',
     'scripts/run_state_volume_worker.py', 'scripts/run_store_preopen.py',
     'scripts/run_response_preopen.py',
 ))
@@ -50,6 +51,7 @@ REQUIRED_MODULES = frozenset('packages/claw-hermes/' + name for name in (
     'gateway_retained_projection.py', 'gateway_state_projection.py',
     'state_volume_supervisor.py', 'state_image_lease.py', 'supervised_pipe_capture.py',
     'gateway_store_startup.py', 'gateway_prepared_consumer.py',
+    'gateway_finite_protocol.py', 'gateway_finite_runtime.py',
 ))
 # The sole real-source detector hit was reviewed as a conventional URL-userinfo
 # placeholder in the first-statement docstring of resolve_proxy_url. This table
@@ -401,23 +403,27 @@ def build(repo, revision, native_repo, destination):
         'installed': False, 'executionAuthorized': False,
         'fixedEntrypoints': ['scripts/run_supervised_retained.py',
                              'scripts/run_retained_projected.py',
+                             'scripts/run_supervised_finite.py',
+                             'scripts/run_finite_projected.py',
                              'scripts/run_state_volume_worker.py'],
         'interpreterRequired': '/usr/bin/python3.12',
         'targetPlatform': 'Linux x86_64; initial host user namespace',
         'freshWorkerRequired': True,
         'deadlineLimitsSeconds': {'workerIdle': 120, 'maximumChildWait': 60,
                                  'reservedStopMargin': 15},
-        'suggestedFreshPaths': {'installation': '/opt/alaz-r153a1',
-                                'state': '/srv/alaz-r153a1',
-                                'cgroupParent': '/sys/fs/cgroup/alaz-r153a1'},
+        'suggestedFreshPaths': {'installation': '/opt/alaz-r156a1',
+                                'installationInput': '/opt/alaz-r156a1-install-input',
+                                'acceptanceInput': '/opt/alaz-r156a1-accept-input',
+                                'state': '/srv/alaz-r156a1',
+                                'cgroupParent': '/sys/fs/cgroup/alaz-r156a1'},
         'unmetGates': [
             'Designate and authorize exact disposable installation and invocation',
             'Verify installed source bytes and root-controlled ancestry',
             'Supply and verify all accepted dependency bytes and trusted interpreter',
-            'Produce retained receipt via original finite owner on the exact ext4 image',
+            'Produce task-free retained seed via original native owner on the exact ext4 image',
             'Derive live supervisor, namespace, cgroup, fence, mount and principal binding',
             'Start a fresh mount worker; child deadline plus stop margin must fit its remaining lifetime',
-            'Qualify fixed supervised projected readiness before enabling work',
+            'Qualify fixed supervised startup and finite close before service/model admission',
         ],
         'failurePolicy': 'Retain uncertain image/lease/fence/evidence; no replay, forced detach or automatic repair',
         'historicalDeniedOperationsMayBeRetried': False,

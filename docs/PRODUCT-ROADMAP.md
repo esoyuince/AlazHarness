@@ -19,7 +19,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
-| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R155. Güncel kurulum, aynı supervised imajda gerçek seed, projected readiness ve sıralı kapanış PASS; normal/hata, replay/yeni iş ve finite görev kabulü açık. |
+| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R155 seed/readiness/kapanış kabulü korunuyor. R156 sabit finite giriş, normal/hata ve replay/yeni iş bağlantısı uygulandı; yeni kurulumdaki native kabul henüz açık. |
 | P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | OPEN; kontrollü model/broker altyapısı mevcut. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
@@ -115,3 +115,16 @@ P1'in aynı imajda seed/readiness/sıralı kapanış alt adımı tamamlandı. S�
 iş, aynı kabul edilmiş girişten finite native görevi bağlamak; normal/hata,
 replay/yeni iş ve sıralı kapanışı tek kurulumda kabul etmek. P1 bütünü, P2-P5,
 M1 ve prod açık. Rapor ve kanıtlar: [R155A1](M1-SEED-READINESS-R155A1.md).
+
+## P1 / R156A1 kaynak hazırlığı
+
+Sabit finite kardeş giriş ve ayrı sonuç sözleşmesi eklendi. Mevcut readiness ile
+aynı supervisor'ın tek çocuk deneme kaydı kullanılır. İlk kabul, yeni aynı imajda
+seed epoch 1 ardından tek finite child epoch 2 üzerinden normal görev, birebir
+tekrar, yeni görev ve kontrollü uygulama hatası ile özgün drain/detach/close
+sırasını hedefler. Model factory/hesaplama/close açık scripted fixture'dır;
+gerçek sağlayıcı çağrısı, servis veya restart replay kabulü değildir.
+
+Windows'ta 351 odaklı testin 319'u geçti, 32'si platform gereği atlandı. Bu sonuç
+yeni kurulum/kernel kabulü sayılmaz. Yeni kurulum ve gerçek native kabul sırası
+[R156A1 raporunda](M1-FINITE-PRODUCT-R156A1.md) izlenir; P1 ve ürün kabulü açıktır.

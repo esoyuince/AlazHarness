@@ -1,0 +1,28 @@
+{
+  "elapsedSeconds": 15.03,
+  "errors": [
+    {
+      "test": "test_generated_sources_load_as_modules_with_fixed_inputs_and_budget (test_r156_preparation.AcceptancePreparationTests.test_generated_sources_load_as_modules_with_fixed_inputs_and_budget)",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-finite-product-r156a1\\tests\\test_r156_preparation.py\", line 346, in test_generated_sources_load_as_modules_with_fixed_inputs_and_budget\n    transport.validate_intent(intent)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"C:\\Users\\ender\\AppData\\Local\\Temp\\owned-r156-preparation-knyn68ns\\scripts\\qa\\r156a1_linux_transport.py\", line 72, in validate_intent\n    require(value['kind'] == 'R156A1_SAME_IMAGE_ACCEPT_INTENT' and value['lab'] == LAB\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n            and value['inputRoot'] == str(INPUT) and value['stateRoot'] == '/srv/alaz-r156a1',\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n            'transport_fixed_target')\n            ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\ender\\AppData\\Local\\Temp\\owned-r156-preparation-knyn68ns\\scripts\\qa\\r156a1_linux_transport.py\", line 36, in require\n    raise TransportRejected(reason)\nowned_r156_r156a1_linux_transport.TransportRejected: transport_fixed_target\n"
+    }
+  ],
+  "expectedFailures": 0,
+  "failures": [],
+  "kernelOrInstalledAcceptance": false,
+  "kind": "R156A1_WINDOWS_PREPARATION_TESTS",
+  "modules": [
+    "test_r156_preparation"
+  ],
+  "nativeRuntimeExecuted": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "skipped": [],
+  "sourceSha256": {
+    "scripts/qa/r156a1_acceptance_templates.py": "e2aa6b659e2926222be552dfa47835b6ef67aaa1c0296104b6c1a994c9d794f0",
+    "scripts/qa/r156a1_prepare.py": "cc652865855cedca4f1d06f4d8ed7d58be462d5612082d02b843b2b688130a54",
+    "tests/test_r156_preparation.py": "ba13b75fecf8e523dac87cddb50601658bb12e9da65f2c66569c39b885d90c35"
+  },
+  "successful": false,
+  "testsRun": 23,
+  "unexpectedSuccesses": 0
+}

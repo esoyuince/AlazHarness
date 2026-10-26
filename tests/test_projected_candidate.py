@@ -17,6 +17,12 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import build_projected_candidate as candidate
 import ci_check
 
+FINITE_SOURCES = (
+    'scripts/run_supervised_finite.py', 'scripts/run_finite_projected.py',
+    'packages/claw-hermes/gateway_finite_protocol.py',
+    'packages/claw-hermes/gateway_finite_runtime.py',
+)
+
 
 def command(repo, *args, data=None):
     result = subprocess.run(['git', '-C', str(repo), *args], input=data,
@@ -237,11 +243,17 @@ class GitCandidate(unittest.TestCase):
             self.assertEqual(plan['archiveSha256'], first['archiveSha256'])
             self.assertIs(plan['executionAuthorized'], False)
             self.assertIs(plan['historicalDeniedOperationsMayBeRetried'], False)
+            self.assertTrue(set(FINITE_SOURCES[:2]) <= set(plan['fixedEntrypoints']))
             with tarfile.open(output(repo, 'a') / candidate.ARCHIVE) as archive:
                 names = archive.getnames()
                 self.assertFalse(any(n.startswith(candidate.PREFIX + 'dependencies/') for n in names))
                 self.assertIn(candidate.PREFIX + 'accepted-dependencies.json', names)
                 self.assertIn(candidate.PREFIX + 'scripts/run_supervised_retained.py', names)
+                for name in FINITE_SOURCES:
+                    self.assertIn(name, first['fileManifest'])
+                    with archive.extractfile(candidate.PREFIX + name) as stream:
+                        self.assertEqual(stream.read(),
+                            b'raise RuntimeError("packaged source must not execute")\n')
 
     def test_dirty_files_and_autocrlf_do_not_change_immutable_candidate(self):
         with fixture() as (repo, native, revision, _, __):
@@ -274,13 +286,14 @@ class GitCandidate(unittest.TestCase):
                 result = candidate.build(repo, revision, native, output(repo))
             self.assertEqual(result['harnessCommit'], revision)
 
-    def test_missing_fixed_entrypoint_refuses_before_creating_output(self):
-        with fixture() as (repo, native, _, __, ___):
-            (repo / 'scripts/run_supervised_retained.py').unlink()
-            revision = commit(repo)
-            with self.assertRaisesRegex(candidate.CandidateRejected, 'required_source_missing'):
-                candidate.build(repo, revision, native, output(repo))
-            self.assertFalse(output(repo).exists())
+    def test_missing_fixed_entrypoint_or_finite_module_refuses_before_creating_output(self):
+        for name in ('scripts/run_supervised_retained.py', *FINITE_SOURCES):
+            with self.subTest(source=name), fixture() as (repo, native, _, __, ___):
+                (repo / name).unlink()
+                revision = commit(repo)
+                with self.assertRaisesRegex(candidate.CandidateRejected, 'required_source_missing'):
+                    candidate.build(repo, revision, native, output(repo))
+                self.assertFalse(output(repo).exists())
 
     def test_git_symlink_mode_is_rejected_without_following_worktree_file(self):
         with fixture() as (repo, native, _, __, ___):

@@ -1,0 +1,73 @@
+{
+  "kind": "R156A1_CORE_SOURCE_CHECKPOINT",
+  "base": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "applyRequest": "c4550156-d1cf-4f66-aef6-2c046f92a6df",
+  "files": [
+    {
+      "path": "packages/claw-hermes/gateway_retained_launch.py",
+      "bytes": 12711,
+      "sha256": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2"
+    },
+    {
+      "path": "packages/claw-hermes/gateway_finite_protocol.py",
+      "bytes": 7586,
+      "sha256": "0e727aaf40ab22cb9c9714b26563f237cc04afdf86455d481b9f397b974cc95c"
+    },
+    {
+      "path": "packages/claw-hermes/gateway_finite_runtime.py",
+      "bytes": 19421,
+      "sha256": "2adfd0711c36c188f27ad250248918bef092cb12356b0f9567e4a45c4cdd9621"
+    },
+    {
+      "path": "scripts/run_finite_projected.py",
+      "bytes": 1555,
+      "sha256": "97c905dae7e9391ad01103a011cc5216b23ced95ef2d2bffdf1e809512ff95eb"
+    },
+    {
+      "path": "packages/claw-hermes/gateway_supervised_launch.py",
+      "bytes": 21471,
+      "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364"
+    },
+    {
+      "path": "scripts/run_supervised_finite.py",
+      "bytes": 979,
+      "sha256": "e45cb067233e6e55ee191628d447e48628f2207462c33c9822f88150ea33f865"
+    },
+    {
+      "path": "tests/test_supervised_finite_launch.py",
+      "bytes": 25322,
+      "sha256": "491f91bee101e1445ba824f16cd9ffeb2c9a38f17c60a1d146cba57f9c74cdb4"
+    },
+    {
+      "path": "scripts/build_projected_candidate.py",
+      "bytes": 23679,
+      "sha256": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b"
+    },
+    {
+      "path": "scripts/install_projected_candidate.py",
+      "bytes": 28251,
+      "sha256": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6"
+    },
+    {
+      "path": "tests/test_projected_candidate.py",
+      "bytes": 27475,
+      "sha256": "fba6f2d87f29fcb774319da62bb5198cac11f411bde574d2833f08002337af19"
+    },
+    {
+      "path": "tests/test_projected_install.py",
+      "bytes": 19581,
+      "sha256": "8587e0a36d79d6b4b4dfcd3969088178b4721da71578c6d3350b9b9c0fd8ae4a"
+    }
+  ],
+  "scope": {
+    "implementationApplied": true,
+    "localSupervisorFixtureTests": 59,
+    "localPackagingFixtureTests": 64,
+    "windowsCurrentSourceTests": "NOT_RUN",
+    "newInstallation": "NOT_RUN",
+    "nativeFiniteAcceptance": "NOT_RUN",
+    "realProviderCalls": 0,
+    "fullD3BAccepted": false
+  }
+}

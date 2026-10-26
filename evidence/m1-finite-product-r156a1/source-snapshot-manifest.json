@@ -1,0 +1,613 @@
+{
+  "base64FileBytes": 733820,
+  "base64FileSha256": "6715b6f353147d81a34025666ae6bb9ff6b8327e4a2c3192bd66e4ee4d4a6daf",
+  "base64Lines": 180,
+  "fileCount": 100,
+  "files": {
+    "config/admission-consumer-b129d6-sources.json": {
+      "bytes": 54205,
+      "gitBlob": "4f738b3144f893ce3747fb39779ce10cd9606a92",
+      "gitMode": "100644",
+      "sha256": "d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35"
+    },
+    "config/canonical-api-consumer-i133p1-sources.json": {
+      "bytes": 54723,
+      "gitBlob": "d31ad024f6bae1ccec29ecf2d0cd4b8b3e90fdc2",
+      "gitMode": "100644",
+      "sha256": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27"
+    },
+    "config/finite-close-f135c6-sources.json": {
+      "bytes": 78968,
+      "gitBlob": "3205723694e9c8a71b7225fc9037c340ef12e33c",
+      "gitMode": "100644",
+      "sha256": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4"
+    },
+    "config/hermes-finite-close-f135c6.json": {
+      "bytes": 1469,
+      "gitBlob": "f97210fb8763631196b32e94aac348bdf01a5282",
+      "gitMode": "100644",
+      "sha256": "bf4e3bed99780e14061bc106a469c9fbafef00c22d4be748aeb43bc5ad175113"
+    },
+    "config/linux-prepared-dependencies-l125p1.json": {
+      "bytes": 24981,
+      "gitBlob": "9ed25fb53ae3292879f58f6c630dc27be3d0666c",
+      "gitMode": "100644",
+      "sha256": "3bedcdf288ac788c17bf86713907edee0eeb9bce0ba91eb93e596126d1629201"
+    },
+    "config/prepared-consumer-s124b1-sources.json": {
+      "bytes": 53774,
+      "gitBlob": "2744374282add4e9db4b595db268788a9e8cd9fa",
+      "gitMode": "100644",
+      "sha256": "6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215"
+    },
+    "config/retained-profile-r140c6-sources.json": {
+      "bytes": 79046,
+      "gitBlob": "a616caf9f54da65c3c9c384403a07e0b513e1a51",
+      "gitMode": "100644",
+      "sha256": "0af0852042217675b8398e2f64c7e509935726b992d91b4bdf4080512b35f8e4"
+    },
+    "packages/claw-hermes/broker_budget.py": {
+      "bytes": 16433,
+      "gitBlob": "be92386b0f30f950100ee30ebe40ce7b0ae4b96d",
+      "gitMode": "100644",
+      "sha256": "57654ee6ea31eddc6c985756db23fb1bfa077f135bc1a2c2e71bbac925a8efcb"
+    },
+    "packages/claw-hermes/combined_guard.py": {
+      "bytes": 4021,
+      "gitBlob": "32fe0b8ca81c388d1e5963d683df26ae40ea62eb",
+      "gitMode": "100644",
+      "sha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67"
+    },
+    "packages/claw-hermes/credential_guard.py": {
+      "bytes": 13571,
+      "gitBlob": "9809e730e04e2a86376131619b6d197260dfff35",
+      "gitMode": "100644",
+      "sha256": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4"
+    },
+    "packages/claw-hermes/dream.py": {
+      "bytes": 25245,
+      "gitBlob": "f7c348854569886b4982479d692ea47a46b2872b",
+      "gitMode": "100644",
+      "sha256": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a"
+    },
+    "packages/claw-hermes/dream_eval.py": {
+      "bytes": 13396,
+      "gitBlob": "ce2fe546ee84dd1bd85d559b2d6938b616dc9341",
+      "gitMode": "100644",
+      "sha256": "354b98d46c650b6094b61bb12341e8d4b4bcf320de11a7bd2aa98eec8801e16a"
+    },
+    "packages/claw-hermes/dream_review.py": {
+      "bytes": 13336,
+      "gitBlob": "02171968e8725f3d65eb44fc269bdace8bf3d99f",
+      "gitMode": "100644",
+      "sha256": "04320b57f5673e7e3dac7cadb8407869e17832dfac3af877152e28d90bfb9281"
+    },
+    "packages/claw-hermes/dream_trial.py": {
+      "bytes": 25958,
+      "gitBlob": "7cff5f1423d3e2e025034342a0367ebc5cf83618",
+      "gitMode": "100644",
+      "sha256": "dda1cfac23dd16fe1f18cddb79bd26b5492910820d763fa64ca7162ab286701b"
+    },
+    "packages/claw-hermes/evidence_view.py": {
+      "bytes": 14066,
+      "gitBlob": "b7f055cc869df7301cb2c3fc8d2851a352a57665",
+      "gitMode": "100644",
+      "sha256": "77d9ed1387f6d88697711953c0993f91b9adad0e25915da7a3438bdca549fc04"
+    },
+    "packages/claw-hermes/execution_boundary.py": {
+      "bytes": 21689,
+      "gitBlob": "6c7a858b152bb090dbe802bea23613cd05dd8198",
+      "gitMode": "100644",
+      "sha256": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b"
+    },
+    "packages/claw-hermes/execution_budget.py": {
+      "bytes": 13355,
+      "gitBlob": "8ddd4a34645b68648d6a3da76e6f02e7f3f6cb08",
+      "gitMode": "100644",
+      "sha256": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78"
+    },
+    "packages/claw-hermes/gateway_canonical_run_binding.py": {
+      "bytes": 25518,
+      "gitBlob": "3d5c6c162812635363bcbc928303661a40474db8",
+      "gitMode": "100644",
+      "sha256": "f29c96065c45eac90b9b2effab5ac73ac1ef98a79cbd60445b4aec7fac60ef31"
+    },
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": {
+      "bytes": 10999,
+      "gitBlob": "4b1b6a835848dadacb6592e5f936f750a5b82c40",
+      "gitMode": "100644",
+      "sha256": "a03799a4e389cc0a48fa76f4b0ed1afb64bde81b67892241e0a02753f1751fe4"
+    },
+    "packages/claw-hermes/gateway_constructor_metadata.py": {
+      "bytes": 4022,
+      "gitBlob": "6a45691ae4a3e8acf17b861232a2dda8f918a4f2",
+      "gitMode": "100644",
+      "sha256": "0073eb0637dac0ad06738fe2b913895df727bc5f8595ba85a0547ef93a682b18"
+    },
+    "packages/claw-hermes/gateway_consumer_admission.py": {
+      "bytes": 3550,
+      "gitBlob": "0667c9979cb0bf29f41659bbe1269a3b52fa08f7",
+      "gitMode": "100644",
+      "sha256": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da"
+    },
+    "packages/claw-hermes/gateway_consumer_api.py": {
+      "bytes": 4905,
+      "gitBlob": "a4b81cbb0fb8a115ddf08469d367a833f4a4a6fc",
+      "gitMode": "100644",
+      "sha256": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168"
+    },
+    "packages/claw-hermes/gateway_http_readiness.py": {
+      "bytes": 13894,
+      "gitBlob": "28552c88883ebe5f48bb6298c0adc15e59e21f95",
+      "gitMode": "100644",
+      "sha256": "7256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007"
+    },
+    "packages/claw-hermes/gateway_live_store_gate.py": {
+      "bytes": 13123,
+      "gitBlob": "bdb64b08df238c10d236e7c6b29aa935c3bbff1a",
+      "gitMode": "100644",
+      "sha256": "c4d2a50afc91bd7fca6f2706c9b411d76dc2d79cb8e45f0d6f6988e813bafc51"
+    },
+    "packages/claw-hermes/gateway_native_layout.py": {
+      "bytes": 9620,
+      "gitBlob": "02862ea1705fc7b72e64f3975a828025bb1b4763",
+      "gitMode": "100644",
+      "sha256": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0"
+    },
+    "packages/claw-hermes/gateway_native_run_provenance.py": {
+      "bytes": 4474,
+      "gitBlob": "13943f6da269a89648bcb22cc4c9342862fca68d",
+      "gitMode": "100644",
+      "sha256": "6b95596df3e74dbeb52096d8c7cfea6f5c44e994fffa13ecf84ac2e778db014d"
+    },
+    "packages/claw-hermes/gateway_native_worker_owner.py": {
+      "bytes": 5672,
+      "gitBlob": "ba3548f094397d8abea7af8be6121e1bff5cc739",
+      "gitMode": "100644",
+      "sha256": "585c420b3434e1ea9b0584190ed6986b08c8732f77a1a9e0d7e9a635c4a26e4c"
+    },
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "bytes": 21021,
+      "gitBlob": "e3f902008c64485f969af146b7e848ea8c125fbc",
+      "gitMode": "100644",
+      "sha256": "d5ce29480570d140363deda7fe8740ad7ddb1f5e579d0befbd790ca68a0f5cc6"
+    },
+    "packages/claw-hermes/gateway_profile_lease.py": {
+      "bytes": 8031,
+      "gitBlob": "c7484ec6cd224475c175a58be3d65c6d6ec58931",
+      "gitMode": "100644",
+      "sha256": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95"
+    },
+    "packages/claw-hermes/gateway_projection.py": {
+      "bytes": 13538,
+      "gitBlob": "ad78dec2b54d2f0c11e3d0024fc1c211bcddc935",
+      "gitMode": "100644",
+      "sha256": "304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660"
+    },
+    "packages/claw-hermes/gateway_response_live.py": {
+      "bytes": 8461,
+      "gitBlob": "1cac7716c05f14432d3dd111b88d836ffe4283b4",
+      "gitMode": "100644",
+      "sha256": "80a9d45b1488858e05f8cbf3b5fd7e25c11f941f43ac7dbf866b33e73d0516a7"
+    },
+    "packages/claw-hermes/gateway_response_preopen.py": {
+      "bytes": 16702,
+      "gitBlob": "830eb202c1408b2167bdfbbcaca694e607c71a6a",
+      "gitMode": "100644",
+      "sha256": "916931a2d04d257d83e95aaccfff86998961a83bbe64a45e2c3094451800c8e1"
+    },
+    "packages/claw-hermes/gateway_retained_handoff.py": {
+      "bytes": 8290,
+      "gitBlob": "b3922a0fa25845480a52569e2984c7396d0011fb",
+      "gitMode": "100644",
+      "sha256": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc"
+    },
+    "packages/claw-hermes/gateway_retained_launch.py": {
+      "bytes": 9822,
+      "gitBlob": "30f1b41c3377f7350fdc51637708a4c3f130698e",
+      "gitMode": "100644",
+      "sha256": "3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db"
+    },
+    "packages/claw-hermes/gateway_retained_profile.py": {
+      "bytes": 7194,
+      "gitBlob": "39d643fd96a7f9dba7bbe76e6ee65fbe761cdc11",
+      "gitMode": "100644",
+      "sha256": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf"
+    },
+    "packages/claw-hermes/gateway_retained_projection.py": {
+      "bytes": 4318,
+      "gitBlob": "fbadf139ea8a3db33c940fd9501ce90659075c52",
+      "gitMode": "100644",
+      "sha256": "68cf4520873efc402860f4d9a9f31ee478d87e4f1b00ad7a0079aa335200ab79"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "bytes": 18991,
+      "gitBlob": "8a3c152e95165b8dc4634acfa267d1bda5b41146",
+      "gitMode": "100644",
+      "sha256": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74"
+    },
+    "packages/claw-hermes/gateway_storage_mounts.py": {
+      "bytes": 10752,
+      "gitBlob": "78e085647ca5b7e39a2379de11cd2b3081873db8",
+      "gitMode": "100644",
+      "sha256": "cd468f68c6b916dada4bfce1897c3ddd9507596b48137e026ee94f06e3e5e3c1"
+    },
+    "packages/claw-hermes/gateway_store_preopen.py": {
+      "bytes": 13311,
+      "gitBlob": "a902d73ce1614907066d5235bc7c61075c0f8a6b",
+      "gitMode": "100644",
+      "sha256": "1492bf4a5581747f9a51c542bd4d798306d6d20e3ecb2a0930ce826e9ca03b56"
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "bytes": 15646,
+      "gitBlob": "ac16016d96d77b8398916ae48d4c57a7487d9946",
+      "gitMode": "100644",
+      "sha256": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b"
+    },
+    "packages/claw-hermes/gateway_supervised_launch.py": {
+      "bytes": 17121,
+      "gitBlob": "0fd4f8fb71546fb6ab2ca17f414221af6d23516d",
+      "gitMode": "100644",
+      "sha256": "b05dd16b93e6f77b45b60f513d4781873f214bd9d9399a54e575272faff8e6f4"
+    },
+    "packages/claw-hermes/gateway_work_health.py": {
+      "bytes": 13901,
+      "gitBlob": "89e0bf3d2dc1303d23ed3c76223cbe76ef8f72af",
+      "gitMode": "100644",
+      "sha256": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6"
+    },
+    "packages/claw-hermes/gateway_work_health_reader.py": {
+      "bytes": 10182,
+      "gitBlob": "189a8d860d9da9c9e1dc52572e69b941b8991427",
+      "gitMode": "100644",
+      "sha256": "fd270a4523638987f752c28dc54e1be0dc8ab086a3c51c237e44a8ea749ef35a"
+    },
+    "packages/claw-hermes/gateway_work_observer.py": {
+      "bytes": 19204,
+      "gitBlob": "18de2c2de047eaec0fa9a893ca052a179115e227",
+      "gitMode": "100644",
+      "sha256": "80ac8275ceeb34bfaeaffdb9164b376cc5e5620883f255479a49fb888c14b634"
+    },
+    "packages/claw-hermes/host_gate.py": {
+      "bytes": 12593,
+      "gitBlob": "4aba8fca913f754d6778d3cb05cea67f54a644de",
+      "gitMode": "100644",
+      "sha256": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff"
+    },
+    "packages/claw-hermes/host_gate_plugin.py": {
+      "bytes": 16236,
+      "gitBlob": "983309324a8bbb90a3feaf68085a1662ddd76f3b",
+      "gitMode": "100644",
+      "sha256": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3"
+    },
+    "packages/claw-hermes/host_principal.py": {
+      "bytes": 5254,
+      "gitBlob": "e09d2ebc6f5ff585c5bcb6f0edf0afad3adcb064",
+      "gitMode": "100644",
+      "sha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0"
+    },
+    "packages/claw-hermes/host_report.py": {
+      "bytes": 16953,
+      "gitBlob": "5b52ce947a07d49cad52f4f5588ebb3cc4fa3cc5",
+      "gitMode": "100644",
+      "sha256": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632"
+    },
+    "packages/claw-hermes/ipc_view.py": {
+      "bytes": 12281,
+      "gitBlob": "01e886d613f7ea22a385639ac2f501713758e457",
+      "gitMode": "100644",
+      "sha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e"
+    },
+    "packages/claw-hermes/isolated_read.py": {
+      "bytes": 18293,
+      "gitBlob": "222a8cd8f830fb2a4c6bf29d0279be7d95a676b7",
+      "gitMode": "100644",
+      "sha256": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033"
+    },
+    "packages/claw-hermes/isolated_tool.py": {
+      "bytes": 20150,
+      "gitBlob": "327f17017e1720156cce7e3863ec900670415c6e",
+      "gitMode": "100644",
+      "sha256": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc"
+    },
+    "packages/claw-hermes/linux_netns.py": {
+      "bytes": 8261,
+      "gitBlob": "6090f85e847cc7b9464bcc9cd2a30ead57666fb8",
+      "gitMode": "100644",
+      "sha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+    },
+    "packages/claw-hermes/operator_resolution.py": {
+      "bytes": 16495,
+      "gitBlob": "5eed07a11aac352d9e9cb2060367519394dd17ff",
+      "gitMode": "100644",
+      "sha256": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b"
+    },
+    "packages/claw-hermes/principal_launch.py": {
+      "bytes": 12606,
+      "gitBlob": "f2512b3dfec06622ae10824182b1f37fe44d7a2f",
+      "gitMode": "100644",
+      "sha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b"
+    },
+    "packages/claw-hermes/principal_target.py": {
+      "bytes": 4304,
+      "gitBlob": "0e01fc5a664aa41ca11fad6b6f621f869224fd25",
+      "gitMode": "100644",
+      "sha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf"
+    },
+    "packages/claw-hermes/provider_broker.py": {
+      "bytes": 19814,
+      "gitBlob": "4ac115ac7c0a2894044a23d9154e79928c8f3351",
+      "gitMode": "100644",
+      "sha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b"
+    },
+    "packages/claw-hermes/provider_egress.py": {
+      "bytes": 12655,
+      "gitBlob": "39c73648cfc08b0d5cc624723b6b694b5dee4375",
+      "gitMode": "100644",
+      "sha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d"
+    },
+    "packages/claw-hermes/recovery_inspector.py": {
+      "bytes": 16682,
+      "gitBlob": "3547263a8f5571c87b4ee135296a3aaf645a5080",
+      "gitMode": "100644",
+      "sha256": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50"
+    },
+    "packages/claw-hermes/request_view.py": {
+      "bytes": 18502,
+      "gitBlob": "c9901530b831a6fcc578a7e1f0d18c6e91a9f763",
+      "gitMode": "100644",
+      "sha256": "29cc8a80fe84a8a31fc51c9cbe011b215dbcd20f65d73b14b26fb2d059765d9e"
+    },
+    "packages/claw-hermes/resolution_receipts.py": {
+      "bytes": 4864,
+      "gitBlob": "e65c70e2ae8bc141b0a2fae81056f489abaa889b",
+      "gitMode": "100644",
+      "sha256": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba"
+    },
+    "packages/claw-hermes/source_capture.py": {
+      "bytes": 14307,
+      "gitBlob": "ea272e6e4610346657ee4afed3191f8a1c789f36",
+      "gitMode": "100644",
+      "sha256": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211"
+    },
+    "packages/claw-hermes/state_image_lease.py": {
+      "bytes": 7926,
+      "gitBlob": "0bc7691bc35244a23949853e7efc6e1f41652672",
+      "gitMode": "100644",
+      "sha256": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc"
+    },
+    "packages/claw-hermes/state_volume_supervisor.py": {
+      "bytes": 16758,
+      "gitBlob": "192a64057882a1b1961140f10da59f7a69b1c59d",
+      "gitMode": "100644",
+      "sha256": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080"
+    },
+    "packages/claw-hermes/supervised_pipe_capture.py": {
+      "bytes": 4521,
+      "gitBlob": "1618a570f297d5b8af4ed361f9f10d69774df6c5",
+      "gitMode": "100644",
+      "sha256": "b3fe4c30607469ca05d95b7f329970c5093a429c2f952280371ddf4c085a1695"
+    },
+    "scripts/bootstrap_retained_profile.py": {
+      "bytes": 35385,
+      "gitBlob": "612d23e0ed678ac7962838870d68e664f50ccf5c",
+      "gitMode": "100644",
+      "sha256": "2c004f6a7154d95af216517c867f1e3cafd63a05e05838f65752eca1b89c5f01"
+    },
+    "scripts/build_projected_candidate.py": {
+      "bytes": 23212,
+      "gitBlob": "5c4227067a703c9b9680922b12ae99c519b54ea7",
+      "gitMode": "100644",
+      "sha256": "97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7"
+    },
+    "scripts/ci_check.py": {
+      "bytes": 7958,
+      "gitBlob": "6220fb5bd1049eccc4f2ede931a69f411988aa25",
+      "gitMode": "100644",
+      "sha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8"
+    },
+    "scripts/install_projected_candidate.py": {
+      "bytes": 28251,
+      "gitBlob": "ebe93ae29792ad1d3e7813a02c2a3aa3e795f8a4",
+      "gitMode": "100644",
+      "sha256": "a56782d4e09bed38983c387d4b882e3db3866409e8e96e1f092d36517fc53525"
+    },
+    "scripts/qa/a128c6_native_admission.py": {
+      "bytes": 20240,
+      "gitBlob": "2e3b199b9d9b0e05b92b51ec95423a424bcc3794",
+      "gitMode": "100644",
+      "sha256": "306bb4b95985134dc81766cd48902bf3a826a1429a1efc09b237715df411b27a"
+    },
+    "scripts/qa/b123a6_native_prepared_api.py": {
+      "bytes": 18472,
+      "gitBlob": "ba6ab5732538feba71316fd9d59de3a44e830458",
+      "gitMode": "100644",
+      "sha256": "7868c02cbebfe672b53b8caf6174a75a26b3eb95b13696108d870009a19d14bc"
+    },
+    "scripts/qa/c127a6_native_prepared_work.py": {
+      "bytes": 13682,
+      "gitBlob": "c18cb080fde2a9b595b0ded491b5fde28d5ccf3f",
+      "gitMode": "100644",
+      "sha256": "3f1da8ab035be3af9726e933c7a5ec703bffb0469bc1d72bfe7f223448da0128"
+    },
+    "scripts/qa/f135c6_native_finite_close.py": {
+      "bytes": 18788,
+      "gitBlob": "20d7297f169023e743f6ae7a1f7d9d7566f0a7aa",
+      "gitMode": "100644",
+      "sha256": "48b95cabb5a788998113d370fef07a5b7e3c2ccf1c955210207d9de298943d09"
+    },
+    "scripts/qa/l139c6_linux_owner_finite.py": {
+      "bytes": 14705,
+      "gitBlob": "5ed26a2f1d0ab33225b5553a5ba46eda384bb4cf",
+      "gitMode": "100644",
+      "sha256": "df36866a52c75363f59300e05292f93576911b55281811e6bcf14a5c43246d38"
+    },
+    "scripts/qa/r155a1_accept.py": {
+      "bytes": 39973,
+      "gitBlob": "0c1c93009b968d234ca14278064de5269bf2e120",
+      "gitMode": "100644",
+      "sha256": "113ec74d47509cefc875a19dfa8b34b465db864ead3edd04c40b3d9d7e9fc4ef"
+    },
+    "scripts/qa/r155a1_linux_accept.py": {
+      "bytes": 36760,
+      "gitBlob": "716670622d47698e931ace1b78fea2804467aad2",
+      "gitMode": "100644",
+      "sha256": "cc80c882fc0ada181afe86f4151e8296db13c2cd922937aa3189be9f5b71933d"
+    },
+    "scripts/qa/r155a1_linux_transport.py": {
+      "bytes": 14331,
+      "gitBlob": "e0e2fe534edf6b20b55a7a29522e98607f84973a",
+      "gitMode": "100644",
+      "sha256": "a08345f8eaa6fe179d973d28159949d5d405c4996f60ecc79bd1bc041d4119a6"
+    },
+    "scripts/qa/r155a1_ordinary_seed.py": {
+      "bytes": 11338,
+      "gitBlob": "3dece1f91894becf04925f2b88714895681f013b",
+      "gitMode": "100644",
+      "sha256": "b06ffe888e75406721da111c6e8d58941a2b01004bf0b544981195a364769e6f"
+    },
+    "scripts/qa/r155a1_seed_child.py": {
+      "bytes": 30995,
+      "gitBlob": "44d931365b4028a40e52a66a1b1fb10615fde877",
+      "gitMode": "100644",
+      "sha256": "fe598ba4e09e10b534d4f74de2d16246228e770eb00fd273d92c40ccf665cb12"
+    },
+    "scripts/run_response_preopen.py": {
+      "bytes": 1020,
+      "gitBlob": "a4d3f46c6fde73aff7259282ee708b68f069d507",
+      "gitMode": "100644",
+      "sha256": "e166d3d1cc05e664ef541ffd70dfd2cdb5b5145046b523325b38bf4e22bcd38e"
+    },
+    "scripts/run_retained_projected.py": {
+      "bytes": 783,
+      "gitBlob": "0323f94cb3057fa721696f03b1f7399888b791a8",
+      "gitMode": "100644",
+      "sha256": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+    },
+    "scripts/run_state_volume_worker.py": {
+      "bytes": 5817,
+      "gitBlob": "6f307e65dd59e8140085a85b4627f15eccfdedf1",
+      "gitMode": "100644",
+      "sha256": "835593ff0e5bffc3a421761e443777cc563f198ff5aaea3a29986746f7f7b97f"
+    },
+    "scripts/run_store_preopen.py": {
+      "bytes": 993,
+      "gitBlob": "864ab9b5ed854261c2c7f41522c60d7d6282f5ed",
+      "gitMode": "100644",
+      "sha256": "c018918593e211071bd51cb83a5b978e0873904db3ce987f9dc574b4e626e844"
+    },
+    "scripts/run_supervised_retained.py": {
+      "bytes": 1045,
+      "gitBlob": "69316b57b36325297f3d66776ad470b73656fdeb",
+      "gitMode": "100644",
+      "sha256": "208a9f42201e7fe8ff57469d56d604baa0a19a685dccffea871ade43807fed74"
+    },
+    "tests/test_finite_close_f135c6.py": {
+      "bytes": 8095,
+      "gitBlob": "12154a6f856b93dcea5be55eec9c9366f74a7f11",
+      "gitMode": "100644",
+      "sha256": "7b0f17f6e8a3e29d41f12a9773507d48b7a52391537242876b7b18936c7c6bfd"
+    },
+    "tests/test_finite_flow_receipt_f134c6.py": {
+      "bytes": 5078,
+      "gitBlob": "ecaa5b5978d542da9bc45665b809ae7ddeb0eca3",
+      "gitMode": "100644",
+      "sha256": "7a41f456286efe2976d22b92d8c32149bafec2c1ff79ce792ca7fe9a07a78cbe"
+    },
+    "tests/test_finite_flow_witness_f134c6.py": {
+      "bytes": 3420,
+      "gitBlob": "9fc3e720043a11b10bd3bba55ab8bcab328a3ffd",
+      "gitMode": "100644",
+      "sha256": "bf06ba230272d2654eb3c9724f2bccd3401c7cea9df7d95ec98963cb4f217b65"
+    },
+    "tests/test_prepared_work_guard_c127a6.py": {
+      "bytes": 6406,
+      "gitBlob": "f24067618ae701b68c6389f5720f7dac5fde3911",
+      "gitMode": "100644",
+      "sha256": "7e3f871a0212011da6f63972ee1a22ac6a83e6a926b319295a653d03480c1a70"
+    },
+    "tests/test_projected_candidate.py": {
+      "bytes": 26737,
+      "gitBlob": "44ae278f1c88a0a0d1e34f90c7e3a50b2232192a",
+      "gitMode": "100644",
+      "sha256": "015a43cc6dc679a2bddeac6abfd6dc7a3520830325724ca150ca278a8cf194fe"
+    },
+    "tests/test_projected_install.py": {
+      "bytes": 18890,
+      "gitBlob": "d2c5838034f40da64efad2f80217b95abb901044",
+      "gitMode": "100644",
+      "sha256": "17f06bbfa6062007e5f94f12014f1a68daa3ce8cb22337773f66a6ccca382752"
+    },
+    "tests/test_projected_install_runner.py": {
+      "bytes": 6083,
+      "gitBlob": "550f249e0cf07fd078db86804947d1e156e0d79a",
+      "gitMode": "100644",
+      "sha256": "59f3b0e2a08c7985bf38b38df28f6daf3a39108fcceb8cbf70d7d3212de08bf2"
+    },
+    "tests/test_retained_bootstrap.py": {
+      "bytes": 25986,
+      "gitBlob": "a41ee8708ca23283857656617e5fba54ac4ee910",
+      "gitMode": "100644",
+      "sha256": "8d03e7e4f6df13e6a1e2398af97dc989572da0f7145cfdb53a7edea5b60f2dc8"
+    },
+    "tests/test_retained_handoff_t143a7.py": {
+      "bytes": 8493,
+      "gitBlob": "2e1268e41ad089903b285036d0f72d9e874a4fa0",
+      "gitMode": "100644",
+      "sha256": "ef1a9a287414331cfee64cf94ddb2f7ead9fc5b12b948b2391271b1e86b8f353"
+    },
+    "tests/test_retained_profile_r140c6.py": {
+      "bytes": 8163,
+      "gitBlob": "a056acdfc9c503833eb2a4dc94759c6c9bc7bba3",
+      "gitMode": "100644",
+      "sha256": "240d9dea3ab512497192f33a69b8d4dd72352f615e32f6e44e8d40d8a2a7c264"
+    },
+    "tests/test_retained_projection_p142c6.py": {
+      "bytes": 19510,
+      "gitBlob": "7a19a93aecbc6c3a2ed8cf1da7fa5b7430902e25",
+      "gitMode": "100644",
+      "sha256": "2075b2d94284fa02e568eb0e56a79485be88e214a73fab904716097d69946ade"
+    },
+    "tests/test_seed_child.py": {
+      "bytes": 30786,
+      "gitBlob": "058ba3a060f8d2bb8c029a43a8b8552260125949",
+      "gitMode": "100644",
+      "sha256": "d50e044d382f4ab351417b950af41289bc92109913956c07bc1337521e725050"
+    },
+    "tests/test_seed_readiness_caller.py": {
+      "bytes": 17511,
+      "gitBlob": "3efda6cf9a56bd404687dedb227e162c9c313cac",
+      "gitMode": "100644",
+      "sha256": "54ddc6e3ddce55ca4540887b3a600635244e56e29dbe1ce671ca1429686c4394"
+    },
+    "tests/test_seed_readiness_runner.py": {
+      "bytes": 35174,
+      "gitBlob": "8cce22b3eb65c9e3c1c0cf51a7160874a3305444",
+      "gitMode": "100644",
+      "sha256": "e15a4b2b7506e91d47a2ab17c72aa34c3826561a27b6d47784fc4cf247868633"
+    },
+    "tests/test_seed_readiness_transport.py": {
+      "bytes": 8946,
+      "gitBlob": "ef7ef05903e62df42aa9c1e6755772fe8df06e72",
+      "gitMode": "100644",
+      "sha256": "5b997703cb5716b54826fd28a1c707ce7422701c9c9d3a42e94a06ac1722fe9e"
+    },
+    "tests/test_supervised_pipe_capture.py": {
+      "bytes": 4536,
+      "gitBlob": "5869f0389869db878eb353a3d38bbece5028f93c",
+      "gitMode": "100644",
+      "sha256": "ae558c5ba812ba7e2c85f7dff1f18000176fa7b5707aafe14c33464fd1a8c086"
+    },
+    "tests/test_supervised_retained_launch.py": {
+      "bytes": 20062,
+      "gitBlob": "7a45bc93287e0d5e7f642017b338f6372197d99f",
+      "gitMode": "100644",
+      "sha256": "d33c33892ee201c773d1cd232245fe49e41dfcac3481bf239878111a57bb0cf5"
+    }
+  },
+  "harnessCommit": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+  "kind": "R156A1_READ_ONLY_SOURCE_SNAPSHOT",
+  "scope": "Immutable Git blobs for source review; not execution or native acceptance",
+  "zipBytes": 550229,
+  "zipSha256": "eefcd256b6a15cd625f48b101668de05c87b334778afabdd8d42c4f8134994ab"
+}

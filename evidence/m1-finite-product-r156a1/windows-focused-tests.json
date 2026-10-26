@@ -1,0 +1,178 @@
+{
+  "elapsedSeconds": 228.64,
+  "errors": [],
+  "expectedFailures": 0,
+  "failures": [],
+  "kernelOrInstalledAcceptance": false,
+  "kind": "R156A1_WINDOWS_CURRENT_SOURCE_FOCUSED_TESTS",
+  "modules": [
+    "test_supervised_retained_launch",
+    "test_supervised_finite_launch",
+    "test_finite_protocol",
+    "test_finite_projected_launch",
+    "test_finite_runtime_contract",
+    "test_projected_candidate",
+    "test_projected_install",
+    "test_projected_install_runner",
+    "test_supervised_pipe_capture",
+    "test_retained_handoff_t143a7",
+    "test_retained_projection_p142c6",
+    "test_retained_bootstrap",
+    "test_seed_child",
+    "test_seed_readiness_caller",
+    "test_seed_readiness_runner",
+    "test_seed_readiness_transport"
+  ],
+  "nativeRuntimeExecuted": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "skipped": [
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_all_actual_candidate_fixture_bytes_materialize_and_read_back (test_projected_install.OwnedFilesystemTests.test_all_actual_candidate_fixture_bytes_materialize_and_read_back)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_atomic_publication_never_replaces_existing_directory (test_projected_install.OwnedFilesystemTests.test_atomic_publication_never_replaces_existing_directory)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_atomic_publication_success_preserves_directory_identity (test_projected_install.OwnedFilesystemTests.test_atomic_publication_success_preserves_directory_identity)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_changed_python_hash_refuses_using_declared_reader_fixture (test_projected_install.OwnedFilesystemTests.test_changed_python_hash_refuses_using_declared_reader_fixture)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_dependency_changed_bytes_refuse (test_projected_install.OwnedFilesystemTests.test_dependency_changed_bytes_refuse)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_dependency_mode_mismatch_refuses (test_projected_install.OwnedFilesystemTests.test_dependency_mode_mismatch_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_destination_existence_including_dangling_symlink_refuses (test_projected_install.OwnedFilesystemTests.test_destination_existence_including_dangling_symlink_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_extra_dependency_file_refuses (test_projected_install.OwnedFilesystemTests.test_extra_dependency_file_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_extra_empty_dependency_directory_refuses (test_projected_install.OwnedFilesystemTests.test_extra_empty_dependency_directory_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_fifo_refuses_without_waiting_for_writer (test_projected_install.OwnedFilesystemTests.test_fifo_refuses_without_waiting_for_writer)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_input_hardlink_refuses (test_projected_install.OwnedFilesystemTests.test_input_hardlink_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_input_symbolic_link_refuses (test_projected_install.OwnedFilesystemTests.test_input_symbolic_link_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_materialization_directory_case_collision_fails_before_writes (test_projected_install.OwnedFilesystemTests.test_materialization_directory_case_collision_fails_before_writes)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_materialization_file_directory_collision_fails_before_writes (test_projected_install.OwnedFilesystemTests.test_materialization_file_directory_collision_fails_before_writes)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_materialization_refuses_nonempty_directory_and_preserves_existing_file (test_projected_install.OwnedFilesystemTests.test_materialization_refuses_nonempty_directory_and_preserves_existing_file)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_materialization_traversal_fails_before_writes (test_projected_install.OwnedFilesystemTests.test_materialization_traversal_fails_before_writes)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_missing_dependency_refuses (test_projected_install.OwnedFilesystemTests.test_missing_dependency_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_parent_symbolic_link_refuses (test_projected_install.OwnedFilesystemTests.test_parent_symbolic_link_refuses)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_partial_write_is_preserved_without_success_receipt (test_projected_install.OwnedFilesystemTests.test_partial_write_is_preserved_without_success_receipt)"
+    },
+    {
+      "reason": "descriptor and atomic-publication fixtures require Linux",
+      "test": "test_world_writable_ancestry_refuses (test_projected_install.OwnedFilesystemTests.test_world_writable_ancestry_refuses)"
+    },
+    {
+      "reason": "owned descriptor/mode fixture requires Linux",
+      "test": "test_exact_transport_writers_set_modes_even_with_restrictive_umask (test_projected_install_runner.ProvisioningModeTests.test_exact_transport_writers_set_modes_even_with_restrictive_umask)"
+    },
+    {
+      "reason": "fixed Linux product pipe transport",
+      "test": "test_invalid_bounds_refuse_before_any_pipe_operation (test_supervised_pipe_capture.RealPipeContracts.test_invalid_bounds_refuse_before_any_pipe_operation)"
+    },
+    {
+      "reason": "fixed Linux product pipe transport",
+      "test": "test_large_input_and_two_output_pipes_do_not_deadlock (test_supervised_pipe_capture.RealPipeContracts.test_large_input_and_two_output_pipes_do_not_deadlock)"
+    },
+    {
+      "reason": "fixed Linux product pipe transport",
+      "test": "test_output_overflow_is_bounded_and_does_not_signal_owned_child (test_supervised_pipe_capture.RealPipeContracts.test_output_overflow_is_bounded_and_does_not_signal_owned_child)"
+    },
+    {
+      "reason": "fixed Linux product pipe transport",
+      "test": "test_timeout_then_explicit_read_observation_never_resends (test_supervised_pipe_capture.RealPipeContracts.test_timeout_then_explicit_read_observation_never_resends)"
+    },
+    {
+      "reason": "Owned POSIX symlink fixture",
+      "test": "test_profile_mutation_refuses_symlink_escape (test_retained_bootstrap.AuditContractTests.test_profile_mutation_refuses_symlink_escape)"
+    },
+    {
+      "reason": "Owned POSIX symlink fixture",
+      "test": "test_discovery_symlink_is_refused_even_with_matching_content (test_retained_bootstrap.OwnedFilesystemTests.test_discovery_symlink_is_refused_even_with_matching_content)"
+    },
+    {
+      "reason": "Linux fd and permission contract",
+      "test": "test_fresh_home_is_observed_not_created_or_reused (test_retained_bootstrap.OwnedFilesystemTests.test_fresh_home_is_observed_not_created_or_reused)"
+    },
+    {
+      "reason": "Linux fd and permission contract",
+      "test": "test_home_wrong_mode_or_symlink_is_refused (test_retained_bootstrap.OwnedFilesystemTests.test_home_wrong_mode_or_symlink_is_refused)"
+    },
+    {
+      "reason": "Linux selectable pipe contract",
+      "test": "test_eof_is_complete_even_when_caller_remains_live (test_seed_readiness_transport.PipeCollectionTests.test_eof_is_complete_even_when_caller_remains_live)"
+    },
+    {
+      "reason": "Linux selectable pipe contract",
+      "test": "test_overflow_is_bounded_and_does_not_wait_or_mark_complete (test_seed_readiness_transport.PipeCollectionTests.test_overflow_is_bounded_and_does_not_wait_or_mark_complete)"
+    },
+    {
+      "reason": "Linux selectable pipe contract",
+      "test": "test_timeout_preserves_unknown_without_wait (test_seed_readiness_transport.PipeCollectionTests.test_timeout_preserves_unknown_without_wait)"
+    }
+  ],
+  "sourceSha256": {
+    "packages/claw-hermes/gateway_finite_protocol.py": "0e727aaf40ab22cb9c9714b26563f237cc04afdf86455d481b9f397b974cc95c",
+    "packages/claw-hermes/gateway_finite_runtime.py": "e710f75ebc6900e1d16807a5d0a691f1c2f10c2f066c5d8918a6c13317e78c95",
+    "packages/claw-hermes/gateway_retained_launch.py": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2",
+    "packages/claw-hermes/gateway_supervised_launch.py": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364",
+    "scripts/build_projected_candidate.py": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b",
+    "scripts/install_projected_candidate.py": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6",
+    "scripts/run_finite_projected.py": "97c905dae7e9391ad01103a011cc5216b23ced95ef2d2bffdf1e809512ff95eb",
+    "scripts/run_supervised_finite.py": "e45cb067233e6e55ee191628d447e48628f2207462c33c9822f88150ea33f865",
+    "tests/test_finite_projected_launch.py": "07569246d1253752ce3b86247ce76d4876934f8ffa40937b68c3b2d0dc2c7364",
+    "tests/test_finite_protocol.py": "14c0160d1fe69961528745321e040ffceb3e508f1be6851a9f614fdb3f4f11c7",
+    "tests/test_finite_runtime_contract.py": "129595f8529721df78851bded6eff20c396edf5acd8ec714f5f745dc28e9bd13",
+    "tests/test_projected_candidate.py": "fba6f2d87f29fcb774319da62bb5198cac11f411bde574d2833f08002337af19",
+    "tests/test_projected_install.py": "8587e0a36d79d6b4b4dfcd3969088178b4721da71578c6d3350b9b9c0fd8ae4a",
+    "tests/test_supervised_finite_launch.py": "491f91bee101e1445ba824f16cd9ffeb2c9a38f17c60a1d146cba57f9c74cdb4"
+  },
+  "successful": true,
+  "testsRun": 351,
+  "unexpectedSuccesses": 0
+}

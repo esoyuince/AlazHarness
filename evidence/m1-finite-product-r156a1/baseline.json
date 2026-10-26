@@ -1,0 +1,284 @@
+{
+  "agentInstructions": [
+    "AGENTS.md"
+  ],
+  "ci": {
+    "requiredContext": {
+      "description": "ALAZ Local CI passed (verified same-commit reuse)",
+      "id": 57223715520,
+      "state": "success",
+      "updated_at": "2026-10-26T00:33:22Z"
+    },
+    "sha": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+    "state": "success"
+  },
+  "kind": "R156A1_ENTRY_BASELINE",
+  "observedAt": "2026-10-26T06:55:42.806004+00:00",
+  "originMain": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+  "remoteMain": "4823ebbca5f039aee1e9a4a209e40a48c015044a\trefs/heads/main",
+  "repoStatesEqualR155Final": true,
+  "repositories": [
+    {
+      "branch": "alaz/hyb-001-component-slice",
+      "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+      "path": "C:\\Antigravity\\AlazHarness",
+      "status": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+    },
+    {
+      "branch": "main",
+      "head": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+      "status": ""
+    },
+    {
+      "branch": "alaz/m1-install-readiness-r154a1",
+      "head": "27eb7571211ba0b685d7893d149438d612f6e2cd",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-install-readiness-r154a1",
+      "status": ""
+    },
+    {
+      "branch": "alaz/d3b-finite-close-f135c6",
+      "head": "d1516731308de8e87130dc68124e69aad35d6911",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6",
+      "status": ""
+    },
+    {
+      "branch": "alaz/m1-seed-readiness-r155a1",
+      "head": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-seed-readiness-r155a1",
+      "status": ""
+    }
+  ],
+  "result": "PASS",
+  "rgPath": "C:\\Users\\ender\\bin\\rg.EXE",
+  "rootChangedFiles": {
+    ".gitattributes": {
+      "sha256": "bfa8e6cdd13973c9bd83ff9fe751cf799697f92a0c85e73ee4daadc66b35a939",
+      "size": 159
+    },
+    "AGENTS.md": {
+      "sha256": "161f556dd899a873da5ec0935fd3693722a5c01f70c11971366d5d0b043efefb",
+      "size": 2218
+    },
+    "CURRENT-STATE.md": {
+      "sha256": "e75cd2ec0bf903787699a5bb4ff1c87c20fcbaa4c8e2c0435beb89e52562f829",
+      "size": 4352
+    },
+    "components.lock.json": {
+      "sha256": "af706bf7bade6f34b1aa2f2bf0d3d1b3086b2cec44e34d191abc162184c226a2",
+      "size": 3762
+    },
+    "docs/COMPONENT-MAP.md": {
+      "sha256": "783c3e2ff6a27aa62761ca07816e563665d0fd582e9eacc05865e6d66122d7f8",
+      "size": 4837
+    },
+    "docs/HYB-001-COMPONENT-SLICE.md": {
+      "sha256": "aaa62db6a6da637276a1320a87b33284ee3e90210b851ee11994241058b61a66",
+      "size": 4462
+    },
+    "docs/WORKSPACE-RULES.md": {
+      "sha256": "a077546c2190699baad1339876a79e805452a7aae40ab1e5e55b5311ecc53722",
+      "size": 1748
+    },
+    "docs/adr/0002-component-slice-before-runtime.md": {
+      "sha256": "36902d822302843daa587f5929d80264e75ff952b3821f8287bff38946b13bfc",
+      "size": 3016
+    },
+    "evidence/verification-20261014-a7a90059/SUMMARY.md": {
+      "sha256": "62b30627b2d705e1f2f7086dfdf9383f50607fab63598378603e960a87573c3f",
+      "size": 1523
+    },
+    "evidence/verification-20261014-a7a90059/commands.json": {
+      "sha256": "0db69ef6f54fa761aa46d45426b34f0db52f167e53fc27e5c6cd25d48003d9c8",
+      "size": 11586
+    },
+    "evidence/verification-20261014-a7a90059/final-state.json": {
+      "sha256": "d8ec0e0ad4839295eb48396447f28f41d9c0e03e042c21c751e681355b5f8960",
+      "size": 2195
+    },
+    "evidence/verification-20261014-a7a90059/source-snapshot.json": {
+      "sha256": "8912defa8b8acf08f8fc6baa06275d877c29a8769e79eec3afaced5cea722b61",
+      "size": 3736
+    },
+    "evidence/verification-20261014-a7a90059/workspace.json": {
+      "sha256": "d29f801b4f2b8ae97839b59d3213d6d2348582b940133894dc3235029965d447",
+      "size": 7304
+    },
+    "packages/hybrid-runtime/common.mjs": {
+      "sha256": "2d4208071bc0871a9ef261f7987e7a19b45e8547d479efe4b4b8b2733bf4eaf6",
+      "size": 1199
+    },
+    "packages/hybrid-runtime/demo.mjs": {
+      "sha256": "79016ee81e0aa8100adcefe35c676baf4c48375591dd163b97ae504d6708a90f",
+      "size": 562
+    },
+    "packages/hybrid-runtime/mock-harness.mjs": {
+      "sha256": "6d14dea142beb5c37d74a0083f26ff3cdb1f1cce6bdead4599f648b7d1c34b68",
+      "size": 11073
+    },
+    "packages/hybrid-runtime/stdio-peer.mjs": {
+      "sha256": "0ba4bc013b4855cdad616d262de20576c31b80d8c79e459233b87ae6ab679c29",
+      "size": 5676
+    },
+    "packages/upstream/README.md": {
+      "sha256": "c2e12c7ea819126ae4fba003e7206b969e1679f25886d01e9ee5ae8fdcdd2528",
+      "size": 1080
+    },
+    "packages/upstream/hermes/LICENSE": {
+      "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "size": 1070
+    },
+    "packages/upstream/hermes/iteration_budget.py": {
+      "sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+      "size": 1807
+    },
+    "packages/upstream/hermes/transport.py": {
+      "sha256": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+      "size": 15488
+    },
+    "packages/upstream/openclaw/LICENSE": {
+      "sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "size": 1076
+    },
+    "packages/upstream/openclaw/attempt-cancellation.ts": {
+      "sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+      "size": 1755
+    },
+    "packages/upstream/openclaw/attempt-deadlines.ts": {
+      "sha256": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+      "size": 3292
+    },
+    "packages/upstream/openclaw/number-coercion.ts": {
+      "sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+      "size": 12851
+    },
+    "packages/upstream/openclaw/string-coerce.ts": {
+      "sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+      "size": 4946
+    },
+    "scripts/demo_hybrid.py": {
+      "sha256": "7a705a8646b8cbd0e655c3832df590b6e6f6de5793427752b1811f09f391f060",
+      "size": 973
+    },
+    "scripts/verify_component_slices.py": {
+      "sha256": "445be487dfc8f122e39bf8d90621db96be74a0aa14a5113064c36af67656f1e3",
+      "size": 3915
+    },
+    "status.md": {
+      "sha256": "28fbe01668cea2d59c1d16feff193361a830af04b98ca68cc73df1d97a58dc2a",
+      "size": 61578
+    },
+    "tests/fixtures/hermes-scripted-peer.py": {
+      "sha256": "637c3fe1fa9fea3a6de745b4e27c2d02aa0b27441d28f798dd20d9d17a5bd6a0",
+      "size": 7563
+    },
+    "tests/hybrid/cases.mjs": {
+      "sha256": "749169e2b03b59abf0f49e4ee661b0078c3c611f3d67aeb2db82cefd246bd162",
+      "size": 10550
+    },
+    "tests/test_component_slices.py": {
+      "sha256": "eae484a67a7683d61da6429c93f90aabb73e0986f511a4f96058e384faf5f8a4",
+      "size": 4262
+    },
+    "tests/test_hybrid_slice.py": {
+      "sha256": "710d9c42a97b78effbc0941d26477e1a0cb1b76a86540fea49b59b6bb95f879b",
+      "size": 2540
+    }
+  },
+  "rootChangedFilesCount": 33,
+  "rootEqualsR155Final": true,
+  "sourceCandidates": [
+    "packages/claw-hermes\\supervised_pipe_capture.py",
+    "packages/claw-hermes\\source_capture.py",
+    "packages/claw-hermes\\gateway_supervised_launch.py",
+    "packages/claw-hermes\\gateway_retained_projection.py",
+    "packages/claw-hermes\\gateway_retained_profile.py",
+    "packages/claw-hermes\\gateway_retained_launch.py",
+    "packages/claw-hermes\\gateway_retained_handoff.py",
+    "packages/claw-hermes\\gateway_prepared_consumer.py",
+    "packages/claw-hermes\\gateway_consumer_admission.py",
+    "config\\admission-consumer-b129d6-sources.json",
+    "config\\admission-compatibility.lock.json",
+    "config\\canonical-api-consumer-i133p1-sources.json",
+    "scripts\\bootstrap_retained_profile.py",
+    "scripts\\native_admission_worker.mjs",
+    "scripts\\restore_sources.py",
+    "scripts\\verify_host_report_retained.py",
+    "scripts\\verify_evidence_view_retained.py",
+    "scripts\\verify-source-snapshot.py",
+    "scripts\\run_supervised_retained.py",
+    "scripts\\run_retained_projected.py",
+    "scripts\\run_native_admission.py",
+    "scripts\\run_independent_admission_qa.py",
+    "config\\finite-close-f135c6-sources.json",
+    "config\\linux-prepared-dependencies-l125p1.json",
+    "config\\prepared-consumer-s124b1-sources.json",
+    "config\\retained-profile-r140c6-sources.json",
+    "config\\research-sources.lock.json",
+    "config\\execution-gate\\source-lock.json",
+    "config\\hermes-finite-close-f135c6.json",
+    "config\\hermes-admission-lifecycle-a128c6.json",
+    "config\\hermes-prepared-api-b123a6.json",
+    "config\\operator-resolution\\source-lock.json",
+    "scripts\\qa\\b123a6_native_prepared_api.py",
+    "scripts\\qa\\admission-owner.mjs",
+    "scripts\\qa\\admission-atomic.mjs",
+    "scripts\\qa\\a128c6_native_admission.py",
+    "scripts\\qa\\execution_retained_qa3156.py",
+    "scripts\\qa\\c127a6_native_prepared_work.py",
+    "scripts\\qa\\export_principal_source.py",
+    "scripts\\qa\\f135c6_native_finite_close.py",
+    "tests\\historical_finite_close_f135c6.py",
+    "config\\isolated-read\\source-lock.json",
+    "scripts\\qa\\l125c6_linux_source_compile.py",
+    "scripts\\qa\\host_report_retained_9256.py",
+    "scripts\\qa\\l139c6_linux_owner_finite.py",
+    "tests\\historical_sources_l113f6.py",
+    "tests\\historical_retained_r140c6.py",
+    "tests\\historical_prepared_c127a6.py",
+    "config\\opencode-probe\\source-lock.json",
+    "scripts\\qa\\o127b6_native_prepared_observer.py",
+    "scripts\\qa\\o127b6_native_turn_source.py",
+    "config\\recovery-inspector\\source-lock.json",
+    "tests\\test_admission_evidence.py",
+    "scripts\\qa\\verify_source_capture_af13.py",
+    "scripts\\qa\\q128c6_native_admission_baseline.py",
+    "tests\\test_admission_lifecycle_receipt_q128c6.py",
+    "tests\\test_admission_lifecycle_receipt_a128c6.py",
+    "tests\\test_execution_retained_qa3156.py",
+    "tests\\test_finite_close_f135c6.py",
+    "config\\gateway-probe\\source-lock.json",
+    "tests\\test_finite_flow_receipt_f134c6.py",
+    "tests\\test_finite_flow_witness_f134c6.py",
+    "tests\\node\\admission-cases.mjs",
+    "tests\\test_native_store_crash_receipt_n105d.py",
+    "tests\\test_native_profile_admission_receipt.py",
+    "tests\\test_native_store_linux_receipt_n105d.py",
+    "scripts\\qa\\opencode-independent\\source-loader.mjs",
+    "config\\host-gate\\source-lock.json",
+    "tests\\test_prepared_layout_f126c1.py",
+    "tests\\test_prepared_join_receipt_a123c6.py",
+    "tests\\test_prepared_api_receipt_b123a6.py",
+    "tests\\test_observer_source_contracts_o127b6.py",
+    "tests\\test_prepared_work_receipt_c127a6.py",
+    "tests\\test_prepared_work_guard_c127a6.py",
+    "tests\\test_principal_source_export.py",
+    "tests\\test_retained_projection_p142c6.py",
+    "tests\\test_retained_profile_r140c6.py",
+    "tests\\test_retained_handoff_t143a7.py",
+    "tests\\test_retained_bootstrap.py",
+    "tests\\test_retained_restart_receipt_r140c6.py",
+    "tests\\test_retained_projection_receipt_p142c6.py",
+    "tests\\test_source_capture.py",
+    "tests\\test_source_capture_bootstrap.py",
+    "tests\\test_supervised_retained_launch.py",
+    "tests\\test_supervised_pipe_capture.py",
+    "tests\\test_strict_admission.py",
+    "tests\\test_source_snapshot_qa_c72e.py",
+    "tests\\test_source_snapshot_checks.py",
+    "tests\\test_source_pagination_qa_c72e.py",
+    "tests\\test_source_loader_qa_c72e.py",
+    "tests\\test_source_capture_qa_c72e.py",
+    "tests\\test_source_capture_defaults.py"
+  ]
+}

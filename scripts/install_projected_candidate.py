@@ -25,7 +25,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from types import MappingProxyType
 
-BUILDER_SHA256 = '97be4be2a0aec7a045fd099b1f56b12c58501e312777e1ad67fee45cbe601cc7'
+BUILDER_SHA256 = '7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b'
 PYTHON = '/usr/bin/python3.12'
 MANIFEST_LIMIT = 2 * 1024 * 1024
 DEPENDENCY_FILE_LIMIT = 32 * 1024 * 1024
