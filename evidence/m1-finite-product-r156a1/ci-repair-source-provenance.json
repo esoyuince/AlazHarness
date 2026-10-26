@@ -1,0 +1,28 @@
+{
+  "currentSource": {
+    "bytes": 12711,
+    "commit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+    "matchesAcceptedRuntime": true,
+    "path": "packages/claw-hermes/gateway_retained_launch.py",
+    "sha256": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2"
+  },
+  "historicalSource": {
+    "archive": "evidence/m1-finite-product-r156a1/r150-integrated-gateway_retained_launch.py.txt",
+    "bytes": 9822,
+    "commit": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+    "gitBlob": "30f1b41c3377f7350fdc51637708a4c3f130698e",
+    "originalIntegrationSha256": "36043f10b69134707367a97a3c02bfe97375abc586f523e7adca16d464e03aba",
+    "path": "packages/claw-hermes/gateway_retained_launch.py",
+    "sha256": "3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db"
+  },
+  "historyOutcomesRewritten": false,
+  "kind": "R156_HISTORY_ASSERTION_REPAIR_PROVENANCE",
+  "nativeOperationsRepeated": false,
+  "productSourceChanged": false,
+  "serverConfigurationChanged": false,
+  "unchangedInputs": {
+    "evidence/d3b-self-identity-r150a1/integration.json": "36043f10b69134707367a97a3c02bfe97375abc586f523e7adca16d464e03aba",
+    "evidence/m1-finite-product-r156a1/pre-publication-checks.json": "8fc6fe74c974ac8736f8293a12ef93f44514c499da7f41379fe3d8b0b43fcae0",
+    "tests/historical_self_identity_r150a1.py": "98ce14ae9c1758791bae9172d145492c8d7aacb3e209004bb4eb46a664e61532"
+  }
+}

@@ -197,6 +197,40 @@ ikinci çocuk eklememelidir.
   PASS, 6.564 dosya / iki gitlink / 3.952 keşfedilen test; exit 0, 65.479 saniye.
   Tüm keşfedilen testlerin çalıştırıldığı iddiası bu kapıdan çıkarılmaz.
 
+## CI hatası ve tarihsel kaynak doğrulaması
+
+İlk yayın adayı 0451203566f25459e48b13a2c96756597f9ed460 için gerçek
+alaz/local-ci koşusu başarısız oldu: **3.952 test, 3.944 geçen, iki failure,
+altı skip; 245.919 saniye**. İki R150 testi, R156 ile bilerek değiştirilen güncel
+launcher'ı eski R147 uygulama hash'iyle karşılaştırıyordu. Zaman aşımı ve OOM
+yoktu; container normal kaldırıldı. Test komutu başarısız olduğu için bu CI
+koşusunda statik adıma geçilmedi. Main önceki kabul edilmiş commit'te tutuldu.
+
+Aynı iki hata Windows'taki sekiz testlik seçimde yeniden üretildi. Düzeltme
+yalnız tarihsel doğrulama testine ve eski launcher'ın sabit arşivine aittir.
+Özgün R150 integration kaydı, tarihsel resolver, eski test sonuçları ve kabul
+edilmiş R156 çalışma kodu değişmedi. Önceki launcher, 4823ebb Git commit'inin
+30f1b41c3377f7350fdc51637708a4c3f130698e blob'undan alındı; 9.822 byte ve
+3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db hash'i
+özgün kayıtla eşleşti. Güncel launcher doğrudan dosyadan okunarak kabul edilmiş
+e641a50 kaydındaki 4140c06d hash'iyle doğrulanır.
+
+İki ek negatif test, sağlam tarihsel arşivin bozulmuş güncel dosyayı ve sağlam
+güncel dosyanın bozulmuş arşivi gizleyemediğini doğruladı. Düzeltme sonrası
+**10/10 test PASS**, exit 0, 0.592 saniye. Yeni commit'in tam CI kabulü ayrıca
+gereklidir; önceki başarısız koşunun sonucu değiştirilmez.
+
+- [Gerçek başarısız CI özeti](../evidence/m1-finite-product-r156a1/ci045120-failure.json)
+- [Yalnız test hatalarını içeren özgün log bölümü](../evidence/m1-finite-product-r156a1/ci045120-test-failures.txt)
+- [Düzeltme öncesi Windows yeniden üretimi](../evidence/m1-finite-product-r156a1/ci-repair-red.json)
+- [Düzeltme sonrası 10 test](../evidence/m1-finite-product-r156a1/ci-repair-green.json)
+- [Eski ve güncel kaynak bağları](../evidence/m1-finite-product-r156a1/ci-repair-source-provenance.json)
+
+Düzeltme sonrası [izlenen kaynak/statik ve keşif kontrolü](../evidence/m1-finite-product-r156a1/ci-repair-static.json)
+PASS: 6.568 izlenen dosya, iki gitlink, 3.954 keşfedilen test; exit 0,
+100.845 saniye. Yeni kanıt/sonuç metadatası açık stage öncesinde ayrıca doğrulanır;
+commit'in tamamı için exact-SHA CI zorunludur. Bağımsız düzeltme incelemesi PASS.
+
 ## Açık işler
 
 Bu dilimde kaynak, yeni kurulum, ordinary proof ve aynı imajda finite/normal

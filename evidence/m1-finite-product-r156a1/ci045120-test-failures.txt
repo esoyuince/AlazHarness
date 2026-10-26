@@ -1,0 +1,27 @@
+======================================================================
+FAIL: test_current_product_is_checked_live_not_old_kernel_snapshot (test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_self_identity_history_r150a1.py", line 25, in test_current_product_is_checked_live_not_old_kernel_snapshot
+    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+AssertionError: '4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2' != '3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db'
+- 4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2
++ 3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db
+
+
+======================================================================
+FAIL: test_r147_patch_and_all_five_tested_candidate_bytes_preserved (test_self_identity_history_r150a1.SelfIdentityHistory.test_r147_patch_and_all_five_tested_candidate_bytes_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_self_identity_history_r150a1.py", line 48, in test_r147_patch_and_all_five_tested_candidate_bytes_preserved
+    for name,want in current['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2' != '3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db'
+- 4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2
++ 3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db
+
+
+----------------------------------------------------------------------
+Ran 3952 tests in 245.919s
+
+FAILED (failures=2, skipped=6)

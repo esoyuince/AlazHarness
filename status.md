@@ -1,6 +1,6 @@
 # AlazHarness - status
 
-## R156A1 - NATIVE/STATIC PASS: current installed finite work; exact-commit publication gate
+## R156A1 - NATIVE/STATIC PASS: history repair passed; corrected exact-commit gate pending
 
 Base main: 4823ebbca5f039aee1e9a4a209e40a48c015044a.
 Branch: alaz/m1-finite-product-r156a1.
@@ -108,11 +108,42 @@ Installation: [receipt](evidence/m1-finite-product-r156a1/installation/installat
 Roadmap: [product roadmap](docs/PRODUCT-ROADMAP.md).
 All earlier R156 checkpoints remain under docs/status-history/r156a1-*.md.
 
+### Exact-SHA CI failure and source-history correction
+
+The first final commit 0451203566f25459e48b13a2c96756597f9ed460 was pushed to
+the feature branch. Its actual alaz/local-ci result was FAILURE, exit 1:
+3952 tests run, 3944 passed, 2 failures, 6 skips, 245.919 seconds.
+The two R150 history tests incorrectly required the current R156 launcher to
+equal the earlier R147 applied digest. No timeout or OOM; container removed.
+CI stopped before static checks. Main was held at 4823; this failed run is kept.
+
+The same two failures reproduced in the Windows eight-test selection.
+The correction changes only the history test and adds an exact 9822-byte
+archive of the prior launcher from immutable 4823 Git blob
+30f1b41c3377f7350fdc51637708a4c3f130698e. Original R150 integration, resolver,
+historical outcomes and R156 runtime/acceptance bytes are unchanged.
+
+Current five-file checks read live files against fixed expected digests;
+only the R156 launcher advances to its accepted e641 digest. Historical
+five-file checks use the fixed archive for that earlier launcher generation.
+Two added cases reject altered live bytes despite an intact archive and
+altered archive bytes despite an intact current file. Corrected Windows
+selection: 10/10 PASS, zero failures/errors/skips, exit 0, 0.592 seconds.
+Post-correction tracked-source static/discovery PASS: 6568 tracked root files,
+2 gitlinks, 3954 discovered tests, exit 0, 100.845 seconds. New evidence and
+closure metadata are validated before explicit staging; full committed-tree
+CI remains required. Discovery is not full test execution.
+Independent repair diff/source review PASS; no native/runtime changes.
+
+Failure: [actual CI](evidence/m1-finite-product-r156a1/ci045120-failure.json).
+Correction: [focused tests](evidence/m1-finite-product-r156a1/ci-repair-green.json).
+Provenance: [source generations](evidence/m1-finite-product-r156a1/ci-repair-source-provenance.json).
+
 ### Publication and exact next step
 
 This tracked snapshot is written before its own final commit. Publication
 requires exact pushed-SHA alaz/local-ci success, then ordinary fast-forward main.
-The post-commit journal in this worktree's scratch/r156a1-publication/ records
+The corrected post-commit journal in scratch/r156a1-publication/repair001/ records
 the actual final SHA, accepted-ci-before-main.json and final-publication.json.
 Live Git refs and that exact SHA's latest status are authoritative; no push
 or CI success is inferred from this pre-commit snapshot. Read them on resume.
@@ -155,3 +186,10 @@ M1-01..M1-07/pilot remain OPEN.
 - Final full static/discovery PASS: 6564 files / 2 gitlinks / 3952 tests discovered, exit 0 in 65.479 seconds. Final closure metadata is checked separately after this scan.
 - Independent actual acceptance and original ownership reviews PASS; all ordinary proof rows are bound and the three native operation receipts are terminal exit 0.
 - Exact pushed-SHA CI and normal main publication are recorded afterward in scratch/r156a1-publication/ without a self-referential tracked commit.
+
+- First exact-SHA CI failed on two stale source-history assertions; main held.
+- Original records preserved; fixed old launcher archived; corrected history10/10 PASS.
+- Accepted runtime and all three actual native operation receipts unchanged.
+
+- Corrected tracked-source static/discovery PASS: 6568 files, 3954 tests discovered.
+- New evidence/closure metadata validated before commit; exact new-SHA full CI required.

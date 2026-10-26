@@ -4,8 +4,61 @@ import hashlib,json,tempfile,unittest
 import historical_self_identity_r150a1 as h
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-self-identity-r150a1'
+INTEGRATION='evidence/d3b-self-identity-r150a1/integration.json'
+INTEGRATION_SHA='36043f10b69134707367a97a3c02bfe97375abc586f523e7adca16d464e03aba'
+PREPUBLICATION='evidence/m1-finite-product-r156a1/pre-publication-checks.json'
+PREPUBLICATION_SHA='8fc6fe74c974ac8736f8293a12ef93f44514c499da7f41379fe3d8b0b43fcae0'
+CURRENT_SOURCE='e641a5000810efb2a453ae847f689b422f7d41a7'
+LAUNCHER='packages/claw-hermes/gateway_retained_launch.py'
+CURRENT_LAUNCHER_SHA='4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2'
+APPLIED_LAUNCHER='evidence/m1-finite-product-r156a1/r150-integrated-gateway_retained_launch.py.txt'
+APPLIED_NAMES=frozenset(('packages/claw-hermes/credential_guard.py',LAUNCHER,
+    'packages/claw-hermes/gateway_state_projection.py',
+    'tests/test_projected_launch_l145a8.py','tests/test_self_identity_r147.py'))
 def read(name):return json.loads((E/name).read_text(encoding='utf-8'))
 class SelfIdentityHistory(unittest.TestCase):
+    def integration(self,root):
+        raw=(root/INTEGRATION).read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),INTEGRATION_SHA,'original R150 integration changed')
+        value=json.loads(raw)
+        self.assertEqual(set(value['sourceHashes']),APPLIED_NAMES)
+        return value
+    def assert_current_sources(self,root):
+        # Four applied files remain exact; only the launcher advanced in R156.
+        # Expected bytes come from fixed records, never from the live file.
+        current=dict(self.integration(root)['sourceHashes'])
+        raw=(root/PREPUBLICATION).read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),PREPUBLICATION_SHA,'R156 source binding changed')
+        accepted=json.loads(raw)
+        self.assertEqual(accepted['sourceCommit'],CURRENT_SOURCE)
+        self.assertEqual(accepted['sourceHashes'][LAUNCHER],CURRENT_LAUNCHER_SHA)
+        current[LAUNCHER]=CURRENT_LAUNCHER_SHA
+        base=json.loads((root/'evidence/d3b-self-identity-r150a1/baseline.json').read_bytes())
+        for name,want in current.items():
+            self.assertEqual(hashlib.sha256((root/name).read_bytes()).hexdigest(),want,
+                             'current product bytes changed: '+name)
+            if name.startswith('packages/'):
+                self.assertNotEqual(want,base['sources'][name])
+                self.assertIsNone(h.saved_generation_hash(root,name,want))
+                self.assertEqual(h.source_path(root,name,want),root/name)
+                self.assertEqual(h.source_hash(root,name,want),want)
+    def assert_applied_sources(self,root):
+        applied=self.integration(root)
+        self.assertIs(applied['allFiveAppliedFilesEqualTestedR147'],True)
+        for name,want in applied['sourceHashes'].items():
+            # This is one fixed historical generation, not a fallback for live code.
+            path=root/APPLIED_LAUNCHER if name==LAUNCHER else root/name
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),want,
+                             'R150 applied bytes changed: '+name)
+    def source_fixture(self,directory):
+        root=Path(directory)
+        names=(*APPLIED_NAMES,INTEGRATION,PREPUBLICATION,APPLIED_LAUNCHER,
+            'evidence/d3b-self-identity-r150a1/baseline.json',
+            'evidence/d3b-self-identity-r150a1/historical-source-bindings.json')
+        for name in names:
+            path=root/name;path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_bytes((ROOT/name).read_bytes())
+        return root
     def test_exact_old_path_and_digest_bind_archived_bytes(self):
         base=read('baseline.json');binding=read('historical-source-bindings.json')
         self.assertEqual(base['base'],h.BASE);self.assertEqual(binding['base'],h.BASE)
@@ -20,12 +73,21 @@ class SelfIdentityHistory(unittest.TestCase):
             self.assertIsNone(h.saved_generation_hash(ROOT,name,'0'*64))
             self.assertEqual(h.source_path(ROOT,name,'0'*64),ROOT/name)
     def test_current_product_is_checked_live_not_old_kernel_snapshot(self):
-        base=read('baseline.json');current=read('integration.json')['sourceHashes']
-        for name,want in current.items():
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
-            if name.startswith('packages/'):
-                self.assertNotEqual(want,base['sources'][name]);self.assertIsNone(h.saved_generation_hash(ROOT,name,want))
-                self.assertEqual(h.source_hash(ROOT,name,want),want)
+        self.assert_current_sources(ROOT)
+    def test_tampered_current_launcher_cannot_be_hidden_by_applied_archive(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=self.source_fixture(d)
+            (root/LAUNCHER).write_bytes(b'# altered current launcher\n')
+            self.assert_applied_sources(root)
+            with self.assertRaisesRegex(AssertionError,'current product bytes changed'):
+                self.assert_current_sources(root)
+    def test_tampered_applied_launcher_cannot_be_hidden_by_current_source(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=self.source_fixture(d)
+            (root/APPLIED_LAUNCHER).write_bytes(b'# altered R150 integrated launcher\n')
+            self.assert_current_sources(root)
+            with self.assertRaisesRegex(AssertionError,'R150 applied bytes changed'):
+                self.assert_applied_sources(root)
     def test_tampered_archive_is_never_accepted(self):
         name='packages/claw-hermes/credential_guard.py';binding=read('historical-source-bindings.json');want=binding['sources'][name]['sha256']
         with tempfile.TemporaryDirectory() as d:
@@ -42,10 +104,9 @@ class SelfIdentityHistory(unittest.TestCase):
             (folder/'historical-source-bindings.json').write_text(json.dumps(binding),encoding='utf-8')
             with self.assertRaisesRegex(AssertionError,'archived source path'):h.saved_generation_hash(root,name,want)
     def test_r147_patch_and_all_five_tested_candidate_bytes_preserved(self):
-        original=read('r147-original/summary.json');current=read('integration.json')
+        original=read('r147-original/summary.json')
         self.assertEqual(hashlib.sha256((E/'R147-self-identity.patch').read_bytes()).hexdigest(),original['patchSha256'])
-        self.assertTrue(current['allFiveAppliedFilesEqualTestedR147']);self.assertEqual(len(current['sourceHashes']),5)
-        for name,want in current['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+        self.assert_applied_sources(ROOT)
         proof=read('r147-original/red-green.json')
         self.assertEqual(proof['red-final']['testSha256'],proof['green-final']['testSha256'])
         self.assertEqual((proof['red-final']['exitCode'],proof['green-final']['exitCode']),(1,0))

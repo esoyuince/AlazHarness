@@ -1,0 +1,31 @@
+{
+  "accepted": false,
+  "combinedState": "failure",
+  "expectedSha": "0451203566f25459e48b13a2c96756597f9ed460",
+  "httpStatus": 200,
+  "kind": "R156A1_EXACT_SHA_CI_OBSERVATION",
+  "latestRequiredContext": {
+    "context": "alaz/local-ci",
+    "created_at": "2026-10-26T07:54:36Z",
+    "description": "ALAZ Local CI failed (rc=1)",
+    "id": 57240625611,
+    "state": "failure",
+    "target_url": null,
+    "updated_at": "2026-10-26T07:54:36Z"
+  },
+  "observedAt": "2026-10-26T07:55:06.383294+00:00",
+  "serverDate": "Mon, 26 Oct 2026 07:54:47 GMT",
+  "sha": "0451203566f25459e48b13a2c96756597f9ed460",
+  "statuses": [
+    {
+      "context": "alaz/local-ci",
+      "created_at": "2026-10-26T07:54:36Z",
+      "description": "ALAZ Local CI failed (rc=1)",
+      "id": 57240625611,
+      "state": "failure",
+      "target_url": null,
+      "updated_at": "2026-10-26T07:54:36Z"
+    }
+  ],
+  "url": "https://api.github.com/repos/esoyuince/AlazHarness/commits/0451203566f25459e48b13a2c96756597f9ed460/status"
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "R156_HISTORY_REPAIR_INDEPENDENT_SOURCE_REVIEW",
+  "result": "PASS",
+  "reviewer": "r156_native_api_contract",
+  "sourceTestSha256": "4c38dbc07d57f1911d1c4f896b19fe2af9331f2bbe9402f3f50840ddbde54e66",
+  "originalTestSha256": "1301c7a683432d698938517411433e0a6127a139c9442c4f9ab8314dc3ffa730",
+  "sourceOnly": true,
+  "newTestsRunByReviewer": 0,
+  "nativeOperationsRunByReviewer": 0,
+  "checks": [
+    "Only two stale assertions changed; other six original test methods unchanged.",
+    "Live sources read directly; fixed accepted e641 launcher digest verified against byte-pinned pre-publication record.",
+    "R150 integration and historical resolver unchanged; no arbitrary digest fallback.",
+    "9822-byte old launcher archive equals verified previous source snapshot, SHA3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db.",
+    "Both tamper cases exercise the shared assertion helpers while proving the other generation remains intact."
+  ]
+}

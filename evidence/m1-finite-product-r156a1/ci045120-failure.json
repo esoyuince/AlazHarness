@@ -1,0 +1,26 @@
+{
+  "cause": "Two R150 source-history assertions require current launcher bytes to equal the historical R147 integration digest; R156 intentionally changed that live file.",
+  "checkoutSha": "0451203566f25459e48b13a2c96756597f9ed460",
+  "containerCleanup": "removed",
+  "containerExitCode": 1,
+  "delivery": "e447cccc-d111-11f1-90cf-25d248da4770",
+  "failureExcerpt": "ci045120-test-failures.txt",
+  "failureExcerptSha256": "109de4dc9a91383ea1096551d65258e1bdae82bdd4993adcd5566bf873332bba",
+  "kind": "ACTUAL_EXACT_SHA_LOCAL_CI_FAILURE",
+  "oomKilled": false,
+  "rawPrivateLogSha256": "c2638bd80d8c1cdbeffde0f60a1f44c2d3ec40c6e34c572f2ddf17c07574db16",
+  "runtimeCandidateChangedByDiagnosis": false,
+  "serverConfigurationChanged": false,
+  "sha": "0451203566f25459e48b13a2c96756597f9ed460",
+  "staticGateRun": false,
+  "status": "FAIL",
+  "tests": {
+    "durationSeconds": 245.919,
+    "errors": 0,
+    "failures": 2,
+    "passed": 3944,
+    "run": 3952,
+    "skipped": 6
+  },
+  "timeout": false
+}

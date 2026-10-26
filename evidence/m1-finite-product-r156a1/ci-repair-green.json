@@ -1,0 +1,12 @@
+{
+  "durationMs": 1048,
+  "exitCode": 0,
+  "kind": "WINDOWS_FOCUSED_HISTORY_REPAIR",
+  "originalHistoryUnchanged": true,
+  "outputSha256": "6d4a188a411aed38e17ef5e0a0ff59d40852433d5732fbc03c0c05d498ca79b1",
+  "passed": 10,
+  "rawOutput": "ci-repair-green-output.txt",
+  "run": 10,
+  "runtimeSourceChanged": false,
+  "testFileSha256": "4c38dbc07d57f1911d1c4f896b19fe2af9331f2bbe9402f3f50840ddbde54e66"
+}

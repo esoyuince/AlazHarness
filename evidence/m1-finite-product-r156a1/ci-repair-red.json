@@ -1,0 +1,10 @@
+{
+  "durationMs": 837,
+  "exitCode": 1,
+  "expectedFailures": 2,
+  "head": "0451203566f25459e48b13a2c96756597f9ed460",
+  "kind": "WINDOWS_FOCUSED_HISTORY_RED_REPRODUCTION",
+  "outputSha256": "93138ca54e96cfbf6d2f5d37fd0aa35b9230735b5c95db66eb9a95eb4ab16b42",
+  "rawOutput": "ci-repair-red-output.txt",
+  "testFileSha256": "1301c7a683432d698938517411433e0a6127a139c9442c4f9ab8314dc3ffa730"
+}

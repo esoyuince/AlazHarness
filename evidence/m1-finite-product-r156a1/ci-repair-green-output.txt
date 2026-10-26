@@ -1,0 +1,15 @@
+test_current_product_is_checked_live_not_old_kernel_snapshot (test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot) ... ok
+test_exact_old_path_and_digest_bind_archived_bytes (test_self_identity_history_r150a1.SelfIdentityHistory.test_exact_old_path_and_digest_bind_archived_bytes) ... ok
+test_manifest_cannot_point_to_another_file (test_self_identity_history_r150a1.SelfIdentityHistory.test_manifest_cannot_point_to_another_file) ... ok
+test_original_evidence_copy_provenance_and_scope (test_self_identity_history_r150a1.SelfIdentityHistory.test_original_evidence_copy_provenance_and_scope) ... ok
+test_prior_outcomes_remain_historical_and_first_full_fail_kept (test_self_identity_history_r150a1.SelfIdentityHistory.test_prior_outcomes_remain_historical_and_first_full_fail_kept) ... ok
+test_r147_patch_and_all_five_tested_candidate_bytes_preserved (test_self_identity_history_r150a1.SelfIdentityHistory.test_r147_patch_and_all_five_tested_candidate_bytes_preserved) ... ok
+test_tampered_applied_launcher_cannot_be_hidden_by_current_source (test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_launcher_cannot_be_hidden_by_current_source) ... ok
+test_tampered_archive_is_never_accepted (test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_archive_is_never_accepted) ... ok
+test_tampered_current_launcher_cannot_be_hidden_by_applied_archive (test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_launcher_cannot_be_hidden_by_applied_archive) ... ok
+test_unknown_paths_or_generations_are_not_redirected (test_self_identity_history_r150a1.SelfIdentityHistory.test_unknown_paths_or_generations_are_not_redirected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.592s
+
+OK

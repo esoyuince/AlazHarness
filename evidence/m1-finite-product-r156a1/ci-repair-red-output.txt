@@ -1,0 +1,37 @@
+test_current_product_is_checked_live_not_old_kernel_snapshot (test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot) ... FAIL
+test_exact_old_path_and_digest_bind_archived_bytes (test_self_identity_history_r150a1.SelfIdentityHistory.test_exact_old_path_and_digest_bind_archived_bytes) ... ok
+test_manifest_cannot_point_to_another_file (test_self_identity_history_r150a1.SelfIdentityHistory.test_manifest_cannot_point_to_another_file) ... ok
+test_original_evidence_copy_provenance_and_scope (test_self_identity_history_r150a1.SelfIdentityHistory.test_original_evidence_copy_provenance_and_scope) ... ok
+test_prior_outcomes_remain_historical_and_first_full_fail_kept (test_self_identity_history_r150a1.SelfIdentityHistory.test_prior_outcomes_remain_historical_and_first_full_fail_kept) ... ok
+test_r147_patch_and_all_five_tested_candidate_bytes_preserved (test_self_identity_history_r150a1.SelfIdentityHistory.test_r147_patch_and_all_five_tested_candidate_bytes_preserved) ... FAIL
+test_tampered_archive_is_never_accepted (test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_archive_is_never_accepted) ... ok
+test_unknown_paths_or_generations_are_not_redirected (test_self_identity_history_r150a1.SelfIdentityHistory.test_unknown_paths_or_generations_are_not_redirected) ... ok
+
+======================================================================
+FAIL: test_current_product_is_checked_live_not_old_kernel_snapshot (test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-finite-product-r156a1\tests\test_self_identity_history_r150a1.py", line 25, in test_current_product_is_checked_live_not_old_kernel_snapshot
+    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2' != '3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db'
+- 4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2
++ 3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db
+
+
+======================================================================
+FAIL: test_r147_patch_and_all_five_tested_candidate_bytes_preserved (test_self_identity_history_r150a1.SelfIdentityHistory.test_r147_patch_and_all_five_tested_candidate_bytes_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-finite-product-r156a1\tests\test_self_identity_history_r150a1.py", line 48, in test_r147_patch_and_all_five_tested_candidate_bytes_preserved
+    for name,want in current['sourceHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),want)
+                                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2' != '3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db'
+- 4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2
++ 3d61ed134c655f5c39f86af424934eeeb22ebf304f4e994425300c9b0992b3db
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.359s
+
+FAILED (failures=2)
