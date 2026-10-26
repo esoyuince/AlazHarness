@@ -1,0 +1,297 @@
+{
+  "schema": 1,
+  "kind": "R159_CLIENT_CONTROL_TESTS",
+  "result": "PASS",
+  "atUtc": "2026-10-26T17:07:39.496471+00:00",
+  "harnessBase": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "nativeBase": "d1516731308de8e87130dc68124e69aad35d6911",
+  "scope": "Portable client/CLI and conservative recovery fixtures, plus source-level compatibility review against the final native queued-cancellation proof.",
+  "testResult": {
+    "run": 58,
+    "passed": 58,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 9.694,
+    "success": true,
+    "uniqueTestIdsVerified": 58,
+    "allRetainedLogOutcomes": "ok",
+    "resultAuthority": "The retained original summary JSON and complete unittest log agree; counts were independently parsed without rerunning tests."
+  },
+  "invocation": {
+    "exactLauncherCommand": null,
+    "launcherInterpreter": null,
+    "launcherExitCode": null,
+    "recordingStatus": "UNRECORDED",
+    "reason": "The retained log and summary contain results and fully qualified test IDs but no launcher command, interpreter or process exit code. The parent confirmed the original invocation was not recoverable from compacted context. No invocation was invented and no rerun was made.",
+    "moduleSelectionsVerifiedFromLog": [
+      "test_local_control",
+      "test_recovery_projection",
+      "test_queued_cancel_control_r159a1"
+    ],
+    "currentWrapperExecution": "Each selected Python unittest wrapper executes its recorded Node scenario script in a subprocess. These source-level selections are not a reconstruction of the missing original launcher command.",
+    "nodeVersionAtOriginalRun": "UNRECORDED",
+    "testRerunForThisEvidence": false
+  },
+  "moduleBreakdown": [
+    {
+      "module": "test_local_control",
+      "path": "tests/test_local_control.py",
+      "purpose": "Existing local HTTP control and CLI contracts",
+      "passed": 31,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "nodeScenarioScript": "tests/node/local-control-cases.mjs",
+      "scenariosFromCurrentWrapper": [
+        "task",
+        "boundaries",
+        "lost-ack",
+        "request-states",
+        "request-malformed",
+        "watch",
+        "watch-timeout",
+        "watch-interrupted",
+        "cancel-ack",
+        "cancel-timeout",
+        "cancel-lost-ack",
+        "cancel-malformed-ack",
+        "cancel-unknown",
+        "cancel-race",
+        "cancel-invalid",
+        "result",
+        "failed-result",
+        "unverified-result",
+        "contradiction",
+        "status-unknown",
+        "usage",
+        "usage-incomplete",
+        "cli-task",
+        "cli-file",
+        "cli-input-errors",
+        "cli-lost-ack",
+        "cli-request",
+        "cli-unsupported",
+        "cli-arguments",
+        "cli-watch-interrupted",
+        "errors-sanitized"
+      ]
+    },
+    {
+      "module": "test_recovery_projection",
+      "path": "tests/test_recovery_projection.py",
+      "purpose": "Existing conservative recovery classification",
+      "passed": 18,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "nodeScenarioScript": "tests/node/recovery-projection.mjs",
+      "scenariosFromCurrentWrapper": [
+        "completed",
+        "missing-admission",
+        "bad-admission",
+        "missing-session",
+        "empty-session",
+        "missing-generation",
+        "bool-generation",
+        "negative-generation",
+        "unsafe-generation",
+        "interrupted-unverified",
+        "cancelled-unverified",
+        "failed-unverified",
+        "unknown",
+        "approval",
+        "in-progress",
+        "immutable",
+        "untrusted-flags-ignored",
+        "invalid"
+      ]
+    },
+    {
+      "module": "test_queued_cancel_control_r159a1",
+      "path": "tests/test_queued_cancel_control_r159a1.py",
+      "purpose": "New strict queued-cancellation proof and HTTP cancellation cases",
+      "passed": 9,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "nodeScenarioScript": "tests/node/queued-cancel-control-r159a1.mjs",
+      "scenariosFromCurrentWrapper": [
+        "valid",
+        "null-alone",
+        "identity",
+        "shape",
+        "authority",
+        "contradictions",
+        "http-valid",
+        "http-lost-ack",
+        "http-malformed"
+      ]
+    }
+  ],
+  "testIdsFromRetainedLog": [
+    "test_local_control.LocalControlTests.test_boundaries",
+    "test_local_control.LocalControlTests.test_cancel_ack",
+    "test_local_control.LocalControlTests.test_cancel_invalid",
+    "test_local_control.LocalControlTests.test_cancel_lost_ack",
+    "test_local_control.LocalControlTests.test_cancel_malformed_ack",
+    "test_local_control.LocalControlTests.test_cancel_race",
+    "test_local_control.LocalControlTests.test_cancel_timeout",
+    "test_local_control.LocalControlTests.test_cancel_unknown",
+    "test_local_control.LocalControlTests.test_cli_arguments",
+    "test_local_control.LocalControlTests.test_cli_file",
+    "test_local_control.LocalControlTests.test_cli_input_errors",
+    "test_local_control.LocalControlTests.test_cli_lost_ack",
+    "test_local_control.LocalControlTests.test_cli_request",
+    "test_local_control.LocalControlTests.test_cli_task",
+    "test_local_control.LocalControlTests.test_cli_unsupported",
+    "test_local_control.LocalControlTests.test_cli_watch_interrupted",
+    "test_local_control.LocalControlTests.test_contradiction",
+    "test_local_control.LocalControlTests.test_errors_sanitized",
+    "test_local_control.LocalControlTests.test_failed_result",
+    "test_local_control.LocalControlTests.test_lost_ack",
+    "test_local_control.LocalControlTests.test_request_malformed",
+    "test_local_control.LocalControlTests.test_request_states",
+    "test_local_control.LocalControlTests.test_result",
+    "test_local_control.LocalControlTests.test_status_unknown",
+    "test_local_control.LocalControlTests.test_task",
+    "test_local_control.LocalControlTests.test_unverified_result",
+    "test_local_control.LocalControlTests.test_usage",
+    "test_local_control.LocalControlTests.test_usage_incomplete",
+    "test_local_control.LocalControlTests.test_watch",
+    "test_local_control.LocalControlTests.test_watch_interrupted",
+    "test_local_control.LocalControlTests.test_watch_timeout",
+    "test_recovery_projection.ProjectionTests.test_approval",
+    "test_recovery_projection.ProjectionTests.test_bad_admission",
+    "test_recovery_projection.ProjectionTests.test_bool_generation",
+    "test_recovery_projection.ProjectionTests.test_cancelled_unverified",
+    "test_recovery_projection.ProjectionTests.test_completed",
+    "test_recovery_projection.ProjectionTests.test_empty_session",
+    "test_recovery_projection.ProjectionTests.test_failed_unverified",
+    "test_recovery_projection.ProjectionTests.test_immutable",
+    "test_recovery_projection.ProjectionTests.test_in_progress",
+    "test_recovery_projection.ProjectionTests.test_interrupted_unverified",
+    "test_recovery_projection.ProjectionTests.test_invalid",
+    "test_recovery_projection.ProjectionTests.test_missing_admission",
+    "test_recovery_projection.ProjectionTests.test_missing_generation",
+    "test_recovery_projection.ProjectionTests.test_missing_session",
+    "test_recovery_projection.ProjectionTests.test_negative_generation",
+    "test_recovery_projection.ProjectionTests.test_unknown",
+    "test_recovery_projection.ProjectionTests.test_unsafe_generation",
+    "test_recovery_projection.ProjectionTests.test_untrusted_flags_ignored",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_authority",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_contradictions",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_http_lost_ack",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_http_malformed",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_http_valid",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_identity",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_null_alone",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_shape",
+    "test_queued_cancel_control_r159a1.QueuedCancellationControlTests.test_valid"
+  ],
+  "currentFilesAtReview": {
+    "packages/claw-hermes/local-control.mjs": {
+      "sha256": "86b4b54889ceb2de7f783fa533842f7c8a8c4f225fcbfad0a7e0deb2495d0fcd",
+      "bytes": 11808
+    },
+    "packages/claw-hermes/run-recovery.mjs": {
+      "sha256": "21793d7583cc2c56e955e85667561f83edfefd72fc219d81cd8469d35f97e748",
+      "bytes": 4018
+    },
+    "tests/node/queued-cancel-control-r159a1.mjs": {
+      "sha256": "e80dc03a8bded96747928ead6917696b559e2f71d223fda41f79f3c185b0ceba",
+      "bytes": 6580
+    },
+    "tests/test_queued_cancel_control_r159a1.py": {
+      "sha256": "82088ffcfded2bed329b59fc685336be821c50eece2c1c965e1d19543049878d",
+      "bytes": 1441
+    }
+  },
+  "hashBinding": "These are the four current root-owned client/test files at evidence review. The retained original client run artifacts do not themselves record file hashes; the parent packet binds final publication bytes separately.",
+  "sourceCompatibilityReview": {
+    "result": "PASS",
+    "method": "Read-only comparison of current client validation, current fixtures, final native proof emission, and the service owner instance-ID contract; no code edits or behavioral rerun.",
+    "nativeSource": {
+      "path": "gateway/platforms/api_server_authority_runs.py",
+      "sha256": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+      "bytes": 10745
+    },
+    "instanceContractSource": {
+      "path": "packages/claw-hermes/gateway_store_startup.py",
+      "sha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+      "bytes": 15954
+    },
+    "separateNativeBehaviorEvidence": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-lifecycle-tests.json",
+      "sha256": "a1c9905d99d238d86c255533a2dda65e0becd9e8a8138407969a6ae840db20dd",
+      "bytes": 15722
+    },
+    "wireProofFields": [
+      "schema",
+      "kind",
+      "run_id",
+      "admission_id",
+      "session_id",
+      "authority_epoch",
+      "instance_id",
+      "execution_generation",
+      "no_worker_started_verified"
+    ],
+    "nativeEmissionConditions": [
+      "Canonical admission status is terminal, outcome is cancelled, and generation is SQL NULL.",
+      "One SQL statement verifies the exact admission, API principal, request/run ID and target session against the current runtime epoch and instance, with admission owner_epoch equal to the authority epoch.",
+      "The same SQL statement excludes any exact managed-worker identity admission-worker:<admission_id>, including an existing terminal worker record.",
+      "Only a successful native check emits schema 1, kind canonical_queued_cancellation, NULL execution_generation and literal true no_worker_started_verified.",
+      "The proof describes this admission only; it does not establish global worker idleness, physical worker termination or profile release."
+    ],
+    "clientAcceptanceConditions": [
+      "execution_proof must be a non-array object with exactly the nine expected own keys, schema exactly 1 and kind exactly canonical_queued_cancellation; missing, extra or malformed proof data is rejected.",
+      "Outer status is cancelled and both outer and proof execution_generation are exactly null. completed, failed, interrupted and partial must not be literal true.",
+      "The outer run ID matches run_[a-f0-9]{32}, admission ID matches [a-f0-9]{32}, and session ID is a nonempty string of at most 1024 characters; all three proof identities must equal the outer values.",
+      "authority_epoch is a positive JavaScript safe integer, instance_id matches [A-Za-z0-9._-]{1,128}, and no_worker_started_verified is literal true.",
+      "The instance-ID syntax matches the current NativeStoreStartup contract. Client bounds remain conservative and do not claim acceptance of every arbitrary native SessionAuthority instance.",
+      "Absent proof plus a null generation remains terminal_unverified; untrusted top-level confirmation flags do not replace proof.",
+      "A valid proof yields canonical_terminal_reported and noWorkerStartedReported true, while canonicalVerified, retryAllowed and repairAllowed remain false.",
+      "Client validation checks the received server report. It does not independently audit the database or compare the reported epoch to a separate trusted epoch source."
+    ],
+    "cancellationBehavior": [
+      "The Stop acknowledgement is not treated as a terminal result; the client observes the existing run after one Stop attempt.",
+      "Both valid and lost-ack HTTP fixture cases verify one POST and one GET, terminalReported true, noWorkerStartedReported true, canonicalVerified false and physicalWorkerTerminalVerified false.",
+      "The lost-ack fixture keeps requestAcknowledged false and requestMayHaveBeenAccepted true; it does not issue another Stop.",
+      "A malformed observed proof yields an unresolved/error exit contract (3), terminalReported false and noWorkerStartedReported false."
+    ],
+    "crossLayerLimit": "This source comparison and separate native receipt align the protocol contract. The 58 client tests use Node HTTP/pure fixtures and do not constitute an installed native client-to-service acceptance run."
+  },
+  "artifacts": {
+    "retainedSummary": {
+      "path": "evidence/p2-borrowed-service-r159a1/client-control-run-summary.json",
+      "originalLocalPath": "/tmp/r159-control-tests.json",
+      "copiedVerbatim": true,
+      "truncated": false,
+      "sha256": "7551e00e0ee5594424fae7a0ad967c35fc05079e037d73912f8e17fb56429018",
+      "bytes": 103
+    },
+    "retainedLog": {
+      "path": "evidence/p2-borrowed-service-r159a1/client-control-run-log.txt",
+      "originalLocalPath": "/tmp/r159-control-tests.log",
+      "copiedVerbatim": true,
+      "truncated": false,
+      "sha256": "71ce5ecfabc9aa9dc0c83364f13a32ed7472865a566a79bec9ebfb5a919faf72",
+      "bytes": 5263
+    }
+  },
+  "acceptance": {
+    "clientFixtureTests": "PASS",
+    "sourceProtocolCompatibilityReview": "PASS",
+    "installedServiceAcceptance": "NOT RUN",
+    "actualNativeClientToServiceAcceptance": "NOT RUN",
+    "actualProviderAcceptance": "NOT RUN",
+    "actualModelAcceptance": "NOT RUN",
+    "productionAcceptance": "NOT RUN",
+    "realProviderCalls": 0,
+    "realModelCalls": 0,
+    "nativeWorkerStartedByNewQueuedFixtures": false,
+    "codeEditedForThisEvidence": false,
+    "testsRerunForThisEvidence": false
+  }
+}

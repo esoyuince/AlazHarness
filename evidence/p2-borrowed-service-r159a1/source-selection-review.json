@@ -1,0 +1,271 @@
+{
+  "acceptanceLimits": {
+    "freshP2InstallAccepted": false,
+    "installedCliStartCloseAccepted": false,
+    "installedServiceAccepted": false,
+    "modelAcceptanceCompleted": false,
+    "nativeModulesImported": [],
+    "nativeRuntimeExecuted": false,
+    "providerCalls": 0,
+    "staticOnly": true
+  },
+  "configurations": [
+    {
+      "bytes": 242,
+      "path": "config/hermes-borrowed-service-r159a1.json",
+      "sha256": "a160fb456573bcf4b9efca53a62a42e6d5b9347378bec195d9df7e6ec125e7b3"
+    },
+    {
+      "bytes": 79521,
+      "path": "config/borrowed-service-r159a1-sources.json",
+      "sha256": "05dee55dede392d10af65fc123969b8f317cf417d1af669b655d2115a2757bd2"
+    },
+    {
+      "bytes": 890,
+      "path": "config/borrowed-service-r159a1-host-lock.json",
+      "sha256": "e5eb2a3a881843d036336a7bb6d2473a9fbe3d21a7938ffe2e669869d45bd0ff"
+    }
+  ],
+  "existingExecutionLock": {
+    "allFiveNativeFileHashesStillMatch": true,
+    "fileCount": 5,
+    "path": "config/execution-gate/source-lock.json",
+    "unchanged": true
+  },
+  "frozenOwnedSourceHashesVerified": 10,
+  "harnessParent": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "hostLock": {
+    "everyBoundaryHashMatchesManifestAndNativeMirror": true,
+    "fileCount": 5,
+    "files": [
+      "hermes_state.py",
+      "gateway/platforms/api_server.py",
+      "gateway/platforms/api_server_runs.py",
+      "gateway/platforms/base.py",
+      "hermes_cli/plugins.py"
+    ],
+    "path": "config/borrowed-service-r159a1-host-lock.json",
+    "preservesOriginalBoundaryPathsAndOrder": true
+  },
+  "hostLockScope": "selected borrowed service host boundary files; full native source closure is pinned separately",
+  "manifestPurpose": "explicit borrowed service source closure for retained native stores and loopback transport",
+  "nativeCommitProvenance": "Exact commit supplied by parent after primary commit and eleven-file hash verification; this review performs no Git or native bridge operation.",
+  "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "outstanding": "This establishes reproducible selected source bytes and parser acceptance. Packaging, dedicated supervisor/control channel and fresh installed lifecycle qualification remain separate gates.",
+  "parserChecks": {
+    "canonicalSerializationVerified": true,
+    "fixedConfigurationPathsVerified": true,
+    "manifestDigestMatchesSelection": true,
+    "module": "packages/claw-hermes/gateway_service_sources.py",
+    "moduleSha256": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7",
+    "realLoadSelectionExecuted": true,
+    "realSelectedManifestExecuted": true,
+    "sameExactNativeCommitInAllThreeConfigurations": true,
+    "selectionDigestVerified": true,
+    "selectionTypeExact": true
+  },
+  "preservedParentConfigurations": {
+    "allByteExactAgainstExportedParent": true,
+    "fileCount": 31,
+    "files": [
+      {
+        "bytes": 561,
+        "path": "config/README.md",
+        "sha256": "b69fddcd772e5b06d20ea80b90f14855cf74cce7b3d9ae3abef62c53a2d39538"
+      },
+      {
+        "bytes": 245,
+        "path": "config/admission-compatibility.lock.json",
+        "sha256": "aace26648e1cdf9039d0ebc8896e96d017eda72105c2530d88e6dec19e32a083"
+      },
+      {
+        "bytes": 54205,
+        "path": "config/admission-consumer-b129d6-sources.json",
+        "sha256": "d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35"
+      },
+      {
+        "bytes": 54723,
+        "path": "config/canonical-api-consumer-i133p1-sources.json",
+        "sha256": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27"
+      },
+      {
+        "bytes": 4818,
+        "path": "config/components.lock.json",
+        "sha256": "6bc6caf69c3a9f9f7618a2d787ff493a5e8e58039196224423e05ae0383fd646"
+      },
+      {
+        "bytes": 584,
+        "path": "config/development.example.json",
+        "sha256": "79490eab277f53463e7e53473857024b93e702b95e3c9e639dc014ba45c0b327"
+      },
+      {
+        "bytes": 840,
+        "path": "config/execution-gate/source-lock.json",
+        "sha256": "4a43e5fcd6effc5bc4525a6cf13c1d1d50ca26d05c64f4f3c8b4e7a68351069e"
+      },
+      {
+        "bytes": 78968,
+        "path": "config/finite-close-f135c6-sources.json",
+        "sha256": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4"
+      },
+      {
+        "bytes": 1548,
+        "path": "config/gateway-probe/source-lock.json",
+        "sha256": "e78444aafa4b3889be6f49a409f57e7c524808f24c48b1b8d8bba7717f9abd5c"
+      },
+      {
+        "bytes": 1331,
+        "path": "config/hermes-admission-lifecycle-a128c6.json",
+        "sha256": "c84f46b64fb3aa2d1baeaf7fbbe582ef13296c99596a536e9bc34e5f5a727e5a"
+      },
+      {
+        "bytes": 1423,
+        "path": "config/hermes-api-borrow-b112x9.json",
+        "sha256": "0f64f687d0162d6344066b00fefe1835ddccb3e6635750aae0957991884a86bc"
+      },
+      {
+        "bytes": 1269,
+        "path": "config/hermes-api-borrow-series-j112x7d.json",
+        "sha256": "5c03e54226aaea4447e9d5efb0c145cd36cb3546dc875fecdced11a87022c1eb"
+      },
+      {
+        "bytes": 1409,
+        "path": "config/hermes-canonical-api-c131d6.json",
+        "sha256": "c364bd290517b902f9afd7b94a67a2115a24b06b228a336af0a6009fe90b45c3"
+      },
+      {
+        "bytes": 1469,
+        "path": "config/hermes-finite-close-f135c6.json",
+        "sha256": "bf4e3bed99780e14061bc106a469c9fbafef00c22d4be748aeb43bc5ad175113"
+      },
+      {
+        "bytes": 1010,
+        "path": "config/hermes-prepared-api-b123a6.json",
+        "sha256": "cc61b1debebb79a4076729e3e21de708c4507e7cbb6f6c606a8177076a1764dd"
+      },
+      {
+        "bytes": 792,
+        "path": "config/hermes-run-hooks-h117b.json",
+        "sha256": "62e45d14effb0bd70ae5c2efcb8a7b405f18661d76c3acee6803b6b397b06cd8"
+      },
+      {
+        "bytes": 1241,
+        "path": "config/hermes-runner-borrow-r122c4.json",
+        "sha256": "c7f768d1959c661855288158ff91ff0fed125d6226f41124f848740f39f1d737"
+      },
+      {
+        "bytes": 737,
+        "path": "config/hermes-session-borrow-s121r4.json",
+        "sha256": "66feb9ff6e5f744a7f1eeb7d18b08e5b7f52bddd1ae4042fe5bd26eb554fc660"
+      },
+      {
+        "bytes": 1128,
+        "path": "config/hermes-session-retirement-c130t6.json",
+        "sha256": "3f26ea8f545a59c55d7b03665cde0017c0e3ae96baae2ee89dbfc0cd4b8bf70d"
+      },
+      {
+        "bytes": 854,
+        "path": "config/hermes-worker-owner-e118w2.json",
+        "sha256": "c47a20973e903fce9e3a6f01d6830f8d3d8dead532bad3b64444355cc4636545"
+      },
+      {
+        "bytes": 865,
+        "path": "config/host-gate/source-lock.json",
+        "sha256": "3cfdd76a3998bc5a0f2be517cd6e810635541b7148d3a65beecdf841151e9bdb"
+      },
+      {
+        "bytes": 2605,
+        "path": "config/isolated-read/source-lock.json",
+        "sha256": "6e10825357c71abfa34bb0d5dee026bb869bb48dd173e3ef4e2903deed10deed"
+      },
+      {
+        "bytes": 24981,
+        "path": "config/linux-prepared-dependencies-l125p1.json",
+        "sha256": "3bedcdf288ac788c17bf86713907edee0eeb9bce0ba91eb93e596126d1629201"
+      },
+      {
+        "bytes": 557,
+        "path": "config/opencode-probe/package-lock.json",
+        "sha256": "f0bba71993fc00f2747ef4d5d13581cd1d71a75952e32de16605d6365a05fdcb"
+      },
+      {
+        "bytes": 154,
+        "path": "config/opencode-probe/package.json",
+        "sha256": "cef65b1dde08eb3587066f67bf15230f501e9334788fc2fe2e83838ad45e7c21"
+      },
+      {
+        "bytes": 1595,
+        "path": "config/opencode-probe/source-lock.json",
+        "sha256": "c45d2f4bcb47de890e8a601fdaaac768d373ad0f1d59599a6da955f0d5f761c9"
+      },
+      {
+        "bytes": 1036,
+        "path": "config/operator-resolution/source-lock.json",
+        "sha256": "591512dc4bd6020b3fabceb364e5ffb2006c56b70d72fda5907a8d778c7186f4"
+      },
+      {
+        "bytes": 53774,
+        "path": "config/prepared-consumer-s124b1-sources.json",
+        "sha256": "6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215"
+      },
+      {
+        "bytes": 1823,
+        "path": "config/recovery-inspector/source-lock.json",
+        "sha256": "8dcf356594efc5ab8c01ac17ee90f87443e2b21f967c7e1dc9d26e350d3d62cf"
+      },
+      {
+        "bytes": 12290,
+        "path": "config/research-sources.lock.json",
+        "sha256": "c54da90afecd7dee4c12d3e7a3cacd9d2954ace62aa3bf4b1e5a15cb6d5952f3"
+      },
+      {
+        "bytes": 79046,
+        "path": "config/retained-profile-r140c6-sources.json",
+        "sha256": "0af0852042217675b8398e2f64c7e509935726b992d91b4bdf4080512b35f8e4"
+      }
+    ]
+  },
+  "result": "PASS",
+  "schema": 1,
+  "scope": "static source selection, parser and file-hash verification only",
+  "serialization": {
+    "encoding": "UTF-8",
+    "function": "json.dumps",
+    "indent": 2,
+    "sort_keys": true,
+    "trailingNewline": "LF"
+  },
+  "sourceManifest": {
+    "addedSources": [
+      "agent/secret_sources/command.py",
+      "gateway/platforms/api_server_authority_runs.py",
+      "gateway/platforms/api_server_borrowed_transport.py",
+      "gateway/platforms/api_server_metrics.py"
+    ],
+    "changedExistingSourceCount": 6,
+    "changedExistingSources": [
+      "gateway/platforms/api_server.py",
+      "gateway/platforms/api_server_borrowed.py",
+      "gateway/platforms/api_server_prepared.py",
+      "gateway/run_borrowed_admission.py",
+      "gateway/run_borrowed_cleanup.py",
+      "gateway/run_borrowed_retirement.py"
+    ],
+    "everySourceHashVerifiedAgainstNativeMirror": true,
+    "path": "config/borrowed-service-r159a1-sources.json",
+    "requiredParserSourcesPresent": [
+      "agent/secret_sources/command.py",
+      "gateway/platforms/api_server.py",
+      "gateway/platforms/api_server_authority_runs.py",
+      "gateway/platforms/api_server_borrowed.py",
+      "gateway/platforms/api_server_borrowed_transport.py",
+      "gateway/platforms/api_server_metrics.py",
+      "gateway/platforms/api_server_prepared.py",
+      "gateway/run_borrowed_admission.py",
+      "hermes_state.py"
+    ],
+    "retainedSourceCount": 756,
+    "sourceCount": 760,
+    "symlinkOrPathAliasInputs": false
+  }
+}

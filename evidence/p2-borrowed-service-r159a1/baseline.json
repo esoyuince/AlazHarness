@@ -1,0 +1,532 @@
+{
+  "schema": 1,
+  "kind": "R159_VERIFIED_BASELINE",
+  "result": "PASS",
+  "atUtc": "2026-10-26T13:49:33.394404+00:00",
+  "harnessBase": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "nativeBase": "d1516731308de8e87130dc68124e69aad35d6911",
+  "priorJournal": {
+    "path": {
+      "atUtc": "2026-10-26T11:30:44.029121+00:00",
+      "base": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+      "branch": "alaz/p2-local-control-r158a1",
+      "ciUrl": "https://api.github.com/repos/esoyuince/AlazHarness/commits/37620d5c14afee895b16e3441f7a7ed14b77e7d7/status",
+      "correctedWindowsFocused": {
+        "errors": 0,
+        "exitCode": 0,
+        "failures": 0,
+        "passed": 117,
+        "run": 118,
+        "seconds": 22.299,
+        "skipped": 1
+      },
+      "correctionFileCount": 19,
+      "featureWorktreeClean": true,
+      "finalVerificationNativeRequestId": "ae010158-b9b2-4f42-b972-f8e21ee62c67",
+      "firstFailedCiPreserved": "evidence/p2-local-control-r158a1/checks/ci-first-attempt.json",
+      "firstFailedPrimaryCorrectionPreserved": "evidence/p2-local-control-r158a1/checks/windows-ci-repair-001.json",
+      "fullSuiteCi": {
+        "errors": 0,
+        "failures": 0,
+        "logBytes": 6571,
+        "logSha256": "4582aeae9bbc96b95b526ec4ec474416227ef0a4449de186349dc92d3d5c68a4",
+        "metadataSha256": "caaaf71c3dcfe68041c46280e74b9984a4a27374beb91bec878c18a07915be48",
+        "passed": 4028,
+        "ref": "refs/heads/alaz/p2-local-control-r158a1",
+        "seconds": 273.122,
+        "skipped": 10,
+        "testsRun": 4038
+      },
+      "head": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+      "historicalReceiptOutcomesRewritten": false,
+      "historicalSourceArchives": 4,
+      "initialWindowsFocused": {
+        "errors": 0,
+        "exitCode": 0,
+        "failures": 0,
+        "passed": 104,
+        "run": 109,
+        "seconds": 27.248,
+        "skipped": 5
+      },
+      "kind": "R158A1_FINAL_PUBLICATION",
+      "latestMainPushCi": {
+        "context": "alaz/local-ci",
+        "created_at": "2026-10-26T11:29:05Z",
+        "description": "ALAZ Local CI passed (verified same-commit reuse)",
+        "id": 57254812164,
+        "state": "success",
+        "target_url": null,
+        "updated_at": "2026-10-26T11:29:05Z"
+      },
+      "mainFastForwardOnly": true,
+      "mainWorktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+      "mainWorktreeClean": true,
+      "nativeRuntimeStarted": false,
+      "nativeServiceLifecycleAccepted": false,
+      "nativeSource": "d1516731308de8e87130dc68124e69aad35d6911",
+      "nativeUnknownPending": false,
+      "nextPlan": "docs/P2-BORROWED-SERVICE-R159A1-PLAN.md",
+      "nextWork": "Qualify explicit borrowed loopback transport on the same native owner; keep controls through draining, retire only after terminal obligations, build a new P2 installation and then a selected bounded real-model task.",
+      "originalR156InstallationTouchedByPacket": false,
+      "ownedFileCount": 44,
+      "ownedFiles": {
+        "docs/P2-BORROWED-SERVICE-R159A1-PLAN.md": {
+          "sha256": "ecec173803d5b5ebed1bab5747695bbecb67f3788aeda9a04287b9399fcc70de",
+          "size": 5326
+        },
+        "docs/P2-LOCAL-CONTROL-R158A1.md": {
+          "sha256": "596990b622207c852031726c75188c99fd7262a7c4eafc8a8d24749d523b2fd5",
+          "size": 11079
+        },
+        "docs/P2-LOCAL-PRODUCT-R158A1-PLAN.md": {
+          "sha256": "03a9188f494d553c17f6301a7744a0480cb4b9dc32e36a469fe6f94335910baf",
+          "size": 5576
+        },
+        "docs/PRODUCT-ROADMAP.md": {
+          "sha256": "749c5c8f1344d331d9c1d23eefd4b891ec11f1238bdd31a675ee95a7f15891d8",
+          "size": 14883
+        },
+        "docs/status-history/r158a1-initial.md": {
+          "sha256": "707421726bbc1c4cd5a415caf059c64301b132e4dd896b173443d6f16c0812a8",
+          "size": 2398
+        },
+        "docs/status-history/r158a1-parent.md": {
+          "sha256": "12a8261b2cce7f1ff1296efdb8b4fc05b2ea91ceaa2d42b115ebb0fd701657ad",
+          "size": 4931
+        },
+        "evidence/p2-local-control-r158a1/.gitattributes": {
+          "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+          "size": 8
+        },
+        "evidence/p2-local-control-r158a1/base-packages__claw-hermes__hermes-runs.mjs.txt": {
+          "sha256": "070d27ba51fc6f4594e378d1564e42c0255b5779811f4cd2e7a6e5df95c1d7d7",
+          "size": 11670
+        },
+        "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host-gate-client.mjs.txt": {
+          "sha256": "19a15618966532b8f2828292f0bff85825cb9f86295f9df452e193228675d7c0",
+          "size": 8609
+        },
+        "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host_gate.py.txt": {
+          "sha256": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff",
+          "size": 12593
+        },
+        "evidence/p2-local-control-r158a1/base-packages__claw-hermes__host_gate_plugin.py.txt": {
+          "sha256": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3",
+          "size": 16236
+        },
+        "evidence/p2-local-control-r158a1/baseline.json": {
+          "sha256": "32684d0f31db0d2ecf32d0c6e3130af931eb057cab57e2dd923ef9c4e21fb5ae",
+          "size": 7923
+        },
+        "evidence/p2-local-control-r158a1/checks/ci-first-attempt-log.txt": {
+          "sha256": "1c48b89a9330ecf28a8684af1a49aa3ee74c3ff4d6a0edc2a259afb274b762e7",
+          "size": 22792
+        },
+        "evidence/p2-local-control-r158a1/checks/ci-first-attempt-metadata.json": {
+          "sha256": "15ffe408d69ea5fdc0e66738907f078fbdaee356a2eabf1ca20e3bcf495e8355",
+          "size": 1904
+        },
+        "evidence/p2-local-control-r158a1/checks/ci-first-attempt.json": {
+          "sha256": "7766b1fb3f61174f0f002d09511a80d97cd374416c5effedb21da1f4db7ef2dc",
+          "size": 1532
+        },
+        "evidence/p2-local-control-r158a1/checks/linux-focused.json": {
+          "sha256": "4b646c279093a7df0684568993c1673daa7d3bba5daa84d90c84f1b0db66cb60",
+          "size": 1357
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-ci-repair-001.json": {
+          "sha256": "45ccd7393f32cb36640710aaf8d5142e9291a36dbda1c634b9e23dc4ad42a3d5",
+          "size": 7376
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-ci-repair-001.txt": {
+          "sha256": "a6f7e141e27962ad3b3f38a9d08011349da0115c02f19eaec77f34fb2b76e407",
+          "size": 21190
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-ci-repair-002.json": {
+          "sha256": "a00b7fdf2298f9f6aae9ae401affa211fb58b69f075ce732cbc201ed98a4cd7d",
+          "size": 7582
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-ci-repair-002.txt": {
+          "sha256": "6d9e172060c0ec908b59f8233de4844822bb30db6962ad8cd28eaa7239be902d",
+          "size": 18059
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-focused-001.json": {
+          "sha256": "ed1774edd4d332a93ab94c409dd78a58e4b370181e2ac63df1c5c85e04f95782",
+          "size": 3268
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-focused-001.txt": {
+          "sha256": "2d69c7a1805f48a7bc7848e0101b831bee5dd8eb1089db97ad0974f80066f06f",
+          "size": 13467
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-focused.json": {
+          "sha256": "ed1774edd4d332a93ab94c409dd78a58e4b370181e2ac63df1c5c85e04f95782",
+          "size": 3268
+        },
+        "evidence/p2-local-control-r158a1/checks/windows-focused.txt": {
+          "sha256": "2d69c7a1805f48a7bc7848e0101b831bee5dd8eb1089db97ad0974f80066f06f",
+          "size": 13467
+        },
+        "evidence/p2-local-control-r158a1/ci-repair-review.json": {
+          "sha256": "5217029bc301e27b25572c10593333d0c4bcafb4bbf11e0d3557367c38894972",
+          "size": 4302
+        },
+        "evidence/p2-local-control-r158a1/compatibility-review.json": {
+          "sha256": "2c2c1fe0a548b4ace94b5d4b9aca19b68c499d0553fa6476ed2cfe2d16f93b0d",
+          "size": 8080
+        },
+        "evidence/p2-local-control-r158a1/final-source-docs-review.json": {
+          "sha256": "c119b19f0bbe3e0b278c6404bcf388a55212e2c25c6f597ca0d7ef1d7dee4924",
+          "size": 7853
+        },
+        "evidence/p2-local-control-r158a1/historical-source-bindings.json": {
+          "sha256": "0f7b6147fb030e11f440bbdce4232d53dc9bba26fc0594a75fb4c4af2039aa66",
+          "size": 1237
+        },
+        "evidence/p2-local-control-r158a1/lifecycle-review.json": {
+          "sha256": "2e72a1db1a3e21aca81b9ac3f1b02e468a80128fc41db2d720b53a80c63de147",
+          "size": 9894
+        },
+        "evidence/p2-local-control-r158a1/request-observation-review.json": {
+          "sha256": "4cdd6554e6efaeb0760357dc0b83e0cdbd648719bb81847b7a3bd33372d67581",
+          "size": 3515
+        },
+        "evidence/p2-local-control-r158a1/source-compatibility.json": {
+          "sha256": "cd915dc4036175f8063854e3041e36aa0c52fd0d9402ff24c31d0ad3a70d1708",
+          "size": 1693
+        },
+        "packages/claw-hermes/hermes-runs.mjs": {
+          "sha256": "14a9b1112d6df77c9e2baff00dea7be8be83efce5c602eeeddf8bd741671c9b4",
+          "size": 11772
+        },
+        "packages/claw-hermes/host-gate-client.mjs": {
+          "sha256": "4fbbe0416789d0dd194f4e2501d28692a31b118d29e4185a879a0661bfe3693b",
+          "size": 10691
+        },
+        "packages/claw-hermes/host_gate.py": {
+          "sha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+          "size": 18380
+        },
+        "packages/claw-hermes/host_gate_plugin.py": {
+          "sha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+          "size": 16758
+        },
+        "packages/claw-hermes/local-control.mjs": {
+          "sha256": "2037499a06c7baf29f90e1dc54c55d2d8f73b99c4eb665f7f6bcbc8cceacaf49",
+          "size": 11607
+        },
+        "scripts/alaz_local.mjs": {
+          "sha256": "a0dbeda385f78c4344bd679298bf72ee4ca7b7fdbb7e46ceb507b9b470704a94",
+          "size": 6341
+        },
+        "status.md": {
+          "sha256": "9087c77d9db00f4b9cbf21bf7bc6d136393e32f269e6ac66338700c03bff62a1",
+          "size": 7257
+        },
+        "tests/historical_local_control_r158a1.py": {
+          "sha256": "1b42d065201756a1aba705abbc498dbfa67c4d7fa88ad07577ebecfdb0bb7a5c",
+          "size": 2304
+        },
+        "tests/historical_self_identity_r150a1.py": {
+          "sha256": "8ac256bf6ed07200846a71f3fa7271e031b2805acd4e83ff17e65760d204bb0d",
+          "size": 2407
+        },
+        "tests/node/local-control-cases.mjs": {
+          "sha256": "afade0cb7a7b3ea9cad3a983ef72ad67f76ad52bb833ad55e7790bcc9625486b",
+          "size": 23023
+        },
+        "tests/test_historical_local_control_r158a1.py": {
+          "sha256": "2711710888dc39deff1a5bcab06c5e0cc3ae52b63552b9ce6414a986b0b0e43a",
+          "size": 6610
+        },
+        "tests/test_host_request_observation.py": {
+          "sha256": "8b67cf6deb5da9992a13e117fc5bde9e1d4bab429a35a776dc0228c999c8f172",
+          "size": 20156
+        },
+        "tests/test_local_control.py": {
+          "sha256": "08b28767235f05082ee656f8fb3f4001b0f85584e350b0d685a065d18e8f6932",
+          "size": 1978
+        }
+      },
+      "parent": "cd596387f9f4fc03f02eeaf540e24a921792820e",
+      "postMainCiReuse": {
+        "fullSuiteRepeated": false,
+        "logSha256": "0565291fd1d0bdbf008e9c10985c37e389fdb0bab351148b675a62e9a3918f95",
+        "metadataSha256": "9a49fe30839207ee4fd95d633ab9e45de361b110a6164ce5bfefeb27f0701408",
+        "sourceDelivery": "7c83c7c6-d12f-11f1-863e-445d56cfbee6",
+        "suiteEvidence": {
+          "executed": 4038,
+          "failed": 0,
+          "passed": 4028,
+          "skipped": 10,
+          "suite_errors": 0,
+          "total": 4038
+        }
+      },
+      "protectedRepositories": [
+        {
+          "branch": "alaz/hyb-001-component-slice",
+          "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+          "path": "C:\\Antigravity\\AlazHarness",
+          "status": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+        },
+        {
+          "branch": "main",
+          "head": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+          "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+          "status": ""
+        },
+        {
+          "branch": "alaz/m1-install-readiness-r154a1",
+          "head": "27eb7571211ba0b685d7893d149438d612f6e2cd",
+          "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-install-readiness-r154a1",
+          "status": ""
+        },
+        {
+          "branch": "alaz/d3b-finite-close-f135c6",
+          "head": "d1516731308de8e87130dc68124e69aad35d6911",
+          "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6",
+          "status": ""
+        },
+        {
+          "branch": "alaz/m1-seed-readiness-r155a1",
+          "head": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+          "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-seed-readiness-r155a1",
+          "status": ""
+        },
+        {
+          "branch": "alaz/m1-finite-product-r156a1",
+          "head": "cdc974728e69f590838b82421cd244e36554a74f",
+          "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-finite-product-r156a1",
+          "status": ""
+        },
+        {
+          "branch": "alaz/m1-installed-readiness-r157a1",
+          "head": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+          "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-installed-readiness-r157a1",
+          "status": ""
+        }
+      ],
+      "protectedRepositoriesUnchangedExceptMain": true,
+      "realModelAccepted": false,
+      "realProviderCalls": 0,
+      "remoteRefs": {
+        "refs/heads/alaz/p2-local-control-r158a1": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+        "refs/heads/main": "37620d5c14afee895b16e3441f7a7ed14b77e7d7"
+      },
+      "requiredCiAcceptedBeforeMain": {
+        "context": "alaz/local-ci",
+        "created_at": "2026-10-26T11:27:03Z",
+        "description": "ALAZ Local CI passed",
+        "id": 57254669062,
+        "state": "success",
+        "target_url": null,
+        "updated_at": "2026-10-26T11:27:03Z"
+      },
+      "result": "PASS",
+      "rootChangedFiles": {
+        ".gitattributes": {
+          "sha256": "bfa8e6cdd13973c9bd83ff9fe751cf799697f92a0c85e73ee4daadc66b35a939",
+          "size": 159
+        },
+        "AGENTS.md": {
+          "sha256": "161f556dd899a873da5ec0935fd3693722a5c01f70c11971366d5d0b043efefb",
+          "size": 2218
+        },
+        "CURRENT-STATE.md": {
+          "sha256": "e75cd2ec0bf903787699a5bb4ff1c87c20fcbaa4c8e2c0435beb89e52562f829",
+          "size": 4352
+        },
+        "components.lock.json": {
+          "sha256": "af706bf7bade6f34b1aa2f2bf0d3d1b3086b2cec44e34d191abc162184c226a2",
+          "size": 3762
+        },
+        "docs/COMPONENT-MAP.md": {
+          "sha256": "783c3e2ff6a27aa62761ca07816e563665d0fd582e9eacc05865e6d66122d7f8",
+          "size": 4837
+        },
+        "docs/HYB-001-COMPONENT-SLICE.md": {
+          "sha256": "aaa62db6a6da637276a1320a87b33284ee3e90210b851ee11994241058b61a66",
+          "size": 4462
+        },
+        "docs/WORKSPACE-RULES.md": {
+          "sha256": "a077546c2190699baad1339876a79e805452a7aae40ab1e5e55b5311ecc53722",
+          "size": 1748
+        },
+        "docs/adr/0002-component-slice-before-runtime.md": {
+          "sha256": "36902d822302843daa587f5929d80264e75ff952b3821f8287bff38946b13bfc",
+          "size": 3016
+        },
+        "evidence/verification-20261014-a7a90059/SUMMARY.md": {
+          "sha256": "62b30627b2d705e1f2f7086dfdf9383f50607fab63598378603e960a87573c3f",
+          "size": 1523
+        },
+        "evidence/verification-20261014-a7a90059/commands.json": {
+          "sha256": "0db69ef6f54fa761aa46d45426b34f0db52f167e53fc27e5c6cd25d48003d9c8",
+          "size": 11586
+        },
+        "evidence/verification-20261014-a7a90059/final-state.json": {
+          "sha256": "d8ec0e0ad4839295eb48396447f28f41d9c0e03e042c21c751e681355b5f8960",
+          "size": 2195
+        },
+        "evidence/verification-20261014-a7a90059/source-snapshot.json": {
+          "sha256": "8912defa8b8acf08f8fc6baa06275d877c29a8769e79eec3afaced5cea722b61",
+          "size": 3736
+        },
+        "evidence/verification-20261014-a7a90059/workspace.json": {
+          "sha256": "d29f801b4f2b8ae97839b59d3213d6d2348582b940133894dc3235029965d447",
+          "size": 7304
+        },
+        "packages/hybrid-runtime/common.mjs": {
+          "sha256": "2d4208071bc0871a9ef261f7987e7a19b45e8547d479efe4b4b8b2733bf4eaf6",
+          "size": 1199
+        },
+        "packages/hybrid-runtime/demo.mjs": {
+          "sha256": "79016ee81e0aa8100adcefe35c676baf4c48375591dd163b97ae504d6708a90f",
+          "size": 562
+        },
+        "packages/hybrid-runtime/mock-harness.mjs": {
+          "sha256": "6d14dea142beb5c37d74a0083f26ff3cdb1f1cce6bdead4599f648b7d1c34b68",
+          "size": 11073
+        },
+        "packages/hybrid-runtime/stdio-peer.mjs": {
+          "sha256": "0ba4bc013b4855cdad616d262de20576c31b80d8c79e459233b87ae6ab679c29",
+          "size": 5676
+        },
+        "packages/upstream/README.md": {
+          "sha256": "c2e12c7ea819126ae4fba003e7206b969e1679f25886d01e9ee5ae8fdcdd2528",
+          "size": 1080
+        },
+        "packages/upstream/hermes/LICENSE": {
+          "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+          "size": 1070
+        },
+        "packages/upstream/hermes/iteration_budget.py": {
+          "sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+          "size": 1807
+        },
+        "packages/upstream/hermes/transport.py": {
+          "sha256": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+          "size": 15488
+        },
+        "packages/upstream/openclaw/LICENSE": {
+          "sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+          "size": 1076
+        },
+        "packages/upstream/openclaw/attempt-cancellation.ts": {
+          "sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+          "size": 1755
+        },
+        "packages/upstream/openclaw/attempt-deadlines.ts": {
+          "sha256": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+          "size": 3292
+        },
+        "packages/upstream/openclaw/number-coercion.ts": {
+          "sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+          "size": 12851
+        },
+        "packages/upstream/openclaw/string-coerce.ts": {
+          "sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+          "size": 4946
+        },
+        "scripts/demo_hybrid.py": {
+          "sha256": "7a705a8646b8cbd0e655c3832df590b6e6f6de5793427752b1811f09f391f060",
+          "size": 973
+        },
+        "scripts/verify_component_slices.py": {
+          "sha256": "445be487dfc8f122e39bf8d90621db96be74a0aa14a5113064c36af67656f1e3",
+          "size": 3915
+        },
+        "status.md": {
+          "sha256": "28fbe01668cea2d59c1d16feff193361a830af04b98ca68cc73df1d97a58dc2a",
+          "size": 61578
+        },
+        "tests/fixtures/hermes-scripted-peer.py": {
+          "sha256": "637c3fe1fa9fea3a6de745b4e27c2d02aa0b27441d28f798dd20d9d17a5bd6a0",
+          "size": 7563
+        },
+        "tests/hybrid/cases.mjs": {
+          "sha256": "749169e2b03b59abf0f49e4ee661b0078c3c611f3d67aeb2db82cefd246bd162",
+          "size": 10550
+        },
+        "tests/test_component_slices.py": {
+          "sha256": "eae484a67a7683d61da6429c93f90aabb73e0986f511a4f96058e384faf5f8a4",
+          "size": 4262
+        },
+        "tests/test_hybrid_slice.py": {
+          "sha256": "710d9c42a97b78effbc0941d26477e1a0cb1b76a86540fea49b59b6bb95f879b",
+          "size": 2540
+        }
+      },
+      "rootChangedFilesCount": 33,
+      "runtimeReinstalled": false,
+      "scope": {
+        "fullM1Accepted": false,
+        "p1Complete": true,
+        "p2Complete": false,
+        "p3ToP5Complete": false,
+        "productionAccepted": false,
+        "r158SourceAndHttpContractsComplete": true
+      },
+      "staticGate": {
+        "allDiscoveredTestsExecuted": false,
+        "exitCode": 0,
+        "gate": {
+          "discovered_tests": 4038,
+          "errors": [],
+          "model_called": false,
+          "result": "PASS",
+          "root_files_checked": 6677,
+          "runtime_tested": false,
+          "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+          "secret_scan": "bounded root tracked text patterns; not a complete security audit",
+          "selected_components": 10,
+          "source_gitlinks_checked": 2,
+          "vendor_bytes_checked": false
+        },
+        "seconds": 129.006
+      },
+      "worktree": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\p2-local-control-r158a1"
+    },
+    "sha256": "641ecc60ecf37a4b6e2ab45ff7e0e8a847c5d02e3143d2d3ec99d8be7bee68cb"
+  },
+  "remoteRefs": {
+    "refs/heads/alaz/p2-local-control-r158a1": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+    "refs/heads/main": "37620d5c14afee895b16e3441f7a7ed14b77e7d7"
+  },
+  "latestRequiredCi": {
+    "context": "alaz/local-ci",
+    "created_at": "2026-10-26T11:29:05Z",
+    "description": "ALAZ Local CI passed (verified same-commit reuse)",
+    "id": 57254812164,
+    "state": "success",
+    "updated_at": "2026-10-26T11:29:05Z"
+  },
+  "priorOwnedFilesVerified": 44,
+  "protectedRepositoriesVerified": 7,
+  "rootChangedFilesVerified": 33,
+  "worktrees": {
+    "archive": {
+      "files": 10193,
+      "harnessFiles": 685,
+      "nativeFiles": 9508,
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\p2-borrowed-service-r159a1\\scratch\\r159a1-source\\source.zip",
+      "sha256": "8ddc011b93cce39f5dce699dbb6055011a3b2c7969f278abfbac70b346f30c27",
+      "size": 36161147
+    },
+    "atUtc": "2026-10-26T13:56:11.686475+00:00",
+    "harness": {
+      "base": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+      "branch": "alaz/p2-borrowed-service-r159a1",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\p2-borrowed-service-r159a1"
+    },
+    "native": {
+      "base": "d1516731308de8e87130dc68124e69aad35d6911",
+      "branch": "alaz/p2-borrowed-service-r159a1",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-borrowed-service-r159a1"
+    },
+    "result": "PASS"
+  },
+  "nativeRuntimeStarted": false,
+  "realProviderCalls": 0
+}

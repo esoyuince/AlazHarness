@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "kind": "R159A1_host_service_source_and_fixture_tests",
+  "recordedAtUtc": "2026-10-26T14:28:20.989545+00:00",
+  "harnessParent": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "nativeSourceBaseline": "d1516731308de8e87130dc68124e69aad35d6911",
+  "finalNativeFeature": null,
+  "finalNativeFeatureStatus": "pending parent publication; not a native execution attestation",
+  "environment": {
+    "pythonExecutable": "/tmp/r159-native-test-env/bin/python",
+    "python": "Python 3.12.3",
+    "workingDirectory": "/workspace/scratch/288e2938ab4c/r159-source/tree"
+  },
+  "focusedHostService": {
+    "result": "PASS",
+    "testMethodsRun": 31,
+    "successfulTestMethods": 31,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "elapsedSeconds": 0.332,
+    "command": [
+      "timeout",
+      "90s",
+      "/tmp/r159-native-test-env/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_borrowed_service_host_r159a1.py",
+      "-v"
+    ],
+    "environment": {
+      "PYTHONPATH": "tests:packages/claw-hermes",
+      "sandboxPermissions": "require_escalated"
+    },
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/checks/host-service-focused-final.log",
+      "sha256": "750c622cd966477fd6defad8ed0c43436e0e95c67e4dc83776d4b9ef7b19801b",
+      "bytes": 6423
+    },
+    "realComponents": [
+      "harness service/host/execution guards",
+      "aiohttp application and mocked request dispatch",
+      "local SQLite fixture write transactions",
+      "physical worker thread for guarded file read and settlement"
+    ],
+    "doubledComponents": [
+      "native owner and consumer lifecycle interfaces",
+      "native transport identity and lifecycle interface",
+      "native reader, registry and source-attestation interfaces"
+    ],
+    "coveredBehaviors": [
+      "STARTING denies admission despite a bound listener",
+      "post-bind startup failure seals exact native admission and retains UNKNOWN owner",
+      "worker settlement and guarded reads remain available during DRAINING",
+      "close waiter cancellation retains the original close task",
+      "typed pre-effect busy retains DRAINING and control availability",
+      "partial close failure retains original references",
+      "status does not report READY after transport phase or identity loss",
+      "fixed source selector rejects path expansion and identity changes"
+    ]
+  },
+  "focusedRegression": {
+    "result": "INCOMPLETE_LOCAL_EVIDENCE_EXPORT",
+    "testMethodsRun": 118,
+    "successfulTestMethods": 117,
+    "methodErrors": 1,
+    "classSetupErrors": 1,
+    "totalErrors": 2,
+    "failures": 0,
+    "skipped": 0,
+    "exitCode": 1,
+    "elapsedSeconds": 1.099,
+    "selection": [
+      "test_host_gate_qa",
+      "test_host_request_observation",
+      "test_execution_profile_qa3156",
+      "test_startup_consumer_owner_s124b1",
+      "test_api_owner_i133p1",
+      "test_active_owner_contract_b129d6",
+      "test_prepared_work_guard_c127a6",
+      "test_finite_close_f135c6.FiniteSelection",
+      "test_finite_runtime_contract"
+    ],
+    "runner": "unittest TextTestRunner with addSuccess count captured in EXACT_COUNTS at end of full log",
+    "environment": {
+      "PYTHONPATH": "tests:packages/claw-hermes",
+      "timeoutSeconds": 90,
+      "sandboxPermissions": "require_escalated"
+    },
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/checks/host-service-regressions-final.log",
+      "sha256": "4dc6632b3db538ebf49c227e574694fcbe29a20b1fb6f5fcb653ec69eb906db8",
+      "bytes": 22042
+    },
+    "errors": [
+      {
+        "kind": "classSetupError",
+        "testId": "setUpClass (test_api_owner_i133p1.NativeReceipt)",
+        "exception": "FileNotFoundError",
+        "missingPath": "evidence/d3b-api-owner-i133p1/native-002/result.json",
+        "countedInTestMethodsRun": false
+      },
+      {
+        "kind": "methodError",
+        "testId": "test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted",
+        "exception": "FileNotFoundError",
+        "missingPath": "evidence/d3b-active-owner-b129d6/baseline.json",
+        "countedInTestMethodsRun": true
+      }
+    ],
+    "interpretation": "117 successful methods out of 118 executed methods, plus one additional class-setup error. The run is not an all-pass result. Both observed errors are missing historical artifacts in the local mirror; no historical outcome was changed or substituted."
+  },
+  "historicalSourceProvenance": {
+    "result": "PASS",
+    "testMethodsRun": 12,
+    "successfulTestMethods": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "summary": {
+      "path": "evidence/p2-borrowed-service-r159a1/historical-source-review.json",
+      "sha256": "6d2ea41f353e94346252533ebdfe8be2748a4c1698a23379f6001f7b1bd73f04",
+      "bytes": 2036
+    },
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/checks/historical-source-provenance-final.log",
+      "sha256": "be80266055e6ad028d6106b479ebd2f1e98f1c031ed2baed5f748e72b54e154a",
+      "bytes": 2531
+    }
+  },
+  "ownedSourceCount": 10,
+  "ownedSources": [
+    {
+      "path": "packages/claw-hermes/host_gate.py",
+      "beforeSha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+      "afterSha256": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d",
+      "bytes": 19021
+    },
+    {
+      "path": "packages/claw-hermes/host_gate_plugin.py",
+      "beforeSha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+      "afterSha256": "ae0a66bf897617d358cc168c75a2ab81d378d4913ddb0ff2c3b0a4ddc5fc7112",
+      "bytes": 19212
+    },
+    {
+      "path": "packages/claw-hermes/execution_boundary.py",
+      "beforeSha256": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+      "afterSha256": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96",
+      "bytes": 23681
+    },
+    {
+      "path": "packages/claw-hermes/gateway_prepared_consumer.py",
+      "beforeSha256": "d5ce29480570d140363deda7fe8740ad7ddb1f5e579d0befbd790ca68a0f5cc6",
+      "afterSha256": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+      "bytes": 23102
+    },
+    {
+      "path": "packages/claw-hermes/gateway_consumer_api.py",
+      "beforeSha256": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168",
+      "afterSha256": "d6f5433ea3a020fe6b4178bdee28e26549f66beaf2db66e0a6236c624cc002f3",
+      "bytes": 4826
+    },
+    {
+      "path": "packages/claw-hermes/gateway_consumer_admission.py",
+      "beforeSha256": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da",
+      "afterSha256": "d3c7e46058024de339c1e63dc0d617fdae9997e05a9118dab4cc517e230a07e6",
+      "bytes": 4623
+    },
+    {
+      "path": "packages/claw-hermes/gateway_store_startup.py",
+      "beforeSha256": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+      "afterSha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+      "bytes": 15954
+    },
+    {
+      "path": "packages/claw-hermes/gateway_service_runtime.py",
+      "beforeSha256": null,
+      "afterSha256": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+      "bytes": 17305
+    },
+    {
+      "path": "packages/claw-hermes/gateway_service_sources.py",
+      "beforeSha256": null,
+      "afterSha256": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7",
+      "bytes": 4406
+    },
+    {
+      "path": "tests/test_borrowed_service_host_r159a1.py",
+      "beforeSha256": null,
+      "afterSha256": "2d5a68c61e1eabfc0803c915bcdfa303dd94df6ee6a70e1910b7f527e99e0183",
+      "bytes": 37969
+    }
+  ],
+  "staticServiceClosureReview": {
+    "oldRetainedNativeCount": 756,
+    "newModules": [
+      "agent/secret_sources/command.py",
+      "gateway/platforms/api_server_authority_runs.py",
+      "gateway/platforms/api_server_borrowed_transport.py",
+      "gateway/platforms/api_server_metrics.py"
+    ],
+    "expectedNativeSourceCount": 760,
+    "directNativeImportsOutsideOldPlusFour": [],
+    "installedClosureExecuted": false
+  },
+  "environmentQualification": {
+    "defaultSandboxAsyncAttempt": "blocked by socket wakeup restriction; not counted as a passing run",
+    "minimalReproduction": "asyncio.run(main()) with main awaiting asyncio.to_thread(lambda: \"after\") reaches the result then hangs in runner shutdown_default_executor under the default sandbox",
+    "parentVerification": "Parent reproduced the same failure on both Python 3.12.14 and /usr/bin Python 3.12.3; the same minimal command completed when approved local socket permissions were available",
+    "finalHostTests": "Used approved require_escalated local async/loopback fixtures with a bounded 90-second timeout",
+    "runtimeWorkaroundAdded": false
+  },
+  "acceptanceLimits": {
+    "nativeRuntimeExecutedByThisAgent": false,
+    "installedServiceAccepted": false,
+    "installedCliStartCloseAccepted": false,
+    "freshP2InstallAccepted": false,
+    "modelAcceptanceCompleted": false,
+    "providerCalls": 0,
+    "supervisorAndOwnerControlChannelAccepted": false
+  },
+  "outstanding": "The dedicated supervisor/control channel, packaging and fresh installed start/close qualification remain separate acceptance gates. Source closure count is static analysis, not installed runtime closure acceptance."
+}

@@ -1,0 +1,25 @@
+{
+  "atUtc": "2026-10-26T17:13:05.158281+00:00",
+  "files": [
+    {
+      "bytes": 242,
+      "path": "config/hermes-borrowed-service-r159a1.json",
+      "sha256": "a160fb456573bcf4b9efca53a62a42e6d5b9347378bec195d9df7e6ec125e7b3"
+    },
+    {
+      "bytes": 79521,
+      "path": "config/borrowed-service-r159a1-sources.json",
+      "sha256": "05dee55dede392d10af65fc123969b8f317cf417d1af669b655d2115a2757bd2"
+    },
+    {
+      "bytes": 890,
+      "path": "config/borrowed-service-r159a1-host-lock.json",
+      "sha256": "e5eb2a3a881843d036336a7bb6d2473a9fbe3d21a7938ffe2e669869d45bd0ff"
+    }
+  ],
+  "nativeCommit": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "oldTrackedConfigsUnmodified": true,
+  "result": "PASS",
+  "source": "git cat-file --batch exact committed native blobs",
+  "sourceCount": 760
+}

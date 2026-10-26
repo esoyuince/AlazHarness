@@ -48,8 +48,8 @@ export function controlError(error, { command = null, requestId = null, runId = 
 }
 
 function runView(run) {
-  // Keep the existing classifier strict: a queued cancellation may report a null
-  // generation. Its terminal status alone does not supply the canonical tuple.
+  // Null generation alone is insufficient. Only the strict, identity-bound
+  // native queued-cancellation proof can report that this admission never ran.
   const recovery = classifyRunRecovery(run);
   return {
     runId: run.run_id, status: run.status,
@@ -59,6 +59,7 @@ function runView(run) {
     classification: recovery.classification,
     terminalReported: recovery.transportConfirmed,
     canonicalTupleReported: recovery.admissionReported,
+    noWorkerStartedReported: recovery.noWorkerStartedReported,
     canonicalVerified: false, requiresOperator: recovery.requiresOperator,
     nextAction: recovery.nextAction,
   };
@@ -174,10 +175,11 @@ export class LocalControlClient {
     } catch (error) {
       return { ...controlError(error, { command: 'cancel', runId }),
         cancellation: { requestAttempted: false, requestAcknowledged: false, requestMayHaveBeenAccepted: false,
-          terminalReported: false, physicalWorkerTerminalVerified: false } };
+          terminalReported: false, noWorkerStartedReported: false, physicalWorkerTerminalVerified: false } };
     }
     const cancellation = { requestAttempted: true, requestAcknowledged: false,
-      requestMayHaveBeenAccepted: false, terminalReported: false, physicalWorkerTerminalVerified: false };
+      requestMayHaveBeenAccepted: false, terminalReported: false, noWorkerStartedReported: false,
+      physicalWorkerTerminalVerified: false };
     try {
       await this.#host.stop(runId, { signal: options.signal });
       cancellation.requestAcknowledged = true;
@@ -192,6 +194,7 @@ export class LocalControlClient {
       // losing the observer never sends another stop or reopens admission.
       const observed = await this.#host.resume(runId, observedOptions), run = runView(observed.run);
       cancellation.terminalReported = run.terminalReported && run.canonicalTupleReported;
+      cancellation.noWorkerStartedReported = run.noWorkerStartedReported;
       cancellation.effectReported = cancellation.terminalReported ? run.status : 'unconfirmed';
       return envelope('cancel', cancellation.terminalReported ? 'terminal_reported' : 'unresolved', { run, cancellation });
     } catch (error) {

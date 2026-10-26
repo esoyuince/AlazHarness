@@ -1,0 +1,43 @@
+{
+  "atUtc": "2026-10-26T17:11:33.402877+00:00",
+  "base": "d1516731308de8e87130dc68124e69aad35d6911",
+  "branch": "alaz/p2-borrowed-service-r159a1",
+  "clean": true,
+  "commitVerification": {
+    "atUtc": "2026-10-26T17:09:51.283946+00:00",
+    "base": "d1516731308de8e87130dc68124e69aad35d6911",
+    "branch": "alaz/p2-borrowed-service-r159a1",
+    "clean": true,
+    "head": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "identitySource": "existing project-local harness Git identity; command-local override only",
+    "otherLocalHeadsUnchanged": true,
+    "ownedFiles": {
+      "gateway/platforms/api_server.py": "b199e33b17c573f8d4cb3a7d1b0ee6961bef5f6e9bdf1303aadeeb3e3d78c520",
+      "gateway/platforms/api_server_authority_runs.py": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+      "gateway/platforms/api_server_borrowed.py": "ed6e6f7e90480f00a3e56adf5664ae7ae6b3394ec48469d25c151e6faabb00db",
+      "gateway/platforms/api_server_borrowed_transport.py": "d168a441b7da9f97e8c3533fff128308a58deea041e28cb04bb24658227f657b",
+      "gateway/platforms/api_server_metrics.py": "d996b1b163d37b560878ff3b61ca4829274812f7d127a60fa6f42e56dd9cdd02",
+      "gateway/platforms/api_server_prepared.py": "6b78cddbf64dd80ae89ffb56ef1169e19ba6b1b52e0a11d4e8de99fd9614114a",
+      "gateway/run_borrowed_admission.py": "abd05df765e4b5377c88ce092f177af0bb6add5959af58b75db3b6407d0833a4",
+      "gateway/run_borrowed_cleanup.py": "d0b81245c79d9387bfd33ff38d6b76c1e0a385373dc3a570e930107486f1229f",
+      "gateway/run_borrowed_retirement.py": "bb29f89f0c1eef2bc6b4531d3af670e26ea94dbf8c6853e7d3a6718a3774b21e",
+      "tests/gateway/test_api_server_borrowed_transport.py": "6cc916e49bdd7426186c93aa6b560ede76b3476cd8249090b99f41b35e55507d",
+      "tests/gateway/test_api_server_queued_stop_retirement.py": "78c85e114541695abd98b74d45ecc782f1da6769869b26cb10d47dc021573624"
+    },
+    "recovery": "Commit succeeded; initial journal path absent caused command exit1 after all commit/hash/ref assertions. This read-only recovery verified exact commit rather than replaying it.",
+    "result": "PASS"
+  },
+  "forkMainUnchanged": "eb75627faf532fa6ffbdae59a0d14b0b385fc780\trefs/heads/main",
+  "head": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "installed": false,
+  "lifecycleEvidence": "native-lifecycle-tests.json",
+  "modelCalls": 0,
+  "normalFeaturePush": true,
+  "providerCalls": 0,
+  "pushOutput": "branch 'alaz/p2-borrowed-service-r159a1' set up to track 'origin/alaz/p2-borrowed-service-r159a1'.",
+  "remoteRef": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d\trefs/heads/alaz/p2-borrowed-service-r159a1",
+  "repository": "esoyuince/hermes-agent",
+  "result": "PASS",
+  "sourceCheckEvidence": "native-source-checks.json",
+  "upstreamMainUnchanged": "edfa1c2a135532a8b64f7825c0ac0af6cfe73d4d\trefs/heads/main"
+}

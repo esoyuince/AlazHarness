@@ -1,0 +1,158 @@
+test_after_commit_ack_loss_does_not_refund (test_host_gate_qa.HostGateIndependentTests.test_after_commit_ack_loss_does_not_refund) ... ok
+test_before_commit_failure_rolls_back (test_host_gate_qa.HostGateIndependentTests.test_before_commit_failure_rolls_back) ... ok
+test_body_changed_after_issue_refused (test_host_gate_qa.HostGateIndependentTests.test_body_changed_after_issue_refused) ... ok
+test_changed_body_same_id_refused (test_host_gate_qa.HostGateIndependentTests.test_changed_body_same_id_refused) ... ok
+test_clock_rollback_refused (test_host_gate_qa.HostGateIndependentTests.test_clock_rollback_refused) ... ok
+test_closed_key_refuses_without_replay_row (test_host_gate_qa.HostGateIndependentTests.test_closed_key_refuses_without_replay_row) ... ok
+test_consumed_is_not_success (test_host_gate_qa.HostGateIndependentTests.test_consumed_is_not_success) ... ok
+test_consumed_record_refuses_duplicate (test_host_gate_qa.HostGateIndependentTests.test_consumed_record_refuses_duplicate) ... ok
+test_corrupt_history_refuses (test_host_gate_qa.HostGateIndependentTests.test_corrupt_history_refuses) ... ok
+test_count_limit_refuses_another_dispatch (test_host_gate_qa.HostGateIndependentTests.test_count_limit_refuses_another_dispatch) ... ok
+test_deleted_consumed_intent_not_reissued (test_host_gate_qa.HostGateIndependentTests.test_deleted_consumed_intent_not_reissued) ... ok
+test_digest_corruption_refused (test_host_gate_qa.HostGateIndependentTests.test_digest_corruption_refused) ... ok
+test_dishonest_counter_not_accepted (test_host_gate_qa.HostGateIndependentTests.test_dishonest_counter_not_accepted) ... ok
+test_expired_issued_document_refused (test_host_gate_qa.HostGateIndependentTests.test_expired_issued_document_refused) ... ok
+test_explicit_session_refused (test_host_gate_qa.HostGateIndependentTests.test_explicit_session_refused) ... ok
+test_foreign_model_refused (test_host_gate_qa.HostGateIndependentTests.test_foreign_model_refused) ... ok
+test_foreign_scope_refused (test_host_gate_qa.HostGateIndependentTests.test_foreign_scope_refused) ... ok
+test_forged_well_formed_unissued_key_refused (test_host_gate_qa.HostGateIndependentTests.test_forged_well_formed_unissued_key_refused) ... ok
+test_issue_count_limit_refused (test_host_gate_qa.HostGateIndependentTests.test_issue_count_limit_refused) ... ok
+test_issued_document_detached_from_stored_record (test_host_gate_qa.HostGateIndependentTests.test_issued_document_detached_from_stored_record) ... ok
+test_legacy_unissued_key_refused (test_host_gate_qa.HostGateIndependentTests.test_legacy_unissued_key_refused) ... ok
+test_missing_configuration_not_recreated_over_history (test_host_gate_qa.HostGateIndependentTests.test_missing_configuration_not_recreated_over_history) ... ok
+test_missing_model_refused (test_host_gate_qa.HostGateIndependentTests.test_missing_model_refused) ... ok
+test_missing_replay_db_does_not_create_it (test_host_gate_qa.HostGateIndependentTests.test_missing_replay_db_does_not_create_it) ... ok
+test_native_existing_key_refuses_dispatch (test_host_gate_qa.HostGateIndependentTests.test_native_existing_key_refuses_dispatch) ... ok
+test_new_epoch_does_not_revive_issued_intent (test_host_gate_qa.HostGateIndependentTests.test_new_epoch_does_not_revive_issued_intent) ... ok
+test_old_owner_context_refused (test_host_gate_qa.HostGateIndependentTests.test_old_owner_context_refused) ... ok
+test_policy_changed_model_rechecked_before_consume (test_host_gate_qa.HostGateIndependentTests.test_policy_changed_model_rechecked_before_consume) ... ok
+test_reopened_same_owner_cannot_consume_twice (test_host_gate_qa.HostGateIndependentTests.test_reopened_same_owner_cannot_consume_twice) ... ok
+test_replay_row_pruning_does_not_reenable_consumed (test_host_gate_qa.HostGateIndependentTests.test_replay_row_pruning_does_not_reenable_consumed) ... ok
+test_same_request_document_replays_without_write (test_host_gate_qa.HostGateIndependentTests.test_same_request_document_replays_without_write) ... ok
+test_twenty_concurrent_consumers_only_one_claim (test_host_gate_qa.HostGateIndependentTests.test_twenty_concurrent_consumers_only_one_claim) ... ok
+test_twenty_concurrent_issuers_only_one_issue (test_host_gate_qa.HostGateIndependentTests.test_twenty_concurrent_issuers_only_one_issue) ... ok
+test_unknown_request_fields_refused (test_host_gate_qa.HostGateIndependentTests.test_unknown_request_fields_refused) ... ok
+test_written_table_trigger_refused (test_host_gate_qa.HostGateIndependentTests.test_written_table_trigger_refused) ... ok
+test_wrong_namespace_refused (test_host_gate_qa.HostGateIndependentTests.test_wrong_namespace_refused) ... ok
+test_query_session_and_room_scopes_are_rejected (test_host_request_observation.HostRequestObservationRouteTests.test_query_session_and_room_scopes_are_rejected) ... ok
+test_route_authentication_precedes_storage_observation (test_host_request_observation.HostRequestObservationRouteTests.test_route_authentication_precedes_storage_observation) ... ok
+test_route_uses_locator_without_execution_or_native_status_helpers (test_host_request_observation.HostRequestObservationRouteTests.test_route_uses_locator_without_execution_or_native_status_helpers) ... ok
+test_storage_error_and_invalid_identifier_do_not_leak_private_text (test_host_request_observation.HostRequestObservationRouteTests.test_storage_error_and_invalid_identifier_do_not_leak_private_text) ... ok
+test_absent_namespace_does_not_create_records_or_files (test_host_request_observation.HostRequestObservationTests.test_absent_namespace_does_not_create_records_or_files) ... ok
+test_concurrent_epoch_and_replay_changes_invalidate_snapshot (test_host_request_observation.HostRequestObservationTests.test_concurrent_epoch_and_replay_changes_invalidate_snapshot) ... ok
+test_consumed_without_native_reservation_is_unresolved (test_host_request_observation.HostRequestObservationTests.test_consumed_without_native_reservation_is_unresolved) ... ok
+test_consumption_ack_loss_and_pruned_replay_never_grant_resend (test_host_request_observation.HostRequestObservationTests.test_consumption_ack_loss_and_pruned_replay_never_grant_resend) ... ok
+test_corrupt_intent_digest_is_rejected (test_host_request_observation.HostRequestObservationTests.test_corrupt_intent_digest_is_rejected) ... ok
+test_different_namespace_cannot_rebind_a_validly_sealed_intent (test_host_request_observation.HostRequestObservationTests.test_different_namespace_cannot_rebind_a_validly_sealed_intent) ... ok
+test_duplicate_replay_identity_is_rejected (test_host_request_observation.HostRequestObservationTests.test_duplicate_replay_identity_is_rejected) ... ok
+test_foreign_scope_never_discloses_another_native_run (test_host_request_observation.HostRequestObservationTests.test_foreign_scope_never_discloses_another_native_run) ... ok
+test_independent_native_run_identity_is_located_without_private_fields (test_host_request_observation.HostRequestObservationTests.test_independent_native_run_identity_is_located_without_private_fields) ... ok
+test_invalid_request_id_is_rejected_before_database_access (test_host_request_observation.HostRequestObservationTests.test_invalid_request_id_is_rejected_before_database_access) ... ok
+test_issued_intent_and_another_missing_id_are_observations_only (test_host_request_observation.HostRequestObservationTests.test_issued_intent_and_another_missing_id_are_observations_only) ... ok
+test_missing_namespace_over_retained_history_is_rejected (test_host_request_observation.HostRequestObservationTests.test_missing_namespace_over_retained_history_is_rejected) ... ok
+test_missing_stores_are_not_recreated (test_host_request_observation.HostRequestObservationTests.test_missing_stores_are_not_recreated) ... ok
+test_mutating_locator_does_not_change_the_retained_binding (test_host_request_observation.HostRequestObservationTests.test_mutating_locator_does_not_change_the_retained_binding) ... ok
+test_native_fingerprint_or_run_identity_mismatch_is_rejected (test_host_request_observation.HostRequestObservationTests.test_native_fingerprint_or_run_identity_mismatch_is_rejected) ... ok
+test_native_reservation_for_unconsumed_intent_is_inconsistent (test_host_request_observation.HostRequestObservationTests.test_native_reservation_for_unconsumed_intent_is_inconsistent) ... ok
+test_no_writer_or_replay_helpers_and_connections_are_read_only_and_closed (test_host_request_observation.HostRequestObservationTests.test_no_writer_or_replay_helpers_and_connections_are_read_only_and_closed) ... ok
+test_pruned_intent_or_false_inventory_counter_is_rejected (test_host_request_observation.HostRequestObservationTests.test_pruned_intent_or_false_inventory_counter_is_rejected) ... ok
+test_replay_view_is_not_accepted_as_the_native_table (test_host_request_observation.HostRequestObservationTests.test_replay_view_is_not_accepted_as_the_native_table) ... ok
+test_sql_read_denial_produces_only_a_bounded_error (test_host_request_observation.HostRequestObservationTests.test_sql_read_denial_produces_only_a_bounded_error) ... ok
+test_stale_owner_epoch_is_rejected (test_host_request_observation.HostRequestObservationTests.test_stale_owner_epoch_is_rejected) ... ok
+test_changed_live_upstream_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_live_upstream_is_not_silently_ignored) ... ok
+test_changed_main_credential_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_main_credential_refuses) ... ok
+test_changed_main_route_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_changed_main_route_refuses) ... ok
+test_lowered_live_budget_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_lowered_live_budget_is_not_silently_ignored) ... ok
+test_missing_live_execution_settings_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_live_execution_settings_refuses) ... ok
+test_missing_registry_guard_refuses (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_missing_registry_guard_refuses) ... ok
+test_revoked_live_file_allowlist_is_not_silently_ignored (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_revoked_live_file_allowlist_is_not_silently_ignored) ... ok
+test_unchanged_profile_is_accepted (test_execution_profile_qa3156.LiveProfileConsistencyTests.test_unchanged_profile_is_accepted) ... ok
+test_consumer_cannot_attach_before_verified (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_consumer_cannot_attach_before_verified) ... ok
+test_consumer_constructor_failure_cannot_replace_reserved_slot (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_consumer_constructor_failure_cannot_replace_reserved_slot) ... ok
+test_default_pair_never_implicitly_becomes_three_store (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_default_pair_never_implicitly_becomes_three_store) ... ok
+test_detached_label_without_native_proofs_not_enough (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_detached_label_without_native_proofs_not_enough) ... ok
+test_foreign_actor_refuses_consumer_before_import (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_foreign_actor_refuses_consumer_before_import) ... ok
+test_interrupted_prepare_retains_owner_slot (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_interrupted_prepare_retains_owner_slot) ... ok
+test_reservation_precedes_first_consumer_prepare_effect (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_reservation_precedes_first_consumer_prepare_effect) ... ok
+test_wrong_consumer_type_never_authorizes_close (test_startup_consumer_owner_s124b1.OwnerConsumerContracts.test_wrong_consumer_type_never_authorizes_close) ... ok
+setUpClass (test_api_owner_i133p1.NativeReceipt) ... ERROR
+test_both_legacy_defaults_remain_exact (test_api_owner_i133p1.SelectionContracts.test_both_legacy_defaults_remain_exact) ... ok
+test_explicit_canonical_selection_uses_same_reserved_consumer (test_api_owner_i133p1.SelectionContracts.test_explicit_canonical_selection_uses_same_reserved_consumer) ... ok
+test_invalid_or_unpaired_canonical_selection_no_slot_effect (test_api_owner_i133p1.SelectionContracts.test_invalid_or_unpaired_canonical_selection_no_slot_effect) ... ok
+test_new_flag_defaults_false_at_both_boundaries (test_api_owner_i133p1.SelectionContracts.test_new_flag_defaults_false_at_both_boundaries) ... ok
+test_changed_native_transition_retains_unknown (test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_changed_native_transition_retains_unknown) ... ok
+test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted (test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted) ... ERROR
+test_identity_policy_is_not_a_truthy_coercion (test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_identity_policy_is_not_a_truthy_coercion) ... ok
+test_pre_effect_transition_refusal_retains_known_state (test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_pre_effect_transition_refusal_retains_known_state) ... ok
+test_default_generation_not_silently_changed (test_active_owner_contract_b129d6.ExplicitOwnerSelection.test_default_generation_not_silently_changed) ... ok
+test_explicit_generation_reserved_in_original_consumer_slot (test_active_owner_contract_b129d6.ExplicitOwnerSelection.test_explicit_generation_reserved_in_original_consumer_slot) ... ok
+test_non_boolean_option_has_no_slot_or_constructor_effect (test_active_owner_contract_b129d6.ExplicitOwnerSelection.test_non_boolean_option_has_no_slot_or_constructor_effect) ... ok
+test_callback_side_effects_are_not_used_to_measure_empty (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_callback_side_effects_are_not_used_to_measure_empty) ... ok
+test_check_refuses_work_before_sql_or_native_selection (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_check_refuses_work_before_sql_or_native_selection) ... ok
+test_done_or_cancelled_task_methods_never_called (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_done_or_cancelled_task_methods_never_called) ... ok
+test_every_authority_work_field_refuses_nonempty (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_every_authority_work_field_refuses_nonempty) ... ok
+test_every_lazy_registry_refuses_any_retained_work (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_every_lazy_registry_refuses_any_retained_work) ... ok
+test_every_runner_work_field_refuses_nonempty (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_every_runner_work_field_refuses_nonempty) ... ok
+test_falsy_invalid_containers_fail_closed (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_falsy_invalid_containers_fail_closed) ... ok
+test_foreign_authority_or_state_refused (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_foreign_authority_or_state_refused) ... ok
+test_history_only_stops_are_not_reclassified_as_live_work (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_history_only_stops_are_not_reclassified_as_live_work) ... ok
+test_idle_fixed_containers_pass_without_replacement (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_idle_fixed_containers_pass_without_replacement) ... ok
+test_lazy_registries_absent_none_and_correct_empty_allowed (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_lazy_registries_absent_none_and_correct_empty_allowed) ... ok
+test_lifecycle_handles_and_integer_false_are_refused (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_lifecycle_handles_and_integer_false_are_refused) ... ok
+test_missing_mandatory_fields_not_assumed_idle (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_missing_mandatory_fields_not_assumed_idle) ... ok
+test_defaults_stay_false_and_three_legacy_generations_distinct (test_finite_close_f135c6.FiniteSelection.test_defaults_stay_false_and_three_legacy_generations_distinct) ... ok
+test_explicit_finite_uses_same_reserved_owner (test_finite_close_f135c6.FiniteSelection.test_explicit_finite_uses_same_reserved_owner) ... ok
+test_invalid_finite_options_do_not_reserve_slot (test_finite_close_f135c6.FiniteSelection.test_invalid_finite_options_do_not_reserve_slot) ... ok
+test_expired_total_deadline_does_not_cancel_existing_awaitable (test_finite_runtime_contract.NoncancellingWait.test_expired_total_deadline_does_not_cancel_existing_awaitable) ... ok
+test_failed_task_remains_recorded_without_cancellation (test_finite_runtime_contract.NoncancellingWait.test_failed_task_remains_recorded_without_cancellation) ... ok
+test_loop_stall_cannot_turn_late_task_completion_into_deadline_success (test_finite_runtime_contract.NoncancellingWait.test_loop_stall_cannot_turn_late_task_completion_into_deadline_success) ... ok
+test_timeout_retains_pending_task_and_allows_its_original_completion (test_finite_runtime_contract.NoncancellingWait.test_timeout_retains_pending_task_and_allows_its_original_completion) ... ok
+test_api_timeout_keeps_tasks_loop_model_factory_owner_and_lease (test_finite_runtime_contract.RuntimeLifecycle.test_api_timeout_keeps_tasks_loop_model_factory_owner_and_lease) ... ok
+test_executor_shutdown_timeout_retains_original_open_stores_and_lease (test_finite_runtime_contract.RuntimeLifecycle.test_executor_shutdown_timeout_retains_original_open_stores_and_lease) ... ok
+test_extra_pending_loop_task_blocks_owner_close_and_lease_release (test_finite_runtime_contract.RuntimeLifecycle.test_extra_pending_loop_task_blocks_owner_close_and_lease_release) ... ok
+test_original_close_failure_does_not_finish_caller_lease (test_finite_runtime_contract.RuntimeLifecycle.test_original_close_failure_does_not_finish_caller_lease) ... ok
+test_partial_physical_close_is_unknown_and_never_releases_caller_lease (test_finite_runtime_contract.RuntimeLifecycle.test_partial_physical_close_is_unknown_and_never_releases_caller_lease) ... ok
+test_preparation_is_deadline_bounded_and_pending_task_retains_original_consumer (test_finite_runtime_contract.RuntimeLifecycle.test_preparation_is_deadline_bounded_and_pending_task_retains_original_consumer) ... ok
+test_second_pending_task_guard_runs_after_executor_before_owner_close (test_finite_runtime_contract.RuntimeLifecycle.test_second_pending_task_guard_runs_after_executor_before_owner_close) ... ok
+test_short_consumer_connection_tuple_cannot_claim_same_three_connections (test_finite_runtime_contract.RuntimeLifecycle.test_short_consumer_connection_tuple_cannot_claim_same_three_connections) ... ok
+test_startup_failure_keeps_original_owner_and_lease_without_cleanup (test_finite_runtime_contract.RuntimeLifecycle.test_startup_failure_keeps_original_owner_and_lease_without_cleanup) ... ok
+test_success_drains_native_consumer_then_idle_executor_before_original_owner_and_lease (test_finite_runtime_contract.RuntimeLifecycle.test_success_drains_native_consumer_then_idle_executor_before_original_owner_and_lease) ... ok
+
+======================================================================
+ERROR: setUpClass (test_api_owner_i133p1.NativeReceipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/288e2938ab4c/r159-source/tree/tests/test_api_owner_i133p1.py", line 49, in setUpClass
+    def setUpClass(cls):cls.r=read('native-002/result.json');cls.c=read('current-source-custody.json')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/288e2938ab4c/r159-source/tree/tests/test_api_owner_i133p1.py", line 13, in read
+    def read(name):return json.loads((E/name).read_text(encoding='utf-8'))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/288e2938ab4c/r159-source/tree/evidence/d3b-api-owner-i133p1/native-002/result.json'
+
+======================================================================
+ERROR: test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted (test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/288e2938ab4c/r159-source/tree/tests/test_active_owner_contract_b129d6.py", line 60, in test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted
+    E=ROOT/'evidence/d3b-active-owner-b129d6';base=json.loads((E/'baseline.json').read_text(encoding='utf-8'))
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/288e2938ab4c/r159-source/tree/evidence/d3b-active-owner-b129d6/baseline.json'
+
+----------------------------------------------------------------------
+Ran 118 tests in 1.099s
+
+FAILED (errors=2)
+EXACT_COUNTS {"testMethodsRun": 118, "successfulTestMethods": 117, "failures": 0, "errors": 2, "skipped": 0, "errorIds": ["setUpClass (test_api_owner_i133p1.NativeReceipt)", "test_active_owner_contract_b129d6.AdmissionPolicyContracts.test_historical_bytes_are_exact_and_unknown_generation_is_not_accepted"]}

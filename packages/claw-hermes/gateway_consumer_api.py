@@ -4,11 +4,11 @@ Explicit source selection does not enable a listener, recover a queue, execute a
 model, or authorize worker health. All registry effects use native owner methods.
 """
 import asyncio
-from gateway_prepared_consumer import require,verify_imports,CANONICAL_API_FEATURE,FINITE_FEATURE
+from gateway_prepared_consumer import require,verify_imports,selected_feature
 
 
 def check_publication(c):
-    require(c._canonical_api is True and c._selected_feature==(FINITE_FEATURE if getattr(c,'_finite_turn',False) else CANONICAL_API_FEATURE),
+    require(c._canonical_api is True and c._selected_feature==selected_feature(c),
             'consumer_canonical_api_not_selected')
     bundle,runner,adapter,binding=c._bundle,c._runner,c._adapter,c._binding
     phase=c._publication_phase

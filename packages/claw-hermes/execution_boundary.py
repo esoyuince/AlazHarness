@@ -130,7 +130,7 @@ class ExecutionBoundary:
         token=settings['provider_bearer']
         if type(token) is not str or not re.fullmatch(r'[\x21-\x7e]{32,256}',token):raise ExecutionDenied('invalid_provider_credential')
         if self.broker is not None and token==self.broker.link.signing_key:raise ExecutionDenied('separate_broker_key_required')
-        self.token=token;self.adapter=None
+        self.token=token;self.adapter=None;self.service_transport=None;self.service_owner=None;self._service_app=None
         self._settings_digest=hashlib.sha256(_json(settings).encode()).hexdigest()
         self.isolation=None
         if 'isolated_read' in settings:
@@ -149,7 +149,15 @@ class ExecutionBoundary:
         # Check revocation again at claim/settlement, including the actual tool path.
         self.validate_profile()
         runner=self.adapter.gateway_runner;authority=runner.session_authority;desc=runner.session_runtime_descriptor
-        if desc.get('state')!='ready' or getattr(authority,'retired',False) or getattr(authority,'retiring',False):raise ExecutionDenied('execution_owner_unavailable')
+        if self.service_transport is not None:
+            try:
+                # Native file tools call this from a physical worker thread.
+                # Existing admitted work may settle during drain; this pure
+                # check neither opens admission nor enters the owner loop.
+                authority=self.service_transport.check_binding(for_admission=False,
+                    app=self._service_app,adapter=self.adapter)
+            except Exception:raise ExecutionDenied('execution_owner_unavailable') from None
+        elif desc.get('state')!='ready' or getattr(authority,'retired',False) or getattr(authority,'retiring',False):raise ExecutionDenied('execution_owner_unavailable')
         token=self.adapter._expected_api_key()
         if token==self.token:raise ExecutionDenied('separate_provider_credential_required')
         if self.broker is not None and token==self.broker.link.signing_key:raise ExecutionDenied('separate_broker_key_required')
@@ -190,14 +198,24 @@ class ExecutionBoundary:
         state=await asyncio.to_thread(ledger.snapshot)
         if state['quarantined']:raise ExecutionDenied('execution_budget_quarantined')
 
-    def bind(self,app,adapter):
+    def bind(self,app,adapter,*,service_transport=None,service_owner=None):
         from aiohttp import web, ClientSession, ClientTimeout
+        if self.adapter is not None and (self.service_transport is not None or service_transport is not None):
+            raise ExecutionDenied('execution_boundary_already_bound')
+        if service_transport is not None:
+            from gateway.platforms.api_server_borrowed_transport import BorrowedHTTPTransport
+            from gateway_service_runtime import BorrowedServiceOwner
+            if type(service_transport) is not BorrowedHTTPTransport:raise ExecutionDenied('native_service_transport_required')
+            if type(service_owner) is not BorrowedServiceOwner:raise ExecutionDenied('native_service_owner_required')
+            self.service_transport=service_transport;self.service_owner=service_owner;self._service_app=app
+        elif service_owner is not None:raise ExecutionDenied('native_service_transport_required')
         self.adapter=adapter
         self.tools.register(self.context)
         async def metadata(request):
             error=self._authenticate(request)
             if error:return self._error(error)
             try:
+                self._require_service_execution()
                 await self.require_ready()
                 return web.json_response({'object':'list','data':[{'object':'model','id':self.policy.model,
                    'context_length':self.policy.tokens_per_attempt}]})
@@ -208,7 +226,9 @@ class ExecutionBoundary:
             if denied:return self._error(denied)
             ticket=None;ledger=None
             try:
+                self._require_service_execution()
                 await self.require_ready()
+                self._require_service_execution()
                 if request.content_type!='application/json' or request.headers.get('Content-Encoding') or request.content_length is None or not 0<request.content_length<=2_000_000:
                     raise ExecutionDenied('unsupported_provider_body')
                 body=_load(await request.text(),2_000_000)
@@ -271,6 +291,13 @@ class ExecutionBoundary:
         app.router.add_get(PROVIDER_BASE+'/models',metadata)
         app.router.add_post(PROVIDER_BASE+'/chat/completions',provider)
         app['alaz_execution_boundary_v1']=self
+
+    def _require_service_execution(self):
+        if self.service_transport is not None:
+            try:
+                self.service_owner.require_execution(transport=self.service_transport,
+                    app=self._service_app,adapter=self.adapter)
+            except Exception:raise ExecutionDenied('execution_service_unavailable') from None
 
     def _authenticate(self,request):
         if len(request.headers.getall('Authorization',[]))!=1 or not hmac.compare_digest(request.headers.get('Authorization',''),'Bearer '+self.token):return 'provider_authentication_required'

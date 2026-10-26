@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "hermes_state.py",
+      "sha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577"
+    },
+    {
+      "path": "gateway/platforms/api_server.py",
+      "sha256": "b199e33b17c573f8d4cb3a7d1b0ee6961bef5f6e9bdf1303aadeeb3e3d78c520"
+    },
+    {
+      "path": "gateway/platforms/api_server_runs.py",
+      "sha256": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb"
+    },
+    {
+      "path": "gateway/platforms/base.py",
+      "sha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525"
+    },
+    {
+      "path": "hermes_cli/plugins.py",
+      "sha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568"
+    }
+  ],
+  "native_commit": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "scope": "selected borrowed service host boundary files; full native source closure is pinned separately"
+}

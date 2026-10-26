@@ -174,7 +174,7 @@ class NativeStoreStartup:
             # Bound diagnostics; original exception retains details only locally.
             raise StoreStartupRejected('startup_sequence_rejected') from exc
 
-    async def prepare_runtime(self, gateway_config, api_config, *, local_admission=False, canonical_api=False, finite_turn=False):
+    async def prepare_runtime(self, gateway_config, api_config, *, local_admission=False, canonical_api=False, finite_turn=False, borrowed_service=False):
         """Attach the fixed prepared consumer; no new store owner or service."""
         self._owned()
         require(type(local_admission) is bool,'startup_admission_option')
@@ -186,7 +186,10 @@ class NativeStoreStartup:
         from gateway_prepared_consumer import PreparedRuntimeConsumer
         require(type(finite_turn) is bool and (not finite_turn or canonical_api),
                 'startup_finite_option')
-        consumer=(PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True,finite_turn=True) if finite_turn
+        require(type(borrowed_service) is bool and (not borrowed_service or finite_turn),
+                'startup_service_option')
+        consumer=(PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True,finite_turn=True,borrowed_service=True) if borrowed_service
+                  else PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True,finite_turn=True) if finite_turn
                   else PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True) if canonical_api
                   else PreparedRuntimeConsumer(self,local_admission=True) if local_admission
                   else PreparedRuntimeConsumer(self))

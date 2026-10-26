@@ -1,0 +1,290 @@
+{
+  "schema": 1,
+  "kind": "R159_NATIVE_BORROWED_LIFECYCLE_TESTS",
+  "result": "PASS",
+  "atUtc": "2026-10-26T14:28:29.552991+00:00",
+  "harnessBase": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "nativeBase": "d1516731308de8e87130dc68124e69aad35d6911",
+  "scope": "Local native source behavioral tests and bounded old-target queued-stop regression demonstration.",
+  "environment": {
+    "testRoot": "/workspace/scratch/288e2938ab4c/r159-source/native",
+    "pythonExecutable": "/tmp/r159-native-test-env/bin/python",
+    "pythonVersion": "3.12.3",
+    "pytestVersion": "9.1.1",
+    "pytestAsyncioVersion": "1.3.0",
+    "sqliteVersion": "3.45.1",
+    "interpreterProvisioning": "Disposable environment built by the native package manager; no shared environment or installed product modified.",
+    "officialRunner": "scripts/run_tests.sh",
+    "barePytestUsed": false,
+    "hermesHome": "The wrapper command creates and passes a distinct mktemp HERMES_HOME, but scripts/run_tests.sh drops that caller variable through env -i; it is not inherited by pytest. Native tests/conftest.py establishes an isolated per-process Hermes home before test-module imports, and per-test fixtures establish fresh temporary profiles, including the explicit profiles in these two test files.",
+    "retries": 0,
+    "perFileTimeoutSeconds": 90,
+    "workers": 1,
+    "execSandboxPermissions": "require_escalated",
+    "sandboxReason": "Parent independently verified default sandbox blocks asyncio thread-safe socket wakeups; the same minimal reproducer completes in the authorized escalated environment.",
+    "ordinaryGatewayServiceStarted": false,
+    "localLoopbackHttpExercised": true,
+    "runnerGitDiagnostic": "The exported mirror has no .git metadata; official bytecode preparation prints a nonfatal git diagnostic and the test runner continues.",
+    "sqlitePolicy": "Native SQLite compatibility policy remains enabled; the linked 3.45.1 interpreter uses DELETE journal mode as reported in the baseline log."
+  },
+  "testedFiles": {
+    "tests/gateway/test_api_server_borrowed_transport.py": {
+      "sha256": "6cc916e49bdd7426186c93aa6b560ede76b3476cd8249090b99f41b35e55507d",
+      "bytes": 28048
+    },
+    "tests/gateway/test_api_server_queued_stop_retirement.py": {
+      "sha256": "78c85e114541695abd98b74d45ecc782f1da6769869b26cb10d47dc021573624",
+      "bytes": 8897
+    }
+  },
+  "relevantSourceFilesAtFinalRun": {
+    "gateway/platforms/api_server_borrowed_transport.py": {
+      "sha256": "d168a441b7da9f97e8c3533fff128308a58deea041e28cb04bb24658227f657b",
+      "bytes": 24621
+    },
+    "gateway/platforms/api_server_authority_runs.py": {
+      "sha256": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+      "bytes": 10745
+    }
+  },
+  "sourceBindingLimit": "These hashes identify the two test files and two directly relevant native modules; the parent packet separately owns complete source closure and publication provenance.",
+  "finalRun": {
+    "result": "PASS",
+    "exitCode": 0,
+    "files": 2,
+    "passed": 27,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 0,
+    "seconds": 10.3,
+    "perFile": {
+      "tests/gateway/test_api_server_borrowed_transport.py": {
+        "passed": 22,
+        "failed": 0
+      },
+      "tests/gateway/test_api_server_queued_stop_retirement.py": {
+        "passed": 5,
+        "failed": 0
+      }
+    },
+    "cwd": "/workspace/scratch/288e2938ab4c/r159-source/native",
+    "command": "set -o pipefail\nr159_test_home=$(mktemp -d /tmp/r159-lifecycle-home.XXXXXX)\nHERMES_PYTHON=/tmp/r159-native-test-env/bin/python HERMES_HOME=\"$r159_test_home\" HERMES_TEST_FILE_RETRIES=0 bash scripts/run_tests.sh -j 1 --file-timeout 90 tests/gateway/test_api_server_borrowed_transport.py tests/gateway/test_api_server_queued_stop_retirement.py --tb=short -q 2>&1 | tee /tmp/r159-lifecycle-final-run.log",
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-lifecycle-final-green.txt",
+      "originalLocalLog": "/tmp/r159-lifecycle-final-run.log",
+      "copiedVerbatim": true,
+      "truncated": false,
+      "sha256": "ca563e2a48ceb6d3787b2515f1ba822f07f24eedc4a13fb25584c672962a9abd",
+      "bytes": 1248
+    },
+    "lastNarrowReviewFix": {
+      "finding": "A retained native session subscription was not included in the listener retirement preflight, although the later runtime retirement checked it.",
+      "change": "Reuse native _sessions_idle before the transport enters RETIRING or closes the listener.",
+      "test": "test_retained_native_observer_blocks_listener_retirement_until_detached",
+      "behavior": "Actual authority.attach on a terminal native API admission blocks retirement with no active HTTP handlers; listener remains serving and authenticated GET succeeds. Actual authority.detach then permits the full ordered native close.",
+      "preFixBehavioralRunRecorded": false
+    }
+  },
+  "baselineRegression": {
+    "regressionDemonstration": "PASS",
+    "testResult": "EXPECTED_FAIL",
+    "exitCode": 1,
+    "passed": 0,
+    "failed": 2,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 3,
+    "seconds": 3.0,
+    "cwd": "/tmp/r159-queued-baseline-fr39nsj0/native",
+    "command": "set -o pipefail\nr159_test_home=$(mktemp -d /tmp/r159-queued-baseline-home.XXXXXX)\nHERMES_PYTHON=/tmp/r159-native-test-env/bin/python HERMES_HOME=\"$r159_test_home\" HERMES_TEST_FILE_RETRIES=0 bash scripts/run_tests.sh -j 1 --file-timeout 90 tests/gateway/test_api_server_queued_stop_retirement.py -k 'test_queued_stop_after_producer_retirement_leaves_no_live_marker or test_unobserved_queued_stop_during_drain_remains_terminal_and_idempotent' --tb=short -q 2>&1 | tee /tmp/r159-queued-baseline-red.log",
+    "restoredSingleTarget": {
+      "path": "gateway/platforms/api_server_authority_runs.py",
+      "nativeCommit": "d1516731308de8e87130dc68124e69aad35d6911",
+      "sha256": "3c269e67bd3ae4bd154f35d28ed3b1639e7bf18c090b43fc72027d9ab2521738",
+      "bytes": 8687
+    },
+    "currentTargetAfterRedCheck": {
+      "sha256": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+      "bytes": 10745
+    },
+    "supportingGeneration": "The isolated copy uses current R159 supporting code and the current queued-stop test file; only api_server_authority_runs.py is restored to exact d151 bytes.",
+    "fullOldNativeAcceptance": false,
+    "activeMirrorMutated": false,
+    "selectedTests": [
+      {
+        "name": "test_queued_stop_after_producer_retirement_leaves_no_live_marker",
+        "failureLine": 120,
+        "assertion": "assert run_id not in adapter._stopping_run_ids",
+        "behavior": "Actual canonical queued cancellation settles the producer while native media cleanup is held in a physical worker; the old Stop path re-adds a live marker after producer retirement."
+      },
+      {
+        "name": "test_unobserved_queued_stop_during_drain_remains_terminal_and_idempotent",
+        "failureLine": 147,
+        "assertion": "assert not adapter._stopping_run_ids",
+        "behavior": "Actual unobserved queued cancellation during drain leaves an unretirable stop marker under the old target."
+      }
+    ],
+    "failedBeforeNewProofAssertions": true,
+    "queuedTestHashUnchangedBetweenRedAndFinalGreen": true,
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-lifecycle-baseline-red.txt",
+      "originalLocalLog": "/tmp/r159-queued-baseline-red.log",
+      "copiedVerbatim": true,
+      "truncated": false,
+      "sha256": "0304de026126b4bc43dc40bb359d268dc2adc18586081bbfbc823f53f7c0bb02",
+      "bytes": 8145
+    }
+  },
+  "coverage": [
+    "Actual profile ownership, original epoch, three caller-owned SQLite stores, native prepared GatewayRunner and API adapter.",
+    "Literal loopback binding, narrow authenticated routes, duplicate/room/query-only authorization refusal, ordinary borrowed listener rejection.",
+    "Original identity and phase checks, including off-loop native _execute_write while the actual SQLite transaction is open.",
+    "Drain seals new admission but retains real queued observation and Stop; started Stop targets the original claimed generation and does not claim terminal.",
+    "Actual outer HTTP task cancellation retains a shielded inner handler and its physical to_thread SQL worker until completion.",
+    "Native _UnboundedThreadExecutor physical worker blocks retirement even after the dispatcher task returns.",
+    "Actual native observer attach/detach blocks listener retirement until its obligation is released.",
+    "Cancelled setup, occupied bind, cancelled inner handler and lost cleanup acknowledgement retain UNKNOWN ownership without product retries.",
+    "Idle HTTP keepalive connection does not deadlock ordered listener retirement.",
+    "Borrowed metrics do not start the ordinary unowned status writer.",
+    "Prepared home/secret/terminal request scopes use captured copies and perform no per-request secret hydration.",
+    "Canonical queued cancellation proof requires current epoch/instance, NULL generation and absence of the exact managed worker; stale epoch, contradictory worker and started claim suppress proof."
+  ],
+  "failedRunHistory": [
+    {
+      "attempt": 1,
+      "result": "COLLECTION_BLOCKED",
+      "testsExecuted": 0,
+      "filesWithCollectionErrors": 2,
+      "missingSourceModule": "tests._fixtures",
+      "reason": "The exported local mirror lacked exact baseline helper sources; no behavioral tests ran.",
+      "resolution": "Parent exported exact pinned native helper/fixture closure; no import guards or implementation were weakened.",
+      "originalLocalLog": "/tmp/r159-lifecycle-first-run.log",
+      "originalLog": {
+        "sha256": "117e6a279b7d70adb4340677297eb3ebe1c15f619928124110e5f9cab71a026c",
+        "bytes": 4112
+      }
+    },
+    {
+      "attempt": 2,
+      "result": "COLLECTION_BLOCKED",
+      "testsExecuted": 0,
+      "filesWithCollectionErrors": 2,
+      "missingSourceModule": "hermes_cli.gui_uninstall",
+      "reason": "The exported local mirror lacked exact baseline helper sources; no behavioral tests ran.",
+      "resolution": "Parent exported exact pinned native helper/fixture closure; no import guards or implementation were weakened.",
+      "originalLocalLog": "/tmp/r159-lifecycle-second-run.log",
+      "originalLog": {
+        "sha256": "0ed9b994e6759678b8517c03edd254f47e2cc56c0b230a1a6bd6be08858d4f9d",
+        "bytes": 4044
+      }
+    },
+    {
+      "attempt": 3,
+      "result": "COLLECTION_BLOCKED",
+      "testsExecuted": 0,
+      "filesWithCollectionErrors": 2,
+      "missingSourceModule": "hermes_cli.linux_desktop_entry",
+      "reason": "The exported local mirror lacked exact baseline helper sources; no behavioral tests ran.",
+      "resolution": "Parent exported exact pinned native helper/fixture closure; no import guards or implementation were weakened.",
+      "originalLocalLog": "/tmp/r159-lifecycle-third-run.log",
+      "originalLog": {
+        "sha256": "4abb3e051f4458c99d4e25ae10e499fc00a6284cdfcf234739d93fc43704657e",
+        "bytes": 5052
+      }
+    },
+    {
+      "attempt": 4,
+      "result": "FAIL",
+      "passed": 7,
+      "failed": 19,
+      "transport": {
+        "passed": 2,
+        "failed": 19
+      },
+      "queued": {
+        "passed": 5,
+        "failed": 0
+      },
+      "reason": "Native identity guard incorrectly required the runner preflight gate and facade borrowed-state gate to be the same object; borrowed_transport_facade_changed also prevented setup-cancellation fixture progress.",
+      "resolution": "Capture and verify both distinct original native gates without weakening their ownership checks.",
+      "originalLocalLog": "/tmp/r159-lifecycle-fourth-run.log",
+      "originalLog": {
+        "sha256": "76ae2afc30ea45a0ebd7d5f0015bbaf0e97f16d697168b3bfab2081a9b9e3db3",
+        "bytes": 23193
+      }
+    },
+    {
+      "attempt": 5,
+      "result": "FAIL",
+      "scope": "transport file only",
+      "passed": 17,
+      "failed": 4,
+      "productionFailures": 3,
+      "testFaultInjectionFailures": 1,
+      "reason": "The nominally pure guard read facade._db, whose property reentered the native state lock during a real off-loop write transaction. A separate test tried to monkeypatch a slot-based SockSite instance method.",
+      "resolution": "Native guard checks the captured original raw gate/state/connection/lock identity without invoking the locking property. The test patches the SockSite class and verifies the exact owned instance.",
+      "originalLocalLog": "/tmp/r159-transport-fifth-run.log",
+      "originalLog": {
+        "sha256": "0f92c0b69a423c46ef18bf737e4643161fce59f77f8cea86db576a0e8ce604b8",
+        "bytes": 13218
+      }
+    },
+    {
+      "attempt": 6,
+      "result": "FAIL",
+      "passed": 25,
+      "failed": 1,
+      "reason": "A queued canonical ledger row made transport retirement raise BorrowedRunnerRejected instead of the public BorrowedStoreRejected busy refusal; host close would have classified this as UNKNOWN.",
+      "resolution": "Normalize only BorrowedRunnerRejected in transport pre-effect idle checks, preserving the reason and READY/DRAINING phase; awaited or partial cleanup failures are not converted.",
+      "originalLocalLog": "/tmp/r159-lifecycle-sixth-run.log",
+      "originalLog": {
+        "sha256": "7cd5d9aeb1eff003476e0e9186cf8d1cd47f13c92a22df7f63e4d2f425cd77a5",
+        "bytes": 5550
+      }
+    },
+    {
+      "attempt": 7,
+      "result": "PASS",
+      "passed": 26,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "transportPassed": 21,
+      "queuedPassed": 5,
+      "exitCode": 0,
+      "seconds": 9.6,
+      "supersededByFinal27CaseRun": true,
+      "testFileHashes": {
+        "tests/gateway/test_api_server_borrowed_transport.py": "39bdc29bde4545f2abd04c60cba2e7942649d1fc5f7dfaf3cbcdc5edfaa27ee7",
+        "tests/gateway/test_api_server_queued_stop_retirement.py": "78c85e114541695abd98b74d45ecc782f1da6769869b26cb10d47dc021573624"
+      },
+      "command": "set -o pipefail\nr159_test_home=$(mktemp -d /tmp/r159-lifecycle-home.XXXXXX)\nHERMES_PYTHON=/tmp/r159-native-test-env/bin/python HERMES_HOME=\"$r159_test_home\" HERMES_TEST_FILE_RETRIES=0 bash scripts/run_tests.sh -j 1 --file-timeout 90 tests/gateway/test_api_server_borrowed_transport.py tests/gateway/test_api_server_queued_stop_retirement.py --tb=short -q 2>&1 | tee /tmp/r159-lifecycle-seventh-run.log",
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/native-lifecycle-prior-26-green.txt",
+        "originalLocalLog": "/tmp/r159-lifecycle-seventh-run.log",
+        "copiedVerbatim": true,
+        "truncated": false,
+        "sha256": "979d2623b18509b60298b934b5869c5e1d7e342750de0d1f1880c400ed0f1b32",
+        "bytes": 1246
+      }
+    }
+  ],
+  "acceptance": {
+    "nativeSourceFocusedBehavior": true,
+    "baselineQueuedMarkerRegressionDemonstrated": true,
+    "installedServiceAcceptance": false,
+    "completeNativeSuiteExecuted": false,
+    "ordinaryGatewayLifecycleAcceptance": false,
+    "realProviderCalls": 0,
+    "realModelCalls": 0,
+    "fullP2Acceptance": false,
+    "productionAcceptance": false,
+    "limits": [
+      "Tests use local source exports and temporary profiles; they do not install or qualify the daily service, service supervisor or packaged runtime.",
+      "Provider/model execution is not exercised. The started-stop fixture uses a real canonical claim with a local interrupt observer.",
+      "Fixture disposal after deliberately UNKNOWN cases is test-only cleanup and is not a successful product close receipt.",
+      "The old-target red check uses mixed supporting generations and proves only the two selected queued-stop regressions."
+    ]
+  }
+}

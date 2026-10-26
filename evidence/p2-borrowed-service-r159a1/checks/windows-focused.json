@@ -1,0 +1,135 @@
+{
+  "atUtc": "2026-10-26T17:19:52.607793+00:00",
+  "commandKind": "python -B -c explicit unittest loader/tracking runner",
+  "discovered": 235,
+  "elapsedSeconds": 118.845,
+  "errorDetails": [],
+  "errors": 0,
+  "exitCode": 0,
+  "failureDetails": [],
+  "failures": 0,
+  "fixtureErrors": 0,
+  "harnessBase": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "installedServiceAccepted": false,
+  "logSha256": "dca58f378c5a4dced292a93fe74f3e270a507a9d7ef3d4848dfdebf2b94d7ed2",
+  "methodErrors": 0,
+  "modelCalls": 0,
+  "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "nativeRequestId": "b0440159-39a9-471f-b658-26578930641d",
+  "nativeRuntimeStarted": false,
+  "passed": 218,
+  "providerCalls": 0,
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "pythonExecutable": "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "result": "PASS",
+  "run": 235,
+  "schema": 1,
+  "selectedModules": [
+    "test_borrowed_service_host_r159a1",
+    "test_local_control",
+    "test_recovery_projection",
+    "test_queued_cancel_control_r159a1",
+    "test_historical_borrowed_service_r159a1",
+    "test_historical_local_control_r158a1",
+    "test_host_gate_qa",
+    "test_host_request_observation",
+    "test_execution_profile_qa3156",
+    "test_startup_consumer_owner_s124b1",
+    "test_api_owner_i133p1",
+    "test_active_owner_contract_b129d6",
+    "test_prepared_work_guard_c127a6",
+    "test_finite_close_f135c6",
+    "test_finite_runtime_contract"
+  ],
+  "skipDetails": [
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_bound_listener_does_not_admit_before_overall_service_ready"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_drain_during_execution_readiness_is_rechecked_inside_native_write"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_draining_refuses_new_intent_without_ledger_write"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_draining_retains_locator_and_native_stop"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_forged_ready_descriptor_does_not_replace_service_proof"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_locator_uses_exact_service_binding_without_ready_descriptor"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_owner_epoch_replacement_does_not_reuse_ready_record"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_stop_authentication_still_precedes_native_control"
+    },
+    {
+      "reason": "aiohttp unavailable; route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedHostRoutes.test_unknown_overall_owner_does_not_reuse_transport_ready"
+    },
+    {
+      "reason": "aiohttp unavailable; provider route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedProviderEntry.test_draining_existing_provider_entry_remains_available"
+    },
+    {
+      "reason": "aiohttp unavailable; provider route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedProviderEntry.test_provider_metadata_cannot_advertise_starting_as_ready"
+    },
+    {
+      "reason": "aiohttp unavailable; provider route qualification not run",
+      "test": "test_borrowed_service_host_r159a1.BorrowedProviderEntry.test_provider_post_cannot_claim_during_starting_or_unknown"
+    },
+    {
+      "reason": "POSIX SIGINT delivery; AbortSignal cancellation is tested portably",
+      "test": "test_local_control.LocalControlTests.test_cli_watch_interrupted"
+    },
+    {
+      "reason": "aiohttp unavailable; HTTP handler qualification not run",
+      "test": "test_host_request_observation.HostRequestObservationRouteTests.test_query_session_and_room_scopes_are_rejected"
+    },
+    {
+      "reason": "aiohttp unavailable; HTTP handler qualification not run",
+      "test": "test_host_request_observation.HostRequestObservationRouteTests.test_route_authentication_precedes_storage_observation"
+    },
+    {
+      "reason": "aiohttp unavailable; HTTP handler qualification not run",
+      "test": "test_host_request_observation.HostRequestObservationRouteTests.test_route_uses_locator_without_execution_or_native_status_helpers"
+    },
+    {
+      "reason": "aiohttp unavailable; HTTP handler qualification not run",
+      "test": "test_host_request_observation.HostRequestObservationRouteTests.test_storage_error_and_invalid_identifier_do_not_leak_private_text"
+    }
+  ],
+  "skipped": 17,
+  "sourceFilesVerifiedBeforeAndAfter": {
+    ".gitattributes": "aff76c94ca610c51731757da4fed771e309c2736234d9692b5beafcea63025cd",
+    "packages/claw-hermes/execution_boundary.py": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96",
+    "packages/claw-hermes/gateway_consumer_admission.py": "d3c7e46058024de339c1e63dc0d617fdae9997e05a9118dab4cc517e230a07e6",
+    "packages/claw-hermes/gateway_consumer_api.py": "d6f5433ea3a020fe6b4178bdee28e26549f66beaf2db66e0a6236c624cc002f3",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+    "packages/claw-hermes/gateway_service_runtime.py": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+    "packages/claw-hermes/gateway_service_sources.py": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7",
+    "packages/claw-hermes/gateway_store_startup.py": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+    "packages/claw-hermes/host_gate.py": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d",
+    "packages/claw-hermes/host_gate_plugin.py": "ae0a66bf897617d358cc168c75a2ab81d378d4913ddb0ff2c3b0a4ddc5fc7112",
+    "packages/claw-hermes/local-control.mjs": "86b4b54889ceb2de7f783fa533842f7c8a8c4f225fcbfad0a7e0deb2495d0fcd",
+    "packages/claw-hermes/run-recovery.mjs": "21793d7583cc2c56e955e85667561f83edfefd72fc219d81cd8469d35f97e748",
+    "tests/historical_borrowed_service_r159a1.py": "c47d6abe50d23a4ccee85404e5fff3564925113469ba3dfad68b9b322f56cbe7",
+    "tests/historical_self_identity_r150a1.py": "51e79ab79981c52e23b7038e83ff4b26d4d51b06be9aed44955ea9631ef36712",
+    "tests/node/queued-cancel-control-r159a1.mjs": "e80dc03a8bded96747928ead6917696b559e2f71d223fda41f79f3c185b0ceba",
+    "tests/test_borrowed_service_host_r159a1.py": "2d5a68c61e1eabfc0803c915bcdfa303dd94df6ee6a70e1910b7f527e99e0183",
+    "tests/test_historical_borrowed_service_r159a1.py": "213e1e60a4181b8dc0f47124415b84a166e2a8868b0ee5f4069f9a0e702325ef",
+    "tests/test_queued_cancel_control_r159a1.py": "82088ffcfded2bed329b59fc685336be821c50eece2c1c965e1d19543049878d"
+  }
+}

@@ -30,7 +30,7 @@ class PreparedConsumerRejected(RuntimeError):pass
 def require(ok,code):
     if not ok:raise PreparedConsumerRejected(code)
 
-def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=False,retained_profile=False):
+def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=False,retained_profile=False,service_selection=None):
     """Read fixed source files, never data files, before native consumer imports."""
     require(type(local_admission) is bool,'consumer_admission_option')
     require(type(canonical_api) is bool and (not canonical_api or local_admission),
@@ -51,9 +51,14 @@ def qualify_sources(*,local_admission=False,canonical_api=False,finite_turn=Fals
             'consumer_retained_source_option')
     if retained_profile:
         path='config/retained-profile-r140c6-sources.json';expected=RETAINED_MANIFEST_SHA256
-    raw=(ROOT/path).read_bytes()
-    require(hashlib.sha256(raw).hexdigest()==expected,'consumer_manifest_changed')
-    manifest=json.loads(raw);require(manifest['nativeFeature']==feature,'consumer_feature')
+    if service_selection is not None:
+        require(local_admission and canonical_api and finite_turn,'consumer_service_source_option')
+        from gateway_service_sources import selected_manifest
+        manifest=selected_manifest(service_selection)
+    else:
+        raw=(ROOT/path).read_bytes()
+        require(hashlib.sha256(raw).hexdigest()==expected,'consumer_manifest_changed')
+        manifest=json.loads(raw);require(manifest['nativeFeature']==feature,'consumer_feature')
     import hermes_state
     native=Path(hermes_state.__file__).resolve().parent
     require(native==Path(hermes_state.__file__).parent,'consumer_source_path')
@@ -85,14 +90,34 @@ def native_types():
     from gateway.platforms.api_server import APIServerAdapter
     return GatewayConfig,PlatformConfig,CallerOwnedRunnerState,GatewayRunner,initialize_gateway_runtime,BorrowedAPIStores,APIServerAdapter
 
+def selected_feature(c):
+    """The explicit service generation is separate from every historical pin."""
+    if getattr(c,'_borrowed_service',False):
+        from gateway_service_sources import ServiceSourceSelection
+        selection=getattr(c,'_service_source',None)
+        require(type(selection) is ServiceSourceSelection,'consumer_service_selection_changed')
+        require(c._finite_turn and c._canonical_api and c._local_admission,
+                'consumer_service_options_changed')
+        return selection.native_feature
+    return (FINITE_FEATURE if getattr(c,'_finite_turn',False) else
+            CANONICAL_API_FEATURE if getattr(c,'_canonical_api',False) else
+            ADMISSION_FEATURE if c._local_admission else FEATURE)
+
+
 class PreparedRuntimeConsumer:
-    def __init__(self,owner,*,local_admission=False,canonical_api=False,finite_turn=False):
+    def __init__(self,owner,*,local_admission=False,canonical_api=False,finite_turn=False,borrowed_service=False):
         import gateway_store_startup as startup
         require(type(local_admission) is bool,'consumer_admission_option')
         require(type(canonical_api) is bool and (not canonical_api or local_admission),
                 'consumer_canonical_api_option')
         require(type(finite_turn) is bool and (not finite_turn or canonical_api),
                 'consumer_finite_option')
+        require(type(borrowed_service) is bool and (not borrowed_service or finite_turn),
+                'consumer_service_option')
+        self._borrowed_service=borrowed_service;self._service_source=None
+        if borrowed_service:
+            from gateway_service_sources import load_selection
+            self._service_source=load_selection()
         self._finite_turn=finite_turn
         self._retained_source_receipt=getattr(owner,'_retained_profile',None)
         self._canonical_api=canonical_api;self._publication_phase='NEW'
@@ -100,6 +125,7 @@ class PreparedRuntimeConsumer:
         self._selected_feature=ADMISSION_FEATURE if local_admission else FEATURE
         if canonical_api:self._selected_feature=CANONICAL_API_FEATURE
         if finite_turn:self._selected_feature=FINITE_FEATURE
+        if borrowed_service:self._selected_feature=self._service_source.native_feature
         self._admission_phase='PREPARED'
         require(type(owner) is startup.NativeStoreStartup,'consumer_exact_owner_required')
         owner._owned();require(owner._stage=='VERIFIED' and owner._response_expected is not None,'consumer_verified_owner')
@@ -116,10 +142,10 @@ class PreparedRuntimeConsumer:
         canonical=getattr(self,'_canonical_api',False)
         finite=getattr(self,'_finite_turn',False)
         require(type(finite) is bool and (not finite or canonical),'consumer_finite_option')
+        require(type(getattr(self,'_borrowed_service',False)) is bool,'consumer_service_option')
         require(type(canonical) is bool and type(self._local_admission) is bool
                 and (not canonical or self._local_admission)
-                and self._selected_feature==(FINITE_FEATURE if finite else CANONICAL_API_FEATURE if canonical else
-                    ADMISSION_FEATURE if self._local_admission else FEATURE),
+                and self._selected_feature==selected_feature(self),
                 'consumer_generation_changed')
         o=self._owner;o._owned()
         require(getattr(o,'_retained_profile',None) is getattr(self,'_retained_source_receipt',None),
@@ -156,7 +182,11 @@ class PreparedRuntimeConsumer:
         self._stage='QUALIFYING'
         try:
             self._identity(loop=True);self._storage()
-            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True,finite_turn=True,retained_profile=True)
+            self._source_proof=(qualify_sources(local_admission=True,canonical_api=True,finite_turn=True,
+                                   retained_profile=self._retained_source_receipt is not None,
+                                   service_selection=self._service_source)
+                                if getattr(self,'_borrowed_service',False) else
+                                qualify_sources(local_admission=True,canonical_api=True,finite_turn=True,retained_profile=True)
                                 if self._finite_turn and self._retained_source_receipt is not None else
                                 qualify_sources(local_admission=True,canonical_api=True,finite_turn=True)
                                 if self._finite_turn else
@@ -251,6 +281,10 @@ class PreparedRuntimeConsumer:
     def begin_drain(self):
         from gateway_consumer_admission import begin_drain
         return begin_drain(self)
+
+    def seal_service_admission(self):
+        from gateway_consumer_admission import seal_service_failure
+        return seal_service_failure(self)
 
     def finish_drain(self):
         from gateway_consumer_admission import finish_drain
@@ -356,4 +390,5 @@ class PreparedRuntimeConsumer:
             'sameAcceptedEpoch':self._expected.epoch,'serviceStarted':False,
             'runtimeAdmissionAuthorized':False,'storeReleaseAuthorized':False,
             'profileReleasedHere':False,'activeTaskObserversQualified':False,
+            **({'borrowedServiceSelected':True} if getattr(self,'_borrowed_service',False) else {}),
             'fullD3BAccepted':False}

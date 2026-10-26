@@ -41,10 +41,12 @@ class HostGatePolicy:
             if type(v) is not int or not 1<=v<=limit:raise ValueError('invalid_gate_policy')
 
 class HostGateLedger:
-    def __init__(self, db, context: LocalRecoveryContext, policy: HostGatePolicy, *, clock=time.time):
+    def __init__(self, db, context: LocalRecoveryContext, policy: HostGatePolicy, *, clock=time.time, admission_guard=None):
         if type(context) is not LocalRecoveryContext or type(policy) is not HostGatePolicy:raise TypeError('trusted_host_context_required')
         if not callable(getattr(db,'_execute_write',None)) or Path(db.db_path).is_symlink() or Path(db.db_path).resolve()!=context.profile_home/'state.db':raise ValueError('wrong_native_database')
+        if admission_guard is not None and not callable(admission_guard):raise TypeError('trusted_admission_guard_required')
         self.db=db;self.context=context;self.policy=policy;self.clock=clock
+        self._admission_guard=admission_guard
     def _now(self):
         n=self.clock()
         if type(n) not in (float,int) or not 0<n<10**11:raise HostGateError('invalid_clock')
@@ -130,7 +132,14 @@ class HostGateLedger:
             db.execute('PRAGMA query_only=ON')
             if db.execute('SELECT 1 FROM run_idempotency WHERE scope=? AND idempotency_key=? LIMIT 1',(self.context.scope,key)).fetchone():raise HostGateError('native_request_exists')
     def _write(self,fn):
-        try:return self.db._execute_write(fn)
+        def guarded(conn):
+            # Borrowed-service admission is checked INSIDE the original native
+            # write. A queued worker must not issue/consume after drain seals
+            # the owner. The guard is a pure identity/phase read: no SQL, await,
+            # lifecycle operation, lock acquisition or second storage owner.
+            if self._admission_guard is not None:self._admission_guard()
+            return fn(conn)
+        try:return self.db._execute_write(guarded)
         except HostGateError:raise
         except Exception:raise HostGateError('gate_storage_or_commit_unknown') from None
 

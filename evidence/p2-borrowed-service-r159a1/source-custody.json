@@ -1,0 +1,241 @@
+{
+  "defaultSourceConfigurationsUnmodified": true,
+  "harnessBase": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "harnessBatches": [
+    {
+      "files": 2,
+      "requestId": "b0280159-39a9-471f-b658-265789306100",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 1,
+      "requestId": "b0280159-39a9-471f-b658-265789306101",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 3,
+      "requestId": "b0280159-39a9-471f-b658-265789306102",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 3,
+      "requestId": "b0280159-39a9-471f-b658-265789306103",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 2,
+      "requestId": "b0280159-39a9-471f-b658-265789306104",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 7,
+      "requestId": "b0280159-39a9-471f-b658-265789306105",
+      "state": "completed",
+      "verification": "passed"
+    }
+  ],
+  "harnessSourceFiles": [
+    {
+      "baseSha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+      "path": "packages/claw-hermes/host_gate.py",
+      "sha256": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d"
+    },
+    {
+      "baseSha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+      "path": "packages/claw-hermes/host_gate_plugin.py",
+      "sha256": "ae0a66bf897617d358cc168c75a2ab81d378d4913ddb0ff2c3b0a4ddc5fc7112"
+    },
+    {
+      "baseSha256": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+      "path": "packages/claw-hermes/execution_boundary.py",
+      "sha256": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96"
+    },
+    {
+      "baseSha256": "d5ce29480570d140363deda7fe8740ad7ddb1f5e579d0befbd790ca68a0f5cc6",
+      "path": "packages/claw-hermes/gateway_prepared_consumer.py",
+      "sha256": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442"
+    },
+    {
+      "baseSha256": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168",
+      "path": "packages/claw-hermes/gateway_consumer_api.py",
+      "sha256": "d6f5433ea3a020fe6b4178bdee28e26549f66beaf2db66e0a6236c624cc002f3"
+    },
+    {
+      "baseSha256": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da",
+      "path": "packages/claw-hermes/gateway_consumer_admission.py",
+      "sha256": "d3c7e46058024de339c1e63dc0d617fdae9997e05a9118dab4cc517e230a07e6"
+    },
+    {
+      "baseSha256": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+      "path": "packages/claw-hermes/gateway_store_startup.py",
+      "sha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5"
+    },
+    {
+      "baseSha256": null,
+      "path": "packages/claw-hermes/gateway_service_runtime.py",
+      "sha256": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92"
+    },
+    {
+      "baseSha256": null,
+      "path": "packages/claw-hermes/gateway_service_sources.py",
+      "sha256": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/test_borrowed_service_host_r159a1.py",
+      "sha256": "2d5a68c61e1eabfc0803c915bcdfa303dd94df6ee6a70e1910b7f527e99e0183"
+    },
+    {
+      "baseSha256": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
+      "path": "packages/claw-hermes/run-recovery.mjs",
+      "sha256": "21793d7583cc2c56e955e85667561f83edfefd72fc219d81cd8469d35f97e748"
+    },
+    {
+      "baseSha256": "2037499a06c7baf29f90e1dc54c55d2d8f73b99c4eb665f7f6bcbc8cceacaf49",
+      "path": "packages/claw-hermes/local-control.mjs",
+      "sha256": "86b4b54889ceb2de7f783fa533842f7c8a8c4f225fcbfad0a7e0deb2495d0fcd"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/node/queued-cancel-control-r159a1.mjs",
+      "sha256": "e80dc03a8bded96747928ead6917696b559e2f71d223fda41f79f3c185b0ceba"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/test_queued_cancel_control_r159a1.py",
+      "sha256": "82088ffcfded2bed329b59fc685336be821c50eece2c1c965e1d19543049878d"
+    },
+    {
+      "baseSha256": "fe96bb9a32a83a66c2703d0b2bcd83b4bb3793a9d23b4880bfddc3052ce205a5",
+      "path": ".gitattributes",
+      "sha256": "aff76c94ca610c51731757da4fed771e309c2736234d9692b5beafcea63025cd"
+    },
+    {
+      "baseSha256": "8ac256bf6ed07200846a71f3fa7271e031b2805acd4e83ff17e65760d204bb0d",
+      "path": "tests/historical_self_identity_r150a1.py",
+      "sha256": "51e79ab79981c52e23b7038e83ff4b26d4d51b06be9aed44955ea9631ef36712"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/historical_borrowed_service_r159a1.py",
+      "sha256": "c47d6abe50d23a4ccee85404e5fff3564925113469ba3dfad68b9b322f56cbe7"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/test_historical_borrowed_service_r159a1.py",
+      "sha256": "213e1e60a4181b8dc0f47124415b84a166e2a8868b0ee5f4069f9a0e702325ef"
+    }
+  ],
+  "installationChanged": false,
+  "kind": "r159_source_transfer_and_reconciliation",
+  "nativeBase": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeBatches": [
+    {
+      "files": 3,
+      "requestId": "b0310159-39a9-471f-b658-265789306100",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 3,
+      "requestId": "b0310159-39a9-471f-b658-265789306101",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 2,
+      "requestId": "b0310159-39a9-471f-b658-265789306102",
+      "state": "completed",
+      "verification": "passed"
+    },
+    {
+      "files": 2,
+      "requestId": "b0310159-39a9-471f-b658-265789306103",
+      "state": "completed",
+      "verification": "passed"
+    }
+  ],
+  "nativeFacadeRequest": "b0300159-39a9-471f-b658-26578930641d",
+  "nativeHead": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "nativeSourceFiles": [
+    {
+      "baseSha256": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+      "path": "gateway/platforms/api_server.py",
+      "sha256": "b199e33b17c573f8d4cb3a7d1b0ee6961bef5f6e9bdf1303aadeeb3e3d78c520"
+    },
+    {
+      "baseSha256": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+      "path": "gateway/platforms/api_server_borrowed.py",
+      "sha256": "ed6e6f7e90480f00a3e56adf5664ae7ae6b3394ec48469d25c151e6faabb00db"
+    },
+    {
+      "baseSha256": "124c918ed2a040c26bcb2586744190a208c58c47b5e9bc4e208a8d6f19a5dd5e",
+      "path": "gateway/platforms/api_server_prepared.py",
+      "sha256": "6b78cddbf64dd80ae89ffb56ef1169e19ba6b1b52e0a11d4e8de99fd9614114a"
+    },
+    {
+      "baseSha256": "3c269e67bd3ae4bd154f35d28ed3b1639e7bf18c090b43fc72027d9ab2521738",
+      "path": "gateway/platforms/api_server_authority_runs.py",
+      "sha256": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58"
+    },
+    {
+      "baseSha256": null,
+      "path": "gateway/platforms/api_server_borrowed_transport.py",
+      "sha256": "d168a441b7da9f97e8c3533fff128308a58deea041e28cb04bb24658227f657b"
+    },
+    {
+      "baseSha256": null,
+      "path": "gateway/platforms/api_server_metrics.py",
+      "sha256": "d996b1b163d37b560878ff3b61ca4829274812f7d127a60fa6f42e56dd9cdd02"
+    },
+    {
+      "baseSha256": "e7befc6ca9e11d6774cdd0c7d9060a337e1cccc9776fe043bfa1a869b7352dac",
+      "path": "gateway/run_borrowed_admission.py",
+      "sha256": "abd05df765e4b5377c88ce092f177af0bb6add5959af58b75db3b6407d0833a4"
+    },
+    {
+      "baseSha256": "8ca5b7a76534a45de883a138c38bc1ac6c2aac27984e6d910f29cc68adb3da1b",
+      "path": "gateway/run_borrowed_cleanup.py",
+      "sha256": "d0b81245c79d9387bfd33ff38d6b76c1e0a385373dc3a570e930107486f1229f"
+    },
+    {
+      "baseSha256": "672aaa1971f0dd8b605e07ae6e7a1781d4ee8dd2e9385a595ed55fcb06ac22e1",
+      "path": "gateway/run_borrowed_retirement.py",
+      "sha256": "bb29f89f0c1eef2bc6b4531d3af670e26ea94dbf8c6853e7d3a6718a3774b21e"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/gateway/test_api_server_borrowed_transport.py",
+      "sha256": "6cc916e49bdd7426186c93aa6b560ede76b3476cd8249090b99f41b35e55507d"
+    },
+    {
+      "baseSha256": null,
+      "path": "tests/gateway/test_api_server_queued_stop_retirement.py",
+      "sha256": "78c85e114541695abd98b74d45ecc782f1da6769869b26cb10d47dc021573624"
+    }
+  ],
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "reconciledFailures": [
+    {
+      "observation": "Bulk call returned tool error; native result lookup returned INVALID_ARGUMENT. Read-only probe b027 verified every target still original or absent before smaller guarded batches.",
+      "probeResult": "all18 unchanged",
+      "requestId": "b0250159-39a9-471f-b658-26578930641d"
+    },
+    {
+      "observation": "Native commit returned128; read-only diagnosis confirmed unchanged HEAD, exact11 staged files and missing native Git author configuration. Existing project identity used command-locally in later commit.",
+      "requestId": "b0330159-39a9-471f-b658-26578930641d"
+    },
+    {
+      "observation": "Commit and all verification succeeded before missing optional journal directory produced exit1. Read-only b038 verified exact commit and wrote its record; commit was not replayed.",
+      "requestId": "b0350159-39a9-471f-b658-26578930641d"
+    }
+  ],
+  "schema": 1,
+  "sourceCandidateBuilt": false
+}

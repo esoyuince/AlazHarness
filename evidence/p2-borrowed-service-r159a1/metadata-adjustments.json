@@ -1,0 +1,40 @@
+{
+  "affectedTrailingWhitespaceLines": [
+    15,
+    19,
+    85,
+    92
+  ],
+  "afterSha256": "3e672e6cc0bd3437a5fedcfd76498c20b116a0041c5f413aaff81dfa30d99ff4",
+  "beforeSha256": "aff76c94ca610c51731757da4fed771e309c2736234d9692b5beafcea63025cd",
+  "earlierFocusedEvidenceRemainsHistoricalAtItsRecordedHashes": true,
+  "explicitArchivedIgnoredLogs": [
+    "evidence/p2-borrowed-service-r159a1/checks/historical-source-provenance-final.log",
+    "evidence/p2-borrowed-service-r159a1/checks/host-service-focused-final.log",
+    "evidence/p2-borrowed-service-r159a1/checks/host-service-regressions-final.log",
+    "evidence/p2-borrowed-service-r159a1/checks/windows-focused.log"
+  ],
+  "file": ".gitattributes",
+  "finalExactCommitFullCiRequired": true,
+  "gitDiffCheckRefusalRequestId": "b0500159-39a9-471f-b658-26578930641d",
+  "gitignoreChanged": false,
+  "kind": "final_non_executable_evidence_metadata",
+  "productSourceOrTestsChanged": false,
+  "rawEvidenceTextAttributes": [
+    "evidence/p2-borrowed-service-r159a1/*.txt -text",
+    "evidence/p2-borrowed-service-r159a1/checks/*.log -text"
+  ],
+  "rawLog": "evidence/p2-borrowed-service-r159a1/native-ordinary-regressions-incomplete-export.txt",
+  "rawLogBytesChanged": false,
+  "rawLogSha256": "48f7cb6f1a0e1f0d14854de3650daf644ee12d764c6bd3b232f37d6152b37fc1",
+  "rawWindowsStaticLog": {
+    "attribute": "binary",
+    "path": "evidence/p2-borrowed-service-r159a1/checks/static-gate.log",
+    "reason": "Retain exact CRLF output bytes; the static-gate JSON separately preserves stdout and stderr for readable review.",
+    "sha256": "252d9f2e2765e0670b6ea0033f9ac2ef4269e5a293ff76355eccf90001bd8f6c"
+  },
+  "reason": "The verbatim official native runner failure log contains four intentional trailing-whitespace lines; preserve raw bytes with a single-file Git whitespace attribute. Product code remains subject to the unchanged whitespace gate. The separate raw Windows static-check stream has an exact-path binary attribute to retain its original CRLF bytes. Packet-scoped raw .txt/.log records disable checkout EOL conversion so their recorded byte hashes survive Windows and Linux checkouts.",
+  "schema": 1,
+  "staticCheckerStartedInThatRequest": false,
+  "staticGateInputAttributesSha256": "c44be55a3f8bc6e8d4e3bc165dae86a41e8480f0263c30a19f78ebd995d50942"
+}

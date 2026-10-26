@@ -1,0 +1,21 @@
+▶ not activated — using HERMES_PYTHON: /tmp/r159-native-test-env/bin/python
+▶ running per-file parallel test suite via run_tests_parallel.py
+  (TZ=UTC LANG=C.UTF-8 PYTHONHASHSEED=0; clean env)
+▶ pre-compiling bytecode cache
+fatal: not a git repository (or any of the parent directories): .git
+▶ launching test runner
+Discovered 2 test files (~20 tests) under ['tests/gateway/test_api_server_borrowed_transport.py', 'tests/gateway/test_api_server_queued_stop_retirement.py']; running with -j 1
+[ 85.0% |    17/~20 | ✓21 | ✗ 0] ✓ tests/gateway/test_api_server_borrowed_transport.py (21✓, 7.6s)
+[100.0% |    20/~20 | ✓26 | ✗ 0] ✓ tests/gateway/test_api_server_queued_stop_retirement.py (5✓, 1.9s)
+
+=== Summary: 2 files, 26 tests passed, 0 failed (100% complete) in 9.6s (1 workers) ===
+  Durations cached to test_durations.json (2 files)
+
+=== Per-file subprocess time distribution ===
+  Files:   2
+  Total subprocess CPU-wall: 9.6s  (runner wall: 9.6s, parallelism: 1x)
+  P50: 7.65s  P90: 7.65s  P95: 7.65s  P99: 7.65s  Max: 7.65s
+  <1s: 0 files (0%)  <2s: 1 files (50%)
+  Top 10 slowest:
+      7.65s  tests/gateway/test_api_server_borrowed_transport.py
+      1.94s  tests/gateway/test_api_server_queued_stop_retirement.py

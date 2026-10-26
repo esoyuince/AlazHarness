@@ -19,11 +19,21 @@ from recovery_inspector import LocalRecoveryContext, _load
 BASE='/alaz/host/v1'
 
 
-def validate_native_adapter(adapter):
+def validate_native_adapter(adapter,*,service_transport=None):
+    lock='config/host-gate/source-lock.json'
+    if service_transport is not None:
+        from gateway.platforms.api_server_borrowed_transport import BorrowedHTTPTransport
+        if type(service_transport) is not BorrowedHTTPTransport:
+            raise ValueError('native_service_transport_required')
+        lock='config/borrowed-service-r159a1-host-lock.json'
     if type(adapter).__module__!='gateway.platforms.api_server' or type(adapter).__name__!='APIServerAdapter':
         raise ValueError('native_api_adapter_required')
     source=Path(inspect.getfile(type(adapter))).resolve().parents[2]
-    manifest=json.loads((Path(__file__).resolve().parents[2]/'config/host-gate/source-lock.json').read_text(encoding='utf-8'))
+    manifest=json.loads((Path(__file__).resolve().parents[2]/lock).read_text(encoding='utf-8'))
+    if service_transport is not None:
+        from gateway_service_sources import load_selection
+        if manifest.get('native_commit')!=load_selection().native_feature:
+            raise ValueError('unsupported_native_host_generation')
     for item in manifest['files']:
         p=source/item['path']
         if p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest()!=item['sha256']:
@@ -69,15 +79,38 @@ def register(ctx):
         app,adapter,policy,execution=execution,dream=dream,review=review,trial=trial))
 
 
-def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None, review=None, trial=None):
+def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, dream=None, review=None, trial=None, service_transport=None, service_owner=None):
     from aiohttp import web
-    validate_native_adapter(adapter)
+    if service_transport is None:validate_native_adapter(adapter)
+    else:validate_native_adapter(adapter,service_transport=service_transport)
     if type(policy) is not HostGatePolicy or app.frozen or adapter._host!='127.0.0.1':
         raise ValueError('unsupported_host_listener')
     if 'alaz_host_gate_v1' in app:raise ValueError('duplicate_host_gate')
-    if execution is not None:execution.bind(app,adapter)
+    if service_transport is not None:
+        from gateway.platforms.api_server_borrowed_transport import BorrowedHTTPTransport
+        from gateway_service_runtime import BorrowedServiceOwner
+        if type(service_transport) is not BorrowedHTTPTransport:
+            raise ValueError('native_service_transport_required')
+        if type(service_owner) is not BorrowedServiceOwner:
+            raise ValueError('native_service_owner_required')
+        if any(value is not None for value in (dream,review,trial)):
+            raise ValueError('borrowed_service_extension_not_qualified')
+    elif service_owner is not None:raise ValueError('native_service_transport_required')
+    if execution is not None:
+        if service_transport is None:execution.bind(app,adapter)
+        else:execution.bind(app,adapter,service_transport=service_transport,service_owner=service_owner)
 
-    def current(request):
+    def checked_owner(*,for_admission=False):
+        try:
+            # Native transport middleware already pins this request to its
+            # original actor/loop and profile. Do not demand a quiescent SQL
+            # snapshot just to observe or stop existing work during draining.
+            if for_admission:
+                return service_owner.require_admission(transport=service_transport,app=app,adapter=adapter)
+            return service_transport.check_binding(for_admission=for_admission,app=app,adapter=adapter)
+        except Exception:raise HostGateError('native_owner_unavailable') from None
+
+    def current(request,*,for_admission=True):
         # Never infer privilege from a room token, profile prefix, cookie or session header.
         if request.path.startswith('/p/') or adapter._room_grant_token(request):
             raise HostGateError('unsupported_host_scope')
@@ -88,10 +121,14 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
         if any(k.lower().startswith('x-hermes-') for k in request.headers) or request.query_string:
             raise HostGateError('unsupported_host_header_or_query')
         runner=adapter.gateway_runner;authority=runner.session_authority;desc=runner.session_runtime_descriptor
-        if desc.get('state')!='ready' or getattr(authority,'retiring',False) or getattr(authority,'retired',False):
+        guard=None
+        if service_transport is not None:
+            authority=checked_owner(for_admission=for_admission)
+            guard=lambda:checked_owner(for_admission=True)
+        elif desc.get('state')!='ready' or getattr(authority,'retiring',False) or getattr(authority,'retired',False):
             raise HostGateError('native_owner_unavailable')
         context=LocalRecoveryContext(Path(authority.db.db_path).resolve().parent,token,authority.epoch,desc['instance_id'])
-        return HostGateLedger(authority.db,context,policy)
+        return HostGateLedger(authority.db,context,policy,admission_guard=guard)
 
     def error(exc):
         code=str(exc) if isinstance(exc,HostGateError) and re.fullmatch('[a-z_]{1,80}',str(exc)) else 'host_gate_unavailable'
@@ -130,7 +167,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
 
     async def observe_request(request):
         try:
-            ledger=current(request)
+            ledger=current(request,for_admission=False)
             # No execution readiness, native replay lookup, status repair or
             # dispatch on this route. A locator is not a terminal result.
             value=await asyncio.to_thread(ledger.observe,request.match_info['request_id'])
@@ -262,7 +299,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
         if request.method=='POST' and request.path in (BASE+'/intents',BASE+'/dispatch'):
             return await handler(request)
         try:
-            current(request)
+            current(request,for_admission=False)
             if request.method=='POST' and re.fullmatch(r'/v1/runs/run_[a-f0-9]{32}/stop',request.path):
                 return await handler(request)
             raise HostGateError('host_route_not_enabled')

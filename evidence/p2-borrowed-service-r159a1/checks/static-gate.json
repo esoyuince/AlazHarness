@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+    "-B",
+    "scripts/ci_check.py"
+  ],
+  "atUtc": "2026-10-26T17:35:14.961891+00:00",
+  "elapsedSeconds": 205.469,
+  "exitCode": 0,
+  "logSha256": "252d9f2e2765e0670b6ea0033f9ac2ef4269e5a293ff76355eccf90001bd8f6c",
+  "ownedFilesStagedBeforeCheck": 68,
+  "priorTimeoutEvidence": "static-gate-first-timeout.json",
+  "requestId": "b0540159-39a9-471f-b658-26578930641d",
+  "result": "PASS",
+  "schema": 1,
+  "scope": "static tracked-file checks and test discovery; not test execution; full exact-commit CI still required",
+  "stderr": "",
+  "stdout": "{\r\n  \"scope\": \"M0_and_HYB_mock_contracts_not_full_runtime\",\r\n  \"selected_components\": 10,\r\n  \"result\": \"PASS\",\r\n  \"root_files_checked\": 6731,\r\n  \"source_gitlinks_checked\": 2,\r\n  \"discovered_tests\": 4084,\r\n  \"errors\": [],\r\n  \"vendor_bytes_checked\": false,\r\n  \"runtime_tested\": false,\r\n  \"model_called\": false,\r\n  \"secret_scan\": \"bounded root tracked text patterns; not a complete security audit\"\r\n}\r\n",
+  "timedOut": false,
+  "timeoutSeconds": 300
+}

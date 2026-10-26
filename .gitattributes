@@ -14,3 +14,14 @@ evidence/hyb-005b-qa3156/c01-memory-only-proposal.patch whitespace=-blank-at-eol
 
 # Match the exact Windows probe bytes recorded by historical native receipts.
 scripts/qa/windows_appcontainer_probe.cs text eol=crlf
+evidence/p2-borrowed-service-r159a1/base-*.txt -text
+
+# Preserve the official native runner raw failure output byte-for-byte.
+evidence/p2-borrowed-service-r159a1/native-ordinary-regressions-incomplete-export.txt whitespace=-blank-at-eol
+
+# Preserve the raw Windows static-check stream, including its CRLF bytes.
+evidence/p2-borrowed-service-r159a1/checks/static-gate.log binary
+
+# Keep this packet raw evidence logs identical across platform checkouts.
+evidence/p2-borrowed-service-r159a1/*.txt -text
+evidence/p2-borrowed-service-r159a1/checks/*.log -text

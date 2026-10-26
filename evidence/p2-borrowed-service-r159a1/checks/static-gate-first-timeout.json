@@ -1,0 +1,15 @@
+{
+  "completeStaticVerdict": false,
+  "exitCode": 1,
+  "jobState": "completed",
+  "nextAction": "bounded 300-second rerun after final owned-file staging, without changing the checker",
+  "priorComparableSuccessSeconds": 129.006,
+  "requestId": "b0450159-39a9-471f-b658-26578930641d",
+  "result": "TIMEOUT",
+  "schema": 1,
+  "scope": "tracked file scans, compilation, JSON and discovery; no test execution",
+  "state": "completed",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 3, in <module>\r\n    root=Path.cwd();p=root/'evidence/p2-borrowed-service-r159a1/checks';args=[sys.executable,'-B','scripts/ci_check.py'];r=subprocess.run(args,capture_output=True,timeout=150);log=r.stdout+b'\\n--- STDERR ---\\n'+r.stderr;(p/'static-gate.log').write_bytes(log);record={'schema':1,'result':'PASS' if r.returncode==0 else 'FAIL','atUtc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'requestId':'b0450159-39a9-471f-b658-26578930641d','argv':args,'exitCode':r.returncode,'scope':'static checks and test discovery, not test execution','logSha256':hashlib.sha256(log).hexdigest(),'stdout':r.stdout.decode('utf-8',errors='replace'),'stderr':r.stderr.decode('utf-8',errors='replace')};(p/'static-gate.json').write_bytes((json.dumps(record,indent=2,sort_keys=True)+'\\n').encode());print(json.dumps(record));sys.exit(r.returncode)\r\n                                                                                                                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\subprocess.py\", line 556, in run\r\n    stdout, stderr = process.communicate(input, timeout=timeout)\r\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\subprocess.py\", line 1220, in communicate\r\n    stdout, stderr = self._communicate(input, endtime, timeout)\r\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\Lib\\subprocess.py\", line 1663, in _communicate\r\n    raise TimeoutExpired(self.args, orig_timeout)\r\nsubprocess.TimeoutExpired: Command '['C:\\\\Users\\\\ender\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\python.exe', '-B', 'scripts/ci_check.py']' timed out after 150 seconds\r\n",
+  "stdout": "",
+  "timeoutSeconds": 150
+}

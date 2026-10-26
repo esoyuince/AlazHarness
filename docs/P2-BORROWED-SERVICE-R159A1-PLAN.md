@@ -83,3 +83,27 @@ normal/başarısız/belirsiz kapanış kayıtları ayrı raporlanır.
 R159'ın bitişinde gerçekten çalışan kapsam belirtilir. P2 yalnız bütün günlük
 akış ve tek gerçek model görevi kabul edildiğinde kapanır; P3–P5 ve M1 ayrıca
 izlenir. Yeni hafta tahmini için henüz ölçülmüş tam ürün akışı yoktur.
+
+## 26 Ekim kaynak teslimatı sonrası ilerleme
+
+Yukarıdaki kapsam ve kabul koşulları korunur; R159 planı bütünü **IN PROGRESS**.
+[R159 kaynak raporu](P2-BORROWED-SERVICE-R159A1.md) aşağıdaki alt kapıları ayırır.
+
+| Alt kapı | Durum |
+|---|---|
+| Özgün native owner'a açık loopback transport ve dar authenticated handler'lar | Kaynak ve gerçek native localhost testleri PASS |
+| Somut host service owner, bütün servis READY guard'ı, drain ve özgün store/profile close sırası | Kaynak/host fixture testleri PASS; yeni kurulumda entegrasyon açık |
+| HTTP/SQL/physical worker/native gözlem aboneliği retirement sınırları | Native davranış testleri PASS |
+| Null-generation queued cancel kanıtı ve sıkı istemci raporu | Native ve istemci sözleşme testleri PASS |
+| Ayrı native feature, 760 kaynak manifest'i ve seçilmiş host kilidi | Kaynak kimliği/statik closure; paket/kurulum kabulü açık |
+| Uzun ömürlü supervised child ve ayrı ready/control/final-receipt kanalı | OPEN |
+| Günlük kurulu CLI start/close; aynı sahipten tam kapanış kanıtı | OPEN; CLI hâlâ unsupported bildirir |
+| Yeni P2 adayı, Node ve Python closure, taze kurulumdaki günlük akış | OPEN |
+| Seçilmiş route/model/araç ve açık bütçeyle tek gerçek görev | OPEN; provider/model çağrısı sıfır |
+
+Bir sonraki uygulama adımı mevcut finite supervisor'ın tek terminal stdout
+protokolünü ve kısa child/mount-worker sürelerini günlük servis sahibine açıkça
+bağlamaktır. HTTP close ACK, dinleyici kapandıktan sonraki child/store/image
+owner kapanışının kanıtı değildir. Image lease yalnız özgün supervisor'ın
+stop/finish sırasından sonra bırakılır. Mevcut R156 kurulumu değiştirilmez;
+yeni kaynak ayrı bir P2 adayı olarak paketlenir.

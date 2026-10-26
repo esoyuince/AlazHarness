@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "scope": "historical_receipt_source_identity_only",
+  "harnessParent": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "recordedAtUtc": "2026-10-26T14:28:20.989545+00:00",
+  "testResult": {
+    "testMethodsRun": 12,
+    "successfulTestMethods": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "elapsedSeconds": 0.048
+  },
+  "command": [
+    "/tmp/r159-native-test-env/bin/python",
+    "-m",
+    "unittest",
+    "test_historical_borrowed_service_r159a1",
+    "test_historical_local_control_r158a1",
+    "-v"
+  ],
+  "environment": {
+    "PYTHONPATH": "tests",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "timeoutSeconds": 30,
+    "python": "Python 3.12.3"
+  },
+  "log": {
+    "path": "evidence/p2-borrowed-service-r159a1/checks/historical-source-provenance-final.log",
+    "sha256": "be80266055e6ad028d6106b479ebd2f1e98f1c031ed2baed5f748e72b54e154a",
+    "bytes": 2531
+  },
+  "reviewedPaths": [
+    "tests/historical_borrowed_service_r159a1.py",
+    "tests/historical_self_identity_r150a1.py",
+    "tests/test_historical_borrowed_service_r159a1.py",
+    ".gitattributes",
+    "evidence/p2-borrowed-service-r159a1/historical-source-bindings.json"
+  ],
+  "archivedParentFiles": 9,
+  "verifiedAgainstExportedParentBytes": true,
+  "verifiedArchiveProperties": [
+    "exact name and old SHA256 lookup before archive access",
+    "hardcoded binding record identity",
+    "fixed archive path with exact byte length and SHA256",
+    "current, unknown and unlisted generations do not select an archive",
+    "missing, truncated or altered archive fails closed",
+    "altered binding identity cannot redirect or relabel an archive"
+  ],
+  "currentSourceAcceptance": false,
+  "nativeRerun": false,
+  "scopeLimit": "The verified baseline export contains no historical evidence receipt tree. This review verifies the nine parent source archives and resolver behavior; it does not independently compare old receipt JSON outcomes. Primary repository diff and full CI remain required for that comparison."
+}

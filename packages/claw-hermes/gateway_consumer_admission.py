@@ -4,11 +4,11 @@ Identity-only observations permit pending work but grant neither health nor clos
 Draining seals the native gate without waiting for the SQL mutex. Retained queued
 or unknown work is not automatically run or discarded; clean release is separate.
 """
-from gateway_prepared_consumer import require,verify_imports,ADMISSION_FEATURE,CANONICAL_API_FEATURE,FINITE_FEATURE
+from gateway_prepared_consumer import require,verify_imports,selected_feature
 
 
 def _pair(c,*,quiescent=True):
-    require(c._local_admission is True and c._selected_feature in (ADMISSION_FEATURE,CANONICAL_API_FEATURE,FINITE_FEATURE),
+    require(c._local_admission is True and c._selected_feature==selected_feature(c),
             'consumer_local_admission_not_selected')
     require(c._stage=='ATTACHED','consumer_admission_not_attached')
     c._identity(loop=True,quiescent=quiescent)
@@ -73,6 +73,28 @@ def begin_drain(c):
     _pair(c,quiescent=False)
     require(c._admission_phase in ('ACTIVE','DRAINING'),'consumer_admission_not_active')
     return _call_transition(c,c._bundle.begin_drain,'DRAINING')
+
+
+def seal_service_failure(c):
+    """Fail-closed native seal after an opt-in service start failure.
+
+    Source revalidation may itself be the failure. It must not prevent closing
+    admission on the exact already reserved native pair. This operation cannot
+    activate, repair, detach, close or release anything, and the native owner
+    still performs its own identity/actor/phase checks before sealing its gate.
+    """
+    from gateway.platforms.api_server_borrowed import BorrowedAPIStores
+    require(getattr(c,'_borrowed_service',False) is True
+            and c._stage=='ATTACHED' and c._local_admission is True
+            and type(c._bundle) is BorrowedAPIStores,
+            'consumer_service_seal_not_owned')
+    bundle=c._bundle
+    require(bundle._prepared_binding is c._binding
+            and bundle._prepared_runner is c._runner and bundle._adapter is c._adapter
+            and c._binding._api_bundle is bundle and c._runner._caller_owned_state is c._binding
+            and c._adapter._borrowed_api_stores is bundle,
+            'consumer_service_seal_pair_changed')
+    return _call_transition(c,bundle.begin_drain,'DRAINING')
 
 
 def finish_drain(c):

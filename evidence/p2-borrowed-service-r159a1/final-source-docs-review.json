@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "kind": "R159_FINAL_SOURCE_DOCS_REVIEW",
+  "result": "PASS",
+  "atUtc": "2026-10-26T17:16:10.365842+00:00",
+  "scope": "Read-only review of the final R159 report, current roadmap decision/R159 appendix and appended plan progress, against frozen source and recorded evidence. This file is the only reviewer-written artifact.",
+  "reviewedFiles": [
+    {
+      "path": "docs/P2-BORROWED-SERVICE-R159A1.md",
+      "sha256": "aba50761c718dcf07d694a059acf525d85a86fe198c1bed79628022a10e1cd25",
+      "bytes": 9720
+    },
+    {
+      "path": "docs/PRODUCT-ROADMAP.md",
+      "sha256": "ff578a25e0675d6c2899e119fc83c7670d29e065c8dd5a0450850674c06a3d2e",
+      "bytes": 16651
+    },
+    {
+      "path": "docs/P2-BORROWED-SERVICE-R159A1-PLAN.md",
+      "sha256": "5f1feee8a39b56eab7aebf74e2738705ba467acadca73af7f316cc908801ce03",
+      "bytes": 7134
+    }
+  ],
+  "nativeFeature": {
+    "commit": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "matchesReportRoadmapSelectorManifestAndSelectedHostLock": true,
+    "sourceCount": 760,
+    "hostLockFiles": 5,
+    "provenance": "Parent supplied the exact primary commit and reported verified feature-only push and independent generation from all 760 exact Git blobs. Reviewer checked local selections, hashes and source/evidence consistency; no Git or native bridge operation was performed."
+  },
+  "sourceReferences": [
+    {
+      "tree": "native",
+      "path": "gateway/platforms/api_server_borrowed_transport.py",
+      "sha256": "d168a441b7da9f97e8c3533fff128308a58deea041e28cb04bb24658227f657b",
+      "bytes": 24621,
+      "purpose": "Original ownership, handler retention, prepared scopes and pre-effect retirement."
+    },
+    {
+      "tree": "native",
+      "path": "gateway/platforms/api_server_authority_runs.py",
+      "sha256": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+      "bytes": 10745,
+      "purpose": "Queued Stop marker fix and nine-field canonical proof emission."
+    },
+    {
+      "tree": "harness",
+      "path": "packages/claw-hermes/gateway_service_runtime.py",
+      "sha256": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+      "bytes": 17305,
+      "purpose": "Overall READY gate, best-effort native seal after public UNKNOWN, shielded task ownership and close order."
+    },
+    {
+      "tree": "harness",
+      "path": "packages/claw-hermes/host_gate.py",
+      "sha256": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d",
+      "bytes": 19021,
+      "purpose": "Existing host ledger transaction guard."
+    },
+    {
+      "tree": "harness",
+      "path": "packages/claw-hermes/host_gate_plugin.py",
+      "sha256": "ae0a66bf897617d358cc168c75a2ab81d378d4913ddb0ff2c3b0a4ddc5fc7112",
+      "bytes": 19212,
+      "purpose": "Concrete host route and admission checks."
+    },
+    {
+      "tree": "harness",
+      "path": "packages/claw-hermes/local-control.mjs",
+      "sha256": "86b4b54889ceb2de7f783fa533842f7c8a8c4f225fcbfad0a7e0deb2495d0fcd",
+      "bytes": 11808,
+      "purpose": "Separate observation after Stop and unsupported daily lifecycle."
+    },
+    {
+      "tree": "harness",
+      "path": "packages/claw-hermes/run-recovery.mjs",
+      "sha256": "21793d7583cc2c56e955e85667561f83edfefd72fc219d81cd8469d35f97e748",
+      "bytes": 4018,
+      "purpose": "Strict report validation; no independent canonical or global physical-worker verification."
+    },
+    {
+      "tree": "harness",
+      "path": "scripts/alaz_local.mjs",
+      "sha256": "a0dbeda385f78c4344bd679298bf72ee4ca7b7fdbb7e46ceb507b9b470704a94",
+      "bytes": 6341,
+      "purpose": "start/close still route to unsupportedLifecycle."
+    },
+    {
+      "tree": "harness",
+      "path": "packages/claw-hermes/gateway_supervised_launch.py",
+      "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364",
+      "bytes": 21471,
+      "purpose": "Finite child observation waits for process exit and exactly one stdout result; MAX_WAIT remains 60."
+    },
+    {
+      "tree": "harness",
+      "path": "scripts/run_state_volume_worker.py",
+      "sha256": "835593ff0e5bffc3a421761e443777cc563f198ff5aaea3a29986746f7f7b97f",
+      "bytes": 5817,
+      "purpose": "Existing control input has a 120-second idle bound and STOP-only loop."
+    }
+  ],
+  "recordedSourceHashChecks": {
+    "nativeSourceAndTests": 11,
+    "hostSourceAndTests": 10,
+    "clientSourceAndTests": 4,
+    "allMatch": true
+  },
+  "evidenceReferences": [
+    {
+      "path": "evidence/p2-borrowed-service-r159a1/native-lifecycle-tests.json",
+      "sha256": "a1c9905d99d238d86c255533a2dda65e0becd9e8a8138407969a6ae840db20dd",
+      "bytes": 15722
+    },
+    {
+      "path": "evidence/p2-borrowed-service-r159a1/native-source-checks.json",
+      "sha256": "ec0f6d6560a7024bc6934e8a610579dfde96ba68664667221858e71f59039f39",
+      "bytes": 10313
+    },
+    {
+      "path": "evidence/p2-borrowed-service-r159a1/host-service-tests.json",
+      "sha256": "672f0c61760f2903cad31722e9039516611ccf9ad3ee9109c3484ffd85893a29",
+      "bytes": 9466
+    },
+    {
+      "path": "evidence/p2-borrowed-service-r159a1/client-control-tests.json",
+      "sha256": "b53ff5d694830f876158ed6d89d44560179e70b6cfcc4d318d2676f51349fcc3",
+      "bytes": 14632
+    },
+    {
+      "path": "evidence/p2-borrowed-service-r159a1/historical-source-review.json",
+      "sha256": "6d2ea41f353e94346252533ebdfe8be2748a4c1698a23379f6001f7b1bd73f04",
+      "bytes": 2036
+    },
+    {
+      "path": "evidence/p2-borrowed-service-r159a1/source-selection-review.json",
+      "sha256": "202a489a79d0019615e0ba28ca19e4c2882ee7fc88dbff1b65c14dc1f770148f",
+      "bytes": 10107
+    }
+  ],
+  "verifiedRecordedResults": {
+    "newNativeCases": 27,
+    "selectedExistingNativeCases": 34,
+    "hostFixtureCases": 31,
+    "clientFixtureCases": 58,
+    "historicalProvenanceCases": 12,
+    "nativeRuff": "PASS",
+    "nativeCodeHealth": {
+      "paths": 11,
+      "blocking": 0,
+      "advisory": 0
+    },
+    "oldTargetQueuedRegression": "Two expected failures with only d151 authority-runs restored over current supporting source; not full old-install acceptance.",
+    "incompleteHostRegression": "117 successful methods / 118 executed, plus one separate class-setup error; documented as incomplete, not PASS.",
+    "clientInvocationLimit": "Original launcher/interpreter/exit code were not recorded; docs retain that limit."
+  },
+  "correctionsReviewed": [
+    {
+      "result": "CORRECTED",
+      "finding": "Overall service READY must gate external Host Gate admission; native admission activation itself occurs earlier in _start."
+    },
+    {
+      "result": "CORRECTED",
+      "finding": "Startup failure immediately blocks public admission through UNKNOWN; native sealing is attempted and its separate failure reason is retained."
+    },
+    {
+      "result": "CORRECTED",
+      "finding": "SQL excludes the matching worker record in the same read snapshot; admission-specific never-started meaning also relies on the canonical NULL-generation contract."
+    }
+  ],
+  "semanticReview": {
+    "testBoundaries": "Native real stores/authority/loopback/worker tests are distinguished from host lifecycle doubles and client HTTP fixtures; static source selection is not installed runtime acceptance.",
+    "closeOrder": "Seal and idle obligations precede listener retirement, native runtime/API retirement, drain/detach, original loop executor join, original physical store close and profile lease finish.",
+    "unknown": "Original owner and references are retained on uncertain effects. Typed pre-effect busy remains DRAINING. Partial completion is not presented as rollback or full closure.",
+    "imageLease": "BorrowedServiceOwner does not own/release the image lease; future supervisor stop/finish and child closure remain separate.",
+    "queuedProof": "The server report is admission-specific. canonicalVerified and physicalWorkerTerminalVerified remain false; Stop ACK alone is not terminal and no retry/repair authority is granted.",
+    "roadmap": "P1 remains DONE; R159 plan and P2 remain IN PROGRESS; full D3B, P3-P5, M1 and production remain OPEN."
+  },
+  "remainingAcceptanceGates": [
+    "Explicit long-lived supervised child ownership, ready/control/final-receipt channel and suitable child/mount-worker lifetime bounds.",
+    "Actual installed CLI start/close connected to that owner, with terminal closure proven outside the closing HTTP listener.",
+    "Separate P2 source/dependency candidate, Node/Python closure and fresh installed daily native flow.",
+    "One explicitly selected route/model/tool task with concrete call, token and micro-USD limits."
+  ],
+  "publicationAtReview": {
+    "nativeFeaturePush": "VERIFIED_BY_PARENT",
+    "harnessCI": "PENDING",
+    "harnessPublication": "PENDING",
+    "fullCIClaimedByThisReview": false,
+    "finalPublicationJournalMustBeVerifiedSeparately": true
+  },
+  "reviewActions": {
+    "sourceEdited": false,
+    "docsEditedByReviewer": false,
+    "testsRerun": false,
+    "runtimeOrServiceStarted": false,
+    "providerCalls": 0,
+    "modelCalls": 0,
+    "gitOrNativeBridgeUsed": false
+  },
+  "outstandingReviewFindings": []
+}

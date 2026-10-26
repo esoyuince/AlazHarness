@@ -1,0 +1,184 @@
+{
+  "schema": 1,
+  "kind": "R159_NATIVE_SOURCE_CHECKS",
+  "result": "PASS",
+  "atUtc": "2026-10-26T17:04:58.295070+00:00",
+  "nativeBase": "d1516731308de8e87130dc68124e69aad35d6911",
+  "sourceFrozen": true,
+  "files": {
+    "gateway/platforms/api_server.py": "b199e33b17c573f8d4cb3a7d1b0ee6961bef5f6e9bdf1303aadeeb3e3d78c520",
+    "gateway/platforms/api_server_borrowed.py": "ed6e6f7e90480f00a3e56adf5664ae7ae6b3394ec48469d25c151e6faabb00db",
+    "gateway/platforms/api_server_prepared.py": "6b78cddbf64dd80ae89ffb56ef1169e19ba6b1b52e0a11d4e8de99fd9614114a",
+    "gateway/platforms/api_server_authority_runs.py": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+    "gateway/platforms/api_server_borrowed_transport.py": "d168a441b7da9f97e8c3533fff128308a58deea041e28cb04bb24658227f657b",
+    "gateway/platforms/api_server_metrics.py": "d996b1b163d37b560878ff3b61ca4829274812f7d127a60fa6f42e56dd9cdd02",
+    "gateway/run_borrowed_admission.py": "abd05df765e4b5377c88ce092f177af0bb6add5959af58b75db3b6407d0833a4",
+    "gateway/run_borrowed_cleanup.py": "d0b81245c79d9387bfd33ff38d6b76c1e0a385373dc3a570e930107486f1229f",
+    "gateway/run_borrowed_retirement.py": "bb29f89f0c1eef2bc6b4531d3af670e26ea94dbf8c6853e7d3a6718a3774b21e",
+    "tests/gateway/test_api_server_borrowed_transport.py": "6cc916e49bdd7426186c93aa6b560ede76b3476cd8249090b99f41b35e55507d",
+    "tests/gateway/test_api_server_queued_stop_retirement.py": "78c85e114541695abd98b74d45ecc782f1da6769869b26cb10d47dc021573624"
+  },
+  "baselineFiles": {
+    "gateway/platforms/api_server.py": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+    "gateway/platforms/api_server_borrowed.py": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+    "gateway/platforms/api_server_prepared.py": "124c918ed2a040c26bcb2586744190a208c58c47b5e9bc4e208a8d6f19a5dd5e",
+    "gateway/platforms/api_server_authority_runs.py": "3c269e67bd3ae4bd154f35d28ed3b1639e7bf18c090b43fc72027d9ab2521738",
+    "gateway/run_borrowed_admission.py": "e7befc6ca9e11d6774cdd0c7d9060a337e1cccc9776fe043bfa1a869b7352dac",
+    "gateway/run_borrowed_cleanup.py": "8ca5b7a76534a45de883a138c38bc1ac6c2aac27984e6d910f29cc68adb3da1b",
+    "gateway/run_borrowed_retirement.py": "672aaa1971f0dd8b605e07ae6e7a1781d4ee8dd2e9385a595ed55fcb06ac22e1"
+  },
+  "environment": {
+    "cwd": "/workspace/scratch/288e2938ab4c/r159-source/native",
+    "python": "/tmp/r159-native-test-env/bin/python",
+    "officialRunner": "scripts/run_tests.sh",
+    "barePytestUsed": false,
+    "homeIsolation": "Official runner clears inherited credentials; native conftest creates isolated homes before test imports and per test. Caller HERMES_HOME is not forwarded through the runner env -i allowlist.",
+    "perFileTimeoutSeconds": 90,
+    "workers": 1,
+    "retries": 0,
+    "behavioralExecPermissions": "require_escalated",
+    "reason": "The sandbox blocks asyncio wakeup/loopback sockets; authorized test fixtures require native loopback access.",
+    "runnerGitDiagnostic": "The exported mirror has no Git metadata. Optional bytecode preparation emits a nonfatal git diagnostic; the official runner proceeds."
+  },
+  "ruff": {
+    "result": "PASS",
+    "exitCode": 0,
+    "command": "/tmp/r159-native-test-env/bin/python scripts/check --only ruff > /tmp/r159-final-ruff.log 2>&1",
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-final-ruff.txt",
+      "sha256": "96cdc003eca93231f74b8bd45ef7aa11f2a42987f98cd0d5c822e7bdf771bcfb",
+      "bytes": 29,
+      "copiedVerbatim": true,
+      "truncated": false
+    }
+  },
+  "codeHealth": {
+    "result": "PASS",
+    "exitCode": 0,
+    "paths": 11,
+    "blocking": 0,
+    "advisory": 0,
+    "method": "native_code_health_engine_on_exported_base_and_current_bytes",
+    "engine": "scripts.code_health.measure.Measurer / compare.compare / report.apply_allows / report.verdict",
+    "input": "Exact exported d151 baseline bytes and final current bytes; Measurer.measure(None, paths), pinned resolve_ruff(head), known_env=set() in both trees.",
+    "gitDiffRunnerUsed": false,
+    "detail": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-code-health.json",
+      "sha256": "138d15908b6da8adfda28c113ca2cf3f7dbd824814861502a5b2e0419f2b1abb",
+      "bytes": 2304,
+      "copiedVerbatim": true,
+      "truncated": false
+    },
+    "reproductionPython": "from pathlib import Path\nfrom scripts.code_health.measure import Measurer\nfrom scripts.code_health.compare import compare\nfrom scripts.code_health.gitio import Change\nfrom scripts.code_health.report import apply_allows, format_findings, verdict\nfrom scripts.code_health.ruff_runner import resolve_ruff\nimport json\nhead = Path('/workspace/scratch/288e2938ab4c/r159-source/native')\nbase = Path('/workspace/scratch/288e2938ab4c/r159-baseline/native')\nrecord = json.loads(Path('/workspace/scratch/288e2938ab4c/r159-native-health.json').read_text())\npaths = list(record['files'])\nold_paths = [p for p in paths if (base/p).is_file()]\nchanges = [Change('M' if p in old_paths else 'A', p if p in old_paths else None, p) for p in paths]\nruff = resolve_ruff(head)\nold = Measurer(base, ruff, known_env=set()).measure(None, old_paths)\nnew = Measurer(head, ruff, known_env=set()).measure(None, paths)\nfindings = compare(old, new, changes)\napply_allows(findings, new)\nblocking, advisory = verdict(findings)\nprint(format_findings(findings))\nprint(f'{len(paths)} paths; {blocking} blocking; {advisory} advisory')\nraise SystemExit(bool(blocking))\n"
+  },
+  "ordinaryMetrics": {
+    "result": "PASS",
+    "exitCode": 0,
+    "passed": 3,
+    "failed": 0,
+    "command": "HERMES_PYTHON=/tmp/r159-native-test-env/bin/python HERMES_TEST_FILE_RETRIES=0 bash scripts/run_tests.sh --file-timeout 90 --file-retries 0 -j 1 tests/gateway/test_api_server.py -k TestRuntimeStatusMetrics > /tmp/r159-ordinary-metrics.log 2>&1",
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-ordinary-metrics.txt",
+      "sha256": "8f7d6c0edc727feec8f9f33e550e38cfc928c92350e1ef9203a96d46d6f61dfb",
+      "bytes": 950,
+      "copiedVerbatim": true,
+      "truncated": false
+    }
+  },
+  "ordinaryRegressionsInitial": {
+    "result": "FAIL_MISSING_EXPORTED_BASELINE_SOURCE",
+    "exitCode": 1,
+    "passed": 30,
+    "failed": 1,
+    "perFile": {
+      "tests/gateway/test_api_server_bind_guard.py": {
+        "passed": 8,
+        "failed": 0
+      },
+      "tests/gateway/test_api_server_active_work_drain.py": {
+        "passed": 22,
+        "failed": 1
+      }
+    },
+    "command": "HERMES_PYTHON=/tmp/r159-native-test-env/bin/python HERMES_TEST_FILE_RETRIES=0 bash scripts/run_tests.sh --file-timeout 90 --file-retries 0 -j 1 tests/gateway/test_api_server_bind_guard.py tests/gateway/test_api_server_active_work_drain.py > /tmp/r159-existing-regressions.log 2>&1",
+    "reason": "ModuleNotFoundError: tools.bot_failure_reasons in unchanged native _handle_session_chat before the existing expected 404 assertion.",
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-ordinary-regressions-incomplete-export.txt",
+      "sha256": "48f7cb6f1a0e1f0d14854de3650daf644ee12d764c6bd3b232f37d6152b37fc1",
+      "bytes": 9409,
+      "copiedVerbatim": true,
+      "truncated": false
+    },
+    "supersededByFinalRerun": true,
+    "resolutionApplied": "Parent restored exact d151 tools/bot_failure_reasons.py to current and baseline export; local bytes and hash match in both. The same unmodified active-work test file then passed 23/23 under the official runner."
+  },
+  "newNativeLifecycleEvidence": "evidence/p2-borrowed-service-r159a1/native-lifecycle-tests.json",
+  "clientProtocolReview": {
+    "result": "PASS",
+    "files": [
+      "packages/claw-hermes/run-recovery.mjs",
+      "packages/claw-hermes/local-control.mjs"
+    ],
+    "reviewed": "Exact nine-field canonical queued cancellation proof binds run/admission/session IDs, current epoch/instance assertion and NULL generation. Client rejects conflicting terminal flags including partial=true, retains canonicalVerified=false and never promotes this to global physical worker termination."
+  },
+  "limits": {
+    "fullNativeSuiteExecuted": false,
+    "installedServiceAcceptance": false,
+    "windowsQualification": false,
+    "realProviderCalls": 0,
+    "realModelCalls": 0,
+    "productionAcceptance": false,
+    "nativeBridgeUsed": false,
+    "gitPublicationByThisAgent": false
+  },
+  "finalSourceHashesRechecked": true,
+  "previousPacketSha256": "32cde2a1f2b70ffee25b92b7a9672c753ad2a900a6d9e7a95799048039713a17",
+  "restoredBaselineHelper": {
+    "path": "tools/bot_failure_reasons.py",
+    "nativeBase": "d1516731308de8e87130dc68124e69aad35d6911",
+    "sha256": "f7e06cf23cce64868cdf59a25394115a983efce7ed6704f128071988727e693c",
+    "bytes": 7063,
+    "currentAndBaselineBytesEqual": true,
+    "productionPatch": false,
+    "primaryGitBlobVerificationOwner": "parent"
+  },
+  "ordinaryActiveWorkFinal": {
+    "result": "PASS",
+    "exitCode": 0,
+    "files": 1,
+    "passed": 23,
+    "failed": 0,
+    "seconds": 34.5,
+    "command": "HERMES_PYTHON=/tmp/r159-native-test-env/bin/python HERMES_TEST_FILE_RETRIES=0 bash scripts/run_tests.sh --file-timeout 90 --file-retries 0 -j 1 tests/gateway/test_api_server_active_work_drain.py > /tmp/r159-active-work-final.log 2>&1",
+    "log": {
+      "path": "evidence/p2-borrowed-service-r159a1/native-ordinary-active-work-final.txt",
+      "originalLocalLog": "/tmp/r159-active-work-final.log",
+      "sha256": "db462d4e639eab38fb4cafb838e4a6972a339b2ea9ba5cb0dd86561f5142c374",
+      "bytes": 1013,
+      "copiedVerbatim": true,
+      "truncated": false
+    }
+  },
+  "ordinarySelectedFinal": {
+    "result": "PASS",
+    "passed": 34,
+    "failed": 0,
+    "perFile": {
+      "tests/gateway/test_api_server_bind_guard.py": {
+        "passed": 8,
+        "resultSource": "ordinaryRegressionsInitial"
+      },
+      "tests/gateway/test_api_server_active_work_drain.py": {
+        "passed": 23,
+        "resultSource": "ordinaryActiveWorkFinal"
+      },
+      "tests/gateway/test_api_server.py -k TestRuntimeStatusMetrics": {
+        "passed": 3,
+        "resultSource": "ordinaryMetrics"
+      }
+    },
+    "combinedFromSeparateOfficialRunnerInvocations": true,
+    "notAFullNativeSuite": true
+  },
+  "pendingItems": []
+}
