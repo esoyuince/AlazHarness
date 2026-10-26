@@ -1,0 +1,42 @@
+{
+  "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "builderSha256": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b",
+  "bundleBytes": 20031648,
+  "bundleSha256": "c47f073b9270e114166ee0e4cef8138cb50ebc90c6512a401e8f82c9c3cec340",
+  "dependencyRoot": "/opt/alaz-f126c1a6/dependencies",
+  "destination": "/opt/alaz-r156a1",
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "inputDirectory": "/opt/alaz-r156a1-install-input",
+  "installationOnly": true,
+  "installerSha256": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6",
+  "kind": "R156A1_SOURCE_INSTALL_INTENT",
+  "lab": "AlazHarness-D3B-P71C",
+  "manifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+  "members": {
+    "candidate/manifest.json": {
+      "bytes": 226178,
+      "sha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a"
+    },
+    "candidate/projected-source.tar": {
+      "bytes": 19752960,
+      "sha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8"
+    },
+    "scripts/build_projected_candidate.py": {
+      "bytes": 23679,
+      "sha256": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b"
+    },
+    "scripts/install_projected_candidate.py": {
+      "bytes": 28251,
+      "sha256": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6"
+    }
+  },
+  "mountsOrNativeExecutionAuthorized": false,
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "pythonSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "realModelCalls": 0,
+  "runnerSha256": "8c25112bdf836903b7d05943b8c16095d138be3d77f5c0eee6c220c644e8a6e2",
+  "transportSha256": "60cfa05e00f0985c36a9facbad3ec7ff79cf59b26842cecabe4c8706fec6dc3f",
+  "workspaceHead": "e641a5000810efb2a453ae847f689b422f7d41a7"
+}

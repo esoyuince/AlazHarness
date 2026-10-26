@@ -1,0 +1,20 @@
+{
+  "acceptancePrepared": false,
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "bindingSha256": "5ef09ad06075995fb7d1d82ef49b1712c66c83a7dd7b260fe70850110ba45350",
+  "candidateVerifiedSourceOnly": true,
+  "finiteWorkExecuted": false,
+  "installationReceiptSha256": null,
+  "installed": false,
+  "kind": "R156A1_INSTALL_PREPARATION",
+  "nativeExecuted": false,
+  "operatorFile": "r156a1_install_candidate.py",
+  "operatorSha256": "8c25112bdf836903b7d05943b8c16095d138be3d77f5c0eee6c220c644e8a6e2",
+  "realProviderCalls": 0,
+  "rootRequested": false,
+  "sourceFileCount": 838,
+  "state": "INSTALL_OPERATOR_PREPARED_NOT_RUN",
+  "templateSha256": "06755f6d866a30b208c80ce23dab30e99326077d0b632211b42d9f6dcac18a14",
+  "transportSha256": "60cfa05e00f0985c36a9facbad3ec7ff79cf59b26842cecabe4c8706fec6dc3f"
+}

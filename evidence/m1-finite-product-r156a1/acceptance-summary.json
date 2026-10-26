@@ -1,0 +1,243 @@
+{
+  "diagnostics": {
+    "finiteStderrBytes": 4513,
+    "finiteStderrSha256": "8c91fddbb05f35a83c7b51e38921d0396c71e11423d60142ad7c012bbc41123b",
+    "observed": [
+      "Native SQLite DELETE-mode warnings",
+      "Nonfatal agent.secret_sources.command registration diagnostic",
+      "Expected controlled model failure traceback"
+    ],
+    "secretSourceIntegrationAccepted": false
+  },
+  "evidence": {
+    "image001/intent.json": {
+      "bytes": 1274,
+      "sha256": "45b5db7c1057ab2f181b14a6d9481e077f87597b666a2a31c2064b6a58848959"
+    },
+    "image001/result.json": {
+      "bytes": 61070,
+      "sha256": "6a67c078680fa4cb41ae29547c3c9e6e7048f7aeb49327384c37822ea0e88931"
+    },
+    "image001/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "image001/stdout.txt": {
+      "bytes": 59934,
+      "sha256": "f3470ee4300aa9f936fbe1aa53d261fd52c76416412ab4faa8fcfa51c53ee364"
+    },
+    "ordinary001/result.json": {
+      "bytes": 11738,
+      "sha256": "e42a277a3371f168a08cd78f07af2253840d6004b5730c3b4dbb4de095469ae8"
+    }
+  },
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "installation": {
+    "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+    "dependencyFileCount": 1162,
+    "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+    "destination": "/opt/alaz-r156a1",
+    "executionAuthorized": false,
+    "finiteWorkExecuted": false,
+    "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+    "installed": true,
+    "kind": "VERIFIED_PROJECTED_INSTALLATION",
+    "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+    "projectedReadinessAccepted": false,
+    "python": {
+      "device": 2096,
+      "gid": 0,
+      "inode": 3825,
+      "mode": 493,
+      "path": "/usr/bin/python3.12",
+      "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "uid": 0
+    },
+    "realModelCalls": 0,
+    "receiptSha256": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+    "rootControlledAncestryVerified": true,
+    "rootDevice": 2096,
+    "rootInode": 29702,
+    "schemaVersion": 1,
+    "sourceAndDependenciesReadBack": true,
+    "sourceFileCount": 838,
+    "sourceManifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+    "verifiedInstalledBytesNow": true
+  },
+  "kind": "R156A1_VERIFIED_INSTALLED_NATIVE_FINITE_ACCEPTANCE",
+  "limitations": [
+    "Model factory/computation/close is an explicit scripted fixture; external providers were not used.",
+    "Profile call events include coroutine resumes and are not unique invocation counts.",
+    "Replay is within one owner lifecycle; restart replay is not accepted.",
+    "Existing readiness acceptance R155 belongs to its earlier installation; no separate R156 readiness-only operation was executed.",
+    "No general service, real broker exchange, CLI/unattended policy, full D3B, M1 or production acceptance."
+  ],
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "ordinary": {
+    "allThreeConnectionsPhysicallyClosed": true,
+    "attempt": "ordinary001",
+    "elapsedMillis": 13124,
+    "executedTasks": 0,
+    "exitCode": 0,
+    "nativeMillis": 10906,
+    "producerTotalMillis": 12704,
+    "profileLeaseReleasedNormally": true,
+    "realModelCalls": 0,
+    "result": "PASS",
+    "sixChecks": [
+      "preflight",
+      "response_preflight",
+      "before_epoch",
+      "response_before_epoch",
+      "after_epoch",
+      "response_after_epoch"
+    ]
+  },
+  "publication": "NOT_RUN_AT_THIS_CHECKPOINT",
+  "result": "PASS",
+  "sameImage": {
+    "allOwnedChildrenTerminal": true,
+    "attempt": "image001",
+    "events": [
+      "PROVISION_FRESH_PATHS",
+      "FORMAT_FRESH_IMAGE",
+      "START_METADATA_SOCKET_FIXTURE",
+      "BEGIN_ORIGINAL_SUPERVISOR",
+      "ATTACH_ORIGINAL_SUPERVISOR",
+      "START_ORIGINAL_WORKER",
+      "SEED_ATTEMPT",
+      "SEED_COMPLETED",
+      "PROJECTED_FINITE_ATTEMPT",
+      "PROJECTED_FINITE_COMPLETED",
+      "NORMAL_STOP",
+      "NORMAL_FINISH",
+      "VOLUME_CLOSED",
+      "VERIFY_NORMAL_CLOSE",
+      "COMPLETE"
+    ],
+    "finiteEpoch": 2,
+    "finiteOwner": {
+      "canonicalApiPublished": true,
+      "caseReceipts": [
+        {
+          "admissionId": "923779b4205044e48a3698ac70c32348",
+          "apiResultSha256": "45c68a0c9e5f44f97b41452a43f2699a0b74c5b44f55ea16a4833d4eed52575c",
+          "computationCount": 1,
+          "kind": "normal",
+          "outcome": "completed",
+          "requestId": "r156a1-normal",
+          "storedResultSha256": "39492c0f70dbe8c9b5b6d4d42225171c48900eed4d0e92e5cf4f1be655b05a38"
+        },
+        {
+          "admissionId": "923779b4205044e48a3698ac70c32348",
+          "apiResultSha256": "45c68a0c9e5f44f97b41452a43f2699a0b74c5b44f55ea16a4833d4eed52575c",
+          "computationCount": 1,
+          "kind": "replay",
+          "outcome": "completed",
+          "requestId": "r156a1-normal",
+          "storedResultSha256": "39492c0f70dbe8c9b5b6d4d42225171c48900eed4d0e92e5cf4f1be655b05a38"
+        },
+        {
+          "admissionId": "12e3b6a39a074a8dba96617abaf94ca2",
+          "apiResultSha256": "3f6837aa938f5f7ed8c17c2dd54957bf9c1a9861ac1148ed910f40644ece02ca",
+          "computationCount": 2,
+          "kind": "new",
+          "outcome": "completed",
+          "requestId": "r156a1-new",
+          "storedResultSha256": "3f18feedacce971f0cba1893addbc15c064185a47de36d1766994c47f011708e"
+        },
+        {
+          "admissionId": "6953c84c971a4bf2873569b0a7591d43",
+          "apiResultSha256": "86b446a97d8f34231afd4ddfb32eab99f035fdfd4404c0dc5edd5f455958860f",
+          "computationCount": 3,
+          "kind": "error",
+          "outcome": "failed",
+          "requestId": "r156a1-error",
+          "storedResultSha256": "7e5a8efc0fe3f35a7276684e9f994a0a4cdb1b8128b647b4e5a0d865f19e219c"
+        }
+      ],
+      "close": {
+        "callerLeaseReleased": true,
+        "consumerState": "DETACHED",
+        "modelInstancesClosed": true,
+        "ownerState": "CLOSED",
+        "physicalConnectionsClosed": 3,
+        "registryRefcounts": 0,
+        "rowsChangedByRetirement": 0,
+        "sameThreeConnections": true
+      },
+      "completedChecks": [
+        "preflight",
+        "response_preflight",
+        "before_epoch",
+        "response_before_epoch",
+        "after_epoch",
+        "response_after_epoch"
+      ],
+      "epoch": 2,
+      "finiteWorkExecuted": true,
+      "fullD3BAccepted": false,
+      "localAdmissionActivated": true,
+      "model": {
+        "factoryComputationCloseDoubled": true,
+        "kind": "scripted-factory-fixture",
+        "modelInvocations": 3,
+        "realProviderCalls": 0
+      },
+      "nativeProfileCallEvents": {
+        "commit_and_publish": 3,
+        "execute_finite_admission": 56,
+        "run_api_turn": 11,
+        "run_sync": 3,
+        "settle_session_input": 3
+      },
+      "pid": 16,
+      "protocol": "alaz-projected-finite-qualification-v1",
+      "runtimeAdmissionAuthorized": false,
+      "serviceStarted": false,
+      "state": "PROJECTED_FINITE_OWNER_CLOSED",
+      "workSha256": "9c3bc2a929a9079405835ad72322013eeb23252e92371926d07ae89a169e9984"
+    },
+    "hostBridgeObservedDurationMillis": 43597,
+    "hostMountNamespaceUnchanged": true,
+    "hostMountTableUnchanged": true,
+    "originalCallerTerminal": true,
+    "sameOriginalSupervisor": true,
+    "seedEpoch": 1,
+    "seedTotalMillis": 10069,
+    "state": "SAME_IMAGE_SEED_FINITE_ACCEPTED",
+    "transportExitCode": 0,
+    "volumeClosure": {
+      "finish": {
+        "fenceRemovedAfterCleanup": true,
+        "fullD3BAccepted": false,
+        "leaseReleasedLast": true,
+        "loopAttachmentGone": true,
+        "ownedUsersGone": true,
+        "realHermesGatewayTested": false,
+        "state": "CLOSED"
+      },
+      "stop": {
+        "pid": 10,
+        "state": "UNMOUNTED",
+        "token": "e94115673543bad84b6625df9eb69952"
+      }
+    }
+  },
+  "scope": {
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "brokerMetadataFixtureOnly": true,
+    "executedTasks": 3,
+    "finiteWorkExecuted": true,
+    "fullD3BAccepted": false,
+    "m1Accepted": false,
+    "productionReady": false,
+    "realBrokerExchangeAccepted": false,
+    "realModelCalls": 0,
+    "realProviderCalls": 0,
+    "runtimeAdmissionAuthorized": false,
+    "scriptedModelInvocations": 3,
+    "serviceStarted": false
+  }
+}

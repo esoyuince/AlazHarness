@@ -1,0 +1,212 @@
+{
+  "candidateHarnessFilesChecked": 81,
+  "candidateNativeSourceCommit": "d1516731308de8e87130dc68124e69aad35d6911",
+  "kind": "R156A1_PRE_PUBLICATION_SOURCE_AND_PROTECTED_STATE",
+  "newRuntimeExecution": false,
+  "originalRootChangedFilesPreserved": 33,
+  "protectedRepositories": [
+    {
+      "branch": "alaz/hyb-001-component-slice",
+      "head": "58b210ac9d400b84b028a2b57dcf1a4a396f089e",
+      "path": "C:\\Antigravity\\AlazHarness",
+      "status": " M .gitattributes\n M AGENTS.md\n M CURRENT-STATE.md\n M docs/COMPONENT-MAP.md\n M docs/WORKSPACE-RULES.md\n?? components.lock.json\n?? docs/HYB-001-COMPONENT-SLICE.md\n?? docs/adr/0002-component-slice-before-runtime.md\n?? evidence/verification-20261014-a7a90059/\n?? packages/hybrid-runtime/\n?? packages/upstream/\n?? scripts/demo_hybrid.py\n?? scripts/verify_component_slices.py\n?? status.md\n?? tests/fixtures/\n?? tests/hybrid/\n?? tests/test_component_slices.py\n?? tests/test_hybrid_slice.py\n"
+    },
+    {
+      "branch": "main",
+      "head": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\main-published-21oct-a37c",
+      "status": ""
+    },
+    {
+      "branch": "alaz/m1-install-readiness-r154a1",
+      "head": "27eb7571211ba0b685d7893d149438d612f6e2cd",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-install-readiness-r154a1",
+      "status": ""
+    },
+    {
+      "branch": "alaz/d3b-finite-close-f135c6",
+      "head": "d1516731308de8e87130dc68124e69aad35d6911",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\hermes-finite-close-f135c6",
+      "status": ""
+    },
+    {
+      "branch": "alaz/m1-seed-readiness-r155a1",
+      "head": "4823ebbca5f039aee1e9a4a209e40a48c015044a",
+      "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-seed-readiness-r155a1",
+      "status": ""
+    }
+  ],
+  "publicationPerformed": false,
+  "result": "PASS",
+  "rootChangedFiles": {
+    ".gitattributes": {
+      "sha256": "bfa8e6cdd13973c9bd83ff9fe751cf799697f92a0c85e73ee4daadc66b35a939",
+      "size": 159
+    },
+    "AGENTS.md": {
+      "sha256": "161f556dd899a873da5ec0935fd3693722a5c01f70c11971366d5d0b043efefb",
+      "size": 2218
+    },
+    "CURRENT-STATE.md": {
+      "sha256": "e75cd2ec0bf903787699a5bb4ff1c87c20fcbaa4c8e2c0435beb89e52562f829",
+      "size": 4352
+    },
+    "components.lock.json": {
+      "sha256": "af706bf7bade6f34b1aa2f2bf0d3d1b3086b2cec44e34d191abc162184c226a2",
+      "size": 3762
+    },
+    "docs/COMPONENT-MAP.md": {
+      "sha256": "783c3e2ff6a27aa62761ca07816e563665d0fd582e9eacc05865e6d66122d7f8",
+      "size": 4837
+    },
+    "docs/HYB-001-COMPONENT-SLICE.md": {
+      "sha256": "aaa62db6a6da637276a1320a87b33284ee3e90210b851ee11994241058b61a66",
+      "size": 4462
+    },
+    "docs/WORKSPACE-RULES.md": {
+      "sha256": "a077546c2190699baad1339876a79e805452a7aae40ab1e5e55b5311ecc53722",
+      "size": 1748
+    },
+    "docs/adr/0002-component-slice-before-runtime.md": {
+      "sha256": "36902d822302843daa587f5929d80264e75ff952b3821f8287bff38946b13bfc",
+      "size": 3016
+    },
+    "evidence/verification-20261014-a7a90059/SUMMARY.md": {
+      "sha256": "62b30627b2d705e1f2f7086dfdf9383f50607fab63598378603e960a87573c3f",
+      "size": 1523
+    },
+    "evidence/verification-20261014-a7a90059/commands.json": {
+      "sha256": "0db69ef6f54fa761aa46d45426b34f0db52f167e53fc27e5c6cd25d48003d9c8",
+      "size": 11586
+    },
+    "evidence/verification-20261014-a7a90059/final-state.json": {
+      "sha256": "d8ec0e0ad4839295eb48396447f28f41d9c0e03e042c21c751e681355b5f8960",
+      "size": 2195
+    },
+    "evidence/verification-20261014-a7a90059/source-snapshot.json": {
+      "sha256": "8912defa8b8acf08f8fc6baa06275d877c29a8769e79eec3afaced5cea722b61",
+      "size": 3736
+    },
+    "evidence/verification-20261014-a7a90059/workspace.json": {
+      "sha256": "d29f801b4f2b8ae97839b59d3213d6d2348582b940133894dc3235029965d447",
+      "size": 7304
+    },
+    "packages/hybrid-runtime/common.mjs": {
+      "sha256": "2d4208071bc0871a9ef261f7987e7a19b45e8547d479efe4b4b8b2733bf4eaf6",
+      "size": 1199
+    },
+    "packages/hybrid-runtime/demo.mjs": {
+      "sha256": "79016ee81e0aa8100adcefe35c676baf4c48375591dd163b97ae504d6708a90f",
+      "size": 562
+    },
+    "packages/hybrid-runtime/mock-harness.mjs": {
+      "sha256": "6d14dea142beb5c37d74a0083f26ff3cdb1f1cce6bdead4599f648b7d1c34b68",
+      "size": 11073
+    },
+    "packages/hybrid-runtime/stdio-peer.mjs": {
+      "sha256": "0ba4bc013b4855cdad616d262de20576c31b80d8c79e459233b87ae6ab679c29",
+      "size": 5676
+    },
+    "packages/upstream/README.md": {
+      "sha256": "c2e12c7ea819126ae4fba003e7206b969e1679f25886d01e9ee5ae8fdcdd2528",
+      "size": 1080
+    },
+    "packages/upstream/hermes/LICENSE": {
+      "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "size": 1070
+    },
+    "packages/upstream/hermes/iteration_budget.py": {
+      "sha256": "c6ac199bf3d53ae6eb840fa1e72fa191e8c00af535f0621896a98196fe880f72",
+      "size": 1807
+    },
+    "packages/upstream/hermes/transport.py": {
+      "sha256": "d49e7e47874024a5e7e3b0c3212bd7110df2ba30bc14f90c902289e722ca6d92",
+      "size": 15488
+    },
+    "packages/upstream/openclaw/LICENSE": {
+      "sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4",
+      "size": 1076
+    },
+    "packages/upstream/openclaw/attempt-cancellation.ts": {
+      "sha256": "8bb3ec23f95054d55a18f5d3d5f124aa2f0e57e6168b976f8c5b73bec5f8e634",
+      "size": 1755
+    },
+    "packages/upstream/openclaw/attempt-deadlines.ts": {
+      "sha256": "cdfe9b26f74cd5e0b88e6b29850faac6f2472ca708defbda7419af0aa82bb7e4",
+      "size": 3292
+    },
+    "packages/upstream/openclaw/number-coercion.ts": {
+      "sha256": "59296d074f0f4c81068c124f0499be87b5f6ed9fc542d5a62a7a864d859549a7",
+      "size": 12851
+    },
+    "packages/upstream/openclaw/string-coerce.ts": {
+      "sha256": "9d0648121488d3cbbb47716c4b3048faa4c94f607bfaafe7ed6617562d4fc3c3",
+      "size": 4946
+    },
+    "scripts/demo_hybrid.py": {
+      "sha256": "7a705a8646b8cbd0e655c3832df590b6e6f6de5793427752b1811f09f391f060",
+      "size": 973
+    },
+    "scripts/verify_component_slices.py": {
+      "sha256": "445be487dfc8f122e39bf8d90621db96be74a0aa14a5113064c36af67656f1e3",
+      "size": 3915
+    },
+    "status.md": {
+      "sha256": "28fbe01668cea2d59c1d16feff193361a830af04b98ca68cc73df1d97a58dc2a",
+      "size": 61578
+    },
+    "tests/fixtures/hermes-scripted-peer.py": {
+      "sha256": "637c3fe1fa9fea3a6de745b4e27c2d02aa0b27441d28f798dd20d9d17a5bd6a0",
+      "size": 7563
+    },
+    "tests/hybrid/cases.mjs": {
+      "sha256": "749169e2b03b59abf0f49e4ee661b0078c3c611f3d67aeb2db82cefd246bd162",
+      "size": 10550
+    },
+    "tests/test_component_slices.py": {
+      "sha256": "eae484a67a7683d61da6429c93f90aabb73e0986f511a4f96058e384faf5f8a4",
+      "size": 4262
+    },
+    "tests/test_hybrid_slice.py": {
+      "sha256": "710d9c42a97b78effbc0941d26477e1a0cb1b76a86540fea49b59b6bb95f879b",
+      "size": 2540
+    }
+  },
+  "runtimeCandidateBytesUnchanged": true,
+  "sourceAndGeneratedHashesChecked": 24,
+  "sourceCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_finite_protocol.py": "0e727aaf40ab22cb9c9714b26563f237cc04afdf86455d481b9f397b974cc95c",
+    "packages/claw-hermes/gateway_finite_runtime.py": "e710f75ebc6900e1d16807a5d0a691f1c2f10c2f066c5d8918a6c13317e78c95",
+    "packages/claw-hermes/gateway_retained_launch.py": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2",
+    "packages/claw-hermes/gateway_supervised_launch.py": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364",
+    "scripts/bootstrap_retained_profile_r156.py": "02ac2d81d72e0ab11739081b3b95ccb05db2871581bc3494518fe2190a66a5aa",
+    "scripts/build_projected_candidate.py": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b",
+    "scripts/install_projected_candidate.py": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6",
+    "scripts/qa/r156a1_accept.py": "8f956d7e9d5df684466de33a2ef4dabb35a7c5920bad0a61103634f6f871c6ce",
+    "scripts/qa/r156a1_acceptance_templates.py": "e2aa6b659e2926222be552dfa47835b6ef67aaa1c0296104b6c1a994c9d794f0",
+    "scripts/qa/r156a1_finite_assert.py": "6d374e49ce37269422f14d11feaf5a93fbe6d9b961e3fc00c722834f164ce7e7",
+    "scripts/qa/r156a1_linux_accept.py": "74a632febec784437eb98f8134ed3591aedded5465c2b9017d1c80e895e95c5b",
+    "scripts/qa/r156a1_linux_transport.py": "e262e1581b3f8331aee0eb5e35468a4c334e932a88a44300109edd8d8d051476",
+    "scripts/qa/r156a1_ordinary_seed.py": "baa56be5f0df56a1e9679bb8efccb445aafd31c32c0fc0c4b2c22ce17fde13a7",
+    "scripts/qa/r156a1_prepare.py": "cc652865855cedca4f1d06f4d8ed7d58be462d5612082d02b843b2b688130a54",
+    "scripts/qa/r156a1_seed_child.py": "0da76d47bbdff0dcd188bc899d44d90fd543530210248e8e2abe557e6647f372",
+    "scripts/run_finite_projected.py": "97c905dae7e9391ad01103a011cc5216b23ced95ef2d2bffdf1e809512ff95eb",
+    "scripts/run_supervised_finite.py": "e45cb067233e6e55ee191628d447e48628f2207462c33c9822f88150ea33f865",
+    "tests/test_finite_projected_launch.py": "07569246d1253752ce3b86247ce76d4876934f8ffa40937b68c3b2d0dc2c7364",
+    "tests/test_finite_protocol.py": "14c0160d1fe69961528745321e040ffceb3e508f1be6851a9f614fdb3f4f11c7",
+    "tests/test_finite_runtime_contract.py": "129595f8529721df78851bded6eff20c396edf5acd8ec714f5f745dc28e9bd13",
+    "tests/test_projected_candidate.py": "fba6f2d87f29fcb774319da62bb5198cac11f411bde574d2833f08002337af19",
+    "tests/test_projected_install.py": "8587e0a36d79d6b4b4dfcd3969088178b4721da71578c6d3350b9b9c0fd8ae4a",
+    "tests/test_r156_preparation.py": "32cc56e16ad520af0a6211e45434be69d3e4fe2799fe61580a37ff03ba6e0b1b",
+    "tests/test_supervised_finite_launch.py": "491f91bee101e1445ba824f16cd9ffeb2c9a38f17c60a1d146cba57f9c74cdb4"
+  },
+  "worktreePresentationDifferences": [
+    {
+      "gitAndCandidateSha256": "f124b0474189e3cade42b6efec680e515f38908341eb909a4bad1a2012607e40",
+      "path": "LICENSE",
+      "reason": "Existing Windows CRLF checkout presentation; canonical Git blob exactly matches installed candidate",
+      "worktreeSha256": "f2073680fc298961849a6502f906e6f8c9cdf70024e5e023f875c894448a82e4"
+    }
+  ]
+}

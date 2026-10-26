@@ -19,7 +19,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
-| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R155 seed/readiness/kapanış kabulü korunuyor. R156 sabit finite giriş, normal/hata ve replay/yeni iş bağlantısı uygulandı; yeni kurulumdaki native kabul henüz açık. |
+| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R156 güncel kurulumda seed → normal/hata/replay/yeni iş → özgün kapanış PASS. Aynı güncel kurulumda ayrı readiness-only kabulü kalan P1 kapısı; R155 sonucu eski kurulumuna ait. |
 | P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | OPEN; kontrollü model/broker altyapısı mevcut. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
@@ -48,7 +48,9 @@ R152 yalnız sıradan kullanıcı altında gerçek Landlock + retained yaşam d�
 kabul etti; bu eski sonuç tek başına ürün supervisor kabulü değildi. R155'te aynı
 özgün supervisor ve ext4 imajında gerçek seed, sabit ürün çocuğu üzerinden
 projected readiness ve normal kapanış ayrıca kabul edildi. L145 hedefi hâlâ
-yalnız readiness yapar; gerçek finite görev bağlantısı ve kabulü açık.
+yalnız readiness yapar. R156 ayrı sabit finite kardeş giriş üzerinden gerçek
+native API/authority/worker/persistence/kapanışını yeni kurulumda kabul etti;
+bu güncel kurulumda ayrı readiness-only kabulü henüz çalıştırılmadı.
 
 ## M2 sonraki aşama
 
@@ -126,5 +128,39 @@ sırasını hedefler. Model factory/hesaplama/close açık scripted fixture'dır
 gerçek sağlayıcı çağrısı, servis veya restart replay kabulü değildir.
 
 Windows'ta 351 odaklı testin 319'u geçti, 32'si platform gereği atlandı. Bu sonuç
-yeni kurulum/kernel kabulü sayılmaz. Yeni kurulum ve gerçek native kabul sırası
-[R156A1 raporunda](M1-FINITE-PRODUCT-R156A1.md) izlenir; P1 ve ürün kabulü açıktır.
+tek başına yeni kurulum/kernel kabulü sayılmaz. Daha sonra gerçekleşen yeni
+kurulum ve native finite kabulü aşağıdaki R156 teslimatında ve
+[R156A1 raporunda](M1-FINITE-PRODUCT-R156A1.md) kayıtlıdır; P1 bütünü ve ürün
+kabulü açıktır.
+
+## P1 / R156A1 native finite teslimatı
+
+Yeni runtime `e641a5000810efb2a453ae847f689b422f7d41a7` kaynağından
+`/opt/alaz-r156a1` altına kuruldu. 838 kaynak ve 1.162 bağımlılık dosyası
+geri okundu; gerçek kurulum kaydına bağlı ordinary001 native açılış/kapanış
+proof'u geçti. image001, yeni ext4 imajında özgün supervisor ile seed epoch 1
+ve tek finite child epoch 2 üzerinden normal görev, birebir tekrar, yeni görev
+ve kontrollü native terminal hata vakalarını kabul etti. Hesaplama sayıları
+1/1/2/3: tekrar ikinci hesaplama üretmedi. Özgün consumer/owner/üç fiziksel
+bağlantı/profile lease ve volume stop/finish sırası tamamlandı.
+
+Model factory/hesaplama/close scripted fixture'dır; gerçek provider/model çağrısı
+sıfır. Gerçek broker alışverişi, servis/genel runtime admission, restart replay
+ve CLI/unattended policy kabul edilmedi. Child stderr'deki
+`agent.secret_sources.command` kayıt hatası bu koşuda terminal başarıyı
+engellemedi; gerçek model/secret-source paketlemesi için açık bir P2 takip
+maddesidir. SQLite DELETE-mode uyarıları ve beklenen kontrollü hata traceback'i
+ham çıktıda korunur; stderr'in temiz olduğu iddia edilmez.
+
+**P1'in güncel kurulumda finite native alt kapısı tamamlandı. P1 bütünü hâlâ
+IN PROGRESS.** En küçük kalan kapı, aynı 838 dosyalık kurulumun ayrı taze
+imaj/lifecycle üzerinde sabit readiness-only girişinden görev başlatmadan
+açılış ve normal kapanışını kabul etmektir. R155'in önceki kurulum başarısı
+buraya taşınmaz; tamamlanan R156 supervisor'a ikinci çocuk eklenmez. Bu kapı
+için runtime kodunu değiştirmek veya geçen finite işi tekrarlamak gerekmez.
+
+Sonrasında P2 için günlük yerel başlat/görev/izle/sonuç/iptal/kapat akışı,
+seçilmiş sağlayıcının gerekli modülleri ve açık model bütçesi gelir. P2 kaynak
+hazırlığı paralel yapılabilir; ücretli model kabulü P1 ve model/bütçe seçiminden
+sonradır. Rapor/kanıt: [R156A1](M1-FINITE-PRODUCT-R156A1.md). P2–P5, tam D3B,
+M1 ve prod kabulü açık kalır.

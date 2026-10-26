@@ -1,0 +1,65 @@
+{
+  "archiveBytes": 19752960,
+  "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+  "candidateDirectory": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-finite-product-r156a1\\scratch\\projected-candidates\\r156a1-native-finite-001",
+  "dependenciesKeys": [
+    "bytesIncluded",
+    "fileCount",
+    "installedBytesVerifiedNow",
+    "inventoryFile",
+    "inventorySha256",
+    "recordGitBlob",
+    "recordSha256",
+    "sourceRecord",
+    "target"
+  ],
+  "fixedSources": {
+    "packages/claw-hermes/gateway_finite_protocol.py": {
+      "bytes": 7586,
+      "gitBlob": "561c0e2bae07bfc72e6a1c1506262469dca3b27c",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "0e727aaf40ab22cb9c9714b26563f237cc04afdf86455d481b9f397b974cc95c"
+    },
+    "packages/claw-hermes/gateway_finite_runtime.py": {
+      "bytes": 19644,
+      "gitBlob": "986375c687f5694ebf0a72ff0a7de7e11d68fbe9",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e710f75ebc6900e1d16807a5d0a691f1c2f10c2f066c5d8918a6c13317e78c95"
+    },
+    "packages/claw-hermes/gateway_retained_launch.py": {
+      "bytes": 12711,
+      "gitBlob": "88bc83ded1b8e0bd3812a47ca44bc5b8b4355d6f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2"
+    },
+    "packages/claw-hermes/gateway_supervised_launch.py": {
+      "bytes": 21471,
+      "gitBlob": "600e47141118e30b1df04ef0b7a44d7abf3d687f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364"
+    },
+    "scripts/run_finite_projected.py": {
+      "bytes": 1555,
+      "gitBlob": "30317a0a9e97c28318b4a79fc6f3749950f016b0",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "97c905dae7e9391ad01103a011cc5216b23ced95ef2d2bffdf1e809512ff95eb"
+    },
+    "scripts/run_supervised_finite.py": {
+      "bytes": 979,
+      "gitBlob": "0f56771a300d183629610f8fa93aad412b4c5c6f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e45cb067233e6e55ee191628d447e48628f2207462c33c9822f88150ea33f865"
+    }
+  },
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "manifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeSourceFileCount": 756,
+  "sourceFileCount": 838
+}

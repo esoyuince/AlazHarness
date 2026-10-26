@@ -1,0 +1,238 @@
+{
+  "caseReceipts": [
+    {
+      "admissionId": "923779b4205044e48a3698ac70c32348",
+      "apiResultSha256": "45c68a0c9e5f44f97b41452a43f2699a0b74c5b44f55ea16a4833d4eed52575c",
+      "computationCount": 1,
+      "kind": "normal",
+      "outcome": "completed",
+      "requestId": "r156a1-normal",
+      "storedResultSha256": "39492c0f70dbe8c9b5b6d4d42225171c48900eed4d0e92e5cf4f1be655b05a38"
+    },
+    {
+      "admissionId": "923779b4205044e48a3698ac70c32348",
+      "apiResultSha256": "45c68a0c9e5f44f97b41452a43f2699a0b74c5b44f55ea16a4833d4eed52575c",
+      "computationCount": 1,
+      "kind": "replay",
+      "outcome": "completed",
+      "requestId": "r156a1-normal",
+      "storedResultSha256": "39492c0f70dbe8c9b5b6d4d42225171c48900eed4d0e92e5cf4f1be655b05a38"
+    },
+    {
+      "admissionId": "12e3b6a39a074a8dba96617abaf94ca2",
+      "apiResultSha256": "3f6837aa938f5f7ed8c17c2dd54957bf9c1a9861ac1148ed910f40644ece02ca",
+      "computationCount": 2,
+      "kind": "new",
+      "outcome": "completed",
+      "requestId": "r156a1-new",
+      "storedResultSha256": "3f18feedacce971f0cba1893addbc15c064185a47de36d1766994c47f011708e"
+    },
+    {
+      "admissionId": "6953c84c971a4bf2873569b0a7591d43",
+      "apiResultSha256": "86b446a97d8f34231afd4ddfb32eab99f035fdfd4404c0dc5edd5f455958860f",
+      "computationCount": 3,
+      "kind": "error",
+      "outcome": "failed",
+      "requestId": "r156a1-error",
+      "storedResultSha256": "7e5a8efc0fe3f35a7276684e9f994a0a4cdb1b8128b647b4e5a0d865f19e219c"
+    }
+  ],
+  "diagnostics": [
+    "Finite child stderr contains three SQLite DELETE-mode fallback warnings; seed handoff records journal_mode=delete.",
+    "Finite child stderr logs a nonfatal failure to register agent.secret_sources.command because the module is absent. This run does not accept that secret-source integration.",
+    "Finite child stderr contains the expected controlled_native_finite_model_failure traceback; its admission is terminal failed and the child still exits 0."
+  ],
+  "epochTransition": [
+    1,
+    2
+  ],
+  "evidenceFiles": {
+    "r156-actual/acceptance001/scripts/qa/r156a1_finite_assert.py": {
+      "bytes": 13360,
+      "sha256": "6d374e49ce37269422f14d11feaf5a93fbe6d9b961e3fc00c722834f164ce7e7"
+    },
+    "r156-actual/native-evidence/image001/execution-start.json": {
+      "bytes": 670,
+      "sha256": "f0fadc2b74c12f3bd013ae520da7488adc9d2d6fbd7bf341d219c5c6f117d4ae"
+    },
+    "r156-actual/native-evidence/image001/intent.json": {
+      "bytes": 1274,
+      "sha256": "45b5db7c1057ab2f181b14a6d9481e077f87597b666a2a31c2064b6a58848959"
+    },
+    "r156-actual/native-evidence/image001/ordinary-proof.json": {
+      "bytes": 945,
+      "sha256": "c44c6e0806b6cd60bd33f4d410268bcdbd4e06bfe4333b6e77502989e10dfa71"
+    },
+    "r156-actual/native-evidence/image001/result.json": {
+      "bytes": 61070,
+      "sha256": "6a67c078680fa4cb41ae29547c3c9e6e7048f7aeb49327384c37822ea0e88931"
+    },
+    "r156-actual/native-evidence/image001/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "r156-actual/native-evidence/image001/stdout.txt": {
+      "bytes": 59934,
+      "sha256": "f3470ee4300aa9f936fbe1aa53d261fd52c76416412ab4faa8fcfa51c53ee364"
+    },
+    "r156-actual/native-evidence/ordinary001/execution-start.json": {
+      "bytes": 363,
+      "sha256": "49f960fc0727a550f263be79643d2aa54de4543b674e020d8b2a52257ce13108"
+    },
+    "r156-actual/native-evidence/ordinary001/result.json": {
+      "bytes": 11738,
+      "sha256": "e42a277a3371f168a08cd78f07af2253840d6004b5730c3b4dbb4de095469ae8"
+    },
+    "r156-actual/native-evidence/ordinary001/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "r156-actual/native-evidence/ordinary001/stdout.txt": {
+      "bytes": 10142,
+      "sha256": "2851d36fb219f6b82959f30647c792a82dd969e22e7512367fea65fcc14b195c"
+    }
+  },
+  "exactGeneratedPureValidatorPassed": true,
+  "finiteCapturedOutput": {
+    "childStartTicks": 9977,
+    "pid": 16,
+    "stderrBytes": 4513,
+    "stderrSha256": "8c91fddbb05f35a83c7b51e38921d0396c71e11423d60142ad7c012bbc41123b",
+    "stdoutBytes": 2224,
+    "stdoutSha256": "aadb7bbbe821f35f55ac6f12dda233c1381c0eba0af8d981a3bb42f1c3693618"
+  },
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "installationReceiptSha256": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+  "kind": "R156A1_INDEPENDENT_ACTUAL_EVIDENCE_REVIEW",
+  "limitations": [
+    "Model factory/computation/close is the explicit scripted fixture; no real provider or model call is demonstrated.",
+    "Broker is a metadata fixture; no real broker exchange is accepted.",
+    "Full service, runtime admission authorization, full D3B, M1 and production readiness remain false.",
+    "Evidence contains result digests and source-enforced native ledger readback; this review did not independently reopen the databases or rerun any work."
+  ],
+  "model": {
+    "factoryComputationCloseDoubled": true,
+    "kind": "scripted-factory-fixture",
+    "modelInvocations": 3,
+    "realProviderCalls": 0
+  },
+  "nativeClose": {
+    "callerLeaseReleased": true,
+    "consumerState": "DETACHED",
+    "modelInstancesClosed": true,
+    "ownerState": "CLOSED",
+    "physicalConnectionsClosed": 3,
+    "registryRefcounts": 0,
+    "rowsChangedByRetirement": 0,
+    "sameThreeConnections": true
+  },
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeProfileCallEvents": {
+    "commit_and_publish": 3,
+    "execute_finite_admission": 56,
+    "run_api_turn": 11,
+    "run_sync": 3,
+    "settle_session_input": 3
+  },
+  "newTestsExecutedByReviewer": false,
+  "noBlockerForDeclaredScope": true,
+  "ordinaryBinding": {
+    "allOriginalProofRowsIndependentlyMatched": true,
+    "matchedAvailableRows": [
+      "result.json",
+      "stdout.txt",
+      "stderr.txt",
+      "producer-source.py",
+      "linux-runner.py",
+      "execution-start.json"
+    ],
+    "ordinaryDriverMatched": true,
+    "originalDirectory": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-finite-product-r156a1\\evidence\\m1-native-finite-r156a1\\ordinary001",
+    "originalExecutionStartBytesSeparatelyFetched": true,
+    "originalExecutionStartRow": {
+      "sha256": "49f960fc0727a550f263be79643d2aa54de4543b674e020d8b2a52257ce13108",
+      "size": 363
+    },
+    "sha256": "c44c6e0806b6cd60bd33f4d410268bcdbd4e06bfe4333b6e77502989e10dfa71"
+  },
+  "originalVolumeClosure": {
+    "finish": {
+      "fenceRemovedAfterCleanup": true,
+      "fullD3BAccepted": false,
+      "leaseReleasedLast": true,
+      "loopAttachmentGone": true,
+      "ownedUsersGone": true,
+      "realHermesGatewayTested": false,
+      "state": "CLOSED"
+    },
+    "stop": {
+      "pid": 10,
+      "state": "UNMOUNTED",
+      "token": "e94115673543bad84b6625df9eb69952"
+    }
+  },
+  "originalVolumeObservations": {
+    "events": [
+      "PROVISION_FRESH_PATHS",
+      "FORMAT_FRESH_IMAGE",
+      "START_METADATA_SOCKET_FIXTURE",
+      "BEGIN_ORIGINAL_SUPERVISOR",
+      "ATTACH_ORIGINAL_SUPERVISOR",
+      "START_ORIGINAL_WORKER",
+      "SEED_ATTEMPT",
+      "SEED_COMPLETED",
+      "PROJECTED_FINITE_ATTEMPT",
+      "PROJECTED_FINITE_COMPLETED",
+      "NORMAL_STOP",
+      "NORMAL_FINISH",
+      "VOLUME_CLOSED",
+      "VERIFY_NORMAL_CLOSE",
+      "COMPLETE"
+    ],
+    "originalRetainedVolumes": [],
+    "phase": "COMPLETE",
+    "volumeStage": "CLOSED",
+    "workerPid": 10
+  },
+  "profileCountInterpretation": "Profiler call events only. They are not unique logical calls, unique admissions or task counts; the source does not deduplicate frames/events.",
+  "readOnlyEvidenceReview": true,
+  "replayHashInterpretation": "Both API and stored result hashes are unchanged across normal/replay. API and stored hashes differ from each other because the source hashes the API tuple and saved result dictionary separately after exact value equality.",
+  "reviewedUtc": "2026-10-26T07:41:22.452690+00:00",
+  "runtimeExecutedByReviewer": false,
+  "runtimeSha256": "e710f75ebc6900e1d16807a5d0a691f1c2f10c2f066c5d8918a6c13317e78c95",
+  "scopeFlags": {
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "brokerMetadataFixtureOnly": true,
+    "finiteWorkExecuted": true,
+    "fullD3BAccepted": false,
+    "m1Accepted": false,
+    "productionReady": false,
+    "projectedFiniteAccepted": true,
+    "realBrokerExchangeAccepted": false,
+    "realModelCalls": 0,
+    "realProviderCalls": 0,
+    "runtimeAdmissionAuthorized": false,
+    "serviceStarted": false
+  },
+  "verdict": "PASS_FOR_SCOPED_PROJECTED_FINITE_QUALIFICATION",
+  "verifiedBindings": [
+    "actual installation receipt bytes to observed installation and seed",
+    "all four manifest source files to intent",
+    "host and transport source hashes to intent",
+    "intent bytes to execution start, host and transport",
+    "execution-start bytes to host",
+    "manifest and harness identifiers across intent/start/host/transport/caller",
+    "raw host stdout/stderr lengths and SHA-256",
+    "canonical host stdout to original transport object",
+    "captured transport stdout/stderr lengths and SHA-256",
+    "canonical transport stdout to original caller object",
+    "finite child PID/startTicks/exit/complete/input/output to supervisor",
+    "canonical finite child stdout to original owner record",
+    "ordinary raw stdout/stderr and producer streams to existing records",
+    "ordinary producer and seed to the fresh installation and producer source",
+    "seed handoff bytes and epoch 1 to finite owner epoch 2",
+    "original ordinary-proof.json raw bytes to intent/start/host digest, with all three fetched ordinary files and exact producer/embedded Linux runner/driver source rows checked",
+    "original ordinary execution-start bytes, bound producer/Linux-runner hashes, ordinary attempt identity, rootless actor and dedicated lab"
+  ]
+}

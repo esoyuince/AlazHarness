@@ -1,92 +1,157 @@
 # AlazHarness - status
 
-## R156A1 - IN PROGRESS: fixed supervised native finite work
+## R156A1 - NATIVE/STATIC PASS: current installed finite work; exact-commit publication gate
 
-Base/main: 4823ebbca5f039aee1e9a4a209e40a48c015044a.
+Base main: 4823ebbca5f039aee1e9a4a209e40a48c015044a.
 Branch: alaz/m1-finite-product-r156a1.
 Worktree: C:\Antigravity\AlazHarness\scratch\worktrees\m1-finite-product-r156a1.
+Immutable runtime source: e641a5000810efb2a453ae847f689b422f7d41a7.
 Native source: d1516731308de8e87130dc68124e69aad35d6911.
-Prior accepted laboratory installation: /opt/alaz-r154a1 in AlazHarness-D3B-P71C.
-Entry baseline: evidence/m1-finite-product-r156a1/baseline.json.
+Installed runtime: /opt/alaz-r156a1 in AlazHarness-D3B-P71C.
+Installation receipt: a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845.
+Prior R155 accepted status: docs/status-history/r156a1-parent.md.
 
-### Confirmed entry
+### Completed implementation and installation
 
-R155A1 was published at the base above after exact-SHA alaz/local-ci success.
-Live local/origin/remote main and the R155 feature remain at that SHA and clean.
-The original root remains at 58b210ac9d400b84b028a2b57dcf1a4a396f089e;
-its 33 existing changed/untracked file bytes match R155's final record.
-Native d151673 and the R154 worktree remain clean. Original root status is not
-overwritten. The R155 status is preserved in docs/status-history/r156a1-parent.md.
+A separate fixed finite operation now uses the original RetainedVolumeSupervisor,
+projection, retained NativeStoreStartup, prepared consumer, canonical API,
+authority, physical worker, persistence, drain/retirement/detach and normal close.
+The readiness operation remains separate; both share one original child-attempt
+slot. No second child is appended to a completed or uncertain attempt.
 
-R155 accepted a fresh same-image seed epoch 1, original projected readiness
-epoch 2 and normal supervisor stop/finish. It did not accept finite work,
-API/service admission, a real broker exchange, real model calls, full D3B,
-M1 or production.
+The immutable e641a50 source candidate contains 838 source files, including
+756 exact d151 native sources. r156a1-install001 copied and read back all
+838 source + 1162 dependency files with the pinned Python and root-controlled
+ancestry. Original canonical receipt was fetched as ordinary UID 23001 and
+verified. Installation root device/inode: 2096/29702. Previous installation
+/opt/alaz-r154a1 and protected source worktrees were not overwritten.
 
-### Current scope and contracts
+Installation request adc60156-54c2-4148-92bf-b1566275fd94 completed once,
+exit 0, installer terminal observed. It was source-only installation.
 
-Implement a separate fixed finite product operation using the original
-supervisor, projection, retained native owner and prepared consumer.
-The existing readiness operation and its readiness-only receipt stay exact.
-Both operations must share the original one-child attempt ownership; no second
-child may be appended after readiness and the old epoch-1 handoff must not be
-represented as an updated epoch-2 handoff.
+### Completed actual native acceptance
 
-First acceptance targets: one normal bounded native task, exact-identity replay
-and a new task identity, then one source-defined terminal application error,
-within one original consumer/owner lifecycle. Use original replay/publication/
-drain/retirement/physical-close contracts. Uncertain effects keep original
-ownership; no automatic retry, forced close, lease release or cleanup.
-Real external model/provider calls remain zero for this P1 slice. Scripted model
-responses, if used, must be recorded separately and do not establish real-model
-acceptance. P2 provider work requires an explicit selected model and budget.
+ordinary001 PASS, exit 0. Request 42d90156-3554-483d-8b59-1e275173d836.
+The exact new producer completed original task-free native startup and close:
+six checks, owner CLOSED, consumer DETACHED, all three physical connections
+closed, profile lease normally released, no outstanding tasks/threads.
+Observed elapsed 13124 ms; producer total 12704 ms, native lifecycle 10906 ms.
+Tasks/models/listeners zero. This is ordinary-rootfs proof, separate from image001.
 
-### Active work and verification
+image001 PASS, state SAME_IMAGE_SEED_FINITE_ACCEPTED, exit 0.
+Request 2edf0156-c0e9-469f-840d-470d55c7c90b completed once; no effectful R156
+operation remains pending or unknown. The original supervisor owned a new
+64 MiB ext4 image through seed epoch 1 -> one fixed finite child epoch 2 ->
+original stop/finish. Seed total 10069 ms; entire host operation observed
+by the bridge in 43597 ms (not a standalone finite-computation measurement).
 
-- Native finite API/admission/publication/replay signatures: source review PASS for the bounded API fixture; projected execution remains NOT RUN.
-- Fixed supervisor/projection/finite runtime: IMPLEMENTED in this worktree; independent source review PASS.
-- Owned local supervisor tests: PASS 59 (29 unchanged readiness + 30 finite); native/process/kernel boundaries are explicit doubles.
-- Owned local builder/installer tests: PASS 64; real Git/archive/filesystem fixtures, no runtime installation.
-- Windows current-source focused tests: PASS, 351 run / 319 passed / 32 platform skips, exit 0.
-- Windows preparation tests: initial 23 run / one fixture portability error; corrected 23/23 PASS, exit 0. Initial evidence preserved.
-- Full pre-candidate static/discovery gate: PASS, 6498 root files / 2 source gitlinks / 3952 discovered tests, exit 0 in 71.743 seconds; discovery is not full test execution.
-- New installed/native finite acceptance: NOT RUN at this checkpoint.
-- Acceptance preparation utility/templates: IMPLEMENTED and independently reviewed; actual candidate and receipt pins must come from the verified build/install.
-- New installation/kernel/root application: NOT RUN at entry.
-- Commit/push/exact-SHA CI for R156: NOT RUN.
+- Normal A: completed, bounded answer 50 checked against original saved result.
+- Exact replay A: same admission ID and both corresponding result digests;
+  computation count stays 1.
+- New B: distinct admission, completed, bounded answer 7, computation count 2.
+- Controlled application error C: third admission, native terminal failed;
+  computation count 3 and full original normal close still completed.
+- Original API tuple equals the saved result/usage fields. Tuple and saved dict
+  have distinct envelope hashes; replay equality is checked within each envelope.
+- Finite PID 16/start ticks 9977; wrapper, owner frame and original capture agree.
+  All six startup checks passed. Child exited 0; observedAfterUnknown=false.
+- Same three physical connections, registry refcounts 0, model fixture instances
+  closed and retirement row changes 0. Original drain/detach/owner close and
+  caller lease finish accepted.
+- Worker PID 10 and token match MOUNTED -> UNMOUNTED. Original finish CLOSED:
+  owned users gone, loop attachment gone, fence removed after cleanup,
+  image lease released last. All owned children terminal; no retained original
+  volumes. Host mount namespace/table unchanged.
+- Metadata broker fixture stopped normally only after volume close.
+  No automatic retry, forced detach, signalling or uncertain-state cleanup.
+  The unmounted image and evidence remain.
 
-The source snapshots are evidence for implementation, not execution authority.
-No original installed receipt or accepted native source is rewritten to force
-new code through an old inventory. Any changed runtime source needs its own
-qualified candidate and independent verification before new native acceptance.
+### Explicit scope and diagnostics
 
-### Next step
+Model factory/computation/close is an explicit scripted fixture; three fixture
+invocations, zero real model/provider calls. Native API/authority/worker/store
+and close are original implementations. Native profile event counts include
+coroutine resumes, not distinct task counts.
 
-Freeze the static-qualified source as an immutable candidate commit. Build and verify its new installation
-before generating the receipt-bound task-free producer and one-attempt finite
-acceptance bundle. Do not execute an unqualified bundle.
-P1 remains IN PROGRESS. P2-P5, full D3B, M1 and production remain OPEN.
+Finite child stderr is 4513 bytes and is preserved. It includes native SQLite
+DELETE-mode warnings, a nonfatal missing agent.secret_sources.command
+registration diagnostic and the expected controlled model failure traceback.
+This does not accept that secret-source integration or general provider readiness.
 
+No general runtime admission/service, real broker exchange, CLI/unattended
+policy, restart replay, full D3B, full P1, M1 or production acceptance is claimed.
+
+### Verification and evidence
+
+- Windows exact-current-source focused suite: PASS, 351 processed /
+  319 passed / 32 platform skips, exit 0, 228.640 seconds.
+- Windows preparation: initial one fixture portability error preserved;
+  corrected 23/23 PASS, exit 0, 15.171 seconds. Product validator unchanged.
+- Pre-candidate full static/discovery: PASS, 6498 root files, 2 gitlinks,
+  3952 discovered tests, exit 0, 71.743 seconds.
+- Final full static/discovery after generated sources/evidence: PASS,
+  6564 root files / 2 gitlinks / 3952 discovered tests, exit 0, 65.479 seconds.
+  Static discovery is not full discovered-suite execution.
+- Independent source, concrete installation/acceptance binding and actual
+  native evidence reviews preserve the fixture/native/provider distinction.
+- Original root 33-file changed/untracked byte inventory and protected Git
+  states rechecked unchanged before final publication. 24 current source/test/QA
+  hashes match; all 81 candidate harness files retain their canonical Git bytes.
+  Existing Windows LICENSE CRLF presentation is explicitly recorded; its exact
+  canonical Git blob matches the installed candidate. Runtime bytes unchanged.
+
+Report: [R156A1](docs/M1-FINITE-PRODUCT-R156A1.md).
+Acceptance summary: [summary](evidence/m1-finite-product-r156a1/acceptance-summary.json).
+Native evidence: [image001](evidence/m1-native-finite-r156a1/image001/result.json).
+Ordinary evidence: [ordinary001](evidence/m1-native-finite-r156a1/ordinary001/result.json).
+Installation: [receipt](evidence/m1-finite-product-r156a1/installation/installation-receipt.json).
 Roadmap: [product roadmap](docs/PRODUCT-ROADMAP.md).
-Current report: [R156A1](docs/M1-FINITE-PRODUCT-R156A1.md).
-Prior report: [R155A1](docs/M1-SEED-READINESS-R155A1.md).
+All earlier R156 checkpoints remain under docs/status-history/r156a1-*.md.
+
+### Publication and exact next step
+
+This tracked snapshot is written before its own final commit. Publication
+requires exact pushed-SHA alaz/local-ci success, then ordinary fast-forward main.
+The post-commit journal in this worktree's scratch/r156a1-publication/ records
+the actual final SHA, accepted-ci-before-main.json and final-publication.json.
+Live Git refs and that exact SHA's latest status are authoritative; no push
+or CI success is inferred from this pre-commit snapshot. Read them on resume.
+Final docs/evidence commit must preserve all candidate-selected runtime bytes
+from e641a50; generated QA is outside the runtime source candidate.
+
+P1 remains IN PROGRESS, with current-installation finite acceptance complete.
+The next narrow P1 gate is the separate readiness/no-work operation on the same
+838-source installation using a fresh image and original lifecycle. R155's
+readiness PASS belongs to its older installation and is not silently reused.
+Do not repeat the accepted R156 finite attempt or append another child to it.
+No runtime-code change is needed for that remaining qualification.
+
+P2 source work may proceed in parallel: daily local start/task/status/result/
+usage/cancel/close; selected provider's necessary source/dependency coverage.
+Real-provider acceptance needs P1 closure plus a chosen model and explicit
+budget. P3 persistence/memory reuse, P4 fault/operation flows and P5 same-release
+M1-01..M1-07/pilot remain OPEN.
 
 ### Work log
 
-- R155 publication and latest exact-SHA CI were checked against live refs.
-- Protected original files and native/source worktrees passed entry comparison.
-- Isolated R156 worktree created from accepted main; three source reviews split.
+- Entry live refs and exact R155 CI checked; original root33 and native/source
+  worktrees compared against prior final publication.
+- Fixed finite supervisor, projection, strict work/result and native lifecycle
+  implemented. Independent review fixed preparation deadline, pre-release task
+  checks, exact three-connection identity and post-wait elapsed deadline.
+- Windows focused and corrected preparation suites passed; first portability
+  error retained. Pre-candidate static/discovery passed.
+- 41 owned files frozen at e641a50; 17 source/test hashes matched tested bytes.
+  Initial isolated-Python exporter import failure happened before output;
+  ordinary -B invocation exported the complete candidate successfully.
+- Actual install binding/operator/transport/bundle reviewed, installed once,
+  exact original receipt read back, and seven bound QA sources generated.
+- ordinary001 accepted the exact task-free producer; host prepare revalidated
+  all six evidence files and froze image001's four-source bundle.
+- image001 completed PASS with normal/replay/new/error and original normal close.
+- Actual diagnostic output and remaining current-installation readiness gate
+  recorded without broadening scope. Evidence and prior checkpoints retained.
 
-- Eleven owned source/test files were applied with exact before/after hashes.
-- Original readiness behavior and one-child ownership remain; finite work has a separate fixed entry and receipt.
-- Independent review found and fixed unbounded async preparation and pending-task checks after lease release. Both now retain ownership on uncertainty.
-- The scripted API path does not set native CLI/unattended finite policy flags; no such policy acceptance is claimed.
-- No R156 installation, WSL/root execution, real provider call, commit or push has occurred at this checkpoint.
-
-- Current Windows source passed 351 focused tests (319 pass, 32 platform skips; exit 0; 228.640 seconds).
-- Preparation fixture's Linux path spelling was corrected for Windows without weakening the generated Linux validator. Corrected 23/23 passed in 15.171 seconds; initial one-error result retained separately.
-- Native, installation and acceptance source reviews found no remaining source-contract blocker. Actual projected execution remains a separate unrun gate.
-- Source checkpoint now includes fixed candidate preparation and receipt-bound generation; old R154/R155 sources and accepted installed tree remain unchanged.
-
-- Pre-candidate full static/discovery passed: 6498 indexed root files, 2 source gitlinks, 3952 discovered tests; no errors. The discovered suite was not executed by this gate.
-- Source checkpoint is qualified for immutable candidate construction; no R156 install or native acceptance has run yet.
+- Final full static/discovery PASS: 6564 files / 2 gitlinks / 3952 tests discovered, exit 0 in 65.479 seconds. Final closure metadata is checked separately after this scan.
+- Independent actual acceptance and original ownership reviews PASS; all ordinary proof rows are bound and the three native operation receipts are terminal exit 0.
+- Exact pushed-SHA CI and normal main publication are recorded afterward in scratch/r156a1-publication/ without a self-referential tracked commit.

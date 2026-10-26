@@ -1,0 +1,50 @@
+{
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "baseCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "files": {
+    "scripts/bootstrap_retained_profile_r156.py": {
+      "bytes": 35124,
+      "sha256": "02ac2d81d72e0ab11739081b3b95ccb05db2871581bc3494518fe2190a66a5aa"
+    },
+    "scripts/qa/r156a1_accept.py": {
+      "bytes": 38571,
+      "sha256": "8f956d7e9d5df684466de33a2ef4dabb35a7c5920bad0a61103634f6f871c6ce"
+    },
+    "scripts/qa/r156a1_finite_assert.py": {
+      "bytes": 13360,
+      "sha256": "6d374e49ce37269422f14d11feaf5a93fbe6d9b961e3fc00c722834f164ce7e7"
+    },
+    "scripts/qa/r156a1_linux_accept.py": {
+      "bytes": 36527,
+      "sha256": "74a632febec784437eb98f8134ed3591aedded5465c2b9017d1c80e895e95c5b"
+    },
+    "scripts/qa/r156a1_linux_transport.py": {
+      "bytes": 13487,
+      "sha256": "e262e1581b3f8331aee0eb5e35468a4c334e932a88a44300109edd8d8d051476"
+    },
+    "scripts/qa/r156a1_ordinary_seed.py": {
+      "bytes": 11436,
+      "sha256": "baa56be5f0df56a1e9679bb8efccb445aafd31c32c0fc0c4b2c22ce17fde13a7"
+    },
+    "scripts/qa/r156a1_seed_child.py": {
+      "bytes": 30458,
+      "sha256": "0da76d47bbdff0dcd188bc899d44d90fd543530210248e8e2abe557e6647f372"
+    }
+  },
+  "finiteWorkExecuted": false,
+  "fullD3BAccepted": false,
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "installationBindingSha256": "5ef09ad06075995fb7d1d82ef49b1712c66c83a7dd7b260fe70850110ba45350",
+  "installationReceiptSha256": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+  "installedBytesVerifiedNow": false,
+  "kind": "R156A1_ACCEPTANCE_SOURCE_PREPARATION",
+  "nativeExecuted": false,
+  "ordinaryProofAccepted": false,
+  "ordinaryProofRequired": true,
+  "realProviderCalls": 0,
+  "receiptParsedAndBound": true,
+  "rootRequested": false,
+  "sameImageFiniteAccepted": false,
+  "state": "ACCEPTANCE_SOURCES_PREPARED_NOT_RUN"
+}

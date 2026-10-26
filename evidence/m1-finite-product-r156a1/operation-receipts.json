@@ -1,0 +1,58 @@
+{
+  "allThreeEffectfulOperationsTerminalExitZero": true,
+  "effectfulOperationRemainingUnknown": false,
+  "kind": "R156A1_BRIDGE_TERMINAL_OBSERVATIONS",
+  "records": [
+    {
+      "acceptedAt": 1793000001598,
+      "completedAt": 1793000022072,
+      "effect": "applied",
+      "exitCode": 0,
+      "metrics": {
+        "executionMs": 20449,
+        "providerMs": 20427.92,
+        "providerTimingComplete": true,
+        "queueMs": 25,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "requestId": "adc60156-54c2-4148-92bf-b1566275fd94",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1793000139406,
+      "completedAt": 1793000155173,
+      "effect": "applied",
+      "exitCode": 0,
+      "metrics": {
+        "executionMs": 15749,
+        "providerMs": 15729.18,
+        "providerTimingComplete": true,
+        "queueMs": 18,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "requestId": "42d90156-3554-483d-8b59-1e275173d836",
+      "state": "completed"
+    },
+    {
+      "acceptedAt": 1793000226237,
+      "completedAt": 1793000269857,
+      "effect": "applied",
+      "exitCode": 0,
+      "metrics": {
+        "executionMs": 43597,
+        "providerMs": 43580.924,
+        "providerTimingComplete": true,
+        "queueMs": 23,
+        "resultBytes": 38,
+        "verificationMs": 0,
+        "verificationTimingComplete": true
+      },
+      "requestId": "2edf0156-c0e9-469f-840d-470d55c7c90b",
+      "state": "completed"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "destination": "/opt/alaz-r156a1",
+  "installationOnly": true,
+  "intentSha256": "8f51dd3cd2a6ff051a294ca9583f74bc43f6a7f0b58fc515e6c5081563cbaaf0",
+  "rootRequested": true,
+  "startedUtc": "2026-10-26T07:33:21.956336+00:00",
+  "state": "EXECUTION_STARTED_NO_REPLAY"
+}
