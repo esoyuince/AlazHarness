@@ -1,4 +1,4 @@
-"""Provenance guards for the nine exact pre-R159 source archives."""
+"""Provenance guards for the ten exact pre-R159 source archives."""
 
 import copy
 import hashlib
@@ -22,7 +22,8 @@ OLD = {
     "packages/claw-hermes/host_gate.py": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
     "packages/claw-hermes/host_gate_plugin.py": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
     "packages/claw-hermes/local-control.mjs": "2037499a06c7baf29f90e1dc54c55d2d8f73b99c4eb665f7f6bcbc8cceacaf49",
-    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191"
+    "packages/claw-hermes/run-recovery.mjs": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
+    "tests/test_retained_restart_receipt_r140c6.py": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d"
 }
 
 
@@ -40,6 +41,7 @@ class HistoricalBorrowedServiceTests(unittest.TestCase):
         self.binding_path = self.folder / "historical-source-bindings.json"
         shutil.copyfile(ROOT / FOLDER / self.binding_path.name, self.binding_path)
         self.binding = json.loads(self.binding_path.read_text(encoding="utf-8"))
+        self.assertEqual(set(self.binding["sources"]), set(OLD))
         for name, row in self.binding["sources"].items():
             shutil.copyfile(ROOT / row["path"], self.root / row["path"])
             live = self.root / name

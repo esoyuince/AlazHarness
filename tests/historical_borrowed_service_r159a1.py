@@ -1,6 +1,6 @@
 """Exact parent bytes for old receipts, never current R159 acceptance.
 
-These nine files changed in R159. Their archives were exported from the pinned
+These ten files changed in R159. Their archives were exported from the pinned
 parent Git commit, not reconstructed from old expected hashes. Only an exact
 name and historical digest pair can select an archive; every other generation
 continues through the existing live-source or older-archive resolver.
@@ -57,6 +57,11 @@ SOURCES = {
         "path": "evidence/p2-borrowed-service-r159a1/base-packages__claw-hermes__run-recovery.mjs.txt",
         "sha256": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
         "size": 2528
+    },
+    "tests/test_retained_restart_receipt_r140c6.py": {
+        "path": "evidence/p2-borrowed-service-r159a1/base-tests__test_retained_restart_receipt_r140c6.py.txt",
+        "sha256": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d",
+        "size": 7789
     }
 }
 

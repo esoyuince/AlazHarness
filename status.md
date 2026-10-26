@@ -36,8 +36,9 @@ scratch/worktrees/hermes-borrowed-service-r159a1.
 - Separate 760-file service selection/manifest and five-path Host Gate lock pin
   exact native Git blobs. Historical finite/retained selections, default host lock,
   execution lock and the accepted R156 installation remain unchanged.
-- Nine exact parent source archives preserve historical receipt identity. Old
-  expected digests/outcomes remain unchanged; new source acceptance is separate.
+- Ten exact parent archives (nine product sources and the pre-repair R140 test)
+  preserve historical receipt identity. Old expected digests/outcomes remain
+  unchanged; new source acceptance is separate.
 
 ### Verification
 
@@ -81,6 +82,33 @@ receipt-repair-tests.json, checks/receipt-repair-windows.json and
 ci-repair-review.json. A new normal commit and its full exact-commit CI are still
 required; these focused results do not replace that publication gate.
 
+### Second full CI and the historical test archive
+
+The normal repair commit e25c2cc063d4c595ddbb5b7a62c069453d5971d9 resolved
+both original R140 failures. Its full CI ran 4084 tests: 4061 passed, 1 failed,
+22 skipped and 0 errors. The unchanged L145 receipt checks 625 historical source
+hashes, including the R140 test's pre-repair bytes. That newly changed test needed
+its own exact historical generation. The second failed CI is preserved separately
+in second-ci-failure.json and its original checks/ metadata and log.
+
+The strict R159 binding now adds only that one test archive: the exact 7789-byte
+parent Git blob, verified at both 37620d5 and a4d2904. The old nine binding entries,
+all old receipt digests/outcomes, the current R140 repair and the L145 test remain
+unchanged. The archive selector's function body is unchanged; the same six
+provenance methods now cover ten named generations, including current/unknown
+hash refusal and absent/truncated/same-length-corrupt archives.
+
+This extension passed 8 focused Linux tests and all 28 primary Windows tests
+(R140 10, L145 6, R159 provenance 6, R158 provenance 6): no failures, errors or
+skips. The confirmed primary run has an actual terminal exit0. Its predecessor
+also reported 28/28 but lost the native terminal receipt during a connection/lane
+change; both records are preserved separately. The independent confirmation ran
+after verifying that the previous owned test process was absent.
+See generation-repair-tests.json, checks/generation-repair-windows-confirmed.json
+and ci-generation-repair-review.json. These remain historical-source checks, not
+new runtime acceptance. A new full exact-commit CI must pass before normal
+fast-forward main publication.
+
 ### Git and CI handoff
 
 All source/test transfers use verified parent/current hashes. Native feature
@@ -122,6 +150,9 @@ No provider or model call occurred in R159; no existing user service was adopted
 - First source delivery checkpoint: docs/status-history/r159a1-source-delivery.md.
 - Initial full-CI failure preserved; historical receipt-generation repair and
   independent review completed, with 8 focused and 22 primary regressions PASS.
+- First repair checkpoint: docs/status-history/r159a1-receipt-repair.md.
+- Second full-CI failure preserved; exact historical R140 test archive added and
+  both receipt chains verified together in the confirmed 28-test primary run.
 - Final publication: exact-commit CI and protected-root closure must be read from
   the final-publication journal identified above.
 

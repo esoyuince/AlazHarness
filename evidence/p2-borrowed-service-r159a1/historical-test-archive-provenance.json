@@ -1,0 +1,21 @@
+{
+  "currentSha256": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502",
+  "historicalGitBlobsVerified": [
+    {
+      "bytes": 7789,
+      "path": "tests/test_retained_restart_receipt_r140c6.py",
+      "revision": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+      "sha256": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d"
+    },
+    {
+      "bytes": 7789,
+      "path": "tests/test_retained_restart_receipt_r140c6.py",
+      "revision": "a4d290441b88afc8eb9bd8193a03c72475bb051f",
+      "sha256": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d"
+    }
+  ],
+  "method": "git cat-file blob <exact revision>:tests/test_retained_restart_receipt_r140c6.py, binary SHA-256 and byte-length verification",
+  "nativeExitCode": 0,
+  "nativeRequestId": "b0940159-39a9-471f-b658-26578930641d",
+  "result": "PASS"
+}

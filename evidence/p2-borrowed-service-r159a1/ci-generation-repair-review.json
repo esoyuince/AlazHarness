@@ -1,0 +1,287 @@
+{
+  "schema": 1,
+  "kind": "R159A1_SECOND_CI_GENERATION_REPAIR_INDEPENDENT_REVIEW",
+  "atUtc": "2026-10-26T18:19:34.078212+00:00",
+  "reviewer": "/root/r159_lifecycle_tests",
+  "result": "SOURCE_AND_TARGETED_REVIEW_PASS_FULL_CI_PENDING",
+  "frozen": true,
+  "scope": "Exact tenth historical archive and its provenance coverage; recorded focused validations and documentation. This review writes only this JSON and does not rerun tests or change product, native, configuration, test, or historical receipt files.",
+  "previousReview": {
+    "artifact": {
+      "path": "evidence/p2-borrowed-service-r159a1/ci-repair-review.json",
+      "bytes": 25460,
+      "sha256": "9e6aa5f579bac23aa008b9b9cc1ca792318a9614952f8abc68e23e2b9c501c35"
+    },
+    "unchanged": true,
+    "generation": "First R140 receipt repair, recorded before the tenth archive extension; retained without retrospective rewriting."
+  },
+  "failedCiPreserved": {
+    "initialFailure": {
+      "path": "evidence/p2-borrowed-service-r159a1/initial-ci-failure.json",
+      "bytes": 2251,
+      "sha256": "1a2000d22d52fbf692057e708746c8d9f27e90e9f73698dd879017f2584c8aa2"
+    },
+    "secondFailure": {
+      "path": "evidence/p2-borrowed-service-r159a1/second-ci-failure.json",
+      "bytes": 2242,
+      "sha256": "e20b841aa1b6126006acf9d8c1cbff8ed78f42cf9d39aea833309b9012fa37b7"
+    },
+    "secondMetadata": {
+      "path": "evidence/p2-borrowed-service-r159a1/checks/second-ci-e25c2cc.metadata.json",
+      "bytes": 1907,
+      "sha256": "669065d85212a9653d99b83ce92a8d807b472bf6a48dc1ca9086a5a801d01071"
+    },
+    "secondLog": {
+      "path": "evidence/p2-borrowed-service-r159a1/checks/second-ci-e25c2cc.log",
+      "bytes": 7258,
+      "sha256": "4c15521c2aebc45ec0e6737a1a542f1f2648e7b9e8c4adfccb49254d66fb582b"
+    },
+    "target": "e25c2cc063d4c595ddbb5b7a62c069453d5971d9",
+    "run": 4084,
+    "passed": 4061,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 22,
+    "elapsedSeconds": 285.269,
+    "exitCode": 1,
+    "failureMethod": "test_projected_launch_receipt_l145a8.ProjectedLauncherEvidence.test_new_code_is_additive_and_scope_not_native_or_kernel",
+    "cause": "The unchanged L145 625-source baseline expects the pre-repair R140 test digest ba9d6c39..., while the repaired current R140 test is 986633e3.... The earlier two R140 failures are absent from this completed full CI; this new L145 failure remains a failed result.",
+    "staticGate": "NOT_RUN_AFTER_UNITTEST_FAILURE",
+    "metadataTargetAndContainerExitVerified": true
+  },
+  "sourceReview": {
+    "result": "PASS",
+    "changedExistingFiles": [
+      {
+        "path": "tests/historical_borrowed_service_r159a1.py",
+        "before": {
+          "bytes": 3820,
+          "sha256": "c47d6abe50d23a4ccee85404e5fff3564925113469ba3dfad68b9b322f56cbe7"
+        },
+        "after": {
+          "bytes": 4099,
+          "sha256": "ddddde0ad1fc7e5c71f8a9358eedde021d1396f5db8b5bfff46e1beac56e7eca"
+        }
+      },
+      {
+        "path": "tests/test_historical_borrowed_service_r159a1.py",
+        "before": {
+          "bytes": 7232,
+          "sha256": "213e1e60a4181b8dc0f47124415b84a166e2a8868b0ee5f4069f9a0e702325ef"
+        },
+        "after": {
+          "bytes": 7417,
+          "sha256": "7b595d9fa76ea3f0e4bbe290a07673864b6cadc0bb66c70c63fbaa39e3d710f2"
+        }
+      },
+      {
+        "path": "evidence/p2-borrowed-service-r159a1/historical-source-bindings.json",
+        "before": {
+          "bytes": 2633,
+          "sha256": "2fc2b838f4af39ad28f14d4a09e6ab97b375c23ad99cdd5cc5c024c56b6d9b90"
+        },
+        "after": {
+          "bytes": 2907,
+          "sha256": "6fc65ccc2264dd516a7ccb22bcbca87afde636fb3cea3e945e38e0c3597217af"
+        }
+      }
+    ],
+    "newArchive": {
+      "path": "evidence/p2-borrowed-service-r159a1/base-tests__test_retained_restart_receipt_r140c6.py.txt",
+      "bytes": 7789,
+      "sha256": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d"
+    },
+    "archiveGitProvenance": {
+      "path": "evidence/p2-borrowed-service-r159a1/historical-test-archive-provenance.json",
+      "bytes": 857,
+      "sha256": "a928a325f0720ff3700b75a11d74cdf8c559a6aa3aec709af0df005fab76f24d"
+    },
+    "exactGitRevisionsReportedInProvenance": [
+      "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+      "a4d290441b88afc8eb9bd8193a03c72475bb051f"
+    ],
+    "archiveEqualsLocallyExportedParentBaselineBytes": true,
+    "beforeSnapshot": {
+      "path": "/tmp/r159-generation-review-before.json",
+      "sha256": "0dfa2f5f5d08a31d50c05fddca2afcbf9f67b6e904421cabf007ccd005b6f1e1",
+      "role": "Reviewer pre-edit text capture for the three-file diff; Git blob provenance is separately bound above."
+    },
+    "oldArchiveCount": 9,
+    "newArchiveCount": 10,
+    "oldNineBindingValuesAndArchiveBytesUnchanged": true,
+    "bindingMetadataUnchanged": true,
+    "archivedSourceFunctionAstUnchanged": true,
+    "existingProvenanceTestMethodCount": 6,
+    "allSixTestMethodAstsUnchanged": true,
+    "testCoverageChange": "One exact R140 test entry is added to OLD; setUp now asserts binding keys equal the explicit OLD key set. Existing six method bodies therefore also exercise this tenth generation. Docstrings change nine to ten.",
+    "unchangedSources": [
+      {
+        "path": "tests/test_retained_restart_receipt_r140c6.py",
+        "bytes": 8479,
+        "sha256": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502"
+      },
+      {
+        "path": "tests/test_projected_launch_receipt_l145a8.py",
+        "bytes": 4882,
+        "sha256": "a563b0d8a1125f3c909148fc084ed7634a63468a8335e245007464798d3a9bf2"
+      },
+      {
+        "path": "tests/historical_self_identity_r150a1.py",
+        "bytes": 2581,
+        "sha256": "51e79ab79981c52e23b7038e83ff4b26d4d51b06be9aed44955ea9631ef36712"
+      }
+    ],
+    "identityAndProofBoundaries": [
+      "Only the exact source name and old digest select this fixed archive. Current R140 digest and unknown digests return None before binding/archive access, preserving live-file hashing.",
+      "The complete binding object remains pinned, including base, fixed paths, exact source map, currentSourceAcceptance=false and nativeRerun=false. Selected archives require both exact byte length and SHA-256.",
+      "The L145 test and its historical expected hashes/outcomes are unchanged; its existing source_hash delegation now resolves the newly archived test generation. Current repaired R140 assertions still independently hash live bytes and reject old-proof inheritance.",
+      "The added archive establishes receipt-time source identity only. It neither executes old code nor transfers historical native, kernel, model or installed-service acceptance to current source."
+    ],
+    "productNativeConfigurationChangesInThisRepair": false,
+    "historicalReceiptExpectedValuesOrOutcomesChanged": false
+  },
+  "focusedValidation": {
+    "local": {
+      "record": {
+        "path": "evidence/p2-borrowed-service-r159a1/generation-repair-tests.json",
+        "bytes": 4925,
+        "sha256": "afe31e965a1747d8e50dd7741356001fd19d45a4ccff79d5433c6c2ad3ccb1ac"
+      },
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/generation-repair-focused.log",
+        "bytes": 1700,
+        "sha256": "6bbeac5ee50eb7f33bef50f669d0a04b9c0ceef571a54a8e0e063c787bca994e"
+      },
+      "result": "PASS",
+      "run": 8,
+      "passed": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "unittestElapsedSeconds": 0.039,
+      "selection": "Two repaired R140 methods plus all six existing R159 provenance methods.",
+      "exactArgv": [
+        "/tmp/r159-native-test-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof",
+        "test_historical_borrowed_service_r159a1",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/288e2938ab4c/r159-source/tree",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "tests"
+      },
+      "uniqueSuccessfulLogIdsVerified": 8,
+      "recordedSourceAndHistoricalEvidenceHashesRecheckedAgainstMirror": true
+    },
+    "primaryConfirmed": {
+      "record": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows-confirmed.json",
+        "bytes": 9235,
+        "sha256": "18731b0f426873bcf10dea0db224bc2096e8276e4f3d0dae5acad28c8475cdee"
+      },
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows-confirmed.log",
+        "bytes": 5388,
+        "sha256": "8825228e7bb38d6467218d986fe991b169ad8ae593c58bdf8490a69bd8fbc9f4"
+      },
+      "result": "PASS",
+      "run": 28,
+      "passed": 28,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "elapsedSeconds": 13.01,
+      "unittestLogElapsedSeconds": 13.009,
+      "moduleCounts": {
+        "test_retained_restart_receipt_r140c6": 10,
+        "test_projected_launch_receipt_l145a8": 6,
+        "test_historical_borrowed_service_r159a1": 6,
+        "test_historical_local_control_r158a1": 6
+      },
+      "commandKind": "python -B -c explicit unittest loader/tracking runner",
+      "pythonExecutable": "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+      "uniqueSuccessfulIdsMatchedBetweenRecordAndLog": 28,
+      "recordedSourceHashesRecheckedAgainstMirror": 30,
+      "nativeTerminalObservation": {
+        "requestId": "b1070159-39a9-471f-b658-26578930641d",
+        "state": "COMPLETED",
+        "exitCode": 0,
+        "observedBy": "/root",
+        "reviewerBasis": "Parent reported the completed native terminal receipt for b107. Reviewer independently read and hashed the saved runner JSON/log and matched their counts, identities and source hashes; reviewer made no native-bridge call."
+      },
+      "fullL145SixMethodModuleIncluded": true,
+      "unchangedL145625SourceAssertionIncluded": true
+    },
+    "priorPrimaryRunWithoutTerminalReceipt": {
+      "record": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows.json",
+        "bytes": 8630,
+        "sha256": "c65297780ee2f6b9cf78b0ace3ea80224395b899e8ad7dfb27024bb5a07277b8"
+      },
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows.log",
+        "bytes": 5388,
+        "sha256": "56df95bf7c3ca8e876ee52e22ddc61b30c446c4628e6c82528de2989de0a6bb0"
+      },
+      "requestId": "b0980159-39a9-471f-b658-26578930641d",
+      "reportedRun": 28,
+      "reportedPassed": 28,
+      "reportedRunnerExitCode": 0,
+      "nativeTerminalReceiptRecovered": false,
+      "usedAsTerminalCompletionEvidence": false,
+      "usedAsAdditionalUniqueCoverage": false,
+      "recovery": "Preserved separately after a connection/lane change. The confirmed record reports the previous owned Python process absent before the independent b107 confirmation."
+    },
+    "reviewerRanAdditionalBehavioralTests": false
+  },
+  "documentationReview": {
+    "result": "PASS",
+    "artifacts": [
+      {
+        "path": "status.md",
+        "bytes": 10124,
+        "sha256": "1e93eb3e004be8c5e6ad40dacf665b17e01d9f460bfc572244c1886b2c807553"
+      },
+      {
+        "path": "docs/P2-BORROWED-SERVICE-R159A1.md",
+        "bytes": 13098,
+        "sha256": "4b1b2400a890bcc4377dedbf0215035655159c84dfdb57303dc1763e9206f467"
+      },
+      {
+        "path": "docs/status-history/r159a1-receipt-repair.md",
+        "bytes": 8123,
+        "sha256": "fef46e075350e597c893cb12ab6b8aa6fd991230f27ea8314021fbe2d3bedfc8"
+      }
+    ],
+    "findings": [
+      "Both failed exact-commit CI histories remain explicit and separately referenced.",
+      "The current archive set is described as nine product sources plus one historical R140 test generation; the prior receipt-repair status is preserved unchanged.",
+      "The focused 8/28 results and the unconfirmed predecessor are distinguished; focused source checks do not replace final full CI.",
+      "P2 remains IN PROGRESS and production OPEN. Installed daily service, new P2 installation and real-model acceptance remain outside this review."
+    ]
+  },
+  "remainingGates": {
+    "newRepairCommit": "NOT_YET_RECORDED_AT_REVIEW",
+    "fullExactCommitCi": "PENDING",
+    "mainPublication": "NOT_ACCEPTED_BY_THIS_REVIEW",
+    "publicationJournal": "Read the later exact publication evidence and live Git state separately; neither older failed CI nor these focused tests establishes final publication."
+  },
+  "acceptanceLimits": {
+    "sourceAndFocusedHistoricalIdentityReviewOnly": true,
+    "nativeRuntimeExecutedByThisReview": false,
+    "installedServiceAccepted": false,
+    "newLinuxRestartAccepted": false,
+    "providerCalls": 0,
+    "modelCalls": 0,
+    "productionAccepted": false,
+    "oldRuntimeProofInherited": false
+  }
+}

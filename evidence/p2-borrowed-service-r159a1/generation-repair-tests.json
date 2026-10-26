@@ -1,0 +1,131 @@
+{
+  "acceptanceLimits": {
+    "fullL145ReceiptModuleExecutedLocally": false,
+    "fullSuiteExecutedByThisRun": false,
+    "installedServiceAccepted": false,
+    "modelCalls": 0,
+    "nativeRuntimeStarted": false,
+    "providerCalls": 0
+  },
+  "archiveProvenance": {
+    "path": "evidence/p2-borrowed-service-r159a1/historical-test-archive-provenance.json",
+    "sha256": "a928a325f0720ff3700b75a11d74cdf8c559a6aa3aec709af0df005fab76f24d"
+  },
+  "archiveRecordCount": 10,
+  "archiveResolverFunctionUnchanged": true,
+  "argv": [
+    "/tmp/r159-native-test-env/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound",
+    "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof",
+    "test_historical_borrowed_service_r159a1",
+    "-v"
+  ],
+  "atUtc": "2026-10-26T18:09:24.877662+00:00",
+  "coveredNegatives": [
+    "current and unknown digests do not select or read the archive",
+    "missing archive refuses",
+    "truncated archive refuses",
+    "same-size changed archive refuses",
+    "altered binding identity cannot redirect or relabel a source",
+    "unlisted source cannot borrow a known digest"
+  ],
+  "cwd": "/workspace/scratch/288e2938ab4c/r159-source/tree",
+  "elapsedSeconds": 0.104801,
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "tests"
+  },
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "harnessCommitThatExposedGenerationFailure": "e25c2cc063d4c595ddbb5b7a62c069453d5971d9",
+  "historicalEvidenceFilesVerifiedBeforeAndAfter": [
+    {
+      "bytes": 137956,
+      "path": "evidence/d3b-retained-profile-r140c6/source-custody.json",
+      "sha256": "a0946595972995ecf07a3c5db035950ecadf6c66b152d8abbd7387306f677896"
+    },
+    {
+      "bytes": 68755,
+      "path": "evidence/d3b-retained-profile-r140c6/baseline.json",
+      "sha256": "5bd7cab47e184d900a9f2d54fa1422ab073922d2213b1b8d904d80b6bb5c8ba5"
+    },
+    {
+      "bytes": 102821,
+      "path": "evidence/d3b-retained-profile-r140c6/restart003-result.json",
+      "sha256": "7403651f61f111ec2eeba6f221096753c46264d9df8b221419eb522fe8d31909"
+    },
+    {
+      "bytes": 100712,
+      "path": "evidence/d3b-retained-profile-r140c6/restart004-error-result.json",
+      "sha256": "eb7078992d39f19df3c46d4769c62338f2bc4f753f3835ae8f7ecea4871b243c"
+    },
+    {
+      "bytes": 608,
+      "path": "evidence/d3b-retained-profile-r140c6/full001/result.json",
+      "sha256": "1ff6b467cd446d7094e71a40539a2dc7c28c76dc1c130c6eaf7f7e3421679a76"
+    }
+  ],
+  "kind": "R159A1_exact_tenth_archive_focused_validation",
+  "log": {
+    "bytes": 1700,
+    "path": "evidence/p2-borrowed-service-r159a1/checks/generation-repair-focused.log",
+    "sha256": "6bbeac5ee50eb7f33bef50f669d0a04b9c0ceef571a54a8e0e063c787bca994e"
+  },
+  "negativeCoverageExpandedByExplicitExpectedGeneration": "tests/test_retained_restart_receipt_r140c6.py",
+  "oldArchiveRecordCount": 9,
+  "oldNineArchiveBytesUnchanged": true,
+  "oldNineRecordsUnchanged": true,
+  "parentHarness": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+  "previousCiFailuresPreserved": true,
+  "requiredNextGates": [
+    "Primary R140/L145/R158/R159 focused receipt and provenance tests",
+    "Full repaired exact-commit CI"
+  ],
+  "result": "PASS",
+  "schema": 1,
+  "scope": "two repaired R140 receipt methods plus six existing R159 provenance methods, with ten archive generations; no native runtime execution",
+  "skipped": 0,
+  "sourceFilesVerifiedBeforeAndAfter": [
+    {
+      "bytes": 7789,
+      "path": "evidence/p2-borrowed-service-r159a1/base-tests__test_retained_restart_receipt_r140c6.py.txt",
+      "sha256": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d"
+    },
+    {
+      "bytes": 2907,
+      "path": "evidence/p2-borrowed-service-r159a1/historical-source-bindings.json",
+      "sha256": "6fc65ccc2264dd516a7ccb22bcbca87afde636fb3cea3e945e38e0c3597217af"
+    },
+    {
+      "bytes": 4099,
+      "path": "tests/historical_borrowed_service_r159a1.py",
+      "sha256": "ddddde0ad1fc7e5c71f8a9358eedde021d1396f5db8b5bfff46e1beac56e7eca"
+    },
+    {
+      "bytes": 7417,
+      "path": "tests/test_historical_borrowed_service_r159a1.py",
+      "sha256": "7b595d9fa76ea3f0e4bbe290a07673864b6cadc0bb66c70c63fbaa39e3d710f2"
+    }
+  ],
+  "successfulTestMethods": 8,
+  "testMethodsAddedOrRemoved": false,
+  "testMethodsRun": 8,
+  "timeoutSeconds": 30,
+  "unchangedR140AndL145Tests": [
+    {
+      "bytes": 8479,
+      "path": "tests/test_retained_restart_receipt_r140c6.py",
+      "sha256": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502"
+    },
+    {
+      "bytes": 4882,
+      "path": "tests/test_projected_launch_receipt_l145a8.py",
+      "sha256": "a563b0d8a1125f3c909148fc084ed7634a63468a8335e245007464798d3a9bf2"
+    }
+  ],
+  "unittestElapsedSeconds": 0.039
+}

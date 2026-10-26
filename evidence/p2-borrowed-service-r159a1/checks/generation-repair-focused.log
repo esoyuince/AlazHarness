@@ -1,0 +1,13 @@
+test_native_sources_and_current_selected_code_bound (test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound) ... ok
+test_current_changed_sources_do_not_inherit_old_runtime_proof (test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof) ... ok
+test_altered_binding_identity_cannot_redirect_or_relabel_an_archive (test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_altered_binding_identity_cannot_redirect_or_relabel_an_archive) ... ok
+test_current_and_unknown_generations_use_live_bytes_without_archive_access (test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_current_and_unknown_generations_use_live_bytes_without_archive_access) ... ok
+test_known_parent_generations_use_exact_archived_bytes (test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_known_parent_generations_use_exact_archived_bytes) ... ok
+test_missing_or_unreadable_binding_fails_for_a_known_generation (test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_missing_or_unreadable_binding_fails_for_a_known_generation) ... ok
+test_missing_truncated_or_same_length_altered_archive_fails_closed (test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_missing_truncated_or_same_length_altered_archive_fails_closed) ... ok
+test_unlisted_name_cannot_borrow_a_known_digest (test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_unlisted_name_cannot_borrow_a_known_digest) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.039s
+
+OK

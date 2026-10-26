@@ -87,7 +87,7 @@ kilidi ve execution kilidi değiştirilmez.
 bağımlılıkları ve gerçek seçilmiş modelin bütün lazy import yolları için
 kurulum kabulü yapılmış sayılmaz.
 
-Değişen dokuz harness dosyasının tam parent Git blob'ları ayrı arşivlenir.
+Değişen dokuz ürün kaynak dosyasının tam parent Git blob'ları ayrı arşivlenir.
 Tarihsel resolver yalnız sabit dosya adı ve beklenen eski hash eşleşince bu
 arşive gider; yeni/yanlış hash'i kabul etmez. Önceki receipt sonuçları veya
 beklenen eski digest'ler yeniden yazılmaz. Bu arşivler eski kabulün kimliğini
@@ -147,6 +147,32 @@ onarım commit'inin tam CI kabulü, normal main yayını ve yayın sonrası doğ
 sonuçları aşağıdaki final publication journal'dan okunmalıdır. Hedefli testler
 kurulu günlük servis, yeni Linux restart, gerçek model veya production kabulü
 anlamına gelmez.
+
+## İkinci tam CI ve test dosyasının tarihsel nesli
+
+İlk onarım commit'i `e25c2cc063d4c595ddbb5b7a62c069453d5971d9`, önceki iki
+R140 hatasını giderdi. Tam CI bu kez 4.084 testte 4.061 başarılı, 1 başarısız,
+22 atlanan ve sıfır error bildirdi. Değişmeyen L145 kabul testi, 625 eski kaynak
+hash'i içinde onarılan R140 test dosyasının da eski neslini doğruluyordu.
+Bu başarısız koşunun özgün metadata/logu `second-ci-failure.json` üzerinden
+ayrıca korunur; ana dal bu aşamada da önceki kabul edilmiş sürümde kaldı.
+
+Çözüm, R159'un katı tarihsel arşiv eşlemesine yalnız o testin tam parent Git
+blob'unu eklemektir. 7.789 byte'lık eski test hem `37620d5` hem `a4d2904`
+sürümünde aynı SHA-256 ile doğrulandı. Böylece arşiv kümesi dokuz ürün kaynağı
+ve bir test nesli olarak ona çıktı. Eski dokuz kayıt aynı kaldı; resolver
+fonksiyonunun gövdesi, güncel R140 testi ve L145 testi değiştirilmedi. Mevcut
+altı provenance yöntemi, güncel/bilinmeyen hash'in arşivi seçememesini ve
+arşiv kaybı/bozulmasının reddini artık bu onuncu kayıt için de doğrular.
+
+Genişleyen arşivle hedefli Linux koşusu 8/8, primary Windows'ta R140, L145 ve
+iki provenance modülünün ortak koşusu 28/28 geçti; failure/error/skip sıfır.
+İlk 28-test kaydı bağlantı yenilenmesi sırasında terminal makbuzunu kaybettiği
+için ayrıca korundu; önceki test sürecinin kapandığı doğrulandıktan sonra yapılan
+bağımsız 28-test koşusunda gerçek process exit 0 kaydedildi. Bu kabul eski
+kayıtların kaynak kimliğini korur; yeni runtime veya kurulu servis kabulü
+üretmez. Son commit'in tam CI ve normal main yayın sonucu final publication
+journal'da ayrıca doğrulanmalıdır.
 
 ## Kanıtlar ve yayın kaydı
 

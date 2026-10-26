@@ -1,0 +1,51 @@
+{
+  "apiUrl": "https://api.github.com/repos/esoyuince/AlazHarness/commits/e25c2cc063d4c595ddbb5b7a62c069453d5971d9/status?per_page=100&verification=1793037980665019900",
+  "atUtc": "2026-10-26T18:06:22.201115+00:00",
+  "cause": "The unchanged L145 receipt baseline includes the pre-repair R140 test source digest; the current R140 test has legitimately changed.",
+  "containerExitCode": 1,
+  "delivery": "2b54cba6-d167-11f1-884e-1bb01bc9d3c9",
+  "disposition": "Preserved as failed. Add only the exact parent R140 test Git blob to the strict R159 historical archive binding; keep historical baseline, expected digests and outcomes unchanged.",
+  "elapsedSeconds": 285.269,
+  "errors": 0,
+  "executed": 4084,
+  "failureMethods": [
+    "test_projected_launch_receipt_l145a8.ProjectedLauncherEvidence.test_new_code_is_additive_and_scope_not_native_or_kernel"
+  ],
+  "failures": 1,
+  "github": {
+    "sha": "e25c2cc063d4c595ddbb5b7a62c069453d5971d9",
+    "state": "failure",
+    "statuses": [
+      {
+        "context": "alaz/local-ci",
+        "created_at": "2026-10-26T18:05:40Z",
+        "description": "ALAZ Local CI failed (rc=1)",
+        "id": 57291586807,
+        "state": "failure",
+        "target_url": null,
+        "updated_at": "2026-10-26T18:05:40Z"
+      }
+    ]
+  },
+  "installedRuntimeAccepted": false,
+  "logFile": "checks/second-ci-e25c2cc.log",
+  "logSha256": "4c15521c2aebc45ec0e6737a1a542f1f2648e7b9e8c4adfccb49254d66fb582b",
+  "metadataFile": "checks/second-ci-e25c2cc.metadata.json",
+  "metadataSha256": "669065d85212a9653d99b83ce92a8d807b472bf6a48dc1ca9086a5a801d01071",
+  "modelCalls": 0,
+  "oomKilled": false,
+  "passed": 4061,
+  "previousR140FailuresResolvedInThisRun": true,
+  "providerCalls": 0,
+  "ref": "refs/heads/alaz/p2-borrowed-service-r159a1",
+  "result": "FAIL_PRESERVED",
+  "schema": 1,
+  "skipped": 22,
+  "sourceSnapshot": {
+    "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\p2-borrowed-service-r159a1\\scratch\\r159a1-publication\\ci-feature-1793037982201303500.json",
+    "sha256": "47cdc291e063b3bac258344458a0d671044bdbaa512257158d179dc08ec0aca6"
+  },
+  "staticGateInThisRun": "NOT_RUN_AFTER_UNITTEST_FAILURE",
+  "target": "e25c2cc063d4c595ddbb5b7a62c069453d5971d9",
+  "timeout": false
+}
