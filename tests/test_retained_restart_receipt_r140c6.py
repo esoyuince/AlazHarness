@@ -1,6 +1,7 @@
 """Offline source/results receipts; not new Linux executions."""
 from pathlib import Path
 import hashlib,json,unittest
+from historical_borrowed_service_r159a1 import archived_source
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-retained-profile-r140c6'
 def read(name):return json.loads((E/name).read_text(encoding='utf-8'))
@@ -53,7 +54,11 @@ class RetainedRestartReceipts(unittest.TestCase):
         self.assertFalse(proof['nativeReexecutionByCopy'])
     def test_native_sources_and_current_selected_code_bound(self):
         c=read('source-custody.json');self.assertTrue(c['allNativeImportsMatchImmutableGit']);self.assertFalse(c['nativeSourceModified'])
-        for name,h in c['currentHarnessHashes'].items():self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),h,name)
+        # "currentHarnessHashes" records the source generation at receipt time.
+        for name,h in c['currentHarnessHashes'].items():
+            selected=archived_source(ROOT,name,h)
+            path=ROOT/name if selected is None else selected
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),h,name)
         for scenario in ('restart003-result.json','restart004-error-result.json'):
             for name,h in read(scenario)['nativeImports'].items():self.assertEqual(c['nativeSources'][name]['sha256'],h,name)
     def test_historical_generation_redirect_is_exact_and_named(self):
@@ -66,10 +71,17 @@ class RetainedRestartReceipts(unittest.TestCase):
         self.assertIsNone(history.saved_generation_hash(ROOT,'unlisted.py','0'*64))
     def test_current_changed_sources_do_not_inherit_old_runtime_proof(self):
         import historical_retained_r140c6 as history
-        baseline=read('baseline.json');current=read('source-custody.json')['currentHarnessHashes']
+        baseline=read('baseline.json');recorded=read('source-custody.json')['currentHarnessHashes']
         for name in history.NAMES:
-            self.assertNotEqual(baseline['sources'][name],current[name])
-            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),current[name])
+            self.assertNotEqual(baseline['sources'][name],recorded[name])
+            selected=archived_source(ROOT,name,recorded[name])
+            path=ROOT/name if selected is None else selected
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),recorded[name],name)
+            live=hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+            self.assertNotEqual(live,baseline['sources'][name],name)
+            if selected is not None:
+                self.assertNotEqual(live,recorded[name],name)
+                self.assertIsNone(archived_source(ROOT,name,live))
         first=read('full001/result.json');self.assertEqual(first['failures'],2);self.assertEqual(first['errors'],0)
     def test_restart_scope_not_crash_confinement_or_real_model(self):
         for name in ('restart003-result.json','restart004-error-result.json'):

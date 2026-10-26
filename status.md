@@ -61,6 +61,26 @@ scratch/worktrees/hermes-borrowed-service-r159a1.
   restoring only d151 authority-runs in a disposable mixed-supporting-generation
   copy. This is bounded regression evidence, not old installation acceptance.
 
+### First full CI and receipt-generation repair
+
+The first source commit a4d290441b88afc8eb9bd8193a03c72475bb051f was normally
+pushed to the feature branch. Its full CI ran 4084 tests: 4060 passed, 2 failed,
+22 skipped and 0 errors. Both failures compared R140 historical receipt digests
+with changed live source bytes. The failed log, original metadata and exact
+GitHub status are preserved in initial-ci-failure.json and its checks/ artifacts.
+Main remained at the R158 parent throughout diagnosis and repair.
+
+Only the two stale receipt assertions were repaired. They now use the existing
+exact R159 archive selector for the recorded generation, while separately hashing
+current live bytes and refusing old runtime-proof inheritance. No old receipt,
+expected digest/outcome, product source, native source or configuration changed
+in this repair. Eight focused Linux tests passed; the full R140 module plus R158
+and R159 provenance modules passed on primary Windows: 22/22, no skips, failures
+or errors, terminal exit0. Raw execution records and independent review are in
+receipt-repair-tests.json, checks/receipt-repair-windows.json and
+ci-repair-review.json. A new normal commit and its full exact-commit CI are still
+required; these focused results do not replace that publication gate.
+
 ### Git and CI handoff
 
 All source/test transfers use verified parent/current hashes. Native feature
@@ -99,6 +119,9 @@ No provider or model call occurred in R159; no existing user service was adopted
 - Source/test checkpoint: docs/status-history/r159a1-source-checkpoint.md.
 - Source delivery: exact native commit, reviewed source selection, focused native,
   host/client/provenance tests and primary regression recorded above.
+- First source delivery checkpoint: docs/status-history/r159a1-source-delivery.md.
+- Initial full-CI failure preserved; historical receipt-generation repair and
+  independent review completed, with 8 focused and 22 primary regressions PASS.
 - Final publication: exact-commit CI and protected-root closure must be read from
   the final-publication journal identified above.
 

@@ -123,6 +123,31 @@ Kısmi cloud export'taki geniş host regresyon koşusu 118 method çalıştırd�
 İki hata eksik tarihsel evidence dosyalarındandır; bu koşu PASS diye kaydedilmez.
 Tam primary çalışma ağacı ve son commit CI sonucu yayın kaydında ayrıca yer alır.
 
+## İlk tam CI ve tarihsel test onarımı
+
+İlk kaynak commit'i `a4d290441b88afc8eb9bd8193a03c72475bb051f` için tam CI,
+4.084 testte 4.060 başarılı, 2 başarısız, 22 atlanan ve sıfır error ile bitti.
+İki başarısızlık, R140 tarihsel receipt hash'lerinin değişmiş güncel dosya
+byte'larıyla karşılaştırılmasından kaynaklandı. Ana dal R158 parent'ında kaldı.
+Özgün başarısız CI logu ve metadata'sı `initial-ci-failure.json` ile işaretlenen
+ham dosyalarda aynen saklanır; sonuç PASS olarak yeniden yazılmaz.
+
+Onarım yalnız iki test yönteminin kaynak nesli seçimini değiştirir. Kayıtlı eski
+hash, mevcut katı R159 resolver üzerinden tam Git arşiviyle doğrulanır. Güncel
+canlı kaynak ayrıca hash'lenir ve eski baseline'dan farklı olduğu doğrulanır.
+Arşiv seçilen değişmiş dosyalarda ayrıca canlı hash'in receipt neslinden farklı
+olduğu ve güncel digest'in eski arşivi seçemediği denetlenir.
+Eski receipt, beklenen digest, sonuç veya ürün/native/config kaynağı değişmez.
+İki onarılmış yöntem ve altı provenance testi Linux'ta 8/8 geçti. Tam R140
+modülü ile R158/R159 provenance modülleri primary Windows'ta 22/22 geçti;
+ikisinde de failure/error/skip sıfır ve gerçek process exit 0 oldu.
+
+Bu onarımın bağımsız incelemesi ve ham test kayıtları ayrıca saklanır. Son
+onarım commit'inin tam CI kabulü, normal main yayını ve yayın sonrası doğrulama
+sonuçları aşağıdaki final publication journal'dan okunmalıdır. Hedefli testler
+kurulu günlük servis, yeni Linux restart, gerçek model veya production kabulü
+anlamına gelmez.
+
 ## Kanıtlar ve yayın kaydı
 
 Kanıt dizini: [evidence/p2-borrowed-service-r159a1](../evidence/p2-borrowed-service-r159a1).

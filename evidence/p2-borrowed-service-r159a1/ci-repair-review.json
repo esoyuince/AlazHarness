@@ -1,0 +1,412 @@
+{
+  "schema": 1,
+  "kind": "R159_HISTORICAL_RECEIPT_CI_REPAIR_REVIEW",
+  "atUtc": "2026-10-26T17:58:12.583837+00:00",
+  "result": "SOURCE_AND_TARGETED_REVIEW_PASS_FULL_CI_PENDING",
+  "scope": "Independent source, focused and primary-record review of the minimal historical receipt test repair, including the CI/repair documentation and preserved status snapshot; not a runtime execution receipt.",
+  "initialCiFailure": {
+    "result": "FAIL_PRESERVED",
+    "commitPrefix": "a4d2904",
+    "run": 4084,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 22,
+    "seconds": 268.978,
+    "source": "Read and cross-checked the retained initial CI summary, immutable metadata and complete log.",
+    "unreportedFieldsNotInferred": true,
+    "failingTests": [
+      "test_current_changed_sources_do_not_inherit_old_runtime_proof",
+      "test_native_sources_and_current_selected_code_bound"
+    ],
+    "originalFailureCause": "Two receipt tests hashed ROOT/name directly against currentHarnessHashes recorded by the historical receipt. The recorded gateway_store_startup.py generation is fdf7d7d8..., while legitimate R159 live source is c9958d42....",
+    "failureRelabelledAsPass": false,
+    "commit": "a4d290441b88afc8eb9bd8193a03c72475bb051f",
+    "passed": 4060,
+    "containerExitCode": 1,
+    "timeout": false,
+    "oomKilled": false,
+    "staticGateInThatRun": "NOT_RUN_AFTER_UNITTEST_FAILURE",
+    "artifacts": {
+      "summary": {
+        "path": "evidence/p2-borrowed-service-r159a1/initial-ci-failure.json",
+        "sha256": "1a2000d22d52fbf692057e708746c8d9f27e90e9f73698dd879017f2584c8aa2",
+        "bytes": 2251
+      },
+      "metadata": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/initial-ci-a4d2904.metadata.json",
+        "sha256": "60e6605d6a97e67209d84140f7fe19f3be557476884df6958b20302fbd093505",
+        "bytes": 1907
+      },
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/initial-ci-a4d2904.log",
+        "sha256": "415989c93237030041a080bab7ab77d8cce7177161729e75c54ed8026a1dd1c7",
+        "bytes": 8216
+      }
+    }
+  },
+  "repair": {
+    "path": "tests/test_retained_restart_receipt_r140c6.py",
+    "before": {
+      "sha256": "ba9d6c39cf6ebe946b3adf7acb1d072f589b3112a58662f9f21a9f3a8e3b9b1d",
+      "bytes": 7789
+    },
+    "after": {
+      "sha256": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502",
+      "bytes": 8479
+    },
+    "baselineBeforeMatchesOriginalLocalTest": true,
+    "productionFilesChanged": [],
+    "oldReceiptDataChanged": [],
+    "existingResolverChanged": false,
+    "changedTestMethods": [
+      "test_current_changed_sources_do_not_inherit_old_runtime_proof",
+      "test_native_sources_and_current_selected_code_bound"
+    ],
+    "unchangedTestMethods": [
+      "test_both_cases_same_driver_bundle_and_live_boundaries",
+      "test_historical_generation_redirect_is_exact_and_named",
+      "test_independent_sixteen_negatives_refuse_before_write",
+      "test_initial_failures_not_relabelled_pass",
+      "test_manifest_extension_is_exact_one_immutable_module",
+      "test_native_settlement_is_not_driver_written_rows",
+      "test_normal_and_error_real_linux_restarts_keep_old_result",
+      "test_restart_scope_not_crash_confinement_or_real_model"
+    ],
+    "astVerification": "Both versions parse. The test method set is unchanged, and only the two originally failing method bodies differ; all eight other test methods retain identical ASTs.",
+    "changes": [
+      "Import the existing exact R159 archived_source selector.",
+      "For historical currentHarnessHashes assertions, select the named archived generation only when its recorded digest matches the immutable R159 binding; otherwise continue hashing the live ROOT/name file.",
+      "Keep all recorded expected hashes and the original pre-R140 baseline-versus-recorded inequality.",
+      "Independently hash live source and require it differs from the pre-R140 baseline. When an archive is selected, also require live differs from the recorded generation and cannot itself select that historical archive.",
+      "Keep original result, native-import, restart-boundary, initial-failure and old full001 failure assertions unchanged."
+    ]
+  },
+  "reviewedIdentityBindings": {
+    "liveStartup": {
+      "path": "packages/claw-hermes/gateway_store_startup.py",
+      "sha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+      "bytes": 15954
+    },
+    "historicalStartup": {
+      "path": "evidence/p2-borrowed-service-r159a1/base-packages__claw-hermes__gateway_store_startup.py.txt",
+      "sha256": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+      "bytes": 15646
+    },
+    "resolver": {
+      "path": "tests/historical_borrowed_service_r159a1.py",
+      "sha256": "c47d6abe50d23a4ccee85404e5fff3564925113469ba3dfad68b9b322f56cbe7",
+      "bytes": 3820
+    },
+    "bindings": {
+      "path": "evidence/p2-borrowed-service-r159a1/historical-source-bindings.json",
+      "sha256": "2fc2b838f4af39ad28f14d4a09e6ab97b375c23ad99cdd5cc5c024c56b6d9b90",
+      "bytes": 2633
+    },
+    "existingNegativeProvenanceTests": {
+      "path": "tests/test_historical_borrowed_service_r159a1.py",
+      "sha256": "213e1e60a4181b8dc0f47124415b84a166e2a8868b0ee5f4069f9a0e702325ef",
+      "bytes": 7232
+    }
+  },
+  "historicalEvidenceInvariants": {
+    "sourceReview": "PASS",
+    "exactParentCommit": "37620d5c14afee895b16e3441f7a7ed14b77e7d7",
+    "exactNameAndDigestRequired": true,
+    "wholeBindingRecordValidated": true,
+    "fixedArchivePathSizeAndSha256Validated": true,
+    "unknownOrCurrentGenerationUsesLiveSource": true,
+    "missingOrAlteredKnownArchiveFailsClosed": true,
+    "currentSourceAcceptanceFlagRemainsFalse": true,
+    "nativeRerunFlagRemainsFalse": true,
+    "liveSourceCheckedSeparately": true,
+    "runtimeProofInheritedByCurrentSource": false,
+    "oldOutcomesOrExpectedDigestsRewritten": false,
+    "notes": [
+      "currentHarnessHashes is a receipt-time field name; it does not assert that all later live repository generations equal that historical source.",
+      "The resolver validates the complete immutable record, including historical_receipt_source_identity_only, currentSourceAcceptance false and nativeRerun false.",
+      "The repair preserves the prior historical restart results without claiming those runs executed current R159 source.",
+      "The five exact historical evidence files used by the focused run are now exported. Their current bytes independently match the recorded pre/post-run hashes; the eight-test focused receipt and log are verified. This preserves the old evidence and does not replace the still-pending new exact-commit CI."
+    ],
+    "recordedHistoricalFilesUnchangedBeforeAfter": true,
+    "currentHistoricalHashesIndependentlyVerified": [
+      {
+        "bytes": 137956,
+        "path": "evidence/d3b-retained-profile-r140c6/source-custody.json",
+        "sha256": "a0946595972995ecf07a3c5db035950ecadf6c66b152d8abbd7387306f677896"
+      },
+      {
+        "bytes": 68755,
+        "path": "evidence/d3b-retained-profile-r140c6/baseline.json",
+        "sha256": "5bd7cab47e184d900a9f2d54fa1422ab073922d2213b1b8d904d80b6bb5c8ba5"
+      },
+      {
+        "bytes": 102821,
+        "path": "evidence/d3b-retained-profile-r140c6/restart003-result.json",
+        "sha256": "7403651f61f111ec2eeba6f221096753c46264d9df8b221419eb522fe8d31909"
+      },
+      {
+        "bytes": 100712,
+        "path": "evidence/d3b-retained-profile-r140c6/restart004-error-result.json",
+        "sha256": "eb7078992d39f19df3c46d4769c62338f2bc4f753f3835ae8f7ecea4871b243c"
+      },
+      {
+        "bytes": 608,
+        "path": "evidence/d3b-retained-profile-r140c6/full001/result.json",
+        "sha256": "1ff6b467cd446d7094e71a40539a2dc7c28c76dc1c130c6eaf7f7e3421679a76"
+      }
+    ],
+    "sourceGenerationsChecked": [
+      {
+        "currentLiveSha256": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+        "historicalReceiptSha256": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+        "path": "packages/claw-hermes/gateway_native_layout.py",
+        "preR140BaselineSha256": "efce686a9a8f07d60454e9394b7069ef0214a0f5792e567f0c657973ce3356f7",
+        "selectedHistoricalPath": "packages/claw-hermes/gateway_native_layout.py",
+        "usesExactR159Archive": false
+      },
+      {
+        "currentLiveSha256": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+        "historicalReceiptSha256": "d5ce29480570d140363deda7fe8740ad7ddb1f5e579d0befbd790ca68a0f5cc6",
+        "path": "packages/claw-hermes/gateway_prepared_consumer.py",
+        "preR140BaselineSha256": "55693d315fcff2d9bef3129ba83aa83dc3b1b728b2316324c340ba85d257f151",
+        "selectedHistoricalPath": "evidence/p2-borrowed-service-r159a1/base-packages__claw-hermes__gateway_prepared_consumer.py.txt",
+        "usesExactR159Archive": true
+      },
+      {
+        "currentLiveSha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+        "historicalReceiptSha256": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b",
+        "path": "packages/claw-hermes/gateway_store_startup.py",
+        "preR140BaselineSha256": "23b0dc7bf9e7003a1ec593248142f0bc7a2871e471a140a0d62484ca38c9cd13",
+        "selectedHistoricalPath": "evidence/p2-borrowed-service-r159a1/base-packages__claw-hermes__gateway_store_startup.py.txt",
+        "usesExactR159Archive": true
+      }
+    ]
+  },
+  "validation": {
+    "independentSourceDiffReview": "PASS",
+    "astScopeCheck": "PASS",
+    "focusedRepairTests": {
+      "result": "PASS",
+      "run": 8,
+      "passed": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "scope": "two repaired historical receipt methods and six existing R159 archive provenance tests; no native execution",
+      "unittestElapsedSeconds": 0.029,
+      "processElapsedSeconds": 0.093021,
+      "argv": [
+        "/tmp/r159-native-test-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof",
+        "test_historical_borrowed_service_r159a1",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/288e2938ab4c/r159-source/tree",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONPATH": "tests"
+      },
+      "timeoutSeconds": 30,
+      "testSourceSha256": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502",
+      "recordedTestIds": [
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_altered_binding_identity_cannot_redirect_or_relabel_an_archive",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_current_and_unknown_generations_use_live_bytes_without_archive_access",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_known_parent_generations_use_exact_archived_bytes",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_missing_or_unreadable_binding_fails_for_a_known_generation",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_missing_truncated_or_same_length_altered_archive_fails_closed",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_unlisted_name_cannot_borrow_a_known_digest"
+      ],
+      "receipt": {
+        "path": "evidence/p2-borrowed-service-r159a1/receipt-repair-tests.json",
+        "sha256": "67c08f8e25819681c27c5ab5201e3d3df805c0c9d7467a98100efefa2fecff66",
+        "bytes": 7136
+      },
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/receipt-repair-focused.log",
+        "sha256": "2c6e9a8f06f9a105f80f08e1c9cb98286f53385ec2ba1e51208af1bb583b2dc4",
+        "bytes": 1700
+      },
+      "independentReview": "The summary, complete log, eight unique successful IDs, current test source and five exported historical file hashes were cross-checked without rerunning tests.",
+      "fullSuiteExecuted": false,
+      "nativeRuntimeStarted": false
+    },
+    "newExactCommitFullCi": {
+      "result": "NOT RUN",
+      "status": "PENDING",
+      "reason": "Awaiting a recorded full CI result for the new repaired commit. The focused eight-test result does not replace that gate."
+    },
+    "testsRunByThisReviewer": false,
+    "oldRuntimeReexecuted": false,
+    "realProviderCalls": 0,
+    "realModelCalls": 0,
+    "installedServiceAcceptance": "NOT RUN",
+    "productionAcceptance": "NOT RUN",
+    "fullSuiteAcceptedByThisReview": false,
+    "primaryHistoricalReceiptRegression": {
+      "result": "PASS",
+      "discovered": 22,
+      "run": 22,
+      "passed": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "elapsedSeconds": 2.935,
+      "moduleBreakdown": {
+        "test_retained_restart_receipt_r140c6": 10,
+        "test_historical_borrowed_service_r159a1": 6,
+        "test_historical_local_control_r158a1": 6
+      },
+      "selectedModules": [
+        "test_retained_restart_receipt_r140c6",
+        "test_historical_borrowed_service_r159a1",
+        "test_historical_local_control_r158a1"
+      ],
+      "recordedTestIds": [
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_both_cases_same_driver_bundle_and_live_boundaries",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_historical_generation_redirect_is_exact_and_named",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_independent_sixteen_negatives_refuse_before_write",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_initial_failures_not_relabelled_pass",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_manifest_extension_is_exact_one_immutable_module",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_settlement_is_not_driver_written_rows",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_normal_and_error_real_linux_restarts_keep_old_result",
+        "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_restart_scope_not_crash_confinement_or_real_model",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_altered_binding_identity_cannot_redirect_or_relabel_an_archive",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_current_and_unknown_generations_use_live_bytes_without_archive_access",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_known_parent_generations_use_exact_archived_bytes",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_missing_or_unreadable_binding_fails_for_a_known_generation",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_missing_truncated_or_same_length_altered_archive_fails_closed",
+        "test_historical_borrowed_service_r159a1.HistoricalBorrowedServiceTests.test_unlisted_name_cannot_borrow_a_known_digest",
+        "test_historical_local_control_r158a1.HistoricalLocalControlTests.test_altered_binding_identity_cannot_redirect_or_relabel_an_archive",
+        "test_historical_local_control_r158a1.HistoricalLocalControlTests.test_current_and_unknown_generations_use_live_bytes_without_archive_access",
+        "test_historical_local_control_r158a1.HistoricalLocalControlTests.test_known_parent_generations_use_exact_archived_bytes",
+        "test_historical_local_control_r158a1.HistoricalLocalControlTests.test_missing_or_unreadable_binding_fails_for_a_known_generation",
+        "test_historical_local_control_r158a1.HistoricalLocalControlTests.test_missing_truncated_or_same_length_altered_archive_fails_closed",
+        "test_historical_local_control_r158a1.HistoricalLocalControlTests.test_unlisted_name_cannot_borrow_a_known_digest"
+      ],
+      "nativeRequestId": "b0720159-39a9-471f-b658-26578930641d",
+      "harnessHeadBeforeRepairCommit": "a4d290441b88afc8eb9bd8193a03c72475bb051f",
+      "repairedUncommittedFile": "tests/test_retained_restart_receipt_r140c6.py",
+      "testSourceSha256": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502",
+      "commandKind": "python -B -c explicit unittest loader/tracking runner",
+      "commandRecordingScope": "Command kind and selected modules are copied from the primary receipt; this review does not reconstruct the embedded Python loader body.",
+      "pythonExecutable": "C:\\Users\\ender\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+      "pythonVersion": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+      "receipt": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/receipt-repair-windows.json",
+        "sha256": "9b30b306f737b5e4af24ebd41c04b819d9bb6a813236efa7f3225516d4b3b6e9",
+        "bytes": 7390
+      },
+      "log": {
+        "path": "evidence/p2-borrowed-service-r159a1/checks/receipt-repair-windows.log",
+        "sha256": "1f95a127cd97c863fcf9bd0367972ad4f7fc10b7d869c27d39f5b7343d34e6f5",
+        "bytes": 4307
+      },
+      "sourceFilesRecordedBeforeAndAfter": {
+        "config/borrowed-service-r159a1-host-lock.json": "e5eb2a3a881843d036336a7bb6d2473a9fbe3d21a7938ffe2e669869d45bd0ff",
+        "config/borrowed-service-r159a1-sources.json": "05dee55dede392d10af65fc123969b8f317cf417d1af669b655d2115a2757bd2",
+        "config/hermes-borrowed-service-r159a1.json": "a160fb456573bcf4b9efca53a62a42e6d5b9347378bec195d9df7e6ec125e7b3",
+        "evidence/d3b-retained-profile-r140c6/baseline.json": "5bd7cab47e184d900a9f2d54fa1422ab073922d2213b1b8d904d80b6bb5c8ba5",
+        "evidence/d3b-retained-profile-r140c6/full001/result.json": "1ff6b467cd446d7094e71a40539a2dc7c28c76dc1c130c6eaf7f7e3421679a76",
+        "evidence/d3b-retained-profile-r140c6/restart003-result.json": "7403651f61f111ec2eeba6f221096753c46264d9df8b221419eb522fe8d31909",
+        "evidence/d3b-retained-profile-r140c6/restart004-error-result.json": "eb7078992d39f19df3c46d4769c62338f2bc4f753f3835ae8f7ecea4871b243c",
+        "evidence/d3b-retained-profile-r140c6/source-custody.json": "a0946595972995ecf07a3c5db035950ecadf6c66b152d8abbd7387306f677896",
+        "evidence/p2-borrowed-service-r159a1/historical-source-bindings.json": "2fc2b838f4af39ad28f14d4a09e6ab97b375c23ad99cdd5cc5c024c56b6d9b90",
+        "packages/claw-hermes/execution_boundary.py": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96",
+        "packages/claw-hermes/gateway_consumer_admission.py": "d3c7e46058024de339c1e63dc0d617fdae9997e05a9118dab4cc517e230a07e6",
+        "packages/claw-hermes/gateway_consumer_api.py": "d6f5433ea3a020fe6b4178bdee28e26549f66beaf2db66e0a6236c624cc002f3",
+        "packages/claw-hermes/gateway_prepared_consumer.py": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+        "packages/claw-hermes/gateway_service_runtime.py": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+        "packages/claw-hermes/gateway_service_sources.py": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7",
+        "packages/claw-hermes/gateway_store_startup.py": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+        "packages/claw-hermes/host_gate.py": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d",
+        "packages/claw-hermes/host_gate_plugin.py": "ae0a66bf897617d358cc168c75a2ab81d378d4913ddb0ff2c3b0a4ddc5fc7112",
+        "packages/claw-hermes/local-control.mjs": "86b4b54889ceb2de7f783fa533842f7c8a8c4f225fcbfad0a7e0deb2495d0fcd",
+        "packages/claw-hermes/run-recovery.mjs": "21793d7583cc2c56e955e85667561f83edfefd72fc219d81cd8469d35f97e748",
+        "tests/historical_borrowed_service_r159a1.py": "c47d6abe50d23a4ccee85404e5fff3564925113469ba3dfad68b9b322f56cbe7",
+        "tests/historical_self_identity_r150a1.py": "51e79ab79981c52e23b7038e83ff4b26d4d51b06be9aed44955ea9631ef36712",
+        "tests/node/queued-cancel-control-r159a1.mjs": "e80dc03a8bded96747928ead6917696b559e2f71d223fda41f79f3c185b0ceba",
+        "tests/test_borrowed_service_host_r159a1.py": "2d5a68c61e1eabfc0803c915bcdfa303dd94df6ee6a70e1910b7f527e99e0183",
+        "tests/test_historical_borrowed_service_r159a1.py": "213e1e60a4181b8dc0f47124415b84a166e2a8868b0ee5f4069f9a0e702325ef",
+        "tests/test_queued_cancel_control_r159a1.py": "82088ffcfded2bed329b59fc685336be821c50eece2c1c965e1d19543049878d",
+        "tests/test_retained_restart_receipt_r140c6.py": "986633e300ce1b7e757840fd879c6f14f256e1857b8713b5cf3d8810deb8f502"
+      },
+      "currentSourceFilesIndependentlyRehashed": 27,
+      "allCurrentHashesMatchRecordedBeforeAfter": true,
+      "fullSuiteExecuted": false,
+      "nativeRuntimeStarted": false,
+      "providerCalls": 0,
+      "modelCalls": 0,
+      "installedServiceAccepted": false
+    }
+  },
+  "previousReviewSha256": "ef4f7fe6197dfbc3e9c2c06fba39305b9ee8f1f900794f16ed9a55beb69e4120",
+  "documentationReview": {
+    "result": "PASS",
+    "scope": "New historical CI/repair paragraphs, historical status preservation and the existing P2/production/publication boundaries. This does not replace live Git publication verification.",
+    "reviewedFiles": [
+      {
+        "path": "status.md",
+        "sha256": "fef46e075350e597c893cb12ab6b8aa6fd991230f27ea8314021fbe2d3bedfc8",
+        "bytes": 8123
+      },
+      {
+        "path": "docs/P2-BORROWED-SERVICE-R159A1.md",
+        "sha256": "4b147cb27ee792b1d9c9a99fae576b11d7c2e9da969db29f50a79dd8ce523548",
+        "bytes": 11350
+      },
+      {
+        "path": "docs/status-history/r159a1-source-delivery.md",
+        "sha256": "80cf2fc199d6feef6a4b584988eeaa40f24a50da060971d0ae6e174830ba3c4e",
+        "bytes": 6589
+      }
+    ],
+    "statusArchive": {
+      "parentProvidedSnapshotHashMatched": true,
+      "currentStatusRetainsAllSnapshotLines": true,
+      "currentStatusChangesRelativeToSnapshot": "Only two insertions: the initial full-CI/repair section and the associated work-log checkpoint entries.",
+      "oldStatusHistoryRewritten": false
+    },
+    "wordingClarification": {
+      "earlierReportSha256": "409bfde52d532c41e0d9d249da78888563b3e0737756b88332038ff09d3caeac",
+      "resolvedReportSha256": "4b147cb27ee792b1d9c9a99fae576b11d7c2e9da969db29f50a79dd8ce523548",
+      "issue": "Live-versus-recorded inequality applies only to changed sources for which a historical archive is selected. The unchanged gateway_native_layout.py legitimately matches its recorded receipt generation.",
+      "resolution": "The report now states the archive-selected condition explicitly, matching the repaired test and recorded three-generation checks."
+    },
+    "reviewedClaims": [
+      "The initial exact a4d290441b88afc8eb9bd8193a03c72475bb051f CI remains failed with 4084 run, 4060 passed, 2 failures, 0 errors and 22 skipped.",
+      "Only receipt generation selection and its live-source non-inheritance checks were repaired; old expected hashes/outcomes and historical receipts remain intact.",
+      "The recorded focused 8/8 and primary 22/22 results are reported with zero failures/errors/skips and process exit 0, without treating them as a full new-commit CI run.",
+      "A new normal repair commit and its exact full CI remain pending. Final publication, main refs and post-publication checks are deferred to the final publication journal.",
+      "P1 remains DONE, P2 remains IN PROGRESS, and production remains OPEN. Daily service CLI/supervisor, new installation and bounded real-model acceptance are still outside this source delivery.",
+      "Git publication is distinct from deployment; no installed service or new historical Linux restart is accepted by these receipt tests."
+    ]
+  },
+  "unchangedRepairBindings": {
+    "productionSourceAndConfigurationChangedByRepair": false,
+    "nativeSourceChangedByRepair": false,
+    "primaryRecordedSourceConfigEvidenceHashesVerified": 27,
+    "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "serviceManifestHostLockAndServiceConfigAgreeOnNativeFeature": true,
+    "finalNativeLifecycleSourceHashesStillMatch": {
+      "gateway/platforms/api_server_borrowed_transport.py": {
+        "sha256": "d168a441b7da9f97e8c3533fff128308a58deea041e28cb04bb24658227f657b",
+        "bytes": 24621
+      },
+      "gateway/platforms/api_server_authority_runs.py": {
+        "sha256": "a69d5bd902906372062655af0e98a5e5d8ed8e8d18dec242377b5d417c855c58",
+        "bytes": 10745
+      }
+    },
+    "verificationLimit": "Primary before/after hashes and current local bytes are verified. This reviewer did not invoke native Git, change source/configuration, or rerun runtime tests."
+  }
+}

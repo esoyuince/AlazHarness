@@ -1,0 +1,51 @@
+{
+  "apiUrl": "https://api.github.com/repos/esoyuince/AlazHarness/commits/a4d290441b88afc8eb9bd8193a03c72475bb051f/status?per_page=100&verification=1793036983996557500",
+  "atUtc": "2026-10-26T17:49:45.695948+00:00",
+  "cause": "Historical receipt-generation digests were compared with newly changed live source files.",
+  "containerExitCode": 1,
+  "delivery": "98c7cb46-d164-11f1-97f9-0d17db519545",
+  "disposition": "Preserved as failed; historical receipt digests and outcomes are unchanged. Test-only generation resolution repair requires its own new commit and full CI.",
+  "elapsedSeconds": 268.978,
+  "errors": 0,
+  "executed": 4084,
+  "failureMethods": [
+    "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_native_sources_and_current_selected_code_bound",
+    "test_retained_restart_receipt_r140c6.RetainedRestartReceipts.test_current_changed_sources_do_not_inherit_old_runtime_proof"
+  ],
+  "failures": 2,
+  "github": {
+    "sha": "a4d290441b88afc8eb9bd8193a03c72475bb051f",
+    "state": "failure",
+    "statuses": [
+      {
+        "context": "alaz/local-ci",
+        "created_at": "2026-10-26T17:47:02Z",
+        "description": "ALAZ Local CI failed (rc=1)",
+        "id": 57289771322,
+        "state": "failure",
+        "target_url": null,
+        "updated_at": "2026-10-26T17:47:02Z"
+      }
+    ]
+  },
+  "installedRuntimeAccepted": false,
+  "logFile": "checks/initial-ci-a4d2904.log",
+  "logSha256": "415989c93237030041a080bab7ab77d8cce7177161729e75c54ed8026a1dd1c7",
+  "metadataFile": "checks/initial-ci-a4d2904.metadata.json",
+  "metadataSha256": "60e6605d6a97e67209d84140f7fe19f3be557476884df6958b20302fbd093505",
+  "modelCalls": 0,
+  "oomKilled": false,
+  "passed": 4060,
+  "providerCalls": 0,
+  "ref": "refs/heads/alaz/p2-borrowed-service-r159a1",
+  "result": "FAIL_PRESERVED",
+  "schema": 1,
+  "skipped": 22,
+  "sourceSnapshot": {
+    "path": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\p2-borrowed-service-r159a1\\scratch\\r159a1-publication\\ci-feature-1793036985696100900.json",
+    "sha256": "0b61f1112fdb01d6e7a92223a91f25dd81809f211563567e717586c872c50f05"
+  },
+  "staticGateInThisRun": "NOT_RUN_AFTER_UNITTEST_FAILURE",
+  "target": "a4d290441b88afc8eb9bd8193a03c72475bb051f",
+  "timeout": false
+}
