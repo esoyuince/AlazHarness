@@ -8,13 +8,14 @@ from __future__ import annotations
 from contextlib import closing
 from dataclasses import dataclass
 import hashlib
+import hmac
 import json
 from pathlib import Path
 import re
 import sqlite3
 import time
 import uuid
-from recovery_inspector import LocalRecoveryContext, request_fingerprint, _load, _json
+from recovery_inspector import LocalRecoveryContext, request_fingerprint, _load, _json, RUN
 from resolution_receipts import PREFIX as CLOSURE, key_digest, digest
 
 ROOT='alaz.host_gate.config.v1.'
@@ -132,6 +133,96 @@ class HostGateLedger:
         try:return self.db._execute_write(fn)
         except HostGateError:raise
         except Exception:raise HostGateError('gate_storage_or_commit_unknown') from None
+
+    def observe(self,request_id):
+        """Locate a retained native run without issuing, consuming or repairing.
+
+        This is a read-only two-store snapshot, not an admission/result verifier
+        or permission to retry. In particular, consumed + absent replay remains
+        unresolved. Native lookup/status helpers may prune or repair and must
+        never be called here. The existing native HTTP observer is a separate
+        operation after the caller receives a locator.
+        """
+        index=self._identity(request_id)
+        try:return self._observe_snapshot(request_id,index)
+        except HostGateError:raise
+        except Exception:raise HostGateError('gate_observation_unavailable') from None
+
+    def _observe_snapshot(self,request_id,index):
+        home=self.context.profile_home
+        paths=(home/'state.db',home/'runs_idempotency.db')
+        for path in paths:
+            if not path.is_file() or path.is_symlink() or path.resolve()!=path:
+                raise HostGateError('observation_storage_unavailable')
+        identities=[(p.stat().st_dev,p.stat().st_ino) for p in paths]
+
+        def result(classification,dispatch_state=None,run_id=None):
+            actions={'not_found':'retain_request_id_no_retry',
+                'issued_not_dispatched':'retain_issued_request_no_retry',
+                'handoff_unresolved':'retain_consumed_request_no_retry',
+                'native_run_located':'observe_existing_run'}
+            return {'hostGateVersion':1,'requestObservationVersion':1,
+                'requestId':request_id,'classification':classification,
+                'dispatchState':dispatch_state,'runId':run_id,
+                'snapshotOnly':True,'writesPerformed':False,'canonicalVerified':False,
+                'retryAllowed':False,'repairAllowed':False,
+                'requiresOperator':classification!='native_run_located',
+                'nextAction':actions[classification]}
+
+        with closing(sqlite3.connect(paths[0].as_uri()+'?mode=ro',uri=True,timeout=2)) as conn:
+            conn.execute('ATTACH DATABASE ? AS replay',(paths[1].as_uri()+'?mode=ro',))
+            conn.execute('PRAGMA query_only=ON')
+            conn.execute('PRAGMA trusted_schema=OFF')
+            for schema,table in (('main','runtime_epoch'),('main','state_meta'),('replay','run_idempotency')):
+                row=conn.execute(f'SELECT type FROM {schema}.sqlite_master WHERE name=?',(table,)).fetchone()
+                if row is None or row[0]!='table':raise HostGateError('observation_schema_unavailable')
+            versions=[conn.execute(f'PRAGMA {s}.data_version').fetchone()[0] for s in ('main','replay')]
+            conn.execute('BEGIN')
+            try:
+                self._epoch(conn)
+                if self._get(conn,ROOT+self.context.scope) is None:
+                    if conn.execute('SELECT 1 FROM state_meta WHERE key GLOB ? LIMIT 1',
+                            (INTENT+self.context.scope+'.*',)).fetchone():
+                        raise HostGateError('missing_host_namespace')
+                    answer=result('not_found')
+                else:
+                    _,cfg=self._configuration(conn,create=False)
+                    value=self._get(conn,index)
+                    if value is None:answer=result('not_found')
+                    else:
+                        intent=self._validate(value,request_id)
+                        if KEY.fullmatch(intent['key'])[1]!=cfg['namespace']:
+                            raise HostGateError('foreign_host_intent')
+                        rows=conn.execute('SELECT fingerprint,run_id,status_json '
+                            'FROM replay.run_idempotency WHERE scope=? AND idempotency_key=? LIMIT 2',
+                            (self.context.scope,intent['key'])).fetchall()
+                        if len(rows)>1:raise HostGateError('ambiguous_native_reservation')
+                        if intent['dispatchState']=='issued':
+                            if rows:raise HostGateError('intent_native_state_conflict')
+                            answer=result('issued_not_dispatched','issued')
+                        elif not rows:answer=result('handoff_unresolved','consumed')
+                        else:
+                            fingerprint,run_id,encoded=rows[0]
+                            if (type(fingerprint) is not str or not re.fullmatch('[a-f0-9]{64}',fingerprint)
+                                    or not hmac.compare_digest(fingerprint,intent['fingerprint'])):
+                                raise HostGateError('native_request_fingerprint_mismatch')
+                            if type(run_id) is not str or not RUN.fullmatch(run_id):
+                                raise HostGateError('invalid_native_run_identity')
+                            saved=_load(encoded)
+                            if (type(saved) is not dict or saved.get('run_id')!=run_id
+                                    or type(saved.get('status')) is not str
+                                    or saved['status'] not in {'queued','started','running','stopping',
+                                        'waiting_for_approval','completed','failed','cancelled','interrupted','unknown'}):
+                                raise HostGateError('invalid_native_reservation')
+                            answer=result('native_run_located','consumed',run_id)
+            finally:conn.rollback()
+            self._epoch(conn)
+            changed=[conn.execute(f'PRAGMA {s}.data_version').fetchone()[0] for s in ('main','replay')]
+            if changed!=versions:raise HostGateError('observation_state_changed')
+        if identities!=[(p.stat().st_dev,p.stat().st_ino) for p in paths]:
+            raise HostGateError('observation_store_replaced')
+        return answer
+
     def issue(self,request_id,body):
         index=self._identity(request_id);_,fp=self._body(body)
         def transaction(conn):

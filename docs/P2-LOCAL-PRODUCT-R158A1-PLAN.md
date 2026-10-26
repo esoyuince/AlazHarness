@@ -72,3 +72,14 @@ görüldükten sonra yeniden değerlendirilir.
 Dayanak: [R157 raporu](M1-INSTALLED-READINESS-R157A1.md),
 [yol haritası](PRODUCT-ROADMAP.md),
 [kaynak keşfi](../evidence/m1-installed-readiness-r157a1/p2-source-discovery.json).
+
+## R158 uygulama sonucu ve sonraki sınır
+
+Bu başlangıç planının kaynak eşlemesi ve ince kontrol katmanı R158'de uygulandı:
+[yerel CLI ve kayıp yanıt sorgusu](P2-LOCAL-CONTROL-R158A1.md). Test kapsamı SQLite
+ve sentetik HTTP/CLI sözleşmesidir. `start/close` ve gerçek model kabulü açık.
+
+Tam kaynak incelemesi, native borrowed adapter'ın servisi açıkça reddettiğini
+ve eski host-gate kilidinin d151 ile iki dosyada uyuşmadığını gösterdi. Bu nedenle
+sıradaki iş, aynı owner üzerinde açık transport sahipliği sağlayan [R159 servis bağlantısı](P2-BORROWED-SERVICE-R159A1-PLAN.md).
+P1 kurulumu korunur; yeni P2 kaynağı ayrı kurulup kabul edilir.

@@ -25,7 +25,7 @@ export class HostGateClient {
     this.#base=new URL(options.baseUrl).origin;this.#token=options.token;
     this.#timeout=options.requestTimeoutMs??5000;this.#limit=options.maxResponseBytes??1048576;
   }
-  async #request(method,path,{body,key,signal,expected=200}={}) {
+  async #request(method,path,{body,key,signal,expected=200,requireBoundaries=true}={}) {
     if(signal?.aborted) fail('aborted_before_request',{mayHaveBeenAccepted:false});
     const timeout=new AbortController();const timer=setTimeout(()=>timeout.abort(),this.#timeout);
     const write=method!=='GET';
@@ -33,9 +33,9 @@ export class HostGateClient {
       const response=await fetch(this.#base+path,{method,redirect:'error',
         signal:signal?AbortSignal.any([signal,timeout.signal]):timeout.signal,
         headers:{Authorization:'Bearer '+this.#token,Accept:'application/json',
-          ...(this.#executionRequired?{'X-Alaz-Execution-Version':'1'}:{}),
-          ...(this.#isolatedReadRequired?{'X-Alaz-Isolated-Read-Version':'1'}:{}),
-          ...(this.#providerBrokerRequired?{'X-Alaz-Provider-Broker-Version':'1'}:{}),
+          ...(requireBoundaries&&this.#executionRequired?{'X-Alaz-Execution-Version':'1'}:{}),
+          ...(requireBoundaries&&this.#isolatedReadRequired?{'X-Alaz-Isolated-Read-Version':'1'}:{}),
+          ...(requireBoundaries&&this.#providerBrokerRequired?{'X-Alaz-Provider-Broker-Version':'1'}:{}),
           ...(body===undefined?{}:{'Content-Type':'application/json'}),...(key?{'Idempotency-Key':key}:{})},
         ...(body===undefined?{}:{body:JSON.stringify(body)})});
       const reader=response.body?.getReader();const chunks=[];let total=0;
@@ -108,6 +108,36 @@ export class HostGateClient {
       ||(result.status==='completed'&&(result.completed===false||result.partial===true||result.interrupted===true||result.failed===true)))
       fail('invalid_host_admission',{mayHaveBeenAccepted:true,retryAllowed:false});
     return structuredClone(result);
+  }
+  async observeRequest(requestId,{signal}={}) {
+    if(typeof requestId!=='string'||!ID.test(requestId))
+      fail('invalid_request_id',{mayHaveBeenAccepted:false,retryAllowed:false});
+    // Reading an existing reference does not require provider readiness, issue
+    // another intent, or recreate a budget. Native run status is separate.
+    const value=await this.#request('GET',BASE+'/requests/'+requestId,
+      {signal,requireBoundaries:false});
+    const states={
+      not_found:[null,'retain_request_id_no_retry'],
+      issued_not_dispatched:['issued','retain_issued_request_no_retry'],
+      handoff_unresolved:['consumed','retain_consumed_request_no_retry'],
+      native_run_located:['consumed','observe_existing_run'],
+    };
+    const fields=['hostGateVersion','requestObservationVersion','requestId','classification',
+      'dispatchState','runId','snapshotOnly','writesPerformed','canonicalVerified',
+      'retryAllowed','repairAllowed','requiresOperator','nextAction'];
+    if(!plain(value)||Object.keys(value).sort().join(',')!==fields.sort().join(',')
+      ||value.hostGateVersion!==1||value.requestObservationVersion!==1||value.requestId!==requestId
+      ||typeof value.classification!=='string'||!Object.hasOwn(states,value.classification)||value.snapshotOnly!==true
+      ||value.writesPerformed!==false||value.canonicalVerified!==false
+      ||value.retryAllowed!==false||value.repairAllowed!==false)
+      fail('invalid_request_observation',{mayHaveBeenAccepted:false,retryAllowed:false});
+    const located=value.classification==='native_run_located';
+    const [dispatchState,nextAction]=states[value.classification];
+    if(value.dispatchState!==dispatchState||value.nextAction!==nextAction
+      ||value.requiresOperator!==!located
+      ||(located?typeof value.runId!=='string'||!RUN.test(value.runId):value.runId!==null))
+      fail('invalid_request_observation',{mayHaveBeenAccepted:false,retryAllowed:false});
+    return Object.freeze(structuredClone(value));
   }
   status(id,options) {return this.#runs.status(id,options);}
   resume(id,options) {return this.#runs.resume(id,options);}

@@ -1,0 +1,49 @@
+{
+  "kind": "R158A1_PRIMARY_SOURCE_COMPATIBILITY",
+  "result": "GAPS_IDENTIFIED",
+  "harnessCommit": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "nativeCommit": "d1516731308de8e87130dc68124e69aad35d6911",
+  "method": "Direct byte hashes from the primary native worktree, after commit identity verification",
+  "boundaries": {
+    "config/host-gate/source-lock.json": {
+      "sourceCount": 5,
+      "mismatches": [
+        {
+          "path": "gateway/platforms/api_server.py",
+          "expected": "74158a9bcac885e238508e0b36160bd6a676b0424894554d3674c67cfc7858f4",
+          "actual": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0"
+        },
+        {
+          "path": "gateway/platforms/api_server_runs.py",
+          "expected": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+          "actual": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb"
+        }
+      ],
+      "containsCommandSecret": false
+    },
+    "config/execution-gate/source-lock.json": {
+      "sourceCount": 5,
+      "mismatches": [],
+      "containsCommandSecret": false
+    },
+    "config/retained-profile-r140c6-sources.json": {
+      "sourceCount": 756,
+      "mismatches": [],
+      "containsCommandSecret": false
+    },
+    "config/finite-close-f135c6-sources.json": {
+      "sourceCount": 755,
+      "mismatches": [],
+      "containsCommandSecret": false
+    }
+  },
+  "sourceSnapshot": {
+    "zipSha256": "f4fe52730341ded88f4deacc7cc3b494d9e91e1d1fb0969c53afa5602b3fb9e7",
+    "files": 716
+  },
+  "nativeSourceChanged": false,
+  "sourceLocksChanged": false,
+  "installedRuntimeChanged": false,
+  "serviceAccepted": false,
+  "realProviderCalls": 0
+}

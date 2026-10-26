@@ -1,0 +1,73 @@
+{
+  "reviewId": "R158A1_REQUEST_OBSERVATION_CODE_REVIEW",
+  "reviewer": "r158_lifecycle_review",
+  "status": "PASS_SOURCE_REVIEW",
+  "baseCommit": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "files": [
+    {
+      "path": "packages/claw-hermes/host_gate.py",
+      "sha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+      "size": 18380
+    },
+    {
+      "path": "packages/claw-hermes/host_gate_plugin.py",
+      "sha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+      "size": 16758
+    },
+    {
+      "path": "packages/claw-hermes/host-gate-client.mjs",
+      "sha256": "4fbbe0416789d0dd194f4e2501d28692a31b118d29e4185a879a0661bfe3693b",
+      "size": 10691
+    }
+  ],
+  "testsExecutedByReviewer": false,
+  "runtimeExecutedByReviewer": false,
+  "providerCallsByReviewer": 0,
+  "scope": "New HostGateLedger.observe/_observe_snapshot, authenticated GET request observation, and HostGateClient.observeRequest. No native service acceptance.",
+  "findings": [
+    {
+      "check": "read_only_storage",
+      "result": "PASS",
+      "detail": "Both stores opened via mode=ro; query_only/trusted_schema set; only SELECT/PRAGMA/BEGIN/rollback; no _execute_write or native lookup/status/recovery helper."
+    },
+    {
+      "check": "request_identity",
+      "result": "PASS",
+      "detail": "Exact authenticated scope and request ID index; existing namespace inventory/counters and intent digest validation; exact key namespace, fingerprint and native run identity checks."
+    },
+    {
+      "check": "concurrency",
+      "result": "PASS",
+      "detail": "Current epoch checked within and after snapshot; both data_version values compared; original file device/inode observations rechecked. Concurrent changes fail closed; snapshot grants no future action authority."
+    },
+    {
+      "check": "privacy",
+      "result": "PASS",
+      "detail": "Response exposes bounded request/run identifiers and fixed classification only; no prompt, output, token, path, fingerprint, stored JSON or raw exception text."
+    },
+    {
+      "check": "unknown_and_absence",
+      "result": "PASS",
+      "detail": "Consumed intent with absent replay remains handoff_unresolved; missing namespace/intent and issued intent never authorize replay. Canonical/result verification explicitly false."
+    },
+    {
+      "check": "http_boundary",
+      "result": "PASS",
+      "detail": "Existing current(request) authentication/profile/epoch boundary executes before off-loop read. No execution.require_ready, budget creation, provider broker probe or dispatch on new GET."
+    },
+    {
+      "check": "client_contract",
+      "result": "PASS",
+      "detail": "Dedicated single GET without boundary readiness preflight, exact response field set/version/request ID/classification/type/state/action/flags/run ID checks, frozen clone, no retry or dispatch."
+    }
+  ],
+  "correctedFinding": {
+    "issue": "Object.hasOwn coerced nonstring classification keys",
+    "resolution": "Explicit typeof classification string check now precedes lookup; reread verified fix."
+  },
+  "limitations": [
+    "A located retained replay row may already be outside native retention; this endpoint returns a locator, not a guarantee that a subsequent native GET succeeds.",
+    "Current native d151 borrowed service integration and host source-lock compatibility remain separate R159 work.",
+    "No runtime, real-provider, service, production or P2 acceptance is claimed by this source review."
+  ]
+}

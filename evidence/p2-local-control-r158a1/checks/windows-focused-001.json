@@ -1,0 +1,82 @@
+{
+  "atUtc": "2026-10-26T10:54:46.332586+00:00",
+  "base": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "discovered": 109,
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "kind": "R158A1_WINDOWS_FOCUSED",
+  "nativeRuntimeStarted": false,
+  "passed": 104,
+  "realProviderCalls": 0,
+  "run": 109,
+  "scope": "SQLite and synthetic HTTP/CLI tests; not native service acceptance",
+  "seconds": 27.248,
+  "skipDetails": [
+    [
+      "test_query_session_and_room_scopes_are_rejected (test_host_request_observation.HostRequestObservationRouteTests.test_query_session_and_room_scopes_are_rejected)",
+      "aiohttp unavailable; HTTP handler qualification not run"
+    ],
+    [
+      "test_route_authentication_precedes_storage_observation (test_host_request_observation.HostRequestObservationRouteTests.test_route_authentication_precedes_storage_observation)",
+      "aiohttp unavailable; HTTP handler qualification not run"
+    ],
+    [
+      "test_route_uses_locator_without_execution_or_native_status_helpers (test_host_request_observation.HostRequestObservationRouteTests.test_route_uses_locator_without_execution_or_native_status_helpers)",
+      "aiohttp unavailable; HTTP handler qualification not run"
+    ],
+    [
+      "test_storage_error_and_invalid_identifier_do_not_leak_private_text (test_host_request_observation.HostRequestObservationRouteTests.test_storage_error_and_invalid_identifier_do_not_leak_private_text)",
+      "aiohttp unavailable; HTTP handler qualification not run"
+    ],
+    [
+      "test_cli_watch_interrupted (test_local_control.LocalControlTests.test_cli_watch_interrupted)",
+      "POSIX SIGINT delivery; AbortSignal cancellation is tested portably"
+    ]
+  ],
+  "skipped": 5,
+  "sourceFiles": {
+    "packages/claw-hermes/hermes-runs.mjs": {
+      "sha256": "14a9b1112d6df77c9e2baff00dea7be8be83efce5c602eeeddf8bd741671c9b4",
+      "size": 11772
+    },
+    "packages/claw-hermes/host-gate-client.mjs": {
+      "sha256": "4fbbe0416789d0dd194f4e2501d28692a31b118d29e4185a879a0661bfe3693b",
+      "size": 10691
+    },
+    "packages/claw-hermes/host_gate.py": {
+      "sha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+      "size": 18380
+    },
+    "packages/claw-hermes/host_gate_plugin.py": {
+      "sha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+      "size": 16758
+    },
+    "packages/claw-hermes/local-control.mjs": {
+      "sha256": "2037499a06c7baf29f90e1dc54c55d2d8f73b99c4eb665f7f6bcbc8cceacaf49",
+      "size": 11607
+    },
+    "scripts/alaz_local.mjs": {
+      "sha256": "a0dbeda385f78c4344bd679298bf72ee4ca7b7fdbb7e46ceb507b9b470704a94",
+      "size": 6341
+    },
+    "tests/node/local-control-cases.mjs": {
+      "sha256": "0e54f60adcb4991ecc9d0052cf8544d688b21c7966b13dbc2a8ce9758ee601ef",
+      "size": 22527
+    },
+    "tests/test_host_request_observation.py": {
+      "sha256": "8b67cf6deb5da9992a13e117fc5bde9e1d4bab429a35a776dc0228c999c8f172",
+      "size": 20156
+    },
+    "tests/test_local_control.py": {
+      "sha256": "08b28767235f05082ee656f8fb3f4001b0f85584e350b0d685a065d18e8f6932",
+      "size": 1978
+    }
+  },
+  "testModules": [
+    "test_host_gate_qa",
+    "test_host_gate_client",
+    "test_host_request_observation",
+    "test_local_control"
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "reviewId": "R158A1_FINAL_SOURCE_DOCS_REVIEW",
+  "reviewer": "r158_lifecycle_review",
+  "reviewedAtUtc": "2026-10-26T10:56:50.732849+00:00",
+  "status": "PASS_SOURCE_AND_DOCS_REVIEW",
+  "baseHarnessCommit": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "nativeSourceCommit": "d1516731308de8e87130dc68124e69aad35d6911",
+  "scope": "Read-only review of six current source files and four roadmap/report/plan documents; no source edits, native bridge, service or provider use.",
+  "sourceFiles": [
+    {
+      "path": "packages/claw-hermes/host_gate.py",
+      "sha256": "3d598cb6aa0bab7be87849ea8585b5123e8cfcf42a54593349966f34c340378d",
+      "size": 18380
+    },
+    {
+      "path": "packages/claw-hermes/host_gate_plugin.py",
+      "sha256": "7170317c68bb1b8a896d87f667dfcde494b6b02625b877654af0fe7ed387bfc6",
+      "size": 16758
+    },
+    {
+      "path": "packages/claw-hermes/host-gate-client.mjs",
+      "sha256": "4fbbe0416789d0dd194f4e2501d28692a31b118d29e4185a879a0661bfe3693b",
+      "size": 10691
+    },
+    {
+      "path": "packages/claw-hermes/hermes-runs.mjs",
+      "sha256": "14a9b1112d6df77c9e2baff00dea7be8be83efce5c602eeeddf8bd741671c9b4",
+      "size": 11772
+    },
+    {
+      "path": "packages/claw-hermes/local-control.mjs",
+      "sha256": "2037499a06c7baf29f90e1dc54c55d2d8f73b99c4eb665f7f6bcbc8cceacaf49",
+      "size": 11607
+    },
+    {
+      "path": "scripts/alaz_local.mjs",
+      "sha256": "a0dbeda385f78c4344bd679298bf72ee4ca7b7fdbb7e46ceb507b9b470704a94",
+      "size": 6341
+    }
+  ],
+  "documentFiles": [
+    {
+      "path": "docs/P2-LOCAL-CONTROL-R158A1.md",
+      "sha256": "4e7ebe64575ad3777e25a03e10b77420b8132da53e639abd5b8fd864249b8675",
+      "size": 8761
+    },
+    {
+      "path": "docs/P2-BORROWED-SERVICE-R159A1-PLAN.md",
+      "sha256": "ecec173803d5b5ebed1bab5747695bbecb67f3788aeda9a04287b9399fcc70de",
+      "size": 5326
+    },
+    {
+      "path": "docs/P2-LOCAL-PRODUCT-R158A1-PLAN.md",
+      "sha256": "03a9188f494d553c17f6301a7744a0480cb4b9dc32e36a469fe6f94335910baf",
+      "size": 5576
+    },
+    {
+      "path": "docs/PRODUCT-ROADMAP.md",
+      "sha256": "749c5c8f1344d331d9c1d23eefd4b891ec11f1238bdd31a675ee95a7f15891d8",
+      "size": 14883
+    }
+  ],
+  "unchangedBoundaryFiles": [
+    {
+      "path": "config/host-gate/source-lock.json",
+      "sha256": "3cfdd76a3998bc5a0f2be517cd6e810635541b7148d3a65beecdf841151e9bdb",
+      "size": 865,
+      "matchesBaseline": true
+    },
+    {
+      "path": "config/execution-gate/source-lock.json",
+      "sha256": "4a43e5fcd6effc5bc4525a6cf13c1d1d50ca26d05c64f4f3c8b4e7a68351069e",
+      "size": 840,
+      "matchesBaseline": true
+    },
+    {
+      "path": "packages/claw-hermes/execution_boundary.py",
+      "sha256": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b",
+      "size": 21689,
+      "matchesBaseline": true
+    },
+    {
+      "path": "packages/claw-hermes/provider_broker.py",
+      "sha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b",
+      "size": 19814,
+      "matchesBaseline": true
+    },
+    {
+      "path": "packages/claw-hermes/run-recovery.mjs",
+      "sha256": "48f2a3743aac3eb9b6c293258895d22fcb36839c230b6ee15498692427bec191",
+      "size": 2528,
+      "matchesBaseline": true
+    }
+  ],
+  "nativeSnapshotIntegrity": {
+    "filesCompared": 426,
+    "allMatchBaselineManifest": true,
+    "qualification": "Byte comparison of local export; not a claim of full review or runtime acceptance for every file."
+  },
+  "priorFocusedReviews": [
+    {
+      "file": "request-observation-review.json",
+      "sha256": "4cdd6554e6efaeb0760357dc0b83e0cdbd648719bb81847b7a3bd33372d67581"
+    },
+    {
+      "file": "lifecycle-review.json",
+      "sha256": "2e72a1db1a3e21aca81b9ac3f1b02e468a80128fc41db2d720b53a80c63de147"
+    }
+  ],
+  "findings": [
+    {
+      "check": "request_observation",
+      "result": "PASS",
+      "detail": "Previously reviewed exact hashes unchanged; authenticated original request/scope/namespace/key/fingerprint binding, read-only snapshot and noncanonical locator; no dispatch, replay, repair or readiness initialization."
+    },
+    {
+      "check": "public_error_and_stop_contract",
+      "result": "PASS",
+      "detail": "Classification and public error code require strings. Malformed successful stop response retains mayHaveBeenAccepted=true. Cancel makes one stop attempt then separate observation; observer loss does not repeat stop."
+    },
+    {
+      "check": "old_namespace_and_model_boundaries",
+      "result": "PASS",
+      "detail": "Original ah1 namespace construction, retained intent inventory/digest validation and explicit model allowlist remain. Execution/provider requirements forced for task submission. Source lock and execution/provider implementation bytes match baseline."
+    },
+    {
+      "check": "honest_product_scope",
+      "result": "PASS",
+      "detail": "Docs identify source/HTTP fixture acceptance, unsupported start/close, no installed native service or real-model acceptance, unchanged P1 historical installation, P2 IN PROGRESS and P3-P5/M1/prod OPEN."
+    },
+    {
+      "check": "observation_and_cancel_limits",
+      "result": "PASS",
+      "detail": "Expired locator does not guarantee later native GET success; ordinary GET is not promised free of backend writes. Queued cancellation with null generation remains terminal_unverified/unresolved/exit 3; physical worker verification remains false."
+    },
+    {
+      "check": "concrete_next_boundary",
+      "result": "PASS",
+      "detail": "R159 explicitly adds native opt-in borrowed transport on same owner/loop/stores/epoch; ready/draining/unknown/closed semantics, observation and stop during drain, terminal obligations before retirement and physical close, new source/install closure and bounded selected-model acceptance."
+    },
+    {
+      "check": "test_and_publication_claims",
+      "result": "PASS_WITH_PENDING_GATES",
+      "detail": "Latest report labels fixture coverage and Windows skips; full exact-commit CI is separately required. No CI, native service, provider or deployment PASS is inferred from this review."
+    }
+  ],
+  "blockers": [],
+  "validationEvidence": {
+    "testsExecutedByReviewer": false,
+    "runtimeExecutedByReviewer": false,
+    "nativeBridgeUsedByReviewer": false,
+    "providerCallsByReviewer": 0,
+    "linux": {
+      "status": "ROOT_REPORTED_PASS_RECORD_INSPECTED",
+      "newTests": 56,
+      "locatorTests": 25,
+      "cliTests": 31,
+      "ledgerRegression": 36,
+      "hostClientRegression": 17,
+      "record": "evidence/p2-local-control-r158a1/checks/linux-focused.json",
+      "rawTestExecutionObservedByReviewer": false
+    },
+    "windows": {
+      "status": "ROOT_REPORTED_PASS_NOT_INDEPENDENTLY_VERIFIED",
+      "testsRun": 109,
+      "passed": 104,
+      "skipped": 5,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 27.248,
+      "exitCode": 0,
+      "skipReasons": {
+        "aiohttp_unavailable": 4,
+        "POSIX_signal_required": 1
+      },
+      "rootReportedRequestId": "70010158-83e7-4f2f-ae8e-bb0508f43794",
+      "artifactLocationReportedByRoot": "Primary worktree checks/windows-focused.json and checks/windows-focused.txt",
+      "artifactFilesVerifiedByReviewer": false
+    },
+    "exactCommitCi": "PENDING",
+    "finalPublication": "PENDING"
+  },
+  "acceptedByThisReview": {
+    "sourceAndDocs": true,
+    "nativeService": false,
+    "realModel": false,
+    "fullP2": false,
+    "production": false
+  },
+  "remainingLimitations": [
+    "Native borrowed listener/source-lock integration remains R159; current source does not support daily start/close.",
+    "Windows source hashes and raw output are root-observed; final publication must bind actual artifacts and exact-commit CI.",
+    "Review is tied to the listed source/document bytes and does not attest subsequent edits."
+  ]
+}

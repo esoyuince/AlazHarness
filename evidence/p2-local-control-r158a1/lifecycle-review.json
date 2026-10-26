@@ -1,0 +1,220 @@
+{
+  "reviewId": "R158A1_NATIVE_LIFECYCLE_SOURCE_REVIEW",
+  "reviewer": "r158_lifecycle_review",
+  "reviewStatus": "SOURCE_REVIEW_COMPLETE",
+  "harnessCommit": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "nativeCommit": "d1516731308de8e87130dc68124e69aad35d6911",
+  "runtimeExecuted": false,
+  "testsExecuted": false,
+  "nativeBridgeUsed": false,
+  "providerCalls": 0,
+  "serviceAccepted": false,
+  "p2Accepted": false,
+  "productionAccepted": false,
+  "sourceFilesVerified": [
+    {
+      "path": "gateway/platforms/api_server.py",
+      "sha256": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+      "size": 259239
+    },
+    {
+      "path": "gateway/platforms/api_server_prepared.py",
+      "sha256": "124c918ed2a040c26bcb2586744190a208c58c47b5e9bc4e208a8d6f19a5dd5e",
+      "size": 6821
+    },
+    {
+      "path": "gateway/platforms/api_server_borrowed.py",
+      "sha256": "865fffd79a0bfd4f742e6a8668d6221d48494d61dcde631f65d4cda9f2fe5db4",
+      "size": 11497
+    },
+    {
+      "path": "gateway/platforms/api_server_runs.py",
+      "sha256": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+      "size": 81652
+    },
+    {
+      "path": "gateway/platforms/api_server_authority_runs.py",
+      "sha256": "3c269e67bd3ae4bd154f35d28ed3b1639e7bf18c090b43fc72027d9ab2521738",
+      "size": 8687
+    },
+    {
+      "path": "gateway/platforms/api_server_run_observation.py",
+      "sha256": "a3761430afb716f28cf6d2cfa13805d88b20b21829abdb121920442a786f9c01",
+      "size": 7413
+    },
+    {
+      "path": "gateway/platforms/api_server_worker_observation.py",
+      "sha256": "d0f62fc1cbb182db10688dda0a88ffff8f64c0e61845dfac92e62b73cdb75c44",
+      "size": 7313
+    },
+    {
+      "path": "gateway/run_borrowed_state.py",
+      "sha256": "6e3f81619a4973fb5d54a930dd6ac2b583c0b77872337894f9660b811f62693b",
+      "size": 14071
+    },
+    {
+      "path": "gateway/run_borrowed_publication.py",
+      "sha256": "af61b1b984a8ae773554e1d0c9311af8f9b055402659da4ca61562977cd2cefe",
+      "size": 5490
+    },
+    {
+      "path": "gateway/run_borrowed_admission.py",
+      "sha256": "e7befc6ca9e11d6774cdd0c7d9060a337e1cccc9776fe043bfa1a869b7352dac",
+      "size": 13411
+    },
+    {
+      "path": "gateway/run_borrowed_cleanup.py",
+      "sha256": "8ca5b7a76534a45de883a138c38bc1ac6c2aac27984e6d910f29cc68adb3da1b",
+      "size": 7180
+    },
+    {
+      "path": "gateway/run_borrowed_retirement.py",
+      "sha256": "672aaa1971f0dd8b605e07ae6e7a1781d4ee8dd2e9385a595ed55fcb06ac22e1",
+      "size": 10968
+    },
+    {
+      "path": "gateway/session_authority.py",
+      "sha256": "91ccbe38a754f5649a5cfdedea9cd0965bddb9234bf0c9628ae1099d37175396",
+      "size": 64814
+    },
+    {
+      "path": "gateway/session_runtime_workers.py",
+      "sha256": "3feea3bc6e0e452f0ad049343242d9b2499595d752e2a74cf77bd2fdeb9e877b",
+      "size": 6691
+    },
+    {
+      "path": "gateway/session_pending_controls.py",
+      "sha256": "c8ae36accdce384e09c62025bbe93ef11b07e82139b11625f1c94ccc0d56d3f1",
+      "size": 5882
+    },
+    {
+      "path": "gateway/session_api.py",
+      "sha256": "0547f108fdf89fa3e1a29f8ce83a9519c8c63d38ec96bc19371e44a00b26410a",
+      "size": 13167
+    },
+    {
+      "path": "gateway/session_api_turn.py",
+      "sha256": "feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f",
+      "size": 28136
+    },
+    {
+      "path": "gateway/run_runtime.py",
+      "sha256": "dedbd4429bdd542c0555693de6d0b22a09dc338fc0b6603105355d78fd7176c9",
+      "size": 25432
+    },
+    {
+      "path": "gateway/run_startup.py",
+      "sha256": "1c29c9839e46048b08873e8a822aae8c913f6740eb6a23876ab2eadff6e97e9b",
+      "size": 111215
+    },
+    {
+      "path": "gateway/run_shutdown.py",
+      "sha256": "1594ed1230b6db10cee4154babc49998b00cc01419061a978c1f261ccd5e2926",
+      "size": 126251
+    },
+    {
+      "path": "gateway/platforms/base.py",
+      "sha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525",
+      "size": 277928
+    }
+  ],
+  "verdict": "Current borrowed owner has no supported listener lifecycle; an explicit native opt-in transport integration is required.",
+  "barriers": [
+    {
+      "path": "gateway/platforms/api_server.py",
+      "symbol": "APIServerAdapter.connect",
+      "reason": "Borrowed stores unconditionally reject with borrowed_listener_not_qualified."
+    },
+    {
+      "path": "gateway/platforms/api_server_prepared.py",
+      "symbol": "check_prepared",
+      "reason": "Selected adapter must have running false and app/site/runner None in every current phase."
+    },
+    {
+      "path": "gateway/run_borrowed_state.py",
+      "symbol": "CallerOwnedRunnerState._check_prepared",
+      "reason": "Runner remains nonrunning and descriptor is exactly caller_prepared/active/draining/drained with empty capabilities and served profiles."
+    },
+    {
+      "path": "gateway/run_startup.py",
+      "symbol": "GatewayRunner.start/_start_impl",
+      "reason": "Ordinary service lifecycle refuses caller-owned state."
+    },
+    {
+      "path": "gateway/run_shutdown.py",
+      "symbol": "GatewayRunner.stop",
+      "reason": "Ordinary shutdown also refuses caller-owned state."
+    },
+    {
+      "path": "gateway/run_runtime.py",
+      "symbol": "start_gateway_runtime_api",
+      "reason": "Ordinary local IPC/API startup refuses caller-owned state."
+    },
+    {
+      "path": "packages/claw-hermes/host_gate_plugin.py",
+      "symbol": "current",
+      "reason": "Host boundary requires ordinary ready descriptor and nonretiring authority."
+    },
+    {
+      "path": "packages/claw-hermes/execution_boundary.py",
+      "symbol": "ExecutionBoundary.ledger",
+      "reason": "Execution boundary also requires ready descriptor."
+    }
+  ],
+  "stopMapping": [
+    "POST /v1/runs/{run_id}/stop -> api_server_runs._handle_stop_run -> api_server_authority_runs.stop_run",
+    "queued -> shielded tracked cancel_queued -> canonical cancelled settlement; stale_generation rereads and interrupts claimed generation",
+    "started -> SessionAuthority.interrupt with exact generation -> status stopping, not terminal proof",
+    "unknown -> unknown_execution; no automatic resolve or replay",
+    "terminal -> canonical run_projection / admission_result"
+  ],
+  "physicalWork": "Observer cancellation is shielded. Turn workers remain until worker_done; asyncio carrier completion is insufficient. Retirement checks physical workers, tracked mutations, durable admissions, replay and response obligations.",
+  "httpOnlyWriterGap": {
+    "path": "api_server_runs._execute_run -> APIServerAdapter._record_api_metrics -> _publish_runtime_status -> BasePlatformAdapter._write_runtime_status_safe",
+    "finding": "This can publish ordinary runtime status; base adapter has no caller-owned suppression. R156 called run_api_turn directly and did not exercise this HTTP producer writer."
+  },
+  "readObservationCaveat": "Native _handle_get_run is not universally read-only: fallback extends retention, hydrates caches and can persist interrupted status. Canonical pending-controls snapshot can prune/publish memory events.",
+  "drainControlGap": "begin_drain retires authority and changes descriptor; existing host gate rejects stop afterward. Future integration must retain observation and exact-generation stop while refusing new admission.",
+  "nextServicePacket": {
+    "id": "R159",
+    "scope": "Explicit borrowed loopback transport lifecycle on existing native owner; no new queue or result authority.",
+    "requirements": [
+      "Opt-in typed transport owned by the same process, event loop, borrowed bundle and original stores; P1 listener-free default preserved.",
+      "Bind one loopback listener and a fixed reviewed subset of existing handlers plus host/provider boundary.",
+      "Validate exact app/site/runner and owner identities in an explicit transport branch; do not hide an external listener from existing checks.",
+      "Define ready/draining/unknown/closed behavior and operation-specific admission versus observation/control checks.",
+      "Explicitly qualify or suppress ordinary heartbeat/metrics/reconnect/recovery resources.",
+      "Seal admission; settle or explicitly cancel queued/running work; retire listener handlers; retire runtime and API memory; detach; close three physical stores; release lease last.",
+      "Unknown start/close effects retain ownership and prohibit blind replay.",
+      "Review source changes, update native/harness manifests, and build a fresh P2 installation; do not mutate immutable R156 acceptance installation."
+    ]
+  },
+  "sourceAlignment": {
+    "unchangedHarnessFiles": [
+      "gateway_prepared_consumer.py",
+      "gateway_consumer_api.py",
+      "gateway_consumer_admission.py",
+      "gateway_store_startup.py",
+      "host_gate.py",
+      "host_gate_plugin.py",
+      "execution_boundary.py",
+      "host_report.py"
+    ],
+    "unchangedComparisonBasis": "Historical r156-source snapshot versus original aba1e6a Git blobs, before R158 edits.",
+    "retainedLaunchChange": "Expected R156 finite sibling implementation; current aba1e6a sha256 4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2.",
+    "hostGateLockCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780",
+    "confirmedHostLockMismatches": [
+      {
+        "path": "gateway/platforms/api_server.py",
+        "locked": "74158a9bcac885e238508e0b36160bd6a676b0424894554d3674c67cfc7858f4",
+        "selected": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0"
+      },
+      {
+        "path": "gateway/platforms/api_server_runs.py",
+        "locked": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+        "selected": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb"
+      }
+    ],
+    "otherLockFiles": "Some were absent from selected snapshot and remain unverified; not classified as mismatches."
+  }
+}

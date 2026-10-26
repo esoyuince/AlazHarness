@@ -95,7 +95,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
 
     def error(exc):
         code=str(exc) if isinstance(exc,HostGateError) and re.fullmatch('[a-z_]{1,80}',str(exc)) else 'host_gate_unavailable'
-        status=401 if code=='authentication_required' else (503 if code=='host_gate_unavailable' or code=='gate_storage_or_commit_unknown' else 409)
+        status=401 if code=='authentication_required' else (503 if code in ('host_gate_unavailable','gate_storage_or_commit_unknown','gate_observation_unavailable') else 409)
         return web.json_response({'hostGateVersion':1,'error':{'code':code},'retryAllowed':False},status=status)
 
     async def body(request):
@@ -126,6 +126,15 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
             # Returning from _execute_write proves COMMIT. No forward on unknown commit.
             # Subsequent native refusal, timeout, disconnect or cancellation never refunds.
             return await adapter._handle_runs(request)
+        except Exception as exc:return error(exc)
+
+    async def observe_request(request):
+        try:
+            ledger=current(request)
+            # No execution readiness, native replay lookup, status repair or
+            # dispatch on this route. A locator is not a terminal result.
+            value=await asyncio.to_thread(ledger.observe,request.match_info['request_id'])
+            return web.json_response(value)
         except Exception as exc:return error(exc)
 
     async def dream_run(request):
@@ -262,6 +271,7 @@ def bind_host_gate(app, adapter, policy: HostGatePolicy, *, execution=None, drea
     app.middlewares.append(gate)
     app.router.add_post(BASE+'/intents',issue)
     app.router.add_post(BASE+'/dispatch',dispatch)
+    app.router.add_get(BASE+'/requests/{request_id}',observe_request)
     app.router.add_get(BASE+'/capabilities',capabilities)
     if dream is not None and dream.policy.enabled:
         app.router.add_post(BASE+'/dream',dream_run)

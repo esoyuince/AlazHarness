@@ -1,0 +1,48 @@
+{
+  "earlierRegressionChecks": {
+    "hostClient": {
+      "exitCode": 0,
+      "passed": 17,
+      "receiptChunk": "9de8ad",
+      "run": 17,
+      "seconds": 2.278
+    },
+    "hostLedger": {
+      "exitCode": 0,
+      "passed": 36,
+      "receiptChunk": "acf78c",
+      "run": 36,
+      "seconds": 0.501
+    }
+  },
+  "kind": "R158A1_LOCAL_FOCUSED_TESTS",
+  "nativeRuntimeStarted": false,
+  "newTests": {
+    "cli": {
+      "exitCode": 0,
+      "passed": 31,
+      "receiptChunk": "9891c7",
+      "run": 31,
+      "seconds": 6.47,
+      "skipped": 0
+    },
+    "locator": {
+      "exitCode": 0,
+      "passed": 25,
+      "receiptChunk": "0b4f09",
+      "run": 25,
+      "seconds": 0.604,
+      "skipped": 0
+    }
+  },
+  "newTestsPassed": 56,
+  "notes": [
+    "Restricted sandbox refused loopback listens and a threaded event-loop continuation; automatic-reviewed escalation allowed the local fixture checks.",
+    "Original 17 socket-test failures were EPERM environment failures; same fixture suite subsequently passed outside that restriction.",
+    "aiohttp emitted its existing string-AppKey warning.",
+    "Primary Windows and exact-commit CI provide final combined-source validation."
+  ],
+  "realProviderCalls": 0,
+  "scope": "real SQLite, synthetic HTTP/CLI contracts; not native runtime or model acceptance",
+  "serviceLifecycleAccepted": false
+}

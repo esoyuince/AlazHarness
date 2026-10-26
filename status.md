@@ -1,87 +1,91 @@
 # AlazHarness - status
 
-## R157A1 - DONE: native readiness and joint P1 acceptance
+## R158A1 - DONE: local control and read-only request recovery
 
-P1 is DONE for the same unchanged R156 installation. R156 finite and R157
-readiness-only native acceptances use separate fresh image/supervisor lifecycles.
-P2-P5, complete D3B, M1 and production acceptance remain OPEN.
+P1 remains DONE. P2 is IN PROGRESS. P3-P5, full D3B, M1 and production are OPEN.
+This packet implements the thin local control client and request-to-run locator;
+native daily service start/close and real-model acceptance are NOT RUN.
 
-Active branch: alaz/m1-installed-readiness-r157a1.
-Worktree: C:\Antigravity\AlazHarness\scratch\worktrees\m1-installed-readiness-r157a1.
-QA base main: cdc974728e69f590838b82421cd244e36554a74f.
-Installed runtime: e641a5000810efb2a453ae847f689b422f7d41a7 at /opt/alaz-r156a1.
-Native: d1516731308de8e87130dc68124e69aad35d6911.
-Receipt: a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845.
+Active branch: alaz/p2-local-control-r158a1.
+Worktree: C:\Antigravity\AlazHarness\scratch\worktrees\p2-local-control-r158a1.
+Base main: aba1e6af9242e7b4006bbd9f6244022549a52c61.
+Reviewed native source (unchanged): d1516731308de8e87130dc68124e69aad35d6911.
 
-### Completed and accepted
+### Implemented
 
-- Reviewed source-only renderer, four explicit QA sources and 22 focused tests.
-- Original candidate/receipt and all six R156 ordinary proof files revalidated.
-- One fresh image001: seed epoch 1, readiness epoch 2, six startup checks,
-  original stop/finish, all owned children terminal, host mount state unchanged.
-- Native request 53c00157-2ce9-4eea-9b9f-61beef0377f2 terminal exit 0/PASS.
-  Intent 995225a4262b807450226ed252ed4bdc5a9e9cb8f40313ef6acd37aa26bbd72a.
-  Result 5bd9879c71d3c2ee2e45762899892f51195068937cf1d30108d5c32127f33426.
-- Joint P1 evidence/source verification PASS; both installation objects equal;
-  81 packaged harness Git blobs unchanged from e641 and exact manifest bytes.
-- Runtime and original receipt unchanged; no reinstall or repeated finite work.
-  New real model/provider calls zero. No unresolved R157 native effect exists.
+- HostGateLedger.observe plus authenticated GET /alaz/host/v1/requests/{request_id}:
+  read-only state/replay snapshot, existing scope/key/fingerprint/epoch/inventory
+  checks, no issue/consume, native pruning/status repair or execution readiness.
+- HostGateClient.observeRequest: strict response/identity/flag validation.
+- LocalControlClient and scripts/alaz_local.mjs: task/request/status/watch/result/
+  usage/cancel over existing clients. Execution boundary and provider broker are
+  mandatory for submission. No raw-start fallback, new queue or result store.
+- Watch interruption only stops observation. Cancel sends once and observes
+  separately; malformed successful stop ACK preserves possible acceptance.
+- start/close return unsupported. Native run usage is not verified physical-call
+  accounting; absent cost remains unknown. Null-generation queued cancellation
+  stays terminal_unverified/unresolved under the existing strict classifier.
+- Nine source/test files, report, roadmap and a concrete R159 service entry plan.
 
-The initial joint verifier rejected LICENSE's Windows CRLF checkout bytes.
-Committed LF blob and installed manifest always matched. Final verifier compares
-exact Git blob bytes, records CRLF-only checkout differences and requires clean
-packaged paths. First source-only diagnostic is preserved; native was not rerun.
+### Validation and reviewed scope
 
-### Validation and limits
+New Linux tests: 25 SQLite/HTTP handler + 31 CLI/HTTP fixture, 56/56 PASS.
+Earlier ledger 36 and host-client 17 regressions PASS.
+Primary Windows request: 70010158-83e7-4f2f-ae8e-bb0508f43794, terminal exit 0:
+109 run, 104 passed, 5 skipped, 0 failures/errors, 27.248 seconds.
+Four skips are unavailable aiohttp in that Python; one is POSIX SIGINT. All
+five passed in Linux. Nine primary source hashes matched before/after the suite.
+checks/windows-focused.json and .txt preserve the exact combined-source run.
 
-Linux preparation unit tests: 22/22 PASS, 5.217 s.
-Windows focused tests: 22 run, 21 passed, 1 platform skip, 0 failures/errors,
-35.689 s, exit 0. Actual candidate preparation and host freeze: exit 0.
-Native acceptance: exit 0; separate independent source/frozen/native/P1 reviews PASS.
-Joint evidence and packaged-source verifier: exit 0/PASS.
-Staged offline static gate: PASS, 6641 tracked files, 3976 tests discovered (not executed by this gate), exit 0.
+Independent request/lifecycle/final-source-docs reviews PASS. Source compatibility:
+old host lock rejects two d151 files; execution 5/5, retained 756/756 and finite
+755/755 primary file hashes match. Command secret-source exists natively but is
+missing from both product manifests. Existing locks and native source unchanged.
 
-Seed and readiness child stderr each contain 1265 bytes of SQLite DELETE-mode
-warnings; outer stderr is empty. No SQLite upgrade occurred. Finite model
-factory/computation/close remains scripted fixture; real broker, service,
-general runtime admission, restart replay and product CLI are not accepted here.
+Staged static/discovery gate: PASS, 6662 files checked, 4032 tests discovered,
+119.567 seconds, exit 0. Discovery does not execute the full suite.
+Exact-commit CI and main publication are recorded in the final journal below.
 
-### Git / CI publication handoff
+### Publication handoff
 
-This tracked status snapshot is finalized before its containing commit is made.
-The exact resulting commit, push outcomes, latest required alaz/local-ci status,
-normal main fast-forward and final protected-state verification are recorded in:
+This tracked status is finalized before its containing commit. Exact commit,
+feature push, latest required alaz/local-ci, ordinary main fast-forward/push,
+post-main CI and final protected-state checks are recorded in:
 
-C:\Antigravity\AlazHarness\scratch\worktrees\m1-installed-readiness-r157a1\scratch\r157a1-publication\final-publication.json
+C:\Antigravity\AlazHarness\scratch\worktrees\p2-local-control-r158a1\scratch\r158a1-publication\final-publication.json
 
-Before resuming, verify that journal against live Git and the latest required
-status for the actual commit. If no final journal exists, publication remains
-unverified: finish that step before beginning P2. Main was cdc9747 at entry.
-No force push/rebase/reset is part of this work. Git publication is not a
-deployment or a service start. Root33 user changes are separately protected;
-the original root status copy is not overwritten.
+If that final journal is missing or not PASS, finish publication before R159.
+Verify it against live Git and the latest required status. Git publication does
+not deploy a service. No native runtime/provider attempt or unknown native effect
+exists for R158; the R156 installation and receipt remain untouched.
+Original root33 user changes and R154-R157/native protected trees are preserved.
 
 ### Exact next work
 
-P2 / R158A1: read the existing HostGateClient/HermesRunsClient and native
-listener/stop sources, map the real control flow, then implement the thin daily
-start/task/watch/result/usage/cancel/close path on the canonical native owner.
-Resolve selected-model source/secret closure and explicit budget before a real
-provider acceptance. No new task queue/result authority is needed.
+R159: explicitly qualify a borrowed loopback transport on the SAME native
+runner/authority/three-store owner. Preserve the default P1 listener-free path.
+Bind a reviewed route subset; make ready/draining observation/control explicit;
+retain active/unknown work ownership until terminal, retire transport/handlers,
+then native runtime/API, drain/detach, stores and original leases.
+Review the HTTP-only metrics writer, update native/host compatibility together,
+build a fresh P2 source/Node/Python closure, and qualify daily start/close.
+Real model task follows selected route/model and visible call/token/cost budget.
 
-Report: [R157](docs/M1-INSTALLED-READINESS-R157A1.md).
-Joint evidence: [P1](evidence/m1-installed-readiness-r157a1/p1-acceptance.json).
-Next packet: [P2/R158](docs/P2-LOCAL-PRODUCT-R158A1-PLAN.md).
-Roadmap: [product roadmap](docs/PRODUCT-ROADMAP.md).
-Detailed prior status: docs/status-history/r157a1-parent.md.
-This task's initial and pre-native snapshots are retained beside it.
+Report: docs/P2-LOCAL-CONTROL-R158A1.md.
+Next plan: docs/P2-BORROWED-SERVICE-R159A1-PLAN.md.
+Roadmap: docs/PRODUCT-ROADMAP.md.
+Evidence: evidence/p2-local-control-r158a1/.
+Prior status: docs/status-history/r158a1-parent.md; initial R158 snapshot beside it.
 
 ### Work log
 
-- Read status/rules and verified live R156/main/CI against the final R156 journal.
-- Preserved root33 and protected worktrees; created isolated R157 at cdc9747.
-- Prepared/reviewed fixed QA, tested guards, verified actual candidate and froze intent.
-- Executed one native image001, observed terminal PASS and original normal close.
-- Independently reviewed all raw captures, identities and same-installation P1 scope.
-- Verified 81 exact packaged Git blobs; corrected only source-verifier CRLF handling.
-- Updated P1 roadmap/report and precise P2 entry packet; publication uses final journal.
+- Verified R157 final journal/live Git/required CI and protected root33; read rules,
+  MVP and active plans, then created isolated R158 from accepted main.
+- Read pinned clients/native service/stop sources; recorded exact listener and
+  source-lock barriers without changing their guards.
+- Implemented and independently reviewed read-only request recovery and local CLI.
+- Preserved at-most-once handoff, observer/stop separation, unknown usage and
+  native result authority; fixed malformed stop-ACK ambiguity.
+- New Linux tests 56/56 PASS; primary final-source 109/104/5 PASS.
+- Updated report/roadmap and exact R159 boundary; staged whitespace and static
+  checks passed. Final commit/CI/main publication is handed off to the journal.

@@ -20,7 +20,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
 | P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
-| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | OPEN; kontrollü model/broker altyapısı mevcut. |
+| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 yerel CLI ve kayıp yanıt locator kaynak/HTTP sözleşmesi tamamlandı. Native günlük listener/start/close ve gerçek model kabulü açık; R159 sıradaki paket. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
 | P5 | Tek v0.1 sürüm adayı ve küçük pilot | M1-01..M1-07 aynı kaynak/kurulumda kapanır; temiz ortam kurulumu ve gerçek görev pilotu | OPEN; tam M1 ve prod kabulü yok. |
@@ -75,7 +75,7 @@ PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında n
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
 
 Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
-kararı üstteki tabloda ve en son R157 teslimatında yer alır.
+kararı üstteki tabloda ve en son R158 teslimatında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -201,3 +201,20 @@ P4 arıza/işletim ve P5 tek sürüm adayı/pilot açık kalır.
 Rapor: [R157A1](M1-INSTALLED-READINESS-R157A1.md).
 Ortak kabul: [P1 kaydı](../evidence/m1-installed-readiness-r157a1/p1-acceptance.json).
 Sonraki iş: [P2 / R158 başlangıç paketi](P2-LOCAL-PRODUCT-R158A1-PLAN.md).
+
+## P2 / R158A1 yerel kontrol ve kayıp yanıt sorgusu
+
+Mevcut HostGateClient/HermesRunsClient üstünde görev, özgün istek sorgusu,
+durum, izleme, sonuç, kullanım ve tek stop ardından gözlem komutları eklendi.
+Kayıp dispatch yanıtı, aynı request ID'nin salt okunur native run locator'ıyla
+sorgulanır; consumed istek tekrar açılmaz. Yeni kuyruk veya sonuç deposu yoktur.
+
+Kaynak/HTTP fixture kabulü tamamlanır; günlük servis ve gerçek model kabulü
+bundan ayrıdır. P1 borrowed adapter'ın listener'ı açıkça reddettiği, host-gate
+kaynağının iki native dosyada eski sürüme bağlı kaldığı ve command secret-source
+dosyasının ürün manifest'inde bulunmadığı doğrulandı. Kilitler gevşetilmedi.
+
+Sıradaki somut iş [R159 borrowed servis bağlantısı](P2-BORROWED-SERVICE-R159A1-PLAN.md):
+aynı native owner'a açık transport sahipliği, draining sırasında kontrol ve
+sıralı close, ardından yeni tek P2 kurulumu ve sınırlı gerçek model görevi.
+Rapor: [R158](P2-LOCAL-CONTROL-R158A1.md). P1 DONE; P2 IN PROGRESS; P3–P5/M1/prod OPEN.

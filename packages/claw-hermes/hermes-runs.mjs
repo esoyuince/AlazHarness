@@ -122,7 +122,9 @@ export class HermesRunsClient {
     return snapshot(await this.#request('GET', '/v1/runs/' + runId(id), { signal }), id);
   }
   async stop(id, { signal } = {}) {
-    return snapshot(await this.#request('POST', '/v1/runs/' + runId(id) + '/stop', { body: {}, signal }), id);
+    const value = await this.#request('POST', '/v1/runs/' + runId(id) + '/stop', { body: {}, signal });
+    try { return snapshot(value, id); }
+    catch (error) { error.mayHaveBeenAccepted = true; throw error; }
   }
   events() { fail('unsupported_sse'); }
   approve() { fail('unsupported_approval'); }

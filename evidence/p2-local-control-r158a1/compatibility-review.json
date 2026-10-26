@@ -1,0 +1,157 @@
+{
+  "findings": [
+    {
+      "code": "host_gate_d151_pin_mismatch",
+      "detail": "Current host source lock rejects d151 api_server.py and api_server_runs.py. Review/integration qualification required; do not relabel old acceptance.",
+      "severity": "integration_blocker"
+    },
+    {
+      "code": "pruning_native_lookup",
+      "detail": "RunIdempotencyStore.lookup uses BEGIN IMMEDIATE, retention mutation and stale terminal pruning. It is not a read-only observation API."
+    },
+    {
+      "code": "native_get_can_write",
+      "detail": "GET run canonical branch reads run_projection; fallback _durable_run_status can mark dead-owner replay interrupted and update_status. Default bearer avoids room retention extension, not stale-owner repair."
+    },
+    {
+      "code": "readonly_recovery_binding",
+      "detail": "Use authenticated scope and original host intent key/fingerprint in a mode=ro attached state/replay snapshot. Validate config inventory, selected intent, replay fingerprint and runId/status identity, epoch/data versions/path identities. No replay row is not permission to retry."
+    },
+    {
+      "code": "canonical_scope_limit",
+      "detail": "Replay binding can recover runId without proving canonical admission/result. Full canonical verification requires api principal/requestId/target, payload scope/digest/model/input, admission epoch/generation and native saved result. Expose separate verified flags."
+    },
+    {
+      "code": "secret_command_closure_gap",
+      "detail": "Native registry lazily imports built-in command source and logs a registration warning on failure. command.py exists in d151 source but is absent from both finite and retained manifests. Neither real model closure nor credential resolution is accepted."
+    },
+    {
+      "code": "provider_route_scope",
+      "detail": "Both direct execution upstream and broker route_fingerprint only accept explicit http://127.0.0.1:<port>/v1. No direct public-provider HTTPS route is currently accepted."
+    },
+    {
+      "code": "budget_accounting",
+      "detail": "Execution ledger commits call/token/cost exposure before physical dispatch. Broker may add separately trusted private budget reservation before upstream. Lost responses keep reservations; profile/principal totals are not per-run invoices."
+    }
+  ],
+  "harnessCommit": "aba1e6af9242e7b4006bbd9f6244022549a52c61",
+  "kind": "R158A1_READ_ONLY_COMPATIBILITY_REVIEW",
+  "locks": [
+    {
+      "entries": [
+        {
+          "d151ManifestSha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577",
+          "directBytesSha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577",
+          "existingLockSha256": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577",
+          "matchesD151Manifest": true,
+          "path": "hermes_state.py"
+        },
+        {
+          "d151ManifestSha256": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+          "directBytesSha256": "16b785af8607314e184c7d7ae2a097bc7e713888449e94a8df88da78e2ad67f0",
+          "existingLockSha256": "74158a9bcac885e238508e0b36160bd6a676b0424894554d3674c67cfc7858f4",
+          "matchesD151Manifest": false,
+          "path": "gateway/platforms/api_server.py"
+        },
+        {
+          "d151ManifestSha256": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+          "directBytesSha256": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+          "existingLockSha256": "44d1f4c6221ce46f6b37cdb33620a08d0cc43f0fe6dce3a315955ce51e6f739a",
+          "matchesD151Manifest": false,
+          "path": "gateway/platforms/api_server_runs.py"
+        },
+        {
+          "d151ManifestSha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525",
+          "directBytesSha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525",
+          "existingLockSha256": "ba558db13e29bd29b7b7ecb7e39c2830972104839f9fa6798ace32c722a04525",
+          "matchesD151Manifest": true,
+          "path": "gateway/platforms/base.py"
+        },
+        {
+          "d151ManifestSha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568",
+          "directBytesSha256": null,
+          "existingLockSha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568",
+          "matchesD151Manifest": true,
+          "path": "hermes_cli/plugins.py"
+        }
+      ],
+      "path": "config/host-gate/source-lock.json",
+      "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+    },
+    {
+      "entries": [
+        {
+          "d151ManifestSha256": "eecf43c6578e2a0bb78e5d795cba150e00e704395d37490bf2217ab55a923296",
+          "directBytesSha256": null,
+          "existingLockSha256": "eecf43c6578e2a0bb78e5d795cba150e00e704395d37490bf2217ab55a923296",
+          "matchesD151Manifest": true,
+          "path": "tools/registry.py"
+        },
+        {
+          "d151ManifestSha256": "1a23773abe410feb5dd99276d08b6c0837624309ea489c508d683c6965408f94",
+          "directBytesSha256": null,
+          "existingLockSha256": "1a23773abe410feb5dd99276d08b6c0837624309ea489c508d683c6965408f94",
+          "matchesD151Manifest": true,
+          "path": "tools/file_tools.py"
+        },
+        {
+          "d151ManifestSha256": "fbb40d0058e3edd6c4e1608b8db9e922aaf38d2c9d0438c3811c6d6b01b45340",
+          "directBytesSha256": null,
+          "existingLockSha256": "fbb40d0058e3edd6c4e1608b8db9e922aaf38d2c9d0438c3811c6d6b01b45340",
+          "matchesD151Manifest": true,
+          "path": "model_tools.py"
+        },
+        {
+          "d151ManifestSha256": "2897575995d8dcbe94bba666ef66043a64c52a6c99e72c45e7da64a5fbdf576b",
+          "directBytesSha256": null,
+          "existingLockSha256": "2897575995d8dcbe94bba666ef66043a64c52a6c99e72c45e7da64a5fbdf576b",
+          "matchesD151Manifest": true,
+          "path": "agent/turn_api_call.py"
+        },
+        {
+          "d151ManifestSha256": "1b0a5da07f8c90152110ba2e77f413f204f6a6f6fe2971ad115cfd8acfb59fa0",
+          "directBytesSha256": null,
+          "existingLockSha256": "1b0a5da07f8c90152110ba2e77f413f204f6a6f6fe2971ad115cfd8acfb59fa0",
+          "matchesD151Manifest": true,
+          "path": "agent/auxiliary_client.py"
+        }
+      ],
+      "path": "config/execution-gate/source-lock.json",
+      "sourceCommit": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+    }
+  ],
+  "nativeCommit": "d1516731308de8e87130dc68124e69aad35d6911",
+  "nativeRuntimeExecuted": false,
+  "providerCalls": 0,
+  "qualifiedManifests": [
+    {
+      "commandSecretSourceIncluded": false,
+      "directBytesCovered": 169,
+      "directMismatches": [],
+      "directUnavailableCount": 587,
+      "entries": 756,
+      "path": "config/retained-profile-r140c6-sources.json",
+      "sha256": "0af0852042217675b8398e2f64c7e509935726b992d91b4bdf4080512b35f8e4",
+      "sourceCommit": "d1516731308de8e87130dc68124e69aad35d6911"
+    },
+    {
+      "commandSecretSourceIncluded": false,
+      "directBytesCovered": 169,
+      "directMismatches": [],
+      "directUnavailableCount": 586,
+      "entries": 755,
+      "path": "config/finite-close-f135c6-sources.json",
+      "sha256": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4",
+      "sourceCommit": "d1516731308de8e87130dc68124e69aad35d6911"
+    }
+  ],
+  "readSources": {
+    "agent/secret_sources/command.py": "b2bcae35d17d65143b5ea4c2968debeccf385a410b77cd2ed20351f4c7c9b4c9",
+    "agent/secret_sources/registry.py": "d3cde03a36e77b8ce342549acc4d684d28071baa619c5e6b7b00c1f97650e08f",
+    "gateway/platforms/api_server_authority_runs.py": "3c269e67bd3ae4bd154f35d28ed3b1639e7bf18c090b43fc72027d9ab2521738",
+    "gateway/platforms/api_server_run_idempotency.py": "4ad0c20dfe220cf0aac8b340702b54621f7ecdb075799816407406c5cd733c03",
+    "gateway/platforms/api_server_runs.py": "058d4e883cce5283e796335f52f16381a6891a940c1c3a8bd5257de70b9e00eb",
+    "gateway/session_api_turn.py": "feb785e12a153024b929efdf850ac69572342def6ddf3790d96473f4b140a63f"
+  },
+  "sourcesModified": false
+}
