@@ -1,0 +1,39 @@
+{
+  "kind": "R157A1_INDEPENDENT_NATIVE_EVIDENCE_REVIEW",
+  "result": "PASS",
+  "reviewer": "r157_readiness_review",
+  "nativeRequestId": "53c00157-2ce9-4eea-9b9f-61beef0377f2",
+  "nativeExitCode": 0,
+  "resultSha256": "5bd9879c71d3c2ee2e45762899892f51195068937cf1d30108d5c32127f33426",
+  "evidenceFileCount": 21,
+  "embeddedCaptureRowsVerified": 10,
+  "caller": {
+    "pid": 7,
+    "startTicks": 1538
+  },
+  "seed": {
+    "pid": 11,
+    "startTicks": 2300,
+    "parentPid": 7,
+    "epoch": 1,
+    "totalMillis": 29658
+  },
+  "readiness": {
+    "pid": 16,
+    "startTicks": 5542,
+    "epoch": 2
+  },
+  "workerPid": 10,
+  "normalClose": true,
+  "unresolvedNativeOutcome": false,
+  "innerStderrEach": {
+    "bytes": 1265,
+    "sha256": "6835531560cfb3b3e7d8ebd1bad0e8cfd3e1710408cac85f9a1814b00133916c",
+    "description": "Three SQLite DELETE-mode warnings"
+  },
+  "outerStderrBytes": 0,
+  "executedTasks": 0,
+  "realModelCalls": 0,
+  "modelOrServiceAcceptance": false,
+  "nativeExecutionRepeatedInReview": false
+}

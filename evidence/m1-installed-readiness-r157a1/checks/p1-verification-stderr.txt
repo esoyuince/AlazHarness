@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-installed-readiness-r157a1\evidence\m1-installed-readiness-r157a1\verify_p1.py", line 209, in <module>
+    main()
+    ~~~~^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-installed-readiness-r157a1\evidence\m1-installed-readiness-r157a1\verify_p1.py", line 188, in main
+    require(sha(raw) == row['sha256'] and len(raw) == row['bytes']
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            and prior[path] == current[path] == row['gitBlob'], 'packaged_source_changed:' + path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Antigravity\AlazHarness\scratch\worktrees\m1-installed-readiness-r157a1\evidence\m1-installed-readiness-r157a1\verify_p1.py", line 40, in require
+    raise ValueError(reason)
+ValueError: packaged_source_changed:LICENSE

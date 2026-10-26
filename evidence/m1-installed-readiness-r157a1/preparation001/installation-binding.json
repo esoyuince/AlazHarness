@@ -1,0 +1,18 @@
+{
+  "acceptanceInput": "/opt/alaz-r156a1-accept-input",
+  "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+  "builderSha256": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b",
+  "candidateDirectory": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-finite-product-r156a1\\scratch\\projected-candidates\\r156a1-native-finite-001",
+  "dependencyRoot": "/opt/alaz-f126c1a6/dependencies",
+  "destination": "/opt/alaz-r156a1",
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "installationInput": "/opt/alaz-r156a1-install-input",
+  "installerSha256": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6",
+  "kind": "R156A1_INSTALL_BINDING",
+  "manifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "pythonSha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "repositoryRoot": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-finite-product-r156a1",
+  "schemaVersion": 1,
+  "sourceFileCount": 838
+}

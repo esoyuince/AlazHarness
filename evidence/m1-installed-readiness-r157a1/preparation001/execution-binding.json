@@ -1,0 +1,89 @@
+{
+  "acceptanceInput": "/opt/alaz-r157a1-accept-input",
+  "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+  "baseCommit": "cdc974728e69f590838b82421cd244e36554a74f",
+  "cgroup": "/sys/fs/cgroup/alaz-r157a1",
+  "evidenceRoot": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-installed-readiness-r157a1\\evidence\\m1-installed-readiness-r157a1",
+  "generatedFiles": {
+    "scripts/qa/r157a1_accept.py": {
+      "bytes": 41746,
+      "sha256": "0bda884a32a69033b54be9d41ab7350df8435aaeeda60839f260ba828aa7aa55"
+    },
+    "scripts/qa/r157a1_linux_accept.py": {
+      "bytes": 36566,
+      "sha256": "80d7855c047c11bb7154647cc4c978db08dfa2aa7dce98ab3328a8a4257fa2d9"
+    },
+    "scripts/qa/r157a1_linux_transport.py": {
+      "bytes": 14171,
+      "sha256": "166a1b33e4b2aa463ac0a9b6ca07b8f7f884eb1a98630c84dcdeb966eafdaa91"
+    },
+    "scripts/qa/r157a1_seed_child.py": {
+      "bytes": 30474,
+      "sha256": "f742f9f6edc0132fbb3f331cbad5d52905c7af08109b24cdfe211551ef2824eb"
+    }
+  },
+  "installationBindingSha256": "5ef09ad06075995fb7d1d82ef49b1712c66c83a7dd7b260fe70850110ba45350",
+  "installationInput": "/opt/alaz-r156a1-install-input",
+  "installationReceiptSha256": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+  "installationRoot": "/opt/alaz-r156a1",
+  "installedHarnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "ipcRoot": "/tmp/alaz-ipc-r157a1",
+  "kind": "R157A1_READINESS_EXECUTION_BINDING",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "originalOrdinaryDirectory": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-installed-readiness-r157a1\\evidence\\m1-native-finite-r156a1\\ordinary001",
+  "originalOrdinaryFiles": {
+    "execution-start.json": {
+      "sha256": "49f960fc0727a550f263be79643d2aa54de4543b674e020d8b2a52257ce13108",
+      "size": 363
+    },
+    "linux-runner.py": {
+      "sha256": "3a89fb5cbd74642b67876ffe3ada4f429318a68eff9db41ecb0c11dc670642ab",
+      "size": 7402
+    },
+    "producer-source.py": {
+      "sha256": "02ac2d81d72e0ab11739081b3b95ccb05db2871581bc3494518fe2190a66a5aa",
+      "size": 35124
+    },
+    "result.json": {
+      "sha256": "e42a277a3371f168a08cd78f07af2253840d6004b5730c3b4dbb4de095469ae8",
+      "size": 11738
+    },
+    "stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "stdout.txt": {
+      "sha256": "2851d36fb219f6b82959f30647c792a82dd969e22e7512367fea65fcc14b195c",
+      "size": 10142
+    }
+  },
+  "repositoryRoot": "C:\\Antigravity\\AlazHarness\\scratch\\worktrees\\m1-installed-readiness-r157a1",
+  "reusedSources": {
+    "scripts/bootstrap_retained_profile_r156.py": {
+      "bytes": 35124,
+      "sha256": "02ac2d81d72e0ab11739081b3b95ccb05db2871581bc3494518fe2190a66a5aa"
+    },
+    "scripts/qa/r156a1_ordinary_seed.py": {
+      "bytes": 11436,
+      "sha256": "baa56be5f0df56a1e9679bb8efccb445aafd31c32c0fc0c4b2c22ce17fde13a7"
+    }
+  },
+  "schemaVersion": 1,
+  "sourceFileCount": 838,
+  "sourceManifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+  "stagedSources": {
+    "scripts/bootstrap_retained_profile_r156.py": {
+      "bytes": 35124,
+      "sha256": "02ac2d81d72e0ab11739081b3b95ccb05db2871581bc3494518fe2190a66a5aa"
+    },
+    "scripts/qa/r157a1_linux_accept.py": {
+      "bytes": 36566,
+      "sha256": "80d7855c047c11bb7154647cc4c978db08dfa2aa7dce98ab3328a8a4257fa2d9"
+    },
+    "scripts/qa/r157a1_seed_child.py": {
+      "bytes": 30474,
+      "sha256": "f742f9f6edc0132fbb3f331cbad5d52905c7af08109b24cdfe211551ef2824eb"
+    }
+  },
+  "stateRoot": "/srv/alaz-r157a1"
+}

@@ -1,0 +1,22 @@
+{
+  "atUtc": "2026-10-26T09:01:33.017362+00:00",
+  "elapsedSeconds": 35.689,
+  "errors": 0,
+  "failures": 0,
+  "kind": "R157A1_PREPARATION_CONTRACT_TESTS",
+  "logSha256": "f00edf5b73159f50b2f7173fa0d00b3357092c1b14b3b000f6439435dd0599c3",
+  "nativeRuntimeExecuted": false,
+  "passed": 21,
+  "platform": "win32",
+  "pythonVersion": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "realProviderCalls": 0,
+  "result": "PASS",
+  "skipped": [
+    "Creating test symlinks requires unrelated Windows privileges"
+  ],
+  "sourcePins": {
+    "scripts/qa/r157a1_prepare.py": "99e6016a2d8219380bb1f076ab21b6f6dd501c39145452308696998a926438e4",
+    "tests/test_r157_preparation.py": "d3360e9efaf116edb6488508fde5fcb4bd8ab38610336abad590a9eb4111eeeb"
+  },
+  "testsRun": 22
+}

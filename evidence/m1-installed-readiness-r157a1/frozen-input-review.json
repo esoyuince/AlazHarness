@@ -1,0 +1,15 @@
+{
+  "kind": "R157A1_FROZEN_INPUT_REVIEW",
+  "result": "PASS",
+  "reviewer": "r157_readiness_review",
+  "sourceOnly": true,
+  "nativeExecutedInReview": false,
+  "intentSha256": "995225a4262b807450226ed252ed4bdc5a9e9cb8f40313ef6acd37aa26bbd72a",
+  "manifestSha256": "2f5b407ffd8bd72508cffb3678285634a93faf20d71c210d8e3288ec62ce9b22",
+  "bundleSha256": "5bca15c533fe5661493d07346a810d7f51d82729f2b15907e159a2eee2417846",
+  "bundleBytes": 103162,
+  "frozenFileCount": 17,
+  "topLevelFilesIndependentlyReconstructed": 8,
+  "unchangedOriginalProofFiles": 6,
+  "stagedSourceFiles": 3
+}

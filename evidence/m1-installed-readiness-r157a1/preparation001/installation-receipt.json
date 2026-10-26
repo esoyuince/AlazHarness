@@ -1,0 +1,30 @@
+{
+  "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+  "dependencyFileCount": 1162,
+  "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+  "destination": "/opt/alaz-r156a1",
+  "executionAuthorized": false,
+  "finiteWorkExecuted": false,
+  "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "installed": true,
+  "kind": "VERIFIED_PROJECTED_INSTALLATION",
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "projectedReadinessAccepted": false,
+  "python": {
+    "device": 2096,
+    "gid": 0,
+    "inode": 3825,
+    "mode": 493,
+    "path": "/usr/bin/python3.12",
+    "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+    "uid": 0
+  },
+  "realModelCalls": 0,
+  "rootControlledAncestryVerified": true,
+  "rootDevice": 2096,
+  "rootInode": 29702,
+  "schemaVersion": 1,
+  "sourceAndDependenciesReadBack": true,
+  "sourceFileCount": 838,
+  "sourceManifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a"
+}

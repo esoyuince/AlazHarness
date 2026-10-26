@@ -1,0 +1,27 @@
+{
+  "actualCandidatePreparationPassed": true,
+  "atUtc": "2026-10-26T09:02:17.121775+00:00",
+  "checks": [
+    "original R155 readiness ownership, stop/finish and unknown custody algorithms preserved",
+    "exact six accepted R156 ordinary proof files and original producer/driver pins",
+    "original installation binding and source-only receipt unchanged",
+    "separate fresh R157 execution paths and QA base commit",
+    "original one-shot readiness child, epoch 1 seed then epoch 2 readiness",
+    "zero task/model/service/finite scope retained",
+    "portable tracked test inputs; unknown custody not indefinite worker liveness"
+  ],
+  "kind": "R157A1_INDEPENDENT_SOURCE_REVIEW",
+  "nativeReadinessExecuted": false,
+  "parentReadRendererAndTests": true,
+  "rendererSha256": "99e6016a2d8219380bb1f076ab21b6f6dd501c39145452308696998a926438e4",
+  "result": "PASS",
+  "reviewedGeneratedSourceSha256": {
+    "scripts/qa/r157a1_accept.py": "0bda884a32a69033b54be9d41ab7350df8435aaeeda60839f260ba828aa7aa55",
+    "scripts/qa/r157a1_linux_accept.py": "80d7855c047c11bb7154647cc4c978db08dfa2aa7dce98ab3328a8a4257fa2d9",
+    "scripts/qa/r157a1_linux_transport.py": "166a1b33e4b2aa463ac0a9b6ca07b8f7f884eb1a98630c84dcdeb966eafdaa91",
+    "scripts/qa/r157a1_seed_child.py": "f742f9f6edc0132fbb3f331cbad5d52905c7af08109b24cdfe211551ef2824eb"
+  },
+  "reviewer": "r157_readiness_review",
+  "sourceReviewOnly": true,
+  "testsSha256": "d3360e9efaf116edb6488508fde5fcb4bd8ab38610336abad590a9eb4111eeeb"
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "R157A1_JOINT_VERIFIER_SOURCE_REVIEW",
+  "result": "PASS",
+  "reviewer": "r157_preparation",
+  "sourceSha256": "70a48b328178c457a3a31a4cb1a2204981232cbf409e649ce90fc2499f39572e",
+  "packagedHarnessFiles": 81,
+  "exactCommittedBytesCompared": true,
+  "crlfOnlyCheckoutDifferenceRecorded": true,
+  "packagedPathsCleanRequired": true,
+  "installationObservationFromActualAttempt": true,
+  "newLiveInstallationCheckInVerifier": false,
+  "runtimeOrProviderExecution": false
+}

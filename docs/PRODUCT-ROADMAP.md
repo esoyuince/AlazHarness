@@ -19,7 +19,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
-| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı ürün girişinden readiness, normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | IN PROGRESS; R156 güncel kurulumda seed → normal/hata/replay/yeni iş → özgün kapanış PASS. Aynı güncel kurulumda ayrı readiness-only kabulü kalan P1 kapısı; R155 sonucu eski kurulumuna ait. |
+| P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
 | P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | OPEN; kontrollü model/broker altyapısı mevcut. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
@@ -41,8 +41,10 @@ değildir. Gerçek sağlayıcı/maliyet deneyi seçilmiş model ve açık bütç
 4. Gerçek retained profil beklentisi aynı supervised ext4 dosya sisteminde,
    orijinal normal close sonrasında ve lease hâlâ tutulurken üretilir. Eski QA
    profili/JSON'u taşınarak device/inode bilgisi yeniden yazılmaz.
-5. Önce readiness, sonra finite iş kabulü; hata/belirsizlikte zorla close, lease
-   bırakma, mount kaldırma, reset veya otomatik retry yok.
+5. Aynı kurulu runtime'ın readiness ve finite kardeş girişleri, ayrı taze yaşam
+   döngülerinde kabul edilir; mevcut geçerli finite kanıtı korunur. Hata veya
+   belirsizlikte zorla close, lease bırakma, mount kaldırma, reset ya da otomatik
+   retry yok.
 
 R152 yalnız sıradan kullanıcı altında gerçek Landlock + retained yaşam döngüsünü
 kabul etti; bu eski sonuç tek başına ürün supervisor kabulü değildi. R155'te aynı
@@ -50,7 +52,8 @@ kabul etti; bu eski sonuç tek başına ürün supervisor kabulü değildi. R155
 projected readiness ve normal kapanış ayrıca kabul edildi. L145 hedefi hâlâ
 yalnız readiness yapar. R156 ayrı sabit finite kardeş giriş üzerinden gerçek
 native API/authority/worker/persistence/kapanışını yeni kurulumda kabul etti;
-bu güncel kurulumda ayrı readiness-only kabulü henüz çalıştırılmadı.
+R157 aynı güncel kurulumu değiştirmeden ayrı readiness-only kabulünü tamamladı.
+İki gerçek native kabulün ortak kaynak bağı P1'i kapatır; P2–P5 açık kalır.
 
 ## M2 sonraki aşama
 
@@ -70,6 +73,9 @@ Her paket raporu kullanıcıya açılan gerçek akışı, son kaynak/kurulum kim
 çalışan kabulü ve açık kalanları bildirir. Mock/native/gerçek-model ve
 PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında normal
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
+
+Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
+kararı üstteki tabloda ve en son R157 teslimatında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -164,3 +170,34 @@ seçilmiş sağlayıcının gerekli modülleri ve açık model bütçesi gelir. 
 hazırlığı paralel yapılabilir; ücretli model kabulü P1 ve model/bütçe seçiminden
 sonradır. Rapor/kanıt: [R156A1](M1-FINITE-PRODUCT-R156A1.md). P2–P5, tam D3B,
 M1 ve prod kabulü açık kalır.
+
+## P1 / R157A1 güncel kurulumda readiness ve P1 kapanışı
+
+26 Ekim 2026'da aynı `/opt/alaz-r156a1` kurulumu, kaynak veya kurulum kaydı
+değiştirilmeden yeni 64 MiB ext4 imajında kabul edildi. Özgün task-free seed
+epoch 1, tek readiness çocuğu epoch 2 ve altı başlangıç kontrolü geçti.
+Özgün stop/finish sırası tamamlandı; sahip olunan çocuklar terminal, volume
+CLOSED, loop bağlantısı kaldırılmış, fence temizlikten sonra kaldırılmış ve
+imaj lease'i en son bırakılmıştır. Host mount namespace/tablosu değişmedi.
+
+R156 finite ve R157 readiness kayıtlarının kurulum nesneleri alan alan eşittir:
+harness `e641a5000810efb2a453ae847f689b422f7d41a7`, native `d1516731…`,
+838 kaynak / 1.162 bağımlılık, aynı receipt ve kök device/inode. Paketlenmiş 81
+harness Git blob'u da mevcut kaynakla birebir eşleşir. Ayrı imajlar, farklı
+supervisor tokenları ve özgün kapanış kayıtlarıyla bağlanır; R156 işi tekrarlanmadı.
+
+**P1 — DONE.** Normal/replay/yeni/hata native akışı ve görev açmadan readiness,
+aynı kurulumun sabit kardeş girişlerinde kabul edildi. Model factory/hesaplama/
+close R156'da scripted fixture'dır; iki kabulde gerçek sağlayıcı çağrısı sıfırdır.
+Bu karar tam D3B, M1 veya production kabulü değildir.
+
+Sonraki paket P2: mevcut HostGateClient/HermesRunsClient, native API ve bütçe
+bileşenleri üzerinden günlük yerel kullanım. Önce gerçek CLI/listener/stop
+bağlantıları ve seçilen modelin paketleme ihtiyacı doğrulanır; sonra
+başlat/görev/izle/sonuç/kullanım/iptal/kapat akışı uygulanır. Gerçek sağlayıcı
+kabulünden önce model ve harcama sınırı açık olmalıdır. P3 kalıcılık/hafıza,
+P4 arıza/işletim ve P5 tek sürüm adayı/pilot açık kalır.
+
+Rapor: [R157A1](M1-INSTALLED-READINESS-R157A1.md).
+Ortak kabul: [P1 kaydı](../evidence/m1-installed-readiness-r157a1/p1-acceptance.json).
+Sonraki iş: [P2 / R158 başlangıç paketi](P2-LOCAL-PRODUCT-R158A1-PLAN.md).

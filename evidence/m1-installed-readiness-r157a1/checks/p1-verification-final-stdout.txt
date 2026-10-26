@@ -1,0 +1,699 @@
+{
+  "atUtc": "2026-10-26T09:44:23.920356+00:00",
+  "checkoutCrLfOnlyDifferences": [
+    "LICENSE"
+  ],
+  "evidenceSha256": {
+    "evidence/m1-finite-product-r156a1/installation/candidate-manifest.json": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+    "evidence/m1-finite-product-r156a1/installation/installation-binding.json": "5ef09ad06075995fb7d1d82ef49b1712c66c83a7dd7b260fe70850110ba45350",
+    "evidence/m1-finite-product-r156a1/installation/installation-receipt.json": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+    "evidence/m1-installed-readiness-r157a1/image001/intent.json": "995225a4262b807450226ed252ed4bdc5a9e9cb8f40313ef6acd37aa26bbd72a",
+    "evidence/m1-installed-readiness-r157a1/image001/ordinary-proof.json": "e93e48abd121f78fbcc0163bf523eb8ebc820ac8b23230c9b39e335649fdfcf8",
+    "evidence/m1-installed-readiness-r157a1/image001/result.json": "5bd9879c71d3c2ee2e45762899892f51195068937cf1d30108d5c32127f33426",
+    "evidence/m1-native-finite-r156a1/image001/intent.json": "45b5db7c1057ab2f181b14a6d9481e077f87597b666a2a31c2064b6a58848959",
+    "evidence/m1-native-finite-r156a1/image001/ordinary-proof.json": "c44c6e0806b6cd60bd33f4d410268bcdbd4e06bfe4333b6e77502989e10dfa71",
+    "evidence/m1-native-finite-r156a1/image001/result.json": "6a67c078680fa4cb41ae29547c3c9e6e7048f7aeb49327384c37822ea0e88931"
+  },
+  "finiteAttemptRepeated": false,
+  "finiteCases": [
+    {
+      "admissionId": "923779b4205044e48a3698ac70c32348",
+      "apiResultSha256": "45c68a0c9e5f44f97b41452a43f2699a0b74c5b44f55ea16a4833d4eed52575c",
+      "computationCount": 1,
+      "kind": "normal",
+      "outcome": "completed",
+      "requestId": "r156a1-normal",
+      "storedResultSha256": "39492c0f70dbe8c9b5b6d4d42225171c48900eed4d0e92e5cf4f1be655b05a38"
+    },
+    {
+      "admissionId": "923779b4205044e48a3698ac70c32348",
+      "apiResultSha256": "45c68a0c9e5f44f97b41452a43f2699a0b74c5b44f55ea16a4833d4eed52575c",
+      "computationCount": 1,
+      "kind": "replay",
+      "outcome": "completed",
+      "requestId": "r156a1-normal",
+      "storedResultSha256": "39492c0f70dbe8c9b5b6d4d42225171c48900eed4d0e92e5cf4f1be655b05a38"
+    },
+    {
+      "admissionId": "12e3b6a39a074a8dba96617abaf94ca2",
+      "apiResultSha256": "3f6837aa938f5f7ed8c17c2dd54957bf9c1a9861ac1148ed910f40644ece02ca",
+      "computationCount": 2,
+      "kind": "new",
+      "outcome": "completed",
+      "requestId": "r156a1-new",
+      "storedResultSha256": "3f18feedacce971f0cba1893addbc15c064185a47de36d1766994c47f011708e"
+    },
+    {
+      "admissionId": "6953c84c971a4bf2873569b0a7591d43",
+      "apiResultSha256": "86b446a97d8f34231afd4ddfb32eab99f035fdfd4404c0dc5edd5f455958860f",
+      "computationCount": 3,
+      "kind": "error",
+      "outcome": "failed",
+      "requestId": "r156a1-error",
+      "storedResultSha256": "7e5a8efc0fe3f35a7276684e9f994a0a4cdb1b8128b647b4e5a0d865f19e219c"
+    }
+  ],
+  "fullD3BAccepted": false,
+  "installation": {
+    "archiveSha256": "3c829db65670756abd531d146aa72c0dc5b3773cd750fc87d26567763f3caef8",
+    "dependencyFileCount": 1162,
+    "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+    "destination": "/opt/alaz-r156a1",
+    "executionAuthorized": false,
+    "finiteWorkExecuted": false,
+    "harnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+    "installed": true,
+    "kind": "VERIFIED_PROJECTED_INSTALLATION",
+    "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+    "projectedReadinessAccepted": false,
+    "python": {
+      "device": 2096,
+      "gid": 0,
+      "inode": 3825,
+      "mode": 493,
+      "path": "/usr/bin/python3.12",
+      "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+      "uid": 0
+    },
+    "realModelCalls": 0,
+    "receiptSha256": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+    "rootControlledAncestryVerified": true,
+    "rootDevice": 2096,
+    "rootInode": 29702,
+    "schemaVersion": 1,
+    "sourceAndDependenciesReadBack": true,
+    "sourceFileCount": 838,
+    "sourceManifestSha256": "7a886c32fd81d046d44715921bdaae5765a6f4e481d33182258cc7aa2bac465a",
+    "verifiedInstalledBytesNow": true
+  },
+  "installedHarnessCommit": "e641a5000810efb2a453ae847f689b422f7d41a7",
+  "kind": "R157A1_JOINT_P1_ACCEPTANCE",
+  "m1Accepted": false,
+  "modelFactoryFixtureOnly": true,
+  "nativeFeature": "d1516731308de8e87130dc68124e69aad35d6911",
+  "newNativeExecutionInVerifier": false,
+  "p1Complete": true,
+  "p2Complete": false,
+  "p3Complete": false,
+  "p4Complete": false,
+  "p5Complete": false,
+  "packagedHarnessFileCount": 81,
+  "packagedHarnessFiles": {
+    "LICENSE": {
+      "bytes": 1081,
+      "gitBlob": "7609e151920e5b47816ec2da8e9075ea40b231e0",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "f124b0474189e3cade42b6efec680e515f38908341eb909a4bad1a2012607e40"
+    },
+    "SECURITY.md": {
+      "bytes": 1323,
+      "gitBlob": "3017e1065fe252365f0df26d678ad01f170bc8fa",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "f3c6027eabba1de3b5e8ab75a192a88b522c5772ff5f390aa136f71b80ab68d8"
+    },
+    "config/admission-consumer-b129d6-sources.json": {
+      "bytes": 54205,
+      "gitBlob": "4f738b3144f893ce3747fb39779ce10cd9606a92",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "d0a1067de53e224c43f44c04b039fe12491f10a62a843719519174a2cf8d7e35"
+    },
+    "config/canonical-api-consumer-i133p1-sources.json": {
+      "bytes": 54723,
+      "gitBlob": "d31ad024f6bae1ccec29ecf2d0cd4b8b3e90fdc2",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "f650c067e1d4a7d303c48e9be10e75273fee4d8d48dda721af320fe3ac80ae27"
+    },
+    "config/components.lock.json": {
+      "bytes": 4818,
+      "gitBlob": "26d28dec09bdab5b666d36a833e4e7b1e5fecff1",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "6bc6caf69c3a9f9f7618a2d787ff493a5e8e58039196224423e05ae0383fd646"
+    },
+    "config/finite-close-f135c6-sources.json": {
+      "bytes": 78968,
+      "gitBlob": "3205723694e9c8a71b7225fc9037c340ef12e33c",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "30095cdda6fadecaf332b5a5dbf8c2f3e43ad550d8dfd08adfe5469f26a324f4"
+    },
+    "config/hermes-finite-close-f135c6.json": {
+      "bytes": 1469,
+      "gitBlob": "f97210fb8763631196b32e94aac348bdf01a5282",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "bf4e3bed99780e14061bc106a469c9fbafef00c22d4be748aeb43bc5ad175113"
+    },
+    "config/linux-prepared-dependencies-l125p1.json": {
+      "bytes": 24981,
+      "gitBlob": "9ed25fb53ae3292879f58f6c630dc27be3d0666c",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "3bedcdf288ac788c17bf86713907edee0eeb9bce0ba91eb93e596126d1629201"
+    },
+    "config/prepared-consumer-s124b1-sources.json": {
+      "bytes": 53774,
+      "gitBlob": "2744374282add4e9db4b595db268788a9e8cd9fa",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "6dc037dfecb6365db67c57c8e8ef96e0c152b5b8e8aa0f96ef9b2f6e525bc215"
+    },
+    "config/retained-profile-r140c6-sources.json": {
+      "bytes": 79046,
+      "gitBlob": "a616caf9f54da65c3c9c384403a07e0b513e1a51",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "0af0852042217675b8398e2f64c7e509935726b992d91b4bdf4080512b35f8e4"
+    },
+    "docs/THIRD-PARTY.md": {
+      "bytes": 2042,
+      "gitBlob": "01d1abeb7ec13bdfe88c38b8128a3e6515ec56aa",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "d12d3b7aa0da6d6c0baa06020cdfe9b22a54aaf0974dd596328cff4db570588c"
+    },
+    "packages/claw-hermes/UPSTREAM.md": {
+      "bytes": 1599,
+      "gitBlob": "c03a26aafd3d99a9b0b4e7074c4eadb243c6d0ca",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "a136295274f2960032231b5c12d050ce5f424560a165dc740227659ebe9120ba"
+    },
+    "packages/claw-hermes/broker_budget.py": {
+      "bytes": 16433,
+      "gitBlob": "be92386b0f30f950100ee30ebe40ce7b0ae4b96d",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "57654ee6ea31eddc6c985756db23fb1bfa077f135bc1a2c2e71bbac925a8efcb"
+    },
+    "packages/claw-hermes/combined_guard.py": {
+      "bytes": 4021,
+      "gitBlob": "32fe0b8ca81c388d1e5963d683df26ae40ea62eb",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "7f404cd371bd77baf6ec24e55f08197a057d4eef867a2b2217ed7a30d4f0cf67"
+    },
+    "packages/claw-hermes/credential_guard.py": {
+      "bytes": 13571,
+      "gitBlob": "9809e730e04e2a86376131619b6d197260dfff35",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "504aaa0777b49eda72f1ff472e1e82531312b40b14beaa645f0b737b2a1808f4"
+    },
+    "packages/claw-hermes/dream.py": {
+      "bytes": 25245,
+      "gitBlob": "f7c348854569886b4982479d692ea47a46b2872b",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "07283756339da89a420c40f9fe80fc4f8ffaef26b903c65129cfa135a66d415a"
+    },
+    "packages/claw-hermes/dream_eval.py": {
+      "bytes": 13396,
+      "gitBlob": "ce2fe546ee84dd1bd85d559b2d6938b616dc9341",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "354b98d46c650b6094b61bb12341e8d4b4bcf320de11a7bd2aa98eec8801e16a"
+    },
+    "packages/claw-hermes/dream_review.py": {
+      "bytes": 13336,
+      "gitBlob": "02171968e8725f3d65eb44fc269bdace8bf3d99f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "04320b57f5673e7e3dac7cadb8407869e17832dfac3af877152e28d90bfb9281"
+    },
+    "packages/claw-hermes/dream_trial.py": {
+      "bytes": 25958,
+      "gitBlob": "7cff5f1423d3e2e025034342a0367ebc5cf83618",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "dda1cfac23dd16fe1f18cddb79bd26b5492910820d763fa64ca7162ab286701b"
+    },
+    "packages/claw-hermes/evidence_view.py": {
+      "bytes": 14066,
+      "gitBlob": "b7f055cc869df7301cb2c3fc8d2851a352a57665",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "77d9ed1387f6d88697711953c0993f91b9adad0e25915da7a3438bdca549fc04"
+    },
+    "packages/claw-hermes/execution_boundary.py": {
+      "bytes": 21689,
+      "gitBlob": "6c7a858b152bb090dbe802bea23613cd05dd8198",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "be363cf01e46380e9cb1aabf719fddd18299fd98428a9784fe9457a6b032372b"
+    },
+    "packages/claw-hermes/execution_budget.py": {
+      "bytes": 13355,
+      "gitBlob": "8ddd4a34645b68648d6a3da76e6f02e7f3f6cb08",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "43de8231185d6dbaace9696c494fe7c2c154c8dfb6d3830905ae0f5bdfd87f78"
+    },
+    "packages/claw-hermes/gateway_canonical_run_binding.py": {
+      "bytes": 25518,
+      "gitBlob": "3d5c6c162812635363bcbc928303661a40474db8",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "f29c96065c45eac90b9b2effab5ac73ac1ef98a79cbd60445b4aec7fac60ef31"
+    },
+    "packages/claw-hermes/gateway_canonical_turn_observation.py": {
+      "bytes": 10999,
+      "gitBlob": "4b1b6a835848dadacb6592e5f936f750a5b82c40",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "a03799a4e389cc0a48fa76f4b0ed1afb64bde81b67892241e0a02753f1751fe4"
+    },
+    "packages/claw-hermes/gateway_constructor_metadata.py": {
+      "bytes": 4022,
+      "gitBlob": "6a45691ae4a3e8acf17b861232a2dda8f918a4f2",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "0073eb0637dac0ad06738fe2b913895df727bc5f8595ba85a0547ef93a682b18"
+    },
+    "packages/claw-hermes/gateway_consumer_admission.py": {
+      "bytes": 3550,
+      "gitBlob": "0667c9979cb0bf29f41659bbe1269a3b52fa08f7",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "7f42c035f641c22f85b5c7fe04b5bd8011b1d529f61720ee88281722affd06da"
+    },
+    "packages/claw-hermes/gateway_consumer_api.py": {
+      "bytes": 4905,
+      "gitBlob": "a4b81cbb0fb8a115ddf08469d367a833f4a4a6fc",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e686828344d4c554416348730a226cc586ffaa635d451ff55d3b1734c6ad7168"
+    },
+    "packages/claw-hermes/gateway_finite_protocol.py": {
+      "bytes": 7586,
+      "gitBlob": "561c0e2bae07bfc72e6a1c1506262469dca3b27c",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "0e727aaf40ab22cb9c9714b26563f237cc04afdf86455d481b9f397b974cc95c"
+    },
+    "packages/claw-hermes/gateway_finite_runtime.py": {
+      "bytes": 19644,
+      "gitBlob": "986375c687f5694ebf0a72ff0a7de7e11d68fbe9",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e710f75ebc6900e1d16807a5d0a691f1c2f10c2f066c5d8918a6c13317e78c95"
+    },
+    "packages/claw-hermes/gateway_http_readiness.py": {
+      "bytes": 13894,
+      "gitBlob": "28552c88883ebe5f48bb6298c0adc15e59e21f95",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "7256a62ee2f4cf44d237037146f17557208e33a7fac5b9dd22271103edf7f007"
+    },
+    "packages/claw-hermes/gateway_live_store_gate.py": {
+      "bytes": 13123,
+      "gitBlob": "bdb64b08df238c10d236e7c6b29aa935c3bbff1a",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "c4d2a50afc91bd7fca6f2706c9b411d76dc2d79cb8e45f0d6f6988e813bafc51"
+    },
+    "packages/claw-hermes/gateway_native_layout.py": {
+      "bytes": 9620,
+      "gitBlob": "02862ea1705fc7b72e64f3975a828025bb1b4763",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0"
+    },
+    "packages/claw-hermes/gateway_native_run_provenance.py": {
+      "bytes": 4474,
+      "gitBlob": "13943f6da269a89648bcb22cc4c9342862fca68d",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "6b95596df3e74dbeb52096d8c7cfea6f5c44e994fffa13ecf84ac2e778db014d"
+    },
+    "packages/claw-hermes/gateway_native_worker_owner.py": {
+      "bytes": 5672,
+      "gitBlob": "ba3548f094397d8abea7af8be6121e1bff5cc739",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "585c420b3434e1ea9b0584190ed6986b08c8732f77a1a9e0d7e9a635c4a26e4c"
+    },
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "bytes": 21021,
+      "gitBlob": "e3f902008c64485f969af146b7e848ea8c125fbc",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "d5ce29480570d140363deda7fe8740ad7ddb1f5e579d0befbd790ca68a0f5cc6"
+    },
+    "packages/claw-hermes/gateway_profile_lease.py": {
+      "bytes": 8031,
+      "gitBlob": "c7484ec6cd224475c175a58be3d65c6d6ec58931",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95"
+    },
+    "packages/claw-hermes/gateway_projection.py": {
+      "bytes": 13538,
+      "gitBlob": "ad78dec2b54d2f0c11e3d0024fc1c211bcddc935",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "304a3f52faab307bdcd21f123e7683270b301b390188747eb1e95ea605b4c660"
+    },
+    "packages/claw-hermes/gateway_response_live.py": {
+      "bytes": 8461,
+      "gitBlob": "1cac7716c05f14432d3dd111b88d836ffe4283b4",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "80a9d45b1488858e05f8cbf3b5fd7e25c11f941f43ac7dbf866b33e73d0516a7"
+    },
+    "packages/claw-hermes/gateway_response_preopen.py": {
+      "bytes": 16702,
+      "gitBlob": "830eb202c1408b2167bdfbbcaca694e607c71a6a",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "916931a2d04d257d83e95aaccfff86998961a83bbe64a45e2c3094451800c8e1"
+    },
+    "packages/claw-hermes/gateway_retained_handoff.py": {
+      "bytes": 8290,
+      "gitBlob": "b3922a0fa25845480a52569e2984c7396d0011fb",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc"
+    },
+    "packages/claw-hermes/gateway_retained_launch.py": {
+      "bytes": 12711,
+      "gitBlob": "88bc83ded1b8e0bd3812a47ca44bc5b8b4355d6f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2"
+    },
+    "packages/claw-hermes/gateway_retained_profile.py": {
+      "bytes": 7194,
+      "gitBlob": "39d643fd96a7f9dba7bbe76e6ee65fbe761cdc11",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf"
+    },
+    "packages/claw-hermes/gateway_retained_projection.py": {
+      "bytes": 4318,
+      "gitBlob": "fbadf139ea8a3db33c940fd9501ce90659075c52",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "68cf4520873efc402860f4d9a9f31ee478d87e4f1b00ad7a0079aa335200ab79"
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "bytes": 18991,
+      "gitBlob": "8a3c152e95165b8dc4634acfa267d1bda5b41146",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74"
+    },
+    "packages/claw-hermes/gateway_storage_mounts.py": {
+      "bytes": 10752,
+      "gitBlob": "78e085647ca5b7e39a2379de11cd2b3081873db8",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "cd468f68c6b916dada4bfce1897c3ddd9507596b48137e026ee94f06e3e5e3c1"
+    },
+    "packages/claw-hermes/gateway_store_preopen.py": {
+      "bytes": 13311,
+      "gitBlob": "a902d73ce1614907066d5235bc7c61075c0f8a6b",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "1492bf4a5581747f9a51c542bd4d798306d6d20e3ecb2a0930ce826e9ca03b56"
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "bytes": 15646,
+      "gitBlob": "ac16016d96d77b8398916ae48d4c57a7487d9946",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "fdf7d7d84fd7538f829568c7a38db1e4b9302b1fb5643620a5a0dc2a78b4b50b"
+    },
+    "packages/claw-hermes/gateway_supervised_launch.py": {
+      "bytes": 21471,
+      "gitBlob": "600e47141118e30b1df04ef0b7a44d7abf3d687f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364"
+    },
+    "packages/claw-hermes/gateway_work_health.py": {
+      "bytes": 13901,
+      "gitBlob": "89e0bf3d2dc1303d23ed3c76223cbe76ef8f72af",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "2e6d78469fcab89d9ebf056fb530e0872489c580a07d810f2bc802f9fd7da9b6"
+    },
+    "packages/claw-hermes/gateway_work_health_reader.py": {
+      "bytes": 10182,
+      "gitBlob": "189a8d860d9da9c9e1dc52572e69b941b8991427",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "fd270a4523638987f752c28dc54e1be0dc8ab086a3c51c237e44a8ea749ef35a"
+    },
+    "packages/claw-hermes/gateway_work_observer.py": {
+      "bytes": 19204,
+      "gitBlob": "18de2c2de047eaec0fa9a893ca052a179115e227",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "80ac8275ceeb34bfaeaffdb9164b376cc5e5620883f255479a49fb888c14b634"
+    },
+    "packages/claw-hermes/host_gate.py": {
+      "bytes": 12593,
+      "gitBlob": "4aba8fca913f754d6778d3cb05cea67f54a644de",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "c2f95f09fbaa0b39dea57aaf488cbfaac204b61771adffeb8ef182bd5c81b1ff"
+    },
+    "packages/claw-hermes/host_gate_plugin.py": {
+      "bytes": 16236,
+      "gitBlob": "983309324a8bbb90a3feaf68085a1662ddd76f3b",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "a472af8f7869114dd2217caea671c89132d3ca287efd545c164558877fb749b3"
+    },
+    "packages/claw-hermes/host_principal.py": {
+      "bytes": 5254,
+      "gitBlob": "e09d2ebc6f5ff585c5bcb6f0edf0afad3adcb064",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "3b07c3a5ad0d5af4b5f2d89728fbf5700d72c32c85e9eaf948cfc4104d16f5e0"
+    },
+    "packages/claw-hermes/host_report.py": {
+      "bytes": 16953,
+      "gitBlob": "5b52ce947a07d49cad52f4f5588ebb3cc4fa3cc5",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "03c1853c2198c2f5e76f089f4de019a6df5edb20efb95aed367a452ab1554632"
+    },
+    "packages/claw-hermes/ipc_view.py": {
+      "bytes": 12281,
+      "gitBlob": "01e886d613f7ea22a385639ac2f501713758e457",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "1c3feefdc0d2768489f76c7c0088771b3ece627323de9b7c02b09af304ca109e"
+    },
+    "packages/claw-hermes/isolated_read.py": {
+      "bytes": 18293,
+      "gitBlob": "222a8cd8f830fb2a4c6bf29d0279be7d95a676b7",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "7e7460f300b329ce1f6ec639660b8e012929f4d0baf76623d895c08fc018c033"
+    },
+    "packages/claw-hermes/isolated_tool.py": {
+      "bytes": 20150,
+      "gitBlob": "327f17017e1720156cce7e3863ec900670415c6e",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "88fd6d1abdbe121b7958c65f2e33535a83adb56297f5b5527efaff06d1980cbc"
+    },
+    "packages/claw-hermes/linux_netns.py": {
+      "bytes": 8261,
+      "gitBlob": "6090f85e847cc7b9464bcc9cd2a30ead57666fb8",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "d3ed21f1096287deb979678d8d6dd60fb55c2590da9366db2d775f7171c8b2c6"
+    },
+    "packages/claw-hermes/operator_resolution.py": {
+      "bytes": 16495,
+      "gitBlob": "5eed07a11aac352d9e9cb2060367519394dd17ff",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "006139683d808aa4873996d64cb7be8dddc47caf41f4a9d2824de5a9bc21cf6b"
+    },
+    "packages/claw-hermes/principal_launch.py": {
+      "bytes": 12606,
+      "gitBlob": "f2512b3dfec06622ae10824182b1f37fe44d7a2f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "c9971f32bbd23c10b7d23ca5ca18ab87839fa7aca650d17308380fc38d47403b"
+    },
+    "packages/claw-hermes/principal_target.py": {
+      "bytes": 4304,
+      "gitBlob": "0e01fc5a664aa41ca11fad6b6f621f869224fd25",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "d8ae965144bf55f300df6e665535ecad39e42bead47947a0bdf5b13caf681ebf"
+    },
+    "packages/claw-hermes/provider_broker.py": {
+      "bytes": 19814,
+      "gitBlob": "4ac115ac7c0a2894044a23d9154e79928c8f3351",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e2e4c304bf861ff818ae869f1088102aaca3cf38ccf602ee9e3be5c980cfe13b"
+    },
+    "packages/claw-hermes/provider_egress.py": {
+      "bytes": 12655,
+      "gitBlob": "39c73648cfc08b0d5cc624723b6b694b5dee4375",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e32cba404b93c9b1b54ad9631b8a16eaf6bf6bbdf96c01d6d0f2329dcfa49e3d"
+    },
+    "packages/claw-hermes/recovery_inspector.py": {
+      "bytes": 16682,
+      "gitBlob": "3547263a8f5571c87b4ee135296a3aaf645a5080",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "1c242f76ee71e08969f7f48fb3865a88ccda20b7af47cfa3977711608ec69b50"
+    },
+    "packages/claw-hermes/request_view.py": {
+      "bytes": 18502,
+      "gitBlob": "c9901530b831a6fcc578a7e1f0d18c6e91a9f763",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "29cc8a80fe84a8a31fc51c9cbe011b215dbcd20f65d73b14b26fb2d059765d9e"
+    },
+    "packages/claw-hermes/resolution_receipts.py": {
+      "bytes": 4864,
+      "gitBlob": "e65c70e2ae8bc141b0a2fae81056f489abaa889b",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e355372cf32688bccfdf272414b6550d4ffc9b46438aa930b77021ad1e424eba"
+    },
+    "packages/claw-hermes/source_capture.py": {
+      "bytes": 14307,
+      "gitBlob": "ea272e6e4610346657ee4afed3191f8a1c789f36",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "5adccf7349ec104e0a7d5345c5c5cf1f01f738aa43b7b11861274aaa72293211"
+    },
+    "packages/claw-hermes/state_image_lease.py": {
+      "bytes": 7926,
+      "gitBlob": "0bc7691bc35244a23949853e7efc6e1f41652672",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc"
+    },
+    "packages/claw-hermes/state_volume_supervisor.py": {
+      "bytes": 16758,
+      "gitBlob": "192a64057882a1b1961140f10da59f7a69b1c59d",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080"
+    },
+    "packages/claw-hermes/supervised_pipe_capture.py": {
+      "bytes": 4521,
+      "gitBlob": "1618a570f297d5b8af4ed361f9f10d69774df6c5",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "b3fe4c30607469ca05d95b7f329970c5093a429c2f952280371ddf4c085a1695"
+    },
+    "packages/upstream/hermes/LICENSE": {
+      "bytes": 1070,
+      "gitBlob": "75410e73319c72cd3e991a501c5455eb78f38375",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6"
+    },
+    "packages/upstream/openclaw/LICENSE": {
+      "bytes": 1076,
+      "gitBlob": "ed064819ab537575d0cad902f7e5af4a3488b1d0",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "9efd316ecf1c4c60f6fd5d26433142fff2b6794d7d328e9bc6179b29bf9c82a4"
+    },
+    "scripts/run_finite_projected.py": {
+      "bytes": 1555,
+      "gitBlob": "30317a0a9e97c28318b4a79fc6f3749950f016b0",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "97c905dae7e9391ad01103a011cc5216b23ced95ef2d2bffdf1e809512ff95eb"
+    },
+    "scripts/run_response_preopen.py": {
+      "bytes": 1020,
+      "gitBlob": "a4d3f46c6fde73aff7259282ee708b68f069d507",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e166d3d1cc05e664ef541ffd70dfd2cdb5b5145046b523325b38bf4e22bcd38e"
+    },
+    "scripts/run_retained_projected.py": {
+      "bytes": 783,
+      "gitBlob": "0323f94cb3057fa721696f03b1f7399888b791a8",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "7aa5398ca3b962ef2960de23f32d126b653842cb741be351c329d4cad28b6298"
+    },
+    "scripts/run_state_volume_worker.py": {
+      "bytes": 5817,
+      "gitBlob": "6f307e65dd59e8140085a85b4627f15eccfdedf1",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "835593ff0e5bffc3a421761e443777cc563f198ff5aaea3a29986746f7f7b97f"
+    },
+    "scripts/run_store_preopen.py": {
+      "bytes": 993,
+      "gitBlob": "864ab9b5ed854261c2c7f41522c60d7d6282f5ed",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "c018918593e211071bd51cb83a5b978e0873904db3ce987f9dc574b4e626e844"
+    },
+    "scripts/run_supervised_finite.py": {
+      "bytes": 979,
+      "gitBlob": "0f56771a300d183629610f8fa93aad412b4c5c6f",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "e45cb067233e6e55ee191628d447e48628f2207462c33c9822f88150ea33f865"
+    },
+    "scripts/run_supervised_retained.py": {
+      "bytes": 1045,
+      "gitBlob": "69316b57b36325297f3d66776ad470b73656fdeb",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "208a9f42201e7fe8ff57469d56d604baa0a19a685dccffea871ade43807fed74"
+    },
+    "sources.lock.json": {
+      "bytes": 2340,
+      "gitBlob": "57ed57c30db61545d1de192f734764a4d3f94657",
+      "mode": 420,
+      "repository": "harness",
+      "sha256": "a4a66c6ad75cfd9d53635f7e436564b8c72c42a8d98592312057184d41bb95ff"
+    }
+  },
+  "packagedHarnessSourcesUnchanged": true,
+  "packagedWorkingTreeClean": true,
+  "productionReady": false,
+  "publicationCiRecordedSeparately": true,
+  "qaBaseCommit": "cdc974728e69f590838b82421cd244e36554a74f",
+  "readiness": {
+    "completedChecks": [
+      "preflight",
+      "response_preflight",
+      "before_epoch",
+      "response_before_epoch",
+      "after_epoch",
+      "response_after_epoch"
+    ],
+    "executedTasks": 0,
+    "normalClose": true,
+    "readinessEpoch": 2,
+    "realModelCalls": 0,
+    "seedEpoch": 1
+  },
+  "realBrokerExchangeAccepted": false,
+  "restartReplayAccepted": false,
+  "result": "PASS",
+  "runtimeAdmissionAuthorized": false,
+  "runtimeChanged": false,
+  "runtimeReinstalled": false,
+  "separateFreshImageLifecycles": true,
+  "serviceStarted": false,
+  "verifiedHead": "cdc974728e69f590838b82421cd244e36554a74f"
+}
