@@ -1,8 +1,8 @@
 # P2 / R164A1 — özgün servis volume kapanışı
 
 Tarih: 27 Ekim 2026. **R164A1 kaynak/fixture entegrasyonu ve odaklı testleri
-PASS. R164A2 yeni yayın nesli IN PROGRESS; yeni kaynak/final CI ve main yayını
-NOT RUN. P2 IN PROGRESS.**
+PASS. R164A2 kaynak commit'i ve exact tam CI PASS; kapanış commit CI'sı ve
+main yayını bu checkpoint'te NOT RUN. P2 IN PROGRESS.**
 
 R164, [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) dördüncü
 adımını kaynak düzeyinde tamamlar. Özgün servis çocuğunun final/exit0/EOF kanıtı,
@@ -40,15 +40,17 @@ Uygulama makbuzu `scratch/r164a2-publication/ci-policy-change.json` SHA-256
 `87b368acf04df8cf1f5ef11eca761a12ed76e8e63d983296b7dd34d971200f10`;
 480 saniyelik politika digest'i
 `39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`.
-Altyapı uygulaması APPLIED/PASS; yeni source/final tam CI henüz NOT RUN.
-Kaynak ve kapanış CI makbuzları bu aynı yeni politika altında doğrulanmalıdır.
+Altyapı uygulaması APPLIED/PASS; yeni kaynak commit'inin exact tam CI'sı PASS.
+Kapanış commit'inin tam CI'sı henüz NOT RUN. Kaynak ve kapanış CI makbuzları bu
+aynı yeni politika altında doğrulanmalıdır.
 Eski kaynak başarısı yeni politika kabulü olarak devralınmaz; başarısız
 makbuzlar veya digest eşitliği kontrolü değiştirilmez.
 
 A2, R164A1'in aynı ürün, test/destek, runner ve tarihsel kanıt baytlarını kullanır.
 Aşağıdaki 806 Linux ve Windows sonuçları önceki gerçek koşulara aittir; A2'de
-odaklı testlerin yeniden yürütüldüğü iddia edilmez. Yeni kaynak ve kapanış
-commit'leri ayrı gerçek tam CI ile kabul edilecektir. Eski CI sonuçları ve
+odaklı testlerin yeniden yürütüldüğü iddia edilmez. Yeni kaynak commit'i ayrı
+gerçek tam CI ile kabul edildi; kapanış commit'i de aynı politika altında ayrı
+gerçek tam CI gerektirir. Eski CI sonuçları ve
 altyapı değişikliğinin bağı [A2 recovery kaydında](../evidence/p2-service-closure-r164a2/recovery.json)
 tutulur.
 
@@ -56,15 +58,38 @@ tutulur.
 |---|---|
 | CI bütçe değişikliği için kullanıcı yetkisi | ONAYLI |
 | 480 saniyelik ayarın yedek, atomik değişiklik ve geri okumayla uygulanması | PASS; APPLIED |
-| Yeni kaynak commit/push ve exact tam CI | NOT RUN |
+| Yeni kaynak commit/push ve exact tam CI | PASS; `5467f599` |
 | Yeni kapanış commit/push ve aynı politika altında exact tam CI | NOT RUN |
 | Pre-main integrity, normal main fast-forward/push ve ayrı main status kabulü | NOT RUN |
 | Final integrity ve terminal yayın günlüğü | NOT RUN |
 
+### A2 exact kaynak commit tam CI kabulü
+
+Kaynak commit `5467f599f36a0b88de699c7d6628a52235719e38` normal feature push
+sonrasında required `alaz/local-ci` ile kabul edildi. Aynı yeni 480 saniyelik
+politika altında gerçek tam suite yürütüldü; `fullSuiteExecuted: true`,
+`reused: false`. Sonuç 4.566 test, 4.544 PASS, 22 SKIP, failure/error 0 ve
+350,015 saniyedir. Container exit 0, OOM/timeout false, cleanup `removed`.
+Statik gate 6.906 dosya denetledi ve 4.566 test keşfiyle PASS verdi.
+
+GitHub status ID `57410520459`, 27 Ekim 2026 23:43:59 TRT;
+delivery `46974e68-d246-11f1-9f75-c42a6ebc041e`. Authenticated GitHub gözlemi,
+sunucu artifact'ı, ham log ve makine suite sayıları aynı source SHA'ya ve
+`39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`
+politika digest'ine bağlandı. [A2 public kaynak CI makbuzu](../evidence/p2-service-closure-r164a1/source-ci.json),
+private `accepted-source-ci.json` kabulünün exact baytlarıyla kapanış commit'ine
+eklenir; SHA-256
+`5bb8ac9ce765973eeb42908b212ac730959f37ec4054ca3fb18bab4831ccf703`.
+
+Bu izlenen kapanış checkpoint'i kaynak CI kabulünden sonra hazırlanmıştır.
+Kendi final commit tam CI'sı, pre-main integrity, normal main fast-forward/push,
+ayrı main status kabulü ve final integrity burada NOT RUN. Kaynak CI başarısı
+bu sonraki sonuçların yerine geçirilmez.
+
 Yeni neslin özel kayıtları `scratch/r164a2-publication/` altındadır. Terminal
 yayın sonucu, iki exact commit'in tam CI kanıtı, ayrı main status kabulü ve son
 bütünlük kontrolünden sonra aynı dizindeki `final-publication.json` ile
-kesinleşir. Bu raporun başlangıç checkpoint'i terminal yayın makbuzu değildir.
+kesinleşir. Bu raporun kaynak sonrası kapanış checkpoint'i terminal yayın makbuzu değildir.
 
 ## Korunan R164A1 kaynak ve çalışma kimliği
 
@@ -286,9 +311,10 @@ terminal yayın kabulü yapılmadı. Son engel kaydı A1 çalışma ağacındaki
 SHA-256 `09592226298f0e8eae67238779ea4dad2ee15bd7f005f52d691aed0502ae1cb8`.
 
 Güncel devam kaydı [status.md](../status.md) ve A2 primary çalışma ağacındaki
-`scratch/r164a2-publication/` altındadır. Yeni kaynak CI makbuzu kapanış
-commit'inde `evidence/p2-service-closure-r164a1/source-ci.json` yoluna yazılacak;
-source/final politika eşitliği ve tam koşu kanıtı yeni nesilde yeniden aranacak.
+`scratch/r164a2-publication/` altındadır. Kabul edilmiş A2 kaynak CI makbuzu
+kapanış commit'inde `evidence/p2-service-closure-r164a1/source-ci.json` yoluna
+bağlanır; source/final politika eşitliği ve tam koşu kanıtı yeni nesilde de
+zorunludur.
 Eski A1 commit'i, logları ve makbuzları kendi kimlikleriyle korunur.
 
 Native 760 kaynak ve R156 kurulumu değişmedi. Yeni P2 kurulumu, gerçek kernel
@@ -299,10 +325,12 @@ retry veya operatör uzlaştırma akışı eklenmedi.
 
 ## Kesin sonraki adım
 
-480 saniyelik bütçe değişikliği uygulandı ve geri okundu. A2 kaynak ve kapanış
-commit'lerinin tam CI'ları bu aynı yeni politika altında kabul edildikten sonra
-pre-main integrity, normal main fast-forward/push, ayrı main status kabulü ve
-final integrity tamamlanacak.
+480 saniyelik bütçe değişikliği uygulandı ve geri okundu; A2 kaynak commit'i
+aynı yeni politika altında tam CI PASS aldı. Yalnız status, rapor ve public
+kaynak CI makbuzunu taşıyan kapanış commit'i oluşturulacak. Bu exact final
+commit'in tam CI'sı da aynı politika altında kabul edildikten sonra pre-main
+integrity, normal main fast-forward/push, ayrı main status kabulü ve final
+integrity tamamlanacak.
 
 R164'ün yayın kapıları tamamlandıktan sonra entegrasyon planının beşinci adımı:
 host görev erişimini aynı authenticated native API'ye bağlayan dar transport

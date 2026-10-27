@@ -1,12 +1,13 @@
 # AlazHarness — status
 
-## R164A2 — aynı kaynakların yeni CI politikasıyla yayını — IN PROGRESS
+## R164A2 — aynı kaynakların yeni CI politikasıyla yayını — kaynak CI PASS; yayın IN PROGRESS
 
 P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
 
 - Yayın dalı: `alaz/p2-service-closure-r164a2`.
 - Primary çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-closure-r164a2`.
 - Başlangıç ve yayın öncesi main: `28a12e1b18a839a9489a0c463d904b8e9a46db03`.
+- A2 kaynak commit'i: `5467f599f36a0b88de699c7d6628a52235719e38`; normal feature push ve exact tam CI PASS.
 - Korunan R164A1 dalı: `alaz/p2-service-closure-r164a1`; son commit
   `82cab2562007dff124326cff83022f0370f31ccb`.
 - R164A1 kaynak commit'i: `090754b6caf20bbda7f643dae1eddb31ada69a3b`.
@@ -37,8 +38,9 @@ Uygulama makbuzu `scratch/r164a2-publication/ci-policy-change.json`, SHA-256
 `87b368acf04df8cf1f5ef11eca761a12ed76e8e63d983296b7dd34d971200f10`.
 Yeni politika digest'i
 `39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`.
-Altyapı ayarı APPLIED/PASS; bu kaynak öncesi checkpoint'te yeni politika altında
-source/final tam CI kabulü henüz NOT RUN.
+Altyapı ayarı APPLIED/PASS. Yeni A2 kaynak commit'inin aynı politika altında tam
+CI kabulü PASS; kapanış commit'inin tam CI'sı ve main yayını bu checkpoint'te
+henüz NOT RUN.
 
 ### Korunan doğrulamalar ve yayın engelinin nedeni
 
@@ -74,33 +76,53 @@ A1 son engel kontrolü 43 paket dosyası, sekiz korunan çalışma ağacı, kök
 33 değişmiş dosyası, dört önceki feature ve 760 native kaynağın korunmasını
 PASS olarak kaydetti. A2 kendi başlangıç ve yayın kontrollerini ayrıca yapar.
 
+### A2 kaynak CI kabulü
+
+Exact `5467f599f36a0b88de699c7d6628a52235719e38` commit'i için required
+`alaz/local-ci` yeni tam koşusu PASS: 4.566 test, 4.544 PASS, 22 SKIP,
+failure/error 0; test süresi 350,015 saniye. Container exit 0, OOM/timeout false
+ve cleanup `removed`. Statik kapı 6.906 dosya denetledi, 4.566 test keşfetti ve
+PASS verdi. Bu sonuç gerçek tam koşudur; önceki başarı yeniden kullanılmadı.
+
+GitHub status ID `57410520459`, zaman 27 Ekim 2026 23:43:59 TRT;
+delivery `46974e68-d246-11f1-9f75-c42a6ebc041e`. Authenticated GitHub gözlemi,
+sunucu artifact'ı, ham log, suite sayıları ve yeni politika digest'i aynı exact
+commit'e bağlandı. [Public source CI makbuzu](evidence/p2-service-closure-r164a1/source-ci.json),
+kapanış commit'inde `accepted-source-ci.json` kabul makbuzunun exact baytlarını
+taşır; SHA-256
+`5bb8ac9ce765973eeb42908b212ac730959f37ec4054ca3fb18bab4831ccf703`.
+
 ### Yeni yayın neslinin kabul durumu
 
 | Adım | Bu checkpoint'teki durum |
 |---|---|
 | 360 → 480 saniye değişikliği için kullanıcı yetkisi | ONAYLI |
 | Altyapı yedeği, atomik değişiklik ve exact geri okuma | PASS; 480 saniye APPLIED |
-| A2 kaynak commit/push ve exact tam CI | NOT RUN |
+| A2 kaynak commit/push ve exact tam CI | PASS; `5467f599` |
 | A2 kapanış commit/push ve aynı politika altında exact tam CI | NOT RUN |
 | Yayın öncesi integrity ve normal main fast-forward/push | NOT RUN |
 | Ayrı main status kabulü ve final integrity | NOT RUN |
 
 Kaynak ve kapanış CI makbuzlarının politika digest'i aynı olmalıdır; mevcut
-kabul kontrolü gevşetilmez. Yeni kaynak CI kabulü, kapanış commit'inde public
+kabul kontrolü gevşetilmez. Kabul edilmiş A2 kaynak CI makbuzu, kapanış commit'inde public
 `evidence/p2-service-closure-r164a1/source-ci.json` dosyasına exact baytlarıyla
-bağlanacak. Bu dosya adı uygulama neslini korur; içindeki target ve politika
-alanları yeni yayın neslinin gerçek koşusunu gösterecek.
+bağlanır. Bu dosya adı uygulama neslini korur; içindeki target ve politika
+alanları yeni yayın neslinin gerçek koşusunu gösterir.
 
 Kesin terminal yayın sonucu primary çalışma ağacındaki
-`scratch/r164a2-publication/final-publication.json` ile tamamlanır. Bu başlangıç
-kaydı ve eski A1 başarısı terminal yayın makbuzunun yerine geçmez. Gerçek kernel,
-kurulu servis ve model kabulü bu paketin kapsamı değildir.
+`scratch/r164a2-publication/final-publication.json` ile tamamlanır. Bu izlenen
+kapanış checkpoint'i A2 kaynak CI kabulünden sonra hazırlanmıştır; kendi final
+commit CI'sı, main ve final integrity sonucu burada NOT RUN'dır. Kaynak başarısı
+terminal yayın makbuzunun yerine geçmez. Gerçek kernel, kurulu servis ve model
+kabulü bu paketin kapsamı değildir.
 
 ### Kesin sonraki adım
 
-Uygulanmış 480 saniyelik politika altında ayrı A2 kaynak/kapanış neslini tam
-CI ile doğrula. Ardından yayın öncesi integrity, normal main fast-forward/push,
-ayrı main verified-success reuse ve final integrity günlüğünü tamamla.
+Yalnız status, rapor ve kabul edilmiş public kaynak CI makbuzuyla kapanış
+commit'ini oluştur. Bu exact final commit'in tam CI'sını aynı 480 saniyelik
+politika altında doğrula. Ardından yayın öncesi integrity, normal main
+fast-forward/push, ayrı main verified-success reuse ve final integrity
+günlüğünü tamamla.
 
 Yayından sonra planın beşinci adımı host görevlerinin aynı kimliği doğrulanmış
 native API'ye dar erişimidir. Yeni tek P2 kurulumu/kernel kabulü ve seçilmiş
@@ -118,3 +140,10 @@ gerçek model/provider/toolset/bütçe deneyi açık kalır.
   geri okuması ve korunan diğer alanlar PASS. Native işlem
   `c164a201-1027-4a01-8000-000000000116` completed, exit 0. Bu uygulama sonucu
   source veya final CI kabulü değildir; yeni tam CI nesli sıradadır.
+- 2026-10-27 A2 kaynak CI checkpoint'i: `5467f599` normal feature push
+  sonrasında exact tam CI ile kabul edildi: 4.566 toplam, 4.544 PASS, 22 SKIP,
+  failure/error 0, 350,015 saniye; container exit 0, OOM/timeout false, cleanup
+  removed. Status `57410520459`; kabul makbuzu SHA-256
+  `5bb8ac9ce765973eeb42908b212ac730959f37ec4054ca3fb18bab4831ccf703`.
+  Kapanış commit'i yalnız takip belgeleri ve bu public makbuzu taşır; ürün/test
+  baytları final commit'in yeni tam CI'sında yeniden doğrulanacaktır.
