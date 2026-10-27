@@ -2,8 +2,9 @@
 
 The immutable launch plan is data, never mount or process authority. The exact
 original supervisor, worker, lease, fence, namespace and Popen remain retained
-through uncertain spawn or pipe results. Observation cannot send input. Child
-completion is deliberately NOT permission to stop or release the volume.
+through uncertain spawn or pipe results. Observation cannot send input or
+retire a volume. Explicit close binds child completion to the original normal
+worker stop and original finish; no uncertain cleanup attempt is replayed.
 """
 from __future__ import annotations
 
@@ -21,6 +22,7 @@ import gateway_service_projection as mapping
 import gateway_state_projection as projection
 import gateway_supervised_launch as kernel
 import state_volume_supervisor as volume
+import gateway_service_control as wire
 from supervised_service_channel import ServiceChannel, MAX_BOOTSTRAP, MAX_WAIT
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -151,6 +153,41 @@ def child_main(raw):
     raise SupervisedServiceRejected('service_supervised_launch_returned')
 
 
+@dataclass(frozen=True)
+class _Custody:
+    owner: object
+    actor: tuple
+    worker: object
+    pin: object
+    lease: object
+    scope: object
+    scope_id: tuple
+    target: object
+    target_id: tuple
+    fence: object
+    fence_id: tuple
+    fence_bytes: bytes
+    loop_fd: object
+    loop_number: int
+    binding: projection.VolumeBinding
+
+
+@dataclass
+class _Closure:
+    child: object
+    custody: _Custody
+    process: object
+    channel: ServiceChannel
+    final_frame: bytes
+    child_result: bytes
+    state: str = 'NOT_STARTED'
+    stop_attempted: bool = False
+    finish_attempted: bool = False
+    stop_reply: bytes | None = None
+    finish_reply: bytes | None = None
+    error: str | None = None
+
+
 @dataclass
 class _Child:
     owner: object
@@ -163,6 +200,7 @@ class _Child:
     service_id: str
     previous_epoch: int
     instance_id: str
+    custody: _Custody
     process: object = None
     pid: int | None = None
     start_ticks: int | None = None
@@ -171,12 +209,18 @@ class _Child:
     was_unknown: bool = False
     error: str | None = None
     blocked: bool = False
+    process_anchor: object = None
+    process_identity: tuple | None = None
+    channel_anchor: ServiceChannel | None = None
+    closure: _Closure | None = None
 
 
 def _owner(owner):
     from service_volume_supervisor import ServiceVolumeSupervisor
     require(type(owner) is ServiceVolumeSupervisor and hasattr(owner, '_service_child'),
             'service_supervised_exact_owner')
+    require(owner._service_child is owner._service_child_anchor,
+            'service_supervised_child_slot_changed')
     owner._owned()
     require(owner.stage == 'RUNNING' and not owner.spawn_uncertain
             and owner.worker is not None and owner.worker.poll() is None,
@@ -188,6 +232,8 @@ def _actor(owner):
     require(type(owner) is ServiceVolumeSupervisor and hasattr(owner, '_service_child'),
             'service_supervised_exact_owner')
     require(volume.actor() == owner.who, 'service_supervised_original_actor')
+    require(owner._service_child is owner._service_child_anchor,
+            'service_supervised_child_slot_changed')
 
 
 def _timeout(timeout, *, observe=False):
@@ -217,7 +263,7 @@ def _unknown(child, reason, *, blocked=False):
     child.blocked = child.blocked or blocked
 
 
-def _status(child=None):
+def _child_status(child=None):
     if child is not None and child.channel is not None:
         result = child.channel.status()
     else:
@@ -237,24 +283,57 @@ def _status(child=None):
     return result
 
 
-def _check(child):
+def _closure_view(child=None):
+    closure = child.closure if child is not None else None
+    return {'state': closure.state if closure is not None else 'NOT_STARTED',
+            'volumeUnmounted': closure is not None and closure.stop_reply is not None,
+            'fenceRemovedAfterCleanup': closure is not None and closure.state == 'CLOSED',
+            'imageLeaseReleased': closure is not None and closure.state == 'CLOSED'}
+
+
+def _status(child=None):
+    result = _child_status(child)
+    result['volumeClosure'] = _closure_view(child)
+    if child is not None and child.closure is not None and child.closure.error is not None:
+        result['error'] = child.closure.error
+    return result
+
+
+def _identity(child, *, live_process=True):
+    """Original object custody; valid after successful unmount/lease release."""
     owner = child.owner; binding = child.binding
-    _owner(owner)
+    custody = child.custody
+    require(type(custody) is _Custody and custody.owner is owner
+            and child.actor == custody.actor and child.worker is custody.worker
+            and child.pin is custody.pin and child.binding is custody.binding,
+            'service_supervised_custody_changed')
     require(owner._service_child is child and owner.who == child.actor
             and owner.pin is child.pin and owner.worker is child.worker
+            and owner.lease is custody.lease
+            and owner.scope is custody.scope and owner.scope_id == custody.scope_id
+            and owner.target is custody.target and owner.target_id == custody.target_id
+            and owner.fence is custody.fence and owner.fence_id == custody.fence_id
+            and owner.fence_bytes == custody.fence_bytes
             and owner.token == binding.token and str(owner.scope) == binding.scope
             and owner.scope_id == binding.scope_identity and str(owner.target) == binding.mountpoint
-            and owner.loop_number == binding.loop_number
+            and owner.loop_number == binding.loop_number == custody.loop_number
             and hashlib.sha256(owner.fence_bytes).hexdigest() == binding.fence_sha256,
             'service_supervised_owner_changed')
+    require((owner.loop_fd == custody.loop_fd if child.closure is None
+             or not child.closure.finish_attempted else owner.loop_fd in (custody.loop_fd, None)),
+            'service_supervised_loop_descriptor_changed')
     require(projection.process_start(binding.controller_pid) == binding.controller_start
             and child.worker.pid == binding.worker_pid,
             'service_supervised_controller_or_worker_changed')
-    projection._live_root(binding.worker_pid, binding.worker_start)
+    require(child.process is child.process_anchor and child.channel is child.channel_anchor,
+            'service_supervised_original_process_channel')
+    if not live_process:
+        return
     if child.process is None:
         return
     require(child.process.pid == child.pid and type(child.start_ticks) is int
-            and child.start_ticks > 0, 'service_supervised_child_unconfirmed')
+            and child.start_ticks > 0 and child.process_identity == (child.pid, child.start_ticks),
+            'service_supervised_child_unconfirmed')
     if child.process.poll() is None:
         try:
             ticks = projection.process_start(child.pid)
@@ -268,6 +347,12 @@ def _check(child):
                 and child.channel.service_id == child.service_id
                 and child.channel.identity == (child.pid, child.previous_epoch + 1, child.instance_id),
                 'service_supervised_channel_changed')
+
+
+def _check(child):
+    _owner(child.owner)
+    _identity(child)
+    projection._live_root(child.binding.worker_pid, child.binding.worker_start)
 
 
 def launch_service(owner, ipc, filesystem, record, *, scratch, instance_id,
@@ -293,17 +378,24 @@ def launch_service(owner, ipc, filesystem, record, *, scratch, instance_id,
         decode(payload)
         _owner(owner)
         require(owner._service_child is None, 'service_supervised_child_already_attempted')
+        custody = _Custody(owner, owner.who, owner.worker, owner.pin, owner.lease,
+            owner.scope, owner.scope_id, owner.target, owner.target_id, owner.fence,
+            owner.fence_id, owner.fence_bytes, owner.loop_fd, owner.loop_number, binding)
         child = _Child(owner, owner.who, owner.worker, owner.pin, binding, plan, payload,
-                       service_id, frozen_record.state.epoch, instance_id)
+                       service_id, frozen_record.state.epoch, instance_id, custody)
         owner._service_child = child
+        owner._service_child_anchor = child
         try:
             child.process = subprocess.Popen([PYTHON, '-I', '-B', str(ROOT / ENTRY)],
                 cwd='/', env=dict(ENVIRONMENT), stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE, pass_fds=(fd,), close_fds=True, bufsize=0)
+            child.process_anchor = child.process
             child.pid = child.process.pid
             child.start_ticks = projection.process_start(child.pid)
+            child.process_identity = (child.pid, child.start_ticks)
             child.channel = ServiceChannel(child.process, service_id=service_id,
                 previous_epoch=frozen_record.state.epoch, instance_id=instance_id)
+            child.channel_anchor = child.channel
             child.phase = 'STARTING'
         except BaseException:
             _unknown(child, 'service_supervised_spawn_unknown', blocked=True)
@@ -326,6 +418,191 @@ def launch_service(owner, ipc, filesystem, record, *, scratch, instance_id,
         return _status(child)
 
 
+def _completed(child):
+    """Recheck the original channel proof, never a serialized permission."""
+    channel = child.channel
+    require(not child.blocked and child.phase == 'COMPLETED'
+            and type(channel) is ServiceChannel and channel is child.channel_anchor
+            and channel.process is child.process is child.process_anchor
+            and channel.phase == 'COMPLETED' and channel.failure is None
+            and channel.input_started and channel.ready_seen and channel.stdin_closed
+            and channel.stdout_eof and channel.stderr_eof and not channel.stdout
+            and channel.pending is None and channel.input_bytes == b''
+            and channel.input_written == 0
+            and child.process.poll() == 0 and child.process.returncode == 0,
+            'service_supervised_child_completion_required')
+    final = channel.final_frame
+    wire.validate_frame(final, service_id=child.service_id, identity=channel.identity)
+    wire.validate_owner(final['owner'], identity=channel.identity, closed=True)
+    require(final['type'] == 'final' and final['sequence'] == channel.sequence
+            and final['requestId'] == wire.request_id(child.service_id, channel.sequence)
+            and channel.last_frame is final,
+            'service_supervised_final_changed')
+    return _bytes(final)
+
+
+def _stop_result(value, child):
+    require(type(value) is dict and set(value) == {'state', 'pid', 'token'}
+            and value['state'] == 'UNMOUNTED'
+            and type(value['pid']) is int and value['pid'] == child.binding.worker_pid
+            and value['token'] == child.binding.token,
+            'service_supervised_stop_receipt')
+    return _bytes(value)
+
+
+_FINISH_RESULT = {'state': 'CLOSED', 'ownedUsersGone': True, 'loopAttachmentGone': True,
+                  'fenceRemovedAfterCleanup': True, 'leaseReleasedLast': True,
+                  'realHermesGatewayTested': False, 'fullD3BAccepted': False}
+
+
+def _finish_result(value):
+    require(type(value) is dict and value == _FINISH_RESULT
+            and all(type(value[key]) is type(expected) for key, expected in _FINISH_RESULT.items()),
+            'service_supervised_finish_receipt')
+    return _bytes(value)
+
+
+def _receipt(raw, validate, *args):
+    require(type(raw) is bytes and 0 < len(raw) < 4096, 'service_supervised_receipt_bound')
+    value = json.loads(raw.decode('ascii'))
+    require(validate(value, *args) == raw, 'service_supervised_receipt_changed')
+
+
+def _closure_unknown(child, reason):
+    # Keep the verified child COMPLETED proof separate from volume uncertainty.
+    child.closure.state = 'UNKNOWN'
+    child.closure.error = reason
+    # Generic finish removes this strong reference before closing its streams.
+    # A failure in that tail must still retain the original owner and proof.
+    volume._RETAINED.setdefault(child.binding.token, child.owner)
+
+
+def _child_of(owner):
+    _actor(owner)
+    child = owner._service_child
+    require(type(child) is _Child and child.owner is owner,
+            'service_supervised_child_slot_changed')
+    return child
+
+
+def check_service_owner(owner):
+    """Read-only original custody gate, including after volume retirement.
+
+    A terminal flag or caller dict cannot bypass the original channel, stop and
+    finish proofs. No path through this function sends input or runs cleanup.
+    """
+    _actor(owner)
+    child = owner._service_child
+    if child is None:
+        _owner(owner)
+        return _closure_view()
+    require(type(child) is _Child and child.owner is owner,
+            'service_supervised_child_slot_changed')
+    if child.closure is None:
+        # Admission to a read-only status request must survive an original
+        # child's uncertain start identity or a lost mount worker. The normal
+        # observer checks those live facts and reports UNKNOWN without cleanup.
+        # Original actor/object/fence/lease custody is still mandatory here.
+        _identity(child, live_process=False)
+        owner._owned()
+        return _closure_view(child)
+    closure = child.closure
+    require(type(closure) is _Closure and closure.child is child
+            and closure.custody is child.custody and closure.process is child.process_anchor
+            and closure.channel is child.channel_anchor
+            and closure.state in ('NOT_STARTED', 'STOPPING', 'STOPPED', 'FINISHING', 'CLOSED', 'UNKNOWN')
+            and type(closure.stop_attempted) is bool and type(closure.finish_attempted) is bool,
+            'service_supervised_closure_custody_changed')
+    _identity(child)
+    require(_completed(child) == closure.final_frame
+            and _bytes(_child_status(child)) == closure.child_result,
+            'service_supervised_completion_changed')
+    if closure.stop_reply is not None:
+        _receipt(closure.stop_reply, _stop_result, child)
+        require(closure.stop_attempted and owner.worker.poll() == 0
+                and owner.worker.returncode == 0 and owner.stage in ('STOPPED', 'CLOSED'),
+                'service_supervised_stop_proof_changed')
+    require(not closure.finish_attempted or closure.stop_reply is not None,
+            'service_supervised_finish_before_stop')
+    if not closure.finish_attempted:
+        # The original fence, cgroup and live lease still exist before finish.
+        owner._owned()
+    if closure.finish_reply is not None:
+        _receipt(closure.finish_reply, _finish_result)
+        require(closure.finish_attempted and closure.stop_reply is not None,
+                'service_supervised_finish_proof_changed')
+    if closure.state == 'CLOSED':
+        require(closure.finish_reply is not None and owner.stage == 'CLOSED'
+                and owner.loop_fd is None and closure.error is None,
+                'service_supervised_closed_unconfirmed')
+    else:
+        require(closure.finish_reply is None, 'service_supervised_terminal_proof_changed')
+    return dict(_closure_view(child))
+
+
+def stop_service_volume(owner):
+    """One original normal STOP, gated by the exact completed child."""
+    child = _child_of(owner)
+    require(child.closure is None, 'service_supervised_stop_already_attempted')
+    _check(child)
+    final = _completed(child)
+    closure = _Closure(child, child.custody, child.process, child.channel,
+                       final, _bytes(_child_status(child)))
+    child.closure = closure
+    try:
+        kernel._members(child.binding, {child.worker.pid})
+        _check(child)
+        require(_completed(child) == final, 'service_supervised_completion_changed')
+        # Reserve before generic stop can write or flush any bytes.
+        closure.stop_attempted = True
+        closure.state = 'STOPPING'
+        result = volume.VolumeSupervisor.stop(owner)
+        raw = _stop_result(result, child)
+        _identity(child)
+        require(owner.stage == 'STOPPED' and child.worker.poll() == 0
+                and child.worker.returncode == 0, 'service_supervised_stop_unconfirmed')
+        owner._owned()
+        closure.stop_reply = raw
+        closure.state = 'STOPPED'
+        check_service_owner(owner)
+        return json.loads(raw)
+    except BaseException:
+        _closure_unknown(child, 'service_supervised_volume_stop_unknown')
+        raise SupervisedServiceRejected('service_supervised_volume_stop_unknown') from None
+
+
+def finish_service_volume(owner):
+    """One original finish, only after this owner's exact normal stop proof."""
+    child = _child_of(owner)
+    closure = child.closure
+    require(type(closure) is _Closure and closure.state == 'STOPPED'
+            and closure.stop_reply is not None and not closure.finish_attempted,
+            'service_supervised_successful_stop_required')
+    try:
+        check_service_owner(owner)
+        require(owner.stage == 'STOPPED', 'service_supervised_successful_stop_required')
+        # The original finish also checks populated/procs; this rejects nested
+        # empty cgroups before it can close the held loop descriptor.
+        kernel._members(child.binding, set())
+        closure.finish_attempted = True
+        closure.state = 'FINISHING'
+        result = volume.VolumeSupervisor.finish(owner)
+        raw = _finish_result(result)
+        _identity(child)
+        require(owner.stage == 'CLOSED' and owner.loop_fd is None,
+                'service_supervised_finish_unconfirmed')
+        closure.finish_reply = raw
+        closure.state = 'CLOSED'
+        check_service_owner(owner)
+        return json.loads(raw)
+    except BaseException:
+        # Even a tail stream.close exception may follow fence/lease removal.
+        # Keep the attempt and its proof; never replay finish or invent CLOSED.
+        closure.finish_reply = None
+        _closure_unknown(child, 'service_supervised_volume_finish_unknown')
+        raise SupervisedServiceRejected('service_supervised_volume_finish_unknown') from None
+
+
 def _observe(owner, timeout, *, close=False):
     _timeout(timeout, observe=not close)
     # A foreign actor cannot mutate the original owner's attempt, even to mark
@@ -339,6 +616,12 @@ def _observe(owner, timeout, *, close=False):
         return _status()
     require(type(child) is _Child and child.owner is owner,
             'service_supervised_child_slot_changed')
+    if child.closure is not None:
+        try:
+            check_service_owner(owner)
+        except BaseException:
+            _closure_unknown(child, 'service_supervised_closure_identity_unknown')
+        return _status(child)
     try:
         _check(child)
     except BaseException:
@@ -371,4 +654,18 @@ def observe_service(owner, *, timeout=0):
 
 
 def close_service(owner, *, timeout=30):
-    return _observe(owner, timeout, close=True)
+    result = _observe(owner, timeout, close=True)
+    child = owner._service_child
+    if child is None or result['state'] != 'COMPLETED':
+        return result
+    try:
+        if child.closure is None:
+            owner.stop()
+        if child.closure is not None and child.closure.state == 'STOPPED':
+            owner.finish()
+    except BaseException:
+        # Lifecycle errors are bounded observations. Direct stop/finish callers
+        # still receive an exception; the control protocol keeps original proof.
+        if child.closure is None:
+            _unknown(child, 'service_supervised_closure_preflight_unknown', blocked=True)
+    return _status(child)

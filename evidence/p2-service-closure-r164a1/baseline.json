@@ -1,0 +1,31 @@
+{
+  "atUtc": "2026-10-27T17:38:00.831401+00:00",
+  "base": "28a12e1b18a839a9489a0c463d904b8e9a46db03",
+  "branch": "alaz/p2-service-closure-r164a1",
+  "localBaseFileCount": 899,
+  "nativeRemoteRefs": {
+    "refs/heads/alaz/p2-borrowed-service-r159a1": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "refs/heads/main": "eb75627faf532fa6ffbdae59a0d14b0b385fc780"
+  },
+  "nativeSelectedBytesVerified": true,
+  "nativeSelectedFileCount": 760,
+  "nativeSource": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "originalR156InstallationTouched": false,
+  "priorFeatureCount": 4,
+  "priorJournalSha256": "63525a048232d70109aa0378bf967376a96ef2e5ef0510bd8e28dd604d5cf809",
+  "protectedRepositoryCount": 8,
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "remoteRefs": {
+    "refs/heads/alaz/p2-service-profile-r161a1": "b56b9b321002a5bb8696fcae27edcfc92c28df1c",
+    "refs/heads/alaz/p2-service-receiver-r162a1": "dc1ccb5ecf4e9741f6fd828a03e8ebed7f9497b7",
+    "refs/heads/alaz/p2-service-supervisor-r163a1": "28a12e1b18a839a9489a0c463d904b8e9a46db03",
+    "refs/heads/alaz/p2-supervised-service-r160a1": "5b7eba4d97f63623c20b51f476f4bf36ba6e7d94",
+    "refs/heads/main": "28a12e1b18a839a9489a0c463d904b8e9a46db03"
+  },
+  "result": "PASS",
+  "rootChangedFilesCount": 33,
+  "rootProtectedFilesVerified": true,
+  "schema": 1,
+  "scope": "source closure integration only; not installed service or model acceptance"
+}

@@ -256,8 +256,10 @@ class ControllerPreflight(unittest.TestCase):
             self.assertGreater(h.owned_calls, before); self.assertIs(h.volume._service_child, child)
             with patch.object(g.volume.VolumeSupervisor, 'stop') as stop, \
                     patch.object(g.volume.VolumeSupervisor, 'finish') as finish:
-                for operation in (h.volume.stop, h.volume.finish):
-                    with self.assertRaisesRegex(g.volume.SupervisorRejected, 'closure_not_integrated'): operation()
+                with self.assertRaisesRegex(g.SupervisedServiceRejected, 'child_completion_required'):
+                    h.volume.stop()
+                with self.assertRaisesRegex(g.SupervisedServiceRejected, 'successful_stop_required'):
+                    h.volume.finish()
                 stop.assert_not_called(); finish.assert_not_called()
             self.assertEqual(h.popen.call_count, 1)
 
@@ -331,7 +333,7 @@ class ActualChildPipes(unittest.TestCase):
             if result['state'] == state: return result
         self.fail('original child did not reach ' + state)
 
-    def test_same_owner_popen_channel_fixed_launch_and_clean_final_keep_volume_closed_off(self):
+    def test_same_owner_popen_channel_final_without_kernel_custody_cannot_release_volume(self):
         with Harness() as h:
             self.assertEqual(h.start_observed()['state'], 'READY')
             child = h.volume._service_child; channel = child.channel; process = child.process
@@ -348,8 +350,14 @@ class ActualChildPipes(unittest.TestCase):
             self.assertIs(h.volume._service_child, child); self.assertIs(child.channel, channel)
             self.assertIs(child.process, process); self.assertEqual(h.popen.call_count, 1)
             self.assertEqual([row.get('action') for row in h.lines()], [None, 'close'])
-            for operation in (h.volume.stop, h.volume.finish):
-                with self.assertRaisesRegex(g.volume.SupervisorRejected, 'closure_not_integrated'): operation()
+            # R164 connects normal teardown, but this R163 child-only fixture
+            # deliberately supplies no valid original cgroup/volume proof.
+            self.assertEqual(final['volumeClosure']['state'], 'UNKNOWN')
+            self.assertFalse(final['volumeClosure']['volumeUnmounted'])
+            with self.assertRaisesRegex(g.SupervisedServiceRejected, 'stop_already_attempted'):
+                h.volume.stop()
+            with self.assertRaisesRegex(g.SupervisedServiceRejected, 'successful_stop_required'):
+                h.volume.finish()
             self.assertEqual(h.close_service()['state'], 'COMPLETED')
             self.assertEqual(len(h.lines()), 2)
 

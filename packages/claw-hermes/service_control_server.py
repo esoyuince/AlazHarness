@@ -2,12 +2,10 @@
 
 The caller supplies the already RUNNING, exact ServiceVolumeSupervisor and a
 fixed launch selection. A connection can name only start, close or observation;
-it cannot supply launch configuration, acquire another owner or perform volume
-cleanup. The original main thread owns every lifecycle call. Client loss never
-cancels that call, resends a child frame or releases the volume.
-
-This source stage stops at child retirement. Even a reaped CLOSED child is
-reported as DRAINING: volume, fence and image retirement remain unimplemented.
+it cannot supply launch configuration or acquire another owner. Explicit close
+can complete the original child's and volume's ordered retirement. The original
+main thread owns every lifecycle call. Client loss never cancels that call or
+replays child input, volume stop or cleanup. Observation remains read-only.
 """
 from __future__ import annotations
 
@@ -41,7 +39,11 @@ _NATIVE_FLAGS = ('transportRetired', 'runtimeRetired', 'apiSessionsRetired',
                  'consumerDetached', 'defaultExecutorJoined')
 _COMPLETION_FLAGS = (*_NATIVE_FLAGS, 'profileLeaseReleased', 'childExited',
                      'volumeUnmounted', 'imageLeaseReleased', 'fenceRemovedAfterCleanup')
-_STATES = frozenset(('NEW', 'STARTING', 'READY', 'DRAINING', 'UNKNOWN'))
+_STATES = frozenset(('NEW', 'STARTING', 'READY', 'DRAINING', 'UNKNOWN', 'CLOSED'))
+_VOLUME_FLAGS = ('volumeUnmounted', 'fenceRemovedAfterCleanup', 'imageLeaseReleased')
+_VOLUME_FIELDS = frozenset(('state', *_VOLUME_FLAGS))
+_VOLUME_STATES = frozenset(('NOT_STARTED', 'STOPPING', 'STOPPED', 'FINISHING',
+                          'CLOSED', 'UNKNOWN'))
 
 
 class ServiceControlServerRejected(RuntimeError):
@@ -123,6 +125,30 @@ def _new_view():
     return {'state': 'NEW', 'endpoint': None, 'completion': _empty_completion(), 'error': None}
 
 
+def _volume_closure(value):
+    require(type(value) is dict and set(value) == _VOLUME_FIELDS
+            and type(value['state']) is str and value['state'] in _VOLUME_STATES
+            and all(type(value[name]) is bool for name in _VOLUME_FLAGS),
+            'service_server_volume_snapshot_fields')
+    require(not value['fenceRemovedAfterCleanup'] or value['volumeUnmounted'],
+            'service_server_volume_snapshot_order')
+    require(not value['imageLeaseReleased'] or value['fenceRemovedAfterCleanup'],
+            'service_server_volume_snapshot_order')
+    if value['state'] in ('NOT_STARTED', 'STOPPING'):
+        require(not any(value[name] for name in _VOLUME_FLAGS),
+                'service_server_volume_snapshot_premature')
+    if value['state'] in ('STOPPED', 'FINISHING'):
+        require(value['volumeUnmounted'], 'service_server_volume_snapshot_stop_unconfirmed')
+    if value['state'] == 'STOPPED':
+        require(not value['fenceRemovedAfterCleanup'], 'service_server_volume_snapshot_premature')
+    if value['state'] == 'CLOSED':
+        require(all(value[name] for name in _VOLUME_FLAGS),
+                'service_server_volume_snapshot_incomplete')
+    else:
+        require(not value['imageLeaseReleased'], 'service_server_volume_snapshot_terminal')
+    return dict(value)
+
+
 def _reason(exc):
     # Never format a foreign exception, request, path or caller credential.
     if type(exc) is not ServiceControlServerRejected:
@@ -188,6 +214,8 @@ class ServiceControlServer:
         self._request_dispatched = False
         self._serving = False
         self._view = _new_view()
+        self._terminal_view = None  # Canonical detached bytes; never erased by reply loss.
+        self._terminal_child = None
         # The volume's original retained ownership keeps this server and its
         # deduplication history alive even after a caller or socket disappears.
         volume._service_control_server = self
@@ -204,7 +232,10 @@ class ServiceControlServer:
 
     def _owned(self):
         self._actor_check()
-        self._volume._owned()
+        # This gate retains the original typed closure proof after normal
+        # finish has removed the fence/scope and released the lease. A CLOSED
+        # label alone cannot substitute for the original owner's evidence.
+        return _volume_closure(launch.check_service_owner(self._volume))
 
     def _inspect_parent(self):
         parent = self._path.parent
@@ -275,6 +306,8 @@ class ServiceControlServer:
         require(type(value) is dict and value.get('retryAllowed') is False
                 and value.get('volumeMayClose') is False and value.get('fullD3BAccepted') is False,
                 'service_server_snapshot_scope')
+        closure = _volume_closure(value.get('volumeClosure'))
+        require(closure == self._owned(), 'service_server_volume_snapshot_binding')
         phase = value.get('state')
         require(phase in ('NEW', 'SPAWNING', 'STARTING', 'READY', 'DRAINING',
                           'CLOSING', 'CHILD_CLOSED', 'COMPLETED', 'UNKNOWN'),
@@ -282,6 +315,7 @@ class ServiceControlServer:
         if phase == 'NEW':
             require(self._volume._service_child is None and value.get('owner') is None,
                     'service_server_snapshot_new')
+            require(closure['state'] == 'NOT_STARTED', 'service_server_snapshot_new_closure')
             self._view = _new_view()
             return
         require(self._volume._service_child is not None, 'service_server_snapshot_unowned')
@@ -315,26 +349,60 @@ class ServiceControlServer:
                         'service_server_snapshot_ready')
         else:
             require(state in ('STARTING', 'UNKNOWN'), 'service_server_snapshot_missing_owner')
+        if closure['state'] != 'NOT_STARTED':
+            require(phase == 'COMPLETED' and completion['childExited'],
+                    'service_server_volume_before_child')
+            completion.update({name: closure[name] for name in _VOLUME_FLAGS})
+            state = ('CLOSED' if closure['state'] == 'CLOSED' else
+                     'UNKNOWN' if closure['state'] == 'UNKNOWN' else 'DRAINING')
+        if state == 'CLOSED':
+            require(self._volume.stage == 'CLOSED' and endpoint is None
+                    and all(completion[name] for name in _COMPLETION_FLAGS)
+                    and completion['physicalStoresClosed'] == 3,
+                    'service_server_volume_closed_unconfirmed')
         if state in ('NEW', 'STARTING', 'READY'):
             require(completion == _empty_completion(), 'service_server_snapshot_premature_cleanup')
         self._view = {'state': state, 'endpoint': endpoint, 'completion': completion,
                       'error': 'service_server_operation_unknown' if state == 'UNKNOWN'
                                else 'service_server_child_unavailable' if value.get('error') is not None else None}
+        if state == 'CLOSED':
+            require(self._view['error'] is None, 'service_server_closed_error')
+            sealed = _compact(self._view, sorted_keys=True)
+            require(self._terminal_view is None or (self._terminal_view == sealed
+                    and self._terminal_child is self._volume._service_child),
+                    'service_server_terminal_changed')
+            self._terminal_child = self._volume._service_child
+            self._terminal_view = sealed
 
     def _observe(self):
         try:
-            self._owned()
-            self._snapshot(self._volume.observe_service(timeout=0))
+            closure = self._owned()
+            if self._terminal_view is not None:
+                require(closure['state'] == 'CLOSED'
+                        and self._terminal_child is self._volume._service_child,
+                        'service_server_terminal_owner_changed')
+                self._view = json.loads(self._terminal_view)
+            else:
+                self._snapshot(self._volume.observe_service(timeout=0))
         except BaseException:
             self._unknown('service_server_observation_unknown')
 
     def _reply(self, request, *, error=None):
         state = self._view['state']
-        require(state in _STATES, 'service_server_no_volume_closed_report')
+        require(state in _STATES, 'service_server_response_state')
         completion = dict(self._view['completion'])
-        require(completion['volumeUnmounted'] is False and completion['imageLeaseReleased'] is False
-                and completion['fenceRemovedAfterCleanup'] is False,
-                'service_server_no_volume_retirement')
+        require(not completion['volumeUnmounted'] or completion['childExited'],
+                'service_server_response_close_order')
+        require(not completion['fenceRemovedAfterCleanup'] or completion['volumeUnmounted'],
+                'service_server_response_close_order')
+        require(not completion['imageLeaseReleased'] or completion['fenceRemovedAfterCleanup'],
+                'service_server_response_close_order')
+        if state == 'CLOSED':
+            require(self._terminal_view is not None
+                    and self._view == json.loads(self._terminal_view)
+                    and all(completion[name] for name in _COMPLETION_FLAGS)
+                    and completion['physicalStoresClosed'] == 3,
+                    'service_server_response_close_unconfirmed')
         reason = self._view['error'] if error is None else error
         require(reason is None or type(reason) is str and _CODES.fullmatch(reason) is not None
                 and self._owner['token'] not in reason, 'service_server_error_scope')
@@ -387,7 +455,10 @@ class ServiceControlServer:
                 self._snapshot(self._volume.launch_service(ipc, filesystem, record, scratch=scratch,
                     instance_id=instance, service_id=service_id, timeout=self._operation_seconds))
             else:
-                self._snapshot(self._volume.close_service(timeout=self._operation_seconds))
+                if self._terminal_view is not None:
+                    self._observe()
+                else:
+                    self._snapshot(self._volume.close_service(timeout=self._operation_seconds))
         except BaseException:
             self._unknown('service_server_operation_unknown')
         return self._reply(request)

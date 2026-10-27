@@ -45,3 +45,8 @@ evidence/p2-service-receiver-r162a1/focused-windows.log binary
 evidence/p2-service-supervisor-r163a1/parent-*.txt -text
 evidence/p2-service-supervisor-r163a1/*.log -text
 evidence/p2-service-supervisor-r163a1/focused-windows.log binary
+
+# Preserve R164 parent custody and original volume closure test streams.
+evidence/p2-service-closure-r164a1/parent-*.txt -text
+evidence/p2-service-closure-r164a1/*.log -text
+evidence/p2-service-closure-r164a1/focused-windows.log binary
