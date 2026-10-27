@@ -64,12 +64,15 @@ Kaybolan start/close yanıtı yeniden child veya cleanup başlatmasın.
 
 ### 4. Final makbuzundan volume kapanışına bağlantı
 
-Native sıralı close, üç store'un fiziksel kapanışı ve caller/profile lease
-bırakılması sonrasında final frame; sonra aynı child'ın gerçek exit0,
-stdout/stderr EOF ve boş cgroup kanıtları gerekir. Ancak bu bağlantı
-doğrulandığında özgün volume stop/finish çağrılabilir. Ordinary unmount,
-loop ayrılması ve temizlik sonrası fence kaldırma tamamlanmadan imaj
-lease'i bırakılmaz. UNKNOWN/BUSY durumları özgün sahibi ve kanıtı korur.
+Native transport/runtime/consumer, üç fiziksel store ve caller/profile lease
+sıralı kapanışından sonra final çerçevesi alınır; aynı child'ın gerçek exit0
+sonucu ve stdout/stderr EOF kanıtları doğrulanır. Cgroup'da yalnız özgün mount
+worker kalmalı ve alt cgroup bulunmamalıdır. Özgün volume stop akışı,
+worker'ın bu üyelik kontrolünü yapmasını, normal unmount sonucunu ve worker'ın
+exit0 ile sonlanmasını doğrular. Ardından finish, tamamen boş cgroup'u ve
+global loop bağlantısının kaldırıldığını doğrular; fence'i temizlikten sonra
+kaldırır ve imaj lease'ini en son bırakır. UNKNOWN/BUSY durumları özgün sahibi
+ve kanıtı korur.
 
 ### 5. Host görev erişimi
 

@@ -1,6 +1,6 @@
 # AlazHarness — status
 
-## R160A1 — servis kontrol bileşenleri: odaklı kaynak PASS, CI düzeltmesi IN PROGRESS
+## R160A1 — servis kontrol bileşenleri: kaynak ve tam CI PASS; P2 IN PROGRESS
 
 P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
 Bu paket uzun ömürlü servisin kaynak bileşenlerini tamamlar; günlük kurulu
@@ -40,7 +40,8 @@ supervisor sunucusu henüz uygulanmadığından bu sonuç source/fixture kapsam�
 | Son Linux odaklı koşu | 83/83 PASS; fail/error/skip0, exit0 | `evidence/p2-service-control-r160a1/focused-linux.json` ve `.log` |
 | Windows taşınabilir odaklı koşu | 83 toplam: 36 PASS, 47 platform SKIP; fail/error0, exit0 | `evidence/p2-service-control-r160a1/focused-windows.json` ve `.log` |
 | Bağımsız inceleme | İki somut bulgu düzeltildi; kaynak sınırları açık | `evidence/p2-service-control-r160a1/review.json` |
-| Tam proje CI | İlk420ec0e koşusu FAIL: 4.167 toplam, 1 failure, 22 skip, exit1; fixture düzeltmesi sürüyor | `evidence/p2-service-control-r160a1/initial-ci-failure.json` |
+| Tam proje CI — son kaynak | `9fe22d9`: 4.167 toplam, 4.145 PASS, 22 SKIP; failure/error0, exit0, 298.193s; static gate PASS | `evidence/p2-service-control-r160a1/source-ci.json` |
+| İlk tam CI — tarihsel | `420ec0e`: tek EOF fixture failure, exit1; sonucu korunur | `evidence/p2-service-control-r160a1/initial-ci-failure.json` |
 | Yeni kurulu servis / gerçek sağlayıcı | NOT RUN; provider/model çağrısı0 | P2 açık |
 
 Linux toplamı: 26 child +21 parent +24 CLI +12 volume. Gerçek geçici socket,
@@ -105,3 +106,12 @@ Yol haritası: [PRODUCT-ROADMAP](docs/PRODUCT-ROADMAP.md).
   Linux83/83 PASS; aynı son kaynaklarla Windows36 PASS +47 SKIP, exit0.
   Ürün timeout veya EOF doğrulaması değişmedi. Kaynak onarım commit'i ve
   onun tam CI koşusu sırada. Ek kanıt: `eof-cli.json/log`, `eof-load.json/log`.
+
+- 2026-10-27 kaynak CI kapanışı: onarım commit'i
+  `9fe22d9a2fc13e88073c4fb7c3c69888d0999f3c` normal push sonrasında tam
+  CI PASS aldı: 4.167 test, 4.145 PASS, 22 SKIP, failure/error0, 298.193s,
+  exit0; static gate 6.781 dosya/10 bileşen/2 gitlink ile PASS. GitHub status
+  ID `57354866216`, exact checkout/status SHA ve sunucu logu eşleştirildi.
+  İlk başarısız koşu korunur. Bu belge kapanışının yeni commit'i ve main
+  fast-forward sonucu ayrıca final-publication.json içinde doğrulanır;
+  P2 kurulum/model kabulü hâlâ açıktır.

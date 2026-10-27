@@ -3,7 +3,9 @@
 Tarih: 27 Ekim 2026. **P2: IN PROGRESS.** Bu kayıt, günlük servis akışını
 tamamlamak için eklenen kaynak bileşenlerini, sınanan davranışlarını ve açık
 entegrasyon kapılarını kapsar. Bağımsız incelemede bulunan iki sorun düzeltildi; son kaynaklarla
-83 odaklı Linux testi geçti. Tam proje CI ve yayın ayrıca doğrulanır.
+83 odaklı Linux testi geçti. Onarılan `9fe22d9` kaynak commit'inin tam proje
+CI'si de 4.167 testte sıfır hata/başarısızlık ve static gate PASS ile doğrulandı.
+Kesin yayın commit'i ayrıca aynı commit'e bağlı CI ve main kaydıyla doğrulanır.
 
 ## Başlangıç ve korunan kabul
 
@@ -167,7 +169,8 @@ dosyasının SHA-256 değerlerini içerir; kurulu runtime kabulü iddiası yoktu
 | Windows odaklı koşu | 83 test keşfedildi; 36 PASS, 47 POSIX/Unix koşulu nedeniyle SKIP, exit0; aynı 11 dosyanın hashleri doğrulandı. |
 | Yeni kurulu native servis | NOT RUN |
 | Gerçek model/sağlayıcı | NOT RUN; çağrı sayısı sıfır |
-| R160 ilk tam proje CI | 420ec0e: 4.167 toplam, 4.144 PASS, 22 SKIP, tek EOF fixture failure; exit1. Düzeltme ve son CI sonucu ayrıca izlenir. |
+| R160 son kaynak tam proje CI | `9fe22d9`: 4.167 toplam, 4.145 PASS, 22 SKIP; failure/error0, exit0; 298.193s; static gate PASS. |
+| R160 ilk tam proje CI — tarihsel | `420ec0e`: 4.167 toplam, 4.144 PASS, 22 SKIP, tek EOF fixture failure; exit1. İlk sonuç korunur. |
 
 [Windows makbuzu](../evidence/p2-service-control-r160a1/focused-windows.json) ve
 [ham log](../evidence/p2-service-control-r160a1/focused-windows.log) platform
@@ -236,7 +239,7 @@ Sonraki uygulama planı: [R161A1](P2-SERVICE-INTEGRATION-R161A1-PLAN.md).
 4.167 testte tek `test_eof_required` hatasıyla sonlandı (292.451s, 22 skip,
 exit1). Fixture 60ms dolmadan sunucunun isteği gördüğünü varsayıyordu;
 başarısız koşuda sayım0 oldu. Gerçek veri alışverişine bağlanan deterministik
-EOF testiyle düzeltme yapılır; ilk başarısız sonuç silinmez ve PASS sayılmaz.
+EOF testiyle düzeltme yapıldı; ilk başarısız sonuç silinmez ve PASS sayılmaz.
 Kanıt: [initial-ci-failure.json](../evidence/p2-service-control-r160a1/initial-ci-failure.json).
 
 ### EOF fixture düzeltmesi ve doğrulaması
@@ -254,4 +257,26 @@ Linux83/83 ve Windows36 PASS +47 platform SKIP, exit0 tamamlandı.
 20 tekrar ve ayrı CLI koşusu, toplam83 sayısına yeniden eklenmez.
 Kanıtlar: [CLI](../evidence/p2-service-control-r160a1/eof-cli.json),
 [tekCPU yük](../evidence/p2-service-control-r160a1/eof-load.json).
-Onarılan kaynak için tam CI kabulü ayrıca gereklidir.
+Onarılan kaynağın tam CI kabulü aşağıdaki exact commit kaydıyla tamamlandı.
+
+## Tam kaynak CI kabulü
+
+`9fe22d9a2fc13e88073c4fb7c3c69888d0999f3c` için `alaz/local-ci` **PASS**:
+4.167 test çalıştırıldı; 4.145 PASS, 22 SKIP, sıfır failure/error ve exit0.
+Suite süresi 298.193 saniyedir. Statik gate 6.781 dosya, 10 bileşen ve
+2 gitlink üzerinde PASS verdi; model/runtime kabulü bildirmedi.
+Container timeout veya OOM olmadan sonlandı ve temizlendi.
+
+GitHub'ın exact commit yanıtındaki success status ID `57354866216`,
+sunucu teslimatı `a0b9a39a-d1f2-11f1-8eff-23c1480e95dc` içindeki final
+posted status ID ile eşleşti. Metadata'nın checkout/status/source SHA alanları,
+logdaki test toplamı, skip sayısı, terminal sonuç ve static gate birlikte
+kontrol edildi. Ham log SHA-256:
+`f66c6e4daa89c8a2868bd9dccee8280ca8c1648d4adca968233d322a8b3518c3`.
+Kanıt: [source-ci.json](../evidence/p2-service-control-r160a1/source-ci.json).
+
+Bu kaynak CI koşusu yeniden kullanım değildir; tam suite çalışmıştır.
+Belge kapanışı yeni bir commit oluşturduğunda onun tam CI'si ayrıca izlenir.
+Main'e aynı commit'in normal fast-forward yayını ve varsa doğrulanmış CI
+reuse zinciri özel yayın günlüğünde ayrı tutulur. R160 kaynak kabulü,
+yeni kurulu servis veya gerçek model kabulü oluşturmaz; P2 açık kalır.
