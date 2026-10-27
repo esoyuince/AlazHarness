@@ -4,12 +4,20 @@ Durum: IN PROGRESS. Birinci adımın servis profil/config kaynak denetimleri
 R161A1 ile PASS; ikinci adımın sabit receiver/factory odaklı kaynak testleri
 R162A1 ile PASS. Üçüncü adımın supervisor/Unix/CLI kaynak bağlantısı R163A1 ile,
 dördüncü adımın özgün volume stop/finish bağlantısı R164A1 ile PASS.
-Exact-commit CI/yayın status.md'de izlenir. Sıradaki bağlantı host görev erişimidir.
+Exact-commit CI/yayın status.md'de izlenir. Beşinci adımın host görev erişimi
+R165A1 ile IN PROGRESS; ürün kaynağı uygulandı, Linux odaklı kapısı 459/459 PASS.
+24/24 ürün/test, koşucu ve dondurulmuş Linux/parent kanıtları primary'ye hash
+kontrolüyle aktarıldı; Bridge erişimi canlı. Taze `windows-02` aynı 459 seçimde
+241 PASS ve 218 SKIP, FAIL/ERROR 0, exit 0 verdi. İlk Linux ve ilk Windows
+FAIL kayıtları ayrı korunur. Exact kaynak/closure commit'leri, staging/statik,
+source/final CI ve main yayınının güncel durumu [status.md](../status.md) ve
+[R165 kaynak raporunda](P2-HOST-TASK-ACCESS-R165A1.md) izlenir.
 Kurulu servis veya gerçek model kabulü değildir.
 Kaynak raporu: [R161A1 profil ve config](P2-SERVICE-PROFILE-R161A1.md).
 İkinci kaynak paketi: [R162A1 receiver/factory](P2-SERVICE-RECEIVER-R162A1.md).
 Üçüncü kaynak paketi: [R163A1 supervisor/Unix](P2-SERVICE-SUPERVISOR-R163A1.md).
 Dördüncü kaynak paketi: [R164A1 özgün volume kapanışı](P2-SERVICE-CLOSURE-R164A1.md).
+Beşinci kaynak çalışması: [R165A1 host görev erişimi](P2-HOST-TASK-ACCESS-R165A1.md).
 Önceki paket: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
 Güncel durum ve yayın kaydı: [status.md](../status.md).
 
@@ -126,7 +134,72 @@ global loop bağlantısının kaldırıldığını doğrular; fence'i temizlikte
 kaldırır ve imaj lease'ini en son bırakır. UNKNOWN/BUSY durumları özgün sahibi
 ve kanıtı korur.
 
-### 5. Host görev erişimi
+### 5. Host görev erişimi — R165A1 odaklı kaynak kabulü PASS
+
+28 Ekim 2026: `994751bed14046e3e0dd14be90912048b996a836` tabanında
+dar görev taşıması uygulandı. Seçilen yol, aynı özel Unix endpoint'inden
+özgün çocuğun mevcut stdin/stdout FIFO/pipe akışına ayrı `ALAZTASK/1`
+çerçeveleri taşımak; HTTP isteğini child'ın kendi sabit loopback API'sinde,
+gelen credential ve mevcut admission sınırlarıyla yürütmektir. Standart
+akışlar dışındaki FD kapatma ve izolasyon guard'ları korunur. Özgün lifecycle
+şeması ve 65.536 byte sınırı ayrı kalır; task gövdeleri, çerçeveleri ve süreleri
+kendi bounded sözleşmesine bağlıdır.
+
+Altı izinli yol; capabilities, intent, dispatch, özgün request sorgusu, run
+durum/sonuç/kullanımı ve stop'tur. Aynı sequence üzerinde tek bekleyen child
+exchange ve dış request ID tekrarında yeni POST üretmeme koşulu uygulanır.
+Kayıp dispatch yanıtı mevcut native locator üzerinden yeni salt okunur
+exchange ile sorgulanır. Detaylı yol/sınır ve belirsizlik sözleşmesi
+[R165A1 tasarım kaydındadır](P2-HOST-TASK-ACCESS-R165A1.md).
+
+CLI'de `ALAZ_TASK_TRANSPORT=supervised-service` açık seçilir; verilmezse
+HTTP taşıması kullanılır. `ALAZ_BASE_URL` ve `ALAZ_API_TOKEN`, supervisor
+taşımasında da zorunludur; base URL yalnız route origin eşlemesidir. Beş
+`ALAZ_SERVICE_*` socket/owner alanı ayrıca sağlanır. Request timeout varsayılanı
+5.000 ms, istemci response sınırı 1.048.576 byte; watch/cancel beklemesi
+30.000 ms ve polling 100 ms'dir. Kesin alanlar ve aralıklar R165 raporundadır.
+
+Son [Linux makbuzu](../evidence/p2-host-task-access-r165a1/focused-linux-02.json)
+ve [log](../evidence/p2-host-task-access-r165a1/focused-linux-02.log): **459/459
+PASS**, 0 FAIL/ERROR/SKIP, exit 0, 102,228894 saniye; kaynak/test/destek/koşucu
+hashleri sabit. İlk [458 testlik koşu](../evidence/p2-host-task-access-r165a1/focused-linux.json)
+451 PASS, 1 FAIL ve 6 ERROR ile FAIL olarak korunur. Eksik beş tarihsel dosya
+exact base'ten tamamlandı; eski watch-timeout başlangıç hatası ilgili testler
+değişmeden tekrar üretilemedi ve geriye dönük PASS sayılmadı.
+
+Sabit CI image'ında `aiohttp` yoktur. Standart discovery bağımlılığa bağlı
+HTTP fixture testlerini açık SKIP olarak kaydeder; hazırlanmış Linux odaklı
+koşucu bağımlılığı zorunlu tutar ve 459 testin tamamını çalıştırdı. Source/final
+CI sonuçları R165 raporunda izlenir; CI image/kurulum/politika değişikliği yapılmadı.
+
+Primary aktarımı tamamlandı: 24/24 ürün/test dosyası, koşucu ve dondurulmuş
+Linux/parent kanıtları hashleriyle doğrulandı. Request 12'nin geçmiş yürütme
+sonucu UNKNOWN olarak kaldı; request 14'te dört hedef dosyanın exact önceki
+baytları, runtime restart ve boş kuyruk gözlemiyle mevcut durum uzlaştırıldı.
+Yeni request 15–18 aktarımı tamamlandı; Bridge erişimi canlı.
+
+İlk [Windows makbuzu](../evidence/p2-host-task-access-r165a1/focused-windows.json)
+ve [log](../evidence/p2-host-task-access-r165a1/focused-windows.log) **459 RUN /
+240 PASS / 218 SKIP / 1 FAIL / 0 ERROR**, exit 1 ile FAIL olarak korunur.
+Başarısız mevcut vaka `test_hybrid_wire.HybridWireTests.test_timeout` oldu.
+Dar incelemede aynı özgün testin BASE ve güncel kaynakta altışar normal tekrarı
+PASS; iki kontrollü 350 ms gecikme demosunda her iki sürüm aynı
+`settlement_unconfirmed`/`state=unknown`/`backendConfirmed=false` sonucunu verdi.
+Bu inceleme ilk FAIL'in kesin kök nedenini veya ürün kabulünü kanıtlamaz.
+Ürün/test kaynakları, süreler ve assertion'lar değiştirilmedi.
+
+Taze [Windows makbuzu](../evidence/p2-host-task-access-r165a1/focused-windows-02.json)
+ve [log](../evidence/p2-host-task-access-r165a1/focused-windows-02.log), request 34
+completed/exit 0 ile **459 RUN / 241 PASS / 218 SKIP / 0 FAIL / 0 ERROR** ve
+87,580529 saniye kaydetti. Seçilen/yürütülen test kimlikleri, kaynak/test/destek
+ve koşucu hashleri son Linux koşusuyla aynı ve değişmedi. Linux'ta 459/459 PASS,
+Windows'ta 241 PASS + 218 SKIP ayrımı korunur; tanının tekrarları veya demoları
+bu test sayısına eklenmez. İlk iki FAIL geriye dönük başarı sayılmaz.
+
+Source-check/exact manifest, staging/statik kontrol ve source/final CI/yayın
+kapılarının güncel sonuçları status.md ve R165 raporunda ayrı izlenir.
+Aşağıdaki ilk kabul hedefi korunur; kaynak/fixture başarısı kurulu native servis,
+gerçek kernel veya model kabulü değildir.
 
 Özel child loopback'e host üzerinden erişecek dar transport yolunu seç
 ve aynı authenticated native API'ye bağla. Yeni queue veya sonuç store'u
@@ -136,6 +209,17 @@ kullanım ve cancel işlemlerini başlat/kapat akışıyla birlikte doğrula.
 sayılmasın.
 
 ### 6. Yeni kurulum ve gerçek kabul
+
+Paketleme açığı: mevcut projected builder retained/finite `d1516731...`
+neslinin 756 native dosyasına bağlıdır; P2 servis seçimi `5e3635c2...`
+neslinde 760 native dosyadır. Yerel `packages/claw-hermes/*.py` otomatik
+seçilse de servis girişleri (`run_supervised_service.py`,
+`run_service_projected.py`, `run_service_volume_worker.py`), servis
+selection/manifest/host-lock config'leri ve Node 24 host CLI dağıtımı mevcut
+candidate'ın sabit listesinde yoktur. Ayrı P2 candidate/install paketinde
+bu kaynaklar ve bağımlılıklar kesin envantere bağlanmalı; installer'ın
+builder/manifest hash bağı yeni paket için doğrulanmalıdır. Eski finite
+paketin tarihsel pin ve kabul kayıtları yeni servis kabulüne çevrilmez.
 
 Güncel kaynak/bağımlılık manifest'iyle yeni tek P2 kurulumu oluştur;
 kabul edilmiş R156 kurulumunu değiştirme. Gerçek kernel namespace,

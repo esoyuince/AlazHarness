@@ -653,6 +653,75 @@ def observe_service(owner, *, timeout=0):
     return _observe(owner, timeout)
 
 
+def task_service(owner, http, *, timeout=30):
+    """One HTTP exchange through this owner's exact child and pipe channel.
+
+    A lost or partial exchange is observed through the retained channel; it is
+    never retransmitted here. HTTP uncertainty does not grant cleanup or alter
+    the native owner's admission, task, result or cancellation semantics.
+    """
+    import service_task_protocol as task_wire
+    http = task_wire.validate_http_request(http)
+    _timeout(timeout)
+    _actor(owner)
+    child = getattr(owner, '_service_child', None)
+    if child is None:
+        _owner(owner)
+        return {'response': None, 'error': 'service_task_not_started'}
+    require(type(child) is _Child and child.owner is owner,
+            'service_supervised_child_slot_changed')
+    if child.closure is not None:
+        check_service_owner(owner)
+        return {'response': None, 'error': 'service_task_service_closing'}
+    try:
+        _check(child)
+    except BaseException:
+        _unknown(child, 'service_supervised_identity_unknown', blocked=True)
+        return {'response': None, 'error': 'service_task_identity_unknown'}
+    channel = child.channel
+    if child.blocked or channel is None or not channel.input_started:
+        return {'response': None, 'error': 'service_task_channel_unavailable'}
+    try:
+        # Read-only drainage may complete an older exchange. It never writes
+        # the unsent suffix of a timed-out frame or starts another command.
+        channel.observe(timeout=0)
+        child.phase = channel.phase
+        child.was_unknown = child.was_unknown or channel.was_unknown
+        if channel.pending is not None:
+            return {'response': None, 'error': 'service_task_exchange_pending'}
+        if channel.phase not in ('READY', 'DRAINING') or channel.final_frame is not None:
+            return {'response': None, 'error': 'service_task_service_unavailable'}
+        sequence = channel.sequence + 1
+        channel.task(http, timeout=timeout)
+        # The native child rechecks its own runtime across awaited HTTP work;
+        # the parent must separately retain its original worker/lease/channel.
+        # A correlated reply cannot authorize a changed host-side custodian.
+        try:
+            _check(child)
+        except BaseException:
+            _unknown(child, 'service_supervised_identity_unknown', blocked=True)
+            return {'response': None, 'error': 'service_task_identity_unknown'}
+        child.phase = channel.phase
+        child.was_unknown = child.was_unknown or channel.was_unknown
+        child.error = None
+        frame = channel.task_reply
+        if channel.pending is not None or frame is None:
+            return {'response': None, 'error': 'service_task_outcome_unknown'}
+        frame = task_wire.validate_reply(frame, service_id=child.service_id,
+                                         identity=channel.identity)
+        require(frame['sequence'] == sequence,
+                'service_supervised_task_reply_sequence')
+        require(channel.phase in ('READY', 'DRAINING') and channel.failure is None
+                and channel.final_frame is None
+                and frame['owner']['state'] == channel.phase and not channel.stdout
+                and channel.process.poll() is None,
+                'service_supervised_task_reply_unavailable')
+        return {'response': frame['response'], 'error': frame['error']}
+    except BaseException:
+        _unknown(child, 'service_supervised_task_channel_unknown')
+        return {'response': None, 'error': 'service_task_outcome_unknown'}
+
+
 def close_service(owner, *, timeout=30):
     result = _observe(owner, timeout, close=True)
     child = owner._service_child

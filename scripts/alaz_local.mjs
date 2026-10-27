@@ -12,6 +12,10 @@ const SERVICE_COMMANDS = new Set(['start', 'close', 'service-status']);
 const HELP = `AlazHarness local control (Node 24)
 
 Set ALAZ_BASE_URL to the explicit loopback URL and ALAZ_API_TOKEN to its bearer.
+For task access through the original supervisor, explicitly set
+ALAZ_TASK_TRANSPORT=supervised-service and the same service connection fields
+listed below. ALAZ_BASE_URL then anchors allowed routes; the child uses its own
+native endpoint. There is no host TCP fallback from the supervised transport.
   node scripts/alaz_local.mjs task --request-id <32hex> --model <name> --input <file|->
   node scripts/alaz_local.mjs request --request-id <32hex>
   node scripts/alaz_local.mjs status|watch|result|usage|cancel --run-id <run_32hex>
@@ -140,8 +144,14 @@ try {
   } else {
     const { command, options } = parsed;
     if (!process.env.ALAZ_BASE_URL || !process.env.ALAZ_API_TOKEN) invalid('missing_local_connection');
-    const client = new LocalControlClient({ baseUrl: process.env.ALAZ_BASE_URL, token: process.env.ALAZ_API_TOKEN,
-      requestTimeoutMs: options['request-timeout-ms'] ?? 5000 });
+    const connection = { baseUrl: process.env.ALAZ_BASE_URL, token: process.env.ALAZ_API_TOKEN,
+      requestTimeoutMs: options['request-timeout-ms'] ?? 5000 };
+    if (process.env.ALAZ_TASK_TRANSPORT !== undefined) {
+      if (process.env.ALAZ_TASK_TRANSPORT !== 'supervised-service') invalid('invalid_task_transport');
+      Object.assign(connection, { taskTransport: 'supervised-service',
+        socketPath: process.env.ALAZ_SERVICE_SOCKET, serviceId: process.env.ALAZ_SERVICE_ID, owner: serviceOwner() });
+    }
+    const client = new LocalControlClient(connection);
     const signal = controller.signal;
     if (command === 'task') {
       const input = await readPrompt(options.input, signal);

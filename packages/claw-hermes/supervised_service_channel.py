@@ -16,6 +16,7 @@ import subprocess
 import time
 
 import gateway_service_control as wire
+import service_task_protocol as task_wire
 
 MAX_FRAME = 65536
 MAX_BOOTSTRAP = 131072
@@ -56,6 +57,7 @@ class ServiceChannel:
         self.sequence = 0
         self.pending = None
         self.last_frame = None
+        self.task_reply = None
         self.final_frame = None
         self.ready_seen = False
         self.was_unknown = False
@@ -104,10 +106,36 @@ class ServiceChannel:
         require(0 < len(data) <= MAX_FRAME, 'service_channel_command_bound')
         self._timeout(timeout)
         # Retain the request BEFORE the first byte can reach the child.
+        self.task_reply = None
         self.sequence = sequence
         self.pending = {'type': 'reply', 'sequence': sequence,
                         'requestId': value['requestId'], 'action': action}
         self.input_bytes = data + b'\n'
+        self.input_written = 0
+        return self._wait(timeout)
+
+    def task(self, http, *, timeout=30):
+        """One explicit task exchange on the original process/sequence.
+
+        The private reply is separate from status. Observer timeout keeps the
+        original pending input and bytes; observe() never resends them.
+        """
+        require(self.ready_seen and self.phase in ('READY', 'DRAINING')
+                and self.pending is None and self.final_frame is None,
+                'service_channel_task_unavailable')
+        self._timeout(timeout)
+        sequence = self.sequence + 1
+        value = task_wire.validate_command({'protocol': task_wire.PROTOCOL,
+            'serviceId': self.service_id, 'sequence': sequence,
+            'requestId': wire.request_id(self.service_id, sequence),
+            'action': 'http', 'http': http}, service_id=self.service_id)
+        data = task_wire.encode(value)
+        self.task_reply = None
+        self.sequence = sequence
+        self.pending = {'type': 'task-reply', 'sequence': sequence,
+                        'requestId': value['requestId'],
+                        'maxResponseBytes': value['http']['maxResponseBytes']}
+        self.input_bytes = data
         self.input_written = 0
         return self._wait(timeout)
 
@@ -202,22 +230,59 @@ class ServiceChannel:
         # Process one frame at a time. Even a hostile continuous producer cannot
         # grow a queue of frames or an unbounded log inside the supervisor.
         for part in data.splitlines(keepends=True):
+            if self.pending is None and self.task_reply is not None:
+                # A completed task authorizes exactly one reply. Even an
+                # unterminated suffix is known unsolicited protocol output.
+                self.task_reply = None
+                self._unknown('service_channel_unsolicited_task_output', fatal=True)
+                raise ServiceChannelRejected(self.failure)
             self.stdout.extend(part)
-            if len(self.stdout) > MAX_FRAME + 1:
+            is_task = self.stdout.startswith(task_wire.PREFIX)
+            limit = (task_wire.MAX_RESPONSE_FRAME if is_task and self.pending is not None
+                     and self.pending['type'] == 'task-reply' else MAX_FRAME + 1)
+            if len(self.stdout) > limit:
                 self._unknown('service_channel_frame_bound', fatal=True)
                 raise ServiceChannelRejected(self.failure)
             if not self.stdout.endswith(b'\n'):
                 continue
-            raw = bytes(self.stdout[:-1])
+            raw = bytes(self.stdout)
             self.stdout.clear()
             try:
-                value = json.loads(raw.decode('ascii'))
-                require(wire.canonical(value) == raw, 'service_channel_noncanonical_frame')
-                wire.validate_frame(value, service_id=self.service_id, identity=self.identity)
-                self._accept(value)
+                if is_task:
+                    require(self.pending is not None and self.pending['type'] == 'task-reply',
+                            'service_channel_unsolicited_task_reply')
+                    value = task_wire.validate_reply(task_wire.decode(raw, reply=True),
+                        service_id=self.service_id, identity=self.identity,
+                        max_response_bytes=self.pending['maxResponseBytes'])
+                    self._accept_task(value)
+                else:
+                    raw = raw[:-1]
+                    value = json.loads(raw.decode('ascii'))
+                    require(wire.canonical(value) == raw, 'service_channel_noncanonical_frame')
+                    wire.validate_frame(value, service_id=self.service_id, identity=self.identity)
+                    self._accept(value)
             except Exception:
                 self._unknown('service_channel_invalid_frame', fatal=True)
                 raise ServiceChannelRejected(self.failure) from None
+
+    def _accept_task(self, value):
+        pending = self.pending
+        require(self.final_frame is None and self.ready_seen and pending is not None
+                and pending['type'] == 'task-reply'
+                and value['sequence'] == pending['sequence']
+                and value['requestId'] == pending['requestId'],
+                'service_channel_task_reply_binding')
+        require(self.input_written == len(self.input_bytes),
+                'service_channel_reply_before_input_complete')
+        self.task_reply = value
+        # Retain only the ordinary owner snapshot in generic observation.
+        self.last_frame = {'owner': value['owner']}
+        self.phase = value['owner']['state']
+        if self.phase == 'UNKNOWN':
+            self.was_unknown = True
+        self.pending = None
+        self.input_bytes = b''
+        self.input_written = 0
 
     def _accept(self, value):
         require(self.final_frame is None, 'service_channel_after_final')

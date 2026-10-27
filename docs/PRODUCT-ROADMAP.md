@@ -20,7 +20,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
 | P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
-| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi, R160 control/worker, R161 servis profil/config, R162 sabit receiver/factory, R163 özgün supervisor/Unix/CLI ve R164 özgün volume kapanışı kaynak bağlantıları mevcut. R164 exact-commit CI/yayını ayrıca izlenir; kurulu profil/restart kabulü, host görev erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
+| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R164A2 yayını kapandı. R165A1 kaynağı ve 24/24 ürün/test aktarımı hazır; Linux 459/459 PASS, Windows 459 seçimde 241 PASS + 218 SKIP, FAIL/ERROR 0. İlk iki FAIL korunuyor. Staging/statik, source/final CI ve yayın NOT RUN. P2 candidate/install, kurulu profil/restart ve gerçek model kabulü açık. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
 | P5 | Tek v0.1 sürüm adayı ve küçük pilot | M1-01..M1-07 aynı kaynak/kurulumda kapanır; temiz ortam kurulumu ve gerçek görev pilotu | OPEN; tam M1 ve prod kabulü yok. |
@@ -75,7 +75,7 @@ PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında n
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
 
 Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
-kararı üstteki tabloda ve en son R164 kaynak teslimatında yer alır.
+kararı üstteki tabloda ve son R165 çalışma kaydında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -373,3 +373,82 @@ transport bağlantısı; yeni queue veya sonuç store'u olmadan görev, sorgu,
 sonuç/kullanım ve cancel. Ardından yeni tek P2 kurulumu ve gerçek kernel/native
 kabulü gelir. Gerçek sağlayıcı deneyi için model, araç kümesi ve bütçe seçimi açık.
 **P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.**
+
+## P2 / R165A1 host görev erişimi — odaklı kaynak kabulü PASS
+
+28 Ekim 2026: R164A2'nin yayımlanmış
+`994751bed14046e3e0dd14be90912048b996a836` commit'i üzerinde P2 entegrasyon
+planının beşinci adımı başladı. Aynı özel Unix endpoint'i ve özgün child'ın
+mevcut stdin/stdout FIFO/pipe akışı üzerinden bounded görev çerçeveleri;
+child'ın sabit loopback'inde aynı kimliği doğrulanmış native HTTP API'ye
+bağlantı uygulandı. Yeni queue, sonuç store'u veya ikinci owner oluşturulmaz.
+
+Capabilities, intent, dispatch, özgün request sorgusu, durum/sonuç/kullanım
+ve stop için altı dar HTTP yolu seçildi. Lifecycle şeması ve 65.536 byte sınırı
+korunur; task aktarımının ayrı byte/süre sınırları, özgün sequence ve tek
+bekleyen exchange sözleşmesi vardır. Kayıp yanıt yeni POST ile tekrarlanmaz;
+özgün native request locator'ı kullanılır.
+
+CLI seçimi `ALAZ_TASK_TRANSPORT=supervised-service` ile yapılır; değişken
+yoksa mevcut HTTP yolu kullanılır. `ALAZ_BASE_URL`, `ALAZ_API_TOKEN` ve beş
+`ALAZ_SERVICE_*` bağlantı alanı açık sağlanır. Unix modunda URL yalnız route
+origin eşlemesidir. Request timeout varsayılanı 5.000 ms, response sınırı
+1.048.576 byte; watch/cancel bekleme/poll varsayılanları 30.000/100 ms'dir.
+
+Son [Linux makbuzu](../evidence/p2-host-task-access-r165a1/focused-linux-02.json)
+ve [log](../evidence/p2-host-task-access-r165a1/focused-linux-02.log) **459/459
+PASS**, 0 FAIL/ERROR/SKIP, exit 0 ve 102,228894 saniye kaydetti; kaynak, test,
+destek ve koşucu hashleri sabit kaldı. İlk [458 testlik koşu](../evidence/p2-host-task-access-r165a1/focused-linux.json)
+451 PASS, 1 FAIL, 6 ERROR ile FAIL olarak korundu. Eksik beş R158 tarihsel
+dosyası exact base'ten tamamlandı. Eski watch-timeout başlangıç hatası ilgili
+test baytları değişmeden tekrar üretilemedi; ilk sonuç PASS'e çevrilmedi.
+
+Sabit CI image'ında `aiohttp` yoktur; standart discovery gerçek HTTP fixture
+testlerini bağımlılık yokluğunda açık gerekçeyle SKIP kaydeder. Hazırlanmış
+Linux odaklı kapısı bu bağımlılığı zorunlu tutar ve bütün seçimi çalıştırdı.
+Source/final CI sonuçları R165 raporunda izlenir; image, bağımlılık kurulumu veya
+CI politikası değişikliği yapılmadı.
+
+Primary aktarımı tamamlandı: 24/24 ürün/test dosyası, koşucu ve dondurulmuş
+Linux/parent kanıtları hash kontrolüyle doğrulandı; Bridge erişimi canlı.
+Request 12'nin geçmiş yürütme sonucu UNKNOWN olarak korunur. Request 14'te
+canlı dosya önkoşulları, runtime restart ve boş kuyruk gözlemiyle mevcut durum
+uzlaştırıldı; yeni request 15–18 aktarımı tamamlandı.
+
+İlk [Windows makbuzu](../evidence/p2-host-task-access-r165a1/focused-windows.json)
+ve [log](../evidence/p2-host-task-access-r165a1/focused-windows.log) **459 RUN /
+240 PASS / 218 SKIP / 1 FAIL / 0 ERROR**, exit 1 olarak korundu. Mevcut
+`test_hybrid_wire.HybridWireTests.test_timeout` vakası başarısız oldu.
+Aynı özgün testin dar incelemesinde BASE ve güncel kaynakta altışar normal
+tekrar PASS; iki kontrollü 350 ms gecikme demosunda her iki sürüm aynı
+`settlement_unconfirmed`/`state=unknown`/`backendConfirmed=false` sonucunu verdi.
+Bu bulgular ilk FAIL'in kesin kök nedeni veya ürün kabulü sayılmaz; kaynak,
+test süreleri ve assertion'lar değiştirilmedi.
+
+Taze [Windows makbuzu](../evidence/p2-host-task-access-r165a1/focused-windows-02.json)
+ve [log](../evidence/p2-host-task-access-r165a1/focused-windows-02.log) **459 RUN /
+241 PASS / 218 SKIP / 0 FAIL / 0 ERROR**, exit 0 ve 87,580529 saniye kaydetti;
+request 34 tamamlandı. Kaynak/test/destek/koşucu hashleri ve seçilen/yürütülen
+sıralı ID'ler Linux ile aynı kaldı. Linux 459/459 PASS ile Windows 241 PASS +
+218 SKIP ayrı kaydedilir; tanı tekrarları ve demoları test sayısına eklenmez.
+İlk Linux ve ilk Windows FAIL kayıtları değişmeden korunur; yeni PASS ilk
+Windows başarısızlığının kesin nedenini kanıtlamaz.
+
+Staging/statik kontrol, exact source/closure commit'leri, source/final CI ve
+main yayınının güncel sonuçları [status.md](../status.md) ve R165 raporunda izlenir.
+Odaklı kapıların geçmesi tek başına kaynak yayını değildir. R159 servis kaynak
+seçimi command secret-source modülünü
+zaten içerir; gerçek kurulumdaki provider/config/credential kabulü sonraki kapıdır.
+
+Altıncı adımın paketleme açığı sürer: mevcut builder finite neslin 756 native
+dosyasına, P2 servis seçimi 760 dosyalık ayrı nesle bağlıdır. Servis sabit
+girişleri, selection/manifest/host-lock config'leri ve Node 24 host CLI
+dağıtımı yeni P2 candidate/install paketinde açıkça envanterlenmelidir.
+Yerel Python modüllerinin otomatik seçilmesi bu kurulum işini tamamlamaz.
+
+Rapor: [R165A1 host görev erişimi](P2-HOST-TASK-ACCESS-R165A1.md).
+Sonraki sıra: source-check ve exact manifest'i oluşturmak, staging/statik
+ve source/final CI/yayın kapılarını tamamlamak; sonra yeni tek P2 kurulumu ve
+gerçek kernel/native servis kabulü.
+Sınırlı gerçek görev için model/sağlayıcı, araç kümesi ve bütçe seçimi ayrıca
+açıktır. **P1 DONE; P2 IN PROGRESS; P3–P5, M1 ve prod OPEN.**

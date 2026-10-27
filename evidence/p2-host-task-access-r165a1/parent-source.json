@@ -1,0 +1,67 @@
+{
+  "base": "994751bed14046e3e0dd14be90912048b996a836",
+  "purpose": "Exact parent bytes for files changed by R165; historical records remain unchanged",
+  "schema": 1,
+  "sources": {
+    "docs/P2-SERVICE-INTEGRATION-R161A1-PLAN.md": {
+      "path": "evidence/p2-host-task-access-r165a1/base-docs__P2-SERVICE-INTEGRATION-R161A1-PLAN.md.txt",
+      "sha256": "e1f49792b3a06c627a28f41b7bfffc93aa7221833df025deb6b96bd5c33baedf",
+      "size": 9545
+    },
+    "docs/PRODUCT-ROADMAP.md": {
+      "path": "evidence/p2-host-task-access-r165a1/base-docs__PRODUCT-ROADMAP.md.txt",
+      "sha256": "1d513a2630e9ffd158c50d4d7101d31a530ddbecd641eedd71cc10bfc5c498b1",
+      "size": 24958
+    },
+    "packages/claw-hermes/gateway_service_control.py": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__gateway_service_control.py.txt",
+      "sha256": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55",
+      "size": 19594
+    },
+    "packages/claw-hermes/gateway_supervised_service.py": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__gateway_supervised_service.py.txt",
+      "sha256": "2369f36805ffc4a708c2578d9877cd2497c2afe76da279208990f2faa1ca45b1",
+      "size": 30628
+    },
+    "packages/claw-hermes/hermes-runs.mjs": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__hermes-runs.mjs.txt",
+      "sha256": "14a9b1112d6df77c9e2baff00dea7be8be83efce5c602eeeddf8bd741671c9b4",
+      "size": 11772
+    },
+    "packages/claw-hermes/host-gate-client.mjs": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__host-gate-client.mjs.txt",
+      "sha256": "4fbbe0416789d0dd194f4e2501d28692a31b118d29e4185a879a0661bfe3693b",
+      "size": 10691
+    },
+    "packages/claw-hermes/local-control.mjs": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__local-control.mjs.txt",
+      "sha256": "86b4b54889ceb2de7f783fa533842f7c8a8c4f225fcbfad0a7e0deb2495d0fcd",
+      "size": 11808
+    },
+    "packages/claw-hermes/service_control_server.py": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__service_control_server.py.txt",
+      "sha256": "3265d9048ee602e2e3456a9b37e7ca6a89fbc0b5c8b09e345450a10775748195",
+      "size": 29492
+    },
+    "packages/claw-hermes/service_volume_supervisor.py": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__service_volume_supervisor.py.txt",
+      "sha256": "a82e969db632e792cca3f5fdbf73fb98583fb92fb55d2efe1de48299b1af076d",
+      "size": 4901
+    },
+    "packages/claw-hermes/supervised_service_channel.py": {
+      "path": "evidence/p2-host-task-access-r165a1/base-packages__claw-hermes__supervised_service_channel.py.txt",
+      "sha256": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974",
+      "size": 12990
+    },
+    "scripts/alaz_local.mjs": {
+      "path": "evidence/p2-host-task-access-r165a1/base-scripts__alaz_local.mjs.txt",
+      "sha256": "c94cd47d9cbf9c69e7992b97b450740fea49f98877405bc441e7831c71e80d30",
+      "size": 8911
+    },
+    "status.md": {
+      "path": "docs/status-history/r165-parent.md",
+      "sha256": "2e01131cede3deca3e2b72e1772d0e4021321836db6770a5a8f56996ef2480cd",
+      "size": 9011
+    }
+  }
+}

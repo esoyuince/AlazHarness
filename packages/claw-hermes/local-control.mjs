@@ -4,6 +4,7 @@
 import { HostGateClient } from './host-gate-client.mjs';
 import { HarnessError } from './hermes-runs.mjs';
 import { classifyRunRecovery } from './run-recovery.mjs';
+import { createServiceTaskFetch } from './service-task.mjs';
 
 const REQUEST = /^[a-f0-9]{32}$/;
 const RUN = /^run_[a-f0-9]{32}$/;
@@ -13,7 +14,10 @@ const INPUT_ERRORS = new Set(['invalid_base_url', 'unsupported_endpoint', 'inval
   'invalid_isolation_requirement', 'invalid_provider_broker_requirement', 'invalid_host_intent',
   'invalid_request_id', 'invalid_run_id', 'invalid_watch_timeout', 'invalid_poll_interval',
   'invalid_cli_arguments', 'invalid_cli_command', 'missing_cli_argument', 'invalid_cli_number',
-  'missing_local_connection', 'input_too_large', 'input_not_utf8', 'input_empty', 'input_unreadable']);
+  'missing_local_connection', 'input_too_large', 'input_not_utf8', 'input_empty', 'input_unreadable',
+  'invalid_task_transport', 'invalid_task_request', 'invalid_task_headers',
+  'invalid_service_socket', 'invalid_service_id', 'invalid_service_owner',
+  'unsupported_service_platform', 'missing_service_connection']);
 
 function fail(code) { throw new HarnessError(code, { mayHaveBeenAccepted: false }); }
 function identity(value, pattern, name) {
@@ -102,7 +106,12 @@ export class LocalControlClient {
   #host;
   constructor(options = {}) {
     // Product task submission never downgrades to raw runs or an unbudgeted route.
-    this.#host = new HostGateClient({ ...options, requireExecution: true, requireProviderBroker: true });
+    let fetchImpl = options.fetchImpl;
+    if (options.taskTransport !== undefined) {
+      if (options.taskTransport !== 'supervised-service' || fetchImpl !== undefined) fail('invalid_task_transport');
+      fetchImpl = createServiceTaskFetch(options);
+    }
+    this.#host = new HostGateClient({ ...options, fetchImpl, requireExecution: true, requireProviderBroker: true });
   }
 
   async task(request, { signal } = {}) {

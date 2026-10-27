@@ -36,6 +36,10 @@ class ServiceVolumeSupervisor(volume.VolumeSupervisor):
         from gateway_supervised_service import observe_service
         return observe_service(self, timeout=timeout)
 
+    def task_service(self, http, *, timeout=30):
+        from gateway_supervised_service import task_service
+        return task_service(self, http, timeout=timeout)
+
     def close_service(self, *, timeout=30):
         from gateway_supervised_service import close_service
         return close_service(self, timeout=timeout)

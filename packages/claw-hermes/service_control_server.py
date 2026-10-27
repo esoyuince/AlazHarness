@@ -24,6 +24,8 @@ import time
 import gateway_service_control as child_wire
 import gateway_state_projection as projection
 import gateway_supervised_service as launch
+import service_task_protocol as task_wire
+import service_task_server as task_server
 from service_volume_supervisor import ServiceVolumeSupervisor
 
 PROTOCOL = 'alaz-supervisor-control-v1'
@@ -169,7 +171,7 @@ class ServiceControlServer:
     """
     def __init__(self, volume, ipc, filesystem, record, *, socket_path, scratch,
                  instance_id, service_id, request_seconds=5, response_seconds=5,
-                 operation_seconds=30, max_mutations=64):
+                 operation_seconds=30, max_mutations=64, max_task_mutations=4096):
         require(type(volume) is ServiceVolumeSupervisor, 'service_server_exact_volume')
         volume._owned()
         require(volume.stage == 'RUNNING' and not volume.spawn_uncertain
@@ -184,6 +186,13 @@ class ServiceControlServer:
         require(type(max_mutations) is int and 1 <= max_mutations <= MAX_MUTATIONS,
                 'service_server_mutation_bound')
         self._max_mutations = max_mutations
+        require(type(max_task_mutations) is int
+                and 1 <= max_task_mutations <= task_server.MAX_MUTATIONS,
+                'service_task_mutation_bound')
+        self._max_task_mutations = max_task_mutations
+        # Only hashes of attempted HTTP writes are retained. Read-only polls
+        # do not consume a durable task queue or an ever-growing result cache.
+        self._task_mutations = {}
         self._launch = launch.freeze_launch(ipc, filesystem, record, scratch=scratch,
                                            instance_id=instance_id, service_id=service_id)
         _, _, frozen, _, frozen_instance, frozen_service = launch.decode_launch(self._launch)
@@ -212,6 +221,7 @@ class ServiceControlServer:
         self._mutations = {}  # Never evicted: old IDs cannot become new effects.
         self._start_request = None
         self._request_dispatched = False
+        self._request_is_task = False
         self._serving = False
         self._view = _new_view()
         self._terminal_view = None  # Canonical detached bytes; never erased by reply loss.
@@ -413,6 +423,8 @@ class ServiceControlServer:
                 'completion': completion, 'retryAllowed': False, 'error': reason}
 
     def _dispatch(self, request):
+        if type(request) is dict and request.get('protocol') == task_server.PROTOCOL:
+            return self._dispatch_task(request)
         request = validate_request(request)
         # Before even read-only lifecycle dispatch, compare all original owner
         # fields. A reply comparison cannot substitute for this precondition.
@@ -463,6 +475,38 @@ class ServiceControlServer:
             self._unknown('service_server_operation_unknown')
         return self._reply(request)
 
+    def _dispatch_task(self, request):
+        request = task_server.validate_request(request)
+        require(request['serviceId'] == self._service_id
+                and request['expectedOwner'] == self._owner,
+                'service_server_owner_precondition')
+        self._bound()
+        self._request_is_task = True
+        request_id = request['requestId']
+        fingerprint = task_server.fingerprint(request)
+        previous = self._task_mutations.get(request_id)
+        if previous is not None:
+            reason = ('service_task_exchange_already_attempted' if previous == fingerprint
+                      else 'service_task_exchange_conflict')
+            return task_server.reply(request, self._owner, error=reason)
+        if self._terminal_view is not None or self._volume._service_child is None:
+            return task_server.reply(request, self._owner, error='service_task_service_unavailable')
+        if request['http']['method'] == 'POST':
+            if len(self._task_mutations) >= self._max_task_mutations:
+                return task_server.reply(request, self._owner, error='service_task_exchange_capacity')
+            # The ID is consumed before any byte can reach the original child.
+            # A lost response is recovered with a new read-only API exchange.
+            self._task_mutations[request_id] = fingerprint
+        self._request_dispatched = True
+        try:
+            result = self._volume.task_service(request['http'], timeout=self._operation_seconds)
+            self._observe()
+            return task_server.reply(request, self._owner, **result)
+        except BaseException:
+            # The task result is unknown; this alone is not a lifecycle fault
+            # and never triggers drain, retry, child replacement or cleanup.
+            return task_server.reply(request, self._owner, error='service_task_outcome_unknown')
+
     def _peer(self, client):
         raw = client.getsockopt(socket.SOL_SOCKET, socket.SO_PEERCRED, struct.calcsize('3i'))
         pid, uid, gid = struct.unpack('3i', raw)
@@ -482,13 +526,17 @@ class ServiceControlServer:
         while True:
             self._ready(client, end)
             try:
-                raw = client.recv(min(4096, MAX_FRAME + 1 - len(data)))
+                limit = task_wire.MAX_REQUEST_FRAME if data.startswith(task_wire.PREFIX) else MAX_FRAME
+                raw = client.recv(min(4096, limit + 1 - len(data)))
             except BlockingIOError:
                 continue
             if not raw:
+                if data.startswith(task_wire.PREFIX):
+                    return task_server.decode_request(bytes(data))
                 return decode_request(bytes(data))
             data.extend(raw)
-            require(len(data) <= MAX_FRAME, 'service_server_request_bound')
+            limit = task_wire.MAX_REQUEST_FRAME if data.startswith(task_wire.PREFIX) else MAX_FRAME
+            require(len(data) <= limit, 'service_server_request_bound')
             # Do not dispatch on a newline. EOF is required so an additional
             # frame cannot arrive after a lifecycle effect was already started.
             if b'\n' in data:
@@ -496,8 +544,11 @@ class ServiceControlServer:
                         'service_server_multiple_requests')
 
     def _write(self, client, value):
-        data = _compact(value, sorted_keys=True) + b'\n'
-        require(len(data) <= MAX_FRAME, 'service_server_response_bound')
+        if value.get('protocol') == task_server.PROTOCOL:
+            data = task_wire.encode(value, reply=True)
+        else:
+            data = _compact(value, sorted_keys=True) + b'\n'
+            require(len(data) <= MAX_FRAME, 'service_server_response_bound')
         end = time.monotonic() + self._response_seconds
         while data:
             self._ready(client, end, write=True)
@@ -524,6 +575,7 @@ class ServiceControlServer:
 
     def _serve_connection(self, timeout):
         self._request_dispatched = False
+        self._request_is_task = False
         try:
             self._bound()
             ready, _, _ = select.select([self._listener], [], [], timeout)
@@ -546,7 +598,7 @@ class ServiceControlServer:
             # Closing this caller socket does not close or cancel the retained
             # operation. Diagnostics never contain request/exception contents.
             dispatched = self._request_dispatched
-            if dispatched:
+            if dispatched and not self._request_is_task:
                 # Losing an observation is not permission to undo or repeat
                 # the operation; preserve its reserved ID and original owner.
                 self._unknown('service_server_reply_unknown')

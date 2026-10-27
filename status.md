@@ -1,149 +1,67 @@
-# AlazHarness — status
+# AlazHarness — R165A1 host görev erişimi
 
-## R164A2 — aynı kaynakların yeni CI politikasıyla yayını — kaynak CI PASS; yayın IN PROGRESS
+**IN PROGRESS. Primary kaynak aktarımı ve Linux/Windows odaklı kabul tamam. Kaynak paketi/statik kontrol ve source/final CI/yayın sırada.**
+P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.
 
-P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
+- Aktif dal: `alaz/p2-host-task-access-r165a1`.
+- Primary: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-host-task-access-r165a1`.
+- Başlangıç ve son doğrulanan yayımlı main: `994751bed14046e3e0dd14be90912048b996a836`.
+- Hedef: [P2 entegrasyon planı](docs/P2-SERVICE-INTEGRATION-R161A1-PLAN.md) adım 5; host CLI'den aynı supervisor/çocuk ve kimlik doğrulamalı native HTTP API'ye görev erişimi.
+- Kaynak raporu: [R165A1](docs/P2-HOST-TASK-ACCESS-R165A1.md). Önceki durumun exact arşivi: [r165-parent](docs/status-history/r165-parent.md).
 
-- Yayın dalı: `alaz/p2-service-closure-r164a2`.
-- Primary çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-closure-r164a2`.
-- Başlangıç ve yayın öncesi main: `28a12e1b18a839a9489a0c463d904b8e9a46db03`.
-- A2 kaynak commit'i: `5467f599f36a0b88de699c7d6628a52235719e38`; normal feature push ve exact tam CI PASS.
-- Korunan R164A1 dalı: `alaz/p2-service-closure-r164a1`; son commit
-  `82cab2562007dff124326cff83022f0370f31ccb`.
-- R164A1 kaynak commit'i: `090754b6caf20bbda7f643dae1eddb31ada69a3b`.
-- Önceki izlenen durumun tam bayt arşivi: [R164A1 parent](docs/status-history/r164a2-parent.md).
-- Son kabul edilmiş R163 yayın günlüğü SHA-256:
-  `63525a048232d70109aa0378bf967376a96ef2e5ef0510bd8e28dd604d5cf809`.
-- Native seçim: `5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d`, 760 dosya.
+## Tamamlanan kaynak ve Linux kabulü
 
-### Amaç ve kapsam
+13 ürün dosyasında bounded görev protokolü, özgün pipe üzerinden HTTP taşıması, supervisor bağlantısı ve açık CLI seçimi tamamlandı. Yeni test/fixture dosyalarıyla toplam 24 ürün/test dosyası primary'ye CAS aktarıldı ve her after-SHA doğrulandı. Altı izinli HTTP yolu, özgün owner/sequence kontrolü, belirsiz POST'u tekrar göndermeden özgün request sorgusu ve mevcut kapanış zinciri korunur.
 
-R164A1, [entegrasyon planının](docs/P2-SERVICE-INTEGRATION-R161A1-PLAN.md)
-dördüncü adımındaki özgün servis volume kapanışını kaynak/fixture düzeyinde
-uyguladı. Child final/exit0/EOF kanıtı aynı ServiceVolumeSupervisor üzerindeki
-normal stop/finish zincirine bağlıdır; tam zincir bitmeden dış CLOSED üretilmez.
-Ürün davranışı ve önceki odaklı doğrulama ayrıntıları
-[uygulama raporunda](docs/P2-SERVICE-CLOSURE-R164A1.md) korunur.
+[Son Linux raporu](evidence/p2-host-task-access-r165a1/focused-linux-02.json): **459 RUN / 459 PASS / 0 SKIP / 0 FAIL / 0 ERROR**, exit 0, 102.228894 saniye. 82 kaynak, 26 test, 81 destek ve koşucu hashleri sabit. [Log](evidence/p2-host-task-access-r165a1/focused-linux-02.log) SHA-256 `3527aafb9016b811d17ca3ce68c0c71496d74f622194cb9b1c7d44420ff6b263`.
 
-R164A2 yeni yayın neslidir. Ürün, test, runner ve tarihsel kaynak bağları R164A1
-ile aynı baytlarda tutulur. Kullanıcı, yalnız AlazHarness'in CI süre bütçesinin
-360 saniyeden 480 saniyeye çıkarılmasını ve yayının tamamlanmasını açıkça
-onayladı. Ayrı altyapı değişikliği 27 Ekim 2026 saat 23:26 TRT'de uygulandı:
-yalnız AlazHarness için `timeout_sec` 360 → 480 oldu. Özel yedek, mevcut worker
-kilidi, boş kuyruk/processing, tek alan farkı, owner/mode korunması, fsync ve
-exact geri okuma doğrulandı. İmaj, tam test/statik komutu, kaynak sınırları,
-güven kuralları ve concurrency aynı kaldı; servis yeniden başlatılmadı.
+Gerçek Node → Unix socket → özgün Popen pipe → child ServiceControl → loopback HTTP fixture yolu çalıştı. Native API/store/lifecycle ve kernel/worker/lease portları test doubles; kurulu servis, kernel ve gerçek model kabulü değildir. Model/provider çağrısı 0.
 
-Uygulama makbuzu `scratch/r164a2-publication/ci-policy-change.json`, SHA-256
-`87b368acf04df8cf1f5ef11eca761a12ed76e8e63d983296b7dd34d971200f10`.
-Yeni politika digest'i
-`39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`.
-Altyapı ayarı APPLIED/PASS. Yeni A2 kaynak commit'inin aynı politika altında tam
-CI kabulü PASS; kapanış commit'inin tam CI'sı ve main yayını bu checkpoint'te
-henüz NOT RUN.
+[İlk Linux koşusu](evidence/p2-host-task-access-r165a1/focused-linux.json) **FAIL** olarak korunur: 458 RUN / 451 PASS / 1 FAIL / 6 ERROR. Eksik beş R158 tarihsel dosyası exact base'ten tamamlandı; eski watch-timeout bootstrap hatası normal bağımsız karşılaştırmada tekrarlanmadı. Tarihsel test/assertion/süreler değiştirilmedi; eski sonuç PASS'a çevrilmedi.
 
-### Korunan doğrulamalar ve yayın engelinin nedeni
+## İlk Windows sonucu ve inceleme
 
-Aşağıdaki odaklı sonuçlar R164A1'in gerçek koşularıdır; A2'de yeniden çalışmış
-gibi sayılmaz. Aynı 25 ürün dosyası, 50 test/destek dosyası, runner ve sıralı
-806 test kimliği yeni nesilde de bayt eşitliğiyle korunmalıdır.
+[İlk Windows raporu](evidence/p2-host-task-access-r165a1/focused-windows.json) ve [log](evidence/p2-host-task-access-r165a1/focused-windows.log): **459 RUN / 240 PASS / 218 SKIP / 1 FAIL / 0 ERROR**, exit 1, 107.029062 saniye. Seçili/yürütülen 459 ID eşleşti; source/test/support/runner hashleri değişmedi. Rapor SHA `5696d2ee9271ad78fe6e0ca19af5962c42e0e086303ef68658a08bb9e7881ff0`, log SHA `f63130cffa1963f7eecbc0bc7d8451fb60ca25ba00ae3d3088cc533b42c0948e`.
 
-| Korunan koşu | Seçilen/koşulan | PASS | SKIP | Test failure / error | Genel sonuç |
-|---|---:|---:|---:|---:|---|
-| R164A1 Linux odaklı | 806 | 806 | 0 | 0 / 0 | PASS, exit 0 |
-| R164A1 primary Windows odaklı | 806 | 626 | 180 | 0 / 0 | PASS, exit 0 |
-| R164A1 ayrı tarihsel bağ | 14 | 14 | 0 | 0 / 0 | PASS, exit 0 |
-| `090754b` tam CI, 360 sn politika | 4.566 | 4.544 | 22 | 0 / 0 | PASS, 347,819 sn |
-| `82cab256` ilk tam CI | 4.566 | 4.544 | 22 | 0 / 0 | FAIL, rc124 / timeout; test bölümü 348,954 sn |
-| `82cab256` tek operatör tekrarı | 4.566 | 4.544 | 22 | 0 / 0 | FAIL, rc124 / timeout; test bölümü 349,703 sn |
+Başarısız test `test_hybrid_wire.HybridWireTests.test_timeout`: iptal sonrası 300 ms settlement penceresinde canonical terminal yanıtı doğrulanamadı ve `settlement_unconfirmed` döndü. İlgili observe/iptal kodu exact parent ile aynı. Dar karşılaştırmada aynı özgün unittest BASE'te 6/6, mevcut kaynakta 6/6 PASS; ayrı iki kontrollü 350 ms gecikme demosunda her iki sürüm de settlement_unconfirmed döndürdü. Bu tanı eski FAIL'in kesin nedenini kanıtlamaz ve ürün kabulünün yerine geçmez. Kaynak/test/süreler değiştirilmedi; ilk FAIL korunur.
 
-Tarihsel 14 test, 806 seçimin içinde de bulunur; toplam test sayısına tekrar
-eklenmez. Windows SKIP kayıtları POSIX pipe, Unix socket/peer credentials,
-directory fsync ve ilgili platform koşullarını açıkça belirtir. Linux odaklı
-koşusunda atlama yoktur.
+## Son Windows kabulü
 
-İki başarısız final koşusunun test ve statik PASS metni, genel timeout sonucunu
-PASS'e çevirmez. 360 saniyelik sınır bütün Docker komutuna uygulanır; yalnız
-test bölümünün süresi değildir. Ayrı aşama zamanları olmadığından aşım tek bir
-alt işleme bağlanamaz. Son final status ID `57399491641`; ilk başarısız status
-ID `57397447692`. Eski kaynak CI kabulü 360 saniyelik politikaya bağlıdır ve
-480 saniyelik yeni yayın neslinin source/final kabulü olarak kullanılamaz.
+[focused-windows-02.json](evidence/p2-host-task-access-r165a1/focused-windows-02.json) ve [log](evidence/p2-host-task-access-r165a1/focused-windows-02.log): **459 RUN / 241 PASS / 218 SKIP / 0 FAIL / 0 ERROR**, exit 0, 87.580529 saniye. Windows platformu için kaydedilen SKIP'ler ayrıca görünür; Linux aynı seçimin tamamını çalıştırdı. Seçili/yürütülen ID'ler ve 82 kaynak/26 test/81 destek/koşucu hashleri Linux ile eşleşti ve koşu boyunca sabit kaldı.
 
-R164A1 uygulama kanıtları `evidence/p2-service-closure-r164a1/` altında özgün
-kimlikleriyle korunur. Eski CI sonuçları ve yeni altyapı değişikliği
-[A2 recovery kaydına](evidence/p2-service-closure-r164a2/recovery.json) bağlanır.
-A1 son engel kontrolü 43 paket dosyası, sekiz korunan çalışma ağacı, kökün
-33 değişmiş dosyası, dört önceki feature ve 760 native kaynağın korunmasını
-PASS olarak kaydetti. A2 kendi başlangıç ve yayın kontrollerini ayrıca yapar.
+Rapor SHA-256 `467bb6dfe54af160c1bb0fe2c5e8925016c095ee249a9c5bc83639fe39b1d5c8`; log SHA-256 `8ae9e94300661d1ab206c95d470fe8d16ad7e77d18a7f0c1671357dbffb69669`. Request 34 completed/exit0. İlk Windows FAIL kaydı ve ilk Linux FAIL kaydı ayrı tutulur; hiçbir eski sonuç yeniden adlandırılmadı.
 
-### A2 kaynak CI kabulü
+## Bağlantı kesintisinin uzlaştırılması
 
-Exact `5467f599f36a0b88de699c7d6628a52235719e38` commit'i için required
-`alaz/local-ci` yeni tam koşusu PASS: 4.566 test, 4.544 PASS, 22 SKIP,
-failure/error 0; test süresi 350,015 saniye. Container exit 0, OOM/timeout false
-ve cleanup `removed`. Statik kapı 6.906 dosya denetledi, 4.566 test keşfetti ve
-PASS verdi. Bu sonuç gerçek tam koşudur; önceki başarı yeniden kullanılmadı.
+Eski request 10 kesin failed/not_started idi. Sonraki request 12'nin makbuzu erişilemediği için geçmiş yürütme sonucu UNKNOWN olarak korunur. Köprü yeniden başladıktan sonra request 14 ile dört hedef dosyanın tamamının exact aktarım öncesi halinde olduğu, doğru branch/HEAD, main ve native çalışma alanlarının temizliği doğrulandı. Güncel native kuyruğu boştu. Geçmiş belirsiz istek tekrar gönderilmedi; mevcut dosya durumu `request12-reconciliation.json` ile uzlaştırıldı.
 
-GitHub status ID `57410520459`, zaman 27 Ekim 2026 23:43:59 TRT;
-delivery `46974e68-d246-11f1-9f75-c42a6ebc041e`. Authenticated GitHub gözlemi,
-sunucu artifact'ı, ham log, suite sayıları ve yeni politika digest'i aynı exact
-commit'e bağlandı. [Public source CI makbuzu](evidence/p2-service-closure-r164a1/source-ci.json),
-kapanış commit'inde `accepted-source-ci.json` kabul makbuzunun exact baytlarını
-taşır; SHA-256
-`5bb8ac9ce765973eeb42908b212ac730959f37ec4054ca3fb18bab4831ccf703`.
+Yeni CAS istekleri 15–18 kalan 21 ürün/test dosyasını tamamladı; ilk request 9'daki üç dosya korunarak toplam 24/24 doğrulandı. Request 19 dondurulmuş focused-runner.py dosyasını aktardı ve doğruladı. Ara RUNTIME_LIMIT yanıtı açıkça nothing dispatched bildirdi; kapasite açıldıktan sonra aynı ayrılmış istek güvenle kabul edildi. Bekleyen etkisi belirsiz yazma yoktur.
 
-### Yeni yayın neslinin kabul durumu
+Oturum `c7e2fb12-ec90-4da7-8767-caf4e56f9c2f`; işlem öneki `c165a101-1028-4a01-8000-`. Orkestrasyon ve gerçek makbuzlar R165 hazırlığının `scratch/r165-publication` dizininde korunur. Root'taki 33 değişiklik korunur; varsayılan köke aktarım yapılmadı.
 
-| Adım | Bu checkpoint'teki durum |
+## Bekleyen kapılar
+
+| Kapı | Durum |
 |---|---|
-| 360 → 480 saniye değişikliği için kullanıcı yetkisi | ONAYLI |
-| Altyapı yedeği, atomik değişiklik ve exact geri okuma | PASS; 480 saniye APPLIED |
-| A2 kaynak commit/push ve exact tam CI | PASS; `5467f599` |
-| A2 kapanış commit/push ve aynı politika altında exact tam CI | NOT RUN |
-| Yayın öncesi integrity ve normal main fast-forward/push | NOT RUN |
-| Ayrı main status kabulü ve final integrity | NOT RUN |
+| Linux kaynak/fixture kabulü | PASS — 459/459, sıfır SKIP |
+| Primary ürün/test ve koşucu aktarımı | PASS — 24/24 ürün/test + exact runner |
+| Windows focused — windows-02 | PASS — 459 RUN /241 PASS/218 SKIP/0 FAIL/0 ERROR, exit 0; ilk FAIL korunur |
+| Docs/evidence ve source/static gate | Kanıt aktarımı tamam; son dokümanlar ve source/static kapısı IN PROGRESS |
+| Source commit + yeni tam CI | NOT RUN |
+| Closure commit + yeni tam CI + normal main yayını/son bütünlük | NOT RUN |
+| Yeni P2 candidate/install ve gerçek kernel/native kabul | NOT RUN — altıncı adım |
+| Gerçek provider/model/araç/bütçe seçimi | OPEN |
 
-Kaynak ve kapanış CI makbuzlarının politika digest'i aynı olmalıdır; mevcut
-kabul kontrolü gevşetilmez. Kabul edilmiş A2 kaynak CI makbuzu, kapanış commit'inde public
-`evidence/p2-service-closure-r164a1/source-ci.json` dosyasına exact baytlarıyla
-bağlanır. Bu dosya adı uygulama neslini korur; içindeki target ve politika
-alanları yeni yayın neslinin gerçek koşusunu gösterir.
+CI'nin mevcut sabit image'ında aiohttp bulunmadığı kaydedildi; standart no-install kapsamındaki bağımlılık SKIP'leri açık raporlanacak. Hazırlanmış Linux focused kapısında aiohttp zorunlu ve bütün 459 test çalıştı. CI image/command/kaynak sınırları veya 480 saniyelik politika değiştirilmedi.
 
-Kesin terminal yayın sonucu primary çalışma ağacındaki
-`scratch/r164a2-publication/final-publication.json` ile tamamlanır. Bu izlenen
-kapanış checkpoint'i A2 kaynak CI kabulünden sonra hazırlanmıştır; kendi final
-commit CI'sı, main ve final integrity sonucu burada NOT RUN'dır. Kaynak başarısı
-terminal yayın makbuzunun yerine geçmez. Gerçek kernel, kurulu servis ve model
-kabulü bu paketin kapsamı değildir.
+R164A2 tamamlanmış yayındır; yeniden yürütülmez. R165 için henüz commit, push veya CI sonucu yoktur. Linux ve taze Windows kabulüne göre kaynaklar/manifests bağlanacak, static gate, source/final tam CI ve normal main yayını yürütülecek. Sonraki ürün işi P2 adım 6'nın yeni service candidate/install paketidir.
 
-### Kesin sonraki adım
+## İş günlüğü
 
-Yalnız status, rapor ve kabul edilmiş public kaynak CI makbuzuyla kapanış
-commit'ini oluştur. Bu exact final commit'in tam CI'sını aynı 480 saniyelik
-politika altında doğrula. Ardından yayın öncesi integrity, normal main
-fast-forward/push, ayrı main verified-success reuse ve final integrity
-günlüğünü tamamla.
-
-Yayından sonra planın beşinci adımı host görevlerinin aynı kimliği doğrulanmış
-native API'ye dar erişimidir. Yeni tek P2 kurulumu/kernel kabulü ve seçilmiş
-gerçek model/provider/toolset/bütçe deneyi açık kalır.
-
-### İş günlüğü
-
-- 2026-10-27 R164A2 başlangıç: kullanıcı CI sınırının 360 → 480 saniyeye
-  çıkarılmasını ve yayının tamamlanmasını onayladı. Eski R164A1 status dosyası
-  baytları değiştirilmeden arşivlendi. İki timeout FAIL kaydı ve eski kaynak
-  PASS makbuzu korunarak yeni yayın nesli hazırlanıyor. Bu kayıt yeni bir
-  ürün/test yürütmesi veya uygulanan altyapı ayarı iddiası taşımaz.
-- 2026-10-27 23:26 TRT altyapı checkpoint'i: yalnız AlazHarness CI timeout
-  alanı 360 → 480 olarak uygulandı. Makbuz `87b368ac…200f10`, config/politika
-  geri okuması ve korunan diğer alanlar PASS. Native işlem
-  `c164a201-1027-4a01-8000-000000000116` completed, exit 0. Bu uygulama sonucu
-  source veya final CI kabulü değildir; yeni tam CI nesli sıradadır.
-- 2026-10-27 A2 kaynak CI checkpoint'i: `5467f599` normal feature push
-  sonrasında exact tam CI ile kabul edildi: 4.566 toplam, 4.544 PASS, 22 SKIP,
-  failure/error 0, 350,015 saniye; container exit 0, OOM/timeout false, cleanup
-  removed. Status `57410520459`; kabul makbuzu SHA-256
-  `5bb8ac9ce765973eeb42908b212ac730959f37ec4054ca3fb18bab4831ccf703`.
-  Kapanış commit'i yalnız takip belgeleri ve bu public makbuzu taşır; ürün/test
-  baytları final commit'in yeni tam CI'sında yeniden doğrulanacaktır.
+- 28 Ekim 2026 başlangıcı: main ve R164A2 çalışma alanı 994751be ve temiz olarak canlı doğrulandı. İzole R165A1 çalışma alanı açıldı; önceki root değişiklikleri, native kaynaklar ve kabul edilmiş çalışma alanları korundu. Sıradaki iş: task protokolü, istemci taşıması ve supervisor bağlantısı ile odaklı davranış testleri.
+- 28 Ekim 2026 ara kontrol: 13 ürün dosyası ve yeni transport testleri uygulandı. Gerçek Node → Unix → özgün child pipe → HTTP fixture zincirindeki üç başlangıç senaryosu PASS. İlk birleşik başarısız kayıt [focused-linux.json](evidence/p2-host-task-access-r165a1/focused-linux.json) ve [log](evidence/p2-host-task-access-r165a1/focused-linux.log) olarak korunuyor. Tekrarlanacak etkisi belirsiz bir Git/CI işlemi yok; kaynaklar henüz primary yeni çalışma alanına aktarılmadı. Devam: son kaynak freeze'i, birleşik Linux/Windows makbuzları, normal source ve closure CI/yayın akışı.
+- 28 Ekim 2026 son ara kontrol: son Linux focused 459/459 PASS. Primary ilk aktarım üç dosyada uygulandı; ikinci aktarım başlamadan sona erdi ve native erişim ana/yedek yolda Internal error oldu. Windows/static/CI/yayın yürütülmedi. Yerel kaynak ve kanıt paketi donduruluyor; devam noktası ikinci CAS paketi, yeni request 11. Kullanıcıdan ek yayın izni gerekmiyor; native Bridge bağlantısının düzelmesi gerekiyor.
+- 28 Ekim 2026 bağlantı sonrası devam: mevcut oturum/eski makbuzlar ve primary dal/HEAD/47 hash önkoşulu yeniden doğrulandı (request 11, exit 0). İkinci paket yeni request 12 ile gönderilirken Internal error döndü; ana/yedek makbuz erişimi de kesildi. Son etki UNKNOWN olarak kaydedildi ve başka yazma başlatılmadı. Sonraki kesin adım request 12 + dört dosyanın canlı hash uzlaştırmasıdır. Terminal günlük helper hazırlığı tamamlandı; Windows/static/CI/yayın hâlâ NOT RUN.
+- 28 Ekim 2026 ikinci bağlantı sonrası devam: request 14 ile 47 canlı önkoşul, root/main/native Git durumları ve ikinci paketin değişmemiş dört hedefi doğrulandı. Geçmiş request 12 UNKNOWN kaydı korunarak mevcut dosya durumu uzlaştırıldı. Yeni 15–18 CAS istekleriyle 24/24 ürün/test ve 19 ile koşucu exact hashleri doğrulandı. Sıradaki kapı aynı seçimin Windows focused koşusu.
+- 28 Ekim 2026 Windows ara kontrolü: request 21 completed/exit1; ilk Windows focused 459/240 PASS/218 SKIP/1 FAIL. Exact rapor ve log korundu, tüm kaynak hashleri sabit. Başarısız eski HTTP timeout vakası dar BASE/current incelemesine alındı; test beklentileri veya süreleri değiştirilmedi. Public Linux kanıtları ve exact parent arşivlerinin primary aktarımı 25–29 istekleriyle doğrulandı.
+- 28 Ekim 2026 odaklı kabul: dar Windows tanısında 6 BASE +6 mevcut normal deneme PASS, iki ayrı kontrollü gecikme demosu aynı UNKNOWN davranışını gösterdi. Ardından değişmemiş kaynaklarla request34 windows-02 459 RUN/241 PASS/218 SKIP/0 FAIL/ERROR, exit0. Linux ve Windows exact kaynak/test/destek/ID bağları eşleşti. İlk iki başarısız kayıt korunarak 52 dosyalı source paketi/statik/CI kapılarına geçiliyor.

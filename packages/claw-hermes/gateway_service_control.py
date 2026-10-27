@@ -5,8 +5,9 @@ not an authentication token or proof of confinement. The parent must also check
 its original process, generation, terminal exit and volume ownership. The final
 frame proves the service/profile retirement only; it never releases the image.
 
-The service's private network namespace is unchanged. This control channel does
-not forward arbitrary HTTP, launch commands or grant a model/provider call.
+The service's private network namespace is unchanged. A separate bounded task
+wire can reach the same authenticated native task API; lifecycle frames never
+become arbitrary HTTP, launch commands or model/provider authority.
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ import stat
 import threading
 
 from gateway_service_runtime import BorrowedServiceOwner
+import service_task_protocol as task_wire
 
 PROTOCOL = 'alaz-service-control-v1'
 MAX_FRAME = 65536
@@ -221,12 +223,18 @@ class FDChannel:
             while True:
                 index = self._buffer.find(b'\n')
                 if index >= 0:
-                    raw = bytes(self._buffer[:index])
+                    raw = bytes(self._buffer[:index + 1])
                     del self._buffer[:index + 1]
-                    return decode(raw)
-                require(len(self._buffer) <= MAX_FRAME, 'service_control_frame_bound')
+                    if raw.startswith(task_wire.PREFIX):
+                        return task_wire.decode(raw)
+                    return decode(raw[:-1])
+                # Only the explicit task prefix selects the larger request
+                # envelope. The historical lifecycle limit remains unchanged.
+                limit = (task_wire.MAX_REQUEST_FRAME - 1
+                         if self._buffer.startswith(task_wire.PREFIX) else MAX_FRAME)
+                require(len(self._buffer) <= limit, 'service_control_frame_bound')
                 try:
-                    data = os.read(self.input_fd, min(4096, MAX_FRAME + 1 - len(self._buffer)))
+                    data = os.read(self.input_fd, min(4096, limit + 1 - len(self._buffer)))
                 except BlockingIOError:
                     await self._ready(self.input_fd)
                     continue
@@ -237,11 +245,14 @@ class FDChannel:
 
     async def write(self, frame):
         require(not self._writing, 'service_control_concurrent_write')
-        raw = canonical(frame)
-        require(0 < len(raw) <= MAX_FRAME, 'service_control_frame_bound')
+        if type(frame) is dict and frame.get('protocol') == task_wire.PROTOCOL:
+            data = task_wire.encode(task_wire.validate_reply(frame), reply=True)
+        else:
+            raw = canonical(frame)
+            require(0 < len(raw) <= MAX_FRAME, 'service_control_frame_bound')
+            data = raw + b'\n'
         self._writing = True
         try:
-            data = raw + b'\n'
             end = self.loop.time() + WRITE_SECONDS
             while data:
                 require(self.loop.time() < end, 'service_control_output_timeout')
@@ -326,7 +337,9 @@ class ServiceControl:
 
     async def handle(self, command):
         self._owned()
-        command = validate_command(command, service_id=self.service_id)
+        is_task = type(command) is dict and command.get('protocol') == task_wire.PROTOCOL
+        command = (task_wire.validate_command(command, service_id=self.service_id)
+                   if is_task else validate_command(command, service_id=self.service_id))
         require(self.identity is not None, 'service_control_not_started')
         sequence = command['sequence']
         if sequence == self._last_sequence and self._last_command is not None:
@@ -344,6 +357,18 @@ class ServiceControl:
     async def _handle(self, command):
         try:
             action = command['action']
+            if command['protocol'] == task_wire.PROTOCOL:
+                from service_task_http import exchange
+                outcome = await exchange(self.service, command['http'])
+                # A typed uncertain HTTP outcome preserves lifecycle and the
+                # ability to query the original native request without replay.
+                owner = validate_owner(self.service.status(), identity=self.identity)
+                return task_wire.validate_reply({'protocol': task_wire.PROTOCOL,
+                    'type': 'task-reply', 'serviceId': self.service_id,
+                    'sequence': command['sequence'], 'requestId': command['requestId'],
+                    'owner': owner, **outcome}, service_id=self.service_id,
+                    identity=self.identity,
+                    max_response_bytes=command['http']['maxResponseBytes'])
             if action == 'status':
                 owner = self.service.status()
             elif action == 'drain':

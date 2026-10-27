@@ -43,8 +43,8 @@ function snapshot(value, expectedId, admission = false) {
 }
 
 export class HermesRunsClient {
-  #base; #token; #requestTimeout; #maxBytes;
-  constructor({ baseUrl, token, requestTimeoutMs = 5000, maxResponseBytes = 1_048_576 } = {}) {
+  #base; #token; #requestTimeout; #maxBytes; #fetch;
+  constructor({ baseUrl, token, requestTimeoutMs = 5000, maxResponseBytes = 1_048_576, fetchImpl } = {}) {
     let url;
     try { url = new URL(baseUrl); } catch { fail('invalid_base_url'); }
     // HYB-002 only permits explicit literal loopback endpoints, not DNS/remote profiles.
@@ -55,6 +55,9 @@ export class HermesRunsClient {
     this.#base = url.origin; this.#token = token;
     this.#requestTimeout = bounded(requestTimeoutMs, 10, 60000, 'request_timeout');
     this.#maxBytes = bounded(maxResponseBytes, 128, 4_194_304, 'response_limit');
+    if (fetchImpl !== undefined && typeof fetchImpl !== 'function') fail('invalid_task_transport');
+    // Resolve the default at request time, preserving the existing HTTP behavior.
+    this.#fetch = fetchImpl ?? ((...args) => globalThis.fetch(...args));
   }
   capabilities() {
     return Object.freeze({ protocol: 'hermes-runs-pinned-v1', start: true, status: true,
@@ -71,7 +74,7 @@ export class HermesRunsClient {
     const combined = signal ? AbortSignal.any([signal, timeout.signal]) : timeout.signal;
     const write = method !== 'GET';
     try {
-      const response = await fetch(this.#base + path, {
+      const response = await this.#fetch(this.#base + path, {
         method, redirect: 'error', signal: combined,
         headers: { Authorization: 'Bearer ' + this.#token, Accept: 'application/json',
           ...(body !== undefined ? { 'Content-Type': 'application/json' } : {}),

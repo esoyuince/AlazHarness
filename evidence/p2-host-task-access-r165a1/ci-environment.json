@@ -1,0 +1,15 @@
+{
+  "aiohttpAvailable": false,
+  "atUtc": "2026-10-27T22:26:22.656135+00:00",
+  "configChanged": false,
+  "externalNetwork": false,
+  "image": "sha256:6852a9b6c39485734c2b0f616504392029499c766d1c43d3dee99df7320e9152",
+  "installedPackages": false,
+  "linuxFocusedGate": "Prepared Linux focused runner requires aiohttp and must execute all selected cases without skips",
+  "python": "3.11.2 (main, May 12 2026, 05:17:27) [GCC 12.2.0]",
+  "result": "OBSERVED",
+  "schema": 1,
+  "scope": "Read-only import-availability probe in one disposable no-network container of the unchanged standard CI image",
+  "standardDiscovery": "Missing aiohttp is an explicit dependency SKIP for HTTP fixtures; no runtime/test assertion is skipped",
+  "timeoutSeconds": 480
+}
