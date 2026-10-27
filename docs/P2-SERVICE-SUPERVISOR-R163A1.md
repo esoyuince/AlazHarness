@@ -1,6 +1,6 @@
 # P2 / R163A1 — özgün supervisor ve Unix kontrol sunucusu
 
-Tarih: 27 Ekim 2026. **Odaklı kaynak kontrolleri PASS; yayın IN PROGRESS; P2 IN PROGRESS.**
+Tarih: 27 Ekim 2026. **Odaklı kaynak ve source CI PASS; yayın IN PROGRESS; P2 IN PROGRESS.**
 
 Bu paket [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) üçüncü
 adımını uygular: özgün ServiceVolumeSupervisor içinde tek sabit servis çocuğu,
@@ -121,7 +121,25 @@ testleri açık nedenleriyle atlandı; Windows sonucu bu Linux davranışların�
 `3ff80841b609bceed571fd1e40f4453c53902ff601b8fc6bd2f4bb4e47bbab0b`.
 İki platformun ordered 721 test ID digest'i
 `641a97535e7eac8fe1b518848d7cae4874d01f7ec53b891ab25af87ca1354df1`.
-Exact-commit tam CI henüz NOT RUN.
+Kaynak commit'i [`35f4fd6`](https://github.com/esoyuince/AlazHarness/commit/35f4fd6f4d6d42de9322dd55c636cbf25ef61137)
+için tam `alaz/local-ci` PASS: **4.481 test, 4.459 PASS,
+22 SKIP; failure/error 0**, 308.335 saniye. Tek container exit 0,
+OOM/timeout false, cleanup removed. Bu gerçek tam source CI çalışmasıdır;
+önceki teslimattan reuse değildir. GitHub status `57385451563` ve
+delivery `64501c92-d222-11f1-944d-affa131d6a9f`, checkout/status/source SHA,
+suite proof ve ham log aynı hedefe bağlandı.
+
+[Public source CI makbuzu](../evidence/p2-service-supervisor-r163a1/source-ci.json)
+özel kabul kaydının byte-exact kopyasıdır; SHA-256
+`82a169dd23876ffdfe4160d841bbcecd6a7400805e897d908343ded2579e3078`. Remote metadata digest'i authenticated SSH
+gözleminden gelir; raw metadata byte'ları yerelde tekrar hash'lendiği iddia edilmez.
+CI ham log SHA-256 `c7d8855cc6e2cb6adf96de8a82ecb08719e3060a29ea5f1a71939fedb80a7cda`.
+
+Bu raporun takip commit'i yalnız status, rapor ve source CI kanıtını değiştirir.
+Onun exact-commit tam CI'si, main fast-forward/push, ayrı main verified-success
+reuse ve son bütünlük gözlemi henüz bu snapshot'ta NOT RUN; kesin kapanış
+`scratch/r163a1-publication/final-publication.json` içinde kaydedilir.
+Source/final ürün ve test byte eşliği yayın gate'inde yeniden denetlenir.
 
 Bağımsız kaynak incelemesi PASS; epoch üst sınırının effect öncesinde reddi,
 yabancı actor'un özgün attempt'i değiştirmemesi ve sunucuda actor/reentrancy
@@ -140,7 +158,24 @@ Yeni kurulum, R156 kurulum değişikliği, native servis/model/sağlayıcı ça�
 ## Sonraki somut iş
 
 Bu kaynak paketinin tam CI ve yayın kapanışından sonra planın dördüncü adımı:
-child final/exit/EOF'dan özgün volume stop/finish zincirine bağlantı. Ardından
+child final/exit/EOF'dan özgün volume stop/finish zincirine bağlantı.
+
+Mevcut `ServiceChannel._accept/_reap`, final + özgün Popen exit0 + iki pipe EOF
+kanıtını zaten üretir. Aynı child slotu korunarak bu completion, yalnız özgün
+worker'ın cgroup'da kaldığı kontrolüne ve mevcut normal `VolumeSupervisor.stop`
+sonucuna bağlanmalı. Slotu boşaltmak tek attempt sahipliğini kaybettirir. Generic
+`finish()` tek başına STOPPED veya worker exit0 şartı koymadığından servis katmanı
+başarılı özgün stop makbuzunu ayrıca istemelidir. Mevcut unmount, boş cgroup,
+global loop envanteri, fence ve son image lease sırası yeniden yazılmamalı.
+
+Stop sonrası mevcut `gateway_supervised_service._owner/_check` yoluna dönmek
+RUNNING/canlı worker şartıyla çelişir. Kapanış kanıtı aynı özgün owner üzerinde
+ayrı tutulmalı. Volume CLOSED olduktan sonra da mevcut Unix `_owned()` yolu
+reddedeceğinden kayıp son yanıt ve duplicate-ID gözlemi, özgün actor/socket
+kimliğine bağlı saklanan kapanış sonucuyla tasarlanmalıdır. Status veya replay
+yeni STOP, cleanup ya da lease bırakma başlatmamalı.
+
+Ardından
 özel child loopback'e dar host görev erişimi, effective-config/backup/restart/
 capture nitelendirmesi ve yeni tek P2 kurulumunun kabulü gelir. Gerçek model ve
 harcama sınırı henüz seçilmedi. **P1 DONE; P2 IN PROGRESS; tam M1 ve production OPEN.**
