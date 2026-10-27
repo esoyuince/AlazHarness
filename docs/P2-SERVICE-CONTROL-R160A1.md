@@ -151,7 +151,7 @@ kapsamı [focused-linux.json](../evidence/p2-service-control-r160a1/focused-linu
 içindedir. Ham çıktı:
 [focused-linux.log](../evidence/p2-service-control-r160a1/focused-linux.log).
 
-**Nihai odaklı kaynak kabulü: PASS — 83/83 test, exit 0; 8.668 saniye.**
+**Nihai odaklı kaynak kabulü: PASS — 83/83 test, exit 0.**
 26 child, 21 parent, 24 CLI ve 12 volume testi aynı koşuda geçti. İlk 79 testlik
 koşu `initial-focused-linux.json/log` olarak korunur. Son inceleme iki sorunu
 kapattı: gözlenmiş child exit sonrasında eski READY durumu ve mutation
@@ -167,7 +167,7 @@ dosyasının SHA-256 değerlerini içerir; kurulu runtime kabulü iddiası yoktu
 | Windows odaklı koşu | 83 test keşfedildi; 36 PASS, 47 POSIX/Unix koşulu nedeniyle SKIP, exit0; aynı 11 dosyanın hashleri doğrulandı. |
 | Yeni kurulu native servis | NOT RUN |
 | Gerçek model/sağlayıcı | NOT RUN; çağrı sayısı sıfır |
-| R160 tam proje CI ve yayın | Bu raporda kabul/yayın iddiası yok; durum ayrıca `status.md` ile izlenir. |
+| R160 ilk tam proje CI | 420ec0e: 4.167 toplam, 4.144 PASS, 22 SKIP, tek EOF fixture failure; exit1. Düzeltme ve son CI sonucu ayrıca izlenir. |
 
 [Windows makbuzu](../evidence/p2-service-control-r160a1/focused-windows.json) ve
 [ham log](../evidence/p2-service-control-r160a1/focused-windows.log) platform
@@ -229,3 +229,29 @@ CI ve fast-forward sonucu aktif çalışma ağacındaki
 `scratch/r160a1-publication/final-publication.json` kaydından doğrulanır.
 Git yayını kurulu ürüne dağıtım veya P2 kapanışı değildir.
 Sonraki uygulama planı: [R161A1](P2-SERVICE-INTEGRATION-R161A1-PLAN.md).
+
+## İlk tam CI koşusu
+
+`420ec0e85c17e8dae72a859deec01f86de74a80b` için ilk tam sunucu koşusu
+4.167 testte tek `test_eof_required` hatasıyla sonlandı (292.451s, 22 skip,
+exit1). Fixture 60ms dolmadan sunucunun isteği gördüğünü varsayıyordu;
+başarısız koşuda sayım0 oldu. Gerçek veri alışverişine bağlanan deterministik
+EOF testiyle düzeltme yapılır; ilk başarısız sonuç silinmez ve PASS sayılmaz.
+Kanıt: [initial-ci-failure.json](../evidence/p2-service-control-r160a1/initial-ci-failure.json).
+
+### EOF fixture düzeltmesi ve doğrulaması
+
+Test artık gerçek istemci socket'ine ulaşan tam yanıtı byte düzeyinde gözler.
+Data handler'ları ve promise reaksiyonları tamamlandıktan sonra tek istek,
+EOF yokluğu ve işlemin hâlâ pending olduğu doğrulanır. Ancak bundan sonra
+sunucu EOF gönderir ve aynı isteğin READY sonucu kabul edilir. 10 saniyelik
+sınır yalnız başarısızlık watchdog'udur; başarı ölçütü bir süre varsayımı değildir.
+Ürün kodu veya ürünün timeout/EOF kuralı bu düzeltmede değişmedi.
+
+Son CLI24 koşusu ve aynı tekCPU üzerinde iki test yüküyle EOF20 tekrarı geçti.
+Yük süreçleri sonlandırılıp reap edildi. Ardından son hashlerle birleşik
+Linux83/83 ve Windows36 PASS +47 platform SKIP, exit0 tamamlandı.
+20 tekrar ve ayrı CLI koşusu, toplam83 sayısına yeniden eklenmez.
+Kanıtlar: [CLI](../evidence/p2-service-control-r160a1/eof-cli.json),
+[tekCPU yük](../evidence/p2-service-control-r160a1/eof-load.json).
+Onarılan kaynak için tam CI kabulü ayrıca gereklidir.

@@ -1,5 +1,5 @@
 {
-  "atUtc": "2026-10-27T10:18:39.983975+00:00",
+  "atUtc": "2026-10-27T10:35:26.001940+00:00",
   "command": [
     "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
     "-B",
@@ -13,14 +13,14 @@
     "-v"
   ],
   "cwd": "/workspace/scratch/c217a8f80b30/AlazHarness-R160",
-  "elapsedSeconds": 8.821,
+  "elapsedSeconds": 10.323,
   "exitCode": 0,
   "installedServiceAccepted": false,
-  "logSha256": "2a55b8ac668223aa70dc58a4fc462bf38b828be71354b3e49b49376da22089e8",
+  "logSha256": "47e610216b45f4f8328254ec4a04c5556bdedda2e64411a725c6bd5a0e5df8b6",
   "platform": "linux",
   "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
   "realProviderCalls": 0,
-  "reasonForRerun": "one EOF blank line removed from service_volume_supervisor.py before publication; final source identity reverified",
+  "reasonForRerun": "EOF fixture now waits for complete client-side frame, asserts pending without EOF, then releases EOF; final source identity reverified",
   "run": 83,
   "scope": "real temporary local sockets and owned subprocess pipes; native lifecycle/kernel boundaries doubled; no installed service/model/privilege lifecycle",
   "sourceHashes": {
@@ -30,11 +30,12 @@
     "packages/claw-hermes/supervised_service_channel.py": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974",
     "scripts/alaz_local.mjs": "c94cd47d9cbf9c69e7992b97b450740fea49f98877405bc441e7831c71e80d30",
     "scripts/run_service_volume_worker.py": "71435f9fc1a04d3213976a93a3623a54a8aca69f1194c8470c62fc28669c4586",
-    "tests/node/service-control-r160a1.mjs": "86da0c5f287632c7ca45d7b20260846f4575a04b35d151850ac77aa8bcd85d80",
+    "tests/node/service-control-r160a1.mjs": "9dd57eb8ed1dca97b8bef6032cc946da5d38fbc93d1064a13e10e6170a21de1f",
     "tests/test_service_child_control_r160a1.py": "e9f96948793ec5cfd630a11f9b76246b2c89b75a5c7d977e34d3fe4928164393",
     "tests/test_service_control_r160a1.py": "49520a46e0fcf36c881fd14a73c5291058814492fb00d8457a53f470f8cd1e1a",
     "tests/test_service_volume_r160a1.py": "76473b3b1385d8d74109a27430fd2e5b8d8aa9bad9d14d36184f3862da7e3155",
     "tests/test_supervised_service_channel_r160a1.py": "af3bba8b1e419c1b2da84e7912e74b8c80f386643fcfef4a8dc538dfad112c38"
   },
-  "testSeconds": 8.668
+  "sourceUnchangedAfter": true,
+  "testSeconds": 10.131
 }

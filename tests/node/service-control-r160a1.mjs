@@ -240,10 +240,50 @@ if (scenario === 'schema') {
     assert.equal(value.closureReported, false); assert.equal(calls.length, 1);
   });
 } else if (scenario === 'eof-required') {
-  await withSocket((req, socket) => socket.write(frame(reply(req.command))), async (_, calls, options) => {
-    const value = await new ServiceControlClient({ ...options, requestTimeoutMs: 60 }).start(requestId);
-    assert.equal(value.error.code, 'service_control_timeout'); assert.equal(value.serviceStarted, false);
-    assert.equal(value.error.mayHaveBeenAccepted, true); assert.equal(calls.length, 1);
+  let responseSocket;
+  await withSocket((req, socket) => {
+    responseSocket = socket;
+    socket.write(frame(reply(req.command))); // Deliberately withhold EOF.
+  }, async (_, calls, options) => {
+    const expectedFrame = Buffer.from(frame(reply()), 'ascii');
+    const originalConnect = net.createConnection;
+    let clientSocket, settled = false;
+    const receivedFrame = new Promise((resolve, reject) => {
+      // Observe real client-side bytes without changing transport behavior or
+      // adding a product hook. A server write alone does not prove delivery.
+      net.createConnection = (...args) => {
+        const socket = Reflect.apply(originalConnect, net, args);
+        clientSocket = socket;
+        const chunks = [];
+        let bytes = 0;
+        socket.on('data', chunk => {
+          chunks.push(chunk); bytes += chunk.length;
+          if (bytes >= expectedFrame.length) resolve(Buffer.concat(chunks));
+        });
+        socket.once('error', reject);
+        socket.once('close', () => {
+          if (bytes < expectedFrame.length) reject(new Error('Client closed before complete fixture reply'));
+        });
+        return socket;
+      };
+    });
+    try {
+      // This deadline is only a failure watchdog. The proof below uses I/O
+      // handshakes, not a scheduling delay or an assumed request-arrival time.
+      const pending = new ServiceControlClient({ ...options, requestTimeoutMs: 10000 }).start(requestId)
+        .then(value => { settled = true; return value; });
+      assert.deepEqual(await receivedFrame, expectedFrame);
+      await new Promise(resolve => setImmediate(resolve)); // Let data handlers and promise reactions finish.
+      assert.equal(calls.length, 1);
+      assert.equal(clientSocket.readableEnded, false);
+      assert.equal(settled, false, 'A complete valid frame must remain pending until EOF');
+      responseSocket.end(); // Release the EOF only after the pending assertion.
+      const value = await pending;
+      assert.equal(value.outcome, 'ready_reported'); assert.equal(value.serviceStarted, true);
+      assert.equal(calls.length, 1); noSecrets(value);
+    } finally {
+      net.createConnection = originalConnect;
+    }
   });
 } else if (scenario === 'lost-response') {
   await withSocket((req, socket) => socket.destroy(), async (client, calls) => {

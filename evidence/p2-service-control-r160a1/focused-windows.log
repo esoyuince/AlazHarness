@@ -83,6 +83,6 @@ test_start_twice_and_invalid_timeout_do_not_send_or_reserve (test_supervised_ser
 test_stderr_is_fully_counted_and_hashed_but_tail_is_bounded (test_supervised_service_channel_r160a1.ServiceChannelTests.test_stderr_is_fully_counted_and_hashed_but_tail_is_bounded) ... skipped 'requires selectable POSIX subprocess pipes'
 
 ----------------------------------------------------------------------
-Ran 83 tests in 0.837s
+Ran 83 tests in 0.919s
 
 OK (skipped=47)

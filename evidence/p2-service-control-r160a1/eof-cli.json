@@ -1,0 +1,22 @@
+{
+  "atUtc": "2026-10-27T10:32:35.669042+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_service_control_r160a1.py",
+    "-v"
+  ],
+  "cwd": "/workspace/scratch/c217a8f80b30/AlazHarness-R160",
+  "exitCode": 0,
+  "elapsedSeconds": 6.019,
+  "testSourceSha256": "9dd57eb8ed1dca97b8bef6032cc946da5d38fbc93d1064a13e10e6170a21de1f",
+  "logPath": "/tmp/alaz-r160-eof-cli-final.log",
+  "logSha256": "ca68054fcb1c0394ef14f6f4ac431989a7801acbe373b674ccc6b0ebf92528bf",
+  "scope": "24 CLI contracts using real temporary Unix socket fixtures; no native service or model"
+}

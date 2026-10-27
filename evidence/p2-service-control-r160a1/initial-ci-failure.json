@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "kind": "initial_full_ci_failure",
+  "target": "420ec0e85c17e8dae72a859deec01f86de74a80b",
+  "ref": "refs/heads/alaz/p2-supervised-service-r160a1",
+  "requiredContext": "alaz/local-ci",
+  "delivery": "7d1b8ae0-d1f0-11f1-957a-f838716dc550",
+  "status": {
+    "context": "alaz/local-ci",
+    "state": "failure",
+    "id": 57353772353,
+    "created_at": "2026-10-27T10:29:10Z",
+    "description": "ALAZ Local CI failed (rc=1)"
+  },
+  "testsRun": 4167,
+  "passed": 4144,
+  "skipped": 22,
+  "failures": 1,
+  "errors": 0,
+  "seconds": 292.451,
+  "containerExitCode": 1,
+  "timeout": false,
+  "oomKilled": false,
+  "containerCleanup": "removed",
+  "failedTest": "test_eof_required (test_service_control_r160a1.ServiceControlTests.test_eof_required)",
+  "observed": {
+    "fixtureTimeoutMs": 60,
+    "requestsSeenAtAssertion": 0,
+    "expectedRequests": 1
+  },
+  "classification": "fixture assumed request reception before a short deadline; strong EOF requirement will be synchronized to observed I/O",
+  "metadataFile": "7d1b8ae0-d1f0-11f1-957a-f838716dc550.json",
+  "metadataSha256": "0248e3890baecc124b2daae90b3484f56fa004587317a6bf8d0230148893cd32",
+  "logFile": "7d1b8ae0-d1f0-11f1-957a-f838716dc550.log",
+  "logBytes": 7513,
+  "logSha256": "64a5be15890c9791d066b23c71afe0820c9786979e0a75bcb931230ed71f7268",
+  "sourceSnapshotSha256": "e04c0ba6a82cdbbfec03c64277db8d4aa453cc718018e81bf1233994397608ae",
+  "failureBlock": "FAIL: test_eof_required (test_service_control_r160a1.ServiceControlTests.test_eof_required)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/tests/test_service_control_r160a1.py\", line 39, in run\n    self.scenario(case)\n  File \"/workspace/tests/test_service_control_r160a1.py\", line 29, in scenario\n    self.assertEqual(run.returncode, 0, (run.stdout + run.stderr)[-6000:])\nAssertionError: 1 != 0 : node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///workspace/tests/node/service-control-r160a1.mjs:246:65\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async withSocket (file:///workspace/tests/node/service-control-r160a1.mjs:79:5)\n    at async file:///workspace/tests/node/service-control-r160a1.mjs:243:3 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 0,\n  expected: 1,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n\n\n----------------------------------------------------------------------\nRan 4167 tests in 292.451s\n\nFAILED (failures=1, skipped=22)\n",
+  "scope": "full root/component source CI; no installed native service or real model acceptance"
+}

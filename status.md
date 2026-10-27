@@ -1,6 +1,6 @@
 # AlazHarness — status
 
-## R160A1 — servis kontrol bileşenleri: kaynak PASS, Git/CI IN PROGRESS
+## R160A1 — servis kontrol bileşenleri: odaklı kaynak PASS, CI düzeltmesi IN PROGRESS
 
 P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
 Bu paket uzun ömürlü servisin kaynak bileşenlerini tamamlar; günlük kurulu
@@ -37,10 +37,10 @@ supervisor sunucusu henüz uygulanmadığından bu sonuç source/fixture kapsam�
 
 | Koşu | Sonuç | Kanıt |
 |---|---|---|
-| Son Linux odaklı koşu | 83/83 PASS; fail/error/skip0, exit0, 8.668s | `evidence/p2-service-control-r160a1/focused-linux.json` ve `.log` |
+| Son Linux odaklı koşu | 83/83 PASS; fail/error/skip0, exit0 | `evidence/p2-service-control-r160a1/focused-linux.json` ve `.log` |
 | Windows taşınabilir odaklı koşu | 83 toplam: 36 PASS, 47 platform SKIP; fail/error0, exit0 | `evidence/p2-service-control-r160a1/focused-windows.json` ve `.log` |
 | Bağımsız inceleme | İki somut bulgu düzeltildi; kaynak sınırları açık | `evidence/p2-service-control-r160a1/review.json` |
-| Tam proje CI | Bu checkpoint'te PENDING; eski R159 sonucu devralınmadı | `scratch/r160a1-publication/` |
+| Tam proje CI | İlk420ec0e koşusu FAIL: 4.167 toplam, 1 failure, 22 skip, exit1; fixture düzeltmesi sürüyor | `evidence/p2-service-control-r160a1/initial-ci-failure.json` |
 | Yeni kurulu servis / gerçek sağlayıcı | NOT RUN; provider/model çağrısı0 | P2 açık |
 
 Linux toplamı: 26 child +21 parent +24 CLI +12 volume. Gerçek geçici socket,
@@ -86,3 +86,22 @@ Yol haritası: [PRODUCT-ROADMAP](docs/PRODUCT-ROADMAP.md).
   product davranışı değişmedi. Son hashlerle Linux83 PASS ve Windows36 PASS
   +47 platform SKIP yeniden gözlendi. Ham logların Git blob'larında aynı
   byte'larla korunması için yalnız R160 evidence kapsamına kural eklendi.
+
+- 2026-10-27 yayın kontrolü: static gate PASS; 6.776 dosya denetlendi,
+  4.167 test keşfedildi. Kaynak commit'i `420ec0e85c17e8dae72a859deec01f86de74a80b`
+  oluşturuldu ve feature dalına normal push doğrulandı. Main hâlâ başlangıç
+  `6085341` üzerindedir. Bu commit'in tam `alaz/local-ci` koşusu bekleniyor;
+  statik keşif tam test çalıştırması sayılmadı.
+
+- 2026-10-27 ilk tam CI: `420ec0e` için 4.167 test, 292.451s; 4.144 PASS,
+  22 SKIP ve tek `test_eof_required` failure, exit1. 60ms içinde server'ın
+  isteği görmesi varsayımı 1 CPU koşusunda sağlanmadı (calls0). Sonuç korunur;
+  EOF kuralını zayıflatmadan gerçek veri/EOF handshake'i ile fixture düzeltilecek.
+  Main ilerletilmedi. Kayıt: `evidence/p2-service-control-r160a1/initial-ci-failure.json`.
+
+- 2026-10-27 EOF fixture düzeltmesi: tam client frame gözlendi; data handler
+  ve promise reaksiyonlarından sonra sonuç hâlâ pending iken EOF açıkça
+  bırakıldı. CLI24/24, tekCPU+iki test yükü altında EOF20/20 ve birleşik
+  Linux83/83 PASS; aynı son kaynaklarla Windows36 PASS +47 SKIP, exit0.
+  Ürün timeout veya EOF doğrulaması değişmedi. Kaynak onarım commit'i ve
+  onun tam CI koşusu sırada. Ek kanıt: `eof-cli.json/log`, `eof-load.json/log`.

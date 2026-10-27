@@ -1,0 +1,29 @@
+test_abort_after (test_service_control_r160a1.ServiceControlTests.test_abort_after) ... ok
+test_abort_before (test_service_control_r160a1.ServiceControlTests.test_abort_before) ... ok
+test_cli_close (test_service_control_r160a1.ServiceControlTests.test_cli_close) ... ok
+test_cli_config (test_service_control_r160a1.ServiceControlTests.test_cli_config) ... ok
+test_cli_interrupted (test_service_control_r160a1.ServiceControlTests.test_cli_interrupted) ... ok
+test_cli_start (test_service_control_r160a1.ServiceControlTests.test_cli_start) ... ok
+test_cli_status (test_service_control_r160a1.ServiceControlTests.test_cli_status) ... ok
+test_closed (test_service_control_r160a1.ServiceControlTests.test_closed) ... ok
+test_command_completion (test_service_control_r160a1.ServiceControlTests.test_command_completion) ... ok
+test_drain_ack (test_service_control_r160a1.ServiceControlTests.test_drain_ack) ... ok
+test_eof_required (test_service_control_r160a1.ServiceControlTests.test_eof_required) ... ok
+test_framing (test_service_control_r160a1.ServiceControlTests.test_framing) ... ok
+test_identity (test_service_control_r160a1.ServiceControlTests.test_identity) ... ok
+test_invalid_input (test_service_control_r160a1.ServiceControlTests.test_invalid_input) ... ok
+test_lost_response (test_service_control_r160a1.ServiceControlTests.test_lost_response) ... ok
+test_owner_precondition (test_service_control_r160a1.ServiceControlTests.test_owner_precondition) ... ok
+test_partial_close (test_service_control_r160a1.ServiceControlTests.test_partial_close) ... ok
+test_ready (test_service_control_r160a1.ServiceControlTests.test_ready) ... ok
+test_response_bound (test_service_control_r160a1.ServiceControlTests.test_response_bound) ... ok
+test_sanitized_error (test_service_control_r160a1.ServiceControlTests.test_sanitized_error) ... ok
+test_schema (test_service_control_r160a1.ServiceControlTests.test_schema) ... ok
+test_socket_trust (test_service_control_r160a1.ServiceControlTests.test_socket_trust) ... ok
+test_status_recovery (test_service_control_r160a1.ServiceControlTests.test_status_recovery) ... ok
+test_unknown (test_service_control_r160a1.ServiceControlTests.test_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 5.929s
+
+OK
