@@ -1,0 +1,284 @@
+{
+  "actions": {
+    "bridgeToolsUsed": false,
+    "nativeRuntimeExecuted": false,
+    "newExportCreated": false,
+    "productFilesModified": false,
+    "receiptFileWritten": true,
+    "remoteToolsUsed": false,
+    "testsRun": false
+  },
+  "blockingFindings": [],
+  "bounds": [
+    "No claim that cold preflight attests installed Python source bytes before native import.",
+    "No global qualification of native DEFAULT_CONFIG, managed overlays or all native loader effects.",
+    "No installed native startup, HTTP/provider/model, crash/restart or backup-restart acceptance run.",
+    "UNKNOWN/loop/final custody changes are the peer lifecycle review scope.",
+    "Only the listed eight native source exports were read for real constructor/config semantics; the selected 760-file installed tree was not executed or revalidated here."
+  ],
+  "configNativeFunctions": {
+    "_config_check": {
+      "endLine": 200,
+      "line": 195,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "7a411a48419bd7f580b0ee2bb96b99975b2a9596ec029db3a72c60d6f5ed7339"
+    },
+    "_configure": {
+      "endLine": 313,
+      "line": 289,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "b2f0ca9a701517951c8a4482ebb74050c397102390b993298ce281cfda8e2f44"
+    },
+    "_native_components": {
+      "endLine": 243,
+      "line": 232,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "8e8b53f48c1acbac47d90ab9f252af2abb951ab1dfcdba943e71ace220cb3235"
+    },
+    "_native_home": {
+      "endLine": 251,
+      "line": 246,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "58471ff0c7af4a195b775053ebe86fd80df32e5e88408f3579b629fc4a7052db"
+    },
+    "_native_settings": {
+      "endLine": 286,
+      "line": 254,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "58c8cb7849432cda09b8c1c0919174ed8060e68663290523ef4074d0658d6944"
+    },
+    "read_document": {
+      "endLine": 229,
+      "line": 203,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "30afe8695159d78254acbcad90ed4e775ae0c376478d2f945a387284fd6f5179"
+    },
+    "validate_settings": {
+      "endLine": 177,
+      "line": 90,
+      "sameAsReviewedF93Snapshot": true,
+      "sha256": "5ccef07a08092947d8bd668568caeb08c583944ef0aa458cd18431352d8d7486"
+    }
+  },
+  "findings": [
+    {
+      "detail": "Existing service profile reader enforces 65536-byte bound, exact selected inode/size/SHA, no-follow/nonblocking FD metadata checks, canonical JSON and before/after home/config/source checks.",
+      "id": "bounded-canonical-config",
+      "result": "PASS"
+    },
+    {
+      "detail": "Real exact GatewayConfig, PlatformConfig, PluginManager, PluginManifest and PluginContext are built directly. Context manager/manifest identity, selected home and actual loader/get_config values are checked. Manager constructor does not discover plugins or start its event worker.",
+      "id": "native-config-and-object-bindings",
+      "result": "PASS"
+    },
+    {
+      "detail": "Native parse/read failure fallback values are FailedConfigRead and fail the factory exact-dict guard. Native successful-load backup side effects occur after original owner.start strict layout/preflight/epoch sequence.",
+      "id": "loader-fallback-and-backup-order",
+      "result": "PASS"
+    },
+    {
+      "detail": "Host and execution policies, native model and API model are bound to one model and loopback route; API key, provider bearer and broker signing key must be distinct.",
+      "id": "model-policy-credential-binding",
+      "result": "PASS"
+    },
+    {
+      "detail": "Profile lease and original store startup use normal imports from an already trusted installed runtime. Cold preflight validates DB schema, file identity and constructor metadata, not installed Python source bytes. The service profile validates selection/manifest bytes; full selected native file hashing occurs later in consumer.qualify_sources.",
+      "id": "first-native-import-order",
+      "nativeSourceBytesAttestedBeforeFirstImportByReviewedCallPath": false,
+      "references": [
+        {
+          "lines": [
+            5,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            141
+          ],
+          "meaning": "Trusted installation/import-path precondition and normal runtime_ownership import before reservation.",
+          "path": "packages/claw-hermes/gateway_profile_lease.py"
+        },
+        {
+          "lines": [
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            145,
+            146,
+            151,
+            155,
+            156,
+            157
+          ],
+          "meaning": "Cold DB preflights and config guard precede plain native state/replay/runtime imports.",
+          "path": "packages/claw-hermes/gateway_store_startup.py"
+        },
+        {
+          "lines": [
+            140,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            210,
+            211,
+            224,
+            228
+          ],
+          "meaning": "Fixed read-only worker verifies DB schema/identity/epoch/metadata and declares no native constructors.",
+          "path": "packages/claw-hermes/gateway_store_preopen.py"
+        },
+        {
+          "lines": [
+            25,
+            54
+          ],
+          "meaning": "eb75627faf532fa6ffbdae59a0d14b0b385fc780 is the existing storage contract pin label, not a hash check of the selected installed Python tree.",
+          "path": "packages/claw-hermes/gateway_live_store_gate.py"
+        },
+        {
+          "lines": [
+            121,
+            122,
+            124,
+            125,
+            126
+          ],
+          "meaning": "Selection and manifest-byte validation delegates native file/import qualification to consumer.",
+          "path": "packages/claw-hermes/gateway_service_profile.py"
+        },
+        {
+          "lines": [
+            51,
+            52,
+            53,
+            56,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63
+          ],
+          "meaning": "Two fixed response-source hashes are checked after normal native imports.",
+          "path": "packages/claw-hermes/gateway_response_live.py"
+        },
+        {
+          "lines": [
+            54,
+            57,
+            62,
+            63,
+            65,
+            66,
+            67,
+            68,
+            71,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "meaning": "Selected native tree bytes are hashed here; native root discovery itself uses normal hermes_state import; loaded-source checks follow.",
+          "path": "packages/claw-hermes/gateway_prepared_consumer.py"
+        },
+        {
+          "lines": [
+            232,
+            235,
+            238,
+            241,
+            363,
+            368
+          ],
+          "meaning": "Factory performs original owner.start before config/plugin component qualification and configuration.",
+          "path": "packages/claw-hermes/gateway_service_factory.py"
+        }
+      ],
+      "result": "EXISTING_PRECONDITION"
+    }
+  ],
+  "mode": "local-source-review-and-hash-comparison",
+  "nativeSourceReview": {
+    "files": {
+      "gateway/config.py": {
+        "selectedManifestMatch": true,
+        "sha256": "0b0afcd42648fcea652c19655d899427672d3cebf29cc8dd3d5539780f45631a"
+      },
+      "gateway/config_env.py": {
+        "selectedManifestMatch": true,
+        "sha256": "333a40f182990033bad0c5ef8371e3d9f196fad069a314107b23ffd8ba20e187"
+      },
+      "hermes_cli/config.py": {
+        "selectedManifestMatch": true,
+        "sha256": "68239827c32c60114cc01d03a2c29f872c91d2114a3f0c1d1094de49980d0d2e"
+      },
+      "hermes_cli/plugins.py": {
+        "selectedManifestMatch": true,
+        "sha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568"
+      },
+      "hermes_cli/plugins_loader.py": {
+        "selectedManifestMatch": true,
+        "sha256": "5a7f90e3bcce08b3cd6078962294c9ef23e94d6c94977208322b407e0c72f06a"
+      },
+      "hermes_cli/plugins_manifest.py": {
+        "selectedManifestMatch": true,
+        "sha256": "ae68abd4038925a3d50ec166e57b88bd1d536192b815f2efb33ebf2976d05275"
+      },
+      "hermes_cli/plugins_state.py": {
+        "selectedManifestMatch": true,
+        "sha256": "9ac63cbe916d392f10777db1df39cdc2bc262c238aeb82bb8e8eb3347585ca2c"
+      },
+      "hermes_constants.py": {
+        "selectedManifestMatch": true,
+        "sha256": "8d55a41452b625061f1f2e2f507a7e7ffb2a396e711afcc7aee28b03a6e8fa9d"
+      }
+    },
+    "locallyReviewedNativeFileCount": 8,
+    "manifestPath": "config/borrowed-service-r159a1-sources.json",
+    "manifestSha256": "05dee55dede392d10af65fc123969b8f317cf417d1af669b655d2115a2757bd2",
+    "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "selectedManifestSourceCount": 760
+  },
+  "orderSupportSourceSha256": {
+    "packages/claw-hermes/gateway_constructor_metadata.py": "0073eb0637dac0ad06738fe2b913895df727bc5f8595ba85a0547ef93a682b18",
+    "packages/claw-hermes/gateway_live_store_gate.py": "c4d2a50afc91bd7fca6f2706c9b411d76dc2d79cb8e45f0d6f6988e813bafc51",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "a39245d907a1d8526634d6b55168a2e8ff8d08d59ea17344822b6a6bef354d2c",
+    "packages/claw-hermes/gateway_profile_lease.py": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95",
+    "packages/claw-hermes/gateway_response_live.py": "80a9d45b1488858e05f8cbf3b5fd7e25c11f941f43ac7dbf866b33e73d0516a7",
+    "packages/claw-hermes/gateway_response_preopen.py": "916931a2d04d257d83e95aaccfff86998961a83bbe64a45e2c3094451800c8e1",
+    "packages/claw-hermes/gateway_service_profile.py": "a6e4f1f5572006f72658902a6927a71faaa7d837d41a0dfa67e473622b05d05b",
+    "packages/claw-hermes/gateway_service_sources.py": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7",
+    "packages/claw-hermes/gateway_store_preopen.py": "1492bf4a5581747f9a51c542bd4d798306d6d20e3ecb2a0930ce826e9ca03b56",
+    "packages/claw-hermes/gateway_store_startup.py": "df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314",
+    "scripts/run_response_preopen.py": "e166d3d1cc05e664ef541ffd70dfd2cdb5b5145046b523325b38bf4e22bcd38e",
+    "scripts/run_store_preopen.py": "c018918593e211071bd51cb83a5b978e0873904db3ce987f9dc574b4e626e844"
+  },
+  "reasonFilterFinding": "The changed _reason admits diagnostics only from exact ServiceFactoryRejected; other exception types use a fixed reason. Seven config/native functions are unchanged.",
+  "recordedAtUtc": "2026-10-27T14:40:45.780916+00:00",
+  "reviewer": "/root/r162_provenance",
+  "schema": 1,
+  "scope": [
+    "factory canonical bounded config read",
+    "selected source, config and native object bindings",
+    "real native config/plugin constructor semantics",
+    "model policy and credential consistency",
+    "first original native import ordering"
+  ],
+  "source": {
+    "path": "packages/claw-hermes/gateway_service_factory.py",
+    "previousReviewedSha256": "f93ba1746efb3dbdbd4b16ebc000f16c8411be35d658adcc35c423abaef1ee51",
+    "sha256": "3e92cae2ebdffea75b5a9a02c135f0011b4dfa513d81474db60fc4195e177559",
+    "size": 23013
+  },
+  "verdict": "PASS",
+  "verdictPrecondition": "Existing trusted installed runtime and import path contract; not pre-import byte attestation."
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "alaz-r162a1-independent-review-v1",
+  "reviewer": "/root/r162_receiver",
+  "verdict": "PASS",
+  "review_mode": "local_read_only_source_review",
+  "source": {
+    "path": "packages/claw-hermes/gateway_service_factory.py",
+    "sha256": "3e92cae2ebdffea75b5a9a02c135f0011b4dfa513d81474db60fc4195e177559",
+    "final_sha_rechecked": true
+  },
+  "scope": [
+    "Receiver to execute(record, expected_mount, instance_id, service_id) contract",
+    "Single attempt and first effect boundary before profile reservation",
+    "UNKNOWN handling and custody of the original owner and event loop",
+    "run_until_complete and outer interruption paths",
+    "Original R160 driver, final identity, three-store cleanup and lease conditions",
+    "Single stdout final frame and no duplicate entry emission",
+    "Nonthrowing diagnostics and exception reason filtering"
+  ],
+  "previous_blockers_fixed": [
+    {
+      "finding": "An exception while writing or flushing the UNKNOWN diagnostic could escape before retention.",
+      "fix_verified": "_unknown records UNKNOWN first and catches BaseException around diagnostic serialization, write and flush."
+    },
+    {
+      "finding": "A closed original event loop caused retention to raise instead of preserving process custody.",
+      "fix_verified": "_retain_loop enters _park_without_loop, which blocks the existing thread with Event.wait while retaining the same attempt, owner and loop references; it creates no replacement loop, task, thread or service."
+    }
+  ],
+  "verified_findings": [
+    "_reason only exposes validated codes from exact ServiceFactoryRejected instances; foreign exception __str__ is not called.",
+    "The receiver four-positional-argument execute contract is preserved.",
+    "One process attempt is recorded; effects_started is set before reserve_profile.",
+    "Exceptions after the first effect enter UNKNOWN custody; no automatic cleanup, retry or owner replacement is introduced.",
+    "Final validation binds the original R160 driver, service, startup owner and held objects, checks current PID, epoch, instance and service identity, and requires the existing three-store closure and lease conditions.",
+    "Only a successful validated final with no pending loop tasks takes the normal loop-close return path.",
+    "The R160 driver owns final stdout emission; the entry validates the returned final without writing it again."
+  ],
+  "remaining_blockers": [],
+  "tests_run_by_this_review": false,
+  "test_execution_note": "No tests were run and no new tests were written as part of this final independent review. Test results reported by other agents are not claimed as reviewer execution.",
+  "product_files_changed_by_this_review": false,
+  "bounds": [
+    "This is a local static source review of the frozen SHA, not a runtime acceptance run.",
+    "Closed-loop parking demonstrates same-process custody in the reviewed code; it does not resume tasks or establish clean final or cleanup completion.",
+    "No native, Bridge or remote tools were used.",
+    "No installed-service, live-kernel, supervisor transport, real provider or model acceptance is claimed.",
+    "Config and native assembly qualification outside the stated lifecycle scope is not independently re-certified by this report."
+  ]
+}

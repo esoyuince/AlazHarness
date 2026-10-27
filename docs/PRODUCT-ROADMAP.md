@@ -20,7 +20,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
 | P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
-| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi ve R160 ready/control/final kanal bileşenleri + CLI servis kontrol istemcisi + uzun ömürlü volume worker ve R161 ayrı servis profil/config kaynak sözleşmesi mevcut. Sabit servis çocuğu, canlı supervisor kontrol sunucusu, kurulu profil/restart kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
+| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi, R160 control/worker bileşenleri, R161 servis profil/config ve R162 sabit receiver/factory kaynak bağlantısı mevcut. Canlı supervisor kontrol sunucusu, final/exit/EOF ile volume kapanışı, kurulu profil/restart kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
 | P5 | Tek v0.1 sürüm adayı ve küçük pilot | M1-01..M1-07 aynı kaynak/kurulumda kapanır; temiz ortam kurulumu ve gerçek görev pilotu | OPEN; tam M1 ve prod kabulü yok. |
@@ -75,7 +75,7 @@ PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında n
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
 
 Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
-kararı üstteki tabloda ve en son R161 kaynak teslimatında yer alır.
+kararı üstteki tabloda ve en son R162 kaynak teslimatında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -296,3 +296,24 @@ Rapor: [R161A1](P2-SERVICE-PROFILE-R161A1.md). Sıradaki somut iş,
 [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) sabit projected
 service receiver/factory adımıdır; ardından canlı supervisor kontrol sunucusu,
 final/exit/EOF ile volume stop/finish ve host görev erişimi gelir.
+
+## P2 / R162A1 sabit projected receiver ve factory kaynak bağlantısı
+
+Ayrı sabit receiver/entry, R161 servis transferini ve gerçek profil/config
+baytlarını doğrulayıp özgün lease/startup/consumer/service sahibiyle R160 control
+driver'a bağlar. Tek startup denemesi, aynı runner/authority/epoch ve üç store
+korunur. Son async readiness aralığındaki config/source değişimi READY öncesinde
+yeniden denetlenir; dört eski negatif sonuç parent üzerinde gösterilip düzeltildi.
+Belirsiz hata ve diagnostic kaybı özgün process/loop sahipliğini korur.
+
+Son odaklı seçimde Linux 483/483 PASS; primary Windows 466 PASS + 17 platform
+SKIP, failure/error 0 ve exit 0. Bağımsız config/native ve lifecycle incelemeleri
+PASS. Exact-commit tam CI/yayın [status.md](../status.md) ve
+[R162A1 raporunda](P2-SERVICE-RECEIVER-R162A1.md) ayrıca izlenir. Native 760 dosya,
+eski profil seçimleri ve R156 kurulumu değişmedi. Native backup/restart,
+effective-config, gerçek supervisor/kernel/kurulum/model kabulü açık kalır.
+
+Sıradaki iş [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) üçüncü
+adımı: özgün ServiceVolumeSupervisor ve Popen'a bağlı Unix kontrol sunucusu;
+ardından final/exit/EOF ile volume stop/finish ve host görev erişimi.
+**P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.**

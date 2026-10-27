@@ -207,6 +207,11 @@ class BorrowedServiceOwner:
             await self._execution.require_ready()
             from gateway_prepared_consumer import verify_imports
             verify_imports(c._source_proof)
+            # Async readiness and source verification can outlive the selected
+            # config snapshot. Recheck the original actor and profile before
+            # publishing READY; the existing legacy guard remains I/O-free.
+            self._actor_check(loop=True)
+            self._owner._check_service_config()
             self._state = 'READY'
             return self.status()
         except BaseException as exc:

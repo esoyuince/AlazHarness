@@ -1,9 +1,11 @@
 # P2 / R161A1 — servis profil ve supervisor entegrasyonu
 
 Durum: IN PROGRESS. Birinci adımın servis profil/config kaynak denetimleri
-R161A1 ile PASS; sabit receiver/factory ve supervisor bağlantısı sıradadır.
+R161A1 ile PASS; ikinci adımın sabit receiver/factory odaklı kaynak testleri
+R162A1 ile PASS. Exact-commit CI/yayın status.md'de izlenir; supervisor bağlantısı sıradadır.
 Kurulu servis veya gerçek model kabulü değildir.
 Kaynak raporu: [R161A1 profil ve config](P2-SERVICE-PROFILE-R161A1.md).
+İkinci kaynak paketi: [R162A1 receiver/factory](P2-SERVICE-RECEIVER-R162A1.md).
 Önceki paket: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
 Güncel durum ve yayın kaydı: [status.md](../status.md).
 
@@ -56,7 +58,15 @@ arasındaki değişim, symlink, beklenmeyen dosya, yabancı sahiplik ve receipt
 uyuşmazlığını reddet. Eski P1 finite/readiness girişleri ve kanıtları kendi
 değişmemiş kaynak seçimleriyle çalışmaya devam etsin.
 
-### 2. Sabit projected servis çocuğu
+### 2. Sabit projected servis çocuğu — odaklı kaynak testleri PASS
+
+27 Ekim 2026: ayrı receiver/entry ve sabit factory özgün lease/startup/consumer/
+service/control zincirine bağlandı. Son async readiness aralığından sonra config
+ve kaynak kabulü tekrar denetleniyor. Tek attempt, aynı store/epoch/runner ve
+UNKNOWN'da aynı process/loop sahipliği korundu. Son kaynak seçiminde Linux
+483 PASS; primary Windows 466 PASS + 17 platform SKIP, failure/error 0 ve exit 0.
+Bağımsız config/native ve lifecycle review PASS. Bu kaynak testleri gerçek
+kurulum, kernel confinement, native listener, backup/restart veya model kabulü değildir.
 
 Yeni kardeş receiver/factory yalnız doğrulanmış servis profili ve mevcut
 native kaynak seçimiyle BorrowedServiceOwner oluştursun. Aynı runner,

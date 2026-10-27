@@ -35,3 +35,8 @@ evidence/p2-service-profile-r161a1/parent-*.txt -text
 evidence/p2-service-profile-r161a1/*.log -text
 evidence/p2-service-profile-r161a1/focused-windows.log binary
 evidence/p2-service-profile-r161a1/focused-windows-repaired.log binary
+
+# Preserve R162 parent custody and raw source-test streams.
+evidence/p2-service-receiver-r162a1/parent-*.txt -text
+evidence/p2-service-receiver-r162a1/*.log -text
+evidence/p2-service-receiver-r162a1/focused-windows.log binary

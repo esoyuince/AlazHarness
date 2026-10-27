@@ -1,0 +1,25 @@
+{
+  "base": "b56b9b321002a5bb8696fcae27edcfc92c28df1c",
+  "currentSourceAcceptance": false,
+  "nativeRerun": false,
+  "priorReceiptHashes": {
+    "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows-confirmed.json": "18731b0f426873bcf10dea0db224bc2096e8276e4f3d0dae5acad28c8475cdee",
+    "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows.json": "c65297780ee2f6b9cf78b0ace3ea80224395b899e8ad7dfb27024bb5a07277b8",
+    "evidence/p2-borrowed-service-r159a1/checks/receipt-repair-windows.json": "9b30b306f737b5e4af24ebd41c04b819d9bb6a813236efa7f3225516d4b3b6e9",
+    "evidence/p2-borrowed-service-r159a1/checks/windows-focused-command.json": "496a22c0649a389be213a4a4efdf766ab6d5fd965655f52f8ecc2fee61a93dc7",
+    "evidence/p2-borrowed-service-r159a1/checks/windows-focused.json": "555db7ffb9d2ffc872a9562686901ae49d38c08ae959a4d85a09214613ccac47",
+    "evidence/p2-borrowed-service-r159a1/ci-repair-review.json": "9e6aa5f579bac23aa008b9b9cc1ca792318a9614952f8abc68e23e2b9c501c35",
+    "evidence/p2-borrowed-service-r159a1/final-source-docs-review.json": "b38396f13202a1febd5ea8a33c91bfbd45082d66526989ba950840ce7cd76520",
+    "evidence/p2-borrowed-service-r159a1/host-service-tests.json": "672f0c61760f2903cad31722e9039516611ccf9ad3ee9109c3484ffd85893a29",
+    "evidence/p2-borrowed-service-r159a1/source-custody.json": "9ea0fe27d590a89c2559feb6a9f41e4a34efa2574226783c18560a07f1eb9661"
+  },
+  "scope": "historical_receipt_source_identity_only",
+  "sources": {
+    "packages/claw-hermes/gateway_service_runtime.py": {
+      "path": "evidence/p2-service-receiver-r162a1/parent-packages__claw-hermes__gateway_service_runtime.py.txt",
+      "sha256": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+      "size": 17305
+    }
+  },
+  "version": 1
+}

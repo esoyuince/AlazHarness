@@ -1,0 +1,45 @@
+{
+  "atUtc": "2026-10-27T14:20:24.319993+00:00",
+  "base": "b56b9b321002a5bb8696fcae27edcfc92c28df1c",
+  "baselineFailureRecord": "evidence/p2-service-receiver-r162a1/ready-config-baseline.json",
+  "discovered": 38,
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "logBytes": 7427,
+  "logSha256": "bf2978115bf739407385f0cfd85af6310bff9d6be62187773abf6de5e1ae4ab6",
+  "passed": 38,
+  "priorReceiptHashes": {
+    "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows-confirmed.json": "18731b0f426873bcf10dea0db224bc2096e8276e4f3d0dae5acad28c8475cdee",
+    "evidence/p2-borrowed-service-r159a1/checks/generation-repair-windows.json": "c65297780ee2f6b9cf78b0ace3ea80224395b899e8ad7dfb27024bb5a07277b8",
+    "evidence/p2-borrowed-service-r159a1/checks/receipt-repair-windows.json": "9b30b306f737b5e4af24ebd41c04b819d9bb6a813236efa7f3225516d4b3b6e9",
+    "evidence/p2-borrowed-service-r159a1/checks/windows-focused-command.json": "496a22c0649a389be213a4a4efdf766ab6d5fd965655f52f8ecc2fee61a93dc7",
+    "evidence/p2-borrowed-service-r159a1/checks/windows-focused.json": "555db7ffb9d2ffc872a9562686901ae49d38c08ae959a4d85a09214613ccac47",
+    "evidence/p2-borrowed-service-r159a1/ci-repair-review.json": "9e6aa5f579bac23aa008b9b9cc1ca792318a9614952f8abc68e23e2b9c501c35",
+    "evidence/p2-borrowed-service-r159a1/final-source-docs-review.json": "b38396f13202a1febd5ea8a33c91bfbd45082d66526989ba950840ce7cd76520",
+    "evidence/p2-borrowed-service-r159a1/host-service-tests.json": "672f0c61760f2903cad31722e9039516611ccf9ad3ee9109c3484ffd85893a29",
+    "evidence/p2-borrowed-service-r159a1/source-custody.json": "9ea0fe27d590a89c2559feb6a9f41e4a34efa2574226783c18560a07f1eb9661"
+  },
+  "priorReceiptsVerifiedBeforeAndAfter": 9,
+  "result": "PASS",
+  "schema": 1,
+  "scope": "real harness service readiness and known cleanup plus source custody; native lifecycle/HTTP/readiness ports explicitly doubled; no installed runtime/model acceptance",
+  "seconds": 0.555166,
+  "selectedSuites": [
+    "test_service_ready_config_r162a1",
+    "test_service_receiver_history_r162a1",
+    "test_borrowed_service_host_r159a1.ServiceStartupGuards",
+    "test_borrowed_service_host_r159a1.ServiceClosureTests",
+    "test_service_profile_history_r161a1"
+  ],
+  "skipped": 0,
+  "sourceHashes": {
+    "evidence/p2-service-receiver-r162a1/historical-source-bindings.json": "88ad0ce820a813cb06ef8fbbd7a3318220760fd0f94720ee201186652c7c506e",
+    "evidence/p2-service-receiver-r162a1/parent-packages__claw-hermes__gateway_service_runtime.py.txt": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+    "packages/claw-hermes/gateway_service_runtime.py": "109bc6eef0a8507f9149e83785e9b51f270b4689e45dd96830cf57aae2195fea",
+    "tests/historical_service_receiver_r162a1.py": "5422bad914d0d410e328f589c574df01a59c379d60204ddf7971d37aec6f7bdb",
+    "tests/test_service_ready_config_r162a1.py": "ec03bbcbd2931f7a0162ba49681e97e27b394f33c42bf8d17f20b26153b2f95d",
+    "tests/test_service_receiver_history_r162a1.py": "27786f272142afdda702ed54f2b2186e61102da488b0dc53e38c8aa17abae02b"
+  },
+  "testsRun": 38
+}

@@ -1,0 +1,33 @@
+{
+  "atUtc": "2026-10-27T14:15:58.480064+00:00",
+  "base": "b56b9b321002a5bb8696fcae27edcfc92c28df1c",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_service_ready_config_r162a1.py",
+    "-v"
+  ],
+  "errors": 0,
+  "exitCode": 1,
+  "expectedRegressionReproduced": true,
+  "failures": 4,
+  "kind": "pre-fix regression reproduction",
+  "logBytes": 6097,
+  "logSha256": "33441590cc15cd819c894d274ba88c862b3305bb9316597a3c557cbbf1825ffa",
+  "passed": 3,
+  "result": "FAIL",
+  "schema": 1,
+  "scope": "real harness BorrowedServiceOwner and startup config guard; native startup, HTTP and readiness ports explicitly doubled; real files and SQLite close probes; no installed runtime/model acceptance",
+  "skipped": 0,
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_service_runtime.py": "7936c0d964fcefcdb6d92c6c5c38ed4abcbbef421dcf731a47e8b80c69359a92",
+    "tests/test_service_ready_config_r162a1.py": "ec03bbcbd2931f7a0162ba49681e97e27b394f33c42bf8d17f20b26153b2f95d"
+  },
+  "testsRun": 7
+}

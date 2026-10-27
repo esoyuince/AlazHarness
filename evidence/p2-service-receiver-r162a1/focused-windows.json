@@ -1,0 +1,154 @@
+{
+  "atUtc": "2026-10-27T14:43:56.779075+00:00",
+  "errors": 0,
+  "exitCode": 0,
+  "expectedFailures": 0,
+  "failures": 0,
+  "kernelConfinementTested": false,
+  "label": "windows",
+  "logBytes": 82267,
+  "logFile": "focused-windows.log",
+  "logSha256": "9ddf7ee8ef29686ccd3c237b4fa87ce947d5d9454f877ea14d653f798c9ae01a",
+  "nativeServiceStarted": false,
+  "passed": 466,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "result": "PASS",
+  "runnerSha256": "d454d026a0b87f136f13dcf26e63aa46f74e7ccfa8458cbcfffabf1ce69f51b0",
+  "schema": 1,
+  "scope": "receiver/factory and direct dependency source/fixture contracts; not installed/native/kernel/model acceptance",
+  "seconds": 38.271473,
+  "selectedTestIdsSha256": "7d69c62c690458e6e4674701041778c33df67b14a35952d04a220e4730d5c36d",
+  "selectedTests": 483,
+  "skipped": 17,
+  "skippedTests": [
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_changed_real_config_content_refused_before_factory",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_real_profile_bytes_and_source_selection_pass_without_sql_or_factory",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_replaced_real_config_inode_refused_even_with_same_bytes",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_self_consistent_wire_cannot_select_other_installed_source",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_cancelled_pipe_observer_does_not_steal_next_frame",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_eof_and_partial_eof_are_explicit",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_fragmented_frames_and_multiple_frames_are_bounded",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_output_reader_loss_is_explicit_and_does_not_close_pipes",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_output_uses_one_canonical_newline_without_executor_thread",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_all_auxiliary_fifo_swaps_are_nonblocking_refused_and_closed",
+      "POSIX nonblocking FIFO race contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_fifo_refused_without_blocking_open",
+      "POSIX FIFO contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_hardlink_refused",
+      "POSIX hardlink contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_owner_and_mode_are_private",
+      "POSIX mode/owner contract; Windows fixture doubles metadata"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_symlink_refused_before_open",
+      "POSIX symlink contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_fifo_swap_between_lstat_and_open_is_nonblocking_and_refused",
+      "POSIX nonblocking FIFO race contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_home_symlink_alias_refused",
+      "POSIX symlink contract"
+    ],
+    [
+      "test_service_profile_history_r161a1.ServiceProfileHistoryTests.test_archive_symlink_is_not_a_named_parent_file",
+      "symlink fixture unavailable: OSError"
+    ]
+  ],
+  "sourceHashes": {
+    "packages/claw-hermes/execution_boundary.py": "3448c8912278b9368ec52b72402cc297ae75fc4d3f92541e616f1dba493c5c62",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "a39245d907a1d8526634d6b55168a2e8ff8d08d59ea17344822b6a6bef354d2c",
+    "packages/claw-hermes/gateway_profile_lease.py": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95",
+    "packages/claw-hermes/gateway_service_control.py": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55",
+    "packages/claw-hermes/gateway_service_factory.py": "3e92cae2ebdffea75b5a9a02c135f0011b4dfa513d81474db60fc4195e177559",
+    "packages/claw-hermes/gateway_service_handoff.py": "37ffa5bd23b77b858c7a38cc90434ecb8416ba1e95ea491f8e913b91015daf9c",
+    "packages/claw-hermes/gateway_service_launch.py": "8c914925e6860c8e7b7e35e247cab480e4f34d085fce57b5eb276aa0ea9c289c",
+    "packages/claw-hermes/gateway_service_profile.py": "a6e4f1f5572006f72658902a6927a71faaa7d837d41a0dfa67e473622b05d05b",
+    "packages/claw-hermes/gateway_service_projection.py": "dc4ad0577625b2cb9197278ae76ad29289c5c0e1f695991f3485c42b25c5b57a",
+    "packages/claw-hermes/gateway_service_runtime.py": "109bc6eef0a8507f9149e83785e9b51f270b4689e45dd96830cf57aae2195fea",
+    "packages/claw-hermes/gateway_state_projection.py": "1704cd025ce82779fabbeb6b39dc5ad501e06b0c3ef3b2dc645c09e2d95ccdba",
+    "packages/claw-hermes/gateway_store_startup.py": "df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314",
+    "packages/claw-hermes/host_gate.py": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d",
+    "scripts/run_service_projected.py": "b55c8a8d40aec5ccd5829c619bb8ab32afd26e87d8d398604d2dbacd3f413828"
+  },
+  "sourceHashesUnchangedAfterTest": true,
+  "testSelectors": [
+    "test_service_launch_r162a1",
+    "test_service_factory_r162a1",
+    "test_service_ready_config_r162a1",
+    "test_service_receiver_history_r162a1",
+    "test_projected_launch_l145a8",
+    "test_finite_projected_launch",
+    "test_service_child_control_r160a1",
+    "test_borrowed_service_host_r159a1.ServiceClosureTests",
+    "test_historical_borrowed_service_r159a1",
+    "test_service_profile_r161a1",
+    "test_service_profile_binding_r161a1",
+    "test_service_projection_r161a1",
+    "test_service_handoff_r161a1",
+    "test_service_profile_history_r161a1",
+    "test_gateway_store_startup",
+    "test_three_store_lifecycle_l113f6",
+    "test_startup_consumer_owner_s124b1",
+    "test_prepared_work_guard_c127a6",
+    "test_execution_profile_qa3156",
+    "test_borrowed_service_host_r159a1.SourceSelectionTests",
+    "test_borrowed_service_host_r159a1.ServiceConsumerSelection",
+    "test_borrowed_service_host_r159a1.ServiceStartupGuards",
+    "test_gateway_state_projection",
+    "test_retained_projection_p142c6.MappingContract",
+    "test_retained_projection_p142c6.ProjectionSequence",
+    "test_retained_projection_p142c6.PivotBarrier",
+    "test_retained_projection_p142c6.OriginalStartupHandoff",
+    "test_retained_handoff_t143a7",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_launcher_cannot_be_hidden_by_applied_archive",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_launcher_cannot_be_hidden_by_current_source",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_projection_cannot_be_hidden_by_parent_archive",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_projection_cannot_be_hidden_by_current_source",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_unknown_paths_or_generations_are_not_redirected",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_archive_is_never_accepted",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_manifest_cannot_point_to_another_file"
+  ],
+  "testsRun": 483,
+  "unexpectedSuccesses": 0,
+  "uniqueTestIds": 483
+}

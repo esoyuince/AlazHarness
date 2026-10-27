@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "source": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "scope": "read-only selected native source references for fixed constructors; no source upgrade or runtime acceptance",
+  "files": {
+    "hermes_cli/plugins.py": {
+      "sha256": "33fdb366981a104055503ce63c3e33adbbb39da8664fb9b36198626527d21568",
+      "size": 127972
+    },
+    "hermes_cli/plugins_state.py": {
+      "sha256": "9ac63cbe916d392f10777db1df39cdc2bc262c238aeb82bb8e8eb3347585ca2c",
+      "size": 8812
+    },
+    "hermes_cli/plugins_loader.py": {
+      "sha256": "5a7f90e3bcce08b3cd6078962294c9ef23e94d6c94977208322b407e0c72f06a",
+      "size": 41027
+    },
+    "hermes_cli/config.py": {
+      "sha256": "68239827c32c60114cc01d03a2c29f872c91d2114a3f0c1d1094de49980d0d2e",
+      "size": 193989
+    },
+    "gateway/config.py": {
+      "sha256": "0b0afcd42648fcea652c19655d899427672d3cebf29cc8dd3d5539780f45631a",
+      "size": 47083
+    },
+    "gateway/config_env.py": {
+      "sha256": "333a40f182990033bad0c5ef8371e3d9f196fad069a314107b23ffd8ba20e187",
+      "size": 31685
+    },
+    "hermes_constants.py": {
+      "sha256": "8d55a41452b625061f1f2e2f507a7e7ffb2a396e711afcc7aee28b03a6e8fa9d",
+      "size": 64061
+    },
+    "hermes_cli/plugins_manifest.py": {
+      "sha256": "ae68abd4038925a3d50ec166e57b88bd1d536192b815f2efb33ebf2976d05275",
+      "size": 27204
+    }
+  },
+  "nativeSelectedFileCount": 760
+}
