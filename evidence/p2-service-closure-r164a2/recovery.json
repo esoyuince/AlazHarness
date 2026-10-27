@@ -1,0 +1,122 @@
+{
+  "acceptance": {
+    "mainPublished": false,
+    "newClosureFullCiAccepted": false,
+    "newSourceFullCiAccepted": false,
+    "next": "Fresh source fullCI, fresh closure fullCI under the same policy, pre-main integrity, normal main publication, distinct main same-commit reuse and final integrity.",
+    "old360SourceReceiptCannotQualifyNew480Final": true,
+    "requiredSamePolicyDigest": "39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776"
+  },
+  "atUtc": "2026-10-27T20:28:37.697612+00:00",
+  "base": "28a12e1b18a839a9489a0c463d904b8e9a46db03",
+  "branch": "alaz/p2-service-closure-r164a2",
+  "failedFinalAttempts": [
+    {
+      "accepted": false,
+      "delivery": "d5381c2e-d232-11f1-96cd-5f4be29e7f3f",
+      "exitCode": 124,
+      "githubStatusId": 57397447692,
+      "logSha256": "21fe2e3b427e8fa6657af0159792c98a557470f1910c6da7032125f0d80c06f8",
+      "logSummary": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 4544,
+        "skipped": 22,
+        "staticGate": "PASS",
+        "testsRun": 4566
+      },
+      "state": "failure",
+      "testSeconds": 348.954,
+      "timeout": true
+    },
+    {
+      "accepted": false,
+      "delivery": "operator-r164a1-15e32244-830d-4344-9bd9-b0deec562340",
+      "exitCode": 124,
+      "githubStatusId": 57399491641,
+      "logSha256": "cfe0cd1fc6fea47266e5c19e73a7f2cce0de0d1dd834ed3be3c1ad5e2645d31f",
+      "logSummary": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 4544,
+        "skipped": 22,
+        "staticGate": "PASS",
+        "testsRun": 4566
+      },
+      "state": "failure",
+      "testSeconds": 349.703,
+      "timeout": true
+    }
+  ],
+  "implementation": {
+    "focusedEvidenceGeneration": "R164A1 preserved byte-exact; not reexecuted in A2",
+    "linux": {
+      "passed": 806,
+      "skipped": 0,
+      "testsRun": 806
+    },
+    "ordered806IdsSha256": "e620cc0d833024134a5d41766d7c8f52c8d9102a6de8895d2cf54f81419d6805",
+    "productOrTestChangeForBudget": false,
+    "windows": {
+      "passed": 626,
+      "skipped": 180,
+      "testsRun": 806
+    }
+  },
+  "policyChange": {
+    "appliedAtUtc": "2026-10-27T20:26:14.358702+00:00",
+    "authorizedByUser": true,
+    "changedSemanticPaths": [
+      "/policies/AlazHarness/timeout_sec"
+    ],
+    "ciStatusOverridden": false,
+    "durableAtomicReplaceAndReadback": true,
+    "existingCoordinatorLock": true,
+    "idleAtApply": true,
+    "newPolicyDigest": "39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776",
+    "oldPolicyDigest": "fc69afb2981a2351e63d6b7c59c5ecffce2bf095a24f4618b0dac68f8805726e",
+    "otherConfigurationSemanticsUnchanged": true,
+    "ownerModePreserved": true,
+    "privateBackupVerified": true,
+    "privateReceiptSha256": "87b368acf04df8cf1f5ef11eca761a12ed76e8e63d983296b7dd34d971200f10",
+    "profile": "AlazHarness",
+    "profileSourceSha256": "3e201261a7c1afefef4a8a9e1bb8c34fa8793bac8618b383bb33e69968022164",
+    "serviceRestarted": false,
+    "state": "APPLIED_ONE_REPOSITORY_TIMEOUT_ONLY",
+    "timeoutAfter": 480,
+    "timeoutBefore": 360
+  },
+  "preservedGeneration": {
+    "blockedRecoveryJournalSha256": "09592226298f0e8eae67238779ea4dad2ee15bd7f005f52d691aed0502ae1cb8",
+    "branch": "alaz/p2-service-closure-r164a1",
+    "finalTarget": "82cab2562007dff124326cff83022f0370f31ccb",
+    "sourceAcceptedUnderOldPolicy": true,
+    "sourceCiSha256": "df4ad3595fd37871f3b214bc8087ca7bd056979fb6f07ca5beadd3ed36986e25",
+    "sourcePassed": 4544,
+    "sourceSkipped": 22,
+    "sourceStatusId": 57396499090,
+    "sourceTarget": "090754b6caf20bbda7f643dae1eddb31ada69a3b",
+    "sourceTestSeconds": 347.819,
+    "sourceTotal": 4566
+  },
+  "publicationGeneration": 2,
+  "schema": 1,
+  "scope": "R164 implementation unchanged; new same-policy publication evidence after an approved per-repository CI wall-clock adjustment",
+  "state": "POLICY_APPLIED_NEW_SOURCE_AND_CLOSURE_CI_NOT_RUN_AT_THIS_CHECKPOINT",
+  "timeBudgetDiagnosis": {
+    "perPhaseTimesAvailable": false,
+    "specificOverheadCauseProven": false,
+    "timeoutAppliesTo": "whole docker run command",
+    "unittestTimeDoesNotIncludeAllCommandOverhead": true
+  },
+  "unchangedCaps": {
+    "cpus": 1,
+    "fullTestAndStaticCommandUnchanged": true,
+    "globalConcurrentJobs": 2,
+    "globalMemoryAdmission": "10g",
+    "image": "sha256:6852a9b6c39485734c2b0f616504392029499c766d1c43d3dee99df7320e9152",
+    "memory": "512m",
+    "totalRamAndSwap": "768m",
+    "trustRestrictionsUnchanged": true
+  }
+}

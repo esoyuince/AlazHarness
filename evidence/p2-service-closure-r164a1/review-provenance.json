@@ -1,0 +1,461 @@
+{
+  "atUtc": "2026-10-27T17:52:12.053886+00:00",
+  "authorDevelopmentEvidence": {
+    "independentServerCliReview": {
+      "bytes": 5145,
+      "path": "scratch/r164a1-lifecycle/server-cli-source-review.json",
+      "productTestsExecutedByThatReviewerForThoseFiles": false,
+      "sha256": "05fc6528995ee56772ea26a48914e3aade37f72191c09d6f7f024094b5d6331e"
+    },
+    "lifecycle": {
+      "bytes": 1739,
+      "coversFinalSixLifecycleFiles": true,
+      "errors": 0,
+      "exitCode": 0,
+      "failures": 0,
+      "isPublicationFocusedProof": false,
+      "passed": 72,
+      "path": "scratch/r164a1-lifecycle/development-02.json",
+      "sha256": "69cbfe68b4d5415e4b64323b6efc8ac6ba65af547a4b97162e6defff0ac7f2e8",
+      "skipped": 0,
+      "testsRun": 72
+    },
+    "serverEarlierGeneration": {
+      "bytes": 2178,
+      "coversFinalReviewedDependencyAndTestBytes": false,
+      "errors": 0,
+      "failures": 0,
+      "isPublicationFocusedProof": false,
+      "passed": 63,
+      "path": "scratch/r164a1-publication/server-author-r164-run2.json",
+      "reason": "This author run used earlier gateway/closure-fixture/new-server-test digests; the later combined focused gate must bind the final reviewed files. Server product bytes match.",
+      "sha256": "5989b8410e7a3109eb3247ed131e1028db91bcc408442408f526e41b02e0cab5",
+      "skipped": 0,
+      "testsRun": 63
+    }
+  },
+  "base": "28a12e1b18a839a9489a0c463d904b8e9a46db03",
+  "bounds": {
+    "bridgeNativeSshRemoteOrGitExecutedByReviewer": false,
+    "currentProductTestsExecutedByReviewer": false,
+    "hostHttpReachabilityVerified": false,
+    "installedServiceAccepted": false,
+    "kernelConfinementTestedByReviewer": false,
+    "nativeServiceStarted": false,
+    "publicationExecutedByReviewer": false,
+    "realModelCalls": 0,
+    "realProviderCalls": 0,
+    "remainingAcceptance": "Root records final byte-bound focused Linux/Windows results, exact source/final full CI and publication. New installed P2 kernel/native/host-task/model acceptance remains open.",
+    "volumeClosureIntegratedSourceReviewed": true
+  },
+  "contractsReviewed": [
+    {
+      "assessment": "The original child slot and a separate non-cleared anchor preserve one attempt. Frozen custody pins original actor, worker, image pin, lease object, path objects and identities, fence bytes, loop number/descriptor and binding. Popen/channel anchors and process identity remain retained through uncertainty and after closure.",
+      "contract": "Original owner custody"
+    },
+    {
+      "assessment": "Before stop the original ServiceChannel must be COMPLETED with its valid final frame, original exit0, both EOFs, no pending or trailing frame, completed input and original sequence/request identity. Native ordered closure and three-store/profile retirement are validated again through the existing child wire validator.",
+      "contract": "Exact child completion"
+    },
+    {
+      "assessment": "Worker-only membership and absence of nested cgroups are checked before STOP. The attempt is recorded before the unchanged generic stop can write/flush. Only its exact UNMOUNTED PID/token reply plus same worker exit0 authorizes finish. Generic finish is unchanged and its returned full receipt is required; stage or caller booleans cannot replace it.",
+      "contract": "Normal stop and finish authority"
+    },
+    {
+      "assessment": "A separate empty-members/no-child-cgroup check precedes the unchanged generic finish. Generic finish checks ownership, empty cgroup, original empty host target, one loop descriptor close, global image device/inode attachment inventory, ownership and cgroup again, cgroup removal, original fence unlink/parent fsync, then image lease close. New code does not duplicate this cleanup implementation.",
+      "contract": "Cleanup order"
+    },
+    {
+      "assessment": "Preflight failure, BUSY, uncertain STOP, AUTOCLEAR attachment persistence and any finish failure retain original state without automatic or new-ID cleanup replay. A stream-close exception after generic CLOSED restores the same retained owner and stays UNKNOWN; no finish receipt is invented.",
+      "contract": "UNKNOWN and partial effects"
+    },
+    {
+      "assessment": "Status and same-ID replay never invoke stop or finish. A new explicit close can start previously unattempted volume closure after deferred child completion. Once an original closure attempt exists, observation uses retained custody and does not call the RUNNING-only child path or released live-volume gate.",
+      "contract": "Read-only observation"
+    },
+    {
+      "assessment": "The server matches volumeClosure fields against the fresh original owner gate, requires child COMPLETED and all native/store/volume flags, and seals a detached canonical view before reply delivery. Cached CLOSED survives client loss; later status/replay checks actor/startTicks/token/service, original child and socket/parent identity before recovering it.",
+      "contract": "External CLOSED"
+    },
+    {
+      "assessment": "Exact bounded request schema and EOF framing, SO_PEERCRED, same owner/service preconditions, never-evicted bounded mutation IDs, original server/socket identity and pre-effect dispatch markers remain in force after CLOSED. Listener close only closes the listener descriptor and keeps socket path and proof.",
+      "contract": "Request and endpoint continuity"
+    },
+    {
+      "assessment": "New tests execute real Unix socket/peer checks, Node client/CLI and synthetic child Popen/pipes. The unchanged generic stop/finish/_owned/_empty_scope/_sync_parent and kernel _members bodies run through explicit worker/cgroup/mount/loop/lease ports and temporary files. These ports do not establish a mounted or installed native service.",
+      "contract": "Source fixture fidelity and limits"
+    },
+    {
+      "assessment": "Old R163 expectations were narrowly updated for the integrated close path: read-only child completion still cannot clean up; old pipe-only CLI fixtures now explicitly fail worker-only preflight and observe retained UNKNOWN. New R164 fixtures cover successful closure. The unchanged old Python CLI wrapper is intentionally archived alongside five changed old test/support files.",
+      "contract": "Prior regression updates"
+    }
+  ],
+  "frozenHashesRecheckedAfterReview": true,
+  "history": {
+    "baseComparisonMethod": "Archive bytes match untouched R163 files and the root-verified BASE export metadata; primary Git blob comparison is an additional publication gate, not a native/Git action by this reviewer.",
+    "binding": {
+      "bytes": 7793,
+      "path": "evidence/p2-service-closure-r164a1/historical-source-bindings.json",
+      "sha256": "80e2b9a532eeceb1b94281667f4bde4e7de1461012f8a9e7f6fac922771c46e8"
+    },
+    "earlierRecordsRelabelled": false,
+    "finalR160Generation": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8",
+    "initialR160Generation": "eb28de8c043aaf8105cfc54261ccd481424cf973de756ae4aea73753142f9d29",
+    "legacyResolversChanged": false,
+    "localBaseMetadataSha256": "fd7ce14e256a8be718609981b2ad69b19d463bab641c1b2c076bc8d4441a34bd",
+    "parentArchives": {
+      "packages/claw-hermes/gateway_supervised_service.py": {
+        "bytes": 17161,
+        "path": "evidence/p2-service-closure-r164a1/parent-packages__claw-hermes__gateway_supervised_service.py.txt",
+        "sha256": "9afadd091afd7c3dece4d3837bff75fcbb9d048ca5fbad6403c33a050111e0ed"
+      },
+      "packages/claw-hermes/service_control_server.py": {
+        "bytes": 25125,
+        "path": "evidence/p2-service-closure-r164a1/parent-packages__claw-hermes__service_control_server.py.txt",
+        "sha256": "6b80555122e17561ffc1d588eab25d70445f5515c716ae31a4f3ccc8cb82ce31"
+      },
+      "packages/claw-hermes/service_volume_supervisor.py": {
+        "bytes": 4504,
+        "path": "evidence/p2-service-closure-r164a1/parent-packages__claw-hermes__service_volume_supervisor.py.txt",
+        "sha256": "82d2439a3f22873267ae9f7606eef2b032f6203f2dab240c41c1c5bbd5b132df"
+      },
+      "tests/fixtures/service-control-server-r163a1.py": {
+        "bytes": 4854,
+        "path": "evidence/p2-service-closure-r164a1/parent-tests__fixtures__service-control-server-r163a1.py.txt",
+        "sha256": "e7f2cb79c89f082ffdcadd5c7117571d85982c7d02b3daee9316cff365db5271"
+      },
+      "tests/node/service-control-r163a1.mjs": {
+        "bytes": 9791,
+        "path": "evidence/p2-service-closure-r164a1/parent-tests__node__service-control-r163a1.mjs.txt",
+        "sha256": "e80a99f9e407d1048cff48d8b459a4e0d53e4e77b4c6b9e47d8ae5ffd8ee0b79"
+      },
+      "tests/service_supervisor_fixtures_r163a1.py": {
+        "bytes": 8242,
+        "path": "evidence/p2-service-closure-r164a1/parent-tests__service_supervisor_fixtures_r163a1.py.txt",
+        "sha256": "df0fce876095274aa1139f4c404b69f60fe3d7da1012ef4e6c30176adc0e7172"
+      },
+      "tests/test_service_control_cli_r163a1.py": {
+        "bytes": 5589,
+        "path": "evidence/p2-service-closure-r164a1/parent-tests__test_service_control_cli_r163a1.py.txt",
+        "sha256": "1ddbd7048612761f2868adc101b500b63a8184c01405826b73c41b544f272648"
+      },
+      "tests/test_service_control_server_r163a1.py": {
+        "bytes": 35267,
+        "path": "evidence/p2-service-closure-r164a1/parent-tests__test_service_control_server_r163a1.py.txt",
+        "sha256": "c25b7a03be4af031c66bcdc07677a8a4a13494a204dea1654d615a581eb42b0b"
+      },
+      "tests/test_service_supervisor_r163a1.py": {
+        "bytes": 26468,
+        "path": "evidence/p2-service-closure-r164a1/parent-tests__test_service_supervisor_r163a1.py.txt",
+        "sha256": "1d6f21fd64f40f65d90fc44a48f916ebd4d341d312636ff5f1da9353e752b29d"
+      }
+    },
+    "parentArchivesMatchAcceptedBaseSources": true,
+    "parentSourceHashes": {
+      "packages/claw-hermes/gateway_supervised_service.py": "9afadd091afd7c3dece4d3837bff75fcbb9d048ca5fbad6403c33a050111e0ed",
+      "packages/claw-hermes/service_control_server.py": "6b80555122e17561ffc1d588eab25d70445f5515c716ae31a4f3ccc8cb82ce31",
+      "packages/claw-hermes/service_volume_supervisor.py": "82d2439a3f22873267ae9f7606eef2b032f6203f2dab240c41c1c5bbd5b132df"
+    },
+    "parentTestHashes": {
+      "tests/fixtures/service-control-server-r163a1.py": "e7f2cb79c89f082ffdcadd5c7117571d85982c7d02b3daee9316cff365db5271",
+      "tests/node/service-control-r163a1.mjs": "e80a99f9e407d1048cff48d8b459a4e0d53e4e77b4c6b9e47d8ae5ffd8ee0b79",
+      "tests/service_supervisor_fixtures_r163a1.py": "df0fce876095274aa1139f4c404b69f60fe3d7da1012ef4e6c30176adc0e7172",
+      "tests/test_service_control_cli_r163a1.py": "1ddbd7048612761f2868adc101b500b63a8184c01405826b73c41b544f272648",
+      "tests/test_service_control_server_r163a1.py": "c25b7a03be4af031c66bcdc07677a8a4a13494a204dea1654d615a581eb42b0b",
+      "tests/test_service_supervisor_r163a1.py": "1d6f21fd64f40f65d90fc44a48f916ebd4d341d312636ff5f1da9353e752b29d"
+    },
+    "preservedBaseFiles": {
+      "evidence/p2-service-control-r160a1/focused-linux.json": {
+        "bytes": 2302,
+        "sha256": "1f6abda42956eec4d2ffe92998c8678ec72876745a1098e65137d84e1008fda2"
+      },
+      "evidence/p2-service-control-r160a1/focused-linux.log": {
+        "bytes": 12212,
+        "sha256": "47e610216b45f4f8328254ec4a04c5556bdedda2e64411a725c6bd5a0e5df8b6"
+      },
+      "evidence/p2-service-control-r160a1/focused-windows.json": {
+        "bytes": 2215,
+        "sha256": "14e949756d282766194cf60d3b5eb4f4ad58e650cf60e39dfcb72ce8b2a17600"
+      },
+      "evidence/p2-service-control-r160a1/focused-windows.log": {
+        "bytes": 15179,
+        "sha256": "e0339c2d6768051f4e5a13ecb35b653337c1b871b6b6c7a7ad7155602c39a4d9"
+      },
+      "evidence/p2-service-control-r160a1/initial-focused-linux.json": {
+        "bytes": 2086,
+        "sha256": "31dbf9ec183f85b03fb356209b502d9f46ed5d993d01aa15412f12bafc998ff0"
+      },
+      "evidence/p2-service-control-r160a1/initial-focused-linux.log": {
+        "bytes": 11528,
+        "sha256": "c904b44b006b5fbe8df8b9e3331b1d8c1337094d62a8250729413a00ae935294"
+      },
+      "evidence/p2-service-supervisor-r163a1/baseline.json": {
+        "bytes": 1281,
+        "sha256": "76e0ea0af0ea36476a3e5f5c0d7b83d5035fa89c247e56b666a809220c2ee6fb"
+      },
+      "evidence/p2-service-supervisor-r163a1/focused-linux.json": {
+        "bytes": 11725,
+        "sha256": "672e998c96847855eb7488b6cae468106c1c3c588fd704d1ad8532c2ef9eb351"
+      },
+      "evidence/p2-service-supervisor-r163a1/focused-linux.log": {
+        "bytes": 119698,
+        "sha256": "c20794b8aedba050312000ceb9d9f795aa3a1809e43e1ca5f91e9d1df2f22e63"
+      },
+      "evidence/p2-service-supervisor-r163a1/focused-runner.py": {
+        "bytes": 10076,
+        "sha256": "0b9778344323ca9a91926abb0af3d945722010bec9bf0ad325768e9667538ecc"
+      },
+      "evidence/p2-service-supervisor-r163a1/focused-windows.json": {
+        "bytes": 31766,
+        "sha256": "5840c0933bdb6bf0b25fb1f3d627018c5077739e442590ce025fdf4415aec55c"
+      },
+      "evidence/p2-service-supervisor-r163a1/focused-windows.log": {
+        "bytes": 126792,
+        "sha256": "3ff80841b609bceed571fd1e40f4453c53902ff601b8fc6bd2f4bb4e47bbab0b"
+      },
+      "evidence/p2-service-supervisor-r163a1/historical-source-bindings.json": {
+        "bytes": 2036,
+        "sha256": "cd13e6f35332ddc65aacef3a064f60be7f005b9ad62063266a79df3c89721dc0"
+      },
+      "evidence/p2-service-supervisor-r163a1/history-focused-linux.json": {
+        "bytes": 4052,
+        "sha256": "233d7a75d68b8baa02ee23edd8ad27c109ddffb22a598cf5aa5a9cb0549a42b3"
+      },
+      "evidence/p2-service-supervisor-r163a1/history-focused-linux.log": {
+        "bytes": 2075,
+        "sha256": "797fe86ed630048b4aab9cd6ae8aa6c3dc8c99a57d0dd21ca602828a40829be6"
+      },
+      "evidence/p2-service-supervisor-r163a1/parent-packages__claw-hermes__service_volume_supervisor.py.txt": {
+        "bytes": 3281,
+        "sha256": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8"
+      },
+      "evidence/p2-service-supervisor-r163a1/review-provenance.json": {
+        "bytes": 19495,
+        "sha256": "874240cfeb39ad7b561a95f664d1548c8c21d6ac8b36d69f62727412acd4fe6c"
+      },
+      "evidence/p2-service-supervisor-r163a1/source-check.json": {
+        "bytes": 9495,
+        "sha256": "2495d8dde27528be847fecf4e74a49f278eb753b17081d5ae6105ed1b46e3887"
+      },
+      "evidence/p2-service-supervisor-r163a1/source-ci.json": {
+        "bytes": 2118,
+        "sha256": "82a169dd23876ffdfe4160d841bbcecd6a7400805e897d908343ded2579e3078"
+      },
+      "packages/claw-hermes/gateway_service_control.py": {
+        "bytes": 19594,
+        "sha256": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55"
+      },
+      "packages/claw-hermes/gateway_supervised_launch.py": {
+        "bytes": 21471,
+        "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364"
+      },
+      "packages/claw-hermes/service-control.mjs": {
+        "bytes": 14861,
+        "sha256": "6cba0cdac5de88990a861d811be6b81c66838784da9d260f32dfb243e45198a3"
+      },
+      "packages/claw-hermes/state_image_lease.py": {
+        "bytes": 7926,
+        "sha256": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc"
+      },
+      "packages/claw-hermes/state_volume_supervisor.py": {
+        "bytes": 16758,
+        "sha256": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080"
+      },
+      "packages/claw-hermes/supervised_service_channel.py": {
+        "bytes": 12990,
+        "sha256": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974"
+      },
+      "scripts/alaz_local.mjs": {
+        "bytes": 8911,
+        "sha256": "c94cd47d9cbf9c69e7992b97b450740fea49f98877405bc441e7831c71e80d30"
+      },
+      "scripts/run_service_projected.py": {
+        "bytes": 1682,
+        "sha256": "b55c8a8d40aec5ccd5829c619bb8ab32afd26e87d8d398604d2dbacd3f413828"
+      },
+      "scripts/run_service_volume_worker.py": {
+        "bytes": 6353,
+        "sha256": "71435f9fc1a04d3213976a93a3623a54a8aca69f1194c8470c62fc28669c4586"
+      },
+      "scripts/run_supervised_service.py": {
+        "bytes": 1537,
+        "sha256": "461e9ad2c1808714a688e2a391f8e0b5605f658f376cc8913b396e354e5d1629"
+      },
+      "tests/historical_borrowed_service_r159a1.py": {
+        "bytes": 4432,
+        "sha256": "c46c392aa448c2ee04dfe261901cc5080635f4b29b1b8acc58fa007d60e6940c"
+      },
+      "tests/historical_local_control_r158a1.py": {
+        "bytes": 2304,
+        "sha256": "1b42d065201756a1aba705abbc498dbfa67c4d7fa88ad07577ebecfdb0bb7a5c"
+      },
+      "tests/historical_self_identity_r150a1.py": {
+        "bytes": 2581,
+        "sha256": "51e79ab79981c52e23b7038e83ff4b26d4d51b06be9aed44955ea9631ef36712"
+      },
+      "tests/historical_service_profile_r161a1.py": {
+        "bytes": 5030,
+        "sha256": "313374405e79a3081e9f432aa30b2a154bdd6c3911507709ed206b713c255a20"
+      },
+      "tests/historical_service_receiver_r162a1.py": {
+        "bytes": 4220,
+        "sha256": "5422bad914d0d410e328f589c574df01a59c379d60204ddf7971d37aec6f7bdb"
+      },
+      "tests/historical_service_supervisor_r163a1.py": {
+        "bytes": 4426,
+        "sha256": "ed690902e1a27585a5182455bba143964d0fe15b55703ba09ad587ae79e7d8bb"
+      },
+      "tests/test_service_supervisor_history_r163a1.py": {
+        "bytes": 8093,
+        "sha256": "5079247cca0442d7d488125f72dc15feecfb22ea19d0cdd130769907c18b9bf9"
+      }
+    },
+    "preservedR160EvidenceCount": 6,
+    "preservedR163EvidenceCount": 13,
+    "preservedResolverAndTestCount": 7
+  },
+  "openSourceFindings": [],
+  "productEditsByReviewer": false,
+  "resolvedFindings": [
+    {
+      "finding": "An early lifecycle owner gate applied live child/worker prerequisites before admitting a read-only server status request; uncertain child start identity or worker loss then prevented bounded UNKNOWN observation.",
+      "id": "R164-READONLY-UNKNOWN-GATE",
+      "resolution": "Before volume closure, check_service_owner validates original actor/object/fence/lease custody; the original observer separately checks live worker/child identity and reports UNKNOWN. Closure phases still require the complete original typed proof.",
+      "source": "gateway_supervised_service.check_service_owner/_identity/_observe",
+      "status": "Author fix independently inspected in the final source and regression bodies; reviewer did not execute product tests.",
+      "tests": [
+        "test_service_closure_r164a1.ServiceClosureTests.test_unknown_child_start_identity_keeps_original_owner_status_observable",
+        "test_service_closure_r164a1.ServiceClosureTests.test_lost_original_worker_keeps_unknown_observation_without_cleanup",
+        "test_service_control_server_r164a1.ServerClosureTests.test_unknown_child_start_identity_remains_observable_without_second_launch"
+      ]
+    }
+  ],
+  "result": "PASS",
+  "resultMeaning": "Read-only product/test contract review and separately executed historical-custody tests; no open source blocker in the frozen snapshot. Publication, kernel and installed-service acceptance remain separate.",
+  "reviewedSources": {
+    "packages/claw-hermes/gateway_service_control.py": {
+      "bytes": 19594,
+      "sha256": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55"
+    },
+    "packages/claw-hermes/gateway_supervised_launch.py": {
+      "bytes": 21471,
+      "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364"
+    },
+    "packages/claw-hermes/gateway_supervised_service.py": {
+      "bytes": 30628,
+      "sha256": "2369f36805ffc4a708c2578d9877cd2497c2afe76da279208990f2faa1ca45b1"
+    },
+    "packages/claw-hermes/service_control_server.py": {
+      "bytes": 29492,
+      "sha256": "3265d9048ee602e2e3456a9b37e7ca6a89fbc0b5c8b09e345450a10775748195"
+    },
+    "packages/claw-hermes/service_volume_supervisor.py": {
+      "bytes": 4901,
+      "sha256": "a82e969db632e792cca3f5fdbf73fb98583fb92fb55d2efe1de48299b1af076d"
+    },
+    "packages/claw-hermes/state_image_lease.py": {
+      "bytes": 7926,
+      "sha256": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc"
+    },
+    "packages/claw-hermes/state_volume_supervisor.py": {
+      "bytes": 16758,
+      "sha256": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080"
+    },
+    "packages/claw-hermes/supervised_service_channel.py": {
+      "bytes": 12990,
+      "sha256": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974"
+    },
+    "scripts/run_service_volume_worker.py": {
+      "bytes": 6353,
+      "sha256": "71435f9fc1a04d3213976a93a3623a54a8aca69f1194c8470c62fc28669c4586"
+    }
+  },
+  "reviewedTestAndFixtureSources": {
+    "tests/fixtures/service-control-server-r163a1.py": {
+      "bytes": 5472,
+      "sha256": "69588956b95e97b2c6ecc63ae0fa842dd7ea685d4c99db68265fcc47f360bfc0"
+    },
+    "tests/fixtures/service-control-server-r164a1.py": {
+      "bytes": 4887,
+      "sha256": "fdb72181d5dce4b3ce6697af38145b56f71b044e374f83eb9e36fb3852958f5e"
+    },
+    "tests/historical_service_closure_r164a1.py": {
+      "bytes": 13756,
+      "sha256": "2668b1e031c8d5f340885d0d1c6352c81776a4e1aeb04f42b511c58e6eced378"
+    },
+    "tests/node/service-control-r163a1.mjs": {
+      "bytes": 9830,
+      "sha256": "dec66730581d14f132e2f651a140134404c25a74a1944e8fb7c15d6082f6f5ec"
+    },
+    "tests/node/service-control-r164a1.mjs": {
+      "bytes": 8300,
+      "sha256": "2aa07807d73a9b377b54acab4b272d3881e4db2f09ea00a62a5d0317f238ebee"
+    },
+    "tests/service_closure_fixtures_r164a1.py": {
+      "bytes": 12184,
+      "sha256": "852759d593e27de15502e67404c239e31570f7d55f30577cbde8cfd0d8f44b36"
+    },
+    "tests/service_supervisor_fixtures_r163a1.py": {
+      "bytes": 8489,
+      "sha256": "c26f37366c945a188f10529138ae7b56b75a9d3ab5158e9df271454ac7b8231f"
+    },
+    "tests/test_service_closure_history_r164a1.py": {
+      "bytes": 11376,
+      "sha256": "01f09906679259cef7da11d2030bd44e7e8e97fc074b0aea6aac8237582ff0a3"
+    },
+    "tests/test_service_closure_r164a1.py": {
+      "bytes": 24545,
+      "sha256": "739d4cec573485ce477c94d52f96014697f98e0b19dce114b14e92c0d2eff986"
+    },
+    "tests/test_service_control_cli_r163a1.py": {
+      "bytes": 5589,
+      "sha256": "1ddbd7048612761f2868adc101b500b63a8184c01405826b73c41b544f272648"
+    },
+    "tests/test_service_control_cli_r164a1.py": {
+      "bytes": 5235,
+      "sha256": "605d9b506234a9a628118601de4c49da192fc57bf10e044e5a17e4e0f056666c"
+    },
+    "tests/test_service_control_server_r163a1.py": {
+      "bytes": 35554,
+      "sha256": "ab16158d32724db54e78b51d4e4516a195901c9e2d37f90e22c534c20d4cb27f"
+    },
+    "tests/test_service_control_server_r164a1.py": {
+      "bytes": 23480,
+      "sha256": "08d1e6f7cf6750c4ae36df90874c3eb4e8b2f2ae5f17c3e9786fc9f7fdca8769"
+    },
+    "tests/test_service_supervisor_r163a1.py": {
+      "bytes": 26946,
+      "sha256": "44a2584e6de150552ee0c5ae8ffd195dc0456db2e8a72520362e075abb12d717"
+    }
+  },
+  "reviewer": "independent provenance and lifecycle source reviewer",
+  "reviewerExecutedTests": {
+    "errors": 0,
+    "exitCode": 0,
+    "failures": 0,
+    "passed": 14,
+    "rawLog": {
+      "bytes": 2943,
+      "path": "evidence/p2-service-closure-r164a1/history-focused-linux.log",
+      "sha256": "5aba48013c02fc07ef96f8cc99da542811bd19fe1e8e87a5f33dccd0c23ec284"
+    },
+    "report": {
+      "bytes": 8287,
+      "path": "evidence/p2-service-closure-r164a1/history-focused-linux.json",
+      "sha256": "50dae20955ded81b4498006924063fd7370139f699719960ba891027d4c33d11"
+    },
+    "scope": "Fresh historical source/test custody tests only; no product or native execution.",
+    "seconds": 0.19843395698990207,
+    "skipped": 0,
+    "testsRun": 14
+  },
+  "reviewerProductTestsExecuted": false,
+  "schema": 1,
+  "scope": [
+    "Exact original child and volume custody",
+    "Verified final/exit/EOF before original worker-only cgroup and normal stop",
+    "Successful original stop receipt before original finish and image lease last",
+    "Read-only UNKNOWN/CLOSED observation and lost-reply request identity",
+    "Cross-language closure fixture scope and frozen historical source/test generations"
+  ]
+}

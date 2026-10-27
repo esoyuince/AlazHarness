@@ -313,20 +313,24 @@ class ServerTests(unittest.TestCase):
             close_method.assert_not_called()
         self.assertIsNone(self.harness.volume._service_child)
 
-    def test_child_final_exit_and_eof_still_never_report_outer_closed(self):
+    def test_observing_child_final_exit_and_eof_never_starts_volume_closure(self):
         instance = self.make()
         self.start(instance)
         original = self.harness.volume._service_child
         with patch.object(type(self.harness.volume), 'stop', side_effect=AssertionError('no volume stop')), \
              patch.object(type(self.harness.volume), 'finish', side_effect=AssertionError('no volume finish')):
-            reply, _, _ = self.exchange(instance, self.body(instance, 'close', SECOND))
+            # R164 connects explicit close to the volume. Exercise only the
+            # existing child's final/exit/EOF observation here; that remains
+            # read-only and cannot initiate the new volume closure path.
+            original.channel.command('close', timeout=2)
+            reply, _, _ = self.exchange(instance, self.body(instance, 'status', SECOND))
             self.assertEqual(reply['state'], 'DRAINING')
             self.assertIsNone(reply['endpoint'])
             done = reply['completion']
             self.assertEqual(done['physicalStoresClosed'], 3)
             self.assertTrue(done['profileLeaseReleased'] and done['childExited'])
             self.assertFalse(done['volumeUnmounted'] or done['imageLeaseReleased'] or done['fenceRemovedAfterCleanup'])
-            self.exchange(instance, self.body(instance, 'close', SECOND))
+            self.exchange(instance, self.body(instance, 'start', RID))
             self.exchange(instance, self.body(instance, 'status', SECOND))
         self.assertIs(self.harness.volume._service_child, original)
         self.assertEqual([line.get('action') for line in self.harness.lines()], [None, 'close'])

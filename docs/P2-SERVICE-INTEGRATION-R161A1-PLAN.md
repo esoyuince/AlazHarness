@@ -2,12 +2,14 @@
 
 Durum: IN PROGRESS. Birinci adımın servis profil/config kaynak denetimleri
 R161A1 ile PASS; ikinci adımın sabit receiver/factory odaklı kaynak testleri
-R162A1 ile PASS. Üçüncü adımın supervisor/Unix/CLI kaynak bağlantısı R163A1 ile
-PASS; exact-commit CI/yayın status.md'de izlenir. Sıradaki bağlantı volume kapanışıdır.
+R162A1 ile PASS. Üçüncü adımın supervisor/Unix/CLI kaynak bağlantısı R163A1 ile,
+dördüncü adımın özgün volume stop/finish bağlantısı R164A1 ile PASS.
+Exact-commit CI/yayın status.md'de izlenir. Sıradaki bağlantı host görev erişimidir.
 Kurulu servis veya gerçek model kabulü değildir.
 Kaynak raporu: [R161A1 profil ve config](P2-SERVICE-PROFILE-R161A1.md).
 İkinci kaynak paketi: [R162A1 receiver/factory](P2-SERVICE-RECEIVER-R162A1.md).
 Üçüncü kaynak paketi: [R163A1 supervisor/Unix](P2-SERVICE-SUPERVISOR-R163A1.md).
+Dördüncü kaynak paketi: [R164A1 özgün volume kapanışı](P2-SERVICE-CLOSURE-R164A1.md).
 Önceki paket: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
 Güncel durum ve yayın kaydı: [status.md](../status.md).
 
@@ -95,7 +97,24 @@ uygula. R160 CLI protokolünün exact schema, bounded frame, tek mutation,
 request ID ve read-only status kurallarını sunucu tarafında da uygula.
 Kaybolan start/close yanıtı yeniden child veya cleanup başlatmasın.
 
-### 4. Final makbuzundan volume kapanışına bağlantı
+### 4. Final makbuzundan volume kapanışına bağlantı — odaklı kaynak testleri PASS
+
+27 Ekim 2026: aynı özgün child/Popen/ServiceChannel'ın final/exit0/iki EOF kanıtı,
+worker-only ve alt cgroup içermeyen scope üzerinden mevcut normal stop/finish'e
+bağlandı. Exact UNMOUNTED/worker exit0 makbuzu finish'in ayrıca ön koşuludur.
+Özgün boş cgroup, loop, fence ve image lease sırası tamamlanınca Unix sunucusu
+CLOSED kanıtını yanıt yazmadan önce saklar; mevcut CLI tam kapanışı bildirir.
+Status ve aynı request ID cleanup başlatmaz. Child gecikmeli tamamlanırsa yeni
+açık close yalnız henüz denenmemiş volume kapanışını başlatabilir; başlamış
+veya UNKNOWN/BUSY kalmış stop/finish yeniden denenmez. Tail stream close hatası
+dahil belirsizlikte özgün sahip ve kanıt tutulur; sahte CLOSED üretilmez.
+
+Son birleşik seçim Linux'ta 806/806 PASS; primary Windows'ta 626 PASS ve
+180 platform SKIP, failure/error 0, exit 0. Aynı 25 ürün, 50 test/destek dosyası,
+runner ve sıralı test kimlikleri korunur. Bağımsız kaynak review ile taze
+tarihsel 14 test PASS; bu 14 test birleşik seçimin de içindedir. Exact source/final
+tam CI ve main yayını ayrıca izlenir. Bu kaynak/fixture sonucu yeni kurulum,
+gerçek kernel/native servis veya model kabulü değildir.
 
 Native transport/runtime/consumer, üç fiziksel store ve caller/profile lease
 sıralı kapanışından sonra final çerçevesi alınır; aynı child'ın gerçek exit0

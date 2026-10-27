@@ -45,9 +45,17 @@ def main():
     harness.binding = replace(harness.binding, token=harness.volume.token,
                               scope=str(harness.volume.scope))
     with patch.object(fixture, 'CHILD', child_script), harness as h:
+        # This original pipe/protocol fixture intentionally has no real volume
+        # closure ports. R164 must refuse at the worker-only preflight, before
+        # either generic stop or finish can run. New R164 fixtures exercise the
+        # complete original generic cleanup against explicit kernel/lease ports.
+        def no_volume_closure(*args, **kwargs):
+            raise fixture.g.kernel.SupervisedLaunchRejected('fixture_volume_unavailable')
+        h.stack.enter_context(patch.object(fixture.g.kernel, '_members', no_volume_closure))
         stop = Mock(side_effect=AssertionError('source fixture must not stop volume'))
         finish = Mock(side_effect=AssertionError('source fixture must not release image'))
-        with patch.object(h.volume, 'stop', stop), patch.object(h.volume, 'finish', finish):
+        with patch.object(fixture.g.volume.VolumeSupervisor, 'stop', stop), \
+                patch.object(fixture.g.volume.VolumeSupervisor, 'finish', finish):
             server = ServiceControlServer(h.volume, h.ipc, h.filesystem, h.record,
                 socket_path=str(Path(directory) / 'control.sock'), scratch=h.scratch,
                 instance_id=h.instance_id, service_id=h.service_id,

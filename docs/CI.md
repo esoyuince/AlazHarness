@@ -335,3 +335,33 @@ backup and atomic compare-and-replace under the existing worker lock.
 No dependencies, source deployment or model calls are introduced. Exact pushed-SHA
 alaz/local-ci success remains mandatory; docs/publication receipts preserve the
 failed attempts and measured cause instead of overriding their statuses.
+
+
+## 2026-10-27 AlazHarness budget and R164 publication generation
+
+The maintainer approved increasing only `policies.AlazHarness.timeout_sec`
+from 360 to 480 seconds. The change was applied and read back on 2026-10-27
+at 20:26 UTC. A byte-exact private backup, the existing worker lock, an idle
+queue and processing directory, no active CI containers, a one-field semantic
+diff, atomic replacement, preserved owner/mode and directory fsync were
+verified. The immutable image, 1 CPU, 512 MiB RAM, 768 MiB total RAM+swap,
+full test/static command, trusted worker/reporters, trust restrictions and
+global concurrency are unchanged. No service restart was performed.
+
+The prior R164 source commit passed under the 360-second policy. Both final
+commit attempts completed 4,566 tests and the static gate in their logs but
+remained overall timeout failures. Their 348.954- and 349.703-second test
+sections do not measure the whole Docker command. These failures remain
+preserved and are not accepted for publication.
+
+The applied policy digest is
+`39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`.
+Changing the timeout changes the policy digest, so R164A2 creates new source
+and closure CI evidence under this same policy. The original product/test and
+focused-evidence bytes remain fixed. Source/final policy equality, full suite
+proof, no timeout/OOM, cleanup and exact-SHA status acceptance remain required.
+At this source-preparation checkpoint the configuration is APPLIED, while
+new full CI acceptance is NOT RUN. The sanitized
+[R164A2 recovery record](../evidence/p2-service-closure-r164a2/recovery.json)
+binds the old failures and the applied change; private backup paths and the
+full infrastructure configuration are not published.

@@ -31,7 +31,7 @@ function checked(value) {
   assert.equal(value.retryAllowed, false);
   assert.equal(value.kernelVerified, false);
   if (value.state) {
-    assert.notEqual(value.state, 'CLOSED', 'plan step4 remains open');
+    assert.notEqual(value.state, 'CLOSED', 'this pipe fixture has no volume closure ports');
     assert.equal(value.serviceClosed, false);
     assert.equal(value.closureReported, false);
     assert.equal(value.hostHttpReachabilityVerified, false);
@@ -74,7 +74,7 @@ async function retiredChild() {
   let last;
   await until(async () => {
     last = checked(await client.status(id(8)));
-    return last.state === 'DRAINING' && last.completion.childExited;
+    return ['DRAINING', 'UNKNOWN'].includes(last.state) && last.completion.childExited;
   }, 'same child final/exit/EOF was not observed');
   assert.equal(last.completion.physicalStoresClosed, 3);
   assert.equal(last.completion.profileLeaseReleased, true);
@@ -115,10 +115,10 @@ if (scenario === 'lifecycle') {
   const status = await cli('service-status', id(5));
   assert.equal(status.code, 0); assert.equal(status.value.state, 'READY');
   const close = await cli('close', id(2));
-  assert.equal(close.code, 3); assert.equal(close.value.state, 'DRAINING');
+  assert.equal(close.code, 3); assert.equal(close.value.state, 'UNKNOWN');
   assert.equal(close.value.completion.childExited, true);
   const after = await cli('service-status', id(6));
-  assert.equal(after.code, 3); assert.equal(after.value.state, 'DRAINING');
+  assert.equal(after.code, 3); assert.equal(after.value.state, 'UNKNOWN');
   assert.equal(after.value.completion.childExited, true);
 } else if (scenario === 'lost-start') {
   const abort = new AbortController();

@@ -70,11 +70,17 @@ class Harness:
         owner.who = (os.getpid(), threading.get_ident())
         owner.pin = b.image; owner.scope = PurePosixPath(b.scope)
         owner.scope_id = b.scope_identity; owner.target = PurePosixPath(b.mountpoint)
+        owner.target_id = (1792, 800)
+        owner.lease = Mock()
+        owner.fence = PurePosixPath(b.image.path + '.volume-owner.json')
+        owner.fence_id = (1792, 801)
+        owner.loop_fd = 77
         owner.token = b.token; owner.loop_number = b.loop_number
         owner.fence_bytes = b'R163 synthetic retained fence'
         owner.stage = 'RUNNING'; owner.spawn_uncertain = False
         owner.worker = Mock(pid=1000000 + os.getpid()); owner.worker.poll.return_value = None
         owner._service_child = None
+        owner._service_child_anchor = None
         # /proc and privileged lifetime identities are explicit doubles. The
         # fixture Popen and all standard-pipe reads/writes remain actual.
         self.controller_ticks = 100
