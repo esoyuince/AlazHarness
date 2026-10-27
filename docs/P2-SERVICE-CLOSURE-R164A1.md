@@ -1,7 +1,7 @@
 # P2 / R164A1 — özgün servis volume kapanışı
 
-Tarih: 27 Ekim 2026. **Kaynak/fixture entegrasyonu ve odaklı testler PASS;
-exact-commit tam CI ve yayın NOT RUN. P2 IN PROGRESS.**
+Tarih: 27 Ekim 2026. **Kaynak/fixture entegrasyonu, odaklı testler ve exact source
+commit tam CI PASS; final commit CI ve main yayını NOT RUN. P2 IN PROGRESS.**
 
 R164, [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) dördüncü
 adımını kaynak düzeyinde tamamlar. Özgün servis çocuğunun final/exit0/EOF kanıtı,
@@ -14,6 +14,8 @@ gerçek kernel/servis veya model kabulü değildir.
 ## Kaynak ve çalışma kimliği
 
 - Base: `28a12e1b18a839a9489a0c463d904b8e9a46db03`.
+- Kaynak commit: `090754b6caf20bbda7f643dae1eddb31ada69a3b`; normal feature
+  push ve bu exact commit'in tam CI sonucu PASS.
 - Dal: `alaz/p2-service-closure-r164a1`.
 - Primary çalışma ağacı:
   `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-closure-r164a1`.
@@ -147,9 +149,10 @@ nesilleri ayrı kalır. Güncel R164 kabulü aşağıdaki taze koşulardan gelir
 | Son birleşik Linux odaklı seçim | 806 | 806 | 0 | 0 / 0 | 0 | 96.378312 s |
 | Aynı seçimin primary Windows koşusu | 806 | 626 | 180 | 0 / 0 | 0 | 62.8848 s |
 | Bağımsız taze tarihsel bağ koşusu | 14 | 14 | 0 | 0 / 0 | 0 | 0.198434 s |
-| Exact source commit tam CI | NOT RUN | — | — | — | — | — |
+| Exact source commit tam CI | 4566 | 4544 | 22 | 0 / 0 | 0 | 347.819 s |
 | Exact final commit tam CI | NOT RUN | — | — | — | — | — |
 | Main yayını ve ayrı status kabulü | NOT RUN | — | — | — | — | — |
+| Pre-main ve final integrity | NOT RUN | — | — | — | — | — |
 
 Tarihsel 14 test, birleşik 806 seçimin de içindedir; toplam ilerlemeye ayrıca
 eklenmez. Windows SKIP kayıtları POSIX child pipe, Unix socket/SO_PEERCRED,
@@ -185,6 +188,7 @@ yerine geçirilmez.
 - [Odaklı runner](../evidence/p2-service-closure-r164a1/focused-runner.py),
   [tarihsel bağ](../evidence/p2-service-closure-r164a1/historical-source-bindings.json)
   ve [bağımsız review](../evidence/p2-service-closure-r164a1/review-provenance.json).
+- [Exact source commit tam CI kabulü](../evidence/p2-service-closure-r164a1/source-ci.json).
 
 | Kanıt kimliği | SHA-256 |
 |---|---|
@@ -196,16 +200,28 @@ yerine geçirilmez.
 | Runner | `bdbcca1355dab5b902ed4c6a84061baf9cce0aa7ab78678b11b8e9abf2ecc429` |
 | Tarihsel kaynak bağları | `80e2b9a532eeceb1b94281667f4bde4e7de1461012f8a9e7f6fac922771c46e8` |
 | Bağımsız kaynak review | `e26366bde84b24f9b9b70633ee1102634225062f19081a534f18415a7c0933f4` |
+| Exact source commit tam CI kabulü | `df4ad3595fd37871f3b214bc8087ca7bd056979fb6f07ca5beadd3ed36986e25` |
 
 ## Yayın checkpoint'i ve kabul sınırı
 
-Bu raporun kaynak checkpoint'inde yeni R164 commit/push, exact source/final tam
-CI, normal main fast-forward/push ve final integrity henüz çalıştırılmadı.
-Bu aşamalar [status.md](../status.md) ve primary çalışma ağacındaki
-`scratch/r164a1-publication/` makbuzlarıyla devam eder. Yalnız test başarısı,
-commit veya main yayını sonucu olarak sunulmaz. Son yayın hükmü, iki exact
-commit'in tam CI kanıtı, ayrı main status kabulü ve final integrity birlikte
-doğrulandıktan sonra `final-publication.json` içinde kaydedilir.
+Kaynak commit `090754b6caf20bbda7f643dae1eddb31ada69a3b`, açıkça seçilmiş
+42 dosyayla oluşturuldu ve feature dalına normal push tamamlandı. Bu exact
+commit için `alaz/local-ci` tam suite'i yeniden çalıştırdı: 4566 toplam,
+4544 PASS, 22 SKIP, failure/error 0; süre 347.819 saniye. Container exit 0,
+OOM ve timeout false, cleanup `removed`. Statik kapı 6904 dosyayı denetleyip
+4566 test keşfetti ve PASS verdi. Kabul edilen GitHub status ID
+`57396499090`, delivery `7cee4aee-d231-11f1-8376-e9380218e750`.
+[Public source CI makbuzu](../evidence/p2-service-closure-r164a1/source-ci.json),
+private `accepted-source-ci.json` ile byte düzeyinde aynıdır.
+
+Bu izlenen closure checkpoint'inde exact final commit tam CI, pre-main
+integrity, normal main fast-forward/push, ayrı main status kabulü ve final
+integrity NOT RUN. Kaynak CI başarısı final commit veya main sonucu olarak
+devralınmaz. Devam kayıtları [status.md](../status.md) ve primary çalışma
+ağacındaki `scratch/r164a1-publication/` altındadır. İki exact commit'in tam
+CI kanıtı, ayrı main status kabulü ve final integrity birlikte doğrulandıktan
+sonra terminal yayın hükmü aynı dizinin `final-publication.json` dosyasında
+kaydedilir; bu izlenen rapor o terminal makbuzun yerine geçmez.
 
 Native 760 kaynak ve R156 kurulumu değişmedi. Yeni P2 kurulumu, gerçek kernel
 namespace/cgroup/mount/lease yaşam döngüsü, host HTTP görev erişimi, native

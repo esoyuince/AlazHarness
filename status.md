@@ -1,12 +1,13 @@
 # AlazHarness — status
 
-## R164A1 — özgün servis volume kapanışı — IN PROGRESS
+## R164A1 — özgün servis volume kapanışı — kaynak/ilk CI PASS; yayın IN PROGRESS
 
 P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
 
 - Aktif dal: `alaz/p2-service-closure-r164a1`.
 - Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-closure-r164a1`.
-- Başlangıç ve yayımlanmış main: `28a12e1b18a839a9489a0c463d904b8e9a46db03`.
+- Başlangıç ve yayın öncesi main: `28a12e1b18a839a9489a0c463d904b8e9a46db03`.
+- Kaynak commit'i: `090754b6caf20bbda7f643dae1eddb31ada69a3b`; normal feature push PASS.
 - Önceki R163 final yayın günlüğü: R163 çalışma ağacındaki
   `scratch/r163a1-publication/final-publication.json`, SHA-256
   `63525a048232d70109aa0378bf967376a96ef2e5ef0510bd8e28dd604d5cf809`.
@@ -49,6 +50,7 @@ arşivi ve ayrı tarihsel çözümleyici eklendi.
 | Linux odaklı | 806 | 806 | 0 | 0 / 0 | 0 |
 | Primary Windows odaklı | 806 | 626 | 180 | 0 / 0 | 0 |
 | Tarihsel kaynak bağlama, ayrı Linux koşusu | 14 | 14 | 0 | 0 / 0 | 0 |
+| Exact kaynak commit tam CI | 4.566 | 4.544 | 22 | 0 / 0 | 0 |
 
 Windows atlamaları POSIX pipe, Unix socket/peer credentials, dosya metadata ve
 symlink gereksinimleriyle açıkça kayıtlıdır; Linux odaklı koşusunda atlama yoktur.
@@ -59,17 +61,28 @@ kimliğine bağlıdır; koşu öncesi/sonrası byte hashleri değişmedi. Ayrı 
 Kanıtlar `evidence/p2-service-closure-r164a1/` altındaki `focused-linux.json`,
 `focused-windows.json`, ham loglar, `history-focused-linux.json`,
 `historical-source-bindings.json`, `review-provenance.json` ve `source-check.json`.
-Yeni kaynak commit/push/tam CI, kapanış commit/tam CI, main yayını ve final
-integrity henüz NOT RUN. Ayrıntılı rapor:
+42 seçilmiş dosyanın staged tree'si `5178a787fa145036f4095152dfa394c9747d54b3`;
+statik gate PASS, 6.904 izlenen dosya ve 4.566 keşfedilen test, exit 0.
+Kaynak commit/push PASS. Exact `090754b` için required `alaz/local-ci` tam koşusu
+PASS: 4.566 test, 4.544 PASS, 22 SKIP, failure/error 0; 347.819 saniye,
+container exit 0, OOM/timeout false, cleanup removed. Status `57396499090`,
+delivery `7cee4aee-d231-11f1-8376-e9380218e750`. Authenticated GitHub gözlemi,
+sunucu artifact'ı, ham log ve suite sayıları aynı exact commit'e bağlandı.
+Public `evidence/p2-service-closure-r164a1/source-ci.json`, kabul makbuzuyla
+byte-exact; SHA-256 `df4ad3595fd37871f3b214bc8087ca7bd056979fb6f07ca5beadd3ed36986e25`.
+
+Bu takip snapshot'ı source CI kabulünden sonra hazırlanmıştır. Kapanış commit'inin
+kendi tam CI'si, main fast-forward/push, ayrı main verified-success reuse ve final
+integrity henüz burada NOT RUN. Kesin yayın sonucu primary çalışma ağacındaki
+`scratch/r164a1-publication/final-publication.json` ile tamamlanır. Ayrıntılı rapor:
 [özgün volume kapanışı](docs/P2-SERVICE-CLOSURE-R164A1.md).
 Bu paket kaynak/fixture kapsamındadır; gerçek kernel/kurulu servis veya model
 kabulü değildir. Host görev erişimi ve yeni tek P2 kurulumu sonraki adımlardır.
 
 ### Kesin sonraki adım
 
-Yalnız seçilmiş R164 dosyalarını stage et; staged tree'ye bağlı statik kontrolü,
-kaynak commit/push ve exact tam CI'yi tamamla. Ardından yalnız status/rapor/kaynak
-CI makbuzuyla kapanış commit'i, ikinci tam CI, yayın öncesi integrity, normal
+Yalnız status/rapor/kaynak CI makbuzuyla kapanış commit'i, ikinci exact tam CI,
+yayın öncesi integrity, normal
 main fast-forward/push, ayrı main verified-success reuse ve final integrity
 günlüğünü kapat. Yayından sonra planın beşinci adımı, host görevlerinin aynı
 kimliği doğrulanmış native API'ye dar erişimidir. Yeni tek P2 kurulumu/kernel
@@ -86,3 +99,16 @@ kabulü ve seçilmiş gerçek model/provider/toolset/bütçe deneyi açık kalı
   geri okundu ve kaynak/test/runner kimlikleri Linux ile eşleşti. Sekiz korunan
   depo, dört önceki feature, kökün 33 değişmiş dosyası ve aktif BASE/branch tekrar
   doğrulandı; index temiz. Yayın yardımcılarının son bağımsız incelemesi sürüyor.
+- 2026-10-27 kaynak yayın checkpoint: 42 dosya ve staged tree statik gate'i PASS.
+  Kaynak commit `090754b6caf20bbda7f643dae1eddb31ada69a3b` normal feature push
+  sonrasında remote ref ile eşleşti; main BASE'de. Native işlem
+  `c164a101-1027-4a01-8000-000000000047` completed/exit 0; yeniden çalıştırılmaz.
+  Required `alaz/local-ci` pending (`57395893996`). Yayın yardımcılarının
+  bağımsız incelemesi PASS; writer'ın eski kontrol nesli/yanlış hash eşleme
+  bulgusu giderildi. Ürün/test hashleri değişmedi.
+- 2026-10-27 source CI checkpoint: `090754b` tam CI 4566/4544/22
+  total/PASS/SKIP, failure/error 0 ve container exit 0 kabul edildi. Kabul makbuzu
+  SHA-256 `df4ad3595fd37871f3b214bc8087ca7bd056979fb6f07ca5beadd3ed36986e25`.
+  Native kabul işlemi `c164a101-1027-4a01-8000-000000000061` completed/exit 0.
+  Kapanış commit'i yalnız durum/rapor/public CI kanıtını taşır; aynı ürün/test
+  byte'ları son commit'in tam CI'sıyla tekrar doğrulanacaktır.
