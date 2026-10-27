@@ -1,12 +1,15 @@
 # AlazHarness — status
 
-## R162A1 — sabit projected servis receiver/factory — IN PROGRESS
+## R162A1 — sabit projected servis receiver/factory — kaynak kabulü PASS
 
 P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
 
 - Aktif dal: `alaz/p2-service-receiver-r162a1`.
 - Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-receiver-r162a1`.
 - Başlangıç ve önceki yayımlanmış main: `b56b9b321002a5bb8696fcae27edcfc92c28df1c`.
+- Kabul edilmiş kaynak commit'i: `a724ffb0a262553bdd820fd9db946920f6517d58`.
+- Son kapanış commit'i ve main yayın makbuzu: aktif çalışma ağacında
+  `scratch/r162a1-publication/final-publication.json`; canlı HEAD/ref'lerle doğrulanır.
 - Önceki R161 kapanışı: 4.302 test, 4.280 PASS, 22 SKIP; exact-commit tam CI ve main verified reuse PASS.
 - Native seçim: `5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d`, 760 dosya; değişmedi.
 - Başlangıç makbuzları: `scratch/r162a1-publication/baseline.json` ve `worktree-created.json`.
@@ -40,17 +43,30 @@ failure/error 0, exit 0 (38,271473 s). Aynı test kimlikleri, runner ve 14 ürü
 kaynak hash'i iki koşuda eşleşti. Config/native ve lifecycle bağımsız incelemeleri
 PASS. Son kanıtlar `focused-linux-r2.*`, `focused-windows.*` ve iki review JSON'udur.
 İlk Linux kaydı son Windows CRLF test karşılaştırması düzeltmesinden önceki ayrı
-483/483 sonucu olarak korundu; ürün değişmedi. Tam CI, commit/push ve main
-aktarımı IN PROGRESS; henüz tamamlanmış yayın olarak sayılmaz.
+483/483 sonucu olarak korundu; ürün değişmedi.
+
+Kaynak commit'i a724ffb'nin exact-commit tam CI'si PASS: **4.392 test, 4.370 PASS,
+22 SKIP, failure/error 0, exit 0; 315,355 s.** GitHub status ID `57376067782`
+ve delivery `2cb2c660-d216-11f1-887c-d672d3590abe` aynı hedefe, ham loga ve
+container sonucuna bağlandı. Public kabul kaydı:
+`evidence/p2-service-receiver-r162a1/source-ci.json`.
+
+Bu durum kaydı kaynak CI makbuzunu ekleyen belge kapanışına aittir. Kapanış
+commit'i de exact-commit tam CI kabulünden sonra main'e normal fast-forward
+ile aktarılır. Son main status/delivery, verified reuse, pre-main/final bütünlük
+ve kesin commit `scratch/r162a1-publication/final-publication.json` kaydıyla
+bağlanır; main sonucu ikinci bir tam suite koşusu sayılmaz. Bu dosyanın varlığı
+tek başına yayın kabulü değildir; devam ederken final journal ve canlı Git
+durumu kontrol edilir.
 Yeni kurulum, native servis çalıştırma veya gerçek model/sağlayıcı çağrısı yoktur.
 
 ### Kesin sonraki adım
 
-Son kaynak, test ve rapor dosyalarını açık owned-path listesiyle stage/commit et.
-Kaynak commit'inin tam CI kanıtını doğrula; bu ham kabul kaydını kaynak paketine
-ekleyen belge kapanış commit'ini de exact-commit tam CI'dan geçir. Bütünlük
-kontrolünden sonra main'i normal fast-forward/push ile ilerlet; main'in aynı
-commit için ayrı verified-reuse makbuzunu ve final yayın günlüğünü doğrula.
+Önce final yayın günlüğünü ve canlı feature/main HEAD'lerini doğrula. Yayın
+kapanışı PASS ise entegrasyon planının üçüncü adımı: özgün
+ServiceVolumeSupervisor ve Popen'a bağlı özel Unix kontrol sunucusu. Kayıp
+start/close yanıtı ikinci child veya cleanup başlatmamalı; salt okunur status
+özgün işlemi gözlemlemeli.
 
 Sonraki entegrasyonlar: supervisor Unix kontrol sunucusu, child final/exit/EOF
 ile volume stop/finish, host görev erişimi ve yeni tek P2 kurulum kabulü.
@@ -82,3 +98,10 @@ ile volume stop/finish, host görev erişimi ve yeni tek P2 kurulum kabulü.
   config/plugin importlarından öncedir. İlk import öncesi attestation veya
   kurulu servis kabulü iddiası yoktur. Yeniden bağlantı kontrolünde 20 checkpoint
   dosyası, sekiz korunmuş depo, kökün 33 dosyası ve eski çalışma ağaçları eşleşti.
+
+- 2026-10-27 kaynak CI kabulü: a724ffb kaynak commit'i 36 açık owned path ile
+  normal push edildi. Tam CI 4.392/4.370 PASS/22 SKIP ve hata 0; ham log,
+  GitHub status ve container sonucu doğrulandı. İlk Windows statik taraması
+  100 saniyelik sınırı aştı; stage korunarak salt okunur tekrar PASS verdi.
+  Public source-ci kaydı ve bu belge kapanışı ürün/test byte'larını değiştirmez;
+  kapanış exact-commit CI'si ve main yayın günlüğü ayrı son kapılardır.

@@ -1,6 +1,6 @@
 # P2 / R162A1 — Sabit servis receiver ve özgün factory bağlantısı
 
-Tarih: 27 Ekim 2026. **Odaklı kaynak testleri PASS; exact-commit CI ve yayın IN PROGRESS.**
+Tarih: 27 Ekim 2026. **R162A1 kaynak kabulü PASS; P2 IN PROGRESS.**
 
 Bu paket R161 servis profil/config kabulünü sabit projected receiver ve factory
 üzerinden özgün üç-store startup, R159 BorrowedServiceOwner ve R160 control
@@ -175,7 +175,7 @@ R161 core/history dosyaları yeniden yazılmadı.
 | Son birleşik Linux seçimi | 483/483 PASS, failure/error/skip 0, exit 0; 10,854351 s |
 | Aynı seçim, primary Windows | 466 PASS + 17 platform SKIP = 483; failure/error 0, exit 0; 38,271473 s |
 | Bağımsız factory config/native ve lifecycle incelemeleri | PASS; test çalıştırma iddiası taşımayan iki ayrı review kaydı |
-| Exact-commit tam CI ve yayın | IN PROGRESS |
+| Kaynak commit'inin exact-commit tam CI'si | 4.392 test: 4.370 PASS, 22 SKIP; failure/error 0, exit 0; 315,355 s |
 
 Yeni test sayısı 90'dır: receiver 35, factory 39, son READY guard 7 ve kaynak
 geçmişi 9. İlk birleşik Linux koşusu da 483/483 geçti. Ardından yalnız factory
@@ -203,13 +203,33 @@ yazılması sınanır. Kapalı loop testi fresh subprocess içinde aynı referan
 tek thread'in korunduğunu gözler; test timeout'u yalnız test çocuğunu sonlandırır.
 
 Kanıtlar [R162 dizininde](../evidence/p2-service-receiver-r162a1/).
-Odaklı koşular ve bağımsız incelemeler tamamlandı. Yayın kabulü için exact
-commit'in tam root/component CI sonucu ayrıca doğrulanacaktır.
+Odaklı koşular, bağımsız incelemeler ve kaynak commit'inin tam root/component
+CI'si tamamlandı. Kaynak commit'i
+[`a724ffb0a262553bdd820fd9db946920f6517d58`](https://github.com/esoyuince/AlazHarness/commit/a724ffb0a262553bdd820fd9db946920f6517d58)
+için GitHub `alaz/local-ci` status ID `57376067782`, delivery
+`2cb2c660-d216-11f1-887c-d672d3590abe` ve ham log aynı hedefe bağlandı.
+[source-ci.json](../evidence/p2-service-receiver-r162a1/source-ci.json), kabul
+kaydının byte-exact public kopyasıdır. Tam suite gerçekten çalıştı; bu kaynak
+CI kabulünde önceki commit'in sonucu yeniden kullanılmadı. Container exit 0,
+OOM/timeout yok ve container cleanup tamamlandı.
+
+Yayın öncesi Windows statik taramasının ilk 100 saniyelik süre sınırı aşıldı.
+Stage edilen 36 dosya ve kaynak kanıtı yeniden doğrulandı; mutation tekrarı
+yapılmadan yalnız salt okunur tarama daha geniş süreyle tamamlandı. Statik
+kontrol PASS, keşfedilen test sayısı 4.392. İlk timeout private yayın günlüğünde
+korunur; ürün test hatası veya başarılı ilk koşu olarak sunulmaz.
+
+Bu rapor ve `source-ci.json` kapanışı ürün/test dosyalarını değiştirmez. Kapanış
+commit'i de exact-commit tam CI doğrulanmadan main'e alınmaz. Ardından normal
+fast-forward/push, main'in ayrı status/delivery ile aynı son CI'a bağlı verified
+reuse kaydı ve final bütünlük kontrolü gerekir. Main reuse yeni bir tam test
+koşusu olarak sayılmaz. Kesin final commit ve bütün yayın makbuzları aktif
+çalışma ağacında `scratch/r162a1-publication/final-publication.json` ile izlenir.
 Yeni kurulum veya gerçek model/sağlayıcı çağrısı yapılmadı.
 
 ## Sonraki somut iş
 
-Factory birleşik kaynak testleri ve exact-commit yayını tamamlandıktan sonra,
+Bu kaynak paketinin yayın kapanışından sonraki iş,
 [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) üçüncü adımı:
 özgün ServiceVolumeSupervisor ve Popen'a bağlı supervisor Unix kontrol sunucusu.
 Ardından child final/exit/EOF ile volume stop/finish ve host görev erişimi gelir.
