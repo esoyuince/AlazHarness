@@ -51,7 +51,7 @@ SOURCES = {
 # identity pins, not a substitute for executing current tests and acceptance.
 CURRENT_SOURCES = {
     'packages/claw-hermes/execution_boundary.py': '3448c8912278b9368ec52b72402cc297ae75fc4d3f92541e616f1dba493c5c62',
-    'packages/claw-hermes/gateway_prepared_consumer.py': 'c31cfdb0cb27e91a596d8026ac4300b060e84572e68bc2084663988f5bf3bf59',
+    'packages/claw-hermes/gateway_prepared_consumer.py': 'a39245d907a1d8526634d6b55168a2e8ff8d08d59ea17344822b6a6bef354d2c',
     'packages/claw-hermes/gateway_store_startup.py': 'df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314',
     'packages/claw-hermes/gateway_state_projection.py': '1704cd025ce82779fabbeb6b39dc5ad501e06b0c3ef3b2dc645c09e2d95ccdba',
 }

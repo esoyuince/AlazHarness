@@ -286,7 +286,7 @@ başlatma yetkisi vermez. Özgün startup/consumer/worker-thread execution zinci
 config'i ve native loader'ın gerçek home yolunu yeniden denetler. Config drift
 admission'ı durdurur; özgün sahiplik korunuyorsa bilinen cleanup yolu çalışır.
 
-293 odaklı test Linux'ta PASS; Windows'ta 285 PASS, 8 platform SKIP ve hata0.
+Son seçimde 306 odaklı test Linux'ta PASS; Windows'ta 298 PASS, 8 platform SKIP ve hata0.
 Altı parent arşivi Git 5b7eba4 byte'larıyla eşleşti; güncel kaynak pinleri ayrı
 sınandı. Native 760 kaynak, eski finite/retained layout'lar ve R156 kurulumu
 korundu. Tam CI/yayın ayrıca status.md ile izlenir. Bu kaynak teslimatı gerçek

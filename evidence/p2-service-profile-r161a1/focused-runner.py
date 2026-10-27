@@ -25,6 +25,7 @@ NAMES = [
     'test_gateway_store_startup',
     'test_three_store_lifecycle_l113f6',
     'test_startup_consumer_owner_s124b1',
+    'test_prepared_work_guard_c127a6',
     'test_execution_profile_qa3156',
     'test_borrowed_service_host_r159a1.SourceSelectionTests',
     'test_borrowed_service_host_r159a1.ServiceConsumerSelection',

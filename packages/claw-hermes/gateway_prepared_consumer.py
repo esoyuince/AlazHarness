@@ -194,13 +194,15 @@ class PreparedRuntimeConsumer:
     def _check_service_config(self):
         # This is an admission/readiness check, separate from ownership/storage
         # checks used while draining or closing already-known native resources.
+        owner=getattr(self,'_owner',None)
+        require(owner is not None,'consumer_owner_changed')
         receipt=getattr(self,'_service_profile_receipt',None)
-        require(getattr(self._owner,'_service_profile',None) is receipt
-                and getattr(self._owner,'_service_profile_binding',None) is receipt,
+        require(getattr(owner,'_service_profile',None) is receipt
+                and getattr(owner,'_service_profile_binding',None) is receipt,
                 'consumer_service_profile_changed')
         if receipt is None:return
         self._identity()
-        self._owner._check_service_config()
+        owner._check_service_config()
 
     async def prepare(self,gateway_config,api_config):
         require(self._stage=='RESERVED','consumer_not_fresh')

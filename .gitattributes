@@ -34,3 +34,4 @@ evidence/p2-service-control-r160a1/focused-windows.log binary
 evidence/p2-service-profile-r161a1/parent-*.txt -text
 evidence/p2-service-profile-r161a1/*.log -text
 evidence/p2-service-profile-r161a1/focused-windows.log binary
+evidence/p2-service-profile-r161a1/focused-windows-repaired.log binary

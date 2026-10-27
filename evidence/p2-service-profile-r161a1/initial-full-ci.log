@@ -1,0 +1,207 @@
+{"delivery": "b4bd12da-d203-11f1-967e-fda9a5702598", "event": "push", "forced": false, "installation_id": 163212566, "received_unix": 1793104879, "ref": "refs/heads/alaz/p2-service-profile-r161a1", "repo": "AlazHarness", "repository": "esoyuince/AlazHarness", "sha": "5f038cd5ea49177c10a4e42717b016eb86268e6f", "status_sha": "5f038cd5ea49177c10a4e42717b016eb86268e6f", "version": 2}
+$ git --git-dir=/srv/alaz-ci/git/mirrors/github/esoyuince/AlazHarness.git remote update --prune
+Şu konumdan: https://github.com/esoyuince/AlazHarness
+ * [yeni dal]        alaz/p2-service-profile-r161a1 -> alaz/p2-service-profile-r161a1
+$ git -c safe.directory=* clone --no-hardlinks --no-checkout /srv/alaz-ci/git/mirrors/github/esoyuince/AlazHarness.git /srv/alaz-ci/local-ci/work/github/AlazHarness/b4bd12da-d203-11f1-967e-fda9a5702598
+Klonlama konumu: '/srv/alaz-ci/local-ci/work/github/AlazHarness/b4bd12da-d203-11f1-967e-fda9a5702598'...
+bitti.
+$ git checkout --detach 5f038cd5ea49177c10a4e42717b016eb86268e6f
+HEAD konumu: 5f038cd feat(service): bind selected profile config across startup and handoff
+$ docker run --name alaz-ci-50bfd4a109f16008bc8a1e9d7405d8f573d1a5b326760ad6e7e5358467d85708 --cidfile /var/lib/alaz-local-ci/containers/alaz-ci-50bfd4a109f16008bc8a1e9d7405d8f573d1a5b326760ad6e7e5358467d85708/container.cid --label alaz.local-ci=true --label alaz.repository=esoyuince/AlazHarness --label alaz.delivery=b4bd12da-d203-11f1-967e-fda9a5702598 --label alaz.sha=5f038cd5ea49177c10a4e42717b016eb86268e6f --cpus 1 --memory 512m --memory-swap 768m -v /srv/alaz-ci/local-ci/work/github/AlazHarness/b4bd12da-d203-11f1-967e-fda9a5702598:/workspace -v /opt/alaz/local-ci/reporters:/opt/alaz-ci-reporters:ro -w /workspace sha256:6852a9b6c39485734c2b0f616504392029499c766d1c43d3dee99df7320e9152 bash -lc set -euo pipefail; export PYTHONDONTWRITEBYTECODE=1; git config --global --add safe.directory /workspace; python3 -B /opt/alaz-ci-reporters/report_init.py tests; python3 -B /opt/alaz-ci-reporters/unittest_live.py tests; python3 -B scripts/ci_check.py
+...........................................................................................ssssssssssss......................................................sssss...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................ssss....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................E...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................s..............................................................................................................................................Executing <Task finished name='Task-1657' coro=<ConsumerServiceProfileTests.test_changed_config_still_allows_known_detach_and_store_close() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:345> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.306 seconds
+.Executing <Task finished name='Task-1662' coro=<ConsumerServiceProfileTests.test_check_rechecks_after_native_check() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:338> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.303 seconds
+.Executing <Task finished name='Task-1667' coro=<ConsumerServiceProfileTests.test_consumer_selection_must_equal_profile_generation() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:309> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.243 seconds
+.Executing <Task finished name='Task-1672' coro=<ConsumerServiceProfileTests.test_drift_blocks_check_publication_and_activation_before_native_calls() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:327> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.284 seconds
+.Executing <Task finished name='Task-1677' coro=<ConsumerServiceProfileTests.test_explicit_profile_requires_service_options_before_reservation() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:280> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.245 seconds
+.Executing <Task finished name='Task-1682' coro=<ConsumerServiceProfileTests.test_prepare_runtime_drift_has_no_consumer_slot_effect() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:290> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.256 seconds
+.Executing <Task finished name='Task-1687' coro=<ConsumerServiceProfileTests.test_replacement_or_removal_of_receipt_refuses_before_config_read() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:317> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.248 seconds
+.Executing <Task finished name='Task-1692' coro=<ConsumerServiceProfileTests.test_reserved_consumer_drift_precedes_native_qualification_and_prepare() done, defined at /workspace/tests/test_service_profile_binding_r161a1.py:298> result=None created at /usr/lib/python3.11/asyncio/runners.py:100> took 0.256 seconds
+.EEEEEEEEEEEEEEEEE.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+======================================================================
+ERROR: test_check_refuses_work_before_sql_or_native_selection (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_check_refuses_work_before_sql_or_native_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_prepared_work_guard_c127a6.py", line 97, in test_check_refuses_work_before_sql_or_native_selection
+    with self.assertRaises(c.PreparedConsumerRejected):self.v.check()
+                                                       ^^^^^^^^^^^^^^
+  File "/workspace/packages/claw-hermes/gateway_prepared_consumer.py", line 330, in check
+    self._check_service_config()
+  File "/workspace/packages/claw-hermes/gateway_prepared_consumer.py", line 198, in _check_service_config
+    require(getattr(self._owner,'_service_profile',None) is receipt
+                    ^^^^^^^^^^^
+AttributeError: 'PreparedRuntimeConsumer' object has no attribute '_owner'
+
+======================================================================
+ERROR: test_changed_file_prevents_loader_and_policy_observation (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_changed_file_prevents_loader_and_policy_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_changed_home_environment_refuses_before_loader (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_changed_home_environment_refuses_before_loader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_file_change_inside_real_loader_port_is_rejected_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_file_change_inside_real_loader_port_is_rejected_after_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_loader_context_path_change_is_observed_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_context_path_change_is_observed_after_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_loader_exception_still_runs_postcheck_without_replacing_unchanged_error (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_exception_still_runs_postcheck_without_replacing_unchanged_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_loader_home_environment_change_is_observed_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_home_environment_change_is_observed_after_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_loader_worker_snapshot_change_is_observed_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_worker_snapshot_change_is_observed_after_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_native_context_home_override_refuses_even_with_matching_environment (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_native_context_home_override_refuses_even_with_matching_environment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_original_loader_is_bracketed_by_selected_config_checks (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_original_loader_is_bracketed_by_selected_config_checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_other_source_generation_refuses_before_loader (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_other_source_generation_refuses_before_loader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_removed_replaced_or_deleted_receipt_cannot_disable_bound_guard (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_removed_replaced_or_deleted_receipt_cannot_disable_bound_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_replaced_service_owner_cannot_disable_bound_guard (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_replaced_service_owner_cannot_disable_bound_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_selected_bytes_do_not_replace_existing_loaded_model_policy (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_selected_bytes_do_not_replace_existing_loaded_model_policy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_worker_config_snapshot_refused_before_selected_file_loader (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_config_snapshot_refused_before_selected_file_loader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_worker_context_path_override_refuses_without_thread_bound_lease (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_context_path_override_refuses_without_thread_bound_lease)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_worker_thread_home_drift_refuses_without_main_thread_lease_check (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_thread_home_drift_refuses_without_main_thread_lease_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+======================================================================
+ERROR: test_worker_thread_uses_config_proof_without_main_thread_lease_check (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_thread_uses_config_proof_without_main_thread_lease_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/tests/test_service_profile_binding_r161a1.py", line 405, in setUp
+    self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+  File "/workspace/packages/claw-hermes/execution_boundary.py", line 232, in bind
+    from aiohttp import web, ClientSession, ClientTimeout
+ModuleNotFoundError: No module named 'aiohttp'
+
+----------------------------------------------------------------------
+Ran 4302 tests in 308.090s
+
+FAILED (errors=18, skipped=22)

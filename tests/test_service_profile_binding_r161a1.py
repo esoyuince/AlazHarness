@@ -1,8 +1,8 @@
 """Explicit service-profile binding on real harness code and real local files.
 
 Profile bytes, identities and SQLite close probes are real. Native imports,
-constructors, preflight/live gates, publication and the config-loader/registry
-ports are explicit fixture doubles. No native runtime, kernel confinement,
+constructors, preflight/live gates, publication, HTTP imports and the config-loader/
+registry ports are explicit fixture doubles. No native runtime, kernel confinement,
 listener, provider or model is exercised or accepted by this module.
 """
 from collections import OrderedDict
@@ -323,6 +323,19 @@ class ConsumerServiceProfileTests(unittest.IsolatedAsyncioTestCase):
                     value.check()
             check.assert_not_called()
         owner._service_profile = self.expectation
+        for field in ('_owner', '_service_profile_receipt'):
+            original = getattr(value, field)
+            for missing in (False, True):
+                if missing:delattr(value, field)
+                else:setattr(value, field, None)
+                try:
+                    with self.subTest(field=field, missing=missing), \
+                            patch.object(profile, 'check_config') as check, \
+                            patch.object(value, '_check_attached') as attached:
+                        with self.assertRaises(consumer.PreparedConsumerRejected):
+                            value.check()
+                        check.assert_not_called(); attached.assert_not_called()
+                finally:setattr(value, field, original)
 
     async def test_drift_blocks_check_publication_and_activation_before_native_calls(self):
         owner, value = self.reserve()
@@ -371,6 +384,16 @@ class TransportFixture:
     pass
 
 
+def http_import_fixture():
+    """Only bind's imported names; HTTP execution is outside these tests."""
+    def unavailable(*args, **kwargs):
+        raise AssertionError('service-profile fixture must not execute HTTP')
+    module = ModuleType('aiohttp')
+    module.web = SimpleNamespace(json_response=unavailable, Response=unavailable)
+    module.ClientSession = module.ClientTimeout = unavailable
+    return module
+
+
 class ExecutionServiceProfileTests(unittest.TestCase):
     def setUp(self):
         execution_fixture.LiveProfileConsistencyTests.setUp(self)
@@ -402,8 +425,9 @@ class ExecutionServiceProfileTests(unittest.TestCase):
         snapshot_patch.start(); self.addCleanup(snapshot_patch.stop)
         self.adapter = self.boundary.adapter; self.boundary.adapter = None
         self.app = ApplicationFixture(); self.transport = TransportFixture()
-        self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
-                           service_owner=self.service_owner)
+        with patch.dict(sys.modules, {'aiohttp': http_import_fixture()}):
+            self.boundary.bind(self.app, self.adapter, service_transport=self.transport,
+                               service_owner=self.service_owner)
         self.loader = Mock(side_effect=lambda: copy.deepcopy(self.cfg))
         loader_patch = patch.object(sys.modules['hermes_cli.config'], 'load_config_readonly', self.loader)
         loader_patch.start(); self.addCleanup(loader_patch.stop)

@@ -42,7 +42,7 @@ değildir ve böyle kullanıldığı varsayılmaz.
 
 27 Ekim 2026: ayrı service layout/expectation, bounded config okuması,
 projection ve ayrı handoff, özgün startup/consumer/worker-thread loader
-bağları tamamlandı. 293 odaklı test Linux'ta PASS; Windows'ta 285 PASS ve
+bağları tamamlandı. Son seçimde 306 odaklı test Linux'ta PASS; Windows'ta 298 PASS ve
 8 platform SKIP, failure/error 0. Tam CI ve yayın sonucu kaynak raporu ve
 status.md üzerinden ayrıca izlenir. Bu sonuç restart/capture, native effective
 config veya kurulu supervisor kabulüne genişletilmez.

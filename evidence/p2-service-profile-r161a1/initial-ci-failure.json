@@ -1,0 +1,71 @@
+{
+  "atUtc": "2026-10-27T12:50:21.089164+00:00",
+  "causes": [
+    {
+      "cause": "new boundary fixture imported absent aiohttp in minimal source CI",
+      "errors": 17,
+      "repair": "explicit no-network HTTP import ports, preserving actual boundary.bind"
+    },
+    {
+      "cause": "new consumer config guard accessed absent _owner on a legacy partial consumer before bounded PreparedConsumerRejected refusal",
+      "errors": 1,
+      "repair": "preserve bounded pre-SQL/native refusal without service-profile downgrade"
+    }
+  ],
+  "ciEnvironmentDependencyInstalledToRepair": false,
+  "container": {
+    "OOMKilled": false,
+    "cleanup": "removed",
+    "exit_code": 1,
+    "timeout": false
+  },
+  "delivery": "b4bd12da-d203-11f1-967e-fda9a5702598",
+  "errorTestIds": [
+    "test_check_refuses_work_before_sql_or_native_selection (test_prepared_work_guard_c127a6.PreparedWorkContracts.test_check_refuses_work_before_sql_or_native_selection)",
+    "test_changed_file_prevents_loader_and_policy_observation (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_changed_file_prevents_loader_and_policy_observation)",
+    "test_changed_home_environment_refuses_before_loader (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_changed_home_environment_refuses_before_loader)",
+    "test_file_change_inside_real_loader_port_is_rejected_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_file_change_inside_real_loader_port_is_rejected_after_return)",
+    "test_loader_context_path_change_is_observed_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_context_path_change_is_observed_after_return)",
+    "test_loader_exception_still_runs_postcheck_without_replacing_unchanged_error (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_exception_still_runs_postcheck_without_replacing_unchanged_error)",
+    "test_loader_home_environment_change_is_observed_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_home_environment_change_is_observed_after_return)",
+    "test_loader_worker_snapshot_change_is_observed_after_return (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_loader_worker_snapshot_change_is_observed_after_return)",
+    "test_native_context_home_override_refuses_even_with_matching_environment (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_native_context_home_override_refuses_even_with_matching_environment)",
+    "test_original_loader_is_bracketed_by_selected_config_checks (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_original_loader_is_bracketed_by_selected_config_checks)",
+    "test_other_source_generation_refuses_before_loader (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_other_source_generation_refuses_before_loader)",
+    "test_removed_replaced_or_deleted_receipt_cannot_disable_bound_guard (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_removed_replaced_or_deleted_receipt_cannot_disable_bound_guard)",
+    "test_replaced_service_owner_cannot_disable_bound_guard (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_replaced_service_owner_cannot_disable_bound_guard)",
+    "test_selected_bytes_do_not_replace_existing_loaded_model_policy (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_selected_bytes_do_not_replace_existing_loaded_model_policy)",
+    "test_worker_config_snapshot_refused_before_selected_file_loader (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_config_snapshot_refused_before_selected_file_loader)",
+    "test_worker_context_path_override_refuses_without_thread_bound_lease (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_context_path_override_refuses_without_thread_bound_lease)",
+    "test_worker_thread_home_drift_refuses_without_main_thread_lease_check (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_thread_home_drift_refuses_without_main_thread_lease_check)",
+    "test_worker_thread_uses_config_proof_without_main_thread_lease_check (test_service_profile_binding_r161a1.ExecutionServiceProfileTests.test_worker_thread_uses_config_proof_without_main_thread_lease_check)"
+  ],
+  "errors": 18,
+  "exitCode": 1,
+  "failures": 0,
+  "logBytes": 22356,
+  "logFile": "initial-full-ci.log",
+  "logSha256": "da053e56b07799d861020dad61eaf9bea79aeb73f657037438c285289efe7164",
+  "metadataFile": "b4bd12da-d203-11f1-967e-fda9a5702598.json",
+  "metadataSha256": "f62a9d7991442076ab1108d76ce621044406660b34823933b311b4597be27059",
+  "passed": 4262,
+  "ref": "refs/heads/alaz/p2-service-profile-r161a1",
+  "repairRequired": true,
+  "result": "FAIL",
+  "schema": 1,
+  "scope": "failed complete source CI; no runtime acceptance",
+  "seconds": 308.09,
+  "skipped": 22,
+  "snapshotSha256": "09e0453124969465e36b199246806f5819772122ae1e04fbba0b68bfbf44630a",
+  "status": {
+    "context": "alaz/local-ci",
+    "created_at": "2026-10-27T12:46:35Z",
+    "description": "ALAZ Local CI failed (rc=1)",
+    "id": 57363861633,
+    "state": "failure",
+    "updated_at": "2026-10-27T12:46:35Z"
+  },
+  "target": "5f038cd5ea49177c10a4e42717b016eb86268e6f",
+  "testsRun": 4302,
+  "testsSkippedToRepair": false
+}

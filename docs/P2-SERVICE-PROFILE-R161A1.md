@@ -4,7 +4,8 @@ Tarih: 27 Ekim 2026. **Kaynak uygulaması ve odaklı testler PASS; P2 IN PROGRES
 Bu paket servis profilinin açık seçimini, projection ve ayrı handoff verisini,
 özgün startup/consumer/execution bağlarını kapsar. Tam supervisor entegrasyonu,
 yeni kurulum ve gerçek model kabulü açık kalır. Linux ve primary Windows
-kaynak testleri tamamlandı; exact-commit tam CI ve yayın PENDING.
+kaynak testleri tamamlandı. İlk tam CI'nin iki nedeni düzeltildi; yeni
+exact-commit tam CI ve yayın PENDING. İlk başarısız koşu ayrıca korunur.
 
 ## Başlangıç ve korunan kapsam
 
@@ -127,8 +128,10 @@ Kayıt: [historical-source-bindings.json](../evidence/p2-service-profile-r161a1/
 
 Aşağıdaki beş yeni modülde toplam 133 test vardır. İlgili eski startup, consumer,
 execution, projection, handoff ve tarihsel kaynak denetimleriyle birleşik seçim
-293 testtir. Donmuş yedi ürün dosyasının test öncesi/sonrası hashleri eşleşti.
-Linux koşusu 293 PASS, 0 SKIP; Windows koşusu 285 PASS, 8 SKIP verdi. İkisinde
+ilk koşuda 293 testtir. CI düzeltmesi sonrasında mevcut 13 C127 work-guard testi
+de açık seçime eklendi: son seçim 306 testtir. Donmuş yedi ürün dosyasının
+test öncesi/sonrası hashleri eşleşti. Son Linux koşusu 306 PASS, 0 SKIP;
+Windows koşusu 298 PASS, 8 SKIP verdi. İkisinde
 failure/error 0 ve exit 0. Windows atlamaları POSIX FIFO/link/owner denetimleri
 ve symlink fixture erişimiyle sınırlıdır; aynı denetimler Linux'ta geçti.
 
@@ -156,9 +159,27 @@ ile kesildi. Bu iki koşu tamamlanmış başarılı gate olarak kullanılmaz.
 |---|---|
 | [focused-linux.json](../evidence/p2-service-profile-r161a1/focused-linux.json) | 293/293 PASS, 0 SKIP, 4.503s, exit 0; Linux, Python 3.12. |
 | [focused-windows.json](../evidence/p2-service-profile-r161a1/focused-windows.json) | 293 test: 285 PASS, 8 SKIP, 10.914s, exit 0; Windows, Python 3.14. |
+| [focused-linux-repaired.json](../evidence/p2-service-profile-r161a1/focused-linux-repaired.json) | Son kaynak: 306/306 PASS, 0 SKIP, 7.155s, exit 0. |
+| [focused-windows-repaired.json](../evidence/p2-service-profile-r161a1/focused-windows-repaired.json) | Son kaynak: 306 test, 298 PASS, 8 SKIP, 10.358s, exit 0. |
 | [parent-source-check.json](../evidence/p2-service-profile-r161a1/parent-source-check.json) | 6 arşiv Git 5b7eba4 ile byte-exact; 24 aktarılan dosya, 8 korunmuş depo, 33 kök dosyası ve 760 native kaynak eşleşti. |
 | `evidence/p2-service-profile-r161a1/source-ci.json` | PENDING; son exact commit'in tam CI ve yayın zinciri kaydedilecek. |
 | Yeni kurulu servis ve gerçek model | NOT RUN; bu teslimat bu kabulü içermiyor. |
+
+İlk full CI `5f038cd` üzerinde 4.302 test / 308.090s, 18 ERROR, 22 SKIP ve
+exit 1 verdi. 17 execution fixture'ı minimal CI'de bulunmayan `aiohttp`
+importuna dayanıyordu; fixture şimdi gerçek bind çağrısına yalnız gerekli
+HTTP import portlarını sağlar ve HTTP yürütülürse AssertionError verir.
+Bir C127 partial-consumer testi, owner yokken kontrollü ret yerine AttributeError
+görüyordu; yeni guard eksik/None owner için bounded PreparedConsumerRejected
+verir. Aktif service receipt eşliği None erken dönüşünden önce korunur.
+Eski C127 partial fixture bu nedenle work guard'a ulaşmadan reddedilir; doğrudan
+work-guard testleri ayrı seçimde korunmuştur. Test atlanmadı, CI bağımlılığı
+yüklenmedi. Gerçek aiohttp importu engelliyken 49 ilgili test PASS verdi.
+Kanıt: [ilk CI hatası](../evidence/p2-service-profile-r161a1/initial-ci-failure.json),
+[ham log](../evidence/p2-service-profile-r161a1/initial-full-ci.log) ve
+[düzeltme kontrolü](../evidence/p2-service-profile-r161a1/repair-check.json).
+İlk kaynak kontrol kaydı kendi checkpoint'ine aittir; consumer'ın sonraki
+dar değişikliği düzeltme kaydında eski/yeni digest ile bağlanır.
 
 Tekrarlanabilir odaklı komut:
 `python evidence/p2-service-profile-r161a1/focused-runner.py --label <yeni-etiket>`.
