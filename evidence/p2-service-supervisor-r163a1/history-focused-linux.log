@@ -1,0 +1,15 @@
+test_aliases_cannot_replace_named_binding_archive_or_evidence (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_aliases_cannot_replace_named_binding_archive_or_evidence) ... ok
+test_binding_cannot_change_types_generation_paths_or_acceptance_scope (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_binding_cannot_change_types_generation_paths_or_acceptance_scope) ... ok
+test_binding_format_and_parent_size_are_exact (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_binding_format_and_parent_size_are_exact) ... ok
+test_current_unknown_earlier_and_nonexact_inputs_do_not_read_archive (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_current_unknown_earlier_and_nonexact_inputs_do_not_read_archive) ... ok
+test_each_frozen_json_and_raw_log_refuses_changed_bytes (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_each_frozen_json_and_raw_log_refuses_changed_bytes) ... ok
+test_exact_parent_generation_selects_only_named_archive (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_exact_parent_generation_selects_only_named_archive) ... ok
+test_known_parent_missing_binding_or_archive_fails_closed (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_known_parent_missing_binding_or_archive_fails_closed) ... ok
+test_live_bytes_are_not_an_archive_or_current_acceptance_authority (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_live_bytes_are_not_an_archive_or_current_acceptance_authority) ... ok
+test_record_generations_do_not_relabel_initial_r160_source (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_record_generations_do_not_relabel_initial_r160_source) ... ok
+test_tracked_original_r160_evidence_remains_byte_exact (test_service_supervisor_history_r163a1.ServiceSupervisorHistoryTests.test_tracked_original_r160_evidence_remains_byte_exact) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.126s
+
+OK

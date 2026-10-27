@@ -1,0 +1,47 @@
+{
+  "base": "dc1ccb5ecf4e9741f6fd828a03e8ebed7f9497b7",
+  "currentSourceAcceptance": false,
+  "nativeRerun": false,
+  "preservedLogs": {
+    "evidence/p2-service-control-r160a1/focused-linux.log": {
+      "sha256": "47e610216b45f4f8328254ec4a04c5556bdedda2e64411a725c6bd5a0e5df8b6",
+      "size": 12212
+    },
+    "evidence/p2-service-control-r160a1/focused-windows.log": {
+      "sha256": "e0339c2d6768051f4e5a13ecb35b653337c1b871b6b6c7a7ad7155602c39a4d9",
+      "size": 15179
+    },
+    "evidence/p2-service-control-r160a1/initial-focused-linux.log": {
+      "sha256": "c904b44b006b5fbe8df8b9e3331b1d8c1337094d62a8250729413a00ae935294",
+      "size": 11528
+    }
+  },
+  "preservedRecords": {
+    "evidence/p2-service-control-r160a1/focused-linux.json": {
+      "sha256": "1f6abda42956eec4d2ffe92998c8678ec72876745a1098e65137d84e1008fda2",
+      "size": 2302
+    },
+    "evidence/p2-service-control-r160a1/focused-windows.json": {
+      "sha256": "14e949756d282766194cf60d3b5eb4f4ad58e650cf60e39dfcb72ce8b2a17600",
+      "size": 2215
+    },
+    "evidence/p2-service-control-r160a1/initial-focused-linux.json": {
+      "sha256": "31dbf9ec183f85b03fb356209b502d9f46ed5d993d01aa15412f12bafc998ff0",
+      "size": 2086
+    }
+  },
+  "recordSourceGenerations": {
+    "evidence/p2-service-control-r160a1/focused-linux.json": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8",
+    "evidence/p2-service-control-r160a1/focused-windows.json": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8",
+    "evidence/p2-service-control-r160a1/initial-focused-linux.json": "eb28de8c043aaf8105cfc54261ccd481424cf973de756ae4aea73753142f9d29"
+  },
+  "scope": "historical_receipt_source_identity_only",
+  "sources": {
+    "packages/claw-hermes/service_volume_supervisor.py": {
+      "path": "evidence/p2-service-supervisor-r163a1/parent-packages__claw-hermes__service_volume_supervisor.py.txt",
+      "sha256": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8",
+      "size": 3281
+    }
+  },
+  "version": 1
+}

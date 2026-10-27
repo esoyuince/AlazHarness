@@ -1,0 +1,605 @@
+{
+  "atUtc": "2026-10-27T16:15:14.299572+00:00",
+  "errors": 0,
+  "exitCode": 0,
+  "expectedFailures": 0,
+  "failures": 0,
+  "kernelConfinementTested": false,
+  "label": "windows",
+  "logBytes": 126792,
+  "logFile": "focused-windows.log",
+  "logSha256": "3ff80841b609bceed571fd1e40f4453c53902ff601b8fc6bd2f4bb4e47bbab0b",
+  "nativeServiceStarted": false,
+  "passed": 608,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "result": "PASS",
+  "runnerSha256": "0b9778344323ca9a91926abb0af3d945722010bec9bf0ad325768e9667538ecc",
+  "schema": 1,
+  "scope": "supervisor/Unix/CLI and direct dependency source/fixture contracts; real fixture sockets and pipes, not installed/native/kernel/model acceptance",
+  "seconds": 30.7819,
+  "selectedTestIdsSha256": "641a97535e7eac8fe1b518848d7cae4874d01f7ec53b891ab25af87ca1354df1",
+  "selectedTests": 721,
+  "skipped": 113,
+  "skippedTests": [
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_foreign_ready_and_exited_child_cannot_admit_another_attempt",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_lost_close_is_observed_without_new_sequence_or_command",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_lost_ready_observes_original_reply_without_bootstrap_resend",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_other_actor_cannot_operate_original_child",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_partial_bootstrap_observe_and_close_never_flush_remaining_input",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_same_owner_popen_channel_fixed_launch_and_clean_final_keep_volume_closed_off",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_supervisor_r163a1.ActualChildPipes.test_worker_controller_child_and_channel_identity_changes_block_commands",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_absolute_canonical_short_socket_path_is_required",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_actor_and_volume_token_and_start_ticks_rechecked",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_actual_client_disconnect_after_complete_request_retains_effect",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_bind_private_socket_and_original_private_connection_without_launch",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_bound_socket_mode_drift_is_not_adopted",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_capacity_never_evicts_or_reenables_previous_mutations",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_changed_parent_permissions_or_identity_refuse_endpoint",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_child_final_exit_and_eof_still_never_report_outer_closed",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_close_before_start_is_cached_refusal_without_volume_cleanup",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_complete_newline_without_request_eof_never_dispatches",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_conflicting_request_id_does_not_dispatch_close_or_observe",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_different_start_id_is_retained_refusal_without_second_launch",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_existing_regular_file_and_stale_socket_are_never_removed",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_fragmented_request_dispatches_only_after_complete_eof",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_frozen_launch_is_unchanged_by_original_mutable_inputs",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_listener_close_retains_live_child_and_existing_path_without_cleanup",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_lost_response_preserves_same_request_owner_and_child",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_nonblocking_accept_and_timeout_limits_are_explicit",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_one_real_child_and_eof_terminated_ready_response",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_operation_baseexception_keeps_slot_and_sanitizes_diagnostics",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_owner_mismatch_for_every_action_precedes_all_lifecycle_dispatch",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_peer_credentials_must_match_original_host_actor",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_peer_refusal_happens_before_read_or_dispatch",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_post_mutation_reply_exception_cannot_claim_no_dispatch",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_reentrant_main_thread_cannot_reset_mutation_dispatch_marker",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_replaced_socket_is_refused_and_close_listener_does_not_unlink_it",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_same_start_request_observes_without_a_second_child",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_second_server_on_original_volume_is_rejected",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_socket_backpressure_has_one_bounded_write_deadline",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_status_does_not_complete_partial_child_input_after_timeout",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_status_same_id_is_read_only_and_does_not_consume_mutation_cache",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_symlink_and_nonprivate_parent_are_refused",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_uncertain_bind_retains_original_descriptor_and_never_retries",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_unexpected_snapshot_closed_or_boolean_identity_is_unknown",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_wrong_service_and_malformed_request_have_no_effect",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_server_r163a1.ServerTests.test_wrong_thread_cannot_reset_active_dispatch_or_change_ready_view",
+      "Linux Unix sockets and peer credentials required"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_id_conflict",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_lifecycle",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_lost_close",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_lost_start",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_pending_start",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_stale_owner",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_control_cli_r163a1.ServiceControlCliIntegration.test_trailing_frame",
+      "Linux Unix sockets, SO_PEERCRED and process identity"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_changed_real_config_content_refused_before_factory",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_real_profile_bytes_and_source_selection_pass_without_sql_or_factory",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_replaced_real_config_inode_refused_even_with_same_bytes",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_launch_r162a1.RealProfileReceiver.test_self_consistent_wire_cannot_select_other_installed_source",
+      "temporary POSIX target with real profile files"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_cancelled_pipe_observer_does_not_steal_next_frame",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_eof_and_partial_eof_are_explicit",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_fragmented_frames_and_multiple_frames_are_bounded",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_output_reader_loss_is_explicit_and_does_not_close_pipes",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_child_control_r160a1.PipeTests.test_output_uses_one_canonical_newline_without_executor_thread",
+      "requires POSIX pipe readiness"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_all_auxiliary_fifo_swaps_are_nonblocking_refused_and_closed",
+      "POSIX nonblocking FIFO race contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_fifo_refused_without_blocking_open",
+      "POSIX FIFO contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_hardlink_refused",
+      "POSIX hardlink contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_owner_and_mode_are_private",
+      "POSIX mode/owner contract; Windows fixture doubles metadata"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_symlink_refused_before_open",
+      "POSIX symlink contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_fifo_swap_between_lstat_and_open_is_nonblocking_and_refused",
+      "POSIX nonblocking FIFO race contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_home_symlink_alias_refused",
+      "POSIX symlink contract"
+    ],
+    [
+      "test_service_profile_history_r161a1.ServiceProfileHistoryTests.test_archive_symlink_is_not_a_named_parent_file",
+      "symlink fixture unavailable: OSError"
+    ],
+    [
+      "test_service_volume_r160a1.IdleFrameTests.test_real_idle_pipe_survives_then_reads_exact_stop",
+      "POSIX pipe select required"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_final_and_eof_are_not_exit_until_original_process_reaped",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_final_before_ready_and_unsolicited_final_are_rejected",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_foreign_epoch_instance_or_service_never_establishes_ready",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_fragmented_ready_retains_bounded_partial_bytes",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_fragmented_reply_does_not_need_resending_input",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_full_ready_status_drain_final_exit_is_not_volume_permission",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_invalid_action_never_consumes_sequence",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_nonzero_exit_and_trailing_bytes_invalidate_final",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_observe_never_transmits_remaining_partial_bootstrap",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_overlong_frame_is_fatal_with_bounded_memory",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_partial_eof_and_successful_exit_without_final_do_not_close",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_pid_epoch_and_instance_input_bounds_fail_without_start",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_ready_before_complete_bootstrap_cannot_acknowledge_unsent_bytes",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_ready_timeout_and_response_loss_use_original_frame_without_resend",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_reply_sequence_must_match_exact_inflight_command",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_reply_timeout_observes_original_command_exactly_once",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_start_twice_and_invalid_timeout_do_not_send_or_reserve",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_supervised_service_channel_r160a1.ServiceChannelTests.test_stderr_is_fully_counted_and_hashed_but_tail_is_bounded",
+      "requires selectable POSIX subprocess pipes"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_abort_after",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_abort_before",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_cli_close",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_cli_config",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_cli_interrupted",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_cli_start",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_cli_status",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_closed",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_command_completion",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_drain_ack",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_eof_required",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_framing",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_identity",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_invalid_input",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_lost_response",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_owner_precondition",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_partial_close",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_ready",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_response_bound",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_sanitized_error",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_socket_trust",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_status_recovery",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_service_control_r160a1.ServiceControlTests.test_unknown",
+      "Linux private Unix supervisor channel; schema validation is portable"
+    ],
+    [
+      "test_supervised_pipe_capture.RealPipeContracts.test_invalid_bounds_refuse_before_any_pipe_operation",
+      "fixed Linux product pipe transport"
+    ],
+    [
+      "test_supervised_pipe_capture.RealPipeContracts.test_large_input_and_two_output_pipes_do_not_deadlock",
+      "fixed Linux product pipe transport"
+    ],
+    [
+      "test_supervised_pipe_capture.RealPipeContracts.test_output_overflow_is_bounded_and_does_not_signal_owned_child",
+      "fixed Linux product pipe transport"
+    ],
+    [
+      "test_supervised_pipe_capture.RealPipeContracts.test_timeout_then_explicit_read_observation_never_resends",
+      "fixed Linux product pipe transport"
+    ]
+  ],
+  "sourceHashes": {
+    "packages/claw-hermes/execution_boundary.py": "3448c8912278b9368ec52b72402cc297ae75fc4d3f92541e616f1dba493c5c62",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "a39245d907a1d8526634d6b55168a2e8ff8d08d59ea17344822b6a6bef354d2c",
+    "packages/claw-hermes/gateway_profile_lease.py": "defe5dafd7320d0361930baac210190369e8b7e2e764819bd7d1143435535f95",
+    "packages/claw-hermes/gateway_service_control.py": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55",
+    "packages/claw-hermes/gateway_service_factory.py": "3e92cae2ebdffea75b5a9a02c135f0011b4dfa513d81474db60fc4195e177559",
+    "packages/claw-hermes/gateway_service_handoff.py": "37ffa5bd23b77b858c7a38cc90434ecb8416ba1e95ea491f8e913b91015daf9c",
+    "packages/claw-hermes/gateway_service_launch.py": "8c914925e6860c8e7b7e35e247cab480e4f34d085fce57b5eb276aa0ea9c289c",
+    "packages/claw-hermes/gateway_service_profile.py": "a6e4f1f5572006f72658902a6927a71faaa7d837d41a0dfa67e473622b05d05b",
+    "packages/claw-hermes/gateway_service_projection.py": "dc4ad0577625b2cb9197278ae76ad29289c5c0e1f695991f3485c42b25c5b57a",
+    "packages/claw-hermes/gateway_service_runtime.py": "109bc6eef0a8507f9149e83785e9b51f270b4689e45dd96830cf57aae2195fea",
+    "packages/claw-hermes/gateway_state_projection.py": "1704cd025ce82779fabbeb6b39dc5ad501e06b0c3ef3b2dc645c09e2d95ccdba",
+    "packages/claw-hermes/gateway_store_startup.py": "df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314",
+    "packages/claw-hermes/gateway_supervised_launch.py": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364",
+    "packages/claw-hermes/gateway_supervised_service.py": "9afadd091afd7c3dece4d3837bff75fcbb9d048ca5fbad6403c33a050111e0ed",
+    "packages/claw-hermes/host_gate.py": "8102c89d1960d9e1ad607c169b45f36008910482cebc0960ca376f83d6d64f2d",
+    "packages/claw-hermes/service-control.mjs": "6cba0cdac5de88990a861d811be6b81c66838784da9d260f32dfb243e45198a3",
+    "packages/claw-hermes/service_control_server.py": "6b80555122e17561ffc1d588eab25d70445f5515c716ae31a4f3ccc8cb82ce31",
+    "packages/claw-hermes/service_volume_supervisor.py": "82d2439a3f22873267ae9f7606eef2b032f6203f2dab240c41c1c5bbd5b132df",
+    "packages/claw-hermes/state_image_lease.py": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+    "packages/claw-hermes/state_volume_supervisor.py": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080",
+    "packages/claw-hermes/supervised_service_channel.py": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974",
+    "scripts/alaz_local.mjs": "c94cd47d9cbf9c69e7992b97b450740fea49f98877405bc441e7831c71e80d30",
+    "scripts/run_service_projected.py": "b55c8a8d40aec5ccd5829c619bb8ab32afd26e87d8d398604d2dbacd3f413828",
+    "scripts/run_service_volume_worker.py": "71435f9fc1a04d3213976a93a3623a54a8aca69f1194c8470c62fc28669c4586",
+    "scripts/run_supervised_service.py": "461e9ad2c1808714a688e2a391f8e0b5605f658f376cc8913b396e354e5d1629"
+  },
+  "sourceHashesUnchangedAfterTest": true,
+  "testHashes": {
+    "tests/fixtures/service-control-server-r163a1.py": "e7f2cb79c89f082ffdcadd5c7117571d85982c7d02b3daee9316cff365db5271",
+    "tests/historical_service_receiver_r162a1.py": "5422bad914d0d410e328f589c574df01a59c379d60204ddf7971d37aec6f7bdb",
+    "tests/historical_service_supervisor_r163a1.py": "ed690902e1a27585a5182455bba143964d0fe15b55703ba09ad587ae79e7d8bb",
+    "tests/node/service-control-r160a1.mjs": "9dd57eb8ed1dca97b8bef6032cc946da5d38fbc93d1064a13e10e6170a21de1f",
+    "tests/node/service-control-r163a1.mjs": "e80a99f9e407d1048cff48d8b459a4e0d53e4e77b4c6b9e47d8ae5ffd8ee0b79",
+    "tests/service_factory_fixtures_r162a1.py": "e56572f3bcc77200169fad9c26b9a025510c85d37c0ce3a8b19265ab272ea654",
+    "tests/service_profile_fixtures_r161a1.py": "7c38fee5878d7efe98acd4da0411ac8ceef4c0557599a761e53e1252c0d62192",
+    "tests/service_supervisor_fixtures_r163a1.py": "df0fce876095274aa1139f4c404b69f60fe3d7da1012ef4e6c30176adc0e7172",
+    "tests/test_borrowed_service_host_r159a1.py": "2d5a68c61e1eabfc0803c915bcdfa303dd94df6ee6a70e1910b7f527e99e0183",
+    "tests/test_execution_profile_qa3156.py": "4241f4621cd78b5385bba6ada5c979a175cc8a4f48220a6ad03910269aa87192",
+    "tests/test_finite_projected_launch.py": "07569246d1253752ce3b86247ce76d4876934f8ffa40937b68c3b2d0dc2c7364",
+    "tests/test_gateway_state_projection.py": "165b880cda0f94565635ea09a4de5a5579baeb8211b0ab5be9c1489b0017c3ea",
+    "tests/test_gateway_store_startup.py": "6ac62cb8be0b29af3881004aad283e53cadefa6b251dbd3eddbd5dfcdfc86405",
+    "tests/test_historical_borrowed_service_r159a1.py": "7b595d9fa76ea3f0e4bbe290a07673864b6cadc0bb66c70c63fbaa39e3d710f2",
+    "tests/test_prepared_work_guard_c127a6.py": "7e3f871a0212011da6f63972ee1a22ac6a83e6a926b319295a653d03480c1a70",
+    "tests/test_projected_launch_l145a8.py": "e20eed0610107ffc36d6f24ea7b545e49666da9779eafcd56f6818131e87917e",
+    "tests/test_retained_handoff_t143a7.py": "ef1a9a287414331cfee64cf94ddb2f7ead9fc5b12b948b2391271b1e86b8f353",
+    "tests/test_retained_projection_p142c6.py": "2075b2d94284fa02e568eb0e56a79485be88e214a73fab904716097d69946ade",
+    "tests/test_self_identity_history_r150a1.py": "5c2b15cfff6232cda9bdcccea049735ddd52f34015ebea05950e93b329ccebb7",
+    "tests/test_service_child_control_r160a1.py": "e9f96948793ec5cfd630a11f9b76246b2c89b75a5c7d977e34d3fe4928164393",
+    "tests/test_service_control_cli_r163a1.py": "1ddbd7048612761f2868adc101b500b63a8184c01405826b73c41b544f272648",
+    "tests/test_service_control_r160a1.py": "49520a46e0fcf36c881fd14a73c5291058814492fb00d8457a53f470f8cd1e1a",
+    "tests/test_service_control_server_r163a1.py": "c25b7a03be4af031c66bcdc07677a8a4a13494a204dea1654d615a581eb42b0b",
+    "tests/test_service_factory_r162a1.py": "32317cf67d366f73dd6b8aeb34ddb12c6de3bb4bdbad16cd1ceb4126d9bb4b47",
+    "tests/test_service_handoff_r161a1.py": "02af15f8c3d4206983f983e760304301fdda9d477f115dd2e644c8a5082a382f",
+    "tests/test_service_launch_r162a1.py": "ea6345215fed2b9e39d1d4a687aefdb29c22a52499a6f25050096f0e770bb364",
+    "tests/test_service_profile_binding_r161a1.py": "6b4544fc407e72e339f07fb1d1df6e67883ccc163424ae344b7534c7bc913b79",
+    "tests/test_service_profile_history_r161a1.py": "82a153ab54660ac04b09f05566f7821a2740d0fc54a0017b78776f63ebdb3874",
+    "tests/test_service_profile_r161a1.py": "a586326f95cefc83c4d06a63534fd2ff55c7c55ba1c5c4acb29bd955d164d4f4",
+    "tests/test_service_projection_r161a1.py": "645a42f81cf079891e2a968042fc4e8e62d5eec14c9de9f65e87a4d288470ae3",
+    "tests/test_service_ready_config_r162a1.py": "ec03bbcbd2931f7a0162ba49681e97e27b394f33c42bf8d17f20b26153b2f95d",
+    "tests/test_service_receiver_history_r162a1.py": "27786f272142afdda702ed54f2b2186e61102da488b0dc53e38c8aa17abae02b",
+    "tests/test_service_supervisor_history_r163a1.py": "5079247cca0442d7d488125f72dc15feecfb22ea19d0cdd130769907c18b9bf9",
+    "tests/test_service_supervisor_r163a1.py": "1d6f21fd64f40f65d90fc44a48f916ebd4d341d312636ff5f1da9353e752b29d",
+    "tests/test_service_volume_r160a1.py": "76473b3b1385d8d74109a27430fd2e5b8d8aa9bad9d14d36184f3862da7e3155",
+    "tests/test_startup_consumer_owner_s124b1.py": "80e171fdf9d45a284adb412556c7989dd5b30e08995d7d598d412868d0943da4",
+    "tests/test_state_volume_supervisor.py": "76e4651b56989d901ec30b0e43df7c165f88c8940f6704cba56a2b14393d36e9",
+    "tests/test_supervised_finite_launch.py": "491f91bee101e1445ba824f16cd9ffeb2c9a38f17c60a1d146cba57f9c74cdb4",
+    "tests/test_supervised_pipe_capture.py": "ae558c5ba812ba7e2c85f7dff1f18000176fa7b5707aafe14c33464fd1a8c086",
+    "tests/test_supervised_retained_launch.py": "d33c33892ee201c773d1cd232245fe49e41dfcac3481bf239878111a57bb0cf5",
+    "tests/test_supervised_service_channel_r160a1.py": "af3bba8b1e419c1b2da84e7912e74b8c80f386643fcfef4a8dc538dfad112c38",
+    "tests/test_three_store_lifecycle_l113f6.py": "f9132598cb431eeabebb86a4a7b9989bf5dc58d48195a9fad4abf5421fad4acc"
+  },
+  "testHashesUnchangedAfterTest": true,
+  "testSelectors": [
+    "test_service_supervisor_r163a1",
+    "test_service_control_server_r163a1",
+    "test_service_control_cli_r163a1",
+    "test_service_supervisor_history_r163a1",
+    "test_service_launch_r162a1",
+    "test_service_factory_r162a1",
+    "test_service_ready_config_r162a1",
+    "test_service_receiver_history_r162a1",
+    "test_projected_launch_l145a8",
+    "test_finite_projected_launch",
+    "test_service_child_control_r160a1",
+    "test_borrowed_service_host_r159a1.ServiceClosureTests",
+    "test_historical_borrowed_service_r159a1",
+    "test_service_profile_r161a1",
+    "test_service_profile_binding_r161a1",
+    "test_service_projection_r161a1",
+    "test_service_handoff_r161a1",
+    "test_service_profile_history_r161a1",
+    "test_gateway_store_startup",
+    "test_three_store_lifecycle_l113f6",
+    "test_startup_consumer_owner_s124b1",
+    "test_prepared_work_guard_c127a6",
+    "test_execution_profile_qa3156",
+    "test_borrowed_service_host_r159a1.SourceSelectionTests",
+    "test_borrowed_service_host_r159a1.ServiceConsumerSelection",
+    "test_borrowed_service_host_r159a1.ServiceStartupGuards",
+    "test_gateway_state_projection",
+    "test_retained_projection_p142c6.MappingContract",
+    "test_retained_projection_p142c6.ProjectionSequence",
+    "test_retained_projection_p142c6.PivotBarrier",
+    "test_retained_projection_p142c6.OriginalStartupHandoff",
+    "test_retained_handoff_t143a7",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_launcher_cannot_be_hidden_by_applied_archive",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_launcher_cannot_be_hidden_by_current_source",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_projection_cannot_be_hidden_by_parent_archive",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_projection_cannot_be_hidden_by_current_source",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_unknown_paths_or_generations_are_not_redirected",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_archive_is_never_accepted",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_manifest_cannot_point_to_another_file",
+    "test_service_volume_r160a1",
+    "test_supervised_service_channel_r160a1",
+    "test_service_control_r160a1",
+    "test_supervised_retained_launch",
+    "test_supervised_finite_launch",
+    "test_supervised_pipe_capture",
+    "test_state_volume_supervisor"
+  ],
+  "testsRun": 721,
+  "unexpectedSuccesses": 0,
+  "uniqueTestIds": 721
+}

@@ -1,107 +1,69 @@
 # AlazHarness — status
 
-## R162A1 — sabit projected servis receiver/factory — kaynak kabulü PASS
+## R163A1 — özgün supervisor ve Unix kontrol sunucusu — IN PROGRESS
 
 P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
 
-- Aktif dal: `alaz/p2-service-receiver-r162a1`.
-- Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-receiver-r162a1`.
-- Başlangıç ve önceki yayımlanmış main: `b56b9b321002a5bb8696fcae27edcfc92c28df1c`.
-- Kabul edilmiş kaynak commit'i: `a724ffb0a262553bdd820fd9db946920f6517d58`.
-- Son kapanış commit'i ve main yayın makbuzu: aktif çalışma ağacında
-  `scratch/r162a1-publication/final-publication.json`; canlı HEAD/ref'lerle doğrulanır.
-- Önceki R161 kapanışı: 4.302 test, 4.280 PASS, 22 SKIP; exact-commit tam CI ve main verified reuse PASS.
+- Aktif dal: `alaz/p2-service-supervisor-r163a1`.
+- Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-supervisor-r163a1`.
+- Başlangıç ve yayımlanmış main: `dc1ccb5ecf4e9741f6fd828a03e8ebed7f9497b7`.
+- Önceki R162 final günlüğü: `scratch/r162a1-publication/final-publication.json`
+  (R162 çalışma ağacı), SHA-256 `7522fe8ea5267866a1a5de82368148c9a1452f7b50bf406cc46b44dd3bf33314`.
 - Native seçim: `5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d`, 760 dosya; değişmedi.
-- Başlangıç makbuzları: `scratch/r162a1-publication/baseline.json` ve `worktree-created.json`.
-- Önceki durumun tam kaydı: [R161 parent](docs/status-history/r162a1-parent.md).
+- Önceki durumun tam kaydı: [R162 parent](docs/status-history/r163a1-parent.md).
 
-### Amaç ve mevcut sonuç
+### Amaç ve kapsam
 
-R161 ServiceStartup transferini sabit kardeş receiver ile doğrulayıp aynı
-ProfileLease / NativeStoreStartup / BorrowedServiceOwner nesnelerini R160
-control driver'a bağla. Aynı runner, authority, epoch ve üç fiziksel store
-korunur. Tek startup denemesi, READY öncesi config/source kabulü ve UNKNOWN
-sonucunda özgün owner/loop'un korunması yeni birleştirme sınırlarıdır.
+[Entegrasyon planının](docs/P2-SERVICE-INTEGRATION-R161A1-PLAN.md) üçüncü adımı:
+özgün ServiceVolumeSupervisor begin/attach/start akışı içinde tek sabit servis
+çocuğunu sahiplenmek ve R160 CLI için özel Unix kontrol sunucusunu bağlamak.
+Aynı Popen ve ServiceChannel korunur; PID/startTicks/token eşliği mutation
+öncesinde doğrulanır. Kaybolan start/close yanıtı ikinci child veya cleanup
+başlatmaz; status yalnız özgün işlemin mevcut kanıtını okur.
 
-Canlı başlangıç doğrulaması PASS: korunan sekiz depo, kökün 33 değişmiş
-dosyası, önceki R161/R160 çalışma ağaçları ve 760 native kaynak eşleşti.
-Yeni izole dal main'in yayımlanmış commit'inden açıldı. Değiştirilecek
-kaynaklar bu çalışma ağacında; özgün kökteki kullanıcı değişiklikleri korunur.
+Child final/exit/EOF ile volume stop/finish bağlantısı dördüncü adımdır ve bu
+pakette açık kalır. Child kapanışı tek başına dış CLOSED veya imaj lease release
+kanıtı değildir. Host görev erişimi, yeni P2 kurulumu ve gerçek model kabulü açıktır.
+
+### Başlangıç doğrulaması
+
+R162 final günlüğü beklenen hash ile eşleşti. Main ve R162 HEAD dc1ccb5, çalışma
+ağaçları temiz. Korunan sekiz depo, kökün 33 değişmiş dosyası ve önceki R161/R160
+çalışma ağaçları eşleşti. Native 760 kaynak byte'ı ve remote ref'ler değişmedi.
+Yerel kaynak seçiminin 873 dosyası aynı base Git blob'larıyla birebir doğrulandı.
+Yeni izole dalın oluşturulması ve başlangıç kayıtları
+`scratch/r163a1-publication/` altında izlenir.
 
 ### Test ve yayın
 
-Receiver/entry: yerel 35 yeni test ve ilgili eski seçimle 102/102 PASS, exit 0.
-READY/config düzeltmesi: parent üzerinde 7 testte 4 FAIL / 3 PASS; dar düzeltme
-sonrasında 7/7 PASS. Yeni tarihsel koruma ve ilgili lifecycle seçimi 38/38 PASS,
-exit 0. İki kaynak bölümü bağımsız salt-okunur incelemeden geçti. Bu sonuçlar
-kaynak/fixture kapsamındadır; ham kayıtlar evidence/p2-service-receiver-r162a1 altındadır.
-
-Receiver, READY guard ve factory kaynakları primary çalışma ağacına aktarıldı.
-Factory'nin 39 yeni testi dahil son birleşik seçim: Linux 483/483 PASS, 0 SKIP,
-exit 0 (10,854351 s); primary Windows 466 PASS + 17 platform SKIP = 483,
-failure/error 0, exit 0 (38,271473 s). Aynı test kimlikleri, runner ve 14 ürün
-kaynak hash'i iki koşuda eşleşti. Config/native ve lifecycle bağımsız incelemeleri
-PASS. Son kanıtlar `focused-linux-r2.*`, `focused-windows.*` ve iki review JSON'udur.
-İlk Linux kaydı son Windows CRLF test karşılaştırması düzeltmesinden önceki ayrı
-483/483 sonucu olarak korundu; ürün değişmedi.
-
-Kaynak commit'i a724ffb'nin exact-commit tam CI'si PASS: **4.392 test, 4.370 PASS,
-22 SKIP, failure/error 0, exit 0; 315,355 s.** GitHub status ID `57376067782`
-ve delivery `2cb2c660-d216-11f1-887c-d672d3590abe` aynı hedefe, ham loga ve
-container sonucuna bağlandı. Public kabul kaydı:
-`evidence/p2-service-receiver-r162a1/source-ci.json`.
-
-Bu durum kaydı kaynak CI makbuzunu ekleyen belge kapanışına aittir. Kapanış
-commit'i de exact-commit tam CI kabulünden sonra main'e normal fast-forward
-ile aktarılır. Son main status/delivery, verified reuse, pre-main/final bütünlük
-ve kesin commit `scratch/r162a1-publication/final-publication.json` kaydıyla
-bağlanır; main sonucu ikinci bir tam suite koşusu sayılmaz. Bu dosyanın varlığı
-tek başına yayın kabulü değildir; devam ederken final journal ve canlı Git
-durumu kontrol edilir.
-Yeni kurulum, native servis çalıştırma veya gerçek model/sağlayıcı çağrısı yoktur.
+R163 ürün kaynakları ve bağımsız inceleme PASS. Son birleşik Linux seçimi
+721/721 PASS; 0 SKIP/failure/error, exit 0, 34,652970 saniye. 25 ürün dosyası,
+42 test/destek dosyası ve runner hashleri koşu öncesi/sonrası aynı. Gerçek Unix
+socket, SO_PEERCRED, Node CLI ve scripted child pipe entegrasyonu bu kapsamdadır;
+kernel/native kurulum kabulü değildir. Primary Windows aynı 721 testte 608 PASS
+ve 113 platform SKIP; failure/error 0, exit 0, 30,781900 saniye. JSON ve ham log
+byte'ları geri okunup aynı kaynak/test/runner ve ordered test ID seçimine bağlandı.
+Exact-commit tam CI henüz NOT RUN. Önceki R162 kapanışı yeni kaynak başarısı sayılmaz.
+Yeni kurulum, native servis çalıştırma veya model/sağlayıcı çağrısı yoktur.
 
 ### Kesin sonraki adım
 
-Önce final yayın günlüğünü ve canlı feature/main HEAD'lerini doğrula. Yayın
-kapanışı PASS ise entegrasyon planının üçüncü adımı: özgün
-ServiceVolumeSupervisor ve Popen'a bağlı özel Unix kontrol sunucusu. Kayıp
-start/close yanıtı ikinci child veya cleanup başlatmamalı; salt okunur status
-özgün işlemi gözlemlemeli.
-
-Sonraki entegrasyonlar: supervisor Unix kontrol sunucusu, child final/exit/EOF
-ile volume stop/finish, host görev erişimi ve yeni tek P2 kurulum kabulü.
-[Entegrasyon planı](docs/P2-SERVICE-INTEGRATION-R161A1-PLAN.md) açık kalır.
+Son kaynak seçiminde statik gate, normal feature push, exact-commit tam CI ve
+main yayın kapanışı. Sonucu belirsiz mutation yoktur. Kaynak yayınından sonra
+planın dördüncü adımı olan özgün volume stop/finish bağlantısına geç.
 
 ### İş günlüğü
 
-- 2026-10-27 başlangıç: R161 final yayın kaydı
-  `e45e98eefc8ca24a569847097e10fb5cafeb30bdb4a9ce6cd050c20524df5165`
-  ve canlı Git/dosya durumu doğrulandı. Base b56b9b3 üzerinden izole R162 dalı
-  açıldı. Receiver, factory ve provenance için üç bağımsız çalışma ayrıldı.
-- 2026-10-27 ön inceleme: eski finite/readiness launcher'ı değiştirmeden kardeş
-  receiver/entry seçildi. Native plugin/config kaynakları seçilmiş manifest
-  hash'leriyle okundu. Son async readiness aralığındaki config drift'i yeni
-  assembly testine alındı; henüz uygulanmış/test edilmiş sonuç değildir.
-
-- 2026-10-27 kaynak checkpoint: receiver/entry ve final READY config guard'ı
-  tamamlandı; 102 ve 38 testlik ayrı yerel seçimler PASS. Son async aralıkta
-  config/source/receipt değişiminin yanlış READY üretmesi dört negatif testle
-  doğrulandı ve dar hook ile düzeltildi. Parent runtime ve eski dokuz R159
-  kanıtı ayrı hash'lerle korundu. Factory kaynak taslağı bağımsız review'da;
-  native config loader'ın backup yan etkisi owner.start sonrasına sıralandı.
-
-- 2026-10-27 son kaynak seçimi: stderr/exception diagnostic hatası ve kapalı loop
-  retention boşlukları düzeltildi; foreign exception metni diagnostic'e taşınmaz.
-  Factory'nin 39 testiyle toplam 90 yeni test eklendi. Son Linux 483 ve Windows 466+17 koşuları
-  PASS; bağımsız iki factory review PASS. İlk native ownership/store importları
-  mevcut güvenilir kurulum önkoşulunu korur; 760 qualification sonraki native
-  config/plugin importlarından öncedir. İlk import öncesi attestation veya
-  kurulu servis kabulü iddiası yoktur. Yeniden bağlantı kontrolünde 20 checkpoint
-  dosyası, sekiz korunmuş depo, kökün 33 dosyası ve eski çalışma ağaçları eşleşti.
-
-- 2026-10-27 kaynak CI kabulü: a724ffb kaynak commit'i 36 açık owned path ile
-  normal push edildi. Tam CI 4.392/4.370 PASS/22 SKIP ve hata 0; ham log,
-  GitHub status ve container sonucu doğrulandı. İlk Windows statik taraması
-  100 saniyelik sınırı aştı; stage korunarak salt okunur tekrar PASS verdi.
-  Public source-ci kaydı ve bu belge kapanışı ürün/test byte'larını değiştirmez;
-  kapanış exact-commit CI'si ve main yayın günlüğü ayrı son kapılardır.
+- 2026-10-27 başlangıç: R162 final journal ve canlı repository/file durumu
+  doğrulandı. Base dc1ccb5 üzerinden R163 izole çalışma açıldı. Supervisor,
+  Unix protokolü ve tarihsel kaynak koruması ayrı çalışma kapsamlarına ayrıldı.
+  Sonucu belirsiz eski mutation veya devam eden R162 CI işi bulunmuyor.
+- 2026-10-27 Linux checkpoint: özgün child sahipliği, sabit bootstrap, Unix
+  server ve CLI entegrasyonu tamamlandı. Epoch preflight, yabancı actor ve
+  reentrant dispatch kaydı bulguları giderildi. Bağımsız kaynak review PASS;
+  birleşik son kaynak seçimi 721/721 PASS. Final/exit/EOF sonrası dış durum
+  DRAINING kalır; volume stop/finish bağlantısı dördüncü adımdır.
+- 2026-10-27 Windows checkpoint: primary çalışma ağacındaki aynı ürün/test/runner
+  byte'larında 608 PASS + 113 platform SKIP. 721 ordered test ID seçimi Linux ile
+  aynı; iki ham log hash ve uzunlukları doğrulandı. Kaynak/test byte'ları sabit.
+  Public source-check kaydı hazırlanıyor; commit/push/tam CI henüz NOT RUN.

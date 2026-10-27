@@ -2,10 +2,12 @@
 
 Durum: IN PROGRESS. Birinci adımın servis profil/config kaynak denetimleri
 R161A1 ile PASS; ikinci adımın sabit receiver/factory odaklı kaynak testleri
-R162A1 ile PASS. Exact-commit CI/yayın status.md'de izlenir; supervisor bağlantısı sıradadır.
+R162A1 ile PASS. Üçüncü adımın supervisor/Unix/CLI kaynak bağlantısı R163A1 ile
+PASS; exact-commit CI/yayın status.md'de izlenir. Sıradaki bağlantı volume kapanışıdır.
 Kurulu servis veya gerçek model kabulü değildir.
 Kaynak raporu: [R161A1 profil ve config](P2-SERVICE-PROFILE-R161A1.md).
 İkinci kaynak paketi: [R162A1 receiver/factory](P2-SERVICE-RECEIVER-R162A1.md).
+Üçüncü kaynak paketi: [R163A1 supervisor/Unix](P2-SERVICE-SUPERVISOR-R163A1.md).
 Önceki paket: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
 Güncel durum ve yayın kaydı: [status.md](../status.md).
 
@@ -74,7 +76,17 @@ authority, epoch ve üç fiziksel store kullanılsın. R160 control driver
 yalnız bu somut sahibin lifecycle'ını yönetsin. Tek startup denemesi ve
 ownership kaydı korunsun; kaynak kabulü bitmeden READY yayımlanmasın.
 
-### 3. Özgün supervisor ve kontrol sunucusu
+### 3. Özgün supervisor ve kontrol sunucusu — odaklı kaynak testleri PASS
+
+27 Ekim 2026: exact özgün ServiceVolumeSupervisor, tek sabit child, original
+Popen/ServiceChannel ve private Unix server bağlandı. Gerçek fixture socket,
+SO_PEERCRED, Node CLI ve child pipe entegrasyonu dahil Linux 721/721 PASS;
+Windows aynı seçimde 608 PASS + 113 platform SKIP, failure/error 0 ve exit 0.
+25 ürün ve 42 test/destek dosyası koşu öncesi/sonrası aynı hashlerle bağlandı.
+Bağımsız kaynak review PASS. Kaybolan start/close yanıtında status aynı attempt'i
+gözler; ikinci child/close veya cleanup oluşmaz. Child completion dışarıda
+DRAINING kalır; volume, fence ve image lease kapanışı aşağıdaki dördüncü adımdır.
+Bu sonuç gerçek kernel, kurulu supervisor, native servis veya model kabulü değildir.
 
 ServiceVolumeSupervisor'ın özgün begin/attach/start akışı içinde çocuğu
 sahiplen; ServiceChannel'ı yalnız bu Popen nesnesine bağla. Supervisor

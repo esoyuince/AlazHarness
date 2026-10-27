@@ -1,0 +1,368 @@
+{
+  "schema": 1,
+  "atUtc": "2026-10-27T16:10:41.098538+00:00",
+  "reviewer": "independent provenance/lifecycle source reviewer",
+  "base": "dc1ccb5ecf4e9741f6fd828a03e8ebed7f9497b7",
+  "result": "PASS",
+  "resultMeaning": "Read-only source and test-contract review; no open source blocker in the listed frozen snapshot. This is not installed-service or publication acceptance.",
+  "productEditsByReviewer": false,
+  "reviewerProductTestsExecuted": false,
+  "scope": [
+    "Original supervisor/child custody",
+    "Frozen plan/bootstrap/fixed entry",
+    "Unix owner preconditions/canonical EOF/replay/diagnostics",
+    "Phase-three completion limits",
+    "Parent source and unchanged tracked historical evidence"
+  ],
+  "reviewedSources": {
+    "packages/claw-hermes/gateway_supervised_service.py": {
+      "sha256": "9afadd091afd7c3dece4d3837bff75fcbb9d048ca5fbad6403c33a050111e0ed",
+      "bytes": 17161
+    },
+    "packages/claw-hermes/service_volume_supervisor.py": {
+      "sha256": "82d2439a3f22873267ae9f7606eef2b032f6203f2dab240c41c1c5bbd5b132df",
+      "bytes": 4504
+    },
+    "scripts/run_supervised_service.py": {
+      "sha256": "461e9ad2c1808714a688e2a391f8e0b5605f658f376cc8913b396e354e5d1629",
+      "bytes": 1537
+    },
+    "packages/claw-hermes/service_control_server.py": {
+      "sha256": "6b80555122e17561ffc1d588eab25d70445f5515c716ae31a4f3ccc8cb82ce31",
+      "bytes": 25125
+    }
+  },
+  "reviewedTestAndFixtureSources": {
+    "tests/test_service_supervisor_r163a1.py": {
+      "sha256": "1d6f21fd64f40f65d90fc44a48f916ebd4d341d312636ff5f1da9353e752b29d",
+      "bytes": 26468
+    },
+    "tests/test_service_control_server_r163a1.py": {
+      "sha256": "c25b7a03be4af031c66bcdc07677a8a4a13494a204dea1654d615a581eb42b0b",
+      "bytes": 35267
+    },
+    "tests/service_supervisor_fixtures_r163a1.py": {
+      "sha256": "df0fce876095274aa1139f4c404b69f60fe3d7da1012ef4e6c30176adc0e7172",
+      "bytes": 8242
+    }
+  },
+  "frozenHashesRecheckedAfterReview": true,
+  "resolvedFindings": [
+    {
+      "id": "R163-PROVENANCE-01",
+      "category": "pre-effect epoch bound",
+      "finding": "Previous epoch 2**63-1 was valid handoff data but rejected by ServiceChannel only after Popen, consuming an attempt for an already invalid next generation.",
+      "resolution": "decode_launch rejects epoch exhaustion before namespace opening, slot reservation and Popen.",
+      "source": "gateway_supervised_service.decode_launch",
+      "tests": [
+        "test_service_supervisor_r163a1.PlanContracts.test_epoch_exhaustion_is_known_before_namespace_and_spawn"
+      ],
+      "status": "resolved by author; final source and regression test inspected"
+    },
+    {
+      "id": "R163-PROVENANCE-02",
+      "category": "same actor before owner mutation",
+      "finding": "A foreign-thread observe/close could enter the identity-failure catch and mark the original child UNKNOWN/blocked.",
+      "resolution": "_observe checks the exact owner and volume.actor against owner.who before child-slot state access or mutation. Original-actor live identity loss still retains UNKNOWN.",
+      "source": "gateway_supervised_service._actor and _observe",
+      "tests": [
+        "test_service_supervisor_r163a1.ActualChildPipes.test_other_actor_cannot_operate_original_child"
+      ],
+      "status": "resolved by author; final source and regression test inspected"
+    },
+    {
+      "id": "R163-PROVENANCE-03",
+      "category": "same actor and truthful partial-dispatch diagnostic",
+      "observedSourceSha256": "623ab718998be187add6d28f93712f84ffc4b979341df7b696c4a0300ba98aef",
+      "finding": "serve_one reset the dispatch marker before its actor check. A foreign thread could reset an in-flight mutation marker and change the view, allowing a later lost reply to be labelled as no dispatch.",
+      "resolution": "serve_one and serve_forever enforce actor and reentrancy before reset/catch/loop. Finally restores only the serving flag; it does not clean up ownership.",
+      "source": "service_control_server.ServiceControlServer.serve_one and serve_forever",
+      "tests": [
+        "test_service_control_server_r163a1.ServerTests.test_wrong_thread_cannot_reset_active_dispatch_or_change_ready_view",
+        "test_service_control_server_r163a1.ServerTests.test_reentrant_main_thread_cannot_reset_mutation_dispatch_marker"
+      ],
+      "status": "resolved by author; final source and regression test inspected"
+    }
+  ],
+  "openSourceFindings": [],
+  "contractsReviewed": [
+    {
+      "contract": "Original owner and process custody",
+      "assessment": "Exact ServiceVolumeSupervisor and original actor, worker and image pin references remain linked to fence/scope/loop binding and PID/startTicks. The child slot is reserved before Popen. The same returned Popen and ServiceChannel remain retained through spawn, identity or pipe uncertainty."
+    },
+    {
+      "contract": "Frozen plan and fixed executable",
+      "assessment": "Bounded canonical bytes detach caller objects. Typed ServiceStartup and profile/volume/export bindings are decoded before spawn. Executable, argv, environment, entry and passed namespace descriptor are fixed in reviewed code. The child checks direct parent, live root, namespace and cgroup before fixed R162 projection/exec."
+    },
+    {
+      "contract": "Descriptor failures and UNKNOWN",
+      "assessment": "The known namespace descriptor closes through finally. Post-spawn constructor or FD-close failure retains the same attempt/process without channel start, retry, child signalling, unmount or volume release. Observation cannot finish a partial input write."
+    },
+    {
+      "contract": "Legacy admission and retirement",
+      "assessment": "The old service-volume start body is byte-identical to the archived parent. begin adds one child slot; new methods delegate. stop/finish refuse every attempted service child, including clean child completion; an absent legacy slot continues through the unchanged original volume contract."
+    },
+    {
+      "contract": "Private Unix endpoint",
+      "assessment": "Explicit canonical short path, exact private parent/socket identity and mode, same-UID/GID SO_PEERCRED, one bind attempt, no existing path replacement/adoption/unlink. The original actor owns lifecycle dispatch."
+    },
+    {
+      "contract": "Wire shape, EOF and bounds",
+      "assessment": "Exact request/owner schema, bounded safe-integer owner fields, compact ASCII JSON, duplicate/noncanonical rejection, one newline plus request EOF before dispatch, bounded bytes and independent read/write deadlines match the unchanged Node client."
+    },
+    {
+      "contract": "Owner precondition and replay",
+      "assessment": "All expectedOwner fields and service ID are checked before status or mutation. Mutation IDs reserve before effects, have a fixed maximum and never evict. Same-ID replay observes; conflicts refuse; a second start never spawns. Pending or finished close can observe only the original channel."
+    },
+    {
+      "contract": "Partial diagnostics",
+      "assessment": "Dispatch is recorded before lifecycle calls; actor/reentrancy gates protect that record. Lost responses retain owner, request and child without retry or cancellation. Foreign exception text is not formatted; public diagnostics exclude raw request, credential and private-path contents."
+    },
+    {
+      "contract": "Phase-three completion",
+      "assessment": "Child final plus original exit zero and stdout/stderr EOF maps to outer DRAINING. Outer CLOSED and volumeUnmounted/fenceRemovedAfterCleanup/imageLeaseReleased are never asserted here."
+    }
+  ],
+  "history": {
+    "parentArchive": {
+      "path": "evidence/p2-service-supervisor-r163a1/parent-packages__claw-hermes__service_volume_supervisor.py.txt",
+      "sha256": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8",
+      "bytes": 3281
+    },
+    "parentArchiveMatchesAcceptedBaseSource": true,
+    "binding": {
+      "path": "evidence/p2-service-supervisor-r163a1/historical-source-bindings.json",
+      "sha256": "cd13e6f35332ddc65aacef3a064f60be7f005b9ad62063266a79df3c89721dc0",
+      "bytes": 2036
+    },
+    "initialR160Generation": "eb28de8c043aaf8105cfc54261ccd481424cf973de756ae4aea73753142f9d29",
+    "finalR160Generation": "30fa40aa1ee1378f5136f27da04879677e457c9c56f983527833d2974bf4f8e8",
+    "earlierRecordsRelabelled": false,
+    "legacyResolversChanged": false,
+    "untrackedR160PublicationHandoffExcluded": true,
+    "preservedBaseFiles": {
+      "packages/claw-hermes/state_volume_supervisor.py": {
+        "sha256": "5088f1b0a27eb1bed83c635a3b356bd2281d3150aad1af57f1f714530a12c080",
+        "bytes": 16758
+      },
+      "packages/claw-hermes/state_image_lease.py": {
+        "sha256": "f57fbf1f24ea6953dd66726c6dcedb7566d66e3e12083881e78f7025c1490ddc",
+        "bytes": 7926
+      },
+      "packages/claw-hermes/gateway_supervised_launch.py": {
+        "sha256": "94073b8bb3f1d47220d0b9c684e287c3f27d2bd8f50a5656620516d12229c364",
+        "bytes": 21471
+      },
+      "packages/claw-hermes/supervised_service_channel.py": {
+        "sha256": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974",
+        "bytes": 12990
+      },
+      "packages/claw-hermes/supervised_pipe_capture.py": {
+        "sha256": "b3fe4c30607469ca05d95b7f329970c5093a429c2f952280371ddf4c085a1695",
+        "bytes": 4521
+      },
+      "packages/claw-hermes/gateway_service_control.py": {
+        "sha256": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55",
+        "bytes": 19594
+      },
+      "packages/claw-hermes/gateway_service_launch.py": {
+        "sha256": "8c914925e6860c8e7b7e35e247cab480e4f34d085fce57b5eb276aa0ea9c289c",
+        "bytes": 8170
+      },
+      "packages/claw-hermes/gateway_service_factory.py": {
+        "sha256": "3e92cae2ebdffea75b5a9a02c135f0011b4dfa513d81474db60fc4195e177559",
+        "bytes": 23013
+      },
+      "packages/claw-hermes/gateway_service_runtime.py": {
+        "sha256": "109bc6eef0a8507f9149e83785e9b51f270b4689e45dd96830cf57aae2195fea",
+        "bytes": 17626
+      },
+      "packages/claw-hermes/execution_boundary.py": {
+        "sha256": "3448c8912278b9368ec52b72402cc297ae75fc4d3f92541e616f1dba493c5c62",
+        "bytes": 26604
+      },
+      "packages/claw-hermes/gateway_prepared_consumer.py": {
+        "sha256": "a39245d907a1d8526634d6b55168a2e8ff8d08d59ea17344822b6a6bef354d2c",
+        "bytes": 25417
+      },
+      "packages/claw-hermes/gateway_store_startup.py": {
+        "sha256": "df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314",
+        "bytes": 18660
+      },
+      "packages/claw-hermes/gateway_state_projection.py": {
+        "sha256": "1704cd025ce82779fabbeb6b39dc5ad501e06b0c3ef3b2dc645c09e2d95ccdba",
+        "bytes": 21892
+      },
+      "packages/claw-hermes/service-control.mjs": {
+        "sha256": "6cba0cdac5de88990a861d811be6b81c66838784da9d260f32dfb243e45198a3",
+        "bytes": 14861
+      },
+      "scripts/alaz_local.mjs": {
+        "sha256": "c94cd47d9cbf9c69e7992b97b450740fea49f98877405bc441e7831c71e80d30",
+        "bytes": 8911
+      },
+      "scripts/run_service_volume_worker.py": {
+        "sha256": "71435f9fc1a04d3213976a93a3623a54a8aca69f1194c8470c62fc28669c4586",
+        "bytes": 6353
+      },
+      "scripts/run_supervised_retained.py": {
+        "sha256": "208a9f42201e7fe8ff57469d56d604baa0a19a685dccffea871ade43807fed74",
+        "bytes": 1045
+      },
+      "scripts/run_supervised_finite.py": {
+        "sha256": "e45cb067233e6e55ee191628d447e48628f2207462c33c9822f88150ea33f865",
+        "bytes": 979
+      },
+      "scripts/run_service_projected.py": {
+        "sha256": "b55c8a8d40aec5ccd5829c619bb8ab32afd26e87d8d398604d2dbacd3f413828",
+        "bytes": 1682
+      },
+      "tests/historical_borrowed_service_r159a1.py": {
+        "sha256": "c46c392aa448c2ee04dfe261901cc5080635f4b29b1b8acc58fa007d60e6940c",
+        "bytes": 4432
+      },
+      "tests/historical_service_profile_r161a1.py": {
+        "sha256": "313374405e79a3081e9f432aa30b2a154bdd6c3911507709ed206b713c255a20",
+        "bytes": 5030
+      },
+      "tests/historical_service_receiver_r162a1.py": {
+        "sha256": "5422bad914d0d410e328f589c574df01a59c379d60204ddf7971d37aec6f7bdb",
+        "bytes": 4220
+      },
+      "tests/historical_self_identity_r150a1.py": {
+        "sha256": "51e79ab79981c52e23b7038e83ff4b26d4d51b06be9aed44955ea9631ef36712",
+        "bytes": 2581
+      },
+      "tests/test_service_volume_r160a1.py": {
+        "sha256": "76473b3b1385d8d74109a27430fd2e5b8d8aa9bad9d14d36184f3862da7e3155",
+        "bytes": 8185
+      },
+      "evidence/p2-service-control-r160a1/focused-linux.json": {
+        "sha256": "1f6abda42956eec4d2ffe92998c8678ec72876745a1098e65137d84e1008fda2",
+        "bytes": 2302
+      },
+      "evidence/p2-service-control-r160a1/focused-windows.json": {
+        "sha256": "14e949756d282766194cf60d3b5eb4f4ad58e650cf60e39dfcb72ce8b2a17600",
+        "bytes": 2215
+      },
+      "evidence/p2-service-control-r160a1/initial-focused-linux.json": {
+        "sha256": "31dbf9ec183f85b03fb356209b502d9f46ed5d993d01aa15412f12bafc998ff0",
+        "bytes": 2086
+      },
+      "evidence/p2-service-control-r160a1/focused-linux.log": {
+        "sha256": "47e610216b45f4f8328254ec4a04c5556bdedda2e64411a725c6bd5a0e5df8b6",
+        "bytes": 12212
+      },
+      "evidence/p2-service-control-r160a1/focused-windows.log": {
+        "sha256": "e0339c2d6768051f4e5a13ecb35b653337c1b871b6b6c7a7ad7155602c39a4d9",
+        "bytes": 15179
+      },
+      "evidence/p2-service-control-r160a1/initial-focused-linux.log": {
+        "sha256": "c904b44b006b5fbe8df8b9e3331b1d8c1337094d62a8250729413a00ae935294",
+        "bytes": 11528
+      }
+    }
+  },
+  "reviewerExecutedTests": {
+    "scope": "Fresh history-only local Linux run, distinct from the earlier unrecorded run",
+    "report": {
+      "path": "evidence/p2-service-supervisor-r163a1/history-focused-linux.json",
+      "sha256": "233d7a75d68b8baa02ee23edd8ad27c109ddffb22a598cf5aa5a9cb0549a42b3",
+      "bytes": 4052
+    },
+    "rawLog": {
+      "path": "evidence/p2-service-supervisor-r163a1/history-focused-linux.log",
+      "sha256": "797fe86ed630048b4aab9cd6ae8aa6c3dc8c99a57d0dd21ca602828a40829be6",
+      "bytes": 2075
+    },
+    "testsRun": 10,
+    "passed": 10,
+    "skipped": 0,
+    "exitCode": 0,
+    "reportedTestSeconds": 0.126,
+    "earlierUnrecordedRunReused": false
+  },
+  "authorTestEvidenceReadOnlyInspection": {
+    "reviewerExecutedTheseRuns": false,
+    "notPublicationAcceptance": true,
+    "finalSupervisorRuns": [
+      {
+        "report": "scratch/r163a1-publication/service-supervisor-focused-final.json",
+        "sha256": "9914850108700d8ca04327e6efa29d91f4cd753b898c42615352f4968391e5ab",
+        "bytes": 14511,
+        "rawLog": "scratch/r163a1-publication/service-supervisor-focused-final.log",
+        "logSha256": "992d97fbf94aa28aab86931094f08644c30390f344369233ab88cbfb9674c31c",
+        "testsRun": 30,
+        "passed": 30,
+        "failedAssertions": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sourceBeforeAfterAndCurrentBytesMatch": true
+      },
+      {
+        "report": "scratch/r163a1-publication/service-supervisor-local-final.json",
+        "sha256": "b330b91ba12754848a3dc543e4255b02752b8c4293f00d43ca64c3bf1b6c1b60",
+        "bytes": 47264,
+        "rawLog": "scratch/r163a1-publication/service-supervisor-local-final.log",
+        "logSha256": "71fcd951534b3610905761adb720fdcc0cf4f549ac378bdc28aea1c4e7e4a73c",
+        "testsRun": 122,
+        "passed": 122,
+        "failedAssertions": 0,
+        "errors": 0,
+        "skipped": 0,
+        "sourceBeforeAfterAndCurrentBytesMatch": true
+      }
+    ],
+    "serverPriorFixtureGeneration": {
+      "report": "/tmp/r163-server-checks/server-focused.json",
+      "reportSha256": "a198279cd3cbd7eb89d943f72e74198d062f12df0aa0aaec609fce8e8beda8fc",
+      "rawLog": "/tmp/r163-server-checks/server-focused.log",
+      "logSha256": "9f05fadc4376000ce92c74e93d5ef65813a7397605998fc47b836bbe3976e0cb",
+      "testsRun": 42,
+      "passed": 42,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exitCode": 0,
+      "sourceHashes": {
+        "packages/claw-hermes/gateway_supervised_service.py": "9afadd091afd7c3dece4d3837bff75fcbb9d048ca5fbad6403c33a050111e0ed",
+        "packages/claw-hermes/service_control_server.py": "6b80555122e17561ffc1d588eab25d70445f5515c716ae31a4f3ccc8cb82ce31",
+        "packages/claw-hermes/service_volume_supervisor.py": "82d2439a3f22873267ae9f7606eef2b032f6203f2dab240c41c1c5bbd5b132df",
+        "packages/claw-hermes/supervised_service_channel.py": "03d05f94d18546900c688fbb1162695bbc04cd2f5a1e1958cf597976f8724974",
+        "tests/service_supervisor_fixtures_r163a1.py": "4b18adac15c7cb583c59b35eeef62e06cbd0515eddb23a964c9fe53ef93c4705",
+        "tests/test_service_control_server_r163a1.py": "c25b7a03be4af031c66bcdc07677a8a4a13494a204dea1654d615a581eb42b0b"
+      },
+      "changedSinceRun": {
+        "tests/service_supervisor_fixtures_r163a1.py": {
+          "testedSha256": "4b18adac15c7cb583c59b35eeef62e06cbd0515eddb23a964c9fe53ef93c4705",
+          "reviewedSha256": "df0fce876095274aa1139f4c404b69f60fe3d7da1012ef4e6c30176adc0e7172"
+        }
+      },
+      "interpretation": "Product and server-test bytes match. This 42-test author run preceded the final test-only shared-fixture revision and does not attest final fixture bytes. Final combined focused evidence is a separate gate."
+    },
+    "preservedEarlierFailedSupervisorRun": {
+      "report": "scratch/r163a1-publication/service-supervisor-local.json",
+      "reportSha256": "74226bd4f61c5b15b8d264ce211877c630c31ec09e7dcf273a245bb44578d353",
+      "rawLog": "scratch/r163a1-publication/service-supervisor-local.log",
+      "logSha256": "6ea3218cb8eac14824cbfa71fff685221f494f6a9bd805c86bea56009b708aa4",
+      "testsRun": 122,
+      "failedTopLevelMethods": 2,
+      "failedSubtestAssertions": 3,
+      "disposition": "Preserved FAIL. A later unchanged-product PASS does not prove the cause of the earlier failures."
+    },
+    "finalTestOnlyRevision": "The shared start_observed helper performs one launch and bounded read-only observation only when a fully sent bootstrap still awaits ready. Blocked/fatal/partial input cannot progress through it. Intentional timeout and partial-write tests still use launch directly.",
+    "crossLanguageIntegration": "The root-owned Node/CLI integration fixtures and their final execution evidence remain a separate focused-gate responsibility, outside this frozen test-byte review."
+  },
+  "bounds": {
+    "nativeServiceStarted": false,
+    "kernelConfinementTestedByReviewer": false,
+    "installedServiceAccepted": false,
+    "hostHttpReachabilityVerified": false,
+    "realModelCalls": 0,
+    "realProviderCalls": 0,
+    "bridgeNativeSshRemoteOrGitExecutedByReviewer": false,
+    "sourceTrust": "Existing trusted installed-code and actor contracts are reused; no new native import attestation is claimed.",
+    "testDoubles": "Inspected product tests use real test-owned Popen pipes and Unix sockets with explicit kernel/mount/lease/source-trust/process-start/native-receipt doubles; they do not establish native runtime, cgroup, mount, database or provider acceptance.",
+    "nextGates": "Root owns final Linux/Windows focused evidence, exact source/final CI and publication integrity. Plan step four volume closure and later installation/model acceptance remain open."
+  }
+}

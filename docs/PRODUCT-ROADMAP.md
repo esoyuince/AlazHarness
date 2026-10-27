@@ -20,7 +20,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
 | P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
-| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi, R160 control/worker bileşenleri, R161 servis profil/config ve R162 sabit receiver/factory kaynak bağlantısı mevcut. Canlı supervisor kontrol sunucusu, final/exit/EOF ile volume kapanışı, kurulu profil/restart kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
+| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi, R160 control/worker, R161 servis profil/config, R162 sabit receiver/factory ve R163 özgün supervisor/Unix/CLI kaynak bağlantısı mevcut. Final/exit/EOF ile volume kapanışı, kurulu profil/restart kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
 | P5 | Tek v0.1 sürüm adayı ve küçük pilot | M1-01..M1-07 aynı kaynak/kurulumda kapanır; temiz ortam kurulumu ve gerçek görev pilotu | OPEN; tam M1 ve prod kabulü yok. |
@@ -75,7 +75,7 @@ PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında n
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
 
 Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
-kararı üstteki tabloda ve en son R162 kaynak teslimatında yer alır.
+kararı üstteki tabloda ve en son R163 kaynak teslimatında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -316,4 +316,26 @@ effective-config, gerçek supervisor/kernel/kurulum/model kabulü açık kalır.
 Sıradaki iş [entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) üçüncü
 adımı: özgün ServiceVolumeSupervisor ve Popen'a bağlı Unix kontrol sunucusu;
 ardından final/exit/EOF ile volume stop/finish ve host görev erişimi.
+**P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.**
+
+## P2 / R163A1 özgün supervisor ve Unix kontrol sunucusu kaynak bağlantısı
+
+Özgün ServiceVolumeSupervisor aynı lease/fence/worker içinde tek sabit servis
+çocuğunu ve ona bağlı Popen/ServiceChannel'ı tutar. Private Unix server mevcut
+R160 CLI'ye start/status/close sunar; tam canonical frame ve write-EOF,
+PID/startTicks/token ve gerçek SO_PEERCRED doğrulaması effect öncesinde gerekir.
+Request ID yeniden gelişi yalnız aynı attempt'i gözler. Kaybolan start/close
+yanıtı ikinci child, tekrar close veya cleanup başlatmaz.
+
+Son kaynak seçimi Linux'ta 721/721 PASS; primary Windows'ta 608 PASS + 113 platform
+SKIP, failure/error 0 ve exit 0. Aynı 25 ürün ve 42 test/destek dosyası ile
+runner hashleri korunur; bağımsız kaynak incelemesi PASS. Ham test kayıtları,
+tarihsel parent/receipt koruması ve yayın durumu
+[R163A1 raporunda](P2-SERVICE-SUPERVISOR-R163A1.md) ve [status.md](../status.md).
+
+Child final/exit/EOF tek başına volume kapanışı sayılmaz: dış durum DRAINING,
+volume/fence/image release bayrakları false kalır. Sonraki somut iş
+[entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) dördüncü adımı olan
+özgün volume stop/finish bağlantısıdır. Native 760 dosya ve R156 kurulumu
+değişmedi; bu kaynak/fixture kabulü gerçek kernel/kurulum/model kabulü değildir.
 **P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.**

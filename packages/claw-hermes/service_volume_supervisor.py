@@ -2,8 +2,9 @@
 
 This opt-in sibling keeps the original begin/attach/stop/finish and every kernel
 identity check. The original finite/readiness worker and its 120-second deadline
-remain unchanged. No service child, profile, API, model or HTTP route is started.
-There is no automatic stop, force-unmount, lease release or recovery.
+remain unchanged. A separately requested fixed service child uses this SAME
+owner. Its attempt blocks volume retirement until the separate closure work is
+implemented; even a clean child final does not authorize stop or finish here.
 """
 from pathlib import Path
 import json
@@ -19,7 +20,38 @@ class ServiceVolumeSupervisor(volume.VolumeSupervisor):
     @classmethod
     def begin(cls, pin, cgroup_parent, mountpoint):
         require(cls is ServiceVolumeSupervisor, 'service_volume_exact_owner')
-        return super().begin(pin, cgroup_parent, mountpoint)
+        instance = super().begin(pin, cgroup_parent, mountpoint)
+        instance._service_child = None
+        return instance
+
+    def launch_service(self, ipc, filesystem, record, *, scratch, instance_id,
+                       service_id, timeout=30):
+        from gateway_supervised_service import launch_service
+        return launch_service(self, ipc, filesystem, record, scratch=scratch,
+                              instance_id=instance_id, service_id=service_id,
+                              timeout=timeout)
+
+    def observe_service(self, *, timeout=0):
+        from gateway_supervised_service import observe_service
+        return observe_service(self, timeout=timeout)
+
+    def close_service(self, *, timeout=30):
+        from gateway_supervised_service import close_service
+        return close_service(self, timeout=timeout)
+
+    def _service_clear(self):
+        require(getattr(self, '_service_child', None) is None,
+                'service_volume_closure_not_integrated')
+
+    def stop(self):
+        self._owned()
+        self._service_clear()
+        return super().stop()
+
+    def finish(self):
+        self._owned()
+        self._service_clear()
+        return super().finish()
 
     def start(self):
         require(type(self) is ServiceVolumeSupervisor, 'service_volume_exact_owner')
