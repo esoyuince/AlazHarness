@@ -1,11 +1,13 @@
 # P2 / R161A1 — Açık servis profili ve yapılandırma kabulü
 
-Tarih: 27 Ekim 2026. **Kaynak uygulaması ve odaklı testler PASS; P2 IN PROGRESS.**
+Tarih: 27 Ekim 2026. **Kaynak kapısı ve tam CI PASS; P2 IN PROGRESS.**
 Bu paket servis profilinin açık seçimini, projection ve ayrı handoff verisini,
 özgün startup/consumer/execution bağlarını kapsar. Tam supervisor entegrasyonu,
 yeni kurulum ve gerçek model kabulü açık kalır. Linux ve primary Windows
-kaynak testleri tamamlandı. İlk tam CI'nin iki nedeni düzeltildi; yeni
-exact-commit tam CI ve yayın PENDING. İlk başarısız koşu ayrıca korunur.
+kaynak testleri tamamlandı. İlk tam CI'nin iki nedeni düzeltildi; `92c53fc`
+exact-commit tam CI ile kabul edildi. İlk başarısız koşu ayrıca korunur.
+Bu belgeyi taşıyan kapanış commit'i ve main aktarımı da kendi exact SHA
+doğrulamasına bağlıdır; terminal kayıt status.md'de belirtilen yayın günlüğündedir.
 
 ## Başlangıç ve korunan kapsam
 
@@ -162,7 +164,7 @@ ile kesildi. Bu iki koşu tamamlanmış başarılı gate olarak kullanılmaz.
 | [focused-linux-repaired.json](../evidence/p2-service-profile-r161a1/focused-linux-repaired.json) | Son kaynak: 306/306 PASS, 0 SKIP, 7.155s, exit 0. |
 | [focused-windows-repaired.json](../evidence/p2-service-profile-r161a1/focused-windows-repaired.json) | Son kaynak: 306 test, 298 PASS, 8 SKIP, 10.358s, exit 0. |
 | [parent-source-check.json](../evidence/p2-service-profile-r161a1/parent-source-check.json) | 6 arşiv Git 5b7eba4 ile byte-exact; 24 aktarılan dosya, 8 korunmuş depo, 33 kök dosyası ve 760 native kaynak eşleşti. |
-| `evidence/p2-service-profile-r161a1/source-ci.json` | PENDING; son exact commit'in tam CI ve yayın zinciri kaydedilecek. |
+| [source-ci.json](../evidence/p2-service-profile-r161a1/source-ci.json) | `92c53fc`: 4.302 test, 4.280 PASS, 22 SKIP, failure/error 0, 305.340s, exit 0; statik gate PASS. |
 | Yeni kurulu servis ve gerçek model | NOT RUN; bu teslimat bu kabulü içermiyor. |
 
 İlk full CI `5f038cd` üzerinde 4.302 test / 308.090s, 18 ERROR, 22 SKIP ve
@@ -181,6 +183,14 @@ Kanıt: [ilk CI hatası](../evidence/p2-service-profile-r161a1/initial-ci-failur
 İlk kaynak kontrol kaydı kendi checkpoint'ine aittir; consumer'ın sonraki
 dar değişikliği düzeltme kaydında eski/yeni digest ile bağlanır.
 
+Başarılı tam kaynak CI'sinin GitHub status kimliği `57365201257`, delivery
+kimliği `1bd87354-d206-11f1-8ab8-707145c4fcfb`'dir. Authenticated status,
+exact checkout/source SHA, bütün testlerin ham özeti, statik gate, container
+exit 0 ve cleanup sonucu birlikte doğrulandı. Ham log SHA-256 değeri
+`f643bfd7fa2b2f10918a7c741496a49dc2a7409e13a6aabff56dea95ab227b20`.
+Bu kanıt 6.815 dosya / 10 bileşen / 2 Git linkini kapsayan kaynak CI'sidir;
+kurulu native servis veya gerçek model kabulüne genişletilmez.
+
 Tekrarlanabilir odaklı komut:
 `python evidence/p2-service-profile-r161a1/focused-runner.py --label <yeni-etiket>`.
 Runner mevcut kanıtı üzerine yazmaz. Makbuzlar unittest runner ham logunu
@@ -189,8 +199,7 @@ ayrıca çalıştırır; bu odaklı seçimin sayısı tam CI sayısı değildir.
 
 ## Kesin sonraki iş
 
-Son test ve source/CI makbuzlarını tamamla. Ardından sabit projected service
-receiver/factory, özgün supervisor Unix sunucusu, child final/exit/EOF ile
+Sabit projected service receiver/factory, özgün supervisor Unix sunucusu, child final/exit/EOF ile
 volume stop/finish bağlantısı ve özel loopback'e host görev erişimini bağla.
 Yeni tek P2 kurulumunda başlat/görev/izle/sonuç/kullanım/iptal/kapat akışını
 doğrula. Gerçek sağlayıcı için model, araçlar ve harcama sınırı ayrıca seçilmeli.
