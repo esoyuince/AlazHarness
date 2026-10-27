@@ -1,0 +1,97 @@
+{
+  "atUtc": "2026-10-27T12:33:15.279583+00:00",
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "kernelConfinementTested": false,
+  "label": "windows",
+  "logBytes": 48888,
+  "logFile": "focused-windows.log",
+  "logSha256": "756de955935f77627e9e65a58bb66ace70f2980bcb966bb028e7cecf9813c3cf",
+  "nativeServiceStarted": false,
+  "passed": 285,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "result": "PASS",
+  "runnerSha256": "7ce9c083f21f8fcadc05b2993bbbae5391c4f9ed15d271ba25f4261147217bb8",
+  "schema": 1,
+  "scope": "selected source and fixture contracts; not installed/native/kernel/model acceptance",
+  "seconds": 10.914347,
+  "selectedTests": 293,
+  "skipped": 8,
+  "skippedTests": [
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_all_auxiliary_fifo_swaps_are_nonblocking_refused_and_closed",
+      "POSIX nonblocking FIFO race contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_fifo_refused_without_blocking_open",
+      "POSIX FIFO contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_hardlink_refused",
+      "POSIX hardlink contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_owner_and_mode_are_private",
+      "POSIX mode/owner contract; Windows fixture doubles metadata"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_config_symlink_refused_before_open",
+      "POSIX symlink contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_fifo_swap_between_lstat_and_open_is_nonblocking_and_refused",
+      "POSIX nonblocking FIFO race contract"
+    ],
+    [
+      "test_service_profile_r161a1.ServiceProfileContracts.test_home_symlink_alias_refused",
+      "POSIX symlink contract"
+    ],
+    [
+      "test_service_profile_history_r161a1.ServiceProfileHistoryTests.test_archive_symlink_is_not_a_named_parent_file",
+      "symlink fixture unavailable: OSError"
+    ]
+  ],
+  "sourceHashes": {
+    "packages/claw-hermes/execution_boundary.py": "3448c8912278b9368ec52b72402cc297ae75fc4d3f92541e616f1dba493c5c62",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "c31cfdb0cb27e91a596d8026ac4300b060e84572e68bc2084663988f5bf3bf59",
+    "packages/claw-hermes/gateway_service_handoff.py": "37ffa5bd23b77b858c7a38cc90434ecb8416ba1e95ea491f8e913b91015daf9c",
+    "packages/claw-hermes/gateway_service_profile.py": "a6e4f1f5572006f72658902a6927a71faaa7d837d41a0dfa67e473622b05d05b",
+    "packages/claw-hermes/gateway_service_projection.py": "dc4ad0577625b2cb9197278ae76ad29289c5c0e1f695991f3485c42b25c5b57a",
+    "packages/claw-hermes/gateway_state_projection.py": "1704cd025ce82779fabbeb6b39dc5ad501e06b0c3ef3b2dc645c09e2d95ccdba",
+    "packages/claw-hermes/gateway_store_startup.py": "df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314"
+  },
+  "sourceHashesUnchangedAfterTest": true,
+  "testSelectors": [
+    "test_service_profile_r161a1",
+    "test_service_profile_binding_r161a1",
+    "test_service_projection_r161a1",
+    "test_service_handoff_r161a1",
+    "test_service_profile_history_r161a1",
+    "test_gateway_store_startup",
+    "test_three_store_lifecycle_l113f6",
+    "test_startup_consumer_owner_s124b1",
+    "test_execution_profile_qa3156",
+    "test_borrowed_service_host_r159a1.SourceSelectionTests",
+    "test_borrowed_service_host_r159a1.ServiceConsumerSelection",
+    "test_borrowed_service_host_r159a1.ServiceStartupGuards",
+    "test_gateway_state_projection",
+    "test_retained_projection_p142c6.MappingContract",
+    "test_retained_projection_p142c6.ProjectionSequence",
+    "test_retained_projection_p142c6.PivotBarrier",
+    "test_retained_projection_p142c6.OriginalStartupHandoff",
+    "test_retained_handoff_t143a7",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_current_product_is_checked_live_not_old_kernel_snapshot",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_launcher_cannot_be_hidden_by_applied_archive",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_launcher_cannot_be_hidden_by_current_source",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_current_projection_cannot_be_hidden_by_parent_archive",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_applied_projection_cannot_be_hidden_by_current_source",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_unknown_paths_or_generations_are_not_redirected",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_tampered_archive_is_never_accepted",
+    "test_self_identity_history_r150a1.SelfIdentityHistory.test_manifest_cannot_point_to_another_file"
+  ],
+  "testsRun": 293
+}

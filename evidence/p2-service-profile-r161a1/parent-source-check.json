@@ -1,0 +1,101 @@
+{
+  "archives": [
+    {
+      "archive": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__execution_boundary.py.txt",
+      "bytes": 23681,
+      "matchesGitBase": true,
+      "sha256": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96",
+      "source": "packages/claw-hermes/execution_boundary.py"
+    },
+    {
+      "archive": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_prepared_consumer.py.txt",
+      "bytes": 23102,
+      "matchesGitBase": true,
+      "sha256": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+      "source": "packages/claw-hermes/gateway_prepared_consumer.py"
+    },
+    {
+      "archive": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_state_projection.py.txt",
+      "bytes": 18991,
+      "matchesGitBase": true,
+      "sha256": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74",
+      "source": "packages/claw-hermes/gateway_state_projection.py"
+    },
+    {
+      "archive": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_store_startup.py.txt",
+      "bytes": 15954,
+      "matchesGitBase": true,
+      "sha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+      "source": "packages/claw-hermes/gateway_store_startup.py"
+    },
+    {
+      "archive": "evidence/p2-service-profile-r161a1/parent-tests__historical_borrowed_service_r159a1.py.txt",
+      "bytes": 4099,
+      "matchesGitBase": true,
+      "sha256": "ddddde0ad1fc7e5c71f8a9358eedde021d1396f5db8b5bfff46e1beac56e7eca",
+      "source": "tests/historical_borrowed_service_r159a1.py"
+    },
+    {
+      "archive": "evidence/p2-service-profile-r161a1/parent-tests__test_self_identity_history_r150a1.py.txt",
+      "bytes": 9025,
+      "matchesGitBase": true,
+      "sha256": "4c38dbc07d57f1911d1c4f896b19fe2af9331f2bbe9402f3f50840ddbde54e66",
+      "source": "tests/test_self_identity_history_r150a1.py"
+    }
+  ],
+  "atUtc": "2026-10-27T12:34:41.009806+00:00",
+  "base": "5b7eba4d97f63623c20b51f476f4bf36ba6e7d94",
+  "branch": "alaz/p2-service-profile-r161a1",
+  "currentFileHashes": {
+    "evidence/p2-service-profile-r161a1/focused-runner.py": "7ce9c083f21f8fcadc05b2993bbbae5391c4f9ed15d271ba25f4261147217bb8",
+    "evidence/p2-service-profile-r161a1/historical-source-bindings.json": "17a2cc8be34d19000dada4f33e884ab49a6a3f1c98f46cf23339b9ce3ca191f2",
+    "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__execution_boundary.py.txt": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96",
+    "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_prepared_consumer.py.txt": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+    "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_state_projection.py.txt": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74",
+    "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_store_startup.py.txt": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+    "evidence/p2-service-profile-r161a1/parent-tests__historical_borrowed_service_r159a1.py.txt": "ddddde0ad1fc7e5c71f8a9358eedde021d1396f5db8b5bfff46e1beac56e7eca",
+    "evidence/p2-service-profile-r161a1/parent-tests__test_self_identity_history_r150a1.py.txt": "4c38dbc07d57f1911d1c4f896b19fe2af9331f2bbe9402f3f50840ddbde54e66",
+    "packages/claw-hermes/execution_boundary.py": "3448c8912278b9368ec52b72402cc297ae75fc4d3f92541e616f1dba493c5c62",
+    "packages/claw-hermes/gateway_prepared_consumer.py": "c31cfdb0cb27e91a596d8026ac4300b060e84572e68bc2084663988f5bf3bf59",
+    "packages/claw-hermes/gateway_service_handoff.py": "37ffa5bd23b77b858c7a38cc90434ecb8416ba1e95ea491f8e913b91015daf9c",
+    "packages/claw-hermes/gateway_service_profile.py": "a6e4f1f5572006f72658902a6927a71faaa7d837d41a0dfa67e473622b05d05b",
+    "packages/claw-hermes/gateway_service_projection.py": "dc4ad0577625b2cb9197278ae76ad29289c5c0e1f695991f3485c42b25c5b57a",
+    "packages/claw-hermes/gateway_state_projection.py": "1704cd025ce82779fabbeb6b39dc5ad501e06b0c3ef3b2dc645c09e2d95ccdba",
+    "packages/claw-hermes/gateway_store_startup.py": "df19918eaa16e6ed9c1cb679971810ba7d60089b8d6bebb91460323ac6290314",
+    "tests/historical_borrowed_service_r159a1.py": "c46c392aa448c2ee04dfe261901cc5080635f4b29b1b8acc58fa007d60e6940c",
+    "tests/historical_service_profile_r161a1.py": "58a003261f9f88eb6a020a4080035e7c02e2aa51f9e51161d63507269325d5f9",
+    "tests/service_profile_fixtures_r161a1.py": "7c38fee5878d7efe98acd4da0411ac8ceef4c0557599a761e53e1252c0d62192",
+    "tests/test_self_identity_history_r150a1.py": "5c2b15cfff6232cda9bdcccea049735ddd52f34015ebea05950e93b329ccebb7",
+    "tests/test_service_handoff_r161a1.py": "02af15f8c3d4206983f983e760304301fdda9d477f115dd2e644c8a5082a382f",
+    "tests/test_service_profile_binding_r161a1.py": "c69216ae988ea0eea0cb7bd7b9e24916dd0334b87d321d1cd78d88d60c197dec",
+    "tests/test_service_profile_history_r161a1.py": "82a153ab54660ac04b09f05566f7821a2740d0fc54a0017b78776f63ebdb3874",
+    "tests/test_service_profile_r161a1.py": "a586326f95cefc83c4d06a63534fd2ff55c7c55ba1c5c4acb29bd955d164d4f4",
+    "tests/test_service_projection_r161a1.py": "645a42f81cf079891e2a968042fc4e8e62d5eec14c9de9f65e87a4d288470ae3"
+  },
+  "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "nativeLoaderSourceHashes": {
+    "hermes_cli/config.py": "68239827c32c60114cc01d03a2c29f872c91d2114a3f0c1d1094de49980d0d2e",
+    "hermes_constants.py": "8d55a41452b625061f1f2e2f507a7e7ffb2a396e711afcc7aee28b03a6e8fa9d"
+  },
+  "nativeSelectedFilesMatched": 760,
+  "nativeServiceStarted": false,
+  "nativeWorktreeClean": true,
+  "protectedRepositoriesUnchanged": true,
+  "protectedRepositoryCount": 8,
+  "protectedRootFiles": 33,
+  "realModelCalls": 0,
+  "result": "PASS",
+  "schema": 1,
+  "scope": "exact source custody and protected worktree checks; no native execution",
+  "unchangedHistoricalAndSelectionFiles": {
+    "config/borrowed-service-r159a1-sources.json": "05dee55dede392d10af65fc123969b8f317cf417d1af669b655d2115a2757bd2",
+    "config/hermes-borrowed-service-r159a1.json": "a160fb456573bcf4b9efca53a62a42e6d5b9347378bec195d9df7e6ec125e7b3",
+    "packages/claw-hermes/gateway_native_layout.py": "fe9392c6b9ea9bdef4837137024490993fa3f302ac8df5895de071ddd581b9c0",
+    "packages/claw-hermes/gateway_retained_handoff.py": "1bc4ce046f33b88c2c0b3ca3092f6f23224297a10a6524bb940d83e6972a9ebc",
+    "packages/claw-hermes/gateway_retained_launch.py": "4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2",
+    "packages/claw-hermes/gateway_retained_profile.py": "84400109ec08b75e33453a459fc0985b0c4da6ff37f7781e0f5f165910551fbf",
+    "packages/claw-hermes/gateway_retained_projection.py": "68cf4520873efc402860f4d9a9f31ee478d87e4f1b00ad7a0079aa335200ab79",
+    "packages/claw-hermes/gateway_service_sources.py": "c46cfb1e093d56071c09390cb090021d356954c83cf6ba5efc55b7da5b8968e7",
+    "scripts/build_projected_candidate.py": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b"
+  }
+}

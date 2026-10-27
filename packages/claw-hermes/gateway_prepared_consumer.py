@@ -120,6 +120,13 @@ class PreparedRuntimeConsumer:
             self._service_source=load_selection()
         self._finite_turn=finite_turn
         self._retained_source_receipt=getattr(owner,'_retained_profile',None)
+        self._service_profile_receipt=getattr(owner,'_service_profile',None)
+        require(getattr(owner,'_service_profile_binding',None) is self._service_profile_receipt,
+                'consumer_service_profile_changed')
+        if self._service_profile_receipt is not None:
+            require(borrowed_service,'consumer_service_profile_requires_service')
+            require(self._service_profile_receipt.selection==self._service_source,
+                    'consumer_service_profile_selection')
         self._canonical_api=canonical_api;self._publication_phase='NEW'
         self._local_admission=local_admission
         self._selected_feature=ADMISSION_FEATURE if local_admission else FEATURE
@@ -150,6 +157,13 @@ class PreparedRuntimeConsumer:
         o=self._owner;o._owned()
         require(getattr(o,'_retained_profile',None) is getattr(self,'_retained_source_receipt',None),
                 'consumer_retained_receipt_changed')
+        receipt=getattr(self,'_service_profile_receipt',None)
+        require(getattr(o,'_service_profile',None) is receipt
+                and getattr(o,'_service_profile_binding',None) is receipt,
+                'consumer_service_profile_changed')
+        if receipt is not None:
+            require(self._borrowed_service and self._service_source==receipt.selection,
+                    'consumer_service_profile_selection')
         require(o._stage=='VERIFIED' and o._prepared_consumer is self
                 and o._held is self._held and o._mount is self._mount
                 and o._expected is self._expected and o._response_expected is self._response_expected,
@@ -177,10 +191,22 @@ class PreparedRuntimeConsumer:
                 'consumer_storage_observation')
         self._identity()
 
+    def _check_service_config(self):
+        # This is an admission/readiness check, separate from ownership/storage
+        # checks used while draining or closing already-known native resources.
+        receipt=getattr(self,'_service_profile_receipt',None)
+        require(getattr(self._owner,'_service_profile',None) is receipt
+                and getattr(self._owner,'_service_profile_binding',None) is receipt,
+                'consumer_service_profile_changed')
+        if receipt is None:return
+        self._identity()
+        self._owner._check_service_config()
+
     async def prepare(self,gateway_config,api_config):
         require(self._stage=='RESERVED','consumer_not_fresh')
         self._stage='QUALIFYING'
         try:
+            self._check_service_config()
             self._identity(loop=True);self._storage()
             self._source_proof=(qualify_sources(local_admission=True,canonical_api=True,finite_turn=True,
                                    retained_profile=self._retained_source_receipt is not None,
@@ -193,19 +219,23 @@ class PreparedRuntimeConsumer:
                                 qualify_sources(local_admission=True,canonical_api=True)
                                 if self._canonical_api else
                                 qualify_sources(local_admission=True) if self._local_admission else qualify_sources())
+            self._check_service_config()
             Config,Platform,Binding,Runner,initialize,Bundle,Adapter=native_types()
             verify_imports(self._source_proof)
+            self._check_service_config()
             require(type(gateway_config) is Config and type(api_config) is Platform,'consumer_explicit_configs')
             self._stage='CONSTRUCTING'
             self._binding=Binding(gateway_config,self._stores[0],epoch=self._expected.epoch,instance_id=self._expected.instance_id)
             self._runner=Runner(gateway_config,caller_state=self._binding)
             await initialize(self._runner)
+            self._check_service_config()
             self._identity(loop=True);self._storage()
             self._bundle=Bundle(self._held._home,*self._stores,prepared_runner=self._runner)
             self._adapter=Adapter(api_config,borrowed_stores=self._bundle)
             self._stage='ATTACHED'
             self.check()
             verify_imports(self._source_proof)
+            self._check_service_config()
             return self.status()
         except BaseException:
             self._stage='FAILED_UNKNOWN'
@@ -264,7 +294,10 @@ class PreparedRuntimeConsumer:
 
     def publish_api_adapter(self):
         from gateway_consumer_api import publish
-        return publish(self)
+        self._check_service_config()
+        value=publish(self)
+        self._check_service_config()
+        return value
 
     async def retire_idle_runtime(self):
         from gateway_consumer_api import retire_idle_runtime
@@ -276,7 +309,10 @@ class PreparedRuntimeConsumer:
 
     def activate_admission(self):
         from gateway_consumer_admission import activate
-        return activate(self)
+        self._check_service_config()
+        value=activate(self)
+        self._check_service_config()
+        return value
 
     def begin_drain(self):
         from gateway_consumer_admission import begin_drain
@@ -291,6 +327,14 @@ class PreparedRuntimeConsumer:
         return finish_drain(self)
 
     def check(self):
+        self._check_service_config()
+        value=self._check_attached()
+        self._check_service_config()
+        return value
+
+    def _check_attached(self):
+        # Cleanup must still verify the original native binding and work state
+        # when selected config bytes have changed and admission has been sealed.
         require(self._stage=='ATTACHED','consumer_not_attached')
         if self._local_admission:
             from gateway_consumer_admission import check
@@ -314,7 +358,7 @@ class PreparedRuntimeConsumer:
         if self._local_admission:
             require(self._admission_phase in ('PREPARED','DRAINED'),'consumer_admission_must_drain')
         # Known pre-effect refusals leave ATTACHED and may be reobserved later.
-        self.check()
+        self._check_attached()
         self._stage='DETACHING_API'
         try:
             await self._adapter.disconnect()

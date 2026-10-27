@@ -131,6 +131,7 @@ class ExecutionBoundary:
         if type(token) is not str or not re.fullmatch(r'[\x21-\x7e]{32,256}',token):raise ExecutionDenied('invalid_provider_credential')
         if self.broker is not None and token==self.broker.link.signing_key:raise ExecutionDenied('separate_broker_key_required')
         self.token=token;self.adapter=None;self.service_transport=None;self.service_owner=None;self._service_app=None
+        self._service_profile_binding=None
         self._settings_digest=hashlib.sha256(_json(settings).encode()).hexdigest()
         self.isolation=None
         if 'isolated_read' in settings:
@@ -164,9 +165,38 @@ class ExecutionBoundary:
         context=LocalRecoveryContext(Path(authority.db.db_path).resolve().parent,token,authority.epoch,desc['instance_id'])
         return ExecutionLedger(authority.db,context,self.policy)
 
+    def _check_service_config(self):
+        binding=self._service_profile_binding
+        if binding is None:return
+        service_owner,owner,held,actor,receipt=binding
+        try:
+            # File tools run on native workers. Preserve original owner identity
+            # without calling its main-thread-only lease/SQLite checks here.
+            if not (self.service_owner is service_owner and service_owner._owner is owner
+                    and owner._service_owner is service_owner and service_owner._held is held
+                    and owner._held is held and owner._actor==actor and actor[0]==os.getpid()
+                    and owner._service_profile is receipt and owner._service_profile_binding is receipt
+                    and os.environ.get('HERMES_HOME')==receipt.home):
+                raise ExecutionDenied('execution_service_profile_changed')
+            from hermes_cli import config
+            # Native home overrides outrank HERMES_HOME. A safe-worker snapshot
+            # bypasses the selected file entirely, so it is not this protocol.
+            if (str(config.get_config_path())!=str(held._home/'config.yaml')
+                    or config._worker_config_snapshot() is not None):
+                raise ExecutionDenied('execution_service_profile_changed')
+            from gateway_service_profile import check_config
+            check_config(held._home,uid=actor[1],gid=actor[2],
+                         device=receipt.home_identity[0],expectation=receipt)
+        except Exception:
+            raise ExecutionDenied('execution_service_profile_changed') from None
+
     def validate_profile(self):
         from hermes_cli.config import load_config_readonly
-        cfg=load_config_readonly()
+        # This retains the actual native loader and its existing behavior. The
+        # receipt qualifies selected raw bytes, not defaults, overlays or policy.
+        self._check_service_config()
+        try:cfg=load_config_readonly()
+        finally:self._check_service_config()
         try:
             current=self.context.get_config('execution')
             current_digest=hashlib.sha256(_json(current).encode()).hexdigest()
@@ -207,6 +237,21 @@ class ExecutionBoundary:
             from gateway_service_runtime import BorrowedServiceOwner
             if type(service_transport) is not BorrowedHTTPTransport:raise ExecutionDenied('native_service_transport_required')
             if type(service_owner) is not BorrowedServiceOwner:raise ExecutionDenied('native_service_owner_required')
+            owner=service_owner._owner
+            receipt=getattr(owner,'_service_profile',None)
+            if getattr(owner,'_service_profile_binding',None) is not receipt:
+                raise ExecutionDenied('execution_service_profile_changed')
+            if receipt is not None:
+                from gateway_store_startup import NativeStoreStartup
+                from gateway_service_profile import validate_expectation
+                try:
+                    validate_expectation(receipt)
+                    if not (type(owner) is NativeStoreStartup and owner._service_profile_binding is receipt
+                            and owner._service_owner is service_owner and owner._held is service_owner._held):
+                        raise ExecutionDenied('execution_service_profile_changed')
+                    self._service_profile_binding=(service_owner,owner,owner._held,owner._actor,receipt)
+                except Exception:
+                    raise ExecutionDenied('execution_service_profile_changed') from None
             self.service_transport=service_transport;self.service_owner=service_owner;self._service_app=app
         elif service_owner is not None:raise ExecutionDenied('native_service_transport_required')
         self.adapter=adapter

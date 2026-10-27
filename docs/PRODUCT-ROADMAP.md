@@ -20,7 +20,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
 | P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
-| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi ve R160 ready/control/final kanal bileşenleri + CLI servis kontrol istemcisi + uzun ömürlü volume worker kaynakları mevcut. Sabit servis çocuğu, canlı supervisor kontrol sunucusu, native config profil kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
+| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi ve R160 ready/control/final kanal bileşenleri + CLI servis kontrol istemcisi + uzun ömürlü volume worker ve R161 ayrı servis profil/config kaynak sözleşmesi mevcut. Sabit servis çocuğu, canlı supervisor kontrol sunucusu, kurulu profil/restart kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
 | P5 | Tek v0.1 sürüm adayı ve küçük pilot | M1-01..M1-07 aynı kaynak/kurulumda kapanır; temiz ortam kurulumu ve gerçek görev pilotu | OPEN; tam M1 ve prod kabulü yok. |
@@ -75,7 +75,7 @@ PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında n
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
 
 Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
-kararı üstteki tabloda ve en son R160 kaynak teslimatında yer alır.
+kararı üstteki tabloda ve en son R161 kaynak teslimatında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -273,3 +273,26 @@ P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve prod OPEN.
 
 Rapor: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
 Sonraki iş: [servis profil ve supervisor entegrasyonu](P2-SERVICE-INTEGRATION-R161A1-PLAN.md).
+
+
+## P2 / R161A1 servis profil ve config kaynak sözleşmesi
+
+Ayrı sürümlü servis profili; seçilmiş native kaynak, canonical home, üç DB,
+önceki epoch/instance ve config device/inode/size/SHA-256 değerlerini bağlar.
+En fazla 64 KiB canonical JSON kabul edilir; yardımcı dosyalar bounded,
+no-follow ve nonblocking FD okumalarından geçer. Eski profil seçimleri korunur.
+Host/target projection yalnız home'u değiştirir; ayrı servis handoff'u genel
+başlatma yetkisi vermez. Özgün startup/consumer/worker-thread execution zinciri
+config'i ve native loader'ın gerçek home yolunu yeniden denetler. Config drift
+admission'ı durdurur; özgün sahiplik korunuyorsa bilinen cleanup yolu çalışır.
+
+293 odaklı test Linux'ta PASS; Windows'ta 285 PASS, 8 platform SKIP ve hata0.
+Altı parent arşivi Git 5b7eba4 byte'larıyla eşleşti; güncel kaynak pinleri ayrı
+sınandı. Native 760 kaynak, eski finite/retained layout'lar ve R156 kurulumu
+korundu. Tam CI/yayın ayrıca status.md ile izlenir. Bu kaynak teslimatı gerçek
+supervisor/kernel/kurulum/model kabulü değildir; P2 IN PROGRESS.
+
+Rapor: [R161A1](P2-SERVICE-PROFILE-R161A1.md). Sıradaki somut iş,
+[entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) sabit projected
+service receiver/factory adımıdır; ardından canlı supervisor kontrol sunucusu,
+final/exit/EOF ile volume stop/finish ve host görev erişimi gelir.

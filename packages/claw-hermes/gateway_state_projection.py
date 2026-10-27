@@ -28,9 +28,10 @@ NATIVE_STORE_LAYOUT = 'hermes-native-stores-cold-v1'
 NATIVE_RESPONSE_LAYOUT = 'hermes-native-three-stores-cold-v1'
 NATIVE_PREPARED_LAYOUT = 'hermes-native-prepared-three-stores-cold-v1'
 NATIVE_RETAINED_LAYOUT = 'hermes-native-retained-three-stores-v1'
+NATIVE_SERVICE_LAYOUT = 'hermes-service-profile-v1'
 
 def validate_layout(value):
-    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT,NATIVE_RETAINED_LAYOUT),
+    require(type(value) is str and value in (MINIMAL_LAYOUT,NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT,NATIVE_RETAINED_LAYOUT,NATIVE_SERVICE_LAYOUT),
             'state_projection_layout_invalid')
     return value
 
@@ -131,15 +132,20 @@ def _metadata(info):
             info.st_nlink, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
 
 
-def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=MINIMAL_LAYOUT, retained_projection=None):
+def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=MINIMAL_LAYOUT, retained_projection=None, service_projection=None):
     """Prove existing S101 authority and sole-user admission; never repair it."""
     require(type(binding) is VolumeBinding, 'state_projection_trusted_binding_required')
     validate_layout(profile_layout)
     require((retained_projection is not None) == (profile_layout == NATIVE_RETAINED_LAYOUT),
             'state_projection_retained_selection')
+    require((service_projection is not None) == (profile_layout == NATIVE_SERVICE_LAYOUT),
+            'state_projection_service_selection')
     if retained_projection is not None:
         from gateway_retained_projection import validate
         validate(retained_projection, binding, principal)
+    if service_projection is not None:
+        from gateway_service_projection import validate
+        validate(service_projection, binding, principal)
     supervisor.actor()
     try:
         _live_root(binding.controller_pid, binding.controller_start)
@@ -192,7 +198,10 @@ def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=
                 'state_projection_profile_identity')
         require(not any(PurePosixPath(r.mount_point).is_relative_to(profile) for r in records),
                 'state_projection_nested_mount')
-        if profile_layout == NATIVE_RETAINED_LAYOUT:
+        if profile_layout == NATIVE_SERVICE_LAYOUT:
+            from gateway_service_projection import inspect_view
+            objects, _ = inspect_view(service_projection, binding, principal, view='host')
+        elif profile_layout == NATIVE_RETAINED_LAYOUT:
             from gateway_retained_projection import inspect_view
             objects, _ = inspect_view(retained_projection, binding, principal, view='host')
         elif profile_layout in (NATIVE_STORE_LAYOUT,NATIVE_RESPONSE_LAYOUT,NATIVE_PREPARED_LAYOUT):
@@ -227,21 +236,30 @@ def inspect_volume(binding, principal, *, joined_namespace=True, profile_layout=
 
 class _ProfileMounts(gp.Mounts):
     """One fixed pre-pivot extension; no override of the baseline UID/filter path."""
-    def __init__(self, binding, principal, observed, profile_layout=MINIMAL_LAYOUT, retained_projection=None):
+    def __init__(self, binding, principal, observed, profile_layout=MINIMAL_LAYOUT, retained_projection=None, service_projection=None):
         super().__init__()
         self.binding, self.principal, self.observed = binding, principal, observed
         self.profile_layout = validate_layout(profile_layout)
         self.retained_projection = retained_projection
+        self.service_projection = service_projection
         require((retained_projection is not None) == (profile_layout == NATIVE_RETAINED_LAYOUT),
                 'state_projection_retained_selection')
+        require((service_projection is not None) == (profile_layout == NATIVE_SERVICE_LAYOUT),
+                'state_projection_service_selection')
         if retained_projection is not None:
             from gateway_retained_projection import validate
             validate(retained_projection, binding, principal)
+        if service_projection is not None:
+            from gateway_service_projection import validate
+            validate(service_projection, binding, principal)
         self.projected = False
 
     def pivot(self, root):
         require(not self.projected, 'state_projection_once')
         current = (inspect_volume(self.binding,self.principal,joined_namespace=False,
+                    profile_layout=self.profile_layout,service_projection=self.service_projection)
+                   if self.profile_layout == NATIVE_SERVICE_LAYOUT else
+                   inspect_volume(self.binding,self.principal,joined_namespace=False,
                     profile_layout=self.profile_layout,retained_projection=self.retained_projection)
                    if self.profile_layout == NATIVE_RETAINED_LAYOUT else
                    inspect_volume(self.binding,self.principal,joined_namespace=False)
@@ -263,7 +281,7 @@ class _ProfileMounts(gp.Mounts):
         super().pivot(root)
 
 
-def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT, retained_profile=None, observe_self_identity=False):
+def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layout=MINIMAL_LAYOUT, retained_profile=None, observe_self_identity=False, service_profile=None):
     """Confine one joined root child; only its checked image profile persists.
 
     Caller joins the root-controlled S101 cgroup BEFORE the volume namespace.
@@ -273,22 +291,34 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
     validate_layout(profile_layout)
     require((retained_profile is not None) == (profile_layout == NATIVE_RETAINED_LAYOUT),
             'state_projection_retained_selection')
+    require((service_profile is not None) == (profile_layout == NATIVE_SERVICE_LAYOUT),
+            'state_projection_service_selection')
     if retained_profile is not None:
         from gateway_retained_profile import validate_receipt
         validate_receipt(retained_profile)
+    if service_profile is not None:
+        from gateway_service_profile import validate_expectation
+        validate_expectation(service_profile)
     require(type(observe_self_mount) is bool, 'state_projection_mount_observation_boolean')
     require(type(observe_self_identity) is bool, 'state_projection_identity_observation_boolean')
     require(not observe_self_identity or (observe_self_mount and
-            profile_layout == NATIVE_RETAINED_LAYOUT and retained_profile is not None),
+            ((profile_layout == NATIVE_RETAINED_LAYOUT and retained_profile is not None)
+             or (profile_layout == NATIVE_SERVICE_LAYOUT and service_profile is not None))),
             'state_projection_identity_requires_retained_mount')
     plan = gp.inspect(value, filesystem)
     full_policy = validate_exports(binding, plan['ipc'], plan['filesystem'])
     p = plan['ipc']['principalContract']
     retained_projection = None
+    service_projection = None
     if retained_profile is not None:
         from gateway_retained_projection import RetainedProjection
         retained_projection = RetainedProjection(binding, retained_profile, p)
-    observed = (inspect_volume(binding,p,profile_layout=profile_layout,retained_projection=retained_projection)
+    if service_profile is not None:
+        from gateway_service_projection import ServiceProjection
+        service_projection = ServiceProjection(binding, service_profile, p)
+    observed = (inspect_volume(binding,p,profile_layout=profile_layout,service_projection=service_projection)
+                if service_projection is not None else
+                inspect_volume(binding,p,profile_layout=profile_layout,retained_projection=retained_projection)
                 if retained_projection is not None else
                 inspect_volume(binding,p) if profile_layout == MINIMAL_LAYOUT else
                 inspect_volume(binding,p,profile_layout=profile_layout))
@@ -296,7 +326,9 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
     seccomp = gp.net._load_seccomp()
     namespaces = {n:os.readlink('/proc/self/ns/'+n) for n in ('mnt','net','ipc')}
     gp.launch.close_ambient_fds()
-    mounts = (_ProfileMounts(binding,p,observed,profile_layout,retained_projection)
+    mounts = (_ProfileMounts(binding,p,observed,profile_layout,service_projection=service_projection)
+              if service_projection is not None else
+              _ProfileMounts(binding,p,observed,profile_layout,retained_projection)
               if retained_projection is not None else
               _ProfileMounts(binding,p,observed) if profile_layout == MINIMAL_LAYOUT else
               _ProfileMounts(binding,p,observed,profile_layout))
@@ -308,6 +340,10 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
         from gateway_retained_projection import inspect_view
         target_objects, _ = inspect_view(retained_projection, binding, p, view='target')
         require(target_objects == observed, 'state_projection_retained_target_changed')
+    if service_projection is not None:
+        from gateway_service_projection import inspect_view as inspect_service_view
+        target_objects, _ = inspect_service_view(service_projection, binding, p, view='target')
+        require(target_objects == observed, 'state_projection_service_target_changed')
     os.umask(0o077)
     gp.launch.drop_identity({'brokerUid':p['gatewayUid'],'socketGroupGid':p['socketGroupGid']})
     after = gp._verify_gateway(p,plan['before'],namespaces)
@@ -334,4 +370,10 @@ def enter(value, filesystem, binding, *, observe_self_mount=False, profile_layou
         require(target_objects == observed, 'state_projection_retained_target_changed')
         result['retainedProfile'] = target_receipt
         result['retainedProjectionVerified'] = True
+    if service_projection is not None:
+        # Handoff follows the same post-drop/filter/Landlock barrier as retained.
+        target_objects, target_receipt = inspect_service_view(service_projection, binding, p, view='target')
+        require(target_objects == observed, 'state_projection_service_target_changed')
+        result['serviceProfile'] = target_receipt
+        result['serviceProjectionVerified'] = True
     return result

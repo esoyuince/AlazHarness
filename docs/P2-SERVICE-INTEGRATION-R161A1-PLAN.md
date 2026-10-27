@@ -1,6 +1,9 @@
 # P2 / R161A1 — servis profil ve supervisor entegrasyonu
 
-Durum: PLAN; kurulu servis veya gerçek model kabulü değildir.
+Durum: IN PROGRESS. Birinci adımın servis profil/config kaynak denetimleri
+R161A1 ile PASS; sabit receiver/factory ve supervisor bağlantısı sıradadır.
+Kurulu servis veya gerçek model kabulü değildir.
+Kaynak raporu: [R161A1 profil ve config](P2-SERVICE-PROFILE-R161A1.md).
 Önceki paket: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
 Güncel durum ve yayın kaydı: [status.md](../status.md).
 
@@ -35,7 +38,15 @@ değildir ve böyle kullanıldığı varsayılmaz.
 
 ## Uygulama sırası
 
-### 1. Açık servis profili
+### 1. Açık servis profili — kaynak sözleşmesi PASS
+
+27 Ekim 2026: ayrı service layout/expectation, bounded config okuması,
+projection ve ayrı handoff, özgün startup/consumer/worker-thread loader
+bağları tamamlandı. 293 odaklı test Linux'ta PASS; Windows'ta 285 PASS ve
+8 platform SKIP, failure/error 0. Tam CI ve yayın sonucu kaynak raporu ve
+status.md üzerinden ayrıca izlenir. Bu sonuç restart/capture, native effective
+config veya kurulu supervisor kabulüne genişletilmez.
+
 
 Mevcut profil seçimine servis için ayrı sürümlü sözleşme ekle. Native
 model/plugin yapılandırmasının hangi dosyadan ve hangi hash/device/inode

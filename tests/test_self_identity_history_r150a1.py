@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib,json,tempfile,unittest
 import historical_self_identity_r150a1 as h
+import historical_service_profile_r161a1 as service_history
 ROOT=Path(__file__).resolve().parents[1]
 E=ROOT/'evidence/d3b-self-identity-r150a1'
 INTEGRATION='evidence/d3b-self-identity-r150a1/integration.json'
@@ -10,6 +11,7 @@ PREPUBLICATION='evidence/m1-finite-product-r156a1/pre-publication-checks.json'
 PREPUBLICATION_SHA='8fc6fe74c974ac8736f8293a12ef93f44514c499da7f41379fe3d8b0b43fcae0'
 CURRENT_SOURCE='e641a5000810efb2a453ae847f689b422f7d41a7'
 LAUNCHER='packages/claw-hermes/gateway_retained_launch.py'
+PROJECTION='packages/claw-hermes/gateway_state_projection.py'
 CURRENT_LAUNCHER_SHA='4140c06d74e9603664ababb97955cd04779bf9a0494fb1361ae8a426d23a90e2'
 APPLIED_LAUNCHER='evidence/m1-finite-product-r156a1/r150-integrated-gateway_retained_launch.py.txt'
 APPLIED_NAMES=frozenset(('packages/claw-hermes/credential_guard.py',LAUNCHER,
@@ -24,8 +26,9 @@ class SelfIdentityHistory(unittest.TestCase):
         self.assertEqual(set(value['sourceHashes']),APPLIED_NAMES)
         return value
     def assert_current_sources(self,root):
-        # Four applied files remain exact; only the launcher advanced in R156.
-        # Expected bytes come from fixed records, never from the live file.
+        # Three R150 applied files remain exact. The launcher advanced in R156;
+        # projection advanced independently in R161 and has a current-source pin.
+        # Expected bytes come from fixed records/pins, never from the live file.
         current=dict(self.integration(root)['sourceHashes'])
         raw=(root/PREPUBLICATION).read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(),PREPUBLICATION_SHA,'R156 source binding changed')
@@ -33,6 +36,8 @@ class SelfIdentityHistory(unittest.TestCase):
         self.assertEqual(accepted['sourceCommit'],CURRENT_SOURCE)
         self.assertEqual(accepted['sourceHashes'][LAUNCHER],CURRENT_LAUNCHER_SHA)
         current[LAUNCHER]=CURRENT_LAUNCHER_SHA
+        service_history.assert_current_sources(root,names=(PROJECTION,))
+        current[PROJECTION]=service_history.CURRENT_SOURCES[PROJECTION]
         base=json.loads((root/'evidence/d3b-self-identity-r150a1/baseline.json').read_bytes())
         for name,want in current.items():
             self.assertEqual(hashlib.sha256((root/name).read_bytes()).hexdigest(),want,
@@ -47,14 +52,19 @@ class SelfIdentityHistory(unittest.TestCase):
         self.assertIs(applied['allFiveAppliedFilesEqualTestedR147'],True)
         for name,want in applied['sourceHashes'].items():
             # This is one fixed historical generation, not a fallback for live code.
-            path=root/APPLIED_LAUNCHER if name==LAUNCHER else root/name
+            if name==LAUNCHER:path=root/APPLIED_LAUNCHER
+            elif name==PROJECTION:
+                path=service_history.archived_source(root,name,want)
+                self.assertIsNotNone(path,'R150 applied projection must be archived')
+            else:path=root/name
             self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(),want,
                              'R150 applied bytes changed: '+name)
     def source_fixture(self,directory):
         root=Path(directory)
         names=(*APPLIED_NAMES,INTEGRATION,PREPUBLICATION,APPLIED_LAUNCHER,
             'evidence/d3b-self-identity-r150a1/baseline.json',
-            'evidence/d3b-self-identity-r150a1/historical-source-bindings.json')
+            'evidence/d3b-self-identity-r150a1/historical-source-bindings.json',
+            service_history.BINDING,service_history.SOURCES[PROJECTION]['path'])
         for name in names:
             path=root/name;path.parent.mkdir(parents=True,exist_ok=True)
             path.write_bytes((ROOT/name).read_bytes())
@@ -87,6 +97,20 @@ class SelfIdentityHistory(unittest.TestCase):
             (root/APPLIED_LAUNCHER).write_bytes(b'# altered R150 integrated launcher\n')
             self.assert_current_sources(root)
             with self.assertRaisesRegex(AssertionError,'R150 applied bytes changed'):
+                self.assert_applied_sources(root)
+    def test_tampered_current_projection_cannot_be_hidden_by_parent_archive(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=self.source_fixture(d)
+            (root/PROJECTION).write_bytes(b'# altered current projection\n')
+            self.assert_applied_sources(root)
+            with self.assertRaisesRegex(AssertionError,'current product bytes changed'):
+                self.assert_current_sources(root)
+    def test_tampered_applied_projection_cannot_be_hidden_by_current_source(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=self.source_fixture(d)
+            (root/service_history.SOURCES[PROJECTION]['path']).write_bytes(b'# altered R150 projection\n')
+            self.assert_current_sources(root)
+            with self.assertRaisesRegex(AssertionError,'archived source bytes changed'):
                 self.assert_applied_sources(root)
     def test_tampered_archive_is_never_accepted(self):
         name='packages/claw-hermes/credential_guard.py';binding=read('historical-source-bindings.json');want=binding['sources'][name]['sha256']

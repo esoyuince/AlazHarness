@@ -1,0 +1,39 @@
+{
+  "base": "5b7eba4d97f63623c20b51f476f4bf36ba6e7d94",
+  "currentSourceAcceptance": false,
+  "nativeRerun": false,
+  "scope": "historical_receipt_source_identity_only",
+  "sources": {
+    "packages/claw-hermes/execution_boundary.py": {
+      "path": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__execution_boundary.py.txt",
+      "sha256": "8497da13e09b0a1906d1767ddab0956a70f4bd650fa0dc10dae6b50729959d96",
+      "size": 23681
+    },
+    "packages/claw-hermes/gateway_prepared_consumer.py": {
+      "path": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_prepared_consumer.py.txt",
+      "sha256": "cabedadec5180b815080bdd6817c0dd03c98615566f9fb7da1814e775b47d442",
+      "size": 23102
+    },
+    "packages/claw-hermes/gateway_state_projection.py": {
+      "path": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_state_projection.py.txt",
+      "sha256": "fff5f1040860607b7c4ac76a201a99c412f758b1c5b5c573482403d042009c74",
+      "size": 18991
+    },
+    "packages/claw-hermes/gateway_store_startup.py": {
+      "path": "evidence/p2-service-profile-r161a1/parent-packages__claw-hermes__gateway_store_startup.py.txt",
+      "sha256": "c9958d421e9038350ab90d078d85cc6bc30cb693d919e911ea291bc6ff8750b5",
+      "size": 15954
+    },
+    "tests/historical_borrowed_service_r159a1.py": {
+      "path": "evidence/p2-service-profile-r161a1/parent-tests__historical_borrowed_service_r159a1.py.txt",
+      "sha256": "ddddde0ad1fc7e5c71f8a9358eedde021d1396f5db8b5bfff46e1beac56e7eca",
+      "size": 4099
+    },
+    "tests/test_self_identity_history_r150a1.py": {
+      "path": "evidence/p2-service-profile-r161a1/parent-tests__test_self_identity_history_r150a1.py.txt",
+      "sha256": "4c38dbc07d57f1911d1c4f896b19fe2af9331f2bbe9402f3f50840ddbde54e66",
+      "size": 9025
+    }
+  },
+  "version": 1
+}

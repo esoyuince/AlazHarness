@@ -67,6 +67,12 @@ SOURCES = {
 
 
 def archived_source(root, name, expected):
+    # R161's selected parent generation is separate from this pre-R159 set.
+    # Both selectors return before I/O for an unrecognized name/digest pair.
+    from historical_service_profile_r161a1 import archived_source as before_profile
+    prior = before_profile(root, name, expected)
+    if prior is not None:
+        return prior
     item = SOURCES.get(name)
     if item is None or expected != item["sha256"]:
         return None

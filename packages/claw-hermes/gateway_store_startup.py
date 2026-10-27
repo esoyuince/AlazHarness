@@ -1,6 +1,6 @@
 """One fixed native-store startup sequence under a caller-held ProfileLease.
 
-Call after final exec/confinement. Finite layout -> isolated read-only preflight
+Call after final exec/confinement. Explicit profile layout -> read-only preflight
 -> pinned native constructors -> live gate -> clean-only native epoch -> live
 gate. No listener, provider, arbitrary callback or automatic work recovery.
 The caller owns the profile/image lease and MUST retain it until close succeeds.
@@ -43,7 +43,7 @@ class NativeStoreStartup:
     expose HTTP or redispatch a partial pair. Even terminal pairs have not been
     reconciled here. Public native handles are available ONLY after verification.
     """
-    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None,prepared_layout=False,retained_profile=None):
+    def __init__(self,held,expected_mount,expected,*,instance_id,response_expected=None,prepared_layout=False,retained_profile=None,service_profile=None):
         require(type(held) is live.profiles.ProfileLease,'startup_native_lease_required')
         require(type(expected_mount) is live.mounts.ExpectedMount,'startup_mount_expectation')
         require(type(expected) is live.PreparedStoreExpectation and expected.journal_mode=='delete',
@@ -53,6 +53,7 @@ class NativeStoreStartup:
         require(instance_id!=expected.instance_id,'startup_new_instance_required')
         require(type(prepared_layout) is bool,'startup_prepared_layout_option')
         require(not prepared_layout or response_expected is not None,'startup_prepared_layout_requires_response')
+        require(retained_profile is None or service_profile is None,'startup_profile_options_exclusive')
         self._prepared_layout=prepared_layout
         if retained_profile is not None:
             from gateway_retained_profile import validate_receipt
@@ -63,6 +64,21 @@ class NativeStoreStartup:
                                                                response_expected.response_identity),
                     'startup_retained_epoch_or_stores')
         self._retained_profile=retained_profile
+        if service_profile is not None:
+            from gateway_service_profile import validate_expectation
+            from gateway_service_sources import load_selection
+            validate_expectation(service_profile)
+            require(prepared_layout and response_expected is not None,'startup_service_requires_prepared')
+            require(service_profile.home==str(held._home)
+                    and service_profile.epoch==expected.epoch and service_profile.instance_id==expected.instance_id
+                    and service_profile.database_identities==(expected.state_identity,expected.replay_identity,
+                                                              response_expected.response_identity),
+                    'startup_service_profile_binding')
+            require(service_profile.selection==load_selection(),'startup_service_source_changed')
+        self._service_profile=service_profile
+        # Preserve the explicit selection even if the optional public-side field
+        # is later removed. Cleanup does not read or re-admit configuration.
+        self._service_profile_binding=service_profile
         if response_expected is not None:
             response_preopen._pair(response_expected,expected)
         self._response_expected=response_expected
@@ -92,6 +108,14 @@ class NativeStoreStartup:
             writer=self._state._token_writer_thread
             require(writer is None or not writer.is_alive(),'startup_writers_active')
 
+    def _check_service_config(self):
+        receipt=getattr(self,'_service_profile_binding',None)
+        require(getattr(self,'_service_profile',None) is receipt,'startup_service_profile_changed')
+        if receipt is None:return
+        from gateway_service_profile import check_config
+        check_config(self._held._home,uid=self._actor[1],gid=self._actor[2],
+                     device=receipt.home_identity[0],expectation=receipt)
+
     def start(self):
         self._owned()
         require(self._stage=='NEW','startup_not_fresh')
@@ -101,11 +125,17 @@ class NativeStoreStartup:
             self._drained()
             home=self._held._home
             self._stage='LAYOUT'
-            options={'include_response':True} if self._response_expected is not None else {}
-            if self._prepared_layout:options['include_prepared']=True
-            if self._retained_profile is not None:options['retained']=self._retained_profile
-            snapshot=layout.inspect_profile(home,uid=self._actor[1],gid=self._actor[2],
-                                            device=self._expected.state_identity[0],**options)
+            require(self._service_profile is self._service_profile_binding,'startup_service_profile_changed')
+            if self._service_profile is not None:
+                from gateway_service_profile import inspect_profile
+                snapshot=inspect_profile(home,uid=self._actor[1],gid=self._actor[2],
+                    device=self._expected.state_identity[0],expectation=self._service_profile)
+            else:
+                options={'include_response':True} if self._response_expected is not None else {}
+                if self._prepared_layout:options['include_prepared']=True
+                if self._retained_profile is not None:options['retained']=self._retained_profile
+                snapshot=layout.inspect_profile(home,uid=self._actor[1],gid=self._actor[2],
+                                                device=self._expected.state_identity[0],**options)
             if self._response_expected is not None:
                 require(snapshot['response_store.db'][:2]==self._response_expected.response_identity,
                         'startup_response_layout_identity')
@@ -122,15 +152,19 @@ class NativeStoreStartup:
                 require(proof['state']=='COLD_RESPONSE_PREFLIGHT_VERIFIED','startup_response_preflight_result')
                 self._receipts.append(('response_preflight',proof))
             self._owned();self._drained()
+            self._check_service_config()
             State,Replay,runtime=_native()
+            self._check_service_config()
             self._stage='STATE_CONSTRUCTOR';self._unknown_constructor=True
             self._state=State(home/'state.db')
             self._state_conn=self._state._conn
             self._unknown_constructor=False
+            self._check_service_config()
             self._stage='REPLAY_CONSTRUCTOR';self._unknown_constructor=True
             self._replay=Replay(str(home/'runs_idempotency.db'))
             self._replay_conn=self._replay._conn
             self._unknown_constructor=False
+            self._check_service_config()
             self._stage='LIVE_BEFORE_EPOCH'
             proof=live.verify_live_stores(self._held,self._mount,self._state,self._replay,self._expected)
             require(proof['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED','startup_live_result')
@@ -138,22 +172,26 @@ class NativeStoreStartup:
             if self._response_expected is not None:
                 Response=response_live.qualified_response_type()
                 want=self._response_expected
+                self._check_service_config()
                 self._stage='RESPONSE_CONSTRUCTOR';self._unknown_constructor=True
                 self._response=Response(db_path=str(home/'response_store.db'),canonical_state=self._state,
                                         max_size=want.max_size,max_identities=want.max_identities)
                 self._response_conn=self._response._conn;self._unknown_constructor=False
+                self._check_service_config()
                 self._stage='RESPONSE_LIVE_BEFORE_EPOCH'
                 proof=response_live.verify_response_connection(self._held,self._mount,self._state,
                     self._response,self._response_live_expectation(),constructor=True)
                 require(proof['state']=='NATIVE_RESPONSE_CONNECTION_VERIFIED','startup_response_live_result')
                 self._receipts.append(('response_before_epoch',proof))
             self._owned();self._drained()
+            self._check_service_config()
             # No recover_session_inputs, queue mutation, provider or task dispatch.
             # An exception/interrupt after this flag is never treated as no effect.
             self._stage='EPOCH_COMMITTING';self._epoch_attempted=True
             epoch=runtime.begin_runtime_epoch(self._state,instance_id=self._instance_id)
             require(type(epoch) is int and epoch==self._expected.epoch+1,'startup_epoch_result')
             self._expected=replace(self._expected,epoch=epoch,instance_id=self._instance_id)
+            self._check_service_config()
             self._stage='LIVE_AFTER_EPOCH'
             proof=live.verify_live_stores(self._held,self._mount,self._state,self._replay,self._expected)
             require(proof['state']=='NATIVE_STORE_CONNECTIONS_VERIFIED','startup_live_result')
@@ -165,6 +203,7 @@ class NativeStoreStartup:
                 require(proof['state']=='NATIVE_RESPONSE_CONNECTION_VERIFIED','startup_response_live_result')
                 self._receipts.append(('response_after_epoch',proof))
             self._owned();self._drained()
+            self._check_service_config()
             self._stage='VERIFIED'
             return self.status()
         except BaseException as exc:
@@ -188,6 +227,9 @@ class NativeStoreStartup:
                 'startup_finite_option')
         require(type(borrowed_service) is bool and (not borrowed_service or finite_turn),
                 'startup_service_option')
+        require(getattr(self,'_service_profile_binding',None) is None or borrowed_service,
+                'startup_service_profile_requires_service')
+        self._check_service_config()
         consumer=(PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True,finite_turn=True,borrowed_service=True) if borrowed_service
                   else PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True,finite_turn=True) if finite_turn
                   else PreparedRuntimeConsumer(self,local_admission=True,canonical_api=True) if canonical_api
