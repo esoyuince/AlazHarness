@@ -1,0 +1,29 @@
+{
+  "additionalReview": "service volume worker and inherited stop/finish read; no new blocker found; actual original-parent final-receipt gate remains open",
+  "finalFocusedEvidence": "focused-linux.json",
+  "findings": [
+    {
+      "after": "known exit with no final or nonzero exit immediately UNKNOWN; read-only drain can continue",
+      "before": "process poll saw exit but incomplete EOF left READY/DRAINING eligible",
+      "file": "packages/claw-hermes/supervised_service_channel.py",
+      "id": "observed-exit-stale-ready",
+      "postFix": "21 parent tests passed; final combined source proof in focused-linux.json",
+      "preFix": "three new deterministic tests failed",
+      "regressionCases": 3,
+      "state": "FIXED"
+    },
+    {
+      "after": "request carries exact expectedOwner tuple; future server must validate before effects; fixture implements this requirement",
+      "before": "expected owner existed only in response validation",
+      "file": "packages/claw-hermes/service-control.mjs",
+      "fixtureLifecycleEffects": 0,
+      "id": "expected-owner-precondition",
+      "limit": "actual supervisor server remains unimplemented; fixture is not operational admission evidence",
+      "regressionRequests": 9,
+      "state": "FIXED_CONTRACT"
+    }
+  ],
+  "intermediateTestCorrection": "fragmented-ready fixture replaced an 80ms startup assumption with an explicit release marker; partial 23-byte assertion retained",
+  "schema": 1,
+  "scope": "independent source review followed by focused regression tests; not installed runtime acceptance"
+}

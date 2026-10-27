@@ -20,7 +20,7 @@ ilerlemesinin ölçüsü değildir; her paket aşağıdaki gözlenebilir çıkı
 | Paket | Teslimat | Tamamlanma ölçütü | Güncel durum |
 |---|---|---|---|
 | P1 | Güncel kurulum, sabit supervisor/launcher ve gerçek native iş bağlantısı | Aynı kurulumun sabit readiness ve finite girişlerinden normal/hata, replay/yeni iş ve sıralı kapanış; gerekli kimlik, namespace, mount, FD ve kaynak kontrolleri | DONE; R156 finite + R157 readiness-only aynı değişmemiş kurulumda, ayrı taze imaj/supervisor yaşam döngülerinde PASS. Gerçek model/servis kabulü P2 kapsamındadır. |
-| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator ve R159 native loopback transport + servis sahibi kaynak/test bağlantısı tamamlandı. Kurulu günlük start/close, uzun ömürlü supervisor/control kanalı, yeni P2 kurulumu ve gerçek model kabulü açık. |
+| P2 | Günlük yerel kullanım ve tek gerçek model | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat; seçilmiş araçla gerçek görev ve sınırlandırılmış model bütçesi | IN PROGRESS; R158 CLI/locator, R159 native transport/servis sahibi ve R160 ready/control/final kanal bileşenleri + CLI servis kontrol istemcisi + uzun ömürlü volume worker kaynakları mevcut. Sabit servis çocuğu, canlı supervisor kontrol sunucusu, native config profil kabulü, host erişimi, yeni P2 kurulumu ve gerçek model kabulü açık. |
 | P3 | Kalıcılık ve M1 hafıza/beceri yeniden kullanımı | Yeni oturumda geçmiş/kimlik korunur; önceki bilgi veya beceri gerçekten bulunup kullanılır | OPEN; retained ve Dream alt bileşen kanıtları mevcut. |
 | P4 | Arıza ve işletim | Süreç/broker/yanıt kaybı ve süre aşımında açık durum; güvenli operatör uzlaştırması; kurulum, yedek/geri yükleme, yükseltme/geri dönüş | OPEN; bazı davranışlar ayrı deneylerde karakterize edildi. |
 | P5 | Tek v0.1 sürüm adayı ve küçük pilot | M1-01..M1-07 aynı kaynak/kurulumda kapanır; temiz ortam kurulumu ve gerçek görev pilotu | OPEN; tam M1 ve prod kabulü yok. |
@@ -75,7 +75,7 @@ PASS/FAIL/NOT RUN/BLOCKED durumları ayrı kalır. Exact-commit CI sonrasında n
 fast-forward yayın yapılabilir; Git yayını kurulu servise dağıtım değildir.
 
 Aşağıdaki teslimat bölümleri kendi tarihlerindeki kapsamı korur. Güncel paket
-kararı üstteki tabloda ve en son R159 kaynak teslimatında yer alır.
+kararı üstteki tabloda ve en son R160 kaynak teslimatında yer alır.
 
 ## P1 / R153A1 teslimatı
 
@@ -245,3 +245,31 @@ olarak devralınmaz.
 sonra yeni tek P2 kurulumu ve seçilmiş sınırlı gerçek model görevidir. Gerçek
 provider/model çağrısı sıfır; yeni kurulum, tam M1 ve prod kabulü yoktur.
 Rapor: [R159](P2-BORROWED-SERVICE-R159A1.md).
+
+
+## P2 / R160A1 servis kontrol bileşenleri
+
+Özgün native servis sahibine bağlı ready/reply/final protokolü, zaten sahip
+olunan çocuğun pipe kanalı, CLI start/close/service-status istemcisi ve sonlu
+worker'dan ayrı uzun ömürlü volume worker eklendi. İstek ve yanıt aynı servis,
+PID, epoch, instance ve sıra kimliğine bağlanır. Kayıp yanıt otomatik tekrar
+üretmez; salt okunur gözlem özgün işlemin sonucunu bekler. Native CLOSED
+makbuzu tek başına volume kapama yetkisi değildir: süreç exit0 ve iki pipe EOF
+kanıtı da yalnız child completion sonucudur; özgün volume stop/finish ayrıca
+bağlanmalıdır.
+
+Bu teslimat kaynak bileşenlerinin kabulüdür. Çalışan supervisor Unix-socket
+sunucusu ve projected service factory henüz yoktur. Mevcut retained/finite
+profil allowlist'i native model yükleyicisinin beklediği config.yaml dosyasını
+kabul etmez. Özel network namespace içindeki loopback listener host CLI için
+doğrudan erişilebilir değildir. Guard sonrasında config eklemek veya host
+loopback erişimini varsaymak çözüm olarak kullanılmadı.
+
+Yeni testler gerçek geçici socket/pipe'larla framing, sahiplik ve yanıt kaybını;
+native lifecycle ve kernel işlemleri için açık test doubles ile kapanış
+sözleşmelerini sınar. Kesin son sayı ve kaynak hashleri raporun odaklı test
+makbuzundadır; bu sayı gerçek kurulum/kernel/model kabulü değildir.
+P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve prod OPEN.
+
+Rapor: [R160A1](P2-SERVICE-CONTROL-R160A1.md).
+Sonraki iş: [servis profil ve supervisor entegrasyonu](P2-SERVICE-INTEGRATION-R161A1-PLAN.md).

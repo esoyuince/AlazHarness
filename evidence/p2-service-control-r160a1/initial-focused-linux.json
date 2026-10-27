@@ -1,0 +1,38 @@
+{
+  "atUtc": "2026-10-27T00:20:38.025227+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*r160a1.py",
+    "-v"
+  ],
+  "cwd": "/workspace/scratch/c217a8f80b30/AlazHarness-R160",
+  "elapsedSeconds": 7.994,
+  "exitCode": 0,
+  "installedServiceAccepted": false,
+  "logSha256": "c904b44b006b5fbe8df8b9e3331b1d8c1337094d62a8250729413a00ae935294",
+  "platform": "linux",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "realProviderCalls": 0,
+  "run": 79,
+  "scope": "real temporary local sockets and owned subprocess pipes; native lifecycle/kernel boundaries doubled; no installed service/model/privilege lifecycle",
+  "sourceHashes": {
+    "packages/claw-hermes/gateway_service_control.py": "04b31c54de258e8549de6d93358487f343e2cb685a8bee3be493064e286b8d55",
+    "packages/claw-hermes/service-control.mjs": "d5302ff950b4dc1d57c24b8851415920d798fb577e62ba383b868d9b9054830d",
+    "packages/claw-hermes/service_volume_supervisor.py": "eb28de8c043aaf8105cfc54261ccd481424cf973de756ae4aea73753142f9d29",
+    "packages/claw-hermes/supervised_service_channel.py": "ab95662d4f296afc77954ff5a9b3ecd13edba11597e3a48471949c74328cda53",
+    "scripts/alaz_local.mjs": "c94cd47d9cbf9c69e7992b97b450740fea49f98877405bc441e7831c71e80d30",
+    "scripts/run_service_volume_worker.py": "71435f9fc1a04d3213976a93a3623a54a8aca69f1194c8470c62fc28669c4586",
+    "tests/node/service-control-r160a1.mjs": "36d56652f2cdaa8ac86a6f0d4576881f0aa13890e7fdb99374a9d95eee7c091d",
+    "tests/test_service_child_control_r160a1.py": "e9f96948793ec5cfd630a11f9b76246b2c89b75a5c7d977e34d3fe4928164393",
+    "tests/test_service_control_r160a1.py": "95c6ea82de40277019b01392c082e1bee1ce2375e79960a5c0b4596184746d9d",
+    "tests/test_service_volume_r160a1.py": "76473b3b1385d8d74109a27430fd2e5b8d8aa9bad9d14d36184f3862da7e3155",
+    "tests/test_supervised_service_channel_r160a1.py": "5ab3ddc94c336dc1efc91dc371020b2afc23ba95d9e6255e08334c9e85748a38"
+  }
+}

@@ -25,3 +25,7 @@ evidence/p2-borrowed-service-r159a1/checks/static-gate.log binary
 # Keep this packet raw evidence logs identical across platform checkouts.
 evidence/p2-borrowed-service-r159a1/*.txt -text
 evidence/p2-borrowed-service-r159a1/checks/*.log -text
+
+# Preserve R160 raw evidence byte-for-byte, including Windows CRLF.
+evidence/p2-service-control-r160a1/*.log -text
+evidence/p2-service-control-r160a1/focused-windows.log binary

@@ -1,162 +1,88 @@
-# AlazHarness - status
+# AlazHarness — status
 
-## R159A1 - source delivery complete; daily service plan IN PROGRESS
+## R160A1 — servis kontrol bileşenleri: kaynak PASS, Git/CI IN PROGRESS
 
-P1 remains DONE. P2 is IN PROGRESS. P3-P5, full D3B, M1 and production are OPEN.
-This packet completes the native transport, concrete host service owner and
-queued-cancellation source/test connection. The original R159 plan remains open:
-installed daily CLI start/close, a long-lived supervised child/control protocol,
-a fresh P2 installation and one explicitly budgeted real-model task are NOT RUN.
+P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.
+Bu paket uzun ömürlü servisin kaynak bileşenlerini tamamlar; günlük kurulu
+başlat/görev/izle/iptal/kapat kabulü henüz tamamlanmadı.
 
-Active branch: alaz/p2-borrowed-service-r159a1.
-Harness parent: 37620d5c14afee895b16e3441f7a7ed14b77e7d7.
-Native parent: d1516731308de8e87130dc68124e69aad35d6911.
-Native feature: 5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d, normally pushed to
-esoyuince/hermes-agent on the same named feature branch; fork/upstream main unchanged.
-Primary worktrees: scratch/worktrees/p2-borrowed-service-r159a1 and
-scratch/worktrees/hermes-borrowed-service-r159a1.
+- Aktif dal: `alaz/p2-supervised-service-r160a1`.
+- Aktif çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-supervised-service-r160a1`.
+- Başlangıç: `60853416eed945fcbecb3c1be9da162020da8014`.
+- Native seçim: R159'un değişmemiş 760 dosyası, `5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d`.
+- Kesin yayın zinciri: aktif çalışma ağacındaki `scratch/r160a1-publication/`.
+  Sonuç dosyası `final-publication.json`; varlığı, hedef SHA ve terminal PASS
+  gözlenmeden commit/push/CI tamamlandı sayılmaz.
 
-### Implemented and reviewed
+### Tamamlanan kaynak işi
 
-- Explicit one-shot 127.0.0.1 transport on the original runner, adapter, authority,
-  epoch/instance, loop and three stores. Only native GET/events/Stop plus the
-  existing Host Gate and execution routes are installed. Ordinary background
-  startup and default-profile metric persistence are not started by this path.
-- A concrete BorrowedServiceOwner gates external Host Gate submission on the
-  overall service READY state, including the actual SQL write boundary. Drain
-  retains existing observation/Stop. Status rechecks ownership and native phase.
-- Retained outer/inner HTTP handlers, awaited SQL threads, physical workers,
-  canonical ledger obligations and native session observers prevent premature
-  listener retirement. Pre-effect busy preserves DRAINING; unknown effects retain
-  the original owner. Listener/runtime/API/drain/detach/executor/three physical
-  stores/profile lease close in order. Image release remains supervisor-owned.
-- Fixed queued Stop's late stopping-marker race. Exact canonical queued evidence
-  is validated by the client as an admission-specific server report; no global
-  physical-worker proof, resend or repair permission is inferred.
-- Separate 760-file service selection/manifest and five-path Host Gate lock pin
-  exact native Git blobs. Historical finite/retained selections, default host lock,
-  execution lock and the accepted R156 installation remain unchanged.
-- Ten exact parent archives (nine product sources and the pre-repair R140 test)
-  preserve historical receipt identity. Old expected digests/outcomes remain
-  unchanged; new source acceptance is separate.
+Özgün BorrowedServiceOwner için bounded ready/reply/final kontrolü, zaten
+sahip olunan süreç için pipe gözlemcisi, açık owner kimliğine bağlı CLI
+start/close/service-status istemcisi ve ayrı uzun ömürlü volume worker eklendi.
+Mevcut finite/readiness worker'ı ve özgün volume begin/attach/stop/finish
+sırası korunur. Yeni queue, sonuç store'u veya model çağrısı yoktur.
 
-### Verification
+Kaybolan yanıt otomatik tekrar üretmez. Salt okunur gözlem kalan giriş
+byte'larını da göndermez. Native CLOSED kaydı tek başına volume kapama izni
+vermez; bu kanal her durumda `volumeMayClose:false` bildirir.
 
-- Native official runner: 27 new PASS (22 transport, 5 queued) plus 34 selected
-  existing PASS (8 bind, 23 active-work drain, 3 ordinary metrics); no skips/errors.
-- Native official Ruff PASS. Native source-health on 11 paths: 0 blocking/advisory.
-- Linux host service: 31 PASS; native lifecycle interfaces are doubled, while
-  harness guards/SQLite/threaded work are real fixtures.
-- Linux client/recovery/queued contracts: 58 PASS, 0 skips/errors. Original launcher,
-  interpreter and process exit were not retained in that earlier log; explicit
-  primary Windows command/terminal receipt is now separately recorded.
-- Historical provenance: 12 PASS (six new plus six R158).
-- Primary Windows focused regression: 235 run, 218 passed, 17 skipped, 0 failures,
-  0 errors; terminal exit0. Sixteen skips require unavailable aiohttp; one is the
-  POSIX SIGINT case. This is not installed native-service qualification.
-- The partial export's earlier broad host run had 117 successful methods / 118 run,
-  one method error and one separate class-setup error from absent evidence files.
-  The full primary run above resolves those missing-evidence cases; its raw failed
-  precursor remains preserved, not rewritten to PASS.
-- Two deliberate old-target failures establish the queued marker regression after
-  restoring only d151 authority-runs in a disposable mixed-supporting-generation
-  copy. This is bounded regression evidence, not old installation acceptance.
+Bağımsız kaynak incelemesinde iki sorun düzeltildi: gözlenmiş child exit
+sonrasında eski READY durumu ve supervisor kimliğinin yalnız yanıt sonrasında
+kontrol edilmesi. Üç deterministik exit testi eklendi; CLI istekleri artık
+sunucunun işlemden önce kontrol etmesi gereken exact expectedOwner taşır.
+Dokuz eski owner isteği fixture'da sıfır lifecycle etkisi üretti. Canlı
+supervisor sunucusu henüz uygulanmadığından bu sonuç source/fixture kapsamındadır.
 
-### First full CI and receipt-generation repair
+### Doğrulanan testler
 
-The first source commit a4d290441b88afc8eb9bd8193a03c72475bb051f was normally
-pushed to the feature branch. Its full CI ran 4084 tests: 4060 passed, 2 failed,
-22 skipped and 0 errors. Both failures compared R140 historical receipt digests
-with changed live source bytes. The failed log, original metadata and exact
-GitHub status are preserved in initial-ci-failure.json and its checks/ artifacts.
-Main remained at the R158 parent throughout diagnosis and repair.
+| Koşu | Sonuç | Kanıt |
+|---|---|---|
+| Son Linux odaklı koşu | 83/83 PASS; fail/error/skip0, exit0, 8.668s | `evidence/p2-service-control-r160a1/focused-linux.json` ve `.log` |
+| Windows taşınabilir odaklı koşu | 83 toplam: 36 PASS, 47 platform SKIP; fail/error0, exit0 | `evidence/p2-service-control-r160a1/focused-windows.json` ve `.log` |
+| Bağımsız inceleme | İki somut bulgu düzeltildi; kaynak sınırları açık | `evidence/p2-service-control-r160a1/review.json` |
+| Tam proje CI | Bu checkpoint'te PENDING; eski R159 sonucu devralınmadı | `scratch/r160a1-publication/` |
+| Yeni kurulu servis / gerçek sağlayıcı | NOT RUN; provider/model çağrısı0 | P2 açık |
 
-Only the two stale receipt assertions were repaired. They now use the existing
-exact R159 archive selector for the recorded generation, while separately hashing
-current live bytes and refusing old runtime-proof inheritance. No old receipt,
-expected digest/outcome, product source, native source or configuration changed
-in this repair. Eight focused Linux tests passed; the full R140 module plus R158
-and R159 provenance modules passed on primary Windows: 22/22, no skips, failures
-or errors, terminal exit0. Raw execution records and independent review are in
-receipt-repair-tests.json, checks/receipt-repair-windows.json and
-ci-repair-review.json. A new normal commit and its full exact-commit CI are still
-required; these focused results do not replace that publication gate.
+Linux toplamı: 26 child +21 parent +24 CLI +12 volume. Gerçek geçici socket,
+pipe ve fixture çocukları kullanıldı; native lifecycle ve kernel sınırları
+açık doubles ile sınandı. Yeni mount/cgroup/namespace veya gerçek native
+kurulum kabulü çıkarılmaz. İlk79 koşusu ayrıca korunur. Scratch ortamındaki
+R159 host tanı koşusunun exit124 timeout'u PASS sayılmaz.
 
-### Second full CI and the historical test archive
+### Açık kapılar ve kesin sonraki iş
 
-The normal repair commit e25c2cc063d4c595ddbb5b7a62c069453d5971d9 resolved
-both original R140 failures. Its full CI ran 4084 tests: 4061 passed, 1 failed,
-22 skipped and 0 errors. The unchanged L145 receipt checks 625 historical source
-hashes, including the R140 test's pre-repair bytes. That newly changed test needed
-its own exact historical generation. The second failed CI is preserved separately
-in second-ci-failure.json and its original checks/ metadata and log.
+Mevcut finite/retained allowlist, native model loader'ın beklediği config.yaml
+dosyasını kabul etmiyor. Ayrı service profile/config admission sözleşmesi
+uygulanmalı; guard sonrasında dosya ekleyerek bu sınır aşılmamalı. Ardından
+sabit projected service factory, özgün supervisor Unix sunucusu, child final
+ile volume stop/finish bağlantısı ve özel loopback'e host görev erişimi
+birlikte bağlanmalı. Sonrasında yeni tek P2 kurulumu ve seçilmiş bütçeli model
+kabulü gelir. Model/sağlayıcı ve harcama sınırı henüz seçilmedi.
 
-The strict R159 binding now adds only that one test archive: the exact 7789-byte
-parent Git blob, verified at both 37620d5 and a4d2904. The old nine binding entries,
-all old receipt digests/outcomes, the current R140 repair and the L145 test remain
-unchanged. The archive selector's function body is unchanged; the same six
-provenance methods now cover ten named generations, including current/unknown
-hash refusal and absent/truncated/same-length-corrupt archives.
+Rapor: [R160A1](docs/P2-SERVICE-CONTROL-R160A1.md).
+Sonraki plan: [R161A1](docs/P2-SERVICE-INTEGRATION-R161A1-PLAN.md).
+Yol haritası: [PRODUCT-ROADMAP](docs/PRODUCT-ROADMAP.md).
 
-This extension passed 8 focused Linux tests and all 28 primary Windows tests
-(R140 10, L145 6, R159 provenance 6, R158 provenance 6): no failures, errors or
-skips. The confirmed primary run has an actual terminal exit0. Its predecessor
-also reported 28/28 but lost the native terminal receipt during a connection/lane
-change; both records are preserved separately. The independent confirmation ran
-after verifying that the previous owned test process was absent.
-See generation-repair-tests.json, checks/generation-repair-windows-confirmed.json
-and ci-generation-repair-review.json. These remain historical-source checks, not
-new runtime acceptance. A new full exact-commit CI must pass before normal
-fast-forward main publication.
+### İş günlüğü
 
-### Git and CI handoff
+- 2026-10-27 başlangıç: R159 yayın makbuzu ve canlı main `6085341` doğrulandı;
+  temiz tabandan izole R160 çalışma ağacı açıldı. Önceki son durum
+  [r160a1-parent.md](docs/status-history/r160a1-parent.md) içinde korundu.
+- 2026-10-27 ara kontrol: source kontrol bileşenleri ve yeni worker uygulandı;
+  bağımsız inceleme düzeltmeleri tamamlandı. Son83 Linux testi geçti.
+- 2026-10-27 aktarım: 11 source/test dosyası hash kontrollü biçimde primary
+  çalışma ağacına aktarıldı. Windows36 PASS +47 platform SKIP, exit0.
+  Commit, feature push ve exact-commit tam CI kapanışı sırada.
+- R156 kabul edilmiş kuruluma, kişisel agent state'ine, native fork main'ine
+  veya kökün eşzamanlı33 dosyasına bu paket kapsamında yazılmadı.
 
-All source/test transfers use verified parent/current hashes. Native feature
-publication and exact 760-blob source generation are recorded in
-`evidence/p2-borrowed-service-r159a1/native-publication.json` and
-`primary-source-selection.json`. Static checks/discovery have a separate record;
-static discovery does not count as test execution.
+- 2026-10-27 reset sonrası devam: yeni yetkili Bridge oturumu açıldı;
+  primary R160 HEAD ve canlı origin/main hâlâ `6085341`. Stage boş, yeni
+  commit/push yok. İki odaklı koşunun 11 dosya hash'i ve ham logları yeniden
+  doğrulandı; kaynaklar değişmemiş. Kökün korunacak33 dosyası birebir eşleşti;
+  native `5e3635c` ve main çalışma ağaçları temiz. Yayın işi IN PROGRESS.
 
-The exact final harness commit, full required alaz/local-ci result, feature/main
-refs, post-main CI, clean worktrees and protected root33 hashes are carried by:
-`scratch/r159a1-publication/final-publication.json` in this primary R159 worktree.
-Read and verify that final handoff against live Git before continuing. A successful
-full exact-commit CI is required before normal fast-forward main publication.
-The journal avoids embedding this commit's own hash inside its tracked contents.
-Git publication is not deployment to the accepted P1 installation.
-
-### Next concrete work
-
-Continue the existing R159 plan with a deliberately long-lived supervised service
-entry and separate ready/control/final-receipt channel. The current finite child
-lifetime, mount-worker idle limit and single final stdout protocol do not provide
-that daily service. Bind CLI start/close to this original owner and its terminal
-receipt; an HTTP close ACK cannot prove later child/store/image retirement.
-
-Then build a separate P2 candidate containing Node/runtime and the selected Python
-closure, accept its full localhost flow in one fresh installation, and select a
-single route/model, small allowed .txt task and explicit call/token/micro-USD caps
-before a real model run. No real model/route/budget has been selected or used.
-No provider or model call occurred in R159; no existing user service was adopted.
-
-### Work log and evidence
-
-- R158 handoff, protected repositories and original root33 verified; isolated
-  R159 worktrees created. Parent status: docs/status-history/r159a1-parent.md.
-- Initial scope: docs/status-history/r159a1-source-start.md.
-- Source/test checkpoint: docs/status-history/r159a1-source-checkpoint.md.
-- Source delivery: exact native commit, reviewed source selection, focused native,
-  host/client/provenance tests and primary regression recorded above.
-- First source delivery checkpoint: docs/status-history/r159a1-source-delivery.md.
-- Initial full-CI failure preserved; historical receipt-generation repair and
-  independent review completed, with 8 focused and 22 primary regressions PASS.
-- First repair checkpoint: docs/status-history/r159a1-receipt-repair.md.
-- Second full-CI failure preserved; exact historical R140 test archive added and
-  both receipt chains verified together in the confirmed 28-test primary run.
-- Final publication: exact-commit CI and protected-root closure must be read from
-  the final-publication journal identified above.
-
-Report: docs/P2-BORROWED-SERVICE-R159A1.md.
-Plan: docs/P2-BORROWED-SERVICE-R159A1-PLAN.md.
-Roadmap: docs/PRODUCT-ROADMAP.md.
-Evidence: evidence/p2-borrowed-service-r159a1/ (raw logs and independent reviews).
+- 2026-10-27 yayın hazırlığı: yeni worker sonundaki tek fazla LF temizlendi;
+  product davranışı değişmedi. Son hashlerle Linux83 PASS ve Windows36 PASS
+  +47 platform SKIP yeniden gözlendi. Ham logların Git blob'larında aynı
+  byte'larla korunması için yalnız R160 evidence kapsamına kural eklendi.
