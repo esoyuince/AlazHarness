@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "errors": 0,
+      "exitCode": 0,
+      "failures": 0,
+      "fullLogBytes": 20047,
+      "fullLogSha256": "63eae81113c173c344c369fdca3a32a2e6abcb532c7333a6537fe9ff48f0724d",
+      "label": "linux",
+      "passed": 123,
+      "receiptSha256": "d73b199ae45650f58a30de1ef97f7ab9599564ae279cfd3d2a9d38c7125e7644",
+      "seconds": 26.00735,
+      "skipped": 0,
+      "testsRun": 123
+    },
+    {
+      "errors": 0,
+      "exitCode": 0,
+      "failures": 0,
+      "fullLogBytes": 22128,
+      "fullLogSha256": "8537110d9a4da609e15064e5ffad85863eabeaae42c1ed4548172efa5e567b8c",
+      "label": "windows-02",
+      "passed": 88,
+      "receiptSha256": "0e925eb9900999216f35a17d43054a4446265611d8ef3af36f41bfff9838c6f9",
+      "seconds": 366.345013,
+      "skipped": 35,
+      "testsRun": 123
+    }
+  ],
+  "frozenInputCount": 81,
+  "fullCiAccepted": false,
+  "installedAcceptanceDerivedFromTests": false,
+  "kernelAcceptance": false,
+  "kind": "R167_FOCUSED_TEST_READBACK",
+  "newInstallerTests": 29,
+  "realModelCalls": 0,
+  "result": "PASS",
+  "runnerSha256": "dd87860755dce87514cbae303603b4e5e52f1e50e649e71fbd4d69e8d0c1756b",
+  "schema": 1,
+  "scope": "Owned synthetic fixtures and bounded local Python children; separate from actual installation, selected-runtime execution and full CI",
+  "selectedTestIdsSha256": "10e87aa5be9848708eeccc0902a8eab79f6100a2bf8ffef6e87a46db55957229",
+  "selectionAndExecutionIdsEqualAcrossPlatforms": true,
+  "unchangedPriorSelection": 94,
+  "windowsNativeOperation": {
+    "exitCode": 0,
+    "nativeReceiptSha256": "d3ec816712be851fbc3229bca778754bd7591b4d3a8d96f2ec44d08da1fb0a2c",
+    "requestId": "e167a101-1028-4a01-8000-000000000016",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdoutSha256": "01f2f88760bfcff9c5d81e5b009b85cd0dec2f840deae2b6d214a11518db5447"
+  }
+}

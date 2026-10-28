@@ -1,0 +1,86 @@
+{
+  "attempts": [
+    {
+      "exitCode": 2,
+      "kind": "official_signature_path_failure",
+      "nativeReceiptSha256": "182bdab3764d1cf4c1fbf2f92f5d47ad99a0c2573d84dde647549ba1d2058a22",
+      "operationReceiptSha256": "11f4b113447039fee7558e6d3162ccd5b0a85ba640ed0089265c710705f50c5d",
+      "reason": "GPGV interpreted a Windows drive path as a key resource URL; no signature accepted or lab mutation",
+      "requestId": "e167a101-1028-4a01-8000-000000000007",
+      "separateResolution": "Same pinned signed metadata and keyring verified through the correct MSYS path; native008 exit0",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutSha256": "f305c35749f42c0bd7c923206fcd913997817b556fb60296cfe4fa4b98328625"
+    },
+    {
+      "diagnosticReceiptSha256": "94d91a2641e3818b299f99773e1cfb818a3758e6368954e8f0b47289ea411762",
+      "exitCode": 2,
+      "kind": "windows_focus_preflight_refusal",
+      "nativeReceiptSha256": "38baeb4b99d255e88e1635f8bf9437d82829761fa56a5a84422e744ff4044857",
+      "reason": "LICENSE checkout used CRLF; exact HEAD blob and frozen test input used LF",
+      "requestId": "e167a101-1028-4a01-8000-000000000012",
+      "separateResolution": "CAS restored only the R167 checkout to the already-pinned HEAD blob bytes; windows-02 passed",
+      "stderrSha256": "cd29c1cc57d69ef66c053e2f82dbfaaa25e58e50f25d6b7f25d24988765b3907",
+      "stdoutSha256": "3ef38cae2e74392ba330c765db70b1bcd3499ce8fca41e5979b1979b8ef7dcea",
+      "testPinsRelaxed": false,
+      "testsStarted": false
+    },
+    {
+      "completedFixedImports": 15,
+      "deniedEvents": [
+        "socket.bind"
+      ],
+      "exitCode": 2,
+      "kind": "strict_import_effect_refusal",
+      "nativeReceiptSha256": "e804470af0bebe9ec2728f3182d49952e14a5f8060870a57c17709dba9cefc3f",
+      "ownedTemporaryHomeRemoved": true,
+      "requestId": "e167a101-1028-4a01-8000-000000000029",
+      "separateQualifiedImportGate": "Recorded separately; does not change this failed strict attempt",
+      "socketBindAllowed": false,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutSha256": "a5626e790f4677d1f74698ce4bf532e1ce6bd1f9b0fe128bbb020ca52c98ada9",
+      "strictImportAcceptance": false
+    },
+    {
+      "completedFixedImports": 15,
+      "exactDeniedIPv6CallerObserved": true,
+      "exitCode": 2,
+      "guardRelaxed": false,
+      "historicalAttemptReclassified": false,
+      "intentSha256": "a9dfd9d0762245053392ec8736256b3f6880d87c68495f379c014e8571875e33",
+      "kind": "qualified_import_ambient_origin_refusal",
+      "nativeReceiptSha256": "9ac10aec64c2e4128e0b2a282ca0eaaee630c12895945eaf862735c5ea528bd3",
+      "ownedTemporaryHomeRemoved": true,
+      "qualificationStdoutSha256": "d234c6cf904540af75d2907f952b278024560edbfc99771d613a4558462571ba",
+      "reason": "import_ambient_package_origin",
+      "requestId": "e167a101-1028-4a01-8000-000000000037",
+      "separateResolution": "New reviewed source and exclusive attempt02 require Python -I -S -B; no ambient origin allowlist",
+      "socketClosureChecked": false,
+      "sourceSha256": "0c87ab6ed90e7e7ea25a7d2803a5c44da61da8f5b2a3e4c14dcdf79a01015cae",
+      "startupDiagnostic": {
+        "exitCode": 0,
+        "nativeReceiptSha256": "8799508366e9e615d41ea69441054a5136b3b0048e5bdab2c08f0f4a65f1c5e9",
+        "noSite": false,
+        "outsideStdlibOrigin": {
+          "bytes": 155,
+          "file": "/etc/python3.12/sitecustomize.py",
+          "module": "sitecustomize",
+          "presentBeforeDiagnosticImports": true,
+          "sha256": "43d81125d92376b1a69d53a71126a041cc9a18d8080e92dea0a2ae23be138b1e"
+        },
+        "productImported": false,
+        "requestId": "e167a101-1028-4a01-8000-000000000039",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdoutSha256": "b68ddf09b61b14fda7fa5b5dabf49965d46da8fe282960a76db4f56b7dbf177d"
+      },
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutSha256": "4337471fa27cbb8eddbce6933d0f48e908331215058adc4c67ec3e13ae5c1703",
+      "terminalSha256": "9801de0d504d8538c1ea5afd54d82fd0a77dfa84b8abedd9edb5b4cb92e1b65b"
+    }
+  ],
+  "automaticMutationReplay": false,
+  "historicalFailuresReclassified": false,
+  "kernelAcceptance": false,
+  "kind": "R167_PRESERVED_ACTUAL_FAILURE_HISTORY",
+  "realModelCalls": 0,
+  "schema": 1
+}

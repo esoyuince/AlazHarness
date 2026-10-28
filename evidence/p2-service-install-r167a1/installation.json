@@ -1,0 +1,119 @@
+{
+  "dependencyInventoryMeaning": "Exactly 1162 prepared import prerequisite files; provider/plugin completeness is not accepted",
+  "independentVerification": {
+    "exitCode": 0,
+    "nativeReceiptSha256": "89f6b86776321dd71c7c64b9f1e4cf1871e891623b9bd918873769e68804eca9",
+    "requestId": "e167a101-1028-4a01-8000-000000000027",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdoutSha256": "81d3bf430ca4edd77675b547d74e1223865911cbd9cc7e07ff348fd3b46645ab"
+  },
+  "independentVerificationActor": "ordinary alazgateway; UID/GID enforced by the pinned transport",
+  "independentVerificationOperationSha256": "aacf5dce1c290b6234335fe3e363424ce95644d51a0e15d67a9e80ccdac28986",
+  "inputBundleSha256": "1856b4786b077efd257aa0e852acbc9235be5c036a3efb27cb62df5f2bd98c7c",
+  "install": {
+    "exitCode": 0,
+    "nativeReceiptSha256": "a9575e24ea241924c4d0dae41a2cfb813f836badf0e11eca023efa9f5d37c5ea",
+    "requestId": "e167a101-1028-4a01-8000-000000000025",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdoutSha256": "742c3fa7fdaa2148966bd378f5e03d91deca0a7f82e9c72e3bc06cdd55101d5e"
+  },
+  "installIntentSha256": "fe968863dfd23d2d6e838473daf85b0d72b03ea8a643a112e2e7aa2959ff5f79",
+  "kernelAcceptance": false,
+  "kind": "R167_ACTUAL_SOURCE_INSTALLATION_AND_RUNTIME_IDENTITY",
+  "nodeProvisioning": {
+    "activeKeyringSha256": "140f2ad5260fd62773b6243ce8e1d3009645d558f121b8262c55e383dc285932",
+    "exitCode": 0,
+    "mountsUnchangedDuringProvisioning": true,
+    "nativeReceiptSha256": "3ac696ff2d516d52294a1c7476b7cc08981671df12ddb5949d2f8b4f37ed31bd",
+    "nodeExecutedByProvisioning": false,
+    "officialArchiveBytes": 32026916,
+    "officialArchiveSha256": "6c172a9ab6718f7b801fb5a7bd486af2ee5e32758086a04b84fcce2aa77095e6",
+    "officialArchiveUrl": "https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-x64.tar.xz",
+    "officialDownloadReceiptSha256": "d9f19fd0be92b466ea270c044c7b46725c6e97dc986cd23337a073519025e499",
+    "oldInstallationPreserved": true,
+    "operationSha256": "4bbf1166c7dc25696fe08c010390ef87b17fb5322b4ab207b6db6634c6529338",
+    "receiptSha256": "8ab1f6a19023fe24d715e6b4302cb989daa85c37cf3a95c77296678179dc9e6f",
+    "releaseSigner": "5BE8A3F6C8A5C01D106C0AD820B1A390B168D356",
+    "requestId": "e167a101-1028-4a01-8000-000000000021",
+    "signatureVerified": true,
+    "signedSumsSha256": "458c81e98060760ddadc152cd6d2a06e1d5b8cc8018863758e9f64fe72abc809",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdoutSha256": "0027b35760bf368441857ed75bae39c4540f686e3d0c6457f63d1176b21bdee9"
+  },
+  "originalInstallationReceiptSha256": "0ba26bfbae1a216a595baf6fb935ed18f399bcfd0ecf29aa9c14bf61bd04232f",
+  "priorR156ReceiptSha256": "a4bcc0f27d29f27f08c55d3a65eaa102a503a7da12d4672253f0245fd5d4f845",
+  "projectionOmittedFields": [
+    "rootDevice",
+    "rootInode",
+    "runtimes.*.device",
+    "runtimes.*.inode"
+  ],
+  "providerDependencyCompletenessAccepted": false,
+  "realModelCalls": 0,
+  "receiptProjection": {
+    "archiveSha256": "43fc186b8f21e4f39e34364ae100c82e520317d6b06c8a100b29f3b26adcd56a",
+    "dependenciesAcceptedForService": false,
+    "dependencyFileCount": 1162,
+    "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+    "destination": "/opt/alaz-r167a1",
+    "executionAuthorized": false,
+    "harnessCommit": "1600eba430562795b9114209d1168bfa0d6ea5fd",
+    "installed": true,
+    "kernelAcceptance": false,
+    "kind": "VERIFIED_SERVICE_INSTALLATION",
+    "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "nativeRuntimeAccepted": false,
+    "realModelAcceptance": false,
+    "realModelCalls": 0,
+    "receiptSha256": "0ba26bfbae1a216a595baf6fb935ed18f399bcfd0ecf29aa9c14bf61bd04232f",
+    "result": "PASS",
+    "rootControlledAncestryVerified": true,
+    "runtimeExecutableBytesVerified": true,
+    "runtimeVersionReadback": true,
+    "runtimes": {
+      "node": {
+        "bytes": 126879696,
+        "gid": 0,
+        "mode": 493,
+        "observedVersion": "v24.22.1",
+        "path": "/opt/alaz-r167a1-node-24.22.1/bin/node",
+        "sha256": "e32e2d16081cf644f88392934288086e7662529d0d43277c34f7aad2207cfafb",
+        "uid": 0,
+        "version": "24.22.1",
+        "versionStdoutSha256": "249baf635bb43877fcb9422efa1a4904b702d0ddf14d3949b7cd0950d5229c81",
+        "versionTuple": [
+          24,
+          22,
+          1
+        ]
+      },
+      "python": {
+        "bytes": 8020928,
+        "gid": 0,
+        "mode": 493,
+        "observedVersion": "Python 3.12.3",
+        "path": "/usr/bin/python3.12",
+        "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+        "uid": 0,
+        "version": "3.12.3",
+        "versionStdoutSha256": "5b3e43dc38ca01e3f5a7854ba50d4330864b0c1e0f646650b2c78cf072acc366",
+        "versionTuple": [
+          3,
+          12,
+          3
+        ]
+      }
+    },
+    "schemaVersion": 1,
+    "serviceReadinessAccepted": false,
+    "sourceAndDependenciesReadBack": true,
+    "sourceFileCount": 878,
+    "sourceManifestSha256": "a3fde8b0ac808c375c4ecd0eab9f26938828b0d01cd4632ffa4234e47de38af8"
+  },
+  "result": "PASS_SOURCE_INSTALLATION_AND_INDEPENDENT_READBACK",
+  "schema": 1,
+  "scope": "Dedicated Linux lab; exact source/dependency bytes and selected executable identity/version only",
+  "serviceReadinessAccepted": false,
+  "sharedLibraryClosureAccepted": false,
+  "sourceInstallationOperationSha256": "9ae61c2549fb5bbb062a77ef75301ec0a70fd9599e2ccd3e2ef5e2ffb9d42ffd"
+}
