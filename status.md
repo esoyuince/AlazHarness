@@ -1,60 +1,65 @@
-# AlazHarness — R167A1 servis kurulumu ve başlangıç doğrulaması
+# AlazHarness — R168A1 gerçek servis yaşam döngüsü
 
-**Kurulum, sınırlı başlangıç kontrolleri ve R167 kaynak commit'inin taze tam CI koşumu PASS. Bu kapanış kaydı hazırlanırken kapanış commit'i/CI ve main yayını bekliyor.**
+**IN PROGRESS — QA04 nihai kaynak baytlarıyla normal-04 ve lostreply-02 gerçek servis yaşam döngüsü PASS; Linux05/Windows05 sabit136 test seçimi PASS. Kaynak yayın paketi02 hazırlanıyor; commit/push/full CI henüz yapılmadı. Önceki QA03 PASS kayıtları korunuyor; normal-02 UNKNOWN açık. P1 DONE; P2 IN PROGRESS; P3–P5/M1/production OPEN.**
 
-**P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.**
+## Çalışma bağlamı
 
-- Aktif dal: `alaz/p2-service-install-r167a1`.
-- Yetkili çalışma ağacı: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-install-r167a1`.
-- Başlangıç commit'i: `833a40aa99f5ca7e2b2562a19e8f0c286a0adea2` (tamamlanmış R166 yayını).
-- Rapor: [R167 servis kurulumu ve doğrulaması](docs/P2-SERVICE-INSTALL-R167A1-REPORT.md).
-- Önceki kayıtlar: [R166 kapanış durumu](docs/status-history/r167-parent.md), [R167 ara durumunun tam kopyası](docs/status-history/r167-pre-publication.md).
+- Asıl worktree: `C:\Antigravity\AlazHarness\scratch\worktrees\p2-service-lifecycle-r168a1`
+- Branch: `alaz/p2-service-lifecycle-r168a1`
+- Başlangıç/main: `9440a2251d26db88b5f08a0e0292e73f4fbb6e57`.
+- R167 kaynak yayını tamamlandı. Önceki status metni değiştirilmeden `docs/status-history/r168-parent.md` dosyasında saklandı; önceki hazırlık anındaki PENDING satırlarının son otoritesi R167 terminal seal'idir.
+- R167 terminal seal SHA-256: `65693d5e1453da650422d63b30b29e5b3ed291aad753b527ed24985e08456cd8`.
+- Bu worktree baseline SHA-256: `1af1f7710647f06b25d7efd8b7bb26a18d2ad9ab12476391d16c97ad12cf368f`.
+- 20 korunan repository/worktree ve kökteki mevcut 33 değişiklik çalışma başında aynı kaldı. Root convenience status güncellenmedi.
 
-## Tamamlananlar
+## Amaç ve kabul sınırı
 
-R166 servis adayı, özel P71C Linux laboratuvarındaki yeni `/opt/alaz-r167a1` hedefine kuruldu. Kurulum 878 kaynak ve 1162 bağımlılık dosyasını içeriyor. Python 3.12.3 ve resmi imzası doğrulanmış Node 24.22.1 için gerçek executable kimliği, SHA-256 ve sürüm geri okuması geçti. Ayrı ordinary-user doğrulaması kurulu dosyaları yeniden okuyarak makbuzla eşleştirdi.
+Aynı `/opt/alaz-r167a1` kurulumunun gerçek profile/üç store hazırlığı, gerçek broker readiness ping'i, özgün ServiceVolumeSupervisor, CLI start → READY → status → sıralı close ve kapanış gözlemi. Normal akış ve ayrı image/profile üzerindeki kayıp lifecycle yanıtı özgün owner/request ile doğrulandı; model/görev yürütme kabulü bu işin kapsamı dışında kaldı. 878 kurulu kaynak ve 1162 bağımlılık dosyası değiştirilmeyecek. Provider/model/tool yürütme bütçeleri sıfır; görev/model çağrısı yapılmayacak.
 
-| Kontrol | Gerçek sonuç | Kanıt |
+## Güncel ilerleme
+
+| Alan | Durum | Kanıt / kalan iş |
 |---|---|---|
-| Linux odaklı regresyon | 123 RUN / 123 PASS / 0 SKIP, exit 0 | [Odaklı test özeti](evidence/p2-service-install-r167a1/focused-checks.json) |
-| Primary Windows regresyonu | 123 RUN / 88 PASS / 35 tanımlı Linux-only SKIP, exit 0 | Aynı sabit test seçimi ve 81 girdi |
-| Gerçek kaynak kurulumu | 878 kaynak + 1162 bağımlılık, exit 0 | [Kurulum ve bağımsız readback](evidence/p2-service-install-r167a1/installation.json) |
-| Python başlangıcı | 15 sabit import PASS; `-I -S -B`, exit 0 | [Sınırlı başlangıç doğrulaması](evidence/p2-service-install-r167a1/qualification.json) |
-| Node CLI help | Beklenen 2046 bayt çıktı, boş stderr, exit 0 | Aynı başlangıç kaydı |
-| R167 kaynak commit'i tam CI | 4706 RUN / 4673 PASS / 33 SKIP, 0 FAIL / 0 ERROR, exit 0 | [Kabul edilmiş kaynak CI](evidence/p2-service-install-r167a1/source-ci.json) |
-| Kapanış CI ve main yayını | Bu kapanış kaydı hazırlanırken PENDING | Sonraki sonuçlar için final publication seal esas |
+| R167 devam zemini | PASS | F9440, tam yayın seal'i, 22 sahipli dosya doğrulandı |
+| İzole R168 worktree | PASS | Native002; temiz F9440 üzerinde yeni branch; 20/33 korunuyor |
+| Gerçek OS Python başlangıcı | V2 SOURCE GATE PASS | Native021 beş bağlamın gerçek kaydı; tek fark HOME=/ altında pwd built-in yokluğu. Her bağlam exact observation ile sabitlendi; bağımsız review PASS |
+| Service seed / ping broker | SOURCE GATE PASS | Seed 30/30, broker 25/25 PASS; bağımsız kaynak incelemesi PASS |
+| Controller / Linux transport | SOURCE + NORMAL PASS | Dar exact diagnostic incelemesi PASS; Linux04:136 PASS0skip. Gerçek normal03 start/READY/status/close/final-status ve kaynak postconditions PASS |
+| Kayıp yanıt kabulü | PASS | Native043 exit0: close bir kez gönderildi, gerçek REPLY_LOST; aynı owner/request ile salt okunur final status CLOSED/3store. Native044388669B/e4f8f161… asıl makbuz hashini doğruladı |
+| Windows runner / primary test | FINAL QA04 SOURCE PASS | Linux05:136 PASS/0 skip; Windows05:93 PASS/43 declared skip/0 fail/error. Tam loglar ve465 input hash/136 seçili-yürütülmüş ID birebir doğrulandı; eski04 kayıtları korunuyor |
+| Gerçek normal-01 | REFUSED — PREFLIGHT | Native019 terminal exit2: bootstrap single-context contract uyuşmazlığı; service/kernel effects başlamadı. Native020 dört deneme yolunun yokluğunu doğruladı |
+| Gerçek normal-02 | UNKNOWN — RETAINED | Native028: seed exit0/PASS ve üç fiziksel DB close;1265B exact SQLite DELETE uyarısı eski stderr gate tarafından reddedildi. Controller7/broker14/worker15 ve loop0 korunuyor; service hiç başlamadı |
+| Salt okunur custody / bağımsız hedef | OBSERVED | Native029 kurulu878+1162 dosyayı doğruladı; Native033 eski PID/start/namespace/cgroup/fence/image/loop/mount ve broker kayıtlarını iki kez bağladı. o gözlemde normal03/QA03 yolları yoktu ve yeterli alan vardı; eski UNKNOWN kapanmış sayılmıyor |
+| Gerçek normal-03 | PASS | Native040 exit0; gerçek servis READY ve normal CLOSED. Üç fiziksel store kapanışı, özgün child/worker exit0,2EOF,volume/fence/imagelease,1brokerping/0provider ve değişmez2040 kurulu dosya. Native041392108B ham sonucu26608f17… hash ile doğruladı |
+| Eski UNKNOWN son custody | OBSERVED | Native046 iki başarılı denemeden sonra aynı7/337,14/670,15/719 süreçleri ve kaynakları gözlemledi; normal02 UNKNOWN, normal close/cleanup/lab-clean iddiası yok |
+| Güncel QA04 gerçek kabul | PASS | Native069 normal04, native072 lostreply02 exit0; native070/073 asıl ham sonuçlar byte-exact doğrulandı. Yeni6QA kaynakları final seed/controller pinlerine bağlı; kurulu878+1162 ve runtime aynı |
+| Güncel eski UNKNOWN gözlemi | OBSERVED | Native074 iki QA04 kabulünden sonra eski7/337,14/670,15/719 süreçleri ve loop0/image/fence/scope/mount aynı; normal02 UNKNOWN ve close iddiası yok |
+| Yayın hazırlığı | IN PROGRESS | Primary discovery4842 unique/0test yürütme. İlkstageUNKNOWN korunuyor; native064 owned25 index çıkışı PASS. Policy02 tam policy/code/config/image eşitliği PASS. Yeni8public kanıt eski9 dosyaya ekleniyor; kaynak commit/push/fullCI henüz yapılmadı |
 
-Kaynak commit'i `508182cf7f476fbf1273cc185b037e7b8d8e1c11`, normal push sonrası bağımsız remote readback ile doğrulandı. Aynı commit'in taze tam CI koşumu 382.910 saniyede tamamlandı; native078 kabulü PASS. Kapanış commit'i için ayrı taze CI gerekir.
+## Yapılacaklar
 
-Python kontrolü 444 native, 50 harness ve 304 bağımlılık dosyasının import kökenini doğruladı. Tek `socket.bind` girişimi, sabit urllib3 IPv6 yetenek yoklamasına bağlandı ve engellendi; aynı socket'in kapandığı, `HAS_IPV6=False` olduğu ve başka engellenmiş etki bulunmadığı gözlendi. Kurulu kaynak/bağımlılık dosyaları ve runtime binary'leri işlem öncesinde ve sonrasında değişmedi. Geçici home içindeki `SOUL.md` ile birlikte denemeye ait home kaldırıldı.
+1. Son QA04 public kanıt/rapor paketini dondur; eski9public dosya ve tüm deneme/yayın kayıtlarını değiştirmeden koru. Güncel giriş: `evidence/p2-service-lifecycle-r168a1/summary-qa04.json`.
+2. Sabit4.842 test seçimi ve değişmez CI policy ile kaynak/closure tam CI, ardından main fast-forward ve normal push yayınını doğrula. Bu adıma kadar tam CI sonucu NOT RUN.
+3. Eski normal02 UNKNOWN kaynaklarına replay/adoption/cleanup uygulanmaz; mevcut kodda özgün owner için resume/normal-close arayüzü yok. P4 işletim/recovery açığı kaydedildi.
+4. P2 gerçek görev/günlük kullanım, P3 hafıza/beceri, P4 işletim/recovery, P5 aynı aday M1/pilot kapıları açık. Provider/model/tool/bütçe seçimi olmadan gerçek model/görev kabulü yapılmaz.
 
-İlk strict import kontrolü (native029) ve ortamdan gelen `sitecustomize` nedeniyle reddedilen ilk qualification (native037) başarısız olarak korunuyor. Ayrı native042 denemesi daha sıkı no-site başlangıcıyla geçti; eski retler PASS olarak yeniden sınıflandırılmadı. [Başarısız denemelerin kaydı](evidence/p2-service-install-r167a1/preserved-attempts.json).
+## Değişiklik günlüğü
 
-## Kabul sınırı
+- 2026-10-28 13:35 UTC: R168 yeni branch/worktree oluşturuldu; gerçek başlangıç baseline'ı ve önceki R167 kapanış pin'i kaydedildi. Model/iş/servis/kernel kabulü henüz çalıştırılmadı.
+- 2026-10-28 13:37 UTC: Kaynak incelemesi controller-main-thread ve gerçek broker ping gerekliliğini doğruladı. `-I -B` alt süreçler için ortam başlangıcını ayrıca ölçme gereği kaydedildi.
 
-Bu sonuç kurulu adayın dosya kimliği ve sınırlı başlangıç uyumluluğunu kabul eder. Servis nesneleri oluşturulmadı; gerçek servis/kernel yaşam döngüsü, provider bağımlılık tamlığı ve gerçek model kabulü açık. Audit guard, işletim sistemi sandbox kabulü değildir. **Gerçek model çağrısı: 0.**
+- 2026-10-28 13:58 UTC: Dört sabit hedefli seçimde 90 test PASS, 0 skip. Kısıtlı yürütücüdeki AF_UNIX EPERM ayrı gözlem olarak saklandı; izinli yürütücüde gerçek socket/ping testleri geçti. Kurulu aday kabulü henüz çalıştırılmadı. Controller, seed, broker, bootstrap, boundary ve transport bağımsız kaynak incelemeleri tamamlandı.
 
-Kurulan ürün kaynağı harness `1600eba430562795b9114209d1168bfa0d6ea5fd`, native `5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d` olarak sabit. Araçların R167 yayın commit'i bu ürün kimliğini değiştirmez. Önceki R156 kurulumu ve tarihsel finite builder/installer korunuyor.
+- 2026-10-28 14:10 UTC: Host/source review PASS. Linux fixed focus02:121 PASS/0 skip, kaynaklar aynı. Windows01:70 PASS/43 declared skip/6 error/2 failure; tam log saklandı, dört dosyada POSIX lexical fixture düzeltildi, kapsam/skip sayısı korunuyor. Normal01 prepare tamamlandı; Linux service apply henüz yapılmadı.
 
-## Devam adresi ve kesin sonraki adım
+- 2026-10-28 14:22 UTC: Normal01 kaynak/bootstrap aşamasında terminal reddedildi, yeniden oynatılmadı. Beş gerçek actor/context gözleminde yalnız pwd built-in farkı bulundu; v2 her bağlamı ayrı exact contract ile bağlar. Eski QA01/contract ve ret raw kaydı korundu. V2 source review PASS, Linux03 124PASS0skip; Windows03 ve ayrı QA02/normal02 kabulü sırada. Ürün kurulumunda değişiklik yok.
 
-Son kabul edilen yayın kapısı native078 source CI: PASS, exit 0. Makbuz: `scratch/r167-publication/source-ci-01.result.json`; commit `508182cf7f476fbf1273cc185b037e7b8d8e1c11`. Bu metin, kaynak CI kabulünden sonraki kapanış hazırlığını kaydeder.
+- 2026-10-28 14:45 UTC: Windows03 tam124 seçim81PASS43declaredskip doğrulandı. normal02 terminal controller sonucu UNKNOWN; seed exit0/PASS ayrı tutuldu, servis başlangıcı yok. Native029 ve033 read-only custody kanıtları eski kaynakları koruyup yeni03 yollarının ayrılığını doğruladı. Exact üç SQLite DELETE diagnostic sınıflandırıcısı kaynak pinleri/seed close/handoff kontrolleriyle hazırlanıyor; önceki UNKNOWN yeniden sınıflandırılmıyor, replay/cleanup yok.
 
-Yayın önkontrollerindeki retler ve ayrı düzeltmeler [raporda](docs/P2-SERVICE-INSTALL-R167A1-REPORT.md#yayın-önkontrolleri-ve-ayrı-düzeltmeler) korunuyor. Dış `alaz-Server` deposundaki iki belgeli `69f2f7d… → 2e859e64…` geçişi tam commit kimlikleriyle sınırlandı; özgün başlangıç kaydı ve diğer koruma koşulları değişmedi.
+- 2026-10-28 14:52 UTC: Exact diagnostic kaynak incelemesi PASS, sabit136 Linux/Windows seçimi geçti; aynı465 input hash/136 ID doğrulandı. Yeni QA03/normal03 native040 gerçek lifecycle PASS, native041 asıl ham result392108B/26608f17… eşleşti. Native043 ayrı lostreply01 çalışıyor; henüz terminal iddia yok. Eski normal02 UNKNOWN açık; yayın/CI henüz yapılmadı.
 
-Sıradaki adımlar üç dosyalık kapanış commit'i/push, bu commit'in taze tam CI koşumu, main fast-forward/push ve bağımsız readback, aynı final commit için doğrulanmış CI reuse ve final integrity/terminal seal. **Bu kapanış kaydı hazırlanırken bu adımlar bekliyor.** Sonraki yayın kapılarının yetkili sonucu, `scratch/r167-publication` altındaki `R167_SOURCE_PUBLICATION_COMPLETE` final publication seal kaydı ve onun bağladığı makbuzlardır.
+- 2026-10-28 14:59 UTC: Lostreply01 native043 terminal PASS; özgün close bir kez gönderildi, REPLY_LOST sonrasında aynı owner/request final status CLOSED. Native044 asıl388669B/e4f8f161… makbuzu ve4.842 unique discovery doğruladı. Native046 eski normal02 kaynaklarını salt okunur gözlemledi: UNKNOWN değişmedi. Native047 policy/code/image digest aynı; public kanıt ve yayın hazırlığı sürüyor.
 
-Ardından aynı kurulu adayda açık servis profiliyle gerçek supervisor/child/volume ve namespace/cgroup/mount/lease yaşam döngüsünü, sıralı kapanışı ve belirsiz yanıt sonrası uzlaştırmayı doğrula. Host CLI/API kullanım zinciri ve restart gözlemi sonraki P2 kapılarıdır. Seçilmiş provider/model ve çağrı/token/maliyet sınırları tanımlandığında sınırlı gerçek model kabulüne geçilir.
+- 2026-10-28 15:34 UTC: İlk yayın gözlemi inherited iki logun yeni worktree'deki CRLF farkında reddedildi; exact BASE LF baytları SHA-CAS ile geri kondu, eski CRLF preimage'ları saklandı. Native060 yalnız aynı iki blobun Git stat önbelleğini yeniledi; logical index aynı kaldı. Native062 kaynak stage Gitadd0, ardından rapor/seed EOF boş satırı kontrolü exit2: özgün stage UNKNOWN korunuyor. Native064 yalnız sahipli25 yolu BASE index'e çıkardı; çalışma baytları20repo/33root değişikliği aynı. Seed yalnız son ikiLF trim, controller yalnız seed SHA pini, rapor yalnız sonLF trim: bağımsız review PASS. Linux05 136PASS0skip,465input aynı; Windows05 ve QA04 üzerinde yeni gerçek kabul hazırlanıyor. Commit/push/tamCI henüz yapılmadı.
 
-## İş günlüğü
-
-- 28 Ekim 2026: Kullanıcının devam talebiyle R167 başlatıldı. R166 nihai kapanışı korundu; yeni servis installer ve runtime/dependency doğrulaması için ayrı dal/çalışma ağacı açıldı. Kaynak uygulaması, testler ve gerçek kurulum sonuçları geldikçe bu kayıt güncellenecek.
-
-- 28 Ekim 2026: Runtime envanteri ve imzalı Node dağıtımı doğrulandı. Node için yeni ayrı hedef hazırlanıyor; mevcut 1162 dosyalık bağımlılık kümesi sağlayıcı tamlığı iddiası taşımıyor. Kurulum ve gerçek servis/model kabulü ayrı kalır.
-- 28 Ekim2026: Node ve kaynak/bağımlılık kurulumu tamamlandı; iki runtime sürümü gerçek executablelardan doğrulandı. Bağımsız readback ve başlangıç kontrolleri sürüyor.
-
-- 28 Ekim 2026: Ayrı import qualification denemesi native037 exit 2 ile reddedildi. Engellenen bind, sabit urllib3 kaynağına ve tam çağrı zincirine bağlandı; sonraki origin kontrolü ortamdan gelen sitecustomize dosyasını kabul etmedi. Native039 salt okunur başlangıç tanısı bu dosyanın ürün importlarından önce yüklendiğini gösterdi. Yeni deneme için Python başlangıcında site yüklemesini kapatan daha sıkı -S koşulu hazırlanıyor. Önceki retler korunuyor; gerçek servis/model kabulü yok.
-
-- 28 Ekim 2026: Ayrı native042 no-site qualification exit 0 ile PASS. Sabit 15 import, kaynak kökenleri, aynı engellenmiş IPv6 yoklamasının kapanışı ve önce/sonra dosya doğrulamaları tamamlandı. Node CLI help ve bağımsız kurulum readback sonuçlarıyla birlikte yayın paketi hazırlanıyor. P2 ve production kabulü açık.
-
-- 28 Ekim 2026: Kaynak commit'i `508182cf7f476fbf1273cc185b037e7b8d8e1c11` normal push/readback sonrası taze tam CI ile kabul edildi: native078 PASS; 4706 RUN / 4673 PASS / 33 SKIP, 0 FAIL / 0 ERROR, 382.910 saniye. Bu kapanış kaydı hazırlanırken closure CI ve main adımları bekliyor; sonraki sonuçlarda final publication seal esas. P2 ve production açık.
+- 2026-10-28 15:41 UTC: QA04 exact source doğrulaması tamamlandı. Linux05 136PASS0skip; Windows05 93PASS43declaredskip; aynı465input/136ID. Native069 normal04 gerçek yaşam döngüsü PASS; native070392242B/4e55ddcb… asıl dosyayla eşleşti. Native072 lostreply02 birclose/REPLY_LOST/özgünstatusCLOSED PASS; native073388720B/bc6470e4… eşleşti. Her iki yeni deneme kendi3store/child/worker/volume/lease kaynaklarını kapattı; kurulu2040 dosya/runtime değişmedi,0model0task. Native074 eski normal02 UNKNOWN custody OBSERVED: yeniden oynatma/adoption/cleanup yok. Native075/076 freshpolicy02 tam eşitlik PASS. Yayınpaketi02, kaynak ve closure tamCI4842, main fast-forward/normalpush sırada; henüz commit/tamCI yok.

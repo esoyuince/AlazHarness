@@ -1,0 +1,454 @@
+{
+  "allOwnedChildrenTerminal": true,
+  "attemptId": "normal-03",
+  "automaticCleanup": false,
+  "automaticRetry": false,
+  "brokerTerminal": {
+    "activeRequests": 0,
+    "closeConfirmed": true,
+    "controllerMustRetainOwnership": false,
+    "counters": {
+      "physicalAttempts": 0,
+      "pings": 1,
+      "refused": 0,
+      "responses": 0
+    },
+    "forbiddenEffectsCount": 0,
+    "kind": "R168A1_PING_BROKER_TERMINAL",
+    "pid": 37,
+    "processExitMustBeObservedByController": true,
+    "productionAcceptance": false,
+    "providerSendInvokedByLauncher": false,
+    "realModelCalls": 0,
+    "result": "PASS",
+    "shutdownCommandAccepted": true,
+    "socketRemoved": true,
+    "upstreamStarted": false
+  },
+  "cleanupScope": "this separately owned attempt only; no whole-lab cleanup claim",
+  "close": {
+    "closureReported": true,
+    "command": "close",
+    "completion": {
+      "apiSessionsRetired": true,
+      "childExited": true,
+      "consumerDetached": true,
+      "defaultExecutorJoined": true,
+      "fenceRemovedAfterCleanup": true,
+      "imageLeaseReleased": true,
+      "physicalStoresClosed": 3,
+      "profileLeaseReleased": true,
+      "runtimeRetired": true,
+      "transportRetired": true,
+      "volumeUnmounted": true
+    },
+    "hostHttpReachabilityVerified": false,
+    "kernelVerified": false,
+    "owner": {
+      "pid": 30,
+      "startTicks": 145519
+    },
+    "requestAttempted": true,
+    "requestIdSha256": "6bfcfd9d5350f8f30e4a321438290a72a780d5bef8462bd47b4db59c8c0e4a6f",
+    "retryAllowed": false,
+    "serviceClosed": true,
+    "serviceIdSha256": "a594ed023935deea0522c0ecb4846b6be5bd3e88bda0f0b99ec437ffe945ea56",
+    "serviceStarted": false,
+    "state": "CLOSED"
+  },
+  "closure": {
+    "childExited": true,
+    "epoch": 2,
+    "fullD3BAccepted": false,
+    "listener": {
+      "ownerRetained": true,
+      "state": "LISTENER_CLOSED",
+      "volumeCleanupStarted": false
+    },
+    "observedAfterUnknown": false,
+    "retryAllowed": false,
+    "state": "COMPLETED",
+    "stderrBytes": 1265,
+    "stderrSha256": "6835531560cfb3b3e7d8ebd1bad0e8cfd3e1710408cac85f9a1814b00133916c",
+    "stdoutBytes": 1512,
+    "stdoutSha256": "a6cfc613fc2036c5f71258b3b01121c2a8052d0a15345115ac7267a4e48d82b0",
+    "volumeClosure": {
+      "fenceRemovedAfterCleanup": true,
+      "imageLeaseReleased": true,
+      "state": "CLOSED",
+      "volumeUnmounted": true
+    }
+  },
+  "dependencyFiles": 1162,
+  "executedTasks": 0,
+  "finalStatus": {
+    "closureReported": true,
+    "command": "service-status",
+    "completion": {
+      "apiSessionsRetired": true,
+      "childExited": true,
+      "consumerDetached": true,
+      "defaultExecutorJoined": true,
+      "fenceRemovedAfterCleanup": true,
+      "imageLeaseReleased": true,
+      "physicalStoresClosed": 3,
+      "profileLeaseReleased": true,
+      "runtimeRetired": true,
+      "transportRetired": true,
+      "volumeUnmounted": true
+    },
+    "hostHttpReachabilityVerified": false,
+    "kernelVerified": false,
+    "owner": {
+      "pid": 30,
+      "startTicks": 145519
+    },
+    "requestAttempted": true,
+    "requestIdSha256": "6bfcfd9d5350f8f30e4a321438290a72a780d5bef8462bd47b4db59c8c0e4a6f",
+    "retryAllowed": false,
+    "serviceClosed": true,
+    "serviceIdSha256": "a594ed023935deea0522c0ecb4846b6be5bd3e88bda0f0b99ec437ffe945ea56",
+    "serviceStarted": false,
+    "state": "CLOSED"
+  },
+  "fullD3BAccepted": false,
+  "hostMountNamespaceUnchanged": true,
+  "hostMountTableUnchanged": true,
+  "installationReceiptSha256": "0ba26bfbae1a216a595baf6fb935ed18f399bcfd0ecf29aa9c14bf61bd04232f",
+  "installedSourcesAndRuntimesUnchanged": true,
+  "kind": "R168_PUBLIC_ACTUAL_TASK_FREE_LIFECYCLE",
+  "liveKernelObservation": {
+    "cgroupMembers": [
+      38,
+      55
+    ],
+    "excludedPathsCount": 4,
+    "mountinfoBytes": 2057,
+    "mountinfoSha256": "c8e268ac7f002884d6bce62031c314f52d5164bf7b63837be7e47049093bb5c3",
+    "namespaces": {
+      "mnt": "mnt:[4026532244]",
+      "net": "net:[4026532246]",
+      "user": "user:[4026531837]"
+    },
+    "pid": 55,
+    "principal": {
+      "CapBnd": [
+        "0000000000000000"
+      ],
+      "CapEff": [
+        "0000000000000000"
+      ],
+      "Gid": [
+        "23003",
+        "23003",
+        "23003",
+        "23003"
+      ],
+      "Groups": [],
+      "NoNewPrivs": [
+        "1"
+      ],
+      "Uid": [
+        "23001",
+        "23001",
+        "23001",
+        "23001"
+      ]
+    },
+    "projectedBootstrapPathExclusionObserved": true,
+    "runtimeImportTraceClaimed": false,
+    "scope": "same attempt service child and original controller observations",
+    "startTicks": 148688
+  },
+  "lostReply": null,
+  "m1Accepted": false,
+  "manifestSha256": "c3eafe0fd2b99c990978f592b2beb7aca8435a938d8fa238d3d11140183a30f3",
+  "mode": "normal",
+  "orderedControllerEvents": [
+    "QUALIFY_ACTUAL_OS_BOOTSTRAP",
+    "PROVISION_NEW_ATTEMPT",
+    "FORMAT_NEW_IMAGE",
+    "START_REAL_PING_BROKER",
+    "BEGIN_ORIGINAL_SERVICE_VOLUME",
+    "ATTACH_ORIGINAL_VOLUME",
+    "START_ORIGINAL_SERVICE_WORKER",
+    "REAL_NATIVE_SERVICE_SEED",
+    "BIND_ORIGINAL_CONTROL_SERVER",
+    "CLI_START",
+    "OBSERVE_PROJECTED_SERVICE_KERNEL",
+    "CLI_SERVICE_STATUS",
+    "CLI_CLOSE",
+    "CLI_SERVICE_STATUS",
+    "STOP_ORIGINAL_PING_BROKER",
+    "VERIFY_REAL_NORMAL_CLEANUP",
+    "COMPLETE"
+  ],
+  "originalProcesses": {
+    "broker": {
+      "captureKind": "PROCESS_EXIT_WITH_SEPARATE_BROKER_RECEIPT",
+      "exitCode": 0,
+      "phase": "COMPLETE",
+      "pid": 37,
+      "startTicks": 145947
+    },
+    "controller": {
+      "pid": 30,
+      "startTicks": 145519
+    },
+    "seed": {
+      "captureKind": "CAPTURED_PIPES",
+      "exitCode": 0,
+      "phase": "COMPLETE",
+      "pid": 39,
+      "pipesComplete": true,
+      "startTicks": 146058,
+      "stderr": {
+        "bytes": 1265,
+        "sha256": "6835531560cfb3b3e7d8ebd1bad0e8cfd3e1710408cac85f9a1814b00133916c"
+      },
+      "stdout": {
+        "bytes": 5255,
+        "sha256": "91ccd3940291a88c2da23725bd6598ad2cd2bf8c3e91440c353482c7170e53f2"
+      }
+    },
+    "service": {
+      "captureKind": "SERVICE_CHANNEL",
+      "exitCode": 0,
+      "phase": "COMPLETED",
+      "pid": 55,
+      "startTicks": 148688,
+      "stderrEof": true,
+      "stderrTailIsComplete": true,
+      "stdinClosed": true,
+      "stdoutEof": true
+    },
+    "workerPid": 38
+  },
+  "priorUnknownReclassified": false,
+  "productionReady": false,
+  "providerBudget": 0,
+  "rawInput": {
+    "bytes": 392108,
+    "inputId": "normal-03/result.json",
+    "sha256": "26608f17f965f6db616e41d48963af7daccb9dd352c3a6e0fcece311a40d596e"
+  },
+  "readyStatus": {
+    "closureReported": false,
+    "command": "service-status",
+    "completion": {
+      "apiSessionsRetired": false,
+      "childExited": false,
+      "consumerDetached": false,
+      "defaultExecutorJoined": false,
+      "fenceRemovedAfterCleanup": false,
+      "imageLeaseReleased": false,
+      "physicalStoresClosed": 0,
+      "profileLeaseReleased": false,
+      "runtimeRetired": false,
+      "transportRetired": false,
+      "volumeUnmounted": false
+    },
+    "hostHttpReachabilityVerified": false,
+    "kernelVerified": false,
+    "owner": {
+      "pid": 30,
+      "startTicks": 145519
+    },
+    "requestAttempted": true,
+    "requestIdSha256": "4ef0d1c787418e1ece62172b7449574eb3c65820d4c6ad625a052487402aca29",
+    "retryAllowed": false,
+    "serviceClosed": false,
+    "serviceIdSha256": "a594ed023935deea0522c0ecb4846b6be5bd3e88bda0f0b99ec437ffe945ea56",
+    "serviceStarted": false,
+    "state": "READY"
+  },
+  "realBrokerPingAccepted": true,
+  "realModelCalls": 0,
+  "receiptConsistencyCheckedByPublisher": true,
+  "restartAccepted": false,
+  "result": "PASS",
+  "runtimeRerunByPublisher": false,
+  "sameOriginalServiceChild": true,
+  "sameOriginalSupervisor": true,
+  "schema": 1,
+  "seed": {
+    "allThreeConnectionsPhysicallyClosed": true,
+    "apiAdmissionPublished": false,
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "completedChecks": [
+      "preflight",
+      "response_preflight",
+      "before_epoch",
+      "response_before_epoch",
+      "after_epoch",
+      "response_after_epoch"
+    ],
+    "consumerState": "DETACHED",
+    "dependencyFileCount": 1162,
+    "executedTasks": 0,
+    "fullD3BAccepted": false,
+    "fullSharedLibraryClosureAccepted": false,
+    "handoffSha256": "9b896d9e830b91a93efbe85a30368f30c4f573fde8b454231cce5aa3177bf01b",
+    "harnessCommit": "1600eba430562795b9114209d1168bfa0d6ea5fd",
+    "homeConfigAndHandoffContentsPublished": false,
+    "installationReceiptSha256": "0ba26bfbae1a216a595baf6fb935ed18f399bcfd0ecf29aa9c14bf61bd04232f",
+    "isolated": true,
+    "kernelAccepted": false,
+    "kind": "R168A1_TASK_FREE_SERVICE_SEED",
+    "listenersCreated": 0,
+    "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+    "noSite": true,
+    "normalLoopShutdown": true,
+    "outstandingAsyncTasks": 0,
+    "outstandingThreads": 0,
+    "ownerState": "CLOSED",
+    "parentPid": 30,
+    "parentStartTicks": 145519,
+    "phase": "COMPLETE",
+    "pid": 39,
+    "producerDocumentModifiedByPublisher": false,
+    "producerSource": {
+      "bytes": 50973,
+      "fileBackedIdentityClaimed": true,
+      "sha256": "5ab713ff090190b2f3b5f2dae68544d5639db167fc333ad6ac6e85ff15fda8c4"
+    },
+    "profileLeaseReleasedNormally": true,
+    "providerExchangePerformed": false,
+    "qualifiedNativeSourceCount": 760,
+    "realModelCalls": 0,
+    "result": "PASS",
+    "runtimeBinaryBytesReadBackBeforeAndAfter": true,
+    "serviceAccepted": false,
+    "serviceCapturedWhileLeaseHeld": true,
+    "sourceAndDependencyBytesReadBackBeforeAndAfter": true,
+    "sourceFileCount": 878,
+    "sqliteOpenCount": 7,
+    "startTicks": 146058,
+    "state": "SERVICE_SEED_CREATED",
+    "zeroExecutionCapacity": true
+  },
+  "seedDiagnostics": {
+    "appliedTo": "seed stderr only",
+    "archiveSha256": "43fc186b8f21e4f39e34364ae100c82e520317d6b06c8a100b29f3b26adcd56a",
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "classification": "EXACT_PINNED_NATIVE_DELETE_WARNINGS",
+    "databaseLabelsInOrder": [
+      "state.db",
+      "runs_idempotency.db",
+      "response_store.db"
+    ],
+    "declaredJournalMode": "delete",
+    "fullSharedLibraryClosureAccepted": false,
+    "installedHandoffCodecRunByClassifier": false,
+    "kernelAccepted": false,
+    "kind": "R168_EXACT_NATIVE_SQLITE_DIAGNOSTICS",
+    "liveDatabaseOpenedByClassifier": false,
+    "nativeSourceExecutedByClassifier": false,
+    "nativeSourcePins": {
+      "native/gateway/platforms/api_server_response_store.py": "9d787af0433af6d99c0518ba7bcabfbea06b73bd3f8da48e47e63464e1e0f3ad",
+      "native/gateway/platforms/api_server_run_idempotency.py": "4ad0c20dfe220cf0aac8b340702b54621f7ecdb075799816407406c5cd733c03",
+      "native/hermes_state.py": "c24484b3026a377621dd1a0f1d23de8e0d9d9d0b6d9600d47cee9368646c9577",
+      "native/hermes_state_wal.py": "5fb152d748a373995093e253b10af3ab662f7331202ebd99d2897340d14b0e61"
+    },
+    "priorUnknownReclassified": false,
+    "qualified": true,
+    "seedHandoffSha256": "9b896d9e830b91a93efbe85a30368f30c4f573fde8b454231cce5aa3177bf01b",
+    "seedSourceSha256": "5ab713ff090190b2f3b5f2dae68544d5639db167fc333ad6ac6e85ff15fda8c4",
+    "serviceAccepted": false,
+    "sqliteVersionObservedByCaller": [
+      3,
+      45,
+      1
+    ],
+    "stderrBytes": 1265,
+    "stderrSha256": "6835531560cfb3b3e7d8ebd1bad0e8cfd3e1710408cac85f9a1814b00133916c",
+    "warningCount": 3
+  },
+  "serviceStarted": true,
+  "sourceFiles": 878,
+  "start": {
+    "closureReported": false,
+    "command": "start",
+    "completion": {
+      "apiSessionsRetired": false,
+      "childExited": false,
+      "consumerDetached": false,
+      "defaultExecutorJoined": false,
+      "fenceRemovedAfterCleanup": false,
+      "imageLeaseReleased": false,
+      "physicalStoresClosed": 0,
+      "profileLeaseReleased": false,
+      "runtimeRetired": false,
+      "transportRetired": false,
+      "volumeUnmounted": false
+    },
+    "hostHttpReachabilityVerified": false,
+    "kernelVerified": false,
+    "owner": {
+      "pid": 30,
+      "startTicks": 145519
+    },
+    "requestAttempted": true,
+    "requestIdSha256": "4ef0d1c787418e1ece62172b7449574eb3c65820d4c6ad625a052487402aca29",
+    "retryAllowed": false,
+    "serviceClosed": false,
+    "serviceIdSha256": "a594ed023935deea0522c0ecb4846b6be5bd3e88bda0f0b99ec437ffe945ea56",
+    "serviceStarted": true,
+    "state": "READY"
+  },
+  "state": "REAL_SERVICE_LIFECYCLE_CLOSED",
+  "taskExecutionAccepted": false,
+  "taskFreeLifecycleAccepted": true,
+  "terminal": {
+    "callerReportChannel": "stdout",
+    "callerStderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "callerStdout": {
+      "bytes": 167080,
+      "sha256": "4f0d5f190b558723b2e102aef5e3289f6c74cfaac55500041a6025fc73388b61"
+    },
+    "controller": {
+      "pid": 30,
+      "startTicks": 145519
+    },
+    "host": {
+      "continuingLiveCustodyVerified": false,
+      "frozenInputsUnchanged": true,
+      "intentSha256": "3f3833da1ae5ac2136af898eb975a6d29be3874f12f3390df5f58b42c8bdc35f",
+      "manifestSha256": "c3eafe0fd2b99c990978f592b2beb7aca8435a938d8fa238d3d11140183a30f3",
+      "ownedCallerMayBeRunning": false,
+      "protectedWorkspacesUnchanged": true,
+      "result": "PASS",
+      "state": "REAL_SERVICE_LIFECYCLE_ACCEPTED",
+      "stderrBytes": 0,
+      "stderrComplete": true,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 390592,
+      "stdoutComplete": true,
+      "stdoutSha256": "dec4b39cf314b2d7f65d854ba4f3992c3c9b8c3015174c635e7b8abc21903e8e",
+      "transportExitCode": 0,
+      "transportTerminalObserved": true
+    },
+    "transport": {
+      "callerTerminalObserved": true,
+      "pipesComplete": true,
+      "result": "PASS",
+      "state": "CALLER_TERMINAL_ACCEPTED"
+    }
+  },
+  "toolBudget": 0,
+  "validatedIdentityBindings": {
+    "allCliOwnersMatchOriginalController": true,
+    "allCliServiceIdsMatch": true,
+    "correlationDigestEncoding": "SHA-256 of exact ASCII identifier bytes, no newline",
+    "lostSenderBindingApplicable": false,
+    "lostSenderMatchesRetainedMutationRequest": false,
+    "mutationAndFinalStatusRequestIdMatch": true,
+    "startAndReadyStatusRequestIdMatch": true
+  },
+  "wholeLabCleanClaimed": false
+}

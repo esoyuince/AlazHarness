@@ -1,0 +1,263 @@
+{
+  "P1": "DONE",
+  "P2": "IN_PROGRESS",
+  "P3": "OPEN",
+  "P4": "OPEN",
+  "P5": "OPEN",
+  "activeEvidenceGeneration": "QA04",
+  "continuingCustodyBeyondObservationClaimed": false,
+  "currentActualAcceptedAttempts": [
+    "normal-04",
+    "lostreply-02"
+  ],
+  "currentRetainedCustodyFile": "retained-normal-02-after-qa04.json",
+  "currentRuntimeEvidenceFiles": [
+    "normal-04.json",
+    "lostreply-02.json"
+  ],
+  "earlierFailuresReclassified": false,
+  "executedTasks": 0,
+  "files": {
+    "focused-linux-05.json": {
+      "bytes": 33117,
+      "sha256": "27d03c9b4b9c22f309af49f372471347292c3b7b7fff669c6d17bca94270bdba"
+    },
+    "focused-linux-05.log": {
+      "bytes": 23226,
+      "sha256": "28b978878f0fb82d1be1f503eebaf955453602f7f5204804f4b6a883c2aeb705"
+    },
+    "focused-windows-05.json": {
+      "bytes": 45434,
+      "sha256": "d31879852c3c30ab61d174935e462cd8d96fcbc7561ec4676e56a3d7b01d8bcd"
+    },
+    "focused-windows-05.log": {
+      "bytes": 25038,
+      "sha256": "5afd5d0be82ae06738f6b5fa27d927f1ae0e92815efa196c0ef7286f3d0ee507"
+    },
+    "lostreply-02.json": {
+      "bytes": 15766,
+      "sha256": "ceb675845d2c355c20846ebe8efe61eb419c224a24d6468ce8e165bb41498bc9"
+    },
+    "normal-04.json": {
+      "bytes": 16040,
+      "sha256": "e73c3690a178d01ba03025e2ba3cfe0d710bb5b05ccac05eb6e8aa760160ca4d"
+    },
+    "retained-normal-02-after-qa04.json": {
+      "bytes": 2256,
+      "sha256": "a657e7127fa608eed89b49fad492264255799e63220eec899c15533e20727d78"
+    }
+  },
+  "finalQaSourceQualification": true,
+  "formatAndPublicationRequalification": {
+    "preservedPublicationStage": {
+      "affectedRepositoryFiles": [
+        "docs/P2-SERVICE-LIFECYCLE-R168A1-REPORT.md",
+        "scripts/qa/r168a1_service_seed.py"
+      ],
+      "earlierStageReclassified": false,
+      "gitMutationPerformedByPublisher": false,
+      "rawDiagnostic": {
+        "bytes": 14245,
+        "inputId": "scratch/r168-publication/stage-source01-readonly-diagnostic.json",
+        "sha256": "4839009cba819a5af43bc26bf6abf135a4c1fec8536a707bb25ce6efeae2d8b8"
+      },
+      "recordedTerminal": {
+        "automaticCleanup": false,
+        "automaticMutationRetry": false,
+        "historicalFailureReclassified": false,
+        "kind": "R168_PUBLICATION_INCOMPLETE",
+        "reason": "git_read_failed:diff",
+        "recordedRawBytes": 618,
+        "recordedRawSha256": "68e7f741cda382a1c2c7a46c053e24646d53ddc31c7bfb44b9a23de63a246150",
+        "result": "NOT_ACCEPTED",
+        "state": "UNKNOWN"
+      },
+      "whitespaceCheckExitCode": 2
+    },
+    "priorAttemptsReplayed": false,
+    "realAcceptanceRepeatedOnlyAsNewFreshAttemptsForNewQaBytes": true,
+    "sourceDelta": {
+      "changedFocusInputs": 2,
+      "controller": {
+        "allOtherAstUnchanged": true,
+        "bytes": 66129,
+        "newSha256": "844b73ddf0e2829faaf33b0ab880e7d871a4110c03c270b204834a8d80086ff0",
+        "oldSha256": "cc3df9afef10bbcaf3eb659712eea4a9f7b208d1164f47ae0920368e6fdebd28",
+        "onlyProducerShaLiteralChanged": true
+      },
+      "oldBytesReconstructedByExactInverseDeltaAndVerifiedAgainstHistoricalPins": true,
+      "programsExecutedToCompareAst": false,
+      "seed": {
+        "astSha256": "6a3aef6c9241e958a170651a011a5cff347b88d52780647f75727871b0e5c4f7",
+        "astUnchanged": true,
+        "newBytes": 50971,
+        "newSha256": "129afb6e52e8034ba25a583868699f774592efe09296651a2b90145393ed272f",
+        "oldBytes": 50973,
+        "oldSha256": "5ab713ff090190b2f3b5f2dae68544d5639db167fc333ad6ac6e85ff15fda8c4",
+        "removedTrailingLfBytes": 2
+      },
+      "unchangedFocusInputs": 463
+    }
+  },
+  "fullD3BAccepted": false,
+  "generatorSha256": "6927d5e4634836c391f00b2476e028616559a06a78e777b0210745c65b91c884",
+  "gitMutationPerformedByPublisher": false,
+  "historicalGeneration": {
+    "acceptedAttempts": [
+      "normal-03",
+      "lostreply-01"
+    ],
+    "allNineBytesVerifiedBeforeAndImmediatelyPriorToAppend": true,
+    "generation": "QA03",
+    "immutableFiles": {
+      "focused-linux.json": {
+        "bytes": 33085,
+        "sha256": "b6d9b84cdf133af84cedf1055474c39b42f33ad25e8319fea84cff9272e333ea"
+      },
+      "focused-linux.log": {
+        "bytes": 23226,
+        "sha256": "a843165dbf74d2c89c09687d4aea280c172f977eccfd1f931902be81034f053b"
+      },
+      "focused-windows.json": {
+        "bytes": 45402,
+        "sha256": "5a437cfef73e6f73cbfe39cf824d33463425ee9a98b0e02dc4deb5d69fcc120a"
+      },
+      "focused-windows.log": {
+        "bytes": 25038,
+        "sha256": "40bc1d712f287d2cd76a05ffe38b858d2de6ad343fefd04453914c9be2dbd296"
+      },
+      "lostreply-01.json": {
+        "bytes": 14105,
+        "sha256": "3273b162407419b51dcf3c13ce77094fe18ed41df8e95d990762c72a42e824c9"
+      },
+      "normal-03.json": {
+        "bytes": 14375,
+        "sha256": "4d955f60f7e828d94073b8d2f1effa6337eb5c12c9d645dbab24c3e8038f9ec8"
+      },
+      "preserved-attempts.json": {
+        "bytes": 10578,
+        "sha256": "c15b505724e6331d1781f3bac1c2fc56bbbb47c050e1bbbe7eea2bd97f899050"
+      },
+      "retained-normal-02.json": {
+        "bytes": 2203,
+        "sha256": "1860f194ca41b28855235c39125f30a1bc4826d37d2de7ed1c85fa680377bb57"
+      },
+      "summary.json": {
+        "bytes": 5197,
+        "sha256": "5f2dc34eae8be8259f5479d81856acb1bdfd10fe672292eb5794c7324dcda306"
+      }
+    },
+    "reclassifiedAsQa04": false,
+    "stillValidForHistoricalQaBytes": true,
+    "summaryFile": "summary.json",
+    "summarySha256": "5f2dc34eae8be8259f5479d81856acb1bdfd10fe672292eb5794c7324dcda306"
+  },
+  "installationReceiptSha256": "0ba26bfbae1a216a595baf6fb935ed18f399bcfd0ecf29aa9c14bf61bd04232f",
+  "installedCandidateChangedByQaNormalization": false,
+  "installedDependencyFiles": 1162,
+  "installedSourceFiles": 878,
+  "kind": "R168_QA04_PUBLIC_EVIDENCE_INDEX",
+  "lostReplyObservedWithoutRepeatingClose": true,
+  "m1Accepted": false,
+  "priorNormal01Outcome": "REFUSED",
+  "priorNormal02BrokerOutcome": "UNKNOWN_LIFETIME_EXPIRED",
+  "priorNormal02Outcome": "UNKNOWN",
+  "productionReady": false,
+  "qaBundleBytes": 238096,
+  "qaBundleSha256": "bcf38a878e98d78941baab44a9e20db1814fb8b8e1f6a0a34517665ac309eac2",
+  "qaManifestSha256": "2ddb7cafc1eb422e313f48517b7352b0f18470b8d400fb4d991c3d50ac8393f7",
+  "qaSourcePins": {
+    "scripts/qa/r168a1_linux_accept.py": "844b73ddf0e2829faaf33b0ab880e7d871a4110c03c270b204834a8d80086ff0",
+    "scripts/qa/r168a1_service_seed.py": "129afb6e52e8034ba25a583868699f774592efe09296651a2b90145393ed272f"
+  },
+  "rawInputs": [
+    {
+      "bytes": 84201,
+      "inputId": "focus-linux-04/result.json",
+      "sha256": "cbe09118507cf481a313b113fc96f73a178447e30ba90064e9158fcafe75c129"
+    },
+    {
+      "bytes": 23075,
+      "inputId": "focus-linux-05/full.log",
+      "sha256": "a8e0307f370a8594b39189a73eb2bc8ad52c01f4ec6b05c847d34dabe85498c1"
+    },
+    {
+      "bytes": 84201,
+      "inputId": "focus-linux-05/result.json",
+      "sha256": "3f4a4de342a305c9ffb02b1dd0adccc9c673cbcdc30b7c8fb41455630f8d12b7"
+    },
+    {
+      "bytes": 24900,
+      "inputId": "focus-windows-05/full.log",
+      "sha256": "690be53fc2f9276da3804586ff4c5919585b99d1cf23a23867013e950f5cc2af"
+    },
+    {
+      "bytes": 96516,
+      "inputId": "focus-windows-05/result.json",
+      "sha256": "7857f53eacc8810f834891af7c657c676a260cd4ee00e7bd22db19e4587f83de"
+    },
+    {
+      "bytes": 1484,
+      "inputId": "lostreply-02/intent.json",
+      "sha256": "bf2c0e8699a272f325858002ce5fa92f100ee215bd6c120792020ad1c551d7c9"
+    },
+    {
+      "bytes": 388720,
+      "inputId": "lostreply-02/result.json",
+      "sha256": "bc6470e456efaa47c9600d82c5bc201bba42d03a21dac6bbb6bbbff42c476039"
+    },
+    {
+      "bytes": 26857,
+      "inputId": "normal-02/custody-after-qa04-04.json",
+      "sha256": "209d279d633b647cf5ecea1cd6b951aafa87093bc2c522a0daee615bf00d77f3"
+    },
+    {
+      "bytes": 1475,
+      "inputId": "normal-04/intent.json",
+      "sha256": "c758986f2e609dd3dede1be2c9baf03b9f560e78273471a44fdb4e06634c4369"
+    },
+    {
+      "bytes": 392242,
+      "inputId": "normal-04/result.json",
+      "sha256": "4e55ddcb37e079ebedc576c515555c6298bcd38c248bb0205a515e918001dcd4"
+    },
+    {
+      "bytes": 14245,
+      "inputId": "scratch/r168-publication/stage-source01-readonly-diagnostic.json",
+      "sha256": "4839009cba819a5af43bc26bf6abf135a4c1fec8536a707bb25ce6efeae2d8b8"
+    },
+    {
+      "bytes": 66129,
+      "inputId": "scripts/qa/r168a1_linux_accept.py",
+      "sha256": "844b73ddf0e2829faaf33b0ab880e7d871a4110c03c270b204834a8d80086ff0"
+    },
+    {
+      "bytes": 50971,
+      "inputId": "scripts/qa/r168a1_service_seed.py",
+      "sha256": "129afb6e52e8034ba25a583868699f774592efe09296651a2b90145393ed272f"
+    }
+  ],
+  "realModelCalls": 0,
+  "redaction": "explicit field whitelist; no capability tokens, signing keys, raw handoffs, base64 private receipts, private baseline or workspace path dumps",
+  "restartAccepted": false,
+  "result": "EVIDENCE_ASSEMBLED",
+  "reviewedSupportGeneratorSha256": "4c6791329c3a187174d4fce25cc02ef87a95c798d51c3051fdd13f392af8e8df",
+  "runtimeExecutedByPublisher": false,
+  "schema": 2,
+  "scope": "same unchanged installed R167 candidate; fresh acceptance of exact QA04 source bytes",
+  "sourceCIPublicationClaimedByGenerator": false,
+  "sourceFixtureAcceptance": {
+    "Linux": {
+      "passed": 136,
+      "skipped": 0
+    },
+    "Windows": {
+      "passed": 93,
+      "skipped": 43
+    },
+    "same465InputHashes": true
+  },
+  "taskExecutionAccepted": false,
+  "taskFreeLifecycleAccepted": true,
+  "wholeLabCleanClaimed": false
+}

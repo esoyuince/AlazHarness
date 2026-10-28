@@ -1,0 +1,83 @@
+{
+  "brokerUnknown": {
+    "automaticCleanup": false,
+    "automaticRetry": false,
+    "countersAreCurrentObservation": false,
+    "countersAtOriginalUnknownReceipt": {
+      "physicalAttempts": 0,
+      "pings": 0,
+      "refused": 0,
+      "responses": 0
+    },
+    "kind": "R168A1_PING_BROKER_UNKNOWN",
+    "phase": "WAIT_CONTROL",
+    "pid": 14,
+    "processRetained": true,
+    "productionAcceptance": false,
+    "providerSendInvokedByLauncher": false,
+    "realModelCalls": 0,
+    "reason": "ping_broker_lifetime_expired",
+    "result": "UNKNOWN",
+    "shutdownCommandAccepted": false,
+    "upstreamStarted": false
+  },
+  "continuingCustodyBeyondObservationClaimed": false,
+  "currentBrokerCountersClaimed": false,
+  "hostMountsUnchangedDuringObservation": true,
+  "hostMountsUnchangedSinceOriginalAttemptClaimed": false,
+  "installationBytesReverifiedByThisObserver": false,
+  "kind": "R168_PUBLIC_PRESERVED_NORMAL02_CUSTODY",
+  "noAdoption": true,
+  "noCleanup": true,
+  "noMountOperation": true,
+  "noPingPerformed": true,
+  "noProcessCreation": true,
+  "noReplay": true,
+  "noSQLiteConnection": true,
+  "noSignals": true,
+  "normalCloseClaimed": false,
+  "observationScope": "only the recorded read-only observation interval",
+  "originalAttemptAccepted": false,
+  "originalControllerOutcome": "UNKNOWN",
+  "priorUnknownReclassified": false,
+  "productionReady": false,
+  "rawInput": {
+    "bytes": 26857,
+    "inputId": "normal-02/custody-after-acceptances-03.json",
+    "sha256": "6de63b79b7357a6bae95881640202bae4d198cfde053b6e71f912d3015e012ac"
+  },
+  "readOnly": true,
+  "result": "OBSERVED",
+  "retainedResourceClasses": [
+    "controller",
+    "broker",
+    "worker",
+    "image",
+    "loop",
+    "private mount",
+    "cgroup",
+    "fence",
+    "broker socket"
+  ],
+  "retainedResourcesUnchangedDuringObservation": true,
+  "sameIdentitiesBeforeAfter": true,
+  "sameOriginalProcesses": {
+    "broker": {
+      "pid": 14,
+      "ppid": 7,
+      "startTicks": 670
+    },
+    "controller": {
+      "pid": 7,
+      "ppid": 5,
+      "startTicks": 337
+    },
+    "worker": {
+      "pid": 15,
+      "ppid": 7,
+      "startTicks": 719
+    }
+  },
+  "schema": 1,
+  "wholeLabCleanClaimed": false
+}
