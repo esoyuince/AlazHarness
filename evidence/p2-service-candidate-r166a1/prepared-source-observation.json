@@ -1,0 +1,50 @@
+{
+  "atUtc": "2026-10-28T01:47:55.488726+00:00",
+  "bytes": {
+    "install-plan.json": 1787,
+    "manifest.json": 237634,
+    "service-source.tar": 20254720
+  },
+  "dependencyReferenceFileCount": 1162,
+  "executionAuthorized": false,
+  "harnessCommit": "1600eba430562795b9114209d1168bfa0d6ea5fd",
+  "harnessSourceFileCount": 117,
+  "hashes": {
+    "install-plan.json": "b4bf41dd7005244043ed8c6689219768fae87a4b743f6023b35f52b1241180cc",
+    "manifest.json": "a3fde8b0ac808c375c4ecd0eab9f26938828b0d01cd4632ffa4234e47de38af8",
+    "service-source.tar": "43fc186b8f21e4f39e34364ae100c82e520317d6b06c8a100b29f3b26adcd56a"
+  },
+  "installed": false,
+  "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "nativeSourceFileCount": 760,
+  "realModelCalls": 0,
+  "result": "PASS",
+  "runtimeRequirements": {
+    "node": {
+      "observedVersion": null,
+      "path": null,
+      "sha256": null,
+      "version": ">=24 <25"
+    },
+    "python": {
+      "observedVersion": null,
+      "path": null,
+      "sha256": null,
+      "version": "3.12"
+    },
+    "readback": "NOT_RUN",
+    "selection": "NOT_RUN",
+    "target": "Linux x86_64"
+  },
+  "schema": 1,
+  "scope": "actual primary Git source export and independent artifact byte observation; no installation or execution",
+  "sourceFileCount": 878,
+  "toolHashes": {
+    "scripts/build_projected_candidate.py": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b",
+    "scripts/build_service_candidate.py": "54c83be327e3e9e08e0a149b096f5a4f873364461069711a4c2d3f20e862f6cf",
+    "scripts/install_projected_candidate.py": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6",
+    "scripts/verify_service_candidate.py": "ddd8fb60dc030c36c0aefcf2790c788d012dc13e39e37f1a14f5bcd0725e3288"
+  },
+  "candidateRelativePath": "scratch/service-candidates/r166a1-primary-01",
+  "privateRecordSha256": "383155ea9a3c8d4c4b3c8fa1bcd355dc8a37f64eee6dcc63d25adc7f17105e7c"
+}

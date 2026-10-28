@@ -1,0 +1,64 @@
+{
+  "cancellation": {
+    "acknowledgement": "provider_completed",
+    "reason": "deadline"
+  },
+  "command": [
+    "python",
+    "-B",
+    "evidence/p2-service-candidate-r166a1/focused-runner.py",
+    "--label",
+    "windows"
+  ],
+  "completeNativeSuccessClaimed": false,
+  "completedRetryEvidenceRequiredSeparately": true,
+  "evidenceLimit": "The 300-second native command ended with failed/DEADLINE_EXCEEDED, exit124 and effect/outcome unknown. Retained log bytes end during a test and have no final unittest summary; full-suite counts are unknown. The focused result JSON was absent. A later read-only process observation found no remaining focused Python runner before the separately named retry. The actual failed receipt and exact partial log are preserved.",
+  "focusedEvidenceJsonProduced": false,
+  "fullSuiteLogComplete": false,
+  "installed": false,
+  "kind": "R166_FOCUSED_WINDOWS_INCOMPLETE_ATTEMPT",
+  "label": "windows",
+  "logBytes": 14539,
+  "logPath": "evidence/p2-service-candidate-r166a1/focused-windows.log",
+  "logSha256": "68f1a2bc6b97187199f16e384b52b83ee381f648e9403fd4292e794ef606fe96",
+  "nativeEffect": "unknown",
+  "nativeError": "Operation timed out: deadline exceeded; inspect cancellation acknowledgement and effects before continuing",
+  "nativeErrorCode": "DEADLINE_EXCEEDED",
+  "nativeExitCode": 124,
+  "nativeOperation": {
+    "receiptPath": "scratch/r166-publication/focused-windows-timeout-native-operation.json",
+    "receiptSha256": "76c7a620ef85703d1e4076617ca9f64085f9b9e41a66fead029d15c21e4d48b4",
+    "requestId": "c166a101-1028-4a01-8000-000000000010",
+    "sessionId": "f6c81e56-1198-450e-9abb-7e994261d7ff"
+  },
+  "nativeOutcome": "unknown",
+  "nativeState": "failed",
+  "outerCommandTimeoutSeconds": 300,
+  "readObservation": {
+    "receiptSha256": "bbfaaaf9ea9de7929a05234c70be6d5e5772b6e1c88e32d509c98afe5c5c8634",
+    "requestId": "c166a101-1028-4a01-8000-000000000015"
+  },
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "reportedErrors": null,
+  "reportedFailures": null,
+  "reportedPassed": null,
+  "reportedSkipped": null,
+  "reportedTestsRun": null,
+  "requestedTests": 94,
+  "result": "TIMEOUT",
+  "retainedLogBytesComplete": true,
+  "runnerSha256": "95a91bf23787021abe47d7064dda84360cc2633547456d847d2989e311430cc3",
+  "runtimeTested": false,
+  "schema": 1,
+  "scope": "Owned synthetic source-packaging fixtures only; outer native command timeout is separate from unchanged full-CI policy.",
+  "stoppedBeforeRetry": {
+    "matchingFocusedRunnerProcesses": 0,
+    "method": "read-only Windows process query over all python-prefixed process names",
+    "receiptSha256": "363d3c0fd2b68e45877fedf816748efaea62394a66e522441564f0af86536eac",
+    "requestId": "c166a101-1028-4a01-8000-000000000018",
+    "unavailablePythonCommandLines": 0
+  },
+  "terminalUnittestSummaryPresent": false,
+  "testsRelabelledAsPass": false
+}

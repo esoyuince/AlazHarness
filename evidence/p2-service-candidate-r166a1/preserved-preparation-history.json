@@ -1,0 +1,123 @@
+{
+  "attempts": [
+    {
+      "command": "python -B -m unittest discover -s tests -p test_service_candidate.py -v",
+      "completeLogFileAttachedHere": false,
+      "durationSeconds": 8.226,
+      "errors": 0,
+      "exitCode": 0,
+      "failures": 0,
+      "name": "new_service_focused",
+      "passed": 30,
+      "provenance": "preserved implementation-agent preparation record; not a newly repeated test result",
+      "result": "PASS",
+      "run": 30,
+      "serviceTestIncluded": true,
+      "testFileSha256": "40c3c8f88476d73eb5024cd4bfbce4cc8317ea01da6630ebba33dab809173bc6"
+    },
+    {
+      "command": "python -B -m unittest discover -s tests -p 'test_projected_*.py' -v",
+      "completeLogFileCaptured": false,
+      "durationSeconds": 26.505,
+      "errors": 6,
+      "exitCode": 1,
+      "failures": 0,
+      "historicalInputsRecoveredOrChanged": false,
+      "name": "overbroad_historical_glob",
+      "observedMissingInputs": [
+        "evidence/d3b-projected-launch-l145a8/receiver-refusal001-result.json",
+        "evidence/d3b-projected-launch-l145a8/source-custody.json",
+        "evidence/d3b-projected-launch-l145a8/independent-l145c8/independent004/result.json",
+        "evidence/d3b-projected-launch-l145a8/baseline.json",
+        "evidence/d3b-projected-launch-l145a8/unit001-result.json"
+      ],
+      "observedServiceTestFileSha256": "40c3c8f88476d73eb5024cd4bfbce4cc8317ea01da6630ebba33dab809173bc6",
+      "passed": 114,
+      "provenance": "preserved implementation-agent preparation record; not a newly repeated test result",
+      "reason": "six unchanged historical receipt tests require evidence absent from this partial source snapshot",
+      "result": "ERROR",
+      "run": 120,
+      "serviceTestIncluded": false,
+      "terminalToolOutputPartlyTruncated": true
+    },
+    {
+      "command": "PYTHONPATH=tests python -B -m unittest test_projected_candidate test_projected_install test_service_candidate",
+      "completeLogFileAttachedHere": false,
+      "durationSeconds": 33.366,
+      "errors": 0,
+      "exitCode": 0,
+      "failures": 0,
+      "name": "exact_combined_regression",
+      "passed": 94,
+      "provenance": "preserved implementation-agent preparation record; not a newly repeated test result",
+      "result": "PASS",
+      "run": 94,
+      "serviceTestIncluded": true,
+      "testFileSha256": "40c3c8f88476d73eb5024cd4bfbce4cc8317ea01da6630ebba33dab809173bc6"
+    }
+  ],
+  "baseHarnessCommit": "1600eba430562795b9114209d1168bfa0d6ea5fd",
+  "countsReclassifiedAsPass": false,
+  "evidenceLimit": "Prior 94-test PASS belongs to the earlier test-file hash. The 120-test broad attempt remains 114 passed plus six errors, exit1, with incomplete retained terminal output. Current complete focused publication evidence is separate. Exact raw preparation records remain private; this public projection omits local absolute paths.",
+  "fullLogInvented": false,
+  "historicalPreservation": {
+    "builderSha256": "7b26916aec3c806ef2debf77e9e9c728ec473d8c8d2689bbbdcfc4cd7223a64b",
+    "changedOrMissingTestFiles": [],
+    "comparedTestFiles": 330,
+    "installerSha256": "f261fd22c641a1ffdd6fb9694fec0c7d3cb0c8dba788cb7549c142fd1e4dcef6",
+    "scannerSha256": "b55871b560f4f30d30fb22869ac63a3b47aaa5928d4aae9dee499c88c9fa94c8"
+  },
+  "historicalSourceHashes": {
+    "scripts/build_service_candidate.py": "54c83be327e3e9e08e0a149b096f5a4f873364461069711a4c2d3f20e862f6cf",
+    "scripts/verify_service_candidate.py": "ddd8fb60dc030c36c0aefcf2790c788d012dc13e39e37f1a14f5bcd0725e3288"
+  },
+  "historicalTestFileSha256": "40c3c8f88476d73eb5024cd4bfbce4cc8317ea01da6630ebba33dab809173bc6",
+  "installed": false,
+  "kind": "R166_PRESERVED_PREPARATION_HISTORY",
+  "nativeFeature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d",
+  "originalRecordedAtUtc": "2026-10-28T01:43:46.916558+00:00",
+  "originalRecords": {
+    "PREPARATION.md": {
+      "bytes": 5479,
+      "exactPrivateCopyPreserved": true,
+      "sha256": "8b1be5fe5c863d4395523121f87b7751b8b986984b4510984a295f39e5578c97"
+    },
+    "local-preparation.json": {
+      "bytes": 4971,
+      "exactPrivateCopyPreserved": true,
+      "sha256": "32de1e204c4969900c576041f16792f2a66abb3ded277b08a6dcb1923b96fd94"
+    },
+    "test-portability-addendum.json": {
+      "bytes": 2433,
+      "exactPrivateCopyPreserved": true,
+      "sha256": "cda156697c75392c082a7bf38cf5ae119aeb35ea4a35717deac5b1614aed024a"
+    }
+  },
+  "portabilityCorrection": {
+    "caseDistinctWorktreeFilesRequired": false,
+    "changedTest": "OwnedServiceCandidateTests.test_selected_source_case_collision_refuses",
+    "focusedValidation": {
+      "command": "python -B -m unittest discover -s tests -p test_service_candidate.py -v",
+      "durationSeconds": 7.89,
+      "errors": 0,
+      "executionPlatform": "local Linux workspace",
+      "exitCode": 0,
+      "failures": 0,
+      "passed": 30,
+      "run": 30,
+      "skipped": 0
+    },
+    "independentReviewReported": "PASS; immutable Git plumbing, exact path presence and exact refusal expectation verified",
+    "newTestFileSha256": "01eecade206c607aae3aa2075b91872dfb708aeb1436f69ef7b8d35fb772e54b",
+    "platformSkipAdded": false,
+    "previousTestFileSha256": "40c3c8f88476d73eb5024cd4bfbce4cc8317ea01da6630ebba33dab809173bc6",
+    "priorCombinedRegressionNotRelabelled": true,
+    "recordedAtUtc": "2026-10-28T01:48:35.391327+00:00",
+    "sourceScriptsChanged": false
+  },
+  "realModelCalls": 0,
+  "realProviderCalls": 0,
+  "runtimeTested": false,
+  "schema": 1,
+  "scope": "bounded public projection of immutable historical preparation records; no synthesized native receipts or logs"
+}

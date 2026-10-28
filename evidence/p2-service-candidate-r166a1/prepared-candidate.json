@@ -1,0 +1,31 @@
+{
+  "atUtc": "2026-10-28T01:48:26.463775+00:00",
+  "builderSha256": "54c83be327e3e9e08e0a149b096f5a4f873364461069711a4c2d3f20e862f6cf",
+  "dependencyInventorySha256": "1e1c4d0a5a9f0d4d25c66aaabe0765c75cdca0dd84121f79883b9e3bf2b4ee18",
+  "dependencyReferenceFileCount": 1162,
+  "executionAuthorized": false,
+  "installed": false,
+  "installedDependencyVerification": "NOT_RUN",
+  "kernelAcceptance": false,
+  "nativeSourceFileCount": 760,
+  "observationSha256": "383155ea9a3c8d4c4b3c8fa1bcd355dc8a37f64eee6dcc63d25adc7f17105e7c",
+  "pins": {
+    "expected_archive_sha256": "43fc186b8f21e4f39e34364ae100c82e520317d6b06c8a100b29f3b26adcd56a",
+    "expected_harness_commit": "1600eba430562795b9114209d1168bfa0d6ea5fd",
+    "expected_manifest_sha256": "a3fde8b0ac808c375c4ecd0eab9f26938828b0d01cd4632ffa4234e47de38af8",
+    "expected_native_feature": "5e3635c2cdfc2161fd20c089618bd7f2a7c12f2d"
+  },
+  "realModelAcceptance": false,
+  "realModelCalls": 0,
+  "result": "VERIFIED_SERVICE_SOURCE_ONLY",
+  "runtimeReadback": "NOT_RUN",
+  "runtimeSelection": "NOT_RUN",
+  "schema": 1,
+  "serviceReadinessAccepted": false,
+  "sourceFileCount": 878,
+  "verificationMethod": "pure prepare_bytes on independently observed and SHA-pinned primary artifacts; no extraction or candidate execution",
+  "verifierSha256": "ddd8fb60dc030c36c0aefcf2790c788d012dc13e39e37f1a14f5bcd0725e3288",
+  "windowsFileCliAccepted": false,
+  "candidateRelativePath": "scratch/service-candidates/r166a1-primary-01",
+  "privateRecordSha256": "418b21613e8762225c1c5f7bf594882f0c99faa247d37f4957dfb9202b743e11"
+}
