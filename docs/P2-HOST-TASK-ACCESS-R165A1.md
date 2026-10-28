@@ -1,21 +1,26 @@
 # P2 / R165A1 — host görev erişimi
 
-Tarih: 28 Ekim 2026. **IN PROGRESS — Linux ve Windows odaklı kapıları PASS; staging/CI/yayın henüz yapılmadı.**
-Son [Linux makbuzu](../evidence/p2-host-task-access-r165a1/focused-linux-02.json)
-**459 RUN / 459 PASS / 0 SKIP**; son
-[Windows makbuzu](../evidence/p2-host-task-access-r165a1/focused-windows-02.json)
-**459 RUN / 241 PASS / 218 SKIP** kaydetti. İki koşuda da FAIL/ERROR 0 ve exit 0;
-seçilen/yürütülen test kimlikleri ile kaynak/test/destek/koşucu hashleri aynı.
-24/24 ürün/test dosyası, koşucu ve dondurulmuş Linux/parent kanıtları primary'ye
-hash doğrulamasıyla aktarıldı; Bridge erişimi canlı. İlk Linux ve ilk Windows
-FAIL kayıtları ayrı ve değişmeden korunur. Staging/statik kontrol, source/final
-CI, commit/push ve main yayını bu kaynak öncesi kayıtta **NOT RUN**. Yeni kurulum,
-gerçek native/kernel servis ve model kabulü ayrıca **NOT RUN**.
+**IN PROGRESS — Linux/Windows odaklı kabul, source/statik kapı ve source tam CI PASS;
+closure/final CI ve main yayını sırada.** Kaynak CI kabul kaydı: 2026-10-28T00:14:26.232108+00:00.
+Exact source commit `acb9aa2c5e903afe6fd919aedcc26a5acc959674`; parent `994751bed14046e3e0dd14be90912048b996a836`.
+Yeni tam CI: **4647 RUN / 4614 PASS / 33 SKIP /
+0 FAIL / 0 ERROR**, exit 0; gerçek sayılar ve kabul zinciri
+[source CI makbuzuna](../evidence/p2-host-task-access-r165a1/source-ci.json) bağlıdır.
 
-Başlangıç commit'i `994751bed14046e3e0dd14be90912048b996a836`.
-Aktif dal, primary çalışma yolu ve kesinti kaydı [status.md](../status.md)
-üzerinden izlenir. Bu paket [P2 entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md)
-beşinci adımıdır. P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.
+Odaklı Linux **459/459 PASS, 0 SKIP**; Windows **459 RUN / 241 PASS / 218 SKIP**.
+İki odaklı kabulde FAIL/ERROR 0 ve exit 0; ilk Linux ve Windows FAIL kayıtları
+ayrı, değişmeden korunur. Ürün/test/süreler dar tanı veya tekrar için değiştirilmedi.
+
+Aktif dal, primary çalışma yolu ve iş günlüğü [status.md](../status.md) içindedir.
+Bu paket [P2 entegrasyon planının](P2-SERVICE-INTEGRATION-R161A1-PLAN.md) beşinci
+adımıdır. P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.
+Yeni kurulum, gerçek native/kernel servis ve model kabulü NOT RUN.
+
+Aşağıdaki uygulama ve odaklı kabul bölümleri, source commit'teki anlık görüntünün
+baytlarını korur. Bu tarihsel bölümlerdeki CI `NOT RUN` ifadeleri kaynak öncesi
+aşamaya aittir; güncel source CI sonucu sondaki yayın bölümünde kayıtlıdır.
+Final/main sonuçları henüz oluşmadığı için bu kapanış belgesine gelecekteki SHA
+yazılmaz; sonraki kesin aşamalar `scratch/r165-publication/final-publication.json` ile izlenir.
 
 ## Amaç ve seçilen yol
 
@@ -272,31 +277,52 @@ başlamamış makbuz üretilmedi.
 Sonraki yeni request 15–18 aktarımı hash doğrulamasıyla tamamlandı. **24/24
 ürün/test dosyası**, odaklı koşucu ve bütün dondurulmuş public Linux/parent
 kanıtları primary'de doğrulandı. Bridge erişimi canlı; son Windows odaklı
-kapısı da PASS. Kalan iş staging/statik ve yayın kapılarıdır. Yeni R165 commit'i, push,
-source/final CI ve main yayını henüz yoktur. Güncel operasyon/makbuz
-kimlikleri [status.md](../status.md) üzerinden izlenir.
+kapısı da PASS.
 
-Kaynak paketleme ve terminal yayın günlüğü helper'ları hazır; AST ve bağımsız
-kaynak incelemeleri tamamlandı. Gerçek kabul girdileri oluşmadan çalıştırılmadı.
-Source manifest'i, ilk Linux ve ilk Windows FAIL kayıtları korunarak 52 dosyayı
-bağlayacak; hazırlanmış helper CI veya yayın kabulü değildir.
+## Source commit, statik kapı ve yeni tam CI
 
-| Kapı | Durum / kesin kanıt |
+Kaynak commit'i `acb9aa2c5e903afe6fd919aedcc26a5acc959674`, parent `994751bed14046e3e0dd14be90912048b996a836` üzerinden normal feature
+push ile yayımlandı. 52 kaynak/doc/evidence yolunu bağlayan source manifest SHA-256
+`93db883d906d9a86dae7163811de4f238a1031812effe2a5b9384ce1d7588d9b`; source-check SHA-256 `37b90fa45e5a27e8915ca4d1357a5adeb96a19490a5d151d53368cd346352cbc`.
+İlk Linux ve Windows FAIL raporları/logları bu kaynak paketinde değişmeden korundu.
+
+Staging/statik kapısı **PASS**, exit 0: staged tree `1b554ddb277f0213c0e28a761e3d90d6669d8062`,
+keşfedilen test sayısı **4647**. Aynı source commit için yeni tam CI
+[public makbuzda](../evidence/p2-host-task-access-r165a1/source-ci.json) **4647 RUN / 4614 PASS /
+33 SKIP / 0 FAIL / 0 ERROR**,
+**356.659 saniye**, container exit **0** kaydetti. `alaz/local-ci` status
+ID **57424993426**, durum `success`; `fullSuiteExecuted=true`, `reused=false`,
+`timeout=false`, `oomKilled=false`, container cleanup `removed`.
+Public makbuz, kabul edilmiş özel source CI kaydının birebir aynı baytlarıdır.
+
+CI SKIP sayısı PASS sayısına eklenmez; Linux odaklı kabul aynı 459 seçili testin
+tamamını çalıştırdı. Sabit CI image/command ve 480 saniyelik politika değiştirilmedi;
+politika SHA-256 `39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`.
+Statik/fixture ve tam CI kabulü, kurulu native servis veya gerçek model kabulü değildir.
+
+## Kapanış anındaki kalan kapılar ve güncel yayın kaydı
+
+| Kapı | Bu kapanış kaynak kaydı hazırlanırken durum |
 |---|---|
-| R165 ürün/test, koşucu ve dondurulmuş Linux/parent kanıt aktarımı | Tamamlandı; 24/24 ürün/test dosyası ve aktarılan kanıtlar primary'de hash doğrulamalı |
-| Yeni task/HTTP/CLI, lifecycle/client ve tarihsel regresyonlar | Linux odaklı PASS: 459/459, 0 FAIL/ERROR/SKIP, exit 0 |
-| İlk primary Windows odaklı koşusu | FAIL olarak korundu: 459 RUN / 240 PASS / 218 SKIP / 1 FAIL / 0 ERROR, exit 1 |
-| Dar wire-timeout incelemesi | BASE 6/6 ve current 6/6 normal tekrar PASS; kontrollü gecikme demoları ilk FAIL'in kök nedenini kanıtlamaz |
-| Taze primary Windows `windows-02` | PASS: 459 RUN / 241 PASS / 218 SKIP / 0 FAIL / 0 ERROR, exit 0; request 34 completed |
-| Primary staging/statik kontrol | NOT RUN; sıradaki kapı |
-| Exact source commit ve tam CI | NOT RUN; yeni commit yok |
-| Exact closure/final CI, main yayını ve son bütünlük | NOT RUN; önceki yayın kapıları tamamlanmadı |
-| Yeni tek P2 kurulumu ve gerçek kernel/native servis | NOT RUN; planın altıncı adımı |
-| Gerçek provider/model görevi | NOT RUN; model, araç kümesi ve bütçe seçimi açık |
+| Linux odaklı kabul | PASS — 459 RUN / 459 PASS / 0 SKIP / 0 FAIL / 0 ERROR |
+| Windows odaklı kabul | PASS — 459 RUN / 241 PASS / 218 SKIP / 0 FAIL / 0 ERROR; ilk FAIL ayrıca korunur |
+| 52 yollu source paketi ve staging/statik kapı | PASS — source commit'in exact tree ve hashleriyle bağlı |
+| Source commit, normal feature push ve yeni tam CI | PASS — yukarıdaki exact source commit ve public CI makbuzu |
+| Üç dosyalı closure commit/push ve yeni final tam CI | NOT RUN — sıradaki kapı |
+| Normal main FF/push, aynı commit CI reuse kabulü ve son bütünlük | NOT RUN — final kapılarından sonra |
+| Yeni P2 candidate/install ve gerçek kernel/native servis kabulü | NOT RUN — planın altıncı adımı |
+| Gerçek provider/model/araç/bütçe seçimi | OPEN; gerçek model/provider kabulü NOT RUN |
 
-Bu aşamanın hedefi kaynak/fixture düzeyinde host görev erişimidir. Yeni kurulum,
-backup/restart/capture, gerçek kernel confinement, gerçek model ve production
-kabulü bu kayıtla tamamlanmış sayılmaz. Sıradaki adım source-check ve exact
-manifest'i oluşturmak, staging/statik kontrolü ve source/final CI/yayın
-kapılarını yürütmektir. Altıncı adımın candidate/install işi ile açık
-model/araç/bütçe seçimi bundan sonra gelir.
+Bu belge closure commit'i oluşmadan hazırlanır; kendi gelecekteki commit SHA'sını
+içermez. Exact closure/final SHA, final CI, main yayını ve son bütünlük sonuçları,
+bu kapılar gerçekten tamamlandıktan sonra `scratch/r165-publication/final-publication.json` günlüğüne bağlanır.
+Bu yolun belirtilmesi, günlüğün var olduğu veya sonraki kapıların geçtiği anlamına gelmez.
+
+Plan/roadmap'in source commit'te kalan staging/CI/yayın `NOT RUN` satırları,
+kaynak öncesi anlık görüntüdür. Bu belgedeki source CI kaydı daha yeni aşamayı
+gösterir; daha sonraki yayın için terminal günlük esas alınır. Aşağıda veya önceki
+bölümlerde korunan tarihsel `NOT RUN` ve FAIL ifadeleri kendi kayıt anlarına aittir.
+P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.
+Sıradaki yayın işi yalnız status.md, R165 raporu ve public source-ci.json için
+closure commit/push ve yeni final tam CI'dır. Sonraki ürün işi yeni P2
+candidate/install paketidir; eski R156 kurulumu ve tarihsel kanıtlar korunur.

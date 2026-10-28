@@ -1,6 +1,6 @@
 # AlazHarness — R165A1 host görev erişimi
 
-**IN PROGRESS. Primary kaynak aktarımı ve Linux/Windows odaklı kabul tamam. Kaynak paketi/statik kontrol ve source/final CI/yayın sırada.**
+**IN PROGRESS. Kaynak paketi, Linux/Windows odaklı kabul, statik kapı ve source tam CI PASS. Closure/final CI ve main yayını sırada.**
 P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.
 
 - Aktif dal: `alaz/p2-host-task-access-r165a1`.
@@ -39,22 +39,53 @@ Yeni CAS istekleri 15–18 kalan 21 ürün/test dosyasını tamamladı; ilk requ
 
 Oturum `c7e2fb12-ec90-4da7-8767-caf4e56f9c2f`; işlem öneki `c165a101-1028-4a01-8000-`. Orkestrasyon ve gerçek makbuzlar R165 hazırlığının `scratch/r165-publication` dizininde korunur. Root'taki 33 değişiklik korunur; varsayılan köke aktarım yapılmadı.
 
-## Bekleyen kapılar
+## Source commit, statik kapı ve yeni tam CI
 
-| Kapı | Durum |
+Kaynak commit'i `acb9aa2c5e903afe6fd919aedcc26a5acc959674`, parent `994751bed14046e3e0dd14be90912048b996a836` üzerinden normal feature
+push ile yayımlandı. 52 kaynak/doc/evidence yolunu bağlayan source manifest SHA-256
+`93db883d906d9a86dae7163811de4f238a1031812effe2a5b9384ce1d7588d9b`; source-check SHA-256 `37b90fa45e5a27e8915ca4d1357a5adeb96a19490a5d151d53368cd346352cbc`.
+İlk Linux ve Windows FAIL raporları/logları bu kaynak paketinde değişmeden korundu.
+
+Staging/statik kapısı **PASS**, exit 0: staged tree `1b554ddb277f0213c0e28a761e3d90d6669d8062`,
+keşfedilen test sayısı **4647**. Aynı source commit için yeni tam CI
+[public makbuzda](evidence/p2-host-task-access-r165a1/source-ci.json) **4647 RUN / 4614 PASS /
+33 SKIP / 0 FAIL / 0 ERROR**,
+**356.659 saniye**, container exit **0** kaydetti. `alaz/local-ci` status
+ID **57424993426**, durum `success`; `fullSuiteExecuted=true`, `reused=false`,
+`timeout=false`, `oomKilled=false`, container cleanup `removed`.
+Public makbuz, kabul edilmiş özel source CI kaydının birebir aynı baytlarıdır.
+
+CI SKIP sayısı PASS sayısına eklenmez; Linux odaklı kabul aynı 459 seçili testin
+tamamını çalıştırdı. Sabit CI image/command ve 480 saniyelik politika değiştirilmedi;
+politika SHA-256 `39feb838fe28d4176b40dc99d8dcc824648c1b374a3d168ef0e4a23bdade4776`.
+Statik/fixture ve tam CI kabulü, kurulu native servis veya gerçek model kabulü değildir.
+
+## Kapanış anındaki kalan kapılar ve güncel yayın kaydı
+
+| Kapı | Bu kapanış kaynak kaydı hazırlanırken durum |
 |---|---|
-| Linux kaynak/fixture kabulü | PASS — 459/459, sıfır SKIP |
-| Primary ürün/test ve koşucu aktarımı | PASS — 24/24 ürün/test + exact runner |
-| Windows focused — windows-02 | PASS — 459 RUN /241 PASS/218 SKIP/0 FAIL/0 ERROR, exit 0; ilk FAIL korunur |
-| Docs/evidence ve source/static gate | Kanıt aktarımı tamam; son dokümanlar ve source/static kapısı IN PROGRESS |
-| Source commit + yeni tam CI | NOT RUN |
-| Closure commit + yeni tam CI + normal main yayını/son bütünlük | NOT RUN |
-| Yeni P2 candidate/install ve gerçek kernel/native kabul | NOT RUN — altıncı adım |
-| Gerçek provider/model/araç/bütçe seçimi | OPEN |
+| Linux odaklı kabul | PASS — 459 RUN / 459 PASS / 0 SKIP / 0 FAIL / 0 ERROR |
+| Windows odaklı kabul | PASS — 459 RUN / 241 PASS / 218 SKIP / 0 FAIL / 0 ERROR; ilk FAIL ayrıca korunur |
+| 52 yollu source paketi ve staging/statik kapı | PASS — source commit'in exact tree ve hashleriyle bağlı |
+| Source commit, normal feature push ve yeni tam CI | PASS — yukarıdaki exact source commit ve public CI makbuzu |
+| Üç dosyalı closure commit/push ve yeni final tam CI | NOT RUN — sıradaki kapı |
+| Normal main FF/push, aynı commit CI reuse kabulü ve son bütünlük | NOT RUN — final kapılarından sonra |
+| Yeni P2 candidate/install ve gerçek kernel/native servis kabulü | NOT RUN — planın altıncı adımı |
+| Gerçek provider/model/araç/bütçe seçimi | OPEN; gerçek model/provider kabulü NOT RUN |
 
-CI'nin mevcut sabit image'ında aiohttp bulunmadığı kaydedildi; standart no-install kapsamındaki bağımlılık SKIP'leri açık raporlanacak. Hazırlanmış Linux focused kapısında aiohttp zorunlu ve bütün 459 test çalıştı. CI image/command/kaynak sınırları veya 480 saniyelik politika değiştirilmedi.
+Bu belge closure commit'i oluşmadan hazırlanır; kendi gelecekteki commit SHA'sını
+içermez. Exact closure/final SHA, final CI, main yayını ve son bütünlük sonuçları,
+bu kapılar gerçekten tamamlandıktan sonra `scratch/r165-publication/final-publication.json` günlüğüne bağlanır.
+Bu yolun belirtilmesi, günlüğün var olduğu veya sonraki kapıların geçtiği anlamına gelmez.
 
-R164A2 tamamlanmış yayındır; yeniden yürütülmez. R165 için henüz commit, push veya CI sonucu yoktur. Linux ve taze Windows kabulüne göre kaynaklar/manifests bağlanacak, static gate, source/final tam CI ve normal main yayını yürütülecek. Sonraki ürün işi P2 adım 6'nın yeni service candidate/install paketidir.
+Plan/roadmap'in source commit'te kalan staging/CI/yayın `NOT RUN` satırları,
+kaynak öncesi anlık görüntüdür. Bu belgedeki source CI kaydı daha yeni aşamayı
+gösterir; daha sonraki yayın için terminal günlük esas alınır. Aşağıda veya önceki
+bölümlerde korunan tarihsel `NOT RUN` ve FAIL ifadeleri kendi kayıt anlarına aittir.
+P1 DONE; P2 IN PROGRESS; P3–P5, tam D3B, M1 ve production OPEN.
+Sıradaki yayın işi yalnız status.md, R165 raporu ve public source-ci.json için
+closure commit/push ve yeni final tam CI'dır. Sonraki ürün işi yeni P2
+candidate/install paketidir; eski R156 kurulumu ve tarihsel kanıtlar korunur.
 
 ## İş günlüğü
 
@@ -65,3 +96,4 @@ R164A2 tamamlanmış yayındır; yeniden yürütülmez. R165 için henüz commit
 - 28 Ekim 2026 ikinci bağlantı sonrası devam: request 14 ile 47 canlı önkoşul, root/main/native Git durumları ve ikinci paketin değişmemiş dört hedefi doğrulandı. Geçmiş request 12 UNKNOWN kaydı korunarak mevcut dosya durumu uzlaştırıldı. Yeni 15–18 CAS istekleriyle 24/24 ürün/test ve 19 ile koşucu exact hashleri doğrulandı. Sıradaki kapı aynı seçimin Windows focused koşusu.
 - 28 Ekim 2026 Windows ara kontrolü: request 21 completed/exit1; ilk Windows focused 459/240 PASS/218 SKIP/1 FAIL. Exact rapor ve log korundu, tüm kaynak hashleri sabit. Başarısız eski HTTP timeout vakası dar BASE/current incelemesine alındı; test beklentileri veya süreleri değiştirilmedi. Public Linux kanıtları ve exact parent arşivlerinin primary aktarımı 25–29 istekleriyle doğrulandı.
 - 28 Ekim 2026 odaklı kabul: dar Windows tanısında 6 BASE +6 mevcut normal deneme PASS, iki ayrı kontrollü gecikme demosu aynı UNKNOWN davranışını gösterdi. Ardından değişmemiş kaynaklarla request34 windows-02 459 RUN/241 PASS/218 SKIP/0 FAIL/ERROR, exit0. Linux ve Windows exact kaynak/test/destek/ID bağları eşleşti. İlk iki başarısız kayıt korunarak 52 dosyalı source paketi/statik/CI kapılarına geçiliyor.
+- 2026-10-28T00:14:26.232108+00:00 source CI kabulü: source `acb9aa2c5e903afe6fd919aedcc26a5acc959674` normal feature push ve yeni tam CI PASS; 4647 RUN / 4614 PASS / 33 SKIP / 0 FAIL / 0 ERROR, exit 0, 356.659 saniye; timeout/OOM false, cleanup removed. Source manifest 52 yolu bağladı, staging/statik PASS. İlk Linux/Windows FAIL ve bütün önceki günlük korunur. Yalnız üç kapanış dosyası hazırlanıyor; closure commit/final CI/main ve terminal yayın henüz NOT RUN. Sonraki exact sonuç yolu: `scratch/r165-publication/final-publication.json`.
