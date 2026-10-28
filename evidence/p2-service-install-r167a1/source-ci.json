@@ -1,0 +1,52 @@
+{
+  "acceptedEvidenceSha256": "086d06e88d9de2b1b8ce05a14c3fb8bce925dea377925744b5b25aae9c3a296a",
+  "containerCleanup": "removed",
+  "containerExitCode": 0,
+  "delivery": "3e47eae8-d2c7-11f1-9af9-75a41e919812",
+  "freshFullSuite": true,
+  "kind": "R167_SOURCE_FULL_CI",
+  "logBytes": 9733,
+  "logFile": "3e47eae8-d2c7-11f1-9af9-75a41e919812.log",
+  "logSha256": "6746582a1edbaf8fadecdfb232d42446a2ec607a64ad903fe2eabc23e7a3e99b",
+  "metadataFile": "3e47eae8-d2c7-11f1-9af9-75a41e919812.json",
+  "metadataRawBytesLocallyRehashed": false,
+  "metadataSha256": "1d76ff83f4bfd452b05ad92bdf6ddf224176baaa8757a330635392e11bd8fff4",
+  "oomKilled": false,
+  "policyDigest": "383891808b8fc874e0c6021f66e82801984f6a5ce43391fd36727f03a3e3642d",
+  "ref": "refs/heads/alaz/p2-service-install-r167a1",
+  "schema": 1,
+  "seconds": 382.91,
+  "staticGate": {
+    "discovered_tests": 4706,
+    "errors": [],
+    "model_called": false,
+    "result": "PASS",
+    "root_files_checked": 6987,
+    "runtime_tested": false,
+    "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+    "secret_scan": "bounded root tracked text patterns; not a complete security audit",
+    "selected_components": 10,
+    "source_gitlinks_checked": 2,
+    "vendor_bytes_checked": false
+  },
+  "status": {
+    "context": "alaz/local-ci",
+    "created_at": "2026-10-28T12:07:43Z",
+    "description": "ALAZ Local CI passed",
+    "id": 57464692579,
+    "state": "success",
+    "target_url": null,
+    "updated_at": "2026-10-28T12:07:43Z"
+  },
+  "suiteProof": {
+    "executed": 4706,
+    "failed": 0,
+    "passed": 4673,
+    "skipped": 33,
+    "suite_errors": 0,
+    "total": 4706
+  },
+  "target": "508182cf7f476fbf1273cc185b037e7b8d8e1c11",
+  "timeout": false,
+  "verifiedSuccessReuse": false
+}

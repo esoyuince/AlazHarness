@@ -1,6 +1,6 @@
 # AlazHarness — R167A1 servis kurulumu ve başlangıç doğrulaması
 
-**Kurulum ve sınırlı başlangıç kontrolleri PASS. R167 kaynak yayını IN PROGRESS.**
+**Kurulum, sınırlı başlangıç kontrolleri ve R167 kaynak commit'inin taze tam CI koşumu PASS. Bu kapanış kaydı hazırlanırken kapanış commit'i/CI ve main yayını bekliyor.**
 
 **P1 DONE; P2 IN PROGRESS. P3–P5, tam D3B, M1 ve production OPEN.**
 
@@ -21,7 +21,10 @@ R166 servis adayı, özel P71C Linux laboratuvarındaki yeni `/opt/alaz-r167a1` 
 | Gerçek kaynak kurulumu | 878 kaynak + 1162 bağımlılık, exit 0 | [Kurulum ve bağımsız readback](evidence/p2-service-install-r167a1/installation.json) |
 | Python başlangıcı | 15 sabit import PASS; `-I -S -B`, exit 0 | [Sınırlı başlangıç doğrulaması](evidence/p2-service-install-r167a1/qualification.json) |
 | Node CLI help | Beklenen 2046 bayt çıktı, boş stderr, exit 0 | Aynı başlangıç kaydı |
-| R167 tam CI ve kaynak yayını | IN PROGRESS; henüz kabul edilmiş R167 tam CI yok | `scratch/r167-publication` |
+| R167 kaynak commit'i tam CI | 4706 RUN / 4673 PASS / 33 SKIP, 0 FAIL / 0 ERROR, exit 0 | [Kabul edilmiş kaynak CI](evidence/p2-service-install-r167a1/source-ci.json) |
+| Kapanış CI ve main yayını | Bu kapanış kaydı hazırlanırken PENDING | Sonraki sonuçlar için final publication seal esas |
+
+Kaynak commit'i `508182cf7f476fbf1273cc185b037e7b8d8e1c11`, normal push sonrası bağımsız remote readback ile doğrulandı. Aynı commit'in taze tam CI koşumu 382.910 saniyede tamamlandı; native078 kabulü PASS. Kapanış commit'i için ayrı taze CI gerekir.
 
 Python kontrolü 444 native, 50 harness ve 304 bağımlılık dosyasının import kökenini doğruladı. Tek `socket.bind` girişimi, sabit urllib3 IPv6 yetenek yoklamasına bağlandı ve engellendi; aynı socket'in kapandığı, `HAS_IPV6=False` olduğu ve başka engellenmiş etki bulunmadığı gözlendi. Kurulu kaynak/bağımlılık dosyaları ve runtime binary'leri işlem öncesinde ve sonrasında değişmedi. Geçici home içindeki `SOUL.md` ile birlikte denemeye ait home kaldırıldı.
 
@@ -35,9 +38,11 @@ Kurulan ürün kaynağı harness `1600eba430562795b9114209d1168bfa0d6ea5fd`, nat
 
 ## Devam adresi ve kesin sonraki adım
 
-Son tamamlanan işlem native042 ordinary-user qualification: PASS, exit 0; tam çıktı native043 ile geri okundu. Bekleyen veya sonucu belirsiz native işlem yok. Güncel özel devam kaydı: `scratch/r167-install/orchestration-checkpoint.json`.
+Son kabul edilen yayın kapısı native078 source CI: PASS, exit 0. Makbuz: `scratch/r167-publication/source-ci-01.result.json`; commit `508182cf7f476fbf1273cc185b037e7b8d8e1c11`. Bu metin, kaynak CI kabulünden sonraki kapanış hazırlığını kaydeder.
 
-Önce bu kaynak paketini commit/push, taze source ve closure tam CI, main fast-forward, aynı commit için doğrulanmış CI reuse ve final integrity/terminal seal ile kapat. Bu adımların gerçek sonuçları ayrı yayın makbuzlarında tutulur; beklenen test sayısı gerçekleşmiş CI sonucu sayılmaz.
+Yayın önkontrollerindeki retler ve ayrı düzeltmeler [raporda](docs/P2-SERVICE-INSTALL-R167A1-REPORT.md#yayın-önkontrolleri-ve-ayrı-düzeltmeler) korunuyor. Dış `alaz-Server` deposundaki iki belgeli `69f2f7d… → 2e859e64…` geçişi tam commit kimlikleriyle sınırlandı; özgün başlangıç kaydı ve diğer koruma koşulları değişmedi.
+
+Sıradaki adımlar üç dosyalık kapanış commit'i/push, bu commit'in taze tam CI koşumu, main fast-forward/push ve bağımsız readback, aynı final commit için doğrulanmış CI reuse ve final integrity/terminal seal. **Bu kapanış kaydı hazırlanırken bu adımlar bekliyor.** Sonraki yayın kapılarının yetkili sonucu, `scratch/r167-publication` altındaki `R167_SOURCE_PUBLICATION_COMPLETE` final publication seal kaydı ve onun bağladığı makbuzlardır.
 
 Ardından aynı kurulu adayda açık servis profiliyle gerçek supervisor/child/volume ve namespace/cgroup/mount/lease yaşam döngüsünü, sıralı kapanışı ve belirsiz yanıt sonrası uzlaştırmayı doğrula. Host CLI/API kullanım zinciri ve restart gözlemi sonraki P2 kapılarıdır. Seçilmiş provider/model ve çağrı/token/maliyet sınırları tanımlandığında sınırlı gerçek model kabulüne geçilir.
 
@@ -51,3 +56,5 @@ Ardından aynı kurulu adayda açık servis profiliyle gerçek supervisor/child/
 - 28 Ekim 2026: Ayrı import qualification denemesi native037 exit 2 ile reddedildi. Engellenen bind, sabit urllib3 kaynağına ve tam çağrı zincirine bağlandı; sonraki origin kontrolü ortamdan gelen sitecustomize dosyasını kabul etmedi. Native039 salt okunur başlangıç tanısı bu dosyanın ürün importlarından önce yüklendiğini gösterdi. Yeni deneme için Python başlangıcında site yüklemesini kapatan daha sıkı -S koşulu hazırlanıyor. Önceki retler korunuyor; gerçek servis/model kabulü yok.
 
 - 28 Ekim 2026: Ayrı native042 no-site qualification exit 0 ile PASS. Sabit 15 import, kaynak kökenleri, aynı engellenmiş IPv6 yoklamasının kapanışı ve önce/sonra dosya doğrulamaları tamamlandı. Node CLI help ve bağımsız kurulum readback sonuçlarıyla birlikte yayın paketi hazırlanıyor. P2 ve production kabulü açık.
+
+- 28 Ekim 2026: Kaynak commit'i `508182cf7f476fbf1273cc185b037e7b8d8e1c11` normal push/readback sonrası taze tam CI ile kabul edildi: native078 PASS; 4706 RUN / 4673 PASS / 33 SKIP, 0 FAIL / 0 ERROR, 382.910 saniye. Bu kapanış kaydı hazırlanırken closure CI ve main adımları bekliyor; sonraki sonuçlarda final publication seal esas. P2 ve production açık.
