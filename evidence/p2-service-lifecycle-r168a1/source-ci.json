@@ -1,0 +1,62 @@
+{
+  "acceptedEvidence": {
+    "path": "accept-source-ci-01.result.json",
+    "sha256": "98a04f17b9c22d52806b01e6d98d8507de194dd4c6ad2669d2622981f5cfb06c"
+  },
+  "ci": {
+    "containerCleanup": "removed",
+    "containerExitCode": 0,
+    "delivery": "f39331bc-d2e7-11f1-9280-b118f7cfb4f2",
+    "freshFullSuite": true,
+    "logBytes": 9877,
+    "logFile": "f39331bc-d2e7-11f1-9280-b118f7cfb4f2.log",
+    "logSha256": "5735612f5ad70435c6d70823ea11986a76a5c5bfac16169dfcb7efc0f59b58be",
+    "metadataFile": "f39331bc-d2e7-11f1-9280-b118f7cfb4f2.json",
+    "metadataRawBytesLocallyRehashed": false,
+    "metadataSha256": "12b5fd6026320499b08941000aacde8a4c81ff36f5b6aa7932b96a65e0a42702",
+    "oomKilled": false,
+    "policyDigest": "383891808b8fc874e0c6021f66e82801984f6a5ce43391fd36727f03a3e3642d",
+    "ref": "refs/heads/alaz/p2-service-lifecycle-r168a1",
+    "seconds": 372.843,
+    "staticGate": {
+      "discovered_tests": 4842,
+      "errors": [],
+      "model_called": false,
+      "result": "PASS",
+      "root_files_checked": 7020,
+      "runtime_tested": false,
+      "scope": "M0_and_HYB_mock_contracts_not_full_runtime",
+      "secret_scan": "bounded root tracked text patterns; not a complete security audit",
+      "selected_components": 10,
+      "source_gitlinks_checked": 2,
+      "vendor_bytes_checked": false
+    },
+    "status": {
+      "context": "alaz/local-ci",
+      "created_at": "2026-10-28T16:01:43Z",
+      "description": "ALAZ Local CI passed",
+      "id": 57486710670,
+      "state": "success",
+      "target_url": null,
+      "updated_at": "2026-10-28T16:01:43Z"
+    },
+    "suiteProof": {
+      "executed": 4842,
+      "failed": 0,
+      "passed": 4809,
+      "skipped": 33,
+      "suite_errors": 0,
+      "total": 4842
+    },
+    "target": "ce4ef0ad6fd1bc87e33b89d2db709abdd0f8d6ce",
+    "timeout": false,
+    "verifiedSuccessReuse": false
+  },
+  "kind": "R168_SOURCE_FULL_CI",
+  "schema": 1,
+  "scope": "Source publication CI; actual runtime acceptance has separate evidence",
+  "snapshot": {
+    "path": "ci-feature-1793203323578372500.json",
+    "sha256": "9e6d10627894025a9cc6989b76dc3de7c267cb665f5e8fd18a27989b914d45d4"
+  }
+}

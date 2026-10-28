@@ -1,8 +1,9 @@
 # P2 / R168A1 — kurulu servisin görev açmadan yaşam döngüsü
 
-**Kaynak yayını öncesi durum: 28 Ekim 2026, 15:45 UTC. R168A1 IN PROGRESS;
-son QA04 baytlarıyla görev açmadan normal servis yaşam döngüsü ve ayrı
-kayıp close yanıtı kabulü PASS.** Aynı R167 kurulumunda `normal-04` ile
+**Source CI sonrası closure hazırlığı: 28 Ekim 2026, 16:03 UTC.
+R168A1 source commit'i exact-commit tam CI'den PASS aldı. Son QA04
+baytlarıyla görev açmadan normal servis yaşam döngüsü ve ayrı kayıp close
+yanıtı kabulü de PASS.** Aynı R167 kurulumunda `normal-04` ile
 gerçek CLI start/status READY ve close/son status CLOSED görüldü.
 Ayrı `lostreply-02`, tek gönderilen close
 yanıtı düşürüldükten sonra aynı özgün isteğin salt okunur status ile CLOSED
@@ -11,8 +12,12 @@ kapanış sırası tamamlandı. İlk gerçek deneme
 bootstrap ön kontrolünde reddedilmişti; ikinci denemenin controller/broker/
 worker sahipliği UNKNOWN olarak korunuyor. Yeni normal kabul bu eski
 kaydı kapatmıyor. Önceki QA03 kabulleri tarihsel olarak korunuyor. İlk
-source stage, Git add sonrası EOF kontrolünde UNKNOWN kaldı; commit
-oluşmadı. R168 kaynak yayını **PENDING**, exact-commit tam CI **NOT RUN**.
+source stage, Git add sonrası EOF kontrolünde UNKNOWN kaldı; o denemede
+commit oluşmadı. Sonraki 33 dosyalık source paketi
+`ce4ef0ad6fd1bc87e33b89d2db709abdd0f8d6ce` olarak commit/push edildi,
+bağımsız remote uzlaştırması ve taze source CI kabulü tamamlandı.
+Bu closure kaydı hazırlanırken closure CI **NOT RUN**; closure/main
+yayını ve final seal **PENDING**.
 
 P1'in önceki kabulü DONE olarak korunur. P2 IN PROGRESS; P3–P5, tam M1 ve
 production kabulü OPEN. Güncel çalışma kaydı [status.md](../status.md), ürün
@@ -302,7 +307,19 @@ veya eski `normal-02` sahibinin kurtarılması bu sonuçtan çıkarılmaz.
 388.669 baytlık sonuç native043'ün tam çıktısından yerel olarak doğrulandı;
 native044 primary dosyayı salt okunur geri okuyarak aynı hash'i doğruladı.
 
-## 5. İlk stage UNKNOWN; kaynak yayını PENDING, tam CI NOT RUN
+## 5. Source commit ve tam CI PASS; closure/main kapanışı PENDING
+
+### Korunan ilk stage ve QA04'e geçiş
+
+Staging öncesindeki 65 miras dosyası kontrolünde iki R167 kanıt logunun
+Windows çalışma kopyasında CRLF, BASE blob'larında LF olduğu görüldü.
+`focused-linux.log` ve `focused-windows-02.log`, exact BASE baytlarına
+geri getirildi; tam index girdileri, HEAD ve o sıradaki 25 source dosyası
+değişmedi. İçerik düzeltmesi eski kanıtları yeniden üretmedi.
+Sonraki salt okunur stat-cache tanısında iki dosya hâlâ status'ta modified
+görünürken `ls-files --eol` her iki tarafta LF, raw/numstat/name-status
+diff'leri boş ve gerçek baytlar BASE ile aynıydı. Bu ön kontrol geçmişi
+korundu; status görünümü tek başına içerik değişikliği sayılmadı.
 
 Native062'de özgün `stage-source-01`, izinli 25 dosyaya yönelik Git add
 işlemini exit 0 ile tamamladı. Sonraki `git diff --cached --check`, raporun
@@ -325,16 +342,51 @@ devralınmadı. Focus05 ve ayrı `normal-04`/`lostreply-02` kabulleri son
 QA04 baytlarını yeniden bağladı. QA03'ün dokuz public dosyası aynen
 korundu; sekiz yeni QA04 kanıt dosyası ayrı adlarla eklendi.
 
-Özel yayın yardımcıları ve bir defalık işlem günlüğü hazırlandı; hazırlık
-kaynak yayını sonucu değildir. R168 source commit, source exact-commit tam
-CI, closure commit/tam CI, main fast-forward, bağımsız remote uzlaştırması
-ve final seal bu anlık görüntüde **PENDING**; tam CI **NOT RUN**.
-Native044'ün kaynak
-keşfi 4.842 benzersiz test ve sıfır import hatası verdi; bu adım **0 test
-yürüttü**. Son kaynak manifesti dondurulduğunda staging/statik çıktı aynı
-discovery sayısını yeniden bağlamalıdır. R167'nin CI sonucu R168'e
-devralınmayacaktır. Normal Git yayını kurulu servise dağıtım veya production
-kabulü sayılmaz.
+### İkinci source paketi ve exact-commit CI kabulü
+
+Son QA04 kaynakları, güncel rapor/status ve iki kuşağın kanıtlarını içeren
+**33 dosyalık source manifesti** doğrulandı; staging/statik kapı 4.842
+test keşfini bağladı. Source commit
+`ce4ef0ad6fd1bc87e33b89d2db709abdd0f8d6ce` oluşturuldu, normal push
+tamamlandı ve ayrı salt okunur remote uzlaştırması PASS verdi.
+Ardından bu exact commit için taze tam CI çalıştı; R167 veya önceki
+bir commit'in CI sonucu devralınmadı.
+
+| Source CI kanıtı | Gerçek sonuç |
+|---|---|
+| Exact source commit | `ce4ef0ad6fd1bc87e33b89d2db709abdd0f8d6ce` |
+| Taze job / delivery | `f39331bc-d2e7-11f1-9280-b118f7cfb4f2` |
+| Tam suite | **4.842 RUN / 4.809 PASS / 33 SKIP / 0 FAIL / 0 ERROR** |
+| Süre | **372,843 saniye** |
+| Container | Exit 0; OOM false, timeout false; container kaldırıldı. |
+| Authenticated GitHub status | `57486710670`, success; 28 Ekim 2026, 16:01:43 UTC |
+| Politika | Değişmedi; `383891808b8fc874e0c6021f66e82801984f6a5ce43391fd36727f03a3e3642d` |
+| Kabul | Native098 `accept-source-ci-01` PASS |
+
+Public türev [source-ci.json](../evidence/p2-service-lifecycle-r168a1/source-ci.json)
+exact source SHA, job, GitHub status ve suite sonucunu bağlar. Bu 2.160
+baytlık dosyanın SHA-256 değeri
+`39451f9a4f16c23fde1b2f84a483b1617292b555c506c7562842282dbe1072d5`;
+kabul yardımcısının ürettiği public türevle bayt bayt aynıdır. Özgün kabul
+makbuzunun SHA-256 değeri
+`98a04f17b9c22d52806b01e6d98d8507de194dd4c6ad2669d2622981f5cfb06c`.
+Native044'ün önceki 4.842 testlik discovery işlemi **0 test yürütmüştü**;
+buradaki 4.842 RUN ayrı gerçek CI yürütmesidir. Atlanan 33 test PASS sayısına eklenmez. İlk stage UNKNOWN ve eski QA
+sonuçları bu başarıyla yeniden sınıflandırılmaz.
+
+### Bu closure kaydı hazırlanırken açık kalan yayın adımları
+
+Closure commit'i ve onun **taze tam CI'si henüz NOT RUN**. Main'in
+fast-forward/push işlemleri, bağımsız remote uzlaştırması, main CI kabulü
+ve final publication seal **PENDING**. Bu belge bu aşamadaki anlık
+görüntüdür; gelecekteki closure/main başarısını peşinen kaydetmez.
+
+Son yayın kararının yetkili kaydı, exact commit status'larıyla bağlı
+`scratch/r168-publication/seal-final-01.result.json` olacaktır. Closure
+ve main'in son SHA/CI bağı o kayıtlardan okunur; bu rapora kendi commit
+SHA'sını eklemek için üçüncü bir belge commit'i gerekmez. Final seal
+tamamlanmadan R168 kaynak yayınının bütünü tamamlanmış sayılmaz.
+Normal Git yayını kurulu servise dağıtım veya production kabulü değildir.
 
 ## 6. Ürünün hazır olması için açık kapılar
 
@@ -343,7 +395,7 @@ kabulü sayılmaz.
 | R168 normal lifecycle | Aynı kurulumda gerçek CLI start/READY/status ve özgün sıralı CLOSED | Son QA04 ile `normal-04` PASS; QA03 `normal-03` tarihsel PASS. Eski `normal-02` UNKNOWN ayrı. |
 | Kayıp close yanıtı | Tek mutation sonrası aynı owner/request'in salt okunur uzlaştırması | Son QA04 ile `lostreply-02` PASS; QA03 `lostreply-01` tarihsel PASS. Close veya cleanup replay yok. |
 | Eski UNKNOWN custody | Korunan kısmi kaynakların açık ve yetkili işletim yolu | OPEN; `normal-02` için normal kapanış veya kurtarma kanıtı yok. |
-| R168 kaynak/CI/yayın | Son kaynak hashleri ve exact-commit CI ile ayrı source/closure/main zinciri | PENDING; discovery 4.842, tam source/closure CI henüz çalışmadı. |
+| R168 kaynak/CI/yayın | Son kaynak hashleri ve exact-commit CI ile ayrı source/closure/main zinciri | Source commit/push/uzlaştırma ve tam source CI PASS; closure CI NOT RUN, main/final seal PENDING. |
 | P2 günlük yerel kullanım | Başlat, görev ver, izle, sonuç/kullanımı gör, iptal et, kapat | OPEN; bu çalışmada görev yürütme yok. |
 | P2 seçilmiş gerçek sağlayıcı | Gerekli modüller/secret-source bağlantısı, seçilmiş model ve açık maliyet/araç/token bütçesiyle sınırlı gerçek görev | OPEN; gerçek model çağrısı 0. |
 | P3 kalıcılık ve yeniden kullanım | Yeni oturumda kimlik/geçmiş; hafıza veya becerinin gerçekten bulunup kullanılması | OPEN. |
@@ -434,6 +486,10 @@ makbuzuna bağlandı.
 | `scratch/r168-service/normal-02/custody-after-qa04-04.json` | `209d279d633b647cf5ecea1cd6b951aafa87093bc2c522a0daee615bf00d77f3` |
 | `scratch/r168-publication/stage-source01-readonly-diagnostic.json` | `4839009cba819a5af43bc26bf6abf135a4c1fec8536a707bb25ce6efeae2d8b8` |
 | `scratch/r168-publication/unstage-source-packet01-01.result.json` | `bdafbf0db2e569952f7528d5670ccdf83c441323eaa2c4019f046ac53e7be458` |
+| `scratch/r168-publication/inherited-bytes-readonly-01.json` | `cf47478fb3f187f225e60b3192042a1d33d66b4f0e1ff48fd0cad9447363b5d4` |
+| `scratch/r168-publication/inherited-restore-preconditions-01.json` | `e1fd6887450c291a80166f6ceee93919edb4b17e68f31ead318923b5097d1ab8` |
+| `scratch/r168-publication/inherited-restore-readback-01.json` | `4d0bb0ca66e840e924013326cf2bdb9f43eb8a408ad6c5e7213844ca8075dbb3` |
+| `scratch/r168-publication/inherited-status-readonly-02.json` | `1a87b27e96a187b4e6e18d8912d65e95ba85765329dd8fe3e45e9a6165eb39bf` |
 
 Yeni gerçek sonuçlar geldiğinde bu rapor yeni zaman damgasıyla güncellenecek;
 önceki FAIL, REFUSED ve UNKNOWN kayıtları kendi sonuçlarıyla korunacaktır.
